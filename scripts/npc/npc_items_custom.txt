@@ -27131,7 +27131,7 @@
 		"08"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"projectile_speed"			"1200"
+			"projectile_speed"			"2500"
 		}
 		"09"
 		{
