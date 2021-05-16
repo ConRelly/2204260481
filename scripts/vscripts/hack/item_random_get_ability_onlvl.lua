@@ -201,7 +201,7 @@ function GetRandomAbilityName( hero )
         "mjz_slark_essence_shift",
         "nevermore_custom_necromastery",
         "mjz_arc_warden_spark_wraith", 
-        "phantom_assassin_fan_of_knives",
+        --"phantom_assassin_fan_of_knives",
         "back_in_time",
         "mjz_necrolyte_heartstopper_aura",
         "mjz_lifestealer_poison_sting",

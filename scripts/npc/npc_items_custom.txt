@@ -8712,12 +8712,12 @@
 // Scepter 2 (Blessing)
 	"item_ultimate_scepter_2"
 	{
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 	}
 // Recipe: Scepter 2 (Blessing)
 	"item_recipe_ultimate_scepter_2"
 	{
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 	}
 
 // Recipe: Aghanim's Synth
@@ -8728,6 +8728,7 @@
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"ItemCost"						"1600"
 		"ItemShopTags"					""
+		"ItemPurchasable"				"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_ultimate_scepter_synth"
 		"ItemRequirements"
@@ -8744,6 +8745,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName" 			"ultimate_scepter"
 		"CastOnPickup"					"1"
+		"ItemPurchasable"				"0"
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0"
 		"ItemShopTags"					"consumable"
@@ -8832,7 +8834,7 @@
 		
 		"ItemCost"						"4000"
 		"ItemShopTags"					""
-		"ItemPurchasable"				"1"
+		"ItemPurchasable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE" 
 
 		"ItemRecipe"					"1"
@@ -29131,7 +29133,7 @@
 			"16"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"orange_mix"			"40"
+				"orange_mix"			"60"
 			}
 			"17"
 			{
@@ -29228,7 +29230,7 @@
 			"16"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"orange_mix"			"20"
+				"orange_mix"			"60"
 			}
 			"17"
 			{
@@ -29320,7 +29322,7 @@
 			"16"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"orange_mix"			"20"
+				"orange_mix"			"60"
 			}
 			"17"
 			{
@@ -38263,7 +38265,7 @@
 		"ItemQuality"					"epic"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"AbilityCooldown"				"5.0"
+		"AbilityCooldown"				"0.3"
 		"AbilitySpecial"
 		{
 			"01"
@@ -38274,7 +38276,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"5500"
+				"damage"				"6400"
 			}
 			"03"
 			{
@@ -38304,7 +38306,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"reflect"				"50"
+				"reflect"				"80"
 			}
 			"09"
 			{

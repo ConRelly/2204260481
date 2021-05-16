@@ -273,7 +273,7 @@
 		"run"	   "190"
 	}
 	"MovementTurnRate"		  "0.5"
-	"StatusHealth"			  "10000"
+	"StatusHealth"			  "1000000"
 	"StatusHealthRegen"		 "0"
 	"StatusMana"				"10000"
 	"StatusManaRegen"		   "500"

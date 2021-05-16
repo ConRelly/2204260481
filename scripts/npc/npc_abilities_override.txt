@@ -307,7 +307,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"1450"
+				"value"				"14500"
 			}
 		}
 	}
@@ -3464,7 +3464,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "5"
+		"LevelsBetweenUpgrades"		 "10"
 		"AbilityCooldown"				"0.0"		
 		"AbilityManaCost"				"10"
 		"AbilitySpecial"
@@ -3472,7 +3472,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_bonus"					"60 280 400 850 1680 2840 7420"
+				"damage_bonus"					"90 580 1900 4850 9680 19840 37420"
 				"LinkedSpecialBonus"			"special_bonus_unique_clinkz_1"
 			}
 		}

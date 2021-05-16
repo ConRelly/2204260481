@@ -39658,7 +39658,7 @@
 			"01"
 			{
 				"var_type"				  "FIELD_INTEGER"
-				"value"						"10"
+				"value"						"25"
 			}
 		}
 	}
@@ -39712,7 +39712,7 @@
 		"AbilityTextureName"				"omniknight_guardian_angel"
 		"MaxLevel"							"7"
 		"HasScepterUpgrade"					"1"
-		"AbilityCooldown"					"110 105 100 95 90 85 80"
+		"AbilityCooldown"					"100 95 90 85 80 75 70"
 		"AbilityCastPoint"					"0.5"
 		"AbilityCastRange"					"600"
 		"AbilityManaCost"					"100 150 200 250 300 350 400"
@@ -39734,14 +39734,14 @@
 			}
 			"02"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"scepter_duration"			"4 4.5 5 5.5 6 6.5 7"
+				"var_type"					"FIELD_FLOAT"
+				"scepter_duration"			"4 4.5 5 5.5 7 8.5 10"
 				"RequiresScepter"			"1"
 			}		
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"scepter_regen"				"160"
+				"scepter_regen"				"960"
 				"RequiresScepter"			"1"
 			}
 			"04"
@@ -39752,7 +39752,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cooldown"					"110 105 100 95 90 85 80"
+				"cooldown"					"100 95 90 85 80 75 70"
 				"LinkedSpecialBonus"		"special_bonus_omniknight_ga_cd"
 			}
 		}

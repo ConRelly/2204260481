@@ -6,6 +6,7 @@ LinkLuaModifier("modifier_purification_buff", "heroes/hero_omniknight.lua", LUA_
 function purification:GetAbilityTextureName() return "omniknight_purification" end
 function purification:IsHiddenWhenStolen() return false end
 function purification:GetAOERadius()
+	if not IsServer() then return end
 	local radius = self:GetSpecialValueFor("radius")
 	if self:GetCaster():HasTalent("special_bonus_omniknight_purifiception_radius") then
 		radius = radius + self:GetCaster():FindTalentValue("special_bonus_omniknight_purifiception_radius")
@@ -186,6 +187,7 @@ LinkLuaModifier("modifier_ga", "heroes/hero_omniknight.lua", LUA_MODIFIER_MOTION
 function guardian_angel:GetAbilityTextureName() return "omniknight_guardian_angel" end
 function guardian_angel:IsHiddenWhenStolen() return false end
 function guardian_angel:GetCooldown(level)
+	if not IsServer() then return end
 	local cooldown = self.BaseClass.GetCooldown(self, level)
 	if self:GetCaster():HasTalent("special_bonus_omniknight_ga_cd") then
 		scepter_cooldown = cooldown + self:GetCaster():FindTalentValue("special_bonus_omniknight_ga_cd")
