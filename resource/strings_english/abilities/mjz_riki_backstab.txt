@@ -1,0 +1,7 @@
+    
+	"DOTA_Tooltip_ability_mjz_riki_backstab"				    "Backstab"
+	"DOTA_Tooltip_ability_mjz_riki_backstab_Description"	    "When launching an attack, bonus damage is applied based on his current agility."
+	"DOTA_Tooltip_ability_mjz_riki_backstab_Lore"	    		"The Stealth Assassin is not afraid to fight dirty, and specializes in attacking his opponents from behind."
+	"DOTA_Tooltip_ability_mjz_riki_backstab_agility_damage"		"%Agility as Damage: "
+	"DOTA_Tooltip_ability_mjz_riki_backstab_health_regen"		"Health Regen: "
+	

@@ -1,0 +1,10 @@
+
+	"npc_dota_hero_dragon_knight_mjz"
+	{
+		"override_hero"			"npc_dota_hero_dragon_knight"
+
+		"Ability1"		"mjz_dragon_knight_breathe_fire"
+		"Ability3"		"mjz_dragon_knight_dragon_blood"
+		"Ability5"		"mjz_dragon_knight_elder_dragon_relieve"
+		"Ability11"		"special_bonus_unique_mjz_dragon_knight_0106"
+	}

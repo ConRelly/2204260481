@@ -1,0 +1,16 @@
+
+"DOTA_Tooltip_ability_mjz_templar_assassin_trap_teleport"                   "灵能投射"
+"DOTA_Tooltip_ability_mjz_templar_assassin_trap_teleport_Description"       "使圣堂刺客经过短暂的持续施法后传送至任意灵能陷阱。到达时引爆灵能陷阱。"
+"DOTA_Tooltip_ability_mjz_templar_assassin_trap_teleport_Lore"       "作为她效忠的报酬，拉娜娅得以查探秘密，使她的灵能天赋解开了新的技巧。"
+"DOTA_Tooltip_ability_mjz_templar_assassin_trap_teleport_Note0"						"陷阱没有时间限制。"
+"DOTA_Tooltip_ability_mjz_templar_assassin_trap_teleport_Note2"						"陷阱的视野是400/400。"
+"DOTA_Tooltip_ability_mjz_templar_assassin_trap_teleport_max_traps"					"最大陷阱数："
+"DOTA_Tooltip_ability_mjz_templar_assassin_trap_teleport_trap_bonus_damage"       "陷阱引爆伤害："
+"DOTA_Tooltip_ability_mjz_templar_assassin_trap_teleport_movement_speed"				"%移动速度减缓："
+"DOTA_Tooltip_ability_mjz_templar_assassin_trap_teleport_trap_duration"					"减速持续时间："
+"DOTA_Tooltip_ability_mjz_templar_assassin_trap_teleport_trap_radius"					"作用范围："
+"DOTA_Tooltip_modifier_mjz_templar_assassin_trap_teleport_debuff"						"陷阱"
+"DOTA_Tooltip_modifier_mjz_templar_assassin_trap_teleport_debuff_Description"			"移动速度减缓%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%。"
+"DOTA_Tooltip_ability_mjz_templar_assassin_self_trap"								"触发陷阱"
+"DOTA_Tooltip_ability_mjz_templar_assassin_self_trap_Description"					"触发陷阱，减速周围的敌人。"
+

@@ -1,0 +1,7 @@
+    
+	"DOTA_Tooltip_ability_mjz_faceless_void_backtrack"				    	"Backtrack"
+	"DOTA_Tooltip_ability_mjz_faceless_void_backtrack_Description"	    	"Faceless Void dodges damage by jumping backward in time, eluding both physical and magical attacks."
+	"DOTA_Tooltip_ability_mjz_faceless_void_backtrack_Lore"	    			"Darkterror sees what has yet to be seen."
+	"DOTA_Tooltip_ability_mjz_faceless_void_backtrack_Note0"	    		"Backtrack belongs to the group of damage negating effects. It is not evasion."
+	"DOTA_Tooltip_ability_mjz_faceless_void_backtrack_dodge_chance_pct"		"%Proc Chance: "
+	

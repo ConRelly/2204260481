@@ -1,0 +1,8 @@
+	"npc_dota_hero_techies_mjz"
+	{
+		"override_hero"			"npc_dota_hero_techies"
+		"Ability1"		"mjz_techies_land_mines"
+		"Ability3"		"mjz_techies_suicide"
+		"Ability6"		"techies_remote_mines"
+		"Ability13"		"special_bonus_unique_mjz_techies_land_mines_int_damage"
+	}

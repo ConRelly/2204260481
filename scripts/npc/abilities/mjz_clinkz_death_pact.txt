@@ -1,0 +1,57 @@
+
+	//=================================================================================================================
+	// Clinkz: Death Pact				死亡契约
+	//=================================================================================================================
+	"mjz_clinkz_death_pact"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_clinkz/mjz_clinkz_death_pact.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityTextureName"			"mjz_clinkz_death_pact"
+
+		"FightRecapLevel"				"2"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastAnimation"			"ACT_INVALID"
+
+		"AbilityCooldown"				"50.0"
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"40.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage_pct"		"40 60 80"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"800 1600 2800"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_reduction"		"-1 -2 -3"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"model_scale"			"20"     // Percentage over model scale
+			}
+		}
+
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_clinkz/clinkz_death_pact.vpcf"
+			"particle"  "particles/units/heroes/hero_clinkz/clinkz_death_pact_buff.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+		}
+	}
+

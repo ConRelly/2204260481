@@ -1,0 +1,44 @@
+	
+	//=================================================================================================================
+	// Obsidian Destroyer: Essence Aura
+	//=================================================================================================================
+	"mjz_obsidian_destroyer_essence_aura"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_obsidian_destroyer/mjz_obsidian_destroyer_essence_aura.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName"			"mjz_obsidian_destroyer_essence_aura"
+		"AbilitySound"					"Hero_ObsidianDestroyer.EssenceAura"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"1200"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_mana"	    "150 250 350 450"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"restore_amount"	"10 15 20 25"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"restore_chance"	"40"
+			}
+		}
+		
+		"precache"
+		{
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
+			"particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf"		
+		}
+	}

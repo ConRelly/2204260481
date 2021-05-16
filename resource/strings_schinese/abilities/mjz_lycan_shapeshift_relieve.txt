@@ -1,0 +1,6 @@
+    
+	"DOTA_Tooltip_ability_mjz_lycan_shapeshift_relieve"				    "解除变身"
+	"DOTA_Tooltip_ability_mjz_lycan_shapeshift_relieve_Description"	    "立刻解除变身效果。\n\n可用神杖升级。"
+	"DOTA_Tooltip_ability_mjz_lycan_shapeshift_relieve_Aghanim_Description"	    "变身没有时间限制。"
+	"DOTA_Tooltip_ability_mjz_lycan_shapeshift_relieve_health_drain_per_second_scepter"	    "%每秒生命消耗："
+	

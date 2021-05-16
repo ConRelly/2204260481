@@ -1,0 +1,18 @@
+    
+	"DOTA_Tooltip_ability_mjz_doom_bringer_doom"				    "末日"
+	"DOTA_Tooltip_ability_mjz_doom_bringer_doom_Description"	    "对附加的敌人施加末日诅咒，使其降低魔法抗性、攻击速度、移动速度，同时造成持续伤害。\n\n可用神杖升级。\n\n驱散类型：弱驱散"
+	"DOTA_Tooltip_ability_mjz_doom_bringer_doom_Lore"	    		"当佤什昂都的丧钟报出一个名字时，这个名字主人的末日就将到来。"
+	"DOTA_Tooltip_ability_mjz_doom_bringer_doom_radius"					"作用范围："
+	"DOTA_Tooltip_ability_mjz_doom_bringer_doom_damage"					"每秒伤害："
+	"DOTA_Tooltip_ability_mjz_doom_bringer_doom_debuff_magical_resistance"				"%敌人魔法抗性降低："
+	"DOTA_Tooltip_ability_mjz_doom_bringer_doom_debuff_attack_speed"					"敌人攻击速度降低："
+	"DOTA_Tooltip_ability_mjz_doom_bringer_doom_debuff_move_speed"						"%敌人移动速度降低："
+	"DOTA_Tooltip_ability_mjz_doom_bringer_doom_mana_second_scepter"	"神杖升级每秒魔法消耗："
+	"DOTA_Tooltip_ability_mjz_doom_bringer_doom_duration"				"持续时间："
+	"DOTA_Tooltip_ability_mjz_doom_bringer_doom_Aghanim_Description"				"末日变成开关型技能，开启后每秒消耗50点魔法。"
+	"DOTA_Tooltip_modifier_mjz_doom_bringer_doom_caster"					"末日"
+	"DOTA_Tooltip_modifier_mjz_doom_bringer_doom_caster_Description"	    "每秒对附加的敌人造成伤害"
+	"DOTA_Tooltip_modifier_mjz_doom_bringer_doom_debuff"					"末日"
+	"DOTA_Tooltip_modifier_mjz_doom_bringer_doom_debuff_Description"	    "魔法抗性降低%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%，攻击速度降低%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%，移动速度被减缓%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_doom_bringer_doom_damage"	    "+55 末日每秒伤害"
+	

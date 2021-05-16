@@ -1,0 +1,11 @@
+
+	"ignis_fatuus_health_counter"
+	{
+	  "AbilityBehavior" 	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	  //"AbilityBehavior" 	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	  "BaseClass"					"ability_lua"	// "ability_datadriven"
+	  "ScriptFile"					"abilities/hero_keeper_of_the_light/ignis_fatuus_health_counter.lua"
+	  "MaxLevel" 				"1"
+	  "AbilityTextureName"     ""
+	  
+	}

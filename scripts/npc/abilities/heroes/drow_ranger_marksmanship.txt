@@ -1,0 +1,76 @@
+"DOTAAbilities"
+{
+  //=================================================================================================================
+  // Ability: Drow Ranger's Marksmanship
+  //=================================================================================================================
+  "drow_ranger_marksmanship"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "5022"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityType"                                         "DOTA_ABILITY_TYPE_ULTIMATE"
+    "SpellImmunityType"                                   "SPELL_IMMUNITY_ENEMIES_YES"
+    "AbilityUnitDamageType"                               "DAMAGE_TYPE_PHYSICAL"
+
+    "MaxLevel"                                            "5"
+    "RequiredLevel"                                       "6"
+    "LevelsBetweenUpgrades"                               "8"
+
+    "HasScepterUpgrade"                                   "1"
+
+    "AbilityCastRange"                                    "400"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "chance"                                          "5 10 15 20 30"
+        "LinkedSpecialBonus"                              "special_bonus_unique_drow_ranger_3"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "bonus_damage"                                    "70 180 290 1120 2170"
+        "CalculateSpellDamageTooltip"                     "0"
+      }
+      "03"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "agility_multiplier"                              "5 10 15 20 35"
+      }
+      "04"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "agility_range"                                   "7500"
+      }
+      "05"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "split_count_scepter"                             "2"
+        "RequiresScepter"                                 "1"
+      }
+      "06"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "scepter_range"                                   "375"
+        "RequiresScepter"                                 "1"
+      }
+      "07"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "damage_reduction_scepter"                        "50"
+        "RequiresScepter"                                 "1"
+        "CalculateSpellDamageTooltip"                     "0"
+      }
+      "08"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "disable_range"                                   "400"
+      }
+    }
+  }
+}

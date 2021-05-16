@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_omniknight_repel"				    "驱逐"
+	"DOTA_Tooltip_ability_mjz_omniknight_repel_Description"	    "创造出一个神圣守卫环绕目标，使目标获得 %magical_resistance_bonus%%% 的魔法抗性和 %status_resistance_bonus%%% 状态抗性。"
+	"DOTA_Tooltip_ability_mjz_omniknight_repel_Lore"	    	"当面对着牺牲之渊时，普里斯特对魔法的适应力得到了测试和证实。"
+	"DOTA_Tooltip_ability_mjz_omniknight_repel_Note0"	    	""
+	"DOTA_Tooltip_ability_mjz_omniknight_repel_duration"		"持续时间："
+	"DOTA_Tooltip_modifier_mjz_omniknight_repel"				"驱逐"
+	

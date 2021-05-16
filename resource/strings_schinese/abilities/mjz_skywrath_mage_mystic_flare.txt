@@ -1,0 +1,13 @@
+
+"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare"					"神秘之耀"
+"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare_Description"		"天怒法师运用终极魔法技能，召唤精准致命的奥术力场毁灭对手。%duration%秒期间对范围内所有敌方英雄造成大量伤害，伤害由所有英雄平摊。"
+"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare_Lore"				"天怒一族中只有勤加修炼的法师才能将苍天塑造成这样的风暴。"
+"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare_Note0"				"神秘之耀仅对英雄有效，幻象或非英雄单位将不会受到伤害。"
+"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare_Note1"				"技能免疫状态下的敌人不会被均摊伤害。"
+"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare_Note2"				"神秘之耀在没有敌方英雄时将对敌方小兵造成伤害。"
+"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare_radius"			"作用范围："
+"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare_duration"			"持续时间："
+"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare_base_damage"			"基础伤害："
+"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare_int_multiplier"		"智力伤害系数："
+"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare_aghanim_description"		"每次天怒法师施放神秘之耀时，都会随机对附近%scepter_radius%范围内另一个敌人施放相同的技能。以英雄为首要目标。"
+

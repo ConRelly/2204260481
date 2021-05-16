@@ -1,0 +1,9 @@
+	
+	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas"						"太虚之阵"
+	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas_Description"			"太虚之阵"
+	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas_max_travel_distance"	"距离："
+	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas_pop_damage"			"太虚标记伤害："
+	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas_movement_slow_pct"	"%移动速度减缓："
+	"DOTA_Tooltip_modifier_mjz_void_spirit_astral_atlas_lua"				"太虚之径"
+	"DOTA_Tooltip_modifier_mjz_void_spirit_astral_atlas_lua_Description"	"移动速度被减缓%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%，并且结束时受到伤害。"
+	

@@ -1,0 +1,7 @@
+
+	"npc_dota_hero_skeleton_king_mjz"			//骷髅王
+	{
+		"override_hero"			"npc_dota_hero_skeleton_king"
+
+		"Ability5"		"mjz_skeleton_king_ghost"
+	}

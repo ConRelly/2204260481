@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_templar_assassin_refraction"				    "折光"
+	"DOTA_Tooltip_ability_mjz_templar_assassin_refraction_Description"	    "圣堂刺客变得十分难以捉摸，躲避伤害的同时获得攻击力加成。"
+	"DOTA_Tooltip_ability_mjz_templar_assassin_refraction_Lore"	    		"通过操控她的灵能面纱，拉娜娅让自然法则为她所用。"
+	"DOTA_Tooltip_ability_mjz_templar_assassin_refraction_bonus_damage"		"攻击力加成："
+	"DOTA_Tooltip_ability_mjz_templar_assassin_refraction_duration"			"持续时间："
+	"DOTA_Tooltip_modifier_mjz_templar_assassin_refraction_buff"					"折光"
+	"DOTA_Tooltip_modifier_mjz_templar_assassin_refraction_buff_Description"	    "提升攻击力。吸收所有伤害。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_templar_assassin_refraction_damage"	"+100 折光攻击力加成"
+	

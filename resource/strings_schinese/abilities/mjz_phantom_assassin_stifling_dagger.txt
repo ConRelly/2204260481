@@ -1,0 +1,16 @@
+    
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger"				    "窒碍短匕"
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_Description"	    "对敌方单位掷出一把匕首，减缓其移动速度，并造成物理伤害，数值为%base_damage% + 幻影刺客攻击伤害的%attack_factor_tooltip%%%，同时继承物品和技能的攻击效果。"
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_Lore"	    		"魅影之纱成员学习到的第一个技能，中招就意味着下一次攻击要来了。"
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_Note0"	    		"击中目标时，匕首会使幻影刺客对目标发出一个即时攻击。"
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_cast_range"			"施法距离："
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_search_radius"		"搜索半径："
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_target_count"		"目标数量："
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_base_damage"					"基础伤害："
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_attack_factor_tooltip"		"%攻击伤害："
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_move_slow"				"%移动速度减缓："
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_slow_duration"			"减速时间："
+	"DOTA_Tooltip_modifier_mjz_stifling_dagger_slow"								"窒碍短匕"
+	"DOTA_Tooltip_modifier_mjz_stifling_dagger_slow_Description"					"减缓你的移动速度。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_stifling_dagger"					"+2 窒碍短匕"
+	

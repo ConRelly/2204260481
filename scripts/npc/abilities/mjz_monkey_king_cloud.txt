@@ -1,0 +1,35 @@
+
+	"mjz_monkey_king_cloud"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/hero_monkey_king/mjz_monkey_king_cloud.lua"
+		"AbilityTextureName"			"mjz_monkey_king_cloud"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"AbilityManaCost"				"10"
+		"AbilityCooldown"				"5"
+
+		"MaxLevel"						"1"
+		"LearnOnSpawn"					"1"		// 出生时学习此技能、值为等级
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_move_speed"			"50"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana_pct"					"6"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/econ/items/monkey_king/arcana/monkey_arcana_cloud.vpcf"
+		}
+	}
+

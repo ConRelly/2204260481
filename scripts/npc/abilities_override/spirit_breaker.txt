@@ -1,0 +1,56 @@
+
+	"spirit_breaker_charge_of_darkness"
+	{
+		"AbilityCastPoint"				"0.10"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_speed"		"325 375 425 475"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"scepter_speed"		"250"
+				"RequiresScepter"			"1"
+			}
+		}
+	}
+	"spirit_breaker_greater_bash"
+	{
+		"AbilityCooldown"				"0.2"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"50 80 110 160"
+				"LinkedSpecialBonus"	"special_bonus_unique_spirit_breaker_3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"0.25"
+			}
+			"04"
+			{
+				"var_type	"				"FIELD_FLOAT"
+				"knockback_duration"	"0.1"
+			}
+		}
+	}
+	"spirit_breaker_nether_strike"
+	{
+		"AbilityCooldown"				"40 30 20"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"300 600 900"
+			}
+		}
+	}
+	

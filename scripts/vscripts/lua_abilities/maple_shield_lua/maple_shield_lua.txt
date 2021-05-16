@@ -1,0 +1,86 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Maple Shield (Lua version)
+	//=================================================================================================================
+	"maple_shield_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/maple_shield_lua/maple_shield_lua"
+		"AbilityTextureName"			"maple_shield_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"3"
+		"precache"
+		{
+
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"armor_str_multiplier"		        "0.1 0.15 0.2"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"hp_str_multiplier"		        "50.0 100.0 150.0"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"speed_cap"		                "250 200 150"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"cooldown_increment"		    "50 100 150"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"aura_radius"		            "900"
+			}
+            "06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"size"		                    "50 75 100"
+			}
+            "07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"armor_str_multiplier_tooltip"	 "50 75 100"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"hp_str_multiplier_tooltip"		"50.0 100.0 150.0"
+			}						
+		}
+	}
+}

@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas"						"Astral Atlas"
+	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas_Description"			"Astral Atlas"
+	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas_max_travel_distance"	"RANGE:"
+	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas_pop_damage"			"VOID MARK DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas_movement_slow_pct"	"%MOVEMENT SLOW:"
+	"DOTA_Tooltip_modifier_mjz_void_spirit_astral_atlas_lua"				"Astral Step"
+	"DOTA_Tooltip_modifier_mjz_void_spirit_astral_atlas_lua_Description"	"Slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% and will take damage on expiration."

@@ -1,0 +1,6 @@
+    
+	"DOTA_Tooltip_ability_mjz_monkey_king_cloud"				    "CLOUD"
+	"DOTA_Tooltip_ability_mjz_monkey_king_cloud_Description"	    "The cloud that Monkey King rides when flying, one somersault can travel a distance of tens of thousands of miles."
+	"DOTA_Tooltip_ability_mjz_monkey_king_cloud_Lore"	    		"removes unit collisions"
+	"DOTA_Tooltip_ability_mjz_monkey_king_cloud_bonus_move_speed"	"%MOVEMENT SPEED:"
+	"DOTA_Tooltip_ability_mjz_monkey_king_cloud_mana_pct"			"%MAXIMUM MANA COST PER SECOND:"

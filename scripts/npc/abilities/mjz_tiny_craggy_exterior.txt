@@ -1,0 +1,148 @@
+
+	//=================================================================================================================
+	// Tiny: Craggy Exterior			崎岖外表
+	//=================================================================================================================
+	"mjz_tiny_craggy_exterior"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityTextureName"			"mjz_tiny_craggy_exterior"
+
+		// "AbilityDamage"						"25 35 45 55"
+		"LearnOnSpawn"					"1"		// 出生时学习此技能、值为等级
+		
+		"AbilityModifierSupportBonus"		"35"
+
+		"precache"
+		{
+			"particle"	"particles/generic_gameplay/generic_stunned.vpcf"
+			"particle"	"particles/units/heroes/hero_centaur/centaur_return.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"stun_chance"				"10 20 28 35"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.0 1.3 1.6 1.9"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"				"3 4 5 6"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"300 300 300 300"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"return_damage"				"25 35 45 55"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_mjz_tiny_craggy_exterior"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"    "%bonus_armor"
+				}
+
+				"OnAttacked"
+				{
+					"Random"
+					{
+						"Chance"				"%stun_chance"
+						// "PseudoRandom"			"DOTA_PSEUDO_RANDOM_SLARDAR_BASH"
+
+						"OnSuccess"
+						{
+							// "RunScript"
+							// {
+							// 	"ScriptFile"	"abilities/hero_tiny/mjz_tiny_craggy_exterior.lua"
+							// 	"Function"		"ApplyStunned"
+							// }
+
+							"Damage"
+							{
+								"Target"
+								{
+									"Center"		"ATTACKER"
+									"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+									"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+									"Flags"			"DOTA_UNIT_TARGET_FLAG_MELEE_ONLY"	//只对近战有效
+								}
+								"Type"				"DAMAGE_TYPE_MAGICAL"
+								"Damage"			"%return_damage"
+							}
+
+							"ApplyModifier"
+							{
+								"ModifierName"		"modifier_mjz_tiny_craggy_exterior_stunned"
+								// "Target"			"ATTACKER"  //简单
+								"Target"
+								{
+									"Center"		"ATTACKER"
+									"Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+									"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+									"Flags"			"DOTA_UNIT_TARGET_FLAG_MELEE_ONLY"	//只对近战有效
+								}
+								"Duration"			"%stun_duration"
+							}
+
+							
+							// "FireEffect"
+							// {
+							// 	"EffectName"		"particles/units/heroes/hero_centaur/centaur_return.vpcf"
+							// 	"EffectAttachType"  "attach_hitloc"
+							// 	"Target" 			"CASTER"
+							// 	"ControlPointEntities"
+							// 	{
+							// 		"CASTER" 		"attach_hitloc"
+							// 		"ATTACKER" 		"attach_hitloc"
+							// 	}
+							// }
+						}
+
+						"OnFailure"
+						{
+						}
+					}
+				}	
+			}
+
+			"modifier_mjz_tiny_craggy_exterior_stunned"
+			{
+				"IsHidden"				"0"
+				"IsDebuff" 				"1"
+				"TextureName"			"mjz_tiny_craggy_exterior"
+
+				"OverrideAnimation"		"ACT_DOTA_DISABLED"
+
+				"EffectName" 			"particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType" 		"follow_overhead"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"						"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+			}
+		}
+	}
+
+
+

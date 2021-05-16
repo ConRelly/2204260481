@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward"				    "Nether Ward"
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_Description"	    "Pugna places a Nether Ward at the target location. The ward every %interval% seconds, damages every enemy nearby. The damage is based on your intelligence."
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_Lore"				"While at the lamasery for the Arts of Oblivion, Pugna learned to dominate his classmates with a simple ward charged with Nether magic."
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_radius"		   		"WARD ATTACK RANGE:"
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_base_damage"	   			"Base Damge: "
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_intelligence_damage"	    "%Intelligence as Damage: "
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_attacks_to_destroy"			"ATTACKS TO DESTROY:"
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_Note0"				"Nether Ward has 4 HP. Enemy attack it for 1 damage."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_pugna_nether_ward_intelligence"	"+80% Nether Ward Intelligence Damage"
+	"npc_dota_mjz_pugna_nether_ward"								"Nether Ward"

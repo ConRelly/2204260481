@@ -1,0 +1,96 @@
+
+	"mjz_templar_assassin_trap_teleport"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_templar_assassin/mjz_templar_assassin_trap_teleport.lua"
+		"AbilityTextureName"			"mjz_templar_assassin_trap_teleport"
+        "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_TemplarAssassin.Trap"
+
+		"AbilityCastRange"				"4000"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"   //"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCooldown"				"11.0"
+		"AbilityManaCost"				"90"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_traps"					"5 8 11"
+				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin_6"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"trap_fade_time"			"2.0 2.0 2.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed"			"-30"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"trap_duration"			    "5"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"trap_bonus_damage"			"250 300 350"
+				"LinkedSpecialBonus"	"special_bonus_unique_templar_assassin_3"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"trap_max_charge_duration"			"4"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"trap_radius"				"400"
+			}
+		}
+		"precache"
+        {
+            "particle"			"particles/units/heroes/hero_templar_assassin/templar_assassin_trap_portrait.vpcf"
+            "particle"			"particles/units/heroes/hero_templar_assassin/templar_assassin_trap_slow.vpcf"
+            "particle"			"particles/units/heroes/hero_templar_assassin/templar_assassin_trap_explode.vpcf"
+            "soundfile"			"sounds/weapons/hero/templar_assassin/trap_explode.vsnd"
+            "soundfile"			"sounds/weapons/hero/templar_assassin/trigger_trap.vsnd"
+            "soundfile"			"sounds/weapons/hero/templar_assassin/trap_cast.vsnd"
+		    "soundfile"			"sounds/weapons/hero/templar_assassin/trap_spawn.vsnd"
+        }
+	}
+    "mjz_templar_assassin_self_trap"
+    {
+        "BaseClass"				        "ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "MaxLevel"						"1"
+        "AbilityTextureName"			"templar_assassin_self_trap"
+
+        "AbilityCastPoint"				"0.3"
+        "AbilityCooldown"				"0.5"
+        "AbilityManaCost"				"0"
+        "AbilitySpecial"
+        {
+        }
+        
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "ScriptFile"	"abilities/hero_templar_assassin/mjz_templar_assassin_trap_teleport.lua"
+                "Function"		"mjz_templar_assassin_self_trap"
+            }
+        }
+    }

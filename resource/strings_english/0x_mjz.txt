@@ -1,0 +1,13 @@
+
+	"DOTA_Tooltip_ability_item_random_get_ability"	"Random Get Ability"
+	"DOTA_Tooltip_modifier_power_boss"	"Power Upgrade"
+	"game_mode_endless_enabled"			"ENDLESS ENABLED"
+	"game_mode_endless_begin"			"ENDLESS BEGIN"
+	"game_mode_mana_enabled"			"ZERO MANA ENABLED"
+	"game_mode_single_player"			"SINGLE PLAYER"
+	"DOTA_Tooltip_modifier_gm_single_fort"	"SINGLE PLAYER"
+	"game_mode_double_monsters_enabled"			"DOUBLE THE NUMBER OF MONSTERS"
+	"DOTA_Tooltip_modifier_mjz_zero_mana"	"ZERO MANA"
+	"DOTA_Tooltip_modifier_mjz_zero_mana_alone"	"ZERO MANA"
+	"DOTA_Tooltip_modifier_mjz_zero_mana_alone_Description"	"Not recommended."
+	"npc_dota_tower_rock_golem"			"Rock Golem"

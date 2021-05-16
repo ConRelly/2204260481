@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_io_overcharge"				"Overcharge"
+	"DOTA_Tooltip_ability_mjz_io_overcharge_Description"	"Io gains bonus attack speed and damage reduction, at the cost of draining a percentage of its current health. If Io is tethered to an ally, that unit also gains the bonuses."
+	"DOTA_Tooltip_ability_mjz_io_overcharge_Lore"			"Drawing on the energy of matter from all worlds, Io begins the unravelling of time."
+	"DOTA_Tooltip_ability_mjz_io_overcharge_drain_pct_tooltip"	"%HEALTH DRAIN:"
+	"DOTA_Tooltip_ability_mjz_io_overcharge_bonus_attack_speed"	"ATTACK SPEED:"
+	"DOTA_Tooltip_ability_mjz_io_overcharge_bonus_damage_pct"	"%INCOMING DAMAGE REDUCTION:"
+	"DOTA_Tooltip_ability_mjz_io_overcharge_Note0"			"Io's tethered unit will also benefit from the attack speed and reduction, but only Io pays the drain in HP."
+	"DOTA_Tooltip_modifier_mjz_io_overcharge_buff"					"Overcharged"
+	"DOTA_Tooltip_modifier_mjz_io_overcharge_buff_Description"		"Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, incoming damage reduced by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%."

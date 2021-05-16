@@ -1,0 +1,43 @@
+
+	//=================================================================================================================
+	// Ursa: Overpower
+	//=================================================================================================================
+	"mjz_ursa_overpower"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_ursa/mjz_ursa_overpower.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Hero_Ursa.Overpower"
+		"AbilityTextureName"			"mjz_ursa_overpower"
+
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		"AbilityCooldown"				"29 26 23 20"
+		"AbilityManaCost"				"75"
+		
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"		"100 200 300 400"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"6 8 10 12"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
+			"particle"		"particles/status_fx/status_effect_overpower.vpcf"
+			"particle"		"particles/units/heroes/hero_ursa/ursa_overpower_buff.vpcf"
+		}
+	}
+

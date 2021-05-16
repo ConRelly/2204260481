@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_furion_power_of_nature"				    "自然之力"
+	"DOTA_Tooltip_ability_mjz_furion_power_of_nature_Description"	    	"使目标减速 %duration% 秒，减速结束后其间所受伤害的 %damage_pct%%% 将以额外魔法伤害的形式结算。"
+	"DOTA_Tooltip_ability_mjz_furion_power_of_nature_Lore"				    "在春分的早晨，当其它种子还没有苏醒时，最后那颗种子在一瞬间成熟然后爆裂了。"
+	"DOTA_Tooltip_ability_mjz_furion_power_of_nature_movement_slow_pct"		"%移动速度减缓："
+	"DOTA_Tooltip_ability_mjz_furion_power_of_nature_damage_pct"			"%伤害百分比："
+	"DOTA_Tooltip_ability_mjz_furion_power_of_nature_duration"				"持续时间："
+	"DOTA_Tooltip_modifier_mjz_furion_power_of_nature_debuff"					"自然之力"
+	"DOTA_Tooltip_modifier_mjz_furion_power_of_nature_debuff_Description"	    "减速结束后其间所受伤害的 %dMODIFIER_PROPERTY_TOOLTIP%%% 将以额外魔法伤害的形式结算。"
+	

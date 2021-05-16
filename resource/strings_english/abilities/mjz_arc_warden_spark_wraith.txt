@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_arc_warden_spark_wraith"				    "Spark Wraith"
+	"DOTA_Tooltip_ability_mjz_arc_warden_spark_wraith_Description"	    "Arc Warden giving him a chance to deal extra damage."
+	"DOTA_Tooltip_ability_mjz_arc_warden_spark_wraith_Lore"				"Lesser fragments of Zet's original self."
+	"DOTA_Tooltip_ability_mjz_arc_warden_spark_wraith_wraith_speed"		"WRAITH SPEED:"
+	"DOTA_Tooltip_ability_mjz_arc_warden_spark_wraith_proc_chance"		"%CHANCE:"
+	"DOTA_Tooltip_ability_mjz_arc_warden_spark_wraith_spark_damage"		"DAMAGE:"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_arc_warden_0302"		"+10% Spark Wraith"

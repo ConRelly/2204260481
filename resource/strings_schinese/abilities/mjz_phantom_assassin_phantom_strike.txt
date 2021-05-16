@@ -1,0 +1,10 @@
+    
+"DOTA_Tooltip_ability_mjz_phantom_assassin_phantom_strike"							"幻影突袭"
+"DOTA_Tooltip_ability_mjz_phantom_assassin_phantom_strike_Description"				"闪烁到一个友方或敌方单位身边，如果是敌方单位则在攻击该目标时获得攻击速度加成。"
+"DOTA_Tooltip_ability_mjz_phantom_assassin_phantom_strike_Lore"						"茉崔蒂的真丝面纱是她倒霉的目标临终所见之物。"
+"DOTA_Tooltip_ability_mjz_phantom_assassin_phantom_strike_Note0"					"可以对自身施放"
+"DOTA_Tooltip_ability_mjz_phantom_assassin_phantom_strike_duration"					"持续时间："
+"DOTA_Tooltip_ability_mjz_phantom_assassin_phantom_strike_bonus_attack_speed"		"攻速提升："
+"DOTA_Tooltip_ability_mjz_phantom_assassin_phantom_strike_abilitycastrange"			"施法距离："
+"DOTA_Tooltip_modifier_mjz_phantom_assassin_phantom_strike_buff"					"幻影突袭"
+"DOTA_Tooltip_modifier_mjz_phantom_assassin_phantom_strike_buff_Description"		"攻击速度提升%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%。"

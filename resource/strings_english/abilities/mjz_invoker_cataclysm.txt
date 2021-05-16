@@ -1,0 +1,5 @@
+
+	"DOTA_Tooltip_ability_mjz_invoker_cataclysm"				    "Cataclysm"
+	"DOTA_Tooltip_ability_mjz_invoker_cataclysm_Description"	    ""
+	"DOTA_Tooltip_ability_mjz_invoker_cataclysm_Lore"	    		""
+	"DOTA_Tooltip_ability_mjz_invoker_cataclysm_range"				"Range:"

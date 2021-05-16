@@ -1,0 +1,18 @@
+    
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren"				    "海妖之歌"
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_Description"	    "娜迦海妖周围的所有敌人受到魔法影响陷入停滞状态，既无法行动。再次使用海妖之歌可以提前停止效果。\n可用神杖升级。"
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_Aghanim_Description"	    "提高生命恢复加成。"
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_Lore"	    	"司里希丝具有魔力的声音使敌人不自觉地沉醉其中，同时在需要的时候召唤她的族人前来助战。"
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_radius"			"范围："
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_duration"		"持续时间："
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_regen_rate"				"%最大生命值生命恢复加成："
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_regen_rate_scepter"		"%神杖升级最大生命值生命恢复加成："
+	"DOTA_Tooltip_modifier_mjz_naga_siren_song_of_the_siren_caster"					"海妖之歌"
+	"DOTA_Tooltip_modifier_mjz_naga_siren_song_of_the_siren_caster_Description"	    "娜迦海妖周围的所有敌人受到魔法影响陷入停滞状态，既无法行动。"
+	"DOTA_Tooltip_modifier_mjz_naga_siren_song_of_the_siren_buff"					"海妖之歌"
+	"DOTA_Tooltip_modifier_mjz_naga_siren_song_of_the_siren_buff_Description"		"获得最大生命值生命恢复加成"
+	"DOTA_Tooltip_modifier_mjz_naga_siren_song_of_the_siren_debuff"					"海妖之歌"
+	"DOTA_Tooltip_modifier_mjz_naga_siren_song_of_the_siren_debuff_Description"		"无法行动"
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_cancel"				    "终止海妖之歌"
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_cancel_Description"	    "将敌方单位从你的歌声中释放出来。"
+	

@@ -1,0 +1,7 @@
+    
+	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare"				"照明火箭"
+	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare_Description"	"向目标区域发射照明弹，对区域内敌人造成伤害并提供%duration%秒的视野。"
+	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare_Lore"			"最初用作节日的焰火，现在成了侦察和轰炸敌人的工具。"
+	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare_cast_range"		"施法距离："
+	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare_radius"			"作用范围："
+	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare_damage"			"伤害："

@@ -1,0 +1,9 @@
+
+
+"DOTA_Tooltip_ability_item_mjz_attribute_mail"                           "属性甲"
+"DOTA_Tooltip_ability_item_mjz_attribute_mail_Description"				"<h1>主动： 折光护盾</h1> 范围内的友军伤害减免 %damage_reduction%%，持续 %duration% 秒， 范围 %radius% 。\n<h1>被动：反击</h1>每次受到攻击时，向攻击他的单位发出反击，伤害基于佩戴者%attr_return%%%的主属性值。"
+"DOTA_Tooltip_ability_item_mjz_attribute_mail_bonus_armor"				"+$armor"
+"DOTA_Tooltip_ability_item_mjz_attribute_mail_Lore"						"Idea by Pepe XL."
+"DOTA_Tooltip_modifier_item_mjz_attribute_mail_buff"                      "属性甲"
+"DOTA_Tooltip_modifier_item_mjz_attribute_mail_buff_Description"          "属性甲提供的伤害减免。"
+

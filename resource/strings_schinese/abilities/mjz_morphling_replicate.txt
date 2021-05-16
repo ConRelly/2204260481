@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_morphling_replicate"				    "变形"
+	"DOTA_Tooltip_ability_mjz_morphling_replicate_Description"	    "获得目标的属性加成。"
+	"DOTA_Tooltip_ability_mjz_morphling_replicate_Lore"	    		"盯着变体精灵看而因此幻化出的一个映像，会变成这个观看者的模样。"
+	"DOTA_Tooltip_ability_mjz_morphling_replicate_bonus_stats_pct"		"%属性加成："
+	"DOTA_Tooltip_ability_mjz_morphling_replicate_bonus_attack_range"	"攻击距离加成："
+	"DOTA_Tooltip_ability_mjz_morphling_replicate_duration"				"持续时间："
+	"DOTA_Tooltip_modifier_mjz_morphling_replicate"					"变形"
+	"DOTA_Tooltip_modifier_mjz_morphling_replicate_Description"	    "获得目标的属性加成。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_morphling_replicate_stats"	    "+30% 变形属性加成"
+	

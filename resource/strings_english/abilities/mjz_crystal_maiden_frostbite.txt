@@ -1,0 +1,14 @@
+    
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite"									"Frostbite"
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_Description"						"Encases an enemy unit in ice, prohibiting movement and attack, while dealing damage over time. "
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_Lore"							"Rylai channels winds from the Blueheart Glacier, imprisoning attackers in thick blocks of ice."
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_Note0"							"Frostbite is considered a root."		
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_radius"							"RADIUS:"
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_total_damage"					"HERO TOTAL DAMAGE:"
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_creep_total_damage"				"CREEP TOTAL DAMAGE:"		
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_duration"						"HERO DURATION:"
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_creep_duration"					"CREEP DURATION:"	
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_damage_interval"					"DAMAGE INTERVAL:"	
+"DOTA_Tooltip_modifier_mjz_crystal_maiden_frostbite"							"Frostbite"
+"DOTA_Tooltip_modifier_mjz_crystal_maiden_frostbite_Description"				"Cannot move or attack. "
+

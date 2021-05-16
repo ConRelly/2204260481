@@ -1,0 +1,31 @@
+
+	"ursa_enrage"
+	{
+		"AbilityCooldown"				"70 60 50"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_reduction"			"60"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"status_resistance"			"50"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"60.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_ursa_3"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown_scepter"			"60 50 40"
+				"RequiresScepter"			"1"
+			}
+		}
+	}

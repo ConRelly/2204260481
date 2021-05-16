@@ -1,0 +1,14 @@
+    
+	"DOTA_Tooltip_ability_mjz_viper_nethertoxin"				"幽冥剧毒"
+	"DOTA_Tooltip_ability_mjz_viper_nethertoxin_Description"	"冥界亚龙向目标区域施放幽冥剧毒。对范围内敌人造成持续伤害，降低魔法抗性。"
+	"DOTA_Tooltip_ability_mjz_viper_nethertoxin_Lore"			"三途川的剧毒让小伤也能致死，而疲乏可以送命。"
+	"DOTA_Tooltip_ability_mjz_viper_nethertoxin_cast_range"			"施法距离："
+	"DOTA_Tooltip_ability_mjz_viper_nethertoxin_radius"				"作用范围："
+	"DOTA_Tooltip_ability_mjz_viper_nethertoxin_damage"				"每秒伤害："
+	"DOTA_Tooltip_ability_mjz_viper_nethertoxin_magic_resistance"	"%魔法抗性降低："
+	"DOTA_Tooltip_ability_mjz_viper_nethertoxin_duration"			"持续时间："
+	"DOTA_Tooltip_modifier_mjz_viper_nethertoxin_debuff_magic_resistance"				"幽冥剧毒"
+	"DOTA_Tooltip_modifier_mjz_viper_nethertoxin_debuff_magic_resistance_Description"	"魔法抗性降低%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_viper_nethertoxin_magic_resistance"			"-25% 幽冥剧毒魔法抗性"
+
+	

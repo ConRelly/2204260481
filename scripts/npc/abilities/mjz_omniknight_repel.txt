@@ -1,0 +1,100 @@
+
+	//=================================================================================================================
+	// Omniknight: Repel				驱逐
+	//=================================================================================================================
+	"mjz_omniknight_repel"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"omniknight_repel"		//	"mjz_omniknight_repel"
+
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+		
+		"AbilityCooldown"				"26.0 22.0 18.0 14.0"
+		"AbilityManaCost"				"50 60 70 80"
+
+		"AbilityModifierSupportValue"	"3.0"	// Value much higher than cost.
+
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"6.0 7.0 8.0 9.0"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"magical_resistance_bonus"		"80"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"status_resistance_bonus"		"80"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+			"particle"	"particles/units/heroes/hero_omniknight/omniknight_repel_buff.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_Omniknight.Repel"
+				"Target"			"TARGET"
+			}
+
+			"FireEffect"
+			{
+				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_repel_cast.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target"            "TARGET"
+			}
+
+			"ApplyModifier"
+			{
+				"Target" 			"TARGET"
+				"ModifierName"		"modifier_mjz_omniknight_repel"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hero_omniknight/mjz_omniknight_repel.lua"
+				"Function"		"OnSpellStart"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_mjz_omniknight_repel"
+			{
+				"IsBuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%duration"
+				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_repel_buff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"States"
+				{
+					// "MODIFIER_STATE_MAGIC_IMMUNE"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magical_resistance_bonus"	// 魔法抗性
+					// "MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING"			"%status_resistance_bonus"	// 状态抗性	
+				}
+			}
+		}
+	}
+
+	

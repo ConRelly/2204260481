@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link"				    "Soul Link"
+	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link_Description"	    "The pet gets the owner's attribute bonus."
+	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link_Lore"	    		"I like pets."
+	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link_bonus_damage_pct"	"%Damage Bonus: "
+	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link_bonus_health_pct"	"%Health Bonus: "
+	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link_attack_range_pct"	"%Attack Range: "
+

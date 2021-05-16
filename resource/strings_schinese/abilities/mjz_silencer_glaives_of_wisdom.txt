@@ -1,0 +1,15 @@
+
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom"				"智慧之刃"
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_Description"	"沉默术士用他的智慧强化刀刃，造成基于他智力值的额外伤害。\n\n可用神杖升级。"
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_Lore"			"尽管无法使用传统咒语，诺崇的风蚀之寒血统带给他一种诡异的智慧，他把它用在物理战斗上。"
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_Aghanim_Description"	"智慧之刃有几率造成暴击伤害。"
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_intellect_damage_pct"	"%智力值伤害系数："
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_heap_range"			"敌人死亡范围："
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_heap_amount"			"每次死亡智力加成："
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_heap_amount_hero"		"每次死亡智力加成（英雄）： "
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_crit_chance_scepter"			"%神杖升级暴击几率："
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_crit_multiplier_scepter"		"%神杖升级暴击伤害："
+	"DOTA_Tooltip_modifier_mjz_silencer_glaives_of_wisdom_heap"				"智力堆积"
+	"DOTA_Tooltip_modifier_mjz_silencer_glaives_of_wisdom_heap_Description"	"任何敌方在925范围内死亡，沉默术士就能获得智力。"
+
+	

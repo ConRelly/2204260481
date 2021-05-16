@@ -1,0 +1,7 @@
+    
+	"DOTA_Tooltip_ability_mjz_lifestealer_anabolic_frenzy"				    "Anabolic Frenzy"
+	"DOTA_Tooltip_ability_mjz_lifestealer_anabolic_frenzy_Description"	    "Increases attack speed and movement of N'aix."
+	"DOTA_Tooltip_ability_mjz_lifestealer_anabolic_frenzy_bonus_move_speed_pct"		"%Movement Speed Bonus: "
+	"DOTA_Tooltip_ability_mjz_lifestealer_anabolic_frenzy_bonus_attack_speed"		"Attack Speed Bonus: "
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_anabolic_frenzy_move"   			"+11% Anabolic Frenzy Move Speed Bonus"
+	

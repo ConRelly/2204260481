@@ -1,0 +1,13 @@
+    
+	"DOTA_Tooltip_ability_mjz_doom_bringer_infernal_blade"				    "阎刃"
+	"DOTA_Tooltip_ability_mjz_doom_bringer_infernal_blade_Description"	    "末日挥舞他的炽烈之剑，将敌人点燃。"
+	"DOTA_Tooltip_ability_mjz_doom_bringer_infernal_blade_Lore"	    		"路西法很乐意与他人分享自己被放逐时身受的火焰烙印。"
+	"DOTA_Tooltip_ability_mjz_doom_bringer_infernal_blade_cast_range"			"施法距离："
+	"DOTA_Tooltip_ability_mjz_doom_bringer_infernal_blade_burn_base_damage"			"每秒基础伤害："
+	"DOTA_Tooltip_ability_mjz_doom_bringer_infernal_blade_burn_strength_damage_pct"	"%每秒力量伤害："
+	"DOTA_Tooltip_ability_mjz_doom_bringer_infernal_blade_burn_duration"			"灼烧持续时间："
+	"DOTA_Tooltip_ability_mjz_doom_bringer_infernal_blade_stun_duration"			"眩晕持续时间："
+	"DOTA_Tooltip_modifier_mjz_doom_bringer_infernal_blade_burn"					"阎刃灼烧"
+	"DOTA_Tooltip_modifier_mjz_doom_bringer_infernal_blade_burn_Description"	    "每秒造成伤害"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_doom_bringer_infernal_blade_strength"	    "+{s:value}% 阎刃力量伤害"
+	

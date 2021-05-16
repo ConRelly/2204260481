@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight"				    "月光之下"
+	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_Description"	    "露娜攻击敌人有一定概率造成额外伤害。"
+	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_Lore"	    	"月亮出来了吗？"
+	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_Note0"	    	"如果露娜没有升级月光，将无法造成伤害，但是变为黑夜效果有效。"
+	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_proc_chance"		"%几率："
+	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_beam_damage"		"伤害："
+	

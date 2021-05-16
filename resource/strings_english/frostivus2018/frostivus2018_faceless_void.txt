@@ -1,0 +1,20 @@
+
+"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_lock"				"Time Lock"
+		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_lock_Description"	"Adds the chance for an attack to lock an enemy unit in time, <font color='#70EA72'>as well as any other units within its radius.</font>"
+		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_lock_Lore"			"The strike of the Faceless Void lands with dimension shifting force."
+		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_lock_Note1"			"Does not stack with Skull Basher."
+		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_lock_Note0"			"Stun works on Spell Immune units."
+		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_lock_chance_pct"		"%CHANCE:"
+		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_lock_duration"		"DURATION:"
+		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_lock_bonus_damage"	"BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_lock_radius"			"RADIUS:"
+		
+		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_walk"					"Time Walk"
+		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_walk_Description"		"Rushes to a target location while backtracking any damage taken the last %backtrack_duration% seconds. <font color='#70EA72'>Applies damage to units passed through.</font>"
+		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_walk_Lore"				"Darkterror tears a hole in time, passing through Claszureme, and appearing back in an instant."
+		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_walk_Note0"				"Faceless Void is invulnerable while using Time Walk."
+		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_walk_range"				"RANGE:"
+		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_walk_backtrack_duration"	"BACKTRACK DURATION:"
+		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_walk_damage"				"<font color='#70EA72'>DAMAGE:</font>"
+		
+		

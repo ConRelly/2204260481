@@ -1,0 +1,7 @@
+    
+	"DOTA_Tooltip_ability_mjz_riki_backstab"				    "背刺"
+	"DOTA_Tooltip_ability_mjz_riki_backstab_Description"	    "发动攻击时，会附加基于敏捷的额外伤害。"
+	"DOTA_Tooltip_ability_mjz_riki_backstab_Lore"	    		"隐形刺客从不忌讳使用肮脏的战斗手法，尤其擅长从对手的背后发动攻击。"
+	"DOTA_Tooltip_ability_mjz_riki_backstab_agility_damage"		"%敏捷伤害系数："
+	"DOTA_Tooltip_ability_mjz_riki_backstab_health_regen"		"生命恢复加成："
+	

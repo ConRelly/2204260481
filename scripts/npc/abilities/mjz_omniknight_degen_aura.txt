@@ -1,0 +1,101 @@
+
+	//=================================================================================================================
+	// Omniknight: Degen Aura			退化光环
+	//=================================================================================================================
+	"mjz_omniknight_degen_aura"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"omniknight_degen_aura"		// "mjz_omniknight_degen_aura"
+		
+		"AbilityCastRange"				"500"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed_bonus"			"-10 -18 -26 -34"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_bonus"			"-10 -18 -26 -34"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"500"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"think_interval"		"1.4"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+			"particle"	"particles/units/heroes/hero_omniknight/omniknight_degen_aura_debuff.vpcf"
+		}
+
+		"Modifiers"
+		{
+			"modifier_mjz_omniknight_degen_aura"
+			{
+				"Passive" 			"1"
+				"IsHidden" 			"1"
+				"IsBuff"			"1"
+
+				"Aura" 				"modifier_mjz_omniknight_degen_aura_effect"
+				"Aura_Radius" 		"%radius"
+				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+				"Aura_Flags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+
+			"modifier_mjz_omniknight_degen_aura_effect"
+			{
+				"IsDebuff"			"1"
+				"EffectName"		"particles/units/heroes/hero_omniknight/omniknight_degen_aura_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%speed_bonus"
+					// "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_bonus"
+				}
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/hero_omniknight/mjz_omniknight_degen_aura.lua"
+						"Function"		"OnCreatedAura"
+					}
+				}
+
+				// "ThinkInterval"  "%think_interval"
+				// "OnIntervalThink"
+				// {
+				// 	"RunScript"
+				// 	{
+				// 		"ScriptFile"	"abilities/hero_omniknight/mjz_omniknight_degen_aura.lua"
+				// 		"Function"		"OnIntervalThink"
+				// 	}
+				// }
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/hero_omniknight/mjz_omniknight_degen_aura.lua"
+						"Function"		"OnDestroyAura"
+					}
+				}
+			}
+		}
+	}
+	

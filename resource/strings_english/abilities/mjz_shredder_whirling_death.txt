@@ -1,0 +1,8 @@
+
+	"DOTA_Tooltip_ability_mjz_shredder_whirling_death"				"Whirling Death"
+	"DOTA_Tooltip_ability_mjz_shredder_whirling_death_Description"	"Timbersaw whirls extremely sharp edges, damaging enemies and destroying trees around him in an area.  "
+	"DOTA_Tooltip_ability_mjz_shredder_whirling_death_Lore"			"In the case that Rizzrack gets surrounded by the the vines and plants of his nightmares, he has an immediate chainsaw defense."
+	"DOTA_Tooltip_ability_mjz_shredder_whirling_death_radius"			"RADIUS:"
+	"DOTA_Tooltip_ability_mjz_shredder_whirling_death_base_damage"		"BASE DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_shredder_whirling_death_str_damage_pct"	"%BONUS STRENGTH DAMAGE:"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_shredder_whirling_death_strength"		"+100% Whirling Death Strength Damage"

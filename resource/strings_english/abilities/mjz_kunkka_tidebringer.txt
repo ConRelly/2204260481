@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer"				    "Tidebringer"
+	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_Description"	    "Kunkka's legendary sword grants increased damage and cleaves a large area of effect in front of him for a single strike."
+	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_Lore"	    		"A lost Claddish soul inhabits Kunkka's trusty Tidebringer, empowering it to destroy demons of the Cataract."
+	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_cleave_distance"		"Cleave Distance: "
+	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_strength_damage_pct"	"%Strength as Damage: "
+	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_cleave_damage"			"%Cleave Damage: "
+	

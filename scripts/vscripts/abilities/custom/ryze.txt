@@ -1,0 +1,342 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Ryze: Arcane Mastery
+	//=================================================================================================================
+	"ryze_arcane_mastery"
+	{
+		// Ability Technical Aspect
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/custom/ryze.lua"
+		"AbilityTextureName"			"arcane_mastery"
+		"MaxLevel"						"1"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
+		}
+		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Casting
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_pct"			"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_per"			"150"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ryze: Overload
+	//=================================================================================================================
+	"ryze_overload"
+	{
+		// Ability Technical Aspect
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ryze.lua"
+		"AbilityTextureName"			"storm_spirit_ball_lightning"
+		"MaxLevel"						"5"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
+			"particle"	"particles/units/heroes/hero_bloodseeker/bloodseeker_bloodrage.vpcf"
+			"model" "models/heroes/pangolier/pangolier_gyroshell.vmdl"
+			"model" "models/heroes/pangolier/pangolier_gyroshell2.vmdl"
+		}
+		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"	
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.16"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"6"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"40"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rune_duration"		"4.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_runes"			"2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movespeed"			"20 25 30 35 40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"movespeed_duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"			"65 90 115 140 165"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_damage"			"1.5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"flux_damage"			"10"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"proj_speed"			"2000"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"proj_width"			"100"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"proj_range"			"1000"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"			"750"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ryze: Rune Prison
+	//=================================================================================================================
+	"ryze_rune_prison"
+	{
+		// Ability Technical Aspect
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ryze.lua"
+		"AbilityTextureName"			"storm_spirit_electric_vortex"
+		"MaxLevel"						"5"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+			"particle"	"particles/units/heroes/hero_bloodseeker/bloodseeker_bloodrage.vpcf"
+		}
+		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"615"
+		"AbilityCastPoint"				"0.16"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"13 12 11 10 9"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"40 55 70 85 100"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"		"1.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"			"35"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"			"80 100 120 140 160"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_damage"			"2.0"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ryze: Spell Flux
+	//=================================================================================================================
+	"ryze_spell_flux"
+	{
+		// Ability Technical Aspect
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ryze.lua"
+		"AbilityTextureName"			"storm_spirit_overload"
+		"MaxLevel"						"5"
+		"HasScepterUpgrade"			"1"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
+			"particle"	 "particles/units/heroes/hero_windrunner/windrunner_windrun_slow.vpcf"
+			"particle"	"particles/units/heroes/hero_void_spirit/pulse/void_spirit_pulse.vpcf"
+		}
+		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"615"
+		"AbilityCastPoint"				"0.16"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"3.25 3.0 2.75 2.5 2.25"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"40 55 70 85 100"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"		"3.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"			"350"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"flux_radius"			"550"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"			"60 80 100 120 140"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_damage"			"1.0"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Ryze: Realm Warp
+	//=================================================================================================================
+	"ryze_realm_warp"
+	{
+		// Ability Technical Aspect
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ryze.lua"
+		"AbilityTextureName"			"wisp_relocate"
+		"MaxLevel"						"3"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_void_spirit.vsndevts"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+			"particle"	"particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
+		}
+		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityType"						"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"3000"
+		"AbilityCastPoint"				"0.2"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"210 180 150"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"channel_duration"		"2.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"475"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"phase_duration"			"0.75"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"overload_damage"			"40 70 100"
+			}
+		}
+	}
+}

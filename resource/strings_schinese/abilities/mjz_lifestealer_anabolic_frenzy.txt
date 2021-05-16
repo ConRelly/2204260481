@@ -1,0 +1,7 @@
+    
+	"DOTA_Tooltip_ability_mjz_lifestealer_anabolic_frenzy"				    "代谢性狂热"
+	"DOTA_Tooltip_ability_mjz_lifestealer_anabolic_frenzy_Description"	    "被动增加食尸鬼的攻击速度和移动速度。"
+	"DOTA_Tooltip_ability_mjz_lifestealer_anabolic_frenzy_bonus_move_speed_pct"		"%移动速度加成："
+	"DOTA_Tooltip_ability_mjz_lifestealer_anabolic_frenzy_bonus_attack_speed"		"攻击速度加成："
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_anabolic_frenzy_move"   			"+11% 代谢性狂热移动速度"
+	

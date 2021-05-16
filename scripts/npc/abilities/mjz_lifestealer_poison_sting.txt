@@ -1,0 +1,56 @@
+
+	"mjz_lifestealer_poison_sting"
+	{
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"abilities/hero_lifestealer/mjz_lifestealer_poison_sting.lua"
+	
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+		"SpellImmunityType"		"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"	"SPELL_DISPELLABLE_YES"
+		"AbilityTextureName"	"mjz_lifestealer_poison_sting"
+
+		"MaxLevel"						"1"
+		"LearnOnSpawn"					"1"		// 出生时学习此技能、值为等级
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"2"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_poison_sting_duration"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"10"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"move_slow_pct"			"-20"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_venomancer/venomancer_gale_poison_debuff.vpcf"
+			"particle"	"particles/status_fx/status_effect_poison_venomancer.vpcf"
+			"particle"	"particles/msg_fx/msg_spell.vpcf"
+		}
+	}
+	"special_bonus_unique_mjz_poison_sting_duration"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"8"
+			}
+		}
+	}

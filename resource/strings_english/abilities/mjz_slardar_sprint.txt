@@ -1,0 +1,9 @@
+
+	"DOTA_Tooltip_ability_mjz_slardar_sprint"				    "Guardian Sprint"
+	"DOTA_Tooltip_ability_mjz_slardar_sprint_Description"	    "Slardar slithers ahead, moving significantly faster and increases attack speed."
+	"DOTA_Tooltip_ability_mjz_slardar_sprint_Lore"	    		"As Slardar has made the transition from the Deeps, it has been necessary to use his powerful tail for sprinting instead of swimming."
+	"DOTA_Tooltip_ability_mjz_slardar_sprint_bonus_move_speed"			"%BONUS MOVEMENT SPEED:"
+	"DOTA_Tooltip_ability_mjz_slardar_sprint_bonus_attack_speed"		"BONUS ATTACK SPEED:"
+	"DOTA_Tooltip_ability_mjz_slardar_sprint_health_cost_per_second"	"HEALTH COST PER SECOND:"
+	"DOTA_Tooltip_modifier_mjz_slardar_sprint"					"Guardian Sprint"
+	"DOTA_Tooltip_modifier_mjz_slardar_sprint_Description"	   	"Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and Attack Speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."

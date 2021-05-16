@@ -1,0 +1,10 @@
+
+	"npc_dota_hero_bloodseeker_mjz"			// 血魔
+	{
+		"override_hero"			"npc_dota_hero_bloodseeker"
+		"Ability3"				"mjz_bloodseeker_thirst"
+		"Ability4"				"mjz_bloodseeker_bloodrage_autocast"
+		//"Ability6"				"mjz_bloodseeker_rupture"
+		//"Ability14"				"special_bonus_unique_mjz_bloodseeker_rupture_01"
+		"Ability17"				"special_bonus_unique_mjz_bloodseeker_thirst_stacks"
+	}

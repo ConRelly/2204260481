@@ -1,0 +1,98 @@
+
+
+    "viper_poison_attack"
+	{
+		"AbilityCooldown"       "6.0 4.0 2.0 1.0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"            "FIELD_FLOAT"
+				"duration"            "4"
+			}
+			"02"
+			{
+				"var_type"            "FIELD_FLOAT"
+				"damage"              "1.0 3.5 4.5 6.0"
+			}
+		}
+	}
+	"viper_corrosive_skin"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"		"8 16 24 32"
+				"LinkedSpecialBonus"	"special_bonus_unique_viper_1"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"16 32 48 64"
+				"LinkedSpecialBonus"	"special_bonus_unique_viper_1"
+			}
+		}
+	}
+	"viper_nethertoxin"
+	{
+		"AbilityCooldown"				"18.0"
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_damage"			"70 100 130 160"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"		"400"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"			"3.0"
+			}
+		}
+	}
+	"viper_viper_strike"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"135 240 365"
+				"LinkedSpecialBonus"	"special_bonus_unique_viper_2"
+			}
+		}
+	}
+    "special_bonus_unique_viper_1"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				        "20"
+			}
+		}
+	}
+	"special_bonus_unique_viper_2"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				        "200"
+			}
+		}
+	}

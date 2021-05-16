@@ -1,0 +1,44 @@
+
+	"alchemist_chemical_rage"
+	{
+		"AbilityCooldown"				"55.0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"45.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"70 90 120"
+				"LinkedSpecialBonus"		"special_bonus_unique_alchemist_4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"20"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movespeed"		"80 100 120"
+				"LinkedSpecialBonus"		"special_bonus_unique_alchemist_6"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"scepter_bonus_damage"		"30"
+				"RequiresScepter"			"1"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"scepter_spell_amp"		"6"
+				"RequiresScepter"			"1"
+			}
+		}
+	}
+	

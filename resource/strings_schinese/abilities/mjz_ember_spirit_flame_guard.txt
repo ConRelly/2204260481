@@ -1,0 +1,13 @@
+
+	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard"					"烈火罩"
+	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_Description"		"灰烬之灵用火焰之环将自己包裹起来，降低他受到的伤害。烈火罩对灰烬之灵周围的敌人造成持续伤害。"
+	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_Lore"			"近身之敌，自讨苦吃。"
+	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_radius"					"作用范围："
+	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_damage_per_second"		"每秒造成伤害："
+	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_bonus_damage_pct"		"%攻击力加成："
+	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_damage_reduction_pct"	"%伤害减免："
+	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_duration"				"持续时间："
+	"DOTA_Tooltip_modifier_mjz_ember_spirit_flame_guard"				"烈火罩"
+	"DOTA_Tooltip_modifier_mjz_ember_spirit_flame_guard_Description"	"吸收伤害，并在一定范围内造成魔法伤害"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_ember_spirit_flame_guard_damage_per"		"+60 烈火罩每秒伤害"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_damage"	"+2% 烈火罩攻击力加成"

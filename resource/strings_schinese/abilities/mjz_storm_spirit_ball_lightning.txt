@@ -1,0 +1,15 @@
+    
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning"								"球状闪电"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Description"					"风暴之灵变成不稳定的电流在战场上横冲直撞，直到他的魔法耗尽或到达目标才停下。"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Lore"							"风暴来袭。"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Note0"						"行进过程中可以使用技能和物品。"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Note1"						"该技能可以摧毁树木。"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Note2"						"风暴之灵在球状闪电期间是无敌状态。"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_radius"						"作用范围："
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_bonus_move_speed"				"%速度："
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_damage"						"伤害："
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_mana_percentage"				"%魔法消耗："
+	"DOTA_Tooltip_modifier_mjz_storm_spirit_ball_lightning_buff"					"球状闪电"
+	"DOTA_Tooltip_modifier_mjz_storm_spirit_ball_lightning_buff_Description"	    "风暴之灵变成不稳定的电流在战场上横冲直撞，直到他的魔法耗尽或到达目标才停下。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_storm_spirit_ball_lightning_01"		"+{s:value} 球状闪电伤害"
+	

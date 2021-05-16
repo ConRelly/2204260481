@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing"				    "月之祝福"
+	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing_Description"	    "提升露娜和附近友方英雄的主属性，而露娜受到福佑后夜间视野上升。"
+	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing_Lore"	    		"月之女神对她的族人微笑。"
+	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing_Note0"	    	"将露娜的夜间视野增加到总共1000/1200/1400/1600"
+	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing_radius"			"范围："
+	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing_tooltip_bonus_night_vision"		"夜间视野加成："
+	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing_primary_attribute_per"	"%主属性加成："
+	"DOTA_Tooltip_modifier_mjz_luna_lunar_blessing_buff"					"月之祝福"
+	"DOTA_Tooltip_modifier_mjz_luna_lunar_blessing_buff_Description"	    ""
+	

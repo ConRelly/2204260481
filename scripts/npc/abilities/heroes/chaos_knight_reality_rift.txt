@@ -1,0 +1,61 @@
+"DOTAAbilities"
+{
+  //=================================================================================================================
+  // Chaos Knight: Reality Rift
+  //=================================================================================================================
+  "chaos_knight_reality_rift"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "5427"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+    "AbilityUnitTargetTeam"                               "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"                               "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "SpellImmunityType"                                   "SPELL_IMMUNITY_ENEMIES_NO"
+    "SpellDispellableType"                                "SPELL_DISPELLABLE_YES"
+    "FightRecapLevel"                                     "1"
+
+    "MaxLevel"                                            "6"
+    "RequiredLevel"                                       "1"
+    "LevelsBetweenUpgrades"                               "3"
+
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"                                    "550 600 650 700 950 1800"
+    "AbilityCastPoint"                                    "0.3"
+
+    // Time
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"                                     "15 12 9 6 6 6"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"                                     "50"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "cast_range"                                      "550 700 850 1100 1550 2800"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "pull_distance"                                   "250 300 350 400 450 500"
+      }
+      "03"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "armor_reduction"                                 "3 7 10 15 19 27"
+      }
+      "04"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "duration"                                        "6"
+      }
+    }
+  }
+}

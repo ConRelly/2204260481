@@ -1,0 +1,29 @@
+
+	"mjz_medusa_mana_snake"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_medusa/mjz_medusa_mana_snake.lua"
+		"AbilityTextureName"			"mjz_medusa_mana_snake"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		"MaxLevel"						"1"
+		"BaseLevel"						"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_steal"			"14"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/custom/mjz_manasteal.vpcf"
+		}
+	}

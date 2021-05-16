@@ -1,0 +1,36 @@
+	
+
+		//>>>>	MJZ Skadi LVL 2
+		"DOTA_Tooltip_modifier_item_mjz_skadi_debuff"					"Eye of Skadi LVL Cold Attack"
+		"DOTA_Tooltip_modifier_item_mjz_skadi_debuff_Description"		"Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+		"DOTA_Tooltip_Ability_item_mjz_skadi_2"	                        "Eye of Skadi LVL 2"
+		"DOTA_Tooltip_ability_item_mjz_skadi_2_Description"				"<h1>Passive: Cold Attack</h1>Attacks lower enemy attack speed by %cold_attack_speed%%% and movement speed by %cold_movement_speed%. Lasts %cold_duration_melee% seconds when used by melee heroes, and %cold_duration_ranged% seconds when used by ranged."
+		"DOTA_Tooltip_ability_item_mjz_skadi_2_bonus_all_stats"			"+$all"
+		"DOTA_Tooltip_ability_item_mjz_skadi_2_bonus_health"			"+$health"
+		"DOTA_Tooltip_ability_item_mjz_skadi_2_bonus_mana"				"+$mana"
+		"DOTA_Tooltip_ability_item_mjz_skadi_2_Lore"					"Extremely rare artifact, guarded by the azure dragons."
+		//<<<<
+		//>>>>	MJZ Skadi LVL 3
+		"DOTA_Tooltip_Ability_item_mjz_skadi_3"	                        "Eye of Skadi LVL 3"
+		"DOTA_Tooltip_ability_item_mjz_skadi_3_Description"				"<h1>Passive: Cold Attack</h1>Attacks lower enemy attack speed by %cold_attack_speed%%% and movement speed by %cold_movement_speed%. Lasts %cold_duration_melee% seconds when used by melee heroes, and %cold_duration_ranged% seconds when used by ranged."
+		"DOTA_Tooltip_ability_item_mjz_skadi_3_bonus_all_stats"			"+$all"
+		"DOTA_Tooltip_ability_item_mjz_skadi_3_bonus_health"			"+$health"
+		"DOTA_Tooltip_ability_item_mjz_skadi_3_bonus_mana"				"+$mana"
+		"DOTA_Tooltip_ability_item_mjz_skadi_3_Lore"					"Extremely rare artifact, guarded by the azure dragons."
+		//<<<<
+		//>>>>	MJZ Skadi LVL 4
+		"DOTA_Tooltip_Ability_item_mjz_skadi_4"	                        "Eye of Skadi LVL 4"
+		"DOTA_Tooltip_ability_item_mjz_skadi_4_Description"				"<h1>Passive: Cold Attack</h1>Attacks lower enemy attack speed by %cold_attack_speed%%% and movement speed by %cold_movement_speed%. Lasts %cold_duration_melee% seconds when used by melee heroes, and %cold_duration_ranged% seconds when used by ranged."
+		"DOTA_Tooltip_ability_item_mjz_skadi_4_bonus_all_stats"			"+$all"
+		"DOTA_Tooltip_ability_item_mjz_skadi_4_bonus_health"			"+$health"
+		"DOTA_Tooltip_ability_item_mjz_skadi_4_bonus_mana"				"+$mana"
+		"DOTA_Tooltip_ability_item_mjz_skadi_4_Lore"					"Extremely rare artifact, guarded by the azure dragons."
+		//<<<<
+		//>>>>	MJZ Skadi LVL 5
+		"DOTA_Tooltip_Ability_item_mjz_skadi_5"	                        "Eye of Skadi LVL 5"
+		"DOTA_Tooltip_ability_item_mjz_skadi_5_Description"				"<h1>Passive: Cold Attack</h1>Attacks lower enemy attack speed by %cold_attack_speed%%% and movement speed by %cold_movement_speed%. Lasts %cold_duration_melee% seconds when used by melee heroes, and %cold_duration_ranged% seconds when used by ranged."
+		"DOTA_Tooltip_ability_item_mjz_skadi_5_bonus_all_stats"			"+$all"
+		"DOTA_Tooltip_ability_item_mjz_skadi_5_bonus_health"			"+$health"
+		"DOTA_Tooltip_ability_item_mjz_skadi_5_bonus_mana"				"+$mana"
+		"DOTA_Tooltip_ability_item_mjz_skadi_5_Lore"					"Extremely rare artifact, guarded by the azure dragons."
+		//<<<<

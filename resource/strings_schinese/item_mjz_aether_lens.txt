@@ -1,0 +1,11 @@
+
+		//>>>>	MJZ 可食用的以太透镜
+		"DOTA_Tooltip_Ability_item_mjz_aether_lens"	                        "可食用的以太透镜"
+		"DOTA_Tooltip_ability_item_mjz_aether_lens_Description"				"<h1>主动：食用</h1><font color='#00FF40'>永久增加指向性技能和物品的施法距离。</font> \n\n<h1>被动：以太焦点</h1>指向性技能和物品的施法距离增加%cast_range_bonus%。"
+		"DOTA_Tooltip_ability_item_mjz_aether_lens_bonus_mana"				"+$mana"
+		"DOTA_Tooltip_ability_item_mjz_aether_lens_bonus_mana_regen"		"+魔法恢复速率"
+		"DOTA_Tooltip_ability_item_mjz_aether_lens_Lore"					"装饰着最后一口气的咒语，这件礼物是一位行将就木的法师赠予他体弱多病的孩子。"
+		"DOTA_Tooltip_modifier_item_mjz_aether_lens_stats"					"可食用的以太透镜"
+		"DOTA_Tooltip_modifier_item_mjz_aether_lens_stats_Description"		"永久增加指向性技能和物品的施法距离。"
+		//<<<<
+		

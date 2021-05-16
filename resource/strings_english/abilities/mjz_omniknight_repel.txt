@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_omniknight_repel"				    "Repel"
+	"DOTA_Tooltip_ability_mjz_omniknight_repel_Description"	    "Creates a divine barrier around an ally which grants them increased Status Resistance and %magical_resistance_bonus%%% resistance to Magic Damage."
+	"DOTA_Tooltip_ability_mjz_omniknight_repel_Lore"	    	"When faced with the pit of sacrifice, Purist's resilience to magic was tested and affirmed."
+	"DOTA_Tooltip_ability_mjz_omniknight_repel_Note0"	    	""
+	"DOTA_Tooltip_ability_mjz_omniknight_repel_duration"		"Duration: "
+	"DOTA_Tooltip_modifier_mjz_omniknight_repel"				"Repel"
+	

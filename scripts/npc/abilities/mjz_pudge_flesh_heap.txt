@@ -1,0 +1,54 @@
+	
+	"mjz_pudge_flesh_heap"
+	{
+		"BaseClass"						"ability_lua"	//	"ability_datadriven"
+		"ScriptFile"					"abilities/hero_pudge/mjz_pudge_flesh_heap.lua"
+		"AbilityTextureName"			"mjz_pudge_flesh_heap"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"magic_damage_reduction_pct"	"42 56 60 74"
+				"LinkedSpecialBonus"			"special_bonus_unique_mjz_pudge_0301"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"primary_attribute_per"			"30 40 50 60"
+				"LinkedSpecialBonus"			"special_bonus_unique_mjz_pudge_0302"
+			}
+		}
+	}
+	"special_bonus_unique_mjz_pudge_0301"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"14"
+			}
+		}
+	}
+	"special_bonus_unique_mjz_pudge_0302"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"120"
+			}
+		}
+	}

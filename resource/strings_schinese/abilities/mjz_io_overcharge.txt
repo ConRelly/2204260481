@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_io_overcharge"				"过载"
+	"DOTA_Tooltip_ability_mjz_io_overcharge_Description"	"艾欧获得攻击速度加成并降低受到的伤害，代价是每秒流失一定百分比的当前生命值。如果艾欧和一个友军连接，该单位也会获得增益效果。"
+	"DOTA_Tooltip_ability_mjz_io_overcharge_Lore"			"从所有位面的世界吸取一切物质的能量，艾欧开始展示时间的真相。"
+	"DOTA_Tooltip_ability_mjz_io_overcharge_drain_pct_tooltip"	"%生命流失："
+	"DOTA_Tooltip_ability_mjz_io_overcharge_bonus_attack_speed"	"攻击速度："
+	"DOTA_Tooltip_ability_mjz_io_overcharge_bonus_damage_pct"	"%受到伤害降低："
+	"DOTA_Tooltip_ability_mjz_io_overcharge_Note0"			"艾欧用羁绊连接的单位也会得到攻击速度和伤害减免的加成，但是只有艾欧会不断流失生命。"
+	"DOTA_Tooltip_modifier_mjz_io_overcharge_buff"					"过载"
+	"DOTA_Tooltip_modifier_mjz_io_overcharge_buff_Description"		"攻击速度提升%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%，受到伤害降低%dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%。"

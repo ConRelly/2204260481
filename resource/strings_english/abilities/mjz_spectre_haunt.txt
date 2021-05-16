@@ -1,0 +1,21 @@
+    
+	"DOTA_Tooltip_ability_mjz_spectre_haunt"				    "Haunt"
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_Description"	    ""
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_aghanim_description"			"Grants new ability: Shadow Step. Allows you to perform a single target unit Haunt"
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_Lore"	    		""
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_Note0"	    		"Illusions are uncontrollable"
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_illusion_duration"	"Illusion Duration: "
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_illusion_count"		"Illusion Count: "
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_tooltip_outgoing"	"%Illusion Damage Dealt: "
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_tooltip_illusion_total_damage_incoming"		"%Illusion Damage Taken: "
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_illusion_heal_damage_per"		"%Illusion Heal Damage: "
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_hero_heal_damage_per"			"%Hero Heal Damage: "
+
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_single"                         "Shadow Step"
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_single_Description"             "Allows you to perform a single target unit Haunt."
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_single_Lore"             "With great focus of will, Mercurial can sometimes limit the extent of her division."
+	// "DOTA_Tooltip_ability_mjz_spectre_haunt_single_duration"                "DURATION:"
+	// "DOTA_Tooltip_ability_mjz_spectre_haunt_single_tooltip_outgoing"		"%HAUNT DAMAGE:"
+	// "DOTA_Tooltip_ability_mjz_spectre_haunt_single_tooltip_illusion_total_damage_incoming"		"%HAUNT DAMAGE TAKEN:"
+	// "DOTA_Tooltip_ability_mjz_spectre_haunt_single_tooltip_cooldown"		"COOLDOWN:"
+

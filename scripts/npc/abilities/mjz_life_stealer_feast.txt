@@ -1,0 +1,41 @@
+
+	"mjz_life_stealer_feast"
+	{
+		"BaseClass"				"ability_lua"
+		"ScriptFile"			"abilities/hero_lifestealer/mjz_life_stealer_feast.lua"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"		"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"	"mjz_life_stealer_feast"
+
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"str_damage_pct"		"50 100 150 250"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_life_stealer_feast_strength"
+			}
+
+		}
+
+		"precache"
+		{
+			"soundfile"         "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+			"particle"          "particles/units/heroes/hero_life_stealer/life_stealer_feast.vpcf"
+		}
+	}
+	"special_bonus_unique_mjz_life_stealer_feast_strength"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"250"
+			}
+		}
+	}

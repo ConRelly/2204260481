@@ -1,0 +1,5 @@
+
+	//>>>>	
+	"DOTA_Tooltip_Ability_item_mjz_ability_point"	                        "技能点"
+	"DOTA_Tooltip_Ability_item_mjz_ability_point_description"	            "增加一个技能点。"
+	//<<<<

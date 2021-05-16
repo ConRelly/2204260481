@@ -1,0 +1,13 @@
+
+	"DOTA_Tooltip_ability_mjz_techies_suicide"							"爆破起飞！"
+	"DOTA_Tooltip_ability_mjz_techies_suicide_Description"				"工程师冲到敌人中间，在相遇时引爆炸药，造成大量范围伤害，并沉默敌人。引爆时会对工程师造成最大生命值%hp_cost%%的伤害。"
+	"DOTA_Tooltip_ability_mjz_techies_suicide_Lore"				"我们是要去哪？"
+	"DOTA_Tooltip_ability_mjz_techies_suicide_damage"					"基础伤害："
+	"DOTA_Tooltip_ability_mjz_techies_suicide_radius"				    "作用范围："
+	"DOTA_Tooltip_ability_mjz_techies_suicide_silence_duration"			"沉默持续时间："
+	"DOTA_Tooltip_ability_mjz_techies_suicide_hp_cost"				    "%最大生命值伤害："
+	"DOTA_Tooltip_ability_mjz_techies_suicide_Note0"			"若使用本技能后死亡将视为自杀，敌方英雄将不会获得金钱和经验。"
+	"DOTA_Tooltip_ability_mjz_techies_suicide_Note1"			"即使自杀，工程师依然能获得杀死的敌方英雄对应的经验值。"
+	"DOTA_Tooltip_ability_mjz_techies_suicide_Note2"			"本技能将摧毁树木。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_techies_suicide_02"			"+{s:value} 爆破起飞伤害"
+	

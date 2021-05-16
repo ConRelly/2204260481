@@ -1,0 +1,8 @@
+
+"DOTA_Tooltip_ability_mjz_general_granite_golem_hp_aura"								"Granite Aura"
+"DOTA_Tooltip_ability_mjz_general_granite_golem_hp_aura_Description"					"Increases the health capacity of nearby units."
+"DOTA_Tooltip_ability_mjz_general_granite_golem_hp_aura_bonus_hp"					"%BONUS HP:"
+"DOTA_Tooltip_ability_mjz_general_granite_golem_hp_aura_radius"						"RADIUS:"
+
+"DOTA_Tooltip_modifier_mjz_general_granite_golem_hp_aura_bonus"						"Granite Aura"
+"DOTA_Tooltip_modifier_mjz_general_granite_golem_hp_aura_bonus_Description"			"Health increased by %dMODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE%%%."

@@ -1,0 +1,7 @@
+    
+	"DOTA_Tooltip_ability_mjz_undying_punch"				    "Undying Punch"
+	"DOTA_Tooltip_ability_mjz_undying_punch_Description"	    "You attacks damage enemies and heal himself for a percentage of himself max health.<font color='red'>Only in Flesh Golem status. </font>"
+	"DOTA_Tooltip_ability_mjz_undying_punch_Lore"	    		""
+	"DOTA_Tooltip_ability_mjz_undying_punch_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_undying_punch_hp_leech_percent"	"%Max Health: "
+	

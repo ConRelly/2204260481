@@ -1,0 +1,99 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Doom: Devour (Lua version)
+	//=================================================================================================================
+	"doom_devour_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/doom_devour_lua/doom_devour_lua"
+		"AbilityTextureName"			"doom_devour_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"4"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+			"particle"	"particles/units/heroes/hero_doom_bringer/doom_bringer_devour.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"LevelsBetweenUpgrades"         "8"
+		"MaxLevel"                      "5"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200 1700 2200 2500 3500"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"100 95 90 85 80"
+		"AbilityManaCost"				"70"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_gold"			"20 30 40 50 65"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"devour_time"			"15"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"regen"					"5"
+			}
+            "04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"					"275"
+			}
+            "05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"regen_str_multiplier"			"0.1"
+			}
+            "06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"gold_int_multiplier"			"0.1 0.13 0.16 0.19 0.25"
+			}
+            "07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"str_multiplier"					"3.0 4.0 5.0 6.0 7.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"regen_str_multiplier_tooltip"			"10"
+			}
+            "09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"gold_int_multiplier_tooltip"			"10 13 16 19 25"
+			}
+		}
+	}
+}

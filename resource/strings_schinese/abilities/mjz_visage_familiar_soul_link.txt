@@ -1,0 +1,7 @@
+    
+	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link"				    "灵魂链接"
+	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link_Description"	    "召唤物获得召唤者的属性加成。"
+	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link_Lore"	    		"我喜欢宠物。"
+	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link_bonus_damage_pct"	"%攻击力加成："
+	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link_bonus_health_pct"	"%生命值加成："
+	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link_attack_range_pct"	"%攻击力距离："

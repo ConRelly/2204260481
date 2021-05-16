@@ -1,0 +1,30 @@
+	
+
+		//>>>> 	Red Divine Rapier
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv1"							"Red Divine Rapier LVL 1"
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv1_Description"			    "Increases your damage."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv1_Lore"			            "So powerful."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv1_bonus_damage"              "+$damage"
+		
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv2"							"Red Divine Rapier LVL 2"
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv2_Description"			    "Increases your damage."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv2_Lore"			            "So powerful."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv2_bonus_damage"              "+$damage"
+		
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv3"							"Red Divine Rapier LVL 3"
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv3_Description"			   	"Increases your damage."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv3_Lore"			            "So powerful."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv3_bonus_damage"              "+$damage"
+
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv4"							"Red Divine Rapier LVL 4"
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv4_Description"			    "Increases your damage."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv4_Lore"			            "So powerful."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv4_bonus_damage"              "+$damage"
+
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5"							"Red Divine Rapier LVL 5"
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_Description"			    "Increases your damage."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_Lore"			            "So powerful."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_bonus_damage"              "+$damage"
+		//<<<<
+
+

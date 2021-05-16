@@ -1,0 +1,8 @@
+    
+    "DOTA_Tooltip_ability_mjz_pudge_flesh_heap"	            "Flesh Heap"
+    "DOTA_Tooltip_ability_mjz_pudge_flesh_heap_Description"	"Pudge is made of innumerable rotting corpses, giving him extra protection against spells as well as the ability to add more to his bulk."
+    "DOTA_Tooltip_ability_mjz_pudge_flesh_heap_Lore"	    "The Butcher gives new meaning to the words 'meat shield.'"
+    "DOTA_Tooltip_ability_mjz_pudge_flesh_heap_magic_damage_reduction_pct"	        "%MAGIC RESISTANCE:"
+    "DOTA_Tooltip_ability_mjz_pudge_flesh_heap_primary_attribute_per"	            "%BASE STRENGTH BONUS:"
+    "DOTA_Tooltip_ability_special_bonus_unique_mjz_pudge_0301"	"+{s:value}% Flesh Heap Magic Resistance"
+    "DOTA_Tooltip_ability_special_bonus_unique_mjz_pudge_0302"	"+{s:value}% Flesh Heap Strength Bonus"

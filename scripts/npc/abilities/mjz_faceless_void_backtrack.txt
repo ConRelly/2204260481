@@ -1,0 +1,67 @@
+
+	"mjz_faceless_void_backtrack"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjz_faceless_void_backtrack"
+		
+		"MaxLevel"						"1"
+		"LearnOnSpawn"					"1"		// 出生时学习此技能、值为等级
+
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dodge_chance_pct"		"50"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_mjz_faceless_void_backtrack"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+
+				"ThinkInterval"			"0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/hero_faceless_void/mjz_faceless_void_backtrack.lua"
+						"Function"		"BacktrackHealth"
+					}
+				}
+
+				"OnTakeDamage"
+				{
+					"Random"
+					{
+						"Chance"	"%dodge_chance_pct"
+
+						"OnSuccess"
+						{
+							"FireEffect"
+							{
+								"EffectName"		"particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf"
+								"EffectAttachType"	"follow_origin"
+								"Target"			"CASTER"
+							}
+
+							"RunScript"
+							{
+								"ScriptFile"		"abilities/hero_faceless_void/mjz_faceless_void_backtrack.lua"
+								"Function"			"BacktrackHeal"
+							}
+						}
+					}
+				}
+			}			
+		}
+	}
+	

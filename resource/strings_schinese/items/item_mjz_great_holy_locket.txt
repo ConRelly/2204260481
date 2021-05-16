@@ -1,0 +1,9 @@
+
+		//>>>>	MJZ 圣光吊坠
+		"DOTA_Tooltip_ability_item_mjz_great_holy_locket"                                  "圣光吊坠"
+		"DOTA_Tooltip_ability_item_mjz_great_holy_locket_Description"				"<h1>主动：充能</h1>使友方单位目标立刻根据能量点数回复相应的生命和魔法，每点能量恢复%restore_per_charge%点生命和魔法。\n\n<h1>被动：神圣福佑</h1>自身提供的治疗效果提升%heal_increase%%%。" 
+		"DOTA_Tooltip_ability_item_mjz_great_holy_locket_bonus_health"					"+$health"
+		"DOTA_Tooltip_ability_item_mjz_great_holy_locket_bonus_mana"					"+$mana"
+		"DOTA_Tooltip_ability_item_mjz_great_holy_locket_health_regen"				"+$hp_regen"
+		"DOTA_Tooltip_ability_item_mjz_great_holy_locket_bonus_all_stats"					"+$all"			
+		//<<<<

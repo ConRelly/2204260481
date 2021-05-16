@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_meepo_poof"				"忽悠"
+	"DOTA_Tooltip_ability_mjz_meepo_poof_Description"	"通过从大地中汲取神秘的能量，一个米波可以在施法1.5秒后传送至队友或自身所在之处，在离开和到达的区域都造成伤害。"
+	"DOTA_Tooltip_ability_mjz_meepo_poof_Lore"			"有时候打碎一块影墟水晶可以作为自己摆脱陷阱的方法。或是另外一个自己。"
+	"DOTA_Tooltip_ability_mjz_meepo_poof_radius"		"作用范围："
+	"DOTA_Tooltip_ability_mjz_meepo_poof_poof_damage"	"忽悠伤害："
+	"DOTA_Tooltip_ability_mjz_meepo_poof_Note0"			"可以点击小地图施放。"
+	"DOTA_Tooltip_ability_mjz_meepo_poof_Note1"			"可以传送至米波的幻象。"
+
+
+	

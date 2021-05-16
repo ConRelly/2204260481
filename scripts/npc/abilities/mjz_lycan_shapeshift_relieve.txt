@@ -1,0 +1,36 @@
+	
+	//=================================================================================================================
+	// Lycan: Shapeshift Relieve		解除变身			
+	//=================================================================================================================
+	"mjz_lycan_shapeshift_relieve"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_lycan/mjz_lycan_shapeshift_relieve.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"mjz_lycan_shapeshift_relieve"
+
+		"HasScepterUpgrade"				"1"
+		"MaxLevel"						"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.0"
+		"AbilityManaCost"				"0"
+
+		"AbilitySpecial"
+		{
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"think_interval"				"2.5"
+			}
+			"06"
+			{
+				"var_type"									"FIELD_INTEGER"
+				"health_drain_per_second_scepter"			"-1"
+			}
+			"07"
+			{
+				"var_type"									"FIELD_FLOAT"
+				"duration_scepter"							"40"
+			}
+		}
+	}

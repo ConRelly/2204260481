@@ -1,0 +1,13 @@
+    
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom"				"Glaives of Wisdom"
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_Description"	"Silencer enchants his glaives with his wisdom, dealing additional damage based on his Intelligence.\n\nUpgradable by Aghanim's Scepter."
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_Lore"			"Although lacking in traditional incantations, Nortrom's pedigree of the Aeol Drias gives him uncanny wisdom, which he applies to physical combat."
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_Aghanim_Description"	"Glaives of Wisdom has a chance to deal critical strike damage."
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_intellect_damage_pct"	"%INT TO DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_heap_range"			"Enemy Death Radius: "
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_heap_amount"			"Intelligence Bonus per Death: "
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_heap_amount_hero"		"Intelligence Bonus per Death (Hero): "
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_crit_chance_scepter"			"%Scepter Critical Chance: "
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_crit_multiplier_scepter"		"%Scepter Critical Damage:"
+	"DOTA_Tooltip_modifier_mjz_silencer_glaives_of_wisdom_heap"				"Heap Intelligence"
+	"DOTA_Tooltip_modifier_mjz_silencer_glaives_of_wisdom_heap_Description"	"Silencer will gaining Intelligence from any enemy he kills, and any enemy that dies within 925 range."

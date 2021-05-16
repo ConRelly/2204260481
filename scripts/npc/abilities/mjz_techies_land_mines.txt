@@ -1,0 +1,89 @@
+
+    "mjz_techies_land_mines"
+	{
+		"BaseClass"		            "ability_lua"
+		"ScriptFile"		        "abilities/hero_techies/mjz_techies_land_mines.lua"
+		"AbilityTextureName"		"techies_land_mines"
+		"AbilityBehavior"		    "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"		    "SPELL_IMMUNITY_ENEMIES_NO"
+		"HasScepterUpgrade"		    "0"
+
+		"AbilityCastRange"		        "400"
+		"AbilityCastPoint"		        "0"
+		"AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_1"
+
+		"AbilityCooldown"				"0"
+		"AbilityCharges"				"3"
+		"AbilityChargeRestoreTime"		"10"
+		"AbilityManaCost"		        "110 130 150 170"
+
+        "precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts"		
+			"particle"		"particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"				    "400"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"proximity_threshold"		"1.6"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"base_damage"				"200 300 400 500"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"int_damage"				    "100"
+				"LinkedSpecialBonus"	        "special_bonus_unique_mjz_techies_land_mines_int_damage"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"building_damage_pct"		"25"
+			}	
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"activation_delay"			"1.75"
+			}
+			// "07"
+			// {
+			// 	"var_type"					"FIELD_INTEGER"
+			// 	"cast_range_scepter_bonus"		"300"
+			// 	"RequiresScepter"			"1"
+			// }
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"AbilityChargeRestoreTime"	""
+				"LinkedSpecialBonus"		"special_bonus_unique_techies_3"
+			}
+		}
+	}
+    "special_bonus_unique_mjz_techies_land_mines_int_damage"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"100"
+			}
+		}
+	}

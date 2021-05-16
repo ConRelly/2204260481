@@ -1,0 +1,12 @@
+    
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness"				    "黑暗飞升"
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_Description"	    "获得攻击力加成、吸血加成、视野加成。被攻击有一定概率不能命中。"
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_Lore"	    		"最强大的战士都变得害怕黑暗，真是个令人感到羞耻的场景。"
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_duration"					"持续时间："
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_bonus_damage"				"攻击力加成："
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_bonus_vision_pct"			"%视野加成："
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_lifesteal_pct"				"%吸血："
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_evasion_chance"			"%闪避几率："
+	"DOTA_Tooltip_modifier_mjz_night_stalker_darkness"					"黑暗飞升"
+	"DOTA_Tooltip_modifier_mjz_night_stalker_darkness_Description"		"获得攻击力加成、吸血加成、视野加成。被攻击有一定概率不能命中。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_night_stalker_darkness_damage"		"+100 黑暗飞升攻击力"

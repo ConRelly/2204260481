@@ -1,0 +1,54 @@
+
+	//=================================================================================================================
+	// Zuus: Static Field				
+	//=================================================================================================================
+	"mjz_zuus_static_field"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_zuus/mjz_zuus_static_field.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"	
+		"AbilitySound"					"Hero_Zuus.StaticField"
+		"AbilityTextureName"			"mjz_zuus_static_field"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"1200"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"base_damage"				"10 20 30 40" 
+			} 	
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"intelligence_damage"		"80 100 120 140" 
+				"LinkedSpecialBonus"		"special_bonus_unique_mjz_zuus_static_field_intelligence"
+			}
+		}
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_zuus/zuus_static_field.vpcf"
+			"soundfile"		"sounds/weapons/hero/zuus/static_field.vsnd"
+		}
+	}
+	"special_bonus_unique_mjz_zuus_static_field_intelligence"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"40"
+			}
+		}
+	}

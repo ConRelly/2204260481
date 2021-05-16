@@ -1,0 +1,234 @@
+"dota_holdout"
+{
+	"PrepTimeBetweenRounds"			"10"
+	"ItemExpireTime"				"120"
+	
+	"ItemDrops"
+	{
+		"HealingSalve"
+		{
+			"Item"					"item_flask"
+			"Chance"				"3"
+		}
+		"ObserverWard"
+		{
+			"Item"					"item_ward_observer"
+			"Chance"				"2"
+		}
+		"EnchantedMango"
+		{
+			"Item"					"item_enchanted_mango"
+			"Chance"				"3"
+		}
+	}
+		"LinkedXPEnemies"
+	{
+		// Key enemy spawns sub-value count of subkey enemies
+		// e.g. splitter_a spawns 3 splitter_b
+		"npc_twin_headed_dragon"
+		{
+			"npc_articuno"			"1"
+			"npc_moltres"			"1"
+		}
+	}
+	"RandomSpawns"
+	{
+		"1"
+		{
+			"SpawnerName"			"spawner1"
+			"Waypoint"				"path_invader1_1"
+		}
+
+		"2"
+		{
+			"SpawnerName"			"spawner1"
+			"Waypoint"				"path_invader1_1"
+		}
+
+		"3"
+		{
+			"SpawnerName"			"spawner1"
+			"Waypoint"				"path_invader1_1"
+		}
+		
+		"4"
+		{
+			"SpawnerName"			"spawner2"
+			"Waypoint"				"path_invader1_1"
+		}
+
+		"5"
+		{
+			"SpawnerName"			"spawner3"
+			"Waypoint"				"path_invader1_1"
+		}
+	
+	}
+
+	"Rounds"
+	{
+		"1" // Death Prophet	死亡先知
+		{
+			"Title"						"Moth"
+			"MaxGold"					"3200"
+			"BagCount"					"1"
+			"BagVariance"				"50"
+			"FixedXP"					"2500"
+
+			"a"
+			{
+				"NPCName"				"npc_boss_faceless_void"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"20"
+			}
+		}
+		"2" // Juggernaut		剑圣
+		{
+			"Title"						"Martial Artist"
+			"MaxGold"					"4000"
+			"BagCount"					"1"
+			"BagVariance"				"0"
+			"FixedXP"					"2000"
+
+			"a"
+			{
+				"NPCName"				"npc_boss_juggernaut"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"5"
+			}
+		}
+	}
+	"ItemDrops2"
+	{
+		"HealingSalve"
+		{
+			"Item"					"item_flask"
+			"Chance"				"3"
+		}
+		"ObserverWard"
+		{
+			"Item"					"item_ward_observer"
+			"Chance"				"2"
+		}
+		"EnchantedMango"
+		{
+			"Item"					"item_enchanted_mango"
+			"Chance"				"3"
+		}
+	}
+	"LinkedXPEnemies"
+	{
+		// Key enemy spawns sub-value count of subkey enemies
+		// e.g. splitter_a spawns 3 splitter_b
+		"npc_twin_headed_dragon"
+		{
+			"npc_articuno"			"1"
+			"npc_moltres"			"1"
+		}
+	}
+	"RandomSpawns2"
+	{
+		"1"
+		{
+			"SpawnerName"			"spawner1"
+			"Waypoint"				"path_invader1_1"
+		}
+
+		"2"
+		{
+			"SpawnerName"			"spawner1"
+			"Waypoint"				"path_invader1_1"
+		}
+
+		"3"
+		{
+			"SpawnerName"			"spawner1"
+			"Waypoint"				"path_invader1_1"
+		}
+		
+		"4"
+		{
+			"SpawnerName"			"spawner2"
+			"Waypoint"				"path_invader1_1"
+		}
+
+		"5"
+		{
+			"SpawnerName"			"spawner3"
+			"Waypoint"				"path_invader1_1"
+		}
+	
+	}
+	"Rounds2"
+	{
+		"1" // Death Prophet	死亡先知
+		{
+			"Title"						"Moth part3"
+			"MaxGold"					"3200"
+			"BagCount"					"1"
+			"BagVariance"				"50"
+			"FixedXP"					"2500"
+
+			"a"
+			{
+				"NPCName"				"npc_boss_faceless_void"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"20"
+			}
+		}
+		"2" // Juggernaut		剑圣
+		{
+			"Title"						"Martial Artist 2"
+			"MaxGold"					"4000"
+			"BagCount"					"1"
+			"BagVariance"				"0"
+			"FixedXP"					"2000"
+
+			"a"
+			{
+				"NPCName"				"npc_boss_juggernaut"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"5"
+			}
+		}
+	}
+	"Rounds3"
+	{
+		"1" // Death Prophet	死亡先知
+		{
+			"Title"						"Moth part22"
+			"MaxGold"					"3200"
+			"BagCount"					"1"
+			"BagVariance"				"50"
+			"FixedXP"					"2500"
+
+			"a"
+			{
+				"NPCName"				"npc_boss_faceless_void"
+				"TotalUnitsToSpawn"		"2"
+				"UnitsPerSpawn"			"2"
+				"SpawnInterval"			"20"
+			}
+		}
+		"2" // Juggernaut		剑圣
+		{
+			"Title"						"Martial Artist 22"
+			"MaxGold"					"4000"
+			"BagCount"					"1"
+			"BagVariance"				"0"
+			"FixedXP"					"2000"
+
+			"a"
+			{
+				"NPCName"				"npc_boss_juggernaut"
+				"TotalUnitsToSpawn"		"2"
+				"UnitsPerSpawn"			"2"
+				"SpawnInterval"			"5"
+			}
+		}
+	}	
+}

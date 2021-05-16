@@ -1,0 +1,51 @@
+
+	"mjz_templar_assassin_proficiency"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_templar_assassin/mjz_templar_assassin_proficiency.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityTextureName"			"mjz_templar_assassin_proficiency"
+
+
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+
+		"MaxLevel"						"1"
+		"LearnOnSpawn"					"1"		// 出生时学习此技能、值为等级
+		
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_templar_assassin/templar_assassin_meld_attack.vpcf"
+			"soundfile"			"sounds/weapons/hero/templar_assassin/meld.vsnd"
+			"soundfile"			"sounds/weapons/hero/templar_assassin/meld_attack.vsnd"
+			"soundfile"			"sounds/weapons/hero/templar_assassin/meld_end.vsnd"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"armor_reduction_percent"		"20"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"armor_reduction_duration"		"8.0"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"projectile_speed"				"900"
+			}
+		}
+	}
+

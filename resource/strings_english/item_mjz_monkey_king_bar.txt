@@ -1,0 +1,29 @@
+
+		//>>>>	MJZ Monke King Bar LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_monkey_king_bar_2"	                        "Monke King Bar LVL 2"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_2_Description"				"<h1>Passive: Pierce</h1>Grants each attack a %bonus_chance%%% chance to pierce through evasion and deal %bonus_chance_damage% bonus magical damage."
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_2_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_2_bonus_attack_speed"		"+Attack speed"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_2_Lore"						"A powerful staff used by a master warrior."
+		//<<<<
+		//>>>>	MJZ Monke King Bar LVL 3
+		"DOTA_Tooltip_Ability_item_mjz_monkey_king_bar_3"	                        "Monke King Bar LVL 3"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_3_Description"				"<h1>Passive: Pierce</h1>Grants each attack a %bonus_chance%%% chance to pierce through evasion and deal %bonus_chance_damage% bonus magical damage."
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_3_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_3_bonus_attack_speed"		"+Attack speed"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_3_Lore"						"A powerful staff used by a master warrior."
+		//<<<<
+		//>>>>	MJZ Monke King Bar LVL 4
+		"DOTA_Tooltip_Ability_item_mjz_monkey_king_bar_4"	                        "Monke King Bar LVL 4"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_4_Description"				"<h1>Passive: Pierce</h1>Grants each attack a %bonus_chance%%% chance to pierce through evasion and deal %bonus_chance_damage% bonus magical damage."
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_4_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_4_bonus_attack_speed"		"+Attack speed"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_4_Lore"						"A powerful staff used by a master warrior."
+		//<<<<
+		//>>>>	MJZ Monke King Bar LVL 5
+		"DOTA_Tooltip_Ability_item_mjz_monkey_king_bar_5"	                        "Monke King Bar LVL 5"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_Description"				"<h1>Passive: Pierce</h1>Grants each attack a %bonus_chance%%% chance to pierce through evasion and deal %bonus_chance_damage% bonus magical damage."
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_bonus_attack_speed"		"+Attack speed"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_Lore"						"A powerful staff used by a master warrior."
+		//<<<<

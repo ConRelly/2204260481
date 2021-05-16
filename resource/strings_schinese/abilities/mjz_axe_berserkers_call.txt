@@ -1,0 +1,13 @@
+    
+	"DOTA_Tooltip_ability_mjz_axe_berserkers_call"				    "狂战士之吼"
+	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_Description"	    "斧王嘲讽附近的敌方单位，强迫他们攻击自己，同时获得额外护甲。"
+	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_Lore"	    		"蒙哥可汗的狂吼嘲讽使敌人不得不与他作战。"
+	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_Note0"	    	"效果无视技能免疫。"
+	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_radius"			"范围："
+	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_bonus_armor"		"基础护甲加成："
+	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_bonus_armor_per"	"%额外护甲加成："
+	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_duration"			"持续时间："
+	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_caster"				"狂战士之吼"
+	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_caster_Description"	"护甲增加%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%。"
+	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_enemy"				"狂战士之吼"
+	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_enemy_Description"	"你被迫攻击斧王"

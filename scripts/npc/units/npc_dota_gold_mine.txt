@@ -1,0 +1,55 @@
+
+	"npc_dota_gold_mine"
+	{
+		"BaseClass"					"npc_dota_building"	
+		// "Model"						"models/props_tree/frostivus_tree.vmdl" 
+		"Model"						"models/props_tree/newbloom_tree.vmdl"
+		"SoundSet"					"Creep_Good_Melee"					
+		"ModelScale"				"1.0"
+		
+		"Ability1"					"golden_mine_passive"			
+		"Ability2"					""			
+		"Ability3"					""			
+		"Ability4"					""			
+
+		"ArmorPhysical"				"28"		// Physical protection.
+		"MagicalResistance"			"0"			// Magical protection.
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"			// Damage range min.
+		"AttackDamageMax"			"0"			// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0"			// Speed of attack.
+		"AttackAnimationPoint"		"0"			// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"			// Range within a target can be acquired.
+		"AttackRange"				"0"			// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.
+
+
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		"BoundsHullName"			"DOTA_HULL_SIZE_BARRACKS"			// Hull type used for navigation/locomotion.
+		"RingRadius"				"100"
+		"HealthBarOffset"			"260"
+		"MinimapIconSize"			"200"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air
+		"MovementSpeed"				"0"			// Speed
+		"MovementTurnRate"			"0"			// Turning rate.
+
+		"StatusHealth"				"888888"	// Base health.
+		"StatusHealthRegen"			"88"		// Health regeneration rate.
+		"StatusMana"				"6666"		// Base mana.
+		"StatusManaRegen"			"66"		// Mana regeneration rate.
+
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		"VisionDaytimeRange"		"900"		// Range of vision during day light.
+		"VisionNighttimeRange"		"600"		// Range of vision at night time.
+	}
+	

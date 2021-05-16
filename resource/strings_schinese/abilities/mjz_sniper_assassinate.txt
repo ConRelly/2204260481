@@ -1,0 +1,18 @@
+    
+	"DOTA_Tooltip_ability_mjz_sniper_assassinate"				"暗杀"
+	"DOTA_Tooltip_ability_mjz_sniper_assassinate_Description"	"狙击手锁定一个目标敌方单位，%total_cast_time_tooltip%秒后，从远距离射出一发毁灭性的子弹，远距离造成伤害。<font color='#70EA72'>弹头击中目标后，会眩晕%stun_duration%秒，并且弹片呈锥形散开，对主目标后的单位造成半额伤害。</font> \n\n可用神杖升级。"
+	"DOTA_Tooltip_ability_mjz_sniper_assassinate_aghanim_description"	"暗杀变成点地施放的范围技能，经过持续施法后向范围内单位射出数发子弹，造成致命一击伤害并触发爆头。"
+	"DOTA_Tooltip_ability_mjz_sniper_assassinate_Lore"					"为了完成预言然后返回家乡，卡德尔必须和参加古老考验那天一样，做出完美的射击。"
+	"DOTA_Tooltip_ability_mjz_sniper_assassinate_cast_range"			"施法距离："
+	"DOTA_Tooltip_ability_mjz_sniper_assassinate_total_cast_time_tooltip"	"瞄准持续时间："
+	"DOTA_Tooltip_ability_mjz_sniper_assassinate_assassinate_damage"	"伤害："
+	"DOTA_Tooltip_ability_mjz_sniper_assassinate_scatter_range"			"散开距离："
+	"DOTA_Tooltip_ability_mjz_sniper_assassinate_scepter_radius"		"神杖升级作用范围："
+	"DOTA_Tooltip_ability_mjz_sniper_assassinate_scepter_crit_bonus"	"%神杖升级致命一击伤害："
+	"DOTA_Tooltip_ability_mjz_sniper_assassinate_Note0"			"准星效果只对队友可见。"
+	"DOTA_Tooltip_ability_mjz_sniper_assassinate_Note1"			"隐身不能躲避该技能弹道。"
+	"DOTA_Tooltip_ability_mjz_sniper_assassinate_Note2"			"能够打断持续施法技能，打断效果无视技能免疫。"
+	"DOTA_Tooltip_modifier_mjz_sniper_assassinate"				"暗杀"
+	"DOTA_Tooltip_modifier_mjz_sniper_assassinate_Description"	"狙击手瞄准了你的脑袋！"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_sniper_assassinate_damage"	"+50% 暗杀伤害"
+		

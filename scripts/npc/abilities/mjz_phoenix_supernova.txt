@@ -1,0 +1,86 @@
+
+	"mjz_phoenix_supernova"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_phoenix/mjz_phoenix_supernova.lua"
+		"AbilityTextureName"			"mjz_phoenix_supernova"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"HasScepterUpgrade"			"1"
+		"AbilitySound"					"Hero_Phoenix.SuperNova.Begin"
+
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.01"
+		"AbilityCooldown"				"110"
+		"AbilityDuration"				"6.0"
+		"AbilityManaCost"				"200"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aura_radius"		"1300"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_per_sec"	"60 90 120"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_damage_per_sec"		"6 8 10"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"2.0 2.5 3.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_2"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_attacks"			"6 8 10"
+				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_1"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_attacks_scepter"	"7 10 13"
+				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_1"
+				"RequiresScepter"		"1"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe_scepter"			"1200"
+				"RequiresScepter"		"1"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
+			"particle"		"particles/units/heroes/hero_phoenix/phoenix_supernova_death.vpcf"
+			"particle"		"particles/units/heroes/hero_phoenix/phoenix_supernova_egg.vpcf"
+			"particle"		"particles/units/heroes/hero_phoenix/phoenix_supernova_hit.vpcf"
+			"particle"		"particles/units/heroes/hero_phoenix/phoenix_supernova_radiance.vpcf"
+			"particle"		"particles/units/heroes/hero_phoenix/phoenix_supernova_radiance_creep.vpcf"
+			"particle"		"particles/units/heroes/hero_phoenix/phoenix_supernova_reborn.vpcf"
+			"particle"		"particles/units/heroes/hero_phoenix/phoenix_supernova_start.vpcf"
+			"particle"		"particles/units/heroes/hero_phoenix/phoenix_sunray.vpcf"
+			"particle"		"particles/units/heroes/hero_phoenix/phoenix_sunray_beam_friend.vpcf"
+			"particle"		"particles/units/heroes/hero_phoenix/phoenix_sunray_beam_enemy.vpcf"
+			"particle"		"particles/units/heroes/hero_phoenix/phoenix_sunray_debuff.vpcf"
+		}
+	}
+

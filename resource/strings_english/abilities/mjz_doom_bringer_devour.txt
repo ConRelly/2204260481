@@ -1,0 +1,12 @@
+    
+	"DOTA_Tooltip_ability_mjz_doom_bringer_devour"				"Devour"
+	"DOTA_Tooltip_ability_mjz_doom_bringer_devour_Description"	"Consumes the soul of an enemy."
+	"DOTA_Tooltip_ability_mjz_doom_bringer_devour_Lore"			"Lucifer's appetite and greed are never sated."
+	"DOTA_Tooltip_ability_mjz_doom_bringer_devour_bonus_strength"	"BONUS STRENGTH:"
+	"DOTA_Tooltip_ability_mjz_doom_bringer_devour_regen"			"REGENERATION RATE:"
+	"DOTA_Tooltip_ability_mjz_doom_bringer_devour_devour_time"		"DEVOUR TIME:"
+	"DOTA_Tooltip_modifier_mjz_doom_bringer_devour"					"Devour Bonus Strength"
+	"DOTA_Tooltip_modifier_mjz_doom_bringer_devour_Description"		"bonus %0fMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% strength"
+	"DOTA_Tooltip_modifier_mjz_doom_bringer_devour_regen"				"Devour"
+	"DOTA_Tooltip_modifier_mjz_doom_bringer_devour_regen_Description"	"Still digesting that delicious soul."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_doom_bringer_devour_strength"	"+{s:value} Devour Bonus Strength"

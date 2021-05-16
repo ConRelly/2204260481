@@ -1,0 +1,13 @@
+
+	"npc_dota_hero_life_stealer_mjz"
+	{
+		"override_hero"		"npc_dota_hero_life_stealer"
+		"Ability1"			"mjz_life_stealer_rage"
+		"Ability2"			"mjz_life_stealer_feast"
+		"Ability4"			"mjz_lifestealer_anabolic_frenzy"
+		"Ability5"			"mjz_lifestealer_poison_sting"
+		"Ability6"			""	
+		"Ability11"				"special_bonus_unique_mjz_poison_sting_duration"
+		"Ability13"				"special_bonus_unique_mjz_anabolic_frenzy_move"
+		"Ability16"				"special_bonus_unique_mjz_life_stealer_feast_strength"
+	}

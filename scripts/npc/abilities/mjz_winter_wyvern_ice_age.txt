@@ -1,0 +1,99 @@
+
+	"mjz_winter_wyvern_ice_age"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_winter_wyvern/mjz_winter_wyvern_ice_age.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"mjz_winter_wyvern_ice_age"
+		"AbilitySound"					"Hero_WinterWyvern.WintersCurse.Target"
+
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		"AbilityCooldown"				"100 80 60"
+		"AbilityManaCost"				"200 300 400"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{	
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"1000"
+				"LinkedSpecialBonus"		"special_bonus_unique_mjz_winter_wyvern_0601"
+			}
+			"02"
+			{	
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"5.0 6.0 7.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_mjz_winter_wyvern_0602"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"20 40 60"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"percent_damage"			"2 3 4"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tick_rate"					"1.0"
+			}
+			
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_winter_wyvern.vsndevts"
+			"particle"		"particles/units/heroes/hero_winter_wyvern/wyvern_winters_curse.vpcf"
+			"particle"		"particles/units/heroes/hero_winter_wyvern/wyvern_winters_curse_beams.vpcf"
+			"particle"		"particles/units/heroes/hero_winter_wyvern/wyvern_winters_curse_buff.vpcf"
+			"particle"		"particles/units/heroes/hero_winter_wyvern/wyvern_winters_curse_buff_eyes.vpcf"
+			"particle"		"particles/units/heroes/hero_winter_wyvern/wyvern_winters_curse_ground.vpcf"
+			"particle"		"particles/units/heroes/hero_winter_wyvern/wyvern_winters_curse_overhead.vpcf"
+			"particle"		"particles/units/heroes/hero_winter_wyvern/wyvern_winters_curse_ring_rope.vpcf"
+			"particle"		"particles/units/heroes/hero_winter_wyvern/wyvern_winters_curse_start.vpcf"
+		}
+	}
+	"special_bonus_unique_mjz_winter_wyvern_0601"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"200"
+			}
+		}
+	}
+	"special_bonus_unique_mjz_winter_wyvern_0602"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"1.0"
+			}
+		}
+	}
+

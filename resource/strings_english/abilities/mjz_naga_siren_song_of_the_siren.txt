@@ -1,0 +1,18 @@
+    
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren"				    "Song of the Siren"
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_Description"	    "All enemies in range of the Naga Siren are put into a magical stasis where they cannot act . Using Song of the Siren again will end the duration early.\nUpgradable by Aghanim's Scepter."
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_Aghanim_Description"	    "Increases Health Regen Bonus."
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_Lore"	    	"Slithice's powerful voice enchants leagues of opponents, while calling her Slithereen kin in a time of need."
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_radius"			"Radius: "
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_duration"		"Duration: "
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_regen_rate"				"%Maximum Health as Health Regen Bonus: "
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_regen_rate_scepter"		"%Scepter Upgrade Maximum Health as Health Regen Bonus:"
+	"DOTA_Tooltip_modifier_mjz_naga_siren_song_of_the_siren_caster"					"Song of the Siren"
+	"DOTA_Tooltip_modifier_mjz_naga_siren_song_of_the_siren_caster_Description"	    "All enemies in range of the Naga Siren are put into a magical stasis where they cannot act."
+	"DOTA_Tooltip_modifier_mjz_naga_siren_song_of_the_siren_buff"					"Song of the Siren"
+	"DOTA_Tooltip_modifier_mjz_naga_siren_song_of_the_siren_buff_Description"		"Get Maximum Health as Health Regen Bonus."
+	"DOTA_Tooltip_modifier_mjz_naga_siren_song_of_the_siren_debuff"					"Song of the Siren"
+	"DOTA_Tooltip_modifier_mjz_naga_siren_song_of_the_siren_debuff_Description"		"Incapable of action."
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_cancel"				    "Song of the Siren End"
+	"DOTA_Tooltip_ability_mjz_naga_siren_song_of_the_siren_cancel_Description"	    "Release enemy units from your song."
+	

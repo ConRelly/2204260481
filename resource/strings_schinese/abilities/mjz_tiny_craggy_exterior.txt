@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior"				    	"崎岖外表"
+	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_Description"	    	"使小小受到的伤害反弹给攻击者。攻击小小的近战敌人有一定概率被眩晕。触发概率随着升级长大还会提升。"
+	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_Lore"	    		"近战英雄会发现攻击山岭巨人是毫无用处的。"
+	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_Note0"	    		"只有近战单位会触发，不影响远程单位。"
+	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_bonus_armor"			"护甲加成："
+	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_stun_chance"			"%触发几率："
+	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_stun_duration"		"眩晕时间："
+	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_return_damage"		"伤害："
+	"DOTA_Tooltip_modifier_mjz_tiny_craggy_exterior_stunned"			"崎岖外表"
+	

@@ -1,0 +1,57 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Vengeful Spirit Command Aura
+	//=================================================================================================================
+	"vengefulspirit_command_aura_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/vengefulspirit_command_aura_lua/vengefulspirit_command_aura_lua"
+		"AbilityTextureName"			"vengefulspirit_command_aura_lua"
+		"FightRecapLevel"				"2"
+		"LevelsBetweenUpgrades"         "7"
+		"MaxLevel"						"7"
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"3200"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage_pct"	"10 11 12 13 14 15 20"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aura_radius"		"3200"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"agi_multiplier"	"0.004 0.005 0.006 0.007 0.008 0.009 0.01"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"agi_multiplier_tooltip"	"4 5 6 7 8 9 10"
+			}
+		}
+	}
+}

@@ -1,0 +1,66 @@
+
+	//=================================================================================================================
+	// Brewmaster: Drunken Brawler		醉拳
+	//=================================================================================================================
+	"mjz_brewmaster_drunken_brawler"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"	"abilities/hero_brewmaster/mjz_brewmaster_drunken_brawler.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilitySound"					"Hero_Brewmaster.Brawler.Crit"
+		"AbilityTextureName"			"brewmaster_drunken_brawler"	//	"mjz_brewmaster_drunken_brawler"
+
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		
+		"AbilityCooldown"				"23 21 19 17"
+		"AbilityManaCost"				"35 40 45 50"		
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"dodge_chance"				"10 15 20 25"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_chance"				"10 15 20 25"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_multiplier"			"200"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"dodge_chance_active"		"50 60 70 80"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_chance_active"		"50 60 70 80"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_multiplier_active"	"260"
+				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_4"
+			}
+			"14"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"6"
+			}
+		}
+
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_brewmaster/brewmaster_drunken_brawler_crit.vpcf"
+			"particle"	"particles/units/heroes/hero_brewmaster/brewmaster_drunkenbrawler_evade.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
+		}
+	}

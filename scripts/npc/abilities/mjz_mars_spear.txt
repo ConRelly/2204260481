@@ -1,0 +1,103 @@
+
+    "mjz_mars_spear"
+    {
+        "BaseClass"						"ability_lua"
+        "ScriptFile"					"abilities/hero_mars/mjz_mars_spear.lua"
+        "AbilityTextureName"			"mjz_mars_spear"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+        "SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "FightRecapLevel"				"1"
+
+        "AbilityCastRange"				"800"
+        "AbilityCastPoint"				"0.25"
+        "AbilityCooldown"				"14.0"
+        "AbilityManaCost"				"100"
+
+		"HasScepterUpgrade"			"1"
+
+        "precache"
+        {
+            "soundfile"	"soundevents/game_sounds_heroes/game_sounds_mars.vsndevts"
+            "particle"	"particles/status_fx/status_effect_mars_spear.vpcf"
+            "particle"	"particles/units/heroes/hero_mars/mars_spear.vpcf"
+            "particle"	"particles/units/heroes/hero_mars/mars_spear_impact.vpcf"
+            "particle"	"particles/units/heroes/hero_mars/mars_spear_impact_debuff.vpcf"
+        }
+        
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "damage"				"100 175 250 325"
+                "LinkedSpecialBonus"	"special_bonus_unique_mars_spear_bonus_damage"
+            }
+            "011"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "strength_damage"		"100"
+                "LinkedSpecialBonus"	"special_bonus_unique_mjz_mars_spear_str_damage"
+            }
+            "02"
+            {
+                "var_type"			"FIELD_FLOAT"
+                "spear_speed"		"1100"
+            }
+            "03"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "spear_width"		"100"
+            }
+            "04"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "spear_vision"		"500"
+            }
+            "05"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "spear_range"		"800 800 800 800"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "activity_duration"		"1.7"
+            }
+            "07"
+            {
+                "var_type"			"FIELD_FLOAT"
+                "stun_duration"		"1.2 1.35 1.5 1.65"
+                "LinkedSpecialBonus"	"special_bonus_unique_mars_spear_stun_duration"
+            }
+            "08"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "knockback_duration"	"1.25"
+            }			
+            "09"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "knockback_distance"	"75"
+            }
+        }
+        "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
+    }
+    "special_bonus_unique_mjz_mars_spear_str_damage"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"400"
+			}
+		}
+	}

@@ -1,0 +1,5 @@
+
+"DOTA_Tooltip_ability_mjz_tinker_quick_arm"												"Quick Arm"
+"DOTA_Tooltip_ability_mjz_tinker_quick_arm_Description"									"CHANNELED - Halve the cooldown on most of Tinker's items and abilities."
+"DOTA_Tooltip_ability_mjz_tinker_quick_arm_Lore"										"A new battery here, another set of rockets there, Boush continually improves on existing technology."
+"DOTA_Tooltip_ability_mjz_tinker_quick_arm_abilitychanneltime"							"TIME TO QUICK ARM:"

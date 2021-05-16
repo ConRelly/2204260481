@@ -1,0 +1,7 @@
+
+	"npc_dota_hero_arc_warden_mjz"
+	{
+		"override_hero"	"npc_dota_hero_arc_warden"
+		"Ability3"		"mjz_arc_warden_spark_wraith"
+		"Ability14"		"special_bonus_unique_mjz_arc_warden_0302"
+	}

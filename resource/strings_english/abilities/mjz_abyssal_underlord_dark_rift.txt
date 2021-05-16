@@ -1,0 +1,18 @@
+    
+	"DOTA_Tooltip_ability_mjz_abyssal_underlord_dark_rift"				    "Dark Rift"
+	"DOTA_Tooltip_ability_mjz_abyssal_underlord_dark_rift_Description"	    "Heal nearby allied units."
+	"DOTA_Tooltip_ability_mjz_abyssal_underlord_dark_rift_Lore"	    		"They come without warning, leaving fire and blood where kingdoms once flourished."
+	"DOTA_Tooltip_ability_mjz_abyssal_underlord_dark_rift_radius"			"Radius: "
+	"DOTA_Tooltip_ability_mjz_abyssal_underlord_dark_rift_duration"			"Duration: "
+	"DOTA_Tooltip_ability_mjz_abyssal_underlord_dark_rift_regen_rate"				"%Maximum Health as Health Regen Bonus: "
+	"DOTA_Tooltip_ability_mjz_abyssal_underlord_dark_rift_magic_resistance"			"%Magic Resistance Bonus:"
+	"DOTA_Tooltip_ability_mjz_abyssal_underlord_dark_rift_bonus_armor"				"Armor Bonus:"
+	"DOTA_Tooltip_modifier_mjz_abyssal_underlord_dark_rift_caster"					"Dark Rift"
+	"DOTA_Tooltip_modifier_mjz_abyssal_underlord_dark_rift_caster_Description"	    "Heal nearby allied units."
+	"DOTA_Tooltip_modifier_mjz_abyssal_underlord_dark_rift_buff"					"Dark Rift"
+	"DOTA_Tooltip_modifier_mjz_abyssal_underlord_dark_rift_buff_Description"		"Get Maximum Health as Health Regen Bonus."
+	"DOTA_Tooltip_modifier_mjz_abyssal_underlord_dark_rift_debuff"					"Dark Rift"
+	"DOTA_Tooltip_modifier_mjz_abyssal_underlord_dark_rift_debuff_Description"		""
+	"DOTA_Tooltip_ability_mjz_abyssal_underlord_dark_rift_cancel"				    "Dark Rift End"
+	"DOTA_Tooltip_ability_mjz_abyssal_underlord_dark_rift_cancel_Description"	    "Terminate this skill."
+	

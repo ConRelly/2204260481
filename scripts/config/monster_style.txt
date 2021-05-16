@@ -1,0 +1,9 @@
+"dota_holdout"
+{
+	"npc_boss_skeletal_archer_new"
+	{
+		"1"		"npc_boss_skeletal_archer_new" 
+		"2"		"npc_boss_skeletal_archer_new_s1" 
+		"3"		"npc_boss_skeletal_archer_new_s2"
+	}
+}

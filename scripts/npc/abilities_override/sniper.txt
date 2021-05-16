@@ -1,0 +1,45 @@
+
+	"sniper_shrapnel"
+	{
+		"AbilityChargeRestoreTime"		"35"
+	}
+	"sniper_headshot"
+	{
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityDamage"					"80 140 180 220"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"slow_duration"					"0.1"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"proc_chance"					"36"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"knockback_distance"			"0"
+				"LinkedSpecialBonus"	        "special_bonus_unique_sniper_3"
+			}
+			"04"
+			{
+				"var_type"					    "FIELD_INTEGER"
+				"slow"			                "-20"
+			}
+		}
+	}
+	"special_bonus_unique_sniper_1"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"80"
+			}
+		}
+	}

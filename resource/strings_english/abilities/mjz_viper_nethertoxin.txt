@@ -1,0 +1,12 @@
+    
+	"DOTA_Tooltip_ability_mjz_viper_nethertoxin"				"Nethertoxin"
+	"DOTA_Tooltip_ability_mjz_viper_nethertoxin_Description"	"Viper releases a Nethertoxin at the targeted area. Units in that area take damage over time, have lower resistance."
+	"DOTA_Tooltip_ability_mjz_viper_nethertoxin_Lore"			"Poison from the Nether Reaches turns wounds into fatalities, and fatigue into death."
+	"DOTA_Tooltip_ability_mjz_viper_nethertoxin_cast_range"			"CAST RANGE:"
+	"DOTA_Tooltip_ability_mjz_viper_nethertoxin_radius"				"RADIUS:"
+	"DOTA_Tooltip_ability_mjz_viper_nethertoxin_damage"				"DAMAGE PER SECOND:"
+	"DOTA_Tooltip_ability_mjz_viper_nethertoxin_magic_resistance"	"%MAGIC RESISTANCE REDUCTION:"
+	"DOTA_Tooltip_ability_mjz_viper_nethertoxin_duration"			"DURATION:"
+	"DOTA_Tooltip_modifier_mjz_viper_nethertoxin_debuff_magic_resistance"				"Nethertoxin"
+	"DOTA_Tooltip_modifier_mjz_viper_nethertoxin_debuff_magic_resistance_Description"	"Magic Resistance reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_viper_nethertoxin_magic_resistance"			"-25% Nethertoxin Magic Resistance"

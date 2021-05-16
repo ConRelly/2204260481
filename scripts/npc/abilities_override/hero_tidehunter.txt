@@ -1,0 +1,92 @@
+    
+    "tidehunter_anchor_smash"
+	{   
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduction"		"-5 -8 -12 -15"
+				"LinkedSpecialBonus"	"special_bonus_unique_tidehunter_3"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+		}
+	}
+	"tidehunter_gush"
+	{
+        "AbilityManaCost"				"90"
+		"AbilityDuration"				"5.0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			    "FIELD_INTEGER"
+				"gush_damage"		    "110 170 230 290"
+				"LinkedSpecialBonus"	"special_bonus_unique_tidehunter_2"
+			}
+			"04"
+			{
+				"var_type"			    "FIELD_FLOAT"
+				"negative_armor"		"2 3 4 5"
+				"LinkedSpecialBonus"	"special_bonus_unique_tidehunter"
+			}
+			"07"
+			{
+				"var_type"			    "FIELD_INTEGER"
+				"cooldown_scepter"		"4"
+				"RequiresScepter"		"1"
+			}
+		}
+	}
+	"tidehunter_kraken_shell"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduction"		"15 30 60 90"
+				"LinkedSpecialBonus"	"special_bonus_unique_tidehunter_4"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+		}
+	}
+	"tidehunter_ravage"
+	{
+		"AbilityCooldown"				"80 60 40"
+		"AbilityDamage"					"600 1200 1800"
+        "AbilityManaCost"				"100 150 200"
+	}   
+    "special_bonus_unique_tidehunter_2"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"180"
+			}
+		}
+	}
+	"special_bonus_unique_tidehunter_3"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"-10"
+			}
+		}
+	}
+	"special_bonus_unique_tidehunter_4"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"250"
+			}
+		}
+	}

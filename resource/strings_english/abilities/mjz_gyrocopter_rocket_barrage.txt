@@ -1,0 +1,9 @@
+
+	"DOTA_Tooltip_ability_mjz_gyrocopter_rocket_barrage"				"Rocket Barrage"
+	"DOTA_Tooltip_ability_mjz_gyrocopter_rocket_barrage_Description"	"Launches a salvo of rockets at nearby enemy units in a radius around the Gyrocopter. "
+	"DOTA_Tooltip_ability_mjz_gyrocopter_rocket_barrage_Lore"			"Aurel's new craft has an increased payload for rockets, enhancing their rapid-fire capabilities."
+	"DOTA_Tooltip_ability_mjz_gyrocopter_rocket_barrage_radius"				"RADIUS:"
+	"DOTA_Tooltip_ability_mjz_gyrocopter_rocket_barrage_rocket_damage"		"ROCKET DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_gyrocopter_rocket_barrage_agi_damage_pct"		"%AGILITY DAMAGE:"
+	"DOTA_Tooltip_modifier_mjz_gyrocopter_rocket_barrage"				"Rocket Barrage"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_gyrocopter_rocket_barrage_damage"				"+110 Rocket Barrage Damage"

@@ -1,0 +1,28 @@
+
+	"medusa_split_shot"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_modifier"		"-50 -35 -20 -5"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_modifier_tooltip"		"50 65 80 95"
+			}
+			"03"
+			{	
+				"var_type"					"FIELD_INTEGER"
+				"arrow_count"				"9"
+				"LinkedSpecialBonus"			"special_bonus_unique_medusa_2"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"split_shot_bonus_range"		"100"
+			}
+		}
+	}

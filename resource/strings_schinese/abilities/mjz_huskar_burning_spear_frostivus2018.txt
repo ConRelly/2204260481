@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_huskar_burning_spear_frostivus2018"				"沸血之矛"
+	"DOTA_Tooltip_ability_mjz_huskar_burning_spear_frostivus2018_Description"	"哈斯卡的普通攻击点燃<font color='#70EA72'>他的目标和周围敌人</font>，持续造成伤害。多个攻击效果将产生额外伤害。每次攻击都会消耗哈斯卡的部分生命。伤害持续%burn_duration%秒。<font color='#70EA72'>烧灼伤害在第一次长矛击中后立刻生效。</font>"
+	"DOTA_Tooltip_ability_mjz_huskar_burning_spear_frostivus2018_Lore"			"神灵武士的武器经过自身鲜血的沾染，燃起了烈火 - 敌人将领受远超己痛的苦楚。"
+	"DOTA_Tooltip_ability_mjz_huskar_burning_spear_frostivus2018_Note0"			"沸血之矛在多次施放到目标身上效果可以叠加。没有叠加上限。"
+	"DOTA_Tooltip_ability_mjz_huskar_burning_spear_frostivus2018_Note1"			"哈斯卡不能使用此技能自杀。"
+	"DOTA_Tooltip_ability_mjz_huskar_burning_spear_frostivus2018_health_cost"	"生命消耗："
+	"DOTA_Tooltip_ability_mjz_huskar_burning_spear_frostivus2018_burn_damage"	"燃烧伤害："
+	"DOTA_Tooltip_ability_mjz_huskar_burning_spear_frostivus2018_spear_aoe"		"<font color='#70EA72'>烧灼作用范围：</font>"
+	"DOTA_Tooltip_modifier_mjz_huskar_burning_spear_frostivus2018_debuff"		"沸血之矛"
+	"DOTA_Tooltip_modifier_mjz_huskar_burning_spear_frostivus2018_debuff_Description"	"你着火了！受到持续伤害。"

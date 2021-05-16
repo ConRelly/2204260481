@@ -1,0 +1,14 @@
+    
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace"				    "Coup de Grace"
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_Description"	    "Phantom Assassin refines her combat abilities, gaining a chance of delivering a devastating critical strike to enemy units. Stifling Dagger shares the same critical strike chance.\n\nUpgradable by Aghanim's Scepter."
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_Lore"	    		"A divine strike, Mortred honors her opponent by choosing them for death."
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_crit_chance"		"%Proc Chance: "
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_crit_bonus"		"%Critical Damage: "
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_cleave_damage"		"%CLEAVE DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_bonus_attack_speed"	"BONUS ATTACK SPEED:"
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_bonus_duration"		"BONUS ATTACK SPEED DURATION:"
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_Aghanim_Description"			"Deals bonus magic damage."
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_magical_damage_scepter"		"%SCEPTER MAGICAL DAMAGE:"
+	"DOTA_Tooltip_modifier_mjz_phantom_assassin_coup_de_grace_bonus"				"Coup de Grace"
+	"DOTA_Tooltip_modifier_mjz_phantom_assassin_coup_de_grace_bonus_Description"	"Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%"
+	

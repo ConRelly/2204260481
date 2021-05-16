@@ -1,0 +1,65 @@
+
+	//=================================================================================================================
+	// Monkey King: Mischief			七十二变
+	//=================================================================================================================
+	"mjz_monkey_king_mischief"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_monkey_king/mjz_monkey_king_mischief.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityTextureName"			"mjz_monkey_king_mischief"
+
+		"FightRecapLevel"				"2"
+		"MaxLevel"						"1"
+		"AbilitySound"					"Hero_MonkeyKing.Transform.On"
+
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"			"ACT_INVALID"
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"0 0 0 0"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movespeed"					"240"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"reveal_radius"				"200"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"invul_duration"			"0.4"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts"
+			"particle"	"particles/units/heroes/hero_monkey_king/monkey_king_disguise.vpcf"
+		}
+	}
+	//=================================================================================================================
+	// Monkey King: Un-Transform		变回原状
+	//=================================================================================================================
+	"mjz_monkey_king_untransform"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_monkey_king/mjz_monkey_king_untransform.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilitySound"					"Hero_MonkeyKing.Transform.Off"
+		"AbilityTextureName"			"mjz_monkey_king_untransform"
+
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastAnimation"			"ACT_INVALID"
+
+		"MaxLevel"						"1"
+
+		"AbilityCooldown"				"1"
+		"AbilityManaCost"				"0 0 0 0"
+	}

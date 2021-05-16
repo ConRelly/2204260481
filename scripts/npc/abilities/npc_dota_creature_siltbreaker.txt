@@ -1,0 +1,753 @@
+
+	//=================================================================================================================
+    // Siltbreaker Passive
+    "siltbreaker_passive"
+    {
+        "BaseClass"                     "ability_lua"
+        "AbilityTextureName"            "sandking_caustic_finale"
+        "ScriptFile"                    "abilities/siltbreaker/siltbreaker_passive"
+
+        "MaxLevel"                      "3"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+        "IsOnCastBar"                   "0"
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                                       "FIELD_INTEGER"
+                "evasion_pct"                                    "25"
+            }
+            "02"
+            {
+                "var_type"                                       "FIELD_FLOAT"
+                "caustic_duration"                               "3.0"
+            }
+            "03"
+            {
+                "var_type"                                       "FIELD_INTEGER"
+                "accuracy_pct"                                   "75"
+            }
+            "04"
+            {
+                "var_type"                                       "FIELD_INTEGER"
+                "extended_range"                                 "200"
+            }
+            "05"
+            {
+                "var_type"                                       "FIELD_FLOAT"
+                "fixed_attack_rate"                              "1.5 1.25 1.0"
+            }
+            "06"
+            {
+                "var_type"                                       "FIELD_INTEGER"
+                "normal_speed"                                   "445 460 475"
+            }
+            "07"
+            {
+                "var_type"                                       "FIELD_INTEGER"
+                "sprint_speed"                                   "800 950 1100"
+            }
+            "08"
+            {
+                "var_type"                                       "FIELD_INTEGER"
+                "caustic_armor_reduction_pct"                    "33"
+            }
+        }
+    }
+
+    // Siltbreaker: Kraken Shell
+    "siltbreaker_kraken_shell"
+    {
+        "BaseClass"                     "tidehunter_kraken_shell"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilitySound"                  "Hero_Tidehunter.KrakenShell"
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "damage_reduction"      "0"
+            }
+            "02"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "damage_cleanse"        "600"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "damage_reset_interval" "6.0"
+            }
+        }
+    }
+
+    // Siltbreaker: Sprint
+    "siltbreaker_sprint"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/siltbreaker/siltbreaker_sprint"
+        "AbilityTextureName"            "slardar_sprint"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
+
+        "IsOnCastBar"                   "1"
+
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_3"
+        "AbilityCastRange"              "0"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "25"
+		
+        "AbilitySpecial"
+        {           
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "sprint_speed"              "900"
+            }
+            "02"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "duration"                  "4"
+            }
+        }
+    }
+
+    // Siltbreaker: Tail Spin Counter-Clockwise
+    "siltbreaker_tail_spin_ccw"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/siltbreaker/siltbreaker_tail_spin_ccw"
+        "AbilityTextureName"            "slardar_slithereen_crush"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"  
+
+        "IsOnCastBar"                   "1"
+
+        "AbilityCastRange"              "450"
+        "AbilityCastPoint"              "2.2"
+        "AnimationIgnoresModelScale"    "1"
+        "AnimationPlaybackRate"         "1.1" // 1.0
+        "AbilityCooldown"               "40.0"
+        "AbilityManaCost"               "0"
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "damage"                "4666"
+            }
+            "02"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "damage_radius"         "110"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "animation_time"        "3.3333" // 3.6666
+            }
+            "04"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "initial_delay"         "1.82" // 2.0
+            }
+            "05"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "stun_duration"         "4.0"
+            }
+            "06"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "knockback_distance"    "1000"
+            }
+            "07"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "knockback_height"      "100"
+            }
+            "08"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "movespeed_slow"        "-160"
+            }
+            "09"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "attackspeed_slow"      "-300"
+            }
+            "10"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "slow_duration"         "4.0"
+            }
+        }
+    }
+
+    // Siltbreaker Mind Control
+    "siltbreaker_mind_control"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/siltbreaker/siltbreaker_mind_control"
+        "AbilityTextureName"            "winter_wyvern_winters_curse"
+
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
+        "FightRecapLevel"               "1"
+        "AbilitySound"                  "Hero_Winter_Wyvern.ColdEmbrace"
+
+        "IsOnCastBar"                   "1"
+		
+        "AbilityCastRange"              "1500"
+        "AbilityCastPoint"              "0.8"
+        "AbilityCooldown"               "15.0"
+        "AbilityManaCost"               "0"
+        
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "projectile_speed"      "600"
+            }
+            "02"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "projectile_radius"     "100"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "projectile_distance"   "2500"
+            }
+            "04"
+            {
+                "var_type"                 "FIELD_FLOAT"
+                "projectile_expire_time"   "3"
+            }
+            "05"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "movespeed_bonus"       "75"
+            }
+            "06"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "attackspeed_bonus"     "150"
+            }
+            "07"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "charm_duration"        "7.0"
+            }
+            "08"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "model_scale_perc"      "150"
+            }
+            "09"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "target_search_radius"  "7000"
+            }
+        }
+    }
+
+    // Siltbreaker Torrents
+    "siltbreaker_torrents"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/siltbreaker/siltbreaker_torrents"
+        "AbilityTextureName"            "kunkka_torrent"
+
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "FightRecapLevel"               "2"
+
+        "AbilityCastAnimation"          "ACT_DOTA_SWIM_IDLE"
+        "IsOnCastBar"                   "1"
+        "AbilityCooldown"               "50"
+        "AbilityChannelTime"            "8.0"
+        "AbilityCastPoint"              "1.0"
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "effect_radius"         "3000"
+            }
+            "02"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "torrent_delay"         "1.5"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "torrent_radius"        "225"
+            }
+            "04"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "torrent_damage"        "3000"
+            }
+            "05"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "channel_duration"      "8.0"
+            }
+            "06"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "interval"              "0.0266"
+            }
+            "07"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "knockback_duration"    "1.0"
+            }
+            "08"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "knockback_distance"    "200"
+            }
+            "09"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "knockback_height"      "500"
+            }
+        }
+    }
+
+    // Siltbreaker: Line Wave
+    "siltbreaker_line_wave"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/siltbreaker/siltbreaker_line_wave"
+        "AbilityTextureName"            "tidehunter_gush"
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
+        "FightRecapLevel"               "1"
+        "AbilitySound"                  "Ability.GushCast"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_5"
+
+        "IsOnCastBar"                   "1"
+
+        "AbilityCastRange"              "1500"
+        "AbilityCastPoint"              "1.0"
+        "AnimationIgnoresModelScale"    "1"
+        "AnimationPlaybackRate"         "1.0"
+
+        "AbilityCooldown"               "25"
+        "AbilityDuration"               "4.0"
+
+        // Damage.
+        "AbilityDamage"                 "700"
+
+        "AbilityManaCost"               "0"
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "projectile_speed"  "1100"
+            }
+            "02"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "projectile_radius" "150"
+            }
+            "03"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "cast_range"        "7000"
+            }
+            "04"
+            {
+                "var_type"          "FIELD_FLOAT"
+                "bubble_tick"       "0.5"
+            }
+            "05"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "bubble_damage"     "200"
+            }
+			"06"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "bubble_duration"    "20"
+            }
+        }
+    }
+
+    // Siltbreaker: Waves
+    "siltbreaker_waves"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/siltbreaker/siltbreaker_waves"
+        "AbilityTextureName"            "tidehunter_gush"
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "FightRecapLevel"               "1"
+        "AbilityCastAnimation"          "ACT_DOTA_SWIM_IDLE"
+
+        "IsOnCastBar"                   "1"
+
+        "AbilityCastRange"              "0"
+        "AbilityCastPoint"              "1.5"
+        "AnimationIgnoresModelScale"    "1"
+        "AnimationPlaybackRate"         "1.0"
+
+        "AbilityCooldown"               "45"
+        "AbilityChannelTime"            "12"
+
+        "AbilityManaCost"               "0"
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "projectile_speed"  "550"
+            }
+            "02"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "projectile_radius" "240"
+            }
+            "03"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "cast_range"        "7000"
+            }
+            "04"
+            {
+                "var_type"          "FIELD_FLOAT"
+                "tick_interval"     "1.5"
+            }
+            "05"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "pulses"            "6"
+            }  
+            "06"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "pulse_width"       "110"
+            }  
+            "07"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "damage"            "3400"
+            }  
+        }
+    }
+
+    // Siltbreaker Teleport
+    "siltbreaker_teleport"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/siltbreaker/siltbreaker_teleport"
+        "AbilityTextureName"            "antimage_blink"
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PURE"   
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "FightRecapLevel"               "1"
+
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_6"
+
+        "IsOnCastBar"                   "1"
+
+        "AbilityCastRange"              "3000"
+        "AbilityCastPoint"              "0.0"
+        "AnimationIgnoresModelScale"    "1"
+        "AnimationPlaybackRate"         "1.0"
+
+        "AbilityCooldown"               "0" // ai_siltbreaker controls the cooldown
+        "AbilityChannelTime"            "2.0"
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "delay"                     "1.6"
+            }
+            "03"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "radius"                    "500"
+            }
+            "04"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "blast_damage"              "2600"
+            }
+        }
+    }
+
+    // Siltbreaker Bubble Passive
+    "siltbreaker_bubble_passive"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/siltbreaker/siltbreaker_bubble_passive"
+        "AbilityTextureName"            "terrorblade_reflection"
+        "MaxLevel"                      "1"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "IsOnCastBar"                   "0"
+    }
+
+    // Siltbreaker: Summon Minions
+    "siltbreaker_summon_minions"
+    {
+        "BaseClass"                     "ability_lua"
+        "AbilityTextureName"            "lycan_summon_wolves"
+        "ScriptFile"                    "abilities/siltbreaker/siltbreaker_summon_minions"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityCastAnimation"          "ACT_DOTA_VICTORY"
+
+        "IsOnCastBar"                   "1"
+        
+        "AbilityCastPoint"              "0.4"
+        "AbilityChannelTime"            "3.5"
+        "AnimationPlaybackRate"         "0.7"
+        "AnimationIgnoresModelScale"    "1"
+
+        "AbilityCooldown"               "40.0"
+        "AbilityManaCost"               "0"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"               "FIELD_FLOAT"
+                "slow_tick_rate"         "0.2324"
+            }
+            "02"
+            {
+                "var_type"               "FIELD_FLOAT"
+                "medium_tick_rate"       "0.175"
+            }
+            "03"
+            {
+                "var_type"               "FIELD_FLOAT"
+                "fast_tick_rate"         "0.14"
+            }
+        }
+    }
+
+    // Siltbreaker: Summon Minions Medium
+    "siltbreaker_summon_minions_medium"
+    {
+        "BaseClass"                     "ability_lua"
+        "AbilityTextureName"            "lycan_summon_wolves"
+        "ScriptFile"                    "abilities/siltbreaker/siltbreaker_summon_minions_medium"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "AbilityCastAnimation"          "ACT_DOTA_VICTORY"
+
+        "IsOnCastBar"                   "1"
+        
+        "AbilityCastPoint"              "0.4"
+        "AbilityChannelTime"            "3.5"
+        "AnimationPlaybackRate"         "0.7"
+        "AnimationIgnoresModelScale"    "1"
+
+        "AbilityCooldown"               "40.0"
+        "AbilityManaCost"               "0"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"               "FIELD_FLOAT"
+                "slow_tick_rate"         "0.2324"
+            }
+            "02"
+            {
+                "var_type"               "FIELD_FLOAT"
+                "medium_tick_rate"       "0.175"
+            }
+            "03"
+            {
+                "var_type"               "FIELD_FLOAT"
+                "fast_tick_rate"         "0.14"
+            }
+            "04"
+            {
+                "var_type"               "FIELD_INTEGER"
+                "specials_to_spawn"      "2"
+            }
+        }
+    }
+
+    // Siltbreaker: Summon Clone
+    "siltbreaker_summon_clone"
+    {
+        "BaseClass"                     "ability_lua"
+        "AbilityTextureName"            "arc_warden_tempest_double"
+        "ScriptFile"                    "abilities/siltbreaker/siltbreaker_summon_clone"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_3"
+
+        "IsOnCastBar"                   "1"
+        
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "5.0"
+        "AbilityManaCost"               "0"
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "invuln_duration"           "0.5"
+            }
+            "02"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "clone_incoming_dmg_perc"   "500.0"
+            }
+        }
+    }
+
+    // Siltbreaker: Mouth Beam
+    "siltbreaker_mouth_beam"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/siltbreaker/siltbreaker_mouth_beam"
+        "AbilityTextureName"            "phoenix_sun_ray"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_7"
+
+       
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PURE"
+
+        "IsOnCastBar"                   "1"
+
+        "AbilityCastRange"              "5000"
+        "AbilityCastPoint"              "1.0"
+        "AnimationIgnoresModelScale"    "1"
+        "AnimationPlaybackRate"         "1.0"
+
+        "AbilityCooldown"               "25.0"
+        "AbilityChannelTime"            "5.0"
+
+        "AbilityManaCost"               "0"
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "damage_per_tick"       "100"
+            }
+            "02"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "tick_interval"         "0.02"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "damage_radius"         "130"
+            }
+            "04"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "beam_range"            "3000"
+            }
+            "05"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "turn_rate"             "9"
+            }
+            "06"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "initial_delay"         "0.4"
+            }
+			"07"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "damage_tooltip"        "5000"		// damage_per_tick * tick_interval
+            }
+        }
+    }
+	//=================================================================================================================
+    // Siltbreaker: Go Phase Two
+    "siltbreaker_go_phase_two"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/siltbreaker/siltbreaker_go_phase_two"
+        "AbilityTextureName"            "terrorblade_metamorphosis"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+
+        "IsOnCastBar"                   "0"
+
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_9"
+        "AbilityCastRange"              "0"
+        "AbilityCastPoint"              "0.0"
+        "AnimationIgnoresModelScale"    "1"
+        "AnimationPlaybackRate"         "0.4"
+
+        "AbilityCooldown"               "0"
+        
+        "AbilitySpecial"
+        {
+        }
+    }
+
+    // Siltbreaker: Go Phase Three
+    "siltbreaker_go_phase_three"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/siltbreaker/siltbreaker_go_phase_three"
+        "AbilityTextureName"            "terrorblade_metamorphosis"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+
+        "IsOnCastBar"                   "0"
+
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_9"
+        "AbilityCastRange"              "0"
+        "AbilityCastPoint"              "0.0"
+        "AnimationIgnoresModelScale"    "1"
+        "AnimationPlaybackRate"         "0.4"
+
+        "AbilityCooldown"               "0"
+ 
+        "AbilitySpecial"
+        {
+        }
+    }

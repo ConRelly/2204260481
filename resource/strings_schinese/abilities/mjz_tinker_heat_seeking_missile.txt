@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile"				"热导飞弹"
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile_Description"	"发射一对火箭，攻击%radius%范围内可见的最近的敌方单位。\n\n可用神杖升级。"
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile_Lore"			"鲍什最后救下来的玩意儿，是一个改造过的制导式火箭筒。"
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile_aghanim_description"	"提高热导飞弹的目标数量。"
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile_radius"		"范围："
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile_damage"		"基础伤害："
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile_intelligence_damage"		"%智力伤害："
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile_targets"		"飞弹数量："
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile_targets_scepter"	"神杖升级飞弹数量："
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_tinker_0203"		"+{s:value}% 热导飞弹智力伤害"

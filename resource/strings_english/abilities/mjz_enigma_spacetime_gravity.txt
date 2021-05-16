@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_enigma_spacetime_gravity"				    "SpaceTime Gravity"
+	"DOTA_Tooltip_ability_mjz_enigma_spacetime_gravity_Description"	    	"The power returns to its origin."
+	"DOTA_Tooltip_ability_mjz_enigma_spacetime_gravity_Lore"	    		"No one can escape gravity."
+	"DOTA_Tooltip_ability_mjz_enigma_spacetime_gravity_radius_per_level"	"RADIUS PER LEVEL:"
+	"DOTA_Tooltip_ability_mjz_enigma_spacetime_gravity_duration"			"DURATION:"
+	"DOTA_Tooltip_modifier_mjz_enigma_spacetime_gravity_buff"	   			"SpaceTime Gravity"
+	"DOTA_Tooltip_modifier_mjz_enigma_spacetime_gravity_buff_Description"	    "The power returns to its origin."

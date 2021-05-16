@@ -1,0 +1,13 @@
+    
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger"							"极度饥渴"
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_Description"				"对活物体液的强烈饥渴提高了育母蜘蛛的攻击力，并使她的攻击附带吸血效果。"
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_Lore"						"大多数猎物都被她用丝茧裹了起来，作为饲料留给后代，育母蜘蛛自己则想品尝那些迷路的英雄。"
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_Note0"						"与其他吸血效果完全叠加。"
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_bonus_damage"				"攻击力加成："
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_bonus_attack_speed"			"攻击速度加成："
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_lifesteal_pct"				"%吸血百分比："
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_duration"					"持续时间："
+"DOTA_Tooltip_modifier_mjz_broodmother_insatiable_hunger"					        "极度饥渴"
+"DOTA_Tooltip_modifier_mjz_broodmother_insatiable_hunger_Description"		        "攻击力提升，攻击速度提升，攻击附带吸血效果。"
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_broodmother_insatiable_hunger"	    "+{s:value} 极度饥渴攻击力/攻击速度"
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_aghanim_description"		"小蜘蛛将会同时获得技能效果。"

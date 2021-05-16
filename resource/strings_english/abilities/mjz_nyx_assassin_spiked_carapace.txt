@@ -1,0 +1,12 @@
+
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace"						"Spiked Carapace"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_Description"			"When activated while above ground, Spiked Carapace reflects damage dealt to Nyx Assassin, as well as stunning the source of the damage. \n\nWhile Burrowed, Spiked Carapace instantly stuns nearby enemies when cast."
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_Lore"				"While their carapace is relatively thin, it's guarded by a retractable field of razor-sharp spikes."
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_Note0"				"The damage is calculated after all reductions."
+	// "DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_Note1"				"Spiked Carapace will only trigger on damage from other player controlled units."
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_Note2"				"The damage reflected will have the same damage type as it had when it was dealt to Nyx."
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_mana_cost_per"		"%MANA/SEC:"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_stun_duration"		"STUN DURATION:"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_stun_interval"		"STUN INTERVAL:"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_damage_reduction_pct"	"%REDUCTION DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_damage_reflect_pct"	"%DAMAGE REFLECTED:"

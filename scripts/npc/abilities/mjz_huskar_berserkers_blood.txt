@@ -1,0 +1,67 @@
+
+	//=================================================================================================================
+	//	Huskar: Berserker's Blood
+	//=================================================================================================================
+	"mjz_huskar_berserkers_blood"
+	{
+		"BaseClass"						"ability_lua"	//"ability_datadriven"
+		"ScriptFile"					"abilities/hero_huskar/mjz_huskar_berserkers_blood.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjz_huskar_berserkers_blood"
+
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"maximum_attack_speed"			"160 220 380 540"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"maximum_health_regen"			"20 60 80 280"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"maximum_resistance"			"30 50 70 95"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"hp_threshold_max"				"30"
+			}
+			"11"
+			{
+				"var_type"			    		"FIELD_INTEGER"
+				"interval"	           			"1"
+			}
+			"12"
+			{
+				"var_type"			    		"FIELD_FLOAT"
+				"tick_interval"	        		"0.1"
+			}
+			"13"
+			{
+				"var_type"			    		"FIELD_INTEGER"
+				"model_multiplier"	    		"35"
+			}
+			"14"
+			{
+				"var_type"			    		"FIELD_INTEGER"
+				"hp_threshold_effect"	    	"90"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+			"particle"	"particles/units/heroes/hero_huskar/huskar_inner_vitality.vpcf"
+			"particle"	"particles/units/heroes/hero_huskar/huskar_inner_vitality_cast.vpcf"
+			"particle"	"particles/econ/items/huskar/huskar_ti8/huskar_ti8_shoulder_heal.vpcf"
+			"particle"	"particles/econ/items/huskar/huskar_ti8/huskar_ti8_shoulder_heal_cast.vpcf"
+		}
+	}
+

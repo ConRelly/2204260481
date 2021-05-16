@@ -1,0 +1,93 @@
+
+"mjz_magnataur_reverse_polarity"
+{
+	"BaseClass"				        "ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    // "AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"2"
+	"AbilityTextureName"			"magnataur_reverse_polarity"
+	
+	"precache"
+	{
+		"particle" 		"particles/units/heroes/hero_magnataur/magnataur_reverse_polarity.vpcf"
+		"particle"		"particles/units/heroes/hero_magnataur/magnataur_reverse_polarity_pull.vpcf"
+        "particle"		"particles/units/heroes/hero_magnataur/magnus_loadout.vpcf"
+        "soundfile"		"soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+	}
+	
+	"AbilityCastPoint"				"0.3 0.3 0.3"
+	"AbilityCooldown"				"120 100 80"
+	"AbilityManaCost"				"200 250 300"
+	"AbilityCastRange"				"2200"
+
+	"AbilityModifierSupportValue"	"0.5"	// Applies multiple modifiers
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"pull_radius"			"2200"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"polarity_damage"		"100 250 400"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"hero_stun_duration"	"2.25 3.0 3.75"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"creep_stun_duration"	"3.0 4.0 5.0"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"pull_offset"			"150"
+		}
+	}
+	
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+        {
+            "ScriptFile"	"abilities/hero_magnataur/mjz_magnataur_reverse_polarity.lua"
+            "Function"		"OnAbilityPhaseStart"
+        }
+	}
+	"OnSpellStart"
+	{
+        // "RunScript"
+        // {
+        //     "ScriptFile"	"abilities/hero_magnataur/mjz_magnataur_reverse_polarity.lua"
+        //     "Function"		"OnSpellStart"
+        // }
+		"ActOnTargets"
+		{		
+			"Target"
+			{
+				"Center"  				"CASTER"
+				"Radius" 				"%pull_radius"
+				"Teams" 				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+			"Action"
+			{		
+				"RunScript"
+				{
+					"ScriptFile"	"abilities/hero_magnataur/mjz_magnataur_reverse_polarity.lua"
+					"Function"		"ReversePolarity"
+				}
+			}
+		}
+	}
+}

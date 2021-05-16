@@ -1,0 +1,13 @@
+    
+	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard"					"Flame Guard"
+	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_Description"		"Ember Spirit surrounds himself with a ring of fire that consumes incoming damage,  leaving his unharmed. Flame Guard deals damage per second in an area around Ember Spirit while Flame Guard is active. "
+	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_Lore"			"An enemy should never be allowed to approach without difficulty."
+	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_radius"					"RADIUS:"
+	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_damage_per_second"		"DAMAGE PER SECOND:"
+	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_bonus_damage_pct"		"%BONUS DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_damage_reduction_pct"	"%REDUCTION DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_duration"				"DURATION:"
+	"DOTA_Tooltip_modifier_mjz_ember_spirit_flame_guard"				"Flame Guard"
+	"DOTA_Tooltip_modifier_mjz_ember_spirit_flame_guard_Description"	"Absorbing damage, and dealing magic damage in an area of effect."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_ember_spirit_flame_guard_damage_per"		"+60 Flame Guard DPS"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_damage"	"+2% Flame Guard BONUS DAMAGE"

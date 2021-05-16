@@ -1,0 +1,13 @@
+	"shadow_shaman_mass_serpent_ward"
+	{
+		"AbilityCooldown"				"80 70 60"
+		"AbilityManaCost"				"200 300 400"
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"26.0"
+			}
+		}
+	}

@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_clinkz_death_pact"				    "Death Pact"
+	"DOTA_Tooltip_ability_mjz_clinkz_death_pact_Description"	    "Increases maximum health and attack damage."
+	"DOTA_Tooltip_ability_mjz_clinkz_death_pact_Lore"	    		"Sutherex' bond of life and death has become a part of Clinkz, and his old bones are refreshed with repetition of the pact on lesser beings."
+	"DOTA_Tooltip_ability_mjz_clinkz_death_pact_bonus_damage_pct"	"%Attack Damage Bonus: "
+	"DOTA_Tooltip_ability_mjz_clinkz_death_pact_bonus_health"		"Health Bonus: "
+	"DOTA_Tooltip_ability_mjz_clinkz_death_pact_armor_reduction"	"Armor Reduction: "
+	"DOTA_Tooltip_ability_mjz_clinkz_death_pact_duration"			"Duration: "
+	"DOTA_Tooltip_modifier_mjz_clinkz_death_pact"					"Death Pact"
+	"DOTA_Tooltip_modifier_mjz_clinkz_death_pact_Description"	    "Increases %dMODIFIER_PROPERTY_HEALTH_BONUS% maximum health and %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% attack damage."
+	

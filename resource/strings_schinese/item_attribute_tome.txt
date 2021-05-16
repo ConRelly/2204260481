@@ -1,0 +1,23 @@
+
+
+		"DOTA_Tooltip_ability_item_book_of_strength"						"力量之书"
+		"DOTA_Tooltip_ability_item_book_of_strength_Description"			"消耗后永久获得%bonus_stat%点力量。"
+		"DOTA_Tooltip_ability_item_book_of_agility"							"敏捷之书"
+		"DOTA_Tooltip_ability_item_book_of_agility_Description"				"消耗后永久获得%bonus_stat%点敏捷。"
+		"DOTA_Tooltip_ability_item_book_of_intelligence"					"智力之书"
+		"DOTA_Tooltip_ability_item_book_of_intelligence_Description"		"消耗后永久获得%bonus_stat%点智力。"
+
+		"DOTA_Tooltip_ability_item_book_of_greater_strength"						"刚毅之书"
+		"DOTA_Tooltip_ability_item_book_of_greater_strength_Description"			"消耗后永久获得%bonus_stat%点力量。"
+		"DOTA_Tooltip_ability_item_book_of_greater_agility"							"迅捷之书"
+		"DOTA_Tooltip_ability_item_book_of_greater_agility_Description"				"消耗后永久获得%bonus_stat%点敏捷。"
+		"DOTA_Tooltip_ability_item_book_of_greater_intelligence"					"洞察之书"
+		"DOTA_Tooltip_ability_item_book_of_greater_intelligence_Description"		"消耗后永久获得%bonus_stat%点智力。"
+		
+		"DOTA_Tooltip_modifier_book_of_strength"							"力量之书"
+		"DOTA_Tooltip_modifier_book_of_strength_Description"				"消耗后获得了力量。"
+		"DOTA_Tooltip_modifier_book_of_agility"								"敏捷之书"
+		"DOTA_Tooltip_modifier_book_of_agility_Description"					"消耗后获得了敏捷。"
+		"DOTA_Tooltip_modifier_book_of_intelligence"						"智力之书"
+		"DOTA_Tooltip_modifier_book_of_intelligence_Description"			"消耗后获得了智力。"
+		

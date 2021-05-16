@@ -1,0 +1,9 @@
+
+    "DOTA_Tooltip_ability_mjz_pudge_flesh_heap"	            "腐肉堆积"
+    "DOTA_Tooltip_ability_mjz_pudge_flesh_heap_Description"	"屠夫由无数腐烂的尸体堆积而成，这个技能让他能够积聚更多的腐肉，并且拥有额外魔法抗性。"
+    "DOTA_Tooltip_ability_mjz_pudge_flesh_heap_Lore"	    "屠夫赋予“肉盾”这个词新的含义。"
+    "DOTA_Tooltip_ability_mjz_pudge_flesh_heap_magic_damage_reduction_pct"	        "%魔法抗性加成："
+    "DOTA_Tooltip_ability_mjz_pudge_flesh_heap_primary_attribute_per"	            "%基础力量加成："
+    "DOTA_Tooltip_ability_special_bonus_unique_mjz_pudge_0301"	"+{s:value}% 腐肉堆积魔法抗性"
+    "DOTA_Tooltip_ability_special_bonus_unique_mjz_pudge_0302"	"+{s:value}% 腐肉堆积力量加成"
+    

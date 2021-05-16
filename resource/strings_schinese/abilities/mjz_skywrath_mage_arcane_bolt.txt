@@ -1,0 +1,12 @@
+
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt"				"奥法鹰隼"
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_Description"	"天怒法师施放出缓慢移动的奥术鹰群，对敌方单位造成基于天怒法师智力值的伤害。"
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_Aghanim_Description"	"增加目标数量。"
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_Lore"			"面对苍白之巢内无穷的诡计，只有沉稳的聪明人才能幸存。"
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_cast_range"		"施法距离："
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_bolt_damage"	"基础伤害："
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_int_multiplier"	"智力伤害系数："
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_target_count"			"目标数量："
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_target_count_scepter"	"神杖升级目标数量："
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_search_radius"			"目标搜索范围："
+	

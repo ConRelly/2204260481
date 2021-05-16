@@ -1,0 +1,87 @@
+
+	//=================================================================================================================
+	// Sniper: Quick Draw				快枪手
+	//=================================================================================================================
+	"mjz_sniper_quick_draw"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjz_sniper_quick_draw"
+
+		"MaxLevel"						"1"
+		"LearnOnSpawn"					"1"		// 出生时学习此技能、值为等级
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_stacks"			"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed"			"12"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"think_interval"		"5.0"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_mjz_sniper_quick_draw"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/hero_sniper/mjz_sniper_quick_draw.lua"
+						"Function"		"QuickDraw"
+						"modifier_name"	"modifier_mjz_sniper_quick_draw_buff"
+					}
+				}
+
+				"ThinkInterval"  "%think_interval"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/hero_sniper/mjz_sniper_quick_draw.lua"
+						"Function"		"QuickDraw"
+						"modifier_name"	"modifier_mjz_sniper_quick_draw_buff"
+					}
+				}
+
+				// "OnAttackStart"
+				// {
+				// 	"RunScript"
+				// 	{
+				// 		"ScriptFile"	"abilities/hero_sniper/mjz_sniper_quick_draw.lua"
+				// 		"Function"		"QuickDraw"
+				// 		"modifier_name"	"modifier_mjz_sniper_quick_draw_buff"
+				// 	}
+				// }
+
+
+			}
+
+			"modifier_mjz_sniper_quick_draw_buff"
+			{
+				"IsHidden"		"0"
+				"IsBuff"		"1"
+				"IsPurgable"	"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed" 
+				}
+			}
+		}
+	}
+

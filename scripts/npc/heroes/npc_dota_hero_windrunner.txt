@@ -1,0 +1,18 @@
+
+	"npc_dota_hero_windrunner_mjz"			// 风行者
+	{
+		"override_hero"			"npc_dota_hero_windrunner"
+		
+		
+		"Ability1"				"frostivus2018_windrunner_shackleshot"
+		"Ability2"				"mjz_windrunner_powershot"
+		"Ability6"				"mjz_windrunner_focusfire"
+		"Ability10"				"special_bonus_cooldown_reduction_15"
+		"Ability11"				"special_bonus_movement_speed_15"
+		"Ability12"				"special_bonus_unique_mjz_windrunner_powershot_damage"
+		"Ability13"				"special_bonus_attack_range_400"
+		"Ability15"				"special_bonus_spell_amplify_16"
+		"Ability16"				"special_bonus_unique_mjz_windrunner_focusfire_ministun"
+		"Ability17"				"special_bonus_50_crit_40"
+	}
+	

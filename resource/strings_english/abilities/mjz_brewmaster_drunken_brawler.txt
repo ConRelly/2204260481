@@ -1,0 +1,16 @@
+    
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler"				    "Drunken Brawler"
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_Description"	    "Gives a chance to avoid attacks and to deal critical damage. "
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_Lore"	    		"When Mangix won his title as the Brewmaster of the Order of Oyo, he also claimed his place in the mastery of inebriation."
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_dodge_chance"	    "%Evasion: "
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_crit_chance"	    "%Critical Chance: "
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_crit_multiplier"	"%Critical Damage: "
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_duration"	   	 	"Duration: "
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_dodge_chance_active"	    "%Evasion (Active): "
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_crit_chance_active"	    "%Critical Chance (Active): "
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_crit_multiplier_active"	"%Critical Damage (Active): "
+	"DOTA_Tooltip_modifier_mjz_brewmaster_drunken_brawler_active"					"Drunken Brawler"
+	"DOTA_Tooltip_modifier_mjz_brewmaster_drunken_brawler_active_Description"	    "Gives a chance to avoid attacks and to deal critical damage. "
+	
+	

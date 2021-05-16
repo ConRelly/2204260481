@@ -1,0 +1,97 @@
+
+"sniper_custom_rifle"
+{
+    "BaseClass"                     "ability_datadriven"
+    "AbilityTextureName"            "sniper_assassinate"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+    "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+    "AbilityCooldown"               "0.0"
+    "AbilityDamage"                 "0"
+    "AbilityManaCost"               "0"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"				"FIELD_FLOAT"
+            "base_attack_time"		"0.85 0.75 0.65"
+        }
+        "02"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "damage"				"-20 -25 -30"
+        }
+        "03"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "rangered"				"-250"
+        }
+        "04"
+        {
+            "var_type"				"FIELD_FLOAT"
+            "mana_regen_penalty"				"-0.5"
+        }
+    }
+    "OnUpgrade"
+    {
+        "RunScript"
+        {
+            "ScriptFile" "abilities/other/toggle.lua"
+            "Function"   "on_toggle_upgrade"
+        }
+    }
+    "OnToggleOn"
+    {
+        "ApplyModifier"
+        {
+            "ModifierName"	"sniper_custom_rifle_buff"
+            "Target"		"CASTER"
+        }
+    }
+    "OnToggleOff"
+    {
+        "RemoveModifier"
+        {
+            "ModifierName"	"sniper_custom_rifle_buff"
+            "Target"		"CASTER"
+        }
+    }
+    "Modifiers"
+    {
+        "sniper_custom_rifle_buff"
+        {
+            "IsBuff"	    "1"
+            "IsHidden"	    "1"
+            "Priority"	    "MODIFIER_PRIORITY_ULTRA"
+            "Attributes"	"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT"	"%base_attack_time"
+                "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%damage"
+                "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"			"%rangered"
+				"MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE"	"%mana_regen_penalty"
+            }
+            "OnAttack"
+            {
+                "RunScript"
+                {
+                    "ScriptFile" "abilities/heroes/sniper_custom_rifle.lua"
+                    "Function"   "on_attack"
+                }
+            }
+        }
+    }
+}
+"special_custom_bonus_unique_sniper_1"
+{
+    "BaseClass"				"special_bonus_undefined"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"value"						"10"
+		}
+	}
+}

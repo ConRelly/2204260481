@@ -1,0 +1,53 @@
+""
+{
+	"Items"
+	{		
+		"#DOTA_Item_Build_Starting_Items"
+		{
+			"item"		"item_dragon_scale"
+			"item"		"item_philo_stone_temp"		
+  		}
+		
+		"#DOTA_Item_Build_Early_Game"
+		{	
+			"item"		"item_cloak_of_flames"
+			"item"		"item_plain_perma"
+			"item"		"item_ancient_janggo_2"
+			"item"		"item_pharaoh_crown"
+		}
+		
+		"#DOTA_Item_Build_Mid_Items"			
+		{
+			"item"		"item_earth_rapier" 
+			"item"		"item_ultimate_scepter"
+			"item"		"item_bigan_octarine_core"
+			"item"		"item_illusionsts_cape"
+			"item"		"item_mjz_assault_5"
+			"item"		"item_mjz_attribute_mail"
+			"item"		"item_mjz_bogduggs_lucky_femur_5"    		
+		}
+		
+		"#DOTA_Item_Build_Late_Items"			
+		{
+  			"item"  	"item_radiance_armor_3"
+  			"item"		"item_mjz_shivas_guard_5"
+			"item"		"item_sanguine"
+  			"item"		"item_maple_shield_lua"
+  			"item"		"item_pipe_2"
+			"item"		"item_mjz_preserved_skull"
+			"item"		"item_dragon_head_2"
+			"item"      "item_cursed_gaze"
+			"item"		"item_tome_bargain"
+		}
+
+		"#DOTA_Item_Build_Luxury"
+		{
+			"item"		"item_all_essence"  
+			"item"		"item_weapon_fragment"  
+			"item"		"item_weapon_fragment_complete"
+			"item"		"item_enchanter"
+			"item"		"item_edible_complete"
+			"item"		"item_greater_elemental"
+		}	
+	}
+}

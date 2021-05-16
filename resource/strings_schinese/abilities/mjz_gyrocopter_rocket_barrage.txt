@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_gyrocopter_rocket_barrage"				"火箭弹幕"
+	"DOTA_Tooltip_ability_mjz_gyrocopter_rocket_barrage_Description"	"向矮人直升机周围一定范围内的敌方单位齐射导弹。"
+	"DOTA_Tooltip_ability_mjz_gyrocopter_rocket_barrage_Lore"			"奥雷尔的新飞行器有更大的火箭载弹量，增强了速射能力。"
+	"DOTA_Tooltip_ability_mjz_gyrocopter_rocket_barrage_radius"				"作用范围："
+	"DOTA_Tooltip_ability_mjz_gyrocopter_rocket_barrage_rocket_damage"		"火箭伤害："
+	"DOTA_Tooltip_ability_mjz_gyrocopter_rocket_barrage_agi_damage_pct"		"%额外敏捷伤害："
+	"DOTA_Tooltip_modifier_mjz_gyrocopter_rocket_barrage"				"火箭弹幕"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_gyrocopter_rocket_barrage_damage"				"+110 火箭弹幕伤害"

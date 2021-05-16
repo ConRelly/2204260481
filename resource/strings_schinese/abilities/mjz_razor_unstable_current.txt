@@ -1,0 +1,14 @@
+    
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current"				    "不稳定电流"
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_Description"	    "被动提升剃刀的移动速度，每隔若干时间对区域内所有单位造成若干伤害。\n\n可用神杖升级。"
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_Aghanim_Description"	    "减少伤害间隔，扩大作用范围。"
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_Lore"	    		"仅仅是靠近闪电幽魂就会体验免费的电击疗法。"
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_radius"					"范围："
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_movement_speed_pct"		"%移动速度加成："
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_passive_area_damage"		"基础伤害："
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_attack_damage_pct"			"%攻击力伤害："
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_passive_area_interval"		"伤害间隔："
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_radius_scepter"					"神杖升级范围："
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_passive_area_interval_scepter"		"神杖升级伤害间隔："
+	

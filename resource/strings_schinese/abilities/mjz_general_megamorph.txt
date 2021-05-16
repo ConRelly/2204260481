@@ -1,0 +1,8 @@
+
+"DOTA_Tooltip_ability_mjz_general_megamorph"				    "巨大化"
+"DOTA_Tooltip_ability_mjz_general_megamorph_Description"	    ""
+"DOTA_Tooltip_ability_mjz_general_megamorph_Lore"	    		""
+"DOTA_Tooltip_ability_mjz_general_megamorph_bonus_damage"		"攻击力加成："
+"DOTA_Tooltip_ability_mjz_general_megamorph_attack_range"		"攻击距离加成："
+"DOTA_Tooltip_ability_mjz_general_megamorph_cast_range"			"施法距离加成："
+

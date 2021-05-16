@@ -1,0 +1,68 @@
+
+	//=================================================================================================================
+	// Templar Assassin: Refraction
+	//=================================================================================================================
+	"mjz_templar_assassin_refraction"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_templar_assassin/mjz_templar_assassin_refraction.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Hero_TemplarAssassin.Refraction"
+		"AbilityTextureName"			"mjz_templar_assassin_refraction"
+
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCooldown"				"20.0 19.0 18.0 17.0"
+		"AbilityManaCost"				"100 90 80 70"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"instances"					"3 4 5 6"
+				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"25 50 75 100"
+				"LinkedSpecialBonus"		"special_bonus_unique_mjz_templar_assassin_refraction_damage"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_threshold"			"5 5 5 5"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"4.0 5.0 6.0 7.0"
+			}
+		}
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_templar_assassin/templar_assassin_refraction.vpcf"
+			"soundfile"		"sounds/weapons/hero/templar_assassin/refraction.vsnd"
+			"soundfile"		"sounds/weapons/hero/templar_assassin/refraction_absorb.vsnd"
+		}
+	}
+	"special_bonus_unique_mjz_templar_assassin_refraction_damage"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"100"
+			}
+		}
+	}

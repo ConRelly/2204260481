@@ -1,0 +1,74 @@
+
+	"drow_ranger_frost_arrows"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"frost_arrows_movement_speed"	"-6 -10 -14 -18"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"	"52 84 296 448"
+			}
+		}
+	}
+	"drow_ranger_multishot"
+	{
+		"AbilityCooldown"				"18 16 14 12"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"arrow_count"				"16"
+			}	
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"arrow_slow_duration"		"1 1.5 2 2.5"
+			}			
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"arrow_speed"					"1450"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"arrow_range_multiplier"	"2.5"
+			}	
+		}
+	}
+	"drow_ranger_silence"
+	{
+		"AbilityCooldown"				"17 16 15 14"
+		"AbilityDuration"				"1.0 1.25 1.5 1.75"
+	}
+	"drow_ranger_marksmanship"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"chance"	                    "17 21 25"
+				"LinkedSpecialBonus"		"special_bonus_unique_drow_ranger_3"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"					"40 50 60"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"agility_multiplier"		"20 25 30"
+			}
+		}
+	}
+	
+	

@@ -1,0 +1,4 @@
+    
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast"				    "自动施法 - 刺针扫射"
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast_Description"	    ""
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast_Lore"	    	""

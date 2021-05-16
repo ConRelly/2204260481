@@ -1,0 +1,12 @@
+    
+"DOTA_Tooltip_ability_skywrath_mage_mystic_flare"					"Mystic Flare"
+"DOTA_Tooltip_ability_skywrath_mage_mystic_flare_Description"		"Skywrath Mage uses his ultimate magical ability to conjure a precise and violent mystical field that lays waste to his adversaries. Deals massive damage distributed evenly among any Heroes in the area over %duration% seconds."
+"DOTA_Tooltip_ability_skywrath_mage_mystic_flare_Lore"				"Only the most practiced of Skywrath sorcerers could hope to shape the skies into such a storm."
+"DOTA_Tooltip_ability_skywrath_mage_mystic_flare_Note0"				"Mystic Flare only affects Heroes; it does not damage illusions or creep heroes."
+"DOTA_Tooltip_ability_skywrath_mage_mystic_flare_Note1"				"Spell immune enemies do not count toward the damage distribution."
+"DOTA_Tooltip_ability_skywrath_mage_mystic_flare_Note2"				"Mystic Flare will damage enemy creeps if no enemy heroes are present."
+"DOTA_Tooltip_ability_skywrath_mage_mystic_flare_radius"			"RADIUS:"
+"DOTA_Tooltip_ability_skywrath_mage_mystic_flare_duration"			"DURATION:"
+"DOTA_Tooltip_ability_skywrath_mage_mystic_flare_base_damage"			"BASE DAMAGE:"
+"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare_int_multiplier"	"INT DAMAGE MULTIPLIER:"
+"DOTA_Tooltip_ability_skywrath_mage_mystic_flare_aghanim_description"		"When Skywrath Mage casts Mystic Flare, another Mystic Flare will be created on the position of a different random target enemy within %scepter_radius% range. Heroes will take priority"

@@ -1,0 +1,14 @@
+
+	"npc_dota_hero_centaur_mjz"			// 半人马
+	{
+		"override_hero"			"npc_dota_hero_centaur"
+		
+		"Ability2"				"mjz_centaur_double_edge"
+		"Ability3"				"mjz_centaur_return"
+		"Ability12"				"special_bonus_strength_15"
+		"Ability13"				"special_bonus_unique_mjz_centaur_double_edge_radius"
+		"Ability14"				"special_bonus_unique_mjz_centaur_return_strength"
+		"Ability16"				"special_bonus_unique_mjz_centaur_return_aura"
+		"Ability17"				"special_bonus_unique_mjz_centaur_double_edge_strength"
+	}
+	

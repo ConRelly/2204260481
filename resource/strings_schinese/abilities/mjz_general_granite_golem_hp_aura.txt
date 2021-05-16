@@ -1,0 +1,7 @@
+
+"DOTA_Tooltip_ability_mjz_general_granite_golem_hp_aura"								"磐石光环"
+"DOTA_Tooltip_ability_mjz_general_granite_golem_hp_aura_Description"					"提高周围单位的生命值上限。"
+"DOTA_Tooltip_ability_mjz_general_granite_golem_hp_aura_bonus_hp"					"%额外生命值加成："
+"DOTA_Tooltip_ability_mjz_general_granite_golem_hp_aura_radius"						"作用范围："
+"DOTA_Tooltip_modifier_mjz_general_granite_golem_hp_aura_bonus"						"磐石光环"
+"DOTA_Tooltip_modifier_mjz_general_granite_golem_hp_aura_bonus_Description"			"生命值提升%dMODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE%%%。"

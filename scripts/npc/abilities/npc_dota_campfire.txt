@@ -1,0 +1,11 @@
+
+	"ability_campfire"
+	{
+	  "AbilityBehavior" 	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	  "BaseClass"					"ability_lua"	// "ability_datadriven"
+	  "ScriptFile"					"abilities/ability_campfire.lua"
+	  "MaxLevel" 			"1"
+	  "AbilityTextureName"     ""
+	  
+	}
+	

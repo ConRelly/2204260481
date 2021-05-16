@@ -1,0 +1,90 @@
+ 
+ "mjz_void_spirit_astral_atlas"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_void_spirit/mjz_void_spirit_astral_atlas.lua"
+		"AbilityTextureName"			"mjz_void_spirit_astral_atlas"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        //"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_VoidSpirit.AstralStep.Start"
+		"AnimationPlaybackRate"			"1.5" // 1.0 corresponds to cast point of 0.3
+
+		"AbilityCastPoint"				"0.2"
+
+		"AbilityCooldown"				"15"
+		//"AbilityCharges"				"4"
+		//"AbilityChargeRestoreTime"		"30 25 15"
+
+		"AbilityManaCost"				"200"
+        "MaxLevel"                      "1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"170"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"AbilityCharges"		""
+				"LinkedSpecialBonus"	"special_bonus_unique_void_spirit_9"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"AbilityChargeRestoreTime"	""
+				"LinkedSpecialBonus"	"special_bonus_unique_void_spirit_1"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_travel_distance"	"200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_travel_distance"	"1100"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pop_damage_delay"		"1.25"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pop_damage"			"1250"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow_pct"		"60"
+			}
+		}
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+        "precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_void_spirit.vsndevts"
+			"particle"	"particles/status_fx/status_effect_void_spirit_aether_remnant.vpcf"
+			"particle"	"particles/units/heroes/hero_void_spirit/aether_remnant/void_spirit_aether_remnant_run.vpcf"
+			"particle"	"particles/units/heroes/hero_void_spirit/aether_remnant/void_spirit_aether_remnant_pre.vpcf"
+			"particle"	"particles/units/heroes/hero_void_spirit/aether_remnant/void_spirit_aether_remnant_watch.vpcf"
+			"particle"	"particles/units/heroes/hero_void_spirit/aether_remnant/void_spirit_aether_remnant_pull.vpcf"
+			"particle"	"particles/units/heroes/hero_void_spirit/aether_remnant/void_spirit_aether_remnant_flash.vpcf"
+            
+            "particle"	"particles/status_fx/status_effect_void_spirit_astral_step_debuff.vpcf"
+			"particle"	"particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step.vpcf"
+			"particle"	"particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step_impact.vpcf"
+			"particle"	"particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step_debuff.vpcf"
+			"particle"	"particles/units/heroes/hero_void_spirit/astral_step/void_spirit_astral_step_dmg.vpcf"
+		}
+	}
+	

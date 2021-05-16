@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_omniknight_purification"				    "Purification"
+	"DOTA_Tooltip_ability_mjz_omniknight_purification_Description"	    "Instantly heals a friendly unit and damages all nearby enemy units."
+	"DOTA_Tooltip_ability_mjz_omniknight_purification_Lore"	    		"Priests of the Omniscience are adept at removing impurities from fellow warriors."
+	"DOTA_Tooltip_ability_mjz_omniknight_purification_Note0"	    	"Despite the visual effects, the damage is applied instantly to all enemy units within range of the target."
+	"DOTA_Tooltip_ability_mjz_omniknight_purification_radius"			"Damage Radius: "
+	"DOTA_Tooltip_ability_mjz_omniknight_purification_heal"				"Heal/Damage: "
+	"DOTA_Tooltip_ability_mjz_omniknight_purification_health_per"		"%Health Bonus:"
+	

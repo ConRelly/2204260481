@@ -1,0 +1,15 @@
+    
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning"							"Ball Lightning"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Description"				"Storm Spirit becomes volatile electricity, charging across the battlefield until he depletes his mana or reaches his target. "
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Lore"						"The Storm is coming in."
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Note0"					"Abilities and items can be used while traveling."
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Note1"					"This ability will destroy trees."
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Note2"					"Storm Spirit is invulnerable during Ball Lightning."
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_radius"					"RADIUS:"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_bonus_move_speed"			"%SPEED:"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_damage"					"DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_mana_percentage"			"%MANA DRAIN PER:"
+	"DOTA_Tooltip_modifier_mjz_storm_spirit_ball_lightning_buff"					"Ball Lightning"
+	"DOTA_Tooltip_modifier_mjz_storm_spirit_ball_lightning_buff_Description"	    "Storm Spirit becomes volatile electricity, charging across the battlefield until he depletes his mana or reaches his target. "
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_storm_spirit_ball_lightning_01"	"+{s:value} Ball Lightning Damage"
+	

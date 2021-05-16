@@ -1,0 +1,6 @@
+    
+	"DOTA_Tooltip_ability_mjz_terrorblade_sunder"				    "Sunder"
+	"DOTA_Tooltip_ability_mjz_terrorblade_sunder_Description"	    "Severs the life from both Terrorblade and a target, exchanging a percentage of both units' current health. Some health points must remain."
+	"DOTA_Tooltip_ability_mjz_terrorblade_sunder_Lore"	    		"You didn't need that life, did you?  The demon marauder steals that which you hold most dear."
+	"DOTA_Tooltip_ability_mjz_terrorblade_sunder_cast_range"				"CAST RANGE:"
+	"DOTA_Tooltip_ability_mjz_terrorblade_sunder_hit_point_minimum_pct"		"%MINIMUM HP SWAP:"

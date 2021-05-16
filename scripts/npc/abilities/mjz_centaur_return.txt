@@ -1,0 +1,78 @@
+
+	//=================================================================================================================
+	// Centaur Warchief: Return (Retaliate)		反击
+	//=================================================================================================================
+	"mjz_centaur_return"
+	{
+		"BaseClass"						"ability_lua"	//"ability_datadriven"
+		"ScriptFile"					"abilities/hero_centaur/mjz_centaur_return.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityTextureName"			"mjz_centaur_return"
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_centaur/centaur_return.vpcf"
+			"particle"	"particles/custom/aura_thorns.vpcf"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"return_damage"				"16 18 25 42"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"strength_pct"				"65 80 165 380"
+				"LinkedSpecialBonus"		"special_bonus_unique_mjz_centaur_return_strength"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_radius"				"900"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_enabled"				"0"
+				"LinkedSpecialBonus"		"special_bonus_unique_mjz_centaur_return_aura"
+			}
+		}
+	}
+	"special_bonus_unique_mjz_centaur_return_strength"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"25"
+			}
+		}
+	}
+	"special_bonus_unique_mjz_centaur_return_aura"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"1"
+			}
+		}
+	}

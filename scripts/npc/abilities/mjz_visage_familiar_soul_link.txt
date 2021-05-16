@@ -1,0 +1,30 @@
+	
+	//=================================================================================================================
+	// Visage Familiar: Soul Link		灵魂链接
+	//=================================================================================================================
+	"mjz_visage_familiar_soul_link"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_visage/mjz_visage_familiar_soul_link.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjz_visage_familiar_soul_link"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage_pct"		"65"		
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_pct"		"45"		
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_range_pct"		"100"		
+			}	
+		}
+	}

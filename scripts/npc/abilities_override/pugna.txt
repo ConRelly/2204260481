@@ -1,0 +1,20 @@
+	
+	"pugna_life_drain"
+	{
+		"AbilityChannelTime"			"20"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"health_drain"					"100 200 300"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scepter_health_drain"			"200 300 400"
+				"RequiresScepter"		"1"
+			}
+		}
+	}

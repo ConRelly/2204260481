@@ -1,0 +1,16 @@
+
+	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist"					"无影拳"
+	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Description"		"灰烬之灵以燎原之火的速度横冲直撞，攻击目标区域内所有敌人，随后返回所在位置。"
+	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Lore"			"顷刻之间，鞭策众敌。"
+	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_radius"				"作用范围："
+	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_bonus_damage"		"攻击力加成："
+	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_attack_interval"		"攻击间隔："
+	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_crit_chance"			"%致命一击概率："
+	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_crit_bonus"			"%致命一击伤害："
+	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_attack_count"		"攻击次数："
+	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Note0"	"在施放技能时作用的目标就已决定。"
+	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Note1"	"对目标的攻击每次间隔0.2秒。"
+	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Note2"	"炘拥有的攻击特效（如致命一击、重击、分裂、连锁闪电等效果）在技能攻击期间都能生效。"
+	"DOTA_Tooltip_modifier_mjz_ember_spirit_sleight_of_fist_charge_counter"		"无影拳能量点数"
+	"DOTA_Tooltip_modifier_mjz_ember_spirit_sleight_of_fist_charge"				"无影拳能量点数"
+	

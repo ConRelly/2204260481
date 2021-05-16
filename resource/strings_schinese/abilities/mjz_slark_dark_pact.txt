@@ -1,0 +1,13 @@
+    
+"DOTA_Tooltip_ability_mjz_slark_dark_pact"				"黑暗契约"
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_Description"	"短暂延迟后，斯拉克牺牲部分生命力，清除大部分负面状态并对自己和周围敌方单位造成伤害。斯拉克自身只受到造成的50%%伤害。\n\n驱散类型：强驱散"
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_Lore"			"鱼人具有使鳍快速重新生长的能力，这样在重伤下也能救回自己的命。"
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_delay"		"施法延迟："
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_radius"		"作用范围："
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_base_damage"	"基础伤害："
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_health_damage_pct"	"%当前生命值伤害："
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_Note0"	"经过1.5秒施法延迟后，每隔0.1秒释放1道伤害波造成伤害，总共10道。"
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_Note1"	"每道伤害波还会移除斯拉克身上的负面效果。"
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_Note2"	"不能使用此技能自杀。"
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_Note3"	"如果斯拉克死亡，伤害波将停止释放。"
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_slark_dark_pact_damage"	"+200 黑暗契约伤害"

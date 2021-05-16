@@ -1,0 +1,12 @@
+    
+"DOTA_Tooltip_ability_mjz_windrunner_powershot"										"Powershot"
+"DOTA_Tooltip_ability_mjz_windrunner_powershot_Description"							"Windranger charges her bow for up to %abilitychanneltime% second for a single powerful shot, which deals more damage the longer it is charged. The arrow damages enemies along its path. "
+"DOTA_Tooltip_ability_mjz_windrunner_powershot_Lore"								"During her early years of training, Lyralei learned to fire powerful arrows that cleaved even trees to reach their targets."
+"DOTA_Tooltip_ability_mjz_windrunner_powershot_Note0"								"Powershot will destroy trees in its area of effect."
+"DOTA_Tooltip_ability_mjz_windrunner_powershot_arrow_range"							"RANGE:"
+"DOTA_Tooltip_ability_mjz_windrunner_powershot_attack_damage"						"%ATTACK DAMAGE:"
+"DOTA_Tooltip_ability_mjz_windrunner_powershot_debuff_incoming_damage"				"%INCREASED ENEMY INCOMING DAMAGE:"
+"DOTA_Tooltip_ability_mjz_windrunner_powershot_debuff_duration"						"DEBUFF DURATION:"
+"DOTA_Tooltip_modifier_mjz_windrunner_powershot_debuff"								"You be shot by an arrow"
+"DOTA_Tooltip_modifier_mjz_windrunner_powershot_debuff_Description"					"Taking %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% increase damage."
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_windrunner_powershot_damage"			"+{s:value}% Powershot Attack Damage"

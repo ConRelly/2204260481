@@ -1,0 +1,13 @@
+    
+	"DOTA_Tooltip_ability_mjz_doom_bringer_infernal_blade"				    "Infernal Blade"
+	"DOTA_Tooltip_ability_mjz_doom_bringer_infernal_blade_Description"	    "Doom swings his burning sword, igniting the enemy. "
+	"DOTA_Tooltip_ability_mjz_doom_bringer_infernal_blade_Lore"	    		"Lucifer shares the fire branding bestowed upon him at the time of his exile."
+	"DOTA_Tooltip_ability_mjz_doom_bringer_infernal_blade_cast_range"			"Cast Range: "
+	"DOTA_Tooltip_ability_mjz_doom_bringer_infernal_blade_burn_base_damage"			"Base Damage per second: "
+	"DOTA_Tooltip_ability_mjz_doom_bringer_infernal_blade_burn_strength_damage_pct"	"%Strength as Damage per Second: "
+	"DOTA_Tooltip_ability_mjz_doom_bringer_infernal_blade_burn_duration"			"Burn Duration:"
+	"DOTA_Tooltip_ability_mjz_doom_bringer_infernal_blade_stun_duration"			"Stun Duration:"
+	"DOTA_Tooltip_modifier_mjz_doom_bringer_infernal_blade_burn"					"Infernal Blade Burn"
+	"DOTA_Tooltip_modifier_mjz_doom_bringer_infernal_blade_burn_Description"	    "Dealing damage per second"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_doom_bringer_infernal_blade_strength"	    "+{s:value}% Infernal Blade Strength Damage"
+	

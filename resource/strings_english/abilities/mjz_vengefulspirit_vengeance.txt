@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance"				    "Vengeance"
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_Description"	    "Increase your attack damage, attack speed, attack distance."
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_Lore"	    		"She may spend eternity flightless, but she will have her revenge."
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_bonus_damage"		"Attack Damage Bonus: "
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_bonus_attack_speed"	"Attack Speed Bonus: "
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_bonus_attack_range"	"Attack Range Bonus: "
+	

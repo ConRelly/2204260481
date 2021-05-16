@@ -1,0 +1,11 @@
+    
+"DOTA_Tooltip_ability_mjz_centaur_double_edge"								"Double Edge"
+"DOTA_Tooltip_ability_mjz_centaur_double_edge_Description"					"Centaur strikes a mighty blow at melee range, damaging both himself and a small area around the target. Deals extra damage based on your strength. Centaur cannot die from Double Edge."
+"DOTA_Tooltip_ability_mjz_centaur_double_edge_Lore"							"In the spurs of combat, Bradwarden's vicious strikes sometimes cause self-inflicted collateral damage."
+"DOTA_Tooltip_ability_mjz_centaur_double_edge_Note0"						"Double Edge deals magic type damage to both the targets and himself."
+"DOTA_Tooltip_ability_mjz_centaur_double_edge_edge_damage"					"DAMAGE:"
+"DOTA_Tooltip_ability_mjz_centaur_double_edge_strength_damage"				"%STRENGTH DAMAGE:"
+"DOTA_Tooltip_ability_mjz_centaur_double_edge_self_strength_damage"			"%SELF BEAR STRENGTH DAMAGE:"
+"DOTA_Tooltip_ability_mjz_centaur_double_edge_radius"						"RADIUS:"
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_centaur_double_edge_strength"		"+{s:value}% Double Edge Strength Damage"
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_centaur_double_edge_radius"			"+{s:value} Double Edge Radius"

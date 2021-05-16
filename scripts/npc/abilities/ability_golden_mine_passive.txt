@@ -1,0 +1,106 @@
+
+	"golden_mine_passive_old"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"alchemist_goblins_greed"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"            	"FIELD_INTEGER"
+				"dmg_block"            	"1000" 	// regular: 1.8
+			}
+			"02"
+			{
+				"var_type"              "FIELD_FLOAT"
+				"xp"            		"5" 	// regular: 1.8
+			}
+			"03"
+			{
+				"var_type"              "FIELD_FLOAT"
+				"gold"          		"4" 	// regular: 1.8
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_golden_mine_passive_old"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"OnAttacked"
+				{
+					"ApplyModifier"
+					{
+						"Target"
+						{
+							"Center"		"ATTACKER"
+							"Types"			"DOTA_UNIT_TARGET_HERO"
+							"Flags"			"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
+
+						}	
+						"ModifierName"		"modifier_golden_mine_buff"
+						"Duration"			"1"
+					}
+				}
+			}
+			"modifier_golden_mine_buff_old"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+
+				"ThinkInterval"		"1"
+				"OnIntervalThink"
+				{
+					"GrantXPGold"
+					{
+						"Target"
+						{
+							"Center"		"TARGET"
+							"Types"			"DOTA_UNIT_TARGET_HERO"
+							"Flags"			"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
+
+						}	
+						"XPAmount"		"5"
+						"GoldAmount"	"4"
+						"ReliableGold"	"1"
+						"PlayAlert"		"1"
+					}
+				}
+			}	
+		}
+	}
+	"golden_mine_passive"
+	{
+		"BaseClass"						"ability_lua"
+    	"ScriptFile"                    "abilities/golden_mine_passive.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"alchemist_goblins_greed"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"            	"FIELD_INTEGER"
+				"dmg_block"            	"1000" 	// regular: 1.8
+			}
+			"02"
+			{
+				"var_type"              "FIELD_FLOAT"
+				"exp"            		"5" 	// regular: 1.8
+			}
+			"03"
+			{
+				"var_type"              "FIELD_FLOAT"
+				"gold"          		"4" 	// regular: 1.8
+			}
+			"04"
+			{
+				"var_type"              "FIELD_FLOAT"
+				"interval"          	"1" 	// regular: 1.8
+			}
+		}
+	}

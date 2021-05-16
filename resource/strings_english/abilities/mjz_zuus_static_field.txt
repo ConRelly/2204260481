@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_zuus_static_field"				    "Static Field"
+	"DOTA_Tooltip_ability_mjz_zuus_static_field_Description"	    "Zeus shocks any enemy hit by his abilities. The damage is based on your intelligence."
+	"DOTA_Tooltip_ability_mjz_zuus_static_field_Lore"	    		"The air crackles with static when the Thundergod walks the world."
+	"DOTA_Tooltip_ability_mjz_zuus_static_field_radius"		    	"Radius: "
+	"DOTA_Tooltip_ability_mjz_zuus_static_field_base_damage"	   			"Base Damge: "
+	"DOTA_Tooltip_ability_mjz_zuus_static_field_intelligence_damage"	    "%Intelligence as Damage: "
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_zuus_static_field_intelligence"	"+40% Static Field Intelligence Damage"

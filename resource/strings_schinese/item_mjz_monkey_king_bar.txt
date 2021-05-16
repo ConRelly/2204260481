@@ -1,0 +1,29 @@
+
+		//>>>>	MJZ 金箍棒 LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_monkey_king_bar_2"	                        "金箍棒 LVL 2"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_2_Description"				"<h1>被动：穿刺</h1>每次攻击均有%bonus_chance%%%的概率无视闪避，并造成额外%bonus_chance_damage%点魔法伤害。"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_2_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_2_bonus_attack_speed"		"+攻击速度"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_2_Lore"						"一位大师级战士使用的强力棍棒。"
+		//<<<<
+		//>>>>	MJZ 金箍棒 LVL 3
+		"DOTA_Tooltip_Ability_item_mjz_monkey_king_bar_3"	                        "金箍棒 LVL 3"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_3_Description"				"<h1>被动：穿刺</h1>每次攻击均有%bonus_chance%%%的概率无视闪避，并造成额外%bonus_chance_damage%点魔法伤害。"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_3_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_3_bonus_attack_speed"		"+攻击速度"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_3_Lore"						"一位大师级战士使用的强力棍棒。"
+		//<<<<
+		//>>>>	MJZ 金箍棒 LVL 4
+		"DOTA_Tooltip_Ability_item_mjz_monkey_king_bar_4"	                        "金箍棒 LVL 4"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_4_Description"				"<h1>被动：穿刺</h1>每次攻击均有%bonus_chance%%%的概率无视闪避，并造成额外%bonus_chance_damage%点魔法伤害。"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_4_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_4_bonus_attack_speed"		"+攻击速度"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_4_Lore"						"一位大师级战士使用的强力棍棒。"
+		//<<<<
+		//>>>>	MJZ 金箍棒 LVL 5
+		"DOTA_Tooltip_Ability_item_mjz_monkey_king_bar_5"	                        "金箍棒 LVL 5"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_Description"				"<h1>被动：穿刺</h1>每次攻击均有%bonus_chance%%%的概率无视闪避，并造成额外%bonus_chance_damage%点魔法伤害。"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_bonus_attack_speed"		"+攻击速度"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_Lore"						"一位大师级战士使用的强力棍棒。"
+		//<<<<

@@ -1,0 +1,27 @@
+
+	"mjz_tinker_quick_arm"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_tinker/mjz_tinker_quick_arm.lua"
+		"AbilityTextureName"			"mjz_tinker_quick_arm"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilitySound"					"Hero_Tinker.Rearm"
+
+		"AbilityCastPoint"				"0.53 0.53 0.53 0.53"
+		"AbilityChannelTime"			"3.0 1.5 0.75"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
+		"AbilityManaCost"				"100 200 300"
+		"AbilityCooldown"				"3.0"
+
+		"AbilitySpecial"
+		{
+		}
+
+		"precache"
+		{
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+			"particle"				"particles/units/heroes/hero_tinker/tinker_rearm.vpcf"
+		}
+	}

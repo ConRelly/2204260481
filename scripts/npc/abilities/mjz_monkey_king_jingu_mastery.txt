@@ -1,0 +1,64 @@
+
+	//=================================================================================================================
+	// Monkey King: Jingu Mastery		如意棒法
+	//=================================================================================================================
+	"mjz_monkey_king_jingu_mastery"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_monkey_king/mjz_monkey_king_jingu_mastery.lua"
+		"AbilityTextureName"			"mjz_monkey_king_jingu_mastery"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_MonkeyKing.IronCudgel"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"required_hits"				"4"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"counter_duration"			"10"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"charges"					"4"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"60 90 120 150"
+				"LinkedSpecialBonus"		"special_bonus_unique_monkey_king_2"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lifesteal"					"15 30 45 60"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_duration"				"10"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_debuff.vpcf"
+			"particle"	"particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_hit.vpcf"
+			"particle"	"particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_stack.vpcf"
+			"particle"	"particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_overhead.vpcf"
+			"particle"	"particles/generic_gameplay/generic_lifesteal.vpcf"
+		}
+	}
+

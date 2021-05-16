@@ -1,0 +1,6 @@
+    
+	"DOTA_Tooltip_ability_mjz_tiny_tree_grab_scepter_effect"				    	"Scepter Effect of Tree Grab"
+	"DOTA_Tooltip_ability_mjz_tiny_tree_grab_scepter_effect_Description"	    	"Upgradable by Aghanim's Scepter: Tree Grab have unlimited attack count."
+	"DOTA_Tooltip_ability_mjz_tiny_tree_grab_scepter_effect_Aghanim_Description"	"Tree Grab have unlimited attack count."
+	"DOTA_Tooltip_ability_mjz_tiny_tree_grab_scepter_effect_attack_count"			"Attack Count: "
+	

@@ -1,0 +1,13 @@
+    
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe"				    "Reaper's Scythe"
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_Description"	    "Stun the enemy, and then based on the caster intelligence value multiples of damage."
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_Aghanim_Description"	  "Reduces cooldown."
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_Lore"	    	"The amount of death and suffering in the air increases the power of the Necrophos's plague magic."
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_radius"		    		"Cast Range: "
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_base_damage"	   			"Base Damage: "
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_int_damage_multiplier"	"Intelligence Damage Multiplier:"
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_stun_duration"			"Stun Duration: "
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_cooldown"				"Cooldown: "
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_cooldown_scepter"		"Scepter Upgrade Cooldown: "
+	"DOTA_Tooltip_modifier_mjz_necrolyte_reapers_scythe"				"Reaper's Scythe"
+	"DOTA_Tooltip_modifier_mjz_necrolyte_reapers_scythe_Description"	"Death is coming!"

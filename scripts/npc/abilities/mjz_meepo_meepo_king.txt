@@ -1,0 +1,57 @@
+
+	//=================================================================================================================
+	// Tiny: King of Meepo 				米波王
+	//=================================================================================================================
+	"mjz_meepo_meepo_king"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_meepo/mjz_meepo_meepo_king.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName"			"mjz_meepo_meepo_king"
+		"AbilityCastAnimation"			"ACT_INVALID"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage_pct"			"10 20 30"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"		"10 20 30"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"				"10 20 30"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_resistance"			"10 20 30"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_health_regen"		"10 20 30"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"experience_pct"			"10 20 30"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"experience_radius"			"1200"
+			}
+			"13"
+			{
+				"var_type"			    	"FIELD_INTEGER"
+				"model_multiplier"	    	"10 20 30"
+			}
+		}
+	}

@@ -1,0 +1,40 @@
+
+	//=================================================================================================================
+    // Friendly NPC
+    //=================================================================================================================
+    "friendly_npc"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "hack/abilities/friendly_npc"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "terrorblade_reflection"
+
+        "MaxLevel"                      "1"
+
+        "IsOnCastBar"                   "0"
+
+        "AbilitySpecial"
+        {
+        }
+    }
+
+    "goodguys_healers"
+	{
+		"BaseClass" 					"ability_datadriven"
+    	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"	// DOTA_ABILITY_BEHAVIOR_HIDDEN
+	    "AbilityTextureName"            "omniknight_guardian_angel"
+	    "MaxLevel"                      "1"	
+	    	
+		"OnCreated"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"hack/ability_helper.lua"
+				"Function"		"ApplyModifierToUnit"
+				"ModifName"		"modifier_mjz_healers"
+			}
+		}
+
+	}
+
+	

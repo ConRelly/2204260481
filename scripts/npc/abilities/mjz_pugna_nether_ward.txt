@@ -1,0 +1,97 @@
+	
+	//=================================================================================================================
+	// Pugna: Nether Ward
+	//=================================================================================================================
+	"mjz_pugna_nether_ward"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_pugna/mjz_pugna_nether_ward.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"mjz_pugna_nether_ward"
+
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Pugna.NetherWard"
+
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+		"AbilityCastRange"				"%cast_range"
+
+		"AbilityCooldown"				"35.0 35.0 35.0 35.0"
+		"AbilityManaCost"				"80 80 80 80"
+		"AbilityDuration"				"%duration"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"cast_range"					"200"	
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"800"	
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"base_damage"					"10 20 30 40" 
+			} 	
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"intelligence_damage"			"80 110 140 170" 
+				"LinkedSpecialBonus"			"special_bonus_unique_mjz_pugna_nether_ward_intelligence"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"attacks_to_destroy"			"4 4 4 4"
+				"LinkedSpecialBonus"			"special_bonus_unique_pugna_6"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"30" 
+			} 	
+			"10"
+			{
+				"var_type"              		"FIELD_FLOAT"
+				"interval"             			"1.0"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_pugna/pugna_ward_ambient.vpcf"
+			"particle"  "particles/units/heroes/hero_pugna/pugna_ward_attack.vpcf"
+			"particle"  "particles/units/heroes/hero_pugna/pugna_ward_attack_light.vpcf"
+			"particle"  "particles/units/heroes/hero_pugna/pugna_ward_attack_medium.vpcf"
+			"particle"  "particles/units/heroes/hero_pugna/pugna_ward_attack_heavy.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
+			"model"		"models/heroes/pugna/pugna_ward.vmdl"
+			"model"		"models/items/pugna/ward/draining_wight/draining_wight.vmdl"
+			"model"		"models/items/pugna/ward/nether_grandmasters_ward/nether_grandmasters_ward.vmdl"
+			"model"		"models/items/pugna/ward/tentaclesofnetherreach/tentaclesofnetherreach.vmdl"
+			"model"		"models/items/pugna/ward/nether_heart/nether_heart.vmdl"
+		}
+	}
+	"special_bonus_unique_mjz_pugna_nether_ward_intelligence"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"80"
+			}
+		}
+	}

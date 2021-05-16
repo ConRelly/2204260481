@@ -1,0 +1,27 @@
+
+"abyssal_underlord_firestorm"
+{
+    "AbilityCastRange"				"800"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"					"FIELD_INTEGER"
+            "radius"					"600 800 1000 1200"
+        }
+    }
+}
+
+"abyssal_underlord_pit_of_malice"
+{   
+    "AbilityCastRange"				"800"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"					"FIELD_INTEGER"
+            "radius"					"600 800 1000 1200"
+        }
+    }
+
+}

@@ -1,0 +1,71 @@
+
+	"mjz_antimage_mana_void"
+	{
+		"BaseClass"						"ability_lua"	//"ability_datadriven"
+    	"ScriptFile"		            "abilities/hero_antimage/mjz_antimage_mana_void.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"		
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Antimage.ManaVoid"
+		"AbilityTextureName"			"mjz_antimage_mana_void"
+
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCooldown"				"60.0"
+		"AbilityManaCost"				"275"
+
+		"AbilityModifierSupportValue"	"0.0"	// damage only	
+		"MaxLevel"						"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"mana_void_damage_per_mana"		"1.1"
+				"LinkedSpecialBonus"			"special_bonus_unique_mjz_antimage_mana_void_damage"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"mana_void_ministun"			"0.3"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"mana_void_aoe_radius"			"500"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"cast_range"					"600"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+			"particle"		"particles/units/heroes/hero_antimage/antimage_manavoid.vpcf"
+		}
+	}
+	"special_bonus_unique_mjz_antimage_mana_void_damage"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"0.9"
+			}
+		}
+	}

@@ -1,0 +1,7 @@
+
+"DOTA_Tooltip_Ability_item_kris_of_agony_one"					"KRIS OF AGONY ONE"
+"DOTA_Tooltip_ability_item_kris_of_agony_one_Description"							"<h1>Passive: LIFESTEAL</h1>Grants melee unit %lifesteal%%% lifesteal, Grants ranged unit %lifesteal_ranged%%% lifesteal. "
+"DOTA_Tooltip_ability_item_kris_of_agony_one_bonus_agility"		"+$agi"
+"DOTA_Tooltip_ability_item_kris_of_agony_one_bonus_strenght"		"+$str"
+"DOTA_Tooltip_ability_item_kris_of_agony_one_bonus_hp"		"+$health"
+"DOTA_Tooltip_ability_item_kris_of_agony_one_evasion"		"%+$evasion"

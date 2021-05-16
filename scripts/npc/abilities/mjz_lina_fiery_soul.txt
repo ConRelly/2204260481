@@ -1,0 +1,71 @@
+
+	//=================================================================================================================
+	// 	Lina : Fiery Soul
+	//=================================================================================================================
+	"mjz_lina_fiery_soul"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_lina/mjz_lina_fiery_soul.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityTextureName"			"mjz_lina_fiery_soul"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"attack_speed_bonus"				"40 55 70 85"
+				"LinkedSpecialBonus"				"special_bonus_unique_mjz_lina_fiery_soul"//"special_bonus_unique_lina_2"				
+			}
+			"02"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"move_speed_bonus"					"5 6 7 8"
+				"LinkedSpecialBonus"				"special_bonus_unique_mjz_lina_fiery_soul"
+				"LinkedSpecialBonusField"			"value2"
+			}
+			"03"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"spell_amp_bonus"					"10 15 20 25"
+				"LinkedSpecialBonus"				"special_bonus_unique_mjz_lina_fiery_soul"
+				"LinkedSpecialBonusField"			"value3"
+			}
+			"05"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"max_stacks"						"3"
+			}
+			"06"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"stack_duration"					"20"
+			}
+		}
+	}
+	"special_bonus_unique_mjz_lina_fiery_soul"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"30"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value2"			"2"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value3"			"5"
+			}
+		}
+	}

@@ -1,0 +1,27 @@
+	
+
+		//>>>>	Ring of Aquila
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila"								"Ring of Aquila"
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_Description"					"<h1>Passive: Aquila Aura</h1>Grants %aura_mana_regen% mana regeneration and %aura_bonus_armor% armor to nearby allies."
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_Lore"							"The ring of the fallen Warlord Aquila continues to support armies in battle."
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_bonus_strength"				"+$str"
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_bonus_agility"				"+$agi"
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_bonus_intellect"				"+$int"
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_aura_radius"					"Aura Radius: "
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_aura_mana_regen"				"Aura Mana Regeneration Bonus: "
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_aura_bonus_armor"				"Aura Armor Bonus: "
+		"DOTA_Tooltip_modifier_item_mjz_ring_of_aquila_aura"						"Aquila Aura"
+		"DOTA_Tooltip_modifier_item_mjz_ring_of_aquila_aura_Description"			"Grants mana regeneration and armor to nearby allies."
+
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive"						"Ring of Aquila (Inactive)"
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_Description"			"<h1>Passive: Aquila Aura</h1>Grants %aura_mana_regen% mana regeneration and %aura_bonus_armor% armor."
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_Lore"				"The ring of the fallen Warlord Aquila continues to support armies in battle."
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_bonus_strength"		"+$str"
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_bonus_agility"		"+$agi"
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_bonus_intellect"		"+$int"
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_bonus_damage"		"+$damage"
+		"DOTA_Tooltip_modifier_item_mjz_ring_of_aquila_inactive_aura"				"Aquila Aura (Inactive)"
+		"DOTA_Tooltip_modifier_item_mjz_ring_of_aquila_inactive_aura_Description"	"Grants mana regeneration and armor."
+		//<<<<
+

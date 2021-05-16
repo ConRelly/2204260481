@@ -1,0 +1,37 @@
+
+	"mjz_sniper_take_aim"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/hero_sniper/mjz_sniper_take_aim.lua"
+		"AbilityTextureName"			"mjz_sniper_take_aim"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"30"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_range"			"100 200 300 400"
+				"LinkedSpecialBonus"			"special_bonus_unique_sniper_6"
+			}
+			"02"
+			{
+				"var_type"									"FIELD_INTEGER"
+				"active_attack_range_multiplier"			"2"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"move_slow_pct"					"-80"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+

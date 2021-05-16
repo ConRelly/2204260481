@@ -1,0 +1,14 @@
+    
+	"DOTA_Tooltip_ability_mjz_slark_essence_shift"				    "Essence Shift"
+	"DOTA_Tooltip_ability_mjz_slark_essence_shift_Description"	    "Every time is to kill an enemy unit, or near there is death of enemy units, he will receive additional attributes. Can be activated to fast attack enemy. "
+	"DOTA_Tooltip_ability_mjz_slark_essence_shift_Lore"	    		"With each strike at his adversaries, Slark's knowledge of their weaknesses improves."
+	"DOTA_Tooltip_ability_mjz_slark_essence_shift_Note0"	    	""
+	"DOTA_Tooltip_ability_mjz_slark_essence_shift_heap_range"		"Enemy Death Radius: "
+	"DOTA_Tooltip_ability_mjz_slark_essence_shift_heap_amount"		"Agility Bonus per Death: "
+	"DOTA_Tooltip_ability_mjz_slark_essence_shift_attack_count"		"FAST ATTACK COUNT:"
+	"DOTA_Tooltip_modifier_mjz_slark_essence_shift_heap"					"Essence Shift"
+	"DOTA_Tooltip_modifier_mjz_slark_essence_shift_heap_Description"	   	"Gain additional attributes.\n Strength +%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%, Agility +%dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%, Intellect +%dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS% "
+	"DOTA_Tooltip_modifier_mjz_slark_essence_shift_fast_attack"					"Fast Attack"
+	"DOTA_Tooltip_modifier_mjz_slark_essence_shift_fast_attack_Description"	   	"Quickly attack the enemy %dMODIFIER_PROPERTY_TOOLTIP% times. "
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_slark_essence_shift_attack_count"	"+{s:value} Essence Shift Attack Count"
+	

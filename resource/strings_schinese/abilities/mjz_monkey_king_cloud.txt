@@ -1,0 +1,6 @@
+    
+	"DOTA_Tooltip_ability_mjz_monkey_king_cloud"				    "筋斗云"
+	"DOTA_Tooltip_ability_mjz_monkey_king_cloud_Description"	    "孙悟空飞行时所乘之云，一个觔斗便能行十万八千里路的距离。"
+	"DOTA_Tooltip_ability_mjz_monkey_king_cloud_Lore"	    		"移除碰撞体积"
+	"DOTA_Tooltip_ability_mjz_monkey_king_cloud_bonus_move_speed"	"%移动速度加成："
+	"DOTA_Tooltip_ability_mjz_monkey_king_cloud_mana_pct"			"%每秒最大魔法消耗："

@@ -1,0 +1,30 @@
+
+
+		//>>>>	MJZ 大雷锤 LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_mjollnir_2"	                    	"雷神之锤 LVL 2"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_2_Description"				"<h1>主动：静电冲击</h1>对目标单位施加一个静电护盾，持续 %static_duration% 秒。护盾有 %static_chance%%% 的几率对附近攻击护盾的目标及其周围 %static_strikes% 个敌方单位释放闪电冲击，造成 %static_damage% 点魔法伤害。\n <h1>被动：连环闪电</h1>攻击有 %chain_chance%%% 的概率释放一道连环闪电，在 %chain_radius% 范围内  %chain_strikes% 个目标之间跳跃，每次造成 %chain_damage% 点魔法伤害。触发闪电时无视闪避。"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_2_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_2_bonus_attack_speed"		"+攻击速度"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_2_Lore"						"索尔的魔法之锤，由矮人名匠布鲁克和艾崔打造。"
+		//<<<<
+		//>>>>	MJZ 大雷锤 LVL 3
+		"DOTA_Tooltip_Ability_item_mjz_mjollnir_3"	                        "雷神之锤 LVL 3"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_3_Description"				"<h1>主动：静电冲击</h1>对目标单位施加一个静电护盾，持续 %static_duration% 秒。护盾有 %static_chance%%% 的几率对附近攻击护盾的目标及其周围 %static_strikes% 个敌方单位释放闪电冲击，造成 %static_damage% 点魔法伤害。\n <h1>被动：连环闪电</h1>攻击有 %chain_chance%%% 的概率释放一道连环闪电，在 %chain_radius% 范围内  %chain_strikes% 个目标之间跳跃，每次造成 %chain_damage% 点魔法伤害。触发闪电时无视闪避。"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_3_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_3_bonus_attack_speed"		"+攻击速度"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_3_Lore"						"索尔的魔法之锤，由矮人名匠布鲁克和艾崔打造。"
+		//<<<<
+		//>>>>	MJZ 大雷锤 LVL 4
+		"DOTA_Tooltip_Ability_item_mjz_mjollnir_4"	                        "雷神之锤 LVL 4"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_4_Description"				"<h1>主动：静电冲击</h1>对目标单位施加一个静电护盾，持续 %static_duration% 秒。护盾有 %static_chance%%% 的几率对附近攻击护盾的目标及其周围 %static_strikes% 个敌方单位释放闪电冲击，造成 %static_damage% 点魔法伤害。\n <h1>被动：连环闪电</h1>攻击有 %chain_chance%%% 的概率释放一道连环闪电，在 %chain_radius% 范围内  %chain_strikes% 个目标之间跳跃，每次造成 %chain_damage% 点魔法伤害。触发闪电时无视闪避。"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_4_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_4_bonus_attack_speed"		"+攻击速度"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_4_Lore"						"索尔的魔法之锤，由矮人名匠布鲁克和艾崔打造。"
+		//<<<<
+		//>>>>	MJZ 大雷锤 LVL 5
+		"DOTA_Tooltip_Ability_item_mjz_mjollnir_5"	                        "雷神之锤 LVL 5"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_5_Description"				"<h1>主动：静电冲击</h1>对目标单位施加一个静电护盾，持续 %static_duration% 秒。护盾有 %static_chance%%% 的几率对附近攻击护盾的目标及其周围 %static_strikes% 个敌方单位释放闪电冲击，造成 %static_damage% 点魔法伤害。\n <h1>被动：连环闪电</h1>攻击有 %chain_chance%%% 的概率释放一道连环闪电，在 %chain_radius% 范围内  %chain_strikes% 个目标之间跳跃，每次造成 %chain_damage% 点魔法伤害。触发闪电时无视闪避。"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_5_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_5_bonus_attack_speed"		"+攻击速度"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_5_Lore"						"索尔的魔法之锤，由矮人名匠布鲁克和艾崔打造。"
+		//<<<<

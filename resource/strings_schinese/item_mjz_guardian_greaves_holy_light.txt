@@ -1,0 +1,10 @@
+	
+		"DOTA_Tooltip_Ability_item_mjz_guardian_greaves_holy_light"								"圣光卫士胫甲"
+		"DOTA_Tooltip_Ability_item_mjz_guardian_greaves_holy_light_Description"					"<h1>主动：圣光</h1>使周围友军回复 %replenish_health_pct%%% 生命和 %replenish_mana_pct%%% 魔法，并移除施法者身上大部分的负面效果。范围：%replenish_radius%。驱散类型：弱驱散\n\n<h1>被动：卫士光环</h1>为周围友军提供 %aura_health_regen% 点/秒额外生命恢复和 %aura_armor% 点额外护甲。范围：%aura_radius%"		
+		"DOTA_Tooltip_Ability_item_mjz_guardian_greaves_holy_light_Lore"						"为了向全能之神致敬所打造的众多圣器之一。"
+		"DOTA_Tooltip_Ability_item_mjz_guardian_greaves_holy_light_bonus_movement"				"%+移动速度"
+		"DOTA_Tooltip_Ability_item_mjz_guardian_greaves_holy_light_bonus_mana"					"+$mana"
+		"DOTA_Tooltip_Ability_item_mjz_guardian_greaves_holy_light_bonus_all_stats"				"+$all"
+		"DOTA_Tooltip_Ability_item_mjz_guardian_greaves_holy_light_bonus_armor"					"+$armor"
+		"DOTA_Tooltip_modifier_item_mjz_guardian_greaves_holy_light_aura"						"卫士光环"
+		"DOTA_Tooltip_modifier_item_mjz_guardian_greaves_holy_light_aura_Description"			"生命恢复+%dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%，护甲+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"

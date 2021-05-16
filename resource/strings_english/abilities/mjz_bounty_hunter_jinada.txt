@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada"				    "Jinada"
+	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_Description"	    "Bounty Hunter plans his next hit, dealing bonus damage and stealing some unreliable gold."
+	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_Lore"	    		"Whispering an enchantment he learned from Soruq to his faithful blades, Gondar targets vital tendons and joints to disable his opponents."
+	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_bonus_damage"		"Attack Damage Bonus: "
+	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_gold_steal"			"Gold Stolen: "
+	

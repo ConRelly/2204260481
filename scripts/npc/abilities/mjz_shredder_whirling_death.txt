@@ -1,0 +1,64 @@
+
+	//=================================================================================================================
+	//	Shredder: Whirling Death
+	//=================================================================================================================
+	"mjz_shredder_whirling_death"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_shredder/mjz_shredder_whirling_death.lua"
+		"AbilityTextureName"			"mjz_shredder_whirling_death"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        //"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NONE"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PURE"   
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+
+        "AbilitySound"                  "Hero_Shredder.WhirlingDeath.Cast"
+        "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_1"
+        "AbilityCastRange"				"300"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"70"	
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "radius"                    "300"
+            }
+            "02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"base_damage"			    "90 120 150 180"
+			}
+            "02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"str_damage_pct"			"40 60 80 100"
+                "LinkedSpecialBonus"		"special_bonus_unique_mjz_shredder_whirling_death_strength"  //"special_bonus_unique_timbersaw"
+			}
+        }
+
+		"precache"
+        {
+            "particle"  "particles/units/heroes/hero_shredder/shredder_whirling_death.vpcf"
+            "soundfile" "soundevents/game_sounds_heroes/game_sounds_shredder.vsndevts"
+        }
+	}
+    "special_bonus_unique_mjz_shredder_whirling_death_strength"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"100"
+			}
+		}
+	}

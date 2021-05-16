@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward"				    "幽冥守卫"
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_Description"	    "帕格纳在目标地点放置一个幽冥守卫。守卫每 %interval% 秒，对附近的敌人造成伤害。伤害是基于你的智力。"
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_Lore"				"还在喇嘛寺里时，帕格纳就学会了操控富有幽冥魔力的守卫来支配他的同学。"
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_radius"		   		"守卫攻击距离："
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_base_damage"	   			"基础伤害："
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_intelligence_damage"	    "%智力额外伤害："
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_attacks_to_destroy"			"摧毁所需攻击次数："
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_Note0"				"幽冥守卫拥有4点生命值。敌人每次攻击将损失1点生命值。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_pugna_nether_ward_intelligence"	"+80% 幽冥守卫智力伤害"
+	"npc_dota_mjz_pugna_nether_ward"								"幽冥守卫"

@@ -1,0 +1,8 @@
+
+	"DOTA_Tooltip_ability_mjz_invoker_magic_master"				    	"The Master of Magic"
+	"DOTA_Tooltip_ability_mjz_invoker_magic_master_Description"	    	"A master of the magic.\n\nUpgradable by Aghanim's Scepter."
+	"DOTA_Tooltip_ability_mjz_invoker_magic_master_Lore"	    		"Magic is dangerous."
+	"DOTA_Tooltip_ability_mjz_invoker_magic_master_bonus_cooldown_scepter"			"%Scepter Cooldown Reduction:"
+	"DOTA_Tooltip_ability_mjz_invoker_magic_master_spell_amp_scepter"				"%Scepter Spell Amplification:"
+	"DOTA_Tooltip_ability_mjz_invoker_magic_master_manacost_reduction_scepter"		"%Scepter Manacost and Manaloss Reduction:"
+	"DOTA_Tooltip_ability_mjz_invoker_magic_master_Aghanim_Description"	   	"Become a real master of magic."

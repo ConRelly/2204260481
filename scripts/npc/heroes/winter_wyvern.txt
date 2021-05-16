@@ -1,0 +1,10 @@
+
+	"npc_dota_hero_winter_wyvern_mjz"
+	{
+		"override_hero" "npc_dota_hero_winter_wyvern"
+		//"Ability5"		"mjz_general_mirror_image"
+		//"Ability6"		"mjz_winter_wyvern_ice_age"
+		"Ability6"		"sniper_take_aim"
+		"Ability16"		"special_bonus_unique_mjz_winter_wyvern_0601"
+		"Ability17"		"special_bonus_unique_mjz_winter_wyvern_0602"
+	}

@@ -1,0 +1,88 @@
+
+	"mjz_windrunner_focusfire"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_windrunner/mjz_windrunner_focusfire.lua"
+		"AbilityTextureName"			"mjz_windrunner_focusfire_red"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Ability.Focusfire"
+
+		"HasScepterUpgrade"				"1"
+
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+		"AbilityCooldown"				"66"
+		"AbilityManaCost"				"80 100 120"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed"			"125 225 325"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_reduction"				"-40 -30 -20"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_reduction_scepter"		"-30 -15 -0"
+				"RequiresScepter"				"1"
+			}						
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"ministun_chance"				"0" 
+				"LinkedSpecialBonus"			"special_bonus_unique_mjz_windrunner_focusfire_ministun"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"ministun_duration"				"0.01" 
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"22"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"cooldown_scepter"				"16"
+				"RequiresScepter"				"1"
+			}
+			"11"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"focusfire_fire_on_the_move"	"1"
+			}
+			
+		}
+
+		"precache"
+		{
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+		}
+	}
+	"special_bonus_unique_mjz_windrunner_focusfire_ministun"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"35"
+			}
+		}
+	}

@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_troll_warlord_fervor"				"热血战魂"
+	"DOTA_Tooltip_ability_mjz_troll_warlord_fervor_Description"	"当巨魔战将持续攻击同一个目标时，他会攻击得越来越快。如果改变目标，则额外的攻速加成减半。"
+	"DOTA_Tooltip_ability_mjz_troll_warlord_fervor_Lore"		"如果第一下没成功，那就接着出招呗。"
+	"DOTA_Tooltip_ability_mjz_troll_warlord_fervor_max_stacks"		"最大叠加层数："
+	"DOTA_Tooltip_ability_mjz_troll_warlord_fervor_attack_speed"	"每层效果攻速加成："
+	"DOTA_Tooltip_modifier_mjz_troll_warlord_fervor_stack"				"热血战魂"
+	"DOTA_Tooltip_modifier_mjz_troll_warlord_fervor_stack_Description"	"攻击速度提升%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_troll_warlord_fervor_stacks"	"+3 热血战魂叠加上限"
+	

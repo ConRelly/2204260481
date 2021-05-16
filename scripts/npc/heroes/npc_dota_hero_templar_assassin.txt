@@ -1,0 +1,14 @@
+
+	"npc_dota_hero_templar_assassin_mjz"			// 圣堂刺客
+	{
+		"override_hero"			"npc_dota_hero_templar_assassin"
+
+		"Ability1"				"mjz_templar_assassin_refraction"
+		"Ability4"				"mjz_templar_assassin_proficiency"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"mjz_templar_assassin_trap_teleport"
+		"Ability13"		"special_bonus_spell_lifesteal_30"
+		"Ability16"		"special_bonus_cooldown_reduction_30"
+		"Ability17"		"special_bonus_unique_mjz_templar_assassin_refraction_damage"
+	}
+	

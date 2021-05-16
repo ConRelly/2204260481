@@ -1,0 +1,61 @@
+require("lib/my")
+
+
+
+function copy_level(target, illusion)
+    local level = target:GetLevel()
+    for i = 1, level - 1 do
+        illusion:HeroLevelUp(false)
+    end
+end
+
+
+function copy_skill_level(target, illusion, copy_ultimate)
+    illusion:SetAbilityPoints(0)
+    --local abilityCount = target:GetAbilityCount()
+    for slot = 0, 15 do
+        local ability = target:GetAbilityByIndex(slot)
+        local abilityName = ability:GetAbilityName()
+        if ability ~= nil and ability:GetCastPoint() ~= 1337 and abilityName ~= "chen_custom_holy_persuasion" then
+            if ability:GetAbilityType() ~= 1 or copy_ultimate then  -- Not ultimate.
+                local abilityLevel = ability:GetLevel()
+                local illusionAbility = illusion:FindAbilityByName(abilityName)
+                if IsValidEntity(illusionAbility) then
+                    illusionAbility:SetLevel(abilityLevel)
+                end
+            end
+        end
+    end
+end
+
+
+function copy_items(target, illusion)
+    for itemSlot = 0, 10 do
+        local item = target:GetItemInSlot(itemSlot)
+        if item ~= nil and item:GetName() ~= "item_pocket_rax" and item:GetName() ~= "item_pocket_rax_ranged" and item:GetName() ~= "item_pharaoh_crown" and item:GetName() ~= "item_mjz_ability_point" and item:GetName() ~= "item_mjz_ability_point_2" and item:GetName() ~= "item_mjz_rage_moon_shard" and item:GetName() ~= "item_pocket_tower" and item:GetCastPoint() ~= 1337 then
+            local itemName = item:GetName()
+            local newItem = CreateItem(itemName, illusion, illusion)
+            illusion:AddItem(newItem)
+        end
+    end
+end
+
+
+function disable_inventory(illusion)
+    illusion:SetHasInventory(false)
+	illusion:SetCanSellItems(false)
+end
+
+
+function set_vision(illusion)
+    illusion:SetDayTimeVisionRange(0)
+    illusion:SetNightTimeVisionRange(0)
+end
+
+
+function kill_illusion(illusion)
+    if not illusion:IsIllusion() then
+        illusion:MakeIllusion()
+    end
+    illusion:ForceKill(false)
+end

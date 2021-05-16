@@ -1,0 +1,11 @@
+
+		//>>>>	MJZ 可食用的魔龙枪
+		"DOTA_Tooltip_Ability_item_mjz_dragon_lance"	                        "可食用的魔龙枪"
+		"DOTA_Tooltip_ability_item_mjz_dragon_lance_Description"				"<h1>主动：食用</h1><font color='#00FF40'>永久增加远程英雄的攻击距离。</font> \n\n<h1>被动：魔龙之能</h1>指远程英雄的攻击距离增加%base_attack_range%。"
+		"DOTA_Tooltip_ability_item_mjz_dragon_lance_bonus_agility"				"+$agi"
+		"DOTA_Tooltip_ability_item_mjz_dragon_lance_bonus_strength"				"+$str"
+		"DOTA_Tooltip_ability_item_mjz_dragon_lance_Lore"						"向前冲锋的飞龙群毫不留情。"
+		"DOTA_Tooltip_modifier_item_mjz_dragon_lance_stats"						"可食用的魔龙枪"
+		"DOTA_Tooltip_modifier_item_mjz_dragon_lance_stats_Description"			"永久增加远程英雄的攻击距离。"
+		//<<<<
+		

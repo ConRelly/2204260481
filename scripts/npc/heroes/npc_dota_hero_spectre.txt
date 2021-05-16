@@ -1,0 +1,12 @@
+
+	"npc_dota_hero_spectre_mjz"			// 幽鬼
+	{
+		"override_hero"			"npc_dota_hero_spectre"
+
+		"Ability2"				"mjz_spectre_desolate"
+		"Ability4"				"mjz_spectre_reality"
+		"Ability5"				"mjz_spectre_haunt_single"
+		"Ability6"				"mjz_spectre_haunt"	//"spectre_custom_haunt" //
+		
+	}
+	

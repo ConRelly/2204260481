@@ -1,0 +1,14 @@
+    
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova"				    "Pulse Nova"
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_Description"	    "Creates waves of damaging energy around Leshrac, one per second, to damage nearby enemy units."
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_aghanim_description"				"Increased ability damage."
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_Lore"	    		"If necessary, the Tormented Soul can manipulate space time itself, ravaging lesser beings."
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_Note0"	    		"Deals damage in 1 second intervals, starting immediately upon toggling the spell on."
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_radius"					"Damage Radius: "
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_mana_cost_per_second"		"Mana Cost per Second: "
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_damage"					"Damage per Second: "
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_damage_scepter"			"Damage per Second (Aghanim's Scepter): "
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_damage_intelligence_per"	"%Intelligence as Damage: "
+	"DOTA_Tooltip_modifier_mjz_leshrac_pulse_nova" "Pulse Nova"
+	"DOTA_Tooltip_modifier_mjz_leshrac_pulse_nova_Description" "Inflicting Damage to nearby enemy units"
+	

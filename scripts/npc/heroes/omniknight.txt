@@ -1,0 +1,6 @@
+
+	"npc_dota_hero_omniknight_mjz"
+	{
+		"override_hero"	"npc_dota_hero_omniknight"
+		"Ability1"		"mjz_omniknight_purification"
+	}

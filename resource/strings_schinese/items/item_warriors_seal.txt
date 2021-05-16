@@ -1,0 +1,17 @@
+
+"DOTA_Tooltip_ability_item_warriors_seal"                       "战士纹章"
+"DOTA_Tooltip_ability_item_warriors_seal_Description"			"<h1>被动： Favor The Bold </h1>创建一个护盾， 每层格挡 %damage_reduction%%% 伤害， 每%interval% 秒增加一层， 最大 %max_stacks% 层。\n<h1>被动： 恶魔之灾</h1>提升 %bonus_damage_pct%%% 攻击力。\n<font color='#F2A93E'>不可叠加。</font>"
+"DOTA_Tooltip_ability_item_warriors_seal_bonus_health"			"+$health"
+"DOTA_Tooltip_ability_item_warriors_seal_bonus_health_regen"	"+$hp_regen"
+"DOTA_Tooltip_ability_item_warriors_seal_magic_resist"			"%+$spell_resist"
+"DOTA_Tooltip_Ability_item_warriors_seal_Lore"		            "A mystic shield that protects the brave, but only for a while."
+"DOTA_Tooltip_modifier_item_warriors_seal"					"Favor the Bold"
+"DOTA_Tooltip_modifier_item_warriors_seal_Description"		"Every charge provides damage resistance."
+
+"DOTA_Tooltip_ability_item_warriors_seal_2"                       "战士纹章 LV2"
+"DOTA_Tooltip_ability_item_warriors_seal_2_Description"			"<h1>被动： Favor The Bold </h1>创建一个护盾， 每层格挡 %damage_reduction%%% 伤害， 每%interval% 秒增加一层， 最大 %max_stacks% 层。\n<h1>被动： 恶魔之灾</h1>提升 %bonus_damage_pct%%% 攻击力。\n<font color='#F2A93E'>不可叠加。</font>"
+"DOTA_Tooltip_ability_item_warriors_seal_2_bonus_health"			"+$health"
+"DOTA_Tooltip_ability_item_warriors_seal_2_bonus_health_regen"	"+$hp_regen"
+"DOTA_Tooltip_ability_item_warriors_seal_2_magic_resist"			"%+$spell_resist"
+"DOTA_Tooltip_Ability_item_warriors_seal_2_Lore"		            "A mystic shield that protects the brave, but only for a while."
+

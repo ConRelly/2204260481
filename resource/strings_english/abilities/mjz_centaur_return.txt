@@ -1,0 +1,15 @@
+    
+	"DOTA_Tooltip_ability_mjz_centaur_return"				    "Return"
+	"DOTA_Tooltip_ability_mjz_centaur_return_Description"	    "Centaur counters all attacks, dealing damage back to the attacker based on a percentage of Centaur's strength."
+	"DOTA_Tooltip_ability_mjz_centaur_return_Lore"	    		"Bradwarden has no need to parry his opponent's attacks; his armor-like hide does it for him."
+	"DOTA_Tooltip_ability_mjz_centaur_return_Note0"	    		"Return does not work for illusions;Illusions bestow the Return aura."
+	"DOTA_Tooltip_ability_mjz_centaur_return_return_damage"		"Base Damage: "
+	"DOTA_Tooltip_ability_mjz_centaur_return_strength_pct"		"%Strength as Bonus Damage: "
+	"DOTA_Tooltip_modifier_mjz_centaur_return_buff"					"Return"
+	"DOTA_Tooltip_modifier_mjz_centaur_return_buff_Description"	    "Centaur counters all attacks, dealing damage back to the attacker based on a percentage of Centaur's strength."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_centaur_return_strength"		"+25% Return Strength Damage"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_centaur_return_aura"			"Gains Return Aura"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_centaur_return_aura_Description"		"Friendly units in a 900 radius around Centaur gain the effects of Return; the damage is based on Centaur's strength."
+
+	
+	

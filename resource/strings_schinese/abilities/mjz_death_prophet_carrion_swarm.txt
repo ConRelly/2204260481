@@ -1,0 +1,9 @@
+
+	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm"				"地穴虫群"
+	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm_Description"	"召唤一群食腐虫在死亡先知面前的敌人中肆虐。"
+	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm_Lore"			"克萝贝露丝在鬼门关的来来回回聚集了一大群被诅咒的生物。"
+	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm_range"			"距离："
+	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm_base_damage"		"基础伤害："
+	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm_int_damage_pct"	"%额外智力伤害："
+	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm_Note0"		"最远能伤害距离1110码的单位。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_death_prophet_carrion_swarm_int"		"+40% 地穴虫群智力伤害"

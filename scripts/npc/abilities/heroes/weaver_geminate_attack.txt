@@ -1,0 +1,38 @@
+"DOTAAbilities"
+{
+  "weaver_geminate_attack"
+  {
+    // General
+    "ID"                                                  "5291"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "SpellImmunityType"                                   "SPELL_IMMUNITY_ENEMIES_YES"
+
+    "MaxLevel"                                            "7"
+    "RequiredLevel"                                       "1"
+    "LevelsBetweenUpgrades"                               "5"
+
+    "AbilityCooldown"                                     "2.5 2.0 1.5 1.0 0.5 0.25 0.20"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "delay"                                           "0.00"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "tooltip_attack"                                  "1"
+        "LinkedSpecialBonus"                              "special_bonus_unique_weaver_5"
+      }
+      "03"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "bonus_damage"                                    "240 780 2240 4420 9690 15200"
+      }
+    }
+  }
+}

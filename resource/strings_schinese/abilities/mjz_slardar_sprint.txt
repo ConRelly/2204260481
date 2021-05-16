@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_slardar_sprint"				    "守卫冲刺"
+	"DOTA_Tooltip_ability_mjz_slardar_sprint_Description"	    "斯拉达向前蜿行，移动速度和攻击速度得到显著提升。"
+	"DOTA_Tooltip_ability_mjz_slardar_sprint_Lore"	    		"斯拉达从深海来到陆地后，发现有必要用强有力的尾巴冲刺来代替游泳。"
+	"DOTA_Tooltip_ability_mjz_slardar_sprint_bonus_move_speed"			"%移动速度加成："
+	"DOTA_Tooltip_ability_mjz_slardar_sprint_bonus_attack_speed"		"攻击速度加成："
+	"DOTA_Tooltip_ability_mjz_slardar_sprint_health_cost_per_second"	"每秒生命消耗："
+	"DOTA_Tooltip_modifier_mjz_slardar_sprint"					"守卫冲刺"
+	"DOTA_Tooltip_modifier_mjz_slardar_sprint_Description"	   	"移动速度提升%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%，攻击速度提升%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%。"
+	

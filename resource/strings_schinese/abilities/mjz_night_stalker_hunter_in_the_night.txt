@@ -1,0 +1,8 @@
+    
+"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night"				    "暗夜猎影"
+"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night_Description"	    "攻击和移动都变得迅速。在夜晚效果翻倍。"
+"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night_Lore"	    		"巴拉那的狩猎技术随着夜晚降临大幅精进。"
+"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night_bonus_movement_speed_pct"	"%移动速度加成："
+"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night_bonus_attack_speed"			"攻击速度加成："
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_night_stalker_hunter_in_the_night_mspeed"		"+{s:value}% 暗夜猎影移动速度"
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_night_stalker_hunter_in_the_night_aspeed"		"+{s:value} 暗夜猎影攻击速度"

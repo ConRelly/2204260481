@@ -1,0 +1,12 @@
+    
+	"DOTA_Tooltip_ability_mjz_night_stalker_crippling_fear"				    "Crippling Fear"
+	"DOTA_Tooltip_ability_mjz_night_stalker_crippling_fear_Description"	    "horrifies all nearby enemies."
+	"DOTA_Tooltip_ability_mjz_night_stalker_crippling_fear_Lore"	    		"A vision of the twisted maw of Balanar etches itself into the minds of the poor souls unlucky enough to cross his path."
+	"DOTA_Tooltip_ability_mjz_night_stalker_crippling_fear_duration"					"Duration: "
+	"DOTA_Tooltip_ability_mjz_night_stalker_crippling_fear_radius"						"Radius: "
+	"DOTA_Tooltip_ability_mjz_night_stalker_crippling_fear_slow_movement_speed_pct"		"%Movement Speed Slow: "
+	"DOTA_Tooltip_ability_mjz_night_stalker_crippling_fear_slow_attack_speed"			"Attack Speed Slow: "
+	"DOTA_Tooltip_modifier_mjz_night_stalker_crippling_fear_aura"					"Crippling Fear"
+	"DOTA_Tooltip_modifier_mjz_night_stalker_crippling_fear_aura_Description"		"horrifies all nearby enemies."
+	"DOTA_Tooltip_modifier_mjz_night_stalker_crippling_fear_effect"					"Crippling Fear"
+	"DOTA_Tooltip_modifier_mjz_night_stalker_crippling_fear_effect_Description"		"-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% Move Speed, -%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% Attack Speed"

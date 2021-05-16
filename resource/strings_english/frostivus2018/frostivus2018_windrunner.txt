@@ -1,0 +1,16 @@
+
+	"DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot"					"Shackleshot"
+		"DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_Description"		"Shackles the target to an enemy unit or tree in a line directly behind it, <font color='#70EA72'>and can chain to affect additional targets in the line</font>. If no unit or tree is present, the stun duration is reduced to %fail_stun_duration%."
+		"DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_Lore"			"Windranger's variety of bow skills includes an arrow with thick ropes attached to encumber any escaping target."
+		"DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_Note0"			"This spell can shackle two enemies together, stunning them both."
+		"DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_Note1"			"Shackleshot can be disjointed."
+		"DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_stun_duration"	"SHACKLE DURATION:"
+		"DOTA_Tooltip_ability_frostivus2018_windrunner_shackleshot_shackle_count"	"SHACKLE COUNT:"
+
+		"DOTA_Tooltip_ability_windrunner_powershot_winter"							"Powershot"
+		"DOTA_Tooltip_ability_windrunner_powershot_winter_Description"				"Windranger charges her bow for up to 1 second for a single powerful shot, which deals more damage the longer it is charged. The arrow damages enemies and destroys trees along its path. For each enemy that Powershot hits, its damage is reduced by <font color='#70EA72'>2%%</font>."
+		"DOTA_Tooltip_ability_windrunner_powershot_winter_Lore"						"During her early years of training, Lyralei learned to fire powerful arrows that cleaved even trees to reach their targets."
+		"DOTA_Tooltip_ability_windrunner_powershot_winter_Note0"					"Powershot will destroy trees in its area of effect."
+		"DOTA_Tooltip_ability_windrunner_powershot_winter_arrow_range"				"RANGE:"
+		"DOTA_Tooltip_ability_windrunner_powershot_winter_powershot_damage"			"DAMAGE:"
+		

@@ -1,0 +1,34 @@
+	
+
+		//>>>>	MJZ Battle Fury LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_battlefury_2"	                    	"Battle Fury LVL 2"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_2_Description"				"<h1>Active: Chop Tree or Ward</h1>Destroy a target tree or ward.\n <h1>Passive: Quell</h1>Increases attack damage against non-hero units by %quelling_bonus% for melee heroes, and %quelling_bonus_ranged% for ranged.\n <h1>Passive: Cleave</h1>Deals %cleave_damage_percent%%% of attack damage as physical damage in a cone up to %cleave_distance% around the target. (Melee Only)"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_2_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_2_bonus_health_regen"			"+Health regeneration"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_2_bonus_mana_regen"			"+Mana regeneration"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_2_Lore"						"The bearer of this mighty axe gains the ability to cut down swaths of enemies at once."
+		//<<<<
+		//>>>>	MJZ Battle Fury LVL 3
+		"DOTA_Tooltip_Ability_item_mjz_battlefury_3"	                        "Battle Fury LVL 3"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_3_Description"				"<h1>Active: Chop Tree or Ward</h1>Destroy a target tree or ward.\n <h1>Passive: Quell</h1>Increases attack damage against non-hero units by %quelling_bonus% for melee heroes, and %quelling_bonus_ranged% for ranged.\n <h1>Passive: Cleave</h1>Deals %cleave_damage_percent%%% of attack damage as physical damage in a cone up to %cleave_distance% around the target. (Melee Only)"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_3_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_3_bonus_health_regen"			"+Health regeneration"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_3_bonus_mana_regen"			"+Mana regeneration"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_3_Lore"						"The bearer of this mighty axe gains the ability to cut down swaths of enemies at once."
+		//<<<<
+		//>>>>	MJZ Battle Fury LVL 4
+		"DOTA_Tooltip_Ability_item_mjz_battlefury_4"	                        "Battle Fury LVL 4"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_4_Description"				"<h1>Active: Chop Tree or Ward</h1>Destroy a target tree or ward.\n <h1>Passive: Quell</h1>Increases attack damage against non-hero units by %quelling_bonus% for melee heroes, and %quelling_bonus_ranged% for ranged.\n <h1>Passive: Cleave</h1>Deals %cleave_damage_percent%%% of attack damage as physical damage in a cone up to %cleave_distance% around the target. (Melee Only)"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_4_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_4_bonus_health_regen"			"+Health regeneration"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_4_bonus_mana_regen"			"+Mana regeneration"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_4_Lore"						"The bearer of this mighty axe gains the ability to cut down swaths of enemies at once."
+		//<<<<
+		//>>>>	MJZ Battle Fury LVL 5
+		"DOTA_Tooltip_Ability_item_mjz_battlefury_5"	                        "Battle Fury LVL 5"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_5_Description"				"<h1>Active: Chop Tree or Ward</h1>Destroy a target tree or ward.\n <h1>Passive: Quell</h1>Increases attack damage against non-hero units by %quelling_bonus% for melee heroes, and %quelling_bonus_ranged% for ranged.\n <h1>Passive: Cleave</h1>Deals %cleave_damage_percent%%% of attack damage as physical damage in a cone up to %cleave_distance% around the target. (Melee Only)"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_5_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_5_bonus_health_regen"			"+Health regeneration"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_5_bonus_mana_regen"			"+Mana regeneration"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_5_Lore"						"The bearer of this mighty axe gains the ability to cut down swaths of enemies at once."
+		//<<<<

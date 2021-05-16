@@ -1,0 +1,4 @@
+
+"DOTA_Tooltip_ability_mjz_phoenix_icarus_dive"							"Icarus Dive"
+"DOTA_Tooltip_ability_mjz_phoenix_icarus_dive_Description"				"Phoenix dives to the target position."
+"DOTA_Tooltip_ability_mjz_phoenix_icarus_dive_Lore"						"Though no stranger to travelling the cosmic void, soaring within an atmosphere offers unique pleasures."	

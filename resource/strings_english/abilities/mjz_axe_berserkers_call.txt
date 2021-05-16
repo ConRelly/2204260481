@@ -1,0 +1,13 @@
+    
+	"DOTA_Tooltip_ability_mjz_axe_berserkers_call"				    "Berserker's Call"
+	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_Description"	    "Axe taunts nearby enemy units, forcing them to attack him, while he gains bonus armor during the duration."
+	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_Lore"	    		"Mogul Khan's warcry taunts opponents into engaging in an unconquerable battle with the Axe."
+	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_Note0"	    	"Affects units with spell immunity."
+	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_radius"			"Radius: "
+	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_bonus_armor"		"Base Armor Bonus: "
+	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_bonus_armor_per"	"%Extra Armor Bonus: "
+	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_duration"			"Duration: "
+	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_caster"				"Berserker's Call"
+	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_caster_Description"	"Armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
+	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_enemy"				"Berserker's Call"
+	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_enemy_Description"	"You are forced to Axe"

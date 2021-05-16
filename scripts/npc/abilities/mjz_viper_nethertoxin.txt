@@ -1,0 +1,89 @@
+
+	//=================================================================================================================
+	// Viper: Nethertoxin
+	//=================================================================================================================
+	"mjz_viper_nethertoxin"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_viper/mjz_viper_nethertoxin.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityTextureName"			"mjz_viper_nethertoxin"
+
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"%cast_range"
+
+		"AbilityCooldown"				"8.0"
+		"AbilityManaCost"				"70 80 90 100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"380"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"30 45 60 75"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resistance"		"-10 -15 -20 -25"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_viper_nethertoxin_magic_resistance"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"8"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"2000"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_auto"			"900"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_viper.vsndevts"
+			"particle"		"particles/generic_gameplay/generic_silence.vpcf"
+			"particle"		"particles/units/heroes/hero_viper/viper_nethertoxin.vpcf"
+			"particle"		"particles/units/heroes/hero_viper/viper_nethertoxin_debuff.vpcf"
+			"particle"		"particles/units/heroes/hero_viper/viper_nethertoxin_debuff_splash.vpcf"
+			"particle"		"particles/units/heroes/hero_viper/viper_nethertoxin_proj.vpcf"
+			"particle"		"particles/units/heroes/hero_viper/viper_nethertoxin_proj_endcap.vpcf"
+		}
+	}
+	"special_bonus_unique_mjz_viper_nethertoxin_magic_resistance"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"-25"
+			}
+		}
+	}

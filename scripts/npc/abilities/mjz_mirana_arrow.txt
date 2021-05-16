@@ -1,0 +1,81 @@
+
+	//=================================================================================================================
+	// Mirana: Arrow					月神之箭
+	//=================================================================================================================
+	"mjz_mirana_arrow"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_mirana/mjz_mirana_arrow.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE" // "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	//DAMAGE_TYPE_PHYSICAL
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		// "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityTextureName"			"mjz_mirana_arrow"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"arrow_speed"		"950.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"arrow_width"		"115"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"arrow_range"		"2000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"arrow_count"			"1"
+				"LinkedSpecialBonus"	"special_bonus_unique_mirana_2"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"arrow_vision"			"500"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_pct"		    "80 100 120 140"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"proc_chance"		    "30"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_mirana_arrow_chance"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
+			"particle"		"particles/units/heroes/hero_mirana/mirana_spell_arrow.vpcf"
+			"particle"		"particles/econ/items/mirana/mirana_crescent_arrow/mirana_spell_crescent_arrow.vpcf"
+		}
+	}
+	"special_bonus_unique_mjz_mirana_arrow_chance"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"5"
+			}
+		}
+	}
+

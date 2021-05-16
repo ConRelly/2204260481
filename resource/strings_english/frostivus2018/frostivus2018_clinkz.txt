@@ -1,0 +1,49 @@
+
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_strafe"							"Strafe"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_strafe_Description"				"Clinkz nimbly attacks with a barrage of arrows. Dramatically increases attack speed for a short time and grants Clinkz the ability to automatically dodge projectiles."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_strafe_Note0"					"Can dodge ranged attacks or spells."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_strafe_Lore"						"It's hard to say whether the blur around the Bone Fletcher is from his flaming heart or his speed with the quiver."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_strafe_attack_speed_bonus_pct"	"BONUS ATTACK SPEED:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_strafe_duration"					"DURATION:"
+
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows"							"Searing Arrows"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_Description"				"Imbues Clinkz's arrows with fire for extra damage <font color='#70EA72'>and applies spill damage to enemies behind the target</font>."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_Lore"						"Clinkz simply lights his arrows from his flaming essence for quite the destructive effect."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_Note0"					"Searing Arrows deal damage to structures."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_Note1"					"The damage is directly added to Clinkz' attack damage, as physical damage."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_damage_bonus"				"BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_attack_spill_range"		"<font color='#70EA72'>SPILL ATTACK RANGE:</font>"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_attack_spill_width"		"<font color='#70EA72'>SPILL ATTACK WIDTH:</font>"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_spill_damage_multiplier"	"<font color='#70EA72'>SPILL DAMAGE MULTIPLIER:</font>"
+
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk"						"Skeleton Walk"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_Description"			"Clinkz moves invisibly through units until the moment he attacks or uses an ability. <font color='#70EA72'>When he moves through a unit, he temporarily steals a portion of its attack damage.</font>"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_Lore"					"With a burst of fire and puff of smoke, the Bone Fletcher was nowhere to be seen."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_Note0"					"Will not break most channeling of spells or items upon activation."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_Note1"					"Has a fadetime of 0.6 seconds."
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_duration"				"DURATION:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_move_speed_bonus_pct"	"%BONUS MOVEMENT SPEED:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_attack_steal_duration"	"<font color='#70EA72'>ATTACK STEAL DURATION:</font>"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_bonus_base_dmg_per_stack"	"<font color='#70EA72'>ATTACK DMG PER STACK:</font>"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_wind_walk_max_stacks"			"<font color='#70EA72'>MAX STACKS:</font>"
+
+		"DOTA_Tooltip_modifier_frostivus2018_clinkz_wind_walk"						"Skeleton Walk"
+		"DOTA_Tooltip_modifier_frostivus2018_clinkz_wind_walk_Description"			"This unit is invisible."
+
+		"DOTA_Tooltip_modifier_frostivus2018_clinkz_wind_walk_bonus_damage"					"Skeleton Walk"
+		"DOTA_Tooltip_modifier_frostivus2018_clinkz_wind_walk_bonus_damage_Description"		"This unit has bonus attack damage."
+
+		"DOTA_Tooltip_modifier_frostivus2018_clinkz_wind_walk_attack_debuff"				"Skeleton Walk"
+		"DOTA_Tooltip_modifier_frostivus2018_clinkz_wind_walk_attack_debuff_Description"	"This unit has reduced attack damage."
+
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army"					"Burning Army"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_Description"		"Clinkz summons an army of fiery ranged skeleton archers. Archers are immobile and die with 2 attacks from a hero. Skeletons use your current Searing Arrows ability and attack <font color='#70EA72'>any units nearby</font>. Base damage is equal to your hero's base damage. Attack range is equal to your hero's attack range. "
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_duration"			"DURATION:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_range"				"RANGE:"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_count"				"<font color='#70EA72'>COUNT:</font>"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_attack_rate"		"<font color='#70EA72'>ATTACK RATE:</font>"
+		"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_spawn_interval"		"<font color='#70EA72'>SPAWN INTERVAL:</font>"
+
+		"npc_dota_clinkz_skeleton_archer_frostivus2018"								"Skeleton Archer"
+		
+		

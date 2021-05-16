@@ -1,0 +1,18 @@
+
+	"DOTA_Tooltip_ability_mjz_storm_spirit_overload"									"超负荷"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_Description"						"施法时会产生电荷，在风暴之灵下次攻击时被释放，对附近敌人造成伤害并减速。"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_Lore"								"啪！嘶！咝！"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_Note0"								"使用物品不会触发超负荷。"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_Note1"								"超负荷效果不会叠加。"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_overload_move_slow"					"%移动速度减缓："
+	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_overload_attack_slow"				"攻击速度降低："
+	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_overload_aoe"						"作用范围："
+	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_slow_duration"						"持续时间："
+	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_overload_damage"					"伤害："
+	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_intelligence_damage"				"%智力伤害："
+	"DOTA_Tooltip_modifier_mjz_storm_spirit_overload_buff"								"超负荷"
+	"DOTA_Tooltip_modifier_mjz_storm_spirit_overload_buff_Description"					"通过施法来获得充能"
+	"DOTA_Tooltip_modifier_mjz_storm_spirit_overload_debuff"						"超负荷减速"
+	"DOTA_Tooltip_modifier_mjz_storm_spirit_overload_debuff_Description"			"受到风暴之灵超负荷效果影响。移动速度减缓 %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%，攻击速度降低 %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_storm_spirit_overload_01"		"+{s:value} 超负荷智力伤害"
+	

@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_clinkz_death_pact"				    "死亡契约"
+	"DOTA_Tooltip_ability_mjz_clinkz_death_pact_Description"	    "增加生命上限及攻击力。"
+	"DOTA_Tooltip_ability_mjz_clinkz_death_pact_Lore"	    		"萨瑟雷克斯的死亡契约已经成了克林克兹的一部分，他通过杀死那些低等生物来使自己的枯骨获得新生。"
+	"DOTA_Tooltip_ability_mjz_clinkz_death_pact_bonus_damage_pct"	"%攻击力加成："
+	"DOTA_Tooltip_ability_mjz_clinkz_death_pact_bonus_health"		"生命值加成："
+	"DOTA_Tooltip_ability_mjz_clinkz_death_pact_armor_reduction"	"护甲降低："
+	"DOTA_Tooltip_ability_mjz_clinkz_death_pact_duration"			"持续时间："
+	"DOTA_Tooltip_modifier_mjz_clinkz_death_pact"					"死亡契约"
+	"DOTA_Tooltip_modifier_mjz_clinkz_death_pact_Description"	    "增加%dMODIFIER_PROPERTY_HEALTH_BONUS%生命上限及%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%%攻击力。"
+	

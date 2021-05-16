@@ -1,0 +1,45 @@
+
+	"mjz_enigma_spacetime_gravity"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_enigma/mjz_enigma_spacetime_gravity.lua"
+		"AbilityTextureName"			"mjz_enigma_spacetime_gravity"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
+
+		"AbilityCastRange"				"275"
+		"AbilityCastPoint"				"0.3"
+		"AbilityChannelTime"			"4.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
+		"AbilityCooldown"				"120.0"
+		"AbilityManaCost"				"300"
+		"MaxLevel"						"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius_per_level"			"100"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"4.0"
+			}
+		}
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_enigma/enigma_blackhole.vpcf"
+			"particle"		"particles/econ/items/enigma/enigma_world_chasm/enigma_blackhole_ti5.vpcf"
+			"particle"		"particles/units/heroes/hero_enigma/enigma_midnight_pulse.vpcf"
+			"soundfile"		"sounds/weapons/hero/enigma/black_hole_loop.vsnd"
+			"soundfile"		"sounds/weapons/hero/enigma/black_hole_stop.vsnd"
+
+		}
+	}
+

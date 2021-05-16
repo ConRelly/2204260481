@@ -1,0 +1,30 @@
+	
+
+		//>>>>	Mjz Mjollnir LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_mjollnir_2"	                    	"Mjollnir LVL 2"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_2_Description"				"<h1>Active: Static Charge</h1>Places a charged shield on a target unit for %static_duration% seconds which has a %static_chance%%% chance to release a %static_damage% magical damage shocking bolt at a nearby attacker and %static_strikes% additional enemies.\n <h1>Passive: Chain Lightning</h1>Grants a %chain_chance%%% chance on attack to release a bolt of electricity that leaps between %chain_strikes% targets within a %chain_radius% radius, dealing %chain_damage% magical damage to each. Lightning proc pierces evasion."
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_2_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_2_bonus_attack_speed"		"+Attack speed"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_2_Lore"						"Thor's magical hammer, made for him by the dwarves Brok and Eitri."
+		//<<<<
+		//>>>>	Mjz Mjollnir LVL 3
+		"DOTA_Tooltip_Ability_item_mjz_mjollnir_3"	                        "Mjollnir LVL 3"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_3_Description"				"<h1>Active: Static Charge</h1>Places a charged shield on a target unit for %static_duration% seconds which has a %static_chance%%% chance to release a %static_damage% magical damage shocking bolt at a nearby attacker and %static_strikes% additional enemies.\n <h1>Passive: Chain Lightning</h1>Grants a %chain_chance%%% chance on attack to release a bolt of electricity that leaps between %chain_strikes% targets within a %chain_radius% radius, dealing %chain_damage% magical damage to each. Lightning proc pierces evasion."
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_3_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_3_bonus_attack_speed"		"+Attack speed"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_3_Lore"						"Thor's magical hammer, made for him by the dwarves Brok and Eitri."
+		//<<<<
+		//>>>>	Mjz Mjollnir LVL 4
+		"DOTA_Tooltip_Ability_item_mjz_mjollnir_4"	                        "Mjollnir LVL 4"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_4_Description"				"<h1>Active: Static Charge</h1>Places a charged shield on a target unit for %static_duration% seconds which has a %static_chance%%% chance to release a %static_damage% magical damage shocking bolt at a nearby attacker and %static_strikes% additional enemies.\n <h1>Passive: Chain Lightning</h1>Grants a %chain_chance%%% chance on attack to release a bolt of electricity that leaps between %chain_strikes% targets within a %chain_radius% radius, dealing %chain_damage% magical damage to each. Lightning proc pierces evasion."
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_4_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_4_bonus_attack_speed"		"+Attack speed"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_4_Lore"						"Thor's magical hammer, made for him by the dwarves Brok and Eitri."
+		//<<<<
+		//>>>>	Mjz Mjollnir LVL 5
+		"DOTA_Tooltip_Ability_item_mjz_mjollnir_5"	                        "Mjollnir LVL 5"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_5_Description"				"<h1>Active: Static Charge</h1>Places a charged shield on a target unit for %static_duration% seconds which has a %static_chance%%% chance to release a %static_damage% magical damage shocking bolt at a nearby attacker and %static_strikes% additional enemies.\n <h1>Passive: Chain Lightning</h1>Grants a %chain_chance%%% chance on attack to release a bolt of electricity that leaps between %chain_strikes% targets within a %chain_radius% radius, dealing %chain_damage% magical damage to each. Lightning proc pierces evasion."
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_5_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_5_bonus_attack_speed"		"+Attack speed"
+		"DOTA_Tooltip_ability_item_mjz_mjollnir_5_Lore"						"Thor's magical hammer, made for him by the dwarves Brok and Eitri."
+		//<<<<

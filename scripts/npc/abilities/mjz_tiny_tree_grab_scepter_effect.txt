@@ -1,0 +1,21 @@
+
+	"mjz_tiny_tree_grab_scepter_effect"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_tiny/mjz_tiny_tree_grab_scepter_effect.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjz_tiny_tree_grab_scepter_effect"
+		
+		"HasScepterUpgrade"				"1"
+		"IsGrantedByScepter"			"1"
+		"MaxLevel"						"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_count"				"99"
+			}
+		}
+	}

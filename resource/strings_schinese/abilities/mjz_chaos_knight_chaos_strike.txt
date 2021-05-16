@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike"				    "混沌一击"
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_Description"	    "混沌骑士的每次攻击都有一定概率造成额外伤害，并且触发的致命一击具有%lifesteal%%%的吸血效果。"
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_Lore"	    		"混沌骑士用巨大的蛮力砸向面前的敌人，击碎最厚的盔甲。"
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_Note0"	    		"多个致命一击来源的触发几率叠加，吸血天赋与其他吸血来源加法叠加。"
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_crit_chance"		"%触发几率："
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_crit_damage"		"%致命一击伤害："
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_lifesteal"			"%触发时吸血："
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_chaos_strike"			"+{s:value}% 混沌一击触发几率"

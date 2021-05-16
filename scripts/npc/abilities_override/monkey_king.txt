@@ -1,0 +1,83 @@
+	
+	"monkey_king_boundless_strike"
+	{
+		"AbilityCooldown"				"15"
+	}
+	"monkey_king_primal_spring"
+	{
+		"AbilityChannelTime"			"0.6"
+		"AbilityCooldown"				"15 13 11 9"
+	}
+	"monkey_king_tree_dance"
+	{
+		"AbilityCooldown"				"0.6"
+	}
+
+	"monkey_king_wukongs_command"
+	{
+		"AbilityCooldown"				"120 100 80"
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"num_second_soldiers"				"9"
+			}
+			"07"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"attack_speed"						"1.0"
+			}
+			"14"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"scepter_spawn_interval"			"3"
+				"RequiresScepter"	"1"
+			}
+			"15"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"scepter_spawn_duration"			"13"
+				"RequiresScepter"	"1"
+			}
+		}
+	}
+	"special_bonus_unique_monkey_king"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"100"
+			}
+		}
+	}
+	"special_bonus_unique_monkey_king_3"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"900"
+			}
+		}
+	}
+	"special_bonus_unique_monkey_king_6"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"1100"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value2"				"13"
+			}
+		}
+	}
+	

@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_enigma_spacetime_gravity"				    "时空引力"
+	"DOTA_Tooltip_ability_mjz_enigma_spacetime_gravity_Description"	    "力量回归始源。"
+	"DOTA_Tooltip_ability_mjz_enigma_spacetime_gravity_Lore"	    		"任何人都不能逃脱引力。"
+	"DOTA_Tooltip_ability_mjz_enigma_spacetime_gravity_radius_per_level"	"每级提升范围："
+	"DOTA_Tooltip_ability_mjz_enigma_spacetime_gravity_duration"			"持续时间："
+	"DOTA_Tooltip_modifier_mjz_enigma_spacetime_gravity_buff"	   			"时空引力"
+	"DOTA_Tooltip_modifier_mjz_enigma_spacetime_gravity_buff_Description"	    "力量回归始源。"

@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_zuus_thundergods_wrath"				    "Thundergod's Wrath"
+	"DOTA_Tooltip_ability_mjz_zuus_thundergods_wrath_Description"	    "Strikes all enemy with a bolt of lightning. The damage is based on your intelligence."
+	"DOTA_Tooltip_ability_mjz_zuus_thundergods_wrath_Lore"	    		"The Lord of Heaven smites all who oppose him, near or far."
+	"DOTA_Tooltip_ability_mjz_zuus_thundergods_wrath_radius"		    	"Radius:"
+	"DOTA_Tooltip_ability_mjz_zuus_thundergods_wrath_base_damage"	   			"Base Damage:"
+	"DOTA_Tooltip_ability_mjz_zuus_thundergods_wrath_intelligence_damage"	    "%Intelligence Damage:"
+	"DOTA_Tooltip_ability_mjz_zuus_thundergods_wrath_count"	    "COUNT:"

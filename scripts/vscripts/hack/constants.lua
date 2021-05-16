@@ -1,0 +1,2 @@
+
+_G.PLAYERS_COURIER = {}

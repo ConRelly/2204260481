@@ -1,0 +1,62 @@
+
+    "oracle_fortunes_end"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"120 170 220 270"
+			}
+		}
+	}
+	"oracle_purifying_flames"
+	{
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"105 110 115 120"
+		"AbilityCooldown"				"2"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"150 300 450 600"
+			}			
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"heal_per_second"		"30 60 90 120"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"total_heal_tooltip"	"150 300 450 600"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.0"
+			}
+		}
+	} 
+	"oracle_fates_edict"
+	{
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	}
+    "oracle_false_promise"
+    {
+        "AbilityCastRange"				"800 900 1000"
+        "AbilityCooldown"				"50 30 10"
+        "AbilityManaCost"				"200 400 600"
+    }
+    "special_bonus_unique_oracle_5"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"1"
+			}
+		}
+	}

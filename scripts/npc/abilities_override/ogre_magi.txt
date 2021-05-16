@@ -1,0 +1,79 @@
+	
+	"ogre_magi_bloodlust"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"10 15 20 22"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"35"
+			}
+		}
+	}
+	"ogre_magi_fireblast"
+	{
+		"AbilityCooldown"				"10 9 8 7"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			    "FIELD_FLOAT"
+				"stun_duration"		    "0.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fireblast_damage"		"80 180 240 360"
+				"LinkedSpecialBonus"	"special_bonus_unique_ogre_magi_2"
+			}
+		}
+	}
+	"ogre_magi_ignite"
+	{
+		"AbilityCooldown"				"15 12 10 8"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			    "FIELD_FLOAT"
+				"duration"			    "5"
+			}
+			"02"
+			{
+				"var_type"			    "FIELD_INTEGER"
+				"burn_damage"		    "30 50 70 90"
+				"LinkedSpecialBonus"	"special_bonus_unique_ogre_magi_4"
+			}
+		}
+	}
+	"ogre_magi_unrefined_fireblast"
+	{
+		"AbilityCooldown"				"6"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			    "FIELD_FLOAT"
+				"stun_duration"		    "0.6"
+				"RequiresScepter"	"1"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"scepter_mana"		"35"
+				"RequiresScepter"	"1"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fireblast_damage"		"575"
+				"RequiresScepter"	"1"
+			}
+		}
+	}
+	

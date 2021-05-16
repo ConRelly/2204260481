@@ -1,0 +1,6 @@
+
+"DOTA_Tooltip_Ability_item_broom_handle_copy"		"Broom Handle LV2"
+"DOTA_Tooltip_Ability_item_broom_handle_copy_melee_attack_range"		"+$attack_range_melee"
+"DOTA_Tooltip_Ability_item_broom_handle_copy_bonus_damage"		"+$damage"
+"DOTA_Tooltip_Ability_item_broom_handle_copy_bonus_armor"		"+$armor"
+

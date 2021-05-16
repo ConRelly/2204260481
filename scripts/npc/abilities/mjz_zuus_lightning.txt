@@ -1,0 +1,36 @@
+
+	"mjz_zuus_lightning"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_zuus/mjz_zuus_lightning.lua"
+		"AbilityTextureName"			"mjz_zuus_lightning"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilitySound"					"Hero_Zuus.GodsWrath"
+
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCooldown"				"46"
+		"AbilityManaCost"				"90"
+		"MaxLevel"						"1"
+		"LearnOnSpawn"					"1"		// 出生时学习此技能、值为等级
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"0"
+			}
+		}
+		"precache"
+		{
+			"soundfile"		"sounds/weapons/hero/zuus/static_field.vsnd"
+			"particle"		"particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf"
+			"particle"		"particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start.vpcf"
+			"particle"		"particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start_bolt_parent.vpcf"
+			"particle"		"particles/units/heroes/hero_zuus/zuus_lightning_bolt_start.vpcf"
+			"particle"		"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+			"soundfile"		"sounds/weapons/hero/zuus/lightning_bolt.vsnd"
+		}
+	}
+

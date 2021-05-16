@@ -1,0 +1,5 @@
+    
+	"DOTA_Tooltip_ability_mjz_terrorblade_metamorphosis_relieve"				    "Shapeshift Relieve"
+	"DOTA_Tooltip_ability_mjz_terrorblade_metamorphosis_relieve_Description"	    "Immediately remove the transform effect.\n\nUpgradable by Aghanim's Scepter."
+	"DOTA_Tooltip_ability_mjz_terrorblade_metamorphosis_relieve_Aghanim_Description"	    "There is no time limit for the Shapeshift."
+	"DOTA_Tooltip_ability_mjz_terrorblade_metamorphosis_relieve_health_drain_per_second_scepter"	    "%Health Drain Per Second: "

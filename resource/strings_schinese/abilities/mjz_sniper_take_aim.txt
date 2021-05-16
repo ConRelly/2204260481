@@ -1,0 +1,8 @@
+    
+"DOTA_Tooltip_ability_mjz_sniper_take_aim"											"瞄准"
+"DOTA_Tooltip_ability_mjz_sniper_take_aim_Description"								"增加狙击手步枪的射程。开启后攻击距离加倍。"
+"DOTA_Tooltip_ability_mjz_sniper_take_aim_Lore"										"卡德尔总是保持自己待在远处的安全距离，同时他仍然可以作为狙击手进行完美的射击。"
+"DOTA_Tooltip_ability_mjz_sniper_take_aim_bonus_attack_range"						"射程增加："
+"DOTA_Tooltip_ability_mjz_sniper_take_aim_move_slow_pct"							"%移动速度减缓："
+"DOTA_Tooltip_modifier_mjz_sniper_take_aim"											"瞄准"
+"DOTA_Tooltip_modifier_mjz_sniper_take_aim_Description"								"攻击距离加倍。"

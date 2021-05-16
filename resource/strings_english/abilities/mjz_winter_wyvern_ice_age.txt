@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_winter_wyvern_ice_age"				    "Ice Age"
+	"DOTA_Tooltip_ability_mjz_winter_wyvern_ice_age_Description"	    "Winter wyvern will target area all enemy is frozen in place."
+	"DOTA_Tooltip_ability_mjz_winter_wyvern_ice_age_radius"				"RADIUS:"
+	"DOTA_Tooltip_ability_mjz_winter_wyvern_ice_age_duration"			"DURATION:"
+	"DOTA_Tooltip_ability_mjz_winter_wyvern_ice_age_damage"				"BASE DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_winter_wyvern_ice_age_percent_damage"		"%HEALTH BURN:" 
+	"DOTA_Tooltip_modifier_mjz_winter_wyvern_ice_age_prisoner"			"Ice Age"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_winter_wyvern_0601"						"+200 Ice Age Radius"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_winter_wyvern_0602"						"+1s Ice Age Duration"

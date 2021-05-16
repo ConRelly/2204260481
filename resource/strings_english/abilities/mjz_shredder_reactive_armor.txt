@@ -1,0 +1,12 @@
+
+	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor"				"Reactive Armor"
+	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_Description"	"Each time Timbersaw is harmed, he gains increased health regen and armor and magic resistance."
+	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_Lore"			"The saw-suit is equipped to react to the slightest touch with fortified defenses."
+	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_bonus_armor"			"BONUS ARMOR:"
+	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_bonus_magic_resist"	"BONUS MAGIC RESISTANCE:"
+	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_bonus_hp_regen"		"BONUS HP REGEN:"
+	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_stack_limit"			"MAX STACKS:"
+	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_stack_duration"		"STACK DURATION:"
+	"DOTA_Tooltip_modifier_mjz_shredder_reactive_armor"					"Reactive Armor"
+	"DOTA_Tooltip_modifier_mjz_shredder_reactive_armor_Description"		"Gaining bonus armor and magic resistance and HP regen per stack."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_shredder_reactive_armor_limit"			"+6 Reactive Armor Stacks"

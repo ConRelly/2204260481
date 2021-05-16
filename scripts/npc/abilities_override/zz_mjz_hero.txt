@@ -1,0 +1,255 @@
+
+   
+	"medusa_split_shot"
+	{
+        "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_modifier"		"-45 -34 -23 -12"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_modifier_tooltip"		"55 66 77 88"
+			}
+			"03"
+			{	
+				"var_type"					"FIELD_INTEGER"
+				"arrow_count"				"3"
+				"LinkedSpecialBonus"			"special_bonus_unique_medusa_2"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"split_shot_bonus_range"		"100"
+			}
+		}
+    }
+	
+	"brewmaster_thunder_clap"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"400 500 600 700"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"160 230 300 380"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_slow"				"25 35 45 55"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed_slow"			"25 35 45 55"
+			}			
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"4.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_3"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration_creeps"			"4.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_3"
+			}			
+		}
+	}
+	"brewmaster_primal_split"
+	{
+		"AbilityCooldown"				"50 40 30"
+		"AbilityManaCost"				"0"
+	}
+	
+	"legion_commander_moment_of_courage"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"trigger_chance"			"35"
+				"LinkedSpecialBonus"        "special_bonus_unique_legion_commander_3"																	
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"buff_duration"				"1.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hp_leech_percent"			"35 45 55 65"
+			}
+		}
+	}
+	
+	"gyrocopter_flak_cannon"
+	{
+		"AbilityCooldown"				"20"
+		"AbilityDuration"				"20"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"1250"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"max_attacks"					"4 6 8 10"
+				"LinkedSpecialBonus"			"special_bonus_unique_gyrocopter_2"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"projectile_speed"				"800"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"fire_rate"						"0.3"
+				"RequiresScepter"				"1"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"scepter_radius"				"900"
+				"RequiresScepter"				"1"
+			}
+		}
+	}
+	
+	"leshrac_lightning_storm"
+	{
+		"AbilityDamage"					"100 160 220 280"
+		"AbilitySpecial"
+		{	
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"500"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"interval_scepter"		"1.0"
+				"RequiresScepter"		"1"
+			}		
+		}
+	}
+	
+	"dazzle_shadow_wave"
+	{
+		"AbilityCastRange"				"800 900 1000 1100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bounce_radius"		"800"
+			}
+		}
+	}
+	
+	"witch_doctor_voodoo_restoration"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana_per_second"			"12 16 20 24"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"800"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"heal"						"16 24 32 40"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"heal_interval"				"0.33 0.33 0.33 0.33"
+			}
+		}
+	}
+	
+	"special_bonus_unique_omniknight_7"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"15"
+				"ad_linked_ability"			"omniknight_guardian_angel"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+	"special_bonus_unique_lycan_5"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"60"
+				"ad_linked_ability"			"lycan_shapeshift"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+	"special_bonus_unique_sven_2"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"460"
+				"ad_linked_ability"			"sven_gods_strength"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+	
+	"luna_moon_glaive"
+	{
+		"MaxLevel"						"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"range"						"500"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bounces"					"6"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_reduction_percent"	"34"
+			}
+		}
+	}
+	

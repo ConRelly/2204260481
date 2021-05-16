@@ -1,0 +1,13 @@
+    
+	"DOTA_Tooltip_ability_mjz_centaur_return"				    "反击"
+	"DOTA_Tooltip_ability_mjz_centaur_return_Description"	    "半人马战行者向攻击他的单位发出反击，伤害基于半人马战行者的力量值。"
+	"DOTA_Tooltip_ability_mjz_centaur_return_Lore"	    		"布拉德瓦登无需回避对手的攻击；这由他那盔甲般的马皮负责。"
+	"DOTA_Tooltip_ability_mjz_centaur_return_Note0"	    		"反击对幻象无效；幻象携带反击光环。"
+	"DOTA_Tooltip_ability_mjz_centaur_return_return_damage"		"基础伤害："
+	"DOTA_Tooltip_ability_mjz_centaur_return_strength_pct"		"%力量额外伤害："
+	"DOTA_Tooltip_modifier_mjz_centaur_return_buff"					"反击"
+	"DOTA_Tooltip_modifier_mjz_centaur_return_buff_Description"	    "半人马战行者向攻击他的单位发出反击，伤害基于半人马战行者的力量值。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_centaur_return_strength"		"+25% 反击力量伤害"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_centaur_return_aura"			"反击变成光环"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_centaur_return_aura_Description"		"半人马战行者附近900范围内友方单位获得反击效果；伤害基于半人马战行者的力量。"
+	

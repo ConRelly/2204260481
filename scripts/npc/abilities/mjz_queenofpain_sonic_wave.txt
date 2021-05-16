@@ -1,0 +1,86 @@
+
+	"mjz_queenofpain_sonic_wave"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_queenofpain/mjz_queenofpain_sonic_wave.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT"				   
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"FightRecapLevel"				"2"
+		"HasScepterUpgrade"				"1"
+		"AbilitySound"					"Hero_QueenOfPain.SonicWave"
+		"AbilityTextureName"			"mjz_queenofpain_sonic_wave"
+
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.452 0.452 0.452"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		"AbilityCooldown"				"90 60 30"
+		"AbilityManaCost"				"100"
+			
+		"AbilityModifierSupportValue"	"0.0"	// Modifier just delays damage
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"starting_aoe"		"100"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"distance"			"900"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"final_aoe"			"450"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"900"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"340 430 520"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_scepter"	"500 600 700"
+				"RequiresScepter"		"1"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"intelligence_damage"		"600 900 1200"
+			}
+			
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"knockback_distance"	"0"
+			}
+			"09"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"knockback_duration" "0.8"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"mana_cost_pct"		"60"
+			}
+			
+		}
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_queenofpain.vsndevts"
+			"particle"			"particles/units/heroes/hero_queenofpain/queen_sonic_wave.vpcf"
+		}
+	}

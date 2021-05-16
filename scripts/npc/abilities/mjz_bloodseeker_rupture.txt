@@ -1,0 +1,34 @@
+
+	"mjz_bloodseeker_rupture"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_bloodseeker/mjz_bloodseeker_rupture.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName"			"mjz_bloodseeker_rupture"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_increase_outgoing_pct"	"30 50 70"
+				"LinkedSpecialBonus"			"special_bonus_unique_mjz_bloodseeker_rupture_01"
+			}
+		}
+	}
+	"special_bonus_unique_mjz_bloodseeker_rupture_01"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"30"
+			}
+		}
+	}

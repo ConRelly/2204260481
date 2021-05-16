@@ -1,0 +1,12 @@
+
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood"				"Berserker's Blood"
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood_Description"	"Huskar's injuries feed his power, giving increased attack speed and health regen based on missing health. Health regen is a percentage of your strength."
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood_Lore"			"After losing his birthright, Huskar gained a lethality in physical combat that is only heightened as his own blood is spilled."
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood_Note0"		"Maximum bonus is achieved when Huskar has strictly less than 10% of his maximum HP."
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood_Note1"		"Bonuses are provided linearly, no bonus at 100% HP and full bonus at 10% HP."
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood_maximum_attack_speed"	"MAX ATTACK SPEED:"
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood_maximum_resistance"	"%MAX MAGIC RESISTANCE:"
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood_maximum_health_regen"	"%MAX STR REGEN:"
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood_hp_threshold_max"		"%HP FOR MAX BONUS:"
+	"DOTA_Tooltip_modifier_mjz_huskar_berserkers_blood"				"Berserker's Blood"
+	"DOTA_Tooltip_modifier_mjz_huskar_berserkers_blood_Description"	"Attack Speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% and Health Regen increased by %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% and Magic Damage Resistance by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%."

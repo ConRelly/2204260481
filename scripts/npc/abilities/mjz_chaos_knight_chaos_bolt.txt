@@ -1,0 +1,90 @@
+
+	"mjz_chaos_knight_chaos_bolt"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_chaos_knight/mjz_chaos_knight_chaos_bolt.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_ChaosKnight.ChaosBolt.Cast"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityTextureName"			"mjz_chaos_knight_chaos_bolt"				
+
+		"AbilityCastRange"				"%cast_range"
+		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+		
+		"AbilityCooldown"				"10.0 10.0 10.0 10.0"
+		"AbilityManaCost"				"140 140 140 140"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"400 500 600 700"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"600"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"targets"				"1"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_chaos_knight_chaos_bolt_target"				
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_min"			"60 90 120 150"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_max"			"180 220 260 300"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stun_min"				"1 1 1 2"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stun_max"				"2 3 4 5"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chaos_bolt_speed"		"700"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts"
+			"particle"		"particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt.vpcf"
+			"particle"		"particles/units/heroes/hero_chaos_knight/chaos_knight_bolt_msg.vpcf"
+		}
+	}
+	"special_bonus_unique_mjz_chaos_knight_chaos_bolt_target"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"9"
+			}
+		}
+	}
+

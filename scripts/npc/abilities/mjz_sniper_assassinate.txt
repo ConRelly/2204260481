@@ -1,0 +1,115 @@
+
+	//=================================================================================================================
+	// Sniper: Assassinate
+	//=================================================================================================================
+	"mjz_sniper_assassinate"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/hero_sniper/mjz_sniper_assassinate.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjz_sniper_assassinate"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"HasScepterUpgrade"				"1"
+		
+		"AbilityCastRange"				"%cast_range"
+		"AbilityCastRangeBuffer"		"600"
+		"AbilityCastPoint"				"2.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		"AbilityCooldown"				"20.0 15.0 10.0"
+		"AbilityManaCost"				"175 225 275"
+		
+		"AbilityModifierSupportValue"	"0.0"	// Modifier just does damage
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"projectile_speed"			"2500 2500 2500"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range"				"3000"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"total_cast_time_tooltip"	"2.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"aim_duration"				"2.0" // does this matter? cast point seems to be what's important
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"assassinate_damage"		"400 550 700"
+				// "LinkedSpecialBonus"		"special_bonus_unique_mjz_sniper_assassinate_damage" 
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scatter_range"				"600 800 1000"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scatter_width"				"350 400 450"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scepter_radius"			"400"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scepter_crit_bonus"		"280"
+				// "LinkedSpecialBonus"		"special_bonus_unique_mjz_sniper_assassinate_damage" 
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.0"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_damage_pct"			"0"
+				"LinkedSpecialBonus"		"special_bonus_unique_mjz_sniper_assassinate_damage" 
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+			"particle" 		"particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
+			"particle"		"particles/units/heroes/hero_sniper/sniper_crosshair.vpcf"
+		}
+	}
+	"special_bonus_unique_mjz_sniper_assassinate_damage"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"50"
+			}
+		}
+	}

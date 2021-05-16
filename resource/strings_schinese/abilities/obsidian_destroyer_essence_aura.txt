@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_obsidian_destroyer_essence_aura"				    "精气光环"
+	"DOTA_Tooltip_ability_mjz_obsidian_destroyer_essence_aura_Description"	    "当附近友方英雄或殁境神蚀者自己使用技能时，有一定概率回复自身魔法上限一定百分比的魔法值。同时被动增加殁境神蚀者的魔法上限。一些没有冷却时间的技能和切换型的技能不能触发精气光环。"
+	"DOTA_Tooltip_ability_mjz_obsidian_destroyer_essence_aura_radius"		    "范围："
+	"DOTA_Tooltip_ability_mjz_obsidian_destroyer_essence_aura_bonus_mana"	    "魔法值加成："
+	"DOTA_Tooltip_ability_mjz_obsidian_destroyer_essence_aura_restore_chance"	"%回复几率："
+	"DOTA_Tooltip_ability_mjz_obsidian_destroyer_essence_aura_restore_amount"	"%回复最大魔法值："
+	"DOTA_Tooltip_modifier_mjz_essence_aura_effect"				                "精气光环"
+	"DOTA_Tooltip_modifier_mjz_essence_aura_effect_Description"	                "当使用技能时，有一定概率回复自身魔法上限一定百分比的魔法值。"	
+	

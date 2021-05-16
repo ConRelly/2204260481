@@ -1,0 +1,29 @@
+
+		//>>>>	MJZ Shiva's Guard LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_shivas_guard_2"	                        "Shiva's Guard LVL 2"
+		"DOTA_Tooltip_ability_item_mjz_shivas_guard_2_Description"				"<h1>Active: Arctic Blast</h1>Emits a freezing wave that deals %blast_damage% magical damage to enemies and slows their movement by %blast_movement_speed%%% for %blast_debuff_duration% seconds. Radius: %blast_radius% \n\n<h1>Passive: Freezing Aura</h1>Reduces the attack speed of all enemies by %aura_attack_speed%.Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_mjz_shivas_guard_2_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_ability_item_mjz_shivas_guard_2_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_mjz_shivas_guard_2_Lore"						"Said to have belonged to a goddess, today it retains much of its former power."
+		//<<<<
+		//>>>>	MJZ Shiva's Guard LVL 3
+		"DOTA_Tooltip_Ability_item_mjz_shivas_guard_3"	                        "Shiva's Guard LVL 3"
+		"DOTA_Tooltip_ability_item_mjz_shivas_guard_3_Description"				"<h1>Active: Arctic Blast</h1>Emits a freezing wave that deals %blast_damage% magical damage to enemies and slows their movement by %blast_movement_speed%%% for %blast_debuff_duration% seconds. Radius: %blast_radius% \n\n<h1>Passive: Freezing Aura</h1>Reduces the attack speed of all enemies by %aura_attack_speed%.Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_mjz_shivas_guard_3_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_ability_item_mjz_shivas_guard_3_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_mjz_shivas_guard_3_Lore"						"Said to have belonged to a goddess, today it retains much of its former power."
+		//<<<<
+		//>>>>	MJZ Shiva's Guard LVL 4
+		"DOTA_Tooltip_Ability_item_mjz_shivas_guard_4"	                        "Shiva's Guard LVL 4"
+		"DOTA_Tooltip_ability_item_mjz_shivas_guard_4_Description"				"<h1>Active: Arctic Blast</h1>Emits a freezing wave that deals %blast_damage% magical damage to enemies and slows their movement by %blast_movement_speed%%% for %blast_debuff_duration% seconds. Radius: %blast_radius% \n\n<h1>Passive: Freezing Aura</h1>Reduces the attack speed of all enemies by %aura_attack_speed%.Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_mjz_shivas_guard_4_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_ability_item_mjz_shivas_guard_4_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_mjz_shivas_guard_4_Lore"						"Said to have belonged to a goddess, today it retains much of its former power."
+		//<<<<
+		//>>>>	MJZ Shiva's Guard LVL 5
+		"DOTA_Tooltip_Ability_item_mjz_shivas_guard_5"	                        "Shiva's Guard LVL 5"
+		"DOTA_Tooltip_ability_item_mjz_shivas_guard_5_Description"				"<h1>Active: Arctic Blast</h1>Emits a freezing wave that deals %blast_damage% magical damage to enemies and slows their movement by %blast_movement_speed%%% for %blast_debuff_duration% seconds. Radius: %blast_radius% \n\n<h1>Passive: Freezing Aura</h1>Reduces the attack speed of all enemies by %aura_attack_speed%.Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_mjz_shivas_guard_5_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_ability_item_mjz_shivas_guard_5_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_mjz_shivas_guard_5_Lore"						"Said to have belonged to a goddess, today it retains much of its former power."
+		//<<<<

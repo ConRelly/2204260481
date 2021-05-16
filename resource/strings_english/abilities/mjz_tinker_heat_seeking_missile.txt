@@ -1,0 +1,12 @@
+
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile"				"Heat-Seeking Missile"
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile_Description"	"Launches a pair of rockets at the nearest visible enemy unit within %radius% range. \n\nUpgradable by Aghanim's Scepter."
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile_Lore"	"		The last contraption Boush was able to save was a retrofitted rocket launcher with a homing mechanism."
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile_aghanim_description"	"Increases Heat-Seeking Missile target count."
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile_radius"		"RADIUS:"
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile_damage"		"BASE DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile_intelligence_damage"		"%INTELLIGENCE DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile_targets"		"MISSILE COUNT:"
+	"DOTA_Tooltip_ability_mjz_tinker_heat_seeking_missile_targets_scepter"	"SCEPTER MISSILE COUNT:"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_tinker_0203"		"+{s:value}% Heat-Seeking Missile Intelligence Damage"
+	

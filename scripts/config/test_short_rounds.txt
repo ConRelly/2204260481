@@ -1,0 +1,337 @@
+"dota_holdout"
+{
+	"PrepTimeBetweenRounds"			"10"
+	"ItemExpireTime"				"120"
+	
+	"ItemDrops"
+	{
+		"HealingSalve"
+		{
+			"Item"					"item_flask"
+			"Chance"				"0"
+		}
+		"RandomSkill"
+		{
+			"Item"					"item_random_get_ability"
+			"Chance"				"0"
+		}
+		"EnchantedMango"
+		{
+			"Item"					"item_enchanted_mango"
+			"Chance"				"0"
+		}
+		"book_of_strength"
+		{
+			"Item"					"item_book_of_strength"
+			"Chance"				"4"
+		}
+		"book_of_agility"
+		{
+			"Item"					"item_book_of_agility"
+			"Chance"				"4"
+		}
+		"book_of_intelligence"
+		{
+			"Item"					"item_book_of_intelligence"
+			"Chance"				"4"
+		}
+	}
+		"LinkedXPEnemies"
+	{
+		// Key enemy spawns sub-value count of subkey enemies
+		// e.g. splitter_a spawns 3 splitter_b
+		"npc_twin_headed_dragon"
+		{
+			"npc_articuno"			"1"
+			"npc_moltres"			"1"
+		}
+	}
+	"RandomSpawns"
+	{
+		"1"
+		{
+			"SpawnerName"			"spawner1"
+			"Waypoint"				"path_invader1_1"
+		}
+
+		"2"
+		{
+			"SpawnerName"			"spawner1"
+			"Waypoint"				"path_invader1_1"
+		}
+
+		"3"
+		{
+			"SpawnerName"			"spawner1"
+			"Waypoint"				"path_invader1_1"
+		}
+		
+		"4"
+		{
+			"SpawnerName"			"spawner2"
+			"Waypoint"				"path_invader1_1"
+		}
+
+		"5"
+		{
+			"SpawnerName"			"spawner3"
+			"Waypoint"				"path_invader1_1"
+		}
+	
+	}
+
+	"Rounds"
+	{
+
+		"1" // skeletal_archer			骷髅弓箭手
+		{
+			"Title"						"Skeletal Archer easy"
+			"MaxGold"					"90000"
+			"BagCount"					"1"
+			"BagVariance"				"0"
+			"FixedXP"					"3000000"
+
+			"a"
+			{
+				"NPCName"				"npc_boss_skeletal_archer_new"
+				//"NPCName"               "npc_dota_boss_aghanim"
+				//"NPCName"               "npc_dota_boss_twin_tier5"
+				//"NPCName"               "npc_boss_storegga"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"1"
+			}
+
+            "b" 
+			{
+				"NPCName"				"npc_boss_kobold_foreman"
+				//"NPCName"               "npc_boss_tiny"
+				"TotalUnitsToSpawn"		"2"
+				"UnitsPerSpawn"			"2"
+				"SpawnInterval"			"1"
+			}
+
+		}
+		"2" // Juggernaut		剑圣
+		{
+			"Title"						"Martial Artist"
+			"MaxGold"					"10000"
+			"BagCount"					"1"
+			"BagVariance"				"0"
+			"FixedXP"					"2000"
+
+			"a"
+			{
+				//"NPCName"				"npc_boss_juggernaut"
+				"NPCName"               "npc_dota_boss_aghanim"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"1"
+			}
+		}
+	}
+	"ItemDrops2"
+	{
+		"HealingSalve"
+		{
+			"Item"					"item_fire_essence"
+			"Chance"				"1"
+		}
+		"RandomSkill"
+		{
+			"Item"					"item_random_get_ability"
+			"Chance"				"0"
+		}
+		"EnchantedMango"
+		{
+			"Item"					"item_water_essence"
+			"Chance"				"1"
+		}
+		"book_of_strength"
+		{
+			"Item"					"item_tome_agi"
+			"Chance"				"1"
+		}
+		"book_of_agility"
+		{
+			"Item"					"item_tome_int"
+			"Chance"				"1"
+		}
+		"book_of_intelligence"
+		{
+			"Item"					"item_tome_str"
+			"Chance"				"1"
+		}
+		"item_earth_essence"
+		{
+			"Item"					"item_earth_essence"
+			"Chance"				"1"
+		}
+		"book_of_intelligence"
+		{
+			"Item"					"item_tome_str"
+			"Chance"				"1"
+		}
+	}
+		"LinkedXPEnemies"
+	{
+		// Key enemy spawns sub-value count of subkey enemies
+		// e.g. splitter_a spawns 3 splitter_b
+		"npc_twin_headed_dragon"
+		{
+			"npc_articuno"			"1"
+			"npc_moltres"			"1"
+		}
+	}
+	"RandomSpawns2"
+	{
+		"1"
+		{
+			"SpawnerName"			"spawner1"
+			"Waypoint"				"path_invader1_1"
+		}
+
+		"2"
+		{
+			"SpawnerName"			"spawner1"
+			"Waypoint"				"path_invader1_1"
+		}
+
+		"3"
+		{
+			"SpawnerName"			"spawner1"
+			"Waypoint"				"path_invader1_1"
+		}
+		
+		"4"
+		{
+			"SpawnerName"			"spawner2"
+			"Waypoint"				"path_invader1_1"
+		}
+
+		"5"
+		{
+			"SpawnerName"			"spawner3"
+			"Waypoint"				"path_invader1_1"
+		}
+	
+	}
+
+	"Rounds2"
+	{
+		"1" // skeletal_archer2			骷髅弓箭手
+		{
+			"Title"						"Skeletal Archer Hard First Part"
+			"MaxGold"					"62000"
+			"BagCount"					"1"
+			"BagVariance"				"50"
+			"FixedXP"					"50000"
+
+			"a"
+			{
+				"NPCName"				"npc_boss_skeletal_archer_new"
+				//"NPCName"               "npc_boss_phantomlancer"
+				//"NPCName"               "npc_boss_skeleton_king_angry2"
+				//"NPCName"               "npc_dota_boss_aghanim"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"20"
+			}
+		}
+		
+		"2" // Juggernaut		剑圣
+		{
+			"Title"						"Martial Artist"
+			"MaxGold"					"45000"
+			"BagCount"					"1"
+			"BagVariance"				"0"
+			"FixedXP"					"50000"
+
+			"a"
+			{
+				"NPCName"				"npc_boss_juggernaut"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"5"
+			}
+		}
+	}
+	"Rounds3"
+	{
+		"1" // skeletal_archer2			骷髅弓箭手
+		{
+			"Title"						"Second Part asd"
+			"MaxGold"					"20000"
+			"BagCount"					"1"
+			"BagVariance"				"0"
+			"FixedXP"					"900000"
+
+			"a"
+			{
+				//"NPCName"				"npc_boss_skeletal_archer_new"
+				"NPCName"               "npc_boss_chaos_knight"
+				//"NPCName"               "npc_boss_phantomlancer"
+				//"NPCName"               "npc_boss_skeleton_king_angry2"
+				//"NPCName"               "npc_dota_boss_aghanim"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"1"
+			}
+		}
+		"2" // Juggernaut		剑圣
+		{
+			"Title"						"Martial Artist second part"
+			"MaxGold"					"30000"
+			"BagCount"					"1"
+			"BagVariance"				"0"
+			"FixedXP"					"50000"
+
+			"a"
+			{
+				"NPCName"				"npc_boss_juggernaut"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"1"
+			}
+		}
+	}
+	"Rounds4"
+	{
+		"1" // skeletal_archer2			骷髅弓箭手
+		{
+			"Title"						"prepare etc God bla bla"
+			"MaxGold"					"50000"
+			"BagCount"					"1"
+			"BagVariance"				"0"
+			"FixedXP"					"50000"
+
+			"a"
+			{
+				//"NPCName"				"npc_boss_skeletal_archer_new"
+				"NPCName"               "npc_boss_chaos_knight"
+				//"NPCName"               "npc_boss_phantomlancer"
+				//"NPCName"               "npc_boss_skeleton_king_angry2"
+				//"NPCName"               "npc_dota_boss_aghanim"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"1"
+			}
+		}
+		"2" // Juggernaut		剑圣
+		{
+			"Title"						"nepot"
+			"MaxGold"					"10000"
+			"BagCount"					"1"
+			"BagVariance"				"0"
+			"FixedXP"					"50000"
+
+			"a"
+			{
+				"NPCName"				"npc_boss_randomstuff_aiolos"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"1"
+			}
+		}
+	}		
+}

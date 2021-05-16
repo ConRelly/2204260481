@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_juggernaut_jump_crit"				    "跳劈"
+	"DOTA_Tooltip_ability_mjz_juggernaut_jump_crit_Description"	    "跃向范围内的一个目标, 进行一次攻击。在跳跃过程中对技能免疫。"
+	"DOTA_Tooltip_ability_mjz_juggernaut_jump_crit_Lore"	    	""
+	"DOTA_Tooltip_ability_mjz_juggernaut_jump_crit_Note0"	    	""
+	"DOTA_Tooltip_ability_mjz_juggernaut_jump_crit_ability_range"	"范围："
+	"DOTA_Tooltip_ability_mjz_juggernaut_jump_crit_crit_damage"	    "%暴击伤害："
+	

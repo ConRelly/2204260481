@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn"				"法力燃烧"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_Description"	"烧毁目标的魔法值，并造成和烧毁的魔法值等量的伤害。\n\n可用神杖升级。"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_Lore"			"秘湮学院的典籍记载着一只能够侵蚀低等生物心智的圣甲虫。"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_cast_range"		"施法距离："
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_int_damage_pct"	"%智力燃烧魔法量："
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_radius_scepter"	"神杖升级作用范围："
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_Aghanim_Description"		"法力燃烧将作用一小片区域内的所有单位。"

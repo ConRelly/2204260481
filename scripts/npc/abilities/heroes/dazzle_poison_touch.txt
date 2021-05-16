@@ -1,0 +1,88 @@
+"DOTAAbilities"
+{
+  //=================================================================================================================
+  // Dazzle: Poison Touch
+  //=================================================================================================================
+  "dazzle_poison_touch"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "5233"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam"                               "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"                               "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"                               "DAMAGE_TYPE_PHYSICAL"
+    "SpellImmunityType"                                   "SPELL_IMMUNITY_ENEMIES_NO"
+    "SpellDispellableType"                                "SPELL_DISPELLABLE_YES"
+    "FightRecapLevel"                                     "1"
+
+    "MaxLevel"                                            "7"
+    "RequiredLevel"                                       "1"
+    "LevelsBetweenUpgrades"                               "5"
+
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"                                    "500 600 700 800 900 2000"
+    "AbilityCastPoint"                                    "0.3"
+
+    // Time
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"                                     "14 12 10 9 8 7 5" //OAA
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"                                     "110 120 130 140 160 180 200"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityModifierSupportValue"                         "0.35"  // Can apply multiple modifiers
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"            "FIELD_INTEGER"
+        "start_radius"        "200"
+      }
+      "02"
+      {
+        "var_type"            "FIELD_INTEGER"
+        "end_radius"          "500"
+      }
+      "03"
+      {
+        "var_type"            "FIELD_INTEGER"
+        "end_distance"        "600 700 800 900 1000 2100"
+      }
+      "04"
+      {
+        "var_type"            "FIELD_INTEGER"
+        "targets"             "12" //OAA
+      }
+      "05"
+      {
+        "var_type"            "FIELD_INTEGER"
+        "damage"              "120 280 460 880 1960 3320 4200 " //OAA
+        "LinkedSpecialBonus"  "special_bonus_unique_dazzle_3"
+      }
+      "06"
+      {
+        "var_type"            "FIELD_INTEGER"
+        "slow"                "-3 -6 -8 -10 -12 -15"
+        "LinkedSpecialBonus"  "special_bonus_unique_dazzle_1"
+      }
+      "07"
+      {
+        "var_type"            "FIELD_INTEGER"
+        "projectile_speed"    "1300"
+      }
+      "08"
+      {
+        "var_type"            "FIELD_FLOAT"
+        "duration"            "4 5 6 7 8 9 10"
+      }
+    }
+  }
+}

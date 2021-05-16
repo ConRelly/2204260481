@@ -1,0 +1,77 @@
+	
+	//=================================================================================================================
+	// Necrolyte's Reaper's Scythe		死亡镰刀
+	//=================================================================================================================
+	"mjz_necrolyte_reapers_scythe"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_necrolyte/mjz_necrolyte_reapers_scythe.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"		
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Necrolyte.ReapersScythe.Target"
+		"AbilityTextureName"			"mjz_necrolyte_reapers_scythe"
+
+		"HasScepterUpgrade"				"1"
+		"MaxLevel"						"3"
+
+		"AbilityCastRange"				"%radius"
+		"AbilityCastPoint"				"0.55"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		"AbilityCooldown"				"%cooldown"
+		"AbilityManaCost"				"200 350 500"		
+		
+		"AbilityModifierSupportValue"	"0.1"	// Primarily about the damage
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"600"		
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"base_damage"				"10 25 40" 
+			} 	
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"int_damage_multiplier"		"10 15 20" 
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.5 1.5 1.5"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cooldown"					"120"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cooldown_scepter"			"60 50 40"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
+			"particle"		"particles/units/heroes/hero_necrolyte/necrolyte_scythe.vpcf"
+			"particle"		"particles/units/heroes/hero_necrolyte/necrolyte_scythe_orig.vpcf"
+			"particle"		"particles/units/heroes/hero_necrolyte/necrolyte_scythe_start.vpcf"
+			"particle"		"particles/econ/items/necrolyte/necro_sullen_harvest/necro_ti7_immortal_scythe.vpcf"
+			"particle"		"particles/econ/items/necrolyte/necro_sullen_harvest/necro_ti7_immortal_scythe_start.vpcf"
+			"particle"		"particles/generic_gameplay/generic_stunned.vpcf"
+		}
+	}

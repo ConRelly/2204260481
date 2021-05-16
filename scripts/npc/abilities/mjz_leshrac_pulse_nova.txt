@@ -1,0 +1,69 @@
+
+	//=================================================================================================================
+	// Leshrac : Pulse Nova				脉冲新星
+	//=================================================================================================================
+	"mjz_leshrac_pulse_nova"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/hero_leshrac/mjz_leshrac_pulse_nova.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"leshrac_pulse_nova"	// "mjz_leshrac_pulse_nova"
+
+		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCooldown"				"1.0 1.0 1.0 1.0"
+		"AbilityManaCost"				"70 90 110"
+		"AOERadius"						"450 550 650"
+		"HasScepterUpgrade"				"1"
+			
+		"precache"
+		{
+			"soundfile"         "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
+			"particle"			"particles/units/heroes/hero_leshrac/leshrac_pulse_nova.vpcf"
+			"particle"			"particles/units/heroes/hero_leshrac/leshrac_pulse_nova_ambient.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_cost_per_second"	"20 40 60"
+			}
+			
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"450 550 650"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"100 140 180"
+				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_3"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_scepter"	"160 190 220"
+				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_3"
+				"RequiresScepter"				"1"
+			}
+			"05"							// 智力百分比伤害
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_intelligence_per"	"100 200 300"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"nova_tick"			"1.0"
+			}
+		}
+	}
+

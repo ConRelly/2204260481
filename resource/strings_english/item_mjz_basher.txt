@@ -1,0 +1,29 @@
+
+		//>>>>	MJZ Skull Basher LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_basher_2"	                        "Skull Basher LVL 2"
+		"DOTA_Tooltip_ability_item_mjz_basher_2_Description"				"<h1>Passive: Bash</h1>Grants melee heroes a %bash_chance_melee%%%  chance on hit to stun the target for %bash_duration% seconds and deal %bonus_chance_damage% bonus magical damage. Bash chance for ranged heroes is %bash_chance_ranged%%%."
+		"DOTA_Tooltip_ability_item_mjz_basher_2_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_basher_2_bonus_strength"				"+$str"
+		"DOTA_Tooltip_ability_item_mjz_basher_2_Lore"						"A feared weapon in the right hands, this maul's ability to shatter the defenses of its opponents should not be underestimated."
+		//<<<<
+		//>>>>	MJZ Skull Basher LVL 3
+		"DOTA_Tooltip_Ability_item_mjz_basher_3"	                        "Skull Basher LVL 3"
+		"DOTA_Tooltip_ability_item_mjz_basher_3_Description"				"<h1>Passive: Bash</h1>Grants melee heroes a %bash_chance_melee%%%  chance on hit to stun the target for %bash_duration% seconds and deal %bonus_chance_damage% bonus magical damage. Bash chance for ranged heroes is %bash_chance_ranged%%%."
+		"DOTA_Tooltip_ability_item_mjz_basher_3_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_basher_3_bonus_strength"				"+$str"
+		"DOTA_Tooltip_ability_item_mjz_basher_3_Lore"						"A feared weapon in the right hands, this maul's ability to shatter the defenses of its opponents should not be underestimated."
+		//<<<<
+		//>>>>	MJZ Skull Basher LVL 4
+		"DOTA_Tooltip_Ability_item_mjz_basher_4"	                        "Skull Basher LVL 4"
+		"DOTA_Tooltip_ability_item_mjz_basher_4_Description"				"<h1>Passive: Bash</h1>Grants melee heroes a %bash_chance_melee%%%  chance on hit to stun the target for %bash_duration% seconds and deal %bonus_chance_damage% bonus magical damage. Bash chance for ranged heroes is %bash_chance_ranged%%%."
+		"DOTA_Tooltip_ability_item_mjz_basher_4_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_basher_4_bonus_strength"				"+$str"
+		"DOTA_Tooltip_ability_item_mjz_basher_4_Lore"						"A feared weapon in the right hands, this maul's ability to shatter the defenses of its opponents should not be underestimated."
+		//<<<<
+		//>>>>	MJZ Skull Basher LVL 5
+		"DOTA_Tooltip_Ability_item_mjz_basher_5"	                        "Skull Basher LVL 5"
+		"DOTA_Tooltip_ability_item_mjz_basher_5_Description"				"<h1>Passive: Bash</h1>Grants melee heroes a %bash_chance_melee%%%  chance on hit to stun the target for %bash_duration% seconds and deal %bonus_chance_damage% bonus magical damage. Bash chance for ranged heroes is %bash_chance_ranged%%%."
+		"DOTA_Tooltip_ability_item_mjz_basher_5_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_basher_5_bonus_strength"				"+$str"
+		"DOTA_Tooltip_ability_item_mjz_basher_5_Lore"						"A feared weapon in the right hands, this maul's ability to shatter the defenses of its opponents should not be underestimated."
+		//<<<<

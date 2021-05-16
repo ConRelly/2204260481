@@ -1,0 +1,6 @@
+    
+	"DOTA_Tooltip_ability_mjz_spectre_reality"				    "Phase Shift"
+	"DOTA_Tooltip_ability_mjz_spectre_reality_Description"	    "Spectre exchanges places with a chosen Haunt."
+	"DOTA_Tooltip_ability_mjz_spectre_reality_Lore"	    		"The scattered shadows unite into the one true Spectre."
+	"DOTA_Tooltip_ability_mjz_spectre_reality_Note0"	    	""
+	

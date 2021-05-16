@@ -1,0 +1,13 @@
+    
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire"				"Focus Fire"
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire_Description"	"Windranger channels the wind to gain %bonus_attack_speed% additional attack speed, though with a reduction to her attack damage.  Extra damage from secondary item effects is not reduced.  Lasts %duration% seconds.\n\nUpgradable by Aghanim's Scepter."
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire_Lore"		"Lyralei's ability to bombard opponents with a flurry of arrows is unparalleled - even at the expense of accuracy."
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire_bonus_attack_speed"	"BONUS ATTACK SPEED:"
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire_damage_reduction"			"%DAMAGE REDUCTION:"
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire_damage_reduction_scepter"	"%SCEPTER DAMAGE REDUCTION:"
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire_duration"			"DURATION:"
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire_cooldown_scepter"	"SCEPTER COOLDOWN:"
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire_aghanim_description"	"Reduces cooldown, decreases damage reduction, and removes debuffs from item effects."
+	"DOTA_Tooltip_modifier_mjz_windrunner_focusfire"				"Focus Fire"
+	"DOTA_Tooltip_modifier_mjz_windrunner_focusfire_Description"	"Constantly attacking with greatly increased attack speed and reduced damage."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_windrunner_focusfire_ministun"	"+35% Ministun Focus Fire"

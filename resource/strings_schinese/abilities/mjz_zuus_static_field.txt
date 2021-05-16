@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_zuus_static_field"				    "静电场"
+	"DOTA_Tooltip_ability_mjz_zuus_static_field_Description"	    "宙斯的技能击中任意敌人时都会使他们额外被电击。伤害是基于你的智力。"
+	"DOTA_Tooltip_ability_mjz_zuus_static_field_Lore"	    		"当天神行于世间，空气中满是静电爆裂。"
+	"DOTA_Tooltip_ability_mjz_zuus_static_field_radius"		    	"范围："
+	"DOTA_Tooltip_ability_mjz_zuus_static_field_base_damage"	   			"基础伤害："
+	"DOTA_Tooltip_ability_mjz_zuus_static_field_intelligence_damage"	    "%智力额外伤害："
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_zuus_static_field_intelligence"	"+40% 静电场智力伤害"

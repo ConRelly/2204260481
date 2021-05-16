@@ -1,0 +1,63 @@
+		
+		//>>>>	Ethereal Blade LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_2"							"Ethereal Blade LVL 2"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_2_Description"				"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %tooltip_ethereal_damage_bonus%%% more vulnerable to magic damage. Lasts for %duration% seconds on allies and %duration_ally% seconds on enemies. Enemy targets are also slowed by %tooltip_blast_movement_slow%%%, and take %blast_multiplier%x your primary attribute + %blast_damage_base% as magical damage. Cast Range: %tooltip_range%"		
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_2_Lore"						"A flickering blade of a ghastly nature, it is capable of dealing damage in both magical and physical planes."
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_2_bonus_agility"				"+$agi"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_2_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_2_bonus_strength"				"+$str"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_2_debuff_enemy"						"Ethereal Blade"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_2_debuff_enemy_Description"			"Rendering them immune to physical damage, but unable to attack and  more vulnerable to magic damage. Move Speed Slow: %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_2_buff_ally"						"Ethereal Blade"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_2_buff_ally_Description"			"Rendering them immune to physical damage, but unable to attack and  more vulnerable to magic damage. "
+		//<<<<
+		//>>>>	Ethereal Blade Blue
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue"							"Ethereal Blade Blue"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_Description"				"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %tooltip_ethereal_damage_bonus%%% more vulnerable to magic damage. Lasts for %duration% seconds on allies and %duration_ally% seconds on enemies. Enemy targets are also slowed by %tooltip_blast_movement_slow%%%, and take %blast_multiplier%x your primary attribute + %blast_damage_base% as magical damage. Cast Range: %tooltip_range%"		
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_Lore"					"A flickering blade of a ghastly nature, it is capable of dealing damage in both magical and physical planes."
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_bonus_agility"			"+$agi"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_bonus_strength"			"+$str"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_blue_1_debuff_enemy"						"Ethereal Blade"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_blue_1_debuff_enemy_Description"			"Rendering them immune to physical damage, but unable to attack and  more vulnerable to magic damage. Move Speed Slow: %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_blue_1_buff_ally"						"Ethereal Blade"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_blue_1_buff_ally_Description"			"Rendering them immune to physical damage, but unable to attack and  more vulnerable to magic damage. "
+		//<<<<
+		//>>>>	Ethereal Blade Blue LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_2"						"Ethereal Blade Blue LVL 2"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_2_Description"			"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %tooltip_ethereal_damage_bonus%%% more vulnerable to magic damage. Lasts for %duration% seconds on allies and %duration_ally% seconds on enemies. Enemy targets are also slowed by %tooltip_blast_movement_slow%%%, and take %blast_multiplier%x your primary attribute + %blast_damage_base% as magical damage. Cast Range: %tooltip_range%"		
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_2_Lore"					"A flickering blade of a ghastly nature, it is capable of dealing damage in both magical and physical planes."
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_2_bonus_agility"			"+$agi"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_2_bonus_intellect"		"+$int"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_2_bonus_strength"		"+$str"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_blue_2_debuff_enemy"						"Ethereal Blade"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_blue_2_debuff_enemy_Description"			"Rendering them immune to physical damage, but unable to attack and  more vulnerable to magic damage. Move Speed Slow: %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_blue_2_buff_ally"						"Ethereal Blade"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_blue_2_buff_ally_Description"			"Rendering them immune to physical damage, but unable to attack and  more vulnerable to magic damage. "
+		//<<<<
+		//>>>>	Ethereal Blade Red
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red"							"Ethereal Blade Red"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_Description"				"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %tooltip_ethereal_damage_bonus%%% more vulnerable to magic damage. Lasts for %duration% seconds on allies and %duration_ally% seconds on enemies. Enemy targets are also slowed by %tooltip_blast_movement_slow%%%, and take %blast_multiplier%x your primary attribute + %blast_damage_base% as magical damage. Cast Range: %tooltip_range%"		
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_Lore"						"A flickering blade of a ghastly nature, it is capable of dealing damage in both magical and physical planes."
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_bonus_agility"			"+$agi"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_bonus_strength"			"+$str"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_red_1_debuff_enemy"						"Ethereal Blade"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_red_1_debuff_enemy_Description"			"Rendering them immune to physical damage, but unable to attack and  more vulnerable to magic damage. Move Speed Slow: %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_red_1_buff_ally"						"Ethereal Blade"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_red_1_buff_ally_Description"			"Rendering them immune to physical damage, but unable to attack and  more vulnerable to magic damage. "
+		//<<<<
+		//>>>>	Ethereal Blade Red LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_2"						"Ethereal Blade Red LVL 2"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_2_Description"			"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %tooltip_ethereal_damage_bonus%%% more vulnerable to magic damage. Lasts for %duration% seconds on allies and %duration_ally% seconds on enemies. Enemy targets are also slowed by %tooltip_blast_movement_slow%%%, and take %blast_multiplier%x your primary attribute + %blast_damage_base% as magical damage. Cast Range: %tooltip_range%"		
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_2_Lore"					"A flickering blade of a ghastly nature, it is capable of dealing damage in both magical and physical planes."
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_2_bonus_agility"			"+$agi"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_2_bonus_intellect"		"+$int"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_2_bonus_strength"			"+$str"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_red_2_debuff_enemy"						"Ethereal Blade"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_red_2_debuff_enemy_Description"			"Rendering them immune to physical damage, but unable to attack and  more vulnerable to magic damage. Move Speed Slow: %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_red_2_buff_ally"						"Ethereal Blade"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_red_2_buff_ally_Description"			"Rendering them immune to physical damage, but unable to attack and  more vulnerable to magic damage. "
+		//<<<<
+		
+

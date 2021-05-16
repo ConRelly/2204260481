@@ -1,0 +1,69 @@
+"DOTAAbilities"
+{
+  //=================================================================================================================
+  // Dark Seer: Vacuum
+  //=================================================================================================================
+  "dark_seer_vacuum"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "5255"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+    "AbilityUnitDamageType"                               "DAMAGE_TYPE_MAGICAL"
+    "SpellImmunityType"                                   "SPELL_IMMUNITY_ENEMIES_NO"
+    "SpellDispellableType"                                "SPELL_DISPELLABLE_YES_STRONG"
+    "FightRecapLevel"                                     "1"
+
+    "MaxLevel"                                            "6"
+    "RequiredLevel"                                       "1"
+    "LevelsBetweenUpgrades"                               "5"
+
+    "HasScepterUpgrade"                                   "1"
+
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"                                    "450 500 550 600 950 1700"
+    "AbilityCastPoint"                                    "0.4"
+
+    // Time
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"                                     "30" //OAA
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"                                     "60 90 120 150 210 270"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "radius"                                          "1400 1750 1900 2550 8800 2950"
+        "LinkedSpecialBonus"                              "special_bonus_unique_dark_seer_2"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "duration"                                        "0.3 0.4 0.5 0.6 0.7 0.8"
+      }
+      "03"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "damage"                                          "200 450 1400 3950 0 15000"
+      }
+      "04"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "radius_tree"                                     "400 450 500 550 600 650" //OAA, same as radius
+      }
+      "05"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "scepter_cooldown"                                "12"
+        "RequiresScepter"                                 "1"
+      }
+    }
+  }
+}

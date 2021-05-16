@@ -1,0 +1,16 @@
+"AddonInfo"
+{
+	"TeamCount" 		"2"
+	"maps" 				"heroattack_on_easy heroattack_on"
+	"IsPlayable"  		"1"
+	"PenaltiesEnabled"			"0"
+
+	"heroattack_on_easy"
+	{
+		"MaxPlayers" "5"
+	}
+	"heroattack_on"
+	{
+		"MaxPlayers" "5"
+	}
+}

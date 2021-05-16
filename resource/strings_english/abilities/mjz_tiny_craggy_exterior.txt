@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior"				    	"Craggy Exterior"
+	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_Description"	    	"Causes damage to bounce back on Tiny's attackers. Melee enemies that attack Tiny have a chance of being stunned."
+	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_Lore"	    		"Melee warriors tend to find attacking the Stone Giant largely ineffective."
+	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_Note0"	    		"Can only proc against melee units. Ranged units are unaffected."
+	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_bonus_armor"			"Armor Bonus: "
+	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_stun_chance"			"%Proc Chance: "
+	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_stun_duration"		"Stun Duration: "
+	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_return_damage"		"Damage: "
+	"DOTA_Tooltip_modifier_mjz_tiny_craggy_exterior_stunned"			"Craggy Exterior"
+	

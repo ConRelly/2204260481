@@ -1,0 +1,82 @@
+	
+	//=================================================================================================================
+	// Ability: Axe Culling Blade		淘汰之刃
+	//=================================================================================================================
+	"mjz_axe_culling_blade"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_axe/mjz_axe_culling_blade.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"		
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Axe.Culling_Blade_Success"
+		"AbilityTextureName"			"mjz_axe_culling_blade"
+
+		"HasScepterUpgrade"				"1"
+		"MaxLevel"						"3"
+
+		"AOERadius" 					"%splash_radius_scepter"
+		"AbilityCastRange"				"%cast_range"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCooldown"				"45.0 35.0 30.0"
+		"AbilityManaCost"				"60 120 180"		
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"base_damage"				"150 250 300"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"str_damage_multiplier"		"15 20 34"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"splash_radius_scepter"		"455"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed_bonus"		"300"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"move_speed_bonus"			"300"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"speed_duration"			"10"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed_radius"				"1900"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range"				"1500"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+			"particle"		"particles/units/heroes/hero_axe/axe_culling_blade.vpcf"
+			"particle"		"particles/units/heroes/hero_axe/axe_culling_blade_boost.vpcf"
+			"particle"		"particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf"
+			"particle"		"particles/units/heroes/hero_axe/axe_cullingblade_sprint.vpcf"
+		}
+	}

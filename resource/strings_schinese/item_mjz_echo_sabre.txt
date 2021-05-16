@@ -1,0 +1,39 @@
+
+
+		//>>>>>	Echo Sabre	
+		"DOTA_Tooltip_Ability_item_echo_sabre_2"								"回音战刃 LVL 2"
+		"DOTA_Tooltip_Ability_item_echo_sabre_2_Description"			        "<h1>被动： 回音一击 LVL 2</h1> 近战攻击可以快速攻击两次。 两次攻击都将减缓 %movement_slow%%% 移动速度， 每次持续 %slow_duration% 秒。"
+		"DOTA_Tooltip_Ability_item_echo_sabre_2_Lore"			                "一把看起来特别快速的战刃，其中注入了共鸣魔力。"
+		"DOTA_Tooltip_Ability_item_echo_sabre_2_bonus_intellect"               	"+$int"
+		"DOTA_Tooltip_Ability_item_echo_sabre_2_bonus_strength"               	"+$str"
+		"DOTA_Tooltip_Ability_item_echo_sabre_2_bonus_attack_speed"            	"+$attack"
+		"DOTA_Tooltip_Ability_item_echo_sabre_2_bonus_damage"                 	"+$damage"
+		"DOTA_Tooltip_Ability_item_echo_sabre_2_bonus_mana_regen"              	"+$mana_regen"
+
+		"DOTA_Tooltip_Ability_item_echo_sabre_3"								"回音战刃 LVL 3"
+		"DOTA_Tooltip_Ability_item_echo_sabre_3_Description"			        "<h1>被动： 回音一击 LVL 3</h1> 近战攻击可以快速攻击两次。 两次攻击都将减缓 %movement_slow%%% 移动速度， 每次持续 %slow_duration% 秒。"
+		"DOTA_Tooltip_Ability_item_echo_sabre_3_Lore"			                "一把看起来特别快速的战刃，其中注入了共鸣魔力。"
+		"DOTA_Tooltip_Ability_item_echo_sabre_3_bonus_intellect"               	"+$int"
+		"DOTA_Tooltip_Ability_item_echo_sabre_3_bonus_strength"                	"+$str"
+		"DOTA_Tooltip_Ability_item_echo_sabre_3_bonus_attack_speed"            	"+$attack"
+		"DOTA_Tooltip_Ability_item_echo_sabre_3_bonus_damage"                  	"+$damage"
+		"DOTA_Tooltip_Ability_item_echo_sabre_3_bonus_mana_regen"              	"+$mana_regen"
+
+		"DOTA_Tooltip_Ability_item_echo_sabre_4"								"回音战刃 LVL 4"
+		"DOTA_Tooltip_Ability_item_echo_sabre_4_Description"			        "<h1>被动： 回音一击 LVL 4</h1> 近战攻击可以快速攻击两次。 两次攻击都将减缓 %movement_slow%%% 移动速度， 每次持续 %slow_duration% 秒。"
+		"DOTA_Tooltip_Ability_item_echo_sabre_4_Lore"			                "一把看起来特别快速的战刃，其中注入了共鸣魔力。"
+		"DOTA_Tooltip_Ability_item_echo_sabre_4_bonus_intellect"               	"+$int"
+		"DOTA_Tooltip_Ability_item_echo_sabre_4_bonus_strength"                	"+$str"
+		"DOTA_Tooltip_Ability_item_echo_sabre_4_bonus_attack_speed"            	"+$attack"
+		"DOTA_Tooltip_Ability_item_echo_sabre_4_bonus_damage"                  	"+$damage"
+		"DOTA_Tooltip_Ability_item_echo_sabre_4_bonus_mana_regen"              	"+$mana_regen"
+
+		"DOTA_Tooltip_Ability_item_echo_sabre_5"								"回音战刃 LVL 5"
+		"DOTA_Tooltip_Ability_item_echo_sabre_5_Description"			        "<h1>被动： 回音一击 LVL 5</h1> 近战攻击可以快速攻击两次。 两次攻击都将减缓 %movement_slow%%% 移动速度， 每次持续 %slow_duration% 秒。"
+		"DOTA_Tooltip_Ability_item_echo_sabre_5_Lore"			                "一把看起来特别快速的战刃，其中注入了共鸣魔力。"
+		"DOTA_Tooltip_Ability_item_echo_sabre_5_bonus_intellect"               	"+$int"
+		"DOTA_Tooltip_Ability_item_echo_sabre_5_bonus_strength"                	"+$str"
+		"DOTA_Tooltip_Ability_item_echo_sabre_5_bonus_attack_speed"            	"+$attack"
+		"DOTA_Tooltip_Ability_item_echo_sabre_5_bonus_damage"                  	"+$damage"
+		"DOTA_Tooltip_Ability_item_echo_sabre_5_bonus_mana_regen"              	"+$mana_regen"
+		// Echo Sabre	<<<<<

@@ -1,0 +1,13 @@
+
+	"npc_dota_hero_leshrac_mjz"			// 拉席克
+	{
+		"override_hero"			"npc_dota_hero_leshrac"
+		
+		"Ability2"				"mjz_leshrac_diabolic_edict"
+		"Ability3"				"mjz_leshrac_lightning_storm"
+		"Ability6"				"mjz_leshrac_pulse_nova"
+		"Ability15"				"special_bonus_unique_leshrac_3"
+		//"Ability17"				"special_bonus_unique_leshrac_6"
+		"Ability17"				"special_bonus_unique_mjz_leshrac_lightning_storm_int_damage"
+	}
+	

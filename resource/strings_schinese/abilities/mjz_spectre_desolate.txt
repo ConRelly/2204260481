@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_spectre_desolate"				    "荒芜"
+	"DOTA_Tooltip_ability_mjz_spectre_desolate_Description"	    "幽鬼的攻击对敌人造成额外伤害。"
+	"DOTA_Tooltip_ability_mjz_spectre_desolate_Lore"	    	"战士们常常发现只有一个墨丘利的幻象和他们在一起 - 不得不去质疑，这是不是真正的幽鬼。"
+	"DOTA_Tooltip_ability_mjz_spectre_desolate_Note0"	    	"荒芜的效果是在完成一次攻击时施加的，与该攻击是否真正击中其目标无关"
+	"DOTA_Tooltip_ability_mjz_spectre_desolate_bonus_damage"	"伤害："
+	"DOTA_Tooltip_ability_mjz_spectre_desolate_radius"			"范围："
+	

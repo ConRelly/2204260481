@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_juggernaut_jump_crit"				    "Jump Slash"
+	"DOTA_Tooltip_ability_mjz_juggernaut_jump_crit_Description"	    "Leaping at a target within attack range. While leaping, He is spell immune."
+	"DOTA_Tooltip_ability_mjz_juggernaut_jump_crit_Lore"	    	""
+	"DOTA_Tooltip_ability_mjz_juggernaut_jump_crit_Note0"	    	""
+	"DOTA_Tooltip_ability_mjz_juggernaut_jump_crit_ability_range"	"Range: "
+	"DOTA_Tooltip_ability_mjz_juggernaut_jump_crit_crit_damage"	    "%Critical Damage: "
+	

@@ -1,0 +1,9 @@
+
+"DOTA_Tooltip_ability_mjz_sniper_take_aim"											"Take Aim"
+"DOTA_Tooltip_ability_mjz_sniper_take_aim_Description"								"Extends the attack range of Sniper's rifle. Can be activated to double the attack range bonus. "
+"DOTA_Tooltip_ability_mjz_sniper_take_aim_Lore"										"Kardel always takes it upon himself to stay as far from harm as he can while still performing his role - taking perfect aim."
+"DOTA_Tooltip_ability_mjz_sniper_take_aim_bonus_attack_range"						"BONUS RANGE:"
+"DOTA_Tooltip_ability_mjz_sniper_take_aim_move_slow_pct"							"%MOVEMENT SLOW:"
+"DOTA_Tooltip_modifier_mjz_sniper_take_aim"											"Take Aim"
+"DOTA_Tooltip_modifier_mjz_sniper_take_aim_Description"								"Attack range doubled."
+

@@ -1,0 +1,7 @@
+    
+	"DOTA_Tooltip_ability_mjz_medusa_mana_snake"				    "法力异蛇"
+	"DOTA_Tooltip_ability_mjz_medusa_mana_snake_Description"	    "美杜莎每次攻击都将根据造成的伤害回复 %mana_steal%%% 的魔法值。"
+	"DOTA_Tooltip_ability_mjz_medusa_mana_snake_Lore"	    		"异蛇能够吸取敌人的法力。"
+	"DOTA_Tooltip_ability_mjz_medusa_mana_snake_mana_steal"			"%魔法偷取："
+
+	

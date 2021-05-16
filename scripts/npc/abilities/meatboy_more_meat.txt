@@ -1,0 +1,31 @@
+"meatboy_more_meat"
+        {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilites/hero_pudge/more_meat.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "mjz_lifestealer_anabolic_frenzy"
+        "MaxLevel"                      "1"
+        "LevelsBetweenUpgrades"         "1"
+        "RequiredLevel"                 "1"
+
+        //"AbilityCastRange"              "%radius"
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                          "FIELD_INTEGER"
+                "dmg_proc"                          "100"
+            }
+            "02"
+            {
+                "var_type"                          "FIELD_FLOAT"
+                "hp_per_stack"                      "1.5"
+            }
+
+        }
+
+    }

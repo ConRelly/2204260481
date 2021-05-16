@@ -1,0 +1,12 @@
+    
+	"DOTA_Tooltip_ability_mjz_monkey_king_mischief"				    "Mischief"
+	"DOTA_Tooltip_ability_mjz_monkey_king_mischief_Description"	    "Changes Monkey King's shape to deceive opponents, using the environment nearby as inspiration for the disguise. Taking damage, attacking, or using any item or ability breaks Monkey King's disguise. Grants damage immunity for %invul_duration% upon transforming."
+	"DOTA_Tooltip_ability_mjz_monkey_king_mischief_Lore"	    	"Watch out for that tree."
+	"DOTA_Tooltip_ability_mjz_monkey_king_mischief_movespeed"		"MOVE SPEED:"
+	"DOTA_Tooltip_ability_mjz_monkey_king_mischief_invul_duration"	"INVINCIBLE DURATION: "
+	"DOTA_Tooltip_modifier_mjz_monkey_king_mischief"				"Mischief"
+	"DOTA_Tooltip_modifier_mjz_monkey_king_mischief_Description"	"This unit is disguised."
+	"DOTA_Tooltip_mjz_ability_monkey_king_untransform"				"Revert Form"
+	"DOTA_Tooltip_ability_mjz_monkey_king_untransform_Description"	"Reverts Monkey King's shape to his original form."
+	
+	

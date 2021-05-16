@@ -1,0 +1,72 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Sand King: Sand Storm (Lua version)
+	//=================================================================================================================
+	"sand_king_sand_storm_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/sand_king_sand_storm_lua/sand_king_sand_storm_lua"
+		"AbilityTextureName"			"sand_king_sand_storm_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"         "5"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"
+			"particle"	particles/units/heroes/hero_sandking/sandking_sandstorm.vpcf
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0"
+		"AbilityDuration"				"10"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"32"
+		"AbilityManaCost"				"100"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"sand_storm_radius"		"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"sand_storm_damage"		"80 140 360 680 1320 2130 3870"
+				"LinkedSpecialBonus"	"special_bonus_unique_sand_king_2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"str_multiplier"		"3.5 4.0 4.5 5.0 5.5 6.0 7.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_sand_king_101"
+			}
+		}
+	}
+}

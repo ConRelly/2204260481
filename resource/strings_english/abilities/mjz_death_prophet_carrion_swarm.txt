@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm"				"Crypt Swarm"
+	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm_Description"	"Sends a swarm of winged beasts to savage enemy units in front of Death Prophet."
+	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm_Lore"			"Krobelus' many trips to the grave gather a flock of the damned."
+	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm_range"			"RANGE:"
+	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm_base_damage"		"BASE DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm_int_damage_pct"	"%BONUS INTELLIGENCE DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm_Note0"		"Can hit units up to 1110 range away."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_death_prophet_carrion_swarm_int"		"+40% Crypt Swarm Intelligence Damage"

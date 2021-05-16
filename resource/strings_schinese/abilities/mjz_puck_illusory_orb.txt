@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_puck_illusory_orb"				"幻象法球"
+	"DOTA_Tooltip_ability_mjz_puck_illusory_orb_Description"	"帕克向直线方向发出一个魔法球，对经过路径上的敌人造成伤害。在幻象法球飞行过程中，帕克可以使用灵动之翼来传送到法球所在的位置。"
+	"DOTA_Tooltip_ability_mjz_puck_illusory_orb_Lore"			"顽皮的仙女龙很喜欢捉弄他人，一下子消失，然后在他们想不到的地方出现。"
+	"DOTA_Tooltip_ability_mjz_puck_illusory_orb_Note0"	"幻象法球在飞行途中提供顺畅视野。"
+	"DOTA_Tooltip_ability_mjz_puck_illusory_orb_Note1"	"将自己传送到幻象法球可以躲避攻击和技能弹道。"
+	"DOTA_Tooltip_ability_mjz_puck_illusory_orb_max_distance"					"最大距离："
+	"DOTA_Tooltip_ability_mjz_puck_illusory_orb_damage"							"基础伤害："
+	"DOTA_Tooltip_ability_mjz_puck_illusory_orb_intelligence_damage"			"%智力伤害："
+	"DOTA_Tooltip_ability_mjz_puck_ethereal_jaunt"	"灵动之翼"
+	"DOTA_Tooltip_ability_mjz_puck_ethereal_jaunt_Description"	"让帕克能传送到幻象法球所在的位置。"

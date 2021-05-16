@@ -1,0 +1,97 @@
+
+	//=================================================================================================================
+	// Phantom Assassin's Stifling Dagger			窒碍短匕
+	//=================================================================================================================
+	"mjz_phantom_assassin_stifling_dagger"
+	{
+		"BaseClass"						"ability_lua"	//"ability_datadriven"
+    	"ScriptFile"		            "abilities/hero_phantom_assassin/mjz_phantom_assassin_stifling_dagger.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"mjz_phantom_assassin_stifling_dagger"
+		
+		"AbilitySound"					"Hero_PhantomAssassin.Dagger.Cast"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastRange"				"%cast_range"
+
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"30"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"525 750 975 1200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"search_radius"			"500"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"target_count"				"1"
+				"LinkedSpecialBonus"		"special_bonus_unique_mjz_stifling_dagger"		// "special_bonus_unique_phantom_assassin"
+			}
+			"04"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "base_damage"			"65"
+	        }
+			"05"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "attack_factor"			"-75 -60 -45 -30"
+	        }
+	        "06"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "attack_factor_tooltip"	"25 40 55 70"
+	        }
+			"07"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "move_slow"				"-50"
+	        }
+			"08"
+	        {
+	            "var_type"				"FIELD_FLOAT"
+	            "slow_duration"			"1.75 2.5 3.25 4"
+	        }
+	        "09"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "dagger_speed"			"1200"
+	        }
+		}
+		
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+			"particle"			"particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger.vpcf"
+			"particle"			"particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger_debuff.vpcf"
+		}
+	}
+	"special_bonus_unique_mjz_stifling_dagger"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"2"
+			}
+		}
+	}

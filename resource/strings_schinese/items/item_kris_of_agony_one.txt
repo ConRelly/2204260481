@@ -1,0 +1,7 @@
+
+"DOTA_Tooltip_Ability_item_kris_of_agony_one"					"克丽丝的痛苦"
+"DOTA_Tooltip_ability_item_kris_of_agony_one_Description"							"<h1>被动：吸血</h1>近战单位提供 %lifesteal%%% 吸血，远程单位提供 %lifesteal_ranged%%% 吸血。 "
+"DOTA_Tooltip_ability_item_kris_of_agony_one_bonus_agility"		"+$agi"
+"DOTA_Tooltip_ability_item_kris_of_agony_one_bonus_strenght"		"+$str"
+"DOTA_Tooltip_ability_item_kris_of_agony_one_bonus_hp"		"+$health"
+"DOTA_Tooltip_ability_item_kris_of_agony_one_evasion"		"%+$evasion"

@@ -1,0 +1,81 @@
+
+	//=================================================================================================================
+	// Naga Siren: Song of the Siren	海妖之歌
+	//=================================================================================================================
+	"mjz_naga_siren_song_of_the_siren"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_naga_siren/mjz_naga_siren_song_of_the_siren.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityTextureName"			"mjz_naga_siren_song_of_the_siren"
+
+		"HasScepterUpgrade"				"1"
+
+		"AbilityCastPoint"				"1.0"
+		"AbilityCastRange"				"1000 1200 1400"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		"AbilityCooldown"				"90.0 70.0 50.0"
+		"AbilityManaCost"				"100 125 150"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"1000 1200 1400"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"7.0 7.0 7.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"animation_rate"			"0.55 0.55 0.55"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"regen_rate"					"1.0"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"regen_rate_scepter"			"10.0"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"regen_rate_tooltip_scepter"	"10"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_naga_siren.vsndevts"
+			"particle"		"particles/units/heroes/hero_siren/naga_siren_siren_song_cast.vpcf"
+			"particle"		"particles/units/heroes/hero_siren/naga_siren_siren_song_end.vpcf"
+			"particle"		"particles/units/heroes/hero_siren/naga_siren_song_aura.vpcf"
+			"particle"		"particles/units/heroes/hero_siren/naga_siren_song_debuff.vpcf"
+		}
+	}
+	"mjz_naga_siren_song_of_the_siren_cancel"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_naga_siren/mjz_naga_siren_song_of_the_siren_cancel.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName"			"mjz_naga_siren_song_of_the_siren_cancel"
+		"MaxLevel"						"1"
+		
+		"AbilityCastPoint"				"0 0 0"
+ 		"AbilityCastAnimation"			"ACT_INVALID"
+
+		"AbilityCooldown"				"1.0 1.0 1.0"
+
+	}

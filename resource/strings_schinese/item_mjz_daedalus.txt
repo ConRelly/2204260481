@@ -1,0 +1,26 @@
+
+
+		//>>>>	MJZ 代达罗斯之殇 LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_daedalus_2"	                        "代达罗斯之殇 LVL 2"
+		"DOTA_Tooltip_ability_item_mjz_daedalus_2_Description"				"<h1>被动：致命一击</h1>普通攻击有 %crit_chance%%% 的概率造成 %crit_multiplier%%% 伤害。"
+		"DOTA_Tooltip_ability_item_mjz_daedalus_2_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_daedalus_2_Lore"						"这件武器有着惊人的力量，即使是最强的战士也难以掌控它。"
+		//<<<<
+		//>>>>	MJZ 代达罗斯之殇 LVL 3
+		"DOTA_Tooltip_Ability_item_mjz_daedalus_3"	                        "代达罗斯之殇 LVL 3"
+		"DOTA_Tooltip_ability_item_mjz_daedalus_3_Description"				"<h1>被动：致命一击</h1>普通攻击有 %crit_chance%%% 的概率造成 %crit_multiplier%%% 伤害。"
+		"DOTA_Tooltip_ability_item_mjz_daedalus_3_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_daedalus_3_Lore"						"这件武器有着惊人的力量，即使是最强的战士也难以掌控它。"
+		//<<<<
+		//>>>>	MJZ 代达罗斯之殇 LVL 4
+		"DOTA_Tooltip_Ability_item_mjz_daedalus_4"	                        "代达罗斯之殇 LVL 4"
+		"DOTA_Tooltip_ability_item_mjz_daedalus_4_Description"				"<h1>被动：致命一击</h1>普通攻击有 %crit_chance%%% 的概率造成 %crit_multiplier%%% 伤害。"
+		"DOTA_Tooltip_ability_item_mjz_daedalus_4_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_daedalus_4_Lore"						"这件武器有着惊人的力量，即使是最强的战士也难以掌控它。"
+		//<<<<
+		//>>>>	MJZ 代达罗斯之殇 LVL 5
+		"DOTA_Tooltip_Ability_item_mjz_daedalus_5"	                        "代达罗斯之殇 LVL 5"
+		"DOTA_Tooltip_ability_item_mjz_daedalus_5_Description"				"<h1>被动：致命一击</h1>普通攻击有 %crit_chance%%% 的概率造成 %crit_multiplier%%% 伤害。"
+		"DOTA_Tooltip_ability_item_mjz_daedalus_5_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_daedalus_5_Lore"						"这件武器有着惊人的力量，即使是最强的战士也难以掌控它。"
+		//<<<<

@@ -1,0 +1,7 @@
+    
+	"DOTA_Tooltip_ability_mjz_spectre_desolate"				    "Desolate"
+	"DOTA_Tooltip_ability_mjz_spectre_desolate_Description"	    "Deals bonus damage whenever Spectre attacks an enemy."
+	"DOTA_Tooltip_ability_mjz_spectre_desolate_Lore"	    	"Often times, warriors find themselves alone with a vision of Mercurial - the fated question is if it is the true Spectre."
+	"DOTA_Tooltip_ability_mjz_spectre_desolate_Note0"	    	"Desolate's effects are applied upon finishing an attack, regardless of whether the attack actually hits the target or not."
+	"DOTA_Tooltip_ability_mjz_spectre_desolate_bonus_damage"	"Damage: "
+	"DOTA_Tooltip_ability_mjz_spectre_desolate_radius"			"Radius: "

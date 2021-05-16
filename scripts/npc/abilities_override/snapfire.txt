@@ -1,0 +1,77 @@
+	
+	"snapfire_scatterblast"
+	{
+		"AbilitySpecial"
+		{
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"point_blank_dmg_bonus_pct"	"100.0"
+			}
+		}
+	}
+	"snapfire_firesnap_cookie"
+	{
+		"AbilityCooldown"				"21 18 15 12"
+		"AbilityCastRange"				"1000"
+	}
+	"snapfire_mortimer_kisses"
+	{
+		"AbilityCooldown"				"60"
+	}
+	"snapfire_gobble_up"
+	{
+		"AbilityCooldown"				"18"
+	}
+	"snapfire_lil_shredder"
+	{
+		"AbilityCooldown"				"36 32 28 24"
+		"AbilityDuration"				"20"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"70 100 130 160"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"buffed_attacks"			"30 60 90 120"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"armor_reduction_per_attack"	"0"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"armor_duration"				"4"
+			}
+		}
+	}
+	
+	"special_bonus_unique_snapfire_5"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"650" // Cookie Restores Health
+			}
+		}
+	}
+	"special_bonus_unique_snapfire_7"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"200"
+			}
+		}
+	}
+	

@@ -1,0 +1,12 @@
+    
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness"				    "Dark Ascension"
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_Description"	    "Get damage bonus, vision bonus, lifesteal bonus and giving the unit a chance to miss its attacks."
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_Lore"	    		"It is a humbling sight to see when the mightiest of warriors become afraid of the dark."
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_duration"					"Duration: "
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_bonus_damage"				"Bonus Damage: "
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_bonus_vision_pct"			"%Bonus Vision: "
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_lifesteal_pct"				"%Lifesteal: "
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_evasion_chance"			"%Evasion Chance: "
+	"DOTA_Tooltip_modifier_mjz_night_stalker_darkness"					"Dark Ascension"
+	"DOTA_Tooltip_modifier_mjz_night_stalker_darkness_Description"		"Get damage bonus, vision bonus, lifesteal bonus and giving the unit a chance to miss its attacks."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_night_stalker_darkness_damage"		"+100 Dark Ascension Bonus Damage"

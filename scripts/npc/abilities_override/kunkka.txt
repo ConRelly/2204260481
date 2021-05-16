@@ -1,0 +1,102 @@
+	
+	"kunkka_torrent_storm"
+	{
+		"AbilityCooldown"				"20"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"torrent_interval"		"0.2"
+				"RequiresScepter"			"1"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"torrent_duration"		"6.0"
+				"RequiresScepter"			"1"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"torrent_min_distance"		"50"
+				"RequiresScepter"			"1"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"torrent_max_distance"		"800"
+				"RequiresScepter"			"1"
+			}
+		}
+	}
+	"kunkka_tidebringer"
+	{
+		"AbilitySpecial"
+		{		
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_bonus"				"50 75 100 125"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+		}
+	}
+	"kunkka_x_marks_the_spot"
+	{
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastRange"				"1000"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"30.0"
+			}	
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"allied_duration"			"30.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"fow_range"					"400"
+			}	  
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"fow_duration"				"5.94"
+			}	
+		}
+	}
+	
+	"kunkka_ghostship"
+	{
+		"AbilityDamage"					"500 850 1200"
+		"AbilityCooldown"				"60 50 40"
+	}
+
+	"special_bonus_unique_kunkka_2"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"240"
+			}
+		}
+	}
+	"special_bonus_unique_kunkka_4"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"160"
+			}
+		}
+	}
+	

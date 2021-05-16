@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_furion_power_of_nature"				    "Power of Nature"
+	"DOTA_Tooltip_ability_mjz_furion_power_of_nature_Description"	    	"Slow a target for %duration% seconds. At the end of the slow, an additional %damage_pct%%% of all damage taken during the slow will be dealt to the target as magical damage."
+	"DOTA_Tooltip_ability_mjz_furion_power_of_nature_Lore"					"On the morning of the vernal equinox, before the rest of the forest had begun to wake, that last seed ripened and burst in an instant."
+	"DOTA_Tooltip_ability_mjz_furion_power_of_nature_movement_slow_pct"		"%MOVEMENT SLOW:"
+	"DOTA_Tooltip_ability_mjz_furion_power_of_nature_damage_pct"			"%DAMAGE PERCENT:"
+	"DOTA_Tooltip_ability_mjz_furion_power_of_nature_duration"				"DURATION:"
+	"DOTA_Tooltip_modifier_mjz_furion_power_of_nature_debuff"					"Power of Nature"
+	"DOTA_Tooltip_modifier_mjz_furion_power_of_nature_debuff_Description"	    "At the end of the slow, an additional %dMODIFIER_PROPERTY_TOOLTIP%%% of all damage taken during the slow will be dealt to the target as magical damage."

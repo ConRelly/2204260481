@@ -1,0 +1,94 @@
+
+	//=================================================================================================================
+	// Ursa: Earthshock
+	//=================================================================================================================
+	"mjz_ursa_earthshock"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_ursa/mjz_ursa_earthshock.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Ursa.Earthshock"
+		"AbilityTextureName"			"mjz_ursa_earthshock"
+
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0"
+
+		"AbilityCooldown"				"10 9 8 7"
+		"AbilityDuration"				"4.0"
+		"AbilityManaCost"				"85"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"shock_radius"				"385"
+				"LinkedSpecialBonus"		"special_bonus_unique_mjz_ursa_earthshock_radius"
+				"LinkedSpecialBonus0"		"special_bonus_unique_ursa_5"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"75 125 175 225"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"str_damage_pct"			"80 100 120 140"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_slow"				"-25 -35 -45 -55"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"4"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hop_distance"					"250"
+			}
+			"14"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"hop_duration"		"0.25"
+			}
+			"15"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hop_height"		"83"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
+			"particle"		"particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"
+		}
+	}
+	"special_bonus_unique_mjz_ursa_earthshock_radius"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"600"
+			}
+		}
+	}
+

@@ -1,0 +1,7 @@
+    
+"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings"							"孵化蜘蛛"
+"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_Description"				"育母蜘蛛将她的卵注入敌人体内，卵会孵化成小蜘蛛。"
+"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_Lore"						"布蕾克·艾拉齐娜不断抚育她的后代，即使是在战场上。新孵化的小蜘蛛很快就学会如何支援她们的母亲。"
+"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_spiderling_duration"		"小蜘蛛持续时间："
+"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_count"						"数量："
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_broodmother_spawn_spiderlings_count"	"+{s:value} 小蜘蛛数量"

@@ -1,0 +1,13 @@
+    
+	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst"				    "焦渴"
+	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_Description"	    "血魔能够感知到敌人的伤口中涌出的鲜血，他的移动速度和攻击速度得到提升。"
+	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_Lore"	    		"史德利古尔闻到血腥味就会变得无比狂热。"
+	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_bonus_damage"				"每层攻击力加成："
+	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_bonus_attack_speed"		"每层攻击速度加成："
+	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_bonus_movement_speed"		"%每层移动速度加成："
+	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_max_stacks"				"最大叠加层数："
+	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_duration"					"持续时间："
+	"DOTA_Tooltip_modifier_mjz_bloodseeker_thirst_buff"					"焦渴加速"
+	"DOTA_Tooltip_modifier_mjz_bloodseeker_thirst_buff_Description"		"移动速度提升和攻击力均得到提升。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_bloodseeker_thirst_stacks"			"+2 焦渴叠加层数"
+	

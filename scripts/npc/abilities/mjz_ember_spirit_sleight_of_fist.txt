@@ -1,0 +1,82 @@
+
+	//=================================================================================================================
+	// Ember Spirit: Sleight of Fist
+	//=================================================================================================================
+	"mjz_ember_spirit_sleight_of_fist"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_ember_spirit/mjz_ember_spirit_sleight_of_fist.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"mjz_ember_spirit_sleight_of_fist"
+
+		"FightRecapLevel"				"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"20 18 16 14 12 10 8"
+		"AbilityManaCost"				"50"
+		
+		"MaxLevel"						"7"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"250 300 350 400 450 500 550"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"40 60 80 100 120 140 160"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"charge_count"				"0"
+				"LinkedSpecialBonus"		"special_bonus_unique_ember_spirit_4"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"charge_restore_time"		"30 26 22 17 14 10 6"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_chance"				"18 20 22 24 26 28 30"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_bonus"				"180 200 220 240 260 280 300"
+			}
+			"14"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"attack_interval"			"0.2"
+			}
+			"15"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_count"				"6 7 8 9 10 11 12"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
+			"particle"			"particles/units/heroes/hero_ember_spirit/ember_spirit_sleight_of_fist_cast.vpcf"
+			"particle"			"particles/units/heroes/hero_ember_spirit/ember_spirit_sleight_of_fist_caster.vpcf" // for dummy
+			"particle"			"particles/units/heroes/hero_ember_spirit/ember_spirit_sleight_of_fist_targetted_marker.vpcf"
+			"particle"			"particles/units/heroes/hero_ember_spirit/ember_spirit_sleightoffist_tgt.vpcf"
+			"particle"			"particles/units/heroes/hero_ember_spirit/ember_spirit_sleightoffist_trail.vpcf"
+		}
+	}
+	

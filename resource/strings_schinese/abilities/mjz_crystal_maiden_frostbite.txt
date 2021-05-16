@@ -1,0 +1,14 @@
+    
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite"									"冰封禁制"
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_Description"						"操控冰霜包围一个敌方单位，禁止移动和攻击，并持续造成伤害。"
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_Lore"							"莉莱引来蓝心冰川的寒风，将敌人封禁在冰块里。"
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_Note0"							"冰封禁制为缠绕效果。"		
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_radius"							"作用范围："
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_total_damage"					"对英雄伤害总量："
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_creep_total_damage"				"对非英雄伤害总量："		
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_duration"						"对英雄单位的持续时间："
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_creep_duration"					"对非英雄单位持续时间："	
+"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_damage_interval"					"伤害间隔："
+"DOTA_Tooltip_modifier_mjz_crystal_maiden_frostbite"							"冰封禁制"
+"DOTA_Tooltip_modifier_mjz_crystal_maiden_frostbite_Description"				"不能移动或攻击。"
+

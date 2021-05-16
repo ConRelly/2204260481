@@ -1,0 +1,43 @@
+
+	//=================================================================================================================
+	// Furion: Power of Nature 			自然之力
+	//=================================================================================================================
+	"mjz_furion_power_of_nature"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_furion/mjz_furion_power_of_nature.lua"
+		"AbilityTextureName"			"mjz_furion_power_of_nature"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"0"
+
+		"MaxLevel"						"1"
+		"BaseLevel"						"1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow_pct"		"-20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_pct"			"60"
+			}
+		}
+	}
+

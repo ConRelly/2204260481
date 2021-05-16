@@ -1,0 +1,52 @@
+"DOTAAbilities"
+{
+    //=================================================================================================================
+	// Ability: Legion Commander Duel
+	//=================================================================================================================
+	"legion_commander_duel_lua"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"					"reaper_souls"
+		"ScriptFile"						"lua_abilities/legion_commander_duel_lua/legion_commander_duel_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"LevelsBetweenUpgrades"         "10"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"MaxLevel"						"3"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_legion_commander/legion_commander_duel_victory.vpcf"
+		}
+		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_bonus"					"5 10 15"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"str_multiplier"				"0.005"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"str_multiplier_tooltip"		"5"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"stack_chance"					"5 6 7"
+				"LinkedSpecialBonus"			"special_bonus_unique_legion_commander_chance"
+			}						
+		}
+	}
+}

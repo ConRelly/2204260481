@@ -1,0 +1,6 @@
+    
+	"DOTA_Tooltip_ability_mjz_tiny_tree_grab_scepter_effect"				    	"抓树的神杖效果"
+	"DOTA_Tooltip_ability_mjz_tiny_tree_grab_scepter_effect_Description"	    	"神杖升级：抓树的攻击次数无限。"
+	"DOTA_Tooltip_ability_mjz_tiny_tree_grab_scepter_effect_Aghanim_Description"	"抓树的攻击次数无限。"
+	"DOTA_Tooltip_ability_mjz_tiny_tree_grab_scepter_effect_attack_count"			"攻击次数："
+	

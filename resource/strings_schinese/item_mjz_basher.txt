@@ -1,0 +1,29 @@
+
+		//>>>>	MJZ 碎颅锤 LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_basher_2"	                        "碎颅锤 LVL 2"
+		"DOTA_Tooltip_ability_item_mjz_basher_2_Description"				"<h1>被动：重击</h1>近战英雄的攻击有 %bash_chance_melee%%% 的概率击晕目标 %bash_duration% 秒并额外造成 %bonus_chance_damage% 点伤害。远程英雄的击晕概率为 %bash_chance_ranged%%%。"
+		"DOTA_Tooltip_ability_item_mjz_basher_2_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_basher_2_bonus_strength"				"+$str"
+		"DOTA_Tooltip_ability_item_mjz_basher_2_Lore"						"用对了地方会让人闻风丧胆的武器，千万不要低估这把大槌粉碎对手防御的能力。"
+		//<<<<
+		//>>>>	MJZ 碎颅锤 LVL 3
+		"DOTA_Tooltip_Ability_item_mjz_basher_3"	                        "碎颅锤 LVL 3"
+		"DOTA_Tooltip_ability_item_mjz_basher_3_Description"				"<h1>被动：重击</h1>近战英雄的攻击有 %bash_chance_melee%%% 的概率击晕目标 %bash_duration% 秒并额外造成 %bonus_chance_damage% 点伤害。远程英雄的击晕概率为 %bash_chance_ranged%%%。"
+		"DOTA_Tooltip_ability_item_mjz_basher_3_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_basher_3_bonus_strength"				"+$str"
+		"DOTA_Tooltip_ability_item_mjz_basher_3_Lore"						"用对了地方会让人闻风丧胆的武器，千万不要低估这把大槌粉碎对手防御的能力。"
+		//<<<<
+		//>>>>	MJZ 碎颅锤 LVL 4
+		"DOTA_Tooltip_Ability_item_mjz_basher_4"	                        "碎颅锤 LVL 4"
+		"DOTA_Tooltip_ability_item_mjz_basher_4_Description"				"<h1>被动：重击</h1>近战英雄的攻击有 %bash_chance_melee%%% 的概率击晕目标 %bash_duration% 秒并额外造成 %bonus_chance_damage% 点伤害。远程英雄的击晕概率为 %bash_chance_ranged%%%。"
+		"DOTA_Tooltip_ability_item_mjz_basher_4_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_basher_4_bonus_strength"				"+$str"
+		"DOTA_Tooltip_ability_item_mjz_basher_4_Lore"						"用对了地方会让人闻风丧胆的武器，千万不要低估这把大槌粉碎对手防御的能力。"
+		//<<<<
+		//>>>>	MJZ 碎颅锤 LVL 5
+		"DOTA_Tooltip_Ability_item_mjz_basher_5"	                        "碎颅锤 LVL 5"
+		"DOTA_Tooltip_ability_item_mjz_basher_5_Description"				"<h1>被动：重击</h1>近战英雄的攻击有 %bash_chance_melee%%% 的概率击晕目标 %bash_duration% 秒并额外造成 %bonus_chance_damage% 点伤害。远程英雄的击晕概率为 %bash_chance_ranged%%%。"
+		"DOTA_Tooltip_ability_item_mjz_basher_5_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_basher_5_bonus_strength"				"+$str"
+		"DOTA_Tooltip_ability_item_mjz_basher_5_Lore"						"用对了地方会让人闻风丧胆的武器，千万不要低估这把大槌粉碎对手防御的能力。"
+		//<<<<

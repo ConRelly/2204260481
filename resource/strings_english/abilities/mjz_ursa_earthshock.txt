@@ -1,0 +1,12 @@
+    
+	"DOTA_Tooltip_ability_mjz_ursa_earthshock"					"Earthshock"
+	"DOTA_Tooltip_ability_mjz_ursa_earthshock_Description"		"Ursa leaps forward %hop_distance% units and slams the earth, causing a powerful shock to damage and slow all enemy units in a nearby area for %abilityduration% seconds."
+	"DOTA_Tooltip_ability_mjz_ursa_earthshock_Lore"				"The very steps of a male ursine shake the ground as well as the resolve of opposing warriors."
+	"DOTA_Tooltip_ability_mjz_ursa_earthshock_shock_radius"		"RADIUS:"
+	"DOTA_Tooltip_ability_mjz_ursa_earthshock_damage"			"BASE DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_ursa_earthshock_str_damage_pct"	"%BONUS STRENGTH DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_ursa_earthshock_movement_slow"	"%SLOW:"
+	"DOTA_Tooltip_ability_mjz_ursa_earthshock_duration"			"SLOW DURATION:"
+	"DOTA_Tooltip_modifier_mjz_ursa_earthshock"					"Earthshock"
+	"DOTA_Tooltip_modifier_mjz_ursa_earthshock_Description"		"Slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_ursa_earthshock_radius"	"+{s:value} AoE Earthshock"

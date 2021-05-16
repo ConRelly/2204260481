@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury"				    "剑刃风暴"
+	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_Description"	    "舞起具有破坏性力量的剑刃风暴，对主宰周围的敌方单位造成伤害，并使主宰对魔法免疫。"
+	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_Lore"	    		"无论是战士还是法师，都害怕尤涅若的武士刀剑技。"
+	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_duration"			"持续时间："
+	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_radius"				"范围："
+	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_attack_tick"		"攻击间隔："
+	

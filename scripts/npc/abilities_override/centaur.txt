@@ -1,0 +1,45 @@
+	
+	"centaur_hoof_stomp"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"515"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_duration"					"1.0 1.25 1.5 1.75"
+				"LinkedSpecialBonus"			"special_bonus_unique_centaur_2"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"stomp_damage"					"100 150 200 250"
+			}
+		}
+	}
+	"centaur_double_edge"
+	{
+		"AbilitySpecial"
+		{			
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"edge_damage"					"120 180 240 300"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"strength_damage"				"600 700 800 900"
+				"LinkedSpecialBonus"			"special_bonus_unique_centaur_4"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"390"
+			}
+		}
+	}

@@ -1,0 +1,16 @@
+    
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king"				    	"米波王"
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_Description"	    	"米波中的王者。如果敌人在光环范围内死亡，米波将获得额外经验值加成。"
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_Lore"	    		"我是不是在哪见过你？"
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_bonus_damage_pct"			"%攻击力加成："
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_bonus_attack_speed"			"攻击速度加成："
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_bonus_armor"					"护甲加成："
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_bonus_resistance"			"%魔法抗性加成："
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_bonus_health_regen"			"生命恢复加成："
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_experience_pct"				"%经验获取："
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_experience_radius"			"经验获取范围："
+
+
+
+
+	

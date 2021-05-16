@@ -1,0 +1,15 @@
+
+	
+	"npc_dota_hero_zuus_mjz"			// 宙斯
+	{
+		"override_hero"			"npc_dota_hero_zuus"
+
+		"Ability2"				"mjz_zuus_lightning_bolt"
+		"Ability3"				"mjz_zuus_static_field"
+		"Ability5"				"mjz_zuus_lightning"
+		"Ability6"				"mjz_zuus_thundergods_wrath"
+		// "Ability13"			"special_bonus_unique_zeus"
+		"Ability13"				"special_bonus_unique_mjz_zuus_static_field_intelligence"
+		"Ability15"				"special_bonus_intelligence_20"
+	}
+	

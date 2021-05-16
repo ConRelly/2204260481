@@ -1,0 +1,71 @@
+
+	//=================================================================================================================
+	// Morphling: Replicate				变形
+	//=================================================================================================================
+	"mjz_morphling_replicate"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_morphling/mjz_morphling_replicate.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityTextureName"			"mjz_morphling_replicate"
+		"AbilitySound"					"Hero_Morphling.Replicate"
+
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.25"
+ 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+
+		"AbilityCooldown"				"80 70 60"
+		"AbilityManaCost"				"50"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"50"
+				"LinkedSpecialBonus"		"special_bonus_unique_morphling_8"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_stats_pct"			"60 80 100"
+				"LinkedSpecialBonus"		"special_bonus_unique_mjz_morphling_replicate_stats"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_range"		"100 200 300"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"model_scale"				"10 15 20"     // Percentage over model scale
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
+		}
+	}
+	"special_bonus_unique_mjz_morphling_replicate_stats"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"60"
+			}
+		}
+	}

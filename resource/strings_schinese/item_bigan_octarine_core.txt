@@ -1,0 +1,18 @@
+
+
+		//>>>>	比干的七巧玲珑心
+		"DOTA_Tooltip_Ability_item_bigan_octarine_core"	                        "比干的七巧玲珑心"
+		"DOTA_Tooltip_ability_item_bigan_octarine_core_Description"				"<h1>被动：冷却减少</h1>所有技能和物品的冷却时间减少 %bonus_cooldown%%%。\n<h1>被动：技能吸血</h1> 技能造成伤害的 %lifesteal%%% 将以生命回复返还给施法者，对所有技能伤害均有效。"
+		"DOTA_Tooltip_ability_item_bigan_octarine_core_bonus_intelligence"		"+$int"
+		"DOTA_Tooltip_ability_item_bigan_octarine_core_bonus_health"			"+$health"
+		"DOTA_Tooltip_ability_item_bigan_octarine_core_bonus_mana"				"+$mana"
+		"DOTA_Tooltip_ability_item_bigan_octarine_core_Lore"					"位于法术技艺核心的，是只有身负异能之人才能感知的光带。"
+		//<<<<
+		//>>>>
+		"DOTA_Tooltip_Ability_item_mjz_ipomoea_aquatica"	                        "蕹"
+		"DOTA_Tooltip_ability_item_mjz_ipomoea_aquatica_Description"				"<h1>被动：技能吸血</h1> 技能造成伤害的 %lifesteal%%% 将以生命回复返还给施法者，对所有技能伤害均有效。"
+		"DOTA_Tooltip_ability_item_mjz_ipomoea_aquatica_bonus_intelligence"		"+$int"
+		"DOTA_Tooltip_ability_item_mjz_ipomoea_aquatica_bonus_health"			"+$health"
+		"DOTA_Tooltip_ability_item_mjz_ipomoea_aquatica_bonus_mana"				"+$mana"
+		"DOTA_Tooltip_ability_item_mjz_ipomoea_aquatica_Lore"					"人若是无心如何？"
+		//<<<<

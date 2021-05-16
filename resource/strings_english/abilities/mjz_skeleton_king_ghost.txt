@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_skeleton_king_ghost"	"Ghost Mode"
+	"DOTA_Tooltip_ability_mjz_skeleton_king_ghost_Description"	"Enter Ghost Mode."
+	"DOTA_Tooltip_ability_mjz_skeleton_king_ghost_aghanim_description"			"SCEPTER RADIUS %radius_%."
+	"DOTA_Tooltip_ability_mjz_skeleton_king_ghost_scepter_radius"		"SCEPTER RADIUS:"
+	"DOTA_Tooltip_ability_mjz_skeleton_king_ghost_duration"		"DURATION:"
+	"DOTA_Tooltip_ability_mjz_skeleton_king_ghost_incoming_damage_per"		"%REDUCTION DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_skeleton_king_ghost_manacost_reduction"		"%MANACOST AND MANALOSS REDUCTION:"
+	"DOTA_Tooltip_modifier_mjz_skeleton_king_ghost"					"Ghost Mode"
+	"DOTA_Tooltip_modifier_mjz_skeleton_king_ghost_Description"		"REDUCTION DAMAGE, MANACOST AND MANALOSS REDUCTION."

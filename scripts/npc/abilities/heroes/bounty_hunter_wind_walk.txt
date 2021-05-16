@@ -1,0 +1,54 @@
+"DOTAAbilities"
+{
+  //=================================================================================================================
+  // Bounty Hunter: Wind Walk
+  //=================================================================================================================
+  "bounty_hunter_wind_walk"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "5287"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+    "SpellImmunityType"                                   "SPELL_IMMUNITY_ENEMIES_YES"
+    "SpellDispellableType"                                "SPELL_DISPELLABLE_NO"
+
+    "MaxLevel"                                            "6"
+    "RequiredLevel"                                       "1"
+    "LevelsBetweenUpgrades"                               "2"
+
+    // Time
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"                                     "15.0"
+    "AbilityCastPoint"                                    "0.0"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"                                     "65"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "duration"                                        "30.0" //OAA
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "fade_time"                                       "1.0 0.75 0.5 0.25 0.1 0.0"
+      }
+      "03"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "slow"                                            "14 20 26 32 40 50"
+      }
+      "04"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "slow_duration"                                   "4"
+      }
+    }
+  }
+}

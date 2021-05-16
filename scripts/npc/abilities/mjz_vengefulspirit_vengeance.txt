@@ -1,0 +1,32 @@
+
+	//=================================================================================================================
+	// Vengeful Spirit: Vengeance		复仇之心
+	//=================================================================================================================
+	"mjz_vengefulspirit_vengeance"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_vengefulspirit/mjz_vengefulspirit_vengeance.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityTextureName"			"mjz_vengefulspirit_vengeance"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"60 100 140"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"40 80 120"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_range"	"100 200 300"
+			}
+		}
+	}

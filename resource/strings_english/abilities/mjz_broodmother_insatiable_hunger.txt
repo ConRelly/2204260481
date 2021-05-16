@@ -1,0 +1,12 @@
+    
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger"							"Insatiable Hunger"
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_Description"				"A violent lust for vital fluids increases Broodmother's attack damage and gives her a vampiric attack."
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_Lore"						"While most of her prey is wrapped in silken cocoons and saved for her young, the Broodmother herself has a taste for wandering heroes."
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_Note0"						"Fully stacks with other sources of lifesteal."
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_bonus_damage"				"BONUS DAMAGE:"
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_bonus_attack_speed"			"BONUS ATTACK SPEED:"
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_lifesteal_pct"				"%LIFESTEAL:"
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_duration"					"DURATION:"
+"DOTA_Tooltip_modifier_mjz_broodmother_insatiable_hunger"					        "Insatiable Hunger"
+"DOTA_Tooltip_modifier_mjz_broodmother_insatiable_hunger_Description"		        "Increased Damage and Attack Speed and lifestealing."
+"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_aghanim_description"		"Spiders will get ability buff at the same time."

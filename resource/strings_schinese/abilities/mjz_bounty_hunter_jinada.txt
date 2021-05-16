@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada"				    "忍术"
+	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_Description"	    "赏金猎人准备好他的下次攻击，造成额外伤害并窃取若干不可靠金钱。"
+	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_Lore"	    		"对着他信赖的刀刃低语从索鲁克那里学来的魔法，刚铎瞄准对手的肌腱和关节下手，就是要让他们残废。"
+	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_bonus_damage"		"攻击力加成："
+	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_gold_steal"			"金钱窃取："
+	

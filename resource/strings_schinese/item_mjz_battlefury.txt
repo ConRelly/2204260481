@@ -1,0 +1,34 @@
+
+
+		//>>>>	MJZ 狂战斧 LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_battlefury_2"	                    	"狂战斧 LVL 2"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_2_Description"				"<h1>主动：砍伐/排眼</h1>砍伐一根指定树木，或者摧毁一个守卫。\n <h1>被动：压制</h1>对非英雄单位进行物理攻击会造成额外伤害，近战英雄为 %quelling_bonus% 点，远程英雄为 %quelling_bonus_ranged% 点。\n <h1>被动：分裂</h1>普通攻击时对目标周围最远 %cleave_distance% 距离的锥形区域内敌人造成 %cleave_damage_percent%%% 物理伤害。（仅近战有效）"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_2_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_2_bonus_health_regen"			"+生命恢复"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_2_bonus_mana_regen"			"+魔法恢复"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_2_Lore"						"持有这把强大斧头的人可以一次砍倒一片敌人。"
+		//<<<<
+		//>>>>	MJZ 狂战斧 LVL 3
+		"DOTA_Tooltip_Ability_item_mjz_battlefury_3"	                        "狂战斧 LVL 3"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_3_Description"				"<h1>主动：砍伐/排眼</h1>砍伐一根指定树木，或者摧毁一个守卫。\n <h1>被动：压制</h1>对非英雄单位进行物理攻击会造成额外伤害，近战英雄为 %quelling_bonus% 点，远程英雄为 %quelling_bonus_ranged% 点。\n <h1>被动：分裂</h1>普通攻击时对目标周围最远 %cleave_distance% 距离的锥形区域内敌人造成 %cleave_damage_percent%%% 物理伤害。（仅近战有效）"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_3_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_3_bonus_health_regen"			"+生命恢复"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_3_bonus_mana_regen"			"+魔法恢复"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_3_Lore"						"持有这把强大斧头的人可以一次砍倒一片敌人。"
+		//<<<<
+		//>>>>	MJZ 狂战斧 LVL 4
+		"DOTA_Tooltip_Ability_item_mjz_battlefury_4"	                        "狂战斧 LVL 4"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_4_Description"				"<h1>主动：砍伐/排眼</h1>砍伐一根指定树木，或者摧毁一个守卫。\n <h1>被动：压制</h1>对非英雄单位进行物理攻击会造成额外伤害，近战英雄为 %quelling_bonus% 点，远程英雄为 %quelling_bonus_ranged% 点。\n <h1>被动：分裂</h1>普通攻击时对目标周围最远 %cleave_distance% 距离的锥形区域内敌人造成 %cleave_damage_percent%%% 物理伤害。（仅近战有效）"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_4_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_4_bonus_health_regen"			"+生命恢复"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_4_bonus_mana_regen"			"+魔法恢复"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_4_Lore"						"持有这把强大斧头的人可以一次砍倒一片敌人。"
+		//<<<<
+		//>>>>	MJZ 狂战斧 LVL 5
+		"DOTA_Tooltip_Ability_item_mjz_battlefury_5"	                        "狂战斧 LVL 5"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_5_Description"				"<h1>主动：砍伐/排眼</h1>砍伐一根指定树木，或者摧毁一个守卫。\n <h1>被动：压制</h1>对非英雄单位进行物理攻击会造成额外伤害，近战英雄为 %quelling_bonus% 点，远程英雄为 %quelling_bonus_ranged% 点。\n <h1>被动：分裂</h1>普通攻击时对目标周围最远 %cleave_distance% 距离的锥形区域内敌人造成 %cleave_damage_percent%%% 物理伤害。（仅近战有效）"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_5_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_5_bonus_health_regen"			"+生命恢复"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_5_bonus_mana_regen"			"+魔法恢复"
+		"DOTA_Tooltip_ability_item_mjz_battlefury_5_Lore"						"持有这把强大斧头的人可以一次砍倒一片敌人。"
+		//<<<<

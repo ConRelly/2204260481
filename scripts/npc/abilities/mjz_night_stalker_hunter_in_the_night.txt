@@ -1,0 +1,60 @@
+
+	// Night Stalker: Hunter in the Night	暗夜猎影
+	"mjz_night_stalker_hunter_in_the_night"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_night_stalker/mjz_night_stalker_hunter_in_the_night.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjz_night_stalker_hunter_in_the_night"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_movement_speed_pct"			"12 16 20 24"
+				"LinkedSpecialBonus"				"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_mspeed"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_attack_speed"				"60 80 100 120"
+				"LinkedSpecialBonus"				"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_aspeed"
+			}
+			"03"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_double_in_night"				"1"
+			}
+		}
+	}
+	"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_mspeed"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"16"
+			}
+		}
+	}
+	"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_aspeed"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"100"
+			}
+		}
+	}

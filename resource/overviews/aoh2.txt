@@ -1,0 +1,8 @@
+aoh2
+{
+	material materials/overviews/aoh2.vmat
+	pos_x -4146
+	pos_y 5120
+	scale 9.284
+}
+

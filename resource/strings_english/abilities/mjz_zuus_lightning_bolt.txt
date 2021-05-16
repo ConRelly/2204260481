@@ -1,0 +1,14 @@
+    
+"DOTA_Tooltip_ability_mjz_zuus_lightning_bolt"										"Lightning Bolt"
+"DOTA_Tooltip_ability_mjz_zuus_lightning_bolt_Description"							"Calls down a bolt of lightning to strike an enemy unit, causing damage and a mini-stun. When cast, Lightning Bolt briefly provides unobstructed vision and True Sight around the target in a %sight_radius_night% radius. Can be cast on the ground, affecting the closest enemy hero in %spread_aoe% range."
+//"DOTA_Tooltip_ability_mjz_zuus_lightning_bolt_abilitycastrange"					"CAST RANGE:"
+"DOTA_Tooltip_ability_mjz_zuus_lightning_bolt_sight_radius_day"						"SIGHT RADIUS:"
+"DOTA_Tooltip_ability_mjz_zuus_lightning_bolt_sight_duration"						"SIGHT DURATION:"
+"DOTA_Tooltip_ability_mjz_zuus_lightning_bolt_charges"                              "CHARGES:"
+"DOTA_Tooltip_ability_mjz_zuus_lightning_bolt_charge_restore_time"                  "REPLENISH TIME:"
+"DOTA_Tooltip_ability_mjz_zuus_lightning_bolt_int_damage"						    "%INTELLIGENCE DAMAGE:"
+"DOTA_Tooltip_ability_mjz_zuus_lightning_bolt_Lore"									"A shocking punishment for rebellious heathen."
+"DOTA_Tooltip_ability_mjz_zuus_lightning_bolt_Note0"								"You can interrupt channeling spells and items with this ability."
+"DOTA_Tooltip_modifier_mjz_zuus_lightning_bolt_charges"								"Lightning Bolt"
+"DOTA_Tooltip_modifier_mjz_zuus_lightning_bolt_charges_Description"					"Lightning Bolt Charges."
+

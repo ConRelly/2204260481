@@ -1,0 +1,107 @@
+
+	//=================================================================================================================
+	// Doom Bringer: Doom
+	//=================================================================================================================
+	"mjz_doom_bringer_doom"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_doom_bringer/mjz_doom_bringer_doom.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityTextureName"			"mjz_doom_bringer_doom"
+
+		"FightRecapLevel"				"2"
+		"HasScepterUpgrade"				"1"
+		
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastRange"				"0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+
+		"AbilityCooldown"				"%cooldown"
+		"AbilityManaCost"				"100"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"550"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"25 40 55"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_doom_bringer_doom_damage" 	//"special_bonus_unique_doom_5"				
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"debuff_magical_resistance"		"-10 -20 -30" 
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"debuff_attack_speed"			"-20 -40 -80" 
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"debuff_move_speed"				"-10 -20 -30" 
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana_second_scepter"		"50"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"16 18 20"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown"					"100 80 60"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown_scepter"			"1"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tick_interval"				"0.2"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
+			"particle"			"particles/units/heroes/hero_doom_bringer/doom_bringer_doom.vpcf"
+			"particle"			"particles/status_fx/status_effect_doom.vpcf"
+		}
+	}
+	"special_bonus_unique_mjz_doom_bringer_doom_damage"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"55"
+			}
+		}
+	}
+
+

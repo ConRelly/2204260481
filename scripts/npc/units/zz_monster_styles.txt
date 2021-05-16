@@ -1,0 +1,161 @@
+
+"npc_boss_skeletal_archer_new_s1"
+{
+	"Model"						"models/heroes/clinkz/clinkz.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"vscripts"					"bosses/attack_move.lua"
+	"SoundSet"					"Hero_Clinkz"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+	"Level"						"1"
+	"ModelScale" 				"1.4"
+	"ConsideredHero"			"1"
+	"precache"
+	{
+		"particle_folder"		"particles/units/heroes/hero_clinkz"
+	}
+	"Ability2"					"clinkz_searing_arrows"			// Ability 2
+	//"Ability3"					"clinkz_burning_army"			// Ability 3
+	
+	"ArmorPhysical"				"3"			// Physical protection.
+	"MagicalResistance"			"12"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"80"		// Damage range min.
+	"AttackDamageMax"			"102"		// Damage range max.
+	"AttackRate"				"0.8"		// Speed of attack.
+	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
+	"AttackRange"				"650"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf" // Particle system model for projectile.
+	"ProjectileSpeed"			"1100"		// Speed of projectile.		     
+	"RingRadius"				"40"
+	"HealthBarOffset"			"150"
+	"BountyXP"					"0"		// Experience earn.
+	"BountyGoldMin"				"25"		// Gold earned min.
+	"BountyGoldMax"				"30"		// Gold earned max.
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"300"		// Speed.			
+	"StatusHealth"				"3800"		// Base health.
+	"StatusHealthRegen"			"1"		// Health regeneration rate.
+	"StatusMana"				"500"			// Base mana.
+	"StatusManaRegen"			"1"		// Mana regeneration rate.		 
+	"VisionDaytimeRange"		"1600"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1600"		// Range of vision at night time.
+	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"Creature"
+	{
+		"DisableClumpingBehavior"   "1"
+		"DefaultState"                  "Invade"
+		"States"
+		{
+			"Invade"
+			{
+					"Name"                          "Invade"
+					"Aggression"            		"100.0"
+					"Avoidance"                     "0.0"
+					"Support"                       "50.0"
+			}
+		}
+		"OffensiveAbilities"
+        {	
+			"Ability2"
+			{
+				"Name"				"clinkz_searing_arrows"
+			}
+        }
+		"AttachWearables"
+		{
+			"Wearable7" { "ItemDef"  "8632" }
+			"Wearable3" { "ItemDef"  "8560" }
+			"Wearable2" { "ItemDef"  "8558" }
+			"Wearable8" { "ItemDef"  "523" }
+			"Wearable1" { "ItemDef"  "56" }
+			"Wearable5" { "ItemDef"  "8552" }
+			"Wearable4" { "ItemDef"  "8559" }
+			"Wearable6" { "ItemDef"  "13540" }
+			"Wearable0" { "ItemDef"  "8551" }
+		}
+	}
+}
+"npc_boss_skeletal_archer_new_s2"
+{
+	"Model"						"models/heroes/clinkz/clinkz.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"vscripts"					"bosses/attack_move.lua"
+	"SoundSet"					"Hero_Clinkz"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+	"Level"						"1"
+	"ModelScale" 				"1.4"
+	"ConsideredHero"			"1"
+	"precache"
+	{
+		"particle_folder"		"particles/units/heroes/hero_clinkz"
+	}
+	"Ability2"					"clinkz_searing_arrows"			// Ability 2
+	//"Ability3"					"clinkz_burning_army"			// Ability 3
+	
+	"ArmorPhysical"				"3"			// Physical protection.
+	"MagicalResistance"			"12"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"80"		// Damage range min.
+	"AttackDamageMax"			"102"		// Damage range max.
+	"AttackRate"				"0.8"		// Speed of attack.
+	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
+	"AttackRange"				"650"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf" // Particle system model for projectile.
+	"ProjectileSpeed"			"1100"		// Speed of projectile.		     
+	"RingRadius"				"40"
+	"HealthBarOffset"			"150"
+	"BountyXP"					"0"		// Experience earn.
+	"BountyGoldMin"				"25"		// Gold earned min.
+	"BountyGoldMax"				"30"		// Gold earned max.
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"300"		// Speed.			
+	"StatusHealth"				"3800"		// Base health.
+	"StatusHealthRegen"			"1"		// Health regeneration rate.
+	"StatusMana"				"500"			// Base mana.
+	"StatusManaRegen"			"1"		// Mana regeneration rate.		 
+	"VisionDaytimeRange"		"1600"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1600"		// Range of vision at night time.
+	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"Creature"
+	{
+		"DisableClumpingBehavior"   "1"
+		"DefaultState"                  "Invade"
+		"States"
+		{
+			"Invade"
+			{
+					"Name"                          "Invade"
+					"Aggression"            		"100.0"
+					"Avoidance"                     "0.0"
+					"Support"                       "50.0"
+			}
+		}
+		"OffensiveAbilities"
+        {	
+			"Ability2"
+			{
+				"Name"				"clinkz_searing_arrows"
+			}
+        }
+		"AttachWearables"
+		{
+			"Wearable7" { "ItemDef"  "8632" }
+			"Wearable3" { "ItemDef"  "4972" }
+			"Wearable2" { "ItemDef"  "7347" }
+			"Wearable8" { "ItemDef"  "523" }
+			"Wearable4" { "ItemDef"  "9162" }
+			"Wearable5" { "ItemDef"  "4742" }
+			"Wearable1" { "ItemDef"  "56" }
+			"Wearable6" { "ItemDef"  "13540" }
+			"Wearable0" { "ItemDef"  "13009" }
+		}
+	}
+}

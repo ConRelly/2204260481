@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_ursa_overpower"					"超强力量"
+	"DOTA_Tooltip_ability_mjz_ursa_overpower_Description"		"乌尔萨的战斗技巧提升他接下来几次攻击的攻击速度。"
+	"DOTA_Tooltip_ability_mjz_ursa_overpower_Lore"				"乌尔萨有着让人难以和他巨大的体型联想到一起的敏捷。"
+	"DOTA_Tooltip_ability_mjz_ursa_overpower_bonus_attack_speed"		"攻击速度提升："
+	"DOTA_Tooltip_ability_mjz_ursa_overpower_duration"					"持续时间："
+	"DOTA_Tooltip_modifier_mjz_ursa_overpower"					"超强力量"
+	"DOTA_Tooltip_modifier_mjz_ursa_overpower_Description"		"正以极高速度攻击！"

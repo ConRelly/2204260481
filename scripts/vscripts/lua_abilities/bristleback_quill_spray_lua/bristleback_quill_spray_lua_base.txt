@@ -1,0 +1,89 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Bristleback: Quill Spray (Lua version)
+	//=================================================================================================================
+	"bristleback_quill_spray_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/bristleback_quill_spray_lua/bristleback_quill_spray_lua"
+		"AbilityTextureName"			"bristleback_quill_spray_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"         "7"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_bristleback.vsndevts"
+			"particle"	"particles/units/heroes/hero_bristleback/bristleback_quill_spray.vpcf"
+			"particle"	"particles/units/heroes/hero_bristleback/bristleback_quill_spray_hit.vpcf"
+			"particle"	"particles/units/heroes/hero_bristleback/bristleback_quill_spray_impact.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1300"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"3"
+		"AbilityManaCost"				"35"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"quill_base_damage"		"40 190 480 940 1750 2890 6500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"quill_stack_damage"	"30 32 34 36 40 60 120"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"quill_stack_duration"	"8.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"2400"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"str_multiplier"		"0.016 0.019 0.022 0.025 0.030 0.035 0.04"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"str_multiplier_tooltip"  "16 19 22 25 30 35 40"
+			}			
+		}
+	}
+}

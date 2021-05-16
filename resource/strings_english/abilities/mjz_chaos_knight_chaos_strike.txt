@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike"				    "Chaos Strike"
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_Description"	    "Each of Chaos Knight's attacks has a chance to deal bonus damage, also causing the critical strike to lifesteal for %lifesteal%%% of the damage."
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_Lore"	    		"Chaos Knight's unwieldy power bludgeons those who stand before him, crushing the thickest of armors."
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_Note0"	    		"The proc chances of multiple crit sources stack.Stacks additively with other sources of lifesteal."
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_crit_chance"		"%Proc Chance: "
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_crit_damage"		"%Critical Damage: "
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_lifesteal"			"%Proc Lifesteal: "
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_chaos_strike"			"+{s:value}% Chaos Strike Proc Chance"
+	

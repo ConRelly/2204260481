@@ -1,0 +1,14 @@
+    
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current"				    "Unstable Current"
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_Description"	    "Passively increases your movement speed and occasionally hits every unit in the area for some damage.\n\nUpgradable by Aghanim's Scepter."
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_Aghanim_Description"	    "Reduces damage interval, Increases radius."
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_Lore"	    		"Merely approaching the Lightning Revenant is rewarded with shock therapy."
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_radius"					"Radius: "
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_movement_speed_pct"		"%Move Speed Bonus: "
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_passive_area_damage"		"Base Damage: "
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_attack_damage_pct"			"%Attack as Damage: "
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_passive_area_interval"		"Damage Interval: "
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_radius_scepter"					"Scepter Radius: "
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_passive_area_interval_scepter"		"Scepter Damage Interval: "
+	

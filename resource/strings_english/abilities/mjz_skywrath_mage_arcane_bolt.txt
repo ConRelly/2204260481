@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt"				"Arcane Bolt"
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_Description"	"Skywrath Mage launches a slow-moving bolt of arcane magic, dealing damage to an enemy unit based on Skywrath Mage's intelligence."
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_Aghanim_Description"	"Increases target count."
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_Lore"			"Within the Ghastly Eyrie's endless intrigue, only the clever and calm can hope to survive."
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_cast_range"		"Cast Range: "
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_bolt_damage"	"BASE DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_int_multiplier"	"INT DAMAGE MULTIPLIER:"
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_target_count"			"Target Count: "
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_target_count_scepter"	"Scepter Upgrade Target Count: "
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_search_radius"			"Target Search Radius: "

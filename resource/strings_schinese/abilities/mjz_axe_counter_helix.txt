@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_axe_counter_helix"				    "反击螺旋"
+	"DOTA_Tooltip_ability_mjz_axe_counter_helix_Description"	    "受攻击时，斧王做出螺旋反击，对附近所有敌方单位造成纯粹伤害。"
+	"DOTA_Tooltip_ability_mjz_axe_counter_helix_Lore"	    		"这支军队只要有斧王就不需要援军了。"
+	"DOTA_Tooltip_ability_mjz_axe_counter_helix_Note0"	    		"选择天赋后，受到攻击和攻击时的触发共享触发几率和冷却"
+	"DOTA_Tooltip_ability_mjz_axe_counter_helix_radius"				"范围："
+	"DOTA_Tooltip_ability_mjz_axe_counter_helix_trigger_chance"		"%触发几率："
+	"DOTA_Tooltip_ability_mjz_axe_counter_helix_damage"				"伤害："
+	"DOTA_Tooltip_ability_mjz_axe_counter_helix_strength_per"		"%力量加成："

@@ -1,0 +1,86 @@
+
+	"mjz_troll_warlord_battle_trance"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_troll_warlord/mjz_troll_warlord_battle_trance.lua"
+		"AbilityTextureName"			"mjz_troll_warlord_battle_trance"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_TrollWarlord.BattleTrance.Cast"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"						"3"
+        "HasScepterUpgrade"				"1"
+
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+		"AbilityCastRange"				"0"	 //"525"
+
+		"AbilityCooldown"				"66"
+		"AbilityManaCost"				"50"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"trance_duration"		"6.5"		
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"lifesteal"			"60 70 80"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attack_speed"			"200 300 400"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movement_speed"		"40 50 60"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"scepter_cooldown"	"15"
+				"RequiresScepter"	"1"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"scepter_radius"	"9000"
+				"RequiresScepter"	"1"
+			}
+		}
+	}
+
+	"mjz_troll_warlord_battle_trance_scepter"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_troll_warlord/mjz_troll_warlord_battle_trance_scepter.lua"
+		"AbilityTextureName"			"mjz_troll_warlord_battle_trance_scepter"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_TrollWarlord.BattleTrance.Cast"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"MaxLevel"						"1"
+        "HasScepterUpgrade"				"1"
+
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.0 0.0 0.0"
+		"AbilityCastRange"				"9000"	 //"525"
+
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"50"
+	}

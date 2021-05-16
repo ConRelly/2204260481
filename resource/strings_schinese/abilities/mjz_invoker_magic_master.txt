@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_invoker_magic_master"				    	"大魔法师"
+	"DOTA_Tooltip_ability_mjz_invoker_magic_master_Description"	   		"精通魔法的大师。\n\n可用神杖升级。"
+	"DOTA_Tooltip_ability_mjz_invoker_magic_master_Lore"	    		"魔法是危险的。"
+	"DOTA_Tooltip_ability_mjz_invoker_magic_master_bonus_cooldown_scepter"			"%神杖升级冷却时间减少："
+	"DOTA_Tooltip_ability_mjz_invoker_magic_master_spell_amp_scepter"				"%神杖升级技能增强："
+	"DOTA_Tooltip_ability_mjz_invoker_magic_master_manacost_reduction_scepter"		"%神杖升级魔法消耗和损失降低："
+	"DOTA_Tooltip_ability_mjz_invoker_magic_master_Aghanim_Description"	   	"成为一位真正的大魔法师。"
+	

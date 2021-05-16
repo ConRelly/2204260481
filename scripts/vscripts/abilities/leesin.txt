@@ -1,0 +1,511 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Lee Sin: Flurry
+	//=================================================================================================================
+	"leesin_flurry"
+	{
+		// Ability Technical Aspect
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/leesin.lua"
+		"AbilityTextureName"			"tusk_walrus_punch"
+		"MaxLevel"						"4"
+		"HasScepterUpgrade"			"1"
+		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		
+		// Casting
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_attacks"			"2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attackspeed"			"40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"energy"			"15 20 25 30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"			"3.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown_reduce"			"0.5"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Lee Sin: Sonic Wave
+	//=================================================================================================================
+	"leesin_sonic_wave"
+	{
+		// Ability Technical Aspect
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/leesin.lua"
+		"AbilityTextureName"			"vengefulspirit_magic_missile"
+		"MaxLevel"						"5"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+			"particle"	"particles/units/heroes/hero_queenofpain/queen_scream_of_pain_owner.vpcf"
+		}
+		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_PHYSICAL"	
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.15"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"11 10 9 8 7"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"		"75 110 145 180 215"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mark_duration"		"3.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"proj_speed"			"1750"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"			"1200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"proj_width"		"100"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Lee Sin: Resonating Strike
+	//=================================================================================================================
+	"leesin_resonating_strike"
+	{
+		// Ability Technical Aspect
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/leesin.lua"
+		"AbilityTextureName"			"tusk_walrus_kick"
+		"MaxLevel"						"5"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+			"particle"	"particles/units/heroes/hero_queenofpain/queen_scream_of_pain_owner.vpcf"
+		}
+		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_PHYSICAL"	
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1300"
+		"AbilityCastPoint"				"0.0"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"30"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"		"75 110 145 180 215"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"low_health_mult"		"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dash_speed"			"1750"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"			"1300"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Lee Sin: Safeguard
+	//=================================================================================================================
+	"leesin_safeguard"
+	{
+		// Ability Technical Aspect
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/leesin.lua"
+		"AbilityTextureName"			"abaddon_aphotic_shield"
+		"MaxLevel"						"5"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+			"particle"	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+		}
+		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dash_speed"		"1750"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"			"700"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shield"			"50 130 205 280 355"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"			"2.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"spell_duration"			"3.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_reduce"			"50"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Lee Sin: Iron Will
+	//=================================================================================================================
+	"leesin_iron_will"
+	{
+		// Ability Technical Aspect
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/leesin.lua"
+		"AbilityTextureName"			"beastmaster_inner_beast"
+		"MaxLevel"						"5"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+			"particle"	"particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
+		}
+		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"30"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"		"4.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifesteal"			"10 15 20 25 30"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Lee Sin: Tempest
+	//=================================================================================================================
+	"leesin_tempest"
+	{
+		// Ability Technical Aspect
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/leesin.lua"
+		"AbilityTextureName"			"ursa_earthshock"
+		"MaxLevel"						"5"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
+			"particle"	"particles/status_fx/status_effect_dark_willow_shadow_realm.vpcf"
+			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_shadow_realm.vpcf"
+		}
+		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.18"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"10"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mark_duration"		"3.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"			"350"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"			"80 135 190 245 300"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Lee Sin: Cripple
+	//=================================================================================================================
+	"leesin_cripple"
+	{
+		// Ability Technical Aspect
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/leesin.lua"
+		"AbilityTextureName"			"brewmaster_storm_dispel_magic"
+		"MaxLevel"						"5"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_dark_willow.vsndevts"
+			"particle"	"particles/status_fx/status_effect_dark_willow_shadow_realm.vpcf"
+			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_shadow_realm.vpcf"
+		}
+		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"30"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"		"3.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"			"20 30 40 50 60"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"			"500"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Lee Sin: Dragon's Rage
+	//=================================================================================================================
+	"leesin_dragons_rage"
+	{
+		// Ability Technical Aspect
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/leesin.lua"
+		"AbilityTextureName"			"tusk_walrus_kick"
+		"IsOnCastBar"                   "0"
+		"MaxLevel"						"3"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+			"particle"	"particles/units/heroes/hero_ursa/ursa_enrage_buff.vpcf"
+			"particle"	"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+		}
+		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"		    "DAMAGE_TYPE_PHYSICAL"	
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"7575"
+		"AbilityCastPoint"				"0.0"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"root_duration"		"0.25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"				"0.6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"			"1900"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"			"15000 500 147750"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockup_duration"			"2.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_damage"			"300 15 200"
+			}
+		}
+	}
+}

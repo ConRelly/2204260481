@@ -1,0 +1,13 @@
+    
+	"DOTA_Tooltip_ability_mjz_drow_ranger_marksmanship"				    "射手天赋"
+	"DOTA_Tooltip_ability_mjz_drow_ranger_marksmanship_Description"	    "卓尔游侠的战斗经验使她有概率发出极其精准高效的箭矢。箭矢将造成基于她攻击力的额外伤害。\n\n可用神杖升级。"
+	"DOTA_Tooltip_ability_mjz_drow_ranger_marksmanship_Lore"	    	"卓尔游侠是弓箭手登峰造极的典型。"
+	"DOTA_Tooltip_ability_mjz_drow_ranger_marksmanship_bonus_agility"	"敏捷加成："
+	"DOTA_Tooltip_ability_mjz_drow_ranger_marksmanship_chance_1x"		"%1X 触发几率："
+	"DOTA_Tooltip_ability_mjz_drow_ranger_marksmanship_chance_2x"		"%2X 触发几率："
+	"DOTA_Tooltip_ability_mjz_drow_ranger_marksmanship_chance_3x"		"%3X 触发几率："
+	"DOTA_Tooltip_ability_mjz_drow_ranger_marksmanship_split_range_scepter"				"分裂箭矢搜索范围："
+	"DOTA_Tooltip_ability_mjz_drow_ranger_marksmanship_split_count_scepter"				"最多分裂目标："
+	"DOTA_Tooltip_ability_mjz_drow_ranger_marksmanship_damage_reduction_scepter"		"%分裂伤害减免："
+	"DOTA_Tooltip_ability_mjz_drow_ranger_marksmanship_Aghanim_Description"		"使卓尔游侠的攻击分裂出额外的箭矢，攻击主目标附近单位，造成较少的伤害。"
+	

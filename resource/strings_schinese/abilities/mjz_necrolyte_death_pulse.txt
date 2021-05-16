@@ -1,0 +1,13 @@
+    
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse"									"死亡脉冲"
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_Description"						"瘟疫法师在他周围释放死亡波动，伤害敌方单位并治疗友军单位。"
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_Lore"								"可怜的灵魂们，屈从于罗坦德吉利的瘟疫后遭到回收，沦为他用。"
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_Note0"								"死亡脉冲不能被躲避。"
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_Note1"								"可以治疗技能免疫单位。"
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_radius"								"作用范围："
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_base_heal"							"基础治疗量："
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_max_health_heal"					"%最大生命值治疗："
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_base_damage"						"基础伤害："
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_int_damage_multiplier"				"智力伤害倍数："
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_max_count"							"最大目标数量："
+

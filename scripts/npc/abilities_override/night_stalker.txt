@@ -1,0 +1,37 @@
+
+	"night_stalker_crippling_fear"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_day"			"2.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_night"		"2.0 3.0 4.0 5.0"
+			}
+		}
+	}
+	"night_stalker_hunter_in_the_night"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_attack_speed_night"			"45 75 105 135"
+				"LinkedSpecialBonus"		        "special_bonus_unique_night_stalker_2"
+			}
+		}
+	}
+	"night_stalker_void"
+	{
+		"AbilityDamage"					"120 200 280 360"
+	}
+	"night_stalker_darkness"
+	{
+		"AbilityCooldown"				"110 100 90"
+	}

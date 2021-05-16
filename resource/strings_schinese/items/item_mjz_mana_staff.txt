@@ -1,0 +1,10 @@
+
+		//>>>>	MJZ 吸魔箭
+		"DOTA_Tooltip_ability_item_mjz_mana_staff"                                  "吸魔箭"
+		"DOTA_Tooltip_ability_item_mjz_mana_staff_Description"						"<h1>主动：吞噬</h1><font color='#00FF40'>吞噬后永久获得效果。</font>\n<h1>被动： 吸魔</h1>攻击者每次攻击都将根据造成的伤害回复%mana_steal%%%的魔法值。\n<font color='#F2A93E'>不可叠加。</font>"
+		"DOTA_Tooltip_ability_item_mjz_mana_staff_Lore"								"这只箭会吸取被它凝视之人的魔法力。"
+		"DOTA_Tooltip_ability_item_mjz_mana_staff_bonus_agi"						"+$agi"
+		"DOTA_Tooltip_ability_item_mjz_mana_staff_bonus_int"						"+$int"
+		"DOTA_Tooltip_modifier_item_mjz_mana_staff_consumed"						"吸魔"
+		"DOTA_Tooltip_modifier_item_mjz_mana_staff_consumed_Description"			"攻击者每次攻击都将根据造成的伤害回复%dMODIFIER_PROPERTY_TOOLTIP%%%的魔法值。"
+		//<<<<

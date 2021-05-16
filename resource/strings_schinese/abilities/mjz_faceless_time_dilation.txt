@@ -1,0 +1,10 @@
+
+	"DOTA_Tooltip_ability_mjz_faceless_time_dilation"				"时间膨胀"
+	"DOTA_Tooltip_ability_mjz_faceless_time_dilation_Description"	"虚空假面将附近所有敌人困在一个时间膨胀场中，持续%duration%秒，降低敌人的移动和攻击速度。"
+	"DOTA_Tooltip_ability_mjz_faceless_time_dilation_lore"			"对于挑战暗惧者的人，每个时刻都像是延长为永恒。"
+	"DOTA_Tooltip_ability_mjz_faceless_time_dilation_radius"				"作用范围："
+	"DOTA_Tooltip_ability_mjz_faceless_time_dilation_move_speed_slow"		"%移动速度减缓："
+	"DOTA_Tooltip_ability_mjz_faceless_time_dilation_attack_speed_slow"		"攻击速度降低："
+	"DOTA_Tooltip_ability_mjz_faceless_time_dilation_duration"				"持续时间："
+	"DOTA_Tooltip_modifier_mjz_faceless_time_dilation_slow"				"时间膨胀减速"
+	"DOTA_Tooltip_modifier_mjz_faceless_time_dilation_slow_Description"		"移动速度减缓%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%，攻击速度降低%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%。"

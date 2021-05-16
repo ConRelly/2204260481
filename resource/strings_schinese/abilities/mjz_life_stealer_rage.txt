@@ -1,0 +1,10 @@
+    
+"DOTA_Tooltip_ability_mjz_life_stealer_rage"	"狂暴"
+"DOTA_Tooltip_ability_mjz_life_stealer_rage_Description"			"进入狂暴状态，对技能免疫，获得100%%魔法抗性并提升攻击速度。\n\n驱散类型：弱驱散"
+"DOTA_Tooltip_ability_mjz_life_stealer_rage_attack_speed_bonus"		"攻击速度提升："
+"DOTA_Tooltip_ability_mjz_life_stealer_rage_movement_speed_bonus"	"%移动速度提升："
+"DOTA_Tooltip_ability_mjz_life_stealer_rage_duration"				"持续时间："
+"DOTA_Tooltip_modifier_mjz_life_stealer_rage_buff"	"狂暴"
+"DOTA_Tooltip_modifier_mjz_life_stealer_rage_buff_Description"	"获得攻速提升，技能免疫和100%%的魔法抗性。"
+"DOTA_Tooltip_ability_mjz_life_stealer_rage_Lore"	"奈克斯的疯狂和残暴使得他在战斗中异常凶狠无情。"
+"DOTA_Tooltip_ability_mjz_life_stealer_rage_Note0"	"施放后，许多正面和负面状态都会被移除。"

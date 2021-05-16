@@ -1,0 +1,34 @@
+	
+
+		//>>>>	MJZ Heart LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_heart_2"	                        "Heart of Tarrasque LVL 2"
+		"DOTA_Tooltip_ability_item_mjz_heart_2_Description"				"<h1>Passive: Regeneration Amplification</h1>Increases all passive health regeneration by %hp_regen_amp%%%. <br><br><h1>Passive: Health Regeneration</h1>Restores %health_regen_rate%%% of max health per second. If damage is taken from an enemy hero or Roshan, this ability is disabled for %cooldown_melee% seconds for melee heroes, or %cooldown_ranged_tooltip% seconds for ranged heroes."
+		"DOTA_Tooltip_ability_item_mjz_heart_2_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_mjz_heart_2_bonus_health"			"+$health"
+		// "DOTA_Tooltip_ability_item_mjz_heart_2_hp_regen_amp"			"%+Health regen"
+		"DOTA_Tooltip_ability_item_mjz_heart_2_Lore"					"Preserved heart of an extinct monster, it bolsters the bearer's fortitude."
+		//<<<<
+		//>>>>	MJZ Heart LVL 3
+		"DOTA_Tooltip_Ability_item_mjz_heart_3"	                        "Heart of Tarrasque LVL 3"
+		"DOTA_Tooltip_ability_item_mjz_heart_3_Description"				"<h1>Passive: Regeneration Amplification</h1>Increases all passive health regeneration by %hp_regen_amp%%%. <br><br><h1>Passive: Health Regeneration</h1>Restores %health_regen_rate%%% of max health per second. If damage is taken from an enemy hero or Roshan, this ability is disabled for %cooldown_melee% seconds for melee heroes, or %cooldown_ranged_tooltip% seconds for ranged heroes."
+		"DOTA_Tooltip_ability_item_mjz_heart_3_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_mjz_heart_3_bonus_health"			"+$health"
+		// "DOTA_Tooltip_ability_item_mjz_heart_3_hp_regen_amp"			"%+Health regen"
+		"DOTA_Tooltip_ability_item_mjz_heart_3_Lore"					"Preserved heart of an extinct monster, it bolsters the bearer's fortitude."
+		//<<<<
+		//>>>>	MJZ Heart LVL 4
+		"DOTA_Tooltip_Ability_item_mjz_heart_4"	                        "Heart of Tarrasque LVL 4"
+		"DOTA_Tooltip_ability_item_mjz_heart_4_Description"				"<h1>Passive: Regeneration Amplification</h1>Increases all passive health regeneration by %hp_regen_amp%%%. <br><br><h1>Passive: Health Regeneration</h1>Restores %health_regen_rate%%% of max health per second. If damage is taken from an enemy hero or Roshan, this ability is disabled for %cooldown_melee% seconds for melee heroes, or %cooldown_ranged_tooltip% seconds for ranged heroes."
+		"DOTA_Tooltip_ability_item_mjz_heart_4_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_mjz_heart_4_bonus_health"			"+$health"
+		// "DOTA_Tooltip_ability_item_mjz_heart_4_hp_regen_amp"			"%+Health regen"
+		"DOTA_Tooltip_ability_item_mjz_heart_4_Lore"					"Preserved heart of an extinct monster, it bolsters the bearer's fortitude."
+		//<<<<
+		//>>>>	MJZ Heart LVL 5
+		"DOTA_Tooltip_Ability_item_mjz_heart_5"	                        "Heart of Tarrasque LVL 5"
+		"DOTA_Tooltip_ability_item_mjz_heart_5_Description"				"<h1>Passive: Regeneration Amplification</h1>Increases all passive health regeneration by %hp_regen_amp%%%. <br><br><h1>Passive: Health Regeneration</h1>Restores %health_regen_rate%%% of max health per second. If damage is taken from an enemy hero or Roshan, this ability is disabled for %cooldown_melee% seconds for melee heroes, or %cooldown_ranged_tooltip% seconds for ranged heroes."
+		"DOTA_Tooltip_ability_item_mjz_heart_5_bonus_strength"			"+$str"
+		"DOTA_Tooltip_ability_item_mjz_heart_5_bonus_health"			"+$health"
+		// "DOTA_Tooltip_ability_item_mjz_heart_5_hp_regen_amp"			"%+Health regen"
+		"DOTA_Tooltip_ability_item_mjz_heart_5_Lore"					"Preserved heart of an extinct monster, it bolsters the bearer's fortitude."
+		//<<<<

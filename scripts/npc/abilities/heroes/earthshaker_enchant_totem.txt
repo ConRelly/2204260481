@@ -1,0 +1,92 @@
+"DOTAAbilities"
+{
+  //=================================================================================================================
+  // Ability: Earthshaker Totem
+  //=================================================================================================================
+  "earthshaker_enchant_totem"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "5024"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityUnitTargetTeam"                               "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"                               "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "SpellDispellableType"                                "SPELL_DISPELLABLE_YES"
+
+    "MaxLevel"                                            "7"
+    "LevelsBetweenUpgrades"                               "5"
+    "HasScepterUpgrade"                                   "1"
+
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"                                    "0"
+    "AbilityCastPoint"                                    "0.69"
+    "FightRecapLevel"                                     "1"
+
+    // Time
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"                                     "10.0 9.0 8.0 7.0 6.0 5.0 3.0"
+    "AbilityDuration"                                     "14"
+
+    // Damage.
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityDamage"                                       "0"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"                                     "50"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "totem_damage_percentage"                         "200 300 400 500 600 800 1200"
+        "CalculateSpellDamageTooltip"                     "0"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "distance_scepter"                                "1900"
+        "RequiresScepter"                                 "1"
+      }
+      "03"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "aftershock_range"                                "700"
+      }
+      "04"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "scepter_height"                                  "950"
+      }
+      "05"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "scepter_height_arcbuffer"                        "100"
+      }
+      "06"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "scepter_acceleration_z"                          "4000"
+      }
+      "07"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "scepter_acceleration_horizontal"                 "3000"
+      }
+      "08"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "scepter_leap_duration"                           "0.4"
+      }
+      "09"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "bonus_attack_range"                              "450"
+      }
+    }
+  }
+}

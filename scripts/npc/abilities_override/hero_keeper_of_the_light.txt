@@ -1,0 +1,116 @@
+
+	"keeper_of_the_light_spirit_form_illuminate"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_per_second"		"150.0 150.0 150.0 150.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_channel_time"		"2.0 2.5 3.0 3.5"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"total_damage"				"300 375 450 525"
+				"LinkedSpecialBonus"		"special_bonus_unique_keeper_of_the_light"
+			}
+		}
+	}
+	"keeper_of_the_light_illuminate"
+	{
+		"AbilityChannelTime"			"2.0 2.5 3.0 3.5"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_per_second"		"150.0 150.0 150.0 150.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_channel_time"		"2.0 2.5 3.0 3.5"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"total_damage"				"300 375 450 525"
+				"LinkedSpecialBonus"		"special_bonus_unique_keeper_of_the_light"
+			}
+		}
+	}
+	"keeper_of_the_light_chakra_magic"
+	{
+        "AbilityCastRange"				"900 1000 1100 1200"
+		"AbilityCooldown"				"18 15 12 9"
+		"AbilitySpecial"
+		{		
+            "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_restore"			"100 200 300 400"
+				"LinkedSpecialBonus"	"special_bonus_unique_keeper_of_the_light_2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cooldown_reduction"	"7"
+			}
+		}
+	}
+	"keeper_of_the_light_will_o_wisp"
+	{
+		"AbilityCooldown"				"75"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"on_count"					"4 5 6"
+				"LinkedSpecialBonus"		"special_bonus_unique_keeper_of_the_light_3"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"off_duration"				"1.85"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"on_duration"				"2.0"
+			}
+		}
+	}
+	"keeper_of_the_light_blinding_light"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"miss_rate"				"70"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"100 175 225 325"
+			}
+		}
+	}
+    "special_bonus_unique_keeper_of_the_light_2"
+    {
+        "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				        "600"
+				"ad_linked_ability"			"keeper_of_the_light_chakra_magic"
+			}
+		}
+    }

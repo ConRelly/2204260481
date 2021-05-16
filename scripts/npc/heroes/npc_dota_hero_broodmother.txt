@@ -1,0 +1,13 @@
+
+	"npc_dota_hero_broodmother_mjz"			// 育母蜘蛛 
+	{
+		"override_hero"			"npc_dota_hero_broodmother"
+
+		"Ability1"				"mjz_broodmother_spawn_spiderlings"
+		"Ability6"				"mjz_broodmother_insatiable_hunger"
+		"Ability10"				"special_bonus_cleave_20"
+		"Ability14"				"special_bonus_unique_broodmother_4"
+		"Ability17"				"special_bonus_unique_mjz_broodmother_insatiable_hunger"
+		"Ability17"				"special_bonus_unique_mjz_broodmother_spawn_spiderlings_count"
+	}
+	

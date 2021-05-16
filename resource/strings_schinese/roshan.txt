@@ -1,0 +1,5 @@
+
+
+"npc_dota_roshan_mega"											"大型肉山"
+"DOTA_Tooltip_modifier_roshan_bonus"							"肉山击杀者"
+"DOTA_Tooltip_modifier_roshan_bonus_Description"	    		"基础攻击力提升%dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%。"

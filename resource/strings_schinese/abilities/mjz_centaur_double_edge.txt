@@ -1,0 +1,12 @@
+    
+"DOTA_Tooltip_ability_mjz_centaur_double_edge"								"双刃剑"
+"DOTA_Tooltip_ability_mjz_centaur_double_edge_Description"					"半人马战行者以猛烈的力量进行近战攻击，对目标周围单位和自身造成伤害。将基于力量值造成额外伤害。此技能无法用于自杀。"
+"DOTA_Tooltip_ability_mjz_centaur_double_edge_Lore"							"在激烈的战斗中，布拉德瓦登凶猛的撞击有时候会对自己造成伤害。"
+"DOTA_Tooltip_ability_mjz_centaur_double_edge_Note0"						"双刃剑对目标和自身都造成魔法伤害。"
+"DOTA_Tooltip_ability_mjz_centaur_double_edge_edge_damage"					"基础伤害："
+"DOTA_Tooltip_ability_mjz_centaur_double_edge_strength_damage"				"%力量伤害："
+"DOTA_Tooltip_ability_mjz_centaur_double_edge_self_strength_damage"			"%自身受到的力量伤害："
+"DOTA_Tooltip_ability_mjz_centaur_double_edge_radius"						"范围："
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_centaur_double_edge_strength"		"+{s:value}% 双刃剑力量伤害"
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_centaur_double_edge_radius"			"+{s:value} 双刃剑范围"
+

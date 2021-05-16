@@ -1,0 +1,11 @@
+
+		//>>>>	达贡之神力（大根）
+		"DOTA_Tooltip_Ability_item_mjz_dagon_v2"										"莱恩的大根 V2"
+		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Description"							"<h1>主动：死亡之指</h1>撕裂一个敌方单位，将其折磨得死去活来，并造成巨大伤害。每次使用都会提升威力。"
+		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Lore"									"莱恩的大根正是他最强大力量的来源，能够用恶魔的力量让受害者完全崩溃。"
+		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_bonus_intellect"						"+$int"
+		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_bonus_all_stats"						"+$all"
+		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_damage"									"基础伤害："
+		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_range_tooltip"							"施法距离："
+		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_damage_per_use"							"每次使用伤害加成："
+		//<<<<

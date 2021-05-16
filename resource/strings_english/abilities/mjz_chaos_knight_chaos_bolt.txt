@@ -1,0 +1,13 @@
+
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt"						"Chaos Bolt"
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_Description"			"Throws a mysterious bolt of energy at the target unit. It stuns for a random duration and deals random damage."
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_Lore"					"Even Chaos Knight cannot predict this manifest of unholy energy."
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_cast_range"			"CAST RANGE:"
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_radius"				"RADIUS:"
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_targets"				"TARGETS:"
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_stun_min"				"MINIMUM STUN:"
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_stun_max"				"MAXIMUM STUN:"
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_damage_min"			"MINIMUM DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_damage_max"			"MAXIMUM DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_Note0"				"The stun duration and damage values dealt are inversely related."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_chaos_knight_chaos_bolt_target"				"+{s:value} Chaos Bolt Targets"

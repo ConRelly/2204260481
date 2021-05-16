@@ -1,0 +1,49 @@
+
+	"mjz_io_overcharge"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_io/mjz_io_overcharge.lua"
+		"AbilityTextureName"			"mjz_io_overcharge"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"2.0"
+			
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
+			"particle"					"particles/units/heroes/hero_wisp/wisp_overcharge.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"		"60 90 140 200"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage_pct"			"-15 -20 -25 -35"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"drain_interval"			"0.2 0.2 0.2 0.2"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"drain_pct"					"0.06 0.06 0.06 0.06"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"drain_pct_tooltip"			"6 6 6 6"
+			}
+		}
+	}	
+

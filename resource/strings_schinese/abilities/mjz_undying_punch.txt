@@ -1,0 +1,7 @@
+    
+	"DOTA_Tooltip_ability_mjz_undying_punch"				    "尸王拳"
+	"DOTA_Tooltip_ability_mjz_undying_punch_Description"	    "每次攻击时还会根据自身最大生命值造成额外伤害，同时自身回复等量的生命。<font color='red'>在血肉傀儡状态下才有效。</font>"
+	"DOTA_Tooltip_ability_mjz_undying_punch_Lore"	    		""
+	"DOTA_Tooltip_ability_mjz_undying_punch_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_undying_punch_hp_leech_percent"	"%最大生命值："
+	

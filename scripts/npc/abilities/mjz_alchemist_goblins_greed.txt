@@ -1,0 +1,23 @@
+
+    "mjz_alchemist_goblins_greed"
+	{
+		"BaseClass"						"ability_lua"
+    	"ScriptFile"                    "abilities/hero_alchemist/mjz_alchemist_goblins_greed.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"alchemist_goblins_greed"
+        "MaxLevel"                      "4"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"              "FIELD_FLOAT"
+				"gold"          		"8 16 24 40" 	// regular: 1.8
+			}
+            "02"
+			{
+				"var_type"              "FIELD_FLOAT"
+				"interval"          	"1" 	// regular: 1.8
+			}
+		}
+	}

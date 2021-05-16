@@ -1,0 +1,11 @@
+
+"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave"					"Sonic Wave"
+"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_Description"		"Creates a gigantic wave of sound in front of Queen of Pain, dealing heavy damage to all enemy units in its wake and pushing them back.\n\nUpgradable by Aghanim's Scepter."
+"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_Lore"				"Her most exquisite of all of torments, Akasha's Sonic Wave puts her poor foes out of their misery."
+"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_final_aoe"			"WAVE MAX RADIUS:"
+"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_damage"			"BASE DAMAGE:"
+"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_damage_scepter"	"SCEPTER DAMAGE:"
+"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_intelligence_damage"			"%INTELLIGENCE DAMAGE:"
+"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_mana_cost_pct"			"%MANA COST:"
+"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_aghanim_description"	"Increases damage."
+"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_Note0"					"Sonic Wave can hit units up to 1150 units away."

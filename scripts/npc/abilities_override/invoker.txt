@@ -1,0 +1,217 @@
+	
+	//卡尔
+	"invoker_chaos_meteor"
+	{
+		"AbilityCooldown"				"31"
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"travel_distance"		"780 930 1095 1245 1410 1575 1800 2000"
+				"levelkey"				"wexlevel"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"main_damage"			"70 95 120 145 170 195 220 245"
+				"LinkedSpecialBonus"		"special_bonus_unique_invoker_6"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
+				"levelkey"				"exortlevel"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"burn_dps"				"18.5 22 25.5 29 32.5 36 40.0 45.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_invoker_6"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
+				"levelkey"				"exortlevel"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+		}
+	}
+	"invoker_chaos_meteor_ad"
+	{
+		"AbilityCooldown"				"31"
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"travel_distance"		"780 930 1095 1245 1410 1575 1800 2000"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"main_damage"			"70 95 120 145 170 195 220 245"
+				"LinkedSpecialBonus"		"special_bonus_unique_invoker_6"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"burn_dps"				"18.5 22 25.5 29 32.5 36 40.0 45.0"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+		}
+	}
+	"invoker_cold_snap"
+	{
+		"AbilityCooldown"				"25"
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"freeze_duration"		"0.2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"freeze_cooldown"		"0.76 0.70 0.67 0.64 0.61 0.59 0.56 0.53"
+				"levelkey"				"quaslevel"	
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"freeze_damage"			"10 20 30 40 50 60 70 80"
+				"levelkey"				"quaslevel"	
+			}
+		}
+	}
+	"invoker_deafening_blast"
+	{
+		"AbilityCooldown"				"35"
+		"AbilitySpecial"
+		{
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"60 120 180 240 300 360 420 480"
+				"levelkey"				"exortlevel"
+			}
+		}
+	}
+	"invoker_emp"
+	{
+		"AbilityCooldown"				"24"
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_burned"			"250 325 400 475 550 625 700 800"
+				"levelkey"				"wexlevel"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_mana_pct"	"100"
+			}
+		}
+	}
+	"invoker_exort"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage_per_instance"	"9 18 27 36 45 54 63"
+			}
+		}
+	}
+	"invoker_forge_spirit"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"spirit_damage"			"35 46 57 68 79 90 101 112"
+				"levelkey"				"exortlevel"
+			}
+		}
+	}
+	"invoker_ghost_walk"
+	{
+		"AbilityCooldown"				"33"
+	}
+	"invoker_ice_wall"
+	{
+		"AbilityCooldown"				"18"
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_per_second"		"18 24 30 36 42 48 56 80"
+				"levelkey"				"exortlevel"
+			}
+		}
+	}
+	"invoker_quas"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"health_regen_per_instance"	"2 5 8 11 14 17 20"
+			}
+		}
+	}
+	"invoker_sun_strike"
+	{
+		"AbilityCooldown"				"18"
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"190 250 330 410 500 580 660 740"
+				"levelkey"				"exortlevel"
+			}
+		}
+	}
+	"invoker_tornado"
+	{
+		"AbilityCooldown"				"32"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"travel_distance"		"800 1200 1600 2000 2400 2800 3200 3600"
+				"levelkey"				"wexlevel"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lift_duration"			"0.3 0.6 0.8 1.1 1.4 1.7 2.0 2.3"
+				"LinkedSpecialBonus"	"special_bonus_unique_invoker_8"
+				"levelkey"				"quaslevel"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"wex_damage"			"180 230 280 330 380 430 480 530"
+				"levelkey"				"wexlevel"
+			}
+		}
+	}
+	"invoker_wex"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed_per_instance"	"10 15 20 25 30 35 40"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"move_speed_per_instance"	"2 4 6 8 10 12 14"
+			}
+		}
+	}

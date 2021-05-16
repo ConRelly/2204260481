@@ -1,0 +1,57 @@
+
+    "mjz_bloodseeker_bloodrage_autocast"
+    {
+		"BaseClass"						"ability_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_TOGGLE "
+        "AbilityTextureName"            "bloodseeker_bloodrage"
+
+        "AbilityCooldown"               "0.3"
+        "AbilityManaCost"				"0"
+
+		"MaxLevel"						"1"
+
+        "AbilitySpecial"
+        {
+        }
+
+        "OnToggleOn"
+        {
+            "ApplyModifier"
+            {
+                "ModifierName"      "modifier_mjz_bloodseeker_bloodrage_autocast"
+                "Target"            "CASTER"
+            }
+            "RunScript"
+            {
+                "ScriptFile"    "abilities/hero_bloodseeker/mjz_bloodseeker_bloodrage_autocast.lua"
+                "Function"      "Autocast"
+            }
+        }
+
+        "OnToggleOff"
+        {
+            "RemoveModifier"
+            {
+                "ModifierName"      "modifier_mjz_bloodseeker_bloodrage_autocast"
+                "Target"            "CASTER"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_mjz_bloodseeker_bloodrage_autocast"
+            {
+                "Passive"    "0"
+                "IsHidden"    "1"
+                "ThinkInterval" "2.0"
+                "OnIntervalThink"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"    "abilities/hero_bloodseeker/mjz_bloodseeker_bloodrage_autocast.lua"
+                        "Function"      "Autocast"
+                    }
+                }
+            }
+        }
+    }

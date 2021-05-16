@@ -1,0 +1,10 @@
+
+
+	"npc_dota_hero_skywrath_mage_mjz"			// 天怒法师
+	{
+		"override_hero"			"npc_dota_hero_skywrath_mage"
+
+		"Ability1"				"mjz_skywrath_mage_arcane_bolt"
+		"Ability6"				"mjz_skywrath_mage_mystic_flare"
+	}
+	

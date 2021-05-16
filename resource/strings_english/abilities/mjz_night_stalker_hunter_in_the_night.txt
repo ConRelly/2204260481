@@ -1,0 +1,8 @@
+    
+"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night"				    "Hunter in the Night"
+"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night_Description"	    "attacking and moving with great swiftness. Double the effect at night."
+"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night_Lore"	    		"The hunting prowess of Balanar improves as the night beckons."
+"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night_bonus_movement_speed_pct"	"%Move Speed Bonus: "
+"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night_bonus_attack_speed"			"Attack Speed Bonus: "
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_night_stalker_hunter_in_the_night_mspeed"		"+{s:value}% Hunter In The Night Movement Speed"
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_night_stalker_hunter_in_the_night_aspeed"		"+{s:value} Hunter In The Night Attack Speed"

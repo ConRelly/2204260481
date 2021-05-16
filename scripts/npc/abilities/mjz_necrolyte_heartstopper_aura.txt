@@ -1,0 +1,75 @@
+	
+	//=================================================================================================================
+	// Necrolyte: Heartstopper Aura		竭心光环
+	//=================================================================================================================
+	"mjz_necrolyte_heartstopper_aura"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_necrolyte/mjz_necrolyte_heartstopper_aura.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_AURA" // DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"mjz_necrolyte_heartstopper_aura"
+		//"AbilityCastRange"				"%radius"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"800"		// If you change this, also change the AbilityCastRange above
+			}
+			"02"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"base_damage"						"10 20 30 40" 
+			} 	
+			"03"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"intelligence_damage"				"50 80 110 140" 
+				"LinkedSpecialBonus"				"special_bonus_unique_mjz_necrolyte_heartstopper_aura_intelligence"
+			} 	
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_regen"			"3 4 5 6"
+			}		
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_regen"			"3 4 5 6"
+			}	
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"regen_duration"		"7"
+			}			
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hero_multiplier" 		"6"
+			}
+			"10"
+			{
+				"var_type"              "FIELD_FLOAT"
+				"interval"              "1.0"
+			}
+		}
+	}
+	"special_bonus_unique_mjz_necrolyte_heartstopper_aura_intelligence"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"250"
+			}
+		}
+	}

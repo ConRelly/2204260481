@@ -1,0 +1,125 @@
+
+	"mjz_storm_spirit_ball_lightning"
+	{
+		"BaseClass"						"ability_lua"	//"ability_datadriven"
+		"ScriptFile"					"abilities/hero_storm_spirit/mjz_storm_spirit_ball_lightning.lua"
+		"AbilityTextureName"			"mjz_storm_spirit_ball_lightning"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityManaCost"				"30"
+		"AbilityCooldown"				"1"
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
+			"particle"	"particles/units/heroes/hero_stormspirit/stormspirit_ball_lightning.vpcf"
+			"particle"	"particles/status_fx/status_effect_base.vpcf" // Only for dummy
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"ball_lightning_initial_mana_percentage"		"7"		
+			}
+			"02"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"ball_lightning_initial_mana_base"				"15"		
+			}
+			"03"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"ball_lightning_move_speed"			"1250 1875 2500"		
+			}
+			"04"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"ball_lightning_aoe"				"125 200 275"		
+			}
+			"05"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"ball_lightning_travel_cost_base"	"12"		
+			}
+			"06"
+			{
+				"var_type"								"FIELD_FLOAT"
+				"ball_lightning_travel_cost_percent"	"0.7"		
+			}
+			"07"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"ball_lightning_vision_radius"			"1000"		
+			}
+			// Extra variable
+			"08"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"tree_destroy_radius"					"100"
+			}
+			"09"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"distance_per_mana"						"100"
+			}
+			"10"
+			{
+				"var_type"								"FIELD_FLOAT"
+				"tree_destroy_interval"					"0.01"
+			}
+			"11"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"distance_per_damage"					"100"
+			}
+			"20"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_move_speed"					"120 220 320"		
+			}
+			"21"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"mana_percentage"					"4 6 8"		
+			}
+			"22"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"damage"							"120 240 360"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_storm_spirit_ball_lightning_01"
+			}
+			"23"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"radius"							"260"
+			}
+			"24"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"scepter_remnant_interval"			"300"		
+			}
+		}
+	}
+	"special_bonus_unique_mjz_storm_spirit_ball_lightning_01"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"200"
+			}
+		}
+	}

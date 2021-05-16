@@ -1,0 +1,5 @@
+    
+"DOTA_Tooltip_ability_mjz_tinker_quick_arm"												"快速装填"
+"DOTA_Tooltip_ability_mjz_tinker_quick_arm_Description"									"持续施法 - 修补匠的大多数物品和技能的冷却时间减少一半。"
+"DOTA_Tooltip_ability_mjz_tinker_quick_arm_Lore"										"这儿换块新电池，那儿塞几枚火箭弹，鲍什不断改进现有的技术。"
+"DOTA_Tooltip_ability_mjz_tinker_quick_arm_abilitychanneltime"							"快速装填所需时间："

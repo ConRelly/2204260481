@@ -1,0 +1,14 @@
+    
+	"DOTA_Tooltip_ability_mjz_antimage_counterspell"				    "Counterspell"
+	"DOTA_Tooltip_ability_mjz_antimage_counterspell_Description"	    "Passively grants you magic resistance. Causes Spell Shield to passively block and reflect a targeted spell once every %cooldown% seconds. Applies a shield to the target unit for %duration% seconds which re-casts most targeted spells back to their caster."
+	"DOTA_Tooltip_ability_mjz_antimage_counterspell_Lore"	    		""
+	"DOTA_Tooltip_ability_mjz_antimage_counterspell_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_antimage_counterspell_magic_resistance"	"%Magic Resistance Bonus: "
+	"DOTA_Tooltip_ability_mjz_antimage_counterspell_cast_range"			"Cast Range: "
+	"DOTA_Tooltip_ability_mjz_antimage_counterspell_duration"			"Duration: "
+	"DOTA_Tooltip_ability_mjz_antimage_counterspell_cooldown"			"Cooldown: "
+	"DOTA_Tooltip_modifier_mjz_spell_reflect"							"Counterspell"
+	"DOTA_Tooltip_modifier_mjz_spell_reflect_Description"	    		"To most of the directivity spell feedback to the caster."
+	"DOTA_Tooltip_modifier_mjz_spell_reflect_friendly"					"Counterspell"
+	"DOTA_Tooltip_modifier_mjz_spell_reflect_friendly_Description"	    "To most of the directivity spell feedback to the caster."
+	

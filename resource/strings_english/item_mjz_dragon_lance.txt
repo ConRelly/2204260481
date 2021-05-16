@@ -1,0 +1,11 @@
+		
+		//>>>>	MJZ Edible Dragon Lance
+		"DOTA_Tooltip_Ability_item_mjz_dragon_lance"	                        "Edible Dragon Lance"
+		"DOTA_Tooltip_ability_item_mjz_dragon_lance_Description"				"<h1>Active: Eat</h1><font color='#00FF40'>Increases attack range of ranged heroes.</font> \n\n<h1>Passive: Dragon's Reach</h1>Increases attack range of ranged heroes by %base_attack_range%."
+		"DOTA_Tooltip_ability_item_mjz_dragon_lance_bonus_agility"				"+$agi"
+		"DOTA_Tooltip_ability_item_mjz_dragon_lance_bonus_strength"				"+$str"
+		"DOTA_Tooltip_ability_item_mjz_dragon_lance_Lore"						"The forward charge of the wyvern host grants no quarter."
+		"DOTA_Tooltip_modifier_item_mjz_dragon_lance_stats"						"Edible Dragon Lance"
+		"DOTA_Tooltip_modifier_item_mjz_dragon_lance_stats_Description"			"Increases attack range of ranged heroes."
+		//<<<<
+		

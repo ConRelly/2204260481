@@ -1,0 +1,3 @@
+
+"DOTA_Tooltip_modifier_mjz_g_frozen"					"冻结"
+"DOTA_Tooltip_modifier_mjz_g_frozen_Description"		"你被冻结了。"

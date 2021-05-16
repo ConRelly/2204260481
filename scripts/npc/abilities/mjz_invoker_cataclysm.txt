@@ -1,0 +1,20 @@
+
+	"mjz_invoker_cataclysm"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_invoker/mjz_invoker_cataclysm.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"mjz_invoker_cataclysm"
+
+		"MaxLevel"						"1"
+		"BaseLevel"						"1"
+		
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"range"							"1000"
+			}
+		}
+	}

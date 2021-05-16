@@ -1,0 +1,68 @@
+
+	"mjz_zuus_thundergods_wrath"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_zuus/mjz_zuus_thundergods_wrath.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Zuus.GodsWrath"
+		"AbilityTextureName"			"mjz_zuus_thundergods_wrath"
+
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCooldown"				"90.0"
+		"AbilityManaCost"				"225 325 450"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"900"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"base_damage"				"20 30 40" 
+			} 	
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"intelligence_damage"		"100 200 300" 
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"count"						"6 10 14" 
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"interval"					"0.25" 
+			}
+			"11"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"sight_radius"					"900 900 900"
+			}
+			"15"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"sight_duration"				"3.0 3.0 3.0 3.0"
+			}
+		}
+		"precache"
+		{
+			"soundfile"		"sounds/weapons/hero/zuus/static_field.vsnd"
+			"particle"		"particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf"
+			"particle"		"particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start.vpcf"
+			"particle"		"particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start_bolt_parent.vpcf"
+		}
+	}
+

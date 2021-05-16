@@ -1,0 +1,13 @@
+    
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict"									"恶魔敕令"
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_Description"						"使拉席克周围的区域充满魔法爆炸，对敌方单位和建筑造成物理伤害。范围内的敌人越少，他们受到的伤害就越大。对防御塔额外造成%tower_bonus%%%的伤害。持续%duration%秒。"
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_Lore"								"古老的能量从一个位面向另一个位面爆发，将触碰到的一切化为灰烬。"
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_Note0"								"伤害不会被格挡类效果减免。"
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_Note1"								"即使拉席克死亡，爆炸还是会在原地继续。"
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_Note2"								"可以伤害建筑，技能免疫单位和隐身单位。"
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_radius"							"作用范围："
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_num_explosions"					"爆炸次数："
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_damage"					        "伤害："
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_duration"					        "持续时间："
+"DOTA_Tooltip_modifier_mjz_leshrac_diabolic_edict"                  "恶魔敕令"
+"DOTA_Tooltip_modifier_mjz_leshrac_diabolic_edict_Description"      "对周围的敌方单位造成伤害"

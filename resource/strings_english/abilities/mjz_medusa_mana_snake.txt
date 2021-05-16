@@ -1,0 +1,5 @@
+    
+	"DOTA_Tooltip_ability_mjz_medusa_mana_snake"				    "Mana Snake"
+	"DOTA_Tooltip_ability_mjz_medusa_mana_snake_Description"	    "Regenerates Medusa  mana equivalent to 14% of attack damage dealt."
+	"DOTA_Tooltip_ability_mjz_medusa_mana_snake_Lore"	    		"The snake will absorb the enemy mana."
+	"DOTA_Tooltip_ability_mjz_medusa_mana_snake_mana_steal"			"%MANA STEAL:"

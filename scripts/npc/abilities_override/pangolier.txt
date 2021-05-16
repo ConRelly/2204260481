@@ -1,0 +1,111 @@
+
+	"pangolier_lucky_shot"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance_pct"			"17"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"0.4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"35"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"					"3 4 5 6"
+			}
+		}
+	}
+	"pangolier_swashbuckle"
+	{
+		"MaxLevel"							"7"
+		"AbilityCooldown"				"22 20 18 16 14 12 10"
+		"AbilityManaCost"				"80 90 100 110 120 130 140"
+		"AbilitySpecial"
+		{
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"32 63 90 117 140 170 200"
+				"LinkedSpecialBonus"	"special_bonus_unique_pangolier_3"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"start_radius"			"300"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"end_radius"			"300"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strikes"				"6 8 10 12 14 16 18"
+			}
+		}
+	}
+	"pangolier_shield_crash"
+	{
+		"MaxLevel"							"1"
+		"AbilityCooldown"				    "12" 	//"17.0 14.0 11.0 8.0"
+		"AbilityManaCost"					"100"	//"90 100 110 120"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"200" //"100 175 250 325"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hero_stacks"			"10" //"9 12 15 18"
+			}
+		}
+	}
+	"pangolier_heartpiercer"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance_pct"			"16"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"0.8 1.05 1.3 1.55"
+			}
+		}
+	}
+	"pangolier_gyroshell"
+	{
+		"AbilityCastPoint"				"0.6"
+		"AbilityDamage"					"200 325 475"
+	}
+	"special_bonus_unique_pangolier_7"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"600"
+				"ad_linked_ability"			"pangolier_swashbuckle"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+	

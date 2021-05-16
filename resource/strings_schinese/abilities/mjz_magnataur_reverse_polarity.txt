@@ -1,0 +1,8 @@
+
+"DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity"						"两极反转"
+"DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_Description"			"马格纳斯改变物质的属性，将附近的敌人都拖拽到他的前方，并且以强力的震击对他们造成伤害和眩晕。"
+"DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_Lore"					"作战时愤怒的马格纳斯如同喷发的杰尔拉克山。"
+"DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_pull_radius"			"拖拽范围："
+"DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_polarity_damage"		"伤害："
+"DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_hero_stun_duration"	"眩晕时间："
+

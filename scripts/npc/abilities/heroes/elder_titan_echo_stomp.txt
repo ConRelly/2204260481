@@ -1,0 +1,72 @@
+"DOTAAbilities"
+{
+  //=================================================================================================================
+  // Elder Titan: Echo Stomp
+  //=================================================================================================================
+  "elder_titan_echo_stomp"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    //"ID"                                                  "5589"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityUnitDamageType"                               "DAMAGE_TYPE_PHYSICAL"
+    "SpellImmunityType"                                   "SPELL_IMMUNITY_ENEMIES_NO"
+    "SpellDispellableType"                                "SPELL_DISPELLABLE_YES_STRONG"
+    "FightRecapLevel"                                     "1"
+
+    "MaxLevel"                                            "6"
+    "RequiredLevel"                                       "1"
+    "LevelsBetweenUpgrades"                               "4"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastPoint"                                    "0.4"
+    "AbilityCastRange"                                    "500"
+    "AbilityChannelTime"                                  "0.1"
+    "AbilityCooldown"                                     "14 13 12 10 9 7"
+    "AbilityManaCost"                                     "85 90 95 100 105 110"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "cast_time"                                       "1.7"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "radius"                                          "750"
+      }
+      "03"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "sleep_duration"                                  "2.0 3.0 4.0 5.0 5.5 6.0"
+      }
+      "04"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "stomp_damage"                                    "170 400 930 1960 4420 12840"
+        "LinkedSpecialBonus"                              "special_bonus_unique_elder_titan_2"
+      }
+      "05"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "initial_stun_duration"                           "0.8"
+      }
+      "06"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "animation_rate"                                  "0.0"
+      }
+      "07"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "wake_damage_limit"                               "250 400 950 1800 9400 76000"
+        "LinkedSpecialBonus"                              "special_bonus_unique_elder_titan_4"
+      }
+    }
+  }
+}

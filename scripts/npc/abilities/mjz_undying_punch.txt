@@ -1,0 +1,94 @@
+
+
+	//=================================================================================================================
+	// Undying : Undying Punch		尸王拳
+	//=================================================================================================================
+	"mjz_undying_punch"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"            "mjz_undying_punch"
+		"MaxLevel"				"1"
+
+		"precache"
+		{
+			"soundfile"         "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+			"particle"          "particles/units/heroes/hero_life_stealer/life_stealer_feast.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_leech_percent"		"7"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_mjz_undying_punch"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+
+				"OnAttackStart"
+				// "%attack_damage" is set to the damage value before mitigation
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_mjz_undying_punch_damage"
+						"Target" 		"CASTER"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/hero_undying/mjz_undying_punch.lua"
+						"Function"			"undying_attack"
+						"feast_modifier"	"modifier_mjz_undying_punch_damage"
+					}
+				}
+
+				"OnAttack"
+				{
+					"FireEffect"
+					{
+						"EffectName"        "particles/generic_gameplay/generic_lifesteal.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "CASTER"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/hero_undying/mjz_undying_punch.lua"
+						"Function"		"undying_heal"
+					}
+				}			
+			}
+
+			"modifier_mjz_undying_punch_damage"
+			{
+				"IsHidden"		"1"
+				"IsPurgable"	"0"
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_mjz_undying_punch_damage"
+						"Target" 		"CASTER"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "1"
+				}
+			}
+		}
+	}
+		
+	
+	

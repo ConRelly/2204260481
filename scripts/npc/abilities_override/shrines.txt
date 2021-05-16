@@ -1,0 +1,60 @@
+
+//=================================================================================================================
+	// Filler buildings ability (Shrines) 神坛 - 庇佑
+	//=================================================================================================================
+	"filler_ability"
+	{
+
+		"AbilityCooldown"				"150"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_heal"				"180"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mp_heal"				"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_heal_growth"		"0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mp_heal_growth"		"0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_heal_pct"				"4"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mp_heal_pct"				"4"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"10000"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"initial_cooldown"		"60"
+			}
+		}
+	}
+	
+	

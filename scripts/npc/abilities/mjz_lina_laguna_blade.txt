@@ -1,0 +1,99 @@
+
+	//=================================================================================================================
+	// 	Lina : Laguna Blade				神灭斩
+	//=================================================================================================================
+	"mjz_lina_laguna_blade"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_lina/mjz_lina_laguna_blade.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"							// Changes dynamically with scepter	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"mjz_lina_laguna_blade"
+		"HasScepterUpgrade"				"1"
+
+		"AbilityCastRange"				"%cast_range"
+		"AbilityCastPoint"				"0.45 0.45 0.45"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		"AbilityCooldown"				"70.0 60.0 50.0"
+		"AbilityManaCost"				"280 420 680"
+			
+		"AbilityModifierSupportValue"	"0.0"	// Modifier just delays damage
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range"				"600"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range_scepter"		"800"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"450 675 950"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_scepter"			"550 775 1050"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_per_kill"			"50"
+			}
+			"06"							//击杀计算时间（多少秒内死亡可以有伤害加成）
+			{
+				"var_type"					"FIELD_FLOAT"
+				"kill_grace_duration"		"5"
+			}
+			"07"							//击杀普通单位的血量总值超过指定值，才算一层；不超过就累计击杀血量值
+			{
+				"var_type"					"FIELD_INTEGER"
+				"creature_health"			"1500"
+			}
+			"09"							//技能溅射范围
+			{
+				"var_type"					"FIELD_FLOAT"
+				"splash_radius_scepter"		"325"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana_cost_scepter"			"240 380 640"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown_scepter"			"50.0 40.0 30.0"
+			}
+			"20"							//击杀普通单位是否会伤害加成（大于0，表示开启）
+			{
+				"var_type"					"FIELD_INTEGER"
+				"creature_enabled"			"1"
+			}
+			"22"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_delay"				"0.25"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+			"particle"			"particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf"
+			"particle"			"particles/econ/items/lina/lina_ti6/lina_ti6_laguna_blade.vpcf"
+		}
+	}

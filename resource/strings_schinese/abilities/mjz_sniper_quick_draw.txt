@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_sniper_quick_draw"				    "快枪手"
+	"DOTA_Tooltip_ability_mjz_sniper_quick_draw_Description"	    "你的等级越高你的攻击速度越快。"
+	"DOTA_Tooltip_ability_mjz_sniper_quick_draw_Lore"	    		""
+	"DOTA_Tooltip_ability_mjz_sniper_quick_draw_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_sniper_quick_draw_max_stacks"			"最大层数："
+	"DOTA_Tooltip_ability_mjz_sniper_quick_draw_attack_speed"		"每层攻击速度加成："
+	"DOTA_Tooltip_modifier_mjz_sniper_quick_draw_buff"				"快枪手"
+	"DOTA_Tooltip_modifier_mjz_sniper_quick_draw_buff_Description"	"你的等级越高你的攻击速度越快。"
+	

@@ -1,0 +1,7 @@
+
+"DOTA_Tooltip_ability_mjz_dragon_knight_dragon_blood"								"龙族血统"
+"DOTA_Tooltip_ability_mjz_dragon_knight_dragon_blood_Description"					"龙族的鲜血能提高龙骑士的生命恢复速度以及护甲。"
+"DOTA_Tooltip_ability_mjz_dragon_knight_dragon_blood_Lore"							"斯莱瑞克的血液流遍达维安的全身，他获得了寻常骑士身上双倍的活力。"
+"DOTA_Tooltip_ability_mjz_dragon_knight_dragon_blood_bonus_health_regen"			"生命恢复："
+"DOTA_Tooltip_ability_mjz_dragon_knight_dragon_blood_bonus_armor"					"护甲提升："
+"DOTA_Tooltip_ability_mjz_dragon_knight_dragon_blood_hp_regen_amp"					"%生命恢复增强："

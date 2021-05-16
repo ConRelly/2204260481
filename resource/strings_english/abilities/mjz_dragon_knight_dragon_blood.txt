@@ -1,0 +1,7 @@
+
+"DOTA_Tooltip_ability_mjz_dragon_knight_dragon_blood"								"Dragon Blood"
+"DOTA_Tooltip_ability_mjz_dragon_knight_dragon_blood_Description"					"The life blood of the Dragon improves health regeneration and strengthens armor."
+"DOTA_Tooltip_ability_mjz_dragon_knight_dragon_blood_Lore"							"Slyrak's blood still courses through Davion's veins, giving him twice the vitality of an ordinary knight."
+"DOTA_Tooltip_ability_mjz_dragon_knight_dragon_blood_bonus_health_regen"			"HEALTH REGEN:"
+"DOTA_Tooltip_ability_mjz_dragon_knight_dragon_blood_bonus_armor"					"ARMOR:"
+"DOTA_Tooltip_ability_mjz_dragon_knight_dragon_blood_hp_regen_amp"					"%HP Regen Amp:"

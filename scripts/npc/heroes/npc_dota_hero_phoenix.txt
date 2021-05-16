@@ -1,0 +1,12 @@
+
+	"npc_dota_hero_phoenix_mjz"			// 凤凰
+	{
+		"override_hero"			"npc_dota_hero_phoenix"
+		
+		"Ability1"				"mjz_phoenix_icarus_dive"
+		"Ability3"				"mjz_phoenix_sun_ray"
+		// "Ability4"				"phoenix_sun_ray_toggle_move"
+		"Ability4"				"mjz_phoenix_sun_ray_toggle_move"
+		"Ability6"				"mjz_phoenix_supernova"
+	}
+	

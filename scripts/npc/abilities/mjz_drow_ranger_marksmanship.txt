@@ -1,0 +1,72 @@
+
+	//=================================================================================================================
+	// Drow Ranger's Marksmanship
+	//=================================================================================================================
+	"mjz_drow_ranger_marksmanship"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_drow_ranger/mjz_drow_ranger_marksmanship.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"mjz_drow_ranger_marksmanship"
+
+		"HasScepterUpgrade"				"1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_agility"					"20 40 60"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"chance_1x"						"14 18 22"
+				"LinkedSpecialBonus"		"special_bonus_unique_drow_ranger_3"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"chance_2x"						"5 11 16"
+				"LinkedSpecialBonus"		"special_bonus_unique_drow_ranger_3"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"chance_3x"						"4 6 8"
+				"LinkedSpecialBonus"		"special_bonus_unique_drow_ranger_3"
+			}
+			"13"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"split_count_scepter"			"2"
+			}
+			"14"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"split_range_scepter"			"375"
+			}
+			"15"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_reduction_scepter"		"50"
+			}
+			"16"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"arrow_speed_scepter"			"1250"
+			}
+		}
+
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_drow/drow_marksmanship_attack.vpcf"
+			"particle"	"particles/units/heroes/hero_drow/drow_marksmanship.vpcf"
+			"particle"	"particles/units/heroes/hero_drow/drow_marksmanship_start.vpcf"
+			"particle"	"particles/units/heroes/hero_drow/drow_marksmanship_frost_arrow.vpcf"
+			"particle"	"particles/units/heroes/hero_drow/drow_base_attack.vpcf"
+		}
+	}

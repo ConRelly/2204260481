@@ -1,0 +1,96 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Spectre: Einherjar
+	//=================================================================================================================
+	"spectre_einherjar_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/spectre_einherjar_lua/spectre_einherjar_lua"
+		"AbilityTextureName"			"spectre_einherjar_lua"
+		"FightRecapLevel"				"2"
+		"MaxLevel"						"5"
+		"precache"
+		{
+			"particle"				"particles/status_fx/status_effect_keeper_spirit_form.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_spectre.vsndevts"
+		}
+
+		"HasScepterUpgrade"			"1"
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+        "AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+        "AbilityCastRange"				"1400"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60"
+
+		// Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"250"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+            {
+            	"var_type"					"FIELD_FLOAT"
+            	"duration"					"22.0"
+                "LinkedSpecialBonus"        "special_bonus_unique_morphling_8"
+            }
+            "02"
+            {
+            	"var_type"					"FIELD_INTEGER"
+            	"illusion_damage_outgoing"	"-30 -20 10 50 100"
+            }
+            "03"
+            {
+            	"var_type"					"FIELD_INTEGER"
+            	"tooltip_outgoing"	        "70 20 110 150 200"
+            }
+            "04"
+            {
+            	"var_type"					"FIELD_INTEGER"
+            	"illusion_damage_incoming"	"20"
+            }
+            "05"
+            {
+            	"var_type"					"FIELD_INTEGER"
+            	"tooltip_illusion_total_damage_incoming"	"120"
+            }
+            "06"
+            {
+            	"var_type"					"FIELD_INTEGER"
+            	"scepter_illusion_damage_incoming"	"-25"
+            }
+            "07"
+            {
+            	"var_type"					"FIELD_INTEGER"
+            	"tooltip_scepter_illusion_total_damage_incoming"	"25"
+            }
+            "08"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "agi_multiplier"			"3.0 5.0 6.0 7.0 10.0"
+            }
+            "09"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "radius"			        "1400"
+            }
+		}
+	}
+}

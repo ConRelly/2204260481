@@ -1,0 +1,89 @@
+
+	//=================================================================================================================
+	//	Pudge: Rot
+	//=================================================================================================================
+	"mjz_pudge_rot"
+	{
+		"BaseClass"						"ability_lua"	//	"ability_datadriven"
+		"ScriptFile"					"abilities/hero_pudge/mjz_pudge_rot.lua"
+		"AbilityTextureName"			"mjz_pudge_rot"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		
+		// "AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCooldown"				"1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rot_radius"			"370"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rot_tick"				"0.2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"rot_slow"				"-14 -20 -26 -32"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_damage"			"30 60 90 120"
+				// "LinkedSpecialBonus"	"special_bonus_unique_pudge_2"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_pudge_rot_damage"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_damage_pct"		"6 8 10 12"
+				// "LinkedSpecialBonus"	"special_bonus_unique_pudge_4"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_pudge_rot_health"
+			}
+		}
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
+			"particle"			"particles/units/heroes/hero_pudge/pudge_rot.vpcf"
+			"particle"			"particles/units/heroes/hero_pudge/pudge_rot_recipient.vpcf"
+		}
+	}
+	"special_bonus_unique_mjz_pudge_rot_damage"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"40"
+			}
+		}
+	}
+	"special_bonus_unique_mjz_pudge_rot_health"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"8"
+			}
+		}
+	}

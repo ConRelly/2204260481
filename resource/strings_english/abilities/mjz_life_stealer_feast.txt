@@ -1,0 +1,9 @@
+
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast"				"Feast"
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Description"	"Lifestealer's attacks damage enemies and heal himself for a percentage of his max strength."
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Lore"			"After escaping from his cell in Devarque, N'aix subsisted on flesh and bones of those unfortunate to cross his path."
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast_str_damage_pct"	"%MAX STRENGTH:"
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Note0"	"Stacks additively with other sources of Lifesteal."
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Note1"	"Affects Spell Immune units."
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Note2"	"The heal is independent of the damage."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_life_stealer_feast_strength"	"+50% Feast Damage/Lifesteal"

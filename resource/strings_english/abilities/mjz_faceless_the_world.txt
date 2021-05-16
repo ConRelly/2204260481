@@ -1,0 +1,12 @@
+
+	"DOTA_Tooltip_ability_mjz_faceless_the_world"				    	"THE WORLD"
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_Description"	    	"Creates a blister in spacetime, trapping all units caught in its sphere of influence and causes you to move very quickly inside it. Only Faceless Void and his teammates are unaffected. Invisible units in the sphere will be revealed."
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_Lore"	    			"When a rift opens to Claszureme, all poor souls caught within will likely never return."
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_radius"				"RADIUS:"
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_duration"				"DURATION:"
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_duration_scepter"				"SCEPTER DURATION:"
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_Aghanim_Description"			"Increases duration. "
+	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_friendly"				"THE WORLD"
+	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_enemy"				"THE WORLD"
+	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_enemy_Description"	"Trapped in spacetime. Unable to move or act."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_faceless_the_world_radius"		"+175 THE WORLD AoE"

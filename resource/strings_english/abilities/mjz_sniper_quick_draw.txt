@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_sniper_quick_draw"				    "Quick Draw"
+	"DOTA_Tooltip_ability_mjz_sniper_quick_draw_Description"	    "Your level, the higher your attack speed is faster."
+	"DOTA_Tooltip_ability_mjz_sniper_quick_draw_Lore"	    		""
+	"DOTA_Tooltip_ability_mjz_sniper_quick_draw_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_sniper_quick_draw_max_stacks"			"Max Stacks: "
+	"DOTA_Tooltip_ability_mjz_sniper_quick_draw_attack_speed"		"Attack Speed Bonus per Stack: "
+	"DOTA_Tooltip_modifier_mjz_sniper_quick_draw_buff"				"Quick Draw"
+	"DOTA_Tooltip_modifier_mjz_sniper_quick_draw_buff_Description"	"Your level, the higher your attack speed is faster."
+	

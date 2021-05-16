@@ -1,0 +1,62 @@
+"DOTAAbilities"
+{
+  //=================================================================================================================
+  // Ability: Mirana Leap
+  //=================================================================================================================
+  "mirana_leap"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "5050"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+    "SpellDispellableType"                                "SPELL_DISPELLABLE_YES"
+    "MaxLevel"                                            "6"
+
+    // Time
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"                                     "0"
+    "AbilityCharges"                                      "3"
+    "AbilityChargeRestoreTime"                            "7" //OAA
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"                                     "40"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "leap_distance"                                   "575"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "leap_speed"                                      "1300.0"
+      }
+      "03"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "leap_acceleration"                               "6000.0"
+      }
+      "04"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "leap_speedbonus"                                 "8 16 24 32 40 48"
+      }
+      "05"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "leap_speedbonus_as"                              "25 50 75 100 150 300"
+        "LinkedSpecialBonus"                              "special_bonus_unique_mirana_1"
+      }
+      "06"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "leap_bonus_duration"                             "3.5"
+      }
+    }
+  }
+}

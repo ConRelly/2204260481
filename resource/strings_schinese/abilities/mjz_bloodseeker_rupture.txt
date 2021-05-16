@@ -1,0 +1,7 @@
+    
+	"DOTA_Tooltip_ability_mjz_bloodseeker_rupture"				    "割裂"
+	"DOTA_Tooltip_ability_mjz_bloodseeker_rupture_Description"	    "伤害输出提升 %damage_increase_outgoing_pct%% 。"
+	"DOTA_Tooltip_ability_mjz_bloodseeker_rupture_Lore"	    		""
+	"DOTA_Tooltip_ability_mjz_bloodseeker_rupture_damage_increase_outgoing_pct"				"%伤害输出提升："
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_bloodseeker_rupture_01"					"+{s:value}% 割裂伤害"
+	

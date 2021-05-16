@@ -1,0 +1,70 @@
+"DOTAAbilities"
+{
+  //=================================================================================================================
+  // Dark Willow: Bedlam
+  //=================================================================================================================
+  "dark_willow_bedlam"
+ {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "6340" // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "AbilityUnitTargetTeam"                               "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitDamageType"                               "DAMAGE_TYPE_MAGICAL"
+    "SpellImmunityType"                                   "SPELL_IMMUNITY_ENEMIES_NO"
+    "SpellDispellableType"                                "SPELL_DISPELLABLE_NO"
+    "FightRecapLevel"                                     "1"
+
+    "MaxLevel"                                            "6"
+
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"                                     "40"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"                                     "100 150 200 300 400 500"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "attack_damage"                                   "290 995 2825 4100 9250 21250" //OAA
+        "LinkedSpecialBonus"                              "special_bonus_unique_dark_willow_4"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "attack_interval"                                 "0.20"
+      }
+      "03"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "attack_radius"                                   "800"
+      }
+      "04"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "attack_targets"                                  "1"
+      }
+      "05"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "roaming_radius"                                  "300"
+      }
+      "06"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "roaming_seconds_per_rotation"                    "1.8"
+      }
+      "07"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "roaming_duration"                                "15.0"
+      }
+    }
+  }
+}

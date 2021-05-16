@@ -1,0 +1,33 @@
+	
+	"mjz_dragon_knight_dragon_blood"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_dragon_knight/mjz_dragon_knight_dragon_blood.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjz_dragon_knight_dragon_blood"
+
+		//"HasScepterUpgrade"				"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_health_regen"			"4 8 12 16"
+				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_armor"					"3 6 9 12"
+				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"hp_regen_amp"					"35"
+			}
+		}
+	}

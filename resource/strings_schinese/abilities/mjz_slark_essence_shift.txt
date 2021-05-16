@@ -1,0 +1,14 @@
+    
+	"DOTA_Tooltip_ability_mjz_slark_essence_shift"				    "能量转移"
+	"DOTA_Tooltip_ability_mjz_slark_essence_shift_Description"	    "每次杀死一个敌方单位，或者附近有敌方单位死亡时，他将获得额外的属性。开启后下次攻击时，将会连续攻击敌人数次。"
+	"DOTA_Tooltip_ability_mjz_slark_essence_shift_Lore"	    		"对敌人每攻击一次，斯拉克对他们的弱点就多了解一分。"
+	"DOTA_Tooltip_ability_mjz_slark_essence_shift_Note0"	    	""
+	"DOTA_Tooltip_ability_mjz_slark_essence_shift_heap_range"		"敌人死亡范围："
+	"DOTA_Tooltip_ability_mjz_slark_essence_shift_heap_amount"		"每次死亡敏捷加成："
+	"DOTA_Tooltip_ability_mjz_slark_essence_shift_attack_count"		"快速攻击次数："
+	"DOTA_Tooltip_modifier_mjz_slark_essence_shift_heap"					"能量转移"
+	"DOTA_Tooltip_modifier_mjz_slark_essence_shift_heap_Description"	   	"获得额外的属性。\n 力量 +%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%, 敏捷 +%dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%, 智力 +%dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS% "
+	"DOTA_Tooltip_modifier_mjz_slark_essence_shift_fast_attack"					"快速攻击"
+	"DOTA_Tooltip_modifier_mjz_slark_essence_shift_fast_attack_Description"	   	"快速攻击敌人%dMODIFIER_PROPERTY_TOOLTIP%次。 "
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_slark_essence_shift_attack_count"	"+{s:value} 能量转移攻击次数"
+	

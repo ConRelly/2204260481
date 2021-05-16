@@ -1,0 +1,48 @@
+""
+{
+	"Items"
+	{		
+		"#DOTA_Item_Build_Starting_Items"
+		{
+			"item"		"item_dragon_scale"
+			"item"		"item_philo_stone_temp"		
+  		}
+		
+		"#DOTA_Item_Build_Early_Game"
+		{	
+			"item"		"item_plain_perma"
+			"item"		"item_essence_ring"
+			"item"		"item_helm_of_the_undying"
+		}
+		
+		"#DOTA_Item_Build_Mid_Items"			
+		{
+			"item"		"item_imba_greater_crit"
+			"item"		"item_fire_rapier" 
+			"item"		"item_mjz_assault_5" 	
+			"item"		"item_ultimate_scepter"	
+		}
+		
+		"#DOTA_Item_Build_Late_Items"			
+		{
+			"item"		"item_mjz_vladmir_v2"
+  			"item"  	"item_radiance_armor_green"
+			"item"		"item_earth_rapier"
+			"item"		"item_sanguine"
+  			"item"		"item_pipe_2"
+			"item"		"item_mjz_preserved_skull"
+			"item"		"item_dragon_head_2"
+			"item"		"item_tome_bargain"
+		}
+
+		"#DOTA_Item_Build_Luxury"
+		{
+			"item"		"item_all_essence"  
+			"item"		"item_weapon_fragment"  
+			"item"		"item_weapon_fragment_complete"
+			"item"		"item_enchanter"
+			"item"		"item_edible_complete"
+			"item"		"item_greater_elemental"
+		}	
+	}
+}

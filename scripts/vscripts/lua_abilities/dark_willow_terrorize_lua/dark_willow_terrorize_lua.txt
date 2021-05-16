@@ -1,0 +1,81 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Dark Willow: Terrorize (Lua version)
+	//=================================================================================================================
+	"dark_willow_terrorize_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/dark_willow_terrorize_lua/dark_willow_terrorize_lua"
+		"AbilityTextureName"			"dark_willow_terrorize_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"5"
+		"LinkedAbility"					"dark_willow_bedlam_lua"
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_dark_willow.vsndevts"
+			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_wisp_spell_marker.vpcf"
+			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_wisp_spell_channel.vpcf"
+			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_wisp_spell.vpcf"
+			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_wisp_spell_debuff.vpcf"
+			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_wisp_spell_fear_debuff.vpcf"
+			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_willowisp_ambient.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1900"
+		"AbilityCastPoint"				"1.0"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60"
+		"AbilityManaCost"				"200"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"destination_travel_speed"	"2000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"destination_radius"		"450"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"destination_status_duration"	"3.2 3.4 3.6 3.8 4.0 4.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"return_travel_speed"	"500"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"starting_height"		"300"
+			}
+		}
+	}
+}

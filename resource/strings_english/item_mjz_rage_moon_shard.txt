@@ -1,0 +1,8 @@
+
+		"DOTA_Tooltip_Ability_item_mjz_rage_moon_shard"	                        "Rage Moon Shard"
+		"DOTA_Tooltip_ability_item_mjz_rage_moon_shard_Description"				"<h1>Active: Consume</h1><font color='#00FF40'>Consume the Rage Moon Shard to permanently gain %consumed_bonus_attack_speed% attack speed and %consumed_bonus_night_vision% bonus night vision. Base attack time reduced by %consumed_bonus_attack_time%. Max 1 use.</font> \n\n<h1>Passive: Shade Sight</h1>Grants %bonus_night_vision% bonus night vision."
+		"DOTA_Tooltip_ability_item_mjz_rage_moon_shard_bonus_attack_speed"		"+Attack speed: "
+		"DOTA_Tooltip_ability_item_mjz_rage_moon_shard_Lore"					""
+		"DOTA_Tooltip_modifier_item_mjz_rage_moon_shard_stats"					"Rage Moon Shard"
+		"DOTA_Tooltip_modifier_item_mjz_rage_moon_shard_stats_Description"		"Permanently increases attack speed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% and night vision by %dMODIFIER_PROPERTY_BONUS_NIGHT_VISION%.Base attack time reduced by 0.2"
+		

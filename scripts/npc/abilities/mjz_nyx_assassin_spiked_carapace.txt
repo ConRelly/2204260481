@@ -1,0 +1,58 @@
+
+	//=================================================================================================================
+	// Nyx Assassin: Spiked Carapace
+	//=================================================================================================================
+	"mjz_nyx_assassin_spiked_carapace"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_nyx_assassin/mjz_nyx_assassin_spiked_carapace.lua"
+		"AbilityTextureName"			"mjz_nyx_assassin_spiked_carapace"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_NyxAssassin.SpikedCarapace"
+
+		"AbilityCooldown"				"5"
+		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityManaCost"				"10"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"mana_cost_per"				"1 2 3 4"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"0.1 0.2 0.3 0.4"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_interval"				"4"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_reduction_pct"			"-20"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_reflect_pct"		"80 100 120 140"
+				"LinkedSpecialBonus"		"special_bonus_unique_nyx"
+			}
+		}
+
+		"precache"
+		{
+			"particle"		"particles/generic_gameplay/generic_stunned.vpcf"
+			"particle"		"particles/units/heroes/hero_nyx_assassin/nyx_assassin_spiked_carapace.vpcf"
+			"particle"		"particles/units/heroes/hero_nyx_assassin/nyx_assassin_spiked_carapace_hit.vpcf"
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
+		}
+	}
+

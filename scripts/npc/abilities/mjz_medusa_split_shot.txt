@@ -1,0 +1,174 @@
+
+	//=================================================================================================================
+	// Medusa: Split Shot				分裂箭
+	//=================================================================================================================
+	"mjz_medusa_split_shot"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetFlag"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityTextureName"			"medusa_split_shot"	// "mjz_medusa_split_shot"
+
+		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+			"particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
+			"particle"			"particles/units/heroes/hero_medusa/medusa_base_attack.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_modifier"		"-10"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_modifier_tooltip"		"90"
+			}
+			"03"
+			{	
+				"var_type"					"FIELD_INTEGER"
+				"arrow_count"				"1 2 4 8"
+				"LinkedSpecialBonus"		"special_bonus_unique_medusa_2"
+			}
+			"04"
+			{	
+				"var_type"					"FIELD_INTEGER"
+				"total_arrow_count"				"3 4 5 9"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"900"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"1200"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"UseCastAttackOrb"		"0"
+				"LinkedSpecialBonus"	"special_bonus_unique_medusa_4"
+			}
+		}
+
+		"OnToggleOn"
+		{
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target"            "CASTER"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_mjz_medusa_split_shot"
+				"Target" 		"CASTER"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hero_medusa/mjz_medusa_split_shot.lua"
+				"Function"		"OnToggleOn"
+			}
+		}
+
+		"OnToggleOff"
+		{
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target"            "CASTER"
+			}
+
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_mjz_medusa_split_shot"
+				"Target"
+				{
+					"Center"	"CASTER"
+					"Flags" 	"DOTA_UNIT_TARGET_FLAG_DEAD"
+				}
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hero_medusa/mjz_medusa_split_shot.lua"
+				"Function"		"OnToggleOff"
+			}
+		}
+
+		"OnOwnerSpawned"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/hero_medusa/mjz_medusa_split_shot.lua"
+				"Function"			"OnOwnerSpawned"
+			}				
+		}
+		"OnOwnerDied"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"abilities/hero_medusa/mjz_medusa_split_shot.lua"
+				"Function"			"OnOwnerDied"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			
+			"FireSound"
+			{
+				"EffectName"	"Hero_Medusa.AttackSplit"
+				"Target" 		"TARGET"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hero_medusa/mjz_medusa_split_shot.lua"
+				"Function"		"SplitShotDamage"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_mjz_medusa_split_shot"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+		
+				"OnAttack"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/hero_medusa/mjz_medusa_split_shot.lua"
+
+						"Function"		"OnAttackStart"
+						"split_shot_projectile"	"particles/units/heroes/hero_medusa/medusa_base_attack.vpcf"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%damage_modifier" 
+				}
+			}
+		}
+	}

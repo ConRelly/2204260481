@@ -1,0 +1,13 @@
+
+"DOTA_Tooltip_ability_item_random_get_ability"	"随机获得技能"
+"DOTA_Tooltip_modifier_power_boss"	"能力提升"
+"game_mode_endless_enabled"			"无尽模式激活"
+"game_mode_endless_begin"			"无尽模式开始"
+"game_mode_mana_enabled"			"无蓝耗模式激活"
+"game_mode_double_monsters_enabled"			"怪物数量翻倍"
+"game_mode_single_player"				"单人模式"
+"DOTA_Tooltip_modifier_gm_single_fort"	"单人模式"
+"DOTA_Tooltip_modifier_mjz_zero_mana"	"无蓝耗模式"
+"DOTA_Tooltip_modifier_mjz_zero_mana_alone"	"无蓝耗"
+"DOTA_Tooltip_modifier_mjz_zero_mana_alone_Description"	"不推荐。"
+"npc_dota_tower_rock_golem"			"岩石傀儡"

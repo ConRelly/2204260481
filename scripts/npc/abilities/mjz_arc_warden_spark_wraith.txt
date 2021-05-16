@@ -1,0 +1,57 @@
+
+	"mjz_arc_warden_spark_wraith"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_arc_warden/mjz_arc_warden_spark_wraith.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE" //"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"mjz_arc_warden_spark_wraith"
+		"AbilitySound"					"Hero_ArcWarden.SparkWraith.Activate"
+		
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"proc_chance"					"40"
+				"LinkedSpecialBonus"			"special_bonus_unique_mjz_arc_warden_0302"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"wraith_speed"					"900"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"spark_damage"					"100 170 240 310"
+				"LinkedSpecialBonus"			"special_bonus_unique_arc_warden"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"  	"soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
+			"particle"      "particles/units/heroes/hero_arc_warden/arc_warden_wraith.vpcf"
+			"particle"		"particles/units/heroes/hero_arc_warden/arc_warden_wraith_prj.vpcf"
+		}
+	}
+	"special_bonus_unique_mjz_arc_warden_0302"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"10"
+			}
+		}
+	}
+

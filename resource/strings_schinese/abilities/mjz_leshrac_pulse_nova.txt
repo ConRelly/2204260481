@@ -1,0 +1,14 @@
+    
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova"				    "脉冲新星"
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_Description"	    "拉席克在他周围创造破坏性的能量波，每秒对附近敌方单位造成伤害。"
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_aghanim_description"				"提升技能伤害。"
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_Lore"	    		"必要时，受折磨的灵魂能操纵时空本身，毁灭弱小的存在。"
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_Note0"	    		"每1秒造成一次伤害，切换为开时立即开始"
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_radius"					"范围："
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_mana_cost_per_second"		"每秒魔法消耗："
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_damage"					"每秒伤害："
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_damage_scepter"			"神杖升级每秒伤害："
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_damage_intelligence_per"	"%智力伤害："
+	"DOTA_Tooltip_modifier_mjz_leshrac_pulse_nova" "脉冲新星"
+	"DOTA_Tooltip_modifier_mjz_leshrac_pulse_nova_Description" "对周围的敌方单位造成伤害"
+	

@@ -1,0 +1,335 @@
+
+	//=================================================================================
+	// Creature: Siltbreaker
+	// Zones: silt_arena
+	"npc_dota_creature_siltbreaker"
+	{
+		"vscripts"					"ai/ai_siltbreaker.lua"
+
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/siltbreaker/siltbreaker.vmdl"
+		"SoundSet"					"Roshan"
+		"Level"						"50"
+		"ModelScale" 				"2.6" // phase modelscales: 2.6, 2.9, 3.2
+		"ConsideredHero"			"1"
+		//"IsAncient"					"1"
+		//"IsBossMonster"				"1"
+
+		"MinimapIcon"				"minimap_roshancamp"
+		"MinimapIconSize"			"250"
+
+		"Ability1"					"siltbreaker_passive"
+		"Ability2"					"siltbreaker_kraken_shell"	//"tidehunter_kraken_shell"	//
+		"Ability3"					"siltbreaker_tail_spin_ccw"
+		"Ability4"					"siltbreaker_sprint"
+		"Ability5"					"siltbreaker_teleport"
+		"Ability6"					"siltbreaker_line_wave"
+		"Ability7"					"siltbreaker_mind_control"
+		"Ability8"					"siltbreaker_summon_minions"
+		"Ability9"					"siltbreaker_summon_minions_medium"
+		"Ability10"					"siltbreaker_summon_clone"
+		"Ability11"					"siltbreaker_mouth_beam"
+		"Ability12"					"siltbreaker_waves"
+		"Ability13"					"siltbreaker_torrents"
+		"Ability14"					"siltbreaker_go_phase_two"
+		"Ability15"					"siltbreaker_go_phase_three"
+
+		"ArmorPhysical"				"75"
+		"MagicalResistance"			"40"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"1800"
+		"AttackDamageMax"			"2000"
+		"AttackRate"				"1.0" //"1.5"
+		"AttackAnimationPoint"		"0.56"
+		"AttackAcquisitionRange"	"1800"
+		"AttackRange"				"350"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"0"
+
+		"RingRadius"				"75"
+		"HealthBarOffset"			"650"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HUGE"
+
+		"BountyXP"					"0" //"2000"
+		"BountyGoldMin"				"0" //"1000"
+		"BountyGoldMax"				"0" //"2000"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"450"
+		"MovementTurnRate"			"0.25"
+
+		"StatusHealth"				"350000"
+		"StatusHealthRegen"			"300"
+		"StatusMana"				"10000"
+		"StatusManaRegen"			"500"
+		
+		"VisionDaytimeRange"		"1600"
+		"VisionNighttimeRange"		"1600"
+
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"HasInventory"				"1"
+		"Creature"
+		{
+			//"DisableResistance"			"100.0"
+			//"DisableClumpingBehavior"	"1"
+			"States"
+			{
+				"Invade"
+				{
+						"Name"                          "Invade"
+						"Aggression"            		"100.0"
+						"Avoidance"                     "0.0"
+						"Support"                       "0.0"
+				}
+			}
+			"DefaultState"                          "Invade"
+
+			"EquippedItems"
+			{
+				"Shivas" 				{ "Item"		"item_shivas_guard" 		}
+				"MKB"              		{ "Item"        "item_monkey_king_bar"		}
+				"Unstoppable"       	{ "Item"        "item_boss_unstoppable" 	}
+				"Magic Blade"			{ "Item"	    "item_force_blade"  		}
+				"Boss Resistance"       { "Item"        "item_boss_resistance_30" 	}
+			}
+			"ItemDrops"
+			{
+				"Relics"
+				{
+					"Item"
+					{
+						//"1"				"item_slippers_of_the_abyss"
+						//"7"				"item_wand_of_the_brine"
+						//"10"			"item_wand_of_the_brine"
+						//"11"			"item_glimmerdark_shield"
+						//"13"			"item_dredged_trident"
+					}
+					"Chance"			"100"
+				}
+			}
+		}
+	}	
+	//=================================================================================
+	// Creature: Siltbreaker Clone
+	// Zones: silt_arena
+	"npc_dota_creature_siltbreaker_clone"
+	{
+		"vscripts"					"ai/ai_siltbreaker_clone.lua"
+
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/heroes/siltbreaker/siltbreaker.vmdl"
+		"SoundSet"					"Roshan"
+		"Level"						"50"
+		"ModelScale" 				"3.0"
+		"ConsideredHero"			"1"
+		"IsAncient"					"1"
+		"IsBossMonster"				"1"
+
+		"MinimapIcon"				"minimap_roshancamp"
+		"MinimapIconSize"			"250"
+
+		"Ability1"					"siltbreaker_tail_spin_ccw"
+		"Ability2"					"siltbreaker_mind_control"
+		"Ability3"					"siltbreaker_torrents"
+		"Ability4"					"siltbreaker_kraken_shell"
+		"Ability5"					"siltbreaker_summon_clone"
+		"Ability6"					"siltbreaker_passive"
+		"Ability7"					"siltbreaker_sprint"
+		"Ability8"					"siltbreaker_summon_minions"
+		"Ability9"					"siltbreaker_mouth_beam"
+		"Ability10"					""
+		"Ability11"					""
+		"Ability12"					""
+		"Ability13"					""
+		"Ability14"					""
+
+		"ArmorPhysical"				"75"
+		"MagicalResistance"			"35"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"1500"
+		"AttackDamageMax"			"1750"
+		"AttackRate"				"2.7"
+		"AttackAnimationPoint"		"0.53"
+		"AttackAcquisitionRange"	"1800"
+		"AttackRange"				"400"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"0"
+
+		"RingRadius"				"75"
+		"HealthBarOffset"			"650"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HUGE"
+
+		"BountyXP"					"0"//"2000"
+		"BountyGoldMin"				"0"//"1000"
+		"BountyGoldMax"				"0"//"2000"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"475"
+		"MovementTurnRate"			"0.5"
+
+		"StatusHealth"				"10000" // 200000
+		"StatusHealthRegen"			"5"
+		"StatusMana"				"50000"
+		"StatusManaRegen"			"500"
+		
+		"VisionDaytimeRange"		"6000"
+		"VisionNighttimeRange"		"6000"
+
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"HasInventory"				"1"
+		"Creature"
+		{
+			//"DisableResistance"			"100.0"
+			//"DisableClumpingBehavior"	"1"
+
+			"EquippedItems"
+			{
+				"Shivas"		//"希瓦的守护"
+				{
+					"Item"					"item_shivas_guard"
+				}
+				"Sphere"		//林肯法球
+				{
+					"Item"					"item_sphere"
+				}
+			}
+		}
+	}	
+	
+	//=================================================================================
+	// Creature: Siltbreaker Bubble
+	// Zones: silt_arena
+	//=================================================================================
+	"npc_dota_creature_siltbreaker_bubble"
+	{										
+		"Model"						"models/heroes/monkey_king/transform_invisiblebox.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"0"
+		"Level"						"1"
+		"ModelScale"				"1.0"
+		"ConsideredHero"			"1"
+
+		"Ability1"					"siltbreaker_bubble_passive"
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+
+		"ArmorPhysical"				"5"
+		"MagicalResistance"			"10"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"
+		"AttackDamageMax"			"0"
+		"AttackRate"				"1.0"
+		"AttackAnimationPoint"		"0.0"
+		"AttackAcquisitionRange"	"0"
+		"AttackRange"				"0"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"0"
+
+		"RingRadius"				"75"
+		"HealthBarOffset"			"340"
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+		
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"
+
+		"StatusHealth"				"10"
+		"StatusHealthRegen"			"0.0"
+
+		"VisionDaytimeRange"		"0"
+		"VisionNighttimeRange"		"0"
+
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+	}
+	//=================================================================================
+	// Creature: Meranth Minion
+	// Zones: silt_arena
+	"npc_dota_creature_meranth_minion"
+	{
+		"vscripts"					"ai/ai_meranth_guard.lua"
+
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/creeps/darkreef/meranth_guard/meranth_guard.vmdl"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"21"
+		"ModelScale" 				"1.0"
+		"ConsideredHero"						"1"
+
+		"Ability1"					""
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+
+		"ArmorPhysical"				"20"
+		"MagicalResistance"			"50"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"520"
+		"AttackDamageMax"			"550"
+		"AttackRate"				"1.0" //"1.35"
+		"AttackAnimationPoint"		"0.33"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"120"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"0"
+
+		"RingRadius"				"60"
+		"HealthBarOffset"			"160"
+
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"400"
+
+		"StatusHealth"				"20000"
+		"StatusHealthRegen"			"30"
+		"StatusMana"				"1000"
+		"StatusManaRegen"			"50"
+		
+		"VisionDaytimeRange"		"1600"
+		"VisionNighttimeRange"		"1600"
+
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"PathfindingSearchDepthScale"		"0.1"
+
+		"Creature"
+		{
+			"ItemDrops"
+			{
+				"Consumables"
+				{
+					"Item"
+					{
+						//"1"  			"item_health_potion"
+						//"2"				"item_mana_potion"
+					}
+					"Chance"			"15"
+				}
+			}
+		}
+	}
+	

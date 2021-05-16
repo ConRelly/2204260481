@@ -1,0 +1,16 @@
+    
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace"				    "恩赐解脱"
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_Description"	    "幻影刺客的战斗技巧得到精进，有一定概率对敌方单位造成毁灭性的致命一击。致命一击的效果对窒碍短匕同样有效。\n\n可用神杖升级。"
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_Lore"	    		"神圣的一击，茉崔蒂通过赐予对手死亡来向他们致以敬意。"
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_crit_chance"		"%触发几率："
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_crit_bonus"		"%致命一击伤害："
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_cleave_damage"		"%分裂伤害："
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_bonus_attack_speed"	"攻击速度加成："
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_bonus_duration"		"攻击速度加成持续时间："
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_Aghanim_Description"			"造成额外魔法伤害。"
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_magical_damage_scepter"		"%神杖升级魔法伤害："
+	"DOTA_Tooltip_modifier_mjz_phantom_assassin_coup_de_grace_bonus"				"恩赐解脱"
+	"DOTA_Tooltip_modifier_mjz_phantom_assassin_coup_de_grace_bonus_Description"	"攻击速度提高%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%"
+
+	
+	

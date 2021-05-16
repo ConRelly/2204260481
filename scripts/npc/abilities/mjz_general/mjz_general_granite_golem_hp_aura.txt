@@ -1,0 +1,29 @@
+
+	"mjz_general_granite_golem_hp_aura"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/mjz_general/mjz_general_granite_golem_hp_aura.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjz_general_granite_golem_hp_aura"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"MaxLevel"						"1"
+
+		"AbilityCastRange"				"%radius"
+		"AOERadius"						"%radius"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_hp"			"35"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"2200"
+			}
+		}
+	}
+	

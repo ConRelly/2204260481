@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_medusa_split_shot"				    "分裂箭"
+	"DOTA_Tooltip_ability_mjz_medusa_split_shot_Description"	    "美杜莎施展魔法将她的箭分裂成若干支箭矢。分裂箭造成的伤害为正常攻击力的一定百分比。额外目标不会受到其他攻击特效（比如致命一击）和独占攻效的作用。"
+	"DOTA_Tooltip_ability_mjz_medusa_split_shot_Lore"	    		"遇到了被诅咒的蛇发女妖，那就会领教到她的愤怒。"
+	"DOTA_Tooltip_ability_mjz_medusa_split_shot_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_medusa_split_shot_range"				"搜索范围："
+	"DOTA_Tooltip_ability_mjz_medusa_split_shot_arrow_count"		"额外攻击目标数量："
+	"DOTA_Tooltip_ability_mjz_medusa_split_shot_damage_modifier"	"%攻击伤害降低："
+	

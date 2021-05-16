@@ -1,0 +1,8 @@
+
+"DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity"						"Reverse Polarity"
+"DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_Description"			"Magnus changes properties of matter, sucking all nearby enemies in front of him and stunning them with a powerful slam and dealing damage."
+"DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_Lore"					"Magnus fights with the fury of the erupting Mt. Joerlak."
+"DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_pull_radius"			"PULL RADIUS:"
+"DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_polarity_damage"		"DAMAGE:"
+"DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_hero_stun_duration"	"STUN DURATION:"
+

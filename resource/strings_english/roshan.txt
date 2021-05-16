@@ -1,0 +1,5 @@
+
+
+"npc_dota_roshan_mega"											"Mega Roshan"
+"DOTA_Tooltip_modifier_roshan_bonus"							"Roshan Bonus"
+"DOTA_Tooltip_modifier_roshan_bonus_Description"	    		"Base damage increased by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%."

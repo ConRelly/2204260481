@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_medusa_split_shot"				    "Split Shot"
+	"DOTA_Tooltip_ability_mjz_medusa_split_shot_Description"	    "Medusa magically splits her shot into several arrows. These arrows deal a lower percent of her normal damage. The extra targets will not receive other attack effects (such as critical strike) and Unique Attack Modifiers."
+	"DOTA_Tooltip_ability_mjz_medusa_split_shot_Lore"	    		"All who encounter the cursed Gorgon will feel her rage."
+	"DOTA_Tooltip_ability_mjz_medusa_split_shot_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_medusa_split_shot_range"				"Search Radius: "
+	"DOTA_Tooltip_ability_mjz_medusa_split_shot_arrow_count"		"Bonus Attack Targets: "
+	"DOTA_Tooltip_ability_mjz_medusa_split_shot_damage_modifier"	"%Attack Damage Reduction: "
+	

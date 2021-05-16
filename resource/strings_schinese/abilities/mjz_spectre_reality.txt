@@ -1,0 +1,6 @@
+    
+	"DOTA_Tooltip_ability_mjz_spectre_reality"				    "相位转移"
+	"DOTA_Tooltip_ability_mjz_spectre_reality_Description"	    "幽鬼与选中的鬼影交换位置。"
+	"DOTA_Tooltip_ability_mjz_spectre_reality_Lore"	    		"分散的影子重聚成真正的幽鬼。"
+	"DOTA_Tooltip_ability_mjz_spectre_reality_Note0"	    	""
+	

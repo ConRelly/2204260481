@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_morphling_replicate"				    "Morph"
+	"DOTA_Tooltip_ability_mjz_morphling_replicate_Description"	    "Acquire the properties of target bonus."
+	"DOTA_Tooltip_ability_mjz_morphling_replicate_Lore"	    		"Staring into Morphling produces a reflection that mimics the beholder."
+	"DOTA_Tooltip_ability_mjz_morphling_replicate_bonus_stats_pct"		"%Bonus Stats: "
+	"DOTA_Tooltip_ability_mjz_morphling_replicate_bonus_attack_range"	"Bonus Attack Range: "
+	"DOTA_Tooltip_ability_mjz_morphling_replicate_duration"				"Duration: "
+	"DOTA_Tooltip_modifier_mjz_morphling_replicate"					"Morph"
+	"DOTA_Tooltip_modifier_mjz_morphling_replicate_Description"	    "Acquire the properties of target bonus."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_morphling_replicate_stats"	    "+30% Morph Bonus Stats"
+	

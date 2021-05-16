@@ -1,0 +1,129 @@
+
+	//=================================================================================================================
+	// Sand King Epicenter
+	//=================================================================================================================
+	"mjz_sandking_epicenter"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_sand_king/mjz_sandking_epicenter.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		//"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NONE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Ability.SandKing_Epicenter"
+		"AbilityTextureName"			"mjz_sandking_epicenter"
+
+		"AbilityChannelTime"			"2.0 2.0 2.0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
+
+		"AbilityCooldown"				"100 90 80"
+		"AbilityManaCost"				"150 225 300"
+
+		"AbilityModifierSupportValue"	"0.2"	// Damage is the main component of spell
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"epicenter_radius"		"300 400 500 600 700 800 900 1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"epicenter_pulses"		"6 8 10"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_sandking_epicenter_pulses"	//"special_bonus_unique_sand_king"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"epicenter_damage"		"110"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"str_damage_pct"		"100"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_sandking_epicenter_strength"	//"special_bonus_unique_sand_king_3"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"epicenter_slow"		"-30 -30 -30"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"epicenter_slow_as"		"-60"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"epicenter_slow_duration"		"3"
+			}
+			"11"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"epicenter_radius_min"			"300"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"epicenter_radius_max"			"2000"
+			}
+			"13"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"epicenter_radius_increase"		"100"
+			}
+			"14"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"epicenter_pulses_interval"		"0.5"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"
+			"particle"			"particles/generic_gameplay/generic_stunned.vpcf"
+			"particle"			"particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
+			"particle"			"particles/units/heroes/hero_sandking/sandking_epicenter_tell.vpcf"
+		}
+	}
+	"special_bonus_unique_mjz_sandking_epicenter_pulses"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"10"
+			}
+		}
+	}
+	"special_bonus_unique_mjz_sandking_epicenter_strength"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"50"
+			}
+		}
+	}

@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_templar_assassin_refraction"				    "Refraction"
+	"DOTA_Tooltip_ability_mjz_templar_assassin_refraction_Description"	    "Templar Assassin becomes highly elusive, avoiding damage and gaining a bonus to her damage. "
+	"DOTA_Tooltip_ability_mjz_templar_assassin_refraction_Lore"	    		"Manipulating her psionic veil, Lanaya bends nature's law to her will."
+	"DOTA_Tooltip_ability_mjz_templar_assassin_refraction_bonus_damage"		"BONUS DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_templar_assassin_refraction_duration"			"Duration:"
+	"DOTA_Tooltip_modifier_mjz_templar_assassin_refraction_buff"					"Refraction"
+	"DOTA_Tooltip_modifier_mjz_templar_assassin_refraction_buff_Description"	    "Increasing attack damage.Absorbs any incoming damage."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_templar_assassin_refraction_damage"	"+100 Refraction Bonus Damage"

@@ -1,0 +1,15 @@
+
+"DOTA_Tooltip_ability_mjz_dragon_knight_breathe_fire"			"火焰气息"
+"DOTA_Tooltip_ability_mjz_dragon_knight_breathe_fire_Description"	"向龙骑士的前方喷射出一团火焰，烧灼碰到的敌人，并使其攻击力降低。"
+"DOTA_Tooltip_ability_mjz_dragon_knight_breathe_fire_Lore"		"龙骑士达维安的气息已经变成了斯莱瑞克的古龙之息，人们还记得它将无数骑士烧成了焦炭。"
+"DOTA_Tooltip_ability_mjz_dragon_knight_breathe_fire_Note0"		"可以作用于机械单位。"
+"DOTA_Tooltip_ability_mjz_dragon_knight_breathe_fire_Note1"		"最远能伤害距离900码的单位。"
+"DOTA_Tooltip_ability_mjz_dragon_knight_breathe_fire_damage"			"基础伤害："
+"DOTA_Tooltip_ability_mjz_dragon_knight_breathe_fire_strength_damage"	"%力量伤害："
+"DOTA_Tooltip_ability_mjz_dragon_knight_breathe_fire_reduction"			"%攻击力降低："
+"DOTA_Tooltip_ability_mjz_dragon_knight_breathe_fire_duration"			"减攻持续时间："
+"DOTA_Tooltip_modifier_mjz_dragon_knight_breathe_fire_reduction"				"火焰气息"
+"DOTA_Tooltip_modifier_mjz_dragon_knight_breathe_fire_reduction_Description"	"攻击力降低了25%%。"
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_dragon_knight_0106"				"+100% 火焰气息力量伤害"
+
+

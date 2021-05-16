@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_monkey_king_mischief"				    "七十二变"
+	"DOTA_Tooltip_ability_mjz_monkey_king_mischief_Description"	    "齐天大圣以周遭事物为启发进行伪装，改变自己的外形，从而欺骗对手。受到伤害，发动攻击或使用任意物品都会失去伪装效果。变化后 %invul_duration% 秒内免疫伤害。"
+	"DOTA_Tooltip_ability_mjz_monkey_king_mischief_Lore"	    	"要小心那棵树。"
+	"DOTA_Tooltip_ability_mjz_monkey_king_mischief_movespeed"		"移动速度："
+	"DOTA_Tooltip_ability_mjz_monkey_king_mischief_invul_duration"	"无敌时间："
+	"DOTA_Tooltip_modifier_mjz_monkey_king_mischief"				"七十二变"
+	"DOTA_Tooltip_modifier_mjz_monkey_king_mischief_Description"	"这个单位是伪装的。"
+	"DOTA_Tooltip_ability_mjz_monkey_king_untransform"				"变回原状"
+	"DOTA_Tooltip_ability_mjz_monkey_king_untransform_Description"	"使齐天大圣恢复原状。"

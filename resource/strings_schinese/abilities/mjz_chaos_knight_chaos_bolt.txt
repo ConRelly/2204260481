@@ -1,0 +1,13 @@
+    
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt"						"混乱之箭"
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_Description"			"对目标单位投掷一支神秘的能量箭。造成随机时间的眩晕和随机的伤害。"
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_Lore"					"甚至混沌骑士自己都无法预测这不洁之力会有何种效果。"
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_cast_range"			"施法距离："
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_radius"				"作用范围："
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_targets"				"目标数："
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_stun_min"				"最短眩晕："
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_stun_max"				"最长眩晕："
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_damage_min"			"最低伤害："
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_damage_max"			"最高伤害："
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_Note0"				"眩晕持续时间和伤害值为负相关。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_chaos_knight_chaos_bolt_target"				"+{s:value} 混乱之箭目标数"

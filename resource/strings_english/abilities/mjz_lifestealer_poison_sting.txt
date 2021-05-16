@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting"				    "Poison Sting"
+	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_Description"	    "N'aix attacks sting, adding a slight poison-based damage and significantly slowing movement speed."
+	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_duration"		"Duration: "
+	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_damage"			"Damage per Second: "
+	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_move_slow_pct"	"%Movement Speed Slow: "
+	"DOTA_Tooltip_modifier_mjz_lifestealer_poison_sting_slow"				"Poison Sting	"
+	"DOTA_Tooltip_modifier_mjz_lifestealer_poison_sting_slow_Description"  "This unit' move speed is slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, and take damage over time."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_poison_sting_duration"   		"+8 Poison Sting Duration"
+	

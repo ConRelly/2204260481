@@ -1,0 +1,71 @@
+
+	"mjz_gyrocopter_rocket_barrage"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_gyrocopter/mjz_gyrocopter_rocket_barrage.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		// "SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"mjz_gyrocopter_rocket_barrage"
+
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0"
+
+		"AbilityCooldown"				"1.0"
+		"AbilityManaCost"				"60"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"400 470 540 600"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"rocket_damage"				"70 120 170 220"
+				"LinkedSpecialBonus"		"special_bonus_unique_mjz_gyrocopter_rocket_barrage_damage" // "special_bonus_unique_gyrocopter_3"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"agi_damage_pct"			"40 80 120 160"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"interval"					"1.0"
+			}
+		}
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_gyrocopter/gyro_rocket_barrage.vpcf"
+			"particle"		"particles/econ/items/gyrocopter/hero_gyrocopter_atomic/gyro_rocket_barrage_atomic.vpcf"
+			"particle"		"particles/econ/items/gyrocopter/hero_gyrocopter_atomic/gyro_rocket_barrage_atomic_hit.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+		}
+	}
+	"special_bonus_unique_mjz_gyrocopter_rocket_barrage_damage"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"110"
+			}
+		}
+	}
+

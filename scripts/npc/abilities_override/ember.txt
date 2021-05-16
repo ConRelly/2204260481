@@ -1,0 +1,88 @@
+
+	"ember_spirit_fire_remnant"
+	{
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"300 600 900"
+			}
+			"08"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "scepter_max_charges"	"7"
+				"RequiresScepter"	"1"
+            }
+		}
+	}
+	"ember_spirit_activate_fire_remnant"
+	{
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"300 600 900"
+			}
+		}
+	}
+	"ember_spirit_flame_guard"
+	{
+		"AbilityCooldown"				        "25.0 22.5 20.0 17.5"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"9.0 10.0 11.0 12.0"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"absorb_amount"					"200 450 700 950"
+				"LinkedSpecialBonus"			"special_bonus_unique_ember_spirit_1"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_per_second"				"40 55 70 85"
+				"LinkedSpecialBonus"			"special_bonus_unique_ember_spirit_3"
+			}
+		}
+	}
+	"ember_spirit_sleight_of_fist"
+	{
+		"AbilityCooldown"				        "12.0 8.0 4.0 2.0"
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"					    "FIELD_INTEGER"
+				"creep_damage_penalty"			"50"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+		}
+	}
+	"ember_spirit_searing_chains"
+	{
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"80"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"1.0"
+				"LinkedSpecialBonus"			"special_bonus_unique_ember_spirit_2"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"total_damage"					"150"
+			}			
+		}
+	}
+	

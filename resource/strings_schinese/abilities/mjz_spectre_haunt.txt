@@ -1,0 +1,21 @@
+    
+	"DOTA_Tooltip_ability_mjz_spectre_haunt"				    "魅影重重"
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_Description"	    ""
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_aghanim_description"	"获得一个新技能，如影随形。可以对单个目标单位施放魅影重重"
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_Lore"	    		""
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_Note0"	    		"幻象无法自行控制"
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_illusion_duration"	"幻象持续时间："
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_illusion_count"		"幻象数量："
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_tooltip_outgoing"	"%幻象造成的伤害："
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_tooltip_illusion_total_damage_incoming"		"%幻象受到的伤害："
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_illusion_heal_damage_per"		"%幻象回复受到的伤害："
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_hero_heal_damage_per"			"%英雄回复受到的伤害："
+	
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_single"                         "如影随形"
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_single_Description"             "对单个目标单位施放鬼影重重。"
+	"DOTA_Tooltip_ability_mjz_spectre_haunt_single_Lore"             		"在强大的专注力下，墨丘利有时可以限制她分裂的限度。"
+	// "DOTA_Tooltip_ability_mjz_spectre_haunt_single_duration"                "持续时间："
+	// "DOTA_Tooltip_ability_mjz_spectre_haunt_single_tooltip_outgoing"		"%鬼影继承攻击力："
+	// "DOTA_Tooltip_ability_mjz_spectre_haunt_single_tooltip_illusion_total_damage_incoming"		"%鬼影承受伤害："
+	// "DOTA_Tooltip_ability_mjz_spectre_haunt_single_tooltip_cooldown"		"冷却时间："
+	

@@ -1,0 +1,26 @@
+
+	"juggernaut_omni_slash"
+	{
+		"AbilityCooldown"				    "50.0 40.0 30.0"
+		"AbilityManaCost"					"150"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"attack_rate_multiplier"	"4.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"30 150 450"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"4 6 8"
+				"LinkedSpecialBonus"		"special_bonus_unique_juggernaut_2"
+			}
+		}
+	}

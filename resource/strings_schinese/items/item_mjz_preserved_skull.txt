@@ -1,0 +1,13 @@
+
+//>>>>	MJZ 坚韧之颅
+"DOTA_Tooltip_modifier_item_mjz_preserved_skull_buff"					"祈灵光环"
+"DOTA_Tooltip_modifier_item_mjz_preserved_skull_buff_Description"		"获得额外魔法恢复速率和冷却时间减少。"
+"DOTA_Tooltip_ability_item_mjz_preserved_skull"							"<font color='#4ae0bf'>坚韧之颅</font>"
+"DOTA_Tooltip_ability_item_mjz_preserved_skull_Description"				"团队价值：%item_value% \n需要等级：%required_level% \n<h1>被动：祈灵光环</h1> 友军获得额外的魔法恢复速率和冷却时间减少。"
+"DOTA_Tooltip_ability_item_mjz_preserved_skull_Lore"					"你再嘲笑啊？"
+"DOTA_Tooltip_ability_item_mjz_preserved_skull_bonus_intelligence"		"额外智力："
+"DOTA_Tooltip_ability_item_mjz_preserved_skull_bonus_health"			"额外生命值："
+"DOTA_Tooltip_ability_item_mjz_preserved_skull_cooldown_reduction_pct"	"%光环冷却时间减少："
+"DOTA_Tooltip_ability_item_mjz_preserved_skull_aura_mana_regen"			"光环魔法恢复速率："
+"DOTA_Tooltip_ability_item_recipe_mjz_preserved_skull"					"<font color='#4ae0bf'>卷轴：坚韧之颅</font>"
+//<<<<

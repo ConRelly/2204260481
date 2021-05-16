@@ -1,0 +1,8 @@
+
+"DOTA_Tooltip_ability_golden_mine_passive"								"利是钱"
+"DOTA_Tooltip_ability_golden_mine_passive_Description"					"^_^o~ 努力！奋斗！"
+"DOTA_Tooltip_ability_golden_mine_passive_exp"							"经验获取："
+"DOTA_Tooltip_ability_golden_mine_passive_gold"							"金钱获取："
+"DOTA_Tooltip_ability_golden_mine_passive_interval"						"时间间隔："
+"DOTA_Tooltip_modifier_golden_mine_buff"								"利是钱"
+

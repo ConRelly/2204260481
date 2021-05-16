@@ -1,0 +1,16 @@
+    
+	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery"				    "如意棒法"
+	"[hide]DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_Description"	    "齐天大圣的攻击唤醒了金箍棒的力量。连续攻击%required_hits%次敌人后齐天大圣的下%charges%次攻击得到加强，获得了攻击力加成和吸血效果。"
+	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_Description"	    "齐天大圣的攻击唤醒了金箍棒的力量。连续攻击%required_hits%次敌人后齐天大圣的攻击得到加强，获得了攻击力加成和吸血效果。"
+	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_Lore"	    		"金箍棒能敏锐感知主人的情绪，在孙悟空展现战意时散发力量。"
+	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_required_hits"		"所需攻击数："
+	"[hide]DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_charges"			"次数："
+	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_bonus_damage"		"攻击力加成："
+	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_lifesteal"			"%吸血："
+	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_counter_duration"	"计数器持续时间："
+	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_max_duration"		"Buff持续时间："
+	"DOTA_Tooltip_modifier_mjz_monkey_king_jingu_mastery_hit"						"如意棒法"
+	"DOTA_Tooltip_modifier_mjz_monkey_king_jingu_mastery_hit_Description"	    	"齐天大圣的攻击"
+	"DOTA_Tooltip_modifier_mjz_monkey_king_jingu_mastery_bonuses"					"如意棒法"
+	"DOTA_Tooltip_modifier_mjz_monkey_king_jingu_mastery_bonuses_Description"	    "攻击力和吸血效果加成"
+	

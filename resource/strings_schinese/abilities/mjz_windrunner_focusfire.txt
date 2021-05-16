@@ -1,0 +1,13 @@
+    
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire"				"集中火力"
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire_Description"	"风行者受风的引领，攻击速度增加%bonus_attack_speed%，但是攻击伤害降低。不过次级物品效果的附加伤害不会降低。持续%duration%秒。\n\n可用神杖升级。"
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire_Lore"		"莱瑞蕾具备狂风般地向敌人轰射出无数箭矢的无双本领——尽管牺牲了不少威力。"
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire_bonus_attack_speed"	"攻击速度加成："
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire_damage_reduction"			"%攻击力降低："
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire_damage_reduction_scepter"	"%神杖升级攻击力降低："
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire_duration"			"持续时间："
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire_cooldown_scepter"	"神杖升级冷却时间："
+	"DOTA_Tooltip_ability_mjz_windrunner_focusfire_aghanim_description"	"减少冷却时间，改善降低攻击力效果，物品效果的伤害不会降低。"
+	"DOTA_Tooltip_modifier_mjz_windrunner_focusfire"				"集中火力"
+	"DOTA_Tooltip_modifier_mjz_windrunner_focusfire_Description"	"以极高攻击速度持续攻击单个目标，但是攻击力降低。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_windrunner_focusfire_ministun"	"+35% 集中火力造成短暂眩晕"

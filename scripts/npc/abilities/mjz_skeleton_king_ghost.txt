@@ -1,0 +1,63 @@
+
+	"mjz_skeleton_king_ghost"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_skeleton_king/mjz_skeleton_king_ghost.lua"
+		// "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		//"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NONE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		// "AbilitySound"					"Ability.SandKing_Epicenter"
+		"AbilityTextureName"			"mjz_skeleton_king_ghost"
+
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		"AbilityCooldown"				"80 70 60"
+		"AbilityManaCost"				"0"
+		"MaxLevel"						"3"
+		"HasScepterUpgrade"				"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"scepter_radius"		"1200"
+				"RequiresScepter"			"1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"6 7 8"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"incoming_damage_per"	"-30 -40 -50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"manacost_reduction"	"60 80 100"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"model_scale"			"20 30 40"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+			"particle"	"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
+			"particle"	"particles/units/heroes/hero_skeletonking/skeleton_king_death.vpcf"
+			"particle"	"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate_slow_debuff.vpcf"
+			"particle"	"particles/status_fx/status_effect_wraithking_ghosts.vpcf"
+			"particle"	"particles/units/heroes/hero_skeletonking/wraith_king_ghosts_ambient.vpcf"
+
+		}
+	}

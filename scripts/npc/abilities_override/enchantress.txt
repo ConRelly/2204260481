@@ -1,0 +1,20 @@
+
+
+	"enchantress_impetus"
+	{
+		"AbilityManaCost"				"65 50 35 20"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"distance_damage_pct"	"12 16 20 24"
+				"LinkedSpecialBonus"	"special_bonus_unique_enchantress_4"			
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance_cap"			"4000"
+			}
+		}
+	}

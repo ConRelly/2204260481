@@ -1,0 +1,62 @@
+		
+
+		//>>>>	虚灵之刃 Lvl 2
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_2"							"虚灵之刃 Lvl 2"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_2_Description"				"<h1>主动：虚化冲击</h1>发射一道能量波，将目标转变为虚无状态，接下来受到的魔法伤害将会提升%tooltip_ethereal_damage_bonus%%%，并且无法攻击或被攻击。友方单位受到作用时持续%duration%秒，敌方单位则持续%duration_ally%秒。 如果目标是敌人还将被减速%tooltip_blast_movement_slow%%%，并额外受到%blast_multiplier%x[你的主属性]+%blast_damage_base%点魔法伤害。 施法范围：%tooltip_range%"		
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_2_Lore"						"一把忽隐忽现的阴森刀刃，可以在物理和魔法两个位面造成伤害。"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_2_bonus_agility"				"+$agi"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_2_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_2_bonus_strength"				"+$str"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_2_debuff_enemy"					"虚灵之刃"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_2_debuff_enemy_Description"		"受到的魔法伤害将会提升，并且无法攻击或被攻击。减速%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_2_buff_ally"						"虚灵之刃"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_2_buff_ally_Description"			"受到的魔法伤害将会提升，并且无法攻击或被攻击。"
+		//<<<<
+		//>>>>	蓝色虚灵之刃
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue"							"蓝色虚灵之刃"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_Description"				"<h1>主动：虚化冲击</h1>发射一道能量波，将目标转变为虚无状态，接下来受到的魔法伤害将会提升%tooltip_ethereal_damage_bonus%%%，并且无法攻击或被攻击。友方单位受到作用时持续%duration%秒，敌方单位则持续%duration_ally%秒。 如果目标是敌人还将被减速%tooltip_blast_movement_slow%%%，并额外受到%blast_multiplier%x[你的主属性]+%blast_damage_base%点魔法伤害。 施法范围：%tooltip_range%"		
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_Lore"					"一把忽隐忽现的阴森刀刃，可以在物理和魔法两个位面造成伤害。"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_bonus_agility"			"+$agi"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_bonus_strength"			"+$str"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_blue_1_debuff_enemy"					"虚灵之刃"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_blue_1_debuff_enemy_Description"		"受到的魔法伤害将会提升，并且无法攻击或被攻击。减速%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_blue_1_buff_ally"						"虚灵之刃"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_blue_1_buff_ally_Description"			"受到的魔法伤害将会提升，并且无法攻击或被攻击。"
+		//<<<<
+		//>>>>	蓝色虚灵之刃 LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_2"						"蓝色虚灵之刃 LVL 2"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_2_Description"			"<h1>主动：虚化冲击</h1>发射一道能量波，将目标转变为虚无状态，接下来受到的魔法伤害将会提升%tooltip_ethereal_damage_bonus%%%，并且无法攻击或被攻击。友方单位受到作用时持续%duration%秒，敌方单位则持续%duration_ally%秒。 如果目标是敌人还将被减速%tooltip_blast_movement_slow%%%，并额外受到%blast_multiplier%x[你的主属性]+%blast_damage_base%点魔法伤害。 施法范围：%tooltip_range%"		
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_2_Lore"					"一把忽隐忽现的阴森刀刃，可以在物理和魔法两个位面造成伤害。"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_2_bonus_agility"			"+$agi"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_2_bonus_intellect"		"+$int"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_blue_2_bonus_strength"		"+$str"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_blue_2_debuff_enemy"					"虚灵之刃"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_blue_2_debuff_enemy_Description"		"受到的魔法伤害将会提升，并且无法攻击或被攻击。减速%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_blue_2_buff_ally"						"虚灵之刃"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_blue_2_buff_ally_Description"			"受到的魔法伤害将会提升，并且无法攻击或被攻击。"
+		//<<<<
+		//>>>>	红色虚灵之刃
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red"							"红色虚灵之刃"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_Description"				"<h1>主动：虚化冲击</h1>发射一道能量波，将目标转变为虚无状态，接下来受到的魔法伤害将会提升%tooltip_ethereal_damage_bonus%%%，并且无法攻击或被攻击。友方单位受到作用时持续%duration%秒，敌方单位则持续%duration_ally%秒。 如果目标是敌人还将被减速%tooltip_blast_movement_slow%%%，并额外受到%blast_multiplier%x[你的主属性]+%blast_damage_base%点魔法伤害。 施法范围：%tooltip_range%"		
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_Lore"						"一把忽隐忽现的阴森刀刃，可以在物理和魔法两个位面造成伤害。"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_bonus_agility"			"+$agi"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_bonus_intellect"			"+$int"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_bonus_strength"			"+$str"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_red_1_debuff_enemy"					"虚灵之刃"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_red_1_debuff_enemy_Description"		"受到的魔法伤害将会提升，并且无法攻击或被攻击。减速%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_red_1_buff_ally"						"虚灵之刃"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_red_1_buff_ally_Description"			"受到的魔法伤害将会提升，并且无法攻击或被攻击。"
+		//<<<<
+		//>>>>	红色虚灵之刃 LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_2"						"红色虚灵之刃 LVL 2"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_2_Description"			"<h1>主动：虚化冲击</h1>发射一道能量波，将目标转变为虚无状态，接下来受到的魔法伤害将会提升%tooltip_ethereal_damage_bonus%%%，并且无法攻击或被攻击。友方单位受到作用时持续%duration%秒，敌方单位则持续%duration_ally%秒。 如果目标是敌人还将被减速%tooltip_blast_movement_slow%%%，并额外受到%blast_multiplier%x[你的主属性]+%blast_damage_base%点魔法伤害。 施法范围：%tooltip_range%"		
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_2_Lore"					"一把忽隐忽现的阴森刀刃，可以在物理和魔法两个位面造成伤害。"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_2_bonus_agility"			"+$agi"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_2_bonus_intellect"		"+$int"
+		"DOTA_Tooltip_Ability_item_mjz_ethereal_blade_red_2_bonus_strength"			"+$str"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_red_2_debuff_enemy"					"虚灵之刃"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_red_2_debuff_enemy_Description"		"受到的魔法伤害将会提升，并且无法攻击或被攻击。减速%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_red_2_buff_ally"						"虚灵之刃"
+		"DOTA_Tooltip_modifier_mjz_ethereal_blade_red_2_buff_ally_Description"			"受到的魔法伤害将会提升，并且无法攻击或被攻击。"
+		//<<<<

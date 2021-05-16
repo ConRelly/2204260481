@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_silencer_global_silence"				"Global Silence"	
+	"DOTA_Tooltip_ability_mjz_silencer_global_silence_Description"	"Silencer stops all sound, preventing enemy heroes and units on the range from casting spells."
+	"DOTA_Tooltip_ability_mjz_silencer_global_silence_Lore"			"With a shock to the ground, all magic and sound pauses, and Nortrom fulfills his prophecy."
+	"DOTA_Tooltip_ability_mjz_silencer_global_silence_Note0"		"This skill works on invisible and Spell Immune units, but gaining spell immunity will remove its effect."
+	"DOTA_Tooltip_ability_mjz_silencer_global_silence_radius"		"Radius: "
+	"DOTA_Tooltip_ability_mjz_silencer_global_silence_duration"		"Duration："
+	"DOTA_Tooltip_ability_mjz_silencer_global_silence_slow_attack_speed"		"Slow Attack Speed: "
+	"DOTA_Tooltip_ability_mjz_silencer_global_silence_slow_movement_speed_pct"	"%Slow Movement Speed："
+	"DOTA_Tooltip_modifier_mjz_silencer_global_silence_debuff"				"Global Silence"
+	"DOTA_Tooltip_modifier_mjz_silencer_global_silence_debuff_Description"	"You are silent!"

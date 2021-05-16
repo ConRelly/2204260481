@@ -1,0 +1,163 @@
+
+	//=================================================================================================================
+	// Axe: Counter Helix				反击螺旋
+	//=================================================================================================================
+	"mjz_axe_counter_helix"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"axe_counter_helix"		//	"mjz_axe_counter_helix"
+		"AOERadius"						"%radius"
+		
+		"AbilityCooldown"				"0.4 0.3 0.2 0.1"
+		// "AbilityDamage"					"100 140 180 220"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"475"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"trigger_chance"			"20"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage"					"100 140 180 220"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown"					"0.4 0.3 0.2 0.1"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"strength_per"				"500"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+			"particle"			"particles/units/heroes/hero_axe/axe_attack_blur_counterhelix.vpcf"
+		}
+		
+		"Modifiers"
+		{
+			"modifier_mjz_axe_counter_helix"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"OnAttackStart"		//当拥有modifier的单位开始攻击某个目标
+				{
+					"Random"
+					{
+						"Chance"			"%trigger_chance"
+						"PseudoRandom" 		"DOTA_PSEUDO_RANDOM_JUGG_CRIT"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"		"abilities/hero_axe/mjz_axe_counter_helix.lua"
+								"Function"			"OnAttackStart"
+								"helix_modifier"	"modifier_mjz_axe_counter_helix_effect"
+							}
+						}
+					}
+				}
+
+				"OnAttacked"		//当拥有modifier的单位被攻击时
+				{
+					"Random"
+					{
+						"Chance"			"%trigger_chance"
+						"PseudoRandom" 		"DOTA_PSEUDO_RANDOM_JUGG_CRIT"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"		"abilities/hero_axe/mjz_axe_counter_helix.lua"
+								"Function"			"OnAttacked"
+								"helix_modifier"	"modifier_mjz_axe_counter_helix_effect"
+							}
+						}
+					}
+				}
+			}
+
+			"modifier_mjz_axe_counter_helix_effect"
+			{
+				"Duration"		"%cooldown"
+				"IsHidden"		"1"
+
+				"EffectName"		"particles/units/heroes/hero_axe/axe_attack_blur_counterhelix.vpcf"
+				"EffectAttachType"	"follow_origin"			
+
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Axe.CounterHelix"
+						"Target" 		"CASTER"
+					}
+
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"  	"CASTER"
+							"Radius" 	"%radius"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+						}
+					
+						"Action"    
+						{
+							// "Damage"
+							// {
+							// 	"Target"		"TARGET"
+							// 	"Type"			"DAMAGE_TYPE_PHYSICAL"
+							// 	"Damage"		"%damage"
+							// }
+							"RunScript"
+							{
+								"ScriptFile"		"abilities/hero_axe/mjz_axe_counter_helix.lua"
+								"Function"			"ActionDamageToTarget"
+							}
+						}
+					}
+
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_mjz_axe_counter_helix_rotate"
+						"Target" 		"CASTER"
+						"Duration"		"0.15"
+					}
+				}
+			}
+
+			"modifier_mjz_axe_counter_helix_rotate"
+			{
+				"IsHidden"	"1"
+
+				"ThinkInterval"  "0.03"
+				"OnIntervalThink"
+				{
+					"Rotate"
+					{
+						"Target"	"CASTER"
+						"PitchYawRoll"	"0 72 0"
+					}
+				}
+			}
+		}
+	}

@@ -1,0 +1,17 @@
+
+	"npc_dota_hero_night_stalker_mjz"		// 暗夜魔王 夜魔
+	{
+		"override_hero"			"npc_dota_hero_night_stalker"
+		
+		"Ability2"				"mjz_night_stalker_crippling_fear"
+		"Ability3"				"mjz_night_stalker_hunter_in_the_night"
+		"Ability6"				"mjz_night_stalker_darkness"
+		"Ability11"				"special_bonus_magic_resistance_12"
+		"Ability14"				"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_mspeed"
+		"Ability16"				"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_aspeed"
+		"Ability17"				"special_bonus_unique_mjz_night_stalker_darkness_damage"
+		
+		//"AttackRate"				"1.450000"
+		"AttributeStrengthGain"		"3.700000"
+		"AttributeAgilityGain"		"2.30000"
+	}

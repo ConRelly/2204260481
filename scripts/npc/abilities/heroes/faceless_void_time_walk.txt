@@ -1,0 +1,62 @@
+"DOTAAbilities"
+{
+  //=================================================================================================================
+  // Faceless Void: Time Walk
+  //=================================================================================================================
+  "faceless_void_time_walk"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "5182"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+    "IsOnCastBar"                                         "1"
+    "MaxLevel"                                            "6"
+
+    "HasScepterUpgrade"                                   "0"
+
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"                                    "7675"
+    "AbilityCastPoint"                                    "0.0"
+
+    // Time
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"                                     "24 30 30 30 30 15"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"                                     "0"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityModifierSupportValue"                         "0.25"  // mostly about the blink
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "speed"                                           "3000"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "range"                                           "7675 7675 7675 7675 7775 7875"
+        "LinkedSpecialBonus"                              "special_bonus_unique_faceless_void"
+      }
+      "03"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "backtrack_duration"                              "5.0 5.0 4.0 5.0 6.5 7.0"
+      }
+      "04"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "radius_scepter"                                  "0" //OAA, we have different Aghs effect
+        "RequiresScepter"                                 "1"
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Omniknight Repel Aura
+	//=================================================================================================================
+	"omniknight_repel_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/omniknight_repel_lua/omniknight_repel_lua"
+		"AbilityTextureName"			"omniknight_repel_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"5"
+		"LevelsBetweenUpgrades"         "10"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+			"particle"	"particles/items2_fx/urn_of_shadows_heal_d.vpcf"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"7200"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"7200"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"repel_chance"				"5 10 15 20 25"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"repel_cooldown"			"4.5"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"heal_str_multiplier"		"2.0 3.0 4.0 5.0 7.0"
+			}
+		}
+	}
+}

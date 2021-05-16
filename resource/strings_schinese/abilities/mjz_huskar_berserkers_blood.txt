@@ -1,0 +1,12 @@
+    
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood"				"狂战士之血"
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood_Description"	"哈斯卡的伤痛赐予他力量，根据他损失的生命值将获得攻击速度和生命恢复加成。生命恢复为力量的一定百分比。"
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood_Lore"			"从虚无之境逃出后，哈斯卡的力量会随着血液的损失而增强，使他能够造成致命的物理性破坏。"
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood_Note0"		"只有当哈斯卡的血量低于最大生命值的10%时才能达到最大加成。"
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood_Note1"		"加成效果为线性增加，100%生命时没有加成，10%生命时达到最大加成。"
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood_maximum_attack_speed"	"最大攻击速度："
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood_maximum_resistance"	"%最大魔法抗性："
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood_maximum_health_regen"	"%最大力量恢复："
+	"DOTA_Tooltip_ability_mjz_huskar_berserkers_blood_hp_threshold_max"		"%最大加成时生命值："
+	"DOTA_Tooltip_modifier_mjz_huskar_berserkers_blood"				"狂战士之血"
+	"DOTA_Tooltip_modifier_mjz_huskar_berserkers_blood_Description"	"攻击速度提升%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%，生命恢复提升%dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%，同时魔法抗性提升%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%。"

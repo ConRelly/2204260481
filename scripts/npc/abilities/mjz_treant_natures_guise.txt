@@ -1,0 +1,48 @@
+
+	//=================================================================================================================
+	// Treant Protector: Nature's Guise
+	//=================================================================================================================
+	"mjz_treant_natures_guise"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_treant/mjz_treant_natures_guise.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjz_treant_natures_guise"
+		
+		"LearnOnSpawn"					"1"		// 出生时学习此技能、值为等级
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health"				"400 600 800 1000"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_treant_natures_guise_health"	//"special_bonus_unique_treant_4"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"health_regen"				"4 8 12 16"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed"			"14 18 22 26"
+			}
+		}
+	}
+	"special_bonus_unique_mjz_treant_natures_guise_health"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"500"
+			}
+		}
+	}

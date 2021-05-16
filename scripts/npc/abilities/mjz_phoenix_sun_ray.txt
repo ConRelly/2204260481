@@ -1,0 +1,149 @@
+
+	//=================================================================================================================
+	// Phoenix: Sun Ray
+	//=================================================================================================================
+	"mjz_phoenix_sun_ray"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_phoenix/mjz_phoenix_sun_ray.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"mjz_phoenix_sun_ray"
+
+		"AbilitySound"					"Hero_Phoenix.SunRay.Cast"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastRange"				"%cast_range"
+		"AbilityCastPoint"				"0.01"
+		"AbilityCooldown"				"26"
+		"AbilityDuration"				"%duration"
+		"AbilityManaCost"				"0"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"hp_cost_perc_per_second"		"6 7 8 9"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"base_dmg"					"14 20 26 32"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"hp_perc_dmg"				"1.0 3.0 5.0 7.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_phoenix_5"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"130"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tick_interval"				"0.2"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"forward_move_speed"		"250"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"beam_range"				"1300"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"turn_rate_initial"			"250"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"turn_rate"					"25"
+			}
+			// Extra variables
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"num_thinkers"				"9"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"thinker_step"				"150"
+			}
+			"14"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"thinker_radius"			"192"
+			}
+			"15"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"initial_turn_max_duration"	"0.75"
+			}
+			"20"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range"				"1300"
+			}
+			"21"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"10"
+			}
+			"24"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_heal"				"7 10 13 16"
+			}
+			"25"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hp_perc_heal"			"0.6 1.2 1.8 2.5"
+			}
+			
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
+			"particle"		"particles/units/heroes/hero_phoenix/phoenix_sunray.vpcf"
+			"particle"		"particles/units/heroes/hero_phoenix/phoenix_sunray_beam_friend.vpcf"
+			"particle"		"particles/units/heroes/hero_phoenix/phoenix_sunray_beam_enemy.vpcf"
+			"particle"		"particles/units/heroes/hero_phoenix/phoenix_sunray_debuff.vpcf"
+		}
+	}
+	"mjz_phoenix_sun_ray_cancel"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_phoenix/mjz_phoenix_sun_ray_cancel.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"mjz_phoenix_sun_ray_cancel"
+		"MaxLevel"						"1"
+		
+		"AbilityCastPoint"				"0"
+ 		"AbilityCastAnimation"			"ACT_INVALID"
+		"AbilityCooldown"				"0.25"
+	}
+	"mjz_phoenix_sun_ray_toggle_move"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_phoenix/mjz_phoenix_sun_ray_toggle_move.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityTextureName"			"mjz_phoenix_sun_ray_toggle_move"
+		"MaxLevel"						"1"
+		
+		"AbilityCastPoint"				"0"
+ 		"AbilityCastAnimation"			"ACT_INVALID"
+		"AbilityCooldown"				"0.25"
+	}
+

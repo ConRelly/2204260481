@@ -1,0 +1,25 @@
+
+		//>>>>	MJZ 黯灭 LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_desolator_2"	                        "黯灭 LVL 2"
+		"DOTA_Tooltip_ability_item_mjz_desolator_2_Description"				"<h1>被动：腐蚀</h1>物理攻击将降低目标%tooltip_corruption_armor%点护甲，持续%corruption_duration%秒。"
+		"DOTA_Tooltip_ability_item_mjz_desolator_2_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_desolator_2_Lore"					"这件邪恶并且嗜血的武器，通常用于拷打政治犯。"
+		//<<<<
+		//>>>>	MJZ 黯灭 LVL 3
+		"DOTA_Tooltip_Ability_item_mjz_desolator_3"	                        "黯灭 LVL 3"
+		"DOTA_Tooltip_ability_item_mjz_desolator_3_Description"				"<h1>被动：腐蚀</h1>物理攻击将降低目标%tooltip_corruption_armor%点护甲，持续%corruption_duration%秒。"
+		"DOTA_Tooltip_ability_item_mjz_desolator_3_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_desolator_3_Lore"					"这件邪恶并且嗜血的武器，通常用于拷打政治犯。"
+		//<<<<
+		//>>>>	MJZ 黯灭 LVL 4
+		"DOTA_Tooltip_Ability_item_mjz_desolator_4"	                        "黯灭 LVL 4"
+		"DOTA_Tooltip_ability_item_mjz_desolator_4_Description"				"<h1>被动：腐蚀</h1>物理攻击将降低目标%tooltip_corruption_armor%点护甲，持续%corruption_duration%秒。"
+		"DOTA_Tooltip_ability_item_mjz_desolator_4_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_desolator_4_Lore"					"这件邪恶并且嗜血的武器，通常用于拷打政治犯。"
+		//<<<<
+		//>>>>	MJZ 黯灭 LVL 5
+		"DOTA_Tooltip_Ability_item_mjz_desolator_5"	                        "黯灭 LVL 5"
+		"DOTA_Tooltip_ability_item_mjz_desolator_5_Description"				"<h1>被动：腐蚀</h1>物理攻击将降低目标%tooltip_corruption_armor%点护甲，持续%corruption_duration%秒。"
+		"DOTA_Tooltip_ability_item_mjz_desolator_5_bonus_damage"			"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_desolator_5_Lore"					"这件邪恶并且嗜血的武器，通常用于拷打政治犯。"
+		//<<<<

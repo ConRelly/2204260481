@@ -1,0 +1,7 @@
+    
+	"DOTA_Tooltip_ability_mjz_treant_natures_guise"					"自然蔽护"
+	"DOTA_Tooltip_ability_mjz_treant_natures_guise_Description"		"受到自然的祝福，增加生命上限、生命恢复和移动速度。"
+	"DOTA_Tooltip_ability_mjz_treant_natures_guise_health"			"生命值加成："
+	"DOTA_Tooltip_ability_mjz_treant_natures_guise_health_regen"	"生命恢复加成："
+	"DOTA_Tooltip_ability_mjz_treant_natures_guise_movement_speed"	"%移动速度提升："
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_treant_natures_guise_health"	"+500 自然蔽护生命值"

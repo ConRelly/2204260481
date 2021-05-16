@@ -1,0 +1,71 @@
+
+	//=================================================================================================================
+	// Crystal Maiden's Brilliance Aura
+	//=================================================================================================================
+	"mjz_crystal_maiden_brilliance_aura"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_crystal_maiden/mjz_crystal_maiden_brilliance_aura.lua"
+		"AbilityTextureName"			"mjz_crystal_maiden_brilliance_aura"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_regen"		"1 1.5 2 2.5"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_regen_self"	"2.5 4.5 6.5 8.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_regen_pct"		"10 15 20 25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_regen_self_pct"	"25 45 65 85"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"mana_regen_total_pct"		"1 1.5 2 2.5"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"mana_regen_self_total_pct"		"2.5 4.5 6.5 8.5"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"manacost_reduction"	"0"
+				// "LinkedSpecialBonus"		"special_bonus_unique_crystal_maiden_4"
+				"LinkedSpecialBonus"		"special_bonus_unique_mjz_crystal_maiden_brilliance_aura_mana"
+			}
+
+		}
+	}
+	"special_bonus_unique_mjz_crystal_maiden_brilliance_aura_mana"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"14"
+			}
+		}
+	}

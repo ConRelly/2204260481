@@ -1,0 +1,13 @@
+
+	"DOTA_Tooltip_ability_mjz_silencer_global_silence"				"全领域静默"
+	"DOTA_Tooltip_ability_mjz_silencer_global_silence_Description"	"沉默术士停止一切声音，阻止范围内所有敌方英雄和单位施法。"
+	"DOTA_Tooltip_ability_mjz_silencer_global_silence_Lore"			"随着大地一震，所有的魔法和声音都停止了，诺崇实现了他的预言。"
+	"DOTA_Tooltip_ability_mjz_silencer_global_silence_Note0"		"沉默效果对隐身和技能免疫单位有效，但是期间获得技能免疫状态将移除该效果。"
+	"DOTA_Tooltip_ability_mjz_silencer_global_silence_radius"		"范围："
+	"DOTA_Tooltip_ability_mjz_silencer_global_silence_duration"		"持续时间："
+	"DOTA_Tooltip_ability_mjz_silencer_global_silence_slow_attack_speed"		"攻击速度减缓："
+	"DOTA_Tooltip_ability_mjz_silencer_global_silence_slow_movement_speed_pct"	"%移动速度减缓："
+	"DOTA_Tooltip_modifier_mjz_silencer_global_silence_debuff"				"全领域静默"
+	"DOTA_Tooltip_modifier_mjz_silencer_global_silence_debuff_Description"	"你被沉默了！"
+
+	

@@ -1,0 +1,16 @@
+    
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger"				    "Stifling Dagger"
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_Description"	    "Throws a dagger slowing the enemy unit's movement speed, dealing %base_damage% + %attack_factor_tooltip%%% of Phantom Assassin's attack damage as physical damage and applying attack effects from items and abilities."
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_Lore"	    		"The first skill learned by the Sisters of the Veil often signals an incoming hit."
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_Note0"	    		"Upon hitting the target, the dagger causes Phantom Assassin to perform an instant attack on the target."
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_cast_range"			"Cast Range: "
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_search_radius"		"Search Radius:"
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_target_count"		"Number of Targets: "
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_base_damage"					"Base Damage: "
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_attack_factor_tooltip"		"%Attack Damage: "
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_move_slow"				"%Move Speed Slow: "
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_stifling_dagger_slow_duration"			"Slow Duration: "
+	"DOTA_Tooltip_modifier_mjz_stifling_dagger_slow"								"Stifling Dagger"
+	"DOTA_Tooltip_modifier_mjz_stifling_dagger_slow_Description"					"Slow down your movement."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_stifling_dagger"					"+2 Stifling Dagger"
+	

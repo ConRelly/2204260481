@@ -1,0 +1,12 @@
+    
+"DOTA_Tooltip_ability_mjz_windrunner_powershot"										"强力击"
+"DOTA_Tooltip_ability_mjz_windrunner_powershot_Description"							"风行者为她的弓蓄力，射出一支强力的箭矢，最长可蓄力%abilitychanneltime%秒，其间可以打断蓄力，蓄力时间越长箭矢伤害越高。这支箭会对穿过的所有敌方单位造成伤害，并破坏树木。"
+"DOTA_Tooltip_ability_mjz_windrunner_powershot_Lore"								"在早年的训练生涯，莱瑞蕾学会了射出足以破开树木击中目标的强力箭矢。"
+"DOTA_Tooltip_ability_mjz_windrunner_powershot_Note0"								"强力击将摧毁作用范围内的树木。"
+"DOTA_Tooltip_ability_mjz_windrunner_powershot_arrow_range"							"射程："
+"DOTA_Tooltip_ability_mjz_windrunner_powershot_attack_damage"						"%攻击伤害："
+"DOTA_Tooltip_ability_mjz_windrunner_powershot_debuff_incoming_damage"				"%敌人受到的伤害增加："
+"DOTA_Tooltip_ability_mjz_windrunner_powershot_debuff_duration"						"Debuff 持续时间："
+"DOTA_Tooltip_modifier_mjz_windrunner_powershot_debuff"								"你中箭了"
+"DOTA_Tooltip_modifier_mjz_windrunner_powershot_debuff_Description"					"受到的伤害增加%dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%。"
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_windrunner_powershot_damage"			"+{s:value}% 强力击攻击伤害"

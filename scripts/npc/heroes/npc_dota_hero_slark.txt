@@ -1,0 +1,12 @@
+
+	"npc_dota_hero_slark"			//  小鱼人
+	{
+		"override_hero"			"npc_dota_hero_slark"
+
+		"Ability1"				"mjz_slark_dark_pact"
+		"Ability2"				"slark_pounce"
+		"Ability3"				"mjz_slark_essence_shift"
+		//"Ability4"				"mjz_slark_pounce"
+		"Ability14"				"special_bonus_unique_mjz_slark_dark_pact_damage"
+		"Ability15"				"special_bonus_unique_mjz_slark_essence_shift_attack_count"
+	}

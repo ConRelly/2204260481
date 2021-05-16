@@ -1,0 +1,8 @@
+heroattack_on_easy
+{
+	material materials/overviews/heroattack_on_easy.vmat
+	pos_x -4146
+	pos_y 5120
+	scale 9.284
+}
+

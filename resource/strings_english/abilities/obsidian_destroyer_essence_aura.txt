@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_obsidian_destroyer_essence_aura"				    "Essence Aura"
+	"DOTA_Tooltip_ability_mjz_obsidian_destroyer_essence_aura_Description"	    "Whenever nearby allied Heroes or Outworld Devourer itself casts a spell, it gains a chance to restore a percentage of its mana pool. Outworld Devourer also passively gains a bonus to its base mana pool. Several skills with no cooldown and toggled spells cannot trigger Essence Aura."
+	"DOTA_Tooltip_ability_mjz_obsidian_destroyer_essence_aura_radius"		    "Radius: "
+	"DOTA_Tooltip_ability_mjz_obsidian_destroyer_essence_aura_bonus_mana"	    "Mana Bonus: "
+	"DOTA_Tooltip_ability_mjz_obsidian_destroyer_essence_aura_restore_chance"	"%Proc Chance: "
+	"DOTA_Tooltip_ability_mjz_obsidian_destroyer_essence_aura_restore_amount"	"%Max Mana Restored: "
+	"DOTA_Tooltip_modifier_mjz_essence_aura_effect"				                "Essence Aura"
+	"DOTA_Tooltip_modifier_mjz_essence_aura_effect_Description"	                "Whenever you casts a spell, yout gains a chance to restore a percentage of its mana pool. "	
+	

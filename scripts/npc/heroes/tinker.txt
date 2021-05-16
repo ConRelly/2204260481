@@ -1,0 +1,8 @@
+
+	"npc_dota_hero_tinker_mjz"
+	{
+		"override_hero"	"npc_dota_hero_tinker"
+		"Ability2"		"mjz_tinker_heat_seeking_missile"
+		"Ability6"		"mjz_tinker_quick_arm"
+		"Ability17"		"special_bonus_unique_mjz_tinker_0203"
+	}

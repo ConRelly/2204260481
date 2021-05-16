@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury"				    "Blade Fury"
+	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_Description"	    "Causes a bladestorm of destructive force around Juggernaut, rendering him immune to magic and dealing damage to nearby enemy units."
+	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_Lore"	    		"Yurnero's renowned katana techniques are feared by warriors and sorcerers alike."
+	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_duration"			"Duration: "
+	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_radius"				"Radius: "
+	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_attack_tick"		"Attack Interval: "
+	

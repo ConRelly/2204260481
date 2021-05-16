@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_mirana_arrow"				    "Sacred Arrow"
+	"DOTA_Tooltip_ability_mjz_mirana_arrow_Description"	    "Fires a long-range arrow with deadly precision, which damages the first enemy unit it strikes. "
+	"DOTA_Tooltip_ability_mjz_mirana_arrow_Lore"	    	"Lunar energies make the Princess of the Moon's arrows more deadly than most."
+	"DOTA_Tooltip_ability_mjz_mirana_arrow_Note0"	    	"The extra arrows are launched with a 30 degree angle to the left and right of the centered arrow."
+	"DOTA_Tooltip_ability_mjz_mirana_arrow_arrow_range"		"Max Travel Distance: "
+	"DOTA_Tooltip_ability_mjz_mirana_arrow_arrow_count"		"Number of Arrows: "
+	"DOTA_Tooltip_ability_mjz_mirana_arrow_damage_pct"		"%Attack as Damage: "
+	"DOTA_Tooltip_ability_mjz_mirana_arrow_proc_chance"		"%Chance: "
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_mirana_arrow_chance"		"+5% Sacred Arrow Chance"

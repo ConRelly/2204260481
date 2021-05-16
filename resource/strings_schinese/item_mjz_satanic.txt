@@ -1,0 +1,34 @@
+	
+
+		//>>>>	撒旦之邪力 LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_satanic_2"								"撒旦之邪力 LVL 2"
+		"DOTA_Tooltip_Ability_item_mjz_satanic_2_Description"					"<h1>主动：不洁狂热</h1>吸血效果提升至%unholy_lifesteal_total_tooltip%%%，持续%unholy_duration%秒。\n<h1>被动：吸血</h1>攻击者每次攻击都将根据造成的伤害回复%lifesteal_percent%%%生命值。"		
+		"DOTA_Tooltip_Ability_item_mjz_satanic_2_Lore"							"无穷的力量，需要你付出灵魂作为代价。"
+		"DOTA_Tooltip_Ability_item_mjz_satanic_2_bonus_strength"				"+$str"
+		"DOTA_Tooltip_Ability_item_mjz_satanic_2_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_Ability_item_mjz_satanic_2_status_resistance"				"%+状态抗性"
+		//<<<<
+		//>>>>	撒旦之邪力 LVL 3
+		"DOTA_Tooltip_Ability_item_mjz_satanic_3"								"撒旦之邪力 LVL 3"
+		"DOTA_Tooltip_Ability_item_mjz_satanic_3_Description"					"<h1>主动：不洁狂热</h1>吸血效果提升至%unholy_lifesteal_total_tooltip%%%，持续%unholy_duration%秒。\n<h1>被动：吸血</h1>攻击者每次攻击都将根据造成的伤害回复%lifesteal_percent%%%生命值。"		
+		"DOTA_Tooltip_Ability_item_mjz_satanic_3_Lore"							"无穷的力量，需要你付出灵魂作为代价。"
+		"DOTA_Tooltip_Ability_item_mjz_satanic_3_bonus_strength"				"+$str"
+		"DOTA_Tooltip_Ability_item_mjz_satanic_3_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_Ability_item_mjz_satanic_3_status_resistance"				"%+状态抗性"
+		//<<<<
+		//>>>>	撒旦之邪力 LVL 4
+		"DOTA_Tooltip_Ability_item_mjz_satanic_4"								"撒旦之邪力 LVL 4"
+		"DOTA_Tooltip_Ability_item_mjz_satanic_4_Description"					"<h1>主动：不洁狂热</h1>吸血效果提升至%unholy_lifesteal_total_tooltip%%%，持续%unholy_duration%秒。\n<h1>被动：吸血</h1>攻击者每次攻击都将根据造成的伤害回复%lifesteal_percent%%%生命值。"		
+		"DOTA_Tooltip_Ability_item_mjz_satanic_4_Lore"							"无穷的力量，需要你付出灵魂作为代价。"
+		"DOTA_Tooltip_Ability_item_mjz_satanic_4_bonus_strength"				"+$str"
+		"DOTA_Tooltip_Ability_item_mjz_satanic_4_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_Ability_item_mjz_satanic_4_status_resistance"				"%+状态抗性"
+		//<<<<
+		//>>>>	撒旦之邪力 LVL 5
+		"DOTA_Tooltip_Ability_item_mjz_satanic_5"								"撒旦之邪力 LVL 5"
+		"DOTA_Tooltip_Ability_item_mjz_satanic_5_Description"					"<h1>主动：不洁狂热</h1>吸血效果提升至%unholy_lifesteal_total_tooltip%%%，持续%unholy_duration%秒。\n<h1>被动：吸血</h1>攻击者每次攻击都将根据造成的伤害回复%lifesteal_percent%%%生命值。"		
+		"DOTA_Tooltip_Ability_item_mjz_satanic_5_Lore"							"无穷的力量，需要你付出灵魂作为代价。"
+		"DOTA_Tooltip_Ability_item_mjz_satanic_5_bonus_strength"				"+$str"
+		"DOTA_Tooltip_Ability_item_mjz_satanic_5_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_Ability_item_mjz_satanic_5_status_resistance"				"%+状态抗性"
+		//<<<<

@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer"				    "潮汐使者"
+	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_Description"	    "昆卡的传奇之剑使他的下一次攻击附加额外的攻击力并在前方造成大范围的分裂攻击伤害。"
+	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_Lore"	    		"迷失的铁帆海军灵魂依附在昆卡信赖的宝剑-潮汐使者之中，增强它对洪流恶魔的破坏力。"
+	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_cleave_distance"		"分裂距离："
+	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_strength_damage_pct"	"%力量加成："
+	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_cleave_damage"			"%分裂伤害："
+	

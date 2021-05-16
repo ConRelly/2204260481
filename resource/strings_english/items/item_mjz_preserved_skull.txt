@@ -1,0 +1,13 @@
+	
+//>>>>	MJZ Preserved Skull
+"DOTA_Tooltip_ability_item_mjz_preserved_skull"								"<font color='#4ae0bf'>Preserved Skull</font>"
+"DOTA_Tooltip_ability_item_mjz_preserved_skull_Description"					"Team Value: %item_value% \nRequired Level: %required_level% \n<h1>Passive: Conjuration Aura</h1> Allies gain bonus mana regen and cooldown reduction."
+"DOTA_Tooltip_ability_item_mjz_preserved_skull_Lore"						"Where be your gibes now?"
+"DOTA_Tooltip_ability_item_mjz_preserved_skull_bonus_intelligence"			"BONUS INTELLIGENCE:"
+"DOTA_Tooltip_ability_item_mjz_preserved_skull_bonus_health"				"BONUS HEALTH:"
+"DOTA_Tooltip_ability_item_mjz_preserved_skull_cooldown_reduction_pct"		"%AURA COOLDOWN REDUCTION:"
+"DOTA_Tooltip_ability_item_mjz_preserved_skull_aura_mana_regen"				"AURA MANA REGEN:"
+"DOTA_Tooltip_modifier_item_mjz_preserved_skull_buff"						"Conjuration Aura"
+"DOTA_Tooltip_modifier_item_mjz_preserved_skull_buff_Description"			"Gaining bonus mana regen and cooldown reduction."
+"DOTA_Tooltip_ability_item_recipe_mjz_preserved_skull"						"<font color='#4ae0bf'>Recipe: Preserved Skull</font>"
+//<<<<

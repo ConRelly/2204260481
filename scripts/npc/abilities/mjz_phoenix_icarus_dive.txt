@@ -1,0 +1,64 @@
+
+	"mjz_phoenix_icarus_dive"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_phoenix/mjz_phoenix_icarus_dive.lua"
+		"AbilityTextureName"			"mjz_phoenix_icarus_dive"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+
+		"AbilitySound"					"Hero_Phoenix.SunRay.Cast"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastRange"				"1075"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"36 34 32 30"
+		"AbilityManaCost"				"90 100 110 120"
+		"AbilityDamage"					"100 150 200 250"
+		
+		"AbilitySpecial"
+		{
+			// "01"
+			// {
+			// 	"var_type"				"FIELD_INTEGER"
+			// 	"hp_cost_perc"			"15"
+			// }
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"dragon_slave_speed"		"1200"
+			}
+			
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"dragon_slave_width_initial"	"275"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"dragon_slave_width_end"		"200"
+			}
+			
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"dragon_slave_distance"			"1075"
+				"LinkedSpecialBonus"		"special_bonus_unique_phoenix_4"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+			"particle"		"particles/units/heroes/hero_lina/lina_spell_dragon_slave.vpcf"
+			"particle"		"particles/units/heroes/hero_lina/lina_spell_dragon_slave_impact.vpcf"
+			"particle"		"particles/econ/items/lina/lina_head_headflame/lina_spell_dragon_slave_headflame.vpcf"
+			"particle"		"particles/econ/items/lina/lina_head_headflame/lina_spell_dragon_slave_impact_headflame.vpcf"
+		}
+	}
+

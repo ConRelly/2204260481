@@ -1,0 +1,33 @@
+
+		//>>>>	MJZ Assault Cuirass LVL 2
+		"DOTA_Tooltip_modifier_item_mjz_assault_buff"					"Assault Cuirass LVL"
+		"DOTA_Tooltip_modifier_item_mjz_assault_buff_Description"		"Armor enhanced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.\nAttack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+		"DOTA_Tooltip_modifier_item_mjz_assault_debuff"					"Assault Cuirass LVL"
+		"DOTA_Tooltip_modifier_item_mjz_assault_debuff_Description"		"Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
+		"DOTA_Tooltip_Ability_item_mjz_assault_2"	                        "Assault Cuirass LVL 2"
+		"DOTA_Tooltip_ability_item_mjz_assault_2_Description"				"<h1>Passive: Assault Aura</h1>Grants %aura_attack_speed% +$attack and %aura_positive_armor% armor to nearby allied units and structures, and decreases nearby enemy unit and structure armor by %aura_negative_armor%. Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_mjz_assault_2_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_mjz_assault_2_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_mjz_assault_2_Lore"						"Forged in the depths of the nether reaches, this hellish mail provides an army with increased armor and +$attack."
+		//<<<<
+		//>>>>	MJZ Assault Cuirass LVL 3
+		"DOTA_Tooltip_Ability_item_mjz_assault_3"	                        "Assault Cuirass LVL 3"
+		"DOTA_Tooltip_ability_item_mjz_assault_3_Description"				"<h1>Passive: Assault Aura</h1>Grants %aura_attack_speed% +$attack and %aura_positive_armor% armor to nearby allied units and structures, and decreases nearby enemy unit and structure armor by %aura_negative_armor%. Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_mjz_assault_3_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_mjz_assault_3_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_mjz_assault_3_Lore"						"Forged in the depths of the nether reaches, this hellish mail provides an army with increased armor and +$attack."
+		//<<<<
+		//>>>>	MJZ Assault Cuirass LVL 4
+		"DOTA_Tooltip_Ability_item_mjz_assault_4"	                        "Assault Cuirass LVL 4"
+		"DOTA_Tooltip_ability_item_mjz_assault_4_Description"				"<h1>Passive: Assault Aura</h1>Grants %aura_attack_speed% +$attack and %aura_positive_armor% armor to nearby allied units and structures, and decreases nearby enemy unit and structure armor by %aura_negative_armor%. Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_mjz_assault_4_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_mjz_assault_4_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_mjz_assault_4_Lore"						"Forged in the depths of the nether reaches, this hellish mail provides an army with increased armor and +$attack."
+		//<<<<
+		//>>>>	MJZ Assault Cuirass LVL 5
+		"DOTA_Tooltip_Ability_item_mjz_assault_5"	                        "Assault Cuirass LVL 5"
+		"DOTA_Tooltip_ability_item_mjz_assault_5_Description"				"<h1>Passive: Assault Aura</h1>Grants %aura_attack_speed% +$attack and %aura_positive_armor% armor to nearby allied units and structures, and decreases nearby enemy unit and structure armor by %aura_negative_armor%. Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_mjz_assault_5_bonus_attack_speed"		"+$attack"
+		"DOTA_Tooltip_ability_item_mjz_assault_5_bonus_armor"				"+$armor"
+		"DOTA_Tooltip_ability_item_mjz_assault_5_Lore"						"Forged in the depths of the nether reaches, this hellish mail provides an army with increased armor and +$attack."
+		//<<<<

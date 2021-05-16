@@ -1,0 +1,7 @@
+
+	"npc_dota_hero_puck_mjz"
+	{
+		"override_hero"			"npc_dota_hero_puck"
+		"Ability1"		"mjz_puck_illusory_orb"
+		"Ability4"		"mjz_puck_ethereal_jaunt"
+	}

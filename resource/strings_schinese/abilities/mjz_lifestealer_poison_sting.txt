@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting"				    "毒针"
+	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_Description"	    "食尸鬼通过毒针攻击附加轻微的毒性伤害，显著降低目标的移动速度。"
+	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_duration"		"持续时间："
+	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_damage"			"每秒伤害："
+	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_move_slow_pct"	"%移动速度减缓："
+	"DOTA_Tooltip_modifier_mjz_lifestealer_poison_sting_slow"				"毒针"
+	"DOTA_Tooltip_modifier_mjz_lifestealer_poison_sting_slow_Description"  "这个单位的移动速度降低了%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%并且持续受到伤害。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_poison_sting_duration"   		"+8 毒针持续时间"
+	

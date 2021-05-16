@@ -1,0 +1,188 @@
+
+	"mjz_chaos_knight_chaos_strike"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"chaos_knight_chaos_strike"		//"mjz_chaos_knight_chaos_strike"		
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts"
+			"particle"		"particles/units/heroes/hero_chaos_knight/chaos_knight_weapon_blur_critical.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_damage"				"150 200 250 300"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_chance"				"20 26 32 38"
+				"LinkedSpecialBonus"	    "special_bonus_unique_mjz_chaos_strike"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"armor_reduction"			"-5"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"armor_reduction_duration"	"8"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lifesteal"					"25 40 55 70"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_mjz_chaos_knight_chaos_strike"
+			{
+				"Passive"   "1"
+				"IsHidden"  "1"
+
+				"OnAttackStart"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName" 	"modifier_mjz_chaos_knight_chaos_strike_crit"
+						"Target" 		"CASTER"
+					}
+					"RemoveModifier"
+					{
+						"ModifierName" 	"modifier_mjz_chaos_knight_chaos_strike_lifesteal"
+						"Target" 		"CASTER"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/hero_chaos_knight/mjz_chaos_knight_chaos_strike.lua"
+						"Function"		"OnAttackStart"
+						"modifier_crit"			"modifier_mjz_chaos_knight_chaos_strike_crit"
+						"modifier_lifesteal"	"modifier_mjz_chaos_knight_chaos_strike_lifesteal"
+						"special_bonus"			"special_bonus_unique_mjz_chaos_strike"
+					}
+
+					// "Random"
+					// {
+					// 	"Chance" 	"%crit_chance"
+					// 	"OnSuccess"
+					// 	{
+					// 		"ApplyModifier"
+					// 		{
+					// 			"ModifierName" 		"modifier_mjz_chaos_knight_chaos_strike_crit"
+					// 			"Target"    		"CASTER"    
+					// 		}
+					// 		"ApplyModifier"
+					// 		{
+					// 			"ModifierName" 		"modifier_mjz_chaos_knight_chaos_strike_lifesteal"
+					// 			"Target"    		"CASTER"    
+					// 		}
+					// 	}
+					// }
+				}
+			}
+
+			"modifier_mjz_chaos_knight_chaos_strike_crit"
+			{
+				"IsHidden"  	"1"
+				"IsPurgable"	"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_damage"
+				}
+
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"		"Hero_ChaosKnight.ChaosStrike"
+						"Target"			"CASTER"
+					}
+					"FireEffect"
+					{
+						"EffectName" 		"particles/units/heroes/hero_chaos_knight/chaos_knight_weapon_blur_critical.vpcf"
+						"EffectAttachType"  "attach_attack1"
+						"Target"    		"CASTER"
+					}
+				}
+
+				"OnAttack"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_mjz_chaos_knight_chaos_strike_armor"
+						"Target" 		"TARGET"
+						"Duration"		"%armor_reduction_duration"
+					}
+				}
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"  "modifier_mjz_chaos_knight_chaos_strike_crit"
+						"Target"   		"CASTER"    
+					}
+				}
+			}
+
+			"modifier_mjz_chaos_knight_chaos_strike_lifesteal"
+			{
+				"IsHidden"  	"1"
+				"IsPurgable"	"0"
+
+				"OnAttackLanded"
+				{
+					"Lifesteal"
+					{
+						"Target"			"CASTER"
+						"LifestealPercent"	"%lifesteal"
+					}
+					
+					"RemoveModifier"
+					{
+						"ModifierName"  "modifier_mjz_chaos_knight_chaos_strike_lifesteal"
+						"Target"   		"CASTER"    
+					}
+				}
+			}	
+
+			"modifier_mjz_chaos_knight_chaos_strike_armor"
+			{
+				"IsHidden"	"1"
+				"IsDebuff"	"1"
+
+				"Properties"
+				{
+					// "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_reduction"
+				}
+			}
+		}
+	}
+
+	"special_bonus_unique_mjz_chaos_strike"
+	{
+		// "BaseClass"						"special_bonus_datadriven"
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"22"
+			}
+		}
+	}
+

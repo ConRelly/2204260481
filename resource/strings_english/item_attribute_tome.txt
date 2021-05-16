@@ -1,0 +1,23 @@
+
+		"DOTA_Tooltip_ability_item_book_of_strength"						"Book of Strength"
+		"DOTA_Tooltip_ability_item_book_of_strength_Description"			"Consume to gain %bonus_stat% Strength permanently."
+		"DOTA_Tooltip_ability_item_book_of_agility"							"Book of Agility"
+		"DOTA_Tooltip_ability_item_book_of_agility_Description"				"Consume to gain %bonus_stat% Agility permanently."
+		"DOTA_Tooltip_ability_item_book_of_intelligence"					"Book of Intelligence"
+		"DOTA_Tooltip_ability_item_book_of_intelligence_Description"		"Consume to gain %bonus_stat% Intelligence permanently."
+
+		"DOTA_Tooltip_ability_item_book_of_greater_strength"						"Book of Fortitude"
+		"DOTA_Tooltip_ability_item_book_of_greater_strength_Description"			"Consume to gain %bonus_stat% Strength permanently."
+		"DOTA_Tooltip_ability_item_book_of_greater_agility"							"Book of Celerity"
+		"DOTA_Tooltip_ability_item_book_of_greater_agility_Description"				"Consume to gain %bonus_stat% Agility permanently."
+		"DOTA_Tooltip_ability_item_book_of_greater_intelligence"					"Book of Insight"
+		"DOTA_Tooltip_ability_item_book_of_greater_intelligence_Description"		"Consume to gain %bonus_stat% Intelligence permanently."
+		
+		"DOTA_Tooltip_modifier_book_of_strength"							"Book of Strength"
+		"DOTA_Tooltip_modifier_book_of_strength_Description"				"Strength gained from consumed Books."
+		"DOTA_Tooltip_modifier_book_of_agility"								"Book of Agility"
+		"DOTA_Tooltip_modifier_book_of_agility_Description"					"Agility gained from consumed Books."
+		"DOTA_Tooltip_modifier_book_of_intelligence"						"Book of Intelligence"
+		"DOTA_Tooltip_modifier_book_of_intelligence_Description"			"Intelligence gained from consumed Books."
+		
+		

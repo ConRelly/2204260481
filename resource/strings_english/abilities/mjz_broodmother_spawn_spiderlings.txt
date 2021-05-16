@@ -1,0 +1,7 @@
+    
+"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings"							"Spawn Spiderlings"
+"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_Description"				"Broodmother injects her young into an enemy unit, The spiderlings will hatch."
+"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_Lore"						"Black Arachnia continues to raise her young, even amidst the field of combat.  The brood quickly learns how to support their mother."
+"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_spiderling_duration"		"LIFETIME:"
+"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_count"						"COUNT:"
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_broodmother_spawn_spiderlings_count"	"+{s:value} Spiders Count"

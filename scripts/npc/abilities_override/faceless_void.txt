@@ -1,0 +1,41 @@
+	
+	"faceless_void_time_walk"
+	{
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_scepter"		"300"
+				"RequiresScepter"		"1"
+			}
+		}
+	}
+	"faceless_void_time_lock"
+	{
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"0.01"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_creep"		"0.01"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance_pct"			"18 22 26 30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"90 120 150 180"
+				"LinkedSpecialBonus"	"special_bonus_unique_faceless_void_3"
+			}
+		}
+	}

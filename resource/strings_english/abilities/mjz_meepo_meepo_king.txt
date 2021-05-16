@@ -1,0 +1,12 @@
+    
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king"				    	"King of Meepo"
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_Description"	    	"King of Meepo.If a unit dies while under this effect, Meepo gains bonus experience."
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_Lore"	    		"Do I know you?"
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_bonus_damage_pct"			"%BONUS DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_bonus_attack_speed"			"BONUS ATTACK SPEED:"
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_bonus_armor"					"BONUS ARMOR:"
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_bonus_resistance"			"%BONUS MAGIC RESISTANCE:"
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_bonus_health_regen"			"%BONUS HEALTH REGEN:"
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_experience_pct"				"%XP GAIN:"
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_experience_radius"			"XP GAIN RADIUS:"
+	

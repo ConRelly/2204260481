@@ -1,0 +1,81 @@
+
+	//=================================================================================================================
+	// Night Stalker: Darkness			黑暗飞升
+	//=================================================================================================================
+	"mjz_night_stalker_darkness"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_night_stalker/mjz_night_stalker_darkness.lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityTextureName"			"mjz_night_stalker_darkness"
+		"AbilitySound"					"Hero_Nightstalker.Darkness"
+
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCooldown"				"70 65 60"
+		"AbilityManaCost"				"100 150 200"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"30.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"70 65 60"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"50 100 150"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_night_stalker_darkness_damage"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifesteal_pct"			"40 50 60"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"evasion_chance"		"20 30 40"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_vision_pct"		"100"
+			}
+			"20"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"model_scale"				"20"     // Percentage over model scale
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
+			"particles"		"particles/units/heroes/hero_night_stalker/nightstalker_darkness_hero_effect.vpcf"
+			"particles"		"particles/units/heroes/hero_night_stalker/nightstalker_ulti.vpcf"
+		}
+	}
+	"special_bonus_unique_mjz_night_stalker_darkness_damage"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"100"
+			}
+		}
+	}

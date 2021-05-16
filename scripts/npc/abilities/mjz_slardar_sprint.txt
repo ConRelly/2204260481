@@ -1,0 +1,48 @@
+
+	//=================================================================================================================
+	// Slark: Essence Shift				能量转移
+	//=================================================================================================================
+	"mjz_slardar_sprint"
+	{
+		"BaseClass"						"ability_lua"	//	"ability_datadriven"
+		"ScriptFile"					"abilities/hero_slardar/mjz_slardar_sprint.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityTextureName"			"mjz_slardar_sprint"	
+
+		"AbilitySound"					"Hero_Slardar.Sprint"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_move_speed"			"20 28 36 44"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"		"25 50 75 100"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"health_cost_per_second"	"25"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tick_interval"				"0.25"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_slardar.vsndevts"
+			"particle"		"particles/units/heroes/hero_slardar/slardar_sprint.vpcf"
+		}
+	}
+

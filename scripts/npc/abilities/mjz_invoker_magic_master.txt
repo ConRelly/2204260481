@@ -1,0 +1,31 @@
+
+	"mjz_invoker_magic_master"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_invoker/mjz_invoker_magic_master.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjz_invoker_magic_master"
+
+		"HasScepterUpgrade"				"1"
+		"MaxLevel"						"1"
+		"LearnOnSpawn"					"1"		// 出生时学习此技能、值为等级
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_cooldown_scepter"		"45"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"spell_amp_scepter"				"100"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"manacost_reduction_scepter"	"90"
+			}
+		}
+	}

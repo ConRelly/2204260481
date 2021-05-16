@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_axe_counter_helix"				    "Counter Helix"
+	"DOTA_Tooltip_ability_mjz_axe_counter_helix_Description"	    "When attacked, Axe performs a helix counter attack, dealing pure damage to all nearby enemies."
+	"DOTA_Tooltip_ability_mjz_axe_counter_helix_Lore"	    		"Axe is the only reinforcement this army needs."
+	"DOTA_Tooltip_ability_mjz_axe_counter_helix_Note0"	    		"When the talent is chosen, the proc chance and cooldown are shared between the procs upon getting attacked and upon attacking."
+	"DOTA_Tooltip_ability_mjz_axe_counter_helix_radius"				"Radius: "
+	"DOTA_Tooltip_ability_mjz_axe_counter_helix_trigger_chance"		"%Proc Chance: "
+	"DOTA_Tooltip_ability_mjz_axe_counter_helix_damage"				"Damage: "
+	"DOTA_Tooltip_ability_mjz_axe_counter_helix_strength_per"		"%Strength Bonus："

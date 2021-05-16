@@ -1,0 +1,35 @@
+
+	"mjz_luna_under_the_moonlight"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/hero_luna/mjz_luna_under_the_moonlight.lua"
+		"AbilityTextureName"			"mjz_luna_under_the_moonlight"	//	""mjz_luna_under_the_moonlight""
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilitySound"					"Hero_Luna.LucentBeam.Target"
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
+			"particle"			"particles/units/heroes/hero_luna/luna_lucent_beam.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"proc_chance"				"8 12 16 20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_damage"			"175 350 625 1600"
+				"LinkedSpecialBonus"	"special_bonus_unique_luna_1"
+			}
+		}
+	}
+

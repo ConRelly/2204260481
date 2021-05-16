@@ -1,0 +1,10 @@
+	
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast"				"盛宴"
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Description"	"噬魂鬼每次攻击时还会根据自身最大力量值造成额外伤害，同时自身回复等量的生命。"
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Lore"			"从德瓦克的监狱中逃离后，奈克斯就靠着吞噬那些挡路的倒霉蛋的血肉维持生命。"
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast_str_damage_pct"	"%最大力量值："
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Note0"	"与其他吸血类效果完全叠加。"
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Note1"	"无视技能免疫。"
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Note2"	"回复量与造成伤害相互独立。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_life_stealer_feast_strength"	"+50% 盛宴伤害/吸血"
+	

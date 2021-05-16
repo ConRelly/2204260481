@@ -1,0 +1,8 @@
+
+"DOTA_Tooltip_ability_mjz_general_megamorph"				    "MEGAMORPH"
+"DOTA_Tooltip_ability_mjz_general_megamorph_Description"	    ""
+"DOTA_Tooltip_ability_mjz_general_megamorph_Lore"	    		""
+"DOTA_Tooltip_ability_mjz_general_megamorph_bonus_damage"		"BONUS DAMAGE:"
+"DOTA_Tooltip_ability_mjz_general_megamorph_attack_range"		"BONUS ATTACK RANGE:"
+"DOTA_Tooltip_ability_mjz_general_megamorph_cast_range"			"BONUS CAST RANGE:"
+

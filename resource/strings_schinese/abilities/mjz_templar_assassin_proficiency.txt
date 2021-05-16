@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_templar_assassin_proficiency"				    "熟练"
+	"DOTA_Tooltip_ability_mjz_templar_assassin_proficiency_Description"	    "攻击将降低目标%armor_reduction_percent%%%护甲，持续%armor_reduction_duration%秒。"
+	"DOTA_Tooltip_ability_mjz_templar_assassin_proficiency_Lore"	    	"熟练的刺客能穿透敌人的护甲。"
+	"DOTA_Tooltip_ability_mjz_templar_assassin_proficiency_armor_reduction_percent"		"%护甲降低："
+	"DOTA_Tooltip_ability_mjz_templar_assassin_proficiency_armor_reduction_duration"	"持续时间："
+	"DOTA_Tooltip_modifier_mjz_templar_assassin_proficiency_debuff"					"熟练"
+	"DOTA_Tooltip_modifier_mjz_templar_assassin_proficiency_debuff_Description"	    "护甲降低%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
+	

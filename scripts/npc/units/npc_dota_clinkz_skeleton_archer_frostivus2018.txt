@@ -1,0 +1,55 @@
+
+"npc_dota_clinkz_skeleton_archer_frostivus2018"
+{
+	"BaseClass"					"npc_dota_clinkz_skeleton_archer_frostivus2018"
+	"Model"						"models/heroes/clinkz/clinkz_archer.vmdl"
+	"SoundSet"					"Hero_Clinkz"
+	"Level"						"1"
+	"ModelScale"				"1.1"
+	"wearable"					"669"
+
+	"Ability1"					"frostivus2018_clinkz_searing_arrows"
+
+	"ArmorPhysical"				"0"
+	"MagicalResistance"			"0"
+
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"5"
+	"AttackDamageMax"			"5"
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"1.7"
+	"AttackAnimationPoint"		"0.3"
+	"AttackAcquisitionRange"	"900"
+	"AttackRange"				"625"
+	"ProjectileModel"			"particles/units/heroes/hero_clinkz/clinkz_base_attack.vpcf"
+	"ProjectileSpeed"			"900"
+
+	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+	"HealthBarOffset"			"200"
+
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+	"MovementSpeed"				"0"
+	"MovementTurnRate"			"0.5"
+
+	"BountyXP"					"20"
+	"BountyGoldMin"				"20"
+	"BountyGoldMax"				"20"
+
+	"StatusHealth"				"4"
+	"StatusHealthRegen"			"0"
+	"StatusMana"				"100"
+	"StatusManaRegen"			"0"
+
+	// Team
+	"TeamName"					"DOTA_TEAM_GOODGUYS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+	
+	// Vision
+	"VisionDaytimeRange"		"800"
+	"VisionNighttimeRange"		"800"
+
+	//Inventory
+	"HasInventory"				"0"
+}

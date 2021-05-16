@@ -1,0 +1,441 @@
+
+	//=================================================================================
+	// Tower: Holdout Tower
+	//=================================================================================
+	"npc_dota_holdout_tower"
+	{
+		"BaseClass"					"npc_dota_holdout_tower"
+		"Model"						"models/props_structures/tower_good.vmdl"
+		"SoundSet"					"Tower.Water"
+		"MinimapIcon"				"minimap_tower90"
+		"MinimapIconSize"			"320"
+		"Level"						"1"
+
+		// Abilities
+		"Ability1"					""
+
+		// Armor
+		"ArmorPhysical"				"20"
+		"MagicalResistance"			"0"
+
+		// Attack
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"35"
+		"AttackDamageMax"			"40"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1"
+		"AttackAnimationPoint"		"0.6"
+		"AttackAcquisitionRange"	"700"
+		"AttackRange"				"700"
+		"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"
+		"ProjectileSpeed"			"750"
+
+		// Attributes
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"
+		"AttributeStrengthGain"		"0"
+		"AttributeBaseIntelligence"	"0"
+		"AttributeIntelligenceGain"	"0"
+		"AttributeBaseAgility"		"0"
+		"AttributeAgilityGain"		"0"
+
+		// Bounty
+		"BountyXP"					"25"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+
+		// Bounds
+		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"
+		"ProjectileCollisionSize"	"50"
+		"RingRadius"				"130"
+		"HealthBarOffset"			"320"
+
+		// Movement
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"
+		"MovementTurnRate"			"1.0"
+
+		// Status
+		"StatusHealth"				"2000"
+		"StatusHealthRegen"			"3"
+		"StatusMana"				"0"
+		"StatusStartingMana"		"0"
+		"StatusManaRegen"			"0"
+
+		// Team
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		"VisionDaytimeRange"		"1900"
+		"VisionNighttimeRange"		"1600"
+	}
+	
+	//=================================================================================
+	// Tower: Holdout Tower
+	//=================================================================================
+	"npc_dota_holdout_tower_tier2"
+	{
+		"BaseClass"					"npc_dota_holdout_tower"
+		"Model"						"models/props_structures/tower_good.vmdl"
+		"SoundSet"					"Tower.Water"
+		"MinimapIcon"				"minimap_tower90"
+		"MinimapIconSize"			"320"
+		"Level"						"1"
+
+		// Abilities
+		"Ability1"					""
+
+		// Armor
+		"ArmorPhysical"				"20"
+		"MagicalResistance"			"0"
+
+		// Attack
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"45"
+		"AttackDamageMax"			"50"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1"
+		"AttackAnimationPoint"		"0.6"
+		"AttackAcquisitionRange"	"700"
+		"AttackRange"				"700"
+		"ProjectileModel"			"particles/base_attacks/ranged_tower_good.vpcf"
+		"ProjectileSpeed"			"750"
+
+		// Attributes
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"
+		"AttributeStrengthGain"		"0"
+		"AttributeBaseIntelligence"	"0"
+		"AttributeIntelligenceGain"	"0"
+		"AttributeBaseAgility"		"0"
+		"AttributeAgilityGain"		"0"
+
+		// Bounty
+		"BountyXP"					"25"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+
+		// Bounds
+		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"
+		"ProjectileCollisionSize"	"50"
+		"RingRadius"				"130"
+		"HealthBarOffset"			"320"
+
+		// Movement
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"
+		"MovementTurnRate"			"1.0"
+
+		// Status
+		"StatusHealth"				"2500"
+		"StatusHealthRegen"			"3"
+		"StatusMana"				"0"
+		"StatusStartingMana"		"0"
+		"StatusManaRegen"			"0"
+
+		// Team
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		"VisionDaytimeRange"		"1900"
+		"VisionNighttimeRange"		"1600"
+	}
+	
+	//=================================================================================
+	// Holdout Good Guys Fort 
+	//=================================================================================
+	"npc_dota_holdout_goodguys_fort"
+	{
+		//
+		"BaseClass"					"npc_dota_fort"
+		"Model"						"models/props_structures/radiant_ancient001.vmdl"
+		"SoundSet"					"Creep_Good_Melee"
+		"MinimapIcon"				"minimap_ancient"
+		"MinimapIconSize"			"250"
+		"HealthBarOffset"			"480"
+		
+		// Abilities
+		"Ability1"					""
+
+		// Armor
+		"ArmorPhysical"				"30"
+		"MagicalResistance"			"0"
+
+		// Attack
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"
+		"AttackDamageMax"			"0"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0"
+		"AttackAnimationPoint"		"0"
+		"AttackAcquisitionRange"	"0"
+		"AttackRange"				"0"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"0"
+
+		// Attributes
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"
+		"AttributeStrengthGain"		"0"
+		"AttributeBaseIntelligence"	"0"
+		"AttributeIntelligenceGain"	"0"
+		"AttributeBaseAgility"		"0"
+		"AttributeAgilityGain"		"0"
+
+		// Bounty
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+
+		// Bounds
+		"BoundsHullName"			"DOTA_HULL_SIZE_BUILDING"
+		"RingRadius"				"350"
+
+		// Movement
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"
+		"MovementTurnRate"			"0"
+
+		// Status
+		"StatusHealth"				"14500"
+		"StatusHealthRegen"			"3"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+
+		// Team
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		"VisionDaytimeRange"		"1900"
+		"VisionNighttimeRange"		"1200"
+	}
+	
+	//=================================================================================
+	// Creeps: Bad Tower 1 TOP
+	//=================================================================================
+	"npc_dota_badguys_tower1_top"
+	{
+		//
+		"BaseClass"					"npc_dota_tower"
+		"Model"						"models/props_structures/dire_tower002.vmdl"// Model.
+		"SoundSet"					"Tower.Fire"
+		"MinimapIcon"				"minimap_tower90"
+		"MinimapIconSize"			"320"
+		"Level"						"1"
+		
+		// Abilities
+		"Ability1"					""
+
+		// Armor
+		"ArmorPhysical"				"200"
+		"MagicalResistance"			"0"
+
+		// Attack
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"150"
+		"AttackDamageMax"			"150"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"0.1"
+		"AttackAnimationPoint"		"0.2"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"600"
+		"ProjectileModel"			"particles/base_attacks/ranged_tower_bad.vpcf"
+		"ProjectileSpeed"			"1000"
+
+		// Attributes
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"
+		"AttributeStrengthGain"		"0"
+		"AttributeBaseIntelligence"	"0"
+		"AttributeIntelligenceGain"	"0"
+		"AttributeBaseAgility"		"0"
+		"AttributeAgilityGain"		"0"
+
+		// Bounty
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+
+		// Bounds
+		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"
+		"ProjectileCollisionSize"	"50"
+		"RingRadius"				"120"
+		"HealthBarOffset"			"280"
+
+		// Movement
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"
+		"MovementTurnRate"			"1.0"
+
+		// Status
+		"StatusHealth"				"5000"
+		"StatusHealthRegen"			"500"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+
+		// Team
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		"VisionDaytimeRange"		"650"
+		"VisionNighttimeRange"		"650"
+	}	
+	
+	"npc_dota_pugna_ward_winter"
+	{										
+		"Model"						"models/heroes/pugna/pugna_ward.vmdl"	// Model.
+		"BaseClass"					"npc_dota_base_additive"
+		"SoundSet"					"Pugna_NetherWard"			// Name of sound set.
+		"Level"						"0"
+		"ModelScale"				"1"
+ 		"wearable"					"8627"
+
+		// Abilities
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		"ArmorPhysical"				"0"			// Physical protection.
+
+		// Attack
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"			// Damage range min.
+		"AttackDamageMax"			"0"			// Damage range max.	
+		"AttackRate"				"1.0"		// Speed of attack.
+		"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"			// Range within a target can be acquired.
+		"AttackRange"				"0"			// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		"HealthBarOffset"			"145"							 		
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+
+		// Bounty
+		"BountyXP"					"0"			// Experience earn.
+		"BountyGoldMin"				"20"		// Gold earned min.
+		"BountyGoldMax"				"20"		// Gold earned max.
+
+		// Movement
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"		// Speed.
+
+		// Status
+		"StatusHealth"				"16"		// Base health.
+		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
+		
+		// Vision
+		"VisionDaytimeRange"		"600"		// Range of vision during day light.
+		"VisionNighttimeRange"		"600"		// Range of vision at night time.
+
+		// Team
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+	}	
+	
+	//=================================================================================
+	// Creeps: Good Guys Healers		圣坛
+	//=================================================================================
+	"npc_dota_goodguys_healers"
+	{
+		"Ability1"					"backdoor_protection_in_base"//偷塔保护
+		"Ability2"					"filler_ability"			//庇佑
+		"Ability3"					"goodguys_healers"			// 无敌
+
+		"StatusHealth"				"3750"
+	}
+	
+	//=================================================================================
+	// Tower: 石头傀儡
+	//=================================================================================
+	"npc_dota_tower_rock_golem"
+	{
+		"BaseClass"					"npc_dota_creature" //"npc_dota_tower"
+		"Model"						"models/props_structures/rock_golem/tower_radiant_rock_golem.vmdl"
+		"DestructionEffect"	"particles/econ/world/towers/rock_golem/radiant_rock_golem_destruction.vpcf"
+		"ModelRotation"	"0"
+		"SoundSet"					"Tower.Water"
+		"MinimapIcon"				"minimap_tower90"
+		"MinimapIconSize"			"320"
+		"Level"						"1"
+
+		// Abilities
+		"Ability1"					"tower_increase_stats"
+
+		// Armor
+		"ArmorPhysical"				"0"
+		"MagicalResistance"			"0"
+
+		// Attack
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"35"
+		"AttackDamageMax"			"35"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1"
+		"AttackAnimationPoint"		"0.6"
+		"AttackAcquisitionRange"	"1550"
+		"AttackRange"				"1550"
+		"ProjectileModel"			"particles/econ/world/towers/rock_golem/radiant_rock_golem_attack.vpcf"
+		"ProjectileSpeed"			"750"
+
+		// Attributes
+		//"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		//"AttributeBaseStrength"		"0"
+		//"AttributeStrengthGain"		"0"
+		//"AttributeBaseIntelligence"	"0"
+		//"AttributeIntelligenceGain"	"0"
+		//"AttributeBaseAgility"		"0"
+		//"AttributeAgilityGain"		"0"
+
+		// Bounty
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+
+		// Bounds
+		"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"
+		"ProjectileCollisionSize"	"50"
+		"RingRadius"				"130"
+		"HealthBarOffset"			"260"
+
+		// Movement
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"
+		"MovementTurnRate"			"1.0"
+
+		// Status
+		"StatusHealth"				"300"
+		"StatusHealthRegen"			"0"
+		"StatusMana"				"0"
+		"StatusStartingMana"		"0"
+		"StatusManaRegen"			"0"
+
+		// Team
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+		
+		// Vision
+		"VisionDaytimeRange"		"1900"
+		"VisionNighttimeRange"		"800"
+		
+		
+	}
+	
+	

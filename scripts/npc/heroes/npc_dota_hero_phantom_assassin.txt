@@ -1,0 +1,22 @@
+
+	"npc_dota_hero_phantom_assassin_mjz"			// 幻影刺客 PA
+	{
+		"override_hero"			"npc_dota_hero_phantom_assassin"
+
+		"Ability1"				"mjz_phantom_assassin_stifling_dagger"
+		"Ability2"		"mjz_phantom_assassin_phantom_strike"
+		"Ability3"		"phantom_assassin_blur"
+		"Ability6"				"mjz_phantom_assassin_coup_de_grace"
+		"Ability10"		"special_bonus_hp_150"
+		"Ability11"		"special_bonus_attack_damage_15"			
+		"Ability12"		"special_bonus_corruption_3"				// +3 减护甲
+		"Ability13"		"special_bonus_cleave_25"					// +25 分裂
+		"Ability14"		"special_bonus_lifesteal_25"				// +25 吸血
+		// "Ability15"		"special_bonus_unique_phantom_assassin"		// +2 匕首
+		"Ability15"		"special_bonus_unique_mjz_stifling_dagger"		// +2 匕首
+		"Ability16"		"special_bonus_unique_phantom_assassin_2"	// +5 恩赐解脱
+		//"Ability17"		"special_bonus_unique_phantom_assassin_3"	// +20 闪避
+		"Ability17"		"special_bonus_attack_speed_250"
+	}
+	
+	

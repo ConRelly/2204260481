@@ -1,0 +1,7 @@
+	
+
+		// 人工合成的阿哈利姆神杖
+		"DOTA_Tooltip_Ability_item_imba_ultimate_scepter_synth"                     "<font color='#EE30A7'>人工合成的阿哈利姆神杖</font>"
+		"DOTA_Tooltip_Ability_item_imba_ultimate_scepter_synth_Description"			"<h1>主动：</h1><font color='#00FF40'>吞噬后永久获得阿哈利姆神杖对技能升级的效果。</font>\n\n<font color='#EE30A7'>人工合成的阿哈利姆神杖保留额外全属性、生命值和魔法值的加成效果。</font>"
+		"DOTA_Tooltip_Ability_item_recipe_imba_ultimate_scepter_synth"				"<font color='#EE30A7'>人工合成的阿哈利姆神杖</font>"
+

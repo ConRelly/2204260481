@@ -1,0 +1,13 @@
+
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict"									"Diabolic Edict"
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_Description"						"Saturates the area around Leshrac with magical explosions that deal physical damage to enemy units and structures.  The fewer units available to attack, the more damage those units will take.  Deals %tower_bonus%%% more damage to towers.  Lasts %duration% seconds."
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_Lore"								"Chronoptic energy bursts from one plane to the other, evaporating anything it touches."
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_Note0"								"Damage is not reduced by damage block."
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_Note1"								"The explosions will continue even if Leshrac is killed."
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_Note2"								"Can damage buildings, Spell Immune units, and invisible units."
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_radius"							"RADIUS:"
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_num_explosions"					"EXPLOSIONS:"
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_damage"					        "DAMAGE:"
+"DOTA_Tooltip_ability_mjz_leshrac_diabolic_edict_duration"					        "DURATION:"
+"DOTA_Tooltip_modifier_mjz_leshrac_diabolic_edict"                  "Diabolic Edict"
+"DOTA_Tooltip_modifier_mjz_leshrac_diabolic_edict_Description"      "Inflicting Damage to nearby enemy units"

@@ -1,0 +1,65 @@
+
+    "mjz_broodmother_insatiable_hunger"
+    {
+        "BaseClass"				        "ability_lua"
+		"ScriptFile"					"abilities/hero_broodmother/mjz_broodmother_insatiable_hunger.lua"
+        "AbilityTextureName"			"mjz_broodmother_insatiable_hunger"
+        "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+        "FightRecapLevel"				"2"
+		"HasScepterUpgrade"				"1"
+
+        "AbilityCastPoint"				"0.2 0.2 0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCooldown"				"50"
+		"AbilityManaCost"				"100 120 140"
+
+        "AbilitySpecial"
+        {
+            "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"60 120 180"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_broodmother_insatiable_hunger"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifesteal_pct"			"60 80 100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"100 140 180"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_broodmother_insatiable_hunger"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"14.0 18.0 22.0"
+			}
+        }
+        
+        "precache"
+        {
+            "soundfile"				"soundevents/game_sounds_heroes/game_sounds_broodmother.vsndevts"
+            "particle"			"particles/units/heroes/hero_broodmother/broodmother_hunger_buff.vpcf"
+			"particle"  		"particles/units/heroes/hero_broodmother/broodmother_hunger_hero_effect.vpcf"
+        }
+    }
+    "special_bonus_unique_mjz_broodmother_insatiable_hunger"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"50"
+			}
+		}
+	}

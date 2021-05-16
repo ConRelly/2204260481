@@ -1,0 +1,62 @@
+
+	//=================================================================================================================
+	// Ant-image :  Counterspell		法术反制
+	//=================================================================================================================
+	"mjz_antimage_counterspell"
+	{
+		"BaseClass"						"ability_lua"	//"ability_datadriven"
+    	"ScriptFile"		            "abilities/hero_antimage/mjz_antimage_counterspell.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		// "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"mjz_antimage_counterspell"
+
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		
+		"AOERadius"						"%cast_range"
+		"AbilityCastRange"				"%cast_range"
+		"AbilityCastPoint"				"0 0 0 0"
+
+		"AbilityCooldown"				"%cooldown"
+
+		"AbilityManaCost"				"45 50 55 60"		
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"magic_resistance"			"15 25 35 45"
+				"LinkedSpecialBonus"		"special_bonus_unique_antimage_4"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"2"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown"					"12 11 10 9"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cast_range"				"900"
+			}
+		}
+
+		"precache"
+		{
+			"particle"		"particles/units/heroes/hero_antimage/antimage_counter.vpcf"
+			"particle"		"particles/units/heroes/hero_antimage/antimage_spellshield.vpcf"
+			"particle"		"particles/units/heroes/hero_antimage/antimage_spellshield_reflect.vpcf"
+        	"soundfile"		"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+		}
+	}
+

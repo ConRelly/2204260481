@@ -1,0 +1,7 @@
+    
+	"DOTA_Tooltip_ability_mjz_faceless_void_backtrack"				    	"回到过去"
+	"DOTA_Tooltip_ability_mjz_faceless_void_backtrack_Description"	    	"不论是受到物理或者魔法攻击，虚空假面都有一定的概率通过将时间向回移动一小段来闪避伤害。"
+	"DOTA_Tooltip_ability_mjz_faceless_void_backtrack_Lore"	    			"Darkterror sees what has yet to be seen."
+	"DOTA_Tooltip_ability_mjz_faceless_void_backtrack_Note0"	    		"回到过去属于伤害无效化效果中的一员，不是闪避。"
+	"DOTA_Tooltip_ability_mjz_faceless_void_backtrack_dodge_chance_pct"		"%触发几率："
+	

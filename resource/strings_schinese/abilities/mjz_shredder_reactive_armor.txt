@@ -1,0 +1,12 @@
+    
+	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor"				"活性护甲"
+	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_Description"	"伐木机每受到一次伤害，他的生命恢复、护甲值和魔法抗性都会提升。"
+	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_Lore"			"锯齿机器上的设备可以用强化防御应对轻微的触碰。"
+	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_bonus_armor"			"额外护甲："
+	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_bonus_magic_resist"	"额外魔抗："
+	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_bonus_hp_regen"		"额外生命恢复："
+	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_stack_limit"			"最大叠加次数："
+	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_stack_duration"		"单次效果持续时间："
+	"DOTA_Tooltip_modifier_mjz_shredder_reactive_armor"					"活性护甲"
+	"DOTA_Tooltip_modifier_mjz_shredder_reactive_armor_Description"		"每次叠加均获得额外护甲、魔法抗性和生命恢复。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_shredder_reactive_armor_limit"			"+6 活性护甲叠加"

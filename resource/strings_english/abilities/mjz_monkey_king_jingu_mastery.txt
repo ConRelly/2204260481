@@ -1,0 +1,16 @@
+    
+	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery"				    "Jingu Mastery"
+	"[hide]DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_Description"	    "Monkey King's attacks awaken the Jingu Bang's power. Upon the %required_hits% hit on the enemy, Monkey King earns %charges% charged attacks that have bonus damage and lifesteal."
+	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_Description"	    "Monkey King's attacks awaken the Jingu Bang's power. Upon the %required_hits% hit on the enemy, Monkey King earns attacks that have bonus damage and lifesteal."
+	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_Lore"	    		"Always sensitive to the moods of its master, the Jingu Bang radiates power when Sun Wukong's combat fervor is on full display."
+	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_required_hits"		"Required Hits: "
+	"[hide]DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_charges"			"Charges: "
+	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_bonus_damage"		"Attack Damage Bonus: "
+	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_lifesteal"			"%Lifesteal: "
+	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_counter_duration"	"Counter Duration: "
+	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_max_duration"		"Buff Duration: "
+	"DOTA_Tooltip_modifier_mjz_monkey_king_jingu_mastery_hit"						"Jingu Mastery"
+	"DOTA_Tooltip_modifier_mjz_monkey_king_jingu_mastery_hit_Description"	    	"齐天大圣的攻击"
+	"DOTA_Tooltip_modifier_mjz_monkey_king_jingu_mastery_bonuses"					"Jingu Mastery"
+	"DOTA_Tooltip_modifier_mjz_monkey_king_jingu_mastery_bonuses_Description"	    "攻击力和吸血效果加成"
+	

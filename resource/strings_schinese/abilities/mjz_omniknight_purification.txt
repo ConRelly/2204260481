@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_omniknight_purification"				    "洗礼"
+	"DOTA_Tooltip_ability_mjz_omniknight_purification_Description"	    "立即治疗一个友方单位，并对周围的敌军造成伤害。"
+	"DOTA_Tooltip_ability_mjz_omniknight_purification_Lore"	    		"全知的牧师们善于清除己方战士们身心中的污杂。"
+	"DOTA_Tooltip_ability_mjz_omniknight_purification_Note0"	    	"与视觉效果无关，立即对目标范围内的所有敌方单位造成伤害"
+	"DOTA_Tooltip_ability_mjz_omniknight_purification_radius"			"伤害范围："
+	"DOTA_Tooltip_ability_mjz_omniknight_purification_heal"				"治疗/伤害："
+	"DOTA_Tooltip_ability_mjz_omniknight_purification_health_per"		"%生命值加成："
+	

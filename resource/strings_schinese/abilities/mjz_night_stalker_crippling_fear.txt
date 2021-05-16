@@ -1,0 +1,12 @@
+    
+	"DOTA_Tooltip_ability_mjz_night_stalker_crippling_fear"				    "伤残恐惧"
+	"DOTA_Tooltip_ability_mjz_night_stalker_crippling_fear_Description"	    "恐吓附近所有敌人。"
+	"DOTA_Tooltip_ability_mjz_night_stalker_crippling_fear_Lore"	    		"巴拉那在那些挡在他面前的卑微灵魂的头脑中植入扭曲深渊的幻象。"
+	"DOTA_Tooltip_ability_mjz_night_stalker_crippling_fear_duration"					"持续时间："
+	"DOTA_Tooltip_ability_mjz_night_stalker_crippling_fear_radius"						"范围："
+	"DOTA_Tooltip_ability_mjz_night_stalker_crippling_fear_slow_movement_speed_pct"		"%移动速度减缓："
+	"DOTA_Tooltip_ability_mjz_night_stalker_crippling_fear_slow_attack_speed"			"攻击速度减缓："
+	"DOTA_Tooltip_modifier_mjz_night_stalker_crippling_fear_aura"					"伤残恐惧"
+	"DOTA_Tooltip_modifier_mjz_night_stalker_crippling_fear_aura_Description"		"恐吓附近所有敌人。"
+	"DOTA_Tooltip_modifier_mjz_night_stalker_crippling_fear_effect"					"伤残恐惧"
+	"DOTA_Tooltip_modifier_mjz_night_stalker_crippling_fear_effect_Description"		"-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%移动速度，-%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%攻击速度"

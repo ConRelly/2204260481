@@ -1,0 +1,21 @@
+
+    "mjz_bristleback_quill_spray_autocast"
+    {
+        "BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_bristleback/mjz_bristleback_quill_spray_autocast.lua"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_TOGGLE "
+        "AbilityTextureName"            "bristleback_quill_spray"
+
+        "AbilityCooldown"               "0.3"
+        "AbilityManaCost"				"0"
+		"MaxLevel"						"1"
+
+        "AbilitySpecial"
+        {
+            "10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tick_interval"				"0.25"
+			}
+        }
+    }

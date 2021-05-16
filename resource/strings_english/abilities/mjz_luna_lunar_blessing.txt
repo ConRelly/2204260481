@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing"				    "Lunar Blessing"
+	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing_Description"	    "Increases the primary attribute for Luna and nearby allied heroes. Luna is also blessed with increased vision range at night."
+	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing_Lore"	    		"The Goddess of the Moon smiles upon her kin."
+	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing_Note0"	    	"Increases Luna's night vision to a total of 1000/1200/1400/1600."
+	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing_radius"			"Radius: "
+	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing_tooltip_bonus_night_vision"		"Night Vision Bonus: "
+	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing_primary_attribute_per"	"%Primary Attribute Bonus: "
+	"DOTA_Tooltip_modifier_mjz_luna_lunar_blessing_buff"					"Lunar Blessing"
+	"DOTA_Tooltip_modifier_mjz_luna_lunar_blessing_buff_Description"	    ""
+	

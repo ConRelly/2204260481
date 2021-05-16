@@ -1,0 +1,99 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Drow ranger: Multi Shot (Lua version)
+	//=================================================================================================================
+	"drow_ranger_multishot_lua"
+	{
+		// Ability Technical Aspect
+		// base script folder	: scripts/vscripts
+		// base texture folder	: resource/flash3/images/spellicons
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/drow_ranger_multishot_lua/drow_ranger_multishot_lua"
+		"AbilityTextureName"			"drow_ranger_multishot_lua"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"4"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+		}
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"                      "7"
+		"LevelsBetweenUpgrades"         "8"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Ability Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.4"
+
+		// Ability Resource
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"13.0"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_modifier"		"60 100 140 180 220 260 300"
+				"LinkedSpecialBonus"			"special_multishot_damage_modifier_lua"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_modifier_tooltip"		"60 100 140 180 220 260 300"
+				"LinkedSpecialBonus"			"special_multishot_damage_modifier_lua"
+			}
+			"03"
+			{	
+				"var_type"					"FIELD_FLOAT"
+				"agi_multiplier"			"4.5 6.5 9.0 11.0 13.0 15.0 20.0"
+				"LinkedSpecialBonus"			"special_multishot_agi_multiplier_lua"
+			}
+            "04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"arrow_count"				"8"
+			}
+            "05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"arrow_slow_duration"		"5.0"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"arrow_width"					"90"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"arrow_speed"					"1200"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"arrow_range_multiplier"	"2"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"arrow_angle"					"50"
+			}
+		}
+	}
+}

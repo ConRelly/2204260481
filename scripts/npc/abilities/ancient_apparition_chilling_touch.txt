@@ -1,0 +1,60 @@
+"DOTAAbilities"
+{
+  //=================================================================================================================
+  // Ancient Apparition: Chilling Touch
+  //=================================================================================================================
+  "ancient_apparition_chilling_touch"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "5347"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+    "AbilityUnitTargetTeam"                               "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"                               "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    //"AbilityUnitDamageType"                               "DAMAGE_TYPE_MAGICAL"
+    "SpellImmunityType"                                   "SPELL_IMMUNITY_ENEMIES_NO"
+    "SpellDispellableType"                                "SPELL_DISPELLABLE_YES"
+
+    "MaxLevel"                                            "6"
+    "RequiredLevel"                                       "1"
+    "LevelsBetweenUpgrades"                               "2"
+
+    "HasScepterUpgrade"                                   "1"
+
+    // Time
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"                                     "15 11 7 3 3 3"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"                                     "30 50 70 90 180 270"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "damage"                                          "50 90 130 170 300 600"
+        "LinkedSpecialBonus"                              "special_bonus_unique_ancient_apparition_2"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "slow"                                            "100"
+      }
+      "03"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "duration"                                        "0.5"
+      }
+      "04"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "attack_range_bonus"                              "60 120 180 240 260 280"
+        "LinkedSpecialBonus"                              "special_bonus_unique_ancient_apparition_7"
+      }
+    }
+  }
+}

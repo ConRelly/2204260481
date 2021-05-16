@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_skeleton_king_ghost"	"冥魂模式"
+	"DOTA_Tooltip_ability_mjz_skeleton_king_ghost_Description"	"进入冥魂模式。"
+	"DOTA_Tooltip_ability_mjz_skeleton_king_ghost_aghanim_description"			"神杖升级作用范围 %radius_% 。"
+	"DOTA_Tooltip_ability_mjz_skeleton_king_ghost_scepter_radius"		"神杖升级作用范围："
+	"DOTA_Tooltip_ability_mjz_skeleton_king_ghost_duration"		"持续时间："
+	"DOTA_Tooltip_ability_mjz_skeleton_king_ghost_incoming_damage_per"		"%受到的伤害降低："
+	"DOTA_Tooltip_ability_mjz_skeleton_king_ghost_manacost_reduction"		"%魔法消耗降低："
+	"DOTA_Tooltip_modifier_mjz_skeleton_king_ghost"					"冥魂模式"
+	"DOTA_Tooltip_modifier_mjz_skeleton_king_ghost_Description"		"伤害减少，魔法消耗降低。"

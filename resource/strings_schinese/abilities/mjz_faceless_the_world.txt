@@ -1,0 +1,12 @@
+    
+	"DOTA_Tooltip_ability_mjz_faceless_the_world"				    	"THE WORLD"
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_Description"	    	"在时空中创造一个泡状遮罩，将所有位于其中的单位定住，并使虚空假面在其内部来去自如。只有虚空假面和他的队友不受影响。在其中的隐身单位会显形。"
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_Lore"	    			"当超维视界的裂隙突现之时，所有不幸被其困住的可怜灵魂都将万劫不复。"
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_radius"				"范围："
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_duration"				"持续时间："
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_duration_scepter"				"神杖升级持续时间："
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_Aghanim_Description"			"提升持续时间。"
+	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_friendly"				"THE WORLD"
+	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_enemy"				"THE WORLD"
+	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_enemy_Description"	"被困在时空中，无法移动和行动。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_faceless_the_world_radius"		"+175 THE WORLD 范围"

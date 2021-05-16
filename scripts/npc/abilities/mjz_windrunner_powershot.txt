@@ -1,0 +1,107 @@
+
+	"mjz_windrunner_powershot"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_windrunner/mjz_windrunner_powershot.lua"
+		"AbilityTextureName"			"mjz_windrunner_powershot"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Ability.Powershot"
+
+		//"HasScepterUpgrade"				"1"
+
+		"AbilityCastRange"				"2600"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCooldown"				"12 11 10 9"
+		"AbilityChannelTime"			"1.0"
+		"AbilityManaCost"				"90 100 110 120"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_damage"			"150 250 350 450"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_windrunner_powershot_damage"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_reduction"			"20"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"arrow_width"			"125"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"arrow_range"			"2600"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"arrow_speed"			"3000.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tree_width"			"75"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_radius"			"400"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"vision_duration"		"3.34"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"channel_time"			"1.0"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"debuff_incoming_damage"	"10"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"debuff_duration"			"4"
+			}
+			
+		}
+
+		"precache"
+		{
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+			"particle"		"particles/units/heroes/hero_windrunner/windrunner_spell_powershot.vpcf"
+		}
+	}
+	"special_bonus_unique_mjz_windrunner_powershot_damage"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"150"
+			}
+		}
+	}

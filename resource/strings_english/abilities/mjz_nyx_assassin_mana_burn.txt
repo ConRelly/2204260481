@@ -1,0 +1,8 @@
+
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn"				"Mana Burn"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_Description"	"Destroys the target's mana, and deals damage equal to the mana burned.\n\nUpgradable by Aghanim's Scepter."
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_Lore"			"The tome in Ultimyr describes one scarab with the ability eat away at the mind of lesser beings."
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_cast_range"		"CAST RANGE:"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_int_damage_pct"	"%Intelligence as Mana Burned:"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_radius_scepter"	"SCEPTER RADIUS:"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_Aghanim_Description"		"Mana Burn hits all units in a small area."

@@ -1,0 +1,80 @@
+"DOTAAbilities"
+{
+  "weaver_the_swarm"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "5289"  // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityUnitDamageType"                               "DAMAGE_TYPE_PHYSICAL"
+    "SpellImmunityType"                                   "SPELL_IMMUNITY_ENEMIES_NO"
+    "SpellDispellableType"                                "SPELL_DISPELLABLE_NO"
+
+    "MaxLevel"                                            "7"
+    "LevelsBetweenUpgrades"                               "7"
+    "HasShardUpgrade"                                     "1"
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastPoint"                                    "0.3"
+    "AbilityCastRange"                                    "3000"
+    "AbilityCooldown"                                     "30" //OAA
+    "AbilityManaCost"                                     "110"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityModifierSupportValue"                         "0.2"  // Primarily about the damage
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "damage"                                          "158 440 1920 4840 9280 14500 22500"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "attack_rate"                                     "1.15 1.0 0.85 0.7 0.50 0.40 0.20"
+      }
+      "03"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "count"                                           "12"
+      }
+      "04"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "armor_reduction"                                 "0.6"
+        "LinkedSpecialBonus"                              "special_bonus_unique_weaver_3"
+      }
+      "05"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "duration"                                        "16"
+      }
+      "06"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "destroy_attacks"                                 "8"
+        "LinkedSpecialBonus"                              "special_bonus_unique_weaver_4"
+      }
+      "07"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "radius"                                          "200"
+      }
+      "08"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "speed"                                           "1000"
+      }
+      "09"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "spawn_radius"                                    "300"
+      }
+    }
+  }
+}

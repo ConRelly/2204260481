@@ -1,0 +1,10 @@
+    
+"DOTA_Tooltip_ability_mjz_phantom_assassin_phantom_strike"							"Phantom Strike"
+"DOTA_Tooltip_ability_mjz_phantom_assassin_phantom_strike_Description"				"Teleports to a unit, friendly or enemy, and grants bonus attack speed while attacking if it's an enemy unit."
+"DOTA_Tooltip_ability_mjz_phantom_assassin_phantom_strike_Lore"						"Mortred's silken veil is the last thing her unfortunate target sees."
+"DOTA_Tooltip_ability_mjz_phantom_assassin_phantom_strike_Note0"					"Ability Can Target Self"
+"DOTA_Tooltip_ability_mjz_phantom_assassin_phantom_strike_duration"					"DURATION:"
+"DOTA_Tooltip_ability_mjz_phantom_assassin_phantom_strike_bonus_attack_speed"		"BONUS ATTACK SPEED:"
+"DOTA_Tooltip_ability_mjz_phantom_assassin_phantom_strike_abilitycastrange"			"CAST RANGE:"
+"DOTA_Tooltip_modifier_mjz_phantom_assassin_phantom_strike_buff"					"Phantom Strike"
+"DOTA_Tooltip_modifier_mjz_phantom_assassin_phantom_strike_buff_Description"		"Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."

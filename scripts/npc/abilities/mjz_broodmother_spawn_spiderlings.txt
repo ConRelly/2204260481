@@ -1,0 +1,70 @@
+
+    "mjz_broodmother_spawn_spiderlings"
+    {
+        "BaseClass"				        "ability_lua"
+		"ScriptFile"					"abilities/hero_broodmother/mjz_broodmother_spawn_spiderlings.lua"
+        "AbilityTextureName"			"mjz_broodmother_spawn_spiderlings"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "FightRecapLevel"				"1"
+        "AbilitySound"					"Hero_Broodmother.SpawnSpiderlingsImpact"
+
+        "AbilityCastRange"				"700"
+        "AbilityCastPoint"				"0.2"
+        "AbilityCooldown"				"15"
+        "AbilityManaCost"				"100"
+        "AbilityModifierSupportValue"	"0.0"	// Applies multiple modifiers
+        "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+
+        "AbilitySpecial"
+        {
+            "01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"extra_damage"	        "0"
+                "LinkedSpecialBonus"	"special_bonus_unique_broodmother_4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"spiderling_duration"	"30 40 50 60"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"count"					"1 2 3 4"
+                "LinkedSpecialBonus"	"special_bonus_unique_mjz_broodmother_spawn_spiderlings_count"
+			}	 
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"	    "1200"
+			}
+        }
+        
+        "precache"
+        {
+            "soundfile"				"soundevents/game_sounds_heroes/game_sounds_broodmother.vsndevts"
+            "particle" 		"particles/units/heroes/hero_broodmother/broodmother_web_cast.vpcf"
+			"particle"  	"particles/units/heroes/hero_broodmother/broodmother_spiderlings_debuff.vpcf"
+			"particle"  	"particles/units/heroes/hero_broodmother/broodmother_spiderlings_spawn.vpcf"
+            
+        }
+    }
+    "special_bonus_unique_mjz_broodmother_spawn_spiderlings_count"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"4"
+			}
+		}
+	}

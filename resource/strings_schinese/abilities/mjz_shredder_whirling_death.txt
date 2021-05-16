@@ -1,0 +1,9 @@
+		
+	"DOTA_Tooltip_ability_mjz_shredder_whirling_death"				"死亡旋风"
+	"DOTA_Tooltip_ability_mjz_shredder_whirling_death_Description"	"伐木机使极其锋利的刀刃飞旋，对敌人造成伤害并摧毁他周围的树木。"
+	"DOTA_Tooltip_ability_mjz_shredder_whirling_death_Lore"			"当瑞兹拉克被梦魇般的藤蔓和植物包围的情况下，他马上就拿起了链锯自卫。"
+	"DOTA_Tooltip_ability_mjz_shredder_whirling_death_radius"			"作用范围："
+	"DOTA_Tooltip_ability_mjz_shredder_whirling_death_base_damage"		"基础伤害："
+	"DOTA_Tooltip_ability_mjz_shredder_whirling_death_str_damage_pct"	"%额外力量伤害："
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_shredder_whirling_death_strength"		"+100% 死亡旋风力量伤害"
+	

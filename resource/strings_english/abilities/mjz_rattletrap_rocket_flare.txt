@@ -1,0 +1,7 @@
+    
+	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare"				"Rocket Flare"
+	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare_Description"	"Fires a flare that explodes over a given area, damaging enemies and providing vision for 10 seconds."
+	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare_Lore"			"What started as a festive display has become a useful scouting and bombardment tool."
+	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare_cast_range"		"CAST RANGE:"
+	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare_radius"			"RADIUS:"
+	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare_damage"			"DAMAGE:"

@@ -1,0 +1,9 @@
+    
+	"DOTA_Tooltip_ability_mjz_templar_assassin_proficiency"				    "Proficiency"
+	"DOTA_Tooltip_ability_mjz_templar_assassin_proficiency_Description"	    "Your attacks reduce the target's armor by %armor_reduction_percent%%% for %armor_reduction_duration% seconds."
+	"DOTA_Tooltip_ability_mjz_templar_assassin_proficiency_Lore"	    	"Skilled assassins can penetrate enemy armor."
+	"DOTA_Tooltip_ability_mjz_templar_assassin_proficiency_armor_reduction_percent"		"%Armor Reduction: "
+	"DOTA_Tooltip_ability_mjz_templar_assassin_proficiency_armor_reduction_duration"	"Duration: "
+	"DOTA_Tooltip_modifier_mjz_templar_assassin_proficiency_debuff"					"Proficiency"
+	"DOTA_Tooltip_modifier_mjz_templar_assassin_proficiency_debuff_Description"	    "Armor Reduction %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
+	

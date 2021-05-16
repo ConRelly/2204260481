@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight"				    "Under The Moonlight"
+	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_Description"	    "Luna increases her deterrent, giving her a chance to deal extra damage his enemies."
+	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_Lore"	    	"Is There a Moon? "
+	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_Note0"	    	"Ability doesn't work if Luna doesn't have any points in Lucent Beam."
+	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_proc_chance"		"%CHANCE:"
+	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_beam_damage"		"DAMAGE:"
+	

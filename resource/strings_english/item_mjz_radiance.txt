@@ -1,0 +1,25 @@
+
+		//>>>>	Radiance LVL 2
+		"DOTA_Tooltip_Ability_item_mjz_radiance_2"	                        "Radiance LVL 2"
+		"DOTA_Tooltip_ability_item_mjz_radiance_2_Description"				"<h1>Passive: Burn</h1>When active, scorches enemies for %aura_damage% magical damage per second, and causes them to miss %blind_pct%%% of their attacks. Illusions deal %aura_damage_illusions% magical damage per second.Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_mjz_radiance_2_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_radiance_2_Lore"						"A divine weapon that causes damage and a bright burning effect that lays waste to nearby enemies."
+		//<<<<
+		//>>>>	Radiance LVL 3
+		"DOTA_Tooltip_Ability_item_mjz_radiance_3"	                        "Radiance LVL 3"
+		"DOTA_Tooltip_ability_item_mjz_radiance_3_Description"				"<h1>Passive: Burn</h1>When active, scorches enemies for %aura_damage% magical damage per second, and causes them to miss %blind_pct%%% of their attacks. Illusions deal %aura_damage_illusions% magical damage per second.Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_mjz_radiance_3_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_radiance_3_Lore"						"A divine weapon that causes damage and a bright burning effect that lays waste to nearby enemies."
+		//<<<<
+		//>>>>	Radiance LVL 4
+		"DOTA_Tooltip_Ability_item_mjz_radiance_4"	                        "Radiance LVL 4"
+		"DOTA_Tooltip_ability_item_mjz_radiance_4_Description"				"<h1>Passive: Burn</h1>When active, scorches enemies for %aura_damage% magical damage per second, and causes them to miss %blind_pct%%% of their attacks. Illusions deal %aura_damage_illusions% magical damage per second.Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_mjz_radiance_4_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_radiance_4_Lore"						"A divine weapon that causes damage and a bright burning effect that lays waste to nearby enemies."
+		//<<<<
+		//>>>>	Radiance LVL 5
+		"DOTA_Tooltip_Ability_item_mjz_radiance_5"	                        "Radiance LVL 5"
+		"DOTA_Tooltip_ability_item_mjz_radiance_5_Description"				"<h1>Passive: Burn</h1>When active, scorches enemies for %aura_damage% magical damage per second, and causes them to miss %blind_pct%%% of their attacks. Illusions deal %aura_damage_illusions% magical damage per second.Radius: %aura_radius%"
+		"DOTA_Tooltip_ability_item_mjz_radiance_5_bonus_damage"				"+$damage"
+		"DOTA_Tooltip_ability_item_mjz_radiance_5_Lore"						"A divine weapon that causes damage and a bright burning effect that lays waste to nearby enemies."
+		//<<<<

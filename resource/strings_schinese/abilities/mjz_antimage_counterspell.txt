@@ -1,0 +1,14 @@
+    
+	"DOTA_Tooltip_ability_mjz_antimage_counterspell"				    "法术反制"
+	"DOTA_Tooltip_ability_mjz_antimage_counterspell_Description"	    "被动提升魔法抗性。 每%cooldown%秒被动抵挡并反弹一次指向性技能。 对目标单位施加一个护盾，持续%duration%秒，可以将大部分指向性法术反馈给施法者。"
+	"DOTA_Tooltip_ability_mjz_antimage_counterspell_Lore"	    		""
+	"DOTA_Tooltip_ability_mjz_antimage_counterspell_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_antimage_counterspell_magic_resistance"	"%魔法抗性加成："
+	"DOTA_Tooltip_ability_mjz_antimage_counterspell_cast_range"			"施法范围："
+	"DOTA_Tooltip_ability_mjz_antimage_counterspell_duration"			"持续时间："
+	"DOTA_Tooltip_ability_mjz_antimage_counterspell_cooldown"			"冷却时间："
+	"DOTA_Tooltip_modifier_mjz_spell_reflect"							"法术反制"
+	"DOTA_Tooltip_modifier_mjz_spell_reflect_Description"	    		"可以将大部分指向性法术反馈给施法者。"
+	"DOTA_Tooltip_modifier_mjz_spell_reflect_friendly"					"法术反制"
+	"DOTA_Tooltip_modifier_mjz_spell_reflect_friendly_Description"	    "可以将大部分指向性法术反馈给施法者。"
+	

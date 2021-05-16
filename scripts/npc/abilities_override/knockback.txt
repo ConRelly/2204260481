@@ -1,0 +1,51 @@
+
+	"spirit_breaker_greater_bash"
+	{
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"0.8"
+			}
+			"04"
+			{
+				"var_type	"			"FIELD_FLOAT"
+				"knockback_duration"	"0.1"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_distance"	"0"
+			}
+		}
+	}
+	"sniper_headshot"
+	{
+		"AbilitySpecial"
+		{
+
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"knockback_distance"			"0"
+			}
+
+		}
+	}
+	"queenofpain_sonic_wave"
+	{
+		"AbilitySpecial"
+		{
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_distance"	"0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration" 	"0.8"
+			}
+		}
+	}

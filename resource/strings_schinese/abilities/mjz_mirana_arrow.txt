@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_mirana_arrow"				    "月神之箭"
+	"DOTA_Tooltip_ability_mjz_mirana_arrow_Description"	    "射出一支绝对精准的箭矢，对第一个击中的敌人造成伤害。"
+	"DOTA_Tooltip_ability_mjz_mirana_arrow_Lore"	    	"明月的能量让月之公主的箭矢变得愈发致命。"
+	"DOTA_Tooltip_ability_mjz_mirana_arrow_Note0"	    	"额外箭矢会在中心箭矢的左右各30角度发射"
+	"DOTA_Tooltip_ability_mjz_mirana_arrow_arrow_range"		"最远移动距离："
+	"DOTA_Tooltip_ability_mjz_mirana_arrow_arrow_count"		"箭矢数量："
+	"DOTA_Tooltip_ability_mjz_mirana_arrow_damage_pct"		"%攻击力伤害："
+	"DOTA_Tooltip_ability_mjz_mirana_arrow_proc_chance"		"%概率: "
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_mirana_arrow_chance"		"+5% 月神之箭概率"
+	

@@ -1,0 +1,8 @@
+    
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance"				    "复仇之心"
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_Description"	    "增加你的攻击力、攻击速度、攻击距离。"
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_Lore"	    		"她或许永远都不能飞翔，但她终将为自己报仇雪恨。"
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_bonus_damage"		"攻击力加成："
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_bonus_attack_speed"	"攻击速度加成："
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_bonus_attack_range"	"攻击距离加成："
+	

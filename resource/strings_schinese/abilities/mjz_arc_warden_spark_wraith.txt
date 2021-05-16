@@ -1,0 +1,10 @@
+    
+	"DOTA_Tooltip_ability_mjz_arc_warden_spark_wraith"				    "闪光幽魂"
+	"DOTA_Tooltip_ability_mjz_arc_warden_spark_wraith_Description"	    "天穹守望者有一定概率造成额外伤害。"
+	"DOTA_Tooltip_ability_mjz_arc_warden_spark_wraith_Lore"				"泽特原始自我的低级碎片。"
+	"DOTA_Tooltip_ability_mjz_arc_warden_spark_wraith_Note0"	    	""
+	"DOTA_Tooltip_ability_mjz_arc_warden_spark_wraith_wraith_speed"		"幽魂速度："
+	"DOTA_Tooltip_ability_mjz_arc_warden_spark_wraith_proc_chance"		"%概率："
+	"DOTA_Tooltip_ability_mjz_arc_warden_spark_wraith_spark_damage"		"伤害："
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_arc_warden_0302"		"+10%闪光幽魂几率"
+	

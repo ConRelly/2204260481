@@ -1,0 +1,68 @@
+
+	//=================================================================================================================
+	// Kunkka: Tidebringer				潮汐使者
+	//=================================================================================================================
+	"mjz_kunkka_tidebringer"
+	{
+		"BaseClass"						"ability_lua"	//"ability_datadriven"
+    	"ScriptFile"		            "abilities/hero_kunkka/mjz_kunkka_tidebringer.lua"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"mjz_kunkka_tidebringer"
+
+		"AbilitySound"					"Hero_Kunkka.Tidebringer.Attack"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+		"AbilityCooldown"				"9.0 6.0 3.0 1.0"
+		"AbilityCastRange"				"150"
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		"AbilitySpecial"
+		{		
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cleave_starting_width"		"150"
+			}			
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cleave_ending_width"		"500 550 600 650"
+			}			
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cleave_distance"			"650 800 950 1100"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_bonus"				"25 50 75 100"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cleave_damage"				"165"
+				"LinkedSpecialBonus"		"special_bonus_unique_kunkka_4"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"strength_damage_pct"		"50 100 150 200"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+			"particle"		"particles/units/heroes/hero_kunkka/kunkka_weapon_tidebringer.vpcf"
+			"particle"		"particles/units/heroes/hero_kunkka/kunkka_spell_tidebringer.vpcf"
+			"particle"		"particles/econ/items/kunkka/divine_anchor/hero_kunkka_dafx_weapon/kunkka_spell_tidebringer_fxset.vpcf"
+		}
+	}
+

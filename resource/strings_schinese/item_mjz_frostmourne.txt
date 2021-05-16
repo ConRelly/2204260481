@@ -1,0 +1,19 @@
+
+		//>>>>	霜之哀伤
+		"DOTA_Tooltip_Ability_item_mjz_frostmourne"									"霜之哀伤"
+		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Description"						"<h1>主动：寒冰风暴</h1> 冻结敌方单位，禁止移动和攻击，并持续造成每秒%frostbite_damage_per_second%伤害。英雄持续%frostbite_duration_hero%秒，普通单位持续%frostbite_duration_creep%秒。 \n<h1>被动：霜冻攻击</h1>攻击附带使敌人移动速度减缓%debuff_move_speed_pct%%%和攻击速度降低%debuff_attack_speed%的霜冻效果。持续%debuff_duration%秒。 \n<h1>被动：吸血</h1>攻击者每次攻击都将根据造成的伤害回复%attack_lifesteal%%%的生命值。 \n<h1>被动：永恒</h1><font color='red'>死亡后掉落，而且无法被摧毁。</font>"
+		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Lore"							"Hail to the king, baby!"
+		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_agility"					"+$agi"
+		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_intellect"					"+$int"
+		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_strength"					"+$str"
+		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_mana"						"+$mana"
+		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_health"					"+$health"
+		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_attack_speed"				"+$attack"
+		"DOTA_Tooltip_modifier_mjz_frostmourne"										"霜之哀伤"
+		"DOTA_Tooltip_modifier_mjz_frostmourne_Description"							"Hail to the king, baby!"
+		"DOTA_Tooltip_modifier_mjz_frostmourne_hungers_debuff"						"霜之哀伤"
+		"DOTA_Tooltip_modifier_mjz_frostmourne_hungers_debuff_Description"			"攻击附带使敌人移动速度减缓%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%和攻击速度降低%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%的霜冻效果。"
+		"DOTA_Tooltip_modifier_mjz_frostmourne_frostbite"							"寒冰风暴"
+		"DOTA_Tooltip_modifier_mjz_frostmourne_frostbite_Description"				"冻结敌方单位，禁止移动和攻击，并持续造成伤害。"
+		//<<<<

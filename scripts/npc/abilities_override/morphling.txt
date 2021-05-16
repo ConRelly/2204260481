@@ -1,0 +1,71 @@
+	
+	"morphling_waveform"
+	{
+		"AbilityCooldown"				"17 14 11 8"
+		"AbilityManaCost"				"65"
+	}
+	"morphling_adaptive_strike_agi"
+	{
+		"AbilityManaCost"				"60"
+		"AbilityCooldown"				        "10 9 8 7"
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"damage_max"					"2.5 3.5 5.5 7.0"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+		}
+	}
+	"morphling_adaptive_strike_str"
+	{
+		"AbilityManaCost"				"60"
+		"AbilityCooldown"				        "10 9 8 7"
+	}
+	"morphling_morph"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attributes"		"8 11 14 17"
+			}
+		}
+	}
+	"morphling_replicate"
+	{
+		"AbilityCooldown"				"65 40 30"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"60"
+				"LinkedSpecialBonus"		"special_bonus_unique_morphling_8"
+			}
+		}
+	}
+	"special_bonus_unique_morphling_6"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"4"
+			}
+		}
+	}
+	"special_bonus_unique_morphling_3"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"9"
+			}
+		}
+	}

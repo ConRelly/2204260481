@@ -1,0 +1,15 @@
+    
+	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact"										"Soul Pact"
+	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_Description"							"Clinkz consumes the target enemy unit's soul, gain a permanent damage bonus, gaining max health and armor reduction on attack. If a hero dies under this debuff, Soul Pact will be refreshed. Each kill an enemy unit, Soul Pact cooldown reduced for %cooldown_reduce% seconds."
+	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_Lore"								"Sutherex' bond of life and soul has become a part of Clinkz, and his old bones are refreshed with repetition of the pact on lesser beings."
+	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_duration"							"DURATION:"
+	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_health_gain"							"HEALTH GAIN:"
+	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_armor_reduction"						"ARMOR REDUCTION:"
+	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_permanent_bonus"						"PERMANENT BONUS DAMAGE:"
+	"DOTA_Tooltip_modifier_mjz_clinkz_soul_pact_health"							"Soul Pact"
+	"DOTA_Tooltip_modifier_mjz_clinkz_soul_pact_health_Description"	   	 		"Max health increased by %dMODIFIER_PROPERTY_EXTRA_HEALTH_BONUS%. Attacks reduce enemy armor by %dMODIFIER_PROPERTY_TOOLTIP%."
+	"DOTA_Tooltip_modifier_mjz_clinkz_soul_pact_permanent_buff"					"Soul Pact Damage"
+	"DOTA_Tooltip_modifier_mjz_clinkz_soul_pact_permanent_buff_Description"		"Permanently increased damage gained from Soul Pact."
+	"DOTA_Tooltip_modifier_mjz_clinkz_soul_pact_debuff"							"Soul Pact"
+	"DOTA_Tooltip_modifier_mjz_clinkz_soul_pact_debuff_Description"				"Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
+

@@ -1,0 +1,41 @@
+
+	"mjz_spectre_reality"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityTextureName"			"mjz_spectre_reality"
+		
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"10"
+
+		"MaxLevel"						"1"
+		"LearnOnSpawn"					"1"		// 出生时学习此技能、值为等级
+
+		"precache"
+		{
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"search_radius"				"400"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/hero_spectre/mjz_spectre_reality.lua"
+				"Function"		"OnSpellStart"
+				"Target"		"POINT"
+			}
+		}
+	}
+
+

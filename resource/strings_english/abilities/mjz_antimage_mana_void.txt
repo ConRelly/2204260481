@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_antimage_mana_void"				"Mana Void"
+	"DOTA_Tooltip_ability_mjz_antimage_mana_void_Description"	"For each point of mana by the target unit, damage is dealt to it and surrounding enemies.  The main target is also mini-stunned."
+	"DOTA_Tooltip_ability_mjz_antimage_mana_void_Lore"			"After bringing enemies to their knees, Anti-Mage punishes them for their use of the arcane arts."
+	"DOTA_Tooltip_ability_mjz_antimage_mana_void_mana_void_damage_per_mana"		"DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_antimage_mana_void_mana_void_ministun"			"STUN DURATION:"
+	"DOTA_Tooltip_ability_mjz_antimage_mana_void_mana_void_aoe_radius"			"RADIUS:"
+	"DOTA_Tooltip_ability_mjz_antimage_mana_void_cast_range"					"CAST RANGE:"
+	"DOTA_Tooltip_ability_mjz_antimage_mana_void_Note0"			"The stun passes through spell immunity."
+	"DOTA_Tooltip_ability_mjz_antimage_mana_void_Note1"			"Damage is calculated based on the primary target's mana, but applied to all enemies within the area of effect."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_antimage_mana_void_damage"	"+0.9 Mana Void Damage"

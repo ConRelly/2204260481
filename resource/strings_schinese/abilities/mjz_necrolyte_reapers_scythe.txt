@@ -1,0 +1,13 @@
+    
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe"				    "死亡镰刀"
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_Description"	    "眩晕敌人，然后造成基于施法者智力值倍数的伤害。"
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_Aghanim_Description"	  "减少冷却时间。"
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_Lore"	    	"空气中充斥的死亡和苦难增强了瘟疫法师的瘟疫魔法。"
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_radius"		    		"施法距离："
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_base_damage"	   			"基础伤害："
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_int_damage_multiplier"	"智力伤害倍数："
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_stun_duration"			"眩晕时间："
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_cooldown"				"冷却时间："
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_cooldown_scepter"		"神杖升级冷却时间："
+	"DOTA_Tooltip_modifier_mjz_necrolyte_reapers_scythe"				"死亡镰刀"
+	"DOTA_Tooltip_modifier_mjz_necrolyte_reapers_scythe_Description"	"死神来了！"

@@ -1,0 +1,13 @@
+
+	"DOTA_Tooltip_ability_mjz_doom_bringer_devour"				"吞噬"
+	"DOTA_Tooltip_ability_mjz_doom_bringer_devour_Description"	"消化一个敌军的灵魂。"
+	"DOTA_Tooltip_ability_mjz_doom_bringer_devour_Lore"			"路西法的食欲和贪婪永远不会得到满足。"
+	"DOTA_Tooltip_ability_mjz_doom_bringer_devour_bonus_strength"	"永久力量奖励："
+	"DOTA_Tooltip_ability_mjz_doom_bringer_devour_regen"			"生命恢复："
+	"DOTA_Tooltip_ability_mjz_doom_bringer_devour_devour_time"		"消化时间："
+	"DOTA_Tooltip_modifier_mjz_doom_bringer_devour"					"吞噬力量奖励"
+	"DOTA_Tooltip_modifier_mjz_doom_bringer_devour_Description"		"奖励 %0fMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% 点额外力量"
+	"DOTA_Tooltip_modifier_mjz_doom_bringer_devour_regen"				"吞噬"
+	"DOTA_Tooltip_modifier_mjz_doom_bringer_devour_regen_Description"	"还在消化这个美味的灵魂。"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_doom_bringer_devour_strength"	"+{s:value} 吞噬额外力量"
+	

@@ -1,0 +1,14 @@
+
+"DOTA_Tooltip_Ability_item_mjz_vladmir"					"弗拉迪米尔的祭品"
+"DOTA_Tooltip_ability_item_mjz_vladmir_Description"							"<h1>被动：弗拉迪米尔光环</h1>向周围队友提供%lifesteal_aura%%%吸血，%armor_aura%护甲加成和%mana_regen_aura%点/秒魔法恢复。<br><br>作用范围：%aura_radius%"
+"DOTA_Tooltip_ability_item_mjz_vladmir_Lore"				"一副怪异的面具，纠缠着死去吸血鬼的怨念。"
+"DOTA_Tooltip_ability_item_mjz_vladmir_bonus_all_stats"		"+$all"
+"DOTA_Tooltip_modifier_item_mjz_vladmir_aura"			"弗拉迪米尔光环"
+"DOTA_Tooltip_modifier_item_mjz_vladmir_aura_Description"	"获得10%%吸血效果，还有%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%额外护甲，%fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%点/秒魔法恢复。"
+
+"DOTA_Tooltip_Ability_item_mjz_vladmir_v2"					"弗拉迪米尔的祭品 V2"
+"DOTA_Tooltip_ability_item_mjz_vladmir_v2_Description"							"<h1>被动：弗拉迪米尔光环</h1>向周围队友提供%lifesteal_aura%%%吸血，%armor_aura%护甲加成和%mana_regen_aura%点/秒魔法恢复。<br><br>作用范围：%aura_radius%"
+"DOTA_Tooltip_ability_item_mjz_vladmir_v2_Lore"				"一副怪异的面具，纠缠着死去吸血鬼的怨念。"
+"DOTA_Tooltip_ability_item_mjz_vladmir_v2_bonus_all_stats"		"+$all"
+"DOTA_Tooltip_modifier_item_mjz_vladmir_v2_aura"			"弗拉迪米尔光环 V2"
+"DOTA_Tooltip_modifier_item_mjz_vladmir_v2_aura_Description"	"获得10%%吸血效果，还有%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%额外护甲，%fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%点/秒魔法恢复。"

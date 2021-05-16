@@ -1,0 +1,10 @@
+
+		//>>>>	MJZ Mana Staff
+		"DOTA_Tooltip_ability_item_mjz_mana_staff"                                  "Mana Staff"
+		"DOTA_Tooltip_ability_item_mjz_mana_staff_Description"						"<h1>Active：Swallow</h1><font color='#00FF40'>After swallowing, you will permanently gain the effect of the ability.</font>\n<h1>Passive: Mana Steal</h1>Regenerates mana equivalent to %mana_steal%%% of attack damage dealt.\n<font color='#F2A93E'>Multiples Mana Staff does not stack.</font>"
+		"DOTA_Tooltip_ability_item_mjz_mana_staff_Lore"								"A staff that drains the energy of those caught in its gaze."
+		"DOTA_Tooltip_ability_item_mjz_mana_staff_bonus_agi"						"+$agi"
+		"DOTA_Tooltip_ability_item_mjz_mana_staff_bonus_int"						"+$int"
+		"DOTA_Tooltip_modifier_item_mjz_mana_staff_consumed"						"Mana Steal"
+		"DOTA_Tooltip_modifier_item_mjz_mana_staff_consumed_Description"			"Regenerates mana equivalent to %dMODIFIER_PROPERTY_TOOLTIP%%% of attack damage dealt."
+		//<<<<

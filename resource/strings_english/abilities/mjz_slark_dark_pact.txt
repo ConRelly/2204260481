@@ -1,0 +1,13 @@
+    
+"DOTA_Tooltip_ability_mjz_slark_dark_pact"				"Dark Pact"
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_Description"	"After a short delay, Slark sacrifices some of his life blood, purging most negative debuffs and dealing damage to enemy units around him and to himself.  Slark only takes 50%% of the damage.\n\nDISPEL TYPE: Strong Dispel"
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_Lore"			"Slithereen are capable of quickly regrowing appendages, in case of critical injury, to save their own lives."
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_delay"		"DELAY:"
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_radius"		"RADIUS:"
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_base_damage"	"BASE DAMAGE:"
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_health_damage_pct"	"%CURRENT HEALTH AS DAMAGE:"
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_Note0"	"1.5 seconds after cast, a series of 10 pulses separated by 0.1 seconds deal the damage."
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_Note1"	"Each pulse also removes debuffs from Slark."
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_Note2"	"You can't kill yourself with this skill."
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_Note3"	"The pulses stop if Slark dies."
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_slark_dark_pact_damage"	"+200 Dark Pact Damage"

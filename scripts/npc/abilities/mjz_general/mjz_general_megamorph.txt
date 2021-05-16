@@ -1,0 +1,34 @@
+
+	"mjz_general_megamorph"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/mjz_general/mjz_general_megamorph.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjz_general_megamorph"
+		"MaxLevel"						"1"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"		        "150"
+			}
+            "02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_range"		     "400"
+			}
+            "03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"		     "400"
+			}
+            "04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"model_scale"		     "30"
+			}
+		}
+	}
+	

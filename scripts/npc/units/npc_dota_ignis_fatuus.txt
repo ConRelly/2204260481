@@ -1,0 +1,7 @@
+
+//幻火	跳舞球		光法
+"npc_dota_ignis_fatuus"
+{
+
+	"Ability5"					"ignis_fatuus_health_counter"
+}

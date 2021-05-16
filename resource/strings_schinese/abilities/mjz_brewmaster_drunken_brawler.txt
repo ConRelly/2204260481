@@ -1,0 +1,16 @@
+    
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler"				    "醉拳"
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_Description"	    "有一定概率闪避攻击并能造成致命一击。"
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_Lore"	    		"曼吉克斯赢得奥尤社的酒仙称号的同时，也确立了他在精通醉拳方面的地位。"
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_Note0"	    		""
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_dodge_chance"	    "%闪避："
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_crit_chance"	    "%致命一击几率："
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_crit_multiplier"	"%致命一击伤害："
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_duration"	   	 	"持续时间："
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_dodge_chance_active"	    "%闪避（激活）："
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_crit_chance_active"	    "%致命一击几率（激活）："
+	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_crit_multiplier_active"	"%致命一击伤害（激活）："
+	"DOTA_Tooltip_modifier_mjz_brewmaster_drunken_brawler_active"					"醉拳"
+	"DOTA_Tooltip_modifier_mjz_brewmaster_drunken_brawler_active_Description"	    "有一定概率闪避攻击并能造成致命一击。"
+	
+	

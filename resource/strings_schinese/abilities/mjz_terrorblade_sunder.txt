@@ -1,0 +1,6 @@
+    
+	"DOTA_Tooltip_ability_mjz_terrorblade_sunder"				    "魂断"
+	"DOTA_Tooltip_ability_mjz_terrorblade_sunder_Description"	    "隔断恐怖利刃以及目标的灵魂并将双方的当前血量进行互换。交换后双方的生命值必定在一定百分比以上。"
+	"DOTA_Tooltip_ability_mjz_terrorblade_sunder_Lore"	    		"你是不是不想要这条命？恶魔掠夺者偷走的正是你最为珍视的。"
+	"DOTA_Tooltip_ability_mjz_terrorblade_sunder_cast_range"				"施法距离："
+	"DOTA_Tooltip_ability_mjz_terrorblade_sunder_hit_point_minimum_pct"		"%隔断后最低生命值："

@@ -1,0 +1,11 @@
+    
+	"DOTA_Tooltip_ability_mjz_omniknight_degen_aura"				    "退化光环"
+	"DOTA_Tooltip_ability_mjz_omniknight_degen_aura_Description"	    "极大程度的减缓附近敌人的移动速度和攻击速度。"
+	"DOTA_Tooltip_ability_mjz_omniknight_degen_aura_Lore"	    		"作为神圣的化身，普里斯特．雷霆之怒足以削弱那些不忠之徒。"
+	"DOTA_Tooltip_ability_mjz_omniknight_degen_aura_Note0"	    		"光环debuff有1秒的延滞时间"
+	"DOTA_Tooltip_ability_mjz_omniknight_degen_aura_radius"				"范围："
+	"DOTA_Tooltip_ability_mjz_omniknight_degen_aura_speed_bonus"		"%移动速度减缓："
+	"DOTA_Tooltip_ability_mjz_omniknight_degen_aura_attack_bonus"		"%攻击速度降低："
+	"DOTA_Tooltip_modifier_mjz_omniknight_degen_aura_effect"				"退化光环"
+	"DOTA_Tooltip_modifier_mjz_omniknight_degen_aura_effect_Description"	"极大程度的减缓附近敌人的移动速度和攻击速度。"
+	

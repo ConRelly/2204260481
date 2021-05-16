@@ -1,0 +1,18 @@
+    
+"DOTA_Tooltip_ability_mjz_leshrac_lightning_storm"									"闪电风暴"
+"DOTA_Tooltip_ability_mjz_leshrac_lightning_storm_Description"						"召唤一片闪电风暴攻击目标敌方单位，并跳跃到附近的敌方单位。被攻击的敌人将会被减速。"
+"DOTA_Tooltip_ability_mjz_leshrac_lightning_storm_Lore"								"受折磨的灵魂用来击倒敌人的闪电风暴展示了他对元素的精通。"
+"DOTA_Tooltip_ability_mjz_leshrac_lightning_storm_damage"							"基础伤害："
+"DOTA_Tooltip_ability_mjz_leshrac_lightning_storm_damage_intelligence_per"			"%智力伤害："
+"DOTA_Tooltip_ability_mjz_leshrac_lightning_storm_jump_count"						"闪电跳跃次数："
+"DOTA_Tooltip_ability_mjz_leshrac_lightning_storm_slow_movement_speed"		        "%移动速度减缓："
+"DOTA_Tooltip_ability_mjz_leshrac_lightning_storm_slow_duration"					"减速持续时间："
+"DOTA_Tooltip_ability_mjz_leshrac_lightning_storm_radius"							"闪电跳跃范围："
+"DOTA_Tooltip_ability_mjz_leshrac_lightning_storm_interval_scepter"					"神杖升级触发间隔："
+"DOTA_Tooltip_ability_mjz_leshrac_lightning_storm_count_scepter"					"神杖升级目标数量："
+"DOTA_Tooltip_ability_mjz_leshrac_lightning_storm_radius_scepter"					"神杖升级作用范围："
+"DOTA_Tooltip_ability_mjz_leshrac_lightning_storm_aghanim_description"				"脉冲新星开启后，每%interval_scepter%秒闪电风暴会随机作用于范围内的一个目标。"
+"DOTA_Tooltip_modifier_mjz_leshrac_lightning_storm_slow" 				"闪电风暴减速"
+"DOTA_Tooltip_modifier_mjz_leshrac_lightning_storm_slow_Description" 	"移动速度减缓%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%。"
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_leshrac_lightning_storm_int_damage"	"+{s:value}% 闪电风暴智力伤害"
+

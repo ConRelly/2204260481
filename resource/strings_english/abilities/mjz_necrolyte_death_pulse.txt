@@ -1,0 +1,12 @@
+    
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse"									"Death Pulse"
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_Description"						"Necrophos releases a wave of death around him, dealing damage to enemy units and healing allied units."
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_Lore"								"Poor souls who succumb to Rotund'jere's plagues are recycled for future use."
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_Note0"								"Death Pulse can't be disjointed."
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_Note1"								"Can heal Spell Immune units."
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_radius"								"RADIUS:"
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_base_heal"							"BASE HEAL:"
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_max_health_heal"					"%MAX HEALTH HEAL:"
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_base_damage"						"BASE DAMAGE:"
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_int_damage_multiplier"				"INT DAMAGE MULTIPLIER:"
+"DOTA_Tooltip_ability_mjz_necrolyte_death_pulse_max_count"							"MAX TARGET COUNT:"

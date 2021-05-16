@@ -1,0 +1,8 @@
+
+"DOTA_Tooltip_ability_golden_mine_passive"								"Gift Money"
+"DOTA_Tooltip_ability_golden_mine_passive_Description"					"Work, work."
+"DOTA_Tooltip_ability_golden_mine_passive_exp"							"GIVE EXP:"
+"DOTA_Tooltip_ability_golden_mine_passive_gold"							"GIVE GOLD:"
+"DOTA_Tooltip_ability_golden_mine_passive_interval"						"INTERVAL:"
+"DOTA_Tooltip_modifier_golden_mine_buff"								"Gift Money"
+

@@ -1,0 +1,33 @@
+
+	"mjz_riki_backstab"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_riki/mjz_riki_backstab.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		// "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityTextureName"			"mjz_riki_backstab"
+		
+		"MaxLevel"						"1"
+		"LearnOnSpawn"					"1"		// 出生时学习此技能、值为等级
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"agility_damage"			"150"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"health_regen"				"12"
+			}
+		}
+
+		"precache"
+		{
+	 		"particle"		"particles/units/heroes/hero_riki/riki_backstab.vpcf"
+		}
+	}

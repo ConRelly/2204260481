@@ -1,0 +1,16 @@
+
+	"npc_dota_hero_sniper_mjz"			// 火枪
+	{
+		"override_hero"			"npc_dota_hero_sniper"
+
+		"Ability3"				"mjz_sniper_take_aim"
+		"Ability4"				"mjz_sniper_quick_draw"
+		"Ability6"				"mjz_sniper_assassinate"
+		"Ability15"				"special_bonus_unique_mjz_sniper_assassinate_damage"
+		
+				//"Ability16"				"special_bonus_haste"
+		"Ability16"				"special_bonus_spell_immunity"
+		"Ability17"				"special_bonus_attack_damage_100"
+	}
+	
+		

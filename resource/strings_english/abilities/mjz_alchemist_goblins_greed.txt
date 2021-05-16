@@ -1,0 +1,5 @@
+
+"DOTA_Tooltip_ability_mjz_alchemist_goblins_greed"								"Greevil's Greed"
+"DOTA_Tooltip_ability_mjz_alchemist_goblins_greed_Description"					"I LIKE GOLD!!!"
+"DOTA_Tooltip_ability_mjz_alchemist_goblins_greed_gold"							"GIVE GOLD:"
+"DOTA_Tooltip_ability_mjz_alchemist_goblins_greed_interval"						"INTERVAL:"

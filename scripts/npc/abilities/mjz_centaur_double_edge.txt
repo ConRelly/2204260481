@@ -1,0 +1,87 @@
+	
+	"mjz_centaur_double_edge"
+	{
+		"BaseClass"						"ability_lua"	//"ability_datadriven"
+		"ScriptFile"					"abilities/hero_centaur/mjz_centaur_double_edge.lua"
+		"AbilityTextureName"			"mjz_centaur_double_edge_ti9"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Centaur.DoubleEdge"
+
+		"AbilityCooldown"				"4.0"
+		"AbilityCastRange"				"150 150 150 150"
+		"AbilityCastPoint"				"0.4"
+		"AbilityManaCost"				"0 0 0 0"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
+			"particle"	"particles/units/heroes/hero_centaur/centaur_double_edge.vpcf"
+			"particle"	"particles/units/heroes/hero_centaur/centaur_double_edge_body.vpcf"
+			"particle"	"particles/units/heroes/hero_centaur/centaur_double_edge_phase.vpcf"
+			"particle"  "particles/econ/items/centaur/centaur_ti9/centaur_double_edge_ti9.vpcf"
+			"particle"  "particles/econ/items/centaur/centaur_ti9/centaur_double_edge_body_ti9.vpcf"
+			"particle"  "particles/econ/items/centaur/centaur_ti9/centaur_double_edge_phase_ti9.vpcf"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"edge_damage"					"120 180 240 300"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"strength_damage"				"120 240 360 480"
+				"LinkedSpecialBonus"			"special_bonus_unique_mjz_centaur_double_edge_strength"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"self_strength_damage"			"100"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"240"
+				"LinkedSpecialBonus"			"special_bonus_unique_mjz_centaur_double_edge_radius"
+			}
+		}
+	}
+	"special_bonus_unique_mjz_centaur_double_edge_strength"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"520"
+			}
+		}
+	}
+	"special_bonus_unique_mjz_centaur_double_edge_radius"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"360"
+			}
+		}
+	}

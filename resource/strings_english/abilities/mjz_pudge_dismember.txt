@@ -1,0 +1,16 @@
+    
+
+"DOTA_Tooltip_ability_mjz_pudge_dismember"											"Dismember"
+"DOTA_Tooltip_ability_mjz_pudge_dismember_Description"								"CHANNELED - Pudge chows down on an enemy unit, disabling it and dealing damage over time. Pudge gets healed for the same amount he damages. "
+"DOTA_Tooltip_ability_mjz_pudge_dismember_Lore"										"'When I'm through with these vermin, they'll be fit for a pie!'"
+"DOTA_Tooltip_ability_mjz_pudge_dismember_Note0"									"If a unit becomes invisible while Dismembered, it will still be under the effects of Dismember."
+"DOTA_Tooltip_ability_mjz_pudge_dismember_dismember_damage"							"DAMAGE PER SECOND:"
+"DOTA_Tooltip_ability_mjz_pudge_dismember_strength_damage"      					"STRENGTH MULTIPLIER:"
+"DOTA_Tooltip_ability_mjz_pudge_dismember_duration"      					        "DURATION:"
+"DOTA_Tooltip_ability_mjz_pudge_dismember_scepter_aoe"      					    "SCEPTER AOE:"
+"DOTA_Tooltip_ability_mjz_pudge_dismember_scepter_cooldown"      					"SCEPTER COOLDOWN:"
+"DOTA_Tooltip_ability_mjz_pudge_dismember_aghanim_description"						"Reduces cooldown and ."
+"DOTA_Tooltip_modifier_mjz_pudge_dismember"					                        "Dismember"
+"DOTA_Tooltip_modifier_mjz_pudge_dismember_Description"		                        "Getting dismembered by Pudge."
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_pudge_dismember_strength_damage"	    "+{s:value} Dismember Strength Damage"
+"DOTA_Tooltip_ability_special_bonus_unique_mjz_pudge_dismember_duration"	        "+{s:value}s Dismember Duration"

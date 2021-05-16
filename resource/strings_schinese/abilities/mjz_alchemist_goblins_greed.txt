@@ -1,0 +1,5 @@
+
+"DOTA_Tooltip_ability_mjz_alchemist_goblins_greed"								"地精的贪婪"
+"DOTA_Tooltip_ability_mjz_alchemist_goblins_greed_Description"					"抱歉，有钱是真的能为所欲为的！！！"
+"DOTA_Tooltip_ability_mjz_alchemist_goblins_greed_gold"							"获得金钱："
+"DOTA_Tooltip_ability_mjz_alchemist_goblins_greed_interval"						"时间间隔："
