@@ -129,7 +129,7 @@
 	"support"
 	{
 		"item"		"item_mystery_cyclone"
-		"item"		"item_solar_crest_of_void"
+		"item"		"item_moonfall"
 		"item"		"item_battlemage_cloth"
 		"item"		"item_urn_of_shadows"
 //		"item"		"item_tranquil_boots"

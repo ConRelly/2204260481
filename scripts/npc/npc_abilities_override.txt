@@ -3463,8 +3463,8 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "10"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"10"
 		"AbilityCooldown"				"0.0"		
 		"AbilityManaCost"				"10"
 		"AbilitySpecial"
@@ -17901,5 +17901,2862 @@
 	}
 
 
+//#################################### DOTA ITEMS ####################################\\
+// Abyssal Blade
+	"item_abyssal_blade"
+	{
+		"AbilityCooldown"				"15"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"140"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"block_damage_melee"	"200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"block_damage_ranged"	"200"
+			}			
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"block_chance"			"75"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"50"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bash_chance_melee"		"25"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bash_chance_ranged"		"15"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bash_duration"			"0.2"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bash_cooldown"			"1.5"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_chance_damage"	"300"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"				"2"
+			}
+		}
+	}
 
+// TP Scroll
+	"item_tpscroll"
+	{
+		"ID"							"46"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NOASSIST | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"Model"							"models/props_gameplay/tpscroll01.vmdl"
+		"AbilityCastRange"				"0"
+		"AbilityCooldown"				"80.0"
+		"AbilitySharedCooldown"			"teleport"
+		"AbilityChannelTime"			"0.01"
+		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"75"
+		"ItemCost"						"0"
+		"ItemShopTags"					"consumable;tutorial"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"tp;town portal scroll;teleport"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"97"
+		//"SideShop"						"1"
+		"ItemPurchasable"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"minimun_distance"		"70"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maximum_distance"		"1575"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_radius"			"200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tooltip_channel_time"			"0.01"
+			}
+		}
+	}
+
+// Aegis
+	"item_aegis"
+	{
+		"ID"							"117"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/aegis.vmdl"		
+		"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
+		"ItemCost"						"1000"
+		"ItemShopTags"					""
+		"ItemQuality"					"artifact"
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"1"
+		"ItemInitialCharges"			"0"
+		"ItemRequiresCharges" 			"0"
+		"ItemContributesToNetWorthWhenDropped"	"0"
+		"AllowedInBackpack"				"0"
+		"ItemStackable"				 "0"
+		//"ItemIsNeutralDrop"			 "1"
+		"IsTempestDoubleClonable"		"0"
+		"ItemShareability"			  "ITEM_FULLY_SHAREABLE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"reincarnate_time"		"7.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"disappear_time"		"600.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"disappear_time_minutes_tooltip"		"10"
+			}
+		}
+	}
+
+// Aether Lens
+	"item_aether_lens"
+	{
+		"MaxUpgradeLevel"			"2"
+		"ItemBaseLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"450 1650"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"5 90"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"		"250 600"
+			}
+		}
+	}
+
+// Recipe: Aeon Disk
+	"item_recipe_aeon_disk"
+	{
+		"ItemResult"					""
+		"ItemRequirements"
+		{
+			"01"						""
+		}
+	}
+// Aeon Disk
+	"item_aeon_disk"
+	{
+		"ItemCost"						"99999"
+		"ItemPurchasable"				"0"
+	}
+
+// Drums
+	"item_ancient_janggo"
+	{
+		"AbilityCooldown"				"30.0"
+		"ItemInitialCharges"			"99999"
+		"ItemDisplayCharges"			"0"
+		"ItemHideCharges"				"1"
+		"AbilityCastRange"				"8200"
+		"AbilityCooldown"				"45.0"
+		"ItemRequiresCharges"			"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_movement_speed"	"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_str"				"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_int"				"20"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed_pct"	"85"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed_pct"	"75"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"30"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"7200"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charges_tooltip"		"8"
+			}
+		}
+	}
+
+// Arcane Boots
+	"item_arcane_boots"
+	{
+		"AbilitySpecial"
+		{	
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replenish_amount"		"1250"
+			}
+
+		}
+	}
+
+// Armlet
+	"item_armlet"
+	{
+		"ItemBaseLevel"					"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"31 85"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"25 55"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"5 8"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"7 24"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_damage"	"31 175"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"unholy_bonus_attack_speed"	"0 50"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_strength"	"25 102"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_armor"	"5 10"
+			}		
+			"09"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"unholy_health_drain_per_second"	"54 225"
+			}	
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"toggle_cooldown"		"0.036f"
+			}			
+		}
+	}
+
+// Basher
+	"item_basher"
+	{
+		"AbilityCooldown"				"2.5"
+		"AbilitySpecial"
+		{
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bash_duration"			"0.25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bash_cooldown"			"2.3"
+			}
+		}
+	}
+
+// Battle Fury
+	"item_bfury"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"55 120 190 280 350"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"7.5 19 31 42 55"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"2.75 10 15 22.5 30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_damage_percent"	"70 80 90 100 120"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"cleave_damage_percent_creep"	"70 80 90 100 120"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"quelling_bonus"			"36"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"quelling_bonus_ranged"	"18"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_ending_width"			"425"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_distance"			"500"
+			}
+		}
+	}
+
+// Recipe: Black King Bar
+	"item_recipe_black_king_bar"
+	{
+		"ItemCost"						"300"	
+		"ItemRequirements"
+		{
+			"01"						"item_ogre_axe;item_mithril_hammer;item_black_king_bar_free"
+		}
+	}
+// Black King Bar
+	"item_black_king_bar"
+	{
+		"AbilitySharedCooldown"			"blackking"
+		"AbilityCooldown"				"16"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"65"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0 3.0 3.0 3.0 3.0 3.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_level"				"6"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"model_scale"			"30"	 // Percentage over model scale
+			}
+		}
+	}
+
+// Blade Mail
+	"item_blade_mail"
+	{
+		"ItemCost"						"99999"
+		"ItemPurchasable"				"0"
+	}
+
+// Blink Dagger
+	"item_blink"
+	{
+		"ItemCost"						"1600"
+		"MaxUpgradeLevel"			   "2"
+		"ItemBaseLevel"				 "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blink_range"			"1900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blink_damage_cooldown"	"0.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blink_range_clamp"		"1660"
+			}
+		}
+	}
+
+// Bloodthorn
+	"item_bloodthorn"
+	{
+		"MaxUpgradeLevel"			   "2"
+		"ItemBaseLevel"				 "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"25 210"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"85 155"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"30 200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"7.5 42.5"
+			}			
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"silence_damage_percent"	"30"
+			}	
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"silence_duration"		"5 6"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"target_crit_multiplier"		"130 150"
+			}
+			"8"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tooltip_crit_chance"	"100"
+			}
+		}
+	}
+
+// Bloodstone
+	"item_bloodstone"
+	{
+		"ItemInitialCharges"			"0"
+		"ItemDisplayCharges"			"0"
+		"AbilityCooldown"				"24.0"
+		"AbilitySharedCooldown"			"bloodstone"
+		"AllowedInBackpack"				"1"
+		"MaxUpgradeLevel"				"2"
+		"ItemBaseLevel"					"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"425 1425"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"425 1900"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"16 170"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_regen_multiplier"	"50 600"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"12 70"
+			}	
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_lifesteal_amp"	"15 30"
+			}	
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hero_lifesteal"		"0"
+			}			
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"creep_lifesteal"		"0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"regen_per_charge"		"0"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"amp_per_charge"		"0"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"death_charges"			"0"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"kill_charges"			"0"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charge_range"			"0"
+			}
+			"14"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"initial_charges_tooltip"	"0"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"restore_duration"		"6"
+			}
+			"16"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_cost_percentage"	"15 30"
+			}
+		}	
+	}
+
+// Butterfly
+	"item_butterfly"
+	{
+		"MaxUpgradeLevel"			"2"
+		"ItemBaseLevel"				"1"
+		"ItemDisassembleRule"		"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"60 225"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_evasion"			"35 60"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"40 175"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"60 225"
+			}
+		}
+	}
+
+// Courier
+	"item_courier"
+	{
+		"ItemCost"						"0"
+	}
+
+// Crimson Guard
+	"item_crimson_guard"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"50"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"block_damage_melee"	"250"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"block_damage_ranged"	"52"
+			}			
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"block_chance"			"50"
+			}	
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"block_damage_melee_active"	"1000"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"block_damage_ranged_active"	"1000"
+			}		
+		}
+	}
+
+// Eul's Scepter of Divinity
+	"item_cyclone"
+	{
+		"AbilityCooldown"				"20.0"
+		"MaxUpgradeLevel"			   "2"
+		"ItemBaseLevel"				 "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"10 80"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"10.0 46.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"20 90"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cyclone_duration"		"2.5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_drop_damage"	"50"
+			}
+		}
+	}
+
+// Desolator
+	"item_desolator"
+	{
+		"MaxUpgradeLevel"			"3"
+		"ItemBaseLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"50 490 930"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"corruption_armor"		"-4 -9 -19"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"corruption_duration"	"5"
+			}
+		}
+	}
+
+// Diffusal Blade
+	"item_diffusal_blade"
+	{
+		"MaxUpgradeLevel"			   "2"
+		"ItemBaseLevel"				 "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"bonus_agility"							"20 225"
+			}
+			"02"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"bonus_intellect"						"10 90"
+			}
+			"03"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"feedback_mana_burn"					"6"
+			}
+			"04"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"feedback_mana_burn_illusion_melee"		"5"
+			}
+			"05"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"feedback_mana_burn_illusion_ranged"	"4"
+			}
+			"06"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"purge_rate"							"5"
+			}
+			"07"
+			{
+				"var_type"								"FIELD_FLOAT"
+				"purge_root_duration"					"3.0"
+			}
+			"08"
+			{
+				"var_type"								"FIELD_FLOAT"
+				"purge_slow_duration"					"4.0"
+			}
+			"09"
+			{
+				"var_type"								"FIELD_FLOAT"
+				"damage_per_burn"						"50 220"
+			}
+			"10"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"cast_range_tooltip"					"600"
+			}
+		}
+	}
+
+// Dragon Lance
+	"item_dragon_lance"
+	{
+		"MaxUpgradeLevel"			   "2"
+		"ItemBaseLevel"				 "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"12"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"12"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_attack_range"		"140"
+			}
+		}
+	}
+
+// Echo Sabre
+	"item_echo_sabre"
+	{
+		"MaxUpgradeLevel"			"5"
+		"ItemBaseLevel"				"1"
+		"AbilityCooldown"			"0.45"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"15 25 35 45 55"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"15 25 35 45 55"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"10 13 16 19 22"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"10 15 20 25 30"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"2.25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow"			"100"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed_slow"		"0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"0.8"
+			}
+		}
+	}
+
+// Ethereal Blade
+	"item_ethereal_blade"
+	{
+		"MaxUpgradeLevel"			   "3"
+		"ItemBaseLevel"				 "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_agility"				"40 100 250"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_strength"			"10"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_intellect"			"10"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blast_movement_slow"		"-80"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"2.0 2.5 3.0"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"blast_agility_multiplier"	"3.0 6.0 10.0"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blast_damage_base"			"75 150 250"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration_ally"				"2.0 2.5 3.0"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ethereal_damage_bonus"		"-30 -35 -40"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"projectile_speed"			"1275"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tooltip_range"				"800"
+			}
+		}
+	}
+
+// Flask
+	"item_flask"
+	{
+		"ItemCost"						"60"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	}
+
+// Glimmer Cape
+	"item_glimmer_cape"
+	{
+		"AbilitySpecial"
+		{			
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_magical_armor"	"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fade_delay"				"0.6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"active_magical_armor"	"50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"	"5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"building_duration_limit"			"180"
+			}
+		}
+	}
+
+// Daedalus
+	"item_greater_crit"
+	{
+		"MaxUpgradeLevel"			"5"
+		"ItemBaseLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"80 220"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"30 35"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_multiplier"		"235 290"
+			}
+		}
+	}
+
+// Guardian Greaves
+	"item_guardian_greaves"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement"		"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"250"
+			}		
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"4"
+			}	
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_health_regen"		"30"
+			}	
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_armor"			"3"
+			}			
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_health_regen_bonus"	"50"
+			}			
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_armor_bonus"		"10"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_bonus_threshold"	"20"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"1200"
+			}	
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replenish_health"		"450"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replenish_mana"		"200"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replenish_radius"		"1200"
+			}
+		}
+	}
+
+// Recipe: Hand of Midas
+	"item_recipe_hand_of_midas"
+	{
+		"ItemRequirements"
+		{
+			"01"						""
+		}
+	}
+// Hand of Midas
+	"item_hand_of_midas"
+	{
+		"ItemPurchasable"				"0"
+	}
+
+// Headdress
+	"item_headdress"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_health_regen"		"20"
+			}
+		}
+	}
+
+// Heavens Halberd
+	"item_heavens_halberd"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"36"
+			}		
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"disarm_range"				"1.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"disarm_melee"				"1.5"
+			}	
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"status_resistance"				"25"
+			}							
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen_amp"			"16"
+			}		
+		}
+	}
+
+// Recipe: Holy Locket
+	"item_recipe_holy_locket"
+	{
+		"ID"							"268"
+		"ItemCost"						"3500"	
+		"ItemShopTags"					""		
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_holy_locket"
+		"ItemRequirements"
+		{
+			"01"						"item_magic_wand;item_greater_faerie_fire;item_chest_5;item_fluffy_hat"
+			//"01"						"item_chest_1"
+		}
+	}
+// Holy Locket
+	"item_holy_locket"
+	{
+		"ID"							"269"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityCastRange"				"2500"
+		"AbilityCastPoint"				"0.0"
+		"ItemQuality"					"rare"
+		"ActiveDescriptionLine"			"2"
+		"ShouldBeInitiallySuggested"	"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"AbilityCooldown"				"13.0"
+		"AbilitySharedCooldown"			"magicwand"
+		"UIPickupSound"					"Item.PickUpRingShop"
+		"UIDropSound"					"Item.DropRingShop"
+		"WorldDropSound"				"Item.DropRingWorld"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"4250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"3250"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_health_regen"		"820.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"7200"
+			}			
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_increase"			"45"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_charges"			"50"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charge_radius"			"7200"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"375"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"restore_per_charge"	"1000"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charge_gain_timer"		"5"
+			}						
+		}
+	}
+
+// Fluffy Hat
+	"item_fluffy_hat"
+	{
+		"ID"							"593"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemCost"						"7500"
+		"ItemShopTags"					"health_pool"
+		"ItemQuality"					"secret_shop"
+		"ItemAliases"					"flf;fluffy hat;hat;fh"
+//		"SecretShop"					"1"
+//		"SideShop"						"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"4250"
+			}
+		}
+	}
+
+// Hurricane Pike
+	"item_hurricane_pike"
+	{
+		"AbilityCooldown"				"10.0"
+		"AbilityCastRange"				"5000"
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health"			"200"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_attack_range"		"240"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"enemy_length"			"100"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"range_duration"		"6"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_enemy"		"5000"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_attacks"			"7"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"10"
+			}
+		}
+	}
+
+// Infused Raindrop
+	"item_infused_raindrop"
+	{
+		"AbilityCooldown"				"7.0"
+		"ItemInitialCharges"			"5"
+		"ItemHideCharges"				"0"
+		"ItemStockTime"					"1"			  
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"0.0"
+	}
+
+// Maelstrom
+	"item_maelstrom"
+	{
+		"AbilitySpecial"
+		{
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chain_cooldown"		"0.15"
+			}
+		}
+	}
+
+// Manta Style
+	"item_manta"
+	{
+		"AbilityCooldown"				"30.0"
+		"AbilitySharedCooldown"			"manta"
+		"MaxUpgradeLevel"			   "2"
+		"ItemBaseLevel"				 "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"bonus_strength"								"10 45"
+			}
+			"02"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"bonus_agility"									"26 120"
+			}
+			"03"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"bonus_intellect"								"10 45"
+			}
+			"04"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"bonus_attack_speed"							"12 80"
+			}
+			"05"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"bonus_movement_speed"							"20 45"
+			}
+			"06"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"images_count"									"2"
+			}			
+			"07"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"tooltip_illusion_duration"						"20"
+			}
+			"08"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"images_do_damage_percent_melee"				"-30 -10"
+			}
+			"09"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"tooltip_damage_outgoing_melee"					"70 90"
+			}	
+			"10"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"images_take_damage_percent_melee"				"125 50"
+			}
+			"11"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"tooltip_damage_incoming_melee_total_pct"		"225 150"
+			}			
+			"12"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"images_do_damage_percent_ranged"				"-50 -30"
+			}
+			"13"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"tooltip_damage_outgoing_ranged"				"50 70"
+			}
+			"14"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"images_take_damage_percent_ranged"				"200 125"
+			}
+			"15"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"tooltip_damage_incoming_ranged_total_pct"		"300 225"
+			}
+			"16"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"cooldown_melee"								"20"
+			}
+			"17"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"cooldown_ranged_tooltip"						"30"
+			}
+			"18"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"invuln_duration"								"0.1"
+			}
+			"19"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"vision_radius"									"1000"
+			}
+			"20"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"tooltip_ranged_cooldown_increase"				"10"
+			}		
+		}
+	}
+
+// Mask of Madness
+	"item_mask_of_madness"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifesteal_percent"		"12"
+			}
+		}
+	}
+
+// Mdallion Of Courage
+	"item_medallion_of_courage"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_reduction"		"-5"
+			}
+		}
+	}
+
+// Mekansm
+	"item_mekansm"
+	{
+		"AbilityCooldown"				"55.0"
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_health_regen"		"20"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"375"
+			}			
+		}
+	}
+
+// Meteor Hammer
+	"item_meteor_hammer"
+	{
+		"AbilityCooldown"				"25"
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"7.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"4.5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"burn_dps_units"		"75"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"burn_duration"			"9999"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"burn_interval"			"1.0"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_duration"			"2.5"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impact_damage_units"	"300"
+			}
+		}
+	}
+
+// Mjollnir
+	"item_mjollnir"
+	{
+		"MaxUpgradeLevel"			"2"
+		"ItemBaseLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"24 90"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"		"75 195"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"static_duration"			"15.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"static_chance"				"20"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"static_strikes"			"4"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"static_damage"				"200 500"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"static_primary_radius"		"600"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"static_seconary_radius"	"900"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"static_radius"				"900"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"static_cooldown"			"1.0"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"chain_chance"				"25 33"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"chain_damage"				"170 240"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"chain_strikes"				"12"
+			}
+			"14"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"chain_radius"				"900"
+			}
+			"15"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"chain_delay"				"0.25"
+			}
+			"16"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"chain_cooldown"			"0.15"
+			}
+			"17"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tooltip_range"				"800"
+			}
+		}
+	}
+
+// Monkey King Bar
+	"item_monkey_king_bar"
+	{
+		"MaxUpgradeLevel"				"2"
+		"ItemBaseLevel"					"1"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"52 172"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"30 150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_chance"			"75"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_chance_damage"	"100 800"
+			}
+		}
+	}
+
+// Mood Shard
+	"item_moon_shard"
+	{
+		"ItemDisassembleRule"		"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"consumed_bonus"		"80"
+			}
+		}
+	}
+
+// Necronomicon
+	"item_necronomicon"
+	{
+		"AbilityCooldown"				"35.0"
+		"AbilitySpecial"
+		{		
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"warrior_damage_tooltip"	"60 75 90"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"warrior_mana_feedback"	"6 9 12"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"warrior_mana_break_tooltip"	"6 9 12"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"archer_damage_tooltip"	"45 65 85"
+			}
+		}
+	}
+// Necronomicon 2
+	"item_necronomicon_2"
+	{
+		"AbilityCooldown"				"35.0"
+		"AbilitySpecial"
+		{		
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"warrior_damage_tooltip"	"60 75 90"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"warrior_mana_feedback"	"6 9 12"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"warrior_mana_break_tooltip"	"6 9 12"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"archer_damage_tooltip"	"45 65 85"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"archer_attack_speed"	"5 7 9"
+			}	
+		}
+	}
+// Necronomicon 3
+	"item_necronomicon_3"
+	{
+		"AbilityCooldown"				"35.0"
+		"AbilitySpecial"
+		{		
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"warrior_damage_tooltip"	"60 75 90"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"warrior_mana_feedback"	"6 9 12"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"warrior_mana_break_tooltip"	"6 9 12"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"archer_damage_tooltip"	"45 65 85"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"archer_attack_speed"	"5 7 9"
+			}	
+		}
+	}
+
+// Recipe: Octarine Core
+	"item_recipe_octarine_core"
+	{
+		"ItemResult"					""
+		"ItemRequirements"
+		{
+			"01"						"item_mystic_staff;item_soul_booster"
+		}
+	}
+// Octarine Core
+	"item_octarine_core"
+	{
+		"IsObsolete"					"1"
+	}
+
+// Orchid
+	"item_orchid"
+	{
+		"AbilitySpecial"
+		{
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"silence_duration"		"3"
+			}
+		}
+	}
+
+// Pipe
+	"item_pipe"
+	{
+		"ID"							"90"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCooldown"				"60.0"
+		"AbilityManaCost"				"100"
+		"AbilityCastRange"				"1200"
+		"ItemShopTags"					"regen_health;boost_magic_resist"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"pipe of insight"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemAlertable"					"1"
+		"ShouldBeSuggested"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_regen"			"80.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resistance"		"35"
+			}			
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"barrier_debuff_duration"	"50.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_resist"		"35"
+			}			
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_health_regen"		"110.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resistance_aura"	"20"
+			}	
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"7200"
+			}			
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"barrier_block"			"15000"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"barrier_duration"		"12.0"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"barrier_radius"		"7200"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"100"
+			}			
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"barrier_block_creep"	"15000"
+			}
+		}
+	}
+
+// Recipe: Eternal Shroud
+	"item_recipe_eternal_shroud"
+	{
+		"ID"							"691"
+		"ItemCost"						"2900"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_eternal_shroud"
+		"ItemRequirements"
+		{
+			"01"						"item_hood_of_defiance"
+		}
+	}
+// Eternal Shroud
+	"item_eternal_shroud"
+	{
+		"ID"							"692"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCooldown"				"60.0"
+		"AbilityManaCost"				"50"
+		"ItemShopTags"					"regen_health;magic_resist"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"eternal shroud;es"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_spell_resist"	"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"280.0"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"barrier_block"			"24000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"barrier_duration"		"12.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hero_lifesteal"		"20"
+			}			
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"creep_lifesteal"		"20"
+			}	
+		}
+	}
+
+// Trickster Cloak
+	"item_trickster_cloak"
+	{
+		"ID"							"571"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"ItemCost"						"5400"
+		"ItemIsNeutralDrop"				"0"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"AbilityCooldown"				"25.0"
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"evasion"				"45"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resistance"		"45"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"6"
+			}			
+		}
+	}
+
+// Phase Boots
+	"item_phase_boots"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage_melee"			"57"
+			}			
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage_range"			"38"
+			}			
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"phase_movement_speed"			"48"
+			}		
+			"08"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"phase_movement_speed_range"	"20"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"phase_duration"				"4.0"
+			}
+		}
+	}
+
+// Power Treads
+	"item_power_treads"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_stat"			"40"
+			}			
+		}
+	}
+
+// Tranquil Boots
+	"item_tranquil_boots"
+	{
+		"AbilityCooldown"				"3.0"
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"70"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"break_time"			"2"
+			}
+		}
+	}
+
+// Radiance
+	"item_radiance"
+	{
+		"MaxUpgradeLevel"			"2"
+		"ItemBaseLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"65 100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_damage"			"90 780"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_damage_illusions"	"40 1250"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blind_pct"				"18 28"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"700 1400"
+			}
+		}
+	}
+
+// Recipe: Divine Rapier
+	"item_recipe_rapier"
+	{
+		"ItemRequirements"
+		{
+			"01"						""
+		}
+	}
+// Divine Rapier
+	"item_rapier"
+	{
+		"AllowedInBackpack"				"1"
+		"ItemPurchasable"				"0"
+	}
+
+// Recipe: Refresher
+	"item_recipe_refresher"
+	{
+		"ItemRequirements"
+		{
+			"01"						""
+		}
+	}
+// Refresher
+	"item_refresher"
+	{
+		"AbilityManaCost"				"3750"
+		"ItemPurchasable"				"0"
+	}
+
+// Recipe: Boots of Travel
+	"item_recipe_travel_boots"
+	{
+		"ItemCost"						"200"	
+	}
+
+// Boots of Travel 2
+	"item_travel_boots_2"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"180"
+			}
+		}
+	}
+
+// Sange
+	"item_sange"
+	{
+		"AbilitySpecial"
+		{	
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"22"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen_amp"			"12"
+			}
+		}
+	}
+
+// Kaya and Sange
+	"item_kaya_and_sange"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"165"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"65"
+			}		
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"status_resistance"		"35"
+			}		
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_regen_multiplier"	"30"
+			}	
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"50"
+			}			
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen_amp"			"50"
+			}						
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_lifesteal_amp"	"50"
+			}	
+		}
+	}
+// Recipe: Kaya and Sange
+	"item_recipe_kaya_and_sange"
+	{
+		"ID"							"272"
+		"ItemCost"						"2500"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_kaya_and_sange"
+		"ItemRequirements"
+		{
+			"01"						"item_sange;item_kaya"
+		}
+	}
+
+// Sange and Yasha
+	"item_sange_and_yasha"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"186"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"186"
+			}					
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"status_resistance"		"35"
+			}		
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"120"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"movement_speed_percent_bonus"	"25"
+			}					
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen_amp"			"50"
+			}
+		}
+	}
+// Recipe: Sange and Yasha
+	"item_recipe_sange_and_yasha"
+	{
+		"ID"							"153"
+		"ItemCost"						"2500"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_sange_and_yasha"
+		"ItemRequirements"
+		{
+			"01"						"item_yasha;item_sange"
+		}
+	}
+
+// Mask of Madness
+	"item_lifesteal"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifesteal_percent"		"10"
+			}
+		}
+	}
+
+// Satanic
+	"item_satanic"
+	{
+		"AbilityCooldown"				"25.0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"55"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifesteal_percent"		"16 17 18 19 25"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"unholy_lifesteal_percent"	"134"
+			}
+			"06"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"unholy_lifesteal_total_tooltip"	"150"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"unholy_duration"		"6"
+			}
+		}
+	}
+
+// Sheepstick
+	"item_sheepstick"
+	{
+		"AbilityCooldown"				"22.0"
+		"AbilityManaCost"				"300"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"12"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"12"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"35"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"sheep_duration"		"2.0"
+			}
+		}
+	}
+
+// Shivas Guard
+	"item_shivas_guard"
+	{
+		"MaxUpgradeLevel"			"2"
+		"ItemBaseLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"30 145"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"15 25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"7200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_attack_speed"		"-10 -55"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_damage"			"400 1900"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_movement_speed"	"-40"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_debuff_duration"	"4.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_radius"			"900"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_speed"			"350"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen_degen_aura"	"25"
+			}
+		}
+	}
+	"item_recipe_skadi"
+	{
+		"ID"							"159"
+		"ItemCost"						"100"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_skadi"
+		"ItemRequirements"
+		{
+			"01"						"item_ultimate_orb;item_ultimate_orb"
+		}
+	}
+
+
+// Skadi
+	"item_skadi"
+	{
+		"MaxUpgradeLevel"			"2"
+		"ItemBaseLevel"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"25 150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"225 1900"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"250 1900"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cold_slow_melee"		"-15 -25"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cold_slow_ranged"		"-15 -25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cold_duration"			"1.5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_reduction"		"35 60"
+			}
+		}
+	}
+
+// Recipe: Solar Crest
+	"item_recipe_solar_crest"
+	{
+		"ItemCost"						"700"
+	}
+// Solar Crest
+	"item_solar_crest"
+	{
+		"AbilityCooldown"				"14.0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"22"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"90"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen_pct"	"2.5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"target_attack_speed"	"80"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"14"
+			}
+		}
+	}
+
+// Soul Ring
+	"item_soul_ring"
+	{
+		"AbilitySharedCooldown"			"soul_ring"
+		"AbilityCooldown"				"22"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"6 9 12"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"2.5 5.0 7.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_sacrifice"		"170 270 370"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_gain"				"150 220 290"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10"
+			}
+		}
+	}
+
+// Recipe: Spirit Vessel
+	"item_recipe_spirit_vessel"
+	{
+		"ID"							"266"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"1000"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_spirit_vessel"
+		"ItemRequirements"
+		{
+			"01"						"item_urn_of_shadows;item_dark_skadi;item_health_bag_2"
+			//"01"						"item_chest_1"
+		}
+	}
+// Spirit Vessel
+	"item_spirit_vessel"
+	{
+		"ID"							"267"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityCastRange"				"1850"
+		"AbilityCooldown"				"7.0"
+		"AbilitySharedCooldown"			"urn"
+		"ItemRequiresCharges"			"0"
+		"ItemDisplayCharges"			"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemInitialCharges"			"999999"
+		"ItemHideCharges"				"1"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"sv;spirit vessel"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"4500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"150.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"350"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_armor"			"30"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_radius"			"7400"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_initial_charge"	"99999"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"soul_additional_charges"	"1"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_heal_amount"		"2420"
+			}			
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_damage_amount"	"12450"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"8.0"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hp_regen_reduction_enemy"	"60"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"enemy_hp_drain"		"2"
+			}
+		}
+	}
+
+// Recipe: Urn of Shadows
+	"item_recipe_urn_of_shadows"
+	{
+		"ItemCost"						"810"	
+	}
+// Urn of Shadows
+	"item_urn_of_shadows"
+	{
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCooldown"				"16.0"
+		"ItemRequiresCharges"			"0"
+		"ItemDisplayCharges"			"0"
+		"ItemHideCharges"				"1"
+		"ItemInitialCharges"			"999999"
+		"AbilityManaCost"				"80"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_regen"			"2.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_armor"			"2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_radius"			"1400"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_heal_amount"		"60"
+			}			
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"soul_damage_amount"	"60"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"6.0"
+			}
+		}
+	}
+
+// Tango
+	"item_tango"
+	{
+		"ItemCost"						"85"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_regen"			"25.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_duration"			"7.0"
+			}
+		}
+	}
+
+// Vanguard
+	"item_vanguard"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"14.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"block_damage_melee"	"80"
+			}
+		}
+	}
+
+// Veil of Discord
+	"item_veil_of_discord"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_mana_regen"		"2.25"
+			}
+		}
+	}
+
+// Vladmir
+	"item_vladmir"
+	{
+		"IsObsolete"				"0"
+		"ItemPurchasable"			"1"
+		"AbilityCastRange"			"7200"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor_aura"			"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_regen_aura"		"15"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifesteal_aura"		"15"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_aura"			"18"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"7200"
+			}
+		}	
+	}
+
+// Observer Ward
+	"item_ward_observer"
+	{
+		"ItemStockMax"					"10"
+		"ItemStockTime"					"60.0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"lifetime"						"900"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"duration_minutes_tooltip"		"15"
+			}
+		}
+	}
+
+// Bottle
+	"item_bottle"
+	{
+		"ID"							"41"
+		"AbilityCastRange"				"20000"
+		"ItemCost"						"300"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"3"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_restore"		"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_restore"			"200"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_restore_pct"	"5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_restore_pct"		"3"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"restore_time"			"2"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_charges"			"3"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"break_on_hero_damage"	"0"
+			}
+		}
+	}
+
+// Helm of Dominator
+	"item_helm_of_the_dominator"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+	}
 }

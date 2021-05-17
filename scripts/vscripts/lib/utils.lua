@@ -140,10 +140,10 @@ function talent_value(caster, talent_name)
 	return 0
 end
 
-function CDOTABaseAbility:GetTalentSpecialValueFor(value)
-	local base = self:GetSpecialValueFor(value)
+function CDOTABaseAbility:GetTalentSpecialValueFor(ability, value)
+	local base = ability:GetSpecialValueFor(value)
 	local talentName
-	local kv = self:GetAbilityKeyValues()
+	local kv = ability:GetAbilityKeyValues()
 	for k,v in pairs(kv) do 
 		if k == "AbilitySpecial" then
 			for l,m in pairs(v) do
@@ -153,8 +153,8 @@ function CDOTABaseAbility:GetTalentSpecialValueFor(value)
 			end
 		end
 	end
-	if talentName then 
-		local talent = self:GetCaster():FindAbilityByName(talentName)
+	if talentName then
+		local talent = ability:GetCaster():FindAbilityByName(talentName)
 		if talent and talent:GetLevel() > 0 then base = base + talent:GetSpecialValueFor("value") end
 	end
 	return base

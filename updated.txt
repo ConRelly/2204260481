@@ -1,3 +1,8 @@
-0.6		12.05.2021 16:34
-0.8		15.05.2021 00:07
-0.8+	15.05.2021 00:45
+Fixed description:
+	1) PA 20level left talent
+	2) Pudge 15level left talent
+	3) Void Shield renamed to Moonfall
+	3) Random Get Ability renamed to Random Ability
+
+Abilities:
+	1) Purification is not affected by Spell Damage.
