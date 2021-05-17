@@ -22092,18 +22092,18 @@
 				"value"						"600"
 			}
 		}
-	}	
+	}
+
+// Dragon's Blood
 	"mjz_dragon_knight_dragon_blood"
 	{
-		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/hero_dragon_knight/mjz_dragon_knight_dragon_blood.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "5"
+		"MaxLevel"						"7"
+		"RequiredLevel"					"5"
+		"LevelsBetweenUpgrades"			"5"
 		"AbilityTextureName"			"mjz_dragon_knight_dragon_blood"
-
-		//"HasScepterUpgrade"				"1"
-
 		"AbilitySpecial"
 		{
 			"01"
@@ -22122,11 +22122,28 @@
 			}
 			"03"
 			{
-				"var_type"						"FIELD_INTEGER"
+				"var_type"						"FIELD_FLOAT"
 				"hp_regen_amp"					"55"
 			}
 		}
-	}	
+	}
+// Dragon's Blood (xX HP Regen/Armor)
+	"special_bonus_unique_dragon_knight"
+	{
+		"ID"							"6090"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"2"
+				"ad_linked_ability"			"dragon_knight_dragon_blood"
+			}
+		}
+	}
+
 	//=================================================================================================================
 	// Dragon Knight: Elder Dragon Form Relieve		解除变身			
 	//=================================================================================================================

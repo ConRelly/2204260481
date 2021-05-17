@@ -6,3 +6,4 @@ Fixed description:
 
 Abilities:
 	1) Purification is not affected by Spell Damage.
+	2) Fixed DK 25level right talent
