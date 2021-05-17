@@ -5048,7 +5048,7 @@
 	}
 	"jakiro_liquid_fire"
 	{
-		"LevelsBetweenUpgrades"	 "7"
+		"LevelsBetweenUpgrades"	 "8"
 		"MaxLevel"				  "10"
 		"AbilityDuration"				"10.0"
 		"AbilityCooldown"				"17 16 15 11 8 6 5 4 3 2"
@@ -5064,7 +5064,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"150 880 2920 4800 7450 12370 19800 27850 47800 74500"
+				"damage"				"150 1880 3920 6800 9450 19370 29800 57850 117800 420500"
 			}
 		}
 	}
@@ -5114,7 +5114,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"pct_health_damage" 		"1.8"
+				"pct_health_damage" 		"2.0"
 			}
 			"04"
 			{
@@ -5155,7 +5155,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"250 710 1560 2950 4650 9450 13500 22500"
+				"damage_scepter"			"250 710 1560 2950 4650 9450 13500 26500"
 				"RequiresScepter"			"1"
 			}
 			"07"
@@ -5281,7 +5281,7 @@
 	}
 	"legion_commander_press_the_attack"
 	{
-		"LevelsBetweenUpgrades"		"5"
+		"LevelsBetweenUpgrades"		"7"
 		"MaxLevel"					 "7"
 		"AbilitySpecial"
 		{
@@ -5418,7 +5418,7 @@
 	}
 	"lich_frost_shield"
 	{
-		"LevelsBetweenUpgrades"		"7"
+		"LevelsBetweenUpgrades"		"10"
 		"MaxLevel"					 "7"
 		"AbilitySpecial"
 		{
@@ -5441,17 +5441,17 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"120 730 1400 5500 9780 21500 56950"
+				"damage"				"190 930 2900 5500 19780 51500 166950"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"interval"				"1"
+				"interval"				"0.5"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"700"
+				"radius"				"900"
 			}
 			"07"
 			{
@@ -5603,7 +5603,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"2000"
+				"projectile_speed"		"2300"
 			}
 			"08"
 			{	
@@ -5613,7 +5613,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_jump_damage"		"500"
+				"bonus_jump_damage"		"1000"
 			}
 		}			
 	}
@@ -6142,12 +6142,12 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "7"
+		"LevelsBetweenUpgrades"		 "10"
 		"HasScepterUpgrade"			 "1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1700"
+		"AbilityCastRange"				"2700"
 		"AbilityCastPoint"				"0.3"
 
 		// Time		
@@ -6167,18 +6167,18 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"shock_speed"				"900"
+				"shock_speed"				"2000"
 			}
 			
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"shock_width"				"200"
+				"shock_width"				"350"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"shock_damage"				"375 750 2250 3500 4200 6750 8500"
+				"shock_damage"				"375 1750 7250 19500 42500 77500 185000"
 				"LinkedSpecialBonus"	"special_bonus_unique_magnus_4"
 			}
 			"04"
@@ -6199,7 +6199,7 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"pull_distance"		"600"
+				"pull_distance"		"900"
 			}
 			"08"
 			{

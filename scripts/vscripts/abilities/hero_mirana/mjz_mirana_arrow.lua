@@ -79,9 +79,9 @@ if IsServer() then
 
 		if HasTalent(attacker, talent_volley_name) then
 			-- 1点钟方向
-			local direction_1 = RotatePosition(Vector(0,0,0), QAngle(0,30,0), attacker:GetForwardVector())
+			local direction_1 = RotatePosition(Vector(0,0,0), QAngle(0,7,0), attacker:GetForwardVector())
 			-- 11点钟方向
-			local direction_11 = RotatePosition(Vector(0,0,0), QAngle(0,360 - 30,0), attacker:GetForwardVector())
+			local direction_11 = RotatePosition(Vector(0,0,0), QAngle(0,360 - 7,0), attacker:GetForwardVector())
 
 			local vVelocity_1 = direction_1 * arrow_speed
 			self:_CreateProjectile(attacker, vVelocity_1)
