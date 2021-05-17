@@ -7048,12 +7048,12 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		//=================================================================================================================
 
 "DOTA_Tooltip_Ability_item_sanguine"							"Sanguine"
-"DOTA_Tooltip_Ability_item_sanguine_Description"				"<h1>Passive: Life Drain</h1> Increases attack damage by %health_damage_bonus%%% of your hero's health. Attacks cause damage to you equal to %damage_ratio%%% your damage bonus in magic damage. <br><br> Multiple sanguines experience 25% reduced effectiveness."
+"DOTA_Tooltip_Ability_item_sanguine_Description"				"<h1>Passive: Life Drain</h1> Increases attack damage by %health_damage_bonus%%% of your hero's health.<br><br> Multiple sanguines experience 25% reduced effectiveness."
 "DOTA_Tooltip_Ability_item_sanguine_bonus_health"				"+$health"
 "DOTA_Tooltip_ability_item_sanguine_bonus_magical_resistance"			"%+$spell_resist"
 "DOTA_Tooltip_ability_item_sanguine_bonus_attack_speed"			"+$attack"
 "DOTA_Tooltip_Ability_item_sanguine_Note0"					"Multiple sanguines reduce the effectiveness of sanguines by 25% multiplicative."
-"DOTA_Tooltip_Ability_item_sanguine_Lore"					 "A blade that inevitably kills its wielders."
+"DOTA_Tooltip_Ability_item_sanguine_Lore"					 "A blade that inevitably kills its wielders or not."
 
 "DOTA_Tooltip_ability_item_vladmir_temp"									"Vladmir's Bane"
 "DOTA_Tooltip_ability_item_vladmir_temp_Description"							"<h1>Passive: Vladmir's Aura</h1>Grants lifesteal (%vampiric_aura%%% for melee heroes, %vampiric_aura_ranged%%% for ranged), %mana_regen_aura% mana regeneration, %damage_aura%%% bonus attack damage, and %armor_aura% armor to nearby allies. <br><br>Radius: %aura_radius% <br><br> This item must be activated by a hero."
@@ -7068,7 +7068,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 "DOTA_Tooltip_ability_item_vladmir's_soul_Note0"								"Does not stack with armor auras from Ring of Basilius, Ring of Aquila, or Vladmir's Offering."
 
 "DOTA_Tooltip_ability_item_vladmir_Description"							"<h1>Passive: Vladmir's Aura</h1>Grants %lifesteal_aura%%% lifesteal, %damage_aura%%% bonus damage, %mana_regen_aura% mana regeneration, and %armor_aura% armor to nearby allies. <br><br>Radius: %aura_radius%
-<font color='#FC2B02'>Lags late game (if you have many units/heroes/illusions)</font>"
+<font color='#FC2B02'>Lags late game (if you have many units/heroes/illusions with High AttackSpeed)</font>"
 
 "DOTA_Tooltip_Ability_item_willbreaker"							 "Willbreaker"
 "DOTA_Tooltip_Ability_item_willbreaker_Description"					"<h1>Passive: Decisive Strike</h1> Your attacks reduce the target's armor by %armor_reduction_pct%%% for %duration% seconds."
@@ -7161,7 +7161,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_ability_windrunner_powershot_winter_powershot_damage"			"DAMAGE:"
 		
 "DOTA_Tooltip_Ability_item_kris_of_agony_one"					"KRIS OF AGONY ONE"
-"DOTA_Tooltip_ability_item_kris_of_agony_one_Description"							"<h1>Passive: LIFESTEAL</h1>Grants melee unit %lifesteal%%% lifesteal, Grants ranged unit %lifesteal_ranged%%% lifesteal. "
+"DOTA_Tooltip_ability_item_kris_of_agony_one_Description"							"<h1>Passive: LIFESTEAL</h1>Grants melee units %lifesteal%%% pure lifesteal, Grants ranged unit %lifesteal_ranged%%% pure lifesteal. "
 "DOTA_Tooltip_ability_item_kris_of_agony_one_bonus_agility"		"+$agi"
 "DOTA_Tooltip_ability_item_kris_of_agony_one_bonus_strenght"		"+$str"
 "DOTA_Tooltip_ability_item_kris_of_agony_one_bonus_hp"		"+$health"
@@ -7416,7 +7416,7 @@ Required Level: %required_level%
 "DOTA_Tooltip_ability_item_mjz_vladmir_v2_Lore"				"An eerie mask that is haunted with the malice of a fallen vampire."
 "DOTA_Tooltip_ability_item_mjz_vladmir_v2_bonus_all_stats"		"+$all"
 "DOTA_Tooltip_modifier_item_mjz_vladmir_v2_aura"			"Reverse Vladmir's Aura"
-"DOTA_Tooltip_modifier_item_mjz_vladmir_v2_aura_Description"	"Gaining 1%% pure lifesteal for the owner of the aura, as well as %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% mana regen, and %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% armor."
+"DOTA_Tooltip_modifier_item_mjz_vladmir_v2_aura_Description"	"Gaining 1%% pure lifesteal(before reductions) for the owner of the aura, as well as %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% mana regen, and %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% armor."
 
 "DOTA_Tooltip_ability_item_warriors_seal"					   "Warrior's Seal"
 "DOTA_Tooltip_ability_item_warriors_seal_Description"			"<h1>Passive: Favor The Bold </h1>Creates a regenerating shield, blocking %damage_reduction%%% of an incoming attack for each layer, losing a layer every attack. Generates a layer every %interval% seconds, up to %max_stacks% stacks.
