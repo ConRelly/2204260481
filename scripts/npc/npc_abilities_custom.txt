@@ -22101,7 +22101,7 @@
 		"ScriptFile"					"abilities/hero_dragon_knight/mjz_dragon_knight_dragon_blood.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"						"7"
-		"RequiredLevel"					"5"
+		"RequiredLevel"					"10"
 		"LevelsBetweenUpgrades"			"5"
 		"AbilityTextureName"			"mjz_dragon_knight_dragon_blood"
 		"AbilitySpecial"
@@ -22109,14 +22109,14 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_health_regen"			"9 24 47 92 131 237 326"
+				"bonus_health_regen"			"19 54 97 292 531 937 1826"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_armor"					"6 12 19 26 32 44 62"
+				"bonus_armor"					"9 15 29 36 42 64 92"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
@@ -22138,7 +22138,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"						"2"
+				"value"						"3"
 				"ad_linked_ability"			"dragon_knight_dragon_blood"
 			}
 		}
