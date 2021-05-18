@@ -17345,7 +17345,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"1"
 		"MaxLevel"					  "10"
-		"LevelsBetweenUpgrades"		 "7"
+		"LevelsBetweenUpgrades"		 "8"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -17397,7 +17397,7 @@
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"total_attacks"				"20"
+				"total_attacks"				"15"
 			}
 			"09"
 			{

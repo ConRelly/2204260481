@@ -216,6 +216,7 @@ if IsServer() then
 		item_video_file = true,
 		guardian_angel = true,
 		blood_madness = true,
+		zanto_gari = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

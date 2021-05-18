@@ -147,7 +147,7 @@ function modifier_dragonborn:GetModifierTotalDamageOutgoing_Percentage(params)
 	if target == nil then return end
 	if IsServer() then
 		local damage = ability:GetSpecialValueFor("stuff")
-		if caster:HasModifier("modifier_underdog") then
+		if caster:HasModifier("modifier_underdog") and (caster:GetUnitName() ~= "npc_dota_hero_dawnbreaker") then
 			damage = 45
 		end
 		if params.attacker == caster and target:GetLevel() >= 89 then
@@ -209,8 +209,8 @@ function modifier_atomic_samurai_focused_atomic_slash_thinker_2:OnCreated(event)
 		self.radius = self:GetAbility():GetSpecialValueFor("radius")
 		self.damage = mana / per_mana
 		local mult = 3
-		if self.caster:HasModifier("modifier_underdog") then
-			mult = 5
+		if self.caster:HasModifier("modifier_underdog") and (self.caster:GetUnitName() ~= "npc_dota_hero_dawnbreaker") then
+			mult = 4
 		end
 		self.damage2 = self.damage * mult
 		self.mod = self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_atomic_samurai_focused_atomic_slash_2", nil)

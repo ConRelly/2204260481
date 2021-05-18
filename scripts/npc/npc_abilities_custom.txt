@@ -39410,7 +39410,7 @@
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"pt_base_attack"		"200"
+				"pt_base_attack"		"120"
 			}			
 			"20"
 			{
@@ -39435,7 +39435,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"250"
+				"value"					"200"
 			}
 		}
 	}

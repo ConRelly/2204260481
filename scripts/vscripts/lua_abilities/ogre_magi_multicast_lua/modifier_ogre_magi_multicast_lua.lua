@@ -109,7 +109,7 @@ modifier_ogre_magi_multicast_lua.banned = {
 	["wisp_tether_break"] = true,
 	["ancient_apparition_ice_blast"] = true,
 	["ancient_apparition_ice_blast_release"] = true,
-	
+	["zanto_gari"] = true,
 }
 
 --------------------------------------------------------------------------------
