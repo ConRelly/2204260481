@@ -5048,11 +5048,11 @@
 	}
 	"jakiro_liquid_fire"
 	{
-		"LevelsBetweenUpgrades"	 "8"
-		"MaxLevel"				  "10"
+		"LevelsBetweenUpgrades"			"8"
+		"MaxLevel"						"10"
 		"AbilityDuration"				"10.0"
 		"AbilityCooldown"				"17 16 15 11 8 6 5 4 3 2"
-		"AbilityCastPoint"				"0.0"		
+		"AbilityCastPoint"				"0.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -20648,10 +20648,11 @@
 		}
 	}
 
-// Vladmir
+// Vladmir's Offering
 	"item_vladmir"
 	{
-		"IsObsolete"				"0"
+		"AbilityCastRange"			"7200"
+		"ItemCost"					"2700"
 		"ItemPurchasable"			"1"
 		"AbilityCastRange"			"7200"
 		"AbilitySpecial"
@@ -20659,7 +20660,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"armor_aura"			"15"
+				"armor_aura"			"13"
 			}
 			"02"
 			{

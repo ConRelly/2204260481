@@ -16524,59 +16524,6 @@
 			}
 		}
 	}
-	//=================================================================================================================
-	// Vladimir
-	//=================================================================================================================
-	"item_vladmir"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"81"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityCastRange"				"1200"
-
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2700"
-		"ItemShopTags"					"damage;armor;regen_mana"
-		"ItemQuality"					"rare"
-		"ItemAliases"					"vladmir's offering;vlads"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"ShouldBeSuggested"				"1"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor_aura"		"13.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen_aura"		"15.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"lifesteal_aura"			"15"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_aura"			"18"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"	"7200"
-			}
-		}
-	}
-
-
 
 // Recipe: Second Vladmir's Offering
 	"item_recipe_mjz_vladmir"
