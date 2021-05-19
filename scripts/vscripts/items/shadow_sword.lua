@@ -244,10 +244,10 @@ end
 function modifier_kingsbane:OnAttackLanded(kv)
 	if IsServer() then
 		local caster = self:GetCaster()
-		local attacker = kv.attacker
-		if not caster:HasModifier("modifier_shadow_cuirass") then
-			if attacker == caster then
-				if not caster:IsIllusion() then
+		if not caster:IsIllusion() then
+			local attacker = kv.attacker
+			if not caster:HasModifier("modifier_shadow_cuirass") then
+				if attacker == caster then
 					caster.att_target = kv.target
 				end
 			end
@@ -256,15 +256,15 @@ function modifier_kingsbane:OnAttackLanded(kv)
 end
 function modifier_kingsbane:OnTakeDamage(params)
 	if IsServer() then
-		local reflect = self:GetAbility():GetSpecialValueFor("reflect")
 		local caster = self:GetCaster()
-		local target = params.unit
-		local attacker = params.attacker
-		local damage = params.damage
-		local reflect_damage = damage * (reflect / 100)
-		if not caster:HasModifier("modifier_shadow_cuirass") then
-			if attacker ~= nil and target == caster and reflect_damage ~= 0 then
-				if not caster:IsIllusion() then
+		if not caster:IsIllusion() then
+			local reflect = self:GetAbility():GetSpecialValueFor("reflect")
+			local target = params.unit
+			local attacker = params.attacker
+			local damage = params.damage
+			local reflect_damage = damage * (reflect / 100)
+			if not caster:HasModifier("modifier_shadow_cuirass") then
+				if attacker ~= nil and target == caster and reflect_damage ~= 0 then
 					if attacker ~= caster and attacker:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_HPLOSS) ~= DOTA_DAMAGE_FLAG_HPLOSS and bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) ~= DOTA_DAMAGE_FLAG_REFLECTION then
 						if caster:GetAttackCapability() == 1 then
 							if caster.att_target ~= nil then
