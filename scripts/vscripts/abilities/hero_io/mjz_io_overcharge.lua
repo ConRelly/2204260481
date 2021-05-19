@@ -195,7 +195,7 @@ function modifier_buff:OnIntervalThink()
 		if parent ~= caster then
 			parent:AddNewModifier(caster, ability, MODIFIER_CD, {duration = 10})
 		end	
-		print(self.cd .." cd")		
+		print(self.cd .." else cd")		
 	end	
 end	
 
