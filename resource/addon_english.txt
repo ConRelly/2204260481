@@ -7035,7 +7035,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 "DOTA_Tooltip_ability_item_custom_octarine_core_2_bonus_intelligence"		"+$int"
 "DOTA_Tooltip_ability_item_custom_octarine_core_2_bonus_health"				"+$health"
 "DOTA_Tooltip_ability_item_custom_octarine_core_2_bonus_mana"				"+$mana"
-"DOTA_Tooltip_ability_item_custom_octarine_core_2_lifesteal"				"+%$spell_lifesteal"
+"DOTA_Tooltip_ability_item_custom_octarine_core_2_lifesteal"				"%+$spell_lifesteal"
 "DOTA_Tooltip_ability_item_custom_octarine_core_2_Lore"						"At the core of spellcraft are spectrums only the very gifted can sense."
 
 "DOTA_Tooltip_Ability_item_ultimate_rapier"									"Ultimate Rapier"
