@@ -320,7 +320,7 @@ function modifier_abyssal_water_blade_bash:OnTakeDamage(params)
 					local damageTable = params.original_damage * (up_bash_incdmg / 100)
 					if unit and unit ~= attacker and unit:GetTeamNumber() ~= attacker:GetTeamNumber() then
 						if params.damage_type == 1 then
-							ApplyDamage({victim = unit, damage = damageTable, damage_type = DAMAGE_TYPE_PHYSICAL, damage_flags = params.damage_flags + DOTA_DAMAGE_FLAG_HPLOSS, attacker = attacker, ability = self:GetAbility()})
+							ApplyDamage({victim = unit, damage = damageTable, damage_type = DAMAGE_TYPE_PHYSICAL, damage_flags = params.damage_flags + DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION, attacker = attacker, ability = self:GetAbility()})
 						end
 					end
 				end
