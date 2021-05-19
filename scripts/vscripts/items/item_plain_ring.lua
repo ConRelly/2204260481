@@ -124,9 +124,13 @@ end
 
 function modifier_item_plain_ring:OnCreated(keys)
 	if IsServer() then
+		local extra = 0
 		self.parent = self:GetParent()
 		self.ability = self:GetAbility()
-		self.invincibility_duration = self.ability:GetSpecialValueFor("duration")
+		if self.parent:GetLevel() > 88 then
+			extra = 3
+		end	
+		self.invincibility_duration = self.ability:GetSpecialValueFor("duration") + extra
 		self.cooldown = self.ability:GetCooldown(0)
 	end
 end

@@ -240,7 +240,7 @@
 	"UnitLabel"				 "randomskill"
 	"SoundSet"				  "n_creep_Melee"
 	"ModelScale"				"1.0"
-	"Level"					 "3"
+	"Level"					 "90"
 	"ConsideredHero"			"1"
 	"Ability1"				  "generic_hidden"
 	"Ability2"				  "generic_hidden"
@@ -287,9 +287,11 @@
 	"Creature"
 	{
 		"DisableClumpingBehavior"   "1"
-		"EquippedItems"
-		{
-		}
+        "EquippedItems"
+        {
+            "Boss Resistance"   { "Item"        "item_boss_resistance_50" }
+            "Unstoppable"       { "Item"        "item_plain_ring" }
+        }
 	}
 
 }

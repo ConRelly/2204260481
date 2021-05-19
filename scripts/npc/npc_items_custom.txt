@@ -10518,7 +10518,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"outgoing_damage"			"70"
+				"outgoing_damage"			"60"
 			}
 			"03"
 			{
