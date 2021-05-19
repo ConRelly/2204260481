@@ -5254,7 +5254,7 @@
 		"05"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"lifesteal"				"2 3"
+			"lifesteal"				"2"
 		}	
 	}
 }
@@ -5313,7 +5313,7 @@
 		"05"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"lifesteal"				"2 3"
+			"lifesteal"				"2"
 		}	
 	}
 }
