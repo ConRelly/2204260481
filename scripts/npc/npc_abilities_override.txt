@@ -6773,7 +6773,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		
-		"MaxLevel"						"3"
+		"MaxLevel"						"4"
 		"LevelsBetweenUpgrades"		 "10"
 		"HasShardUpgrade"			   "1"
 		"IsGrantedByShard"			"1"
