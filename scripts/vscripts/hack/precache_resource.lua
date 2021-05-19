@@ -13,7 +13,7 @@ function Precache_Resource( context )
 end
 
 --自动预载入
-function PrecacheEveryThingFromKV( context )
+--[[function PrecacheEveryThingFromKV( context )
     local kv_files = {
         "scripts/npc/npc_unit_precache.txt",
         "scripts/npc/npc_units_custom.txt",
@@ -57,7 +57,7 @@ function PrecacheEverythingFromTable(context,kvtable)
 				end
             end
     end
-end
+end]]
 
 function Precache_Unit_Resource( context )
     
