@@ -186,7 +186,10 @@ function modifier_item_plain_ring_invincibility:OnDestroy()
 	if IsServer() then
 		local parent = self:GetParent()
 			--ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
-			parent:Heal((parent:GetMaxHealth() * self:GetAbility():GetSpecialValueFor("min_health") * 0.01), parent)
+		if parent:GetLevel() > 80 then
+			parent:SetHealth(parent:GetMaxHealth() * 0.4)
+		end	
+		parent:Heal((parent:GetMaxHealth() * self:GetAbility():GetSpecialValueFor("min_health") * 0.01), parent)		
 	end	
 end
 function modifier_item_plain_ring_invincibility:GetTexture()

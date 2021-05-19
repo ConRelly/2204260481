@@ -31,7 +31,7 @@ function SetupPlayerClone(caster, ability)
 	cloneData.abilities = {}
 	for i=0,30 do
 		local cloneAbility = caster:GetAbilityByIndex(i)
-		if cloneAbility then 
+		if cloneAbility and cloneAbility:GetAbilityName() ~= "dawnbreaker_luminosity" then 
 			local cloneAbilityData = {name = cloneAbility:GetAbilityName(), level = cloneAbility:GetLevel()}
 			table.insert(cloneData.abilities, cloneAbilityData)
 			--print(cloneAbility:GetAbilityName())
@@ -80,7 +80,7 @@ function AddRecordedAction(modifier, keys)
 			["obs_replay"] = true,
 			["item_video_file"] = true,
 			["item_resurection_pendant"] = true,
-			--["custom_drow_ranger_trueshot"] = true,
+			["dawnbreaker_luminosity"] = true,
 			--["ability_random_custom_gold"] = true,
 		};
 	if ability then
@@ -143,7 +143,7 @@ function PlayVideo(keys)
 	--remove illusion skills
 	for slot = 0, 8 do
 		local oldAbility = clone:GetAbilityByIndex(slot)	
-		if oldAbility then
+		if oldAbility and oldAbility:GetAbilityName() ~= "dawnbreaker_luminosity" then
 			clone:RemoveAbilityByHandle(oldAbility)	
 		end
 	end	
