@@ -188,14 +188,12 @@ function modifier_buff:OnIntervalThink()
 	local parent = self:GetParent()
 	local caster = self:GetCaster()		
 	if self.cd == 1 then 
-		self.cd = 0
-		print(self.cd .." cd")	
+		self.cd = 0	
 	else
 		self.cd = 1
 		if parent ~= caster then
 			parent:AddNewModifier(caster, ability, MODIFIER_CD, {duration = 10})
-		end	
-		print(self.cd .." else cd")		
+		end		
 	end	
 end	
 
@@ -211,7 +209,6 @@ function modifier_buff:CheckState()
 	if self.cd == 1 and parent ~= caster then
 		state = {
 			[MODIFIER_STATE_DISARMED] = false,
-			[MODIFIER_STATE_STUNNED] = true,
 		}	
 	end	
 
@@ -241,3 +238,4 @@ local modifier_buff_cd = modifier_mjz_io_overcharge_cd
 function modifier_buff_cd:IsHidden() return false end
 function modifier_buff_cd:IsPurgable() return false end
 function modifier_buff_cd:IsDebuff() return true end
+function modifier_buff_cd:GetTexture() return "mjz_io_overcharge" end
