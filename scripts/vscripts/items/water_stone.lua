@@ -248,7 +248,7 @@ function modifier_abyssal_water_blade:OnAttackLanded(keys)
 			stun_duration = self:GetAbility():GetSpecialValueFor("stun_duration") * ((100 + up_stun_duration) / 100)
 		end
 		self:GetParent():AddNewModifier(owner, self:GetAbility(), "modifier_abyssal_water_blade_internal_cd", {duration = internal_bash_cd})
-		target:AddNewModifier(owner, self:GetAbility(), "modifier_abyssal_water_blade_bash", {duration = stun_duration * (1 - target:GetStatusResistance()), up = up, bash_incdmg = bash_incdmg})
+		target:AddNewModifier(owner, self:GetAbility(), "modifier_abyssal_water_blade_bash", {duration = stun_duration * (1 - target:GetStatusResistance())})
 	end
 end
 function modifier_abyssal_water_blade:GetModifierProcAttack_BonusDamage_Physical()
@@ -302,19 +302,29 @@ function modifier_abyssal_water_blade_bash:CheckState() return {[MODIFIER_STATE_
 function modifier_abyssal_water_blade_bash:GetEffectName() return "particles/generic_gameplay/generic_stunned.vpcf" end
 function modifier_abyssal_water_blade_bash:GetEffectAttachType() return PATTACH_OVERHEAD_FOLLOW end
 function modifier_abyssal_water_blade_bash:OnCreated(keys)
-	if IsServer() then if not self:GetAbility() then self:Destroy() end
-		self.up = keys.up
-		self.bash_incdmg = keys.bash_incdmg
-	end
+	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 end
-function modifier_abyssal_water_blade_bash:DeclareFunctions() return {MODIFIER_PROPERTY_OVERRIDE_ANIMATION, MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE} end
-function modifier_abyssal_water_blade_bash:GetModifierIncomingPhysicalDamage_Percentage(keys)
-	if self:GetAbility() then
-		local attacker = keys.attacker
-		if self.up then
-			return self.bash_incdmg
-		else
-			return 0
+function modifier_abyssal_water_blade_bash:DeclareFunctions() return {MODIFIER_PROPERTY_OVERRIDE_ANIMATION,  MODIFIER_EVENT_ON_TAKEDAMAGE} end
+function modifier_abyssal_water_blade_bash:OnTakeDamage(params)
+	if IsServer() then
+		local unit = self:GetParent()
+		local attacker = params.attacker
+		if attacker:HasModifier("modifier_skadi_bow") and attacker:HasModifier("modifier_abyssal_water_blade") then
+			if unit:HasModifier("modifier_abyssal_water_blade_bash") and unit:HasModifier("modifier_skadi_bow_slow_debuff") then
+			local up_bash_incdmg = self:GetAbility():GetSpecialValueFor("up_bash_incdmg")
+				if attacker == self:GetCaster() and
+				attacker:IsRealHero() and
+--				not attacker:IsIllusion() and
+--				not attacker:IsTempestDouble() and
+				unit:IsAlive() and bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_HPLOSS) ~= DOTA_DAMAGE_FLAG_HPLOSS and bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) ~= DOTA_DAMAGE_FLAG_REFLECTION then
+					local damageTable = params.original_damage * (up_bash_incdmg / 100)
+					if unit and unit ~= attacker and unit:GetTeamNumber() ~= attacker:GetTeamNumber() then
+						if params.damage_type == 1 then
+							ApplyDamage({victim = unit, damage = damageTable, damage_type = DAMAGE_TYPE_PHYSICAL, damage_flags = params.damage_flags + DOTA_DAMAGE_FLAG_HPLOSS, attacker = attacker, ability = self:GetAbility()})
+						end
+					end
+				end
+			end
 		end
 	end
 end
