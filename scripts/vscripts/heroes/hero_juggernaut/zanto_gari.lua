@@ -70,7 +70,13 @@ function zanto_gari:OnSpellStart(recastVector, warpVector, Interrupted)
 			self:GetCaster():SetCursorPosition(cursor + self:GetCaster():GetForwardVector())
 			self.selfcast = true
 		end
-		
+
+		target_flag = DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS
+		local ability_level = self:GetCaster():FindAbilityByName("zanto_gari"):GetLevel()
+		if self:GetCaster():HasScepter() and self:GetCaster():HasShard() and ability_level == 7 then
+			target_flag = DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
+		end
+
 		local original_position	= caster:GetAbsOrigin()
 		local final_position = caster:GetAbsOrigin() + ((self:GetCursorPosition() - caster:GetAbsOrigin()):Normalized() * math.max(math.min(((self:GetCursorPosition() - caster:GetAbsOrigin()) * Vector(1, 1, 0)):Length2D(), self:GetSpecialValueFor("max_travel_distance") + caster:GetCastRangeBonus()), self:GetSpecialValueFor("min_travel_distance")))
 
@@ -95,7 +101,7 @@ function zanto_gari:OnSpellStart(recastVector, warpVector, Interrupted)
 			ParticleManager:ReleaseParticleIndex(step_particle)
 		end
 
-		for _, enemy in pairs(FindUnitsInLine(caster:GetTeamNumber(), caster:GetAbsOrigin(), final_position, nil, slash_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE)) do
+		for _, enemy in pairs(FindUnitsInLine(caster:GetTeamNumber(), caster:GetAbsOrigin(), final_position, nil, slash_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, target_flag)) do
 			self.impact_particle = ParticleManager:CreateParticle("particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari_slash.vpcf", PATTACH_ABSORIGIN_FOLLOW, enemy)
 			ParticleManager:SetParticleControlEnt(self.impact_particle, 0, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
 			ParticleManager:ReleaseParticleIndex(self.impact_particle)

@@ -15377,9 +15377,13 @@
 			}
 			"EquippedItems"
 			{
-				"Item1"
+				"1"
 				{
 					"Item"					"item_monkey_king_bar"
+				}
+				"2"
+				{
+					"Item"					"item_black_king_bar_boss"
 				}
 			}
 		}
