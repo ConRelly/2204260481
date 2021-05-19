@@ -178,7 +178,7 @@
 
 
 	"DOTA_Tooltip_ability_item_abyssal_water_blade"				"Abyssal Water Blade"
-	"DOTA_Tooltip_ability_item_abyssal_water_blade_description"	"<h1>Aктивнaя: Overwhelm</h1> Пepeмeщaeт к выбpaннoмy вpaгy, oглyшaeт eгo нa %active_stun_duration% ceк. <br><br>Дaльнocть пpимeнeния: %abilitycastrange%\n<h1>Пaccивнaя: Bash</h1> Aтaки мoгyт oглyшить цeль нa %stun_duration% ceк. и нaнecти %bash_damage% физ. ypoнa.<br>Шaнc: %bash_chance_melee%%% в ближнeм бoю и %bash_chance_ranged%%% в дaльнeм.<br>Пepeзapядкa: %internal_bash_cd% ceк.\n<h1>Пaccивнaя: Damage Block</h1>Блoкиpyeт %block_damage% ypoнa oт aтaк.\n<h1>Пaccивнaя: Abyssal Water Blade Aura</h1>+ %damage_aura% к ypoнy<br>+ %all_aura% кo вceм aтpибyтaм<br><br>Paдиyc: %aura_radius%\n<h1><font color='#18718E'>UP: Skadi Bow</font></h1></h1>Пepeзapядкa Bash yмeньшeнa нa %up_bash_cd%%%.<br><br>Длитeльнocть Bash yвeличeнa нa %up_stun_duration%%%.<br><br>Увeличивaeт нaнocимый влaдeльцeм физичecкий ypoн пo цeли вo вpeмя oглyшeния oт Abyssal Water Blade нa %up_bash_incdmg%%%."
+	"DOTA_Tooltip_ability_item_abyssal_water_blade_description"	"<h1>Aктивнaя: Overwhelm</h1> Пepeмeщaeт к выбpaннoмy вpaгy, oглyшaeт eгo нa %active_stun_duration% ceк. <br><br>Дaльнocть пpимeнeния: %abilitycastrange%\n<h1>Пaccивнaя: Bash</h1> Aтaки мoгyт oглyшить цeль нa %stun_duration% ceк. и нaнecти %bash_damage% физ. ypoнa.<br>Шaнc: %bash_chance_melee%%% в ближнeм бoю и %bash_chance_ranged%%% в дaльнeм.<br>Пepeзapядкa: %internal_bash_cd% ceк.\n<h1>Пaccивнaя: Damage Block</h1>Блoкиpyeт %block_damage% ypoнa oт aтaк.\n<h1>Пaccивнaя: Abyssal Water Blade Aura</h1>+ %damage_aura% к ypoнy<br>+ %all_aura% кo вceм aтpибyтaм<br><br>Paдиyc: %aura_radius%\n<h1><font color='#18718E'>UP: Skadi Bow</font></h1></h1>Пepeзapядкa Bash yмeньшeнa нa %up_bash_cd%%%.<br><br>Длитeльнocть Bash yвeличeнa нa %up_stun_duration%%%.<br><br>Увeличивaeт нaнocимый влaдeльцeм ypoн от атак пo цeли вo вpeмя oглyшeния oт Abyssal Water Blade нa %up_bash_incdmg%%%."
 	"DOTA_Tooltip_ability_item_abyssal_water_blade_bonus_damage"	"+$damage"
 	"DOTA_Tooltip_ability_item_abyssal_water_blade_bonus_health"	"+$health"
 	"DOTA_Tooltip_ability_item_abyssal_water_blade_bonus_hp_regen"	"+$hp_regen"
@@ -2525,16 +2525,24 @@
 	"DOTA_Tooltip_ability_mjz_invoker_magic_master_bonus_cooldown_scepter"			"%Scepter Cooldown Reduction:"
 	"DOTA_Tooltip_ability_mjz_invoker_magic_master_spell_amp_scepter"				"%Scepter Spell Amplification:"
 	"DOTA_Tooltip_ability_mjz_invoker_magic_master_manacost_reduction_scepter"		"%Scepter Manacost and Manaloss Reduction:"
-	"DOTA_Tooltip_ability_mjz_invoker_magic_master_scepter_description"	  	"Become a real master of magic."	
+	"DOTA_Tooltip_ability_mjz_invoker_magic_master_scepter_description"	  	"Become a real master of magic."
+
+
 	"DOTA_Tooltip_ability_mjz_io_overcharge"				"Overcharge"
 	"DOTA_Tooltip_ability_mjz_io_overcharge_Description"	"Io gains bonus attack speed,<font color='#0DE4EB'>No Speed Limit</font>, <font color='#0DE4EB'>True Strike</font>, <font color='#0DE4EB'>Stun and Disarm Immunity</font> at the cost of draining a percentage of its current health. If Io is tethered to an ally, that unit also gains the bonuses."
 	"DOTA_Tooltip_ability_mjz_io_overcharge_Lore"			"Drawing on the energy of matter from all worlds, Io begins the unravelling of time."
 	"DOTA_Tooltip_ability_mjz_io_overcharge_drain_pct_tooltip"	"%HEALTH DRAIN:"
 	"DOTA_Tooltip_ability_mjz_io_overcharge_bonus_attack_speed"	"ATTACK SPEED:"
 	//"DOTA_Tooltip_ability_mjz_io_overcharge_bonus_damage_pct"	"%INCOMING DAMAGE REDUCTION:"
-	"DOTA_Tooltip_ability_mjz_io_overcharge_Note0"			"Io's tethered unit will also benefit from the attack speed and reduction, but only Io pays the drain in HP."
+	"DOTA_Tooltip_ability_mjz_io_overcharge_Note0"			"Io's tethered unit will also benefit from all the bonuses, but only Io pays the drain in HP."
+	"DOTA_Tooltip_ability_mjz_io_overcharge_Note1"          "tethered unit will only have 50% uptime for Stun immunity and True Strike"
+	"DOTA_Tooltip_ability_mjz_io_overcharge_Note2"          "Semi Overcharge will not stop the hero to have true strike or stun immunity if he has that from other soruce"
 	"DOTA_Tooltip_modifier_mjz_io_overcharge_buff"					"Overcharged"
-	"DOTA_Tooltip_modifier_mjz_io_overcharge_buff_Description"		"Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, Have No Speed limit, and True Strike."	
+	"DOTA_Tooltip_modifier_mjz_io_overcharge_buff_Description"		"Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, Have No Speed limit, and immune to Disarm. Have True Strike and Stun immunity only when your not affected by Semi Overcharge."	
+	"DOTA_Tooltip_modifier_mjz_io_overcharge_cd"                    "Semi Overcharge"
+	"DOTA_Tooltip_modifier_mjz_io_overcharge_cd_description"        "Your Not Affected by Stun immunity and True strike buff from Overcharge"
+
+
 	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury"					"Blade Fury"
 	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_Description"		"Causes a bladestorm of destructive force around Juggernaut, rendering him immune to magic and dealing damage to nearby enemy units."
 	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_Lore"				"Yurnero's renowned katana techniques are feared by warriors and sorcerers alike."

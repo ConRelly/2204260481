@@ -25,7 +25,7 @@ if IsServer() then
 		local hCaster = self:GetCaster()
 		local hAbility = self:GetAbility()
 		local hParent = self:GetParent()
-		local bonus = hAbility:GetTalentSpecialValueFor(hAbility, specialName)
+		local bonus = hAbility:GetTalentSpecialValueFor(specialName)
 		if not GameRules:IsDaytime() then
 			bonus = bonus * self.multiplier
 		end
