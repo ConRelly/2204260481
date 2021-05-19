@@ -456,7 +456,7 @@
 
 //Omniknight
 	"dota_tooltip_ability_purification"					"Purification"
-	"dota_tooltip_ability_purification_description"		"Instantly heals a friendly unit and damaging all nearby enemy units.\nBlesses the target with a buff that amplifies all heals and health regeneration it receives by %buff_heal_amp_pct%%% for each stack of the buff. Whenever the target recovers %buff_stack_threshold% or more of its health from any source, it gains a stack. However, only successive casts of Purification can refresh the duration."
+	"dota_tooltip_ability_purification_description"		"Instantly heals a friendly unit and damaging all nearby enemy units.\n<h1><font color='#FCEF8E'>Purify</font></h1>Blesses the target with a buff that amplifies all heals and health regeneration it receives by %buff_heal_amp_pct%%% for each stack of the buff. Whenever the target recovers %buff_stack_threshold% or more of its health from any source, it gains a stack.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Gain Spell Immunity for 1.75 seconds and +0,1 for each Purify stack.<br>Not applicable from Guardian Angel."
 	"dota_tooltip_ability_purification_lore"	"Priests of the Omniscience are adept at removing impurities from fellow warriors."
 	"dota_tooltip_ability_purification_note0"	"Stacks of Purifiception can only be gained through actual healing done."
 	"dota_tooltip_ability_purification_heal_amount"			"HEAL/DAMAGE:"
@@ -469,7 +469,7 @@
 	"dota_tooltip_ability_guardian_angel"				"Guardian Angel"
 	"dota_tooltip_ability_guardian_angel_description"	"Omniknight calls upon a Guardian Angel that grants allies immunity from physical damage."
 	"dota_tooltip_ability_guardian_angel_lore"			"The All Seeing One casts down his protection over those that Purist calls friend."
-	"dota_tooltip_ability_guardian_angel_scepter_description"	"Increases duration, provides HP regen, radius becomes global. With an interval of 0.5 seconds, there is a 15% chance to apply Purification on an ally under the Guardian Angel effect."
+	"dota_tooltip_ability_guardian_angel_scepter_description"	"Increases duration, provides HP regen, radius becomes global. With an interval of 0.25 seconds, there is a 20%% chance to apply Purification on an ally hero under the Guardian Angel effect."
 	"dota_tooltip_ability_guardian_angel_note0"		"Can be purged and is not affected by CDR."
 	"dota_tooltip_ability_guardian_angel_duration"				"DURATION:"
 	"dota_tooltip_ability_guardian_angel_radius"				"RADIUS:"
@@ -8989,7 +8989,7 @@ Contains all random skills"
 		"npc_boss_guesstuff_Moran"											   "Moran(GOD)"
 
 		"DOTA_Tooltip_modifier_underdog"										 "Underdog Buff"
-		"DOTA_Tooltip_modifier_underdog_description"							 "Acquired by the less popular heroes on their first death after lvl 35, increase the following stats by: <font color='#05DDEF'>%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Damage</font>, <font color='#10DE33'>%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% All Stats</font> and <font color='#DE9619'>%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% Damage</font>"
+		"DOTA_Tooltip_modifier_underdog_description"							 "Acquired by the less popular heroes on their first death after lvl 35, increase the following stats by: <font color='#05DDEF'>%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Damage</font>, <font color='#10DE33'>%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% All Stats</font> and <font color='#DE9619'>%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% Attack Damage</font>"
 		"DOTA_Tooltip_modifier_phys"											 "Last"
 		//"DOTA_Tooltip_modifier_phys_description"								 "bonus %dMODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE% "
 
