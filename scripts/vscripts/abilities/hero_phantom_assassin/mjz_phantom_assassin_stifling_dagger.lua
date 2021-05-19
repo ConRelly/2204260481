@@ -61,22 +61,9 @@ function mjz_phantom_assassin_stifling_dagger:OnProjectileHit(target, location)
 
 	if target:TriggerSpellAbsorb(ability) then return nil end
 
-	--[[
-		ApplyDamage({
-			victim = target,
-			attacker = caster,
-			ability = ability,
-			damage = base_damage,
-			damage_type = ability:GetAbilityDamageType()
-		})
-	]]
-
 	caster:AddNewModifier(caster, ability, "modifier_mjz_stifling_dagger_attack_factor", {duration = 0.03})
 	caster:AddNewModifier(caster, ability, "modifier_mjz_stifling_dagger_attack_bonus", {duration = 0.03})
-	-- caster:AttackReady()
-	-- print("PerformAttack ....")
 	caster:PerformAttack (target, true, true, true, false, false, false, true)
-	-- print("PerformAttack done.")
 	caster:RemoveModifierByName("modifier_mjz_stifling_dagger_attack_factor")
 	caster:RemoveModifierByName("modifier_mjz_stifling_dagger_attack_bonus")
 

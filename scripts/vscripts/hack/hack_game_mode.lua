@@ -328,36 +328,34 @@ function HackGameMode:_OnStartGame()
             for _,item in pairs(items) do
                 hero:AddItemByName(item)
             end
-
-            
-                -- local couriersNumber= PlayerResource:GetNumCouriersForTeam(DOTA_TEAM_GOODGUYS)
-                -- if couriersNumber>0 then
-                --     for i=1,couriersNumber do
-                --         local courier=PlayerResource:GetNthCourierForTeam(i-1,DOTA_TEAM_GOODGUYS)
-                --         print("courier: " .. courier:GetUnitName())
-                --     end
-                -- end
-                for playerID = 0, 4 do
-                    if PlayerResource:IsValidPlayerID(playerID) then
-                        if PlayerResource:HasSelectedHero(playerID) then
-				            local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-                            for i = 0, PlayerResource:GetNumCouriersForTeam(PlayerResource:GetCustomTeamAssignment(hero:GetPlayerID())) - 1 do
-                                local courier = PlayerResource:GetNthCourierForTeam(i, PlayerResource:GetCustomTeamAssignment(hero:GetPlayerID()))
-                                print("courier: " .. courier:GetUnitName())
-                                -- if courier:HasFlyMovementCapability() then
-                                --     local isFlying = courier:HasFlyMovementCapability() == true
-                                --     self:GetParent():SetMoveCapability(DOTA_UNIT_CAP_MOVE_FLY)
-                                --     break
-                                -- end
-                            end
-                        end
-                    end
-                end
-
-               
-	
+		--[[
+			local couriersNumber= PlayerResource:GetNumCouriersForTeam(DOTA_TEAM_GOODGUYS)
+			if couriersNumber>0 then
+				for i=1,couriersNumber do
+					local courier=PlayerResource:GetNthCourierForTeam(i-1,DOTA_TEAM_GOODGUYS)
+					print("courier: " .. courier:GetUnitName())
+				end
+			end
+		]]
+			for playerID = 0, 4 do
+				if PlayerResource:IsValidPlayerID(playerID) then
+					if PlayerResource:HasSelectedHero(playerID) then
+						local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+						for i = 0, PlayerResource:GetNumCouriersForTeam(PlayerResource:GetCustomTeamAssignment(hero:GetPlayerID())) - 1 do
+							local courier = PlayerResource:GetNthCourierForTeam(i, PlayerResource:GetCustomTeamAssignment(hero:GetPlayerID()))
+							print("courier: " .. courier:GetUnitName())
+						--[[
+							if courier:HasFlyMovementCapability() then
+								local isFlying = courier:HasFlyMovementCapability() == true
+								self:GetParent():SetMoveCapability(DOTA_UNIT_CAP_MOVE_FLY)
+								break
+							end
+						]]
+						end
+					end
+				end
+			end
         end
-
     end)
 end
 
@@ -443,7 +441,6 @@ function HackGameMode:_ReplaceBuildings()
             end
 		end
         --[[
-
 		if building:IsShrine() then
 			local sModelName = "models/props_structures/radiant_statue001.vmdl"
 			building:SetOriginalModel( sModelName )

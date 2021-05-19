@@ -1847,7 +1847,7 @@
 		"Ability3"				"mjz_night_stalker_hunter_in_the_night"
 		"Ability6"				"mjz_night_stalker_darkness"
 		"Ability11"				"special_bonus_magic_resistance_12"
-		"Ability14"				"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_mspeed"
+		"Ability13"				"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_mspeed"
 		"Ability16"				"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_aspeed"
 		"Ability17"				"special_bonus_unique_mjz_night_stalker_darkness_damage"
 		

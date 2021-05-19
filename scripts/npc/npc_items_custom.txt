@@ -871,7 +871,7 @@
 		"ScriptFile"					"items/force_blade.lua"
 		"AbilityTextureName"			"force_blade"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ItemShopTags"					"damage;attack speed"
+		"ItemShopTags"					"damage;all"
 		"ItemQuality"					"common"
 		"ItemAliases"					"magic blade"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -5218,17 +5218,17 @@
 }
 "item_custom_octarine_core_1"
 {
-	"BaseClass"							"item_lua"
-	"ScriptFile"						"items/item_custom_octarine_core.lua"
-	"AbilityTextureName" 							"item_octarine_core"
+	"BaseClass"						"item_lua"
+	"ScriptFile"					"items/item_custom_octarine_core.lua"
+	"AbilityTextureName"			"item_octarine_core"
 	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"ItemShopTags"					"move_speed;boost_mana;mana_pool"
 	"ItemQuality"					"rare"
 	"ItemAliases"					"mana;mb;octarine core"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-	"MaxUpgradeLevel"		   "2"
-	"ItemBaseLevel"			 "1"
+	"MaxUpgradeLevel"				"2"
+	"ItemBaseLevel"					"1"
 	"AbilitySpecial"
 	{
 		"01"
@@ -5334,8 +5334,8 @@
 "item_mjz_ipomoea_aquatica"
 {
 
-	"BaseClass"							"item_lua"
-	"ScriptFile"						"items/item_mjz_ipomoea_aquatica.lua"
+	"BaseClass"						"item_lua"
+	"ScriptFile"					"items/item_mjz_ipomoea_aquatica.lua"
 	//"AbilityTextureName"			"ForaMon/ultimate_octarine"
 	"AbilityTextureName"			"mjz_ipomoea_aquatica"
 	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
@@ -5344,34 +5344,34 @@
 	"ItemQuality"					"rare"
 	"ItemAliases"					"mana;mb;octarine core"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-	"MaxUpgradeLevel"		   	"2"
+	"MaxUpgradeLevel"				"2"
 	"ItemBaseLevel"					 "2"
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_intelligence"	"25 250"
+			"bonus_intelligence"	"250"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"425 2950"
+			"bonus_health"			"2950"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_mana"			"425 2950"
+			"bonus_mana"			"2950"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_cooldown"		"25 0"
+			"bonus_cooldown"		"0"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"lifesteal"				"2 6"
+			"lifesteal"				"6"
 		}	
 	}
 }
@@ -16524,6 +16524,7 @@
 			}
 		}
 	}
+
 // Recipe: Second Vladmir's Offering
 	"item_recipe_mjz_vladmir"
 	{
@@ -23275,7 +23276,7 @@
 		"ItemKillable"							"0"
 		"ItemDroppable" 						"1"
 		"ItemDisassembleRule"					"DOTA_ITEM_DISASSEMBLE_NEVER"		
-		"ItemDeclarations"		"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+		"ItemDeclarations"	"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
 		"ItemContributesToNetWorthWhenDropped"	"0"
 		"ItemStackable"							"1"
 		"ItemRequiresCharges"					"0"
@@ -23284,90 +23285,104 @@
 		"AbilityCooldown"						"60"
 		"precache"
 		{
-			"soundfile"			"soundevents/game_sounds_ember_spirit.vsndevts"
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
-			"particle"			"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_debuff.vpcf"
-			"particle"			"particles/econ/items/monkey_king/arcana/fire/mk_arcana_fire_spring_cast_ringouterpnts.vpcf"
-			"particle"			"particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_omni_slash_trail.vpcf"			
+			"soundfile"		"soundevents/game_sounds_ember_spirit.vsndevts"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+			"particle"		"particles/econ/items/ogre_magi/ogre_magi_arcana/ogre_magi_arcana_ignite_debuff.vpcf"
+			"particle"		"particles/econ/items/monkey_king/arcana/fire/mk_arcana_fire_spring_cast_ringouterpnts.vpcf"
+			"particle"		"particles/econ/items/juggernaut/jugg_arcana/juggernaut_arcana_omni_slash_trail.vpcf"			
 		}
 		"AbilitySpecial"
 		{
-
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"1000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_per"				"20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_interval"		"0.07"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"5.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"stack_chance"			"3"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slayer_dmg"			"5000"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"stack_agi"				"20"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"stack_spellamp"		"3"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"stack_str"				"20"
-			}
-			"10"
+			"1"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"armor"					"5"
 			}
-			"11"
+			"2"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_interval"		"0.07"
+			}
+			"3"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.0"
+			}
+			"4"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health"				"50"
+				"radius"				"1000"
 			}
-			"12"
+			"5"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stuff"					"15"
+				"slayer_dmg"			"5000"
 			}
-			"13"
+			"6"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stack_armor"			"1"
+				"stack_str"				"20"
 			}
-			"14"
+			"7"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stack_agi"				"20"
+			}
+			"8"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stack_spellamp"		"3"
+			}
+			"9"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stack_health"			"50"
+			}
+			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"stack_regen"			"6"
 			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stack_armor"			"1"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_per_others"		"5"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_per"				"15"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_per_underdog"		"20"
+			}
 			"15"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_per_tooltip"		"15"
-			}		
+				"stack_chance"			"3"
+			}
+			"16"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stack_underdog_chance"	"5"
+			}
+			"17"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stuff"					"15"
+			}
+			"18"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stuff_underdog"		"45"
+			}
 		}	
 	}
 

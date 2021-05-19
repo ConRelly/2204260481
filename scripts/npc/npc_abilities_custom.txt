@@ -22101,8 +22101,8 @@
 		"ScriptFile"					"abilities/hero_dragon_knight/mjz_dragon_knight_dragon_blood.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"						"7"
-		"RequiredLevel"					"10"
-		"LevelsBetweenUpgrades"			"5"
+		"RequiredLevel"					"5"
+		"LevelsBetweenUpgrades"			"10"
 		"AbilityTextureName"			"mjz_dragon_knight_dragon_blood"
 		"AbilitySpecial"
 		{
@@ -24916,7 +24916,7 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"FightRecapLevel"				"2"
-	"MaxLevel"					  "7"
+	"MaxLevel"						"7"
 	"AbilityTextureName"			"magnataur_reverse_polarity"
 	
 	"precache"
@@ -26163,14 +26163,14 @@
 			}
 		}
 	}
-	// Night Stalker: Hunter in the Night	暗夜猎影
+
+// Night Stalker: Hunter in the Night
 	"mjz_night_stalker_hunter_in_the_night"
 	{
-		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/hero_night_stalker/mjz_night_stalker_hunter_in_the_night.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mjz_night_stalker_hunter_in_the_night"
-
 		"AbilitySpecial"
 		{
 			"01"
@@ -26188,7 +26188,7 @@
 			"03"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_double_in_night"				"1"
+				"bonus_in_night"					"2"
 			}
 		}
 	}
@@ -26222,6 +26222,7 @@
 			}
 		}
 	}
+
 	//=================================================================================================================
 	// Nyx Assassin: Mana Burn
 	//=================================================================================================================
@@ -26699,7 +26700,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"phantom_assassin_coup_de_grace"	// "mjz_phantom_assassin_coup_de_grace"
 		"AbilitySound"					"Hero_PhantomAssassin.CoupDeGrace"
-		"LevelsBetweenUpgrades"		 "11"
+		"LevelsBetweenUpgrades"			"11"
 		"HasScepterUpgrade"				"1"
 		"MaxLevel"						"5"
 
@@ -26744,7 +26745,7 @@
 			"31"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack"		"25 35 45 55 75"
+				"bonus_attack"				"25 35 45 55 75"
 			}
 			"35"
 			{
@@ -26753,8 +26754,8 @@
 			}
 			"36"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"scepter_crit_bonus_per_minute"			"10 20 30 40 70"
+				"var_type"						"FIELD_INTEGER"
+				"scepter_crit_bonus_per_minute"	"10 20 30 40 70"
 			}			
 		}
 
@@ -27278,9 +27279,9 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
-		"HasScepterUpgrade"			"1"
+		"HasScepterUpgrade"				"1"
 		"AbilitySound"					"Hero_Phoenix.SuperNova.Begin"
-		"MaxLevel"					  "7"
+		"MaxLevel"						"7"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		"AbilityCastRange"				"1600"
 		"AbilityCastPoint"				"0.01"
