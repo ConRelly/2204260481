@@ -13,14 +13,14 @@ function Precache_Resource( context )
 end
 
 --自动预载入
---[[function PrecacheEveryThingFromKV( context )
+function PrecacheEveryThingFromKV( context )
     local kv_files = {
         "scripts/npc/npc_unit_precache.txt",
-        "scripts/npc/npc_units_custom.txt",
-        "scripts/npc/npc_abilities_custom.txt",
-        "scripts/npc/npc_heroes_custom.txt",
-        "scripts/npc/npc_items_custom.txt",
-        "scripts/npc/npc_abilities_override.txt",
+       -- "scripts/npc/npc_units_custom.txt",
+       -- "scripts/npc/npc_abilities_custom.txt",
+        --"scripts/npc/npc_heroes_custom.txt",
+        --"scripts/npc/npc_items_custom.txt",
+        --"scripts/npc/npc_abilities_override.txt",
     }
     for _, kv in pairs(kv_files) do
         local kvs = LoadKeyValues(kv)
@@ -57,7 +57,7 @@ function PrecacheEverythingFromTable(context,kvtable)
 				end
             end
     end
-end]]
+end
 
 function Precache_Unit_Resource( context )
     
@@ -101,6 +101,9 @@ function Precach_Item_Resource( context)
     PrecacheResource("model","models/courier/navi_courier/navi_courier.vmdl", context)
     PrecacheResource("soundfile","soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts", context)
     PrecacheResource("soundfile","soundevents/game_sounds_heroes/game_sounds_lion.vsndevts", context)
+    PrecacheResource("soundfile","soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts", context)
+    PrecacheResource("soundfile","soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts", context)
+    PrecacheResource("soundfile","soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts", context)
     PrecacheResource("soundfile","sounds/weapons/hero/lion/lion_voodoo.vsnd", context)
     PrecacheResource("particle", "particles/units/heroes/hero_lion/lion_spell_voodoo.vpcf", context)
 
