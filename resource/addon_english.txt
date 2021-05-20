@@ -5078,7 +5078,7 @@ The extra targets will not receive other attack effects (such as critical strike
 "DOTA_Tooltip_ability_custom_incapacitating_bite_duration"			"DURATION:"	
 
 "npc_boss_ursa"					 "Ursa (Boss)"
-"npc_boss_ursa"					 "Greater Ursa (Boss)"
+"npc_boss_ursa2"					 "Greater Ursa (Boss)"
 
 
 "DOTA_Tooltip_ability_custom_fury_swipes"										"Fury Swipes"

@@ -2,8 +2,8 @@
 local THIS_LUA = "abilities/hero_pudge/mjz_pudge_dismember.lua"
 local MODIFIER_LUA = "modifiers/hero_pudge/modifier_mjz_pudge_dismember.lua"
 
-LinkLuaModifier( "modifier_mjz_pudge_dismember_duration", THIS_LUA, LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_mjz_pudge_dismember", MODIFIER_LUA, LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("modifier_mjz_pudge_dismember_duration", THIS_LUA, LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_pudge_dismember", MODIFIER_LUA, LUA_MODIFIER_MOTION_NONE)
 
 
 -----------------------------------------------------------------
