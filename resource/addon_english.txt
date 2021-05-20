@@ -8316,10 +8316,11 @@ Required Level: %required_level%
 		//<<<<
 "npc_dota_campfire" "Campfire"
 "npc_dota_creature_siltbreaker"										"Siltbreaker"
-"npc_dota_creature_siltbreaker_2"								   "Siltbraker Second Form"
+"npc_dota_creature_siltbreaker_2"								   "Siltbraker Second Form" 
 "npc_dota_creature_siltbreaker_clone"								"Siltbreaker Clone"
 "npc_dota_creature_meranth_minion"									"Reefwatch Renegade"
 "npc_dota_creature_aghanim_minion"								  "Aghanim Minion"
+"npc_dota_creature_siltbreaker_bubble"                              "Siltbreaker Bubble"
 "DOTA_Tooltip_ability_siltbreaker_waves"							"Waves"
 "DOTA_Tooltip_ability_siltbreaker_waves_damage"						"DAMAGE:"
 "DOTA_Tooltip_ability_siltbreaker_line_wave"						"Line Wave"
