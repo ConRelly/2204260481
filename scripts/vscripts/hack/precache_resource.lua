@@ -16,11 +16,11 @@ end
 function PrecacheEveryThingFromKV( context )
     local kv_files = {
         "scripts/npc/npc_unit_precache.txt",
-       -- "scripts/npc/npc_units_custom.txt",
-       -- "scripts/npc/npc_abilities_custom.txt",
-        --"scripts/npc/npc_heroes_custom.txt",
-        --"scripts/npc/npc_items_custom.txt",
-        --"scripts/npc/npc_abilities_override.txt",
+        "scripts/npc/npc_units_custom.txt",
+        "scripts/npc/npc_abilities_custom.txt",
+        "scripts/npc/npc_heroes_custom.txt",
+        "scripts/npc/npc_items_custom.txt",
+        "scripts/npc/npc_abilities_override.txt",
     }
     for _, kv in pairs(kv_files) do
         local kvs = LoadKeyValues(kv)

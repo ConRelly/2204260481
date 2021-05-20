@@ -2348,6 +2348,7 @@
 	"DOTA_Tooltip_ability_mjz_dragon_knight_elder_dragon_relieve_scepter_description"		"There is no time limit for the Shapeshift."
 	"DOTA_Tooltip_ability_mjz_dragon_knight_elder_dragon_relieve_health_drain_per_second_scepter"		"%Health Drain Per Second: "
 
+	"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_bonus_attack_damage"      "Bonus Attack Damage:"
 
 	"DOTA_Tooltip_ability_mjz_drow_ranger_marksmanship"					"Marksmanship"
 	"DOTA_Tooltip_ability_mjz_drow_ranger_marksmanship_Description"		"Drow's experiences in battle grant her a chance to launch arrows with incredible accuracy and effectiveness. Dealing additional damage based on her Attack Damage.\nUpgradable by Aghanim's Scepter."

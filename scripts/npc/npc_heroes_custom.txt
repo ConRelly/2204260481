@@ -972,6 +972,12 @@
 		"Ability3"		"mjz_dragon_knight_dragon_blood"
 		"Ability5"		"mjz_dragon_knight_elder_dragon_relieve"
 		"Ability11"		"special_bonus_unique_mjz_dragon_knight_0106"
+		"Ability17"     "special_bonus_unique_dragon_knight_6"
+
+		"AttackRate"		"1.500000"
+		"ArmorPhysical"		"10"
+		"AttributeAgilityGain"   "7.2"
+		"AttributeStrengthGain"  "9.4"
 	}	
 	"npc_dota_hero_faceless_void_mjz"			// 虚空假面
 	{

@@ -25598,7 +25598,6 @@
 		"FightRecapLevel"				"2"
 		"MaxLevel"						"1"
 		"AbilitySound"					"Hero_MonkeyKing.Transform.On"
-
 		"AbilityCastPoint"				"0"
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"AbilityCooldown"				"10"
