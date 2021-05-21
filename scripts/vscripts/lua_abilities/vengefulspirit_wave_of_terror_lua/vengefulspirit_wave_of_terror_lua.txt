@@ -9,7 +9,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"LevelsBetweenUpgrades"         "5"
+		"LevelsBetweenUpgrades"         "10"
 		"MaxLevel"						"7"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"BaseClass"					"ability_lua"
@@ -47,7 +47,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor_reduction"	"-3 -4 -5 -6 -7 -8 -10"
+				"armor_reduction"	"-3 -7 -9 -12 -15 -17 -20"
 			}
 			"04"
 			{
@@ -67,7 +67,7 @@
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"wave_damage"			"90 150 270 490 1050 1800 3750"
+				"wave_damage"			"90 150 270 490 1950 3800 9750"
 			}
 			"08"
 			{

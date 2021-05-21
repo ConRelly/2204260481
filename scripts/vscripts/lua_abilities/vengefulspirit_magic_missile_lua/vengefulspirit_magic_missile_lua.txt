@@ -12,7 +12,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"LevelsBetweenUpgrades"         "5"
+		"LevelsBetweenUpgrades"         "10"
 		"MaxLevel"						"7"		
 		"FightRecapLevel"				"1"
 		"BaseClass"					"ability_lua"
@@ -21,7 +21,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1100"
+		"AbilityCastRange"				"1500"
 		"AbilityCastPoint"				"0.3"
 		
 		// Time		
@@ -39,7 +39,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"magic_missile_speed"	"1250"
+				"magic_missile_speed"	"1750"
 			}
 			"02"
 			{
@@ -49,12 +49,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"magic_missile_damage"		"200 675 1250 2250 4300 7500 13250"
+				"magic_missile_damage"		"200 975 2250 4250 9300 17500 23250"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"agi_multiplier"		"2.0 4.0 6.0 8.0 10 15 20"
+				"agi_multiplier"		"4.0 6.0 10.0 14.0 20 35 60"
 			}
 			"05"
 			{
