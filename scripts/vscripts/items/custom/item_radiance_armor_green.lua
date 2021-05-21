@@ -35,28 +35,30 @@ modifier_item_radiance_armor_green = class({
 })
 
 function modifier_item_radiance_armor_green:OnCreated()
-	local radiance_table = {
-		"modifier_item_radiance_armor",
-		"modifier_item_radiance_armor_3",
-		"modifier_item_radiance_armor_blue",
-		--"modifier_item_radiance_armor_green",
-		"modifier_item_radiance_armor_3_edible",
-		"modifier_item_radiance_armor_blue_edible",
-		"modifier_item_radiance_armor_green_edible"
-	}
-	local parent = self:GetParent()
-	for i = 1 , 6 do
-		if parent:HasModifier(radiance_table[i]) then
-			--print(radiance_table[i])	
-			parent:RemoveModifierByName(radiance_table[i])
-			if parent:IsIllusion() then
-				parent:ForceKill(false)
-			end	
-		end	
-	end			
+	if IsServer() then
+		local radiance_table = {
+			"modifier_item_radiance_armor",
+			"modifier_item_radiance_armor_3",
+			"modifier_item_radiance_armor_blue",
+			--"modifier_item_radiance_armor_green",
+			"modifier_item_radiance_armor_3_edible",
+			"modifier_item_radiance_armor_blue_edible",
+			"modifier_item_radiance_armor_green_edible"
+		}
+		local parent = self:GetParent()
+		for i = 1 , 6 do
+			if parent:HasModifier(radiance_table[i]) then
+				--print(radiance_table[i])
+				parent:RemoveModifierByName(radiance_table[i])
+				if parent:IsIllusion() then
+					parent:ForceKill(false)
+				end
+			end
+		end
+	end
 end
 function modifier_item_radiance_armor_green:OnDestroy()
-end	
+end
 function modifier_item_radiance_armor_green:GetModifierHealthBonus()
 	return self:GetAbility():GetSpecialValueFor("bonus_health")
 end

@@ -2540,9 +2540,9 @@
 	"DOTA_Tooltip_ability_mjz_io_overcharge_Note1"          "tethered unit will only have 50% uptime for Stun immunity and True Strike"
 	"DOTA_Tooltip_ability_mjz_io_overcharge_Note2"          "Semi Overcharge will not stop the hero to have true strike or stun immunity if he has that from other soruce"
 	"DOTA_Tooltip_modifier_mjz_io_overcharge_buff"					"Overcharged"
-	"DOTA_Tooltip_modifier_mjz_io_overcharge_buff_Description"		"Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, Have No Speed limit, and immune to Disarm. Have True Strike and Stun immunity only when your not affected by Semi Overcharge."	
+	"DOTA_Tooltip_modifier_mjz_io_overcharge_buff_Description"		"Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.<br>Have No Speed limit, and immune to Disarm.<br>Have True Strike and Stun immunity only when your not affected by Semi Overcharge."
 	"DOTA_Tooltip_modifier_mjz_io_overcharge_cd"                    "Semi Overcharge"
-	"DOTA_Tooltip_modifier_mjz_io_overcharge_cd_description"        "Your Not Affected by Stun immunity and True strike buff from Overcharge"
+	"DOTA_Tooltip_modifier_mjz_io_overcharge_cd_description"        "Your Not Affected by Stun immunity and True strike buff from Overcharge."
 
 
 	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury"					"Blade Fury"

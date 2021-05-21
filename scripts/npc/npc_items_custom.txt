@@ -20822,6 +20822,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"spell_amp"				"133"
 		}
+		"10"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"magic_damage_attack"	"30"
+		}
 	}
 }
 "item_recipe_suicidal_mask"
