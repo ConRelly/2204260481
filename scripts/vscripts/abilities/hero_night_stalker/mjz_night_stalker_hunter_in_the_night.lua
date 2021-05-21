@@ -48,7 +48,7 @@ end
 -----------------------------------------------------------------------------------------
 modifier_mjz_night_stalker_hunter_in_the_night_mspeed = class({})
 function modifier_mjz_night_stalker_hunter_in_the_night_mspeed:IsPassive() return true end
-function modifier_mjz_night_stalker_hunter_in_the_night_mspeed:IsHidden() return false end
+function modifier_mjz_night_stalker_hunter_in_the_night_mspeed:IsHidden() return true end
 function modifier_mjz_night_stalker_hunter_in_the_night_mspeed:IsPurgable() return false end
 function modifier_mjz_night_stalker_hunter_in_the_night_mspeed:DeclareFunctions()
 	return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE}
@@ -60,7 +60,7 @@ end
 -----------------------------------------------------------------------------------------
 modifier_mjz_night_stalker_hunter_in_the_night_aspeed = class({})
 function modifier_mjz_night_stalker_hunter_in_the_night_aspeed:IsPassive() return true end
-function modifier_mjz_night_stalker_hunter_in_the_night_aspeed:IsHidden() return false end
+function modifier_mjz_night_stalker_hunter_in_the_night_aspeed:IsHidden() return true end
 function modifier_mjz_night_stalker_hunter_in_the_night_aspeed:IsPurgable() return false end
 function modifier_mjz_night_stalker_hunter_in_the_night_aspeed:DeclareFunctions()
 	return {MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT}

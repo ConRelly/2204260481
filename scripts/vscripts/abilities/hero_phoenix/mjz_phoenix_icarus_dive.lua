@@ -116,10 +116,11 @@ end
 
 function ability_class:OnProjectileHit_ExtraData( hTarget, vLocation, table )
     if hTarget == nil then
-        self:GetCaster():SetAbsOrigin(vLocation)
-        FindClearSpaceForUnit( self:GetCaster(), vLocation, true)
+		local caster = self:GetCaster()
+        caster:SetAbsOrigin(vLocation)
+        FindClearSpaceForUnit( caster, vLocation, true)
 
-        if self.m_hMod then
+        if self.m_hMod and caster:IsAlive() and caster:HasModifier("modifier_mjz_phoenix_icarus_dive") then
             self.m_hMod:Destroy()
         end
     end

@@ -19039,7 +19039,7 @@
 	"BaseClass"						"item_datadriven"
 	"Model"							"models/props_gameplay/recipe.vmdl"
 	"AbilityTextureName"			"item_recipe"
-	"ItemCost"						"200"	
+	"ItemCost"						"8000"	
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	"ItemResult"					"item_helm_of_the_undying"

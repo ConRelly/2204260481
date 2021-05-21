@@ -21600,6 +21600,7 @@
 		"AbilityTextureName"			"mjz_crystal_maiden_frostbite"
 		"MaxLevel"					  "7"
 		"LevelsBetweenUpgrades"		 "7"
+		"HasScepterUpgrade"             "1"
 		//"AOERadius"						"%radius"
 		"AbilityCastRange"				"1400"
 		"AbilityCastPoint"				"0.3 "
@@ -21652,7 +21653,12 @@
 				"var_type"			"FIELD_FLOAT"
 				"mana_reg_dmg"		"4.0 4.1 4.2 4.3 4.4 4.5 4.6"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_crystal_maiden_forstbite"
-			}			
+			}
+			"10"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus"			"1"
+			}						
 		}
 		
 		"precache"

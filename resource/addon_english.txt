@@ -2257,19 +2257,25 @@
 	"DOTA_Tooltip_modifier_mjz_crystal_maiden_freezing_field_caster_Description"			"Incomming damage reduced by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%."
 
 	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite"									"Frostbite"
-	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_Description"						"Encases an enemy unit in ice, prohibiting movement and attack, while dealing damage over time. "
+	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_Description"						"Encases an enemy unit in ice, prohibiting movement, while dealing damage over time.
+<font color='#1ABE55'>Can Be casted during channeling</font>\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>At the end of the root trigger an Attack applying all the attack effects from items and abilities.</font>\n<h1><font color='#DE3163'>Super Scepter</font></h1>Every time aghanim effect triggers gain %bonus% base strength and intelligence."
 	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_Lore"							"Rylai channels winds from the Blueheart Glacier, imprisoning attackers in thick blocks of ice."
-	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_Note0"							"Frostbite is considered a root. Can Be casted during channeling."		
+	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_Note0"							"Frostbite is considered a root.Aghanim effect does not trigger on a dead enemy"		
 	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_radius"							"RADIUS:"
 	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_total_damage"					"HERO TOTAL DAMAGE:"
 	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_creep_total_damage"				"CREEP TOTAL DAMAGE:"
 	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_mana_reg_dmg"					"Mana Regen As Bonus Damage:"		
 	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_duration"						"HERO DURATION:"
 	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_creep_duration"					"CREEP DURATION:"	
-	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_damage_interval"					"DAMAGE INTERVAL:"	
+	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_damage_interval"					"DAMAGE INTERVAL:"
+	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_scepter_description"	            "At the end of the root trigger an Attack applying all the attack effects from items and abilities."
 	"DOTA_Tooltip_modifier_mjz_crystal_maiden_frostbite"							"Frostbite"
 	"DOTA_Tooltip_modifier_mjz_crystal_maiden_frostbite_Description"				"Cannot move or attack. "
+	"DOTA_Tooltip_modifier_mjz_crystal_maiden_frostbite_bonus_int"                  "Frostbite Super Scepter"
+	"DOTA_Tooltip_modifier_mjz_crystal_maiden_frostbite_bonus_int_description"      "Base Strength and intelligence gained from Super Aghaim"
 
+	"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_Description"					"A burst of damaging frost slows enemy movement and attack rate in the targeted area.
+<font color='#1ABE55'>Can Be casted during channeling</font>"
 
 	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm"				"Crypt Swarm"
 	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm_Description"	"Sends a swarm of winged beasts to savage enemy units in front of Death Prophet."
@@ -2922,6 +2928,7 @@
 	"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night_bonus_in_night"				"Night Multiplier:"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_night_stalker_hunter_in_the_night_mspeed"		"+{s:value}% Hunter In The Night Movement Speed"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_night_stalker_hunter_in_the_night_aspeed"		"+{s:value} Hunter In The Night Attack Speed"
+	"DOTA_Tooltip_modifier_mjz_night_stalker_hunter_in_the_night_aspeed"             "Hunter Bonus"
 
 
 	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn"				"Mana Burn"

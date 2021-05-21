@@ -1,6 +1,6 @@
 local THIS_LUA = "abilities/hero_crystal_maiden/mjz_crystal_maiden_frostbite.lua"
 LinkLuaModifier("modifier_mjz_crystal_maiden_frostbite", THIS_LUA, LUA_MODIFIER_MOTION_NONE)
-
+LinkLuaModifier("modifier_mjz_crystal_maiden_frostbite_bonus_int", THIS_LUA, LUA_MODIFIER_MOTION_NONE)
 
 -----------------------------------------------------------------------------------------
 
@@ -51,8 +51,7 @@ function ability_class:SpellTo( target )
     EmitSoundOn("hero_Crystal.frostbite", target)
     
     target:AddNewModifier(caster, ability, "modifier_stunned", {duration = stun_duration})
-    target:AddNewModifier(caster, ability, mName, {duration = duration})
-
+    target:AddNewModifier(caster, ability, mName, {duration = duration})  
 end
 
 function ability_class:ApplyDamageToEnemy( target )
@@ -100,7 +99,7 @@ function modifier_frostbite:CheckState()
         -- [MODIFIER_STATE_STUNNED] = true,
         [MODIFIER_STATE_ROOTED] = true,
         [MODIFIER_STATE_FROZEN] = true,
-        [MODIFIER_STATE_DISARMED] = true,
+        --[MODIFIER_STATE_DISARMED] = true,
         [MODIFIER_STATE_INVISIBLE] = false,
     }
     return state
@@ -139,5 +138,33 @@ if IsServer() then
             self.ability:ApplyDamageToEnemy(self.target)
         end
     end
+    function modifier_frostbite:OnDestroy()
+        local caster = self:GetCaster()
+        local parent = self:GetParent()
+        local ability = self:GetAbility()
+        local bonus = ability:GetSpecialValueFor("bonus")
+        if caster:HasScepter() and parent:IsAlive() and caster:IsAlive() then
+            caster:PerformAttack(parent, true, true, true, true, true, false, true)
+            if HasSuperScepter(caster) then
+                caster:ModifyIntellect(bonus)
+                caster:ModifyStrength(bonus)
+                if caster:HasModifier("modifier_mjz_crystal_maiden_frostbite_bonus_int") then
+                    local modifier = caster:FindModifierByName("modifier_mjz_crystal_maiden_frostbite_bonus_int")
+                    modifier:SetStackCount(modifier:GetStackCount() + bonus)
+                else
+                    caster:AddNewModifier(caster, ability, "modifier_mjz_crystal_maiden_frostbite_bonus_int", {})
+                    caster:FindModifierByName("modifier_mjz_crystal_maiden_frostbite_bonus_int"):SetStackCount(bonus)
+                end                
+            end   
+        end                 
+    end 
+
 end
 
+if modifier_mjz_crystal_maiden_frostbite_bonus_int == nil then modifier_mjz_crystal_maiden_frostbite_bonus_int = class({}) end
+local modifier_frostbine_int = modifier_mjz_crystal_maiden_frostbite_bonus_int
+
+function modifier_frostbine_int:IsHidden() return false end
+function modifier_frostbine_int:IsPurgable() return false end
+function modifier_frostbine_int:IsDebuff() return false end
+function modifier_frostbine_int:RemoveOnDeath() return false end

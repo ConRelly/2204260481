@@ -19,7 +19,6 @@ if IsServer() then
             caster:FindModifierByName(self.modifier_name):SetStackCount(bonus)
         end
         self:SpendCharge()
-       
     end
 end
 
@@ -58,7 +57,7 @@ end
 function base_modifier_tome_class:OnCreated()
     if IsServer() then
         local parent = self:GetCaster()
-        if parent:IsIllusion() then
+        --[[if parent:IsIllusion() then
             local mod1 = "modifier_tome_str_bonus"
             local mod2 = "modifier_tome_agi_bonus"
             local mod3 = "modifier_tome_int_bonus"
@@ -84,7 +83,7 @@ function base_modifier_tome_class:OnCreated()
                     print("tomestack3")
                 end                                      
             end
-        end      
+        end]]      
     end     
 end    
 
