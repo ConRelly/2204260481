@@ -1,0 +1,1031 @@
+fix luky femur and trade kaya in shop ,new tallent to lion and buffed lion and lina ultimate   and some change to some bosses and last one.
+
+
+2 New Bosses and 2 new items (ice rapier and fire rapier ) only avaible in hard mode (ice and fire drops for them)
+Hard mode now has double the drop rate for random skill item and drops only +50 stats books(lower chance then +3 in easy)
+bosses now gain bonus hp in Hardmode,  endless and over time , but have less dmg reduction and magic rezist.
+Buff Templar Assassin.
+
+buffed Ice and fire rappier and repair kit , lion buffs ,spectre changes, 2400 max attack speed but agility now gives less As, lowerd drop rate for skill book in hard , extra gold and xp first rounds in hard , now on some rounds you gets extra weak units for heroes base on staks,
+endless now is slower  
+
+
+ajusted some bosses skills early-mid game, ajusted some timmers/units late game, added an extra round in hard(15) with a new boss 
+new item earth rapier , fix lion 3nd skill.
+
+reduce some attack speed from phantom lancer, ursa and medusa(bosses), antimage has les magic rezist , change of skills and items for  death profet(boss) ,
+hard gives more gold in the starting rounds  , buff some items: fallen sky , fire, ice and earth rapiers , radiance armor , ultimate dagon , Lyon dagon (increase in dmg after every use)
+balista, stygian desolaor, pirate hat.  and change some other stuff.
+
+not mentioned in last update: hardmode bosses have a less dmg , dmg reduction and magic rezist  (not by much).
+now first boss (bone flecher) its "easyer"
+thech boots gives 50 all stats (now u make them from power treads) , buff charged conduit
+
+
+Fix chargerd conduit , and buffed a little more(biger cast ranger less cast animation more hp)
+change some timmers for endless to be slower at some rounds.
+
+New edible aether lens now gives spell amp and removes cast time on your spells and items(builds from vambrace)
+blas staff passive on spell cast now has biger radius to hit easyer , better int ration on lvl 2 but less projectiles on active , spell amp bonus and lvl2 diferent build.
+updated some tooltips not displaying corect values.
+
+new Arcane staff edible( it was a pasive item not to fun to have in invetory late game, but necesary on some heroes) : comsume to gain all the stats and effects,builds from cursed blodthorn.
+Arcane staff mana cost reduction per int lowerd (nerfed to original number)
+new skill in random skill book (grows in power them more u fight during all game) for rightclikers.
+nebu(summons power up item) nerfed but still strong for now.
+
+added skill book to second and 3nd reward too (3 in total)
+fixed a skil that had 0 cd instead of 0.7 , buffed a lot of heroes(mostly weak ones) and some other stuff.
+
+Removed crystal maiden (the rund now has a football team) and removed dragon round. tring to fix or reduce the crash chance.
+new boss laiter round (is on hard and normal)
+new item combines from 3 of the best speed boots, "speedsters" remove speed limit, increase turn rate to maximum and other good stuff.
+increase gold gain mostly on 3-5 players, 1-2 players have same gold gain except that some rounds may give more.
+fix jug boss jumpcrit and other small changes ... 
+
+Removed the "Ancient" status from the 3 bosses that had that (because of that status you were not allowed to use some speels on them like omnislash)
+second boss junggernaut now hass a lot less dmg but he deals extra dmg in omnislash (just don't get slash).
+removed tide krakenShell from all bosses that had(except ursa) ,now some have a very weak version that trigers at 10k-200k dmg received depending on what they have.
+-fullgame (old endless command witch does the same thing)
+
+slower endless , treant with tinys round taken out for the momment (to many errors on that round)
+buffed lifestealer , fix lvl 25 sandking talent +a new one, silencer % W nerfed but increase range for heap, 
+increased starting hp for all heroes, fix str book not droping in hard.
+
+*fix ogre magi multicast obs/sentry and smoke , fix sky ultimate not doing any dmg and now has description(and buffed) and has 2 or 3 new tallens and bufed skills(nerfed E).
+*enigma nerfed ....  just kiding is the same :), winter 2 new tallents.
+*shadow shaman got some buffs and sandking first 2 abilites are not default anymore.
+*added more random ability books to reward rounds, but random books will not drop anymore(to many skills in solo/duo and to much ninja lotting in 3-5)
+*some "small" changes to some items(earth rapier buffed 2 patches ago ,has true stun)
+*death profet boss now acts like a prper ghost and has 2 new skills but she deals no right click dmg(negative dmg)
+
+*fix something
+*zeus spams less his bkb and his laguna , same for razor silence bkb.
+
+*fix shaman serpents, fix some of pugna tallents and buff some skills ,
+*aghanim boss may have something new. spectre boss lost his active lag reflect dmg skill has the abaddon version.
+*some numbers changes
+
+https://discord.gg/y8Cx69w
+
+*Most of heroes except some strong ones or ones that i miss , now have one stat or more  grow boost.
+*WD boss now has a combo
+*some skill buff/extra lvls for heroes that had basic skils stats , all hero names from A to E. 
+*doom Q now has the "good stuff" skills list.
+*and some other changes.
+
+*some changes to dark willow and death profet tallents , rashta ult more duration and proper stats on wards and lower base attack time at 3 same for venomancer wards.
+*added commands to combine mods -all=double, hard and fullgame,-fullhard= full game and hard mode , 
+*fix enigma ult random stop (probably) , unding Q 5x cd and duration. 10x steal and better base dmg , better zombies. 
+*fix hex disarming Apex mage(was still able to cast spells) , it can still be afected by hex side effects. 
+*previus patch : bad juju added to random pull
+
+
+*some changes to brewmaster ,  some secret temporary buff mechanic  and other small things
+*New king round has new skeleton king (maybe he plays nice and don't crash so often)  
+
+-all= hard , double and full game.
+-fullhard= hard and full game 
+
+*elder titan boss: removed the special AI (made him smarter just by rearange skills and range) and a skill from elder titan boss that was crashing the server(added 1 extra unit on round)  , 
+*buffed some weak rounds mid game .
+*all element rapiers require less stats(so u don't drop them on death)
+
+*necro Q and his tallent buffed , some ogre tallents up, mars buffs,
+*nerfed some things ,  buff some boss skills .
+*Mirana buffs , replace krakenShell from random list with PA blur
+
+*New item ...wind
+*techis: buff Q tallent , has a powerful Aghs and new tallent.
+*Ancient now has barrowed time  60cd 10 duration(now those invul/invis skills are not that ussles solo)
+*Medusa boss has less armor
+*weaver Q and E changes and his Q tallent back. templar W buff. zuus got something.
+*rip ex machina cd.
+*one or 2 bosses may have a new skill 
+
+*All elements item (combined from all elements) upgreats 2 items for now. orb of destuction better stats.
+*riki backsteab has 5 lvls and better ration on last one. medusa stone arrows more lvls , same for slark E , Q self dmg from 50% to 5%.
+*new skill in random book , scales with str ,attack speed  and time.
+
+*morpth ult fix 
+*some numbers change ,  and maybe other small stuff.
+
+*less cd for dazzle Q and E , alch Q buff  , axe R buff , Phantom Assassin R has more lvls and Night Stalker , monkey jingu more lvls (btw his ultimate units need echosabre to use ther attack time better) .
+*leshrac R rage and dmg buff, his E aganim range to match his ult range from 1.2 agah inverval to 0.4 and better dmg. death profet(hero) got some buffs.
+*Air and watter elements 2x drop rate but cost less to sell
+*some buffs and nerfs to 2 of the rapiers
+
+*fix kotol Q ags and made more dovahkinn , bedlam (telent up), ion shell and shadow realm they have more lvls.
+*some tallens that were not doing anything replaced.
+*added consumable aegis in shop  but nerfed some perma imortal buils(you can report then in bug section or discord)
+
+
+*1 extra aegis at start and 4th+ rosh now drops the consumable aegis
+*the chest that drops from rosh can be combined in to a stellar chest 2+ greater chest or 5x chest
+
+*Ivoker got lots of buffs (seems to be good at all rooles)
+*warlock golem , visage famililyars , lone druid bear,forge spirit and treant units got some extra dmg
+*2 extra abilities in random book , one of them is void backtrack
+*pango new heartpiercer.
+*SilverEdge now is an upgreate from echo sabre 5.
+
+
+*Random Abilityes are Unique now(no more same ability on a hero) , someone else can still get an ability that you randomed.
+*Edible dragon lance consume works on meles too now.
+*fix some elder titan skills(they got buffed in that process)  (read ulti description).
+*fire and earth element can be made from water and wind respectively.
+*Aegis buff has 85% deff now from 65% (well it had from previus patch but forgot to update tooltip)
+*increase a little wait time in second part (maybe helps with error models and some random crash)
+*Win points from Qests and make requests, find on discord https://discord.gg/y8Cx69w
+
+Some of rulls that will be updated:
+*only one claim per quest(unless its specified otherwise) and per win (only one from all team gets the points)
+*Second part quest reward are treated like a different quest (so you can claim a win on hard and -full hard(-fullgame) on same hero)
+*Trying to cheat may result in negative points.
+*No old prints it has to be after update (i have ways to know what patch you play) may result in negative points if intentional.
+*Post the screen and the specification : Mode , quest objective(or hero win) , discord name and (ingame name) Example: -hard win Invoker Conrelly(Conrelly)
+
+
+
+(Frist 3 to complete )win with Sandking in hard 10 points. 3 lelft 
+5x points reward for second part win(one reward, but is avabile even after the 3 are complete so is 2+1 or 3+1 rewards per hero)
+(Frist 3 to complete )win with Invoker in hard 10 points  3 left
+5x points reward for second part win(one reward, but is avabile even after the 3 are complete so is 2+1 or 3+1 rewards per hero)
+(Frist 3 to complete )win with Phantom Assassin in hard 10 points  3 left 
+5x points reward for second part win(one reward, but is avabile even after the 3 are complete so is 2+1 or 3+1 rewards per hero)
+
+*fix some things , pango heartpiercer is out of random book(it may cause crashes until i know for sure only pango has)
+*legion moment of courage has almost no cd at lvl 4, puck buff a little .
+*nether shawl give and take ration fixed (it was giving imba mr and AMp with almost no -armor at a free price) 
+
+*Huskar now has his original fire spears but improved (Has no lag at max AS compared with the other one).
+*Darkseer dark clone now acts like an arc warden clone and can use skills and items 
+*Tinker q w e , buffs but R ...   , and some other stuff that i forgot
+*here is a friend twich that streams this map sometimes (ro/eng): https://www.twitch.tv/ssjj4
+*if you stream(this map) let me know on discord and i might put your link if you are  on next time.
+
+*New neutral slot item mirror shield, Holy loket and spirit vessel  buffed and ajusted price acording with stats.
+*fix darkseer and arc warden clone abuse.
+*buff nyx E a little (is not affected by spell amp seems) , void spirit new lvl 25 tallent (the 3 mana regen was to strong)
+*helm of undying less cd and one extra sec duration. phoenyx  ash 2x charges.
+*death profet boss extra 2 skills and has less aoe on ember w , Aghanim lost his borrow time (was doing lag vs very high AS) but he got 2 extra skills
+*lag stuff: lower the max As to 2000 (calculeted base on 1.8 attack time , so u can have higer then 2k) , no more refresh on aghanim boss (crystals never dispaearing because of that )   
+
+Fixed resurection bug abuse were you culd have items stats from backpack, fixed the -kill command(was one of the ways to abuse the bug) , you can use that now to fix bugged tomb or no buyback.
+*New Item Resuresction Pendant , mayar pendant is out(had no use other then his amp)
+*mjollnir has better dmg on proc (normal dota cd on proc is 0.2 here 0.05) , tallon better stats at lvl 1  and more expensive at lvl 2.
+*Second part (after frist Aghanim death) now rounds go faster until round 16-17.
+*Void Spirit astral stemp has 0.1 cd from 0(so blast staff can triger , charge restore time is the same) now is an imediate spell (hero does not need to turn to cast and is allways instant cast, i recommend Quick cast turned on with him) delay pop time reduced to 0.25s from 1.25s , bouth of his ultimates now has 5 lvls and 15 charges on astral step.
+*intended to buff/change at least one more hero/skill but spended that time to write in patch note the detail what i did to one single skill and i still haven't mentioned everyting in detail(for those who tinks the patche notes are to vague, patchnote with more details=less time to patch, at least for me).
+
+*Void Spirit Atlass now has charges  and 10 of them. 15-10 sec restore time(improved from 15s skill cd), bigger aoe (you can hit multiple times same target in one cast if position corect) and some other buffs.
+*sniper inate pasive less As per lvl , wr unltimate less As bonus, they reach max As with same items because max AS was lowerd in previus patch.
+*tusk ultimate (and talent)  and his aghs kick got some "small" buffs.
+*Phantom lancer boss is out, it was replaced by an team of ...(get there and see) .
+*fix and changed some code stuff. mirror shield 350->400 stats.
+
+*Templar Assassin Q buff(talent too , tooltip not updated)
+*blast staff buffed , speedsters , resureection pendant is not using philo anymore and no more neutral slot,  poketrax limited by time.
+*New Greater item ,Greater Dragon Head . 
+*and some other ninja stuff.
+
+*added one more ability to random list (bane pasive)
+*fix dragon night dragon form
+*and some other changes(bouth maps are the same)
+
+*fix minimap  on easy_map.
+*Buff qeen of pain (linken tallent is back) , buff clockwerk 
+*enigma was to a point that felt like cheating(compared with other heroes) so nerfed him a bit.
+*fix missing neutralcamp.
+
+*2 of the vlads have better stats but reducer ther pure lifesteal (ignores deffense and fully heal)
+*bosses gain less hp over time (almost half of what they had)
+*ember flame guard buffed, 
+*agi now gives  1 extra base attack(no need to be primary atribute) and  bonus attack dmg % (2 per 100 agi) , int gives CDR , str gives status rezist
+*reduced max AS to 1400, lag reason and future skills relevante (last reducution,local host can hold higher As but.. ) , with agi buffed dps is almost the same or greater for some heroes if not i will add more.
+fix ui to show detailed dmg from skills and items(click on the him).
+*ajusted ember/sven w to match the new As
+
+
+*new skill to random pull, scales with max mana
+*buffed ion shell and fixed dark seer talents, anchor smash small buffs
+*tempest double has a longer duration with some extra cd.
+*added something new(you may like) and fixed some stuff like bosses not attacking ancient because of uphill vision.
+
+*new skill in radom pool  Quick Blade (crit that scalles with agility, S tier skill) , removed blade dance from pool it was not working when learned as an random skill.
+*green butterfly lvl5 increase cost and agility gain , fix lvl 1 butterfly giving only agi.
+*custom duel from random pool has more lvls
+*modified revenge skill (the one when boss uses bkb and spam his skills like razor) to triger less offten.
+*fix treeant nature guise pasive effect geting lost on death and added  more lvls.
+
+*fix resurrection pendant bein able to be refreshed
+*void frostivus bash has more lvl's 
+
+*fix pudge cd for ultimate having septer cd and increase str value but more cd
+*lowered drow ultimate chance 
+*morphling ultimate better stats overall use his stats and requires no ally but duration shorter and longer cd.
+*witch doctor ultimate has more lvls, maledict higher burn dmg but lower % pop dmg.
+*fix end screen board.
+*Added new quest "Win with tusk in hard"  find details on discord(quest section pinned)
+
+*warlock ultimate  cd  lowered
+*new ability in Radom pool commander aura (the bonus aura scales with agility)
+*venge Q and W changed with similar skills but they scale with agility and have other effects, added more range and lvls to venge aura same for ultimate more lvls and changed some talents.
+*roshan spawn time has a bigger random variance.
+*Added new quest "Win with venge in hard" discord for details
+
+*replaced omniknight Q and W(is a new passive) and some talents.
+*fix respawn abuse
+*added new ability in random pool 
+
+*fix omni passive not applying aura to allies, his Q secondary effect now gives mr resist buff and changed his dmg type to pure but has 2 str less to his multiplayer
+*fix eldertitan natural order  magic resit reduction aura being smaller then armor one  
+
+*New skill in the random pool, has:  gold, pure dmg, regen, aoe,  and scales with str
+*morphling ultimate replaced with his own ultimate (from dota experience that thing is the core of bugs, report on discord bugs if happens)
+*made some other changes and fixes.
+
+*random dropped items like gold bag 2x expire time(was 2 min) 
+*air and water elements that get sold can be bought back at full price (shop stock can hold 5 of each at max)
+*fix the cheap holly loket that was not supposed to be for sale.
+*doom infernal blade cannot be dispelled now. i might have buffed a hero or more.
+
+*changed majority of the weak custom skills, ~95% of the changes are buffs (some may be overbuffed so try to report them on discord), nevermore ultimate use agi as bonus dmg, and ion shell scales with int.
+*aegis will not trigger if reincarnation talent or wk ultimate is ready. 
+*replaced moment of courage random spell with tiny cragy
+
+*fix ion shell
+*Perma gold ring(consumable) is now made from dragon scale and recipe, gives 20 armor and hidden power trigger will give 100% dmg reduction during effect, btw avoid buying aura gold ring on hero.
+*added timeless relic with better numbers (btw is spell amp what it gives)
+
+*earthshaker Q E R changed with a version that scales with str and buffed his W (ags does not trigger E on land but on takeoff) new talents for him.
+*fix pudge flesh heap talents not giving anything,  pudge aghanim now is affected by CDR and talent duration now is for real +2 was +1 in reality seems.
+*trol battle trance can now  be used during stun (not during silence like blackhole), increase the aghs cd was almost perma with just octarine. Q BAT 1.2->1.1 now.
+*Morph new ultimate, better stats on lvlup and new talent for his ultimate.
+*some neutral aura changed from 1200 to 7200 and buffed the ones with default stats, beastmaster aura and wk vampiric aura increased too.
+*beast master Q buff, added 0.1 cd to aghs so it works with blast staff and axes return faster
+*new ability in random pool  Finger of Death (increase in dmg after every use)
+
+
+*more neutrals ->7200 aura and higher stats.
+*sniper Q W  replaced with a version that scales with agi and added 3 new talents.  replaced random pool headshot with the new one.
+*fix troll battle trance sometimes failing to keep the hero alive, forgot to add the last patch: troll now starts with battle experience (the skill)
+*luna glaive will have the same dmg on every bounce.
+*NEW Quest for sniper "Win with Sniper in Hard" 2 left (5x reward for -fullgame(hard)), check discord Quests- Pinned message for details.
+
+*Sandking Q W new stuff, W follows him and 2 new talents to match the skills.
+*removed knockback from headshot 3->20%.
+*Tinker ultimate less channel time but longer cd.
+*Clinkz 2 new talents and better skeletons for his wind walk aghs.
+
+*fix sandking talents description, sandstorm no longer makes him invis but attack immune 
+*viper got some buffs 
+*every 10 lvls you get a random ability item, and every 5 lvls an extra skill point, at lvl 60 you get an extra random ability item (rare one)
+*every 6 rounds reward changed except the last one is still a random skill item.
+*resurrection pendant changed to 120s base cd.
+*random ability item(rare) can be changed for a mage version has a similar skill pool but a higher chance for mage skills.
+*Starting item random ability(rare) has 600 sec cd and shares cd with the mage one.
+*and some other stuff
+
+New Final Boss  only in -fullgame. find him in 3rd part or maybe sooner?
+*Second part follows the same rules as first part for rounds(no rush, next boss will come after you defeat the current one) you might encounter something extra.
+*Phantom Assassin has a new extra skill "Phantom Reflex". Coup de Grace reworked to give total dmg bonus (includes green dmg too), and added extra aghanim effect: gain extra critical power base on current game time. better agi/int gain and better base attack time and movement speed.
+*Death profet, replaced haste talent.
+*Shiva 5 has better stats and added the health deny aura, uses Elemental as a component upgrade.
+*Ex Machina greater armor and lower cd
+*Gold ring has more than double CD (the one bosses use), consumable gold ring has 30% more cd.
+*New skills in random pool: phantom reflex, Lizard aura that gives accuracy and As and abaddon Mirror.
+*and some other stuff buffs nerfs change some items maybe boss changes, etc.
+
+*New skill in random pool multicast that has his own rules different from the other multicast and comes with custom unrefined fireblast(if aghs) and works with ultimates too. 
+*greater pipe active has less duration but 10 times stronger(250k)
+*fix phoenix talent, ancient buffed ancient E talent and corrected his -720% mr talent 
+*Pa ultimate lowered the power early but has the same power at max lvl.
+*warlock golem better Attack rate (at lvl 3) and lower cd.
+*counter spell am taken out of the random pool (it may crash sometimes on some rounds, not sure if on Am has the same problem) 
+*Patreon gives nothing(maybe a roll on discord) so thanks to anyone who subs with no expectation of something in return(currently only a sub and he is a dev)
+
+*bristle back passive now works in any direction  (if you attack or target spell an enemy you will count as facing that enemy and the passive will not proc against that enemy until you change direction)
+*visage birds(lvl3) went in a training camp with sniper, some changes to his W and returned his passive.
+*Attribute mail return dmg changed from magic to Pure, now centaur % return talent works with attribute mail too. 
+*Arcane Staff 1.6->1.8 crits (tip: the item will not trigger if you have less mana then it will cost you, this is how it worked just a tip, not a change)
+*fix phoenix multicast messing with hotkeys, his Q now scales with primary attribute.
+*adjusted PA to be more weak early game.
+*and some other stuff(mostly small buffs and fixes).
+
+*headshot now works with critical (let just say aghanim assassinate if procs headshot is bad news for the enemy or any other high crit)
+*fix naga ult multicast ,  keeper of the light same bug, now keeper q aghs  the skill will changed keys but it will revert back after skill is done and buffed lvl 25 talent.
+*changed luna ultimate and Q  , now scales with agi and added 4 new talents.
+*changed antimage counterspell with the default one and buffed lvl 25 talent.(the skill is back in random pull)
+*other stuff.
+
+God Slayers Patch:
+
+*NEW item God Slayer weapon: scales with the death of any enemy unit especially Roshan(does not matter who from your team makes the kills). Item is built from fragments that all players have a chance to receive every 7 lvls (another chance for a second drop in 3 players or less and solo has 3 chances for up to 3 fragments every 7 lvls)
+*aghanim has a new passive
+*Abaddon has pudge root just to have good synergy with mirror and ultimate and some new talents and improved some of the old ones.
+*mirror shield has less duration(its a buff, this skill just refresh duration if cast again
+*minim roshan spawn time is a lot lower so you have a better chance for more or him, but will variate a lot because the maximum time is the same.
+*2 NEW  Quests "Win with Abaddon in Hard"  2 left (3x reward for -fullgame(hard)), for the second quest check discord Quests- Pinned message for details.
+*and other stuff.
+
+
+*changed Mars ultimate  now scales with str and affects flying units too and adjusted some number for his first 2 skills
+*sniper headshot skill and talent got some buffs
+*disruptor ion cannon cannot be dispelled now(tooltip was lying seems)
+*weapon fragments chance increased (not by much)
+*solo drop chance for weapon fragments increased to match 4 players chance
+*slayer souls chance increased by 30%, aoe by 100, mana % in dmg adjusted to 25%, aghanim now takes only half of that dmg(aghanim was to easy compared to before)
+*and some other fixes and small buffs.
+
+*Perma gold ring changed to not be affected by CDR, cd from 120--> 40(almost same cd as before with bad juju + master of magic + Octarine lvl2), mostly a buff for builds that don't have CDR main source of dps and less rng for how survivable a hero is late.
+*mars W is now just a pres skill (no point or target)
+*god slayer max mana % dmg was set 40 instead of 25(last patch mistake) fixed.
+*fix both multicast (diretide patch gift ) and some other things
+
+*Added a new passive to Ancient: similar to warrior seal but is mainly armor for every stack, losses stacks when attacked.
+*adjusted some difficulty for Hard, taken some stats from the second part and added to the first part  (second part difficulty close to old one, but the first part is harder)
+*buffed spirit breaker bulldoze and changed 5 talents with something slightly better, buffed his stats growth and base attack time (2.1, now 1.5) 
+*Aghanim has a new skill or maybe 2 if i take into consideration his previous patch new passive
+*lvl 75 will give 100% a weapon fragment.
+*Fire and water elements can be disassembled.
+*stuff
+
+*Elemental auto combines and can be disassembled.
+*added 2 more resurrection pendants (max 4 now)
+*antimage now has his old dota passive (aghanim for auto spell reflect) and added that passive to the random pool, increased the duration on the counterspell(the active one)  
+*boss bristle has a smaller back
+*roshan has less max time for respawn  (1-13)
+*Stats increased for: preserved skull and Lucky femur lvl 5 and a small increase for few others.
+*Aghanim higher cd for omnislash(and less jump distance), and takes more dmg.
+*4 fragments now combine in a complete fragment(disassemble yes), "complete fragment"(yeah i know can't be complete and fragment well here it is ) can be used for few other items that require "elemental"( so normal can build those items and have a use for fragments) 
+*etc
+
+New Item: Cursed Gaze, requested by Siliatra, with points from quests.
+*elder titan spirit can have items, lower cd for ultimate and made easier to hit(a little op now),  Q higher dmg and wake time, spirit -mr passive from 40 to 35
+*Assault cuirass now affects units like wards (veno, shadow shaman, etc) and buildings, moved the As bonus, and added some extra to aura (from 185(aura)+110base to 30+295) and extra 5 - armor aura.
+*More Xp for 5 man party (~30-40%) and a small increase in gold ratio(for 2-5), buyback  cost reduced to 300 +   5 g /round
+*void spirit boss was considered god for slayer item (he was getting rekt by slayer)
+
+*Lina laguna blade now is base on int and gains int mult per kills(unit dying with the 35 sec duration debuff on)
+*Clinkz lvl 25 talent from 200 to 2100 base dmg, but his minions will not use his searing arrows (lags to mutch) and fewer units at max lvl for ultimate.
+*random skill devour fixed (was using int for dmg and str for gold instead of the other way around)
+*finger of death (the random one) now has an int base dmg,  and lion finger fixed his talent not giving extra dmg per kill(and buffed both talent and skill) and added delay dmg(2.75s) in case you get laguna.
+*assault now affects invul friendly units too (courier, broodmother spiders, etc), btw invul units do not get the crit from cursed gaze (a dota limit thing)
+*changed brood spiders to scale with the total attack instead of just base and give them some aggro range, speed, and better base attack time.
+*Random Ability (mage) alternative recipe : 3 random ability(uncommon) + recipe (i know 3 fells to mutch , but 2 fells to little and i can't go with 2.5)
+*and some other buffs and nerfs
+
+*fixed broodmother spiders not scaling with the green dmg too.
+*broodmother spiders now have bloodseeker thirst as passive and extra 2 abilities (both are random when they spawn every time, the ability list is long)
+*huskar berzerker blood now gives dmg reduction instead of magic resist (max 70% and need only 60%hp to be max), skill is out of random pull(the normal one is still there).
+*added 2 new skills in the random pool one of them is omnislash (changed to 5s duration from 8 but added 2(1 in this patch) extra sec to talent)
+
+*increased huskar spears dmg and made his second ultimate aoe not split dmg(cannot be "stunned" during channeling), and some other changes to huskar.
+*slayer now uses orb effects like od, silencer, huskar spears, etc (was using only between slashes) but no longer has true strike(on active)
+*broodmother spiders have a longer duration overall, a lot more skills in pool for them and Q now has an aghanim bonus(check in-game).lvl 7 spiders will scale with your total hp and mana and your spell amplification on top of your attack.
+*updated lycan wolves description to match their stats, and some changes to him
+*Added to Base a goldring like buff(it will mostly save you on those occasions when the boss attacks the base for an extra second before going for you) and made final boss favor less the base(by adding him a mobility skill).
+*visage lvl 3 birds have a 7 sec borrow time when attacked
+*venge ultimate range bonus works on mele too now.
+*probably something else.
+
+*fix some things with nebu.
+*juggernaut, antimage, and faceless void now have true strike talent.
+*void "the world" ultimate now gives a 50% total dmg output Increase(to all inside) and protects everyone inside from CCs(stuns and other crowd controls) 
+*fire and earth elements can't be sold (disassemble and sell the components)
+*max CDR from Int is 50% now. 
+*and some other changes(few talents mostly).
+
+*lone bear has again the low HP scaling with nebu but he has a new passive that gives dmg reduction over time (up to 90%) and his basic hp is a lot higher
+*replaced a major chest reward with gold ring extract.
+*dragon head aura now gives 15% bonus hp on top of other bonuses(hp from 3700 to 2200)
+*devil daedalus has a better chance, base crit, and bonus crit for no crit hit.
+*fixed void Q not being able to use in Crono(but now he can be motion-controlled by enemy spells), void bash buffed a little.
+*fire rapier - armor debuff now cannot be dispelled but has lower numbers,  fire rapier now does not have cleave but has a % bonus total dmg increase(includes green dmg too), new recipe component.
+*broodmother spiders have a chance to spawn with true strike, fixed or chanced some of his talents.
+*ursa has his furry swipe duration talent now and changed few other talents.
+*added ursa, troll, terror in the true strike talent club.
+*and some other fixes.
+
+*fix dragon head, and some other minor changes
+
+*Drow has 2 changed skills with 5 new talents (3 are for the new skills)
+*dummies are invis (plant a sentry to attack them), mostly for summoners like Wk, Clinkz, etc added a bonus sentry ward at the start so new players stumble across the dummy when they plant sentry near them.
+*buffed techis ultimate (for dmg only the aghanim effect)
+*2 new spells in random pools.
+*small buff on 1-2 mid-bosses, reduce the blink range for void spirit(boss) so he favors his ultimate first (if the cd is rdy ) and spawn kill less.
+*buffed fire rapier to -8 armor per stack
+*beastmaster and Wk summons buffed. (entire skill buffed for Wk)
+*and some other stuff like some summons now have borrowed time.
+*some cde stuff that may or may not reduce crashes
+
+*buffed SilverEdge break duration and some stats(increase recipe cost by 4k), speedsters now give phase shift (no unit collision) and cannot be slowed. buffed pipe (mostly the item stats and less on aura)
+*moved void spirit a few rounds up and added him an additional skill that combos with his blink (they have a description on how they work), changed his blink to deal less dmg but have healing reduction curse. up his hp and gold reward.
+*New skill in random pool Slayer Dimenstional Shift: It has some of the properties of void spirit(boss) blink and a lot more effects and stuff.
+*changed the first reward with Resurrection Pendant.
+
+*fix morpth panorama crash (he had one extra talent)
+
+*New reward on lvlup(every 20) 20% chance of a edible fragment(2 parts for Edible Catalist)
+*New item: Edible Bigan's Octarine Core, recipe + bigan octarine + Edible Catalist, has slightly better stats then the recipe component(don't buy any other octarine after consume or you will lose the cdr and lifesteal) 
+*added a toggle ability to oracle for his purifing flames (made the skill not intrerupting movement, was almost imposible to move with low cd)
+*chen holly persuasion reworked to work similar to broodmother spiders.
+*teleport scroll has 0.1 cast time 
+*fire and earth elements dorp rate increased by 2x
+*ajusted the base attack time for summons that where laggin from to many flying projectiles (shaman, visage , range creeps), increased their dmg to match for as lost. 
+*bosses gold ring proc now will make them take 0 dmg during that time (so the min 1 hp script check does not trigger to many times per/s laggin the game)
+*medusa splitshot removed from random pull , added new skill in random (templar assasin - 40% armor orb) 
+*fix Void spirit boss stealing an ability for good  (the chance is stil there it has to be a stacks passive and the hero to die in the same frame of a succesful steal(chance close to 0))
+*like few mid game bosses small buffs.
+*and some other stuff(small buffs, talents,item changes, etc)
+
+*Chen now can have any number of ancient creeps but max total units are 5.  changed the lvl 7 bonus to have your hero all armor in consideration(200xarmor) on top of all others for base dmg for creeps (same for broodmother) and changed the hp+mana dmg bonus from 25 to 33%,  chen ultimate now can be cast on invul targets and gives 420% spell amp instead of 100%.
+*few heroes got some small and not so small buffs. (too many details to add) 
+*2 more rounds will have zombies spawn slower.
+*5 more spells in random pools(from treant, terror, chaos knight, lycan, chen)
+*wk skeletons have more dmg, but less in numbers(lag reason).
+*fix edible octarine losing spell lifesteal on death.
+
+*lich now has an extra skill (his ultimate) and talent for that.
+*fix nature profet treant not having lvlup borrow time, made them less but stronger  and fixed the lvl 25 talent not giving 1.8x
+*some bear fix, and he has more dmg
+*fix void spirit making invoker abilities unable to use, and probably fixed against aghanim too (btw invoker has only 5 slots left until max abilities so i recommend for him to use the 3 uncommon for a mage)
+*chen additional scaling effects for creeps now from lvl 4 skill instead of 7 (he does not have like broodmother As and dmg buff for all units(talent +ulti almost 100%  uptime) so he needs a push)
+*New quest for Axe, find details on discord,  https://discord.gg/y8Cx69w     , should probably plug Patreon too(well check "About" for that)
+*and some other small buffs.
+
+*might have reduced some of the crashing (time will tell), but longer load time.
+*fix void spirit boss and aghanim not stealing abilities
+*second part void spirit got some zenkai boost and new stuff.
+*replaced borrow time(was too laggy) for summons with Summon Time (lone druid bear passive), but the max reduction is 75% and starts with 25%
+*Nebu now gives 45% less hp, but scale a lot better with your hero armor (mostly so towers have the same survive, no summon time for buildings)
+*brewmaster ultimate units have better stats and the new passive (fire was fine the others got some offensive)
+*fix pocket rax multicast (probably towers too)
+*and some other stuff
+
+*fix bonty shuriken toss crashing server on antimage boss
+*fix doom cd for Q 
+*Edible fragment chance of getting increased by 25%
+
+*might have reduced some of the crashing (time will tell) , but longer load time.
+*fix void spirit boss and aghanim not stealing abilities
+*second part void spirit got some zenkai boost and new stuff.
+*replaced borrow time(was to laggy) for summons with Summon Time (lone druid bear passive) , but max reduction is 75% and starts with 25%
+*Nebu now gives 45% less hp , but scale a lot better with your hero armor (mostly so towers have same survive, no summon time for buildings)
+*brewmaster ultimate units have better stats and the new passive (fire was fine the others got some offensive)
+*fix pocket rax multicast (probably towers too)
+
+*reworked Darkseer ultimate to copy more than base skills and now the clone can use even ultimates.
+*Antimage Q reworked and his Extreme speed ultimate to have synergy
+*new skill in random pull (Am Q)
+*fix multicast channeling spells
+*If you have lag from many units(illusions, fast attacks, etc.) try this command in console: "rate 200000"  (represents maximum bitrate of download that the server can send you info(200k = ~1.58 Mbps connection )), 80k is default and you can go higher then 200k
+*and other fixes and stuff.
+
+
+*New SilverEdge(extra effects, op stuff) (the normal one with dota echo saber effect its just an attack speed bonus until next hit, this means was doing nothing late game)
+*PA phantom reflex now uses orb effects(it can proc on itself like void bash) and ignores attack cd, reduced some of the magic % on ult (dps its probably the same or more with the new effect on passive)  
+*broken bow now is range only.
+*added aghanim effect for dark seer ult.
+*some skills that are not good with multicast added to ignore list (report any skill that you think multicast makes worse or lags/bugs effects like Windrunner)
+*antimage Q some changes: burn less mana but deal the same dmg as before (higher mult per mana burn and increased stacks/mana burn ratio to match the same rate ), a higher chance at max lvl, now stacks give agi too and better hp/mp ratio (might be to op now considering the changes above too)
+*jug and CK got an extra skill.
+*removed tb meta from the pool (bugs mele heroes)
+*and some other stuff(random buffs etc.)
+
+*SilverEdge brake now has a new interaction (increase the duration with the user status resist and not affected by enemy status) from -50 to -70 hp healing.
+*fix jakiro ultimate (something was not in order and he was using default numbers).
+*antimage blink, void time walk, and others, added to ignore blue multicast list.
+*tiny added his septer and made it a little more interesting(trees grow faster to not be a problem).
+*ancient seal is out of the pool (to situational to be good, it was good with brake), added new skill in the pool: void time walk.
+*previous patch note: troll fevor changed to gain agility instead of attack speed, but it's not for every hit.
+*some heroes got small buffs to 1-2 of their skills.
+*added a Paypal  in the "About" section (not that I'm selling anything, just to be there)
+*and some other stuff. (it was supposed to be a short patch to fix some things...)
+
+*Zeus got an auto-cast for his Q, and lots of buffs, its more simple to say what it was not buffed: the teleport skill.
+*nerfs and buffs (AM got the first part).
+*and some other changes...
+
+*removed dummys, the host can spawn one of them with the command "-dummy"  before the game starts
+*Added some extra effects to troll passive
+*slayer recipe is not sharable anymore (it seems the game does not like if all components are sharable and you don't own them all, kind of pointless )
+
+*Over 200 talents (probably) buffed by 3-20x times (the % ones, attack range, hero unique, and mana regen remained the same)
+*dark willow shadow realm replaced with a custom one that scales with int, (replaced the random pool one too), it has normal effects but no attack effects(to be more friendly with slower PCs or server). 2 new talents
+*increased the time for last boss bonuses by 5 min (so he starts to get bonuses from min 80 and cdr(with a limit) from min 95.)
+*Chaos Knight round: reduced void hp by almost half.
+*bosses now can't pick up invis rune (they don't reveal themself unless you are very close, removed anyway),  Rosh drops aegis 2 kills earlier.
+*Greater Pipe active from 300k to 600k magic barrier.
+*probably Zeus auto-cast fix for nonhost players, (oracle might have had the same bug but no one reported)
+*added nyx carapace in the random pool.
+*and some other stuff
+
+
+*New stuff, I will write in the next patch what is it(hint: something big drops)
+*Resurrection pendant has less cd
+*luna aura(bonus to pirmary stats) is removed if you have Apex item equipped
+*increased some talents that were missed from the last patch and adjusted the top hp talents.
+*fixed void spirit boss stealing ember Sleight of Fist
+*probably something more.
+
+
+*The new stuff was: A New God Boss (the hint was mostly to make harder to guess, well the boss drops something really big, a meteor)
+*New item mainly for casters(does lots of stuff)name "Mimic Mace".
+*some range to bounty hunter Q R.
+*bristle round in second part - 1 and spawns one at a time.
+*and some other changes.
+
+*Drow frost arrows now use int too and the dmg grows stronger the less %hp enemy has.
+*Necro Reaper same thing as drow frost arrows(hp enemy thing) but better (probably because of the name).
+*Enigma second ult reworked.
+*some fixes
+*and other stuff.
+
+*Mace now can cast spells that can target allies only (it will cast on yourself), the hero will have a fixed attack rate of 0.9(no more - attack speed), added projectile speed bonus, and true strike.
+*fixed the multiple proc mace on skills like Legion custom duel, tide anchor smash, etc(it was interesting but lag and crash and sometimes broken stuff). removed doom and clinckz Q from the ban list and made luna ult aghs cast on enemies(only the mace can do that).
+*Abaddon mirror skill when explode now divide the dmg into 4 instances and is pure (good for aba but heads up for spectre boss).
+*removed drow passive from the random pool added WD and leshrac ultimate.
+*disruptor ion cannon now sets BAT to 1.4 instead of 2.4, removed enigma eidolons replaced the talents for them, and added repel.
+*LionDagonV2 deals the dmg in 3 instances and has an aghanim upgrade.
+*aghanim is more expensive, 3nd Roshan and up has 20% chance to drop an edible Greater Aghanim Synth (50 all stats and 1k mp/hp) that stacks, his normal aghanim will not drop anymore.
+*and other stuff.
+
+
+*Added An Item that will remove your First skill(Q) and give you an item in return(3 of them for an item like Random skill (rare)), this thing has lots of steps to prevent losing your HotKeys and some other bug stuff. 
+*lvl 30 and 55 will improve the attack rate for Mace item(up to 0.20) plus a special hidden condition, alt for details now works.
+*ench impetus distance cap increased from 1.7k to 5k
+*random skills: removed bane enfible and added viper poison attack.
+*in party Roshan has a 50% increase drop rate for aghanim
+*small buff to abysal blade.
+*zeus ultimate is a lot more friendly with the eyes(lest light) and his nimbus is on the ignore list for mace.
+*added aghanim tome(edible aghs buff for 3 min) cost 750g, and changed an aghanim recipe component
+*fixed some not intended void spirit(boss) skill perma locks (one of them was if you swap your locked spell)
+*etc...
+
+
+*some small changes (mostly to bosses).
+* bara bash will be ignored by void boss steal.
+*invoker new talent(an op one) and his normal sunstrike lower cd
+* Here is someone streaming(now) some hero attack:  https://www.twitch.tv/fiftyoneth
+
+*Luna Lucent Beams now have a chance to increase a certain stack every time they hit an enemy, Under the moonlight reworked. moon glave increased bounce range.
+*earth rapier has some extra stats.
+*devil's daedalus has some % bonus dmg and the other dmg is base dmg and scales with your hero level.
+*Heart of tarrasque lvl 5 has 15x more regen %, str and hp increased not by mutch 
+*lich ult has more bounce range.
+*dummy (-dummy ) available only in cheats enabled mode (works only normal mode and no final bosses here)
+*probably fix some interaction with void spirit and lion finger stacks reset bug (report if he still reset the stacks)
+*Some items will not have effects (like the elements on the ground) lag reason, it seems that if you quit dota and reconnect again will fix the lag but is not something that i want that to be the solution.
+5 New Quests find details on discord https://discord.gg/y8Cx69w
+
+New AutoCast skill(similar to zeus or oracle but with more functions) for everyone to buy.
+*Blue multicast fireblast deals all stats as dmg and uses current mana as extra dmg.
+*Nyx(hero) mana burn aoe will have same sound like a single target(no more ear rape)
+*omny repel passive cd proc is now reduced by the affected hero status resistance, now has a Hard Dispel and 7.2k aura range.
+*Mimic Mace cd reduction uses original cd(before CDR) of the ability/item used. (was doing this even before, adjusted the cd reduction)
+*and other stuff
+
+New Item upgrade(elemental) : Greater Blast Staff 
+*lion ultimate debuff now stacks (means you can get more than one stack from a death), but dmg delay reduced to 0.15(yeah I got some complaints about dealy, well next time be careful what you wish), the damage is dealt in 2 instances.
+*enigma second ult is less laggy.
+*spectre ultimate: no heal on damage passive (was too laggy and broken), fixed the illusion bonus dmg and dmg reduction(was not working even the talent) and buffed the illusion dmg reduction.
+*removed viper Q from the random pool (it does not want work if the hero does not spawn with it(vanilla skill)) 
+*added 5 skills in random pool 4 actives and a passive (pheonix, zeus, earthshaker, and queen of pain)
+*new quest for silencer, find details on discord https://discord.gg/y8Cx69w
+
+New Patreon roles on discord, no benefit other than a new section dedicated on discord where you might or might not learn some tips, and bonus quest points for a higher Patreon(limited). The First 15 patreons get a Rare color Role(has access to a second general chat).
+*Roshan red aghanim drop will increase with every extra player up to 4 players, having 3 stacks or more of the roshan aghanim (red) will count as having Super Aghanim (SS). 
+*Lion finger of death some changes(including his talent), the random finger of death now uses all stats as base dmg and has a Super Aghanim effect.
+*fix brew autocast ultimate during ultimate.
+*and some other stuff
+
+*fix bear getting dmg from devil daedalus.
+*mjollnir, monkey, skadi all lvl 5 of those items got some buffs.cursed gaze from 3% to 4% extra crit power for every hit.
+
+
+*fix some particles on the final bosses.
+*from 75% max dmg reduction for summons to 80% (they are not affected by attribute mail)
+*radiance armor damage aura stacks(enemy can take multiple burns)
+*pudge root 650->800 aoe, but particles will be smaller(only around him, lag reason), ticks less often, and deals more dmg and only 25% self dmg.
+
+*fix and fix and fix.
+*modified some of the new things,
+*new items find them by name or in shop list.
+*buffed the new hero.
+
+*fix some broken stuff, (abusing the broken stuff is similar or worse than playing(not testing) with cheats from my point)
+*Note: if the Skill is a Custom one. means that the normal skill shard or vanilla will not affect.
+
+
+*slark E modified (changed mainly to remove the lag that it creates with 25 hits), slark death pact increase %hp dmg and replace the dmg bonus talent with an %hp bonus dmg.
+*removed the vanilla luna aura from random skills (they made that skill boring), added slark E and Q to random skills.
+*fix legion leftover duel particles.
+*fix rubic crash(talents number changed because of patch) i discovered that was crashing just because i randomed the hero in one of my tests.
+*replaced old antimage spell shield(they broke their skill and left like that because they are not using anymore) was a nice am old skill.
+*more neutrals that are not using the neutral slot can be sold now.
+*added the giants ring (it's using a normal slot) with some stat changes.
+*overwhelming blink modified to work and have good stats.
+*tome of knowledge restock 6 times faster after the initial stock time and the bonus xp peruse doubled.
+*some small changes like some numbers for the new hero, etc.
+*I have less time now so probably fewer patches.
+
+
+
+*fixed basic vladmir, tome of knowledge nerfed but can stack.
+*gods GameTime power starts after 85 min instead of 80.
+
+
+
+*added a new neutral(normal slot) item (the one with % bonus int).
+*Roshan xp reward grows every time he comes back.
+*SF gains spell amp too per souls.
+*arc warden spark wraith now scales with agi and int. 
+*fixed tiny(boss) particles.
+*fixed slark essence shift no gaining stats if was learn from random skills.
+*added sf Necromancery and arc warden spark wraith to random skills. 
+*adjusted some skills.
+
+*Some Headband limits so you can't buy more than one.
+
+
+*Silencer Glaives small buff to dmg and aghanim crit and added a Super Scepter effect.
+*Increased gold gain
+*spheres(elements) cost a lot less gold (~500g),  dropped tomes in hard now give more stats, but can't be sold.
+*xp and gold bonus base on how many players are will drop if someone disconnects(if he reconnects will increase back). this is hard to test so report anything that may seem bugged after someone disconnects.
+*Moran blackhole cd almost doubled.
+*Giants ring follows the same rule as Headband
+*Od Q from 20% to 5% current mana consumption.
+*Int CDR bonus rescalled , 10k int = 25% CDR bonus (50% max)
+*and some other stuff.
+
+*fix blackhole (enigma wisp etc)
+*first rounds(hard) give more gold and max amount. raise solo gold to match the party increase.
+
+
+*Weaver buffed(talents skills, etc) by Request (100 points), as a bonus weaver now has a new skill "Slayer Rebound"(don't expect for other hero buff request to get a new skill(it has other conditions))
+*Previous patch: Silencer W was a request buff (50) by the same user as for weaver, @☆「Abuleil」☆
+*Some difficulty rebalance mid-game was the main focus.
+*Bosses now when they trigger gold ring they go in a frenzy plus something before that (more bosses got the gold ring(Idk from where))
+*grany buffed some skills (except for Lil shredder)
+*techies Q buffed and now can trigger arcane scepter (btw the skill has a toggle for auto-cast) 
+*new skill in all random skills (PA shard skill), and the New Slayer Rebound skill is only in uncommon random skills.
+*grow strong will give stats base on time if stacks are under 10(just so illusions benefits from this passive)
+*New 2 quests added for more details visit discord(find on "About" the address)
+*and some other changes(like omny shard has 2 extra lvl's).
+
+
+*fix cm ultimate, and a small buff for the hero.
+
+*fix weaver buggy Geminate(and some broken interactions)
+*frenzy procs after gold ring with a delay (probably more stable)
+
+*boss ursa less hp and made gold ring frenzy not have a teleport and take hp effect, is just a buff now (so more easy) report if you still get crash
+
+*fixed party gold ring crash (high probability), seems is hard to test a bug that happens in party only
+
+New Items: 3 Special upgrades from radiance armor that have an edible version(better stats) each(total 6 items), 3 items from neutrals(they use normal slot).
+*After lvl 10, every level will give you a chance for an enchanter item(used for the new radiance armors)
+*Guessing game: After min 30(no cheat lobby) you can start guessing by typing in chat like a command, the word/s is taken from one of the rounds titles and they are caps sensitive, every 1-3 patches will be changed. 
+*More details for guessing game: reward is an edible fragment and an enchanter for every hero(all get the reward if one guess), i might add hints in discord(if you find the answer don't post it or it will be changed and you might get a ban) and may be better hints or the answer on #patreons section.
+*Added witch doctor ultimate and it has a skill that will make the ward scale with the hero stats.
+*now normal mode drops +60 stats tomes instead of +3 but with a lower rate, and in hard spheres have half drop rate but added full elements to drop(same result most of the time but less mess)
+*Boss tidehunter  nerfed (mostly his radiance dmg and hp)
+*Guessing game Hint: 2 words and both start with caps, trap guess: 2 words and both start with caps (if you manage to type the trap guess all heroes will not be able to guess anymore)
+*and some other stuff
+
+
+New Item: Maple's Armor, has an action to redirect all dmg received by heroes(no illusions) to the item user and plenty of other stuff, some of the item effects work only on str heroes.
+New Global buff for all least popular heroes: Underdog, increases increase all attack dmg (35-85%) , spell amp by (70-350) and all stats idividualy by 100-1000.
+*New Version of Giants Ring(Greater), mostly more str, needs enchanter for up. buffed overwhelming blink dmg multiplayer, buffed earth rapier, and small buff for ice. 
+*Updated holy locket and spirit vessel, added fluffy(buffed slightly) hat to holy locket recipe, radiance armor from 5x main stat dmg to 7x.
+*kotol spirit form Q now has no stop button (so you can cast multiple times before the channel ends) and added the blue multicast to the hero.
+*fix hoodwink mimic mace ultimate crashing when is on and procs again from Q (just removed ult from mimic)   
+*illusions now will copy the stacks from some skills/items (am stack, luna, etc) and will copy some edible items too(octarine and all radiance armors) tomes does not get to be copied.
+*spectre main attribute changed to STR(and buffed the gain per lvl for that), increased the dmg reduction talent from 5 to 20%.
+*can't sell elementals, but you can disassemble and sell the components(only 2 types will go to shop stock)
+*Pango heartpiercer takes only 60% of base armor but buffed all other skills. grany ultimate buffed.
+*some other heroes got some buffs, monkey ult changed to aghanim effect only(5 soldiers and slightly faster) and 3 new talents.
+Guessing game: correct and trap answer changed (btw you can't guess during pause), hint: both trap and answer have 2 words(from starting rounds titles).
+*and probably some other stuff.
+
+
+*All components(except recipe) for maple armor are fully sharable so you can help your tank build that if needed(mirror shield was already sharable).
+*Heart of tarrasque 5 is now fully sharable and some other items like: spirit vessel, holy locket, etc.
+*fixed some interactions with the radiance armors.
+*fixed some other stuff
+*zeus W is less flashy (similar to ult).
+*This is from other(added a few more now) patches but not mentioned: Most of the expensive Auras are now fully sharable.
+
+Guessing game Answer: -Football Profesional , (it will be changed and next patch and don't expect to reveal every time). you can find advanced hints for this and more in discord #patreon section.
+*some small buff and nerfs, 
+*added necro Heartstopper aura in random skills.
+
+Request Done: 100 + 100 points to Buff lifestealer and Legion, request made by 『Kumagawa Misogi』.
+*Lifestealer poison sting reworked completely, buffed W, and added a new talent, new skill, and some stats improved like attack rate, attack animation, grow stats but he lost his Underdog qualification. 
+*Legion Commander Got a new skill, Q has a global range and slightly more dmg, W more regen, Duel now gives Bonus attack speed too, new talents, better attack rate and attack animation and better grow stats but lost his Underdog qualification.
+*ursa moved to STR Heroes and improved attack rate and slightly better str per lvl.
+*Added 2 new Skills to random skills (Poison claw and legion new skill)
+Guessing Game Reset, the new correct answer(only after min 30 of a game you can guess and not during pause), Hint: you will find in part 2 the round title, has 1-3 words and has one word that starts with a capital letter.
+*replaced tiny boss model. 
+*Removed the Blood and flash of light effect when you attack an enemy (that shit was covering the entire model of the bosses and it was made for when heroes have max 4-5 attacks /s  and less dmg, not sure if it had any lag impact)
+*New Quest (find on discord(check the game description for link)): it will last at least 2 days and it's a competition, top 2 players who have the most Reaper Souls stacks(Lifestealer New skill) after killing Part 2 aghanim (max 85 min).Reward: Current Guessing game Answer and next one.
+*and other stuff
+
+*Lifestealer nerfed the Poison claw "slightly".
+*new quest for legion, find details on discord (map description for link)  
+
+
+*When a hero or illusion spawns it will receive a 7s aegis like buff (the aegis one last 14) this includes buybacks or any way you spawn or respawn.
+*All summons that has "Summons time" buff (a % dmg reduction passive) will receive an  8s buff when they spawn that will give 45% dmg reduction buff and will increase with time resulting in complete immunity for those 8s.
+*fire rapier slightly buffed the - armor debuff and duration.
+*some mechanics to prevent unwanted events.
+*Pl updated some stats, extra skill and some new talents, and ult changes.
+*CK better numbers for illusions and new talent.
+*added weaver Q(swarm), hoodwink archon shot and scurry into the random skills pool.
+*added the t2 Quicksilver amulet in shop.
+*some skills and talents got small buffs.
+
+
+*New item, well technically is not new: removed broken bow and added his "fixed" version CrossBow, it does stuff and most of his staff are limited to only Range heroes.
+*shadow demon has an autocast dedicated to his shadow poison. (no other buff)
+*some mana regen auras now apply tru invulnerability.
+*Aghanim boss has a new item and the boss time passive.
+Guessing game reset(only after min 30 of a game you can guess and not during pause), Hint: 2 words no capital letter on any of them, the round title can found on the normal or hard or second part(one of them).
+*some technical code stuff.
+*new Quest available only for new players(have no legend or slayer rank). find details on discord #Quest section pinned, discord link in-game description.
+*Some Summoners heroes now have these custom game items as recommended items list, tx to @Siliatra for those heroes.
+*and some other small stuff.
+
+
+*Replaced dark willow bedlam (the old one can still be found in the random pool), can be cast multiple times(multicast, etc,) resulting in more wisp roaming around.
+*2 new talents for willow
+*Wisp replaced his ultimate with the lifestealer infest ultimate (has extra effects), and modified his Overcharge.
+*illusions now learn the random skills too.(arc warden ult is not an illusion, but I managed to add him too)
+*Grimstroke buffed his skills(including aghs and shard), modified ult, and 2 new talents.
+*added willow new ult in the random pool and Grimstroke ult.
+*Shadows Demon increased poison cd but has more dmg and better talent. buffed W.
+*reduced the dmg counter interval(dps) (it might reduce some of the lag late game)
+*Borrow Time fixed hp proc(was only using the 400hp one) changed to 35k, and is from lvl 1 (valve made so I can't add more lvls to this value only the first lvl value is used)
+*extra random skill every 12 lvls instead of 10 (xp have increased since my every 10 lvls,  and have reached the limit of Ui skill display)
+*Enchanter can be used in the remove skill recipe so you will need only one skill removed(instead of 3) + enchanter to get a random skill(rare).
+*Guessing game hint 2(check the previous detailed update for the first hint): the first word ends with "m" and starts with "f" .  for more advanced hints you can support the game with Patreon and have access to #pareon discord section.
+*and some other stuff
+
+*IO fix, viper more stats/lvl and better starting armor.
+
+
+
+*Fixed the missing end game scoreboard (some dota update broke that)
+*radiance armor 1 has an alternative recipe cloak of flames instead of radiance. lvl 2 radiance armor takes only one weapon fragment(the alternative recipe for normal mode). 
+*every 11 lvls get a random skill, changed from 12.
+*gold multiplayer for party and solo increased.
+*added 2 new passives to random pools (both are base on mana (mostly mana regen))
+*Guessing game hint 3: the title can be found in the second part in one of the first 10 rounds, the first word is "-from ..."
+it seems after I lowered the interval for Damage counter(the one with DPS, dmg take,/dealt, etc) feels less laggy late game(maybe it is just me, probably need more ppl to confirm).
+
+
+New Mode (testing,  more details down in patch)
+*Force Blade is chance base now but deal the same dps overall, radiance armor on illusions will tick every 2 sec and deal 2x dmg to compensate for that (less heavy on the server this way).
+*Some other code optimizations that may reduce some of the lag.
+*fixed Am Q missing the green bonus dmg from stacks and changed the skill to have 10 times higher chance for stack but will have 10% chance to burn mana (10x more mana burn), (same result, changed mostly to reduce so of the lag this skill makes)
+*added Trickster Cloak with better stats and can be used for a greater item.
+*buffed: normal pipe, Ethernal Shroud (this one is now an alternative for Greater Pipe), Healing bag (buffed, fixed the recipes, and can build in 2 other items)
+*some other stuff and buffs(i even forgot the details but are minor buffs)
+*Working on a mode/or feature that will make all bosses over lvl 14 get the following: 2-6 random skills (from a special pool of over 140 skills) units under lvl 50 they get the skills with random lvls between 1-6 and for units with lvl 50+ between 4-7, and ~75% chance to get aghanim and aghanim shard buff(i have yet to find a custom game that does that to so many bosses and with so many random skills). Almost done needs some testing.
+*The new mode is online for testing but require a command from the host to enable(added some extra items when the game starts), it will be posted next update if works well for now the command can be found on discord #patreon section or from me to few that I select. 
+*fixed some skills that were not working with the ability AutoCast from the shop.
+*added some quests for the new mode. check discord for details (link for discord in the game description)
+*added different notifications for the new mode and new mode+double.
+*Boss Time power(a passive that makes bosses stronger for every minute after the start) starts from min 90(was 85) and the cdr bonus from min 100(was 95)
+*the solo player help unit now gains base attack from your stats.
+
+*fixed the illusions, not expiring (it was void BackTrack blocking the death for 50% of them)
+*Some fixes and changes to the new mode and in general.
+*100 less for Max As
+Guessing game Answer: "-from rounds"  (only game time is over min 30) , the title was in second part round 8: "Die Trying, 9 rounds from now". reset in one of the next 2 patches.
+
+*manta fix, spell blade less laggy(probably) and removed the popup dmg(deals dmg but you just can't see that number)
+*Crystal Maiden frostbite added new skalling dmg for it, cannot be dispelled and stacks with himself, Ultimate changed to have a buff when channeling.
+*added frostbite to random spells pool.
+*and some other stuff.
+
+*Fix some of the crashes (i will need more time/info to be sure)
+New Mode now in Open Beta(a lot more stable), the command for the host: -extra
+The New mode has different roles rewards for defeating moran and for aiolos too.
+*and some other small stuff.
+
+
+*extra mode(-extra): found the 2 boss random skills that were crashing the game(in certain conditions), shuriken toss, and sticky napalm (took me way too many hours of marathon testing to find out)
+*previous patch: added ench untouchable and presence of the dark lord aura(nevermore) to players random spells.
+*some code change(probably more stable)
+*and some other stuff(cm small buff, etc).
+
+*Request buff medusa Q done, request made with 50 quest points by @☆「Abuleil」☆ .
+*medusa Q now gives bonus Total dmg instead of taking and replace the splitshot talent with a linken, a better mana talent, and better attack rate.
+*Queen on pain Q can't be dispelled anymore.
+*Illusions created from other heroes should not have more than 8 talents now (more than 8 talents  = panorama crash when you move your mouse over talents)
+*tusk boss now has normal Ai and lowered air stun time from walrus punch.
+*more code stuff(trying to remove some of the random crashes)
+*healing ward removed from bosses to op and Windrunner ultimate (mostly op on aghanim).
+*Added a 20% chance for a red aghanim reward on guessing game(everyone has that chance)
+Guessing Game Reset, Hint: 2 words and they are the last words from 2 different titles, round titles can be found on all parts easy, hard, the second part (any of them and is not limited in one).
+You can Support the game with patreon(link in game description, About) and get access to discord #patreon for more advanced hints, and some other stuff.
+
+
+*fixed missing skills aghanim description.
+*Underdog bonus has a fixed value now.
+*illusions will not get the particle effects from aegis protection (guardian angel thing), but they will get the buff.
+*illusions will not get octarine lifesteal (combined with spell blade lags too much and is probably unnecessary)
+*illusions or many units/heroes with high attack speed will lag if you have many on-hit effects, so avoid unnecessary items that affect all and trigger on attack(like basic vladmir)
+*Phanom lancer replaced the fevor with the power of gold.
+*and some other stuff
+
+BristleBack: All his skills reworked(W will not have projectiles, lags in any custom game), 3 talents changed. until next patch confirmation any part 3 win with him will not count
+*weapon fragments can be sold and buy back from shop , and can be unlocked .
+*fixed round some units getting skills on -extra mode.
+*added warpath in random skill pool.
+*the map can't be found on search but can be found on Browse tab, because idk why it got an "incompatible flag"
+*and some other stuff
+
+*Fix some bristleback crash problems
+*removed illusions from Fusion Rune item.
+*probably some other stuff.
+
+*bristleback boss spawns fewer units on death(too many on -double)
+*quill spray small buffs.
+*some fixes
+*some part 2 bosses got a power-up.
+
+
+Request buff Outworld Destroyer done, request made with 100 quest points by @卢卡斯 .
+*OD Q and str talent buffed, new talent, better attack rate, increased attack range, better agi gain, some W and R buffs, and more lvls, Astral can be cast even when you are stunned.
+*Autocast skills now have commands(read the skills) to be relearned(not sure if this helps in case they don't auto-cast).
+*frostmore got some buffs and an extra passive.
+*added some items to be found in the shop after you sell them(like the removed skill scroll, edible fragments, etc).
+*CM frostbite can be cast during channeling
+*Guessing game: the first word is "chew"("-chew Xxxx")  and the second one can be found on hard part 1(after round 20) and starts with a capital letter.
+-previous hint: 2 words and they are the last words from 2 different titles, round titles can be found on all parts(works only after the game hits minute 30)
+*Some fixes and some other changes
+
+
+*removed some of the aoe warning painting stuff, mostly because a lot of reported crashes happens on those rounds.
+*some illusions seem to increase the crash chance(seems to be the same on other like maps) it might have to do with the warning skills that i just removed some.
+*OD ultimate particle changed,  luna Q particle and  ambient for ult changed, ultimate beams are the same (more fps friendly and less bright)
+*Clinkz units now have Owner Buff passive (they get base attack dmg from all attack and other clinckz stats), press alt on the skill for more details.
+*Guessing game answer: "-chew King"  (type only after 30 min of game)
+*some auras(brilliance, skull item) now apply even on out of world units (like OD W or wisp infest, slayer weapon active, etc).
+
+Request buff Leshrac done, request made with 100 quest points by @Pale_Enchantress
+*Leshrac Buffs: Replaced Q with a new skill (passive), Changed W to scale with all stats and has more lvls, E Has an extra effect(healing reduction) plus a passive effect (similar to ursa Fury Swipe), R better scaling and better talent, new talents, better int and str stats grow, higher basic magic resist. underdog buff removed.
+*Techies Q more charges and a small improvement in int ratio, E now is pure and has an additional element(enemy current hp that is dealt as a separate dmg instance) the self dmg is magic and is not affected by spell amp, more dmg on aghanim ult and new talent.
+*centaur return and attribute mail now show in the damage dealt detailed info. tip: centaur 150% talent works with attribute mail.
+*tinker W can't be blue multicasted(server can't handle), OD Q no longer triggers normal multicast (was just visual), OD W can't be Multicasted.
+Guessing Game Reset: Hint - 2 words in the same round title, it can be found on one of the difficulties
+*and some other stuff.
+
+
+*starting aegis +1 , (the -extra mode same number)
+*some small changes for few heroes (new talent or a buffed skill) , furion passive lower duration(better) and deals the dmg in 2 instances(half x 2) with a small delay in between, dmg dealt to 240%(dmg taken after reduction), cd increased and added a skill note if you press alt.
+*leshrac skills require more levels to upgrade.
+*some fixes
+Guessing Game Hint 2 : Both words are lower caps 
+
+
+*underdog buff all stats from 500 --> 1000 
+*tp scrolls have a bigger range to teleport (from the building target) and 0 gold cost
+*alch jinada % increased.
+*clockwork  Q and E buffed, and added an all stats element to the ultimate(buffed).
+*elder titan ultimate now can be used with mimic. Tip: Elder titan spirit can carry items
+*some other stuff.
+
+
+*Replaced Tinker Laser(the aghanim effect was hardcoded and broken),  new laser comes with 2 new talents and a bigger aghanim search range.
+*and some other stuff
+
+*Fix Slayer weapon not giving bonus Output dmg against gods and fix the increased total mana % bonus pure dmg against gods  only working vs Aiolos(the reason he seemed easier than Moran sometimes)
+*slayer weapon bonus output changed from 50%(was not working anyway) to 15%, changed the 25%(vs moran was still normal 5%) mana dmg vs gods to 15%
+*Underdog buff will now improve Slayer weapon: stack chance from 3% to 5%, total mana as bonus pure dmg on active from 15% to 25%(on gods), Bonus Output damage vs gods from 15% to 45%
+*fix some unintended interactions with dark willow W
+*some small changes to tinker laser code
+*second part changes to clean up leftover stuff from skils(it suppose to make some clean after each round ends)
+Guessing game Answer:  "-reduction healing"  (enter the text after 30 min of the game, not during a pause or cheats enabled), it will be changed next patch.
+*and some other stuff.
+
+
+Reuploaded the map(check description for link or just search same name)
+New skills in random skills pool: Slayer Obs Studio(base idea SwordBacon) and Lifeguard
+*fixed some bugs and a lot of new bugs and abuses that the new skill could have made.
+*SF souls now get copied by illusions  
+*fixed luna missing aghanim description(you can report any other hero that is missing his aghanim description)
+*and some more changes.
+Guessing game Answer:  "-reduction healing" (after min 30 of game, no pause or cheats), reset postponed for next update.
+
+
+*OBS passive (views) can be aditionaly obtained by farming neutrals with the replay 
+-OBS will start with extra stacks (views) depending of the game time you learn the skill.
+Guessing game Reset: Hint- in Second part you will find the title that holds the answer
+*fire rapier reduce more armor per stack.
+
+
+*some fixes
+*up pudge ultimate talents
+*Void spirit Atlass ultimate now scales with mana regen too.
+Guessing game hint 2: the correct answer has 2 words and one of them starts with a capital letter
+
+
+The new hero: "Dawn-mini-Braker" buffed on everything(in a more special way).
+*fixed lifeguard skill abuse
+*fixed bkb duration
+*Io now can grant(with overcharge) stun and disarm immunity, With this, he can now attack again in combo with talent and infest(valve nerf only made him stronger)
+*Demigods and Gods(bosses) Dispel now procs after more than 3x damage taken compared with before (more than 500k dmg taken after reduction and higher for gods)
+*Bounty jinada has better stats mult on last levels (including the hp and mp one) and better CD, but takes more lvl's to lvlup. Track has a higher crit mult on second and last lvl.
+*All attributes Bonus increased from +2 to +30 per lvl (Ui still display +2), they can be skilled from lvl 1 and max out at hero lvl 7.
+*Removed Royal Jelly, was too common in custom games to crash the games(it might have the same result here)
+
+
+Fixed Unable to attack God boss outside rosh pit.
+*All attributes Bonus from 7 lvls to 14 lvls 
+*DawnBraker ult has an extra lvl with some power up to that lvl and has almost no cast time. The second skill more dmg on the last lvls.
+*Lycan ult stats adjusted and buffed.
+*added wisp Q, DawnBraker W  to multicast ignore list (to prevent a certain bug)
+*veno Passive and Ultimate has an extra lvl, ultimate aghanim has a different cd and duration,  plague wards lvl 4 have 1400 range (from 600) and attack type changed from pierce to siege(250% more dmg to gods)
+*fix bounty jinada(was broken from the last update)
+
+
+Request Buff/replace DawnBraker talents done, request made with 80 quest points by @「𝓐𝓑𝓤𝓛𝐸𝓘𝓛」
+*DawnBraker 2 new talents , str talent moved to higher lvl and has a better bonus and ult range increased, basic magic resit from 26% to 45% , Celestial hammer fly faster, pause duration from 2 to 3 sec , on activation the hero will move 10 times faster then the hammer(flash move) and burning duration increased to 5 sec. Model size a little grown. 
+*lycan ult has more speed on higher lvls.
+*"-single" command now adds an extra fake courier(single player only)
+*OBS Studio improved stat gain per stack
+*Ancient Aparition ult added to blue multicast ingore list(bug stuf)
+Guessing game hint 3: The tittle is found in a round that involves Clockwerk boss.
+*and some other stuff.
+
+*kunkka got some buffs and talents changed. W Ignores Base armor(only on main target) 
+*Commander aura affects out of world units (like OD W or god slayer slashes)
+*Added 2 new Commands : "-hide" (to hide all your max lvl passive skills that are NOT in a key bind slot(frist 6 slots)) and "-unhide" (reverse the -hide effect)
+*from last patch : -extra  mode will not have a chance to add aghanim and aghanim shard to bosses(might have helped with instability)
+*fix some stuff.
+
+
+*Nyx borrow has a 3sec cd now and hp regen changed from 1.5% to 10%. Changed back his %reflect the talent and added 2 new talents
+*lina 2 new talents.
+*Gods Dimenstional Shift (blink) has a 0.1 cast time now(from 0) to avoid some instant die back. Note: Rage mode(boss gold ring proc) has a cast time buff.
+*modified some of the new stuff.
+
+
+
+items:item_mystery_cyclone, item_energy_veil , item_kingsbane, item_abyssal_water_blade, item_mana_blade, item_solar_crest_of_void, item_skadi_bow.
+
+
+#skadi and tome of knowledge fix and some other stuff.
+*hoodwink Q fix and changed to 575% of base attack, speed is now hardcoded its seems and it scales with your hero projectile speed.
+*Clinkz searing arrows bonus dmg increased(and the talent).
+*omni lvl 25 purification talent up. Guardian angel reduced cd by 10 sec and increased aghanim duration.
+*kingsBane dmg reflected from 50% to 80%.
+*Picasso phys bonus dmg from 20% to 60%.
+*some fixes
+
+
+#Descriptions fixes.
+#Abilities:
+ Purification is not affected by Spell Damage.
+ Fixed DK 25level right talent
+ Night Stalker talent fix.
+#Dragon blood talent fix (buffed too)
+#Fixed some random skills giving errors on heroes that don't have their talent(might help in the reduction of crashes)
+#and some other stuff
+*Fix OBS crash on DawnBraker.
+*Small buffs for jakiro and very few other skills.(mepo, magnus, lich)
+*Mirana multi arrows now are easier to hit at a higher range.
+*removed sanguine "stop hitting yourself effect"
+*gold ring on god bosses will give at least 40% heal.
+*IO overcharge stun immunity and true strike part has a 10 seconds circle now (uptime 50%) on an ally(on IO is still 100%) 
+*Reduced some of the loading time.
+Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra mode (no abuses, probably:))
+
+
+
+*added back the longer load time but might help with reduction of crashes.
+*dragon knight  new talent , ult got an extra bonus but needs more lvls to up.
+*lycan ult needs more lvls to up.
+*fix pudge ultimate perma.
+
+
+
+
+*Crystal Maiden frostbite now has an aghanim effect and a super aghanim effect. Q got some levels and cast during channeling like W.
+*added green note to CM skills that they can be cast during channeling(was an Alt note for w).
+*small buffs to venge
+*chip shortage so Helm of undying cost increased.
+
+
+
+
+*Update patch notes9 can be found on the new map version:
+https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
+
+
+**Update Notes spellings will get corrected before the update.
