@@ -186,32 +186,31 @@ end
 function modifier_buff:OnIntervalThink()
 	if not IsServer() then return end
 	local parent = self:GetParent()
-	local caster = self:GetCaster()		
-	if self.cd == 1 then 
+	local caster = self:GetCaster()
+	if self.cd == 1 then
 		self.cd = 0	
 	else
 		self.cd = 1
 		if parent ~= caster then
 			parent:AddNewModifier(caster, ability, MODIFIER_CD, {duration = 10})
-		end		
-	end	
+		end
+	end
 end	
 
 function modifier_buff:CheckState()
 	local parent = self:GetParent()
 	local caster = self:GetCaster()
-	local state = {
-		[MODIFIER_STATE_DISARMED] = false,
-		[MODIFIER_STATE_CANNOT_MISS] = true,
-		[MODIFIER_STATE_STUNNED] = false,
-
-	}
+	
+	local state = {}
+	if parent:HasModifier("modifier_mystery_cyclone_active") then
+		state = {[MODIFIER_STATE_DISARMED] = false, [MODIFIER_STATE_CANNOT_MISS] = true,[MODIFIER_STATE_STUNNED] = true}
+	else
+		state = {[MODIFIER_STATE_DISARMED] = false, [MODIFIER_STATE_CANNOT_MISS] = true,[MODIFIER_STATE_STUNNED] = false}
+	end
+	
 	if self.cd == 1 and parent ~= caster then
-		state = {
-			[MODIFIER_STATE_DISARMED] = false,
-		}	
-	end	
-
+		state = {[MODIFIER_STATE_DISARMED] = false}
+	end
 	return state
 end
 
