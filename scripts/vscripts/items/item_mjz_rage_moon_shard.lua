@@ -1,74 +1,59 @@
+LinkLuaModifier("modifier_mjz_rage_moon_shard",  "items/item_mjz_rage_moon_shard.lua",LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_rage_moon_shard_stats",  "items/item_mjz_rage_moon_shard.lua",LUA_MODIFIER_MOTION_NONE)
 
-LinkLuaModifier( "modifier_item_mjz_rage_moon_shard",  "modifiers/items/modifier_item_mjz_rage_moon_shard.lua",LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_item_mjz_rage_moon_shard_stats",  "modifiers/items/modifier_item_mjz_rage_moon_shard_stats.lua",LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_item_mjz_rage_moon_shard_bat",  "modifiers/items/modifier_item_mjz_rage_moon_shard_bat.lua",LUA_MODIFIER_MOTION_NONE )
-
-
-local modifier = 'modifier_item_mjz_rage_moon_shard'
-local modifier_stats = 'modifier_item_mjz_rage_moon_shard_stats'
-local MODIFIER_BASE_ATTACK_TIME = 'modifier_item_mjz_rage_moon_shard_bat'
-
-function OnEquip( keys )
-    if not IsServer() then return nil end
-
-    local caster = keys.caster
-	local ability = keys.ability
-
-    -- 不叠加
-    if caster:HasModifier(modifier_stats) then
-		return nil
-    end
-
-    if caster:HasModifier(modifier) then
-		caster:RemoveModifierByName(modifier)
-    end
-    caster:AddNewModifier(caster, ability, modifier, {})
+item_mjz_rage_moon_shard = item_mjz_rage_moon_shard or class({})
+function item_mjz_rage_moon_shard:GetIntrinsicModifierName() return "modifier_mjz_rage_moon_shard" end
+function item_mjz_rage_moon_shard:OnSpellStart()
+	if IsServer() then
+		local caster = self:GetCaster()
+		local target = self:GetCursorTarget()
+		if target:HasModifier("modifier_mjz_rage_moon_shard_stats") then return nil end
+		target:AddNewModifier(caster, self, "modifier_mjz_rage_moon_shard_stats", {})
+		target:EmitSound("Item.MoonShard.Consume")
+		caster:RemoveItem(self)
+	end
 end
 
-function OnUnequip( keys )
-    if not IsServer() then return nil end
 
-    local caster = keys.caster
-	local ability = keys.ability
-
-    if caster:HasModifier(modifier) then
-		caster:RemoveModifierByName(modifier)
-    end
+modifier_mjz_rage_moon_shard = modifier_mjz_rage_moon_shard or class({})
+function modifier_mjz_rage_moon_shard:IsHidden() return true end
+function modifier_mjz_rage_moon_shard:IsPurgable() return false end
+function modifier_mjz_rage_moon_shard:RemoveOnDeath() return false end
+function modifier_mjz_rage_moon_shard:OnCreated()
+	self.bonus_night_vision = self:GetAbility():GetSpecialValueFor("bonus_night_vision")
+	self.bonus_attack_speed = self:GetAbility():GetSpecialValueFor("bonus_attack_speed")
+	if self:GetParent():HasModifier("modifier_mjz_rage_moon_shard_stats") then
+		self.bonus_night_vision = self:GetAbility():GetSpecialValueFor("bonus_night_vision") - self:GetAbility():GetSpecialValueFor("consumed_bonus_night_vision")
+		self.bonus_attack_speed = self:GetAbility():GetSpecialValueFor("bonus_attack_speed") - self:GetAbility():GetSpecialValueFor("consumed_bonus_attack_speed")
+	end
+end
+function modifier_mjz_rage_moon_shard:DeclareFunctions()
+	return {MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_BONUS_NIGHT_VISION}
+end
+function modifier_mjz_rage_moon_shard:GetBonusNightVision()
+	return self.bonus_night_vision
+end
+function modifier_mjz_rage_moon_shard:GetModifierAttackSpeedBonus_Constant()
+	return self.bonus_attack_speed
 end
 
-function OnSpellStart( keys )
-    if not IsServer() then return nil end
-
-    local caster = keys.caster
-    local ability = keys.ability
-    local target = keys.target
-
-    local sound_cast = keys.sound_cast
-    local item_name = ability:GetAbilityName()
-    
-    -- 不叠加
-    if target:HasModifier(modifier_stats) then
-		return nil
-    end
-
-    target:AddNewModifier(caster, ability, modifier_stats, {})
-    target:EmitSound(sound_cast)
-    
-    ability:SetCurrentCharges( ability:GetCurrentCharges() - 1 )
-    caster:RemoveItem(ability)
-	caster:RemoveModifierByName(modifier)
-
-  
-
-    
-    -- Create a Item for one game frame to prevent regular dota interactions from going bad
-    if Timers then
-        local item_dummy = CreateItem(item_name, caster, caster)
-        caster:AddItem(item_dummy)
-        Timers:CreateTimer(0.01, function()
-            caster:RemoveItem(item_dummy)
-        end)
-    end
-
+modifier_mjz_rage_moon_shard_stats = modifier_mjz_rage_moon_shard_stats or class({})
+function modifier_mjz_rage_moon_shard_stats:IsHidden() return false end
+function modifier_mjz_rage_moon_shard_stats:IsPurgable() return false end
+function modifier_mjz_rage_moon_shard_stats:AllowIllusionDuplicate() return true end
+function modifier_mjz_rage_moon_shard_stats:GetTexture() return "modifiers/mjz_rage_moon_shard" end
+function modifier_mjz_rage_moon_shard_stats:OnCreated()
+	self.consumed_night_vision = self:GetAbility():GetSpecialValueFor("consumed_bonus_night_vision")
+	self.consumed_attack_speed = self:GetAbility():GetSpecialValueFor("consumed_bonus_attack_speed")
 end
-
+function modifier_mjz_rage_moon_shard_stats:DeclareFunctions()
+	return {MODIFIER_PROPERTY_BONUS_NIGHT_VISION, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT}
+end
+function modifier_mjz_rage_moon_shard_stats:GetBonusNightVision()
+	return self.consumed_night_vision
+--	return 800
+end
+function modifier_mjz_rage_moon_shard_stats:GetModifierAttackSpeedBonus_Constant()
+	return self.consumed_attack_speed
+--	return 200 
+end

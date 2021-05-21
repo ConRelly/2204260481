@@ -8208,12 +8208,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"	"6.0 12 18 24 30"
+				"bonus_health_regen"	"6 12 18 24 30"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"3.0 6 9 12 15"
+				"bonus_mana_regen"		"3 6 9 12 15"
 			}
 			"05"
 			{
@@ -8283,12 +8283,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"	"6.0 12 18 24 30"
+				"bonus_health_regen"	"6 12 18 24 30"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"3.0 6 9 12 15"
+				"bonus_mana_regen"		"3 6 9 12 15"
 			}
 			"05"
 			{
@@ -8357,12 +8357,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"	"6.0 12 18 24 30"
+				"bonus_health_regen"	"6 12 18 24 30"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"3.0 6 9 12 15"
+				"bonus_mana_regen"		"3 6 9 12 15"
 			}
 			"05"
 			{
@@ -8431,12 +8431,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"	"6.0 12 18 24 30"
+				"bonus_health_regen"	"6 12 18 24 30"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"3.0 6 9 12 15"
+				"bonus_mana_regen"		"3 6 9 12 15"
 			}
 			"05"
 			{
@@ -15293,22 +15293,15 @@
 		}
 	}
 	
-
 	
-	
-	//=================================================================================================================
-	// Recipe: Rage Moon Shard			狂暴银月之晶
-	//=================================================================================================================
+// Recipe: Rage Moon Shard
 	"item_recipe_mjz_rage_moon_shard"
 	{
-		"ID" 		 "2278" 
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_recipe"
-		
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
-		
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_rage_moon_shard"
 		"ItemRequirements"
@@ -15318,34 +15311,31 @@
 			"02"						"item_quicksilver_amulet;item_chest_2"
 		}
 	}
+// Rage Moon Shard
 	"item_mjz_rage_moon_shard"
 	{
-		"ID" 		 "2279" 
-		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_mjz_rage_moon_shard.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityTextureName"			"mjz_rage_moon_shard"
-
-		"ItemCost"						"8000"
 		"ItemShopTags"					"mjz;attack_speed"
 		"ItemQuality"					"consumable"
-		"ItemAliases"					"moon shard"
+		"ItemAliases"					"moon shard;attack_speed"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemInitialCharges"			"1"
+//		"ItemInitialCharges"			"1"
 		"ItemPurchasable"				"1"
-		"ItemRequiresCharges" 			"1"
-		"IsTempestDoubleClonable"	   "0"
+//		"ItemRequiresCharges" 			"1"
+		"IsTempestDoubleClonable"		"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ShouldBeSuggested"				"1"
-
 		"precache"
 		{
 			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
 		}
-		
 		"AbilitySpecial"
 		{
 			"01"
@@ -15367,34 +15357,6 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"consumed_bonus_night_vision"	"800"
-			}
-		}
-
-		"OnEquip"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"items/item_mjz_rage_moon_shard.lua"
-				"Function"				"OnEquip"
-			}		
-		}
-
-		"OnUnequip"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"items/item_mjz_rage_moon_shard.lua"
-				"Function"				"OnUnequip"
-			}		
-		}
-
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"items/item_mjz_rage_moon_shard.lua"
-				"Function"				"OnSpellStart"
-				"sound_cast"			"Hero_Alchemist.Scepter.Cast"
 			}
 		}
 	}
@@ -17714,22 +17676,24 @@
 	"ItemCost"						"850"
 	"ItemGloballyCombinable"		"1"
 	"ItemPurchasable"				"1"
+	"MaxUpgradeLevel"				"2"
+	"ItemBaseLevel"					"1"
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"melee_attack_range"			"520"
+			"melee_attack_range"	"520 550"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"		"75"
+			"bonus_damage"			"75 250"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"		"8"
+			"bonus_armor"			"8 20"
 		}
 	}
 }
@@ -17756,22 +17720,24 @@
 	"ItemCost"						"1000"
 	"ItemGloballyCombinable"		"1"
 	"ItemPurchasable"				"1"
+	"MaxUpgradeLevel"				"2"
+	"ItemBaseLevel"					"2"
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"melee_attack_range"	"550"
+			"melee_attack_range"	"520 550"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"250"
+			"bonus_damage"			"75 250"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"20"
+			"bonus_armor"			"8 20"
 		}
 	}
 }
@@ -20856,11 +20822,6 @@
 			"var_type"				"FIELD_INTEGER"
 			"spell_amp"				"133"
 		}
-		"10"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"magic_damage_attack"	"30"
-		}		
 	}
 }
 "item_recipe_suicidal_mask"

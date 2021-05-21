@@ -1,6 +1,6 @@
-LinkLuaModifier("modifier_mjz_stifling_dagger_slow", "abilities/hero_phantom_assassin/mjz_phantom_assassin_coup_de_grace.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_mjz_stifling_dagger_attack_factor", "abilities/hero_phantom_assassin/mjz_phantom_assassin_coup_de_grace.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_mjz_stifling_dagger_attack_bonus", "abilities/hero_phantom_assassin/mjz_phantom_assassin_coup_de_grace.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_stifling_dagger_slow", "abilities/hero_phantom_assassin/mjz_phantom_assassin_stifling_dagger.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_stifling_dagger_attack_factor", "abilities/hero_phantom_assassin/mjz_phantom_assassin_stifling_dagger.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_stifling_dagger_attack_bonus", "abilities/hero_phantom_assassin/mjz_phantom_assassin_stifling_dagger.lua", LUA_MODIFIER_MOTION_NONE)
 
 
 --------------------------------------------------------------------------------------
