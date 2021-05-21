@@ -17366,7 +17366,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"1"
 		"MaxLevel"					  "10"
-		"LevelsBetweenUpgrades"		 "8"
+		"LevelsBetweenUpgrades"		 "9"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -17472,7 +17472,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
 		"MaxLevel"					  "10"
-		"LevelsBetweenUpgrades"		 "7"
+		"LevelsBetweenUpgrades"		 "9"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -17578,7 +17578,7 @@
 		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"					  "10"
-		"LevelsBetweenUpgrades"		 "7"
+		"LevelsBetweenUpgrades"		 "9"
 
 		// Unit Targeting
 		//-------------------------------------------------------------------------------------------------------------
@@ -17611,7 +17611,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"MaxLevel"					  "10"
-		"LevelsBetweenUpgrades"		 "7"
+		"LevelsBetweenUpgrades"		 "9"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
@@ -17679,7 +17679,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"MaxLevel"					  "9"	
-		"LevelsBetweenUpgrades"		 "8"
+		"LevelsBetweenUpgrades"		 "9"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
