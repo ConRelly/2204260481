@@ -2030,6 +2030,7 @@
 	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_bonus_movement_speed"		"%Movement Speed Bonus per Stack: "
 	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_max_stacks"				"Max Stacks:"
 	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_duration"					"Duration:"
+	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_Note0"                     "Gain 1 stack for every spell casted by anybody, stack last 15s."
 	"DOTA_Tooltip_modifier_mjz_bloodseeker_thirst_buff"					"Thirst Buff"
 	"DOTA_Tooltip_modifier_mjz_bloodseeker_thirst_buff_Description"		"Increases Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, Attack Speed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% and Attack Damage by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_bloodseeker_thirst_stacks"			"+{s:value} Max Thirst Stacks"
@@ -5374,9 +5375,11 @@ Upgradeable by Aghanim's Scepter."
 "DOTA_Tooltip_Ability_faceless_void_backtrack_dodge_chance_pct"		"%Chance:"
 
 "DOTA_Tooltip_ability_bloodseeker_custom_thirst"								"<font color='#f2da5b'>Thirst</font>"
-"DOTA_Tooltip_ability_bloodseeker_custom_thirst_Description"					"Bloodseeker either regenerates health or deals bonus pure damage based on his attack damage while taking damage equal to the regeneration."
+"DOTA_Tooltip_ability_bloodseeker_custom_thirst_Description"					"Bloodseeker either regenerates health or has %proc_chance%%% chance to deal bonus pure damage based on his attack damage while taking damage equal to the regeneration."
 "DOTA_Tooltip_ability_bloodseeker_custom_thirst_health_regen_percent"							"%DAMAGE AS REGEN:"
 "DOTA_Tooltip_ability_bloodseeker_custom_thirst_proc_damage"				"%DAMAGE AS PURE DAMAGE:"
+
+
 
 
 "DOTA_Tooltip_Ability_bloodseeker_custom_rampage"								"<font color='#f2da5b'>Rampage</font>"

@@ -9915,6 +9915,7 @@
 	}
 	"shredder_chakram_2"
 	{
+		"AbilityType"               "DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilitySpecial"
 		{
 			"03"
@@ -9961,6 +9962,7 @@
 	"shredder_timber_chain"
 	{
 		"LevelsBetweenUpgrades"		"5"
+		"AbilityType"               "DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilitySpecial"
 		{
 			"02"

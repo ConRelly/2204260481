@@ -14,7 +14,7 @@ if IsServer() then
 	function modifier_mjz_bloodseeker_thirst:OnCreated(table)
 		local ability = self:GetAbility()
 		self.attack_count = 0
-		self.attack_stack_per = 10
+		self.attack_stack_per = 1
 		self.prev_attack_time = 0
 		local duration = ability:GetSpecialValueFor('duration')
 		local max_stacks = GetTalentSpecialValueFor(ability, 'max_stacks')
@@ -35,8 +35,8 @@ if IsServer() then
 
 		self:UpdateStackCount()
 	end
-	function modifier_mjz_bloodseeker_thirst:DeclareFunctions() return {MODIFIER_EVENT_ON_ATTACK_LANDED} end
-	function modifier_mjz_bloodseeker_thirst:OnAttackLanded(keys)
+	function modifier_mjz_bloodseeker_thirst:DeclareFunctions() return {MODIFIER_EVENT_ON_ABILITY_EXECUTED} end
+	--[[function modifier_mjz_bloodseeker_thirst:OnAttackLanded(keys)
 		if keys.attacker ~= self:GetParent() then return nil end
 
 		local caster = self:GetCaster()
@@ -51,7 +51,16 @@ if IsServer() then
 		self.attack_count = self.attack_count + 1
 
 		self:UpdateStackCount()
-	end
+	end]]
+	function modifier_mjz_bloodseeker_thirst:OnAbilityExecuted(keys)
+		local parent = self:GetParent()
+		if keys.ability:IsToggle() then return nil end
+		if parent:PassivesDisabled() then return nil end		
+		self.prev_attack_time = GameRules:GetGameTime()
+		self.attack_count = self.attack_count + 1
+		self:UpdateStackCount()
+	end	
+
 	function modifier_mjz_bloodseeker_thirst:UpdateStackCount( )
 		local caster = self:GetCaster()
 		local parent = self:GetParent()
@@ -69,7 +78,6 @@ if IsServer() then
 		end
 
 		local stacks = self.attack_count / self.attack_stack_per
-
 		if not parent:HasModifier(modifier_mjz_bloodseeker_thirst_buff_name) then
 			parent:AddNewModifier(caster, ability, modifier_mjz_bloodseeker_thirst_buff_name, {})
 		end

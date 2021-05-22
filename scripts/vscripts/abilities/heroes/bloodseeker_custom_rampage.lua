@@ -35,7 +35,7 @@ end
 
 
 function modifier_bloodseeker_custom_rampage:GetModifierMoveSpeed_Absolute()
-    return 600
+    return 969
 end
 
 

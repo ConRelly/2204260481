@@ -9936,6 +9936,7 @@
 	"AbilityBehavior"		   "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"AbilityTextureName"		"bloodseeker_thirst"
 	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+	"LevelsBetweenUpgrades"     "7"
 	"AbilityCooldown"			"0.0"
 	"AbilityManaCost"			"0"
 	"AbilitySpecial"
@@ -9948,8 +9949,13 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"proc_damage"			"6 7 8 10"
+			"proc_damage"			"25 30 40 50"
 		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"proc_chance"			"10"
+		}		
 	}
 }
 "bloodseeker_custom_rampage"
@@ -20375,7 +20381,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"duration"					"10"
+				"duration"					"15"
 			}
 		}
 
@@ -29748,9 +29754,9 @@
 		"AbilityCastPoint"				"0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 
-		"AbilityCooldown"				"0"
-		"AbilityCharges"				"3 5 7 10"
-		"AbilityChargeRestoreTime"		"10"
+		"AbilityCooldown"				"2"
+		"AbilityCharges"				"1 2 2 3"
+		"AbilityChargeRestoreTime"		"12"
 		"AbilityManaCost"				"110 130 150 170"
 
 		"precache"
