@@ -20377,6 +20377,11 @@
 				"var_type"					"FIELD_INTEGER"
 				"duration"					"10"
 			}
+			"6"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stack_chance"				"10"
+			}
 		}
 
 		"precache"
