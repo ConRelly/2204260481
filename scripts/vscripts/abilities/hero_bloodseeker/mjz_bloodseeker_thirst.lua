@@ -9,7 +9,6 @@ function mjz_bloodseeker_thirst:GetIntrinsicModifierName() return "modifier_mjz_
 if modifier_mjz_bloodseeker_thirst == nil then modifier_mjz_bloodseeker_thirst = class({}) end
 function modifier_mjz_bloodseeker_thirst:IsHidden() return true end
 function modifier_mjz_bloodseeker_thirst:IsPurgable() return false end
-<<<<<<< HEAD
 if IsServer() then
 	function modifier_mjz_bloodseeker_thirst:OnCreated(table)
 		local ability = self:GetAbility()
@@ -86,19 +85,6 @@ if IsServer() then
 		if modifier:GetStackCount() ~= math.ceil( stacks ) then
 			modifier:SetStackCount(stacks)
 		end
-=======
-function modifier_mjz_bloodseeker_thirst:RemoveOnDeath() return false end
-function modifier_mjz_bloodseeker_thirst:OnCreated()
-	if IsServer() then if not self:GetAbility() then self:Destroy() end end
-end
-function modifier_mjz_bloodseeker_thirst:DeclareFunctions()
-	return {MODIFIER_EVENT_ON_ATTACK_LANDED}
-end
-function modifier_mjz_bloodseeker_thirst:OnAttackLanded(keys)
-	if keys.attacker == self:GetParent() and self:GetParent():IsAlive() and not self:GetParent():IsIllusion() and self:GetParent():GetTeamNumber() ~= keys.target:GetTeamNumber() and RollPseudoRandom(self:GetAbility():GetSpecialValueFor("stack_chance"), self:GetAbility()) then
-		local power_buff = self:GetAbility():GetSpecialValueFor("duration")
-		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_mjz_bloodseeker_thirst_buff", {duration = power_buff})
->>>>>>> ce96422c517eaa21b051ddac78e57f369f063fef
 	end
 end
 
