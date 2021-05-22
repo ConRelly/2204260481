@@ -897,7 +897,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"chance_tooltip"				"6" //hardcoded
+				"chance_tooltip"				"4" //hardcoded
 			}		
 		}
 	}

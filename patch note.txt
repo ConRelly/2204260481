@@ -1020,8 +1020,7 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 *added green note to CM skills that they can be cast during channeling(was an Alt note for w).
 *small buffs to venge
 *chip shortage so Helm of undying cost increased.
-
-
+*spell blade and other 2 passives that have similar effect reduced in dps.
 
 
 *Update patch notes9 can be found on the new map version:

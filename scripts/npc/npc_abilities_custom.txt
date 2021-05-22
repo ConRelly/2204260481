@@ -26703,7 +26703,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"phantom_assassin_coup_de_grace"	// "mjz_phantom_assassin_coup_de_grace"
 		"AbilitySound"					"Hero_PhantomAssassin.CoupDeGrace"
-		"LevelsBetweenUpgrades"			"11"
+		"LevelsBetweenUpgrades"			"15"
 		"HasScepterUpgrade"				"1"
 		"MaxLevel"						"5"
 
@@ -26723,7 +26723,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"magical_damage_scepter"	"5 10 15 20 25"
+				"magical_damage_scepter"	"5 7 10 13 17"
 			}
 			"21"
 			{
@@ -39593,13 +39593,13 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"scepter_mag_damage"	"50"
+				"scepter_mag_damage"	"40"
 				"RequiresScepter"		"1"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"scepter_chance"		"15"
+				"scepter_chance"		"10"
 				"RequiresScepter"		"1"
 			}
 		}

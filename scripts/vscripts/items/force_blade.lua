@@ -64,7 +64,7 @@ if IsServer() then
 			local bool = false	
 			local attacker = keys.attacker
 			local target = keys.target
-			if RollPercentage(6) then
+			if RollPercentage(4) then
 				bool = true
 			end			
 			--local chance = RollPercentage(6)
