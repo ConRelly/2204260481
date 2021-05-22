@@ -45,7 +45,6 @@ function modifier_roshan_inherit_buff_datadriven:RemoveOnDeath() return false en
 function modifier_roshan_inherit_buff_datadriven:AllowIllusionDuplicate() return true end
 function modifier_roshan_inherit_buff_datadriven:OnCreated(kv)
 	if IsServer() then
-		self.crit_chance = self:GetAbility():GetSpecialValueFor("crit_chance")
 --		self.crit_multiplier = self:GetAbility():GetSpecialValueFor("crit_per_str")*self:GetParent():GetStrength() + 100
 --		self.strenght = self:GetAbility():GetSpecialValueFor("grow_str")
 --		self.armor = self:GetAbility():GetSpecialValueFor("grow_armor")
@@ -93,7 +92,7 @@ end
 function modifier_roshan_inherit_buff_datadriven:OnAttackStart(data)
 	if IsServer() then
 		if data.attacker == self:GetParent() then
-			if RollPercentage(self.crit_chance) then
+			if RollPseudoRandom(self:GetAbility():GetSpecialValueFor("crit_chance"), self:GetAbility()) then
 				data.attacker:AddNewModifier(data.attacker, self:GetAbility(), "modifier_roshan_inherit_buff_datadriven_crit_buff", {})
 			end
 		end

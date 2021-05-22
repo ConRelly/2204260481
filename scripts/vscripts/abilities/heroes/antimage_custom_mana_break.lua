@@ -64,7 +64,7 @@ function modifier_antimage_custom_mana_break:OnAttackLanded(keys)
 end
 
 
-function modifier_antimage_custom_mana_break_buff:IsHidden() return false end
+function modifier_antimage_custom_mana_break_buff:IsHidden() return self:GetAbility() == nil end
 function modifier_antimage_custom_mana_break_buff:IsDebuff() return false end
 function modifier_antimage_custom_mana_break_buff:IsPurgable() return false end
 function modifier_antimage_custom_mana_break_buff:RemoveOnDeath() return false end
@@ -99,16 +99,16 @@ function modifier_antimage_custom_mana_break_buff:OnCreated()
 	end
 end
 function modifier_antimage_custom_mana_break_buff:GetModifierPreAttack_BonusDamage()
-	return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_stack")
+	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_stack") end
 end
 function modifier_antimage_custom_mana_break_buff:GetModifierHealthBonus()
-	return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_hp")
+	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_hp") end
 end 
 function modifier_antimage_custom_mana_break_buff:GetModifierManaBonus()
-	return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_mp")
+	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_mp") end
 end
 function modifier_antimage_custom_mana_break_buff:GetModifierBonusStats_Agility()
-	return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_agi")
+	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_agi") end
 end  
 function modifier_antimage_custom_mana_break:OnRefresh()
 	if not IsServer() then return end

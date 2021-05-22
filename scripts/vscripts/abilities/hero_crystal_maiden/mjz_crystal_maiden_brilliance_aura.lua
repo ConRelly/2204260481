@@ -7,9 +7,7 @@ LinkLuaModifier("modifier_mjz_crystal_maiden_brilliance_aura_manacost", THIS_LUA
 mjz_crystal_maiden_brilliance_aura = class({})
 local ability_class = mjz_crystal_maiden_brilliance_aura
 
-function ability_class:GetIntrinsicModifierName()
-	return "modifier_mjz_crystal_maiden_brilliance_aura"
-end
+function ability_class:GetIntrinsicModifierName() return "modifier_mjz_crystal_maiden_brilliance_aura" end
 
 ---------------------------------------------------------------------------------------
 
@@ -20,45 +18,14 @@ function modifier_class:IsPassive() return true end
 function modifier_class:IsHidden() return true end
 function modifier_class:IsPurgable() return false end
 
-------------------------------------------------
-
 function modifier_class:IsAura() return true end
-
-function modifier_class:GetAuraRadius()
-    -- return self:GetAbility():GetSpecialValueFor("radius")
-	-- return self:GetAbility():GetAOERadius()
-	return FIND_UNITS_EVERYWHERE
-end
-
-function modifier_class:GetModifierAura()
-    return 'modifier_mjz_crystal_maiden_brilliance_aura_effect'
-end
-
-function modifier_class:GetAuraSearchTeam()
-	-- return DOTA_UNIT_TARGET_TEAM_ENEMY -- DOTA_UNIT_TARGET_TEAM_FRIENDLY
-	return self:GetAbility():GetAbilityTargetTeam()
-end
-
-function modifier_class:GetAuraEntityReject(target)
-    return self:GetParent():IsIllusion() -- or target == self:GetParent()
-end
-
-function modifier_class:GetAuraSearchType()
-	-- return DOTA_UNIT_TARGET_ALL -- DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
-	return self:GetAbility():GetAbilityTargetType()
-end
-
-function modifier_class:GetAuraSearchFlags()
-	-- return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES  -- DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE -- DOTA_UNIT_TARGET_FLAG_NONE
-	return self:GetAbility():GetAbilityTargetFlags()
-end
-
-function modifier_class:GetAuraDuration()
-    return 0.5
-end
-
-------------------------------------------------
-
+function modifier_class:GetAuraRadius() return FIND_UNITS_EVERYWHERE end
+function modifier_class:GetModifierAura() return "modifier_mjz_crystal_maiden_brilliance_aura_effect" end
+function modifier_class:GetAuraSearchTeam() return self:GetAbility():GetAbilityTargetTeam() end
+function modifier_class:GetAuraEntityReject(target) return self:GetParent():IsIllusion() end
+function modifier_class:GetAuraSearchType() return self:GetAbility():GetAbilityTargetType() end
+function modifier_class:GetAuraSearchFlags() return self:GetAbility():GetAbilityTargetFlags() end
+function modifier_class:GetAuraDuration() return 0.5 end
 
 ---------------------------------------------------------------------------------------
 
@@ -68,52 +35,26 @@ local modifier_effect = modifier_mjz_crystal_maiden_brilliance_aura_effect
 function modifier_effect:IsHidden() return false end
 function modifier_effect:IsPurgable() return false end
 function modifier_effect:IsBuff() return true end
-
-function modifier_effect:DeclareFunctions()
-	local funcs = {
-		-- MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-		-- MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE,
-		MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE,
-	}
-	return funcs
-end
-
-function modifier_effect:GetModifierConstantManaRegen( )
+function modifier_effect:DeclareFunctions() return {MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE} end
+function modifier_effect:GetModifierTotalPercentageManaRegen()
 	if self:GetParent() == self:GetCaster() then
-		return self:GetAbility():GetSpecialValueFor('mana_regen_self')		
+		if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana_regen_self_total_pct") end
 	else
-		return self:GetAbility():GetSpecialValueFor('mana_regen')
+		if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana_regen_total_pct") end
 	end
 end
-
-function modifier_effect:GetModifierPercentageManaRegen( )
-	if self:GetParent() == self:GetCaster() then
-		return self:GetAbility():GetSpecialValueFor('mana_regen_self_pct')
-	else
-		return self:GetAbility():GetSpecialValueFor('mana_regen_pct')
-	end
-end
-
-function modifier_effect:GetModifierTotalPercentageManaRegen( )
-	if self:GetParent() == self:GetCaster() then
-		return self:GetAbility():GetSpecialValueFor('mana_regen_self_total_pct')
-	else
-		return self:GetAbility():GetSpecialValueFor('mana_regen_total_pct')
-	end
-end
-
 
 if IsServer() then
 	function modifier_effect:OnCreated(table)
 		local caster = self:GetCaster()
 		local ability = self:GetAbility()
 		local parent = self:GetParent()
-		parent:AddNewModifier(caster, ability, 'modifier_mjz_crystal_maiden_brilliance_aura_manacost', {})
+		parent:AddNewModifier(caster, ability, "modifier_mjz_crystal_maiden_brilliance_aura_manacost", {})
 	end
 
 	function modifier_effect:OnDestroy()
 		local parent = self:GetParent()
-		parent:RemoveModifierByName('modifier_mjz_crystal_maiden_brilliance_aura_manacost')
+		parent:RemoveModifierByName("modifier_mjz_crystal_maiden_brilliance_aura_manacost")
 	end
 end
 
@@ -126,17 +67,11 @@ local modifier_manacost = modifier_mjz_crystal_maiden_brilliance_aura_manacost
 function modifier_manacost:IsHidden() return true end
 function modifier_manacost:IsPurgable() return false end
 function modifier_manacost:IsBuff() return true end
-
-function modifier_manacost:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_MANACOST_PERCENTAGE,
-	}
-	return funcs
-end
+function modifier_manacost:DeclareFunctions() return {MODIFIER_PROPERTY_MANACOST_PERCENTAGE} end
 
 function modifier_manacost:GetModifierPercentageManacost()
 	if IsServer() then
-		local manacost_reduction = GetTalentSpecialValueFor(self:GetAbility(), 'manacost_reduction')
+		local manacost_reduction = GetTalentSpecialValueFor(self:GetAbility(), "manacost_reduction")
 		if self:GetStackCount() ~= manacost_reduction then
 			self:SetStackCount(manacost_reduction)
 		end

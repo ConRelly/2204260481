@@ -76,7 +76,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_pipe"													// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"FightRecapLevel"				"2"
 
 		// Stats		
@@ -166,7 +166,7 @@
 	"item_black_king_bar_free"
 	{
 		"BaseClass"					 "item_black_king_bar"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityCooldown"				"15"
 		"ItemCost"						"700"
 		"ItemSellable"					"0"
@@ -432,7 +432,7 @@
 	"item_black_king_bar_boss"
 	{
 		"BaseClass"					 "item_black_king_bar"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"FightRecapLevel"				"2"
 		"AbilityCooldown"				"20"
 		"ItemCost"						"999999"
@@ -1138,7 +1138,7 @@
 		"ID" 		 "3102" 
 		"BaseClass"						"item_datadriven"
 		// "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"arcane_staff_edible"
 
 	
@@ -1538,7 +1538,7 @@
 {
 	"BaseClass"						"item_lua"
 	"ScriptFile"					"items/custom_refresher.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"AbilityTextureName"			"item_refresher"
 	"AbilityCastPoint"				"0.0"
 	"AbilityManaCost"				"275"
@@ -2179,7 +2179,7 @@
 	"ID" 		 "2031" 
 	"BaseClass"						"item_lua"
 	"ScriptFile"					"items/formidable_chest.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"AbilityTextureName"			"formidable_chest"
 	"ItemShopTags"					"armor"
 	"ItemQuality"					"secret_shop"
@@ -2816,7 +2816,7 @@
 	"BaseClass"						"item_lua"
 	"ScriptFile"					"items/high_tech_boots.lua"
 	"AbilityTextureName"			"high_tech_boots"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE" 
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL" 
 	"ItemShopTags"					"teleport;move_speed"
 	"ItemQuality"					"common"
 	"ItemAliases"					"boht;boots of tech;tech"
@@ -2884,7 +2884,7 @@
 	"BaseClass"						"item_lua"
 	"ScriptFile"					"items/high_tech_boots2.lua"
 	"AbilityTextureName"			"speedsters"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE" 
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL" 
 	"ItemShopTags"					"speed;move_speed;boots"
 	"ItemQuality"					"common"
 	"ItemAliases"					"boht;boots of tech;tech;speedsters"
@@ -3593,7 +3593,7 @@
 {
 		"ID" 		 "2059" 
 	"BaseClass"					 "item_soul_ring"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"AbilityTextureName"			"ForaMon/soul_ring_2"
 	"AbilityCooldown"				"12.0"
 	"AbilitySharedCooldown"			"soul_ring"
@@ -3651,7 +3651,7 @@
 {
 		"ID" 		 "2061" 
 	"BaseClass"					 "item_soul_ring"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"AbilityTextureName"			"ForaMon/soul_ring_3"
 	"AbilityCooldown"				"7.0"
 	"AbilitySharedCooldown"			"soul_ring"
@@ -3697,7 +3697,7 @@
 	"BaseClass"					 "item_datadriven"
 	"AbilityTextureName"			"speed_orb"
 	"ItemCost"						"3500"	
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"ItemAliases"					"speed"
 	"ItemShopTags"					"consumable"
 	"ItemQuality"					"consumable"
@@ -4173,7 +4173,7 @@
 	"Model"							"models/gameplay/attrib_tome_agi.vmdl"
 	"AbilityTextureName"			"tome_agi"
 	"ItemCost"						"8500"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"ItemAliases"					"agility tome;agi"
 	"ItemKillable"				  "0"
 	"ItemShopTags"					"consumable"
@@ -4201,7 +4201,7 @@
 	"Model"							"models/gameplay/attrib_tome_int.vmdl"
 	"AbilityTextureName"			"tome_int"
 	"ItemCost"						"10000"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"ItemAliases"					"intelligence tome;int"
 	"ItemStockInitial"				"15"
 	"ItemStockMax"					"20"
@@ -4232,7 +4232,7 @@
 	"Model"						 "models/gameplay/attrib_tome_str.vmdl"
 	"AbilityTextureName"			"tome_str"
 	"ItemCost"						"8500"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"ItemAliases"					"strength tome;str"
 	"ItemShopTags"					"consumable"
 	"ItemQuality"					"consumable"
@@ -4261,7 +4261,7 @@
 	"Model"							"models/gameplay/attrib_tome_agi.vmdl"
 	"AbilityTextureName"			"tome_agi"
 	"ItemCost"						"7500"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"ItemAliases"					"agility tome;agi"
 	"ItemKillable"				  "0"
 	"ItemPurchasable"			   "0"
@@ -4291,7 +4291,7 @@
 	"Model"							"models/gameplay/attrib_tome_int.vmdl"
 	"AbilityTextureName"			"tome_int"
 	"ItemCost"						"8500"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"ItemAliases"					"intelligence tome;int"
 	//"ItemStockInitial"				"15"
 	//"ItemStockMax"					"20"
@@ -4324,7 +4324,7 @@
 	"Model"						 "models/gameplay/attrib_tome_str.vmdl"
 	"AbilityTextureName"			"tome_str"
 	"ItemCost"						"7500"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"ItemAliases"					"strength tome;str"
 	"ItemShopTags"					"consumable"
 	"ItemQuality"					"consumable"
@@ -4352,7 +4352,7 @@
 	"ScriptFile"					"items/item_tome_bargain.lua"
 	"AbilityTextureName"			"tome_bargain"
 	"ItemCost"						"4000"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"ItemAliases"					"agility tome;agi"
 	"ItemShopTags"					"consumable"
 	"ItemQuality"					"consumable"
@@ -7485,7 +7485,7 @@
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_mjz_attribute_mail.lua"
 		"AbilityTextureName"			"mjz_attribute_mail"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
@@ -10494,7 +10494,7 @@
 		"ScriptFile"					"items/item_mjz_devils_veil.lua"
 		"AbilityTextureName"			"mjz_devils_veil"
 //		"Model"							"models/props_gameplay/neutral_box.vmdl"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"ItemShopTags"					"mjz"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"devils_veil"
@@ -12773,7 +12773,7 @@
 	{
 		"BaseClass"						"item_lua"	//"item_datadriven"
 		"ScriptFile"					"items/item_mjz_guardian_greaves_holy_light.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName"			"mjz_guardian_greaves_holy_light"
 		"FightRecapLevel"				"1"
 		"AbilityCooldown"				"40"
@@ -15684,7 +15684,7 @@
 	{
 		"BaseClass"						"item_satanic"
 		"AbilityTextureName"			"mjz_satanic"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"FightRecapLevel"				"2"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityCooldown"				"30"
@@ -15756,7 +15756,7 @@
 		"ID" 		 "2287" 
 		"BaseClass"						"item_satanic"
 		"AbilityTextureName"			"mjz_satanic"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"FightRecapLevel"				"2"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityCooldown"				"30.0"
@@ -15828,7 +15828,7 @@
 		"ID" 		 "2289" 
 		"BaseClass"						"item_satanic"
 		"AbilityTextureName"			"mjz_satanic"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"FightRecapLevel"				"2"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityCooldown"				"30.0"
@@ -15899,7 +15899,7 @@
 	{
 		"BaseClass"						"item_satanic"
 		"AbilityTextureName"			"mjz_satanic"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"FightRecapLevel"				"2"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityCooldown"				"30.0"
@@ -20396,7 +20396,7 @@
 {
 	"BaseClass"						"item_lua"
 	"ScriptFile"					"items/item_custom_ex_machina.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"AbilityTextureName"			"item_ex_machina"
 	"AbilityCastPoint"				"0.0"
 	"AbilityManaCost"				"250"
@@ -21797,7 +21797,7 @@
 	{
 		"BaseClass"								"item_datadriven"
 		"AbilityTextureName"					"item_fire_rapier"
-		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"Model"									"models/props_gameplay/divine_rapier.vmdl"
 		//"Effect" 		 						"particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
 		"ItemShareability"						"ITEM_FULLY_SHAREABLE_STACKING"
@@ -24067,7 +24067,7 @@
 	"ID" 		 "9102" 
 	"BaseClass"						"item_datadriven"
 	// "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"AbilityTextureName"			"bigan_octarine_core_edible"
 
 
@@ -24123,7 +24123,7 @@
 	"ID" 		 "9103" 
 	"BaseClass"						"item_datadriven"
 	// "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"AbilityTextureName"			"radiance_armor_3"
 
 
@@ -24179,7 +24179,7 @@
 	"ID" 		 "9104" 
 	"BaseClass"						"item_datadriven"
 	// "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"AbilityTextureName"			"radiance_armor_blue"
 
 
@@ -24235,7 +24235,7 @@
 	"ID" 		 "9105" 
 	"BaseClass"						"item_datadriven"
 	// "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"AbilityTextureName"			"radiance_armor_green"
 
 

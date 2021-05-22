@@ -2151,7 +2151,7 @@
 
 
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt"						"Chaos Bolt"
-	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_Description"			"Throws a mysterious bolt of energy at the target unit. It stuns for a random duration and deals random damage."
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_Description"			"Throws a mysterious bolt of energy at the target unit. It stuns for a random duration and deals random damage.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Always has a maximum stun duration and damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Increases damage by х%str_multiplier_scepter% of the owner's strength."
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_Lore"					"Even Chaos Knight cannot predict this manifest of unholy energy."
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_cast_range"			"CAST RANGE:"
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_radius"				"RADIUS:"
@@ -2161,10 +2161,12 @@
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_damage_min"			"MINIMUM DAMAGE:"
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_damage_max"			"MAXIMUM DAMAGE:"
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_Note0"				"The stun duration and damage values dealt are inversely related."
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_scepter_Description"		"Always has a Max stun duration and damage."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_chaos_knight_chaos_bolt_target"				"+{s:value} Chaos Bolt Targets"	
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike"					"Chaos Strike"
-	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_Description"		"Each of Chaos Knight's attacks has a chance to deal bonus damage, also causing the critical strike to lifesteal for %lifesteal%%% of the damage."
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_Description"		"Each of Chaos Knight's attacks has a chance to deal bonus damage, also causing the critical strike to lifesteal for %lifesteal%%% of the damage.\n<h1><font color='#0094FF'>Aghanim's Shard</font></h1>When triggered by the hero, reduces the cooldown of Chaos Bolt by %shard_cdr% seconds."
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_Lore"				"Chaos Knight's unwieldy power bludgeons those who stand before him, crushing the thickest of armors."
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_shard_description"	"When triggered by the hero, reduces the cooldown of Chaos Bolt by %shard_cdr% seconds."
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_crit_chance"		"%Proc Chance: "
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_crit_damage"		"%Critical Damage: "
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_strike_lifesteal"			"%Proc Lifesteal: "
@@ -2250,17 +2252,16 @@
 	"DOTA_Tooltip_ability_mjz_crystal_maiden_freezing_field_str_int"					"%Int + Str DAMAGE:"
 //	"DOTA_Tooltip_ability_mjz_crystal_maiden_freezing_field_bonus_armor"				"BONUS ARMOR:"
 	"DOTA_Tooltip_ability_mjz_crystal_maiden_freezing_field_scepter_description"		"Applies Frostbite to any unit that has been standing in the Freezing Field for over a set amount of time."
-	"DOTA_Tooltip_ability_mjz_crystal_maiden_freezing_field_scepter_frozen_interval"		"SCEPTER FROSTBITE DELAY:"
+	"DOTA_Tooltip_ability_mjz_crystal_maiden_freezing_field_scepter_frozen_interval"	"SCEPTER FROSTBITE DELAY:"
 	"DOTA_Tooltip_modifier_mjz_crystal_maiden_freezing_field_debuff"					"Freezing Field Slow"
 	"DOTA_Tooltip_modifier_mjz_crystal_maiden_freezing_field_debuff_Description"		"Movement speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, attack speed reduced by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 	"DOTA_Tooltip_modifier_mjz_crystal_maiden_freezing_field_caster"						"Super Armor"
 	"DOTA_Tooltip_modifier_mjz_crystal_maiden_freezing_field_caster_Description"			"Incomming damage reduced by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%."
 
 	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite"									"Frostbite"
-	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_Description"						"Encases an enemy unit in ice, prohibiting movement, while dealing damage over time.
-<font color='#1ABE55'>Can Be casted during channeling</font>\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>At the end of the root trigger an Attack applying all the attack effects from items and abilities.</font>\n<h1><font color='#DE3163'>Super Scepter</font></h1>Every time aghanim effect triggers gain %bonus% base strength and intelligence."
+	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_Description"						"Encases an enemy unit in ice, prohibiting movement, while dealing damage over time.<br><font color='#1ABE55'>Can Be casted during channeling</font>\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>At the end of the root trigger an Attack applying all the attack effects from items and abilities.</font>\n<h1><font color='#DE3163'>Super Scepter</font></h1>Every time aghanim effect triggers gain %bonus% base strength and intelligence."
 	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_Lore"							"Rylai channels winds from the Blueheart Glacier, imprisoning attackers in thick blocks of ice."
-	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_Note0"							"Frostbite is considered a root.Aghanim effect does not trigger on a dead enemy"		
+	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_Note0"							"Frostbite is considered a root. Aghanim's Scepter effect does not trigger on a dead enemy."
 	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_radius"							"RADIUS:"
 	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_total_damage"					"HERO TOTAL DAMAGE:"
 	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_creep_total_damage"				"CREEP TOTAL DAMAGE:"
@@ -2270,12 +2271,11 @@
 	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_damage_interval"					"DAMAGE INTERVAL:"
 	"DOTA_Tooltip_ability_mjz_crystal_maiden_frostbite_scepter_description"	            "At the end of the root trigger an Attack applying all the attack effects from items and abilities."
 	"DOTA_Tooltip_modifier_mjz_crystal_maiden_frostbite"							"Frostbite"
-	"DOTA_Tooltip_modifier_mjz_crystal_maiden_frostbite_Description"				"Cannot move or attack. "
+	"DOTA_Tooltip_modifier_mjz_crystal_maiden_frostbite_Description"				"Cannot move or attack."
 	"DOTA_Tooltip_modifier_mjz_crystal_maiden_frostbite_bonus_int"                  "Frostbite Super Scepter"
-	"DOTA_Tooltip_modifier_mjz_crystal_maiden_frostbite_bonus_int_description"      "Base Strength and intelligence gained from Super Aghaim"
+	"DOTA_Tooltip_modifier_mjz_crystal_maiden_frostbite_bonus_int_description"      "Gives %dMODIFIER_PROPERTY_TOOLTIP% Base Strength and Intelligence."
 
-	"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_Description"					"A burst of damaging frost slows enemy movement and attack rate in the targeted area.
-<font color='#1ABE55'>Can Be casted during channeling</font>"
+	"DOTA_Tooltip_ability_crystal_maiden_crystal_nova_Description"					"A burst of damaging frost slows enemy movement and attack rate in the targeted area.<br><font color='#1ABE55'>Can Be casted during channeling</font>"
 
 	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm"				"Crypt Swarm"
 	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm_Description"	"Sends a swarm of winged beasts to savage enemy units in front of Death Prophet."
@@ -2643,9 +2643,9 @@
 		
 	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting"					"<font color='#E5F212'>Poison Claw</font>"
 	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_Description"		"N'aix attacks have a %claw_chance%%% chance to hit an vital spot, adding a poison-based damage and slowing movement speed.
-	<h1><font color='#87A80B'>Passive: Vitality Steal</font></h1>Every Poison claw tick have %chance%%% chance to increase your vitality stacks.
-	<h1><font color='#87A80B'>Passive: Poison Claw Mastery</font></h1> An enemy can have multiple instances of Poison Claw, and is affected only by the hero status resistance(increase in duration base on how much you have)
-	<h1><font color='#DE3163'>Super Scepter:</font></h1>Have %chance%%% chance to gain an aditional vitality stack every time <font color='#E5F212'>Poison Claw</font> ticks."
+	\n<h1><font color='#87A80B'>Passive: Vitality Steal</font></h1>Every Poison claw tick have %chance%%% chance to increase your vitality stacks.
+	\n<h1><font color='#87A80B'>Passive: Poison Claw Mastery</font></h1> An enemy can have multiple instances of Poison Claw, and is affected only by the hero status resistance(increase in duration base on how much you have)
+	\n<h1><font color='#DE3163'>Super Scepter:</font></h1>Have %chance%%% chance to gain an aditional vitality stack every time <font color='#E5F212'>Poison Claw</font> ticks."
 	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_duration"		"Duration: "
 	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_damage"			"Damage dealt per Stack: "
 	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_str_stack"			 "Str per Stack:"

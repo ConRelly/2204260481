@@ -154,11 +154,10 @@ if IsServer() then
                 else
                     caster:AddNewModifier(caster, ability, "modifier_mjz_crystal_maiden_frostbite_bonus_int", {})
                     caster:FindModifierByName("modifier_mjz_crystal_maiden_frostbite_bonus_int"):SetStackCount(bonus)
-                end                
-            end   
-        end                 
-    end 
-
+                end
+            end
+        end
+    end
 end
 
 if modifier_mjz_crystal_maiden_frostbite_bonus_int == nil then modifier_mjz_crystal_maiden_frostbite_bonus_int = class({}) end
@@ -168,3 +167,9 @@ function modifier_frostbine_int:IsHidden() return false end
 function modifier_frostbine_int:IsPurgable() return false end
 function modifier_frostbine_int:IsDebuff() return false end
 function modifier_frostbine_int:RemoveOnDeath() return false end
+function modifier_frostbine_int:DeclareFunctions()
+	return {MODIFIER_PROPERTY_TOOLTIP}
+end
+function modifier_frostbine_int:OnTooltip()
+	return self:GetStackCount()
+end
