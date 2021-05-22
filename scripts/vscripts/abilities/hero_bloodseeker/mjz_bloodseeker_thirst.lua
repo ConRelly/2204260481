@@ -90,49 +90,39 @@ end
 
 ------------------------------------------------------------------------------------
 modifier_mjz_bloodseeker_thirst_buff = class({})
-function modifier_mjz_bloodseeker_thirst_buff:IsHidden() return false end
-function modifier_mjz_bloodseeker_thirst_buff:IsDebuff() return false end
-function modifier_mjz_bloodseeker_thirst_buff:IsPurgable() return false end
-function modifier_mjz_bloodseeker_thirst_buff:RemoveOnDeath() return false end
-function modifier_mjz_bloodseeker_thirst_buff:GetEffectName()
+local modifier_buff = modifier_mjz_bloodseeker_thirst_buff
+
+function modifier_buff:IsHidden() return false end
+function modifier_buff:IsPurgable() return false end
+
+
+function modifier_buff:GetEffectName()
 	return "particles/units/heroes/hero_bloodseeker/bloodseeker_thirst_owner.vpcf"
 end
-function modifier_mjz_bloodseeker_thirst_buff:OnCreated() if not IsServer() then return end self.stack_table = {} self:StartIntervalThink(1) self:SetStackCount(1) end
-function modifier_mjz_bloodseeker_thirst_buff:OnStackCountChanged(prev_stacks)
-	if not IsServer() then return end
-	local max_stacks = GetTalentSpecialValueFor(self:GetAbility(), "max_stacks")
-	local stacks = self:GetStackCount()
-	if stacks > max_stacks then
-		table.remove(self.stack_table, 1)
-		self:DecrementStackCount()
-	end
-	if stacks > prev_stacks then
-		table.insert(self.stack_table, GameRules:GetGameTime())
-	end
+
+
+function modifier_buff:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+        MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+    }
 end
-function modifier_mjz_bloodseeker_thirst_buff:OnIntervalThink()
-	local repeat_needed = true
-	local power_buff = self:GetAbility():GetSpecialValueFor("duration")
-	while repeat_needed do
-		local item_time = self.stack_table[1]
-		if GameRules:GetGameTime() - item_time >= power_buff then
-			if self:GetStackCount() == 1 then
-				self:Destroy()
-				break
-			else
-				table.remove(self.stack_table, 1)
-				self:DecrementStackCount()
-			end
-		else
-			repeat_needed = false
-		end
-	end
+
+function modifier_buff:GetModifierMoveSpeedBonus_Percentage( )
+    local base = self:GetAbility():GetSpecialValueFor('bonus_movement_speed')
+    return base * self:GetStackCount()
 end
-function modifier_mjz_bloodseeker_thirst_buff:OnRefresh() if not IsServer() then return end self:IncrementStackCount() end
-function modifier_mjz_bloodseeker_thirst_buff:DeclareFunctions() return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE} end
-function modifier_mjz_bloodseeker_thirst_buff:GetModifierMoveSpeedBonus_Percentage() return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_movement_speed") end
-function modifier_mjz_bloodseeker_thirst_buff:GetModifierAttackSpeedBonus_Constant() return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end
-function modifier_mjz_bloodseeker_thirst_buff:GetModifierPreAttack_BonusDamage() return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_damage") end
+
+function modifier_buff:GetModifierAttackSpeedBonus_Constant( )
+    local base = self:GetAbility():GetSpecialValueFor('bonus_attack_speed')
+    return base * self:GetStackCount()
+end
+
+function modifier_buff:GetModifierPreAttack_BonusDamage( )
+    local base = self:GetAbility():GetSpecialValueFor('bonus_damage')
+    return base * self:GetStackCount()
+end
 
 -----------------------------------------------------------------------------------------
 
