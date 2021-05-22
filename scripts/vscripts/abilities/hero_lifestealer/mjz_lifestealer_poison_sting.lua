@@ -76,7 +76,7 @@ function modifier_class_slow:DeclareFunctions()
     } 
 end
 function modifier_class_slow:GetModifierMoveSpeedBonus_Percentage() 
-	return self:GetAbility():GetSpecialValueFor("move_slow_pct")
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("move_slow_pct") end
 end
 --function modifier_class_slow:GetEffectAttachType() 
 --    return PATTACH_ABSORIGIN_FOLLOW 
@@ -134,8 +134,7 @@ end
 ---------------------------------------------------------------------------------------
 
 local modifier_class_bluff = modifier_mjz_lifestealer_poison_sting_buff
-
-function modifier_class_bluff:IsHidden() return false end
+function modifier_class_bluff:IsHidden() return self:GetAbility() == nil end
 function modifier_class_bluff:IsPurgable() return false end
 function modifier_class_bluff:IsDebuff() return false end
 function modifier_class_bluff:RemoveOnDeath() return false end
@@ -170,11 +169,10 @@ function modifier_class_bluff:DeclareFunctions()
     } 
 end
 function modifier_class_bluff:GetModifierBonusStats_Strength() 
-	return self:GetAbility():GetSpecialValueFor("str_stack") * self:GetStackCount()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("str_stack") * self:GetStackCount() end
 end
 function modifier_class_bluff:GetModifierHealthBonus()    
-    return self:GetAbility():GetSpecialValueFor("hp_stack") * self:GetStackCount()
-    --end   
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp_stack") * self:GetStackCount() end   
 end
 
 

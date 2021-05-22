@@ -44,8 +44,8 @@ function modifier_item_mjz_assault:GetModifierBonusStats_Intellect()
 	return self:GetAbility():GetSpecialValueFor("bonus_intellect")
 end
 ]]
-function modifier_item_mjz_assault:GetModifierAttackSpeedBonus_Constant() return self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end
-function modifier_item_mjz_assault:GetModifierPhysicalArmorBonus() return self:GetAbility():GetSpecialValueFor("bonus_armor") end
+function modifier_item_mjz_assault:GetModifierAttackSpeedBonus_Constant() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end end
+function modifier_item_mjz_assault:GetModifierPhysicalArmorBonus() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_armor") end end
 
 if IsServer() then
     function modifier_item_mjz_assault:OnCreated(table)

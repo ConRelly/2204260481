@@ -8376,22 +8376,22 @@
 		}
 		"05"
 		{
-			"var_type"				"FIELD_INTEGER"
+			"var_type"				"FIELD_FLOAT"
 			"mana_regen_buff"				"15"
 		}
 		"06"
 		{
-			"var_type"				"FIELD_INTEGER"
+			"var_type"				"FIELD_FLOAT"
 			"health_regen_buff"				"20"
 		}
 		"07"
 		{
-			"var_type"				"FIELD_INTEGER"
+			"var_type"				"FIELD_FLOAT"
 			"damage_buff"				"50"
 		}
 		"08"
 		{
-			"var_type"				"FIELD_INTEGER"
+			"var_type"				"FIELD_FLOAT"
 			"attackspeed_buff"				"100"
 		}
 	}
@@ -20383,6 +20383,11 @@
 				"var_type"					"FIELD_INTEGER"
 				"duration"					"15"
 			}
+			"6"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stack_chance"				"10"
+			}
 		}
 
 		"precache"
@@ -20948,8 +20953,9 @@
 		"AbilitySound"					"Hero_ChaosKnight.ChaosBolt.Cast"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityTextureName"			"mjz_chaos_knight_chaos_bolt"				
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "5"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
+		"HasScepterUpgrade"				"1"
 		"AbilityCastRange"				"%cast_range"
 		"AbilityCastPoint"				"0.0"
 		
@@ -20999,6 +21005,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"chaos_bolt_speed"		"900"
 			}
+			"11"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"str_multiplier_scepter"	"20"
+			}
 		}
 
 		"precache"
@@ -21025,18 +21036,18 @@
 	}
 	"mjz_chaos_knight_chaos_strike"
 	{
-		"BaseClass"						"ability_datadriven"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/hero_chaos_knight/mjz_chaos_knight_chaos_strike.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "8"
-		"AbilityTextureName"			"chaos_knight_chaos_strike"		//"mjz_chaos_knight_chaos_strike"		
-
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"8"
+		"HasShardUpgrade"				"1"
+		"AbilityTextureName"			"chaos_knight_chaos_strike"		//"mjz_chaos_knight_chaos_strike"
 		"precache"
 		{
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_chaos_knight.vsndevts"
 			"particle"		"particles/units/heroes/hero_chaos_knight/chaos_knight_weapon_blur_critical.vpcf"
 		}
-
 		"AbilitySpecial"
 		{
 			"01"
@@ -21065,136 +21076,13 @@
 				"var_type"					"FIELD_INTEGER"
 				"lifesteal"					"85"
 			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_mjz_chaos_knight_chaos_strike"
+			"06"
 			{
-				"Passive"   "1"
-				"IsHidden"  "1"
-
-				"OnAttackStart"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName" 	"modifier_mjz_chaos_knight_chaos_strike_crit"
-						"Target" 		"CASTER"
-					}
-					"RemoveModifier"
-					{
-						"ModifierName" 	"modifier_mjz_chaos_knight_chaos_strike_lifesteal"
-						"Target" 		"CASTER"
-					}
-
-					"RunScript"
-					{
-						"ScriptFile"	"abilities/hero_chaos_knight/mjz_chaos_knight_chaos_strike.lua"
-						"Function"		"OnAttackStart"
-						"modifier_crit"			"modifier_mjz_chaos_knight_chaos_strike_crit"
-						"modifier_lifesteal"	"modifier_mjz_chaos_knight_chaos_strike_lifesteal"
-						"special_bonus"			"special_bonus_unique_mjz_chaos_strike"
-					}
-
-					// "Random"
-					// {
-					// 	"Chance" 	"%crit_chance"
-					// 	"OnSuccess"
-					// 	{
-					// 		"ApplyModifier"
-					// 		{
-					// 			"ModifierName" 		"modifier_mjz_chaos_knight_chaos_strike_crit"
-					// 			"Target"			"CASTER"	
-					// 		}
-					// 		"ApplyModifier"
-					// 		{
-					// 			"ModifierName" 		"modifier_mjz_chaos_knight_chaos_strike_lifesteal"
-					// 			"Target"			"CASTER"	
-					// 		}
-					// 	}
-					// }
-				}
-			}
-
-			"modifier_mjz_chaos_knight_chaos_strike_crit"
-			{
-				"IsHidden"  	"1"
-				"IsPurgable"	"0"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_damage"
-				}
-
-				"OnCreated"
-				{
-					"FireSound"
-					{
-						"EffectName"		"Hero_ChaosKnight.ChaosStrike"
-						"Target"			"CASTER"
-					}
-					"FireEffect"
-					{
-						"EffectName" 		"particles/units/heroes/hero_chaos_knight/chaos_knight_weapon_blur_critical.vpcf"
-						"EffectAttachType"  "attach_attack1"
-						"Target"			"CASTER"
-					}
-				}
-
-				"OnAttack"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_mjz_chaos_knight_chaos_strike_armor"
-						"Target" 		"TARGET"
-						"Duration"		"%armor_reduction_duration"
-					}
-				}
-
-				"OnAttackLanded"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"  "modifier_mjz_chaos_knight_chaos_strike_crit"
-						"Target"   		"CASTER"	
-					}
-				}
-			}
-
-			"modifier_mjz_chaos_knight_chaos_strike_lifesteal"
-			{
-				"IsHidden"  	"1"
-				"IsPurgable"	"0"
-
-				"OnAttackLanded"
-				{
-					"Lifesteal"
-					{
-						"Target"			"CASTER"
-						"LifestealPercent"	"%lifesteal"
-					}
-					
-					"RemoveModifier"
-					{
-						"ModifierName"  "modifier_mjz_chaos_knight_chaos_strike_lifesteal"
-						"Target"   		"CASTER"	
-					}
-				}
-			}	
-
-			"modifier_mjz_chaos_knight_chaos_strike_armor"
-			{
-				"IsHidden"	"1"
-				"IsDebuff"	"1"
-
-				"Properties"
-				{
-					// "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_reduction"
-				}
+				"var_type"					"FIELD_FLOAT"
+				"shard_cdr"					"0.25"
 			}
 		}
 	}
-
 	"special_bonus_unique_mjz_chaos_strike"
 	{
 		// "BaseClass"						"special_bonus_datadriven"
@@ -21211,6 +21099,7 @@
 			}
 		}
 	}
+
 	//=================================================================================================================
 	// Clinkz: Death Pact				死亡契约
 	//=================================================================================================================
@@ -39161,9 +39050,9 @@
 
 "back_in_time"
 {
-	"BaseClass"					 "ability_lua"	
+	"BaseClass"						"ability_lua"	
 	"ScriptFile"					"abilities/custom/back_in_time"
-	"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityTextureName"			"back_in_time"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -39171,76 +39060,72 @@
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"				
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"	
-	"AbilityCastRange"			  "1500"
-	"FightRecapLevel"			   "1"
-	"MaxLevel"					  "1"
-	//"IsOnCastBar"				   "1"
-	
-
-	"AbilityCooldown"			   "60"
-
+	"AbilityCastRange"				"1500"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+	"AbilityCooldown"				"60"
 	"AbilitySpecial"
 	{
 		"01"
 		{
-			"var_type"		  "FIELD_INTEGER"
-			"str_stack"			"10"
+			"var_type"				"FIELD_FLOAT"
+			"str_stack"				"10"
 		}
 		"02"
 		{
-			"var_type"		  "FIELD_INTEGER"
-			"agi_stack"			"20"
+			"var_type"				"FIELD_FLOAT"
+			"agi_stack"				"20"
 		}
 		"03"
 		{
-			"var_type"		  "FIELD_INTEGER"
-			"hp_stack"			"30"
+			"var_type"				"FIELD_INTEGER"
+			"hp_stack"				"30"
 		}
 		"04"
 		{
-			"var_type"		  "FIELD_INTEGER"
+			"var_type"				"FIELD_INTEGER"
 			"crit_stack"			"60"
 		}
 		"05"
 		{
-			"var_type"		  "FIELD_INTEGER"
+			"var_type"				"FIELD_INTEGER"
 			"crit_chance"			"7"
 		}
 		"06"
 		{
-			"var_type"		  "FIELD_INTEGER"
-			"stack_increase"			"1"
+			"var_type"				"FIELD_INTEGER"
+			"stack_increase"		"1"
 		} 
 		"07"
 		{
-			"var_type"		  "FIELD_INTEGER"
+			"var_type"				"FIELD_INTEGER"
 			"stack_chance"			"50"
-			"LinkedSpecialBonus"  "special_bonus_unique_weaver_back_in_time"
+			"LinkedSpecialBonus"	"special_bonus_unique_weaver_back_in_time"
 		}
 		"08"
 		{
-			"var_type"		  "FIELD_FLOAT"
+			"var_type"				"FIELD_FLOAT"
 			"evasion_stack"			"0.5"
 		}
 		"09"
 		{
-			"var_type"		  "FIELD_INTEGER"
-			"ms_stack"			"30"
+			"var_type"				"FIELD_FLOAT"
+			"ms_stack"				"30"
 		}
 		"10"
 		{
-			"var_type"		  "FIELD_FLOAT"
-			"interval"			"1.0"
+			"var_type"				"FIELD_FLOAT"
+			"interval"				"1.0"
 		}
 		"11"
 		{
-			"var_type"		  "FIELD_INTEGER"
+			"var_type"				"FIELD_INTEGER"
 			"base_damage"			"1000"
 		}
 		"12"
 		{
-			"var_type"		  "FIELD_INTEGER"
-			"aoe"				"1500"
+			"var_type"				"FIELD_INTEGER"
+			"aoe"					"1500"
 		}
 	}
 }

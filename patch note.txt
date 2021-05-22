@@ -1016,10 +1016,19 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 
 
 
+<<<<<<< HEAD
 
 New aoe eul schepter crash bug(with IO or any Stun immunity) fix.
 *Crystal Maiden frostbite now has an aghanim effect and a super aghanim effect. Q got some levels and cast during channeling like W.
 *added green note to CM skills that they can be cast during channeling(was an Alt note for w).
+
+
+=======
+* Added Aghanim's Scepter and Super Scepter effect for Frostbite (Crystal Maiden)
+* Added Aghanim's Scepter and Super Scepter effect for Chaos Bolt (Chaos Knight)
+* Added Aghanim's Shard effect for Chaos Strike (Chaos Knight)
+* Crystal Nova got some levels and cast during channeling like Frostbite.
+*added green note to CM skills that they can be cast during channeling(was an Alt note for Crystal Nova).
 *small buffs to venge
 *chip shortage so Helm of undying cost increased.
 *spell blade and other 2 passives that have similar effect reduced in dps.
@@ -1027,6 +1036,13 @@ New aoe eul schepter crash bug(with IO or any Stun immunity) fix.
 *fix some phoenix Q errors.
 *fix timber second ultimate being multicasted by normal multicast.
 
+* Grow Strong now has pseudo random
+* Guardian Greaves (Holy Light), Formidable Chest (and Attribute Mail), High Tech Boots (and Speedsters), Soul Ring, Devils Veil, Speed Orb (and stats books), Satanic, Ex Machina (and Refresher), Fire Rapier and edible things will not interrupt actions
+* Poison Claw, Heartstopper Aura, Mana Break and Slayer Rebound will hide stacks modifiers if the ability is removed
+* Fixed: Some abilities caused errors when removed
+* Fixed: Earth Rapier and Wind Rapier caused an error when selling
+* Fixed: Euls + Stun Immunity crash
+>>>>>>> ce96422c517eaa21b051ddac78e57f369f063fef
 
 
 *Update patch notes9 can be found on the new map version:

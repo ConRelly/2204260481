@@ -173,8 +173,7 @@ function modifier_soul_bind_red_aura_binded:IsPurgable() return false end
 function modifier_soul_bind_red_aura_binded:RemoveOnDeath() return true end
 function modifier_soul_bind_red_aura_binded:OnCreated()
 	self.duration2 = self:GetAbility():GetSpecialValueFor("death_duration")
-	if IsServer() then
-		if not self:GetAbility() then self:Destroy() end
+	if IsServer() then if not self:GetAbility() then self:Destroy() end
 		self:StartIntervalThink(FrameTime())
 	end
 	self:Chain_fx(true)
