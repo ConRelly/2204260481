@@ -1018,9 +1018,6 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 
 <<<<<<< HEAD
 
-New aoe eul schepter crash bug(with IO or any Stun immunity) fix.
-*Crystal Maiden frostbite now has an aghanim effect and a super aghanim effect. Q got some levels and cast during channeling like W.
-*added green note to CM skills that they can be cast during channeling(was an Alt note for w).
 
 
 =======
@@ -1035,7 +1032,6 @@ New aoe eul schepter crash bug(with IO or any Stun immunity) fix.
 *bloodseeker Q now is a chance (10%) but deals 5 times more dmg. rampage speed limit is higher and now his E gainst stacks from any spell casted instead of attacks(Q and E changes are mostly to reduce some of the lag)
 *fix some phoenix Q errors.
 *fix timber second ultimate being multicasted by normal multicast.
-
 * Grow Strong now has pseudo random
 * Guardian Greaves (Holy Light), Formidable Chest (and Attribute Mail), High Tech Boots (and Speedsters), Soul Ring, Devils Veil, Speed Orb (and stats books), Satanic, Ex Machina (and Refresher), Fire Rapier and edible things will not interrupt actions
 * Poison Claw, Heartstopper Aura, Mana Break and Slayer Rebound will hide stacks modifiers if the ability is removed
