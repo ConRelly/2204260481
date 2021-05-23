@@ -21777,37 +21777,37 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
-			"01"
+			"1"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"66"
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage_pct"				"66"
 				"CalculateSpellDamageTooltip"	"0"
 			}
-			"02"
+			"2"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"					"66"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"3"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"crit_chance"			"6"
 			}
-			"03"
+			"4"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"base_crit"				"666"
 			}
-			"04"
+			"5"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"crit_increase"			"6"
 			}
-			"05"
+			"6"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_pct"			"66"
-				"CalculateSpellDamageTooltip"	"0"	
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_crit_chance"			"4"
+				"bonus_crit_chance"		"4"
 			}			 		
 		}
 	}

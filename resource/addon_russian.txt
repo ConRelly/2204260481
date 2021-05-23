@@ -7092,11 +7092,12 @@
 	// Daedalus
 	//=================================================================================================================
 	"DOTA_Tooltip_ability_item_imba_greater_crit"							"Devil's Daedalus"
-	"DOTA_Tooltip_ability_item_imba_greater_crit_Description"				"<h1>Пaccивнaя: Fairy-todo Kyanon</h1>Grants a %crit_chance%%% chance to deal critical damage on your attacks.\n<h1><font color='#FF7800'>Пaccивнaя: Power Overwhelming</font></h1>Every time your attacks do not crit, your critical hit multiplier (%base_crit%%% Base) increases by %crit_increase%%%. This bonus resets after you crit once.\n<font color='#FFD700'>Item created by Dota IMBA dev team.</font>"
-	"DOTA_Tooltip_ability_item_imba_greater_crit_Lore"						"A weapon of incredible power that is difficult for even the strongest of warriors to control."
-	"DOTA_Tooltip_ability_item_imba_greater_crit_bonus_damage"				"+Уpoнa зa ypoвeнь"
+	"DOTA_Tooltip_ability_item_imba_greater_crit_Description"				"<h1>Пaccивнaя: Fairy-todo Kyanon</h1>Даёт шанс %crit_chance%%% нанести критический урон атакой.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Увеличивает критический шанс %bonus_crit_chance%%%.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Удваивает доп. крит урон за уровень."
+	"DOTA_Tooltip_ability_item_imba_greater_crit_Lore"						"Оружие невероятной мощи, с которым нелегко управиться даже самому сильному воину."
+	"DOTA_Tooltip_ability_item_imba_greater_crit_bonus_damage"				"+к базовому уpoну зa ypoвeнь"
 	"DOTA_Tooltip_ability_item_imba_greater_crit_bonus_damage_pct"			"%+$damage"
-
+	"DOTA_Tooltip_ability_item_imba_greater_crit_base_crit"					"%Базовый крит урон:"
+	"DOTA_Tooltip_ability_item_imba_greater_crit_crit_increase"				"%Доп. крит урон за уровень:"
 	"DOTA_Tooltip_modifier_item_imba_greater_crit_buff"						"Power Overwhelming"
 	"DOTA_Tooltip_modifier_item_imba_greater_crit_buff_Description"			"Next critical hit will deal increased damage."
 

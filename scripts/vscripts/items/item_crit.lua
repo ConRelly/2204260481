@@ -159,7 +159,7 @@ function modifier_item_imba_greater_crit:OnCreated(keys)
 	self.base_damage = self.ability:GetSpecialValueFor("bonus_damage") * level
     self.bonus_damage_pct = self.ability:GetSpecialValueFor("bonus_damage_pct")
 
-	self:StartIntervalThink(14)
+	self:StartIntervalThink(FrameTime())
 end
 
 function modifier_item_imba_greater_crit:OnIntervalThink()
@@ -198,7 +198,7 @@ end
 -----------------------------------------------------------------------------------------------------------
 
 if modifier_item_imba_greater_crit_buff == nil then modifier_item_imba_greater_crit_buff = class({}) end
-function modifier_item_imba_greater_crit_buff:IsHidden() return false end
+function modifier_item_imba_greater_crit_buff:IsHidden() return true end
 function modifier_item_imba_greater_crit_buff:IsDebuff() return false end
 function modifier_item_imba_greater_crit_buff:IsPurgable() return false end
 function modifier_item_imba_greater_crit_buff:IsPermanent() return true end
@@ -211,21 +211,22 @@ function modifier_item_imba_greater_crit_buff:OnCreated()
 	local parent = self:GetParent()
 	local level = parent:GetLevel()
 	-- Special values
-	local base_crit = self.ability:GetSpecialValueFor("base_crit")
+	self.base_crit = self.ability:GetSpecialValueFor("base_crit")
 	local crit_increase = self.ability:GetSpecialValueFor("crit_increase") * level
-	local crit_chance = self.ability:GetSpecialValueFor("crit_chance") 
+	local crit_chance = self.ability:GetSpecialValueFor("crit_chance")
+	local bonus_crit_chance = self.ability:GetSpecialValueFor("bonus_crit_chance")
 	if IsServer() then
 		if parent:HasScepter() then
-			crit_chance = crit_chance * 2
-		end	
+			crit_chance = crit_chance + bonus_crit_chance
+		end
 		if HasSuperScepter(parent) then
 			crit_increase = crit_increase * 2
 		end
-	end	
-	self.crit_chance = crit_chance	
-	self.final_crit = base_crit + crit_increase
+	end
+	self.crit_chance = crit_chance
+	self.crit_increase = crit_increase
 	--print(level .." crit buff level")
-	self:StartIntervalThink(15)
+	self:StartIntervalThink(FrameTime())
 end
 
 function modifier_item_imba_greater_crit_buff:OnIntervalThink()
@@ -244,7 +245,7 @@ end
 function modifier_item_imba_greater_crit_buff:GetModifierPreAttack_CriticalStrike(params)
 	if IsServer() then
 		if RollPercentage(self.crit_chance) then
-			return self.final_crit
+			return self.base_crit + self.crit_increase
 		else
 			return nil
 		end
