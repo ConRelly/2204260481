@@ -2817,9 +2817,9 @@
 	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_counter_duration"	"Counter Duration: "
 	"DOTA_Tooltip_ability_mjz_monkey_king_jingu_mastery_max_duration"		"Buff Duration: "
 	"DOTA_Tooltip_modifier_mjz_monkey_king_jingu_mastery_hit"						"Jingu Mastery"
-	"DOTA_Tooltip_modifier_mjz_monkey_king_jingu_mastery_hit_Description"			"齐天大圣的攻击"
+	"DOTA_Tooltip_modifier_mjz_monkey_king_jingu_mastery_hit_Description"			"Hits from Monkey King"
 	"DOTA_Tooltip_modifier_mjz_monkey_king_jingu_mastery_bonuses"					"Jingu Mastery"
-	"DOTA_Tooltip_modifier_mjz_monkey_king_jingu_mastery_bonuses_Description"		"攻击力和吸血效果加成"
+	"DOTA_Tooltip_modifier_mjz_monkey_king_jingu_mastery_bonuses_Description"		"Bonus Damage and Lifesteal"
 		
 	"DOTA_Tooltip_ability_mjz_monkey_king_mischief"					"Mischief"
 	"DOTA_Tooltip_ability_mjz_monkey_king_mischief_Description"		"Changes Monkey King's shape to deceive opponents, using the environment nearby as inspiration for the disguise. Taking damage, attacking, or using any item or ability breaks Monkey King's disguise. Grants damage immunity for %invul_duration% upon transforming."
