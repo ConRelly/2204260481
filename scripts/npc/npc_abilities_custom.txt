@@ -20353,6 +20353,7 @@
 		"ScriptFile"					"abilities/hero_bloodseeker/mjz_bloodseeker_thirst.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mjz_bloodseeker_thirst_immortal"
+		"HasScepterUpgrade"             "1"
 
 		"AbilitySpecial"
 		{

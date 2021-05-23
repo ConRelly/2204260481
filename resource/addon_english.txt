@@ -2034,7 +2034,7 @@
 	"DOTA_Tooltip_modifier_mjz_bloodseeker_thirst_buff"					"Thirst Buff"
 	"DOTA_Tooltip_modifier_mjz_bloodseeker_thirst_buff_Description"		"Increases Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, Attack Speed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% and Attack Damage by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_bloodseeker_thirst_stacks"			"+{s:value} Max Thirst Stacks"
-		
+	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_scepter_description"	"Thirst stacks will be given when items are used by the owner"
 	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada"					"Jinada"
 	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_Description"		"Bounty Hunter plans his next hit, dealing bonus damage and stealing some unreliable gold. The %hp_mp_toolpip%%% Max Health and Mana bonus Starts from lvl 6 and up."
 	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_Lore"				"Whispering an enchantment he learned from Soruq to his faithful blades, Gondar targets vital tendons and joints to disable his opponents."

@@ -1029,7 +1029,7 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 * chip shortage so Helm of undying cost increased.
 * spell blade and other 2 passives that have similar effect reduced in dps.
 * spell blade from 15 normal bonus dmg to 10% bonus dmg (from base)
-* bloodseeker Q now is a chance (10%) but deals 5 times more dmg. rampage speed limit is higher and now his E gainst stacks from any spell casted instead of attacks(Q and E changes are mostly to reduce some of the lag)
+* bloodseeker Q now is a chance (10%) but deals 5 times more dmg. rampage speed limit is higher(Q and E changes are mostly to reduce some of the lag)
 * Changed Thirst (Bloodseeker) mechanic: now stacks are given when using abilities
 * fix some phoenix Q errors.
 * fix timber second ultimate being multicasted by normal multicast.
