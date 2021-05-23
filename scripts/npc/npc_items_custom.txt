@@ -867,8 +867,8 @@
 	}
 	"item_force_blade"
 	{
-		"BaseClass"						"item_lua"
-		"ScriptFile"					"items/force_blade.lua"
+		"BaseClass"						"item_datadriven"
+		//"ScriptFile"					"items/force_blade.lua"
 		"AbilityTextureName"			"force_blade"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShopTags"					"damage;all"
@@ -891,15 +891,55 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"			"15"
+				"bonus_damage"			"10"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"chance_tooltip"				"4" //hardcoded
+				"chance_tooltip"				"4" 
 			}		
 		}
+		"Modifiers"					
+		{  	
+
+			"modifier_force_blade"  
+			{
+				"Passive"					"1"
+				"IsDebuff"					"0"
+				"IsPurgable"				"0"
+				"IsHidden"					"1"
+				
+				//"EffectAttachType"			"follow_origin"
+				// "Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"TextureName"				"force_blade"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"		"%bonus_damage"				//攻击力（绿字）
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all" 
+				}
+				"OnAttackLanded"
+				// "%attack_damage" is set to the damage value before mitigation
+				{
+					"Random"
+					{
+						"Chance"			"%chance_tooltip"
+						"PseudoRandom"		"DOTA_PSEUDO_RANDOM_ITEM_MKB"
+						"OnSuccess"
+						{	"Damage"
+							{
+								"Target"		"TARGET"
+								"Type"			"DAMAGE_TYPE_MAGICAL"
+								"Damage"		"%attack_damage"
+							}
+						}
+					}	
+				}		
+			}
+		}			
 	}
 "item_recipe_armlet_2"
 {

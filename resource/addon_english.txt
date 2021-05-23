@@ -6441,7 +6441,7 @@ If you have over 10k Ms the ms multiplayer will drop to 1.5
 "DOTA_Tooltip_Ability_item_force_blade_Description"				"<h1>Passive: Force Multiplier</h1> Every autoattack has %chance_tooltip%%% chance to deal an extra %magic_percent%%% magic damage."
 "DOTA_Tooltip_Ability_item_force_blade_damage"						"+$damage"	
 "DOTA_Tooltip_Ability_item_force_blade_bonus_all"					"+$all"
-"DOTA_Tooltip_Ability_item_force_blade_bonus_damage"					"+$damage"
+"DOTA_Tooltip_Ability_item_force_blade_bonus_damage"					"%Bonus Damage:"
 "DOTA_Tooltip_Ability_item_force_blade_Lore"					"A weightless blade that smells of soap."
 "DOTA_Tooltip_Ability_item_greater_demon_talon"							"Greater Demon Talon"
 "DOTA_Tooltip_Ability_item_greater_demon_talon_Description"				"<h1>Active: Sleight of Hand</h1>Switches this item's damage type to magical, but lowers damage. 
