@@ -14,11 +14,13 @@ end
 -- Initializations
 function modifier_omniknight_repel_lua:OnCreated( kv )
 	-- references
+	if not IsServer() then return end
 	self.repel_chance = self:GetAbility():GetSpecialValueFor( "repel_chance" )
 end
 
 function modifier_omniknight_repel_lua:OnRefresh( kv )
 	-- references
+	if not IsServer() then return end
 	self.repel_chance = self:GetAbility():GetSpecialValueFor( "repel_chance" )
 end
 

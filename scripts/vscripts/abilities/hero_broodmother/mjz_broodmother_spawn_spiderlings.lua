@@ -170,7 +170,7 @@ function GetRandomAbilityName(hero)
         "tidehunter_anchor_smash",
         "mjz_omniknight_degen_aura",
 		"mjz_vengefulspirit_vengeance",
-        "mjz_troll_warlord_fervor",
+        "troll_warlord_fervor",
         "chaos_knight_chaos_strike",
         "mars_bulwark",
         "magnataur_empower",
@@ -196,7 +196,7 @@ function GetRandomAbilityName(hero)
         "brewmaster_fire_permanent_immolation",           -- bug
         "faceless_void_time_lock",
         "ogre_magi_bloodlust",
-        "mjz_clinkz_soul_pact",
+        --"mjz_clinkz_soul_pact",
         "luna_lunar_blessing",
         "elder_titan_natural_order",
         "nyx_assassin_custom_vendetta",
@@ -284,6 +284,8 @@ function GetRandomAbilityName(hero)
         "lich_chain_frost",
         "weaver_the_swarm",
         "hoodwink_acorn_shot",
+        "clinkz_infernal_breath",
+		"nevermore_dark_lord",       
     }
     local randomIndex = RandomInt(1, #abilityList)
     return abilityList[randomIndex]

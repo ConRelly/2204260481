@@ -241,7 +241,7 @@ end
 function GetRandomAbilityName( hero )                 
     local abilityList = {
         "beastmaster_inner_beast",      -- 兽王    野性之心
-        "skeleton_king_vampiric_aura",      --骷髅王2
+        --"skeleton_king_vampiric_aura",      --骷髅王2
         "skeleton_king_mortal_strike",      --骷髅王3
         "spirit_breaker_greater_bash",            --发条2
         "sven_great_cleave",                -- sven 2
@@ -252,7 +252,7 @@ function GetRandomAbilityName( hero )
         "tidehunter_anchor_smash",          -- 潮汐 3
         "mjz_omniknight_degen_aura",        -- 夜魔 3
 		"mjz_vengefulspirit_vengeance",			-- 老奶奶 2
-        "mjz_troll_warlord_fervor",            -- 老奶奶 3
+        "troll_warlord_fervor",            -- 老奶奶 3
         "chaos_knight_chaos_strike",        -- 混沌3
         "mars_bulwark",              -- 猛犸 1
         "magnataur_empower",                -- 猛犸 2
@@ -278,12 +278,12 @@ function GetRandomAbilityName( hero )
         "brewmaster_fire_permanent_immolation",           -- 蚂蚁 3    bug
         "faceless_void_time_lock",          -- 虚空 3
         "ogre_magi_bloodlust",            -- 血魔 1
-        "mjz_clinkz_soul_pact",                -- 赏金 2
+        --"mjz_clinkz_soul_pact",                -- 赏金 2
         "luna_lunar_blessing",              -- 露娜 3
         "elder_titan_natural_order",                 -- 蝙蝠 3
         "nyx_assassin_custom_vendetta",             -- 先知 2
         "skywrath_mage_ancient_seal",       -- 天怒 3
-        "disruptor_custom_ion_hammer",        -- 冰龙 1 crash on snowball
+        --"disruptor_custom_ion_hammer",        -- 冰龙 1 crash on snowball
         "dark_willow_bedlam",                 
         "rubick_arcane_supremacy",          -- 拉比克 3
         "jakiro_liquid_fire",               -- 双头龙 3
@@ -298,7 +298,6 @@ function GetRandomAbilityName( hero )
         "enchantress_impetus",              -- 小鹿 1
         "wisp_overcharge",                  -- 黑贤 3
         "tusk_walrus_punch",          -- 哈斯卡 3
-
         "dark_willow_shadow_realm",     
         "bane_enfeeble",           -- 2
         "ryze_arcane_mastery",     --4
@@ -356,14 +355,16 @@ function GetRandomAbilityName( hero )
         "viper_poison_attack",
         "viper_nethertoxin",
         "viper_viper_strike",
-        "mjz_troll_warlord_battle_trance",
+        --"mjz_troll_warlord_battle_trance",
         "vengefulspirit_command_aura",
         "enigma_midnight_pulse",
 		"sniper_headshot",
 		"mjz_chaos_knight_chaos_strike",
         "lich_chain_frost",
         "weaver_the_swarm",
-        "hoodwink_acorn_shot",		
+        "hoodwink_acorn_shot",
+		"clinkz_infernal_breath",
+		"nevermore_dark_lord",		
 
         
     }

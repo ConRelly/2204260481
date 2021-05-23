@@ -80,7 +80,7 @@ function modifier_mjz_bloodseeker_thirst_buff:OnRefresh() if not IsServer() then
 function modifier_mjz_bloodseeker_thirst_buff:DeclareFunctions() return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE} end
 function modifier_mjz_bloodseeker_thirst_buff:GetModifierMoveSpeedBonus_Percentage() return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_movement_speed") end
 function modifier_mjz_bloodseeker_thirst_buff:GetModifierAttackSpeedBonus_Constant() return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end
-function modifier_mjz_bloodseeker_thirst_buff:GetModifierPreAttack_BonusDamage() return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_damage") end
+function modifier_mjz_bloodseeker_thirst_buff:GetModifierPreAttack_BonusDamage() return self:GetStackCount() * (self:GetAbility():GetSpecialValueFor("bonus_damage") * self:GetParent():GetLevel()) end
 
 -----------------------------------------------------------------------------------------
 

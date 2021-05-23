@@ -20370,6 +20370,7 @@
 		"ScriptFile"					"abilities/hero_bloodseeker/mjz_bloodseeker_thirst.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mjz_bloodseeker_thirst_immortal"
+		"LevelsBetweenUpgrades"         "10"
 		"HasScepterUpgrade"             "1"
 
 		"AbilitySpecial"
@@ -20377,7 +20378,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"20 40 80 120"
+				"bonus_damage"				"5 10 15 20"
 			}
 			"02"
 			{
@@ -20393,7 +20394,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_stacks"				"4"
+				"max_stacks"				"7"
 				"LinkedSpecialBonus"		"special_bonus_unique_mjz_bloodseeker_thirst_stacks"
 			}
 			"05"
@@ -20428,7 +20429,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"8"
+				"value"						"6"
 			}
 		}
 	}

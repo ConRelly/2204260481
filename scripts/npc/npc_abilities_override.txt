@@ -12069,7 +12069,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_spell_amp"		"10 12 14 16 20 30"
+				"bonus_spell_amp"		"20 22 34 46 50 65"
 			}
 			"03"
 			{

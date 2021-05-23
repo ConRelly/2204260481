@@ -1027,6 +1027,7 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 * Crystal Nova got some levels and cast during channeling like Frostbite.
 * added green note to CM skills that they can be cast during channeling(was an Alt note for Crystal Nova).
 * small buffs to venge
+* added the reworked bloodseeker E to random pool.
 * Now Blood Madness (Axe) can't get more stacks than his maximum health in one hit
 * chip shortage so Helm of undying cost increased.
 * spell blade and other 2 passives that have similar effect reduced in dps.
