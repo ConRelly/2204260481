@@ -21786,24 +21786,29 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"24"
+				"crit_chance"			"6"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_crit"				"333"
+				"base_crit"				"666"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_increase"			"99"
+				"crit_increase"			"6"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage_pct"			"66"
 				"CalculateSpellDamageTooltip"	"0"	
-			} 		
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_crit_chance"			"4"
+			}			 		
 		}
 	}
 

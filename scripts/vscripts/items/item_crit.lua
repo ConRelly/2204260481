@@ -159,7 +159,7 @@ function modifier_item_imba_greater_crit:OnCreated(keys)
 	self.base_damage = self.ability:GetSpecialValueFor("bonus_damage") * level
     self.bonus_damage_pct = self.ability:GetSpecialValueFor("bonus_damage_pct")
 
-	self:StartIntervalThink(10)
+	self:StartIntervalThink(14)
 end
 
 function modifier_item_imba_greater_crit:OnIntervalThink()
@@ -205,25 +205,53 @@ function modifier_item_imba_greater_crit_buff:IsPermanent() return true end
 function modifier_item_imba_greater_crit_buff:GetTexture() return "imba_greater_crit" end
 function modifier_item_imba_greater_crit_buff:OnCreated()
 	-- Ability
+	--print("on created")
 	self.caster = self:GetCaster()
 	self.ability = self:GetAbility()
-
+	local parent = self:GetParent()
+	local level = parent:GetLevel()
 	-- Special values
-	self.base_crit = self.ability:GetSpecialValueFor("base_crit")
-	self.crit_increase = self.ability:GetSpecialValueFor("crit_increase")
-	self.crit_chance = self.ability:GetSpecialValueFor("crit_chance")
+	local base_crit = self.ability:GetSpecialValueFor("base_crit")
+	local crit_increase = self.ability:GetSpecialValueFor("crit_increase") * level
+	local crit_chance = self.ability:GetSpecialValueFor("crit_chance") 
+	if IsServer() then
+		if parent:HasScepter() then
+			crit_chance = crit_chance * 2
+		end	
+		if HasSuperScepter(parent) then
+			crit_increase = crit_increase * 2
+		end
+	end	
+	self.crit_chance = crit_chance	
+	self.final_crit = base_crit + crit_increase
+	--print(level .." crit buff level")
+	self:StartIntervalThink(15)
 end
+
+function modifier_item_imba_greater_crit_buff:OnIntervalThink()
+	self:OnCreated()
+end
+
 
 function modifier_item_imba_greater_crit_buff:DeclareFunctions()
 	local decFuncs = {
 		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
-		MODIFIER_EVENT_ON_ATTACK_LANDED
+		--MODIFIER_EVENT_ON_ATTACK_LANDED
 	}
 
 	return decFuncs
 end
+function modifier_item_imba_greater_crit_buff:GetModifierPreAttack_CriticalStrike(params)
+	if IsServer() then
+		if RollPercentage(self.crit_chance) then
+			return self.final_crit
+		else
+			return nil
+		end
+	end
+end
 
-function modifier_item_imba_greater_crit_buff:GetModifierPreAttack_CriticalStrike( params )
+--[[function modifier_item_imba_greater_crit_buff:GetModifierPreAttack_CriticalStrike( params )
 	if IsServer() then
 
 		-- Find how many Daedaluses we have for calculating crits
@@ -248,7 +276,6 @@ function modifier_item_imba_greater_crit_buff:GetModifierPreAttack_CriticalStrik
 		end
 	end
 end
-
 function modifier_item_imba_greater_crit_buff:OnAttackLanded( params )
 	if IsServer() then
 		if params.attacker == self:GetParent() then
@@ -265,4 +292,4 @@ function modifier_item_imba_greater_crit_buff:OnAttackLanded( params )
 			end
 		end
 	end
-end
+end]]

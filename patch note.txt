@@ -1031,6 +1031,7 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 * chip shortage so Helm of undying cost increased.
 * spell blade and other 2 passives that have similar effect reduced in dps.
 * spell blade from 15 normal bonus dmg to 10% bonus dmg (from base)
+* Devil Daedalus reworked and added Super Scepter effect  
 * bloodseeker Q now is a chance (10%) but deals 5 times more dmg. rampage speed limit is higher(Q and E changes are mostly to reduce some of the lag)
 * Changed Thirst (Bloodseeker) mechanic: now stacks are given when using abilities
 * fix some phoenix Q errors.
