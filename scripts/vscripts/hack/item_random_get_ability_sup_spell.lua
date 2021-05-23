@@ -64,7 +64,13 @@ function OnSpellStart( keys )
 						ability:OnSpellStart() 
 						return							
 					end	
-				end								 
+				end
+				if newAbilityName == "clinkz_infernal_breath" then
+					if hero:HasAbility("mjz_phantom_assassin_coup_de_grace") then
+						ability:OnSpellStart() 
+						return							
+					end	
+				end												 
 				local newAbility = hero:AddAbility(newAbilityName)	  
 				print("newAbility:" .. newAbilityName)  
 				if slotId > -1 then						  

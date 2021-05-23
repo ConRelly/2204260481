@@ -78,7 +78,7 @@ function SuicideSucceeded( keys)
 		local silence_duration = GetTalentSpecialValueFor(ability, 'silence_duration')
 		local damage = base_damage + caster:GetMaxHealth() * hp_cost / 100
 		local return_damage = (caster:GetMaxHealth() * hp_cost / 100) 
-
+		local ptc_hp_damage = ability:GetSpecialValueFor("current_hp") / 100
 		local particle = "particles/units/heroes/hero_techies/techies_suicide.vpcf"
 		EmitSoundOn("Hero_Techies.Suicide", caster)
 
@@ -94,7 +94,7 @@ function SuicideSucceeded( keys)
 
 		for _,enemy in pairs(enemy_list) do
 			enemy:AddNewModifier(caster, ability, 'modifier_silence', {duration = silence_duration})
-			local current_hp = enemy:GetHealth() / 20
+			local current_hp = math.floor(enemy:GetHealth() * ptc_hp_damage)
 			ApplyDamage({ 
 				victim = enemy, attacker = caster, ability = ability,
 				damage = damage, damage_type = ability:GetAbilityDamageType() 

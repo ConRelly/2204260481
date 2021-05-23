@@ -29914,7 +29914,7 @@
 			"07"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"max_distance"						"1400"
+				"max_distance"						"5400"
 			}
 			"15"
 			{
@@ -38057,13 +38057,13 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"14 24 34 22"
+				"bonus_movement_speed"		"24 29 34 40"
 				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_4"
 			}			
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hero_kill_heal"		"12 18 24 1400"
+				"hero_kill_heal"		"12 18 24 1800"
 			}		
 			"04"
 			{
@@ -38119,18 +38119,18 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"14 24 34 22"
+				"bonus_movement_speed"		"14 24 34 42"
 				"LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_4"
 			}			
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hero_kill_heal"		"12 18 24 100"
+				"hero_kill_heal"		"12 18 24 400"
 			}		
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"creep_kill_heal"		"8 12 16 50"
+				"creep_kill_heal"		"8 12 16 20"
 			}		
 			"05"
 			{

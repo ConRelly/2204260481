@@ -13182,7 +13182,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"3950000"
+		"StatusHealth"				"4550000"
 		"StatusHealthRegen"			"20000"
 		"StatusMana"				"50000"
 		"StatusManaRegen"			"5500"
@@ -14357,7 +14357,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "100"	   // Speed.		   
-	"StatusHealth"			  "6200000"	  // Base health.
+	"StatusHealth"			  "6700000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
@@ -14497,7 +14497,7 @@
 	"Ability15"				 "aghanim_laser"
 	"Ability16"				 "draks_unholy_strength"	
 	"ArmorPhysical"			 "420"		 // Physical protection.
-	"MagicalResistance"		 "93"
+	"MagicalResistance"		 "95"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"		   "9000"		// Damage range min.
 	"AttackDamageMax"		   "32000"	   // Damage range max.
@@ -14515,7 +14515,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "100"	   // Speed.		   
-	"StatusHealth"			  "5800000"	  // Base health.
+	"StatusHealth"			  "6800000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
@@ -14675,7 +14675,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "700"	   // Speed.		   
-	"StatusHealth"			  "5800000"	  // Base health.
+	"StatusHealth"			  "6500000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   

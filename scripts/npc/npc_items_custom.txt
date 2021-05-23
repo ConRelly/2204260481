@@ -1685,7 +1685,7 @@
 		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"heal_reduction"	"60"
+			"heal_reduction"	"55"
 		}
 	}
 }
@@ -20306,7 +20306,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_agility"			"490"
+			"bonus_agility"			"690"
 		}
 		"04"
 		{
@@ -20321,7 +20321,7 @@
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"		"500"
+			"bonus_damage"		"1000"
 		}
 	}
 }
@@ -35305,7 +35305,7 @@
 			"14"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_regen_red"			"55"
+				"hp_regen_red"			"45"
 			}
 		}
 	}
