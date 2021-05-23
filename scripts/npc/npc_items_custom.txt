@@ -35902,7 +35902,7 @@
 	"item_abyssal_water_blade"
 	{
 		"BaseClass"						"item_lua"
-		"ScriptFile"					"items/water_stone.lua"
+		"ScriptFile"					"items/water_abyssal_blade.lua"
 		"AbilityTextureName"			"custom/abyssal_water_blade"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"

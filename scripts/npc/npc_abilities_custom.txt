@@ -8835,6 +8835,23 @@
 		}
 	}
 }
+"kill_me_master"
+{
+	"BaseClass"						"ability_datadriven"
+	"ScriptFile"					"abilities/bosses/custom_antimage_revenge.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"			"chen_holy_persuasion"
+	"MaxLevel"					  	"1"
+	"AbilityCooldown"				"0"
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"abilities/heroes/chen_custom_holy_persuasion.lua"
+			"Function"		"KillMePls"
+		}
+	}
+}
 "chen_custom_avatar"
 {
 	"BaseClass"					"ability_datadriven"

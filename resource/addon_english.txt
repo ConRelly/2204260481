@@ -431,7 +431,8 @@
 
 	"DOTA_Tooltip_ability_blood_madness"				"Blood Madness"
 	"DOTA_Tooltip_ability_blood_madness_Description"	"Calculates damage taken for %timer% seconds and increase Axe strength and armor, depending on the damage dealt to him.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Increases damage calculation time by 1 second and does not let you die during calculation time."
-	"DOTA_Tooltip_ability_blood_madness_Note0"          "Can't be used durring wraith form (Helm of Undying/WK Reincarnation)"
+	"DOTA_Tooltip_ability_blood_madness_Note0"		"Can't be used durring wraith form (Helm of Undying/WK Reincarnation)."
+	"DOTA_Tooltip_ability_blood_madness_Note1"		"Can't get more stacks than maximum health in one hit."
 	"DOTA_Tooltip_ability_blood_madness_bonus_armor"		"ARMOR PER POINT OF DAMAGE:"
 	"DOTA_Tooltip_ability_blood_madness_bonus_str"			"STR PER POINT OF DAMAGE:"
 	"DOTA_Tooltip_ability_blood_madness_duration"			"DURATION:"
@@ -2034,7 +2035,7 @@
 	"DOTA_Tooltip_modifier_mjz_bloodseeker_thirst_buff"					"Thirst Buff"
 	"DOTA_Tooltip_modifier_mjz_bloodseeker_thirst_buff_Description"		"Increases Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, Attack Speed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% and Attack Damage by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_bloodseeker_thirst_stacks"			"+{s:value} Max Thirst Stacks"
-	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_scepter_description"	"Thirst stacks will be given when items are used by the owner"
+		
 	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada"					"Jinada"
 	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_Description"		"Bounty Hunter plans his next hit, dealing bonus damage and stealing some unreliable gold. The %hp_mp_toolpip%%% Max Health and Mana bonus Starts from lvl 6 and up."
 	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_Lore"				"Whispering an enchantment he learned from Soruq to his faithful blades, Gondar targets vital tendons and joints to disable his opponents."
@@ -5424,7 +5425,10 @@ Upgradeable by Aghanim's Scepter."
 "DOTA_Tooltip_ability_chen_custom_holy_persuasion_magic_resistance"				"%BONUS MAGIC RESISTANCE:"
 "DOTA_Tooltip_ability_chen_custom_holy_persuasion_scepter_description"			"Allows Holy Persuasion to target Ancient Creeps and adds aghanim buff to your converted creeps"
 "DOTA_Tooltip_modifier_chen_custom_holy_persuasion_buff"						"Holy Persuasion"
-"DOTA_Tooltip_modifier_chen_custom_holy_persuasion_buff_description"			"Persuaded to Chen's cause."	
+"DOTA_Tooltip_modifier_chen_custom_holy_persuasion_buff_description"			"Persuaded to Chen's cause."
+
+"DOTA_Tooltip_ability_kill_me_master"					"Kill Me Master"
+"DOTA_Tooltip_ability_kill_me_master_Description"		"Kills this minion in the most brutal way."
 
 
 
@@ -6440,7 +6444,7 @@ If you have over 10k Ms the ms multiplayer will drop to 1.5
 "DOTA_Tooltip_Ability_item_force_blade_Description"				"<h1>Passive: Force Multiplier</h1> Every autoattack has %chance_tooltip%%% chance to deal an extra %magic_percent%%% magic damage."
 "DOTA_Tooltip_Ability_item_force_blade_damage"						"+$damage"	
 "DOTA_Tooltip_Ability_item_force_blade_bonus_all"					"+$all"
-"DOTA_Tooltip_Ability_item_force_blade_bonus_damage"					"%Bonus Damage:"
+"DOTA_Tooltip_Ability_item_force_blade_bonus_damage"				"%Bonus Damage:"
 "DOTA_Tooltip_Ability_item_force_blade_Lore"					"A weightless blade that smells of soap."
 "DOTA_Tooltip_Ability_item_greater_demon_talon"							"Greater Demon Talon"
 "DOTA_Tooltip_Ability_item_greater_demon_talon_Description"				"<h1>Active: Sleight of Hand</h1>Switches this item's damage type to magical, but lowers damage. 

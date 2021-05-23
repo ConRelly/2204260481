@@ -99,7 +99,11 @@ function HolyPersuasion( keys )
 		local newAbilityNameb = GetRandomAbilityName(hero)
 		local link_b = target:AddAbility(newAbilityNameb)
 		link_b:UpgradeAbility(true)
-		link_b:SetLevel( hCaster:FindAbilityByName("chen_custom_holy_persuasion"):GetLevel() )                
+		link_b:SetLevel( hCaster:FindAbilityByName("chen_custom_holy_persuasion"):GetLevel() )
+
+		local kill_me_master = target:AddAbility("kill_me_master")
+		kill_me_master:UpgradeAbility(true)
+		kill_me_master:SetLevel(1)
 		
 		target:AddNewModifier( hCaster, hAbility, modif_n, {})
 		if hCaster:HasScepter() then
@@ -365,4 +369,9 @@ function GetRandomAbilityName( hero )
     }
     local randomIndex = RandomInt(1, #abilityList)
     return abilityList[randomIndex]   
+end
+
+
+function KillMePls(keys)
+	keys.caster:Kill(keys.ability, keys.caster)
 end
