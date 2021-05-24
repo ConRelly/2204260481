@@ -8889,12 +8889,12 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"ramage_buff"				"33 66 100 125"
+			"ramage_buff"				"25 35 45 65"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"movespeed_buff"				"25 35 50"
+			"movespeed_buff"				"25 35 50 75"
 		}
 		"05"
 		{
@@ -11208,8 +11208,7 @@
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"abilities/heroes/monkey_king_custom_jingu_mastery.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"MaxLevel"					  "7"
-	"LevelsBetweenUpgrades"		 "5"
+	"LevelsBetweenUpgrades"		    "10"
 	"AbilityTextureName"			"monkey_king_jingu_mastery"
 	"precache"
 	{
@@ -11223,23 +11222,28 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"attack_count"			"3"
+			"buf_duration"			"4 5 6 7"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"120 390 920 1950 2700 4150 8450"
+			"bonus_damage"			"120 160 200 240"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"lifesteal"				"25"
+			"bonus_stats"			"1 1 1 2"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"attack_count_tooltip"			"2"
+			"interval"				"15"
 		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"spell_amp"				"110"
+		}				
 	}
 }
 "naga_siren_custom_aquatica_grace"

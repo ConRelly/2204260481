@@ -97,7 +97,7 @@ function GetRandomAbilityName( hero )
         "obs_replay",
         "zanto_gari",
         "dark_willow_shadow_realm_lua",
-        "mjz_bloodseeker_thirst",
+        "monkey_king_custom_jingu_mastery",
         --"mjz_faceless_void_backtrack",
         --"hoodwink_acorn_shot",
         --"cold_slashes",

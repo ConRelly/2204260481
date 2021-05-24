@@ -1017,8 +1017,6 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 
 
 
-
-
 * Added Aghanim's Scepter and Super Scepter effect for Frostbite (Crystal Maiden)
 * Added Aghanim's Scepter and Super Scepter effect for Chaos Bolt (Chaos Knight)
 * Added Aghanim's Scepter and Super Scepter effect for Thirst (Bloodseeker)
@@ -1027,27 +1025,31 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 * Crystal Nova got some levels and cast during channeling like Frostbite.
 * added green note to CM skills that they can be cast during channeling(was an Alt note for Crystal Nova).
 * small buffs to venge
-* added the reworked bloodseeker E to random pool.
+* added the reworked bloodseeker E to the random pool.
 * Now Blood Madness (Axe) can't get more stacks than his maximum health in one hit
 * chip shortage so Helm of undying cost increased.
 * spell blade and other 2 passives that have similar effect reduced in dps.
-* spell blade from 15 normal bonus dmg to 10% bonus dmg (from base) and made to have a lot less impact on game performance.
+* spell blade from 15 normal bonus dmg to 10% bonus dmg (from the base) and made to have a lot less impact on game performance.
 * Devil Daedalus reworked and added Super Scepter effect and made to have a lot less impact on game performance.
-* bloodseeker Q now is a chance (10%) but deals 5 times more dmg. rampage speed limit is higher(Q and E changes are mostly to reduce some of the lag)
+* bloodseeker Q now is a chance (10%) but deals 5 times more dmg.  rampage speed limit is higher(Q and E changes are mostly to reduce some of the lag)
 * Changed Thirst (Bloodseeker) mechanic: now stacks are given when using abilities
 * fix some phoenix Q errors.
 * fix timber second ultimate being multicasted by normal multicast.
-* Grow Strong now has pseudo random
-* Guardian Greaves (Holy Light), Formidable Chest (and Attribute Mail), High Tech Boots (and Speedsters), Soul Ring, Devils Veil, Speed Orb (and stats books), Satanic, Ex Machina (and Refresher), Fire Rapier and edible things will not interrupt actions
-* Poison Claw, Heartstopper Aura, Mana Break and Slayer Rebound will hide stacks modifiers if the ability is removed
+* Grow Strong now has pseudo-random
+* Guardian Greaves (Holy Light), Formidable Chest (and Attribute Mail), High Tech Boots (and Speedsters), Soul Ring, Devils Veil, Speed Orb (and stats books), Satanic, Ex Machina (and Refresher), Fire Rapier, and edible things will not interrupt actions
+* Poison Claw, Heartstopper Aura, Mana Break, and Slayer Rebound will hide stacks modifiers if the ability is removed
 * Super Scepter will no longer create Aghanim's Scepter before applying
 * Fixed: Some abilities caused errors when removed
 * Fixed: Earth Rapier and Wind Rapier caused an error when selling
 * Fixed: Euls + Stun Immunity crash
+* and some other stuff
 
 
-*Update patch notes9 can be found on the new map version:
+
+
+
+*Update patch notes12 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
-
+or on Discord(check workshop discussion for links)
 
 **Update Notes spellings will get corrected before the live update.

@@ -60,31 +60,33 @@ end
 function modifier_item_radiance_armor_green:OnDestroy()
 end
 function modifier_item_radiance_armor_green:GetModifierHealthBonus()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_attack") end
 	return self:GetAbility():GetSpecialValueFor("bonus_health")
 end
 
 function modifier_item_radiance_armor_green:GetModifierPreAttack_BonusDamage()
-	return self:GetAbility():GetSpecialValueFor("bonus_attack")
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_attack") end
 end
 
 function modifier_item_radiance_armor_green:GetModifierBonusStats_Strength()
-	return self:GetAbility():GetSpecialValueFor("bonus_stats")
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_stats") end
 end
 
 function modifier_item_radiance_armor_green:GetModifierBonusStats_Agility()
-	return self:GetAbility():GetSpecialValueFor("bonus_stats")
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_stats") end
 end
 
 function modifier_item_radiance_armor_green:GetModifierBonusStats_Intellect()
-	return self:GetAbility():GetSpecialValueFor("bonus_stats")
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_stats") end
 end
 
 function modifier_item_radiance_armor_green:GetModifierPhysicalArmorBonus()
-	return self:GetAbility():GetSpecialValueFor("bonus_armor")
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_armor") end
 end
 
 function modifier_item_radiance_armor_green:GetModifierExtraHealthPercentage()
-	return self:GetAbility():GetSpecialValueFor("bonus_health_pct")
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_health_pct") end
+
 end
 
 function modifier_item_radiance_armor_green:GetEffectName()
