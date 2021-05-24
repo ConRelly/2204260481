@@ -27,7 +27,7 @@ function ability_class:OnSpellStart( )
 		caster:AddNewModifier(caster, ability, modifier_name, {duration = duration})
 	end
 
-	local permanent_bonus = self:GetSpecialValueFor( "permanent_bonus" )
+	local permanent_bonus = self:GetTalentSpecialValueFor( "permanent_bonus" )
 	local modifier_stack_name = "modifier_mjz_clinkz_soul_pact_permanent_buff"
 	if not caster:HasModifier(modifier_stack_name) then
 		caster:AddNewModifier(caster, ability, modifier_stack_name, {})
@@ -35,7 +35,7 @@ function ability_class:OnSpellStart( )
 	local hBuff = caster:FindModifierByName(modifier_stack_name)
 	if hBuff then
 		hBuff:SetStackCount( hBuff:GetStackCount() + permanent_bonus )
-		caster:CalculateStatBonus()
+		caster:CalculateStatBonus(false)
 	end
 
 	caster:EmitSound("Hero_Clinkz.DeathPact.Cast")

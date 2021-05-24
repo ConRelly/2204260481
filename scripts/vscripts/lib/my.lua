@@ -39,6 +39,7 @@ function decrease_modifier(caster, target, modifier)
 end
 
 
+
 function random_from_table(the_table)
 	if #the_table < 1 then
 		return nil
@@ -112,9 +113,8 @@ end
 
 
 function ability_behavior_includes(ability, behavior)
-	return bit.band(ability:GetBehavior(), behavior) == behavior
+	return bit.band(ability:GetBehaviorInt(), behavior) == behavior
 end
-
 
 function find_item(caster, item_name)
     for i = DOTA_ITEM_SLOT_1, DOTA_ITEM_SLOT_6 do
@@ -151,6 +151,7 @@ function find_item_total(caster, item_name)
     return nil
 end
 
+
 function has_item(caster, item_name)
     for i = DOTA_ITEM_SLOT_1, DOTA_ITEM_SLOT_6 do
         local item = caster:GetItemInSlot(i)
@@ -169,14 +170,16 @@ function refresh_players()
 		if PlayerResource:HasSelectedHero(playerID) then
 			local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 			if not hero:IsAlive() then
-				hero:RespawnUnit()
+				local rezPosition = hero:GetAbsOrigin()
+			    hero:RespawnHero(false, false)
+			    hero:SetAbsOrigin(rezPosition)
 			end
 			hero:SetHealth(hero:GetMaxHealth())
 			hero:SetMana(hero:GetMaxMana())
 		end
 	end
 end
-
+	
 
 function are_all_heroes_dead()
 	for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
@@ -214,8 +217,6 @@ function process_item_expire(item, expire_time)
 
 	return true
 end
-
-
 function removed_expired_items(timeout)
 	local expire_time = GameRules:GetGameTime() - timeout
 
@@ -282,7 +283,6 @@ function kill_dummy(dummy)
 		end
 	)
 end
-
 
 function create_dummy(caster, pos)
 	return CreateUnitByName("npc_dummy_unit", pos, false, caster, caster, caster:GetTeamNumber())

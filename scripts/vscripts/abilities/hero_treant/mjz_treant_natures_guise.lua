@@ -16,6 +16,7 @@ local modifier_class = modifier_mjz_treant_natures_guise
 function modifier_class:IsPassive() return true end
 function modifier_class:IsHidden() return true end
 function modifier_class:IsPurgable() return false end
+function modifier_class:IsPermanent() return true end
 
 function modifier_class:DeclareFunctions()
 	local funcs = {
@@ -56,6 +57,7 @@ local modifier_health = modifier_mjz_treant_natures_guise_health
 function modifier_health:IsPassive() return true end
 function modifier_health:IsHidden() return true end
 function modifier_health:IsPurgable() return false end
+function modifier_health:RemoveOnDeath() return false end
 
 function modifier_health:DeclareFunctions()
 	local funcs = {

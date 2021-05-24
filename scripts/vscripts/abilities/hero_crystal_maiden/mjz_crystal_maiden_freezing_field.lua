@@ -58,9 +58,9 @@ end
 function ability_class:CalcDamage( caster, enemy)
     local ability = self
     local base_damage = GetTalentSpecialValueFor(ability, "damage" )
-    local int_damage = GetTalentSpecialValueFor(ability, "int_damage" )
+    local str_int = GetTalentSpecialValueFor(ability, "str_int" )
     if IsValidEntity(caster) and caster:IsHero() then
-        return base_damage + caster:GetIntellect() * (int_damage / 100)
+        return base_damage + (caster:GetIntellect() + caster:GetStrength()) * (str_int / 100)
     else
         return base_damage
     end
@@ -99,20 +99,36 @@ local modifier_caster = modifier_mjz_crystal_maiden_freezing_field_caster
 
 function modifier_caster:IsHidden() return false end
 function modifier_caster:IsPurgable() return false end
+function modifier_caster:CheckState()
+	local state =
+	{
+		[MODIFIER_STATE_HEXED] = false,
+		[MODIFIER_STATE_ROOTED] = false,
+		--[MODIFIER_STATE_SILENCED] = false,
+		[MODIFIER_STATE_STUNNED] = false,
+		[MODIFIER_STATE_FROZEN] = false,
+		[MODIFIER_STATE_FEARED] = false,
+		[MODIFIER_STATE_DISARMED] = false,
+		[MODIFIER_STATE_COMMAND_RESTRICTED] = false,
+		--[MODIFIER_STATE_IGNORING_MOVE_AND_ATTACK_ORDERS] = true,
+		[MODIFIER_STATE_CANNOT_BE_MOTION_CONTROLLED] = true,
+	}
+	return state
+end
 
 function modifier_caster:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
 	}
 	return funcs
 end
 
-function modifier_caster:GetModifierPhysicalArmorBonus()
-    return self.armor
+function modifier_caster:GetModifierIncomingDamage_Percentage()
+    return self.redu
 end
 
 function modifier_caster:OnCreated()
-	self.armor = self:GetAbility():GetSpecialValueFor("bonus_armor")
+	self.redu = self:GetAbility():GetSpecialValueFor("reduction")
 end
 function modifier_caster:OnRefresh()
 	self:OnCreated()
@@ -146,7 +162,7 @@ if IsServer() then
 
 		self.FXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_snow.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 		ParticleManager:SetParticleControl( self.FXIndex, 1, Vector( self.aura_radius, self.aura_radius, self.aura_radius) )
-
+        
 		self:StartIntervalThink( self.tick )
 	end
 
@@ -167,6 +183,7 @@ if IsServer() then
         -- Timers:CreateTimer(0.25, function()
         --  self:_ApplyDamage_old()
         -- end)
+        --ParticleManager:ReleaseParticleIndex(fxIndex)
         self:_ApplyDamage()
     end
 
@@ -181,7 +198,7 @@ if IsServer() then
         local targetFlag = ability:GetAbilityTargetFlags()
 
 		local attackPoint = casterLocation
-        local damage = ability:CalcDamage(caster, nil) * self.tick
+        local damage = math.ceil(ability:CalcDamage(caster, nil) * self.tick)
 
         local units = caster:FindEnemyUnitsInRadius(attackPoint, self.aura_radius, {type = targetType, flag = targetFlag} )
         for _, unit in pairs(units) do

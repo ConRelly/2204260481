@@ -22,7 +22,7 @@ function OnSpellStart(keys)
     local radius = ability:GetSpecialValueFor("pull_radius")
     EmitSoundOn("Hero_Magnataur.ReversePolarity.Cast", caster)
 
-    local vCreeps = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, -1, ability:GetAbilityTargetTeam(), DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD, FIND_ANY_ORDER, false)
+    local vCreeps = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, -1, ability:GetAbilityTargetTeam(), DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_INVULNERABLE+DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES+DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD, FIND_ANY_ORDER, false)
 	 for _,hCreep in ipairs(vCreeps) do
 	 	if hCreep:GetTeam()~=DOTA_TEAM_NEUTRALS then
 			hCreep:SetAbsOrigin(caster:GetAbsOrigin())
@@ -80,7 +80,7 @@ function IsIgnoreTarget( target )
     if target == nil then return true end
     if not IsValidEntity(target) then return true end
     if not target:IsAlive() then return true end
-    if target:GetTeam() == DOTA_TEAM_NEUTRALS then return true end
+    --if target:GetTeam() == DOTA_TEAM_NEUTRALS then return true end
     local unitName = target:GetUnitName()
     local ignoreUnitNameList = {
         "npc_dota_campfire", "npc_dota_hero_target_dummy"

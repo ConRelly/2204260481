@@ -36,13 +36,13 @@
 	}
 	"morphling_replicate"
 	{
-		"AbilityCooldown"				"80 60 40"
+		"AbilityCooldown"				"65 40 30"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"30"
+				"duration"						"60"
 				"LinkedSpecialBonus"		"special_bonus_unique_morphling_8"
 			}
 		}

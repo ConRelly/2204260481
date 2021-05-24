@@ -40,7 +40,7 @@ if IsServer() then
 
 			local target_pos = self.target_location + RandomVector(self.offset)
             local direction = (target_pos - self:GetCaster():GetOrigin()):Normalized()
-
+            --local direction = (direction * Vector(1, 1, 0)):Normalized()
             self:LaunchSkull(direction)
         end
     end

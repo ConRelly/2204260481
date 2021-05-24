@@ -50,7 +50,9 @@ if IsServer() then
         if usedAbilityCaster:GetTeamNumber() == parent:GetTeamNumber() or usedAbility.isReflection then
             return
         end
-
+        if usedAbilityName == "bounty_hunter_shuriken_toss" then
+            return
+        end    
         local ability = parent:FindAbilityByName(usedAbilityName)
 
         if not ability then -- spell was never reflected

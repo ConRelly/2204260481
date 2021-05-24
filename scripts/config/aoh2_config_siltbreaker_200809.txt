@@ -8,32 +8,32 @@
 		"HealingSalve"
 		{
 			"Item"					"item_flask"
-			"Chance"				"2"
+			"Chance"				"0"
 		}
-		"ObserverWard"
+		"RandomSkill"
 		{
-			"Item"					"item_ward_observer"
-			"Chance"				"1"
+			"Item"					"item_random_get_ability"
+			"Chance"				"1.5"
 		}
 		"EnchantedMango"
 		{
-			"Item"					"item_enchanted_mango"
-			"Chance"				"1"
+			"Item"					"item_all_essence"
+			"Chance"				"2"
 		}
 		"book_of_strength"
 		{
 			"Item"					"item_book_of_strength"
-			"Chance"				"3"
+			"Chance"				"1"
 		}
 		"book_of_agility"
 		{
 			"Item"					"item_book_of_agility"
-			"Chance"				"3"
+			"Chance"				"1"
 		}
 		"book_of_intelligence"
 		{
 			"Item"					"item_book_of_intelligence"
-			"Chance"				"3"
+			"Chance"				"1"
 		}
 	}
 		"LinkedXPEnemies"
@@ -84,19 +84,34 @@
 	{
 		"1" // skeletal_archer			骷髅弓箭手
 		{
-			"Title"						"Skeletal Archer"
+			"Title"						"Cheats On, Invisible Dummy on spawn"
 			"MaxGold"					"3200"
 			"BagCount"					"1"
 			"BagVariance"				"50"
-			"FixedXP"					"2500"
+			"FixedXP"					"3000"
 
 			"a"
 			{
-				"NPCName"				"npc_boss_skeletal_archer_new"
+				//"NPCName"				"npc_boss_kobold_foreman2"
+				//"NPCName"               "npc_boss_randomstuff_aiolos"
+				//"NPCName"               "npc_dota_creature_siltbreaker_2"
+				//"NPCName"               "npc_dota_boss_aghanim"
+				//"NPCName"               "npc_dota_boss_void_spirit"
+				//"NPCName"               "npc_boss_skeleton_king_angry_new"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"20"
 			}
+
+            "b" 
+			{
+				"NPCName"				"npc_boss_kobold_foreman2"
+				//"NPCName"               "npc_boss_enigma"
+				"TotalUnitsToSpawn"		"6"
+				"UnitsPerSpawn"			"2"
+				"SpawnInterval"			"5"
+			}
+
 		}
 		
 		"2" // Kobolds		  			狗头人
@@ -470,7 +485,7 @@
 			"b"
 			{
 				"NPCName"				"npc_boss_tiny"
-				"TotalUnitsToSpawn"		"4"
+				"TotalUnitsToSpawn"		"6"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"22"
 			}
@@ -876,7 +891,7 @@
 		"31" // Demon Marauder			恐怖利刃
 		{
 			"Title"						"Demon"
-			"MaxGold"					"9750"
+			"MaxGold"					"8050"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"6400"
@@ -893,7 +908,7 @@
 		"32" // Worldsmith				大牛
 		{
 			"Title"						"Worldsmith"
-			"MaxGold"					"10250"
+			"MaxGold"					"8250"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"6400"
@@ -910,10 +925,10 @@
 		"33" // Lich					巫妖
 		{
 			"Title"						"Ethreain"
-			"MaxGold"					"10750"
+			"MaxGold"					"8750"
 			"BagCount"					"1"
 			"BagVariance"				"30"
-			"FixedXP"					"6500"
+			"FixedXP"					"8500"
 
 			"a"
 			{
@@ -927,10 +942,10 @@
 		"34" // Hellbear				白牛
 		{
 			"Title"						"Spirits"
-			"MaxGold"					"11250"
+			"MaxGold"					"8250"
 			"BagCount"					"1"
 			"BagVariance"				"30"
-			"FixedXP"					"6500"
+			"FixedXP"					"8500"
 
 			"a"
 			{
@@ -943,10 +958,10 @@
 		"35" // Rubick					拉比克
 		{
 			"Title"						"Spells"
-			"MaxGold"					"11750"
+			"MaxGold"					"8750"
 			"BagCount"					"1"
 			"BagVariance"				"30"
-			"FixedXP"					"150000"
+			"FixedXP"					"120000"
 				
 			"a"
 			{
@@ -956,13 +971,29 @@
 				"SpawnInterval"			"30"
 			}
 		}
-		"36" // Siltbreaker				破泞之主
+		"36" // Wisp					小精灵
+		{
+			"Title"						"False God"
+			"MaxGold"					"10000"
+			"BagCount"					"40"
+			"BagVariance"				"30"
+			"FixedXP"					"120000"
+
+			"a"
+			{
+				"NPCName"				"npc_boss_wisp_new"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"30"
+			}
+		}	
+		"37" // Siltbreaker				破泞之主
 		{
 			"Title"						"Siltbreaker"
-			"MaxGold"					"12000"
+			"MaxGold"					"8000"
 			"BagCount"					"1"
 			"BagVariance"				"30"
-			"FixedXP"					"150000"
+			"FixedXP"					"110000"
 				
 			"a"
 			{
@@ -972,13 +1003,59 @@
 				"SpawnInterval"			"30"
 			}
 		}
-		"37" // Wisp					小精灵
+		"38" // Anti-Mage				敌法师
 		{
-			"Title"						"False God"
-			"MaxGold"					"14000"
+			"Title"						"Might and Magic"  //"Ban Magic"
+			"MaxGold"					"7750"
+			"BagCount"					"5"
+			"BagVariance"				"0"
+			"FixedXP"					"40600"
+		
+			"a"
+			{
+				"NPCName"				"npc_boss_antimage_female"  //"npc_boss_antimage"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"1"
+			}
+			"b"
+			{
+				"NPCName"				"npc_boss_rubick"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"30"
+			}
+		}
+		"39" // Tiny boss				新骷髅王
+		{
+			"Title"						"Montain + A small brake"
+			"MaxGold"					"8000"
+			"BagCount"					"1"
+			"BagVariance"				"30"
+			"FixedXP"					"120000"
+				
+			"a"
+			{
+				"NPCName"				"npc_boss_storegga"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"20"
+			}
+			"b" 
+			{
+				"NPCName"				"npc_boss_kobold_foreman"
+				"TotalUnitsToSpawn"		"15"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"10"
+			}
+		}
+		"40" // Wisp					小精灵
+		{
+			"Title"						"False God And Lich "
+			"MaxGold"					"9000"
 			"BagCount"					"40"
 			"BagVariance"				"30"
-			"FixedXP"					"150000"
+			"FixedXP"					"120000"
 
 			"a"
 			{
@@ -987,22 +1064,44 @@
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"30"
 			}
-		}
-		"38" // NEW KING				新骷髅王
-		{
-			"Title"						"NEW KING"
-			"MaxGold"					"40000"
-			"BagCount"					"1"
-			"BagVariance"				"30"
-			"FixedXP"					"150000"
-				
-			"a"
+			"b"
 			{
-				"NPCName"				"npc_boss_skeleton_king_new"
+				"NPCName"				"npc_boss_lich_king"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"30"
 			}
-		}
+		}		
+		
+		"41" // Tiny boss				新骷髅王
+		{
+			"Title"						"SpiritTiny + a small brake to prepare for finall bosses"
+			"MaxGold"					"10000"
+			"BagCount"					"1"
+			"BagVariance"				"30"
+			"FixedXP"					"130000"
+				
+			"a"
+			{
+				"NPCName"				"npc_boss_storegga"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"20"
+			}
+			"b"
+			{
+				"NPCName"				"npc_boss_spiritbreaker"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"30"
+			}
+			"c" 
+			{
+				"NPCName"				"npc_boss_kobold_foreman"
+				"TotalUnitsToSpawn"		"18"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"10"
+			}
+		}		
 	}
 }

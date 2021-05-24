@@ -19,8 +19,8 @@ LinkLuaModifier(MODIFIER_CHARGE_NAME, MODIFIER_LUA, LUA_MODIFIER_MOTION_NONE)
 
 
 ---------------------------------------------------------------------------------------
-
 mjz_ember_spirit_sleight_of_fist = class({})
+
 local ability_class = mjz_ember_spirit_sleight_of_fist
 
 function ability_class:GetAOERadius()
@@ -172,13 +172,13 @@ if IsServer() then
 						
 						caster:PerformAttack (
 							target,     -- handle hTarget 
-							true,       -- bool bUseCastAttackOrb, 
-							true,       -- bool bProcessProcs,
+							true,       --bUseCastAttackOrb, 
+							true,       --bProcessProcs,
 							true,       -- bool bSkipCooldown
 							false,      -- bool bIgnoreInvis
 							false,       -- bool bUseProjectile
 							false,      -- bool bFakeAttack
-							true        -- bool bNeverMiss  可敌先机
+							false        -- bool bNeverMiss  可敌先机
 						)
 						
 						-- Slash particles
@@ -278,3 +278,5 @@ function GetTalentSpecialValueFor(ability, value)
     end
     return base
 end
+
+mjz_ember_spirit_sleight_of_fist2 = class(mjz_ember_spirit_sleight_of_fist)

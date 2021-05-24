@@ -157,7 +157,7 @@
 	
 	    
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast"				    "自动施法 - 刺针扫射"
-	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast_Description"	    ""
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast_Description"	    "AutoCasts qill spray and nasal goo(aghanim), in case it doesn't work type '-autocast' to relearn the skill(disable toggle before)"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast_Lore"	    	""    
 "DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger"							"极度饥渴"
 "DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_Description"				"对活物体液的强烈饥渴提高了育母蜘蛛的攻击力，并使她的攻击附带吸血效果。"
@@ -1676,7 +1676,7 @@
 	"DOTA_Tooltip_modifier_mjz_essence_aura_effect"				                "精气光环"
 	"DOTA_Tooltip_modifier_mjz_essence_aura_effect_Description"	                "当使用技能时，有一定概率回复自身魔法上限一定百分比的魔法值。"	
 	
-		"addon_game_name"								"Attack On Hero 2 Re: Bird"
+		"addon_game_name"								"Hero Attack On Gods"
 
 		"DOTA_Tooltip_Ability_item_bag_of_gold"			"金袋"
 		"DOTA_Tooltip_Ability_item_tombstone"			"复活队友"
@@ -1753,17 +1753,17 @@
 
 
 
-"DOTA_Tooltip_Ability_item_echo_wand"								"Mimic Mace"
-"DOTA_Tooltip_Ability_item_echo_wand_Description"			        "<h1>被动： Copycat</h1> Causes attacks to cast the last non-ultimate spell used on the target, putting this item on cooldown equal to the ability cast. <br><br>Attacks reduce the cooldown of this item by %cooldown_reduction% seconds for every %health_percent_tooltip%%% damage dealt to bosses, down to %minimum_cooldown% seconds.
-<h1>主动： Lock</h1>Prevents Mimic Mace from learning new abilities.
-"
-"DOTA_Tooltip_Ability_item_echo_wand_Lore"							"An unconvential duelist's wand."
-"DOTA_Tooltip_Ability_item_echo_wand_Note0"							"Cooldown reduction only works on bosses, not affected by cooldown reduction."
-"DOTA_Tooltip_Ability_item_echo_wand_Note1"							"Minimum 3 second cooldown."
-"DOTA_Tooltip_Ability_item_echo_wand_Note2"							"Certain items will not be copied by Mimic Mace."
-"DOTA_Tooltip_Ability_item_echo_wand_bonus_damage"                  "+$damage"
-"DOTA_Tooltip_ability_item_echo_wand_bonus_health_regen"			"+$hp_regen"
-"DOTA_Tooltip_ability_item_echo_wand_bonus_mana_regen"				"+$mana_regen"
+//"DOTA_Tooltip_Ability_item_echo_wand"								"Mimic Mace"
+//"DOTA_Tooltip_Ability_item_echo_wand_Description"			        "<h1>被动： Copycat</h1> Causes attacks to cast the last non-ultimate spell used on the target, putting this item on cooldown equal to the ability cast. <br><br>Attacks reduce the cooldown of this item by %cooldown_reduction% seconds for every %health_percent_tooltip%%% damage dealt to bosses, down to %minimum_cooldown% seconds.
+//<h1>主动： Lock</h1>Prevents Mimic Mace from learning new abilities.
+//"
+//"DOTA_Tooltip_Ability_item_echo_wand_Lore"							"An unconvential duelist's wand."
+//"DOTA_Tooltip_Ability_item_echo_wand_Note0"							"Cooldown reduction only works on bosses, not affected by cooldown reduction."
+//"DOTA_Tooltip_Ability_item_echo_wand_Note1"							"Minimum 3 second cooldown."
+//"DOTA_Tooltip_Ability_item_echo_wand_Note2"							"Certain items will not be copied by Mimic Mace."
+//"DOTA_Tooltip_Ability_item_echo_wand_bonus_damage"                  "+$damage"
+//"DOTA_Tooltip_ability_item_echo_wand_bonus_health_regen"			"+$hp_regen"
+//"DOTA_Tooltip_ability_item_echo_wand_bonus_mana_regen"				"+$mana_regen"
 
 "DOTA_Tooltip_modifier_item_echo_wand_lock"								"Mimic Mace Lock"
 "DOTA_Tooltip_modifier_item_echo_wand_lock_Description"					"Mimic Mace will not learn new abilities."	
@@ -4025,18 +4025,18 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_ability_item_bloodstone_Description"						"<h1>主动： Bloodpact</h1> Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.
  <h1>被动： Mana Battery</h1> Provides +%mana_regen_multiplier%%% Mana Regen Amplification."
 
-"DOTA_Tooltip_Ability_item_broken_bow"                              "雾虹"
-"DOTA_Tooltip_Ability_item_broken_bow_Description"			        "<h1>被动： 幽灵攻击</h1> 每攻击 %attacks_needed% 次，额外触发一次普通攻击。"
-"DOTA_Tooltip_Ability_item_broken_bow_Lore"				            "A derelict bow that whispers in the wind."
-"DOTA_Tooltip_Ability_item_broken_bow_bonus_agility"		        "+$agi"
-"DOTA_Tooltip_Ability_item_broken_bow_bonus_int"		            "+$int"
-"DOTA_Tooltip_Ability_item_broken_bow_bonus_attack_speed"		    "+$attack"
-"DOTA_Tooltip_Ability_item_broken_bow_movement_speed_bonus"		    "+$move_speed"
-"DOTA_Tooltip_ability_item_broken_bow_bonus_damage"					"+$damage"
-"DOTA_Tooltip_Ability_item_broken_bow_bonus_mana_regen"             "+$mana_regen"
+//"DOTA_Tooltip_Ability_item_broken_bow"                              "雾虹"
+//"DOTA_Tooltip_Ability_item_broken_bow_Description"			        "<h1>被动： 幽灵攻击</h1> 每攻击 %attacks_needed% 次，额外触发一次普通攻击。"
+//"DOTA_Tooltip_Ability_item_broken_bow_Lore"				            "A derelict bow that whispers in the wind."
+//"DOTA_Tooltip_Ability_item_broken_bow_bonus_agility"		        "+$agi"
+//"DOTA_Tooltip_Ability_item_broken_bow_bonus_int"		            "+$int"
+//"DOTA_Tooltip_Ability_item_broken_bow_bonus_attack_speed"		    "+$attack"
+//"DOTA_Tooltip_Ability_item_broken_bow_movement_speed_bonus"		    "+$move_speed"
+//"DOTA_Tooltip_ability_item_broken_bow_bonus_damage"					"+$damage"
+//"DOTA_Tooltip_Ability_item_broken_bow_bonus_mana_regen"             "+$mana_regen"
 
-"DOTA_Tooltip_modifier_item_broken_bow_count"                       "Broken Bow Count"
-"DOTA_Tooltip_modifier_item_broken_bow_count_Description"           "Amount of attacks dealt."
+//"DOTA_Tooltip_modifier_item_broken_bow_count"                       "Broken Bow Count"
+//"DOTA_Tooltip_modifier_item_broken_bow_count_Description"           "Amount of attacks dealt."
 "DOTA_Tooltip_ability_item_burning_radiance"                            "Burning Radiance"
 "DOTA_Tooltip_ability_item_burning_radiance_Description"				"<h1>Toggle: Burn</h1> When active, scorches enemies for %aura_damage% magical damage per second, and causes them to miss %blind_pct%%% of their attacks. Illusions deal %aura_damage_illusions% magical damage per second.<br><br>Radius: %aura_radius%"	
 "DOTA_Tooltip_ability_item_burning_radiance_Lore"						"A divine weapon that causes damage and a bright burning effect that lays waste to nearby enemies."
@@ -5749,7 +5749,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Description"						"<h1>主动：寒冰风暴</h1> 冻结敌方单位，禁止移动和攻击，并持续造成每秒%frostbite_damage_per_second%伤害。英雄持续%frostbite_duration_hero%秒，普通单位持续%frostbite_duration_creep%秒。 
 <h1>被动：霜冻攻击</h1>攻击附带使敌人移动速度减缓%debuff_move_speed_pct%%%和攻击速度降低%debuff_attack_speed%的霜冻效果。持续%debuff_duration%秒。 
 <h1>被动：吸血</h1>攻击者每次攻击都将根据造成的伤害回复%attack_lifesteal%%%的生命值。 
-<h1>被动：永恒</h1><font color='red'>死亡后掉落，而且无法被摧毁。</font>"
+<h1>Passive: Frostbite</h1><font color='lightblue'>When you attack and the item cooldown is rdy, deals 7% of target current hp in physical dmg and puts the item on a 4s CD.</font>"
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Lore"							"Hail to the king, baby!"
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_agility"					"+$agi"
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_intellect"					"+$int"

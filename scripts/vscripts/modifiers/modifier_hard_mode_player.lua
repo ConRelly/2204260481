@@ -15,6 +15,8 @@ function modifier_hard_mode_player:IsDebuff()
 end
 
 
+
+
 function modifier_hard_mode_player:DeclareFunctions()
 	local funcs = {
         MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE,

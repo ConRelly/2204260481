@@ -26,7 +26,7 @@ end
 function modifier_class:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-        MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
+        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
         MODIFIER_PROPERTY_MODEL_SCALE,
     }
@@ -38,10 +38,11 @@ function modifier_class:GetModifierAttackSpeedBonus_Constant()
 	return (1 - pct) * self.max_as
 end
 
-function modifier_class:GetModifierMagicalResistanceBonus()
+function modifier_class:GetModifierIncomingDamage_Percentage()
     local hp = self:GetParent():GetHealthPercent() - self.max_threshold
-	local pct = math.max(hp / self.range, 0)
-	return (1 - pct) * self.max_mr
+    local pct = math.max(hp / self.range, 0)
+    local bonus = (1 - pct) * self.max_mr
+	return bonus * (-1)
 end
 
 function modifier_class:GetModifierConstantHealthRegen()

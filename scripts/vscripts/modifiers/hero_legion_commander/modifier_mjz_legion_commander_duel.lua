@@ -13,7 +13,7 @@ function modifier_caster:IsPurgable() return false end
 
 function modifier_caster:CheckState()
 	local state = {
-        [MODIFIER_STATE_COMMAND_RESTRICTED] = true,     -- 不能控制
+        --[MODIFIER_STATE_COMMAND_RESTRICTED] = true,     -- 不能控制
         [MODIFIER_STATE_MUTED] = true,                  -- 不能使用物品
         [MODIFIER_STATE_SILENCED] = true,               -- 沉默状态
         -- [MODIFIER_STATE_FLYING] = true,
@@ -62,9 +62,11 @@ if IsServer() then
         local parent = self:GetParent()
 
         parent:StopSound("Hero_LegionCommander.Duel")
-
+        
+        --ParticleManager:DestroyParticle(ability._particle, true)
+        --ParticleManager:ReleaseParticleIndex(ability._particle)
         if ability._particle ~= nil then
-            ParticleManager:DestroyParticle(ability._particle, false)
+            ParticleManager:DestroyParticle(ability._particle, true)
             ParticleManager:ReleaseParticleIndex(ability._particle)
         end
 
@@ -123,6 +125,15 @@ if IsServer() then
 
         parent:SetForceAttackTarget(nil)
         parent:Stop()
+        Timers:CreateTimer({
+            endTime = 1, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
+            callback = function()
+                if ability._particle ~= nil then
+                    ParticleManager:DestroyParticle(ability._particle, true)
+                    ParticleManager:ReleaseParticleIndex(ability._particle)
+                end             
+            end
+        })        
     end
 end
 

@@ -30,10 +30,14 @@ if IsServer() then
 	function modifier_ancient_increase_stats:OnIntervalThink()
 		if self.parent and not self.parent:IsNull() and self.parent:IsAlive() then
 			local round = GameRules.GLOBAL_roundNumber
+			local part3 = GameRules.GLOBAL_endlessHard_started
 			if round and round > self.round then
 				
 				-- Health
 				local maxHealth = self.health_base + (self.health_per_round * round)
+				if part3 then
+					maxHealth = self.health_base + (self.health_per_round * round) * 12
+				end	
 				local health = maxHealth
 			
 				if round == previous_round then   -- heal only when round changes.
@@ -48,6 +52,9 @@ if IsServer() then
 
 				-- Armor
 				local armor = self.armor_base + (self.armor_per_round * round)
+				if part3 then
+					armor = self.armor_base + (self.armor_per_round * round) * 60
+				end					
 				self.parent:SetPhysicalArmorBaseValue(armor)
 				--
 

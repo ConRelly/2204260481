@@ -19,7 +19,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"20 30 40 50"
+				"bonus_damage"			"50 90 110 150"
 				"LinkedSpecialBonus"	"special_bonus_unique_spectre_2"
 			}
 			"02"

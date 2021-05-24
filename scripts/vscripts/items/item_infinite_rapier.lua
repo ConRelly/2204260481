@@ -12,6 +12,12 @@ modifier_item_infinite_rapier_base = class({})
 function modifier_item_infinite_rapier_base:IsHidden()
     return true
 end
+function modifier_item_infinite_rapier_base:IsPurgable()
+    return false
+end
+function modifier_item_infinite_rapier_base:RemoveOnDeath()
+    return false
+end
 
 function modifier_item_infinite_rapier_base:DeclareFunctions()
     return {
@@ -27,11 +33,14 @@ LinkLuaModifier("modifier_item_infinite_rapier", "items/item_infinite_rapier.lua
 
 modifier_item_infinite_rapier = class({})
 
-function modifier_item_infinite_rapier:GetAttributes()
+--[[function modifier_item_infinite_rapier:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE
-end
+end]]
 
 function modifier_item_infinite_rapier:IsPurgable()
+    return false
+end
+function modifier_item_infinite_rapier:RemoveOnDeath()
     return false
 end
 
@@ -52,10 +61,10 @@ end
 
 function modifier_item_infinite_rapier:OnCreated()
 	self.parent = self:GetParent()
-	self.particle = ParticleManager:CreateParticle("particles/custom/infinite_rapier_shell.vpcf", PATTACH_POINT, self.parent)
+	--[[self.particle = ParticleManager:CreateParticle("particles/custom/infinite_rapier_shell.vpcf", PATTACH_POINT, self.parent)
 	ParticleManager:SetParticleControlEnt(self.particle, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
 	self.particle2 = ParticleManager:CreateParticle("particles/custom/infinite_rapier_smoke.vpcf", PATTACH_POINT, self.parent)
-	ParticleManager:SetParticleControlEnt(self.particle2, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
+	ParticleManager:SetParticleControlEnt(self.particle2, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)]]
 	if IsServer() then
 		if self.parent:IsHero() then
 			self.parent:AddNewModifier(self.parent, self:GetAbility(), "modifier_item_infinite_rapier_base", {})
@@ -63,8 +72,8 @@ function modifier_item_infinite_rapier:OnCreated()
 	end
 end
 function modifier_item_infinite_rapier:OnDestroy()
-	ParticleManager:DestroyParticle(self.particle, true)
-	ParticleManager:DestroyParticle(self.particle2,  true)
+	--ParticleManager:DestroyParticle(self.particle, true)
+	--ParticleManager:DestroyParticle(self.particle2,  true)
 	if IsServer() then
 		if self.parent:IsHero() then
 			self.parent:RemoveModifierByName("modifier_item_infinite_rapier_base")

@@ -23,3 +23,19 @@ function item_mjz_ability_point:OnSpellStart()
         end
     end
 end
+
+item_mjz_ability_point_2 = class({})
+
+function item_mjz_ability_point_2:OnSpellStart()
+    if IsServer() then
+        local item = self
+        local caster = self:GetCaster()
+        local target = self:GetCursorTarget()
+        
+        if target and IsValidEntity(target) and target:IsRealHero() then
+            target:SetAbilityPoints(target:GetAbilityPoints() + 5)
+            caster:RemoveItem(item)
+            target:EmitSound("Hero_Alchemist.Scepter.Cast")
+        end
+    end
+end

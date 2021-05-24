@@ -211,7 +211,7 @@ function IsMakerHero(hero)
   if hero and IsValidEntity(hero) and hero:IsHero() then
     local playerID = hero:GetPlayerID()
     local steamID = PlayerResource:GetSteamAccountID(playerID)
-    if steamID == 333664846 then -- or 76561198293930574
+    if steamID == 30361752 then --333664846 then -- or 76561198293930574 --76561197990627480
       return true
     end
   end

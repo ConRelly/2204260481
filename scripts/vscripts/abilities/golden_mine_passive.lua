@@ -41,7 +41,7 @@ function modifier_golden_mine_passive:OnAttacked(kv)
         local attacker = kv.attacker
         local parent = self:GetParent()
         local ability = self:GetAbility()
-        local interval = 1.0
+        local interval = 1
         if attacker and attacker:IsRealHero() then
             local m_name = "modifier_golden_mine_buff"
             if not attacker:HasModifier(m_name) then

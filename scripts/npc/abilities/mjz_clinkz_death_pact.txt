@@ -15,7 +15,7 @@
 		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_INVALID"
 
-		"AbilityCooldown"				"80.0"
+		"AbilityCooldown"				"50.0"
 		"AbilityManaCost"				"100"
 		
 		"AbilitySpecial"
@@ -33,12 +33,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"400 600 800"
+				"bonus_health"			"800 1600 2800"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"-4 -6 -8"
+				"armor_reduction"		"-1 -2 -3"
 			}
 			"05"
 			{

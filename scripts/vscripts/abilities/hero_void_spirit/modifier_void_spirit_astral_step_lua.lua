@@ -36,8 +36,10 @@ end
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_void_spirit_astral_step_lua:OnCreated( kv )
-	-- references
-	self.damage = self:GetAbility():GetSpecialValueFor( "pop_damage" )
+	local caster = self:GetCaster()
+	local mana_mult = self:GetAbility():GetSpecialValueFor( "mana_mult" )
+	local manareg = caster:GetManaRegen() * mana_mult
+	self.damage = self:GetAbility():GetSpecialValueFor( "pop_damage" ) + manareg
 	self.slow = -self:GetAbility():GetSpecialValueFor( "movement_slow_pct" )
 end
 

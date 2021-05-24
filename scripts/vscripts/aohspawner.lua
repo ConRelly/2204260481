@@ -18,15 +18,13 @@ function AOHSpawner:ReadConfiguration(name, kv, gameRound)
 	self._waypointEntity = nil
 
 	self._nTotalUnitsToSpawn = tonumber(kv.TotalUnitsToSpawn or 0)
-	self._nUnitsPerSpawn = tonumber(kv.UnitsPerSpawn or 0)
 	self._nUnitsPerSpawn = tonumber(kv.UnitsPerSpawn or 1)
 
 	self._flInitialWait = tonumber(kv.WaitForTime or 0)
 	self._flSpawnInterval = tonumber(kv.SpawnInterval or 0)
-	self._flInitialWait_endless = 1
-	self._flSpawnInterval_endless = 1
+	self._flInitialWait_endless = 10
+	self._flSpawnInterval_endless = 5
 
-	self._szNPCClassName = MonsterStyle:GetRandomStyle(self._szNPCClassName)
 
 	-- if AOHGameMode._doubleMode then
 	-- 	-- self._nTotalUnitsToSpawn = self._nTotalUnitsToSpawn * 2
@@ -68,9 +66,9 @@ end
 
 function AOHSpawner:_GetInitialWait(roundNumber)
 	if self._endlessMode_started then
-		if roundNumber > 25 then
-			return 5
-		end
+		--if roundNumber > 17 then
+		--	return 30
+		--end
 		return self._flInitialWait_endless
 	else
 		return self._flInitialWait
@@ -78,9 +76,9 @@ function AOHSpawner:_GetInitialWait(roundNumber)
 end
 function AOHSpawner:_GetSpawnInterval(roundNumber)
 	if self._endlessMode_started then
-		if roundNumber > 21 then
-			return 5
-		end
+		--if roundNumber > 19 then
+		--	return 10
+		--end
 		return self._flSpawnInterval_endless
 	else
 		return self._flSpawnInterval

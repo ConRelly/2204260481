@@ -25,48 +25,51 @@ function modifier_custom_nyx_behavior:IsPurgable()
 	return false
 end
 
-if IsServer() then
+
 
 
 function modifier_custom_nyx_behavior:OnCreated()
-	self.parent = self:GetParent()
-	self.ability = self:GetAbility()
-	self.nyxAbility = self.parent:GetAbilityByIndex(2)
-	self.interval = self.ability:GetSpecialValueFor("interval")
-	self.health_threshold = self.ability:GetSpecialValueFor("health_threshold")
-	self.flippedIntermediate = true
-	self.notFlipped = true
-	self.ancient = Entities:FindByName(nil, "dota_goodguys_fort")
-	self:StartIntervalThink(self.interval)
+	if IsServer() then
+		self.parent = self:GetParent()
+		self.ability = self:GetAbility()
+		self.nyxAbility = self.parent:GetAbilityByIndex(2)
+		self.interval = self.ability:GetSpecialValueFor("interval")
+		self.health_threshold = self.ability:GetSpecialValueFor("health_threshold")
+		self.flippedIntermediate = true
+		self.notFlipped = true
+		self.ancient = Entities:FindByName(nil, "dota_goodguys_fort")
+		self:StartIntervalThink(self.interval)
+	end
 end
 function modifier_custom_nyx_behavior:OnIntervalThink()
-	if self.flippedIntermediate then
-		if self.notFlipped then
-			if self.parent:GetHealthPercent() < self.health_threshold then
-				self.notFlipped = false
-				
+	if IsServer() then
+		if self.flippedIntermediate then
+			if self.notFlipped then
+				if self.parent:GetHealthPercent() < self.health_threshold then
+					self.notFlipped = false
+					
+				end
+			else	
+				self.parent:Purge(false, true, false, true, false)
+				find_item(self.parent, "item_black_king_bar_boss"):CastAbility()
+				self.parent:CastAbilityNoTarget(self.nyxAbility, -1)
+				ExecuteOrderFromTable({
+					UnitIndex = self.parent:entindex(), 
+					OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
+					TargetIndex = self.ancient:entindex()
+				})
+				self.flippedIntermediate = false
 			end
-		else	
-			self.parent:Purge(false, true, false, true, false)
-			find_item(self.parent, "item_black_king_bar_boss"):CastAbility()
-			self.parent:CastAbilityNoTarget(self.nyxAbility, -1)
+		else 
 			ExecuteOrderFromTable({
 				UnitIndex = self.parent:entindex(), 
 				OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
 				TargetIndex = self.ancient:entindex()
 			})
-			self.flippedIntermediate = false
 		end
-	else 
-		ExecuteOrderFromTable({
-            UnitIndex = self.parent:entindex(), 
-            OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
-            TargetIndex = self.ancient:entindex()
-        })
-	end
+	end	
 end
 
 
-end
 
 

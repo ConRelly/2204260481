@@ -33,7 +33,7 @@ function ability_class:OnSpellStart()
 		local ability = self
 		local point  = self:GetCursorPosition()
 		local duration = ability:GetSpecialValueFor("duration")
-
+        
 		-- local sight_radius = ability:GetSpecialValueFor("sight_radius")
 		-- local sight_duration = ability:GetSpecialValueFor("sight_duration")
 		
@@ -90,15 +90,25 @@ if IsServer() then
 	function ability_class:_ApplyDamage(target)
 		local caster = self:GetCaster()
 		local ability = self
-
-		local radius = ability:GetSpecialValueFor('radius')
-		local base_damage = ability:GetSpecialValueFor("base_damage")
+		local point  = self:GetCursorPosition()      
+		local radius = self:GetAOERadius()
+		local base_damage = ability:GetSpecialValueFor("base_damage") * caster:GetLevel()
 		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
-		local damage = base_damage + caster:GetIntellect() * (intelligence_damage / 100.0)
-
+		local damage = base_damage + caster:GetIntellect() * (intelligence_damage * caster:GetLevel())
+        --print(damage .. " damage")
 		local sound_name = "Hero_Zuus.GodsWrath.Target"
-		
-		local units = FindTargetEnemy(caster, caster:GetAbsOrigin(), radius)
+		local units = FindUnitsInRadius(
+			caster:GetTeamNumber(),	-- int, your team number
+			point,	-- point, center point
+			nil,	-- handle, cacheUnit. (not known)
+			radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+			DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+			DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,	-- int, flag filter
+			0,	-- int, order filter
+			false	-- bool, can grow cache
+		)		
+		--local units = FindUnitsInRadius(caster, caster:GetAbsOrigin(), radius)
 		for _,unit in pairs(units) do
 			ApplyEffect2(caster, unit)
 
@@ -115,7 +125,6 @@ if IsServer() then
 	end
 
 end
-
 -----------------------------------------------------------------------------------------
 
 modifier_mjz_enigma_spacetime_gravity = class({})
@@ -128,14 +137,19 @@ if IsServer() then
 	function modifier_class:OnCreated()
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
+		local caster = self:GetCaster()
 		self.particles = {}
-
+		local base_damage = ability:GetSpecialValueFor("damage_per_level") * caster:GetLevel()
+		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
+		self.damage = math.ceil((base_damage + caster:GetIntellect() * (intelligence_damage * caster:GetLevel())) * 0.35)
+		self.radius = ability:GetSpecialValueFor("radius_per_level") * caster:GetLevel()
+        --print(self.damage .. " created damage")
 		local visionRange = ability:GetAOERadius()
 		parent:SetDayTimeVisionRange(visionRange)
 		parent:SetNightTimeVisionRange(visionRange)
 
 		self:ApplyEffect()
-		-- self:StartIntervalThink(0.1)
+		self:StartIntervalThink(0.35)
 	end
 
 	function modifier_class:OnIntervalThink()
@@ -146,6 +160,44 @@ if IsServer() then
 		if not caster:IsChanneling() then
 			ability:SpellFinish()
 		end
+		if caster:IsChanneling() then	
+			local caster = self:GetAbility():GetCaster()
+			local target = self:GetParent()
+			local target_location = target:GetAbsOrigin()
+			local ability = self:GetAbility()
+
+			-- Takes note of the point entity, so we know what to remove the thinker from when the channel ends
+			--ability.point_entity = target
+			local damage = self.damage
+            --print(damage .. " on interval dmg")
+			-- Ability variables
+			local speed = 85
+			local radius = self.radius
+
+			-- Targeting variables
+			local target_teams = DOTA_UNIT_TARGET_TEAM_ENEMY
+			local target_types = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
+			local target_flags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
+
+			-- Units to be caught in the black hole
+			local units = FindUnitsInRadius(caster:GetTeamNumber(), target_location, nil, radius, target_teams, target_types, target_flags, 0, false)
+
+			-- Calculate the position of each found unit in relation to the center
+			for i,unit in ipairs(units) do
+				local unit_location = unit:GetAbsOrigin()
+				local vector_distance = target_location - unit_location
+				local distance = (vector_distance):Length2D()
+				local direction = (vector_distance):Normalized()
+
+       
+
+				-- If the target is greater than 40 units from the center, we move them 40 units towards it, otherwise we move them directly to the center
+				if distance >= 100 then
+					unit:SetAbsOrigin(unit_location + direction * speed)
+				end
+				ApplyDamage({victim = unit, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = damage, damage_type = DAMAGE_TYPE_PURE})
+			end
+		end		
 	end
 
 	function modifier_class:OnDestroy()
@@ -187,8 +239,11 @@ end
 function modifier_class:IsAura() return true end
 
 function modifier_class:GetAuraRadius()
+	local caster = self:GetAbility():GetCaster()
+	local ability = self:GetAbility()
+	local radius = ability:GetSpecialValueFor("radius_per_level") * caster:GetLevel()
     -- return self:GetAbility():GetSpecialValueFor("radius")
-    return self:GetAbility():GetAOERadius()
+    return radius --self:GetAbility():GetAOERadius()
 end
 
 function modifier_class:GetModifierAura()
@@ -196,7 +251,7 @@ function modifier_class:GetModifierAura()
 end
 
 function modifier_class:GetAuraSearchTeam()
-    return DOTA_UNIT_TARGET_TEAM_BOTH -- DOTA_UNIT_TARGET_TEAM_FRIENDLY -- DOTA_UNIT_TARGET_TEAM_ENEMY
+    return DOTA_UNIT_TARGET_TEAM_FRIENDLY -- DOTA_UNIT_TARGET_TEAM_FRIENDLY -- DOTA_UNIT_TARGET_TEAM_ENEMY
 end
 
 function modifier_class:GetAuraEntityReject(target)
@@ -208,7 +263,7 @@ function modifier_class:GetAuraSearchType()
 end
 
 function modifier_class:GetAuraSearchFlags()
-	return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES  -- DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE -- DOTA_UNIT_TARGET_FLAG_NONE
+	return DOTA_UNIT_TARGET_FLAG_NONE  -- DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE -- DOTA_UNIT_TARGET_FLAG_NONE
 end
 
 function modifier_class:GetAuraDuration()
@@ -224,64 +279,57 @@ modifier_mjz_enigma_spacetime_gravity_buff = class({})
 function modifier_mjz_enigma_spacetime_gravity_buff:IsHidden() return false end
 function modifier_mjz_enigma_spacetime_gravity_buff:IsPurgable() return false end
 
--- function modifier_mjz_enigma_spacetime_gravity_buff:CheckState()
--- 	local state = {
+ function modifier_mjz_enigma_spacetime_gravity_buff:CheckState()
+ 	local state = {
 -- 		[MODIFIER_STATE_INVISIBLE] = false,
--- 	}				   
--- 	return state	
--- end
+		[MODIFIER_STATE_STUNNED ]            = false,
+		[MODIFIER_STATE_SILENCED ]           = false,   
+ 	}				   
+ 	return state	
+ end
 
--- function modifier_mjz_enigma_spacetime_gravity_buff:GetPriority()
--- 	return MODIFIER_PRIORITY_HIGH
--- end
-
-if IsServer() then
-	function modifier_mjz_enigma_spacetime_gravity_buff:DeclareFunctions()
-		local funcs = {
-		  -- MODIFIER_EVENT_ON_HEALTH_GAINED,
-		--   MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING,
-		--   MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-		--   MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-		--   MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-		--   MODIFIER_PROPERTY_BONUS_NIGHT_VISION,
-		--   MODIFIER_EVENT_ON_TAKEDAMAGE,
-		--   MODIFIER_EVENT_ON_ATTACK_LANDED
-			MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
-		}
-		return funcs
-	end
-
-	function modifier_mjz_enigma_spacetime_gravity_buff:GetModifierIncomingDamage_Percentage()
-		return -100
-	end	
-
-	function modifier_mjz_enigma_spacetime_gravity_buff:OnTakeDamage( params )
-		local caster = self:GetCaster()
-		local parent = self:GetParent()
-		local spell = self:GetAbility()
-		local Attacker = params.attacker
-		local Target = params.unit
-		local Ability = params.inflictor
-		local flDamage = params.damage
-		local attacker = params.attacker
-		local target = params.attacker
-		local damage = params.damage
-
-		if params.unit ~= self:GetParent() or Target == nil then
-			-- print("OnTakeDamage: params.unit ~= self:GetParent()")
-			return 0
-		end
-		if params.attacker == params.unit then return end
-		-- if params.attacker:IsMagicImmune() then return end
-
-		-- local unit = parent
-		-- if unit:GetHealth() < self. then
-		-- 	-- body
-		-- end
-		-- unit:SetHealth(newHealth)
-	end
-
+function modifier_mjz_enigma_spacetime_gravity_buff:GetPriority()
+	return MODIFIER_PRIORITY_HIGH
 end
+
+
+function modifier_mjz_enigma_spacetime_gravity_buff:DeclareFunctions()
+	local funcs = {
+		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+	}
+	return funcs
+end
+
+function modifier_mjz_enigma_spacetime_gravity_buff:GetModifierIncomingDamage_Percentage()
+	return -75
+end	
+
+--[[function modifier_mjz_enigma_spacetime_gravity_buff:OnTakeDamage( params )
+	local caster = self:GetCaster()
+	local parent = self:GetParent()
+	local spell = self:GetAbility()
+	local Attacker = params.attacker
+	local Target = params.unit
+	local Ability = params.inflictor
+	local flDamage = params.damage
+	local attacker = params.attacker
+	local target = params.attacker
+	local damage = params.damage
+
+	if params.unit ~= self:GetParent() or Target == nil then
+		-- print("OnTakeDamage: params.unit ~= self:GetParent()")
+		return 0
+	end
+	if params.attacker == params.unit then return end
+	-- if params.attacker:IsMagicImmune() then return end
+
+	-- local unit = parent
+	-- if unit:GetHealth() < self. then
+	-- 	-- body
+	-- end
+	-- unit:SetHealth(newHealth)
+end]]
+
 
 
 -----------------------------------------------------------------------------------------

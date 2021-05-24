@@ -25,7 +25,7 @@ end
 
 function end_screen_get_data(isWinner)
     local time = GameRules:GetDOTATime(false, true)
-    local matchID = tostring(GameRules:GetMatchID())
+    local matchID = tostring(GameRules:Script_GetMatchID()) or 0
 
     local data = {
         version = "2.1.2",

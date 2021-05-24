@@ -63,7 +63,9 @@ modifier_queenofpain_custom_shadow_strike = class({})
 function modifier_queenofpain_custom_shadow_strike:IsDebuff()
     return true
 end
-
+function modifier_queenofpain_custom_shadow_strike:IsPurgable()
+    return false
+end
 
 function modifier_queenofpain_custom_shadow_strike:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE

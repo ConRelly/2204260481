@@ -57,13 +57,13 @@ end
 if IsServer() then
 	function modifier_class:OnCreated( kv )
 		local ability = self:GetAbility()
-		self.rot_radius = GetTalentSpecialValueFor(ability, "rot_radius" )
+		self.rot_radius = GetTalentSpecialValueFor(ability, "rot_radius" ) 
 		self.rot_tick = GetTalentSpecialValueFor(ability, "rot_tick" )
 		
 		EmitSoundOn( "Hero_Pudge.Rot", self:GetCaster() )
 
 		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_rot.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-		ParticleManager:SetParticleControl( nFXIndex, 1, Vector( self.rot_radius, 1, self.rot_radius ) )
+		ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 150, 1, 150 ) )
 		self:AddParticle( nFXIndex, false, false, -1, false, false )
 
 		self:StartIntervalThink( self.rot_tick )
@@ -79,9 +79,9 @@ if IsServer() then
 		local ability = self:GetAbility()
 		local base_damage = GetTalentSpecialValueFor(ability, "base_damage" )
 		local health_damage_pct = GetTalentSpecialValueFor(ability, "health_damage_pct" )
-		local rot_damage = base_damage + caster:GetHealth() * (health_damage_pct / 100.0)
+		local rot_damage = base_damage + caster:GetMaxHealth() * (health_damage_pct / 100.0)
 
-		local flDamagePerTick = self.rot_tick * rot_damage
+		local flDamagePerTick = math.ceil((self.rot_tick * rot_damage) / 4)
 
 		if caster:IsAlive() then
 			local damage = {
@@ -141,7 +141,7 @@ if IsServer() then
 		local health_damage_pct = GetTalentSpecialValueFor(ability, "health_damage_pct" )
 		local rot_damage = base_damage + caster:GetHealth() * (health_damage_pct / 100.0)
 
-		local flDamagePerTick = self.rot_tick * rot_damage
+		local flDamagePerTick = math.ceil(self.rot_tick * rot_damage)
 
 		if caster:IsAlive() then
 			local damage = {

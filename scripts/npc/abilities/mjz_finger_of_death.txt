@@ -20,8 +20,8 @@
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		"AbilityCooldown"				"160.0 100.0 40.0"
-		"AbilityManaCost"				"200 420 650"
+		"AbilityCooldown"				"40.0 35.0 30.0"
+		"AbilityManaCost"				"200 220 350"
 			
 		"AbilityModifierSupportValue"	"0.0"	// Modifier just delays damage
 
@@ -30,23 +30,23 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cast_range"				"900"
+				"cast_range"				"1900"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cast_range_scepter"		"900"
+				"cast_range_scepter"		"1900"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"600 725 850"
+				"damage"					"800 1225 1850"
 				"LinkedSpecialBonus"		"special_bonus_unique_lion_3"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"725 875 1025"
+				"damage_scepter"			"1025 1475 2325"
 				"LinkedSpecialBonus"		"special_bonus_unique_lion_3"
 				"RequiresScepter"			"1"
 			}
@@ -58,7 +58,7 @@
 			"06"							//击杀计算时间（多少秒内死亡可以有伤害加成）
 			{
 				"var_type"					"FIELD_FLOAT"
-				"kill_grace_duration"		"5"
+				"kill_grace_duration"		"40"
 			}
 			"07"							//击杀普通单位的血量总值超过指定值，才算一层；不超过就累计击杀血量值
 			{
@@ -68,19 +68,19 @@
 			"09"							//技能溅射范围
 			{
 				"var_type"					"FIELD_FLOAT"
-				"splash_radius_scepter"		"325"
+				"splash_radius_scepter"		"1325"
 				"RequiresScepter"			"1"
 			}
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"mana_cost_scepter"			"200 420 625"
+				"mana_cost_scepter"			"200 220 325"
 				"RequiresScepter"			"1"
 			}
 			"13"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"100.0 60.0 20.0"
+				"cooldown_scepter"			"35.0 30.0 20.0"
 				"RequiresScepter"			"1"
 			}
 			"20"							//击杀普通单位是否会伤害加成（大于0，表示开启）
@@ -91,7 +91,7 @@
 			"22"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_delay"				"0.25"
+				"damage_delay"				"2.05"
 			}
 		}
 

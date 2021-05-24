@@ -16,9 +16,12 @@ modifier_item_custom_rapier_base = class({})
 function modifier_item_custom_rapier_base:IsHidden()
     return true
 end
-function modifier_item_custom_rapier_base:GetAttributes()
-    return MODIFIER_ATTRIBUTE_MULTIPLE
+function modifier_item_custom_rapier_base:IsPurgable()
+    return false
 end
+--function modifier_item_custom_rapier_base:GetAttributes()
+--    return MODIFIER_ATTRIBUTE_MULTIPLE
+--end
 function modifier_item_custom_rapier_base:DeclareFunctions()
     return {
 		MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
@@ -33,9 +36,9 @@ end
 LinkLuaModifier("modifier_item_custom_rapier", "items/item_custom_rapier.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_item_custom_rapier = class({})
 
-function modifier_item_custom_rapier:GetAttributes()
-    return MODIFIER_ATTRIBUTE_MULTIPLE
-end
+--function modifier_item_custom_rapier:GetAttributes()
+--    return MODIFIER_ATTRIBUTE_MULTIPLE
+--end
 
 function modifier_item_custom_rapier:IsPurgable()
     return false
@@ -94,6 +97,6 @@ function modifier_item_infinite_rapier_effect:OnDestroy()
 	ParticleManager:DestroyParticle(self.particle, true)
 	ParticleManager:DestroyParticle(self.particle2,  true)
 end
-function modifier_item_infinite_rapier_effect:GetAttributes()
-    return MODIFIER_ATTRIBUTE_MULTIPLE
-end
+--function modifier_item_infinite_rapier_effect:GetAttributes()
+--    return MODIFIER_ATTRIBUTE_MULTIPLE
+--end

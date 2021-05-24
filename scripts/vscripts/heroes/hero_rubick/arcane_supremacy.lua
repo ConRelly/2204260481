@@ -13,13 +13,12 @@ function arcane_supremacy:OnSpellStart()
 	 if IsServer() then
 		local caster = self:GetCaster()
 		local target = self:GetCursorTarget()
+		if caster == target then return end
 		if not target:IsRealHero() then return end
 		if not caster:HasShard() and not caster:HasScepter() and not HasSuperScepter(caster) then return end
 		local duration = self:GetSpecialValueFor("buff_duration")
 		local base_cd = self:GetSpecialValueFor("base_cd")
-		local cd_shard = 0
-		local cd_scepter = 0
-		local cd_super = 0
+		cd_shard = 0 cd_scepter = 0 cd_super = 0
 		if caster:HasShard() then
 			cd_shard = self:GetSpecialValueFor("bonus_cd_shard")
 			target:AddNewModifier(caster, nil, "modifier_item_aghanims_shard", {duration = duration})
@@ -47,7 +46,6 @@ function modifier_arcane_supremacy:IsHidden() return true end
 function modifier_arcane_supremacy:DeclareFunctions()
 	return {MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING, MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE}
 end
-
 function modifier_arcane_supremacy:GetModifierCastRangeBonusStacking()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_cast_range") end
 end
@@ -55,6 +53,9 @@ function modifier_arcane_supremacy:GetModifierSpellAmplify_Percentage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("spell_amp") end
 end
 
+---------------------------
+-- Arcane Supremacy Buff --
+---------------------------
 modifier_arcane_supremacy_buff = modifier_arcane_supremacy_buff or class({})
 function modifier_arcane_supremacy_buff:IsDebuff() return false end
 function modifier_arcane_supremacy_buff:IsHidden() return false end

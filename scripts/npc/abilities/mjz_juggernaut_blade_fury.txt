@@ -19,11 +19,11 @@
 		"AbilityCastPoint"				"0 0 0 0"
 		"AOERadius"						"%radius"
 
-		"AbilityCooldown"				"28.0 24.0 20.0 16.0"
+		"AbilityCooldown"				"18.0 14.0 12.0 10.0"
 		"AbilityDuration"				"5.0 5.0 5.0 5.0"
 		// "AbilityDamage"					"80 100 120 140"
 
-		"AbilityManaCost"				"110 110 110 110"		
+		"AbilityManaCost"				"25 25 25 25"		
 
 		"AbilitySpecial"
 		{
@@ -35,12 +35,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"250"
+				"radius"					"450"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"attack_tick"				"0.8 0.7 0.6 0.5"
+				"attack_tick"				"0.6 0.5 0.4 0.2"
 			}
 			"04"
 			{
@@ -73,8 +73,8 @@
 				"States"
 				{
 					"MODIFIER_STATE_MAGIC_IMMUNE"       "MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_SILENCED"           "MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_SOFT_DISARMED"       "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_SILENCED"           "MODIFIER_STATE_VALUE_DISABLED"
+					"MODIFIER_STATE_SOFT_DISARMED"       "MODIFIER_STATE_VALUE_DISABLED"
 				}
 				"OnCreated"
 				{

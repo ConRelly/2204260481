@@ -1,7 +1,7 @@
 
 
 lich_custom_cold_soul = class({})
-
+lich_custom_cold_soul2 = lich_custom_cold_soul
 
 function lich_custom_cold_soul:GetIntrinsicModifierName()
     return "modifier_lich_custom_cold_soul"

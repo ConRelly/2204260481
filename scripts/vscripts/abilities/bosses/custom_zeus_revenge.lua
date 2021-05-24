@@ -9,15 +9,17 @@ function custom_zeus_revenge:OnSpellStart()
 	local particle = ParticleManager:CreateParticle("particles/econ/items/lich/frozen_chains_ti6/lich_frozenchains_frostnova_g2.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster) 
 	EmitSoundOn("Hero_Antimage.ManaVoidCast", caster)
 	local target = ai_weakest_alive_hero_current()
-	target:AddNewModifier(caster,self, "modifier_custom_zeus_revenge_debuff", {duration = self:GetSpecialValueFor("delay")})
-	Timers:CreateTimer(
-		delay, 
-		function()
-			EmitSoundOn("Hero_ElderTitan.EarthSplitter.Destroy", caster)
-			caster:CastAbilityOnTarget(target, caster:FindAbilityByName("custom_greased_lightning"),  -1)
-			target:AddNewModifier(target,self, "modifier_custom_zeus_revenge_buff", {duration = self:GetSpecialValueFor("buff_duration")})
-		end
-	)
+	if target and target:IsAlive() then
+		target:AddNewModifier(caster,self, "modifier_custom_zeus_revenge_debuff", {duration = self:GetSpecialValueFor("delay")})
+		Timers:CreateTimer(
+			delay, 
+			function()
+				EmitSoundOn("Hero_ElderTitan.EarthSplitter.Destroy", caster)
+				caster:CastAbilityOnTarget(target, caster:FindAbilityByName("custom_greased_lightning"),  -1)
+				target:AddNewModifier(target,self, "modifier_custom_zeus_revenge_buff", {duration = self:GetSpecialValueFor("buff_duration")})
+			end
+		)
+	end	
 end
 
 LinkLuaModifier("modifier_custom_zeus_revenge_debuff", "abilities/bosses/custom_zeus_revenge.lua", LUA_MODIFIER_MOTION_NONE)

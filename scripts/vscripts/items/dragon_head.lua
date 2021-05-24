@@ -1,7 +1,7 @@
 
 
 item_dragon_head = class({})
-
+item_dragon_head_2 = item_dragon_head
 function item_dragon_head:GetIntrinsicModifierName()
     return "modifier_item_dragon_head"
 end
@@ -82,6 +82,7 @@ end
 function modifier_item_dragon_head_aura_buff:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_HEALTH_BONUS,
+        MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
     }
 end
@@ -99,5 +100,12 @@ function modifier_item_dragon_head_aura_buff:GetModifierBonusStats_Strength()
     local ability = self:GetAbility()
     if ability then
         return ability:GetSpecialValueFor("aura_bonus_strength")
+    end
+end
+
+function modifier_item_dragon_head_aura_buff:GetModifierExtraHealthPercentage()
+    local ability = self:GetAbility()
+    if ability then
+        return ability:GetSpecialValueFor("aura_bonus_extra_health")
     end
 end

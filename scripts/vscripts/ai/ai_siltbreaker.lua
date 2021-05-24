@@ -120,7 +120,7 @@ function SiltbreakerThink()
 		end
 	end
 
-	local search_radius = 1600 -- 7000
+	local search_radius = 5600 -- 7000
 	local hEnemies = FindUnitsInRadius( DOTA_TEAM_BADGUYS, thisEntity:GetOrigin(), nil, search_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false )
 	if #hEnemies == 0 then
 		AttackMoveFort(thisEntity)
