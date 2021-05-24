@@ -20,9 +20,12 @@ if IsServer() then
 		self.parent = self:GetParent()
 		-- Setting attributes
 		local ability_level = self.ability:GetLevel() - 1
+		local caster_int = self.caster:GetIntellect()
+		local int_mult = self.ability:GetLevelSpecialValueFor("int_mult", ability_level) 
+		local int_dmg  = caster_int * int_mult
 		self.radius = self.ability:GetLevelSpecialValueFor("radius", ability_level) 
 		self.interval = self.ability:GetLevelSpecialValueFor("think_interval", ability_level) 
-		self.damage = self.ability:GetLevelSpecialValueFor("damage_per_second", ability_level) * self.interval
+		self.damage = (int_dmg + self.ability:GetLevelSpecialValueFor("damage_per_second", ability_level)) * self.interval
 		local talent = self:GetCaster():FindAbilityByName("special_bonus_unique_dark_seer")
 		-- Talent modification
 		if talent and talent:GetLevel() > 0 then

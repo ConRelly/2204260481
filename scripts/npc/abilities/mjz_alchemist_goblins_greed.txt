@@ -12,7 +12,7 @@
 			"01"
 			{
 				"var_type"              "FIELD_FLOAT"
-				"gold"          		"2 4 6 8" 	// regular: 1.8
+				"gold"          		"8 16 24 40" 	// regular: 1.8
 			}
             "02"
 			{

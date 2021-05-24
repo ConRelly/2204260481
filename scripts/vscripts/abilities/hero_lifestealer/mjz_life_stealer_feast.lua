@@ -36,9 +36,9 @@ function ability_class:_CreateParticle( target, heal )
             })
         end
 
-        local p_name = "particles/generic_gameplay/generic_lifesteal.vpcf"
-        local p_index = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN_FOLLOW, target)
-        ParticleManager:ReleaseParticleIndex(p_index)
+        --local p_name = "particles/generic_gameplay/generic_lifesteal.vpcf"
+       -- local p_index = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN_FOLLOW, target)
+        --ParticleManager:ReleaseParticleIndex(p_index)
     end
 end
 

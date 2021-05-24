@@ -10,7 +10,9 @@ local exclude_items = {
 	item_conduit = true,
 	item_custom_fusion_rune = true,
 	item_echo_wand = true,
-	shadow_demon_disruption = true,
+    shadow_demon_disruption = true,
+    item_resurection_pendant = true,
+    doom_devour_lua = true,
 }
 
 

@@ -36,10 +36,10 @@ function modifier_class:GetModifierPercentageManacost()
 	return 100
 end
 function modifier_class:GetModifierPercentageManaRegen()
-	return 100
+	return 1
 end
 function modifier_class:GetModifierConstantManaRegen()
-	return 100
+	return 1
 end
 
 function modifier_class:GetModifierDamageOutgoing_Percentage()

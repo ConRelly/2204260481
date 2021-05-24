@@ -2,7 +2,7 @@ require("lib/my")
 require("lib/illusion")
 
 
-LinkLuaModifier("modifier_dark_seer_custom_dark_clone", "abilities/heroes/dark_seer_custom_dark_clone.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_dark_seer_custom_dark_clone", "abilities/heroes/dark_seer_custom_dark_clone_new.lua", LUA_MODIFIER_MOTION_NONE)
 
 
 
@@ -12,7 +12,7 @@ function create_clone(caster, target, ability)
     local illusion = CreateUnitByName(target:GetUnitName(), spawnPos, true, caster, caster:GetOwner(), caster:GetTeamNumber())
     --illusion:SetPlayerID(caster:GetPlayerID())
     illusion:SetControllableByPlayer(caster:GetPlayerID(), true)
-	illusion:MakeIllusion()
+	--illusion:MakeIllusion()
 
     copy_level(target, illusion)
     copy_skill_level(target, illusion, false)

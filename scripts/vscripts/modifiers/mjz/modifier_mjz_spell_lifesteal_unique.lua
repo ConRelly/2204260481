@@ -4,6 +4,7 @@ local modifier_class = modifier_mjz_spell_lifesteal_unique
 
 function modifier_class:IsHidden() return true end
 function modifier_class:IsPurgable() return false end
+function modifier_class:RemoveOnDeath() return false end
 
 
 function modifier_class:DeclareFunctions()
@@ -30,7 +31,10 @@ if IsServer() then
 			if self:_CanHeal(keys) then
 				-- print("heal :" .. keys.original_damage * lifesteal)
 				self.parent:Heal(keys.original_damage * lifesteal, self.ability)
-				ParticleManager:CreateParticle(self.particle_name, PATTACH_ABSORIGIN_FOLLOW, self.parent)
+				self.effect = ParticleManager:CreateParticle(self.particle_name, PATTACH_ABSORIGIN_FOLLOW, self.parent)
+				ParticleManager:SetParticleControl(self.effect, 0, keys.attacker:GetAbsOrigin())
+				ParticleManager:ReleaseParticleIndex(self.effect)
+
 			end
 		end
 	end
@@ -41,7 +45,7 @@ if IsServer() then
 			if keys.damage_type == DAMAGE_TYPE_PHYSICAL then
 				if ability then
 					-- return true
-					local behavior = ability:GetBehavior()
+					local behavior = ability:GetBehaviorInt()
 					if self:FlagExist( behavior, DOTA_ABILITY_BEHAVIOR_NO_TARGET ) or 
 						self:FlagExist( behavior, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET ) or
 						self:FlagExist( behavior, DOTA_ABILITY_BEHAVIOR_POINT ) or

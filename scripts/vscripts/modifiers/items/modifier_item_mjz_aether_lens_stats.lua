@@ -10,6 +10,9 @@ end
 function modifier:IsPurgable()
     return false
 end
+function modifier:AllowIllusionDuplicate()
+    return true
+end
 
 function modifier:GetAttributes() 
 	return MODIFIER_ATTRIBUTE_PERMANENT 
@@ -21,7 +24,9 @@ end
 
 function modifier:DeclareFunctions()
     local funcs = {
-        MODIFIER_PROPERTY_CAST_RANGE_BONUS
+        MODIFIER_PROPERTY_CAST_RANGE_BONUS,
+        MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
+        MODIFIER_PROPERTY_CASTTIME_PERCENTAGE,
     }
     return funcs
 end
@@ -30,3 +35,11 @@ function modifier:GetModifierCastRangeBonus(htable)
     -- return self:GetAbility():GetSpecialValueFor("cast_range_bonus")
     return 250
 end
+
+function modifier:GetModifierSpellAmplify_Percentage()
+    return 25
+end    
+
+function modifier:GetModifierPercentageCasttime()
+    return 100
+end    

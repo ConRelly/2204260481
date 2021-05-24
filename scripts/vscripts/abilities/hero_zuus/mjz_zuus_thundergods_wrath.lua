@@ -39,8 +39,8 @@ function ability_class:OnSpellStart()
 		
 		EmitSoundOn("Hero_Zuus.GodsWrath.PreCast", caster)
 
-		EmitSoundOn("Hero_Zuus.GodsWrath", caster)
-		local p_name = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath_start_bolt_parent.vpcf"
+		EmitSoundOn("Hero_Zuus.GodsWrath", caster)  
+		local p_name = "particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
 		local p_index = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN_FOLLOW, caster)
 		ParticleManager:SetParticleControl(p_index, 1, caster:GetAbsOrigin())
 		ParticleManager:ReleaseParticleIndex(p_index)
@@ -105,7 +105,7 @@ if IsServer() then
 		for _,unit in pairs(units) do
 			self:ApplyEffect2(caster, unit)
 
-			EmitSoundOn(sound_name, unit)
+			--EmitSoundOn(sound_name, unit)
 
 			ApplyDamage({
 				attacker = caster,
@@ -118,7 +118,7 @@ if IsServer() then
 	end
 
 	function ability_class:ApplyEffect(caster, target)
-		local p_name = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf"
+		local p_name = "particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
 
       	local p_index = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN_FOLLOW, target)
     	ParticleManager:SetParticleControl(p_index, 0, target:GetAbsOrigin())
@@ -128,7 +128,7 @@ if IsServer() then
 	end
 
 	function ability_class:ApplyEffect2(caster, target)
-		local p_name = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf"
+		local p_name = "particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
 		local p_index = ParticleManager:CreateParticle(p_name, PATTACH_WORLDORIGIN, target)
 		ParticleManager:SetParticleControl(p_index, 0, Vector(target:GetAbsOrigin().x, target:GetAbsOrigin().y, target:GetAbsOrigin().z + target:GetBoundingMaxs().z ))
 		ParticleManager:SetParticleControl(p_index, 1, Vector(target:GetAbsOrigin().x, target:GetAbsOrigin().y, 2000))

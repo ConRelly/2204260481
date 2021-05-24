@@ -7,17 +7,17 @@
     "AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO"
     "AbilityType"				"DOTA_ABILITY_TYPE_ULTIMATE"
     "AbilityTextureName"		"dark_seer_wall_of_replica"
-    "AbilityCastRange"			"1300"
+    "AbilityCastRange"			"1600"
     "AbilityCastPoint"			"0.2"
     "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
-    "AbilityCooldown"			"110.0 90.0 70.0"
-    "AbilityManaCost"			"150 175 200"
+    "AbilityCooldown"			"50.0 40.0 30.0"
+    "AbilityManaCost"			"50 60 70"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"			    "FIELD_INTEGER"
-            "illusion_taken"	    "250 200 150"			
+            "illusion_taken"	    "100 50 20"			
         }
         "02"
         {
@@ -106,28 +106,28 @@
 		"particle"			"particles/units/heroes/hero_dark_seer/dark_seer_ion_shell.vpcf"
 		"particle"			"particles/units/heroes/hero_dark_seer/dark_seer_ion_shell_damage.vpcf"
 	}
-	"AbilityCastRange"				"600"
+	"AbilityCastRange"				"1600"
 	"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
-	"AbilityCooldown"				"10"
-	"AbilityManaCost"				"70 90 110 130"
+	"AbilityCooldown"				"8"
+	"AbilityManaCost"				"30 40 50 50"
 	"AbilityModifierSupportValue"	"0.0"
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"radius"				"300"
+			"radius"				"600"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_per_second"		"30 55 80 105"
+			"damage_per_second"		"60 80 150 490"
 			"LinkedSpecialBonus"    "special_bonus_unique_dark_seer"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"				"25"
+			"duration"				"125"
 		}
 		"04"
 		{
@@ -156,7 +156,7 @@
 		{
 			"IsHidden"              "1"
 			"IsBuff"		"1"
-			"IsPurgable"	"1"
+			"IsPurgable"	"0"
 			"OnCreated"
 			{
 				"FireSound"

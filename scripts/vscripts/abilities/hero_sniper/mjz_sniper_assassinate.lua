@@ -158,10 +158,10 @@ if IsServer() then
 		local bonus_damage_pct = GetTalentSpecialValueFor(ability, 'bonus_damage_pct')
 		
 		if bInBuckshot > 0  then
-			local buchshot_damage = assassinate_damage * 0.5
+			local buchshot_damage = assassinate_damage * 0.15
 			if caster:HasScepter() then
 				buchshot_damage	= caster:GetAverageTrueAttackDamage(hTarget) * (scepter_crit_bonus / 100.0)
-				buchshot_damage = buchshot_damage * 0.5
+				buchshot_damage = buchshot_damage * 0.15
 			end
 			buchshot_damage = buchshot_damage + buchshot_damage * (bonus_damage_pct / 100.0)
 			local damage_table = 

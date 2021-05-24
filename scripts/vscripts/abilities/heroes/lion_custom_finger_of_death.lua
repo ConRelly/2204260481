@@ -41,9 +41,10 @@ if IsServer() then
 
     function lion_custom_finger_of_death:OnSpellStart()
         local caster = self:GetCaster()
-
-        self.base_damage = self:GetSpecialValueFor(value_if_scepter(caster, "damage_scepter", "damage"))
-        self.damage_per_use = self:GetSpecialValueFor("damage_per_use")
+        --local caster_int = caster:GetIntellect()
+        local stats = caster:GetIntellect() + caster:GetAgility() + caster:GetStrength()
+        self.base_damage = self:GetSpecialValueFor(SuperScepter(caster,"damage_super_scepter", "damage_scepter", "damage")) * stats
+        self.damage_per_use = self:GetSpecialValueFor(SuperScepter(caster,"damage_per_use_ss", "damage_per_use_s", "damage_per_use"))
         self.damage_delay = self:GetSpecialValueFor("damage_delay")
 
         self.stack_modifier_name = "modifier_lion_custom_finger_of_death_bonus"
@@ -75,13 +76,12 @@ if IsServer() then
         ParticleManager:SetParticleControl(particle, 1, target:GetAbsOrigin())
         ParticleManager:SetParticleControl(particle, 2, target:GetAbsOrigin())
         ParticleManager:ReleaseParticleIndex(particle)
-
+        target:EmitSound("Hero_Lion.FingerOfDeathImpact")
         Timers:CreateTimer(
             self.damage_delay,
             function()
                 if not target:IsMagicImmune() then
-                    target:EmitSound("Hero_Lion.FingerOfDeathImpact")
-
+                    
                     ApplyDamage({
                         ability = self,
                         attacker = caster,
@@ -106,4 +106,19 @@ modifier_lion_custom_finger_of_death_bonus = class({})
 function modifier_lion_custom_finger_of_death_bonus:IsPermanent()
     return true
 end
+function value_if_scepter(npc, ifYes, ifNot)
+	if npc:HasScepter() then
+		return ifYes
+	end
+	return ifNot
+end
 
+function SuperScepter(npc, ifYes, ifNormal, ifNot)
+    local modifier_super_scepter = "modifier_item_imba_ultimate_scepter_synth_stats"
+    if npc:HasModifier(modifier_super_scepter) and npc:FindModifierByName(modifier_super_scepter):GetStackCount() > 2 then
+        return ifYes
+    elseif npc:HasScepter() then
+        return ifNormal
+    end    
+    return ifNot
+end          

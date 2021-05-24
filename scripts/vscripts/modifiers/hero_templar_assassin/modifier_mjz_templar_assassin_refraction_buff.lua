@@ -18,17 +18,17 @@ if IsServer() then
 	function modifier_class:DeclareFunctions()
 		local funcs = {
 			MODIFIER_EVENT_ON_TAKEDAMAGE,
-			MODIFIER_PROPERTY_MIN_HEALTH,
+			--MODIFIER_PROPERTY_MIN_HEALTH,
 		}
 		return funcs
 	end
 
-	function modifier_class:GetMinHealth(keys)
+	--[[function modifier_class:GetMinHealth(keys)
         local parent = self:GetParent()
         if not parent:IsIllusion() then
             return 1
         end
-    end
+    end]]
 	
 	function modifier_class:OnCreated( kv )
 		local ability = self:GetAbility()
@@ -72,13 +72,13 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local parent = self:GetParent()
 		local damage_threshold = ability:GetSpecialValueFor('damage_threshold')
-		local attacker = keys.attacker
+		--local attacker = keys.attacker
 		local damage = keys.damage
 
 		-- Ensures the damage surpasses the threshold
 		if damage >= damage_threshold then
 			-- Replaces the health the caster lost when taking damage
-			caster:SetHealth(caster:GetHealth() + damage)
+			--caster:SetHealth(caster:GetHealth() + damage)
 				
 			EmitSoundOn("Hero_TemplarAssassin.Refraction.Absorb", caster)
 		end
@@ -98,12 +98,17 @@ function modifier_damage:IsBuff() return true end
 function modifier_damage:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
 	}
 	return funcs
 end
 
 function modifier_damage:GetModifierPreAttack_BonusDamage( )
 	return self:GetStackCount()
+end
+
+function modifier_damage:GetModifierIncomingDamage_Percentage()
+	return -100
 end
 
 if IsServer() then

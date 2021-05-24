@@ -1,6 +1,6 @@
 local THIS_LUA = "abilities/hero_crystal_maiden/mjz_crystal_maiden_frostbite.lua"
 LinkLuaModifier("modifier_mjz_crystal_maiden_frostbite", THIS_LUA, LUA_MODIFIER_MOTION_NONE)
-
+LinkLuaModifier("modifier_mjz_crystal_maiden_frostbite_bonus_int", THIS_LUA, LUA_MODIFIER_MOTION_NONE)
 
 -----------------------------------------------------------------------------------------
 
@@ -9,7 +9,7 @@ mjz_crystal_maiden_frostbite = class({})
 local ability_class = mjz_crystal_maiden_frostbite
 
 function ability_class:GetAOERadius()
-    return self:GetAbility():GetSpecialValueFor("radius")
+    return self:GetSpecialValueFor("radius")
 end
 
 function ability_class:OnSpellStart()
@@ -51,8 +51,7 @@ function ability_class:SpellTo( target )
     EmitSoundOn("hero_Crystal.frostbite", target)
     
     target:AddNewModifier(caster, ability, "modifier_stunned", {duration = stun_duration})
-    target:AddNewModifier(caster, ability, mName, {duration = duration})
-
+    target:AddNewModifier(caster, ability, mName, {duration = duration})  
 end
 
 function ability_class:ApplyDamageToEnemy( target )
@@ -63,15 +62,16 @@ function ability_class:ApplyDamageToEnemy( target )
     local targetType = ability:GetAbilityTargetType() -- DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
     local targetFlag = ability:GetAbilityTargetFlags() -- DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
     local damageType = ability:GetAbilityDamageType()
-
+    local manareg = math.ceil(caster:GetManaRegen() * ability:GetTalentSpecialValueFor( "mana_reg_dmg"))
+    --print(manareg .. " mana reg")
     local damage_interval = ability:GetSpecialValueFor("damage_interval")
     local hero_total_damage = ability:GetTalentSpecialValueFor( "total_damage")
     local creep_total_damage = ability:GetTalentSpecialValueFor( "creep_total_damage")
     local damage = 0
     if target:IsHero() then
-        damage = hero_total_damage * damage_interval
+        damage = (hero_total_damage + manareg) * damage_interval 
     else
-        damage = creep_total_damage * damage_interval
+        damage = (creep_total_damage + manareg) * damage_interval
     end
 
     local damageTable =
@@ -91,14 +91,15 @@ modifier_mjz_crystal_maiden_frostbite = class({})
 local modifier_frostbite = modifier_mjz_crystal_maiden_frostbite
 
 function modifier_frostbite:IsHidden() return false end
-function modifier_frostbite:IsPurgable() return true end
+function modifier_frostbite:IsPurgable() return false end
 function modifier_frostbite:IsDebuff() return true end
-
+function modifier_frostbite:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_frostbite:CheckState()
     local state = {
         -- [MODIFIER_STATE_STUNNED] = true,
         [MODIFIER_STATE_ROOTED] = true,
         [MODIFIER_STATE_FROZEN] = true,
+        --[MODIFIER_STATE_DISARMED] = true,
         [MODIFIER_STATE_INVISIBLE] = false,
     }
     return state
@@ -137,5 +138,38 @@ if IsServer() then
             self.ability:ApplyDamageToEnemy(self.target)
         end
     end
+    function modifier_frostbite:OnDestroy()
+        local caster = self:GetCaster()
+        local parent = self:GetParent()
+        local ability = self:GetAbility()
+        local bonus = ability:GetSpecialValueFor("bonus")
+        if caster:HasScepter() and parent:IsAlive() and caster:IsAlive() then
+            caster:PerformAttack(parent, true, true, true, true, true, false, true)
+            if HasSuperScepter(caster) then
+                caster:ModifyIntellect(bonus)
+                caster:ModifyStrength(bonus)
+                if caster:HasModifier("modifier_mjz_crystal_maiden_frostbite_bonus_int") then
+                    local modifier = caster:FindModifierByName("modifier_mjz_crystal_maiden_frostbite_bonus_int")
+                    modifier:SetStackCount(modifier:GetStackCount() + bonus)
+                else
+                    caster:AddNewModifier(caster, ability, "modifier_mjz_crystal_maiden_frostbite_bonus_int", {})
+                    caster:FindModifierByName("modifier_mjz_crystal_maiden_frostbite_bonus_int"):SetStackCount(bonus)
+                end
+            end
+        end
+    end
 end
 
+if modifier_mjz_crystal_maiden_frostbite_bonus_int == nil then modifier_mjz_crystal_maiden_frostbite_bonus_int = class({}) end
+local modifier_frostbine_int = modifier_mjz_crystal_maiden_frostbite_bonus_int
+
+function modifier_frostbine_int:IsHidden() return false end
+function modifier_frostbine_int:IsPurgable() return false end
+function modifier_frostbine_int:IsDebuff() return false end
+function modifier_frostbine_int:RemoveOnDeath() return false end
+function modifier_frostbine_int:DeclareFunctions()
+	return {MODIFIER_PROPERTY_TOOLTIP}
+end
+function modifier_frostbine_int:OnTooltip()
+	return self:GetStackCount()
+end

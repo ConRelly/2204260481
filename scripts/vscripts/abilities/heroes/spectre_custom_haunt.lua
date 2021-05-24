@@ -103,7 +103,6 @@ function CheckScepter (keys)
 			caster.haunting = false
 		end
 	})
-
 end
 
 function LevelUpReality (keys)

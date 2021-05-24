@@ -57,7 +57,7 @@ end
 
 function mjz_lina_laguna_blade:GetDamageType()
     if self:GetCaster():HasScepter() then
-        return DAMAGE_TYPE_PURE
+        return DAMAGE_TYPE_MAGICAL
     end
     return DAMAGE_TYPE_MAGICAL
 end
@@ -96,12 +96,13 @@ if IsServer() then
         local ability = self
      
         self.stack_modifier_name = "modifier_mjz_lina_laguna_blade_bonus"
-
+         
         local base_damage = self:GetSpecialValueFor(value_if_scepter(caster, "damage_scepter", "damage"))
-        local damage_per_kill = self:GetSpecialValueFor("damage_per_kill")
-
+        local base_int_damage = caster:GetIntellect() * base_damage
+       -- local damage_int_per_kill = self:GetSpecialValueFor("intmult_per_kill")
+        local damage_per_kill = caster:GetIntellect() * self:GetSpecialValueFor("intmult_per_kill")
         local kill_count = caster:GetModifierStackCount(self.stack_modifier_name, nil)
-        local damage = base_damage + damage_per_kill * kill_count
+        local damage = base_int_damage + damage_per_kill * kill_count
         return damage
     end
 
@@ -184,7 +185,7 @@ if IsServer() then
         if not target:IsMagicImmune() or caster:HasScepter() then
             local damage_type = DAMAGE_TYPE_MAGICAL
             if caster:HasScepter() then
-                damage_type = DAMAGE_TYPE_PURE
+                damage_type = DAMAGE_TYPE_MAGICAL
             end
 
             ApplyDamage({

@@ -95,7 +95,7 @@ function modifier_item_warriors_seal:OnAttacked(keys)
 	local victim = keys.target
 	if attacker ~= self.parent and self.parent == victim then
 		local damageTaken = keys.damage
-		local new_hp = self.parent:GetHealth() + (damageTaken * self.damage_reduction * self:GetStackCount() * 0.01) 
+		local new_hp = self.parent:GetHealth() - (damageTaken * self.damage_reduction * self:GetStackCount() * 0.01) 
 		if not self.parent:HasModifier("modifier_item_warriors_seal_buff") then
 			self:Destroy()
 			return nil

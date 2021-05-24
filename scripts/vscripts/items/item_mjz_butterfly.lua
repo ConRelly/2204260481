@@ -93,31 +93,35 @@ function modifier_class:GetAttributes()
 end
 
 function modifier_class:DeclareFunctions()
-	local funcs = {
+	return {
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-	}
-	return funcs
+--		MODIFIER_PROPERTY_EVASION_CONSTANT
+		}
 end
-function modifier_class:GetModifierBonusStats_Strength( params )
-	return self:GetAbility():GetSpecialValueFor( "bonus_strength" )
+function modifier_class:GetModifierBonusStats_Strength(params)
+	return self:GetAbility():GetSpecialValueFor("bonus_strength")
 end
-function modifier_class:GetModifierBonusStats_Agility( params )
-	return self:GetAbility():GetSpecialValueFor( "bonus_agility" )
+function modifier_class:GetModifierBonusStats_Agility(params)
+	return self:GetAbility():GetSpecialValueFor("bonus_agility")
 end
-function modifier_class:GetModifierBonusStats_Intellect( params )
-	return self:GetAbility():GetSpecialValueFor( "bonus_intellect" )
+function modifier_class:GetModifierBonusStats_Intellect(params)
+	return self:GetAbility():GetSpecialValueFor("bonus_intellect")
 end
-function modifier_class:GetModifierPreAttack_BonusDamage( params )
-	return self:GetAbility():GetSpecialValueFor( "bonus_damage" )
+function modifier_class:GetModifierPreAttack_BonusDamage(params)
+	return self:GetAbility():GetSpecialValueFor("bonus_damage")
 end
-function modifier_class:GetModifierAttackSpeedBonus_Constant( params )
-    return self:GetAbility():GetSpecialValueFor( "bonus_attack_speed" )
+function modifier_class:GetModifierAttackSpeedBonus_Constant(params)
+    return self:GetAbility():GetSpecialValueFor("bonus_attack_speed")
 end
-
+--[[
+function modifier_class:GetModifierEvasion_Constant()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_evasion") end
+end
+]]
 if IsServer() then
     function modifier_class:OnCreated(table)
         local ability = self:GetAbility()
@@ -145,22 +149,17 @@ if IsServer() then
 end
 
 ----------------------------------------------------------------------------------------
-
 modifier_item_mjz_butterfly_evasion = class({})
 modifier_evasion = modifier_item_mjz_butterfly_evasion
 
 function modifier_evasion:IsHidden() return true end
 function modifier_evasion:IsPurgable() return false end
-
 function modifier_evasion:DeclareFunctions()
-	local funcs = {
-        MODIFIER_PROPERTY_EVASION_CONSTANT,
-	}
-	return funcs
+	return {MODIFIER_PROPERTY_EVASION_CONSTANT}
 end
-function modifier_evasion:GetModifierEvasion_Constant( params )
+function modifier_evasion:GetModifierEvasion_Constant(params)
     if self:GetParent():HasModifier('modifier_item_butterfly') then
         return 0
     end
-	return self:GetAbility():GetSpecialValueFor( "bonus_evasion" )
+	return self:GetAbility():GetSpecialValueFor("bonus_evasion")
 end

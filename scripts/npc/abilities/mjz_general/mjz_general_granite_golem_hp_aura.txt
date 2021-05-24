@@ -17,12 +17,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bonus_hp"			"15"
+				"bonus_hp"			"35"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"1200"
+				"radius"			"2200"
 			}
 		}
 	}

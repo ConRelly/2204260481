@@ -19,7 +19,7 @@ if IsServer() then
 	function ability_class:OnSpellStart( )
 		local ability = self
 		local caster = self:GetCaster()
-		local target = caster	-- self:GetCursorTarget()
+		local target = caster -- self:GetCursorTarget()
 		local duration = GetTalentSpecialValueFor(ability, 'duration')
 		local bonus_stats_pct = GetTalentSpecialValueFor(ability, 'bonus_stats_pct')
 
@@ -31,7 +31,7 @@ if IsServer() then
 
 		local strCount = target:GetStrength() * (bonus_stats_pct / 100.0)
 		local agiCount = target:GetAgility() * (bonus_stats_pct / 100.0)
-		local intCount = target:GetIntellect() * (bonus_stats_pct / 100.0)
+		local intCount = target:GetIntellect() * (bonus_stats_pct / 300.0)
 
 	
 		self:_AddModifier(modifier_name, duration)
@@ -111,7 +111,19 @@ if IsServer() then
 
 end
 
+--[[function mjz_morphling_replicate:CastFilterResultTarget(target)
+    if target == self:GetCaster() then
+        return UF_FAIL_CUSTOM
+    else
+        return UnitFilter(target, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS, self:GetCaster():GetTeamNumber())
+    end
+end
 
+function mjz_morphling_replicate:GetCustomCastErrorTarget(target)
+    if target == self:GetCaster() then
+        return "#dota_hud_error_cant_cast_on_self"
+    end
+end]]
 
 ---------------------------------------------------------------------------------------
 

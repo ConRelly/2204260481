@@ -22,6 +22,7 @@ function item_custom_stat_change:OnSpellStart()
 	self.modifier = caster:AddNewModifier(caster, self, "modifier_item_stat_change", {
 			attribute = temp})
 	
+	self:SpendCharge()		
 end
 
 item_custom_stat_change_str = class(item_custom_stat_change)

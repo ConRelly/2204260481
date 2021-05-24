@@ -173,8 +173,16 @@ function modifier_aura:DeclareFunctions()
     }
 end
 function modifier_aura:GetModifierPhysicalArmorBonus()
-    return self:GetAbility():GetSpecialValueFor( "aura_armor" )
+    local ability = self:GetAbility()
+    if ability then
+        return self:GetAbility():GetSpecialValueFor( "aura_armor" )
+    end
+    return 5    
 end
 function modifier_aura:GetModifierConstantHealthRegen()
-    return self:GetAbility():GetSpecialValueFor( "aura_health_regen" )
+    local ability = self:GetAbility()
+    if ability then    
+        return self:GetAbility():GetSpecialValueFor( "aura_health_regen" )
+    end
+    return 100
 end

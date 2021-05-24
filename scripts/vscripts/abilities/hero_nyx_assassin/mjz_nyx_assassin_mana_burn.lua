@@ -33,7 +33,7 @@ if IsServer() then
 		local radius_scepter = ability:GetSpecialValueFor('radius_scepter')
 
 		EmitSoundOn('Hero_NyxAssassin.ManaBurn.Cast', caster)
-
+        EmitSoundOn('Hero_NyxAssassin.ManaBurn.Target', caster)
 		local target_list = {}
 
 		if caster:HasScepter() then
@@ -108,7 +108,7 @@ if IsServer() then
 		ParticleManager:SetParticleControl( self.numberIndex, 2, Vector( life_time, digits, 0 ) )
 		self.burnIndex = ParticleManager:CreateParticle( burn_particle_name, PATTACH_ABSORIGIN, target )
 
-		EmitSoundOn('Hero_NyxAssassin.ManaBurn.Target', target)
+		--EmitSoundOn('Hero_NyxAssassin.ManaBurn.Target', target)
 
 		self:StartIntervalThink(life_time)
 	end

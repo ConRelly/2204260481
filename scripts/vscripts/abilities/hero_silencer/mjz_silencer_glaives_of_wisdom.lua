@@ -7,7 +7,7 @@ local ability_class = mjz_silencer_glaives_of_wisdom
 
 function ability_class:IsRefreshable() return true end
 function ability_class:IsStealable() return false end	-- 是否可以被法术偷取。
-
+function ability_class:AllowIllusionDuplicate() return true end
 function ability_class:GetAbilityTextureName(brokenAPI)
 	-- return self.BaseClass.GetAbilityTextureName(self)
 	-- local ABILITY_TEXTURE_BASE = 'mjz_silencer_glaives_of_wisdom'
@@ -41,6 +41,7 @@ function ability_class:OnOrbFire( params )
 end
 
 function ability_class:OnOrbImpact( params )
+	if not IsServer() then return nil end
 	local ability = self
 	local caster = self:GetCaster()
 	local target = params.target
@@ -55,6 +56,9 @@ function ability_class:OnOrbImpact( params )
 		local crit_multiplier = ability:GetSpecialValueFor('crit_multiplier_scepter')
 		
 		if RollPercentage(crit_chance) then
+			if HasSuperScepter(caster) then
+				crit_multiplier = ability:GetSpecialValueFor('crit_multiplier_super_scepter')
+			end
 			damage = damage * (crit_multiplier / 100.0)
 
 			create_popup({
@@ -187,4 +191,13 @@ function GetTalentSpecialValueFor(ability, value)
         if talent and talent:GetLevel() > 0 then base = base + talent:GetSpecialValueFor("value") end
     end
     return base
+end
+
+
+function HasSuperScepter(npc)
+    local modifier_super_scepter = "modifier_item_imba_ultimate_scepter_synth_stats"
+    if npc:HasModifier(modifier_super_scepter) and npc:FindModifierByName(modifier_super_scepter):GetStackCount() > 2 then
+		return true 
+	end	  
+    return false
 end

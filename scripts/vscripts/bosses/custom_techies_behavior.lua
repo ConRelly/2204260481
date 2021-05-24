@@ -27,8 +27,9 @@ end
 
 
 
-if IsServer() then
-	function modifier_custom_techies_behavior:OnCreated()
+
+function modifier_custom_techies_behavior:OnCreated()
+	if IsServer() then
 		self.parent = self:GetParent()
 		self.team = self.parent:GetTeam()
 		self.ability = self:GetAbility()
@@ -46,12 +47,13 @@ if IsServer() then
 		Timers:CreateTimer({
 			endTime = randomTime, 
 			callback = function()
-			  self:StartIntervalThink(self.interval)
+			self:StartIntervalThink(self.interval)
 			end
 		})
-		
 	end
-	function modifier_custom_techies_behavior:OnIntervalThink()
+end
+function modifier_custom_techies_behavior:OnIntervalThink()
+	if IsServer() then
 		local hero = FindUnitsInRadius(self.team, self.parent:GetAbsOrigin(), nil, 1200, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, FIND_CLOSEST, false)
 		for k, unit in pairs(hero) do
 			local location = unit:GetAbsOrigin() + (self.randomRadius + RandomInt(-100, 100))*RotateVector2D(unit:GetForwardVector(), math.rad(RandomInt(0, 360)))
@@ -59,8 +61,9 @@ if IsServer() then
 
 			break
 		end
-	end
+	end	
 end
+
 
 function RotateVector2D(v,theta)
     local xp = v.x*math.cos(theta)-v.y*math.sin(theta)

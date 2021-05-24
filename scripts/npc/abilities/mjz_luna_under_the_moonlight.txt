@@ -27,7 +27,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"beam_damage"			"75 150 225 300"
+				"beam_damage"			"175 350 625 1600"
 				"LinkedSpecialBonus"	"special_bonus_unique_luna_1"
 			}
 		}

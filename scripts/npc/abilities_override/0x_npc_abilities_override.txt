@@ -18,7 +18,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"75"
+				"value"				"750"
 			}
 		}
 	}
@@ -34,12 +34,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"incoming_damage"			"250"
+				"incoming_damage"			"150"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_duration"			"7"
+				"illusion_duration"			"15"
 			}
 		}
 	}
@@ -50,7 +50,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"400"
+				"value"				"1800"
 			}
 		}
 	}
@@ -116,7 +116,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"300"
+				"value"				"1300"
 			}
 		}
 	}
@@ -259,7 +259,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"35"
+				"value"				"205"
 			}
 		}
 	}
@@ -1028,7 +1028,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"35"
+				"value"				"350"
 			}
 		}
 	}

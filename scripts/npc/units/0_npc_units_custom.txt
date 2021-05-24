@@ -520,7 +520,7 @@
 }
 "npc_boss_undying"
 {
-    "Model"                                 "models/heroes/undying/undying.mdl"
+    "Model"                                 "models/heroes/undying/undying.vmdl"
 	"BaseClass"                             "npc_dota_creature"
 	"vscripts"					"bosses/attack_move.lua"
     "SoundSet"                              "Hero_Undying"
@@ -1060,7 +1060,7 @@
 
 "npc_boss_witch_doctor"
 {
-    "Model"                                 "models/heroes/witchdoctor/witchdoctor.mdl"
+    "Model"                                 "models/heroes/witchdoctor/witchdoctor.vmdl"
     "BaseClass"                             "npc_dota_creature"
 	"vscripts"					"bosses/attack_move.lua"
     "SoundSet"                              "Hero_WitchDoctor"
@@ -3187,7 +3187,7 @@
 //=================================================================================
 "npc_boss_doom"
 {
-    "Model"						"models/heroes/doom/doom.mdl"
+    "Model"						"models/heroes/doom/doom.vmdl"
     "BaseClass"					"npc_dota_creature"
 	"vscripts"					"bosses/attack_move.lua"
     "SoundSet"					"Hero_WarlockGolem"

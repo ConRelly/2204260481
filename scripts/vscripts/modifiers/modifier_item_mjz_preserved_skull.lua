@@ -33,7 +33,9 @@ end
 function modifier_item_mjz_preserved_skull:GetAuraSearchType()
 	return DOTA_UNIT_TARGET_ALL
 end
-
+function modifier_item_mjz_preserved_skull:GetAuraSearchFlags()
+	return DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD
+end
 
 function modifier_item_mjz_preserved_skull:GetAuraRadius()
 	return self.radius
@@ -46,13 +48,13 @@ function modifier_item_mjz_preserved_skull:OnCreated( kv )
 	self.bonus_intelligence = self:GetAbility():GetSpecialValueFor( "bonus_intelligence" )
 	
 	-- "particles/new_custom/items/item_preserved_skull/item_preserved_skull_caster.vpcf"
-	local p = "particles/items/item_mjz_preserved_skull/item_mjz_preserved_skull_caster.vpcf"
-	self.FX = ParticleManager:CreateParticle( p, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+	--local p = "particles/items/item_mjz_preserved_skull/item_mjz_preserved_skull_caster.vpcf"
+	--self.FX = ParticleManager:CreateParticle( p, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 end
 
 
 function modifier_item_mjz_preserved_skull:OnDestroy( kv )
-	ParticleManager:DestroyParticle( self.FX, false )
+	--ParticleManager:DestroyParticle( self.FX, false )
 end
 
 

@@ -1,39 +1,20 @@
 require("lib/my")
 require("lib/popup")
 
-
-
 item_arcane_staff = class({})
-
-
-function item_arcane_staff:GetIntrinsicModifierName()
-    return "modifier_item_arcane_staff"
-end
-
-
+function item_arcane_staff:GetIntrinsicModifierName() return "modifier_item_arcane_staff" end
 
 LinkLuaModifier("modifier_item_arcane_staff", "items/arcane_staff.lua", LUA_MODIFIER_MOTION_NONE)
 
 modifier_item_arcane_staff = class({})
-
-
-function modifier_item_arcane_staff:IsHidden()
-    return true
-end
-function modifier_item_arcane_staff:IsPurgable()
-	return false
-end
-
-function modifier_item_arcane_staff:GetAttributes()
-    return MODIFIER_ATTRIBUTE_MULTIPLE
-end
-
-
+function modifier_item_arcane_staff:IsHidden() return false end
+function modifier_item_arcane_staff:IsPurgable() return false end
+function modifier_item_arcane_staff:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+function modifier_item_arcane_staff:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT end
+function modifier_item_arcane_staff:IsDebuff() return false end	
+function modifier_item_arcane_staff:GetTexture() return "arcane_staff" end	
 function modifier_item_arcane_staff:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-    }
+    return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS}
 end
 if IsServer() then
 	function modifier_item_arcane_staff:OnCreated()
@@ -51,27 +32,17 @@ if IsServer() then
 		end
 	end 
 end
-function modifier_item_arcane_staff:GetModifierPreAttack_BonusDamage()
-    return self:GetAbility():GetSpecialValueFor("damage")
-end
-
-
-function modifier_item_arcane_staff:GetModifierBonusStats_Intellect()
-    return self:GetAbility():GetSpecialValueFor("bonus_int")
-end
+function modifier_item_arcane_staff:GetModifierPreAttack_BonusDamage() return 60 end
+function modifier_item_arcane_staff:GetModifierBonusStats_Intellect() return 80 end
 
 
 -- this will run multiple times every second, keep it optimized.
 function arcane_staff_calculate_crit(attacker, victim, damageTable)
 	if attacker and attacker:IsHero() then
 		local mana = attacker:GetMana()
-		local damage_mult =  2.3
+		local damage_mult = 1.8
 
-		if attacker:HasModifier("modifier_mjz_zero_mana_alone") then
-			damage_mult = 1.3
-		end
-
-		local mana_cost =  damageTable.damage * 0.5 * (150 / (150 + attacker:GetIntellect()))	
+		local mana_cost =  damageTable.damage * 0.8 * (150 / (150 + attacker:GetIntellect()))	
 		if mana >= mana_cost and mana >= 150 then
 			if victim and victim ~= attacker and victim:GetTeamNumber() ~= attacker:GetTeamNumber() then
 				damageTable.damage = damageTable.damage * damage_mult

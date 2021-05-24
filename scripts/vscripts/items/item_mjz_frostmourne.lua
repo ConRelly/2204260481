@@ -19,31 +19,45 @@ end
 
 function FrostmourneAttack(event)
     if IsServer() then
+        local ability = event.ability
+        local caster = event.caster
+        if not caster:IsIllusion() and ability:IsCooldownReady() then
+            HealthAttack(event)
+        end    
         -- body
     end
 end
 
-function HealthAttack( event )
+function HealthAttack(event)
     --Deal 5% of the target's current health in physical damage
     --造成目标当前生命值5%的物理伤害
-    local health_damage_pct = event.health_damage_pct
-    ApplyDamage({
-                    victim = event.target,
-                    attacker = event.caster,
-                    damage = event.target:GetHealth() * health_damage_pct,
-                    damage_type = DAMAGE_TYPE_PHYSICAL
-                    })
+    local ability = event.ability
+    local caster = event.caster
+    if caster:IsRealHero() and ability:IsCooldownReady() then
+        local health_damage_pct = event.health_damage_pct
+        ApplyDamage({
+            ability = ability,
+            victim = event.target,
+            attacker = event.caster,
+            damage = event.target:GetHealth() * health_damage_pct,
+            damage_type = DAMAGE_TYPE_PHYSICAL
+        })
+        ability:StartCooldown(4)
+        local coil = ParticleManager:CreateParticle("particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+        ParticleManager:SetParticleControl(coil, 0, event.target:GetAbsOrigin())
+        ParticleManager:ReleaseParticleIndex(coil)                      
+    end                   
 end
 
 function HealAndDamageByTargetHP( event )   --FrostmourneRuin
     --take 15% of targets max HP
     local targetHP = event.target:GetMaxHealth() * 0.15
     ApplyDamage({
-                    victim = event.target,
-                    attacker = event.caster,
-                    damage = event.target:GetMaxHealth() * 0.15,
-                    damage_type = DAMAGE_TYPE_PHYSICAL
-                    })
+        victim = event.target,
+        attacker = event.caster,
+        damage = event.target:GetMaxHealth() * 0.15,
+        damage_type = DAMAGE_TYPE_PHYSICAL
+    })
     event.caster:Heal(targetHP, event.caster)
     local coil = ParticleManager:CreateParticle("particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
     ParticleManager:SetParticleControl(coil, 0, event.target:GetAbsOrigin())

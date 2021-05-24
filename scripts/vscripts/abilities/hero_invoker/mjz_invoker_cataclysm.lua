@@ -114,7 +114,26 @@ if IsServer() then
     end
 
 end
+--[[
+function modifier_class:OnInventoryContentsChanged( params )
+	local caster = self:GetCaster()
 
+	-- get data
+	local scepter = caster:HasScepter()
+	local ability = caster:FindAbilityByName( "mjz_invoker_cataclysm" )
+
+	-- if there's no ability, then add it
+	if not ability then 
+		ability = caster:AddAbility( "mjz_invoker_cataclysm" )
+	end
+
+	ability:SetActivated( scepter )
+	ability:SetHidden( not scepter )
+
+	if ability:GetLevel()~=1 then
+		ability:SetLevel( 1 )
+	end
+end]]
 
 
 -----------------------------------------------------------------------------------------

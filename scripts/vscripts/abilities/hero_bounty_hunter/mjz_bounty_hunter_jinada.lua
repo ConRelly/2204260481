@@ -3,9 +3,7 @@ LinkLuaModifier("modifier_mjz_bounty_hunter_jinada", "abilities/hero_bounty_hunt
 mjz_bounty_hunter_jinada = class({})
 local ability_class = mjz_bounty_hunter_jinada
 
-function ability_class:GetIntrinsicModifierName()
-	return "modifier_mjz_bounty_hunter_jinada"
-end
+function ability_class:GetIntrinsicModifierName() return "modifier_mjz_bounty_hunter_jinada" end
 
 function ability_class:GetCooldown(iLevel)
     return self:GetSpecialValueFor("cooldown")
@@ -78,9 +76,15 @@ if IsServer() then
 		local ability = self:GetAbility()
 
 		local bonus_damage = 0
+		local mp_hp = (parent:GetMaxHealth() + parent:GetMaxMana()) * 2
+		local stats = parent:GetAgility() + parent:GetIntellect() + parent:GetStrength()
 		if ability:IsCooldownReady() then
-			bonus_damage = ability:GetSpecialValueFor('bonus_damage')
+			bonus_damage = ability:GetSpecialValueFor('bonus_damage') + (stats * ability:GetSpecialValueFor("stats_mult"))
+			if ability:GetLevel() > 5 then
+				bonus_damage = bonus_damage + mp_hp
+			end	
 		end
+
 		if self:GetStackCount() ~= bonus_damage then
 			self:SetStackCount(bonus_damage)
 		end

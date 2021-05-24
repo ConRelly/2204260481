@@ -62,22 +62,22 @@ function modifier_debuff:CheckState()
 	}
 	return state
 end
+if IsServer() then
+    function modifier_debuff:DeclareFunctions()
+        return {
+            MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+            MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+        }
+    end
 
-function modifier_debuff:DeclareFunctions()
-	return {
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-	}
+    function modifier_debuff:GetModifierMoveSpeedBonus_Percentage()
+        return self:GetAbility():GetSpecialValueFor('slow_movement_speed_pct')
+    end
+
+    function modifier_debuff:GetModifierAttackSpeedBonus_Constant()
+        return self:GetAbility():GetSpecialValueFor('slow_attack_speed')
+    end
 end
-
-function modifier_debuff:GetModifierMoveSpeedBonus_Percentage()
-	return self:GetAbility():GetSpecialValueFor('slow_movement_speed_pct')
-end
-
-function modifier_debuff:GetModifierAttackSpeedBonus_Constant()
-	return self:GetAbility():GetSpecialValueFor('slow_attack_speed')
-end
-
 
 -----------------------------------------------------------------------------------------
 

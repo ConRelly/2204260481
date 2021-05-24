@@ -61,7 +61,7 @@ if IsServer() then
 		-- 360度
 		local point_list_360 = {}
 		for i=1,16 do
-			local point = GetRotationPoint(casterLoc, crack_distance, angle + RandomInt(-15, 15))
+			local point = GetRotationPoint(casterLoc, crack_distance, angle + RandomInt(-5, 10))
 			table.insert( point_list_360, point )
 			angle = angle + (360 / 16)
 		end

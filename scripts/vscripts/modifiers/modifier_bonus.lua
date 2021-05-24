@@ -1,4 +1,4 @@
-
+require("lib/mys")
 
 
 modifier_bonus_primary_controller = class({})
@@ -40,11 +40,12 @@ function modifier_bonus_primary_controller:OnCreated(keys)
 	self.agi = 0
 	self.int = 0
 	self.str = 0
-	self:StartIntervalThink(0.25)
+	self:StartIntervalThink(1.0)
 end
 
 if IsServer() then
 	function modifier_bonus_primary_controller:OnIntervalThink()
+		local parent = self.parent
 		if self:GetStackCount() <= 0 then
 			self:Destroy()
 		end
@@ -62,7 +63,8 @@ if IsServer() then
 			self.agi = 0
 			self.str = 0
 		end
-		self.parent:CalculateStatBonus()
+		self.parent:CalculateStatBonus(false)
+		--RefreshStatS(parent)
 	end
 end
 

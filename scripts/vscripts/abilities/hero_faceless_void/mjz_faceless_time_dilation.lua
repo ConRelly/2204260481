@@ -68,13 +68,19 @@ function modifier_mjz_faceless_time_dilation_slow:DeclareFunctions()
 	}
 	return funcs
 end
+function modifier_mjz_faceless_time_dilation_slow:OnCreated()
+	--if IsServer() then
+	self.mslow = self:GetAbility():GetSpecialValueFor('move_speed_slow')
+	self.aslow = self:GetAbility():GetSpecialValueFor('attack_speed_slow')
+	--end
+end	
 
 function modifier_mjz_faceless_time_dilation_slow:GetModifierMoveSpeedBonus_Percentage( )
-	return self:GetAbility():GetSpecialValueFor('move_speed_slow')
+	return self.mslow
 end
 
 function modifier_mjz_faceless_time_dilation_slow:GetModifierAttackSpeedBonus_Constant( )
-	return self:GetAbility():GetSpecialValueFor('attack_speed_slow')
+	return self.aslow
 end
 
 

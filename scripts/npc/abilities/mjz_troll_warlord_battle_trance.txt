@@ -20,8 +20,8 @@
 		"AbilityCastPoint"				"0.0 0.0 0.0"
 		"AbilityCastRange"				"0"	 //"525"
 
-		"AbilityCooldown"				"86"
-		"AbilityManaCost"				"150"
+		"AbilityCooldown"				"66"
+		"AbilityManaCost"				"50"
 		
 		"AbilitySpecial"
 		{
@@ -33,7 +33,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"lifesteal"			"40 60 80"
+				"lifesteal"			"60 70 80"
 			}
 			"03"
 			{
@@ -48,13 +48,13 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"scepter_cooldown"	"35"
+				"scepter_cooldown"	"15"
 				"RequiresScepter"	"1"
 			}
 			"08"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"scepter_radius"	"2000"
+				"scepter_radius"	"9000"
 				"RequiresScepter"	"1"
 			}
 		}
@@ -79,8 +79,8 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastPoint"				"0.0 0.0 0.0"
-		"AbilityCastRange"				"2000"	 //"525"
+		"AbilityCastRange"				"9000"	 //"525"
 
 		"AbilityCooldown"				"5"
-		"AbilityManaCost"				"150"
+		"AbilityManaCost"				"50"
 	}

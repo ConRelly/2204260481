@@ -13,8 +13,8 @@ end
 -- Configuration
 local MAX_PRISION_RANGE = 1000                      -- 可以被攻击的范围
 local BONUS_DURATION = 120
-local MIN_RESPAWN_TIME = 5                        -- 最短刷新时间
-local MAX_RESPAWN_TIME = 6                        -- 最长刷新时间
+local MIN_RESPAWN_TIME = 1                        -- 最短刷新时间
+local MAX_RESPAWN_TIME = 13                        -- 最长刷新时间
 local ROSHAN_CLASS_NAME = "npc_dota_roshan_mega"    -- Roshan 类名
 local ROSHAN_SPAWNER = "roshan_spawner"             -- 出生定位点
 
@@ -22,7 +22,6 @@ if IsInToolsMode() then
     MIN_RESPAWN_TIME = 1.0
     MAX_RESPAWN_TIME = 1.0
 end
-
 -- Indicates the time Respawn should be done
 CRoshanSystem._flRespawnTime = -1.0
 
@@ -48,9 +47,18 @@ function CRoshanSystem:Init()
     else
         self._inited = true
     end
-
+    self._playernr = 0
+    ListenToGameEvent('player_connect', Dynamic_Wrap(self, 'OnPlayerConnect'), self)    
     print("RoshanSystem: Init...")
-
+    for playerID = 0, 4 do  
+        if PlayerResource:IsValidPlayerID(playerID) then
+            if PlayerResource:HasSelectedHero(playerID) then
+                local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+                self._playernr = self._playernr + 1
+                --Sounds:CreateSound(playerID, "goh.teme")
+            end
+        end 
+    end       
     local hSpawner = Entities:FindByName(nil, ROSHAN_SPAWNER)
     local hRoshan = Entities:FindByClassname(nil, "npc_dota_roshan")
 
@@ -73,6 +81,7 @@ function CRoshanSystem:Init()
 
     -- We create our own Roshan
     self:CreateRoshan()
+   
 end
 
 -- Returns Roshan
@@ -171,7 +180,7 @@ end
 -- Set in how many minutes Respawn should be done
 function CRoshanSystem:SetRespawnTime(flMinutes)
     local flTime = GameRules:GetGameTime()
-    self._flRespawnTime = flTime + (flMinutes * 60)
+    self._flRespawnTime = flTime + (flMinutes * 30)
 
     print('Roshan respawning in: ' .. self._flRespawnTime .. ' - Current time: ' .. flTime)
 end
@@ -179,13 +188,12 @@ end
 -- Create Roshan
 function CRoshanSystem:CreateRoshan()
     local hRoshan = self:GetRoshan()
-
     if ( hRoshan ) then
         print('RoshanSystem: It has been requested to create Roshan but it already exists!')
         UTIL_Remove(hRoshan)
     end
     print("RoshanSystem: CreateRoshan")
-
+    print(self._playernr .. " number of player/s")
     -- No more wait...
     self._flRespawnTime = -1.0
 
@@ -194,25 +202,53 @@ function CRoshanSystem:CreateRoshan()
     hRoshan:SetAngles(self._SpawnAngles.x, self._SpawnAngles.y, self._SpawnAngles.z)
 
     -- Items
-    hRoshan:AddItemByName('item_aegis')         -- 复活盾
-
+    if ( self._iNum >= 0 ) then
+        if ( self._iNum <= 13 ) then 
+            hRoshan:AddItemByName('item_chest_2') 
+        end       
+    end    
     -- Second kill
     if ( self._iNum >= 2 ) then
-        hRoshan:AddItemByName('item_cheese')
-        hRoshan:AddNewModifier(hRoshan, nil, 'modifier_roshan_bonus', nil)
-    end
+        hRoshan:SetDeathXP(700 + (self._iNum * 1000))
+        if ( self._iNum <= 9 ) then
+            hRoshan:AddItemByName('item_cheese')     
+        end
+    end    
 
     if ( self._iNum >= 3 ) then
-        hRoshan:AddItemByName('item_refresher_shard')        -- 刷新碎片 
+        local random_nr = math.random(0,100)
+        local chance = 18
+        if self._playernr == 2 then
+            chance = 25
+        end
+        if self._playernr == 3 then
+            chance = 35
+        end
+        if self._playernr > 3 then
+            chance = 40
+        end                    
+        if random_nr < chance then
+            print(random_nr .. " luky nr")
+            hRoshan:AddItemByName('item_imba_ultimate_scepter_synth2')       
+        end    
     end
 
-    if ( self._iNum >= 4 ) then
-        hRoshan:AddItemByName('item_ultimate_scepter_2')        -- 神杖
-    end
+    --if ( self._iNum >= 4 ) then
+    --    hRoshan:AddItemByName('item_ultimate_scepter_2')        -- 神杖
+    --end
 
     if ( self._iNum >= 5 ) then
-        hRoshan:AddItemByName('item_moon_shard')        -- 银月
+        hRoshan:AddItemByName('item_moon_shard')       -- 银月
+        --hRoshan:AddNewModifier(hRoshan, nil, 'modifier_roshan_bonus', nil)
     end
+
+    if ( self._iNum >= 10 ) then      
+        hRoshan:AddItemByName('item_aegis_lua')
+    end
+    if ( self._iNum >= 9 ) then      
+        hRoshan:AddItemByName('item_moon_shard')
+    end    
+    
 
     self._roshan_instance = hRoshan
 

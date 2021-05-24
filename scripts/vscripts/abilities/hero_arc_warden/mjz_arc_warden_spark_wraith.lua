@@ -25,7 +25,12 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local ability = self
 		local spark_damage = GetTalentSpecialValueFor(ability, "spark_damage")
-		
+		if caster:IsRealHero() then
+			local multipl = GetTalentSpecialValueFor(ability, "spark_bonus")
+			local stats = caster:GetAgility() + caster:GetIntellect()
+			local bonus_dmg = stats * multipl
+			spark_damage = spark_damage + bonus_dmg
+		end	
         if target and not caster:IsIllusion() then
             ApplyDamage({
 					attacker = caster,
@@ -96,13 +101,16 @@ if IsServer() then
 	
 		if attacker == self:GetParent() then
 			local proc_chance = GetTalentSpecialValueFor(ability, "proc_chance")
-			local isTarget = UnitFilter(target, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC+DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, attacker:GetTeamNumber()) == UF_SUCCESS
-			if isTarget then
-				if RollPercentage(proc_chance) then
-					self:_LaunchSpark(target)
-					self:_Update_BonusDamage()
-				end
+			if not attacker:IsRealHero() then
+				proc_chance = 5
+			end	
+			--local isTarget = UnitFilter(target, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC+DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, attacker:GetTeamNumber()) == UF_SUCCESS
+			--if isTarget then
+			if RollPercentage(proc_chance) then
+				self:_LaunchSpark(target)
+				self:_Update_BonusDamage()
 			end
+			--end
 		end
 	end
 	
@@ -113,9 +121,9 @@ if IsServer() then
 		local distance = CalcDistanceBetweenEntityOBB(target, attacker)
 		local iMoveSpeed = wraith_speed -- distance * 5
 		
-		if ability:GetAutoCastState() or ability:GetToggleState() then
-			EmitSoundOn("Hero_ArcWarden.SparkWraith.Appear", attacker)
-		end
+		--if ability:GetAutoCastState() or ability:GetToggleState() then
+		--	EmitSoundOn("Hero_ArcWarden.SparkWraith.Appear", attacker)
+		--end
 		
         ProjectileManager:CreateTrackingProjectile({
             Ability = ability,

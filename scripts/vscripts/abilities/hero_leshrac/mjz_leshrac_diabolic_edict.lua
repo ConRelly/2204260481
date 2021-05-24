@@ -28,11 +28,11 @@ function ability_class:CalcDamage()
     local radius = ability:GetAOERadius()
 
     local base_damage = GetTalentSpecialValueFor(ability, "damage")
-    -- local damage_intelligence_per = GetTalentSpecialValueFor(ability, "damage_intelligence_per")
+    local damage_stats = GetTalentSpecialValueFor(ability, "damage_stats")
     local damage = base_damage
-    -- if caster:IsRealHero() then
-    --     damage = base_damage + caster:GetIntellect() * (damage_intelligence_per / 100)
-    -- end
+    if caster:IsRealHero() then
+        damage = base_damage + ((caster:GetIntellect() + caster:GetStrength() + caster:GetAgility()) * (damage_stats / 100))
+    end
     return damage
 end
 
@@ -129,6 +129,7 @@ if IsServer() then
             victim = enemy,
             damage = damage,
             damage_type = ability:GetAbilityDamageType(),
+            damage_flags = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR,
             ability = ability
         }
         ApplyDamage(damageTable)

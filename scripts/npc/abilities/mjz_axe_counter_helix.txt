@@ -19,7 +19,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"275"
+				"radius"					"475"
 			}
 			"02"
 			{
@@ -39,7 +39,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"strength_per"				"100"
+				"strength_per"				"500"
 			}
 		}
 

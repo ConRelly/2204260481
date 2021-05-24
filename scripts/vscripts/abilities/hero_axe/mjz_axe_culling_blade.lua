@@ -1,42 +1,30 @@
-
-local THIS_LUA = "abilities/hero_axe/mjz_axe_culling_blade.lua"
-
-LinkLuaModifier("modifier_mjz_axe_culling_blade_checker",THIS_LUA, LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_mjz_axe_culling_blade_boost",THIS_LUA, LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_axe_culling_blade_checker","abilities/hero_axe/mjz_axe_culling_blade.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_axe_culling_blade_boost","abilities/hero_axe/mjz_axe_culling_blade.lua", LUA_MODIFIER_MOTION_NONE)
 
 
 mjz_axe_culling_blade = class({})
-local ability_class = mjz_axe_culling_blade
-
-function ability_class:GetBehavior()
+function mjz_axe_culling_blade:GetBehavior()
 	if self:GetCaster():HasScepter() then
 		return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_AOE
 	end
 	return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET
 end
-
-function ability_class:GetAOERadius()
+function mjz_axe_culling_blade:GetAOERadius()
 	if self:GetCaster():HasScepter() then
 		return self:GetSpecialValueFor('splash_radius_scepter')
 	end
 	return self:GetSpecialValueFor('cast_range')
 end
-function ability_class:GetCastRange(vLocation, hTarget)
-	return self:GetSpecialValueFor('cast_range')
-end
-
-
+function mjz_axe_culling_blade:GetCastRange(vLocation, hTarget) return self:GetSpecialValueFor('cast_range') end
 if IsServer() then
-	function ability_class:OnSpellStart()
+	function mjz_axe_culling_blade:OnSpellStart()
 		local caster = self:GetCaster()
 		local ability = self
 		local target = self:GetCursorTarget()
 		local base_damage = ability:GetSpecialValueFor("base_damage")
 		local str_damage_multiplier = ability:GetSpecialValueFor("str_damage_multiplier")
 		local splash_radius_scepter = ability:GetSpecialValueFor("splash_radius_scepter")
-
 		local damage = base_damage + caster:GetStrength() * str_damage_multiplier
-	
 		local damage_table = {
 			attacker = caster,
 			victim = target,
@@ -44,11 +32,9 @@ if IsServer() then
 			damage = damage,
 			damage_type = ability:GetAbilityDamageType(),
 		}
-
 		target:AddNewModifier(caster, ability, 'modifier_mjz_axe_culling_blade_checker', {})
 		ApplyDamage(damage_table)
 		self:PlayEffect(target)
-
 		if caster:HasScepter() then
 			local enemy_list = FindTargetEnemy(caster, target:GetAbsOrigin(), splash_radius_scepter)
 			for _,enemy in pairs(enemy_list) do
@@ -59,34 +45,32 @@ if IsServer() then
 				end
 			end
 		end
-
 		target:RemoveModifierByName('modifier_mjz_axe_culling_blade_checker')
 	end
-
-	function ability_class:OnCullingBladeSuccess(target)
+	function mjz_axe_culling_blade:OnCullingBladeSuccess(target)
 		local caster = self:GetCaster()
 		local ability = self
 		local speed_radius = ability:GetSpecialValueFor("speed_radius")
 		local speed_duration = ability:GetSpecialValueFor("speed_duration")
 		local sound_success = "Hero_Axe.Culling_Blade_Success"
-		local modifier_boost_name = 'modifier_mjz_axe_culling_blade_boost'
+		local modifier_mjz_axe_culling_blade_boost_name = 'modifier_mjz_axe_culling_blade_boost'
 
 		EmitSoundOn(sound_success, caster)
 
 		local unit_list = FindTargetFriendly(caster, target:GetAbsOrigin(), speed_radius)
 		for _,unit in pairs(unit_list) do
-			unit:AddNewModifier(caster, ability, modifier_boost_name, {duration = speed_duration})
+			unit:AddNewModifier(caster, ability, modifier_mjz_axe_culling_blade_boost_name, {duration = speed_duration})
 		end
 	end
 
-	function ability_class:OnCullingBladeFail(target)
+	function mjz_axe_culling_blade:OnCullingBladeFail(target)
 		local caster = self:GetCaster()
 		local ability = self
 		local sound_fail = "Hero_Axe.Culling_Blade_Fail"
 		EmitSoundOn(sound_fail, caster)
 	end
 
-	function ability_class:PlayEffect(target )
+	function mjz_axe_culling_blade:PlayEffect(target )
 		local caster = self:GetCaster()
 		local ability = self
 
@@ -98,36 +82,22 @@ if IsServer() then
 end
 
 -----------------------------------------------------------------------------------------
-
 modifier_mjz_axe_culling_blade_checker = class({})
-local modifier_checker = modifier_mjz_axe_culling_blade_checker
-
-function modifier_checker:IsHidden() return true end
-function modifier_checker:IsPurgable() return false end
-function modifier_checker:IsDebuff() return false end
-function modifier_checker:IsBuff() return false end
-
-
+function modifier_mjz_axe_culling_blade_checker:IsHidden() return true end
+function modifier_mjz_axe_culling_blade_checker:IsPurgable() return false end
+function modifier_mjz_axe_culling_blade_checker:IsDebuff() return false end
+function modifier_mjz_axe_culling_blade_checker:IsBuff() return false end
 if IsServer() then
-	function modifier_checker:DeclareFunctions()
-		return {
-			MODIFIER_EVENT_ON_DEATH,
-		}
-	end
-
-	function modifier_checker:OnDeath( )
+	function modifier_mjz_axe_culling_blade_checker:DeclareFunctions() return {MODIFIER_EVENT_ON_DEATH} end
+	function modifier_mjz_axe_culling_blade_checker:OnDeath()
 		local ability = self:GetAbility()
 		local target = self:GetParent()
 		self.success = true
 		ability:OnCullingBladeSuccess(target)
 		self:Destroy()
 	end
-
-	function modifier_checker:OnCreated(table)
-		self.success = false
-	end
-	
-	function modifier_checker:OnDestroy()
+	function modifier_mjz_axe_culling_blade_checker:OnCreated(table) self.success = false end
+	function modifier_mjz_axe_culling_blade_checker:OnDestroy()
 		local ability = self:GetAbility()
 		local target = self:GetParent()
 		if self.success == false then
@@ -135,39 +105,28 @@ if IsServer() then
 		end
 	end
 end
+
 -----------------------------------------------------------------------------------------
-
 modifier_mjz_axe_culling_blade_boost = class({})
-local modifier_boost = modifier_mjz_axe_culling_blade_boost
+function modifier_mjz_axe_culling_blade_boost:IsHidden() return false end
+function modifier_mjz_axe_culling_blade_boost:IsPurgable() return true end
+function modifier_mjz_axe_culling_blade_boost:IsBuff() return true end
 
-function modifier_boost:IsHidden() return false end
-function modifier_boost:IsPurgable() return true end
-function modifier_boost:IsBuff() return true end
+function modifier_mjz_axe_culling_blade_boost:GetEffectName() return "particles/units/heroes/hero_axe/axe_cullingblade_sprint.vpcf" end
+function modifier_mjz_axe_culling_blade_boost:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 
-function modifier_boost:GetEffectName()
-	return "particles/units/heroes/hero_axe/axe_cullingblade_sprint.vpcf"
+function modifier_mjz_axe_culling_blade_boost:DeclareFunctions()
+	return { MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE}
 end
-function modifier_boost:GetEffectAttachType()
-	return PATTACH_ABSORIGIN_FOLLOW
-end
-
-function modifier_boost:DeclareFunctions()
-	return {
-		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-	}
-end
-
-function modifier_boost:GetModifierAttackSpeedBonus_Constant(  )
+function modifier_mjz_axe_culling_blade_boost:GetModifierAttackSpeedBonus_Constant()
 	return self:GetAbility():GetSpecialValueFor('attack_speed_bonus')
 end
 
-function modifier_boost:GetModifierMoveSpeedBonus_Percentage(  )
+function modifier_mjz_axe_culling_blade_boost:GetModifierMoveSpeedBonus_Percentage()
 	return self:GetAbility():GetSpecialValueFor('move_speed_bonus')
 end
-
 if IsServer() then
-	function modifier_boost:OnCreated(table)
+	function modifier_mjz_axe_culling_blade_boost:OnCreated(table)
 		local parent = self:GetParent()
 		local p_name = "particles/units/heroes/hero_axe/axe_culling_blade_boost.vpcf"
 		local p_boost = ParticleManager:CreateParticle(p_name, PATTACH_CUSTOMORIGIN, parent)

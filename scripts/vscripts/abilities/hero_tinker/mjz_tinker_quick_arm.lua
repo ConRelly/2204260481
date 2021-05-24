@@ -7,6 +7,7 @@ mjz_tinker_quick_arm._exclude_abilities = {
 }
 
 mjz_tinker_quick_arm._exclude_items = {
+	item_god_slayer = true,
 
 }
 

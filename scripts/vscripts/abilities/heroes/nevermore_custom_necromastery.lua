@@ -47,8 +47,27 @@ if IsServer() then
 		self.release = self.ability:GetSpecialValueFor("necromastery_soul_release")
 		self.talent_ratio = 0
 		self.damage_per_soul = self.ability:GetSpecialValueFor("necromastery_damage_per_soul")
-		self:SetStackCount(1)
-		self.modifier = self.parent:AddNewModifier(self.parent, self.ability, "modifier_nevermore_custom_necromastery_buff", {})
+		--if self.parent:IsRealHero() then
+		local caster = self:GetCaster()
+		local parent = self:GetParent()
+		self:SetStackCount(1)	
+		if parent:IsIllusion() then
+			local mod1 = "modifier_nevermore_custom_necromastery"
+			print("ilusion SF")
+			local owner = PlayerResource:GetSelectedHeroEntity(parent:GetPlayerOwnerID())
+			if owner then       
+				if parent:HasModifier(mod1) then
+					local modifier1 = parent:FindModifierByName(mod1)
+					local modifier2 = owner:FindModifierByName(mod1)
+					modifier1:SetStackCount(modifier2:GetStackCount())
+					print("illusion nevermore1")
+				end    
+			end    
+		end
+		self.modifier = self.parent:AddNewModifier(caster, self.ability, "modifier_nevermore_custom_necromastery_buff", {})
+		--else
+
+		--end					
 		if self.parent:HasScepter() then
 			self.max_souls = self.ability:GetSpecialValueFor("necromastery_max_souls_scepter")
 		else 
@@ -56,8 +75,7 @@ if IsServer() then
 		end
 		local think_interval = 3
 		self:StartIntervalThink(think_interval)
-	end
-
+	end   
 	function modifier_nevermore_custom_necromastery:OnDestroy()
 		self.modifier:Destroy()
     end
@@ -67,6 +85,7 @@ if IsServer() then
 		else 
 			self.max_souls = self.ability:GetSpecialValueFor("necromastery_max_souls")
 		end
+		self.damage_per_soul = self.ability:GetSpecialValueFor("necromastery_damage_per_soul")
 		if self.hasTalent then
 			self.damage_per_soul = self.ability:GetSpecialValueFor("necromastery_damage_per_soul") + self.talent_ratio
 		end
@@ -74,6 +93,7 @@ if IsServer() then
 	
 	function modifier_nevermore_custom_necromastery:OnIntervalThink()
 		local talent = self.parent:FindAbilityByName("special_bonus_unique_nevermore_1")
+		
 		if talent and talent:GetLevel() > 0 then
 			self.hasTalent = true
 			self.talent_ratio = talent:GetSpecialValueFor("value")
@@ -107,7 +127,8 @@ if IsServer() then
 	end
 	function modifier_nevermore_custom_necromastery:OnDeath(keys)
 		if keys.unit == self.parent then
-			local new_stack_count = math.ceil(self:GetStackCount() * self.release)
+			local release = self:GetAbility():GetSpecialValueFor("necromastery_soul_release")
+			local new_stack_count = math.ceil(self:GetStackCount() * release)
 			self:SetStackCount(new_stack_count)
 			if self.parent:HasAbility("nevermore_custom_requiem") then
 				local requiem = self.parent:FindAbilityByName("nevermore_custom_requiem")
@@ -140,12 +161,46 @@ end
 function modifier_nevermore_custom_necromastery_buff:RemoveOnDeath()
 	return false
 end
+
+function modifier_nevermore_custom_necromastery_buff:OnCreated()
+	if IsServer() then
+		local caster = self:GetCaster()
+		local parent = self:GetParent()
+		local ability = self:GetAbility()
+		if parent:IsIllusion() then
+			
+			local mod1 = "modifier_nevermore_custom_necromastery_buff"
+		-- print("ilusion")
+			local owner = PlayerResource:GetSelectedHeroEntity(parent:GetPlayerOwnerID())
+			if owner then       
+				if parent:HasModifier(mod1) then
+					local modifier1 = parent:FindModifierByName(mod1)
+					local modifier2 = owner:FindModifierByName(mod1)
+					modifier1:SetStackCount(modifier2:GetStackCount())
+					--print("illusion nevermore2")
+				end    
+			end    
+		end
+		
+	end	
+end	
+
 function modifier_nevermore_custom_necromastery_buff:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
 	}
 end
 
 function modifier_nevermore_custom_necromastery_buff:GetModifierPreAttack_BonusDamage()
 	return self:GetStackCount()
 end
+function modifier_nevermore_custom_necromastery_buff:GetModifierSpellAmplify_Percentage()
+	local ability = self:GetAbility()
+	--local caster = self:GetCaster()
+	local mult = ability:GetSpecialValueFor("spell_amp_per_soul")
+	local spell_amp = self:GetStackCount() * mult
+	return spell_amp
+end
+
+

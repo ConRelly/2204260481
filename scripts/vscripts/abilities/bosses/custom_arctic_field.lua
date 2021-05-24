@@ -49,23 +49,25 @@ function explode(keys, delay)
 	
 	Timers:CreateTimer(delay, function()
 			ParticleManager:DestroyParticle(preFX, false)
-			local dummy = CreateUnitByName("npc_dummy_unit", target_pos, false, caster, caster, caster:GetTeamNumber())
-			ability:ApplyDataDrivenModifier(caster, dummy, "modifier_dummy", {})
-			EmitSoundOn("Hero_Crystal.CrystalNova", dummy)
-			EmitSoundOn("Hero_Crystal.CrystalNovaCast", dummy)
-			local particleFX = ParticleManager:CreateParticle(particle, PATTACH_ABSORIGIN, dummy)
-			ParticleManager:SetParticleControl(particleFX, 3, Vector(damage_radius, 0, 0))
-			ParticleManager:ReleaseParticleIndex(particleFX)
-			local targets = FindUnitsInRadius(caster:GetTeam(), target_pos, nil, damage_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false)
-			local damage_table = {}
-			damage_table.attacker = caster
-			damage_table.damage = damage
-			damage_table.ability = ability
-			damage_table.damage_type = ability:GetAbilityDamageType()
-			for k, u in ipairs(targets) do
-				damage_table.victim = u
-				ApplyDamage(damage_table)
-			end
+			if not caster:IsNull() and IsValidEntity(caster) then
+				local dummy = CreateUnitByName("npc_dummy_unit", target_pos, false, caster, caster, caster:GetTeamNumber())
+				ability:ApplyDataDrivenModifier(caster, dummy, "modifier_dummy", {})
+				EmitSoundOn("Hero_Crystal.CrystalNova", dummy)
+				EmitSoundOn("Hero_Crystal.CrystalNovaCast", dummy)
+				local particleFX = ParticleManager:CreateParticle(particle, PATTACH_ABSORIGIN, dummy)
+				ParticleManager:SetParticleControl(particleFX, 3, Vector(damage_radius, 0, 0))
+				ParticleManager:ReleaseParticleIndex(particleFX)
+				local targets = FindUnitsInRadius(caster:GetTeam(), target_pos, nil, damage_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false)
+				local damage_table = {}
+				damage_table.attacker = caster
+				damage_table.damage = damage
+				damage_table.ability = ability
+				damage_table.damage_type = ability:GetAbilityDamageType()
+				for k, u in ipairs(targets) do
+					damage_table.victim = u
+					ApplyDamage(damage_table)
+				end
+			end	
 		end
 	)
 end

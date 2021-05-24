@@ -77,7 +77,7 @@ if IsServer() then
 		local target = event.target
 
 		if attacker ~= parent then return false end
-		if attacker:IsIllusion() then return false end
+		--if attacker:IsIllusion() then return false end
 		if target:IsTower() or target:IsBarracks() then return false end
 		if target:IsBuilding() or target:IsOther() then return false end
 
@@ -110,7 +110,7 @@ modifier_mjz_doom_bringer_infernal_blade_burn = class({})
 local modifier_burn = modifier_mjz_doom_bringer_infernal_blade_burn
 
 function modifier_burn:IsHidden() return false end
-function modifier_burn:IsPurgable() return true end
+function modifier_burn:IsPurgable() return false end
 function modifier_burn:IsDebuff() return true end
 function modifier_burn:GetAttributes()
 	return MODIFIER_ATTRIBUTE_MULTIPLE		-- 效果能够存在多个

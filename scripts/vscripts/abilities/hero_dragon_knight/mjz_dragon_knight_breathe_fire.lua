@@ -1,7 +1,3 @@
-
-local THIS_LUA = "abilities/hero_dragon_knight/mjz_dragon_knight_breathe_fire.lua"
-local MODIFIER_REDUCTION_NAME = 'modifier_mjz_dragon_knight_breathe_fire_reduction'
-
 local TARGET_MODIFIER_LIST = {
 	'modifier_dragon_knight_dragon_form',
 	'modifier_dragon_knight_corrosive_breath',
@@ -10,66 +6,51 @@ local TARGET_MODIFIER_LIST = {
 
 }
 
-LinkLuaModifier(MODIFIER_REDUCTION_NAME, THIS_LUA, LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_dragon_knight_breathe_fire_reduction", "abilities/hero_dragon_knight/mjz_dragon_knight_breathe_fire.lua", LUA_MODIFIER_MOTION_NONE)
 
 ------------------------------------------------------------------------------------------
 
 mjz_dragon_knight_breathe_fire = class({})
-local ability_class = mjz_dragon_knight_breathe_fire
-
-function ability_class:GetIntrinsicModifierName()
+function mjz_dragon_knight_breathe_fire:GetIntrinsicModifierName()
     -- return MODIFIER_RELIEVE_NAME
 end
 
 if IsServer() then
-	function ability_class:OnSpellStart(  )
-		local caster = self:GetCaster()
-		local ability = self
-		local unit = caster
-		
-		EmitSoundOn( "Hero_DragonKnight.BreathFire", caster )
-
+	function mjz_dragon_knight_breathe_fire:OnSpellStart()
+		EmitSoundOn("Hero_DragonKnight.BreathFire", self:GetCaster())
 		self:PlayEffect()
-		
-		if HasModifierList(unit, {'modifier_dragon_knight_dragon_form'}) then
+		if HasModifierList(self:GetCaster(), {"modifier_dragon_knight_dragon_form"}) then
 			
 		end
 	end
 
-	function ability_class:OnProjectileHit( hTarget, vLocation )
+	function mjz_dragon_knight_breathe_fire:OnProjectileHit( hTarget, vLocation )
 		local caster = self:GetCaster()
-		local ability = self
-		local duration = GetTalentSpecialValueFor(ability, "duration" ) 
-		local base_damage = GetTalentSpecialValueFor(ability, "damage" ) 
-		local str_damage = GetTalentSpecialValueFor(ability, "strength_damage" ) 
+		local duration = GetTalentSpecialValueFor(self, "duration") 
+		local base_damage = GetTalentSpecialValueFor(self, "damage") 
+		local str_damage = GetTalentSpecialValueFor(self, "strength_damage") 
 		local fire_damage = base_damage + caster:GetStrength() * str_damage / 100
 
-		if hTarget ~= nil and ( not hTarget:IsMagicImmune() ) and ( not hTarget:IsInvulnerable() ) then
-	
+		if hTarget ~= nil and (not hTarget:IsMagicImmune()) and (not hTarget:IsInvulnerable()) then
 			local damage = {
 				victim = hTarget,
 				attacker = caster,
 				damage = fire_damage,
-				damage_type = ability:GetAbilityDamageType(),
-				ability = ability,
+				damage_type = self:GetAbilityDamageType(),
+				ability = self,
 			}
-			ApplyDamage( damage )
-
-			hTarget:AddNewModifier(caster, ability, MODIFIER_REDUCTION_NAME, {duration = duration})
+			ApplyDamage(damage)
+			hTarget:AddNewModifier(caster, self, "modifier_mjz_dragon_knight_breathe_fire_reduction", {duration = duration})
 		end
-	
 		return false
 	end
 
-
-	function ability_class:PlayEffect(  )
+	function mjz_dragon_knight_breathe_fire:PlayEffect()
 		local caster = self:GetCaster()
-		local ability = self
-		
-		local start_radius = GetTalentSpecialValueFor(ability, "start_radius" )
-		local end_radius = GetTalentSpecialValueFor(ability, "end_radius" )
-		local range = GetTalentSpecialValueFor(ability, "range" )
-		local speed = GetTalentSpecialValueFor(ability, "speed" )	
+		local start_radius = GetTalentSpecialValueFor(self, "start_radius")
+		local end_radius = GetTalentSpecialValueFor(self, "end_radius")
+		local range = GetTalentSpecialValueFor(self, "range")
+		local speed = GetTalentSpecialValueFor(self, "speed")	
 
 		local vPos = nil
 		if self:GetCursorTarget() then
@@ -82,51 +63,39 @@ if IsServer() then
 		vDirection.z = 0.0
 		vDirection = vDirection:Normalized()
 
-		speed = speed * ( ( range ) / ( range - start_radius ) )
+		speed = speed * ((range) / (range - start_radius))
 
 		local effect_name = "particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
 
 		local info = {
 			EffectName = effect_name,
-			Ability = ability,
+			Ability = self,
 			vSpawnOrigin = caster:GetOrigin(), 
 			fStartRadius = start_radius,
 			fEndRadius = end_radius,
 			vVelocity = vDirection * speed,
 			fDistance = range,
 			Source = caster,
-			iUnitTargetTeam = ability:GetAbilityTargetTeam(),
-			iUnitTargetType = ability:GetAbilityTargetType() ,
+			iUnitTargetTeam = self:GetAbilityTargetTeam(),
+			iUnitTargetType = self:GetAbilityTargetType() ,
 		}
-
-		ProjectileManager:CreateLinearProjectile( info )
+		ProjectileManager:CreateLinearProjectile(info)
 	end
 end
 
-
 ------------------------------------------------------------------------------------------
-
 modifier_mjz_dragon_knight_breathe_fire_reduction = class({})
-local modifier_reduction = modifier_mjz_dragon_knight_breathe_fire_reduction
-
-function modifier_reduction:IsHidden() return false end
-function modifier_reduction:IsPurgable() return true end
-
-function modifier_reduction:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE
-    }
+function modifier_mjz_dragon_knight_breathe_fire_reduction:IsHidden() return false end
+function modifier_mjz_dragon_knight_breathe_fire_reduction:IsPurgable() return true end
+function modifier_mjz_dragon_knight_breathe_fire_reduction:DeclareFunctions()
+    return {MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE}
 end
-function modifier_reduction:GetModifierBaseDamageOutgoing_Percentage( params )
-	return self:GetAbility():GetSpecialValueFor('reduction')
+function modifier_mjz_dragon_knight_breathe_fire_reduction:GetModifierBaseDamageOutgoing_Percentage(params)
+	return self:GetAbility():GetSpecialValueFor("reduction")
 end
-
-
-
 
 ------------------------------------------------------------------------------------------
-
-function HasModifierList( unit, modifier_name_list )
+function HasModifierList(unit, modifier_name_list)
 	for _,modifier_name in pairs(modifier_name_list) do
 		if not unit:HasModifier(modifier_name) then
 			return false
@@ -135,7 +104,7 @@ function HasModifierList( unit, modifier_name_list )
 	return true
 end
 
-function SetModifierListDuration( unit, modifier_name_list, duration )
+function SetModifierListDuration(unit, modifier_name_list, duration)
 	for _,modifier_name in pairs(modifier_name_list) do
 		local modifier = unit:FindModifierByName(modifier_name)
 		if modifier then
@@ -144,7 +113,7 @@ function SetModifierListDuration( unit, modifier_name_list, duration )
 	end
 end
 
-function SetModifierDuration( unit, modifier_name, duration )
+function SetModifierDuration(unit, modifier_name, duration)
 	local modifier = unit:FindModifierByName(modifier_name)
 	if modifier then
 		modifier:SetDuration(duration, true)

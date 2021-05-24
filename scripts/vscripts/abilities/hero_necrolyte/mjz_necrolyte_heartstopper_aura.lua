@@ -3,8 +3,8 @@ LinkLuaModifier("modifier_mjz_necrolyte_heartstopper_aura_counter","abilities/he
 LinkLuaModifier("modifier_mjz_necrolyte_heartstopper_aura_regen","abilities/hero_necrolyte/mjz_necrolyte_heartstopper_aura.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_necrolyte_heartstopper_aura_effect","abilities/hero_necrolyte/mjz_necrolyte_heartstopper_aura.lua", LUA_MODIFIER_MOTION_NONE)
 
-local modifier_regen_name = 'modifier_mjz_necrolyte_heartstopper_aura_regen'
-local modifier_counter_name = 'modifier_mjz_necrolyte_heartstopper_aura_counter'
+local modifier_regen_name = "modifier_mjz_necrolyte_heartstopper_aura_regen"
+local modifier_counter_name = "modifier_mjz_necrolyte_heartstopper_aura_counter"
 
 mjz_necrolyte_heartstopper_aura = class({})
 local ability_class = mjz_necrolyte_heartstopper_aura
@@ -14,10 +14,10 @@ function ability_class:GetIntrinsicModifierName()
 end
 
 function ability_class:GetAOERadius()
-	return self:GetSpecialValueFor('radius') + self:GetCaster():GetCastRangeBonus()
+	return self:GetSpecialValueFor("radius") + self:GetCaster():GetCastRangeBonus()
 end
 function ability_class:GetCastRange(vLocation, hTarget)
-	return self:GetSpecialValueFor('radius') + self:GetCaster():GetCastRangeBonus()
+	return self:GetSpecialValueFor("radius") + self:GetCaster():GetCastRangeBonus()
 end
 
 function ability_class:OnToggle()
@@ -93,7 +93,7 @@ end
 modifier_mjz_necrolyte_heartstopper_aura_counter = class({})
 local modifier_counter = modifier_mjz_necrolyte_heartstopper_aura_counter
 
-function modifier_counter:IsHidden() return false end
+function modifier_counter:IsHidden() return self:GetAbility() == nil end
 function modifier_counter:IsPurgable() return false end
 
 if IsServer() then
@@ -113,21 +113,15 @@ local modifier_regen = modifier_mjz_necrolyte_heartstopper_aura_regen
 function modifier_regen:IsHidden() return true end
 function modifier_regen:IsPurgable() return false end
 function modifier_regen:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
-
 function modifier_regen:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT
-	}
-	return funcs
+	return {MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT}
 end
 function modifier_regen:GetModifierConstantHealthRegen( )
-	return self:GetAbility():GetSpecialValueFor('health_regen')
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("health_regen") end
 end
 function modifier_regen:GetModifierConstantManaRegen( )
-	return self:GetAbility():GetSpecialValueFor('mana_regen') 
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana_regen") end
 end
-
 if IsServer() then
 	function modifier_regen:OnDestroy()
 		local parent = self:GetParent()
@@ -162,8 +156,8 @@ if IsServer() then
 
 		if caster:PassivesDisabled() then return nil end
 
-		local regen_duration = ability:GetSpecialValueFor('regen_duration')
-		local hero_multiplier = ability:GetSpecialValueFor('hero_multiplier')
+		local regen_duration = ability:GetSpecialValueFor("regen_duration")
+		local hero_multiplier = ability:GetSpecialValueFor("hero_multiplier")
 
 		local count = 1
 		if parent:IsRealHero() then 
@@ -184,7 +178,7 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local ability = self:GetAbility()
 
-		local interval = ability:GetSpecialValueFor('interval')
+		local interval = ability:GetSpecialValueFor("interval")
 		self:StartIntervalThink(interval)
 	end
 
@@ -196,7 +190,7 @@ if IsServer() then
 		local ability = self:GetAbility()
 		local target = self:GetParent()
 
-		local interval = ability:GetSpecialValueFor('interval')
+		local interval = ability:GetSpecialValueFor("interval")
 		local base_damage = ability:GetSpecialValueFor("base_damage")
 		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
 		local damage = base_damage + caster:GetIntellect() * (intelligence_damage / 100.0)

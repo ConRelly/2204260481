@@ -70,7 +70,7 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local parent = self:GetParent()
 		local base_damage = ability:GetSpecialValueFor("base_damage")
-		local health_damage_pct = ability:GetSpecialValueFor("health_damage_pct")
+		local health_damage_pct = GetTalentSpecialValueFor(ability, "health_damage_pct")
 		self.damage = base_damage + parent:GetHealth() * (health_damage_pct / 100.0)
 		self.rate = ability:GetSpecialValueFor("pulse_interval")
 		self.radius = ability:GetSpecialValueFor("radius")
@@ -83,7 +83,7 @@ if IsServer() then
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
 		local damage = self.damage * self.rate
-		local self_damage = damage / 2
+		local self_damage = damage / 20
 
 		if self.particleFire <= 0 then
 			local p_name = "particles/units/heroes/hero_slark/slark_dark_pact_pulses.vpcf"

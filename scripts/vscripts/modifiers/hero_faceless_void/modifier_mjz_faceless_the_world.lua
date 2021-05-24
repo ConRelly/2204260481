@@ -187,6 +187,13 @@ function modifier_effect_friendly:IsPurgable() return false end
 function modifier_effect_friendly:CheckState()
 	local state = {
         [MODIFIER_STATE_NO_UNIT_COLLISION] = true,
+		[MODIFIER_STATE_STUNNED] = false,
+		[MODIFIER_STATE_HEXED] = false,
+		[MODIFIER_STATE_SILENCED] = false,
+		[MODIFIER_STATE_FROZEN] = false,
+		[MODIFIER_STATE_FEARED] = false,
+		--[MODIFIER_STATE_CANNOT_BE_MOTION_CONTROLLED] = true,
+		[MODIFIER_STATE_TAUNTED] = false        
 	}
 	return state
 end
@@ -194,7 +201,8 @@ end
 function modifier_effect_friendly:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_MOVESPEED_MAX,
-		MODIFIER_PROPERTY_MOVESPEED_LIMIT,
+        MODIFIER_PROPERTY_MOVESPEED_LIMIT,
+        MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
 		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
 	}
 	return funcs
@@ -210,6 +218,9 @@ end
 
 function modifier_effect_friendly:GetModifierMoveSpeed_Absolute()
 	return self:GetAbility():GetSpecialValueFor("speed")
+end
+function modifier_effect_friendly:GetModifierTotalDamageOutgoing_Percentage()
+	return self:GetAbility():GetSpecialValueFor("bonus_stuf")
 end
 
 

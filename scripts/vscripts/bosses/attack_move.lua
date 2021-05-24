@@ -9,7 +9,7 @@ function AIThink()
 	
     if ancient and ancient:IsAlive() and thisEntity:IsAlive() then
 		if not thisEntity:IsInvisible() and not thisEntity:IsChanneling() and thisEntity:GetCurrentActiveAbility() == nil and not thisEntity:IsCommandRestricted() then
-			if (CalcDistanceBetweenEntityOBB(thisEntity, ancient) > 800) then
+			if (CalcDistanceBetweenEntityOBB(thisEntity, ancient) > 100) then
 				if not thisEntity:IsDisarmed() then
 					local attackOrder = {
 						UnitIndex = thisEntity:entindex(), 

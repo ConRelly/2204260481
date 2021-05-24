@@ -63,7 +63,9 @@ if IsServer() then
 	function nevermore_custom_requiem:OnSpellStart()
 		local souls_per_line = self:GetSpecialValueFor("requiem_soul_conversion")
 		local caster = self:GetCaster()
-		self.damage = self:GetSpecialValueFor("damage")
+		local caster_agility = caster:GetAgility()
+		local agility_mult = self:GetSpecialValueFor("agility_mult")
+		self.damage = self:GetSpecialValueFor("damage") + caster_agility * agility_mult
 		self.scepter = self.damage * self:GetSpecialValueFor("damage_pct_scepter") * 0.01
 		caster:EmitSound("Hero_Nevermore.RequiemOfSouls")
 		self.lines_end_width = self:GetSpecialValueFor("lines_end_width")

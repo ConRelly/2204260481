@@ -121,7 +121,9 @@ if IsServer() then
 	function modifier_custom_luna_invis:OnDestroy()
 		ParticleManager:DestroyParticle(self.particle, false)
 		ParticleManager:ReleaseParticleIndex(self.particle)
-		self.modifier:Destroy()
+		if not self.modifier:IsNull() and IsValidEntity(self.modifier) then
+			self.modifier:Destroy()
+		end	
 		
 	end
 end

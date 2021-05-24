@@ -10,7 +10,9 @@ end
 function modifier:IsPurgable()
     return false
 end
-
+function modifier:AllowIllusionDuplicate()
+    return true
+end    
 function modifier:GetAttributes() 
 	return MODIFIER_ATTRIBUTE_PERMANENT 
 end
@@ -28,5 +30,5 @@ end
 
 function modifier:GetModifierAttackRangeBonus(htable)
     -- return self:GetAbility():GetSpecialValueFor("base_attack_range")
-    return 140
+    return 440
 end

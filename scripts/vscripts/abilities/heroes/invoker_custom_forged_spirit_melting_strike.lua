@@ -63,14 +63,16 @@ modifier_forge_spirit_custom_armorbreak_debuff = class({})
 function modifier_forge_spirit_custom_armorbreak_debuff:GetTexture()
     return "forged_spirit_melting_strike"
 end
+function modifier_forge_spirit_custom_armorbreak_debuff:IsPurgable()
+    return false
+end    
 function modifier_forge_spirit_custom_armorbreak_debuff:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
     }
 end
 function modifier_forge_spirit_custom_armorbreak_debuff:OnCreated(keys)
-	self.armor_decrease = self:GetAbility():GetSpecialValueFor("armor_decrease")
-	
+	self.armor_decrease = self:GetAbility():GetSpecialValueFor("armor_decrease")	
 end
 
 function modifier_forge_spirit_custom_armorbreak_debuff:GetModifierPhysicalArmorBonus()

@@ -17,7 +17,7 @@ function modifier_force_blade:OnAttackLanded (keys)
 
 	local caster = self:GetParent()
 	local target = keys.target
-	local damage = keys.damage * 50
+	local damage = keys.damage * 25
 	local ability = self:GetAbility()
 
 	if target:IsAlive() then

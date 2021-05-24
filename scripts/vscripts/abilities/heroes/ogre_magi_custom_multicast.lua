@@ -40,15 +40,18 @@ function on_ability_executed(keys)
 			if multicast > 3 then
 				ability.particle = ParticleManager:CreateParticle(keys.particle, PATTACH_OVERHEAD_FOLLOW, caster)
 				ParticleManager:SetParticleControl(ability.particle, 1, Vector(4, 0, 4))
-				EmitSoundOn(keys.sound1, caster)
+				--EmitSoundOn(keys.sound1, caster)
+				caster:EmitSoundParams(keys.sound1, 0, 0.3, 0)
 			elseif multicast == 3 then
 				ability.particle = ParticleManager:CreateParticle(keys.particle, PATTACH_OVERHEAD_FOLLOW, caster)
 				ParticleManager:SetParticleControl(ability.particle, 1, Vector(3, 0, 2))
-				EmitSoundOn(keys.sound2, caster)
+				--EmitSoundOn(keys.sound2, caster)
+				caster:EmitSoundParams(keys.sound2, 0, 0.3, 0)
 			elseif multicast == 2 then
 				ability.particle = ParticleManager:CreateParticle(keys.particle, PATTACH_OVERHEAD_FOLLOW, caster)
 				ParticleManager:SetParticleControl(ability.particle, 1, Vector(2, 0, 0))
-				EmitSoundOn(keys.sound3, caster)
+				caster:EmitSoundParams(keys.sound3, 0, 0.3, 0)
+				--EmitSoundOn(keys.sound3, caster)
 			end
 
 
@@ -64,11 +67,13 @@ function on_ability_executed(keys)
 				})
 				caster:EmitSound("Hero_Alchemist.UnstableConcoction.Stun")
 				local particleFail = ParticleManager:CreateParticle("particles/base_attacks/ranged_tower_bad_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-
+				ParticleManager:ReleaseParticleIndex(particleFail)
+				-- Frees the specified particle index
 			else 
 				multicast = multicast * 2
 				ability_start_true_cooldown(ability)
 				local particleSuccess = ParticleManager:CreateParticle("particles/econ/items/ogre_magi/ogre_ti8_immortal_weapon/ogre_ti8_immortal_bloodlust_buff_ground_ray.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+				ParticleManager:ReleaseParticleIndex(particleSuccess)
 			end	
 		end
 
@@ -133,6 +138,47 @@ end
 function IsExcludeAbility( ability )
 	local list = {
 		"item_dimensional_doorway",		-- 空间之门
+		"item_ward_observer",
+		"item_ward_sentry",
+		"item_smoke_of_deceit",
+		"item_tpscroll",
+		"item_conduit",
+		"phoenix_fire_spirits",
+		"mjz_phoenix_sun_ray",
+		"mjz_phoenix_sun_ray_toggle_move",
+		"mjz_phoenix_sun_ray_cancel",
+		"mjz_phoenix_supernova",
+		"phoenix_launch_fire_spirit",
+		"item_god_slayer",
+		"rubick_telekinesis",
+		"rubick_telekinesis_land",
+		"tusk_launch_snowball",
+		"shadow_shaman_shackles",
+		"chen_custom_holy_persuasion",
+		"mjz_ember_spirit_sleight_of_fist",
+		"item_pocket_rax",
+		"item_pocket_rax_ranged",
+		"item_pocket_tower",
+		"riki_blink_strike",
+		"mjz_phantom_assassin_phantom_strike",
+		"dark_seer_custom_dark_clone",
+		"undying_tombstone",
+		"mjz_windrunner_powershot",
+		"antimage_blink",
+		"item_echo_wand",
+		"item_remove_ability",
+		"frostivus2018_faceless_void_time_walk",
+		"obsidian_destroyer_astral_imprisonment",
+		"obsidian_destroyer_arcane_orb",
+		"obs_replay",
+		"item_video_file",
+		"item_custom_ex_machina",
+		"dawnbreaker_celestial_hammer",
+		"dawnbreaker_converge",
+		"wisp_tether",
+		"wisp_tether_break",
+		
+
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

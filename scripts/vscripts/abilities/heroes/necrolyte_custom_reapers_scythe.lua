@@ -24,7 +24,7 @@ function ReapersScythe( keys )
 	-- Checking if target is alive to decide if it needs to increase respawn time
 	if caster:HasScepter() and keys.target:GetHealth() > 0 then
 		local percent_reduction = ability:GetSpecialValueFor("scepter_cooldown_multiplier")
-		for i = 0, caster:GetAbilityCount() do
+		for i = 0, caster:GetAbilityCount() - 1 do
 			local ability2 = caster:GetAbilityByIndex(i)
 			if ability2 then
 				local cooldown = ability2:GetCooldownTimeRemaining()
