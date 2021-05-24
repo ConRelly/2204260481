@@ -31,7 +31,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_per"			"150"
+				"mana_per"			"200"
 			}
 		}
 	}

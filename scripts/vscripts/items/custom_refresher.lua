@@ -16,7 +16,7 @@ function item_custom_refresher:OnSpellStart()
         ParticleManager:SetParticleControlEnt(fx, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
         ParticleManager:ReleaseParticleIndex(fx)
 		self:StartCooldown(cooldown)
-        refresh_abilities_mult(caster, {terrorblade_custom_dark_realm = true, undying_tombstone = true, doom_devour_lua = true, necrolyte_custom_reapers_scythe = true, ancient_apparition_ice_blast = true, treant_custom_ultimate_sacrifice = true, obsidian_destroyer_custom_mana_amp = true, obs_replay = true}, ultimate_percentage * 0.01)
+        refresh_abilities_mult(caster, {terrorblade_custom_dark_realm = true, undying_tombstone = true, doom_devour_lua = true, necrolyte_custom_reapers_scythe = true, ancient_apparition_ice_blast = true, treant_custom_ultimate_sacrifice = true, obsidian_destroyer_custom_mana_amp = true, obs_replay = true, arcane_supremacy = true}, ultimate_percentage * 0.01)
         refresh_items(caster, {
             item_maiar_pendant = true, item_custom_fusion_rune = true, item_conduit = true,
             item_custom_refresher = true, item_plain_ring = true, item_helm_of_the_undying = true, 
