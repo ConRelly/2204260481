@@ -1048,6 +1048,12 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 
 
 
+* Reworked Jingu Mastery(the one from random skills) to have less impact on game performance, and added Aghanim's Scepter and Super Scepter effect.
+
+
+
+
+
 *Update patch notes12 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussion for links)
