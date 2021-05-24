@@ -251,11 +251,10 @@ function value_if_scepter(npc, ifYes, ifNot)
 end
 
 function HasSuperScepter(npc)
-	if IsServer() then
-		if npc:HasModifier("modifier_super_scepter") then
-			return true
-		end
-	end
+    local modifier_super_scepter = "modifier_item_imba_ultimate_scepter_synth_stats"
+    if npc:HasModifier(modifier_super_scepter) and npc:FindModifierByName(modifier_super_scepter):GetStackCount() > 2 then
+		return true 
+	end	  
     return false
 end
 

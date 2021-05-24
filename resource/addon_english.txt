@@ -502,15 +502,6 @@
 	"dota_tooltip_ability_special_bonus_zanto_gari_dmg"			"First slash in Zento Gari's series deals additional damage"
 	"dota_tooltip_ability_special_bonus_zanto_gari_dmg_description"		"Additional damage is equal to {s:value}% of base attack damage"
 	"dota_tooltip_ability_special_bonus_zanto_gari_cooldown"	"-10 seconds cooldown Zanto Gari"
-
-// Rubick
-	"DOTA_Tooltip_ability_arcane_supremacy"							"Arcane Supremacy"
-	"DOTA_Tooltip_ability_arcane_supremacy_Description"				"Rubick's mastery of the arcane allows him to have a larger cast range and increased potency.<br><br>Cooldown: %base_cd% seconds<br>Duration: %buff_duration% seconds\n<h1><font color='#0094FF'>Aghanim's Shard</font></h1>Allows you to give an ally the <font color='#0094FF'>Aghanim's Shard</font> effect.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Allows you to give an ally the <font color='#0094FF'>Aghanim's Scepter</font> effect. Cooldown +%bonus_cd_scepter% seconds.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Allows you to give an ally the <font color='#DE3163'>Super Scepter</font> effect. Cooldown +%bonus_cd_super% seconds."
-	"DOTA_Tooltip_ability_arcane_supremacy_Lore"				"Not every magus can be a Grand Magus..."
-	"DOTA_Tooltip_ability_arcane_supremacy_bonus_cast_range"		"Cast Range:"
-	"DOTA_Tooltip_ability_arcane_supremacy_spell_amp"				"%Spell Amp:"
-	"DOTA_Tooltip_modifier_arcane_supremacy_buff"				"Rubick's Blessing"
-	"DOTA_Tooltip_modifier_arcane_supremacy_buff_Description"	""
 	
 //###########################################################################################################################
 	
@@ -5753,11 +5744,11 @@ You can't target yourself."
 "DOTA_Tooltip_ability_mirana_custom_arrow_Lore"						"Lunar energies make the Princess of the Moon's arrows more deadly than most."
 "DOTA_Tooltip_ability_mirana_custom_arrow_damage_pct"				"%ATTACK AS DAMAGE:"
 "DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery"							"<font color='#f2da5b'>Jingu Mastery</font>"
-"DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery_Description"				"Monkey King awakens the Jingu Bang's power every %interval% seconds.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Every time you awaken your power increase your base Agility and Strength by %bonus_stats%. If your primary attribute is Intelligence, Jingu Bang's power will give %spell_amp%%% spell amp.\n<h1><font color='#DE3163'>Super Scepter</font></h1> Doubles all the effects from <font color='#0094FF'>Aghanim's Scepter</font> and makes the buff duration be affected by your status resistance."
+"DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery_Description"				"Monkey King awakens the Jingu Bang's power every %interval% seconds.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Every time you awaken your power increase your base Agility and Strength by %bonus_stats% . If your primari attribute is Intelligence, Jingu Bang's power will give %spell_amp%%% spell amp.\n<h1><font color='#DE3163'>Super Scepter</font></h1> Doubles all the effects from <font color='#0094FF'>Aghanim's Scepter</font> and makes the buff duration be affected by your status resistance."
 "DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery_Lore"					"Always sensitive to the moods of its master, the Jingu Bang radiates power when Sun Wukong's combat fervor is on full display."
 "DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery_buf_duration"			"Buff Duration:"
 "DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery_bonus_damage"			"Bonus Damage per Hero Level:"
-//"DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery_lifesteal"				"%BONUS LIFESTEAL:"
+"DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery_lifesteal"				"%BONUS LIFESTEAL:"
 
 "DOTA_Tooltip_modifier_monkey_king_custom_jingu_mastery_hit"					"Jingu Mastery"
 "DOTA_Tooltip_modifier_monkey_king_custom_jingu_mastery_hit_Description"		"Hits from Monkey King"
