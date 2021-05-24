@@ -39718,7 +39718,6 @@
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_IMMEDIATE + DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL + DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO"
-		"AbilityType"						"DOTA_ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ALLIES_YES"
 		"AbilityTextureName"				"rubick_arcane_supremacy"
 		"MaxLevel"							"7"

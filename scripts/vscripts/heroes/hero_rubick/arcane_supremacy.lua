@@ -13,9 +13,11 @@ function arcane_supremacy:OnSpellStart()
 	 if IsServer() then
 		local caster = self:GetCaster()
 		local target = self:GetCursorTarget()
-		if caster == target then return end
-		if not target:IsRealHero() then return end
-		if not caster:HasShard() and not caster:HasScepter() and not HasSuperScepter(caster) then return end
+		caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_4)
+		caster:StartGesture(ACT_DOTA_CAST_ABILITY_4)
+		if caster == target then self:StartCooldown(10) return end
+		if not target:IsRealHero() then self:StartCooldown(10) return end
+		if not caster:HasShard() and not caster:HasScepter() and not HasSuperScepter(caster) then self:StartCooldown(10) return end
 		local duration = self:GetSpecialValueFor("buff_duration")
 		local base_cd = self:GetSpecialValueFor("base_cd")
 		local cd_shard = 0
@@ -35,8 +37,6 @@ function arcane_supremacy:OnSpellStart()
 		end
 		cd = base_cd + cd_shard + cd_scepter + cd_super
 		self:StartCooldown(cd)
-		caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_4)
-		caster:StartGesture(ACT_DOTA_CAST_ABILITY_4)
 		target:AddNewModifier(caster, self, "modifier_arcane_supremacy_buff", {duration = duration})
  	end
 end
