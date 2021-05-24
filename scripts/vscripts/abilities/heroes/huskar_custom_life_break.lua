@@ -46,20 +46,6 @@ function modifier_huskar_custom_life_break:DeclareFunctions()
 		MODIFIER_PROPERTY_DISABLE_HEALING,
     }
 end
-function modifier_huskar_custom_life_break:CheckState()
-	local state = {
-		[MODIFIER_STATE_STUNNED] = false,
-		[MODIFIER_STATE_HEXED] = false,
-		[MODIFIER_STATE_SILENCED] = false,
-		[MODIFIER_STATE_FROZEN] = false,
-		[MODIFIER_STATE_FEARED] = false,
-		[MODIFIER_STATE_CANNOT_BE_MOTION_CONTROLLED] = true,
-		[MODIFIER_STATE_LOW_ATTACK_PRIORITY] = true,
-		[MODIFIER_STATE_TAUNTED] = false
-
-	}
-	return state
-end
 function modifier_huskar_custom_life_break:GetDisableHealing()
     return 1
 end
@@ -101,8 +87,7 @@ if IsServer() then
         })
 		end
 	end
-	function modifier_huskar_custom_life_break:OnDestroy()
-		local explode_point = self:GetParent() 
+	function modifier_huskar_custom_life_break:OnDestroy() 
 		local units = FindUnitsInRadius(self.parent:GetTeam(), 
 			self.parent:GetAbsOrigin(), 
 			nil, 
@@ -120,11 +105,10 @@ if IsServer() then
 				victim = unit,
 				ability = self.ability,
 				damage_type = self.ability:GetAbilityDamageType(),
-				damage = self:GetStackCount()
+				damage = self:GetStackCount() / #units
 			})
 			end
 		end
-		StartSoundEvent( "Hero_Phoenix.SuperNova.Explode", explode_point)
 		ParticleManager:DestroyParticle(self.particle,  true)
 		local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_huskar/huskar_inner_fire_ring_b.vpcf", PATTACH_POINT, self.caster)
 		ParticleManager:SetParticleControlEnt(particle, 0, self.parent, PATTACH_ABSORIGIN, "attach_absorigin", self.parent:GetAbsOrigin(), true)

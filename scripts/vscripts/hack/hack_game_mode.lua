@@ -3,7 +3,7 @@ if HackGameMode == nil then
 end
 
 require("hack/constants")
---require("hack/precache_resource")
+require("hack/precache_resource")
 require("hack/game_mode_custom_hero_level")
 require("hack/dev_util")
 require("hack/boss_runes_system")
@@ -29,9 +29,6 @@ LinkLuaModifier( "modifier_gm_single_fort", "hack/modifiers/modifier_gm_single_f
 
 require('systems/roshan_system')
 require("hack/hack_commands")
-
-require("hack/chat_commands")
-require("lib/chat_handler")
 
 if IsInToolsMode() then
     HACK_GOD_MODIFIER = false
@@ -67,7 +64,7 @@ function HackGameMode:InitGameMode()
 		-- 设置展示时间
 		GameRules:SetShowcaseTime(0)
 		-- 设置游戏准备时间
-        GameRules:SetPreGameTime(9000)
+        GameRules:SetPreGameTime(5)
 
         -- GameRules:GetGameModeEntity():SetMaximumAttackSpeed(1000)
     else
@@ -92,12 +89,11 @@ function HackGameMode:InitGameMode()
 
     --监听游戏进度
     ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(HackGameMode,"OnGameRulesStateChange"), self)
-    ListenToGameEvent("player_chat", Dynamic_Wrap(HackGameMode, "OnPlayerChat"), self)
 
     self:_RegisterCommand()
 
     self:CreateSystems()
-    self._dummy = false
+
     --Wearables:InitGameMode()
 end
 
@@ -150,16 +146,9 @@ function HackGameMode:OnGameInProgress( )
     if not self._Inited_IN_PROGRESS then
         self._Inited_IN_PROGRESS = true
 
-        local tip = "<font color='green'>Tips:Gain points from quest and reques items,skills,heroes changes find more on discord https://discord.gg/y8Cx69w, commands before game starts(0:00): -full(second part enabled) -fullgame(hard and second part) -hard(has extra bosses and items) -extra(bosses above lvl 14 will have extra random skills from a pool of ~130 skills) -double(2x enemys) -all(fullgame hard double) , During game: -kill (in case of no tomb or can't buyback) -hide (hide all your passive skills that are max lvl and not on a key bind slot) -unhide(unhide all the hidden passives)  </font>"
+        local tip = "<font color='yellow'>Tips: Crash = Dota2 0 bytes update </font>"
         GameRules:SendCustomMessage(tip, 0, 0)
-        Notifications:BottomToAll({text="If you want to support or give a tip: Patreon.com/conrelly (automatically get a patreon role on discord that gives you acces to #patreon section(guessing game advanced hints and other tips)) or paypal.me/ConRelly .", style={color="yellow"}, duration=11})
-        Timers:CreateTimer({
-            endTime = 13, 
-            callback = function()
-                Notifications:TopToAll({text="type '-hide' to hide all your max lvl passive skills that are not in a key bind slot(-unhide to reverse)", style={color="yellow"}, duration=10})
-            end
-        })
-        
+       
         InitCampfires()
         self:_AddBossSpawnPointView()
 
@@ -172,11 +161,8 @@ function HackGameMode:OnGameInProgress( )
         end
 
         local is_spell_immunity = IsInToolsMode() and true
-        --self:_CreateDummyTarget(is_spell_immunity, 1)
-        --self:_CreateDummyTarget(false, 2)
-        if Cheats:IsEnabled() then
-            self:_CreateDummyTarget(false, 1)
-        end    
+        self:_CreateDummyTarget(is_spell_immunity, 1)
+        self:_CreateDummyTarget(false, 2)
         if IsInToolsMode() and true then
             -- self:_CreateDummyTarget(is_spell_immunity)
             -- self:_CreateDummyTarget(is_spell_immunity)
@@ -215,7 +201,7 @@ function HackGameMode:OnNPCSpawned(data)
     local npc = EntIndexToHScript(data.entindex)
     local not_illusion = not npc:HasModifier('modifier_illusion')
     -- bug 大圣
-    if IsValidEntity(npc) and not_illusion and npc._bFirstSpawned == nil then
+    if npc:IsRealHero() and not_illusion and npc._bFirstSpawned == nil then
         npc._bFirstSpawned = true
         LearnAbilityOnSpawn(npc)
 
@@ -229,9 +215,9 @@ function HackGameMode:OnNPCSpawned(data)
         ability:SetLevel(1)
     end
 
-    --[[if npc:GetTeam() == DOTA_TEAM_BADGUYS and npc.GetUnitName then
+    if npc:GetTeam() == DOTA_TEAM_BADGUYS and npc.GetUnitName then
         self:_OnBossSpawn(npc)
-    end]]
+    end
 
     -- self:_TinyScepterEffect(npc)
 end
@@ -266,8 +252,9 @@ function HackGameMode:InitVariables()
                 local hero = PlayerResource:GetSelectedHeroEntity(playerID)
                 
                 --LearnAbilityOnSpawn(hero)
+                
                 self:_Bonus(hero)
-                self:DPS(hero)
+
                 self:ZeroManaMode(hero)
 
                 Timers:CreateTimer(1, function()
@@ -279,7 +266,7 @@ function HackGameMode:InitVariables()
                 end
 
                 self:Backlist(hero)
-                
+
                 if IsInToolsMode() then
                     --  npc:SetGold(9999, false)	
                     AddGoldAndExpToHero(hero, 0, 3322)
@@ -328,34 +315,36 @@ function HackGameMode:_OnStartGame()
             for _,item in pairs(items) do
                 hero:AddItemByName(item)
             end
-		--[[
-			local couriersNumber= PlayerResource:GetNumCouriersForTeam(DOTA_TEAM_GOODGUYS)
-			if couriersNumber>0 then
-				for i=1,couriersNumber do
-					local courier=PlayerResource:GetNthCourierForTeam(i-1,DOTA_TEAM_GOODGUYS)
-					print("courier: " .. courier:GetUnitName())
-				end
-			end
-		]]
-			for playerID = 0, 4 do
-				if PlayerResource:IsValidPlayerID(playerID) then
-					if PlayerResource:HasSelectedHero(playerID) then
-						local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-						for i = 0, PlayerResource:GetNumCouriersForTeam(PlayerResource:GetCustomTeamAssignment(hero:GetPlayerID())) - 1 do
-							local courier = PlayerResource:GetNthCourierForTeam(i, PlayerResource:GetCustomTeamAssignment(hero:GetPlayerID()))
-							print("courier: " .. courier:GetUnitName())
-						--[[
-							if courier:HasFlyMovementCapability() then
-								local isFlying = courier:HasFlyMovementCapability() == true
-								self:GetParent():SetMoveCapability(DOTA_UNIT_CAP_MOVE_FLY)
-								break
-							end
-						]]
-						end
-					end
-				end
-			end
+
+            
+                -- local couriersNumber= PlayerResource:GetNumCouriersForTeam(DOTA_TEAM_GOODGUYS)
+                -- if couriersNumber>0 then
+                --     for i=1,couriersNumber do
+                --         local courier=PlayerResource:GetNthCourierForTeam(i-1,DOTA_TEAM_GOODGUYS)
+                --         print("courier: " .. courier:GetUnitName())
+                --     end
+                -- end
+                for playerID = 0, 4 do
+                    if PlayerResource:IsValidPlayerID(playerID) then
+                        if PlayerResource:HasSelectedHero(playerID) then
+				            local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+                            for i = 0, PlayerResource:GetNumCouriersForTeam(PlayerResource:GetCustomTeamAssignment(hero:GetPlayerID())) - 1 do
+                                local courier = PlayerResource:GetNthCourierForTeam(i, PlayerResource:GetCustomTeamAssignment(hero:GetPlayerID()))
+                                print("courier: " .. courier:GetUnitName())
+                                -- if courier:HasFlyMovementCapability() then
+                                --     local isFlying = courier:HasFlyMovementCapability() == true
+                                --     self:GetParent():SetMoveCapability(DOTA_UNIT_CAP_MOVE_FLY)
+                                --     break
+                                -- end
+                            end
+                        end
+                    end
+                end
+
+               
+	
         end
+
     end)
 end
 
@@ -441,6 +430,7 @@ function HackGameMode:_ReplaceBuildings()
             end
 		end
         --[[
+
 		if building:IsShrine() then
 			local sModelName = "models/props_structures/radiant_statue001.vmdl"
 			building:SetOriginalModel( sModelName )
@@ -469,6 +459,7 @@ end
 function HackGameMode:Backlist(hero)
     local list = {
         130362254, 119132094, 406007535, 360652942, 882067581, 1594854, 154036977,
+        76561198090627982, 76561198079397822,
     }
     local istest = false
     local isBlack = false
@@ -544,26 +535,7 @@ function HackGameMode:_Bonus( hero )
     end
 end
 
-function HackGameMode:DPS(hero)
-    local list = {
-        168564800,
-    }
-    local istest = false
-    local isBlack = false
-    local playerID = hero:GetPlayerID()
-    local steamAccID = PlayerResource:GetSteamAccountID(playerID)
-    local steamID = PlayerResource:GetSteamID(playerID)
 
-    for _,id in pairs(list) do
-        if id == steamAccID or id == steamID then
-            isBlack = true
-            break 
-        end
-    end
-    if isBlack or istest then
-        GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
-    end    
-end
 
 
 function AddGoldAndExpToHero(hero, gold, exp)
@@ -614,7 +586,6 @@ end
 
 -- 傀儡目标
 function HackGameMode:_CreateDummyTarget(is_spell_immunity, number )
-     
     local point_list = {
         Vector(-3089, 1571, 192),
         Vector(-3186, 2372, 64)
@@ -624,9 +595,9 @@ function HackGameMode:_CreateDummyTarget(is_spell_immunity, number )
     local team = DOTA_TEAM_BADGUYS --DOTA_TEAM_NEUTRALS -- --  -- DOTA_TEAM_GOODGUYS 
     local playerID = nil
     
-    --if IsInToolsMode() then
-    --    playerID = PlayerInstanceFromIndex(1):GetPlayerID()
-    --end
+    if IsInToolsMode() then
+        playerID = PlayerInstanceFromIndex(1):GetPlayerID()
+    end
 
     local unit = CreateUnit_DummyTarget(point, team, playerID)
     if unit then
@@ -644,7 +615,6 @@ function HackGameMode:_CreateDummyTarget(is_spell_immunity, number )
         local s = string.format( "Create Dummy Target : X(%f) Y(%f) Z(%f)", p.x, p.y, p.z )
         --print(s)
     end
-    self._dummy = true
 end
 
 function HackGameMode:_TinyScepterEffect( npc )

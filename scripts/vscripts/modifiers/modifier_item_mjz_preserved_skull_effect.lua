@@ -17,8 +17,8 @@ function modifier_item_mjz_preserved_skull_effect:OnCreated( kv )
 	self.aura_mana_regen = self:GetAbility():GetSpecialValueFor( "aura_mana_regen" )
 	
 	-- "particles/new_custom/items/item_preserved_skull/item_preserved_skull_target.vpcf"
-	--local p = "particles/items/item_mjz_preserved_skull/item_mjz_preserved_skull_target.vpcf"
-	--self.FX = ParticleManager:CreateParticle( p, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+	local p = "particles/items/item_mjz_preserved_skull/item_mjz_preserved_skull_target.vpcf"
+	self.FX = ParticleManager:CreateParticle( p, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 end
 
 ----------------------------------------
@@ -35,7 +35,7 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_item_mjz_preserved_skull_effect:OnDestroy( kv )
-	--ParticleManager:DestroyParticle( self.FX, false )
+	ParticleManager:DestroyParticle( self.FX, false )
 end
 
 ----------------------------------------

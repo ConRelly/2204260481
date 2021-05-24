@@ -1,11 +1,10 @@
-
 function aura_initiate(keys)
 	local caster = keys.caster
 	local parent = keys.target
-	if caster ~= parent and not caster:GetUnitLabel() ~= "temp_unit" and not caster:IsIllusion() then
+	if caster ~= parent and not caster:GetUnitLabel() ~= "temp_unit" and not caster:IsIllusion()  then
 		if caster:GetPlayerOwner() == parent:GetPlayerOwner() and not parent:HasModifier("modifier_pharaoh_crown_buff") and parent:GetUnitLabel() ~= "ancient" then
 			if not parent:IsHero() and parent:GetMaxHealth() > 35 or parent:GetUnitLabel() == "pharaoh_ok" or parent:GetUnitLabel() == "temp_unit" then
-				if parent:GetUnitName() ~= "npc_playerhelp" then	
+				if parent:GetUnitName() ~= "npc_playerhelp" then
 					parent:AddNewModifier(caster, keys.ability, "modifier_pharaoh_crown_buff", {})
 				end
 			end
@@ -70,7 +69,6 @@ function modifier_pharaoh_crown_buff:OnCreated()
 	self:StartIntervalThink(self.interval)
 end
 function modifier_pharaoh_crown_buff:OnIntervalThink()
-	
 	if self.parent:IsNull() or self.caster:IsNull() then
 		self:Destroy()
 		return
@@ -223,5 +221,5 @@ function modifier_pharaoh_crown_super_armor:DeclareFunctions()
     }
 end
 function modifier_pharaoh_crown_super_armor:GetModifierIncomingDamage_Percentage()
-    return -100;
+    return -50;
 end

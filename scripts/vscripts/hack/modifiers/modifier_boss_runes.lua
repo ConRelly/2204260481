@@ -42,7 +42,7 @@ if IsServer() then
             -- 幻象 
             illusion    = "models/props_gameplay/rune_illusion01.vmdl",
             -- 隐身
-           -- stealth     = "models/props_gameplay/rune_invisibility01.vmdl",
+            stealth     = "models/props_gameplay/rune_invisibility01.vmdl",
             -- 恢复
             regen       = "models/props_gameplay/rune_regeneration01.vmdl",
         }
@@ -74,7 +74,7 @@ if IsServer() then
             -- 幻象 
             illusion    = nil  ,
             -- 隐身
-            --stealth     = "modifier_mirana_moonlight_shadow", --"modifier_rune_invis"  ,
+            stealth     = "modifier_mirana_moonlight_shadow", --"modifier_rune_invis"  ,
             -- 恢复
             regen       = "modifier_rune_regen"  ,
 
@@ -83,7 +83,7 @@ if IsServer() then
             -- 翱翔极速     移动速度达到极限，可以穿越树木和地形。
             flying_haste  = "modifier_rune_flying_haste",
             -- 持久隐身
-           -- super_invis  = "modifier_rune_super_invis",
+            super_invis  = "modifier_rune_super_invis",
             -- 超级恢复
             super_regen  = "modifier_rune_super_regen",
             -- 超级奥术     冷却时间减少60%，魔法消耗减少60%
@@ -104,7 +104,7 @@ if IsServer() then
             -- 幻象 
             illusion    = "Rune.Illusion"  ,
             -- 隐身
-            --stealth     = "Rune.Invis"  ,
+            stealth     = "Rune.Invis"  ,
             -- 恢复
             regen       = "Rune.Regen"  ,
         }

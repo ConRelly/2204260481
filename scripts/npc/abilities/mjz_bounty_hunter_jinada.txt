@@ -11,25 +11,25 @@
 		"AbilitySound"					"Hero_BountyHunter.Jinada"
 		"AbilityTextureName"			"mjz_bounty_hunter_jinada"
 		
-		"AbilityCooldown"				"9 6 3 1"
+		"AbilityCooldown"				"12 9 6 3"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"180 240 380 570"
+				"bonus_damage"			"80 110 140 170"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold_steal"			"12 25 36 40"
+				"gold_steal"			"12 20 28 36"
 				"LinkedSpecialBonus"	"special_bonus_unique_bounty_hunter"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cooldown"				"9 6 3 1"
+				"cooldown"				"12 9 6 3"
 			}
 		}
 

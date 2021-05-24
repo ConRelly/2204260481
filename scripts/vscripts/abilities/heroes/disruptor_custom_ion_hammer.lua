@@ -105,9 +105,6 @@ LinkLuaModifier("modifier_disruptor_custom_ion_hammer_debuff", "abilities/heroes
 
 modifier_disruptor_custom_ion_hammer_debuff = class({})
 
-function modifier_disruptor_custom_ion_hammer_debuff:IsPurgable()
-    return false
-end
 
 function modifier_disruptor_custom_ion_hammer_debuff:DeclareFunctions()
     return {

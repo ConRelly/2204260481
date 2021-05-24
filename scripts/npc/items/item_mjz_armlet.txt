@@ -1,0 +1,391 @@
+
+	//=================================================================================================================
+	// Recipe: Armlet					臂章 LVL 2
+	//=================================================================================================================
+	"item_recipe_mjz_armlet_2"
+	{
+		"ID"							"150"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_armlet_2"
+		"ItemRequirements"
+		{
+			"01"						"item_armlet;item_armlet"
+		}
+	}
+	"item_mjz_armlet_2"
+	{
+		"ID"							"151"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_armlet"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+
+		"AbilityCooldown"				"0.0"
+
+		"ItemCost"						"2380"
+		"ItemShopTags"					"damage;attack_speed;armor;regen_health;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"armlet of mordiggian"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"2"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"9 16 24 32 40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"25 40 60 80 100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"5 10 15 20 25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"5 10 15 20 25"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_damage"	"31 60 90 120 150"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_attack_speed"	"0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_strength"	"25 40 60 80 100"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_armor"	"4 8 12 16 20"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_health_drain_per_tick"	"6 12 18 24 30"
+			}		
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_health_drain_per_second_tooltip"	"54 108 162 216 270"
+			}	
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"toggle_cooldown"		"0.036f"
+			}	
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Armlet					臂章 LVL 3
+	//=================================================================================================================
+	"item_recipe_mjz_armlet_3"
+	{
+		"ID"							"150"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_armlet_3"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_armlet_2;item_armlet"
+		}
+	}
+	"item_mjz_armlet_3"
+	{
+		"ID"							"151"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_armlet"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+
+		"AbilityCooldown"				"0.0"
+
+		"ItemCost"						"2380"
+		"ItemShopTags"					"damage;attack_speed;armor;regen_health;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"armlet of mordiggian"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"3"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"9 16 24 32 40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"25 40 60 80 100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"5 10 15 20 25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"5 10 15 20 25"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_damage"	"31 60 90 120 150"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_attack_speed"	"0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_strength"	"25 40 60 80 100"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_armor"	"4 8 12 16 20"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_health_drain_per_tick"	"6 12 18 24 30"
+			}		
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_health_drain_per_second_tooltip"	"54 108 162 216 270"
+			}	
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"toggle_cooldown"		"0.036f"
+			}	
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Armlet					臂章 LVL 4
+	//=================================================================================================================
+	"item_recipe_mjz_armlet_4"
+	{
+		"ID"							"150"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_armlet_4"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_armlet_3;item_armlet"
+		}
+	}
+	"item_mjz_armlet_4"
+	{
+		"ID"							"151"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_armlet"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+
+		"AbilityCooldown"				"0.0"
+
+		"ItemCost"						"2380"
+		"ItemShopTags"					"damage;attack_speed;armor;regen_health;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"armlet of mordiggian"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"4"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"9 16 24 32 40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"25 40 60 80 100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"5 10 15 20 25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"5 10 15 20 25"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_damage"	"31 60 90 120 150"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_attack_speed"	"0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_strength"	"25 40 60 80 100"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_armor"	"4 8 12 16 20"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_health_drain_per_tick"	"6 12 18 24 30"
+			}		
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_health_drain_per_second_tooltip"	"54 108 162 216 270"
+			}	
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"toggle_cooldown"		"0.036f"
+			}	
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Armlet					臂章 LVL 5
+	//=================================================================================================================
+	"item_recipe_mjz_armlet_5"
+	{
+		"ID"							"150"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_armlet_5"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_armlet_4;item_armlet"
+		}
+	}
+	"item_mjz_armlet_5"
+	{
+		"ID"							"151"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_armlet"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+
+		"AbilityCooldown"				"0.0"
+
+		"ItemCost"						"2380"
+		"ItemShopTags"					"damage;attack_speed;armor;regen_health;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"armlet of mordiggian"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"5"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"9 16 24 32 40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"25 40 60 80 100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"5 10 15 20 25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"5 10 15 20 25"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_damage"	"31 60 90 120 150"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_attack_speed"	"0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_strength"	"25 40 60 80 100"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_bonus_armor"	"4 8 12 16 20"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_health_drain_per_tick"	"6 12 18 24 30"
+			}		
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"unholy_health_drain_per_second_tooltip"	"54 108 162 216 270"
+			}	
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"toggle_cooldown"		"0.036f"
+			}	
+		}
+	}
+
+	

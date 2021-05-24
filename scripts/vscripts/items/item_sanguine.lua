@@ -98,7 +98,7 @@ end
 function modifier_item_sanguine_buff:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-		--MODIFIER_EVENT_ON_ATTACK_LANDED,
+		MODIFIER_EVENT_ON_ATTACK_LANDED,
     }
 end
 
@@ -110,7 +110,7 @@ if IsServer() then
 		self.parent = self:GetParent()
 		self.damage_ratio = keys.ratio
 	end
-	--[[function modifier_item_sanguine_buff:OnAttackLanded(keys)
+	function modifier_item_sanguine_buff:OnAttackLanded(keys)
         local attacker = keys.attacker
         local target = keys.target
 		if not self.parent:IsIllusion() then
@@ -128,7 +128,7 @@ if IsServer() then
 				ParticleManager:ReleaseParticleIndex(particle)
 			end
 		end
-    end]]
+    end
 end
 function modifier_item_sanguine_buff:GetModifierPreAttack_BonusDamage()
 	return self:GetStackCount()

@@ -1,0 +1,24 @@
+
+	"item_mjz_ability_point"
+	{
+		"ID"							"70160"	
+		"BaseClass"						"item_lua"	//"item_datadriven"
+    	"ScriptFile"                    "items/item_mjz_ability_point.lua"
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		"AbilityTextureName"			"mjz_ability_point"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+
+		"ItemCost"						"300"
+		"ItemShopTags"					"mjz"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"ability point"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"ItemShareability"              "ITEM_FULLY_SHAREABLE"	//可分享
+		"ItemKillable"                  "0"						//不可A
+		"ItemPurchasable"               "1"						//可以买
+		"ItemSellable"                  "0"						//不可卖
+		"ItemStackable"					"0"						//不可叠
+	}

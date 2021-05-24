@@ -1,14 +1,21 @@
-LinkLuaModifier("modifier_mjz_broodmother_spiderlings", "abilities/hero_broodmother/mjz_broodmother_spawn_spiderlings.lua", LUA_MODIFIER_MOTION_NONE)
+local THIS_LUA = "abilities/hero_broodmother/mjz_broodmother_spawn_spiderlings.lua"
+LinkLuaModifier("modifier_mjz_broodmother_spiderlings", THIS_LUA, LUA_MODIFIER_MOTION_NONE)
 
 
 -----------------------------------------------------------------------------------------
+
+
 mjz_broodmother_spawn_spiderlings = class({})
-function mjz_broodmother_spawn_spiderlings:OnSpellStart()
+local ability_class = mjz_broodmother_spawn_spiderlings
+
+
+function ability_class:OnSpellStart()
     if not IsServer() then return end
     local hCaster = self:GetCaster()
+    local hAbility = self
     local hTarget = self:GetCursorTarget()
-    local projectile_speed = self:GetSpecialValueFor("projectile_speed")
-    --self.count = self:GetTalentSpecialValueFor("count")
+    local projectile_speed = hAbility:GetSpecialValueFor("projectile_speed")
+
     EmitSoundOn("Hero_Broodmother.SpawnSpiderlingsCast", hCaster)
 
     local pName = "particles/units/heroes/hero_broodmother/broodmother_web_cast.vpcf"
@@ -16,9 +23,11 @@ function mjz_broodmother_spawn_spiderlings:OnSpellStart()
 
 end
 
-function mjz_broodmother_spawn_spiderlings:OnProjectileHit(hTarget, vLocation)
+function ability_class:OnProjectileHit(hTarget, vLocation)
 	local hCaster = self:GetCaster()
-	if hTarget then --and not hTarget:TriggerSpellAbsorb( self )
+    local hAbility = self
+
+	if hTarget and not hTarget:TriggerSpellAbsorb( self ) then
 		EmitSoundOn("Hero_Broodmother.SpawnSpiderlingsCast", hTarget)
 	   
         self:KillSpiders()
@@ -26,16 +35,16 @@ function mjz_broodmother_spawn_spiderlings:OnProjectileHit(hTarget, vLocation)
 	end
 end
 
-function mjz_broodmother_spawn_spiderlings:GetSpiderUnitName()
+function ability_class:GetSpiderUnitName( )
     return "npc_dota_broodmother_spiderling"
 end
 
-function mjz_broodmother_spawn_spiderlings:GetSpiders()
+function ability_class:GetSpiders()
     self._spiders = self._spiders or {}
     return self._spiders
 end
 
-function mjz_broodmother_spawn_spiderlings:KillSpiders()
+function ability_class:KillSpiders()
     self._spiders = self._spiders or {}
     for i,spider in ipairs(self._spiders) do
         if spider and IsValidEntity(spider) then
@@ -45,92 +54,62 @@ function mjz_broodmother_spawn_spiderlings:KillSpiders()
     self._spiders = {}
 end
 
-function mjz_broodmother_spawn_spiderlings:RegisterSpider(spider)
+function ability_class:RegisterSpider( spider )
     if spider and IsValidEntity(spider) then
         self._spiders = self._spiders or {}
         table.insert( self._spiders, spider)
     end
 end
 
-function mjz_broodmother_spawn_spiderlings:SpawnSpiderlings(hTarget)
-    if IsServer() then 
-        local hCaster = self:GetCaster()
-        local unitName = self:GetSpiderUnitName()
-        local M_NAME = "modifier_mjz_broodmother_spiderlings"
-        local aghbuf = "modifier_item_ultimate_scepter_consumed"
-        local chace_srike = self:GetSpecialValueFor("true_strike_chance")
-        local spiderling_duration = self:GetTalentSpecialValueFor( "spiderling_duration")
-        local extra_damage = self:GetTalentSpecialValueFor("extra_damage")
-        local count = self:GetTalentSpecialValueFor("count")
-        --local count = self.count
-        
-        EmitSoundOn("Hero_Broodmother.SpawnSpiderlings", hTarget)
-        ParticleManager:FireParticle("particles/units/heroes/hero_broodmother/broodmother_spiderlings_spawn.vpcf", PATTACH_POINT, hTarget, {})
+function ability_class:SpawnSpiderlings(hTarget)
+    local hCaster = self:GetCaster()
+    local hAbility = self
+    local unitName = self:GetSpiderUnitName()
+    local M_NAME = "modifier_mjz_broodmother_spiderlings"
+    local spiderling_duration = hAbility:GetTalentSpecialValueFor( "spiderling_duration")
+    local extra_damage = hAbility:GetTalentSpecialValueFor("extra_damage")
+    local count = hAbility:GetTalentSpecialValueFor( "count")
+
     
+    EmitSoundOn("Hero_Broodmother.SpawnSpiderlings", hTarget)
+    ParticleManager:FireParticle("particles/units/heroes/hero_broodmother/broodmother_spiderlings_spawn.vpcf", PATTACH_POINT, hTarget, {})
+   
 
-        for i=1, count do
-            local position = hTarget:GetAbsOrigin() + ActualRandomVector(150, 50)
-            local spider = hCaster:CreateSummon(unitName, position, spiderling_duration)
-            FindClearSpaceForUnit(spider, position, false)
+    for i=1, count do
+        local position = hTarget:GetAbsOrigin() + ActualRandomVector(150, 50)
+        local spider = hCaster:CreateSummon(unitName, position, spiderling_duration)
+        FindClearSpaceForUnit(spider, position, false)
 
-            self:RegisterSpider(spider)
+        self:RegisterSpider(spider)
 
-            spider:SetControllableByPlayer(hCaster:GetPlayerID(), true)
-            spider:SetOwner(hCaster)
+        spider:SetControllableByPlayer(hCaster:GetPlayerID(), true)
+		spider:SetOwner(hCaster)
+        
+        spider:RemoveAbility("broodmother_poison_sting")
+        spider:RemoveAbility("broodmother_spawn_spiderite")
+        
+        spider:AddNewModifier( hCaster, hAbility, M_NAME, {})
+          
+        local caster_damage = (hCaster:GetBaseDamageMax() + hCaster:GetBaseDamageMin()) / 2
+        spider:SetBaseDamageMin(caster_damage + extra_damage)
+        spider:SetBaseDamageMax(caster_damage + extra_damage)
+        spider:SetBaseAttackTime( 1.0 )
 
-            spider:RemoveAbility("broodmother_poison_sting")
-            spider:RemoveAbility("broodmother_spawn_spiderite")
-            local icon_strike = "true_strike"
-            local ability_trist = "bloodseeker_thirst"
-            --local ability_trist = "lycan_shapeshift"
-            local searing = spider:AddAbility(ability_trist)
-            searing:UpgradeAbility(true)
-            searing:SetLevel( hCaster:FindAbilityByName("mjz_broodmother_spawn_spiderlings"):GetLevel() )
-            if RandomInt( 0,100 ) < chace_srike then
-                local strike_tru = "special_bonus_truestrike"
-                local strik = spider:AddAbility(strike_tru)
-                strik:UpgradeAbility(true)
-                strik:SetLevel(1)
-                local ad_icon = spider:AddAbility(icon_strike)
-                ad_icon:UpgradeAbility(true)
-                ad_icon:SetLevel(1)
-            end
-            local newAbilityName = GetRandomAbilityName(hero)
-            local link_a = spider:AddAbility(newAbilityName)
-            link_a:UpgradeAbility(true)
-            link_a:SetLevel(hCaster:FindAbilityByName("mjz_broodmother_spawn_spiderlings"):GetLevel())
-            local newAbilityNameb = GetRandomAbilityName(hero)
-            local link_b = spider:AddAbility(newAbilityNameb)
-            link_b:UpgradeAbility(true)
-            link_b:SetLevel(hCaster:FindAbilityByName("mjz_broodmother_spawn_spiderlings"):GetLevel())
-
-            spider:AddNewModifier(hCaster, self, M_NAME, {})
-            if hCaster:HasScepter() then
-                spider:AddNewModifier(hCaster, self, aghbuf, {})
-            end
-            local caster_damage = hCaster:GetAverageTrueAttackDamage(hCaster) * 1.3
-            local spider_lvl = hCaster:FindAbilityByName("mjz_broodmother_spawn_spiderlings"):GetLevel()
-            if spider_lvl > 6 then
-                caster_damage = caster_damage + ((hCaster:GetMaxHealth() + hCaster:GetMaxMana()) * 0.33) + (hCaster:GetSpellAmplification(false) * 5000) + (hCaster:GetPhysicalArmorValue(false) * 200)
-            end
-            spider:SetBaseDamageMin(caster_damage + extra_damage)
-            spider:SetBaseDamageMax(caster_damage + extra_damage)
-            spider:SetBaseAttackTime(0.7)
-            --spider:SetBaseAttackTime(hCaster:GetBaseAttackTime() - self.flAttackTimeReduce)
-            --spider:SetBaseAttackSpeed(caster_as)
-
-            -- spider:SetForceAttackTarget(hTarget)
-        end
-    end  
+        -- spider:SetForceAttackTarget(hTarget)  -- 攻击目标，不能控制单位
+    end
 end
 
 
 ---------------------------------------------------------------------------------------
+
 modifier_mjz_broodmother_spiderlings = class({})
-function modifier_mjz_broodmother_spiderlings:IsHidden() return true end
-function modifier_mjz_broodmother_spiderlings:IsPurgable() return false end
-function modifier_mjz_broodmother_spiderlings:CheckState()
-    return {
+local modifier_spiderlings = modifier_mjz_broodmother_spiderlings
+
+function modifier_spiderlings:IsHidden() return true end
+function modifier_spiderlings:IsPurgable() return false end
+
+function modifier_spiderlings:CheckState()
+    local state = {
         -- [MODIFIER_STATE_STUNNED] = true,
         -- [MODIFIER_STATE_ROOTED] = true,
         -- [MODIFIER_STATE_FROZEN] = true,
@@ -139,23 +118,32 @@ function modifier_mjz_broodmother_spiderlings:CheckState()
         [MODIFIER_STATE_NO_HEALTH_BAR] = true,
         [MODIFIER_STATE_NO_UNIT_COLLISION] = true,
     }
+    return state
 end
+
+
+
 if IsServer() then
-    function modifier_mjz_broodmother_spiderlings:OnCreated()
-        self.caster = self:GetCaster()
-        self.ability = self:GetAbility()
-        self.target = self:GetParent()
+    function modifier_spiderlings:OnCreated()
+        local caster = self:GetCaster()
+        local ability = self:GetAbility()
+        local parent = self:GetParent()
+        
+        self.caster = caster
+        self.ability = ability
+        self.target = parent
 
         local interval = -1
         self:OnIntervalThink()
         self:StartIntervalThink(interval)
     end
-    function modifier_mjz_broodmother_spiderlings:OnIntervalThink()
+    function modifier_spiderlings:OnIntervalThink()
         if self.ability then
         end
     end
 end
 
+<<<<<<< Updated upstream
 function GetRandomAbilityName(hero)
     local abilityList = {
         "beastmaster_inner_beast",
@@ -325,3 +313,5 @@ function GetTalentSpecialValueFor(ability, value)
     return base
 end
 
+=======
+>>>>>>> Stashed changes

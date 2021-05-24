@@ -30,7 +30,6 @@ function siltbreaker_mind_control:OnAbilityPhaseInterrupted()
 	if IsServer() then
 		ParticleManager:DestroyParticle( self.nPreviewFX, false )
 		StopSoundOn( "Siltbreaker.MindControl.PreCast", self:GetCaster() )
-		print("stoped")
 	end 
 end
 
@@ -82,7 +81,6 @@ function siltbreaker_mind_control:OnProjectileHit( hTarget, vLocation )
 	if IsServer() then
 		if hTarget ~= nil and ( not hTarget:IsMagicImmune() ) and ( not hTarget:IsInvulnerable() ) then
 			hTarget:AddNewModifier( self:GetCaster(), self, "modifier_siltbreaker_mind_control", { duration = self.charm_duration } )
-			print("modif added")
 		end
 
 		return true

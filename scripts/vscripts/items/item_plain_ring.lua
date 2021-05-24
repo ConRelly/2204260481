@@ -10,20 +10,18 @@ LinkLuaModifier("modifier_item_plain_ring_aura", "items/item_plain_ring.lua", LU
 modifier_item_plain_ring_aura = class({})
 
 
+if IsServer() then
+    function modifier_item_plain_ring_aura:OnCreated(keys)
+        local parent = self:GetParent()
 
-function modifier_item_plain_ring_aura:OnCreated(keys)
-	if IsServer() then
-		local parent = self:GetParent()
-
-		if parent then
-			if not parent:IsIllusion() then
+        if parent then
+			if not parent:IsIllusion() and parent:GetUnitLabel() ~= "spirit_bear" then
 				parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_plain_ring", {})
 				EmitSoundOn("Hero_Antimage.Counterspell.Absorb", parent)
 			end
-		end
-	end	
+        end
+    end
 end
-
 
 
 function modifier_item_plain_ring_aura:IsHidden()
@@ -71,7 +69,7 @@ end
 
 
 function modifier_item_plain_ring_aura:GetModifierPreAttack_BonusDamage()
-    return 250
+    return self:GetAbility():GetSpecialValueFor("bonus_damage")
 end
 
 
@@ -91,12 +89,12 @@ end
 
 
 function modifier_item_plain_ring_buff:GetModifierPhysicalArmorBonus()
-    return 40
+    return self:GetAbility():GetSpecialValueFor("aura_armor")
 end
 
 
 function modifier_item_plain_ring_buff:GetModifierConstantManaRegen()
-    return 25
+    return self:GetAbility():GetSpecialValueFor("aura_mana_regen")
 end
 
 LinkLuaModifier("modifier_item_plain_ring", "items/item_plain_ring.lua", LUA_MODIFIER_MOTION_NONE)
@@ -109,71 +107,51 @@ function modifier_item_plain_ring:IsPurgable()
 	return false
 end
 
-
+if IsServer() then
 
 
 
 function modifier_item_plain_ring:DeclareFunctions()
-	if IsServer() then
-		return {
-			MODIFIER_EVENT_ON_TAKEDAMAGE,
-		}
-	end
+	return {
+		MODIFIER_EVENT_ON_TAKEDAMAGE,
+	}
 end
 
 
 function modifier_item_plain_ring:OnCreated(keys)
-	if IsServer() then
-		local extra = 0
-		self.parent = self:GetParent()
-		self.ability = self:GetAbility()
-		if self.parent:GetLevel() > 88 then
-			extra = 3
-		end	
-		self.invincibility_duration = self.ability:GetSpecialValueFor("duration") + extra
-		self.cooldown = self.ability:GetCooldown(0)
-	end
+	self.parent = self:GetParent()
+	self.ability = self:GetAbility()
+	self.invincibility_duration = self.ability:GetSpecialValueFor("duration")
+	self.cooldown = self.ability:GetCooldown(0)
 end
 
 
 function modifier_item_plain_ring:OnTakeDamage(keys)
-	if IsServer() then
-		local attacker = keys.attacker
-		local unit = keys.unit
-		if self.parent == unit and self.ability:IsCooldownReady() and self.parent:GetHealth() < 1  then
-			if has_item(self.parent, "item_plain_ring") and not unit:IsNull() and IsValidEntity(unit) then
-				self.parent:SetHealth(1)
-				self.parent:AddNewModifier(self.parent, self:GetAbility(), "modifier_item_plain_ring_invincibility", {duration = self.invincibility_duration})
-				self.ability:StartCooldown(self.cooldown * self.parent:GetCooldownReduction())
-				Timers:CreateTimer({
-					endTime = 0.5, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
-					callback = function()
-						if unit and not unit:IsNull() and IsValidEntity(unit) and unit:IsAlive() then
-							self.parent:AddNewModifier(self.parent, self:GetAbility(), "modifier_item_plain_ring_frenzy", {duration = self.invincibility_duration + 5})
-							--self.parent:SetAbsOrigin (attacker:GetAbsOrigin ())
-							--FindClearRandomPositionAroundUnit(self.parent, attacker, 250)
-							--attacker:SetHealth(450)
-							--self.parent:PerformAttack (attacker, true, true, true, true, false, false, true)
-						end						
-					end
-				})			
-				--self.parent:EmitSoundParams("Hero_Juggernaut.OmniSlash.Damage", 0, 1.5, 0)
-			else
-				self:Destroy()
-			end
+	local attacker = keys.attacker
+	local unit = keys.unit
+	if self.parent == unit and self.ability:IsCooldownReady() and self.parent:GetHealth() < 1  then
+		if has_item(self.parent, "item_plain_ring") then
+
+			self.parent:SetHealth(1)
+			self.parent:AddNewModifier(self.parent, self:GetAbility(), "modifier_item_plain_ring_invincibility", {duration = self.invincibility_duration})
+			self.ability:StartCooldown(self.cooldown * self.parent:GetCooldownReduction())
+		else
+			self:Destroy()
 		end
-	end	
+	end
 end
 
 
+
+
+end
 LinkLuaModifier("modifier_item_plain_ring_invincibility", "items/item_plain_ring.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_item_plain_ring_invincibility = class({})
-
+if IsServer() then
 function modifier_item_plain_ring_invincibility:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_MIN_HEALTH,
-		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
-	}	
+	}
 end
 
 function modifier_item_plain_ring_invincibility:IsPurgable()
@@ -182,19 +160,12 @@ end
 function modifier_item_plain_ring_invincibility:GetMinHealth()
 	return 1
 end
-function modifier_item_plain_ring_invincibility:GetModifierIncomingDamage_Percentage()
-	return -400
-end
 
 function modifier_item_plain_ring_invincibility:OnDestroy()
-	if IsServer() then
-		local parent = self:GetParent()
-			--ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
-		if parent:GetLevel() > 80 then
-			parent:SetHealth(parent:GetMaxHealth() * 0.4)
-		end	
-		parent:Heal((parent:GetMaxHealth() * self:GetAbility():GetSpecialValueFor("min_health") * 0.01), parent)		
-	end	
+local parent = self:GetParent()
+	ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+	parent:Heal((parent:GetMaxHealth() * self:GetAbility():GetSpecialValueFor("min_health") * 0.01), parent)
+end
 end
 function modifier_item_plain_ring_invincibility:GetTexture()
 	return "plain_ring_invincibility"
@@ -205,46 +176,4 @@ end
 
 function modifier_item_plain_ring_invincibility:GetEffectAttachType()
 	return PATTACH_ABSORIGIN_FOLLOW
-end
-
-
-modifier_item_plain_ring_frenzy = class({})
-LinkLuaModifier("modifier_item_plain_ring_frenzy", "items/item_plain_ring.lua", LUA_MODIFIER_MOTION_NONE)
-
-function modifier_item_plain_ring_frenzy:IsHidden() return true end
-function modifier_item_plain_ring_frenzy:IsPurgable() return false end
---function modifier_item_plain_ring_frenzy:RemoveOnDeath() return false end
-
-function modifier_item_plain_ring_frenzy:DeclareFunctions()
-	return {
-    MODIFIER_PROPERTY_STATUS_RESISTANCE,
-    MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET,
-	MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
-	MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-	MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
-	MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
-	MODIFIER_PROPERTY_CASTTIME_PERCENTAGE
-	}
-end
-
-function modifier_item_plain_ring_frenzy:GetModifierStatusResistance()
-  return 100
-end
-function modifier_item_plain_ring_frenzy:GetModifierHealAmplify_PercentageTarget()
-  return 100
-end
-function modifier_item_plain_ring_frenzy:GetModifierMoveSpeed_Absolute()
-  return 700
-end
-function modifier_item_plain_ring_frenzy:GetModifierAttackSpeedBonus_Constant()
-  return 390
-end
-function modifier_item_plain_ring_frenzy:GetModifierTotalDamageOutgoing_Percentage()
-  return 120
-end
-function modifier_item_plain_ring_frenzy:GetModifierPercentageCooldown()
-  return 90
-end
-function modifier_item_plain_ring_frenzy:GetModifierPercentageCasttime()
-  return 100
 end

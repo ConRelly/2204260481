@@ -41,14 +41,14 @@ function on_created(keys)
 					end
 					if round > 10 and not has10 then
 						caster:SetHasInventory(true)
-						caster:AddItemByName("item_plain_ring")
+						caster:AddItemByName("item_holy_locket")
 						caster:SetHasInventory(false)
 						has10 = true
 					end
 					if round > 15 and not has15 then
 						caster:SetHasInventory(true)
 						caster:RemoveItem(find_item(caster, "item_heart"))
-						caster:AddItemByName("item_mjz_heart_4")
+						caster:AddItemByName("item_great_heart")
 						caster:SetHasInventory(false)
 						has15 = true
 					end
@@ -61,8 +61,8 @@ function on_created(keys)
 					if round > 25 and not has25 then
 						caster:SetHasInventory(true)
 						caster:AddNewModifier(caster, ability, "modifier_goon_increase_stats", {})
-						caster:RemoveItem(find_item(caster, "item_mjz_heart_5"))
-						caster:AddItemByName("item_mjz_heart_5")
+						caster:RemoveItem(find_item(caster, "item_great_heart"))
+						caster:AddItemByName("item_ultimate_heart")
 						caster:AddItemByName("item_ultimate_scepter")
 						caster:SetHasInventory(false)
 						has25 = true
@@ -77,7 +77,7 @@ function on_created(keys)
 					if round > 35 and not has35 then
 						caster:SetHasInventory(true)
 						caster:RemoveItem(find_item(caster, "item_greater_crit"))
-						caster:AddItemByName("item_mjz_shivas_guard_5")
+						caster:AddItemByName("item_ultimate_crit")
 						caster:SetHasInventory(false)
 						has35 = true
 					end

@@ -100,7 +100,7 @@ function modifier_axe_custom_counter_helix:OnAttackLanded( params )
 				
 				-- damage
 				for _,enemy in pairs(enemies) do
-					self.damageTable.damage =  self.damage
+					self.damageTable.damage =  self.damage / #enemies
 					self.damageTable.victim = enemy
 					ApplyDamage( self.damageTable )
 				end

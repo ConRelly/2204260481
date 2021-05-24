@@ -40,14 +40,14 @@ function modifier_siltbreaker_mind_control:OnCreated( kv )
 
 		self:GetParent():AddNewModifier( self:GetCaster(), nil, "modifier_phased", { duration = -1 } )
 
-		local hAllies = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetOrigin(), nil, self.target_search_radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false )
-		if #hAllies > 0 then
-			self.hDesiredTarget = hAllies[ 1 ] -- assumes 1 will always be parent
+		local hAllies = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetOrigin(), nil, self.target_search_radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false )
+		if #hAllies > 1 then
+			self.hDesiredTarget = hAllies[ 2 ] -- assumes 1 will always be parent
 			self:GetParent():SetForceAttackTargetAlly( self.hDesiredTarget )
 			self.hDesiredTarget:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_siltbreaker_mind_control_marked", { duration = self.charm_duration } )
 			EmitSoundOn( "Siltbreaker.MindControl.VictimLoop", self:GetParent() )
 
-			self:StartIntervalThink( 1 )
+			self:StartIntervalThink( 0 )
 		else
 			self:Destroy()
 			return

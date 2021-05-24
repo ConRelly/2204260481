@@ -1,0 +1,90 @@
+
+
+	//=================================================================================================================
+	// 比干的七巧玲珑心	
+	//=================================================================================================================
+	"item_recipe_bigan_octarine_core"
+	{
+		"ID"							"70148"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_octarine_core"
+
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bigan_octarine_core"
+
+		"ItemRequirements"
+		{
+			"01"						"item_octarine_core;item_octarine_core;item_soul_booster"
+			// "02"						"item_soul_booster;item_soul_booster;item_soul_booster;item_soul_booster;item_soul_booster;item_soul_booster;item_soul_booster"
+		}
+	}
+
+	"item_bigan_octarine_core"
+	{
+		"ID"							"70149"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"		    "bigan_octarine_core"
+
+		"ItemQuality"					"epic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intelligence"	"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"1000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"1000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_cooldown"		"44"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lifesteal"		        "30"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_bigan_octarine_core"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"       "%bonus_intelligence"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"                "%bonus_health"
+					"MODIFIER_PROPERTY_MANA_BONUS"                  "%bonus_mana"
+					"MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"         "%bonus_cooldown"
+
+				}
+				"OnDealDamage"
+				{
+					"Lifesteal"
+					{
+						"Target"                "ATTACKER"
+						"LifestealPercent"      "%lifesteal"
+					}
+				}
+			} 
+		}
+	}
+
+

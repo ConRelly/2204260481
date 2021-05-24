@@ -1,0 +1,113 @@
+
+"item_recipe_vladmir_temp"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1000"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_vladmir_temp"
+    "ItemRequirements"
+    {
+        "01"						"item_vladmir;item_ultimate_orb"
+    }
+}
+"item_vladmir_temp"
+{
+    "BaseClass"                     "item_lua"
+	"ScriptFile"                    "items/item_vladmir_temp.lua"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "vladimirs"
+	"ItemAliases"					"vladmir's soul;vlads"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+	"MaxUpgradeLevel"               "2"
+    "ItemBaseLevel"                 "2"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"mana_regen_aura"		"1.5 4.0"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"armor_aura"			"4 6"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"vampiric_aura"			"7 10"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_radius"	"1200"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_all_stats"		"20"
+		}
+	}
+}
+
+"item_recipe_vladmir's_soul"
+{
+	"Model"							"vladimirs"
+	"BaseClass"						"item_datadriven"
+	"ItemCost"						"1000"	
+	"ItemShopTags"					""
+	"ItemRecipe"					"1"
+	"AbilityTextureName"			"custom_recipe"
+	"ItemResult"					"item_vladmir's_soul"
+	"ItemRequirements"
+	{
+		"01"						"item_vladmir;item_ultimate_orb"
+	}
+}
+"item_vladmir's_soul"
+{
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"BaseClass"						"item_vladmir"
+	"AbilityTextureName"			"vladimirs"
+	"ItemShopTags"					"lifesteal;damage;armor;regen_mana"
+	"ItemQuality"					"rare"
+	"ItemAliases"					"vladmir's soul;vlads"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+	"MaxUpgradeLevel"               "2"
+    "ItemBaseLevel"                 "2"
+	"ItemPurchasable"				"0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"mana_regen_aura"		"1.5 4.0"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"armor_aura"			"4 6"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"vampiric_aura"			"7 10"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_radius"	"1200"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_all_stats"		"20"
+		}
+	}
+}
+
+
+

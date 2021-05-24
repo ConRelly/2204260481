@@ -23,7 +23,7 @@ function modifier_aura:GetModifierAura()
 	return "modifier_mjz_general_granite_golem_hp_aura_bonus"
 end
 function modifier_aura:GetAuraRadius()
-	return self:GetAbility():GetSpecialValueFor("radius")
+	return self:GetAbility():GetSpecialValueFor( "radius" )
 end
 function modifier_aura:GetAuraSearchTeam()
 	return DOTA_UNIT_TARGET_TEAM_FRIENDLY
@@ -49,6 +49,6 @@ function modifier_aura_bonus:DeclareFunctions()
 end
 
 function modifier_aura_bonus:GetModifierExtraHealthPercentage()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_hp") end
+	return self:GetAbility():GetSpecialValueFor('bonus_hp')
 end
 

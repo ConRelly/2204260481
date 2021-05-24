@@ -27,9 +27,7 @@ end
 function modifier_shadow_demon_custom_soul_catcher_buff:IsDebuff()
     return true
 end
-function modifier_shadow_demon_custom_soul_catcher_buff:IsPurgable()
-    return false
-end
+
 
 function modifier_shadow_demon_custom_soul_catcher_buff:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE
@@ -44,10 +42,8 @@ end
 if IsServer() then
     function modifier_shadow_demon_custom_soul_catcher_buff:OnCreated(table)
         local ability = self:GetAbility()
-        local caster = self:GetCaster()
-        local stats = caster:GetIntellect() + caster:GetAgility() + caster:GetStrength()
-        local mult = math.ceil(ability:GetSpecialValueFor("damage_bonus") * stats)
-        self.damage = ability:GetSpecialValueFor("damage") + mult
+
+        self.damage = ability:GetSpecialValueFor("damage")
         self.interval = ability:GetSpecialValueFor("interval")
 
         self.tick_amount = self:GetDuration() / self.interval

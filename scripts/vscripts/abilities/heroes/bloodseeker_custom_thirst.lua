@@ -3,30 +3,26 @@
 bloodseeker_custom_thirst = class({})
 
 if IsServer() then
-	function bloodseeker_custom_thirst:GetIntrinsicModifierName()
-		return "modifier_bloodseeker_custom_thirst_off"
-	end
+function bloodseeker_custom_thirst:GetIntrinsicModifierName()
+	return "modifier_bloodseeker_custom_thirst_off"
+end
 
-	function bloodseeker_custom_thirst:OnToggle()
-		local caster = self:GetCaster()
-		caster:RemoveModifierByName("modifier_bloodseeker_custom_thirst_off")
-		caster:RemoveModifierByName("modifier_bloodseeker_custom_thirst")
-		if self:GetToggleState() then
-			caster:AddNewModifier(caster, self, "modifier_bloodseeker_custom_thirst", {})
-		else 
-			caster:AddNewModifier(caster, self, "modifier_bloodseeker_custom_thirst_off", {})
-		end
-	end
-	function bloodseeker_custom_thirst:OnDestroy()
-		local caster = self:GetCaster()
-		caster:RemoveModifierByName("modifier_bloodseeker_custom_thirst_off")
-		caster:RemoveModifierByName("modifier_bloodseeker_custom_thirst")
-	end	
+function bloodseeker_custom_thirst:OnToggle()
+    local caster = self:GetCaster()
+	caster:RemoveModifierByName("modifier_bloodseeker_custom_thirst_off")
+	caster:RemoveModifierByName("modifier_bloodseeker_custom_thirst")
+    if self:GetToggleState() then
+        caster:AddNewModifier(caster, self, "modifier_bloodseeker_custom_thirst", {})
+	else 
+		caster:AddNewModifier(caster, self, "modifier_bloodseeker_custom_thirst_off", {})
+    end
+end
 
-	function bloodseeker_custom_thirst:OnUpgrade()
-		self:ToggleAbility()
-		self:ToggleAbility()
-	end
+
+function bloodseeker_custom_thirst:OnUpgrade()
+	self:ToggleAbility()
+	self:ToggleAbility()
+end
 end
 
 LinkLuaModifier("modifier_bloodseeker_custom_thirst_off", "abilities/heroes/bloodseeker_custom_thirst.lua", LUA_MODIFIER_MOTION_NONE)
@@ -101,9 +97,8 @@ if IsServer() then
 		self.ability = self:GetAbility()
 		self.health_regen_percent = self.ability:GetSpecialValueFor( "health_regen_percent" )
 		self.damage = self.ability:GetSpecialValueFor("proc_damage") * 0.01
-		self.proc_chance = self.ability:GetSpecialValueFor("proc_chance") 
 		self:SetStackCount(self.health_regen_percent * self.parent:GetAverageTrueAttackDamage(self.parent) / 100)
-		self:StartIntervalThink(5.0)
+		self:StartIntervalThink(0.25)
 	end
 	function modifier_bloodseeker_custom_thirst:OnIntervalThink()
 		self:SetStackCount(self.health_regen_percent * self.parent:GetAverageTrueAttackDamage(self.parent) / 100)
@@ -112,24 +107,24 @@ if IsServer() then
 		local attacker = keys.attacker
 		local target = keys.target
 		if attacker == self.parent and not target:IsNull() then 
-			if RollPercentage(self.proc_chance) then
-				local damage = ApplyDamage({
-					ability = self.ability,
-					attacker = self.parent,
-					damage = self.parent:GetAverageTrueAttackDamage(self.parent) * self.damage,
-					damage_type = DAMAGE_TYPE_PURE,
-					victim = target
-				})
-				ParticleManager:CreateParticle("particles/econ/items/lifestealer/ls_ti9_immortal/ls_ti9_open_wounds_blood_soft.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+			local damage = ApplyDamage({
+				ability = self.ability,
+				attacker = self.parent,
+				damage = self.parent:GetAverageTrueAttackDamage(self.parent) * self.damage,
+				damage_type = DAMAGE_TYPE_PURE,
+				victim = target
+			})
+			ParticleManager:CreateParticle("particles/econ/items/lifestealer/ls_ti9_immortal/ls_ti9_open_wounds_blood_soft.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 
-				create_popup({
-					target = target,
-					value = damage,
-					color = Vector(195, 0, 0),
-					type = "spell",
-					pos = 3
-				})
-			end
+			create_popup({
+				target = target,
+				value = damage,
+				color = Vector(195, 0, 0),
+				type = "spell",
+				pos = 3
+			})
+		
+	
 		end
 	end
 end

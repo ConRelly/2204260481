@@ -69,13 +69,12 @@ function mjz_spectre_haunt:OnSpellStart()
 end
 
 function mjz_spectre_haunt:CreateIllusion(caster, point)
-	if not IsServer() then return nil end
 	local spawnPoint = point or caster:GetAbsOrigin()
 	local unit = caster:GetUnitName()
 	local ability = self
 	local duration  = ability:GetSpecialValueFor("illusion_duration")
-	local outgoingDamage = GetTalentSpecialValueFor(ability, "illusion_damage_outgoing")
-	local incomingDamage = ability:GetSpecialValueFor( "illusion_damage_incoming")
+	local outgoingDamage = ability:GetSpecialValueFor( "illusion_outgoing_damage")
+	local incomingDamage = ability:GetSpecialValueFor( "illusion_incoming_damage")
 	local pszScriptName = "modifier_mjz_spectre_haunt_illusion_buff"
 
 	local illusion_kv = { duration = duration + 1, outgoing_damage = outgoingDamage, incoming_damage = incomingDamage }
@@ -97,7 +96,6 @@ function mjz_spectre_haunt:CreateIllusion(caster, point)
 end
 
 function mjz_spectre_haunt:CreateIllusion_old(caster, point)
-
 	local spawnPoint = point or caster:GetAbsOrigin()
 	local unit = caster:GetUnitName()
 	local ability = self
@@ -206,15 +204,15 @@ function modifier_buff:IsPurgable() return false end
 function modifier_buff:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
-		--MODIFIER_EVENT_ON_TAKEDAMAGE,
+		MODIFIER_EVENT_ON_TAKEDAMAGE,
 	}
 end
 
 function modifier_buff:GetModifierMoveSpeed_Absolute( params )
-    return 650
+    return 400
 end
 
---[[function modifier_buff:OnTakeDamage( params )
+function modifier_buff:OnTakeDamage( params )
 	if not IsServer() then return nil end
 
 	local caster = self:GetCaster()
@@ -249,7 +247,7 @@ end
 		hero:Heal(hero_heal_damage, nil)
 	end
 
-end]]
+end
 
 function modifier_buff:OnDestroy()
 	if not IsServer() then return nil end
@@ -257,33 +255,4 @@ function modifier_buff:OnDestroy()
 	if unit and IsValidEntity(unit) then
 		unit:RemoveSelf()
 	end
-end
-
--- 是否学习了指定天赋技能
-function HasTalent(unit, talentName)
-    if unit:HasAbility(talentName) then
-        if unit:FindAbilityByName(talentName):GetLevel() > 0 then return true end
-    end
-    return false
-end
-
--- 获得技能数据中的数据值，如果学习了连接的天赋技能，就返回相加结果
-function GetTalentSpecialValueFor(ability, value)
-    local base = ability:GetSpecialValueFor(value)
-    local talentName
-    local kv = ability:GetAbilityKeyValues()
-    for k,v in pairs(kv) do -- trawl through keyvalues
-        if k == "AbilitySpecial" then
-            for l,m in pairs(v) do
-                if m[value] then
-                    talentName = m["LinkedSpecialBonus"]
-                end
-            end
-        end
-    end
-    if talentName then 
-        local talent = ability:GetCaster():FindAbilityByName(talentName)
-        if talent and talent:GetLevel() > 0 then base = base + talent:GetSpecialValueFor("value") end
-    end
-    return base
 end

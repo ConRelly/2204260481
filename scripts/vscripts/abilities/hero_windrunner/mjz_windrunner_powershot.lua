@@ -61,7 +61,6 @@ if IsServer() then
 					ParticleManager:SetParticleControl(self.nfx, 1, caster:GetAbsOrigin())
 					ParticleManager:SetParticleControlForward(self.nfx, 1, direction)
 
-
 	end
 end
 

@@ -11,22 +11,19 @@ function modifier_class:IsPurgable()	-- 能否被驱散
 end	
 
 function modifier_class:OnCreated( kv )
-     
-        local ability = self:GetAbility()
-        self.heap_amount = ability:GetSpecialValueFor("heap_amount")
-        self.heap_type = ability:GetSpecialValueFor( "heap_type" )
-        self.heap_type = self.heap_type or 1
-    if IsServer() then 
-        self:SetStackCount( ability:GetHeapKills() )
-        self:GetParent():CalculateStatBonus(false)
+	self.heap_amount = self:GetAbility():GetSpecialValueFor( "heap_amount" )
+    self.heap_type = self:GetAbility():GetSpecialValueFor( "heap_type" )
+    self.heap_type = self.heap_type or 1
+	if IsServer() then
+		self:SetStackCount( self:GetAbility():GetHeapKills() )
+		self:GetParent():CalculateStatBonus()
 	end
 end
 
 function modifier_class:OnRefresh( kv )
-    local ability = self:GetAbility()
-    self.heap_amount = ability:GetSpecialValueFor("heap_amount")
-    if IsServer() then
-		self:GetParent():CalculateStatBonus(false)
+	self.heap_amount = self:GetAbility():GetSpecialValueFor( "heap_amount" )
+	if IsServer() then
+		self:GetParent():CalculateStatBonus()
 	end
 end
 
@@ -34,37 +31,34 @@ function modifier_class:DeclareFunctions()
 	local funcs = {
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-        MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT
+        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS
 	}
 
 	return funcs
 end
 
-function modifier_class:GetModifierBonusStats_Strength()
+function modifier_class:GetModifierBonusStats_Strength( params )
+    if self.heap_type == 1 then
+        return self:GetStackCount() * self.heap_amount
+    else
+        return 0
+    end
+end
+function modifier_class:GetModifierBonusStats_Agility( params )
     if self.heap_type == 2 then
         return self:GetStackCount() * self.heap_amount
     else
         return 0
     end
 end
-function modifier_class:GetModifierBonusStats_Agility()
-    if self.heap_type == 2 then
-        return self:GetStackCount() * self.heap_amount
-    else
-        return 0
-    end
-end
-function modifier_class:GetModifierBonusStats_Intellect()
+function modifier_class:GetModifierBonusStats_Intellect( params )
     if self.heap_type == 3 then
         return self:GetStackCount() * self.heap_amount
     else
         return 0
     end
 end
-function modifier_class:GetModifierBaseAttackTimeConstant()
-	return self:GetAbility():GetSpecialValueFor("bat")
-end	
+
 
 --------------------------------------------------------------
 

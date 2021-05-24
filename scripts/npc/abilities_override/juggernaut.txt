@@ -8,18 +8,18 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"attack_rate_multiplier"	"4.0"
+				"attack_rate_multiplier"	"2.0"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"30 150 450"
+				"bonus_damage"				"10 20 30"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"4 6 8"
+				"duration"					"3 5 7"
 				"LinkedSpecialBonus"		"special_bonus_unique_juggernaut_2"
 			}
 		}

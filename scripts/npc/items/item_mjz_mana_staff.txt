@@ -1,0 +1,95 @@
+
+"item_recipe_mjz_mana_staff"
+{
+    "ID"							"70141"
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.mdl"
+    "AbilityTextureName"			"custom_recipe"
+
+    "ItemCost"						"1000"	
+    "ItemShopTags"					""
+
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_mjz_mana_staff"
+
+    "ItemRequirements"
+    {
+        "01"						"item_energy_booster;item_quarterstaff;item_void_stone" //item_lifesteal
+    }
+}
+
+"item_mjz_mana_staff"
+{
+    "ID"							"70142"
+    "BaseClass"						"item_datadriven"
+    "AbilityTextureName"		    "mjz_mana_staff"
+
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+
+    "ItemShopTags"					"mana"
+    "ItemQuality"					"epic"
+
+    "ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+    "ItemAliases"					"mana staff"
+
+    "MaxUpgradeLevel"               "1"
+    "ItemBaseLevel"                 "1"
+	
+	"Effect"				"particles/custom/manasteal.vpcf"
+
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_agi"	            "22"
+        }
+        "02"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_int" 	        "22"
+        }
+        "03"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "mana_steal" 	        "22"
+        }
+    }
+
+    "OnSpellStart"
+    {
+        "RunScript"
+        {
+            "ScriptFile"			"items/item_mjz_mana_staff.lua"
+            "Function"				"ManaStaffCast"
+
+            "modifier_consumed"		"modifier_item_mjz_mana_staff_consumed"
+            // "modifier_stats"		"modifier_item_imba_ultimate_scepter_synth_stats"
+            "sound_cast"			"Hero_Alchemist.Scepter.Cast"
+        }
+    }
+    
+    "Modifiers"
+    {
+        "modifier_item_mjz_mana_staff"
+        {
+            "Passive"			"1"
+            "IsHidden"			"1"
+
+            "OnAttackLanded"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"	"items/item_mjz_mana_staff.lua"
+                    "Function"		"on_attack"
+                    "damage"		"%attack_damage"
+                }
+            }
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"         "%bonus_agi"
+                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"       "%bonus_int"
+            }
+        }
+    }
+}

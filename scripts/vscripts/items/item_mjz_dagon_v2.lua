@@ -21,7 +21,7 @@ function _OnSpellStart(keys)
     
 
     local units = nil
-    if caster:HasScepter() then
+    if caster:HasScepter() and false then
         local target_type = ability:GetAbilityTargetType()
         local target_team = ability:GetAbilityTargetTeam()
         local target_flags = ability:GetAbilityTargetFlags()
@@ -50,34 +50,11 @@ function _OnSpellStart(keys)
         ApplyDamage({
             victim = victim, 
             attacker = caster, 
-            damage = damage * 0.35, 
+            damage = damage, 
             damage_type = ability:GetAbilityDamageType(),
             ability = ability,
         })
-        Timers:CreateTimer(
-            0.05,
-            function()
-                ApplyDamage({
-                    victim = victim, 
-                    attacker = caster, 
-                    damage = damage * 0.35, 
-                    damage_type = ability:GetAbilityDamageType(),
-                    ability = ability,
-                })
-            end
-        )
-        Timers:CreateTimer(
-            0.1,
-            function()
-                ApplyDamage({
-                    victim = victim, 
-                    attacker = caster, 
-                    damage = damage * 0.30, 
-                    damage_type = ability:GetAbilityDamageType(),
-                    ability = ability,
-                })
-            end
-        )                        
+
         if ability:IsItem() then
             local iCharges = use_count + 1
             ability:SetCurrentCharges(iCharges)

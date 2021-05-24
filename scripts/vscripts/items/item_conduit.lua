@@ -122,7 +122,7 @@ if IsServer() then
 			ApplyDamage({
 			ability = self.ability,
 			attacker = keys.attacker,
-			damage = keys.original_damage / 30,
+			damage = keys.original_damage,
 			damage_type = self.ability:GetAbilityDamageType(),
 			damage_flags = DOTA_DAMAGE_FLAG_REFLECTION,
 			victim = caster

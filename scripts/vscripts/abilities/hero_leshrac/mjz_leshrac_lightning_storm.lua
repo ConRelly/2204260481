@@ -65,21 +65,15 @@ function ability_class:SpellRepeat( params )
     -- hit initial target
     local lightning = ParticleManager:CreateParticle("particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf", PATTACH_WORLDORIGIN, params.initial_target)
     local loc = params.initial_target:GetAbsOrigin()
-    local target = params.initial_target
-    local caster = params.caster
-    local m_slow = "modifier_mjz_leshrac_lightning_storm_slow"
     ParticleManager:SetParticleControl(lightning, 0, loc + Vector(0, 0, 1000))
     ParticleManager:SetParticleControl(lightning, 1, loc)
     ParticleManager:SetParticleControl(lightning, 2, loc)
     EmitSoundOn("Hero_Leshrac.Lightning_Storm", params.initial_target)
-    local bonus_dmg = 0
-    if target:HasModifier(m_slow) then
-        bonus_dmg = math.ceil((target:FindModifierByName(m_slow):GetStackCount() + 1) * (caster:GetIntellect() / 10))
-    end    
+
     local damageTable = {
-        attacker = caster,
+        attacker = params.caster,
         victim = params.initial_target,
-        damage = params.damage + bonus_dmg,
+        damage = params.damage,
         damage_type = DAMAGE_TYPE_MAGICAL,
         ability = params.ability}
     ApplyDamage(damageTable)
@@ -87,13 +81,9 @@ function ability_class:SpellRepeat( params )
     -- if unit is still alive, apply slow with glow particle
     if params.initial_target:IsAlive() then
         -- params.ability:ApplyDataDrivenModifier(params.caster, params.initial_target, "lightning_storm_slow", {})
+        local m_slow = "modifier_mjz_leshrac_lightning_storm_slow"
         local slow_duration = params.slow_duration
-        if target:HasModifier(m_slow) then
-            target:FindModifierByName(m_slow):IncrementStackCount()
-            target:FindModifierByName(m_slow):ForceRefresh()
-        else
-            params.initial_target:AddNewModifier(params.caster, params.ability, m_slow, {duration = slow_duration})
-        end
+        params.initial_target:AddNewModifier(params.caster, params.ability, m_slow, {duration = slow_duration})
     end
 
     params.bounceTable[params.initial_target] = 1
@@ -213,12 +203,12 @@ function modifier_mjz_leshrac_lightning_storm_slow:IsPurgable() return false end
 
 function modifier_mjz_leshrac_lightning_storm_slow:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
 	}
 	return funcs
 end
-function modifier_mjz_leshrac_lightning_storm_slow:GetModifierHealAmplify_PercentageTarget( )
-    return self:GetAbility():GetSpecialValueFor('healing_reduction')
+function modifier_mjz_leshrac_lightning_storm_slow:GetModifierMoveSpeedBonus_Percentage( )
+    return self:GetAbility():GetSpecialValueFor('slow_movement_speed')
 end
 
 function modifier_mjz_leshrac_lightning_storm_slow:GetEffectName()

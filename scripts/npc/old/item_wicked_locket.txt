@@ -1,0 +1,70 @@
+
+"item_recipe_wicked_locket"
+{
+    "ID"							"70191"
+    "BaseClass"                     "item_recipe_holy_locket"
+    "ItemCost"						"1550"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_wicked_locket"
+    "ItemRequirements"
+    {
+        "01"						"item_holy_locket;item_ring_of_tarrasque"
+    }
+}
+"item_wicked_locket"
+{
+    "ID"							"70192"
+    "BaseClass"                     "item_holy_locket"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityTextureName"		    "wicked_locket"
+    "ItemQuality"					"rare"
+    "ActiveDescriptionLine"			"2"
+	"AbilityCastRange"				"1200"
+    "MaxUpgradeLevel"               "2"
+    "ItemBaseLevel"                 "2"
+	"AbilityCooldown"				"13.0"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_health"			"200 300"
+        }
+        "02"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_mana"			"325 425"
+        }
+        "03"
+        {
+            "var_type"				"FIELD_FLOAT"
+            "health_regen"	        "10 18"
+        }
+        "04"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "heal_increase"		    "25 40"
+        }
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"max_charges"			"20"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"charge_radius"			"1200"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_all_stats"		"8"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"restore_per_charge"	"45 90"
+		}
+	}
+}

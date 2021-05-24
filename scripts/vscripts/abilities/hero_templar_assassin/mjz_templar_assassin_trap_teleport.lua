@@ -275,7 +275,6 @@ function modifier_mjz_templar_assassin_trap_teleport_psionic_trap:IsPurgable() r
 function modifier_mjz_templar_assassin_trap_teleport_psionic_trap:CheckState() 
     return {
         [MODIFIER_STATE_LOW_ATTACK_PRIORITY]  	= true,
-        [MODIFIER_STATE_NO_UNIT_COLLISION]      = true,
     } 
 end
 

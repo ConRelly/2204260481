@@ -44,8 +44,6 @@ local modifier_class = modifier_mjz_necrolyte_reapers_scythe
 
 function modifier_class:IsHidden() return false end
 function modifier_class:IsPurgable() return false end
-function modifier_class:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
-
 
 function modifier_class:GetEffectName()
 	-- return "particles/units/heroes/hero_necrolyte/necrolyte_scythe.vpcf"
@@ -109,30 +107,16 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local target = self:GetParent()
 		local ability = self:GetAbility()
-		local health_divide = ability:GetSpecialValueFor("health_divide_dmg")
-		local extra_dmg = ((-1 * (target:GetHealthPercent() - 100)) / health_divide) + 1
-		--print(extra_dmg .. " dmg mult")
+
 		local base_damage = ability:GetSpecialValueFor("base_damage")
 		local int_damage_multiplier = ability:GetSpecialValueFor("int_damage_multiplier")
-		local damage = (base_damage + caster:GetIntellect() * int_damage_multiplier) * extra_dmg
-		local fdamage = damage / 2
-		Timers:CreateTimer({
-			endTime = 0.05, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
-			callback = function()
-				ApplyDamage({
-					attacker = caster,
-					victim = target,
-					ability = ability,
-					damage = fdamage,
-					damage_type = ability:GetAbilityDamageType(),
-				})				
-			end
-		})		
+		local damage = base_damage + caster:GetIntellect() * int_damage_multiplier
+	
 		ApplyDamage({
 			attacker = caster,
 			victim = target,
 			ability = ability,
-			damage = fdamage,
+			damage = damage,
 			damage_type = ability:GetAbilityDamageType(),
 		})
 	end

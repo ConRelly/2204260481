@@ -114,9 +114,9 @@ function OnMotionDone(caster, target, ability)
     -- ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
     -- ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
     -- ParticleManager:ReleaseParticleIndex(particle)
-    --[[local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_earthshaker/earthshaker_totem_leap_impact_dust.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+    local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_earthshaker/earthshaker_totem_leap_impact_dust.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
     ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
-    ParticleManager:ReleaseParticleIndex(particle)]]
+    ParticleManager:ReleaseParticleIndex(particle)
 
     ability:ApplyDataDrivenModifier(caster, target, modifiername_debuff, {})
 

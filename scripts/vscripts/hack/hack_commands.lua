@@ -3,11 +3,11 @@ function HackGameMode:_RegisterCommand( )
     -- Custom console commands
 	Convars:RegisterCommand( "test_func", function(...) return print( ... ) end, "Test Function.", FCVAR_CHEAT )
     
-    --Convars:RegisterCommand( "mjz_win", function(command) 
-		--GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
-       -- GameRules:SetSafeToLeave(true)
-        --end_screen_setup(true)
-    --end, "mjz_win", FCVAR_CHEAT )
+    Convars:RegisterCommand( "mjz_win", function(command) 
+		GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
+        GameRules:SetSafeToLeave(true)
+        end_screen_setup(true)
+    end, "mjz_win", FCVAR_CHEAT )
 
 	Convars:RegisterCommand( "mjz_hero_point", function(command) 
         print_all_hero_point()

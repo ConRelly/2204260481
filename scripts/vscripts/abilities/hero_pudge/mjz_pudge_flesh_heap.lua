@@ -48,8 +48,8 @@ if IsServer() then
         local ability = self:GetAbility()
         local ability_level = self:GetAbility():GetLevel()
 
-        local magic_damage_reduction_pct = ability:GetTalentSpecialValueFor("magic_damage_reduction_pct")			
-        local primary_attribute_per = ability:GetTalentSpecialValueFor("primary_attribute_per")			
+        local magic_damage_reduction_pct = ability:GetSpecialValueFor("magic_damage_reduction_pct")			
+        local primary_attribute_per = ability:GetSpecialValueFor("primary_attribute_per")			
 
         local m_mrb = parent:FindModifierByName("modifier_mjz_pudge_flesh_heap_mrb")
         if m_mrb and ability_level > 0 then
@@ -83,7 +83,7 @@ if IsServer() then
         local int_bonus = 0 
         local bonus = 0
 
-        unit:CalculateStatBonus(false)	-- 	重新计算全部属性
+        -- unit:CalculateStatBonus()	-- 	重新计算全部属性
 
         local pa = unit:GetPrimaryAttribute()
         if pa == STRENGTH  then
@@ -109,7 +109,7 @@ if IsServer() then
         local agi_bonus = 0 
         local int_bonus = 0 
     
-        unit:CalculateStatBonus(false)	-- 	重新计算全部属性
+        unit:CalculateStatBonus()	-- 	重新计算全部属性
         local bonus = unit:GetPrimaryStatValue() * (primary_attribute_per / 100)
         if math.abs( bonus ) < 1 then bonus = 0 end
     
@@ -127,10 +127,14 @@ if IsServer() then
         end
         return bonus
     end
+    
+
 end
 
 
+
 ---------------------------------------------------------------------------------------
+
 modifier_mjz_pudge_flesh_heap_mrb = class({})
 local modifier_class_mrb = modifier_mjz_pudge_flesh_heap_mrb
 

@@ -39,13 +39,13 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"burn_damage"					"15 25 30 40"
+				"burn_damage"					"10 15 20 25"
 				"LinkedSpecialBonus"			"special_bonus_unique_huskar_2"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"spear_aoe"						"420 440 460 480"
+				"spear_aoe"						"220 240 260 280"
 			}
 			"04"
 			{
@@ -55,7 +55,7 @@
 			"05"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"burn_duration"					"10"
+				"burn_duration"					"8"
 			}
 		}
 	}

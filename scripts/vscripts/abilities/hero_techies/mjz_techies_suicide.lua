@@ -77,8 +77,8 @@ function SuicideSucceeded( keys)
 		local hp_cost = GetTalentSpecialValueFor(ability, 'hp_cost')
 		local silence_duration = GetTalentSpecialValueFor(ability, 'silence_duration')
 		local damage = base_damage + caster:GetMaxHealth() * hp_cost / 100
-		local return_damage = (caster:GetMaxHealth() * hp_cost / 100) 
-		local ptc_hp_damage = ability:GetSpecialValueFor("current_hp") / 100
+		local return_damage = caster:GetMaxHealth() * hp_cost / 100
+
 		local particle = "particles/units/heroes/hero_techies/techies_suicide.vpcf"
 		EmitSoundOn("Hero_Techies.Suicide", caster)
 
@@ -94,19 +94,15 @@ function SuicideSucceeded( keys)
 
 		for _,enemy in pairs(enemy_list) do
 			enemy:AddNewModifier(caster, ability, 'modifier_silence', {duration = silence_duration})
-			local current_hp = math.floor(enemy:GetHealth() * ptc_hp_damage)
 			ApplyDamage({ 
-				victim = enemy, attacker = caster, ability = ability,
+				victim = enemy, attacker = caster, 
 				damage = damage, damage_type = ability:GetAbilityDamageType() 
 			})
-			ApplyDamage({ 
-				victim = enemy, attacker = caster, ability = ability,
-				damage = current_hp, damage_type = ability:GetAbilityDamageType() 
-			})			
 		end
+
 		ApplyDamage({ 
-			victim = caster, attacker = caster, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-			damage = return_damage, damage_type = DAMAGE_TYPE_MAGICAL 
+			victim = caster, attacker = caster, 
+			damage = return_damage, damage_type = ability:GetAbilityDamageType() 
 		})
 	end
 end

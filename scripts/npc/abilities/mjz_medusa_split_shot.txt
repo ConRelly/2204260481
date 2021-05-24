@@ -28,28 +28,28 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_modifier"		"-10"
+				"damage_modifier"		"-20"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_modifier_tooltip"		"90"
+				"damage_modifier_tooltip"		"80"
 			}
 			"03"
 			{	
 				"var_type"					"FIELD_INTEGER"
-				"arrow_count"				"1 2 4 8"
+				"arrow_count"				"1 2 3 4"
 				"LinkedSpecialBonus"		"special_bonus_unique_medusa_2"
 			}
 			"04"
 			{	
 				"var_type"					"FIELD_INTEGER"
-				"total_arrow_count"				"3 4 5 9"
+				"total_arrow_count"				"2 3 4 5"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"range"					"900"
+				"range"					"700"
 			}
 			"06"
 			{

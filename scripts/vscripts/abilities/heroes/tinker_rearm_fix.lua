@@ -32,7 +32,7 @@ local exclude_items = {
     item_health_bag = true,
 	item_conduit = true,
 	item_plain_ring = true,
-    item_resurection_pendant = true,
+    item_maiar_pendant = true,
     
     --item_bloodthorn = true, 
     item_cursed_bloodthorn = true,  --血棘

@@ -16,7 +16,7 @@ function ability_class:OnSpellStart()
 	local point = self:GetCursorPosition()
 	local target = self:GetCursorTarget()
 	
-	local particle_name = "particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
+	local particle_name = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
 	local radius = ability:GetSpecialValueFor("spread_aoe")
 	local sight_radius = ability:GetSpecialValueFor("sight_radius")
 	local sight_duration = ability:GetSpecialValueFor("sight_duration")

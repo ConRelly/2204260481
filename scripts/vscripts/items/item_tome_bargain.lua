@@ -2,20 +2,18 @@
 item_tome_bargain = class({})
 
 
-function item_tome_bargain:OnSpellStart()	
-    local caster = self:GetCaster()
-    if caster:GetUnitLabel() ~= "spirit_bear" then
-		if caster:HasModifier("modifier_item_tome_bargain") then
-			local tome = caster:FindModifierByName("modifier_item_tome_bargain")
-			local tome_count = tome:GetStackCount()
-			local tome = caster:AddNewModifier(caster, self, "modifier_item_tome_bargain", {})
-			tome:SetStackCount(tome_count + 1)
-		else
-			local tome = caster:AddNewModifier(caster, self, "modifier_item_tome_bargain", {})
-			tome:SetStackCount(1)
-		end
-		self:SpendCharge()
-	end	
+function item_tome_bargain:OnSpellStart()
+local caster = self:GetCaster()
+	if caster:HasModifier("modifier_item_tome_bargain") then
+		local tome = caster:FindModifierByName("modifier_item_tome_bargain")
+		local tome_count = tome:GetStackCount()
+		local tome = caster:AddNewModifier(caster, self, "modifier_item_tome_bargain", {})
+		tome:SetStackCount(tome_count + 1)
+	else
+		local tome = caster:AddNewModifier(caster, self, "modifier_item_tome_bargain", {})
+		tome:SetStackCount(1)
+	end
+	self:SpendCharge()
 end
 
 
@@ -40,10 +38,6 @@ end
 function modifier_item_tome_bargain:RemoveOnDeath()
     return false
 end
-function modifier_item_tome_bargain:AllowIllusionDuplicate()
-	return true
-end	
-
 function modifier_item_tome_bargain:OnCreated()
 	self.bonus_attack = self:GetAbility():GetSpecialValueFor("bonus_base_damage")
 	self.bonus_speed = self:GetAbility():GetSpecialValueFor("bonus_attackspeed")

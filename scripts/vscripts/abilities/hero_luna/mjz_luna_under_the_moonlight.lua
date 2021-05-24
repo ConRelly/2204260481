@@ -1,29 +1,19 @@
 LinkLuaModifier("modifier_mjz_luna_under_the_moonlight", "abilities/hero_luna/mjz_luna_under_the_moonlight.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_mjz_luna_under_the_moonlight_buff", "abilities/hero_luna/mjz_luna_under_the_moonlight.lua", LUA_MODIFIER_MOTION_NONE)
+
 
 mjz_luna_under_the_moonlight = mjz_luna_under_the_moonlight or class({})
-modifier_mjz_luna_under_the_moonlight_buff = class(mjz_luna_under_the_moonlight)
 
 function mjz_luna_under_the_moonlight:GetIntrinsicModifierName()
     return "modifier_mjz_luna_under_the_moonlight"
 end
 
-local modifier_buffa = "modifier_mjz_luna_under_the_moonlight_buff"
 
 function mjz_luna_under_the_moonlight:LucentBeam(target, stun)
 	local caster = self:GetCaster()
     local ability = self
     local position = target:GetAbsOrigin()
-    local sDur = stun or 0
-	local modifier_buffa = "modifier_mjz_luna_under_the_moonlight_buff"
-	local mbuf = caster:FindModifierByName(modifier_buffa)    
-    local stack_count = mbuf:GetStackCount() + 1
-    local level = caster:GetLevel()
-    if level < 30 then
-        level = 30
-    end    
-    local damage = level * stack_count
-	--local damage = GetTalentSpecialValueFor(ability, "beam_damage") * stack_count
+	local sDur = stun or 0
+	local damage = GetTalentSpecialValueFor(ability, "beam_damage")
     if not target:TriggerSpellAbsorb( ability ) then
         ability:DealDamage( caster, target, damage )
         if sDur > 0 then
@@ -88,24 +78,8 @@ local modifier_class = modifier_mjz_luna_under_the_moonlight
 function modifier_class:IsHidden() return true end
 function modifier_class:IsPurgable()	-- 能否被驱散
 	return false
-end
-function modifier_class:AllowIllusionDuplicate()
-    return true
-end    	
-function modifier_class:OnCreated()
-    if IsServer() then
-        local caster = self:GetCaster()
-        local parent = self:GetParent()
-        local ability = self:GetAbility()
-        if not parent:HasModifier(modifier_buffa) then
-            parent:AddNewModifier(caster, ability, modifier_buffa, {})
-            local mbuf = parent:FindModifierByName(modifier_buffa)
-            local mbuf_c = caster:FindModifierByName(modifier_buffa)
-            mbuf:SetStackCount( mbuf_c:GetStackCount() + 1 )
-        end   
-    end               
-    --self:SetStackCount(self:GetStackCount()+ 1)
-end
+end	
+
 
 if IsServer() then
 	function modifier_class:DeclareFunctions()
@@ -133,23 +107,18 @@ if IsServer() then
 		local victim = target
 		local ability = self:GetAbility()
 		local proc_chance = ability:GetSpecialValueFor("proc_chance")
-		--local LUNA_LUCENT_BEAM = "luna_lucent_beam"
+		local LUNA_LUCENT_BEAM = "luna_lucent_beam"
 		
 
         if RollPercentage( proc_chance ) then
-            --local isInNight = not GameRules:IsDaytime()
-            --local beam = attacker:FindAbilityByName(LUNA_LUCENT_BEAM)
-            --if beam and beam:GetLevel() > 0 or isInNight then
+            local isInNight = not GameRules:IsDaytime()
+            local beam = attacker:FindAbilityByName(LUNA_LUCENT_BEAM)
+            if beam and beam:GetLevel() > 0 or isInNight then
                 -- attacker:CastAbilityOnTarget(target, beam, -1)
                 -- attacker:SetCursorCastTarget(target)
                 -- beam:OnSpellStart()
                 ability:LucentBeam(target)
-                local modifier_buffa = "modifier_mjz_luna_under_the_moonlight_buff"
-                local mbuf = attacker:FindModifierByName(modifier_buffa)
-                if mbuf ~= nil then
-                    mbuf:SetStackCount( mbuf:GetStackCount() + 1 )
-                end                
-            --end
+            end
 		end
 
 	end	
@@ -158,90 +127,6 @@ if IsServer() then
     --     return -1000
     -- end
 end
----------------------------------------------------
----------------------------------------------------
-function modifier_mjz_luna_under_the_moonlight_buff:IsHidden()
-    return false
-end
-function modifier_mjz_luna_under_the_moonlight_buff:IsDebuff()
-    return false
-end
-function modifier_mjz_luna_under_the_moonlight_buff:IsPurgable()
-    return false
-end
-function modifier_mjz_luna_under_the_moonlight_buff:RemoveOnDeath()
-    return false
-end
-function modifier_mjz_luna_under_the_moonlight_buff:AllowIllusionDuplicate()
-    return true
-end    
-function modifier_mjz_luna_under_the_moonlight_buff:DeclareFunctions()
-    --if not IsServer() then return end
-    return {
-        MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
-        MODIFIER_PROPERTY_HEALTH_BONUS,
-        MODIFIER_PROPERTY_MANA_BONUS,
-        MODIFIER_PROPERTY_STATS_AGILITY_BONUS
-    }     
-end
-function modifier_mjz_luna_under_the_moonlight_buff:OnCreated()
-    if not IsServer() then return end
-    local parent = self:GetParent()
-    local ability = self:GetAbility()
-    if parent:IsIllusion() then
-        
-        local mod1 = "modifier_mjz_luna_under_the_moonlight_buff"
-       -- print("ilusion")
-        local owner = PlayerResource:GetSelectedHeroEntity(parent:GetPlayerOwnerID())
-        if owner then       
-            if parent:HasModifier(mod1) then
-                local modifier1 = parent:FindModifierByName(mod1)
-                local modifier2 = owner:FindModifierByName(mod1)
-                modifier1:SetStackCount(modifier2:GetStackCount())
-               -- print("lunastuf")
-            end    
-        end    
-    end
-
-    --self.buff = self
-    --if not parent:HasModifier("modifier_mjz_luna_under_the_moonlight_buff") then
-    --    parent:AddNewModifier(parent, ability, "modifier_mjz_luna_under_the_moonlight_buff", {})
-   -- end
-        
-    --self:SetStackCount(self:GetStackCount()+ 1)
-end
-function modifier_mjz_luna_under_the_moonlight_buff:GetModifierSpellAmplify_Percentage()
-    local ability = self:GetAbility()
-    return self:GetStackCount() * ability:GetSpecialValueFor("spell_amp")
-end
-function modifier_mjz_luna_under_the_moonlight_buff:GetModifierHealthBonus()
-    local ability = self:GetAbility()
-    return self:GetStackCount() * ability:GetSpecialValueFor("bonus_hp")
-end 
-function modifier_mjz_luna_under_the_moonlight_buff:GetModifierManaBonus()
-    local ability = self:GetAbility()
-    return self:GetStackCount() * ability:GetSpecialValueFor("bonus_mp")
-end
-function modifier_mjz_luna_under_the_moonlight_buff:GetModifierBonusStats_Agility()
-    local ability = self:GetAbility()
-    return self:GetStackCount() * ability:GetSpecialValueFor("bonus_agi")
-end  
-
---[[function modifier_mjz_luna_under_the_moonlight:OnRefresh()
-    if not IsServer() then return end
-    local caster = self:GetCaster()
-    local ability = self:GetAbility()
-    local stack = ability:GetSpecialValueFor("mana_per_hit")
-    local final_stack = stack / 4
-    local mbuff = caster:FindModifierByName(modifier_buffa)
-    if mbuff ~= nil then
-        mbuff:SetStackCount( mbuff:GetStackCount() + math.ceil( final_stack ) )
-        caster:CalculateStatBonus()
-    end    
-    --[[if RandomInt( 0,100 ) < ability:GetSpecialValueFor("stack_chance") then
-        self:SetStackCount(self:GetStackCount() + math.ceil( final_stack ))
-    end]]   
---end
 
 
 ---------------------------------------------------------------------------------------

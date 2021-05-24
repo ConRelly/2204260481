@@ -136,7 +136,7 @@ if IsServer() then
 		if caster:IsIllusion() then return nil end
 		-- if caster:PassivesDisabled() then return nil end
 
-		--target:EmitSound("Hero_StormSpirit.Overload")
+		target:EmitSound("Hero_StormSpirit.Overload")
 		local id0 = ParticleManager:CreateParticle("particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge.vpcf", PATTACH_ABSORIGIN, target)
 		
 		local radius = GetTalentSpecialValueFor(ability, 'overload_aoe')

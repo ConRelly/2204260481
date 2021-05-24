@@ -12,13 +12,12 @@ end
 
 function copy_skill_level(target, illusion, copy_ultimate)
     illusion:SetAbilityPoints(0)
-    --local abilityCount = target:GetAbilityCount()
     for slot = 0, 15 do
         local ability = target:GetAbilityByIndex(slot)
-        local abilityName = ability:GetAbilityName()
-        if ability ~= nil and ability:GetCastPoint() ~= 1337 and abilityName ~= "chen_custom_holy_persuasion" then
+        if ability ~= nil and ability:GetCastPoint() ~= 1337 then
             if ability:GetAbilityType() ~= 1 or copy_ultimate then  -- Not ultimate.
                 local abilityLevel = ability:GetLevel()
+                local abilityName = ability:GetAbilityName()
                 local illusionAbility = illusion:FindAbilityByName(abilityName)
                 if IsValidEntity(illusionAbility) then
                     illusionAbility:SetLevel(abilityLevel)
@@ -30,9 +29,9 @@ end
 
 
 function copy_items(target, illusion)
-    for itemSlot = 0, 10 do
+    for itemSlot = 0, 5 do
         local item = target:GetItemInSlot(itemSlot)
-        if item ~= nil and item:GetName() ~= "item_pocket_rax" and item:GetName() ~= "item_pocket_rax_ranged" and item:GetName() ~= "item_pharaoh_crown" and item:GetName() ~= "item_mjz_ability_point" and item:GetName() ~= "item_mjz_ability_point_2" and item:GetName() ~= "item_mjz_rage_moon_shard" and item:GetName() ~= "item_pocket_tower" and item:GetCastPoint() ~= 1337 then
+        if item ~= nil and item:GetName() ~= "item_pocket_rax" and item:GetName() ~= "item_pocket_rax_ranged" and item:GetName() ~= "item_pharaoh_crown" and item:GetCastPoint() ~= 1337 then
             local itemName = item:GetName()
             local newItem = CreateItem(itemName, illusion, illusion)
             illusion:AddItem(newItem)

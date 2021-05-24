@@ -20,7 +20,7 @@
 		"AbilityCastPoint"				"0.25"
  		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
-		"AbilityCooldown"				"80 70 60"
+		"AbilityCooldown"				"100 90 80"
 		"AbilityManaCost"				"50"
 		
 		"AbilitySpecial"
@@ -28,7 +28,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"50"
+				"duration"					"30"
 				"LinkedSpecialBonus"		"special_bonus_unique_morphling_8"
 			}
 			"02"
@@ -65,7 +65,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"60"
+				"value"						"30"
 			}
 		}
 	}

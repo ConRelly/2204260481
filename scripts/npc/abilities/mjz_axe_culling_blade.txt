@@ -24,7 +24,7 @@
 		"AbilityCastRange"				"%cast_range"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityCooldown"				"45.0 35.0 30.0"
+		"AbilityCooldown"				"75.0 65.0 55.0"
 		"AbilityManaCost"				"60 120 180"		
 
 		"AbilitySpecial"
@@ -37,37 +37,37 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"str_damage_multiplier"		"15 20 34"
+				"str_damage_multiplier"		"6 10 14"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"splash_radius_scepter"		"455"
+				"splash_radius_scepter"		"255"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_speed_bonus"		"300"
+				"attack_speed_bonus"		"30"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"move_speed_bonus"			"300"
+				"move_speed_bonus"			"30"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"speed_duration"			"10"
+				"speed_duration"			"6"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"speed_radius"				"1900"
+				"speed_radius"				"900"
 			}
 			"10"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cast_range"				"1500"
+				"cast_range"				"150"
 			}
 		}
 

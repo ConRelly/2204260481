@@ -1,0 +1,172 @@
+
+"item_recipe_sanguine"
+{
+    "ID"							"70183"
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.mdl"
+    "AbilityTextureName"			"custom_recipe"
+    "ItemCost"						"1200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_sanguine"
+    "ItemRequirements"
+    {
+        "01"						"item_quelling_blade;item_lifesteal"
+    }
+}
+"item_sanguine"
+{
+    "ID"							"70184"
+    "BaseClass"						"item_lua"
+    "ScriptFile"                    "items/item_sanguine.lua"
+    "AbilityTextureName"		    "sanguine_1"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "ItemShopTags"					"lifesteal"
+    "ItemQuality"					"rare"
+    "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    "ItemAliases"					"sanguine"
+    "MaxUpgradeLevel"               "4"
+    "ItemBaseLevel"                 "1"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"				"FIELD_FLOAT"
+            "health_damage_bonus"			"5 7 10"
+        }
+        "02"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_health"			        "150 250 450"
+        }
+		"03"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_magical_resistance"			        "12 13 14"
+        }
+		"04"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "damage_ratio"			        "65 70 85"
+        }
+		"05"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_attack_speed"			        "10 15 50"
+        }
+    }
+}
+"item_recipe_sanguine_2"
+{
+    "ID"							"70185"
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.mdl"
+    "AbilityTextureName"			"custom_recipe"
+    "ItemCost"						"0"
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_sanguine_2"
+    "ItemRequirements"
+    {
+        "01"						"item_sanguine;item_recipe_sanguine"
+    }
+}
+"item_sanguine_2"
+{
+    "ID"							"70186"
+    "BaseClass"						"item_lua"
+    "ScriptFile"                    "items/item_sanguine.lua"
+    "AbilityTextureName"		    "sanguine_2"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "ItemShopTags"					"lifesteal"
+    "ItemQuality"					"epic"
+    "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    "ItemAliases"					"sanguine"
+    "MaxUpgradeLevel"               "4"
+    "ItemBaseLevel"                 "2"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"				"FIELD_FLOAT"
+            "health_damage_bonus"			"5 7 10"
+        }
+        "02"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_health"			        "150 250 450"
+        }
+		"03"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_magical_resistance"			        "12 13 14"
+        }
+		"04"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "damage_ratio"			        "65 70 85"
+        }
+		"05"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_attack_speed"			        "10 15 50"
+        }
+    }
+}
+"item_recipe_sanguine_3"
+{
+    "ID"							"70187"
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.mdl"
+    "AbilityTextureName"			"custom_recipe"
+    "ItemCost"						"0"
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_sanguine_3"
+    "ItemRequirements"
+    {
+        "01"						"item_sanguine_2;item_sanguine_2;item_recipe_sanguine"
+    }
+}
+"item_sanguine_3"
+{
+    "ID"							"70188"
+    "BaseClass"						"item_lua"
+    "ScriptFile"                    "items/item_sanguine.lua"
+    "AbilityTextureName"		    "sanguine_3"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "ItemShopTags"					"lifesteal"
+    "ItemQuality"					"epic"
+    "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    "ItemAliases"					"sanguine"
+    "MaxUpgradeLevel"               "3"
+    "ItemBaseLevel"                 "3"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"				"FIELD_FLOAT"
+            "health_damage_bonus"			"5 7 10"
+        }
+        "02"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_health"			        "150 250 450"
+        }
+		"03"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_magical_resistance"			        "12 13 14"
+        }
+		"04"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "damage_ratio"			        "65 70 85"
+        }
+		"05"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_attack_speed"			        "10 15 50"
+        }
+    }
+}

@@ -74,8 +74,6 @@ function modifier_item_high_tech_boots:DeclareFunctions()
         MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE,
 		MODIFIER_PROPERTY_EVASION_CONSTANT,
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
     }
 end
 
@@ -90,14 +88,6 @@ end
 
 function modifier_item_high_tech_boots:GetModifierBonusStats_Agility()
     return self:GetAbility():GetSpecialValueFor("bonus_agility")
-end
-
-function modifier_item_high_tech_boots:GetModifierBonusStats_Strength()
-    return self:GetAbility():GetSpecialValueFor("bonus_strength")
-end
-
-function modifier_item_high_tech_boots:GetModifierBonusStats_Intellect()
-    return self:GetAbility():GetSpecialValueFor("bonus_intellect")
 end
 
 

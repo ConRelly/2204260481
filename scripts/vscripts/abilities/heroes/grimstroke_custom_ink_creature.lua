@@ -10,7 +10,7 @@ function cast_grimstroke_custom_ink_creature(keys)
         Target = target,
         Source = caster,
         EffectName = "particles/units/heroes/hero_grimstroke/grimstroke_phantom_return.vpcf",
-        iMoveSpeed = 2000,
+        iMoveSpeed = 1500,
         iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION,
         bDodgeable = false,
         flExpireTime = GameRules:GetGameTime() + 5.0,
@@ -25,12 +25,11 @@ function on_hit(keys)
 	local caster = keys.caster
 	local target = keys.target
     local ability = keys.ability
-    local stats = caster:GetIntellect() + caster:GetAgility() + caster:GetStrength()
-    local bonus = math.ceil(ability:GetSpecialValueFor("stats_bonus") * stats)
+    
     target:EmitSound("Hero_Grimstroke.InkCreature.Attach")
 
     if caster:IsOpposingTeam(target:GetTeam()) then
-        local damage = ability:GetSpecialValueFor("damage") + bonus
+        local damage = ability:GetSpecialValueFor("damage")
         ApplyDamage({
             ability = ability,
             attacker = caster,
@@ -39,7 +38,7 @@ function on_hit(keys)
             victim = target
         })
     else
-        local heal = ability:GetSpecialValueFor("heal") + bonus
+        local heal = ability:GetSpecialValueFor("heal")
         target:Heal(heal, caster)
     end
 end

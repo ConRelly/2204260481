@@ -34,45 +34,42 @@ end
 
 
 function cast_grimstroke_custom_soulstore(keys)
-    if IsServer() then
-        local caster = keys.caster
-        local ability = keys.ability
-        local target = keys.target
-        local modifier = keys.modifier
-        local effect_modifier = keys.effect_modifier
-        local stats = caster:GetIntellect() + caster:GetAgility() + caster:GetStrength()
-        local stats_mult = stats * GetTalentSpecialValueFor(ability, "stats_mul")
-        local stack_count = get_stack_count(caster, modifier)
+    local caster = keys.caster
+    local ability = keys.ability
+    local target = keys.target
+    local modifier = keys.modifier
+    local effect_modifier = keys.effect_modifier
 
-        if stack_count > 0 then
-            target:EmitSound("Hero_Grimstroke.SoulChain.Cast")
+    local stack_count = get_stack_count(caster, modifier)
 
-            local duration = ability:GetSpecialValueFor("duration")
+    if stack_count > 0 then
+        target:EmitSound("Hero_Grimstroke.SoulChain.Cast")
 
-            if caster:IsOpposingTeam(target:GetTeam()) then
-                local damage = (ability:GetSpecialValueFor("damage") + stats_mult) * stack_count
+        local duration = ability:GetSpecialValueFor("duration")
 
-                target:AddNewModifier(caster, ability, "modifier_grimstroke_custom_soulstore_buff", {
-                    duration = duration,
-                    damage = damage
-                })
-            else
-                local heal = math.ceil(((ability:GetSpecialValueFor("heal") + stats_mult) * stack_count) / 4)
+        if caster:IsOpposingTeam(target:GetTeam()) then
+            local damage = ability:GetSpecialValueFor("damage") * stack_count
 
-                target:AddNewModifier(caster, ability, "modifier_grimstroke_custom_soulstore_buff", {
-                    duration = duration * 3,
-                    heal = heal
-                })
-            end
-
-            caster:RemoveModifierByName(modifier)
+            target:AddNewModifier(caster, ability, "modifier_grimstroke_custom_soulstore_buff", {
+                duration = duration,
+                damage = damage
+            })
         else
-            caster:Interrupt()
-            caster:InterruptChannel()
-            ability:RefundManaCost()
-            --ability:EndCooldown()
+            local heal = ability:GetSpecialValueFor("heal") * stack_count
+
+            target:AddNewModifier(caster, ability, "modifier_grimstroke_custom_soulstore_buff", {
+                duration = duration,
+                heal = heal
+            })
         end
-    end   
+
+        caster:RemoveModifierByName(modifier)
+    else
+        caster:Interrupt()
+        caster:InterruptChannel()
+        ability:RefundManaCost()
+        ability:EndCooldown()
+    end
 end
 
 
@@ -86,9 +83,6 @@ function modifier_grimstroke_custom_soulstore_buff:IsHidden()
     return false
 end
 
-function modifier_grimstroke_custom_soulstore_buff:IsPurgable()
-    return false
-end
 
 function modifier_grimstroke_custom_soulstore_buff:GetEffectName()
     return "particles/units/heroes/hero_grimstroke/grimstroke_soulchain_debuff.vpcf"
@@ -130,38 +124,4 @@ if IsServer() then
             parent:Heal(self.tick_heal, caster)
         end
     end
-end
-
-
--- talent 
-function HasTalent(unit, talentName)
-    if unit:HasAbility(talentName) then
-        if unit:FindAbilityByName(talentName):GetLevel() > 0 then return true end
-    end
-    return false
-end
-
-function GetTalentSpecialValueFor(ability, value)
-    local base = ability:GetSpecialValueFor(value)
-    local talentName
-    local valueName
-    local kv = ability:GetAbilityKeyValues()
-    for k,v in pairs(kv) do -- trawl through keyvalues
-        if k == "AbilitySpecial" then
-            for l,m in pairs(v) do
-                if m[value] then
-                    talentName = m["LinkedSpecialBonus"]
-                    valueName = m["LinkedSpecialBonusField"]
-                end
-            end
-        end
-    end
-    if talentName then 
-        local talent = ability:GetCaster():FindAbilityByName(talentName)
-        if talent and talent:GetLevel() > 0 then
-            valueName = valueName or 'value'
-            base = base + talent:GetSpecialValueFor(valueName) 
-        end
-    end
-    return base
 end

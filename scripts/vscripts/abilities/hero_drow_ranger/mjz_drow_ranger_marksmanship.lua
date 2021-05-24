@@ -98,7 +98,7 @@ if IsServer() then
 
 		if marksmanship_attack then
 			local damage = 0
-			local attack_damage = caster:GetAverageTrueAttackDamage(target) * 0.4
+			local attack_damage = caster:GetAverageTrueAttackDamage(target)
 			if marksmanship_attack == 3 then
 				damage = attack_damage * 3
 			elseif marksmanship_attack == 2 then

@@ -71,12 +71,10 @@ if IsServer() then
 				self.parent:AddNewModifier(self.parent, self.ability, self.mn_reduction, {})
 				
 				self.parent:RemoveModifierByName(self.mn_lifesteal)
-				if not self.parent:IsIllusion() then
-					local m = self.parent:AddNewModifier(self.parent, self.ability, self.mn_lifesteal, {})
-					if m then
-						m:SetStackCount(self.lifesteal)
-					end
-				end	
+				local m = self.parent:AddNewModifier(self.parent, self.ability, self.mn_lifesteal, {})
+				if m then
+					m:SetStackCount(self.lifesteal)
+				end
 			end
 		)
 	end

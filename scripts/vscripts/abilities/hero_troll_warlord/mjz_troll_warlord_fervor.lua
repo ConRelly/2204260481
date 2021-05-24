@@ -35,7 +35,6 @@ if IsServer() then
 		local attacker = keys.attacker
 		local target = keys.target
 		local modifier_name = 'modifier_mjz_troll_warlord_fervor_stack'
-		local stk_chance = ability:GetSpecialValueFor("stack_chance")
 
 		if caster:PassivesDisabled() then return nil end
 
@@ -49,9 +48,7 @@ if IsServer() then
 
 			if ability.fervor_target == target then
 				if stack_count < max_stacks then
-					if RandomInt( 0,100 ) < stk_chance then
-						modifier:SetStackCount(stack_count + 1)
-					end	
+					modifier:SetStackCount(stack_count + 1)
 				end
 			else
 				local new_stack_count = math.floor( stack_count / 2 ) or 0
@@ -78,25 +75,13 @@ function modifier_stack:IsBuff() return true end
 
 function modifier_stack:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-		MODIFIER_PROPERTY_HEALTH_BONUS,
-		MODIFIER_PROPERTY_MANA_BONUS,
-		MODIFIER_PROPERTY_ATTACK_RANGE_BONUS
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
 	}
 	return funcs
 end
 
-function modifier_stack:GetModifierBonusStats_Agility(  )
-	return self:GetAbility():GetSpecialValueFor('bonus_agi') * self:GetStackCount()
-end
-function modifier_stack:GetModifierHealthBonus(  )
-	return self:GetAbility():GetSpecialValueFor('bonus_hp') * self:GetStackCount()
-end
-function modifier_stack:GetModifierManaBonus(  )
-	return self:GetAbility():GetSpecialValueFor('bonus_mana') * self:GetStackCount()
-end
-function modifier_stack:GetModifierAttackRangeBonus(  )
-	return self:GetAbility():GetSpecialValueFor('bonus_range') * self:GetStackCount()
+function modifier_stack:GetModifierAttackSpeedBonus_Constant(  )
+	return self:GetAbility():GetSpecialValueFor('attack_speed') * self:GetStackCount()
 end
 
 -----------------------------------------------------------------------------------------

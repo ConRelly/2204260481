@@ -1,0 +1,107 @@
+
+	//=================================================================================================================
+	// Recipe: Rage Moon Shard			狂暴银月之晶
+	//=================================================================================================================
+	"item_recipe_mjz_rage_moon_shard"
+	{
+		"ID"							"234"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_rage_moon_shard"
+		"ItemRequirements"
+		{
+			// "01"						"item_moon_shard;item_hyperstone"
+			"01"						"item_moon_shard;item_moon_shard"
+		}
+	}
+	"item_mjz_rage_moon_shard"
+	{
+		"ID"							"236"
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityTextureName"		    "mjz_rage_moon_shard"
+
+		"ItemCost"						"7000"
+		"ItemShopTags"					"mjz;attack_speed"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"moon shard"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemPurchasable"				"1"
+		"ItemRequiresCharges" 			"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ShouldBeSuggested"				"1"
+
+		"precache"
+		{
+			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed"			"240"
+			}			
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_night_vision"			"400"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"consumed_bonus_attack_speed"	"100"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"consumed_bonus_night_vision"	"200"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"consumed_bonus_attack_time"	"-0.2"
+			}
+		}
+
+		"OnEquip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"items/item_mjz_rage_moon_shard.lua"
+				"Function"				"OnEquip"
+			}		
+		}
+
+		"OnUnequip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"items/item_mjz_rage_moon_shard.lua"
+				"Function"				"OnUnequip"
+			}		
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"items/item_mjz_rage_moon_shard.lua"
+				"Function"				"OnSpellStart"
+				"sound_cast"			"Hero_Alchemist.Scepter.Cast"
+			}
+		}
+	}
+	

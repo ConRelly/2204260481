@@ -14,9 +14,7 @@ function item_formidable_chest:OnSpellStart()
     local caster = self:GetCaster()
 
     caster:EmitSound("Item.CrimsonGuard.Cast")
-    local modifier = "modifier_item_mjz_attribute_mail_buff"
-    local modifer2 = "modifier_sumon_bonus"
-    local modifer3 = "modifier_bear_bonus"
+
     local units = FindUnitsInRadius(
         caster:GetTeam(), 
         caster:GetAbsOrigin(), 
@@ -30,11 +28,9 @@ function item_formidable_chest:OnSpellStart()
     )
     local duration = self:GetSpecialValueFor("duration")
     for _, unit in ipairs(units) do
-        if not unit:HasModifier(modifier) and not unit:HasModifier(modifer2) and not unit:HasModifier(modifer3) then
-            unit:AddNewModifier(caster, self, "modifier_item_formidable_chest_buff", {
-                duration = duration
-            })
-        end    
+        unit:AddNewModifier(caster, self, "modifier_item_formidable_chest_buff", {
+            duration = duration
+        })
     end
 
 end

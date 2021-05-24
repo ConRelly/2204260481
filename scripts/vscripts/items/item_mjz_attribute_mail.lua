@@ -18,7 +18,7 @@ function item_mjz_attribute_mail:OnSpellStart()
     local caster = self:GetCaster()
 
     caster:EmitSound("Item.CrimsonGuard.Cast")
-    local modif = "modifier_item_formidable_chest_buff"
+
     local units = FindUnitsInRadius(
         caster:GetTeam(), 
         caster:GetAbsOrigin(), 
@@ -33,11 +33,9 @@ function item_mjz_attribute_mail:OnSpellStart()
     local duration = self:GetSpecialValueFor("duration")
     for _, unit in ipairs(units) do
         if self:CanAddBuff(unit) then
-            if not unit:HasModifier(modif) then
-                unit:AddNewModifier(caster, self, "modifier_item_mjz_attribute_mail_buff", {
-                    duration = duration
-                })
-            end    
+            unit:AddNewModifier(caster, self, "modifier_item_mjz_attribute_mail_buff", {
+                duration = duration
+            })
         end
     end
 
@@ -45,7 +43,7 @@ end
 
 function item_mjz_attribute_mail:CanAddBuff( unit )
     if unit and IsValidEntity(unit) and unit:IsAlive() then
-        if not unit:HasModifier("modifier_item_formidable_chest_buff") and not unit:HasModifier("modifier_sumon_bonus") and not unit:HasModifier("modifier_bear_bonus") then
+        if not unit:HasModifier("modifier_item_formidable_chest_buff") then
             return true
         end
     end
@@ -155,7 +153,7 @@ if IsServer() then
 	
 		local return_damage = caster_attr * (attr_return / 100)
 		ApplyDamage({ 
-			victim = attacker, attacker = caster, ability = ability,
+			victim = attacker, attacker = caster, 
 			damage = return_damage, damage_type = ability:GetAbilityDamageType() 
 		})
     end

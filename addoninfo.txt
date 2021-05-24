@@ -1,15 +1,11 @@
 "AddonInfo"
 {
 	"TeamCount" 		"2"
-	"maps" 				"heroattack_on_easy heroattack_on"
+	"maps" 				"aoh2"
 	"IsPlayable"  		"1"
 	"PenaltiesEnabled"			"0"
 
-	"heroattack_on_easy"
-	{
-		"MaxPlayers" "5"
-	}
-	"heroattack_on"
+	"aoh2"
 	{
 		"MaxPlayers" "5"
 	}

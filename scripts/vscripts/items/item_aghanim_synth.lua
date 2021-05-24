@@ -1,16 +1,27 @@
+<<<<<<< Updated upstream
 LinkLuaModifier("modifier_super_scepter", "items/item_aghanim_synth.lua", LUA_MODIFIER_MOTION_NONE)
 
 function AghanimsSynthCast(keys)
+=======
+--[[	Author: d2imba
+		Date:	19.11.2016	]]
+
+
+
+function AghanimsSynthCast( keys )
+>>>>>>> Stashed changes
 	local caster = keys.caster
 	local ability = keys.ability
 	local modifier_synth = keys.modifier_synth
 	local modifier_stats = keys.modifier_stats
-	
-	if caster:HasModifier("modifier_arc_warden_tempest_double") then return nil end
-	
-	if not caster:HasModifier(modifier_synth) then
-		caster:AddNewModifier(caster, nil, modifier_synth, {})
+	local sound_cast = keys.sound_cast
+
+	-- If the caster already has the synth buff, do nothing
+	-- if caster:HasModifier(modifier_synth) or caster:HasModifier("modifier_arc_warden_tempest_double") then
+	if caster:HasModifier("modifier_arc_warden_tempest_double") then
+		return nil
 	end
+<<<<<<< Updated upstream
 	if caster:HasModifier(modifier_stats) then
 		local modifier = caster:FindModifierByName(modifier_stats)
 		modifier:SetStackCount(modifier:GetStackCount() + 1)
@@ -47,3 +58,24 @@ function modifier_super_scepter:OnDestroy()
 		end
 --	end
 end
+=======
+
+	-- Otherwise, apply the synth buff and the stats buff
+	caster:AddNewModifier(caster, nil, modifier_synth, {})
+	ability:ApplyDataDrivenModifier(caster, caster, modifier_stats, {})
+
+	-- Play sound
+	caster:EmitSound(sound_cast)
+
+	-- Spend the item's only charge
+	ability:SetCurrentCharges( ability:GetCurrentCharges() - 1 )
+	caster:RemoveItem(ability)
+
+	-- Create a regular scepter for one game frame to prevent regular dota interactions from going bad
+	local dummy_scepter = CreateItem("item_ultimate_scepter", caster, caster)
+	caster:AddItem(dummy_scepter)
+	Timers:CreateTimer(0.01, function()
+		caster:RemoveItem(dummy_scepter)
+	end)
+end
+>>>>>>> Stashed changes

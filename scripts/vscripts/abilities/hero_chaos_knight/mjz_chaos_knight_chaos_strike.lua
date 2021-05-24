@@ -1,71 +1,28 @@
-mjz_chaos_knight_chaos_strike = class({})
-LinkLuaModifier("modifier_mjz_chaos_knight_chaos_strike", "abilities/hero_chaos_knight/mjz_chaos_knight_chaos_strike", LUA_MODIFIER_MOTION_NONE)
 
-function mjz_chaos_knight_chaos_strike:GetIntrinsicModifierName() return "modifier_mjz_chaos_knight_chaos_strike" end
+function OnAttackStart( keys )
+    if not IsServer() then return nil end
+    
+    local caster = keys.caster
+    local ability = keys.ability
+    local ability_level = ability:GetLevel() - 1
+    local modifier_name_crit = keys.modifier_crit
+    local modifier_name_lifesteal = keys.modifier_lifesteal
+    local special_bonus_name = keys.special_bonus
 
-modifier_mjz_chaos_knight_chaos_strike = class({})
-function modifier_mjz_chaos_knight_chaos_strike:IsHidden() return true end
-function modifier_mjz_chaos_knight_chaos_strike:IsPurgable() return false end
-function modifier_mjz_chaos_knight_chaos_strike:OnCreated()
-	if IsServer() then if not self:GetAbility() then self:Destroy() end
-		self.IsCrit = false
-		self.shard_crit = false
-	end
-end
-function modifier_mjz_chaos_knight_chaos_strike:DeclareFunctions()
-	return {MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE, MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_EVENT_ON_TAKEDAMAGE}
-end
-function modifier_mjz_chaos_knight_chaos_strike:GetModifierPreAttack_CriticalStrike(params)
-	if IsServer() and (not self:GetParent():PassivesDisabled()) then
-		local chance = self:GetAbility():GetSpecialValueFor("crit_chance")
-		chance = chance + self:GetParent():FindTalentValue("special_bonus_unique_mjz_chaos_strike")
-		if RollPseudoRandom(chance, self:GetAbility()) then
-			self.IsCrit = true
-			if self:GetCaster():HasShard() then self.shard_crit = true end
-			return self:GetAbility():GetSpecialValueFor("crit_damage")
-		end
-	end
-end
-function modifier_mjz_chaos_knight_chaos_strike:OnTakeDamage(params)
-	if IsServer() then
-		local lifesteal = self:GetAbility():GetSpecialValueFor("lifesteal")
-		if self:GetCaster() == params.attacker then
-			if params.target ~= nil and self.IsCrit then
-				local heal = params.damage * lifesteal / 100
-				self:GetParent():Heal(heal, self:GetAbility())
-				local effect_cast = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
-				ParticleManager:ReleaseParticleIndex(effect_cast)
-				EmitSoundOn("Hero_ChaosKnight.ChaosStrike", self:GetParent())
-				self.IsCrit = false
-			end
-		end
-	end
-end
-function modifier_mjz_chaos_knight_chaos_strike:OnAttackLanded(params)
-	if IsServer() then
-		local chaos_bolt = self:GetCaster():FindAbilityByName("mjz_chaos_knight_chaos_bolt")
-		if chaos_bolt then
-			if self:GetCaster() == params.attacker and not self:GetCaster():IsIllusion() then
-				if params.target ~= nil and self.shard_crit then
-					local cd_rem = chaos_bolt:GetCooldownTimeRemaining()
-					local cdr = self:GetAbility():GetSpecialValueFor("shard_cdr")
-					if cd_rem > 0 then
-						if cd_rem - cdr > 0 then
-							chaos_bolt:EndCooldown()
-							chaos_bolt:StartCooldown(cd_rem - cdr)
-						else
-							chaos_bolt:EndCooldown()
-						end
-					end
-					self.shard_crit = false
-				end
-			end
-		end
-	end
+    local crit_chance = ability:GetLevelSpecialValueFor('crit_chance', ability_level)
+    if HasTalent(caster, special_bonus_name) then
+        local special_bonus_value = FindTalentValue(caster, special_bonus_name)
+        crit_chance = crit_chance + special_bonus_value
+    end
+
+    local random_value = RandomInt(1, 100)
+    if random_value <= crit_chance  then
+        ability:ApplyDataDrivenModifier(caster, caster, modifier_name_crit, {})
+        ability:ApplyDataDrivenModifier(caster, caster, modifier_name_lifesteal, {})
+    end
 end
 
-
-
+-- 是否学习指定天赋技能
 function HasTalent(unit, talentName)
     if unit:HasAbility(talentName) then
         if unit:FindAbilityByName(talentName):GetLevel() > 0 then return true end
@@ -73,6 +30,7 @@ function HasTalent(unit, talentName)
     return false
 end
 
+-- 获得天赋技能的数据值
 function FindTalentValue(unit, talentName)
     if unit:HasAbility(talentName) then
         return unit:FindAbilityByName(talentName):GetSpecialValueFor("value")
@@ -80,11 +38,12 @@ function FindTalentValue(unit, talentName)
     return nil
 end
 
+-- 获得技能数据中连接的天赋技能的名字
 function GetTalentSpecialValueFor(ability, value)
     local base = ability:GetSpecialValueFor(value)
     local talentName
     local kv = ability:GetAbilityKeyValues()
-    for k,v in pairs(kv) do
+    for k,v in pairs(kv) do -- trawl through keyvalues
         if k == "AbilitySpecial" then
             for l,m in pairs(v) do
                 if m[value] then

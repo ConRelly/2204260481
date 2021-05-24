@@ -2,8 +2,8 @@
 local THIS_LUA = "abilities/hero_pudge/mjz_pudge_dismember.lua"
 local MODIFIER_LUA = "modifiers/hero_pudge/modifier_mjz_pudge_dismember.lua"
 
-LinkLuaModifier("modifier_mjz_pudge_dismember_duration", THIS_LUA, LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_mjz_pudge_dismember", MODIFIER_LUA, LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier( "modifier_mjz_pudge_dismember_duration", THIS_LUA, LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_mjz_pudge_dismember", MODIFIER_LUA, LUA_MODIFIER_MOTION_NONE )
 
 
 -----------------------------------------------------------------
@@ -57,7 +57,7 @@ function ability_class:GetChannelTime()
     local duration = self:GetSpecialValueFor( "duration" )
     local mName = "modifier_mjz_pudge_dismember_duration"
     if caster:HasModifier(mName) then
-        duration = duration + 2.0
+        duration = duration + 1.0
     else
         if IsServer() then
             local sb = caster:FindAbilityByName("special_bonus_unique_mjz_pudge_dismember_duration")
@@ -105,21 +105,15 @@ function ability_class:OnSpellStart()
 	if IsServer() then
 		local ability = self
         local caster = self:GetCaster()
-        self.parent = self:GetCaster()
 
         PM_FireParticle("particles/units/heroes/hero_pudge/pudge_dismember.vpcf", PATTACH_POINT_FOLLOW, caster, {[0]="attach_attack1"})
         PM_FireParticle("particles/units/heroes/hero_pudge/pudge_dismember.vpcf", PATTACH_POINT_FOLLOW, caster, {[0]="attach_attack2"})
         
         self.counter = 0
-        --local cooldown = self.BaseClass.GetCooldown(self, iLvl)
-        if self:GetCaster():HasScepter() then
-            cooldown = self:GetSpecialValueFor("scepter_cooldown")
-        else
-            cooldown = self:GetSpecialValueFor("cooldown")
-        end    
-        --local cooldown = self:GetSpecialValueFor("scepter_cooldown")
+
+        local cooldown = self:GetSpecialValueFor("scepter_cooldown")
         self:EndCooldown()
-        self:StartCooldown(cooldown * self.parent:GetCooldownReduction())
+        self:StartCooldown(cooldown)
         
         if self.hVictims and #self.hVictims > 0 then
             for _,victim in pairs(self.hVictims) do

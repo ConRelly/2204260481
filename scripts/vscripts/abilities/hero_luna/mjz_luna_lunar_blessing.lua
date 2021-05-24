@@ -4,10 +4,8 @@ function AddBuff( event )
 	local target = event.target
 	local ability = event.ability
 	local modifier_name = 'modifier_mjz_luna_lunar_blessing_buff'
-	local apex_buff = "modifier_item_custom_apex"
-    if not target:HasModifier(apex_buff) then
-		target:AddNewModifier(caster, ability, modifier_name, {})
-	end	
+
+	target:AddNewModifier(caster, ability, modifier_name, {})
 end
 
 function RemoveBuff( event )
@@ -74,16 +72,11 @@ end
 
 function modifier_class:OnIntervalThink()
 	local unit = self:GetParent()
-	local apex_buff = "modifier_item_custom_apex"
-	local modifier_name = 'modifier_mjz_luna_lunar_blessing_buff'
 	if unit and IsValidEntity(unit) and unit:IsRealHero() then
 		if self._PrimaryStatValue ~= self:_GetPrimaryStatValue() then
 			self:_Init()
 			self._PrimaryStatValue = self:_GetPrimaryStatValue()
 		end
-		if unit:HasModifier(apex_buff) then
-			unit:RemoveModifierByName(modifier_name)
-		end	
 	end
 end
 
@@ -103,7 +96,7 @@ function modifier_class:_Init( )
 	if unit and IsValidEntity(unit) and unit:IsRealHero() then
 		local pa = unit:GetPrimaryAttribute()
 
-		unit:CalculateStatBonus(false)	-- 	重新计算全部属性
+		unit:CalculateStatBonus()	-- 	重新计算全部属性
 
 		local PrimaryStatValue = self:_GetPrimaryStatValue()
 

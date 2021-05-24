@@ -1,0 +1,69 @@
+
+"item_recipe_kris_of_agony_one"
+{
+	"ID"							"70184"
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.mdl"
+    "AbilityTextureName"			"recipe"
+    "ItemCost"						"1200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_kris_of_agony_one"
+    "ItemRequirements"
+    {
+		"01"						"item_eagle;item_talisman_of_evasion;item_ogre_axe;item_lifesteal"
+    }
+}
+"item_kris_of_agony_one"
+{
+	"ID"							"70184"
+	"BaseClass"						"item_lua"
+	"ScriptFile"                    "items/item_kris_of_agony_one.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"kris_of_agony_one"
+	"AbilityCastRange"				"0"
+	
+	"ItemCost"						"5425"
+	"ItemShopTags"					"lifesteal"
+	"ItemQuality"					"rare"
+	"ItemAliases"					""
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_agility"			"30"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"bonus_strenght"		"10"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_hp"				"1200"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"lifesteal"				"30"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"evasion"				"20"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"lifesteal_ranged"		"20"
+		}
+	}
+}
+

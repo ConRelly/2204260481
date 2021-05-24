@@ -1,0 +1,104 @@
+
+	"item_recipe_mjz_guardian_greaves_holy_light"
+	{
+		"ID"							"230"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName" 			"recipe"
+		
+		"ItemCost"						"1825"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_guardian_greaves_holy_light"
+
+		"ItemRequirements"
+		{
+			"01"						"item_mekansm;item_arcane_boots"
+		}
+	}
+	"item_mjz_guardian_greaves_holy_light"
+	{
+		"ID"							"231"
+		"BaseClass"						"item_lua"	//"item_datadriven"
+    	"ScriptFile"                    "items/item_mjz_guardian_greaves_holy_light.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"		    "mjz_guardian_greaves_holy_light"
+		"FightRecapLevel"				"1"
+
+		"AbilityCooldown"				"50"
+		"AbilityCastRange" 				"1200"
+		"AOERadius" 					"1200"
+
+		"AbilityManaCost"				"0"
+		"ItemCost"						"5500"
+		"ItemShopTags"					"int;armor;regen_health;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"guardian greaves"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemAlertable"					"1"
+		"ShouldBeSuggested"				"1"
+
+		"AbilitySpecial"
+		{				
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement"		"17"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"250"
+			}		
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"5"
+			}	
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_health_regen"		"5"
+			}			
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_armor"			"2"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"1200"
+			}	
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replenish_radius"		"1200"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replenish_health_pct"		"25"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"replenish_mana_pct"		"20"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"		"sounds/items/guardian_greaves.vsnd"
+			"particle"		"particles/msg_fx/msg_heal.vpcf"
+			"particle"		"particles/msg_fx/msg_mana_add.vpcf"
+			"particle"		"particles/econ/events/ti6/mekanism_ti6.vpcf"
+			"particle"		"particles/items2_fx/mekanism.vpcf"
+		}
+	}

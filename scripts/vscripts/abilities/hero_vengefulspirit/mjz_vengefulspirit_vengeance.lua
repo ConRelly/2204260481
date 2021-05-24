@@ -41,8 +41,8 @@ function modifier_class:GetModifierAttackRangeBonus( )
 				self:SetStackCount(11)
 			end
 		else
-			if self:GetStackCount() ~= 11 then
-				self:SetStackCount(11)
+			if self:GetStackCount() ~= 1 then
+				self:SetStackCount(1)
 			end
 		end
 	end

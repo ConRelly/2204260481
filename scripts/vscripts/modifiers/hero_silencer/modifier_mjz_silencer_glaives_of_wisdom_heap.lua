@@ -54,7 +54,7 @@ function modifier_class:OnCreated( kv )
     self.heap_type = self:GetAbility():GetSpecialValueFor( "heap_type" )
     self.heap_type = self.heap_type or 1
 	if IsServer() then
-		self:CalculateStatBonus(false)
+		self:CalculateStatBonus()
 		self:RemoveModifierIntSteal()
 	end
 end
@@ -62,13 +62,13 @@ end
 function modifier_class:OnRefresh( kv )
 	self.heap_amount = self:GetAbility():GetSpecialValueFor( "heap_amount" )
 	if IsServer() then
-		self:CalculateStatBonus(false)
+		self:CalculateStatBonus()
 	end
 end
 
 if IsServer() then
 	function modifier_class:OnRespawn( )
-		self:CalculateStatBonus(false)
+		self:CalculateStatBonus()
 		self:RemoveModifierIntSteal()
 	end
 
@@ -114,21 +114,13 @@ if IsServer() then
 		if hVictim:IsIllusion() then return nil end
 		if hVictim:IsRealHero() then return nil end
 		if hVictim:GetTeam() == caster:GetTeam() then return nil end
+
 		local heap_amount = GetTalentSpecialValueFor(ability, "heap_amount" )
 		if caster:IsAlive() then
 			if hKiller == caster or self:InNearby(hVictim) then
 				self:IncrementHeapAmount(heap_amount)
 	
 				self:PlayEffect( hVictim, hKiller, event, heap_amount)
-				if HasSuperScepter(caster) then
-					local chance_nr = math.random(100)
-					local chance = ability:GetSpecialValueFor("second_stack")
-					if chance_nr > chance then
-						self:IncrementHeapAmount(heap_amount)
-						self:PlayEffect( hVictim, hKiller, event, heap_amount * 2)
-						--print(chance_nr .. "luky nr")
-					end	
-				end	
 			end
 		end
 	end
@@ -169,7 +161,7 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local heap_amount = self:GetHeapAmount()
 		self:SetStackCount( heap_amount)
-		caster:CalculateStatBonus(false)
+		caster:CalculateStatBonus()
 	end
 
 	function modifier_class:PlayEffect(hVictim, hKiller, event, intellectDifference )
@@ -293,12 +285,4 @@ function GetTalentSpecialValueFor(ability, value)
         if talent and talent:GetLevel() > 0 then base = base + talent:GetSpecialValueFor("value") end
     end
     return base
-end
-
-function HasSuperScepter(npc)
-    local modifier_super_scepter = "modifier_item_imba_ultimate_scepter_synth_stats"
-    if npc:HasModifier(modifier_super_scepter) and npc:FindModifierByName(modifier_super_scepter):GetStackCount() > 2 then
-		return true 
-	end	  
-    return false
 end

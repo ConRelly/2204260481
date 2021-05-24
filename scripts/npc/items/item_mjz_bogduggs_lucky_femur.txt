@@ -1,0 +1,297 @@
+
+	"item_recipe_mjz_bogduggs_lucky_femur"
+	{
+		"ID"							"71258"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		
+		"ItemCost"						"800"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_bogduggs_lucky_femur"
+		"ItemRequirements"
+		{
+			"01"						"item_robe;item_void_stone;item_energy_booster"
+		}
+	}
+	"item_mjz_bogduggs_lucky_femur"
+	{
+		"ID"							"71259"
+		"BaseClass"						"item_lua"	//"item_datadriven"
+    	"ScriptFile"                    "items/item_mjz_bogduggs_lucky_femur.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjz_bogduggs_lucky_femur"
+		
+		"ItemCost"						"3000"
+		"ItemShopTags"					"int;mana"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mjz;lucky"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+		
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"1"
+		"AbilityCooldown"				"5.0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_intellect"			"5 10 15 20 25"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana"				"200 300 400 500 600"
+			}			
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana_regen"			"10 12 14 16 18"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"refresh_pct"				"25 26 27 28 29"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
+			"particle"	"particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf"
+		}
+	}
+	"item_recipe_mjz_bogduggs_lucky_femur_2"
+	{
+		"ID"							"71258"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		
+		"ItemCost"						"0"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_bogduggs_lucky_femur_2"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_bogduggs_lucky_femur;item_recipe_mjz_bogduggs_lucky_femur"
+		}
+	}
+	"item_mjz_bogduggs_lucky_femur_2"
+	{
+		"ID"							"71259"
+		"BaseClass"						"item_lua"	//"item_datadriven"
+    	"ScriptFile"                    "items/item_mjz_bogduggs_lucky_femur.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjz_bogduggs_lucky_femur"
+
+		"ItemCost"						"3000"
+		"ItemShopTags"					"int;mana"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mjz;lucky"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+		
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"2"
+		"AbilityCooldown"				"5.0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_intellect"			"5 10 15 20 25"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana"				"200 300 400 500 600"
+			}			
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana_regen"			"10 12 14 16 18"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"refresh_pct"				"25 26 27 28 29"
+			}
+		}
+	}
+	"item_recipe_mjz_bogduggs_lucky_femur_3"
+	{
+		"ID"							"71258"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		
+		"ItemCost"						"0"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_bogduggs_lucky_femur_3"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_bogduggs_lucky_femur_2;item_recipe_mjz_bogduggs_lucky_femur"
+		}
+	}
+	"item_mjz_bogduggs_lucky_femur_3"
+	{
+		"ID"							"71259"
+		"BaseClass"						"item_lua"	//"item_datadriven"
+    	"ScriptFile"                    "items/item_mjz_bogduggs_lucky_femur.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjz_bogduggs_lucky_femur"
+
+		"ItemCost"						"3000"
+		"ItemShopTags"					"int;mana"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mjz;lucky"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+		
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"3"
+		"AbilityCooldown"				"5.0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_intellect"			"5 10 15 20 25"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana"				"200 300 400 500 600"
+			}			
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana_regen"			"10 12 14 16 18"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"refresh_pct"				"25 26 27 28 29"
+			}
+		}
+	}
+	"item_recipe_mjz_bogduggs_lucky_femur_4"
+	{
+		"ID"							"71258"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		
+		"ItemCost"						"0"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_bogduggs_lucky_femur_4"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_bogduggs_lucky_femur_3;item_recipe_mjz_bogduggs_lucky_femur"
+		}
+	}
+	"item_mjz_bogduggs_lucky_femur_4"
+	{
+		"ID"							"71259"
+		"BaseClass"						"item_lua"	//"item_datadriven"
+    	"ScriptFile"                    "items/item_mjz_bogduggs_lucky_femur.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjz_bogduggs_lucky_femur"
+
+		"ItemCost"						"3000"
+		"ItemShopTags"					"int;mana"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mjz;lucky"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+		
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"4"
+		"AbilityCooldown"				"5.0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_intellect"			"5 10 15 20 25"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana"				"200 300 400 500 600"
+			}			
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana_regen"			"10 12 14 16 18"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"refresh_pct"				"25 26 27 28 29"
+			}
+		}
+	}
+	"item_recipe_mjz_bogduggs_lucky_femur_5"
+	{
+		"ID"							"71258"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		
+		"ItemCost"						"0"	
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_bogduggs_lucky_femur_5"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_bogduggs_lucky_femur_4;item_recipe_mjz_bogduggs_lucky_femur"
+		}
+	}
+	"item_mjz_bogduggs_lucky_femur_5"
+	{
+		"ID"							"71259"
+		"BaseClass"						"item_lua"	//"item_datadriven"
+    	"ScriptFile"                    "items/item_mjz_bogduggs_lucky_femur.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mjz_bogduggs_lucky_femur"
+
+		"ItemCost"						"3000"
+		"ItemShopTags"					"int;mana"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mjz;lucky"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+		
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"5"
+		"AbilityCooldown"				"5.0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_intellect"			"5 10 15 20 25"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana"				"200 300 400 500 600"
+			}			
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana_regen"			"10 12 14 16 18"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"refresh_pct"				"25 26 27 28 29"
+			}
+		}
+	}

@@ -115,7 +115,7 @@ if IsServer() then
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
 		local damage_pct = GetTalentSpecialValueFor(ability, 'damage_pct')
-		local damage = math.ceil((self.damage * (damage_pct / 100.0)) / 2)
+		local damage = self.damage * (damage_pct / 100.0)
 
 		local damage_table = {
 			victim = parent,
@@ -125,6 +125,7 @@ if IsServer() then
 			ability = ability,
 		}
 		local returnDamage = ApplyDamage( damage_table )
+
 		if returnDamage > 0 then
 			-- SendOverheadEventMessage(caster:GetPlayerOwner(), damage, parent, returnDamage, caster:GetPlayerOwner()) 
 			create_popup_by_damage_type({
@@ -133,23 +134,7 @@ if IsServer() then
 				color = Vector(0, 0, 0),
 				type = 'damage'
 			}, ability)
-
-			Timers:CreateTimer({
-				endTime = 0.5, 
-				callback = function()
-					local returnDamage2 = ApplyDamage( damage_table )
-					if returnDamage2 > 0 then
-						create_popup_by_damage_type({
-							target = parent,
-							value = returnDamage2,
-							color = Vector(0, 0, 0),
-							type = 'damage'
-						}, ability)
-					end						
-				end	
-			})			
 		end
-		
 	end
 
 end

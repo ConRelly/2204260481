@@ -19,11 +19,10 @@ function item_custom_ex_machina:OnSpellStart()
         ParticleManager:ReleaseParticleIndex(fx)
 
         refresh_items(caster, {
-            item_resurection_pendant = true, item_conduit = true, item_custom_fusion_rune = true, 
+            item_maiar_pendant = true, item_conduit = true, item_custom_fusion_rune = true, 
             item_custom_ex_machina = true, item_plain_ring = true, item_helm_of_the_undying = true, 
             item_echo_wand = true,
-            item_bloodthorn = true, item_cursed_bloodthorn = true, item_random_get_ability_spell = true,
-            item_random_get_ability = true, item_custom_refresher = true, item_video_file = true, --血棘
+            item_bloodthorn = true, item_cursed_bloodthorn = true,  --血棘
         })
     end
 end
@@ -61,9 +60,7 @@ if IsServer() then
 	end
 	
 	function modifier_item_custom_ex_machina:OnDestroy()
-        if not self.parent:IsNull() and IsValidEntity(self.parent) then
-            self.parent:RemoveModifierByName("modifier_item_custom_ex_machina_buff")
-        end    
+		self.parent:RemoveModifierByName("modifier_item_custom_ex_machina_buff")
 	end
 end
 

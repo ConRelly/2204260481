@@ -37,10 +37,6 @@ if IsServer() then
 		caster:EmitSound("Hero_LegionCommander.Duel.Cast")
 
 		local p_name = "particles/units/heroes/hero_legion_commander/legion_duel_ring.vpcf"
-		if ability._particle ~= nil then
-			ParticleManager:DestroyParticle(ability._particle, true)
-			ParticleManager:ReleaseParticleIndex(ability._particle)
-		end		
 		ability._particle = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN, caster)
 		local center_point = target_origin + ((caster_origin - target_origin) / 2)
 		ParticleManager:SetParticleControl(ability._particle, 0, center_point)  --The center position.
@@ -62,12 +58,12 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local target = self:GetCursorTarget()
 
-		--[[local order_target = 
+		local order_target = 
 		{
 			UnitIndex = target:entindex(),
 			OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
 			TargetIndex = caster:entindex()
-		}]]
+		}
 
 		local order_caster =
 		{
@@ -78,11 +74,11 @@ if IsServer() then
 
 		target:Stop()
 
-		--ExecuteOrderFromTable(order_target)
+		ExecuteOrderFromTable(order_target)
 		ExecuteOrderFromTable(order_caster)
 
-		--caster:SetForceAttackTarget(target)
-		--target:SetForceAttackTarget(caster)
+		caster:SetForceAttackTarget(target)
+		target:SetForceAttackTarget(caster)
 	end
 
 	function ability_class:OnTargetDeath(target)

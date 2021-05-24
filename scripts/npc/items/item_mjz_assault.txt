@@ -1,0 +1,294 @@
+
+	//=================================================================================================================
+	// Recipe: Assault Cuirass				强袭胸甲 LVL 2
+	//=================================================================================================================
+	"item_recipe_mjz_assault_2"
+	{
+		"ID"							"111"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_assault_2"
+		"ItemRequirements"
+		{
+			"01"						"item_assault;item_platemail;item_hyperstone;item_recipe_assault"
+		}
+	}
+	"item_mjz_assault_2"
+	{
+		"ID"							"112"
+		"BaseClass"						"item_lua" //"item_datadriven"
+		"ScriptFile"                    "items/item_mjz_assault.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"		    "mjz_assault"
+		"AbilityCastRange"				"1200 1400 1600 1800 2000"
+
+		"ItemCost"						"5250 9950 14650 19350 24050"
+		"ItemShopTags"					"attack_speed;armor;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ac;assault cuirass"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"2"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"30 50 70 90 110"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"10 20 30 40 50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"1200 1400 1600 1800 2000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_attack_speed"		"25 40 55 70 85"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_positive_armor"	"5 8 11 14 17"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_negative_armor"	"-5 -8 -11 -14 -17"
+			}			
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Assault Cuirass				强袭胸甲 LVL 3
+	//=================================================================================================================
+	"item_recipe_mjz_assault_3"
+	{
+		"ID"							"111"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_assault_3"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_assault_2;item_platemail;item_hyperstone;item_recipe_assault"
+		}
+	}
+	"item_mjz_assault_3"
+	{
+		"ID"							"112"
+		"BaseClass"						"item_lua" //"item_datadriven"
+		"ScriptFile"                    "items/item_mjz_assault.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"		    "mjz_assault"
+		"AbilityCastRange"				"1200 1400 1600 1800 2000"
+
+		"ItemCost"						"5250 9950 14650 19350 24050"
+		"ItemShopTags"					"attack_speed;armor;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ac;assault cuirass"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"3"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"30 50 70 90 110"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"10 20 30 40 50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"1200 1400 1600 1800 2000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_attack_speed"		"25 40 55 70 85"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_positive_armor"	"5 8 11 14 17"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_negative_armor"	"-5 -8 -11 -14 -17"
+			}			
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Assault Cuirass				强袭胸甲 LVL 4
+	//=================================================================================================================
+	"item_recipe_mjz_assault_4"
+	{
+		"ID"							"111"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_assault_4"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_assault_3;item_platemail;item_hyperstone;item_recipe_assault"
+		}
+	}
+	"item_mjz_assault_4"
+	{
+		"ID"							"112"
+		"BaseClass"						"item_lua" //"item_datadriven"
+		"ScriptFile"                    "items/item_mjz_assault.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"		    "mjz_assault"
+		"AbilityCastRange"				"1200 1400 1600 1800 2000"
+
+		"ItemCost"						"5250 9950 14650 19350 24050"
+		"ItemShopTags"					"attack_speed;armor;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ac;assault cuirass"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"4"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"30 50 70 90 110"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"10 20 30 40 50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"1200 1400 1600 1800 2000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_attack_speed"		"25 40 55 70 85"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_positive_armor"	"5 8 11 14 17"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_negative_armor"	"-5 -8 -11 -14 -17"
+			}			
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Assault Cuirass				强袭胸甲 LVL 5
+	//=================================================================================================================
+	"item_recipe_mjz_assault_5"
+	{
+		"ID"							"111"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_assault_5"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_assault_4;item_platemail;item_hyperstone;item_recipe_assault"
+		}
+	}
+	"item_mjz_assault_5"
+	{
+		"ID"							"112"
+		"BaseClass"						"item_lua" //"item_datadriven"
+		"ScriptFile"                    "items/item_mjz_assault.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"		    "mjz_assault"
+		"AbilityCastRange"				"1200 1400 1600 1800 2000"
+
+		"ItemCost"						"5250 9950 14650 19350 24050"
+		"ItemShopTags"					"attack_speed;armor;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ac;assault cuirass"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"5"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"30 50 70 90 110"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"10 20 30 40 50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"1200 1400 1600 1800 2000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_attack_speed"		"25 40 55 70 85"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_positive_armor"	"5 8 11 14 17"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_negative_armor"	"-5 -8 -11 -14 -17"
+			}			
+		}
+	}
+	

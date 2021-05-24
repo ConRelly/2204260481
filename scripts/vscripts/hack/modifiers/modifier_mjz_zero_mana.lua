@@ -21,7 +21,7 @@ function modifier_class:DeclareFunctions()
             -- MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
             -- MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,    -- GetModifierConstantHealthRegen
             -- MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,  --GetModifierConstantHealthRegen
-        MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
+        -- MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
         -- MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
         -- MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING,		-- 状态抗性（可以叠加）
         MODIFIER_PROPERTY_MANACOST_PERCENTAGE,          -- 魔法消耗和损失降低
@@ -30,15 +30,13 @@ function modifier_class:DeclareFunctions()
 
     }
 end
-function modifier_class:GetModifierTotalDamageOutgoing_Percentage()
-	return -15
-end
+
 function modifier_class:GetModifierPercentageManacost()
 	return 100
 end
 function modifier_class:GetModifierPercentageManaRegen()
-	return 1
+	return 100
 end
 function modifier_class:GetModifierConstantManaRegen()
-	return 1
+	return 666
 end

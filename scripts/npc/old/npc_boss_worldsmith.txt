@@ -1,0 +1,145 @@
+
+"npc_boss_worldsmith"
+{
+	// General
+	//
+	"Model"						"models/heroes/elder_titan/elder_titan.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"vscripts"					"bosses/attack_move.lua"	// Class of entity of link to.
+	"SoundSet"					"Hero_ElderTitan"	
+	"ModelScale"				"1.4"
+	"Level"						"35"
+	"ConsideredHero"			"1"
+	"HasInventory"				"1"
+	"AbilityLayout"				"5"
+	"precache"
+	{
+		"particle_folder"		"particles/units/heroes/hero_elder_titan"
+		"soundfile"				"soundevents/game_sounds_heroes/hero_earthshaker.vsndevts"
+	}
+	
+	// Abilities
+	
+	"Ability1"					"custom_ground_smash"			
+	"Ability2"					"custom_shifting_quake"			
+	"Ability3"					"custom_rock_hard"			
+	"Ability4"					"custom_earth_splitter"
+	"Ability5"					"custom_stone_spire"
+
+	// Armor
+	"ArmorPhysical"				"55"			// Physical protection.
+	"MagicalResistance"			"30"			// Magical protection.
+
+	// Attack
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"1100"		// Damage range min.
+	"AttackDamageMax"			"1500"		// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"1.0"			// Speed of attack.
+	"AttackAnimationPoint"		"0.15"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"4000"		// Range within a target can be acquired.
+	"AttackRange"				"170"		// Range within a target can be attacked.
+	"ProjectileModel"			""			// Particle system model for projectile.
+	"ProjectileSpeed"			""			// Speed of projectile.
+
+	// Attributes
+	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"0"			// Base strength
+	"AttributeStrengthGain"		"0"			// Strength bonus per level.
+	"AttributeBaseIntelligence"	"0"			// Base intelligence
+	"AttributeIntelligenceGain"	"0"			// Intelligence bonus per level.
+	"AttributeBaseAgility"		"0"			// Base agility
+	"AttributeAgilityGain"		"0"			// Agility bonus per level.
+
+	// Bounty
+	"BountyXP"					"0"		// Experience earn.
+	"BountyGoldMin"				"1"		// Gold earned min.
+	"BountyGoldMax"				"1"		// Gold earned max.
+
+	// Bounds
+	"BoundsHullName"			"DOTA_HULL_SIZE_HUGE"			// Hull type used for navigation/locomotion.
+	"RingRadius"				"170"
+	"HealthBarOffset"			"300"
+
+	// Movement
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"365"		// Speed
+	"MovementTurnRate"			"0.5"		// Turning rate.
+
+	// Status
+	"StatusHealth"				"270000"		// Base health.
+	"StatusHealthRegen"			"30"		// Health regeneration rate.
+	"StatusMana"				"5000"			// Base mana.
+	"StatusManaRegen"			"69"			// Mana regeneration rate.
+
+	// Team
+	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	"VisionDaytimeRange"		"1600"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1600"		// Range of vision at night time.
+	"vscripts"					"bosses/attack_move.lua"
+	
+	//Inventory
+	
+	// Creature Data
+	"Creature"
+	{
+		"DisableClumpingBehavior"   "1"
+		"States"
+		{
+				"Invade"
+				{
+						"Name"                          "Invade"
+						"Aggression"           			"100.0"
+						"Avoidance"                     "0.0"
+						"Support"                       "0.0"
+						//"RoamDistance"                "150.0"
+				}
+		}
+
+		"DefaultState"                          "Invade"
+	   
+		"OffensiveAbilities"
+		{
+			"Ability4"
+			{
+				"Name"				"custom_earth_splitter"
+			}
+			"Ability1"
+			{
+				"Name"				"custom_ground_smash"
+				"AOE"				"1"
+				"Radius"			"135"
+				"MinimumTargets"	"1"
+			}
+			"Ability2"
+			{
+				"Name"				"custom_shifting_quake"
+			}
+			"Ability5"
+			{
+				"Name"				"custom_stone_spire"
+			}
+		}
+		"EquippedItems"
+		{
+			"Unstoppable"       	{ "Item"        "item_boss_unstoppable" }
+			"Scepter"            {"Item"        "item_ultimate_scepter"}
+			"MKB"				 {"Item"		"item_monkey_king_bar"}
+			"Moonshard"			 {"Item"		"item_moon_shard"}
+			"Boss Resistance"       	{ "Item"        "item_boss_resistance_20" }
+		}
+		"AttachWearables"
+		{
+			"Wearable1" { "ItemDef" "7877" }
+			"Wearable2" { "ItemDef" "6382" }
+			"Wearable3" { "ItemDef" "6384" }
+			"Wearable4" { "ItemDef" "6385" }
+			"Wearable5" { "ItemDef" "6386" }
+		}
+	}
+}

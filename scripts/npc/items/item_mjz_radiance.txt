@@ -1,0 +1,274 @@
+
+
+	//=================================================================================================================
+	// Recipe: Radiance					辉耀 LVL 2
+	//=================================================================================================================
+	"item_recipe_mjz_radiance_2"
+	{
+		"ID"							"136"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		
+		"ItemCost"						""	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_radiance_2"
+		"ItemRequirements"
+		{
+			"01"						"item_radiance;item_blades_of_attack;item_recipe_radiance"
+		}
+	}
+	"item_mjz_radiance_2"
+	{
+		"ID"							"137"
+		"BaseClass"						"item_radiance"
+		"AbilityTextureName"			"item_radiance"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityCastRange" 				"700 800 900 1000 1100"
+
+		"ItemCost"						"5150"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"radiance"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"2"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"65 70 75 80 85"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_damage"			"60 70 80 90 100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_damage_illusions"	"35 45 55 65 75"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blind_pct"				"17 18 19 20 21"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"700 800 900 1000 1100"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Radiance					辉耀 LVL 3
+	//=================================================================================================================
+	"item_recipe_mjz_radiance_3"
+	{
+		"ID"							"136"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		
+		"ItemCost"						""	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_radiance_3"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_radiance_2;item_blades_of_attack;item_recipe_radiance"
+		}
+	}
+	"item_mjz_radiance_3"
+	{
+		"ID"							"137"
+		"BaseClass"						"item_radiance"
+		"AbilityTextureName"			"item_radiance"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityCastRange" 				"700 800 900 1000 1100"
+
+		"ItemCost"						"5150"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"radiance"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"3"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"65 70 75 80 85"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_damage"			"60 70 80 90 100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_damage_illusions"	"35 45 55 65 75"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blind_pct"				"17 18 19 20 21"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"700 800 900 1000 1100"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Radiance					辉耀 LVL 4
+	//=================================================================================================================
+	"item_recipe_mjz_radiance_4"
+	{
+		"ID"							"136"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		
+		"ItemCost"						""	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_radiance_4"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_radiance_3;item_blades_of_attack;item_recipe_radiance"
+		}
+	}
+	"item_mjz_radiance_4"
+	{
+		"ID"							"137"
+		"BaseClass"						"item_radiance"
+		"AbilityTextureName"			"item_radiance"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityCastRange" 				"700 800 900 1000 1100"
+
+		"ItemCost"						"5150"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"radiance"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"4"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"65 70 75 80 85"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_damage"			"60 70 80 90 100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_damage_illusions"	"35 45 55 65 75"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blind_pct"				"17 18 19 20 21"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"700 800 900 1000 1100"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Radiance					辉耀 LVL 5
+	//=================================================================================================================
+	"item_recipe_mjz_radiance_5"
+	{
+		"ID"							"136"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		
+		"ItemCost"						""	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_radiance_5"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_radiance_4;item_blades_of_attack;item_recipe_radiance"
+		}
+	}
+	"item_mjz_radiance_5"
+	{
+		"ID"							"137"
+		"BaseClass"						"item_radiance"
+		"AbilityTextureName"			"item_radiance"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityCastRange" 				"700 800 900 1000 1100"
+
+		"ItemCost"						"5150"
+		"ItemShopTags"					"damage"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"radiance"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"5"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"65 70 75 80 85"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_damage"			"60 70 80 90 100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_damage_illusions"	"35 45 55 65 75"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blind_pct"				"17 18 19 20 21"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"700 800 900 1000 1100"
+			}
+		}
+	}
+	
+
+	
+	

@@ -26,17 +26,15 @@ function modifier_custom_weaver_behavior:IsPurgable()
 end
 
 
-
-function modifier_custom_weaver_behavior:OnCreated()
-	if IsServer() then
+if IsServer() then
+	function modifier_custom_weaver_behavior:OnCreated()
 		self.parent = self:GetParent()
 		self.ability = self:GetAbility()
 		self.itemAbility = self.parent:AddItemByName("item_flicker_boss")
 		self.interval = self.ability:GetSpecialValueFor("interval")
 		self:StartIntervalThink(self.interval)
-	end	
+	end
 end
-
 function modifier_custom_weaver_behavior:OnIntervalThink()
 	self.itemAbility:CastAbility()
 end

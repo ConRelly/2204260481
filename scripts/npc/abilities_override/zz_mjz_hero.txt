@@ -121,7 +121,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"fire_rate"						"0.3"
+				"fire_rate"						"1.0"
 				"RequiresScepter"				"1"
 			}
 			"05"
@@ -224,7 +224,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"460"
+				"value"				"260"
 				"ad_linked_ability"			"sven_gods_strength"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}

@@ -39,9 +39,9 @@ function modifier_item_willbreaker:IsPurgable()
 	return false
 end
 
---function modifier_item_willbreaker:GetAttributes()
---    return MODIFIER_ATTRIBUTE_MULTIPLE
---end
+function modifier_item_willbreaker:GetAttributes()
+    return MODIFIER_ATTRIBUTE_MULTIPLE
+end
 
 
 function modifier_item_willbreaker:DeclareFunctions()
@@ -128,19 +128,17 @@ if IsServer() then
 		
 		if attacker == self:GetParent() and not target:IsNull() then 
 			if self.ability:IsCooldownReady() then
-				if not target:HasModifier("modifier_item_willbreaker_debuff") then
-					local modifier = target:AddNewModifier(
-						attacker,
-						self.ability,
-						"modifier_item_willbreaker_debuff", -- modifier name
-						{duration = self.duration} -- kv
-					)
-					modifier:SetStackCount(target:GetPhysicalArmorBaseValue() * self.armor_reduction)
-					self.ability:UseResources(false, false, true)
-					local particle = ParticleManager:CreateParticle("particles/econ/items/underlord/underlord_ti8_immortal_weapon/underlord_ti8_immortal_pitofmalice_burst_spark.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
-					ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
-					ParticleManager:ReleaseParticleIndex(particle)
-				end	
+				local modifier = target:AddNewModifier(
+					attacker,
+					self.ability,
+					"modifier_item_willbreaker_debuff", -- modifier name
+					{duration = self.duration} -- kv
+				)
+				modifier:SetStackCount(target:GetPhysicalArmorBaseValue() * self.armor_reduction)
+				self.ability:UseResources(false, false, true)
+				local particle = ParticleManager:CreateParticle("particles/econ/items/underlord/underlord_ti8_immortal_weapon/underlord_ti8_immortal_pitofmalice_burst_spark.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+				ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+				ParticleManager:ReleaseParticleIndex(particle)
 			end
 		end
 	end

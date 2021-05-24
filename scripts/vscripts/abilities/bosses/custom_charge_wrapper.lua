@@ -18,7 +18,7 @@ function charge_wrapper(keys)
 			if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil or caster:IsCommandRestricted() then
 				return 0.5
 			end
-			--print("break 1")
+			print("break 1")
 			local fx = ParticleManager:CreateParticle("particles/custom/line_aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
 			ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
 			ParticleManager:SetParticleControl(fx, 1, caster:GetAbsOrigin())
@@ -31,10 +31,10 @@ function charge_wrapper(keys)
 				caster:Stop()
 				caster:FaceTowards(point)
 			end
-			--print("break 2")
+			print("break 2")
 			StartAnimation(caster, {duration = keys.anim_duration, activity = ACT_DOTA_CAST_ABILITY_1, rate = 1 / keys.anim_duration})
 			caster:AddNewModifier(caster, ability, "modifier_anim", {duration = anim_duration})
-			--print("break 3")
+			print("break 3")
 			Timers:CreateTimer(
 				delay - spell:GetCastPoint(), 
 				function()

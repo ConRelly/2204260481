@@ -3,18 +3,19 @@ mjz_chaos_knight_chaos_bolt = class({})
 local ability_class = mjz_chaos_knight_chaos_bolt
 
 function ability_class:GetAOERadius()
-    return self:GetSpecialValueFor("radius")
+    return self:GetSpecialValueFor('radius')
 end
 
 function ability_class:GetCastRange(vLocation, hTarget)
-    return self:GetSpecialValueFor("cast_range")
+    return self:GetSpecialValueFor('cast_range')
 end
 
 if IsServer() then
     function ability_class:OnSpellStart()
+        local ability = self
         local caster = self:GetCaster()
         local target = self:GetCursorTarget()
-        local target_count = GetTalentSpecialValueFor(self, "targets")
+        local target_count = GetTalentSpecialValueFor(ability, 'targets')
 
         local count = 1
         self:_CreateProjectile(target)
@@ -37,16 +38,17 @@ if IsServer() then
     end
 
     function ability_class:OnProjectileHit_ExtraData(target, pos, keys)
+		local ability = self
         local caster = self:GetCaster()
         
         if not target then return nil end
-        if target:TriggerSpellAbsorb(self) then return nil end
+        if target:TriggerSpellAbsorb(ability) then return nil end
 
         -- Ability variables
-        local stun_min = self:GetSpecialValueFor("stun_min")
-        local stun_max = self:GetSpecialValueFor("stun_max") 
-        local damage_min = self:GetSpecialValueFor("damage_min") 
-        local damage_max = self:GetSpecialValueFor("damage_max")
+        local stun_min = ability:GetSpecialValueFor("stun_min")
+        local stun_max = ability:GetSpecialValueFor("stun_max") 
+        local damage_min = ability:GetSpecialValueFor("damage_min") 
+        local damage_max = ability:GetSpecialValueFor("damage_max")
         local chaos_bolt_particle = "particles/units/heroes/hero_chaos_knight/chaos_knight_bolt_msg.vpcf"
         local target_location = target:GetAbsOrigin()
 
@@ -54,15 +56,6 @@ if IsServer() then
         local random = RandomFloat(0, 1)
         local stun = stun_min + (stun_max - stun_min) * random
         local damage = damage_min + (damage_max - damage_min) * (1 - random)
-		
-		if caster:HasScepter() then
-			stun = stun_max
-			damage = damage_max
-		end
-		if HasSuperScepter(caster) then
-			local str_multiplier = self:GetSpecialValueFor("str_multiplier_scepter")
-			damage = damage + caster:GetStrength() * str_multiplier
-		end
 
         -- Calculate the number of digits needed for the particle
         local stun_digits = string.len(tostring(math.floor(stun))) + 1
@@ -82,15 +75,15 @@ if IsServer() then
         ParticleManager:ReleaseParticleIndex(particle)
 
         -- Apply the stun duration
-        target:AddNewModifier(caster, self, "modifier_stunned", {duration = stun})
+        target:AddNewModifier(caster, ability, "modifier_stunned", {duration = stun})
 
         -- Initialize the damage table and deal the damage
         local damage_table = {
             attacker = caster,
             victim = target,
-            ability = self,
+            ability = ability,
             damage = damage,
-            damage_type = self:GetAbilityDamageType(),
+            damage_type = ability:GetAbilityDamageType(),
         }
         ApplyDamage(damage_table)
 
@@ -98,18 +91,19 @@ if IsServer() then
     end
 
     function ability_class:_FindEnemies( )
+        local ability = self
         local caster = self:GetCaster()
         local target = self:GetCursorTarget()
-        local radius = GetTalentSpecialValueFor(self, "radius")
+        local radius = GetTalentSpecialValueFor(ability, 'radius')
         
         return FindUnitsInRadius(
             caster:GetTeamNumber(),
             target:GetAbsOrigin(),
             nil,
             radius,
-            self:GetAbilityTargetTeam(),
-            self:GetAbilityTargetType(),
-            self:GetAbilityTargetFlags(),
+            ability:GetAbilityTargetTeam(),
+            ability:GetAbilityTargetType(),
+            ability:GetAbilityTargetFlags(),
             FIND_ANY_ORDER,
             false
         )
@@ -117,13 +111,14 @@ if IsServer() then
 
     function ability_class:_CreateProjectile(target)
         local caster = self:GetCaster()
-        local projectile_speed = self:GetSpecialValueFor("chaos_bolt_speed")
+        local ability = self
+        local projectile_speed = ability:GetSpecialValueFor('chaos_bolt_speed')
         local projectile_name = "particles/units/heroes/hero_chaos_knight/chaos_knight_chaos_bolt.vpcf"
         local info = 
 		{
 			Target = target,
 			Source = caster,
-			Ability = self,	
+			Ability = ability,	
 			EffectName = projectile_name,
 			iMoveSpeed = projectile_speed,
 			vSourceLoc = caster:GetAbsOrigin(),

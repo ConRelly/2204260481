@@ -1,0 +1,69 @@
+
+	"item_recipe_mjz_devils_veil"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"1950"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_devils_veil"
+		"ItemRequirements"
+		{
+			// 极限法球（2050）
+			"01"						"item_ultimate_orb"
+		}
+	}
+	"item_mjz_devils_veil"
+	{
+		"BaseClass"						"item_lua"
+    	"ScriptFile"                    "items/item_mjz_devils_veil.lua"
+		"AbilityTextureName"			"mjz_devils_veil"
+		// "Model"							"models/props_gameplay/neutral_box.vmdl"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+		"ItemCost"						"4000"
+		"ItemShopTags"					"mjz"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"devils_veil"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"ItemShareability"              "ITEM_NOT_SHAREABLE" //"ITEM_FULLY_SHAREABLE"	//可分享
+		"ItemKillable"                  "1"						//不可A
+		"ItemPurchasable"               "1"						//可以买
+		"ItemSellable"                  "1"						//不可卖
+		"ItemStackable"					"0"						//不可叠
+
+		"AbilityManaCost"				"110"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"16.0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_all_stats"			"12"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"outgoing_damage"			"100"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"incoming_damage"			"200"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"6"
+			}
+		}
+
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_doom_bringer/doom_bringer_doom.vpcf"
+		}
+	}

@@ -1,0 +1,98 @@
+
+	// "item_recipe_formidable_chest"
+	// {
+	// 	"ID"							"70117"
+	// 	"BaseClass"						"item_datadriven"
+	// 	"Model"							"models/props_gameplay/recipe.vmdl"
+	// 	"AbilityTextureName"			"item_recipe"
+	// 	"ItemCost"						"1200"	
+	// 	"ItemShopTags"					""
+	// 	"ItemRecipe"					"1"
+	// 	"ItemResult"					"item_formidable_chest"
+	// 	"ItemRequirements"
+	// 	{
+	// 		"01"						"item_platemail;item_platemail"
+	// 	}
+	// }	
+	"item_recipe_mjz_attribute_mail"
+	{
+		"ID"							"71070"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"1200"	
+		"ItemShopTags"					""
+		"IsObsolete"					"0"
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_attribute_mail"
+		"ItemPurchasable"				"1"
+		"ItemRequirements"
+		{
+			"01"						"item_formidable_chest"
+			"02"						"item_platemail;item_platemail;item_chainmail;item_chainmail;item_branches;item_branches"
+		}
+	}
+	"item_mjz_attribute_mail"
+	{
+		"ID"							"71071"														
+		"BaseClass"						"item_lua"
+    	"ScriptFile"                    "items/item_mjz_attribute_mail.lua"
+		"AbilityTextureName"			"mjz_attribute_mail"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		"AbilityCooldown"				"20.0"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"60"
+		
+		// Item Info
+		"ItemCost"						"99999"
+		"ItemShopTags"					"armor;block"
+		"ItemQuality"					"secret_shop"
+		"ItemAliases"					"mjz;armor"
+		"ItemPurchasable"				"1"
+		// "IsObsolete"					"1"
+		"ItemSellable"                  "1" 
+        "ItemKillable"					"1"
+        "ItemDroppable"					"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ShouldBeInitiallySuggested"	"1"
+		
+		"AbilitySpecial"
+		{
+			 "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"			    "1000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduction"	    "-45"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"	            "4"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attr_return"	        "100"
+			}
+		}
+
+		"precache"
+		{
+			"particle"                  "particles/units/heroes/hero_centaur/centaur_return.vpcf"
+		}
+	}
+	

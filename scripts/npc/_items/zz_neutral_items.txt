@@ -1,0 +1,672 @@
+
+"item_recipe_royal_jelly"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"350"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_royal_jelly"
+    "ItemRequirements"
+    {
+        "01"						"item_ring_of_regen;item_sobi_mask;"	
+    }
+}
+"item_royal_jelly"					// 蜂王浆
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"health_regen"			"10.0"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"mana_regen"			"2.5"
+		}
+	}
+}
+"item_recipe_ocean_heart"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"350"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_ocean_heart"
+    "ItemRequirements"
+    {
+        "01"						"item_ring_of_regen;item_sobi_mask;item_crown;"	
+    }
+}
+"item_ocean_heart"					// 海洋之心
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"all_stats"				"5"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"water_hp_regen"		"27"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"water_mp_regen"		"9"
+		}
+	}
+}
+
+//// LV2
+
+
+"item_recipe_philosophers_stone"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"650"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_philosophers_stone"
+    "ItemRequirements"
+    {
+        "01"						"item_energy_booster;"	
+    }
+}
+"item_philosophers_stone"			// 贤者石
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_gpm"			"120"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_mana"		"200"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_damage"		"-35"
+		}
+	}
+}
+
+"item_recipe_vambrace"
+{
+    "ItemCost"						"100"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+	"ItemPurchasable"				"1"
+	"ItemRequirements"
+	{
+		"01"						"item_bracer;item_bracer;"
+		"02"						"item_null_talisman;item_null_talisman;"
+		"03"						"item_wraith_band;item_wraith_band;"
+	}
+}
+"item_vambrace"						// 臂甲
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_primary_stat"		"22"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_secondary_stat"			"12"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_spell_amp"		"12"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_magic_resistance"	"15"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack_speed"	"25"
+		}
+	}
+}
+
+"item_recipe_grove_bow"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"650"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_grove_bow"
+    "ItemRequirements"
+    {
+        "01"						"item_gloves"	
+    }
+}
+"item_grove_bow"					// 林野长弓
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attack_range_bonus"			"150"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attack_speed_bonus"			"20"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"magic_resistance_reduction"		"15"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"debuff_duration"		"10"
+		}
+	}
+}
+
+//// LV3
+
+"item_recipe_repair_kit"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"100"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_repair_kit"
+    "ItemRequirements"
+    {
+        "01"						"item_ring_of_health"	
+    }
+}
+"item_repair_kit"					// 维修器具
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"ItemInitialCharges"			"4"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"		"50"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"armor_bonus"		"4"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"multishot_count"		"2"
+		}
+	}
+}
+
+"item_recipe_spider_legs"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"100"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_spider_legs"
+    "ItemRequirements"
+    {
+        "01"						"item_boots"	
+    }
+}
+"item_spider_legs"					// 网虫腿
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+}
+
+"item_recipe_paladin_sword"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_paladin_sword"
+    "ItemRequirements"
+    {
+        "01"						"item_lifesteal;item_blades_of_attack;"	
+    }
+}
+"item_paladin_sword"				// 骑士剑
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"17"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_lifesteal"			"17"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_amp"			"20"
+		}
+	}
+}
+
+"item_recipe_titan_sliver"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_titan_sliver"
+    "ItemRequirements"
+    {
+        "01"						"item_blades_of_attack;item_cloak;"	
+    }
+}
+"item_titan_sliver"					// 巨神残铁
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"base_attack_damage"			"22"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"magic_resistance"			"22"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"status_resistance"			"22"
+		}			
+	}
+}
+
+//// LV4
+
+"item_recipe_havoc_hammer"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"2500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_havoc_hammer"
+    "ItemRequirements"
+    {
+        "01"						"item_ogre_axe;item_mithril_hammer;"	
+    }
+}
+"item_havoc_hammer"					//浩劫巨锤
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"140"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"		"25"
+		}
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"nuke_base_dmg"			"250"
+		}		
+		"10"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"nuke_str_dmg"			"2.5"
+		}
+	}
+}
+
+"item_recipe_minotaur_horn"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"100"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_minotaur_horn"
+    "ItemRequirements"
+    {
+        "01"						"item_black_king_bar"	
+    }
+}
+"item_minotaur_horn"				//恶牛角
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilityCooldown"				"13.0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"		"60"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"3"
+		}
+	}
+}
+
+//// LV5
+
+"item_recipe_trident"
+{
+    "ItemCost"						"1500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+	"ItemPurchasable"				"1"
+    "ItemRequirements"
+    {
+		"01"						"item_kaya;item_sange;item_yasha;"
+		"02"						"item_kaya_and_sange;item_yasha;"
+		"03"						"item_sange_and_yasha;item_kaya;"
+		"04"						"item_yasha_and_kaya;item_sange;"
+    }
+}	
+"item_trident"						// 三元重戟
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"IsObsolete"					"0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"		"54"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_agility"			"45"
+		}			
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_intellect"			"45"
+		}		
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"status_resistance"				"45"
+		}		
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack_speed"	"45"
+		}
+		"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"movement_speed_percent_bonus"	"45"
+		}					
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"hp_regen_amp"			"30"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"manacost_reduction"			"21"
+		}			
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"spell_amp"			"45"
+		}
+	}
+}
+
+"item_recipe_fallen_sky"			// 天崩
+{
+	"ItemCost"						"1000"	
+	"ItemShopTags"					""
+	"ItemGloballyCombinable"		"1"
+	"ItemPurchasable"				"1"
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_fallen_sky"
+	"ItemRequirements"
+	{
+		"01"						"item_blink;item_meteor_hammer"
+	}
+}
+
+"item_recipe_ballista"				// 弩炮
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"2500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_ballista"
+    "ItemRequirements"
+    {
+        "01"						"item_hurricane_pike"	
+    }
+}
+
+"item_recipe_desolator_2"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"6000"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_desolator_2"
+    "ItemRequirements"
+    {
+        "01"						"item_desolator"
+    }
+}
+"item_desolator_2"					// 寂灭
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"200"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"corruption_armor"		"-18"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"corruption_duration"	"5.0"
+		}
+	}
+}
+
+"item_recipe_seer_stone"			// 先哲之石
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_seer_stone"
+    "ItemRequirements"
+    {
+        "01"						"item_aether_lens"
+    }
+}
+
+"item_recipe_pirate_hat"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"3000"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_pirate_hat"
+    "ItemRequirements"
+    {
+        "01"						"item_moon_shard"
+    }
+}
+"item_pirate_hat"					// 海盗帽
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack_speed"			"300"
+		}
+	}
+}
+
+"item_recipe_apex"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"3000"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_apex"
+    "ItemRequirements"
+    {
+        "01"						"item_blade_of_alacrity;item_ogre_axe;item_staff_of_wizardry;"	
+    }
+}
+"item_apex"							// 极
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"primary_stat_percent"			"50"
+		}
+	}
+}
+
+"item_recipe_demonicon"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"2200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_demonicon"
+    "ItemRequirements"
+    {
+        "01"						"item_necronomicon_3"
+    }
+}
+"item_demonicon"					// 冥灵书
+{
+	"AbilityCooldown"				"80.0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"summon_duration"				"60"
+		}
+	}
+}

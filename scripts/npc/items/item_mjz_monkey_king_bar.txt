@@ -1,0 +1,249 @@
+
+	//=================================================================================================================
+	// Recipe: Monkey King Bar			金箍棒 LVL 2
+	//=================================================================================================================
+	"item_recipe_mjz_monkey_king_bar_2"
+	{
+		"ID"							"134"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_monkey_king_bar_2"
+		"ItemRequirements"
+		{
+			"01"						"item_monkey_king_bar;item_monkey_king_bar"
+		}
+	}
+	"item_mjz_monkey_king_bar_2"
+	{
+		"ID"							"71135"
+		"BaseClass"						"item_monkey_king_bar"
+		"AbilityTextureName"			"mjz_monkey_king_bar"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemCost"						"4175"
+		"ItemShopTags"					"damage;attack_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mkb;monkey king bar"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"2"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"52 100 150 200 250"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"		"10 20 30 40 50"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_chance"				"75 77 79 81 83"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_chance_damage"		"100 150 200 250 300"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Monkey King Bar			金箍棒 LVL 3
+	//=================================================================================================================
+	"item_recipe_mjz_monkey_king_bar_3"
+	{
+		"ID"							"134"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_monkey_king_bar_3"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_monkey_king_bar_2;item_monkey_king_bar"
+		}
+	}
+	"item_mjz_monkey_king_bar_3"
+	{
+		"ID"							"71135"
+		"BaseClass"						"item_monkey_king_bar"
+		"AbilityTextureName"			"mjz_monkey_king_bar"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemCost"						"4175"
+		"ItemShopTags"					"damage;attack_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mkb;monkey king bar"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"3"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"52 100 150 200 250"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"		"10 20 30 40 50"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_chance"				"75 77 79 81 83"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_chance_damage"		"100 150 200 250 300"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Recipe: Monkey King Bar			金箍棒 LVL 4
+	//=================================================================================================================
+	"item_recipe_mjz_monkey_king_bar_4"
+	{
+		"ID"							"134"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_monkey_king_bar_4"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_monkey_king_bar_3;item_monkey_king_bar"
+		}
+	}
+	"item_mjz_monkey_king_bar_4"
+	{
+		"ID"							"71135"
+		"BaseClass"						"item_monkey_king_bar"
+		"AbilityTextureName"			"mjz_monkey_king_bar"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemCost"						"4175"
+		"ItemShopTags"					"damage;attack_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mkb;monkey king bar"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"4"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"52 100 150 200 250"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"		"10 20 30 40 50"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_chance"				"75 77 79 81 83"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_chance_damage"		"100 150 200 250 300"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Recipe: Monkey King Bar			金箍棒 LVL 5
+	//=================================================================================================================
+	"item_recipe_mjz_monkey_king_bar_5"
+	{
+		"ID"							"134"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_monkey_king_bar_5"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_monkey_king_bar_4;item_monkey_king_bar"
+		}
+	}
+	"item_mjz_monkey_king_bar_5"
+	{
+		"ID"							"71135"
+		"BaseClass"						"item_monkey_king_bar"
+		"AbilityTextureName"			"mjz_monkey_king_bar"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemCost"						"4175"
+		"ItemShopTags"					"damage;attack_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"mkb;monkey king bar"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"5"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"52 100 150 200 250"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_attack_speed"		"10 20 30 40 50"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_chance"				"75 77 79 81 83"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_chance_damage"		"100 150 200 250 300"
+			}
+		}
+	}
+
+

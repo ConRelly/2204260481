@@ -11,7 +11,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"magic_damage_reduction_pct"	"42 56 60 74"
+				"magic_damage_reduction_pct"	"12 16 20 24"
 				"LinkedSpecialBonus"			"special_bonus_unique_mjz_pudge_0301"
 			}
 			"02"
@@ -48,7 +48,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"120"
+				"value"						"30"
 			}
 		}
 	}

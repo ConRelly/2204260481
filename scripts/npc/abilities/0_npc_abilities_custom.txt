@@ -10645,7 +10645,7 @@
 		"03"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage_reflection_pct"		"7 12 22 35"
+			"damage_reflection_pct"		"7 12 17 22"
 			"LinkedSpecialBonus"		"special_bonus_unique_spectre_5"
 		}
 	}

@@ -1,0 +1,344 @@
+
+	//==================================================================
+	// Echo Sabre		回音战刃
+	//==================================================================
+	"item_recipe_echo_sabre_2"
+	{
+		"ID"							"70094"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_echo_sabre"
+
+		"ItemCost"						"1000"	
+		"ItemShopTags"					""
+
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_echo_sabre_2"
+		"ItemRequirements"
+		{
+			"01"						"item_echo_sabre"
+		}
+	}
+	"item_echo_sabre_2"
+	{
+		"ID"							"70095"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"BaseClass"						"item_echo_sabre"
+		"AbilityTextureName"			"mjz_echo_sabre"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"4.0"
+
+		"AbilityManaCost"				"0"
+		"ItemCost"						"3650"
+		"ItemShopTags"					"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"echo sabre"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"15"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"15"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"25"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1.25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"proc_damage"			"0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow"			"100"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed_slow"		"0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"0.8"
+			}
+		}
+	}
+	"item_recipe_echo_sabre_3"
+	{
+		"ID"							"70096"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_echo_sabre"
+
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_echo_sabre_3"
+		"ItemRequirements"
+		{
+			"01"						"item_echo_sabre_2;item_recipe_echo_sabre_2"
+		}
+	}
+	"item_echo_sabre_3"
+	{
+		"ID"							"70097"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"BaseClass"						"item_echo_sabre"
+		"AbilityTextureName"			"mjz_echo_sabre"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"3.0"
+
+		"AbilityManaCost"				"0"
+		"ItemCost"						"4650"
+		"ItemShopTags"					"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"echo sabre"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"20"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"20"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"35"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1.5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"proc_damage"			"0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow"			"100"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed_slow"		"0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"0.8"
+			}
+		}
+	}
+	"item_recipe_echo_sabre_4"
+	{
+		"ID"							"70098"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_echo_sabre"
+
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_echo_sabre_4"
+		"ItemRequirements"
+		{
+			"01"						"item_echo_sabre_3;item_recipe_echo_sabre_2"
+		}
+	}
+	"item_echo_sabre_4"
+	{
+		"ID"							"70099"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"BaseClass"						"item_echo_sabre"
+		"AbilityTextureName"			"mjz_echo_sabre"
+
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"2.0"
+
+		"AbilityManaCost"				"0"
+		"ItemCost"						"5650"
+		"ItemShopTags"					"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"echo sabre"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"35"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"50"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"2.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"proc_damage"			"0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow"			"100"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed_slow"		"0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"0.8"
+			}
+		}
+	}
+	"item_recipe_echo_sabre_5"
+	{
+		"ID"							"70100"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_echo_sabre"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_echo_sabre_5"
+		"ItemRequirements"
+		{
+			"01"						"item_echo_sabre_4;item_recipe_echo_sabre_2"
+		}
+	}
+	"item_echo_sabre_5"
+	{
+		"ID"							"70101"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"BaseClass"						"item_echo_sabre"
+		"AbilityTextureName"			"mjz_echo_sabre"
+		
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"1.0"
+
+		"AbilityManaCost"				"0"
+		"ItemCost"						"6650"
+		"ItemShopTags"					"int;attack_speed;damage;regen_mana;damage;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"echo sabre"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"35"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"50"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"2.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"proc_damage"			"0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow"			"100"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed_slow"		"0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"0.8"
+			}
+		}
+	}
+
+	

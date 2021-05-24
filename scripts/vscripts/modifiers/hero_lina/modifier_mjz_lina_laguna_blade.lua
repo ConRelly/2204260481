@@ -14,7 +14,7 @@ function modifier_mjz_lina_laguna_blade_bonus:DeclareFunctions()
     return funcs 
 end
 function modifier_mjz_lina_laguna_blade_bonus:OnTooltip()
-	return self:GetAbility():GetSpecialValueFor("intmult_per_kill") * self:GetStackCount()
+	return self:GetAbility():GetSpecialValueFor("damage_per_kill") * self:GetStackCount()
 end
 
 ---------------------------------------------------------------------------------
@@ -44,7 +44,7 @@ function modifier_mjz_lina_laguna_blade_death:DeclareFunctions()
 end
 
 function modifier_mjz_lina_laguna_blade_death:OnTooltip()
-	return self:GetAbility():GetSpecialValueFor("intmult_per_kill")
+	return self:GetAbility():GetSpecialValueFor("damage_per_kill")
 end
 
 function modifier_mjz_lina_laguna_blade_death:OnDeath(event)

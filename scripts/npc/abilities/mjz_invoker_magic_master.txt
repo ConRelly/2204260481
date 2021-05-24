@@ -15,17 +15,17 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_cooldown_scepter"		"45"
+				"bonus_cooldown_scepter"		"30"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"spell_amp_scepter"				"100"
+				"spell_amp_scepter"				"60"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"manacost_reduction_scepter"	"90"
+				"manacost_reduction_scepter"	"40"
 			}
 		}
 	}

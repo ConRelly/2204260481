@@ -1,0 +1,250 @@
+
+	//=================================================================================================================
+	// Recipe: Desolator				黯灭 LVL 2
+	//=================================================================================================================
+	"item_recipe_mjz_desolator_2"
+	{
+		"ID"							"167"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_desolator_2"
+		"ItemRequirements"
+		{
+			"01"						"item_desolator;item_desolator"
+		}
+	}
+	"item_mjz_desolator_2"
+	{
+		"ID"							"168"
+		"BaseClass"						"item_desolator"
+		"AbilityTextureName"		    "mjz_desolator"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemCost"						"3500"
+		"ItemShopTags"					"damage;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"desolator"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"2"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"50 90 130 170 210"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"corruption_armor"		"-7 -12 -17 -22 -27"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"corruption_duration"	"15.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tooltip_corruption_armor"	"7 12 17 22 27"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Desolator				黯灭 LVL 3
+	//=================================================================================================================
+	"item_recipe_mjz_desolator_3"
+	{
+		"ID"							"167"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_desolator_3"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_desolator_2;item_desolator"
+		}
+	}
+	"item_mjz_desolator_3"
+	{
+		"ID"							"168"
+		"BaseClass"						"item_desolator"
+		"AbilityTextureName"		    "mjz_desolator"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemCost"						"3500"
+		"ItemShopTags"					"damage;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"desolator"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"50 90 130 170 210"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"corruption_armor"		"-7 -12 -17 -22 -27"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"corruption_duration"	"15.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tooltip_corruption_armor"	"7 12 17 22 27"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Desolator				黯灭 LVL 4
+	//=================================================================================================================
+	"item_recipe_mjz_desolator_4"
+	{
+		"ID"							"167"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_desolator_4"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_desolator_3;item_desolator"
+		}
+	}
+	"item_mjz_desolator_4"
+	{
+		"ID"							"168"
+		"BaseClass"						"item_desolator"
+		"AbilityTextureName"		    "mjz_desolator"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemCost"						"3500"
+		"ItemShopTags"					"damage;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"desolator"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"4"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"50 90 130 170 210"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"corruption_armor"		"-7 -12 -17 -22 -27"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"corruption_duration"	"15.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tooltip_corruption_armor"	"7 12 17 22 27"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Desolator				黯灭 LVL 5
+	//=================================================================================================================
+	"item_recipe_mjz_desolator_5"
+	{
+		"ID"							"167"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_desolator_5"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_desolator_4;item_desolator"
+		}
+	}
+	"item_mjz_desolator_5"
+	{
+		"ID"							"168"
+		"BaseClass"						"item_desolator"
+		"AbilityTextureName"		    "mjz_desolator"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemCost"						"3500"
+		"ItemShopTags"					"damage;unique"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"desolator"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"5"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"50 90 130 170 210"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"corruption_armor"		"-7 -12 -17 -22 -27"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"corruption_duration"	"15.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tooltip_corruption_armor"	"7 12 17 22 27"
+			}
+		}
+	}
+

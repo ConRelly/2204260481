@@ -79,14 +79,13 @@ function modifier_class:DeclareFunctions()
         -- MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,      --GetModifierMoveSpeedBonus_Constant
         MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
 		MODIFIER_PROPERTY_MIN_HEALTH,
-        MODIFIER_PROPERTY_TOOLTIP,
-        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+		MODIFIER_PROPERTY_TOOLTIP,
 	}
 	return funcs
 end
 
 function modifier_class:GetMinHealth(keys)
-	return 100
+	return 1
 end
 
 function modifier_class:GetModifierAttackSpeedBonus_Constant(  )
@@ -98,9 +97,6 @@ end
 
 function modifier_class:OnTooltip(event)
 	return self:GetAbility():GetSpecialValueFor('lifesteal')
-end
-function modifier_class:GetModifierIncomingDamage_Percentage()
-	return -300
 end
 
 

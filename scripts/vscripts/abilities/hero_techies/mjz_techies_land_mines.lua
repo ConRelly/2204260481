@@ -43,19 +43,14 @@ function mjz_techies_land_mines:CalcDamage( enemy )
 		damage = damage * (building_damage_pct / 100)
 	end
 
-	--local bBaseOnly = false
-	--local spellAmp = caster:GetSpellAmplification(bBaseOnly)
+	local bBaseOnly = false
+	local spellAmp = caster:GetSpellAmplification(bBaseOnly)
 	-- print("spellAmp: ".. tostring(spellAmp))
-	--damage = damage + damage * spellAmp
+	damage = damage + damage * spellAmp
 
 	return damage
 end
 
-function mjz_techies_land_mines:Parents()
-	local caster = self:GetCaster()
-	local ability = self
-	return caster
-end	
 ------------------------------------------------------------------------------------------
 
 modifier_mjz_techies_land_mine = modifier_mjz_techies_land_mine or class({})
@@ -118,7 +113,6 @@ function modifier_mjz_techies_land_mine_trigger:OnIntervalThink()
 	if IsServer() then
 		local owner = self:GetParent()
 		local ability = self:GetAbility()
-		local caster = self:GetCaster()
 		local damageType = ability:GetAbilityDamageType()
 		local triggerRadius = ability:GetAOERadius()
 		
@@ -142,13 +136,13 @@ function modifier_mjz_techies_land_mine_trigger:OnIntervalThink()
 			ParticleManager:ReleaseParticleIndex(explosionParticle)
 			for _, enemy in pairs(enemies) do
 				local true_damage = ability:CalcDamage(enemy)
-                print(true_damage .. "bomb dmg")
+
 				ApplyDamage({
 					victim = enemy,
-					attacker = caster,
+					attacker = owner,
 					damage = true_damage,
 					damage_type = damageType,
-					damage_flags = DOTA_DAMAGE_FLAG_NONE,
+					damage_flags = DOTA_DAMAGE_FLAG_NO_DIRECTOR_EVENT,
 					ability = ability
 				})
 			end

@@ -55,9 +55,11 @@ if IsServer() then
             if PlayerResource:HasSelectedHero(playerID) then
                 local hero = PlayerResource:GetSelectedHeroEntity(playerID)
                 if not hero:IsAlive() then
-                    local rezPosition = hero:GetAbsOrigin()
-                    hero:RespawnHero(false, false)
-                    hero:SetAbsOrigin(rezPosition)
+                    hero:RespawnUnit()
+                    hero:SetHealth(hero:GetMaxHealth())
+                    hero:SetMana(hero:GetMaxMana())
+                    hero:SetBaseMagicalResistanceValue(25)
+
                     self:RessurectEffect(hero)
 
                     ressurected = ressurected + 1

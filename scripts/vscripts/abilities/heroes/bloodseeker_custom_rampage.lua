@@ -28,18 +28,18 @@ end
 
 function modifier_bloodseeker_custom_rampage:DeclareFunctions()
     return {
-        MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
+        MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
         MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE,
     }
 end
 
 
 function modifier_bloodseeker_custom_rampage:GetModifierMoveSpeed_Absolute()
-    return 969
+    return 550
 end
 
 
-function modifier_bloodseeker_custom_rampage:GetModifierBaseDamageOutgoing_Percentage()
+function modifier_bloodseeker_custom_rampage:GetModifierDamageOutgoing_Percentage()
     return self:GetAbility():GetSpecialValueFor("increased_damage")
 end
 

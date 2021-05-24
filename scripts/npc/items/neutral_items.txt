@@ -1,0 +1,2454 @@
+
+//Level 1 Chests
+"item_chest_1"
+{
+    "BaseClass"						"item_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"			"chest_1"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemGloballyCombinable"		"1"
+    "ItemQuality"					"rare"
+	"ItemPurchasable"				"1"
+	"ItemSellable"					"0"
+	"ItemCost"						"500"	
+}
+"item_recipe_broom_handle"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"350"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_broom_handle"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_1"	
+    }
+}
+"item_broom_handle"					//"扫帚柄"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"1"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"melee_attack_range"			"60"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"		"12"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_armor"		"3"
+		}
+	}
+}
+"item_recipe_broom_handle_copy"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"4175"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_broom_handle_copy"
+    "ItemRequirements"
+    {
+        "01"						"item_broom_handle"	
+    }
+}
+"item_broom_handle_copy"
+{
+	"BaseClass"						"item_broom_handle"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"1"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"melee_attack_range"	"200"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"20"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_armor"			"5"
+		}
+	}
+}
+"item_recipe_elixer"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"100"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_elixer"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_1"	
+    }
+}
+"item_elixer"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"health"			"700"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"mana"			"350"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"duration"			"6"
+		}
+	}
+}
+"item_recipe_faded_broach"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"100"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_faded_broach"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_1"	
+    }
+}
+"item_faded_broach"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+}
+"item_recipe_flicker"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"100"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_flicker"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_1"	
+    }
+}
+"item_flicker"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"range"	"1500"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"min_range"	"1500"
+		}
+	}
+}
+"item_recipe_ironwood_tree"
+{
+	"ItemCost"						"100"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+	"ItemPurchasable"				"1"
+    "ItemRequirements"
+    {
+		"01"						"item_chest_1;"
+
+    }
+}
+"item_ironwood_tree"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilityCastRange"				"1600"
+}
+"item_recipe_keen_optic"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"350"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_keen_optic"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_1"	
+    }
+}
+"item_keen_optic"					//"基恩镜片"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cast_range_bonus"			"150"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"bonus_mana_regen"		"5"
+		}
+	}
+}
+"item_recipe_keen_optic_copy"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_keen_optic_copy"
+    "ItemRequirements"
+    {
+        "01"						"item_keen_optic"	
+    }
+}
+"item_keen_optic_copy"					//"基恩镜片"
+{
+	"BaseClass"						"item_keen_optic"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"1"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cast_range_bonus"			"150"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"bonus_mana_regen"		"5"
+		}
+	}
+}
+"item_recipe_mango_tree"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"350"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_mango_tree"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_1"	
+    }
+}
+"item_mango_tree"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+}
+"item_enchanted_mango"
+{
+	"ItemStackableMax"				"40"
+	"ItemPurchasable"				"0"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"hp_regen"		"2.0"
+		}
+	}
+}
+"item_recipe_ocean_heart"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"350"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_ocean_heart"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_1"	
+    }
+}
+"item_ocean_heart"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"all_stats"			"5"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"water_hp_regen"		"27"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"water_mp_regen"		"9"
+		}
+	}
+}
+"item_recipe_repair_kit"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"100"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_repair_kit"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_1"	
+    }
+}
+"item_repair_kit"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"ItemInitialCharges"			"4"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"		"50"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"heal_percent"		"30"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"armor_bonus"		"5"
+		}
+	}
+}
+"item_recipe_royal_jelly"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"350"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_royal_jelly"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_1"	
+    }
+}
+"item_royal_jelly"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"health_regen"			"10.0"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"mana_regen"			"2.5"
+		}
+	}
+}
+"item_recipe_spider_legs"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"100"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_spider_legs"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_1"	
+    }
+}
+"item_spider_legs"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+}
+"item_recipe_trusty_shovel"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"350"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_trusty_shovel"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_1"	
+    }
+}
+"item_trusty_shovel"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+}
+
+
+
+//Level 2 Chests
+"item_chest_2"
+{
+    "BaseClass"						"item_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemGloballyCombinable"		"1"
+    "AbilityTextureName"			"chest_2"
+    "ItemQuality"					"rare"
+	"ItemPurchasable"				"1"
+	"ItemSellable"					"0"
+	"ItemCost"						"1000"	
+}
+
+"item_recipe_dragon_scale"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"650"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_dragon_scale"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_2"	
+    }
+}
+"item_dragon_scale"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_armor"			"8"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_hp_regen"		"16"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_per_sec"		"80"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"		"3"
+		}
+	}
+}
+"item_recipe_essence_ring"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"650"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_essence_ring"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_2"	
+    }
+}
+"item_essence_ring"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"AbilityCooldown"				"15.0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_int"			"10"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"mp_regen"		"3.5"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"health_gain"		"375"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"health_gain_duration"	"15"
+		}
+	}
+}
+"item_recipe_grove_bow"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"650"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_grove_bow"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_2"	
+    }
+}
+"item_grove_bow"					//"林野长弓"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attack_range_bonus"			"150"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attack_speed_bonus"			"20"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"magic_resistance_reduction"		"15"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"debuff_duration"		"10"
+		}
+	}
+}
+"item_recipe_grove_bow_copy"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_grove_bow_copy"
+    "ItemRequirements"
+    {
+        "01"						"item_grove_bow"	
+    }
+}
+"item_grove_bow_copy"
+{
+	"BaseClass"						"item_grove_bow"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"1"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attack_range_bonus"			"150"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attack_speed_bonus"			"20"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"magic_resistance_reduction"		"15"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"debuff_duration"		"10"
+		}
+	}
+}
+"item_recipe_imp_claw"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"650"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_imp_claw"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_2"	
+    }
+}
+"item_imp_claw"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilityCooldown"				"6.0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"crit_multiplier"			"210"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_damage"		"28"
+		}
+	}
+}
+"item_recipe_nether_shawl"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"650"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_nether_shawl"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_2"	
+    }
+}
+"item_nether_shawl"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_magic_resistance"			"25"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_spell_amp"		"15"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_armor"		"4"
+		}
+	}
+}
+"item_philosophers_stone"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_gpm"			"110"
+		}
+	}
+}
+"item_recipe_philo_stone_temp"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"650"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_philo_stone_temp"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_2"	
+    }
+}
+"item_philo_stone_temp"
+{
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+    "BaseClass"                     "item_lua"
+	"ScriptFile"                    "items/item_philo_stone_temp.lua"
+	"ItemCost"						"0"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "item_philosophers_stone"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+    "ItemInitialCharges"			"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_gpm"			"110"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_mana"		"200"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_damage"		"-35"
+		}
+	}
+}
+"item_philo_stone_failed"
+{
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"1"
+    "BaseClass"                     "item_datadriven"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "philo_stone_temp"
+	"ItemCost"						"2500"
+	"ItemPurchasable"				"0"
+}
+"item_recipe_pupils_gift"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"650"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_pupils_gift"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_2"	
+    }
+}
+"item_pupils_gift"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"secondary_stats"			"26"
+		}
+	}
+}
+"item_recipe_ring_of_aquila"
+{
+    "ItemCost"						"200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+	"ItemPurchasable"				"1"
+	"IsObsolete"					"0"
+    "ItemRequirements"
+    {
+        "01"						"item_wraith_band;item_ring_of_basilius;item_chest_2"	
+    }
+}
+"item_ring_of_aquila"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"aura_mana_regen"		"3.5"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_bonus_armor"		"4"
+		}			
+	}		
+}
+"item_recipe_vambrace"
+{
+    "ItemCost"						"100"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+	"ItemPurchasable"				"1"
+	"ItemRequirements"
+	{
+		"01"						"item_bracer;item_bracer;item_chest_2"
+		"02"						"item_null_talisman;item_null_talisman;item_chest_2"
+		"03"						"item_wraith_band;item_wraith_band;item_chest_2"
+	}
+}
+"item_vambrace"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_primary_stat"		"22"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_secondary_stat"			"12"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_spell_amp"		"12"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_magic_resistance"	"15"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack_speed"	"25"
+		}
+	}
+}
+"item_recipe_vampire_fangs"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"650"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_vampire_fangs"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_2"	
+    }
+}
+"item_vampire_fangs"				//"吸血鬼獠牙"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"spell_lifesteal"			"8"
+		}
+	}
+}
+"item_recipe_vampire_fangs_copy"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_vampire_fangs_copy"
+    "ItemRequirements"
+    {
+        "01"						"item_vampire_fangs"	
+    }
+}
+"item_vampire_fangs_copy"
+{
+	"BaseClass"						"item_vampire_fangs"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"1"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"spell_lifesteal"			"8"
+		}
+	}
+}
+
+//Level 3 Chests
+"item_chest_3"
+{
+    "BaseClass"						"item_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"			"chest_3"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemGloballyCombinable"		"1"
+    "ItemQuality"					"rare"
+	"ItemPurchasable"				"1"
+	"ItemSellable"					"0"
+	"ItemCost"						"2000"	
+}
+"item_recipe_craggy_coat"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_craggy_coat"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_3"	
+    }
+}
+"item_craggy_coat"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"armor_bonus"			"18"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attack_speed"				"-35"
+		}
+	}
+}
+"item_recipe_dimensional_doorway"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"300"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_dimensional_doorway"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_3"	
+    }
+}
+"item_dimensional_doorway"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemPurchasable"				"1"
+	"ItemPermanent"					"1"
+	"ItemRequiresCharges"			"0"
+	"ItemDisplayCharges"			"0"
+	"ItemHideCharges"				"1"
+	"ItemInitialCharges"			"9999"
+	"AbilityCooldown"				"25.0"
+}
+"item_recipe_enchanted_quiver"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_enchanted_quiver"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_3"	
+    }
+}
+"item_enchanted_quiver"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilityCooldown"				"2.5"
+	"AbilitySpecial"
+	{
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"	"300"
+		}
+	}
+}
+"item_recipe_greater_faerie_fire"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_greater_faerie_fire"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_3"	
+    }
+}
+"item_greater_faerie_fire"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemPurchasable"				"1"
+	"ItemPermanent"					"1"
+	"ItemRequiresCharges"			"0"
+	"ItemDisplayCharges"			"0"
+	"ItemHideCharges"				"1"
+	"ItemInitialCharges"			"9999"
+	"AbilityCooldown"				"12.0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"45"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"hp_restore"			"450"
+		}
+	}
+}
+"item_recipe_helm_of_the_undying"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_helm_of_the_undying"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_3"	
+    }
+}
+"item_helm_of_the_undying"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilityCooldown"				"20.0"
+}
+"item_recipe_orb_of_destruction"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_orb_of_destruction"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_3"	
+    }
+}
+"item_orb_of_destruction"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+}
+"item_recipe_paladin_sword"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_paladin_sword"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_3"	
+    }
+}
+"item_paladin_sword"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"17"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_lifesteal"			"17"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_amp"			"20"
+		}
+	}
+}
+"item_recipe_pocket_tower"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_pocket_tower"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_3"	
+    }
+}
+"item_pocket_tower"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilityTextureName"			"custom_pocket_tower"
+	"AbilityCastRange"				"300"
+	"AbilityCastPoint"				"0.5"
+	"AbilityCooldown"				"2.0"
+	"AbilityManaCost"				"0"
+	"ItemSellable"					"0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"tower_damage"			"120"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"tower_health"			"600"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"tower_range"			"1550"
+		}	
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"tower_attack_time"			"1.2"
+		}			
+	}
+}
+"item_recipe_spy_gadget"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_spy_gadget"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_3"	
+    }
+}
+"item_spy_gadget"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+}
+"item_recipe_titan_sliver"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_titan_sliver"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_3"	
+    }
+}
+"item_titan_sliver"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemCost"						"0"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"base_attack_damage"			"22"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"magic_resistance"			"22"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"status_resistance"			"22"
+		}			
+	}
+}
+
+
+//Level 4 Chests
+"item_chest_4"
+{
+    "BaseClass"						"item_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"			"chest_4"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemGloballyCombinable"		"1"
+    "ItemQuality"					"rare"
+	"ItemPurchasable"				"1"
+	"ItemSellable"					"0"
+	"ItemCost"						"3000"	
+}
+"item_recipe_dark_bloodstone"
+{
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "BaseClass"                     "item_recipe_bloodstone"
+    "ItemCost"						"100"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_dark_bloodstone"
+    "ItemRequirements"
+    {
+        "01"						"item_bloodstone;item_chest_4"
+    }
+}
+"item_dark_bloodstone"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"BaseClass"                     "item_bloodstone"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityCastPoint"				"0.0"
+	"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
+	"ItemQuality"					"epic"
+	"ItemAliases"					"dbs;dark bloodstone"
+	"ItemInitialCharges"			"0"
+	"ItemDisplayCharges"			"0"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	"AbilityTextureName"			"foramon_dark_bloodstone"
+	"ItemInitialCharges"			"0"
+	"ItemDisplayCharges"			"0"
+	"AbilityCooldown"				"24.0"
+	"AbilitySharedCooldown"			"bloodstone"
+	"ItemSellable"					"0"
+	"MaxUpgradeLevel"           "2"
+    "ItemBaseLevel"             "2"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_health"			"425"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_mana"			"700"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_intellect"			"40"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"manacost_reduction"			"15"
+		}			
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"spell_amp"			"24"
+		}	
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"mana_regen_multiplier"		"100"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"regen_per_charge"		"0"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"amp_per_charge"		"0"
+		}
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"death_charges"				"0"
+		}
+		"10"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"kill_charges"			"0"
+		}
+		"11"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"charge_range"			"0"
+		}
+		"12"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"initial_charges_tooltip" "0"
+		}
+		"13"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"mana_cost_percentage" "30"
+		}
+		"14"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"restore_duration" "6.0"
+		}
+	}	
+}
+"item_recipe_havoc_hammer"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"2500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_havoc_hammer"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_4"	
+    }
+}
+"item_havoc_hammer"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"140"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"		"25"
+		}
+		"09"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"nuke_base_dmg"		"250"
+		}		
+		"10"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"nuke_str_dmg"		"4.5"
+		}
+	}
+}
+"item_recipe_illusionsts_cape"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"2500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_illusionsts_cape"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_4"	
+    }
+}
+"item_illusionsts_cape"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemPurchasable"				"1"
+	"AbilityCooldown"				"25.0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attack_damage_aura"			"20"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"outgoing_damage"			"-20"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"outgoing_damage_tooltip"	"80"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"incoming_damage"			"25"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"tooltip_incoming_damage_total_pct"			"125"
+		}
+	}
+}
+"item_recipe_ninja_gear"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"2500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_ninja_gear"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_4"	
+    }
+}
+"item_ninja_gear"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemPurchasable"				"1"
+	"AbilityCooldown"				"15.0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_agility"			"45"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"passive_movement_bonus"		"40"
+		}
+
+	}
+}
+"item_recipe_panic_button"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_panic_button"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_4"	
+    }
+}
+"item_panic_button"
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemPurchasable"				"1"
+	"AbilityCooldown"				"20.0"
+	"AbilitySpecial"
+	{
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"heal"		"1000"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"health_threshold"		"25"
+		}
+	}
+}
+"item_recipe_player_unstoppable"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"2500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_player_unstoppable"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_4"	
+    }
+}
+"item_player_unstoppable"
+{
+	"BaseClass"						    "item_lua"
+    "ScriptFile"                        "items/item_unstoppable.lua"
+    "AbilityTextureName"		    "unstoppable"
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"ItemCost"						"0"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemSellable"					"0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"	"255"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"interval"			"0.15"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_health_pct"			"10"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"spell_amp_pct"			"1.11"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"tooltip_spell_amp_pct"			"90"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack_speed"			"-30"
+		}
+	}
+}
+"item_recipe_pocket_rax"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_pocket_rax"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_4"	
+    }
+}
+"item_pocket_rax"
+{
+	"BaseClass"						"item_lua"
+    "ScriptFile"                    "items/item_pocket_rax.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilityTextureName"			"Melee_Creep"
+	"AbilityCastRange"				"300"
+	"AbilityCastPoint"				"0.5"
+	"AbilityCooldown"				"2.0"
+	"AbilityManaCost"				"0"
+	"ItemSellable"					"0"
+	"ItemPurchasable"				"1"
+    "ItemQuality"					"consumable"
+    "ItemStackable"					"1"
+    "ItemPermanent"					"0"
+    "ItemInitialCharges"			"1"
+    "IsTempestDoubleClonable"		"0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"interval"			"15"
+		}		
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"			"60"
+		}	
+	}
+}
+"item_recipe_pocket_rax_ranged"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_pocket_rax_ranged"
+    "ItemRequirements"
+    {
+        "01"						"item_pocket_rax"	
+    }
+}
+"item_pocket_rax_ranged"
+{
+	"BaseClass"						"item_lua"
+    "ScriptFile"                    "items/item_pocket_rax.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilityTextureName"			"Ranged_Creep"
+	"AbilityCastRange"				"300"
+	"AbilityCastPoint"				"0.5"
+	"AbilityCooldown"				"2.0"
+	"AbilityManaCost"				"0"
+	"ItemSellable"					"0"
+	"ItemPurchasable"				"1"
+    "ItemQuality"					"consumable"
+    "ItemStackable"					"1"
+    "ItemPermanent"					"0"
+    "ItemInitialCharges"			"1"
+    "IsTempestDoubleClonable"		"0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"interval"			"15"
+		}		
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"			"60"
+		}	
+	}
+}
+"item_recipe_minotaur_horn"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"100"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_minotaur_horn"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_4;item_black_king_bar"	
+    }
+}
+"item_minotaur_horn"				//恶牛角
+{
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilityCooldown"				"25.0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"			"60"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"			"4.5"
+		}
+	}
+}
+
+
+"item_recipe_witless_shako"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"2500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_witless_shako"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_4"	
+    }
+}
+"item_witless_shako"
+{
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"max_health"			"1800"
+		}
+	}
+}
+
+
+//Level 5 chests
+"item_chest_5"
+{
+    "BaseClass"						"item_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"			"chest_5"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemGloballyCombinable"		"1"
+    "ItemQuality"					"rare"
+	"ItemPurchasable"				"1"
+	"ItemSellable"					"0"
+	"ItemCost"						"6000"	
+}
+"item_recipe_custom_apex"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"6000"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_custom_apex"
+	"ItemIsNeutralDrop"				"1"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_5"	
+    }
+}
+
+"item_custom_apex"
+{
+    "BaseClass"						"item_lua"
+    "ScriptFile"                    "items/item_custom_apex.lua"
+	"ItemCost"						"0"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "item_apex"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"ItemIsNeutralDrop"				"1"
+	"ItemSellable"					"0"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"primary_stat_percent"		"50"
+		}
+	}
+}
+"item_apex"
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"0"
+}
+"item_recipe_custom_ballista"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_custom_ballista"
+	"ItemIsNeutralDrop"				"1"
+    "ItemRequirements"
+    {
+        "01"						"item_hurricane_pike;item_chest_5"
+		"02"						"item_broom_handle_copy;item_chest_5"
+    }
+}
+
+"item_custom_ballista"				//弩炮
+{
+    "BaseClass"						"item_lua"
+    "ScriptFile"                    "items/item_custom_ballista.lua"
+	"ItemCost"						"0"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "item_ballista"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"ItemIsNeutralDrop"				"1"
+	"ItemSellable"					"0"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attack_range_bonus"		"600"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"			"28"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_agility"			"30"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_intellect"			"23"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"bonus_health_regen"	"10.0"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"		"45"
+		}
+	}
+}
+
+"item_recipe_desolator_2"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"100"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_desolator_2"
+	"ItemIsNeutralDrop"				"1"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_5;item_desolator_3"
+    }
+}
+"item_desolator_2"
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"200"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"corruption_armor"		"-18"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"corruption_duration"	"5.0"
+		}
+	}
+}
+"item_recipe_demonicon"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"100"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_demonicon"
+	"ItemIsNeutralDrop"				"1"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_5;item_necronomicon_3"
+    }
+}
+"item_demonicon"
+{
+	"AbilityCooldown"				"80.0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"summon_duration"				"60"
+		}
+	}
+}
+"item_recipe_custom_ex_machina"
+{
+	"BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"6000"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_custom_ex_machina"
+	"ItemIsNeutralDrop"				"1"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_5"	
+    }
+}
+"item_custom_ex_machina"
+{
+    "BaseClass"						"item_lua"
+    "ScriptFile"                    "items/item_custom_ex_machina.lua"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityTextureName"			"item_ex_machina"
+    "AbilityCastPoint"				"0.0"
+    "AbilityManaCost"				"250"
+    "ItemQuality"					"rare"
+    "ItemAliases"					"ex machina"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+    "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	"AbilityCooldown"				"45.0"
+	"ItemIsNeutralDrop"				"1"
+	"ItemSellable"					"0"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_armor"			"28"
+        }
+    }
+}
+"item_recipe_fallen_sky"
+{
+    "ItemCost"						"1500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+	"ItemPurchasable"				"1"
+	"IsObsolete"					"0"
+	"ItemIsNeutralDrop"				"1"
+	"ItemRequirements"
+	{
+		"01"						"item_blink;item_meteor_hammer;item_chest_5"
+	}
+}
+"item_fallen_sky"
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"		"25"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_intellect"		"25"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"bonus_health_regen"		"25.0"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"bonus_mana_regen"		"12.0"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"burn_dps_units"		"200"
+		}
+		"07"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"burn_duration"		"9999"
+		}
+		"08"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"stun_duration"		"1.5"
+		}
+		"09"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"burn_interval"				"0.4"
+		}
+		"12"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"max_duration"		"1.5"
+		}
+		"14"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"impact_damage_units"		"1250"
+		}
+	}
+}
+"item_recipe_force_boots"
+{
+	"ItemCost"						"500"	
+	"ItemShopTags"					""
+	"ItemGloballyCombinable"		"1"
+	"ItemPurchasable"				"1"
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_force_boots"
+	"ItemRequirements"
+	{
+		"01"						"item_chest_5"
+	}
+}
+"item_force_boots"
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+}
+"item_recipe_custom_fusion_rune"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"6000"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_custom_fusion_rune"
+	"ItemIsNeutralDrop"				"1"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_5"
+    }
+}
+"item_custom_fusion_rune"
+{
+	"BaseClass"						"item_lua"
+	"ScriptFile"                    "items/item_custom_fusion_rune.lua"
+	"AbilityTextureName"			"item_fusion_rune"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"ItemSellable"					"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+	"AbilityCooldown"				"0.0"
+
+	"AbilityCastRange"				"550"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"		"25"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"cooldown"		"50"
+		}
+	}
+}
+"item_recipe_phoenix_ash"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_phoenix_ash"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_5"
+    }
+}
+"item_phoenix_ash"
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"ItemInitialCharges"			"5"
+	"AbilityCooldown"				"15"
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"health_pct"			"50"
+		}
+	}
+}
+"item_recipe_pirate_hat"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"6000"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_pirate_hat"
+	"ItemIsNeutralDrop"				"1"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_5"
+    }
+}
+"item_pirate_hat"					//海盗帽
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack_speed"			"300"
+		}
+	}
+}
+"item_recipe_custom_seer_stone"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"100"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_custom_seer_stone"
+	"ItemIsNeutralDrop"				"1"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_5;item_refined_aether_lens"
+    }
+}
+"item_custom_seer_stone"			//先哲之石
+{
+    "BaseClass"						"item_lua"
+    "ScriptFile"                    "items/item_custom_seer_stone.lua"
+	"ItemCost"						"0"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "item_seer_stone"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"ItemSellable"					"0"
+	"ItemIsNeutralDrop"				"1"
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cast_range_bonus"			"1200"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"vision_bonus"			"1500"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_mana"			"800"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"bonus_mana_regen"			"10"
+		}
+	}
+}
+"item_recipe_trident"
+{
+    "ItemCost"						"1500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+	"ItemPurchasable"				"1"
+	"ItemIsNeutralDrop"				"1"
+    "ItemRequirements"
+    {
+		"01"						"item_kaya;item_sange;item_yasha;item_chest_5;"
+		"02"						"item_kaya_and_sange;item_yasha;item_chest_5;"
+		"03"						"item_sange_and_yasha;item_kaya;item_chest_5;"
+		"04"						"item_yasha_and_kaya;item_sange;item_chest_5;"
+    }
+}	
+"item_trident"						// 三元重戟
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"IsObsolete"					"0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"		"33"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_agility"			"33"
+		}			
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_intellect"			"33"
+		}		
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"status_resistance"				"33"
+		}		
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack_speed"	"33"
+		}
+		"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"movement_speed_percent_bonus"	"33"
+		}					
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"hp_regen_amp"			"18"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"manacost_reduction"			"21"
+		}			
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"spell_amp"				"33"
+		}
+	}
+}
+

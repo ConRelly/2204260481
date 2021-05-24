@@ -14,7 +14,7 @@ end
 
 
 function refresh_abilities(caster, exclude_abilities)
-    for i = 0, (caster:GetAbilityCount() - 1) do
+    for i = 0, caster:GetAbilityCount() do
         local ability = caster:GetAbilityByIndex(i)
         end_ability_cooldown(ability, exclude_abilities)
     end
@@ -46,7 +46,7 @@ function end_ability_cooldown_mult(ability, exclude_table, mult)
     end
 end
 function refresh_abilities_mult(caster, exclude_abilities, mult)
-    for i = 0, (caster:GetAbilityCount() - 1) do
+    for i = 0, caster:GetAbilityCount() do
         local ability = caster:GetAbilityByIndex(i)
 		if ability then
 			if ability:GetAbilityType() == 1 then
@@ -61,7 +61,7 @@ end
 function get_all_cooldowns(caster)
     local cooldowns = {}
 
-    for i = 0, (caster:GetAbilityCount()- 1) do
+    for i = 0, caster:GetAbilityCount() do
         local ability = caster:GetAbilityByIndex(i)
         if ability then
             table.insert(cooldowns, ability:GetCooldown(ability:GetLevel() - 1))

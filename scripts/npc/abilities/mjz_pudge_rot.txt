@@ -23,7 +23,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"rot_radius"			"370"
+				"rot_radius"			"250"
 			}
 			"02"
 			{
@@ -83,7 +83,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"8"
+				"value"						"4"
 			}
 		}
 	}

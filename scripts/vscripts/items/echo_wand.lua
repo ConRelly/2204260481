@@ -3,139 +3,124 @@
 ]]
 require("lib/my")
 require("lib/popup")
+
+
 item_echo_wand = class({})
 
 
-function item_echo_wand:GetIntrinsicModifierName() return "modifier_item_echo_wand" end
+function item_echo_wand:GetIntrinsicModifierName()
+    return "modifier_item_echo_wand"
+end
+
 function item_echo_wand:OnSpellStart()
-	local caster = self:GetCaster()
-	if not caster:HasModifier("modifier_item_echo_wand_lock") then
-		caster:AddNewModifier(caster, self, "modifier_item_echo_wand_lock", {})
+    local caster = self:GetCaster()
+	
+    if not caster:HasModifier("modifier_item_echo_wand_lock") then
+        caster:AddNewModifier(caster, self, "modifier_item_echo_wand_lock", {})
 		local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_rubick/rubick_nullfield_defensive.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 		ParticleManager:SetParticleControlEnt(fx, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
 		ParticleManager:ReleaseParticleIndex(fx)
 		EmitSoundOn("Hero_Antimage.ManaVoidCast", caster)
-	else
+    else
 		caster:RemoveModifierByName("modifier_item_echo_wand_lock")
 		local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_rubick/rubick_nullfield_defensive_splash.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 		ParticleManager:SetParticleControlEnt(fx, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
 		ParticleManager:ReleaseParticleIndex(fx)
 	end
+	
 end
-
 LinkLuaModifier("modifier_item_echo_wand_lock", "items/echo_wand.lua", LUA_MODIFIER_MOTION_NONE)
 
 modifier_item_echo_wand_lock = class({})
-function modifier_item_echo_wand_lock:IsHidden() return false end
-function modifier_item_echo_wand_lock:IsDebuff() return true end
-function modifier_item_echo_wand_lock:IsPurgable() return false end
-function modifier_item_echo_wand_lock:RemoveOnDeath() return false end
-function modifier_item_echo_wand_lock:GetTexture() return "echo_wand_disabled" end
+
+function modifier_item_echo_wand_lock:IsHidden()
+    return false
+end
+
+function modifier_item_echo_wand_lock:IsPurgable()
+	return false
+end
+
+function modifier_item_echo_wand_lock:RemoveOnDeath()
+    return false
+end
+
+function modifier_item_echo_wand_lock:GetTexture()
+    return "echo_wand_disabled"
+end
 
 LinkLuaModifier("modifier_item_echo_wand", "items/echo_wand.lua", LUA_MODIFIER_MOTION_NONE)
 
 modifier_item_echo_wand = class({})
+
+
 if IsServer() then
-	function modifier_item_echo_wand:OnCreated(keys)
-		local parent = self:GetParent()
-		if parent and parent:IsRealHero() then
-			parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_echo_wand_thinker", {})
-		end
-	end
+    function modifier_item_echo_wand:OnCreated(keys)
+        local parent = self:GetParent()
+
+        if parent and parent:IsRealHero() then
+            parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_echo_wand_thinker", {})
+        end
+    end
 	function modifier_item_echo_wand:OnDestroy()
-		local parent = self:GetParent()
+        local parent = self:GetParent()
 		parent:RemoveModifierByName("modifier_item_echo_wand_thinker")
-	end
-end
-function modifier_item_echo_wand:IsHidden() return true end
-function modifier_item_echo_wand:IsPurgable() return false end
-function modifier_item_echo_wand:DeclareFunctions()
-	return {
-		MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
-		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-		MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
-		MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS,
-		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
-		MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK,
-		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-		MODIFIER_PROPERTY_HEALTH_BONUS,
-		MODIFIER_PROPERTY_FIXED_ATTACK_RATE,
-	}
-end
-function modifier_item_echo_wand:CheckState()
-	return {[MODIFIER_STATE_CANNOT_MISS] = true}
-end
-function modifier_item_echo_wand:GetModifierAttackRangeBonus()
-	local parent = self:GetParent()
-	local bonus_range = parent:GetCastRangeBonus()
-	return self:GetAbility():GetSpecialValueFor("attack_range_bonus") + bonus_range
-end
-function modifier_item_echo_wand:GetModifierConstantManaRegen()
-	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
-end
-function modifier_item_echo_wand:GetModifierDamageOutgoing_Percentage()
-	return self:GetAbility():GetSpecialValueFor("negative_damage")
-end
-function modifier_item_echo_wand:GetModifierProjectileSpeedBonus()
-	return self:GetAbility():GetSpecialValueFor("projectile_speed")
-end
-function modifier_item_echo_wand:GetModifierSpellAmplify_Percentage()
-	return self:GetAbility():GetSpecialValueFor("spell_amp")
-end
-function modifier_item_echo_wand:GetModifierTotal_ConstantBlock()
-	local block = self:GetAbility():GetSpecialValueFor("block")
-	local parent = self:GetParent()
-	local level = parent:GetLevel()
-	local finalBlock = math.ceil(parent:GetMaxMana() / block)
-	if level < 30 then
-		finalBlock = finalBlock / 2
-	end
-	return finalBlock
-end
-function modifier_item_echo_wand:GetModifierBonusStats_Intellect()
-	return self:GetAbility():GetSpecialValueFor("int_bonus")
-end
-function modifier_item_echo_wand:GetModifierHealthBonus()
-	local hp = self:GetAbility():GetSpecialValueFor("hp_bonus")
-	local parent = self:GetParent()
-	local finalhp = math.ceil(parent:GetMaxMana() / hp)
-	return finalhp
-end
-function modifier_item_echo_wand:GetModifierFixedAttackRate()
-	if not IsServer() then return nil end
-	local parent = self:GetParent()
-	if not parent:HasModifier("modifier_item_echo_wand") then return end
-	local level = parent:GetLevel()
-	local wd_ult = "witch_doctor_custom_death_skull"
-	local rate = self:GetAbility():GetSpecialValueFor("fixed_attack_rate")
-	if level > 30 then
-		rate = 0.3
-		if parent:HasAbility(wd_ult) then
-			rate = 0.15
-		end		
-	end
-	if level > 55 then
-		rate = 0.25
-		if parent:HasAbility(wd_ult) then
-			rate = 0.08
-		end		
-	end		
-	return rate
+    end
 end
 
+
+function modifier_item_echo_wand:IsHidden()
+    return true
+end
+
+function modifier_item_echo_wand:IsPurgable()
+	return false
+end
+
+
+function modifier_item_echo_wand:DeclareFunctions()
+    return {
+		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+    }
+end
+
+
+function modifier_item_echo_wand:GetModifierConstantHealthRegen()
+    return self:GetAbility():GetSpecialValueFor("bonus_health_regen")
+end
+
+function modifier_item_echo_wand:GetModifierConstantManaRegen()
+    return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
+end
+
+function modifier_item_echo_wand:GetModifierPreAttack_BonusDamage()
+    return self:GetAbility():GetSpecialValueFor("bonus_damage")
+end
 LinkLuaModifier("modifier_item_echo_wand_thinker", "items/echo_wand.lua", LUA_MODIFIER_MOTION_NONE)
 
 modifier_item_echo_wand_thinker = class({})
-function modifier_item_echo_wand_thinker:IsHidden() return true end
-function modifier_item_echo_wand_thinker:IsPurgable() return false end
-function modifier_item_echo_wand_thinker:RemoveOnDeath() return false end
+
+
+function modifier_item_echo_wand_thinker:IsHidden()
+    return true
+end
+
+function modifier_item_echo_wand_thinker:IsPurgable()
+	return false
+end
+function modifier_item_echo_wand_thinker:RemoveOnDeath()
+    return false
+end
+
 if IsServer() then
-	function modifier_item_echo_wand_thinker:DeclareFunctions()
-		return {
-			MODIFIER_EVENT_ON_ATTACK_LANDED,
+    function modifier_item_echo_wand_thinker:DeclareFunctions()
+        return {
+            MODIFIER_EVENT_ON_ATTACK_LANDED,
 			MODIFIER_EVENT_ON_ABILITY_EXECUTED,
-		}
-	end
+        }
+    end
 	
 	local exclude_table = {
 		item_arcane_boots = true,
@@ -148,80 +133,10 @@ if IsServer() then
 		item_pocket_tower = true,
 		item_pocket_barracks = true,
 		item_echo_wand = true,
-		item_imba_silver_edge = true,
-		item_silver_edge = true,
-		item_god_slayer = true,
-		item_pipe_2 = true,
-		item_minotaur_horn = true,
-		item_random_get_ability = true,
-		item_random_get_ability_onlvl = true,
-		item_random_get_ability_spell = true,
-		item_resurection_pendant = true,
-		item_formidable_chest = true,
-		item_mjz_attribute_mail = true,
-		--mjz_doom_bringer_devour = true,
-		--mjz_clinkz_soul_pact = true,
-		frostivus2018_clinkz_burning_army = true,
-		rubick_spell_steal = true,
-		dark_seer_custom_dark_clone_2 = true,
-		disruptor_custom_ion_hammer = true,
-		lone_druid_spirit_bear = true,
-		mars_arena_of_blood_lua = true,
-		monkey_king_wukongs_command = true,
-		oracle_false_promise = true,
-		shadow_shaman_mass_serpent_ward = true,
-		skeleton_king_vampiric_aura = true,
-		mjz_spectre_reality = true,
-		mjz_spectre_haunt_single = true,
-		treant_custom_ultimate_sacrifice = true,
-		undying_custom_decay = true,
-		undying_tombstone = true,
-		warlock_rain_of_chaos = true,
-		witch_doctor_maledict = true,
-		mjz_faceless_the_world = true,
-		juggernaut_omni_slash = true,
-		--mjz_elder_titan_earth_splitter = true,
-		mjz_broodmother_spawn_spiderlings = true,
-		mjz_troll_warlord_battle_trance = true,
-		ember_spirit_fire_remnant = true,
-		ember_spirit_activate_fire_remnant = true,
-		chen_custom_holy_persuasion = true,
-		shredder_chakram = true,
-		shredder_chakram_2 = true,
-		legion_commander_custom_duel = true,
-		enigma_demonic_conversion = true,
-		zuus_cloud = true,
-		item_remove_ability = true,
-		viper_nethertoxin = true,
-		abaddon_borrowed_time = true,
-		doom_devour_lua = true,
-		mjz_axe_berserkers_call = true,
-		mjz_skeleton_king_ghost = true,
-		centaur_stampede = true,
-		mjz_templar_assassin_refraction = true,
-		hoodwink_sharpshooter_release = true,
-		brewmaster_primal_split = true,
-		omniknight_guardian_angel = true,
-		hoodwink_sharpshooter = true,
-		mjz_ember_spirit_sleight_of_fist = true,
-		furion_force_of_nature = true,
-		dark_willow_terrorize_lua = true,
-		life_stealer_infest = true,
-		life_stealer_consume = true,
-		shadow_demon_custom_hyperactivity = true,
-		obsidian_destroyer_astral_imprisonment = true,
-		clinkz_custom_wind_walk = true,
-		mjz_tinker_quick_arm = true,
-		obs_replay = true,
-		item_video_file = true,
-		guardian_angel = true,
-		blood_madness = true,
-		zanto_gari = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,
 		phantom_assassin_phantom_strike = true,
-		luna_eclipse_lua = true,
 	}
 	function modifier_item_echo_wand_thinker:OnCreated()
 		self.parent = self:GetParent()
@@ -233,9 +148,7 @@ if IsServer() then
 	end
 	
 	function modifier_item_echo_wand_thinker:OnAbilityExecuted(keys)
-		if not IsServer() then return end
-		self.hit = true
-		if keys.unit == self.parent and not self.parent:HasModifier("modifier_item_echo_wand_lock") and not ability_behavior_includes(keys.ability, DOTA_ABILITY_BEHAVIOR_CHANNELLED) and not keys.ability:IsToggle() then
+		if keys.unit == self.parent and not self.parent:HasModifier("modifier_item_echo_wand_lock") and keys.ability:GetAbilityType() ~= 1 and not keys.ability:IsToggle() then
 			if not exclude_table[keys.ability:GetAbilityName()] then
 				if (ability_behavior_includes(keys.ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and (keys.ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or keys.ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH)) or include_table[keys.ability:GetAbilityName()] then
 					self.targetType = 0
@@ -246,66 +159,50 @@ if IsServer() then
 				elseif ability_behavior_includes(keys.ability, DOTA_ABILITY_BEHAVIOR_NO_TARGET) then
 					self.targetType = 2
 					self.echo = keys.ability
-				elseif (ability_behavior_includes(keys.ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and (keys.ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_FRIENDLY)) then	
-					self.targetType = 3
-					self.echo = keys.ability
 				end
 			end
 		end
-		if keys.unit == self.parent and keys.ability:GetCooldown(keys.ability:GetLevel()) > 1.5 and self.ability:GetCooldownTimeRemaining() > self.minimum_cooldown then
-			local cooldown = self.ability:GetCooldownTimeRemaining() - (keys.ability:GetCooldown(keys.ability:GetLevel()) / 3.5)
-			if cooldown < self.minimum_cooldown then
-				cooldown = self.minimum_cooldown
-			end
-			self.ability:EndCooldown()
-			self.ability:StartCooldown(cooldown)
-		end	
 	end
 
 	function modifier_item_echo_wand_thinker:OnAttackLanded(keys)
-		if not IsServer() then return end
 		local attacker = keys.attacker
-		if attacker == self.parent and not keys.target:IsNull() and self.hit then 
-			if self.echo and self.ability:IsCooldownReady() and not self.echo:IsNull() and IsValidEntity(self.echo) then
-				--if self.echo:IsOwnersManaEnough() then
-				if self.targetType == 0 then
-					self.parent:SetCursorCastTarget(keys.target)
-				elseif self.targetType == 1 then
-					self.parent:SetCursorPosition(keys.target:GetAbsOrigin())
-				elseif self.targetType == 2 then
-					self.parent:SetCursorTargetingNothing(true)
-				elseif self.targetType == 3 then
-					self.parent:SetCursorCastTarget(self.parent)		
-				end
-				local cooldown = self.echo:GetCooldown(self.echo:GetLevel())
-				if cooldown < self.minimum_cooldown then
-					cooldown = self.minimum_cooldown
-				end
-				local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_rubick/rubick_nullfield_offensive.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
-				ParticleManager:SetParticleControlEnt(fx, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
-				ParticleManager:ReleaseParticleIndex(fx)
-				Timers:CreateTimer(
-					0.05,
-					function()
-						if not keys.target:IsNull() and IsValidEntity(keys.target) then
-							self.ability:StartCooldown(cooldown * attacker:GetCooldownReduction())
-							self.echo:OnSpellStart()
-							--self.echo:SetChanneling(true)
-							--self.echo:EndChannel(true)
-							--self.echo:UseResources(true, false, false)
-						end	
+		if attacker == self.parent and not keys.target:IsNull() then 
+			if self.echo and self.ability:IsCooldownReady() then
+				if self.echo:IsOwnersManaEnough() then
+					if self.targetType == 0 then
+						self.parent:SetCursorCastTarget(keys.target)
+					elseif self.targetType == 1 then
+						self.parent:SetCursorPosition(keys.target:GetAbsOrigin())
+					else
+						self.parent:SetCursorTargetingNothing(true)
 					end
-				)
-				self.hit = false
-				--end
-			--[[elseif keys.target:IsConsideredHero() and self.ability:GetCooldownTimeRemaining() > self.minimum_cooldown then
-				local cooldown = self.ability:GetCooldownTimeRemaining() - (attacker:GetMaxMana() / keys.target:GetMaxHealth() * self.cooldown_reduction * 100)
+					local cooldown = self.echo:GetCooldown(self.echo:GetLevel())
+					if cooldown < self.minimum_cooldown then
+						cooldown = self.minimum_cooldown
+					end
+					local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_rubick/rubick_nullfield_offensive.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
+					ParticleManager:SetParticleControlEnt(fx, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
+					ParticleManager:ReleaseParticleIndex(fx)
+					Timers:CreateTimer(
+						0.05,
+						function()
+							self.ability:StartCooldown(cooldown)
+							self.echo:OnSpellStart()
+							self.echo:SetChanneling(true)
+							self.echo:EndChannel(true)
+							self.echo:UseResources(true, false, false)
+						end
+					)
+				end
+			elseif keys.target:IsConsideredHero() and self.ability:GetCooldownTimeRemaining() > self.minimum_cooldown then
+				local cooldown = self.ability:GetCooldownTimeRemaining() - (keys.damage / keys.target:GetMaxHealth() * self.cooldown_reduction * 100)
 				if cooldown < self.minimum_cooldown then
 					cooldown = self.minimum_cooldown
 				end
 				self.ability:EndCooldown()
-				self.ability:StartCooldown(cooldown)]]
+				self.ability:StartCooldown(cooldown)
 			end
 		end
 	end
 end
+

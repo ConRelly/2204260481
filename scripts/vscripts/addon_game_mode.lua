@@ -1,6 +1,5 @@
 require("AOHGameMode")
-require("lib/animations")
-require("lib/utils")
+require( "lib/animations")
 
 --require("hack/precache_resource")
 
@@ -22,8 +21,6 @@ function Precache(context)
 	}
 
 	local particles = {
-		"particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf",
-		"particles/generic_gameplay/generic_break.vpcf",
 
 	}
 
@@ -32,28 +29,12 @@ function Precache(context)
 		"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts",
-		--"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_mars.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts",
-		"soundevents/game_sounds_custom.vsndevts",
-		"soundevents/game_sounds_storegga.vsndevts",
-		"soundevents/custom_sounds.vsndevts",
-		"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts",
-		"soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts",
-		"soundevents/voscripts/game_sounds_vo_zoom.vsndevts",  
-		"soundevents/game_sounds_heroes/game_sounds_jugger_abilities.vsndevts",
-		"soundevents/game_sounds_heroes/game_sounds_dark_willow.vsndevts",
-		"soundevents/game_sounds_heroes/game_sounds_spirit_breaker.vsndevts",
-		"soundevents/game_sounds_heroes/game_sounds_riki.vsndevts",
-		"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts",
-		"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts",
-		"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts",
-		"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts",
-		"soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts",
-		"soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
 	}
 
 	local units = { 
@@ -85,8 +66,6 @@ function Precache(context)
 	do_precache(soundevents, 
 		function(e) 
 			PrecacheResource("soundfile", e, context)
-			--PrecacheResource("soundfile", "soundevents/game_sounds_custom_2.vsndevts", context )
-			--PrecacheResource("soundfile", "soundevents/game_sounds_storegga.vsndevts", context )
 		end
 	)
 
@@ -95,9 +74,9 @@ function Precache(context)
 			PrecacheUnitByNameSync(e, context)
 		end
 	)
-	Precache_Resource(context)
-end
 
+	--Precache_Resource(context)
+end
 
 
 function Activate()

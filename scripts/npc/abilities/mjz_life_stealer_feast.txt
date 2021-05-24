@@ -13,7 +13,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"str_damage_pct"		"50 100 150 250"
+				"str_damage_pct"		"50 100 150 200"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_life_stealer_feast_strength"
 			}
 
@@ -35,7 +35,7 @@
 			"01"
 			{
 				"var_type"		"FIELD_INTEGER"
-				"value"			"250"
+				"value"			"50"
 			}
 		}
 	}

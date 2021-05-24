@@ -16,22 +16,22 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maximum_attack_speed"			"160 220 380 540"
+				"maximum_attack_speed"			"160 220 280 340"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maximum_health_regen"			"20 60 80 280"
+				"maximum_health_regen"			"20 40 60 80"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maximum_resistance"			"30 50 70 95"
+				"maximum_resistance"			"20 30 40 50"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"hp_threshold_max"				"30"
+				"hp_threshold_max"				"10"
 			}
 			"11"
 			{
@@ -51,7 +51,7 @@
 			"14"
 			{
 				"var_type"			    		"FIELD_INTEGER"
-				"hp_threshold_effect"	    	"90"
+				"hp_threshold_effect"	    	"70"
 			}
 		}
 

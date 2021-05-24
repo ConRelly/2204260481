@@ -4,13 +4,13 @@ if modifier_roshan_bonus == nil then
 end
 
 -- Configuration
-local BONUS_DAMAGE_PERCENTAGE = 50.0
-local BURNING_DURATION = 60.0
+local BONUS_DAMAGE_PERCENTAGE = 20.0
+local BURNING_DURATION = 8.0
 
 -- Returns the attributes and functions that the modifier will have
 function modifier_roshan_bonus:DeclareFunctions()
     local funcs = {
-        MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
+        MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
         MODIFIER_EVENT_ON_ATTACK_LANDED
     }
 
@@ -88,7 +88,7 @@ function modifier_roshan_bonus:OnDestroy()
 end
 
 -- 
-function modifier_roshan_bonus:GetModifierTotalDamageOutgoing_Percentage()
+function modifier_roshan_bonus:GetModifierBaseDamageOutgoing_Percentage()
     return BONUS_DAMAGE_PERCENTAGE
 end
 

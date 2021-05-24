@@ -160,7 +160,7 @@ if IsServer() then
 	
 		local return_damage = damage + caster_str * (str_return / 100.0)
 		ApplyDamage({ 
-			victim = attacker, attacker = caster, ability = ability, 
+			victim = attacker, attacker = caster, 
 			damage = return_damage, damage_type = ability:GetAbilityDamageType() 
 		})
 	end

@@ -6,7 +6,7 @@
         "01"
         {
             "var_type"					"FIELD_INTEGER"
-            "lance_damage"				"100 175 450 925"
+            "lance_damage"				"100 175 250 325"
             "LinkedSpecialBonus"		"special_bonus_unique_phantom_lancer_2"
         }
         "05"
@@ -17,7 +17,7 @@
         "06"
         {
             "var_type"					"FIELD_INTEGER"
-            "illusion_damage_out_pct"	"-20"
+            "illusion_damage_out_pct"	"-50"
             "CalculateSpellDamageTooltip"	"0"
         }
         "07"
@@ -53,13 +53,13 @@
         "05"
         {
             "var_type"					"FIELD_INTEGER"
-            "illusion_damage_out_pct"	"-20"
+            "illusion_damage_out_pct"	"-50"
             "CalculateSpellDamageTooltip"	"0"
         }
         "06"
         {
             "var_type"					"FIELD_INTEGER"
-            "tooltip_illusion_damage"	"80"
+            "tooltip_illusion_damage"	"50"
             "CalculateSpellDamageTooltip"	"0"
         }
         "07"

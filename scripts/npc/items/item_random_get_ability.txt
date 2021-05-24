@@ -1,0 +1,23 @@
+
+"item_random_get_ability"
+{
+	"BaseClass"             		"item_datadriven"
+	"AbilityTextureName"			"item_random_get_ability"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+	"AbilityCastPoint"				"0"
+
+	"ItemDroppable" 				"1"
+	"ItemPurchasable" 				"0"
+	"ItemSellable"					"0"
+    "ItemShareability"              "ITEM_NOT_SHAREABLE"
+    "AbilityGoldCost"               "321"
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"hack/item_random_get_ability.lua"
+			"Function"		"OnSpellStart"
+		}
+	}
+}

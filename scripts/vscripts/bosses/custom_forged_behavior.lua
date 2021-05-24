@@ -27,9 +27,8 @@ end
 
 
 
-
-function modifier_custom_forged_behavior:OnCreated()
-	if IsServer() then
+if IsServer() then
+	function modifier_custom_forged_behavior:OnCreated()
 		self.parent = self:GetParent()
 		self.team = self.parent:GetTeam()
 		self.ability = self:GetAbility()
@@ -46,22 +45,20 @@ function modifier_custom_forged_behavior:OnCreated()
 				self.parent:CastAbilityOnPosition(unit:GetAbsOrigin(), self.mineAbility, -1)
 				break
 			end
-			self:StartIntervalThink(self.interval)
+			  self:StartIntervalThink(self.interval)
 			end
 		})
+		
 	end
-end
-function modifier_custom_forged_behavior:OnIntervalThink()
-	if IsServer() then
+	function modifier_custom_forged_behavior:OnIntervalThink()
 		local hero = FindUnitsInRadius(self.team, self.parent:GetAbsOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, FIND_CLOSEST, false)
 		for k, unit in pairs(hero) do
 			self.parent:CastAbilityOnPosition(unit:GetAbsOrigin(), self.mineAbility, -1)
 
 			break
 		end
-	end	
+	end
 end
-
 
 function RotateVector2D(v,theta)
     local xp = v.x*math.cos(theta)-v.y*math.sin(theta)

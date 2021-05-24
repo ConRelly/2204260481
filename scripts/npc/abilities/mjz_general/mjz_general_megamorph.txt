@@ -12,22 +12,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"		        "150"
+				"bonus_damage"		        "10"
 			}
             "02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_range"		     "400"
+				"attack_range"		     "100"
 			}
             "03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"		     "400"
+				"cast_range"		     "200"
 			}
             "04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"model_scale"		     "30"
+				"model_scale"		     "50"
 			}
 		}
 	}

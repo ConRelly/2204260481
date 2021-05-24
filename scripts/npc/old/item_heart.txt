@@ -1,0 +1,43 @@
+"item_heart"
+{
+    "MaxUpgradeLevel"               "3"
+    "ItemBaseLevel"                 "1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_strength"			"30 55 80"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_health"				"400"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"hp_regen_amp"				"0"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"health_regen_rate"			"1.4 1.7 2.0"
+		}
+        "05"
+        {
+            "var_type"				    "FIELD_INTEGER"
+            "cooldown_melee"		    "2"
+        }
+        "06"
+        {
+            "var_type"				    "FIELD_INTEGER"
+            "cooldown_ranged_tooltip"	"2"
+        }
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"fixed_health_regen"		"12 19 26"
+		}
+	}
+}

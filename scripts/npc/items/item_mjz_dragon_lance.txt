@@ -1,0 +1,118 @@
+
+	//=================================================================================================================
+	// Recipe: Dragon Lance				可食用的魔龙枪
+	//=================================================================================================================
+	"item_recipe_mjz_dragon_lance"
+	{
+		"ID"							"234"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_recipe"
+		
+		"ItemCost"						"1100"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_dragon_lance"
+		"ItemRequirements"
+		{
+			"01"						"item_dragon_lance"
+		}
+	}
+	"item_mjz_dragon_lance"
+	{
+		"ID"							"236"
+		"BaseClass"						"item_datadriven"
+		// "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName"		    "mjz_dragon_lance"
+
+		"ItemCost"						"1900"
+		"ItemShopTags"					"mjz;damage"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"dragon lance"
+		"ItemStackable"					"0"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemPurchasable"				"1"
+		"ItemRequiresCharges" 			"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ShouldBeSuggested"				"1"
+
+		"precache"
+		{
+			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"12"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"12"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_attack_range"		"140"
+			}
+		}
+
+		"OnEquip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"items/item_mjz_dragon_lance.lua"
+				"Function"				"OnEquip"
+			}		
+		}
+
+		"OnUnequip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"items/item_mjz_dragon_lance.lua"
+				"Function"				"OnUnequip"
+			}		
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"items/item_mjz_dragon_lance.lua"
+				"Function"				"OnSpellStart"
+				"sound_cast"			"Hero_Alchemist.Scepter.Cast"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_mjz_dragon_lance"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"IsBuff"				"1"
+				"IsPurgable"			"0"
+
+				// "Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_agility"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_strength"
+				}
+			}
+
+		}
+	}
+	
+
+
+	

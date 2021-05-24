@@ -1,0 +1,81 @@
+
+	"item_black_king_bar"
+	{
+		"AbilityCooldown"				"30"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"20"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"32"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"9.0 8.0 7.0 6.0 5.0 4.0"
+			}
+		}
+	}
+	
+	"item_tome_of_knowledge"
+	{
+		"ItemCost"						"200"
+		"ItemStockMax"					"10"
+		"ItemStockInitial"				"1"
+		"ItemStockTime"					"300.0"			  
+		"ItemInitialStockTime"			"300.0"
+	}
+	
+	"item_blink"	// Blink_Dagger
+	{
+		"ItemCost"						"2100"
+	}
+	
+	"item_recipe_octarine_core"
+	{
+		"ItemResult"					""
+		"ItemRequirements"
+		{
+			"01"						"item_mystic_staff;item_soul_booster"
+		}
+	}
+	"item_octarine_core"
+	{
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"1"
+	}
+	
+	
+	// Cheese   奶酪
+	"item_cheese"
+	{
+		"AbilityCooldown"				"10.0"
+		"ItemCost"						"1000"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_restore"		"25000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_restore"			"15000"
+			}
+		}
+	}
+	
+	"item_helm_of_the_dominator"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+	}
+	

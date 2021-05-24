@@ -16,9 +16,9 @@
 
 		"AbilityCastPoint"				"0.2"
 
-		"AbilityCooldown"				"15"
-		//"AbilityCharges"				"4"
-		//"AbilityChargeRestoreTime"		"30 25 15"
+		"AbilityCooldown"				"40"
+		//"AbilityCharges"				"2"
+		//"AbilityChargeRestoreTime"		"30 25 20"
 
 		"AbilityManaCost"				"200"
         "MaxLevel"                      "1"
@@ -60,7 +60,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"pop_damage"			"1250"
+				"pop_damage"			"250"
 			}
 			"08"
 			{

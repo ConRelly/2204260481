@@ -1,0 +1,248 @@
+
+
+	//=================================================================================================================
+	// Recipe: Greater Crit				大炮 LVL 2
+	//=================================================================================================================
+	"item_recipe_mjz_daedalus_2"
+	{
+		"ID"							"70140"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_daedalus_2"
+		"ItemRequirements"
+		{
+			// "01"						"item_lesser_crit;item_demon_edge"
+			"01"						"item_greater_crit;item_greater_crit"
+		}
+	}
+	"item_mjz_daedalus_2"
+	{
+		"ID"							"70141"
+		"BaseClass"						"item_greater_crit"
+		"AbilityTextureName"			"mjz_daedalus"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemCost"						"10660"
+		"ItemShopTags"					"damage;crit"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"daedalus"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"2"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"80 160 240 320 400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"30 31 32 33 34"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_multiplier"		"235 245 255 265 275"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_crit_damage"	"135 145 155 165 175"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Greater Crit				大炮 LVL 3
+	//=================================================================================================================
+	"item_recipe_mjz_daedalus_3"
+	{
+		"ID"							"70142"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_daedalus_3"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_daedalus_2;item_greater_crit"
+		}
+	}
+	"item_mjz_daedalus_3"
+	{
+		"ID"							"70143"
+		"BaseClass"						"item_greater_crit"
+		"AbilityTextureName"			"mjz_daedalus"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemCost"						"15990"
+		"ItemShopTags"					"damage;crit"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"daedalus"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"3"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"80 160 240 320 400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"30 31 32 33 34"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_multiplier"		"235 245 255 265 275"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_crit_damage"	"135 145 155 165 175"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Greater Crit				大炮 LVL 4
+	//=================================================================================================================
+	"item_recipe_mjz_daedalus_4"
+	{
+		"ID"							"70144"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_daedalus_4"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_daedalus_3;item_greater_crit"
+		}
+	}
+	"item_mjz_daedalus_4"
+	{
+		"ID"							"70145"
+		"BaseClass"						"item_greater_crit"
+		"AbilityTextureName"			"mjz_daedalus"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemCost"						"21320"
+		"ItemShopTags"					"damage;crit"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"daedalus"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"4"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"80 160 240 320 400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"30 31 32 33 34"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_multiplier"		"235 245 255 265 275"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_crit_damage"	"135 145 155 165 175"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Recipe: Greater Crit				大炮 LVL 5
+	//=================================================================================================================
+	"item_recipe_mjz_daedalus_5"
+	{
+		"ID"							"70146"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_daedalus_5"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_daedalus_4;item_greater_crit"
+		}
+	}
+	"item_mjz_daedalus_5"
+	{
+		"ID"							"70147"
+		"BaseClass"						"item_greater_crit"
+		"AbilityTextureName"			"mjz_daedalus"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemCost"						"26650"
+		"ItemShopTags"					"damage;crit"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"daedalus"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"5"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"80 160 240 320 400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"30 31 32 33 34"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_multiplier"		"235 245 255 265 275"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_crit_damage"	"135 145 155 165 175"
+			}
+		}
+	}
+	

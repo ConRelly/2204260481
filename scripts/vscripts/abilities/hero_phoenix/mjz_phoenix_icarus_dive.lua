@@ -96,31 +96,14 @@ if IsServer() then
 		ProjectileManager:CreateLinearProjectile(info)
 
 	end
-    function ability_class:GetPrimaryStatValue()
-        local STRENGTH = 0
-        local AGILITY = 1
-        local INTELLIGENCE = 2
-        local unit = self:GetParent()
-        local pa = unit:GetPrimaryAttribute()
-        local PrimaryStatValue = 0
-        if pa == STRENGTH  then
-            PrimaryStatValue = unit:GetStrength()
-        elseif pa == AGILITY  then
-            PrimaryStatValue = unit:GetAgility()
-        elseif pa == INTELLIGENCE  then
-            PrimaryStatValue = unit:GetIntellect()
-        end
-        return PrimaryStatValue
-    end	
 end
 
 function ability_class:OnProjectileHit_ExtraData( hTarget, vLocation, table )
     if hTarget == nil then
-		local caster = self:GetCaster()
-        caster:SetAbsOrigin(vLocation)
-        FindClearSpaceForUnit( caster, vLocation, true)
+        self:GetCaster():SetAbsOrigin(vLocation)
+        FindClearSpaceForUnit( self:GetCaster(), vLocation, true)
 
-        if self.m_hMod and caster:IsAlive() and caster:HasModifier("modifier_mjz_phoenix_icarus_dive") then
+        if self.m_hMod then
             self.m_hMod:Destroy()
         end
     end
@@ -131,16 +114,12 @@ end
 function ability_class:OnProjectileHitHandle( target, location, projectile )
 	if not target then return end
 	local ability = self
-	local caster = self:GetCaster()
-	local caster_attr = caster:GetPrimaryStatValue()
-	local attr_mult = self:GetSpecialValueFor("attr_damage")
-	local bonus_dmg = caster_attr * attr_mult
-	-- 0 = strength, 1 = agility, 2 = intelligence.
+
 	-- apply damage
 	local damageTable = {
 		victim = target,
 		attacker = self:GetCaster(),
-		damage = self:GetAbilityDamage() + bonus_dmg,
+		damage = self:GetAbilityDamage(),
 		damage_type = self:GetAbilityDamageType(),
 		ability = ability, --Optional.
 	}

@@ -1,0 +1,303 @@
+
+	//==================================================================
+	// 红色的圣剑
+	//================================================================== 
+	"item_recipe_red_divine_rapier_lv1"
+	{
+		"ID"							"70150"	
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"						"item_datadriven"
+
+		"ItemCost"						"0"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_red_divine_rapier_lv1"
+		"ItemRequirements"
+		{
+			"01"						"item_relic;item_relic"
+			// "02"						"item_relic;item_demon_edge"
+			//"02"						"item_rapier"
+		}
+	}
+	"item_red_divine_rapier_lv1" 
+	{
+		"ID"           				"70151"
+		"BaseClass" 			    "item_datadriven"
+		"AbilityTextureName"		"red_divine_rapier"
+		"Model"       				"models/props_gameplay/divine_rapier.vmdl" 
+		"Effect"       				"particles/generic_gameplay/dropped_item_rapier.vpcf"
+		"ItemQuality"  				"epic"
+
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemCost"     				"7200"
+		"ItemKillable" 				"0" 
+		"ItemSellable" 				"1"
+		"ItemPurchasable" 			"1"
+		"ItemDroppable" 			"1"
+		"ItemShareability" 			"ITEM_NOT_SHAREABLE"
+		"ItemDisassembleRule"		"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"300 600 1200 2400 4800"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_red_divine_rapier_lv1"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+				}
+			} 
+		}
+	} 
+
+	"item_recipe_red_divine_rapier_lv2"
+	{
+		"ID"							"70152"	
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"						"item_datadriven"
+
+		"ItemCost"						"0"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_red_divine_rapier_lv2"
+		"ItemRequirements"
+		{
+			"01"						"item_red_divine_rapier_lv1;item_red_divine_rapier_lv1"
+			"02"						"item_red_divine_rapier_lv1;item_rapier"
+		}
+	}
+	"item_red_divine_rapier_lv2" 
+	{
+		"ID"           				"70153"
+		"BaseClass" 			    "item_datadriven"
+		"AbilityTextureName"		"red_divine_rapier"
+		"Model"       				"models/props_gameplay/divine_rapier.vmdl" 
+		"Effect"       				"particles/generic_gameplay/dropped_item_rapier.vpcf"
+		"ItemQuality"  				"epic"
+
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemCost"     				"14400"
+		"ItemKillable" 				"0" 
+		"ItemSellable" 				"1"
+		"ItemPurchasable" 			"1"
+		"ItemDroppable" 			"1"
+		"ItemShareability" 			"ITEM_NOT_SHAREABLE"
+		"ItemDisassembleRule"		"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"2"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"300 600 1200 2400 4800"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_red_divine_rapier_lv2"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+				}
+			} 
+		}
+	} 
+
+	"item_recipe_red_divine_rapier_lv3"
+	{
+		"ID"							"70154"	
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"						"item_datadriven"
+
+		"ItemCost"						"0"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_red_divine_rapier_lv3"
+		"ItemRequirements"
+		{
+			"01"						"item_red_divine_rapier_lv2;item_red_divine_rapier_lv2"
+		}
+	}
+	"item_red_divine_rapier_lv3" 
+	{
+		"ID"           				"70155"
+		"BaseClass" 			    "item_datadriven"
+		"AbilityTextureName"		"red_divine_rapier"
+		"Model"       				"models/props_gameplay/divine_rapier.vmdl" 
+		"Effect"       				"particles/generic_gameplay/dropped_item_rapier.vpcf"
+		"ItemQuality"  				"epic"
+
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemCost"     				"28800"
+		"ItemKillable" 				"0" 
+		"ItemSellable" 				"1"
+		"ItemPurchasable" 			"1"
+		"ItemDroppable" 			"1"
+		"ItemShareability" 			"ITEM_NOT_SHAREABLE"
+		"ItemDisassembleRule"		"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"300 600 1200 2400 4800"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_red_divine_rapier_lv3"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+				}
+			} 
+		}
+	} 
+
+	"item_recipe_red_divine_rapier_lv4"
+	{
+		"ID"							"70156"	
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"						"item_datadriven"
+
+		"ItemCost"						"0"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_red_divine_rapier_lv4"
+		"ItemRequirements"
+		{
+			"01"						"item_red_divine_rapier_lv3;item_red_divine_rapier_lv3"
+		}
+	}
+	"item_red_divine_rapier_lv4" 
+	{
+		"ID"           				"70157"
+		"BaseClass" 			    "item_datadriven"
+		"AbilityTextureName"		"red_divine_rapier"
+		"Model"       				"models/props_gameplay/divine_rapier.vmdl" 
+		"Effect"       				"particles/generic_gameplay/dropped_item_rapier.vpcf"
+		"ItemQuality"  				"epic"
+
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemCost"     				"57600"
+		"ItemKillable" 				"0" 
+		"ItemSellable" 				"1"
+		"ItemPurchasable" 			"1"
+		"ItemDroppable" 			"1"
+		"ItemShareability" 			"ITEM_NOT_SHAREABLE"
+		"ItemDisassembleRule"		"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"4"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"300 600 1200 2400 4800"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_red_divine_rapier_lv4"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+				}
+			} 
+		}
+	} 
+
+	"item_recipe_red_divine_rapier_lv5"
+	{
+		"ID"							"70158"	
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"BaseClass"						"item_datadriven"
+
+		"ItemCost"						"0"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_red_divine_rapier_lv5"
+		"ItemRequirements"
+		{
+			"01"						"item_red_divine_rapier_lv4;item_red_divine_rapier_lv4"
+		}
+	}
+	"item_red_divine_rapier_lv5" 
+	{
+		"ID"           				"70159"
+		"BaseClass" 			    "item_datadriven"
+		"AbilityTextureName"		"red_divine_rapier"
+		"Model"       				"models/props_gameplay/divine_rapier.vmdl" 
+		"Effect"       				"particles/generic_gameplay/dropped_item_rapier.vpcf"
+		"ItemQuality"  				"epic"
+
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"ItemCost"     				"115200"
+		"ItemKillable" 				"0" 
+		"ItemSellable" 				"1"
+		"ItemPurchasable" 			"1"
+		"ItemDroppable" 			"1"
+		"ItemShareability" 			"ITEM_NOT_SHAREABLE"
+		"ItemDisassembleRule"		"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"5"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"300 600 1200 2400 4800"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_item_red_divine_rapier_lv5"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1" 
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+				}
+			} 
+		}
+	} 
+
+

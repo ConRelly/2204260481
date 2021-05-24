@@ -7,5 +7,5 @@
 
 
 	
-	"addonname"										"Hero Attack On"
+	"addonname"										"Attack On Hero 2 Re: Bird"
 }

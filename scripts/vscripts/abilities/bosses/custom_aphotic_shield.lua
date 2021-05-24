@@ -3,7 +3,6 @@
 custom_aphotic_shield = class({})
 
 
-
 if IsServer() then
     function custom_aphotic_shield:OnSpellStart()
         local caster = self:GetCaster()
@@ -14,15 +13,10 @@ if IsServer() then
                 duration = self:GetSpecialValueFor("duration")
             })
         else
-            self:StartCooldown(3.0)
+            self:StartCooldown(5.0)
         end
     end
 end
-   
-       
-        
-    
-
 
 
 
@@ -43,12 +37,12 @@ if IsServer() then
 
         self.damage_radius = ability:GetSpecialValueFor("radius")
         self.damage_percentage = ability:GetSpecialValueFor("percentage") * 0.01
-        
+
         self.total_damage = 0
 
         parent:EmitSound("Hero_Abaddon.AphoticShield.Cast")
 
-        local shield_size = 150
+        local shield_size = 200
         self.particle = ParticleManager:CreateParticle("particles/units/heroes/hero_abaddon/abaddon_aphotic_shield.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
         ParticleManager:SetParticleControl(self.particle, 1, Vector(shield_size, 0, shield_size))
         ParticleManager:SetParticleControl(self.particle, 2, Vector(shield_size, 0, shield_size))
@@ -75,53 +69,11 @@ if IsServer() then
             ApplyDamage({
                 ability = ability,
                 attacker = parent,
-                damage = damage * 0.25,
+                damage = damage,
                 damage_type = ability:GetAbilityDamageType(),
                 victim = unit
             })
         end
-        Timers:CreateTimer(
-            0.05,
-            function()
-            for _, unit in ipairs(units) do
-                    ApplyDamage({
-                        ability = ability,
-                        attacker = parent,
-                        damage = damage * 0.25,
-                        damage_type = ability:GetAbilityDamageType(),
-                        victim = unit
-                    })
-                end
-            end
-        )
-        Timers:CreateTimer(
-            0.10,
-            function()
-            for _, unit in ipairs(units) do
-                    ApplyDamage({
-                        ability = ability,
-                        attacker = parent,
-                        damage = damage * 0.25,
-                        damage_type = ability:GetAbilityDamageType(),
-                        victim = unit
-                    })
-                end
-            end
-        )
-        Timers:CreateTimer(
-            0.15,
-            function()
-            for _, unit in ipairs(units) do
-                    ApplyDamage({
-                        ability = ability,
-                        attacker = parent,
-                        damage = damage * 0.25,
-                        damage_type = ability:GetAbilityDamageType(),
-                        victim = unit
-                    })
-                end
-            end
-        )                                          
     end
 
 

@@ -18,9 +18,10 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dodge_chance_pct"		"50"
+				"dodge_chance_pct"		"25"
 			}
 		}
+
 		"Modifiers"
 		{
 			"modifier_mjz_faceless_void_backtrack"
@@ -28,7 +29,7 @@
 				"Passive"				"1"
 				"IsHidden"				"1"
 
-				"ThinkInterval"			"0.1"
+				"ThinkInterval"			"0.03"
 				"OnIntervalThink"
 				{
 					"RunScript"

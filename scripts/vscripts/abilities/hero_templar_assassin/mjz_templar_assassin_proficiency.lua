@@ -23,23 +23,13 @@ end
 function ability_class:OnAbilityPhaseStart()
 	if IsServer() then
 		local target = self:GetCursorTarget()
-		--if target then
-			--self.overrideAutocast = true
-			--self:GetCaster():MoveToTargetToAttack(target)
-		--end
+		if target then
+			-- self.overrideAutocast = true
+			-- self:GetCaster():MoveToTargetToAttack(target)
+		end
 	end
 end
--- Runs when the think interval occurs.()
---[[if IsServer() then
-	function ability_class:OnCreated()
-		--local ability = self:GetAbility()
-		self:StartIntervalThink(5)
-	end	
-    function ability_class:OnIntervalThink()
-		local ability = self
-		self.armor_reduction = ability:GetTalentSpecialValueFor("armor_reduction_percent")
-	end
-end]]		
+
 --------------------------------------------------------------------------------
 -- Orb Effects
 function ability_class:GetProjectileName()
@@ -58,9 +48,9 @@ function ability_class:OnOrbImpact( params )
 	local ability = self
 	local caster = self:GetCaster()
 	local target = params.target
-    
+
 	local armor_reduction_duration = ability:GetSpecialValueFor("armor_reduction_duration")
-	local armor_reduction_percent =  ability:GetSpecialValueFor("armor_reduction_percent")
+	local armor_reduction_percent = ability:GetSpecialValueFor("armor_reduction_percent")
 	local modifier_name = "modifier_mjz_templar_assassin_proficiency_debuff"
 	
 	local modifier = target:FindModifierByName(modifier_name)
@@ -74,6 +64,7 @@ function ability_class:OnOrbImpact( params )
 		} 
 		target:AddNewModifier(caster, ability, modifier_name, modifier_table)
 	end
+	
 end
 
 --------------------------------------------------------------------------------
@@ -101,19 +92,11 @@ if IsServer() then
 				local armor_reduction_duration = ability:GetSpecialValueFor("armor_reduction_duration")
 				local armor_reduction_percent = ability:GetSpecialValueFor("armor_reduction_percent")
 				local modifier_name = "modifier_mjz_templar_assassin_proficiency_debuff"
-                local cooldown = ability:GetCooldown(ability:GetLevel())
-	            ability:StartCooldown(cooldown)					
+				
 				local modifier = target:FindModifierByName(modifier_name)
-				if modifier then
-					--target:RemoveModifierByName(modifier_name)
-					--local modifier_table = { 
-					--	duration = armor_reduction_duration,
-					----	armor_reduction_percent = armor_reduction_percent,
-					--} 
-					--target:AddNewModifier(caster, ability, modifier_name, modifier_table)					
-					--modifier:SetDuration(armor_reduction_duration, true)
-					--modifier:ForceRefresh()
-					
+				if modifier then 
+					modifier:SetDuration(armor_reduction_duration, true)
+					modifier:ForceRefresh()
 				else
 					local modifier_table = { 
 						duration = armor_reduction_duration,
@@ -124,5 +107,4 @@ if IsServer() then
 			end
 		end
 	end
-end	
-
+end

@@ -26,8 +26,8 @@ function modifier:DeclareFunctions()
             -- MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
             -- MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,    -- GetModifierConstantHealthRegen
             -- MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,  --GetModifierConstantHealthRegen
-       -- MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
-        --MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+        MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
+        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
         -- MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING,		-- 状态抗性（可以叠加）	
         MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
 
@@ -40,18 +40,18 @@ end
 -- function modifier:GetModifierHealthRegenPercentage()
 --     return 100
 -- end
---function modifier:GetModifierTotalDamageOutgoing_Percentage( )
-    --return 0       -- 伤害减少100%
---end
+function modifier:GetModifierTotalDamageOutgoing_Percentage( )
+    return -100       -- 伤害减少100%
+end
 
 -- function modifier:GetModifierStatusResistanceStacking()
 -- 	return 80       -- 状态抗性 80%
 -- end
---function modifier:GetModifierIncomingDamage_Percentage()
-    --return 0     -- 受到伤害增加100%
---end
+function modifier:GetModifierIncomingDamage_Percentage()
+    return 100      -- 受到伤害增加100%
+end
 
 function modifier:GetModifierMoveSpeedBonus_Percentage()
-    return 0
+    return -80
 end
 

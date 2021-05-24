@@ -1,0 +1,481 @@
+
+	//=================================================================================================================
+	// Frostmourne						霜之哀伤
+	// Reference:
+	// 		github.com/MNoya/Warchasers
+	//		github.com/darklordabc/feastivus/game/frostivus/scripts/npc/abilities/traps.txt
+	//
+	//=================================================================================================================
+	"item_recipe_mjz_frostmourne"
+	{
+		"ID"							"72133"
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"      		"item_recipe"
+		
+		"ItemCost"						"3000"	
+		"ItemShopTags"					""
+		
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_mjz_frostmourne"
+		"ItemPurchasable"				"1"
+		"ItemRequirements"
+		{
+			//圣剑（6000） + 撒旦之邪力（5300） + 斯嘉蒂之眼（5500） + 振奋宝石（2000） + 卷轴（1000）
+			//"01"	"item_rapier;item_satanic;item_skadi;item_hyperstone"
+			// "01"	"item_boots"		//test
+			"02"	"item_red_divine_rapier_lv1;item_satanic;item_skadi;item_hyperstone"
+			
+		}
+	}
+	"item_mjz_frostmourne" 
+	{	
+		"ID"							"72134"
+		"BaseClass" 					"item_datadriven"
+		// "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		// "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"	//技能不能作用于魔法免疫
+
+		"AbilityTextureName"			"mjz_frostmourne"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"Model"							"models/items/abaddon/demonedge_weapon/demonedge_weapon.vmdl"
+		"Effect" 						"particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
+
+		"UIPickupSound"					"Item.PickUpGemShop"
+		"UIDropSound"					"Item.DropGemShop"
+		"WorldDropSound"				"Item.DropGemWorld"
+
+		"AbilityCastRange"              "1500"
+		"AbilityCooldown"               "30"
+		"AbilityManaCost"				"100"
+
+		"ItemCost"						"19000"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemKillable"                  "0"
+		"ItemSellable"                  "0"
+		"ItemDroppable"                 "0"
+		"ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemQuality"					"artifact"
+		"ItemShopTags"					"artifact"
+		"ItemAliases"					"mjz;frostmourne"
+		"ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+
+		"precache"
+		{
+			//物品在地上时的模型
+			"Model"			"models/items/abaddon/demonedge_weapon/demonedge_weapon.vmdl"
+
+			//海民声音
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"
+			//冰女声音
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_crystal_maiden.vsndevts"
+			//亚巴顿声音
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+
+			//玩家自身的粒子效果
+			// "particle"				"particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf"
+			// "particle"				"particles/units/heroes/hero_abaddon/abaddon_borrowed_time_h.vpcf"
+			"particle"		"particles/units/heroes/hero_tusk/tusk_tag_team_steam.vpcf"
+			"particle"		"particles/units/heroes/hero_tusk/tusk_frozen_sigil_frost_grow.vpcf"
+			
+			"particle"		"particles/units/heroes/hero_terrorblade/terrorblade_reflection_slow.vpcf"
+			"particle"		"particles/units/heroes/hero_abaddon/abaddon_frost_slow.vpcf"
+
+			//装备此物品时触发的效果
+			"particle"		"particles/units/heroes/hero_abaddon/abaddon_spawn.vpcf"
+			"particle" 		"particles/econ/courier/courier_roshan_frost/courier_roshan_frost_ambient.vpcf"
+
+			//技能效果
+			"particle"		"particles/units/heroes/hero_tusk/tusk_ice_shards_projectile.vpcf"
+			"particle" 		"particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_frostbite.vpcf"
+		}
+
+		"AbilitySpecial"
+		{
+			
+			"02"						//攻击力（绿字）
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"300"
+			}
+			"03"						//攻击速度
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"40"
+			}
+			"04"						//Debuff	减移动速度百分比
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_move_speed_pct"	"-30"
+			}
+			"05"						//Debuff	减攻击速度
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_attack_speed"	"-30"
+			}
+			"06"						//Debuff	持续时间
+			{
+				"var_type"				"FIELD_INTEGER"
+				"debuff_duration"		"3"
+			}
+			"07"						//Debuff	造成目标当前生命值百分比的物理伤害
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_damage_pct"		"0.05"		//百分之5
+			}
+			
+			"10"						//敏捷+25
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_agility"			"25"
+			}
+			"11"						//智力+25
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"25"
+			}
+			"12"						//力量+50
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"50"
+			}
+			"13"						//生命值+120
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"120"
+			}
+			"14"						//魔法值+120
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"120"
+			}
+			"15"						//生命窃取
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_lifesteal"		"25"
+			}
+			"20"						//寒冰风暴持续时间（英雄）
+			{
+				"var_type"      				"FIELD_INTEGER"
+				"frostbite_duration_hero"    	"2"
+			}
+			"21"						//寒冰风暴持续时间（普通）
+			{
+				"var_type"      				"FIELD_INTEGER"
+				"frostbite_duration_creep"    	"2"
+			}
+			"22"						//寒冰风暴每秒伤害
+			{
+				"var_type"      				"FIELD_FLOAT"
+				"frostbite_damage_per_second"    "100.0"
+			}
+			"23"						//寒冰风暴技能最远距离
+			{
+				"var_type"      				"FIELD_INTEGER"
+				"frostbite_fixed_distance"    	"1500"
+			}
+			"24"						//寒冰风暴技能移动速度
+			{
+				"var_type"      				"FIELD_INTEGER"
+				"frostbite_move_speed"    		"1200"
+			}
+			"25"						//寒冰风暴技能碰撞范围
+			{
+				"var_type"      				"FIELD_INTEGER"
+				"frostbite_radius"    			"100"
+			}
+			"26"						//寒冰风暴技能移动时提供的视野范围
+			{
+				"var_type"      				"FIELD_INTEGER"
+				"frostbite_vision_radius"    	"800"
+			}
+
+		}		
+
+		"OnEquip"
+		{
+			"FireSound"
+			{
+				"EffectName"			"Hero_Abaddon.BorrowedTime"	
+				"Target" 				"CASTER"
+			}
+			"AttachEffect"
+			{
+				"EffectName" 			"particles/units/heroes/hero_abaddon/abaddon_spawn.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"Target"				"CASTER"
+			}
+		}
+		"OnUnequip"
+		{
+		}
+		"OnOwnerDied"
+		{
+			"DelayedAction"				//延迟执行：确保没有重生技能
+			{
+				"Delay"   "6"
+				"Action"
+				{
+					"RunScript"
+					{
+						"ScriptFile"  	"items/item_mjz_frostmourne.lua"
+						"Function"    	"DropFrostmourne"
+					}
+				}
+			}
+		}
+
+		"OnSpellStart_Old"
+		{
+			"FireSound"
+			{
+				"EffectName"			"Hero_Terrorblade.Sunder.Target"
+				"Target"				"TARGET"
+			}
+			"RunScript"
+			{
+				"ScriptFile"			"items/item_mjz_frostmourne.lua"
+				"Function"				"FrostmourneRuin"
+			}
+			"AttachEffect"
+			{
+				"EffectName"			"particles/units/heroes/hero_terrorblade/terrorblade_sunder.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"Target"				"CASTER"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName" 			"modifier_mjz_frostmourne_hungers_buff"
+				"Target" 				"CASTER"
+			}	
+		}
+		"OnSpellStart"				//发动技能：寒冰风暴	
+		{
+			"FireSound"
+			{
+				"EffectName"  		"Hero_Tusk.IceShards.Cast"
+				"Target"    		"CASTER"
+			}
+			"LinearProjectile"
+			{
+				"Target"         	"POINT"
+				"EffectName"   		"particles/units/heroes/hero_tusk/tusk_ice_shards_projectile.vpcf"
+				"MoveSpeed"     	"%frostbite_move_speed"
+				"StartRadius"   	"%frostbite_radius"
+				"StartPosition"  	"attach_attack1"
+				"EndRadius"      	"%frostbite_radius"
+				"HasFrontalCone" 	"0"
+				"FixedDistance"  	"%frostbite_fixed_distance"
+				"TargetTeams"   	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes"   	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+				"TargetFlags"   	"DOTA_UNIT_TARGET_FLAG_NONE"            
+				"ProvidesVision" 	"1"
+				"VisionRadius"    	"%frostbite_vision_radius"
+			}
+		}
+		"OnProjectileHitUnit"		//触发效果：寒冰风暴
+		{
+			"DeleteOnHit"  		"0"
+			"FireSound"
+			{
+				"EffectName"  	"hero_Crystal.frostbite"
+				"Target"     	"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"  "modifier_mjz_frostmourne_frostbite"
+				"Target"
+				{
+					"Center"		"TARGET"
+					"Types"			"DOTA_UNIT_TARGET_HERO"
+				}
+				"Duration"    	"%frostbite_duration_hero"
+			}
+			"ApplyModifier"		//普通单位双倍持续时间
+			{
+				"ModifierName"  "modifier_mjz_frostmourne_frostbite"
+				"Target"		// "Target"     	"TARGET"
+				{
+					"Center"		"TARGET"
+					"Types"			"DOTA_UNIT_TARGET_BASIC"
+				}
+				"Duration"    	"%frostbite_duration_creep"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"  "modifier_mjz_frostmourne_frostbite_damage"
+				"Target"
+				{
+					"Center"		"TARGET"
+					"Types"			"DOTA_UNIT_TARGET_HERO"
+				}
+				"Duration"    	"%frostbite_duration_hero"
+			}
+			"ApplyModifier"		//普通单位双倍持续时间
+			{
+				"ModifierName"  "modifier_mjz_frostmourne_frostbite_damage"
+				"Target"		// "Target"     	"TARGET"
+				{
+					"Center"		"TARGET"
+					"Types"			"DOTA_UNIT_TARGET_BASIC"
+				}
+				"Duration"    	"%frostbite_duration_creep"
+			}
+		}
+
+		"Modifiers"    				
+		{  	
+			"modifier_mjz_frostmourne_self_particle_effect_1"
+			{	
+				"Passive"					"1"
+				"IsHidden"					"1"
+				"EffectName"				"particles/units/heroes/hero_tusk/tusk_tag_team_steam.vpcf"
+			}
+			"modifier_mjz_frostmourne_self_particle_effect_2"
+			{	
+				"Passive"					"1"
+				"IsHidden"					"1"
+				"EffectName"				"particles/units/heroes/hero_tusk/tusk_frozen_sigil_frost_grow.vpcf"
+			}
+
+			"modifier_mjz_frostmourne"  
+			{
+				"Passive"					"1"
+				"IsDebuff"					"0"
+				"IsPurgable"				"0"
+				"IsHidden"					"0"
+				
+				"EffectAttachType"			"follow_origin"
+				// "Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"TextureName"				"item_mjz_frostmourne"
+				// "EffectName"				"particles/units/heroes/hero_abaddon/abaddon_borrowed_time.vpcf"
+
+				"Properties"
+				{
+					// "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" 	    "%bonus_damage"				//攻击力（白字）
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"				//攻击力（绿字）
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"		//攻击速度
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
+					"MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"				//魔法值加成		
+					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"				//生命值加成     
+				}
+
+				"OnAttackLanded"
+				{
+					"FireSound"
+					{
+						"EffectName"		"Hero_Abaddon.Attack"
+						"Target"			"CASTER"
+					}
+					"Lifesteal"
+					{
+						"Target"			"ATTACKER"
+						"LifestealPercent" 	"%attack_lifesteal"
+					}
+					"ApplyModifier"
+					{
+						"ModifierName" 		"modifier_mjz_frostmourne_hungers_debuff"
+						"Target" 			"TARGET"
+					}
+					"RunScript"
+					{
+						"ScriptFile"		"items/item_mjz_frostmourne.lua"
+						"Function"			"FrostmourneAttack"
+						"health_damage_pct"	"%health_damage_pct"
+					}
+				}		
+			}
+			"modifier_mjz_frostmourne_hungers_debuff"
+			{
+				"IsDebuff"					"1"
+				"IsPurgable"				"0"
+				"IsHidden"					"0"
+				"TextureName"				"item_mjz_frostmourne_effect"
+				"EffectName"				"particles/units/heroes/hero_abaddon/abaddon_frost_slow.vpcf"
+				"EffectAttachType"			"follow_origin"
+				// "Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"	//定义此属性就能叠加
+				"Duration"      			"%debuff_duration"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%debuff_move_speed_pct"		//移动速度
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  	"%debuff_attack_speed"			//攻击速度
+				}
+			}	
+			"modifier_mjz_frostmourne_hungers_buff"
+			{
+				"IsDebuff"					"0"
+				"IsPurgable"				"0"
+				"IsHidden"					"0"
+				"TextureName"				"item_mjz_frostmourne_effect"
+				"EffectName"				"particles/units/heroes/hero_terrorblade/terrorblade_reflection_slow.vpcf"
+				"EffectAttachType"			"follow_origin"
+				// "Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Duration"      			"3"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"30"
+				}
+			}
+			"modifier_mjz_frostmourne_frostbite"	//寒冰风暴
+			{
+				// "Duration"        "%slow_duration"
+				"Passive"         	"0"
+				"IsHidden"        	"0"
+				"IsDebuff"        	"1"
+				"TextureName"		"crystal_maiden_frostbite"	//冰女：Frostbite
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_frostbite.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_FROZEN"    				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_STUNNED"    			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_COMMAND_RESTRICTED"    	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}	
+			"modifier_mjz_frostmourne_frostbite_damage"
+			{
+				"IsPurgable"		"1"
+				"IsHidden"			"1"
+				
+				"OnCreated"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Damage"	"%frostbite_damage_per_second"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+					}
+				}
+				
+				"ThinkInterval"		"1"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Damage"	"%frostbite_damage_per_second"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+					}
+				}
+			}
+
+		}		
+	}
+	
+	
