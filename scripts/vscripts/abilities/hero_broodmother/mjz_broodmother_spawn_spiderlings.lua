@@ -284,8 +284,8 @@ function GetRandomAbilityName(hero)
         "lich_chain_frost",
         "weaver_the_swarm",
         "hoodwink_acorn_shot",
-        "clinkz_infernal_breath",
-		"nevermore_dark_lord",       
+		"clinkz_infernal_breath",
+		"nevermore_dark_lord",
     }
     local randomIndex = RandomInt(1, #abilityList)
     return abilityList[randomIndex]
