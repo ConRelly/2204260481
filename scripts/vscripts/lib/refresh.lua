@@ -36,12 +36,6 @@ function end_ability_cooldown_mult(ability, exclude_table, mult)
 				ability:EndCooldown()
                 ability:StartCooldown(cooldown * mult)
             end
-        else 
-			local cooldown = ability:GetCooldownTimeRemaining()
-            if cooldown > 0 then
-				ability:EndCooldown()
-                ability:StartCooldown(cooldown * (mult * 1.5))
-            end
 		end
     end
 end

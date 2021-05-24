@@ -177,6 +177,7 @@ function IsExcludeAbility( ability )
 		"dawnbreaker_converge",
 		"wisp_tether",
 		"wisp_tether_break",
+		"arcane_supremacy",
 		
 
 	}

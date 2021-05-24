@@ -39748,14 +39748,19 @@
 			"4"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_cd_shard"		"0"
+				"base_cd"				"60"
 			}
 			"5"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_cd_scepter"		"20"
+				"bonus_cd_shard"		"0"
 			}
 			"6"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_cd_scepter"		"20"
+			}
+			"7"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_cd_super"		"40"

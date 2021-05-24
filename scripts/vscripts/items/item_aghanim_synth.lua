@@ -37,7 +37,7 @@ function modifier_super_scepter:IsPurgable() return false end
 function modifier_super_scepter:GetEffectName() return "particles/custom/items/super_scepter/super_scepter_amb.vpcf" end
 function modifier_super_scepter:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_super_scepter:OnDestroy()
---	if IsServer() then
+	if IsServer() then
 		if self:GetCaster():HasModifier(modifier_stats) and self:GetCaster():FindModifierByName(modifier_stats):GetStackCount() > 2 then
 			self:GetCaster():AddNewModifier(self:GetCaster(), nil, "modifier_super_scepter", {})
 		else
@@ -45,5 +45,5 @@ function modifier_super_scepter:OnDestroy()
 				self:GetCaster():RemoveModifierByName("modifier_super_scepter")
 			end
 		end
---	end
+	end
 end

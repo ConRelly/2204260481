@@ -13,8 +13,11 @@ function arcane_supremacy:OnSpellStart()
 	 if IsServer() then
 		local caster = self:GetCaster()
 		local target = self:GetCursorTarget()
-		if not target:IsRealHero() then return end
-		if not caster:HasShard() and not caster:HasScepter() and not HasSuperScepter(caster) then return end
+		caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_4)
+		caster:StartGesture(ACT_DOTA_CAST_ABILITY_4)
+		if caster == target then self:StartCooldown(10) return end
+		if not target:IsRealHero() then self:StartCooldown(10) return end
+		if not caster:HasShard() and not caster:HasScepter() and not HasSuperScepter(caster) then self:StartCooldown(10) return end
 		local duration = self:GetSpecialValueFor("buff_duration")
 		local base_cd = self:GetSpecialValueFor("base_cd")
 		local cd_shard = 0
@@ -34,8 +37,6 @@ function arcane_supremacy:OnSpellStart()
 		end
 		cd = base_cd + cd_shard + cd_scepter + cd_super
 		self:StartCooldown(cd)
-		caster:RemoveGesture(ACT_DOTA_CAST_ABILITY_4)
-		caster:StartGesture(ACT_DOTA_CAST_ABILITY_4)
 		target:AddNewModifier(caster, self, "modifier_arcane_supremacy_buff", {duration = duration})
  	end
 end
@@ -44,10 +45,27 @@ end
 -- Arcane Supremacy Modifier --
 -------------------------------
 function modifier_arcane_supremacy:IsHidden() return true end
+function modifier_arcane_supremacy:OnCreated()
+	if IsServer() then if not self:GetAbility() then self:Destroy() end
+		self:StartIntervalThink(FrameTime())
+	end
+end
+function modifier_arcane_supremacy:OnIntervalThink()
+	if IsServer() then
+		local caster = self:GetCaster()
+		local modifier = "modifier_item_imba_ultimate_scepter_synth_stats"
+		if caster:HasModifier(modifier) and caster:FindModifierByName(modifier):GetStackCount() >= 2 then
+			caster:AddNewModifier(caster, nil, "modifier_super_scepter", {})
+		else
+			if caster:HasModifier("modifier_super_scepter") then
+				caster:RemoveModifierByName("modifier_super_scepter")
+			end
+		end
+	end
+end
 function modifier_arcane_supremacy:DeclareFunctions()
 	return {MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING, MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE}
 end
-
 function modifier_arcane_supremacy:GetModifierCastRangeBonusStacking()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_cast_range") end
 end
@@ -55,6 +73,9 @@ function modifier_arcane_supremacy:GetModifierSpellAmplify_Percentage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("spell_amp") end
 end
 
+---------------------------
+-- Arcane Supremacy Buff --
+---------------------------
 modifier_arcane_supremacy_buff = modifier_arcane_supremacy_buff or class({})
 function modifier_arcane_supremacy_buff:IsDebuff() return false end
 function modifier_arcane_supremacy_buff:IsHidden() return false end
