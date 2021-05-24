@@ -505,6 +505,15 @@
 	"DOTA_Tooltip_ability_special_bonus_zanto_gari_dmg_description"		"Дoпoлнитeльный ypoн paвeн {s:value}% oт бaзoвoй aтaки"
 	"DOTA_Tooltip_ability_special_bonus_zanto_gari_cooldown"	"-10 ceкyнд пepeзaдяpки Zanto Gari"
 
+// Rubick
+	"DOTA_Tooltip_ability_arcane_supremacy"							"Arcane Supremacy"
+	"DOTA_Tooltip_ability_arcane_supremacy_Description"				"Знания тайной магии усиливают заклинания героя: они применяются с большего расстояния и действуют эффективнее.<br><br>Перезарядка: %base_cd% секунд<br>Длительность: %buff_duration% секунд\n<h1><font color='#0094FF'>Aghanim's Shard</font></h1>Позволяет дать союзнику эффект <font color='#0094FF'>Aghanim's Shard</font>.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Позволяет дать союзнику эффект <font color='#0094FF'>Aghanim's Scepter</font>. +%bonus_cd_scepter% секунд перезарядки.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Позволяет дать союзнику эффект <font color='#DE3163'>Super Scepter</font>. +%bonus_cd_super% секунд перезарядки."
+	"DOTA_Tooltip_ability_arcane_supremacy_Lore"				"Многие маги никогда не смогут стать Великими..."
+	"DOTA_Tooltip_ability_arcane_supremacy_bonus_cast_range"		"Доп. дальность применения:"
+	"DOTA_Tooltip_ability_arcane_supremacy_spell_amp"				"%Доп. урон от заклинаний:"
+	"DOTA_Tooltip_modifier_arcane_supremacy_buff"				"Rubick's Blessing"
+	"DOTA_Tooltip_modifier_arcane_supremacy_buff_Description"	""
+
 //###########################################################################################################################
 
 	"DOTA_Tooltip_ability_item_ice_dagon"				"Ice Dagon"
@@ -5774,15 +5783,15 @@
 
 
 	"DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery"					"<font color='#f2da5b'>Jingu Mastery</font>"
-	"DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery_Description"		"Удары героя пробуждают мощь Цзиньгубана. Каждые %attack_count_tooltip% атаки усиливает следующую атаку давая доп. урон и доп. вампиризм."
+	"DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery_Description"		"Герой пробуждает мощь Цзиньгубана каждые %interval% сек. \n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Каждый раз, когда пробуждается мощь - увеличивает базовую ловкость и силу на %bonus_stats%. Если основной атрибут это интеллект, то, в добавок, будет увеличивать силу заклинаний на %spell_amp%%%.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Удваивает эффект <font color='#0094FF'>Aghanim's Scepter</font> и увеличивает длительность прапорционально сопротивлению эффектам героя."
 	"DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery_Lore"					"Чувствительный к настрою своего повелителя, посох Цзиньгубан сияет от мощи, когда Сунь Укун показывает свой боевой пыл."
-	"DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery_attack_count"			"Атак нужно:"
-	"DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery_bonus_damage"			"Дoп. ypoн:"
-	"DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery_lifesteal"				"%Доп. вампиризм:"
+	"DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery_buf_duration"			"Длитeльнocть:"
+	"DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery_bonus_damage"			"Доп. урон за уровень:"
+//	"DOTA_Tooltip_ability_monkey_king_custom_jingu_mastery_lifesteal"				"%Доп. вампиризм:"
 	"DOTA_Tooltip_modifier_monkey_king_custom_jingu_mastery_hit"					"Jingu Mastery"
 	"DOTA_Tooltip_modifier_monkey_king_custom_jingu_mastery_hit_Description"		"Атак от Monkey King"
 	"DOTA_Tooltip_modifier_monkey_king_custom_jingu_mastery_buff"					"Jingu Mastery"
-	"DOTA_Tooltip_modifier_monkey_king_custom_jingu_mastery_buff_Description"		"Дополнительные урон и вампиризм"
+	"DOTA_Tooltip_modifier_monkey_king_custom_jingu_mastery_buff_Description"		"Дополнительный урон, and spell amp if the main attribute is Intelligence"
 
 
 	"DOTA_Tooltip_ability_naga_siren_custom_aquatica_grace"								"<font color='#f2da5b'>Aquatica Grace</font>"

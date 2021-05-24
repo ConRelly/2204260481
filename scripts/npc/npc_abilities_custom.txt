@@ -11243,7 +11243,7 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"spell_amp"				"110"
-		}				
+		}
 	}
 }
 "naga_siren_custom_aquatica_grace"
@@ -39693,9 +39693,9 @@
 	}
 	"special_bonus_omniknight_ga_cd" // Guardian Angel cooldown decrease
 	{
-		"BaseClass"						"special_bonus_undefined"
-		"AbilityType"				   "DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"					"special_bonus_undefined"
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"LinkedAbility"
 		{
 			"01" 	"guardian_angel"
@@ -39704,8 +39704,61 @@
 		{
 			"01"
 			{
-				"var_type"				  "FIELD_INTEGER"
-				"value"						"-40"
+				"var_type"				"FIELD_INTEGER"
+				"value"					"-40"
+			}
+		}
+	}
+
+// Rubick's Arcane Supremacy
+	"arcane_supremacy"
+	{
+		"BaseClass"							"ability_lua"
+		"ScriptFile"						"heroes/hero_rubick/arcane_supremacy.lua"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_IMMEDIATE + DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL + DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO"
+		"AbilityType"						"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"					"SPELL_IMMUNITY_ALLIES_YES"
+		"AbilityTextureName"				"rubick_arcane_supremacy"
+		"MaxLevel"							"7"
+		"RequiredLevel"						"10"
+		"LevelsBetweenUpgrades"				"10"
+		"HasScepterUpgrade"					"1"
+		"HasShardUpgrade"					"1"
+		"AbilityCastPoint"					"0"
+		"AbilityCastRange"					"600"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"20 35 50 65 80 100 120"
+			}
+			"2"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_cast_range"		"100 200 300 400 500 700 1000"
+			}
+			"3"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_duration"			"60"
+			}
+			"4"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_cd_shard"		"0"
+			}
+			"5"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_cd_scepter"		"20"
+			}
+			"6"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_cd_super"		"40"
 			}
 		}
 	}
