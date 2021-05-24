@@ -18,7 +18,9 @@ function arcane_supremacy:OnSpellStart()
 		if not caster:HasShard() and not caster:HasScepter() and not HasSuperScepter(caster) then return end
 		local duration = self:GetSpecialValueFor("buff_duration")
 		local base_cd = self:GetSpecialValueFor("base_cd")
-		cd_shard = 0 cd_scepter = 0 cd_super = 0
+		local cd_shard = 0
+		local cd_scepter = 0
+		local cd_super = 0
 		if caster:HasShard() then
 			cd_shard = self:GetSpecialValueFor("bonus_cd_shard")
 			target:AddNewModifier(caster, nil, "modifier_item_aghanims_shard", {duration = duration})
