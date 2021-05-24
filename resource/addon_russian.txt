@@ -507,7 +507,7 @@
 
 // Rubick
 	"DOTA_Tooltip_ability_arcane_supremacy"							"Arcane Supremacy"
-	"DOTA_Tooltip_ability_arcane_supremacy_Description"				"Знания тайной магии усиливают заклинания героя: они применяются с большего расстояния и действуют эффективнее.<br><br>Перезарядка: %base_cd% секунд<br>Длительность: %buff_duration% секунд\n<h1><font color='#0094FF'>Aghanim's Shard</font></h1>Позволяет дать союзнику эффект <font color='#0094FF'>Aghanim's Shard</font>.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Позволяет дать союзнику эффект <font color='#0094FF'>Aghanim's Scepter</font>. +%bonus_cd_scepter% секунд перезарядки.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Позволяет дать союзнику эффект <font color='#DE3163'>Super Scepter</font>. +%bonus_cd_super% секунд перезарядки."
+	"DOTA_Tooltip_ability_arcane_supremacy_Description"				"Знания тайной магии усиливают заклинания героя: они применяются с большего расстояния и действуют эффективнее.<br>[Герой получает эффект <font color='#DE3163'>Super Scepter</font> при двух эффектах Super Synth]<br><br>Перезарядка: %base_cd% секунд<br>Длительность: %buff_duration% секунд\n<h1><font color='#0094FF'>Aghanim's Shard</font></h1>Позволяет дать союзнику эффект <font color='#0094FF'>Aghanim's Shard</font>.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Позволяет дать союзнику эффект <font color='#0094FF'>Aghanim's Scepter</font>. +%bonus_cd_scepter% секунд перезарядки.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Позволяет дать союзнику эффект <font color='#DE3163'>Super Scepter</font>. +%bonus_cd_super% секунд перезарядки."
 	"DOTA_Tooltip_ability_arcane_supremacy_Lore"				"Многие маги никогда не смогут стать Великими..."
 	"DOTA_Tooltip_ability_arcane_supremacy_bonus_cast_range"		"Доп. дальность применения:"
 	"DOTA_Tooltip_ability_arcane_supremacy_spell_amp"				"%Доп. урон от заклинаний:"
@@ -7573,8 +7573,12 @@
 	"DOTA_Tooltip_ability_item_recipe_imba_ultimate_scepter_synth"		"<font color='#EE30A7'>Synthetic Aghanim's Scepter</font>"
 
 	"DOTA_Tooltip_ability_item_imba_ultimate_scepter_synth2"				"<font color='#EE30A7'>Super Scepter</font>"
-	"DOTA_Tooltip_ability_item_imba_ultimate_scepter_synth2_Description"	"<h1>Aктивнaя: Synth</h1><font color='#00FF40'>After swallowing, you will permanently gain the effect of the ability of the Aghanim's Scepter to upgrade your spells.</font>\n<font color='#EE30A7'>The synthetic Aghanim's Scepter adds %bonus_all_stats% all stats, %bonus_health% health, and %bonus_mana% mana, and the bonus of the ability.</font>"
-	"DOTA_Tooltip_ability_item_recipe_imba_ultimate_scepter_synth2"				"<font color='#EE30A7'>Synthetic Aghanim Scepter</font>"
+	"DOTA_Tooltip_ability_item_imba_ultimate_scepter_synth2_Description"	"<h1>Aктивнaя: Super Synth</h1><font color='#00FF40'>After swallowing, you will permanently gain the effect of the ability of the Aghanim's Scepter to upgrade your spells.</font>\n<font color='#EE30A7'>The synthetic Super Scepter adds %bonus_all_stats% all stats, %bonus_health% health, and %bonus_mana% mana, and the bonus of the ability.</font>"
+	"DOTA_Tooltip_ability_item_recipe_imba_ultimate_scepter_synth2"	"<font color='#EE30A7'>Synthetic Aghanim Scepter</font>"
+
+	"dota_tooltip_modifier_item_imba_ultimate_scepter_synth_stats"				"Super Synth"
+	"dota_tooltip_modifier_item_imba_ultimate_scepter_synth_stats_description"	"Увеличивает все атрибуты на %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% и здоровье и ману на %dMODIFIER_PROPERTY_HEALTH_BONUS%.<br>Имея 3 и более эффектов, даётся эффект <font color='#DE3163'>Super Scepter</font>"
+
 
 	//>>>>	MJZ Abyssal Blade LVL 2
 	"DOTA_Tooltip_ability_item_mjz_abyssal_blade_2"							"Abyssal Blade LVL 2"
@@ -9123,9 +9127,6 @@
 
 	"DOTA_Tooltip_ability_item_keen_optic_copy"						"Keen Optic?"
 	"DOTA_Tooltip_ability_item_keen_optic_copy_Description"			"?"
-
-	"dota_tooltip_modifier_item_imba_ultimate_scepter_synth_stats"				"Scepter Synth Stats"
-	"dota_tooltip_modifier_item_imba_ultimate_scepter_synth_stats_description"	"Increase all stats by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% and hp and mana by %dMODIFIER_PROPERTY_HEALTH_BONUS%. Having 3 or More Stacks will count as having <font color='#DE3163'>Super Scepter</font>"
 
 	"DOTA_Tooltip_ability_item_imba_silver_edge"				"Silver Edge"
 	"DOTA_Tooltip_ability_item_imba_silver_edge_description"	"<h1>Aктивнaя: Shadow Walk</h1>Makes you invisible for %invis_duration% seconds, or until you attack or cast a spell. While Shadow Walk is active, you move %invis_ms_pct%%% faster and can move through units <font color='#FF7800'>and terrain</font>.<br><br>Attacking to end the invisibility will deal %shadow_rip_damage% <font color='#FF7800'>pure</font> damage to the target, and for %main_debuff_duration% seconds, disable their passive abilities, reduce heal and regeneration by %heal_reduction%%%, <font color='#FF7800'>and reduce their outgoing damage by %panic_damage_reduction%%%</font>. \n<h1><font color='#19BED8'>Пaccивнaя: True Echo Strike</font></h1>Every %echo_cd%s Causes melee attacks to deliver an extra <font color='#FF7800'>true strike </font>attack independent of your attackspeed. \n<h1><font color='#A705B2'>Reverse Status</font></h1> Break duration will be affected only by your status resit and in a positive way(50% status = 50% more break duration)."
