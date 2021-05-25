@@ -17469,7 +17469,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"swipe_damage"				"75 235 1250 3500 7800 27500 58500 74500 93800 155000"
+				"swipe_damage"				"75 235 1250 3500 7800 27500 48500 64500 83800 125000"
 			}
 			"04"
 			{
@@ -17489,7 +17489,7 @@
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"total_attacks"				"15"
+				"total_attacks"				"10"
 			}
 			"09"
 			{
@@ -17714,7 +17714,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_count"				"3"
+				"attack_count"				"7"
 			}	
 			"05"
 			{

@@ -1051,7 +1051,10 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 * Reworked Jingu Mastery(the one from random skills) to have less impact on game performance, and added Aghanim's Scepter and Super Scepter effect.
 * Buffed Arcane Supremacy (Rubick)
 * Added Super Scepter visual effects
-
+* Fix kingsBane healing from octarine and preventing lethal dmg if the enemy is not invul. (normal spell lifesteal is fine)
+* Enchanter is now part of the red aghanim recipe.
+* Slightly increased the drop rate of red aghanim from roshan with 3+ players.
+* And other stuff
 
 
 

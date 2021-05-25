@@ -31,11 +31,12 @@ function arcane_supremacy:OnSpellStart()
 			cd_scepter = self:GetSpecialValueFor("bonus_cd_scepter")
 			target:AddNewModifier(caster, self, "modifier_item_ultimate_scepter_consumed", {duration = duration})
 		end
+		cd = base_cd + cd_shard + cd_scepter + cd_super
 		if HasSuperScepter(caster) then
 			cd_super = self:GetSpecialValueFor("bonus_cd_super")
 			target:AddNewModifier(caster, self, "modifier_super_scepter", {duration = duration})
+			cd = base_cd + cd_shard + cd_super
 		end
-		cd = base_cd + cd_shard + cd_scepter + cd_super
 		self:StartCooldown(cd)
 		target:AddNewModifier(caster, self, "modifier_arcane_supremacy_buff", {duration = duration})
  	end

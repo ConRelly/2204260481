@@ -22,9 +22,9 @@
 		"item"		"item_remove_ability"
 		"item"		"item_random_get_ability_spell"
 		"item"      "item_random_get_ability3"
-		"item"		"item_ultimate_orb"
+		"item"		"item_imba_ultimate_scepter_synth2"
 		"item"		"item_mystic_staff"
-		"item"		"item_reaver"
+//		"item"		"item_reaver"
 //		"item"		"item_eagle"
 		
 		
@@ -154,7 +154,7 @@
 		"item"		"item_veil_of_discord"
 		"item"		"item_force_staff"
 		"item"		"item_aether_lens"
-		"item"		"item_necronomicon"
+		//"item"		"item_necronomicon"
 		"item"		"item_dagon"
 		"item"		"item_mjz_dagon_v2"
 		"item"		"item_cyclone"
@@ -162,6 +162,7 @@
 		"item"		"item_solar_crest"
 		"item"		"item_orchid"
 		"item"		"item_ultimate_scepter"
+		"item"      "item_imba_ultimate_scepter_synth2"
 		"item"		"item_nullifier"
 		"item"		"item_custom_refresher"
 		"item"		"item_sheepstick"

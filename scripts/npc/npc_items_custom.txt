@@ -6086,13 +6086,13 @@
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"4000"
 		"ItemShopTags"					""
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_imba_ultimate_scepter_synth2"
 		"ItemRequirements"
 		{
-			"01"						"item_ultimate_scepter"
+			"01"						"item_ultimate_scepter;item_enchanter"
 			//"02"						"item_chest_1"
 		}
 	}
@@ -6118,7 +6118,7 @@
 		"ItemAliases"					"aghanim; scepter; ultimate; synth; alchemist"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		"SideShop"						"0"
 		"ItemSellable"					"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
@@ -19087,7 +19087,7 @@
 	"ItemCost"						"2000"
 	"ItemGloballyCombinable"		"0"
 	"ItemPurchasable"				"1"
-	"AbilityCooldown"				"92.0"
+	"AbilityCooldown"				"102.0"
 		"AbilitySpecial"
 	{
 		"01"
