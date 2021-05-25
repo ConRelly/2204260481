@@ -6564,7 +6564,9 @@ If you have over 10k Ms the ms multiplayer will drop to 1.5
 
 	"Dota_Tooltip_modifier_fire_rapier_passive_counter"					"Fire Rapier Debuff"
 	"Dota_Tooltip_modifier_fire_rapier_passive_counter_description"		"Loosing 12 armor for every stack"
-
+	"DOTA_Tooltip_modifier_fire_rapier_fire_power_buff_penalty"     "Fire Rage penalty"
+	"DOTA_Tooltip_modifier_fire_rapier_fire_power_buff"             "Fire Rage"
+	"DOTA_Tooltip_modifier_fire_rapier_fire_power_buff_description" "Increases your attack damage from base by %MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% "
 	"DOTA_Tooltip_Ability_item_wind_rapier"					"<font color=\"#00FF00\">WIND RAPIER</font>"
 	"DOTA_Tooltip_ability_item_wind_rapier_Description"		"<h1><font color='#00FF00'>Active: Wind power </font></h1>Gives the owner of the item the strength of the wind, increasing the Movement Speed and Evasion by %buff_ms%%%.<br><br>Buff Duration: %buff_duration% sec.\n<h1><font color='#009966'>Passive: Crazy wind </font></h1>%proc_chance%%% attack chance increase your agility by %proc_bonus%%% for %stack_duration% sec. (the effect stacks).<br><br>Max Stacks: %max_stacks%"
 	"DOTA_Tooltip_ability_item_wind_rapier_rapier_dmg"					  "+$damage"

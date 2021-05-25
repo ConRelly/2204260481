@@ -41,7 +41,7 @@ if IsServer() then
 
 	function modifier_class:_CanHeal( keys )
 		local ability = keys.inflictor
-		if keys.damage_flags ~= DOTA_DAMAGE_FLAG_REFLECTION then
+		if not bit.band(keys.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) == DOTA_DAMAGE_FLAG_REFLECTION then
 			if keys.damage_type == DAMAGE_TYPE_PHYSICAL then
 				if ability then
 					-- return true

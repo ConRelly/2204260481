@@ -7,10 +7,14 @@ function OnUnequip(keys)
 	local vLocation = caster:GetAbsOrigin()
 	local vRandomVector = RandomVector(50)
 	local container = item:GetContainer()
+	local caster = keys.caster
 	if container then
 		container:SetRenderColor(255,69,0)
 		item:LaunchLoot(false, 150, 0.5, vLocation + vRandomVector)
 	end
+	if caster:HasModifier("modifier_fire_rapier_fire_power_buff") then
+		caster:RemoveModifierByName("modifier_fire_rapier_fire_power_buff")
+	end	
 end
 
 function CheckForStats (keys)

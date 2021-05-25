@@ -58,7 +58,7 @@ if IsServer() then
 		self.ability = self:GetAbility()
 		self.parent = self:GetParent()
 		self.itemName = self:GetAbility():GetName()
-		-- self.lifesteal = self.ability:GetSpecialValueFor("lifesteal") * 0.01
+		--self.lifesteal = self.ability:GetSpecialValueFor("lifesteal") * 0.01
 		self.lifesteal = self.ability:GetSpecialValueFor("lifesteal")
 		self.particle_name = "particles/items3_fx/octarine_core_lifesteal.vpcf"
 		self.mn_reduction = "modifier_item_custom_octarine_core_reduction"

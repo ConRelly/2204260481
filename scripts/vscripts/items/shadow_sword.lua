@@ -271,7 +271,7 @@ function modifier_kingsbane:OnTakeDamage(params)
 								if caster.att_target ~= caster then
 									local sw = ParticleManager:CreateParticle("particles/custom/items/shadow_sword/reflect.vpcf", PATTACH_ABSORIGIN, caster.att_target)
 									ParticleManager:SetParticleControlEnt(sw, 1, caster, PATTACH_POINT_FOLLOW, "attach_attack1", caster:GetOrigin(), true)
-									ApplyDamage({victim = caster.att_target, attacker = caster, damage = reflect_damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_REFLECTION, ability = self:GetAbility()})
+									ApplyDamage({victim = caster.att_target, attacker = caster, damage = reflect_damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL, ability = self:GetAbility()})
 								end
 							end
 						end

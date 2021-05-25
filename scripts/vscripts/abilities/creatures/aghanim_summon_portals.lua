@@ -178,11 +178,12 @@ function aghanim_summon_portals:StaffCrush()
 		local enemies = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self.vStaffEndPos, self:GetCaster(), self.staff_crush_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, 0, false )
 		for _,enemy in pairs( enemies ) do
 			if enemy ~= nil and enemy:IsInvulnerable() == false then
+				local bonus_dmg = enemy:GetMaxHealth() / 4
 				local damageInfo = 
 				{
 					victim = enemy,
 					attacker = self:GetCaster(),
-					damage = self.staff_crush_damage,
+					damage = self.staff_crush_damage + bonus_dmg,
 					damage_type = DAMAGE_TYPE_PHYSICAL,
 					ability = self,
 				}

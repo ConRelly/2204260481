@@ -302,11 +302,12 @@ function aghanim_shard_attack:OnProjectileHitHandle( hTarget, vLocation, iProjec
 		end
 
 		if hTarget and not hTarget:IsMagicImmune() and not hTarget:IsInvulnerable() then
+			local bonus_dmg = hTarget:GetMaxHealth() * 0.15
 			local damage = 
 			{
 				victim = hTarget,
 				attacker = self:GetCaster(),
-				damage = self.spiral_projectile_damage,
+				damage = self.spiral_projectile_damage + bonus_dmg,
 				damage_type = DAMAGE_TYPE_PURE,
 				ability = self,
 			}
