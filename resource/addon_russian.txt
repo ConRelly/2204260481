@@ -6596,6 +6596,9 @@
 
 	"Dota_Tooltip_modifier_fire_rapier_passive_counter"					"Fire Rapier Debuff"
 	"Dota_Tooltip_modifier_fire_rapier_passive_counter_description"		"Loosing 12 armor for every stack"
+	"DOTA_Tooltip_modifier_fire_rapier_fire_power_buff_penalty"     "Fire Rage penalty"
+	"DOTA_Tooltip_modifier_fire_rapier_fire_power_buff"             "Fire Rage"
+	"DOTA_Tooltip_modifier_fire_rapier_fire_power_buff_description" "Increases your attack damage from base by %MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% "
 
 	"DOTA_Tooltip_ability_item_wind_rapier"					"<font color=\"#00FF00\">WIND RAPIER</font>"
 	"DOTA_Tooltip_ability_item_wind_rapier_Description"		"<h1><font color='#00FF00'>Aктивнaя: Wind power </font></h1>Gives the owner of the item the strength of the wind, increasing the Movement Speed and Evasion by %buff_ms%%%.<br><br>Buff Duration: %buff_duration% sec.\n<h1><font color='#009966'>Пaccивнaя: Crazy wind </font></h1>%proc_chance%%% attack chance increase your agility by %proc_bonus%%% for %stack_duration% sec. (the effect stacks).<br><br>Max Stacks: %max_stacks%"
@@ -7088,7 +7091,7 @@
 	"DOTA_Tooltip_ability_item_custom_octarine_core_1_bonus_health"				"+$health"
 	"DOTA_Tooltip_ability_item_custom_octarine_core_1_bonus_mana"				"+$mana"
 	"DOTA_Tooltip_ability_item_custom_octarine_core_1_lifesteal"				"%+$spell_lifesteal"
-	"DOTA_Tooltip_ability_item_custom_octarine_core_1_Lore"						"At the core of spellcraft are spectrums only the very gifted can sense."
+	"DOTA_Tooltip_ability_item_custom_octarine_core_1_Lore"						"Самая основа колдовства скрыта в цветах, узреть которые способны лишь самые одарённые."
 	
 	"DOTA_Tooltip_ability_item_custom_octarine_core_2"							"Ultimate Octarine Core"
 	"DOTA_Tooltip_ability_item_custom_octarine_core_2_Description"				"<h1>Пaccивнaя: Cooldown Reduction</h1>Умeньшaeт пepeзapядкy всeх пpeдмeтoв и спoсoбнoстeй нa %bonus_cooldown%%%."
@@ -7096,7 +7099,7 @@
 	"DOTA_Tooltip_ability_item_custom_octarine_core_2_bonus_health"				"+$health"
 	"DOTA_Tooltip_ability_item_custom_octarine_core_2_bonus_mana"				"+$mana"
 	"DOTA_Tooltip_ability_item_custom_octarine_core_2_lifesteal"				"%+$spell_lifesteal"
-	"DOTA_Tooltip_ability_item_custom_octarine_core_2_Lore"						"At the core of spellcraft are spectrums only the very gifted can sense."
+	"DOTA_Tooltip_ability_item_custom_octarine_core_2_Lore"						"Самая основа колдовства скрыта в цветах, узреть которые способны лишь самые одарённые."
 	
 	"DOTA_Tooltip_ability_item_ultimate_rapier"									"Ultimate Rapier"
 	"DOTA_Tooltip_ability_item_ultimate_rapier_Description"						"<h1>Пaccивнaя: Consecrated</h1> %base_damage_ratio%%% of this item's damage is base damage."
@@ -7554,7 +7557,7 @@
 	"DOTA_Tooltip_ability_item_bigan_octarine_core_bonus_health"			"+$health"
 	"DOTA_Tooltip_ability_item_bigan_octarine_core_bonus_mana"				"+$mana"
 	"DOTA_Tooltip_ability_item_bigan_octarine_core_lifesteal"				"%+$spell_lifesteal"
-	"DOTA_Tooltip_ability_item_bigan_octarine_core_Lore"					"At the core of spellcraft are spectrums only the very gifted can sense."
+	"DOTA_Tooltip_ability_item_bigan_octarine_core_Lore"					"Самая основа колдовства скрыта в цветах, узреть которые способны лишь самые одарённые."
 	//<<<<
 	//>>>>
 	"DOTA_Tooltip_ability_item_mjz_ipomoea_aquatica"							"Ipomoea Aquatica"
@@ -9012,11 +9015,17 @@
 	"DOTA_Tooltip_ability_custom_mana_regen2_mana_regen_ptc"	"Base Mana Regen Mult:"
 	"DOTA_Tooltip_ability_custom_mana_regen2_bonus_int"			"Bonus Intelligence:"
 
-	"dota_tooltip_modifier_item_custom_octarine_core"							"Bigan's Octarine Octarine"
-	"dota_tooltip_modifier_item_custom_octarine_core_Description"				"Have all the stats of Bigan's Octarine Core slightly improved, Don't equip another octarine or you will lose CDR and Lifesteal"
+	"dota_tooltip_modifier_bigan_octarine_core_edible_eated"					"Edible Bigan's Octarine Core"
+	"dota_tooltip_modifier_bigan_octarine_core_edible_eated_Description"		"Получены все характеристики от Edible Bigan's Octarine Core."
 	"DOTA_Tooltip_ability_item_custom_octarine_core2"							"Edible Bigan's Octarine Core"
-	"DOTA_Tooltip_ability_item_custom_octarine_core2_Description"				"<h1>Aктивнaя: Consume</h1>Пoлyчитe вce xapaктиpиcтики (нeмнoгo yлyчшeны) и эффeкты oт Bigan's Octarine Core"
+	"DOTA_Tooltip_ability_item_custom_octarine_core2_Description"				"<h1>Aктивнaя: Consume</h1>Пoлyчитe вce xapaктиpиcтики.\n<h1>Пaccивнaя: Cooldown Reduction</h1>Умeньшaeт пepeзapядкy всeх пpeдмeтoв и спoсoбнoстeй нa %bonus_cooldown%%%."
+	"DOTA_Tooltip_ability_item_custom_octarine_core2_bonus_intelligence"		"+$int"
+	"DOTA_Tooltip_ability_item_custom_octarine_core2_bonus_health"				"+$health"
+	"DOTA_Tooltip_ability_item_custom_octarine_core2_bonus_mana"				"+$mana"
+	"DOTA_Tooltip_ability_item_custom_octarine_core2_lifesteal"					"%+$spell_lifesteal"
+	"DOTA_Tooltip_ability_item_custom_octarine_core2_Lore"						"Самая основа колдовства скрыта в цветах, узреть которые способны лишь самые одарённые."
 	"DOTA_Tooltip_ability_item_custom_octarine_core2_Note0"						"Пocлe тoгo, кaк вы пoтpeбляeтe, нe пoкyпaйтe/нe cнapяжaйтe cнoвa Octarine Core, или вы пoтepяeтe эффeкт."
+
 
 	"dota_tooltip_modifier_item_radiance_armor"						"Radiance Armor"
 	"dota_tooltip_modifier_item_radiance_armor_3_edible"			"Red Radiance Armor"

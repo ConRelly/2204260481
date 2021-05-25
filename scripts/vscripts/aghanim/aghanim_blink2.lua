@@ -215,21 +215,21 @@ modifier_aghanim_blink_slayer = class({})
 function modifier_aghanim_blink_slayer:IsHidden() return true end
 function modifier_aghanim_blink_slayer:IsDebuff() return false end
 function modifier_aghanim_blink_slayer:IsPurgable() return false end
-function modifier_aghanim_blink_slayer:CheckState() 
-    return {
-        [MODIFIER_STATE_STUNNED ]              = false,
-        [MODIFIER_STATE_CANNOT_MISS ]           = true,
-        --[MODIFIER_STATE_NO_UNIT_COLLISION ]     = true,
-        --[MODIFIER_STATE_UNSLOWABLE]             = true,
-    } 
+function modifier_aghanim_blink_slayer:CheckState()
+	local state = {}
+	if parent:HasModifier("modifier_mystery_cyclone_active") then
+		state = {[MODIFIER_STATE_STUNNED ] = true, [MODIFIER_STATE_CANNOT_MISS ] = true}
+	else
+		state = {[MODIFIER_STATE_STUNNED ] = false, [MODIFIER_STATE_CANNOT_MISS ] = true}
+	end
+    return state
 end
 function modifier_aghanim_blink_slayer:DeclareFunctions()
-	local funcs = {
+	return {
 		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
 		MODIFIER_PROPERTY_HEALTH_BONUS,
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS
 	}
-	return funcs	 
 end
 function modifier_aghanim_blink_slayer:GetModifierMagicalResistanceBonus() 
 	return self:GetAbility():GetSpecialValueFor("magic_resist") 

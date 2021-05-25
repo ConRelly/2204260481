@@ -206,15 +206,13 @@ function modifier_item_imba_greater_crit_buff:GetTexture() return "imba_greater_
 function modifier_item_imba_greater_crit_buff:OnCreated()
 	-- Ability
 	--print("on created")
-	self.caster = self:GetCaster()
-	self.ability = self:GetAbility()
 	local parent = self:GetParent()
 	local level = parent:GetLevel()
 	-- Special values
-	self.base_crit = self.ability:GetSpecialValueFor("base_crit")
-	local crit_increase = self.ability:GetSpecialValueFor("crit_increase") * level
-	local crit_chance = self.ability:GetSpecialValueFor("crit_chance")
-	local bonus_crit_chance = self.ability:GetSpecialValueFor("bonus_crit_chance")
+	self.base_crit = self:GetAbility():GetSpecialValueFor("base_crit")
+	local crit_increase = self:GetAbility():GetSpecialValueFor("crit_increase") * level
+	local crit_chance = self:GetAbility():GetSpecialValueFor("crit_chance")
+	local bonus_crit_chance = self:GetAbility():GetSpecialValueFor("bonus_crit_chance")
 	if IsServer() then
 		if parent:HasScepter() then
 			crit_chance = crit_chance + bonus_crit_chance
