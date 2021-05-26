@@ -34393,7 +34393,7 @@
 			{
 				"var_type"			  "FIELD_FLOAT"
 				"bonus_dmg_from_hp"			"25" //hardcoded
-			}			
+			}
 		}
 		"AbilityCastAnimation"	  "ACT_DOTA_CAST_ABILITY_5"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -34678,7 +34678,7 @@
 			{
 				"var_type"			  "FIELD_INTEGER"
 				"staff_crush_max_hp"		   "25"
-			}			
+			}
 		}
 	}
 
@@ -34862,7 +34862,7 @@
 			{
 				"var_type"								  "FIELD_INTEGER"
 				"spiral_projectile_damage_max_hp"   		"15"
-			}			
+			}
 		}
 	}
 
@@ -39729,7 +39729,7 @@
 	{
 		"BaseClass"							"ability_lua"
 		"ScriptFile"						"heroes/hero_rubick/arcane_supremacy.lua"
-		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"				"DOTA_UNIT_TARGET_HERO"
 		"AbilityType"						"DOTA_ABILITY_TYPE_ULTIMATE"

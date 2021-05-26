@@ -583,6 +583,25 @@ function CDOTA_BaseNPC:GetLifesteal()
 	end
 	return lifesteal
 end
+-- Pure attack lifesteal
+function CDOTA_BaseNPC:GetPureLifesteal()
+	local lifesteal = 0
+	local multiplier = 0
+	for _, parent_modifier in pairs(self:FindAllModifiers()) do
+		if parent_modifier.GetModifierPureLifesteal and parent_modifier:GetModifierPureLifesteal() then
+			lifesteal = lifesteal + parent_modifier:GetModifierPureLifesteal()
+		end
+	end
+	for _, parent_modifier in pairs(self:FindAllModifiers()) do
+		if parent_modifier.GetModifierLifestealAmplify and parent_modifier:GetModifierLifestealAmplify() then
+			multiplier = multiplier + parent_modifier:GetModifierLifestealAmplify()
+		end
+	end
+	if lifesteal ~= 0 and multiplier ~= 0 then
+		lifesteal = lifesteal * (multiplier / 100)
+	end
+	return lifesteal
+end
 
 -- Crit Damage
 function CDOTA_BaseNPC:GetCritDMG()
@@ -602,6 +621,26 @@ function CDOTA_BaseNPC:GetSpellLifesteal()
 	for _, parent_modifier in pairs(self:FindAllModifiers()) do
 		if parent_modifier.GetModifierSpellLifesteal and parent_modifier:GetModifierSpellLifesteal() then
 			lifesteal = lifesteal + parent_modifier:GetModifierSpellLifesteal()
+		end
+	end
+	for _, parent_modifier in pairs(self:FindAllModifiers()) do
+		if parent_modifier.GetModifierSpellLifestealAmplify and parent_modifier:GetModifierSpellLifestealAmplify() then
+			multiplier = multiplier + parent_modifier:GetModifierSpellLifestealAmplify()
+		end
+	end
+	if lifesteal ~= 0 and multiplier ~= 0 then
+		lifesteal = lifesteal * (multiplier / 100)
+	end
+	return lifesteal
+end
+
+-- Pure spell lifesteal
+function CDOTA_BaseNPC:GetPureSpellLifesteal()
+	local lifesteal = 0
+	local multiplier = 0
+	for _, parent_modifier in pairs(self:FindAllModifiers()) do
+		if parent_modifier.GetModifierPureSpellLifesteal and parent_modifier:GetModifierPureSpellLifesteal() then
+			lifesteal = lifesteal + parent_modifier:GetModifierPureSpellLifesteal()
 		end
 	end
 	for _, parent_modifier in pairs(self:FindAllModifiers()) do

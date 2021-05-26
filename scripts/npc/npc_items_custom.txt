@@ -5259,7 +5259,7 @@
 "item_custom_octarine_core_1"
 {
 	"BaseClass"						"item_lua"
-	"ScriptFile"					"items/item_custom_octarine_core.lua"
+	"ScriptFile"					"items/octarine_cores.lua"
 	"AbilityTextureName"			"item_octarine_core"
 	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -5316,8 +5316,8 @@
 "item_bigan_octarine_core"
 {
 
-	"BaseClass"							"item_lua"
-	"ScriptFile"						"items/item_custom_octarine_core.lua"
+	"BaseClass"						"item_lua"
+	"ScriptFile"					"items/octarine_cores.lua"
 	//"AbilityTextureName"			"ForaMon/ultimate_octarine"
 	"AbilityTextureName"			"bigan_octarine_core"
 	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
@@ -5326,8 +5326,8 @@
 	"ItemQuality"					"rare"
 	"ItemAliases"					"mana;mb;octarine core"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-	"MaxUpgradeLevel"		   "2"
-	"ItemBaseLevel"			 "2"
+	"MaxUpgradeLevel"				"2"
+	"ItemBaseLevel"					"2"
 	"AbilitySpecial"
 	{
 		"01"
@@ -5373,9 +5373,8 @@
 }
 "item_mjz_ipomoea_aquatica"
 {
-
 	"BaseClass"						"item_lua"
-	"ScriptFile"					"items/item_mjz_ipomoea_aquatica.lua"
+	"ScriptFile"					"items/octarine_cores.lua"
 	//"AbilityTextureName"			"ForaMon/ultimate_octarine"
 	"AbilityTextureName"			"mjz_ipomoea_aquatica"
 	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
@@ -5385,7 +5384,7 @@
 	"ItemAliases"					"mana;mb;octarine core"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 	"MaxUpgradeLevel"				"2"
-	"ItemBaseLevel"					 "2"
+	"ItemBaseLevel"					"2"
 	"AbilitySpecial"
 	{
 		"01"
@@ -5405,14 +5404,9 @@
 		}
 		"04"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_cooldown"		"0"
-		}
-		"05"
-		{
 			"var_type"				"FIELD_FLOAT"
 			"lifesteal"				"6"
-		}	
+		}
 	}
 }
 "item_dagon"
@@ -6304,51 +6298,47 @@
 }
 	"item_mjz_ability_point"
 	{
-		"ID" 		 "2092" 
-		"BaseClass"						"item_lua"	//"item_datadriven"
+		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_mjz_ability_point.lua"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"AbilityTextureName"			"mjz_ability_point"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-
 		"ItemCost"						"300"
 		"ItemShopTags"					"mjz"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"ability point"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemShareability"			  "ITEM_FULLY_SHAREABLE"	//可分享
-		"ItemKillable"				  "0"						//不可A
-		"ItemPurchasable"			   "1"						//可以买
-		"IsTempestDoubleClonable"	   "0"
-		"ItemSellable"				  "0"						//不可卖
-		"ItemStackable"					"0"						//不可叠
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemKillable"					"0"
+		"ItemPurchasable"				"1"
+		"IsTempestDoubleClonable"		"0"
+		"ItemSellable"					"0"
+		"ItemStackable"					"0"
 	}
 	"item_mjz_ability_point_2"
 	{
-		"ID" 		 "7092" 
-		"BaseClass"						"item_lua"	//"item_datadriven"
+		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_mjz_ability_point.lua"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"AbilityTextureName"			"mjz_ability_point"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-
 		"ItemCost"						"1500"
 		"ItemShopTags"					"mjz"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"ability point"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemShareability"			  "ITEM_FULLY_SHAREABLE"	//可分享
-		"ItemKillable"				  "0"						//不可A
-		"ItemPurchasable"			   "1"						//可以买
-		"IsTempestDoubleClonable"	   "0"
-		"ItemSellable"				  "0"						//不可卖
-		"ItemStackable"					"0"						//不可叠
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemKillable"					"0"
+		"ItemPurchasable"				"1"
+		"IsTempestDoubleClonable"		"0"
+		"ItemSellable"					"0"
+		"ItemStackable"					"0"
 	}
 	//=================================================================================================================
 	// Recipe: Basher						大晕锤 LVL 2
@@ -24101,41 +24091,53 @@
 }
 "item_custom_octarine_core2"
 {
-	"ID" 		 "9102" 
-	"BaseClass"						"item_datadriven"
-	// "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"BaseClass"						"item_lua"
+	"ScriptFile"					"items/octarine_cores.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"AbilityTextureName"			"bigan_octarine_core_edible"
-
-
 	"ItemCost"						"20000"
 	"ItemShopTags"					"boost_mana;mana_pool"
 	"ItemQuality"					"rare"
 	"ItemAliases"					"bigan octarine edible"
 	"ItemStackable"					"0"
 	"ItemPermanent"					"0"
-	"ItemSellable"				  "0"
-	"ItemKillable"				  "0"
-	"ItemInitialCharges"			"1"
+	"ItemSellable"					"0"
+	"ItemKillable"					"0"
 	"ItemPurchasable"				"1"
-	"ItemRequiresCharges" 			"1"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemDisassembleRule"		   "DOTA_ITEM_DISASSEMBLE_ALWAYS" 
+	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS" 
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 	"ShouldBeSuggested"				"1"
-	
 	"precache"
 	{
 		"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
 	}
-	
-	"OnSpellStart"
+	"AbilitySpecial"
 	{
-		"RunScript"
+		"01"
 		{
-			"ScriptFile"			"items/item_bigan_octarine_core_edible.lua"
-			"Function"				"OnSpellStart"
-			"sound_cast"			"Hero_Alchemist.Scepter.Cast"
+			"var_type"				"FIELD_INTEGER"
+			"bonus_intelligence"	"190"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_health"			"3500"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_mana"			"3500"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"bonus_cooldown"		"45"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"lifesteal"				"2"
 		}
 	}
 }

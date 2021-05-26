@@ -1064,6 +1064,16 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 
 
 
+
+* Fixed Arcane Supremacy (Rubick) targeting
+* Now Ability Point is non-targeted
+* Fixed Eul + Slayer Dimensional Shift crash
+* Edible Bigan's Octarine Core now gives stats without consuming + more description
+* Edible Bigan's Octarine Core will no longer create another one before applying
+* Edible Bigan's Octarine Core effect will not be lost if you take any other Octarine Core (CDR and Spell Lifesteal still doesn't stack)
+
+
+
 *Update patch notes13 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussion for links)

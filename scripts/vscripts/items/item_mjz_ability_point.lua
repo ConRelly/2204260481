@@ -12,14 +12,12 @@ item_mjz_ability_point = class({})
 
 function item_mjz_ability_point:OnSpellStart()
     if IsServer() then
-        local item = self
         local caster = self:GetCaster()
-        local target = self:GetCursorTarget()
         
-        if target and IsValidEntity(target) and target:IsRealHero() then
-            target:SetAbilityPoints(target:GetAbilityPoints() + 1)
-            caster:RemoveItem(item)
-            target:EmitSound("Hero_Alchemist.Scepter.Cast")
+        if caster and IsValidEntity(caster) and caster:IsRealHero() then
+            caster:SetAbilityPoints(caster:GetAbilityPoints() + 1)
+            caster:RemoveItem(self)
+            caster:EmitSound("DOTA_Item.HotD.Activate")
         end
     end
 end
@@ -28,14 +26,12 @@ item_mjz_ability_point_2 = class({})
 
 function item_mjz_ability_point_2:OnSpellStart()
     if IsServer() then
-        local item = self
         local caster = self:GetCaster()
-        local target = self:GetCursorTarget()
         
-        if target and IsValidEntity(target) and target:IsRealHero() then
-            target:SetAbilityPoints(target:GetAbilityPoints() + 5)
-            caster:RemoveItem(item)
-            target:EmitSound("Hero_Alchemist.Scepter.Cast")
+        if caster and IsValidEntity(caster) and caster:IsRealHero() then
+            caster:SetAbilityPoints(caster:GetAbilityPoints() + 5)
+            caster:RemoveItem(self)
+            caster:EmitSound("DOTA_Item.HotD.Activate")
         end
     end
 end

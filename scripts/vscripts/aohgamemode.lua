@@ -854,6 +854,7 @@ local IllusionNotLearn = {
 		--["ability_random_custom_gold"] = true,
 	};
 
+LinkLuaModifier("modifier_generic_handler", "modifiers/modifier_generic_handler", LUA_MODIFIER_MOTION_NONE)
 function AOHGameMode:OnEntitySpawned(event)
 	--mHackGameMode:OnNPCSpawned(event)
 	-- Fix for str magic res and more.
@@ -870,7 +871,8 @@ function AOHGameMode:OnEntitySpawned(event)
 		if not unit:IsIllusion() then
 			fix_atr_for_hero(unit)
 			fix_atr_for_hero2(unit)
-		end	
+		end
+		unit:AddNewModifier(unit, nil, "modifier_generic_handler", {})
 		unit:AddNewModifier(unit, nil, "modifier_aegis_buff", {duration = 7})
 	end	
 	
