@@ -9966,7 +9966,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"proc_damage"			"25 30 40 50"
+			"proc_damage"			"20 25 30 35"
 		}
 		"03"
 		{
@@ -22448,12 +22448,12 @@
 			"14"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"attack_interval"			"0.06"
+				"attack_interval"			"0.07"
 			}
 			"15"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_count"				"9 12 14 16 18 25 30"
+				"attack_count"				"9 12 14 16 18 23 27"
 			}
 		}
 

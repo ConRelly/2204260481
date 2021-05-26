@@ -56,5 +56,5 @@ function modifier_mjz_rage_moon_shard_stats:GetBonusNightVision()
 end
 function modifier_mjz_rage_moon_shard_stats:GetModifierAttackSpeedBonus_Constant()
 	--return self.consumed_attack_speed
-	return 200 
+	return 160 
 end

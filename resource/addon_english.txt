@@ -906,7 +906,7 @@
 	"DOTA_Tooltip_modifier_item_durandal_Description"	""
 
 	"DOTA_Tooltip_Ability_item_num"				"Num"
-	"DOTA_Tooltip_Ability_item_num_Description"	"<h1>Active: Magic Nullify</h1>Attacks reduce magic resistance by %magic_resist_red%%%.<br>Buff Duration: %duration_buff% seconds<br>Debuff Duration: %duration_debuff% seconds<br><br>If there are 2 or more allies within a %search_radius% radius of the enemy, the Magic Resistance reduction increases to 52,5%%.\n<h1>Passive: Wizard's Blood</h1>%hpr_spell_amp%%% of Health Regeneration is transferred to Spell Amplification.\n<h1>Passive: Num Aura</h1>+ %hp_aura% Health<br>+ %int_aura% Intellegence<br>+ %mana_regen_aura% Mana Regeneration<br><br>Radius: %aura_radius% \n<font color='#FF00FF'>Legendary Item</font>"
+	"DOTA_Tooltip_Ability_item_num_Description"	"<h1>Active: Nullify Aura</h1>Reduce magic resistance by %magic_resist_red%%% in a %aura_radius_debuf% radius.<br>Aura Duration: %duration_buff% seconds<br>Aura Duration is Affected by your Status resistance<br><br>If there are 2 or more allied units within a %search_radius% radius of the enemy, the Magic Resistance reduction increases to 37,5%%.\n<h1>Passive: Wizard's Blood</h1>%hpr_spell_amp%%% of Health Regeneration is transferred to Spell Amplification(up to 2x your level) if main attribute is Intelligence.\n<h1>Passive: Num Aura</h1>+ %hp_aura% Health<br>+ %int_aura% Intellegence<br>+ %mana_regen_aura% Mana Regeneration<br><br>Radius: %aura_radius% ."
 	"DOTA_Tooltip_Ability_item_num_lore"				"Mysterious cube-parasite, being the heart of the wizard uses his life energy and gives destructive power"
 	"DOTA_Tooltip_Ability_item_num_note0"				"Excess health regeneration from Spells Require HP is credited to Wizard's Blood"
 	"DOTA_Tooltip_Ability_item_num_str"				"+$str"
@@ -920,10 +920,10 @@
 	"DOTA_Tooltip_modifier_num_aura_Description"	"Health increased by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Intellegence by %dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS%, Mana Regeneration by %dMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%"
 	"DOTA_Tooltip_modifier_num_sp"				"Wizard's Blood"
 	"DOTA_Tooltip_modifier_num_sp_Description"	"Wizard's Blood increases Spell Amplification by %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%%"
-	"DOTA_Tooltip_modifier_num_buff"				"Magic Nullify"
-	"DOTA_Tooltip_modifier_num_buff_Description"	"The owner's attacks reduce target's Magic Resistance"
-	"DOTA_Tooltip_modifier_num_debuff"				"Magic Weakness"
-	"DOTA_Tooltip_modifier_num_debuff_Description"	"Magic Resistance reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%"
+	"DOTA_Tooltip_modifier_num_debuff"				"Nullify Aura"
+	"DOTA_Tooltip_modifier_num_debuff_Description"	"The owner emits an aura that reduce enemy's Magic Resistance"
+	"DOTA_Tooltip_modifier_num_debuff_aura"				"Magic Weakness"
+	"DOTA_Tooltip_modifier_num_debuff_aura_Description"	"Magic Resistance reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%"
 
 //###########################################################################################################################
 

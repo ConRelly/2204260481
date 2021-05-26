@@ -33,7 +33,12 @@ end
 function modifier_item_mjz_devils_veil:GetModifierBonusStats_Intellect()
     return self:GetAbility():GetSpecialValueFor("bonus_all_stats")
 end
-
+function modifier_item_mjz_devils_veil:OnDestroy()
+    if not IsServer() then return end
+    if self:GetParent() ~= nil and self:GetParent():HasModifier("modifier_item_mjz_devils_veil_buff") then
+        self:GetParent():RemoveModifierByName("modifier_item_mjz_devils_veil_buff")
+    end
+end   
 ---------------------------------------------------------------------------------------
 modifier_item_mjz_devils_veil_buff = class({})
 function modifier_item_mjz_devils_veil_buff:IsHidden() return false end

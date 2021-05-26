@@ -243,7 +243,7 @@
 	"Level"					 "90"
 	"ConsideredHero"			"1"
     "HasInventory"            "1"
-	"Ability1"				  "generic_hidden"
+	"Ability1"				  "draks_unholy_strength"
 	"Ability2"				  "generic_hidden"
 	"Ability3"				  "generic_hidden"
 	"Ability4"				 "generic_hidden"

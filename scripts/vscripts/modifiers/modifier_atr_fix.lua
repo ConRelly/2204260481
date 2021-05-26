@@ -77,9 +77,9 @@ end]]
 
 function modifier_atr_fix:GetModifierStatusResistance()
 	local parent_str = self.parent:GetStrength()
-    local s_resit = parent_str * 0.005
-    if s_resit > 50 then
-        s_resit = 50
-    end
+    local s_resit = parent_str * 0.0037
+    if s_resit > 40 then
+        s_resit = 40
+    end   
     return s_resit
 end

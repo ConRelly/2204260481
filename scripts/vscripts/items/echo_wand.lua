@@ -109,15 +109,15 @@ function modifier_item_echo_wand:GetModifierFixedAttackRate()
 	local wd_ult = "witch_doctor_custom_death_skull"
 	local rate = self:GetAbility():GetSpecialValueFor("fixed_attack_rate")
 	if level > 30 then
-		rate = 0.3
+		rate = 0.4
 		if parent:HasAbility(wd_ult) then
-			rate = 0.15
+			rate = 0.2
 		end		
 	end
 	if level > 55 then
-		rate = 0.25
+		rate = 0.3
 		if parent:HasAbility(wd_ult) then
-			rate = 0.08
+			rate = 0.1
 		end		
 	end		
 	return rate

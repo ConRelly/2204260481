@@ -12,7 +12,7 @@ function modifier_draks_unholy_strength:IsHidden() return true end
 function modifier_draks_unholy_strength:IsPurgable() return false end
 
 function modifier_draks_unholy_strength:DeclareFunctions()
-  return {MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT, MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE, MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET, MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE}
+  return {MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT, MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE, MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET, MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE, MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN}
 end
 
 function modifier_draks_unholy_strength:GetModifierConstantHealthRegen()
@@ -74,4 +74,8 @@ function modifier_draks_unholy_strength:GetModifierPercentageCooldown()
     cdr = 75
   end   
   return math.floor(cdr)
+end
+
+function modifier_draks_unholy_strength:GetModifierMoveSpeed_AbsoluteMin() 
+  return 420
 end

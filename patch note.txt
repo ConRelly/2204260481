@@ -1057,6 +1057,12 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 * And other stuff
 
 
+* Reduced Max As by 200  and other stuff to adjust for that.
+* Small* balance changes
+* New item Num.(probably needs some colors to his passives/actives)(changed some stuff btw)
+* other stuff
+
+
 
 *Update patch notes13 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601

@@ -9554,7 +9554,18 @@
 				"value"				"290"
 			}
 		}
-	}																						
+	}
+	"special_bonus_gold_income_180"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"540"
+			}
+		}
+	}																							
 	"rubick_arcane_supremacy"
 	{
 		"LevelsBetweenUpgrades"		"5"
