@@ -217,7 +217,7 @@ function modifier_aghanim_blink_slayer:IsDebuff() return false end
 function modifier_aghanim_blink_slayer:IsPurgable() return false end
 function modifier_aghanim_blink_slayer:CheckState()
 	local state = {}
-	if parent:HasModifier("modifier_mystery_cyclone_active") then
+	if self:GetParent() ~= nil and self:GetParent():HasModifier("modifier_mystery_cyclone_active") then
 		state = {[MODIFIER_STATE_STUNNED ] = true, [MODIFIER_STATE_CANNOT_MISS ] = true}
 	else
 		state = {[MODIFIER_STATE_STUNNED ] = false, [MODIFIER_STATE_CANNOT_MISS ] = true}

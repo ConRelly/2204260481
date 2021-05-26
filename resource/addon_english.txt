@@ -8675,7 +8675,7 @@ Contains all random skills"
 
 
 		"DOTA_Tooltip_ability_draks_unholy_strength"									"GameTime Power"
-		"DOTA_Tooltip_ability_draks_unholy_strength_Description"						"Gains Regen, Total outgoing dmg, heal amp ,cdr(with a limit) for every minute that this game runs (respects pauses), starts on hero picking stage.
+		"DOTA_Tooltip_ability_draks_unholy_strength_Description"						"Gains Regen, Total outgoing dmg, heal amp , min speed, cdr(with a limit) for every minute that this game runs (respects pauses), starts on hero picking stage.
 		Has no bonus until min 90(cdr starts from 100) of the game"	
 
 		"DOTA_Tooltip_ability_aghanim_shard_attack"									 "Shard Attack"

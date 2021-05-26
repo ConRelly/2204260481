@@ -77,5 +77,12 @@ function modifier_draks_unholy_strength:GetModifierPercentageCooldown()
 end
 
 function modifier_draks_unholy_strength:GetModifierMoveSpeed_AbsoluteMin() 
-  return 420
+  local ms = 100
+  ms = ms + (GameRules:GetGameTime() / 60) * 4
+  if GameRules:GetGameTime() > 0 then
+  end
+  if ms > 520 then
+    ms = 520
+  end   
+  return ms
 end

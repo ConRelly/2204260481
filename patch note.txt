@@ -1057,14 +1057,14 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 * And other stuff
 
 
+
+
+
 * Reduced Max As by 200  and other stuff to adjust for that.
 * Small* balance changes
 * New item Num.(probably needs some colors to his passives/actives)(changed some stuff btw)
+* Void ultimate will not longer limit your max ms.
 * other stuff
-
-
-
-
 * Fixed Arcane Supremacy (Rubick) targeting
 * Now Ability Point is non-targeted
 * Fixed Eul + Slayer Dimensional Shift crash

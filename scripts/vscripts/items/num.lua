@@ -121,13 +121,13 @@ function modifier_num:GetModifierHealthRegenPercentage() return self:GetAbility(
 function modifier_num:OnCreated()
 	if IsServer() then
 		if not self:GetAbility() then self:Destroy() end
-		local caster = self:GetCaster()
-		Timers:CreateTimer(0.1, function()
+		local caster = self:GetParent()
+		--Timers:CreateTimer(0.1, function()
 			--caster:AddNewModifier(caster, self:GetAbility(), "modifier_seal_act", {})
-			if self:GetAbility() ~= nil then
-				caster:AddNewModifier(caster, self:GetAbility(), "modifier_num_sp", {})
-			end	
-		end)
+		if self and self:GetAbility() ~= nil then
+			caster:AddNewModifier(caster, self:GetAbility(), "modifier_num_sp", {})
+		end	
+		--end)
 	end
 end
 function modifier_num:OnDestroy()

@@ -23968,6 +23968,7 @@
 {
 // General
 //-------------------------------------------------------------------------------------------------------------
+"ID"                             "12444"
 "BaseClass"						"item_datadriven"
 "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 "Model"							"models/props_gameplay/treasure_chest001.vmdl"
@@ -37428,7 +37429,7 @@
 			"16"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_regen_pct"			"2.5"
+				"hp_regen_pct"			"7.5"
 			}
 			"17"
 			{

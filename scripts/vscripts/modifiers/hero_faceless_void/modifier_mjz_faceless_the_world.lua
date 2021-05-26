@@ -52,8 +52,7 @@ if IsServer() then
             ParticleManager:SetParticleControl(particle_index, 0, parent:GetAbsOrigin())
             ParticleManager:SetParticleControl(particle_index, 1, Vector(radius, radius, radius))
             self.particle_index = particle_index
-        end
-        
+        end   
     end
 
     function modifier_mjz_faceless_the_world_dummy:OnDestroy()
@@ -200,10 +199,10 @@ end
 
 function modifier_effect_friendly:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_MOVESPEED_MAX,
-        MODIFIER_PROPERTY_MOVESPEED_LIMIT,
+		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN,
+        --MODIFIER_PROPERTY_MOVESPEED_LIMIT,
         MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
-		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
+		--MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE
 	}
 	return funcs
 end
@@ -212,13 +211,13 @@ function modifier_effect_friendly:GetModifierMoveSpeed_Limit()
 	return self:GetAbility():GetSpecialValueFor("speed")
 end
 
-function modifier_effect_friendly:GetModifierMoveSpeed_Max()
+function modifier_effect_friendly:GetModifierMoveSpeed_AbsoluteMin()
 	return self:GetAbility():GetSpecialValueFor("speed")
 end
 
-function modifier_effect_friendly:GetModifierMoveSpeed_Absolute()
-	return self:GetAbility():GetSpecialValueFor("speed")
-end
+--function modifier_effect_friendly:GetModifierMoveSpeed_Absolute()
+--	return self:GetAbility():GetSpecialValueFor("speed")
+--end
 function modifier_effect_friendly:GetModifierTotalDamageOutgoing_Percentage()
 	return self:GetAbility():GetSpecialValueFor("bonus_stuf")
 end

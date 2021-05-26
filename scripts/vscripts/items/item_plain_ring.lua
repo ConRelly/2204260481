@@ -142,7 +142,7 @@ function modifier_item_plain_ring:OnTakeDamage(keys)
 		local unit = keys.unit
 		if self.parent == unit and self.ability:IsCooldownReady() and self.parent:GetHealth() < 1  then
 			if has_item(self.parent, "item_plain_ring") and not unit:IsNull() and IsValidEntity(unit) then
-				self.parent:SetHealth(1)
+				self.parent:SetHealth(self.parent:GetMaxHealth() * 0.07)
 				self.parent:AddNewModifier(self.parent, self:GetAbility(), "modifier_item_plain_ring_invincibility", {duration = self.invincibility_duration})
 				self.ability:StartCooldown(self.cooldown * self.parent:GetCooldownReduction())
 				Timers:CreateTimer({
