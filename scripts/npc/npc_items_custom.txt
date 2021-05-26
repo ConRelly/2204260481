@@ -37339,7 +37339,7 @@
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"250"
 		"AbilityCastPoint"				"0"
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		"ItemStackable"					"0"
 		"ItemSellable"					"0"
 		"ItemPermanent"					"0"
@@ -37514,13 +37514,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"custom_recipe"
-		"ItemCost"						"0"	
+		"ItemCost"						"21000"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_num"
 		"ItemRequirements"
 		{
-			"01"						"item_battlemage_cloth;item_heart_of_light;item_seal_act"
+			"01"						"item_battlemage_cloth;item_all_essence"
 		}
 	}
 
