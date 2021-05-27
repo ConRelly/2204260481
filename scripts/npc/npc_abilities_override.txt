@@ -9565,7 +9565,7 @@
 				"value"				"540"
 			}
 		}
-	}																							
+	}
 	"rubick_arcane_supremacy"
 	{
 		"LevelsBetweenUpgrades"		"5"

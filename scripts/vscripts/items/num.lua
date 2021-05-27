@@ -54,7 +54,7 @@ function modifier_num_debuff:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_EN
 function modifier_num_debuff:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
 function modifier_num_debuff:GetAuraDuration() return 0.5 end
 function modifier_num_debuff:GetModifierAura() return "modifier_num_debuff_aura" end
-function modifier_num_debuff:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("aura_radius_debuf") end
+function modifier_num_debuff:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("aura_radius_debuff") end
 function modifier_num_debuff:GetEffectName() return "particles/custom/items/num/num_active.vpcf" end
 function modifier_num_debuff:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_num_debuff:OnCreated()
@@ -93,7 +93,7 @@ function modifier_num_debuff_aura:DeclareFunctions()
 end
 function modifier_num_debuff_aura:GetModifierMagicalResistanceBonus()
 	if self:GetAbility() then
-		if self:GetStackCount() >= 2 then
+		if self:GetStackCount() >= 3 then
 			magic_resist_red = self:GetAbility():GetSpecialValueFor("magic_resist_red") * 1.5
 		else
 			magic_resist_red = self:GetAbility():GetSpecialValueFor("magic_resist_red")
@@ -123,7 +123,6 @@ function modifier_num:OnCreated()
 		if not self:GetAbility() then self:Destroy() end
 		local caster = self:GetParent()
 		--Timers:CreateTimer(0.1, function()
-			--caster:AddNewModifier(caster, self:GetAbility(), "modifier_seal_act", {})
 		if self and self:GetAbility() ~= nil then
 			caster:AddNewModifier(caster, self:GetAbility(), "modifier_num_sp", {})
 		end	
@@ -132,10 +131,9 @@ function modifier_num:OnCreated()
 end
 function modifier_num:OnDestroy()
 	if IsServer() then
-        --self:GetCaster():RemoveModifierByName("modifier_seal_act")
 		if self:GetCaster() ~= nil and self:GetCaster():HasModifier("modifier_num_sp") then
         	self:GetCaster():RemoveModifierByName("modifier_num_sp")
-		end	
+		end
     end
 end
 function modifier_num:IsAura() return true end
@@ -187,12 +185,11 @@ function modifier_num_sp:OnIntervalThink()
 		self.spell_amp = 0
 		if caster:IsRealHero() and caster:GetPrimaryAttribute() == 2 then
 			self.spell_amp = math.floor(hp_regen * self:GetAbility():GetSpecialValueFor("hpr_spell_amp") / 100)
-		end	
+		end
 		if self.spell_amp > limit then
 			self.spell_amp = limit
-		end	
+		end
 		self:SetStackCount(self.spell_amp)
-		
 	end
 end
 function modifier_num_sp:DeclareFunctions()

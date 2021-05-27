@@ -906,7 +906,7 @@
 	"DOTA_Tooltip_modifier_item_durandal_Description"	""
 
 	"DOTA_Tooltip_Ability_item_num"				"Num"
-	"DOTA_Tooltip_Ability_item_num_Description"	"<h1>Active: Nullify Aura</h1>Reduce magic resistance by %magic_resist_red%%% in a %aura_radius_debuf% radius.<br>Aura Duration: %duration_buff% seconds<br>Aura Duration is Affected by your Status resistance<br><br>If there are 2 or more allied units within a %search_radius% radius of the enemy, the Magic Resistance reduction increases to 37,5%%.\n<h1>Passive: Wizard's Blood</h1>%hpr_spell_amp%%% of Health Regeneration is transferred to Spell Amplification(up to 2x your level) if main attribute is Intelligence.\n<h1>Passive: Num Aura</h1>+ %hp_aura% Health<br>+ %int_aura% Intellegence<br>+ %mana_regen_aura% Mana Regeneration<br><br>Radius: %aura_radius% ."
+	"DOTA_Tooltip_Ability_item_num_Description"	"<h1>Active: Nullify Aura</h1>Reduce magic resistance by %magic_resist_red%%% in a %aura_radius_debuff% radius.<br>Aura Duration: %duration_buff% seconds<br></font><font color='#25970C'>Aura Duration is Affected by your Status resistance.</font><br><br>If there are 2 or more allied units within a %search_radius% radius of the enemy, the Magic Resistance reduction increases to 37,5%%.\n<h1>Passive: Wizard's Blood</h1>%hpr_spell_amp%%% of Health Regeneration is transferred to Spell Amplification(up to 2x your level) if main attribute is Intelligence.\n<h1>Passive: Num Aura</h1>+ %hp_aura% Health<br>+ %int_aura% Intellegence<br>+ %mana_regen_aura% Mana Regeneration<br><br>Radius: %aura_radius%."
 	"DOTA_Tooltip_Ability_item_num_lore"				"Mysterious cube-parasite, being the heart of the wizard uses his life energy and gives destructive power"
 	"DOTA_Tooltip_Ability_item_num_note0"				"Excess health regeneration from Spells Require HP is credited to Wizard's Blood"
 	"DOTA_Tooltip_Ability_item_num_str"				"+$str"
@@ -2363,9 +2363,9 @@
 
 
 	"DOTA_Tooltip_ability_mjz_dragon_knight_elder_dragon_relieve"					"Shapeshift Relieve"
-	"DOTA_Tooltip_ability_mjz_dragon_knight_elder_dragon_relieve_Description"		"Immediately remove the transform effect.\nUpgradable by Aghanim's Scepter."
-	"DOTA_Tooltip_ability_mjz_dragon_knight_elder_dragon_relieve_scepter_description"		"There is no time limit for the Shapeshift."
-	"DOTA_Tooltip_ability_mjz_dragon_knight_elder_dragon_relieve_health_drain_per_second_scepter"		"%Health Drain Per Second: "
+	"DOTA_Tooltip_ability_mjz_dragon_knight_elder_dragon_relieve_Description"		"Immediately remove the transform effect."
+	"DOTA_Tooltip_ability_mjz_dragon_knight_elder_dragon_relieve_scepter_description"		"There is no time limit for the Shapeshift.<br>Drains %health_drain_per_second_scepter%%% Health per second."
+	"DOTA_Tooltip_ability_mjz_dragon_knight_elder_dragon_relieve_health_drain_per_second_scepter"		"%Health Drain Per Second:"
 
 	"DOTA_Tooltip_ability_dragon_knight_elder_dragon_form_bonus_attack_damage"      "Bonus Attack Damage:"
 
@@ -2749,9 +2749,10 @@
 	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_bonus_agi"	   "Bonus Agility per stack:"
 		
 	"DOTA_Tooltip_ability_mjz_lycan_shapeshift_relieve"					"Shapeshift Relieve"
-	"DOTA_Tooltip_ability_mjz_lycan_shapeshift_relieve_Description"		"Immediately remove the transform effect.\nUpgradable by Aghanim's Scepter."
-	"DOTA_Tooltip_ability_mjz_lycan_shapeshift_relieve_scepter_description"		"There is no time limit for the Shapeshift."
-	"DOTA_Tooltip_ability_mjz_lycan_shapeshift_relieve_health_drain_per_second_scepter"		"%Health Drain Per Second: "
+	"DOTA_Tooltip_ability_mjz_lycan_shapeshift_relieve_Description"		"Immediately remove the transform effect."
+	"DOTA_Tooltip_ability_mjz_lycan_shapeshift_relieve_scepter_description"		"There is no time limit for the Shapeshift.<br>Drains %health_drain_per_second_scepter%%% Health per second."
+	"DOTA_Tooltip_ability_mjz_lycan_shapeshift_relieve_health_drain_per_second_scepter"		"%Health Drain Per Second:"
+
 "DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity"						"Reverse Polarity"
 "DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_Description"			"Magnus changes properties of matter, sucking all nearby enemies in front of him and stunning them with a powerful slam and dealing damage."
 "DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_Lore"					"Magnus fights with the fury of the erupting Mt. Joerlak."
@@ -3504,10 +3505,11 @@ DISPEL TYPE: Strong Dispel"
 	"DOTA_Tooltip_ability_mjz_templar_assassin_self_trap"				"Trap"
 	"DOTA_Tooltip_ability_mjz_templar_assassin_self_trap_Description"	"Springs the trap, slowing nearby enemies."
 
-	"DOTA_Tooltip_ability_mjz_terrorblade_metamorphosis_relieve"					"Shapeshift Relieve"
-	"DOTA_Tooltip_ability_mjz_terrorblade_metamorphosis_relieve_Description"		"Immediately remove the transform effect.\nUpgradable by Aghanim's Scepter."
-	"DOTA_Tooltip_ability_mjz_terrorblade_metamorphosis_relieve_scepter_description"		"There is no time limit for the Shapeshift."
-	"DOTA_Tooltip_ability_mjz_terrorblade_metamorphosis_relieve_health_drain_per_second_scepter"		"%Health Drain Per Second: "	
+	"DOTA_Tooltip_ability_mjz_terrorblade_metamorphosis_relieve"				"Shapeshift Relieve"
+	"DOTA_Tooltip_ability_mjz_terrorblade_metamorphosis_relieve_Description"	"Immediately remove the transform effect."
+	"DOTA_Tooltip_ability_mjz_terrorblade_metamorphosis_relieve_scepter_description"		"There is no time limit for the Shapeshift.<br>Drains %health_drain_per_second_scepter%%% Health per second."
+	"DOTA_Tooltip_ability_mjz_terrorblade_metamorphosis_relieve_health_drain_per_second_scepter"		"%Health Drain Per Second:"
+
 	"DOTA_Tooltip_ability_mjz_terrorblade_sunder"					"Sunder"
 	"DOTA_Tooltip_ability_mjz_terrorblade_sunder_Description"		"Severs the life from both Terrorblade and a target, exchanging a percentage of both units' current health. Some health points must remain."
 	"DOTA_Tooltip_ability_mjz_terrorblade_sunder_Lore"				"You didn't need that life, did you?  The demon marauder steals that which you hold most dear."
@@ -8675,7 +8677,7 @@ Contains all random skills"
 
 
 		"DOTA_Tooltip_ability_draks_unholy_strength"									"GameTime Power"
-		"DOTA_Tooltip_ability_draks_unholy_strength_Description"						"Gains Regen, Total outgoing dmg, heal amp , min speed, cdr(with a limit) for every minute that this game runs (respects pauses), starts on hero picking stage.
+		"DOTA_Tooltip_ability_draks_unholy_strength_Description"						"Gains Regen, Total outgoing dmg, heal amp, min speed, cdr(with a limit) for every minute that this game runs (respects pauses), starts on hero picking stage.
 		Has no bonus until min 90(cdr starts from 100) of the game"	
 
 		"DOTA_Tooltip_ability_aghanim_shard_attack"									 "Shard Attack"

@@ -20,22 +20,23 @@ function modifier_mjz_rage_moon_shard:IsHidden() return true end
 function modifier_mjz_rage_moon_shard:IsPurgable() return false end
 function modifier_mjz_rage_moon_shard:RemoveOnDeath() return false end
 function modifier_mjz_rage_moon_shard:OnCreated()
-	if not IsServer() then return end
-	self.bonus_night_vision = self:GetAbility():GetSpecialValueFor("bonus_night_vision")
-	self.bonus_attack_speed = self:GetAbility():GetSpecialValueFor("bonus_attack_speed")
-	if self:GetParent():HasModifier("modifier_mjz_rage_moon_shard_stats") then
-		self.bonus_night_vision = self:GetAbility():GetSpecialValueFor("bonus_night_vision") - self:GetAbility():GetSpecialValueFor("consumed_bonus_night_vision")
-		self.bonus_attack_speed = self:GetAbility():GetSpecialValueFor("bonus_attack_speed") - self:GetAbility():GetSpecialValueFor("consumed_bonus_attack_speed")
+	if IsServer() then
+		self.bonus_night_vision = self:GetAbility():GetSpecialValueFor("bonus_night_vision")
+		self.bonus_attack_speed = self:GetAbility():GetSpecialValueFor("bonus_attack_speed")
+		if self:GetParent():HasModifier("modifier_mjz_rage_moon_shard_stats") then
+			self.bonus_night_vision = self:GetAbility():GetSpecialValueFor("bonus_night_vision") - self:GetAbility():GetSpecialValueFor("consumed_bonus_night_vision")
+			self.bonus_attack_speed = self:GetAbility():GetSpecialValueFor("bonus_attack_speed") - self:GetAbility():GetSpecialValueFor("consumed_bonus_attack_speed")
+		end
 	end
 end
 function modifier_mjz_rage_moon_shard:DeclareFunctions()
 	return {MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_BONUS_NIGHT_VISION}
 end
 function modifier_mjz_rage_moon_shard:GetBonusNightVision()
-	return self.bonus_night_vision
+	if self:GetAbility() then return self.bonus_night_vision end
 end
 function modifier_mjz_rage_moon_shard:GetModifierAttackSpeedBonus_Constant()
-	return self.bonus_attack_speed
+	if self:GetAbility() then return self.bonus_attack_speed end
 end
 
 modifier_mjz_rage_moon_shard_stats = modifier_mjz_rage_moon_shard_stats or class({})
@@ -43,18 +44,12 @@ function modifier_mjz_rage_moon_shard_stats:IsHidden() return false end
 function modifier_mjz_rage_moon_shard_stats:IsPurgable() return false end
 function modifier_mjz_rage_moon_shard_stats:AllowIllusionDuplicate() return true end
 function modifier_mjz_rage_moon_shard_stats:GetTexture() return "modifiers/mjz_rage_moon_shard" end
-function modifier_mjz_rage_moon_shard_stats:OnCreated()
-	--self.consumed_night_vision = self:GetAbility():GetSpecialValueFor("consumed_bonus_night_vision")
-	--self.consumed_attack_speed = self:GetAbility():GetSpecialValueFor("consumed_bonus_attack_speed")
-end
 function modifier_mjz_rage_moon_shard_stats:DeclareFunctions()
 	return {MODIFIER_PROPERTY_BONUS_NIGHT_VISION, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT}
 end
 function modifier_mjz_rage_moon_shard_stats:GetBonusNightVision()
-	--return self.consumed_night_vision
 	return 800
 end
 function modifier_mjz_rage_moon_shard_stats:GetModifierAttackSpeedBonus_Constant()
-	--return self.consumed_attack_speed
-	return 160 
+	return 160
 end

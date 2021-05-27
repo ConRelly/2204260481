@@ -53,32 +53,20 @@ end
 --------------------------------------------------------------------------------
 -- Modifier Effects
 function modifier_earthshaker_aftershock_lua:DeclareFunctions()
-	local funcs = {
-		MODIFIER_EVENT_ON_ABILITY_FULLY_CAST,
-	}
-
-	return funcs
+	return {MODIFIER_EVENT_ON_ABILITY_FULLY_CAST}
 end
 
 function modifier_earthshaker_aftershock_lua:OnAbilityFullyCast( params )
 	if IsServer() then
+		local abilityName = params.ability:GetAbilityName()
+		if self.banned[abilityName] then return end
 		if params.unit~=self:GetParent() or params.ability:IsItem() then return end
 		local damage = self:GetAbility():GetAbilityDamage() + (self:GetCaster():GetStrength() * self:GetAbility():GetTalentSpecialValueFor("str_multiplier")) -- special value
 		self.duration = self:GetAbility():GetDuration() -- special value
         
 		self.damageTable.damage = damage
 		-- Find enemies in radius
-		local enemies = FindUnitsInRadius(
-			self:GetCaster():GetTeamNumber(),	-- int, your team number
-			self:GetCaster():GetOrigin(),	-- point, center point
-			nil,	-- handle, cacheUnit. (not known)
-			self.radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-			DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
-			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
-			0,	-- int, flag filter
-			0,	-- int, order filter
-			false	-- bool, can grow cache
-		)
+		local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false)
 
 		-- apply stun and damage
 		for _,enemy in pairs(enemies) do
@@ -107,6 +95,18 @@ function modifier_earthshaker_aftershock_lua:PlayEffects()
 	ParticleManager:SetParticleControl( effect_cast, 1, Vector( self.radius, self.radius, self.radius ) )
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 end
+
+
+
+modifier_earthshaker_aftershock_lua.banned = {
+	["invoker_invoke"] = true,
+	["elder_titan_return_spirit"] = true,
+	["mjz_dragon_knight_elder_dragon_relieve"] = true,
+	["mjz_lycan_shapeshift_relieve"] = true,
+	["mjz_terrorblade_metamorphosis_relieve"] = true,
+}
+
+
 
 -- 获得天赋技能的数据值
 function FindTalentValue(unit, talentName)
