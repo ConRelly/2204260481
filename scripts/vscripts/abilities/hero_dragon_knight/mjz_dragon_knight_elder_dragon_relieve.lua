@@ -39,6 +39,23 @@ if IsServer() then
 	end
 end
 
+function mjz_dragon_knight_elder_dragon_relieve:Spawn()
+	if IsServer() then
+		self:SetLevel(1)
+	end
+end
+function mjz_dragon_knight_elder_dragon_relieve:ProcsMagicStick() return false end
+function mjz_dragon_knight_elder_dragon_relieve:IsInnateAbility() return true end
+function mjz_dragon_knight_elder_dragon_relieve:OnHeroCalculateStatBonus(params)
+	local caster = self:GetCaster()
+	local ability = caster:FindAbilityByName("dragon_knight_elder_dragon_form")
+	if not ability then return end
+	if ability:GetLevel() ~= 0 then
+		self:SetHidden(false)
+	else
+		self:SetHidden(true)
+	end
+end
 
 ------------------------------------------------------------------------------------------
 
@@ -97,16 +114,18 @@ local modifier_health = modifier_mjz_dragon_knight_elder_dragon_relieve_health
 
 function modifier_health:IsHidden() return true end
 function modifier_health:IsPurgable() return false end
-
-function modifier_health:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE
-    }
+function modifier_health:OnCreated()
+	if IsServer() then self:StartIntervalThink(1) end
 end
-function modifier_health:GetModifierHealthRegenPercentage( params )
-	return self:GetAbility():GetSpecialValueFor('health_drain_per_second_scepter')
+function modifier_health:OnIntervalThink()
+	if IsServer() then
+		local max_health = self:GetCaster():GetMaxHealth()
+		local drain_pct = self:GetAbility():GetSpecialValueFor("health_drain_per_second_scepter") / 100
+		local set = self:GetCaster():GetHealth() - (max_health * drain_pct)
+		if set <= 0 then set = 1 end
+		self:GetCaster():SetHealth(set)
+	end
 end
-
 
 ------------------------------------------------------------------------------------------
 

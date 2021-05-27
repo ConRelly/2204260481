@@ -6,6 +6,12 @@ local ability_class = mjz_invoker_cataclysm
 function ability_class:GetIntrinsicModifierName()
 	return "modifier_mjz_invoker_cataclysm"
 end
+function mjz_invoker_cataclysm:Spawn()
+	if IsServer() then
+		self:SetHidden(true)
+		self:SetLevel(1)
+	end
+end
 
 
 ---------------------------------------------------------------------------------------

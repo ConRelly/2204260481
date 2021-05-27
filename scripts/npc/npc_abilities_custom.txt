@@ -22093,8 +22093,9 @@
 			}
 			"06"
 			{
-				"var_type"									"FIELD_INTEGER"
-				"health_drain_per_second_scepter"			"-1"
+				"var_type"									"FIELD_FLOAT"
+				"health_drain_per_second_scepter"			"1"
+				"RequiresScepter"	"1"
 			}
 			"07"
 			{
@@ -24817,8 +24818,9 @@
 			}
 			"06"
 			{
-				"var_type"									"FIELD_INTEGER"
-				"health_drain_per_second_scepter"			"-1"
+				"var_type"									"FIELD_FLOAT"
+				"health_drain_per_second_scepter"			"1"
+				"RequiresScepter"	"1"
 			}
 			"07"
 			{
@@ -30242,8 +30244,9 @@
 			}
 			"06"
 			{
-				"var_type"									"FIELD_INTEGER"
-				"health_drain_per_second_scepter"			"-0.5"
+				"var_type"									"FIELD_FLOAT"
+				"health_drain_per_second_scepter"			"0.5"
+				"RequiresScepter"	"1"
 			}
 			"07"
 			{

@@ -7451,7 +7451,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_attack_speed"		"30 50 90 190 250"
+				"aura_attack_speed"		"30 50 90 190 300"
 			}
 			"05"
 			{
@@ -19176,7 +19176,12 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_amp"			"100"
+			"bonus_spell_lifesteal"	"8"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_amp"				"100"
 		}
 	}
 }
@@ -37475,7 +37480,7 @@
 			"25"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"search_radius"					"1700"
+				"search_radius"					"1200"
 			}
 			"30"
 			{
@@ -37502,11 +37507,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"cdr_per_cast"			"0.75"
 			}
-			"17"
+			"35"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_radius_debuf"			"2200"
-			}			
+				"aura_radius_debuff"	"2200"
+			}
 		}
 	}
 // Recipe: Num

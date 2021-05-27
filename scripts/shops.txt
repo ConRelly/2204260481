@@ -266,7 +266,7 @@
 		"item"      "item_arcane_staff_edible"
 		"item"      "item_echo_wand"
 		"item"      "item_blast_staff_3"
-		"item"      "item_num"
+		"item"		"item_num"
 		"item"		"item_imba_greater_crit"
 		"item"      "item_cursed_gaze"
 		"item"		"item_radiance_armor_1"
