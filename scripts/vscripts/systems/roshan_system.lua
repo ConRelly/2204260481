@@ -222,10 +222,10 @@ function CRoshanSystem:CreateRoshan()
             chance = 25
         end
         if self._playernr == 3 then
-            chance = 40
+            chance = 37
         end
         if self._playernr > 3 then
-            chance = 45
+            chance = 40
         end                    
         if random_nr < chance then
             print(random_nr .. " luky nr")

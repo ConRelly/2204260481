@@ -8480,7 +8480,7 @@ Contains all random skills"
 "DOTA_Tooltip_ability_item_random_get_ability3"		 "Craftable Random Ability (Rare)"
 "DOTA_Tooltip_ability_item_random_get_ability3_Description"	"Get a Random skill that you don't have.\nBetter skill pool then Uncommon.\n<font color='#04DB2B'>Use to get a new skill or you can use this to buy a Mage skill book (buy recipe)</font>"
 
-"DOTA_Tooltip_ability_item_random_get_ability_spell"		 "Random Ability (Mage)"
+"DOTA_Tooltip_ability_item_random_get_ability_spell"		 "Random Ability (RareM)"
 "DOTA_Tooltip_ability_item_random_get_ability_spell_Description"	"Get a Random skill.\nSpell amp, cdr and some spell dmg skills have higher chance"
 
 "DOTA_Tooltip_ability_item_resurection_pendant"							"<font color='#f2da5b'>Resurrection Pendant</font>"

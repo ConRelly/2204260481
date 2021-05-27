@@ -5791,12 +5791,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_increase_pct"				"50"
+				"damage_increase_pct"				"25"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"15 20 25 30 40"
+				"bonus_movement_speed"	"5 10 15 20 25"
 			}
 			"05"
 			{
@@ -5823,12 +5823,12 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"extra_armor"	"15 20 25 30 35"
+				"extra_armor"	"5 7 10 13 17"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"extra_damage"	"10 15 20 25 30"
+				"extra_damage"	"5 7 10 13 17"
 			}
 		}
 	}	
