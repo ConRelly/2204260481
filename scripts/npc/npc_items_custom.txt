@@ -24478,8 +24478,8 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"abilities/record_video.lua"
-				"Function"		"StartRecordingVideo"
+				"ScriptFile"	"hack/item_random_get_ability_obs.lua"
+				"Function"		"OnSpellStart"
 			}
 		}
 	}
@@ -34612,7 +34612,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp"					"500"
+				"hp"					"3300"
 			}
 			"01"
 			{

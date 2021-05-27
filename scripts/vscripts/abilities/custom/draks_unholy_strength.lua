@@ -78,7 +78,7 @@ end
 
 function modifier_draks_unholy_strength:GetModifierMoveSpeed_AbsoluteMin() 
   local ms = 100
-  ms = ms + (GameRules:GetGameTime() / 60) * 4
+  ms = ms + (GameRules:GetGameTime() / 60) * 3
   if GameRules:GetGameTime() > 0 then
   end
   if ms > 520 then

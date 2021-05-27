@@ -6204,7 +6204,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_pct"		"15 20 25 60"
+				"bonus_damage_pct"		"15 20 25 50"
 				"LinkedSpecialBonus"	"special_bonus_unique_magnus_2"
 			}
 			"03"
@@ -17710,17 +17710,17 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"heal_radius"				"2150"
+				"heal_radius"				"1450"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"heal_pct"					"30 40 50 60"
+				"heal_pct"					"7"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"220 340 460 580 650 760 1150 1750 2240 2900"
+				"bonus_damage"				"220 340 460 580 650 760 1150 1550 2040 2450"
 			}
 			"04"
 			{
@@ -17735,12 +17735,12 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"heal_from_creeps"			"50"
+				"heal_from_creeps"			"30"
 			}	
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"allied_healing_pct"		"35"
+				"allied_healing_pct"		"25"
 			}				
 		
 		}

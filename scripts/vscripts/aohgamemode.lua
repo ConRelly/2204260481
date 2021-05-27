@@ -453,6 +453,9 @@ function AOHGameMode:InitVariables()
 					if self._extra_mode then	
 						hero:AddItemByName("item_aegis_lua")
 						--hero:AddItemByName("item_philosophers_stone2")
+					end
+					if Cheats:IsEnabled() then
+						hero:AddItemByName("item_obs_studio")
 					end	
 					--hero:AddItemByName("item_ward_sentry")
 					CustomGameEventManager:Send_ServerToAllClients("game_begin", {name = PlayerResource:GetSelectedHeroName(playerID), id = playerID})

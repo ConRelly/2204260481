@@ -1761,8 +1761,8 @@
 	"DOTA_Tooltip_Ability_obs_replay_lore"					"Don't drop any frames!Base on SwordBacon item(Dota but's)"
 
 	"DOTA_Tooltip_Ability_item_obs_studio"					"OBS Studio"
-	"DOTA_Tooltip_Ability_item_obs_studio_Description"		"<h1>Active: Record Video</h1>Start recording all actions taken by your hero for a duration, creating an mp4 file when finished. Press again to stop recording early. Cooldown is set equal to the length of the recorded video."
-	"DOTA_Tooltip_Ability_item_obs_studio_Note0"					"This item cannot record queued actions, upgrading abilities, or actions which modify the inventory, like buying/selling items, moving to stash, etc."
+	"DOTA_Tooltip_Ability_item_obs_studio_Description"		"<h1>Active: Learn Slayer OBS</h1>Free in cheat lobby. The OBS illusion is very good at finding rare erros(console Vscript) from items/skills."
+	"DOTA_Tooltip_Ability_item_obs_studio_Note0"					"Note for skill: cannot record queued actions, upgrading abilities, or actions which modify the inventory, like buying/selling items, moving to stash, etc."
 	"DOTA_Tooltip_Ability_item_obs_studio_Note1"					"When recording an action with a target, the replay will attempt to find the nearest target in the original location"
 	"DOTA_Tooltip_Ability_item_obs_studio_lore"					"Don't drop any frames!"
 
@@ -9038,12 +9038,12 @@ Contains all random skills"
 
 
 	"DOTA_Tooltip_ability_item_god_slayer"				"<font color='#FF0000'>God Slayer</font>"
-	"DOTA_Tooltip_ability_item_god_slayer_Description"	"<h1>Active: <font color='#39CEFE'>God Slash</font></h1>Attacks everything in %radius% AOE for %duration% seconds.<br>Adds extra %mana_per%%% (%mana_per_underdog%%% for Underdog) of your Max mana as <font color='#d8ae53'>pure damage</font> to Gods.\n<h1>Passive: God Slayer</h1> Increases all outgoing damage by %stuff%%% (%stuff_underdog%%% for Underdog) against full Gods.\n<h1>Passive: Souls Collector</h1> Permanently gains an additional soul Charge for item, and a soul stack buff (buff gets lost on Unequip) when your team or you kill: Roshan, few of the wave bosses that i selected or with a %stack_chance%%% (%stack_underdog_chance%%% for Underdog) chance for any unit.\n<h1>Passive: Souls Experience</h1> Every Soul Stack and Charge give: <font color='#2ECC71'>%stack_agi% Agility</font>, <font color='#A93226'>%stack_str% Strength</font>, <font color='#5499C7'>%stack_spellamp%%% Spell Damage</font>, <font color='#DC7633'>%stack_armor% Armor</font> and <font color='#078D29'>%stack_health% Bonus Health</font>."
+	"DOTA_Tooltip_ability_item_god_slayer_Description"	"<h1><font color='#39CEFE'>Active: God Slash</font></h1>Attacks everything in %radius% AOE for %duration% seconds.<br>Adds extra %mana_per%%% (%mana_per_underdog%%% for Underdog) of your Max mana as <font color='#d8ae53'>pure damage</font> to Gods.\n<h1><font color='#39CEFE'>Passive: God Slayer</font></h1> Increases all outgoing damage by %stuff%%% (%stuff_underdog%%% for Underdog) against full Gods.\n<h1><font color='#EC3F0D'>Passive: Souls Collector</font></h1></h1> Permanently gains an additional soul Charge for item, and a soul stack buff (buff gets lost on Unequip) when your team or you kill: Roshan, few of the wave bosses that i selected or with a %stack_chance%%% (%stack_underdog_chance%%% for Underdog) chance for any unit.\n<h1><font color='#EC3F0D'>Passive: Souls Experience</font></h1> Every Soul Stack and Charge give: <font color='#2ECC71'>%stack_agi% Agility</font>, <font color='#A93226'>%stack_str% Strength</font>, <font color='#5499C7'>%stack_spellamp%%% Spell Damage</font>, <font color='#DC7633'>%stack_armor% Armor</font> and <font color='#078D29'>%stack_health% Bonus Health</font>."
 	"DOTA_Tooltip_ability_item_god_slayer_armor"			"+$armor"
 	"DOTA_Tooltip_ability_item_god_slayer_Note0"				"1) Attack inverval is %attack_interval% and can additionally add hits but with no bonus pure dmg if you have enough attack speed."
-	"DOTA_Tooltip_ability_item_god_slayer_Note1"				"2) Extra DMG of Max mana to non-Gods - %mana_per_others%%%."
+	"DOTA_Tooltip_ability_item_god_slayer_Note1"				"2) Extra DMG of Max mana to non-Gods is only %mana_per_others%%%."
 	"DOTA_Tooltip_ability_item_god_slayer_Note2"				"3) The item can absorb another copy of himself taking his carges in the process."
-	"DOTA_Tooltip_ability_item_god_slayer_Note3"				"4) The extra pure damage is affected by Spell Damage, deals only 5% max mana to other units then full gods."
+	"DOTA_Tooltip_ability_item_god_slayer_Note3"				"4) The extra pure damage is affected by Spell Damage."
 	"DOTA_Tooltip_ability_item_god_slayer_Note4"				"5) The God Slash ability stops if there are no enemies left in the selected AOE."
 	"DOTA_Tooltip_ability_item_god_slayer_Lore"				"An weapon that grows in power along with the wielder, but only the weapon power can be passed to the next Slayer"
 	"DOTA_Tooltip_modifier_dragonborn"						   "Souls Stacks"

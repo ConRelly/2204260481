@@ -321,7 +321,10 @@ function modifier_spirit_guardian:OnCreated()
 			self.pfx3 = ParticleManager:CreateParticle("particles/custom/items/staff_of_light/staff_of_light_ambient_core.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 end end end
 function modifier_spirit_guardian:OnDestroy()
-	DFX(self.pfx3, false)
+	if not IsServer() then return end
+	if self.pfx3 ~= nil and IsValidEntity(self.pfx3) then
+		DFX(self.pfx3, false)
+	end	
 --	ParticleManager:DestroyParticle(self.pfx3, false)
 end
 function modifier_spirit_guardian:DeclareFunctions()
