@@ -711,6 +711,9 @@ function AOHGameMode:OnHeroLevelUp(event)
 	local itEveryXLevel = 75
 	local ediblefragment = 20
 
+	if hero:HasModifier("modifier_item_imba_skadi_unique") then
+		hero:ModifyIntellect(9)
+	end	
 	if (heroLevel % apEveryXLevel == 0) then
 		abilityPointsToGive = 1
 		hero:SetAbilityPoints(unspendAP + abilityPointsToGive)

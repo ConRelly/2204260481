@@ -22277,6 +22277,11 @@
 				"var_type"					"FIELD_INTEGER"
 				"rapier_int"					"1150"
 			}
+			"22"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"rapier_bonus_int"					"9" //harcoded in the level up event
+			}			
 		}
 	}	
 
@@ -37520,7 +37525,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"custom_recipe"
-		"ItemCost"						"21000"	
+		"ItemCost"						"19000"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_num"

@@ -1064,6 +1064,7 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 * Small* balance changes
 * New item Num.(probably needs some colors to his passives/actives)(changed some stuff btw)
 * Void ultimate will not longer limit your max ms.
+* Ice Rapier now gives 9 int per lvl, and now deals dmg base on int x lvl.
 * other stuff
 * Fixed Arcane Supremacy (Rubick) targeting
 * Now Ability Point is non-targeted
