@@ -30504,9 +30504,9 @@
 		"AbilityTextureName"			"custom/item_staff_of_light"
 		"MaxUpgradeLevel"				"3"
 		"ItemBaseLevel"					"1"
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
-		"ItemSellable"					"0"
+		"ItemSellable"					"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"component"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
@@ -30515,27 +30515,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 300 500"
+				"hp"					"1500 2000 3000"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"primary_attribute"		"5 15 30"
+				"primary_attribute"		"70 120 250"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
+				"mana_regen"			"35 50 75"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"radius_ranged"			"700"
+				"radius_ranged"			"1100"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"radius_melee"			"150"
+				"radius_melee"			"550"
 			}
 			"12"
 			{
@@ -30550,13 +30550,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"	
+		"ItemCost"						"2500"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_staff_of_light"
 		"ItemRequirements"
 		{
-			"01"						"item_void;item_water;item_light"
+			"01"						"item_air_essence;item_staff_of_wizardry"
 		}
 	}
 
@@ -30571,9 +30571,9 @@
 		"AbilityTextureName"			"custom/item_staff_of_light_2"
 		"MaxUpgradeLevel"				"3"
 		"ItemBaseLevel"					"2"
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
-		"ItemSellable"					"0"
+		"ItemSellable"					"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"common"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
@@ -30582,27 +30582,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 300 500"
+				"hp"					"1500 2000 3000"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"primary_attribute"		"5 15 30"
+				"primary_attribute"		"70 120 250"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
+				"mana_regen"			"35 50 75"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"radius_ranged"			"700"
+				"radius_ranged"			"1100"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"radius_melee"			"150"
+				"radius_melee"			"550"
 			}
 			"12"
 			{
@@ -30638,9 +30638,9 @@
 		"AbilityTextureName"			"custom/item_staff_of_light_3"
 		"MaxUpgradeLevel"				"3"
 		"ItemBaseLevel"					"3"
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
-		"ItemSellable"					"0"
+		"ItemSellable"					"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"rare"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
@@ -30649,27 +30649,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp"					"150 300 500"
+				"hp"					"1500 2000 3000"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"primary_attribute"		"5 15 30"
+				"primary_attribute"		"70 120 250"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"1 2 3"
+				"mana_regen"			"35 50 75"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"radius_ranged"			"700"
+				"radius_ranged"			"1100"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"radius_melee"			"150"
+				"radius_melee"			"550"
 			}
 			"12"
 			{
@@ -30684,14 +30684,14 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"	
+		"ItemCost"						"100"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_staff_of_light_3"
 		"ItemRequirements"
 		{
 			"01"						"item_staff_of_light_2;item_staff_of_light"
-			"02"						"item_void_gem;item_water_gem;item_light_gem"
+			"02"						"item_staff_of_light_2;item_fire_essence;item_chest_5"
 		}
 	}
 
@@ -30706,7 +30706,7 @@
 		"AbilityTextureName"			"custom/amulet_of_vampirism_1"
 		"MaxUpgradeLevel"				"3"
 		"ItemBaseLevel"					"1"
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
 		"ItemSellable"					"0"
 		"AbilityCastRange"				"1000"
@@ -34603,12 +34603,12 @@
 		"Model"							"models/props_gameplay/red_box.vmdl" 
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
 		"AbilityTextureName"			"custom/spirit_guardian"
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
-		"ItemSellable"					"0"
+		"ItemSellable"					"1"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"65"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"dragon staff"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -34622,32 +34622,32 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"agi"					"16"
+				"agi"					"160"
 			}
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"str"					"12"
+				"str"					"220"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"primary_attribute"		"30"
+				"primary_attribute"		"525"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"secondary_stats"		"5"
+				"secondary_stats"		"250"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"3"
+				"mana_regen"			"110"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_attack_range"	"150"
+				"bonus_attack_range"	"350"
 			}
 			"06"
 			{
@@ -34662,13 +34662,28 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"projectile_speed"		"800"
+				"projectile_speed"		"1600"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"guardian_heal_duration"	"10"
+				"guardian_heal_duration"	"7"
 			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"avoid_chance"				"60"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"fixed_attack_rate"				"0.35"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"internal_cd"				"14"
+			}									
 		}
 	}
 // Spirit Guardian Recipe
@@ -34677,13 +34692,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"18500"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_spirit_guardian"
 		"ItemRequirements"
 		{
-			"01"						"item_dragon_lance;item_staff_of_light_3"
+			"01"						"item_dragon_lance;item_staff_of_light_3;item_enchanter"
 		}
 	}
 

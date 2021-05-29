@@ -1065,6 +1065,7 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 * New item Num.(probably needs some colors to his passives/actives)(changed some stuff btw)
 * Void ultimate will not longer limit your max ms.
 * Ice Rapier now gives 9 int per lvl, and now deals dmg base on int x lvl.
+* New item, Spirit Guardian(not finished yet) and comes with other 3 new items.
 * other stuff
 * Fixed Arcane Supremacy (Rubick) targeting
 * Now Ability Point is non-targeted
@@ -1072,6 +1073,8 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 * Edible Bigan's Octarine Core now gives stats without consuming + more description
 * Edible Bigan's Octarine Core will no longer create another one before applying
 * Edible Bigan's Octarine Core effect will not be lost if you take any other Octarine Core (CDR and Spell Lifesteal still doesn't stack)
+
+
 
 
 

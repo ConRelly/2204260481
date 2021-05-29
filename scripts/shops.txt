@@ -158,7 +158,6 @@
 		"item"		"item_dagon"
 		"item"		"item_mjz_dagon_v2"
 		"item"		"item_cyclone"
-//		"item"		"item_rod_of_atos"
 		"item"		"item_solar_crest"
 		"item"		"item_orchid"
 		"item"		"item_ultimate_scepter"
@@ -167,6 +166,7 @@
 		"item"		"item_custom_refresher"
 		"item"		"item_sheepstick"
 		"item"		"item_custom_octarine_core_1"
+		"item"		"item_staff_of_light"
 		"item"		"item_arcane_staff"
 		"item"		"item_blast_staff_1"
 	}
@@ -176,7 +176,7 @@
 	{
 		"item"		"item_hood_of_defiance"
 		"item"		"item_vanguard"
-//		"item"		"item_blade_mail"
+		"item"		"item_spirit_guardian"
 //		"item"		"item_soul_booster"
 		"item"		"item_crimson_guard"
 		"item"		"item_black_king_bar"
