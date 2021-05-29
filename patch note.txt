@@ -1058,22 +1058,36 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 
 
 
-
-
-* Reduced Max As by 200  and other stuff to adjust for that.
-* Small* balance changes
-* New item Num.(probably needs some colors to his passives/actives)(changed some stuff btw)
-* Void ultimate will not longer limit your max ms.
-* Ice Rapier now gives 9 int per lvl, and now deals dmg base on int x lvl.
-* New item, Spirit Guardian(not finished yet) and comes with other 3 new items.
-* other stuff
 * Fixed Arcane Supremacy (Rubick) targeting
 * Now Ability Point is non-targeted
 * Fixed Eul + Slayer Dimensional Shift crash
 * Edible Bigan's Octarine Core now gives stats without consuming + more description
 * Edible Bigan's Octarine Core will no longer create another one before applying
 * Edible Bigan's Octarine Core effect will not be lost if you take any other Octarine Core (CDR and Spell Lifesteal still doesn't stack)
-
+* Reduced Max As by 200 and other stuff to adjust for that.
+* Small* balance changes
+* New item Num.(probably needs some colors to his passives/actives)(changed some stuff btw)
+* Void ultimate will not longer limit your max ms.
+* Ice Rapier now gives 9 int per lvl, and now deals dmg base on int x lvl.
+* New item, Spirit Guardian(not finished yet) and comes with other 3 new items.
+* Shapeshift Relieve (DK, Lycan, Terrorblade) appears only when the ability level is 1 or higher
+* Fixed: Shapeshift Relieve (DK, Lycan, Terrorblade) now drains health with the Aghanim's Scepter effect, rather than reducing health regeneration as it previously did
+* Cataclysm (Invoker) is hidden
+* Some abilities don't trigger Aftershock (Earthshaker)
+* Vambrace now has a more variable purchase
+* Shop Cleaning
+* Description adjustments
+* Neutral items are only those items that can be placed in the neutral item slot
+* Necronomicon enabled
+* Pocket Barracks cost reduced by 1000 gold
+* Added upgrade for Psychic Headband
+* Infernal Breath (Clinkz): Base Damage value changed from 250/750/1750/3000/4000/5500/7000/10000 to 250/750 1500/2500/4000/6000/9000
+* Improved Fireball (Dragon Knight)
+* Fixed: Sphere of Earth could not be found in the store
+* Fixed: After disassembling Infinity Rapier the modifier did not disappear, causing an error
+* Fixed: Now Greater Demon Talon cannot be disassembled when switched
+* Fixed: Greater Dragon Head did not give an improved aura when there was an aura from Dragon Head
+* other stuff
 
 
 

@@ -23,36 +23,18 @@ end
 LinkLuaModifier("modifier_item_tome_bargain", "items/item_tome_bargain.lua", LUA_MODIFIER_MOTION_NONE)
 
 modifier_item_tome_bargain = class({})
-
-function modifier_item_tome_bargain:GetTexture()
-	return "tome_bargain"
-end
-
+function modifier_item_tome_bargain:GetTexture() return "tome_bargain" end
 function modifier_item_tome_bargain:DeclareFunctions()
-	return {
-		MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
-		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-	}
+	return {MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_TOOLTIP, MODIFIER_PROPERTY_TOOLTIP2}
 end
-function modifier_item_tome_bargain:IsPurgable()
-	return false
-end
-function modifier_item_tome_bargain:RemoveOnDeath()
-    return false
-end
-function modifier_item_tome_bargain:AllowIllusionDuplicate()
-	return true
-end	
-
+function modifier_item_tome_bargain:IsPurgable() return false end
+function modifier_item_tome_bargain:RemoveOnDeath() return false end
+function modifier_item_tome_bargain:AllowIllusionDuplicate() return true end
 function modifier_item_tome_bargain:OnCreated()
 	self.bonus_attack = self:GetAbility():GetSpecialValueFor("bonus_base_damage")
 	self.bonus_speed = self:GetAbility():GetSpecialValueFor("bonus_attackspeed")
 end
-
-function modifier_item_tome_bargain:GetModifierBaseAttack_BonusDamage()
-	return self.bonus_attack * self:GetStackCount()
-end
-
-function modifier_item_tome_bargain:GetModifierAttackSpeedBonus_Constant()
-	return self.bonus_speed * self:GetStackCount()
-end
+function modifier_item_tome_bargain:GetModifierBaseAttack_BonusDamage() return self.bonus_attack * self:GetStackCount() end
+function modifier_item_tome_bargain:GetModifierAttackSpeedBonus_Constant() return self.bonus_speed * self:GetStackCount() end
+function modifier_item_tome_bargain:OnTooltip() return self.bonus_attack * self:GetStackCount() end
+function modifier_item_tome_bargain:OnTooltip2() return self.bonus_speed * self:GetStackCount() end

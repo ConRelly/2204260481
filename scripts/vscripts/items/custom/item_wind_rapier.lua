@@ -52,8 +52,11 @@ function WindRapierProc(keys)
 	local buff_duration = ability:GetSpecialValueFor("stack_duration")
 	local max_stacks = ability:GetSpecialValueFor("max_stacks")
 	local StackModifier = "modifier_wind_rapier_agility_buff"
-  local currentStacks = caster:GetModifierStackCount(StackModifier, ability)
-	caster:AddNewModifier(caster, ability, StackModifier, {Duration = buff_duration})
+	local currentStacks = caster:GetModifierStackCount(StackModifier, ability)
+	local agility = caster:GetAgility()
+	local proc_bonus = ability:GetSpecialValueFor("proc_bonus")
+	local agility_gain = proc_bonus * 0.01 * agility
+	caster:AddNewModifier(caster, ability, StackModifier, {Duration = buff_duration, agility_gain = agility_gain})
 	if currentStacks <= (max_stacks - 1) then
 		caster:SetModifierStackCount(StackModifier, ability, (currentStacks + 1))
 	else
@@ -73,12 +76,9 @@ modifier_wind_rapier_agility_buff = class({
 			MODIFIER_PROPERTY_STATS_AGILITY_BONUS} end,
 })
 -------------------------------------------
-function modifier_wind_rapier_agility_buff:OnCreated()
+function modifier_wind_rapier_agility_buff:OnCreated(params)
 	if not IsServer() then return end
-	local hItem = self:GetAbility()
-	local caster = self:GetCaster()
-	local agility = caster:GetAgility()
-	self.agility_gain = hItem:GetSpecialValueFor("proc_bonus") * 0.01 * agility
+	self.agility_gain = params.agility_gain
 end
 --[[
 function modifier_wind_rapier_agility_buff:GetModifierAttackSpeedBonus_Constant()

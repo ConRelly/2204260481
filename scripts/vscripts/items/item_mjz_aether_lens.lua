@@ -4,18 +4,16 @@ LinkLuaModifier("modifier_item_mjz_aether_lens_stats",  "items/item_mjz_aether_l
 function OnEquip(keys)
 	if not IsServer() then return nil end
 	local caster = keys.caster
-	local ability = keys.ability
-	local modifier = 'modifier_item_mjz_aether_lens'
-	local modifier_stats = 'modifier_item_mjz_aether_lens_stats'
-	if caster:HasModifier(modifier_stats) then return nil end
+	local modifier = "modifier_item_mjz_aether_lens"
+	if caster:HasModifier("modifier_item_mjz_aether_lens_stats") then return end
 	if caster:HasModifier(modifier) then caster:RemoveModifierByName(modifier) end
-	caster:AddNewModifier(caster, ability, modifier, {})
+	caster:AddNewModifier(caster, keys.ability, modifier, {})
 end
 function OnUnequip(keys)
 	if not IsServer() then return nil end
 	local caster = keys.caster
 	local ability = keys.ability
-	local modifier = 'modifier_item_mjz_aether_lens'
+	local modifier = "modifier_item_mjz_aether_lens"
 	if caster:HasModifier(modifier) then caster:RemoveModifierByName(modifier) end
 end
 
@@ -23,26 +21,11 @@ function OnSpellStart(keys)
 	if not IsServer() then return nil end
 	local caster = keys.caster
 	local ability = keys.ability
-	local modifier = 'modifier_item_mjz_aether_lens'
-	local modifier_stats = 'modifier_item_mjz_aether_lens_stats'
-	local sound_cast = keys.sound_cast
-	local item_name = ability:GetAbilityName()
-	if caster:HasModifier(modifier_stats) then return nil end
+	local modifier_stats = "modifier_item_mjz_aether_lens_stats"
+	if caster:HasModifier(modifier_stats) then return end
 	caster:AddNewModifier(caster, ability, modifier_stats, {})
-	caster:EmitSound(sound_cast)
-	ability:SetCurrentCharges(ability:GetCurrentCharges() - 1)
+	caster:EmitSound("Hero_Alchemist.Scepter.Cast")
 	caster:RemoveItem(ability)
-	caster:RemoveModifierByName(modifier)
-
-	-- Create a Item for one game frame to prevent regular dota interactions from going bad
-	if Timers then
-		local item_dummy = CreateItem(item_name, caster, caster)
-		caster:AddItem(item_dummy)
-		Timers:CreateTimer(FrameTime(), function()
-			caster:RemoveItem(item_dummy)
-		end)
-	end
-
 end
 
 

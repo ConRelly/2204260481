@@ -16,34 +16,16 @@ function item_mjz_assault_4:GetIntrinsicModifierName() return "modifier_item_mjz
 function item_mjz_assault_5:GetIntrinsicModifierName() return "modifier_item_mjz_assault" end
 
 ---------------------------------------------------------------------------------------
+
 if modifier_item_mjz_assault == nil then modifier_item_mjz_assault = class({}) end
--- function modifier_item_mjz_assault:IsPassive() return true end
 function modifier_item_mjz_assault:IsHidden() return true end
 function modifier_item_mjz_assault:IsPurgable() return false end
 function modifier_item_mjz_assault:DeclareFunctions()
 	return {
-		-- MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-		-- MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-		-- MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-		-- MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
         MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 	}
 end
---[[
-function modifier_item_mjz_assault:GetModifierMoveSpeedBonus_Percentage()
-	return self:GetAbility():GetSpecialValueFor("bonus_movement_speed")
-end
-function modifier_item_mjz_assault:GetModifierBonusStats_Strength()
-	return self:GetAbility():GetSpecialValueFor("bonus_strength")
-end
-function modifier_item_mjz_assault:GetModifierBonusStats_Agility()
-	return self:GetAbility():GetSpecialValueFor("bonus_agility")
-end
-function modifier_item_mjz_assault:GetModifierBonusStats_Intellect()
-	return self:GetAbility():GetSpecialValueFor("bonus_intellect")
-end
-]]
 function modifier_item_mjz_assault:GetModifierAttackSpeedBonus_Constant() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end end
 function modifier_item_mjz_assault:GetModifierPhysicalArmorBonus() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_armor") end end
 
@@ -51,14 +33,11 @@ if IsServer() then
     function modifier_item_mjz_assault:OnCreated(table)
         local parent = self:GetParent()
         if IsValidEntity(parent) then
-            -- self.modifiers = {}
-            self:StartIntervalThink(1.0)
+            self:StartIntervalThink(0.25)
         end
     end
     function modifier_item_mjz_assault:OnIntervalThink()
-        local caster = self:GetCaster()
         local parent = self:GetParent()
-        local ability = self:GetAbility()
         if IsValidEntity(parent) then
             local mt = {
                 "modifier_item_mjz_assault_aura_friendly",
@@ -66,7 +45,7 @@ if IsServer() then
             }
             for _,mname in pairs(mt) do
                 if not parent:HasModifier(mname) then
-                    parent:AddNewModifier(caster, ability, mname, {})
+                    parent:AddNewModifier(self:GetCaster(), self:GetAbility(), mname, {})
                 end
             end
         end
@@ -112,7 +91,7 @@ function modifier_aura_enemy:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_EN
 function modifier_aura_enemy:GetAuraEntityReject(target) return self:GetParent():IsIllusion() end
 function modifier_aura_enemy:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
 function modifier_aura_enemy:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES end
-function modifier_aura_friendly:GetAuraDuration() return FrameTime() end
+function modifier_aura_enemy:GetAuraDuration() return FrameTime() end
 
 ------------------------------------------------
 modifier_item_mjz_assault_buff = class({})

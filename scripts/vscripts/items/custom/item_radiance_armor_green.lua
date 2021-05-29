@@ -108,6 +108,10 @@ function modifier_item_radiance_armor_aura_green:OnCreated()
 		self.aura_radius = ability:GetSpecialValueFor("aura_radius")
 		self.agi_damage = ability:GetSpecialValueFor("agi_damage")
 		self.ms_damage = ability:GetSpecialValueFor("ms_damage")
+		self.agi_threshold = ability:GetSpecialValueFor("agi_threshold")
+		self.ms_threshold = ability:GetSpecialValueFor("ms_threshold")
+		self.agi_threshold_multi = ability:GetSpecialValueFor("agi_threshold_multi")
+		self.ms_threshold_multi = ability:GetSpecialValueFor("ms_threshold_multi")
 		self:StartIntervalThink(1)
 		if not caster:IsRealHero() then	
 			self:StartIntervalThink(2)
@@ -143,11 +147,11 @@ function modifier_item_radiance_armor_aura_green:OnIntervalThink()
 		local ms = caster:GetIdealSpeed()
 		local ms_mult = self.ms_damage
 		local agi_mult = self.agi_damage
-		if agi > 20000 then 
-			agi_mult = 1.5
+		if agi > self.agi_threshold then 
+			agi_mult = self.agi_threshold_multi
 		end	
-		if ms > 20000 then
-			ms_mult = 1.5
+		if ms > self.ms_threshold then
+			ms_mult = self.ms_threshold_multi
 		end		
 		local ms_bonus_dmg = ms * ms_mult
 		local bonus_agi_dmg = math.ceil(agi * agi_mult)

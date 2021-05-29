@@ -105,6 +105,8 @@ function modifier_item_radiance_armor_aura_blue:OnCreated()
 		self.aura_radius = ability:GetSpecialValueFor("aura_radius")
 		self.int_damage = ability:GetSpecialValueFor("int_damage")
 		self.mana_damage = ability:GetSpecialValueFor("mana_damage")
+		self.int_threshold = ability:GetSpecialValueFor("int_threshold")
+		self.threshold_multi = ability:GetSpecialValueFor("threshold_multi")
 		self:StartIntervalThink(1)
 		if not caster:IsRealHero() then	
 			self:StartIntervalThink(2)
@@ -134,8 +136,8 @@ function modifier_item_radiance_armor_aura_blue:OnIntervalThink()
 		local ability = self:GetAbility()
 		local int = caster:GetIntellect()
 		local int_mult = self.int_damage
-		if int > 10000 then 
-			int_mult = 3.5
+		if int > self.int_threshold then 
+			int_mult = self.threshold_multi
 		end		
 		local mana_bonus_dmg = caster:GetMaxMana() * (self.mana_damage / 100)
 		local bonus_int_dmg = math.ceil(int * int_mult)

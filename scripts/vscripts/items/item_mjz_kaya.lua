@@ -22,7 +22,7 @@ function modifier_item_mjz_kaya:OnCreated()
 	self.spell_lifesteal_amp = self:GetAbility():GetSpecialValueFor("spell_lifesteal_amp")
 	self.mana_regen_multiplier = self:GetAbility():GetSpecialValueFor("mana_regen_multiplier")
 end
-function modifier_item_mjz_kaya:GetModifierBonusStats_Intellect() return self.bonus_int end
-function modifier_item_mjz_kaya:GetModifierMPRegenAmplify_Percentage() return self.mana_regen_multiplier end
-function modifier_item_mjz_kaya:GetModifierSpellLifestealRegenAmplify_Percentage() return self.spell_lifesteal_amp end
-function modifier_item_mjz_kaya:GetModifierSpellAmplify_Percentage() return self.spell_amp end
+function modifier_item_mjz_kaya:GetModifierBonusStats_Intellect() if self:GetAbility() then return self.bonus_int end end
+function modifier_item_mjz_kaya:GetModifierMPRegenAmplify_Percentage() if self:GetAbility() then return self.mana_regen_multiplier end end
+function modifier_item_mjz_kaya:GetModifierSpellLifestealRegenAmplify_Percentage() if self:GetAbility() then return self.spell_lifesteal_amp end end
+function modifier_item_mjz_kaya:GetModifierSpellAmplify_Percentage() if self:GetAbility() then return self.spell_amp end end

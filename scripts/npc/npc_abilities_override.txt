@@ -18637,7 +18637,7 @@
 // Butterfly
 	"item_butterfly"
 	{
-		"MaxUpgradeLevel"			"2"
+		"MaxUpgradeLevel"			"5"
 		"ItemBaseLevel"				"1"
 		"ItemDisassembleRule"		"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"AbilitySpecial"
@@ -18645,22 +18645,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"60 225"
+				"bonus_agility"			"60 100 185 285 445"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_evasion"			"35 60"
+				"bonus_evasion"			"35 40 45 50 55"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"40 175"
+				"bonus_attack_speed"	"40 60 80 100 120"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"60 225"
+				"bonus_damage"			"60 70 80 90 100"
 			}
 		}
 	}
@@ -19701,9 +19701,60 @@
 		}
 	}
 
+	//=================================================================================================================
+	// Recipe: Necronomicon
+	//=================================================================================================================
+	"item_recipe_necronomicon"
+	{
+		"ID"							"105"
+		"ItemCost"						"1250"	
+		"ItemShopTags"					""
+		"ShouldBeSuggested"				"0"
+		"ItemPurchasable"				"1"
+		"IsObsolete"					"1"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_necronomicon"
+		"ItemRequirements"
+		{
+			"01"						"item_sobi_mask;item_sobi_mask;item_belt_of_strength"
+		}
+	}
+	"item_recipe_necronomicon_2"
+	{
+		"ID"							"191"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemBaseLevel"					"2"
+		"ShouldBeSuggested"				"0"
+		"ItemPurchasable"				"1"
+		"IsObsolete"					"1"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_necronomicon_2"
+		"ItemRequirements"
+		{
+			"01"						"item_necronomicon*;item_recipe_necronomicon"
+		}
+	}
+	"item_recipe_necronomicon_3"
+	{
+		"ID"							"192"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemBaseLevel"					"3"
+		"ShouldBeSuggested"				"0"
+		"ItemPurchasable"				"1"
+		"IsObsolete"					"1"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_necronomicon_3"
+		"ItemRequirements"
+		{
+			"01"						"item_necronomicon_2*;item_recipe_necronomicon"
+		}
+	}
 // Necronomicon
 	"item_necronomicon"
 	{
+		"ItemPurchasable"				"1"
 		"AbilityCooldown"				"35.0"
 		"AbilitySpecial"
 		{		
@@ -19732,6 +19783,7 @@
 // Necronomicon 2
 	"item_necronomicon_2"
 	{
+		"ItemPurchasable"				"1"
 		"AbilityCooldown"				"35.0"
 		"AbilitySpecial"
 		{		
@@ -19765,6 +19817,7 @@
 // Necronomicon 3
 	"item_necronomicon_3"
 	{
+		"ItemPurchasable"				"1"
 		"AbilityCooldown"				"35.0"
 		"AbilitySpecial"
 		{		
@@ -20463,7 +20516,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_reduction"		"35 60"
+				"heal_reduction"		"35 55"
 			}
 		}
 	}
@@ -20862,5 +20915,46 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+	}
+
+// Dragon Knight: Fireball
+	"dragon_knight_fireball"
+	{
+		"ID"							"660"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN  | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"IsGrantedByShard"				"1"
+		"MaxLevel"						"2"
+		"RequiredLevel"					"0"
+		"LevelsBetweenUpgrades"			"50"
+		"AbilityCastRange"				"1400"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"100"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"450 900"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"2000 75000"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"10"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"burn_interval"		"0.5"
+			}
+		}
 	}
 }

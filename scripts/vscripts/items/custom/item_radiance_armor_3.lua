@@ -108,6 +108,8 @@ function modifier_item_radiance_armor_aura_3:OnCreated()
 		self.aura_radius = ability:GetSpecialValueFor("aura_radius")
 		self.str_damage = ability:GetSpecialValueFor("str_damage")
 		self.armor_damage = ability:GetSpecialValueFor("armor_damage")
+		self.str_threshold = ability:GetSpecialValueFor("str_threshold")
+		self.threshold_multi = ability:GetSpecialValueFor("threshold_multi")
 		--self.unlock = false
 		self:StartIntervalThink(1)
 		if not caster:IsRealHero() then
@@ -138,8 +140,8 @@ function modifier_item_radiance_armor_aura_3:OnIntervalThink()
 		local ability = self:GetAbility()
 		local str = caster:GetStrength()
 		local str_mult = self.str_damage
-		if str > 10000 then 
-			str_mult = 1.5
+		if str > self.str_threshold then 
+			str_mult = self.threshold_multi
 		end		
 		local armor_bonus_dmg = self.armor_damage * caster:GetPhysicalArmorValue(false)
 		local bonus_str_dmg = math.ceil(str * str_mult)

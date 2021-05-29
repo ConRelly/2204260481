@@ -9,7 +9,7 @@ modifier_staff_of_light = modifier_staff_of_light or class({})
 function modifier_staff_of_light:IsHidden() return true end
 function modifier_staff_of_light:IsPurgable() return false end
 function modifier_staff_of_light:RemoveOnDeath() return false end
-function modifier_staff_of_light:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+--function modifier_staff_of_light:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_staff_of_light:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end if not self:GetParent():IsIllusion() then
 		self:StartIntervalThink(1)
@@ -35,12 +35,12 @@ function modifier_staff_of_light:GetModifierHealthBonus() return self:GetAbility
 function modifier_staff_of_light:OnIntervalThink()
 	local caster = self:GetCaster()
 	if self:GetParent():IsRangedAttacker() then
-		search_radius = self:GetSpecialValueFor("radius_ranged")
+		search_radius = self:GetAbility():GetSpecialValueFor("radius_ranged")
 	else
-		search_radius = self:GetSpecialValueFor("radius_melee")
+		search_radius = self:GetAbility():GetSpecialValueFor("radius_melee")
 	end
 	local projectile_name = "particles/custom/items/staff_of_light/staff_of_light_wisp_attack.vpcf"
-	local projectile_speed = self:GetSpecialValueFor("projectile_speed")
+	local projectile_speed = self:GetAbility():GetSpecialValueFor("projectile_speed")
 
 	local enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetOrigin(), nil, search_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_CLOSEST, false)
 	local target = nil
@@ -54,13 +54,12 @@ function modifier_staff_of_light:OnIntervalThink()
 		target = enemies[1]
 	end
 	if not target then
---		FailureEffect(caster)
 		return
 	end
 	local info = {
 		Target = target,
 		Source = caster,
-		Ability = self,
+		Ability = self:GetAbility(),
 		EffectName = projectile_name,
 		iMoveSpeed = projectile_speed,
 		bDodgeable = true,
@@ -71,22 +70,16 @@ function modifier_staff_of_light:OnIntervalThink()
 	CastEffect(caster, target, projectile_speed)
 end
 function item_staff_of_light:OnProjectileHit(target, location)
-	--if not IsServer() then return end
-	--if not target then return end
-	--if self:GetCaster() == nil then return end
-	print("pass 1")
+	if not target then return end
+	if not self:GetParent() then return end
 	local radius = 0
 	local damage = (self:GetParent():GetBaseDamageMin() + self:GetParent():GetBaseDamageMax()) / 2
 	local creep_mult = 100--self:GetSpecialValueFor("creep_damage_pct")
 	local damageTable = {
-		-- victim = target,
 		attacker = self:GetCaster(),
-		-- damage = 500,
 		damage_type = DAMAGE_TYPE_MAGICAL,
 		ability = self,
 	}
-	print("pass 2")
-	-- ApplyDamage(damageTable)
 	local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), target:GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_DAMAGE_FLAG_NONE, FIND_ANY_ORDER	, false)
 	for _,enemy in pairs(enemies) do
 		damageTable.victim = enemy
@@ -94,12 +87,8 @@ function item_staff_of_light:OnProjectileHit(target, location)
 		if enemy:IsCreep() then
 			damageTable.damage = damage * (creep_mult/100)
 		end
-		print("pass 3")
 		ApplyDamage(damageTable)
-		print(damage .. " staff 1 dmg")
 	end
---	local sound_target = "Hero_SkywrathMage.ConcussiveShot.Target"
---	EmitSoundOn(sound_target, target)
 end
 
 ----------------------
@@ -113,7 +102,7 @@ modifier_staff_of_light_2 = modifier_staff_of_light_2 or class({})
 function modifier_staff_of_light_2:IsHidden() return true end
 function modifier_staff_of_light_2:IsPurgable() return false end
 function modifier_staff_of_light_2:RemoveOnDeath() return false end
-function modifier_staff_of_light_2:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+--function modifier_staff_of_light_2:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_staff_of_light_2:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end if not self:GetParent():IsIllusion() then
 		self:StartIntervalThink(1)
@@ -139,12 +128,12 @@ function modifier_staff_of_light_2:GetModifierHealthBonus() return self:GetAbili
 function modifier_staff_of_light_2:OnIntervalThink()
 	local caster = self:GetCaster()
 	if self:GetParent():IsRangedAttacker() then
-		search_radius = self:GetSpecialValueFor("radius_ranged")
+		search_radius = self:GetAbility():GetSpecialValueFor("radius_ranged")
 	else
-		search_radius = self:GetSpecialValueFor("radius_melee")
+		search_radius = self:GetAbility():GetSpecialValueFor("radius_melee")
 	end
 	local projectile_name = "particles/custom/items/staff_of_light/staff_of_light_wisp_attack.vpcf"
-	local projectile_speed = self:GetSpecialValueFor("projectile_speed")
+	local projectile_speed = self:GetAbility():GetSpecialValueFor("projectile_speed")
 
 	local enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetOrigin(), nil, search_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_CLOSEST, false)
 	local target = nil
@@ -158,13 +147,12 @@ function modifier_staff_of_light_2:OnIntervalThink()
 		target = enemies[1]
 	end
 	if not target then
---		FailureEffect(caster)
 		return
 	end
 	local info = {
 		Target = target,
 		Source = caster,
-		Ability = self,
+		Ability = self:GetAbility(),
 		EffectName = projectile_name,
 		iMoveSpeed = projectile_speed,
 		bDodgeable = true,
@@ -175,20 +163,16 @@ function modifier_staff_of_light_2:OnIntervalThink()
 	CastEffect(caster, target, projectile_speed)
 end
 function item_staff_of_light_2:OnProjectileHit(target, location)
-	if not IsServer() then return end
 	if not target then return end
-	if self:GetCaster() == nil then return end
+	if not self:GetParent() then return end
 	local radius = 0
-	local damage = (self:GetCaster():GetBaseDamageMin() + self:GetCaster():GetBaseDamageMax()) / 2
+	local damage = (self:GetParent():GetBaseDamageMin() + self:GetParent():GetBaseDamageMax()) / 2
 	local creep_mult = 100--self:GetSpecialValueFor("creep_damage_pct")
 	local damageTable = {
-		-- victim = target,
 		attacker = self:GetCaster(),
-		-- damage = 500,
 		damage_type = DAMAGE_TYPE_MAGICAL,
 		ability = self,
 	}
-	-- ApplyDamage(damageTable)
 	local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), target:GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_DAMAGE_FLAG_NONE, FIND_ANY_ORDER	, false)
 	for _,enemy in pairs(enemies) do
 		damageTable.victim = enemy
@@ -198,8 +182,6 @@ function item_staff_of_light_2:OnProjectileHit(target, location)
 		end
 		ApplyDamage(damageTable)
 	end
---	local sound_target = "Hero_SkywrathMage.ConcussiveShot.Target"
---	EmitSoundOn(sound_target, target)
 end
 
 ----------------------
@@ -213,7 +195,7 @@ modifier_staff_of_light_3 = modifier_staff_of_light_3 or class({})
 function modifier_staff_of_light_3:IsHidden() return true end
 function modifier_staff_of_light_3:IsPurgable() return false end
 function modifier_staff_of_light_3:RemoveOnDeath() return false end
-function modifier_staff_of_light_3:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+--function modifier_staff_of_light_3:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_staff_of_light_3:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end if not self:GetParent():IsIllusion() then
 		self:StartIntervalThink(1)
@@ -239,12 +221,12 @@ function modifier_staff_of_light_3:GetModifierHealthBonus() return self:GetAbili
 function modifier_staff_of_light_3:OnIntervalThink()
 	local caster = self:GetCaster()
 	if self:GetParent():IsRangedAttacker() then
-		search_radius = self:GetSpecialValueFor("radius_ranged")
+		search_radius = self:GetAbility():GetSpecialValueFor("radius_ranged")
 	else
-		search_radius = self:GetSpecialValueFor("radius_melee")
+		search_radius = self:GetAbility():GetSpecialValueFor("radius_melee")
 	end
 	local projectile_name = "particles/custom/items/staff_of_light/staff_of_light_wisp_attack.vpcf"
-	local projectile_speed = self:GetSpecialValueFor("projectile_speed")
+	local projectile_speed = self:GetAbility():GetSpecialValueFor("projectile_speed")
 
 	local enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetOrigin(), nil, search_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_CLOSEST, false)
 	local target = nil
@@ -258,13 +240,12 @@ function modifier_staff_of_light_3:OnIntervalThink()
 		target = enemies[1]
 	end
 	if not target then
---		FailureEffect(caster)
 		return
 	end
 	local info = {
 		Target = target,
 		Source = caster,
-		Ability = self,
+		Ability = self:GetAbility(),
 		EffectName = projectile_name,
 		iMoveSpeed = projectile_speed,
 		bDodgeable = true,
@@ -275,26 +256,21 @@ function modifier_staff_of_light_3:OnIntervalThink()
 	CastEffect(caster, target, projectile_speed)
 end
 function item_staff_of_light_3:OnProjectileHit(target, location)
-	if not IsServer() then return end
 	if not target then return end
-	if self:GetCaster() == nil then return end
-	local caster = self:GetCaster()
+	if not self:GetParent() then return end
+	local caster = self:GetParent()
 	local int = 0
-	if caster:IsRealHero() then 
-		local lvl = 1 + caster:GetLevel() / 10
-		int = caster:GetIntellect() * lvl 
-	end	
+	if caster:IsRealHero() then
+		int = caster:GetIntellect() * (1 + caster:GetLevel() / 10)
+	end
 	local radius = 0
-	local damage = (((caster:GetBaseDamageMin() + caster:GetBaseDamageMax()) / 2) + int)
+	local damage = ((caster:GetBaseDamageMin() + caster:GetBaseDamageMax()) / 2) + int
 	local creep_mult = 100--self:GetSpecialValueFor("creep_damage_pct")
 	local damageTable = {
-		-- victim = target,
 		attacker = caster,
-		-- damage = 500,
 		damage_type = DAMAGE_TYPE_MAGICAL,
 		ability = self,
 	}
-	-- ApplyDamage(damageTable)
 	local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_DAMAGE_FLAG_NONE, FIND_ANY_ORDER	, false)
 	for _,enemy in pairs(enemies) do
 		damageTable.victim = enemy
@@ -304,8 +280,6 @@ function item_staff_of_light_3:OnProjectileHit(target, location)
 		end
 		ApplyDamage(damageTable)
 	end
---	local sound_target = "Hero_SkywrathMage.ConcussiveShot.Target"
---	EmitSoundOn(sound_target, target)
 end
 
 
@@ -321,7 +295,7 @@ function item_spirit_guardian:GetIntrinsicModifierName() return "modifier_spirit
 function item_spirit_guardian:OnSpellStart()
 	if not self:GetCaster():HasModifier("modifier_spirit_guardian_heal_cd") then
 		self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_spirit_guardian_heal", {duration = self:GetSpecialValueFor("guardian_heal_duration")})
-	end	
+	end
 end
 -- Spirit Guardian Modifier
 modifier_spirit_guardian = modifier_spirit_guardian or class({})
@@ -331,24 +305,22 @@ function modifier_spirit_guardian:RemoveOnDeath() return false end
 --function modifier_spirit_guardian:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_spirit_guardian:OnCreated()
 	if IsServer() then
-	self.primary_attribute = self:GetAbility():GetSpecialValueFor("primary_attribute")
-	self.secondary_stats = self:GetAbility():GetSpecialValueFor("secondary_stats")
-	self.agi = self:GetAbility():GetSpecialValueFor("agi")
-	self.str = self:GetAbility():GetSpecialValueFor("str")
+		self.primary_attribute = self:GetAbility():GetSpecialValueFor("primary_attribute")
+		self.secondary_stats = self:GetAbility():GetSpecialValueFor("secondary_stats")
+		self.agi = self:GetAbility():GetSpecialValueFor("agi")
+		self.str = self:GetAbility():GetSpecialValueFor("str")
 		if not self:GetAbility() then self:Destroy() end if not self:GetParent():IsIllusion() then
 			self:StartIntervalThink(1)
-			self.pfx3 = ParticleManager:CreateParticle("particles/custom/items/staff_of_light/staff_of_light_ambient_core.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetParent())
+			self.pfx3 = ParticleManager:CreateParticle("particles/custom/items/staff_of_light/staff_of_light_ambient_core.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 end end end
 function modifier_spirit_guardian:OnDestroy()
-	if not IsServer() then return end
-	if self.pfx3 ~= nil then
+	if IsServer() then if not self:GetAbility() then self:Destroy() end
 		DFX(self.pfx3, false)
-	end	
 --	ParticleManager:DestroyParticle(self.pfx3, false)
+	end
 end
-
 function modifier_spirit_guardian:DeclareFunctions()
-	return {MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,MODIFIER_PROPERTY_FIXED_ATTACK_RATE}
+	return {MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_FIXED_ATTACK_RATE}
 end
 function modifier_spirit_guardian:GetModifierBonusStats_Strength()
 	if self:GetAbility() then if self:GetParent():GetPrimaryAttribute() == 0 then
@@ -404,7 +376,6 @@ function modifier_spirit_guardian:OnIntervalThink()
 			target = enemies[1]
 		end
 		if not target then
-	--		FailureEffect(caster)
 			return
 		end
 		local info = {
@@ -422,20 +393,16 @@ function modifier_spirit_guardian:OnIntervalThink()
 	end
 end
 function item_spirit_guardian:OnProjectileHit(target, location)
-	if not IsServer() then return end
 	if not target then return end
-	if self:GetCaster() == nil then return end
+	if not self:GetParent() then return end
 	local radius = 0
-	local damage = (self:GetCaster():GetBaseDamageMin() + self:GetCaster():GetBaseDamageMax()) / 2
+	local damage = (self:GetParent():GetBaseDamageMin() + self:GetParent():GetBaseDamageMax()) / 2
 	local creep_mult = 100--self:GetSpecialValueFor("creep_damage_pct")
 	local damageTable = {
-		-- victim = target,
 		attacker = self:GetCaster(),
-		-- damage = 500,
 		damage_type = DAMAGE_TYPE_MAGICAL,
 		ability = self,
 	}
-	-- ApplyDamage(damageTable)
 	local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), target:GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_DAMAGE_FLAG_NONE, FIND_ANY_ORDER	, false)
 	for _,enemy in pairs(enemies) do
 		damageTable.victim = enemy
@@ -448,10 +415,8 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 			if HasSuperScepter(self:GetCaster()) then
 				self:GetCaster():PerformAttack(enemy, true, true, true, false, false, false, true)
 			end
-		end	
+		end
 	end
---	local sound_target = "Hero_SkywrathMage.ConcussiveShot.Target"
---	EmitSoundOn(sound_target, target)
 end
 -- Defense Mode
 if modifier_spirit_guardian_heal == nil then modifier_spirit_guardian_heal = class({}) end
@@ -460,16 +425,16 @@ function modifier_spirit_guardian_heal:IsDebuff() return false end
 function modifier_spirit_guardian_heal:IsPurgable() return false end
 function modifier_spirit_guardian_heal:RemoveOnDeath() return false end
 function modifier_spirit_guardian_heal:OnCreated()
-	if not IsServer() then return end
-	self.avoid_chance = 0
-	local parent = self:GetParent()
-	if parent:IsRealHero() and (parent:GetPrimaryAttribute() == 2) then
-		self.avoid_chance = self:GetAbility():GetSpecialValueFor("avoid_chance")
-	end	
-
+	if IsServer() then if not self:GetAbility() then self:Destroy() end
+		self.avoid_chance = 0
+		local parent = self:GetParent()
+		if parent:IsRealHero() and (parent:GetPrimaryAttribute() == 2) then
+			self.avoid_chance = self:GetAbility():GetSpecialValueFor("avoid_chance")
+		end
+	end
 end
 function modifier_spirit_guardian_heal:DeclareFunctions()
-    return {MODIFIER_PROPERTY_AVOID_DAMAGE}
+	return {MODIFIER_PROPERTY_AVOID_DAMAGE}
 end
 function modifier_spirit_guardian_heal:GetModifierAvoidDamage(params)
 	if IsServer() then
@@ -477,22 +442,23 @@ function modifier_spirit_guardian_heal:GetModifierAvoidDamage(params)
 			local iParticleID = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 			ParticleManager:ReleaseParticleIndex(iParticleID)
 			return 1
-	   -- else
-		--	return 0
-		end   
-	end	
+		end
+	end
 end
 function modifier_spirit_guardian_heal:OnDestroy()
-	if not IsServer() then return end
-	if self:GetParent() ~= nil and self:GetParent():IsAlive()  then
-		self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_spirit_guardian_heal_cd", {duration = self:GetAbility():GetSpecialValueFor("internal_cd")})
-	end	
+	if IsServer() then
+		if self:GetParent() ~= nil and self:GetParent():IsAlive() then
+			self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_spirit_guardian_heal_cd", {duration = self:GetAbility():GetSpecialValueFor("internal_cd")})
+		end
+	end
 end	
 if modifier_spirit_guardian_heal_cd == nil then modifier_spirit_guardian_heal_cd = class({}) end
 function modifier_spirit_guardian_heal_cd:IsHidden() return false end
 function modifier_spirit_guardian_heal_cd:IsDebuff() return true end
 function modifier_spirit_guardian_heal_cd:IsPurgable() return false end
 function modifier_spirit_guardian_heal_cd:RemoveOnDeath() return false end
+
+
 
 function CastEffect(caster, target, projectile_speed)
 	local particle_cast = "particles/custom/items/staff_of_light/staff_of_light_wisp_preattack.vpcf"
@@ -501,12 +467,9 @@ function CastEffect(caster, target, projectile_speed)
 	ParticleManager:SetParticleControlEnt(effect_cast, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", Vector(0,0,0), true)
 	ParticleManager:SetParticleControl(effect_cast, 2, Vector(projectile_speed, 0, 0))
 	ParticleManager:ReleaseParticleIndex(effect_cast)
---	local sound_cast = "Hero_SkywrathMage.ConcussiveShot.Cast"
---	EmitSoundOn(sound_cast, caster)
 end
 function FailureEffect(caster)
 	local particle_cast = "particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_failure.vpcf"
 	local effect_cast = ParticleManager:CreateParticle(particle_cast, PATTACH_ABSORIGIN_FOLLOW, caster)
 	ParticleManager:ReleaseParticleIndex(effect_cast)
 end
-

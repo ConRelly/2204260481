@@ -18,7 +18,11 @@ function modifier_class:IsPassive() return true end
 function modifier_class:IsHidden() return true end
 function modifier_class:IsPurgable() return false end
 
-function modifier_class:IsAura() return true end
+function modifier_class:IsAura()
+	if self:GetCaster():PassivesDisabled() then return false end
+	if self:GetCaster():IsIllusion() then return false end
+	return true
+end
 function modifier_class:GetAuraRadius() return FIND_UNITS_EVERYWHERE end
 function modifier_class:GetModifierAura() return "modifier_mjz_crystal_maiden_brilliance_aura_effect" end
 function modifier_class:GetAuraSearchTeam() return self:GetAbility():GetAbilityTargetTeam() end
@@ -28,7 +32,6 @@ function modifier_class:GetAuraSearchFlags() return self:GetAbility():GetAbility
 function modifier_class:GetAuraDuration() return 0.5 end
 
 ---------------------------------------------------------------------------------------
-
 modifier_mjz_crystal_maiden_brilliance_aura_effect = class({})
 local modifier_effect = modifier_mjz_crystal_maiden_brilliance_aura_effect
 

@@ -176,6 +176,17 @@ function refresh_players()
 			end
 			hero:SetHealth(hero:GetMaxHealth())
 			hero:SetMana(hero:GetMaxMana())
+			for y=0, 9, 1 do
+				local current_item = hero:GetItemInSlot(y)
+				if current_item ~= nil then
+					if current_item:GetName() == "item_bottle" then
+						current_item:SetCurrentCharges(3)
+						hero:EmitSoundParams("Bottle.Cork", 1, 0.5, 0)
+						local rf = ParticleManager:CreateParticle("particles/custom/abilities/refresh_players/refill_bottle.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+						ParticleManager:ReleaseParticleIndex(rf)
+					end
+				end
+			end
 		end
 	end
 end
