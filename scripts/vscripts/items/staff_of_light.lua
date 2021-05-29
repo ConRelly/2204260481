@@ -33,7 +33,7 @@ function modifier_staff_of_light:GetModifierConstantManaRegen() return self:GetA
 function modifier_staff_of_light:GetModifierHealthBonus() return self:GetAbility():GetSpecialValueFor("hp") end
 
 function modifier_staff_of_light:OnIntervalThink()
-	local caster = self:GetCaster()
+	local caster = self:GetParent()
 	if self:GetParent():IsRangedAttacker() then
 		search_radius = self:GetAbility():GetSpecialValueFor("radius_ranged")
 	else
@@ -76,11 +76,11 @@ function item_staff_of_light:OnProjectileHit(target, location)
 	local damage = (self:GetParent():GetBaseDamageMin() + self:GetParent():GetBaseDamageMax()) / 2
 	local creep_mult = 100--self:GetSpecialValueFor("creep_damage_pct")
 	local damageTable = {
-		attacker = self:GetCaster(),
+		attacker = self:GetParent(),
 		damage_type = DAMAGE_TYPE_MAGICAL,
 		ability = self,
 	}
-	local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), target:GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_DAMAGE_FLAG_NONE, FIND_ANY_ORDER	, false)
+	local enemies = FindUnitsInRadius(self:GetParent():GetTeamNumber(), target:GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_DAMAGE_FLAG_NONE, FIND_ANY_ORDER	, false)
 	for _,enemy in pairs(enemies) do
 		damageTable.victim = enemy
 		damageTable.damage = damage
@@ -126,7 +126,7 @@ function modifier_staff_of_light_2:GetModifierConstantManaRegen() return self:Ge
 function modifier_staff_of_light_2:GetModifierHealthBonus() return self:GetAbility():GetSpecialValueFor("hp") end
 
 function modifier_staff_of_light_2:OnIntervalThink()
-	local caster = self:GetCaster()
+	local caster = self:GetParent()
 	if self:GetParent():IsRangedAttacker() then
 		search_radius = self:GetAbility():GetSpecialValueFor("radius_ranged")
 	else
@@ -169,11 +169,11 @@ function item_staff_of_light_2:OnProjectileHit(target, location)
 	local damage = (self:GetParent():GetBaseDamageMin() + self:GetParent():GetBaseDamageMax()) / 2
 	local creep_mult = 100--self:GetSpecialValueFor("creep_damage_pct")
 	local damageTable = {
-		attacker = self:GetCaster(),
+		attacker = self:GetParent(),
 		damage_type = DAMAGE_TYPE_MAGICAL,
 		ability = self,
 	}
-	local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), target:GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_DAMAGE_FLAG_NONE, FIND_ANY_ORDER	, false)
+	local enemies = FindUnitsInRadius(self:GetParent():GetTeamNumber(), target:GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_DAMAGE_FLAG_NONE, FIND_ANY_ORDER	, false)
 	for _,enemy in pairs(enemies) do
 		damageTable.victim = enemy
 		damageTable.damage = damage
@@ -219,7 +219,7 @@ function modifier_staff_of_light_3:GetModifierConstantManaRegen() return self:Ge
 function modifier_staff_of_light_3:GetModifierHealthBonus() return self:GetAbility():GetSpecialValueFor("hp") end
 
 function modifier_staff_of_light_3:OnIntervalThink()
-	local caster = self:GetCaster()
+	local caster = self:GetParent()
 	if self:GetParent():IsRangedAttacker() then
 		search_radius = self:GetAbility():GetSpecialValueFor("radius_ranged")
 	else
@@ -293,8 +293,8 @@ LinkLuaModifier("modifier_spirit_guardian_heal", "items/staff_of_light.lua", LUA
 LinkLuaModifier("modifier_spirit_guardian_heal_cd", "items/staff_of_light.lua", LUA_MODIFIER_MOTION_NONE)
 function item_spirit_guardian:GetIntrinsicModifierName() return "modifier_spirit_guardian" end
 function item_spirit_guardian:OnSpellStart()
-	if not self:GetCaster():HasModifier("modifier_spirit_guardian_heal_cd") then
-		self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_spirit_guardian_heal", {duration = self:GetSpecialValueFor("guardian_heal_duration")})
+	if not self:GetParent():HasModifier("modifier_spirit_guardian_heal_cd") then
+		self:GetParent():AddNewModifier(self:GetParent(), self, "modifier_spirit_guardian_heal", {duration = self:GetSpecialValueFor("guardian_heal_duration")})
 	end
 end
 -- Spirit Guardian Modifier
@@ -314,10 +314,10 @@ function modifier_spirit_guardian:OnCreated()
 			self.pfx3 = ParticleManager:CreateParticle("particles/custom/items/staff_of_light/staff_of_light_ambient_core.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 end end end
 function modifier_spirit_guardian:OnDestroy()
-	if IsServer() then if not self:GetAbility() then self:Destroy() end
+	if IsServer() then if not self:GetAbility() then self:Destroy() end if not self:GetParent():IsIllusion() and self.pfx3 ~= nil then
 		DFX(self.pfx3, false)
 --	ParticleManager:DestroyParticle(self.pfx3, false)
-	end
+	end end
 end
 function modifier_spirit_guardian:DeclareFunctions()
 	return {MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_FIXED_ATTACK_RATE}
@@ -341,7 +341,7 @@ function modifier_spirit_guardian:GetModifierFixedAttackRate() return self:GetAb
 
 function modifier_spirit_guardian:OnIntervalThink()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
-	local caster = self:GetCaster()
+	local caster = self:GetParent()
 	local search_radius = self:GetParent():Script_GetAttackRange() + self:GetAbility():GetSpecialValueFor("range_buffer")
 	local projectile_name = "particles/custom/items/staff_of_light/staff_of_light_wisp_attack.vpcf"
 	local projectile_speed = self:GetAbility():GetSpecialValueFor("projectile_speed")
@@ -399,11 +399,11 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 	local damage = (self:GetParent():GetBaseDamageMin() + self:GetParent():GetBaseDamageMax()) / 2
 	local creep_mult = 100--self:GetSpecialValueFor("creep_damage_pct")
 	local damageTable = {
-		attacker = self:GetCaster(),
+		attacker = self:GetParent(),
 		damage_type = DAMAGE_TYPE_MAGICAL,
 		ability = self,
 	}
-	local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), target:GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_DAMAGE_FLAG_NONE, FIND_ANY_ORDER	, false)
+	local enemies = FindUnitsInRadius(self:GetParent():GetTeamNumber(), target:GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_DAMAGE_FLAG_NONE, FIND_ANY_ORDER	, false)
 	for _,enemy in pairs(enemies) do
 		damageTable.victim = enemy
 		damageTable.damage = damage
@@ -412,8 +412,8 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 		end
 		ApplyDamage(damageTable)
 		if IsServer() then
-			if HasSuperScepter(self:GetCaster()) then
-				self:GetCaster():PerformAttack(enemy, true, true, true, false, false, false, true)
+			if HasSuperScepter(self:GetParent()) then
+				self:GetParent():PerformAttack(enemy, true, true, true, false, true, false, true)
 			end
 		end
 	end
@@ -447,7 +447,7 @@ function modifier_spirit_guardian_heal:GetModifierAvoidDamage(params)
 end
 function modifier_spirit_guardian_heal:OnDestroy()
 	if IsServer() then
-		if self:GetParent() ~= nil and self:GetParent():IsAlive() then
+		if self:GetParent() ~= nil and self:GetParent():IsAlive() and not self:GetParent():IsIllusion() then
 			self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_spirit_guardian_heal_cd", {duration = self:GetAbility():GetSpecialValueFor("internal_cd")})
 		end
 	end

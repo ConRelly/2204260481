@@ -1784,8 +1784,7 @@
 	"DOTA_Tooltip_modifier_replay_Description" 		"Sorry, you can't edit this."	
 
 	"DOTA_Tooltip_modifier_obs_replay" 					"<font color='#32F20C'>Views</font>"
-	"DOTA_Tooltip_modifier_obs_replay_Description" 		"Replay views increase your Int by %dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS%, Str and Agi by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%
-	Uderdog heroes may get extra <font color='#32F20C'>Views</font>"
+	"DOTA_Tooltip_modifier_obs_replay_Description" 		"Replay views increase your Int by %fMODIFIER_PROPERTY_STATS_INTELLECT_BONUS%, Str and Agi by %fMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%.<br><br>Underdog heroes may get extra <font color='#32F20C'>Views</font>"
 
 
 		// Aghanim Laser 
