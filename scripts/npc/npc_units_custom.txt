@@ -13111,7 +13111,7 @@
 		"ConsideredHero"			"1"
 		//"IsAncient"					"1"
 		//"IsBossMonster"				"0"
-		"IdleExpression"			"scenes/aghanim/aghanim_exp_idle.vcd"
+		//"IdleExpression"			"scenes/aghanim/aghanim_exp_idle.vcd"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_aghanim.vsndevts"
 
 		// Minimap

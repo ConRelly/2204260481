@@ -262,13 +262,13 @@ function modifier_aghanim_laser_debuff:OnCreated( kv )
 		self:OnIntervalThink()
 		self:StartIntervalThink( self.damage_interval )
 
-		EmitSoundOn( "Hero_Huskar.Burning_Spear", self:GetParent() )
+		--EmitSoundOn( "Hero_Huskar.Burning_Spear", self:GetParent() )
 	end
 end
 
 function modifier_aghanim_laser_debuff:OnDestroy()
 	if IsServer() then
-		StopSoundOn( "Hero_Huskar.Burning_Spear", self:GetParent() )
+		--StopSoundOn( "Hero_Huskar.Burning_Spear", self:GetParent() )
 	end
 end
 

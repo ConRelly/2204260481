@@ -268,8 +268,9 @@ function modifier_aghanim_laser_burn_thinker:GetAuraSearchFlags() return DOTA_UN
 function modifier_aghanim_laser_burn_thinker:GetAuraRadius() return self.beam_radius end
 
 function modifier_aghanim_laser_burn_thinker:OnCreated()
-	self.beam_radius = self:GetAbility():GetSpecialValueFor( "beam_radius" )
+	
 	if IsServer() then
+		self.beam_radius = self:GetAbility():GetSpecialValueFor( "beam_radius" )
         EmitSoundOn( "n_black_dragon.Fireball.Target", self:GetParent() )
         
         local particleName = "particles/creatures/aghanim/staff_beam_linger.vpcf"

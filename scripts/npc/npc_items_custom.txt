@@ -19101,6 +19101,31 @@
 				
 	}
 }
+"item_dev_undying"
+{
+	"BaseClass"                     "item_helm_of_the_undying"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemIsNeutralDrop"				"1"
+	"ItemSellable"					"1"
+	"ItemCost"						"9999999"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"0"
+	"AbilityCooldown"				"60.0"
+		"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_armor"					"18"
+		}
+		"02"
+		{
+			"var_type"							   "FIELD_INTEGER"
+			"duration"								"60"
+		}
+				
+	}
+}
 "item_recipe_orb_of_destruction"
 {
 	"BaseClass"						"item_datadriven"
@@ -34694,7 +34719,7 @@
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"guardian_heal_duration"	"7"
+				"guardian_heal_duration"	"8"
 			}
 			"10"
 			{
@@ -34709,7 +34734,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"internal_cd"			"14"
+				"internal_cd"			"15"
 			}
 		}
 	}
