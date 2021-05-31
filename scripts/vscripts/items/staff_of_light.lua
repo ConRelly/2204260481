@@ -261,7 +261,7 @@ function item_staff_of_light_3:OnProjectileHit(target, location)
 	local caster = self:GetParent()
 	local int = 0
 	if caster:IsRealHero() then
-		int = caster:GetIntellect() * (1 + caster:GetLevel() / 10)
+		int = caster:GetIntellect() * (caster:GetLevel() / 10)
 	end
 	local radius = 0
 	local damage = ((caster:GetBaseDamageMin() + caster:GetBaseDamageMax()) / 2) + int
@@ -401,22 +401,23 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 	local bonus_dmg = 0
 	local stacks = 0
 	local lvl = parent:GetLevel()
+	local chance = math.floor(lvl / 2)
 	if IsServer() then
 		if parent:HasModifier("modifier_spirit_guardian_bonus_dmg") then
 			local modif = parent:FindModifierByName("modifier_spirit_guardian_bonus_dmg")
 			if modif then
 				modif:IncrementStackCount()
-				if RollPercentage(lvl) then
+				if RollPercentage(chance) then
 					modif:IncrementStackCount()
 				end
 				stacks = modif:GetStackCount()	
 				bonus_dmg = lvl * stacks
 			end	
 		else
-			parent:AddNewModifier(parent, self:GetAbility(), "modifier_spirit_guardian_bonus_dmg", {})
+			parent:AddNewModifier(parent, self, "modifier_spirit_guardian_bonus_dmg", {})
 		end			
 		if HasSuperScepter(parent) then
-			bonus_int = math.floor(parent:GetIntellect() * (parent:GetLevel()/4))
+			bonus_int = math.floor(parent:GetIntellect() * (parent:GetLevel() * 0.25))
 		end	 
 	end			
 	local radius = 0

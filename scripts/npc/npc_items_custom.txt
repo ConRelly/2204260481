@@ -10034,7 +10034,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_intellect"			"120"	//"15 18 21 24 27"
+				"bonus_intellect"			"220"	//"15 18 21 24 27"
 			}
 			"02"
 			{
@@ -10064,7 +10064,7 @@
 			"07"							//每次使用增加伤害
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_per_use"			"350"
+				"damage_per_use"			"400"
 			}
 			"08"							//技能溅射范围
 			{
@@ -21954,7 +21954,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"buff_dmg"				"120"
+				"buff_dmg"				"150"
 			}
 			"10"
 			{
@@ -22236,7 +22236,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow_as"					"-65"
+				"slow_as"					"-85"
 			}
 			"04"
 			{
@@ -22251,7 +22251,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow_range_cap"			"800"
+				"slow_range_cap"			"1400"
 			}
 			"07"
 			{
@@ -22277,7 +22277,7 @@
 			"11"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration_per_agi"			"0.007"
+				"duration_per_agi"			"0.002"
 			}
 			"12"
 			{
@@ -22298,7 +22298,7 @@
 			"15"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration_tooltip"			"0.7"
+				"duration_tooltip"			"0.2"
 			}
 			"16"
 			{
@@ -22336,6 +22336,11 @@
 				"var_type"					"FIELD_INTEGER"
 				"rapier_bonus_int"					"9" //harcoded in the level up event
 			}
+			"23"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hp_damage"					"7"
+			}			
 		}
 	}	
 
@@ -34729,7 +34734,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"avoid_chance"			"60"
+				"avoid_chance"			"65"
 			}
 			"11"
 			{

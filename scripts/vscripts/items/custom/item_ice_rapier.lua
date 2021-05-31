@@ -28,6 +28,7 @@ function item_ice_rapier:OnSpellStart()
 		local radius = self:GetSpecialValueFor("base_radius")
 		local duration = self:GetSpecialValueFor("base_duration")
 		local damage = self:GetSpecialValueFor("base_damage")
+		local hp_damage = self:GetSpecialValueFor("hp_damage") / 100
 		local level = caster:GetLevel()
 
 		-- Calculate cast parameters
@@ -40,11 +41,11 @@ function item_ice_rapier:OnSpellStart()
 		end
 
 		-- Play sound
-		if USE_MEME_SOUNDS and RollPercentage(5) then
+		--[[if USE_MEME_SOUNDS and RollPercentage(5) then
 			caster:EmitSound("Imba.SkadiDeadWinter")
 		else
 			caster:EmitSound("Imba.SkadiCast")
-		end
+		end]]
 
 		-- Play particle
 		local blast_pfx = ParticleManager:CreateParticle("particles/item/skadi/skadi_ground.vpcf", PATTACH_CUSTOMORIGIN, nil)
@@ -60,14 +61,14 @@ function item_ice_rapier:OnSpellStart()
 		local nearby_enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster_loc, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
 		-- Play target sound if at least one enemy was hit
-		if #nearby_enemies > 0 then caster:EmitSound("Imba.SkadiHit") end
+		--if #nearby_enemies > 0 then caster:EmitSound("Imba.SkadiHit") end
 
 		-- Damage and freeze enemies
 		for _,enemy in pairs(nearby_enemies) do
-
+			local target_hp = enemy:GetHealth() * hp_damage
 			-- Apply damage
 			ApplyDamage({attacker = caster, victim = enemy, ability = self, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
-
+			ApplyDamage({attacker = caster, victim = enemy, ability = self, damage = target_hp, damage_type = DAMAGE_TYPE_MAGICAL})
 			-- Apply freeze modifier
 			enemy:AddNewModifier(caster, self, "modifier_item_imba_skadi_freeze", {duration = duration})
 
@@ -216,11 +217,11 @@ function modifier_item_imba_skadi_unique:OnCreated(keys)
 		ChangeAttackProjectileImba(self:GetParent())
 
 		-- Store ability KVs for later usage
-		local ability = self:GetAbility()
+		--[[local ability = self:GetAbility()
 		self.max_duration = ability:GetSpecialValueFor("max_duration")
 		self.min_duration = ability:GetSpecialValueFor("min_duration")
 		self.slow_range_cap = ability:GetSpecialValueFor("slow_range_cap")
-		self.max_distance = ability:GetSpecialValueFor("max_distance")
+		self.max_distance = ability:GetSpecialValueFor("max_distance")]]
 	end
 end
 
@@ -238,7 +239,7 @@ function modifier_item_imba_skadi_unique:DeclareFunctions()
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
-		MODIFIER_EVENT_ON_TAKEDAMAGE,
+		--MODIFIER_EVENT_ON_TAKEDAMAGE,
 	}
 	return funcs
 end
@@ -257,7 +258,7 @@ function modifier_item_imba_skadi_unique:GetModifierSpellAmplify_Percentage()
 end
 
 -- On-damage slow effect
-function modifier_item_imba_skadi_unique:OnTakeDamage(keys)
+--[[function modifier_item_imba_skadi_unique:OnTakeDamage(keys)
 	if IsServer() then
 		local attacker = self:GetParent()
 		local target = keys.unit
@@ -274,13 +275,13 @@ function modifier_item_imba_skadi_unique:OnTakeDamage(keys)
 		-- Apply the slow
 		target:AddNewModifier(attacker, self:GetAbility(), "modifier_item_imba_skadi_slow", {duration = slow_duration})
 	end
-end
+end]]
 
 -----------------------------------------------------------------------------------------------------------
 --	Skadi slow
 -----------------------------------------------------------------------------------------------------------
 
-if modifier_item_imba_skadi_slow == nil then modifier_item_imba_skadi_slow = class({}) end
+--[[if modifier_item_imba_skadi_slow == nil then modifier_item_imba_skadi_slow = class({}) end
 function modifier_item_imba_skadi_slow:IsHidden() return false end
 function modifier_item_imba_skadi_slow:IsDebuff() return true end
 function modifier_item_imba_skadi_slow:IsPurgable() return true end
@@ -311,7 +312,7 @@ function modifier_item_imba_skadi_slow:GetModifierAttackSpeedBonus_Constant()
 	return self.slow_as end
 
 function modifier_item_imba_skadi_slow:GetModifierMoveSpeedBonus_Percentage()
-	return self.slow_ms end
+	return self.slow_ms end]]
 
 -----------------------------------------------------------------------------------------------------------
 --	Skadi freeze
