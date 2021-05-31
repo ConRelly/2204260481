@@ -460,7 +460,8 @@
 	"Ability14"		"special_bonus_magic_resistance_20"
 	"Ability17"		"special_bonus_agility_30"
 	"AttackRate"		"1.5"
-	"AttributeAgilityGain"  "7"
+	"AttributeAgilityGain"  "6.7"
+	"AttributeStrengthGain" "8.9"
 }
 "npc_dota_hero_mirana"
 {
@@ -1430,9 +1431,11 @@
 
 		"Ability2"				"mjz_ember_spirit_sleight_of_fist"
 		"Ability3"				"mjz_ember_spirit_flame_guard"
-		"Ability11"		"special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_damage"
-		"Ability12"		"special_bonus_unique_mjz_ember_spirit_flame_guard_damage_per"
-		"Ability15"		"special_bonus_hp_300"	//"special_bonus_unique_ember_spirit_6"
+		"Ability10"		"special_bonus_hp_300"
+		"Ability11"     "special_bonus_unique_ember_spirit_5"
+		"Ability12"		"special_bonus_truestrike"
+		"Ability15"		"special_bonus_unique_mjz_ember_spirit_flame_guard_damage_per"	//"special_bonus_unique_ember_spirit_6"
+		"Ability17"		"special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_damage"
 		"UnitLabel"	 "no_underdog"
 	}
 	
@@ -1492,6 +1495,8 @@
 		
 		"Ability2"				"mjz_meepo_poof"
 		"Ability6"				"mjz_meepo_meepo_king"
+		"AttackRate"		"1.500000"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"		
 	}
 	
 	//=================================================================================================================

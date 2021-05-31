@@ -5367,7 +5367,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"lifesteal"				"6"
+			"lifesteal"				"4"
 		}
 	}
 }
@@ -5682,7 +5682,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"int_damage_multiplier"	"15"
+				"int_damage_multiplier"	"25"
 			}
 			"05"
 			{
@@ -14803,7 +14803,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"52 100 160 210 1000"
+				"bonus_damage"				"52 200 960 2100 7000"
 			}
 			"02"
 			{
@@ -14856,7 +14856,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"52 100 160 210 1000"
+				"bonus_damage"				"52 200 960 2100 7000"
 			}
 			"02"
 			{
@@ -14910,7 +14910,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"52 100 160 210 1000"
+				"bonus_damage"				"52 200 960 2100 7000"
 			}
 			"02"
 			{
@@ -14937,13 +14937,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"custom_recipe"
-		"ItemCost"						"2000"
+		"ItemCost"						"12000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_monkey_king_bar_5"
 		"ItemRequirements"
 		{
-			"01"						"item_mjz_monkey_king_bar_4;item_monkey_king_bar"
+			"01"						"item_mjz_monkey_king_bar_4;item_enchanter"
 		}
 	}
 	"item_mjz_monkey_king_bar_5"
@@ -14964,7 +14964,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"52 100 160 210 1000"
+				"bonus_damage"				"52 200 960 2100 7000"
 			}
 			"02"
 			{
@@ -15123,7 +15123,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_damage"			"90 230 950 2490 7600"
+				"aura_damage"			"90 230 950 2490 5600"
 			}
 			"04"
 			{
@@ -15182,7 +15182,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_damage"			"90 230 950 2490 7600"
+				"aura_damage"			"90 230 950 2490 5600"
 			}
 			"04"
 			{
@@ -15241,7 +15241,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_damage"			"90 230 950 2490 7600"
+				"aura_damage"			"90 230 950 2490 5600"
 			}
 			"04"
 			{
@@ -15300,7 +15300,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_damage"			"90 230 950 2490 7600"
+				"aura_damage"			"90 230 950 2490 5600"
 			}
 			"04"
 			{
@@ -22445,7 +22445,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rock_dmg"					"27650"
+				"rock_dmg"					"37650"
 			}
 			"07"
 			{
@@ -30728,6 +30728,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"projectile_speed"		"1200"
 			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"int_bonus_damage"		"10" //tooltip
+			}			
 		}
 	}
 // Staff of Light 3 Recipe
@@ -34736,6 +34741,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"internal_cd"			"15"
 			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_int_dmg"			"25" // tooltip for SS
+			}			
 		}
 	}
 // Spirit Guardian Recipe
@@ -35351,12 +35361,12 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp"					"5500"
+				"hp"					"4500"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana"					"5500"
+				"mana"					"3500"
 			}
 			"08"
 			{
@@ -36064,7 +36074,7 @@
 			"15"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"block_damage"					"24000"
+				"block_damage"					"14000"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"18"

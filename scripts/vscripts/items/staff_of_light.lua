@@ -291,9 +291,10 @@ if item_spirit_guardian == nil then item_spirit_guardian = class({}) end
 LinkLuaModifier("modifier_spirit_guardian", "items/staff_of_light.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_spirit_guardian_heal", "items/staff_of_light.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_spirit_guardian_heal_cd", "items/staff_of_light.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_spirit_guardian_bonus_dmg", "items/staff_of_light.lua", LUA_MODIFIER_MOTION_NONE)
 function item_spirit_guardian:GetIntrinsicModifierName() return "modifier_spirit_guardian" end
 function item_spirit_guardian:OnSpellStart()
-	if not self:GetParent():HasModifier("modifier_spirit_guardian_heal_cd") then
+	if self:GetParent() ~= nil and not self:GetParent():HasModifier("modifier_spirit_guardian_heal_cd") then
 		self:GetParent():AddNewModifier(self:GetParent(), self, "modifier_spirit_guardian_heal", {duration = self:GetSpecialValueFor("guardian_heal_duration")})
 	end
 end
@@ -395,9 +396,32 @@ end
 function item_spirit_guardian:OnProjectileHit(target, location)
 	if not target then return end
 	if not self:GetParent() then return end
+	local parent = self:GetParent()
+	local bonus_int = 0
+	local bonus_dmg = 0
+	local stacks = 0
+	local lvl = parent:GetLevel()
+	if IsServer() then
+		if parent:HasModifier("modifier_spirit_guardian_bonus_dmg") then
+			local modif = parent:FindModifierByName("modifier_spirit_guardian_bonus_dmg")
+			if modif then
+				modif:IncrementStackCount()
+				if RollPercentage(lvl) then
+					modif:IncrementStackCount()
+				end
+				stacks = modif:GetStackCount()	
+				bonus_dmg = lvl * stacks
+			end	
+		else
+			parent:AddNewModifier(parent, self:GetAbility(), "modifier_spirit_guardian_bonus_dmg", {})
+		end			
+		if HasSuperScepter(parent) then
+			bonus_int = math.floor(parent:GetIntellect() * (parent:GetLevel()/4))
+		end	 
+	end			
 	local radius = 0
-	local damage = (self:GetParent():GetBaseDamageMin() + self:GetParent():GetBaseDamageMax()) / 2
-	local creep_mult = 100--self:GetSpecialValueFor("creep_damage_pct")
+	local damage = ((parent:GetBaseDamageMin() + parent:GetBaseDamageMax()) / 2) + bonus_int + bonus_dmg
+	--local creep_mult = 100--self:GetSpecialValueFor("creep_damage_pct")
 	local damageTable = {
 		attacker = self:GetParent(),
 		damage_type = DAMAGE_TYPE_MAGICAL,
@@ -407,9 +431,9 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 	for _,enemy in pairs(enemies) do
 		damageTable.victim = enemy
 		damageTable.damage = damage
-		if enemy:IsCreep() then
-			damageTable.damage = damage * (creep_mult/100)
-		end
+		--if enemy:IsCreep() then
+		--	damageTable.damage = damage * (creep_mult/100)
+		--end
 		ApplyDamage(damageTable)
 		if IsServer() then
 			if HasSuperScepter(self:GetParent()) then
@@ -458,6 +482,11 @@ function modifier_spirit_guardian_heal_cd:IsDebuff() return true end
 function modifier_spirit_guardian_heal_cd:IsPurgable() return false end
 function modifier_spirit_guardian_heal_cd:RemoveOnDeath() return false end
 
+if modifier_spirit_guardian_bonus_dmg == nil then modifier_spirit_guardian_bonus_dmg = class({}) end
+function modifier_spirit_guardian_bonus_dmg:IsHidden() return false end
+function modifier_spirit_guardian_bonus_dmg:IsDebuff() return true end
+function modifier_spirit_guardian_bonus_dmg:IsPurgable() return false end
+function modifier_spirit_guardian_bonus_dmg:RemoveOnDeath() return false end
 
 
 function CastEffect(caster, target, projectile_speed)

@@ -1057,19 +1057,17 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 * And other stuff
 
 
-
+Visit Discord for complete patch note(link in workshop discussions).
 * Fixed Arcane Supremacy (Rubick) targeting
 * Now Ability Point is non-targeted
 * Fixed Eul + Slayer Dimensional Shift crash
-* Edible Bigan's Octarine Core now gives stats without consuming + more description
-* Edible Bigan's Octarine Core will no longer create another one before applying
-* Edible Bigan's Octarine Core effect will not be lost if you take any other Octarine Core (CDR and Spell Lifesteal still doesn't stack)
+* Edible Bigan's Octarine Core now gives stats without consuming + more description, will no longer create another one before applying, effect will not be lost if you take any other Octarine Core (CDR and Spell Lifesteal still doesn't stack).
 * Reduced Max As by 200 and other stuff to adjust for that.
-* Small* balance changes
-* New item Num.(probably needs some colors to his passives/actives)(changed some stuff btw)
+* General Balance changes(no space for details).
+* Meepo starts as STR hero now.
+* New items: Num , Staff of Light(x3) and Spirit Guardian(special one)
 * Void ultimate will not longer limit your max ms.
 * Ice Rapier now gives 9 int per lvl, and now deals dmg base on int x lvl.
-* New item, Spirit Guardian(not finished yet) and comes with other 3 new items.
 * Shapeshift Relieve (DK, Lycan, Terrorblade) appears only when the ability level is 1 or higher
 * Fixed: Shapeshift Relieve (DK, Lycan, Terrorblade) now drains health with the Aghanim's Scepter effect, rather than reducing health regeneration as it previously did
 * Cataclysm (Invoker) is hidden
@@ -1081,15 +1079,16 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 * Necronomicon enabled
 * Pocket Barracks cost reduced by 1000 gold
 * Added upgrade for Psychic Headband
-* Infernal Breath (Clinkz): Base Damage value changed from 250/750/1750/3000/4000/5500/7000/10000 to 250/750 1500/2500/4000/6000/9000
+* Infernal Breath (Clinkz): Base Damage value changed to have 1k less dmg at max lvl.
 * Improved Fireball (Dragon Knight)
 * Fixed: Sphere of Earth could not be found in the store
 * Fixed: After disassembling Infinity Rapier the modifier did not disappear, causing an error
 * Fixed: Now Greater Demon Talon cannot be disassembled when switched
 * Fixed: Greater Dragon Head did not give an improved aura when there was an aura from Dragon Head
+* Fixed some aghanim laser errors
 * other stuff
 
-
+NOTE(spirit guardian is not tested but almost complete, it may need some words reduction form description)
 
 
 *Update patch notes13 can be found on the new map version:
@@ -1097,3 +1096,4 @@ https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussion for links)
 
 **Update Notes spellings will get corrected before the live update.
+**If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update).

@@ -637,7 +637,7 @@
 	"DOTA_Tooltip_modifier_item_earth_cuirass_aura_debuff_Description"	"Reduces armor by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
 	
 	"DOTA_Tooltip_ability_item_spirit_guardian"				"Spirit Guardian"
-	"DOTA_Tooltip_ability_item_spirit_guardian_Description"	"<h1>Active: Defense Mode</h1>Spirit stops attacking, but heals the owner. If the owner has a full health, then heals an ally in the attack radius + %range_buffer% with the lowest health percentage.<br><br>Spirit Healing is equal to the owner's base damage.<br>Healing duration: %guardian_heal_duration% seconds.\n<h1><font color='#0DAFEC'>Passive: Instincts (Int)</font></h1>Have a chance to Avoid %avoid_chance%%% of all dmg taken during Defense Mode, only if your primary attribute is Intelligence.</font>\n<h1>Passive: Spirit Guardian</h1>Spirit attacks the closest enemy within the attack radius + %range_buffer%.<br><br>Spirit Damage is equal to the owner's base damage.<br>Damage Type: <font color=\"#0D7DEC\">Magical</font><br><font color='#DD9510'>Limits Your attack speed to fixed rate of %fixed_attack_rate% attacks/s.\n<h1><font color='#DE3163'>Super Scepter</font></h1>For every Guardian Attack triggers an normal attack from your hero with all the proc effects."
+	"DOTA_Tooltip_ability_item_spirit_guardian_Description"	"<h1>Active: Defense Mode</h1>Spirit stops attacking, but heals the owner. If the owner has a full health, then heals an ally in the attack radius + %range_buffer% with the lowest health percentage.<br>Spirit Healing is equal to the owner's base damage.<br>Healing duration: %guardian_heal_duration% seconds.\n<h1><font color='#0DAFEC'>Passive: Instincts (Int)</font></h1>Have a chance to Avoid %avoid_chance%%% of all dmg taken during Defense Mode, only if your primary attribute is Intelligence.</font>\n<h1><font color='#17CCEC'>Passive: Snowball</font></h1>Every Hit landed by Spirit will increase your <font color='#17CCEC'>Snowball</font> stack by one and have a chance(your lvl) for an extra stack.\n<h1><font color='#C47D0F'>Passive: Spirit Guardian</font></h1>Spirit attacks the closest enemy within the attack radius + %range_buffer%.<br>Spirit Damage is equal to the owner's base damage plus <font color='#17CCEC'>Snowball</font> stacks X Your Level.<br>Damage Type: <font color=\"#0D7DEC\">Magical</font><br><font color='#DD9510'>Limits Your attack speed to fixed rate of %fixed_attack_rate% attacks/s.\n<h1><font color='#DE3163'>Super Scepter</font></h1>For every Guardian Attack triggers an normal attack from your hero with all the proc effects. Adds %bonus_int_dmg%%%  <font color=\"#17BFEC\">Int</font> X Level to guadian damage."
 	"DOTA_Tooltip_ability_item_spirit_guardian_note0"			"Healing interval is the same as the attack interval."
 	"DOTA_Tooltip_ability_item_spirit_guardian_note1"			"Additional attack from Super Scepter has a True Strike."
 	"DOTA_Tooltip_Ability_item_spirit_guardian_hp"					"+$health"
@@ -651,7 +651,9 @@
 	"DOTA_Tooltip_modifier_spirit_guardian_heal_Description"	""
 	"DOTA_Tooltip_modifier_spirit_guardian_heal_cd"				"Defense Mode min Cooldown"
 	"DOTA_Tooltip_modifier_spirit_guardian_heal_cd_Description"	"Cannot be affected by Defense Mode buff until this expires"
-	
+	"DOTA_Tooltip_modifier_spirit_guardian_bonus_dmg"				"Snowball Stacks"
+	"DOTA_Tooltip_modifier_spirit_guardian_bonus_dmg_Description"	"Guardian deals bonus dmg base on your Level multiplied with the Stacks"	
+
 	"DOTA_Tooltip_Ability_item_pipe_of_dezun"				"Pipe Of Dezun"
 	"DOTA_Tooltip_Ability_item_pipe_of_dezun_Description"	"<h1>Active: Dezun's Immunity</h1>Within a radius of %aura_radius% from the owner gives allies Spell Immunity for %duration% seconds.\n<h1>Passive: Pipe Of Dezun Aura</h1>+ %hp_regen_aura% Health Regen<br>+ %magic_resist_aura%%% Magic Resistance<br>+ %mana_aura% Mana<br>+ %as_aura% Attack Speed<br><br>Radius: %aura_radius%"
 	"DOTA_Tooltip_ability_item_pipe_of_dezun_magic_resist"		"%+$spell_resist"
@@ -1382,7 +1384,7 @@
 	"DOTA_Tooltip_Ability_item_staff_of_light_2_mana_regen"			"+$mana_regen"
 //3
 	"DOTA_Tooltip_Ability_item_staff_of_light_3"				"Staff Of Light"
-	"DOTA_Tooltip_Ability_item_staff_of_light_3_Description"	"<h1>Passive: Wild Spirit</h1>Spirit attacks the closest enemy in the radius: for the ranged hero - %radius_ranged%, for the melee - %radius_melee%.<br>Spirit Damage is equal to the owner's base damage + (<font color=\"#17BFEC\">Intelligence</font> X (1 + level / 10)).<br>Damage Type: <font color=\"#0D7DEC\">Magical</font>"
+	"DOTA_Tooltip_Ability_item_staff_of_light_3_Description"	"<h1>Passive: Wild Spirit</h1>Spirit attacks the closest enemy in the radius: for the ranged hero - %radius_ranged%, for the melee - %radius_melee%.<br>Spirit Damage is equal to the owner's base damage + (%int_bonus_damage%%%  <font color=\"#17BFEC\">Intelligence</font> X your level).<br>Damage Type: <font color=\"#0D7DEC\">Magical</font>"
 	"DOTA_Tooltip_Ability_item_staff_of_light_3_hp"					"+$health"
 	"DOTA_Tooltip_Ability_item_staff_of_light_3_primary_attribute"	"+$primary_attribute"
 	"DOTA_Tooltip_Ability_item_staff_of_light_3_mana_regen"			"+$mana_regen"
@@ -2405,13 +2407,13 @@
 	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_Lore"			"An enemy should never be allowed to approach without difficulty."
 	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_radius"					"RADIUS:"
 	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_damage_per_second"		"DAMAGE PER SECOND:"
-	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_bonus_damage_pct"		"%BONUS DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_bonus_damage_pct"		"%Attack Damage:"
 	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_damage_reduction_pct"	"%REDUCTION DAMAGE:"
 	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_duration"				"DURATION:"
 	"DOTA_Tooltip_modifier_mjz_ember_spirit_flame_guard"				"Flame Guard"
 	"DOTA_Tooltip_modifier_mjz_ember_spirit_flame_guard_Description"	"Absorbing damage, and dealing magic damage in an area of effect."
-	"DOTA_Tooltip_ability_special_bonus_unique_mjz_ember_spirit_flame_guard_damage_per"		"+60 Flame Guard DPS"
-	"DOTA_Tooltip_ability_special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_damage"	"+50% Flame Guard BONUS DAMAGE"	
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_ember_spirit_flame_guard_damage_per"		"+{s:value} Flame Guard DPS"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_damage"	"+{s:value}% Flame Guard Attack Damage"	
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist"					"Sleight of Fist"
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Description"		"Ember Spirit Or sven dashes around with blazing speed, attacking all enemies in the targeted area of effect, then returning to his start location. "
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Lore"			"The studied warrior must whip and weave through its enemies, burning each without pause."
@@ -6321,7 +6323,7 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_Ability_item_blast_staff_3"						"Greater Blast Staff"
 "DOTA_Tooltip_ability_item_blast_staff_3_Description"			"<h1>Active: Burst Flare</h1> Emits %strikes% blasts of energy that deal %int_multiplier% times your intelligence in damage.
 <h1>Passive: Reactive Blast</h1>Every time you cast an ability a second blast follows it, dealing %int_multiplier% times your intelligence in damage.
-<h1><font color='#006E92'>Passive: Caster Mastery</font></h1> For Every 5 seconds of the ability casted Cooldown(before CDR) you fire an aditional blast"
+<h1><font color='#006E92'>Passive: Caster Mastery</font></h1> For Every 5 seconds of the ability casted Cooldown(before CDR) you fire an aditional blast.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>When a Blast hits, but before it deals damage to an enemy will apply a debuff for %debuff_duration% s that reduces enemy magic resistance by %resist_reduc%%%."
 "DOTA_Tooltip_ability_item_blast_staff_3_Lore"					"Sucks in magic from the air, and expels it on command."
 "DOTA_Tooltip_ability_item_blast_staff_3_Note0"				 "The number of extra blasts is roundup (a 6s cd ability will count as an 10s)"
 "DOTA_Tooltip_ability_item_blast_staff_3_Note1"				 "Ability must have more then 3 sec CD(beofre CDR) to fire extra blasts" 
@@ -6332,8 +6334,8 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_ability_item_blast_staff_3_spell_amp"			 "%+$spell_amp"
 "DOTA_Tooltip_ability_item_blast_staff_3_status_resist"		 "%+$status_resist"
 
-		"dota_tooltip_modifier_item_blast_staff_debuff"	 "Blast Staff Impact"
-		"dota_tooltip_modifier_item_blast_staff_debuff_description"  "On impact: Reduce magic resitance by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%"
+"dota_tooltip_modifier_item_blast_staff_debuff"	 			 "Blast Staff Impact"
+"dota_tooltip_modifier_item_blast_staff_debuff_description"  "On impact: Reduce magic resitance by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%"
 
 
 "DOTA_Tooltip_ability_item_bloodstone_Description"				"<h1>Active: Bloodpact</h1> Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds."

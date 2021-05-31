@@ -74,7 +74,7 @@ if IsServer() then
     function item_blast_staff_3:OnProjectileHit(target, location)
         if target and target:IsAlive() and not target:IsMagicImmune() then
             local parent = self:GetParent()
-			local particleIndex = ParticleManager:CreateParticle("particles/custom/blast_staff_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+			local particleIndex = ParticleManager:CreateParticle("particles/custom/items/blast_staff/blast_staff_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 			ParticleManager:SetParticleControl(particleIndex, 3, target:GetAbsOrigin())
 			local damage = self:GetSpecialValueFor("int_multiplier") * parent:GetIntellect()
 			local duration = self:GetSpecialValueFor("debuff_duration")
@@ -189,7 +189,7 @@ if IsServer() then
 			local direction = (direction * Vector(1, 1, 0)):Normalized()
 			local projTable = 
 			{
-				EffectName = "particles/custom/blast_staff_passive.vpcf",
+				EffectName = "particles/custom/items/blast_staff/blast_staff_passive.vpcf",
 				Ability = self.ability,
 				vSpawnOrigin = self.parent:GetAbsOrigin() + Vector(0,0,100),
 				vVelocity = direction * 2100,

@@ -22306,7 +22306,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityTextureName"			"mjz_ember_spirit_flame_guard"
 		"MaxLevel"						"7"
-		"LevelsBetweenUpgrades"			"5"
+		"LevelsBetweenUpgrades"			"10"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0"
@@ -22324,13 +22324,13 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_per_second"				"80 290 890 1760 2600 4100 7200"
+				"damage_per_second"				"80 290 1890 2760 4600 8100 17200"
 				"LinkedSpecialBonus"			"special_bonus_unique_mjz_ember_spirit_flame_guard_damage_per"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage_pct"				"10 20 30 40 60 80 150"
+				"bonus_damage_pct"				"10 20 30 40 60 80 130"
 				"LinkedSpecialBonus"			"special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_damage"
 			}
 			"04"
@@ -22367,7 +22367,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"1400"
+				"value"						"2700"
 			}
 		}
 	}
@@ -22402,8 +22402,8 @@
 		"AbilityTextureName"			"mjz_ember_spirit_sleight_of_fist"
 
 		//"FightRecapLevel"				"1"
-				"RequiredLevel"								 "1"
-				"LevelsBetweenUpgrades"						 "4"
+		"RequiredLevel"					"1"
+		"LevelsBetweenUpgrades"			"7"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 
 		"AbilityCastRange"				"1700"
@@ -22439,12 +22439,12 @@
 			"11"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_chance"				"18 20 22 24 26 28 30"
+				"crit_chance"				"12"
 			}
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_bonus"				"180 200 220 240 260 380 500"
+				"crit_bonus"				"380 420 480 540 690 780 1100"
 			}
 			"14"
 			{
