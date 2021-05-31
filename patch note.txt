@@ -1067,7 +1067,7 @@ Visit Discord for complete patch note(link in workshop discussions).
 * Meepo starts as STR hero now.
 * New items: Num , Staff of Light(x3) and Spirit Guardian(special one)
 * Void ultimate will not longer limit your max ms.
-* Ice Rapier now gives 9 int per lvl, and now deals dmg base on int x lvl and 7% of enemy current health. removed the slow on damage.
+* Ice Rapier now gives 9 int per lvl, and now deals dmg base on int x lvl and 7% of enemy current health. removed the slow on damage(better performance).
 * Shapeshift Relieve (DK, Lycan, Terrorblade) appears only when the ability level is 1 or higher
 * Fixed: Shapeshift Relieve (DK, Lycan, Terrorblade) now drains health with the Aghanim's Scepter effect, rather than reducing health regeneration as it previously did
 * Cataclysm (Invoker) is hidden

@@ -32,7 +32,7 @@ function item_ice_rapier:OnSpellStart()
 		local level = caster:GetLevel()
 
 		-- Calculate cast parameters
-		if caster:IsRealHero() then
+		if caster:IsHero() then
 			radius = radius + caster:GetStrength() * self:GetSpecialValueFor("radius_per_str")
 			if radius > 2000 then radius = 2000 end
 			duration = duration + caster:GetAgility() * self:GetSpecialValueFor("duration_per_agi")
@@ -130,19 +130,7 @@ function modifier_item_imba_skadi:OnIntervalThink()
 	local item = self:GetAbility()
 	local caster = self:GetCaster()
 	local vLocation = caster:GetAbsOrigin()
-	--local stats_required = item:GetSpecialValueFor( "stats_required" )
---		GameRules:SendCustomMessage("stats_required:"..stats_required,0,0)
-	--local item_stats_sum = item:GetSpecialValueFor( "rapier_str" ) + item:GetSpecialValueFor( "rapier_agi" ) + item:GetSpecialValueFor( "rapier_int" )
-	--local stats_sum = caster:GetStrength() + caster:GetAgility() + caster:GetIntellect()
-	--local hero_stats_sum =  stats_sum - item_stats_sum
-	if not caster:HasModifier("modifier_arc_warden_tempest_double")and caster:IsRealHero() then
-		--[[if stats_required > hero_stats_sum then
-			Timers:CreateTimer(0.001, function() caster:DropItemAtPositionImmediate(item, vLocation) end)
-			GameRules:SendCustomMessage("#Game_notification_ice_rapier_request_message",0,0)	
-			GameRules:SendCustomMessage("<font color='#FFD700'>NOT ENOUGH </font><font color='#00FFFF'>".. stats_required-hero_stats_sum .."</font>",0,0)	
-			
-		end]]	
-		
+	if not caster:HasModifier("modifier_arc_warden_tempest_double")and caster:IsRealHero() then	
 		if 	caster:HasModifier("modifier_fire_rapier_passive_bonus") or
 			caster:HasModifier("modifier_wind_rapier_passive_bonus") or
 			caster:HasModifier("modifier_earth_rapier_passive_bonus") then
@@ -159,12 +147,13 @@ end
 
 function modifier_item_imba_skadi:UpdateCastRange()
 	if IsServer() then
-		if self.parent:IsRealHero() then
+		if self.parent:IsHero() then
 			local iradius = self.radius + self.parent:GetStrength() * self.ability:GetSpecialValueFor("radius_per_str")
+			
+			--local iradius = self.radius + self.parent:GetStrength() * self.ability:GetSpecialValueFor("radius_per_str")
+			if iradius > 2000 then iradius = 2000 end
+			self:SetStackCount(( iradius))
 		end
-		local iradius = self.radius + self.parent:GetStrength() * self.ability:GetSpecialValueFor("radius_per_str")
-		if iradius > 2000 then iradius = 2000 end
-		self:SetStackCount(( iradius))
 	end
 end
 
