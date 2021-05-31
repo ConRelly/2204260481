@@ -1081,6 +1081,8 @@ Visit Discord for complete patch note(link in workshop discussions).
 * Added upgrade for Psychic Headband
 * Infernal Breath (Clinkz): Base Damage value changed to have 1k less dmg at max lvl.
 * Improved Fireball (Dragon Knight)
+* Added Super Scepter effect for Mystic Flare (Skywrath Mage)
+* Added Aghanim's Shard effect for Lucent Beam (Luna)
 * Fixed: Sphere of Earth could not be found in the store
 * Fixed: After disassembling Infinity Rapier the modifier did not disappear, causing an error
 * Fixed: Now Greater Demon Talon cannot be disassembled when switched

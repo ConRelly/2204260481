@@ -89,6 +89,7 @@ end
 --------------------------------------------------------------------------------
 -- Interval Effects
 function modifier_luna_eclipse_lua:OnIntervalThink()
+	local new_moon_chance = self:GetAbility():GetSpecialValueFor("new_moon_chance")
 	local modifier_buffa = "modifier_mjz_luna_under_the_moonlight_buff"
 	local mbuf = self.caster:FindModifierByName(modifier_buffa)
 	local point = self.point or self.parent:GetOrigin()
@@ -114,7 +115,7 @@ function modifier_luna_eclipse_lua:OnIntervalThink()
 			self.hits[unit] = self.hits[unit]+1
 			if self.hits[unit]<=self.hit_count then
 				local random_nr = math.random(100)
-				if random_nr < 20 then
+				if random_nr < new_moon_chance then
 					if mbuf ~= nil then
 						mbuf:SetStackCount( mbuf:GetStackCount() + 1 )
 					end
