@@ -1057,16 +1057,16 @@ Congrats to 『Kumagawa and Abuleil for being the first to defeat current -extra
 * And other stuff
 
 
-Visit Discord for complete patch note(link in workshop discussions).
+Visit Discord for a complete patch note(link in workshop discussions).
 * Fixed Arcane Supremacy (Rubick) targeting
 * Now Ability Point is non-targeted
 * Fixed Eul + Slayer Dimensional Shift crash
-* Edible Bigan's Octarine Core now gives stats without consuming + more description, will no longer create another one before applying, effect will not be lost if you take any other Octarine Core (CDR and Spell Lifesteal still doesn't stack).
+* Edible Bigan's Octarine Core now gives stats without consuming + more description will no longer create another one before applying, the effect will not be lost if you take any other Octarine Core (CDR and Spell Lifesteal still don't stack).
 * Reduced Max As by 200 and other stuff to adjust for that.
 * General Balance changes(no space for details).
-* Meepo starts as STR hero now.
-* New items: Num , Staff of Light(x3) and Spirit Guardian(special one)
-* Void ultimate will not longer limit your max ms.
+* Meepo starts as an STR hero now.
+* New items: Num, Staff of Light(x3), and Spirit Guardian(special one)
+* Void ultimate will no longer limit your max ms.
 * Ice Rapier now gives 9 int per lvl, and now deals dmg base on int x lvl and 7% of enemy current health. removed the slow on damage(better performance).
 * Shapeshift Relieve (DK, Lycan, Terrorblade) appears only when the ability level is 1 or higher
 * Fixed: Shapeshift Relieve (DK, Lycan, Terrorblade) now drains health with the Aghanim's Scepter effect, rather than reducing health regeneration as it previously did
@@ -1087,9 +1087,8 @@ Visit Discord for complete patch note(link in workshop discussions).
 * Fixed: After disassembling Infinity Rapier the modifier did not disappear, causing an error
 * Fixed: Now Greater Demon Talon cannot be disassembled when switched
 * Fixed: Greater Dragon Head did not give an improved aura when there was an aura from Dragon Head
-* Fixed some aghanim laser errors , OBS, etc.
+* Fixed some aghanim laser errors, OBS, etc.
 * other stuff
-
 
 
 
