@@ -6,5 +6,6 @@ function onepunch(keys)
 		damage_flags = DOTA_DAMAGE_FLAG_NONE
 		keys.target:Kill(keys.ability, keys.caster)
 	end
+--	keys.target:AddNewModifier(keys.caster, keys.ability, "modifier_stunned", {duration = 5})
 	ApplyDamage({victim = keys.target, attacker = keys.caster, ability = keys.ability, damage = keys.target:GetMaxHealth(), damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL})
 end

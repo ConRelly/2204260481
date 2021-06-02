@@ -13386,84 +13386,173 @@
 		}
 	}
 }
-"witch_doctor_custom_bonus_unique_1"
-{
-	"ID"					"70080"
-	"BaseClass"				"special_bonus_undefined"
-	"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
-	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilitySpecial"
+
+// Witch Doctor: Death Skull
+	"witch_doctor_custom_death_skull"
 	{
-		"01"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/heroes/witch_doctor_custom_death_skull.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName"			"witch_doctor_death_ward"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
+		"HasScepterUpgrade"				"1"
+		"Maxlevel"						"7"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"1100"
+		"AbilityChannelTime"			"7.0"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"150 225 300 400 500 600 1000"
+		"precache"
 		{
-			"var_type"			"FIELD_INTEGER"
-			"value"				"1"
+			"particle"				"particles/custom/witch_doctor_skull.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_witchdoctor.vsndevts"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"150 500 1250 1750 2250 2750 3300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"int_as_damage"			"100 200 300 400 500 600 700"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"velocity"				"1100"			
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1800"			
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"offset"				"50"			
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"interval"				"1.0"			
+			}
+			"07"
+			{   "var_type"			  "FIELD_INTEGER"
+				"duration"			  "7"
+			}
 		}
 	}
-}
-"witch_doctor_custom_death_skull"
-{
-	"BaseClass"						"ability_lua"
-	"ScriptFile"					"abilities/heroes/witch_doctor_custom_death_skull.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-	"AbilityTextureName"			"witch_doctor_death_ward"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-	"AbilityChannelAnimation"	   "ACT_DOTA_CHANNEL_ABILITY_4"
-	"HasScepterUpgrade"				"1"
-	"Maxlevel"					  "7"
-	"AbilityCastPoint"				"0.3"
-	"AbilityCastRange"				"1100"
-	"AbilityChannelTime"			"7.0"
-	"AbilityCooldown"				"20"
-	"AbilityManaCost"				"150 225 300 400 500 600 1000"
-	"precache"
+// Talent: Witch Doctor: Death Skull: x{vaule} attack faster
+	"witch_doctor_custom_bonus_unique_1"
 	{
-		"particle"				  "particles/custom/witch_doctor_skull.vpcf"
-		"soundfile"				 "soundevents/game_sounds_heroes/game_sounds_witchdoctor.vsndevts"
-	}
-	"AbilitySpecial"
-	{
-		"01"
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"150 500 1250 1750 2250 2750 3300"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"int_as_damage"			"100 200 300 400 500 600 700"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"velocity"				"1100"			
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"range"					"1800"			
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"offset"				"50"			
-		}
-		"06"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"interval"				"1.0"			
-		}
-		"07"
-		{   "var_type"			  "FIELD_INTEGER"
-			"duration"			  "7"
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"2"
+			}
 		}
 	}
-}
+
+// Witch Doctor: Voodoo Restoration
+	"wd_voodoo_restoration"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_witch_doctor/voodoo_restoration"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName"			"witch_doctor_voodoo_restoration"
+		"MaxLevel"						"4"
+		"LevelsBetweenUpgrades"			"5"
+		"AbilityManaCost"				"35 40 45 50"
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_witchdoctor/witchdoctor_voodoo_restoration.vpcf"
+			"particle"					"particles/units/heroes/hero_witchdoctor/witchdoctor_voodoo_restoration_flame.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_witch_doctor.vsndevts"
+		}
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana_per_second"			"12 16 20 24"
+			}
+			"2"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"800"
+				"LinkedSpecialBonus"			"special_bonus_wd_voodoo_restoration_radius"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
+			}
+			"3"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"heal"						"26 94 292 640"
+			}
+			"4"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"heal_interval"				"0.5"
+			}
+			"5"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"heal_spell_amp_pct"		"25"
+			}
+			"6"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"int_to_heal"				"20 30 40 50"
+			}
+		}
+	}
+// Talent: Witch Doctor: Voodoo Restoration: +{vaule}% Max HP heal
+	"special_bonus_wd_voodoo_restoration_heal_pct"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"15"
+			}
+		}
+	}
+// Talent: Witch Doctor: Voodoo Restoration: x{vaule} Radius
+	"special_bonus_wd_voodoo_restoration_radius"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"2"
+			}
+		}
+	}
+
 "zuus_custom_thundergods_wrath"
 {
 	"BaseClass"								"ability_lua"

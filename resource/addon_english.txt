@@ -513,6 +513,21 @@
 	"DOTA_Tooltip_ability_arcane_supremacy_spell_amp"				"%Spell Amp:"
 	"DOTA_Tooltip_modifier_arcane_supremacy_buff"				"Rubick's Blessing"
 	"DOTA_Tooltip_modifier_arcane_supremacy_buff_Description"	""
+
+//Witch Doctor
+	"DOTA_Tooltip_ability_wd_voodoo_restoration"					"Voodoo Restoration"
+	"DOTA_Tooltip_ability_wd_voodoo_restoration_Description"		"Witch Doctor focuses his magic to heal nearby allied units, costing Witch Doctor mana every second Voodoo restoration is active./n<h1><font color='#0094FF'>Aghanim's Scepter</font> + <font color='#0094FF'>Aghanim's Shard</font></h1>Total heal is amplified by %heal_spell_amp_pct%%% of owner's Spell Amplification."
+	"\n<h1><font color='#DE3163'>Super Scepter</font></h1>Healing per second is increased by %int_to_heal%%% of owner's Intelligence."
+	"DOTA_Tooltip_ability_wd_voodoo_restoration_Lore"		"Zharvakko's hocus pocus is not limited only to hexxing his opponents and is quite adept at curing ailments."
+	"DOTA_Tooltip_ability_wd_voodoo_restoration_Note0"		"Healing is done in %heal_interval% second intervals."
+	"DOTA_Tooltip_ability_wd_voodoo_restoration_Note1"		"Can heal Spell Immune units."
+	"DOTA_Tooltip_ability_wd_voodoo_restoration_mana_per_second"	"MANA PER SEC:"
+	"DOTA_Tooltip_ability_wd_voodoo_restoration_heal"				"HEAL:"
+	"DOTA_Tooltip_ability_wd_voodoo_restoration_radius"				"RADIUS:"
+	"DOTA_Tooltip_modifier_wd_voodoo_restoration_heal"					"Voodoo Restoration"
+	"DOTA_Tooltip_modifier_wd_voodoo_restoration_heal_Description"		"The Witch Doctor be healing you!"
+	"DOTA_Tooltip_ability_special_bonus_wd_voodoo_restoration_heal_pct"	"+{s:value}% Max Health Voodoo Restoration"
+	"DOTA_Tooltip_ability_special_bonus_wd_voodoo_restoration_radius"	"x{s:value} Voodoo Restoration Radius"
 	
 //###########################################################################################################################
 	
@@ -617,7 +632,7 @@
 	"DOTA_Tooltip_modifier_unhallowed_satanic_aura"					"Unhallowed Satanic Aura"
 	"DOTA_Tooltip_modifier_unhallowed_satanic_aura_Description"		"Gives %dMODIFIER_PROPERTY_TOOLTIP%%% Lifesteal"
 	"DOTA_Tooltip_modifier_unhallowed_satanic_active"				"Unholy Rage"
-	"DOTA_Tooltip_modifier_unhallowed_satanic_active_Description"	"Increases the lifesteal percentage to %dMODIFIER_PROPERTY_TOOLTIP%%%"
+	"DOTA_Tooltip_modifier_unhallowed_satanic_active_Description"	"Increases lifesteal by %dMODIFIER_PROPERTY_TOOLTIP%%%"
 	
 	"DOTA_Tooltip_ability_item_heart_of_light"				"Heart Of Light"
 	"DOTA_Tooltip_ability_item_heart_of_light_Description"	"<h1>Passive: Heart Of Light Aura</h1>+ %hp_aura% Health<br>+ %int_aura% Intellegence<br><br>Radius: %aura_radius%"
@@ -783,14 +798,16 @@
 	"DOTA_Tooltip_modifier_vampire_robe_aura"					"Vampire Robe Aura"
 	"DOTA_Tooltip_modifier_vampire_robe_aura_Description"		"Has %dMODIFIER_PROPERTY_TOOLTIP%%% Lifesteal, %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% Damage, %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor, %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% Health Regeneration and %dMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% Mana Regeneration"
 	
-	"DOTA_Tooltip_Ability_item_mana_blade"							 "Mana Blade"
-	"DOTA_Tooltip_ability_item_mana_blade_Description"					"<h1>Active: Inhibit</h1> Targets an enemy, slowing it for %duration% seconds.<br><br>Range: %range%\n<h1>Passive: Manabreak</h1>Each attack burns %mana_break% mana from the target, and deals %prc% physical damage per burned mana.\n<h1>Passive: Mana Blade Aura</h1>+ %aura_int% Intellegence<br>+ %aura_damage% Damage<br>+ %aura_agi% Agility<br><br>Radius: %aura_radius%"
-	"DOTA_Tooltip_Ability_item_mana_blade_agi"						 "+$agi"
-	"DOTA_Tooltip_Ability_item_mana_blade_int"						 "+$int"
+	"DOTA_Tooltip_Ability_item_mana_blade"					"Mana Blade"
+	"DOTA_Tooltip_ability_item_mana_blade_Description"		"<h1>Active: Inhibit/Inspire</h1><font color='#FF3721'>On enemy:</font> Slow and dispel.<br><font color='#4AFF32'>On allies:</font> Applies dispel every second.<br><br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span><br>Duration: %duration% seconds<br>Range: %AbilityCastRange%\n<h1><font color='#EC0160'>UP: Satanic LVL 5</font></h1>When used on an ally, at the beginning and end of the effect is applied <span class=\"GameplayValues GameplayVariable\">Strong Dispel</span>.<br>Allows to use on allies during stun.\n<h1>Passive: Manabreak</h1>Each attack burns %mana_break% mana from the target, and deals %prc% physical damage per burned mana.\n<h1>Passive: Mana Blade Aura</h1>+ %aura_int% Intellegence<br>+ %aura_damage% Damage<br>+ %aura_agi% Agility<br><br>Radius: %aura_radius%"
+	"DOTA_Tooltip_Ability_item_mana_blade_agi"				"+$agi"
+	"DOTA_Tooltip_Ability_item_mana_blade_int"				"+$int"
 	"DOTA_Tooltip_modifier_mana_blade_aura"				"Mana Blade Aura"
 	"DOTA_Tooltip_modifier_mana_blade_aura_Description"	"Increases damage by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%, agility by %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS% and intelligence by %dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS%"
 	"DOTA_Tooltip_modifier_mana_blade_debuff"					"Inhibit"
 	"DOTA_Tooltip_modifier_mana_blade_debuff_Description"		"The target is slowed down by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%"
+	"DOTA_Tooltip_modifier_mana_blade_dispel"				"Inspire"
+	"DOTA_Tooltip_modifier_mana_blade_dispel_Description"	"Applies dispel every second."
 	
 	"dota_tooltip_ability_item_ice_aluneth"				"Ice Aluneth"
 	"dota_tooltip_ability_item_ice_aluneth_description"	"<h1>Active: Strafe</h1> Instantly moves the hero 250 units to the right or left.<br>Maximum charges: 10\n<h1>Passive: Aethereal Focus</h1> Increases targeted spell and item cast range by %cast_range%.\n Bonus to reduce cast time interrupts bonus from Arcane Blink"
@@ -1384,7 +1401,7 @@
 	"DOTA_Tooltip_Ability_item_staff_of_light_2_mana_regen"			"+$mana_regen"
 //3
 	"DOTA_Tooltip_Ability_item_staff_of_light_3"				"Staff Of Light"
-	"DOTA_Tooltip_Ability_item_staff_of_light_3_Description"	"<h1>Passive: Wild Spirit</h1>Spirit attacks the closest enemy in the radius: for the ranged hero - %radius_ranged%, for the melee - %radius_melee%.<br>Spirit Damage is equal to the owner's base damage + (%int_bonus_damage%%% <font color=\"#17BFEC\">Intelligence</font> X your level).<br>Damage Type: <font color=\"#0D7DEC\">Magical</font>"
+	"DOTA_Tooltip_Ability_item_staff_of_light_3_Description"	"<h1>Passive: Wild Spirit</h1>Spirit attacks the closest enemy in the radius: for the ranged hero - %radius_ranged%, for the melee - %radius_melee%.<br>Spirit Damage is equal to the owner's base damage + (%int_bonus_damage%%% of (<font color=\"#17BFEC\">Intelligence</font> X your Level)).<br>Damage Type: <font color=\"#0D7DEC\">Magical</font>"
 	"DOTA_Tooltip_Ability_item_staff_of_light_3_hp"					"+$health"
 	"DOTA_Tooltip_Ability_item_staff_of_light_3_primary_attribute"	"+$primary_attribute"
 	"DOTA_Tooltip_Ability_item_staff_of_light_3_mana_regen"			"+$mana_regen"
@@ -6157,10 +6174,6 @@ This ability has a base cooldown of %base_cooldown% seconds, plus %extra_cooldow
 "DOTA_Tooltip_ability_warlock_rain_of_chaos_Description"						"Summons a Golem from the depths, stunning enemies for one second. The Golem lives 40 seconds, takes reduced damage from spells, has Permanent Immolation and Flaming Fists on attack.\nUpgradable by Aghanim's Scepter."
 
 "DOTA_Tooltip_ability_winter_wyvern_winters_curse_Description"		"Winter Wyvern freezes an enemy in place while striking those nearby with a maddening curse which causes them to attack their frozen ally with increased attack speed. The frozen ally and those cursed to attack their ally take less damage from their enemies."
-"DOTA_Tooltip_Ability_witch_doctor_custom_death_skull"							"<font color='#f2da5b'>Death Skull</font>"
-"DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_Description"				"Fires skulls in a direction, dealing damage to the first enemies that they find."
-"DOTA_Tooltip_Ability_witch_doctor_death_ward_Description"						"CANNELED-Summons a deadly ward to attack all enemies, last maximum %duration_tooltip% seconds
-The ward will have increased dmg base on hero total dmg and after lvl 30 it will scale from other stats too(read the skill on the unit death ward for more info)"
 
 "mystic_dragon_endless_wisdom"													  "Endless wisdom"
 "DOTA_Tooltip_ability_mystic_dragon_endless_wisdom"									"Endless wisdom"
@@ -6170,8 +6183,10 @@ The ward will have increased dmg base on hero total dmg and after lvl 30 it will
 "DOTA_Tooltip_modifier_mystic_dragon_endless_wisdom_buff"					"Endless wisdom"
 "DOTA_Tooltip_modifier_mystic_dragon_endless_wisdom_buff_Description"		"Dragons knows more answers, than you have questions..."
 
-
-Upgradeable by Aghanim's Scepter."
+"DOTA_Tooltip_Ability_witch_doctor_custom_death_skull"							"<font color='#f2da5b'>Death Skull</font>"
+"DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_Description"				"Fires skulls in a direction, dealing damage to the first enemies that they find."
+"DOTA_Tooltip_Ability_witch_doctor_death_ward_Description"						"CANNELED-Summons a deadly ward to attack all enemies, last maximum %duration_tooltip% seconds./n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Death Skull shoots at your attack speed."
+The ward will have increased dmg base on hero total dmg and after lvl 30 it will scale from other stats too(read the skill on the unit death ward for more info)"
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_duration"					"CHANNEL TIME:"
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_damage"					"DAMAGE:"
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_int_as_damage"			"%INT AS BONUS DAMAGE:"
@@ -6198,7 +6213,7 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_Ability_rattletrap_custom_bonus_unique_3"		  "+{s:value} Armor in Battle Mode"
 "DOTA_Tooltip_Ability_rattletrap_custom_bonus_unique_4"		  "+{s:value}% Magic Resistancein Battle Mode"
 "DOTA_Tooltip_Ability_slark_custom_bonus_unique_1"		  "+{s:value} attacks to Pounce"
-"DOTA_Tooltip_Ability_witch_doctor_custom_bonus_unique_1"		  "Death Skull shoots twice"
+"DOTA_Tooltip_Ability_witch_doctor_custom_bonus_unique_1"		  "Death Skull attacks x{s:value} faster"
 "DOTA_Tooltip_ability_ancient_increase_stats"									"Ancient"
 "DOTA_Tooltip_ability_ancient_increase_stats_Description"						"Every round increases the ancient's health and armor. Completely healed on each round."
 "DOTA_Tooltip_ability_ancient_increase_stats_Lore"								"Wouldn't want this to die, would we?"
@@ -8273,6 +8288,8 @@ Required Level: %required_level%
 		"DOTA_Tooltip_Ability_item_mjz_satanic_5_Lore"							"Immense power at the cost of your soul."
 		"DOTA_Tooltip_Ability_item_mjz_satanic_5_bonus_strength"				"+$str"
 		"DOTA_Tooltip_Ability_item_mjz_satanic_5_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_modifier_mjz_satanic_5_active"				"Unholy Rage"
+		"DOTA_Tooltip_modifier_mjz_satanic_5_active_Description"	"Increases lifesteal by %dMODIFIER_PROPERTY_TOOLTIP%%%"
 		//<<<<
 
 		//>>>>	MJZ Shiva's Guard LVL 2

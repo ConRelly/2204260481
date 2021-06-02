@@ -934,8 +934,11 @@
 
 "npc_dota_hero_witch_doctor"
 {
+	"Ability2"		"wd_voodoo_restoration"
 	"Ability5"		"witch_doctor_custom_death_skull"
-	"Ability14"		"special_bonus_attack_speed_140"
+	"Ability13"		"special_bonus_attack_speed_200"
+	"Ability14"		"special_bonus_wd_voodoo_restoration_radius"
+	"Ability16"		"special_bonus_wd_voodoo_restoration_heal_pct"
 	"Ability17"		"witch_doctor_custom_bonus_unique_1"
 	"AttributeIntelligenceGain"  "8.6"
 	"AttributeAgilityGain"	   "9.2"
