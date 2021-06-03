@@ -164,7 +164,7 @@ function modifier_mjz_skywrath_mage_mystic_flare_thinker:OnIntervalThink()
 		self.damageTable.victim = hero
 		self.damageTable.damage = self.damage / #heroes
 		if HasSuperScepter(self:GetCaster()) then
-			self.damageTable.damage = self.damage
+			self.damageTable.damage = self.damage * 2
 		end
 		ApplyDamage( self.damageTable )
 	end

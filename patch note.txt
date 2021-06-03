@@ -1088,11 +1088,11 @@ Visit Discord for a complete patch note(link in workshop discussions).
 * Fixed: Now Greater Demon Talon cannot be disassembled when switched
 * Fixed: Greater Dragon Head did not give an improved aura when there was an aura from Dragon Head
 * Fixed some aghanim laser errors, OBS, etc.
-* other stuff
+* Many small changes and other stuff.
 
 
 
-*Update patch notes13 can be found on the new map version:
+*Update patch notes14 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussion for links)
 
