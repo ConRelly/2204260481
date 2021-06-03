@@ -1092,7 +1092,13 @@ Visit Discord for a complete patch note(link in workshop discussions).
 
 
 
-*Update patch notes14 can be found on the new map version:
+* Fixed Death Skull (Witch Doctor) effects
+* Buffed Voodoo Restoration (Witch Doctor)
+* Reworked Mana Blade active
+
+
+
+*Update patch notes13 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussion for links)
 

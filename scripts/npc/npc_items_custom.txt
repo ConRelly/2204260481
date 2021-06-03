@@ -2411,11 +2411,6 @@
 			"var_type"					"FIELD_INTEGER"
 			"projectile_speed"			"1275"
 		}
-		"11"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"tooltip_range"				"800"
-		}
 	}
 }
 "item_recipe_great_king_bar"
@@ -4740,11 +4735,6 @@
 		{
 			"var_type"					"FIELD_INTEGER"
 			"projectile_speed"			"1275"
-		}
-		"11"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"tooltip_range"				"800"
 		}
 	}
 }
@@ -15923,10 +15913,10 @@
 	//=================================================================================================================
 	"item_mjz_satanic_5"
 	{
-		"BaseClass"						"item_satanic"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/mjz_satanic.lua"
 		"AbilityTextureName"			"mjz_satanic"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"FightRecapLevel"				"2"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityCooldown"				"30.0"
 		"AbilitySharedCooldown"			"satanic"
@@ -30736,8 +30726,8 @@
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"int_bonus_damage"		"10" //tooltip
-			}			
+				"int_bonus_damage"		"10"
+			}
 		}
 	}
 // Staff of Light 3 Recipe
@@ -34749,8 +34739,8 @@
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_int_dmg"			"25" // tooltip for SS
-			}			
+				"bonus_int_dmg"			"25"
+			}
 		}
 	}
 // Spirit Guardian Recipe
@@ -35848,8 +35838,8 @@
 	{
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"custom/item_mana_blade"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
@@ -35857,6 +35847,7 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"AbilityCastPoint"				"0"
+		"AbilityCastRange"				"600"
 		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"0"
 		"ItemQuality"					"epic"
@@ -35864,57 +35855,52 @@
 		"ShouldBeSuggested"				"1"
 		"AbilitySpecial"
 		{
-			"01"
+			"1"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"agi"					"325"
 			}
-			"02"
+			"2"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"int"					"252"
 			}
-			"03"
+			"3"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"duration"				"4"
 			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"600"
-			}
-			"05"
+			"4"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"mana_break"			"20"
 			}
-			"06"
+			"5"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"prc"					"1000"
 			}
-			"07"
+			"6"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"aura_int"				"420"
 			}
-			"08"
+			"7"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"aura_agi"				"420"
 			}
-			"09"
+			"8"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"aura_damage"			"4100"
 			}
-			"10"
+			"9"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"aura_radius"			"7200"
 			}
-			"11"
+			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"slow"					"-100"
@@ -35922,11 +35908,11 @@
 		}
 		"OnSpellStart"
 		{
-			"ApplyModifier"
+			"RunScript"
 			{
-				"Target"			"TARGET"
-				"ModifierName"		"modifier_mana_blade_debuff"
-				"Duration"			"%duration"
+				"ScriptFile"		"items/mana_blade.lua"
+				"Function"			"OnSpellStart"
+				"duration"			"%duration"
 			}
 		}
 		"Modifiers"
@@ -35946,8 +35932,8 @@
 				{
 					"RunScript"
 					{
-						"ScriptFile"	 "items/mana_blade.lua"
-						"Function"		 "OnAttackLanded"
+						"ScriptFile"	"items/mana_blade.lua"
+						"Function"		"OnAttackLanded"
 					}
 				}
 				"Properties"
@@ -35979,6 +35965,32 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%slow"
+				}
+			}
+			"modifier_mana_blade_dispel"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"0"
+				"TextureName"		"custom/item_mana_blade"
+				"EffectName"		"particles/items_fx/diffusal_slow.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"ThinkInterval"		"1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/mana_blade.lua"
+						"Function"		"Dispel"
+					}
+				}
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"items/mana_blade.lua"
+						"Function"		"DispelEnd"
+					}
 				}
 			}
 		}
