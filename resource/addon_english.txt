@@ -516,8 +516,8 @@
 
 //Witch Doctor
 	"DOTA_Tooltip_ability_wd_voodoo_restoration"					"Voodoo Restoration"
-	"DOTA_Tooltip_ability_wd_voodoo_restoration_Description"		"Witch Doctor focuses his magic to heal nearby allied units, costing Witch Doctor mana every second Voodoo restoration is active./n<h1><font color='#0094FF'>Aghanim's Scepter</font> + <font color='#0094FF'>Aghanim's Shard</font></h1>Total heal is amplified by %heal_spell_amp_pct%%% of owner's Spell Amplification."
-	"\n<h1><font color='#DE3163'>Super Scepter</font></h1>Healing per second is increased by %int_to_heal%%% of owner's Intelligence."
+	"DOTA_Tooltip_ability_wd_voodoo_restoration_Description"		"Witch Doctor focuses his magic to heal nearby allied units, costing Witch Doctor mana every second Voodoo restoration is active.\n<h1><font color='#0094FF'>Aghanim's Scepter</font> + <font color='#0094FF'>Aghanim's Shard</font></h1>Total heal is amplified by %heal_spell_amp_pct%%% of owner's Spell Amplification.
+	\n<h1><font color='#DE3163'>Super Scepter</font></h1>Healing per second is increased by %int_to_heal%%% of owner's Intelligence."
 	"DOTA_Tooltip_ability_wd_voodoo_restoration_Lore"		"Zharvakko's hocus pocus is not limited only to hexxing his opponents and is quite adept at curing ailments."
 	"DOTA_Tooltip_ability_wd_voodoo_restoration_Note0"		"Healing is done in %heal_interval% second intervals."
 	"DOTA_Tooltip_ability_wd_voodoo_restoration_Note1"		"Can heal Spell Immune units."
@@ -5199,6 +5199,7 @@ The extra targets will not receive other attack effects (such as critical strike
 "DOTA_Tooltip_ability_custom_death_ward_Note2"		"Death Ward attacks once every 0.22 seconds."
 "DOTA_Tooltip_ability_custom_death_ward_damage"			"DAMAGE:"
 
+
 "npc_boss_winter_wyvern"								"Winter Wyvern (Boss)"
 "DOTA_Tooltip_ability_custom_arctic_burn"						"Arctic Burn"
 "DOTA_Tooltip_ability_custom_arctic_burn_Description"			"Winter Wyvern soars upon an arctic wind, granting her unobstructed movement and allowing her to exhale a blistering chill into each attack. While soaring, her attacks travel further and faster, and slow enemies with a magical freeze that strips them of %percent_damage%%% of their current health each second. Her sight is also hardened against night's chill, granting her %night_vision_bonus% additional vision range at night while soaring.\nUpgradable by Aghanim's Scepter."
@@ -6184,8 +6185,8 @@ This ability has a base cooldown of %base_cooldown% seconds, plus %extra_cooldow
 "DOTA_Tooltip_modifier_mystic_dragon_endless_wisdom_buff_Description"		"Dragons knows more answers, than you have questions..."
 
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull"							"<font color='#f2da5b'>Death Skull</font>"
-"DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_Description"				"Fires skulls in a direction, dealing damage to the first enemies that they find."
-"DOTA_Tooltip_Ability_witch_doctor_death_ward_Description"						"CANNELED-Summons a deadly ward to attack all enemies, last maximum %duration_tooltip% seconds./n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Death Skull shoots at your attack speed."
+"DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_Description"				"Fires skulls in a direction, dealing damage to the first enemies that they find.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Death Skull shoots at your attack speed."
+"DOTA_Tooltip_Ability_witch_doctor_death_ward_Description"						"CANNELED-Summons a deadly ward to attack all enemies, last maximum %duration_tooltip% seconds."
 The ward will have increased dmg base on hero total dmg and after lvl 30 it will scale from other stats too(read the skill on the unit death ward for more info)"
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_duration"					"CHANNEL TIME:"
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_damage"					"DAMAGE:"

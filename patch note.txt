@@ -1095,7 +1095,7 @@ Visit Discord for a complete patch note(link in workshop discussions).
 * Fixed Death Skull (Witch Doctor) effects
 * Buffed Voodoo Restoration (Witch Doctor)
 * Reworked Mana Blade active
-
+* Buffed Sky SS effect.
 
 
 *Update patch notes13 can be found on the new map version:

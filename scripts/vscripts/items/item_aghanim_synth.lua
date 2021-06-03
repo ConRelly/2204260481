@@ -34,6 +34,7 @@ modifier_super_scepter = modifier_super_scepter or class({})
 function modifier_super_scepter:IsDebuff() return false end
 function modifier_super_scepter:IsHidden() return true end
 function modifier_super_scepter:IsPurgable() return false end
+function modifier_super_scepter:AllowIllusionDuplicate() return true end
 function modifier_super_scepter:GetEffectName() return "particles/custom/items/super_scepter/super_scepter_amb.vpcf" end
 function modifier_super_scepter:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_super_scepter:OnDestroy()
