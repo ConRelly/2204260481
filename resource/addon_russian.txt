@@ -516,8 +516,8 @@
 
 //Witch Doctor
 	"DOTA_Tooltip_ability_wd_voodoo_restoration"					"Voodoo Restoration"
-	"DOTA_Tooltip_ability_wd_voodoo_restoration_Description"		"Герой направляет свои чары на лечение ближайших союзников, теряя ману каждую секунду действия этой способности./n<h1><font color='#0094FF'>Aghanim's Scepter</font> + <font color='#0094FF'>Aghanim's Shard</font></h1>Общее лечение усиливается на %heal_spell_amp_pct%%% от силы заклинаний владельца."
-	"\n<h1><font color='#DE3163'>Super Scepter</font></h1>Лечение в секунду увеличивается на %int_to_heal%%% от интеллекта владельца."
+	"DOTA_Tooltip_ability_wd_voodoo_restoration_Description"		"Герой направляет свои чары на лечение ближайших союзников, теряя ману каждую секунду действия этой способности.\n<h1><font color='#0094FF'>Aghanim's Scepter</font> + <font color='#0094FF'>Aghanim's Shard</font></h1>Общее лечение усиливается на %heal_spell_amp_pct%%% от силы заклинаний владельца."
+//	"\n<h1><font color='#DE3163'>Super Scepter</font></h1>Лечение в секунду увеличивается на %int_to_heal%%% от интеллекта владельца."
 	"DOTA_Tooltip_ability_wd_voodoo_restoration_Lore"		"Фокусы Жарвакко могут не только околдовать врагов, но и исцелить от различных болезней."
 	"DOTA_Tooltip_ability_wd_voodoo_restoration_Note0"		"Лечение происходит каждые %heal_interval% секунды."
 	"DOTA_Tooltip_ability_wd_voodoo_restoration_Note1"		"Лечит союзников, невосприимчивых к магии."
@@ -3316,7 +3316,7 @@
 	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_target_count_scepter"	"Scepter Upgrade Target Count: "
 	"DOTA_Tooltip_ability_mjz_skywrath_mage_arcane_bolt_search_radius"			"Target Search Radius: "	
 	"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare"					"Mystic Flare"
-	"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare_Description"		"Skywrath Mage uses his ultimate magical ability to conjure a precise and violent mystical field that lays waste to his adversaries. Deals massive damage distributed evenly among any Heroes in the area over %duration% seconds.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Урон не разделяется от количества существ."
+	"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare_Description"		"Skywrath Mage uses his ultimate magical ability to conjure a precise and violent mystical field that lays waste to his adversaries. Deals massive damage distributed evenly among any Heroes in the area over %duration% seconds.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Урон удвоен и не разделяется от количества существ."
 	"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare_Lore"				"Only the most practiced of Skywrath sorcerers could hope to shape the skies into such a storm."
 	"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare_Note0"				"Mystic Flare only affects Heroes; it does not damage illusions or creep heroes."
 	"DOTA_Tooltip_ability_mjz_skywrath_mage_mystic_flare_Note1"				"Spell immune enemies do not count toward the damage distribution."
@@ -5227,6 +5227,7 @@
 	"DOTA_Tooltip_ability_custom_death_ward_Note2"		"Death Ward attacks once every 0.22 seconds."
 	"DOTA_Tooltip_ability_custom_death_ward_damage"			"Уpoн:"
 
+
 	"npc_boss_winter_wyvern"								"Winter Wyvern (Boss)"
 	"DOTA_Tooltip_ability_custom_arctic_burn"						"Arctic Burn"
 	"DOTA_Tooltip_ability_custom_arctic_burn_Description"			"Winter Wyvern soars upon an arctic wind, granting her unobstructed movement and allowing her to exhale a blistering chill into each attack. While soaring, her attacks travel further and faster, and slow enemies with a magical freeze that strips them of %percent_damage%%% of their current health each second. Her sight is also hardened against night's chill, granting her %night_vision_bonus% additional vision range at night while soaring.\nУлyчшaeтcя c Aghanim's Scepter."
@@ -6212,8 +6213,8 @@
 	"DOTA_Tooltip_modifier_mystic_dragon_endless_wisdom_buff_Description"		"Dragons knows more answers, than you have questions..."
 
 
-	"DOTA_Tooltip_ability_witch_doctor_custom_death_skull"							"<font color='#f2da5b'>Death Skull</font>"
-	"DOTA_Tooltip_ability_witch_doctor_custom_death_skull_Description"				"Выпускает черепа в выбранном направлении, нанося урон первому врагоу, который попадётся на пути.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Death Skull атакует со скоростью атаки героя."
+	"DOTA_Tooltip_ability_witch_doctor_custom_death_skull"					"<font color='#f2da5b'>Death Skull</font>"
+	"DOTA_Tooltip_ability_witch_doctor_custom_death_skull_Description"		"Выпускает черепа в выбранном направлении, нанося урон первому врагоу, который попадётся на пути.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Death Skull атакует со скоростью атаки героя."
 	"DOTA_Tooltip_ability_witch_doctor_death_ward_Description"		"ПРЕРЫВАЕМАЯ — призывает смертоносный тотем, атакующий вражеских героев. Действует до %duration_tooltip% сек."
 	The ward will have increased dmg base on hero total dmg and after lvl 30 it will scale from other stats too(read the skill on the unit death ward for more info)"
 
