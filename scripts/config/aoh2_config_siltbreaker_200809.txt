@@ -94,7 +94,7 @@
 			{
 				"NPCName"				"npc_boss_kobold_foreman2"
 				//"NPCName"               "npc_boss_randomstuff_aiolos"
-				//"NPCName"               "npc_dota_creature_siltbreaker_2"
+				//"NPCName"               "npc_boss_zeus"
 				//"NPCName"               "npc_dota_boss_aghanim"
 				//"NPCName"               "npc_dota_boss_void_spirit"
 				//"NPCName"               "npc_boss_skeleton_king_angry_new"

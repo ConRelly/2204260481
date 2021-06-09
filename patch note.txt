@@ -1096,8 +1096,7 @@ Visit Discord for a complete patch note(link in workshop discussions).
 * Buffed Voodoo Restoration (Witch Doctor)
 * Reworked Mana Blade active
 * Buffed Skywrath Mage's Super Scepter effect.
-Guessing game Answer : "-lasers Keen" (reset in next patch probably). same rules for typing : It does not work if game time is under min 30 , game is paused  or cheats are enabled.
-
+Guessing game Answer: "-lasers Keen" (reset in next patch probably). same rules for typing: It does not work if game time is under min 30, the game is paused or cheats are enabled.
 
 
 *Update patch notes13 can be found on the new map version:
