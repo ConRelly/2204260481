@@ -29,6 +29,7 @@
 	"dota_ability_variable_primary_attribute"		"Primary Attribute"					// $primary_attribute
 	"dota_ability_variable_secondary_stats"			"Other Attributes"					// $secondary_stats
 	"dota_ability_variable_base_damage"				"Base Damage"						// $base_damage
+	"dota_ability_variable_buff_amp"				"Buff Duration"						// $buff_amp
 
 //############################################################################################################################
 
@@ -380,6 +381,17 @@
 	"dota_tooltip_modifier_picasso_purple_mix_description"		"Deals %dMODIFIER_PROPERTY_TOOLTIP%%% ATK of AOE Physical DMG."
 	"dota_tooltip_modifier_picasso_green_mix"					"Green"
 	"dota_tooltip_modifier_picasso_green_mix_description"		"Instantly heal the owner for %dMODIFIER_PROPERTY_TOOLTIP%%% HP."
+
+
+	"DOTA_Tooltip_ability_item_titan_relic"					"Titan Relic"
+	"DOTA_Tooltip_ability_item_titan_relic_description"		"<h1>Passive: Skin Graft</h1>Applies dispel.<br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span><br><br>Every 3rd dispel becomes <span class=\"GameplayValues GameplayVariable\">Strong Dispel</span> and heals %heal_pct%%% HP."
+	"DOTA_Tooltip_ability_item_titan_relic_base_attack_damage"		"%+$damage"
+	"DOTA_Tooltip_ability_item_titan_relic_magic_resistance"		"%+$spell_resist"
+	"DOTA_Tooltip_ability_item_titan_relic_status_resistance"		"%+$status_resist"
+	"DOTA_Tooltip_ability_item_titan_relic_spell_amp"				"%+$spell_amp"
+	"DOTA_Tooltip_ability_item_titan_relic_bonus_ms"				"%+$move_speed"
+	"DOTA_Tooltip_ability_item_titan_relic_debuff_amp"				"%+$debuff_amp"
+	"DOTA_Tooltip_ability_item_titan_relic_buff_amp"				"%+$buff_amp"
 
 //############################################################################################################################
 
@@ -8471,7 +8483,6 @@ Required Level: %required_level%
 "dota_tooltip_modifier_pangolier_heartpiercer_oaa_debuff"									   "Heartpiercer"
 "dota_tooltip_modifier_pangolier_heartpiercer_oaa_debuff_description"						   "Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% and slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
-"dota_tooltip_ability_item_silver_edge_note0"												 "Backstab cannot miss.Echosabre CD 0.15"
 
 "npc_dota_creature_snowball_tuskar"														   "Amator Player"
 "npc_dota_creature_snowball_tuskar_2"														 "Zidane"
@@ -9212,7 +9223,7 @@ Contains all random skills"
 	   "dota_tooltip_abilitY_item_removed_skill"				 "Removed skill prof"
 	   "dota_tooltip_abilitY_item_removed_skill_description"	 "You need 3 of them to combine in a Random Ability(Rare) item Or One + Enchanter(open shop and hover mouse over recipe)"
 	   "dota_tooltip_abilitY_item_greater_elemental"				  "Greater Elemental"
-	   "dota_tooltip_abilitY_item_greater_elemental_description"	  "Used for Avanced items (for now only Maple's Armor)"
+	   "dota_tooltip_abilitY_item_greater_elemental_description"	  "Used for Avanced items."
 	   "dota_tooltip_abilitY_item_remove_doomskill"			  "Remove Empty Skill"
 	   "dota_tooltip_abilitY_item_remove_doomskill_description"  "Move your empty skill first in to a place higher then your last key bind(default is R)"
 	   "dota_tooltip_ability_temporary_slot_used"				 "Empty skill"

@@ -126,9 +126,12 @@ function modifier_ritual_shovel:OnCreated()
 	if not IsServer() then return end
 	if not self:GetCaster():HasModifier("modifier_shovel_curse") then self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_shovel_curse", {}) end
 end
-function modifier_ritual_shovel:DeclareFunctions() return {MODIFIER_PROPERTY_HEALTH_BONUS} end
-function modifier_ritual_shovel:GetModifierHealthBonus() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_health") end end
+function modifier_ritual_shovel:DeclareFunctions() return {MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS} end
+function modifier_ritual_shovel:GetModifierHealthBonus() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp") end end
+function modifier_ritual_shovel:GetModifierBonusStats_Strength() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("str") end end
+function modifier_ritual_shovel:GetModifierPhysicalArmorBonus() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("armor") end end
 function modifier_ritual_shovel:CheckState() return {[MODIFIER_STATE_LOW_ATTACK_PRIORITY] = true} end
+
 
 modifier_shovel_curse = class({})
 function modifier_shovel_curse:IsHidden() return false end

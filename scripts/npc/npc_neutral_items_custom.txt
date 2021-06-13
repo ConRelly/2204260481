@@ -100,6 +100,7 @@
 			"item_pirate_hat"					"1"
 			"item_custom_ex_machina"			"1"
 			"item_maple_shield_lua"				"1"
+			"item_titan_relic"					"1"
 		}
 	}
 }

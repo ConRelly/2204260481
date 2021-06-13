@@ -1099,6 +1099,14 @@ Visit Discord for a complete patch note(link in workshop discussions).
 Guessing game Answer: "-lasers Keen" (reset in next patch probably). same rules for typing: It does not work if game time is under min 30, the game is paused or cheats are enabled.
 
 
+
+* Fixed Unholy Rage (Satanic) icon
+* Fixed internal bugs: Flicker, Trident, Leveller, Silver Edge (normal)
+* Fixed crash when Spirit Lance (Phantom Lancer) is reflected
+* Force Boots HP regen increased from 30 to 90
+* Added Titan Relic
+
+
 *Update patch notes13 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussion for links)

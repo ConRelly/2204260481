@@ -35,8 +35,14 @@ if IsServer() then
 
 
     function modifier_custom_spell_reflect:GetReflectSpell(keys)
-        local parent = self:GetParent()
+		local exception_spell = {
+			["bounty_hunter_shuriken_toss"] = true,
+			["phantom_lancer_spirit_lance"] = true,
+		}
+		local reflected_spell_name = keys.ability:GetAbilityName()
+		if exception_spell[reflected_spell_name] then return end
 
+        local parent = self:GetParent()
         local time = GameRules:GetGameTime()
 
         if parent:PassivesDisabled() or self.last_time + self.cooldown > time then
@@ -49,10 +55,7 @@ if IsServer() then
 
         if usedAbilityCaster:GetTeamNumber() == parent:GetTeamNumber() or usedAbility.isReflection then
             return
-        end
-        if usedAbilityName == "bounty_hunter_shuriken_toss" then
-            return
-        end    
+        end   
         local ability = parent:FindAbilityByName(usedAbilityName)
 
         if not ability then -- spell was never reflected

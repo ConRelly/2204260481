@@ -40279,7 +40279,7 @@
 	"warrior_dispersion"
 	{
 		"ID"							"70044"
-		"BaseClass"					 "spectre_dispersion"
+		"BaseClass"						"spectre_dispersion"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySpecial"
@@ -40301,5 +40301,4 @@
 			}			
 		}
 	}
-
 }

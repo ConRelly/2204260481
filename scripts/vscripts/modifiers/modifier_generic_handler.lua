@@ -36,16 +36,18 @@ function modifier_generic_handler:OnAbilityFullyCast(keys)
 end
 
 function modifier_generic_handler:DeclareFunctions()
-	return {-- MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+	return {--MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
 		MODIFIER_EVENT_ON_TAKEDAMAGE, MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE, MODIFIER_EVENT_ON_ABILITY_FULLY_CAST}
 end
 
 -- Damage amp/reduction handler
---function modifier_generic_handler:GetModifierIncomingDamage_Percentage()
---	if IsServer() then
---		return self:GetParent():GetIncomingDamagePct()
---	end
---end
+--[[
+function modifier_generic_handler:GetModifierIncomingDamage_Percentage()
+	if IsServer() then
+		return self:GetParent():GetIncomingDamagePct()
+	end
+end
+]]
 
 --- Enum DamageCategory_t
 -- DOTA_DAMAGE_CATEGORY_ATTACK = 1

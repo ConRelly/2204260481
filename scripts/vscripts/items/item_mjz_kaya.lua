@@ -16,13 +16,7 @@ function modifier_item_mjz_kaya:IsPurgable() return false end
 function modifier_item_mjz_kaya:DeclareFunctions()
 	return {MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE}
 end
-function modifier_item_mjz_kaya:OnCreated()
-	self.bonus_int = self:GetAbility():GetSpecialValueFor("bonus_intellect")
-	self.spell_amp = self:GetAbility():GetSpecialValueFor("spell_amp")
-	self.spell_lifesteal_amp = self:GetAbility():GetSpecialValueFor("spell_lifesteal_amp")
-	self.mana_regen_multiplier = self:GetAbility():GetSpecialValueFor("mana_regen_multiplier")
-end
-function modifier_item_mjz_kaya:GetModifierBonusStats_Intellect() if self:GetAbility() then return self.bonus_int end end
-function modifier_item_mjz_kaya:GetModifierMPRegenAmplify_Percentage() if self:GetAbility() then return self.mana_regen_multiplier end end
-function modifier_item_mjz_kaya:GetModifierSpellLifestealRegenAmplify_Percentage() if self:GetAbility() then return self.spell_lifesteal_amp end end
-function modifier_item_mjz_kaya:GetModifierSpellAmplify_Percentage() if self:GetAbility() then return self.spell_amp end end
+function modifier_item_mjz_kaya:GetModifierBonusStats_Intellect() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_intellect") end end
+function modifier_item_mjz_kaya:GetModifierMPRegenAmplify_Percentage() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana_regen_multiplier") end end
+function modifier_item_mjz_kaya:GetModifierSpellLifestealRegenAmplify_Percentage() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("spell_lifesteal_amp") end end
+function modifier_item_mjz_kaya:GetModifierSpellAmplify_Percentage() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("spell_amp") end end

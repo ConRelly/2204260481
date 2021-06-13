@@ -17,7 +17,7 @@ function AOHGameMode:OnPlayerChat(keys)
 		Notifications:TopToAll({text="Second part Enabled", style={color="red"}, duration=5})
 		self._flPrepTimeBetweenRounds = 12
 	end
-	if keys.text == "-all" and not self._endlessMode and not self._hardMode and not self._doubleMode and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+	if keys.text == "-all" and (not self._endlessMode or not self._hardMode or not self._doubleMode) and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		self._endlessMode = true
 		self._hardMode = true
 		self._doubleMode = true
@@ -25,14 +25,14 @@ function AOHGameMode:OnPlayerChat(keys)
 		self._flPrepTimeBetweenRounds = 12
 		self:_ReadGameConfiguration()
 	end
-	if keys.text == "-fullhard" and not self._endlessMode and not self._hardMode and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+	if keys.text == "-fullhard" and (not self._endlessMode or not self._hardMode) and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		self._endlessMode = true
 		self._hardMode = true
 		Notifications:TopToAll({text="Full Game Hard Enabled", style={color="red"}, duration=5})
 		self._flPrepTimeBetweenRounds = 12
 		self:_ReadGameConfiguration()
 	end
-	if keys.text == "-fullgame" and not self._endlessMode and not self._hardMode and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+	if keys.text == "-fullgame" and (not self._endlessMode or not self._hardMode) and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		self._endlessMode = true
 		self._hardMode = true
 		Notifications:TopToAll({text="Full Game Enabled (hard only) ", style={color="red"}, duration=5})
