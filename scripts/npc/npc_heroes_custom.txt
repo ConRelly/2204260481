@@ -724,6 +724,7 @@
 {
 	"Ability2"	  "skywrath_mage_custom_concussive_shot"
 	"Ability3"	  "skywrath_mage_custom_ancient_seal"
+	"Ability14"		"special_bonus_exp_boost_25"
 	"Ability15"		"special_bonus_spell_amplify_25"
 	"Ability17"		"special_bonus_gold_income_300"
 	"Ability16"		"special_bonus_cooldown_reduction_25"

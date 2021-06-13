@@ -15549,10 +15549,21 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"850" // Cookie Restores Health
+				"value"				"9850" // Cookie Restores Health
 			}
 		}
 	}
+	"special_bonus_unique_ogre_magi"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"120" 
+			}
+		}
+	}	
 	"pangolier_lucky_shot"
 	{
 		"AbilitySpecial"

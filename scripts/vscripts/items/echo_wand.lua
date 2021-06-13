@@ -218,6 +218,7 @@ if IsServer() then
 		blood_madness = true,
 		zanto_gari = true,
 		arcane_supremacy = true,
+		item_illusionsts_cape = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,
@@ -291,6 +292,64 @@ if IsServer() then
 						if not keys.target:IsNull() and IsValidEntity(keys.target) then
 							self.ability:StartCooldown(cooldown * attacker:GetCooldownReduction())
 							self.echo:OnSpellStart()
+							if attacker:HasModifier("modifier_multicast_datadriven") then
+								local chance = RandomInt(1, 100)
+								if HasSuperScepter(attacker) then
+									chance = chance / 2
+								end	
+								local effect = "particles/econ/items/ogre_magi/ogre_magi_jackpot/ogre_magi_jackpot_multicast.vpcf"
+								if chance < 5 then	
+									for i= 1, 4 do
+										Timers:CreateTimer({
+											endTime = 0.1 + i * 0.3, 
+											callback = function()
+												if self.echo and not self.echo:IsNull() and IsValidEntity(self.echo) then
+													self.echo:OnSpellStart()
+												end	
+											end
+										})
+									end
+									local effect_cast = ParticleManager:CreateParticle(effect, PATTACH_OVERHEAD_FOLLOW, attacker)
+									ParticleManager:SetParticleControl(effect_cast, 1, Vector(4, 0, 4))									
+								elseif chance < 10 then								
+									for i= 1 , 3 do
+										Timers:CreateTimer({
+											endTime = 0.1 + i * 0.3, 
+											callback = function()
+												if self.echo and not self.echo:IsNull() and IsValidEntity(self.echo) then
+													self.echo:OnSpellStart()
+												end	
+											end
+										})
+									end
+									local effect_cast = ParticleManager:CreateParticle(effect, PATTACH_OVERHEAD_FOLLOW, attacker)
+									ParticleManager:SetParticleControl(effect_cast, 1, Vector(3, 0, 3))								
+								elseif chance < 15 then
+									for i= 1 , 2 do
+										Timers:CreateTimer({
+											endTime = 0.1 + i * 0.3, 
+											callback = function()
+												if self.echo and not self.echo:IsNull() and IsValidEntity(self.echo) then
+													self.echo:OnSpellStart()
+												end
+											end
+										})
+										local effect_cast = ParticleManager:CreateParticle(effect, PATTACH_OVERHEAD_FOLLOW, attacker)
+										ParticleManager:SetParticleControl(effect_cast, 1, Vector(2, 0, 0))										
+									end	
+								elseif chance < 25 then
+									Timers:CreateTimer({
+										endTime = 0.3, 
+										callback = function()
+											if self.echo and not self.echo:IsNull() and IsValidEntity(self.echo) then
+												self.echo:OnSpellStart()
+											end
+										end
+									})
+									local effect_cast = ParticleManager:CreateParticle(effect, PATTACH_OVERHEAD_FOLLOW, attacker)
+									ParticleManager:SetParticleControl(effect_cast, 1, Vector(1, 0, 0))											
+								end			
+							end	
 							--self.echo:SetChanneling(true)
 							--self.echo:EndChannel(true)
 							--self.echo:UseResources(true, false, false)

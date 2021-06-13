@@ -35,6 +35,12 @@ function modifier_dragonborn:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLL
 
 function modifier_dragonborn:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
+	--[[if self:GetParent() ~= nil and self:GetParent():IsRealHero() then
+		local nWingsParticleIndex = ParticleManager:CreateParticle("particles/avalon/wings/tian_gang_zhan_yi/tian_gang_zhan_yi_lv04_p.vpcf", PATTACH_CENTER_FOLLOW, self:GetParent())
+		--ParticleManager:SetParticleControl(nWingsParticleIndex, 0, self:GetParent():GetAbsOrigin())
+		ParticleManager:SetParticleControlEnt(nWingsParticleIndex, 5, self:GetParent(), PATTACH_CENTER_FOLLOW, "attach_origin", self:GetParent():GetAbsOrigin(), true)
+		self:AddParticle(nWingsParticleIndex, false, false, -1, false, false)
+	end]]	--was just testing some wings (but not necesary for this item), Can't center them on the back, they seems to be created for a custom attach.
 end
 function modifier_dragonborn:DeclareFunctions()
 	return  {

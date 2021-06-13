@@ -12282,6 +12282,7 @@
 			//技能效果
 			"particle"		"particles/units/heroes/hero_tusk/tusk_ice_shards_projectile.vpcf"
 			"particle" 		"particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_frostbite.vpcf"
+			"particle"      "particles/avalon/wings/tian_gang_zhan_yi/tian_gang_zhan_yi_lv04_p.vpcf"
 		}
 
 		"AbilitySpecial"
