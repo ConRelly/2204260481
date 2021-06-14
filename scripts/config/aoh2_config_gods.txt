@@ -3260,7 +3260,7 @@
 		}	
 		"31" // Siltbreaker				破泞之主
 		{
-			"Title"						"The not so Hard Siltbreaker"
+			"Title"						"The not so hard Siltbreaker"
 			"MaxGold"					"4000"
 			"BagCount"					"1"
 			"BagVariance"				"80"

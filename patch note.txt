@@ -1104,11 +1104,12 @@ Guessing game Answer: "-lasers Keen" (reset in next patch probably). same rules 
 * Fixed internal bugs: Flicker, Trident, Leveller, Silver Edge (normal)
 * Fixed crash when Spirit Lance (Phantom Lancer) is reflected
 * Force Boots HP regen increased from 30 to 90
-* Added Titan Relic
-* Ogre multicast(N) has an interaction with Mimic mace and an Super Scepter effect
-* Green radiance has higer limit for agi and ms mult.
-* All forms of edible radiances got a small buff to their limits and the extra bonus that thei bring
+* Added new Neutral item: Titan Relic
+* Ogre multicast(N) has an interaction with Mimic mace and a Super Scepter effect
+* Green radiance has a higher limit for agi and ms mult.
+* All forms of edible radiances got a small buff to their limits and the bonus(can be extra stats end/or an extra status effect) that they have compared with the non-edible one.
 * Fixed Edible Octarine core getting lost on death.
+Guessing game Reset: Hint 1, Combine 2 words that can be found in 2 titles(part 1 and 2), the second word is all low caps and the first word can be found in normal and hard end up to round 15.
 
 
 
