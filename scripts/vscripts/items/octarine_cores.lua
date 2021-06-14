@@ -151,6 +151,7 @@ end
 modifier_bigan_octarine_core_edible_eated = modifier_bigan_octarine_core_edible_eated or class({})
 function modifier_bigan_octarine_core_edible_eated:IsHidden() return false end
 function modifier_bigan_octarine_core_edible_eated:IsPurgable() return false end
+function modifier_bigan_octarine_core_edible_eated:RemoveOnDeath() return false end
 function modifier_bigan_octarine_core_edible_eated:AllowIllusionDuplicate() return true end
 function modifier_bigan_octarine_core_edible_eated:GetTexture() return "bigan_octarine_core_edible" end
 function modifier_bigan_octarine_core_edible_eated:OnCreated()
@@ -215,6 +216,7 @@ end
 modifier_octarine_core_cdr = class({})
 function modifier_octarine_core_cdr:IsHidden() return true end
 function modifier_octarine_core_cdr:IsPurgable() return false end
+function modifier_octarine_core_cdr:RemoveOnDeath() return false end
 function modifier_octarine_core_cdr:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT end
 function modifier_octarine_core_cdr:DeclareFunctions()
 	return {MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE}
