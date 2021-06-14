@@ -22020,26 +22020,23 @@
 	}	
 	"mjz_dragon_knight_breathe_fire"
 	{
-		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/hero_dragon_knight/mjz_dragon_knight_breathe_fire.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"				   
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"FightRecapLevel"				"1"
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "5"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
 		"AbilitySound"					"Hero_DragonKnight.BreathFire"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityTextureName"			"mjz_dragon_knight_breathe_fire"
-
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCooldown"				"14 13 12 9 8 7 5"
 		"AbilityManaCost"				"50"
-
 		"AbilitySpecial"
 		{
 			"01"
@@ -22076,9 +22073,14 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"reduction"				"-40"
+				"reduction"				"40"
 			}
 			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"spell_dmg_reduction"	"25"
+			}
+			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"11"

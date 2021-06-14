@@ -2375,7 +2375,7 @@
 
 
 	"DOTA_Tooltip_ability_mjz_dragon_knight_breathe_fire"			"Breathe Fire"
-	"DOTA_Tooltip_ability_mjz_dragon_knight_breathe_fire_Description"	"Unleashes a breath of fire in front of Dragon Knight that burns enemies and reduces the damage their attacks deal."
+	"DOTA_Tooltip_ability_mjz_dragon_knight_breathe_fire_Description"	"Unleashes a breath of fire in front of Dragon Knight that burns enemies and reduces the damage their attacks deal.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Reduces spell damage by %spell_dmg_reduction%%%."
 	"DOTA_Tooltip_ability_mjz_dragon_knight_breathe_fire_Lore"		"Knight Davion's breath has become that of the mighty Eldwurm Slyrak, remembered for burning numerous other knights to a crisp."
 	"DOTA_Tooltip_ability_mjz_dragon_knight_breathe_fire_Note0"		"Hits units up to 900 away."
 	"DOTA_Tooltip_ability_mjz_dragon_knight_breathe_fire_damage"			"BASE DAMAGE:"
