@@ -18068,17 +18068,17 @@
 			"4"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"70"
+				"spell_amp"				"95"
 			}
 			"5"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_ms"				"10"
+				"bonus_ms"				"45"
 			}
 			"6"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"debuff_amp"			"50"
+				"debuff_amp"			"45"
 			}
 			"7"
 			{
@@ -18088,7 +18088,7 @@
 			"8"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_pct"				"15"
+				"heal_pct"				"35"
 			}
 		}
 	}
@@ -19364,12 +19364,12 @@
 		"12"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"agi_threshold"			"20000"
+			"agi_threshold"			"30000"
 		}
 		"13"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"ms_threshold"			"20000"
+			"ms_threshold"			"35000"
 		}
 		"14"
 		{

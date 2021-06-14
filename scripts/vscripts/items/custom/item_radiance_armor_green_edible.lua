@@ -48,7 +48,7 @@ function modifier_item_radiance_armor_green_edible:GetModifierHealthBonus()
 end
 
 function modifier_item_radiance_armor_green_edible:GetModifierPreAttack_BonusDamage()
-	return 15000
+	return 19000
 end
 
 function modifier_item_radiance_armor_green_edible:GetModifierBonusStats_Strength()
@@ -119,10 +119,10 @@ function modifier_item_radiance_armor_aura_green_edible:OnIntervalThink()
 		local ms = caster:GetIdealSpeed()
 		local ms_mult = 3
 		local agi_mult = 7
-		if agi > 25000 then 
+		if agi > 35000 then 
 			agi_mult = 2.2
 		end	
-		if ms > 20000 then
+		if ms > 40000 then
 			ms_mult = 1.5
 		end		
 		local ms_bonus_dmg = ms * ms_mult

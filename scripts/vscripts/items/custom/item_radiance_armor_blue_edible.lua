@@ -76,7 +76,7 @@ function modifier_item_radiance_armor_blue_edible:GetModifierExtraHealthPercenta
 end
 
 function modifier_item_radiance_armor_blue_edible:GetModifierConstantManaRegen()
-	return 350
+	return 510
 end
 
 function modifier_item_radiance_armor_blue_edible:GetEffectName()
@@ -125,7 +125,7 @@ function modifier_item_radiance_armor_aura_blue_edible:OnIntervalThink()
 		local ability = self:GetAbility()
 		local int = caster:GetIntellect()
 		local int_mult = 7
-		if int > 11000 then 
+		if int > 14000 then 
 			int_mult = 4.0
 		end		
 		local mana_bonus_dmg = caster:GetMaxMana() * 1.2

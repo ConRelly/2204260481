@@ -73,7 +73,7 @@ function modifier_item_radiance_armor_3_edible:GetModifierExtraHealthPercentage(
 end
 
 function modifier_item_radiance_armor_3_edible:GetModifierMagicalResistanceBonus()
-	return 35
+	return 37
 end
 
 function modifier_item_radiance_armor_3_edible:GetEffectName()
@@ -125,7 +125,7 @@ function modifier_item_radiance_armor_aura_3_edible:OnIntervalThink()
 		local ability = self:GetAbility()
 		local str = caster:GetStrength()
 		local str_mult = 7
-		if str > 12000 then 
+		if str > 15000 then 
 			str_mult = 2.1
 		end		
 		local armor_bonus_dmg = 100 * caster:GetPhysicalArmorValue(false)
