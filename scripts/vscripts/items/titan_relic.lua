@@ -59,27 +59,29 @@ function modifier_titan_relic:GetModifierMoveSpeedBonus_Percentage()
 end
 function modifier_titan_relic:OnModifierAdded(keys)
 	local pass = true
-	if self:GetAbility() and keys.unit and keys.unit:FindAllModifiers() then
-		if keys.unit:GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then
-			for _, modifier in pairs(keys.unit:FindAllModifiers()) do
-				if modifier:IsDebuff() and modifier:GetDuration() > 0 and modifier:GetCaster() == self:GetCaster() and modifier:GetAbility():GetCaster() == self:GetCaster() and GameRules:GetGameTime() - modifier:GetCreationTime() <= FrameTime() then
-					Timers:CreateTimer(FrameTime(), function()
-						if modifier and pass and not self:IsNull() and self:GetAbility() then
-							modifier:SetDuration(modifier:GetRemainingTime() * (1 + (self:GetAbility():GetSpecialValueFor("debuff_amp") / 100)), true)
-							pass = false
-						end
-					end)
+	if not keys.unit:IsIllusion() then
+		if self:GetAbility() and keys.unit and keys.unit:FindAllModifiers() then
+			if keys.unit:GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then
+				for _, modifier in pairs(keys.unit:FindAllModifiers()) do
+					if modifier:IsDebuff() and modifier:GetDuration() > 0 and modifier:GetCaster() == self:GetCaster() and modifier:GetAbility():GetCaster() == self:GetCaster() and GameRules:GetGameTime() - modifier:GetCreationTime() <= FrameTime() then
+						Timers:CreateTimer(FrameTime(), function()
+							if modifier and pass and not self:IsNull() and self:GetAbility() then
+								modifier:SetDuration(modifier:GetRemainingTime() * (1 + (self:GetAbility():GetSpecialValueFor("debuff_amp") / 100)), true)
+								pass = false
+							end
+						end)
+					end
 				end
-			end
-		else
-			for _, modifier in pairs(keys.unit:FindAllModifiers()) do
-				if modifier:GetDuration() > 0 and modifier:GetCaster() == self:GetCaster() and modifier:GetAbility():GetCaster() == self:GetCaster() and GameRules:GetGameTime() - modifier:GetCreationTime() <= FrameTime() then
-					Timers:CreateTimer(FrameTime(), function()
-						if modifier and pass and not self:IsNull() and self:GetAbility() then
-							modifier:SetDuration(modifier:GetRemainingTime() * (1 + (self:GetAbility():GetSpecialValueFor("buff_amp") / 100)), true)
-							pass = false
-						end
-					end)
+			else
+				for _, modifier in pairs(keys.unit:FindAllModifiers()) do
+					if modifier:GetDuration() > 0 and modifier:GetCaster() == self:GetCaster() and modifier:GetAbility():GetCaster() == self:GetCaster() and GameRules:GetGameTime() - modifier:GetCreationTime() <= FrameTime() then
+						Timers:CreateTimer(FrameTime(), function()
+							if modifier and pass and not self:IsNull() and self:GetAbility() then
+								modifier:SetDuration(modifier:GetRemainingTime() * (1 + (self:GetAbility():GetSpecialValueFor("buff_amp") / 100)), true)
+								pass = false
+							end
+						end)
+					end
 				end
 			end
 		end

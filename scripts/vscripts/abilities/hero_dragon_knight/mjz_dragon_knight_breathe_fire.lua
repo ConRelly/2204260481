@@ -19,9 +19,7 @@ if IsServer() then
 	function mjz_dragon_knight_breathe_fire:OnSpellStart()
 		EmitSoundOn("Hero_DragonKnight.BreathFire", self:GetCaster())
 		self:PlayEffect()
-		if HasModifierList(self:GetCaster(), {"modifier_dragon_knight_dragon_form"}) then
-			
-		end
+		if HasModifierList(self:GetCaster(), {"modifier_dragon_knight_dragon_form"}) then end
 	end
 
 	function mjz_dragon_knight_breathe_fire:OnProjectileHit( hTarget, vLocation )
@@ -88,10 +86,19 @@ modifier_mjz_dragon_knight_breathe_fire_reduction = class({})
 function modifier_mjz_dragon_knight_breathe_fire_reduction:IsHidden() return false end
 function modifier_mjz_dragon_knight_breathe_fire_reduction:IsPurgable() return true end
 function modifier_mjz_dragon_knight_breathe_fire_reduction:DeclareFunctions()
-    return {MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE}
+    return {MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE, MODIFIER_PROPERTY_MAGICDAMAGEOUTGOING_PERCENTAGE}
 end
 function modifier_mjz_dragon_knight_breathe_fire_reduction:GetModifierBaseDamageOutgoing_Percentage(params)
-	return self:GetAbility():GetSpecialValueFor("reduction")
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("reduction") * (-1) end
+end
+function modifier_mjz_dragon_knight_breathe_fire_reduction:GetModifierMagicDamageOutgoing_Percentage()
+	if self:GetAbility() then
+		if self:GetCaster():HasModifier("modifier_super_scepter") then
+			return self:GetAbility():GetSpecialValueFor("spell_dmg_reduction") * (-1)
+		else
+			return 0
+		end
+	end
 end
 
 ------------------------------------------------------------------------------------------
