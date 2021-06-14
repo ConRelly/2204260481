@@ -1108,6 +1108,8 @@ Guessing game Answer: "-lasers Keen" (reset in next patch probably). same rules 
 * Ogre multicast(N) has an interaction with Mimic mace and an Super Scepter effect
 * Green radiance has higer limit for agi and ms mult.
 * All forms of edible radiances got a small buff to their limits and the extra bonus that thei bring
+* Fixed Edible Octarine core getting lost on death.
+
 
 
 *Update patch notes13 can be found on the new map version:

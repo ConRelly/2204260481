@@ -47,7 +47,9 @@ end
 function modifier_custom_octarine_core_1:OnIntervalThink()
 	if IsServer() then
 		if self:GetCaster():HasModifier(ocratine1) and not self:GetCaster():HasModifier(ocratine2) and not self:GetCaster():HasModifier(ocratine3) and not self:GetCaster():HasModifier(ocratine3_eated) then
-			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_octarine_core_cdr", {})
+			if not self:GetCaster():HasModifier("modifier_octarine_core_cdr") then
+				self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_octarine_core_cdr", {})
+			end
 		else
 			self:GetCaster():RemoveModifierByName("modifier_octarine_core_cdr")
 		end
@@ -84,7 +86,9 @@ end
 function modifier_bigan_octarine_core:OnIntervalThink()
 	if IsServer() then
 		if self:GetCaster():HasModifier(ocratine2) and not self:GetCaster():HasModifier(ocratine3) and not self:GetCaster():HasModifier(ocratine3_eated) then
-			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_octarine_core_cdr", {})
+			if not self:GetCaster():HasModifier("modifier_octarine_core_cdr") then
+				self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_octarine_core_cdr", {})
+			end
 		else
 			self:GetCaster():RemoveModifierByName("modifier_octarine_core_cdr")
 		end
@@ -123,7 +127,9 @@ end
 function modifier_bigan_octarine_core_edible:OnIntervalThink()
 	if IsServer() then
 		if self:GetCaster():HasModifier(ocratine3) and not self:GetCaster():HasModifier(ocratine3_eated) then
-			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_octarine_core_cdr", {})
+			if not self:GetCaster():HasModifier("modifier_octarine_core_cdr") then
+				self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_octarine_core_cdr", {})
+			end
 		else
 			self:GetCaster():RemoveModifierByName("modifier_octarine_core_cdr")
 		end
@@ -151,6 +157,7 @@ end
 modifier_bigan_octarine_core_edible_eated = modifier_bigan_octarine_core_edible_eated or class({})
 function modifier_bigan_octarine_core_edible_eated:IsHidden() return false end
 function modifier_bigan_octarine_core_edible_eated:IsPurgable() return false end
+function modifier_bigan_octarine_core_edible_eated:RemoveOnDeath() return false end
 function modifier_bigan_octarine_core_edible_eated:AllowIllusionDuplicate() return true end
 function modifier_bigan_octarine_core_edible_eated:GetTexture() return "bigan_octarine_core_edible" end
 function modifier_bigan_octarine_core_edible_eated:OnCreated()
@@ -161,7 +168,9 @@ end
 function modifier_bigan_octarine_core_edible_eated:OnIntervalThink()
 	if IsServer() then
 		if self:GetCaster():HasModifier(ocratine3_eated) then
-			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_octarine_core_cdr", {})
+			if not self:GetCaster():HasModifier("modifier_octarine_core_cdr") then
+				self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_octarine_core_cdr", {})
+			end	
 		else
 			self:GetCaster():RemoveModifierByName("modifier_octarine_core_cdr")
 		end
