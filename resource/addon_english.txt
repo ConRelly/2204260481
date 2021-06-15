@@ -24,6 +24,7 @@
 	"dota_ability_variable_cast_time_pct"			"Cast Time"							// $cast_time_pct
 	"dota_ability_variable_mp_regen_amp"			"Mana Regen Amplification"			// $mp_regen_amp
 	"dota_ability_variable_spell_lifesteal"			"Spell Lifesteal"					// $spell_lifesteal
+	"dota_ability_variable_spell_lifesteal_pure"	"Pure Spell Lifesteal"				// $spell_lifesteal_pure
 	"dota_ability_variable_spell_lifesteal_amp"		"Spell Lifesteal Amplification"		// $spell_lifesteal_amp
 	"dota_ability_variable_hp_regen_amp"			"HP Regen Amplification"			// $hp_regen_amp
 	"dota_ability_variable_primary_attribute"		"Primary Attribute"					// $primary_attribute
@@ -7079,16 +7080,8 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 "DOTA_Tooltip_ability_item_custom_octarine_core_1_bonus_intelligence"		"+$int"
 "DOTA_Tooltip_ability_item_custom_octarine_core_1_bonus_health"				"+$health"
 "DOTA_Tooltip_ability_item_custom_octarine_core_1_bonus_mana"				"+$mana"
-"DOTA_Tooltip_ability_item_custom_octarine_core_1_lifesteal"				"%+$spell_lifesteal"
+"DOTA_Tooltip_ability_item_custom_octarine_core_1_lifesteal"				"%+$spell_lifesteal_pure"
 "DOTA_Tooltip_ability_item_custom_octarine_core_1_Lore"						"At the core of spellcraft are spectrums only the very gifted can sense."
-
-"DOTA_Tooltip_Ability_item_custom_octarine_core_2"							"Ultimate Octarine Core"
-"DOTA_Tooltip_ability_item_custom_octarine_core_2_Description"				"<h1>Passive: Cooldown Reduction</h1>Reduces the cooldown time of all spells and items by %bonus_cooldown%%%."
-"DOTA_Tooltip_ability_item_custom_octarine_core_2_bonus_intelligence"		"+$int"
-"DOTA_Tooltip_ability_item_custom_octarine_core_2_bonus_health"				"+$health"
-"DOTA_Tooltip_ability_item_custom_octarine_core_2_bonus_mana"				"+$mana"
-"DOTA_Tooltip_ability_item_custom_octarine_core_2_lifesteal"				"%+$spell_lifesteal"
-"DOTA_Tooltip_ability_item_custom_octarine_core_2_Lore"						"At the core of spellcraft are spectrums only the very gifted can sense."
 
 "DOTA_Tooltip_Ability_item_ultimate_rapier"									"Ultimate Rapier"
 "DOTA_Tooltip_Ability_item_ultimate_rapier_Description"						"<h1>Passive: Consecrated</h1> %base_damage_ratio%%% of this item's damage is base damage."
@@ -7539,7 +7532,7 @@ Required Level: %required_level%
 		"DOTA_Tooltip_ability_item_bigan_octarine_core_bonus_intelligence"		"+$int"
 		"DOTA_Tooltip_ability_item_bigan_octarine_core_bonus_health"			"+$health"
 		"DOTA_Tooltip_ability_item_bigan_octarine_core_bonus_mana"				"+$mana"
-		"DOTA_Tooltip_ability_item_bigan_octarine_core_lifesteal"				"%+$spell_lifesteal"
+		"DOTA_Tooltip_ability_item_bigan_octarine_core_lifesteal"				"%+$spell_lifesteal_pure"
 		"DOTA_Tooltip_ability_item_bigan_octarine_core_Lore"					"At the core of spellcraft are spectrums only the very gifted can sense."
 		//<<<<
 		//>>>>
@@ -7548,6 +7541,7 @@ Required Level: %required_level%
 		"DOTA_Tooltip_ability_item_mjz_ipomoea_aquatica_bonus_intelligence"		"+$int"
 		"DOTA_Tooltip_ability_item_mjz_ipomoea_aquatica_bonus_health"			"+$health"
 		"DOTA_Tooltip_ability_item_mjz_ipomoea_aquatica_bonus_mana"				"+$mana"
+		"DOTA_Tooltip_ability_item_mjz_ipomoea_aquatica_lifesteal"				"%+$spell_lifesteal_pure"
 		"DOTA_Tooltip_ability_item_mjz_ipomoea_aquatica_Lore"					"人若是无心如何？"
 		//<<<<
 			
@@ -8574,13 +8568,14 @@ Contains all random skills"
 		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_Description"				"Vengeful Spirit lets loose a wicked cry, weakening the armor of enemies and giving vision of the path ahead."
 		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_Lore"						"Shendel's haunting voice hints at her approaching vindication."
 		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_armor_reduction"			"Armor Reduction:"
-		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_abilityduration"			"Debuff Duration:"
-		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_vision_duration"			"Vision Duration:"
+		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_armor_agi_multiplier"		"Every 100 <font color='#00FF00'>Agility</font> adds extra armor reduction:"
+		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_wave_damage"				"<br>Damage:"
 		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_damage_agi_multiplier"		"Agility As Bonus Damage:"
-		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_armor_agi_multiplier_tooltip"			"<br>Every 100 <font color='#00FF00'>Agility</font> adds extra armor reduction:"
-		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_wave_damage"				 "Wave Damage:"
+		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_duration"					"<br>Debuff Duration:"
+		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_vision_duration"			"Vision Duration:"
 		"DOTA_Tooltip_modifier_vengefulspirit_wave_of_terror_lua"					"Wave of Terror"
 		"DOTA_Tooltip_modifier_vengefulspirit_wave_of_terror_lua_Description"		"Base armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
+		"DOTA_Tooltip_ability_special_bonus_unique_wave_of_terror_dmg"		"+{s:value} Wave of Terror Agility As Bonus Damage"
 
 		"DOTA_Tooltip_ability_omniknight_purification_lua"									"Purification"
 		"DOTA_Tooltip_ability_omniknight_purification_lua_Description"						"Instantly heals a friendly unit and damages all nearby enemy units. Also grants a strength based magic resitance."
@@ -8987,7 +8982,7 @@ Contains all random skills"
 		"dota_tooltip_ability_item_custom_octarine_core2_bonus_intelligence"		"+$int"
 		"dota_tooltip_ability_item_custom_octarine_core2_bonus_health"				"+$health"
 		"dota_tooltip_ability_item_custom_octarine_core2_bonus_mana"				"+$mana"
-		"dota_tooltip_ability_item_custom_octarine_core2_lifesteal"					"%+$spell_lifesteal"
+		"dota_tooltip_ability_item_custom_octarine_core2_lifesteal"					"%+$spell_lifesteal_pure"
 		"dota_tooltip_ability_item_custom_octarine_core2_Lore"						"At the core of spellcraft are spectrums only the very gifted can sense."
 		"DOTA_Tooltip_ability_item_custom_octarine_core2_Note0"						"After you consume don't buy again Octarine Core or you will lose your cdr and spell lifesteal consume effect"
 		

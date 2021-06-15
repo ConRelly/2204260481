@@ -1322,6 +1322,7 @@
 		"Ability1"			  "vengefulspirit_magic_missile_lua"
 		"Ability2"			  "vengefulspirit_wave_of_terror_lua"
 		"Ability6"				"mjz_vengefulspirit_vengeance"
+		"Ability15"				"special_bonus_unique_wave_of_terror_dmg"
 		"Ability17"				"special_bonus_spell_lifesteal_70"
 	}
 

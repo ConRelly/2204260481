@@ -7,14 +7,14 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"lua_abilities/vengefulspirit_wave_of_terror_lua/vengefulspirit_wave_of_terror_lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"LevelsBetweenUpgrades"         "10"
 		"MaxLevel"						"7"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"BaseClass"					"ability_lua"
-		"AbilityTextureName"				"vengefulspirit_wave_of_terror_lua"
-		"ScriptFile"					"lua_abilities/vengefulspirit_wave_of_terror_lua/vengefulspirit_wave_of_terror_lua"
+		"AbilityTextureName"			"vengefulspirit_wave_of_terror_lua"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -24,7 +24,6 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20 18 16 14 13 12 10"
-		"AbilityDuration"				"10"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -37,7 +36,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"wave_speed"		"2000.0"
+				"wave_speed"		"2000"
 			}
 			"02"
 			{
@@ -46,13 +45,14 @@
 			}
 			"03"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"armor_reduction"	"-3 -7 -9 -12 -15 -17 -20"
+				"var_type"				"FIELD_INTEGER"
+				"armor_reduction"		"-3 -7 -9 -12 -15 -17 -20"
+				"LinkedSpecialBonus"	"special_bonus_unique_vengeful_spirit_4"
 			}
 			"04"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"tooltip_duration"	"10"
+				"var_type"					"FIELD_FLOAT"
+				"armor_agi_multiplier"		"1 1 1 1 1 1 2"
 			}
 			"05"
 			{
@@ -61,29 +61,40 @@
 			}
 			"06"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"vision_duration"	"10.0"
+				"var_type"			"FIELD_INTEGER"
+				"wave_damage"		"90 150 270 490 1950 3800 9750"
 			}
 			"07"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"wave_damage"			"90 150 270 490 1950 3800 9750"
+				"var_type"					"FIELD_FLOAT"
+				"damage_agi_multiplier"		"2.0 2.5 3.0 3.5 4.0 5.0 6.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_wave_of_terror_dmg"
 			}
 			"08"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_agi_multiplier"		"2.0 2.5 3.0 3.5 4.0 5.0 6.0"
+				"duration"			"10"
 			}
 			"09"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"armor_agi_multiplier"		"0.01 0.01 0.01 0.01 0.01 0.01 0.02"
+				"vision_duration"	"10"
 			}
-			"10"
+		}
+	}
+// Wave of Terror: +{value} damage per agility
+	"special_bonus_unique_wave_of_terror_dmg"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"armor_agi_multiplier_tooltip"		"1 1 1 1 1 1 2"
-			}			
+				"var_type"					"FIELD_FLOAT"
+				"value"						"1"
+			}
 		}
 	}
 }
