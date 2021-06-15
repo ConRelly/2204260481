@@ -544,8 +544,13 @@
 {
 	"Ability6"		"ogre_magi_custom_multicast"
 	"Ability12"		"special_bonus_unique_ogre_magi_2"
+	"Ability14"		"special_bonus_exp_boost_30"
 	"Ability16"		"ogre_magi_custom_bonus_unique_1"
 	"Ability17"		"ogre_magi_custom_bonus_unique_2"
+	"AttributePrimary"	  "DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeStrengthGain" "9.6"
+	"AttributeIntelligenceGain" "6.9"
+	"AttackRate"    "1.5"
 }
 "npc_dota_hero_oracle"
 {
