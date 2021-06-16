@@ -219,6 +219,7 @@ if IsServer() then
 		zanto_gari = true,
 		arcane_supremacy = true,
 		item_illusionsts_cape = true,
+		item_custom_octarine_core2 = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

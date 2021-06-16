@@ -178,6 +178,7 @@ function IsExcludeAbility( ability )
 		"wisp_tether",
 		"wisp_tether_break",
 		"arcane_supremacy",
+		"item_custom_octarine_core2",
 		
 
 	}

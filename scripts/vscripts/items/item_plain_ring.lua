@@ -223,7 +223,8 @@ function modifier_item_plain_ring_frenzy:DeclareFunctions()
 	MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
 	MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
 	MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
-	MODIFIER_PROPERTY_CASTTIME_PERCENTAGE
+	MODIFIER_PROPERTY_CASTTIME_PERCENTAGE,
+	MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE
 	}
 end
 
@@ -234,10 +235,10 @@ function modifier_item_plain_ring_frenzy:GetModifierHealAmplify_PercentageTarget
   return 100
 end
 function modifier_item_plain_ring_frenzy:GetModifierMoveSpeed_Absolute()
-  return 700
+  return 800
 end
 function modifier_item_plain_ring_frenzy:GetModifierAttackSpeedBonus_Constant()
-  return 390
+  return 500
 end
 function modifier_item_plain_ring_frenzy:GetModifierTotalDamageOutgoing_Percentage()
   return 120
@@ -247,4 +248,7 @@ function modifier_item_plain_ring_frenzy:GetModifierPercentageCooldown()
 end
 function modifier_item_plain_ring_frenzy:GetModifierPercentageCasttime()
   return 100
+end
+function modifier_item_plain_ring_frenzy:GetModifierSpellAmplify_Percentage()
+  return 50
 end

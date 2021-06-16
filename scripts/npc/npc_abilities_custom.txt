@@ -9770,7 +9770,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"bonus_damage"				"7.0 8.0 9.0 10.0 15.0"
+			"bonus_damage"				"10.0 13.0 17.0 20.0 25.0"
 		}		
 
 	}
