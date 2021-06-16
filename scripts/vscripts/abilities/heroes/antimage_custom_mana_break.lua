@@ -43,10 +43,14 @@ function modifier_antimage_custom_mana_break:OnAttackLanded(keys)
 			--[[local particle = ParticleManager:CreateParticle("particles/generic_gameplay/generic_manaburn.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 			ParticleManager:SetParticleControl(particle, 0, target:GetAbsOrigin())
 			ParticleManager:ReleaseParticleIndex(particle)]]
+			local damage_flag = DOTA_DAMAGE_FLAG_NONE
 			local mana_per_hit = ability:GetSpecialValueFor("mana_per_hit")
 			local target_mana = target:GetMana()
 			local chance = ability:GetSpecialValueFor("stack_chance")
-			local damage = mana_per_hit * ability:GetSpecialValueFor("mana_burn_as_damage") * 0.01
+			local damage = mana_per_hit * ability:GetSpecialValueFor("mana_burn_as_damage")
+			if HasTalent(attacker, "special_bonus_custom_mana_break_1") then
+				damage_flag = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR
+			end				
 			target:ReduceMana(mana_per_hit)
 			SendOverheadEventMessage(nil, OVERHEAD_ALERT_MANA_LOSS, target, mana_per_hit, nil)
 			if RandomInt(0,100) < chance then
@@ -56,6 +60,7 @@ function modifier_antimage_custom_mana_break:OnAttackLanded(keys)
 				ability = ability,
 				attacker = attacker,
 				damage = damage,
+				damage_flags = damage_flag,
 				damage_type = ability:GetAbilityDamageType(),
 				victim = target
 			})
@@ -124,4 +129,11 @@ function modifier_antimage_custom_mana_break:OnRefresh()
 	--[[if RandomInt(0,100) < ability:GetSpecialValueFor("stack_chance") then
 		self:SetStackCount(self:GetStackCount() + math.ceil(final_stack))
 	end]]
+end
+
+function HasTalent(unit, talentName)
+    if unit:HasAbility(talentName) then
+        if unit:FindAbilityByName(talentName):GetLevel() > 0 then return true end
+    end
+    return false
 end

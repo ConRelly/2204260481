@@ -9792,7 +9792,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"mana_burn_as_damage"   "3500 5500 9000 13500 21000 38000 80000"
+			"mana_burn_as_damage"   "35 55 90 135 210 380 800"
 		}
 		"02"
 		{
@@ -9831,6 +9831,21 @@
 		}								 
 	}
 }
+"special_bonus_custom_mana_break_1"
+{
+	"BaseClass"				"special_bonus_undefined"
+	"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"value"				"1"
+		}
+	}
+}
+
 "axe_custom_counter_helix"
 	{
 

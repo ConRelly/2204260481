@@ -294,7 +294,7 @@ if IsServer() then
 							self.ability:StartCooldown(cooldown * attacker:GetCooldownReduction())
 							self.echo:OnSpellStart()
 							if attacker:HasModifier("modifier_multicast_datadriven") then
-								local chance = RandomInt(1, 100)
+								local chance = RandomInt(0, 100)
 								if HasSuperScepter(attacker) then
 									chance = chance / 2
 								end	

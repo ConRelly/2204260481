@@ -94,7 +94,7 @@ function GetRandomAbilityName( hero )
         "ursa_fury_swipes",
         --"faceless_void_time_lock",
         --"mjz_faceless_void_backtrack",
-        "obs_replay",
+        "antimage_custom_mana_break",
         "zanto_gari",
         "dark_willow_shadow_realm_lua",
         "monkey_king_custom_jingu_mastery",

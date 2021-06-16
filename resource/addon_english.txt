@@ -5376,7 +5376,7 @@ The extra targets will not receive other attack effects (such as critical strike
 "DOTA_Tooltip_modifier_abyssal_underlord_custom_dark_rift_Description"			"An unstable rift is increasing this unit's primary attribute."
 
 "DOTA_Tooltip_ability_antimage_custom_mana_break"						"<font color='#f2da5b'>Mana Break</font>"
-"DOTA_Tooltip_ability_antimage_custom_mana_break_Description"			"Has %chance_hit%%% to Burn an opponent's mana on attack. Mana Break deals %mana_burn_as_damage%%% of the mana burned as damage to the target.\n<h1>Passive: <font color='#D33E02'>Mana Breaker</font></h1><h1>Have a %stack_chance%%% chance to gain stacks base on how much mana you have destroyed with this skill yourself</h1>"
+"DOTA_Tooltip_ability_antimage_custom_mana_break_Description"			"Has %chance_hit%%% to Burn an opponent's mana on attack. Mana Break deals %mana_burn_as_damage% X mana burned as damage to the target.\n<h1>Passive: <font color='#D33E02'>Mana Breaker</font></h1><h1>Have a %stack_chance%%% chance to gain stacks base on how much mana you have destroyed with this skill yourself</h1>"
 "DOTA_Tooltip_ability_antimage_custom_mana_break_Lore"					"A modified technique of the Turstarkuri monks' peaceful ways is to turn magical energies on their owner."
 "DOTA_Tooltip_ability_antimage_custom_mana_break_Note0"					"Mana Burn is blocked by spell immunity."
 "DOTA_Tooltip_ability_antimage_custom_mana_break_Note1"					"You can lifeleech the damage dealt by this skill with a Lifesteal aura."
@@ -9204,6 +9204,9 @@ Contains all random skills"
 
 		"DOTA_Tooltip_ability_special_laser_int_multiplier_lua"				   "+{s:value} Laser Int As Bonus Damage"
 		"DOTA_Tooltip_ability_special_laser_silence_duration_lua"				 "Laser Aditionally Silences For {s:value} Seconds"
+
+		"DOTA_Tooltip_ability_special_bonus_custom_mana_break_1"   "Mana Break physical damage ignores Base Armor"
+
 
 	   "DOTA_Tooltip_ability_item_shivas_guard_2"				"Boss Shiva"
 	   "DOTA_Tooltip_ability_item_shivas_guard_2_Description"	"Good Stuff" 
