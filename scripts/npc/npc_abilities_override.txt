@@ -22759,7 +22759,7 @@
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemIsNeutralDrop"				"0"
-		"ItemCost"						"6600"
+		"ItemCost"						"7100"
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
