@@ -1118,6 +1118,15 @@ Guessing game Answer: "-lasers Keen" (reset in next patch probably). same rules 
 Guessing game Reset: Hint 1, Combine 2 words that can be found in 2 titles(part 1 and 2), the second word is all low caps and the first word can be found in normal and hard end up to round 15.
 
 
+
+* Added new items: Trusty Shovel (1% when cutting trees), Cursed Shovel, Aegis of Infinity, Aghanim's Fragment
+* Added new creeps: Huskar, Ulfsaar
+* Fixed (probably this bug did not exist) Edible Aether Lens getting lost on death
+* Fixed Quicksilver Amulet cost
+* Added few missed icons
+
+
+
 *Update patch notes13 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussion for links)

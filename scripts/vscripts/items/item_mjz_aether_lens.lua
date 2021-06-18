@@ -45,6 +45,7 @@ modifier_item_mjz_aether_lens_stats = class({})
 function modifier_item_mjz_aether_lens_stats:IsHidden() return false end
 function modifier_item_mjz_aether_lens_stats:IsPurgable() return false end
 function modifier_item_mjz_aether_lens_stats:AllowIllusionDuplicate() return true end
+function modifier_item_mjz_aether_lens_stats:RemoveOnDeath() return false end
 function modifier_item_mjz_aether_lens_stats:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT end
 function modifier_item_mjz_aether_lens_stats:GetTexture() return "modifiers/mjz_aether_lens" end
 function modifier_item_mjz_aether_lens_stats:DeclareFunctions()

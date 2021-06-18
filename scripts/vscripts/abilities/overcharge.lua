@@ -12,11 +12,20 @@ function Overcharge( event )
 		ability:ApplyDataDrivenModifier(caster, caster, modifier, {})
 		caster:SetModifierStackCount(modifier, ability, 1)
 	end
-	if caster:GetModifierStackCount(modifier, ability) == 75 then
-		caster:AddNewModifier(caster, ability, "modifier_ursa_enrage", {})
-		EmitSoundOn( "Hero_Ursa.Enrage", caster )
+	if caster:GetModifierStackCount(modifier, ability) == 25 then
+		caster:AddItem(CreateItem("item_basher", nil, nil))
+	elseif caster:GetModifierStackCount(modifier, ability) == 45 then
+		caster:AddItem(CreateItem("item_basher", nil, nil))
+	elseif caster:GetModifierStackCount(modifier, ability) == 65 then
+		caster:AddItem(CreateItem("item_basher", nil, nil))
+	elseif caster:GetModifierStackCount(modifier, ability) == 85 then
+		caster:AddItem(CreateItem("item_basher", nil, nil))
 	end
-	if _G.hardmode then
+	if caster:GetModifierStackCount(modifier, ability) == 75 then
+		caster:AddNewModifier(caster, ability, "modifier_ursa_overpower", {duration = })
+		EmitSoundOn("Hero_Ursa.Enrage", caster)
+	end
+	if _G._hardMode then
 		if caster:GetModifierStackCount(modifier, ability) == 100 then
 			caster:ForceKill(false)
 		end

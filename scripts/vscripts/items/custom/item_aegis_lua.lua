@@ -1,6 +1,7 @@
 require("lib/mys")
 item_aegis_lua = class({})
 LinkLuaModifier("modifier_aegis", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_aegis_up", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_aegis_buff", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
 -- Link a lua-defined modifier with the associated class (className, fileName, LuaModifierType).
 
@@ -8,16 +9,38 @@ local ReincarnateTime = 7					-- Seconds
 local ReincarnateBuffTime = 14				-- Seconds
 local AegisBuffDMGIncoming = 85 * (-1)		-- % Incoming Damage
 local AegisBuffDMGOutgoing = 25				-- % Outgoing Damage
-
+--[[
+function item_aegis_lua:GetIntrinsicModifierName() return "modifier_aegis_up" end
+modifier_aegis_up = class({})
+function modifier_aegis_up:IsHidden() return true end
+function modifier_aegis_up:IsPurgable() return false end
+function modifier_aegis_up:RemoveOnDeath() return false end
+function modifier_aegis_up:OnCreated()
+	if IsServer() then self:StartIntervalThink(FrameTime()) end
+end
+function modifier_aegis_up:OnIntervalThink()
+	if IsServer() then
+		if self:GetAbility():GetCurrentCharges() >= self:GetAbility():GetSpecialValueFor("aegis_up") then
+			self:GetCaster():RemoveItem(self:GetAbility())
+			self:GetCaster():AddItemByName("item_inf_aegis")
+		end
+	end
+end
+]]
 function item_aegis_lua:OnSpellStart()
 	if IsServer() then
 		local hCaster = self:GetCaster()
 		local hPlayer = hCaster:GetPlayerOwner()
-		if hCaster and hCaster:IsRealHero() and not hCaster:IsTempestDouble() and not hCaster:HasModifier("modifier_arc_warden_tempest_double_lua") then 
+		if hCaster and hCaster:IsRealHero() and not hCaster:IsTempestDouble() and not hCaster:HasModifier("modifier_arc_warden_tempest_double_lua") then
+			if self:GetCurrentCharges() >= self:GetSpecialValueFor("aegis_up") then
+				hCaster:RemoveItem(self)
+				hCaster:AddItemByName("item_inf_aegis")
+				return
+			end
 			if hCaster:HasModifier("modifier_aegis") then
-			  local hModifierAegis = hCaster:FindModifierByName("modifier_aegis")
-			  local nCurrentStack = hModifierAegis:GetStackCount()
-			  hModifierAegis:SetStackCount(nCurrentStack+1)
+				local hModifierAegis = hCaster:FindModifierByName("modifier_aegis")
+				local nCurrentStack = hModifierAegis:GetStackCount()
+				hModifierAegis:SetStackCount(nCurrentStack+1)
 			else
 				local hModifierAegis = hCaster:AddNewModifier(hCaster, nil, "modifier_aegis", {})
 				hModifierAegis:SetStackCount(1)
@@ -25,9 +48,7 @@ function item_aegis_lua:OnSpellStart()
 			self:SpendCharge()
 			EmitSoundOn("DOTA_Item.Refresher.Activate", hCaster)
 			local nParticle = ParticleManager:CreateParticle("particles/items_fx/aegis_respawn_timer.vpcf", PATTACH_ABSORIGIN_FOLLOW, hCaster)
-			ParticleManager:ReleaseParticleIndex(nParticle);
-
-			--Util:RecordConsumableItem(hPlayer:GetPlayerID(),"item_aegis_lua")
+			ParticleManager:ReleaseParticleIndex(nParticle)
 		end
 	end
 end
@@ -39,10 +60,7 @@ function modifier_aegis:IsPurgable() return false end
 function modifier_aegis:DeclareFunctions()
 	return {MODIFIER_EVENT_ON_DEATH, MODIFIER_PROPERTY_REINCARNATION}
 end
-
---PVP无效 断线队伍无效
 function modifier_aegis:ReincarnateTime()
-	
 	local nPlayerID
 	if self:GetParent().GetPlayerOwnerID then
 		nPlayerID = self:GetParent():GetPlayerOwnerID()
@@ -54,7 +72,6 @@ function modifier_aegis:ReincarnateTime()
 		return nil
 	end
 
-	--如果层数不够就不触发了
 	if self:GetStackCount()<=0 then
 		return nil
 	end
@@ -65,8 +82,6 @@ function modifier_aegis:ReincarnateTime()
 		return nil
 	end
 end
-
--- 断线队伍收到伤害增加
 function modifier_aegis:GetModifierIncomingDamage_Percentage(params)
 	local nPlayerID
 	if self:GetParent().GetPlayerOwnerID then
@@ -83,34 +98,29 @@ function modifier_aegis:GetModifierIncomingDamage_Percentage(params)
 end
 function modifier_aegis:OnDeath(keys)
 	if IsServer() then
-	  if keys.unit == self:GetParent() then
-		 
-		 --没有触发重生技能，并且不参与PVP才消耗层数
-		 if not Util:IsReincarnationWork(self:GetParent()) and self:GetStackCount()>=1 then
-		 	 local hCaster = self:GetParent()
-		 	 local hAbility = self:GetAbility()
-
-			 Timers:CreateTimer({
-					endTime = ReincarnateTime, 
-					callback = function()
-					 local nParticle = ParticleManager:CreateParticle("particles/items_fx/aegis_respawn_timer.vpcf", PATTACH_ABSORIGIN_FOLLOW, hCaster)
-					 ParticleManager:SetParticleControl(nParticle, 1, Vector(0, 0, 0))
-					 ParticleManager:SetParticleControl(nParticle, 3, hCaster:GetAbsOrigin())
-					 ParticleManager:ReleaseParticleIndex(nParticle)
-				end
-			 })
-			 Timers:CreateTimer({
-					endTime = ReincarnateTime+0.11, 
-					callback = function()
-					--Util:RefreshAbilityAndItem(hCaster,{skeleton_king_reincarnation=true})
-					hCaster:AddNewModifier(hCaster, hAbility, "modifier_aegis_buff", {duration = ReincarnateBuffTime})
-				end
-			 })
-			 --削减层数
-			 local nStackCount = self:GetStackCount()
-			 self:SetStackCount(nStackCount-1)
-		 end
-	  end
+		if keys.unit == self:GetParent() then
+			if not Util:IsReincarnationWork(self:GetParent()) and self:GetStackCount()>=1 then
+				local hCaster = self:GetParent()
+				local hAbility = self:GetAbility()
+				Timers:CreateTimer({
+						endTime = ReincarnateTime,
+						callback = function()
+						 local nParticle = ParticleManager:CreateParticle("particles/items_fx/aegis_respawn_timer.vpcf", PATTACH_ABSORIGIN_FOLLOW, hCaster)
+						 ParticleManager:SetParticleControl(nParticle, 1, Vector(0, 0, 0))
+						 ParticleManager:SetParticleControl(nParticle, 3, hCaster:GetAbsOrigin())
+						 ParticleManager:ReleaseParticleIndex(nParticle)
+					end
+				})
+				Timers:CreateTimer({
+						endTime = ReincarnateTime+0.11, 
+						callback = function()
+						hCaster:AddNewModifier(hCaster, hAbility, "modifier_aegis_buff", {duration = ReincarnateBuffTime})
+					end
+				})
+				local nStackCount = self:GetStackCount()
+				self:SetStackCount(nStackCount-1)
+			end
+		end
 	end
 end
 

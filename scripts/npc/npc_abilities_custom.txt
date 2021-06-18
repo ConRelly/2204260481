@@ -40111,11 +40111,19 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName"			"oracle_false_promise"
 		"AbilityCooldown"				"0"
-		"AbilityDuration"				"3"
+		"AbilityDuration"				"%duration"
 		"precache"
 		{
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
+		}
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"3"		
+			}
 		}
 		"OnCreated"
 		{
@@ -40123,6 +40131,11 @@
 			{
 				"Target"		"CASTER"
 				"ModifierName"	"modifier_desire_of_life"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"abilities/desire_of_life.lua"
+				"Function"		"buff"
 			}
 		}
 		"Modifiers"
@@ -40149,6 +40162,11 @@
 						"Target"		"CASTER"
 						"ModifierName"	"modifier_grave_delay"
 					}
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/desire_of_life.lua"
+						"Function"		"give"
+					}
 				}
 				"Properties"
 				{
@@ -40160,7 +40178,7 @@
 				"IsBuff"			"1"
 				"IsHidden"			"1"
 				"IsPurgable"		"0"
-				"Duration"			"3"
+				"Duration"			"%duration"
 				"OnCreated"
 				{
 					"FireSound"
@@ -40172,7 +40190,7 @@
 					{
 						"Target"		"CASTER"
 						"ModifierName"	"modifier_dazzle_shallow_grave"
-						"Duration"		"3"
+						"Duration"		"%duration"
 					}
 				}
 				"OnTakeDamage"
@@ -40199,10 +40217,15 @@
 						"Target"		"CASTER"
 						"ModifierName"	"modifier_fp_delay"
 					}
+					"RunScript"
+					{
+						"ScriptFile"	"abilities/desire_of_life.lua"
+						"Function"		"give"
+					}
 				}
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_MIN_HEALTH"					"1"
+					"MODIFIER_PROPERTY_MIN_HEALTH"					"3"
 					"MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT"	"1"
 				}
 			}
@@ -40211,7 +40234,7 @@
 				"IsBuff"			"1"
 				"IsHidden"			"1"
 				"IsPurgable"		"0"
-				"Duration"			"3"
+				"Duration"			"%duration"
 				"OnCreated"
 				{
 					"FireSound"
@@ -40223,13 +40246,27 @@
 					{
 						"Target"		"CASTER"
 						"ModifierName"	"modifier_oracle_false_promise_timer"
-						"Duration"		"3"
+						"Duration"		"%duration"
 					}
 					"ApplyModifier"
 					{
 						"Target"		"CASTER"
 						"ModifierName"	"modifier_oracle_false_promise"
-						"Duration"		"3"
+						"Duration"		"%duration"
+					}
+					"ApplyModifier"
+					{
+						"Target"		"CASTER"
+						"ModifierName"	"modifier_black_king_bar_immune"
+						"Duration"		"%duration"
+					}
+				}
+				"OnDestroy"
+				{
+					"ApplyModifier"
+					{
+						"Target"		"CASTER"
+						"ModifierName"	"modifier_fight_to_death"
 					}
 				}
 				"OnAttackLanded"
@@ -40246,6 +40283,25 @@
 					"MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT"	"0.75"
 				}
 			}
+			"modifier_fight_to_death"
+			{
+				"IsBuff"			"1"
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+				"OnAttackLanded"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_PURE"
+						"Damage"		"100"
+					}
+				}
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT"	"0.5"
+				}
+			}
 		}
 	}
 
@@ -40255,6 +40311,19 @@
 		"BaseClass"					"ability_datadriven"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"		"troll_warlord_fervor"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"as_per_stack"			"20"
+			}
+			"2"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_per_stack"		"50"
+			}
+		}
 		"Modifiers"
 		{
 			"modifier_overcharge"
@@ -40286,8 +40355,8 @@
 				"IsBuff"			"1"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"20"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"50"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%as_per_stack"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%damage_per_stack"
 				}
 			}
 		}

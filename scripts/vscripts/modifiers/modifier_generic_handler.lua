@@ -111,14 +111,13 @@ end
 
 function modifier_generic_handler:GetModifierPreAttack_CriticalStrike()
 	if IsServer() then
-		if self:GetAbility() and (keys.target and not keys.target:IsOther() and not keys.target:IsBuilding() and keys.target:GetTeamNumber() ~= self:GetParent():GetTeamNumber()) then
-			local CritDMG = self:GetParent():GetCritDMG()
-			DMG = 100 + CritDMG
-		end
+		local CritDMG = self:GetParent():GetCritDMG()
+		DMG = 100 + CritDMG
+		return DMG
 	end
-	return DMG
 end
 
+--[[
 function modifier_generic_handler:OnAttackStart(keys)
 	if not IsServer() then return end
 	if keys.attacker == self:GetParent() and (self:GetParent():IsIllusion() and self:GetParent():GetHealth() <= 0) or (self:GetParent().GetPlayerID and self:GetParent():GetPlayerID() == -1 and not self:GetParent():GetName() == "npc_dota_target_dummy") then
@@ -126,3 +125,4 @@ function modifier_generic_handler:OnAttackStart(keys)
 		self:GetParent():RemoveSelf()
 	end
 end
+]]

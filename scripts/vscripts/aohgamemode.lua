@@ -96,6 +96,7 @@ function AOHGameMode:InitGameMode()
 	AOHGameMode.numPhilo[3] = 0
 	AOHGameMode.numPhilo[4] = 0
 	self._hardMode = false
+	_G._hardMode = false
 	self._endlessMode = false
 	self._endlessMode_started = false
 	self._manaMode = false
@@ -232,6 +233,7 @@ function AOHGameMode:InitGameMode()
 	ListenToGameEvent("dota_holdout_revive_complete", Dynamic_Wrap(AOHGameMode, 'OnHoldoutReviveComplete'), self)
 	ListenToGameEvent("player_chat", Dynamic_Wrap(AOHGameMode, "OnPlayerChat"), self)
 	ListenToGameEvent("dota_player_gained_level", Dynamic_Wrap(AOHGameMode, "OnHeroLevelUp"), self)
+    ListenToGameEvent("tree_cut", Dynamic_Wrap(AOHGameMode, "OnTreeCut"), self)
 	-- 玩家连接
 	ListenToGameEvent('player_connect', Dynamic_Wrap(AOHGameMode, 'OnPlayerConnect'), self)
 	-- 玩家重新连接
@@ -778,6 +780,14 @@ function AOHGameMode:OnHeroLevelUp(event)
 	end							
 end
 
+local lopata = true
+function AOHGameMode:OnTreeCut(keys)
+	local item = CreateItem("item_trusty_shovel", nil, nil)
+	if RollPseudoRandom(1, self) and lopata then
+		CreateItemOnPositionSync(Vector(keys.tree_x,keys.tree_y,0), item)
+		lopata = false
+	end
+end
 
 function AOHGameMode:_CheckForDefeat()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
@@ -861,6 +871,7 @@ local IllusionNotLearn = {
 	};
 
 LinkLuaModifier("modifier_generic_handler", "modifiers/modifier_generic_handler", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_charges", "modifiers/modifier_charges", LUA_MODIFIER_MOTION_NONE)
 function AOHGameMode:OnEntitySpawned(event)
 	--mHackGameMode:OnNPCSpawned(event)
 	-- Fix for str magic res and more.

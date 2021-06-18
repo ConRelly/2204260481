@@ -1,14 +1,17 @@
 LinkLuaModifier("modifier_ritual_shovel", "items/ritual_shovel", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_shovel_curse", "items/ritual_shovel", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_tome_str_bonus", "items/tomes.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_tome_agi_bonus", "items/tomes.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_tome_int_bonus", "items/tomes.lua", LUA_MODIFIER_MOTION_NONE)
 
 item_ritual_shovel = item_ritual_shovel or class({})
 function item_ritual_shovel:GetIntrinsicModifierName() return "modifier_ritual_shovel" end
 function item_ritual_shovel:OnSpellStart()
 	if not IsServer() then return end
-	self.portal = self:GetSpecialValueFor("portal_chance")
-	self.powerup = self:GetSpecialValueFor("powerup_rune_chance") + self.portal
-	self.bounty = self:GetSpecialValueFor("bounty_rune_chance") + self.powerup
-	self.flask = self:GetSpecialValueFor("flask_chance") + self.bounty
+	self.ultra_rare = self:GetSpecialValueFor("ultra_rare_chance")
+	self.rare = self:GetSpecialValueFor("rare_chance") + self.ultra_rare
+	self.rune = self:GetSpecialValueFor("rune_chance") + self.rare
+	self.flask = self:GetSpecialValueFor("flask_chance") + self.rune
 	self.kobold = self:GetSpecialValueFor("kobold_chance") + self.flask
 	self.pfx = ParticleManager:CreateParticle("particles/econ/events/ti9/shovel_dig.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
 	ParticleManager:SetParticleControl(self.pfx, 0, self:GetCursorPosition())
@@ -25,21 +28,20 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 
 	-- UP: Holy Locket
 	local up_chance = self:GetSpecialValueFor("up_chance")
-	for i = DOTA_ITEM_SLOT_1, DOTA_ITEM_SLOT_6 do
-		local item = self:GetParent():GetItemInSlot(i)
-		if item then
-			if item:GetAbilityName() == "item_holy_locket" then
-				if item:GetCurrentCharges() >= 15 then
-					if RollPseudoRandom(up_chance, self) then
-						self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_shovel_curse", {})
-					end
-				else
-					self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_shovel_curse", {})
+	local up = false
+	for itemSlot = 0, 5 do
+		local item = self:GetParent():GetItemInSlot(itemSlot)
+		if item and item:GetName() == "item_holy_locket" then
+			if item:GetCurrentCharges() >= 15 then
+				if RollPseudoRandom(up_chance, self) then
+					up = true
+					break
 				end
-			else
-				self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_shovel_curse", {})
 			end
 		end
+	end
+	if not up then
+		self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_shovel_curse", {})
 	end
 	------------------
 
@@ -51,33 +53,44 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 	SendOverheadEventMessage(nil, OVERHEAD_ALERT_MANA_ADD, self:GetCaster(), mana, nil)
 	if not bInterrupted then
 		local random_int = RandomInt(1, 100)
-		if random_int > 0 and random_int <= self.portal then
-			local portal = RandomInt(1, 70)
-			if portal > 0 and portal <= 25 then
-				SpawnItem("item_portal_1", self:GetCursorPosition(), ITEM_NOT_SHAREABLE, false)
---				SpawnItem("item_portal", self:GetAbsOrigin(), ITEM_NOT_SHAREABLE, false)
-			elseif portal > 25 and portal <= 43 then
-				SpawnItem("item_portal_2", self:GetCursorPosition(), ITEM_NOT_SHAREABLE, false)
---				SpawnItem("item_portal", self:GetAbsOrigin(), ITEM_NOT_SHAREABLE, false)
-			elseif portal > 43 and portal <= 55 then
-				SpawnItem("item_portal_3", self:GetCursorPosition(), ITEM_NOT_SHAREABLE, false)
---				SpawnItem("item_portal", self:GetAbsOrigin(), ITEM_NOT_SHAREABLE, false)
-			elseif portal > 55 and portal <= 63 then
-				SpawnItem("item_portal_4", self:GetCursorPosition(), ITEM_NOT_SHAREABLE, false)
---				SpawnItem("item_portal", self:GetAbsOrigin(), ITEM_NOT_SHAREABLE, false)
-			elseif portal > 63 and portal <= 67 then
-				SpawnItem("item_portal_5", self:GetCursorPosition(), ITEM_NOT_SHAREABLE, false)
---				SpawnItem("item_portal", self:GetAbsOrigin(), ITEM_NOT_SHAREABLE, false)
-			elseif portal > 67 and portal <= 69 then
-				SpawnItem("item_portal_6", self:GetCursorPosition(), ITEM_NOT_SHAREABLE, false)
---				SpawnItem("item_portal", self:GetAbsOrigin(), ITEM_NOT_SHAREABLE, false)
-			elseif portal == 70 then
-				SpawnItem("item_portal_7", self:GetCursorPosition(), ITEM_NOT_SHAREABLE, false)
---				SpawnItem("item_portal", self:GetAbsOrigin(), ITEM_NOT_SHAREABLE, false)
+		if random_int > 0 and random_int <= self.ultra_rare then
+			local ultra_rare = RandomInt(1, 100)
+			if ultra_rare > 0 and ultra_rare <= 5 then
+				SpawnItem("item_enchanter", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, false)
+			elseif ultra_rare > 5 and ultra_rare <= 30 then
+				SpawnItem("item_edible_fragment", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, false)
+			elseif ultra_rare > 30 and ultra_rare <= 100 then
+				if RollPseudoRandom(50, self) then
+					SpawnItem("item_water_essence", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
+				else
+					SpawnItem("item_air_essence", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
+				end
 			end
-		end
-		if random_int > self.portal and random_int <= self.powerup then
-			local random_rune = RandomInt(1, 5)
+		elseif random_int > self.ultra_rare and random_int <= self.rare then
+			local rare = RandomInt(1, 100)
+			if rare > 0 and rare <= 5 then
+				SpawnItem("item_philosophers_stone2", self:GetCursorPosition(), ITEM_NOT_SHAREABLE, false)
+			elseif rare > 5 and rare <= 10 then
+				SpawnItem("item_removed_skill", self:GetCursorPosition(), ITEM_NOT_SHAREABLE, false)
+			elseif rare > 10 and rare <= 20 then
+				SpawnItem("item_aghanims_fragment", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, false)
+			elseif rare > 20 and rare <= 40 then
+				SpawnItem("item_tome_of_knowledge", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, false)
+			elseif rare > 40 and rare <= 100 then
+				local atr = RandomInt(1, 3)
+				if atr == 1 then
+					self:GetParent():ModifyStrength(10)
+					Add_Attributes(self:GetParent(), "modifier_tome_str_bonus", 10)
+				elseif atr == 2 then
+					self:GetParent():ModifyAgility(10)
+					Add_Attributes(self:GetParent(), "modifier_tome_agi_bonus", 10)
+				elseif atr == 3 then
+					self:GetParent():ModifyIntellect(10)
+					Add_Attributes(self:GetParent(), "modifier_tome_int_bonus", 10)
+				end
+			end
+		elseif random_int > self.rare and random_int <= self.rune then
+			local random_rune = RandomInt(1, 8)
 			if random_rune == 1 then
 				CreateRune(self:GetCursorPosition(), DOTA_RUNE_DOUBLEDAMAGE)
 			elseif random_rune == 2 then
@@ -88,17 +101,29 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 				CreateRune(self:GetCursorPosition(), DOTA_RUNE_REGENERATION)
 			elseif random_rune == 5 then
 				CreateRune(self:GetCursorPosition(), DOTA_RUNE_ARCANE)
-			end
-		elseif random_int > self.powerup and random_int <= self.bounty then
-			if RollPseudoRandom(50, self) then
-				CreateRune(self:GetCursorPosition(), DOTA_RUNE_BOUNTY)
-			else
+			elseif random_rune == 6 then
+				CreateRune(self:GetCursorPosition(), DOTA_RUNE_INVISIBILITY)
+			elseif random_rune == 7 then
 				CreateRune(self:GetCursorPosition(), DOTA_RUNE_WATER)
+			elseif random_rune == 8 then
+				CreateRune(self:GetCursorPosition(), DOTA_RUNE_BOUNTY)
 			end
-		elseif random_int > self.bounty and random_int <= self.flask then
-			SpawnItem("item_flask", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
+		elseif random_int > self.rune and random_int <= self.flask then
+			if RollPseudoRandom(50, self) then
+				SpawnItem("item_flask", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
+			else
+				SpawnItem("item_enchanted_mango", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
+			end
 		elseif random_int > self.flask and random_int <= self.kobold then
-			CreateUnitByName("npc_dota_neutral_kobold", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_NEUTRALS)
+			if RollPseudoRandom(80, self) then
+				CreateUnitByName("npc_dota_neutral_kobold", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_NEUTRALS)
+			else
+				if RollPseudoRandom(50, self) then
+					CreateUnitByName("npc_dota_custom_creep_28_3", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_NEUTRALS)
+				else
+					CreateUnitByName("npc_dota_inv_warrior", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_NEUTRALS)
+				end
+			end
 		end
 		local pfx2 = ParticleManager:CreateParticle("particles/econ/events/ti9/shovel_revealed_generic.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
 		ParticleManager:SetParticleControl(pfx2, 0, self:GetCursorPosition())
@@ -116,6 +141,15 @@ function SpawnItem(ItemName, Pos, Share, Sell)
 	item:SetShareability(Share)
 	item:SetPurchaseTime(0)
 	CreateItemOnPositionSync(Pos, item)
+end
+function Add_Attributes(caster, modifier_name, count)
+	if caster:HasModifier(modifier_name) then
+		local modifier = caster:FindModifierByName(modifier_name)
+		modifier:SetStackCount(modifier:GetStackCount() + count)
+	else
+		caster:AddNewModifier(caster, self, modifier_name, {})
+		caster:FindModifierByName(modifier_name):SetStackCount(count)
+	end
 end
 
 modifier_ritual_shovel = modifier_ritual_shovel or class({})

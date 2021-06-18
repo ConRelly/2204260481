@@ -15365,10 +15365,10 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"desire_of_life"			// Ability 1
-		"Ability2"					"burning_spear_datadriven"			// Ability 2
-		"Ability3"					"huskar_berserkers_blood"			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability1"					"desire_of_life"				// Ability 1
+		"Ability2"					"huskar_berserkers_blood"		// Ability 2
+		"Ability3"					""								// Ability 3
+		"Ability4"					""								// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -15436,12 +15436,24 @@
 			{
 				"1"
 				{
-					"Item"					"item_monkey_king_bar"
+					"Item"					"item_lier_scarlet_t"
 				}
 				"2"
 				{
-					"Item"					"item_black_king_bar_boss"
+					"Item"					"item_lier_scarlet_m"
 				}
+				"3"
+				{
+					"Item"					"item_lier_scarlet_b"
+				}
+				"4"
+				{
+					"Item"					"item_monkey_king_bar"
+				}
+//				"5"
+//				{
+//					"Item"					"item_black_king_bar_boss"
+//				}
 			}
 		}
 	}
@@ -15528,9 +15540,13 @@
 			}
 			"EquippedItems"
 			{
-				"Item1"
+				"1"
 				{
-					"Item"					""
+					"Item"					"item_basher"
+				}
+				"2"
+				{
+					"Item"					"item_penta_edged_sword"
 				}
 			}
 		}

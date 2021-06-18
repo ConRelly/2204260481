@@ -1,5 +1,5 @@
 vengefulspirit_wave_of_terror_lua = class({})
-LinkLuaModifier("modifier_vengefulspirit_wave_of_terror_lua", "lua_abilities/vengefulspirit_wave_of_terror_lua/vengefulspirit_wave_of_terror_lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_wave_of_terror_armor_reduction", "lua_abilities/vengefulspirit_wave_of_terror_lua/vengefulspirit_wave_of_terror_lua", LUA_MODIFIER_MOTION_NONE)
 
 
 function vengefulspirit_wave_of_terror_lua:OnSpellStart()
@@ -53,31 +53,31 @@ function vengefulspirit_wave_of_terror_lua:OnProjectileHit(hTarget, vLocation)
 			damage_type = DAMAGE_TYPE_PURE,
 			ability = self,
 		}
-		hTarget:AddNewModifier(self:GetCaster(), self, "modifier_vengefulspirit_wave_of_terror_lua", {duration = self.duration})
+		hTarget:AddNewModifier(self:GetCaster(), self, "modifier_wave_of_terror_armor_reduction", {duration = self.duration})
 		ApplyDamage(damage)
 	end
 	return false
 end
 
 --------------------------------------------------------------------------------
-modifier_vengefulspirit_wave_of_terror_lua = class({})
-function modifier_vengefulspirit_wave_of_terror_lua:IsDebuff() return true end
-function modifier_vengefulspirit_wave_of_terror_lua:IsPurgable() return false end
-function modifier_vengefulspirit_wave_of_terror_lua:GetEffectName()
+modifier_wave_of_terror_armor_reduction = class({})
+function modifier_wave_of_terror_armor_reduction:IsDebuff() return true end
+function modifier_wave_of_terror_armor_reduction:IsPurgable() return false end
+function modifier_wave_of_terror_armor_reduction:GetEffectName()
 	return "particles/units/heroes/hero_vengeful/vengeful_wave_of_terror_recipient.vpcf"
 end
-function modifier_vengefulspirit_wave_of_terror_lua:GetEffectAttachType()
+function modifier_wave_of_terror_armor_reduction:GetEffectAttachType()
 	return PATTACH_ABSORIGIN_FOLLOW
 end
-function modifier_vengefulspirit_wave_of_terror_lua:OnCreated()
+function modifier_wave_of_terror_armor_reduction:OnCreated()
 	self.armor_reduction = self:GetAbility():GetSpecialValueFor("armor_reduction") - math.floor(self:GetAbility():GetSpecialValueFor("armor_agi_multiplier") / 100 * self:GetCaster():GetAgility()) + talent_value(self:GetCaster(), "special_bonus_unique_vengeful_spirit_4")
 end
-function modifier_vengefulspirit_wave_of_terror_lua:OnRefresh()
+function modifier_wave_of_terror_armor_reduction:OnRefresh()
 	self.armor_reduction = self:GetAbility():GetSpecialValueFor("armor_reduction") - math.floor(self:GetAbility():GetSpecialValueFor("armor_agi_multiplier") / 100 * self:GetCaster():GetAgility()) + talent_value(self:GetCaster(), "special_bonus_unique_vengeful_spirit_4")
 end
-function modifier_vengefulspirit_wave_of_terror_lua:DeclareFunctions()
+function modifier_wave_of_terror_armor_reduction:DeclareFunctions()
 	return {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS}
 end
-function modifier_vengefulspirit_wave_of_terror_lua:GetModifierPhysicalArmorBonus(params)
+function modifier_wave_of_terror_armor_reduction:GetModifierPhysicalArmorBonus(params)
 	return self.armor_reduction
 end

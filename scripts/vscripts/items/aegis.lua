@@ -4,19 +4,20 @@
 item_inf_aegis = class({})
 LinkLuaModifier("modifier_inf_aegis", "items/aegis.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_inf_aegis_stats", "items/aegis.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_aegis_buff", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
 function item_inf_aegis:GetIntrinsicModifierName() return "modifier_inf_aegis" end
 function item_inf_aegis:GetCooldown(level)
-
+--[[
 	--UP: without Seal
 	if not self:GetCaster():HasModifier("immortal_all_in_one") then
 		return 60
 	end
 	------------------
-	
-	return self.BaseClass.GetCooldown( self, level )
+]]
+	return self.BaseClass.GetCooldown(self, level)
 end
 function item_inf_aegis:IsRefreshable() return false end
-function item_inf_aegis:item( keys, self )
+function item_inf_aegis:item(keys, self)
 	local unit = keys.unit
 	local reincarnate = keys.reincarnate
 	if reincarnate and (not self.caster:HasModifier("modifier_item_aegis")) then
@@ -76,8 +77,9 @@ end
 function modifier_inf_aegis:DeclareFunctions() return {MODIFIER_PROPERTY_REINCARNATION, MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS, MODIFIER_EVENT_ON_DEATH, MODIFIER_PROPERTY_RESPAWNTIME_STACKING} end
 function modifier_inf_aegis:ReincarnateTime()
 	if IsServer() then
-		self:GetCaster():EmitSound("Aegis.Timer")
 		if not self.can_die and self.caster:IsRealHero() then
+			self:GetCaster():EmitSound("Aegis.Timer")
+			self:GetAbility():StartCooldown(self:GetAbility():GetSpecialValueFor("cooldown"))
 			return self.reincarnate_delay
 		end
 		return nil
@@ -91,11 +93,16 @@ function modifier_inf_aegis:GetActivityTranslationModifiers()
 end
 function modifier_inf_aegis:OnDeath(keys)
 	if IsServer() then
-		local unit = keys.unit
 		local reincarnate = keys.reincarnate
-		if self:GetParent() == unit then
+		if self:GetParent() == keys.unit then
 			item_inf_aegis:item(keys, self)
 		end
+		Timers:CreateTimer({
+				endTime = self:GetAbility():GetSpecialValueFor("reincarnate_delay") + 0.11, 
+				callback = function()
+				self.caster:AddNewModifier(self.caster, self.ability, "modifier_aegis_buff", {duration = 14})
+			end
+		})
 	end
 end
 ---------------------

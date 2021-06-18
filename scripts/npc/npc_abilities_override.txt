@@ -18019,33 +18019,37 @@
 // Abyssal Blade
 	"item_abyssal_blade"
 	{
+		"UpgradesItems"					"item_abyssal_blade;item_mjz_abyssal_blade_2;item_mjz_abyssal_blade_3;item_mjz_abyssal_blade_4"
+		"UpgradeRecipe"					"item_recipe_mjz_abyssal_blade_2"
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"1"
 		"AbilityCooldown"				"15"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"140"
+				"bonus_damage"			"140 200 400 800 1325"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"500"
+				"bonus_health"			"500 1000 1550 1900 2250"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"	"25"
+				"bonus_health_regen"	"25 25 25 25 625"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_damage_melee"	"200"
+				"block_damage_melee"	"200 400 800 5000 22000"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_damage_ranged"	"200"
+				"block_damage_ranged"	"200 400 800 5000 22000"
 			}			
 			"06"
 			{
@@ -18055,7 +18059,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"50"
+				"bonus_strength"		"50 90 170 290 350"
 			}
 			"08"
 			{
@@ -18065,7 +18069,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_chance_ranged"		"15"
+				"bash_chance_ranged"	"15"
 			}
 			"10"
 			{
@@ -18080,12 +18084,12 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_chance_damage"	"300"
+				"bonus_chance_damage"	"100 170 255 730 19400"
 			}
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"				"2"
+				"stun_duration"			"2"
 			}
 		}
 	}
@@ -18296,6 +18300,8 @@
 	"item_armlet"
 	{
 		"ItemBaseLevel"					"1"
+		"UpgradesItems"					"item_armlet;item_mjz_armlet_2;item_mjz_armlet_3;item_mjz_armlet_4"
+		"UpgradeRecipe"					"item_armlet"
 		"AbilitySpecial"
 		{
 			"01"
@@ -18354,6 +18360,8 @@
 // Basher
 	"item_basher"
 	{
+		"UpgradesItems"					"item_basher;item_mjz_basher_2;item_mjz_basher_3;item_mjz_basher_4"
+		"UpgradeRecipe"					"item_basher"
 		"AbilityCooldown"				"2.5"
 		"AbilitySpecial"
 		{
@@ -18503,8 +18511,10 @@
 // Bloodthorn
 	"item_bloodthorn"
 	{
-		"MaxUpgradeLevel"			   "2"
-		"ItemBaseLevel"				 "1"
+		"UpgradesItems"				"item_cursed_bloodthorn"
+		"UpgradeRecipe"				"item_lesser_crit;item_recipe_cursed_bloodthorn"
+		"MaxUpgradeLevel"			"2"
+		"ItemBaseLevel"				"1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -18529,7 +18539,7 @@
 			}			
 			"05"
 			{
-				"var_type"				"FIELD_FLOAT"
+				"var_type"					"FIELD_FLOAT"
 				"silence_damage_percent"	"30"
 			}	
 			"06"
@@ -18539,8 +18549,8 @@
 			}
 			"07"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"target_crit_multiplier"		"130 150"
+				"var_type"					"FIELD_FLOAT"
+				"target_crit_multiplier"	"130 150"
 			}
 			"8"
 			{
@@ -18558,6 +18568,8 @@
 		"AbilityCooldown"				"24.0"
 		"AbilitySharedCooldown"			"bloodstone"
 		"AllowedInBackpack"				"1"
+		"UpgradesItems"					"item_bloodstone;item_dark_bloodstone"
+		"UpgradeRecipe"					"item_chest_4;item_recipe_dark_bloodstone"
 		"MaxUpgradeLevel"				"2"
 		"ItemBaseLevel"					"1"
 		"AbilitySpecial"
@@ -19673,6 +19685,8 @@
 		"MaxUpgradeLevel"				"2"
 		"ItemBaseLevel"					"1"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"UpgradesItems"					"item_monkey_king_bar;item_mjz_monkey_king_bar_2;item_mjz_monkey_king_bar_3;item_mjz_monkey_king_bar_4"
+		"UpgradeRecipe"					"item_monkey_king_bar"
 		"AbilitySpecial"
 		{
 			"01"
@@ -20302,18 +20316,22 @@
 // Satanic
 	"item_satanic"
 	{
+		"UpgradesItems"					"item_satanic;item_mjz_satanic_2;item_mjz_satanic_3;item_mjz_satanic_4"
+		"UpgradeRecipe"					"item_claymore;item_reaver"
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"1"
 		"AbilityCooldown"				"25.0"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"25"
+				"bonus_strength"		"25 50 75 100 325"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"55"
+				"bonus_damage"			"55 110 165 220 380"
 			}
 			"04"
 			{
@@ -20444,34 +20462,36 @@
 // Skadi
 	"item_skadi"
 	{
-		"MaxUpgradeLevel"			"2"
+		"UpgradesItems"				"item_skadi;item_mjz_skadi_2;item_mjz_skadi_3;item_mjz_skadi_4"
+		"UpgradeRecipe"				"item_skadi"
+		"MaxUpgradeLevel"			"5"
 		"ItemBaseLevel"				"1"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"25 150"
+				"bonus_all_stats"		"25 75 125 175 475"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"225 1900"
+				"bonus_health"			"225 440 660 880 2900"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"250 1900"
+				"bonus_mana"			"225 440 660 880 1900"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_slow_melee"		"-15 -25"
+				"cold_slow_melee"		"-15"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cold_slow_ranged"		"-15 -25"
+				"cold_slow_ranged"		"-15"
 			}
 			"06"
 			{
@@ -20481,7 +20501,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_reduction"		"35 55"
+				"heal_reduction"		"35"
 			}
 		}
 	}
@@ -20532,6 +20552,8 @@
 		"AbilityCooldown"				"22"
 		"MaxUpgradeLevel"				"3"
 		"ItemBaseLevel"					"1"
+		"UpgradesItems"					"item_soul_ring;item_soul_ring_2"
+		"UpgradeRecipe"					"item_recipe_soul_ring_2"
 		"AbilitySpecial"
 		{
 			"01"
@@ -20542,7 +20564,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"	"2.5 5.0 7.5"
+				"bonus_armor"			"2 4 6"
 			}
 			"03"
 			{
@@ -22758,8 +22780,8 @@
 	"item_quicksilver_amulet"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ItemIsNeutralDrop"				"0"
 		"ItemCost"						"7100"
+		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"

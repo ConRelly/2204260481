@@ -82,6 +82,7 @@
 	"npc_dota_custom_creep_22_2"	"Demon Marauder"
 	"npc_dota_custom_creep_22_3"	"Demon Marauder"
 	"npc_dota_custom_creep_24_3"	"Strygwyr"
+	"npc_dota_custom_creep_28_3"	"Huskar"
 	"npc_dota_inv_warrior"			"Ulfsaar"
 
 
@@ -100,11 +101,12 @@
 	"DOTA_Tooltip_modifier_force_boots_active"					"Force"
 	"DOTA_Tooltip_modifier_force_boots_active_Description"		"Propelled forward"
 
-	"DOTA_Tooltip_ability_item_inf_aegis"				"Aegis of the Immortal"
+	"DOTA_Tooltip_ability_item_inf_aegis"				"Aegis of Infinity"
 	"DOTA_Tooltip_ability_item_inf_aegis_Lore"			"The Immortal was said to own a shield that protected him from death itself."
-	"DOTA_Tooltip_ability_item_inf_aegis_Description"	"<h1>Passive: Reincarnation</h1>Brings you to life with full health and mana %reincarnate_delay% seconds after you die, at the location where you died.\n<h1>Suicide</h1>Every proc gives owner +%proc_stats% All Attributes (allows you to use the command -kill for suicide).\nNot spent after death."
+	"DOTA_Tooltip_ability_item_inf_aegis_Description"	"<h1>Passive: Reincarnation</h1>Brings you to life with full health and mana %reincarnate_delay% seconds after you die, at the location where you died.\n<h1>Suicide</h1>Every proc gives owner +%proc_stats% All Attributes (allows you to use the command -killmepls for proc).\nNot spent after death."
 	"DOTA_Tooltip_ability_item_inf_aegis_note0"			"Does not affect cooldown reduction."
 	"DOTA_Tooltip_ability_item_inf_aegis_note1"			"You can't reset the cooldown."
+	"DOTA_Tooltip_ability_item_inf_aegis_cooldown"				"Cooldown:"
 	"DOTA_Tooltip_modifier_inf_aegis_stats"				"Stacks of Immortality"
 	"DOTA_Tooltip_modifier_inf_aegis_stats_Description"	"+%dMODIFIER_PROPERTY_TOOLTIP% All Attributes"
 
@@ -255,14 +257,16 @@
 
 
 	"dota_tooltip_ability_item_ritual_shovel"				"Cursed Shovel"
-	"dota_tooltip_ability_item_ritual_shovel_description"	"<h1>Active: Dig</h1>Sacrificing %hp_loss% health can dig up:<br>Portal upgrade - %portal_chance%%%: <font color='#BFBFBF'>Tier 1</font> - 35.73%%; <font color='#93E47F'>Tier 2</font> - 25.73%%, <font color='#8094FC'>Tier 3</font> - 17.15%%, <font color='#D57CFF'>Tier 4</font> - 11.43%%, <font color='#FFE196'>Tier 5</font> - 5.71%%, <font color='#70FFFF'>Tier 6</font> - 2.85%%, <font color='#FF853F'>Tier 7</font> - 1.42%%<br>Powerup rune - %powerup_rune_chance%%%<br>Bounty rune or Water rune - %bounty_rune_chance%%%<br>Healing Salve - %flask_chance%%%<br>Enemy Kobold - %kobold_chance%%%<br><br>Replenishes Mana in the amount of 1/2 of sacrificed Health<br><br>Channel for %dig_time_tooltip% second.\n<h1><font color='#A32715'>Shovel's Curse</font></h1>With each subsequent use, the shovel takes an additional %hp_per_stack% Health.\n<h1><font color='#06945D'>UP: Holy Locket (15+ charges)</font></h1>%up_chance%%% chance of not getting the curse.\n<h1>Low Priority</h1>Reduces attack priority on the owner."
-	"dota_tooltip_ability_item_ritual_shovel_note0"	"Damage from use can be lethal"
+	"dota_tooltip_ability_item_ritual_shovel_description"	"<h1>Active: Dig</h1>Sacrificing %hp_loss% health can dig up:<br><br>Ultra Rare Reward - %ultra_rare_chance%%%:<br>Enchanter - 5%%, Edible Fragment - 25%%, Sphere of Water or Sphere of Air - 70%%<br><br>Rare Reward - %rare_chance%%%:<br>Philosopher's Stone - 5%%, Removed Skill Prof - 5%%, Aghanim's Fragment - 10%%, Tome of Knowledge - 20%%, +10 to a random attribute - 60%%<br><br>Random Rune - %rune_chance%%%<br>Healing Salve or Enchanted Mango - %flask_chance%%%<br>Enemy creep - %kobold_chance%%%: Kobold - 80%%<br><br>Replenishes Mana in the amount of 1/2 of sacrificed Health<br><br>Channel for %AbilityChannelTime% second.\n<h1><font color='#A32715'>Shovel's Curse</font></h1>With each subsequent use, the shovel takes an additional %hp_per_stack% Health.\n<h1><font color='#06945D'>UP: Holy Locket (15+ charges)</font></h1>%up_chance%%% chance of not getting the curse.\n<h1>Low Priority</h1>Reduces attack priority on the owner."
+	"dota_tooltip_ability_item_ritual_shovel_note0"	"Damage from use can be lethal."
 	"dota_tooltip_ability_item_ritual_shovel_Lore"	"Former plaything of a young demon, received as a gift from his uncle."
 	"dota_tooltip_ability_item_ritual_shovel_hp"			"+$health"
 	"dota_tooltip_ability_item_ritual_shovel_str"			"+$str"
 	"dota_tooltip_ability_item_ritual_shovel_armor"			"+$armor"
 	"dota_tooltip_modifier_shovel_curse"				"Shovel Curse"
 	"dota_tooltip_modifier_shovel_curse_description"	"Health cost for the next use will be equal to %dMODIFIER_PROPERTY_TOOLTIP% Health"
+
+	"DOTA_Tooltip_Ability_item_trusty_shovel_Description"		"<h1>Active: Dig</h1>Channel for %abilitychanneltime% second.<br>Can find a Bounty Rune, a Flask, an Enchanted Mango, or an enemy Kobold.\nIf you donate your blood using the ring, then..."
 
 
 	"dota_tooltip_ability_item_angel_armor"					"Angel Armor"
@@ -394,12 +398,16 @@
 	"DOTA_Tooltip_ability_item_titan_relic_debuff_amp"				"%+$debuff_amp"
 	"DOTA_Tooltip_ability_item_titan_relic_buff_amp"				"%+$buff_amp"
 
+
+	"DOTA_Tooltip_ability_item_aghanims_fragment"				"Aghanim's Fragment"
+	"DOTA_Tooltip_ability_item_aghanims_fragment_description"	"<h1>Active: Synthesis</h1>Creates <font color='#0094FF'>Aghanim's Shard</font> using %shard% fragments<br>Creates <font color='#0094FF'>Aghanim's Scepter</font> using %scepter% fragments<br>Creates <font color='#DE3163'>Super Scepter</font> using %super_scepter% fragments\nOrder of creation: Aghanim's Shard -> Aghanim's Scepter -> Super Scepter<br><br>If the owner already has Aghanim's Shard or Aghanim's Scepter, then they are skipped in order."
+
 //############################################################################################################################
 
 	"DOTA_Tooltip_ability_overcharge"				"Overcharge"
-	"DOTA_Tooltip_ability_overcharge_Description"	"With each hit, it gains +50Attack Damage and +20 Attack Speed.<br>Self-kills when the number of stacks is equal to 50 (Hard - 100).\n<h1>Cannot miss</h1>"
+	"DOTA_Tooltip_ability_overcharge_Description"	"With each hit, it gains +%damage_per_stack% Attack Damage and +%as_per_stack% Attack Speed.<br>Self-kills when the number of stacks is equal to 50 (Hard - 100).\n<h1>Cannot miss</h1>"
 	"DOTA_Tooltip_modifier_overcharge_stack"				"Overcharge Stacks"
-	"DOTA_Tooltip_modifier_overcharge_stack_Description"	"Gives +%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Attack Damage and +%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% Attack Speed"
+	"DOTA_Tooltip_modifier_overcharge_stack_Description"	"Gives +%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Attack Damage and +%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% Attack Speed"
 
 	"DOTA_Tooltip_ability_warrior_dispersion"				"Dispersion"
 	"DOTA_Tooltip_ability_warrior_dispersion_Description"	"Stop hitting yourself"
@@ -432,7 +440,7 @@
 	"dota_tooltip_modifier_soul_bind_red_aura_dead_description"		"Death is not the end."
 
 	"dota_tooltip_ability_desire_of_life"				"Desire of Life"
-	"dota_tooltip_ability_desire_of_life_description"	""
+	"dota_tooltip_ability_desire_of_life_description"	"What doesn't kill you makes you stronger."
 
 
 	"DOTA_Tooltip_Ability_clinkz_infernal_breath"				"Infernal Breath"
@@ -2821,13 +2829,13 @@
 	"DOTA_Tooltip_modifier_medusa_mana_shield_bonus_mana"           "Bonus Mana"
 
 	"DOTA_Tooltip_ability_mjz_meepo_meepo_king"						"King of Meepo"
-	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_Description"			"King of Meepo.If a unit dies while under this effect, Meepo gains bonus experience."
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_Description"			"King of Meepo. If a unit dies while under this effect, Meepo gains bonus experience."
 	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_Lore"				"Do I know you?"
 	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_bonus_damage_pct"			"%BONUS DAMAGE:"
 	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_bonus_attack_speed"			"BONUS ATTACK SPEED:"
 	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_bonus_armor"					"BONUS ARMOR:"
 	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_bonus_resistance"			"%BONUS MAGIC RESISTANCE:"
-	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_bonus_health_regen"			"%BONUS HEALTH REGEN:"
+	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_bonus_health_regen"			"BONUS HEALTH REGEN:"
 	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_experience_pct"				"%XP GAIN:"
 	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_experience_radius"			"XP GAIN RADIUS:"
 		
@@ -6906,20 +6914,26 @@ Nimbus is not recasted by Thundergod's Wrath."
 Rock is consumed after use."
 "DOTA_Tooltip_Ability_item_rock_Lore"						"Surprisingly cheap."
 "DOTA_Tooltip_Ability_item_rock_damage"						"DAMAGE:"
-"DOTA_Tooltip_ability_item_soul_ring_2"								 "Soul Ring LVL 2"
-"DOTA_Tooltip_ability_item_soul_ring_2_Description"						"<h1>Active: Sacrifice</h1> Consume %health_sacrifice% health to temporarily gain %mana_gain% mana.  Lasts %duration% seconds.<br><br>If the mana gained cannot fit in your mana pool, it creates a buffer of mana that will be used before your mana pool."
-"DOTA_Tooltip_ability_item_soul_ring_2_Lore"							"A ring that feeds on the souls of those who wear it."
-"DOTA_Tooltip_ability_item_soul_ring_2_Note0"							"If this mana is not used before the duration ends, the extra mana is lost."
-"DOTA_Tooltip_ability_item_soul_ring_2_bonus_strength"					"+$str"
-"DOTA_Tooltip_ability_item_soul_ring_2_bonus_health_regen"				"+$hp_regen"
 
 
-"DOTA_Tooltip_ability_item_soul_ring_3"								 "Soul Ring LVL 3"
-"DOTA_Tooltip_ability_item_soul_ring_3_Description"						"<h1>Active: Sacrifice</h1> Consume %health_sacrifice% health to temporarily gain %mana_gain% mana.  Lasts %duration% seconds.<br><br>If the mana gained cannot fit in your mana pool, it creates a buffer of mana that will be used before your mana pool."
-"DOTA_Tooltip_ability_item_soul_ring_3_Lore"							"A ring that feeds on the souls of those who wear it."
-"DOTA_Tooltip_ability_item_soul_ring_3_Note0"							"If this mana is not used before the duration ends, the extra mana is lost."
-"DOTA_Tooltip_ability_item_soul_ring_3_bonus_strength"					"+$str"
-"DOTA_Tooltip_ability_item_soul_ring_3_bonus_health_regen"				"+$hp_regen"
+"DOTA_Tooltip_ability_item_soul_ring_2"						"Soul Ring LVL 2"
+"DOTA_Tooltip_ability_item_soul_ring_2_Description"			"<h1>Active: Sacrifice</h1> Consume %health_sacrifice% health to temporarily gain %mana_gain% mana.  Lasts %duration% seconds.<br><br>If the mana gained cannot fit in your mana pool, it creates a buffer of mana that will be used before your mana pool."
+"DOTA_Tooltip_ability_item_soul_ring_2_Lore"	"A ring that feeds on the souls of those who wear it."
+"DOTA_Tooltip_ability_item_soul_ring_2_Note0"	"If this mana is not used before the duration ends, the extra mana is lost."
+"DOTA_Tooltip_ability_item_soul_ring_2_bonus_strength"			"+$str"
+"DOTA_Tooltip_ability_item_soul_ring_2_bonus_armor"				"+$armor"
+
+"DOTA_Tooltip_ability_item_soul_ring_3"						"Soul Ring LVL 3"
+"DOTA_Tooltip_ability_item_soul_ring_3_Description"			"<h1>Active: Sacrifice</h1> Consume %health_sacrifice% health to temporarily gain %mana_gain% mana.  Lasts %duration% seconds.<br><br>If the mana gained cannot fit in your mana pool, it creates a buffer of mana that will be used before your mana pool."
+"DOTA_Tooltip_ability_item_soul_ring_3_Lore"	"A ring that feeds on the souls of those who wear it."
+"DOTA_Tooltip_ability_item_soul_ring_3_Note0"	"If this mana is not used before the duration ends, the extra mana is lost."
+"DOTA_Tooltip_ability_item_soul_ring_3_bonus_strength"			"+$str"
+"DOTA_Tooltip_ability_item_soul_ring_3_bonus_armor"				"+$armor"
+
+"DOTA_Tooltip_modifier_soul_ring_3_buff"				"Sacrifice"
+"DOTA_Tooltip_modifier_soul_ring_3_buff_Description"	"Mana increased at the cost of health. Extra mana will be lost at the end of Sacrifice's duration."
+
+
 "DOTA_Tooltip_Ability_item_speed_orb"							"Speed Orb"
 "DOTA_Tooltip_Ability_item_speed_orb_Description"				"<h1>Use: Consume</h1> Permanently increases your move speed by %bonus%."
 "DOTA_Tooltip_Ability_item_speed_orb_Lore"						"Speed is time and time is money, or is it?"
@@ -7233,8 +7247,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		//>>>>	Bloodstone LVL 2
 		"DOTA_Tooltip_modifier_item_mjz_bloodstone_active"						"Bloodpact"
 		"DOTA_Tooltip_Ability_item_mjz_bloodstone_2"							"Bloodstone LVL 2"
-		"DOTA_Tooltip_ability_item_mjz_bloodstone_2_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.
-<h1>Passive: Mana Battery</h1>Increases all passive mana regeneration by %mana_regen_multiplier%%%. "
+		"DOTA_Tooltip_ability_item_mjz_bloodstone_2_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.\n<h1>Passive: Mana Battery</h1>Increases all passive mana regeneration by %mana_regen_multiplier%%%. "
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_2_bonus_health"			"+$health"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_2_bonus_mana"				"+$mana"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_2_bonus_health_regen"		"+$hp_regen"
@@ -7243,8 +7256,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_2_Lore"					"The Bloodstone's bright ruby color is unmistakable on the battlefield, as the owner seems to have infinite vitality and spirit."
 		//>>>>	Bloodstone LVL 3
 		"DOTA_Tooltip_Ability_item_mjz_bloodstone_3"							"Bloodstone LVL 3"
-		"DOTA_Tooltip_ability_item_mjz_bloodstone_3_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.
-<h1>Passive: Mana Battery</h1>Increases all passive mana regeneration by %mana_regen_multiplier%%%. "
+		"DOTA_Tooltip_ability_item_mjz_bloodstone_3_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.\n<h1>Passive: Mana Battery</h1>Increases all passive mana regeneration by %mana_regen_multiplier%%%. "
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_3_bonus_health"			"+$health"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_3_bonus_mana"				"+$mana"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_3_bonus_health_regen"		"+$hp_regen"
@@ -7253,8 +7265,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_3_Lore"					"The Bloodstone's bright ruby color is unmistakable on the battlefield, as the owner seems to have infinite vitality and spirit."
 		//>>>>	Bloodstone LVL 4
 		"DOTA_Tooltip_Ability_item_mjz_bloodstone_4"							"Bloodstone LVL 4"
-		"DOTA_Tooltip_ability_item_mjz_bloodstone_4_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.
-<h1>Passive: Mana Battery</h1>Increases all passive mana regeneration by %mana_regen_multiplier%%%. "
+		"DOTA_Tooltip_ability_item_mjz_bloodstone_4_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.\n<h1>Passive: Mana Battery</h1>Increases all passive mana regeneration by %mana_regen_multiplier%%%. "
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_4_bonus_health"			"+$health"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_4_bonus_mana"				"+$mana"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_4_bonus_health_regen"		"+$hp_regen"
@@ -7263,8 +7274,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_4_Lore"					"The Bloodstone's bright ruby color is unmistakable on the battlefield, as the owner seems to have infinite vitality and spirit."
 		//>>>>	Bloodstone LVL 5
 		"DOTA_Tooltip_Ability_item_mjz_bloodstone_5"							"Bloodstone LVL 5"
-		"DOTA_Tooltip_ability_item_mjz_bloodstone_5_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.
-<h1>Passive: Mana Battery</h1>Increases all passive mana regeneration by %mana_regen_multiplier%%%. "
+		"DOTA_Tooltip_ability_item_mjz_bloodstone_5_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.\n<h1>Passive: Mana Battery</h1>Increases all passive mana regeneration by %mana_regen_multiplier%%%. "
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_5_bonus_health"			"+$health"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_5_bonus_mana"				"+$mana"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_5_bonus_health_regen"		"+$hp_regen"
@@ -7273,8 +7283,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_5_Lore"					"The Bloodstone's bright ruby color is unmistakable on the battlefield, as the owner seems to have infinite vitality and spirit."
 		//>>>>	Bloodstone Ultimate
 		"DOTA_Tooltip_Ability_item_mjz_bloodstone_ultimate"							"Bloodstone Ultimate"
-		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.
-<h1>Passive: Mana Battery</h1>Increases all passive mana regeneration by %mana_regen_multiplier%%%. "
+		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.\n<h1>Passive: Mana Battery</h1>Increases all passive mana regeneration by %mana_regen_multiplier%%%. "
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_bonus_health"			"+$health"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_bonus_mana"				"+$mana"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_bonus_health_regen"		"+$hp_regen"
@@ -7606,7 +7615,7 @@ Required Level: %required_level%
 		"DOTA_Tooltip_ability_item_mjz_aether_lens_bonus_mana_regen"		"+$mana_regen"
 		"DOTA_Tooltip_ability_item_mjz_aether_lens_Lore"					"Polished with the incantation of his final breath, the gift of a dying mage to his sickly son."
 		"DOTA_Tooltip_modifier_item_mjz_aether_lens_stats"					"Edible Aether Lens"
-		"DOTA_Tooltip_modifier_item_mjz_aether_lens_stats_Description"		"Increases Cast Range by 250, Spell Damage by 25%% and removes cast time."
+		"DOTA_Tooltip_modifier_item_mjz_aether_lens_stats_Description"		"Increases Cast Range by %dMODIFIER_PROPERTY_CAST_RANGE_BONUS%, Spell Damage by %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% and removes cast time."
 		//<<<<
 		
 		//>>>>	Armlet of Mordiggian LVL 2
@@ -7659,7 +7668,7 @@ Required Level: %required_level%
 		//<<<<
 		//>>>>	MJZ Assault Cuirass LVL 2
 		"DOTA_Tooltip_modifier_item_mjz_assault_buff"					"Assault Cuirass LVL"
-		"DOTA_Tooltip_modifier_item_mjz_assault_buff_Description"		"Armor enhanced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%. Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+		"DOTA_Tooltip_modifier_item_mjz_assault_buff_Description"		"Armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%. Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_modifier_item_mjz_assault_debuff"					"Assault Cuirass LVL"
 		"DOTA_Tooltip_modifier_item_mjz_assault_debuff_Description"		"Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
 		"DOTA_Tooltip_Ability_item_mjz_assault_2"							"Assault Cuirass LVL 2"
@@ -8573,8 +8582,8 @@ Contains all random skills"
 		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_damage_agi_multiplier"		"Agility As Bonus Damage:"
 		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_duration"					"<br>Debuff Duration:"
 		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_vision_duration"			"Vision Duration:"
-		"DOTA_Tooltip_modifier_vengefulspirit_wave_of_terror_lua"					"Wave of Terror"
-		"DOTA_Tooltip_modifier_vengefulspirit_wave_of_terror_lua_Description"		"Base armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
+		"DOTA_Tooltip_modifier_vs_wave_of_terror_armor_reduction"					"Wave of Terror"
+		"DOTA_Tooltip_modifier_vs_wave_of_terror_armor_reduction_Description"		"Base armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
 		"DOTA_Tooltip_ability_special_bonus_unique_wave_of_terror_dmg"		"+{s:value} Wave of Terror Agility As Bonus Damage"
 
 		"DOTA_Tooltip_ability_omniknight_purification_lua"									"Purification"

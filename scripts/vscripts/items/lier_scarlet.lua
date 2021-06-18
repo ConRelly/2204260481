@@ -75,7 +75,11 @@ function modifier_lier_scarlet_m:OnIntervalThink()
 		local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), nil, aoe_radius--[[FIND_UNITS_EVERYWHERE]], DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 		for _,enemy in pairs(enemies) do
 			if enemy~=self:GetCaster() then
-				ApplyDamage({victim = enemy, attacker = self:GetCaster(), damage = dmg, damage_type = DAMAGE_TYPE_PHYSICAL, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION, ability = self:GetAbility()})
+				local damageTable = {victim = enemy, attacker = self:GetCaster(), damage = dmg, damage_type = DAMAGE_TYPE_PHYSICAL, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION, ability = self:GetAbility()}
+				ApplyDamage(damageTable)
+				local aoe_interval = self:GetAbility():GetSpecialValueFor("aoe_interval")
+				Timers:CreateTimer({(aoe_interval / 3), function() ApplyDamage(damageTable) end})
+				Timers:CreateTimer({(aoe_interval / 3 * 2), function() ApplyDamage(damageTable) end})
 			end
 		end
 		self:GetCaster():Heal(heal,self:GetCaster())

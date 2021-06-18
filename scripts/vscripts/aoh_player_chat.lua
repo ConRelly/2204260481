@@ -2,8 +2,9 @@
 
 function AOHGameMode:OnPlayerChat(keys)
 	local time = GameRules:GetGameTime() / 60
-	if keys.text == "-hard" and not self._hardMode and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+	if keys.text == "-hard" and not self._hardMode and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		self._hardMode = true
+		_G._hardMode = true
 		Notifications:TopToAll({text="NotEasy mode has been activated.", style={color="red"}, duration=5})
 		self:_ReadGameConfiguration()
 	end
@@ -20,6 +21,7 @@ function AOHGameMode:OnPlayerChat(keys)
 	if keys.text == "-all" and (not self._endlessMode or not self._hardMode or not self._doubleMode) and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		self._endlessMode = true
 		self._hardMode = true
+		_G._hardMode = true
 		self._doubleMode = true
 		Notifications:TopToAll({text="Full Game, Hard Double Enabled", style={color="red"}, duration=5})
 		self._flPrepTimeBetweenRounds = 12
@@ -28,6 +30,7 @@ function AOHGameMode:OnPlayerChat(keys)
 	if keys.text == "-fullhard" and (not self._endlessMode or not self._hardMode) and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		self._endlessMode = true
 		self._hardMode = true
+		_G._hardMode = true
 		Notifications:TopToAll({text="Full Game Hard Enabled", style={color="red"}, duration=5})
 		self._flPrepTimeBetweenRounds = 12
 		self:_ReadGameConfiguration()
@@ -35,6 +38,7 @@ function AOHGameMode:OnPlayerChat(keys)
 	if keys.text == "-fullgame" and (not self._endlessMode or not self._hardMode) and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		self._endlessMode = true
 		self._hardMode = true
+		_G._hardMode = true
 		Notifications:TopToAll({text="Full Game Enabled (hard only) ", style={color="red"}, duration=5})
 		self._flPrepTimeBetweenRounds = 12
 		self:_ReadGameConfiguration()
@@ -274,6 +278,12 @@ function AOHGameMode:OnPlayerChat(keys)
 		local playerID = keys.playerid
 		self:CC_Kill(playerID)
 	end
+
+	local playerID = keys.playerid
+	local player = PlayerResource:GetSelectedHeroEntity(playerID)
+	if keys.text == "-killmepls" and player:HasModifier("modifier_inf_aegis") then
+		self:Suicider(playerID)
+	end
 end
 
 function AOHGameMode:OnPlayerConnect(keys)
@@ -404,6 +414,22 @@ function AOHGameMode:CC_Kill( playerID )
 		-- 	hero:RespawnUnit()
 		-- 	FindClearSpaceForUnit( hero, vLocation, true )
 		-- end
+	end
+end
+function AOHGameMode:Suicider(playerID)
+	if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:HasSelectedHero(playerID) then
+		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+		local isAlive = hero:IsAlive()
+		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+		local rezPosition = hero:GetAbsOrigin()
+		hero:RespawnHero(false, false)
+		hero:SetAbsOrigin(rezPosition)
+		Timers:CreateTimer({
+			endTime = 0.15, 
+			callback = function()
+				hero:ForceKill(false)
+			end
+		})
 	end
 end
 

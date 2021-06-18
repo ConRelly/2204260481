@@ -40,6 +40,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"reincarnate_buff_time"	 "14.0" //hardcoded
 			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aegis_up"				"15"
+			}
 		}
 	}
 	"item_recipe_pipe_2"
@@ -1486,22 +1491,20 @@
 }
 "item_recipe_cursed_bloodthorn"
 {
-		"ID" 		 "2009" 
-	"Model"							"models/props_gameplay/recipe.vmdl"
-	"BaseClass"					 "item_recipe_bloodthorn"
-	"ItemCost"						"500"	
-	"ItemShopTags"					""
-	"ItemRecipe"					"1"
-	"ItemResult"					"item_cursed_bloodthorn"
+	"Model"					"models/props_gameplay/recipe.vmdl"
+	"BaseClass"				"item_recipe_bloodthorn"
+	"ItemCost"				"500"
+	"ItemShopTags"			""
+	"ItemRecipe"			"1"
+	"ItemResult"			"item_cursed_bloodthorn"
 	"ItemRequirements"
 	{
-		"01"						"item_bloodthorn;item_lesser_crit"
+		"01"				"item_bloodthorn;item_lesser_crit"
 	}
 }
 "item_cursed_bloodthorn"
 {
-		"ID" 		 "2010" 
-	"BaseClass"					 "item_bloodthorn"
+	"BaseClass"						"item_bloodthorn"
 	"AbilityTextureName"			"ForaMon/cursed_bloodthorn"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -1516,8 +1519,8 @@
 	"ItemQuality"					"epic"
 	"ItemAliases"					"orchid malevolence"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-	"MaxUpgradeLevel"			   "2"
-	"ItemBaseLevel"				 "2"
+	"MaxUpgradeLevel"				"2"
+	"ItemBaseLevel"					"2"
 	"AbilitySpecial"
 	{
 		"01"
@@ -2201,11 +2204,10 @@
 }
 "item_recipe_formidable_chest"
 {
-		"ID" 		 "2030" 
 	"BaseClass"						"item_datadriven"
 	"Model"							"models/props_gameplay/recipe.vmdl"
 	"AbilityTextureName"			"item_recipe"
-	"ItemCost"						"1200"	
+	"ItemCost"						"1200"
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	"ItemResult"					"item_formidable_chest"
@@ -2216,14 +2218,15 @@
 }	
 "item_formidable_chest"
 {
-	"ID" 		 "2031" 
 	"BaseClass"						"item_lua"
 	"ScriptFile"					"items/formidable_chest.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"AbilityTextureName"			"formidable_chest"
 	"ItemShopTags"					"armor"
 	"ItemQuality"					"secret_shop"
-	"AbilitySharedCooldown"		 "item_mjz_attribute_mail"
+	"AbilitySharedCooldown"			"item_mjz_attribute_mail"
+	"UpgradesItems"					"item_formidable_chest;item_mjz_attribute_mail"
+	"UpgradeRecipe"					"item_recipe_mjz_attribute_mail"
 	"ItemAliases"					"Formidable Chest"
 	"AbilityCooldown"				"22.0"
 	"AbilityCastRange"				"3000"
@@ -2679,11 +2682,10 @@
 }
 "item_recipe_health_bag"
 {
-		"ID" 		 "2042" 
 	"Model"							"models/props_gameplay/recipe.vmdl"
 	"BaseClass"						"item_recipe_magic_wand"
 	"ItemCost"						"100"
-	"AbilityTextureName"			"item_recipe"	
+	"AbilityTextureName"			"item_recipe"
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	"ItemResult"					"item_health_bag"
@@ -2694,7 +2696,6 @@
 }
 "item_health_bag"
 {
-		"ID" 		 "2043" 
 	"BaseClass"						"item_lua"
 	"ScriptFile"					"items/health_bag.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
@@ -2707,13 +2708,14 @@
 	"AbilityCastRange"				"2000"
 	"AbilityCastPoint"				"0.15"
 	"AbilityManaCost"				"100"
-	"ItemCost"						"2900"
 	"ItemShopTags"					"support"
 	"ItemQuality"					"epic"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
 	"ItemAliases"					"heal;health"
-	"MaxUpgradeLevel"		   "2"
-	"ItemBaseLevel"			 "1"
+	"UpgradesItems"					"item_health_bag;item_health_bag_2"
+	"UpgradeRecipe"					"item_staff_of_wizardry;item_recipe_health_bag_2"
+	"MaxUpgradeLevel"				"2"
+	"ItemBaseLevel"					"1"
 	"AbilitySpecial"
 	{
 		"01"
@@ -2755,7 +2757,6 @@
 }
 "item_recipe_health_bag_2"
 {
-		"ID" 		 "2044" 
 	"Model"							"models/props_gameplay/recipe.vmdl"
 	"BaseClass"						"item_recipe_magic_wand"
 	"AbilityTextureName"			"item_recipe"
@@ -2770,7 +2771,6 @@
 }
 "item_health_bag_2"
 {
-		"ID" 		 "2045" 
 	"BaseClass"						"item_lua"
 	"ScriptFile"					"items/health_bag.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
@@ -2787,8 +2787,8 @@
 	"ItemQuality"					"epic"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
 	"ItemAliases"					"heal;health"
-	"MaxUpgradeLevel"		   "2"
-	"ItemBaseLevel"			 "2"
+	"MaxUpgradeLevel"				"2"
+	"ItemBaseLevel"					"2"
 	"AbilitySpecial"
 	{
 		"01"
@@ -2832,11 +2832,10 @@
 
 "item_recipe_high_tech_boots"
 {
-		"ID" 		 "2046" 
 	"BaseClass"						"item_datadriven"
 	"Model"							"models/props_gameplay/recipe.vmdl"
 	"AbilityTextureName"			"custom_recipe"
-	"ItemCost"						"1900"	
+	"ItemCost"						"1900"
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	"ItemResult"					"item_high_tech_boots"
@@ -2847,11 +2846,10 @@
 }
 "item_high_tech_boots"
 {
-		"ID" 		 "2047" 
 	"BaseClass"						"item_lua"
 	"ScriptFile"					"items/high_tech_boots.lua"
 	"AbilityTextureName"			"high_tech_boots"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL" 
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"ItemShopTags"					"teleport;move_speed"
 	"ItemQuality"					"common"
 	"ItemAliases"					"boht;boots of tech;tech"
@@ -2867,22 +2865,22 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"speed_as_block"	"20"
+			"speed_as_block"		"20"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_evasion"		"35"
+			"bonus_evasion"			"35"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_agility"		"50"
+			"bonus_agility"			"50"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"		"10"
+			"duration"				"10"
 		}
 		"06"
 		{
@@ -3574,122 +3572,127 @@
 		}
 	}
 }
-"item_recipe_soul_ring_2"
-{
-		"ID" 		 "2058" 
-	"Model"							"models/props_gameplay/recipe.vmdl"
-	"BaseClass"					 "item_recipe_soul_ring"
-	"ItemCost"						"400"	
-	"ItemShopTags"					""
-	"ItemRecipe"					"1"
-	"ItemResult"					"item_soul_ring_2"
-	"ItemRequirements"
+
+// Recipe: Soul Ring 2
+	"item_recipe_soul_ring_2"
 	{
-		"01"						"item_soul_ring"
-	}
-}
-"item_soul_ring_2"
-{
-		"ID" 		 "2059" 
-	"BaseClass"					 "item_soul_ring"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-	"AbilityTextureName"			"ForaMon/soul_ring_2"
-	"AbilityCooldown"				"12.0"
-	"AbilitySharedCooldown"			"soul_ring"
-	"AbilityManaCost"				"0"
-	"ItemShopTags"					"regen_health;boost_mana"
-	"ItemQuality"					"common"
-	"ItemAliases"					"soul ring"
-	"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"	
-	"MaxUpgradeLevel"			   "3"
-	"ItemBaseLevel"				 "2"
-	"AbilitySpecial"
-	{
-		"01"
+		"Model"					"models/props_gameplay/recipe.vmdl"
+		"BaseClass"				"item_recipe_soul_ring"
+		"ItemCost"				"400"
+		"ItemShopTags"			""
+		"ItemRecipe"			"1"
+		"ItemResult"			"item_soul_ring_2"
+		"ItemRequirements"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"		"6 9 12"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"bonus_health_regen"	"2.5 5.0 7.5"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"health_sacrifice"		"170 270 370"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"mana_gain"				"150 220 290"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"10"
+			"01"				"item_soul_ring"
 		}
 	}
-}
-"item_recipe_soul_ring_3"
-{
-		"ID" 		 "2060" 
-	"Model"							"models/props_gameplay/recipe.vmdl"
-	"BaseClass"					 "item_recipe_soul_ring"
-	"ItemCost"						"400"	
-	"ItemShopTags"					""
-	"ItemRecipe"					"1"
-	"ItemResult"					"item_soul_ring_3"
-	"ItemRequirements"
+// Soul Ring 2
+	"item_soul_ring_2"
 	{
-		"01"						"item_soul_ring_2"
-	}
-}	
-"item_soul_ring_3"
-{
-		"ID" 		 "2061" 
-	"BaseClass"					 "item_soul_ring"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-	"AbilityTextureName"			"ForaMon/soul_ring_3"
-	"AbilityCooldown"				"7.0"
-	"AbilitySharedCooldown"			"soul_ring"
-	"AbilityManaCost"				"0"
-	"ItemShopTags"					"regen_health;boost_mana"
-	"ItemQuality"					"common"
-	"ItemAliases"					"soul ring"
-	"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"	
-	"MaxUpgradeLevel"			   "3"
-	"ItemBaseLevel"				 "3"
-	"AbilitySpecial"
-	{
-		"01"
+		"BaseClass"						"item_soul_ring"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"ForaMon/soul_ring_2"
+		"AbilityCooldown"				"12.0"
+		"AbilitySharedCooldown"			"soul_ring"
+		"AbilityManaCost"				"0"
+		"ItemShopTags"					"regen_health;boost_mana"
+		"ItemQuality"					"common"
+		"ItemAliases"					"soul ring"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+		"UpgradesItems"					"item_soul_ring_2"
+		"UpgradeRecipe"					"item_recipe_soul_ring_2"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"2"
+		"AbilitySpecial"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"		"6 9 12"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"bonus_health_regen"	"2.5 5.0 7.5"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"health_sacrifice"		"170 270 370"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"mana_gain"				"150 220 290"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"10"
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"6 9 12"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_armor"			"2 4 6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_sacrifice"		"170 270 370"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_gain"				"150 220 290"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10"
+			}
 		}
 	}
-}
+
+// Recipe: Soul Ring 3
+	"item_recipe_soul_ring_3"
+	{
+		"Model"					"models/props_gameplay/recipe.vmdl"
+		"BaseClass"				"item_recipe_soul_ring"
+		"ItemCost"				"0"
+		"ItemShopTags"			""
+		"ItemRecipe"			"1"
+		"ItemResult"			"item_soul_ring_3"
+		"ItemRequirements"
+		{
+			"01"				"item_soul_ring_2;item_recipe_soul_ring_2"
+		}
+	}
+// Soul Ring 3
+	"item_soul_ring_3"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/soul_ring.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"ForaMon/soul_ring_3"
+		"AbilityCooldown"				"7.0"
+		"AbilitySharedCooldown"			"soul_ring"
+		"AbilityManaCost"				"0"
+		"ItemShopTags"					"regen_health;boost_mana"
+		"ItemQuality"					"common"
+		"ItemAliases"					"soul ring"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"3"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"6 9 12"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_armor"			"2 4 6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_sacrifice"		"170 270 370"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_gain"				"150 220 290"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"10"
+			}
+		}
+	}
 "item_speed_orb"
 {
 		"ID" 		 "2062" 
@@ -3915,39 +3918,43 @@
 }
 "item_assault"
 {
+	"UpgradesItems"					"item_assault;item_mjz_assault_2;item_mjz_assault_3;item_mjz_assault_4"
+	"UpgradeRecipe"					"item_assault"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityCastRange"				"1200"
+	"MaxUpgradeLevel"				"5"
+	"ItemBaseLevel"					"1"
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_attack_speed"	"30 60"
+			"bonus_attack_speed"	"30"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"10 20"
+			"bonus_armor"			"10 20 30 40 50"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aura_radius"			"1200 7200"
+			"aura_radius"			"1200 1900 2600 2800 7200"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aura_attack_speed"		"30 60"
+			"aura_attack_speed"		"30 50 90 190 300"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aura_positive_armor"	"5 7"
+			"aura_positive_armor"	"5 8 11 17 30"
 		}
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aura_negative_armor"	"-5 -7"
+			"aura_negative_armor"	"-5 -8 -11 -17 -30"
 		}			
 	}
 }
@@ -6375,6 +6382,8 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
+		"UpgradesItems"					"item_mjz_abyssal_blade_2;item_mjz_abyssal_blade_3;item_mjz_abyssal_blade_4"
+		"UpgradeRecipe"					"item_recipe_mjz_abyssal_blade_3"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"2"
 		"AbilitySpecial"
@@ -6432,7 +6441,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_cooldown"			"2.3"
+				"bash_cooldown"			"2"
 			}
 			"12"
 			{
@@ -6482,6 +6491,8 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
+		"UpgradesItems"					"item_mjz_abyssal_blade_3;item_mjz_abyssal_blade_4"
+		"UpgradeRecipe"					"item_recipe_mjz_abyssal_blade_4"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"3"
 		"AbilitySpecial"
@@ -6539,7 +6550,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_cooldown"			"2.3"
+				"bash_cooldown"			"2"
 			}
 			"12"
 			{
@@ -6589,6 +6600,8 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
+		"UpgradesItems"					"item_mjz_abyssal_blade_4"
+		"UpgradeRecipe"					"item_recipe_mjz_abyssal_blade_5"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"4"
 		"AbilitySpecial"
@@ -6646,7 +6659,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_cooldown"			"2.3"
+				"bash_cooldown"			"2"
 			}
 			"12"
 			{
@@ -6667,7 +6680,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName" 			"recipe"
-		"ItemCost"						"3000"	
+		"ItemCost"						"3000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_abyssal_blade_5"
@@ -6753,7 +6766,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_cooldown"			"2.3"
+				"bash_cooldown"			"2"
 			}
 			"12"
 			{
@@ -6828,7 +6841,7 @@
 			{
 				"ScriptFile"			"items/item_mjz_aether_lens.lua"
 				"Function"				"OnEquip"
-			}		
+			}
 		}
 		"OnUnequip"
 		{
@@ -6836,7 +6849,7 @@
 			{
 				"ScriptFile"			"items/item_mjz_aether_lens.lua"
 				"Function"				"OnUnequip"
-			}		
+			}
 		}
 		"OnSpellStart"
 		{
@@ -6890,7 +6903,9 @@
 		"ItemAliases"					"armlet of mordiggian"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_armlet_2;item_mjz_armlet_3;item_mjz_armlet_4"
+		"UpgradeRecipe"					"item_armlet"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"2"
 		"AbilitySpecial"
@@ -6973,7 +6988,9 @@
 		"ItemAliases"					"armlet of mordiggian"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_armlet_3;item_mjz_armlet_4"
+		"UpgradeRecipe"					"item_armlet"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"3"
 		"AbilitySpecial"
@@ -7057,7 +7074,9 @@
 		"ItemAliases"					"armlet of mordiggian"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_armlet_4"
+		"UpgradeRecipe"					"item_armlet"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"4"
 		"AbilitySpecial"
@@ -7227,7 +7246,9 @@
 		"ItemAliases"					"ac;assault cuirass"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_assault_2;item_mjz_assault_3;item_mjz_assault_4"
+		"UpgradeRecipe"					"item_assault"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"2"
 		"AbilitySpecial"
@@ -7292,7 +7313,9 @@
 		"ItemAliases"					"ac;assault cuirass"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_assault_3;item_mjz_assault_4"
+		"UpgradeRecipe"					"item_assault"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"3"
 		"AbilitySpecial"
@@ -7357,7 +7380,9 @@
 		"ItemAliases"					"ac;assault cuirass"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_assault_4"
+		"UpgradeRecipe"					"item_assault"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"4"
 		"AbilitySpecial"
@@ -7588,7 +7613,9 @@
 		"ItemAliases"					"skull basher"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_basher_2;item_mjz_basher_3;item_mjz_basher_4"
+		"UpgradeRecipe"					"item_basher"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"2"
 		"AbilitySpecial"
@@ -7658,7 +7685,9 @@
 		"ItemAliases"					"skull basher"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_basher_3;item_mjz_basher_4"
+		"UpgradeRecipe"					"item_basher"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"3"
 		"AbilitySpecial"
@@ -7728,7 +7757,9 @@
 		"ItemAliases"					"skull basher"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_basher_4"
+		"UpgradeRecipe"					"item_basher"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"4"
 		"AbilitySpecial"
@@ -8201,12 +8232,11 @@
 		"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bs;bloodstone"
-		//"ItemInitialCharges"			"14"
-		//"ItemDisplayCharges"			"1"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		//"AllowedInBackpack"				"0"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_bloodstone_2;item_mjz_bloodstone_3;item_mjz_bloodstone_4"
+		"UpgradeRecipe"					"item_soul_booster"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"2"
 		"AbilitySpecial"
@@ -8275,12 +8305,11 @@
 		"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bs;bloodstone"
-		//"ItemInitialCharges"			"14"
-		//"ItemDisplayCharges"			"1"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		//"AllowedInBackpack"				"0"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_bloodstone_3;item_mjz_bloodstone_4"
+		"UpgradeRecipe"					"item_soul_booster"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"3"
 		
@@ -8350,12 +8379,11 @@
 		"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bs;bloodstone"
-		//"ItemInitialCharges"			"14"
-		//"ItemDisplayCharges"			"1"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		//"AllowedInBackpack"				"0"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_bloodstone_4"
+		"UpgradeRecipe"					"item_soul_booster"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"4"
 		"AbilitySpecial"
@@ -8562,12 +8590,10 @@
 	}
 	"item_recipe_mjz_bogduggs_lucky_femur"
 	{
-		"ID" 		 "2147" 
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_recipe"
-		
-		"ItemCost"						"800"	
+		"ItemCost"						"800"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_bogduggs_lucky_femur"
 		"ItemRequirements"
@@ -8577,19 +8603,17 @@
 	}
 	"item_mjz_bogduggs_lucky_femur"
 	{
-		"ID" 		 "2148" 
-		"BaseClass"						"item_lua"	//"item_datadriven"
+		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_mjz_bogduggs_lucky_femur.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mjz_bogduggs_lucky_femur"
-		
-		"ItemCost"						"3000"
 		"ItemShopTags"					"int;mana"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"mjz;lucky"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
-		
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_bogduggs_lucky_femur;item_mjz_bogduggs_lucky_femur_2;item_mjz_bogduggs_lucky_femur_3;item_mjz_bogduggs_lucky_femur_4"
+		"UpgradeRecipe"					"item_recipe_mjz_bogduggs_lucky_femur"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"1"
 		"AbilityCooldown"				"5.0"
@@ -8605,7 +8629,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"bonus_mana"				"200 300 400 500 6000"
-			}			
+			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
@@ -8626,12 +8650,10 @@
 	}
 	"item_recipe_mjz_bogduggs_lucky_femur_2"
 	{
-		"ID" 		 "2149" 
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_recipe"
-		
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_bogduggs_lucky_femur_2"
 		"ItemRequirements"
@@ -8641,19 +8663,17 @@
 	}
 	"item_mjz_bogduggs_lucky_femur_2"
 	{
-		"ID" 		 "2150" 
-		"BaseClass"						"item_lua"	//"item_datadriven"
+		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_mjz_bogduggs_lucky_femur.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mjz_bogduggs_lucky_femur"
-
-		"ItemCost"						"3000"
 		"ItemShopTags"					"int;mana"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"mjz;lucky"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
-		
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_bogduggs_lucky_femur_2;item_mjz_bogduggs_lucky_femur_3;item_mjz_bogduggs_lucky_femur_4"
+		"UpgradeRecipe"					"item_recipe_mjz_bogduggs_lucky_femur"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"2"
 		"AbilityCooldown"				"5.0"
@@ -8669,7 +8689,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"bonus_mana"				"200 300 400 500 6000"
-			}			
+			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
@@ -8684,12 +8704,10 @@
 	}
 	"item_recipe_mjz_bogduggs_lucky_femur_3"
 	{
-		"ID" 		 "2151" 
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_recipe"
-		
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_bogduggs_lucky_femur_3"
 		"ItemRequirements"
@@ -8699,19 +8717,17 @@
 	}
 	"item_mjz_bogduggs_lucky_femur_3"
 	{
-		"ID" 		 "2152" 
-		"BaseClass"						"item_lua"	//"item_datadriven"
+		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_mjz_bogduggs_lucky_femur.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mjz_bogduggs_lucky_femur"
-
-		"ItemCost"						"3000"
 		"ItemShopTags"					"int;mana"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"mjz;lucky"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
-		
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_bogduggs_lucky_femur_3;item_mjz_bogduggs_lucky_femur_4"
+		"UpgradeRecipe"					"item_recipe_mjz_bogduggs_lucky_femur"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"3"
 		"AbilityCooldown"				"5.0"
@@ -8742,12 +8758,10 @@
 	}
 	"item_recipe_mjz_bogduggs_lucky_femur_4"
 	{
-		"ID" 		 "2153" 
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_recipe"
-		
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_bogduggs_lucky_femur_4"
 		"ItemRequirements"
@@ -8757,19 +8771,17 @@
 	}
 	"item_mjz_bogduggs_lucky_femur_4"
 	{
-		"ID" 		 "2154" 
-		"BaseClass"						"item_lua"	//"item_datadriven"
+		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_mjz_bogduggs_lucky_femur.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mjz_bogduggs_lucky_femur"
-
-		"ItemCost"						"3000"
 		"ItemShopTags"					"int;mana"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"mjz;lucky"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
-		
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_bogduggs_lucky_femur_4"
+		"UpgradeRecipe"					"item_recipe_mjz_bogduggs_lucky_femur_5"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"4"
 		"AbilityCooldown"				"5.0"
@@ -12868,21 +12880,19 @@
 			"particle"		"particles/items2_fx/mekanism.vpcf"
 		}
 	}
-
+	
+// Heart
+	"item_heart"
+	{
+		"UpgradesItems"					"item_heart;item_mjz_heart_2;item_mjz_heart_3;item_mjz_heart_4"
+		"UpgradeRecipe"					"item_heart"
+	}
+// Recipe: Heart
 	"item_recipe_heart"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"113"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_heart"
 		"ItemRequirements"
@@ -12945,7 +12955,9 @@
 		"ItemAliases"					"hot;heart of tarrasque"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_heart_2;item_mjz_heart_3;item_mjz_heart_4"
+		"UpgradeRecipe"					"item_heart"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"2"
 		
@@ -13004,22 +13016,20 @@
 	}
 	"item_mjz_heart_3"
 	{
-		"ID" 		 "2230" 
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_mjz_heart.lua"
 		"AbilityTextureName"			"mjz_heart"	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
 		"AbilityCooldown"				"7.0"
-
 		"ItemCost"						"15600"
 		"ItemShopTags"					"str;regen_health;health_pool"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"hot;heart of tarrasque"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_heart_3;item_mjz_heart_4"
+		"UpgradeRecipe"					"item_heart"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"3"
 		
@@ -13062,7 +13072,6 @@
 	//=================================================================================================================
 	"item_recipe_mjz_heart_4"
 	{
-		"ID" 		 "2231" 
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		
@@ -13078,22 +13087,20 @@
 	}
 	"item_mjz_heart_4"
 	{
-		"ID" 		 "2232" 
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_mjz_heart.lua"
 		"AbilityTextureName"			"mjz_heart"	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
 		"AbilityCooldown"				"7.0"
-
 		"ItemCost"						"20800"
 		"ItemShopTags"					"str;regen_health;health_pool"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"hot;heart of tarrasque"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_heart_4"
+		"UpgradeRecipe"					"item_heart"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"4"
 		
@@ -14786,7 +14793,9 @@
 		"ItemAliases"					"mkb;monkey king bar"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_monkey_king_bar_2;item_mjz_monkey_king_bar_3;item_mjz_monkey_king_bar_4"
+		"UpgradeRecipe"					"item_monkey_king_bar"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"2"
 		"AbilitySpecial"
@@ -14839,7 +14848,9 @@
 		"ItemAliases"					"mkb;monkey king bar"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_monkey_king_bar_3;item_mjz_monkey_king_bar_4"
+		"UpgradeRecipe"					"item_monkey_king_bar"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"3"
 		"AbilitySpecial"
@@ -14893,7 +14904,9 @@
 		"ItemAliases"					"mkb;monkey king bar"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_monkey_king_bar_4"
+		"UpgradeRecipe"					"item_monkey_king_bar"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"4"
 		"AbilitySpecial"
@@ -15688,10 +15701,7 @@
 		"ItemResult"					"item_mjz_satanic_2"
 		"ItemRequirements"
 		{
-			// 撒旦之邪力（5500） + 大剑（1400） + 掠夺者之斧（3000）
 			"01"						"item_satanic;item_claymore;item_reaver"
-			// "01"						"item_lifesteal;item_claymore;item_reaver"	
-			// "01"						"item_boots"	//test
 		}
 	}
 	//=================================================================================================================
@@ -15702,7 +15712,6 @@
 		"BaseClass"						"item_satanic"
 		"AbilityTextureName"			"mjz_satanic"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"FightRecapLevel"				"2"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityCooldown"				"30"
 		"AbilitySharedCooldown"			"satanic"
@@ -15711,7 +15720,9 @@
 		"ItemAliases"					"mjz;satanic"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_satanic_2;item_mjz_satanic_3;item_mjz_satanic_4"
+		"UpgradeRecipe"					"item_claymore;item_reaver"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"2"
 		"AbilitySpecial"
@@ -15761,7 +15772,6 @@
 		"ItemResult"					"item_mjz_satanic_3"
 		"ItemRequirements"
 		{
-			// 撒旦之邪力 LVL 2（9900） + 大剑（1400） + 掠夺者之斧（3000）
 			"01"						"item_mjz_satanic_2;item_claymore;item_reaver"
 		}
 	}
@@ -15770,11 +15780,9 @@
 	//=================================================================================================================
 	"item_mjz_satanic_3"
 	{
-		"ID" 		 "2287" 
 		"BaseClass"						"item_satanic"
 		"AbilityTextureName"			"mjz_satanic"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"FightRecapLevel"				"2"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityCooldown"				"30.0"
 		"AbilitySharedCooldown"			"satanic"
@@ -15783,7 +15791,9 @@
 		"ItemAliases"					"mjz;satanic"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_satanic_3;item_mjz_satanic_4"
+		"UpgradeRecipe"					"item_claymore;item_reaver"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"3"
 		"AbilitySpecial"
@@ -15833,7 +15843,6 @@
 		"ItemResult"					"item_mjz_satanic_4"
 		"ItemRequirements"
 		{
-			// 撒旦之邪力 LVL 3（14300） + 大剑（1400） + 掠夺者之斧（3000）
 			"01"						"item_mjz_satanic_3;item_claymore;item_reaver"
 		}
 	}
@@ -15842,7 +15851,6 @@
 	//=================================================================================================================
 	"item_mjz_satanic_4"
 	{
-		"ID" 		 "2289" 
 		"BaseClass"						"item_satanic"
 		"AbilityTextureName"			"mjz_satanic"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
@@ -15855,7 +15863,9 @@
 		"ItemAliases"					"mjz;satanic"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_satanic_4"
+		"UpgradeRecipe"					"item_claymore;item_reaver"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"4"
 		"AbilitySpecial"
@@ -15905,7 +15915,6 @@
 		"ItemResult"					"item_mjz_satanic_5"
 		"ItemRequirements"
 		{
-			// 撒旦之邪力 LVL 4（18700） + 大剑（1400） + 掠夺者之斧（3000）
 			"01"						"item_mjz_satanic_4;item_claymore;item_reaver"
 		}
 	}
@@ -15926,7 +15935,7 @@
 		"ItemAliases"					"mjz;satanic"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"5"
 		"AbilitySpecial"
@@ -16330,38 +16339,31 @@
 	//=================================================================================================================
 	"item_recipe_mjz_skadi_2"
 	{
-		"ID" 		 "2300" 
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
-
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
-		
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_skadi_2"
 		"ItemRequirements"
 		{
-			//冰眼（5500） + 冰眼（5500）
 			"01"						"item_skadi;item_skadi"
-			// "01"						"item_ultimate_orb;item_ultimate_orb;item_point_booster"
 		}
 	}
 	"item_mjz_skadi_2"
 	{
-		"ID" 		 "2301" 
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_mjz_skadi.lua"
 		"AbilityTextureName"			"mjz_skadi"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		"ItemCost"						"11000"
 		"ItemShopTags"					"mjz;agi;str;int;hard_to_tag;mana_pool;health_pool;unique"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"eos;eye of skadi"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_skadi_2;item_mjz_skadi_3;item_mjz_skadi_4"
+		"UpgradeRecipe"					"item_skadi"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"2"
 		
@@ -16409,13 +16411,10 @@
 	//=================================================================================================================
 	"item_recipe_mjz_skadi_3"
 	{
-		"ID" 		 "2302" 
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
-
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
-		
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_skadi_3"
 		"ItemRequirements"
@@ -16425,20 +16424,18 @@
 	}
 	"item_mjz_skadi_3"
 	{
-		"ID" 		 "2303" 
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_mjz_skadi.lua"
 		"AbilityTextureName"			"mjz_skadi"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		"ItemCost"						"16500"
 		"ItemShopTags"					"mjz;agi;str;int;hard_to_tag;mana_pool;health_pool;unique"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"eos;eye of skadi"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_skadi_3;item_mjz_skadi_4"
+		"UpgradeRecipe"					"item_skadi"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"3"
 		
@@ -16486,13 +16483,10 @@
 	//=================================================================================================================
 	"item_recipe_mjz_skadi_4"
 	{
-		"ID" 		 "2304" 
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
-
-		"ItemCost"						"0"	
+		"ItemCost"						"0"
 		"ItemShopTags"					""
-		
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_skadi_4"
 		"ItemRequirements"
@@ -16502,20 +16496,18 @@
 	}
 	"item_mjz_skadi_4"
 	{
-		"ID" 		 "2305" 
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_mjz_skadi.lua"
 		"AbilityTextureName"			"mjz_skadi"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		"ItemCost"						"22000"
 		"ItemShopTags"					"mjz;agi;str;int;hard_to_tag;mana_pool;health_pool;unique"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"eos;eye of skadi"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"					"item_mjz_skadi_4"
+		"UpgradeRecipe"					"item_skadi;item_recipe_mjz_skadi_5"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"4"
 		
@@ -18164,8 +18156,8 @@
 "item_recipe_dark_bloodstone"
 {
 	"Model"							"models/props_gameplay/recipe.vmdl"
-	"BaseClass"					 "item_recipe_bloodstone"
-	"ItemCost"						"100"	
+	"BaseClass"						"item_recipe_bloodstone"
+	"ItemCost"						"100"
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	"ItemResult"					"item_dark_bloodstone"
@@ -18177,9 +18169,8 @@
 "item_dark_bloodstone"
 {
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"BaseClass"					 "item_bloodstone"
+	"BaseClass"						"item_bloodstone"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"ItemCost"					  "7000"
 	"AbilityCastPoint"				"0.0"
 	"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
 	"ItemQuality"					"epic"
@@ -18221,17 +18212,17 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"spell_amp"				"12 70"
-		}	
+		}
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"spell_lifesteal_amp"	"15 30"
-		}	
+		}
 		"07"
 		{
 			"var_type"				"FIELD_FLOAT"
 			"hero_lifesteal"		"0"
-		}			
+		}
 		"08"
 		{
 			"var_type"				"FIELD_FLOAT"
@@ -18277,7 +18268,7 @@
 			"var_type"				"FIELD_INTEGER"
 			"mana_cost_percentage"	"15 30"
 		}
-	}	
+	}
 }
 
 // Recipe: Giants Ring 2
@@ -22655,7 +22646,12 @@
 				"var_type"					"FIELD_INTEGER"
 				"proc_stats"				"10"
 			}
-//			"02"
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cooldown"					"90"
+			}
+//			"99"
 //			{
 //				"var_type"					"FIELD_INTEGER"
 //				"reincarnate_mana_cost"		"160"
@@ -22674,7 +22670,7 @@
 		"ItemResult"					"item_inf_aegis"
 		"ItemRequirements"
 		{
-			"01"			"item_earth_gem;item_earth_gem;item_fire_gem;item_fire_gem;item_life_gem;item_life_gem"
+//			"01"			"item_earth_gem;item_earth_gem;item_fire_gem;item_fire_gem;item_life_gem;item_life_gem"
 		}
 	}
 
@@ -23589,41 +23585,41 @@
 		"AbilityCooldown"				"40"
 		"AbilityCastPoint"				"0.1"
 		"AbilityChannelTime"			"2"
-		"ItemCost"						"0"
 		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp"					"200"
+				"hp"					"500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"str"					"10"
+				"str"					"15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"4"
+				"armor"					"12"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"portal_chance"			"5"
+				"ultra_rare_chance"		"1"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"powerup_rune_chance"	"15"
+				"rare_chance"			"9"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bounty_rune_chance"	"20"
+				"rune_chance"			"20"
 			}
 			"07"
 			{
@@ -23633,7 +23629,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"kobold_chance"			"30"
+				"kobold_chance"			"40"
 			}
 			"09"
 			{
@@ -23646,11 +23642,6 @@
 				"hp_per_stack"			"50"
 			}
 			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"dig_time_tooltip"		"2"
-			}
-			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"up_chance"				"50"
@@ -23666,11 +23657,12 @@
 		"ItemCost"						"0"
 		"ItemShopTags"					""
 		"ItemAliases"					""
+		"ItemSellable"					"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_ritual_shovel"
 		"ItemRequirements"
 		{
-			"01"						"item_soul_ring;item_trusty_shovel"
+//			"01"						"item_soul_ring_3;item_trusty_shovel"
 		}
 	}
 
@@ -35291,6 +35283,52 @@
 			{
 				"ScriptFile"		"items/one_punch_stick.lua"
 				"Function"			"onepunch"
+			}
+		}
+	}
+
+// Aghanim's Fragment
+	"item_aghanims_fragment"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		"AbilityTextureName"			"custom/aghanims_fragment"
+		"ItemSellable"					"1"
+		"ItemInitiallySellable"			"0"
+		"ItemPurchasable"				"0"
+		"ItemInitialCharges"			"1"
+		"ItemStackable"					"1"
+		"ItemDisplayCharges"			"1"
+		"ItemKillable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"shard"					"3"
+			}
+			"2"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"scepter"				"5"
+			}
+			"3"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"super_scepter"			"15"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items/aghanims_shard.lua"
+				"Function"			"OnSpellStart"
+				"Shard"				"%shard"
+				"Scepter"			"%scepter"
+				"Super_Scepter"		"%super_scepter"
 			}
 		}
 	}
