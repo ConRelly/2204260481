@@ -5,9 +5,11 @@ require("lib/my")
 function end_ability_cooldown(ability, exclude_table)
     if ability then
         if not exclude_table[ability:GetAbilityName()] then
-            if ability:GetCooldownTimeRemaining() > 0 then
-                ability:EndCooldown()
-            end
+			if ability:IsRefreshable() then
+				if ability:GetCooldownTimeRemaining() > 0 then
+					ability:EndCooldown()
+				end
+			end
         end
     end
 end

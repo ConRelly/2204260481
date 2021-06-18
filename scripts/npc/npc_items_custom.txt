@@ -22621,6 +22621,7 @@
 		"ItemShopTags"					"aegis"
 		"ItemQuality"					"artifact"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemPurchasable"				"0"
 		"AllowedInBackpack"				"1"
 		"ItemDroppable"					"1"
@@ -23588,6 +23589,7 @@
 		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilitySpecial"
 		{

@@ -785,6 +785,7 @@ function AOHGameMode:OnTreeCut(keys)
 	local item = CreateItem("item_trusty_shovel", nil, nil)
 	if RollPseudoRandom(1, self) and lopata then
 		CreateItemOnPositionSync(Vector(keys.tree_x,keys.tree_y,0), item)
+		AddFOWViewer(DOTA_TEAM_GOODGUYS, Vector(keys.tree_x,keys.tree_y,0), 300, 10, false)
 		lopata = false
 	end
 end

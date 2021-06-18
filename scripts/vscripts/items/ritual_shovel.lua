@@ -23,7 +23,7 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 	local hp_loss = self:GetSpecialValueFor("hp_loss")
 	local hp_per_stack = self:GetSpecialValueFor("hp_per_stack")
 	hp_loss = (hp_loss + (hp_per_stack * self:GetCaster():FindModifierByName("modifier_shovel_curse"):GetStackCount())) * (1 + self:GetCaster():GetSpellAmplification(false))
-	ApplyDamage({victim = self:GetCaster(), attacker = self:GetCaster(), ability = self, damage = hp_loss, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL})
+	ApplyDamage({victim = self:GetCaster(), attacker = self:GetCaster(), ability = self, damage = hp_loss, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
 	create_popup({target = self:GetCaster(), value = hp_loss, color = Vector(255, 40, 40), type = "poison", pos = 4})
 
 	-- UP: Holy Locket

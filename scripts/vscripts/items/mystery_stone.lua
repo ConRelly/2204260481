@@ -103,7 +103,7 @@ end
 function item_mystery_cyclone:OnSpellStart()
 	local caster = self:GetCaster()
 	local pos = self:GetCursorPosition()
-	local friends = FindUnitsInRadius( caster:GetTeamNumber(), pos, nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false )
+	local friends = FindUnitsInRadius(caster:GetTeamNumber(), pos, nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)
 	for i=1,#friends do
 		friends[i]:Purge(false, true, false, false, false)
 		friends[i]:AddNewModifier(caster, self, "modifier_mystery_cyclone_active", {duration = self:GetSpecialValueFor("cyclone_duration")})
@@ -166,7 +166,13 @@ function modifier_mystery_cyclone_active:OnCreated()
 		end
 	end
 end
-function modifier_mystery_cyclone_active:OnIntervalThink() self:HorizontalMotion(self:GetParent(), FrameTime()) end
+function modifier_mystery_cyclone_active:OnIntervalThink()
+	if not self:CheckMotionControllers() then
+		self:Destroy()
+		return
+	end
+	self:HorizontalMotion(self:GetParent(), FrameTime())
+end
 function modifier_mystery_cyclone_active:HorizontalMotion(unit, time)
 	if not IsServer() then return end
 	local angle = self:GetParent():GetAngles()
