@@ -90,22 +90,20 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 				end
 			end
 		elseif random_int > self.rare and random_int <= self.rune then
-			local random_rune = RandomInt(1, 8)
+			local random_rune = RandomInt(1, 7)
 			if random_rune == 1 then
 				CreateRune(self:GetCursorPosition(), DOTA_RUNE_DOUBLEDAMAGE)
 			elseif random_rune == 2 then
 				CreateRune(self:GetCursorPosition(), DOTA_RUNE_HASTE)
 			elseif random_rune == 3 then
-				CreateRune(self:GetCursorPosition(), DOTA_RUNE_ILLUSION)
-			elseif random_rune == 4 then
 				CreateRune(self:GetCursorPosition(), DOTA_RUNE_REGENERATION)
-			elseif random_rune == 5 then
+			elseif random_rune == 4 then
 				CreateRune(self:GetCursorPosition(), DOTA_RUNE_ARCANE)
-			elseif random_rune == 6 then
+			elseif random_rune == 5 then
 				CreateRune(self:GetCursorPosition(), DOTA_RUNE_INVISIBILITY)
-			elseif random_rune == 7 then
+			elseif random_rune == 6 then
 				CreateRune(self:GetCursorPosition(), DOTA_RUNE_WATER)
-			elseif random_rune == 8 then
+			elseif random_rune == 7 then
 				CreateRune(self:GetCursorPosition(), DOTA_RUNE_BOUNTY)
 			end
 		elseif random_int > self.rune and random_int <= self.flask then
