@@ -3033,7 +3033,7 @@ While Burrowed, Spiked Carapace instantly stuns nearby enemies when cast."
 	"DOTA_Tooltip_modifier_mjz_omniknight_repel"				"Repel"
 		
 	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace"					"Coup de Grace"
-	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_Description"		"Phantom Assassin refines her combat abilities, gaining a chance of delivering a devastating critical strike to enemy units, upon successful crit she increase all her total attack. Stifling Dagger shares the same critical strike chance.\nUpgradable by Aghanim's Scepter."
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_Description"		"Phantom Assassin refines her combat abilities, gaining a chance of delivering a devastating critical strike to enemy units, upon successful crit she increase all her total attack. Stifling Dagger shares the same critical strike chance."
 	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_Lore"				"A divine strike, Mortred honors her opponent by choosing them for death."
 	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_crit_chance"		"%Proc Chance: "
 	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_crit_bonus"		"%Critical Damage: "

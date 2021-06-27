@@ -12,30 +12,8 @@ function modifier_lier_scarlet_t:RemoveOnDeath() return false end
 function modifier_lier_scarlet_t:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_lier_scarlet_t:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end if not self:GetParent():IsIllusion() then
-		self:StartIntervalThink(FrameTime())
+		if not self:GetCaster():HasModifier("modifier_lier_scarlet_pieces_thinker") then self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_lier_scarlet_pieces_thinker", {}) end
 end end end
-function modifier_lier_scarlet_t:OnIntervalThink()
-	if IsServer() then
-		local lier_scarlet_t = self:GetCaster():HasModifier("modifier_lier_scarlet_t")
-		local lier_scarlet_m = self:GetCaster():HasModifier("modifier_lier_scarlet_m")
-		local lier_scarlet_b = self:GetCaster():HasModifier("modifier_lier_scarlet_b")
-		--2piece
-		if (lier_scarlet_t and lier_scarlet_m) or (lier_scarlet_m and lier_scarlet_b) or (lier_scarlet_b and lier_scarlet_t) then
-			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_lier_scarlet_2_pieces", {})
-		elseif self:GetCaster():HasModifier("modifier_lier_scarlet_2_pieces") then
-			self:GetCaster():RemoveModifierByName("modifier_lier_scarlet_2_pieces")
-		end
-		--3piece
-		if lier_scarlet_t and lier_scarlet_m and lier_scarlet_b and not self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces_buff_cd") and not self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces_buff") then
-			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_lier_scarlet_3_pieces", {})
-		elseif self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces") then
-			self:GetCaster():RemoveModifierByName("modifier_lier_scarlet_3_pieces")
-		end
-		if self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces_buff_cd") and self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces_buff") then
-			self:GetCaster():RemoveModifierByName("modifier_lier_scarlet_3_pieces")
-		end
-	end
-end
 function modifier_lier_scarlet_t:DeclareFunctions()
 	return {MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE, MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE}
 end
@@ -50,7 +28,6 @@ end
 -- Lier Scarlet M --
 --------------------
 LinkLuaModifier("modifier_lier_scarlet_m", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_lier_scarlet_m_thinker", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
 if item_lier_scarlet_m == nil then item_lier_scarlet_m = class({}) end
 function item_lier_scarlet_m:GetIntrinsicModifierName() return "modifier_lier_scarlet_m" end
 
@@ -61,7 +38,7 @@ function modifier_lier_scarlet_m:RemoveOnDeath() return false end
 function modifier_lier_scarlet_m:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_lier_scarlet_m:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end if not self:GetParent():IsIllusion() then
-		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_lier_scarlet_m_thinker", {})
+		if not self:GetCaster():HasModifier("modifier_lier_scarlet_pieces_thinker") then self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_lier_scarlet_pieces_thinker", {}) end
 		local aoe_interval = self:GetAbility():GetSpecialValueFor("aoe_interval")
 		self:StartIntervalThink(aoe_interval)
 end end end
@@ -74,12 +51,12 @@ function modifier_lier_scarlet_m:OnIntervalThink()
 		local heal = (self:GetCaster():GetMaxHealth() * heal_pct / 100)
 		local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), nil, aoe_radius--[[FIND_UNITS_EVERYWHERE]], DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 		for _,enemy in pairs(enemies) do
-			if enemy~=self:GetCaster() then
+			if enemy ~= self:GetCaster() then
 				local damageTable = {victim = enemy, attacker = self:GetCaster(), damage = dmg, damage_type = DAMAGE_TYPE_PHYSICAL, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION, ability = self:GetAbility()}
 				ApplyDamage(damageTable)
 				local aoe_interval = self:GetAbility():GetSpecialValueFor("aoe_interval")
-				Timers:CreateTimer({(aoe_interval / 3), function() ApplyDamage(damageTable) end})
-				Timers:CreateTimer({(aoe_interval / 3 * 2), function() ApplyDamage(damageTable) end})
+				Timers:CreateTimer((aoe_interval / 3), function() ApplyDamage(damageTable) end)
+				Timers:CreateTimer((aoe_interval / 3 * 2), function() ApplyDamage(damageTable) end)
 			end
 		end
 		self:GetCaster():Heal(heal,self:GetCaster())
@@ -90,38 +67,6 @@ function modifier_lier_scarlet_m:DeclareFunctions()
 end
 function modifier_lier_scarlet_m:GetModifierExtraHealthPercentage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("max_hp_pct") * (-1) end
-end
-
-if modifier_lier_scarlet_m_thinker == nil then modifier_lier_scarlet_m_thinker = class({}) end
-function modifier_lier_scarlet_m_thinker:IsHidden() return true end
-function modifier_lier_scarlet_m_thinker:IsPurgable() return false end
-function modifier_lier_scarlet_m_thinker:RemoveOnDeath() return false end
-function modifier_lier_scarlet_m_thinker:OnCreated()
-	if IsServer() then if not self:GetAbility() then self:Destroy() end
-		self:StartIntervalThink(FrameTime())
-	end
-end
-function modifier_lier_scarlet_m_thinker:OnIntervalThink()
-	if IsServer() then
-		local lier_scarlet_t = self:GetCaster():HasModifier("modifier_lier_scarlet_t")
-		local lier_scarlet_m = self:GetCaster():HasModifier("modifier_lier_scarlet_m")
-		local lier_scarlet_b = self:GetCaster():HasModifier("modifier_lier_scarlet_b")
-		--2piece
-		if (lier_scarlet_t and lier_scarlet_m) or (lier_scarlet_m and lier_scarlet_b) or (lier_scarlet_b and lier_scarlet_t) then
-			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_lier_scarlet_2_pieces", {})
-		elseif self:GetCaster():HasModifier("modifier_lier_scarlet_2_pieces") then
-			self:GetCaster():RemoveModifierByName("modifier_lier_scarlet_2_pieces")
-		end
-		--3piece
-		if lier_scarlet_t and lier_scarlet_m and lier_scarlet_b and not self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces_buff_cd") and not self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces_buff") then
-			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_lier_scarlet_3_pieces", {})
-		elseif self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces") then
-			self:GetCaster():RemoveModifierByName("modifier_lier_scarlet_3_pieces")
-		end
-		if self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces_buff_cd") and self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces_buff") then
-			self:GetCaster():RemoveModifierByName("modifier_lier_scarlet_3_pieces")
-		end
-	end
 end
 
 --------------------
@@ -138,35 +83,8 @@ function modifier_lier_scarlet_b:RemoveOnDeath() return false end
 function modifier_lier_scarlet_b:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_lier_scarlet_b:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end if not self:GetParent():IsIllusion() then
-		self:StartIntervalThink(FrameTime())
+		if not self:GetCaster():HasModifier("modifier_lier_scarlet_pieces_thinker") then self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_lier_scarlet_pieces_thinker", {}) end
 end end end
-function modifier_lier_scarlet_b:OnIntervalThink()
-	if IsServer() then
-		--[[local display_as = self:GetCaster():GetDisplayAttackSpeed() * 0.7
-		local bonus_as = self:GetAbility():GetSpecialValueFor("bonus_as_pct")
-		self.bonus_as = display_as * (bonus_as / 100)
-		self:SetStackCount(self.bonus_as)]]
-
-		local lier_scarlet_t = self:GetCaster():HasModifier("modifier_lier_scarlet_t")
-		local lier_scarlet_m = self:GetCaster():HasModifier("modifier_lier_scarlet_m")
-		local lier_scarlet_b = self:GetCaster():HasModifier("modifier_lier_scarlet_b")
-		--2piece
-		if (lier_scarlet_t and lier_scarlet_m) or (lier_scarlet_m and lier_scarlet_b) or (lier_scarlet_b and lier_scarlet_t) then
-			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_lier_scarlet_2_pieces", {})
-		elseif self:GetCaster():HasModifier("modifier_lier_scarlet_2_pieces") then
-			self:GetCaster():RemoveModifierByName("modifier_lier_scarlet_2_pieces")
-		end
-		--3piece
-		if lier_scarlet_t and lier_scarlet_m and lier_scarlet_b and not self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces_buff_cd") and not self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces_buff") then
-			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_lier_scarlet_3_pieces", {})
-		elseif self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces") then
-			self:GetCaster():RemoveModifierByName("modifier_lier_scarlet_3_pieces")
-		end
-		if self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces_buff_cd") and self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces_buff") then
-			self:GetCaster():RemoveModifierByName("modifier_lier_scarlet_3_pieces")
-		end
-	end
-end
 function modifier_lier_scarlet_b:DeclareFunctions()
 	return {MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE, MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE, MODIFIER_PROPERTY_ATTACKSPEED_PERCENTAGE}
 end
@@ -178,6 +96,48 @@ function modifier_lier_scarlet_b:GetModifierMoveSpeedBonus_Percentage()
 end
 function modifier_lier_scarlet_b:GetModifierAttackSpeedPercentage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_as_pct") end
+end
+
+
+----------------------------------------
+-- Shortened Reach Pieces (thinker) --
+----------------------------------------
+LinkLuaModifier("modifier_lier_scarlet_pieces_thinker", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
+if modifier_lier_scarlet_pieces_thinker == nil then modifier_lier_scarlet_pieces_thinker = class({}) end
+function modifier_lier_scarlet_pieces_thinker:IsHidden() return true end
+function modifier_lier_scarlet_pieces_thinker:GetTexture() return "custom/lier_scarlet_2_piece" end
+function modifier_lier_scarlet_pieces_thinker:IsPurgable() return false end
+function modifier_lier_scarlet_pieces_thinker:RemoveOnDeath() return false end
+function modifier_lier_scarlet_pieces_thinker:OnCreated()
+	if IsServer() then if not self:GetAbility() then self:Destroy() end if not self:GetParent():IsIllusion() then
+		self:StartIntervalThink(FrameTime())
+end end end
+function modifier_lier_scarlet_pieces_thinker:OnIntervalThink()
+	if IsServer() then
+		local lier_scarlet_t = self:GetCaster():HasModifier("modifier_lier_scarlet_t")
+		local lier_scarlet_m = self:GetCaster():HasModifier("modifier_lier_scarlet_m")
+		local lier_scarlet_b = self:GetCaster():HasModifier("modifier_lier_scarlet_b")
+		--2piece
+		if (lier_scarlet_t and lier_scarlet_m) or (lier_scarlet_m and lier_scarlet_b) or (lier_scarlet_b and lier_scarlet_t) then
+			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_lier_scarlet_2_pieces", {})
+		elseif self:GetCaster():HasModifier("modifier_lier_scarlet_2_pieces") then
+			self:GetCaster():RemoveModifierByName("modifier_lier_scarlet_2_pieces")
+		end
+		--------
+		--3piece
+		if lier_scarlet_t and lier_scarlet_m and lier_scarlet_b and not self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces_buff_cd") and not self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces_buff") then
+			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_lier_scarlet_3_pieces", {})
+		elseif self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces") then
+			self:GetCaster():RemoveModifierByName("modifier_lier_scarlet_3_pieces")
+		end
+		if self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces_buff_cd") and self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces_buff") then
+			self:GetCaster():RemoveModifierByName("modifier_lier_scarlet_3_pieces")
+		end
+		--------
+		if lier_scarlet_t or lier_scarlet_m or lier_scarlet_b then else
+			self:GetCaster():RemoveModifierByName("modifier_lier_scarlet_pieces_thinker")
+		end
+	end
 end
 
 

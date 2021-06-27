@@ -11854,6 +11854,69 @@
 		}
 	}
 }
+
+// Phantom Assassin: Counter Slash
+	"counter_slash"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_phantom_assassin/counter_slash.lua"
+		"AbilityTextureName"			"mars_gods_rebuke"
+        "HasScepterUpgrade"				"1"
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_mars/mars_shield_bash.vpcf"
+			"particle"	"particles/units/heroes/hero_mars/mars_shield_bash_crit.vpcf"
+		}
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"%passive_cd"
+		"AbilityManaCost"				"55 60 65 70"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"angle"						"140"
+			}
+			"2"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"500"
+			}
+			"3"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"passive_cd"				"16 14 12 10"
+			}
+			"4"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"activity_duration"			"0.5"
+			}
+			"5"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"strong_argument_bonus_strength"	"2 4 6 8"
+			}
+			"6"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"strong_argument_duration"		"6"
+			}
+			"7"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"scepter_cooldown"				"7"
+				"RequiresScepter"				"1"
+			}
+		}
+	}
+
 "pudge_custom_reincarnation"
 {
 	"BaseClass"						"skeleton_king_reincarnation"

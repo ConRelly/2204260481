@@ -4,13 +4,13 @@ function buff(event)
 end
 function grave(event)
 	caster = event.caster
-	if caster:GetHealth() < 5 then
+	if caster:GetHealth() <= 100 then
 		caster:RemoveModifierByName("modifier_desire_of_life")
 	end
 end
 function promise(event)
 	caster = event.caster
-	if caster:GetHealth() < 4 then
+	if caster:GetHealth() <= 50 then
 		caster:RemoveModifierByName("modifier_fp_delay")
 	end
 end
