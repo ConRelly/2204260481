@@ -1122,7 +1122,7 @@ Guessing game Reset: Hint 1, Combine 2 words that can be found in 2 titles(part 
 * Fixed Quicksilver Amulet cost
 
 
-
+New: 3 Quests with NFTs as bonus rewards, you can find them on discord(link on workshop page) #quests as a pinned message.
 * Fixed Gold bag being stolen by enemy creeps(new dota update bug), now you need to right-click on them(pickup) and it does not matter if your inventory is full.Max 3 gold bags per round.
 * Added new items: Trusty Shovel (1% when cutting trees), Cursed Shovel, Aegis of Infinity, Aghanim's Fragment
 * Added new creeps
@@ -1135,7 +1135,8 @@ Guessing game Reset: Hint 1, Combine 2 words that can be found in 2 titles(part 
 
 
 
-*Update patch notes13 can be found on the new map version:
+
+*Update patch notes16 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussion for links)
 

@@ -119,7 +119,13 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 			else
 				local random_ultracreep = RandomInt(1, 2)
 				if random_ultracreep <= 1 then
-					CreateUnitByName("npc_dota_custom_creep_28_3", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_NEUTRALS)
+					local huskar = CreateUnitByName("npc_dota_custom_creep_28_3", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_NEUTRALS)
+					local lvl = self:GetCaster():GetLevel()
+					huskar:SetBaseDamageMax(lvl * 500)
+					if lvl > 65 then
+						lvl = lvl * 10
+					end	
+					huskar:SetBaseMaxHealth(lvl * 1000)
 				elseif random_ultracreep == 2 then
 					CreateUnitByName("npc_dota_inv_warrior", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_NEUTRALS)
 				end

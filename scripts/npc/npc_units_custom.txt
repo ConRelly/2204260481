@@ -15367,19 +15367,19 @@
 		//----------------------------------------------------------------
 		"Ability1"					"desire_of_life"				// Ability 1
 		"Ability2"					"huskar_berserkers_blood"		// Ability 2
-		"Ability3"					""								// Ability 3
+		"Ability3"					"mjz_chaos_knight_chaos_strike_2"								// Ability 3
 		"Ability4"					""								// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"12"			// Physical protection.
-		"MagicalResistance"	 "25"
+		"ArmorPhysical"				"85"			// Physical protection.
+		"MagicalResistance"	 "75"
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"521"
-		"AttackDamageMax"		"530"
+		"AttackDamageMin"		"444"
+		"AttackDamageMax"		"9300"
 		"AttackRate"		"1.600000"
 		"AttackAnimationPoint"		"0.400000"
 		"AttackAcquisitionRange"		"9999"
@@ -15394,26 +15394,26 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"0"		// Experience earn.
-		"BountyGoldMin"				"0"			// Gold earned min.
-		"BountyGoldMax"				"0"			// Gold earned max.
+		"BountyXP"					"500"		// Experience earn.
+		"BountyGoldMin"				"1"			// Gold earned min.
+		"BountyGoldMax"				"1000"			// Gold earned max.
 
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"350"		// Speed.
+		"MovementSpeed"				"450"		// Speed.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"6000"		// Base health.
+		"StatusHealth"				"30000"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
-		"StatusMana"				"250"			// Base mana.
-		"StatusManaRegen"			"25"		// Mana regeneration rate.		 
+		"StatusMana"				"2500"			// Base mana.
+		"StatusManaRegen"			"250"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"50"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"5000"		// Range of vision during day light.
+		"VisionNighttimeRange"		"8000"		// Range of vision at night time.
 		
 		// Team
 		//----------------------------------------------------------------
