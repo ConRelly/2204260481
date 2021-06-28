@@ -22651,7 +22651,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cooldown"					"90"
+				"cooldown"					"45"
 			}
 //			"99"
 //			{
