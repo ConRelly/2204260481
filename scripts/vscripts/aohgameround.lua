@@ -285,5 +285,5 @@ function AOHGameRound:_CheckForGoldBagDrop(killedUnit)
 	newItem:SetCurrentCharges(nGoldToDrop)
 	local drop = CreateItemOnPositionSync(killedUnit:GetAbsOrigin(), newItem)
 	local dropTarget = killedUnit:GetAbsOrigin() + RandomVector(RandomFloat(50, 350))
-	newItem:LaunchLoot(true, 300, 0.75, dropTarget)
+	newItem:LaunchLoot(false, 300, 0.75, dropTarget)
 end

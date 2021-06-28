@@ -1235,6 +1235,7 @@
 	"ItemPermanent"					"0"
 	"ItemInitialCharges"			"1"
 	"ItemKillable"					"0"
+	"ItemCastOnPickup"				"1"
 }
 "item_recipe_broken_bow"
 {

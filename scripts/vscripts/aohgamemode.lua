@@ -354,7 +354,7 @@ end
 function AOHGameMode:OnItemPickedUp(keys)
 	if keys.itemname == "item_bag_of_gold" then
 		player_data_modify_value(keys.PlayerID, "goldBagsCollected", 1)
-		gHeroDamage:ModifyValue(keys.PlayerID, "goldBagsCollected", 1)
+		gHeroDamage:ModifyValue(keys.PlayerID, "goldBagsCollected", 1)		
 	end
 end
 

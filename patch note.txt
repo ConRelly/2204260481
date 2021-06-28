@@ -1118,14 +1118,9 @@ Guessing game Answer: "-lasers Keen" (reset in next patch probably). same rules 
 Guessing game Reset: Hint 1, Combine 2 words that can be found in 2 titles(part 1 and 2), the second word is all low caps and the first word can be found in normal and hard end up to round 15.
 
 
-
-* Fixed Quicksilver Amulet cost
-
-
-
+* Fixed Gold bag being stolen by enemy creeps(new dota update bug), now you need to right-click on them(pickup) and it does not matter if your inventory is full.Max 3 gold bags per round.
 * Added new items: Trusty Shovel (1% when cutting trees), Cursed Shovel, Aegis of Infinity, Aghanim's Fragment
 * Added new creeps
-* Added Super Scepter effect for Phantom Reflex (Phantom Assassin)
 * Fixed (probably this bug did not exist) Edible Aether Lens getting lost on death
 * Fixed broken attributes of some items
 * Fixed Mystery Scepter of Divinity + Black Hole crash
