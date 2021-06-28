@@ -1124,7 +1124,7 @@ Guessing game Reset: Hint 1, Combine 2 words that can be found in 2 titles(part 
 
 New: 3 Quests with NFTs as bonus rewards, you can find them on discord(link on workshop page) #quests as a pinned message.
 * Fixed Gold bag being stolen by enemy creeps(new dota update bug), now you need to right-click on them(pickup) and it does not matter if your inventory is full.Max 3 gold bags per round.
-* Added new items: Trusty Shovel (1% when cutting trees), Cursed Shovel, Aegis of Infinity, Aghanim's Fragment
+* Added new items: Trusty Shovel (1% when cutting trees), Cursed Shovel, Aghanim's Fragment
 * Added new creeps
 * Added Super Scepter effect for Phantom Reflex (Phantom Assassin)
 * Fixed (probably this bug did not exist) Edible Aether Lens getting lost on death

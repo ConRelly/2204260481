@@ -422,14 +422,16 @@ function AOHGameMode:Suicider(playerID)
 		local isAlive = hero:IsAlive()
 		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 		local rezPosition = hero:GetAbsOrigin()
-		hero:RespawnHero(false, false)
-		hero:SetAbsOrigin(rezPosition)
-		Timers:CreateTimer({
-			endTime = 0.15, 
-			callback = function()
-				hero:ForceKill(false)
-			end
-		})
+		if isAlive then
+			--hero:RespawnHero(false, false)
+			--hero:SetAbsOrigin(rezPosition)
+			Timers:CreateTimer({
+				endTime = 0.15, 
+				callback = function()
+					hero:ForceKill(false)
+				end
+			})
+		end	
 	end
 end
 

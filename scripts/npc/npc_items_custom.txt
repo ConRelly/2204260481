@@ -22617,11 +22617,11 @@
 		"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
 		"AbilityTextureName"			"custom/inf_aegis"
 		"ItemIsNeutralDrop"				"0"
-		"AbilityCooldown"				"90"
+		"AbilityCooldown"				"45"
 		"ItemCost"						"0"
 		"ItemShopTags"					"aegis"
 		"ItemQuality"					"artifact"
-		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemPurchasable"				"0"
 		"AllowedInBackpack"				"1"
@@ -22646,7 +22646,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"proc_stats"				"10"
+				"proc_stats"				"30"
 			}
 			"03"
 			{

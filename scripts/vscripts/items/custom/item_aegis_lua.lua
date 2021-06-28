@@ -32,11 +32,11 @@ function item_aegis_lua:OnSpellStart()
 		local hCaster = self:GetCaster()
 		local hPlayer = hCaster:GetPlayerOwner()
 		if hCaster and hCaster:IsRealHero() and not hCaster:IsTempestDouble() and not hCaster:HasModifier("modifier_arc_warden_tempest_double_lua") then
-			if self:GetCurrentCharges() >= self:GetSpecialValueFor("aegis_up") then
+			--[[if self:GetCurrentCharges() >= self:GetSpecialValueFor("aegis_up") then
 				hCaster:RemoveItem(self)
 				hCaster:AddItemByName("item_inf_aegis")
 				return
-			end
+			end]]
 			if hCaster:HasModifier("modifier_aegis") then
 				local hModifierAegis = hCaster:FindModifierByName("modifier_aegis")
 				local nCurrentStack = hModifierAegis:GetStackCount()
