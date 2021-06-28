@@ -1,6 +1,6 @@
--------------------------
---AEGIS OF THE IMMORTAL--
--------------------------
+---------------------------
+-- AEGIS OF THE IMMORTAL --
+---------------------------
 item_inf_aegis = class({})
 LinkLuaModifier("modifier_inf_aegis", "items/aegis.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_inf_aegis_stats", "items/aegis.lua", LUA_MODIFIER_MOTION_NONE)
@@ -19,13 +19,12 @@ end
 function item_inf_aegis:IsRefreshable() return false end
 function item_inf_aegis:item(keys, self)
 	local unit = keys.unit
-	local reincarnate = keys.reincarnate
-	if reincarnate and (not self.caster:HasModifier("modifier_item_aegis")) then
+	if not self.caster:HasModifier("modifier_item_aegis") then
 		self.reincarnation_death = true
 		self.ability:UseResources(false, false, true)
 		particle_death_fx = ParticleManager:CreateParticle(self.particle_death, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 		ParticleManager:SetParticleAlwaysSimulate(particle_death_fx)
-		ParticleManager:SetParticleControl(particle_death_fx, 0, keys.unit:GetAbsOrigin())
+		ParticleManager:SetParticleControl(particle_death_fx, 0, unit:GetAbsOrigin())
 		ParticleManager:SetParticleControl(particle_death_fx, 1, Vector(self.reincarnate_delay, 0, 0))
 		ParticleManager:SetParticleControl(particle_death_fx, 11, Vector(200, 0, 0))
 		ParticleManager:ReleaseParticleIndex(particle_death_fx)
@@ -55,59 +54,37 @@ function modifier_inf_aegis:OnCreated()
 		self.ability = self:GetAbility()
 		self.particle_death = "particles/items_fx/aegis_respawn_timer.vpcf"
 		self.particle_at = "particles/items_fx/aegis_timer.vpcf"
-		self.sound_death = "Hero_SkeletonKing.Reincarnate"
 		self.reincarnate_delay = self:GetAbility():GetSpecialValueFor("reincarnate_delay")
-		if IsServer() then
-			self.can_die = false
-			self:StartIntervalThink(FrameTime())
-		end
 		if not self:GetCaster():HasModifier("modifier_inf_aegis_stats") then
 			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_inf_aegis_stats", {})
 		end
 	end
 end
-function modifier_inf_aegis:OnIntervalThink()
-	if not self.ability or self.ability:IsNull() then self:Destroy() return end
-	if (self.ability:IsOwnersManaEnough()) and (self.ability:IsCooldownReady()) then
-		self.can_die = false
-	else
-		self.can_die = true
-	end
-end
-function modifier_inf_aegis:DeclareFunctions() return {MODIFIER_PROPERTY_REINCARNATION, MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS, MODIFIER_EVENT_ON_DEATH, MODIFIER_PROPERTY_RESPAWNTIME_STACKING} end
-function modifier_inf_aegis:ReincarnateTime()
-	if IsServer() then
-		if not self.can_die and self.caster:IsRealHero() then
-			self:GetCaster():EmitSound("Aegis.Timer")
-			self:GetAbility():StartCooldown(self:GetAbility():GetSpecialValueFor("cooldown"))
-			return self.reincarnate_delay
-		end
-		return nil
-	end
-end
-function modifier_inf_aegis:GetActivityTranslationModifiers()
-	if self.reincarnation_death then
-		return "reincarnate"
-	end
-	return nil
-end
+function modifier_inf_aegis:DeclareFunctions() return {MODIFIER_EVENT_ON_DEATH} end
 function modifier_inf_aegis:OnDeath(keys)
 	if IsServer() then
-		local reincarnate = keys.reincarnate
-		if self:GetParent() == keys.unit then
-			item_inf_aegis:item(keys, self)
-		end
-		Timers:CreateTimer({
-				endTime = self:GetAbility():GetSpecialValueFor("reincarnate_delay") + 0.11, 
-				callback = function()
-				self.caster:AddNewModifier(self.caster, self.ability, "modifier_aegis_buff", {duration = 14})
+		local aegis_charges = self:GetCaster():FindModifierByName("modifier_aegis")
+		if aegis_charges and aegis_charges:GetStackCount() > 0 then return end
+		if self.ability:IsOwnersManaEnough() and self.ability:IsCooldownReady() then
+			if self:GetCaster():IsRealHero() and self:GetCaster() == keys.unit then
+				item_inf_aegis:item(keys, self)
+				self:GetCaster():EmitSound("Aegis.Timer")
+				self:GetAbility():StartCooldown(self:GetAbility():GetSpecialValueFor("cooldown"))
+				self:GetCaster():FindModifierByName("modifier_inf_aegis_stats"):IncrementStackCount()
+				Timers:CreateTimer(self:GetAbility():GetSpecialValueFor("reincarnate_delay"), function()
+					self:GetParent():RespawnUnit()
+				end)
+				Timers:CreateTimer(self:GetAbility():GetSpecialValueFor("reincarnate_delay") + 0.11, function()
+					self.caster:AddNewModifier(self.caster, self.ability, "modifier_aegis_buff", {duration = 14})
+				end)
 			end
-		})
+		end
 	end
 end
----------------------
---AEGIS BONUS STATS--
----------------------
+
+-----------------------
+-- AEGIS BONUS STATS --
+-----------------------
 if modifier_inf_aegis_stats == nil then modifier_inf_aegis_stats = class({}) end
 function modifier_inf_aegis_stats:IsHidden() return false end
 function modifier_inf_aegis_stats:IsDebuff() return false end
@@ -118,25 +95,20 @@ function modifier_inf_aegis_stats:RemoveOnDeath() return false end
 function modifier_inf_aegis_stats:OnCreated()
 	self:SetStackCount(1)
 	if IsServer() then
-		self.can_die = false
 		self:StartIntervalThink(FrameTime())
 		if not self:GetAbility() then self:Destroy() end
-	end
-end
-function modifier_inf_aegis_stats:OnIntervalThink()
-	if not self:GetAbility() or self:GetAbility():IsNull() then self:Destroy() return end
-	if (self:GetAbility():IsOwnersManaEnough()) and (self:GetAbility():IsCooldownReady()) then
-		self.can_die = false
-	else
-		self.can_die = true
 	end
 end
 function modifier_inf_aegis_stats:DeclareFunctions() return {MODIFIER_PROPERTY_TOOLTIP, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_EVENT_ON_DEATH} end
 function modifier_inf_aegis_stats:OnDeath(keys)
 	if IsServer() then
 		local unit = keys.unit
-		if not self.can_die and self:GetCaster():IsRealHero() and self:GetParent() == unit then
-			self:IncrementStackCount()
+		local aegis_charges = self:GetCaster():FindModifierByName("modifier_aegis")
+		if aegis_charges and aegis_charges:GetStackCount() > 0 then return end
+		if self:GetAbility():IsOwnersManaEnough() and self:GetAbility():IsCooldownReady() then
+			if self:GetCaster():IsRealHero() and self:GetParent() == unit then
+--				self:IncrementStackCount()
+			end
 		end
 	end
 end
