@@ -1,7 +1,7 @@
 "dota_holdout"
 {
 	"PrepTimeBetweenRounds"			"13"
-	"ItemExpireTime"				"500"
+	"ItemExpireTime"				"600"
 	
 	"ItemDrops"
 	{
