@@ -60,9 +60,10 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 			elseif ultra_rare > 5 and ultra_rare <= 30 then
 				SpawnItem("item_edible_fragment", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, false)
 			elseif ultra_rare > 30 and ultra_rare <= 100 then
-				if RollPseudoRandom(50, self) then
+				local random_essence = RandomInt(1, 2)
+				if random_essence == 1 then
 					SpawnItem("item_water_essence", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
-				else
+				elseif random_essence == 2 then
 					SpawnItem("item_air_essence", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
 				end
 			end
@@ -116,9 +117,10 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 			if RollPseudoRandom(80, self) then
 				CreateUnitByName("npc_dota_neutral_kobold", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_NEUTRALS)
 			else
-				if RollPseudoRandom(50, self) then
+				local random_ultracreep = RandomInt(1, 2)
+				if random_ultracreep <= 1 then
 					CreateUnitByName("npc_dota_custom_creep_28_3", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_NEUTRALS)
-				else
+				elseif random_ultracreep == 2 then
 					CreateUnitByName("npc_dota_inv_warrior", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_NEUTRALS)
 				end
 			end

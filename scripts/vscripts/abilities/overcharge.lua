@@ -22,7 +22,7 @@ function Overcharge( event )
 		caster:AddItem(CreateItem("item_basher", nil, nil))
 	end
 	if caster:GetModifierStackCount(modifier, ability) == 75 then
-		caster:AddNewModifier(caster, ability, "modifier_ursa_overpower", {duration = })
+		caster:AddNewModifier(caster, ability, "modifier_ursa_overpower", {})
 		EmitSoundOn("Hero_Ursa.Enrage", caster)
 	end
 	if _G._hardMode then
