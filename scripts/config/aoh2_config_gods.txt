@@ -117,7 +117,7 @@
 		{
 			"Title"						"Devils"
 			"MaxGold"					"7700"
-			"BagCount"					"30"
+			"BagCount"					"3"
 			"BagVariance"				"0"
 			"FixedXP"					"3400"
 
@@ -223,7 +223,7 @@
 		{
 			"Title"						"Undead"
 			"MaxGold"					"6600"
-			"BagCount"					"20"
+			"BagCount"					"3"
 			"BagVariance"				"0"
 			"FixedXP"					"2500"
 			
@@ -249,7 +249,7 @@
 		{
 			"Title"						"Other World"
 			"MaxGold"					"7000"
-			"BagCount"					"6"
+			"BagCount"					"3"
 			"BagVariance"				"20"
 			"FixedXP"					"4000"
 
@@ -274,7 +274,7 @@
 		{
 			"Title"						"Tormented Souls"
 			"MaxGold"					"5000"
-			"BagCount"					"35"
+			"BagCount"					"3"
 			"BagVariance"				"25"
 			"FixedXP"					"3000"
 
@@ -413,7 +413,7 @@
 		{
 			"Title"						"Die Trying"
 			"MaxGold"					"6600"
-			"BagCount"					"10"
+			"BagCount"					"3"
 			"BagVariance"				"40"
 			"FixedXP"					"3800"
 
@@ -470,7 +470,7 @@
 		{
 			"Title"						"Respect The Sea, or take a beat"
 			"MaxGold"					"4700"
-			"BagCount"					"13"
+			"BagCount"					"3"
 			"BagVariance"				"30"
 			"FixedXP"					"4300"
 			
@@ -497,7 +497,7 @@
 		{
 			"Title"						"Insect Swarm"
 			"MaxGold"					"4600"
-			"BagCount"					"32"
+			"BagCount"					"3"
 			"BagVariance"				"50"
 			"FixedXP"					"4400"
 		
@@ -744,7 +744,7 @@
 		{
 			"Title"						"Keen Folk"
 			"MaxGold"					"7500"
-			"BagCount"					"5"
+			"BagCount"					"3"
 			"BagVariance"				"50"
 			"FixedXP"					"5600"
 				
@@ -795,7 +795,7 @@
 		{
 			"Title"						"Tree Haters Guild"
 			"MaxGold"					"8500"
-			"BagCount"					"19"
+			"BagCount"					"3"
 			"BagVariance"				"0"
 			"FixedXP"					"5100"
 			"a"
@@ -827,7 +827,7 @@
 		{
 			"Title"						"Disciples Path"  //"Ban Magic"
 			"MaxGold"					"8750"
-			"BagCount"					"5"
+			"BagCount"					"3"
 			"BagVariance"				"0"
 			"FixedXP"					"5600"
 		
@@ -979,7 +979,7 @@
 		{
 			"Title"						"False God"
 			"MaxGold"					"10000"
-			"BagCount"					"5"
+			"BagCount"					"3"
 			"BagVariance"				"50"
 			"FixedXP"					"120000"
 
@@ -1026,7 +1026,7 @@
 		{
 			"Title"						"Might and Magic"  //"Ban Magic"
 			"MaxGold"					"7750"
-			"BagCount"					"5"
+			"BagCount"					"3"
 			"BagVariance"				"50"
 			"FixedXP"					"40600"
 		
@@ -1079,7 +1079,7 @@
 		{
 			"Title"						"False God And Lich "
 			"MaxGold"					"9000"
-			"BagCount"					"4"
+			"BagCount"					"3"
 			"BagVariance"				"50"
 			"FixedXP"					"120000"
 
@@ -1140,7 +1140,7 @@
 		{
 			"Title"						"Is Time to open the Void"
 			"MaxGold"					"10000"
-			"BagCount"					"4"
+			"BagCount"					"3"
 			"BagVariance"				"50"
 			"FixedXP"					"120000"
 
@@ -1302,7 +1302,7 @@
 		{
 			"Title"						"Devils"
 			"MaxGold"					"7700"
-			"BagCount"					"30"
+			"BagCount"					"3"
 			"BagVariance"				"0"
 			"FixedXP"					"5400"
 
@@ -1407,7 +1407,7 @@
 		{
 			"Title"						"Undead"
 			"MaxGold"					"7600"
-			"BagCount"					"20"
+			"BagCount"					"3"
 			"BagVariance"				"0"
 			"FixedXP"					"2500"
 			
@@ -1433,7 +1433,7 @@
 		{
 			"Title"						"Other World"
 			"MaxGold"					"8500"
-			"BagCount"					"6"
+			"BagCount"					"3"
 			"BagVariance"				"40"
 			"FixedXP"					"4000"
 
@@ -1458,7 +1458,7 @@
 		{
 			"Title"						"Tormented Souls"
 			"MaxGold"					"4000"
-			"BagCount"					"35"
+			"BagCount"					"3"
 			"BagVariance"				"25"
 			"FixedXP"					"3000"
 
@@ -1597,7 +1597,7 @@
 		{
 			"Title"						"Die Trying"
 			"MaxGold"					"4600"
-			"BagCount"					"10"
+			"BagCount"					"3"
 			"BagVariance"				"40"
 			"FixedXP"					"3800"
 
@@ -1654,7 +1654,7 @@
 		{
 			"Title"						"Respect The Sea, healing reduction my be useful"
 			"MaxGold"					"4700"
-			"BagCount"					"13"
+			"BagCount"					"3"
 			"BagVariance"				"50"
 			"FixedXP"					"4300"
 			
@@ -1681,7 +1681,7 @@
 		{
 			"Title"						"Insect Swarm"
 			"MaxGold"					"4600"
-			"BagCount"					"32"
+			"BagCount"					"3"
 			"BagVariance"				"50"
 			"FixedXP"					"4400"
 		
@@ -1952,7 +1952,7 @@
 		{
 			"Title"						"Keen Folk"
 			"MaxGold"					"7500"
-			"BagCount"					"5"
+			"BagCount"					"3"
 			"BagVariance"				"50"
 			"FixedXP"					"5600"
 				
@@ -2011,7 +2011,7 @@
 		{
 			"Title"						"Tree Haters Guild"
 			"MaxGold"					"8500"
-			"BagCount"					"19"
+			"BagCount"					"3"
 			"BagVariance"				"0"
 			"FixedXP"					"5100"
 			"a"
@@ -2051,7 +2051,7 @@
 		{
 			"Title"						"Disciples Path"  //"Ban Magic"
 			"MaxGold"					"8750"
-			"BagCount"					"5"
+			"BagCount"					"3"
 			"BagVariance"				"0"
 			"FixedXP"					"5600"
 		
@@ -2455,7 +2455,7 @@
 		{
 			"Title"						"Devils"
 			"MaxGold"					"4700"
-			"BagCount"					"30"
+			"BagCount"					"3"
 			"BagVariance"				"80"
 			"FixedXP"					"3400"
 
@@ -2543,7 +2543,7 @@
 		{
 			"Title"						"Undead"
 			"MaxGold"					"5600"
-			"BagCount"					"20"
+			"BagCount"					"3"
 			"BagVariance"				"75"
 			"FixedXP"					"2500"
 			
@@ -2568,7 +2568,7 @@
 		{
 			"Title"						"Tormented Souls ,sure"
 			"MaxGold"					"4000"
-			"BagCount"					"35"
+			"BagCount"					"3"
 			"BagVariance"				"80"
 			"FixedXP"					"13000"
 
@@ -2706,7 +2706,7 @@
 		{
 			"Title"						"Die Trying , 9 rounds from now"
 			"MaxGold"					"4600"
-			"BagCount"					"10"
+			"BagCount"					"3"
 			"BagVariance"				"40"
 			"FixedXP"					"3800"
 
@@ -2763,7 +2763,7 @@
 		{
 			"Title"						"Respect The Sea or not"
 			"MaxGold"					"4700"
-			"BagCount"					"13"
+			"BagCount"					"3"
 			"BagVariance"				"50"
 			"FixedXP"					"4300"
 			
@@ -2790,7 +2790,7 @@
 		{
 			"Title"						"Insect Swarm"
 			"MaxGold"					"4600"
-			"BagCount"					"32"
+			"BagCount"					"3"
 			"BagVariance"				"50"
 			"FixedXP"					"14400"
 		
@@ -3002,7 +3002,7 @@
 		{
 			"Title"						"Keen Folk and lasers"
 			"MaxGold"					"4500"
-			"BagCount"					"5"
+			"BagCount"					"3"
 			"BagVariance"				"80"
 			"FixedXP"					"5600"
 				
@@ -3061,7 +3061,7 @@
 		{
 			"Title"						"Tree Haters Guild"
 			"MaxGold"					"4500"
-			"BagCount"					"19"
+			"BagCount"					"3"
 			"BagVariance"				"80"
 			"FixedXP"					"5100"
 			"a"
