@@ -75,14 +75,17 @@ if IsServer() then
 		local can = self:_CheckAttack(attacker, target, ability)
 		if can then
 			if ability.crit then
-				--EmitSoundOn("Hero_PhantomAssassin.CoupDeGrace", target)
+--				EmitSoundOn("Hero_PhantomAssassin.CoupDeGrace", target)
 				self:GetCaster():EmitSound("Hero_PhantomAssassin.CoupDeGrace")
-				-- "particles/units/heroes/hero_phantom_assassin/phantom_assassin_phantom_strike_start.vpcf"
 				local crit_impact = "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
 				local coup_pfx = ParticleManager:CreateParticle(crit_impact, PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
+--				ParticleManager:SetParticleControl(coup_pfx, 0, target:GetOrigin())
+--				ParticleManager:SetParticleControl(coup_pfx, 1, target:GetOrigin())
 				ParticleManager:SetParticleControlEnt(coup_pfx, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 				ParticleManager:SetParticleControl(coup_pfx, 1, target:GetAbsOrigin())
-				ParticleManager:SetParticleControlOrientation(coup_pfx, 1, self:GetCaster():GetForwardVector() * (-1), self:GetCaster():GetRightVector(), self:GetCaster():GetUpVector())
+--				ParticleManager:SetParticleControlOrientation(coup_pfx, 1, self:GetCaster():GetForwardVector() * (-1), self:GetCaster():GetRightVector(), self:GetCaster():GetUpVector())
+				local direction = (target:GetOrigin() - self:GetCaster():GetOrigin()):Normalized()
+				ParticleManager:SetParticleControlForward(coup_pfx, 1, -direction)
 				ParticleManager:ReleaseParticleIndex(coup_pfx)
 			end
 
@@ -102,7 +105,7 @@ if IsServer() then
 					local cleave_end_radius = GetTalentSpecialValueFor(ability, "cleave_ending_width")
 					local cleave_distance = GetTalentSpecialValueFor(ability, "cleave_distance")
 
-					local cleaveDamage = attack_damage * (cleave_percent / 100.0)
+					local cleaveDamage = attack_damage * (cleave_percent / 100)
 
 					local cleave_effect_kunkka = "particles/units/heroes/hero_kunkka/kunkka_spell_tidebringer.vpcf"
 					local cleave_effect_kunkka_fxset = "particles/econ/items/kunkka/divine_anchor/hero_kunkka_dafx_weapon/kunkka_spell_tidebringer_fxset.vpcf"
@@ -139,7 +142,7 @@ if IsServer() then
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
 		local magical_damage = ability:GetSpecialValueFor("magical_damage_scepter")
-		local damage = attack_damage * (magical_damage / 100.0)
+		local damage = attack_damage * (magical_damage / 100)
 		
 		local damageTable = {
 			victim = target,

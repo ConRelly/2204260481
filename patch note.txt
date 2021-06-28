@@ -1119,10 +1119,14 @@ Guessing game Reset: Hint 1, Combine 2 words that can be found in 2 titles(part 
 
 
 
+* Fixed Quicksilver Amulet cost
+
+
+
 * Added new items: Trusty Shovel (1% when cutting trees), Cursed Shovel, Aegis of Infinity, Aghanim's Fragment
 * Added new creeps
+* Added Super Scepter effect for Phantom Reflex (Phantom Assassin)
 * Fixed (probably this bug did not exist) Edible Aether Lens getting lost on death
-* Fixed Quicksilver Amulet cost
 * Fixed broken attributes of some items
 * Fixed Mystery Scepter of Divinity + Black Hole crash
 * Added few missed icons

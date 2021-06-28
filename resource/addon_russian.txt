@@ -8748,10 +8748,11 @@
 	"DOTA_Tooltip_ability_aghanim_shard_attack_Description"						"When channeling spawns crystal shards that explode on impact with an enemy"
 
 	"DOTA_Tooltip_ability_phantom_reflex"								"Phantom Reflex"
-	"DOTA_Tooltip_ability_phantom_reflex_Description"					"Phantom Assassin Instincts help her to avoid any damage but she still needs more training to be successful every time, she has a chance to attack a second time after every attack"
-	"DOTA_Tooltip_ability_phantom_reflex_dodge_chance_pct"				"Chance To Dodge By Reflex:" 
-	"DOTA_Tooltip_ability_phantom_reflex_double_attack_chance"			"Chance For A Reflex Hit:"
-	"DOTA_Tooltip_ability_phantom_reflex_Note0"							"Works on Range too"
+	"DOTA_Tooltip_ability_phantom_reflex_Description"					"Рефлексы позволяют избежать любой урон, а так же дают шанс на повторную атаку.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Даёт возможность избежать урон или контратаковать. При контратаке наносится урон всем врагам в направлении атакующего в радиусе %radius%. Если способность контратаковала, то перезарядка не снижается её снижениями. За каждое попадание дополнительно тратится 50/60/70/80/90 маны.<br><br>Время для контратаки: %activity_duration% сек.<br>Перезарядка: %passive_cd% сек.<br>Радиус: %radius%<br>"
+	"DOTA_Tooltip_ability_phantom_reflex_dodge_chance_pct"			"%Шанс уклонения:"
+	"DOTA_Tooltip_ability_phantom_reflex_double_attack_chance"		"%Шанс атаки:"
+	"DOTA_Tooltip_modifier_counter_slash_trigger"				"Phantom Reflex"
+	"DOTA_Tooltip_modifier_counter_slash_trigger_Description"	"Позволяет уклониться от любой атаки и/или контратаковать."
 
 	"DOTA_Tooltip_ability_ogre_magi_unrefined_fireblast_lua"						"Unrefined Fireblast"
 	"DOTA_Tooltip_ability_ogre_magi_unrefined_fireblast_lua_Description"			"Blasts an enemy unit with a wave of fire, dealing damage and stunning the target. Its mana cost is %scepter_mana_tooltip%%% of Ogre Magi's current mana. Deals current mana as bonus damage."
