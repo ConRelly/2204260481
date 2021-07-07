@@ -6,29 +6,17 @@ LinkLuaModifier("modifier_inf_aegis", "items/aegis.lua", LUA_MODIFIER_MOTION_NON
 LinkLuaModifier("modifier_inf_aegis_stats", "items/aegis.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_aegis_buff", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
 function item_inf_aegis:GetIntrinsicModifierName() return "modifier_inf_aegis" end
-function item_inf_aegis:GetCooldown(level)
---[[
-	--UP: without Seal
-	if not self:GetCaster():HasModifier("immortal_all_in_one") then
-		return 60
-	end
-	------------------
-]]
-	return self.BaseClass.GetCooldown(self, level)
-end
 function item_inf_aegis:IsRefreshable() return false end
 function item_inf_aegis:item(keys, self)
-	local unit = keys.unit
 	if not self.caster:HasModifier("modifier_item_aegis") then
-		self.reincarnation_death = true
 		self.ability:UseResources(false, false, true)
-		particle_death_fx = ParticleManager:CreateParticle(self.particle_death, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+		particle_death_fx = ParticleManager:CreateParticle("particles/items_fx/aegis_respawn_timer.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 		ParticleManager:SetParticleAlwaysSimulate(particle_death_fx)
-		ParticleManager:SetParticleControl(particle_death_fx, 0, unit:GetAbsOrigin())
+		ParticleManager:SetParticleControl(particle_death_fx, 0, keys.unit:GetAbsOrigin())
 		ParticleManager:SetParticleControl(particle_death_fx, 1, Vector(self.reincarnate_delay, 0, 0))
 		ParticleManager:SetParticleControl(particle_death_fx, 11, Vector(200, 0, 0))
 		ParticleManager:ReleaseParticleIndex(particle_death_fx)
-		particle_aegis_timer = ParticleManager:CreateParticle(self.particle_at, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+		particle_aegis_timer = ParticleManager:CreateParticle("particles/items_fx/aegis_timer.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 		ParticleManager:SetParticleControl(particle_aegis_timer, 1, Vector(0, 0, 0))
 		ParticleManager:SetParticleControl(particle_aegis_timer, 3, self:GetParent():GetAbsOrigin())
 		ParticleManager:ReleaseParticleIndex(particle_aegis_timer)
@@ -37,8 +25,6 @@ function item_inf_aegis:item(keys, self)
 		else
 			AddFOWViewer(self.caster:GetTeamNumber(), self.caster:GetAbsOrigin(), self.caster:GetNightTimeVisionRange(), self.reincarnate_delay, true)
 		end
-	else
-		self.reincarnation_death = false
 	end
 end
 
@@ -52,30 +38,37 @@ function modifier_inf_aegis:OnCreated()
 	if IsServer() then
 		self.caster = self:GetCaster()
 		self.ability = self:GetAbility()
-		self.particle_death = "particles/items_fx/aegis_respawn_timer.vpcf"
-		self.particle_at = "particles/items_fx/aegis_timer.vpcf"
-		self.reincarnate_delay = self:GetAbility():GetSpecialValueFor("reincarnate_delay")
-		if not self:GetCaster():HasModifier("modifier_inf_aegis_stats") then
-			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_inf_aegis_stats", {})
+		self.reincarnate_delay = self.ability:GetSpecialValueFor("reincarnate_delay")
+		if not self.caster:HasModifier("modifier_inf_aegis_stats") then
+			self.caster:AddNewModifier(self.caster, self.ability, "modifier_inf_aegis_stats", {})
 		end
 	end
 end
 function modifier_inf_aegis:DeclareFunctions() return {MODIFIER_EVENT_ON_DEATH} end
 function modifier_inf_aegis:OnDeath(keys)
 	if IsServer() then
-		local aegis_charges = self:GetCaster():FindModifierByName("modifier_aegis")
+		local aegis_charges = self.caster:FindModifierByName("modifier_aegis")
 		if aegis_charges and aegis_charges:GetStackCount() > 0 then return end
 		if self.ability:IsOwnersManaEnough() and self.ability:IsCooldownReady() then
-			if self:GetCaster():IsRealHero() and self:GetCaster() == keys.unit then
+			if self.caster:IsRealHero() and self.caster == keys.unit and not self.caster:IsReincarnating() then
 				item_inf_aegis:item(keys, self)
-				self:GetCaster():EmitSound("Aegis.Timer")
-				self:GetAbility():StartCooldown(self:GetAbility():GetSpecialValueFor("cooldown"))
-				self:GetCaster():FindModifierByName("modifier_inf_aegis_stats"):IncrementStackCount()
-				Timers:CreateTimer(self:GetAbility():GetSpecialValueFor("reincarnate_delay"), function()
-					self:GetParent():RespawnUnit()
-				end)
-				Timers:CreateTimer(self:GetAbility():GetSpecialValueFor("reincarnate_delay") + 0.11, function()
+				self.caster:EmitSound("Aegis.Timer")
+				self.ability:StartCooldown(self.ability:GetSpecialValueFor("cooldown"))
+				self.caster:FindModifierByName("modifier_inf_aegis_stats"):IncrementStackCount()
+				self.caster:SetBuyBackDisabledByReapersScythe(true)
+--				self.caster:SetRespawnsDisabled(false)
+--				self.caster:SetTimeUntilRespawn(self.reincarnate_delay)
+				if not self.caster:IsAlive() then
+					Timers:CreateTimer(self.reincarnate_delay, function()
+						self.caster:SetBuyBackDisabledByReapersScythe(false)
+--						self.caster:SetRespawnsDisabled(true)
+						self:GetParent():RespawnUnit()
+--						self:GetParent():RespawnHero(false, false)
+					end)
+				end
+				Timers:CreateTimer(self.reincarnate_delay + FrameTime(), function()
 					self.caster:AddNewModifier(self.caster, self.ability, "modifier_aegis_buff", {duration = 14})
+--					self.caster:SetTimeUntilRespawn(1)
 				end)
 			end
 		end

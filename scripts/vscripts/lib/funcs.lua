@@ -565,28 +565,24 @@ end
 if Util == nil then Util = class({}) end
 
 function Util:IsReincarnationWork(hero)
+	local bSkeletonKingReincarnationWork = false
+	if hero:HasAbility("skeleton_king_reincarnation") then
+		local hAbility = hero:FindAbilityByName("skeleton_king_reincarnation")
+		if hAbility:GetLevel() > 0 then
+			if hAbility:IsOwnersManaEnough() and hAbility:IsCooldownReady() then
+				bSkeletonKingReincarnationWork = true
+			end
+		end
+	end
 
-    local bSkeletonKingReincarnationWork = false
-    if hero:HasAbility("skeleton_king_reincarnation") then
-         local hAbility = hero:FindAbilityByName("skeleton_king_reincarnation")
-         if hAbility:GetLevel() > 0 then
-           --刚刚触发
-           if hAbility:GetCooldownTimeRemaining() == hAbility:GetEffectiveCooldown(hAbility:GetLevel()-1) then
-              bSkeletonKingReincarnationWork = true 
-           end
-       end
-    end
-      
-    local bUndyingReincarnationWork = false
-    if hero:HasModifier("modifier_special_bonus_reincarnation") then
-        local hModifier = hero:FindModifierByName("modifier_special_bonus_reincarnation")
-        if hModifier:GetElapsedTime()<FrameTime() then
-              bUndyingReincarnationWork=true
-        end
-    end
-
+	local bUndyingReincarnationWork = false
+	if hero:HasModifier("modifier_special_bonus_reincarnation") then
+		local hModifier = hero:FindModifierByName("modifier_special_bonus_reincarnation")
+		if hModifier:GetElapsedTime() < FrameTime() then
+			bUndyingReincarnationWork = true
+		end
+	end
     return bSkeletonKingReincarnationWork or bUndyingReincarnationWork
-
 end
 
 -- Talent handling

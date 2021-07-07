@@ -20,12 +20,13 @@
 		"ItemKillable"					"0"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemStockTime"				 "880"
-		"ItemStockMax"				  "5"
-		"ItemStockInitial"			  "1"
+		"ItemStockTime"					"880"
+		"ItemStockMax"					"5"
+		"ItemStockInitial"				"1"
 		"ItemInitialCharges"			"1"
 		"ItemDisplayCharges"			"1"
 		"ItemContributesToNetWorthWhenDropped"	"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"AllowedInBackpack"				"1"
 		"IsTempestDoubleClonable"		"0"
 		"AbilitySpecial"
@@ -3261,21 +3262,21 @@
 {
 	"BaseClass"						"item_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-	"AbilityTextureName"				"plain_ring"
-	"ItemShopTags"						"regen_health;regen_mana;mana_pool;health_pool"
-	"ItemQuality"						"epic"
-	"ItemAliases"						"gr;gold ring"
+	"AbilityTextureName"			"plain_ring"
+	"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
+	"ItemQuality"					"epic"
+	"ItemAliases"					"gr;gold ring"
 	"ItemShopTags"					"consumable"
 	"ItemQuality"					"consumable"
 	"ItemStackable"					"1"
 	"ItemPermanent"					"0"
 	"ItemInitialCharges"			"1"
-	"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
 	"AbilitySpecial"
 	{
 		"01"
 		{
-			"var_type"					"FIELD_INTEGER"
+			"var_type"					"FIELD_FLOAT"
 			"min_health"				"25"
 		}
 		"02"
@@ -3286,7 +3287,17 @@
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"cooldown"					"40"
+			"cooldown"					"50"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"refund"					"33"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"cd_reduct"					"10"
 		}
 	}
 	"OnSpellStart"
@@ -22617,12 +22628,12 @@
 		"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
 		"AbilityTextureName"			"custom/inf_aegis"
 		"ItemIsNeutralDrop"				"0"
-		"AbilityCooldown"				"45"
 		"ItemCost"						"0"
 		"ItemShopTags"					"aegis"
 		"ItemQuality"					"artifact"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
 		"ItemPurchasable"				"0"
 		"AllowedInBackpack"				"1"
 		"ItemDroppable"					"1"

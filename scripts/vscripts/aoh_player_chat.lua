@@ -391,7 +391,7 @@ function AOHGameMode:CC_Kill( playerID )
 				callback = function()
 					hero:ForceKill(false)
 				end
-			})			
+			})
 			--if hero:HasModifier( "modifier_item_plain_ring_perma_invincibility" ) then
 			--	hero:RemoveModifierByName( "modifier_item_plain_ring_perma_invincibility" )
 			--	hero:SetAbsOrigin(rezPosition)
@@ -402,7 +402,7 @@ function AOHGameMode:CC_Kill( playerID )
 				callback = function()
 					hero:ForceKill(false)
 				end
-			})		
+			})
 		-- else
 		-- 	local nSearchRange = 1000
 		-- 	local hEnemies = FindUnitsInRadius( hero:GetTeamNumber(), hero:GetOrigin(), nil, nSearchRange, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false )
@@ -420,18 +420,14 @@ function AOHGameMode:Suicider(playerID)
 	if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:HasSelectedHero(playerID) then
 		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 		local isAlive = hero:IsAlive()
-		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 		local rezPosition = hero:GetAbsOrigin()
 		if isAlive then
-			--hero:RespawnHero(false, false)
-			--hero:SetAbsOrigin(rezPosition)
-			Timers:CreateTimer({
-				endTime = 0.15, 
-				callback = function()
-					hero:ForceKill(false)
-				end
-			})
-		end	
+			local ring_cd = hero:FindModifierByName("modifier_ring_perma_invincibility_cd")
+			if ring_cd and ring_cd:GetStackCount() < 1 then
+				ring_cd:SetStackCount(1)
+			end
+			Timers:CreateTimer(FrameTime(), function() hero:ForceKill(false) end)
+		end
 	end
 end
 

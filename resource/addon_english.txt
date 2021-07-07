@@ -103,10 +103,9 @@
 
 	"DOTA_Tooltip_ability_item_inf_aegis"				"Aegis of Infinity"
 	"DOTA_Tooltip_ability_item_inf_aegis_Lore"			"The Immortal was said to own a shield that protected him from death itself."
-	"DOTA_Tooltip_ability_item_inf_aegis_Description"	"<h1>Passive: Reincarnation</h1>Brings you to life with full health and mana %reincarnate_delay% seconds after you die, at the location where you died.\n<h1>Suicide</h1>Every inf aegis respwan proc gives owner +%proc_stats% All Attributes (allows you to use the command '-killmepls' for proc).\nNot spent after death."
+	"DOTA_Tooltip_ability_item_inf_aegis_Description"	"<h1>Passive: Reincarnation</h1>Brings you to life with full health and mana %reincarnate_delay% seconds after you die, at the location where you died.<br><br>Cooldown: %cooldown% sec.\n<h1>Suicide</h1>Every inf aegis respwan proc gives owner +%proc_stats% All Attributes (allows you to use the command '-killmepls' for proc).\nNot spent after death."
 	"DOTA_Tooltip_ability_item_inf_aegis_note0"			"Does not affect cooldown reduction."
 	"DOTA_Tooltip_ability_item_inf_aegis_note1"			"You can't reset the cooldown."
-	"DOTA_Tooltip_ability_item_inf_aegis_cooldown"				"Cooldown:"
 	"DOTA_Tooltip_modifier_inf_aegis_stats"				"Stacks of Immortality"
 	"DOTA_Tooltip_modifier_inf_aegis_stats_Description"	"+%dMODIFIER_PROPERTY_TOOLTIP% All Attributes"
 
@@ -549,6 +548,26 @@
 	"DOTA_Tooltip_modifier_wd_voodoo_restoration_heal_Description"		"The Witch Doctor be healing you!"
 	"DOTA_Tooltip_ability_special_bonus_wd_voodoo_restoration_heal_pct"	"+{s:value}% Max Health Voodoo Restoration"
 	"DOTA_Tooltip_ability_special_bonus_wd_voodoo_restoration_radius"	"x{s:value} Voodoo Restoration Radius"
+
+//Hoodwink
+	"DOTA_Tooltip_ability_hw_sharpshooter"					"Sharpshooter"
+	"DOTA_Tooltip_ability_hw_sharpshooter_Description"		"Hoodwink charges up and fires a deadly bolt from her crossbow, dealing heavy damage and slow to an enemy Hero.  The damage and debuff duration scale up to max after %max_charge_time% seconds, and the bolt is fired automatically after %misfire_time% seconds.\nHoodwink is knocked backwards for a distance of %recoil_distance% from the force of the shot.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Damage will increase by 100% for every 2000 units of distance to the target."
+	"DOTA_Tooltip_ability_hw_sharpshooter_scepter_description"		"Allows the projectile to pass through."
+	"DOTA_Tooltip_ability_hw_sharpshooter_shard_description"		"Increases projectile's range and speed by x2."
+	"DOTA_Tooltip_ability_hw_sharpshooter_Lore"				"While her first arbalest was a chance discovery, Hoodwink now takes great care in carving and caring for her own -- of course with some necessary components pilfered or otherwise cleverly procured."
+	"DOTA_Tooltip_ability_hw_sharpshooter_max_charge_time"				"MAX WIND-UP TIME:"
+	"DOTA_Tooltip_ability_hw_sharpshooter_max_damage"					"MAX DAMAGE:"
+	"DOTA_Tooltip_ability_hw_sharpshooter_max_slow_debuff_duration"		"MAX DEBUFF DURATION:"
+	"DOTA_Tooltip_ability_hw_sharpshooter_slow_move_pct"				"%MOVE SLOW:"
+
+	"DOTA_Tooltip_ability_hw_sharpshooter_release"				"End Sharpshooter"
+	"DOTA_Tooltip_ability_hw_sharpshooter_release_Description"	"Release the charged up shot, regain ability to move and attack."
+	"DOTA_Tooltip_ability_hw_sharpshooter_release_Lore"			"Fire!"
+
+	"DOTA_Tooltip_modifier_hw_sharpshooter"				"Sharpshooter"
+	"DOTA_Tooltip_modifier_hw_sharpshooter_Description"	"Winding up Sharpshooter for bonus damage and debuff duration; rooted and disarmed."
+	"DOTA_Tooltip_modifier_hw_sharpshooter_debuff"				"Sharpshooter"
+	"DOTA_Tooltip_modifier_hw_sharpshooter_debuff_Description"	"Passives disabled, movement slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 	
 //###########################################################################################################################
 	
@@ -6339,7 +6358,7 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_Ability_item_recipe_blast_staff_1"			   "Recipe: Blast Staff"
 "DOTA_Tooltip_Ability_item_blast_staff_1"						"Blast Staff"
 "DOTA_Tooltip_ability_item_blast_staff_1_Description"			"<h1>Active: Burst Flare</h1> Emits %strikes% blasts of energy that deal %int_multiplier% times your intelligence in damage.
-<h1>Passive: Reactive Blast</h1>Every time you cast an ability a second blast follows it, dealing %int_multiplier% times your intelligence in damage."
+<h1>Passive: Reactive Blast</h1>Every time you cast an ability (at least 1 sec. CD) a second blast follows it, dealing %int_multiplier% times your intelligence in damage."
 "DOTA_Tooltip_ability_item_blast_staff_1_Lore"					"Sucks in magic from the air, and expels it on command."
 "DOTA_Tooltip_ability_item_blast_staff_1_bonus_intellect"		"+$int"
 "DOTA_Tooltip_ability_item_blast_staff_1_bonus_strength"		"+$str"
@@ -6349,7 +6368,7 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_Ability_item_recipe_blast_staff_2"			   "Recipe: Blast Staff 2"
 "DOTA_Tooltip_Ability_item_blast_staff_2"						"Blast Staff 2"
 "DOTA_Tooltip_ability_item_blast_staff_2_Description"			"<h1>Active: Burst Flare</h1> Emits %strikes% blasts of energy that deal %int_multiplier% times your intelligence in damage.
-<h1>Passive: Reactive Blast</h1>Every time you cast an ability a second blast follows it, dealing %int_multiplier% times your intelligence in damage."
+<h1>Passive: Reactive Blast</h1>Every time you cast an ability (at least 1 sec. CD) a second blast follows it, dealing %int_multiplier% times your intelligence in damage."
 "DOTA_Tooltip_ability_item_blast_staff_2_Lore"					"Sucks in magic from the air, and expels it on command."
 "DOTA_Tooltip_ability_item_blast_staff_2_bonus_intellect"		"+$int"
 "DOTA_Tooltip_ability_item_blast_staff_2_bonus_strength"		"+$str"
@@ -6358,11 +6377,10 @@ Nimbus is not recasted by Thundergod's Wrath."
 
 "DOTA_Tooltip_Ability_item_recipe_blast_staff_3"			   "Recipe: Blast Staff 2"
 "DOTA_Tooltip_Ability_item_blast_staff_3"						"Greater Blast Staff"
-"DOTA_Tooltip_ability_item_blast_staff_3_Description"			"<h1>Active: Burst Flare</h1> Emits %strikes% blasts of energy that deal %int_multiplier% times your intelligence in damage.\n<h1>Passive: Reactive Blast</h1>Every time you cast an ability a second blast follows it, dealing %int_multiplier% times your intelligence in damage.\n<h1><font color='#006E92'>Passive: Caster Mastery</font></h1> For Every 5 seconds of the ability casted Cooldown(before CDR) you fire an aditional blast.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>When a Blast hits, but before it deals damage to an enemy will apply a debuff for %debuff_duration% s that reduces enemy magic resistance by %resist_reduc%%%."
+"DOTA_Tooltip_ability_item_blast_staff_3_Description"			"<h1>Active: Burst Flare</h1> Emits %strikes% blasts of energy that deal %int_multiplier% times your intelligence in damage.\n<h1>Passive: Reactive Blast</h1>Every time you cast an ability (at least 1 sec. CD) a second blast follows it, dealing %int_multiplier% times your intelligence in damage.\n<h1><font color='#006E92'>Passive: Caster Mastery</font></h1> For Every 5 seconds of the ability casted Cooldown(before CDR) you fire an aditional blast.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>When a Blast hits, but before it deals damage to an enemy will apply a debuff for %debuff_duration% s that reduces enemy magic resistance by %resist_reduc%%%."
 "DOTA_Tooltip_ability_item_blast_staff_3_Lore"					"Sucks in magic from the air, and expels it on command."
 "DOTA_Tooltip_ability_item_blast_staff_3_Note0"				 "The number of extra blasts is roundup (a 6s cd ability will count as an 10s)"
-"DOTA_Tooltip_ability_item_blast_staff_3_Note1"				 "Ability must have more then 3 sec CD(beofre CDR) to fire extra blasts" 
-"DOTA_Tooltip_ability_item_blast_staff_3_scepter_description"   "When a Blast hits, but before it deals damage to an enemy will apply a debuff for %debuff_duration% s that reduces enemy magic resistance by %resist_reduc%%%."
+"DOTA_Tooltip_ability_item_blast_staff_3_Note1"				 "Ability must have more then 3 sec CD (beofre CDR) to fire extra blasts"
 "DOTA_Tooltip_ability_item_blast_staff_3_bonus_intellect"		"+$int"
 "DOTA_Tooltip_ability_item_blast_staff_3_bonus_strength"		"+$str"
 "DOTA_Tooltip_ability_item_blast_staff_3_bonus_agility"			"+$agi"
@@ -6370,7 +6388,7 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_ability_item_blast_staff_3_status_resist"		 "%+$status_resist"
 
 "dota_tooltip_modifier_item_blast_staff_debuff"	 			 "Blast Staff Impact"
-"dota_tooltip_modifier_item_blast_staff_debuff_description"  "On impact: Reduce magic resistance by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%"
+"dota_tooltip_modifier_item_blast_staff_debuff_description"  "On impact: Reduce magic resistance by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%"
 
 
 "DOTA_Tooltip_ability_item_bloodstone_Description"				"<h1>Active: Bloodpact</h1> Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds."

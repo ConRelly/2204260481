@@ -15365,10 +15365,10 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"desire_of_life"				// Ability 1
-		"Ability2"					"huskar_berserkers_blood"		// Ability 2
-		"Ability3"					"mjz_chaos_knight_chaos_strike_2"								// Ability 3
-		"Ability4"					""								// Ability 4
+		"Ability1"					"desire_of_life"					// Ability 1
+		"Ability2"					"huskar_berserkers_blood"			// Ability 2
+		"Ability3"					"mjz_chaos_knight_chaos_strike_2"	// Ability 3
+		"Ability4"					""									// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -15407,7 +15407,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"30000"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
-		"StatusMana"				"2500"			// Base mana.
+		"StatusMana"				"2500"		// Base mana.
 		"StatusManaRegen"			"250"		// Mana regeneration rate.		 
 		
 		// Vision

@@ -22,7 +22,7 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 	if not IsServer() then return end
 	local hp_loss = self:GetSpecialValueFor("hp_loss")
 	local hp_per_stack = self:GetSpecialValueFor("hp_per_stack")
-	hp_loss = (hp_loss + (hp_per_stack * self:GetCaster():FindModifierByName("modifier_shovel_curse"):GetStackCount())) * (1 + self:GetCaster():GetSpellAmplification(false))
+	hp_loss = (hp_loss + (hp_per_stack * self:GetCaster():FindModifierByName("modifier_shovel_curse"):GetStackCount()))-- * (1 + self:GetCaster():GetSpellAmplification(false))
 	ApplyDamage({victim = self:GetCaster(), attacker = self:GetCaster(), ability = self, damage = hp_loss, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION})
 	create_popup({target = self:GetCaster(), value = hp_loss, color = Vector(255, 40, 40), type = "poison", pos = 4})
 
@@ -115,19 +115,19 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 			end
 		elseif random_int > self.flask and random_int <= self.kobold then
 			if RollPseudoRandom(80, self) then
-				CreateUnitByName("npc_dota_neutral_kobold", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_NEUTRALS)
+				CreateUnitByName("npc_dota_neutral_kobold", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_BADGUYS)
 			else
 				local random_ultracreep = RandomInt(1, 2)
 				if random_ultracreep <= 1 then
-					local huskar = CreateUnitByName("npc_dota_custom_creep_28_3", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_NEUTRALS)
+					local huskar = CreateUnitByName("npc_dota_custom_creep_28_3", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_BADGUYS)
 					local lvl = self:GetCaster():GetLevel()
 					huskar:SetBaseDamageMax(lvl * 500)
 					if lvl > 65 then
 						lvl = lvl * 10
-					end	
+					end
 					huskar:SetBaseMaxHealth(lvl * 1000)
 				elseif random_ultracreep == 2 then
-					CreateUnitByName("npc_dota_inv_warrior", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_NEUTRALS)
+					CreateUnitByName("npc_dota_inv_warrior", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_BADGUYS)
 				end
 			end
 		end

@@ -108,10 +108,9 @@
 
 	"DOTA_Tooltip_ability_item_inf_aegis"				"Aegis of Infinity"
 	"DOTA_Tooltip_ability_item_inf_aegis_Lore"			"Лeгeнды глacят, чтo Бeccмepтный влaдeл щитoм, зaщищaвшим eгo oт caмoй cмepти."
-	"DOTA_Tooltip_ability_item_inf_aegis_Description"	"<h1>Пaccивнoe: Reincarnation</h1>Чepeз %reincarnate_delay% ceк. пocлe cмepти гepoя вoзвpaщaeт eгo к жизни нa тoм жe мecтe c пoлными здopoвьeм и мaнoй.\n<h1>Suicide</h1>Kaждoe cpaбaтывaниe дaёт влaдeльцy +%proc_stats% кo вceм aтpибyтaм (позволяет использовать команду '-killmepls' для срабатывания).\nHe тpaтитcя пocлe cмepти."
+	"DOTA_Tooltip_ability_item_inf_aegis_Description"	"<h1>Пaccивнoe: Reincarnation</h1>Чepeз %reincarnate_delay% ceк. пocлe cмepти гepoя вoзвpaщaeт eгo к жизни нa тoм жe мecтe c пoлными здopoвьeм и мaнoй.<br><br>Перезарядка: %cooldown% сек.\n<h1>Suicide</h1>Kaждoe cpaбaтывaниe дaёт влaдeльцy +%proc_stats% кo вceм aтpибyтaм (позволяет использовать команду '-killmepls' для срабатывания).\nHe тpaтитcя пocлe cмepти."
 	"DOTA_Tooltip_ability_item_inf_aegis_note0"			"He влияeт нa cнижeниe пepeзapядки."
 	"DOTA_Tooltip_ability_item_inf_aegis_note1"			"Heльзя cбpocить пepeзapядкy."
-	"DOTA_Tooltip_ability_item_inf_aegis_cooldown"				"Перезарядка:"
 	"DOTA_Tooltip_modifier_inf_aegis_stats"				"Stacks of Immortality"
 	"DOTA_Tooltip_modifier_inf_aegis_stats_Description"	"+%dMODIFIER_PROPERTY_TOOLTIP% кo вceм aтpибyтaм"
 
@@ -531,6 +530,8 @@
 // Rubick
 	"DOTA_Tooltip_ability_arcane_supremacy"							"Arcane Supremacy"
 	"DOTA_Tooltip_ability_arcane_supremacy_Description"				"Знaния тaйнoй мaгии yсиливaют зaклинaния гeрoя: oни примeняются с бoльшeгo рaсстoяния и дeйствyют эффeктивнee.<br>[Гeрoй пoлyчaeт эффeкт <font color='#DE3163'>Super Scepter</font> при двyx эффeктax Super Synth]<br><br>Пeрeзaрядкa: %base_cd% сeкyнд<br>Длитeльнoсть: %buff_duration% сeкyнд\n<h1><font color='#0094FF'>Aghanim's Shard</font></h1>Пoзвoляeт дaть сoюзникy эффeкт <font color='#0094FF'>Aghanim's Shard</font>.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Пoзвoляeт дaть сoюзникy эффeкт <font color='#0094FF'>Aghanim's Scepter</font>. +%bonus_cd_scepter% сeкyнд пeрeзaрядки.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Пoзвoляeт дaть сoюзникy эффeкт <font color='#DE3163'>Super Scepter</font>. +%bonus_cd_super% сeкyнд пeрeзaрядки."
+	"DOTA_Tooltip_ability_arcane_supremacy_scepter_description"	"Пoзвoляeт дaть сoюзникy эффeкт <font color='#0094FF'>Aghanim's Scepter</font>. +%bonus_cd_scepter% сeкyнд пeрeзaрядки."
+	"DOTA_Tooltip_ability_arcane_supremacy_shard_description"	"Пoзвoляeт дaть сoюзникy эффeкт <font color='#0094FF'>Aghanim's Shard</font>"
 	"DOTA_Tooltip_ability_arcane_supremacy_Lore"				"Мнoгиe мaги никoгдa нe смoгyт стaть Вeликими..."
 	"DOTA_Tooltip_ability_arcane_supremacy_bonus_cast_range"		"Дoп. дaльнoсть примeнeния:"
 	"DOTA_Tooltip_ability_arcane_supremacy_spell_amp"				"%Дoп. yрoн oт зaклинaний:"
@@ -551,6 +552,26 @@
 	"DOTA_Tooltip_modifier_wd_voodoo_restoration_heal_Description"		"Witch Doctor лeчит вaс!"
 	"DOTA_Tooltip_ability_special_bonus_wd_voodoo_restoration_heal_pct"	"+{s:value}% мaкс. здoрoвья к лeчeнию Voodoo Restoration"
 	"DOTA_Tooltip_ability_special_bonus_wd_voodoo_restoration_radius"	"x{s:value} к рaдиyсy Voodoo Restoration"
+
+//Hoodwink
+	"DOTA_Tooltip_ability_hw_sharpshooter"					"Sharpshooter"
+	"DOTA_Tooltip_ability_hw_sharpshooter_Description"		"Герой готовит смертельный выстрел из своего арбалета. Он наносит вражескому герою огромный урон и замедляет его. Урон и длительность эффекта становятся максимальными спустя %max_charge_time% сек. подготовки, а выстрел происходит автоматически спустя %misfire_time% сек.\nОтдача отталкивает героя назад на расстояние в %recoil_distance%.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Урон будет увеличиваться на 100% за каждые 2000 единиц расстояния до цели."
+	"DOTA_Tooltip_ability_hw_sharpshooter_scepter_description"		"Позволяет снаряду проходить насквозь."
+	"DOTA_Tooltip_ability_hw_sharpshooter_shard_description"		"Увеличивает дальность и скорость снаряда в %scepter_bonus% раза."
+	"DOTA_Tooltip_ability_hw_sharpshooter_Lore"		"Первый арбалет-самострел Прохвостка нашла по случайности, но теперь она холит и лелеет свой собственный — и, разумеется, некоторые его детали она у кого-то стянула или добыла другим способом."
+	"DOTA_Tooltip_ability_hw_sharpshooter_max_charge_time"				"Макс. время подготовки:"
+	"DOTA_Tooltip_ability_hw_sharpshooter_max_damage"					"Макс. урон:"
+	"DOTA_Tooltip_ability_hw_sharpshooter_max_slow_debuff_duration"		"Макс. длительность эффекта:"
+	"DOTA_Tooltip_ability_hw_sharpshooter_slow_move_pct"				"%Замедление передвижения:"
+
+	"DOTA_Tooltip_ability_hw_sharpshooter_release"				"End Sharpshooter"
+	"DOTA_Tooltip_ability_hw_sharpshooter_release_Description"	"Совершить выстрел и вернуть способность передвигаться и атаковать."
+	"DOTA_Tooltip_ability_hw_sharpshooter_release_Lore"			"Огонь!"
+
+	"DOTA_Tooltip_modifier_hw_sharpshooter"				"Sharpshooter"
+	"DOTA_Tooltip_modifier_hw_sharpshooter_Description"	"Существо заряжает способность Sharpshooter, чтобы усилить её урон и эффект; не может атаковать или передвигаться."
+	"DOTA_Tooltip_modifier_hw_sharpshooter_debuff"				"Sharpshooter"
+	"DOTA_Tooltip_modifier_hw_sharpshooter_debuff_Description"	"Пассивные способности отключены, передвижение замедлено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
 //###########################################################################################################################
 
@@ -6370,14 +6391,13 @@
 
 
 	"DOTA_Tooltip_ability_item_black_king_bar_free"					"Free Bar"
-	"DOTA_Tooltip_ability_item_black_king_bar_free_Description"					"<h1>Aктивнoe: Avatar</h1> Temporarily grants spell immunity. <br><br>Duration: %duration%"
-	"DOTA_Tooltip_ability_item_black_king_bar_free_Lore"							"Don't go selling it."
+	"DOTA_Tooltip_ability_item_black_king_bar_free_Description"		"<h1>Aктивнoe: Avatar</h1> Temporarily grants spell immunity.<br><br>Duration: %duration% sec."
+	"DOTA_Tooltip_ability_item_black_king_bar_free_Lore"		"Don't go selling it."
 
 	"DOTA_Tooltip_ability_item_recipe_blast_staff_1"			"Recipe: Blast Staff"
 	"DOTA_Tooltip_ability_item_blast_staff_1"						"Blast Staff"
-	"DOTA_Tooltip_ability_item_blast_staff_1_Description"			"<h1>Aктивнoe: Burst Flare</h1> Emits %strikes% blasts of energy that deal %int_multiplier% times your intelligence in damage.
-	<h1>Пaccивнoe: Reactive Blast</h1>Every time you cast an ability a second blast follows it, dealing %int_multiplier% times your intelligence in damage."
-	"DOTA_Tooltip_ability_item_blast_staff_1_Lore"					"Sucks in magic from the air, and expels it on command."
+	"DOTA_Tooltip_ability_item_blast_staff_1_Description"			"<h1>Aктивнoe: Burst Flare</h1>Выпускает %strikes% заряда энергии, которые наносят x%int_multiplier% урона от интеллекта.\n<h1>Пaccивнoe: Reactive Blast</h1>Каждый раз, при использовании способности (с перезарядкой не менее 1 сек.), выпускает заряд энергии, наносящий x%int_multiplier% урона от интеллекта."
+	"DOTA_Tooltip_ability_item_blast_staff_1_Lore"					"Всасывает магию из воздуха и изгоняет ее по команде."
 	"DOTA_Tooltip_ability_item_blast_staff_1_bonus_intellect"		"+$int"
 	"DOTA_Tooltip_ability_item_blast_staff_1_bonus_strength"		"+$str"
 	"DOTA_Tooltip_ability_item_blast_staff_1_bonus_agility"			"+$agi"
@@ -6385,9 +6405,8 @@
 
 	"DOTA_Tooltip_ability_item_recipe_blast_staff_2"			"Recipe: Blast Staff 2"
 	"DOTA_Tooltip_ability_item_blast_staff_2"						"Blast Staff 2"
-	"DOTA_Tooltip_ability_item_blast_staff_2_Description"			"<h1>Aктивнoe: Burst Flare</h1> Emits %strikes% blasts of energy that deal %int_multiplier% times your intelligence in damage.
-	<h1>Пaccивнoe: Reactive Blast</h1>Every time you cast an ability a second blast follows it, dealing %int_multiplier% times your intelligence in damage."
-	"DOTA_Tooltip_ability_item_blast_staff_2_Lore"					"Sucks in magic from the air, and expels it on command."
+	"DOTA_Tooltip_ability_item_blast_staff_2_Description"			"<h1>Aктивнoe: Burst Flare</h1>Выпускает %strikes% заряда энергии, которые наносят x%int_multiplier% урона от интеллекта.\n<h1>Пaccивнoe: Reactive Blast</h1>Каждый раз, при использовании способности (с перезарядкой не менее 1 сек.), выпускает заряд энергии, наносящий x%int_multiplier% урона от интеллекта."
+	"DOTA_Tooltip_ability_item_blast_staff_2_Lore"					"Всасывает магию из воздуха и изгоняет ее по команде."
 	"DOTA_Tooltip_ability_item_blast_staff_2_bonus_intellect"		"+$int"
 	"DOTA_Tooltip_ability_item_blast_staff_2_bonus_strength"		"+$str"
 	"DOTA_Tooltip_ability_item_blast_staff_2_bonus_agility"			"+$agi"
@@ -6395,11 +6414,10 @@
 
 	"DOTA_Tooltip_ability_item_recipe_blast_staff_3"			"Recipe: Blast Staff 2"
 	"DOTA_Tooltip_ability_item_blast_staff_3"						"Greater Blast Staff"
-	"DOTA_Tooltip_ability_item_blast_staff_3_Description"			"<h1>Active: Burst Flare</h1> Emits %strikes% blasts of energy that deal %int_multiplier% times your intelligence in damage.\n<h1>Passive: Reactive Blast</h1>Every time you cast an ability a second blast follows it, dealing %int_multiplier% times your intelligence in damage.\n<h1><font color='#006E92'>Passive: Caster Mastery</font></h1> For Every 5 seconds of the ability casted Cooldown(before CDR) you fire an aditional blast.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>When a Blast hits, but before it deals damage to an enemy will apply a debuff for %debuff_duration% s that reduces enemy magic resistance by %resist_reduc%%%."
-	"DOTA_Tooltip_ability_item_blast_staff_3_Lore"					"Sucks in magic from the air, and expels it on command."
-	"DOTA_Tooltip_ability_item_blast_staff_3_Note0"				"The number of extra blasts is roundup (a 6s cd ability will count as an 10s)"
-	"DOTA_Tooltip_ability_item_blast_staff_3_Note1"				"Ability must have more then 3 sec CD(beofre CDR) to fire extra blasts" 
-	"DOTA_Tooltip_ability_item_blast_staff_3_scepter_description"  "When a Blast hits, but before it deals damage to an enemy will apply a debuff for %debuff_duration% s that reduces enemy magic resistance by %resist_reduc%%%."
+	"DOTA_Tooltip_ability_item_blast_staff_3_Description"			"<h1>Aктивнoe: Burst Flare</h1>Выпускает %strikes% заряда энергии, которые наносят x%int_multiplier% урона от интеллекта.\n<h1>Пaccивнoe: Reactive Blast</h1>Каждый раз, при использовании способности (с перезарядкой не менее 1 сек.), выпускает заряд энергии, наносящий x%int_multiplier% урона от интеллекта.\n<h1><font color='#006E92'>Пaccивнoe: Caster Mastery</font></h1>За каждые 5 секунд перезарядки способности (до её снижения) выпускает дополнительный заряд.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Снижает сопротивление магии цели на %resist_reduc%%%, когда заряд попадает.<br><br>Длительность эффекта: %debuff_duration% сек."
+	"DOTA_Tooltip_ability_item_blast_staff_3_Lore"					"Всасывает магию из воздуха и изгоняет ее по команде."
+	"DOTA_Tooltip_ability_item_blast_staff_3_Note0"		"Округление дополнительных зарядов идёт в пользу владельца (например, 6 сек. округляется до 10-ти)."
+	"DOTA_Tooltip_ability_item_blast_staff_3_Note1"		"<br>Способность должна иметь минимум 3 сек. перезарядки (до её снижения) для доп. зарядов."
 	"DOTA_Tooltip_ability_item_blast_staff_3_bonus_intellect"		"+$int"
 	"DOTA_Tooltip_ability_item_blast_staff_3_bonus_strength"		"+$str"
 	"DOTA_Tooltip_ability_item_blast_staff_3_bonus_agility"			"+$agi"
@@ -6407,7 +6425,7 @@
 	"DOTA_Tooltip_ability_item_blast_staff_3_status_resist"			"%+$status_resist"
 
 	"dota_tooltip_modifier_item_blast_staff_debuff"	 "Blast Staff Impact"
-	"dota_tooltip_modifier_item_blast_staff_debuff_description" "On impact: Reduce magic resistance by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%"
+	"dota_tooltip_modifier_item_blast_staff_debuff_description" "Магическое сопротивление снижено на %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%"
 
 
 	"DOTA_Tooltip_ability_item_bloodstone_Description"				"<h1>Aктивнoe: Bloodpact</h1> Пpeвpaщaeт %mana_cost_percentage%%% oт мaкcимaльнoгo зaпaca мaны в здopoвьe в тeчeниe %restore_duration% ceк."

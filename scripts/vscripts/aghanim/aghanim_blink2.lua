@@ -191,17 +191,14 @@ function modifier_aghanim_blink_invul:IsDebuff() return false end
 function modifier_aghanim_blink_invul:IsPurgable() return false end
 function modifier_aghanim_blink_invul:CheckState() 
     return {
-        [MODIFIER_STATE_INVULNERABLE ]          = true,
-        --[MODIFIER_STATE_CANNOT_MISS ]           = true,
-        [MODIFIER_STATE_NO_UNIT_COLLISION ]     = true,
-        [MODIFIER_STATE_UNSLOWABLE]             = true,
+        [MODIFIER_STATE_INVULNERABLE] = true,
+        --[MODIFIER_STATE_CANNOT_MISS] = true,
+        [MODIFIER_STATE_NO_UNIT_COLLISION] = true,
+        [MODIFIER_STATE_UNSLOWABLE] = true,
     } 
 end
 function modifier_aghanim_blink_invul:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE,
-		MODIFIER_PROPERTY_ATTACK_RANGE_BONUS
-	}
+	local funcs = {MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS}
 	return funcs	 
 end
 function modifier_aghanim_blink_invul:GetModifierExtraHealthPercentage() 
@@ -217,28 +214,32 @@ function modifier_aghanim_blink_slayer:IsDebuff() return false end
 function modifier_aghanim_blink_slayer:IsPurgable() return false end
 function modifier_aghanim_blink_slayer:CheckState()
 	local state = {}
-	if self:GetParent() ~= nil and self:GetParent():HasModifier("modifier_mystery_cyclone_active") then
-		state = {[MODIFIER_STATE_STUNNED ] = true, [MODIFIER_STATE_CANNOT_MISS ] = true}
-	else
-		state = {[MODIFIER_STATE_STUNNED ] = false, [MODIFIER_STATE_CANNOT_MISS ] = true}
+	if not self:GetParent():PassivesDisabled() then
+		if self:GetParent() ~= nil and self:GetParent():HasModifier("modifier_mystery_cyclone_active") then
+			state = {[MODIFIER_STATE_STUNNED] = true, [MODIFIER_STATE_CANNOT_MISS] = true}
+		else
+			state = {[MODIFIER_STATE_STUNNED] = false, [MODIFIER_STATE_CANNOT_MISS] = true}
+		end
 	end
     return state
 end
 function modifier_aghanim_blink_slayer:DeclareFunctions()
-	return {
-		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
-		MODIFIER_PROPERTY_HEALTH_BONUS,
-		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS
-	}
+    return {MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_HEALTH_BONUS}
 end
-function modifier_aghanim_blink_slayer:GetModifierMagicalResistanceBonus() 
-	return self:GetAbility():GetSpecialValueFor("magic_resist") 
+function modifier_aghanim_blink_slayer:GetModifierMagicalResistanceBonus()
+	if not self:GetParent():PassivesDisabled() then
+		return self:GetAbility():GetSpecialValueFor("magic_resist")
+	end
 end
-function modifier_aghanim_blink_slayer:GetModifierPhysicalArmorBonus() 
-	return self:GetAbility():GetSpecialValueFor("armor_bonus") 
+function modifier_aghanim_blink_slayer:GetModifierPhysicalArmorBonus()
+	if not self:GetParent():PassivesDisabled() then
+		return self:GetAbility():GetSpecialValueFor("armor_bonus")
+	end
 end
-function modifier_aghanim_blink_slayer:GetModifierHealthBonus() 
-	return self:GetAbility():GetSpecialValueFor("health_bonus") 
+function modifier_aghanim_blink_slayer:GetModifierHealthBonus()
+	if not self:GetParent():PassivesDisabled() then
+		return self:GetAbility():GetSpecialValueFor("health_bonus")
+	end
 end
 --=================================================================================================
 

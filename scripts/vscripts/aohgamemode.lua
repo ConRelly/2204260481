@@ -225,6 +225,7 @@ function AOHGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_AGILITY_ARMOR, 0.01)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN,0.07)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA, 4)
+	GameRules:GetGameModeEntity():SetHUDVisible(26,false)
 	ListenToGameEvent("npc_spawned", Dynamic_Wrap(AOHGameMode, 'OnEntitySpawned'), self)
 	ListenToGameEvent("entity_killed", Dynamic_Wrap(AOHGameMode, 'OnEntityKilled'), self)
 	ListenToGameEvent("player_chat", Dynamic_Wrap(AOHGameMode, "OnPlayerDeasth"), self)
@@ -780,13 +781,13 @@ function AOHGameMode:OnHeroLevelUp(event)
 	end							
 end
 
-local lopata = true
+_G.lopata = true
 function AOHGameMode:OnTreeCut(keys)
 	local item = CreateItem("item_trusty_shovel", nil, nil)
 	if RollPseudoRandom(1, self) and lopata then
 		CreateItemOnPositionSync(Vector(keys.tree_x,keys.tree_y,0), item)
 		AddFOWViewer(DOTA_TEAM_GOODGUYS, Vector(keys.tree_x,keys.tree_y,0), 300, 10, false)
-		lopata = false
+		_G.lopata = false
 	end
 end
 

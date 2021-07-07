@@ -7,7 +7,6 @@
 #base "abilities/heroes/ember_spirit_sleight_of_fist.txt"
 #base "abilities/heroes/pugna_nether_blast.txt"
 #base "abilities/heroes/bane_brain_sap.txt"
-#base "abilities/heroes/beastmaster_wild_axes.txt"
 #base "abilities/heroes/bounty_hunter_wind_walk.txt"
 #base "abilities/heroes/brewmaster_drunken_brawler.txt"
 #base "abilities/heroes/brewmaster_thunder_clap.txt"
@@ -2651,6 +2650,77 @@
 			}
 		}
 	}
+
+// Beastmaster: Wild Axes
+	"beastmaster_wild_axes"
+	{
+		"ID"							"5168"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
+		"HasScepterUpgrade"				"1"
+		"AbilityCastRange"				"1500"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCooldown"				"8"
+		"AbilityManaCost"				"80"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"255"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"spread"					"450"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"range"						"1500"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"axe_damage"				"90 470 900 1730 2960 3890 7450"
+				"LinkedSpecialBonus"		"special_bonus_unique_beastmaster"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"6 6 6 6 6 6 5"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_amp"					"0 0 0 0 1 1 1"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"scepter_cooldown"			"0.1"
+				"RequiresScepter"			"1"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"min_throw_duration"		"0.3"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"max_throw_duration"		"0.6"
+			}
+		}
+	}
+
 	"beastmaster_call_of_the_wild_boar"
 	{
 		"LevelsBetweenUpgrades"		 "5"
@@ -16851,42 +16921,30 @@
 		}
 	}
 
-	//=================================================================================================================
-	// Hoodwink: Acorn Shot
-	//=================================================================================================================
+// Hoodwink: Acorn Shot
 	"hoodwink_acorn_shot"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"8429"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.		
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"16 14 12 10 9 8 7"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"7"
 		"AbilityCastRange"				"1875"
 		"AbilityCastPoint"				"0.2"
 		"AbilityManaCost"				"101"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
-		{		
+		{
 			"01"
-			{	
+			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_range"			"225 300 325 350 375 400 450"
 			}
 			"02"
-			{	
+			{
 				"var_type"				"FIELD_INTEGER"
 				"acorn_shot_damage"		"125 900 2875 8450 18500 36800 58500"
 			}
@@ -16896,12 +16954,12 @@
 				"base_damage_pct"		"575"
 			}
 			"04"
-			{	
+			{
 				"var_type"				"FIELD_INTEGER"
 				"bounce_count"			"6 7 8 9 10 11 12"
 			}
 			"05"
-			{	
+			{
 				"var_type"				"FIELD_INTEGER"
 				"bounce_range"			"1925"
 			}
@@ -16911,7 +16969,7 @@
 				"debuff_duration"		"0.25"
 			}
 			"07"
-			{	
+			{
 				"var_type"				"FIELD_INTEGER"
 				"slow"					"100"
 			}
@@ -16924,37 +16982,20 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 
-	//=================================================================================================================
-	// Hoodwink: Bushwhack
-	//=================================================================================================================
+// Hoodwink: Bushwhack
 	"hoodwink_bushwhack"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"8158"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"AbilityCastRange"				"1800"
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "7"		
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"7"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"14"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"120"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -16964,8 +17005,8 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"debuff_duration"		"2.2"
+				"var_type"			"FIELD_FLOAT"
+				"debuff_duration"	"2.2"
 			}
 			"03"
 			{
@@ -16990,35 +17031,17 @@
 		}
 	}
 
-
-	//=================================================================================================================
-	// Hoodwink: Scurry
-	//=================================================================================================================
+// Hoodwink: Scurry
 	"hoodwink_scurry"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"9501"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0"
 		"AbilityCastRange"				"275"
-		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0.0"
-		"LevelsBetweenUpgrades"		 "4"
+		"LevelsBetweenUpgrades"			"4"
 		"AbilityCharges"				"2"
 		"AbilityChargeRestoreTime"		"45 40 35 30"
-		
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"35"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"

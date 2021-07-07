@@ -510,7 +510,7 @@ New Item: Cursed Gaze, requested by Siliatra, with points from quests.
 
 *removed dummys, the host can spawn one of them with the command "-dummy"  before the game starts
 *Added some extra effects to troll passive
-*slayer recipe is not sharable anymore (it seems the game does not like if all components are sharable and you don't own them all, kind of pointless )
+*slayer recipe is not shareable anymore (it seems the game does not like if all components are shareable and you don't own them all, kind of pointless )
 
 *Over 200 talents (probably) buffed by 3-20x times (the % ones, attack range, hero unique, and mana regen remained the same)
 *dark willow shadow realm replaced with a custom one that scales with int, (replaced the random pool one too), it has normal effects but no attack effects(to be more friendly with slower PCs or server). 2 new talents
@@ -711,12 +711,12 @@ Guessing game: correct and trap answer changed (btw you can't guess during pause
 *and probably some other stuff.
 
 
-*All components(except recipe) for maple armor are fully sharable so you can help your tank build that if needed(mirror shield was already sharable).
-*Heart of tarrasque 5 is now fully sharable and some other items like: spirit vessel, holy locket, etc.
+*All components(except recipe) for maple armor are fully shareable so you can help your tank build that if needed(mirror shield was already shareable).
+*Heart of tarrasque 5 is now fully shareable and some other items like: spirit vessel, holy locket, etc.
 *fixed some interactions with the radiance armors.
 *fixed some other stuff
 *zeus W is less flashy (similar to ult).
-*This is from other(added a few more now) patches but not mentioned: Most of the expensive Auras are now fully sharable.
+*This is from other(added a few more now) patches but not mentioned: Most of the expensive Auras are now fully shareable.
 
 Guessing game Answer: -Football Profesional , (it will be changed and next patch and don't expect to reveal every time). you can find advanced hints for this and more in discord #patreon section.
 *some small buff and nerfs, 
@@ -1132,6 +1132,20 @@ New: 3 Quests with NFTs as bonus rewards, you can find them on discord(link on w
 * Fixed Mystery Scepter of Divinity + Black Hole crash
 * Added few missed icons
 * Improved upgrading of some items
+
+
+
+* Sharpshooter (Hoodwink) has been reworked
+* Self-Damage from Cursed Shovel doesn't amplifiable
+* Consumable Aegis now shareable
+* Killcam is disabled because it is not needed
+* Blast Staff will not be triggered by spells with cd less then 1 sec
+* Nerfed Wild Axes (Beastmaster): DMG amp and duration
+* Changed the order of using invulnerability/reincarnation: Abilities/Talents -> Undying Helm -> Consumable Aegis -> Gold Ring -> Aegis of Infinity
+* Gold Ring cooldown increased from 40 to 50 seconds
+* Gold Ring: When reused, it reduces the cooldown by 10 seconds and refund 33% of the item cost
+
+(Fixed passive Blast Staff effect)
 
 
 
