@@ -2655,17 +2655,18 @@
 	"beastmaster_wild_axes"
 	{
 		"ID"							"5168"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"MaxLevel"						"7"
-		"LevelsBetweenUpgrades"			"5"
-		"HasScepterUpgrade"				"1"
+		"LevelsBetweenUpgrades"			"6"
+		"RequiredLevel"					"0"
+		"HasScepterUpgrade"				"0"
 		"AbilityCastRange"				"1500"
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"8"
 		"AbilityManaCost"				"80"
 		"AbilitySpecial"
@@ -2694,13 +2695,12 @@
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"6 6 6 6 6 6 5"
+				"duration"					"6"
 			}
 			"06"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_amp"					"0 0 0 0 1 1 1"
-				"CalculateSpellDamageTooltip"	"0"
+				"var_type"					"FIELD_INTEGER"
+				"damage_amp"				"6 8 10 12 14 16 20"
 			}
 			"07"
 			{

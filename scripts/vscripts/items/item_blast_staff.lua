@@ -116,12 +116,8 @@ if IsServer() then
 	function modifier_item_blast_staff_proc:OnAbilityFullyCast(keys)
 		local used_ability = keys.ability
 		local unit = keys.unit
-		if self.parent:HasModifier("modifier_shadow_demon_custom_hyperactivity_buff") or used_ability:GetCooldownTime() >= 1 then
-			cd_pass = true
-		else
-			cd_pass = false
-		end
-		if cd_pass and unit == self.parent and used_ability ~= self:GetAbility() then
+		if used_ability:GetCooldownTime() < 0.1 then return end
+		if not used_ability:IsItem() and not used_ability:IsToggle() and unit == self.parent and used_ability ~= self:GetAbility() then
 			if self.parent:HasModifier("modifier_item_blast_staff3") then self:Destroy() return end
 			local target = used_ability:GetCursorPosition()
 			local direction = (target - self.parent:GetAbsOrigin()):Normalized()
