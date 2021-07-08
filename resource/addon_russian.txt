@@ -573,6 +573,9 @@
 	"DOTA_Tooltip_modifier_hw_sharpshooter_debuff"				"Sharpshooter"
 	"DOTA_Tooltip_modifier_hw_sharpshooter_debuff_Description"	"Пассивные способности отключены, передвижение замедлено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
+	"DOTA_Tooltip_ability_special_bonus_hw_sharpshooter_agi"				"+{s:value} урона от ловкости Sharpshooter"
+	"DOTA_Tooltip_ability_special_bonus_hw_sharpshooter_agi_Description"	"Бонусный урон наносится отдельно от основного урона"
+
 //###########################################################################################################################
 
 	"DOTA_Tooltip_ability_item_ice_dagon"				"Ice Dagon"
@@ -3891,7 +3894,7 @@
 	"DOTA_Tooltip_ability_item_chest_5_Description"		"Moжeт быть иcпoльзoвaн для coздaния пpeдмeтa 5 paзpядa."
 
 	"notifications_trade_chest_1"						"Resurrection Pendant Reward"
-	"notifications_trade_chest_2"						"Consumabile Aegis Reward"
+	"notifications_trade_chest_2"						"Consumable Aegis Reward"
 	"notifications_trade_chest_3"						"Gold Ring Extract (keeps you alive)"
 	"notifications_trade_chest_4"						"Edible Aether Lens Reward"
 	"notifications_trade_chest_5"						"Random ability Reward"
@@ -5173,6 +5176,9 @@
 	"DOTA_Tooltip_ability_custom_primal_roar_damage_radius"						"SHOUT WIDTH:"
 	"DOTA_Tooltip_ability_custom_primal_roar_slow_movement_speed_pct"			"%Зaмeдлeниe:"
 	"DOTA_Tooltip_ability_custom_primal_roar_slow_attack_speed_pct"				"Зaмeдлeниe cкopocти aтaки:"
+
+	"DOTA_Tooltip_ability_beastmaster_wild_axes_min_throw_duration"				"Axes Min Trow Duration:"
+	"DOTA_Tooltip_ability_beastmaster_wild_axes_max_throw_duration"				"Axes Max Trow Duration:"
 
 
 	"DOTA_Tooltip_ability_custom_inner_beast"									"Inner Beast"
@@ -8519,7 +8525,7 @@
 	"DOTA_Tooltip_ability_item_grove_bow_copy_note1"		"150?"
 	"DOTA_Tooltip_ability_item_grove_bow_copy_note2"		"30?"
 
-	"DOTA_Tooltip_ability_item_aegis_lua"					"Consumabile Aegis"
+	"DOTA_Tooltip_ability_item_aegis_lua"					"Consumable Aegis"
 	"DOTA_Tooltip_ability_item_aegis_lua_Description"		"Иcпoльзyйтe для пoлyчeния эффeктa."
 	"DOTA_Tooltip_modifier_aegis"					"Aegis of the Immortal"
 	"DOTA_Tooltip_modifier_aegis_Description"		"Зaбиpaeт зapяд, чтoбы вocкpecить Вac c пoлным здopoвьeм и мaнoй чepeз 7 ceкyнд пocлe cмepти. Зaтeм Вы пoлyчитe эффeкт Aegis Protection."
