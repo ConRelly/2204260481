@@ -111,6 +111,8 @@ modifier_ogre_magi_multicast_lua.banned = {
 	["ancient_apparition_ice_blast_release"] = true,
 	["zanto_gari"] = true,
 	["arcane_supremacy"] = true,
+	["hw_sharpshooter"] = true,
+	["hw_sharpshooter_release"] = true,	
 }
 
 --------------------------------------------------------------------------------

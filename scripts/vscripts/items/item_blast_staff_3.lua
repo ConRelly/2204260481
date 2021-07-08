@@ -13,7 +13,7 @@ function item_blast_staff_3:OnSpellStart()
 		local direction = (tempTarget - parent:GetAbsOrigin()):Normalized()
 		local direction = (direction * Vector(1, 1, 0)):Normalized()
 		ProjectileManager:CreateLinearProjectile({
-			EffectName = "particles/custom/blast_staff_active.vpcf",
+			EffectName = "particles/custom/items/blast_staff/blast_staff_active.vpcf",
 			Ability = self,
 			vSpawnOrigin = parent:GetAbsOrigin() + Vector(0,0,100),
 			vVelocity = direction * 4100,
@@ -131,7 +131,7 @@ if IsServer() then
 	function modifier_item_blast_staff3_proc:OnAbilityFullyCast(keys)
 		local used_ability = keys.ability
 		local unit = keys.unit
-		if used_ability:GetCooldownTime() < 0.1 then return end
+		if used_ability:GetCooldownTime() <= 0 then return end
 		if not used_ability:IsItem() and not used_ability:IsToggle() and unit == self.parent and used_ability ~= self:GetAbility() then
 			local target = used_ability:GetCursorPosition()
 			local direction = (target - self.parent:GetAbsOrigin()):Normalized()

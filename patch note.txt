@@ -1139,8 +1139,7 @@ New: 3 Quests with NFTs as bonus rewards, you can find them on discord(link on w
 * Self-Damage from Cursed Shovel doesn't amplifiable
 * Consumable Aegis now shareable
 * Killcam is disabled because it is not needed
-* Blast Staff will not be triggered by spells with cd less then 0.1 sec
-* Changed Wild Axes (Beastmaster)
+* Changed Wild Axes (Beastmaster), will deal more dmg late game and can be autocasted even when moving or during normal stuns(instant cast), but will fly slower early game and not work anymore with mimic mace.
 * Changed the order of using invulnerability/reincarnation: Abilities/Talents -> Undying Helm -> Consumable Aegis -> Gold Ring -> Aegis of Infinity
 * Gold Ring cooldown increased from 40 to 50 seconds
 * Gold Ring: When reused, it reduces the cooldown by 10 seconds and refund 33% of the item cost

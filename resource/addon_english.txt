@@ -5142,6 +5142,8 @@ The extra targets will not receive other attack effects (such as critical strike
 "DOTA_Tooltip_ability_custom_primal_roar_slow_movement_speed_pct"			"%MOVEMENT SLOW:"
 "DOTA_Tooltip_ability_custom_primal_roar_slow_attack_speed_pct"				"ATTACK SLOW:"
 
+"DOTA_Tooltip_ability_beastmaster_wild_axes_min_throw_duration"				"Axes Min Trow Duration:"
+"DOTA_Tooltip_ability_beastmaster_wild_axes_max_throw_duration"				"Axes Max Trow Duration:"
 
 "DOTA_Tooltip_ability_custom_inner_beast"									"Inner Beast"
 "DOTA_Tooltip_ability_custom_inner_beast_Description"						"Untaps the inner fury of allies, passively increasing their attack speed."

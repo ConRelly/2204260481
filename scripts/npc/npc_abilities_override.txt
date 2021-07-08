@@ -2655,16 +2655,16 @@
 	"beastmaster_wild_axes"
 	{
 		"ID"							"5168"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"MaxLevel"						"7"
-		"LevelsBetweenUpgrades"			"6"
+		"LevelsBetweenUpgrades"			"12"
 		"RequiredLevel"					"0"
-		"HasScepterUpgrade"				"0"
+		"HasScepterUpgrade"				"1"
 		"AbilityCastRange"				"1500"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"8"
@@ -2689,7 +2689,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"axe_damage"				"90 470 900 1730 2960 3890 7450"
+				"axe_damage"				"90 870 1900 2730 5960 9890 22450"
 				"LinkedSpecialBonus"		"special_bonus_unique_beastmaster"
 			}
 			"05"
@@ -2700,7 +2700,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_amp"				"6 8 10 12 14 16 20"
+				"damage_amp"				"1 2 3 4 5 7 10"
 			}
 			"07"
 			{
@@ -2711,12 +2711,12 @@
 			"08"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"min_throw_duration"		"0.3"
+				"min_throw_duration"		"0.7 0.7 0.6 0.6 0.5 0.4 0.3"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"max_throw_duration"		"0.6"
+				"max_throw_duration"		"0.9 0.9 0.8 0.8 0.7 0.7 0.6"
 			}
 		}
 	}
