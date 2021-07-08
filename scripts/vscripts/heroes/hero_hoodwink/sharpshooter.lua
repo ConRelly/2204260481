@@ -32,6 +32,7 @@ function hw_sharpshooter:Precache(context)
 end
 
 function hw_sharpshooter:GetCastRange(location, target)
+	if not IsServer() then return end
 	if self:GetCaster():HasScepter() then
 		return self:GetTalentSpecialValueFor("arrow_range") * self:GetSpecialValueFor("scepter_bonus")
 	end
@@ -66,16 +67,21 @@ function hw_sharpshooter:OnProjectileHit_ExtraData(target, location, ExtraData)
 	end
 
 	if not target then return end
-
+	local bonus_agi_dmg = ExtraData.damage2
+	local damage2 = 0
 	if IsServer() then
 		if caster:HasTalent("special_bonus_unique_hoodwink_sharpshooter_pure_damage") then
 			damage_type = DAMAGE_TYPE_PURE
 		else
 			damage_type = self:GetAbilityDamageType()
 		end
+		if caster:HasTalent("special_bonus_hw_sharpshooter_agi") then
+			damage2 = bonus_agi_dmg
+		end
 		if caster:HasModifier("modifier_super_scepter") then
 			local distance = (target:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D() / 2000
-			damage = ExtraData.damage * (1 + distance)
+			damage = math.ceil(ExtraData.damage * (1 + distance))
+			damage2 = math.ceil( damage2 * (1 + distance))
 		else
 			damage = ExtraData.damage
 		end
@@ -85,8 +91,11 @@ function hw_sharpshooter:OnProjectileHit_ExtraData(target, location, ExtraData)
 	ApplyDamage(damageTable)
 
 	target:AddNewModifier(caster, self, "modifier_hw_sharpshooter_debuff", {duration = ExtraData.duration, x = ExtraData.x, y = ExtraData.y})
-
-	SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, target, ExtraData.damage, self:GetCaster():GetPlayerOwner())
+	if damage2 > 0 then 		
+		local damageTable2 = {victim = target, attacker = caster, damage = damage2, damage_type = damage_type, ability = self, damage_flags = DOTA_DAMAGE_FLAG_NONE}
+		ApplyDamage(damageTable2)
+	end
+	SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, target, damage + damage2, self:GetCaster():GetPlayerOwner())
 
 	AddFOWViewer(self:GetCaster():GetTeamNumber(), target:GetOrigin(), 300, 4, false)
 
@@ -136,6 +145,8 @@ function modifier_hw_sharpshooter:OnCreated(kv)
 	self.team = self.parent:GetTeamNumber()
 	self.charge = self:GetAbility():GetSpecialValueFor("max_charge_time") + talent_value(self.caster, "special_bonus_unique_hoodwink_sharpshooter_speed")
 	self.damage = self:GetAbility():GetSpecialValueFor("max_damage")
+	local bonus_dmg = self:GetAbility():GetSpecialValueFor("agi_damage")
+	self.damage2 = math.ceil(bonus_dmg * self.caster:GetAgility())
 	self.duration = self:GetAbility():GetSpecialValueFor("max_slow_debuff_duration")
 	self.turn_rate = self:GetAbility():GetSpecialValueFor("turn_rate")
 	self.recoil_distance = self:GetAbility():GetSpecialValueFor("recoil_distance")
@@ -200,7 +211,7 @@ function modifier_hw_sharpshooter:OnDestroy()
 	local sound = CreateModifierThinker(self.caster, self, "", {}, self.caster:GetOrigin(), self.team, false)
 	EmitSoundOn("Hero_Hoodwink.Sharpshooter.Projectile", sound)
 
-	self.info.ExtraData = {damage = self.damage * pct, duration = self.duration * pct, x = direction.x, y = direction.y, sound = sound:entindex()}
+	self.info.ExtraData = {damage = self.damage * pct, duration = self.duration * pct, x = direction.x, y = direction.y, sound = sound:entindex(), damage2 = self.damage2}
 	ProjectileManager:CreateLinearProjectile(self.info)
 
 	local mod = self.caster:AddNewModifier(self.caster, self, "modifier_generic_knockback_lua", {duration = self.recoil_duration, height = self.recoil_height, distance = self.recoil_distance, direction_x = -direction.x, direction_y = -direction.y})

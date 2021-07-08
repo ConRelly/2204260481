@@ -349,6 +349,7 @@
 {
 	"Ability6"					"hw_sharpshooter"
 	"Ability7"					"hw_sharpshooter_release"
+	"Ability13"                 "special_bonus_hw_sharpshooter_agi"
 	"AttackRate"				"1.6"
 	"AttributeAgilityGain"		"9.6"
 	"AttributeIntelligenceGain" "6.2"

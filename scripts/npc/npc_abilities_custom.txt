@@ -39920,6 +39920,7 @@
 		"ScriptFile"					"heroes/hero_hoodwink/sharpshooter"
 		"AbilityTextureName"			"hoodwink_sharpshooter"
 		"MaxLevel"						"8"
+		"LevelsBetweenUpgrades"         "10"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -39963,7 +39964,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_damage"				"4100 19500 27400 37500 55068 76500 89420 118000"
+				"max_damage"				"4100 17500 24400 36500 45068 56500 69420 81000"
 			}
 			"07"
 			{
@@ -40005,6 +40006,12 @@
 				"var_type"					"FIELD_FLOAT"
 				"scepter_bonus"				"2"
 			}
+			"15"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"agi_damage"				"2"
+			}			
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_6"
 	}
@@ -40021,6 +40028,22 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityCastPoint"				"0.0"
  		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_7"
+	}
+
+// Sharpshooter tallent
+	"special_bonus_hw_sharpshooter_agi" 
+	{
+		"BaseClass"					"special_bonus_undefined"
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"2"
+			}
+		}
 	}
 
 //////////MOBS//////////

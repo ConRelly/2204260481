@@ -551,7 +551,7 @@
 
 //Hoodwink
 	"DOTA_Tooltip_ability_hw_sharpshooter"					"Sharpshooter"
-	"DOTA_Tooltip_ability_hw_sharpshooter_Description"		"Hoodwink charges up and fires a deadly bolt from her crossbow, dealing heavy damage and slow to an enemy Hero.  The damage and debuff duration scale up to max after %max_charge_time% seconds, and the bolt is fired automatically after %misfire_time% seconds.\nHoodwink is knocked backwards for a distance of %recoil_distance% from the force of the shot.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Damage will increase by 100% for every 2000 units of distance to the target."
+	"DOTA_Tooltip_ability_hw_sharpshooter_Description"		"Hoodwink charges up and fires a deadly bolt from her crossbow, dealing heavy damage and slow to an enemy Hero.  The damage and debuff duration scale up to max after %max_charge_time% seconds, and the bolt is fired automatically after %misfire_time% seconds.\nHoodwink is knocked backwards for a distance of %recoil_distance% from the force of the shot.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Damage will increase by 100% for every 2000 units of distance to the target. Affects your talent bonus dmg."
 	"DOTA_Tooltip_ability_hw_sharpshooter_scepter_description"		"Allows the projectile to pass through."
 	"DOTA_Tooltip_ability_hw_sharpshooter_shard_description"		"Increases projectile's range and speed by x2."
 	"DOTA_Tooltip_ability_hw_sharpshooter_Lore"				"While her first arbalest was a chance discovery, Hoodwink now takes great care in carving and caring for her own -- of course with some necessary components pilfered or otherwise cleverly procured."
@@ -9236,6 +9236,9 @@ Contains all random skills"
 		"DOTA_Tooltip_ability_special_laser_silence_duration_lua"				 "Laser Aditionally Silences For {s:value} Seconds"
 
 		"DOTA_Tooltip_ability_special_bonus_custom_mana_break_1"   "Mana Break physical damage ignores Base Armor"
+
+		"DOTA_Tooltip_ability_special_bonus_hw_sharpshooter_agi"   "Sharpshooter Deals {s:value} x your agility As an separate Bonus Damage Instance"
+
 
 
 	   "DOTA_Tooltip_ability_item_shivas_guard_2"				"Boss Shiva"
