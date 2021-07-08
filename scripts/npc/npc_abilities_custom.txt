@@ -39942,7 +39942,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"arrow_width"		"525"
+				"arrow_width"		"375"
 			}
 			"03"
 			{
