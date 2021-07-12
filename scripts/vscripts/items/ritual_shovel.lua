@@ -73,11 +73,11 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 				SpawnItem("item_philosophers_stone2", self:GetCursorPosition(), ITEM_NOT_SHAREABLE, false)
 			elseif rare > 5 and rare <= 10 then
 				SpawnItem("item_removed_skill", self:GetCursorPosition(), ITEM_NOT_SHAREABLE, false)
-			elseif rare > 10 and rare <= 20 then
+			elseif rare > 10 and rare <= 30 then
 				SpawnItem("item_aghanims_fragment", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, false)
-			elseif rare > 20 and rare <= 40 then
+			elseif rare > 30 and rare <= 50 then
 				SpawnItem("item_tome_of_knowledge", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, false)
-			elseif rare > 40 and rare <= 100 then
+			elseif rare > 50 and rare <= 100 then
 				local atr = RandomInt(1, 3)
 				if atr == 1 then
 					self:GetParent():ModifyStrength(10)

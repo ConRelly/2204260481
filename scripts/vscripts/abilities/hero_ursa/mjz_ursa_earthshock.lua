@@ -51,28 +51,36 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local duration = ability:GetSpecialValueFor('duration')
 		local radius = GetTalentSpecialValueFor(ability, "shock_radius")
-		local base_damage = ability:GetSpecialValueFor("damage")
 		local str_damage_pct = ability:GetSpecialValueFor("str_damage_pct")
 
 		local modifier_debuff_name = 'modifier_mjz_ursa_earthshock'
 
-		local damage = base_damage + caster:GetStrength() * (str_damage_pct / 100.0)
+		local base_damage = ability:GetSpecialValueFor("damage") + caster:GetStrength() * (str_damage_pct / 100.0)
 
 		local enemy_list = FindUnitsInRadius(
-			caster:GetTeam(), 
-			caster:GetAbsOrigin(), 
-			nil, radius, 
-			ability:GetAbilityTargetTeam(), 
-			ability:GetAbilityTargetType(), 
-			ability:GetAbilityTargetFlags(), 
+			caster:GetTeam(),
+			caster:GetAbsOrigin(),
+			nil, radius,
+			ability:GetAbilityTargetTeam(),
+			ability:GetAbilityTargetType(),
+			ability:GetAbilityTargetFlags(),
 			FIND_ANY_ORDER, false
 		)
 
 		for _,enemy in pairs(enemy_list) do
+			local damage = base_damage
+			if caster:HasModifier("modifier_item_aghanims_shard") then
+				local fs = caster:FindAbilityByName("ursa_fury_swipes")
+				if fs then
+					damage = base_damage + (fury_swipes:GetStackCount() * fs:GetSpecialValueFor("damage_per_stack"))
+					enemy:AddNewModifier(caster, fs, "modifier_ursa_fury_swipes_damage_increase", {duration = fs:GetSpecialValueFor("bonus_reset_time")})
+					fury_swipes:SetStackCount(stacks + 5)
+				end
+			end
 			local postDmg = ApplyDamage({
-				victim = enemy, 
-				attacker = caster, 
-				damage = damage, 
+				victim = enemy,
+				attacker = caster,
+				damage = damage,
 				damage_type = ability:GetAbilityDamageType()
 			})
 

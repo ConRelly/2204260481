@@ -149,6 +149,7 @@ function modifier_mystery_cyclone_active:OnCreated()
 		local cyclone = {"particles/items_fx/cyclone.vpcf",
 		"particles/econ/events/fall_major_2016/cyclone_fm06.vpcf",
 		"particles/econ/events/winter_major_2017/cyclone_wm07.vpcf",
+		"particles/econ/events/spring_2021/cyclone_spring2021.vpcf",
 		"particles/econ/events/ti5/cyclone_ti5.vpcf",
 		"particles/econ/events/ti6/cyclone_ti6.vpcf",
 		"particles/econ/events/ti7/cyclone_ti7.vpcf",

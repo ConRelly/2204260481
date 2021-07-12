@@ -142,7 +142,8 @@ function modifier_class:RemoveOnDeath() return false end
 function modifier_class:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-		MODIFIER_EVENT_ON_ATTACK,			
+--		MODIFIER_EVENT_ON_ATTACK,
+		MODIFIER_EVENT_ON_ATTACK_LANDED,
 	}
 	return funcs
 end
@@ -168,6 +169,54 @@ if IsServer() then
 		parent:RemoveModifierByName(MODIFIER_THINKER_NAME)
 	end
 	
+	function modifier_class:OnAttackLanded(keys)
+		local target = keys.target
+		local caster = self:GetCaster()
+		local ability = self:GetAbility()
+
+		if keys.attacker ~= caster then return nil end
+		if target:IsBuilding() then return nil end
+		if not caster:HasScepter() then return nil end
+		if not caster:IsRangedAttacker() then return nil end
+		if caster:PassivesDisabled() then return nil end
+		if TargetIsFriendly(caster, target) then return nil end
+
+		local arrow_speed = ability:GetSpecialValueFor("arrow_speed_scepter")
+		local split_count = ability:GetSpecialValueFor("split_count_scepter")
+		local split_range = ability:GetSpecialValueFor("split_range_scepter")
+			if not keys.no_attack_cooldown then
+				local splinter_counter = 0
+
+				for _, enemy in pairs(FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, split_range, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_ANY_ORDER, false)) do
+					if enemy ~= target then
+						if splinter_counter < split_count then
+							
+							TrackingProjectiles:Projectile({
+								hTarget				= enemy,
+								hCaster				= target,
+								hAbility			= ability,
+								iMoveSpeed			= caster:GetProjectileSpeed(),
+								EffectName			= caster:GetRangedProjectileName(),
+								SoundName			= "",
+								flRadius			= 1,
+								bDodgeable			= true,
+								bDestroyOnDodge 	= true,
+								iSourceAttachment	= DOTA_PROJECTILE_ATTACHMENT_HITLOCATION,
+								OnProjectileHitUnit = function(params, projectileID)
+									caster:PerformAttack(enemy, false, true, true, true, false, false, false)
+								end
+							})
+							
+							splinter_counter = splinter_counter + 1
+						else
+							break
+						end
+					end
+				end
+			end
+		end
+	end
+
 	function modifier_class:_OnAttack(keys)
 		if keys.attacker ~= self:GetParent() then return nil end
 		if keys.target:IsBuilding() then return nil end

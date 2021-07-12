@@ -40,7 +40,7 @@ function modifier_drow_ranger_frost_arrows_lua:OnCreated(kv)
     if ( special_frost_arrow_agi_multiplier_lua and special_frost_arrow_agi_multiplier_lua:GetLevel() ~= 0 ) then
         self.agi_multiplier = self.agi_multiplier + special_frost_arrow_agi_multiplier_lua:GetSpecialValueFor( "value" )
     end
-    local extra_dmg = ((-1 * (target:GetHealthPercent() - 100)) / 100) + 1
+    local extra_dmg = 1 + (1 - (target:GetHealthPercent() / 100))
    --print(extra_dmg .. " dmg mult")
     local damage = ((caster:GetAgility() + caster:GetIntellect()) * self.agi_multiplier) * extra_dmg
     --print(damage .. " damage")

@@ -45,12 +45,12 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"agi_multiplier"	"0.004 0.005 0.006 0.007 0.008 0.009 0.01"
+				"agi_multiplier"	"4 5 6 7 8 9 10"
 			}
-			"03"
+			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"agi_multiplier_tooltip"	"4 5 6 7 8 9 10"
+				"agi_per_dmg"		"1000"
 			}
 		}
 	}
