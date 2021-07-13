@@ -186,16 +186,16 @@ function info_data:send_data()
                 local heroName = playerInfo[i][1]
                 local steamid = playerInfo[i][2]
                 local steam_name = playerInfo[i][3]
-                local damageTaken = playerInfo[i][4]
-                local bossDamage = playerInfo[i][5]
-                local heroHealing = playerInfo[i][6]
+                local damageTaken = math.ceil(playerInfo[i][4])
+                local bossDamage = math.ceil(playerInfo[i][5])
+                local heroHealing = math.ceil(playerInfo[i][6])
                 local deaths = playerInfo[i][7]
                 local goldBags = playerInfo[i][8]
                 local saves = playerInfo[i][9]
-                local attack = playerInfo[i][10]
-                local str = playerInfo[i][11]
-                local agi = playerInfo[i][12]
-                local int = playerInfo[i][13]
+                local attack = math.ceil(playerInfo[i][10])
+                local str = math.ceil(playerInfo[i][11])
+                local agi = math.ceil(playerInfo[i][12])
+                local int = math.ceil(playerInfo[i][13])
                 local level = playerInfo[i][14]
 
                 url = url.."&steam_id"..i.."="..steamid
