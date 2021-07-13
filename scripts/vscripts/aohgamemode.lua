@@ -99,6 +99,12 @@ function AOHGameMode:InitGameMode()
 	AOHGameMode.numPhilo[4] = 0
 	self._hardMode = false
 	_G._hardMode = false
+	_G.super_courier = {}
+	_G.super_courier[0] = false
+	_G.super_courier[1] = false
+	_G.super_courier[2] = false
+	_G.super_courier[3] = false
+	_G.super_courier[4] = false
 	self._endlessMode = false
 	self._endlessMode_started = false
 	self._manaMode = false

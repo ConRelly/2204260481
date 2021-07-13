@@ -334,6 +334,15 @@ function AOHGameMode:OnPlayerChat(keys)
 	if keys.text == "-killmepls" and player:HasModifier("modifier_inf_aegis") then
 		self:Suicider(playerID)
 	end
+
+	
+	if keys.text == "-SS" then
+		if not _G.super_courier[PlayerID] then
+			_G.super_courier[playerID] = true
+		else
+			_G.super_courier[playerID] = false
+		end
+	end
 end
 
 function AOHGameMode:OnPlayerConnect(keys)

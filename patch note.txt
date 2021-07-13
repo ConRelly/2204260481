@@ -1149,14 +1149,12 @@ New: 3 Quests with NFTs as bonus rewards, you can find them on discord(link on w
 * Changed the order of using invulnerability/reincarnation: Abilities/Talents -> Undying Helm -> Consumable Aegis -> Gold Ring -> Aegis of Infinity
 * Gold Ring cooldown increased from 40 to 50 seconds
 * Gold Ring: When reused, it reduces the cooldown by 10 seconds and refund 33% of the item cost
-* Fix Doom Q
-* Fixed passive Blast Staff effect
 * Added Aghanim's Fragment to Roshan's drop list. Chance for an additional fragment will increase every 2 kills and cannot exceed (number of kills / 2). After 6 kills, at least 1 fragment is given
 * After Roshan's death, experience will be shared among all. The killer will get additional experience
+* Fix Doom Q
+* Fixed passive Blast Staff effect
+* Changed Endless Wisdom visual effect
 * Some descriptions have been changed
-
-(Fixed passive Blast Staff effect;
-Changed Endless Wisdom vision effect)
 
 
 
