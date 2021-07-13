@@ -17,41 +17,30 @@ function modifier_class:IsHidden() return true end
 function modifier_class:IsPurgable() return false end
 
 function modifier_class:DeclareFunctions()
-	local funcs = {
+	return {
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
 		MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
 	}
-	return funcs
 end
 
-function modifier_class:GetModifierPreAttack_BonusDamage( )
+function modifier_class:GetModifierPreAttack_BonusDamage()
 	return self:GetAbility():GetSpecialValueFor('bonus_damage')
 end
 
-function modifier_class:GetModifierAttackSpeedBonus_Constant( )
+function modifier_class:GetModifierAttackSpeedBonus_Constant()
 	return self:GetAbility():GetSpecialValueFor('bonus_attack_speed')
 end
 
-function modifier_class:GetModifierAttackRangeBonus( )
-	if IsServer() then
-		local is_ranged = self:GetParent():IsRangedAttacker()
-		if is_ranged then
-			if self:GetStackCount() ~= 11 then
-				self:SetStackCount(11)
+function modifier_class:GetModifierAttackRangeBonus()
+	if IsServer() then if self:GetAbility() then
+			local attack_range = self:GetAbility():GetSpecialValueFor("bonus_attack_range")
+			if self:GetParent():IsRangedAttacker() then
+				return attack_range
+			else
+				return attack_range / 2
 			end
-		else
-			if self:GetStackCount() ~= 11 then
-				self:SetStackCount(11)
-			end
-		end
-	end
-	
-	if self:GetStackCount() == 11 then
-		return self:GetAbility():GetSpecialValueFor('bonus_attack_range')
-	else
-		return 0		
-	end
+	end end
 end
 
 

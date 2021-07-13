@@ -50,19 +50,13 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_modifier"		"60 100 140 180 220 260 300"
-				"LinkedSpecialBonus"			"special_multishot_damage_modifier_lua"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_modifier_tooltip"		"60 100 140 180 220 260 300"
-				"LinkedSpecialBonus"			"special_multishot_damage_modifier_lua"
+				"LinkedSpecialBonus"	"special_multishot_damage_modifier_lua"
 			}
 			"03"
 			{	
 				"var_type"					"FIELD_FLOAT"
 				"agi_multiplier"			"4.5 6.5 9.0 11.0 13.0 15.0 20.0"
-				"LinkedSpecialBonus"			"special_multishot_agi_multiplier_lua"
+				"LinkedSpecialBonus"		"special_multishot_agi_multiplier_lua"
 			}
             "04"
 			{

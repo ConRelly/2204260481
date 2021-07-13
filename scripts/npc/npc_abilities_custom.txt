@@ -31004,7 +31004,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"FightRecapLevel"				"1"
+		"HasShardUpgrade"				"1"
 		"AbilitySound"					"Hero_Ursa.Earthshock"
 		"AbilityTextureName"			"mjz_ursa_earthshock"
 
@@ -36210,83 +36210,47 @@
 		}
 	}
 
-
-"mystic_dragon_endless_wisdom"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"mystic_dragon/endless_wisdom"
-	"MaxLevel"						"5"
-	"LevelsBetweenUpgrades"			"7"
-	"RequiredLevel"					"1"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
+// Endless Wisdom
+	"mystic_dragon_endless_wisdom"
 	{
-		"01"
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"mystic_dragon/endless_wisdom"
+		"MaxLevel"						"5"
+		"LevelsBetweenUpgrades"			"7"
+		"RequiredLevel"					"1"
+		"AbilitySpecial"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"grow_int"							"0.5 1.0 1.5 2.0 2.5"
-//			"grow_int"							"1.5 3.0 4.5 6.0 7.5"
-		}
-
-		"02"
-		{
-			"var_type"							"FIELD_FLOAT"
-			"stack_interval"						"10"
-		}
-
-	}
-
-	"precache"
-	{
-		"particle"  "particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf"
-		"particle"  "particles/units/heroes/hero_nevermore/nevermore_necro_souls.vpcf"
-		"soundfile" "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
-	}
-
-
-	"Modifiers"
-	{
-
-		"modifier_mystic_dragon_endless_wisdom_collector_passive"
-		{
-			"Passive"			"1"
-			"IsHidden"			"1"
-
-			"ThinkInterval"  "%stack_interval"
-			"OnIntervalThink"
+			"01"
 			{
+				"var_type"					"FIELD_FLOAT"
+				"grow_int"					"0.5 1.0 1.5 2.0 2.5"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stack_interval"			"10"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_mystic_dragon_endless_wisdom_collector_passive"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
 
-
-				"RunScript"
+				"ThinkInterval"			"%stack_interval"
+				"OnIntervalThink"
 				{
-					"ScriptFile"				"heroes/mystic_dragon/endless_wisdom"
-					"Function"					"StackCountIncrease"
-				}
-
-				"FireEffect"
-				{
-					"EffectName"				"particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf"
-					"EffectAttachType"			"follow_overhead"
-					"Target"					"CASTER"
-					"ControlPoints"
-				   {
-					   "00" "0 0 0"
-					   "15" "0 0 255" // Color
-					   "16" "1 0 0"
-				   }
+					"RunScript"
+					{
+						"ScriptFile"				"heroes/mystic_dragon/endless_wisdom"
+						"Function"					"StackCountIncrease"
+					}
 				}
 			}
 		}
-
-
-
 	}
-}
 
 	//=================================================================================================================
 	// Creature: Void Spirit Boss Passive
@@ -40044,6 +40008,78 @@
 				"value"					"2"
 			}
 		}
+	}
+	
+// Drow Ranger: Multishot
+	"dr_multishot"
+	{
+		"BaseClass"						"ability_lua"	
+		"AbilityTextureName"			"drow_ranger_multishot"
+		"ScriptFile"					"heroes/hero_drow_ranger/multishot"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastPoint"				"0.0"
+		"AbilityChannelTime"			"2.1"
+		"AbilityCooldown"				"26 24 22 20"
+		"AbilityManaCost"				"50 60 70 80"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"arrow_waves"				"5"
+			}
+			"2"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"arrow_per_wave"			"5"
+			}			
+			"3"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"arrow_damage_pct"			"85 110 135 160"
+				"LinkedSpecialBonus"		"special_bonus_unique_drow_ranger_1"
+			}
+			"4"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"arrow_slow_duration"		"1.25 2.25 3.25 4.25"
+			}
+			"5"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"arrow_width"				"90"
+			}
+			"6"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"arrow_speed"				"1200"
+			}
+			"7"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"arrow_range_multiplier"	"2"
+			}
+			"8"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"arrow_angle"				"50"
+			}
+			"9"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"arrow_interval"			"0.033"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"initial_delay"				"0.1"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_3"
 	}
 
 //////////MOBS//////////

@@ -1136,7 +1136,12 @@ New: 3 Quests with NFTs as bonus rewards, you can find them on discord(link on w
 
 
 * Sharpshooter (Hoodwink) has been reworked
+* Added Aghanim's Shard effect for Earthshock (Ursa)
+* Frost Arrows (Drow Ranger) Frostbite interval changed from 0.8/0.75/0.7/0.65/0.6/0.55/0.5 to 1/0.9/0.8/0.7/0.6/0.5/0.4
+* Vengeance (Vengeful Spirit) Attack Range Bonus for melee heroes is halved
 * Self-Damage from Cursed Shovel doesn't amplifiable
+* Cursed Shovel chances changed: Random Attribute - from 60% to 50%, Aghanim's Fragment - from 10% to 20%
+* Aghanim's Fragment is placed in a neutral slot
 * Consumable Aegis now shareable
 * Killcam is disabled because it is not needed
 * Changed Wild Axes (Beastmaster), will deal more dmg late game and can be autocasted even when moving or during normal stuns(instant cast), but will fly slower early game and not work anymore with mimic mace.
@@ -1146,6 +1151,12 @@ New: 3 Quests with NFTs as bonus rewards, you can find them on discord(link on w
 * Gold Ring: When reused, it reduces the cooldown by 10 seconds and refund 33% of the item cost
 * Fix Doom Q
 * Fixed passive Blast Staff effect
+* Added Aghanim's Fragment to Roshan's drop list. Chance for an additional fragment will increase every 2 kills and cannot exceed (number of kills / 2). After 6 kills, at least 1 fragment is given
+* After Roshan's death, experience will be shared among all. The killer will get additional experience
+* Some descriptions have been changed
+
+(Fixed passive Blast Staff effect;
+Changed Endless Wisdom vision effect)
 
 
 

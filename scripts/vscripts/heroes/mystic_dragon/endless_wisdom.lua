@@ -23,6 +23,9 @@ function StackCountIncrease( keys )
     local fleshHeapStackModifier = "modifier_mystic_dragon_endless_wisdom_buff"
     local currentStacks = caster:GetModifierStackCount(fleshHeapStackModifier, ability)
 
+	local pfx = ParticleManager:CreateParticle("particles/custom/abilities/endless_wisdom/endless_wisdom_count.vpcf", PATTACH_OVERHEAD_FOLLOW, keys.caster)
+	ParticleManager:ReleaseParticleIndex(pfx)
+
 	caster:AddNewModifier(caster, ability, fleshHeapStackModifier, nil)
     caster:SetModifierStackCount(fleshHeapStackModifier, ability, (currentStacks + 1))
 end

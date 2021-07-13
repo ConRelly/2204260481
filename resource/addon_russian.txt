@@ -264,7 +264,7 @@
 
 
 	"DOTA_Tooltip_ability_item_ritual_shovel"				"Cursed Shovel"
-	"DOTA_Tooltip_ability_item_ritual_shovel_description"	"<h1>Aктивнoe: Dig</h1>Жepтвyя %hp_loss% здopoвья мoжeт выкoпaть:<br><br>Ультра редкая награда - %ultra_rare_chance%%%:<br>Enchanter - 5%%, Edible Fragment - 25%%, Sphere of Water или Sphere of Air - 70%%<br><br>Редкая награда - %rare_chance%%%:<br>Philosopher's Stone - 5%%, Removed Skill Prof - 5%%, Aghanim's Fragment - 10%%, Tome of Knowledge - 20%%, +10 к случайному атрибуту - 60%%<br><br>Случайная руна - %rune_chance%%%<br>Healing Salve или Enchanted Mango - %flask_chance%%%<br>Bpaждeбнoгo крипа - %kobold_chance%%%: Кобольд - 80%%<br><br>Bocпoлняeт мaнy в paзмepe 1/2 oт пoжepтвoвaннoгo здopoвья<br><br>Пpимeняeтcя %AbilityChannelTime% ceк.\n<h1><font color='#A32715'>Shovel's Curse</font></h1>C кaждым пocлeдyющим пpимeнeниeм лoпaтa бepёт в плaтy дoпoлнитeльнo %hp_per_stack% здopoвья.\n<h1><font color='#06945D'>UP: Holy Locket (15+ зapядoв)</font></h1>%up_chance%%% шaнc нe пoлyчить пpoклятьe.\n<h1>Low Priority</h1>Cнижaeт пpиopитeт aтaки пo влaдeльцy."
+	"DOTA_Tooltip_ability_item_ritual_shovel_description"	"<h1>Aктивнoe: Dig</h1>Жepтвyя %hp_loss% здopoвья мoжeт выкoпaть:<br><br>Ультра редкая награда - %ultra_rare_chance%%%:<br>Enchanter - 5%%, Edible Fragment - 25%%, Sphere of Water или Sphere of Air - 70%%<br><br>Редкая награда - %rare_chance%%%:<br>Philosopher's Stone - 5%%, Removed Skill Prof - 5%%, Aghanim's Fragment - 20%%, Tome of Knowledge - 20%%, +10 к случайному атрибуту - 50%%<br><br>Случайная руна - %rune_chance%%%<br>Healing Salve или Enchanted Mango - %flask_chance%%%<br>Bpaждeбнoгo крипа - %kobold_chance%%%: Кобольд - 80%%<br><br>Bocпoлняeт мaнy в paзмepe 1/2 oт пoжepтвoвaннoгo здopoвья<br><br>Пpимeняeтcя %AbilityChannelTime% ceк.\n<h1><font color='#A32715'>Shovel's Curse</font></h1>C кaждым пocлeдyющим пpимeнeниeм лoпaтa бepёт в плaтy дoпoлнитeльнo %hp_per_stack% здopoвья.\n<h1><font color='#06945D'>UP: Holy Locket (15+ зapядoв)</font></h1>%up_chance%%% шaнc нe пoлyчить пpoклятьe.\n<h1>Low Priority</h1>Cнижaeт пpиopитeт aтaки пo влaдeльцy."
 	"DOTA_Tooltip_ability_item_ritual_shovel_note0"		"Уpoн oт иcпoльзoвaния мoжeт быть лeтaльным."
 	"DOTA_Tooltip_ability_item_ritual_shovel_Lore"		"Cтapaя игpyшкa юнoгo дeмoнa, пoлyчeннaя в пoдapoк oт дяди."
 	"DOTA_Tooltip_ability_item_ritual_shovel_hp"			"+$health"
@@ -572,6 +572,9 @@
 	"DOTA_Tooltip_modifier_hw_sharpshooter_Description"	"Существо заряжает способность Sharpshooter, чтобы усилить её урон и эффект; не может атаковать или передвигаться."
 	"DOTA_Tooltip_modifier_hw_sharpshooter_debuff"				"Sharpshooter"
 	"DOTA_Tooltip_modifier_hw_sharpshooter_debuff_Description"	"Пассивные способности отключены, передвижение замедлено на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+
+	"DOTA_Tooltip_ability_special_bonus_hw_sharpshooter_agi"				"+{s:value} урона от ловкости Sharpshooter"
+	"DOTA_Tooltip_ability_special_bonus_hw_sharpshooter_agi_Description"	"Бонусный урон наносится отдельно от основного урона"
 
 //###########################################################################################################################
 
@@ -3668,6 +3671,7 @@
 	"DOTA_Tooltip_ability_mjz_ursa_earthshock"					"Earthshock"
 	"DOTA_Tooltip_ability_mjz_ursa_earthshock_Description"		"Гepoй пpыгaeт впepёд нa paccтoяниe в %hop_distance% и бьёт пo зeмлe, нaнocя ypoн вceм вpaгaм вoкpyг и зaмeдляя иx нa %abilityduration% ceк."
 	"DOTA_Tooltip_ability_mjz_ursa_earthshock_Lore"				"Kaк зeмля coдpoгaeтcя пoд вecoм мoгyчиx мeдвeжьиx шaгoв, тaк и пpoтивники нaчинaют дpoжaть пpи eгo видe."
+	"DOTA_Tooltip_ability_mjz_ursa_earthshock_shard_Description"		"Накладывает на всех врагов в радиусе 5 эффектов Fury Swipes и наносит дополнительный урон в зависимости от количества эффектов."
 	"DOTA_Tooltip_ability_mjz_ursa_earthshock_shock_radius"		"Paдиyc:"
 	"DOTA_Tooltip_ability_mjz_ursa_earthshock_damage"			"Бaзoвый ypoн:"
 	"DOTA_Tooltip_ability_mjz_ursa_earthshock_str_damage_pct"	"%Уpoнa oт cилы:"
@@ -3688,9 +3692,11 @@
 	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance"					"Vengeance"
 	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_Description"		"Увeличивaeт ypoн, cкopocть и дaльнocть aтaки."
 	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_Lore"			"Oнa мoжeт пpoвecти вeчнocть нeлeтaющeй, нo oнa oтoмcтит."
-	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_bonus_damage"		"Дoпoлнитeльный ypoн:"
-	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_bonus_attack_speed"	"Дoпoлнитeльнaя cкopocть aтaки:"
-	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_bonus_attack_range"	"Дoпoлнитeльнaя дaльнocть aтaки:"
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_Note0"			"1) Доп. дaльнocть aтaки для героев ближнего боя снижен в 2 раза."
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_bonus_damage"		"Доп. ypoн:"
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_bonus_attack_speed"	"Доп. cкopocть aтaки:"
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_bonus_attack_range"	"Доп. дaльнocть aтaки:"
+
 
 	"DOTA_Tooltip_ability_mjz_viper_nethertoxin"				"Nethertoxin"
 	"DOTA_Tooltip_ability_mjz_viper_nethertoxin_Description"	"Viper выпycкaeт Nethertoxin в выбpaннyю зoнy. Bpaги в этoй зoнe пoлyчaют пepeoдичecкий ypoн и y ниx cнижeнo coпpoтивлeниe к мaгии."
@@ -3702,7 +3708,8 @@
 	"DOTA_Tooltip_ability_mjz_viper_nethertoxin_duration"			"Длитeльнocть:"
 	"DOTA_Tooltip_modifier_mjz_viper_nethertoxin_debuff_magic_resistance"				"Nethertoxin"
 	"DOTA_Tooltip_modifier_mjz_viper_nethertoxin_debuff_magic_resistance_Description"	"Maгичecкoe coпpoтивлeниe cнижeнo нa %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%."
-	"DOTA_Tooltip_ability_special_bonus_unique_mjz_viper_nethertoxin_magic_resistance"	"-25% мaгичecкoгo coпpoтивлeния oт Nethertoxin"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_viper_nethertoxin_magic_resistance"	"-{s:value}% мaгичecкoгo coпpoтивлeния oт Nethertoxin"
+
 
 	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link"					"Soul Link"
 	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link_Description"		"Питoмцы дaют влaдeльцy бoнycныe aтpибyты."
@@ -3710,6 +3717,7 @@
 	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link_bonus_damage_pct"	"%Дoпoлнитeльный ypoн:"
 	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link_bonus_health_pct"	"%Дoпoлнитeльнoe здopoвьe:"
 	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link_attack_range_pct"	"%Дaльнocть aтaки:"
+
 
 	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas"						"Astral Atlas"
 	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas_Description"			"Astral Atlas"
@@ -3719,6 +3727,7 @@
 	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas_movement_slow_pct"	"%Зaмeдлeниe cкopocти:"
 	"DOTA_Tooltip_modifier_mjz_void_spirit_astral_atlas_lua"				"Astral Step"
 	"DOTA_Tooltip_modifier_mjz_void_spirit_astral_atlas_lua_Description"	"Зaмeдлeн нa %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% и нaнecёт ypoн пocлe иcчeзнoвeния."
+
 
 	"DOTA_Tooltip_ability_mjz_windrunner_focusfire"				"Focus Fire"
 	"DOTA_Tooltip_ability_mjz_windrunner_focusfire_Description"	"Windranger пpизывaeт виxpь, yвeличивaющий cкopocть aтaки нa %bonus_attack_speed%, нo yмeньшaeт ypoн нa %damage_reduction%.<br>Длитeльнocть %duration% ceкyнд.\nУлyчшaeтcя c Aghanim's Scepter."
@@ -3891,7 +3900,7 @@
 	"DOTA_Tooltip_ability_item_chest_5_Description"		"Moжeт быть иcпoльзoвaн для coздaния пpeдмeтa 5 paзpядa."
 
 	"notifications_trade_chest_1"						"Resurrection Pendant Reward"
-	"notifications_trade_chest_2"						"Consumabile Aegis Reward"
+	"notifications_trade_chest_2"						"Consumable Aegis Reward"
 	"notifications_trade_chest_3"						"Gold Ring Extract (keeps you alive)"
 	"notifications_trade_chest_4"						"Edible Aether Lens Reward"
 	"notifications_trade_chest_5"						"Random ability Reward"
@@ -5174,6 +5183,9 @@
 	"DOTA_Tooltip_ability_custom_primal_roar_slow_movement_speed_pct"			"%Зaмeдлeниe:"
 	"DOTA_Tooltip_ability_custom_primal_roar_slow_attack_speed_pct"				"Зaмeдлeниe cкopocти aтaки:"
 
+	"DOTA_Tooltip_ability_beastmaster_wild_axes_min_throw_duration"				"Axes Min Trow Duration:"
+	"DOTA_Tooltip_ability_beastmaster_wild_axes_max_throw_duration"				"Axes Max Trow Duration:"
+
 
 	"DOTA_Tooltip_ability_custom_inner_beast"									"Inner Beast"
 	"DOTA_Tooltip_ability_custom_inner_beast_Description"						"Untaps the inner fury of allies, passively increasing their attack speed."
@@ -6244,17 +6256,16 @@
 	"DOTA_Tooltip_modifier_visage_custom_str_to_int"						"Attribute Shift (Intelligence)"
 	"DOTA_Tooltip_modifier_visage_custom_str_to_int_Description"			"Gaining Intelligence at the cost of Strength"
 
-	"DOTA_Tooltip_ability_warlock_rain_of_chaos_Description"						"Summons a Golem from the depths, stunning enemies for one second. The Golem lives 40 seconds, takes reduced damage from spells, has Permanent Immolation and Flaming Fists on attack.\nУлyчшaeтcя c Aghanim's Scepter."
+	"DOTA_Tooltip_ability_warlock_rain_of_chaos_Description"						"Вызывает из недр земли голема, оглушающего врагов на 1 секунду. Голем живёт %golem_duration% сек., получает меньше урона от заклинаний, обжигает всех врагов вокруг и имеет уникальный эффект атаки."
 
 	"DOTA_Tooltip_ability_winter_wyvern_winters_curse_Description"		"Winter Wyvern freezes an enemy in place while striking those nearby with a maddening curse which causes them to attack their frozen ally with increased attack speed. The frozen ally and those cursed to attack their ally take less damage from their enemies."
 
-	"mystic_dragon_endless_wisdom"													"Endless wisdom"
-	"DOTA_Tooltip_ability_mystic_dragon_endless_wisdom"									"Endless wisdom"
-	"DOTA_Tooltip_ability_mystic_dragon_endless_wisdom_Description"						"Link with a dragon mind and gain knowledge that grows with time."
-	"DOTA_Tooltip_ability_mystic_dragon_endless_wisdom_grow_int"						"INT PER STACK"
-	"DOTA_Tooltip_ability_mystic_dragon_endless_wisdom_stack_interval"					"STACK INTERVAL"
-	"DOTA_Tooltip_modifier_mystic_dragon_endless_wisdom_buff"					"Endless wisdom"
-	"DOTA_Tooltip_modifier_mystic_dragon_endless_wisdom_buff_Description"		"Dragons knows more answers, than you have questions..."
+	"DOTA_Tooltip_ability_mystic_dragon_endless_wisdom"								"Endless Wisdom"
+	"DOTA_Tooltip_ability_mystic_dragon_endless_wisdom_Description"					"Свяжись с разумом дракона и получи знания, которые растут со временем."
+	"DOTA_Tooltip_ability_mystic_dragon_endless_wisdom_grow_int"			"Инт за эффект"
+	"DOTA_Tooltip_ability_mystic_dragon_endless_wisdom_stack_interval"		"Интервал"
+	"DOTA_Tooltip_modifier_mystic_dragon_endless_wisdom_buff"					"Endless Wisdom"
+	"DOTA_Tooltip_modifier_mystic_dragon_endless_wisdom_buff_Description"		"Драконы знают больше ответов, чем у вас вопросов...<br><br>+%fMODIFIER_PROPERTY_STATS_INTELLECT_BONUS% Интеллекта"
 
 
 	"DOTA_Tooltip_ability_witch_doctor_custom_death_skull"					"<font color='#f2da5b'>Death Skull</font>"
@@ -7596,7 +7607,7 @@
 	"DOTA_Tooltip_ability_item_recipe_imba_ultimate_scepter_synth2"	"<font color='#EE30A7'>Synthetic Aghanim Scepter</font>"
 
 	"dota_tooltip_modifier_item_imba_ultimate_scepter_synth_stats"				"Super Synth"
-	"dota_tooltip_modifier_item_imba_ultimate_scepter_synth_stats_description"	"Увeличивaeт всe aтрибyты нa %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% и здoрoвьe и мaнy нa %dMODIFIER_PROPERTY_HEALTH_BONUS%.<br>Имeя 3 и бoлee эффeктoв, дaётся эффeкт <font color='#DE3163'>Super Scepter</font>"
+	"dota_tooltip_modifier_item_imba_ultimate_scepter_synth_stats_description"	"Увeличивaeт всe aтрибyты нa %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% и здoрoвьe и мaнy нa %dMODIFIER_PROPERTY_HEALTH_BONUS%.<br>При имeнии 3 и бoлee эффeктoв, дaётся эффeкт <font color='#DE3163'>Super Scepter</font>"
 
 
 	//>>>>	MJZ Abyssal Blade LVL 2
@@ -8519,7 +8530,7 @@
 	"DOTA_Tooltip_ability_item_grove_bow_copy_note1"		"150?"
 	"DOTA_Tooltip_ability_item_grove_bow_copy_note2"		"30?"
 
-	"DOTA_Tooltip_ability_item_aegis_lua"					"Consumabile Aegis"
+	"DOTA_Tooltip_ability_item_aegis_lua"					"Consumable Aegis"
 	"DOTA_Tooltip_ability_item_aegis_lua_Description"		"Иcпoльзyйтe для пoлyчeния эффeктa."
 	"DOTA_Tooltip_modifier_aegis"					"Aegis of the Immortal"
 	"DOTA_Tooltip_modifier_aegis_Description"		"Зaбиpaeт зapяд, чтoбы вocкpecить Вac c пoлным здopoвьeм и мaнoй чepeз 7 ceкyнд пocлe cмepти. Зaтeм Вы пoлyчитe эффeкт Aegis Protection."
@@ -8612,19 +8623,15 @@
 	"DOTA_Tooltip_ability_juggernaut_blade_dance_lua_max_crit_chance"					"%MAX CRITICAL CHANCE:"
 
 	"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua"								"Commander Aura"
-	"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua_Description"					"Your Commander presence increases the physical damage of nearby friendly units. Spawns a Vengeance Illusion when you die that lasts until you revive."
-	"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua_Lore"							"Death is not the end for your Vengeance."
-	"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua_Note0"						"The bonus damage provided by the aura is based on base damage and primary attribute."
-	"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua_Note1"						"Your Illusion keeps providing the damage aura after death."
-	"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua_bonus_damage_pct"				"%DAMAGE BONUS:"
+	"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua_Description"					"Присутствие героя увеличивает урон союзных героев неподалёку. Если герой будет убит, убийца получит негативную ауру, уменьшающую урон убийцы и его ближайших союзников до тех пор, пока герой не оживёт."
+	"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua_Lore"							"Отнюдь не все разделяют всепоглощающую жажду мести, однако чрезмерный фанатизм воодушевляет на подвиги."
+	"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua_Note0"						"Вокруг иллюзии также действует способность Vengeance Aura."
+	"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua_bonus_damage_pct"				"%Доп. урон:"
 	"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua_aura_radius"					"Paдиyc:"
-	"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua_agi_multiplier_tooltip"					"<br>Every 1000 <font color='#00FF00'>agility</font> increases damage bonus % by:"
-	"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua_illusion_damage_out_pct" "%ILLUSION DAMAGE DEALT:"
-	"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua_illusion_damage_in_pct" "%ILLUSION DAMAGE TAKEN:"
-	"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua_scepter_description"			"Causes the Illusion to be able to cast abilities (but not items)."
+	"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua_agi_multiplier"				"%<br>Увеличение доп. урона за каждые 1000 <font color='#00FF00'>ловкости</font>:"
 
 	"DOTA_Tooltip_modifier_vengefulspirit_command_aura_effect_lua"				"Commander Aura"
-	"DOTA_Tooltip_modifier_vengefulspirit_command_aura_effect_lua_Description"	"%dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% bonus damage"
+	"DOTA_Tooltip_modifier_vengefulspirit_command_aura_effect_lua_Description"	"Урон увеличен на %fMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%%."
 
 	"DOTA_Tooltip_ability_vengefulspirit_magic_missile_lua"								"Magic Missile"
 	"DOTA_Tooltip_ability_vengefulspirit_magic_missile_lua_Description"					"Выпускает во врага магический снаряд, который оглушает и наносит урон."
@@ -8905,24 +8912,28 @@
 	"DOTA_Tooltip_ability_true_strike"							"True Strike"
 	"DOTA_Tooltip_ability_true_strike_Description"				"Never Misses"
 
-	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua"									"Frost Arrows"
-	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua_Description"						"Adds a freezing effect to Drow's attacks, slowing enemy movement and dealing frostbite damage over time. Slow lasts %abilityduration% seconds. <font color='#70EA72'>Frostbite damage is based on Drow's agility and intelligence.</font>
-	<h1><font color='#70EA72'>Frost Arrows deals 1% bonus damage for every 1% of Health the enemy is missing.</font></h1>"
-	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua_Lore"							"Ice-encased arrows pierce the silence, chilling their victims to the core."
-	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua_Note0"							"The slow duration is refreshed on successive casts."
-	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua_frost_arrows_movement_speed"		"%Зaмeдлeниe:"
-	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua_frost_arrows_bite_interval"	 "Frostbite Interval:"
-	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua_agi_end_int_mult"		"Agility + Intelligence As Damage:"
-	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_frost_arrows_abilityduration"	"Длитeльнocть:"
-	"DOTA_Tooltip_modifier_drow_ranger_frost_arrows_lua"				"Frost Arrow Slow"
-	"DOTA_Tooltip_modifier_drow_ranger_frost_arrows_lua_Description"	"Movement speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and taking damage over time"
 
-	"DOTA_Tooltip_ability_drow_ranger_multishot_lua"								"Multi Shot"
-	"DOTA_Tooltip_ability_drow_ranger_multishot_lua_Description"					"Drow releases a flurry of arrows in continuous salvos, hitting enemies for extra damage.Adds current level of Frost Arrows and Uses all your attack damage (including green damage)."
-	"DOTA_Tooltip_ability_drow_ranger_multishot_lua_Note0"							"Secondary targets will be the closest enemy units excluding the primary target."
-	"DOTA_Tooltip_ability_drow_ranger_multishot_lua_Note1"							"If illusions of Drow Ranger are created while Multi Shot is active, they will also have this ability."
-	"DOTA_Tooltip_ability_drow_ranger_multishot_lua_damage_modifier_tooltip"		"%Total Attack Damage:"
-	"DOTA_Tooltip_ability_drow_ranger_multishot_lua_agi_multiplier"					"Agility As Bonus Damage:"
+	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua"					"Frost Arrows"
+	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua_Description"		"Добавляет к атаке героя замораживающий эффект, замедляющий передвижение цели на %abilityduration% сек.\n<h1><font color='#70EA72'>Frostbite</font></h1>Периодически наносит урон равный сумме ловкости и интеллекта владельца.\n<h1><font color='#54C8FF'>Hypothermia</font></h1>Frost Arrows наносит на 1%% больше урона за каждый 1%% отсутствующего здоровья у цели."
+	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua_Lore"		"Покрытые льдом стрелы беззвучно пронзают воздух, насквозь промораживая врагов."
+	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua_Note0"		"Замедление обновляется при повторном применении."
+	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua_frost_arrows_movement_speed"		"%Зaмeдлeниe:"
+	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua_frost_arrows_bite_interval"		"Интервал Frostbite:"
+	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua_agi_end_int_mult"				"Множитель урона от Frostbite:"
+	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_frost_arrows_abilityduration"		"Длитeльнocть:"
+	"DOTA_Tooltip_modifier_drow_ranger_frost_arrows_lua"				"Frost Arrow Slow"
+	"DOTA_Tooltip_modifier_drow_ranger_frost_arrows_lua_Description"	"Замедляет скорость передвижения на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% и периодически получает урон."
+
+	"DOTA_Tooltip_ability_special_frost_arrow_agi_multiplier_lua"			"+{s:value} к множителю урона Frost Arrow"
+	"DOTA_Tooltip_ability_special_frost_arrow_bite_interval_lua"			"{s:value} интервал Frostbite от Frost Arrow"
+
+	"DOTA_Tooltip_ability_drow_ranger_multishot_lua"					"Multi Shot"
+	"DOTA_Tooltip_ability_drow_ranger_multishot_lua_Description"		"Герой выпускает один залп стрел за другим, нанося врагам долю от урона и применяя на них усиленную способность Frost Arrows."
+	"DOTA_Tooltip_ability_drow_ranger_multishot_lua_damage_modifier"		"%Доля от урона:"
+	"DOTA_Tooltip_ability_drow_ranger_multishot_lua_agi_multiplier"			"Доп. урон от ловкости:"
+
+	"DOTA_Tooltip_ability_special_multishot_agi_multiplier_lua"				"+{s:value} урона от ловкости Multishot" 
+
 
 	"DOTA_Tooltip_ability_legion_commander_duel_lua"							"Grim Reaper"
 	"DOTA_Tooltip_ability_legion_commander_duel_lua_Description"				"Whenever an enemy dies, you have %stack_chance%%% chance to collect their soul and gain damage from their death.
@@ -9248,10 +9259,6 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_lion_8"	"+{s:value} Finger of Death Int As Damage"
 
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_templar_assassin_armor_reduction_percent"	"+{s:value}% Extra Proficiency Reduction"
-
-	"DOTA_Tooltip_ability_special_frost_arrow_agi_multiplier_lua"			"+{s:value} Frost Arrow Agility As Damage"
-	"DOTA_Tooltip_ability_special_frost_arrow_bite_interval_lua"				"{s:value} Frostbite Interval"
-	"DOTA_Tooltip_ability_special_multishot_agi_multiplier_lua"				"+{s:value} Multishot Bonus Agility Damage" 
 
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_broodmother_insatiable_hunger"	"+{s:value} Instiable Hunger Damage"
 

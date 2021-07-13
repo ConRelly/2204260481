@@ -28,6 +28,10 @@ CRoshanSystem._flRespawnTime = -1.0
 -- Indicates that Roshan is currently
 CRoshanSystem._iNum = 1
 
+-- Indicates that Roshan is currently
+CRoshanSystem._RoshanXP = 700
+CRoshanSystem._RoshanXP_killer = 100
+
 -- Indicates the position where Spawn will be made
 CRoshanSystem._SpawnPosition = Vector(-2464.244629, 1900.373291, 159.998383)
 
@@ -115,11 +119,34 @@ function CRoshanSystem:OnEntityKilled(tData)
 
     -- 
     if ( hRoshan:HasModifier('modifier_roshan_bonus') ) then
-        if ( hKiller:IsRealHero()  ) then
+        if (hKiller:IsRealHero()) then
             hKiller:AddNewModifier(hKiller, nil, 'modifier_roshan_bonus', {duration = BONUS_DURATION})
             print('Roshan #' .. self._iNum .. ' killed, transfering bonus buff!')
         end
     end
+
+	local killedUnit = EntIndexToHScript(keys.entindex_killed)
+    if (self._iNum >= 2) then
+		if (self._iNum % 2 == 0) then
+			self._RoshanXP_killer = self._RoshanXP_killer + 50
+		end
+		self._RoshanXP = self._RoshanXP + 1000
+	end
+	if killedUnit:GetUnitName() == "npc_dota_roshan_mega" then
+		if not killedUnit:IsIllusion() then
+			if hKiller:IsRealHero() then
+				hKiller:AddExperience(self._RoshanXP_killer, false, false)
+			end
+			local getxp = self._RoshanXP
+			if getxp > 0 then
+				local heroes = GetAllRealHeroes()
+				for i = 1, #heroes do
+					heroes[i]:AddExperience(getxp / #heroes, false, false)
+					SendOverheadEventMessage(nil, OVERHEAD_ALERT_XP, heroes[i], getxp / #heroes, nil)
+				end
+			end
+		end
+	end
 
     self._iNum = self._iNum + 1
     print('Roshan die! The next roshan will be: #' .. self._iNum)
@@ -208,12 +235,23 @@ function CRoshanSystem:CreateRoshan()
         end       
     end    
     -- Second kill
-    if ( self._iNum >= 2 ) then
-        hRoshan:SetDeathXP(700 + (self._iNum * 1000))
-        if ( self._iNum <= 9 ) then
-            hRoshan:AddItemByName('item_cheese')     
-        end
-    end    
+	if ( self._iNum >= 2 ) then
+		if ( self._iNum <= 9 ) then
+			hRoshan:AddItemByName('item_cheese')     
+		end
+	end
+
+	if (self._iNum >= 2) then
+		if (self._iNum >= 6) then
+			hRoshan:AddItemByName("item_aghanims_fragment")
+		end
+		local count = math.floor(self._iNum / 2)
+		for rolls = 0, count - 1 do
+			if RandomInt(1, 9 + count) <= 0 + count then
+				hRoshan:AddItemByName("item_aghanims_fragment")
+			end
+		end
+	end
 
     if ( self._iNum >= 3 ) then
         local random_nr = math.random(0,100)

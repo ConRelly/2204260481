@@ -7,6 +7,7 @@ function AghanimsSynthCast(keys)
 	local modifier_stats = keys.modifier_stats
 	if not caster:IsRealHero() then return nil end
 	if caster:HasModifier("modifier_arc_warden_tempest_double") then return nil end
+--	if not caster:IsRealHero() then return end		--In case you need to disable non-heroes consumption
 	
 	if not caster:HasModifier(modifier_synth) then
 		caster:AddNewModifier(caster, nil, modifier_synth, {})

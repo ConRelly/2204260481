@@ -1,4 +1,5 @@
 require("lib/string")
+require("lib/projectiles")
 
 function GetAllRealHeroes()
     local rheroes = {}
@@ -63,42 +64,6 @@ function DisplayError(playerId, message)
 	if player then
 		CustomGameEventManager:Send_ServerToPlayer(player, "display_custom_error", { message = message })
 	end
-end
-
-function TeleportPlayerToZone(playerId, zonename)
-    local hero = PlayerResource:GetSelectedHeroEntity(playerId)
-    if hero and hero:IsAlive() then
-        hero.zone = zonename
-        hero:Stop()
-        hero:RemoveModifierByName("modifier_mystery_cyclone_active")
-        local pfx1 = ParticleManager:CreateParticle( "particles/econ/events/ti4/blink_dagger_start_ti4.vpcf", PATTACH_ABSORIGIN, hero )
-        ParticleManager:ReleaseParticleIndex( pfx1 )
-        local point = Entities:FindByName( nil, zonename.."_tp_point_1"):GetAbsOrigin()
-        FindClearSpaceForUnit(hero, point, true )
-        local pfx2 = ParticleManager:CreateParticle( "particles/econ/events/ti4/blink_dagger_end_ti4.vpcf", PATTACH_ABSORIGIN, hero )
-        ParticleManager:ReleaseParticleIndex( pfx2 )
-        SetCameraToPosForPlayer(playerId,point)
-    end
-end
-
-function TeleportAllPlayersToZone(zonename)
-    local plc = PlayerResource:GetPlayerCount()
-    for i=0,plc-1 do
-        local hero = PlayerResource:GetSelectedHeroEntity(i)
-        if hero then
-            hero.zone = zonename
-            hero:Stop()
-            hero:RemoveModifierByName("modifier_mystery_cyclone_active")
-            hero:RemoveModifierByName("modifier_eul_cyclone")
-            local pfx1 = ParticleManager:CreateParticle( "particles/econ/events/ti4/blink_dagger_start_ti4.vpcf", PATTACH_ABSORIGIN, hero )
-            ParticleManager:ReleaseParticleIndex( pfx1 )
-            local point = Entities:FindByName( nil, zonename.."_tp_point_"..(i+1)):GetAbsOrigin()
-            FindClearSpaceForUnit(hero, point, true )
-            local pfx2 = ParticleManager:CreateParticle( "particles/econ/events/ti4/blink_dagger_end_ti4.vpcf", PATTACH_ABSORIGIN, hero )
-            ParticleManager:ReleaseParticleIndex( pfx2 )
-            SetCameraToPosForPlayer(i,point)
-        end
-    end
 end
 
 function IsFreeSpaceInInventory(hero)
@@ -183,12 +148,13 @@ end
 function create_popup(data)
     local target = data.target
     local value = math.floor(data.value)
-    local type = data.type or "miss"
+    local type = data.type or "null"
     local color = data.color or Vector(255, 255, 255)
     local duration = data.duration or 1.0
 	local offset = data.offset or Vector(0,0,0)
     local size = string.len(value)
     local pre = data.pre or nil
+    local pattach = data.pattach or PATTACH_ROOTBONE_FOLLOW
     if pre ~= nil then
         size = size + 1
     end
@@ -197,7 +163,7 @@ function create_popup(data)
         size = size + 1
     end
     local particle_path = "particles/msg_fx/msg_" .. type .. ".vpcf"
-    local particle = ParticleManager:CreateParticle(particle_path, PATTACH_ROOTBONE_FOLLOW, target)
+    local particle = ParticleManager:CreateParticle(particle_path, pattach, target)
 	ParticleManager:SetParticleControl(particle, 0, offset)
     ParticleManager:SetParticleControl(particle, 1, Vector(pre, value, pos))
     ParticleManager:SetParticleControl(particle, 2, Vector(duration, size, 0))

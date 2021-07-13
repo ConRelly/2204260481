@@ -1,17 +1,13 @@
-
-
 visage_custom_str_to_int = class({})
-
-
-function visage_custom_str_to_int:IsStealable()
-    return false
-end
-
-
+function visage_custom_str_to_int:IsStealable() return false end
 function visage_custom_str_to_int:OnToggle()
     local caster = self:GetCaster()
 
     if self:GetToggleState() then
+		local int_to_str = caster:FindAbilityByName("visage_custom_int_to_str")
+		if int_to_str:GetToggleState() then
+			int_to_str:ToggleAbility()
+		end
         caster:AddNewModifier(caster, self, "modifier_visage_custom_str_to_int", {})
         caster:EmitSound("Hero_Morphling.MorphStrength")
     else
@@ -21,16 +17,12 @@ function visage_custom_str_to_int:OnToggle()
 end
 
 
-
 LinkLuaModifier("modifier_visage_custom_str_to_int", "abilities/heroes/visage_custom_str_to_int.lua", LUA_MODIFIER_MOTION_NONE)
 
 modifier_visage_custom_str_to_int = class({})
-
-
 function modifier_visage_custom_str_to_int:GetEffectName()
     return "particles/units/heroes/hero_morphling/morphling_morph_str.vpcf"
 end
-
 
 if IsServer() then
     function modifier_visage_custom_str_to_int:OnCreated(keys)

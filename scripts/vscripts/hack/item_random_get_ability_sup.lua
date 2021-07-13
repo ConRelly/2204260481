@@ -105,7 +105,6 @@ function GetRandomAbilityName( hero )
 		"tidehunter_anchor_smash",		  -- 潮汐 3
 		"mjz_tiny_craggy_exterior",   -- 军团 3
 		--"mjz_omniknight_degen_aura",		-- 夜魔 3
-		--"mjz_vengefulspirit_vengeance",			-- 老奶奶 2
 		"mjz_troll_warlord_fervor",			-- 老奶奶 3
 		"chaos_knight_chaos_strike",		-- 混沌3
 		"mars_bulwark",			  -- 猛犸 1

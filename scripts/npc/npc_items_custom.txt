@@ -35315,6 +35315,7 @@
 		"ItemStackable"					"1"
 		"ItemDisplayCharges"			"1"
 		"ItemKillable"					"0"
+		"ItemIsNeutralDrop"				"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"AbilitySpecial"
 		{

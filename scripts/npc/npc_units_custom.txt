@@ -12150,7 +12150,7 @@
 		"ProjectileSpeed"			"1000"		// Speed of projectile.
 
 		// Bounty
-		"BountyXP"					"750"		// Experience earn.
+		"BountyXP"					"0"			// Experience earn.
 		"BountyGoldMin"				"150"		// Gold earned min.
 		"BountyGoldMax"				"400"		// Gold earned max.
 
