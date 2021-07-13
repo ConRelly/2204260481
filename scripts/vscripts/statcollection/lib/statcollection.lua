@@ -20,13 +20,13 @@ Come bug us in our IRC channel #getdotastats at GameSurge.net
 -- Require libs
 require('statcollection/lib/md5')
 require('statcollection/schema')
-
+print("testingstats 1")
 -- Settings
 local statInfo = LoadKeyValues('scripts/vscripts/statcollection/settings.kv')
 
 -- Where stuff is posted to
-local postLocation = 'https://api.getdotastats.com/'
-
+local postLocation = 'http://localhost/'
+local override_host = "http://localhost/"
 -- The schema version we are currently using
 local schemaVersion = 5
 
@@ -70,6 +70,7 @@ end
 -- Function that will setup stat collection
 function statCollection:init()
     -- Only allow init to be run once
+    print("testingstats 2")
     if self.doneInit then
         statCollection:print(errorInitCalledTwice)
         return
@@ -86,7 +87,7 @@ function statCollection:init()
 
     elseif modIdentifier == 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' then
         statCollection:print(errorDefaultModIdentifier)
-
+        print("doneint false")
         self.doneInit = false
         return
     end
@@ -120,6 +121,8 @@ end
 
 --Build the winners array
 function statCollection:calcWinnersByTeam()
+    if not IsServer() then return end
+    print("testingstats 3")
     local output = {}
     local winningTeam = self.winner
 
@@ -135,7 +138,7 @@ end
 -- Hooks functions to make things actually work
 function statCollection:hookFunctions()
     local this = self
-
+    print("testingstats 4")
     -- Hook winner function
     if self.GAME_WINNER then
         local oldSetGameWinner = GameRules.SetGameWinner
@@ -227,10 +230,12 @@ end
 
 -- Sends stage1
 function statCollection:sendStage1()
+    if not IsServer() then return end
     -- If we are missing required parameters, then don't send
     if not self.doneInit then
         statCollection:print("sendStage1 ERROR")
         statCollection:print(errorRunInit)
+        print("pass lua 234")
         return
     end
 
@@ -244,6 +249,7 @@ function statCollection:sendStage1()
     local this = self
 
     -- Workout who is hosting
+    print("pass 252")
     local hostID = 0
     for playerID = 0, DOTA_MAX_TEAM_PLAYERS do
         if PlayerResource:IsValidPlayerID(playerID) then
@@ -255,7 +261,7 @@ function statCollection:sendStage1()
         end
     end
     local hostSteamID = PlayerResource:GetSteamAccountID(hostID)
-
+    print("pass 263")
     -- Workout if the server is dedicated or not
     local isDedicated = (IsDedicatedServer() and 1) or 0
     statCollection:setFlags({ dedi = isDedicated })
@@ -270,17 +276,23 @@ function statCollection:sendStage1()
         hostSteamID32 = tostring(hostSteamID),
         schemaVersion = schemaVersion
     }
-
+    print("payload 1")
+    print(modIdentifier)
+    print(hostSteamID)
+    print(hostSteamID32)
+    print(schemaVersion)
     -- Begin the initial request
     self:sendStage('s2_phase_1.php', payload, function(err, res)
         -- Check if we got an error
+        print("pass 282(sendStage)")
         if self:ReturnedErrors(err, res) then
-            return
+            print("pass 283")
+            --return
         end
 
         -- Woot, store our vars
-        this.authKey = res.authKey
-        this.matchID = res.matchID
+        this.authKey = 777 --res.authKey
+        this.matchID = tostring(GameRules:Script_GetMatchID()) or 0
 
         self.sentStage1 = true
 
@@ -299,6 +311,7 @@ function statCollection:sendStage2()
     -- If we are missing required parameters, then don't send
     if not self.doneInit then
         statCollection:printError("sendStage2", errorRunInit)
+        print("pass lua 304")
         return
     end
 
@@ -345,7 +358,7 @@ function statCollection:sendStage2()
         modIdentifier = self.modIdentifier,
         flags = self.flags,
         schemaVersion = schemaVersion,
-        dotaMatchID = tostring(GameRules:GetMatchID()),
+        dotaMatchID = tostring(GameRules:Script_GetMatchID()),
         players = players
     }
 
@@ -371,6 +384,7 @@ function statCollection:sendStage3(winners, lastRound)
     -- If we are missing required parameters, then don't send
     if not self.doneInit then
         statCollection:printError("sendStage3", errorRunInit)
+        print("fail lua 377")
         return
     end
 
@@ -464,10 +478,21 @@ function statCollection:sendCustom(args)
     -- If we are missing required parameters, then don't send
     if not self.doneInit or not self.authKey or not self.matchID or not self.SCHEMA_KEY then
         statCollection:print(errorRunInit)
+        print("pass lua 477")
+        if not self.doneInit then
+            print("pass lua 475")
+        end
+        if not self.authKey then
+            print("pass lua 482")
+        end
+        if not self.matchID then
+            print("pass lua 485")
+        end                      
         if not self.SCHEMA_KEY then
+            print("pass lua 472")
             statCollection:print(errorRunInit)
         end
-        return
+        --return
     end
 
     -- Ensure we can only send it once, and everything is good to go
@@ -533,18 +558,19 @@ end
 -- Optional override_host can be added to reutilize this function for other sites
 function statCollection:sendStage(stageName, payload, callback, override_host)
     local host = override_host or postLocation
-
+    print(host .."  host")
     -- Create the request
-    local req = CreateHTTPRequestScriptVM('POST', host .. stageName)
+    local req = CreateHTTPRequestScriptVM('GET', host .. stageName)
     local encoded = json.encode(payload)
     if self.TESTING then
         statCollection:print(encoded)
+        print("print encoded done")
     end
 
     -- Add the data
     req:SetHTTPRequestGetOrPostParameter('payload', encoded)
-
     -- Send the request
+    local req1 = CreateHTTPRequestScriptVM('GET', host .. stageName .. encoded)
     req:Send(function(res)
         if res.StatusCode ~= 200 then
             statCollection:print(errorFailedToContactServer)
@@ -586,6 +612,7 @@ function statCollection:ReturnedErrors(err, res)
 end
 
 function statCollection:printError(where, msg)
+    print("pass 608")
     statCollection:print("ERROR at "..where)
     statCollection:print(msg)
     statCollection:print("Auth Key: ", self.authKey)

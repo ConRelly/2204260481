@@ -1,3 +1,4 @@
+;
 
 function OnSpellStart( keys )
 	local caster = keys.caster

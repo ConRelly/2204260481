@@ -326,7 +326,7 @@ function modifier_mjz_doom_bringer_devour:OnCreated()
         local owner = PlayerResource:GetSelectedHeroEntity(parent:GetPlayerOwnerID())
         if owner then       
             if parent:HasModifier("modifier_mjz_doom_bringer_devour") then
-				local stacks = self::GetStackCount()
+				local stacks = self:GetStackCount()
                 self:SetStackCount(stacks)
             end    
         end    

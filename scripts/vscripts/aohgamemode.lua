@@ -28,6 +28,8 @@ require("lib/notifications")
 require("lib/hero_damage")
 require("teststuf")
 
+--require('statcollection/init')
+
 require("monster_style")
 
 require("lib/funcs")
@@ -838,6 +840,11 @@ function AOHGameMode:_ThinkPrepTime()
 		end
 		GameRules.GLOBAL_roundNumber = self._nRoundNumber  -- Set a global.
 		GameRules.GLOBAL_endlessHard_started = self._endlessHard_started --another global
+		GameRules.GLOBAL_endlessMode_started = self._endlessMode_started
+		GameRules.GLOBAL_extra_mode = self._extra_mode
+		GameRules.GLOBAL_vic_1 = self._vic_1
+		GameRules.GLOBAL_doubleMode	= self._doubleMode
+		GameRules.GLOBAL_hardMode = self._hardMode
 		self._currentRound = self._vRounds[self._nRoundNumber]
 		--if self._endlessMode_started then
 		--	self._currentRound:BeginEndless(#self._vRounds)

@@ -1144,8 +1144,8 @@ New: 3 Quests with NFTs as bonus rewards, you can find them on discord(link on w
 * Changed the order of using invulnerability/reincarnation: Abilities/Talents -> Undying Helm -> Consumable Aegis -> Gold Ring -> Aegis of Infinity
 * Gold Ring cooldown increased from 40 to 50 seconds
 * Gold Ring: When reused, it reduces the cooldown by 10 seconds and refund 33% of the item cost
-
-(Fixed passive Blast Staff effect)
+* Fix Doom Q
+* Fixed passive Blast Staff effect
 
 
 

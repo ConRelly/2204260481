@@ -1,7 +1,6 @@
 require("AOHGameMode")
 require("lib/animations")
 require("lib/utils")
-
 --require("hack/precache_resource")
 
 function do_precache(elements, handle)

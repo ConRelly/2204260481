@@ -19,6 +19,15 @@ function string.trim(str)
     str = string.gsub(str, " ", "")
     return str
 end
+function string.custom_remove(str)
+    if str == nil then
+        return nil, "the string parameter is nil"
+    end
+    str = string.gsub(str, " ", "")
+    str = string.gsub(str, "-register", "")
+    return str
+end
+
 --[[将str的第一个字符转化为大写字符。成功返回转换后的字符串，失败返回nil和失败信息]]
 function string.capitalize(str)
     if str == nil then

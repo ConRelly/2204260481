@@ -5,7 +5,7 @@ function AghanimsSynthCast(keys)
 	local ability = keys.ability
 	local modifier_synth = keys.modifier_synth
 	local modifier_stats = keys.modifier_stats
-	
+	if not caster:IsRealHero() then return nil end
 	if caster:HasModifier("modifier_arc_warden_tempest_double") then return nil end
 	
 	if not caster:HasModifier(modifier_synth) then
