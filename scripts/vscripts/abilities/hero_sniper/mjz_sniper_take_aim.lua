@@ -63,12 +63,15 @@ if IsServer() then
 
 		local modiifer = caster:FindModifierByName(mName)
 		if modiifer == nil then
-			modiifer = caster:AddNewModifier(caster, ability, mName, {})
+			if caster:IsAlive() then
+				modiifer = caster:AddNewModifier(caster, ability, mName, {})
+			end	
 		end
-
-		if modiifer:GetStackCount() ~= bonus then
-			modiifer:SetStackCount(bonus)
-		end
+		if modiifer then
+			if modiifer:GetStackCount() ~= bonus then
+				modiifer:SetStackCount(bonus)
+			end
+		end	
 
 	end
 end

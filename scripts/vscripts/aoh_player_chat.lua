@@ -1,5 +1,4 @@
 require("lib/string")
-
 function AOHGameMode:OnPlayerChat(keys)
 	local time = GameRules:GetGameTime() / 60
 	if keys.text == "-hard" and not self._hardMode and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
@@ -66,18 +65,18 @@ function AOHGameMode:OnPlayerChat(keys)
 		local playerID = keys.playerid
 		if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:HasSelectedHero(playerID) then
 			local hero = PlayerResource:GetSelectedHeroEntity(playerID)
---[[ 			if hero._register_stop then
+			if hero._register_stop then
 				return nil
 			else	
 				hero._register_stop = true
-			end	 ]]
+			end	
 		end
 		local steam_id = tostring(PlayerResource:GetSteamID(playerID))
 		local steam_name = PlayerResource:GetPlayerName(playerID)		
 		print("pass 81 reg")
 		local walet = string.custom_remove(keys.text)
 		print(walet)			
-		local url = "http://localhost/"
+		local url = "https://conrelly.000webhostapp.com/"
 		local stageName = "register_wallet.php?"
 		url = url..stageName.."wallet=" ..walet
 		url = url.."&steam_id".."="..steam_id
@@ -99,8 +98,9 @@ function AOHGameMode:OnPlayerChat(keys)
 				return
 			end
 	
-		end) 		
-		Notifications:TopToAll({text= steam_name.." Wallet "..walet.." has ben Submitted for registration", style={color="yellow"}, duration=5})
+		end) 
+
+		Notifications:TopToAll({text= steam_name.." Wallet '"..walet.."' has ben Submitted for registration", style={color="yellow"}, duration=7})
 	end
 
 
@@ -298,15 +298,11 @@ function AOHGameMode:OnPlayerChat(keys)
 			Notifications:TopToAll({text="#game_mode_single_player", style={color="yellow"}, duration=5})
 		end
 	end
-	if keys.text == "-endgame" and keys.playerid == 0 and time < 4 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+--[[ 	if keys.text == "-endgame" and keys.playerid == 0 and time < 4 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
        	GameRules:SetSafeToLeave(true)
         end_screen_setup(true)
-	end
-		--GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
-       -- GameRules:SetSafeToLeave(true)
-        --end_screen_setup(true)
-    --end, "mjz_win", FCVAR_CHEAT )
+	end ]]
 	
 	if keys.text == "-refresh" then
 		self._physdamage[keys.playerid] = 1

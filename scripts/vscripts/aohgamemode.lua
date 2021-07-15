@@ -52,6 +52,7 @@ LinkLuaModifier("modifier_power_boss", "hack/modifiers/modifier_power_boss.lua",
 LinkLuaModifier("modifier_aegis_buff", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_phys", "modifiers/modifier_phys.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_bristleback_quill_spray_autocast6", "abilities/hero_bristleback/modifier_mjz_bristleback_quill_spray_autocast6.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_boss_hpbar", "abilities/boss_hpbar.lua", LUA_MODIFIER_MOTION_NONE)
 
 if AOHGameMode == nil then
 	_G.AOHGameMode = class({})
@@ -204,7 +205,6 @@ function AOHGameMode:InitGameMode()
 	GameRules.xpTable = xpTable
 
 	GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel(xpTable)
-	
 	GameRules:SetCustomGameSetupAutoLaunchDelay(3.0)
 	GameRules:SetTimeOfDay(0.75)
 	GameRules:SetHeroRespawnEnabled(false)
@@ -256,6 +256,7 @@ function AOHGameMode:InitGameMode()
 	mHackGameMode:InitGameMode()
 	-- Init card points system
 	holdout_card_points:Init()
+	CustomGameEventManager:Send_ServerToAllClients("frostivus_begins", {})
 end
 
 
@@ -888,10 +889,10 @@ local IllusionNotLearn = {
 LinkLuaModifier("modifier_generic_handler", "modifiers/modifier_generic_handler", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_charges", "modifiers/modifier_charges", LUA_MODIFIER_MOTION_NONE)
 function AOHGameMode:OnEntitySpawned(event)
+	
 	--mHackGameMode:OnNPCSpawned(event)
 	-- Fix for str magic res and more.
 	local unit = EntIndexToHScript(event.entindex)
-	
 	if unit and unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 		local not_illusion = not unit:HasModifier('modifier_illusion')
 		if IsValidEntity(unit) and not unit:IsHero()  then
@@ -973,7 +974,7 @@ function AOHGameMode:OnEntitySpawned(event)
 		if self._endlessMode_started then
 			unit:AddNewModifier(unit, nil, "modifier_power_boss", {})
 		end
-
+		--unit:AddNewModifier(unit, nil, "modifier_boss_hpbar", {})
 		unit:AddNewModifier(unit, nil, "modifier_boss", {})
 		if self._extra_mode then
 			if unit and unit:GetUnitLabel() == "randomskill" then
@@ -995,7 +996,10 @@ function AOHGameMode:OnEntitySpawned(event)
 			end	
 		end
 	end
-
+	if unit:GetUnitName() == "npc_boss_skeletal_archer_new" then
+		unit:AddNewModifier(unit, nil, "modifier_boss_hpbar", {})
+	end	
+	
 	if unit:GetUnitName() == "npc_dota_boss_aghanim" then
 		for i=0,9 do
 			Sounds:CreateSound(i, "goh.teme")
