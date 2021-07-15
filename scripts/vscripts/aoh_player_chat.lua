@@ -60,49 +60,6 @@ function AOHGameMode:OnPlayerChat(keys)
 		Notifications:TopToAll({text="#renew_stats2", style={color="red"}, duration=5})
 		self.renew = true
 	end
-	if string.find(keys.text, "-register") and time > 0 then
-		print("starting register")
-		local playerID = keys.playerid
-		if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:HasSelectedHero(playerID) then
-			local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-			if hero._register_stop then
-				return nil
-			else	
-				hero._register_stop = true
-			end	
-		end
-		local steam_id = tostring(PlayerResource:GetSteamID(playerID))
-		local steam_name = PlayerResource:GetPlayerName(playerID)		
-		print("pass 81 reg")
-		local walet = string.custom_remove(keys.text)
-		print(walet)			
-		local url = "https://conrelly.000webhostapp.com/"
-		local stageName = "register_wallet.php?"
-		url = url..stageName.."wallet=" ..walet
-		url = url.."&steam_id".."="..steam_id
-		url = url.."&steam_name".."="..steam_name
-		local req = CreateHTTPRequestScriptVM('GET', url)
-		print("pass 85 reg wallet")
-		req:Send(function(res)
-			if res.StatusCode ~= 200 then
-	
-				print("errorFailedToContactServer")
-				print("Status Code", res.StatusCode or "nil")
-				print("Body", res.Body or "nil")
-				return
-			end
-			 
-			if not res.Body then
-				print("errorEmptyServerResponse")
-				print("Status Code", res.StatusCode or "nil")
-				return
-			end
-	
-		end) 
-
-		Notifications:TopToAll({text= steam_name.." Wallet '"..walet.."' has ben Submitted for registration", style={color="yellow"}, duration=7})
-	end
-
 
 	if keys.text == "-autocast" then
 		local playerID = keys.playerid
