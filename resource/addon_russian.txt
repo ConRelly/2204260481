@@ -22,6 +22,7 @@
 
 	"DOTA_Tooltip_ability_item_25gold"		"Gold"
 	"DOTA_Tooltip_ability_item_tombstone"	"Resurrect Teammate"
+	"HPBar"									"{d:PanelCurrent_HP}/{d:PanelMaxHP}"
 
 	"DOTA_Tooltip_modifier_charges"			"Заряды"
 

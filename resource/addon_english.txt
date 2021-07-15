@@ -19,6 +19,7 @@
 	
 	"DOTA_Tooltip_Ability_item_portal"		"Portal"
 	"DOTA_Chat_Portal_Pinged"				"Portal here."
+	"HPBar"									"{d:PanelCurrent_HP}/{d:PanelMaxHP}"
 
 	"dota_ability_variable_hp_regen_pct"			"Max HP Health Regen"				// $hp_regen_pct
 	"dota_ability_variable_cast_time_pct"			"Cast Time"							// $cast_time_pct

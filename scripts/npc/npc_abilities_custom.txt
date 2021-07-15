@@ -40578,4 +40578,12 @@
 			}			
 		}
 	}
+
+	"boss_hpbar"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"abilities/boss_hpbar.lua"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"IsOnCastBar"				"0"
+	}
 }

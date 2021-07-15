@@ -997,7 +997,7 @@ function AOHGameMode:OnEntitySpawned(event)
 		end
 	end
 	if unit:GetUnitName() == "npc_boss_skeletal_archer_new" then
-		unit:AddNewModifier(unit, nil, "modifier_boss_hpbar", {})
+--		unit:AddNewModifier(unit, nil, "modifier_boss_hpbar", {})
 	end	
 	
 	if unit:GetUnitName() == "npc_dota_boss_aghanim" then
