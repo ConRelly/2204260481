@@ -557,7 +557,7 @@
 //Hoodwink
 	"DOTA_Tooltip_ability_hw_sharpshooter"					"Sharpshooter"
 	"DOTA_Tooltip_ability_hw_sharpshooter_Description"		"Герой готовит смертельный выстрел из своего арбалета. Он наносит вражескому герою огромный урон и замедляет его. Урон и длительность эффекта становятся максимальными спустя %max_charge_time% сек. подготовки, а выстрел происходит автоматически спустя %misfire_time% сек.\nОтдача отталкивает героя назад на расстояние в %recoil_distance%.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Урон будет увеличиваться на 100% за каждые 2000 единиц расстояния до цели."
-	"DOTA_Tooltip_ability_hw_sharpshooter_scepter_description"		"Позволяет снаряду проходить насквозь."
+	"DOTA_Tooltip_ability_hw_sharpshooter_scepter_description"		"<font color='#428627'>Обычный выстрел</font>:<br>Позволяет снаряду проходить насквозь.<br><br><font color='#8ABF50'>Альтернативный выстрел</font>:<br>Убирает возможность проходить снаряду насквозь, но позволяет наносить урон сквозь невосприимчивость к заклинаниям."
 	"DOTA_Tooltip_ability_hw_sharpshooter_shard_description"		"Увеличивает дальность и скорость снаряда в %scepter_bonus% раза."
 	"DOTA_Tooltip_ability_hw_sharpshooter_Lore"		"Первый арбалет-самострел Прохвостка нашла по случайности, но теперь она холит и лелеет свой собственный — и, разумеется, некоторые его детали она у кого-то стянула или добыла другим способом."
 	"DOTA_Tooltip_ability_hw_sharpshooter_max_charge_time"				"Макс. время подготовки:"

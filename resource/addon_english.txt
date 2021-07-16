@@ -553,7 +553,7 @@
 //Hoodwink
 	"DOTA_Tooltip_ability_hw_sharpshooter"					"Sharpshooter"
 	"DOTA_Tooltip_ability_hw_sharpshooter_Description"		"Hoodwink charges up and fires a deadly bolt from her crossbow, dealing heavy damage and slow to an enemy Hero.  The damage and debuff duration scale up to max after %max_charge_time% seconds, and the bolt is fired automatically after %misfire_time% seconds.\nHoodwink is knocked backwards for a distance of %recoil_distance% from the force of the shot.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Damage will increase by 100% for every 2000 units of distance to the target. Affects your talent bonus dmg."
-	"DOTA_Tooltip_ability_hw_sharpshooter_scepter_description"		"Allows the projectile to pass through."
+	"DOTA_Tooltip_ability_hw_sharpshooter_scepter_description"		"<font color='#428627'>Normal Shot</font>:<br>Allows the projectile to pass through.<br><br><font color='#8ABF50'>Alternate Shot</font>:<br>Removes the through shot, but allows you to deal damage through spell immunity."
 	"DOTA_Tooltip_ability_hw_sharpshooter_shard_description"		"Increases projectile's range and speed by x2."
 	"DOTA_Tooltip_ability_hw_sharpshooter_Lore"				"While her first arbalest was a chance discovery, Hoodwink now takes great care in carving and caring for her own -- of course with some necessary components pilfered or otherwise cleverly procured."
 	"DOTA_Tooltip_ability_hw_sharpshooter_max_charge_time"				"MAX WIND-UP TIME:"

@@ -31,6 +31,12 @@ function hw_sharpshooter:Precache(context)
 	PrecacheResource("particle", "particles/items_fx/force_staff.vpcf", context)
 end
 
+function hw_sharpshooter:GetBehavior()
+	if self:GetCaster():HasScepter() then
+		return DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_AUTOCAST
+	end
+	return self.BaseClass.GetBehavior(self)
+end
 function hw_sharpshooter:GetCastRange(location, target)
 	if not IsServer() then return end
 	if self:GetCaster():HasScepter() then
@@ -43,12 +49,19 @@ function hw_sharpshooter:OnSpellStart()
 	local point = self:GetCursorPosition()
 	local duration = self:GetSpecialValueFor("misfire_time")
 
-	self.delete_on_hit = true
 	if self:GetCaster():HasScepter() then
 		self.delete_on_hit = false
+	else
+		self.delete_on_hit = true
+	end
+	if self:GetAutoCastState() then
+		self.delete_on_hit = true
+		self.target_flag = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
+	else
+		self.target_flag = DOTA_UNIT_TARGET_FLAG_NONE
 	end
 
-	caster:AddNewModifier(caster, self, "modifier_hw_sharpshooter", {duration = duration, x = point.x, y = point.y, delete_on_hit = self.delete_on_hit})
+	caster:AddNewModifier(caster, self, "modifier_hw_sharpshooter", {duration = duration, x = point.x, y = point.y, delete_on_hit = self.delete_on_hit, target_flag = self.target_flag})
 end
 
 function hw_sharpshooter:OnProjectileThink_ExtraData(location, ExtraData)
@@ -81,7 +94,7 @@ function hw_sharpshooter:OnProjectileHit_ExtraData(target, location, ExtraData)
 		if caster:HasModifier("modifier_super_scepter") then
 			local distance = (target:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D() / 2000
 			damage = math.ceil(ExtraData.damage * (1 + distance))
-			damage2 = math.ceil( damage2 * (1 + distance))
+			damage2 = math.ceil(damage2 * (1 + distance))
 		else
 			damage = ExtraData.damage
 		end
@@ -178,7 +191,7 @@ function modifier_hw_sharpshooter:OnCreated(kv)
 	    bDeleteOnHit = kv.delete_on_hit,
 	    
 	    iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
-	    iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_NONE,
+	    iUnitTargetFlags = kv.target_flag,
 	    iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
 
 	    EffectName = "particles/units/heroes/hero_hoodwink/hoodwink_sharpshooter_projectile.vpcf",
@@ -200,8 +213,6 @@ function modifier_hw_sharpshooter:OnCreated(kv)
 	self:PlayEffects2()
 	self:GetParent():StartGesture(ACT_DOTA_CHANNEL_ABILITY_6)
 end
-function modifier_hw_sharpshooter:OnRefresh(kv) end
-function modifier_hw_sharpshooter:OnRemoved() end
 function modifier_hw_sharpshooter:OnDestroy()
 	if not IsServer() then return end
 	local direction = self.current_dir
@@ -356,9 +367,11 @@ function modifier_hw_sharpshooter:PlayEffects3(seconds, half)
 	ParticleManager:SetParticleControl(effect_cast, 2, Vector(len, 0, 0))
 end
 function modifier_hw_sharpshooter:PlayEffects4(modifier)
-	local effect_cast = ParticleManager:CreateParticle("particles/items_fx/force_staff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
+	if modifier and self.caster:IsAlive() then
+		local effect_cast = ParticleManager:CreateParticle("particles/items_fx/force_staff.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
 
-	modifier:AddParticle(effect_cast, false, false, -1, false, false)
+		modifier:AddParticle(effect_cast, false, false, -1, false, false)
+	end
 
 	StopSoundOn("Hero_Hoodwink.Sharpshooter.Channel", self.caster)
 	EmitSoundOn("Hero_Hoodwink.Sharpshooter.Cast", self.caster)
