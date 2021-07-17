@@ -59,7 +59,7 @@ function modifier_titan_relic:GetModifierMoveSpeedBonus_Percentage()
 end
 function modifier_titan_relic:OnModifierAdded(keys)
 	local pass = true
-	if not keys.unit:IsIllusion() then
+	if not keys.unit:IsIllusion() and keys.unit:HasModifier("modifier_arc_warden_tempest_double") then
 		if self:GetAbility() and keys.unit and keys.unit:FindAllModifiers() then
 			if keys.unit:GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then
 				for _, modifier in pairs(keys.unit:FindAllModifiers()) do

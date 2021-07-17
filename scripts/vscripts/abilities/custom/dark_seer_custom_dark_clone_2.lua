@@ -7,16 +7,18 @@ dark_seer_custom_dark_clone_2 = class({})
 function dark_seer_custom_dark_clone_2:OnSpellStart()
     local caster = self:GetCaster()
     local target = caster:GetCursorCastTarget()
-    local spawn_location = caster:GetOrigin()
+    local spawn_location = caster:GetAbsOrigin()
     local duration = self:GetTalentSpecialValueFor("duration")
     local illusion_damage_incoming = self:GetSpecialValueFor("illusion_damage_incoming")
     local illusion_damage_outgoing = self:GetSpecialValueFor("illusion_damage_outgoing")
     local aghbuf = "modifier_item_ultimate_scepter_consumed"
+    if not target ~= nil and not IsValidEntity(target) then return end   
+    if not target:IsRealHero() then return end
    -- if caster:HasScepter() then
    --     illusion_damage_incoming = self:GetSpecialValueFor("scepter_illusion_damage_incoming")
     --end
 
-    local modifyEinherjar = function(illusion)
+    --[[local modifyEinherjar = function(illusion)
         -- set facing
         illusion:SetForwardVector(caster:GetForwardVector())
 
@@ -83,7 +85,7 @@ function dark_seer_custom_dark_clone_2:OnSpellStart()
                     incoming_damage = illusion_damage_incoming,
                 }
         )]]
-
+--[[ 
         illusion:AddNewModifier(caster, self, "modifier_death", {})
         illusion:AddNewModifier(caster, self, "modifier_arc_warden_tempest_double", {})
         illusion:AddNewModifier(caster, self, "modifier_kill", {duration = duration})
@@ -93,18 +95,116 @@ function dark_seer_custom_dark_clone_2:OnSpellStart()
         -- set health
         illusion:SetHealth(target:GetHealth())
         illusion:SetMana(target:GetMana())
-    end
+    end ]]
 
     -- Create unit
-    CreateUnitByNameAsync(
+    local illusion = CreateUnitByName(
             target:GetUnitName(), -- szUnitName
             spawn_location, -- vLocation,
             true, -- bFindClearSpace,
             caster, -- hNPCOwner,
             caster:GetPlayerOwner(), -- hUnitOwner,
-            caster:GetTeamNumber(), -- iTeamNumber
-            modifyEinherjar
-    )
+            caster:GetTeamNumber() -- iTeamNumber
+        )
+
+    --local illusions = CreateIllusions(caster, target, { duration = duration, outgoing_damage = illusion_damage_outgoing, incoming_damage = illusion_damage_incoming }, 1, 50, true, true )  
+    --local illusion = illusions[1]  
+    --illusion:SetAbsOrigin(spawn_location)
+	--FindClearSpaceForUnit(clone, spawn_location, false)
+    --illusion:SetForwardVector(caster:GetForwardVector())
+	illusion:SetControllableByPlayer(caster:GetPlayerOwnerID(), false)
+	illusion:AddNewModifier(caster, self, "modifier_arc_warden_tempest_double", {})
+    illusion:AddNewModifier(caster, self, "modifier_death", {})
+    illusion:AddNewModifier(caster, self, "modifier_kill", {duration = duration})
+    if caster:HasScepter() then
+        illusion:AddNewModifier( caster, self, aghbuf, {})
+    end
+    if caster:HasModifier("modifier_super_scepter") then
+        illusion:AddNewModifier( caster, self, "modifier_super_scepter", {})
+    end
+--[[     if caster:HasModifier("modifier_item_aghanims_shard") then
+        illusion:AddNewModifier( caster, self, "modifier_item_aghanims_shard", {})
+    end   ]]    
+       
+    --set health
+    illusion:SetHealth(target:GetHealth())
+    illusion:SetMana(target:GetMana())    
+    while illusion:GetLevel() < target:GetLevel() do
+        illusion:HeroLevelUp(false)
+    end     
+	illusion:SetAbilityPoints(-1)
+	for slot = 0, 8 do
+		local oldAbility = illusion:GetAbilityByIndex(slot)	
+		if oldAbility and oldAbility:GetAbilityName() ~= "dawnbreaker_luminosity" then
+			illusion:RemoveAbilityByHandle(oldAbility)	
+		end
+	end
+    --illusion:SetOwner(target)    
+    copy_items(target, illusion)
+    disable_inventory(illusion)
+
+    --if unit:HasModifier("modifier_spectre_einherjar_lua") then return end
+    local IllusionNotLearn = {
+		--["dark_willow_bedlam_lua"] = true,
+		["chen_custom_holy_persuasion"] = true,
+		["dark_seer_custom_dark_clone_2"] = true,
+		["rubick_spell_steal"] = true,
+		["arc_warden_tempest_double"] = true,
+		["dawnbreaker_luminosity"] = true,
+		["obs_replay"] = true,
+		["mjz_troll_warlord_battle_trance"] = true,
+		["mjz_troll_warlord_battle_trance_scepter"] = true,
+		["skeleton_king_reincarnation"] = true, 
+        ["mjz_skeleton_king_ghost"] = true,
+	};
+
+    local playerHero = target
+    local maxAbilities = playerHero:GetAbilityCount() - 1
+    local skip = 0.01
+    --print("illusion created")
+    for abilitySlot=0, maxAbilities do
+        skip = skip + 0.02
+        Timers:CreateTimer({
+            endTime = skip, 
+            callback = function()
+                local ability = playerHero:GetAbilityByIndex(abilitySlot)
+                if ability ~= nil then 
+                    local abilityLevel = ability:GetLevel()
+                    local abilityName = ability:GetAbilityName()
+                    if illusion and IllusionNotLearn[abilityName] ~= true and not illusion:HasAbility(abilityName) and not ability:IsAttributeBonus() then
+                        if illusion and abilityLevel > 0 then
+                            local illusionAbility = illusion:AddAbility(abilityName)
+                            illusionAbility:SetLevel(abilityLevel)
+                        end
+                    end
+                end
+            end
+        })		
+    end
+       
+--[[     local eslot = nil
+    for slot = 0, 5 do
+        -- remove anything in current slot
+        local iItem = illusion:GetItemInSlot(slot)
+        if iItem then
+            illusion:RemoveItem(illusion:GetItemInSlot(slot))
+        end
+
+        -- add item to slot
+        local item = target:GetItemInSlot(slot)
+        if item then
+            illusion:AddItemByName(item:GetName())
+
+            -- rearrange slot
+            if eslot and eslot ~= slot then
+                illusion:SwapItems(eslot, slot)
+            end
+        elseif not eslot then
+            eslot = slot
+        end
+    end  ]]
+    illusion:SetHealth(target:GetHealth())
+    illusion:SetMana(target:GetMana())
 
     -- Play sound effects
     local sound_cast = "Hero_Dark_Seer.Wall_of_Replica_Start"

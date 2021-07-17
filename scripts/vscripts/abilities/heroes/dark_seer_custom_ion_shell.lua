@@ -59,25 +59,25 @@ if IsServer() then
 	end
 
     function modifier_ion_shell_custom:OnIntervalThink()
-	local parent_location = self.parent:GetAbsOrigin()
-	self.damage_table.attacker = self.caster
-	
-	local units = FindUnitsInRadius(self.caster:GetTeamNumber(), parent_location, nil, self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, self.target_types, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
-	
-	for _,unit in ipairs(units) do
-		-- Damage the unit as long as the found unit is not the holder of the modifier
-		if unit ~= self.parent then
-			-- Play the damage particle
-			local particle = ParticleManager:CreateParticle(self.particle, PATTACH_POINT_FOLLOW, unit) 
-			ParticleManager:SetParticleControlEnt(particle, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent_location, true) 
-			ParticleManager:SetParticleControlEnt(particle, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)
-			ParticleManager:ReleaseParticleIndex(particle)
+		if IsValidEntity(self.parent) and IsValidEntity(self.caster) then
+			local parent_location = self.parent:GetAbsOrigin()
+			self.damage_table.attacker = self.caster
+			local units = FindUnitsInRadius(self.caster:GetTeamNumber(), parent_location, nil, self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, self.target_types, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
+			
+			for _,unit in ipairs(units) do
+				-- Damage the unit as long as the found unit is not the holder of the modifier
+				if unit ~= self.parent then
+					-- Play the damage particle
+					local particle = ParticleManager:CreateParticle(self.particle, PATTACH_POINT_FOLLOW, unit) 
+					ParticleManager:SetParticleControlEnt(particle, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent_location, true) 
+					ParticleManager:SetParticleControlEnt(particle, 1, unit, PATTACH_POINT_FOLLOW, "attach_hitloc", unit:GetAbsOrigin(), true)
+					ParticleManager:ReleaseParticleIndex(particle)
 
-			self.damage_table.victim = unit
-			ApplyDamage(self.damage_table)
-		end
-	end
-
+					self.damage_table.victim = unit
+					ApplyDamage(self.damage_table)
+				end
+			end
+		end	
 
     end
 end

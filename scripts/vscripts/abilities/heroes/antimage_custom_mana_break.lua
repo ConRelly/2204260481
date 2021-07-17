@@ -91,14 +91,16 @@ function modifier_antimage_custom_mana_break_buff:OnCreated()
 	if not parent:HasModifier("modifier_antimage_custom_mana_break_buff") then
 		parent:AddNewModifier(parent, ability, "modifier_antimage_custom_mana_break_buff", {})
 	end
-	if parent:IsIllusion() then
+	if parent:IsIllusion() or parent:HasModifier("modifier_arc_warden_tempest_double") then
 		local mod1 = "modifier_antimage_custom_mana_break_buff"
 		local owner = PlayerResource:GetSelectedHeroEntity(parent:GetPlayerOwnerID())
 		if owner then
 			if parent:HasModifier(mod1) then
 				local modifier1 = parent:FindModifierByName(mod1)
-				local modifier2 = owner:FindModifierByName(mod1)
-				modifier1:SetStackCount(modifier2:GetStackCount())
+				if owner:HasModifier(mod1) then
+					local modifier2 = owner:FindModifierByName(mod1)
+					modifier1:SetStackCount(modifier2:GetStackCount())
+				end	
 			end
 		end
 	end

@@ -302,7 +302,7 @@ function modifier_kingsbane_echo:DeclareFunctions() return {MODIFIER_EVENT_ON_AT
 function modifier_kingsbane_echo:OnAttackStart(keys)
 	local item = self:GetAbility()
 	local parent = self:GetParent()
-	if keys.attacker == parent and item and not parent:IsIllusion() and self:GetParent():FindAllModifiersByName(self:GetName())[1] == self and not self:GetParent():HasModifier("modifier_kingsbane_echo_cd") then
+	if keys.attacker == parent and item and not parent:IsIllusion() and self:GetParent():FindAllModifiersByName(self:GetName())[1] == self and not self:GetParent():HasModifier("modifier_kingsbane_echo_cd") and not self:GetParent():HasModifier("modifier_arc_warden_tempest_double") then
 --		item:UseResources(false,false,true)
 		parent:AddNewModifier(parent, item, "modifier_kingsbane_echo_haste", {})
 		if not keys.target:IsBuilding() and not keys.target:IsOther() then

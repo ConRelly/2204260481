@@ -85,7 +85,7 @@ function CRoshanSystem:Init()
 
     -- We create our own Roshan
     self:CreateRoshan()
-   
+    print("Nr of Players is "..self._playernr)
 end
 
 -- Returns Roshan
@@ -125,7 +125,7 @@ function CRoshanSystem:OnEntityKilled(tData)
         end
     end
 
-	local killedUnit = EntIndexToHScript(keys.entindex_killed)
+	local killedUnit = EntIndexToHScript(tData.entindex_killed)
     if (self._iNum >= 2) then
 		if (self._iNum % 2 == 0) then
 			self._RoshanXP_killer = self._RoshanXP_killer + 50

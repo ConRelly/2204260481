@@ -322,7 +322,7 @@ function modifier_mjz_doom_bringer_devour:GetModifierBonusStats_Strength() retur
 function modifier_mjz_doom_bringer_devour:OnCreated()
     if not IsServer() then return nil end
     local parent = self:GetParent()
-    if parent:IsIllusion() then
+    if parent:IsIllusion() or parent:HasModifier("modifier_arc_warden_tempest_double") then
         local owner = PlayerResource:GetSelectedHeroEntity(parent:GetPlayerOwnerID())
         if owner then       
             if parent:HasModifier("modifier_mjz_doom_bringer_devour") then

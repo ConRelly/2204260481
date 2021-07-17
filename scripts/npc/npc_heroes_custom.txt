@@ -199,9 +199,11 @@
 {
 
 	"Ability2"		"dark_seer_custom_ion_shell"
+	"Ability4"		"generic_hidden"
 	"Ability6"		"dark_seer_custom_dark_clone_2"
 	"Ability12"	 "special_bonus_cooldown_reduction_25"
 	"Ability13"	 "special_bonus_spell_amplify_25"
+	"Ability14"  "special_bonus_hp_800"
 	"Ability16"	 "special_bonus_unique_morphling_8"
 	"Ability17"		"dark_seer_custom_bonus_unique_2"
 	"AttributeIntelligenceGain"   "6.8"

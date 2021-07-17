@@ -88,15 +88,17 @@ function modifier_obs_replay:OnCreated()
 			mbuff:SetStackCount(stack)
 		end
 	end
-	if parent:IsIllusion() then
+	if parent:IsIllusion() or parent:HasModifier("modifier_arc_warden_tempest_double") then
 	-- print("ilusion")
 		local mod1 = "modifier_obs_replay"
 		local owner = PlayerResource:GetSelectedHeroEntity(parent:GetPlayerOwnerID())
 		if owner then	  
 			if parent:HasModifier(mod1) then
 				local modifier1 = parent:FindModifierByName(mod1)
-				local modifier2 = owner:FindModifierByName(mod1)
-				modifier1:SetStackCount(modifier2:GetStackCount())
+				if owner:HasModifier(mod1) then
+					local modifier2 = owner:FindModifierByName(mod1)
+					modifier1:SetStackCount(modifier2:GetStackCount())
+				end	
 			end
 		end
 	end
@@ -215,8 +217,10 @@ function modifier_replay_thinker:OnAbilityExecuted(keys)
 						extra_staks = extra_staks + 1
 					end
 					--local modifier1 = parent:FindModifierByName(mod1)
-					local modifier2 = owner:FindModifierByName(mod1)
-					modifier2:SetStackCount(modifier2:GetStackCount() + extra_staks)
+					if owner:HasModifier(mod1) then
+						local modifier2 = owner:FindModifierByName(mod1)
+						modifier2:SetStackCount(modifier2:GetStackCount() + extra_staks)
+					end	
 					self.allowcount = false
 				end
 			end
@@ -253,8 +257,10 @@ function modifier_replay_thinker:OnEnemyDied(hVictim, hKiller, kv)
 				if parent:HasModifier("modifier_underdog") then
 					neutral_kills = neutral_kills + 1
 				end
-				local modifier2 = owner:FindModifierByName(mod1)
-				modifier2:SetStackCount(modifier2:GetStackCount() + neutral_kills)
+				if owner:HasModifier(mod1) then	
+					local modifier2 = owner:FindModifierByName(mod1)
+					modifier2:SetStackCount(modifier2:GetStackCount() + neutral_kills)
+				end	
 			end
 		end
 	end

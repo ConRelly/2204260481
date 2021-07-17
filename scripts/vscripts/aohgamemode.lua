@@ -53,6 +53,7 @@ LinkLuaModifier("modifier_aegis_buff", "items/custom/item_aegis_lua", LUA_MODIFI
 LinkLuaModifier("modifier_phys", "modifiers/modifier_phys.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_bristleback_quill_spray_autocast6", "abilities/hero_bristleback/modifier_mjz_bristleback_quill_spray_autocast6.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_boss_hpbar", "abilities/boss_hpbar.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_boss_hpbar2", "abilities/boss_hpbar2.lua", LUA_MODIFIER_MOTION_NONE)
 
 if AOHGameMode == nil then
 	_G.AOHGameMode = class({})
@@ -256,7 +257,6 @@ function AOHGameMode:InitGameMode()
 	mHackGameMode:InitGameMode()
 	-- Init card points system
 	holdout_card_points:Init()
-	CustomGameEventManager:Send_ServerToAllClients("frostivus_begins", {})
 end
 
 
@@ -478,7 +478,7 @@ function AOHGameMode:InitVariables()
 			end
 		end
 		Timers:CreateTimer({
-			endTime = 2, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
+			endTime = 2,
 			callback = function()
 				self.starting_intems = true
 				print(self._playerNumber .. " starting players")
@@ -508,6 +508,7 @@ function AOHGameMode:InitVariables()
 		self._expRatio = self._expRatio / 1.35
 	end
 	--GameRules.GLOBAL_player_number = self._playerNumber	
+	CustomGameEventManager:Send_ServerToAllClients("frostivus_begins", {})
 end
 
 -- When game state changes set state in script
@@ -880,7 +881,7 @@ local IllusionNotLearn = {
 		["rubick_spell_steal"] = true,
 		["arc_warden_tempest_double"] = true,
 		["dawnbreaker_luminosity"] = true,
-		--["mjz_necrolyte_heartstopper_aura"] = true,
+		["obs_replay"] = true,
 		--["mjz_leshrac_pulse_nova"] = true,
 		--["custom_drow_ranger_trueshot"] = true,
 		--["ability_random_custom_gold"] = true,
@@ -908,34 +909,40 @@ function AOHGameMode:OnEntitySpawned(event)
 		unit:AddNewModifier(unit, nil, "modifier_generic_handler", {})
 		unit:AddNewModifier(unit, nil, "modifier_aegis_buff", {duration = 7})
 	end	
-	
-	if unit and unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS and (unit:IsIllusion() or unit:HasModifier("modifier_arc_warden_tempest_double")) then
-		local playerownerID = unit:GetPlayerOwnerID()
-		local player = PlayerResource:GetPlayer(playerownerID)
-		local playerHero = player:GetAssignedHero()
-		local maxAbilities = playerHero:GetAbilityCount() - 1
-		local skip = 0.01
-		--print("illusion created")
-		for abilitySlot=0, maxAbilities do
-			skip = skip + 0.02
-			Timers:CreateTimer({
-				endTime = skip, 
-				callback = function()
-					local ability = playerHero:GetAbilityByIndex(abilitySlot)
-					if ability ~= nil then 
-						local abilityLevel = ability:GetLevel()
-						local abilityName = ability:GetAbilityName()
-						if unit and IllusionNotLearn[abilityName] ~= true and not unit:HasAbility(abilityName) and not ability:IsAttributeBonus() then
-							if unit and abilityLevel > 0 then
-								local illusionAbility = unit:AddAbility(abilityName)
-								illusionAbility:SetLevel(abilityLevel)
+
+	Timers:CreateTimer({
+		endTime = 0.1, 
+		callback = function()
+			if unit and IsValidEntity(unit) and unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS and (unit:IsIllusion() or unit:HasModifier("modifier_arc_warden_tempest_double")) then
+				if unit:HasModifier("modifier_death") then return end
+				local playerownerID = unit:GetPlayerOwnerID()
+				local player = PlayerResource:GetPlayer(playerownerID)
+				local playerHero = player:GetAssignedHero()
+				local maxAbilities = playerHero:GetAbilityCount() - 1
+				local skip = 0.01
+				--print("illusion created")
+				for abilitySlot=0, maxAbilities do
+					skip = skip + 0.02
+					Timers:CreateTimer({
+						endTime = skip, 
+						callback = function()
+							local ability = playerHero:GetAbilityByIndex(abilitySlot)
+							if ability ~= nil then 
+								local abilityLevel = ability:GetLevel()
+								local abilityName = ability:GetAbilityName()
+								if unit and IllusionNotLearn[abilityName] ~= true and not unit:HasAbility(abilityName) and not ability:IsAttributeBonus() then
+									if unit and abilityLevel > 0 then
+										local illusionAbility = unit:AddAbility(abilityName)
+										illusionAbility:SetLevel(abilityLevel)
+									end
+								end
 							end
 						end
-					end
+					})		
 				end
-			})		
+			end
 		end
-	end
+		})		
 	--[[Timers:CreateTimer({
 		endTime = 0.1, 
 		callback = function()
@@ -968,7 +975,24 @@ function AOHGameMode:OnEntitySpawned(event)
 			end
 		end
 	})]]
-	
+	local custom_hp_bar = {
+		["npc_dota_boss_void_spirit"] = true,
+		["npc_boss_skeleton_king_angry_new"] = true,
+		["npc_boss_skeleton_king_angry"] = true,
+		["npc_boss_skeleton_king_ultimate"] = true,
+		["npc_boss_juggernaut_2"] = true,
+		["npc_dota_creature_siltbreaker_2"] = true,
+		["npc_dota_boss_aghanim"] = true,
+		["npc_boss_randomstuff_aiolos_demo"] = true,
+		["npc_boss_juggernaut_3"] = true,
+		["npc_dota_boss_void_spirit_2"] = true, 
+		["npc_dota_creature_siltbreaker"] = true,
+		["npc_boss_guesstuff_Moran"] = true,
+		["npc_boss_randomstuff_aiolos"] = true,
+		--["npc_boss_skeletal_archer_new"] = true,
+
+	};	
+
 
 	if unit and unit:GetTeamNumber() == DOTA_TEAM_BADGUYS and unit:GetUnitName() ~= "npc_dota_thinker" then
 		if self._endlessMode_started then
@@ -996,8 +1020,8 @@ function AOHGameMode:OnEntitySpawned(event)
 			end	
 		end
 	end
-	if unit:GetUnitName() == "npc_boss_skeletal_archer_new" then
---		unit:AddNewModifier(unit, nil, "modifier_boss_hpbar", {})
+	if custom_hp_bar[unit:GetUnitName()] == true then
+		unit:AddNewModifier(unit, nil, "modifier_boss_hpbar2", {})
 	end	
 	
 	if unit:GetUnitName() == "npc_dota_boss_aghanim" then

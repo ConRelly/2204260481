@@ -144,16 +144,17 @@ function modifier_class_bluff:OnCreated()
     if not IsServer() then return end
     local parent = self:GetParent()
     local ability = self:GetAbility()
-    if parent:IsIllusion() then     
+    if parent:IsIllusion() or parent:HasModifier("modifier_arc_warden_tempest_double") then     
         local mod1 = "modifier_mjz_lifestealer_poison_sting_buff"
         -- print("ilusion")
         local owner = PlayerResource:GetSelectedHeroEntity(parent:GetPlayerOwnerID())
         if owner then       
             if parent:HasModifier(mod1) then
                 local modifier1 = parent:FindModifierByName(mod1)
-                local modifier2 = owner:FindModifierByName(mod1)
-                modifier1:SetStackCount(modifier2:GetStackCount())
-               -- print("lunastuf")
+                if owner:HasModifier(mod1) then
+                    local modifier2 = owner:FindModifierByName(mod1)
+                    modifier1:SetStackCount(modifier2:GetStackCount())
+                end    
             end    
         end    
     end 

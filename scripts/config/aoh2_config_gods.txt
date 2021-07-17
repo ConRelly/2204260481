@@ -98,7 +98,7 @@
 				//"NPCName"               "npc_dota_boss_void_spirit"
 				//"NPCName"               "npc_dota_boss_aghanim"
 				//"NPCName"               "npc_boss_guesstuff_Moran"
-				//"NPCName"               "npc_boss_nyx"
+				//"NPCName"               "npc_boss_skeleton_king_angry_new"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"20"
@@ -3400,7 +3400,7 @@
 			"a"
 			{
 				"NPCName"				"npc_dota_creature_snowball_tuskar_2"
-				"TotalUnitsToSpawn"		"4"
+				"TotalUnitsToSpawn"		"6"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"10"
 			}
@@ -3433,7 +3433,7 @@
 	{
 		"1" // Preparation			骷髅弓箭手
 		{
-			"Title"						"Prepare For Next Fight , Here's some free xp and gold"
+			"Title"						"You are entering Gods territory, Here's some free xp and gold to prepare for next round"
 			"MaxGold"					"8000"
 			"BagCount"					"2"
 			"BagVariance"				"50"

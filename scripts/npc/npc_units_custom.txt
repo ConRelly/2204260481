@@ -10605,7 +10605,7 @@
 	//"Ability6"				  "siltbreaker_mind_control"
 	//"Ability7"				  "special_bonus_spell_block_18"
 	//"Ability8"				  "aghanim_empty_spell3"
-	"Ability10"					"boss_hpbar"
+	//"Ability10"					"boss_hpbar"
 
 	
 	"ArmorPhysical"				"3"			// Physical protection.
@@ -11689,12 +11689,12 @@
 		//"Ability16"				 "troll_warlord_fervor"
 		"Ability17"				 "lich_custom_cold_soul2"
 
-		"ArmorPhysical"				"145"
+		"ArmorPhysical"				"185"
 		"MagicalResistance"			"90"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"1800"
-		"AttackDamageMax"			"9000"
+		"AttackDamageMax"			"15000"
 		"AttackRate"				"1.0" //"1.5"
 		"AttackAnimationPoint"		"0.56"
 		"BaseAttackSpeed"		   "450"
@@ -13064,12 +13064,12 @@
 		//"Ability17"				 "troll_warlord_fervor"
 		"Ability18"				 "lich_custom_cold_soul2"
 
-		"ArmorPhysical"				"195"
-		"MagicalResistance"			"89"
+		"ArmorPhysical"				"295"
+		"MagicalResistance"			"92"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"800"
-		"AttackDamageMax"			"28000"
+		"AttackDamageMax"			"39000"
 		"AttackRate"				"0.9" //"1.5"
 		"AttackAnimationPoint"		"0.56"
 		"AttackAcquisitionRange"	"4800"

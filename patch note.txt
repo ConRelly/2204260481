@@ -1135,30 +1135,29 @@ New: 3 Quests with NFTs as bonus rewards, you can find them on discord(link on w
 
 
 
+* Removed a lot of lag(for slower PC's) in the late game by adding a custom HP bar for high hp bosses(rendering a bar for every 250hp was lagging like hell)
 * Sharpshooter (Hoodwink) has been reworked
 * Added Aghanim's Shard effect for Earthshock (Ursa)
-* Frost Arrows (Drow Ranger) Frostbite interval changed from 0.8/0.75/0.7/0.65/0.6/0.55/0.5 to 1/0.9/0.8/0.7/0.6/0.5/0.4
+* Frost Arrows (Drow Ranger) Frostbite interval changed from 0.8(max)--0.5(min) to 1--0.4
 * Vengeance (Vengeful Spirit) Attack Range Bonus for melee heroes is halved
 * Self-Damage from Cursed Shovel doesn't amplifiable
 * Cursed Shovel chances changed: Random Attribute - from 60% to 50%, Aghanim's Fragment - from 10% to 20%
 * Aghanim's Fragment is placed in a neutral slot
 * Consumable Aegis now shareable
 * Killcam is disabled because it is not needed
-* Changed Wild Axes (Beastmaster), will deal more dmg late game and can be autocasted even when moving or during normal stuns(instant cast), but will fly slower early game and not work anymore with mimic mace.
+* Rebalanced and Changed Wild Axes (Beastmaster).
 * OBS will not replay Wild Axes actions (was crashing the server)
 * Changed the order of using invulnerability/reincarnation: Abilities/Talents -> Undying Helm -> Consumable Aegis -> Gold Ring -> Aegis of Infinity
 * Gold Ring cooldown increased from 40 to 50 seconds
 * Gold Ring: When reused, it reduces the cooldown by 10 seconds and refund 33% of the item cost
+* Fix morph and darkseer ult crash (darkseer ult will replicate some stacks too)
 * Fix: Doom Q, passive Blast Staff effect, some sniper errors.
-* Added Aghanim's Fragment to Roshan's drop list. Chance for an additional fragment will increase every 2 kills and cannot exceed (number of kills / 2). After 6 kills, at least 1 fragment is given
-* After Roshan's death, experience will be shared among all. The killer will get additional experience
+* Added Aghanim's Fragment to Roshan's drop list. The chance for an additional fragment will increase every 2 kills and cannot exceed (number of kills / 2). After 6 kills, at least 1 fragment is given
+* After Roshan's death, the experience will be shared among all. The killer will get additional experience
 * Some descriptions have been changed
 * Damage Metter now goes from 1000k to 1M and from 1000M to 1B
-* Added a new command to submit for registering your crypto wallet for rewards: "-register yourwallet"
-* Quests bonus(nfts) rewards does not require video recording anymore, but you need to be on a dedicated server(no local host)
-
-
- (Changed Endless Wisdom vision effect)
+* Added a new command to submit for registering your crypto wallet for rewards: "-register yourwallet" (you can find other commands in the description)
+* Quests bonus(nfts) rewards do not require video recording anymore, but you need to be on a dedicated server(no localhost), New Quest, and better rewards for some other quests.
 
 
 

@@ -31,15 +31,17 @@ function modifier_back_in_time:OnCreated()
 		end 
 	end
 	
-	if parent:IsIllusion() then
+	if parent:IsIllusion() or parent:HasModifier("modifier_arc_warden_tempest_double") then
 		local mod1 = "modifier_back_in_time_buff"
 		-- print("ilusion")
 		local owner = PlayerResource:GetSelectedHeroEntity(parent:GetPlayerOwnerID())
 		if owner then			 
 			if parent:HasModifier(mod1) then
 				local modifier1 = parent:FindModifierByName(mod1)
-				local modifier2 = owner:FindModifierByName(mod1)
-				modifier1:SetStackCount(modifier2:GetStackCount())
+				if owner:HasModifier(mod1) then
+					local modifier2 = owner:FindModifierByName(mod1)
+					modifier1:SetStackCount(modifier2:GetStackCount())
+				end	
 				--print("")
 			end
 		end

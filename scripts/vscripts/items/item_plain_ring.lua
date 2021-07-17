@@ -14,9 +14,8 @@ modifier_item_plain_ring_aura = class({})
 function modifier_item_plain_ring_aura:OnCreated(keys)
 	if IsServer() then
 		local parent = self:GetParent()
-
 		if parent then
-			if not parent:IsIllusion() then
+			if not parent:IsIllusion() or not parent:HasModifier("modifier_arc_warden_tempest_double") then
 				parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_plain_ring", {})
 				EmitSoundOn("Hero_Antimage.Counterspell.Absorb", parent)
 			end

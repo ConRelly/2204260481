@@ -51,16 +51,18 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local parent = self:GetParent()
 		self:SetStackCount(1)	
-		if parent:IsIllusion() then
+		if parent:IsIllusion() or parent:HasModifier("modifier_arc_warden_tempest_double") then
 			local mod1 = "modifier_nevermore_custom_necromastery"
 			print("ilusion SF")
 			local owner = PlayerResource:GetSelectedHeroEntity(parent:GetPlayerOwnerID())
 			if owner then       
 				if parent:HasModifier(mod1) then
 					local modifier1 = parent:FindModifierByName(mod1)
-					local modifier2 = owner:FindModifierByName(mod1)
-					modifier1:SetStackCount(modifier2:GetStackCount())
-					print("illusion nevermore1")
+					if owner:HasModifier(mod1) then
+						local modifier2 = owner:FindModifierByName(mod1)
+						modifier1:SetStackCount(modifier2:GetStackCount())
+					end	
+					--print("illusion nevermore1")
 				end    
 			end    
 		end
@@ -167,7 +169,7 @@ function modifier_nevermore_custom_necromastery_buff:OnCreated()
 		local caster = self:GetCaster()
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
-		if parent:IsIllusion() then
+		if parent:IsIllusion() or parent:HasModifier("modifier_arc_warden_tempest_double") then
 			
 			local mod1 = "modifier_nevermore_custom_necromastery_buff"
 		-- print("ilusion")
@@ -175,8 +177,10 @@ function modifier_nevermore_custom_necromastery_buff:OnCreated()
 			if owner then       
 				if parent:HasModifier(mod1) then
 					local modifier1 = parent:FindModifierByName(mod1)
-					local modifier2 = owner:FindModifierByName(mod1)
-					modifier1:SetStackCount(modifier2:GetStackCount())
+					if owner:HasModifier(mod1) then
+						local modifier2 = owner:FindModifierByName(mod1)
+						modifier1:SetStackCount(modifier2:GetStackCount())
+					end	
 					--print("illusion nevermore2")
 				end    
 			end    

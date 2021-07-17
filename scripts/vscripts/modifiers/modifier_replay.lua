@@ -108,8 +108,10 @@ function modifier_replay_thinker:OnAbilityExecuted(keys)
 						extra_staks = extra_staks + 1
 					end	
 					--local modifier1 = parent:FindModifierByName(mod1)
-					local modifier2 = owner:FindModifierByName(mod1)
-					modifier2:SetStackCount(modifier2:GetStackCount() + extra_staks )
+					if owner:HasModifier(mod1) then
+						local modifier2 = owner:FindModifierByName(mod1)
+						modifier2:SetStackCount(modifier2:GetStackCount() + extra_staks )
+					end	
 					self.allowcount = false
 				end    
 			end    

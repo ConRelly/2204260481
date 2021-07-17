@@ -261,17 +261,19 @@ function generic_target_random(keys)
 	local target = ai_random_alive_hero()
 	local delay = keys.delay
 	local spell = caster:FindAbilityByName(spells_target[keys.ability_index])
-	target:AddNewModifier(caster, ability, "modifier_target_delay", {duration = delay})
-	Timers:CreateTimer(
-		delay - spell:GetCastPoint(), 
-		function()
-			if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil then
-				return 0.5
+	if target ~= nil and IsValidEntity(target) and target:IsAlive() then
+		target:AddNewModifier(caster, ability, "modifier_target_delay", {duration = delay})
+		Timers:CreateTimer(
+			delay - spell:GetCastPoint(), 
+			function()
+				if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil then
+					return 0.5
+				end
+				spell:EndCooldown()
+				caster:CastAbilityOnTarget(target, spell, -1)
 			end
-			spell:EndCooldown()
-			caster:CastAbilityOnTarget(target, spell, -1)
-		end
-	)
+		)
+	end	
 end
 
 LinkLuaModifier("modifier_target_delay", "abilities/other/generic.lua", LUA_MODIFIER_MOTION_NONE)

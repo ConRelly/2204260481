@@ -21,6 +21,7 @@ function modifier_owner_buff:OnCreated()
 				local abillity = self:GetAbility()
 				local parent = self:GetParent()
 				local owner = parent:GetOwner()
+				if not IsValidEntity(owner) then return end 
 				--print(owner)
 				local owner_attack = owner:GetAverageTrueAttackDamage(owner) * 1.5
 				local owner_spell = owner:GetSpellAmplification(false) * 5000

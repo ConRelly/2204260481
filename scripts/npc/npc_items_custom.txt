@@ -16938,22 +16938,22 @@
 		}
 	}
 }
-	"item_recipe_random_get_ability_spell"
+"item_recipe_random_get_ability_spell"
+{
+	//"ID" 		 "9312" 
+	"Model"							"models/props_gameplay/recipe.vmdl"
+	"BaseClass"						"item_datadriven"
+	"AbilityTextureName"			"item_recipe"
+	"ItemCost"						"1000"
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_random_get_ability_spell"
+	"ItemRequirements"
 	{
-		//"ID" 		 "9312" 
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1000"
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_random_get_ability_spell"
-		"ItemRequirements"
-		{
-			"01"						"item_random_get_ability"
-			//"02"						"item_random_get_ability_onlvl;item_random_get_ability_onlvl;item_random_get_ability_onlvl"
-			"02"						"item_random_get_ability3"
-		}
+		"01"						"item_random_get_ability"
+		//"02"						"item_random_get_ability_onlvl;item_random_get_ability_onlvl;item_random_get_ability_onlvl"
+		"02"						"item_random_get_ability3"
 	}
+}
 "item_random_get_ability_spell"
 {
 	"BaseClass"			 		"item_datadriven"
