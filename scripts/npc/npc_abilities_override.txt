@@ -20633,12 +20633,13 @@
 		"AbilityCooldown"				"7.0"
 		"AbilitySharedCooldown"			"urn"
 		"ItemRequiresCharges"			"0"
-		"ItemDisplayCharges"			"0"
+		"ItemDisplayCharges"			"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemInitialCharges"			"999999"
+		"ItemInitialCharges"			"99999"
 		"ItemHideCharges"				"1"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"1"
+		"ItemSellable"                  "0"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"sv;spirit vessel"
@@ -20649,7 +20650,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"4500"
+				"bonus_health"			"4501"
 			}
 			"02"
 			{
@@ -20674,12 +20675,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"soul_initial_charge"	"99999"
+				"soul_initial_charge"	"1"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"soul_additional_charges"	"1"
+				"soul_additional_charges"	"0"
 			}
 			"08"
 			{
@@ -20722,7 +20723,8 @@
 		"ItemRequiresCharges"			"0"
 		"ItemDisplayCharges"			"0"
 		"ItemHideCharges"				"1"
-		"ItemInitialCharges"			"999999"
+		"ItemInitialCharges"			"1"
+		"ItemSellable"                  "0"
 		"AbilityManaCost"				"80"
 		"AbilitySpecial"
 		{
