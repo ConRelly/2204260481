@@ -16264,20 +16264,33 @@
 	}			
 	"spirit_breaker_charge_of_darkness"
 	{
-		"LevelsBetweenUpgrades"		 "4"
-		"AbilityCastPoint"				"0.10"
+		"MaxLevel"					"7"
+		"LevelsBetweenUpgrades"		"5"
+		"AbilityCastPoint"			"0.10"
+		"AbilityCooldown"			"17 16 15 14 13 12 11"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movement_speed"		"325 875 1225 2675"
+				"movement_speed"		"200 350 550 800 1100 1500 2000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bash_radius"			"300 350 400 450 500 550 600"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"scepter_cooldown"		"7"
+				"RequiresScepter"		"1"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"scepter_speed"		"950"
-				"RequiresScepter"			"1"
+				"scepter_speed"			"1000"
+				"RequiresScepter"		"1"
 			}
 		}
 	}
@@ -20610,6 +20623,7 @@
 // Recipe: Spirit Vessel
 	"item_recipe_spirit_vessel"
 	{
+		"ItemPurchasable"				"0"
 		"ID"							"266"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"ItemCost"						"1000"
@@ -20625,6 +20639,7 @@
 // Spirit Vessel
 	"item_spirit_vessel"
 	{
+		"ItemPurchasable"				"0"
 		"ID"							"267"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
@@ -20713,11 +20728,13 @@
 // Recipe: Urn of Shadows
 	"item_recipe_urn_of_shadows"
 	{
+		"ItemPurchasable"				"0"
 		"ItemCost"						"810"	
 	}
 // Urn of Shadows
 	"item_urn_of_shadows"
 	{
+		"ItemPurchasable"				"0"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityCooldown"				"16.0"
 		"ItemRequiresCharges"			"0"

@@ -61,7 +61,14 @@ if IsServer() then
 			ability = self,
 			damage_flags = DOTA_DAMAGE_FLAG_NONE,
 		}
-		if caster:HasShard() then point = position sound_point = position else point = target:GetOrigin() sound_point = target end
+		if caster:HasShard() then
+			point = position
+			sound_point = position
+			AddFOWViewer(self:GetCaster():GetTeamNumber(), position, self:GetSpecialValueFor("radius"), 1, false)
+		else
+			point = target:GetOrigin()
+			sound_point = target
+		end
 
 		targets = FindUnitsInRadius(caster:GetTeamNumber(), point, nil, search, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, 0, false)
 

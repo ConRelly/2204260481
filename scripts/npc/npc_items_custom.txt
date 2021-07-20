@@ -35354,4 +35354,163 @@
 		}
 	}
 
+// Urn of Shadows
+	"item_cus_urn_of_shadows"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/urn_of_life.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"urn_of_shadows"
+		"ItemPurchasable"				"1"
+		"ItemKillable"					"0"
+		"ItemSellable"					"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"AbilityCastRange"				"950"
+		"AbilityCooldown"				"16"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"urn"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"urn of shadows"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_regen"			"2"
+			}
+			"2"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"all_atr"				"4"
+			}
+			"3"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"					"2"
+			}
+			"4"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"6"
+			}
+			"5"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"soul_heal_amount"		"60"
+			}
+			"6"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"soul_damage_amount"	"60"
+			}
+		}
+	}
+// Recipe: Urn of Shadows
+	"item_recipe_cus_urn_of_shadows"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"810"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_cus_urn_of_shadows"
+		"ItemRequirements"
+		{
+			"01"						"item_sobi_mask;item_circlet;item_ring_of_protection"
+		}
+	}
+
+// Spirit Vessel
+	"item_cus_spirit_vessel"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/urn_of_life.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"spirit_vessel"
+		"ItemPurchasable"				"1"
+		"ItemKillable"					"0"
+		"ItemSellable"					"1"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"AbilityCastRange"				"1850"
+		"AbilityCooldown"				"7"
+		"AbilityManaCost"				"0"
+		"AbilitySharedCooldown"			"urn"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"sv;spirit vessel"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hp"					"4501"
+			}
+			"2"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_regen"			"150"
+			}
+			"3"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"all_atr"				"350"
+			}
+			"4"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor"					"30"
+			}
+			"5"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"8"
+			}
+			"6"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"soul_heal_amount"		"2420"
+			}
+			"7"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"soul_damage_amount"	"2420"
+			}
+			"8"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"enemy_hp_drain"		"2"
+			}
+			"9"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"hp_regen_reduction_enemy"	"60"
+			}
+		}
+	}
+// Recipe: Spirit Vessel
+	"item_recipe_cus_spirit_vessel"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"1000"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_cus_spirit_vessel"
+		"ItemRequirements"
+		{
+			"01"						"item_cus_urn_of_shadows;item_dark_skadi;item_health_bag_2"
+		}
+	}
+
 }

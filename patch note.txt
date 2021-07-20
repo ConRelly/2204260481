@@ -1161,6 +1161,18 @@ New: 3 Quests with NFTs as bonus rewards, you can find them on discord(link on w
 
 
 
+* Added new memebility for Spirit Breaker
+* Charge of Darkness (Spirit Breaker): Numbers rescaled and the level is increased
+* Lucent Beam (Luna): Aghanim's Shard: The ability will give an vision in AOE
+* Dark Clone (Dark Seer): "Corpses" no longer remain
+* Cursed Shovel: When excavated the Tome of Knowledge, the Tome's cooldown will be refreshed
+* Urn of Shadows/Spirit Vessel: Removed the need for charges
+* (Probably) Fixed multiple Trusty Shovels
+* Fixed Urn of Shadows/Spirit Vessel sell gold cost
+* Fixed Greevil's Greed (Alchemist) OVER9000 gold bug
+
+
+
 
 *Update patch notes16 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601

@@ -99,5 +99,8 @@ function kill_illusion(illusion)
     if not illusion:IsIllusion() then
         illusion:MakeIllusion()
     end
+	Timers:CreateTimer(2, function()
+		illusion:RemoveSelf()
+	end)
     illusion:ForceKill(false)
 end

@@ -199,11 +199,11 @@ function item_vessel_of_the_souls:OnSpellStart()
 	local base_cd = self:GetSpecialValueFor("base_cooldown")
 	self:StartCooldown(base_cd)
     if target:GetTeam() == caster:GetTeam() then
-		target:AddNewModifier(target, self, "modifier_vessel_of_the_souls_buff", {duration = duration})
+		target:AddNewModifier(caster, self, "modifier_vessel_of_the_souls_buff", {duration = duration})
 		target:EmitSound("DOTA_Item.SpiritVessel.Target.Ally")
 		target:Purge(false, true, false, false, false)
     else
-        target:AddNewModifier(target, self, "modifier_vessel_of_the_souls_debuff", {duration = duration * (1 - target:GetStatusResistance())})
+        target:AddNewModifier(caster, self, "modifier_vessel_of_the_souls_debuff", {duration = duration * (1 - target:GetStatusResistance())})
 		target:EmitSound("DOTA_Item.SpiritVessel.Target.Enemy")
     end
 end
@@ -299,3 +299,207 @@ function modifier_vessel_of_the_souls_debuff:GetModifierHPRegenAmplify_Percentag
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("debuff_hp_regen_red") * (-1) end
 end
 function modifier_vessel_of_the_souls_debuff:OnTooltip() return self:GetAbility():GetSpecialValueFor("dpt") end
+
+
+
+
+
+
+
+
+
+
+
+--------------------
+-- Urn of Shadows --
+--------------------
+LinkLuaModifier("modifier_cus_urn_of_shadows", "items/urn_of_life.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_cus_urn_of_shadows_buff", "items/urn_of_life.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_cus_urn_of_shadows_debuff", "items/urn_of_life.lua", LUA_MODIFIER_MOTION_NONE)
+item_cus_urn_of_shadows = class({})
+function item_cus_urn_of_shadows:GetIntrinsicModifierName() return "modifier_cus_urn_of_shadows" end
+function item_cus_urn_of_shadows:OnSpellStart()
+	local target = self:GetCursorTarget()
+	local caster = self:GetCaster()
+	local duration = self:GetSpecialValueFor("duration")
+	target:EmitSound("DOTA_Item.UrnOfShadows.Activate")
+    if target:GetTeam() == caster:GetTeam() then
+		target:AddNewModifier(caster, self, "modifier_cus_urn_of_shadows_buff", {duration = duration})
+    else
+        target:AddNewModifier(caster, self, "modifier_cus_urn_of_shadows_debuff", {duration = duration * (1 - target:GetStatusResistance())})
+    end
+end
+
+modifier_cus_urn_of_shadows = class({})
+function modifier_cus_urn_of_shadows:IsHidden() return true end
+function modifier_cus_urn_of_shadows:IsPurgable() return false end
+function modifier_cus_urn_of_shadows:RemoveOnDeath() return false end
+function modifier_cus_urn_of_shadows:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+function modifier_cus_urn_of_shadows:OnCreated()
+	if IsServer() then if not self:GetAbility() then self:Destroy() end end
+end
+function modifier_cus_urn_of_shadows:DeclareFunctions()
+	return {MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS}
+end
+function modifier_cus_urn_of_shadows:GetModifierConstantManaRegen()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana_regen") end
+end
+function modifier_cus_urn_of_shadows:GetModifierBonusStats_Strength()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("all_atr") end
+end
+function modifier_cus_urn_of_shadows:GetModifierBonusStats_Agility()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("all_atr") end
+end
+function modifier_cus_urn_of_shadows:GetModifierBonusStats_Intellect()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("all_atr") end
+end
+function modifier_cus_urn_of_shadows:GetModifierPhysicalArmorBonus()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("armor") end
+end
+
+-------------------------
+-- Urn of Shadows Buff --
+-------------------------
+modifier_cus_urn_of_shadows_buff = class({})
+function modifier_cus_urn_of_shadows_buff:IsHidden() return false end
+function modifier_cus_urn_of_shadows_buff:IsDebuff() return false end
+function modifier_cus_urn_of_shadows_buff:IsPurgable() return true end
+function modifier_cus_urn_of_shadows_buff:GetTexture() return "urn_of_shadows" end
+function modifier_cus_urn_of_shadows_buff:GetEffectName() return "particles/items2_fx/urn_of_shadows_heal.vpcf" end
+function modifier_cus_urn_of_shadows_buff:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
+function modifier_cus_urn_of_shadows_buff:OnCreated()
+	if IsServer() then if not self:GetAbility() then self:Destroy() end end
+end
+function modifier_cus_urn_of_shadows_buff:DeclareFunctions()
+	return {MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT}
+end
+function modifier_cus_urn_of_shadows_buff:GetModifierConstantHealthRegen()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("soul_heal_amount") end
+end
+
+---------------------------
+-- Urn of Shadows Debuff --
+---------------------------
+modifier_cus_urn_of_shadows_debuff = class({})
+function modifier_cus_urn_of_shadows_debuff:IsHidden() return false end
+function modifier_cus_urn_of_shadows_debuff:IsDebuff() return true end
+function modifier_cus_urn_of_shadows_debuff:IsPurgable() return true end
+function modifier_cus_urn_of_shadows_debuff:GetTexture() return "urn_of_shadows" end
+function modifier_cus_urn_of_shadows_debuff:GetEffectName() return "particles/items2_fx/urn_of_shadows_damage.vpcf" end
+function modifier_cus_urn_of_shadows_debuff:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
+function modifier_cus_urn_of_shadows_debuff:OnCreated()
+	if IsServer() then if not self:GetAbility() then self:Destroy() end
+		self.damage = self:GetAbility():GetSpecialValueFor("soul_damage_amount")
+		self:StartIntervalThink(1)
+	end
+end
+function modifier_cus_urn_of_shadows_debuff:OnIntervalThink()
+	ApplyDamage({victim = self:GetParent(), attacker = self:GetCaster(), ability = self:GetAbility(), damage = self.damage, damage_type = DAMAGE_TYPE_MAGICAL})
+end
+function modifier_cus_urn_of_shadows_debuff:DeclareFunctions()
+	return {MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_TOOLTIP}
+end
+function modifier_cus_urn_of_shadows_debuff:GetModifierHPRegenAmplify_Percentage()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp_regen_reduction_enemy") * (-1) end
+end
+function modifier_cus_urn_of_shadows_debuff:OnTooltip() return self:GetAbility():GetSpecialValueFor("soul_damage_amount") end
+
+
+-------------------
+-- Spirit Vessel --
+-------------------
+LinkLuaModifier("modifier_cus_spirit_vessel", "items/urn_of_life.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_cus_spirit_vessel_buff", "items/urn_of_life.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_cus_spirit_vessel_debuff", "items/urn_of_life.lua", LUA_MODIFIER_MOTION_NONE)
+item_cus_spirit_vessel = class({})
+function item_cus_spirit_vessel:GetIntrinsicModifierName() return "modifier_cus_spirit_vessel" end
+function item_cus_spirit_vessel:OnSpellStart()
+	local target = self:GetCursorTarget()
+	local caster = self:GetCaster()
+	local duration = self:GetSpecialValueFor("duration")
+    if target:GetTeam() == caster:GetTeam() then
+		target:AddNewModifier(caster, self, "modifier_cus_spirit_vessel_buff", {duration = duration})
+		target:EmitSound("DOTA_Item.SpiritVessel.Target.Ally")
+    else
+        target:AddNewModifier(caster, self, "modifier_cus_spirit_vessel_debuff", {duration = duration * (1 - target:GetStatusResistance())})
+		target:EmitSound("DOTA_Item.SpiritVessel.Target.Enemy")
+    end
+end
+
+modifier_cus_spirit_vessel = class({})
+function modifier_cus_spirit_vessel:IsHidden() return true end
+function modifier_cus_spirit_vessel:IsPurgable() return false end
+function modifier_cus_spirit_vessel:RemoveOnDeath() return false end
+function modifier_cus_spirit_vessel:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+function modifier_cus_spirit_vessel:OnCreated()
+	if IsServer() then if not self:GetAbility() then self:Destroy() end end
+end
+function modifier_cus_spirit_vessel:DeclareFunctions()
+	return {MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS}
+end
+function modifier_cus_spirit_vessel:GetModifierHealthBonus()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp") end
+end
+function modifier_cus_spirit_vessel:GetModifierConstantManaRegen()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana_regen") end
+end
+function modifier_cus_spirit_vessel:GetModifierBonusStats_Strength()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("all_atr") end
+end
+function modifier_cus_spirit_vessel:GetModifierBonusStats_Agility()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("all_atr") end
+end
+function modifier_cus_spirit_vessel:GetModifierBonusStats_Intellect()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("all_atr") end
+end
+function modifier_cus_spirit_vessel:GetModifierPhysicalArmorBonus()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("armor") end
+end
+
+------------------------
+-- Spirit Vessel Buff --
+------------------------
+modifier_cus_spirit_vessel_buff = class({})
+function modifier_cus_spirit_vessel_buff:IsHidden() return false end
+function modifier_cus_spirit_vessel_buff:IsDebuff() return false end
+function modifier_cus_spirit_vessel_buff:IsPurgable() return true end
+function modifier_cus_spirit_vessel_buff:GetTexture() return "spirit_vessel" end
+function modifier_cus_spirit_vessel_buff:GetEffectName() return "particles/items4_fx/spirit_vessel_heal.vpcf" end
+function modifier_cus_spirit_vessel_buff:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
+function modifier_cus_spirit_vessel_buff:OnCreated()
+	if IsServer() then if not self:GetAbility() then self:Destroy() end end
+end
+function modifier_cus_spirit_vessel_buff:DeclareFunctions()
+	return {MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT}
+end
+function modifier_cus_spirit_vessel_buff:GetModifierConstantHealthRegen()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("soul_heal_amount") end
+end
+
+--------------------------
+-- Spirit Vessel Debuff --
+--------------------------
+modifier_cus_spirit_vessel_debuff = class({})
+function modifier_cus_spirit_vessel_debuff:IsHidden() return false end
+function modifier_cus_spirit_vessel_debuff:IsDebuff() return true end
+function modifier_cus_spirit_vessel_debuff:IsPurgable() return true end
+function modifier_cus_spirit_vessel_debuff:GetTexture() return "spirit_vessel" end
+function modifier_cus_spirit_vessel_debuff:GetEffectName() return "particles/items4_fx/spirit_vessel_damage.vpcf" end
+function modifier_cus_spirit_vessel_debuff:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
+function modifier_cus_spirit_vessel_debuff:OnCreated()
+	if IsServer() then if not self:GetAbility() then self:Destroy() end
+		self.damage = (self:GetAbility():GetSpecialValueFor("soul_damage_amount") + (self:GetParent():GetMaxHealth() * self:GetAbility():GetSpecialValueFor("enemy_hp_drain") / 100))
+		self:StartIntervalThink(1)
+	end
+end
+function modifier_cus_spirit_vessel_debuff:OnIntervalThink()
+	ApplyDamage({victim = self:GetParent(), attacker = self:GetCaster(), ability = self:GetAbility(), damage = self.damage, damage_type = DAMAGE_TYPE_MAGICAL})
+end
+function modifier_cus_spirit_vessel_debuff:DeclareFunctions()
+	return {MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_TOOLTIP, MODIFIER_PROPERTY_TOOLTIP2}
+end
+function modifier_cus_spirit_vessel_debuff:GetModifierHPRegenAmplify_Percentage()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp_regen_reduction_enemy") * (-1) end
+end
+function modifier_cus_spirit_vessel_debuff:OnTooltip() return self:GetAbility():GetSpecialValueFor("soul_damage_amount") end
+function modifier_cus_spirit_vessel_debuff:OnTooltip2() return self:GetAbility():GetSpecialValueFor("enemy_hp_drain") end

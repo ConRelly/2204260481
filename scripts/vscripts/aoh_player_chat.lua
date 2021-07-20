@@ -290,10 +290,14 @@ function AOHGameMode:OnPlayerChat(keys)
 
 	
 	if keys.text == "-SS" then
-		if not _G.super_courier[PlayerID] then
-			_G.super_courier[playerID] = true
+		if not _G.super_courier[keys.playerid] then
+			_G.super_courier[keys.playerid] = true
+			Notifications:RemoveTop(keys.playerid, 1)
+			Notifications:Top(keys.playerid, {text="Super Scepter for non-heroes enabled", duration=3, style={color="green"}, continue=false})
 		else
-			_G.super_courier[playerID] = false
+			_G.super_courier[keys.playerid] = false
+			Notifications:RemoveTop(keys.playerid, 1)
+			Notifications:Top(keys.playerid, {text="Super Scepter for non-heroes disabled", duration=3, style={color="red"}, continue=false})
 		end
 	end
 end

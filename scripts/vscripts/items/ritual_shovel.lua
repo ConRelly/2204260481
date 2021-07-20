@@ -76,7 +76,9 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 			elseif rare > 10 and rare <= 30 then
 				SpawnItem("item_aghanims_fragment", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, false)
 			elseif rare > 30 and rare <= 50 then
-				SpawnItem("item_tome_of_knowledge", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, false)
+				local item = CreateItem("item_tome_of_knowledge", nil, nil)
+				self:GetParent():AddItem(item)
+				self:GetParent():FindItemInInventory("item_tome_of_knowledge"):EndCooldown()
 			elseif rare > 50 and rare <= 100 then
 				local atr = RandomInt(1, 3)
 				if atr == 1 then

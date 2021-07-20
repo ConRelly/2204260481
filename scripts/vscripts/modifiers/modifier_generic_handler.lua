@@ -16,6 +16,12 @@ function modifier_generic_handler:OnCreated()
 			"item_blade_mail",
 			"luna_moon_glaive"
 		}
+		self:StartIntervalThink(FrameTime())
+	end
+end
+function modifier_generic_handler:OnIntervalThink()
+	if self:GetParent():HasModifier("modifier_item_trusty_shovel") or self:GetParent():HasModifier("modifier_ritual_shovel") then
+		_G.lopata = false
 	end
 end
 

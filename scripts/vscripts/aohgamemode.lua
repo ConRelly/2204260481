@@ -52,7 +52,6 @@ LinkLuaModifier("modifier_power_boss", "hack/modifiers/modifier_power_boss.lua",
 LinkLuaModifier("modifier_aegis_buff", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_phys", "modifiers/modifier_phys.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_bristleback_quill_spray_autocast6", "abilities/hero_bristleback/modifier_mjz_bristleback_quill_spray_autocast6.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_boss_hpbar", "abilities/boss_hpbar.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_boss_hpbar2", "abilities/boss_hpbar2.lua", LUA_MODIFIER_MOTION_NONE)
 
 if AOHGameMode == nil then
@@ -101,12 +100,7 @@ function AOHGameMode:InitGameMode()
 	AOHGameMode.numPhilo[4] = 0
 	self._hardMode = false
 	_G._hardMode = false
-	_G.super_courier = {}
-	_G.super_courier[0] = false
-	_G.super_courier[1] = false
-	_G.super_courier[2] = false
-	_G.super_courier[3] = false
-	_G.super_courier[4] = false
+	_G.super_courier = {false, false, false, false, false}
 	self._endlessMode = false
 	self._endlessMode_started = false
 	self._manaMode = false
@@ -998,7 +992,6 @@ function AOHGameMode:OnEntitySpawned(event)
 		if self._endlessMode_started then
 			unit:AddNewModifier(unit, nil, "modifier_power_boss", {})
 		end
-		--unit:AddNewModifier(unit, nil, "modifier_boss_hpbar", {})
 		unit:AddNewModifier(unit, nil, "modifier_boss", {})
 		if self._extra_mode then
 			if unit and unit:GetUnitLabel() == "randomskill" then

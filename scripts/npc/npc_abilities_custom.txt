@@ -19400,6 +19400,8 @@
 		}
 	}
 }
+
+// Dark Seer: Dark Clone
 	"dark_seer_custom_dark_clone_2"
 	{
 		// Ability Technical Aspect
@@ -19409,16 +19411,9 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/custom/dark_seer_custom_dark_clone_2"
 		"AbilityTextureName"			"dark_seer_wall_of_replica"
-		"FightRecapLevel"				"2"
 		"MaxLevel"						"3"
-		//"RequiredLevel"				 "1"
-		//"precache"
-		//{
-		//	"particle"				"particles/status_fx/status_effect_keeper_spirit_form.vpcf"
-		//	"soundfile"				"soundevents/game_sounds_heroes/game_sounds_spectre.vsndevts"
-		//}
 
-		"HasScepterUpgrade"			"1"
+		"HasScepterUpgrade"				"1"
 		
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
@@ -19448,28 +19443,24 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"12.0 15.0 20.0"
-				"LinkedSpecialBonus"		"special_bonus_unique_morphling_8"
+				"duration"					"12 15 20"
+				"LinkedSpecialBonus"		"special_bonus_dark_clone_duration"
 			}
-			"02"
+		}
+	}
+
+// Dark Seer: Dark Clone: +X sec duration
+	"special_bonus_dark_clone_duration"
+	{
+		"BaseClass"					"special_bonus_undefined"
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_outgoing"	"0"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"tooltip_outgoing"			"0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_incoming"	"0"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"tooltip_illusion_taken"	"100"
+				"var_type"				"FIELD_INTEGER"
+				"value"					"8"
 			}
 		}
 	}
@@ -40081,6 +40072,26 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_3"
 	}
+	
+// Spirit Breaker: Fast as F
+	"fast_as_f"
+	{
+		"BaseClass"						"ability_lua"	
+		"AbilityTextureName"			"spirit_breaker_charge_of_darkness_alt"
+		"ScriptFile"					"heroes/hero_spirit_breaker/fast_as_f"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"RequiredLevel"					"0"
+		"LevelsBetweenUpgrades"			"25"
+		"MaxLevel"						"5"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_charge_ms"			"2 5 9 14 20"
+			}
+		}
+	}
 
 //////////MOBS//////////
 // Terrorblade (22 wave) Sunder
@@ -40577,13 +40588,5 @@
 				"max_radius"			"1000"
 			}			
 		}
-	}
-
-	"boss_hpbar"
-	{
-		"BaseClass"					"ability_lua"
-		"ScriptFile"				"abilities/boss_hpbar.lua"
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"IsOnCastBar"				"0"
 	}
 }

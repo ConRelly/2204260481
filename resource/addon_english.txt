@@ -402,6 +402,31 @@
 	"DOTA_Tooltip_ability_item_aghanims_fragment"				"Aghanim's Fragment"
 	"DOTA_Tooltip_ability_item_aghanims_fragment_description"	"<h1>Active: Synthesis</h1>Creates <font color='#0094FF'>Aghanim's Shard</font> using %shard% fragments<br>Creates <font color='#0094FF'>Aghanim's Scepter</font> using %scepter% fragments<br>Creates <font color='#DE3163'>Super Scepter</font> using %super_scepter% fragments\nOrder of creation: Aghanim's Shard -> Aghanim's Scepter -> Super Scepter<br><br>If the owner already has Aghanim's Shard or Aghanim's Scepter, then they are skipped in order."
 
+
+	"DOTA_Tooltip_Ability_item_cus_urn_of_shadows"					"Urn of Shadows"
+	"DOTA_Tooltip_ability_item_cus_urn_of_shadows_Description"		"<h1>Active: Soul Release</h1>Provides %soul_heal_amount% health regeneration when cast on allies, and deals %soul_damage_amount% damage per second when cast on enemies. <br><br>Lasts %duration% seconds. <br>Cast Range: %abilitycastrange%"
+	"DOTA_Tooltip_ability_item_cus_urn_of_shadows_Lore"				"Contains the ashes of powerful demons."
+	"DOTA_Tooltip_ability_item_cus_urn_of_shadows_mana_regen"	"+$mana_regen"
+	"DOTA_Tooltip_ability_item_cus_urn_of_shadows_all_atr"		"+$all"
+	"DOTA_Tooltip_ability_item_cus_urn_of_shadows_armor"		"+$armor"
+	"DOTA_Tooltip_modifier_cus_urn_of_shadows_buff"					"Soul Release"
+	"DOTA_Tooltip_modifier_cus_urn_of_shadows_buff_Description"		"Regenerating %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% HP per second."
+	"DOTA_Tooltip_modifier_cus_urn_of_shadows_debuff"				"Soul Release"
+	"DOTA_Tooltip_modifier_cus_urn_of_shadows_debuff_Description"	"Taking %dMODIFIER_PROPERTY_TOOLTIP% damage per second."
+
+
+	"DOTA_Tooltip_ability_item_cus_spirit_vessel"				"Spirit Vessel"
+	"DOTA_Tooltip_ability_item_cus_spirit_vessel_Description"	"<h1>Active: Soul Release</h1> When used against enemies, it reduces health by %enemy_hp_drain%%% of current health per second, and reduces HP regeneration, healing, lifesteal and spell lifesteal by %hp_regen_reduction_enemy%%%. Deals %soul_damage_amount% damage per second. <br><br>When used on allies, it provides %soul_heal_amount% health regeneration per second. <br><br>Cast Range: %abilitycastrange%" 		
+	"DOTA_Tooltip_ability_item_cus_spirit_vessel_lore"				"Forged by a god to entrap the soul of another."
+	"DOTA_Tooltip_ability_item_cus_spirit_vessel_hp"			"+$health"
+	"DOTA_Tooltip_ability_item_cus_spirit_vessel_mana_regen"	"+$mana_regen"
+	"DOTA_Tooltip_ability_item_cus_spirit_vessel_all_atr"		"+$all"
+	"DOTA_Tooltip_ability_item_cus_spirit_vessel_armor"			"+$armor"
+	"DOTA_Tooltip_modifier_cus_spirit_vessel_buff"					"Spirit Vessel Heal"
+	"DOTA_Tooltip_modifier_cus_spirit_vessel_buff_Description"		"Regenerating %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% HP per second."
+	"DOTA_Tooltip_modifier_cus_spirit_vessel_debuff"				"Spirit Vessel Damage"
+	"DOTA_Tooltip_modifier_cus_spirit_vessel_debuff_Description"	"Losing %dMODIFIER_PROPERTY_TOOLTIP% HP plus %dMODIFIER_PROPERTY_TOOLTIP%%% of current health per second. All heals reduced by %dMODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE%%%."
+
 //############################################################################################################################
 
 	"DOTA_Tooltip_ability_overcharge"				"Overcharge"
@@ -572,6 +597,15 @@
 
 	"DOTA_Tooltip_ability_special_bonus_hw_sharpshooter_agi"				"+{s:value} Sharpshooter Agility as Bonus Damage"
 	"DOTA_Tooltip_ability_special_bonus_hw_sharpshooter_agi_Description"	"Bonus damage is dealt separately from the main damage"
+	"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_sharpshooter_pure_damage"					"Sharpshooter deals Pure Damage"
+
+//Spirit Breaker
+	"DOTA_Tooltip_ability_fast_as_f"				"Faster then fakc"
+	"DOTA_Tooltip_ability_fast_as_f_Description"	"Each killed creep increases Charge of Darkness speed."
+	"DOTA_Tooltip_ability_fast_as_f_Lore"			"https://youtu.be/6E7ZGCfruaw"
+	"DOTA_Tooltip_ability_fast_as_f_bonus_charge_ms"			"Movement Speed per Stack:"
+	"DOTA_Tooltip_modifier_fast_as_f"				"FTF"
+	"DOTA_Tooltip_modifier_fast_as_f_Description"	"Charge of Darkness speed increased by %dMODIFIER_PROPERTY_TOOLTIP%"
 	
 //###########################################################################################################################
 	
@@ -5578,11 +5612,13 @@ Upgradeable by Aghanim's Scepter."
 
 "DOTA_Tooltip_Ability_dark_seer_custom_dark_clone_2"						"<font color='#f2da5b'>Dark Clone</font>"
 "DOTA_Tooltip_Ability_dark_seer_custom_dark_clone_2_Description"			"Dark Seer concentrates enough dark energy to create an almost perfect clone of an ally, being able to use spells and items."
-"DOTA_Tooltip_Ability_dark_seer_custom_dark_clone_2_tooltip_illusion_taken"	   "%Damage Dealt/Taken:"
+//"DOTA_Tooltip_Ability_dark_seer_custom_dark_clone_2_tooltip_illusion_taken"	   "%DAMAGE DEALT/TAKEN:"
 "DOTA_Tooltip_Ability_dark_seer_custom_dark_clone_2_duration"			 "DURATION:"
 //"DOTA_Tooltip_Ability_dark_seer_custom_dark_clone_n_clones"			 "NUMBER OF CLONES:"
 "DOTA_Tooltip_Ability_dark_seer_custom_dark_clone_2_lore"				"Dark Seer is able to manipulate dark energy."
-"DOTA_Tooltip_Ability_dark_seer_custom_dark_clone_2_scepter_description" "Gives Aghanim buff to the clone"
+"DOTA_Tooltip_Ability_dark_seer_custom_dark_clone_2_scepter_description" "Gives the available Aganim's effects to the clone"
+
+"DOTA_Tooltip_ability_special_bonus_dark_clone_duration"	  "+{s:value}s Dark Clone Duration"
 
 "DOTA_Tooltip_modifier_dark_clone_damage"							   "Dark Clone"
 "DOTA_Tooltip_modifier_dark_clone_damage_Description"				   "This unit is a clone."

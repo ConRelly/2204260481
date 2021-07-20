@@ -405,6 +405,31 @@
 	"DOTA_Tooltip_ability_item_aghanims_fragment"				"Aghanim's Fragment"
 	"DOTA_Tooltip_ability_item_aghanims_fragment_description"	"<h1>Активное: Synthesis</h1>За %shard% фрагмента создаётся <font color='#0094FF'>Aghanim's Shard</font><br>За %scepter% фрагментов создаётся <font color='#0094FF'>Aghanim's Scepter</font><br>За %super_scepter% фрагментов создаётся <font color='#DE3163'>Super Scepter</font>\nПорядок создания: Aghanim's Shard -> Aghanim's Scepter -> Super Scepter<br><br>Если владелец уже имеет Aghanim's Shard или Aghanim's Scepter, то они пропускаются в порядке."
 
+
+	"DOTA_Tooltip_ability_item_cus_urn_of_shadows"					"Urn of Shadows"
+	"DOTA_Tooltip_ability_item_cus_urn_of_shadows_Description"		"<h1>Активное: Soul Release</h1>Эффект зависит от выбранной цели: либо увеличивает восстановление здоровья союзника на %soul_heal_amount%, либо наносит противнику %soul_damage_amount% урона в секунду. <br><br>Действует %duration% сек. <br>Дальность применения: %abilitycastrange%"
+	"DOTA_Tooltip_ability_item_cus_urn_of_shadows_Lore"				"Содержит пепел могучих демонов."
+	"DOTA_Tooltip_ability_item_cus_urn_of_shadows_mana_regen"	"+$mana_regen"
+	"DOTA_Tooltip_ability_item_cus_urn_of_shadows_all_atr"		"+$all"
+	"DOTA_Tooltip_ability_item_cus_urn_of_shadows_armor"		"+$armor"
+	"DOTA_Tooltip_modifier_cus_urn_of_shadows_buff"					"Soul Release"
+	"DOTA_Tooltip_modifier_cus_urn_of_shadows_buff_Description"		"Восстанавливает %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% здоровья в секунду."
+	"DOTA_Tooltip_modifier_cus_urn_of_shadows_debuff"				"Soul Release"
+	"DOTA_Tooltip_modifier_cus_urn_of_shadows_debuff_Description"	"Получает %dMODIFIER_PROPERTY_TOOLTIP% урона в секунду."
+
+
+	"DOTA_Tooltip_ability_item_cus_spirit_vessel"				"Spirit Vessel"
+	"DOTA_Tooltip_ability_item_cus_spirit_vessel_Description"	"<h1>Активное: Soul Release</h1>Эффект зависит от выбранной цели. Если применить на противника, то он будет терять %enemy_hp_drain%%% от своего текущего запаса здоровья, а также получать на %hp_regen_reduction_enemy%%% меньше здоровья от любого лечения, восстановления и вампиризма. Помимо этого, способность наносит %soul_damage_amount% урона в секунду. <br><br>Если применить на союзника, увеличивает его восстановление здоровья на %soul_heal_amount% в секунду. <br><br>Дальность применения: %abilitycastrange%"
+	"DOTA_Tooltip_ability_item_cus_spirit_vessel_lore"				"Сотворена богом, желавшим изловить души остальных."
+	"DOTA_Tooltip_ability_item_cus_spirit_vessel_hp"			"+$health"
+	"DOTA_Tooltip_ability_item_cus_spirit_vessel_mana_regen"	"+$mana_regen"
+	"DOTA_Tooltip_ability_item_cus_spirit_vessel_all_atr"		"+$all"
+	"DOTA_Tooltip_ability_item_cus_spirit_vessel_armor"			"+$armor"
+	"DOTA_Tooltip_modifier_cus_spirit_vessel_buff"					"Лечение от Spirit Vessel"
+	"DOTA_Tooltip_modifier_cus_spirit_vessel_buff_Description"		"Излечивается на %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% здоровья в секунду."
+	"DOTA_Tooltip_modifier_cus_spirit_vessel_debuff"				"Урон от Spirit Vessel"
+	"DOTA_Tooltip_modifier_cus_spirit_vessel_debuff_Description"	"Каждую секунду теряет %dMODIFIER_PROPERTY_TOOLTIP% здоровья + %dMODIFIER_PROPERTY_TOOLTIP2%%% от текущего здоровья. Лечение уменьшено на %dMODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE%%%."
+
 //############################################################################################################################
 
 	"DOTA_Tooltip_ability_overcharge"				"Overcharge"
@@ -576,6 +601,17 @@
 
 	"DOTA_Tooltip_ability_special_bonus_hw_sharpshooter_agi"				"+{s:value} урона от ловкости Sharpshooter"
 	"DOTA_Tooltip_ability_special_bonus_hw_sharpshooter_agi_Description"	"Бонусный урон наносится отдельно от основного урона"
+	"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_sharpshooter_pure_damage"		"Sharpshooter наносит чистый урон"
+
+//Spirit Breaker
+	"DOTA_Tooltip_ability_fast_as_f"				"Faster then fakc"
+	"DOTA_Tooltip_ability_fast_as_f_Description"	"Каждое убитое существо увеличивает скорость Charge of Darkness."
+	"DOTA_Tooltip_ability_fast_as_f_Lore"			"https://youtu.be/6E7ZGCfruaw"
+	"DOTA_Tooltip_ability_fast_as_f_bonus_charge_ms"			"Скорости за эффект:"
+	"DOTA_Tooltip_modifier_fast_as_f"				"FTF"
+	"DOTA_Tooltip_modifier_fast_as_f_Description"	"Скорость Charge of Darkness увеличена на %dMODIFIER_PROPERTY_TOOLTIP%"
+
+	"npc_dota_hero_dawnbreaker"		"Smallbreaker"
 
 //###########################################################################################################################
 
@@ -5612,12 +5648,14 @@
 	"DOTA_Tooltip_ability_dark_seer_custom_dark_clone_lore"					"Dark Seer is able to manipulate dark energy."
 
 	"DOTA_Tooltip_ability_dark_seer_custom_dark_clone_2"						"<font color='#f2da5b'>Dark Clone</font>"
-	"DOTA_Tooltip_ability_dark_seer_custom_dark_clone_2_Description"			"Dark Seer concentrates enough dark energy to create an almost perfect clone of an ally, being able to use spells and items."
-	"DOTA_Tooltip_ability_dark_seer_custom_dark_clone_2_tooltip_illusion_taken"	  "%Damage Dealt/Taken:"
-	"DOTA_Tooltip_ability_dark_seer_custom_dark_clone_2_duration"			"Длитeльнocть:"
-	//"DOTA_Tooltip_ability_dark_seer_custom_dark_clone_n_clones"			"NUMBER OF CLONES:"
-	"DOTA_Tooltip_ability_dark_seer_custom_dark_clone_2_lore"				"Dark Seer is able to manipulate dark energy."
-	"DOTA_Tooltip_ability_dark_seer_custom_dark_clone_2_scepter_description" "Gives Aghanim buff to the clone"
+	"DOTA_Tooltip_ability_dark_seer_custom_dark_clone_2_Description"			"Герой концентрирует тёмную энергию для создания почти идеального клона союзника, который может использовать способности и предметы."
+//	"DOTA_Tooltip_ability_dark_seer_custom_dark_clone_2_tooltip_illusion_taken"	"%Исходящий/входящий урон:"
+	"DOTA_Tooltip_ability_dark_seer_custom_dark_clone_2_duration"				"Длитeльнocть:"
+//	"DOTA_Tooltip_ability_dark_seer_custom_dark_clone_n_clones"				"Количество клонов:"
+	"DOTA_Tooltip_ability_dark_seer_custom_dark_clone_2_lore"		"Dark Seer is able to manipulate dark energy."
+	"DOTA_Tooltip_ability_dark_seer_custom_dark_clone_2_scepter_description"	"Gives the available Aganim's effects to the clone"
+
+	"DOTA_Tooltip_ability_special_bonus_dark_clone_duration"		"+{s:value} сeк. длитeльнoсти Dark Clone"
 
 	"DOTA_Tooltip_modifier_dark_clone_damage"							"Dark Clone"
 	"DOTA_Tooltip_modifier_dark_clone_damage_Description"				"This unit is a clone."
