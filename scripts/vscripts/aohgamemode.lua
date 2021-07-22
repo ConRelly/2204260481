@@ -418,10 +418,13 @@ function AOHGameMode:RecountPlayers()
 		end
 	end
 	Timers:CreateTimer({
-		endTime = 2, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
+		endTime = 0.1, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
 		callback = function()
 			self.InitVariables()
-			print(self._playerNumber .. " connected players")
+			if self._playerNumber == 0 then
+				send_info_if_game_ends()
+			end	
+			--print(self._playerNumber .. " connected players")
 		end
 	})		
 end
@@ -526,6 +529,9 @@ function AOHGameMode:OnGameRulesStateChange()
 	elseif nNewState == DOTA_GAMERULES_STATE_POST_GAME then
 		GameRules:SetSafeToLeave(true)
 		end_screen_setup(self._entAncient and self._entAncient:IsAlive())
+	elseif nNewState == DOTA_GAMERULES_STATE_DISCONNECT then
+		GameRules:SetSafeToLeave(true)
+		send_info_if_game_ends()
 	end
 
 end

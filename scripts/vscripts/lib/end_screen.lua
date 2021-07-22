@@ -107,7 +107,13 @@ function end_screen_setup(isWinner)
     local data = end_screen_get_data(isWinner)
 
     CustomNetTables:SetTableValue("end_game_scoreboard", "game_info", data)
-    send_data_info()
+    send_info_if_game_ends()       
 end
 
+function send_info_if_game_ends()
+    if not has_send_data then
+        send_data_info()
+        has_send_data = true
+    end    
 
+end    
