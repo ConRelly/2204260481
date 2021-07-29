@@ -179,9 +179,9 @@ if IsServer() then
 		Timers:CreateTimer(
 			self.damage_delay,
 			function()		
-				if not target:IsMagicImmune() or caster:HasScepter() then
+				if target ~= nil and IsValidEntity(target) and target:IsAlive() and (not target:IsMagicImmune() or caster:HasScepter()) then
 					local damage_type = DAMAGE_TYPE_MAGICAL
-
+					print("lion dmg 1")
 					ApplyDamage({
 						attacker = caster,
 						victim = target,
@@ -195,9 +195,9 @@ if IsServer() then
 		Timers:CreateTimer(
 			self.damage_delay + 0.05,
 			function()		
-				if not target:IsMagicImmune() or caster:HasScepter() then
+				if target ~= nil and IsValidEntity(target) and target:IsAlive() and (not target:IsMagicImmune() or caster:HasScepter()) then
 					local damage_type = DAMAGE_TYPE_MAGICAL
-
+					print("lion dmg 2")
 					ApplyDamage({
 						attacker = caster,
 						victim = target,

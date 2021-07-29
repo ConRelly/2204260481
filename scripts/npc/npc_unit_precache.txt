@@ -233,4 +233,8 @@
 	"npc_precache_npc_dota_hero_mars"{
 	"BaseClass""npc_dota_creep""IsSummoned""1""precache"{
 	"particle_folder" "particles/units/heroes/hero_mars/""soundfile" "soundevents/game_sounds_heroes/game_sounds_mars.vsndevts"}}
+
+	"npc_precache_npc_dota_hero_dawnbreaker"{
+	"BaseClass""npc_dota_creep""IsSummoned""1""precache"{
+	"particle_folder" "particles/units/heroes/hero_dawnbreaker/""soundfile" "soundevents/game_sounds_heroes/game_sounds_dawnbreaker.vsndevts"}}	
 }
