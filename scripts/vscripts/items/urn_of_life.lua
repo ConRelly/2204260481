@@ -467,7 +467,17 @@ function modifier_cus_spirit_vessel_buff:GetTexture() return "spirit_vessel" end
 function modifier_cus_spirit_vessel_buff:GetEffectName() return "particles/items4_fx/spirit_vessel_heal.vpcf" end
 function modifier_cus_spirit_vessel_buff:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_cus_spirit_vessel_buff:OnCreated()
-	if IsServer() then if not self:GetAbility() then self:Destroy() end end
+	if IsServer() then if not self:GetAbility() then self:Destroy() end
+		self:StartIntervalThink(0.5)
+	end
+end
+function modifier_cus_spirit_vessel_buff:OnIntervalThink()
+	if self:GetCaster():HasModifier("modifier_item_holy_locket") then
+		local holy_locket = self:GetCaster():FindItemInInventory("item_holy_locket")
+		if holy_locket then
+			holy_locket:SetCurrentCharges(holy_locket:GetCurrentCharges() + 1)
+		end
+	end
 end
 function modifier_cus_spirit_vessel_buff:DeclareFunctions()
 	return {MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT}

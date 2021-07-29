@@ -1161,15 +1161,27 @@ New: 3 Quests with NFTs as bonus rewards, you can find them on discord(link on w
 
 
 
+* Ability Swap menu now opens with a single click
 * Added new memebility for Spirit Breaker
 * Charge of Darkness (Spirit Breaker): Numbers rescaled and the level is increased
 * Lucent Beam (Luna): Aghanim's Shard: The ability will give an vision in AOE
 * Dark Clone (Dark Seer): "Corpses" no longer remain
+* Spirit Guardian's heal increased by Snowball stacks
 * Cursed Shovel: When excavated the Tome of Knowledge, the Tome's cooldown will be refreshed
+* Added UP for Holy Locket
+* Added Aghanim's Scepter and Super Scepter effect for Resurrection Pendant
 * Urn of Shadows/Spirit Vessel: Removed the need for charges
+* Reworked Bloodstone's: Now they work like in Dota
+* Bloodstone Ultimate: Active health regen increased by 25%
 * (Probably) Fixed multiple Trusty Shovels
-* Fixed Urn of Shadows/Spirit Vessel sell gold cost
-* Fixed Greevil's Greed (Alchemist) OVER9000 gold bug
+* Fixed: Commander Aura at 0 level gave negative damage
+* Fixed: Spirit Guardian attacked when the owner died
+* Fixed: Tidebringer (Kunkka) + Charged Conduit crash
+* Fixed: Urn of Shadows/Spirit Vessel sell gold cost
+* Fixed: Greevil's Greed (Alchemist) OVER9000 gold bug
+* Fixed upgrading of some items
+* Fixed Dawnbreaker, Hoodwink, Grimstroke broken spellicons (if you find broken icons, then write to Discord)
+* Added few missed icons
 
 
 

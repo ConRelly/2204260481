@@ -311,7 +311,7 @@ end
 -----------------------------------------------------------------------------
 modifier_mjz_doom_bringer_devour = class({})
 function modifier_mjz_doom_bringer_devour:IsPassive() return false end
-function modifier_mjz_doom_bringer_devour:IsHidden() return false end
+function modifier_mjz_doom_bringer_devour:IsHidden() return (self:GetStackCount() < 1) end
 function modifier_mjz_doom_bringer_devour:IsPurgable() return false end
 function modifier_mjz_doom_bringer_devour:RemoveOnDeath() return false end
 function modifier_mjz_doom_bringer_devour:AllowIllusionDuplicate() return true end

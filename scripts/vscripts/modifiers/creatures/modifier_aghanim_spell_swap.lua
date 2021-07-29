@@ -63,7 +63,10 @@ function modifier_aghanim_spell_swap:DisableSpell()
 			keeper_of_the_light_spirit_form_illuminate = true,
 			keeper_of_the_light_blinding_light = true,
 			keeper_of_the_light_recall = true,
-
+			temporary_slot_used = true,
+			doom_bringer_empty2 = true,
+			lesser_cancel = true,
+			divine_cancel = true,
 		}		
 		for i=0,DOTA_MAX_ABILITIES-1 do
 			local hAbility = self:GetParent():GetAbilityByIndex( i )

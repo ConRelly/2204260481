@@ -76,6 +76,7 @@ function HolyPersuasion( keys )
 		target:SetTeam(caster_team)
 		target:SetOwner(caster)
 		target:SetControllableByPlayer(player, true)
+		target:AddNewModifier(caster, self, "modifier_kill", {})
 		local icon_strike = "true_strike"
 		local ability_trist = "bloodseeker_thirst"
 		--local ability_trist = "nevermore_custom_necromastery"

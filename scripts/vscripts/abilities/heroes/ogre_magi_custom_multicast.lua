@@ -179,8 +179,10 @@ function IsExcludeAbility( ability )
 		"wisp_tether_break",
 		"arcane_supremacy",
 		"item_custom_octarine_core2",
-		
-
+		"hw_sharpshooter",
+		"hw_sharpshooter_release",
+		"lesser_cancel",
+		"divine_cancel",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

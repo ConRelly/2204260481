@@ -292,7 +292,6 @@ if item_spirit_guardian == nil then item_spirit_guardian = class({}) end
 LinkLuaModifier("modifier_spirit_guardian", "items/staff_of_light.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_spirit_guardian_heal", "items/staff_of_light.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_spirit_guardian_heal_cd", "items/staff_of_light.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_spirit_guardian_bonus_dmg", "items/staff_of_light.lua", LUA_MODIFIER_MOTION_NONE)
 function item_spirit_guardian:GetIntrinsicModifierName() return "modifier_spirit_guardian" end
 function item_spirit_guardian:OnSpellStart()
 	if self:GetParent() ~= nil and not self:GetParent():HasModifier("modifier_spirit_guardian_heal_cd") then
@@ -343,11 +342,12 @@ function modifier_spirit_guardian:GetModifierFixedAttackRate() return self:GetAb
 
 function modifier_spirit_guardian:OnIntervalThink()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
+	if not self:GetParent():IsAlive() then return end
 	local caster = self:GetParent()
 	local search_radius = self:GetParent():Script_GetAttackRange() + self:GetAbility():GetSpecialValueFor("range_buffer")
 	local projectile_name = "particles/custom/items/staff_of_light/staff_of_light_wisp_attack.vpcf"
 	local projectile_speed = self:GetAbility():GetSpecialValueFor("projectile_speed")
-	local heal = ((self:GetParent():GetBaseDamageMin() + self:GetParent():GetBaseDamageMax()) / 2)
+	local heal = ((self:GetParent():GetBaseDamageMin() + self:GetParent():GetBaseDamageMax()) / 2) + self:GetCurrentCharges()
 	if self:GetParent():HasModifier("modifier_spirit_guardian_heal") then
 		local allies = FindUnitsInRadius(caster:GetTeam(), caster:GetAbsOrigin(), nil, search_radius,DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD + DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
 		local target = self:GetParent()
@@ -400,27 +400,16 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 	local parent = self:GetParent()
 	local bonus_int = 0
 	local bonus_dmg = 0
-	local stacks = 0
+	local current = self:GetCurrentCharges()
 	local lvl = parent:GetLevel()
 	local chance = math.floor(lvl / 2)
 	if IsServer() then
-		if parent:HasModifier("modifier_spirit_guardian_bonus_dmg") then
-			local modif = parent:FindModifierByName("modifier_spirit_guardian_bonus_dmg")
-			if modif then
-				modif:IncrementStackCount()
-				if RollPercentage(chance) then
-					modif:IncrementStackCount()
-				end
-				stacks = modif:GetStackCount()	
-				bonus_dmg = lvl * stacks
-			end	
-		else
-			parent:AddNewModifier(parent, self, "modifier_spirit_guardian_bonus_dmg", {})
-		end			
+		self:SetCurrentCharges(current + 1)
+		bonus_dmg = lvl * current
 		if HasSuperScepter(parent) then
 			local int_to_dmg = self:GetAbility():GetSpecialValueFor("bonus_int_dmg")
 			bonus_int = math.floor(parent:GetIntellect() * lvl * int_to_dmg / 100)
-		end	 
+		end
 	end			
 	local radius = 0
 	local damage = ((parent:GetBaseDamageMin() + parent:GetBaseDamageMax()) / 2) + bonus_int + bonus_dmg
@@ -484,12 +473,6 @@ function modifier_spirit_guardian_heal_cd:IsHidden() return false end
 function modifier_spirit_guardian_heal_cd:IsDebuff() return true end
 function modifier_spirit_guardian_heal_cd:IsPurgable() return false end
 function modifier_spirit_guardian_heal_cd:RemoveOnDeath() return false end
-
-if modifier_spirit_guardian_bonus_dmg == nil then modifier_spirit_guardian_bonus_dmg = class({}) end
-function modifier_spirit_guardian_bonus_dmg:IsHidden() return false end
-function modifier_spirit_guardian_bonus_dmg:IsDebuff() return true end
-function modifier_spirit_guardian_bonus_dmg:IsPurgable() return false end
-function modifier_spirit_guardian_bonus_dmg:RemoveOnDeath() return false end
 
 
 function CastEffect(caster, target, projectile_speed)

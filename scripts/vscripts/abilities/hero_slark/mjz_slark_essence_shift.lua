@@ -95,12 +95,8 @@ modifier_mjz_slark_essence_shift_heap = class({})
 
 local modifier_class = modifier_mjz_slark_essence_shift_heap
 
-function modifier_class:IsHidden( )
-    return false
-end
-function modifier_class:IsPurgable()	-- 能否被驱散
-	return false
-end	
+function modifier_class:IsHidden() return (self:GetStackCount() < 1) end
+function modifier_class:IsPurgable() return false end	
 function modifier_class:AllowIllusionDuplicate()
     return true
 end   

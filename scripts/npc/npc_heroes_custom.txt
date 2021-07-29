@@ -295,11 +295,15 @@
 }
 "npc_dota_hero_grimstroke"
 {
-	"Ability2"	  "grimstroke_custom_ink_creature"
-	"Ability6"	  "grimstroke_custom_soulstore"
-	"Ability11"	 "special_bonus_cooldown_reduction_25"
-	"Ability15"		"special_bonus_gold_income_60"
-	"Ability16"		"special_bonus_unique_grimstroke_custom_soulstore"
+	"Ability1"			"grimstroke_custom_dark_artistry"
+	"Ability2"			"grimstroke_custom_ink_creature"
+	"Ability3"			"grimstroke_custom_spirit_walk"
+	"Ability4"			"grimstroke_dark_portrait"
+	"Ability5"			"generic_hidden"
+	"Ability6"			"grimstroke_custom_soulstore"
+	"Ability11"			"special_bonus_cooldown_reduction_25"
+	"Ability15"			"special_bonus_gold_income_60"
+	"Ability16"			"special_bonus_unique_grimstroke_custom_soulstore"
 	"AttributeIntelligenceGain"   "8.9"
 }
 "npc_dota_hero_gyrocopter"
@@ -349,6 +353,8 @@
 "npc_dota_hero_hoodwink"
 //=================================================================================================================
 {
+	"Ability1"					"hoodwink_custom_acorn_shot"
+	"Ability2"					"hoodwink_custom_bushwhack"
 	"Ability6"					"hw_sharpshooter"
 	"Ability7"					"hw_sharpshooter_release"
 	"Ability13"                 "special_bonus_hw_sharpshooter_agi"
@@ -359,6 +365,7 @@
 }
 "npc_dota_hero_kunkka"
 {
+	"Ability1"		"kunkka_custom_torrent"
 	"Ability12"		"special_bonus_hp_regen_20"
 	"Ability14"		"special_bonus_cooldown_reduction_20"
 	"AttributeAgilityGain"		"3.800000"
@@ -2175,12 +2182,12 @@
 		"LastHitChallengeRival"		"npc_dota_hero_kunkka"
 		"HeroSelectSoundEffect"		"Hero_Dawnbreaker.Pick"
 		"GibType"		"default"
-		"Ability1"		"dawnbreaker_fire_wreath"
-		"Ability2"		"dawnbreaker_celestial_hammer"
-		"Ability3"		"dawnbreaker_luminosity"
-		"Ability4"		"dawnbreaker_converge"
+		"Ability1"		"dawnbreaker_custom_fire_wreath"
+		"Ability2"		"dawnbreaker_custom_celestial_hammer"
+		"Ability3"		"dawnbreaker_custom_luminosity"
+		"Ability4"		"dawnbreaker_custom_converge"
 		"Ability5"		"generic_hidden"
-		"Ability6"		"dawnbreaker_solar_guardian"
+		"Ability6"		"dawnbreaker_custom_solar_guardian"
 		"Ability10"		"special_bonus_cooldown_reduction_25"
 		"Ability11"		"special_bonus_gold_income_420"
 		"Ability12"		"special_bonus_spell_block_18"

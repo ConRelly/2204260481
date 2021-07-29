@@ -19,6 +19,8 @@ local item_mjz_bloodstone_active = function(ability)
 		local caster = ability:GetCaster()
 		local restore_duration = ability:GetSpecialValueFor("restore_duration")
 		if caster and IsValidEntity(caster) and caster:IsAlive() then
+			caster:EmitSound("DOTA_Item.Bloodstone.Cast")
+			caster:RemoveModifierByName("modifier_item_mjz_bloodstone_active")
 			caster:AddNewModifier(caster, ability, "modifier_item_mjz_bloodstone_active", {duration = restore_duration})
 		end
 	end
@@ -101,8 +103,6 @@ function modifier_item_mjz_bloodstone:DeclareFunctions()
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 		MODIFIER_PROPERTY_HEALTH_BONUS,
 		MODIFIER_PROPERTY_MANA_BONUS,
-		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
 	}
 end
 function modifier_item_mjz_bloodstone:GetModifierBonusStats_Intellect()
@@ -113,12 +113,6 @@ function modifier_item_mjz_bloodstone:GetModifierHealthBonus()
 end
 function modifier_item_mjz_bloodstone:GetModifierManaBonus()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_mana") end
-end
-function modifier_item_mjz_bloodstone:GetModifierConstantManaRegen()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_mana_regen") end
-end
-function modifier_item_mjz_bloodstone:GetModifierConstantHealthRegen()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_health_regen") end
 end
 
 
@@ -159,16 +153,21 @@ modifier_item_mjz_bloodstone_buff = class({})
 function modifier_item_mjz_bloodstone_buff:IsHidden() return true end
 function modifier_item_mjz_bloodstone_buff:IsPurgable() return false end
 function modifier_item_mjz_bloodstone_buff:IsBuff() return true end
+function modifier_item_mjz_bloodstone_buff:RemoveOnDeath() return false end
 function modifier_item_mjz_bloodstone_buff:GetTexture() return "item_mjz_bloodstone" end
 function modifier_item_mjz_bloodstone_buff:DeclareFunctions()
 	if self:GetAbility():GetName() == "item_mjz_bloodstone_ultimate" then
 		return {
 			MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE,
 			MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
+			MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE,
 			MODIFIER_PROPERTY_MANACOST_PERCENTAGE_STACKING,
 		}
 	else
-		return {MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE}
+		return {
+			MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE,
+			MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE
+		}
 	end
 end
 
@@ -184,6 +183,12 @@ function modifier_item_mjz_bloodstone_buff:GetModifierSpellAmplify_Percentage()
 		return ability:GetSpecialValueFor("spell_amp") or 0
 	end
 end
+function modifier_item_mjz_bloodstone_buff:GetModifierSpellLifestealRegenAmplify_Percentage()
+	local ability = self:GetAbility()
+	if IsValidEntity(ability) then
+		return ability:GetSpecialValueFor("spell_lifesteal_amp") or 0
+	end
+end
 function modifier_item_mjz_bloodstone_buff:GetModifierPercentageManacostStacking()
 	local ability = self:GetAbility()
 	if IsValidEntity(ability) then
@@ -197,26 +202,26 @@ modifier_item_mjz_bloodstone_active = class({})
 function modifier_item_mjz_bloodstone_active:IsHidden() return false end
 function modifier_item_mjz_bloodstone_active:IsPurgable() return false end
 function modifier_item_mjz_bloodstone_active:IsBuff() return true end
-function modifier_item_mjz_bloodstone_active:GetTexture() 
-	return "item_mjz_bloodstone" 
+function modifier_item_mjz_bloodstone_active:RemoveOnDeath() return true end
+function modifier_item_mjz_bloodstone_active:GetTexture() return "item_mjz_bloodstone" end
+function modifier_item_mjz_bloodstone_active:OnCreated()
+	if IsServer() then if not self:GetAbility() then self:Destroy() end end
+	self.caster = self:GetCaster()
+	local mana_cost_percentage = self:GetAbility():GetSpecialValueFor("mana_cost_percentage")
+	local restore_duration = self:GetAbility():GetSpecialValueFor("restore_duration")
+	if self:GetAbility():GetName() == "item_mjz_bloodstone_ultimate" then
+		restore_duration = restore_duration / 1.25
+	end
+
+	self.flManaSpent = (self.caster:GetMaxMana() * (mana_cost_percentage / 100)) / restore_duration
+
+	local particle = ParticleManager:CreateParticle("particles/items_fx/bloodstone_heal.vpcf", PATTACH_OVERHEAD_FOLLOW, self.caster)
+	ParticleManager:SetParticleControlEnt(particle, 2, self.caster, PATTACH_POINT_FOLLOW, "attach_hitloc", self.caster:GetAbsOrigin(), true)
+	self:AddParticle(particle, false, false, -1, false, false)
 end
-
-if IsServer() then
-	function modifier_item_mjz_bloodstone_active:OnCreated()
-		self:StartIntervalThink(0.25)
-	end
-
-	function modifier_item_mjz_bloodstone_active:OnIntervalThink()
-		local caster = self:GetCaster()
-		local mana_cost_percentage = self:GetAbility():GetSpecialValueFor("mana_cost_percentage")
-		local restore_duration = self:GetAbility():GetSpecialValueFor("restore_duration")
-
-		if caster and IsValidEntity(caster) and caster:IsAlive() then
-			local flManaSpent = caster:GetMaxMana() * (mana_cost_percentage / 100)
-			local flAmount = flManaSpent / restore_duration * 0.25
-			local hInflictor = caster
-			
-			caster:Heal(flAmount, hInflictor)
-		end
-	end
+function modifier_item_mjz_bloodstone_active:DeclareFunctions()
+	return {MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT}
+end
+function modifier_item_mjz_bloodstone_active:GetModifierConstantHealthRegen()
+	if self:GetAbility() then return self.flManaSpent or 0 end
 end

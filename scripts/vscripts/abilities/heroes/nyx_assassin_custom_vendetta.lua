@@ -83,29 +83,20 @@ end
 
 
 modifier_nyx_assassin_custom_vendetta_crit = class({})
-
-
-function modifier_nyx_assassin_custom_vendetta_crit:GetTexture()
-    return "nyx_assassin_vendetta"
-end
-
-
+function modifier_nyx_assassin_custom_vendetta_crit:IsHidden() return (self:GetStackCount() < 1) end
+function modifier_nyx_assassin_custom_vendetta_crit:GetTexture() return "nyx_assassin_vendetta" end
 function modifier_nyx_assassin_custom_vendetta_crit:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
         MODIFIER_EVENT_ON_ATTACK_LANDED,
     }
 end
-
-
 function modifier_nyx_assassin_custom_vendetta_crit:OnAttackLanded(keys)
     local attacker = keys.attacker
     if attacker == self:GetParent() then 
         self:SetStackCount(0)
     end
 end
-
-
 function modifier_nyx_assassin_custom_vendetta_crit:OnCreated()
     local ability = self:GetAbility()
 
@@ -115,15 +106,11 @@ function modifier_nyx_assassin_custom_vendetta_crit:OnCreated()
 
     self:StartIntervalThink(self.interval)
 end
-
-
 function modifier_nyx_assassin_custom_vendetta_crit:OnIntervalThink()
     if self:GetStackCount() < self.max_crit_stack then
         self:IncrementStackCount()
     end
 end
-
-
 function modifier_nyx_assassin_custom_vendetta_crit:GetModifierPreAttack_CriticalStrike()
     return self.crit_increase * self:GetStackCount()
 end

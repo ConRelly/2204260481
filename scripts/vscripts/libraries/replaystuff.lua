@@ -112,6 +112,8 @@ function AddRecordedAction(modifier, keys)
 			["item_moon_shard"] = true,
 			["item_mjz_rage_moon_shard"] = true, 
 			["beastmaster_wild_axes"] = true,
+			["lesser_cancel"] = true,
+			["divine_cancel"] = true,
 		};
 	if ability then
 		local abilityName1 = ability:GetAbilityName()

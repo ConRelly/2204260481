@@ -10,18 +10,25 @@ function onepunch(keys)
 	if not keys.caster:HasAbility("aghanim_blink2") then
 		keys.caster:AddAbility("aghanim_blink2")
 	end
-]]
-	if not keys.caster:HasAbility("mystic_dragon_endless_wisdom") then
-		keys.caster:AddAbility("mystic_dragon_endless_wisdom")
-	end
 	if not keys.target:HasModifier("modifier_nyx_assassin_vendetta_break") then
 		keys.target:AddNewModifier(keys.caster, keys.ability, "modifier_nyx_assassin_vendetta_break", {duration = 5})
 	end
+
 	local heroes = GetAllRealHeroes()
 	for i = 1, #heroes do
 		heroes[i]:AddExperience(1000 / #heroes, false, false)
 	end
 	SendOverheadEventMessage(nil, OVERHEAD_ALERT_XP, heroes[i], 1000 / #heroes, nil)
---	keys.target:AddNewModifier(keys.caster, keys.ability, "modifier_stunned", {duration = 2})
+]]
+	if not keys.caster:HasAbility("divine_cancel") then
+		keys.caster:AddAbility("divine_cancel")
+	end
+	if not keys.caster:HasAbility("vengefulspirit_command_aura_lua") then
+		keys.caster:AddAbility("vengefulspirit_command_aura_lua")
+	end
+--	if not keys.caster:HasAbility("divine_cancel") then
+--		keys.caster:AddAbility("divine_cancel")
+--	end
+--	keys.target:AddNewModifier(keys.caster, keys.ability, "modifier_hexxed", {duration = 2})
 --	ApplyDamage({victim = keys.target, attacker = keys.caster, ability = keys.ability, damage = keys.target:GetMaxHealth(), damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL})
 end

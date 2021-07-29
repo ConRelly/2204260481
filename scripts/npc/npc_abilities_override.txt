@@ -4718,321 +4718,6 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
-	"grimstroke_dark_portrait"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"7852"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"	
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
-		"MaxLevel"						"1"
-		"IsGrantedByScepter"			"1"
-		"HasScepterUpgrade"			"1"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastAnimation"			"ACT_DOTA_GS_INK_CREATURE"
-		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastRange"				"2200"
-		"AbilityCastPoint"				"0.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"35"
-		
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200"
-
-		"AbilityModifierSupportValue"	"0.5"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"illusion_duration"			"25"
-				"RequiresScepter"			"1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"images_do_damage_percent"	"50"
-				"RequiresScepter"			"1"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"images_do_damage_percent_tooltip"			"150"
-				"RequiresScepter"			"1"
-			}	
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"images_take_damage_percent"	"-50"
-				"RequiresScepter"			"1"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"images_take_damage_percent_tooltip"			"50"
-				"RequiresScepter"			"1"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"images_movespeed_bonus"			"50"
-				"RequiresScepter"			"1"
-			}				
-		}
-	}
-
-	//=================================================================================================================
-	// Grimstroke: Ink Over (Shard)
-	//=================================================================================================================
-	"grimstroke_ink_over"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"561"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
-		"MaxLevel"						"1"
-		"IsGrantedByShard"				"1"
-		"MaxLevel"					  "3"
-		"LevelsBetweenUpgrades"		 "15"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastRange"				"1250"
-		"AbilityCastPoint"				"0.0"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"14"
-		
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125"
-
-		"AbilityModifierSupportValue"	"0.5"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"total_damage"		"3200 23500 75000"
-			}			
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_speed"		"50 90 130"
-			}			
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"move_speed"		"25 30 35"
-			}				
-		}
-	}
-
-	//=================================================================================================================
-	// Grimstroke: Ink Swell
-	//=================================================================================================================
-	"grimstroke_spirit_walk"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"8007"	// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilitySound"					"Hero_ObsidianDestroyer.AstralImprisonment"
-		"FightRecapLevel"				"1"
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "6"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"17"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1150"
-		"AbilityCastPoint"				"0.15"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.75"
-
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"buff_duration"			"4.0 5.0 6.0 7.0 8.0 9.0 10.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"movespeed_bonus_pct"	"15 20 25 30 35 40 45 50"
-				"LinkedSpecialBonus"		"special_bonus_unique_grimstroke_6"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"650"
-				"LinkedSpecialBonus"	"special_bonus_unique_grimstroke_1"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_damage"			"420"
-				"LinkedSpecialBonus"		"special_bonus_unique_grimstroke_5"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"max_stun"				"1.0 1.9 2.8 3.7"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_tick"		"50 450 1100 2300 3400 6500 15500"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"tick_rate"				"0.5"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tick_dps_tooltip"		"100 900 2200 4600 6800 13000 31000"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"max_threshold_duration"		"2.5"
-			}
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
-		"AbilityCastGestureSlot"		"DEFAULT"
-	}
-
-
-
-	"grimstroke_dark_artistry"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"8000"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"FightRecapLevel"				"1"
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "6"
-		"AbilityCastRange"				"1500"
-		"AbilityCastPoint"				"0.8"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-
-		"AbilityCooldown"				"8.0 7.5 7.0 6.5 6.0 5.5 5.0"
-		"AbilityManaCost"				"130"
-
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.5"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"start_radius"			"220"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"end_radius"			"260"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"2400"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"420 980 2400 7300 15600 32500 52580"
-				"LinkedSpecialBonus"		"special_bonus_unique_grimstroke_2"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage_per_target"	"120 340 1032 4000 9500 14000 25000"
-				"LinkedSpecialBonus"		"special_bonus_unique_grimstroke_2"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"movement_slow_pct"		"50"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"1.5"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"vision_duration"			"2.0"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"abilitycastrange"				""
-				"LinkedSpecialBonus"		"special_bonus_unique_grimstroke_3"
-			}
-		}
-	}
 	"gyrocopter_rocket_barrage"
 	{
 		"AbilitySpecial"
@@ -14481,78 +14166,6 @@
 			}
 		}
 	}
-	"kunkka_torrent"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"5031"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"FightRecapLevel"				"1"
-		"AbilitySound"					"Ability.Torrent"
-		"HasScepterUpgrade"			"1"
-		"MaxLevel"					  "10"
-		"LevelsBetweenUpgrades"		 "7"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1500"
-		"AbilityCastPoint"				"0.4"
-		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"12"
-
-	
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.5"	// applies 2 modifiers
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"325"
-				"LinkedSpecialBonus"		"special_bonus_unique_kunkka"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"movespeed_bonus"			"-35"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"3"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"1.6"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"delay"						"1.6"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"torrent_damage"			"275 850 1925 4700 8450 19420 27500 42560 65500 85400"
-				"LinkedSpecialBonus"		"special_bonus_unique_kunkka_2"
-			}
-		}		
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
-	}	
 	"kunkka_tidebringer"
 	{
 		"AbilitySpecial"
@@ -16934,116 +16547,6 @@
 		}
 	}
 
-// Hoodwink: Acorn Shot
-	"hoodwink_acorn_shot"
-	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityCooldown"				"16 14 12 10 9 8 7"
-		"MaxLevel"						"7"
-		"LevelsBetweenUpgrades"			"7"
-		"AbilityCastRange"				"1875"
-		"AbilityCastPoint"				"0.2"
-		"AbilityManaCost"				"101"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_range"			"225 300 325 350 375 400 450"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"acorn_shot_damage"		"125 900 2875 8450 18500 36800 58500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"base_damage_pct"		"575"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bounce_count"			"6 7 8 9 10 11 12"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bounce_range"			"1925"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"debuff_duration"		"0.25"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"100"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bounce_delay"			"0.1"
-			}
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
-	}
-
-// Hoodwink: Bushwhack
-	"hoodwink_bushwhack"
-	{
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
-		"AbilityCastRange"				"1800"
-		"MaxLevel"						"7"
-		"LevelsBetweenUpgrades"			"7"
-		"AbilityCastPoint"				"0.2"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-		"AbilityCooldown"				"14"
-		"AbilityManaCost"				"120"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"trap_radius"		"625"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"debuff_duration"	"2.2"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"projectile_speed"	"1000"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"total_damage"		"490 3780 12470 24420 48500 79500 182500"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"animation_rate"	"0.3"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"visual_height"		"50"
-			}
-		}
-	}
-
 // Hoodwink: Scurry
 	"hoodwink_scurry"
 	{
@@ -17477,405 +16980,6 @@
 			}
 		}
 	}
-	
-	//=================================================================================================================
-	// DAWNBREAKER START
-	//=================================================================================================================
-	// Dawnbreaker: FIRE WREATH
-	//=================================================================================================================
-	"dawnbreaker_fire_wreath"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"7902"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CAN_SELF_CAST | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"FightRecapLevel"				"1"
-		"MaxLevel"					  "10"
-		"LevelsBetweenUpgrades"		 "9"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		//"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.2"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"11"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"1.1"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"swipe_radius"				"750"					
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"swipe_damage"				"75 235 1250 3500 7800 27500 48500 64500 83800 125000"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"smash_radius"				"750"
-			}	
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"smash_damage"				"425 935 6450 19500 39800 52500 128500 285000 475800 974000"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"movement_speed"				"450"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"total_attacks"				"10"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"smash_stun_duration"			"1.4"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"sweep_stun_duration"			"0.12"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"self_stun_duration"			"0.2"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"swipe_slow"			"-100"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"smash_distance_from_hero"				"350"
-			}		
-			"14"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"animation_rate"				"0"
-			}	
-			"15"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"turn_rate"					"90"
-			}	
-		}	
-	}
-
-	//=================================================================================================================
-	// Dawnbreaker Celestial Blade
-	//=================================================================================================================
-	"dawnbreaker_celestial_hammer"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"7914"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"FightRecapLevel"				"1"
-		"MaxLevel"					  "10"
-		"LevelsBetweenUpgrades"		 "9"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		
-		"AbilityCastPoint"				"0.25"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hammer_damage"			"525 835 9450 24500 43800 72500 178500 227000 268000 665000"
-				"LinkedSpecialBonus"		"special_bonus_unique_dawnbreaker_celestial_blade"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_radius"			"350"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"				"3200"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"flare_debuff_duration"				"5.0"
-			}
-			"05"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"flare_radius"					"350"
-			}
-			"06"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"move_slow"							"35"
-			}	
-			"07"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"burn_damage"						"325 735 3450 14500 24800 42500 94500 142000 232500 449000"
-			}	
-			"08"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"burn_interval"						"0.5"
-			}	
-			"09"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"pause_duration"						"3"
-			}	
-			"10"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"hammer_aoe_radius"						"350"
-			}	
-			"11"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"travel_speed_pct"						"1000"
-			}	
-			"12"
-			{
-				"var_type"								"FIELD_INTEGER"
-				"return_anim_distance_threshold"						"300"
-			}
-			"13"	
-			{
-				"var_type"								"FIELD_INTEGER"
-				"range"								"2000"
-			}
-		
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
-	}
-
-
-	//=================================================================================================================
-	// Dawnbreaker: Converge
-	//=================================================================================================================
-	"dawnbreaker_converge"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"7903"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0"
-		"AbilityCastAnimation"			"ACT_INVALID"
-		"MaxLevel"					  "10"
-		"LevelsBetweenUpgrades"		 "9"
-
-		// Unit Targeting
-		//-------------------------------------------------------------------------------------------------------------
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"375"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"0.25"
-		"AbilityManaCost"				"0"
-			
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-								
-		}
-	}	
-	//=================================================================================================================
-	// Ability: Dawnbreaker Luminosity
-	//=================================================================================================================
-	"dawnbreaker_luminosity"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"7918"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
-		"MaxLevel"					  "10"
-		"LevelsBetweenUpgrades"		 "9"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
-		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.0"
-
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"heal_radius"				"1450"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"heal_pct"					"7"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"220 340 460 580 650 760 1150 1550 2040 2450"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_count"				"7"
-			}	
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"proc_cooldown"				"0.00"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"heal_from_creeps"			"30"
-			}	
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"allied_healing_pct"		"25"
-			}				
-		
-		}
-	}
-	//=================================================================================================================
-	// Dawnbreaker: Solar Guardian
-	//=================================================================================================================
-	"dawnbreaker_solar_guardian"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"7906"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
-		"MaxLevel"					  "9"	
-		"LevelsBetweenUpgrades"		 "9"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.1"
-		"AbilityChannelTime"			"0.1"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"65"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"250"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.25"	// generally used for damage only
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"airtime_duration"				"2.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"1500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage"			"625 1935 8450 24500 44800 92500 294500 425100 875000"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_heal"				"625 1935 8450 14500 24800 32500 49500 82510 100001" 
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pulse_interval"				"0.5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"land_damage"			"925 3935 18450 44500 84800 192500 494500 756000 1540000"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"land_stun_duration"			"2.5"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_offset_distance"			"1150"
-			}
-			
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
-		//"AbilityChannelAnimation"	"ACT_DOTA_CAST_ABILITY_4"
-	}
 
 
 	//=================================================================================================================
@@ -18273,6 +17377,8 @@
 		"AbilityCastRange"				"8200"
 		"AbilityCooldown"				"45.0"
 		"ItemRequiresCharges"			"0"
+		"UpgradesItems"					"item_ancient_janggo;item_ancient_janggo_2"
+		"UpgradeRecipe"					"item_ultimate_orb;item_chest_2"
 		"AbilitySpecial"
 		{
 			"01"
@@ -18318,6 +17424,50 @@
 		}
 	}
 
+// Assault Cuirass
+	"item_assault"
+	{
+		"UpgradesItems"					"item_assault;item_mjz_assault_2;item_mjz_assault_3;item_mjz_assault_4"
+		"UpgradeRecipe"					"item_platemail;item_hyperstone;item_recipe_assault"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastRange"				"1200"
+		"MaxUpgradeLevel"				"5"
+		"ItemBaseLevel"					"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"10 20 30 40 50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"1200 1900 2600 2800 7200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_attack_speed"		"30 50 90 190 300"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_positive_armor"	"5 8 11 17 30"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_negative_armor"	"-5 -8 -11 -17 -30"
+			}			
+		}
+	}
+
 // Arcane Boots
 	"item_arcane_boots"
 	{
@@ -18335,9 +17485,8 @@
 // Armlet
 	"item_armlet"
 	{
+		"MaxUpgradeLevel"				"2"
 		"ItemBaseLevel"					"1"
-		"UpgradesItems"					"item_armlet;item_mjz_armlet_2;item_mjz_armlet_3;item_mjz_armlet_4"
-		"UpgradeRecipe"					"item_armlet"
 		"AbilitySpecial"
 		{
 			"01"
@@ -18396,8 +17545,6 @@
 // Basher
 	"item_basher"
 	{
-		"UpgradesItems"					"item_basher;item_mjz_basher_2;item_mjz_basher_3;item_mjz_basher_4"
-		"UpgradeRecipe"					"item_basher"
 		"AbilityCooldown"				"2.5"
 		"AbilitySpecial"
 		{
@@ -18699,6 +17846,8 @@
 		"MaxUpgradeLevel"			"5"
 		"ItemBaseLevel"				"1"
 		"ItemDisassembleRule"		"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"UpgradesItems"				"item_butterfly;item_mjz_butterfly_green_2;item_mjz_butterfly_green_3;item_mjz_butterfly_green_4"
+		"UpgradeRecipe"				"item_eagle"
 		"AbilitySpecial"
 		{
 			"01"
@@ -18924,6 +18073,8 @@
 	{
 		"MaxUpgradeLevel"			"5"
 		"ItemBaseLevel"				"1"
+		"UpgradesItems"				"item_echo_sabre;item_echo_sabre_2;item_echo_sabre_3"
+		"UpgradeRecipe"				"item_recipe_echo_sabre_2"
 		"AbilityCooldown"			"0.45"
 		"AbilitySpecial"
 		{
@@ -19721,8 +18872,6 @@
 		"MaxUpgradeLevel"				"2"
 		"ItemBaseLevel"					"1"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"UpgradesItems"					"item_monkey_king_bar;item_mjz_monkey_king_bar_2;item_mjz_monkey_king_bar_3;item_mjz_monkey_king_bar_4"
-		"UpgradeRecipe"					"item_monkey_king_bar"
 		"AbilitySpecial"
 		{
 			"01"
@@ -20427,6 +19576,8 @@
 	{
 		"MaxUpgradeLevel"			"2"
 		"ItemBaseLevel"				"1"
+		"UpgradesItems"				"item_shivas_guard;item_mjz_shivas_guard_2;item_mjz_shivas_guard_3"
+		"UpgradeRecipe"				"item_platemail;item_recipe_shivas_guard"
 		"AbilitySpecial"
 		{
 			"01"
@@ -20498,8 +19649,6 @@
 // Skadi
 	"item_skadi"
 	{
-		"UpgradesItems"				"item_skadi;item_mjz_skadi_2;item_mjz_skadi_3;item_mjz_skadi_4"
-		"UpgradeRecipe"				"item_skadi"
 		"MaxUpgradeLevel"			"5"
 		"ItemBaseLevel"				"1"
 		"AbilitySpecial"

@@ -112,7 +112,9 @@ modifier_ogre_magi_multicast_lua.banned = {
 	["zanto_gari"] = true,
 	["arcane_supremacy"] = true,
 	["hw_sharpshooter"] = true,
-	["hw_sharpshooter_release"] = true,	
+	["hw_sharpshooter_release"] = true,
+	["lesser_cancel"] = true,
+	["divine_cancel"] = true,
 }
 
 --------------------------------------------------------------------------------

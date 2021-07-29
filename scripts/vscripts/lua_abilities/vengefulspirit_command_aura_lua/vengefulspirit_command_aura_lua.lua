@@ -24,7 +24,7 @@ function modifier_vengefulspirit_command_aura_lua:DeclareFunctions()
 end
 function modifier_vengefulspirit_command_aura_lua:OnDeath(params)
 	if IsServer() then
-		if self:GetCaster() == nil or self:GetCaster():PassivesDisabled() or self:GetCaster() ~= self:GetParent() then return end
+		if self:GetCaster() == nil or self:GetCaster():PassivesDisabled() or self:GetCaster() ~= self:GetParent() or self:GetAbility():GetLevel() < 1 then return end
 
 		local hAttacker = params.attacker
 		local hVictim = params.unit
@@ -55,22 +55,26 @@ end
 
 
 modifier_vengefulspirit_command_aura_effect_lua = class({})
-function modifier_vengefulspirit_command_aura_effect_lua:IsHidden() return (self:GetAbility():GetLevel() < 1) end
+function modifier_vengefulspirit_command_aura_effect_lua:IsHidden() if self:GetAbility() then return (self:GetAbility():GetLevel() < 1) end end
 function modifier_vengefulspirit_command_aura_effect_lua:IsDebuff()
 	if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then return true end
 	return false
 end
 function modifier_vengefulspirit_command_aura_effect_lua:OnCreated()
-	self.agi_multiplier = self:GetAbility():GetSpecialValueFor("agi_multiplier") / self:GetAbility():GetSpecialValueFor("agi_per_dmg")
-	self.bonus_damage_pct = self:GetAbility():GetSpecialValueFor("bonus_damage_pct")
+	if IsServer() then if not self:GetAbility() then self:Destroy() end
+		self.agi_multiplier = self:GetAbility():GetSpecialValueFor("agi_multiplier") / self:GetAbility():GetSpecialValueFor("agi_per_dmg")
+		self.bonus_damage_pct = self:GetAbility():GetSpecialValueFor("bonus_damage_pct")
+	end
 end
 function modifier_vengefulspirit_command_aura_effect_lua:DeclareFunctions()
 	return {MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE}
 end
 function modifier_vengefulspirit_command_aura_effect_lua:GetModifierBaseDamageOutgoing_Percentage(params)
-	if self:GetCaster():PassivesDisabled() and not self:IsDebuff() then return end
-	if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
-		return -(self.bonus_damage_pct + (self.agi_multiplier * self:GetCaster():GetAgility()))
+	if self:GetAbility() then
+		if (self:GetCaster():PassivesDisabled() and not self:IsDebuff()) or self:GetAbility():GetLevel() < 1 then return end
+		if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
+			return -(self.bonus_damage_pct + (self.agi_multiplier * self:GetCaster():GetAgility()))
+		end
+		return self.bonus_damage_pct + (self.agi_multiplier * self:GetCaster():GetAgility())
 	end
-	return self.bonus_damage_pct + (self.agi_multiplier * self:GetCaster():GetAgility())
 end

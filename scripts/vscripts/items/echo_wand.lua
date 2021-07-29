@@ -221,6 +221,10 @@ if IsServer() then
 		item_illusionsts_cape = true,
 		item_custom_octarine_core2 = true,
 		beastmaster_wild_axes = true,
+		hw_sharpshooter = true,
+		hw_sharpshooter_release = true,
+		lesser_cancel = true,
+		divine_cancel = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

@@ -5,6 +5,14 @@ LinkLuaModifier("modifier_back_in_time_aura_effect", "abilities/custom/back_in_t
 
 back_in_time = class({})
 function back_in_time:GetIntrinsicModifierName() return "modifier_back_in_time" end
+function back_in_time:OnHeroCalculateStatBonus(params)
+	if self:GetLevel() ~= 0 then return end
+	local ability = self:GetCaster():FindAbilityByName("weaver_time_lapse")
+	if not ability then return end
+	if ability:GetLevel() ~= 0 then
+		self:SetLevel(1)
+	end
+end
 
 modifier_back_in_time = class({})
 function modifier_back_in_time:IsHidden() return true end
@@ -18,7 +26,6 @@ function modifier_back_in_time:OnCreated()
 	if not self:GetCaster():HasModifier("modifier_back_in_time_buff") then self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_back_in_time_buff", {}) end
 	local ability = self:GetAbility()
 	local parent = self:GetParent()
-	self.newskill = false
 	local modifier = "modifier_back_in_time_buff"
 	local modifier2 = "modifier_back_in_time_aura"
 	if not parent:HasModifier(modifier) then
@@ -50,18 +57,14 @@ function modifier_back_in_time:OnCreated()
 	if not parent:HasModifier(modifier2) then
 		parent:AddNewModifier(parent, ability, modifier2, {})
 		--print("modif2 added")
-	end	
+	end
 	local lapse = parent:FindAbilityByName("weaver_time_lapse")
-	local rebound = parent:FindAbilityByName("back_in_time")
-	-- if there"s no ability, then add it
-	if not lapse and not self.newskill then 
-		local lapse2 = parent:AddAbility("weaver_time_lapse")
-		lapse2:SetLevel(1)
-		self.newskill = true
-		if not rebound then
-			local rebound2 = parent:AddAbility("back_in_time")
-			rebound2:SetLevel(1)
-		end
+	if lapse and lapse:GetLevel() ~= 0 then return end
+	if not lapse then
+		parent:AddAbility("weaver_time_lapse")
+		lapse:SetLevel(1)
+	else
+		lapse:SetLevel(1)
 	end
 end
 
