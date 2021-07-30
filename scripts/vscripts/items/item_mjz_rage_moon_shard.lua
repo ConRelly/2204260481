@@ -43,6 +43,7 @@ modifier_mjz_rage_moon_shard_stats = modifier_mjz_rage_moon_shard_stats or class
 function modifier_mjz_rage_moon_shard_stats:IsHidden() return false end
 function modifier_mjz_rage_moon_shard_stats:IsPurgable() return false end
 function modifier_mjz_rage_moon_shard_stats:AllowIllusionDuplicate() return true end
+function modifier_mjz_rage_moon_shard_stats:RemoveOnDeath() return false end
 function modifier_mjz_rage_moon_shard_stats:GetTexture() return "modifiers/mjz_rage_moon_shard" end
 function modifier_mjz_rage_moon_shard_stats:DeclareFunctions()
 	return {MODIFIER_PROPERTY_BONUS_NIGHT_VISION, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT}

@@ -1174,6 +1174,7 @@ New: 3 Quests with NFTs as bonus rewards, you can find them on discord(link on w
 * Reworked Bloodstone's: Now they work like in Dota
 * Bloodstone Ultimate: Active health regen increased by 25%
 * (Probably) Fixed multiple Trusty Shovels
+* Fixed: Rage Moon Shard getting lost on death
 * Fixed: Commander Aura at 0 level gave negative damage
 * Fixed: Spirit Guardian attacked when the owner died
 * Fixed: Tidebringer (Kunkka) + Charged Conduit crash
