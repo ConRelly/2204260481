@@ -130,15 +130,18 @@
 	}
 
 // Dawnbreaker Celestial Blade
-	"dawnbreaker_custom_celestial_hammer"
+	"db_celestial_hammer"
 	{
-		"BaseClass"						"dawnbreaker_celestial_hammer"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_dawnbreaker/celestial_hammer"
+		"AbilityTextureName"			"dawnbreaker_celestial_hammer"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"MaxLevel"						"10"
 		"LevelsBetweenUpgrades"			"9"
+		"AbilityCastRange"				"2000"
 		"AbilityCastPoint"				"0.25"
 		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"110"
@@ -148,7 +151,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"hammer_damage"			"525 835 9450 24500 43800 72500 178500 227000 268000 665000"
-				"LinkedSpecialBonus"	"special_bonus_unique_dawnbreaker_celestial_blade"
 			}
 			"02"
 			{
@@ -174,41 +176,42 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"move_slow"				"35"
-			}	
+			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"burn_damage"			"325 735 3450 14500 24800 42500 94500 142000 232500 449000"
-			}	
+			}
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"burn_interval"			"0.5"
-			}	
+			}
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"pause_duration"		"3"
-			}	
+			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"hammer_aoe_radius"		"350"
-			}	
+			}
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"travel_speed_pct"		"1000"
-			}	
+				"travel_speed_pct"		"100"
+			}
 			"12"
 			{
 				"var_type"							"FIELD_INTEGER"
 				"return_anim_distance_threshold"	"300"
 			}
-			"13"	
+			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"range"					"2000"
+				"LinkedSpecialBonus"	"special_bonus_unique_dawnbreaker_celestial_hammer_cast_range"
 			}
 		
 		}
@@ -217,10 +220,12 @@
 
 
 // Dawnbreaker: Converge
-	"dawnbreaker_custom_converge"
+	"db_converge"
 	{
-		"BaseClass"						"dawnbreaker_converge"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_dawnbreaker/celestial_hammer"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityTextureName"			"dawnbreaker_converge"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_INVALID"
 		"MaxLevel"						"10"

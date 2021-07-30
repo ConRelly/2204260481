@@ -1164,6 +1164,7 @@ New: 3 Quests with NFTs as bonus rewards, you can find them on discord(link on w
 * Ability Swap menu now opens with a single click
 * Added new memebility for Spirit Breaker
 * Charge of Darkness (Spirit Breaker): Numbers rescaled and the level is increased
+* Celestial Hammer (Dawnbreaker) cast range talent now works
 * Lucent Beam (Luna): Aghanim's Shard: The ability will give an vision in AOE
 * Dark Clone (Dark Seer): "Corpses" no longer remain
 * Spirit Guardian's heal increased by Snowball stacks
