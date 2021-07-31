@@ -1164,7 +1164,7 @@ New: 3 Quests with NFTs as bonus rewards, you can find them on discord(link on w
 * Ability Swap menu now opens with a single click
 * Added new memebility for Spirit Breaker
 * Charge of Darkness (Spirit Breaker): Numbers rescaled and the level is increased
-* Celestial Hammer (Dawnbreaker) cast range talent now works
+* Celestial Hammer (Dawnbreaker) cast range talent now works correctly
 * Lucent Beam (Luna): Aghanim's Shard: The ability will give an vision in AOE
 * Dark Clone (Dark Seer): "Corpses" no longer remain
 * Spirit Guardian's heal increased by Snowball stacks
@@ -1183,7 +1183,7 @@ New: 3 Quests with NFTs as bonus rewards, you can find them on discord(link on w
 * Fixed: Urn of Shadows/Spirit Vessel sell gold cost
 * Fixed: Greevil's Greed (Alchemist) OVER9000 gold bug
 * Fixed upgrading of some items
-* Fixed Dawnbreaker, Hoodwink, Grimstroke broken spellicons (if you find broken icons, then write to Discord)
+* Fixed Dawnbreaker, Hoodwink, Grimstroke, Void Spirit broken spellicons (if you find broken icons, then write to Discord)
 * Added few missed icons
 
 

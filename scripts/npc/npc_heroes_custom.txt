@@ -2040,12 +2040,6 @@
 		"AttributeAgilityGain"  "8.8"
 	}
 	
-	"npc_dota_hero_void_spirit_mjz"
-	{
-		"override_hero"			"npc_dota_hero_void_spirit"
-
-		"Ability5"				"mjz_void_spirit_astral_atlas"
-	}
 	"npc_dota_hero_windrunner_mjz"			// 风行者
 	{
 		"override_hero"			"npc_dota_hero_windrunner"
@@ -2138,11 +2132,16 @@
 	}
 	"npc_dota_hero_void_spirit_mjz"
 	{
-		"override_hero"	"npc_dota_hero_void_spirit"
-		"Ability10"					"special_bonus_unique_void_spirit_8"
-		"Ability13"				 "special_bonus_unique_void_spirit_3"
-		"Ability16"					"special_bonus_spell_amplify_100"
-		"Ability17"				 "special_bonus_unique_void_spirit_4"
+		"override_hero"		"npc_dota_hero_void_spirit"
+
+		"Ability1"			"void_spirit_custom_aether_remnant"
+		"Ability3"			"void_spirit_custom_resonant_pulse"
+		"Ability5"			"mjz_void_spirit_astral_atlas"
+		"Ability6"			"void_spirit_custom_astral_step"
+		"Ability10"			"special_bonus_unique_void_spirit_8"
+		"Ability13"			"special_bonus_unique_void_spirit_3"
+		"Ability16"			"special_bonus_spell_amplify_100"
+		"Ability17"			"special_bonus_unique_void_spirit_4"
 	}
 	"npc_dota_hero_winter_wyvern_mjz"
 	{

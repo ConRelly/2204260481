@@ -9507,5 +9507,36 @@
 	"DOTA_Tooltip_ability_grimstroke_custom_ink_over_total_damage"   "СУММАРНЫЙ УРОН:"
 	"DOTA_Tooltip_ability_grimstroke_custom_ink_over_attack_speed"   "ЗАМЕДЛЕНИЕ АТАКИ:"
 	"DOTA_Tooltip_ability_grimstroke_custom_ink_over_move_speed"   "%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+
+
+// Void Spirit
+	"DOTA_Tooltip_ability_void_spirit_custom_aether_remnant"					"Aether Remnant"
+	"DOTA_Tooltip_ability_void_spirit_custom_aether_remnant_Description"		"Векторное применение. Герой отправляет в указанную точку свою копию. Копия смотрит в сторону, указанную при применении. Когда в её обзор попадает существо, копия притягивает его и наносит урон."
+	"DOTA_Tooltip_ability_void_spirit_custom_aether_remnant_Lore"				"Инай существует далеко не в одной точке пространства и времени."
+	"DOTA_Tooltip_ability_void_spirit_custom_aether_remnant_pull_duration"		"ДЛИТЕЛЬНОСТЬ ПРИТЯГИВАНИЯ:"
+	"DOTA_Tooltip_ability_void_spirit_custom_aether_remnant_impact_damage"		"УРОН:"
+	"DOTA_Tooltip_ability_void_spirit_custom_aether_remnant_duration"			"ВРЕМЯ ЖИЗНИ КОПИИ:"
+	"DOTA_Tooltip_ability_void_spirit_custom_aether_remnant_activation_delay"	"ВРЕМЯ ДО АКТИВАЦИИ:"
+
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse"						"Resonant Pulse"
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse_Description"			"Герой помещает себя в защитную оболочку, которая поглощает физический урон и выпускает одну наносящую урон волну. Оболочка поглощает тем больше урона, чем больше вражеских героев заденет волна."
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse_scepter_description"    "Способность получает два заряда и накладывает на жертв безмолвие."
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse_Lore"					"Инай без сомнений укрывается своей истинной сущностью, когда ему приходится взаимодействовать с миром смертных."
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse_radius"					"РАДИУС ВОЛНЫ:"
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse_buff_duration"			"ДЛИТЕЛЬНОСТЬ ДЕЙСТВИЯ ОБОЛОЧКИ:"
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse_damage"					"УРОН:"
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse_base_absorb_amount"		"БАЗОВЫЙ ПОГЛОЩАЕМЫЙ УРОН:"
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse_absorb_per_hero_hit"	"ДОП. ПОГЛОЩАЕМЫЙ УРОН ЗА ГЕРОЯ:"
+
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step"					"Astral Step"
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_Description"		"Герой перемещается в указанную точку через астральный разлом, атакуя всех врагов на пути. Эта атака накладывает метку пустоты, которая замедляет жертв на %pop_damage_delay% сек. и затем наносит урон."
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_Note0"		"Атаки от этой способности не наносят прорубающий урон."
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_Lore"		"Один шаг Иная приводит к страшным разрушениям в мире смертных."
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_bonus_damage"			"ДОП. УРОН ОТ АТАКИ:"
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_max_charges"			"МАКС. ЗАРЯДОВ:"
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_charge_restore_time"	"ВРЕМЯ ВОССТАНОВЛЕНИЯ ЗАРЯДА:"
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_max_travel_distance"	"ДАЛЬНОСТЬ:"
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_pop_damage"			"УРОН ОТ МЕТКИ ПУСТОТЫ:"
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_movement_slow_pct"		"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
 	}
 }

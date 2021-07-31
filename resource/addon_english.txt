@@ -9444,5 +9444,36 @@ Contains all random skills"
 	"DOTA_Tooltip_ability_grimstroke_custom_ink_over_total_damage"   "TOTAL DAMAGE:"
 	"DOTA_Tooltip_ability_grimstroke_custom_ink_over_attack_speed"   "ATTACK SPEED SLOW:"
 	"DOTA_Tooltip_ability_grimstroke_custom_ink_over_move_speed"   "MOVE SPEED SLOW:"
+
+
+// Void Spirit
+	"DOTA_Tooltip_ability_void_spirit_custom_aether_remnant"					"Aether Remnant"
+	"DOTA_Tooltip_ability_void_spirit_custom_aether_remnant_Description"		"Vector targeted. Void Spirit dispatches a remnant to the target location. The remnant stands watch over the region, facing the direction of his vector. When a unit crosses its gaze, the remnant pulls it in and damages it."
+	"DOTA_Tooltip_ability_void_spirit_custom_aether_remnant_Lore"				"Inai exists far beyond the scope of a single point in space and time."
+	"DOTA_Tooltip_ability_void_spirit_custom_aether_remnant_pull_duration"		"PULL DURATION:"
+	"DOTA_Tooltip_ability_void_spirit_custom_aether_remnant_impact_damage"		"DAMAGE:"
+	"DOTA_Tooltip_ability_void_spirit_custom_aether_remnant_duration"			"REMNANT LIFETIME:"
+	"DOTA_Tooltip_ability_void_spirit_custom_aether_remnant_activation_delay"	"ACTIVATION TIME:"
+
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse"						"Resonant Pulse"
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse_Description"			"Void Spirit wraps himself in a protective shield that absorbs physical damage and emits a single damaging pulse around him. The shield gains increased damage absorption for each enemy hero the pulse hits."
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse_scepter_description"    "Causes Resonant Pulse to silence and gain two charges."
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse_Lore"					"Inai never hesitates to shroud himself in the essence of his true self when forced to interact with the mortal plane."
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse_radius"					"PULSE RADIUS:"
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse_buff_duration"			"SHIELD DURATION:"
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse_damage"					"DAMAGE:"
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse_base_absorb_amount"		"BASE SHIELD ABSORB:"
+	"DOTA_Tooltip_ability_void_spirit_custom_resonant_pulse_absorb_per_hero_hit"	"BONUS ABSORB PER HERO HIT:"
+
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step"					"Astral Step"
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_Description"		"Void Spirit tears a rift through the astral plane to appear at the target location, attacking all enemies along the path. This attack inflicts a void mark that slows for %pop_damage_delay% seconds and then detonates."
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_Note0"		"Astral Step attacks do not cleave."
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_Lore"		"A small step for Inai creates great devastation on the mortal plane."
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_bonus_damage"			"BONUS ATTACK DAMAGE:"
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_max_charges"			"MAX CHARGES:"
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_charge_restore_time"	"CHARGE RESTORE TIME:"
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_max_travel_distance"	"RANGE:"
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_pop_damage"			"VOID MARK DAMAGE:"
+	"DOTA_Tooltip_ability_void_spirit_custom_astral_step_movement_slow_pct"		"%MOVEMENT SLOW:"
 	}
 }

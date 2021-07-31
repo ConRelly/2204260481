@@ -38,7 +38,6 @@
 #base "abilities/heroes/keeper_of_the_light_spirit_form_illuminate.txt"
 #base "abilities/heroes/huskar_burning_spear.txt"
 #base "abilities/heroes/earth_spirit_stone_caller.txt"
-#base "abilities/heroes/void_spirit_astral_step.txt"
 #base "abilities/heroes/tusk_walrus_punch.txt"
 #base "abilities/heroes/pudge_meat_hook.txt"
 
@@ -11476,100 +11475,12 @@
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
-	}		
-	"void_spirit_aether_remnant"
-	{
-		"AbilityCooldown"				"7"
-		"AbilitySpecial"
-		{
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"remnant_watch_distance"	"550"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"impact_damage"			"300 750 1900 5750"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"60.0"
-			}
-		}
 	}
 	"void_spirit_dissimilate"
 	{
 		"AbilityDamage"					"260 540 1220 3300"
 	}
 
-	"void_spirit_resonant_pulse"
-	{
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "7"
-		"AbilityCooldown"				"11"
-		"AbilityManaCost"				"50"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"650"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"800"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"270 920 1470 2200 2900 3800 9500"
-				"LinkedSpecialBonus"	"special_bonus_unique_void_spirit_4"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"buff_duration"			"10.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_absorb_amount"	"900 1800 3120 9160 14000 21500 47960"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"absorb_per_hero_hit"	"3000 4500 7600 17500 21500 42500 100000"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"return_projectile_speed"	"900"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"max_charges"		"3"
-				"RequiresScepter"			"1"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"charge_restore_time"		"10"
-				"RequiresScepter"			"1"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"silence_duration_scepter"			"2.0"
-			}
-		}
-	}
 	"warlock_fatal_bonds"
 	{
 		"AbilityManaCost"				"141"

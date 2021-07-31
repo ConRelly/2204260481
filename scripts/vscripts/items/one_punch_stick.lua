@@ -23,9 +23,6 @@ function onepunch(keys)
 	if not keys.caster:HasAbility("divine_cancel") then
 		keys.caster:AddAbility("divine_cancel")
 	end
-	if not keys.caster:HasAbility("vengefulspirit_command_aura_lua") then
-		keys.caster:AddAbility("vengefulspirit_command_aura_lua")
-	end
 --	if not keys.caster:HasAbility("divine_cancel") then
 --		keys.caster:AddAbility("divine_cancel")
 --	end
