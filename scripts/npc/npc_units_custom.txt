@@ -9420,13 +9420,15 @@
 	"ModelScale" 				"1.0"
 	"HasInventory"				"1"
 	// Abilities
-	"Ability1"					"goon_increase_stats"			// Ability 1
-	"Ability2"		"goon_placeholder1"
-	"Ability3"		"goon_placeholder2"
-	"Ability4"		"rubick_empty1"
-	"Ability5"		"rubick_empty2"
-	"Ability6"		"goon_spell_steal"
-	"Ability7"		"rubick_telekinesis_land"
+	//"Ability1"		""
+	//"Ability2"		""	
+	"Ability5"					"goon_increase_stats"			// Ability 1
+	"Ability1"		"goon_placeholder1"
+	"Ability2"		"goon_placeholder2"
+	//"Ability4"		"rubick_empty1"
+	//"Ability5"		"rubick_empty2"
+	//"Ability6"		"goon_spell_steal"
+	//"Ability7"		"rubick_telekinesis_land"
 	"Ability8"		"rubick_hidden1"
 	"Ability9"		"rubick_hidden2"
 	"Ability10"		"rubick_hidden3"

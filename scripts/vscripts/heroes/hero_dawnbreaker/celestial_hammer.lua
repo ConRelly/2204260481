@@ -522,7 +522,13 @@ end
 function modifier_db_celestial_hammer_debuff:DeclareFunctions()
 	return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE}
 end
-function modifier_db_celestial_hammer_debuff:GetModifierMoveSpeedBonus_Percentage() return -self.slow end
+function modifier_db_celestial_hammer_debuff:GetModifierMoveSpeedBonus_Percentage() 
+	if self.slow ~= nil then
+		return -self.slow
+	else
+		return 0
+	end		 
+end
 
 
 

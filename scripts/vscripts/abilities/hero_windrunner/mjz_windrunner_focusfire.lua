@@ -105,7 +105,7 @@ function modifier_class:DeclareFunctions()
 		return {
 			MODIFIER_EVENT_ON_ATTACK_START,
 			-- MODIFIER_EVENT_ON_ATTACK,
-			MODIFIER_EVENT_ON_ATTACK_LANDED,
+			--MODIFIER_EVENT_ON_ATTACK_LANDED,
 			MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS,
 		} 
 	else
@@ -135,7 +135,7 @@ if IsServer() then
 
     end
 
-    function modifier_class:OnAttack(keys)
+--[[     function modifier_class:OnAttack(keys)
         if keys.attacker ~= self:GetParent() then return nil end
         local attacker = keys.attacker
         local target = keys.target
@@ -153,7 +153,7 @@ if IsServer() then
 		local target = keys.target
 		
 		self:_MiniStunTarget(target)
-	end
+	end ]]
 
 	function modifier_class:OnCreated(  )
 		local caster = self:GetCaster()
@@ -182,8 +182,14 @@ if IsServer() then
 	end
 
 	function modifier_class:OnIntervalThink()
+		if not IsServer() then return end
         local parent = self:GetParent()
 		local ability = self:GetAbility()
+		if not ability ~= nil and not IsValidEntity(ability) then
+			self:Destroy()
+			return
+		end
+		if ability:GetFocusfireTarget() == nil then return end
 		local focusfire_target = ability:GetFocusfireTarget()
 		local can_PerformAttack = false
 

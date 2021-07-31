@@ -97,7 +97,9 @@ end
 
 function kill_illusion(illusion)
     if not illusion:IsIllusion() then
-        illusion:MakeIllusion()
+        if illusion ~= nil and IsValidEntity(illusion) then
+            illusion:MakeIllusion()
+        end    
     end
 	Timers:CreateTimer(2, function()
 		illusion:RemoveSelf()

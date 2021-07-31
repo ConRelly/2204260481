@@ -97,9 +97,12 @@ function modifier_death:DeclareFunctions()
 	return {MODIFIER_EVENT_ON_TAKEDAMAGE, MODIFIER_PROPERTY_MIN_HEALTH}
 end
 function modifier_death:OnDestroy()
-	kill_illusion(self:GetParent())
+	if IsServer() then
+		kill_illusion(self:GetParent())
+	end	
 end
 function modifier_death:OnTakeDamage(keys)
+	if not IsServer() then return end
 	local unit = keys.unit
 	if unit == self:GetParent() then
 		if keys.damage > unit:GetHealth() then

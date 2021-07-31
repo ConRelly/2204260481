@@ -414,7 +414,7 @@ function AOHGameMode:CC_Kill( playerID )
 			--	hero:ForceKill(false)
 			--end
 			Timers:CreateTimer({
-				endTime = 7, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
+				endTime = 7, 
 				callback = function()
 					hero:ForceKill(false)
 				end
