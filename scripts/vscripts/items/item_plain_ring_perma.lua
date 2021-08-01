@@ -1,34 +1,45 @@
 require("lib/my")
+LinkLuaModifier("modifier_item_plain_ring_perma", "items/item_plain_ring_perma.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_plain_ring_perma_armor", "items/item_plain_ring_perma.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_plain_ring_perma_invincibility", "items/item_plain_ring_perma.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_ring_invincibility_cd", "items/item_plain_ring_perma.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_plain_ring_perma_up", "items/item_plain_ring_perma.lua", LUA_MODIFIER_MOTION_NONE)
+
 
 function add_perma(keys)
-	if keys.caster:IsHero() and not keys.caster:HasModifier("modifier_arc_warden_tempest_double") then
-		if keys.caster:HasModifier("modifier_item_plain_ring_perma") then
-			local inv_cd = keys.caster:FindModifierByName("modifier_ring_invincibility_cd")
-			local cd_reduct = keys.ability:GetSpecialValueFor("cd_reduct")
+	local caster = keys.caster
+	local ability = keys.ability
+--	if caster:HasModifier("modifier_plain_ring_perma_up") then return end
+	if caster:IsHero() and not caster:HasModifier("modifier_arc_warden_tempest_double") then
+		if caster:HasModifier("modifier_item_plain_ring_perma") then
+			caster:AddNewModifier(caster, ability, "modifier_plain_ring_perma_up", {})
+			local inv_cd = caster:FindModifierByName("modifier_ring_invincibility_cd")
+			local cd_reduct = ability:GetSpecialValueFor("cd_reduct")
 			if inv_cd:GetStackCount() >= cd_reduct then
 				inv_cd:SetStackCount(inv_cd:GetStackCount() - cd_reduct)
 			else
 				inv_cd:SetStackCount(0)
 			end
-			keys.caster:ModifyGold(keys.ability:GetCost() * (keys.ability:GetSpecialValueFor("refund") / 100), true, 0)
-			SendOverheadEventMessage(PlayerResource:GetPlayer(keys.caster:GetPlayerOwnerID()), OVERHEAD_ALERT_GOLD, keys.caster, keys.ability:GetCost() * (keys.ability:GetSpecialValueFor("refund") / 100), nil)
+
+			local gold_ring_effect = ParticleManager:CreateParticle("particles/custom/items/gold_ring/gold_ring_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+			ParticleManager:ReleaseParticleIndex(gold_ring_effect)
+--[[
+			caster:ModifyGold(ability:GetCost() * (ability:GetSpecialValueFor("refund") / 100), true, 0)
+			SendOverheadEventMessage(PlayerResource:GetPlayer(caster:GetPlayerOwnerID()), OVERHEAD_ALERT_GOLD, caster, ability:GetCost() * (ability:GetSpecialValueFor("refund") / 100), nil)
+]]
 		else
-			keys.caster:AddNewModifier(keys.caster, keys.ability, "modifier_item_plain_ring_perma", {duration = -1, invincibility_duration = keys.ability:GetSpecialValueFor("duration"), cooldown = keys.ability:GetSpecialValueFor("cooldown"), min_health = keys.ability:GetSpecialValueFor("min_health")})
-			keys.caster:AddNewModifier(keys.caster, keys.ability, "modifier_item_plain_ring_perma_armor", {})
+			caster:AddNewModifier(caster, ability, "modifier_item_plain_ring_perma", {duration = -1, invincibility_duration = ability:GetSpecialValueFor("duration"), cooldown = ability:GetSpecialValueFor("cooldown"), min_health = ability:GetSpecialValueFor("min_health"), cd_reduct = ability:GetSpecialValueFor("cd_reduct")})
+			caster:AddNewModifier(caster, ability, "modifier_item_plain_ring_perma_armor", {})
 		end
-		if keys.ability:GetCurrentCharges() >= 1 then
-			keys.ability:SpendCharge()
+		if ability:GetCurrentCharges() >= 1 then
+			ability:SpendCharge()
 		else
-			keys.caster:RemoveItem(keys.ability)
+			caster:RemoveItem(ability)
 		end
 	end
 end
 
 
-LinkLuaModifier("modifier_item_plain_ring_perma", "items/item_plain_ring_perma.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_item_plain_ring_perma_armor", "items/item_plain_ring_perma.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_item_plain_ring_perma_invincibility", "items/item_plain_ring_perma.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_ring_invincibility_cd", "items/item_plain_ring_perma.lua", LUA_MODIFIER_MOTION_NONE)
 
 ------------------
 -- Perma Effect --
@@ -51,16 +62,18 @@ function modifier_item_plain_ring_perma:OnCreated(keys)
 		self.invincibility_duration = keys.invincibility_duration
 		self.min_health = keys.min_health
 		self.cooldown = keys.cooldown
+		self.cd_reduct = keys.cd_reduct
 		self.parent:AddNewModifier(self.parent, self.ability, "modifier_ring_invincibility_cd", {})
-		self:StartIntervalThink(FrameTime())
+--		self:StartIntervalThink(FrameTime())
 	end
 end
+--[[
 function modifier_item_plain_ring_perma:OnIntervalThink()
 	if IsServer() then
 		self.stacks = self:GetCaster():FindModifierByName("modifier_ring_invincibility_cd"):GetStackCount()
 	end
 end
-
+]]
 function modifier_item_plain_ring_perma:OnTakeDamage(keys)
 	if IsServer() then
 		local aegis_charges = self:GetCaster():FindModifierByName("modifier_aegis")
@@ -74,7 +87,13 @@ function modifier_item_plain_ring_perma:OnTakeDamage(keys)
 				if health < 1 then
 					self.parent:SetHealth(1)
 					self.parent:AddNewModifier(self.parent, self.ability, "modifier_item_plain_ring_perma_invincibility", {duration = self.invincibility_duration, min_health = self.min_health})
-					self.parent:FindModifierByName("modifier_ring_invincibility_cd"):SetStackCount(self.cooldown)
+					local cooldown = self.cooldown
+					if self.parent:HasModifier("modifier_plain_ring_perma_up") then
+						cooldown = self.cooldown - self.cd_reduct
+					end
+					self.parent:FindModifierByName("modifier_ring_invincibility_cd"):SetStackCount(cooldown + 1)
+					self.parent:FindModifierByName("modifier_ring_invincibility_cd"):StartIntervalThink(1)
+					self.parent:FindModifierByName("modifier_ring_invincibility_cd"):OnIntervalThink()
 				end
 			end
 		end
@@ -137,11 +156,20 @@ end
 function modifier_ring_invincibility_cd:OnIntervalThink()
 	if IsServer() then
 		if self:GetStackCount() > 0 then
-			local duration = self:GetStackCount() - 1 
+			local duration = self:GetStackCount() - 1
 			self:SetStackCount(duration)
 		end
 		if self:GetStackCount() == 0 then
 			self:GetCaster():FindModifierByName("modifier_item_plain_ring_perma"):SetStackCount(0)
+			self:StartIntervalThink(-1)
 		end
 	end
 end
+
+-----------------
+-- UP Modifier --
+-----------------
+modifier_plain_ring_perma_up = class({})
+function modifier_plain_ring_perma_up:IsHidden() return true end
+function modifier_plain_ring_perma_up:IsPurgable() return false end
+function modifier_plain_ring_perma_up:RemoveOnDeath() return false end
