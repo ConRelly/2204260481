@@ -3,7 +3,6 @@ local THIS_LUA = "abilities/hero_slardar/mjz_slardar_slithereen_crush.lua"
 local MODIFIER_LUA = "modifiers/hero_slardar/modifier_mjz_slardar_slithereen_crush.lua"
 
 local MODIFIER_SLOW_NAME = 'modifier_mjz_slardar_slithereen_crush_slow'
--- local MODIFIER_ATTACK_SPEED_NAME = 'modifier_mjz_slardar_slithereen_crush_attack_speed'
 local MODIFIER_DUMMY_NAME = 'modifier_mjz_slardar_slithereen_crush_dummy'
 local MODIFIER_AURA_FRIENDLY_NAME = 'modifier_mjz_slardar_slithereen_crush_aura_friendly'
 local MODIFIER_AURA_ENEMY_NAME = 'modifier_mjz_slardar_slithereen_crush_aura_enemy'
@@ -20,8 +19,10 @@ mjz_slardar_slithereen_crush = class({})
 local ability_class = mjz_slardar_slithereen_crush
 
 function ability_class:GetAOERadius()
-	local caster = self:GetCaster()
 	local radius = self:GetSpecialValueFor('radius')
+	if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
+		radius = radius + 75
+	end
 	return radius
 end
 
@@ -36,6 +37,10 @@ if IsServer() then
 		local slow_duration = GetTalentSpecialValueFor(ability, 'slow_duration')
 		local particle_hit = "particles/units/heroes/hero_slardar/slardar_crush_entity.vpcf"
 		local particle_splash  = "particles/units/heroes/hero_slardar/slardar_crush.vpcf"
+
+		if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
+			radius = radius + 75
+		end
 
 		local damage = base_damage + caster:GetStrength() * (str_damage_pct / 100.0)
 		local damageTable = {
@@ -106,71 +111,58 @@ end
 ----------------------------------------------------------------------
 
 modifier_mjz_slardar_slithereen_crush_slow = class({})
-
 function modifier_mjz_slardar_slithereen_crush_slow:IsDebuff() return true end
 function modifier_mjz_slardar_slithereen_crush_slow:IsHidden() return false end
 function modifier_mjz_slardar_slithereen_crush_slow:IsPurgable() return true end
-
+function modifier_mjz_slardar_slithereen_crush_slow:OnCreated()
+	self.shard = false
+	if self:GetCaster():HasModifier("modifier_item_aghanims_shard") and self:GetCaster():FindAbilityByName("slardar_amplify_damage"):GetLevel() > 0 then
+		self.shard = true
+		self.effect_cast = ParticleManager:CreateParticle("particles/units/heroes/hero_slardar/slardar_amp_damage.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetParent())
+		ParticleManager:SetParticleControlEnt(self.effect_cast, 0, self:GetParent(), PATTACH_OVERHEAD_FOLLOW, nil, self:GetParent():GetOrigin(), true)
+		ParticleManager:SetParticleControlEnt(self.effect_cast, 1, self:GetParent(), PATTACH_OVERHEAD_FOLLOW, nil, self:GetParent():GetOrigin(), true)
+		ParticleManager:SetParticleControlEnt(self.effect_cast, 2, self:GetParent(), PATTACH_OVERHEAD_FOLLOW, nil, self:GetParent():GetOrigin(), true)
+		self:AddParticle(self.effect_cast, false, false, -1, false, true)
+	end
+end
+function modifier_mjz_slardar_slithereen_crush_slow:OnDestroy()
+	if self.effect_cast then
+		ParticleManager:DestroyParticle(self.effect_cast, false)
+		ParticleManager:ReleaseParticleIndex(self.effect_cast)
+	end
+end
 function modifier_mjz_slardar_slithereen_crush_slow:DeclareFunctions()
-	local funcs = {
+	return {
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+		MODIFIER_PROPERTY_PROVIDES_FOW_POSITION,
 	}
-	return funcs
 end
-
-function modifier_mjz_slardar_slithereen_crush_slow:GetModifierMoveSpeedBonus_Percentage( )
+function modifier_mjz_slardar_slithereen_crush_slow:GetModifierMoveSpeedBonus_Percentage()
 	return self:GetAbility():GetSpecialValueFor('move_speed_slow')
 end
-
-function modifier_mjz_slardar_slithereen_crush_slow:GetModifierAttackSpeedBonus_Constant( )
+function modifier_mjz_slardar_slithereen_crush_slow:GetModifierAttackSpeedBonus_Constant()
 	return self:GetAbility():GetSpecialValueFor('attack_speed_slow')
 end
-
-
-if IsServer() then
-	--[[
-	function modifier_mjz_slardar_slithereen_crush_slow:OnCreated(table)
-		local caster = self:GetCaster()
-		local parent = self:GetParent()
-		local ability = self:GetAbility()
-		local slow = ability:GetSpecialValueFor('slow')
-		local duration = ability:GetSpecialValueFor('duration')
-		parent:AddNewModifier(caster, ability, MODIFIER_ATTACK_SPEED_NAME, {duration = duration})
+function modifier_mjz_slardar_slithereen_crush_slow:GetModifierPhysicalArmorBonus()
+	if self.shard then
+		return self:GetCaster():CustomValue("slardar_amplify_damage", "armor_reduction")
 	end
-	]]
+	return 0
 end
-
-----------------------------------------------------------------------
-
-modifier_mjz_slardar_slithereen_crush_attack_speed = class({})
-
-function modifier_mjz_slardar_slithereen_crush_attack_speed:IsDebuff() return true end
-function modifier_mjz_slardar_slithereen_crush_attack_speed:IsHidden() return true end
-function modifier_mjz_slardar_slithereen_crush_attack_speed:IsPurgable() return true end
-
-function modifier_mjz_slardar_slithereen_crush_attack_speed:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-	}
-	return funcs
-end
-
-function modifier_mjz_slardar_slithereen_crush_attack_speed:GetModifierAttackSpeedBonus_Constant( )
-	return self:GetStackCount()
-end
-
-if IsServer() then
-	function modifier_mjz_slardar_slithereen_crush_attack_speed:OnCreated(table)
-		local caster = self:GetCaster()
-		local parent = self:GetParent()
-		local ability = self:GetAbility()
-		local slow = ability:GetSpecialValueFor('slow')
-		local attack_speed = parent:GetAttackSpeed() * (slow / 100.0)
-		parent:SetStackCount(attack_speed)
+function modifier_mjz_slardar_slithereen_crush_slow:GetModifierProvidesFOWVision()
+	if self.shard then
+		return 1
 	end
+	return 0
 end
-
+function modifier_corrosive_haze:CheckState()
+	if self.shard then
+		return {[MODIFIER_STATE_INVISIBLE] = false}
+	end
+	return {}
+end
 
 ----------------------------------------------------------------------
 

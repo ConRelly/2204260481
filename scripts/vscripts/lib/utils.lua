@@ -104,6 +104,13 @@ function talent_value(caster, talent_name)
 	end
 	return 0
 end
+function CDOTA_BaseNPC:CustomValue(AbilityName, var_type)
+	local Ability = self:FindAbilityByName(AbilityName)
+	if Ability and Ability:GetLevel() > 0 then
+		return Ability:GetSpecialValueFor(var_type)
+	end
+	return 0
+end
 
 function CDOTABaseAbility:GetTalentSpecialValueFor(value)
 	local base = self:GetSpecialValueFor(value)
