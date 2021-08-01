@@ -2913,12 +2913,15 @@
 	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_experience_radius"			"XP GAIN RADIUS:"
 		
 	"DOTA_Tooltip_ability_mjz_meepo_poof"				"Poof"
-	"DOTA_Tooltip_ability_mjz_meepo_poof_Description"	"Drawing mystical energies from the earth, a Meepo can teleport to teammate or itself after channeling for 1.5 seconds, dealing damage in both the departure and arrival locations."
+	"DOTA_Tooltip_ability_mjz_meepo_poof_Description"	"Drawing mystical energies from the earth, a Meepo can teleport to teammate or itself after channeling for 1.5 seconds, dealing damage in both the departure and arrival locations.\n<h1><font color='#DE3163'>Super Scepter</font></h1> Have %extra_stack_chance%%% chance for an extra <font color='#E8EF1B'>Pooof Stack</font>"
 	"DOTA_Tooltip_ability_mjz_meepo_poof_Lore"			"Sometimes breaking one of the Riftshadow Crystals can be just the trick for getting yourself out of a bind.  Or your other self."
 	"DOTA_Tooltip_ability_mjz_meepo_poof_radius"		"RADIUS:"
-	"DOTA_Tooltip_ability_mjz_meepo_poof_poof_damage"	"POOF DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_meepo_poof_poof_damage"	"Str and Agi as Damage:"
 	"DOTA_Tooltip_ability_mjz_meepo_poof_Note0"			"Can be cast through the minimap."
 	"DOTA_Tooltip_ability_mjz_meepo_poof_Note1"			"Can teleport to Meepo illusions."	
+	"DOTA_Tooltip_modifier_mjz_meepo_puff_buff"         "<font color='#E8EF1B'>Pooof</font>"
+	"DOTA_Tooltip_modifier_mjz_meepo_puff_buff_Description"         "Increased Str by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% and makes Poof deal extra damage by Your level times this stack count."
+
 	"DOTA_Tooltip_ability_mjz_mirana_arrow"					"Sacred Arrow"
 	"DOTA_Tooltip_ability_mjz_mirana_arrow_Description"		"Fires a long-range arrow with deadly precision, which damages the first enemy unit it strikes. "
 	"DOTA_Tooltip_ability_mjz_mirana_arrow_Lore"			"Lunar energies make the Princess of the Moon's arrows more deadly than most."
@@ -9287,6 +9290,7 @@ Contains all random skills"
 
 		"DOTA_Tooltip_ability_special_bonus_custom_mana_break_1"   "Mana Break physical damage ignores Base Armor"
 
+		"DOTA_Tooltip_ability_special_bonus_mjz_meepo_poof_01"    "Poof Gives a Poof Stack every time you use the spell"
 
 
 	   "DOTA_Tooltip_ability_item_shivas_guard_2"				"Boss Shiva"

@@ -1160,7 +1160,8 @@ New: 3 Quests with NFTs as bonus rewards, you can find them on discord(link on w
 * Quests bonus(nfts) rewards do not require video recording anymore, but you need to be on a dedicated server(no localhost), New Quest, and better rewards for some other quests.
 
 
-
+Request Buff/replace Meepo talents done, request made with 50 quest points by @「𝓐𝓑𝓤𝓛𝐸𝓘𝓛」
+* Meepo has 4 new talents, changed poof damage soruce and has a Super Scepter effect.
 * Ability Swap menu now opens with a single click
 * Added new memebility for Spirit Breaker
 * Charge of Darkness (Spirit Breaker): Numbers rescaled and the level is increased

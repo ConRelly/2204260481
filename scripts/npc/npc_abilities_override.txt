@@ -899,7 +899,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"1000"
+				"value"				"1377"
 			}
 		}
 	}	
@@ -6217,17 +6217,18 @@
 	}	
 	"meepo_ransack"
 	{
+		"LevelsBetweenUpgrades"  "10"
 		"AbilitySpecial"
 		{		
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_steal_heroes"	"9 15 21 550"
+				"health_steal_heroes"	"35 169 420 1123"
 			}			
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_steal_creeps"	"6 9 12 550"
+				"health_steal_creeps"	"35 169 420 1123"
 			}			
 		}
 	}

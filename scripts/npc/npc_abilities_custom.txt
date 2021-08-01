@@ -26204,11 +26204,10 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Meepo.Poof"
 		"AbilityTextureName"			"mjz_meepo_poof"
-
+		"LevelsBetweenUpgrades"         "10"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastPoint"				"1.5"
 		"AbilityChannelTime"			"0.0"
-		
 		"AbilityCooldown"				"12 10 8 6"
 		"AbilityManaCost"				"80"
 
@@ -26222,14 +26221,19 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"poof_damage"				"240 580 820 1860"
-				"LinkedSpecialBonus"		"special_bonus_unique_meepo_2"
+				"poof_damage"				"1 2 3 5"
+				//"LinkedSpecialBonus"		"special_bonus_unique_meepo_2"
 			}
-			"11"
+			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"search_radius"				"400"
 			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"extra_stack_chance"				"50"
+			}						
 		}
 		"precache"
 		{
@@ -26238,6 +26242,22 @@
 			"particle"		"particles/units/heroes/hero_meepo/meepo_poof_end.vpcf"
 		}
 	}
+	"special_bonus_mjz_meepo_poof_01"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"1"
+			}
+		}
+	}
+
 	//=================================================================================================================
 	// Mirana: Arrow					月神之箭
 	//=================================================================================================================

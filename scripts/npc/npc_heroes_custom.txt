@@ -468,9 +468,11 @@
 "npc_dota_hero_meepo"
 {
 	"Ability6"		"meepo_custom_divided_we_stand"
-	"Ability11"		"special_bonus_unique_meepo"
-	"Ability14"		"special_bonus_magic_resistance_20"
-	"Ability17"		"special_bonus_agility_30"
+	"Ability11"		"special_bonus_cooldown_reduction_15"
+	"Ability13"		"special_bonus_magic_resistance_20"
+	"Ability14"		"special_bonus_mjz_meepo_poof_01"
+	"Ability16"     "special_bonus_truestrike"
+	"Ability17"		"special_bonus_spell_amplify_100"
 	"AttackRate"		"1.5"
 	"AttributeAgilityGain"  "6.7"
 	"AttributeStrengthGain" "8.9"
@@ -1519,6 +1521,7 @@
 		
 		"Ability2"				"mjz_meepo_poof"
 		"Ability6"				"mjz_meepo_meepo_king"
+
 		"AttackRate"		"1.500000"
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"		
 	}

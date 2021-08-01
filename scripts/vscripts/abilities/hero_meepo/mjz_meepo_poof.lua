@@ -1,3 +1,4 @@
+LinkLuaModifier("modifier_mjz_meepo_puff_buff", "abilities/hero_meepo/mjz_meepo_poof.lua", LUA_MODIFIER_MOTION_NONE)
 
 mjz_meepo_poof = class({})
 local ability_class = mjz_meepo_poof
@@ -39,11 +40,31 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local position_start = caster:GetAbsOrigin()
 		local position_end = self:GetEndPosition() -- caster:GetCursorPosition()
-	
 		local radius = ability:GetSpecialValueFor("radius")
-		local damage = GetTalentSpecialValueFor(ability, "poof_damage")
+		local lvl = caster:GetLevel()
+		local stats = caster:GetAgility() + caster:GetStrength()
+		local stats_mult = ability:GetSpecialValueFor("poof_damage") --GetTalentSpecialValueFor(ability, "poof_damage")
+		local damage = stats * stats_mult
 		local damage_type = ability:GetAbilityDamageType()
-	
+		local modif_buff = "modifier_mjz_meepo_puff_buff"
+		local ss_chance = ability:GetSpecialValueFor("extra_stack_chance")
+		if HasTalent(caster,"special_bonus_mjz_meepo_poof_01") then
+			if not caster:HasModifier(modif_buff) then
+				caster:AddNewModifier(caster, ability, modif_buff, {})
+			else
+				local modif_b = caster:FindModifierByName(modif_buff)
+				modif_b:IncrementStackCount()
+				if HasSuperScepter(caster) then
+					if RollPercentage(ss_chance) then
+						modif_b:IncrementStackCount()
+					end	
+				end	
+			end	
+			local modif_b = caster:FindModifierByName(modif_buff)
+			local bonus_dmg = modif_b:GetStackCount() * lvl
+			damage = damage + bonus_dmg
+		end
+
 		-- Damage on start position
 		self:DamageInArea(position_start, radius, damage, damage_type)
 	
@@ -157,6 +178,41 @@ if IsServer() then
 
 
 end
+--------------------------------------------
+modifier_mjz_meepo_puff_buff = class({})
+
+
+function modifier_mjz_meepo_puff_buff:IsHidden()  return false end
+function modifier_mjz_meepo_puff_buff:IsPurgable()  return false end
+function modifier_mjz_meepo_puff_buff:RemoveOnDeath()  return false end
+function modifier_mjz_meepo_puff_buff:AllowIllusionDuplicate() return true end
+
+function modifier_mjz_meepo_puff_buff:DeclareFunctions()
+    return {
+		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,		
+    }
+end
+
+function modifier_mjz_meepo_puff_buff:GetModifierBonusStats_Strength()
+    return self:GetStackCount()
+end
+function modifier_mjz_meepo_puff_buff:OnCreated()
+    if not IsServer() then return nil end
+    local parent = self:GetParent()
+    if parent:IsIllusion() or parent:HasModifier("modifier_arc_warden_tempest_double") then
+        local owner = PlayerResource:GetSelectedHeroEntity(parent:GetPlayerOwnerID())
+        if owner then       
+            if owner:HasModifier("modifier_mjz_meepo_puff_buff") then
+				local modif_1 = owner:FindModifierByName("modifier_mjz_meepo_puff_buff")
+				local stacks = modif_1:GetStackCount()
+                self:SetStackCount(stacks)
+            end    
+        end    
+    end    
+end
+
+
+
 
 -----------------------------------------------------------------------------------------
 
