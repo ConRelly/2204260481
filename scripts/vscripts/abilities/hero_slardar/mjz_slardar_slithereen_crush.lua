@@ -157,7 +157,7 @@ function modifier_mjz_slardar_slithereen_crush_slow:GetModifierProvidesFOWVision
 	end
 	return 0
 end
-function modifier_corrosive_haze:CheckState()
+function modifier_mjz_slardar_slithereen_crush_slow:CheckState()
 	if self.shard then
 		return {[MODIFIER_STATE_INVISIBLE] = false}
 	end
