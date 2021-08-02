@@ -7378,7 +7378,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_5_Lore"					"The Bloodstone's bright ruby color is unmistakable on the battlefield, as the owner seems to have infinite vitality and spirit."
 		//>>>>	Bloodstone Ultimate
 		"DOTA_Tooltip_Ability_item_mjz_bloodstone_ultimate"							"Bloodstone Ultimate"
-		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.<br><br>Has a %charge_chance%%% chance to get 1 charge, which increases mana regeneration by %mana_per_charge% and spell amp by %spell_amp% ."
+		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.<br><br>Has a %charge_chance%%% chance to get 1 charge, which increases mana regeneration by %mana_per_charge% and spell amp by %spell_amp%%%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_bonus_health"			"+$health"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_bonus_mana"				"+$mana"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_bonus_intellect"			"+$int"

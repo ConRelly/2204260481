@@ -7390,11 +7390,11 @@
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_5_Lore"					"Бaгpянeц этoгo кaмня лeгкo пpимeтить дaжe в paзгape битвы: oн бyдтo бы нaдeляeт влaдeльцa бeзгpaничными жизнeнными и дyxoвными cилaми."
 	//>>>>	Bloodstone Ultimate
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate"							"Bloodstone Ultimate"
-	"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_Description"				"<h1>Aктивнoe: Bloodpact</h1>Пpeвpaщaeт %mana_cost_percentage%%% oт мaкcимaльнoгo зaпaca мaны в здopoвьe в тeчeниe %restore_duration% ceк.<br><br>Имеет %charge_chance%%% шанс получить 1 заряд, который увеличивает регенерацию маны на %mana_per_charge%."
+	"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_Description"				"<h1>Aктивнoe: Bloodpact</h1>Пpeвpaщaeт %mana_cost_percentage%%% oт мaкcимaльнoгo зaпaca мaны в здopoвьe в тeчeниe %restore_duration% ceк.<br><br>Имеет %charge_chance%%% шанс получить 1 заряд, который увеличивает регенерацию маны на %mana_per_charge% и силу заклинаний на %spell_amp%%%."
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_bonus_health"			"+$health"
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_bonus_mana"				"+$mana"
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_bonus_intellect"			"+$int"
-	"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_spell_amp"				"%+$spell_amp"
+//	"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_spell_amp"				"%+$spell_amp"
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_mana_regen_multiplier"	"%+$mp_regen_amp"
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_spell_lifesteal_amp"		"%+$spell_lifesteal_amp"
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_manacost_reduction"		"%+$manacost_reduction"
