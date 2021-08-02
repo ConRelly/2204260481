@@ -102,6 +102,7 @@ function modifier_resurrection_pendant:OnIntervalThink()
 		local extra_cooldown = self:GetAbility():GetSpecialValueFor("extra_cooldown")
 		if self:GetParent():HasModifier("modifier_super_scepter") then
 			channel = self:GetAbility():GetChannelTime() / 2
+			extra_cooldown = self:GetAbility():GetSpecialValueFor("extra_cooldown_ss")
 		end
 		for i=1, #heroes do
 			if heroes[i]:IsRealHero() and not heroes[i]:IsAlive() and IsValidEntity(heroes[i]) and heroes[i]:GetLevel() > 0 and not heroes[i]:IsReincarnating() then
