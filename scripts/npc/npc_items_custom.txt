@@ -20327,6 +20327,11 @@
 			"var_type"				"FIELD_FLOAT"
 			"channel_tooltip"		"6.0"
 		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"extra_cooldown_ss"		"35"
+		}		
 	}
 }
 	"item_shivas_guard_2"

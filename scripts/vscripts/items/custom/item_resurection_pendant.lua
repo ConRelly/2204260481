@@ -53,12 +53,14 @@ if IsServer() then
             if PlayerResource:HasSelectedHero(playerID) then
                 local hero = PlayerResource:GetSelectedHeroEntity(playerID)
                 if not hero:IsAlive() then
-                    local rezPosition = hero:GetAbsOrigin()
-                    hero:RespawnHero(false, false)
-                    hero:SetAbsOrigin(rezPosition)
-                    item_resurection_pendant:RessurectEffect(hero)
-                    hero:AddNewModifier(hCaster, hAbility, "modifier_aegis_buff", {duration = 10})
-                    ressurected = ressurected + 1
+					if not hero:IsReincarnating() then
+						local rezPosition = hero:GetAbsOrigin()
+						hero:RespawnHero(false, false)
+						hero:SetAbsOrigin(rezPosition)
+						item_resurection_pendant:RessurectEffect(hero)
+						hero:AddNewModifier(hCaster, hAbility, "modifier_aegis_buff", {duration = 10})
+						ressurected = ressurected + 1
+					end
                 end
             end
         end
