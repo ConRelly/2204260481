@@ -1,6 +1,7 @@
 LinkLuaModifier( "modifier_item_mjz_bloodstone", "items/item_mjz_bloodstone", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_item_mjz_bloodstone_buff", "items/item_mjz_bloodstone", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_item_mjz_bloodstone_active", "items/item_mjz_bloodstone", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("modifier_mjz_bloodstone_charges", "items/item_mjz_bloodstone", LUA_MODIFIER_MOTION_NONE)
 
 ---------------------------------------------------------------------------------------
 
@@ -18,10 +19,15 @@ local item_mjz_bloodstone_active = function(ability)
 	if IsServer() then
 		local caster = ability:GetCaster()
 		local restore_duration = ability:GetSpecialValueFor("restore_duration")
+		local charge_chance = ability:GetSpecialValueFor("charge_chance")
 		if caster and IsValidEntity(caster) and caster:IsAlive() then
 			caster:EmitSound("DOTA_Item.Bloodstone.Cast")
 			caster:RemoveModifierByName("modifier_item_mjz_bloodstone_active")
 			caster:AddNewModifier(caster, ability, "modifier_item_mjz_bloodstone_active", {duration = restore_duration})
+			if RollPseudoRandom(charge_chance, caster) then
+				ability:SetCurrentCharges(ability:GetCurrentCharges() + 1)
+				caster:FindModifierByName("modifier_mjz_bloodstone_charges"):SetStackCount(ability:GetCurrentCharges())
+			end
 		end
 	end
 end
@@ -115,19 +121,22 @@ function modifier_item_mjz_bloodstone:GetModifierManaBonus()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_mana") end
 end
 
-
 if IsServer() then
 	function modifier_item_mjz_bloodstone:OnCreated(table)
 		local parent = self:GetParent()
+		if parent:HasModifier("modifier_mjz_bloodstone_charges") then
+			local charges = parent:FindModifierByName("modifier_mjz_bloodstone_charges"):GetStackCount()
+			self:GetAbility():SetCurrentCharges(charges)
+		end
 		if IsValidEntity(parent) and parent:IsRealHero() then
-			self:StartIntervalThink(0.25)
+			self:StartIntervalThink(FrameTime())
 		end
 	end
 
 	function modifier_item_mjz_bloodstone:OnIntervalThink()
 		local parent = self:GetParent()
 		if IsValidEntity(parent) and parent:IsRealHero() then
-			local mt = {"modifier_item_mjz_bloodstone_buff",}
+			local mt = {"modifier_item_mjz_bloodstone_buff", "modifier_mjz_bloodstone_charges"}
 			for _,mname in pairs(mt) do
 				if not parent:HasModifier(mname) then
 					parent:AddNewModifier(self:GetCaster(), self:GetAbility(), mname, {})
@@ -158,6 +167,7 @@ function modifier_item_mjz_bloodstone_buff:GetTexture() return "item_mjz_bloodst
 function modifier_item_mjz_bloodstone_buff:DeclareFunctions()
 	if self:GetAbility():GetName() == "item_mjz_bloodstone_ultimate" then
 		return {
+			MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
 			MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE,
 			MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
 			MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE,
@@ -165,12 +175,19 @@ function modifier_item_mjz_bloodstone_buff:DeclareFunctions()
 		}
 	else
 		return {
+			MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
 			MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE,
 			MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE
 		}
 	end
 end
 
+function modifier_item_mjz_bloodstone_buff:GetModifierConstantManaRegen()
+	local ability = self:GetAbility()
+	if IsValidEntity(ability) then
+		return (ability:GetCurrentCharges() * ability:GetSpecialValueFor("mana_per_charge")) or 0
+	end
+end
 function modifier_item_mjz_bloodstone_buff:GetModifierMPRegenAmplify_Percentage()
 	local ability = self:GetAbility()
 	if IsValidEntity(ability) then
@@ -225,3 +242,10 @@ end
 function modifier_item_mjz_bloodstone_active:GetModifierConstantHealthRegen()
 	if self:GetAbility() then return self.flManaSpent or 0 end
 end
+
+-------------------------------------------------------------------------------
+
+modifier_mjz_bloodstone_charges = class({})
+function modifier_mjz_bloodstone_charges:IsHidden() return true end
+function modifier_mjz_bloodstone_charges:IsPurgable() return false end
+function modifier_mjz_bloodstone_charges:RemoveOnDeath() return false end

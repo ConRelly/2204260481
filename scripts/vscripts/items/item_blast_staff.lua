@@ -64,10 +64,12 @@ function modifier_item_blast_staff:IsHidden() return true end
 function modifier_item_blast_staff:IsPurgable() return false end
 function modifier_item_blast_staff:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_item_blast_staff:OnCreated(keys)
-	self.agility = self:GetAbility():GetSpecialValueFor("bonus_agility")
-	self.bonus_int = self:GetAbility():GetSpecialValueFor("bonus_intellect")
-	self.bonus_str = self:GetAbility():GetSpecialValueFor("bonus_strength")
-	self.spell_amp = self:GetAbility():GetSpecialValueFor("spell_amp")
+	if self:GetAbility() then
+		self.agility = self:GetAbility():GetSpecialValueFor("bonus_agility")
+		self.bonus_int = self:GetAbility():GetSpecialValueFor("bonus_intellect")
+		self.bonus_str = self:GetAbility():GetSpecialValueFor("bonus_strength")
+		self.spell_amp = self:GetAbility():GetSpecialValueFor("spell_amp")
+	end
 	if IsServer() then
 		local parent = self:GetParent()
 		if parent then
@@ -82,10 +84,12 @@ function modifier_item_blast_staff:OnDestroy()
 	end
 end
 function modifier_item_blast_staff:OnRefresh()
-	self.agility = self:GetAbility():GetSpecialValueFor("bonus_agility")
-	self.bonus_int = self:GetAbility():GetSpecialValueFor("bonus_intellect")
-	self.bonus_str = self:GetAbility():GetSpecialValueFor("bonus_strength")
-	self.spell_amp = self:GetAbility():GetSpecialValueFor("spell_amp")
+	if self:GetAbility() then
+		self.agility = self:GetAbility():GetSpecialValueFor("bonus_agility")
+		self.bonus_int = self:GetAbility():GetSpecialValueFor("bonus_intellect")
+		self.bonus_str = self:GetAbility():GetSpecialValueFor("bonus_strength")
+		self.spell_amp = self:GetAbility():GetSpecialValueFor("spell_amp")
+	end
 end
 function modifier_item_blast_staff:DeclareFunctions()
 	return {
@@ -96,10 +100,10 @@ function modifier_item_blast_staff:DeclareFunctions()
 	}
 end
 
-function modifier_item_blast_staff:GetModifierBonusStats_Agility() if self:GetAbility() then return self.agility end end
-function modifier_item_blast_staff:GetModifierBonusStats_Intellect() if self:GetAbility() then return self.bonus_int end end
-function modifier_item_blast_staff:GetModifierBonusStats_Strength() if self:GetAbility() then return self.bonus_str end end
-function modifier_item_blast_staff:GetModifierSpellAmplify_Percentage() if self:GetAbility() then return self.spell_amp end end
+function modifier_item_blast_staff:GetModifierBonusStats_Agility() return self.agility end
+function modifier_item_blast_staff:GetModifierBonusStats_Intellect() return self.bonus_int end
+function modifier_item_blast_staff:GetModifierBonusStats_Strength() return self.bonus_str end
+function modifier_item_blast_staff:GetModifierSpellAmplify_Percentage() return self.spell_amp end
 
 modifier_item_blast_staff_proc = class({})
 function modifier_item_blast_staff_proc:IsHidden() return true end

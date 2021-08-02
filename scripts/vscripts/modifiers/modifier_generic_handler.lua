@@ -42,7 +42,7 @@ function modifier_generic_handler:OnAbilityFullyCast(keys)
 end
 
 function modifier_generic_handler:DeclareFunctions()
-	return {MODIFIER_EVENT_ON_TAKEDAMAGE, MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE, MODIFIER_EVENT_ON_ABILITY_FULLY_CAST}
+	return {MODIFIER_EVENT_ON_TAKEDAMAGE, MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE, MODIFIER_EVENT_ON_ABILITY_FULLY_CAST, MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT}
 end
 
 --- Enum DamageCategory_t
@@ -121,6 +121,38 @@ function modifier_generic_handler:GetModifierPreAttack_CriticalStrike()
 		DMG = 100 + CritDMG
 		return DMG
 	end
+end
+
+function modifier_generic_handler:GetModifierCooldownReduction_Constant()
+	if IsServer() then
+		local cd_const_talent = self:GetParent():HasTalent("special_bonus_unique_redution_cd")
+		if cd_const_talent then
+			return talent_value(self:GetParent(), "special_bonus_unique_redution_cd")
+		end
+		return 0
+	end
+end
+
+function modifier_generic_handler:CheckState()
+	if IsServer() then
+		local disarm = nil
+		local silence = nil
+		local mute = nil
+		if self:GetParent():HasTalent("special_bonus_unique_undisarmed") then
+			disarm = false
+		end
+		if self:GetParent():HasTalent("special_bonus_unique_unsilenced") then
+			silence = false
+		end
+		if self:GetParent():HasTalent("special_bonus_unique_unmuted") then
+			mute = false
+		end
+	end
+	return {
+	[MODIFIER_STATE_DISARMED] = disarm,
+	[MODIFIER_STATE_SILENCED] = silence,
+	[MODIFIER_STATE_MUTED] = silence,
+	}
 end
 
 --[[

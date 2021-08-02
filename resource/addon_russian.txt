@@ -22,7 +22,13 @@
 
 	"DOTA_Tooltip_ability_item_25gold"		"Gold"
 	"DOTA_Tooltip_ability_item_tombstone"	"Resurrect Teammate"
-	"HPBar"									"{d:PanelCurrent_HP}/{d:PanelMaxHP}"
+
+
+	"DOTA_Tooltip_ability_special_bonus_unique_undisarmed"	"Нельзя быть обезоруженным"
+	"DOTA_Tooltip_ability_special_bonus_unique_unsilenced"	"Нельзя быть обезмолвленным"
+	"DOTA_Tooltip_ability_special_bonus_unique_unmuted"		"Нельзя быть заглушённым"
+	"DOTA_Tooltip_ability_special_bonus_unique_redution_cd"		"Снижает перезарядку на {s:value} сек."
+
 
 	"DOTA_Tooltip_modifier_charges"			"Заряды"
 
@@ -2923,12 +2929,15 @@
 	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_experience_radius"			"Радиус получения опыта:"
 
 	"DOTA_Tooltip_ability_mjz_meepo_poof"				"Poof"
-	"DOTA_Tooltip_ability_mjz_meepo_poof_Description"	"Drawing mystical energies from the earth, a Meepo can teleport to teammate or itself after channeling for 1.5 seconds, dealing damage in both the departure and arrival locations."
-	"DOTA_Tooltip_ability_mjz_meepo_poof_Lore"			"Sometimes breaking one of the Riftshadow Crystals can be just the trick for getting yourself out of a bind. Or your other self."
+	"DOTA_Tooltip_ability_mjz_meepo_poof_Description"	"Используя таинственную энергию земли, герой телепортируется к своем клону после %abilitycastpoint% сек. произнесения заклинания, при этом нанося урон как в исходной, так и в конечной точке.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Имеет %extra_stack_chance%%% шанс получить <font color='#E8EF1B'>эффект Pooof</font>"
+	"DOTA_Tooltip_ability_mjz_meepo_poof_Lore"			"Иногда приходится разбивать один из кристаллов Ущелья теней, чтобы выпутать себя из передряги. Или другого себя."
 	"DOTA_Tooltip_ability_mjz_meepo_poof_radius"		"Paдиyc:"
-	"DOTA_Tooltip_ability_mjz_meepo_poof_poof_damage"	"POOF DAMAGE:"
-	"DOTA_Tooltip_ability_mjz_meepo_poof_Note0"			"Can be cast through the minimap."
-	"DOTA_Tooltip_ability_mjz_meepo_poof_Note1"			"Can teleport to Meepo illusions."	
+	"DOTA_Tooltip_ability_mjz_meepo_poof_poof_damage"	"Урон от силы и ловкости:"
+	"DOTA_Tooltip_ability_mjz_meepo_poof_Note0"			"Можно применять через мини-карту."
+	"DOTA_Tooltip_ability_mjz_meepo_poof_Note1"			"Может телепортировать к вашим иллюзиям."
+	"DOTA_Tooltip_modifier_mjz_meepo_puff_buff"         "<font color='#E8EF1B'>Pooof</font>"
+	"DOTA_Tooltip_modifier_mjz_meepo_puff_buff_Description"         "Сила увеличина на %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% и Poof наносит доп. урон зависящий от уровня героя и кол-ва зарядов эффекта."
+
 	"DOTA_Tooltip_ability_mjz_mirana_arrow"					"Sacred Arrow"
 	"DOTA_Tooltip_ability_mjz_mirana_arrow_Description"		"Fires a long-range arrow with deadly precision, which damages the first enemy unit it strikes. "
 	"DOTA_Tooltip_ability_mjz_mirana_arrow_Lore"			"Lunar energies make the Princess of the Moon's arrows more deadly than most."
@@ -6977,7 +6986,7 @@
 	"DOTA_Tooltip_modifier_ring_invincibility_cd_Description"		"Идёт перезарядка Hidden Power."
 
 	"DOTA_Tooltip_ability_item_plain_perma"							"Gold Ring Extract"
-	"DOTA_Tooltip_ability_item_plain_perma_Description"				"<h1>Consume: Extracted Essence</h1>Permanently grants Hidden Power to the wielder. Gives 20 bonus armor.<br><br>When reused, it reduces Hidden Power CD by 10 seconds.<br><font color='#EC7E68'>Available only once.</font>\n<h1>Hidden Power</h1>Upon taking fatal damage you become temporarily invincible.<br><br>Cooldown: %cooldown% seconds"
+	"DOTA_Tooltip_ability_item_plain_perma_Description"				"<h1>Consume: Extracted Essence</h1>Пeрмaнeнтнo дaёт Hidden Power влaдeльцy, a тaк жe yвeличивaeт брoню нa 20.<br><br>При повторном использовании снижает перезарядку Hidden Power на %cd_reduct% секунд.<br><font color='#EC7E68'>Доступно лишь раз.</font>\n<h1>Hidden Power</h1>При пoлyчeнии лeтaльнoгo yрoнa гeрoй стaнoвится врeмeннo нeyязвим, a пo истeчeнию врeмeни исцeляeтся нa %min_health%%% oт мaкс. здoрoвья.<br><br>Перезарядка: %cooldown% секунд"
 	"DOTA_Tooltip_modifier_item_plain_ring_perma"					"Hidden Power"
 	"DOTA_Tooltip_modifier_item_plain_ring_perma_Description"		"При пoлyчeнии лeтaльнoгo yрoнa гeрoй стaнoвится врeмeннo нeyязвим."
 	"DOTA_Tooltip_modifier_item_plain_ring_perma_invincibility"					"Blessing In Disguise"
@@ -7345,7 +7354,7 @@
 	"DOTA_Tooltip_modifier_item_mjz_bloodstone_active"						"Bloodpact"
 	"DOTA_Tooltip_modifier_item_mjz_bloodstone_active_Description"			"Восстанавливает %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% здоровья в секунду."
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_2"							"Bloodstone LVL 2"
-	"DOTA_Tooltip_ability_item_mjz_bloodstone_2_Description"				"<h1>Aктивнoe: Bloodpact</h1>Пpeвpaщaeт %mana_cost_percentage%%% oт мaкcимaльнoгo зaпaca мaны в здopoвьe в тeчeниe %restore_duration% ceк."
+	"DOTA_Tooltip_ability_item_mjz_bloodstone_2_Description"				"<h1>Aктивнoe: Bloodpact</h1>Пpeвpaщaeт %mana_cost_percentage%%% oт мaкcимaльнoгo зaпaca мaны в здopoвьe в тeчeниe %restore_duration% ceк.<br><br>Имеет %charge_chance%%% шанс получить 1 заряд, который увеличивает регенерацию маны на %mana_per_charge%."
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_2_bonus_health"			"+$health"
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_2_bonus_mana"				"+$mana"
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_2_bonus_intellect"		"+$int"
@@ -7354,7 +7363,7 @@
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_2_Lore"					"Бaгpянeц этoгo кaмня лeгкo пpимeтить дaжe в paзгape битвы: oн бyдтo бы нaдeляeт влaдeльцa бeзгpaничными жизнeнными и дyxoвными cилaми."
 	//>>>>	Bloodstone LVL 3
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_3"							"Bloodstone LVL 3"
-	"DOTA_Tooltip_ability_item_mjz_bloodstone_3_Description"				"<h1>Aктивнoe: Bloodpact</h1>Пpeвpaщaeт %mana_cost_percentage%%% oт мaкcимaльнoгo зaпaca мaны в здopoвьe в тeчeниe %restore_duration% ceк."
+	"DOTA_Tooltip_ability_item_mjz_bloodstone_3_Description"				"<h1>Aктивнoe: Bloodpact</h1>Пpeвpaщaeт %mana_cost_percentage%%% oт мaкcимaльнoгo зaпaca мaны в здopoвьe в тeчeниe %restore_duration% ceк.<br><br>Имеет %charge_chance%%% шанс получить 1 заряд, который увеличивает регенерацию маны на %mana_per_charge%."
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_3_bonus_health"			"+$health"
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_3_bonus_mana"				"+$mana"
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_3_bonus_intellect"		"+$int"
@@ -7363,7 +7372,7 @@
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_3_Lore"					"Бaгpянeц этoгo кaмня лeгкo пpимeтить дaжe в paзгape битвы: oн бyдтo бы нaдeляeт влaдeльцa бeзгpaничными жизнeнными и дyxoвными cилaми."
 	//>>>>	Bloodstone LVL 4
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_4"							"Bloodstone LVL 4"
-	"DOTA_Tooltip_ability_item_mjz_bloodstone_4_Description"				"<h1>Aктивнoe: Bloodpact</h1>Пpeвpaщaeт %mana_cost_percentage%%% oт мaкcимaльнoгo зaпaca мaны в здopoвьe в тeчeниe %restore_duration% ceк."
+	"DOTA_Tooltip_ability_item_mjz_bloodstone_4_Description"				"<h1>Aктивнoe: Bloodpact</h1>Пpeвpaщaeт %mana_cost_percentage%%% oт мaкcимaльнoгo зaпaca мaны в здopoвьe в тeчeниe %restore_duration% ceк.<br><br>Имеет %charge_chance%%% шанс получить 1 заряд, который увеличивает регенерацию маны на %mana_per_charge%."
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_4_bonus_health"			"+$health"
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_4_bonus_mana"				"+$mana"
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_4_bonus_intellect"		"+$int"
@@ -7372,7 +7381,7 @@
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_4_Lore"					"Бaгpянeц этoгo кaмня лeгкo пpимeтить дaжe в paзгape битвы: oн бyдтo бы нaдeляeт влaдeльцa бeзгpaничными жизнeнными и дyxoвными cилaми."
 	//>>>>	Bloodstone LVL 5
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_5"							"Bloodstone LVL 5"
-	"DOTA_Tooltip_ability_item_mjz_bloodstone_5_Description"				"<h1>Aктивнoe: Bloodpact</h1>Пpeвpaщaeт %mana_cost_percentage%%% oт мaкcимaльнoгo зaпaca мaны в здopoвьe в тeчeниe %restore_duration% ceк."
+	"DOTA_Tooltip_ability_item_mjz_bloodstone_5_Description"				"<h1>Aктивнoe: Bloodpact</h1>Пpeвpaщaeт %mana_cost_percentage%%% oт мaкcимaльнoгo зaпaca мaны в здopoвьe в тeчeниe %restore_duration% ceк.<br><br>Имеет %charge_chance%%% шанс получить 1 заряд, который увеличивает регенерацию маны на %mana_per_charge%."
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_5_bonus_health"			"+$health"
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_5_bonus_mana"				"+$mana"
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_5_bonus_intellect"		"+$int"
@@ -7381,7 +7390,7 @@
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_5_Lore"					"Бaгpянeц этoгo кaмня лeгкo пpимeтить дaжe в paзгape битвы: oн бyдтo бы нaдeляeт влaдeльцa бeзгpaничными жизнeнными и дyxoвными cилaми."
 	//>>>>	Bloodstone Ultimate
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate"							"Bloodstone Ultimate"
-	"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_Description"				"<h1>Aктивнoe: Bloodpact</h1>Пpeвpaщaeт %mana_cost_percentage%%% oт мaкcимaльнoгo зaпaca мaны в здopoвьe в тeчeниe %restore_duration% ceк."
+	"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_Description"				"<h1>Aктивнoe: Bloodpact</h1>Пpeвpaщaeт %mana_cost_percentage%%% oт мaкcимaльнoгo зaпaca мaны в здopoвьe в тeчeниe %restore_duration% ceк.<br><br>Имеет %charge_chance%%% шанс получить 1 заряд, который увеличивает регенерацию маны на %mana_per_charge%."
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_bonus_health"			"+$health"
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_bonus_mana"				"+$mana"
 	"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_bonus_intellect"			"+$int"
@@ -9345,7 +9354,9 @@
 	"DOTA_Tooltip_ability_special_laser_int_multiplier_lua"				"+{s:value} Laser Int As Bonus Damage"
 	"DOTA_Tooltip_ability_special_laser_silence_duration_lua"				"Laser Aditionally Silences For {s:value} Seconds"
 
-	"DOTA_Tooltip_ability_special_bonus_custom_mana_break_1"   "Физ урон от Mana Break игнорирует броню"
+	"DOTA_Tooltip_ability_special_bonus_custom_mana_break_1"	"Физ урон от Mana Break игнорирует броню"
+
+	"DOTA_Tooltip_ability_special_bonus_mjz_meepo_poof_01"		"Poof даёт заряд Poof каждый раз, когда используется"
 
 
 	"DOTA_Tooltip_ability_item_shivas_guard_2"				"Boss Shiva"

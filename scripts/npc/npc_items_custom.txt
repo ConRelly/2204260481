@@ -7778,6 +7778,7 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"UpgradesItems"					"item_mjz_bloodstone_2;item_mjz_bloodstone_3;item_mjz_bloodstone_4"
 		"UpgradeRecipe"					"item_soul_booster"
+		"ItemDisplayCharges"			"1"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"2"
 		"AbilitySpecial"
@@ -7810,9 +7811,19 @@
 			"6"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_cost_percentage"	"30"
+				"charge_chance"			"30"
 			}
 			"7"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_per_charge"		"1"
+			}
+			"8"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_cost_percentage"	"30"
+			}
+			"9"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"restore_duration"		"2"
@@ -7852,6 +7863,7 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"UpgradesItems"					"item_mjz_bloodstone_3;item_mjz_bloodstone_4"
 		"UpgradeRecipe"					"item_soul_booster"
+		"ItemDisplayCharges"			"1"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"3"
 		"AbilitySpecial"
@@ -7884,9 +7896,19 @@
 			"6"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_cost_percentage"	"30"
+				"charge_chance"			"30"
 			}
 			"7"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_per_charge"		"1"
+			}
+			"8"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_cost_percentage"	"30"
+			}
+			"9"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"restore_duration"		"2"
@@ -7926,6 +7948,7 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"UpgradesItems"					"item_mjz_bloodstone_4"
 		"UpgradeRecipe"					"item_soul_booster"
+		"ItemDisplayCharges"			"1"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"4"
 		"AbilitySpecial"
@@ -7958,9 +7981,19 @@
 			"6"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_cost_percentage"	"30"
+				"charge_chance"			"30"
 			}
 			"7"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_per_charge"		"1"
+			}
+			"8"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_cost_percentage"	"30"
+			}
+			"9"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"restore_duration"		"2"
@@ -7997,7 +8030,8 @@
 		"ItemAliases"					"bs;bloodstone"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDisplayCharges"			"1"
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"5"
 		"AbilitySpecial"
@@ -8030,9 +8064,19 @@
 			"6"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_cost_percentage"	"30"
+				"charge_chance"			"30"
 			}
 			"7"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_per_charge"		"1"
+			}
+			"8"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_cost_percentage"	"30"
+			}
+			"9"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"restore_duration"		"2"
@@ -8070,6 +8114,7 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDisplayCharges"			"1"
 		"AbilitySpecial"
 		{
 			"1"
@@ -8109,10 +8154,20 @@
 			}
 			"8"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"charge_chance"			"30"
+			}
+			"9"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_per_charge"		"1"
+			}
+			"10"
+			{
 				"var_type"				"FIELD_FLOAT"
 				"mana_cost_percentage"	"30"
 			}
-			"9"
+			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"restore_duration"		"4"

@@ -19,7 +19,12 @@
 	
 	"DOTA_Tooltip_Ability_item_portal"		"Portal"
 	"DOTA_Chat_Portal_Pinged"				"Portal here."
-	"HPBar"									"{d:PanelCurrent_HP}/{d:PanelMaxHP}"
+
+
+	"DOTA_Tooltip_ability_special_bonus_unique_undisarmed"	"Cannot be disarmed"
+	"DOTA_Tooltip_ability_special_bonus_unique_unsilenced"	"Cannot be silenced"
+	"DOTA_Tooltip_ability_special_bonus_unique_unmuted"		"Cannot be muted"
+
 
 	"dota_ability_variable_hp_regen_pct"			"Max HP Health Regen"				// $hp_regen_pct
 	"dota_ability_variable_cast_time_pct"			"Cast Time"							// $cast_time_pct
@@ -2911,14 +2916,14 @@
 	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_bonus_health_regen"			"BONUS HEALTH REGEN:"
 	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_experience_pct"				"%XP GAIN:"
 	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_experience_radius"			"XP GAIN RADIUS:"
-		
+
 	"DOTA_Tooltip_ability_mjz_meepo_poof"				"Poof"
 	"DOTA_Tooltip_ability_mjz_meepo_poof_Description"	"Drawing mystical energies from the earth, a Meepo can teleport to teammate or itself after channeling for 1.5 seconds, dealing damage in both the departure and arrival locations.\n<h1><font color='#DE3163'>Super Scepter</font></h1> Have %extra_stack_chance%%% chance for an extra <font color='#E8EF1B'>Pooof Stack</font>"
-	"DOTA_Tooltip_ability_mjz_meepo_poof_Lore"			"Sometimes breaking one of the Riftshadow Crystals can be just the trick for getting yourself out of a bind.  Or your other self."
+	"DOTA_Tooltip_ability_mjz_meepo_poof_Lore"			"Sometimes breaking one of the Riftshadow Crystals can be just the trick for getting yourself out of a bind. Or your other self."
 	"DOTA_Tooltip_ability_mjz_meepo_poof_radius"		"RADIUS:"
 	"DOTA_Tooltip_ability_mjz_meepo_poof_poof_damage"	"Str and Agi as Damage:"
 	"DOTA_Tooltip_ability_mjz_meepo_poof_Note0"			"Can be cast through the minimap."
-	"DOTA_Tooltip_ability_mjz_meepo_poof_Note1"			"Can teleport to Meepo illusions."	
+	"DOTA_Tooltip_ability_mjz_meepo_poof_Note1"			"Can teleport to Meepo illusions."
 	"DOTA_Tooltip_modifier_mjz_meepo_puff_buff"         "<font color='#E8EF1B'>Pooof</font>"
 	"DOTA_Tooltip_modifier_mjz_meepo_puff_buff_Description"         "Increased Str by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% and makes Poof deal extra damage by Your level times this stack count."
 
@@ -7337,7 +7342,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_modifier_item_mjz_bloodstone_active"						"Bloodpact"
 		"DOTA_Tooltip_modifier_item_mjz_bloodstone_active_Description"			"This unit is regenerating %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% health per second."
 		"DOTA_Tooltip_Ability_item_mjz_bloodstone_2"							"Bloodstone LVL 2"
-		"DOTA_Tooltip_ability_item_mjz_bloodstone_2_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds."
+		"DOTA_Tooltip_ability_item_mjz_bloodstone_2_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.<br><br>Has a %charge_chance%%% chance to get 1 charge, which increases mana regeneration by %mana_per_charge%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_2_bonus_health"			"+$health"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_2_bonus_mana"				"+$mana"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_2_bonus_intellect"		"+$int"
@@ -7346,7 +7351,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_2_Lore"					"The Bloodstone's bright ruby color is unmistakable on the battlefield, as the owner seems to have infinite vitality and spirit."
 		//>>>>	Bloodstone LVL 3
 		"DOTA_Tooltip_Ability_item_mjz_bloodstone_3"							"Bloodstone LVL 3"
-		"DOTA_Tooltip_ability_item_mjz_bloodstone_3_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds."
+		"DOTA_Tooltip_ability_item_mjz_bloodstone_3_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.<br><br>Has a %charge_chance%%% chance to get 1 charge, which increases mana regeneration by %mana_per_charge%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_3_bonus_health"			"+$health"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_3_bonus_mana"				"+$mana"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_3_bonus_intellect"		"+$int"
@@ -7355,7 +7360,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_3_Lore"					"The Bloodstone's bright ruby color is unmistakable on the battlefield, as the owner seems to have infinite vitality and spirit."
 		//>>>>	Bloodstone LVL 4
 		"DOTA_Tooltip_Ability_item_mjz_bloodstone_4"							"Bloodstone LVL 4"
-		"DOTA_Tooltip_ability_item_mjz_bloodstone_4_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds."
+		"DOTA_Tooltip_ability_item_mjz_bloodstone_4_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.<br><br>Has a %charge_chance%%% chance to get 1 charge, which increases mana regeneration by %mana_per_charge%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_4_bonus_health"			"+$health"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_4_bonus_mana"				"+$mana"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_4_bonus_intellect"		"+$int"
@@ -7364,7 +7369,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_4_Lore"					"The Bloodstone's bright ruby color is unmistakable on the battlefield, as the owner seems to have infinite vitality and spirit."
 		//>>>>	Bloodstone LVL 5
 		"DOTA_Tooltip_Ability_item_mjz_bloodstone_5"							"Bloodstone LVL 5"
-		"DOTA_Tooltip_ability_item_mjz_bloodstone_5_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds."
+		"DOTA_Tooltip_ability_item_mjz_bloodstone_5_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.<br><br>Has a %charge_chance%%% chance to get 1 charge, which increases mana regeneration by %mana_per_charge%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_5_bonus_health"			"+$health"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_5_bonus_mana"				"+$mana"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_5_bonus_intellect"		"+$int"
@@ -7373,7 +7378,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_5_Lore"					"The Bloodstone's bright ruby color is unmistakable on the battlefield, as the owner seems to have infinite vitality and spirit."
 		//>>>>	Bloodstone Ultimate
 		"DOTA_Tooltip_Ability_item_mjz_bloodstone_ultimate"							"Bloodstone Ultimate"
-		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds."
+		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_Description"				"<h1>Active: Bloodpact</h1>Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.<br><br>Has a %charge_chance%%% chance to get 1 charge, which increases mana regeneration by %mana_per_charge%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_bonus_health"			"+$health"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_bonus_mana"				"+$mana"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_bonus_intellect"			"+$int"

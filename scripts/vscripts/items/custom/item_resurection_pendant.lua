@@ -88,25 +88,50 @@ function modifier_resurrection_pendant:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end self:StartIntervalThink(FrameTime()) end
 end
 function modifier_resurrection_pendant:OnIntervalThink()
-	if self:GetCaster():HasScepter() then
+	if self:GetParent():HasScepter() then
 		local dead_heroes = {}
 		local heroes = HeroList:GetAllHeroes()
+		local PlayersID = self:GetParent():GetPlayerID()
 		local channel = self:GetAbility():GetChannelTime()
 		local base_cooldown = self:GetAbility():GetSpecialValueFor("base_cooldown")
 		local extra_cooldown = self:GetAbility():GetSpecialValueFor("extra_cooldown")
-		if self:GetCaster():HasModifier("modifier_super_scepter") then
+		if self:GetParent():HasModifier("modifier_super_scepter") then
 			channel = self:GetAbility():GetChannelTime() / 2
 		end
 		for i=1, #heroes do
-			if heroes[i]:IsRealHero() and not heroes[i]:IsAlive() then
+			if heroes[i]:IsRealHero() and not heroes[i]:IsAlive() and IsValidEntity(heroes[i]) and heroes[i]:GetLevel() > 0 and not heroes[i]:IsReincarnating() then
+				for itemSlot = 0, 5 do
+					local item = heroes[i]:GetItemInSlot(itemSlot)
+					if item and item:GetName() == "item_inf_aegis" then
+						if item:IsCooldownReady() or item:GetCooldownTimeRemaining() > 42 then
+							return
+						end
+					end
+				end
 				table.insert(dead_heroes,heroes[i])
 			end
 		end
 		if #dead_heroes == #heroes then
-			if can_be_triggered then
+			if can_be_triggered and self:GetAbility():IsCooldownReady() then
 				can_be_triggered = false
-				Timers:CreateTimer(channel, function()
-					item_resurection_pendant:Used(self:GetCaster(), self:GetAbility(), base_cooldown, extra_cooldown)
+				Timers:CreateTimer(channel + (FrameTime() * (PlayersID + 1)), function()
+					dead_heroes = {}
+					for i=1, #heroes do
+						if heroes[i]:IsRealHero() and not heroes[i]:IsAlive() and IsValidEntity(heroes[i]) and heroes[i]:GetLevel() > 0 and not heroes[i]:IsReincarnating() then
+							for itemSlot = 0, 5 do
+								local item = heroes[i]:GetItemInSlot(itemSlot)
+								if item and item:GetName() == "item_inf_aegis" then
+									if item:IsCooldownReady() or item:GetCooldownTimeRemaining() > 42 then
+										return
+									end
+								end
+							end
+							table.insert(dead_heroes,heroes[i])
+						end
+					end
+					if #dead_heroes == #heroes then
+						item_resurection_pendant:Used(self:GetParent(), self:GetAbility(), base_cooldown, extra_cooldown)
+					end
 				end)
 			end
 		else
