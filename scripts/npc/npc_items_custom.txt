@@ -2958,24 +2958,29 @@
 		"01"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"min_health"				"25"
+			"bonus_armor"				"20"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"duration"					"6"
+			"min_health"				"25"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"cooldown"					"50"
+			"duration"					"6"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"refund"					"33"
+			"cooldown"					"50"
 		}
 		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"refund"					"33"
+		}
+		"06"
 		{
 			"var_type"					"FIELD_FLOAT"
 			"cd_reduct"					"10"

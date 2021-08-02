@@ -29,7 +29,9 @@ function add_perma(keys)
 ]]
 		else
 			caster:AddNewModifier(caster, ability, "modifier_item_plain_ring_perma", {duration = -1, invincibility_duration = ability:GetSpecialValueFor("duration"), cooldown = ability:GetSpecialValueFor("cooldown"), min_health = ability:GetSpecialValueFor("min_health"), cd_reduct = ability:GetSpecialValueFor("cd_reduct")})
+			local bonus_armor = ability:GetSpecialValueFor("bonus_armor")
 			caster:AddNewModifier(caster, ability, "modifier_item_plain_ring_perma_armor", {})
+			caster:FindModifierByName("modifier_item_plain_ring_perma_armor"):SetStackCount(bonus_armor)
 		end
 		if ability:GetCurrentCharges() >= 1 then
 			ability:SpendCharge()
@@ -110,7 +112,7 @@ function modifier_item_plain_ring_perma_armor:RemoveOnDeath() return false end
 function modifier_item_plain_ring_perma_armor:DeclareFunctions()
 	return {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS}
 end
-function modifier_item_plain_ring_perma_armor:GetModifierPhysicalArmorBonus() return 20 end
+function modifier_item_plain_ring_perma_armor:GetModifierPhysicalArmorBonus() return self:GetStackCount() end
 
 ------------------------
 -- Invincibility Buff --
