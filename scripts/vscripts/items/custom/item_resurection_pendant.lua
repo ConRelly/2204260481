@@ -24,6 +24,9 @@ if IsServer() then
         if not interrupted and not self:GetParent():HasModifier("modifier_arc_warden_tempest_double") then
 			local base_cooldown = self:GetSpecialValueFor("base_cooldown")
 			local extra_cooldown = self:GetSpecialValueFor("extra_cooldown")
+			if self:GetCaster():HasModifier("modifier_super_scepter") then
+				extra_cooldown = self:GetSpecialValueFor("extra_cooldown_ss")
+			end	
 			self:Used(self:GetCaster(), self, base_cooldown, extra_cooldown)
         end
     end
