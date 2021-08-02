@@ -29515,7 +29515,7 @@
 		
 		"HasScepterUpgrade"				"1"
 		"HasShardUpgrade"				"1"
-
+		"LevelsBetweenUpgrades"         "5"
 		"AbilitySound"					"Hero_Slardar.Slithereen_Crush"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 
@@ -29531,17 +29531,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"350"
+				"radius"				"450"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage"			"180 840 1500 2600"
+				"base_damage"			"280 840 3500 9600"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"str_damage_pct"		"160 280 380 640"
+				"str_damage_pct"		"360 580 880 1240"
 				// "LinkedSpecialBonus"	"special_bonus_unique_slardar"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_slardar_slithereen_crush_strength"
 			}
@@ -29568,26 +29568,26 @@
 			"14"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"puddle_regen"				"35"
+				"puddle_regen"				"335"
 				"RequiresScepter"			"1"
 				
 			}
 			"15"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"puddle_armor"				"12"
+				"puddle_armor"				"32"
 				"RequiresScepter"			"1"
 			}
 			"16"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"puddle_status_resistance"	"40"
+				"puddle_status_resistance"	"50"
 				"RequiresScepter"			"1"
 			}
 			"17"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"puddle_duration"			"25"
+				"puddle_duration"			"12"
 				"RequiresScepter"			"1"
 			}
 			"18"
@@ -29618,7 +29618,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"560"
+				"value"						"960"
 			}
 		}
 	}

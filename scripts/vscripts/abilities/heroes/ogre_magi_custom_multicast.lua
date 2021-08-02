@@ -85,7 +85,7 @@ function on_ability_executed(keys)
 				Timers:CreateTimer(
 					delay,
 					function()
-						if used_ability and caster:IsAlive() then  -- test again, object may have been deleted.
+						if used_ability and IsValidEntity(used_ability) and caster:IsAlive() then  -- test again, object may have been deleted.
 							if ability_behavior_includes(used_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and keys.target then
 								caster:SetCursorCastTarget(keys.target)
 							elseif ability_behavior_includes(used_ability, DOTA_ABILITY_BEHAVIOR_POINT) then

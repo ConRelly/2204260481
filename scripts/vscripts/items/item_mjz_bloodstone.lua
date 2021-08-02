@@ -24,7 +24,7 @@ local item_mjz_bloodstone_active = function(ability)
 			caster:EmitSound("DOTA_Item.Bloodstone.Cast")
 			caster:RemoveModifierByName("modifier_item_mjz_bloodstone_active")
 			caster:AddNewModifier(caster, ability, "modifier_item_mjz_bloodstone_active", {duration = restore_duration})
-			if RollPseudoRandom(charge_chance, caster) then
+			if RollPercentage(charge_chance) then
 				ability:SetCurrentCharges(ability:GetCurrentCharges() + 1)
 				caster:FindModifierByName("modifier_mjz_bloodstone_charges"):SetStackCount(ability:GetCurrentCharges())
 			end
@@ -197,7 +197,11 @@ end
 function modifier_item_mjz_bloodstone_buff:GetModifierSpellAmplify_Percentage()
 	local ability = self:GetAbility()
 	if IsValidEntity(ability) then
-		return ability:GetSpecialValueFor("spell_amp") or 0
+		if ability:GetName() == "item_mjz_bloodstone_ultimate" then
+			return (ability:GetCurrentCharges() * ability:GetSpecialValueFor("spell_amp")) or 0
+		else
+			return (ability:GetSpecialValueFor("spell_amp")) or 0
+		end		
 	end
 end
 function modifier_item_mjz_bloodstone_buff:GetModifierSpellLifestealRegenAmplify_Percentage()

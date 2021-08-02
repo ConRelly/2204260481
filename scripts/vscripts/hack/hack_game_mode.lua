@@ -175,7 +175,7 @@ function HackGameMode:OnGameInProgress( )
         --self:_CreateDummyTarget(is_spell_immunity, 1)
         --self:_CreateDummyTarget(false, 2)
         if Cheats:IsEnabled() then
-            --self:_CreateDummyTarget(false, 1)
+            self:_CreateDummyTarget(false, 1)
         end    
         if IsInToolsMode() and true then
             -- self:_CreateDummyTarget(is_spell_immunity)

@@ -2926,6 +2926,9 @@
 	"BaseClass"						"item_datadriven"
 	"Model"							"models/props_gameplay/recipe.vmdl"
 	"AbilityTextureName"			"item_recipe"
+	"ItemStockInitial"				"50"
+	"ItemStockMax"					"100"
+	"ItemStockTime"					"1500.0"	
 	"ItemCost"						"2500"	
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
@@ -8106,7 +8109,7 @@
 		"AbilityTextureName"			"mjz_bloodstone"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"20"
+		"AbilityCooldown"				"25"
 		"AbilitySharedCooldown"			"mjz_bloodstone"
 		"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
 		"ItemQuality"					"epic"
@@ -8135,17 +8138,17 @@
 			"4"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_regen_multiplier"	"750"
+				"mana_regen_multiplier"	"900"
 			}
 			"5"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"spell_amp"				"90"
+				"spell_amp"				"1"
 			}
 			"6"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"spell_lifesteal_amp"	"90"
+				"spell_lifesteal_amp"	"35"
 			}
 			"7"
 			{
@@ -8155,12 +8158,12 @@
 			"8"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charge_chance"			"30"
+				"charge_chance"			"25"
 			}
 			"9"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_per_charge"		"1"
+				"mana_per_charge"		"2"
 			}
 			"10"
 			{
@@ -8170,7 +8173,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"restore_duration"		"4"
+				"restore_duration"		"3"
 			}
 		}
 	}
