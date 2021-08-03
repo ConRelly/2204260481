@@ -764,6 +764,8 @@
 	"DOTA_Tooltip_modifier_spirit_guardian_heal_Description"	"Heals the owner. Excess healing heals allies."
 	"DOTA_Tooltip_modifier_spirit_guardian_heal_cd"				"Defense Mode min Cooldown"
 	"DOTA_Tooltip_modifier_spirit_guardian_heal_cd_Description"	"Cannot be affected by Defense Mode buff until this expires"
+	"DOTA_Tooltip_modifier_spirit_guardian_bonus_dmg"				"<font color='#17CCEC'>Snowball Stacks</font>"
+	"DOTA_Tooltip_modifier_spirit_guardian_bonus_dmg_Description"	"Guardian deals bonus dmg base on your Level multiplied with the Stacks."
 
 	"DOTA_Tooltip_Ability_item_pipe_of_dezun"				"Pipe Of Dezun"
 	"DOTA_Tooltip_Ability_item_pipe_of_dezun_Description"	"<h1>Active: Dezun's Immunity</h1>Within a radius of %aura_radius% from the owner gives allies Spell Immunity for %duration% seconds.\n<h1>Passive: Pipe Of Dezun Aura</h1>+ %hp_regen_aura% Health Regen<br>+ %magic_resist_aura%%% Magic Resistance<br>+ %mana_aura% Mana<br>+ %as_aura% Attack Speed<br><br>Radius: %aura_radius%"
@@ -6969,7 +6971,7 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_modifier_ring_invincibility_cd_Description"		"Hidden Power is recharging."
 
 "DOTA_Tooltip_ability_item_plain_perma"							"Gold Ring Extract"
-"DOTA_Tooltip_ability_item_plain_perma_Description"				"<h1>Consume: Extracted Essence</h1>Permanently grants Hidden Power to the wielder. Gives 20 bonus armor.<br><br>When reused, it reduces Hidden Power CD by 10 seconds.<br><font color='#EC7E68'>It can be used once.</font>\n<h1>Hidden Power</h1>Upon taking fatal damage you become temporarily invincible.<br><br>Cooldown: %cooldown% seconds"
+"DOTA_Tooltip_ability_item_plain_perma_Description"				"<h1>Consume: Extracted Essence</h1>Permanently grants Hidden Power to the wielder. Gives %bonus_armor% bonus armor.<br><br>When reused, it reduces Hidden Power CD by 10 seconds.<br><font color='#EC7E68'>It can be used once.</font>\n<h1>Hidden Power</h1>Upon taking fatal damage you become temporarily invincible.<br><br>Cooldown: %cooldown% seconds"
 "DOTA_Tooltip_modifier_item_plain_ring_perma"					"Hidden Power"
 "DOTA_Tooltip_modifier_item_plain_ring_perma_Description"		"Upon taking fatal damage you become temporarily invincible. Not Affected by cooldown reduction."
 "DOTA_Tooltip_modifier_item_plain_ring_perma_invincibility"					"Blessing In Disguise"
