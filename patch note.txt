@@ -1193,6 +1193,10 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 
 
 
+* Fixed Corrosive Haze (Slardar) talents
+
+
+
 
 *Update patch notes21 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601

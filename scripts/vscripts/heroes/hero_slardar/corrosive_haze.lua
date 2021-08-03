@@ -15,13 +15,21 @@ function modifier_corrosive_haze:IsHidden() return false end
 function modifier_corrosive_haze:IsDebuff() return true end
 function modifier_corrosive_haze:IsStunDebuff() return false end
 function modifier_corrosive_haze:GetTexture() return "slardar_amplify_damage" end
-function modifier_corrosive_haze:IsPurgable() return true end
+function modifier_corrosive_haze:IsPurgable()
+	if IsServer() then
+		if self:GetCaster():HasTalent("special_bonus_unique_slardar_3") then
+			return false
+		else
+			return true
+		end
+	end
+end
 function modifier_corrosive_haze:OnCreated(kv)
 	if IsServer() then
 		if self:GetAbility() then
 			self:ShardEffect(self:GetParent())
 			local armor_reduction = self:GetCaster():CustomValue("corrosive_haze", "armor_reduction")
-			self:SetStackCount(armor_reduction + talent_value(self:GetCaster(), "special_bonus_unique_slardar_5"))
+			self:SetStackCount(armor_reduction)
 		end
 	end
 end
@@ -32,7 +40,7 @@ function modifier_corrosive_haze:OnRefresh(kv)
 				self:ShardEffect(self:GetParent())
 			end
 			local armor_reduction = self:GetCaster():CustomValue("corrosive_haze", "armor_reduction")
-			self:SetStackCount(armor_reduction + talent_value(self:GetCaster(), "special_bonus_unique_slardar_5"))
+			self:SetStackCount(armor_reduction)
 		end
 	end
 end
@@ -55,7 +63,7 @@ function modifier_corrosive_haze:DeclareFunctions()
 	return {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_PROVIDES_FOW_POSITION}
 end
 function modifier_corrosive_haze:GetModifierPhysicalArmorBonus()
-	return self:GetStackCount()
+	return self:GetStackCount() + talent_value(self:GetCaster(), "special_bonus_unique_slardar_5")
 end
 function modifier_corrosive_haze:GetModifierProvidesFOWVision()
 	return 1
