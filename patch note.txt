@@ -1192,13 +1192,13 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Added few missed icons
 
 
-
+* Fixed Staf of Light 3 and Spirit Guardian
 * Fixed Corrosive Haze (Slardar) talents
+* Guessing Game hint 2: the 2 words can be found in a Siltbreaker round and a bristleback round
 
 
 
-
-*Update patch notes21 can be found on the new map version:
+*Update patch notes22 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussion for links)
 
