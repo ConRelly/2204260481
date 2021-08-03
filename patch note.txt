@@ -1173,7 +1173,7 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Spirit Guardian's heal increased by Snowball stacks
 * Cursed Shovel: When excavated the Tome of Knowledge, the Tome's cooldown will be refreshed
 * Added UP for Holy Locket
-* Added Aghanim's Scepter and Super Scepter effect for Resurrection Pendant
+* Added Aghanim's Scepter and Super Scepter effect for Resurrection Pendant ("-SS" command so couriers can consume super scepter)
 * Urn of Shadows/Spirit Vessel: Removed the need for charges
 * Reworked Bloodstone's: Now they work like in Dota
 * Bloodstone Ultimate: Active health regen increased by 25%
@@ -1194,7 +1194,7 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 
 
 
-*Update patch notes16 can be found on the new map version:
+*Update patch notes21 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussion for links)
 

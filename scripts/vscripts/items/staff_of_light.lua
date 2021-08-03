@@ -256,12 +256,14 @@ function modifier_staff_of_light_3:OnIntervalThink()
 	CastEffect(caster, target, projectile_speed)
 end
 function item_staff_of_light_3:OnProjectileHit(target, location)
+	if not IsServer() then return end
 	if not target then return end
 	if not self:GetParent() then return end
 	local caster = self:GetParent()
 	local int = 0
-	if caster:IsRealHero() then
-		local int_to_dmg = self:GetAbility():GetSpecialValueFor("int_bonus_damage")
+	local ability = self
+	if ability and IsValidEntity(ability) and caster:IsRealHero() then
+		local int_to_dmg = ability:GetSpecialValueFor("int_bonus_damage")
 		int = caster:GetIntellect() * caster:GetLevel() * int_to_dmg / 100
 	end
 	local radius = 0
