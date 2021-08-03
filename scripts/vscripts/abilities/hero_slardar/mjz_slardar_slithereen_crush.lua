@@ -38,7 +38,7 @@ if IsServer() then
 		local particle_hit = "particles/units/heroes/hero_slardar/slardar_crush_entity.vpcf"
 		local particle_splash  = "particles/units/heroes/hero_slardar/slardar_crush.vpcf"
 
-		if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
+		if caster:HasModifier("modifier_item_aghanims_shard") then
 			radius = radius + 75
 		end
 
@@ -53,10 +53,10 @@ if IsServer() then
 		
 		EmitSoundOn("Hero_Slardar.Slithereen_Crush", caster)
 
-		local nFXIndex = ParticleManager:CreateParticle( particle_splash , PATTACH_CUSTOMORIGIN, nil )
-		ParticleManager:SetParticleControl( nFXIndex, 0, caster:GetAbsOrigin() )
-		ParticleManager:SetParticleControl(nFXIndex, 1, Vector(1, 1, radius + 100))
-		ParticleManager:ReleaseParticleIndex( nFXIndex )
+		local nFXIndex = ParticleManager:CreateParticle(particle_splash, PATTACH_WORLDORIGIN, nil)
+		ParticleManager:SetParticleControl(nFXIndex, 0, caster:GetOrigin())
+		ParticleManager:SetParticleControl(nFXIndex, 1, Vector(radius, radius, radius))
+		ParticleManager:ReleaseParticleIndex(nFXIndex)
 
 		local unit_list = FindUnitsInRadius(
 			caster:GetTeamNumber(),
@@ -67,6 +67,13 @@ if IsServer() then
 			ability:GetAbilityTargetFlags(),
 			FIND_ANY_ORDER, false
         )
+		if IsServer() then
+			if caster:HasModifier("modifier_item_aghanims_shard") and caster:FindAbilityByName("corrosive_haze") and caster:FindAbilityByName("corrosive_haze"):GetLevel() > 0 then
+				self.shard = true
+			else
+				self.shard = false
+			end
+		end
         
         for _,unit in pairs(unit_list) do
 			if unit then
@@ -76,7 +83,12 @@ if IsServer() then
 
 				damageTable.victim = unit
 				ApplyDamage(damageTable)
-		
+
+				if self.shard then
+					unit:AddNewModifier(caster, ability, "modifier_corrosive_haze", {duration = slow_duration})
+					unit:FindModifierByName("modifier_corrosive_haze"):SetStackCount(caster:CustomValue("corrosive_haze", "armor_reduction"))
+				end
+
 				unit:AddNewModifier(caster, ability, 'modifier_stunned', {duration = stun_duration})
 				unit:AddNewModifier(caster, ability, MODIFIER_SLOW_NAME, {duration = stun_duration + slow_duration})
             end
@@ -114,57 +126,10 @@ modifier_mjz_slardar_slithereen_crush_slow = class({})
 function modifier_mjz_slardar_slithereen_crush_slow:IsDebuff() return true end
 function modifier_mjz_slardar_slithereen_crush_slow:IsHidden() return false end
 function modifier_mjz_slardar_slithereen_crush_slow:IsPurgable() return true end
-function modifier_mjz_slardar_slithereen_crush_slow:OnCreated()
-	if IsServer() then
-		if self:GetCaster():HasModifier("modifier_item_aghanims_shard") and self:GetCaster():FindAbilityByName("slardar_amplify_damage") and self:GetCaster():FindAbilityByName("slardar_amplify_damage"):GetLevel() > 0 then
-			self.shard = true
-			self:ShardEffect(self:GetParent())
-			self.armor_reduction = self:GetCaster():CustomValue("slardar_amplify_damage", "armor_reduction")
-			self:SetStackCount(self.armor_reduction)
-			self.fow_vision = 1
-		else
-			self.shard = false
-			self.armor_reduction = 0
-			self.fow_vision = 0
-		end
-	end
-end
-function modifier_mjz_slardar_slithereen_crush_slow:OnRefresh(table)
-	if IsServer() then
-		if self:GetCaster():HasModifier("modifier_item_aghanims_shard") and self:GetCaster():FindAbilityByName("slardar_amplify_damage") and self:GetCaster():FindAbilityByName("slardar_amplify_damage"):GetLevel() > 0 then
-			self.shard = true
-			if not self.effect_cast then
-				self:ShardEffect(self:GetParent())
-			end
-			self.armor_reduction = self:GetCaster():CustomValue("slardar_amplify_damage", "armor_reduction")
-			self:SetStackCount(self.armor_reduction)
-			self.fow_vision = 1
-		else
-			self.shard = false
-			self.armor_reduction = 0
-			self.fow_vision = 0
-		end
-	end
-end
-function modifier_mjz_slardar_slithereen_crush_slow:ShardEffect(target)
-	self.effect_cast = ParticleManager:CreateParticle("particles/units/heroes/hero_slardar/slardar_amp_damage.vpcf", PATTACH_OVERHEAD_FOLLOW, target)
-	ParticleManager:SetParticleControlEnt(self.effect_cast, 0, target, PATTACH_OVERHEAD_FOLLOW, nil, target:GetOrigin(), true)
-	ParticleManager:SetParticleControlEnt(self.effect_cast, 1, target, PATTACH_OVERHEAD_FOLLOW, nil, target:GetOrigin(), true)
-	ParticleManager:SetParticleControlEnt(self.effect_cast, 2, target, PATTACH_OVERHEAD_FOLLOW, nil, target:GetOrigin(), true)
-	self:AddParticle(self.effect_cast, false, false, -1, false, true)
-end
-function modifier_mjz_slardar_slithereen_crush_slow:OnDestroy()
-	if self.effect_cast then
-		ParticleManager:DestroyParticle(self.effect_cast, false)
-		ParticleManager:ReleaseParticleIndex(self.effect_cast)
-	end
-end
 function modifier_mjz_slardar_slithereen_crush_slow:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
-		MODIFIER_PROPERTY_PROVIDES_FOW_POSITION,
 	}
 end
 function modifier_mjz_slardar_slithereen_crush_slow:GetModifierMoveSpeedBonus_Percentage()
@@ -172,18 +137,6 @@ function modifier_mjz_slardar_slithereen_crush_slow:GetModifierMoveSpeedBonus_Pe
 end
 function modifier_mjz_slardar_slithereen_crush_slow:GetModifierAttackSpeedBonus_Constant()
 	return self:GetAbility():GetSpecialValueFor('attack_speed_slow')
-end
-function modifier_mjz_slardar_slithereen_crush_slow:GetModifierPhysicalArmorBonus()
-	return self:GetStackCount()
-end
-function modifier_mjz_slardar_slithereen_crush_slow:GetModifierProvidesFOWVision()
-	return self.fow_vision
-end
-function modifier_mjz_slardar_slithereen_crush_slow:CheckState()
-	if self.shard then
-		return {[MODIFIER_STATE_INVISIBLE] = false}
-	end
-	return {}
 end
 
 ----------------------------------------------------------------------

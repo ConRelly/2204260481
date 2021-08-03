@@ -10077,19 +10077,7 @@
 			}
 		}
 	}
-	"slardar_amplify_damage"
-	{
-		"MaxLevel"					  "5"
-		"AbilityCooldown"				"10.0"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"-9 -15 -28 -44 -69"
-			}
-		}
-	}
+
 	"slark_shadow_dance"
 	{
 		"AbilityCooldown"				"75 60 45"

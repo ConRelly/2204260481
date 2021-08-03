@@ -1623,6 +1623,7 @@
 
 		"Ability1"				"mjz_slardar_sprint"
 		"Ability2"				"mjz_slardar_slithereen_crush"
+		"Ability6"				"corrosive_haze"
 		"Ability16"				"special_bonus_unique_mjz_slardar_slithereen_crush_strength"
 		"AttributeAgilityGain"  "5.5"
 		"AttributeStrengthGain"  "6.6"

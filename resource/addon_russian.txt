@@ -3458,6 +3458,14 @@
 	"DOTA_Tooltip_modifier_mjz_slardar_slithereen_crush_aura_effect_friendly"					"Slithereen Crush"
 	"DOTA_Tooltip_modifier_mjz_slardar_slithereen_crush_aura_effect_friendly_Description"		"Увеличивает регенерацию здоровья, броню и сопротивление эффектам в пруду или реке."
 
+	"DOTA_Tooltip_ability_corrosive_haze"					"Corrosive Haze"
+	"DOTA_Tooltip_ability_corrosive_haze_Description"		"Уменьшает сопротивление цели физическому урону, даёт по ней обзор и раскрывает её невидимость."
+	"DOTA_Tooltip_ability_corrosive_haze_Lore"		"Даже самая крепкая броня тает под натиском солёных вод океана."
+	"DOTA_Tooltip_ability_corrosive_haze_armor_reduction"		"СНИЖЕНИЕ БРОНИ:"
+	"DOTA_Tooltip_ability_corrosive_haze_duration"				"ДЛИТЕЛЬНОСТЬ:"
+	"DOTA_Tooltip_modifier_corrosive_haze"					"Corrosive Haze"
+	"DOTA_Tooltip_modifier_corrosive_haze_Description"		"Броня снижена на %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.\nВы видимы для Slardar и его союзников."
+
 	"DOTA_Tooltip_ability_mjz_slardar_sprint"					"Guardian Sprint"
 	"DOTA_Tooltip_ability_mjz_slardar_sprint_Description"		"Slardar slithers ahead, moving significantly faster and increases attack speed."
 	"DOTA_Tooltip_ability_mjz_slardar_sprint_Lore"				"As Slardar has made the transition from the Deeps, it has been necessary to use his powerful tail for sprinting instead of swimming."
