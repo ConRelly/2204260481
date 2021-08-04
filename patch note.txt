@@ -1197,6 +1197,8 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Guessing Game hint 2: the 2 words can be found in a Siltbreaker round and a bristleback round
 
 
+* New Edible item Devil's Daedalus
+
 
 *Update patch notes22 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601

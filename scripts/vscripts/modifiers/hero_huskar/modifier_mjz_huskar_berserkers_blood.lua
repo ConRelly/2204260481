@@ -71,13 +71,15 @@ function modifier_class:OnRefresh(table)
 end
 
 function modifier_class:_Init( )
-    local ability = self:GetAbility() 
-    self.max_as = ability:GetSpecialValueFor( "maximum_attack_speed" )
-    self.max_mr = ability:GetSpecialValueFor( "maximum_resistance" )
-    self.max_hr = ability:GetSpecialValueFor( "maximum_health_regen" )
-    self.max_threshold = ability:GetSpecialValueFor( "hp_threshold_max" )
-    self.max_size = ability:GetSpecialValueFor( "model_multiplier" )
-    self.range = 100 - self.max_threshold
+    local ability = self:GetAbility()
+    if ability and IsValidEntity(ability) then
+        self.max_as = ability:GetSpecialValueFor( "maximum_attack_speed" )
+        self.max_mr = ability:GetSpecialValueFor( "maximum_resistance" )
+        self.max_hr = ability:GetSpecialValueFor( "maximum_health_regen" )
+        self.max_threshold = ability:GetSpecialValueFor( "hp_threshold_max" )
+        self.max_size = ability:GetSpecialValueFor( "model_multiplier" )
+        self.range = 100 - self.max_threshold
+    end    
 end
 
 if IsServer() then

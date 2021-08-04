@@ -225,6 +225,7 @@ if IsServer() then
 		hw_sharpshooter_release = true,
 		lesser_cancel = true,
 		divine_cancel = true,
+		item_crit_edible = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

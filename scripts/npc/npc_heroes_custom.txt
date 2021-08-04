@@ -1266,6 +1266,7 @@
 		"Ability3"				"mjz_lina_fiery_soul"
 		"Ability6"				"mjz_lina_laguna_blade"
 		"Ability10"     "special_bonus_intelligence_30"
+		"Ability11"     "special_bonus_hp_400"
 		"Ability13"     "special_bonus_cooldown_reduction_25"
 		"Ability15"		"special_bonus_unique_mjz_lina_fiery_soul"
 		"Ability16"	 "special_bonus_magic_resistance_40"

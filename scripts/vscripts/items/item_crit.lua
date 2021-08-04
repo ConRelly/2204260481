@@ -148,12 +148,12 @@ function modifier_item_imba_greater_crit:OnCreated(keys)
 	self.ability = self:GetAbility()
 	local parent = self:GetParent()
 	if IsServer() then
-
-		if not parent:HasModifier("modifier_item_imba_greater_crit_buff") then
+		
+		if not parent:HasModifier("modifier_item_imba_greater_crit_buff") and not parent:HasModifier("modifier_item_imba_greater_crit_edible") then
 			parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_imba_greater_crit_buff", {})
 		end
 	end	
-	if not parent:IsRealHero() then return nil end
+	if not parent:IsRealHero() or parent:HasModifier("modifier_item_imba_greater_crit_edible") then return nil end
 
 	local level = parent:GetLevel()
 	self.base_damage = self.ability:GetSpecialValueFor("bonus_damage") * level
