@@ -186,33 +186,32 @@ function modifier_class:OnAttackLanded(keys)
 	local arrow_speed = ability:GetSpecialValueFor("arrow_speed_scepter")
 	local split_count = ability:GetSpecialValueFor("split_count_scepter")
 	local split_range = ability:GetSpecialValueFor("split_range_scepter")
-		if not keys.no_attack_cooldown then
-			local splinter_counter = 0
+	if not keys.no_attack_cooldown then
+		local splinter_counter = 0
 
-			for _, enemy in pairs(FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, split_range, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_ANY_ORDER, false)) do
-				if enemy ~= target then
-					if splinter_counter < split_count then
-						
-						TrackingProjectiles:Projectile({
-							hTarget				= enemy,
-							hCaster				= target,
-							hAbility			= ability,
-							iMoveSpeed			= caster:GetProjectileSpeed(),
-							EffectName			= caster:GetRangedProjectileName(),
-							SoundName			= "",
-							flRadius			= 1,
-							bDodgeable			= true,
-							bDestroyOnDodge 	= true,
-							iSourceAttachment	= DOTA_PROJECTILE_ATTACHMENT_HITLOCATION,
-							OnProjectileHitUnit = function(params, projectileID)
-								caster:PerformAttack(enemy, false, true, true, true, false, false, false)
-							end
-						})
-						
-						splinter_counter = splinter_counter + 1
-					else
-						break
-					end
+		for _, enemy in pairs(FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, split_range, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_ANY_ORDER, false)) do
+			if enemy ~= target then
+				if splinter_counter < split_count then
+					
+					TrackingProjectiles:Projectile({
+						hTarget				= enemy,
+						hCaster				= target,
+						hAbility			= ability,
+						iMoveSpeed			= caster:GetProjectileSpeed(),
+						EffectName			= caster:GetRangedProjectileName(),
+						SoundName			= "",
+						flRadius			= 1,
+						bDodgeable			= true,
+						bDestroyOnDodge 	= true,
+						iSourceAttachment	= DOTA_PROJECTILE_ATTACHMENT_HITLOCATION,
+						OnProjectileHitUnit = function(params, projectileID)
+							caster:PerformAttack(enemy, false, true, true, true, false, false, false)
+						end
+					})
+					
+					splinter_counter = splinter_counter + 1
+				else
+					break
 				end
 			end
 		end

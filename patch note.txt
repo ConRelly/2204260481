@@ -1198,9 +1198,12 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 
 
 * New Edible item Devil's Daedalus
+* Ultimate Bloodstone spell amp from charges now is limited to max 300 (it only affects multicast + mimic mace other builds can't reach that number in a normal time)
+* Fixed Guessing Game(check Hint 1 and 2 for the correct answer)
 
 
-*Update patch notes22 can be found on the new map version:
+
+*Update patch notes23 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussion for links)
 

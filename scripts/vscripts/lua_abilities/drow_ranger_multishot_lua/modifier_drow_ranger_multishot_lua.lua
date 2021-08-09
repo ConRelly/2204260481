@@ -27,10 +27,12 @@ end
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_drow_ranger_multishot_lua:OnCreated( kv )
+	if not IsServer() then return end
 	self.speed = self:GetAbility():GetSpecialValueFor( "arrow_speed" )
 end
 
 function modifier_drow_ranger_multishot_lua:OnRefresh( kv )
+	if not IsServer() then return end
 	self.speed = self:GetAbility():GetSpecialValueFor( "arrow_speed" )
 end
 

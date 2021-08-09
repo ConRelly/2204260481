@@ -26,7 +26,9 @@ local item_mjz_bloodstone_active = function(ability)
 			caster:AddNewModifier(caster, ability, "modifier_item_mjz_bloodstone_active", {duration = restore_duration})
 			if RollPercentage(charge_chance) then
 				ability:SetCurrentCharges(ability:GetCurrentCharges() + 1)
-				caster:FindModifierByName("modifier_mjz_bloodstone_charges"):SetStackCount(ability:GetCurrentCharges())
+				if caster:HasModifier("modifier_mjz_bloodstone_charges") then
+					caster:FindModifierByName("modifier_mjz_bloodstone_charges"):SetStackCount(ability:GetCurrentCharges())
+				end	
 			end
 		end
 	end
