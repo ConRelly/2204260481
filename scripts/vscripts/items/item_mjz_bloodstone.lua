@@ -198,7 +198,11 @@ function modifier_item_mjz_bloodstone_buff:GetModifierSpellAmplify_Percentage()
 	local ability = self:GetAbility()
 	if IsValidEntity(ability) then
 		if ability:GetName() == "item_mjz_bloodstone_ultimate" then
-			return (ability:GetCurrentCharges() * ability:GetSpecialValueFor("spell_amp")) or 0
+			local charges = ability:GetCurrentCharges()
+			if charges > 300 then
+				charges = 300
+			end			
+			return (charges * ability:GetSpecialValueFor("spell_amp")) or 0
 		else
 			return (ability:GetSpecialValueFor("spell_amp")) or 0
 		end		

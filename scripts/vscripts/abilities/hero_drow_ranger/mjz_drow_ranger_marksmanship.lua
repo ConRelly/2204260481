@@ -9,7 +9,7 @@ LinkLuaModifier(MODIFIER_THINKER_NAME, MODIFIER_LUA, LUA_MODIFIER_MOTION_NONE)
 
 ---------------------------------------------------------------------------------------
 
-mjz_drow_ranger_marksmanship = class({})
+if mjz_drow_ranger_marksmanship == nil then  mjz_drow_ranger_marksmanship = class({}) end
 local ability_class = mjz_drow_ranger_marksmanship
 
 function ability_class:GetIntrinsicModifierName()
@@ -159,116 +159,120 @@ function modifier_class:OnAttack(keys)
 	end
 end
 
-if IsServer() then
-	function modifier_class:OnCreated(table)
-		self:_CheckThinker()
-	end
-	
-	function modifier_class:OnDestroy()
-		local parent = self:GetParent()
-		parent:RemoveModifierByName(MODIFIER_THINKER_NAME)
-	end
-	
-	function modifier_class:OnAttackLanded(keys)
-		local target = keys.target
-		local caster = self:GetCaster()
-		local ability = self:GetAbility()
+function modifier_class:OnCreated(table)
+	if not IsServer() then return end
+	self:_CheckThinker()
+end
 
-		if keys.attacker ~= caster then return nil end
-		if target:IsBuilding() then return nil end
-		if not caster:HasScepter() then return nil end
-		if not caster:IsRangedAttacker() then return nil end
-		if caster:PassivesDisabled() then return nil end
-		if TargetIsFriendly(caster, target) then return nil end
+function modifier_class:OnDestroy()
+	if not IsServer() then return end
+	local parent = self:GetParent()
+	parent:RemoveModifierByName(MODIFIER_THINKER_NAME)
+end
 
-		local arrow_speed = ability:GetSpecialValueFor("arrow_speed_scepter")
-		local split_count = ability:GetSpecialValueFor("split_count_scepter")
-		local split_range = ability:GetSpecialValueFor("split_range_scepter")
-			if not keys.no_attack_cooldown then
-				local splinter_counter = 0
+function modifier_class:OnAttackLanded(keys)
+	if not IsServer() then return end
+	local target = keys.target
+	local caster = self:GetCaster()
+	local ability = self:GetAbility()
 
-				for _, enemy in pairs(FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, split_range, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_ANY_ORDER, false)) do
-					if enemy ~= target then
-						if splinter_counter < split_count then
-							
-							TrackingProjectiles:Projectile({
-								hTarget				= enemy,
-								hCaster				= target,
-								hAbility			= ability,
-								iMoveSpeed			= caster:GetProjectileSpeed(),
-								EffectName			= caster:GetRangedProjectileName(),
-								SoundName			= "",
-								flRadius			= 1,
-								bDodgeable			= true,
-								bDestroyOnDodge 	= true,
-								iSourceAttachment	= DOTA_PROJECTILE_ATTACHMENT_HITLOCATION,
-								OnProjectileHitUnit = function(params, projectileID)
-									caster:PerformAttack(enemy, false, true, true, true, false, false, false)
-								end
-							})
-							
-							splinter_counter = splinter_counter + 1
-						else
-							break
-						end
+	if keys.attacker ~= caster then return nil end
+	if target:IsBuilding() then return nil end
+	if not caster:HasScepter() then return nil end
+	if not caster:IsRangedAttacker() then return nil end
+	if caster:PassivesDisabled() then return nil end
+	if TargetIsFriendly(caster, target) then return nil end
+
+	local arrow_speed = ability:GetSpecialValueFor("arrow_speed_scepter")
+	local split_count = ability:GetSpecialValueFor("split_count_scepter")
+	local split_range = ability:GetSpecialValueFor("split_range_scepter")
+		if not keys.no_attack_cooldown then
+			local splinter_counter = 0
+
+			for _, enemy in pairs(FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, split_range, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_ANY_ORDER, false)) do
+				if enemy ~= target then
+					if splinter_counter < split_count then
+						
+						TrackingProjectiles:Projectile({
+							hTarget				= enemy,
+							hCaster				= target,
+							hAbility			= ability,
+							iMoveSpeed			= caster:GetProjectileSpeed(),
+							EffectName			= caster:GetRangedProjectileName(),
+							SoundName			= "",
+							flRadius			= 1,
+							bDodgeable			= true,
+							bDestroyOnDodge 	= true,
+							iSourceAttachment	= DOTA_PROJECTILE_ATTACHMENT_HITLOCATION,
+							OnProjectileHitUnit = function(params, projectileID)
+								caster:PerformAttack(enemy, false, true, true, true, false, false, false)
+							end
+						})
+						
+						splinter_counter = splinter_counter + 1
+					else
+						break
 					end
 				end
 			end
 		end
 	end
+end
 
-	function modifier_class:_OnAttack(keys)
-		if keys.attacker ~= self:GetParent() then return nil end
-		if keys.target:IsBuilding() then return nil end
-		if not self:GetParent():HasScepter() then return nil end
-		if not self:GetParent():IsRangedAttacker() then return nil end
-		if self:GetParent():PassivesDisabled() then return nil end
-		if TargetIsFriendly(self:GetParent(), keys.target) then return nil end
+function modifier_class:_OnAttack(keys)
+	if not IsServer() then return end
+	if keys.attacker ~= self:GetParent() then return nil end
+	if keys.target:IsBuilding() then return nil end
+	if not self:GetParent():HasScepter() then return nil end
+	if not self:GetParent():IsRangedAttacker() then return nil end
+	if self:GetParent():PassivesDisabled() then return nil end
+	if TargetIsFriendly(self:GetParent(), keys.target) then return nil end
 
-        local attacker = keys.attacker
-		local target = keys.target
-		local caster = self:GetCaster()
-		local ability = self:GetAbility()
-		local arrow_speed = ability:GetSpecialValueFor('arrow_speed_scepter')
-		local split_count = ability:GetSpecialValueFor('split_count_scepter')
-		local split_range = ability:GetSpecialValueFor('split_range_scepter')
-		
+	local attacker = keys.attacker
+	local target = keys.target
+	local caster = self:GetCaster()
+	local ability = self:GetAbility()
+	local arrow_speed = ability:GetSpecialValueFor('arrow_speed_scepter')
+	local split_count = ability:GetSpecialValueFor('split_count_scepter')
+	local split_range = ability:GetSpecialValueFor('split_range_scepter')
+	
 
-		local projectile_name = "particles/units/heroes/hero_drow/drow_base_attack.vpcf"
-		local max_targets = split_count
-		local enemy_list = FindTargetEnemy(caster, target:GetAbsOrigin(), split_range)
-		
-		for _,enemy in pairs(enemy_list) do
-			if enemy ~= target then
-				local projectile_info = {
-					EffectName = projectile_name,
-					Ability = ability,
-					vSpawnOrigin = caster:GetAbsOrigin(),
-					Target = enemy,
-					Source = caster,
-					bHasFrontalCone = false,
-					iMoveSpeed = arrow_speed,
-					bReplaceExisting = false,
-					bProvidesVision = false
-				}
-				ProjectileManager:CreateTrackingProjectile(projectile_info)
-				max_targets = max_targets - 1
-			end
-			if max_targets == 0 then break end
+	local projectile_name = "particles/units/heroes/hero_drow/drow_base_attack.vpcf"
+	local max_targets = split_count
+	local enemy_list = FindTargetEnemy(caster, target:GetAbsOrigin(), split_range)
+	
+	for _,enemy in pairs(enemy_list) do
+		if enemy ~= target then
+			local projectile_info = {
+				EffectName = projectile_name,
+				Ability = ability,
+				vSpawnOrigin = caster:GetAbsOrigin(),
+				Target = enemy,
+				Source = caster,
+				bHasFrontalCone = false,
+				iMoveSpeed = arrow_speed,
+				bReplaceExisting = false,
+				bProvidesVision = false
+			}
+			ProjectileManager:CreateTrackingProjectile(projectile_info)
+			max_targets = max_targets - 1
 		end
+		if max_targets == 0 then break end
+	end
 
-	end	
+end	
 
-	function modifier_class:_CheckThinker( )
-		local caster = self:GetCaster()
-		local ability = self:GetAbility()
-		local parent = self:GetParent()
+function modifier_class:_CheckThinker( )
+	if not IsServer() then return end
+	local caster = self:GetCaster()
+	local ability = self:GetAbility()
+	local parent = self:GetParent()
 
-		if not parent:HasModifier(MODIFIER_THINKER_NAME) then
-			parent:AddNewModifier(caster, ability, MODIFIER_THINKER_NAME, {})		
-		end
+	if not parent:HasModifier(MODIFIER_THINKER_NAME) then
+		parent:AddNewModifier(caster, ability, MODIFIER_THINKER_NAME, {})		
 	end
 end
+
 
 
 	

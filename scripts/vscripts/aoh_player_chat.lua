@@ -60,6 +60,17 @@ function AOHGameMode:OnPlayerChat(keys)
 		Notifications:TopToAll({text="#renew_stats2", style={color="red"}, duration=5})
 		self.renew = true
 	end
+	if keys.text == guessing_game_1 and not Cheats:IsEnabled() and time > 1 and not self._physdanage and not GameRules:IsGamePaused() then
+		Notifications:TopToAll({text="#dota_npc_does_ab", style={color="red"}, duration=7})
+		self._physdanage = true
+		self:_RenewStats()
+	end
+	if keys.text == guessing_game_2 and not Cheats:IsEnabled() and time > 30 and not self._physdanage and not GameRules:IsGamePaused() then
+		Notifications:TopToAll({text="#dota_npc_does_bc", style={color="red"}, duration=5})
+		self._physdanage = true
+	end	
+
+
 
 	if keys.text == "-autocast" then
 		local playerID = keys.playerid
