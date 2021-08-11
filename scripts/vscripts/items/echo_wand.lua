@@ -226,6 +226,7 @@ if IsServer() then
 		lesser_cancel = true,
 		divine_cancel = true,
 		item_crit_edible = true,
+		razor_eye_of_the_storm = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

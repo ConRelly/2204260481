@@ -3078,7 +3078,7 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"bonus_damage"		"700 1400 5000"
+			"bonus_damage"		"1700 4400 10000"
 		}
 		"02"
 		{
@@ -3124,7 +3124,7 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"bonus_damage"		"700 1400 5000"
+			"bonus_damage"		"1700 4400 10000"
 		}
 		"02"
 		{
@@ -3170,7 +3170,7 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"bonus_damage"		"700 1400 5000"
+			"bonus_damage"		"1700 4400 10000"
 		}
 		"02"
 		{

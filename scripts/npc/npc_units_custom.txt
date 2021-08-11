@@ -12013,7 +12013,7 @@
 		"AttackDamageMin"			"0"			// Damage range min.
 		"AttackDamageMax"			"0"			// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0"			// Speed of attack.
+		"AttackRate"				"1"			// Speed of attack.
 		"AttackAnimationPoint"		"0"			// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"0"			// Range within a target can be acquired.
 		"AttackRange"				"0"			// Range within a target can be attacked.
