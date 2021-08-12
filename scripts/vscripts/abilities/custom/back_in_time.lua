@@ -28,7 +28,7 @@ function modifier_back_in_time:OnCreated()
 	local parent = self:GetParent()
 	local modifier = "modifier_back_in_time_buff"
 	local modifier2 = "modifier_back_in_time_aura"
-	if not parent:HasModifier(modifier) then
+	if parent:HasModifier(modifier) then
 --		parent:AddNewModifier(parent, ability, modifier, {})
 		local time = GameRules:GetGameTime() / 60
 		if time > 1 then
@@ -58,14 +58,12 @@ function modifier_back_in_time:OnCreated()
 		parent:AddNewModifier(parent, ability, modifier2, {})
 		--print("modif2 added")
 	end
+	if not parent:HasAbility("weaver_time_lapse") then
+		parent:AddAbility("weaver_time_lapse")
+	end		
 	local lapse = parent:FindAbilityByName("weaver_time_lapse")
 	if lapse and lapse:GetLevel() ~= 0 then return end
-	if not lapse then
-		parent:AddAbility("weaver_time_lapse")
-		lapse:SetLevel(1)
-	else
-		lapse:SetLevel(1)
-	end
+	lapse:SetLevel(1)
 end
 
 function modifier_back_in_time:OnDestroy()
@@ -73,6 +71,7 @@ function modifier_back_in_time:OnDestroy()
 		local ability = self:GetAbility()
 		local parent = self:GetParent()
 		local modifier = "modifier_back_in_time_aura"
+		local modifier2 = "modifier_back_in_time_buff"
 		--if parent:HasModifier("modifier_back_in_time_buff") then
 		--	parent:RemoveModifierByName("modifier_back_in_time_buff")
 		--end
@@ -82,6 +81,12 @@ function modifier_back_in_time:OnDestroy()
 				parent:RemoveModifierByName(modifier)
 			end
 		end
+		if parent:HasModifier(modifier2) then
+			local has_modifier2 = parent:FindModifierByName(modifier2)
+			if has_modifier2 then
+				parent:RemoveModifierByName(modifier2)
+			end
+		end		
 	end
 end
 
@@ -229,26 +234,27 @@ function modifier_effect2:OnIntervalThink()
 		local caster = self:GetCaster()
 		local ability = self:GetAbility()
 		local target = self:GetParent()
+		if ability and IsValidEntity(ability) then
+			local interval = ability:GetSpecialValueFor("interval")
+			local base_damage = ability:GetSpecialValueFor("base_damage")
+			if caster:GetLevel() < 29 then
+				base_damage = base_damage / 4
+			end	
+			local modif_buff = "modifier_back_in_time_buff"
+			local mbuff = caster:FindModifierByName(modif_buff)	
+			local nr_stacks = mbuff:GetStackCount()
+			local damage = base_damage * nr_stacks
+			if damage == 0 then return nil end
+			damage = damage * interval
 
-		local interval = ability:GetSpecialValueFor("interval")
-		local base_damage = ability:GetSpecialValueFor("base_damage")
-		if caster:GetLevel() < 29 then
-			base_damage = base_damage / 4
+			ApplyDamage({
+				attacker = caster,
+				victim = target,
+				ability = ability,
+				damage_type = ability:GetAbilityDamageType(),
+				damage = damage
+			})
 		end	
-		local modif_buff = "modifier_back_in_time_buff"
-		local mbuff = caster:FindModifierByName(modif_buff)	
-		local nr_stacks = mbuff:GetStackCount()
-		local damage = base_damage * nr_stacks
-		if damage == 0 then return nil end
-		damage = damage * interval
-
-		ApplyDamage({
-			attacker = caster,
-			victim = target,
-			ability = ability,
-			damage_type = ability:GetAbilityDamageType(),
-			damage = damage
-		})
 	end
 end	
 

@@ -271,13 +271,12 @@ if IsServer() then
 		-- if self:GetParent():PassivesDisabled() then return nil end
         if self:TargetIsFriendly(self:GetParent(), keys.target) then return nil end
         
-        
         local attacker = keys.attacker
 		local target = keys.target
 		local caster = self:GetCaster()
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
-
+        if not IsValidEntity(ability) then return end
         self:Destroy()
 
         ability:FastAttack(target)
