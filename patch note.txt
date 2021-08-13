@@ -1203,6 +1203,9 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 
 
 * Fix infinite rapier description and doubled its damage
+* Fix drow Marksmanship not working after death
+* Fix Dazzle missing ult icon on ability swap menu.
+* Fix Slayer Rebound not giving extra stacks base on the time you learned.
 
 
 
