@@ -2238,6 +2238,46 @@
 		//	"faster"	"300"
 		}
 	}
+	"npc_dota_hero_dazzle"
+	{
+
+		"Ability1"		"dazzle_poison_touch"
+		"Ability2"		"dazzle_shallow_grave"
+		"Ability3"		"dazzle_shadow_wave"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"dazzle_bad_juju_custom"
+		"Ability10"		"special_bonus_gold_income_420"
+		"Ability11"		"special_bonus_mp_regen_175"
+		"Ability12"		"special_bonus_unique_dazzle_5"
+		"Ability13"		"special_bonus_spell_amplify_100"
+		"Ability14"		"special_bonus_movement_speed_30"
+		"Ability15"		"special_bonus_unique_dazzle_3"
+		"Ability16"		"special_bonus_unique_dazzle_1"
+		"Ability17"		"special_bonus_unique_dazzle_4"
+		"ArmorPhysical"		"3"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"22"
+		"AttackDamageMax"		"28"
+		"AttackRate"		"1.600000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"750"
+		"ProjectileModel"		"particles/units/heroes/hero_dazzle/dazzle_base_attack.vpcf"
+		"ProjectileSpeed"		"1200"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"18"
+		"AttributeStrengthGain"		"4.50000"
+		"AttributeBaseIntelligence"		"25"
+		"AttributeIntelligenceGain"		"8.700000"
+		"AttributeBaseAgility"		"21"
+		"AttributeAgilityGain"		"3.700000"
+		"MovementSpeed"		"325"
+		"MovementTurnRate"		"0.700000"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		
+	}
+
 
 	"npc_dota_hero_target_dummy"
 	{

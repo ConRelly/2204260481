@@ -6,7 +6,7 @@ local modifier_class = modifier_mjz_drow_ranger_marksmanship_thinker
 function modifier_class:IsPassive() return true end
 function modifier_class:IsHidden() return true end
 function modifier_class:IsPurgable() return false end
-
+function modifier_class:RemoveOnDeath() return false end
 
 function modifier_class:DeclareFunctions()
 	local func = {

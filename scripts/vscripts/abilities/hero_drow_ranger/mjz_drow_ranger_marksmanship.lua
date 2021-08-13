@@ -15,10 +15,9 @@ local ability_class = mjz_drow_ranger_marksmanship
 function ability_class:GetIntrinsicModifierName()
 	return MODIFIER_INIT_NAME
 end
-
 if IsServer() then
 	-- 分裂箭
-	function ability_class:OnProjectileHit(target, location)
+--[[ 	function ability_class:OnProjectileHit(target, location)
 		local caster = self:GetCaster()
 		if caster:IsIllusion() then return nil end
 		if not caster:IsRangedAttacker() then return nil end
@@ -38,7 +37,7 @@ if IsServer() then
         end
 
         return true
-	end
+	end ]]
 		
 	function ability_class:OnProjectileHit_ExtraData(target, pos, keys)
 		local ability = self
@@ -66,7 +65,6 @@ if IsServer() then
         elseif RollPercentage(chance_1x) then
 			marksmanship_attack = 1
 		end
-
 		local projectile_speed = attacker:GetProjectileSpeed()
 		local info = {
 			Target = target,
@@ -95,7 +93,6 @@ if IsServer() then
 		local ability = self
 		local caster = self:GetCaster()
 		local attacker = caster
-
 		if marksmanship_attack then
 			local damage = 0
 			local attack_damage = caster:GetAverageTrueAttackDamage(target) * 0.4
