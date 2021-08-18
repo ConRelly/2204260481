@@ -9396,6 +9396,7 @@ Contains all random skills"
 
 		"DOTA_Tooltip_ability_special_bonus_mjz_meepo_poof_01"    "Poof Gives a Poof Stack every time you use the spell"
 
+		"DOTA_Tooltip_ability_special_bonus_unique_mjz_phoenix_icarus_dive_cdr" "Reduces Icarus Dive CD by {s:value} seconds"
 
 // Custom Talents
 
@@ -9478,7 +9479,13 @@ Contains all random skills"
 	   "DOTA_Tooltip_Ability_item_enchanter"			 "Enchanter"
 	   "DOTA_Tooltip_Ability_item_enchanter_description" "After lvl 10 you have a chance on getting every time you level up, check shop (used to make: radiance armor and other stuff)/nEveryone gets one bonus if after minute 30 of the game someone guess the word/s (you can found the word/s from the title you get when a round starts, gets changed every few updates. More advanced Hints are given in Discord <font color='#F74705'>Patreon only section</font>), you have to type like a command (caps sensitive)."
 
-
+////////Dota Vanila Modifiers with Missing tooltip/////
+      "DOTA_Tooltip_modifier_item_force_field_effect"    			 "Arcanist's Aura"
+      "DOTA_Tooltip_modifier_item_force_field_effect_description"    "Increases your Armor and Magic Resist by 25"
+      "DOTA_Tooltip_modifier_item_force_field_bonus_aura"  			 "Reflection Duration Bonus"
+      "DOTA_Tooltip_modifier_item_force_field_bonus_aura_description" "Emits an aura that gives and Arcanist reflection to everyone in rage for the duration"
+      "DOTA_Tooltip_modifier_item_force_field_bonus"  "Arcanist Reflection"
+      "DOTA_Tooltip_modifier_item_force_field_bonus_Description" "Reflects 40% of damage taken back to the attacker"
 //////////////////// FIXED ABILITIES (CUSTOM) \\\\\\\\\\\\\\\\\\\\
 
 // Dawnbreaker

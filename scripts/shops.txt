@@ -51,6 +51,7 @@
 		"item"		"item_greater_faerie_fire"
 		"item"		"item_enchanted_quiver"
 		"item"		"item_paladin_sword"
+		"item"      "item_misericorde"
 		"item"		"item_ultimate_dagon"
 		"item"		"item_spy_gadget"
 		"item"      "item_cloak_of_flames"
@@ -128,6 +129,7 @@
 		"item"		"item_holy_locket"
 		"item"		"item_cus_spirit_vessel"
 		"item"      "item_ceremonial_robe"
+		"item"      "item_force_field"
 		"item"      "item_cursed_gaze"
 		"item"		"item_pipe"
 		"item"		"item_guardian_greaves"
@@ -155,6 +157,7 @@
 		"item"		"item_staff_of_light"
 		"item"		"item_arcane_staff"
 		"item"		"item_blast_staff_1"
+		"item"      "item_heavy_blade"
 	}
 
 	// Level 3 - Purple Recipes
@@ -175,6 +178,7 @@
 		"item"		"item_formidable_chest"
 		"item"		"item_polarized_plate"
 		"item"		"item_warriors_seal"
+		"item"      "item_ascetic_cap"
 	}
 
 	"weapons"

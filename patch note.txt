@@ -1206,12 +1206,14 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Added Divine Pray (item) for new hero Piety (only for Lina) {It is not the final result and may be changed in the future}
 * New abilities and 7.30 rebalance
 * Fix infinite rapier description and doubled its damage
-* Fix drow Marksmanship not working after death
+* Fix drow Marksmanship procs not working after death
 * Fix Dazzle missing ult icon on ability swap menu.
 * Fix Slayer Rebound not giving extra stacks base on the time you learned.
 * Removed Undying's double armor talent (level 10)
 * Replaced Lina's Level 10 talent
 * Fixed Fiery Soul (Lina) ambient effects
+* Cursed Gaze now gives more then double hp and has a new component in recipe instead of rapier(Ascetic's Cap)
+* Added 4 of the New dota items(WitchBane, Arcanist's armor, Brigand's blade and Ascetic's Cap)
 New items will be added soon (or maybe not)
 
 
