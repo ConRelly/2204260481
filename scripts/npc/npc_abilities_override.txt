@@ -1125,17 +1125,6 @@
 			}
 		}
 	}
-	"special_bonus_unique_queen_of_pain_4"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"14500"
-			}
-		}
-	}		
 	"special_bonus_unique_razor"
 	{
 		"AbilitySpecial"
@@ -1363,7 +1352,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"295"
+				"value"				"300"
 			}
 		}
 	}
@@ -1705,8 +1694,8 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"7250"
+				"var_type"			"FIELD_INTEGER"
+				"value"				"5000"
 			}
 		}
 	}
@@ -2243,18 +2232,6 @@
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
-	}	
-	"antimage_counterspell"
-	{
-		"AbilityCooldown"				"16"
-		"AbilitySpecial"
-		{
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"3.8"
-			}
-		}
 	}
 	"arc_warden_magnetic_field"
 	{
@@ -2305,13 +2282,26 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"9.0"
-				"LinkedSpecialBonus"		"special_bonus_unique_arc_warden_2"
+				"duration"						"9"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"damage_per_second"				"40 80 160 980"
+				"LinkedSpecialBonus"			"special_bonus_unique_arc_warden_2"
+			}
+		}
+	}
+	"special_bonus_unique_arc_warden_2"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"value"				"980"
 			}
 		}
 	}
@@ -3444,6 +3434,51 @@
 			}
 		}
 	}
+// Broodmother: Spinner's Snare
+	"broodmother_sticky_snare"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_CHANNELLED "
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		"HasScepterUpgrade"				"1"
+		"IsGrantedByScepter"			"1"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCharges"				"2"
+		"AbilityChargeRestoreTime"		"20"
+		"AbilityManaCost"				"100"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"root_duration"			"3"
+			}			
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"1000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"count"					"5"
+			}			
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"width"					"900"
+			}
+			
+		}
+	}
+
 	"centaur_stampede"
 	{
 		"LevelsBetweenUpgrades"		 "10"
@@ -7718,435 +7753,6 @@
 			}
 		}
 	}
-	"special_bonus_spell_amplify_25"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"125"
-			}
-		}
-	}
-	"special_bonus_spell_amplify_12"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"69"
-			}
-		}
-	}
-	"special_bonus_spell_amplify_16"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"90"
-			}
-		}
-	}	
-	"special_bonus_spell_amplify_15"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"75"
-			}
-		}
-	}
-	"special_bonus_spell_amplify_14"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"70"
-			}
-		}
-	}	
-	"special_bonus_spell_amplify_11"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"65"
-			}
-		}
-	}	
-	"special_bonus_spell_amplify_10"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"45"
-			}
-		}
-	}
-	"special_bonus_spell_amplify_8"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"40"
-			}
-		}
-	}
-	"special_bonus_spell_amplify_6"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"35"
-			}
-		}
-	}	
-	"special_bonus_spell_amplify_5"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"30"
-			}
-		}
-	}
-	"special_bonus_hp_150"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1500"
-			}
-		}
-	}
-	"special_bonus_hp_175"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1750"
-			}
-		}
-	}
-	"special_bonus_hp_200"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"2000"
-			}
-		}
-	}
-	"special_bonus_hp_225"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"2250"
-			}
-		}
-	}
-	"special_bonus_hp_250"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"2500"
-			}
-		}
-	}
-	"special_bonus_hp_275"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"2750"
-			}
-		}
-	}
-	"special_bonus_hp_300"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"3000"
-			}
-		}
-	}
-	"special_bonus_hp_325"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"3250"
-			}
-		}
-	}	
-	"special_bonus_hp_350"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"3500"
-			}
-		}
-	}
-	"special_bonus_hp_400"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"4000"
-			}
-		}
-	}	
-	"special_bonus_hp_450"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"4500"
-			}
-		}
-	}				
-	"special_bonus_hp_500"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"5000"
-			}
-		}
-	}
-	"special_bonus_hp_600"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"4500"
-			}
-		}
-	}
-	"special_bonus_hp_700"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"5500"
-			}
-		}
-	}	
-	"special_bonus_hp_800"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"6000"
-			}
-		}
-	}
-	"special_bonus_strength_6"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"160"
-			}
-		}
-	}	
-	"special_bonus_strength_7"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"170"
-			}
-		}
-	}
-	"special_bonus_strength_8"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"180"
-			}
-		}
-	}		
-	"special_bonus_strength_9"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"190"
-			}
-		}
-	}
-	"special_bonus_strength_10"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"200"
-			}
-		}
-	}	
-	"special_bonus_strength_12"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"220"
-			}
-		}
-	}	
-	"special_bonus_strength_13"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"230"
-			}
-		}
-	}		
-	"special_bonus_strength_15"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"250"
-			}
-		}
-	}
-	"special_bonus_strength_16"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"260"
-			}
-		}
-	}		
-	"special_bonus_strength_18"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"280"
-			}
-		}
-	}		
-	"special_bonus_strength_20"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"400"
-			}
-		}
-	}
-	"special_bonus_strength_25"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"450"
-			}
-		}
-	}
-	"special_bonus_strength_30"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"500"
-			}
-		}
-	}
-	"special_bonus_strength_40"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"820"
-			}
-		}
-	}
 	"special_bonus_agility_6"
 	{
 		"AbilitySpecial"
@@ -8474,138 +8080,6 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"value"				"650"
-			}
-		}
-	}		
-	"special_bonus_armor_2"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"6"
-			}
-		}
-	}
-	"special_bonus_armor_4"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"12"
-			}
-		}
-	}
-	"special_bonus_armor_5"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"15"
-			}
-		}
-	}
-	"special_bonus_armor_6"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"18"
-			}
-		}
-	}
-	"special_bonus_armor_7"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"21"
-			}
-		}
-	}
-	"special_bonus_armor_8"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"24"
-			}
-		}
-	}
-	"special_bonus_armor_9"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"27"
-			}
-		}
-	}
-	"special_bonus_armor_10"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"30"
-			}
-		}
-	}
-	"special_bonus_armor_12"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"36"
-			}
-		}
-	}
-	"special_bonus_armor_15"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"45"
-			}
-		}
-	}
-	"special_bonus_armor_20"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"69"
-			}
-		}
-	}
-	"special_bonus_armor_30"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"90"
 			}
 		}
 	}
@@ -10487,9 +9961,6 @@
 	}
 	"tinker_defense_matrix"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"650"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -10497,82 +9968,61 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"MaxLevel"						"5"
-		"LevelsBetweenUpgrades"		 "7"
-		"FightRecapLevel"				"1"
-		"IsGrantedByShard"				"1"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
+		"LevelsBetweenUpgrades"			"10"
 		"AbilityCastRange"				"1400"
 		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"30"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_absorb"			"900 3850 9400 24300 32500"
+				"LinkedSpecialBonus"	"special_bonus_unique_tinker_7"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"status_resistance"		"30 40 50 60 70"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"barrier_duration"		"10"
+			}
+		}
+	}
+	"special_bonus_unique_tinker_7"
+	{
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_absorb"		"900 3850 9400 24300 32500"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"status_resistance"		"40"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"barrier_duration"		"10"
+				"value"				"15000"
 			}
 		}
-	}	
+	}
+
 	"tinker_shrink_ray"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"535"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"FightRecapLevel"				"1"
-
 		"AbilitySound"					"Hero_Tinker.Laser"
 		"MaxLevel"						"1"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"				"1"
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1900"
 		"AbilityCastPoint"				"0.1"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20"
-
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"50"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.3"	// Primarily about the damageo
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -10631,7 +10081,6 @@
 	}
 	"tinker_march_of_the_machines"
 	{
-		"LevelsBetweenUpgrades"		"7"
 		"AbilitySpecial"
 		{
 			"06"
@@ -10642,8 +10091,47 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"224 686 2348 3560"
+				"damage"				"3560"
 				"LinkedSpecialBonus"	"special_bonus_unique_tinker_2"
+			}
+		}
+	}
+// Tinker: Keen Teleport
+	"tinker_keen_teleport"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NOASSIST | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"LinkedAbility"					"tinker_rearm"
+		"AbilityCastRange"				"0"
+		"LevelsBetweenUpgrades"			"20"
+		"AbilityCooldown"				"80 55 30"
+		"AbilityChannelTime"			"1"
+		"AbilityCastPoint"				"0.0"
+		"AbilityManaCost"				"75 150 225"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"minimun_distance"		"70"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"maximum_distance"		"800"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_radius"			"750"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tooltip_channel_time"	"1"
 			}
 		}
 	}
@@ -10916,7 +10404,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"45 90 135"
+				"damage_amp"				"45 90 135"
 			}
 			"04"
 			{
@@ -11099,39 +10587,19 @@
 	}
 	"venomancer_poison_nova"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"5181"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Venomancer.PoisonNova"
-
-		"HasScepterUpgrade"			"1"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"MaxLevel"					   "8"
+		"HasScepterUpgrade"				"1"
+		"MaxLevel"						"8"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCooldown"				"50"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"300"		
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.0"	// just does damage
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"300"
+		"AbilityModifierSupportValue"	"0.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -11154,31 +10622,36 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"120 480 1200 3240 6750 9400 12300 32500"
+				"damage"					"0.9 1.2 1.5 1.8 2.1 2.4 2.7 3"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"cooldown_scepter"			"45"
-				"RequiresScepter"		"1"
+				"RequiresScepter"			"1"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"duration_scepter"			"21"
 				"LinkedSpecialBonus"		"special_bonus_unique_venomancer_4"
-				"RequiresScepter"		"1"
+				"RequiresScepter"			"1"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"320 1860 3500 9240 17750 33400 573000 102500"
-				"RequiresScepter"		"1"
+				"damage_scepter"			"2.9 3.2 3.5 3.8 4.1 4.4 4.7 5"
+				"RequiresScepter"			"1"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"speed"						"700"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"base_damage"				"120 480 1200 3240 6750 9400 12300 32500"
 			}
 		}
 	}
@@ -11642,6 +11115,29 @@
 			}						
 		}
 	}
+// Windrunner: Gale Force (shard)
+	"windrunner_gale_force"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT |  DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"		
+		"MaxLevel"						"1"
+		"IsShardUpgrade"				"1"
+		"IsGrantedByShard"				"1"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"0"
+		"AbilityCooldown"				"40"
+		"AbilityManaCost"				"150"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"			"3"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
 	"winter_wyvern_arctic_burn"
 	{
 		"AbilitySpecial"
@@ -12853,6 +12349,30 @@
 		}
 	}
 }
+// Abyssal Underlord: Fiend's Gate
+	"abyssal_underlord_dark_portal"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN |DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING "
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilitySound"					"Hero_Undying.Tombstone"
+		"MaxLevel"						"1"
+		"IsGrantedByScepter"			"1"
+		"HasScepterUpgrade"				"1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastRange"				"8000"
+		"AbilityCastPoint"				"0.45"
+		"AbilityCooldown"				"80"
+		"AbilityManaCost"				"100"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"20"
+			}	
+		}
+	}
 
 "abyssal_underlord_pit_of_malice"
 {   
@@ -13904,27 +13424,6 @@
 				"var_type"					"FIELD_FLOAT"
 				"duration"					"4 4.5 6"
 				"LinkedSpecialBonus"		"special_bonus_unique_juggernaut_2"
-			}
-		}
-	}
-	"spirit_breaker_greater_bash"
-	{
-		"AbilitySpecial"
-		{
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.01"
-			}
-			"04"
-			{
-				"var_type	"			"FIELD_FLOAT"
-				"knockback_duration"	"0.01"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"knockback_distance"	"10"
 			}
 		}
 	}
@@ -15816,7 +15315,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"110 180 240 420"
+				"damage"				"100 150 250 400"
 				"LinkedSpecialBonus"	"special_bonus_unique_spirit_breaker_3"
 			}
 			"03"
@@ -15828,6 +15327,11 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"knockback_duration"	"0.01"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_distance"	"10"
 			}
 		}
 	}
@@ -18431,6 +17935,111 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_attack_speed"	"10"
+			}
+		}
+	}
+	
+// Mage Slayer
+	"item_mage_slayer"
+	{
+		"ItemPurchasable"				"0"
+	}
+
+// Recipe: Silver Edge
+	"item_recipe_silver_edge"
+	{
+		"ItemCost"						"9000"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_silver_edge"
+		"ItemRequirements"
+		{
+			"01"						"item_invis_sword;item_mjz_daedalus_5;item_chest_5"
+			//"03"						"item_chest_1"
+		}
+	}
+
+// Silver Edge
+	"item_silver_edge"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityCooldown"				"45.0"
+		"AbilitySharedCooldown"			"shadow_blade"
+		"AbilityManaCost"				"75"
+		"ItemPurchasable"				"1"
+		"ItemCost"						"13100"
+		"ItemShopTags"					"damage;attack_speed;movespeed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"sb;invis;shadow blade"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"1650"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"windwalk_duration"		"14.0"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"windwalk_movement_speed"	"25"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"windwalk_fade_time"	"0.0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"windwalk_bonus_damage"	"51500"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"backstab_duration"		"7"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"35"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_multiplier"		"325"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_crit_damage"	"225"
 			}
 		}
 	}

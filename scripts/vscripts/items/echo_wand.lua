@@ -223,8 +223,6 @@ if IsServer() then
 		beastmaster_wild_axes = true,
 		hw_sharpshooter = true,
 		hw_sharpshooter_release = true,
-		lesser_cancel = true,
-		divine_cancel = true,
 		item_crit_edible = true,
 		razor_eye_of_the_storm = true,
 	}
@@ -244,6 +242,7 @@ if IsServer() then
 	
 	function modifier_item_echo_wand_thinker:OnAbilityExecuted(keys)
 		if not IsServer() then return end
+		if not keys.ability:ProcsMagicStick() then return end
 		self.hit = true
 		if keys.unit == self.parent and not self.parent:HasModifier("modifier_item_echo_wand_lock") and not ability_behavior_includes(keys.ability, DOTA_ABILITY_BEHAVIOR_CHANNELLED) and not keys.ability:IsToggle() then
 			if not exclude_table[keys.ability:GetAbilityName()] then

@@ -113,16 +113,12 @@ modifier_ogre_magi_multicast_lua.banned = {
 	["arcane_supremacy"] = true,
 	["hw_sharpshooter"] = true,
 	["hw_sharpshooter_release"] = true,
-	["lesser_cancel"] = true,
-	["divine_cancel"] = true,  
 	["item_crit_edible"] = true,
 }
 
 --------------------------------------------------------------------------------
 -- Classifications
-function modifier_ogre_magi_multicast_lua:IsHidden()
-	return false
-end
+function modifier_ogre_magi_multicast_lua:IsHidden() return (self:GetAbility():GetLevel() == 0) end
 
 function modifier_ogre_magi_multicast_lua:IsDebuff()
 	return false
@@ -182,6 +178,7 @@ function modifier_ogre_magi_multicast_lua:OnAbilityFullyCast( params )
 	-- check if spell is banned
 	local abilityName = params.ability:GetAbilityName()
 	if self.banned[abilityName] then return end
+	if not params.ability:ProcsMagicStick() then return end
 
 	-- if the spell can do both target and point, it should not trigger
 	--if bit.band( params.ability:GetBehavior(), DOTA_ABILITY_BEHAVIOR_POINT ) ~= 0 then return end

@@ -48,6 +48,7 @@ function modifier_inf_aegis:DeclareFunctions() return {MODIFIER_EVENT_ON_DEATH} 
 function modifier_inf_aegis:OnDeath(keys)
 	if IsServer() then
 		local aegis_charges = self.caster:FindModifierByName("modifier_aegis")
+		if self.caster:IsReincarnating() and self.caster:HasModifier("modifier_item_aghanims_shard") and (self.caster:HasModifier("modifier_item_ultimate_scepter") or self.caster:HasModifier("modifier_item_ultimate_scepter_consumed")) then self.caster:FindModifierByName("modifier_inf_aegis_stats"):SetStackCount(self.caster:FindModifierByName("modifier_inf_aegis_stats"):GetStackCount() + 1) end
 		if aegis_charges and aegis_charges:GetStackCount() > 0 then return end
 		if self.ability:IsOwnersManaEnough() and self.ability:IsCooldownReady() then
 			if self.caster:IsRealHero() and self.caster == keys.unit and not self.caster:IsReincarnating() then
@@ -62,8 +63,8 @@ function modifier_inf_aegis:OnDeath(keys)
 					Timers:CreateTimer(self.reincarnate_delay, function()
 						self.caster:SetBuyBackDisabledByReapersScythe(false)
 --						self.caster:SetRespawnsDisabled(true)
-						self:GetParent():RespawnUnit()
---						self:GetParent():RespawnHero(false, false)
+						self.caster:RespawnUnit()
+--						self.caster:RespawnHero(false, false)
 					end)
 				end
 				Timers:CreateTimer(self.reincarnate_delay + FrameTime(), function()

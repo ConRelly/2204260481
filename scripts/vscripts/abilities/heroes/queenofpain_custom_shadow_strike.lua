@@ -58,26 +58,16 @@ end
 LinkLuaModifier("modifier_queenofpain_custom_shadow_strike", "abilities/heroes/queenofpain_custom_shadow_strike.lua", LUA_MODIFIER_MOTION_NONE)
 
 modifier_queenofpain_custom_shadow_strike = class({})
-
-
-function modifier_queenofpain_custom_shadow_strike:IsDebuff()
-    return true
-end
-function modifier_queenofpain_custom_shadow_strike:IsPurgable()
-    return false
-end
-
-function modifier_queenofpain_custom_shadow_strike:GetAttributes()
-    return MODIFIER_ATTRIBUTE_MULTIPLE
-end
-
-
+function modifier_queenofpain_custom_shadow_strike:IsDebuff() return true end
+function modifier_queenofpain_custom_shadow_strike:IsPurgable() return false end
+function modifier_queenofpain_custom_shadow_strike:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 if IsServer() then
-    function modifier_queenofpain_custom_shadow_strike:OnCreated(keys)
-        self.tick_damage = self:GetCaster():GetIntellect() * self:GetAbility():GetSpecialValueFor("int_pct_tick") * 0.01
+	function modifier_queenofpain_custom_shadow_strike:OnCreated(keys)
+		local interval = self:GetAbility():GetSpecialValueFor("tick_interval") - talent_value(self:GetCaster(), "special_bonus_qop_shadow_strike_tick_interval")
+		self.tick_damage = self:GetCaster():GetIntellect() * self:GetAbility():GetSpecialValueFor("int_pct_tick") * 0.01
 
-        self:StartIntervalThink(1.0)
-    end
+		self:StartIntervalThink(1.0)
+	end
 
 
     function modifier_queenofpain_custom_shadow_strike:OnIntervalThink()

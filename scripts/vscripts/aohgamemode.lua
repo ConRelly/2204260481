@@ -99,6 +99,11 @@ function AOHGameMode:InitGameMode()
 	AOHGameMode.numPhilo[4] = 0
 	self._hardMode = false
 	_G._hardMode = false
+	if GameRules:IsDaytime() then
+		_G._Sun = true
+	else
+		_G._Sun = false
+	end
 	_G.super_courier = {false, false, false, false, false}
 	self._endlessMode = false
 	self._endlessMode_started = false
@@ -227,6 +232,7 @@ function AOHGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_AGILITY_ARMOR, 0.01)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN,0.07)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA, 4)
+--	GameRules:GetGameModeEntity():SetCameraDistanceOverride(1300)
 	GameRules:GetGameModeEntity():SetHUDVisible(26,false)
 	ListenToGameEvent("npc_spawned", Dynamic_Wrap(AOHGameMode, 'OnEntitySpawned'), self)
 	ListenToGameEvent("entity_killed", Dynamic_Wrap(AOHGameMode, 'OnEntityKilled'), self)

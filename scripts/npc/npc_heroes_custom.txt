@@ -11,85 +11,51 @@
 }
 "npc_dota_hero_abaddon"
 {
-	//"Ability1"				 "atomic_samurai_focused_atomic_slash"
-	//"Ability2"				 "mjz_chaos_knight_chaos_strike_2"
-	"Ability3"				 "mjz_pudge_rot"
-	//"Ability4"				 "jotaro_absolute_defense_2"
-	//"Ability5"				 "atomic_samurai_focused_atomic_slash"
-	//"Ability7"				 "draks_unholy_strength"
-	//"Ability8"				 "faceless_void_time_walk"
-	"Ability5"				 "custom_aphotic_shield"
+	"UnitLabel"					"no_underdog"
+
+	//"Ability1"				"atomic_samurai_focused_atomic_slash"
+	//"Ability2"				"mjz_chaos_knight_chaos_strike_2"
+	"Ability3"				"mjz_pudge_rot"
+	//"Ability4"				"jotaro_absolute_defense_2"
+	//"Ability5"				"atomic_samurai_focused_atomic_slash"
+	//"Ability7"				"draks_unholy_strength"
+	//"Ability8"				"faceless_void_time_walk"
+	"Ability5"				"custom_aphotic_shield"
 	"Ability10"				"special_bonus_unique_mjz_pudge_rot_health"
 	"Ability11"				"special_bonus_reincarnation_90"
+	"Ability15"				"special_bonus_armor_27"
+	"Ability16"				"special_bonus_cooldown_reduction_15"
 	"Ability17"				"special_bonus_spell_lifesteal_70"
-	"AttributeStrengthGain"	 "11.4"
-	"UnitLabel"				 "no_underdog"
+
+	"AttributeStrengthGain"		"11.4"
 } 
 
 
-"npc_dota_hero_abyssal_underlord"
+"npc_dota_hero_batrider"
 {
-	"Ability6"		"abyssal_underlord_custom_dark_rift"
-	"Ability7"		"generic_hidden"
-	"Ability12"		"special_bonus_strength_20"
-	"Ability13"		"special_bonus_all_stats_10"
-	"Ability17"		"special_bonus_30_crit_2"
-	"AttackRate"		"1.400000"
-}
-"npc_dota_hero_alchemist"
-{
-	"Ability13"		"special_bonus_attack_damage_40"
-	"Ability14"		"special_bonus_cleave_60"
-	"Ability16"		"special_bonus_unique_alchemist_3"
-	"AttributeStrengthGain"		"5.900000"
-	"AttributeAgilityGain"		"4.700000"
-	"AttributeIntelligenceGain"		"3.300000"
-}
-"npc_dota_hero_arc_warden"
-{
-		"AttributeAgilityGain"		"6.700000"
-		"AttributeStrengthGain"		"4.900000"
-	"AttackRate"		"1.250000"
-	"AttributeIntelligenceGain"		"4.300000"	   
+	"Ability10"		"special_bonus_spell_amplify_30"
+	"Ability11"		"special_bonus_armor_18"
+	"Ability13"		"special_bonus_hp_2500"
 }
 "npc_dota_hero_rubick"
 {
-//	"Ability11"		"special_bonus_mp_regen_8"
 	"Ability3"		"arcane_supremacy"
-	"Ability12"		"special_bonus_spell_amplify_12"
+//	"Ability11"		"special_bonus_mp_regen_8"
+	"Ability12"		"special_bonus_spell_amplify_69"
 	"Ability13"		"special_bonus_cooldown_reduction_20"
 	"Ability14"		"special_bonus_gold_income_180"
 }
 "npc_dota_hero_ancient_apparition"
 {
+	"Ability11"		"special_bonus_spell_amplify_40"
 	"AttributeIntelligenceGain"  "7.7"
 	"AttributeAgilityGain"	   "5.2"
-}
-"npc_dota_hero_antimage"
-{
-	"Ability1"	  "antimage_custom_mana_break"
-	"Ability6"	  "antimage_custom_speed"
-	"Ability11"		"special_bonus_lifesteal_10"
-	"Ability12"		"special_bonus_cooldown_reduction_15"
-	"Ability15"		"special_bonus_unique_antimage"
-	"Ability17"		"special_bonus_agility_100"
-	"ArmorPhysical"		"5"
-	"AttributeStrengthGain"		"4.300000"
-	"AttributeAgilityGain"		"8.700000"
-	"AttributeIntelligenceGain"		"3.500000"
-	"UnitLabel"				 "no_underdog"
-}
-"npc_dota_hero_axe"
-{
-	"Ability3"		"axe_custom_counter_helix"
-	"Ability6"		"axe_custom_last_cleave"
-	"AttributeStrengthGain"		"11.900000"
 }
 "npc_dota_hero_bane"
 {
 	"Ability10"		"special_bonus_exp_boost_30"
 	"Ability11"		"special_bonus_mp_regen_14"
-	"Ability12"		"special_bonus_spell_amplify_12"
+	"Ability12"		"special_bonus_spell_amplify_69"
 	"Ability13"		"special_bonus_hp_regen_15"
 	"AttributeIntelligenceGain"   "7.5"
 }
@@ -99,68 +65,6 @@
 	"AttributeStrengthGain"	"6.2"
 	"AttributeAgilityGain"	 "5.3"
 }
-"npc_dota_hero_bloodseeker"
-{
-	"Ability1"		  "bloodseeker_custom_thirst"
-	"Ability5"		  "bloodseeker_custom_rampage"
-	"Ability10"			"special_bonus_unique_bloodseeker"
-	"Ability11"			 "special_bonus_cleave_25"
-	"Ability17"			"special_bonus_movement_speed_100"
-	"Ability15"			"special_bonus_lifesteal_10"
-	//"Ability16"			"special_bonus_unique_mjz_bloodseeker_rupture_01"
-	//"Ability17"			"special_bonus_attack_speed_100"
-	"UnitLabel"				 "no_underdog"
-}
-"npc_dota_hero_bounty_hunter"
-{
-	"AttackDamageMin"		"32"
-	"AttackDamageMax"		"46"
-	"StatusHealthRegen"		"2.25"
-	"AttackRate"			"1.5"
-	//"AttackAnimationPoint"  "0.2"
-	"AttributeStrengthGain"		"4.100000"
-	"AttributeAgilityGain"		"7.200000"
-	"AttributeIntelligenceGain"		"3.300000"
-	//"Ability2"		"bounty_hunter_custom_jinada"
-	"Ability10"		"special_bonus_lifesteal_15"
-	"Ability11"	 "special_bonus_mp_1000"
-	"Ability12"	 "special_bonus_evasion_50"
-	"Ability13"		"special_bonus_gold_income_300"
-	"Ability14"	 "special_bonus_unique_bounty_hunter"
-	"Ability15"		"special_bonus_magic_resistance_25"
-	"Ability16"	 "special_bonus_unique_bounty_hunter_2"
-	"Ability17"		"special_bonus_attack_speed_200"
-}
-"npc_dota_hero_brewmaster"
-{
-	"AttributeStrengthGain"	"7.8"
-	"AttributeIntelligenceGain" "5.5"
-}
-"npc_dota_hero_bristleback"
-{
-	"Ability11"		"special_bonus_cleave_100"
-	"Ability17"		"special_bonus_cooldown_reduction_40"
-}
-"npc_dota_hero_broodmother"
-{
-	"MagicalResistance"		"50"
-	"AttributeAgilityGain"   "8.3"
-	"UnitLabel"				 "no_underdog"
-}
-//"npc_dota_hero_centaur"
-//{
-//	"Ability3"		"centaur_custom_return"
-//}
-"npc_dota_hero_chaos_knight"
-{
-	"AttributeStrengthGain"		"7.4000000"
-	"AttributeAgilityGain"		"4.00000"
-	"MovementSpeed"		"340"
-	"Ability10"		"special_bonus_unique_mjz_chaos_knight_chaos_bolt_target"
-	"Ability11"		"special_bonus_hp_regen_12"
-	//"Ability15"		"special_bonus_movement_speed_60"
-	//"Ability17"		"special_bonus_all_stats_20"
-}
 "npc_dota_hero_chen"
 {
 	"Ability2"		"chen_custom_holy_persuasion"
@@ -168,7 +72,7 @@
 	"Ability10"	 "special_bonus_exp_boost_25"
 	"Ability11"	 "special_bonus_gold_income_300"
 	"Ability13"		"special_bonus_spell_lifesteal_30"
-	"Ability15"		"special_bonus_hp_800"
+	"Ability15"		"special_bonus_hp_6000"
 	"Ability14"	 "special_bonus_magic_resistance_40"
 	"Ability16"		"special_bonus_unique_chen_custom_1"
 	"Ability17"		"special_bonus_unique_chen_custom_2"
@@ -188,23 +92,18 @@
 	"Ability15"				"special_bonus_cooldown_reduction_20"
 	"Ability16"				"special_bonus_attack_base_damage_200"
 }
-"npc_dota_hero_crystal_maiden"
-{
-	"Ability16"		"special_bonus_cooldown_reduction_25"
-	"Ability17"		"special_bonus_unique_crystal_maiden_2"
-	"AttributeIntelligenceGain"  "7.7"
-	"AttributeStrengthGain"	  "9.2"
-}
 "npc_dota_hero_dark_seer"
 {
 
 	"Ability2"		"dark_seer_custom_ion_shell"
 	"Ability4"		"generic_hidden"
 	"Ability6"		"dark_seer_custom_dark_clone_2"
-	"Ability12"	 "special_bonus_cooldown_reduction_25"
-	"Ability13"	 "special_bonus_spell_amplify_25"
-	"Ability14"  "special_bonus_hp_800"
-	"Ability16"	 "special_bonus_dark_clone_duration"
+	"Ability10"		"special_bonus_ds_ion_shell_radius"
+	"Ability11"		"special_bonus_armor_18"
+	"Ability12"	 	"special_bonus_cooldown_reduction_25"
+	"Ability13"		"special_bonus_spell_amplify_125"
+	"Ability14"		"special_bonus_hp_6000"
+	"Ability16"		"special_bonus_dark_clone_duration"
 	"Ability17"		"dark_seer_custom_bonus_unique_2"
 	"AttributeIntelligenceGain"   "6.8"
 	"AttributeStrengthGain"		"5.1"
@@ -222,21 +121,12 @@
 	"Ability13"		  "special_bonus_dark_willow_shadow_realm_lua"
 	"Ability14"			 "special_bonus_dark_willow_bedlam_lua"
 	"Ability16"		  "special_bonus_attack_speed_140"
-	"Ability17"		  "special_bonus_spell_amplify_25"
-}
-"npc_dota_hero_death_prophet"
-{
-	"Ability2"		"death_prophet_custom_moving_life"
-	"Ability10"		"special_bonus_hp_regen_50"
-	"Ability12"		"special_bonus_reincarnation_90"
-	"Ability16"	 "special_bonus_attack_speed_200"
-	"AttributeIntelligenceGain"   "7.1"
-	"AttributeStrengthGain"	   "6.6"		
+	"Ability17"		  "special_bonus_spell_amplify_125"
 }
 "npc_dota_hero_disruptor"
 {
 	"Ability2"		"disruptor_custom_ion_hammer"
-	"Ability14"		"special_bonus_spell_amplify_15"
+	"Ability14"		"special_bonus_spell_amplify_75"
 	"Ability16"		"special_bonus_attack_range_300"
 	"AttributeIntelligenceGain"   "8.7"
 	"AttributeAgilityGain"		"6.2"
@@ -244,7 +134,7 @@
 "npc_dota_hero_doom_bringer"
 {
 	"Ability11"		"special_bonus_movement_speed_30"
-	"Ability12"		"special_bonus_armor_8"
+	"Ability12"		"special_bonus_armor_24"
 	"Ability14"		"special_bonus_cooldown_reduction_15"
 	"AttackDamageMin"		"40"
 	"AttackDamageMax"		"56"
@@ -255,43 +145,10 @@
 	"AttributeAgilityGain"		"12.400000"
 	"UnitLabel"				 "no_underdog"
 }
-"npc_dota_hero_ember_spirit"
-{
-	"Ability11"		"special_bonus_hp_regen_8"
-	"Ability13"		"special_bonus_cooldown_reduction_25"
-	"Ability14"		"special_bonus_spell_amplify_15"
-	"Ability15"		"special_bonus_unique_ember_spirit_1"
-}
 "npc_dota_hero_enchantress"
 {
 	"Ability11"		"special_bonus_exp_boost_25"
 	"AttributeIntelligenceGain"  "6.1"
-}
-"npc_dota_hero_enigma"
-{
-}
-"npc_dota_hero_faceless_void"
-{
-	"Ability2"		"faceless_void_backtrack"
-	"Ability16"		"special_bonus_hp_regen_50"
-	"Ability17"		"special_bonus_attack_speed_250"
-	//"Ability14"	 "special_bonus_truestrike"
-	"Ability10"	 "special_bonus_spell_amplify_100"
-	"Ability11"	 "special_bonus_cooldown_reduction_25"
-	"AttributeStrengthGain"		"4.900000"
-	"AttributeAgilityGain"		"7.700000"
-	"AttributeIntelligenceGain"		"5.300000"
-	"AttackRate"		"1.300000"
-	"AttributePrimary" "DOTA_ATTRIBUTE_STRENGTH"
-}
-"npc_dota_hero_furion"
-{
-	"Ability6"	  "furion_custom_nature_heal"
-	"Ability11"		"special_bonus_hp_regen_50"
-	"Ability15"		"special_bonus_attack_damage_100"
-	"Ability16"		"special_bonus_cooldown_reduction_25"
-	"AttributeIntelligenceGain"   "7.5"
-	"UnitLabel"	  "no_underdog"
 }
 "npc_dota_hero_grimstroke"
 {
@@ -302,46 +159,23 @@
 	"Ability5"			"generic_hidden"
 	"Ability6"			"grimstroke_custom_soulstore"
 	"Ability11"			"special_bonus_cooldown_reduction_25"
+	"Ability12"			"special_bonus_spell_amplify_75"
 	"Ability15"			"special_bonus_gold_income_60"
 	"Ability16"			"special_bonus_unique_grimstroke_custom_soulstore"
 	"AttributeIntelligenceGain"   "8.9"
 }
-"npc_dota_hero_gyrocopter"
-{
-	"Ability1"		"gyrocopter_custom_rocket_barrage"
-	"Ability13"		"special_bonus_attack_speed_40"
-	"Ability15"		"special_bonus_unique_gyrocopter_4"
-	"Ability17"		"gyrocopter_custom_bonus_unique_1"
-	"AttributeAgilityGain"	  "7.1"
-}
-"npc_dota_hero_huskar"
-{
-	"Ability6"		"huskar_custom_life_break"
-	"Ability14"	 "special_bonus_spell_amplify_100"
-	"AttributeStrengthGain"   "8.2"
-	"AttributeAgilityGain"	"5.4"
-	"AttributeIntelligenceGain" "6.8"
-	"AttackRate"			  "1.5"
-	"AttackRange"			 "800"
-}
 "npc_dota_hero_invoker"
 {
-	"Ability18"				"special_bonus_spell_amplify_15"
+	"Ability18"				"special_bonus_spell_amplify_75"
 	"AttributeIntelligenceGain"		"14.500000"
 }
 "npc_dota_hero_jakiro"
 {
+	"Ability11"		"special_bonus_spell_amplify_35"
+	"Ability13"		"special_bonus_hp_3250"
 	"Ability14"		"special_bonus_movement_speed_65"
-	"Ability17"		"special_bonus_spell_amplify_25"
+	"Ability17"		"special_bonus_spell_amplify_125"
 	"AttributeIntelligenceGain"	"8.3"
-}
-"npc_dota_hero_juggernaut"
-{
-	"Ability16"		"special_bonus_strength_25"
-		"AttributeStrengthGain"		"4.900000"
-	"AttributeAgilityGain"		"9.700000"
-		"AttributeIntelligenceGain"		"3.300000"
-	"UnitLabel"				 "no_underdog"
 }
 "npc_dota_hero_keeper_of_the_light"
 {
@@ -349,44 +183,23 @@
 	"Ability9"	  "ogre_magi_multicast_lua"
 	"AttributeIntelligenceGain"  "9.3"
 }
-//=================================================================================================================
+"npc_dota_hero_snapfire"
+{
+	"Ability10"					"special_bonus_hp_2000"
+}
 "npc_dota_hero_hoodwink"
-//=================================================================================================================
 {
 	"Ability1"					"hoodwink_custom_acorn_shot"
 	"Ability2"					"hoodwink_custom_bushwhack"
 	"Ability6"					"hw_sharpshooter"
 	"Ability7"					"hw_sharpshooter_release"
+	"Ability10"					"special_bonus_hp_2000"
 	"Ability13"                 "special_bonus_hw_sharpshooter_agi"
+
 	"AttackRate"				"1.6"
 	"AttributeAgilityGain"		"9.6"
 	"AttributeIntelligenceGain" "6.2"
 	"AttributeStrengthGain"		"4.2"
-}
-"npc_dota_hero_kunkka"
-{
-	"Ability1"		"kunkka_custom_torrent"
-	"Ability12"		"special_bonus_hp_regen_20"
-	"Ability14"		"special_bonus_cooldown_reduction_20"
-	"AttributeAgilityGain"		"3.800000"
-	"AttributeStrengthGain"	  "9.4"
-}
-"npc_dota_hero_legion_commander"
-{
-	"Ability5"		  "legion_commander_duel_lua"
-	"Ability6"		  "legion_commander_custom_duel"
-	"Ability10"		 "special_bonus_spell_block_18"
-	"Ability11"		 "special_bonus_unique_legion_commander_chance"
-	"Ability12"			"special_bonus_attack_speed_60"
-	"Ability13"			"special_bonus_cooldown_reduction_15"
-	"Ability14"			"special_bonus_unique_legion_commander_5"
-	"Ability16"			"special_bonus_magic_resistance_40"
-	"Ability17"			"special_bonus_4_crit_5420"
-	"AttributeStrengthGain"   "9.5"
-	"AttributeAgilityGain"	"6.1"
-	"AttackRate"			  "1.5"
-	"AttackAnimationPoint"	"0.23"
-	"UnitLabel"			   "no_underdog"
 }
 "npc_dota_hero_lich"
 {
@@ -400,19 +213,6 @@
 	//"Ability17"		"special_bonus_cooldown_reduction_25"
 	"AttributeIntelligenceGain"  "6.9"
 }
-"npc_dota_hero_life_stealer"
-{
-	"Ability2"		"life_stealer_custom_deny"
-	"Ability16"		"special_bonus_attack_speed_100"
-	"AttributeStrengthGain"		"11"
-	"AttributeAgilityGain"		"5.5"
-}
-"npc_dota_hero_lina"
-{
-	"Ability1"		  "mjz_phoenix_icarus_dive"
-	"Ability12"			"special_bonus_mp_400"
-	"UnitLabel"				 "no_underdog"
-}
 "npc_dota_hero_lion"
 {
 	//"Ability6"		"lion_custom_finger_of_death"
@@ -420,14 +220,14 @@
 	"Ability12"		"special_bonus_movement_speed_45"
 	"Ability15"		"special_bonus_cooldown_reduction_40"
 	//"Ability16"		"special_bonus_unique_mjz_lion_impale_base_damage"
-	"Ability17"		"special_bonus_spell_amplify_25"
+	"Ability17"		"special_bonus_spell_amplify_125"
 }
 "npc_dota_hero_lone_druid"
 {
 	"Ability3"					"lone_druid_custom_bear_style"
 	"Ability4"		"doom_bringer_empty1"
 	"Ability5"		"doom_bringer_empty2"
-	"Ability10"	 "special_bonus_armor_20"
+	"Ability10"	 "special_bonus_armor_69"
 	"Ability12"		"special_bonus_cooldown_reduction_15"
 	"Ability15"		"special_bonus_attack_base_damage_100"
 }
@@ -439,51 +239,16 @@
 	"AttributeAgilityGain"   "8.9"
 	"UnitLabel"				 "no_underdog"
 }
-"npc_dota_hero_magnataur"
-{
-	"Ability15"			"special_bonus_unique_magnus"
-	"Ability17"			"special_bonus_spell_amplify_100"
-	"AttributeAgilityGain"   "4.9"
-	"AttributeStrengthGain"  "7.8"
-}
-"npc_dota_hero_mars"
-{	
-	"Ability1"		"mars_custom_spear"
-	"Ability6"	  "mars_arena_of_blood_lua"
-	"Ability17"	 "special_bonus_magic_resistance_40"
-	"AttributeStrengthGain"  "11.1"
-	"AttributeIntelligenceGain" "6.2"
-}
 "npc_dota_hero_medusa"
 {
 	//"Ability6"		"medusa_custom_stone_arrows"
 	"Ability15"		"special_bonus_attack_range_400"
-	//"Ability16"		"special_bonus_hp_700"
+	//"Ability16"		"special_bonus_hp_5500"
 	"AttributeIntelligenceGain"  "6.9"
 	"AttributeAgilityGain"	   "6.9"
 	"AttributeStrengthGain"	  "6.9"
 	"AttackRate"				 "1.5"
 	"ArmorPhysical"			  "10"
-}
-"npc_dota_hero_meepo"
-{
-	"Ability6"		"meepo_custom_divided_we_stand"
-	"Ability11"		"special_bonus_cooldown_reduction_15"
-	"Ability13"		"special_bonus_magic_resistance_20"
-	"Ability14"		"special_bonus_mjz_meepo_poof_01"
-	"Ability16"     "special_bonus_truestrike"
-	"Ability17"		"special_bonus_spell_amplify_100"
-	"AttackRate"		"1.5"
-	"AttributeAgilityGain"  "6.7"
-	"AttributeStrengthGain" "8.9"
-}
-"npc_dota_hero_mirana"
-{
-	"Ability2"		"mirana_custom_arrow"
-	"Ability12"		"special_bonus_cooldown_reduction_15"
-	"Ability16"		"special_bonus_attack_range_300"
-	"AttributeAgilityGain"	"7.7"
-	"AttributeIntelligenceGain"  "5.8"
 }
 "npc_dota_hero_monkey_king"
 {
@@ -494,36 +259,11 @@
 	"Ability17"	 "special_bonus_8_crit_2750"
 	"AttributeAgilityGain"   "8.2"
 }
-"npc_dota_hero_morphling"
-{
-	"Ability21"		"special_bonus_8_crit_2750"
-	//"Ability19"		"special_bonus_agility_100"
-	//"Ability20"		"special_bonus_cooldown_reduction_15"
-	"Ability15"		"special_bonus_agility_100"
-	//"Ability22"		"special_bonus_50_crit_175"
-	"AttributeIntelligenceGain"		"12.000000"
-	"AttributeStrengthGain"		"12.000000"
-	"AttributeAgilityGain"		"12.000000"
-}
-"npc_dota_hero_naga_siren"
-{
-	"Ability2"		"naga_siren_custom_aquatica_grace"
-	"Ability14"		"special_bonus_agility_30"
-	"Ability16"		"special_bonus_unique_naga_siren_3"
-	"Ability17"		"special_bonus_cooldown_reduction_25"
-	"AttributeAgilityGain"  "9.5"
-	"AttributeStrengthGain"  "8.9"
-}
-"npc_dota_hero_necrolyte"
-{
-	"Ability3"		"necrolyte_intelligence_supremacy"
-	"Ability6"		"necrolyte_custom_reapers_scythe"
-	"AttributeIntelligenceGain"  "7.2"
-}
 "npc_dota_hero_nevermore"
 {
 	"Ability4"		"nevermore_custom_necromastery"
 	"Ability6"		"nevermore_custom_requiem"
+	"Ability10"		"special_bonus_spell_amplify_35"
 	"Ability12"		"special_bonus_all_stats_10"
 	"Ability13"		"special_bonus_attack_range_125"
 	"Ability14"		"special_bonus_unique_nevermore_5"
@@ -533,31 +273,11 @@
 	"UnitLabel"				 "no_underdog"
 }
 
-"npc_dota_hero_nyx_assassin"
-{
-	"Ability2"		"nyx_assassin_custom_mana_strike"
-	"Ability3"		"nyx_assassin_custom_spiked_carapace"
-	"Ability6"		"nyx_assassin_custom_vendetta"
-	"Ability11"     "special_bonus_gold_income_300"
-	"Ability13"		"special_bonus_movement_speed_40"
-	"Ability14"     "special_bonus_unique_nyx"
-	"Ability15"		"special_bonus_reincarnation_90"
-	"Ability17"		"special_bonus_cooldown_reduction_25"
-	"AttributeAgilityGain"   "6.2"
-	"AttributeIntelligenceGain"  "7.4"
-	"AttributeStrengthGain"	  "5.6"
-}
-"npc_dota_hero_obsidian_destroyer"
-{
-	"Ability3"		"obsidian_destroyer_custom_mana_amp"
-	"Ability6"		"obsidian_destroyer_custom_sanity_eclipse"
-	"Ability15"		"special_bonus_reincarnation_90"
-	"UnitLabel"				 "no_underdog"
-}
 "npc_dota_hero_ogre_magi"
 {
 	"Ability6"		"ogre_magi_custom_multicast"
 	"Ability12"		"special_bonus_unique_ogre_magi_2"
+	"Ability13"		"special_bonus_hp_2750"
 	"Ability14"		"special_bonus_exp_boost_30"
 	"Ability16"		"ogre_magi_custom_bonus_unique_1"
 	"Ability17"		"ogre_magi_custom_bonus_unique_2"
@@ -581,22 +301,10 @@
 {
 	"Ability3"					"pangolier_heartpiercer_oaa"
 	"Ability10"					"special_bonus_unique_pangolier_5"
+	"Ability15"					"special_bonus_strength_280"
 	"Ability17"					"special_bonus_cooldown_reduction_25"
-	"AttributeAgilityGain"	  "7.8"
-}
-"npc_dota_hero_phantom_assassin"
-{
-	"Ability1"		"phantom_assassin_custom_stifling_dagger"
-	"Ability17"		"phantom_assassin_custom_bonus_unique_1"
-	"AttackDamageMin"		"37"
-	"AttackDamageMax"		"39"
-	"AttributeIntelligenceGain"		"7.200000"
-	"AttackRate"			 "1.3"
-	"AttributeAgilityGain"   "9.4"
-	"MovementTurnRate"		"0.900000"
-	"StatusHealthRegen"		"1.25"
-	"MovementSpeed"		"425"
-	"UnitLabel"				 "no_underdog"
+
+	"AttributeAgilityGain"			"7.8"
 }
 "npc_dota_hero_phantom_lancer"
 {
@@ -610,7 +318,7 @@
 	"Ability6"		"phantom_lancer_juxtapose"
 	"Ability10"		"special_bonus_evasion_16"
 	"Ability11"		"special_bonus_attack_speed_15"
-	"Ability12"		"special_bonus_hp_200"
+	"Ability12"		"special_bonus_hp_2000"
 	"Ability13"		"special_bonus_truestrike"
 	"Ability14"		"special_bonus_unique_phantom_lancer"
 	"Ability15"		"special_bonus_unique_phantom_lancer_6"
@@ -633,41 +341,16 @@
 	"AttributeAgilityGain"		"9.2"
 	"StatusHealthRegen"		"10.5"
 	"MovementSpeed"		"340"
-
-	
-}
-"npc_dota_hero_phoenix"
-{
-	"Ability15"		"special_bonus_magic_resistance_40"
-	"Ability11"	 "special_bonus_exp_boost_30"
-	"AttributeIntelligenceGain"   "8.7"
-	"AttributeStrengthGain"	   "7.4"
-}
-"npc_dota_hero_puck"
-{
-	"Ability10"		"special_bonus_unique_puck_6"
-	"Ability16"		"special_bonus_lifesteal_25"
-	"AttributeAgilityGain"	"6.5"
-	"AttributeIntelligenceGain"  "9.3"
 }
 "npc_dota_hero_pudge"
 {
 	"Ability1"		  "axe_custom_counter_helix"
 	"Ability3"		"pudge_custom_reincarnation"
-	"Ability17"		"special_bonus_strength_40"
+	"Ability17"		"special_bonus_strength_820"
 	"AttributeStrengthGain"		"12.500000"
 	"StatusHealthRegen"		"1.25"
 	"ArmorPhysical"		"-1"
 	"MagicalResistance"		"30"
-}
-"npc_dota_hero_queenofpain"
-{
-	"Ability1"			"queenofpain_custom_shadow_strike"
-	"Ability10"			"special_bonus_exp_boost_30"
-	"Ability11"			"special_bonus_mp_regen_14"
-	"Ability15"			"special_bonus_strength_30"
-	//"Ability17"			"special_bonus_attack_base_damage_200"
-	"AttributeIntelligenceGain"		"9.600000"
 }
 "npc_dota_hero_rattletrap"
 {
@@ -677,8 +360,8 @@
 	"Ability6"		"rattletrap_custom_hookshot"
 	"Ability10"		"special_bonus_agility_10"
 	"Ability11"		"special_bonus_movement_speed_20"
-	"Ability12"		"special_bonus_strength_15"
-	"Ability13"		"special_bonus_spell_amplify_10"
+	"Ability12"		"special_bonus_strength_250"
+	"Ability13"		"special_bonus_spell_amplify_45"
 	"Ability14"		"rattletrap_custom_bonus_unique_4"
 	"Ability15"		"rattletrap_custom_bonus_unique_3"
 	"Ability16"		"rattletrap_custom_bonus_unique_2"
@@ -686,94 +369,31 @@
 	"AttributeAgilityGain"  "4.3"
 	"AttributeStrengthGain"  "8.6"
 }
-"npc_dota_hero_razor"
-{
-	"AttackRate"		"1.550000"
-	"ProjectileSpeed"		"6000"
-	"AttributeAgilityGain"		"2.600000"
-	"Ability13"		"special_bonus_cooldown_reduction_12"
-	"AttributeAgilityGain"	"6.7"
-}
-"npc_dota_hero_riki"
-{   
-	"Ability10"		 "special_bonus_lifesteal_30"
-	"Ability11"		 "special_bonus_cooldown_reduction_15"
-	"Ability12"		 "special_bonus_truestrike"
-	"Ability17"			"special_bonus_30_crit_875"
-	"AttributeAgilityGain"		"9.60000"
-	"AttackRate"		"1.500000"
-	"UnitLabel"				 "no_underdog"
-}
 "npc_dota_hero_shadow_demon"
 {
 	"Ability2"		"shadow_demon_custom_soul_catcher"
-	"Ability5"	  "mjz_bristleback_quill_spray_autocast5"
+	"Ability5"		"mjz_bristleback_quill_spray_autocast5"
 	"Ability6"		"shadow_demon_custom_hyperactivity"
 	"Ability10"		"special_bonus_spell_lifesteal_10"
+	"Ability11"		"special_bonus_strength_200"
 	"Ability14"		"special_bonus_magic_resistance_40"
-	"Ability16"		"special_bonus_hp_800"
+	"Ability16"		"special_bonus_hp_6000"
 	"Ability17"		"special_bonus_spell_amplify_100"
 }
 "npc_dota_hero_shadow_shaman"
 {
+	"Ability11"		"special_bonus_hp_1750"
 	"Ability15"		"special_bonus_unique_shadow_shaman_4"
 	"Ability17"		"special_bonus_cooldown_reduction_25"
 	"AttributeIntelligenceGain"  "9.1"
-}
-"npc_dota_hero_shredder"
-{
-	"Ability11"		"special_bonus_unique_timbersaw_3"
-	"Ability16"		"special_bonus_5_crit_3250"
-	"Ability15"	 "special_bonus_movement_speed_75"
-	"Ability17"		"special_bonus_mp_regen_30"
-
-}
-"npc_dota_hero_silencer"
-{
-	"Ability13"		"special_bonus_attack_speed_100"
-	"UnitLabel"				 "no_underdog"
-}
-"npc_dota_hero_skeleton_king"
-{
-	"Ability17"		"special_bonus_cleave_100"
-	"AttributeAgilityGain"  "7.3"
-	"AttributeStrengthGain"  "8.5"
-}
-"npc_dota_hero_skywrath_mage"
-{
-	"Ability2"	  "skywrath_mage_custom_concussive_shot"
-	"Ability3"	  "skywrath_mage_custom_ancient_seal"
-	"Ability14"		"special_bonus_exp_boost_25"
-	"Ability15"		"special_bonus_spell_amplify_25"
-	"Ability17"		"special_bonus_gold_income_300"
-	"Ability16"		"special_bonus_cooldown_reduction_25"
-}
-"npc_dota_hero_slark"
-{
-	"ArmorPhysical"		"-2"
-	"AttackRate"		"1.450000"
-	"AttributeBaseAgility"		"20"
-	"BaseAttackSpeed"		"90"
-	//"Ability2"	  "slark_custom_pounce"
-	//"Ability3"		"slark_custom_essence_shift"
-	//"Ability15"		"slark_custom_bonus_unique_1"
-	"Ability17"		"special_bonus_intelligence_30"
-	"UnitLabel"				 "no_underdog"
 }
 "npc_dota_hero_sniper"
 {
 	//"Ability6"		"sniper_custom_rifle"
 	"Ability11"		"special_bonus_mp_regen_4"
 	"Ability13"		"special_bonus_magic_resistance_15"
-	"Ability14"		"special_bonus_hp_400"
+	"Ability14"		"special_bonus_hp_4000"
 	"Ability17"		"special_bonus_mp_regen_10"
-}
-"npc_dota_hero_spectre"
-{
-	"Ability3"		"spectre_custom_dispersion"
-//	"Ability4"		"spectre_custom_reality"
-//	"Ability5"		"spectre_custom_haunt_single"
-//	"Ability6"		"spectre_custom_haunt"
 }
 "npc_dota_hero_spirit_breaker"
 {
@@ -786,22 +406,11 @@
 	"AttributeAgilityGain"		"5.100000"
 	"AttributeIntelligenceGain" "7.1"
 	"Ability10"	"special_bonus_gold_income_300"
-	"Ability11"	"special_bonus_armor_20"
+	"Ability11"	"special_bonus_armor_69"
 	"Ability12"	"special_bonus_cooldown_reduction_25"
 	"Ability13"	"special_bonus_exp_boost_30"
 	"Ability17"	"special_bonus_magic_resistance_40"
 	"UnitLabel"				 "no_underdog"
-}
-"npc_dota_hero_storm_spirit"
-{
-	"Ability11"		"special_bonus_attack_range_300"
-	"Ability14"	 "special_bonus_unique_mjz_storm_spirit_overload_01"
-	"Ability15"	 "special_bonus_magic_resistance_40"
-	"Ability16"		"special_bonus_attack_speed_250"
-	"AttributeAgilityGain"  "4.6"
-	"AttributeIntelligenceGain"  "7.9"
-	"UnitLabel"				 "no_underdog"
-
 }
 "npc_dota_hero_sven"
 {
@@ -828,14 +437,8 @@
 	"Ability13"		"special_bonus_unique_techies_3"
 	"Ability15"		"special_bonus_unique_mjz_techies_suicide_02"
 	"Ability14"		"special_bonus_unique_techies_4"
-	"Ability16"		"special_bonus_spell_amplify_25"
+	"Ability16"		"special_bonus_spell_amplify_125"
 	"Ability17"		"special_bonus_gold_income_300"
-}
-"npc_dota_hero_terrorblade"
-{
-	"Ability1"		"terrorblade_custom_reflection"
-	"Ability6"		"terrorblade_custom_dark_realm"
-	"AttributeAgilityGain"  "9.9"
 }
 "npc_dota_hero_tidehunter"
 {
@@ -847,20 +450,6 @@
 	"AttributeStrengthGain"  "7"
 	"AttributeIntelligenceGain"   "7"
 }
-"npc_dota_hero_tinker"
-{
-	"Ability2"		"tinker_custom_heat_seeking_missile"
-	"Ability6"	  "tinker_rearm_fix"
-	"Ability17"					"special_bonus_hp_regen_30"
-	"AttributeIntelligenceGain"   "6.7"
-}
-"npc_dota_hero_tiny"
-{
-	"Ability2"				  "tiny_custom_toss"
-	"Ability15"					"special_bonus_cooldown_reduction_15"
-	"Ability16"					"special_bonus_armor_20"
-	"Ability17"					"special_bonus_attack_speed_100"
-}
 "npc_dota_hero_treant"
 {
 	"Ability4"		"generic_hidden"
@@ -871,35 +460,17 @@
 }
 "npc_dota_hero_tusk"
 {
-	"AttackRate"		"1.400000"
-	"AttackDamageMin"		"31"
-	"AttackDamageMax"		"35"
-	"AttributeStrengthGain"		"8.4"
-	"AttributeAgilityGain"	  "4.2"
-	"ArmorPhysical"		"10"
-	"AttributeBaseStrength"		"47"
-	"Ability17"		"special_bonus_attack_base_damage_200"
 	"Ability11"		"special_bonus_unique_tusk_6"
-	"AttributeStrengthGain"   "7.9"
-}
-"npc_dota_hero_undying"
-{
-	"AttributeStrengthGain"		"5.800000"
-	"Ability1"		"undying_custom_decay"
-	"Ability11"		"special_bonus_armor_20"
-	"Ability13"		"special_bonus_hp_500"
-	"Ability15"		"special_bonus_movement_speed_60"
-	"Ability16"		"special_bonus_reincarnation_90"
-	"Ability17"		"special_bonus_cooldown_reduction_25"
-}
-"npc_dota_hero_ursa"
-{
+	"Ability12"		"special_bonus_hp_3250"
+	"Ability17"		"special_bonus_attack_base_damage_200"
 
-	"Ability11"		"special_bonus_lifesteal_30"
-	"Ability10"	 "special_bonus_hp_800"
-	"AttributeAgilityGain"  "7.1"
-	"AttributeStrengthGain"  "8.2"
-	"AttackRate"			 "1.5"
+	"ArmorPhysical"				"10"
+	"AttackRate"				"1.400000"
+	"AttackDamageMin"			"31"
+	"AttackDamageMax"			"35"
+	"AttributeBaseStrength"		"47"
+	"AttributeStrengthGain"		"7.9"
+	"AttributeAgilityGain"		"4.2"
 }
 "npc_dota_vengefulspirit_new"
 {
@@ -907,7 +478,7 @@
 	"Ability6"				"vengefulspirit_custom_nether_swap"
 	"Ability10"		"special_bonus_unique_vengeful_spirit_7"
 	"Ability11"	 "special_bonus_attack_speed_60"
-	"Ability13"	 "special_bonus_hp_700"
+	"Ability13"	 "special_bonus_hp_5500"
 	"Ability14"	 "special_bonus_lifesteal_15"
 	"Ability16"		"special_bonus_attack_base_damage_100"
 	"Ability17"		"special_bonus_magic_resistance_40"
@@ -920,11 +491,6 @@
 	"AttributeIntelligenceGain"  "6.4"
 	"AttributeStrengthGain"	   "7.7"
 }
-"npc_dota_hero_viper"
-{
-	"Ability15"		"special_bonus_attack_speed_60"
-	"Ability17"		"special_bonus_attack_base_damage_100"
-}
 "npc_dota_hero_visage"
 {
 	//"Ability3"		"visage_custom_str_to_int"
@@ -935,20 +501,16 @@
 	"AttributeStrengthGain"	   "6.7"
 	"AttributeAgilityGain"	   "6.5"
 }
-"npc_dota_hero_void_spirit"
-{
-	"Ability12"		"special_bonus_magic_resistance_25"
-}
 "npc_dota_hero_warlock"
 {
-	"Ability14"		"special_bonus_hp_500"
+	"Ability14"		"special_bonus_hp_5000"
 	"AttributeIntelligenceGain"  "8.8"
 }
 "npc_dota_hero_windrunner"
 {
 	"Ability10"		"special_bonus_unique_windranger_3"
 	"Ability11"		"special_bonus_unique_windranger_9"
-	"Ability12"		"special_bonus_spell_amplify_25"
+	"Ability12"		"special_bonus_spell_amplify_125"
 	"Ability13"		"special_bonus_attack_range_125"
 	
 }
@@ -957,6 +519,7 @@
 {
 	"Ability2"		"wd_voodoo_restoration"
 	"Ability5"		"witch_doctor_custom_death_skull"
+	"Ability11"		"special_bonus_hp_2000"
 	"Ability13"		"special_bonus_attack_speed_200"
 	"Ability14"		"special_bonus_wd_voodoo_restoration_radius"
 	"Ability16"		"special_bonus_wd_voodoo_restoration_heal_pct"
@@ -964,82 +527,101 @@
 	"AttributeIntelligenceGain"  "8.6"
 	"AttributeAgilityGain"	   "9.2"
 }
-"npc_dota_hero_zuus"
-{
-	"Ability6"		"zuus_custom_thundergods_wrath"
-	"Ability10"		"special_bonus_cooldown_reduction_15"
-	"Ability13"		"special_bonus_attack_speed_120"
-	"AttributeIntelligenceGain"   "8.5"
-	"UnitLabel"				 "no_underdog"
-}
 	"npc_dota_hero_arc_warden_mjz"
 	{
-		"override_hero"	"npc_dota_hero_arc_warden"
-		"Ability3"		"mjz_arc_warden_spark_wraith"
-		"Ability14"		"special_bonus_unique_mjz_arc_warden_0302"
-		"Ability16"	 "special_bonus_unique_arc_warden"
-		"AttributeAgilityGain"	"7.9"
+		"override_hero"			"npc_dota_hero_arc_warden"
+
+		"Ability3"				"mjz_arc_warden_spark_wraith"
+		"Ability11"				"special_bonus_hp_2250"
+		"Ability14"				"special_bonus_unique_mjz_arc_warden_0302"
+		"Ability16"				"special_bonus_unique_arc_warden"
+
+		"AttributeStrengthGain"			"4.900000"
+		"AttributeAgilityGain"			"7.9"
+		"AttributeIntelligenceGain"		"4.300000"
+		"AttackRate"					"1.250000"
 	}
 	"npc_dota_hero_bloodseeker_mjz"			// 血魔
 	{
 		"override_hero"			"npc_dota_hero_bloodseeker"
+		"UnitLabel"				"no_underdog"
+
+		"Ability1"				"bloodseeker_custom_thirst"
+		"Ability5"				"bloodseeker_custom_rampage"
 		"Ability3"				"mjz_bloodseeker_thirst"
 		//"Ability4"				"mjz_bloodseeker_bloodrage_autocast"
 		"Ability6"				"mjz_bloodseeker_rupture"
+		"Ability10"				"special_bonus_unique_bloodseeker"
+		"Ability11"				"special_bonus_cleave_25"
 		"Ability14"				"special_bonus_unique_mjz_bloodseeker_rupture_01"
-				"Ability16"							 "special_bonus_cooldown_reduction_40"
+		"Ability15"				"special_bonus_lifesteal_10"
+		"Ability16"				"special_bonus_cooldown_reduction_40"
+		//"Ability16"				"special_bonus_unique_mjz_bloodseeker_rupture_01"
 		"Ability17"				"special_bonus_unique_mjz_bloodseeker_thirst_stacks"
+		//"Ability17"				"special_bonus_attack_speed_100"
 	}
 	"npc_dota_hero_dragon_knight_mjz"
 	{
 		"override_hero"			"npc_dota_hero_dragon_knight"
 
-		"Ability1"		"mjz_dragon_knight_breathe_fire"
-		"Ability3"		"mjz_dragon_knight_dragon_blood"
-		"Ability5"		"mjz_dragon_knight_elder_dragon_relieve"
-		"Ability11"		"special_bonus_unique_mjz_dragon_knight_0106"
-		"Ability17"     "special_bonus_unique_dragon_knight_6"
+		"Ability1"				"mjz_dragon_knight_breathe_fire"
+		"Ability3"				"mjz_dragon_knight_dragon_blood"
+		"Ability5"				"mjz_dragon_knight_elder_dragon_relieve"
+		"Ability11"				"special_bonus_unique_mjz_dragon_knight_0106"
+		"Ability13"				"special_bonus_hp_4000"
+		"Ability15"				"special_bonus_strength_400"
+		"Ability17"				"special_bonus_unique_dragon_knight_6"
 
-		"AttackRate"		"1.500000"
-		"ArmorPhysical"		"10"
-		"AttributeAgilityGain"   "7.2"
-		"AttributeStrengthGain"  "9.4"
+		"AttackRate"				"1.500000"
+		"ArmorPhysical"				"10"
+		"AttributeAgilityGain"		"7.2"
+		"AttributeStrengthGain"		"9.4"
 	}	
 	"npc_dota_hero_faceless_void_mjz"			// 虚空假面
 	{
 		"override_hero"			"npc_dota_hero_faceless_void"
+		"UnitLabel"				"no_underdog"
+
 		"Ability1"				"frostivus2018_faceless_void_time_walk"
 		"Ability2"				"mjz_faceless_time_dilation"
 		"Ability3"				"frostivus2018_faceless_void_time_lock"
 		"Ability4"				"faceless_void_backtrack"
 		"Ability6"				"mjz_faceless_the_world"
 		"Ability10"				"special_bonus_spell_amplify_100"
-		"Ability12"			 "special_bonus_truestrike"
-		"Ability13"			 "special_bonus_lifesteal_25"
-		"Ability14"			 "special_bonus_unique_faceless_void_3"
+		"Ability11"				"special_bonus_cooldown_reduction_25"
+		"Ability12"				"special_bonus_truestrike"
+		"Ability13"				"special_bonus_lifesteal_25"
+		"Ability14"				"special_bonus_unique_faceless_void_3"
 		"Ability16"				"special_bonus_attack_speed_250"
 		"Ability17"				"special_bonus_unique_mjz_faceless_the_world_radius"
-		"UnitLabel"			 "no_underdog"
-		
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeStrengthGain"			"4.900000"
+		"AttributeAgilityGain"			"7.700000"
+		"AttributeIntelligenceGain"		"5.300000"
+		"AttackRate"					"1.300000"
 	}
 	"npc_dota_hero_life_stealer_mjz"
 	{
 		"override_hero"		"npc_dota_hero_life_stealer"
+		"UnitLabel"			"no_underdog"
+
 		"Ability1"			"mjz_life_stealer_rage"
 		"Ability2"			"mjz_life_stealer_feast"
-		"Ability3"		  "mjz_lifestealer_anabolic_frenzy"
-		//"Ability4"			""
+		"Ability3"			"mjz_lifestealer_anabolic_frenzy"
 		"Ability5"			"life_stealer_custom_deny"
 		"Ability6"			"mjz_lifestealer_poison_sting"	
-		"Ability11"				"special_bonus_unique_mjz_poison_sting_duration"
-		"Ability12"			 "special_bonus_reincarnation_90"
-		"Ability13"				"special_bonus_unique_mjz_anabolic_frenzy_move"
-		"Ability14"			 "special_bonus_evasion_40"
-		"Ability15"			 "special_bonus_unique_mjz_poison_sting_claw_damage"
-		"Ability16"				"special_bonus_unique_mjz_life_stealer_feast_strength"
-		"UnitLabel"			 "no_underdog"
+		"Ability11"			"special_bonus_unique_mjz_poison_sting_duration"
+		"Ability12"			"special_bonus_reincarnation_90"
+		"Ability13"			"special_bonus_unique_mjz_anabolic_frenzy_move"
+		"Ability14"			"special_bonus_evasion_40"
+		"Ability15"			"special_bonus_unique_mjz_poison_sting_claw_damage"
+		"Ability16"			"special_bonus_unique_mjz_life_stealer_feast_strength"
+
+		"AttributeStrengthGain"		"11"
+		"AttributeAgilityGain"		"5.5"
 		"AttackAnimationPoint"		"0.200000"
-		"AttackRate"			"1.4"
+		"AttackRate"				"1.4"
 	}
 	"npc_dota_hero_lion_mjz"
 	{
@@ -1057,19 +639,22 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_obsidian_destroyer"
+		"UnitLabel"				"no_underdog"
 
-		// "Ability3"		"obsidian_destroyer_equilibrium"
-		"Ability3"		"mjz_obsidian_destroyer_essence_aura"
-		"Ability12"	 "special_bonus_mp_800"
-		"Ability10"	 "special_bonus_hp_800"
-		"Ability11"	 "special_bonus_attack_speed_100"
-		"Ability13"	 "special_bonus_cooldown_reduction_25"
-		"Ability14"	 "special_bonus_strength_40"
-		"AttributeIntelligenceGain"	 "9.6"
-		"AttributeAgilityGain"		  "6.8"
+		// "Ability3"				"obsidian_destroyer_equilibrium"
+		"Ability3"				"mjz_obsidian_destroyer_essence_aura"
+		"Ability6"				"obsidian_destroyer_custom_sanity_eclipse"
+		"Ability12"				"special_bonus_mp_800"
+		"Ability10"				"special_bonus_hp_6000"
+		"Ability11"				"special_bonus_attack_speed_100"
+		"Ability13"				"special_bonus_cooldown_reduction_25"
+		"Ability14"				"special_bonus_strength_820"
+		"Ability15"				"special_bonus_reincarnation_90"
+
+		"AttributeIntelligenceGain"		"9.6"
+		"AttributeAgilityGain"			"6.8"
 		"AttackRate"					"1.6"
-		"AttackRange"				   "850"
-
+		"AttackRange"					"850"
 	}
 
 	
@@ -1080,13 +665,17 @@
 	{
 		"override_hero"			"npc_dota_hero_tiny"
 
-
+		"Ability2"				"tiny_custom_toss"
 		"Ability5"				"mjz_tiny_craggy_exterior"
 		// "Ability5"				"mjz_tiny_tree_grab_scepter_effect"
+		"Ability11"				"special_bonus_strength_200"
 		"Ability12"				"special_bonus_lifesteal_15"
+		"Ability15"				"special_bonus_cooldown_reduction_15"
+		"Ability16"				"special_bonus_armor_69"
 		"Ability17"				"special_bonus_attack_speed_200"
-		"AttackRate"			"1.4"
-		"AttributeStrengthGain" "14.5"
+
+		"AttackRate"				"1.4"
+		"AttributeStrengthGain"		"14.5"
 	}
 
 	//=================================================================================================================
@@ -1095,30 +684,38 @@
 	{
 		"override_hero"			"npc_dota_hero_terrorblade"
 
-
-		"Ability4"		"mjz_terrorblade_metamorphosis_relieve"
+		"Ability1"				"terrorblade_custom_reflection"
+		"Ability4"				"mjz_terrorblade_metamorphosis_relieve"
 		"Ability6"				"mjz_terrorblade_sunder"
-		"Ability14"	 "special_bonus_truestrike"
-		"Ability16"	 "special_bonus_attack_base_damage_200"
+		"Ability12"				"special_bonus_hp_2750"
+		"Ability14"				"special_bonus_truestrike"
+		"Ability16"				"special_bonus_attack_base_damage_200"
+
+		"AttributeAgilityGain"		"9.9"
 	}
 	//=================================================================================================================
 	"npc_dota_hero_juggernaut_mjz"			// 剑圣
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_juggernaut"
+		"UnitLabel"				"no_underdog"
 
 		"Ability1"				"mjz_juggernaut_blade_fury"
-		"Ability7"			  "juggernaut_blade_dance_lua"
+		"Ability7"				"juggernaut_blade_dance_lua"
 //		"Ability5"				"mjz_juggernaut_jump_crit"
 		"Ability5"				"zanto_gari"
-		"Ability11"			 "special_bonus_cooldown_reduction_30"
-		"Ability13"			 "special_bonus_agility_100"
-		"Ability12"			 "special_bonus_cleave_40"
-//		"Ability15"			 "special_bonus_armor_15"
+		"Ability10"				"special_bonus_gold_income_300"
+		"Ability11"				"special_bonus_cooldown_reduction_30"
+		"Ability13"				"special_bonus_agility_100"
+		"Ability12"				"special_bonus_cleave_40"
+		"Ability14"				"special_bonus_armor_24"
 		"Ability15"				"special_bonus_zanto_gari_dmg"
 		"Ability16"				"special_bonus_attack_base_damage_200"
-		"Ability14"			 "special_bonus_truestrike"
-		"Ability10"			 "special_bonus_gold_income_300"
+		"Ability14"				"special_bonus_truestrike"
+
+		"AttributeStrengthGain"			"4.900000"
+		"AttributeAgilityGain"			"9.700000"
+		"AttributeIntelligenceGain"		"3.300000"
 	}
 	
 	//=================================================================================================================
@@ -1133,8 +730,9 @@
 		"Ability4"		"generic_hidden"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"earthshaker_echo_slam_lua"
-		"Ability10"	 "special_bonus_unique_earthshaker_01"
-		"Ability11"	 "special_bonus_gold_income_300"
+		"Ability10"		"special_bonus_unique_earthshaker_01"
+		"Ability11"		"special_bonus_gold_income_300"
+		"Ability13"		"special_bonus_armor_21"
 		"AttributeStrengthGain"  "8.9"
 		"AttributeIntelligenceGain" "7.4"
 	}
@@ -1145,12 +743,20 @@
 	{
 		"override_hero"			"npc_dota_hero_huskar"
 
-		// "Ability1"				"frostivus2018_huskar_inner_fire"
+		//"Ability1"				"frostivus2018_huskar_inner_fire"
 		//"Ability2"				"mjz_huskar_burning_spear_frostivus2018"
-		// "Ability6"				"frostivus2018_huskar_life_break"
+		//"Ability6"				"frostivus2018_huskar_life_break"
 		"Ability3"				"mjz_huskar_berserkers_blood"
 		"Ability5"				"huskar_custom_life_break"
 		"Ability6"				"huskar_life_break"
+		"Ability10"				"special_bonus_hp_1750"
+		"Ability14"				"special_bonus_spell_amplify_100"
+
+		"AttributeStrengthGain"			"8.2"
+		"AttributeAgilityGain"			"5.4"
+		"AttributeIntelligenceGain"		"6.8"
+		"AttackRate"					"1.5"
+		"AttackRange"					"800"
 	}
 
 	//=================================================================================================================
@@ -1161,11 +767,20 @@
 
 		"Ability1"				"mjz_chaos_knight_chaos_bolt"
 		"Ability3"				"mjz_chaos_knight_chaos_strike"
-		"Ability5"			  "roshan_inherit_buff_datadriven"
-		"Ability13"			 "special_bonus_spell_block_18"
-		"Ability15"			 "special_bonus_reincarnation_90"
+		"Ability5"				"roshan_inherit_buff_datadriven"
+		"Ability10"				"special_bonus_unique_mjz_chaos_knight_chaos_bolt_target"
+		"Ability11"				"special_bonus_hp_regen_12"
+		"Ability12"				"special_bonus_strength_220"
+		"Ability13"				"special_bonus_spell_block_18"
+		"Ability15"				"special_bonus_reincarnation_90"
+		//"Ability15"				"special_bonus_movement_speed_60"
 		"Ability16"				"special_bonus_unique_mjz_chaos_strike"
 		"Ability17"				"special_bonus_cooldown_reduction_30"
+		//"Ability17"				"special_bonus_all_stats_20"
+
+		"AttributeStrengthGain"		"7.4000000"
+		"AttributeAgilityGain"		"4.00000"
+		"MovementSpeed"				"340"
 	}
 
 	//=================================================================================================================
@@ -1182,8 +797,15 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_undying"
-
+		"Ability1"				"undying_custom_decay"
 		"Ability5"				"mjz_undying_punch"
+		"Ability10"				"special_bonus_armor_69"
+		"Ability13"				"special_bonus_hp_5000"
+		"Ability15"				"special_bonus_movement_speed_60"
+		"Ability16"				"special_bonus_reincarnation_90"
+		"Ability17"				"special_bonus_cooldown_reduction_25"
+
+		"AttributeStrengthGain"		"5.800000"
 
 	}
 
@@ -1197,15 +819,18 @@
 		"Ability3"				"mjz_axe_counter_helix"
 		"Ability5"				"blood_madness"
 		"Ability6"				"mjz_axe_culling_blade"
-		"Ability10"			 "special_bonus_spell_lifesteal_15"
+		"Ability10"				"special_bonus_spell_lifesteal_15"
 		"Ability11"				"special_bonus_unique_axe_3"
 		"Ability12"				"special_bonus_cooldown_reduction_25"
-		"Ability13"				"special_bonus_armor_20"
-		"Ability14"			 "special_bonus_magic_resistance_60"
+		"Ability13"				"special_bonus_armor_69"
+		"Ability14"				"special_bonus_magic_resistance_60"
 		"Ability15"				"special_bonus_attack_speed_250"
-		"AttackRate"			"1.4"
-		"ArmorPhysical"		"15"
+		"Ability16"				"special_bonus_armor_90"
+
+		"AttackRate"				"1.4"
+		"ArmorPhysical"				"15"
 		"AttackAnimationPoint"		"0.200000"
+		"AttributeStrengthGain"		"11.900000"
 	}
 
 	//=================================================================================================================
@@ -1236,7 +861,7 @@
 		"Ability6"			  "luna_eclipse_lua"
 		"Ability12"			 "special_bonus_unique_luna_102"
 		"Ability13"			 "special_bonus_agility_80"
-		"Ability14"			 "special_bonus_armor_20"
+		"Ability14"			 "special_bonus_armor_69"
 		"Ability15"			 "special_bonus_lifesteal_30"
 		"Ability16"			 "special_bonus_unique_luna_103"
 		"Ability17"			 "special_bonus_unique_luna_101"
@@ -1251,10 +876,14 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_brewmaster"
+		"UnitLabel"				"no_underdog"
 
 		//"Ability3"				"mjz_brewmaster_drunken_brawler"
+		"Ability13"				"special_bonus_hp_3500"
 		"Ability16"				"special_bonus_unique_brewmaster_6"
-		"UnitLabel"				 "no_underdog"
+
+		"AttributeStrengthGain"			"7.8"
+		"AttributeIntelligenceGain"		"5.5"
 	}
 
 	//=================================================================================================================
@@ -1262,15 +891,22 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_lina"
+		"UnitLabel"				"no_underdog"
 
-		"Ability3"				"mjz_lina_fiery_soul"
-		"Ability6"				"mjz_lina_laguna_blade"
-		"Ability10"     "special_bonus_intelligence_30"
-		"Ability11"     "special_bonus_hp_400"
-		"Ability13"     "special_bonus_cooldown_reduction_25"
-		"Ability15"		"special_bonus_unique_mjz_lina_fiery_soul"
-		"Ability16"	 "special_bonus_magic_resistance_40"
-		"Ability17"	 "special_bonus_spell_block_18"
+		"Ability1"			"mjz_phoenix_icarus_dive"
+		"Ability2"			"lina_light_strike_array"
+		"Ability3"			"mjz_lina_fiery_soul"
+		"Ability4"			"generic_hidden"
+		"Ability5"			"generic_hidden"
+		"Ability6"			"mjz_lina_laguna_blade"
+		"Ability10"			"special_bonus_intelligence_30"
+		"Ability11"			"special_bonus_unique_mjz_phoenix_icarus_dive_cdr"
+		"Ability12"			"special_bonus_mp_400"
+		"Ability13"			"special_bonus_cooldown_reduction_25"
+		"Ability14"			"special_bonus_spell_amplify_65"
+		"Ability15"			"special_bonus_unique_mjz_lina_fiery_soul"
+		"Ability16"			"special_bonus_magic_resistance_40"
+		"Ability17"			"special_bonus_spell_block_18"
 	}
 	
 	//=================================================================================================================
@@ -1280,6 +916,13 @@
 		"override_hero"			"npc_dota_hero_razor"
 
 		"Ability3"				"mjz_razor_unstable_current"
+		"Ability10"				"special_bonus_hp_1750"
+		"Ability13"				"special_bonus_cooldown_reduction_12"
+		"Ability14"				"special_bonus_armor_24"
+
+		"AttackRate"			"1.550000"
+		"ProjectileSpeed"		"6000"
+		"AttributeAgilityGain"	"6.7"
 	}
 
 	//=================================================================================================================
@@ -1287,16 +930,24 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_antimage"
+		"UnitLabel"				"no_underdog"
 
-		"Ability3"				"antimage_counterspell"
-		"Ability5"				"mjz_antimage_mana_void"
-		"Ability11"			 "special_bonus_unique_antimage"
-		"Ability10"				"special_bonus_unique_mjz_antimage_mana_void_damage"
-		"Ability13"			 "special_bonus_truestrike"
-		"Ability14"			 "special_bonus_cleave_60"
-		"Ability15"          "special_bonus_custom_mana_break_1"
-		"Ability17"			 "special_bonus_50_crit_175"
-		"AttributeAgilityGain"  "8.3"
+		"Ability1"			"antimage_custom_mana_break"
+		"Ability3"			"antimage_custom_counterspell"
+		"Ability5"			"mjz_antimage_mana_void"
+		"Ability6"			"antimage_custom_speed"
+		"Ability10"			"special_bonus_unique_mjz_antimage_mana_void_damage"
+		"Ability11"			"special_bonus_unique_antimage"
+		"Ability12"			"special_bonus_cooldown_reduction_15"
+		"Ability13"			"special_bonus_truestrike"
+		"Ability14"			"special_bonus_cleave_60"
+		"Ability15"			"special_bonus_custom_mana_break_1"
+		"Ability17"			"special_bonus_50_crit_175"
+
+		"ArmorPhysical"					"5"
+		"AttributeStrengthGain"			"4.300000"
+		"AttributeAgilityGain"			"8.3"
+		"AttributeIntelligenceGain"		"3.500000"
 	}
 
 	//=================================================================================================================
@@ -1305,12 +956,17 @@
 	{
 		"override_hero"			"npc_dota_hero_kunkka"
 
+		"Ability1"				"kunkka_custom_torrent"
 		"Ability2"				"mjz_kunkka_tidebringer"
-		"Ability10"			 "special_bonus_strength_30"
-		"Ability12"			 "special_bonus_unique_kunkka_3"
+		"Ability10"				"special_bonus_strength_500"
+		"Ability12"				"special_bonus_unique_kunkka_3"
+		"Ability14"				"special_bonus_cooldown_reduction_20"
 		"Ability15"				"special_bonus_spell_amplify_100"
-		"Ability16"			 "special_bonus_corruption_25"
-		"Ability17"			 "special_bonus_truestrike"
+		"Ability16"				"special_bonus_corruption_25"
+		"Ability17"				"special_bonus_truestrike"
+
+		"AttributeAgilityGain"		"3.800000"
+		"AttributeStrengthGain"		"9.4"
 	}
 
 	//=================================================================================================================
@@ -1320,6 +976,22 @@
 		"override_hero"			"npc_dota_hero_bounty_hunter"
 
 		"Ability2"				"mjz_bounty_hunter_jinada"
+		"Ability10"				"special_bonus_lifesteal_15"
+		"Ability11"				"special_bonus_mp_1000"
+		"Ability12"				"special_bonus_evasion_50"
+		"Ability13"				"special_bonus_gold_income_300"
+		"Ability14"				"special_bonus_unique_bounty_hunter"
+		"Ability15"				"special_bonus_magic_resistance_25"
+		"Ability16"				"special_bonus_unique_bounty_hunter_2"
+		"Ability17"				"special_bonus_attack_speed_200"
+
+		"AttackDamageMin"				"32"
+		"AttackDamageMax"				"46"
+		"StatusHealthRegen"				"2.25"
+		"AttackRate"					"1.5"
+		"AttributeStrengthGain"			"4.100000"
+		"AttributeAgilityGain"			"7.200000"
+		"AttributeIntelligenceGain"		"3.300000"
 	}
 
 	//=================================================================================================================
@@ -1327,8 +999,16 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_riki"
+		"UnitLabel"				"no_underdog"
 
 		"Ability4"				"mjz_riki_backstab"
+		"Ability10"				"special_bonus_lifesteal_30"
+		"Ability11"				"special_bonus_cooldown_reduction_15"
+		"Ability12"				"special_bonus_truestrike"
+		"Ability17"				"special_bonus_30_crit_875"
+
+		"AttributeAgilityGain"		"9.60000"
+		"AttackRate"				"1.500000"
 	}
 	
 	//=================================================================================================================
@@ -1348,12 +1028,18 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_morphling"
-		"AttackRange"		   "800"
-		"AttackRate"			"1.3"
-		"Ability18"			 "special_bonus_truestrike"
+
 		"Ability6"				"spectre_einherjar_lua"
-		//"Ability17"		"special_bonus_attack_damage_250"
-		//"Ability19"				"special_bonus_unique_mjz_morphling_replicate_stats"
+		"Ability15"				"special_bonus_agility_100"
+		"Ability18"				"special_bonus_truestrike"
+		"Ability19"				"special_bonus_strength_400"
+		"Ability21"				"special_bonus_8_crit_2750"
+
+		"AttributeIntelligenceGain"		"12.000000"
+		"AttributeStrengthGain"			"12.000000"
+		"AttributeAgilityGain"			"12.000000"
+		"AttackRange"					"800"
+		"AttackRate"					"1.3"
 	}
 	//=================================================================================================================
 	"npc_dota_hero_doom_bringer_mjz"			// 末日使者
@@ -1379,7 +1065,15 @@
 	{
 		"override_hero"			"npc_dota_hero_naga_siren"
 
+		"Ability2"				"naga_siren_custom_aquatica_grace"
 		"Ability6"				"mjz_naga_siren_song_of_the_siren"
+		"Ability13"				"special_bonus_strength_230"
+		"Ability14"				"special_bonus_agility_30"
+		"Ability16"				"special_bonus_unique_naga_siren_3"
+		"Ability17"				"special_bonus_cooldown_reduction_25"
+
+		"AttributeAgilityGain"		"9.5"
+		"AttributeStrengthGain"		"8.9"
 	}
 	
 	
@@ -1400,10 +1094,12 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_silencer"
-
+		"UnitLabel"				"no_underdog"
 		"Ability2"				"mjz_silencer_glaives_of_wisdom"
 		"Ability6"				"mjz_silencer_global_silence"
-		"Ability17"			 "special_bonus_spell_lifesteal_15"
+		"Ability10"				"special_bonus_armor_18"
+		"Ability13"				"special_bonus_attack_speed_100"
+		"Ability17"				"special_bonus_spell_lifesteal_15"
 	}
 	
 	//=================================================================================================================
@@ -1411,8 +1107,15 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_abyssal_underlord"
-
+		"Ability4"				"abyssal_underlord_dark_portal"
 		"Ability6"				"mjz_abyssal_underlord_dark_rift"
+		"Ability7"				"generic_hidden"
+		"Ability10"				"special_bonus_armor_15"
+		"Ability12"				"special_bonus_strength_400"
+		"Ability13"				"special_bonus_all_stats_10"
+		"Ability17"				"special_bonus_30_crit_2"
+
+		"AttackRate"			"1.400000"
 	}
 	
 	//=================================================================================================================
@@ -1423,8 +1126,15 @@
 
 		"Ability2"				"mjz_mirana_arrow"
 		// "Ability12"			"special_bonus_unique_mirana_3"
+		"Ability10"				"special_bonus_attack_damage_15"
+		"Ability11"				"special_bonus_hp_1500"
 		"Ability12"				"special_bonus_unique_mjz_mirana_arrow_chance"
+		"Ability14"				"special_bonus_spell_amplify_40"
+		"Ability16"				"special_bonus_attack_range_300"
 		"Ability17"				"special_bonus_unique_mirana_2"
+
+		"AttributeAgilityGain"			"7.7"
+		"AttributeIntelligenceGain"		"5.8"
 	}
 	//=================================================================================================================
 	"npc_dota_hero_drow_ranger_mjz"			// 小黑
@@ -1455,15 +1165,17 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_ember_spirit"
+		"UnitLabel"				"no_underdog"
 
 		"Ability2"				"mjz_ember_spirit_sleight_of_fist"
 		"Ability3"				"mjz_ember_spirit_flame_guard"
-		"Ability10"		"special_bonus_hp_300"
+		"Ability10"		"special_bonus_hp_3000"
 		"Ability11"     "special_bonus_unique_ember_spirit_5"
 		"Ability12"		"special_bonus_truestrike"
+		"Ability13"		"special_bonus_cooldown_reduction_25"
+		"Ability14"		"special_bonus_spell_amplify_75"
 		"Ability15"		"special_bonus_unique_mjz_ember_spirit_flame_guard_damage_per"	//"special_bonus_unique_ember_spirit_6"
 		"Ability17"		"special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_damage"
-		"UnitLabel"	 "no_underdog"
 	}
 	
 	//=================================================================================================================
@@ -1486,11 +1198,12 @@
 		"Ability13"				"special_bonus_attack_speed_100"
 		"Ability15"				"special_bonus_attack_range_200"
 		"Ability12"				"special_bonus_attack_damage_250"
-		"Ability17"			 "special_bonus_unique_viper_1"
-		"AttributeAgilityGain"  "7.6"
-		"AttributeStrengthGain" "6.1"
-		"AttributeIntelligenceGain" "6.5"
-		"ArmorPhysical"		 "7"
+		"Ability17"				"special_bonus_unique_viper_1"
+
+		"AttributeAgilityGain"			"7.6"
+		"AttributeStrengthGain"			"6.1"
+		"AttributeIntelligenceGain"		"6.5"
+		"ArmorPhysical"					"7"
 	}
 
 	//=================================================================================================================
@@ -1498,19 +1211,21 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_weaver"
-		"Ability1"			  "weaver_the_swarm"
-		"Ability5"			  "back_in_time"
+		"UnitLabel"				"no_underdog"
+
+		"Ability1"				"weaver_the_swarm"
+		"Ability5"				"back_in_time"
 		"Ability11"				"special_bonus_lifesteal_15"
-		"Ability12"			 "special_bonus_truestrike"
-		"Ability13"				"special_bonus_strength_20"
-		"Ability15"				"special_bonus_unique_weaver_4"
-		"Ability16"			 "special_bonus_unique_weaver_back_in_time"
-		"Ability17"			 "special_bonus_attack_speed_200"
-		"AttackRate"			"1.4"
+		"Ability12"				"special_bonus_truestrike"
 		// "Ability12"				"special_bonus_attack_speed_100"
+		"Ability13"				"special_bonus_strength_400"
+		"Ability15"				"special_bonus_unique_weaver_4"
 		// "Ability15"				"special_bonus_attack_range_200"
+		"Ability16"				"special_bonus_unique_weaver_back_in_time"
+		"Ability17"				"special_bonus_attack_speed_200"
 		// "Ability17"				"special_bonus_attack_damage_250"
-		"UnitLabel"				 "no_underdog"
+
+		"AttackRate"				"1.4"
 	}
 	
 	
@@ -1519,12 +1234,20 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_meepo"
-		
+
 		"Ability2"				"mjz_meepo_poof"
 		"Ability6"				"mjz_meepo_meepo_king"
+		"Ability10"				"special_bonus_strength_160"
+		"Ability11"				"special_bonus_cooldown_reduction_15"
+		"Ability13"				"special_bonus_magic_resistance_20"
+		"Ability14"				"special_bonus_mjz_meepo_poof_01"
+		"Ability16"				"special_bonus_truestrike"
+		"Ability17"				"special_bonus_spell_amplify_100"
 
-		"AttackRate"		"1.500000"
-		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"		
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeAgilityGain"		"6.7"
+		"AttributeStrengthGain"		"8.9"
+		"AttackRate"				"1.5"
 	}
 	
 	//=================================================================================================================
@@ -1533,12 +1256,14 @@
 	{
 		"override_hero"			"npc_dota_hero_pugna"
 		
-		"Ability2"	  "skywrath_mage_custom_ancient_seal"
-		//"Ability3"		"pugna_custom_nether_ward"
+		"Ability2"				"skywrath_mage_custom_ancient_seal"
+		//"Ability3"				"pugna_custom_nether_ward"
 		"Ability3"				"mjz_pugna_nether_ward"
-		"Ability15"		"special_bonus_unique_pugna_2"
-		"Ability16"	 "special_bonus_magic_resistance_25"
-		"Ability17"		"special_bonus_unique_mjz_pugna_nether_ward_intelligence"
+		"Ability11"				"special_bonus_hp_1750"
+		"Ability15"				"special_bonus_unique_pugna_2"
+		"Ability16"				"special_bonus_magic_resistance_25"
+		"Ability17"				"special_bonus_unique_mjz_pugna_nether_ward_intelligence"
+
 		"AttributeIntelligenceGain"  "7.6"
 	}
 	
@@ -1547,13 +1272,23 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_storm_spirit"
+		"UnitLabel"				"no_underdog"
 
-		"Ability1"		"storm_spirit_static_remnant"
-		"Ability2"		"storm_spirit_electric_vortex"
-		"Ability3"		"storm_spirit_overload"
-		"Ability4"		"generic_hidden"
-		"Ability5"		"generic_hidden"
-		"Ability6"		"storm_spirit_ball_lightning"
+		"Ability1"				"storm_spirit_static_remnant"
+		"Ability2"				"storm_spirit_electric_vortex"
+		"Ability3"				"mjz_storm_spirit_overload"
+		"Ability4"				"generic_hidden"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"mjz_storm_spirit_ball_lightning"
+		"Ability10"				"special_bonus_hp_2000"
+		"Ability11"				"special_bonus_attack_range_300"
+		"Ability14"				"special_bonus_unique_mjz_storm_spirit_overload_01"
+		"Ability15"				"special_bonus_magic_resistance_40"
+		"Ability16"				"special_bonus_attack_speed_250"
+		"Ability17"				"special_bonus_unique_mjz_storm_spirit_ball_lightning_01"
+
+		"AttributeAgilityGain"			"4.6"
+		"AttributeIntelligenceGain"		"7.9"
 	}
 
 	//=================================================================================================================
@@ -1562,13 +1297,17 @@
 	{
 		"override_hero"			"npc_dota_hero_gyrocopter"
 
-		"Ability1"		"mjz_gyrocopter_rocket_barrage"
-		"Ability13"		"special_bonus_unique_mjz_gyrocopter_rocket_barrage_damage"
-		"Ability12"	 "special_bonus_attack_base_damage_200"
-		"Ability16"		"special_bonus_cooldown_reduction_30"
-		"Ability17"		"special_bonus_5_crit_3250"
-		"AttackRate"	"1.4"
-		"AttackRange"   "850"
+		"Ability1"				"mjz_gyrocopter_rocket_barrage"
+		"Ability11"				"special_bonus_hp_2000"
+		"Ability12"				"special_bonus_attack_base_damage_200"
+		"Ability13"				"special_bonus_unique_mjz_gyrocopter_rocket_barrage_damage"
+		"Ability15"				"special_bonus_unique_gyrocopter_5"
+		"Ability16"				"special_bonus_cooldown_reduction_30"
+		"Ability17"				"special_bonus_5_crit_3250"
+
+		"AttributeAgilityGain"		"7.1"
+		"AttackRate"				"1.4"
+		"AttackRange"				"850"
 	}
 	
 	//=================================================================================================================
@@ -1579,11 +1318,17 @@
 
 		"Ability1"				"mjz_ursa_earthshock"
 		"Ability2"				"mjz_ursa_overpower"
-		"Ability12"			 "special_bonus_unique_ursa_4"
+		"Ability10"				"special_bonus_hp_6000"
+		"Ability11"				"special_bonus_lifesteal_30"
+		"Ability12"				"special_bonus_unique_ursa_4"
 		"Ability13"				"special_bonus_truestrike"
 		"Ability16"				"special_bonus_unique_mjz_ursa_earthshock_radius"
 		"Ability17"				"special_bonus_magic_resistance_40"
-		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeAgilityGain"		"7.1"
+		"AttributeStrengthGain"		"8.2"
+		"AttackRate"				"1.5"
 	}
 
 	//=================================================================================================================
@@ -1591,10 +1336,22 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_legion_commander"
+		"UnitLabel"				"no_underdog"
 
-		//"Ability6"				"mjz_power_up"
+		"Ability5"				"legion_commander_duel_lua"
 		"Ability6"				"mjz_legion_commander_duel"
+		"Ability10"				"special_bonus_spell_block_18"
+		"Ability11"				"special_bonus_unique_legion_commander_chance"
+		"Ability12"				"special_bonus_attack_speed_60"
+		"Ability13"				"special_bonus_cooldown_reduction_15"
+		"Ability14"				"special_bonus_unique_legion_commander_5"
 		"Ability16"				"special_bonus_unique_mjz_legion_commander_duel_damage"
+		"Ability17"				"special_bonus_4_crit_5420"
+
+		"AttributeStrengthGain"		"9.5"
+		"AttributeAgilityGain"		"6.1"
+		"AttackRate"				"1.5"
+		"AttackAnimationPoint"		"0.23"
 	}
 	
 	//=================================================================================================================
@@ -1602,18 +1359,21 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_bristleback"
-
+		"UnitLabel"				"no_underdog"
 		"ModelScale"			"0.7"
-		"Ability1"			  "bristleback_viscous_nasal_goo_lua"
-		"Ability2"			  "bristleback_quill_spray_lua"
-		"Ability3"			  "bristleback_bristleback_lua"
+
+		"Ability1"				"bristleback_viscous_nasal_goo_lua"
+		"Ability2"				"bristleback_quill_spray_lua"
+		"Ability3"				"bristleback_bristleback_lua"
 		"Ability4"				"mjz_bristleback_quill_spray_autocast"
-		"Ability6"			  "bristleback_warpath_lua"
-		"Ability12"			 "special_bonus_magic_resistance_40"
-		"Ability14"			 "special_bonus_armor_20"
-		"Ability15"			 "special_bonus_hp_800"
+		"Ability6"				"bristleback_warpath_lua"
+		"Ability11"				"special_bonus_cleave_100"
+		"Ability12"				"special_bonus_magic_resistance_40"
+		"Ability14"				"special_bonus_armor_69"
+		"Ability15"				"special_bonus_hp_6000"
+		"Ability17"				"special_bonus_cooldown_reduction_40"
+
 		"AttackRate"			"1.5"
-		"UnitLabel"			 "no_underdog"
 	}
 
 	//=================================================================================================================
@@ -1625,9 +1385,11 @@
 		"Ability1"				"mjz_slardar_sprint"
 		"Ability2"				"mjz_slardar_slithereen_crush"
 		"Ability6"				"corrosive_haze"
+		"Ability12"				"special_bonus_hp_3250"
 		"Ability16"				"special_bonus_unique_mjz_slardar_slithereen_crush_strength"
-		"AttributeAgilityGain"  "5.5"
-		"AttributeStrengthGain"  "6.6"
+
+		"AttributeAgilityGain"		"5.5"
+		"AttributeStrengthGain"		"6.6"
 	}
 	
 	//=================================================================================================================
@@ -1637,7 +1399,7 @@
 		"override_hero"			"npc_dota_hero_invoker"
 		
 		"Ability17"			 "special_bonus_unique_invoker_5"
-		"Ability21"				"special_bonus_spell_amplify_25"
+		"Ability21"				"special_bonus_spell_amplify_125"
 		"Ability22"			 "special_bonus_unique_invoker_2"
 		"Ability23"			 "special_bonus_unique_invoker_6"
 		"Ability25"				"mjz_invoker_magic_master"
@@ -1650,14 +1412,15 @@
 	{
 		"override_hero"			"npc_dota_hero_sand_king"
 
-		"Ability1"			  "sand_king_burrowstrike_lua"
-		"Ability2"			  "sand_king_sand_storm_lua"
+		"Ability1"				"sand_king_burrowstrike_lua"
+		"Ability2"				"sand_king_sand_storm_lua"
 		"Ability6"				"mjz_sandking_epicenter"
+		"Ability11"				"special_bonus_hp_2000"
 		"Ability13"				"special_bonus_unique_mjz_sandking_epicenter_strength"
-		"Ability15"			 "special_bonus_cooldown_reduction_30"
-		"Ability14"			 "special_bonus_unique_sand_king_102"
+		"Ability15"				"special_bonus_cooldown_reduction_30"
+		"Ability14"				"special_bonus_unique_sand_king_102"
 		"Ability16"				"special_bonus_unique_mjz_sandking_epicenter_pulses"
-		"Ability17"			 "special_bonus_unique_sand_king_101"
+		"Ability17"				"special_bonus_unique_sand_king_101"
 	}
 	
 	//=================================================================================================================
@@ -1668,9 +1431,15 @@
 
 		"Ability1"				"mjz_shredder_whirling_death"
 		"Ability3"				"mjz_shredder_reactive_armor"
+		"Ability10"				"special_bonus_hp_2000"
+		"Ability11"				"special_bonus_unique_timbersaw_3"
+		"Ability12"				"special_bonus_spell_amplify_40"
 		"Ability13"				"special_bonus_unique_mjz_shredder_reactive_armor_limit"
+		"Ability14"				"special_bonus_strength_260"
+		"Ability15"				"special_bonus_movement_speed_75"
 		"Ability16"				"special_bonus_unique_mjz_shredder_whirling_death_strength"
-		"Ability17"			 "special_bonus_cooldown_reduction_40"
+		"Ability17"				"special_bonus_cooldown_reduction_40"
+
 		"AttributeStrengthGain"			"11.900000"
 		"AttributeIntelligenceGain"		"6.300000"
 	}
@@ -1697,6 +1466,18 @@
 
 		"Ability2"				"mjz_nyx_assassin_mana_burn"
 		"Ability3"				"mjz_nyx_assassin_spiked_carapace"
+		"Ability6"				"nyx_assassin_custom_vendetta"
+		"Ability10"				"special_bonus_spell_amplify_40"
+		"Ability11"				"special_bonus_gold_income_300"
+		"Ability12"				"special_bonus_hp_2500"
+		"Ability13"				"special_bonus_movement_speed_40"
+		"Ability14"				"special_bonus_unique_nyx"
+		"Ability15"				"special_bonus_reincarnation_90"
+		"Ability17"				"special_bonus_cooldown_reduction_25"
+
+		"AttributeAgilityGain"			"6.2"
+		"AttributeIntelligenceGain"		"7.4"
+		"AttributeStrengthGain"			"5.6"
 	}
 	
 	//=================================================================================================================
@@ -1706,7 +1487,15 @@
 		"override_hero"			"npc_dota_hero_death_prophet"
 
 		"Ability1"				"mjz_death_prophet_carrion_swarm"
+		"Ability2"				"death_prophet_custom_moving_life"
+		"Ability10"				"special_bonus_hp_regen_50"
+		"Ability12"				"special_bonus_reincarnation_90"
+		"Ability14"				"special_bonus_hp_4000"
 		"Ability15"				"special_bonus_unique_mjz_death_prophet_carrion_swarm_int"
+		"Ability16"				"special_bonus_attack_speed_200"
+
+		"AttributeIntelligenceGain"		"7.1"
+		"AttributeStrengthGain"			"6.6"	
 	}
 	
 	//=================================================================================================================
@@ -1727,21 +1516,35 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_furion"
+		"UnitLabel"				"no_underdog"
 
 		"Ability4"				"mjz_furion_power_of_nature"
+		"Ability6"				"furion_custom_nature_heal"
+		"Ability11"				"special_bonus_hp_regen_50"
+		"Ability14"				"special_bonus_armor_24"
+		"Ability15"				"special_bonus_attack_damage_100"
+		"Ability16"				"special_bonus_cooldown_reduction_25"
+
+		"AttributeIntelligenceGain"   "7.5"
 	}
 	//=================================================================================================================
 	"npc_dota_hero_crystal_maiden_mjz"			// 水晶室女  冰女
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_crystal_maiden"
-		
+
 		"Ability2"				"mjz_crystal_maiden_frostbite"
 		"Ability3"				"mjz_crystal_maiden_brilliance_aura"
 		"Ability6"				"mjz_crystal_maiden_freezing_field"
+		"Ability10"				"special_bonus_hp_2000"
 		"Ability12"				"special_bonus_spell_block_18"
-		"Ability14"			 "special_bonus_unique_mjz_crystal_maiden_forstbite"
-		"AttributePrimary"	  "DOTA_ATTRIBUTE_STRENGTH"
+		"Ability14"				"special_bonus_unique_mjz_crystal_maiden_forstbite"
+		"Ability16"				"special_bonus_cooldown_reduction_25"
+		"Ability17"				"special_bonus_unique_crystal_maiden_2"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeIntelligenceGain"		"7.7"
+		"AttributeStrengthGain"			"9.2"
 	}
 	
 	//=================================================================================================================
@@ -1755,7 +1558,7 @@
 		"Ability8"			  "life_stealer_consume"
 		"Ability10"			 "special_bonus_gold_income_60"
 		"Ability11"				"special_bonus_unique_wisp_4"
-		"Ability15"				"special_bonus_spell_amplify_25"
+		"Ability15"				"special_bonus_spell_amplify_125"
 		"Ability17"				"special_bonus_attack_damage_120"
 		"AttributeStrengthGain"  "9"
 	}
@@ -1767,31 +1570,50 @@
 		"override_hero"			"npc_dota_hero_magnataur"
 
 		"Ability6"				"mjz_magnataur_reverse_polarity"
+		"Ability12"				"special_bonus_strength_220"
+		"Ability14"				"special_bonus_hp_3500"
+		"Ability15"				"special_bonus_unique_magnus"
+		"Ability17"				"special_bonus_spell_amplify_100"
+
+		"AttributeAgilityGain"		"4.9"
+		"AttributeStrengthGain"		"7.8"
 	}
 	//=================================================================================================================
 	"npc_dota_hero_alchemist_mjz"			// 炼金
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_alchemist"
-		
-		"Ability1"			  "bounty_hunter_custom_jinada"
+
+		"Ability1"				"bounty_hunter_custom_jinada"
 		"Ability3"				"mjz_alchemist_goblins_greed"
+		"Ability12"				"special_bonus_hp_3500"
+		"Ability13"				"special_bonus_attack_damage_40"
+		"Ability14"				"special_bonus_cleave_60"
+		"Ability16"				"special_bonus_unique_alchemist_3"
+
+		"AttributeStrengthGain"			"5.900000"
+		"AttributeAgilityGain"			"4.700000"
+		"AttributeIntelligenceGain"		"3.300000"
 	}
 	
 	
 	"npc_dota_hero_broodmother_mjz"			// 育母蜘蛛 
 	{
 		"override_hero"			"npc_dota_hero_broodmother"
+		"UnitLabel"				"no_underdog"
 
 		"Ability1"				"mjz_broodmother_spawn_spiderlings"
-		//"Ability3"			  "lone_druid_spirit_link"
+		//"Ability3"				"lone_druid_spirit_link"
 		"Ability6"				"mjz_broodmother_insatiable_hunger"
 		"Ability10"				"special_bonus_cleave_20"
 		"Ability14"				"special_bonus_unique_broodmother_4"
-		"Ability15"			 "special_bonus_hp_800"
+		"Ability15"				"special_bonus_hp_6000"
 		"Ability16"				"special_bonus_unique_mjz_broodmother_insatiable_hunger"
 		"Ability17"				"special_bonus_spell_amplify_100"
-		"AttackRate"			"1.5"
+
+		"AttributeAgilityGain"		"8.3"
+		"MagicalResistance"			"50"
+		"AttackRate"				"1.5"
 	}
 	
 	"npc_dota_hero_centaur_mjz"			// 半人马
@@ -1800,7 +1622,7 @@
 		
 		"Ability2"				"mjz_centaur_double_edge"
 		"Ability3"				"mjz_centaur_return"
-		"Ability12"				"special_bonus_strength_15"
+		"Ability12"				"special_bonus_strength_250"
 		"Ability13"				"special_bonus_unique_mjz_centaur_double_edge_radius"
 		"Ability14"				"special_bonus_unique_mjz_centaur_return_strength"
 		"Ability16"				"special_bonus_unique_mjz_centaur_return_aura"
@@ -1828,30 +1650,34 @@
 	"npc_dota_hero_enigma_mjz"			// 谜团
 	{
 		"override_hero"			"npc_dota_hero_enigma"
-		"Ability2"			  "mjz_omniknight_repel"
-		"Ability10"			 "special_bonus_cast_range_150"	
+
+		"Ability2"				"mjz_omniknight_repel"
 		"Ability5"				"mjz_enigma_spacetime_gravity"
-		"Ability15"			 "special_bonus_unique_enigma_5"
-		"Ability13"			 "special_bonus_all_stats_20"
-		"Ability17"			 "special_bonus_unique_enigma_100"
-		"AttributeIntelligenceGain"   "7.7"
-		"MagicalResistance"		   "45"
+		"Ability10"				"special_bonus_cast_range_150"	
+		"Ability13"				"special_bonus_all_stats_20"
+		"Ability14"				"special_bonus_hp_4000"
+		"Ability15"				"special_bonus_unique_enigma_5"
+		"Ability17"				"special_bonus_unique_enigma_100"
+
+		"AttributeIntelligenceGain"		"7.7"
+		"MagicalResistance"				"45"
 	}
 	
 	"npc_dota_hero_leshrac_mjz"			// 拉席克
 	{
 		"override_hero"			"npc_dota_hero_leshrac"
 		
-		"Ability1"			  "jotaro_absolute_defense3"
-		"Ability2"				"mjz_leshrac_diabolic_edict"
-		"Ability3"				"mjz_leshrac_lightning_storm"
-		"Ability6"				"mjz_leshrac_pulse_nova"
-		"Ability11"			 "special_bonus_cast_range_225"
-		"Ability12"			 "special_bonus_spell_amplify_100"
-		"Ability14"			 "special_bonus_unique_mjz_leshrac_diabolic_edict_1"
-		"Ability15"				"special_bonus_unique_leshrac_3"
-		//"Ability17"				"special_bonus_unique_leshrac_6"
-		"Ability17"				"special_bonus_unique_mjz_leshrac_lightning_storm_int_damage"
+		"Ability1"			"jotaro_absolute_defense3"
+		"Ability2"			"mjz_leshrac_diabolic_edict"
+		"Ability3"			"mjz_leshrac_lightning_storm"
+		"Ability6"			"mjz_leshrac_pulse_nova"
+		"Ability10"			"special_bonus_armor_12"
+		"Ability11"			"special_bonus_cast_range_225"
+		"Ability12"			"special_bonus_spell_amplify_100"
+		"Ability14"			"special_bonus_unique_mjz_leshrac_diabolic_edict_1"
+		"Ability15"			"special_bonus_unique_leshrac_3"
+		//"Ability17"			"special_bonus_unique_leshrac_6"
+		"Ability17"			"special_bonus_unique_mjz_leshrac_lightning_storm_int_damage"
 		"AttributeIntelligenceGain"   "9.7"
 		"AttributeStrengthGain"	   "6.2"
 		"MagicalResistance"		   "45"
@@ -1861,11 +1687,17 @@
 	"npc_dota_hero_mars_mjz"	// 马尔斯
 	{
 		"override_hero"			"npc_dota_hero_mars"
-		
+
 		"Ability1"				"mjz_mars_spear"
+		"Ability6"				"mars_arena_of_blood_lua"
 		"Ability11"				"special_bonus_magic_resistance_10"
-		"Ability12"				"special_bonus_strength_18"
+		"Ability12"				"special_bonus_strength_280"
+		"Ability13"				"special_bonus_armor_24"
 		"Ability14"				"special_bonus_unique_mjz_mars_spear_str_damage"
+		"Ability17"				"special_bonus_magic_resistance_40"
+
+		"AttributeStrengthGain"			"11.1"
+		"AttributeIntelligenceGain"		"6.2"
 	}
 	
 	"npc_dota_hero_necrolyte_mjz"			// 瘟疫法师
@@ -1876,9 +1708,12 @@
 		"Ability3"				"mjz_necrolyte_heartstopper_aura"
 		"Ability6"				"mjz_necrolyte_reapers_scythe"
 		"Ability10"				"special_bonus_intelligence_12"
+		"Ability11"				"special_bonus_strength_180"
 		"Ability15"				"special_bonus_spell_lifesteal_15"
 		"Ability16"				"special_bonus_unique_mjz_necrolyte_heartstopper_aura_intelligence"
-		"Ability17"			 "special_bonus_reincarnation_90"
+		"Ability17"				"special_bonus_reincarnation_90"
+
+		"AttributeIntelligenceGain"		"7.2"
 	}
 	"npc_dota_hero_night_stalker_mjz"		// 暗夜魔王 夜魔
 	{
@@ -1888,6 +1723,7 @@
 		"Ability3"				"mjz_night_stalker_hunter_in_the_night"
 		"Ability6"				"mjz_night_stalker_darkness"
 		"Ability11"				"special_bonus_magic_resistance_12"
+		"Ability12"				"special_bonus_strength_220"
 		"Ability13"				"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_mspeed"
 		"Ability16"				"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_aspeed"
 		"Ability17"				"special_bonus_unique_mjz_night_stalker_darkness_damage"
@@ -1899,6 +1735,7 @@
 	"npc_dota_hero_phantom_assassin_mjz"
 	{
 		"override_hero"		"npc_dota_hero_phantom_assassin"
+		"UnitLabel"			"no_underdog"
 
 		"Ability1"			"mjz_phantom_assassin_stifling_dagger"
 		"Ability2"			"mjz_phantom_assassin_phantom_strike"
@@ -1913,21 +1750,36 @@
 		"Ability15"			"special_bonus_unique_mjz_stifling_dagger"
 		"Ability16"			"special_bonus_unique_phantom_assassin_2"
 		"Ability17"			"special_bonus_attack_speed_250"
+
+		"AttackDamageMin"				"37"
+		"AttackDamageMax"				"39"
+		"AttributeIntelligenceGain"		"7.200000"
+		"AttackRate"					"1.3"
+		"AttributeAgilityGain"			"9.4"
+		"MovementTurnRate"				"0.900000"
+		"StatusHealthRegen"				"1.25"
+		"MovementSpeed"					"425"
 	}
 	
 	
 	"npc_dota_hero_phoenix_mjz"			// 凤凰
 	{
-		"override_hero"			"npc_dota_hero_phoenix"
-		
-		"Ability1"				"mjz_phoenix_icarus_dive"
-		"Ability3"				"mjz_phoenix_sun_ray"
-		// "Ability4"				"phoenix_sun_ray_toggle_move"
-		"Ability4"				"mjz_phoenix_sun_ray_toggle_move"
-		"Ability6"				"mjz_phoenix_supernova"
-		"Ability8"			  "generic_hidden"
-		"Ability9"			  "generic_hidden"
-		"Ability10"			 "special_bonus_spell_lifesteal_15"
+		"override_hero"		"npc_dota_hero_phoenix"
+
+		"Ability1"			"mjz_phoenix_icarus_dive"
+		"Ability3"			"mjz_phoenix_sun_ray"
+		// "Ability4"			"phoenix_sun_ray_toggle_move"
+		"Ability4"			"mjz_phoenix_sun_ray_toggle_move"
+		"Ability6"			"mjz_phoenix_supernova"
+		"Ability8"			"generic_hidden"
+		"Ability9"			"generic_hidden"
+		"Ability10"			"special_bonus_spell_lifesteal_15"
+		"Ability11"			"special_bonus_exp_boost_30"
+		"Ability13"			"special_bonus_hp_5000"
+		"Ability15"			"special_bonus_magic_resistance_40"
+
+		"AttributeIntelligenceGain"		"8.7"
+		"AttributeStrengthGain"			"7.4"
 	}
 	
 	//=================================================================================================================
@@ -1943,40 +1795,58 @@
 		"Ability11"				"special_bonus_unique_mjz_pudge_rot_damage"
 		"Ability13"				"special_bonus_unique_mjz_pudge_rot_health"
 		"Ability14"				"special_bonus_unique_mjz_pudge_dismember_duration"
-		"Ability15"			 "special_bonus_unique_axe_3"
+		"Ability15"				"special_bonus_unique_axe_3"
 		"Ability16"				"special_bonus_unique_mjz_pudge_dismember_strength_damage"
 		"Ability17"				"special_bonus_unique_mjz_pudge_0302"
 	}
 	"npc_dota_hero_skeleton_king_mjz"			//骷髅王
 	{
 		"override_hero"			"npc_dota_hero_skeleton_king"
+		"UnitLabel"				"no_underdog"
 
-		"Ability5"		"mjz_skeleton_king_ghost"
+		"Ability5"				"mjz_skeleton_king_ghost"
+		"Ability14"				"special_bonus_strength_260"
+		"Ability17"				"special_bonus_cleave_100"
+
 		"AttributeStrengthGain"		"8.900000"
 		"AttributeAgilityGain"		"5.700000"
-		"UnitLabel"			 "no_underdog"
-
 	}
 
 	"npc_dota_hero_skywrath_mage_mjz"			// 天怒法师
 	{
-		"override_hero"			"npc_dota_hero_skywrath_mage"
+		"override_hero"		"npc_dota_hero_skywrath_mage"
 
-		"Ability1"				"mjz_skywrath_mage_arcane_bolt"
-		"Ability6"				"mjz_skywrath_mage_mystic_flare"
+		"Ability1"			"mjz_skywrath_mage_arcane_bolt"
+		"Ability2"			"skywrath_mage_custom_concussive_shot"
+		"Ability3"			"skywrath_mage_custom_ancient_seal"
+		"Ability6"			"mjz_skywrath_mage_mystic_flare"
+		"Ability10"			"special_bonus_hp_1750"
+		"Ability14"			"special_bonus_exp_boost_25"
+		"Ability15"			"special_bonus_spell_amplify_125"
+		"Ability16"			"special_bonus_cooldown_reduction_25"
+		"Ability17"			"special_bonus_gold_income_300"
+
 		"AttributeIntelligenceGain"   "7.77"
 	}
 	
 	"npc_dota_hero_slark"			//  小鱼人
 	{
 		"override_hero"			"npc_dota_hero_slark"
+		"UnitLabel"				"no_underdog"
 
 		"Ability1"				"mjz_slark_dark_pact"
 		"Ability2"				"slark_pounce"
 		"Ability3"				"mjz_slark_essence_shift"
 		//"Ability4"				"mjz_slark_pounce"
+		"Ability10"				"special_bonus_strength_190"
 		"Ability14"				"special_bonus_unique_mjz_slark_dark_pact_damage"
 		"Ability15"				"special_bonus_unique_mjz_slark_essence_shift_attack_count"
+		"Ability17"				"special_bonus_intelligence_30"
+
+		"ArmorPhysical"				"-2"
+		"AttackRate"				"1.450000"
+		"AttributeBaseAgility"		"20"
+		"BaseAttackSpeed"			"90"
 	}
 	"npc_dota_hero_sniper_mjz"			// 火枪
 	{
@@ -1998,16 +1868,19 @@
 		
 	"npc_dota_hero_spectre_mjz"			// 幽鬼
 	{
-		"override_hero"			"npc_dota_hero_spectre"		 
+		"override_hero"			"npc_dota_hero_spectre"
+
 		"Ability2"				"mjz_spectre_desolate"
-		"Ability3"			  "spectre_custom_dispersion"
+		"Ability3"				"spectre_custom_dispersion"
 		"Ability4"				"mjz_spectre_reality"
 		"Ability5"				"mjz_spectre_haunt_single"
-		"Ability6"				"mjz_spectre_haunt"	//"spectre_custom_haunt" //
-		"AttributeStrengthGain"		"9.900000"
-		"AttributeAgilityGain"		"5.700000"
+		"Ability6"				"mjz_spectre_haunt"
+		"Ability14"				"special_bonus_hp_4000"
+
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeStrengthGain"			"9.900000"
+		"AttributeAgilityGain"			"5.700000"
 		"AttributeIntelligenceGain"		"3.300000"
-		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
 	}
 	
 	"npc_dota_hero_templar_assassin_mjz"			// 圣堂刺客
@@ -2030,7 +1903,7 @@
 	}
 	
 	//=================================================================================================================
-	"npc_dota_hero_troll_warlord"			//  巨魔战将
+	"npc_dota_hero_troll_warlord_mjz"			//  巨魔战将
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_troll_warlord"
@@ -2038,11 +1911,13 @@
 		"Ability4"				"mjz_troll_warlord_fervor"
 		"Ability5"				"imba_phantom_assassin_coup_de_grace"
 		"Ability6"				"mjz_troll_warlord_battle_trance"
+		"Ability11"				"special_bonus_hp_2250"
 		"Ability12"				"special_bonus_unique_mjz_troll_warlord_fervor_stacks"
-		"Ability13"			 "special_bonus_magic_resistance_35"
-		"Ability15"				"special_bonus_hp_800"
-		"Ability16"			 "special_bonus_truestrike"
-		"AttributeAgilityGain"  "8.8"
+		"Ability13"				"special_bonus_magic_resistance_35"
+		"Ability15"				"special_bonus_hp_6000"
+		"Ability16"				"special_bonus_truestrike"
+
+		"AttributeAgilityGain"		"8.8"
 	}
 	
 	"npc_dota_hero_windrunner_mjz"			// 风行者
@@ -2052,6 +1927,7 @@
 		
 		"Ability1"				"frostivus2018_windrunner_shackleshot"
 		"Ability2"				"mjz_windrunner_powershot"
+		"Ability4"				"windrunner_gale_force"
 		"Ability6"				"mjz_windrunner_focusfire"
 		"Ability10"				"special_bonus_cooldown_reduction_15"
 		"Ability11"				"special_bonus_movement_speed_15"
@@ -2066,17 +1942,21 @@
 	"npc_dota_hero_zuus_mjz"			// 宙斯
 	{
 		"override_hero"			"npc_dota_hero_zuus"
+		"UnitLabel"				"no_underdog"
 
 		"Ability2"				"mjz_zuus_lightning_bolt"
 		"Ability3"				"mjz_zuus_static_field"
 		"Ability5"				"mjz_zuus_lightning"
 		"Ability6"				"mjz_zuus_thundergods_wrath"
-		"Ability7"			  "mjz_bristleback_quill_spray_autocast3"
-		// "Ability13"			"special_bonus_unique_zeus"
-		"Ability11"			 "special_bonus_hp_800"
-		"Ability12"			 "special_bonus_reincarnation_90"
+		"Ability7"				"mjz_bristleback_quill_spray_autocast3"
+		"Ability10"				"special_bonus_cooldown_reduction_15"
+		// "Ability13"				"special_bonus_unique_zeus"
+		"Ability11"				"special_bonus_hp_6000"
+		"Ability12"				"special_bonus_reincarnation_90"
 		"Ability13"				"special_bonus_unique_mjz_zuus_static_field_intelligence"
 		"Ability15"				"special_bonus_mp_1000"
+
+		"AttributeIntelligenceGain"		"8.5"
 	}
 	
 	"npc_dota_hero_omniknight_mjz"
@@ -2086,10 +1966,10 @@
 		"Ability1"			"purification"
 		"Ability2"			"omniknight_repel_lua"
 		"Ability6"			"guardian_angel"
-		"Ability10"			"special_bonus_hp_600"
-//		"Ability12"			"special_bonus_strength_40"
+		"Ability10"			"special_bonus_hp_4500"
+//		"Ability12"			"special_bonus_strength_820"
 		"Ability12"			"special_bonus_omniknight_purifiception_radius"
-//		"Ability14"			"special_bonus_spell_amplify_25"
+//		"Ability14"			"special_bonus_spell_amplify_125"
 		"Ability14"			"special_bonus_omniknight_purifiception_double"
 		"Ability15"			"special_bonus_exp_boost_30"
 //		"Ability16"			"special_bonus_cooldown_reduction_25"
@@ -2100,22 +1980,30 @@
 	"npc_dota_hero_puck_mjz"
 	{
 		"override_hero"			"npc_dota_hero_puck"
-		"Ability1"		"mjz_puck_illusory_orb"
-		"Ability4"		"mjz_puck_ethereal_jaunt"
+
+		"Ability1"				"mjz_puck_illusory_orb"
+		"Ability4"				"mjz_puck_ethereal_jaunt"
+		"Ability10"				"special_bonus_unique_puck_6"
+		"Ability12"				"special_bonus_spell_amplify_69"
+		"Ability16"				"special_bonus_lifesteal_25"
+
+		"AttributeAgilityGain"			"6.5"
+		"AttributeIntelligenceGain"		"9.3"
 	}
 	"npc_dota_hero_queenofpain_mjz"
 	{
 		"override_hero"			"npc_dota_hero_queenofpain"
-		"Ability6"				"mjz_queenofpain_sonic_wave"
-	}
-	"npc_dota_hero_storm_spirit_mjz"
-	{
-		"override_hero"			"npc_dota_hero_storm_spirit"
 
-		"Ability3"				"mjz_storm_spirit_overload"
-		"Ability6"				"mjz_storm_spirit_ball_lightning"
-		"Ability17"				"special_bonus_unique_mjz_storm_spirit_ball_lightning_01"
-	}	
+		"Ability1"				"queenofpain_custom_shadow_strike"
+		"Ability6"				"mjz_queenofpain_sonic_wave"
+		"Ability10"				"special_bonus_exp_boost_30"
+		"Ability11"				"special_bonus_mp_regen_14"
+		"Ability12"				"special_bonus_qop_shadow_strike_tick_interval"
+		"Ability15"				"special_bonus_strength_500"
+		//"Ability17"				"special_bonus_attack_base_damage_200"
+
+		"AttributeIntelligenceGain"		"9.600000"
+	}
 	"npc_dota_hero_techies_mjz"
 	{
 		"override_hero"			"npc_dota_hero_techies"
@@ -2127,13 +2015,19 @@
 	}
 	"npc_dota_hero_tinker_mjz"
 	{
-		"override_hero"	"npc_dota_hero_tinker"
-		"Ability1"	  "tinker_laser_lua"
-		"Ability2"		"mjz_tinker_heat_seeking_missile"
-		"Ability6"		"mjz_tinker_quick_arm"
-		"Ability13"	 "special_laser_silence_duration_lua"
-		"Ability16"	 "special_laser_int_multiplier_lua"
-		"Ability17"		"special_bonus_unique_mjz_tinker_0203"
+		"override_hero"		"npc_dota_hero_tinker"
+	
+		"Ability1"			"tinker_laser_lua"
+		"Ability2"			"mjz_tinker_heat_seeking_missile"
+		"Ability3"			"tinker_defense_matrix"
+		"Ability6"			"mjz_tinker_quick_arm"
+		"Ability10"			"special_bonus_spell_amplify_40"
+		"Ability13"			"special_laser_silence_duration_lua"
+		"Ability14"			"special_bonus_armor_24"
+		"Ability16"			"special_laser_int_multiplier_lua"
+		"Ability17"			"special_bonus_unique_mjz_tinker_0203"
+
+		"AttributeIntelligenceGain"   "6.7"
 	}
 	"npc_dota_hero_void_spirit_mjz"
 	{
@@ -2144,20 +2038,25 @@
 		"Ability5"			"mjz_void_spirit_astral_atlas"
 		"Ability6"			"void_spirit_custom_astral_step"
 		"Ability10"			"special_bonus_unique_void_spirit_8"
+		"Ability12"			"special_bonus_magic_resistance_25"
+		"Ability14"			"special_bonus_spell_amplify_70"
 		"Ability13"			"special_bonus_unique_void_spirit_3"
 		"Ability16"			"special_bonus_spell_amplify_100"
 		"Ability17"			"special_bonus_unique_void_spirit_4"
 	}
 	"npc_dota_hero_winter_wyvern_mjz"
 	{
-		"override_hero" "npc_dota_hero_winter_wyvern"
-		//"Ability5"		"mjz_general_mirror_image"
-		//"Ability6"		"mjz_winter_wyvern_ice_age"
-		"Ability6"		"sniper_take_aim"
-		"Ability16"		"special_bonus_lifesteal_15"
-		"Ability17"		"special_bonus_attack_speed_250"
-		"AttributeIntelligenceGain"  "6.1"
-		"AttributeAgilityGain"	   "4.7"
+		"override_hero"		"npc_dota_hero_winter_wyvern"
+
+		//"Ability5"			"mjz_general_mirror_image"
+		//"Ability6"			"mjz_winter_wyvern_ice_age"
+		"Ability6"			"sniper_take_aim"
+		"Ability12"			"special_bonus_hp_2750"
+		"Ability16"			"special_bonus_lifesteal_15"
+		"Ability17"			"special_bonus_attack_speed_250"
+
+		"AttributeIntelligenceGain"		"6.1"
+		"AttributeAgilityGain"			"4.7"
 	}
 
 	"npc_dota_hero_dawnbreaker"
@@ -2195,10 +2094,10 @@
 		"Ability10"		"special_bonus_cooldown_reduction_25"
 		"Ability11"		"special_bonus_gold_income_420"
 		"Ability12"		"special_bonus_spell_block_18"
-		"Ability13"		"special_bonus_strength_40"
+		"Ability13"		"special_bonus_strength_820"
 		"Ability14"		"special_bonus_unique_dawnbreaker_fire_wreath_charges"
 		"Ability15"		"special_bonus_unique_dawnbreaker_luminosity_crit"
-		"Ability16"		"special_bonus_spell_amplify_25"
+		"Ability16"		"special_bonus_spell_amplify_125"
 		"Ability17"		"special_bonus_unique_dawnbreaker_celestial_hammer_cast_range"
 		
 		"ArmorPhysical"		"7.000000"
@@ -2339,10 +2238,5 @@
 		"VisionDaytimeRange"		"1"
 		"VisionNighttimeRange"		"1"
 	}
-
-		//"npc_dota_hero_abaddon_mjz"
-				//"overide_hero"		 "npc_dota_hero_abaddon"
-				//"Ability2"			 "custom_aphotic_shield"
-
 }
  

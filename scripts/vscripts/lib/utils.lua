@@ -132,26 +132,6 @@ function CDOTABaseAbility:GetTalentSpecialValueFor(value)
 	return base
 end
 
-function CDOTA_BaseNPC:FindAbilityWithHighestCooldown()
-	local highest_cd_ability = nil
-
-	for i = 0, 24 do
-		local ability = self:GetAbilityByIndex(i)
-
-		if ability then
-			if highest_cd_ability == nil then
-				highest_cd_ability = ability
-			elseif ability:IsTrained() then
-				if ability:GetCooldownTimeRemaining() > highest_cd_ability:GetCooldownTimeRemaining() then
-					highest_cd_ability = ability
-				end
-			end
-		end
-	end
-
-	return highest_cd_ability
-end
-
 function create_popup(data)
     local target = data.target
     local value = math.floor(data.value)
@@ -216,29 +196,52 @@ function spell_crit(attacker, victim, damageTable)
     return damageTable
 end
 
-function value_if_scepter(npc, ifYes, ifNot)
-	if npc:HasScepter() then
-		return ifYes
+function HasSuperScepter(npc)
+	if npc:HasModifier("modifier_super_scepter") then
+		return true
 	end
-	return ifNot
+    return false
 end
 
-function HasSuperScepter(npc)
-	if IsServer() then
-		if npc:HasModifier("modifier_super_scepter") then
-			return true
-		end
+function CDOTA_BaseNPC:HasSuperScepter()
+	if self:HasModifier("modifier_super_scepter") then
+		return true
 	end
     return false
 end
 
 function CDOTA_BaseNPC:HasShard()
-	if IsServer() then
-		if self:HasModifier("modifier_item_aghanims_shard") then
-			return true
-		end
+	if self:HasModifier("modifier_item_aghanims_shard") then
+		return true
 	end
 	return false
+end
+
+function CDOTA_BaseNPC:FindAbilityWithHighestCooldown()
+	local highest_cd_ability = nil
+
+	for i = 0, 24 do
+		local ability = self:GetAbilityByIndex(i)
+
+		if ability then
+			if highest_cd_ability == nil then
+				highest_cd_ability = ability
+			elseif ability:IsTrained() then
+				if ability:GetCooldownTimeRemaining() > highest_cd_ability:GetCooldownTimeRemaining() then
+					highest_cd_ability = ability
+				end
+			end
+		end
+	end
+
+	return highest_cd_ability
+end
+
+function value_if_scepter(npc, ifYes, ifNot)
+	if npc:HasScepter() then
+		return ifYes
+	end
+	return ifNot
 end
 
 function increase_modifier(caster, target, ability, modifier)

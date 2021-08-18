@@ -1,4 +1,3 @@
-
 item_aegis_lua = class({})
 LinkLuaModifier("modifier_aegis", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_aegis_up", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)

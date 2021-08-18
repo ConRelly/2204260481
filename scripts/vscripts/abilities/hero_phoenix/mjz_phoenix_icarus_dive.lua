@@ -10,6 +10,13 @@ LinkLuaModifier(MODIFIER_SPECIAL_NAME, THIS_LUA, LUA_MODIFIER_MOTION_NONE)
 mjz_phoenix_icarus_dive = class({})
 local ability_class = mjz_phoenix_icarus_dive
 
+function mjz_phoenix_icarus_dive:GetAbilityTextureName()
+	if self:GetCaster():HasScepter() then return "custom/abilities/mjz_phoenix_icarus_dive" end
+	return "mjz_phoenix_icarus_dive"
+end
+function mjz_phoenix_icarus_dive:GetCooldown(level)
+	return self.BaseClass.GetCooldown(self, level) - talent_value(self:GetCaster(), "special_bonus_unique_mjz_phoenix_icarus_dive_cdr")
+end
 function ability_class:GetCastRange(vLocation, hTarget)
 	return self:GetAOERadius()
 end
@@ -45,6 +52,9 @@ if IsServer() then
 		local point = self:GetCursorPosition()
 		local projectile_name = "particles/units/heroes/hero_lina/lina_spell_dragon_slave.vpcf"
 		local p_name = "particles/econ/items/lina/lina_head_headflame/lina_spell_dragon_slave_headflame.vpcf"
+		if caster:HasScepter() then
+			projectile_name = p_name
+		end
 		local projectile_distance = GetTalentSpecialValueFor(ability, "dragon_slave_distance" )
 		local projectile_speed = self:GetSpecialValueFor( "dragon_slave_speed" )
 		local projectile_start_radius = self:GetSpecialValueFor( "dragon_slave_width_initial" )

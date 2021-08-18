@@ -32,6 +32,8 @@ function ability_class:OnSpellStart( ... )
     else
         self:CastBattleTrance(caster)
     end
+
+	EmitSoundOn("Hero_TrollWarlord.BattleTrance.Cast", caster)
 end
 
 function ability_class:CastBattleTrance_Friendly( )
@@ -54,8 +56,6 @@ function ability_class:CastBattleTrance( target )
 	local pszScriptName = "modifier_mjz_troll_warlord_battle_trance"
 	local m_lifesteal = "modifier_mjz_troll_warlord_battle_trance_lifesteal"
 	local duration = ability:GetSpecialValueFor("trance_duration")
-
-	EmitSoundOn("Hero_TrollWarlord.BattleTrance.Cast", target)
 
 	target:AddNewModifier(caster, ability, pszScriptName, {duration = duration})
 	target:AddNewModifier(caster, ability, m_lifesteal, {duration = duration})

@@ -1202,10 +1202,17 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Fixed Guessing Game(check Hint 1 and 2 for the correct answer)
 
 
+* Added Aghanim's Shard + Aghanim's Scepter effect for Aegis of Infinity
+* Added Divine Pray (item) for new hero Piety (only for Lina) {It is not the final result and may be changed in the future}
+* New abilities and 7.30 rebalance
 * Fix infinite rapier description and doubled its damage
 * Fix drow Marksmanship not working after death
 * Fix Dazzle missing ult icon on ability swap menu.
 * Fix Slayer Rebound not giving extra stacks base on the time you learned.
+* Removed Undying's double armor talent (level 10)
+* Replaced Lina's Level 10 talent
+* Fixed Fiery Soul (Lina) ambient effects
+New items will be added soon (or maybe not)
 
 
 
