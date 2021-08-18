@@ -124,7 +124,7 @@ function lesser_cancel:OnSpellStart()
 --	end
 	caster:AddNewModifier(caster, self, "modifier_cancels_count", {})
 	local cancels_count = caster:FindModifierByName("modifier_cancels_count")
-	if cancels_count:GetStackCount() >= 10 - 1 then
+	if cancels_count:GetStackCount() >= upgrade_count - 1 then
 		caster:AddAbility("divine_cancel")
 		caster:FindAbilityByName("divine_cancel"):SetLevel(self:GetLevel())
 		caster:SwapAbilities("lesser_cancel", "divine_cancel", false, true)
