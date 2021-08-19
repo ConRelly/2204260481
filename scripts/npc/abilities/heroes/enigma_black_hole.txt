@@ -15,7 +15,7 @@
     "FightRecapLevel"                                     "2"
     "MaxLevel"                                            "5"
 
-
+    "HasShardUpgrade"                                     "1"
     "HasScepterUpgrade"                                   "1"
 
     // Casting
@@ -79,7 +79,7 @@
       "09"
       {
         "var_type"        "FIELD_FLOAT"
-        "scepter_pct_damage"  "2"
+        "scepter_pct_damage"  "1.6"
       }
       "10"
       {
