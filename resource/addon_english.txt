@@ -2402,19 +2402,27 @@
 	"DOTA_Tooltip_modifier_mjz_clinkz_death_pact"					"Death Pact"
 	"DOTA_Tooltip_modifier_mjz_clinkz_death_pact_Description"		"Increases %dMODIFIER_PROPERTY_HEALTH_BONUS% maximum health and %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% attack damage."
 		
-	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact"										"Soul Pact"
-	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_Description"							"Clinkz consumes the target enemy unit's soul, gain a permanent damage bonus, gaining max health and armor reduction on attack. If a hero dies under this debuff, Soul Pact will be refreshed. Each kill an enemy unit, Soul Pact cooldown reduced for %cooldown_reduce% seconds."
-	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_Lore"								"Sutherex' bond of life and soul has become a part of Clinkz, and his old bones are refreshed with repetition of the pact on lesser beings."
-	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_duration"							"DURATION:"
-	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_health_gain"							"HEALTH GAIN:"
-	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_armor_reduction"						"ARMOR REDUCTION:"
-	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_permanent_bonus"						"PERMANENT BONUS DAMAGE:"
-	"DOTA_Tooltip_modifier_mjz_clinkz_soul_pact_health"							"Soul Pact"
-	"DOTA_Tooltip_modifier_mjz_clinkz_soul_pact_health_Description"	   	 		"Max health increased by %dMODIFIER_PROPERTY_EXTRA_HEALTH_BONUS%. Attacks reduce enemy armor by %dMODIFIER_PROPERTY_TOOLTIP%."
+	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact"						"Soul Pact"
+	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_Description"			"Clinkz consumes the target enemy unit's soul, which gives Max Health, increases Attack Damage, but reduces the owner's Armor, as well as gives a permanent damage bonus.\n<h1>Armor Melting</h1>Reduces the target's armor by %armor_reduction%. If an enemy hero dies under the debuff, Soul Pact will be refreshed. Each unit kill, Soul Pact reduces cooldown by %cooldown_reduce% seconds.<br>Debuff Duration: %debuff_duration% sec."
+	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_Lore"			"Sutherex' bond of life and soul has become a part of Clinkz, and his old bones are refreshed with repetition of the pact on lesser beings."
+	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_scepter_description"		"Applies invisibility for the entire duration of the ability, until the hero attacks or uses the ability. Increases Movement Speed in invisibility by %move_speed_bonus_pct%%%."
+	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_shard_description"		"When the effect of the ability disappears (or been refreshed), the hero is given %attack_speed_bonus% Attack Speed for %attack_speed_duration% seconds. The same effect is applied if the hero has lost the invisibility effect from Aghanim's Scepter."
+	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_duration"					"DURATION:"
+	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_bonus_health"				"MAX HEALTH BONUS:"
+	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_bonus_damage_pct"			"%ATTACK DAMAGE BONUS:"
+	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_self_armor"					"SELF ARMOR REDUCTION:"
+	"DOTA_Tooltip_ability_mjz_clinkz_soul_pact_permanent_bonus"				"PERMANENT BONUS DAMAGE:"
+	"DOTA_Tooltip_modifier_mjz_clinkz_soul_pact"							"Soul Pact"
+	"DOTA_Tooltip_modifier_mjz_clinkz_soul_pact_Description"	  	 		"Increase Max Health by %dMODIFIER_PROPERTY_EXTRA_HEALTH_BONUS%, Attack Damage by %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%%, but reduce self Armor by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
 	"DOTA_Tooltip_modifier_mjz_clinkz_soul_pact_permanent_buff"					"Soul Pact Damage"
 	"DOTA_Tooltip_modifier_mjz_clinkz_soul_pact_permanent_buff_Description"		"Permanently increased damage gained from Soul Pact."
 	"DOTA_Tooltip_modifier_mjz_clinkz_soul_pact_debuff"							"Soul Pact"
 	"DOTA_Tooltip_modifier_mjz_clinkz_soul_pact_debuff_Description"				"Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
+	"DOTA_Tooltip_modifier_mjz_clinkz_soul_pact_strafe"					"Skeleton Strafe"
+	"DOTA_Tooltip_modifier_mjz_clinkz_soul_pact_strafe_Description"		"Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+
+	"DOTA_Tooltip_ability_special_bonus_clinkz_soul_pact_strafe_attack_speed"		"+{s:value} Strafe Attack Speed"
+	"DOTA_Tooltip_ability_special_bonus_clinkz_soul_pact_strafe_duration"			"+{s:value} sec Strafe Duration"
 	
 	"DOTA_Tooltip_ability_mjz_clinkz_wind_walk"						"Skeleton Walk"
 	"DOTA_Tooltip_ability_mjz_clinkz_wind_walk_Description"			"Clinkz moves invisibly through units until the moment he attacks or uses an ability. When exiting invisibility, Clinkz gains bonus attack speed."
@@ -5685,20 +5693,9 @@ Upgradeable by Aghanim's Scepter."
 "DOTA_Tooltip_modifier_wind_walk"						"Skeleton Walk"
 "DOTA_Tooltip_modifier_wind_walk_Description"			"Invisible, and movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.  Can move through units."
 
-
 "DOTA_Tooltip_modifier_clinkz_custom_wind_walk"						"Skeleton Walk"
 "DOTA_Tooltip_modifier_clinkz_custom_wind_walk_Description"			"This unit is invisible."
 
-"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army"					"Burning Army"
-"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_Description"		"Clinkz summons an army of fiery ranged skeleton archers. Archers are immobile and die with 2 attacks from a hero. Skeletons will not use your current Searing Arrows ability(lag reasons) and attack any units nearby. Base damage is equal to your hero's base damage. Attack range is equal to your hero's attack range. "
-"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_duration"			"DURATION:"
-"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_range"				"RANGE:"
-"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_count"				"COUNT:"
-"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_attack_rate"		"ATTACK RATE:"
-"DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_spawn_interval"		"SPAWN INTERVAL:"
-
-"npc_dota_clinkz_skeleton_archer_frostivus2018"								"Skeleton Archer"
-"npc_dota_clinkz_skeleton_archer_frostivus20182"							"Greater Skeleton Archer"
 
 "DOTA_Tooltip_ability_dark_seer_custom_ion_shell"										"Ion Shell"
 "DOTA_Tooltip_ability_dark_seer_custom_ion_shell_Description"							"Surrounds the target unit with a bristling shield that damages enemy units in an area around it."
@@ -9398,6 +9395,7 @@ Contains all random skills"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_mjz_phoenix_icarus_dive_cdr" "Reduces Icarus Dive CD by {s:value} seconds"
 
+
 // Custom Talents
 
 	"DOTA_Tooltip_ability_special_bonus_armor_15"		"+{s:value} Armor"
@@ -9483,7 +9481,7 @@ Contains all random skills"
       "DOTA_Tooltip_modifier_item_force_field_effect"    			 "Arcanist's Aura"
       "DOTA_Tooltip_modifier_item_force_field_effect_description"    "Increases your Armor and Magic Resist by 25"
       "DOTA_Tooltip_modifier_item_force_field_bonus_aura"  			 "Reflection Duration Bonus"
-      "DOTA_Tooltip_modifier_item_force_field_bonus_aura_description" "Emits an aura that gives and Arcanist reflection to everyone in rage for the duration"
+      "DOTA_Tooltip_modifier_item_force_field_bonus_aura_description" "Emits an aura that gives and Arcanist reflection to everyone in range for the duration"
       "DOTA_Tooltip_modifier_item_force_field_bonus"  "Arcanist Reflection"
       "DOTA_Tooltip_modifier_item_force_field_bonus_Description" "Reflects 40% of damage taken back to the attacker"
 //////////////////// FIXED ABILITIES (CUSTOM) \\\\\\\\\\\\\\\\\\\\

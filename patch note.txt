@@ -1205,6 +1205,10 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Added Aghanim's Shard + Aghanim's Scepter effect for Aegis of Infinity
 * Added Divine Pray (item) for new hero Piety (only for Lina) {It is not the final result and may be changed in the future}
 * New abilities and 7.30 rebalance
+* Removed 2 abilities from Clinkz and reworked Ultimate
+* Added Aghanim's Shard + Aghanim's Scepter effect for Soul Pact (Clinkz) 
+* Buring Army (Clinkz) now is Basic ability
+* Soul Pact (Clinkz) now is Ultimate ability
 * Fix infinite rapier description and doubled its damage
 * Fix drow Marksmanship procs not working after death
 * Fix Dazzle missing ult icon on ability swap menu.

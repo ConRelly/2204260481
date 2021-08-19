@@ -32,41 +32,36 @@ if IsServer() then
 	end
 end
 
-
-
 ---------------------------------------------------------------------------------------
 
 modifier_mjz_clinkz_death_pact = class({})
-local modifier_class = modifier_mjz_clinkz_death_pact
-
-function modifier_class:IsPassive() return false end
-function modifier_class:IsHidden() return false end
-function modifier_class:IsPurgable() return false end
-
-function modifier_class:DeclareFunctions()
+function modifier_mjz_clinkz_death_pact:IsPassive() return false end
+function modifier_mjz_clinkz_death_pact:IsHidden() return false end
+function modifier_mjz_clinkz_death_pact:IsPurgable() return false end
+function modifier_mjz_clinkz_death_pact:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,			-- 按百分比修改攻击力，负数降低攻击，正数提高攻击
-		-- MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,		-- 白字攻击力	GetModifierBaseDamageOutgoing_Percentage
-		MODIFIER_PROPERTY_HEALTH_BONUS,							-- 修改目前血量
-		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,					-- 增加护甲
-		MODIFIER_PROPERTY_MODEL_SCALE,							-- 设定模型大小
+		MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
+		-- MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
+		MODIFIER_PROPERTY_HEALTH_BONUS,
+		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+		MODIFIER_PROPERTY_MODEL_SCALE,
 	}
 	return funcs
 end
 
-function modifier_class:GetModifierDamageOutgoing_Percentage( )
+function modifier_mjz_clinkz_death_pact:GetModifierDamageOutgoing_Percentage( )
 	return self:GetAbility():GetSpecialValueFor('bonus_damage_pct')
 end
 
-function modifier_class:GetModifierHealthBonus( )
+function modifier_mjz_clinkz_death_pact:GetModifierHealthBonus( )
 	return self:GetAbility():GetSpecialValueFor('bonus_health')
 end
 
-function modifier_class:GetModifierPhysicalArmorBonus( )
+function modifier_mjz_clinkz_death_pact:GetModifierPhysicalArmorBonus( )
 	return self:GetAbility():GetSpecialValueFor('armor_reduction')
 end
 
-function modifier_class:GetModifierModelScale( )
+function modifier_mjz_clinkz_death_pact:GetModifierModelScale( )
 	return self:GetAbility():GetSpecialValueFor('model_scale')
 end
 

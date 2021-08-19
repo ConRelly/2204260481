@@ -79,19 +79,6 @@
 	"AttributeIntelligenceGain"  "9.2"
 	"UnitLabel"				 "no_underdog"
 }
-"npc_dota_hero_clinkz_frostivus2018"
-{
-	"override_hero"			"npc_dota_hero_clinkz"
-	"Ability1"				"frostivus2018_clinkz_strafe"
-	//"Ability2"				"frostivus2018_clinkz_searing_arrows"
-	"Ability3"				"clinkz_custom_wind_walk"
-	"Ability6"				"frostivus2018_clinkz_burning_army"
-	"Ability10"			 "special_bonus_lifesteal_15"
-	"Ability11"				"special_bonus_hp_regen_20"
-	"Ability12"			 "special_bonus_unique_clinkz_101"
-	"Ability15"				"special_bonus_cooldown_reduction_20"
-	"Ability16"				"special_bonus_attack_base_damage_200"
-}
 "npc_dota_hero_dark_seer"
 {
 
@@ -1630,21 +1617,23 @@
 		"AttributeStrengthGain"				"12.5"
 		"UnitLabel"			  "no_underdog"
 	}
-	
-	"npc_dota_hero_clinkz_mjz"			// 克林克兹（小骷髅）
+
+	"npc_dota_hero_clinkz_mjz"
 	{
 		"override_hero"			"npc_dota_hero_clinkz"
-		//"Ability1"				"frostivus2018_clinkz_strafe"
-		"Ability1"				"mjz_clinkz_soul_pact"
-		//"Ability2"				"frostivus2018_clinkz_searing_arrows"
-		//"Ability3"				"mjz_clinkz_wind_walk"
-		//"Ability7"				"clinkz_burning_army_new"
-		//"Ability4"			"clinkz_burning_army"
-		//"Ability4"				"generic_hidden"
+
+		"Ability1"				"clinkz_strafe"
+		//"Ability3"				"clinkz_custom_wind_walk"
+		"Ability3"				"frostivus2018_clinkz_burning_army"
 		"Ability4"				"clinkz_infernal_breath"
-		"Ability5"				"frostivus2018_clinkz_burning_army"
-		"Ability6"				"mjz_clinkz_death_pact"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"mjz_clinkz_soul_pact"
+		"Ability10"				"special_bonus_lifesteal_15"
 		//"Ability10"				"special_bonus_unique_clinkz_2"
+		"Ability11"				"special_bonus_hp_regen_20"
+		"Ability12"				"special_bonus_unique_clinkz_101"
+		"Ability15"				"special_bonus_cooldown_reduction_20"
+		"Ability16"				"special_bonus_attack_base_damage_200"
 	}
 	
 	"npc_dota_hero_enigma_mjz"			// 谜团

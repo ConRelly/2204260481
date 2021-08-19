@@ -58,6 +58,7 @@
 			"item_grove_bow_copy"				"1"
 			"item_helm_of_the_undying"			"1"
 			"item_paladin_sword"				"1"
+			"item_ascetic_cap"					"1"
 		}
 	}
 	"4"
@@ -76,6 +77,7 @@
 		{
 			"item_panic_button"					"1"
 			"item_minotaur_horn"				"1"
+			"item_misericorde"					"1"
 		}
 	}
 	"5"
@@ -101,6 +103,7 @@
 			"item_custom_ex_machina"			"1"
 			"item_maple_shield_lua"				"1"
 			"item_titan_relic"					"1"
+			"item_ascetic_cap"					"1"
 		}
 	}
 }
