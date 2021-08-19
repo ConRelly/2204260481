@@ -855,7 +855,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"42000"
+				"value"				"69"
 			}
 		}
 	}
@@ -1511,6 +1511,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_tusk_3"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"1240"
+			}
+		}
+	}	
 	"special_bonus_unique_tusk_7"
 	{
 		"AbilitySpecial"
@@ -1651,7 +1662,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"15"
+				"value"				"45"
 			}
 		}
 	}
@@ -1677,6 +1688,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_weaver_2"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"6700"
+			}
+		}
+	}	
 	"special_bonus_unique_windranger_3"
 	{
 		"AbilitySpecial"
@@ -1688,6 +1710,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_winter_wyvern_5"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"425"
+			}
+		}
+	}	
 	"special_bonus_unique_abaddon"
 	{
 		"AbilitySpecial"
@@ -7958,7 +7991,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"200"
+				"value"				"420"
 			}
 		}
 	}
@@ -8072,6 +8105,17 @@
 			}
 		}
 	}
+	"special_bonus_movement_speed_60"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"600"
+			}
+		}
+	}	
 	"special_bonus_movement_speed_65"
 	{
 		"AbilitySpecial"
@@ -8807,6 +8851,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_rubick_5"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"150"
+			}
+		}
+	}	
 	"rubick_fade_bolt"
 	{
 		"LevelsBetweenUpgrades"		 "5"

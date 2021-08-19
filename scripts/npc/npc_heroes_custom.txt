@@ -62,6 +62,7 @@
 "npc_dota_hero_beastmaster"
 {
 	"Ability17"		"special_bonus_cooldown_reduction_20"
+	"Ability12"     "special_bonus_magic_resistance_25"
 	"AttributeStrengthGain"	"6.2"
 	"AttributeAgilityGain"	 "5.3"
 }
@@ -292,7 +293,7 @@
 	"Ability10"		"special_bonus_cast_range_150"
 	"Ability12"		"special_bonus_unique_oracle"
 	"Ability14"		"special_bonus_cooldown_reduction_15"
-	"Ability15"		"special_bonus_mp_regen_10"
+	"Ability15"		"special_bonus_mp_800"
 	"Ability17"		"special_bonus_all_stats_20"
 	"AttributeIntelligenceGain"   "8.6"
 	"UnitLabel"				 "no_underdog"
@@ -444,6 +445,7 @@
 {
 	"Ability17"			  "special_bonus_attack_speed_200"
 	"Ability12"			  "special_bonus_magic_resistance_40"
+	"Ability11"           "special_bonus_spell_amplify_100"
 	"Ability10"			  "special_bonus_lifesteal_25"
 	"AttackRate"			 "1.5"
 	"AttributeAgilityGain"  "7"
@@ -1436,7 +1438,7 @@
 		"Ability12"				"special_bonus_spell_amplify_40"
 		"Ability13"				"special_bonus_unique_mjz_shredder_reactive_armor_limit"
 		"Ability14"				"special_bonus_strength_260"
-		"Ability15"				"special_bonus_movement_speed_75"
+		"Ability15"				"special_bonus_movement_speed_65"
 		"Ability16"				"special_bonus_unique_mjz_shredder_whirling_death_strength"
 		"Ability17"				"special_bonus_cooldown_reduction_40"
 
@@ -1856,6 +1858,7 @@
 		"Ability3"				"mjz_sniper_take_aim"
 		"Ability4"				"mjz_sniper_quick_draw"
 		"Ability6"				"mjz_sniper_assassinate"
+		"Ability10"             "special_bonus_agility_100"
 		"Ability15"				"special_bonus_unique_mjz_sniper_assassinate_damage"
 		"Ability11"			 "special_bonus_unique_sniper_3"
 		"Ability17"			 "special_bonus_unique_sniper_5"
@@ -1875,6 +1878,7 @@
 		"Ability4"				"mjz_spectre_reality"
 		"Ability5"				"mjz_spectre_haunt_single"
 		"Ability6"				"mjz_spectre_haunt"
+		"Ability13"             "special_bonus_spell_block_18"
 		"Ability14"				"special_bonus_hp_4000"
 
 		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
@@ -1954,6 +1958,7 @@
 		"Ability11"				"special_bonus_hp_6000"
 		"Ability12"				"special_bonus_reincarnation_90"
 		"Ability13"				"special_bonus_unique_mjz_zuus_static_field_intelligence"
+		"Ability14"             "special_bonus_spell_amplify_100"
 		"Ability15"				"special_bonus_mp_1000"
 
 		"AttributeIntelligenceGain"		"8.5"
@@ -2038,6 +2043,7 @@
 		"Ability5"			"mjz_void_spirit_astral_atlas"
 		"Ability6"			"void_spirit_custom_astral_step"
 		"Ability10"			"special_bonus_unique_void_spirit_8"
+		"Ability11"         "special_bonus_mp_400"
 		"Ability12"			"special_bonus_magic_resistance_25"
 		"Ability14"			"special_bonus_spell_amplify_70"
 		"Ability13"			"special_bonus_unique_void_spirit_3"
@@ -2052,6 +2058,7 @@
 		//"Ability6"			"mjz_winter_wyvern_ice_age"
 		"Ability6"			"sniper_take_aim"
 		"Ability12"			"special_bonus_hp_2750"
+		"Ability15"         "special_bonus_spell_amplify_75"
 		"Ability16"			"special_bonus_lifesteal_15"
 		"Ability17"			"special_bonus_attack_speed_250"
 
@@ -2147,7 +2154,7 @@
 		"Ability5"		"generic_hidden"
 		"Ability6"		"dazzle_bad_juju_custom"
 		"Ability10"		"special_bonus_gold_income_420"
-		"Ability11"		"special_bonus_mp_regen_175"
+		"Ability11"		"special_bonus_hp_2000"
 		"Ability12"		"special_bonus_unique_dazzle_5"
 		"Ability13"		"special_bonus_spell_amplify_100"
 		"Ability14"		"special_bonus_movement_speed_30"
