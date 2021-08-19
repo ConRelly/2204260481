@@ -49,7 +49,6 @@ function sourcery:OnSpellStart()
 	else
 		caster:AddNewModifier(caster, self, "modifier_sourcery_active", {})
 	end
-	print("Print CooldownReduction:" .. self:GetCaster():GetCooldownReduction())
 end
 
 -----------------------
@@ -61,14 +60,23 @@ function modifier_sourcery:IsPurgable() return false end
 function modifier_sourcery:RemoveOnDeath() return false end
 function modifier_sourcery:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
+		local parent = self:GetParent()
+		if parent:IsIllusion() or parent:HasModifier("modifier_arc_warden_tempest_double") then Timers:CreateTimer(0.05, function() parent:RemoveSelf() end) parent:ForceKill(false) end
+		parent:SetDayTimeVisionRange(1600)
+		parent:SetNightTimeVisionRange(1600)
+		parent:SetPhysicalArmorBaseValue(10)
+		parent:SetBaseMagicalResistanceValue(30)
+		parent:SetBaseHealthRegen(5)
+		parent:SetBaseManaRegen(5)
+
 		self.BaseMaxHealth = self:GetCaster():GetBaseMaxHealth()
 		self.BaseMaxMana = self:GetCaster():GetMaxMana()
 		self.MaxShields = self:GetAbility():GetSpecialValueFor("max_shields")
 		self.interval = self:GetAbility():GetSpecialValueFor("shield_interval")
 		self.Divine = false
 		self:SetStackCount(1)
-		layer1 = ParticleManager:CreateParticle("particles/custom/abilities/sourcery/sourcery_layer1.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
-		ParticleManager:SetParticleControlEnt(layer1, 1, self:GetParent(), PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
+		layer1 = ParticleManager:CreateParticle("particles/custom/abilities/sourcery/sourcery_layer1.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+		ParticleManager:SetParticleControlEnt(layer1, 1, parent, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
 		self:AddParticle(layer1, false, false, -1, true, false)
 
 		self:StartIntervalThink(self.interval)

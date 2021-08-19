@@ -16,6 +16,7 @@ function dark_seer_custom_dark_clone_2:OnSpellStart()
 
 	-- Create unit
 	local illusion = CreateUnitByName(target:GetUnitName(), spawn_location, true, caster, caster:GetPlayerOwner(), caster:GetTeamNumber())
+	if not illusion then self:EndCooldown() return end
 	illusion:SetControllableByPlayer(caster:GetPlayerOwnerID(), false)
 	illusion:AddNewModifier(caster, self, "modifier_arc_warden_tempest_double", {})
 	illusion:AddNewModifier(caster, self, "modifier_death", {duration = duration})

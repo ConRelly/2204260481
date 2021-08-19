@@ -70,7 +70,13 @@ function OnSpellStart( keys )
 						ability:OnSpellStart() 
 						return							
 					end	
-				end												 
+				end
+				if newAbilityName == "mjz_clinkz_death_pact" then
+					if hero:HasAbility("mjz_clinkz_soul_pact") then
+						ability:OnSpellStart()
+						return
+					end
+				end
 				local newAbility = hero:AddAbility(newAbilityName)	  
 				print("newAbility:" .. newAbilityName)  
 				if slotId > -1 then						  
@@ -133,7 +139,6 @@ function GetRandomAbilityName( hero )
 		"bloodseeker_thirst",		   -- 蚂蚁 3	bug
 		"faceless_void_time_lock",		  -- 虚空 3
 		"mjz_lina_laguna_blade",			-- 血魔 1
-		"mjz_clinkz_soul_pact",				-- 赏金 2
 		--"luna_lunar_blessing",			  -- 露娜 3
 		"elder_titan_natural_order",				 -- 蝙蝠 3
 		"nyx_assassin_custom_vendetta",			 -- 先知 2
@@ -222,6 +227,7 @@ function GetRandomAbilityName( hero )
 		"blood_madness",
 		"clinkz_infernal_breath",
 		"mjz_bloodseeker_thirst",
+		"mjz_clinkz_death_pact",
 	}
 	local randomIndex = RandomInt(1, #abilityList)
 	return abilityList[randomIndex]   

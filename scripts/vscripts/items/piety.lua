@@ -106,12 +106,6 @@ function ChangeHero(keys)
 		end
 
 -- Attributes
-		caster:SetDayTimeVisionRange(1600)
-		caster:SetNightTimeVisionRange(1600)
-		caster:SetPhysicalArmorBaseValue(10)
-		caster:SetBaseMagicalResistanceValue(30)
-		caster:SetBaseHealthRegen(5)
-		caster:SetBaseManaRegen(5)
 		caster:SetUnitName("npc_dota_hero_piety")
 		caster:SetEntityName("npc_dota_hero_piety")
 

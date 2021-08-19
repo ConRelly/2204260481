@@ -590,6 +590,17 @@ function CDOTA_BaseNPC:GetCritDMG()
 	return CritDMG
 end
 
+-- Cooldown Manipulation
+function CDOTA_BaseNPC:GetCustomStackingCooldownReduction()
+	local Reduction = 1
+	for _, parent_modifier in pairs(self:FindAllModifiers()) do
+		if parent_modifier.GetCustomStackingCDR and parent_modifier:GetCustomStackingCDR() then
+			Reduction = Reduction * (1 - (parent_modifier:GetCustomStackingCDR() / 100))
+		end
+	end
+	return 1 - Reduction
+end
+
 -- Spell lifesteal
 function CDOTA_BaseNPC:GetSpellLifesteal()
 	local lifesteal = 0

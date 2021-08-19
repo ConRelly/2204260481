@@ -42,7 +42,7 @@ function modifier_generic_handler:OnAbilityFullyCast(keys)
 end
 
 function modifier_generic_handler:DeclareFunctions()
-	return {MODIFIER_EVENT_ON_TAKEDAMAGE, MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE, MODIFIER_EVENT_ON_ABILITY_FULLY_CAST, MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT}
+	return {MODIFIER_EVENT_ON_TAKEDAMAGE, MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE, MODIFIER_EVENT_ON_ABILITY_FULLY_CAST, MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT, MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE}
 end
 
 --- Enum DamageCategory_t
@@ -120,6 +120,14 @@ function modifier_generic_handler:GetModifierPreAttack_CriticalStrike()
 		local CritDMG = self:GetParent():GetCritDMG()
 		DMG = 100 + CritDMG
 		return DMG
+	end
+end
+
+function modifier_generic_handler:GetModifierPercentageCooldown()
+	if IsServer() then
+		local Reduction = self:GetParent():GetCustomStackingCooldownReduction()
+		CDR = Reduction * 100
+		return CDR
 	end
 end
 
