@@ -1631,11 +1631,13 @@
 		"Ability5"				"generic_hidden"
 		"Ability6"				"mjz_clinkz_soul_pact"
 		"Ability10"				"special_bonus_lifesteal_15"
-		//"Ability10"				"special_bonus_unique_clinkz_2"
+		//"Ability10"				"special_bonus_unique_clinkz_2"		
 		"Ability11"				"special_bonus_hp_regen_20"
 		"Ability12"				"special_bonus_unique_clinkz_101"
+		"Ability13"				"special_bonus_unique_clinkz_3"		
 		"Ability15"				"special_bonus_cooldown_reduction_20"
 		"Ability16"				"special_bonus_attack_base_damage_200"
+		"Ability17"				"special_bonus_unique_clinkz_1"
 	}
 	
 	"npc_dota_hero_enigma_mjz"			// 谜团

@@ -386,6 +386,28 @@
 			}
 		}
 	}
+	"special_bonus_unique_dazzle_5"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"value"				"35000"
+			}
+		}
+	}
+	"special_bonus_unique_dazzle_3"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"value"				"16200"
+			}
+		}
+	}		
 	"special_bonus_unique_death_prophet_3"
 	{
 		"AbilitySpecial"
@@ -3614,6 +3636,63 @@
 			}				
 		}
 	}
+	//=================================================================================================================
+	// Clinkz: Strafe
+	//=================================================================================================================
+	"clinkz_strafe"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5259"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"LevelsBetweenUpgrades"         "8"
+		"AbilityChannelTime"			"1.5 1.9 2.3 2.7"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityChannelAnimation"	"ACT_DOTA_CHANNEL_ABILITY_1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"28 24 20 16"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"40 50 60 70"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"wave_count"					"6 9 15 23"
+				"LinkedSpecialBonus"		"special_bonus_unique_clinkz_12"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed_bonus_pct"	"90 120 150 180"
+				"LinkedSpecialBonus"			"special_bonus_unique_clinkz_7"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"range"						"1250 1600 1950 2900"				
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
 	"clinkz_searing_arrows"
 	{
 		"AbilityCastPoint"				"0.0"
@@ -22220,7 +22299,7 @@
 
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-	"ItemCost"						"9500"
+	"ItemCost"						"6500"
 	"ItemIsNeutralDrop"				"1"
 	"ItemPurchasable"				"1"
 

@@ -1219,7 +1219,7 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Cursed Gaze now gives more then double hp and has a new component in recipe instead of rapier(Ascetic's Cap)
 * Added 4 of the New dota items(WitchBane, Arcanist's armor, Brigand's blade and Ascetic's Cap)
 * Updated a lot of weak or not useful talents that valve changed
-New items will be added soon (or maybe not)
+
 
 
 
