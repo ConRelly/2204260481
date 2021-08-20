@@ -21900,7 +21900,159 @@
 //			"01"			"item_earth_gem;item_earth_gem;item_fire_gem;item_fire_gem;item_life_gem;item_life_gem"
 		}
 	}
+// Gems to avoid auto Creation of items using a non existent item
+"item_earth_gem"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityTextureName"			""
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"ItemCost"						"250"
+	"ItemQuality"					"consumable"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDroppable"					"1"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"1"
+	"ItemKillable"					"1"
+	"ItemPermanent"					"0"
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+}
 
+"item_fire_gem"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityTextureName"			""
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"ItemCost"						"250"
+	"ItemQuality"					"consumable"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDroppable"					"1"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"1"
+	"ItemKillable"					"1"
+	"ItemPermanent"					"0"
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+}
+
+"item_life_gem"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityTextureName"			""
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"ItemCost"						"250"
+	"ItemQuality"					"consumable"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDroppable"					"1"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"1"
+	"ItemKillable"					"1"
+	"ItemPermanent"					"0"
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+}
+"item_energy_gem"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityTextureName"			""
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"ItemCost"						"250"
+	"ItemQuality"					"consumable"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDroppable"					"1"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"1"
+	"ItemKillable"					"1"
+	"ItemPermanent"					"0"
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+}
+"item_shadow_gem"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityTextureName"			""
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"ItemCost"						"250"
+	"ItemQuality"					"consumable"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDroppable"					"1"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"1"
+	"ItemKillable"					"1"
+	"ItemPermanent"					"0"
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+}
+"item_light_gem"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityTextureName"			""
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"ItemCost"						"250"
+	"ItemQuality"					"consumable"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDroppable"					"1"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"1"
+	"ItemKillable"					"1"
+	"ItemPermanent"					"0"
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+}
+"item_void_gem"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityTextureName"			""
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"ItemCost"						"250"
+	"ItemQuality"					"consumable"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDroppable"					"1"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"1"
+	"ItemKillable"					"1"
+	"ItemPermanent"					"0"
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+}
+"item_air_gem"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityTextureName"			""
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"ItemCost"						"250"
+	"ItemQuality"					"consumable"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDroppable"					"1"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"1"
+	"ItemKillable"					"1"
+	"ItemPermanent"					"0"
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+}
+"item_water_gem"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityTextureName"			""
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"ItemCost"						"250"
+	"ItemQuality"					"consumable"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDroppable"					"1"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"1"
+	"ItemKillable"					"1"
+	"ItemPermanent"					"0"
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+}
+"item_ice_gem"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityTextureName"			""
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"ItemCost"						"250"
+	"ItemQuality"					"consumable"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDroppable"					"1"
+	"ItemPurchasable"				"0"
+	"ItemSellable"					"1"
+	"ItemKillable"					"1"
+	"ItemPermanent"					"0"
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+}
 // Spells Require HP
 	"item_spells_req_hp"
 	{
@@ -23625,6 +23777,9 @@
 	}
 
 //#############---UPGRADED-ITEMS---################################################################################
+
+
+
 
 // Upgraded Mjollnir
 	"item_upgraded_mjollnir"

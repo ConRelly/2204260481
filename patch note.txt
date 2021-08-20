@@ -1202,13 +1202,13 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Fixed Guessing Game(check Hint 1 and 2 for the correct answer)
 
 
+* New abilities and 7.30 rebalance
 * Added Aghanim's Shard + Aghanim's Scepter effect for Aegis of Infinity
 * Added Divine Pray (item) for new hero Piety (only for Lina) {It is not the final result and may be changed in the future}
-* New abilities and 7.30 rebalance
 * Removed 2 abilities from Clinkz and reworked Ultimate
 * Added Aghanim's Shard + Aghanim's Scepter effect for Soul Pact (Clinkz) 
-* Buring Army (Clinkz) now is Basic ability
-* Soul Pact (Clinkz) now is Ultimate ability
+* Buring Army (Clinkz) now is a Basic ability
+* Soul Pact (Clinkz) now is an Ultimate ability
 * Fix infinite rapier description and doubled its damage
 * Fix drow Marksmanship procs not working after death
 * Fix Dazzle missing ult icon on ability swap menu.
@@ -1216,11 +1216,14 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Removed Undying's double armor talent (level 10)
 * Replaced Lina's Level 10 talent
 * Fixed Fiery Soul (Lina) ambient effects
-* Cursed Gaze now gives more then double hp and has a new component in recipe instead of rapier(Ascetic's Cap)
-* Added 4 of the New dota items(WitchBane, Arcanist's armor, Brigand's blade and Ascetic's Cap)
+* Cursed Gaze now gives more than double hp and has a new component in the recipe instead of rapier(Ascetic's Cap)
+* Added 4 of the New dota items(WitchBane, Arcanist's armor, Brigand's blade, and Ascetic's Cap)
 * Updated a lot of weak or not useful talents that valve changed
+* CDR remains like this until next patches (% cdr does not stack and will only cont the biggest one)
+* Check description for commands
 
 
+* Fixed the auto upgrade of some lvl 1 items
 
 
 *Update patch notes23 can be found on the new map version:
