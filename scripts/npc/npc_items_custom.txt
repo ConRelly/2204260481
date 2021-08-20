@@ -21900,159 +21900,7 @@
 //			"01"			"item_earth_gem;item_earth_gem;item_fire_gem;item_fire_gem;item_life_gem;item_life_gem"
 		}
 	}
-// Gems to avoid auto Creation of items using a non existent item
-"item_earth_gem"
-{
-	"BaseClass"						"item_datadriven"
-	"AbilityTextureName"			""
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"ItemCost"						"250"
-	"ItemQuality"					"consumable"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemDroppable"					"1"
-	"ItemPurchasable"				"0"
-	"ItemSellable"					"1"
-	"ItemKillable"					"1"
-	"ItemPermanent"					"0"
-	"Model"							"models/props_gameplay/neutral_box.vmdl"
-}
 
-"item_fire_gem"
-{
-	"BaseClass"						"item_datadriven"
-	"AbilityTextureName"			""
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"ItemCost"						"250"
-	"ItemQuality"					"consumable"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemDroppable"					"1"
-	"ItemPurchasable"				"0"
-	"ItemSellable"					"1"
-	"ItemKillable"					"1"
-	"ItemPermanent"					"0"
-	"Model"							"models/props_gameplay/neutral_box.vmdl"
-}
-
-"item_life_gem"
-{
-	"BaseClass"						"item_datadriven"
-	"AbilityTextureName"			""
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"ItemCost"						"250"
-	"ItemQuality"					"consumable"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemDroppable"					"1"
-	"ItemPurchasable"				"0"
-	"ItemSellable"					"1"
-	"ItemKillable"					"1"
-	"ItemPermanent"					"0"
-	"Model"							"models/props_gameplay/neutral_box.vmdl"
-}
-"item_energy_gem"
-{
-	"BaseClass"						"item_datadriven"
-	"AbilityTextureName"			""
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"ItemCost"						"250"
-	"ItemQuality"					"consumable"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemDroppable"					"1"
-	"ItemPurchasable"				"0"
-	"ItemSellable"					"1"
-	"ItemKillable"					"1"
-	"ItemPermanent"					"0"
-	"Model"							"models/props_gameplay/neutral_box.vmdl"
-}
-"item_shadow_gem"
-{
-	"BaseClass"						"item_datadriven"
-	"AbilityTextureName"			""
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"ItemCost"						"250"
-	"ItemQuality"					"consumable"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemDroppable"					"1"
-	"ItemPurchasable"				"0"
-	"ItemSellable"					"1"
-	"ItemKillable"					"1"
-	"ItemPermanent"					"0"
-	"Model"							"models/props_gameplay/neutral_box.vmdl"
-}
-"item_light_gem"
-{
-	"BaseClass"						"item_datadriven"
-	"AbilityTextureName"			""
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"ItemCost"						"250"
-	"ItemQuality"					"consumable"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemDroppable"					"1"
-	"ItemPurchasable"				"0"
-	"ItemSellable"					"1"
-	"ItemKillable"					"1"
-	"ItemPermanent"					"0"
-	"Model"							"models/props_gameplay/neutral_box.vmdl"
-}
-"item_void_gem"
-{
-	"BaseClass"						"item_datadriven"
-	"AbilityTextureName"			""
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"ItemCost"						"250"
-	"ItemQuality"					"consumable"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemDroppable"					"1"
-	"ItemPurchasable"				"0"
-	"ItemSellable"					"1"
-	"ItemKillable"					"1"
-	"ItemPermanent"					"0"
-	"Model"							"models/props_gameplay/neutral_box.vmdl"
-}
-"item_air_gem"
-{
-	"BaseClass"						"item_datadriven"
-	"AbilityTextureName"			""
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"ItemCost"						"250"
-	"ItemQuality"					"consumable"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemDroppable"					"1"
-	"ItemPurchasable"				"0"
-	"ItemSellable"					"1"
-	"ItemKillable"					"1"
-	"ItemPermanent"					"0"
-	"Model"							"models/props_gameplay/neutral_box.vmdl"
-}
-"item_water_gem"
-{
-	"BaseClass"						"item_datadriven"
-	"AbilityTextureName"			""
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"ItemCost"						"250"
-	"ItemQuality"					"consumable"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemDroppable"					"1"
-	"ItemPurchasable"				"0"
-	"ItemSellable"					"1"
-	"ItemKillable"					"1"
-	"ItemPermanent"					"0"
-	"Model"							"models/props_gameplay/neutral_box.vmdl"
-}
-"item_ice_gem"
-{
-	"BaseClass"						"item_datadriven"
-	"AbilityTextureName"			""
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"ItemCost"						"250"
-	"ItemQuality"					"consumable"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemDroppable"					"1"
-	"ItemPurchasable"				"0"
-	"ItemSellable"					"1"
-	"ItemKillable"					"1"
-	"ItemPermanent"					"0"
-	"Model"							"models/props_gameplay/neutral_box.vmdl"
-}
 // Spells Require HP
 	"item_spells_req_hp"
 	{
@@ -23776,10 +23624,541 @@
 		}
 	}
 
+//#############--ELEMENTS--######################################################################################
+
+// Ice Orb
+	"item_ice"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/new/ice2.vmdl" 
+		"Effect"						"particles/custom/items/elements/ice/ice_return.vpcf"
+		"AbilityTextureName"			"custom/elements/element_ice"
+		"ItemCost"						"1000"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"1"
+		"ItemStockTime"					"999999"
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"0"
+		"ItemAliases"					"ice;element"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+	}
+
+// Fire Orb
+	"item_fire"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/new/fire.vmdl" 
+		"Effect"						"particles/custom/items/elements/fire/fire.vpcf"
+		"AbilityTextureName"			"custom/elements/element_fire"
+		"ItemCost"						"1000"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"1"
+		"ItemStockTime"					"999999"
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"0"
+		"ItemAliases"					"fire;element"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+	}
+
+// Water Orb
+	"item_water"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/new/water.vmdl" 
+		"Effect"						"particles/custom/items/elements/water/water.vpcf"
+		"AbilityTextureName"			"custom/elements/element_water"
+		"ItemCost"						"1000"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"1"
+		"ItemStockTime"					"999999"
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"0"
+		"ItemAliases"					"water;element"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+	}
+
+// Energy Orb
+	"item_energy"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/new/energy.vmdl"
+		"Effect"						"particles/units/heroes/hero_leshrac/leshrac_lightning_slow.vpcf"
+		"AbilityTextureName"			"custom/elements/element_energy"
+		"ItemCost"						"1000"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"1"
+		"ItemStockTime"					"999999"
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"0"
+		"ItemAliases"					"energy;element"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+	}
+
+// Earth Orb
+	"item_earth"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/new/earth.vmdl"
+		"Effect"						"particles/units/heroes/hero_templar_assassin/templar_assassin_trap_stone.vpcf"
+		"AbilityTextureName"			"custom/elements/element_earth"
+		"ItemCost"						"1000"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"1"
+		"ItemStockTime"					"999999"
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"0"
+		"ItemAliases"					"earth;element"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+	}
+
+// Life Orb
+	"item_life"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/new/life.vmdl"
+		"Effect"						"particles/items_fx/ironwood_tree.vpcf"
+		"AbilityTextureName"			"custom/elements/element_life"
+		"ItemCost"						"1000"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"1"
+		"ItemStockTime"					"999999"
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"0"
+		"ItemAliases"					"life;element"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+	}
+
+// Void Orb
+	"item_void"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/new/void.vmdl"
+		"Effect"						"particles/custom/items/elements/void/void.vpcf"
+		"AbilityTextureName"			"custom/elements/element_void"
+		"ItemCost"						"1000"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"1"
+		"ItemStockTime"					"999999"
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"0"
+		"ItemAliases"					"void;element"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+	}
+
+// Air Orb
+	"item_air"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/new/air.vmdl" 
+		"Effect"						"particles/custom/items/elements/air/air.vpcf"
+		"AbilityTextureName"			"custom/elements/element_air"
+		"ItemCost"						"1000"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"1"
+		"ItemStockTime"					"999999"
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"0"
+		"ItemAliases"					"air;element"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+	}
+
+// Light Orb
+	"item_light"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/new/light.vmdl" 
+		"Effect"						"particles/my_courier_trail_polycount_01.vpcf"
+		"AbilityTextureName"			"custom/elements/element_light"
+		"ItemCost"						"1000"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"1"
+		"ItemStockTime"					"999999"
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"0"
+		"ItemAliases"					"light;element"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+	}
+
+// Shadow Orb
+	"item_shadow"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/new/shadow.vmdl"
+		"Effect"						"particles/items2_fx/urn_of_shadows_orbs.vpcf"
+		"AbilityTextureName"			"custom/elements/element_shadow"
+		"ItemCost"						"1000"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"1"
+		"ItemStockTime"					"999999"
+		"ItemStockInitial"				"0"
+		"ItemStockMax"					"1"
+		"ItemInitialStockTime"			"0"
+		"ItemAliases"					"shadow;element"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+	}
+
+//#############--GEMS--##############################################################################
+
+// Light Gem
+	"item_light_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"custom/elements/gem_light"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+	}
+// Light Gem Recipe
+	"item_recipe_light_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_light_gem"
+		"ItemRequirements"
+		{
+			"01"						"item_light;item_light;item_light"
+		}
+	}
+
+// Earth Gem
+	"item_earth_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"custom/elements/gem_earth"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+	}
+// Earth Gem Recipe
+	"item_recipe_earth_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_earth_gem"
+		"ItemRequirements"
+		{
+			"01"						"item_earth;item_earth;item_earth"
+		}
+	}
+
+// Air Gem
+	"item_air_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"custom/elements/gem_air"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+	}
+// Air Gem Recipe
+	"item_recipe_air_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_air_gem"
+		"ItemRequirements"
+		{
+			"01"						"item_air;item_air;item_air"
+		}
+	}
+
+// Void Gem
+	"item_void_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"custom/elements/gem_void"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+	}
+// Void Gem Recipe
+	"item_recipe_void_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_void_gem"
+		"ItemRequirements"
+		{
+			"01"						"item_void;item_void;item_void"
+		}
+	}
+
+// Energy Gem
+	"item_energy_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"custom/elements/gem_energy"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+	}
+// Energy Gem Recipe
+	"item_recipe_energy_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_energy_gem"
+		"ItemRequirements"
+		{
+			"01"						"item_energy;item_energy;item_energy"
+		}
+	}
+
+// Water Gem
+	"item_water_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"custom/elements/gem_water"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+	}
+// Water Gem Recipe
+	"item_recipe_water_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_water_gem"
+		"ItemRequirements"
+		{
+			"01"						"item_water;item_water;item_water"
+		}
+	}
+
+// Ice Gem
+	"item_ice_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"custom/elements/gem_ice"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+	}
+// Ice Gem Recipe
+	"item_recipe_ice_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ice_gem"
+		"ItemRequirements"
+		{
+			"01"						"item_ice;item_ice;item_ice"
+		}
+	}
+
+// Shadow Gem
+	"item_shadow_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"custom/elements/gem_shadow"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+	}
+// Shadow Gem Recipe
+	"item_recipe_shadow_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_shadow_gem"
+		"ItemRequirements"
+		{
+			"01"						"item_shadow;item_shadow;item_shadow"
+		}
+	}
+
+// Life Gem
+	"item_life_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"custom/elements/gem_life"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+	}
+// Life Gem Recipe
+	"item_recipe_life_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_life_gem"
+		"ItemRequirements"
+		{
+			"01"						"item_life;item_life;item_life"
+		}
+	}
+
+// Fire Gem
+	"item_fire_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"custom/elements/gem_fire"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+	}
+// Fire Gem Recipe
+	"item_recipe_fire_gem"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_fire_gem"
+		"ItemRequirements"
+		{
+			"01"						"item_fire;item_fire;item_fire"
+		}
+	}
+
 //#############---UPGRADED-ITEMS---################################################################################
-
-
-
 
 // Upgraded Mjollnir
 	"item_upgraded_mjollnir"
