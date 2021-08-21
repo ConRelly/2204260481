@@ -1226,7 +1226,10 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Fixed the auto upgrade of some lvl 1 items
 
 
-*Update patch notes23 can be found on the new map version:
+* Fixed negative CD for bane ult with aghanim and few other small stuff.
+
+
+*Update patch notes25 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussion for links)
 

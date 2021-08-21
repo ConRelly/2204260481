@@ -9071,7 +9071,7 @@
 			"Boss Resistance"		   { "Item"		"item_boss_resistance_70" }
 			"Battlefly"			  { "Item"		 "item_mjz_butterfly_blue_5" }
 			"Battlefly"			  { "Item"		 "item_plain_ring" }
-			"Battlefly"			  { "Item"		 "item_rapier" }
+			"Battlefly"			  { "Item"		 "item_heavy_blade" }
 
 		}
 	   "AttachWearables"
@@ -10569,7 +10569,7 @@
 			"Burning Radiance"	   	{ "Item"		"item_burning_radiance" }
 			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_30" }
 			"Sphere" 					{ "Item" 		"item_sphere" } 	//林肯法球
-			"Divine Rapier"  			{ "Item"		"item_rapier"} 		//圣剑
+			"Divine Rapier"  			{ "Item"		"item_heavy_blade"} 		//圣剑
 			"Plain ring"  				{ "Item"		"item_plain_ring"} 	//相位鞋
 			
 		}

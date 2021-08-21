@@ -188,6 +188,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_bane_2"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"13850"
+			}
+		}
+	}	
 	"special_bonus_unique_bane_3"
 	{
 		"AbilitySpecial"
@@ -2496,13 +2507,13 @@
 	}
 	"bane_fiends_grip"
 	{
-		"AbilityCooldown"						"50 40 30"
+		"AbilityCooldown"						"95 85 75"
 		"AbilitySpecial"
 		{
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"fiend_grip_damage"				"800 2800 3800"
+				"fiend_grip_damage"				"800 2800 5900"
 			}
 		}
 	}
@@ -10532,7 +10543,7 @@
 	}
 	"undying_flesh_golem"
 	{
-		"AbilityCooldown"					"70 60 50"
+		"AbilityCooldown"					"100 90 80"
 		"AbilitySpecial"
 		{
 			"02"
