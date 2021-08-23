@@ -11041,6 +11041,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"max_hp"				"66"
 		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"ms_cap"				"969"
+		}
 	}
 }
 "bounty_hunter_custom_jinada"
@@ -21463,7 +21468,7 @@
 	}
 	"mjz_bloodseeker_rupture"
 	{
-		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/hero_bloodseeker/mjz_bloodseeker_rupture.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"

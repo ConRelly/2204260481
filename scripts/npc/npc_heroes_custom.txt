@@ -152,11 +152,6 @@
 	"Ability16"			"special_bonus_unique_grimstroke_custom_soulstore"
 	"AttributeIntelligenceGain"   "8.9"
 }
-"npc_dota_hero_invoker"
-{
-	"Ability18"				"special_bonus_spell_amplify_75"
-	"AttributeIntelligenceGain"		"14.500000"
-}
 "npc_dota_hero_jakiro"
 {
 	"Ability11"		"special_bonus_spell_amplify_35"
@@ -536,8 +531,8 @@
 		"UnitLabel"				"no_underdog"
 
 		"Ability1"				"bloodseeker_custom_thirst"
-		"Ability5"				"bloodseeker_custom_rampage"
 		"Ability3"				"mjz_bloodseeker_thirst"
+		"Ability5"				"bloodseeker_custom_rampage"
 		//"Ability4"				"mjz_bloodseeker_bloodrage_autocast"
 		"Ability6"				"mjz_bloodseeker_rupture"
 		"Ability10"				"special_bonus_unique_bloodseeker"
@@ -1385,14 +1380,17 @@
 	"npc_dota_hero_invoker_mjz"			//  卡尔
 	//=================================================================================================================
 	{
-		"override_hero"			"npc_dota_hero_invoker"
+		"override_hero"				"npc_dota_hero_invoker"
 		
-		"Ability17"			 "special_bonus_unique_invoker_5"
-		"Ability21"				"special_bonus_spell_amplify_125"
-		"Ability22"			 "special_bonus_unique_invoker_2"
-		"Ability23"			 "special_bonus_unique_invoker_6"
-		"Ability25"				"mjz_invoker_magic_master"
-		"Ability26"				"mjz_invoker_cataclysm"
+		"Ability17"					"special_bonus_unique_invoker_5"
+		"Ability18"					"special_bonus_spell_amplify_75"
+		"Ability21"					"special_bonus_spell_amplify_125"
+		"Ability22"					"special_bonus_unique_invoker_2"
+		"Ability23"					"special_bonus_unique_invoker_6"
+		"Ability25"					"mjz_invoker_magic_master"
+		"Ability26"					"mjz_invoker_cataclysm"
+
+		"AttributeIntelligenceGain"		"14.500000"
 	}
 	
 	//=================================================================================================================

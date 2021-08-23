@@ -19,14 +19,14 @@ function modifier_class:IsPurgable() return false end
 
 function modifier_class:DeclareFunctions()
 	local funcs = {
-		MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,			-- 冷却时间减少			
+--		MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,			-- 冷却时间减少			
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,		-- 技能增强
 		MODIFIER_PROPERTY_MANACOST_PERCENTAGE,          -- 魔法消耗和损失降低
 	}
 	return funcs
 end
 
-function modifier_class:GetModifierPercentageCooldown( )
+function modifier_class:GetCustomStackingCDR( )
 	if self:GetCaster():HasScepter() then
 		return self:GetAbility():GetSpecialValueFor('bonus_cooldown_scepter')
 	end

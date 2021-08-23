@@ -74,7 +74,7 @@ function modifier_item_mjz_preserved_skull_buff:OnCreated(kv)
 	self.aura_mana_regen = self:GetAbility():GetSpecialValueFor("aura_mana_regen")
 end
 function modifier_item_mjz_preserved_skull_buff:DeclareFunctions()
-	return {MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT}
+	return {MODIFIER_PROPERTY_MANA_REGEN_CONSTANT}
 end
 function modifier_item_mjz_preserved_skull_buff:GetModifierConstantManaRegen(params) return self.aura_mana_regen end
-function modifier_item_mjz_preserved_skull_buff:GetModifierPercentageCooldown(params) return self.cooldown_reduction_pct end
+function modifier_item_mjz_preserved_skull_buff:GetCustomStackingCDR() return self.cooldown_reduction_pct end

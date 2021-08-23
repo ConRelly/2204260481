@@ -226,9 +226,6 @@ function modifier_octarine_core_cdr:IsHidden() return true end
 function modifier_octarine_core_cdr:IsPurgable() return false end
 function modifier_octarine_core_cdr:RemoveOnDeath() return false end
 function modifier_octarine_core_cdr:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT end
-function modifier_octarine_core_cdr:DeclareFunctions()
-	return {MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE}
-end
 function modifier_octarine_core_cdr:GetModifierPureSpellLifesteal()
 	if self:GetCaster():HasModifier(ocratine3_eated) then
 		return 2
@@ -237,7 +234,7 @@ function modifier_octarine_core_cdr:GetModifierPureSpellLifesteal()
 		return self:GetAbility():GetSpecialValueFor("lifesteal")
 	end
 end
-function modifier_octarine_core_cdr:GetModifierPercentageCooldown()
+function modifier_octarine_core_cdr:GetCustomStackingCDR()
 	if self:GetCaster():HasModifier(ocratine3_eated) then
 		return 45
 	end

@@ -51,6 +51,7 @@ end
 modifier_gegenstrom = class({})
 function modifier_gegenstrom:IsHidden() return true end
 function modifier_gegenstrom:IsPurgable() return false end
+function modifier_gegenstrom:IsDebuff() return false end
 function modifier_gegenstrom:RemoveOnDeath() return false end
 --[[
 function modifier_gegenstrom:GetEffectName()
@@ -61,9 +62,6 @@ function modifier_gegenstrom:GetEffectAttachType()
 	return PATTACH_ABSORIGIN_FOLLOW
 end
 ]]
-function modifier_gegenstrom:OnCreated()
-	if IsServer() then if not self:GetAbility() then self:Destroy() end end
-end
 function modifier_gegenstrom:IsAura() return true end
 function modifier_gegenstrom:IsAuraActiveOnDeath() return false end
 function modifier_gegenstrom:GetAuraRadius()

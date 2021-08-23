@@ -57,11 +57,14 @@ end
 modifier_sourcery = class({})
 function modifier_sourcery:IsHidden() return (self:GetStackCount() == 0) end
 function modifier_sourcery:IsPurgable() return false end
+function modifier_sourcery:IsDebuff() return false end
 function modifier_sourcery:RemoveOnDeath() return false end
 function modifier_sourcery:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
 		local parent = self:GetParent()
 		if parent:IsIllusion() or parent:HasModifier("modifier_arc_warden_tempest_double") then Timers:CreateTimer(0.05, function() parent:RemoveSelf() end) parent:ForceKill(false) end
+		parent:SetUnitName("npc_dota_hero_piety")
+		parent:SetEntityName("npc_dota_hero_piety")
 		parent:SetDayTimeVisionRange(1600)
 		parent:SetNightTimeVisionRange(1600)
 		parent:SetPhysicalArmorBaseValue(10)
@@ -69,8 +72,6 @@ function modifier_sourcery:OnCreated()
 		parent:SetBaseHealthRegen(5)
 		parent:SetBaseManaRegen(5)
 
-		self.BaseMaxHealth = self:GetCaster():GetBaseMaxHealth()
-		self.BaseMaxMana = self:GetCaster():GetMaxMana()
 		self.MaxShields = self:GetAbility():GetSpecialValueFor("max_shields")
 		self.interval = self:GetAbility():GetSpecialValueFor("shield_interval")
 		self.Divine = false
@@ -147,23 +148,13 @@ function modifier_sourcery:DeclareFunctions()
 	MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_AVOID_DAMAGE, MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING, MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE}
 end
 function modifier_sourcery:GetModifierHealthBonus()
-	if self:GetAbility() then
-		if self.BaseMaxHealth < 1000 then
-			return (1000 - self.BaseMaxHealth)
-		end
-		return 0
-	end
+	if self:GetAbility() then return 194 end
 end
 function modifier_sourcery:GetModifierManaBonus()
-	if self:GetAbility() then
-		if self.BaseMaxMana < 750 then
-			return (750 - self.BaseMaxMana)
-		end
-		return 0
-	end
+	if self:GetAbility() then return 555 end
 end
 function modifier_sourcery:GetModifierTotalDamageOutgoing_Percentage(keys)
-	if self:GetAbility() then return -99999 end
+	if self:GetAbility() then return -400 end
 end
 function modifier_sourcery:GetModifierIncomingDamage_Percentage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("dmg_reduction") * (-1) end

@@ -1229,6 +1229,12 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Fixed negative CD for bane ult with aghanim and few other small stuff.
 
 
+* Added new items: Flaming Cape, Demonic Sword, Pipe of Dezun
+* Added new passive ability for Speedsters: Supersonic Strike
+* Partially introduced the old CDR (Preserved Skull, Octarine Core, The Master of Magic, Int CDR)
+* Fixed multiple errors after selling Drum of Endurance 2
+
+
 *Update patch notes25 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussion for links)

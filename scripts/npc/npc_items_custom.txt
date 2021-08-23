@@ -2623,29 +2623,38 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_agility"		"250"
+			"bonus_armor"			"20"
 		}
 		"05"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"		"10"
+			"var_type"				"FIELD_INTEGER"
+			"bonus_agility"			"250"
 		}
 		"06"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"		"250"
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"10"
 		}
 		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_intellect"		"250"
+			"bonus_strength"		"250"
 		}
 		"08"
 		{
 			"var_type"				"FIELD_INTEGER"
+			"bonus_intellect"		"250"
+		}
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
 			"bonus_movement"		"101"
 		}
-			
+		"10"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"ms_dmg_pct"			"50"
+		}
 	}
 }
 
@@ -21489,61 +21498,61 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"ItemPurchasable"				"0"
-		"AbilityCastRange"				"1050"
+		"AbilitySharedCooldown"			"glimmer_cape"
+		"ItemPurchasable"				"1"
+		"AbilityCastRange"				"1300"
 		"AbilityCooldown"				"14"
-		"AbilityManaCost"				"90"
-//		"ItemCost"						"3400"
+		"AbilityManaCost"				"150"
 		"ItemQuality"					"epic"
 		"ItemShopTags"					"magic_resist"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
 		"AbilitySpecial"
 		{
-			"05"
+			"1"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"5"
+				"bonus_armor"			"25"
 			}
-			"06"
+			"2"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_magic_resist"	"20"
+				"bonus_magic_resist"	"50"
 			}
-			"07"
+			"3"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fade_delay"			"0.4"
+				"fade_delay"			"0.3"
 			}
-			"08"
+			"4"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"active_magical_armor"	"70"
 			}
-			"09"
+			"5"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"4"
+				"duration"				"5"
 			}
-			"10"
+			"6"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_range"			"1050"
+				"aura_radius"			"1300"
 			}
-			"11"
+			"7"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"450"
+				"base_damage"			"10000"
 			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage"			"45"
-			}
-			"13"
+			"8"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"damage_interval"		"0.5"
+			}
+			"9"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"up_dmg"				"100"
 			}
 		}
 	}
@@ -21553,13 +21562,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"	
+		"ItemCost"						"10000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_flaming_cape"
 		"ItemRequirements"
 		{
-			"01"						"item_glimmer_cape*;item_cloak_of_flames"
+			"01"						"item_glimmer_cape*;item_cloak_of_flames;item_removed_skill"
 		}
 	}
 
@@ -30474,10 +30483,10 @@
 		"Model"							"models/props_gameplay/red_box.vmdl" 
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
 		"AbilityTextureName"			"custom/demonic_sword"
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
-		"ItemSellable"					"0"
-		"AbilityCastRange"				"800"
+		"ItemSellable"					"1"
+		"AbilityCastRange"				"1200"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemShopTags"					"damage"
@@ -30486,60 +30495,50 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilitySpecial"
 		{
-			"01"
+			"1"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"120"
+				"damage"				"300"
 			}
-			"02"
+			"2"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"800"
+				"armor"					"15"
 			}
-			"03"
+			"3"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dpt_aura"				"13"
+				"aura_radius"			"1200"
 			}
-			"04"
+			"4"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"armor"					"17"
+				"tick_interval"			"0.5"
 			}
-			"05"
+			"5"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp"					"700"
+				"duration"				"3"
 			}
-			"06"
+			"6"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tick_interval"			"0.2"
+				"dps"					"21000"
 			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"2"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dpt"					"30"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dps"					"150"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"blind_pct"				"20"
-			}
-			"11"
+			"7"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps_aura"				"80"
+				"dps_aura"				"7000"
+			}
+			"8"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dps_illusion_aura"		"15000"
+			}
+			"9"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blind_pct"				"50"
 			}
 		}
 	}
@@ -30549,13 +30548,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"5000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_demonic_sword"
 		"ItemRequirements"
 		{
-			"01"						"item_radiance;item_fire_sword_3"
+			"01"						"item_burning_radiance;item_mjz_radiance_5;item_fire_essence;item_fire_essence;item_fire_essence"
 		}
 	}
 
@@ -31585,15 +31584,14 @@
 		"Model"							"models/props_gameplay/red_box.vmdl" 
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
 		"AbilityTextureName"			"custom/pipe_of_dezun"
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
-		"ItemSellable"					"0"
+		"ItemSellable"					"1"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"AbilityCooldown"				"40"
 		"AbilityManaCost"				"100"
 		"AbilityCastPoint"				"0"
-		"AbilityCastRange"				"900"
 		"ItemQuality"					"epic"
 		"ItemAliases"					""
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -31602,42 +31600,57 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"as_aura"				"30"
+				"as_aura"				"200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_aura"				"400"
+				"mana_aura"				"3000"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"magic_resist_aura"		"30"
+				"magic_resist_aura"		"35"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"900"
+				"aura_radius"			"7200"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"hp_regen_aura"			"3"
+				"var_type"				"FIELD_FLOAT"
+				"active_aura_radius"	"1200"
 			}
 			"06"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"health_regen"			"10"
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen_aura"			"250"
 			}
 			"07"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"magic_resist"			"30"
+				"var_type"				"FIELD_FLOAT"
+				"health_regen"			"750"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"3"
+				"magic_resist"			"50"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"75"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"500"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"6"
 			}
 		}
 	}
@@ -31647,13 +31660,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"14969"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_pipe_of_dezun"
 		"ItemRequirements"
 		{
-			"01"						"item_pipe;item_ring_of_ice_3"
+			"01"						"item_pipe_2;item_all_essence;item_chest_5;item_black_king_bar"
 		}
 	}
 

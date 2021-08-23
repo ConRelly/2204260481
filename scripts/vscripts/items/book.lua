@@ -128,7 +128,6 @@ function modifier_spellbook_destruction_burn:GetModifierSpellAmplify_Percentage(
 	end
 	return 0
 end
--- particles/items_fx/abyssal_blade_crimson_impact_sparks.vpcf -- for break?
 
 -------------------------------------
 -- Spellbook: Destruction Modifier --
@@ -178,10 +177,9 @@ function modifier_spellbook_destruction_mana_drain:RemoveOnDeath() return false 
 function modifier_spellbook_destruction_mana_drain:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_spellbook_destruction_mana_drain:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
-		local mana_drain_interval = self:GetAbility():GetSpecialValueFor("mana_drain_interval")
-		local mana_drain_sec = self:GetCaster():GetMaxMana() * (self:GetAbility():GetSpecialValueFor("mana_drain_pct_sec") / 100)
-		self.mana_drain_per_interval = mana_drain_sec * mana_drain_interval
-		self:StartIntervalThink(mana_drain_interval)
+		self.mana_drain_interval = self:GetAbility():GetSpecialValueFor("mana_drain_interval")
+		self.mana_drain_sec = self:GetCaster():GetMaxMana() * (self:GetAbility():GetSpecialValueFor("mana_drain_pct_sec") / 100)
+		self:StartIntervalThink(self.mana_drain_interval)
 	end
 end
 function modifier_spellbook_destruction_mana_drain:OnIntervalThink()
@@ -189,8 +187,16 @@ function modifier_spellbook_destruction_mana_drain:OnIntervalThink()
 		if self:GetCaster():GetManaPercent() == 0 then
 			self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_elder_titan_echo_stomp", {duration = self:GetAbility():GetSpecialValueFor("mana_drain_sleep")})
 		end
-		self:GetCaster():ReduceMana(self.mana_drain_per_interval)
+		local mana_drain_per_interval = self.mana_drain_sec * self.mana_drain_interval
+		local mana_regen_red = self:GetCaster():GetManaRegen() * self.mana_drain_interval
+		self:GetCaster():ReduceMana(mana_drain_per_interval + (mana_regen_red * 0.95))
 	end
+end
+function modifier_spellbook_destruction_mana_drain:DeclareFunctions()
+	return {MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE}
+end
+function modifier_spellbook_destruction_mana_drain:GetModifierIncomingDamage_Percentage()
+	if self:GetAbility() then return self:GetParent():GetManaPercent() * (-1) end
 end
 function modifier_spellbook_destruction_mana_drain:CheckState()
 	return {[MODIFIER_STATE_MAGIC_IMMUNE] = true}

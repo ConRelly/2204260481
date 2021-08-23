@@ -26,7 +26,7 @@ function modifier_atr_fix:DeclareFunctions()
 		--MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
 		--MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
-        MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
+        --MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
         MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
         --MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MAX,
         MODIFIER_PROPERTY_STATUS_RESISTANCE,
@@ -55,7 +55,7 @@ function modifier_atr_fix:GetModifierSpellAmplify_Percentage()
     return amp
 end
 
-function modifier_atr_fix:GetModifierPercentageCooldown()
+function modifier_atr_fix:GetCustomStackingCDR()
 	local parent_int = self.parent:GetIntellect()
     local cdr = parent_int * 0.0025
     if cdr > 50 then

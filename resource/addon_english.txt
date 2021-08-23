@@ -97,7 +97,7 @@
 
 	"DOTA_Tooltip_ability_item_3blink"						"3Force Blink"
 	"DOTA_Tooltip_ability_item_3blink_Description"			"<h1>Active: True Power</h1> Instantly moves to the specified point at a distance of up to %max_blink_range%.<br><br>After moving the owner for %duration% seconds.:\n</font><font color='#B72C18'>Overwhelming: Deals damage equal to %dmg% + x%blast_multiplier% of the main attribute of the owner to all enemies within %radius% and slows their movement by %movement_slow%%% and their attack by %attack_slow%.<br>Slow duration: %duration% seconds.\n</font><font color='#42AC0A'>Swift: you gain %bonus_movement%%% phased movement speed, +%bonus_attack_speed% Attack Speed, and +%bonus_attack_damage% Attack Damage.\n</font><font color='#AB58D5'>Arcane: you gain %base_cooldown%%% Ability Cooldown Reduction and %cast_pct_improvement%%% Cast Point reduction.</font>\n<h1><font color='#0094FF'>UP: Aghanim's Shard</font></h1>Increases the maximum range by 800.\n<h1><font color='#0055FF'>UP: Aghanim's Scepter + Shard</font></h1>Allows you to move the entire distance without losing distance."
-	"DOTA_Tooltip_ability_item_3blink_Lore"			"Also, instead of Reaver, Eaglesong, and Mystic Staff, can be used Apex"
+	"DOTA_Tooltip_ability_item_3blink_note0"		"Also, instead of Reaver, Eaglesong, and Mystic Staff, can be used Apex."
 	"DOTA_Tooltip_ability_item_3blink_all"			"+$all"
 
 	"DOTA_Tooltip_ability_item_spells_req_hp"					"Spells Require HP"
@@ -242,14 +242,15 @@
 
 
 	"dota_tooltip_ability_item_flaming_cape"				"Flaming Cape"
-	"dota_tooltip_ability_item_flaming_cape_description"	"<h1>Active: Glimmer</h1> After a %fade_delay% second delay, grants invisibility and %active_magical_armor%%% magic resistance to you or a target allied unit for %duration% seconds.<br><br>Range: %abilitycastrange%<br><br>Can be cast while channelling.\n<h1>Passive: Wild Flames</h1>Burns enemy units for %base_damage% damage per second.<br>When Glimmer is active on the owner, damage from Wild Flames increases by x2.<br><br>Radius: %aura_radius%\n<h1><font color='#FFB247'>UP: Demonic Sword</font></h1>Increases Wild Flames damage by 50%%.<br>Applies the Wild Flames effect on an ally when Glimmer is active."
+	"dota_tooltip_ability_item_flaming_cape_description"	"<h1>Active: Glimmer</h1> After a %fade_delay% second delay, grants invisibility and %active_magical_armor%%% magic resistance to you or a target allied unit for %duration% seconds.<br><br>Range: %abilitycastrange%<br><br>Can be cast while channelling.\n<h1>Passive: Wild Flames</h1>Burns enemy units for %base_damage% magic damage per second.<br>When Glimmer is active on the owner, damage from Wild Flames increases by x2.<br><br>Radius: %aura_radius%\n<h1><font color='#FFB247'>UP: Demonic Blade</font></h1>Increases Wild Flames damage by %up_dmg%%%.<br>Applies the Wild Flames effect on an ally when Glimmer is active."
+	"DOTA_Tooltip_ability_item_flaming_cape_note0"				"Wild Flames doesn't work on Illusions, but the UP from Demonic Blade still works."
 	"dota_tooltip_ability_item_flaming_cape_bonus_armor"				"+$armor"
 	"dota_tooltip_ability_item_flaming_cape_bonus_magic_resist"			"%+$spell_resist"
-	"dota_tooltip_modifier_flaming_cape_up_radiance_flames"			"UP: Demonic Sword"
+	"dota_tooltip_modifier_flaming_cape_up_radiance_flames"			"UP: Demonic Blade"
 
 
 	"dota_tooltip_ability_item_spellbook_destruction"				"Spellbook: Destruction"
-	"dota_tooltip_ability_item_spellbook_destruction_description"	"<h1>Active: Destruction Mastery</h1>During the application, %mana_drain_pct_sec%%% of mana per second is burned. Channaling: %abilitychanneltime% sec.<br>After successful use, it burns the remaining mana, converting it into additional magic damage.<br><br>Damage: х2 Max Mana<br>Additional magic damage per burned mana: 2<br><br>If the mana for a successful application is not enough, the owner falls asleep on %mana_drain_sleep% sec. An ally can wake it up by hitting the owner."
+	"dota_tooltip_ability_item_spellbook_destruction_description"	"<h1>Active: Destruction Mastery</h1>During the application, %mana_drain_pct_sec%%% of mana per second is burned and increases Damage Resistance in proportion to the percentage of available mana. Channaling: %abilitychanneltime% sec.<br>After successful use, it burns the remaining mana, converting it into additional magic damage.<br><br>Damage: х2 Max Mana<br>Additional magic damage per burned mana: 2<br><br>If the mana for a successful application is not enough, the owner falls asleep on %mana_drain_sleep% sec. An ally can wake it up by hitting the owner."
 	"DOTA_Tooltip_modifier_elder_titan_echo_stomp"					"Sleeping"
 	"DOTA_Tooltip_modifier_elder_titan_echo_stomp_Description"		""
 
@@ -715,15 +716,17 @@
 	"DOTA_Tooltip_ability_item_ice_dagon_mana"				"+$mana"
 	"DOTA_Tooltip_ability_item_ice_dagon_hp"				"+$health"
 	
-	"DOTA_Tooltip_ability_item_demonic_sword"				"Demonic Sword"
-	"DOTA_Tooltip_ability_item_demonic_sword_Description"	"<h1>Passive: Burn</h1> Scorches enemies for %dps_aura% damage per second, and causes them to miss %blind_pct%%% of their attacks.<br><br>Radius: %aura_radius%\n<h1>Passive: Fire Attack</h1> Attacks ignite enemies for %duration% sec.<br><br>Burn damage per second: %dps%"
+	"DOTA_Tooltip_ability_item_demonic_sword"				"Demonic Blade"
+	"DOTA_Tooltip_ability_item_demonic_sword_Description"	"<h1>Passive: Hellfire</h1> Scorches enemies for %dps_aura% magic damage per second, and causes them to miss %blind_pct%%% of their attacks. Illusions deal %dps_illusion_aura% magical damage per second.<br><br>Radius: %aura_radius%\n<h1>Passive: Blazing Touch</h1>Attacks ignite enemies for %duration% sec.<br><br>Burn damage per second: %dps%"
 	"DOTA_Tooltip_ability_item_demonic_sword_Lore"	"A demonic sword that surrounds the wearer with a bright glow that turns all surrounding enemies to ash."
+	"DOTA_Tooltip_ability_item_demonic_note0"			"1) Blazing Touch does not work on illusions."
+	"DOTA_Tooltip_ability_item_demonic_note0"			"2) Hellfire effect stacks from multiple sources."
 	"DOTA_Tooltip_ability_item_demonic_sword_damage"		"+$damage"
 	"DOTA_Tooltip_ability_item_demonic_sword_armor"			"+$armor"
 	"DOTA_Tooltip_ability_item_demonic_sword_hp"			"+$health"
-	"DOTA_Tooltip_modifier_demonic_sword_burn_aura"				"Burn"
+	"DOTA_Tooltip_modifier_demonic_sword_burn_aura"				"Hellfire Burn"
 	"DOTA_Tooltip_modifier_demonic_sword_burn_aura_Description"	"Deals damage once per second"
-	"DOTA_Tooltip_modifier_demonic_sword_burn"					"Burn Attack"
+	"DOTA_Tooltip_modifier_demonic_sword_burn"					"Blazing Touch"
 	"DOTA_Tooltip_modifier_demonic_sword_burn_Description"		"Deals damage once per second"
 	
 	"DOTA_Tooltip_ability_item_life_greaves"				"Life Greaves"
@@ -845,9 +848,11 @@
 	"DOTA_Tooltip_modifier_spirit_guardian_bonus_dmg_Description"	"Guardian deals bonus dmg base on your Level multiplied with the Stacks."
 
 	"DOTA_Tooltip_Ability_item_pipe_of_dezun"				"Pipe Of Dezun"
-	"DOTA_Tooltip_Ability_item_pipe_of_dezun_Description"	"<h1>Active: Dezun's Immunity</h1>Within a radius of %aura_radius% from the owner gives allies Spell Immunity for %duration% seconds.\n<h1>Passive: Pipe Of Dezun Aura</h1>+ %hp_regen_aura% Health Regen<br>+ %magic_resist_aura%%% Magic Resistance<br>+ %mana_aura% Mana<br>+ %as_aura% Attack Speed<br><br>Radius: %aura_radius%"
+	"DOTA_Tooltip_Ability_item_pipe_of_dezun_Description"	"<h1>Active: Dezun's Immunity</h1>Within a radius of %active_aura_radius% from the owner gives allies Spell Immunity for %duration% seconds.\n<h1><font color='#814417'>UP: Attribute Mail</font></h1>Allows you to reduce the cooldown by CDR. \n<h1>Passive: Pipe Of Dezun Aura</h1>+ %hp_regen_aura% Health Regen<br>+ %magic_resist_aura%%% Magic Resistance<br>+ %mana_aura% Mana<br>+ %as_aura% Attack Speed<br><br>Radius: %aura_radius%"
 	"DOTA_Tooltip_ability_item_pipe_of_dezun_magic_resist"		"%+$spell_resist"
 	"DOTA_Tooltip_Ability_item_pipe_of_dezun_health_regen"		"+$hp_regen"
+	"DOTA_Tooltip_Ability_item_pipe_of_dezun_bonus_strength"	"+$str"
+	"DOTA_Tooltip_Ability_item_pipe_of_dezun_bonus_all_stats"	"+$all"
 	"DOTA_Tooltip_modifier_pipe_of_dezun_aura"				"Pipe Of Dezun Aura"
 	"DOTA_Tooltip_modifier_pipe_of_dezun_aura_Description"	"Increases Magic Resistance by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%, Health Regeneration by %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%, Attack Speed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% and Mana by %dMODIFIER_PROPERTY_MANA_BONUS%"
 	"DOTA_Tooltip_modifier_pipe_of_dezun_magic_immune_buff"					"Dezun's Immunity"
@@ -2228,8 +2233,8 @@
 	"DOTA_Tooltip_ability_mjz_bloodseeker_rupture_Description"		"Increase outgoing damage %damage_increase_outgoing_pct%%%."
 	"DOTA_Tooltip_ability_mjz_bloodseeker_rupture_Lore"				""
 	"DOTA_Tooltip_ability_mjz_bloodseeker_rupture_damage_increase_outgoing_pct"				"%OUTGOING DAMAGE INCREASE:"
-	"DOTA_Tooltip_ability_special_bonus_unique_mjz_bloodseeker_rupture_01"					"+{s:value}% Rupture Damage"
-		
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_bloodseeker_rupture_01"			"+{s:value}% Rupture Outgoing Damage"
+
 	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst"					"Thirst"
 	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_Description"		"Bloodseeker is invigorated by the wounds of his enemies. Gains bonus movement speed, attack speed and attack damage when using abilities.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Thirst stacks will be given when items are used by the owner.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Gains 1 Thirst stack when ally use ability or item."
 	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_Lore"				"Strygwyr becomes frenzied when blood is spilled."
@@ -5623,6 +5628,7 @@ Upgradeable by Aghanim's Scepter."
 "DOTA_Tooltip_Ability_bloodseeker_custom_rampage_duration"						"DURATION:"
 "DOTA_Tooltip_Ability_bloodseeker_custom_rampage_increased_damage"				"%BONUS DAMAGE:"
 "DOTA_Tooltip_Ability_bloodseeker_custom_rampage_max_hp"						"%HEALTH CAP:"
+"DOTA_Tooltip_Ability_bloodseeker_custom_rampage_ms_cap"						"MOVEMENT SPEED SET:"
 
 
 "DOTA_Tooltip_modifier_bloodseeker_custom_rampage"							  "Rampage"
@@ -6999,11 +7005,12 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_modifier_item_high_tech_boots_active_Description"		"Temporarily evading a portion of all damage."
 
 "DOTA_Tooltip_ability_item_high_tech_boots2"							 "Speedsters"
-"DOTA_Tooltip_ability_item_high_tech_boots2_Description"					"<h1>Active: Speed Force</h1> Avoids a portion of all incoming damage equal to %speed_as_block%%% of your movement speed for %duration% seconds.\n<h1>Passive: Speedster</h1>Removes speed limit, and cannot be slowed or blocked by units."
+"DOTA_Tooltip_ability_item_high_tech_boots2_Description"					"<h1>Active: Speed Force</h1> Avoids a portion of all incoming damage equal to %speed_as_block%%% of your movement speed for %duration% seconds.\n<h1>Passive: Speedster</h1>Removes speed limit, and cannot be slowed or blocked by units.\n<h1>Passive: Supersonic Strike</h1>%ms_dmg_pct%%% of Movement Speed is transferred to Attack Damage."
 "DOTA_Tooltip_ability_item_high_tech_boots2_Lore"						"Theorized to move the universe rather than move you."
 "DOTA_Tooltip_ability_item_high_tech_boots2_Note0"					  "Your turn rate will be set to 1(highest turn rate)"
 "DOTA_Tooltip_ability_item_high_tech_boots2_bonus_movement_speed"	"+$move_speed"
 "DOTA_Tooltip_ability_item_high_tech_boots2_bonus_evasion"			"%+$evasion"
+"DOTA_Tooltip_ability_item_high_tech_boots2_bonus_armor"			"+$armor"
 "DOTA_Tooltip_ability_item_high_tech_boots2_bonus_agility"			"+$agi"
 "DOTA_Tooltip_ability_item_high_tech_boots2_bonus_intellect"		"+$int"
 "DOTA_Tooltip_ability_item_high_tech_boots2_bonus_strength"			"+$str"
@@ -7020,9 +7027,9 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_ability_item_ancient_janggo_2_bonus_all_stats"				"+$all"
 "DOTA_Tooltip_ability_item_ancient_janggo_2_bonus_mana_regen"				"+$mana_regen"
 "DOTA_Tooltip_modifier_item_ancient_janggo_2_buff"					"Swiftness Aura"
-"DOTA_Tooltip_modifier_item_ancient_janggo_2_buff_Description"		"Increases your Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE% and Attack Speed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+"DOTA_Tooltip_modifier_item_ancient_janggo_2_buff_Description"		"Increases your Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and Attack Speed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 "DOTA_Tooltip_modifier_item_ancient_janggo_2_active_buff"					"Endurance"
-"DOTA_Tooltip_modifier_item_ancient_janggo_2_active_buff_Description"		"Temporarily increases Movement Speed by %MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% and Attack Speed by %MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+"DOTA_Tooltip_modifier_item_ancient_janggo_2_active_buff_Description"		"Temporarily increases Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and Attack Speed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 
 
 "DOTA_Tooltip_Ability_item_recipe_maiar_pendant"			   "Recipe: Maiar Pendant"

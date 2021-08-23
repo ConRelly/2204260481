@@ -105,10 +105,6 @@ function ChangeHero(keys)
 			caster:RemoveAbility("special_bonus_spell_block_18")
 		end
 
--- Attributes
-		caster:SetUnitName("npc_dota_hero_piety")
-		caster:SetEntityName("npc_dota_hero_piety")
-
 -- Change Ranged Projectile Attack Effect
 		caster:SetRangedProjectileName("particles/custom/abilities/sourcery/sourcery_attack_effect.vpcf")
 	end

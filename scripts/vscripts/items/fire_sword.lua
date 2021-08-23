@@ -32,7 +32,7 @@ function modifier_fire_sword_1:OnAttackLanded(keys)
 		local target = keys.target
 		if owner ~= keys.attacker then return end
 		local ability = self:GetAbility()
-		Burn(owner, target, ability, "modifier_fire_sword_1_burn", ability:GetSpecialValueFor("duration"))
+		target:AddNewModifier(owner, ability, "modifier_fire_sword_1_burn", {duration = ability:GetSpecialValueFor("duration") * (1 - target:GetStatusResistance())})
 	end
 end
 -------------------
@@ -104,7 +104,7 @@ function modifier_fire_sword_2:OnAttackLanded(keys)
 		local target = keys.target
 		if owner ~= keys.attacker then return end
 		local ability = self:GetAbility()
-		Burn(owner, target, ability, "modifier_fire_sword_2_burn", ability:GetSpecialValueFor("duration"))
+		target:AddNewModifier(owner, ability, "modifier_fire_sword_2_burn", {duration = ability:GetSpecialValueFor("duration") * (1 - target:GetStatusResistance())})
 	end
 end
 --------------------
@@ -176,7 +176,7 @@ function modifier_fire_sword_3:OnAttackLanded(keys)
 		local target = keys.target
 		if owner ~= keys.attacker then return end
 		local ability = self:GetAbility()
-		Burn(owner, target, ability, "modifier_fire_sword_3_burn", ability:GetSpecialValueFor("duration"))
+		target:AddNewModifier(owner, ability, "modifier_fire_sword_3_burn", {duration = ability:GetSpecialValueFor("duration") * (1 - target:GetStatusResistance())})
 	end
 end
 --------------------
@@ -234,7 +234,7 @@ function modifier_demonic_sword:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 end
 function modifier_demonic_sword:DeclareFunctions()
-	return { MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_EVENT_ON_ATTACK_LANDED }
+	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_EVENT_ON_ATTACK_LANDED}
 end
 function modifier_demonic_sword:GetModifierPreAttack_BonusDamage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("damage") end
@@ -242,16 +242,12 @@ end
 function modifier_demonic_sword:GetModifierPhysicalArmorBonus()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("armor") end
 end
-function modifier_demonic_sword:GetModifierHealthBonus()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp") end
-end
 function modifier_demonic_sword:OnAttackLanded(keys)
 	if IsServer() then
 		local owner = self:GetParent()
-		local target = keys.target
 		if owner ~= keys.attacker then return end
-		local ability = self:GetAbility()
-		Burn(owner, target, ability, "modifier_demonic_sword_burn", ability:GetSpecialValueFor("duration"))
+		if owner:IsIllusion() then return end
+		keys.target:AddNewModifier(owner, self:GetAbility(), "modifier_demonic_sword_burn", {duration = self:GetAbility():GetSpecialValueFor("duration")})
 	end
 end
 function modifier_demonic_sword:IsAura() return true end
@@ -274,7 +270,7 @@ function modifier_demonic_sword_burn:IsPurgable() return true end
 function modifier_demonic_sword_burn:RemoveOnDeath() return true end
 function modifier_demonic_sword_burn:OnCreated(kv)
 	self.tick_interval = self:GetAbility():GetSpecialValueFor("tick_interval")
-	self.dpt = self:GetAbility():GetSpecialValueFor("dpt")
+	self.dps = self:GetAbility():GetSpecialValueFor("dps")
 	if IsServer() then
 		if not self:GetAbility() then self:Destroy() end
 		self.burn = ParticleManager:CreateParticle("particles/units/heroes/hero_phoenix/phoenix_fire_spirit_burn.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
@@ -288,7 +284,7 @@ function modifier_demonic_sword_burn:OnIntervalThink()
 		victim = self:GetParent(),
 		attacker = self:GetCaster(),
 		ability = self:GetAbility(),
-		damage = self.dpt,
+		damage = self.dps * self.tick_interval,
 		damage_type = DAMAGE_TYPE_MAGICAL
 	})
 end
@@ -305,6 +301,7 @@ if modifier_demonic_sword_burn_aura == nil then modifier_demonic_sword_burn_aura
 function modifier_demonic_sword_burn_aura:IsHidden() return false end
 function modifier_demonic_sword_burn_aura:IsDebuff() return true end
 function modifier_demonic_sword_burn_aura:IsPurgable() return false end
+function modifier_demonic_sword_burn_aura:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_demonic_sword_burn_aura:DeclareFunctions()
 	return {MODIFIER_PROPERTY_MISS_PERCENTAGE}
 end
@@ -313,7 +310,10 @@ function modifier_demonic_sword_burn_aura:GetModifierMiss_Percentage()
 end
 function modifier_demonic_sword_burn_aura:OnCreated(kv)
 	self.tick_interval = self:GetAbility():GetSpecialValueFor("tick_interval")
-	self.dpt_aura = self:GetAbility():GetSpecialValueFor("dpt_aura")
+	self.dps_aura = self:GetAbility():GetSpecialValueFor("dps_aura")
+	if self:GetCaster():IsIllusion() then
+		self.dps_aura = self:GetAbility():GetSpecialValueFor("dps_illusion_aura")
+	end
 	if IsServer() then
 		if not self:GetAbility() then self:Destroy() end
 		self.burn = ParticleManager:CreateParticle("particles/items2_fx/radiance.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
@@ -327,7 +327,7 @@ function modifier_demonic_sword_burn_aura:OnIntervalThink()
 		victim = self:GetParent(),
 		attacker = self:GetCaster(),
 		ability = self:GetAbility(),
-		damage = self.dpt_aura,
+		damage = self.dps_aura,
 		damage_type = DAMAGE_TYPE_MAGICAL
 	})
 end
@@ -336,11 +336,4 @@ function modifier_demonic_sword_burn_aura:OnDestroy()
 		ParticleManager:DestroyParticle(self.burn, false)
 		ParticleManager:ReleaseParticleIndex(self.burn)
 	end
-end
-
-
-
-
-function Burn(attacker, target, ability, modifier_name, duration)
-	target:AddNewModifier(attacker, ability, modifier_name, {duration = duration * (1 - target:GetStatusResistance())})
 end

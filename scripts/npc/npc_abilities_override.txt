@@ -17745,6 +17745,7 @@
 // Glimmer Cape
 	"item_glimmer_cape"
 	{
+		"AbilitySharedCooldown"			"glimmer_cape"
 		"AbilitySpecial"
 		{			
 			"01"

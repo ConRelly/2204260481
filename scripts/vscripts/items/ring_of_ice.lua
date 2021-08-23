@@ -146,20 +146,27 @@ LinkLuaModifier("modifier_pipe_of_dezun_magic_immune_buff", "items/ring_of_ice.l
 LinkLuaModifier("modifier_pipe_of_dezun_aura", "items/ring_of_ice.lua", LUA_MODIFIER_MOTION_NONE)
 if item_pipe_of_dezun == nil then item_pipe_of_dezun = class({}) end
 function item_pipe_of_dezun:GetIntrinsicModifierName() return "modifier_pipe_of_dezun" end
+function item_pipe_of_dezun:IsMuted()
+	if self:GetParent():IsRealHero() then
+		return false
+	end
+	return true
+end
+function item_pipe_of_dezun:GetCooldown(level)
+	if self:GetCaster():HasModifier("modifier_item_mjz_attribute_mail") then
+		return self.BaseClass.GetCooldown(self, level)
+	end
+	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
+end
+function item_pipe_of_dezun:GetCastRange(location, target) return self:GetSpecialValueFor("active_aura_radius") end
 function item_pipe_of_dezun:OnSpellStart()
 	local caster = self:GetCaster()
 	local duration = self:GetSpecialValueFor("duration")
 	local radius = self:GetSpecialValueFor("aura_radius")
-	local activation_particle = "particles/items2_fx/pipe_of_insight_launch.vpcf"
 	caster:EmitSound("DOTA_Item.Pipe.Activate")
-	local particle = ParticleManager:CreateParticle(activation_particle, PATTACH_ABSORIGIN, caster)
+	local particle = ParticleManager:CreateParticle("particles/items2_fx/pipe_of_insight_launch.vpcf", PATTACH_ABSORIGIN, caster)
 	ParticleManager:ReleaseParticleIndex(particle)
 
---[[	local allies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD + DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
-
-	for _, unit in pairs(allies) do
-		unit:AddNewModifier(caster, self, "modifier_black_king_bar_immune", {duration = duration})
-	end]]
 	caster:AddNewModifier(caster, self, "modifier_pipe_of_dezun_magic_immune_aura", {duration = duration})
 end
 
@@ -169,13 +176,22 @@ function modifier_pipe_of_dezun:IsHidden() return true end
 function modifier_pipe_of_dezun:IsPurgable() return false end
 function modifier_pipe_of_dezun:RemoveOnDeath() return false end
 function modifier_pipe_of_dezun:DeclareFunctions()
-	return {MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT, MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS}
+	return {MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT, MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS}
 end
 function modifier_pipe_of_dezun:GetModifierMagicalResistanceBonus()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("magic_resist") end
 end
 function modifier_pipe_of_dezun:GetModifierConstantHealthRegen()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("health_regen") end
+end
+function modifier_pipe_of_dezun:GetModifierBonusStats_Strength()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") + self:GetAbility():GetSpecialValueFor("bonus_strength") end
+end
+function modifier_pipe_of_dezun:GetModifierBonusStats_Agility()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
+end
+function modifier_pipe_of_dezun:GetModifierBonusStats_Intellect()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
 end
 function modifier_pipe_of_dezun:IsAura() return true end
 function modifier_pipe_of_dezun:IsAuraActiveOnDeath() return false end

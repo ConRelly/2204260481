@@ -10,6 +10,9 @@ LinkLuaModifier("modifier_flaming_cape_up_radiance_flames_burn", "items/flaming_
 ------------------
 if item_flaming_cape == nil then item_flaming_cape = class({}) end
 function item_flaming_cape:GetIntrinsicModifierName() return "modifier_flaming_cape" end
+function item_flaming_cape:GetCooldown(level)
+	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
+end
 function item_flaming_cape:OnSpellStart()
 	if not IsServer() then return end
 	local target = self:GetCursorTarget()
@@ -115,7 +118,12 @@ if modifier_flaming_cape_flames_aura == nil then modifier_flaming_cape_flames_au
 function modifier_flaming_cape_flames_aura:IsHidden() return true end
 function modifier_flaming_cape_flames_aura:IsDebuff() return false end
 function modifier_flaming_cape_flames_aura:IsPurgable() return false end
-function modifier_flaming_cape_flames_aura:IsAura() return true end
+function modifier_flaming_cape_flames_aura:IsAura()
+	if self:GetParent():IsIllusion() then
+		return false
+	end
+	return true
+end
 function modifier_flaming_cape_flames_aura:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
 function modifier_flaming_cape_flames_aura:GetAuraSearchType() return DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO end
 function modifier_flaming_cape_flames_aura:GetModifierAura() return "modifier_flaming_cape_flames_burn" end
@@ -166,7 +174,7 @@ end
 -- UP Radiance Aura --
 ----------------------
 if modifier_flaming_cape_up_radiance_flames == nil then modifier_flaming_cape_up_radiance_flames = class({}) end
-function modifier_flaming_cape_up_radiance_flames:IsHidden() return false end
+function modifier_flaming_cape_up_radiance_flames:IsHidden() return true end
 function modifier_flaming_cape_up_radiance_flames:IsDebuff() return false end
 function modifier_flaming_cape_up_radiance_flames:IsPurgable() return false end
 function modifier_flaming_cape_up_radiance_flames:IsAura() return true end
@@ -202,7 +210,7 @@ function modifier_flaming_cape_up_radiance_flames_burn:GetAttributes() return MO
 function modifier_flaming_cape_up_radiance_flames_burn:OnCreated()
 	if not self:GetAbility() then self:Destroy() return end
 	self.damage_interval = self:GetAbility():GetSpecialValueFor("damage_interval")
-	self.base_damage = self:GetAbility():GetSpecialValueFor("base_damage") * 1.5 * self.damage_interval
+	self.base_damage = self:GetAbility():GetSpecialValueFor("base_damage") * (1 + (self:GetAbility():GetSpecialValueFor("up_dmg") / 100)) * self.damage_interval
 	if IsServer() then
 		self.burn = ParticleManager:CreateParticle("particles/custom/items/flaming_cape/flaming_cape_burn.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 		ParticleManager:SetParticleControl(self.burn, 0, self:GetParent():GetAbsOrigin())
