@@ -1232,6 +1232,7 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Added new items: Flaming Cape, Demonic Sword, Pipe of Dezun
 * Added new passive ability for Speedsters: Supersonic Strike
 * Partially introduced the old CDR (Preserved Skull, Octarine Core, The Master of Magic, Int CDR)
+* Visage lvl 3 birds now have 50% more base hp and fixed numbers for a lvl 20 talent
 * Fixed multiple errors after selling Drum of Endurance 2
 
 

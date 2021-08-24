@@ -21542,12 +21542,12 @@
 			"7"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage"			"10000"
+				"base_damage"			"12500"
 			}
 			"8"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_interval"		"0.5"
+				"damage_interval"		"1.0"
 			}
 			"9"
 			{
@@ -21562,7 +21562,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"10000"
+		"ItemCost"						"16000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_flaming_cape"
@@ -30513,7 +30513,7 @@
 			"4"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"tick_interval"			"0.5"
+				"tick_interval"			"1"
 			}
 			"5"
 			{
@@ -30540,6 +30540,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"blind_pct"				"50"
 			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"current_hp_damage"			"1.0"
+			}			
 		}
 	}
 // Demonic Sword Recipe

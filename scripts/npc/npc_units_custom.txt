@@ -9817,7 +9817,7 @@
 	"AttackDamageMax"			"1685"			// Damage range max.
 	"AttackRange"			   "1500"
 	"AttackAcquisitionRange"	"2000"
-	"StatusHealth"				"500"		// Base health.
+	"StatusHealth"				"750"		// Base health.
 	"StatusHealthRegen"			"5.0"		// Health regeneration rate.
 	//"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 }

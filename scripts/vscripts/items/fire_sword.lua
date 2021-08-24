@@ -271,6 +271,7 @@ function modifier_demonic_sword_burn:RemoveOnDeath() return true end
 function modifier_demonic_sword_burn:OnCreated(kv)
 	self.tick_interval = self:GetAbility():GetSpecialValueFor("tick_interval")
 	self.dps = self:GetAbility():GetSpecialValueFor("dps")
+	self.hp_dmg = self:GetAbility():GetSpecialValueFor("current_hp_damage")
 	if IsServer() then
 		if not self:GetAbility() then self:Destroy() end
 		self.burn = ParticleManager:CreateParticle("particles/units/heroes/hero_phoenix/phoenix_fire_spirit_burn.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
@@ -280,11 +281,14 @@ function modifier_demonic_sword_burn:OnCreated(kv)
 	end
 end
 function modifier_demonic_sword_burn:OnIntervalThink()
+	local parent = self:GetParent()
+	local current_hp = parent:GetHealth()
+	local bonus_dmg = math.floor(current_hp * (self.hp_dmg /100))
 	ApplyDamage({
 		victim = self:GetParent(),
 		attacker = self:GetCaster(),
 		ability = self:GetAbility(),
-		damage = self.dps * self.tick_interval,
+		damage = (self.dps + bonus_dmg) * self.tick_interval,
 		damage_type = DAMAGE_TYPE_MAGICAL
 	})
 end
