@@ -2045,13 +2045,13 @@
 
 		//"Ability5"			"mjz_general_mirror_image"
 		//"Ability6"			"mjz_winter_wyvern_ice_age"
-		"Ability6"			"sniper_take_aim"
+		"Ability6"			"obsidian_destroyer_arcane_orb"
 		"Ability12"			"special_bonus_hp_2750"
 		"Ability15"         "special_bonus_spell_amplify_75"
-		"Ability16"			"special_bonus_lifesteal_15"
+		"Ability16"			"special_bonus_mp_800"
 		"Ability17"			"special_bonus_attack_speed_250"
 
-		"AttributeIntelligenceGain"		"6.1"
+		"AttributeIntelligenceGain"		"9.1"
 		"AttributeAgilityGain"			"4.7"
 	}
 
@@ -2233,6 +2233,49 @@
 		"VoiceFile"						"soundevents/voscripts/game_sounds_vo_lina.vsndevts"
 		"particle_folder"				"particles/units/heroes/hero_lina"
 		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+	}
+
+
+
+	"npc_dota_hero_earth_spirit"
+	{
+
+		"ModelScale"		"0.850000"
+		"VersusScale"		"0.450000"
+		"VoiceFile"		"soundevents/voscripts/game_sounds_vo_earth_spirit.vsndevts"
+		"Ability1"		"monkey_king_custom_jingu_mastery"
+		"Ability2"		"earth_spirit_rolling_boulder"
+		"Ability3"		"earth_spirit_geomagnetic_grip"
+		"Ability4"		"earth_spirit_stone_caller"
+		"Ability5"		"earth_spirit_petrify"
+		"Ability6"		"mjz_storm_spirit_ball_lightning"
+
+		"Ability10"		"special_bonus_unique_earth_spirit_4"
+		"Ability11"		"special_bonus_gold_income_300"
+		"Ability12"		"special_bonus_unique_earth_spirit_7"
+		"Ability13"		"special_bonus_unique_earth_spirit"
+		"Ability14"		"special_bonus_hp_5000"
+		"Ability15"		"special_bonus_unique_earth_spirit_5"
+		"Ability16"		"special_bonus_unique_earth_spirit_2"
+		"Ability17"		"special_bonus_spell_amplify_125"
+		"ArmorPhysical"		"6.00000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"25"
+		"AttackDamageMax"		"35"
+		"AttackRate"		"1.500000"
+		"AttackAnimationPoint"		"0.350000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"250"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"32"
+		"AttributeStrengthGain"		"9.400000"
+		"AttributeBaseAgility"		"17"
+		"AttributeAgilityGain"		"5.400000"
+		"AttributeBaseIntelligence"		"20"
+		"AttributeIntelligenceGain"		"5.700000"
+		"MovementSpeed"		"320"
+		"HasAggressiveStance"		"1"
+		"VisionDaytimeRange"		"2800"
 	}
 
 

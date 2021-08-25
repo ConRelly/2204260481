@@ -1138,6 +1138,76 @@
 		"AbilityCastGestureSlot"		"DEFAULT"
 		
 	}
+	//=================================================================================================================
+	// Huskar: Inner Fire
+	//=================================================================================================================
+	"huskar_inner_fire_custom"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "huskar_inner_fire"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"					
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"   
+		"AbilitySound"					"Hero_Huskar.Inner_Vitality"
+		"LevelsBetweenUpgrades"     "5"
+		"HasShardUpgrade"			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.2"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14 13 12 11"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75 100 125 150"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// already gets credit for the healing
+
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"250 970 2420 7310"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"700"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"disarm_duration"		"1.75 2.5 3.25 4"
+				"LinkedSpecialBonus"			"special_bonus_unique_huskar_3"
+
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_distance"	"400"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"	"1"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}	
+
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -20218,6 +20288,9 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
+
+
+
 	"golden_mine_passive_old"
 	{
 		"BaseClass"						"ability_datadriven"
@@ -31919,7 +31992,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agi"			"10 25 35 50 65 80 100"
+				"bonus_agi"				"20 45 65 80 105 120 150"
 			}
 			"02"
 			{
@@ -31929,7 +32002,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"			"10 25 35 50 65 80 150"
+				"bonus_hp"				"40 65 85 105 120 155 210"
 			}
 			"04"
 			{
@@ -31939,12 +32012,12 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_range"			"10 11 12 13 14 15 20"
+				"bonus_range"			"10 11 12 13 14 15 17"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_stacks"			"10"
+				"max_stacks"			"13"
 				// "LinkedSpecialBonus"	"special_bonus_unique_troll_warlord_2"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_troll_warlord_fervor_stacks"
 			}															

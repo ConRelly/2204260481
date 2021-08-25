@@ -147,7 +147,8 @@ LinkLuaModifier("modifier_pipe_of_dezun_aura", "items/ring_of_ice.lua", LUA_MODI
 if item_pipe_of_dezun == nil then item_pipe_of_dezun = class({}) end
 function item_pipe_of_dezun:GetIntrinsicModifierName() return "modifier_pipe_of_dezun" end
 function item_pipe_of_dezun:IsMuted()
-	if self:GetParent():IsRealHero() then
+	if not IsServer() then return end
+	if IsValidEntity(self:GetParent()) and self:GetParent():IsRealHero() then
 		return false
 	end
 	return true

@@ -1233,6 +1233,8 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Added new passive ability for Speedsters: Supersonic Strike
 * Partially introduced the old CDR (Preserved Skull, Octarine Core, The Master of Magic, Int CDR)
 * Visage lvl 3 birds now have 50% more base hp and fixed numbers for a lvl 20 talent
+* Earth spirit Ult and Q swaped with other skills and 2 of his talents and some of his stats buffed.
+* Winter Wyvern R changed with od Q , troll fevor got a small buff.
 * Fixed multiple errors after selling Drum of Endurance 2
 
 

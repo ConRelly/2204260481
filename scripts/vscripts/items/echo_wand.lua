@@ -225,6 +225,7 @@ if IsServer() then
 		hw_sharpshooter_release = true,
 		item_crit_edible = true,
 		razor_eye_of_the_storm = true,
+		item_pipe_of_dezun = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

@@ -31594,7 +31594,7 @@
 		"ItemSellable"					"1"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"AbilityCooldown"				"40"
+		"AbilityCooldown"				"50"
 		"AbilityManaCost"				"100"
 		"AbilityCastPoint"				"0"
 		"ItemQuality"					"epic"
@@ -31605,7 +31605,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"as_aura"				"200"
+				"as_aura"				"130"
 			}
 			"02"
 			{
@@ -31615,7 +31615,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"magic_resist_aura"		"35"
+				"magic_resist_aura"		"20"
 			}
 			"04"
 			{
@@ -31630,7 +31630,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_regen_aura"			"250"
+				"hp_regen_aura"			"350"
 			}
 			"07"
 			{
@@ -31665,13 +31665,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"14969"
+		"ItemCost"						"19969"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_pipe_of_dezun"
 		"ItemRequirements"
 		{
-			"01"						"item_pipe_2;item_all_essence;item_chest_5;item_black_king_bar"
+			"01"						"item_pipe_2;item_all_essence;item_black_king_bar"
 		}
 	}
 

@@ -4346,7 +4346,7 @@
 	}
 	"earth_spirit_geomagnetic_grip"
 	{
-		
+		"AbilityCastRange"				"2500"
 		"AbilityCooldown"				"12 11 10 9"
 		"AbilitySpecial"
 		{		
@@ -4360,7 +4360,27 @@
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"1 1.5 2.0 2.5"
 				"LinkedSpecialBonus"	"special_bonus_unique_earth_spirit_5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pull_units_per_second_heroes"		"2600"
+			}				
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pull_units_per_second"		"1900"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1800"
 			}	
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"total_pull_distance"		"3400"
+			}				
 		}
 	}
 	"earth_spirit_magnetize"
@@ -4447,7 +4467,7 @@
 	}
 	"earth_spirit_petrify"
 	{
-		"AbilityCooldown"			"20"
+		"AbilityCooldown"			"25"
 		"AbilitySpecial"
 		{
 			"01"
@@ -4459,7 +4479,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage"			"2700"
+				"damage"			"7700"
 				"RequiresScepter"	"1"
 			}
 		}
@@ -4477,7 +4497,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"3000"
+		"AbilityCastRange"				"2000"
 		"AbilityCastPoint"				"0.01"
 		"MaxLevel"					  "7"
 		"LevelsBetweenUpgrades"		 "7"
@@ -4513,13 +4533,13 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"distance"				"3200.0"
+				"distance"				"2500.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_earth_spirit_4"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"rock_distance"			"7600.0"
+				"rock_distance"			"4600.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_earth_spirit_4"
 				"LinkedSpecialBonusField"		"value2"
 			}
@@ -11296,17 +11316,18 @@
 
 	"winter_wyvern_arctic_burn"
 	{
+		"LevelsBetweenUpgrades"       "10"
 		"AbilitySpecial"
 		{
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_range_bonus"	"350 400 600 750"
+				"attack_range_bonus"	"350 400 500 700"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"percent_damage"		"2.3 2.6 2.9 3.2"
+				"percent_damage"		"2.3 2.4 2.6 2.9"
 			}
 		}
 	}

@@ -848,11 +848,12 @@
 	"DOTA_Tooltip_modifier_spirit_guardian_bonus_dmg_Description"	"Guardian deals bonus dmg base on your Level multiplied with the Stacks."
 
 	"DOTA_Tooltip_Ability_item_pipe_of_dezun"				"Pipe Of Dezun"
-	"DOTA_Tooltip_Ability_item_pipe_of_dezun_Description"	"<h1>Active: Dezun's Immunity</h1>Within a radius of %active_aura_radius% from the owner gives allies Spell Immunity for %duration% seconds.\n<h1><font color='#814417'>UP: Attribute Mail</font></h1>Allows you to reduce the cooldown by CDR. \n<h1>Passive: Pipe Of Dezun Aura</h1>+ %hp_regen_aura% Health Regen<br>+ %magic_resist_aura%%% Magic Resistance<br>+ %mana_aura% Mana<br>+ %as_aura% Attack Speed<br><br>Radius: %aura_radius%"
+	"DOTA_Tooltip_Ability_item_pipe_of_dezun_Description"	"<h1>Active: Dezun's Immunity</h1>Within a radius of %active_aura_radius% from the owner gives allies Spell Immunity for %duration% seconds.\n<h1><font color='#814417'>UP: Attribute Mail</font></h1>Allows your CDR to affect the cooldown. \n<h1>Passive: Pipe Of Dezun Aura</h1>+ %hp_regen_aura% Health Regen<br>+ %magic_resist_aura%%% Magic Resistance<br>+ %mana_aura% Mana<br>+ %as_aura% Attack Speed<br><br>Radius: %aura_radius%"
 	"DOTA_Tooltip_ability_item_pipe_of_dezun_magic_resist"		"%+$spell_resist"
 	"DOTA_Tooltip_Ability_item_pipe_of_dezun_health_regen"		"+$hp_regen"
 	"DOTA_Tooltip_Ability_item_pipe_of_dezun_bonus_strength"	"+$str"
 	"DOTA_Tooltip_Ability_item_pipe_of_dezun_bonus_all_stats"	"+$all"
+	"DOTA_Tooltip_Ability_item_pipe_of_dezun_lore"           "Only a Real hero can use this item"
 	"DOTA_Tooltip_modifier_pipe_of_dezun_aura"				"Pipe Of Dezun Aura"
 	"DOTA_Tooltip_modifier_pipe_of_dezun_aura_Description"	"Increases Magic Resistance by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%, Health Regeneration by %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT%, Attack Speed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% and Mana by %dMODIFIER_PROPERTY_MANA_BONUS%"
 	"DOTA_Tooltip_modifier_pipe_of_dezun_magic_immune_buff"					"Dezun's Immunity"
@@ -9671,6 +9672,16 @@ Contains all random skills"
 	"DOTA_Tooltip_ability_antimage_custom_counterspell_Lore"		"With the proper focus, Anti-Mage turns innate resistance into calculated retaliation."
 	"DOTA_Tooltip_ability_antimage_custom_counterspell_magic_resistance"		"%MAGIC RESISTANCE:"
 	"DOTA_Tooltip_ability_antimage_custom_counterspell_duration"				"DURATION:"
+
+// Huskar
+	"DOTA_Tooltip_ability_huskar_inner_fire_custom"									"Inner Fire"
+	"DOTA_Tooltip_ability_huskar_inner_fire_custom_Description"						"In a fiery rage, knocks all nearby enemies away from you to a fixed distance, dealing damage and disarming them."
+    "DOTA_Tooltip_ability_huskar_inner_fire_custom_shard_description"  				"Causes Inner Fire to reduce healing and regeneration by 50%% and applies a 40%% movement speed slow. Lowers cooldown by 3 seconds. Can be cast while disabled."
+	"DOTA_Tooltip_ability_huskar_inner_fire_custom_Lore"						"Not even Huskar's own flesh can contain the unending expansion of his life force."
+	"DOTA_Tooltip_ability_huskar_inner_fire_custom_damage"							"DAMAGE:"
+	"DOTA_Tooltip_ability_huskar_inner_fire_custom_disarm_duration"						"DURATION:"
+	"DOTA_Tooltip_ability_huskar_inner_fire_custom_radius"								"RADIUS:"
+	"DOTA_Tooltip_ability_huskar_inner_fire_custom_knockback_distance"					"KNOCKBACK TO:"
 
 
 	}
