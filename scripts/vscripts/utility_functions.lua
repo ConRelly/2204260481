@@ -276,7 +276,6 @@ end
 ---------------------------------------------------------------------------
 -- AI functions
 ---------------------------------------------------------------------------
-aghanim
 function SetAggroRange( hUnit, fRange )
 	--print( string.format( "Set search radius and acquisition range (%.2f) for unit %s", fRange, hUnit:GetUnitName() ) )
 	hUnit.fSearchRadius = fRange
