@@ -1238,6 +1238,8 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Earth spirit Ult and Q swaped with other skills and 2 of his talents and some of his stats buffed.
 * Winter Wyvern R changed with od Q , troll fevor got a small buff.
 * Fixed multiple errors after selling Drum of Endurance 2
+* Nerfed the void spirit on part 2 moment lifesteal and proc
+* And some other small changes
 
 
 *Update patch notes25 can be found on the new map version:

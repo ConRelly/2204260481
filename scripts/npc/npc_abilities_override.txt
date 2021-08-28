@@ -1797,7 +1797,18 @@
 				"value"				"5"
 			}
 		}
-	}			
+	}
+	"special_bonus_unique_legion_commander_3"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"20"
+			}
+		}
+	}				
 	"special_bonus_unique_wisp"
 	{
 		"AbilitySpecial"
@@ -16001,7 +16012,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"trigger_chance"			"30"
+				"trigger_chance"			"15"
 				"LinkedSpecialBonus"		"special_bonus_unique_legion_commander_3"																	
 			}
 			"02"
@@ -16012,7 +16023,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hp_leech_percent"			"35 45 55 65"
+				"hp_leech_percent"			"20"
 			}
 		}
 	}
