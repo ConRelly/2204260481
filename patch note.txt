@@ -1235,16 +1235,23 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Changed all CDR talents
 * Partially introduced the old CDR (Preserved Skull, Octarine Core, The Master of Magic, Int CDR)
 * Visage lvl 3 birds now have 50% more base hp and fixed numbers for a lvl 20 talent
-* Earth spirit Ult and Q swaped with other skills and 2 of his talents and some of his stats buffed.
+* Earth spirit Ult and Q swapped with other skills and 2 of his talents and some of his stats buffed.
 * Winter Wyvern R changed with od Q , troll fevor got a small buff.
 * Fixed multiple errors after selling Drum of Endurance 2
 * Nerfed the void spirit on part 2 moment lifesteal and proc
 * And some other small changes
 
 
-*Update patch notes25 can be found on the new map version:
+* Fix OD ult not working with mimic mace and some other skills(mimic mace has a big list of skills and items that are banned for mimic)
+
+
+* **I recommend playing the map from the workshop link, this one is mostly a backup.**
+
+*Update patch notes29 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussion for links)
+
+
 
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update).

@@ -10295,7 +10295,7 @@
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-	"AbilityCastRange"				"99999"
+	"AbilityCastRange"				"8500"
 	"AbilityCastPoint"				"0.25"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -10314,7 +10314,7 @@
 		"particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_mana_loss.vpcf"
 		"particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_smoke_main.vpcf"	
 	}
-	"AbilityCooldown"				"60.0 55.0 50.0 45.0 40.0"
+	"AbilityCooldown"				"65.0 60.0 55.0 50.0 45.0"
 	"AbilityManaCost"				"350 700 1050 1500 2500"
 	"AbilitySpecial"
 	{
@@ -10336,7 +10336,7 @@
 		"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"cast_range"					"99999"
+			"cast_range"					"8500"
 		}
 		"05"
 		{

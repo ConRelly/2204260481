@@ -69,22 +69,6 @@ function AOHGameMode:OnPlayerChat(keys)
 		Notifications:TopToAll({text="#dota_npc_does_bc", style={color="red"}, duration=5})
 		self._physdanage = true
 	end	
-	-- this will stay only for a short update until i get the key. then i will reupdate the game deleting this
-	if keys.text == guessing_gmae_2 and Cheats:IsEnabled() and time < 5 and not GameRules:IsGamePaused() then
-		local playerID = keys.playerid
-		local steam_id = tostring(PlayerResource:GetSteamID(playerID))
-		print(steam_id) 
-		if steam_id == "76561197990627480" then
-			Notifications:TopToAll({text="Valid Steam ID", style={color="red"}, duration=5})
-			if IsDedicatedServer() then
-				local key = GetDedicatedServerKeyV2("1")
-				Notifications:Top(keys.playerid, {text= key, duration=5, style={color="red"}, continue=false}) 
-				print(key)
-			end	
-		else
-			print("Nope") 
-		end
-	end	
 
 
 	if keys.text == "-autocast" then

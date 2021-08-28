@@ -231,6 +231,7 @@ if IsServer() then
 		riki_blink_strike = true,
 		phantom_assassin_phantom_strike = true,
 		luna_eclipse_lua = true,
+		--obsidian_destroyer_custom_sanity_eclipse = true,
 	}
 	function modifier_item_echo_wand_thinker:OnCreated()
 		self.parent = self:GetParent()
