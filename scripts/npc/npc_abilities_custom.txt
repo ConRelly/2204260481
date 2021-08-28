@@ -36,6 +36,7 @@
 #base "../npc/talents/health.txt"
 #base "../npc/talents/spell_amplify.txt"
 #base "../npc/talents/strength.txt"
+#base "../npc/talents/cooldown_reduction.txt"
 
 
 "DOTAAbilities"
@@ -41245,6 +41246,327 @@
 		}
 	}
 
+// Piety
+// Lesser Cancellation
+	"lesser_cancel"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_piety/divine_cancel"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"custom/abilities/divine_cancel"
+		"MaxLevel"						"1"
+		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"60"
+		"AbilitySound"					"Divine_Cancel"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"150"
+			}
+			"2"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"upgrade_count"		"100"
+			}
+		}
+	}
+// Divine Cancellation
+	"divine_cancel"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_piety/divine_cancel"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"custom/abilities/divine_cancel"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"300"
+		"AbilitySound"					"Divine_Cancel"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilitySpecial"
+		{
+		}
+	}
+
+// Sacred Blink
+	"sacred_blink"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_piety/sacred_blink"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilitySound"					"Sacred_Blink"
+		"AbilityTextureName"			"custom/abilities/sacred_blink"
+		"MaxLevel"						"10"
+		"LevelsBetweenUpgrades"         "5"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.25"
+		"AbilityCooldown"				"30 28 26 24 22 20 18 16 14 12"
+		"AbilityManaCost"				"100 200 250 350 400 500 550 650 700 800"
+		"AOERadius"						"%search_radius"
+		"precache"
+		{
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_piety_abilities.vsndevts"
+		}
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"675"
+			}
+			"2"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"search_radius"				"400"
+			}
+			"3"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"buff_duration"				"3"
+			}
+			"4"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"buff_pct"					"3 6 9 12 15 18 21 24 27 30"
+			}
+		}
+	}
+// Talent: Sacred Blink targeting building
+	"special_bonus_unique_sacred_blink_building"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"value"			"1"
+			}
+		}
+	}
+
+// Sourcery
+	"sourcery"
+	{
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"custom/abilities/sourcery"
+		"ScriptFile"					"heroes/hero_piety/sourcery"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"dmg_reduction"			"25"
+			}
+			"2"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"status_resist"			"50"
+			}
+			"3"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_shields"			"3"
+			}
+			"4"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"shield_interval"		"9"
+			}
+			"5"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"1500"
+			}
+			"6"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_armor"			"20"
+			}
+		}
+	}
+// Talent: +X% HP Regen
+	"special_bonus_unique_sourcery_health_regen_pct"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"value"			"4"
+			}
+		}
+	}
+// Talent: Upon break shield layer +X% MaxHP
+	"special_bonus_unique_sourcery_health_recovery"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"value"			"10"
+			}
+		}
+	}
+
+// Willpower
+	"willpower"
+	{
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"custom/abilities/willpower"
+		"ScriptFile"					"heroes/hero_piety/willpower"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilitySound"					"Willpower_Damage"
+		"MaxLevel"						"10"
+		"RequiredLevel"					"0"
+		"LevelsBetweenUpgrades"			"6"
+		"AbilityCastPoint"				"0.25"
+		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"45 42 39 36 33 30 27 24 21 18"
+		"AbilityManaCost"				"1"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"health_sacrifice"		"25 27 29 32 35 38 42 46 50 55"
+			}
+			"2"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"10"
+			}
+			"3"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"modifier_affect"		"50"
+			}
+		}
+	}
+// Talent: Separate X% damage from ally to caster
+	"special_bonus_unique_willpower_separate"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"value"			"50"
+			}
+		}
+	}
+
+// Gegenstrom
+	"gegenstrom"
+	{
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"custom/abilities/gegenstrom"
+		"ScriptFile"					"heroes/hero_piety/gegenstrom"
+//		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"1"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"900"
+			}
+			"2"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_hp_regen_amp"		"50"
+			}
+			"3"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_mana_regen_amp"	"100"
+			}
+		}
+	}
+
+// Grimstroke: Soulbind
+	"gs_soulbind"
+	{
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"custom/abilities/gs_soulbind"
+		"ScriptFile"					"heroes/hero_grimstroke/gs_soulbind"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityCastAnimation"			"ACT_DOTA_GS_SOUL_CHAIN"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"MaxLevel"						"3"
+		"RequiredLevel"					"10"
+		"LevelsBetweenUpgrades"			"20"
+		"AbilityCastPoint"				"0.25"
+		"AbilityCastRange"				"1000"
+		"AbilityCooldown"				"80"
+		"AbilityManaCost"				"250"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chain_duration"		"5 10 15"
+			}
+			"2"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chain_latch_radius"	"1000"
+			}
+		}
+	}
+// Talent: -X sec Soulbind cooldown
+	"special_bonus_gs_soulbind_cd"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"value"			"30"
+			}
+		}
+	}
+
 //////////MOBS//////////
 // Terrorblade (22 wave) Sunder
 	"cast_sunder"
@@ -41737,277 +42059,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"max_radius"			"1000"
 			}			
-		}
-	}
-
-// Piety
-// Lesser Cancellation
-	"lesser_cancel"
-	{
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/hero_piety/divine_cancel"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityTextureName"			"custom/abilities/divine_cancel"
-		"MaxLevel"						"1"
-		"AbilityCastRange"				"600"
-		"AbilityCooldown"				"60"
-		"AbilitySound"					"Divine_Cancel"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-		"AbilitySpecial"
-		{
-			"1"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"150"
-			}
-			"2"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"upgrade_count"		"100"
-			}
-		}
-	}
-// Divine Cancellation
-	"divine_cancel"
-	{
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/hero_piety/divine_cancel"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityTextureName"			"custom/abilities/divine_cancel"
-		"MaxLevel"						"1"
-		"AbilityCooldown"				"300"
-		"AbilitySound"					"Divine_Cancel"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-		"AbilitySpecial"
-		{
-		}
-	}
-
-// Sacred Blink
-	"sacred_blink"
-	{
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/hero_piety/sacred_blink"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilitySound"					"Sacred_Blink"
-		"AbilityTextureName"			"custom/abilities/sacred_blink"
-		"MaxLevel"						"10"
-		"LevelsBetweenUpgrades"         "5"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-		"AbilityCastPoint"				"0.25"
-		"AbilityCooldown"				"30 28 26 24 22 20 18 16 14 12"
-		"AbilityManaCost"				"100 200 250 350 400 500 550 650 700 800"
-		"AOERadius"						"%search_radius"
-		"precache"
-		{
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_piety_abilities.vsndevts"
-		}
-		"AbilitySpecial"
-		{
-			"1"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"675"
-			}
-			"2"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"search_radius"				"400"
-			}
-			"3"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"buff_duration"				"3"
-			}
-			"4"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"buff_pct"					"3 6 9 12 15 18 21 24 27 30"
-			}
-		}
-	}
-// Talent: Sacred Blink targeting building
-	"special_bonus_unique_sacred_blink_building"
-	{
-		"BaseClass"						"special_bonus_undefined"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"value"			"1"
-			}
-		}
-	}
-
-// Sourcery
-	"sourcery"
-	{
-		"BaseClass"						"ability_lua"
-		"AbilityTextureName"			"custom/abilities/sourcery"
-		"ScriptFile"					"heroes/hero_piety/sourcery"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"MaxLevel"						"1"
-		"AbilitySpecial"
-		{
-			"1"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dmg_reduction"			"25"
-			}
-			"2"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"status_resist"			"50"
-			}
-			"3"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"max_shields"			"3"
-			}
-			"4"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"shield_interval"		"9"
-			}
-			"5"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"1500"
-			}
-			"6"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_armor"			"20"
-			}
-		}
-	}
-// Talent: +X% HP Regen
-	"special_bonus_unique_sourcery_health_regen_pct"
-	{
-		"BaseClass"						"special_bonus_undefined"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"value"			"4"
-			}
-		}
-	}
-// Talent: Upon break shield layer +X% MaxHP
-	"special_bonus_unique_sourcery_health_recovery"
-	{
-		"BaseClass"						"special_bonus_undefined"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"value"			"10"
-			}
-		}
-	}
-
-// Willpower
-	"willpower"
-	{
-		"BaseClass"						"ability_lua"
-		"AbilityTextureName"			"custom/abilities/willpower"
-		"ScriptFile"					"heroes/hero_piety/willpower"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilitySound"					"Willpower_Damage"
-		"MaxLevel"						"10"
-		"RequiredLevel"					"0"
-		"LevelsBetweenUpgrades"			"6"
-		"AbilityCastPoint"				"0.25"
-		"AbilityCastRange"				"600"
-		"AbilityCooldown"				"45 42 39 36 33 30 27 24 21 18"
-		"AbilityManaCost"				"1"
-		"AbilitySpecial"
-		{
-			"1"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"health_sacrifice"		"25 27 29 32 35 38 42 46 50 55"
-			}
-			"2"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"10"
-			}
-			"3"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"modifier_affect"		"50"
-			}
-		}
-	}
-// Talent: Separate X% damage from ally to caster
-	"special_bonus_unique_willpower_separate"
-	{
-		"BaseClass"						"special_bonus_undefined"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"value"			"50"
-			}
-		}
-	}
-
-// Gegenstrom
-	"gegenstrom"
-	{
-		"BaseClass"						"ability_lua"
-		"AbilityTextureName"			"custom/abilities/gegenstrom"
-		"ScriptFile"					"heroes/hero_piety/gegenstrom"
-//		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"MaxLevel"						"1"
-		"AbilityCooldown"				"0"
-		"AbilityManaCost"				"1"
-		"AbilitySpecial"
-		{
-			"1"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"900"
-			}
-			"2"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_hp_regen_amp"		"50"
-			}
-			"3"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_mana_regen_amp"	"100"
-			}
 		}
 	}
 }

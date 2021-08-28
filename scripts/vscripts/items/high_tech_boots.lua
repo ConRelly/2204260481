@@ -89,15 +89,15 @@ function modifier_item_high_tech_boots:GetModifierEvasion_Constant()
 end
 
 function modifier_item_high_tech_boots:GetModifierBonusStats_Agility()
-    return self:GetAbility():GetSpecialValueFor("bonus_agility")
+    return self:GetAbility():GetSpecialValueFor("all_stats")
 end
 
 function modifier_item_high_tech_boots:GetModifierBonusStats_Strength()
-    return self:GetAbility():GetSpecialValueFor("bonus_strength")
+    return self:GetAbility():GetSpecialValueFor("all_stats")
 end
 
 function modifier_item_high_tech_boots:GetModifierBonusStats_Intellect()
-    return self:GetAbility():GetSpecialValueFor("bonus_intellect")
+    return self:GetAbility():GetSpecialValueFor("all_stats")
 end
 
 

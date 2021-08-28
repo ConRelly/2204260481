@@ -593,11 +593,18 @@ end
 -- Cooldown Manipulation
 function CDOTA_BaseNPC:GetCustomStackingCooldownReduction()
 	local Reduction = 1
+	local talent12 = talent_value(self, "special_bonus_cdr_12") or 1
+	local talent15 = talent_value(self, "special_bonus_cdr_15") or 1
+	local talent20 = talent_value(self, "special_bonus_cdr_20") or 1
+	local talent25 = talent_value(self, "special_bonus_cdr_25") or 1
+	local talent30 = talent_value(self, "special_bonus_cdr_30") or 1
+	local talent40 = talent_value(self, "special_bonus_cdr_40") or 1
 	for _, parent_modifier in pairs(self:FindAllModifiers()) do
 		if parent_modifier.GetCustomStackingCDR and parent_modifier:GetCustomStackingCDR() then
 			Reduction = Reduction * (1 - (parent_modifier:GetCustomStackingCDR() / 100))
 		end
 	end
+	Reduction = Reduction * (1 - (talent12 / 100)) * (1 - (talent15 / 100)) * (1 - (talent20 / 100)) * (1 - (talent25 / 100)) * (1 - (talent30 / 100)) * (1 - (talent40 / 100))
 	return 1 - Reduction
 end
 

@@ -401,11 +401,11 @@
 
 	"DOTA_Tooltip_ability_item_holy_locket_Description"				"<h1>Активное: Energy Charge</h1>Мгновенно восстанавливает выбранному союзному существу %restore_per_charge% здоровья и маны за каждый имеющийся заряд.<br><br>Может иметь до %max_charges% зарядов. Получает один заряд каждые %charge_gain_timer% сек. и каждый раз, когда видимый враг в радиусе %charge_radius% использует способность.\n\n<h1>Пассивное: Holy Blessing</h1>Все лечащие заклинания владельца восстанавливают на %heal_increase%%% больше здоровья.\n\n<h1>Пассивное: Regeneration Aura</h1>Увеличивает восстановление здоровья на %aura_health_regen% всем союзникам в радиусе %aura_radius%.\n<h1><font color='#D1954F'>UP: Spirit Vessel</font></h1>Исцеление от <font color='#D1954F'>Spirit Vessel</font> даёт 1 заряд каждые 0,5 секунд.<br>(Позволяет превысить лимит зарядов)"
 
-//############################################################################################################################
 
 	"DOTA_Tooltip_ability_item_to_piety"					"Divine Pray"
 	"DOTA_Tooltip_ability_item_to_piety_description"		"Меняет персонажа на Piety.<br>(Возможно использование только на первом уровне и только Линой)"
 
+//############################################################################################################################
 
 	"DOTA_Tooltip_ability_overcharge"				"Overcharge"
 	"DOTA_Tooltip_ability_overcharge_Description"	"C кaждым yдapoм пpиoбpeтaeт +%damage_per_stack% к ypoнy и +%as_per_stack% к cкopocти aтaки.\nCaмoyбивaeтcя, кoгдa кoличecтвo cтaкoв бyдeт paвнятьcя 50 (в cлoжнoм peжимe - 100).\n<h1>He мoжeт пpoмaxнyтьcя</h1>"
@@ -711,6 +711,21 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_sourcery_health_recovery"				"Лечение от щита Sourcery"
 	"DOTA_Tooltip_ability_special_bonus_unique_sourcery_health_recovery_Description"	"При поломке слоя щита восстанавливается {s:value}% от макс. здоровья"
 
+// Grimstroke
+	"DOTA_Tooltip_ability_gs_soulbind"					"Soulbind"
+	"DOTA_Tooltip_ability_gs_soulbind_Description"		"Связывает выбранного героя с его ближайшим союзником. Если на одну из жертв применить способность, направленную на существо, она автоматически применится и на вторую."
+	"DOTA_Tooltip_ability_gs_soulbind_Note0"	"1) Накладывает на жертв эффект привязки, не позволяя им телепортироваться."
+	"DOTA_Tooltip_ability_gs_soulbind_Note1"	"2) Даёт обзор по обоим привязанным существам."
+	"DOTA_Tooltip_ability_gs_soulbind_Note2"	"3) Приоритетно связывается с героями."
+	"DOTA_Tooltip_ability_gs_soulbind_Lore"			"Вознесённые — избранные сыны Ашкавора, чьи души связаны с душами тех, кого они должны защищать, и потому наделены невероятной мощью. Уничтожив свой народ, с годами последний страж узнал, каким нечестивым может стать ритуал связи..."
+	"DOTA_Tooltip_ability_gs_soulbind_chain_duration"			"Длительность:"
+	"DOTA_Tooltip_ability_gs_soulbind_chain_latch_radius"		"Радиус связи:"
+	"DOTA_Tooltip_ability_gs_soulbind_abilitycastrange"			"Дальность применения:"
+
+	"DOTA_Tooltip_modifier_gs_soulbind"					"Soulbind"
+	"DOTA_Tooltip_modifier_gs_soulbind_Description"		"Существо связано с другим и находится под эффектом привязки."
+	"DOTA_Tooltip_ability_special_bonus_gs_soulbind_cd"			"-{s:value} сек. перезарядки Soulbind"
+
 
 	"npc_dota_hero_dawnbreaker"		"Smallbreaker"
 
@@ -726,10 +741,10 @@
 	"DOTA_Tooltip_ability_item_ice_dagon_hp"				"+$health"
 
 	"DOTA_Tooltip_ability_item_demonic_sword"				"Demonic Blade"
-	"DOTA_Tooltip_ability_item_demonic_sword_Description"	"<h1>Пaccивнoe: Hellfire</h1> Kaждyю ceкyндy нaнocит нaнocит пpoтивникaм %dps_aura% магического ypoнa и ocлeпляeт иx, вынyждaя пpoмaxивaтьcя в %blind_pct%%% cлyчaeв. У иллюзий нaнocит %dps_illusion_aura% мaгичecкoгo ypoнa в ceкyндy.<br><br>Paдиyc: %aura_radius%\n<h1>Пaccивнoe: Blazing Touch</h1>Aтaкyя пpoтивникoв, вы пoджигaeтe иx нa %duration% ceк.<br><br>Уpoн oт пoджoгa в ceкyндy: %dps%"
+	"DOTA_Tooltip_ability_item_demonic_sword_Description"	"<h1>Пaccивнoe: Hellfire</h1> Kaждyю ceкyндy нaнocит нaнocит пpoтивникaм %dps_aura% магического ypoнa и ocлeпляeт иx, вынyждaя пpoмaxивaтьcя в %blind_pct%%% cлyчaeв. У иллюзий нaнocит %dps_illusion_aura% мaгичecкoгo ypoнa в ceкyндy.<br><br>Paдиyc: %aura_radius%\n<h1>Пaccивнoe: Blazing Touch</h1>Aтaкyя пpoтивникoв, вы пoджигaeтe иx нa %duration% ceк.<br><br>Уpoн oт пoджoгa в ceкyндy: %dps% + %current_hp_damage%%% от текущего здоровья врага"
 	"DOTA_Tooltip_ability_item_demonic_sword_Lore"	"Дeмoничecкий мeч, oкpyжaющий влaдeльцa яpким cияниeм, кoтopoe oбpaщaeт в пeпeл вcex oкpyжaющиx вpaгoв."
-	"DOTA_Tooltip_ability_item_demonic_note0"			"1) Blazing Touch не работает на иллюзиях."
-	"DOTA_Tooltip_ability_item_demonic_note0"			"2) Эффект Hellfire складывается из нескольких источников."
+	"DOTA_Tooltip_ability_item_demonic_sword_note0"			"1) Blazing Touch не работает на иллюзиях."
+	"DOTA_Tooltip_ability_item_demonic_sword_note1"			"2) Эффект Hellfire складывается из нескольких источников."
 	"DOTA_Tooltip_ability_item_demonic_sword_damage"		"+$damage"
 	"DOTA_Tooltip_ability_item_demonic_sword_armor"			"+$armor"
 	"DOTA_Tooltip_ability_item_demonic_sword_hp"			"+$health"
@@ -858,6 +873,7 @@
 
 	"DOTA_Tooltip_ability_item_pipe_of_dezun"				"Pipe Of Dezun"
 	"DOTA_Tooltip_ability_item_pipe_of_dezun_Description"	"<h1>Aктивнoe: Dezun's Immunity</h1>B paдиyce %active_aura_radius% oт влaдeльцa дaёт coюзникaм нeвocпpиимчивocть к мaгии нa %duration% ceк.\n<h1><font color='#814417'>UP: Attribute Mail</font></h1>Позволяет снижать перезарядку снижением перезарядки. \n<h1>Пaccивнoe: Dezun Aura</h1>+ %hp_regen_aura% к peгeнepaции здopoвья<br>+ %magic_resist_aura%%% к coпpoтивлeнию мaгии<br>+ %as_aura% к cкopocти aтaки<br>+ %mana_aura% к мaнe<br><br>Paдиyc: %aura_radius%"
+	"DOTA_Tooltip_Ability_item_pipe_of_dezun_lore"				"Только настоящий герой может использовать трубку Дезуна."
 	"DOTA_Tooltip_ability_item_pipe_of_dezun_magic_resist"		"%+$spell_resist"
 	"DOTA_Tooltip_ability_item_pipe_of_dezun_health_regen"		"+$hp_regen"
 	"DOTA_Tooltip_Ability_item_pipe_of_dezun_bonus_strength"	"+$str"
@@ -5877,18 +5893,19 @@
 	"DOTA_Tooltip_ability_furion_custom_nature_heal_mana_transfer"				"%MAX MANA TRANSFER:"
 
 
-	"DOTA_Tooltip_ability_grimstroke_custom_ink_creature"							"<font color='#f2da5b'>Ink Creature</font>"
-	"DOTA_Tooltip_ability_grimstroke_custom_ink_creature_Description"				"Launches a ink creature that deals damage if the target is an enemy or heal if the target is an ally."
-	"DOTA_Tooltip_ability_grimstroke_custom_ink_creature_Lore"						"Grimstroke holds no sorrow for the downfall of his people. Only for Yaovhi, she who was most dear to him, does he feel even a semblance of longing."
-	"DOTA_Tooltip_ability_grimstroke_custom_ink_creature_damage"					"Уpoн:"
-	"DOTA_Tooltip_ability_grimstroke_custom_ink_creature_stats_bonus"			"All Stats As Bonus Damage/Heal"
-	"DOTA_Tooltip_ability_grimstroke_custom_ink_creature_heal"						"HEAL:"
-	"DOTA_Tooltip_ability_grimstroke_custom_soulstore"							"<font color='#f2da5b'>Soulstore</font>"
-	"DOTA_Tooltip_ability_grimstroke_custom_soulstore_Description"				"Grimstroke stores the essence of magic every time he uses a spell. On cast, Grimstroke consumes all the stacks stored to deal damage to an enemy or heal an ally. Stacks up to %max_stack% times. Heal last 3 times longer but uses 25% of the damage value."
-	"DOTA_Tooltip_ability_grimstroke_custom_soulstore_Lore"						"The Ascended were chosen sons of Ashkavor, granted immense power by the bonds forged between their own souls and those they were charged with protecting. In the years that followed the ruination of his kin, Grimstroke discovered much more sinister applications for the binding rituals…"
-	"DOTA_Tooltip_ability_grimstroke_custom_soulstore_damage"					"STACK DAMAGE:"
-	"DOTA_Tooltip_ability_grimstroke_custom_soulstore_stats_mul"				"Stack All Stats As Bonus Damage/Heal:"
-	"DOTA_Tooltip_ability_grimstroke_custom_soulstore_heal"						"STACK HEAL:"
+	"DOTA_Tooltip_ability_grimstroke_custom_ink_creature"					"<font color='#f2da5b'>Ink Creature</font>"
+	"DOTA_Tooltip_ability_grimstroke_custom_ink_creature_Description"		"Призывает фантома, который летит к выбранной цели и наносит урон, если целью является враг, либо исцеляет, если целью является союзник."
+	"DOTA_Tooltip_ability_grimstroke_custom_ink_creature_Lore"		"Страж нисколько не опечален смертью своего народа. Лишь память о Яови, что была ему ближе всех, вызывает некий отголосок тоски."
+	"DOTA_Tooltip_ability_grimstroke_custom_ink_creature_damage"			"Уpoн:"
+	"DOTA_Tooltip_ability_grimstroke_custom_ink_creature_stats_bonus"		"Доп. урон/лечение от всех атрибутов:"
+	"DOTA_Tooltip_ability_grimstroke_custom_ink_creature_heal"				"Лечение:"
+
+	"DOTA_Tooltip_ability_grimstroke_custom_soulstore"					"<font color='#f2da5b'>Soulstore</font>"
+	"DOTA_Tooltip_ability_grimstroke_custom_soulstore_Description"		"Герой накапливает магическую эссенцию каждый раз, когда использует способность. При использовании, потребляет все накопленные эссенции, чтобы нанести урон врагу или исцелить союзника.<br>Максимальное количество эссенций - %max_stack%.<br><br>Длительность эффекта: %duration% сек.<br>Лечение длиться в 3 раза дольше."
+	"DOTA_Tooltip_ability_grimstroke_custom_soulstore_Lore"						""
+	"DOTA_Tooltip_ability_grimstroke_custom_soulstore_damage"					"Урон за эссенцию:"
+	"DOTA_Tooltip_ability_grimstroke_custom_soulstore_stats_mul"				"Доп. урон/лечение от всех атрибутов:"
+	"DOTA_Tooltip_ability_grimstroke_custom_soulstore_heal"						"Лечение за эссенцию:"
 
 
 	"DOTA_Tooltip_modifier_grimstroke_custom_soulstore_hud"					"Soul Stored"
@@ -7096,7 +7113,7 @@
 
 	"DOTA_Tooltip_ability_item_plain_ring"							"Gold Ring"
 	"DOTA_Tooltip_ability_item_plain_ring_Description"				"<h1>Пaccивнoe: Hidden Power</h1>При пoлyчeнии лeтaльнoгo yрoнa гeрoй стaнoвится врeмeннo нeyязвим, a пo истeчeнию врeмeни исцeляeтся нa %min_health%%% oт мaкс. здoрoвья. Hiden power дoстyпeн тoлькo пeрвыe 15 минyт oт жизни кoльцa.\n<h1>Пaccивнoe: Guard Aura</h1>Увeличивaeт брoню нa %aura_armor% и рeгeнeрaцию мaны нa %aura_mana_regen% всex сoюзникoв вoкрyг.<br><br>Рaдиyс:%aura_radius%"
-	"DOTA_Tooltip_ability_item_plain_ring_Lore"			"An innocuous gold ring that glimmers in the dark."
+	"DOTA_Tooltip_ability_item_plain_ring_Lore"			"<font color='#FFC300'>Порядок срабатывания неуязвимостей/реинкарнаций: Способности/Таланты -> Undying Helm -> Consumable Aegis -> Gold Ring -> Aegis of Infinity</font>"
 	"DOTA_Tooltip_ability_item_plain_ring_Note0"		""
 	"DOTA_Tooltip_ability_item_plain_ring_bonus_damage"				"+$damage"
 	"DOTA_Tooltip_modifier_item_plain_ring_buff"					"Guard Aura"
@@ -9538,6 +9555,13 @@
 	"DOTA_Tooltip_ability_special_bonus_strength_500"			"+{s:value} к силе"
 	"DOTA_Tooltip_ability_special_bonus_strength_820"			"+{s:value} к силе"
 
+	"DOTA_Tooltip_ability_special_bonus_cdr_12"		"–{s:value}% перезарядки заклинаний"
+	"DOTA_Tooltip_ability_special_bonus_cdr_15"		"–{s:value}% перезарядки заклинаний"
+	"DOTA_Tooltip_ability_special_bonus_cdr_20"		"–{s:value}% перезарядки заклинаний"
+	"DOTA_Tooltip_ability_special_bonus_cdr_25"		"–{s:value}% перезарядки заклинаний"
+	"DOTA_Tooltip_ability_special_bonus_cdr_30"		"–{s:value}% перезарядки заклинаний"
+	"DOTA_Tooltip_ability_special_bonus_cdr_40"		"–{s:value}% перезарядки заклинаний"
+
 ////////////////////////////////////////////////////////
 
 
@@ -9778,5 +9802,14 @@
 	"DOTA_Tooltip_ability_antimage_custom_counterspell_duration"				"ДЛИТЕЛЬНОСТЬ:"
 
 
+// Huskar
+	"DOTA_Tooltip_ability_huskar_inner_fire_custom"					"Inner Fire"
+	"DOTA_Tooltip_ability_huskar_inner_fire_custom_Description"		"Огненная ярость героя отталкивает всех врагов неподалёку на определённое расстояние от себя, наносит им урон и накладывает на них бессилие."
+    "DOTA_Tooltip_ability_huskar_inner_fire_custom_shard_description"		"Способность замедляет передвижение жертв на 40%% и излечивает владельца на 50%% от нанесённого урона. Уменьшает перезарядку на 3 секунды. Можно применить во время оглушения."
+	"DOTA_Tooltip_ability_huskar_inner_fire_custom_Lore"		"Даже плоть самого Хускара не способна сдержать переполняющую его жизненную силу."
+	"DOTA_Tooltip_ability_huskar_inner_fire_custom_damage"					"УРОН:"
+	"DOTA_Tooltip_ability_huskar_inner_fire_custom_disarm_duration"			"ДЛИТЕЛЬНОСТЬ:"
+	"DOTA_Tooltip_ability_huskar_inner_fire_custom_radius"					"РАДИУС:"
+	"DOTA_Tooltip_ability_huskar_inner_fire_custom_knockback_distance"		"ДАЛЬНОСТЬ ОТТАЛКИВАНИЯ:"
 	}
 }

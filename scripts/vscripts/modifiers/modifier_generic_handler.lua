@@ -131,13 +131,7 @@ function modifier_generic_handler:GetModifierPercentageCooldown()
 end
 
 function modifier_generic_handler:GetModifierCooldownReduction_Constant()
-	if IsServer() then
-		local cd_const_talent = self:GetParent():HasTalent("special_bonus_unique_redution_cd")
-		if cd_const_talent then
-			return talent_value(self:GetParent(), "special_bonus_unique_redution_cd")
-		end
-		return 0
-	end
+	return talent_value(self:GetParent(), "special_bonus_unique_redution_cd")
 end
 
 function modifier_generic_handler:CheckState()

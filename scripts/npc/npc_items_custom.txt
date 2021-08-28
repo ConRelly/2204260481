@@ -2557,22 +2557,12 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_agility"			"50"
+			"all_stats"				"50"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_FLOAT"
 			"duration"				"10"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"		"50"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_intellect"		"50"
 		}
 	}
 }
@@ -2628,7 +2618,7 @@
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_agility"			"250"
+			"all_stats"				"250"
 		}
 		"06"
 		{
@@ -2638,19 +2628,9 @@
 		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"		"250"
-		}
-		"08"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_intellect"		"250"
-		}
-		"09"
-		{
-			"var_type"				"FIELD_INTEGER"
 			"bonus_movement"		"101"
 		}
-		"10"
+		"08"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"ms_dmg_pct"			"50"
@@ -21547,7 +21527,7 @@
 			"8"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_interval"		"1.0"
+				"damage_interval"		"1"
 			}
 			"9"
 			{
@@ -30543,8 +30523,8 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"current_hp_damage"			"1.0"
-			}			
+				"current_hp_damage"		"1.0"
+			}
 		}
 	}
 // Demonic Sword Recipe
