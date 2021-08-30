@@ -9673,13 +9673,14 @@ Contains all random skills"
 
 //Dazzle Bad Juju
 	"DOTA_Tooltip_ability_dazzle_bad_juju_custom"											"Bad Juju"
-	"DOTA_Tooltip_ability_dazzle_bad_juju_custom_Description"								"Passively reduces cooldowns on Dazzle's abilities and items. Anytime he casts a spell, all nearby enemies will have their armor reduced. Debuff stacks and refreshes duration."
+	"DOTA_Tooltip_ability_dazzle_bad_juju_custom_Description"								"Passively reduces cooldowns on Dazzle's abilities and items. Anytime he casts a spell, all nearby enemies will have their armor reduced. Debuff stacks and refreshes duration.<h1><font color='#F39C03'>Does not Stack with other CDR sources</font></h1>"
 	"DOTA_Tooltip_ability_dazzle_bad_juju_custom_abilitydraft_note"						"Abilities that don't trigger Magic Stick won't launch attacks with shard."
 	"DOTA_Tooltip_ability_dazzle_bad_juju_custom_Lore"								"Each invocation of the Nothl realm helps it further permeate the surroundings of our own."
 	"DOTA_Tooltip_ability_dazzle_bad_juju_custom_cooldown_reduction"						"%COOLDOWN REDUCTION:"
 	"DOTA_Tooltip_ability_dazzle_bad_juju_custom_armor_reduction"							"ARMOR REDUCTION:"
 	"DOTA_Tooltip_ability_dazzle_bad_juju_custom_duration"									"DURATION:"
 	"DOTA_Tooltip_ability_dazzle_bad_juju_custom_radius"									"RADIUS:"
+	"DOTA_Tooltip_ability_dazzle_bad_juju_custom_Note0"                             "If total of other CDR is bigger then bad juju then that CDR will be used and bad juju ignored"
 	"DOTA_Tooltip_ability_dazzle_bad_juju_custom_shard_description" 					"Causes Dazzle to launch an attack at the three closest enemies within 1200 range each time he casts an ability."
 
 

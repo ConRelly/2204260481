@@ -244,7 +244,7 @@ if IsServer() then
 	
 	function modifier_item_echo_wand_thinker:OnAbilityExecuted(keys)
 		if not IsServer() then return end
-		if not keys.ability:ProcsMagicStick() then return end
+		--if not keys.ability:ProcsMagicStick() then return end   -- items and a lot of skills will be broken if this is enabled
 		self.hit = true
 		if keys.unit == self.parent and not self.parent:HasModifier("modifier_item_echo_wand_lock") and not ability_behavior_includes(keys.ability, DOTA_ABILITY_BEHAVIOR_CHANNELLED) and not keys.ability:IsToggle() then
 			if not exclude_table[keys.ability:GetAbilityName()] then

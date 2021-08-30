@@ -30478,12 +30478,12 @@
 			"1"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"300"
+				"damage"				"3400"
 			}
 			"2"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"15"
+				"armor"					"43"
 			}
 			"3"
 			{
@@ -30533,7 +30533,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"5000"
+		"ItemCost"						"8000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_demonic_sword"
