@@ -1248,14 +1248,15 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * New Spell Lifesteal talent for dazzle
 
 
-
+* Riki backstab is in the key list of spells that can't be stolen by Void spirit boss.
+* Undying can't buy the aghanim shard(to disable the shard i would have to remove his Tombstone). he can still get that from allies.
 
 
 
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes30 can be found on the new map version:
+*Update patch notes31 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 

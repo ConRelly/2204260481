@@ -350,6 +350,8 @@ function modifier_aghanim_spell_lock:DisableSpell()
 			mjz_lina_laguna_blade = true,
 			keeper_of_the_light_illuminate = true,
 			keeper_of_the_light_spirit_form_illuminate = true,
+			mjz_riki_backstab = true,
+			mjz_invoker_magic_master = true,
 
 		}      
 
