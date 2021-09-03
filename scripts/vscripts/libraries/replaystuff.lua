@@ -80,7 +80,7 @@ function AddRecordedAction(modifier, keys)
 			["obs_replay"] = true,
 			["item_video_file"] = true,
 			["item_resurection_pendant"] = true,
-			["dawnbreaker_luminosity"] = true,
+			["dawnbreaker_custom_luminosity"] = true,
 			["item_random_get_ability"] = true,
 			["item_random_get_ability2"] = true,
 			["item_random_get_ability3"] = true,
