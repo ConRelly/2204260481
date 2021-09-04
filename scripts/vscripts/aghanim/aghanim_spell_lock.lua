@@ -352,6 +352,7 @@ function modifier_aghanim_spell_lock:DisableSpell()
 			keeper_of_the_light_spirit_form_illuminate = true,
 			mjz_riki_backstab = true,
 			mjz_invoker_magic_master = true,
+			sourcery = true,
 
 		}      
 

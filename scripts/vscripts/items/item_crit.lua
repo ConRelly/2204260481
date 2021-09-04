@@ -122,15 +122,12 @@ end
 -----------------------------------------------------------------------------------------------------------
 
 if item_imba_greater_crit == nil then item_imba_greater_crit = class({}) end
-LinkLuaModifier( "modifier_item_imba_greater_crit", "items/item_crit.lua", LUA_MODIFIER_MOTION_NONE )		-- Owner's bonus attributes, stackable
-LinkLuaModifier( "modifier_item_imba_greater_crit_buff", "items/item_crit.lua", LUA_MODIFIER_MOTION_NONE )	-- Critical damage increase counter
+LinkLuaModifier( "modifier_item_imba_greater_crit", "items/item_crit.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_item_imba_greater_crit_buff", "items/item_crit.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier("modifier_mana_blade_up", "items/item_crit.lua", LUA_MODIFIER_MOTION_NONE)
 
-function item_imba_greater_crit:GetAbilityTextureName()
-	return "custom/imba_greater_crit"
-end
-
-function item_imba_greater_crit:GetIntrinsicModifierName()
-	return "modifier_item_imba_greater_crit" end
+function item_imba_greater_crit:GetAbilityTextureName() return "custom/imba_greater_crit" end
+function item_imba_greater_crit:GetIntrinsicModifierName() return "modifier_item_imba_greater_crit" end
 
 -----------------------------------------------------------------------------------------------------------
 --	Daedalus owner bonus attributes (stackable)
@@ -143,47 +140,27 @@ function modifier_item_imba_greater_crit:IsPurgable() return false end
 function modifier_item_imba_greater_crit:IsPermanent() return true end
 --function modifier_item_imba_greater_crit:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 
--- Adds the damage increase counter when created
 function modifier_item_imba_greater_crit:OnCreated(keys)
-	self.ability = self:GetAbility()
 	local parent = self:GetParent()
 	if IsServer() then
-		
 		if not parent:HasModifier("modifier_item_imba_greater_crit_buff") and not parent:HasModifier("modifier_item_imba_greater_crit_edible") then
 			parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_imba_greater_crit_buff", {})
 		end
-	end	
-	if not parent:IsRealHero() or parent:HasModifier("modifier_item_imba_greater_crit_edible") then return nil end
+	end
+	if not parent:IsRealHero() or parent:HasModifier("modifier_item_imba_greater_crit_edible") then return end
 
 	local level = parent:GetLevel()
-	self.base_damage = self.ability:GetSpecialValueFor("bonus_damage") * level
-    self.bonus_damage_pct = self.ability:GetSpecialValueFor("bonus_damage_pct")
+	self.base_damage = self:GetAbility():GetSpecialValueFor("bonus_damage") * level
+    self.bonus_damage_pct = self:GetAbility():GetSpecialValueFor("bonus_damage_pct")
 
 	self:StartIntervalThink(FrameTime())
 end
-
-function modifier_item_imba_greater_crit:OnIntervalThink()
-	self:OnCreated(keys)
-end	
-
+function modifier_item_imba_greater_crit:OnIntervalThink() self:OnCreated(keys) end
 function modifier_item_imba_greater_crit:DeclareFunctions()
-	local decFuncs = {
-		MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
-        MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
-	}
-
-	return decFuncs
+	return {MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE, MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE}
 end
-
-function modifier_item_imba_greater_crit:GetModifierBaseAttack_BonusDamage()
-	return self.base_damage
-end
-function modifier_item_imba_greater_crit:GetModifierBaseDamageOutgoing_Percentage()
-	return self.bonus_damage_pct
-end
-
-
--- Removes the damage increase counter if this is the last Daedalus in the inventory
+function modifier_item_imba_greater_crit:GetModifierBaseAttack_BonusDamage() return self.base_damage end
+function modifier_item_imba_greater_crit:GetModifierBaseDamageOutgoing_Percentage() return self.bonus_damage_pct end
 function modifier_item_imba_greater_crit:OnDestroy()
 	if IsServer() then
 		local parent = self:GetParent()
@@ -204,11 +181,8 @@ function modifier_item_imba_greater_crit_buff:IsPurgable() return false end
 function modifier_item_imba_greater_crit_buff:IsPermanent() return true end
 function modifier_item_imba_greater_crit_buff:GetTexture() return "imba_greater_crit" end
 function modifier_item_imba_greater_crit_buff:OnCreated()
-	-- Ability
-	--print("on created")
 	local parent = self:GetParent()
 	local level = parent:GetLevel()
-	-- Special values
 	self.base_crit = self:GetAbility():GetSpecialValueFor("base_crit")
 	local crit_increase = self:GetAbility():GetSpecialValueFor("crit_increase") * level
 	local crit_chance = self:GetAbility():GetSpecialValueFor("crit_chance")
@@ -217,78 +191,56 @@ function modifier_item_imba_greater_crit_buff:OnCreated()
 		if parent:HasScepter() then
 			crit_chance = crit_chance + bonus_crit_chance
 		end
+		if parent:HasModifier("modifier_mana_blade_aura_emitter") and parent:HasModifier("modifier_mana_blade_up") then
+			crit_chance = crit_chance + parent:FindModifierByName("modifier_mana_blade_up"):GetStackCount()
+		end
 		if HasSuperScepter(parent) then
+			if level >= 66 then
+				crit_increase = 12 * level
+			end
 			crit_increase = crit_increase * 2
 		end
 	end
 	self.crit_chance = crit_chance
 	self.crit_increase = crit_increase
-	--print(level .." crit buff level")
 	self:StartIntervalThink(FrameTime())
 end
-
-function modifier_item_imba_greater_crit_buff:OnIntervalThink()
-	self:OnCreated()
-end
-
-
+function modifier_item_imba_greater_crit_buff:OnIntervalThink() self:OnCreated() end
 function modifier_item_imba_greater_crit_buff:DeclareFunctions()
-	local decFuncs = {
-		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
-		--MODIFIER_EVENT_ON_ATTACK_LANDED
-	}
-
-	return decFuncs
+	return {MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE}
 end
 function modifier_item_imba_greater_crit_buff:GetModifierPreAttack_CriticalStrike(params)
-	if IsServer() then
-		if RollPercentage(self.crit_chance) then
-			return self.base_crit + self.crit_increase
-		else
-			return nil
+	if RollPseudoRandomPercentage(self.crit_chance, 0, self:GetParent()) then
+		if self:GetParent():HasModifier("modifier_mana_blade_aura_emitter") then
+			if self:GetParent():HasModifier("modifier_mana_blade_up") then
+				local up_pct_per_stack = self:GetAbility():GetSpecialValueFor("up_pct_per_stack")
+				local devils_up = self:GetParent():FindModifierByName("modifier_mana_blade_up")
+				devils_up:SetStackCount(devils_up:GetStackCount() + up_pct_per_stack)
+			else
+				self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_mana_blade_up", {duration = self:GetAbility():GetSpecialValueFor("up_duration")})
+			end
 		end
+		return self.base_crit + self.crit_increase
 	end
 end
 
---[[function modifier_item_imba_greater_crit_buff:GetModifierPreAttack_CriticalStrike( params )
-	if IsServer() then
-
-		-- Find how many Daedaluses we have for calculating crits
-		local crit_modifiers = self.caster:FindAllModifiersByName("modifier_item_imba_greater_crit")
-
-		-- Get current power
-		local stacks = self:GetStackCount()
-		local crit_power = self.base_crit + self.crit_increase/self.crit_increase * stacks
-
-		self.crit_succeeded = false
-		local multiplicative_chance = (1 - (1 - self.crit_chance * 0.01) ^ #crit_modifiers) * 100
-
-		if RollPercentage(multiplicative_chance) then
-			self:SetStackCount(0)
-			self.crit_succeeded = true
-		end
-
-		if self.crit_succeeded then
-			return crit_power
-		else
-			return nil
-		end
-	end
+-------------------
+-- Mana Blade UP --
+-------------------
+if modifier_mana_blade_up == nil then modifier_mana_blade_up = class({}) end
+function modifier_mana_blade_up:IsHidden() return false end
+function modifier_mana_blade_up:IsDebuff() return false end
+function modifier_mana_blade_up:IsPurgable() return false end
+function modifier_mana_blade_up:OnCreated()
+	local up_pct_per_stack = self:GetAbility():GetSpecialValueFor("up_pct_per_stack")
+	self:SetStackCount(up_pct_per_stack)
+	self:StartIntervalThink(FrameTime())
 end
-function modifier_item_imba_greater_crit_buff:OnAttackLanded( params )
-	if IsServer() then
-		if params.attacker == self:GetParent() then
-
-			-- If the target is a building, do nothing
-			if params.target:IsBuilding() then
-				return nil
-			end
-
-			if not self.crit_succeeded then
-				local stacks = self:GetStackCount()
-				local crit_modifiers = self.caster:FindAllModifiersByName("modifier_item_imba_greater_crit")
-				self:SetStackCount(stacks + self.crit_increase * #crit_modifiers)
-			end
-		end
-	end
-end]]
+function modifier_mana_blade_up:OnIntervalThink()
+	local up_max_effect = self:GetAbility():GetSpecialValueFor("up_max_effect")
+	if self:GetStackCount() >= up_max_effect then self:SetStackCount(up_max_effect) end
+end
+function modifier_mana_blade_up:DeclareFunctions()
+	return {MODIFIER_PROPERTY_TOOLTIP}
+end
+function modifier_mana_blade_up:OnTooltip() return self:GetStackCount() end

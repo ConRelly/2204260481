@@ -7073,6 +7073,7 @@ Nimbus is not recasted by Thundergod's Wrath."
 
 "DOTA_Tooltip_ability_item_plain_perma"							"Gold Ring Extract"
 "DOTA_Tooltip_ability_item_plain_perma_Description"				"<h1>Consume: Extracted Essence</h1>Permanently grants Hidden Power to the wielder. Gives %bonus_armor% bonus armor.<br><br>When reused, it reduces Hidden Power CD by 10 seconds.<br><font color='#EC7E68'>It can be used once.</font>\n<h1>Hidden Power</h1>Upon taking fatal damage you become temporarily invincible.<br><br>Cooldown: %cooldown% seconds"
+"DOTA_Tooltip_ability_item_plain_perma_note0"			"Does not prevent suicide."
 "DOTA_Tooltip_modifier_item_plain_ring_perma"					"Hidden Power"
 "DOTA_Tooltip_modifier_item_plain_ring_perma_Description"		"Upon taking fatal damage you become temporarily invincible. Not Affected by cooldown reduction."
 "DOTA_Tooltip_modifier_item_plain_ring_perma_invincibility"					"Blessing In Disguise"
@@ -7302,12 +7303,14 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 // Daedalus
 //=================================================================================================================
 "DOTA_Tooltip_Ability_item_imba_greater_crit"							   "Devil's Daedalus"
-"DOTA_Tooltip_ability_item_imba_greater_crit_Description"				   "<h1>Passive: Fairy-todo Kyanon</h1>Grants a %crit_chance%%% chance to deal critical damage on your attacks.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Increases the critical chance by %bonus_crit_chance%%%.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Doubles the bonus Crit Damage per Level."
+"DOTA_Tooltip_ability_item_imba_greater_crit_Description"				   "<h1>Passive: Fairy-todo Kyanon</h1>Grants a %crit_chance%%% chance to deal critical damage on your attacks.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Increases the critical chance by %bonus_crit_chance%%%.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Doubles the bonus Crit Damage per Level.<br>After level 66, the BASE bonus crit damage per level increases to <span class=\"GameplayValues GameplayVariable\">12%%</span>.\n<h1><font color='#C657C4'>UP: Mana Blade</font></h1>With each critical hit, increases the chance of a crit by <span class=\"GameplayValues GameplayVariable\">2%%</span>.<br>Max bonus - %up_max_stacks%%%<br>Buff duration - %up_duration% sec."
 "DOTA_Tooltip_ability_item_imba_greater_crit_Lore"						  "A weapon of incredible power that is difficult for even the strongest of warriors to control."
 "DOTA_Tooltip_ability_item_imba_greater_crit_bonus_damage"				  "+Base Damage per Level"
 "DOTA_Tooltip_ability_item_imba_greater_crit_bonus_damage_pct"			  "%+$damage"
 "DOTA_Tooltip_ability_item_imba_greater_crit_base_crit"                   "%Base Critical Damage:"
 "DOTA_Tooltip_ability_item_imba_greater_crit_crit_increase"               "%Bonus Crit Damage per Level:"
+"DOTA_Tooltip_modifier_mana_blade_up"						"<font color='#C657C4'>UP: Mana Blade</font>"
+"DOTA_Tooltip_modifier_mana_blade_up_Description"			"Crit chance increased by %dMODIFIER_PROPERTY_TOOLTIP%%%"
 "DOTA_Tooltip_modifier_item_imba_greater_crit_buff"						 "Power Overwhelming"
 "DOTA_Tooltip_modifier_item_imba_greater_crit_buff_Description"			 "Next critical hit will deal increased damage."
 

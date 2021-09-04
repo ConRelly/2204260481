@@ -2944,38 +2944,8 @@
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
 	"AbilitySpecial"
 	{
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"bonus_armor"				"20"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"min_health"				"25"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"6"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"cooldown"					"50"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"refund"					"33"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"cd_reduct"					"10"
-		}
 	}
-	"OnSpellStart"
+	"OnEquip"
 	{
 		"RunScript"
 		{
@@ -18908,7 +18878,22 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_crit_chance"		"4"
-			}			 		
+			}
+			"7"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"up_duration"			"10"
+			}
+			"8"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"up_pct_per_stack"		"2"
+			}
+			"9"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"up_max_effect"			"20"
+			}
 		}
 	}
 //=================================================================================================================
@@ -18958,7 +18943,6 @@
 	}
 	"AbilitySpecial"
 	{
-
 	}
 }
 
