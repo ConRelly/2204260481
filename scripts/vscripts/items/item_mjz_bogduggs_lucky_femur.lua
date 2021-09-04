@@ -47,7 +47,7 @@ function modifier_item_mjz_bogduggs_lucky_femur:OnAbilityFullyCast(params)
 		if use_ability:IsItem() then return 0 end
 		if not use_ability:IsRefreshable() then return 0 end
 		if use_ability:GetCooldownTimeRemaining() == 0 then return 0 end
-		if not use_ability:ProcsMagicStick() then return end
+		--if not use_ability:ProcsMagicStick() then return end
 
 		local refresh_pct = self:GetAbility():GetSpecialValueFor("refresh_pct")
 		if RollPercentage(refresh_pct) then

@@ -1345,6 +1345,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_slark_7"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"250"
+			}
+		}
+	}	
 	"special_bonus_unique_spectre_2"
 	{
 		"AbilitySpecial"

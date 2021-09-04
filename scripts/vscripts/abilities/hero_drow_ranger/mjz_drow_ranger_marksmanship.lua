@@ -43,7 +43,7 @@ if IsServer() then
 		local ability = self
 		local caster = self:GetCaster()
 		if caster:IsIllusion() then return nil end
-		if not caster:IsRangedAttacker() then return nil end
+		--if not caster:IsRangedAttacker() then return nil end
 	
 		local marksmanship_attack = keys.marksmanship_attack
 		if marksmanship_attack then
@@ -176,7 +176,7 @@ function modifier_class:OnAttackLanded(keys)
 	if keys.attacker ~= caster then return nil end
 	if target:IsBuilding() then return nil end
 	if not caster:HasScepter() then return nil end
-	if not caster:IsRangedAttacker() then return nil end
+	--if not caster:IsRangedAttacker() then return nil end
 	if caster:PassivesDisabled() then return nil end
 	if TargetIsFriendly(caster, target) then return nil end
 
@@ -220,7 +220,7 @@ function modifier_class:_OnAttack(keys)
 	if keys.attacker ~= self:GetParent() then return nil end
 	if keys.target:IsBuilding() then return nil end
 	if not self:GetParent():HasScepter() then return nil end
-	if not self:GetParent():IsRangedAttacker() then return nil end
+	--if not self:GetParent():IsRangedAttacker() then return nil end
 	if self:GetParent():PassivesDisabled() then return nil end
 	if TargetIsFriendly(self:GetParent(), keys.target) then return nil end
 

@@ -1832,6 +1832,7 @@
 		"Ability3"				"mjz_slark_essence_shift"
 		//"Ability4"				"mjz_slark_pounce"
 		"Ability10"				"special_bonus_strength_190"
+		"Ability12"				"special_bonus_truestrike"
 		"Ability14"				"special_bonus_unique_mjz_slark_dark_pact_damage"
 		"Ability15"				"special_bonus_unique_mjz_slark_essence_shift_attack_count"
 		"Ability17"				"special_bonus_intelligence_30"

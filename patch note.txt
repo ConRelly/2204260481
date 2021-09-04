@@ -1253,7 +1253,11 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 
 
 
-* Fix Dawnbreaker not having D bind slot , fix crash on DawnBraker Obs(the fixed icon returned that), returned Dawnbreaker super speed for W. 
+* Fix Dawnbreaker not having D bind slot, fix crash on DawnBraker Obs(the fixed icon returned that), returned Dawnbreaker super speed for W(pressing before the hammer arrives will populate you more). 
+* Fix multicast not working with some skills/items that were intended to work.
+* Drow ult now works with lycan ult(mele)
+* Buffed Slark AS talent and added him a true strike talent.
+
 
 
 

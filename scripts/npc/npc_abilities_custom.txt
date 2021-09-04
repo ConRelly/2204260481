@@ -206,7 +206,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"travel_speed_pct"		"500"
+				"travel_speed_pct"		"400"
 			}
 			"12"
 			{

@@ -14,7 +14,7 @@ function on_ability_executed(keys)
 	local talentRisk = caster:FindAbilityByName("ogre_magi_custom_bonus_unique_2")
 
 	if IsExcludeAbility(used_ability) then return false end
-	if not ability:ProcsMagicStick() then return end
+	--if not ability:ProcsMagicStick() then return end
 
 	if talent and talent:GetLevel() > 0 then
 		four_times = four_times + talent:GetSpecialValueFor("value")

@@ -178,7 +178,7 @@ function modifier_ogre_magi_multicast_lua:OnAbilityFullyCast( params )
 	-- check if spell is banned
 	local abilityName = params.ability:GetAbilityName()
 	if self.banned[abilityName] then return end
-	if not params.ability:ProcsMagicStick() then return end
+	--if not params.ability:ProcsMagicStick() then return end
 
 	-- if the spell can do both target and point, it should not trigger
 	--if bit.band( params.ability:GetBehavior(), DOTA_ABILITY_BEHAVIOR_POINT ) ~= 0 then return end
