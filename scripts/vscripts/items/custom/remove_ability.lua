@@ -32,7 +32,7 @@ if IsServer() then
             --print("real hero check")
             local oldAbility = hero:GetAbilityByIndex(0)
             --print(oldAbility:GetName().. " first skill")
-            if oldAbility and oldAbility:GetName()~= "ogre_magi_unrefined_fireblast_lua" and oldAbility:GetName()~= "mjz_bristleback_quill_spray_autocast4" and oldAbility:GetName()~= "temporary_slot_used" and not string.find(oldAbility:GetAbilityName(), "empty") then
+            if oldAbility and oldAbility:GetName()~= "ogre_magi_unrefined_fireblast_lua" and oldAbility:GetName()~= "mjz_bristleback_quill_spray_autocast4" and oldAbility:GetName()~= "temporary_slot_used" and oldAbility:GetName()~= "mjz_bristleback_quill_spray_autocast4_5" and not string.find(oldAbility:GetAbilityName(), "empty") then
                 local abilityPoints = 1
                 local abilityName = oldAbility:GetName()
                 --hero:RemoveItem(ability) 

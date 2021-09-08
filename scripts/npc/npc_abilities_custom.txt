@@ -166,7 +166,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"3200"
+				"projectile_speed"		"4500"
 			}
 			"04"
 			{
@@ -206,7 +206,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"travel_speed_pct"		"400"
+				"travel_speed_pct"		"150"
 			}
 			"12"
 			{
@@ -21843,6 +21843,27 @@
 			}
 		}
 	}
+	"mjz_bristleback_quill_spray_autocast4_5"
+	{
+		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"ScriptFile"					"abilities/hero_bristleback/mjz_bristleback_quill_spray_autocast4_5.lua"
+		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_TOGGLE "
+		"AbilityTextureName"			"auto_cast3"
+		"LearnOnSpawn"				  "1"
+		"AbilityCooldown"			   "5.0"
+		"AbilityManaCost"				"0"
+		"MaxLevel"						"1"
+
+		"AbilitySpecial"
+		{
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tick_interval"				"0.50"
+			}
+		}
+	}
+
 	"mjz_bristleback_quill_spray_autocast5"
 	{
 		"BaseClass"						"ability_lua"	// "ability_datadriven"

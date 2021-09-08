@@ -75,8 +75,11 @@ if IsServer() then
 		local particle_projectile = "particles/units/heroes/hero_skywrath_mage/skywrath_mage_arcane_bolt.vpcf"
 
 		local intelligence = 0
-		if caster:IsHero() then
+		if IsValidEntity(caster) and caster:IsHero() then
 			intelligence = caster:GetIntellect()
+			if caster:HasModifier("modifier_item_echo_wand") then
+				bolt_speed = bolt_speed * 4
+			end	
 		end
 
 		-- Fire projectile at target

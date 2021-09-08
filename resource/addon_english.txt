@@ -2327,6 +2327,13 @@
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_Note0"			  "It will cast the first non hotkey viabile(excluding passives toggle etc) ability, if the ability is rdy but out of range it will cast the next ability"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_Lore"			""
 
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5"					"Multi AutoCast"
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Description"		"Cast all non hotkey abilities.
+	in case it doesn't work type '-autocast6' to relearn the skill(disable toggle before). type '-removeauto2' to delete the skill and restore the Enchanter"
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_tick_interval"	  "Interval Check:"
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Note0"			  "It will cast the first non hotkey viabile(excluding passives toggle etc) ability, if the ability is not rdy it will cast the next ability"
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Lore"              "Are you pressing any buttons ?"
+
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast5"					"AutoCast - Shadow Poison"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast5_Description"		"Can cast while stunned, but not when silenced.
 	In case it doesn't work type '-autocast5' to relearn the skill(disable toggle before)"
@@ -2901,12 +2908,19 @@
 	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Note2"	"The heal is independent of the damage."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_life_stealer_feast_strength"	"+{s:value}% Feast Damage/Lifesteal"	
 
-"DOTA_Tooltip_ability_life_stealer_infest_Lore"									"With this infestation, N'aix consumes the life blood of the host, restoring him back to full unholy power."
-	"DOTA_Tooltip_ability_life_stealer_infest_Description"							"Wisp infests the body of a target unit, becoming undetectable, and healing for a portion of his max hitpoints every second while inside. He can then explode from the host body, dealing damage to nearby enemies.Does not work on enemies.\n\nDISPEL TYPE: Basic Dispel
-	<h1><font color='#6761F5'>PASSIVE:Devise</font></h1>Infested Units gain a percent of Wisp total attack and armor"
+	"DOTA_Tooltip_ability_life_stealer_infest_Lore"									"With this infestation, N'aix consumes the life blood of the host, restoring him back to full unholy power."
+	"DOTA_Tooltip_ability_life_stealer_infest_Description"							"Wisp infests the body of a target unit, becoming undetectable, and healing for a portion of his max hitpoints every second while inside. He can then explode from the host body, dealing damage to nearby enemies.Does not work on enemies.\n\nDISPEL TYPE: Basic Dispel \n<h1><font color='#6761F5'>PASSIVE:Devise</font></h1>Infested Units gain a percent of Wisp total attack and armor"
 
 	"DOTA_Tooltip_ability_life_stealer_infest_extra_damage"							"%<font color='#6761F5'>DAMAGE FROM WISP:</font>"
 	"DOTA_Tooltip_ability_life_stealer_infest_extra_armor"							"%<font color='#6761F5'>ARMOR FROM WISP:</font>"
+
+	"DOTA_Tooltip_ability_wisp_spirits_in"									"Spirits Movement"
+	"DOTA_Tooltip_ability_wisp_spirits_in_Description"						"Sends the spirits closer to you. Can be toggled on and off.
+	<h1><font color='#F33A03'>Don't remove. Unless you removed the main skill too.</font></h1>"
+	"DOTA_Tooltip_ability_wisp_spirits_out"									"Spirits Out"
+	"DOTA_Tooltip_ability_wisp_spirits_out_Description"						"Sends the spirits farther away from you. Can be toggled on and off.
+	\n1<h1><font color='#F33A03'>Don't remove. Unless you removed the main skill too.</font></h1>"
+
 
 "DOTA_Tooltip_ability_mjz_life_stealer_rage"	"Rage"
 "DOTA_Tooltip_ability_mjz_life_stealer_rage_Description"			"Launch into a maddened rage, becoming Spell Immune, 100% resistant to magic damage, and gaining increased attack speed.<br><br>DISPEL TYPE: Basic Dispel"
@@ -7303,7 +7317,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 // Daedalus
 //=================================================================================================================
 "DOTA_Tooltip_Ability_item_imba_greater_crit"							   "Devil's Daedalus"
-"DOTA_Tooltip_ability_item_imba_greater_crit_Description"				   "<h1>Passive: Fairy-todo Kyanon</h1>Grants a %crit_chance%%% chance to deal critical damage on your attacks.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Increases the critical chance by %bonus_crit_chance%%%.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Doubles the bonus Crit Damage per Level.<br>After level 66, the BASE bonus crit damage per level increases to <span class=\"GameplayValues GameplayVariable\">12%%</span>.\n<h1><font color='#C657C4'>UP: Mana Blade</font></h1>With each critical hit, increases the chance of a crit by <span class=\"GameplayValues GameplayVariable\">2%%</span>.<br>Max bonus - %up_max_stacks%%%<br>Buff duration - %up_duration% sec."
+"DOTA_Tooltip_ability_item_imba_greater_crit_Description"				   "<h1>Passive: Fairy-todo Kyanon</h1>Grants a %crit_chance%%% chance to deal critical damage on your attacks.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Increases the critical chance by %bonus_crit_chance%%%.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Doubles the bonus Crit Damage per Level.<br>After level 66, the BASE bonus crit damage per level increases to <span class=\"GameplayValues GameplayVariable\">12%%</span>.\n<h1><font color='#C657C4'>UP: Mana Blade</font></h1>With each critical hit, increases the chance of a crit by <span class=\"GameplayValues GameplayVariable\">1%%</span>.<br>Max bonus - %up_max_effect%%%<br>Buff duration - %up_duration% sec."
 "DOTA_Tooltip_ability_item_imba_greater_crit_Lore"						  "A weapon of incredible power that is difficult for even the strongest of warriors to control."
 "DOTA_Tooltip_ability_item_imba_greater_crit_bonus_damage"				  "+Base Damage per Level"
 "DOTA_Tooltip_ability_item_imba_greater_crit_bonus_damage_pct"			  "%+$damage"
@@ -7318,7 +7332,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 "DOTA_Tooltip_Ability_item_crit_edible_Description"				  		"<h1>Active: Consume</h1> Get All the Stats and effects from Devil's Daedalus with some stats slightly or greater improved.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Triples the bonus Crit Damage per Level."
 "DOTA_Tooltip_Ability_item_crit_edible_Lore"						  	"A weapon of incredible power that is difficult for even the strongest of warriors to control, Now with Strawberry flavor to give a better taste"
 "DOTA_Tooltip_modifier_item_imba_greater_crit_edible"				"<font color='#BE03FF'>Edible Devil's Daedalus</font>"
-"DOTA_Tooltip_modifier_item_imba_greater_crit_edible_Description"	"Have all the Stats and effects(including <font color='#0094FF'>Aghanim's Scepter</font> and <font color='#DE3163'>Super Scepter</font>) of a Devil's Daedalus with some stats slightly or greater improved."
+"DOTA_Tooltip_modifier_item_imba_greater_crit_edible_Description"	"Have all the Stats and effects(including <font color='#0094FF'>Aghanim's Scepter</font>, <font color='#DE3163'>Super Scepter</font> and <font color='#C657C4'>UP: Mana Blade</font>) of a Devil's Daedalus with some stats slightly or greater improved."
 
 		//=================================================================================================================
 
@@ -9500,6 +9514,9 @@ Contains all random skills"
 	   "dota_tooltip_ability_temporary_slot_used_description"	"Used so if you don't learn any new skill you wont lose you key bind when removing spells"
 	   "dota_tooltip_ability_item_auto_cast"					 "Learn AutoCast"
 	   "dota_tooltip_ability_item_auto_cast_description"		 "Learn an toggle ability that will automatically cast first non hotkey ability that can be casted"
+	   "dota_tooltip_ability_item_auto_cast2"					 "Learn Multi AutoCast"
+	   "dota_tooltip_ability_item_auto_cast2_description"		 "Learn an toggle ability that will automatically cast All non hotkey abilities that can be casted
+	   Enchanter can be restored with -removeauto2 command"	   
 	   "DOTA_Tooltip_modifier_item_warriors_seal2"			   "Ancient Armor stacks"
 	   "DOTA_Tooltip_Ability_item_branch_component"			  "Branch component"
 	   "DOTA_Tooltip_Ability_item_branch_component_description"  "At lvl 20 you will receive one, if you have no plans in building any item from this then you can just sell this (not tradable)"

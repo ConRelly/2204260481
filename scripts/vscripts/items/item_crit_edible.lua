@@ -13,7 +13,7 @@ bonus_crit_dmg_per_lvl_66 = 12
 
 -- Up Bonus
 up_duration = 10
-up_pct_per_stack = 2
+up_pct_per_stack = 1
 up_max_effect = 20
 ----------------------------------------
 
@@ -54,14 +54,15 @@ function modifier_item_imba_greater_crit_edible:OnCreated()
 		if not parent:HasModifier("modifier_item_imba_greater_crit_edible_buff") then
 			parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_imba_greater_crit_edible_buff", {})
 		end
-	end	
-	if not parent:IsRealHero() then return nil end
+		
+		if not parent:IsRealHero() then return nil end
 
-	local level = parent:GetLevel()
-	self.base_damage = bonus_damage * level
-	self.bonus_damage_pct = bonus_damage_pct
+		local level = parent:GetLevel()
+		self.base_damage = bonus_damage * level
+		self.bonus_damage_pct = bonus_damage_pct
 
-	self:StartIntervalThink(FrameTime())
+		self:StartIntervalThink(FrameTime())
+	end
 end
 function modifier_item_imba_greater_crit_edible:OnIntervalThink() self:OnCreated() end	
 function modifier_item_imba_greater_crit_edible:DeclareFunctions()

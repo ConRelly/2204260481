@@ -81,6 +81,7 @@ function AddRecordedAction(modifier, keys)
 			["item_video_file"] = true,
 			["item_resurection_pendant"] = true,
 			["dawnbreaker_custom_luminosity"] = true,
+			["dawnbreaker_luminosity"] = true,
 			["item_random_get_ability"] = true,
 			["item_random_get_ability2"] = true,
 			["item_random_get_ability3"] = true,
@@ -113,6 +114,7 @@ function AddRecordedAction(modifier, keys)
 			["item_mjz_rage_moon_shard"] = true, 
 			["beastmaster_wild_axes"] = true,
 			["item_crit_edible"] = true,
+			["legion_commander_duel_lua"] = true,
 
 			["sourcery"] = true,
 			["sacred_blink"] = true,
@@ -181,7 +183,7 @@ function PlayVideo(keys)
 	--remove illusion skills
 	for slot = 0, 8 do
 		local oldAbility = clone:GetAbilityByIndex(slot)	
-		if oldAbility and oldAbility:GetAbilityName() ~= "dawnbreaker_luminosity" then
+		if oldAbility and oldAbility:GetAbilityName() ~= "dawnbreaker_custom_luminosity" then
 			clone:RemoveAbilityByHandle(oldAbility)	
 		end
 	end	
@@ -220,7 +222,6 @@ function PlayVideo(keys)
 		Timers:CreateTimer(action.time, function()
 			--print("Playing action with timestamp: " .. action.time)
 			if clone:IsNull() or not clone:IsAlive() then return end
-
 			local order = action.order
 			local ability = action.ability
 			local target = action.target
@@ -238,7 +239,7 @@ function PlayVideo(keys)
 				clone:PerformTaunt()				
 			end
 
-			if ability then 
+			if ability and IsValidEntity(ability) and not ability:IsNull() then 
 				local abilityName = ability:GetAbilityName()
 				local cloneAbility = clone:FindAbilityByName(abilityName)
 				if not cloneAbility then cloneAbility = clone:FindItemInInventory(abilityName) end

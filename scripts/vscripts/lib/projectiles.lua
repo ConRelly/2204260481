@@ -111,7 +111,9 @@ function TrackingProjectiles:Think(params,projectileID)
 		projectileID.position = projectile
 		-- Add vision
 		if visionRadius then
-			AddFOWViewer(caster:GetTeam(), projectile, visionRadius, 2 / 32,true)
+			if caster ~= nil and not caster:IsNull() and IsValidEntity(caster) then
+				AddFOWViewer(caster:GetTeam(), projectile, visionRadius, 2 / 32,true)
+			end	
 		end
 
 		-- Check if projectile has hit a platform

@@ -49,6 +49,7 @@ local IllusionNotCopy = {
     ["item_remove_ability"] = true,
     ["item_remove_doomskill"] = true,
     ["item_auto_cast"] = true,
+    ["item_auto_cast2"] = true,
     ["item_imba_ultimate_scepter_synth2"] = true,
     ["item_obs_studio"] = true, 
     ["item_god_slayer"] = true,

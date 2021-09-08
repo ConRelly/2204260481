@@ -2944,6 +2944,31 @@
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
 	"AbilitySpecial"
 	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"cooldown"					"50" // hard
+		}
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"8" // hard
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"aura_armor"			"20"	//hardcoded(tooltip purpose)
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"aura_radius"					"7800" // hard
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_damage"					"15" //hardcoded
+		}				
 	}
 	"OnEquip"
 	{
@@ -16570,6 +16595,51 @@
 	}
 }
 
+"item_recipe_auto_cast2"
+{
+	"AbilityTextureName"				"item_recipe"
+	"BaseClass"						"item_datadriven"
+	"Model"							"models/props_gameplay/recipe.vmdl"
+	"ItemCost"						"9000"
+	"ItemShopTags"					""
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_auto_cast2"
+	"ItemRequirements"
+	{
+
+		"01"						"item_auto_cast;item_enchanter"
+	}
+}
+
+"item_auto_cast2"
+{
+	"BaseClass"			 		"item_datadriven"
+	"AbilityTextureName"			"auto_cast3"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+	"AbilityCastPoint"				"0"
+
+	"ItemCost"						"3000"
+	"ItemShopTags"					"consumable"
+	"ItemDroppable" 				"1"
+	"ItemPurchasable" 				"1"
+	"ItemSellable"					"1"
+	//"ItemStockInitial"				"5"
+	//"ItemStockMax"					"6"
+	//"ItemStockTime"					"999999.0"
+	"IsTempestDoubleClonable"	   "0"
+	"ItemShareability"			  "ITEM_FULLY_SHAREABLE_STACKING"
+	//"AbilityGoldCost"			   "1"
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"hack/item_auto_cast2.lua"
+			"Function"		"OnSpellStart"
+		}
+	}
+}
+
 	//==================================================================
 	// 红色的圣剑
 	//================================================================== 
@@ -18887,7 +18957,7 @@
 			"8"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"up_pct_per_stack"		"2"
+				"up_pct_per_stack"		"1"
 			}
 			"9"
 			{

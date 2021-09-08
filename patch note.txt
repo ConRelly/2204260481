@@ -1253,7 +1253,7 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 
 
 
-* Fix Dawnbreaker not having D bind slot, fix crash on DawnBraker Obs(the fixed icon returned that), returned Dawnbreaker super speed for W(pressing before the hammer arrives will populate you more). 
+* Fix Dawnbreaker not having D bind slot, fix crash on DawnBraker Obs(the fixed icon returned that), returned Dawnbreaker super speed for W(pressing before the hammer lands will make you go farther). 
 * Fix multicast not working with some skills/items that were intended to work.
 * Drow ult now works with lycan ult(mele)
 * Buffed Slark AS talent and added him a true strike talent.
@@ -1263,12 +1263,18 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Added UP for Devil's Daedalus
 * Gold Ring now has auto-use
 * Perhaps a bug has been fixed with the fact that the Gold Ring didn't proc
-
+* Replaced sky ancient seal talent.
+* Added the new talent for anchor smash on tidehunter.
+* Autocast now uses more skills(some skills with point target and no team target were not used, like disruptor ult or E), and now it will not try to cast on targets that you don't have vision(more control for you)
+* Added a costly upgrade for Autocast, it will use all non-hotkey abilities(no toggles ofc)
+* Fix dawn obs(was still making problems), and reduce the speed of W.
+* Fix legion passive getting stacks from not intended units.
+* Fix some other errors and small changes.
 
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes31 can be found on the new map version:
+*Update patch notes32 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 

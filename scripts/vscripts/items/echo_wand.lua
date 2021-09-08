@@ -226,6 +226,8 @@ if IsServer() then
 		item_crit_edible = true,
 		razor_eye_of_the_storm = true,
 		item_pipe_of_dezun = true,
+		item_auto_cast = true,
+		item_auto_cast2 = true,
 		
 	}
 	local include_table = {

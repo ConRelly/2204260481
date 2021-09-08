@@ -166,7 +166,8 @@ function AOHGameMode:InitGameMode()
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 5)
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 0)
 	Convars:SetInt("dota_max_physical_items_purchase_limit", 99)
-
+	Convars:SetInt("cl_init_scaleform", 1)		--Unfortunately, we have to keep doing this until Valve decides to implement Read/WriteKV in Panorama
+    Convars:SetInt("dota_hud_healthbars", 1)
 	MonsterStyle:InitGameMode()
 	self:_ReadGameConfiguration()
 
@@ -427,7 +428,7 @@ function AOHGameMode:RecountPlayers()
 		callback = function()
 			self.InitVariables()
 			if self._playerNumber == 0 then
-				send_info_if_game_ends()
+				send_info_if_game_ends_2()
 			end	
 			--print(self._playerNumber .. " connected players")
 		end
@@ -886,8 +887,9 @@ local IllusionNotLearn = {
 		["rubick_spell_steal"] = true,
 		["arc_warden_tempest_double"] = true,
 		["dawnbreaker_luminosity"] = true,
+		["dawnbreaker_custom_luminosity"] = true,
 		["obs_replay"] = true,
-		--["mjz_leshrac_pulse_nova"] = true,
+		--["legion_commander_duel_lua"] = true,
 		--["custom_drow_ranger_trueshot"] = true,
 		--["ability_random_custom_gold"] = true,
 	};

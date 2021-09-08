@@ -143,6 +143,24 @@ function AOHGameMode:OnPlayerChat(keys)
 			end					   
 		end	
 	end
+	if keys.text == "-autocast6" then
+		local playerID = keys.playerid
+		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+		if hero:HasAbility("mjz_bristleback_quill_spray_autocast4_5") then
+			local ability = hero:FindAbilityByName("mjz_bristleback_quill_spray_autocast4_5")
+			if not ability:GetToggleState() then
+				hero:RemoveAbility("mjz_bristleback_quill_spray_autocast4_5")
+				Notifications:TopToAll({text="refresh", style={color="blue"}, duration=1})
+				Timers:CreateTimer({
+					endTime = 0.55, 
+					callback = function()
+						hero:AddAbility("mjz_bristleback_quill_spray_autocast4_5")	
+						--print("refresh skill")
+					end
+				})				 
+			end					   
+		end	
+	end	
 	if keys.text == "-autocast5" then
 		local playerID = keys.playerid
 		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
@@ -171,7 +189,19 @@ function AOHGameMode:OnPlayerChat(keys)
 				Notifications:TopToAll({text="Removed autocast", style={color="blue"}, duration=1})				 
 			end					   
 		end	
-	end									
+	end	
+	if keys.text == "-removeauto2" then
+		local playerID = keys.playerid
+		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+		if hero:HasAbility("mjz_bristleback_quill_spray_autocast4_5") then
+			local ability = hero:FindAbilityByName("mjz_bristleback_quill_spray_autocast4_5")
+			if not ability:GetToggleState() then
+				hero:RemoveAbility("mjz_bristleback_quill_spray_autocast4_5")
+				hero:AddItemByName("item_enchanter")
+				Notifications:TopToAll({text="Removed multi autocast and restored Enchanter", style={color="yellow"}, duration=3})				 
+			end					   
+		end	
+	end										
 	if keys.text == "-zeromana" then
 		local player_count = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS)
 		local playerID = keys.playerid

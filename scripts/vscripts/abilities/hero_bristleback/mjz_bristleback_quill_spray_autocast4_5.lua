@@ -1,15 +1,13 @@
 require("lib/my")
---local TARGET_ABILITY_NAME = 'bristleback_quill_spray'
---local TARGET_ABILITY_NAME_2 = "zuus_arc_lightning"
-local MODIFIER_NAME = 'modifier_mjz_bristleback_quill_spray_autocast4'
-local THIS_LUA = "abilities/hero_bristleback/mjz_bristleback_quill_spray_autocast4.lua"
+local MODIFIER_NAME = 'modifier_mjz_bristleback_quill_spray_autocast4_5'
+local THIS_LUA = "abilities/hero_bristleback/mjz_bristleback_quill_spray_autocast4_5.lua"
 
 LinkLuaModifier(MODIFIER_NAME, THIS_LUA, LUA_MODIFIER_MOTION_NONE)
 
 ---------------------------------------------------------------------------
 
-mjz_bristleback_quill_spray_autocast4 = class({})
-local ability_class = mjz_bristleback_quill_spray_autocast4
+mjz_bristleback_quill_spray_autocast4_5 = class({})
+local ability_class = mjz_bristleback_quill_spray_autocast4_5
 
 function ability_class:OnToggle()
     if IsServer() then
@@ -26,8 +24,8 @@ end
 
 --------------------------------------------------------------------------------
 
-modifier_mjz_bristleback_quill_spray_autocast4 = class({})
-local modifier_class = modifier_mjz_bristleback_quill_spray_autocast4
+modifier_mjz_bristleback_quill_spray_autocast4_5 = class({})
+local modifier_class = modifier_mjz_bristleback_quill_spray_autocast4_5
 
 function modifier_class:IsPassive() return false end
 function modifier_class:IsHidden() return true end
@@ -56,7 +54,7 @@ function modifier_class:OnIntervalThink()
 
             if parent == nil then return nil end
             local target_ability = parent:GetAbilityByIndex( i )       
-            if target_ability and IsValidEntity(target_ability) and not target_ability:IsAttributeBonus() and not target_ability:IsHidden() and not target_ability:IsToggle() and target_ability:GetLevel() > 0 then  -- Talent-- Dunno
+            if target_ability and IsValidEntity(target_ability) and not target_ability:IsAttributeBonus() and not target_ability:IsHidden() and not target_ability:IsToggle() and target_ability:GetLevel() > 0 and target_ability:IsCooldownReady() then  -- Talent-- Dunno
                 if target_ability:IsInAbilityPhase() then return nil end
                 --if not ability:GetToggleState() then return nil end
                 if not IsValidEntity(parent) then return nil end
@@ -87,14 +85,14 @@ function modifier_class:OnIntervalThink()
                         target_ability:GetAbilityTargetTeam(), target_ability:GetAbilityTargetType(), target_ability:GetAbilityTargetFlags() + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE,
                         FIND_ANY_ORDER, false)
                 elseif target_ability:GetAbilityTargetTeam() ~= 0 then
-                        enemy_list = FindUnitsInRadius(caster:GetTeamNumber(), pos, nil, radius_auto, 
-                            target_ability:GetAbilityTargetTeam(), DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, target_ability:GetAbilityTargetFlags() + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE,
-                            FIND_ANY_ORDER, false)                         
+                    enemy_list = FindUnitsInRadius(caster:GetTeamNumber(), pos, nil, radius_auto, 
+                        target_ability:GetAbilityTargetTeam(), DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, target_ability:GetAbilityTargetFlags() + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE,
+                        FIND_ANY_ORDER, false) 
                 else
                     enemy_list = FindUnitsInRadius(caster:GetTeamNumber(), pos, nil, radius_auto, 
                         DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, target_ability:GetAbilityTargetFlags() + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE,
-                        FIND_ANY_ORDER, false) 
-                end                       
+                        FIND_ANY_ORDER, false)                             
+                end                     
                 if #enemy_list > 0 then
                     local first_enemy = enemy_list[1]
                     if target_ability == nil then return nil end 

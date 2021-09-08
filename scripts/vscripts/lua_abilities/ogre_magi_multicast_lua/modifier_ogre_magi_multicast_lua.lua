@@ -114,6 +114,8 @@ modifier_ogre_magi_multicast_lua.banned = {
 	["hw_sharpshooter"] = true,
 	["hw_sharpshooter_release"] = true,
 	["item_crit_edible"] = true,
+	["item_auto_cast"] = true,
+    ["item_auto_cast2"] = true,
 }
 
 --------------------------------------------------------------------------------

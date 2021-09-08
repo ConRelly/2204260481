@@ -183,6 +183,8 @@ function IsExcludeAbility( ability )
 		"hw_sharpshooter",
 		"hw_sharpshooter_release",
 		"item_crit_edible",
+		"item_auto_cast",
+		"item_auto_cast2",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

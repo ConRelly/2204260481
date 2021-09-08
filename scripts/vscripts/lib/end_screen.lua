@@ -101,7 +101,7 @@ end
 
 
 local has_send_data = false
-
+local has_send_data_2 = false
 
 function end_screen_setup(isWinner)
     local data = end_screen_get_data(isWinner)
@@ -117,3 +117,11 @@ function send_info_if_game_ends()
     end    
 
 end    
+
+function send_info_if_game_ends_2()
+    if not has_send_data_2 and not has_send_data then
+        send_data_info()
+        has_send_data_2 = true
+    end    
+
+end 

@@ -4037,6 +4037,7 @@
 	"disruptor_thunder_strike"
 	{
 		"LevelsBetweenUpgrades"			 "5"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
 		"AbilitySpecial"
 		{
 			"04"
@@ -4076,6 +4077,7 @@
 	"disruptor_static_storm"
 	{
 		"AbilityCooldown"			"50.0"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilitySpecial"
 		{
 			"02"
@@ -12670,7 +12672,7 @@
 	}
 	"oracle_purifying_flames"
 	{
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
 		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"LevelsBetweenUpgrades"		 "7"
@@ -13071,6 +13073,26 @@
 			}
 		}
 	}
+	"special_bonus_unique_tidehunter_8"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"7979"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"1"
+				"ad_linked_ability"			"tidehunter_anchor_smash"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}	
 	"troll_warlord_berserkers_rage"
 	{
 		"AbilitySpecial"
@@ -15935,7 +15957,7 @@
 	{
 		"LevelsBetweenUpgrades"		 "3"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
 		"AbilityCooldown"				"1.6" //"1.6"
 		"AbilityCastRange"				"1050"
 		"AbilitySpecial"

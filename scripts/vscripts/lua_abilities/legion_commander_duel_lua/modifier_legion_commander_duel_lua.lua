@@ -16,16 +16,21 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_legion_commander_duel_lua:OnCreated(kv)
-    self.damage_bonus = self:GetAbility():GetSpecialValueFor("damage_bonus")
-    self.str_multiplier = self:GetAbility():GetSpecialValueFor("str_multiplier")
-    if IsServer() then
-        self:SetStackCount(self:GetAbility():GetDuelKills())
-    end
+    if self:GetParent():IsIllusion() then return end
+    if IsValidEntity(self:GetAbility()) and not self:GetAbility():IsNull() then
+        self.damage_bonus = self:GetAbility():GetSpecialValueFor("damage_bonus")
+        self.str_multiplier = self:GetAbility():GetSpecialValueFor("str_multiplier")
+        if IsServer() then    
+            self:SetStackCount(self:GetAbility():GetDuelKills())
+            
+        end
+    end    
 end
 
 --------------------------------------------------------------------------------
 
 function modifier_legion_commander_duel_lua:OnRefresh(kv)
+    if self:GetParent():IsIllusion() then return end
     self.damage_bonus = self:GetAbility():GetSpecialValueFor("damage_bonus")
     self.str_multiplier = self:GetAbility():GetSpecialValueFor("str_multiplier")
 end
@@ -42,12 +47,16 @@ function modifier_legion_commander_duel_lua:DeclareFunctions()
 end
 
 function modifier_legion_commander_duel_lua:OnDeath(event)
+    if self:GetParent():IsIllusion() then return end
     if IsServer() then
         if event.unit == nil or event.attacker == nil or event.unit:IsNull() or event.attacker:IsNull() then
             return
         end
-
-        if event.unit:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and self:GetParent():IsAlive() and not self:GetParent():PassivesDisabled() then
+        local caster = self:GetCaster()
+		local target = event.target
+		if target == nil then target = event.unit end    
+        if event.attacker:GetTeamNumber() == caster:GetTeamNumber() and caster:GetTeamNumber() ~= target:GetTeamNumber() and caster:IsAlive() and not caster:PassivesDisabled() then
+       -- if event.unit:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and self:GetParent():IsAlive() and not self:GetParent():PassivesDisabled() then
             local ability = self:GetAbility()
             local chance = GetTalentSpecialValueFor(ability, "stack_chance")
             if RollPercentage(chance) then
@@ -66,7 +75,7 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_legion_commander_duel_lua:GetModifierPreAttack_BonusDamage(params)
-    if not self:GetParent():PassivesDisabled() then
+    if not self:GetParent():PassivesDisabled() and not self:GetParent():IsIllusion() then
         return self:GetStackCount() * self.damage_bonus + self:GetStackCount() * self.str_multiplier * self:GetParent():GetStrength()
     end
 

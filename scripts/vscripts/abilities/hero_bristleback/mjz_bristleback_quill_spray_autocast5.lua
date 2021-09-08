@@ -45,10 +45,12 @@ function modifier_class:OnIntervalThink()
     local caster = self:GetCaster()
     local parent = self:GetParent()
     local target_ability = nil
-    if IsServer() then
+    if not IsValidEntity(parent) then return nil end
+    if IsServer() then   
         target_ability = parent:FindAbilityByName(TARGET_ABILITY_NAME_2)
     end   
     if target_ability == nil then return nil end
+    if not IsValidEntity(target_ability) then return nil end
     if not ability:GetToggleState() then return nil end
     if not target_ability:IsCooldownReady() then return nil end
     if target_ability:GetLevel() < 1 then return nil end
@@ -94,6 +96,7 @@ function modifier_class:OnIntervalThink()
         }
         ExecuteOrderFromTable(order)]]
         if IsServer() then
+            if not IsValidEntity(first_enemy) and not IsValidEntity(target_ability) and not IsValidEntity(parent) and not first_enemy:IsAlive() then return nil end
             parent:CastAbilityOnPosition(first_enemy:GetAbsOrigin(), target_ability, parent:GetPlayerOwnerID())
         end    
         --parent:CastAbilityOnTarget(first_enemy, target_ability, parent:GetPlayerOwnerID()) --parent:CastAbilityOnPosition(first_enemy:GetAbsOrigin(), target_ability, parent:GetPlayerOwnerID())

@@ -48,8 +48,9 @@ function modifier_item_imba_lesser_crit:GetAttributes() return MODIFIER_ATTRIBUT
 
 -- Adds the damage increase counter when created
 function modifier_item_imba_lesser_crit:OnCreated(keys)
-	self.ability = self:GetAbility()
-	self.bonus_damage = self.ability:GetSpecialValueFor("bonus_damage")
+	
+		self.ability = self:GetAbility()
+		self.bonus_damage = self.ability:GetSpecialValueFor("bonus_damage")
 
 	if IsServer() then
 		local parent = self:GetParent()
@@ -146,14 +147,15 @@ function modifier_item_imba_greater_crit:OnCreated(keys)
 		if not parent:HasModifier("modifier_item_imba_greater_crit_buff") and not parent:HasModifier("modifier_item_imba_greater_crit_edible") then
 			parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_imba_greater_crit_buff", {})
 		end
+	
+		if not parent:IsRealHero() or parent:HasModifier("modifier_item_imba_greater_crit_edible") then return end
+
+		local level = parent:GetLevel()
+		self.base_damage = self:GetAbility():GetSpecialValueFor("bonus_damage") * level
+		self.bonus_damage_pct = self:GetAbility():GetSpecialValueFor("bonus_damage_pct")
+
+		self:StartIntervalThink(FrameTime())
 	end
-	if not parent:IsRealHero() or parent:HasModifier("modifier_item_imba_greater_crit_edible") then return end
-
-	local level = parent:GetLevel()
-	self.base_damage = self:GetAbility():GetSpecialValueFor("bonus_damage") * level
-    self.bonus_damage_pct = self:GetAbility():GetSpecialValueFor("bonus_damage_pct")
-
-	self:StartIntervalThink(FrameTime())
 end
 function modifier_item_imba_greater_crit:OnIntervalThink() self:OnCreated(keys) end
 function modifier_item_imba_greater_crit:DeclareFunctions()
@@ -181,29 +183,31 @@ function modifier_item_imba_greater_crit_buff:IsPurgable() return false end
 function modifier_item_imba_greater_crit_buff:IsPermanent() return true end
 function modifier_item_imba_greater_crit_buff:GetTexture() return "imba_greater_crit" end
 function modifier_item_imba_greater_crit_buff:OnCreated()
-	local parent = self:GetParent()
-	local level = parent:GetLevel()
-	self.base_crit = self:GetAbility():GetSpecialValueFor("base_crit")
-	local crit_increase = self:GetAbility():GetSpecialValueFor("crit_increase") * level
-	local crit_chance = self:GetAbility():GetSpecialValueFor("crit_chance")
-	local bonus_crit_chance = self:GetAbility():GetSpecialValueFor("bonus_crit_chance")
 	if IsServer() then
-		if parent:HasScepter() then
-			crit_chance = crit_chance + bonus_crit_chance
-		end
-		if parent:HasModifier("modifier_mana_blade_aura_emitter") and parent:HasModifier("modifier_mana_blade_up") then
-			crit_chance = crit_chance + parent:FindModifierByName("modifier_mana_blade_up"):GetStackCount()
-		end
-		if HasSuperScepter(parent) then
-			if level >= 66 then
-				crit_increase = 12 * level
+		local parent = self:GetParent()
+		local level = parent:GetLevel()
+		self.base_crit = self:GetAbility():GetSpecialValueFor("base_crit")
+		local crit_increase = self:GetAbility():GetSpecialValueFor("crit_increase") * level
+		local crit_chance = self:GetAbility():GetSpecialValueFor("crit_chance")
+		local bonus_crit_chance = self:GetAbility():GetSpecialValueFor("bonus_crit_chance")
+		
+			if parent:HasScepter() then
+				crit_chance = crit_chance + bonus_crit_chance
 			end
-			crit_increase = crit_increase * 2
-		end
+			if parent:HasModifier("modifier_mana_blade_aura_emitter") and parent:HasModifier("modifier_mana_blade_up") then
+				crit_chance = crit_chance + parent:FindModifierByName("modifier_mana_blade_up"):GetStackCount()
+			end
+			if HasSuperScepter(parent) then
+				if level >= 66 then
+					crit_increase = 12 * level
+				end
+				crit_increase = crit_increase * 2
+			end
+		
+		self.crit_chance = crit_chance
+		self.crit_increase = crit_increase
+		self:StartIntervalThink(FrameTime())
 	end
-	self.crit_chance = crit_chance
-	self.crit_increase = crit_increase
-	self:StartIntervalThink(FrameTime())
 end
 function modifier_item_imba_greater_crit_buff:OnIntervalThink() self:OnCreated() end
 function modifier_item_imba_greater_crit_buff:DeclareFunctions()

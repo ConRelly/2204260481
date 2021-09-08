@@ -234,16 +234,31 @@ function modifier_item_imba_skadi_unique:DeclareFunctions()
 end
 
 function modifier_item_imba_skadi_unique:GetModifierBonusStats_Strength()
-	return self:GetAbility():GetSpecialValueFor("rapier_str") end
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("rapier_str")
+	end
+	return 0	 
+end
 
 function modifier_item_imba_skadi_unique:GetModifierBonusStats_Agility()
-	return self:GetAbility():GetSpecialValueFor("rapier_agi") end
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("rapier_agi") 
+	end
+	return 0
+end
 
 function modifier_item_imba_skadi_unique:GetModifierBonusStats_Intellect()
-	return self:GetAbility():GetSpecialValueFor("rapier_int") end
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("rapier_int")
+	end
+	return 0		 
+end
 	
 function modifier_item_imba_skadi_unique:GetModifierSpellAmplify_Percentage()
-	return self:GetAbility():GetSpecialValueFor("magic_amp")
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("magic_amp")
+	end
+	return 0		
 end
 
 -- On-damage slow effect
