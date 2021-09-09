@@ -2979,6 +2979,51 @@
 		}
 	}
 }
+
+//Ancient plain ring
+"item_plain_perma2"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+	"AbilityTextureName"				"plain_ring"
+	"ItemShopTags"						"regen_health;regen_mana;mana_pool;health_pool"
+	"ItemQuality"						"epic"
+	"ItemAliases"						"gr;gold ring"
+	"ItemShopTags"					"consumable"
+	"ItemQuality"					"consumable"
+	"ItemPurchasable"               "0"
+	"ItemStackable"					"1"
+	"ItemPermanent"					"0"
+	"ItemInitialCharges"			"1"
+	"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"min_health"				"25"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"6"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"cooldown"					"40"
+		}
+	}
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"items/item_plain_ring_perma2.lua"
+			"Function"				"add_perma"
+		}
+	}
+}
+
 "item_recipe_polarized_plate"
 {
 	"BaseClass"						"item_datadriven"
@@ -32747,7 +32792,7 @@
 			"5"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"prc"					"1000"
+				"prc"					"500"
 			}
 			"6"
 			{
@@ -32774,6 +32819,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"slow"					"-100"
 			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"level_mult"					"5"
+			}			
 		}
 		"OnSpellStart"
 		{

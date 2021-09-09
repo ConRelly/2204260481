@@ -198,9 +198,9 @@ function modifier_item_imba_greater_crit_buff:OnCreated()
 				crit_chance = crit_chance + parent:FindModifierByName("modifier_mana_blade_up"):GetStackCount()
 			end
 			if HasSuperScepter(parent) then
-				if level >= 66 then
+				--[[ if level >= 66 then
 					crit_increase = 12 * level
-				end
+				end ]]
 				crit_increase = crit_increase * 2
 			end
 		
@@ -241,6 +241,7 @@ function modifier_mana_blade_up:IsHidden() return false end
 function modifier_mana_blade_up:IsDebuff() return false end
 function modifier_mana_blade_up:IsPurgable() return false end
 function modifier_mana_blade_up:OnCreated()
+	if not IsServer() then return end
 	local up_pct_per_stack = self:GetAbility():GetSpecialValueFor("up_pct_per_stack")
 	self:SetStackCount(up_pct_per_stack)
 end

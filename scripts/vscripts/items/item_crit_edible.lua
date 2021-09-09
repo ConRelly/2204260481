@@ -106,7 +106,7 @@ function modifier_item_imba_greater_crit_edible_buff:OnCreated()
 			if level >= 66 then
 				crit_increase = bonus_crit_dmg_per_lvl_66 * level
 			end
-			crit_increase = crit_increase * 3
+			crit_increase = crit_increase * 2
 		end
 	end
 	self.crit_chance = crit_chance

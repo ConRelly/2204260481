@@ -948,7 +948,7 @@
 		"Ability16"				"special_bonus_corruption_25"
 		"Ability17"				"special_bonus_truestrike"
 
-		"AttributeAgilityGain"		"3.800000"
+		"AttributeAgilityGain"		"4.800000"
 		"AttributeStrengthGain"		"9.4"
 	}
 
@@ -1082,6 +1082,7 @@
 		"Ability6"				"mjz_silencer_global_silence"
 		"Ability10"				"special_bonus_armor_18"
 		"Ability13"				"special_bonus_attack_speed_100"
+		"Ability14"				"special_bonus_hp_4000"
 		"Ability17"				"special_bonus_spell_lifesteal_15"
 	}
 	

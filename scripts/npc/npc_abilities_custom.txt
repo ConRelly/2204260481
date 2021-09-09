@@ -25082,7 +25082,7 @@
 		"AbilityTextureName"				"mjz_kunkka_tidebringer"
 		"ScriptFile"						"abilities/hero_kunkka/mjz_tidebringer"
 		"MaxLevel"							"7"
-		"LevelsBetweenUpgrades"				"7"
+		"LevelsBetweenUpgrades"				"8"
 		"AbilitySound"						"Hero_Kunkka.Tidebringer.Attack"
 		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCooldown"					"6.0 5.0 4.0 3.0 2.0 1.0 0.7"
@@ -25107,6 +25107,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"damage_bonus"				"275 550 850 1800 3450 7500 19500"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"05"
 			{

@@ -210,7 +210,7 @@ function GetRandomAbilityName( hero )
 		"lich_chain_frost",
 		"weaver_the_swarm",
 		"hoodwink_scurry",
-		"hoodwink_acorn_shot",
+		"hoodwink_custom_acorn_shot",
 		"custom_mana_regen",
 		"custom_mana_regen2",
 		"mjz_crystal_maiden_frostbite",

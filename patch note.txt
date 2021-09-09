@@ -1272,9 +1272,19 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Fix some other errors and small changes.
 
 
+
+* Devil's Daedalus secondary supper scepter effect now moved to edible from and removed the 3x from edible form (now is 2x like the non-edible form)
+* Buffed Mana Blade to scale and have a different effect on Real Heroes. the mana blade dmg is now displayed in the dps meter.
+* Gold ring now procs after Helm of undying.
+* Fixed missing swap skill icon for the random hoodwink archon shot
+* Fixed Ancient Gold Ring not saving the ancient and having a wrong CD(was higher than intended)
+
+
+
+
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes32 can be found on the new map version:
+*Update patch notes34 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 

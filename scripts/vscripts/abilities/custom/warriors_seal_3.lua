@@ -14,7 +14,7 @@ end
 
 
 LinkLuaModifier("modifier_item_warriors_seal_buff2", "abilities/custom/warriors_seal_3.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_item_plain_ring_perma", "items/item_plain_ring_perma.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_plain_ring_perma2", "items/item_plain_ring_perma2.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_item_warriors_seal_buff2 = class({})
 
 
@@ -27,7 +27,7 @@ if IsServer() then
         if parent then
 			if not parent:IsIllusion() then
 				parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_warriors_seal2", {})
-                parent:AddNewModifier(parent, ability, "modifier_item_plain_ring_perma", {duration = -1, invincibility_duration = ability:GetSpecialValueFor("duration"), cooldown = ability:GetSpecialValueFor("cooldown"), min_health = ability:GetSpecialValueFor("min_health")})
+                parent:AddNewModifier(parent, ability, "modifier_item_plain_ring_perma2", {duration = -1, invincibility_duration = ability:GetSpecialValueFor("duration"), cooldown = ability:GetSpecialValueFor("cooldown"), min_health = ability:GetSpecialValueFor("min_health")})
 				EmitSoundOn("Hero_Antimage.Counterspell.Absorb", parent)
 			end
         end

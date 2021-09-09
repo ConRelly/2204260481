@@ -72,16 +72,18 @@ function modifier_item_plain_ring_perma:OnTakeDamage(keys)
 	if IsServer() then
 		local aegis_charges = self.parent:FindModifierByName("modifier_aegis")
 		if aegis_charges and aegis_charges:GetStackCount() > 0 then return end
+		--if self.parent:HasModifier("modifier_item_helm_of_the_undying_active") then return nil end
 		if self.parent:IsReincarnating() then return end
 		local unit = keys.unit
 		local attacker = keys.attacker
 		if unit == self.parent and attacker ~= self.parent then
-			local damage = keys.damage
+			--local damage = keys.damage
 			local health = self.parent:GetHealth()
 			if self.parent:FindModifierByName("modifier_ring_invincibility_cd"):GetStackCount() == 0 then
-				if damage > health or health < 1 then
-					unit:AddNewModifier(unit, self.ability, "modifier_item_plain_ring_perma_invincibility", {duration = inv_duration})
+				if health < 1 then
+					if IsUndyingRdy(unit) then return end
 					unit:SetHealth(1)
+					unit:AddNewModifier(unit, self.ability, "modifier_item_plain_ring_perma_invincibility", {duration = inv_duration})
 					local cooldown = cooldown
 					if unit:HasModifier("modifier_plain_ring_perma_up") then
 						cooldown = cooldown - cooldown_reduction
@@ -94,6 +96,18 @@ function modifier_item_plain_ring_perma:OnTakeDamage(keys)
 		end
 	end
 end
+function IsUndyingRdy(unit)
+	local Item = unit:GetItemInSlot(16)
+	if Item ~= nil and IsValidEntity(Item) then
+		if Item:GetName() == "item_helm_of_the_undying" then
+			if Item:IsCooldownReady() then
+				return true
+			end	
+		end	
+	end
+	return false	
+end
+
 
 --------------------
 -- Armor Modifier --
