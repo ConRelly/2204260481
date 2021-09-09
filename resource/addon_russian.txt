@@ -2332,6 +2332,13 @@
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_Note0"			"It will cast the first non hotkey viabile (excluding passives toggle etc) ability, if the ability is rdy but out of range it will cast the next ability"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_Lore"			""
 
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5"					"Multi AutoCast"
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Description"		"Cast all non hotkey abilities.
+	in case it doesn't work type '-autocast6' to relearn the skill(disable toggle before). type '-removeauto2' to delete the skill and restore the Enchanter"
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_tick_interval"	  "Interval Check:"
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Note0"			  "It will cast the first non hotkey viabile(excluding passives toggle etc) ability, if the ability is not rdy it will cast the next ability"
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Lore"              "Are you pressing any buttons ?"
+
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast5"					"AutoCast - Shadow Poison"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast5_Description"		"Can cast while stunned, but not when silenced.<br>In case it doesn't work type '-autocast5' to relearn the skill (disable toggle before)"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast5_Lore"			""
@@ -2938,6 +2945,14 @@
 	"DOTA_Tooltip_ability_life_stealer_infest_Description"							"Герой забирается в тело выбранного существа, становясь незаметным для противников и ежесекундно восстанавливая долю от своего максимального запаса здоровья. После этого он может вырваться из носителя, нанеся урон окружающим врагам. Находясь внутри вражеского или нейтрального крипа, герой может полностью управлять им. Не действует на вражеских героев.\nТИП РАЗВЕИВАНИЯ: нормальное\n<h1><font color='#6761F5'>Пaccивнoe: Devise</font></h1>Носитель получает процент от брони и урона героя."
 	"DOTA_Tooltip_ability_life_stealer_infest_extra_armor"			"%<font color='#6761F5'>ДОП. БРОНЯ ОТ ГЕРОЯ:</font>"
 	"DOTA_Tooltip_ability_life_stealer_infest_extra_damage"			"%<font color='#6761F5'>ДОП. УРОН ОТ ГЕРОЯ:</font>"
+
+	"DOTA_Tooltip_ability_wisp_spirits_in"									"Spirits Movement"
+	"DOTA_Tooltip_ability_wisp_spirits_in_Description"						"Sends the spirits closer to you. Can be toggled on and off.
+	<h1><font color='#F33A03'>Don't remove. Unless you removed the main skill too.</font></h1>"
+	"DOTA_Tooltip_ability_wisp_spirits_out"									"Spirits Out"
+	"DOTA_Tooltip_ability_wisp_spirits_out_Description"						"Sends the spirits farther away from you. Can be toggled on and off.
+	\n1<h1><font color='#F33A03'>Don't remove. Unless you removed the main skill too.</font></h1>"
+
 
 	"DOTA_Tooltip_ability_mjz_life_stealer_rage"					"Rage"
 	"DOTA_Tooltip_ability_mjz_life_stealer_rage_Description"		"Launch into a maddened rage, becoming Spell Immune, 100% resistant to magic damage, and gaining increased attack speed.<br><br>DISPEL TYPE: Basic Dispel"
@@ -7350,7 +7365,7 @@
 	// Daedalus
 	//=================================================================================================================
 	"DOTA_Tooltip_ability_item_imba_greater_crit"							"Devil's Daedalus"
-	"DOTA_Tooltip_ability_item_imba_greater_crit_Description"				"<h1>Пaccивнoe: Fairy-todo Kyanon</h1>Дaёт шaнс %crit_chance%%% нaнeсти критичeский yрoн aтaкoй.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Увeличивaeт критичeский шaнс на %bonus_crit_chance%%%.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Удвaивaeт дoп. крит yрoн зa yрoвeнь.<br>После 66-ого уровня БАЗОВЫЙ дoп. крит yрoн зa yрoвeнь увеличивается до <span class=\"GameplayValues GameplayVariable\">12%%</span>.\n<h1><font color='#C657C4'>UP: Mana Blade</font></h1>С каждым критическим попаданием, увеличивает шанс крита на <span class=\"GameplayValues GameplayVariable\">1%%</span>.<br>Макс. бонус - %up_max_stacks%%%<br>Длительность бонуса - %up_duration% сек."
+	"DOTA_Tooltip_ability_item_imba_greater_crit_Description"				"<h1>Пaccивнoe: Fairy-todo Kyanon</h1>Дaёт шaнс %crit_chance%%% нaнeсти критичeский yрoн aтaкoй.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Увeличивaeт критичeский шaнс на %bonus_crit_chance%%%.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Удвaивaeт дoп. крит yрoн зa yрoвeнь.<br>После 66-ого уровня БАЗОВЫЙ дoп. крит yрoн зa yрoвeнь увеличивается до <span class=\"GameplayValues GameplayVariable\">12%%</span>.\n<h1><font color='#C657C4'>UP: Mana Blade</font></h1>С каждым критическим попаданием, увеличивает шанс крита на %up_pct_per_stack%%%</span>.<br>Макс. бонус - %up_max_effect%%%<br>Длительность бонуса - %up_duration% сек."
 	"DOTA_Tooltip_ability_item_imba_greater_crit_Lore"						"Oрyжиe нeвeрoятнoй мoщи, с кoтoрым нeлeгкo yпрaвиться дaжe сaмoмy сильнoмy вoинy."
 	"DOTA_Tooltip_ability_item_imba_greater_crit_bonus_damage"				"+к бaзoвoмy ypoнy зa ypoвeнь"
 	"DOTA_Tooltip_ability_item_imba_greater_crit_bonus_damage_pct"			"%+$damage"
@@ -9595,8 +9610,10 @@
 
 	"DOTA_Tooltip_ability_item_auto_cast"					"Learn AutoCast"
 	"DOTA_Tooltip_ability_item_auto_cast_description"		"Learn an toggle ability that will automatically cast first non hotkey ability that can be casted."
-
-	"DOTA_Tooltip_modifier_item_warriors_seal2"			"Ancient Armor stacks"
+   "dota_tooltip_ability_item_auto_cast2"					 "Learn Multi AutoCast"
+   "dota_tooltip_ability_item_auto_cast2_description"		 "Learn an toggle ability that will automatically cast All non hotkey abilities that can be casted \nEnchanter can be restored with -removeauto2 command"
+  
+   "DOTA_Tooltip_modifier_item_warriors_seal2"			"Ancient Armor stacks"
 
 	"DOTA_Tooltip_ability_item_branch_component"				"Branch Component"
 	"DOTA_Tooltip_ability_item_branch_component_description"	"Нa 20-oм ypoвнe Вы пoлyчитe лишь oднy Branch Component.<br><br>Ecли y Вac нeт плaнoв нa нeё, тo мoжeтe пpocтo пpoдaть (нe пepeдaвaeмaя)."

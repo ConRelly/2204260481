@@ -122,7 +122,11 @@ function modifier_item_imba_greater_crit_edible_buff:GetModifierPreAttack_Critic
 		if self:GetParent():HasModifier("modifier_mana_blade_aura_emitter") then
 			if self:GetParent():HasModifier("modifier_mana_blade_up") then
 				local devils_up = self:GetParent():FindModifierByName("modifier_mana_blade_up")
-				devils_up:SetStackCount(devils_up:GetStackCount() + up_pct_per_stack)
+				if devils_up:GetStackCount() >= (up_max_effect - up_pct_per_stack) then
+					devils_up:SetStackCount(up_max_effect)
+				else
+					devils_up:SetStackCount(devils_up:GetStackCount() + up_pct_per_stack)
+				end
 			else
 				self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_mana_blade_up", {duration = up_duration})
 			end
@@ -141,10 +145,6 @@ function modifier_mana_blade_up:IsPurgable() return false end
 function modifier_mana_blade_up:GetTexture() return "custom/imba_greater_crit_edible" end
 function modifier_mana_blade_up:OnCreated()
 	self:SetStackCount(up_pct_per_stack)
-	self:StartIntervalThink(FrameTime())
-end
-function modifier_mana_blade_up:OnIntervalThink()
-	if self:GetStackCount() >= up_max_effect then self:SetStackCount(up_max_effect) end
 end
 function modifier_mana_blade_up:DeclareFunctions()
 	return {MODIFIER_PROPERTY_TOOLTIP}
