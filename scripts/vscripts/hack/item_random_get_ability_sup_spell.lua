@@ -147,8 +147,8 @@ function GetRandomAbilityName( hero )
 		--"skywrath_mage_ancient_seal",	   -- 天怒 3
 		--"mjz_axe_counter_helix",		-- 冰龙 1
 		"dark_willow_bedlam",					  -- 巫医 2
-		"dark_willow_bedlam",
-		"dark_willow_bedlam",
+		--"dark_willow_bedlam",
+		--"dark_willow_bedlam",
 		"alchemist_power_of_gold2",				 -- 巫妖 2
 		"alchemist_power_of_gold2",
 		"alchemist_power_of_gold2",

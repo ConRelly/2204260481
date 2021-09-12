@@ -1281,6 +1281,8 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 
 
 
+* Buffed some skills from random pool, normal bedlam removed from all pools except magic.
+* Fixed luna lvl 10 talent going in negative
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 

@@ -14,7 +14,7 @@
     "SpellImmunityType"                                   "SPELL_IMMUNITY_ENEMIES_NO"
     "SpellDispellableType"                                "SPELL_DISPELLABLE_NO"
     "FightRecapLevel"                                     "1"
-
+    "LevelsBetweenUpgrades"         "10"
     "MaxLevel"                                            "6"
 
     // Casting
@@ -32,7 +32,7 @@
       "01"
       {
         "var_type"                                        "FIELD_INTEGER"
-        "attack_damage"                                   "290 995 2825 4100 9250 21250" //OAA
+        "attack_damage"                                   "290 995 3825 9100 29250 68250" //OAA
         "LinkedSpecialBonus"                              "special_bonus_unique_dark_willow_4"
       }
       "02"

@@ -101,11 +101,13 @@ function modifier_class:_Init( )
 	self.agi_bonus = 0 
 	self.int_bonus = 0 
 	if unit and IsValidEntity(unit) and unit:IsRealHero() then
+		if not IsServer() then return end
 		local pa = unit:GetPrimaryAttribute()
 
 		unit:CalculateStatBonus(false)	-- 	重新计算全部属性
 
 		local PrimaryStatValue = self:_GetPrimaryStatValue()
+		
 
 		local bonus = PrimaryStatValue * (self.primary_attribute_per / 100)
 		if math.abs( bonus ) < 1 then bonus = 1 end
@@ -125,6 +127,7 @@ function modifier_class:_Init( )
 end
 
 function modifier_class:_GetPrimaryStatValue()
+	if not IsServer() then return end
 	local STRENGTH = 0
 	local AGILITY = 1
 	local INTELLIGENCE = 2

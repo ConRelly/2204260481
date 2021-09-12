@@ -25,16 +25,20 @@ function modifier_mjz_general_megamorph:DeclareFunctions()
 end
 
 function modifier_mjz_general_megamorph:GetModifierBaseAttack_BonusDamage()
+	if self:GetAbility() == nil or not IsValidEntity(self:GetAbility()) then return 0 end
 	return self:GetAbility():GetSpecialValueFor('bonus_damage')
 end
 function modifier_mjz_general_megamorph:GetModifierAttackRangeBonus( )
+	if self:GetAbility() == nil or not IsValidEntity(self:GetAbility()) then return 0 end
 	return self:GetAbility():GetSpecialValueFor('attack_range')
 end
 
 function modifier_mjz_general_megamorph:GetModifierCastRangeBonusStacking()
+	if self:GetAbility() == nil or not IsValidEntity(self:GetAbility()) then return 0 end
     return self:GetAbility():GetSpecialValueFor("cast_range")
 end
 
 function modifier_mjz_general_megamorph:GetModifierModelScale( )
+	if self:GetAbility() == nil or not IsValidEntity(self:GetAbility()) then return 0 end
 	return self:GetAbility():GetSpecialValueFor('model_scale')
 end

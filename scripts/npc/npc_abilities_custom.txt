@@ -20615,7 +20615,7 @@
 	"AbilityManaCost"				"120"
 	"AbilityModifierSupportValue"	"0.0"
 	"MaxLevel"					  "7"
-	"LevelsBetweenUpgrades"		 "6"
+	"LevelsBetweenUpgrades"		 "10"
 	"AbilitySpecial"
 	{
 		"01"
@@ -20628,7 +20628,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_per_second"		"60 290 950 1555 2200 4800 6800"
+			"damage_per_second"		"60 290 950 1555 2200 6800 17800"
 			"LinkedSpecialBonus"	"special_bonus_unique_dark_seer"
 		}
 		"03"
@@ -20644,7 +20644,7 @@
 		"05"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"int_mult"				"0.5 1.0 1.5 2.0 2.5 3.0 4.0"
+			"int_mult"				"1.5 2.0 3.5 4.0 5.5 7.0 10.0"
 		}		
 	}
 	"OnSpellStart"
@@ -24284,24 +24284,24 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mjz_general_megamorph"
 		"MaxLevel"						"3"
-		"LevelsBetweenUpgrades"		 "10"
+		"LevelsBetweenUpgrades"		 "20"
 		
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"				"150 950 1500"
+				"bonus_damage"				"650 3950 9500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_range"			 "300"
+				"attack_range"			 "200 300 400"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			 "600"
+				"cast_range"			 "250 450 650"
 			}
 			"04"
 			{
@@ -29670,7 +29670,7 @@
 
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
 
-		"AbilityCooldown"				"60 55 45"
+		"AbilityCooldown"				"60"
 		"AbilityManaCost"				"0"
 		"MaxLevel"						"3"
 		"HasScepterUpgrade"				"1"
@@ -29680,7 +29680,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"scepter_radius"		"1200"
+				"scepter_radius"		"1400"
 				"RequiresScepter"			"1"
 			}
 			"02"
@@ -29691,7 +29691,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"incoming_damage_per"	"-30 -60 -70"
+				"incoming_damage_per"	"-30 -40 -55"
 			}
 			"04"
 			{

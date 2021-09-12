@@ -13,7 +13,6 @@
 		"ScriptFile"					"lua_abilities/dark_willow_bedlam_lua/dark_willow_bedlam_lua"
 		"AbilityTextureName"			"dark_willow_bedlam_c"
 		"FightRecapLevel"				"1"
-		"MaxLevel"						"3"
 		"LinkedAbility"					"dark_willow_terrorize_lua"
 
 		"precache"
@@ -33,6 +32,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"                      "5"
+		"LevelsBetweenUpgrades"         "12"
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
 
@@ -86,7 +86,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"int_multiplier"		"3.0 3.3 3.6 4.0 5.0"
+				"int_multiplier"		"3.0 4.0 5.0 6.0 7.0"
 				"LinkedSpecialBonus"	"special_bonus_dark_willow_bedlam_lua"
 			}
 			"09"
