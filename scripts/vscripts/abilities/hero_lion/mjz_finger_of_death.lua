@@ -181,7 +181,7 @@ if IsServer() then
 			function()		
 				if target ~= nil and IsValidEntity(target) and target:IsAlive() and (not target:IsMagicImmune() or caster:HasScepter()) then
 					local damage_type = DAMAGE_TYPE_MAGICAL
-					print("lion dmg 1")
+					--print("lion dmg 1")
 					ApplyDamage({
 						attacker = caster,
 						victim = target,
@@ -197,7 +197,7 @@ if IsServer() then
 			function()		
 				if target ~= nil and IsValidEntity(target) and target:IsAlive() and (not target:IsMagicImmune() or caster:HasScepter()) then
 					local damage_type = DAMAGE_TYPE_MAGICAL
-					print("lion dmg 2")
+					--print("lion dmg 2")
 					ApplyDamage({
 						attacker = caster,
 						victim = target,

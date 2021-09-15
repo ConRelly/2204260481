@@ -12,7 +12,7 @@ function string.split(inputstr, sep)
 end
 
 --[[去除str中的所有空格。成功返回去除空格后的字符串，失败返回nil和失败信息]]
-function string.trim(str)
+function string.trim2(str)
     if str == nil then
         return nil, "the string parameter is nil"
     end

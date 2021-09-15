@@ -9597,7 +9597,7 @@
 	}
 	"skeleton_king_reincarnation"
 	{
-		"AbilityCooldown"				"70 60 50"
+		"AbilityCooldown"				"100 95 90"
 		"AbilitySpecial"
 		{
 			"01"
@@ -9628,7 +9628,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"scepter_duration"		"9"
+				"scepter_duration"		"7"
 				"RequiresScepter"			"1"
 			}
 			"08"
@@ -15798,17 +15798,18 @@
 	"tiny_grow"
 	{
 		"MaxLevel"						  "5"
+		"LevelsBetweenUpgrades"           "12"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_armor"				"4 8 12 22 42"
+				"bonus_armor"				"4 8 18 32 62"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"150 350 1450 3500 7500"
+				"bonus_damage"				"450 950 4450 9500 17500"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"

@@ -7791,7 +7791,8 @@ Required Level: %required_level%
 		"DOTA_Tooltip_Ability_item_recipe_imba_ultimate_scepter_synth"				"<font color='#EE30A7'>Synthetic Aghanim's Scepter</font>"
 
 		"DOTA_Tooltip_Ability_item_imba_ultimate_scepter_synth2"				"<font color='#EE30A7'>Super Scepter</font>"
-		"DOTA_Tooltip_Ability_item_imba_ultimate_scepter_synth2_Description"	"<h1>Active: Super Synth</h1><font color='#00FF40'>After swallowing, you will permanently gain the effect of the ability of the Aghanim's Scepter to upgrade your spells.</font>\n<font color='#EE30A7'>The synthetic Super Scepter adds %bonus_all_stats% all stats, %bonus_health% health, and %bonus_mana% mana, and the bonus of the ability.</font>"
+		"DOTA_Tooltip_Ability_item_imba_ultimate_scepter_synth2_Description"	"<h1>Active: Super Synth</h1><font color='#00FF40'>After swallowing, you will permanently gain the effect of the ability of the Aghanim's Scepter to upgrade your spells.</font>\n<font color='#EE30A7'>The synthetic Super Scepter adds %bonus_all_stats% all stats, %bonus_health% health, and %bonus_mana% mana, and the bonus of the ability.</font>
+		Type '-SS' to allow courier to eat this."
 		"DOTA_Tooltip_Ability_item_recipe_imba_ultimate_scepter_synth2"				"<font color='#EE30A7'>Synthetic Aghanim Scepter</font>"
 
 		"dota_tooltip_modifier_item_imba_ultimate_scepter_synth_stats"		"Super Synth"

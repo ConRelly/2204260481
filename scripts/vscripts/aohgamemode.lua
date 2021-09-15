@@ -916,6 +916,10 @@ function AOHGameMode:OnEntitySpawned(event)
 		unit:AddNewModifier(unit, nil, "modifier_generic_handler", {})
 		unit:AddNewModifier(unit, nil, "modifier_aegis_buff", {duration = 7})
 	end	
+	if unit and (unit:GetUnitName()== "npc_courier_replacement" or unit:GetUnitName()== "npc_dota_lone_druid_bear4") then
+		unit:AddNewModifier(unit, nil, "modifier_generic_handler", {})
+		unit:AddNewModifier(unit, nil, "modifier_aegis_buff", {duration = 7})
+	end	
 
 	Timers:CreateTimer({
 		endTime = 0.1, 
