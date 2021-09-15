@@ -8,20 +8,20 @@ mjz_lion_voodoo = mjz_lion_voodoo or class({})
 --------------------------------------------------------------------------------
 
 function mjz_lion_voodoo:GetBehavior()
-	if self:GetCaster():HasScepter() then
+	if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
 		return DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_AOE
 	end
 	return self.BaseClass.GetBehavior( self )
 end
 
 function mjz_lion_voodoo:GetAOERadius()
-	if self:GetCaster():HasScepter() then
+	if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
 		return self:GetSpecialValueFor("aoe_radius")
 	end
 end
 
 function mjz_lion_voodoo:GetAbilityTextureName()
-    if self:GetCaster():HasScepter() then
+    if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
 		return "mjz_lion_voodoo_fish"
 	end	 
 	return "mjz_lion_voodoo"
@@ -31,43 +31,45 @@ function mjz_lion_voodoo:OnSpellStart()
     if not IsServer() then return end
 
 	local hCaster 		= 	self:GetCaster()
-	local hAbility		= 	self
 	local hTarget  		= 	self:GetCursorTarget()
 	local hPoint   		= 	self:GetCursorPosition()
-	local radius   		= 	hAbility:GetTalentSpecialValueFor("aoe_radius")
+	local radius   		= 	self:GetTalentSpecialValueFor("aoe_radius")
 	local soundName	   	= 	"Hero_Lion.Voodoo"
+	local TargetSound	= 	"Hero_Lion.Hex.Target"
 
-    if hCaster:HasScepter() then
-		local enemies = hCaster:FindEnemyUnitsInRadius(hPoint, radius, {ability = hAbility})
-		if #enemies > 0 then 
+    if hCaster:HasModifier("modifier_item_aghanims_shard") then
+		soundName = "Hero_Lion.Hex.Fishstick"
+		TargetSound = "Hero_Lion.Fishstick.Target"
+		local enemies = hCaster:FindEnemyUnitsInRadius(hPoint, radius, {ability = self})
+		if #enemies > 0 then
 			EmitSoundOnLocationWithCaster(hPoint, soundName, hCaster)
 			for i,enemy in ipairs(enemies) do
 				self:SpellTarget(enemy)
+				EmitSoundOn(TargetSound, enemy)
 			end
 		end
 	else
-		EmitSoundOn( sound, hTarget )
+		EmitSoundOn(soundName, hCaster)
+		EmitSoundOn(TargetSound, hTarget)
 		self:SpellTarget(hTarget)
     end
-
 end
 
 function mjz_lion_voodoo:SpellTarget( hTarget )
     local hCaster = self:GetCaster()
-	local hAbility = self
 	
 	if hTarget:IsIllusion() then
-		hTarget:Kill(hAbility, hCaster)
+		hTarget:Kill(self, hCaster)
 		return 
 	end
 
-	local duration = hAbility:GetTalentSpecialValueFor("duration")
-	local reduce_magical_resistance = hAbility:GetTalentSpecialValueFor("reduce_magical_resistance")
+	local duration = self:GetTalentSpecialValueFor("duration")
+	local reduce_magical_resistance = self:GetTalentSpecialValueFor("reduce_magical_resistance")
 
-	hTarget:AddNewModifier(hCaster, hAbility, "modifier_mjz_lion_voodoo", { duration = duration } )
+	hTarget:AddNewModifier(hCaster, self, "modifier_mjz_lion_voodoo", { duration = duration } )
 
 	if reduce_magical_resistance > 0 then
-		local mm = hTarget:AddNewModifier(hCaster, hAbility, "modifier_mjz_lion_voodoo_magical", { duration = duration })
+		local mm = hTarget:AddNewModifier(hCaster, self, "modifier_mjz_lion_voodoo_magical", { duration = duration })
 		mm:SetStackCount(reduce_magical_resistance)
 	end
 end
@@ -80,6 +82,16 @@ function modifier_mjz_lion_voodoo:IsHidden() return false end
 function modifier_mjz_lion_voodoo:IsDebuff() return true end
 function modifier_mjz_lion_voodoo:IsPurgable() return false end
 function modifier_mjz_lion_voodoo:IsPurgeException() return false end
+
+function modifier_mjz_lion_voodoo:GetEffectName()
+	if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
+		return "particles/econ/items/lion/fish_stick/fish_stick_spell_ambient.vpcf"
+	end
+	return "particles/units/heroes/hero_lion/lion_spell_voodoo_ambient.vpcf"
+end
+function modifier_mjz_lion_voodoo:GetEffectAttachType()
+	return PATTACH_ABSORIGIN_FOLLOW
+end
 
 function modifier_mjz_lion_voodoo:CheckState()
 	return {
@@ -110,12 +122,13 @@ end
 
 function modifier_mjz_lion_voodoo:OnCreated()
 	self.movespeed = self:GetAbility():GetSpecialValueFor("movespeed")
-	self.model = "models/props_gameplay/frog.vmdl" 
-	if self:GetCaster():HasScepter() then
+	self.model = "models/props_gameplay/frog.vmdl"
+	local partname = "particles/units/heroes/hero_lion/lion_spell_voodoo.vpcf"
+	if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
 		self.model = "models/items/hex/fish_hex/fish_hex.vmdl"
+		partname = "particles/econ/items/lion/fish_stick/fish_stick_spell_fish.vpcf"
 	end
 
-	local partname = "particles/units/heroes/hero_lion/lion_spell_voodoo.vpcf"
 	local part = ParticleManager:CreateParticle(partname, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 	ParticleManager:ReleaseParticleIndex(part)
 end

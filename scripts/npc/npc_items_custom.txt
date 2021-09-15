@@ -5633,7 +5633,7 @@
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName" 			"custom/piety"
-		"ItemPurchasable"				"1"
+		"ItemPurchasable"				"0"
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0"
 		"ItemShopTags"					"consumable"
@@ -32823,7 +32823,7 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"level_mult"					"5"
-			}			
+			}
 		}
 		"OnSpellStart"
 		{

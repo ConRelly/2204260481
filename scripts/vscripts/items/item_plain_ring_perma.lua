@@ -78,9 +78,8 @@ function modifier_item_plain_ring_perma:OnTakeDamage(keys)
 		local attacker = keys.attacker
 		if unit == self.parent and attacker ~= self.parent then
 			--local damage = keys.damage
-			local health = self.parent:GetHealth()
 			if self.parent:FindModifierByName("modifier_ring_invincibility_cd"):GetStackCount() == 0 then
-				if health < 1 then
+				if self.parent:GetHealth() <= 0 then
 					if IsUndyingRdy(unit) then return end
 					unit:SetHealth(1)
 					unit:AddNewModifier(unit, self.ability, "modifier_item_plain_ring_perma_invincibility", {duration = inv_duration})

@@ -142,7 +142,7 @@ end
 divine_cancel = class({})
 function divine_cancel:IsHiddenWhenStolen() return true end
 function divine_cancel:ProcsMagicStick() return false end
-function divine_cancel:IsRefreshable() return false end
+--function divine_cancel:IsRefreshable() return false end
 function divine_cancel:OnSpellStart()
 --	if IsServer() then
 		local caster = self:GetCaster()

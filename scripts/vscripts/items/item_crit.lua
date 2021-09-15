@@ -214,19 +214,20 @@ function modifier_item_imba_greater_crit_buff:DeclareFunctions()
 	return {MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE}
 end
 function modifier_item_imba_greater_crit_buff:GetModifierPreAttack_CriticalStrike(params)
-	if RollPseudoRandomPercentage(self.crit_chance, 0, self:GetParent()) then
-		if self:GetParent():HasModifier("modifier_mana_blade_aura_emitter") then
-			if self:GetParent():HasModifier("modifier_mana_blade_up") then
-				local up_pct_per_stack = self:GetAbility():GetSpecialValueFor("up_pct_per_stack")
-				local up_max_effect = self:GetAbility():GetSpecialValueFor("up_max_effect")
-				local devils_up = self:GetParent():FindModifierByName("modifier_mana_blade_up")
-				if devils_up:GetStackCount() >= (up_max_effect - up_pct_per_stack) then
+	local parent = self:GetParent()
+	local ability = self:GetAbility()
+	if RollPseudoRandomPercentage(self.crit_chance, 0, parent) then
+		if parent:HasModifier("modifier_mana_blade_aura_emitter") then
+			if parent:HasModifier("modifier_mana_blade_up") then
+				local up_pct_per_stack = ability:GetSpecialValueFor("up_pct_per_stack")
+				local up_max_effect = ability:GetSpecialValueFor("up_max_effect")
+				local devils_up = parent:FindModifierByName("modifier_mana_blade_up")
+				devils_up:SetStackCount(devils_up:GetStackCount() + up_pct_per_stack)
+				if devils_up:GetStackCount() > up_max_effect then
 					devils_up:SetStackCount(up_max_effect)
-				else
-					devils_up:SetStackCount(devils_up:GetStackCount() + up_pct_per_stack)
 				end
 			else
-				self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_mana_blade_up", {duration = self:GetAbility():GetSpecialValueFor("up_duration")})
+				parent:AddNewModifier(parent, ability, "modifier_mana_blade_up", {duration = ability:GetSpecialValueFor("up_duration")})
 			end
 		end
 		return self.base_crit + self.crit_increase

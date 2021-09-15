@@ -195,15 +195,6 @@
 	//"Ability17"		"special_bonus_cdr_25"
 	"AttributeIntelligenceGain"  "6.9"
 }
-"npc_dota_hero_lion"
-{
-	//"Ability6"		"lion_custom_finger_of_death"
-	//"Ability10"	 "special_bonus_unique_mjz_lion_voodoo_magical_resistance"
-	"Ability12"		"special_bonus_movement_speed_45"
-	"Ability15"		"special_bonus_cdr_40"
-	//"Ability16"		"special_bonus_unique_mjz_lion_impale_base_damage"
-	"Ability17"		"special_bonus_spell_amplify_125"
-}
 "npc_dota_hero_lone_druid"
 {
 	"Ability3"					"lone_druid_custom_bear_style"
@@ -609,13 +600,18 @@
 	"npc_dota_hero_lion_mjz"
 	{
 		"override_hero"			"npc_dota_hero_lion"
-		"Ability1"			  "mjz_lion_impale"
-		"Ability2"			  "mjz_lion_voodoo"
-		"Ability3"			  "custom_spiritbreaker_inner_fire"
+		"UnitLabel"				"no_underdog"
+
+		"Ability1"				"mjz_lion_impale"
+		"Ability2"				"mjz_lion_voodoo"
+		"Ability3"				"custom_spiritbreaker_inner_fire"
 		"Ability6"				"mjz_finger_of_death"
-		"Ability10"	 "special_bonus_unique_mjz_lion_voodoo_magical_resistance"
-		"Ability16"		"special_bonus_unique_mjz_lion_impale_base_damage"
-		"UnitLabel"				 "no_underdog"
+		"Ability10"				"special_bonus_unique_mjz_lion_voodoo_magical_resistance"
+		"Ability12"				"special_bonus_movement_speed_45"
+		"Ability13"				"special_bonus_finger_of_death_health_per_kill"
+		"Ability15"				"special_bonus_cdr_40"
+		"Ability16"				"special_bonus_unique_mjz_lion_impale_base_damage"
+		"Ability17"				"special_bonus_spell_amplify_125"
 	}
 	//=================================================================================================================
 	"npc_dota_hero_obsidian_destroyer_mjz"			//黑鸟

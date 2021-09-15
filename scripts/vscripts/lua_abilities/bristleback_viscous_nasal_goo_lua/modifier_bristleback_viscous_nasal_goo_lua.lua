@@ -21,8 +21,9 @@ end
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_bristleback_viscous_nasal_goo_lua:OnCreated( kv )
-	-- references
-	self.armor_stack = self:GetAbility():GetSpecialValueFor( "armor_per_stack" ) + (self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier"))
+	local str_bonus = self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier") / 1000
+	self.base_armor = self:GetAbility():GetSpecialValueFor("base_armor")
+	self.armor_stack = self:GetAbility():GetSpecialValueFor("armor_per_stack") + str_bonus
 	self.slow_base = self:GetAbility():GetSpecialValueFor( "base_move_slow" ) 
 	self.slow_stack = self:GetAbility():GetSpecialValueFor( "move_slow_per_stack" ) 
 
@@ -32,11 +33,15 @@ function modifier_bristleback_viscous_nasal_goo_lua:OnCreated( kv )
 end
 
 function modifier_bristleback_viscous_nasal_goo_lua:OnRefresh( kv )
-	-- references
-	self.armor_stack = self:GetAbility():GetSpecialValueFor( "armor_per_stack" ) + (self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier"))
+	local str_bonus = self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier") / 1000
+	self.base_armor = self:GetAbility():GetSpecialValueFor("base_armor")
+	self.armor_stack = self:GetAbility():GetSpecialValueFor("armor_per_stack") + str_bonus
 	self.slow_base = self:GetAbility():GetSpecialValueFor( "base_move_slow" ) 
 	self.slow_stack = self:GetAbility():GetSpecialValueFor( "move_slow_per_stack" )
 	local max_stack = self:GetAbility():GetSpecialValueFor( "stack_limit" )
+	if self:GetCaster():HasScepter() then
+		max_stack = self:GetAbility():GetSpecialValueFor("stack_limit") * 2
+	end
 
 	if IsServer() then
 		if self:GetStackCount()<max_stack then
@@ -61,7 +66,7 @@ function modifier_bristleback_viscous_nasal_goo_lua:DeclareFunctions()
 end
 function modifier_bristleback_viscous_nasal_goo_lua:GetModifierPhysicalArmorBonus()
 	local MAX_ARMOR_REDUCTION = -220
-	return math.max(-self.armor_stack * self:GetStackCount(), MAX_ARMOR_REDUCTION)
+	return -self.base_armor + math.max(-self.armor_stack * self:GetStackCount(), MAX_ARMOR_REDUCTION)
 end
 function modifier_bristleback_viscous_nasal_goo_lua:GetModifierMoveSpeedBonus_Percentage()
 	return -(self.slow_base + self.slow_stack * self:GetStackCount())

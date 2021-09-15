@@ -86,7 +86,7 @@ function modifier_fire_core:IsPurgable() return false end
 function modifier_fire_core:RemoveOnDeath() return false end
 function modifier_fire_core:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_fire_core:DeclareFunctions()
-	return {MODIFIER_PROPERTY_MANA_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING, MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE, MODIFIER_PROPERTY_HEALTH_BONUS}
+	return {MODIFIER_PROPERTY_MANA_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING, MODIFIER_PROPERTY_HEALTH_BONUS}
 end
 function modifier_fire_core:GetModifierManaBonus()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana") end
@@ -97,7 +97,7 @@ end
 function modifier_fire_core:GetModifierHealthBonus()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp") end
 end
-function modifier_fire_core:GetModifierPercentageCooldown()
+function modifier_fire_core:GetCustomStackingCDR()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("cooldown") end
 end
 function modifier_fire_core:GetModifierCastRangeBonusStacking()

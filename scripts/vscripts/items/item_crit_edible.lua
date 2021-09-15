@@ -19,7 +19,7 @@ up_max_effect = 20
 
 LinkLuaModifier("modifier_item_imba_greater_crit_edible", "items/item_crit_edible.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_imba_greater_crit_edible_buff", "items/item_crit_edible.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_mana_blade_up", "items/item_crit_edible.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mana_blade_up_edible", "items/item_crit_edible.lua", LUA_MODIFIER_MOTION_NONE)
 
 -----------------------------------------------------------------------------------------------------------
 --	Edible item
@@ -99,8 +99,8 @@ function modifier_item_imba_greater_crit_edible_buff:OnCreated()
 		if parent:HasScepter() then
 			crit_chance = crit_chance + bonus_crit_chance
 		end
-		if parent:HasModifier("modifier_mana_blade_aura_emitter") and parent:HasModifier("modifier_mana_blade_up") then
-			crit_chance = crit_chance + parent:FindModifierByName("modifier_mana_blade_up"):GetStackCount()
+		if parent:HasModifier("modifier_mana_blade_aura_emitter") and parent:HasModifier("modifier_mana_blade_up_edible") then
+			crit_chance = crit_chance + parent:FindModifierByName("modifier_mana_blade_up_edible"):GetStackCount()
 		end
 		if HasSuperScepter(parent) then
 			if level >= 66 then
@@ -118,17 +118,17 @@ function modifier_item_imba_greater_crit_edible_buff:DeclareFunctions()
 	return {MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE}
 end
 function modifier_item_imba_greater_crit_edible_buff:GetModifierPreAttack_CriticalStrike()
-	if RollPseudoRandomPercentage(self.crit_chance, 0, self:GetParent()) then
-		if self:GetParent():HasModifier("modifier_mana_blade_aura_emitter") then
-			if self:GetParent():HasModifier("modifier_mana_blade_up") then
-				local devils_up = self:GetParent():FindModifierByName("modifier_mana_blade_up")
-				if devils_up:GetStackCount() >= (up_max_effect - up_pct_per_stack) then
+	local parent = self:GetParent()
+	if RollPseudoRandomPercentage(self.crit_chance, 0, parent) then
+		if parent:HasModifier("modifier_mana_blade_aura_emitter") then
+			if parent:HasModifier("modifier_mana_blade_up_edible") then
+				local devils_up = parent:FindModifierByName("modifier_mana_blade_up_edible")
+				devils_up:SetStackCount(devils_up:GetStackCount() + up_pct_per_stack)
+				if devils_up:GetStackCount() > up_max_effect then
 					devils_up:SetStackCount(up_max_effect)
-				else
-					devils_up:SetStackCount(devils_up:GetStackCount() + up_pct_per_stack)
 				end
 			else
-				self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_mana_blade_up", {duration = up_duration})
+				parent:AddNewModifier(parent, self:GetAbility(), "modifier_mana_blade_up_edible", {duration = up_duration})
 			end
 		end
 		return self.crit_damage
@@ -138,15 +138,15 @@ end
 -------------------
 -- Mana Blade UP --
 -------------------
-if modifier_mana_blade_up == nil then modifier_mana_blade_up = class({}) end
-function modifier_mana_blade_up:IsHidden() return false end
-function modifier_mana_blade_up:IsDebuff() return false end
-function modifier_mana_blade_up:IsPurgable() return false end
-function modifier_mana_blade_up:GetTexture() return "custom/imba_greater_crit_edible" end
-function modifier_mana_blade_up:OnCreated()
+if modifier_mana_blade_up_edible == nil then modifier_mana_blade_up_edible = class({}) end
+function modifier_mana_blade_up_edible:IsHidden() return false end
+function modifier_mana_blade_up_edible:IsDebuff() return false end
+function modifier_mana_blade_up_edible:IsPurgable() return false end
+function modifier_mana_blade_up_edible:GetTexture() return "custom/imba_greater_crit_edible" end
+function modifier_mana_blade_up_edible:OnCreated()
 	self:SetStackCount(up_pct_per_stack)
 end
-function modifier_mana_blade_up:DeclareFunctions()
+function modifier_mana_blade_up_edible:DeclareFunctions()
 	return {MODIFIER_PROPERTY_TOOLTIP}
 end
-function modifier_mana_blade_up:OnTooltip() return self:GetStackCount() end
+function modifier_mana_blade_up_edible:OnTooltip() return self:GetStackCount() end

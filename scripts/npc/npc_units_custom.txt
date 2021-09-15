@@ -9705,8 +9705,8 @@
 }
 "npc_dota_lone_druid_bear4"
 {
-	"Ability6"				  "lone_druid_spirit_bear_entangle2"
 	"Ability5"				  "bloodseeker_thirst"
+	"Ability6"				  "lone_druid_spirit_bear_entangle2"
 	"ConsideredHero"			"1"
 	"AttackDamageMin"			"985"
 	"AttackDamageMax"			"1485"	

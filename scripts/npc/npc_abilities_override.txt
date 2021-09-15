@@ -15769,8 +15769,8 @@
 	}
 	"tiny_craggy_exterior"
 	{
-		"AbilitySpecial"
 		"LevelsBetweenUpgrades" 	"15"
+		"AbilitySpecial"
 		{
 			"01"
 			{
@@ -15797,8 +15797,7 @@
 	}
 	"tiny_grow"
 	{
-		"MaxLevel"						  "5"
-		"LevelsBetweenUpgrades"           "12"
+		"MaxLevel"						  "12"
 		"AbilitySpecial"
 		{
 			"01"

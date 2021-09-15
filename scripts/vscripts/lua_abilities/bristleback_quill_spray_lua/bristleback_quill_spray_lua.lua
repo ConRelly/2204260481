@@ -8,10 +8,11 @@ function bristleback_quill_spray_lua:OnSpellStart()
     caster = self:GetCaster()
 
     -- load data
-    local radius = self:GetSpecialValueFor("radius")
-    local stack_damage = self:GetSpecialValueFor("quill_stack_damage") + (self:GetCaster():GetStrength() * self:GetSpecialValueFor("str_multiplier")) 
-    local base_damage = self:GetSpecialValueFor("quill_base_damage") + (self:GetCaster():GetStrength() * self:GetSpecialValueFor("str_multiplier")) * 100
-    local stack_duration = self:GetSpecialValueFor("quill_stack_duration")
+	local radius = self:GetSpecialValueFor("radius")
+	local str_bonus = self:GetCaster():GetStrength() * self:GetSpecialValueFor("str_multiplier") / 1000
+	local stack_damage = self:GetSpecialValueFor("quill_stack_damage") + str_bonus
+	local base_damage = self:GetSpecialValueFor("quill_base_damage") + (str_bonus * 100)
+	local stack_duration = self:GetSpecialValueFor("quill_stack_duration")
 
     -- Find Units in Radius
     local enemies = FindUnitsInRadius(
@@ -36,7 +37,7 @@ function bristleback_quill_spray_lua:OnSpellStart()
     for _, enemy in pairs(enemies) do
         -- find stack
         local stack = 0
-        local modifier = enemy:FindModifierByNameAndCaster("modifier_bristleback_quill_spray_lua", caster)
+        local modifier = enemy:FindModifierByName("modifier_bristleback_quill_spray_lua")
         if modifier ~= nil then
             stack = modifier:GetStackCount()
             modifier:IncrementStackCount()
@@ -61,35 +62,32 @@ function bristleback_quill_spray_lua:OnSpellStart()
     end
 
     -- Effects
-    --self:PlayEffects1()
+    self:PlayEffects1()
 end
 
 --------------------------------------------------------------------------------
 -- Effects
---[[function bristleback_quill_spray_lua:PlayEffects1()
+function bristleback_quill_spray_lua:PlayEffects1()
     -- Get Resources
-    local particle_cast = "particles/units/heroes/hero_bristleback/bristleback_quill_spray.vpcf"
+--	local particle_cast = "particles/units/heroes/hero_bristleback/bristleback_quill_spray.vpcf"
     local sound_cast = "Hero_Bristleback.QuillSpray.Cast"
 
     -- Create Particle
-    -- local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN, self:GetCaster() )
-    local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN, self:GetCaster())
-    ParticleManager:ReleaseParticleIndex(effect_cast)
+--	local effect_cast = ParticleManager:CreateParticle(particle_cast, PATTACH_ABSORIGIN, self:GetCaster())
+--	ParticleManager:ReleaseParticleIndex(effect_cast)
 
     -- Create Sound
-    EmitSoundOn(sound_cast, self:GetCaster())
-end]]
+--	EmitSoundOn(sound_cast, self:GetCaster())
+	self:GetCaster():EmitSoundParams(sound_cast, 1, 0.5, 0)
+end
 
 function bristleback_quill_spray_lua:PlayEffects2(target)
     --local particle_cast = "particles/units/heroes/hero_bristleback/bristleback_quill_spray_impact.vpcf"
-    --local sound_cast = "Hero_Bristleback.QuillSpray.Target"
-    local sound_cast = "Hero_Bristleback.QuillSpray.Cast"
-    local caster = self:GetCaster()
+    local sound_cast = "Hero_Bristleback.QuillSpray.Target"
     -- Create Particle
     --local effect_cast = ParticleManager:CreateParticle(particle_cast, PATTACH_ABSORIGIN, target)
     --ParticleManager:ReleaseParticleIndex(effect_cast)
 
-    -- Create Sound
-    caster:EmitSoundParams(sound_cast, 0, 0.6, 0)
+    target:EmitSoundParams(sound_cast, 1, 0.4, 0)
     --EmitSoundOn(sound_cast, self:GetCaster())
 end

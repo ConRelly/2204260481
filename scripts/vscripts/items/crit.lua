@@ -13,7 +13,7 @@ function modifier_crystalys:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 end
 function modifier_crystalys:DeclareFunctions()
-	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_EVENT_ON_ATTACK_LANDED}
+	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE}
 end
 function modifier_crystalys:GetModifierPreAttack_BonusDamage() return self:GetAbility():GetSpecialValueFor("damage") end
 function modifier_crystalys:GetModifierCritDMG()

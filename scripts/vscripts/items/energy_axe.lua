@@ -14,7 +14,7 @@ function modifier_energy_axe_1:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 end
 function modifier_energy_axe_1:DeclareFunctions()
-	return {MODIFIER_PROPERTY_MANA_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE}
+	return {MODIFIER_PROPERTY_MANA_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT}
 end
 function modifier_energy_axe_1:GetModifierManaBonus()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana") end
@@ -22,7 +22,7 @@ end
 function modifier_energy_axe_1:GetModifierConstantManaRegen()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana_regen") end
 end
-function modifier_energy_axe_1:GetModifierPercentageCooldown()
+function modifier_energy_axe_1:GetCustomStackingCDR()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("cooldown") end
 end
 
@@ -42,7 +42,7 @@ function modifier_energy_axe_2:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 end
 function modifier_energy_axe_2:DeclareFunctions()
-	return {MODIFIER_PROPERTY_MANA_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE}
+	return {MODIFIER_PROPERTY_MANA_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT}
 end
 function modifier_energy_axe_2:GetModifierManaBonus()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana") end
@@ -50,7 +50,7 @@ end
 function modifier_energy_axe_2:GetModifierConstantManaRegen()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana_regen") end
 end
-function modifier_energy_axe_2:GetModifierPercentageCooldown()
+function modifier_energy_axe_2:GetCustomStackingCDR()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("cooldown") end
 end
 
@@ -70,7 +70,7 @@ function modifier_energy_axe_3:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 end
 function modifier_energy_axe_3:DeclareFunctions()
-	return {MODIFIER_PROPERTY_MANA_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE}
+	return {MODIFIER_PROPERTY_MANA_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT}
 end
 function modifier_energy_axe_3:GetModifierManaBonus()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana") end
@@ -78,7 +78,7 @@ end
 function modifier_energy_axe_3:GetModifierConstantManaRegen()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana_regen") end
 end
-function modifier_energy_axe_3:GetModifierPercentageCooldown()
+function modifier_energy_axe_3:GetCustomStackingCDR()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("cooldown") end
 end
 
@@ -97,7 +97,7 @@ function modifier_energy_core:IsPurgable() return false end
 function modifier_energy_core:RemoveOnDeath() return false end
 function modifier_energy_core:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_energy_core:DeclareFunctions()
-	return {MODIFIER_PROPERTY_MANA_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING, MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE, MODIFIER_PROPERTY_HEALTH_BONUS}
+	return {MODIFIER_PROPERTY_MANA_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING, MODIFIER_PROPERTY_HEALTH_BONUS}
 end
 function modifier_energy_core:GetModifierManaBonus()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana") end
@@ -111,7 +111,7 @@ end
 function modifier_energy_core:GetModifierHealthBonus()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp") end
 end
-function modifier_energy_core:GetModifierPercentageCooldown()
+function modifier_energy_core:GetCustomStackingCDR()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("cooldown") end
 end
 function modifier_energy_core:GetModifierCastRangeBonusStacking()
@@ -136,7 +136,6 @@ function modifier_energy_core_aura:IsPurgable() return false end
 function modifier_energy_core_aura:OnCreated(keys)
 	if not self:GetAbility() then self:Destroy() return end
 end
-function modifier_energy_core_aura:DeclareFunctions() return {MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE} end
-function modifier_energy_core_aura:GetModifierPercentageCooldown()
+function modifier_energy_core_aura:GetCustomStackingCDR()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("cdr_aura") end
 end

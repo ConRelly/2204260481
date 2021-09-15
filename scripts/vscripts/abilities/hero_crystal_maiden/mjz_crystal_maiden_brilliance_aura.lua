@@ -28,7 +28,7 @@ function modifier_class:GetModifierAura() return "modifier_mjz_crystal_maiden_br
 function modifier_class:GetAuraSearchTeam() return self:GetAbility():GetAbilityTargetTeam() end
 function modifier_class:GetAuraEntityReject(target) return self:GetParent():IsIllusion() end
 function modifier_class:GetAuraSearchType() return self:GetAbility():GetAbilityTargetType() end
-function modifier_class:GetAuraSearchFlags() return self:GetAbility():GetAbilityTargetFlags() end
+function modifier_class:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD + DOTA_UNIT_TARGET_FLAG_INVULNERABLE end
 function modifier_class:GetAuraDuration() return 0.5 end
 
 ---------------------------------------------------------------------------------------

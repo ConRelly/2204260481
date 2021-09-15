@@ -95,11 +95,19 @@ function willpower:OnSpellStart()
 		target:AddNewModifier(caster, self, "willpower_heal", {duration = duration})
 
 		if caster:HasModifier("modifier_divinity_activated") then
-			local Roll = RollPercentage(50)
-			if Roll then
-				RandomModifier = TakeBuff()
+			local Roll = RollPercentage(70)
+			if target:GetTeamNumber() == caster:GetTeamNumber() then
+				if Roll then
+					RandomModifier = TakeBuff()
+				else
+					RandomModifier = TakeDebuff()
+				end
 			else
-				RandomModifier = TakeDebuff()
+				if Roll then
+					RandomModifier = TakeDebuff()
+				else
+					RandomModifier = TakeBuff()
+				end
 			end
 			target:AddNewModifier(caster, self, RandomModifier, {duration = duration})
 		end

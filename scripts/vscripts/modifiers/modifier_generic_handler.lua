@@ -18,6 +18,14 @@ function modifier_generic_handler:OnCreated()
 		}
 		self:StartIntervalThink(FrameTime())
 	end
+	piety = false
+	if self:GetParent():GetUnitName() == "npc_dota_hero_lina" and not self:GetParent():HasModifier("modifier_sourcery") then
+		piety = true
+	end
+	if piety then
+		self:GetParent():AddItemByName("item_to_piety")
+		piety = false
+	end
 end
 function modifier_generic_handler:OnIntervalThink()
 	if IsServer() then

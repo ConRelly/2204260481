@@ -174,40 +174,21 @@ if IsServer() then
 		local sound_name = value_if_scepter(caster, sound_immortal, sound_default)
 		target:EmitSound(sound_name)
 
-		-- 林肯法球
-		if target:TriggerSpellAbsorb(ability) then return nil end
-		Timers:CreateTimer(
-			self.damage_delay,
-			function()		
+		for i = 1, 2 do
+			if target:TriggerSpellAbsorb(ability) then return nil end
+			Timers:CreateTimer(self.damage_delay, function()
 				if target ~= nil and IsValidEntity(target) and target:IsAlive() and (not target:IsMagicImmune() or caster:HasScepter()) then
-					local damage_type = DAMAGE_TYPE_MAGICAL
-					--print("lion dmg 1")
+--					print("Print Finger DMG instance: " .. i)
 					ApplyDamage({
 						attacker = caster,
 						victim = target,
 						damage = damage,
-						damage_type = damage_type,
+						damage_type = DAMAGE_TYPE_MAGICAL,
 						ability = ability,
 					})
 				end
-			end	
-	   ) 
-		Timers:CreateTimer(
-			self.damage_delay + 0.05,
-			function()		
-				if target ~= nil and IsValidEntity(target) and target:IsAlive() and (not target:IsMagicImmune() or caster:HasScepter()) then
-					local damage_type = DAMAGE_TYPE_MAGICAL
-					--print("lion dmg 2")
-					ApplyDamage({
-						attacker = caster,
-						victim = target,
-						damage = damage,
-						damage_type = damage_type,
-						ability = ability,
-					})
-				end
-			end	
-	   )		  
+			end)
+		end
 	end
 end
 
@@ -221,7 +202,13 @@ function modifier_mjz_finger_of_death_bonus:IsPermanent() return true end
 function modifier_mjz_finger_of_death_bonus:IsPurgable() return false end
 function modifier_mjz_finger_of_death_bonus:RemoveOnDeath() return false end
 function modifier_mjz_finger_of_death_bonus:DeclareFunctions()
-	return {MODIFIER_PROPERTY_TOOLTIP} 
+	return {MODIFIER_PROPERTY_TOOLTIP, MODIFIER_PROPERTY_HEALTH_BONUS} 
+end
+function modifier_mjz_finger_of_death_bonus:OnStackCountChanged(old)
+	if IsServer() then self:GetParent():CalculateStatBonus(true) end
+end
+function modifier_mjz_finger_of_death_bonus:GetModifierHealthBonus()
+	return self:GetStackCount() * talent_value(self:GetParent(), "special_bonus_finger_of_death_health_per_kill")
 end
 function modifier_mjz_finger_of_death_bonus:OnTooltip()
 	local ability = self:GetAbility()

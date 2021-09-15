@@ -77,12 +77,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"str_multiplier"		"0.016 0.019 0.022 0.025 0.030 0.035 0.04"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str_multiplier_tooltip"  "16 19 22 25 30 35 40"
+				"str_multiplier"		"16 19 22 25 30 35 40"
 			}			
 		}
 	}

@@ -9,15 +9,30 @@ LinkLuaModifier(MODIFIER_NAME, THIS_LUA, LUA_MODIFIER_MOTION_NONE)
 ---------------------------------------------------------------------------
 
 mjz_bristleback_quill_spray_autocast = class({})
+function mjz_bristleback_quill_spray_autocast:Spawn()
+	if IsServer() then self:SetLevel(1) end
+end
+function mjz_bristleback_quill_spray_autocast:ProcsMagicStick() return false end
+function mjz_bristleback_quill_spray_autocast:IsInnateAbility() return true end
+function mjz_bristleback_quill_spray_autocast:OnHeroCalculateStatBonus(params)
+	local quill = self:GetCaster():FindAbilityByName(TARGET_ABILITY_NAME)
+	local goo = self:GetCaster():FindAbilityByName(TARGET_ABILITY_NAME_2)
+	if quill and quill:GetLevel() > 0 then
+		self:SetHidden(false)
+	elseif goo and goo:GetLevel() > 0 and self:GetCaster():HasScepter() then
+		self:SetHidden(false)
+	else
+		self:SetHidden(true)
+	end
+end
 local ability_class = mjz_bristleback_quill_spray_autocast
 
 function ability_class:OnToggle()
     if IsServer() then
-        local ability = self
         local caster = self:GetCaster()
         
-        if ability:GetToggleState() then
-            caster:AddNewModifier(caster, ability, MODIFIER_NAME, {})
+        if self:GetToggleState() then
+            caster:AddNewModifier(caster, self, MODIFIER_NAME, {})
         else
             caster:RemoveModifierByName(MODIFIER_NAME)
         end
@@ -90,8 +105,7 @@ if IsServer() then
     end
 
     function modifier_class:CanCastAbility(target_ability)
-        local ability = self:GetAbility()
-        local caster = self:GetCaster()
+		local ability = self:GetAbility()
         local parent = self:GetParent()
         -- local target_ability = self:GetTargetAbility()
 

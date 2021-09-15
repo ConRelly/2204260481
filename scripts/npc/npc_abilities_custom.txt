@@ -8120,7 +8120,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"use_at_life_pct"		"100"
+			"instances_count"		"4"
 		}
 	}
 }
@@ -12608,64 +12608,60 @@
 		}
 	}
 }
-"nevermore_custom_necromastery"
-{
-	"BaseClass"									"ability_lua"
-	"ScriptFile"					"abilities/heroes/nevermore_custom_necromastery.lua"
-	"AbilityTextureName"						"nevermore_necromastery"
-	"AbilityBehavior"							"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityCastAnimation"						"ACT_DOTA_CAST_ABILITY_4"
-	"MaxLevel"								  "7"
-	"LevelsBetweenUpgrades"					 "5"
-	//"OnCastbar"									"0"
-	"HasScepterUpgrade"							"1"
-	"precache"
+
+// Shadow Fiend: Necromastery
+	"nevermore_custom_necromastery"
 	{
-		"particle"								"particles/units/heroes/hero_nevermore/nevermore_necro_souls.vpcf"
-		"soundfile"								"soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
-		"soundfile"								"soundevents/voscripts/game_sounds_vo_nevermore.vsndevts"
+		"BaseClass"							"ability_lua"
+		"ScriptFile"						"abilities/heroes/nevermore_custom_necromastery.lua"
+		"AbilityTextureName"				"nevermore_necromastery"
+		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_4"
+		"MaxLevel"							"7"
+		"LevelsBetweenUpgrades"				"5"
+		"HasScepterUpgrade"					"1"
+		"HasShardUpgrade"					"1"
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_nevermore/nevermore_necro_souls.vpcf"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+			"soundfile"			"soundevents/voscripts/game_sounds_vo_nevermore.vsndevts"
+		}
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"necromastery_damage_per_soul"		"2 4 6 8 10 12 15"
+				"LinkedSpecialBonus"				"special_bonus_unique_nevermore_1"
+			}
+			"2"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"necromastery_max_souls"			"60 70 90 100 120 140 190"
+			}
+			"3"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"necromastery_max_souls_scepter"	"110 120 140 150 170 190 240"
+			}
+			"4"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"scepter_bonus_souls"				"50"
+			}
+			"5"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"necromastery_soul_release"			"35"
+			}
+			"6"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"spell_amp_per_soul"				"0.5"
+			}							
+		}
 	}
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"							"FIELD_INTEGER"
-			"necromastery_damage_per_soul"		"2 4 6 8 10 12 15"
-			//"LinkedSpecialBonus"				"special_bonus_unique_nevermore_1"
-		}
-		"02"
-		{
-			"var_type"							"FIELD_INTEGER"
-			"necromastery_max_souls"			"60 70 90 100 120 140 190"
-		}
-		"03"
-		{
-			"var_type"							"FIELD_INTEGER"
-			"necromastery_max_souls_scepter"	"110 120 140 150 170 190 240"
-			
-		}
-		"04"
-		{
-			"var_type"							"FIELD_FLOAT"
-			"necromastery_soul_release"			"0.66"
-		}	
-		"05"
-		{
-			"var_type"							"FIELD_INTEGER"
-			"scepter_bonus_souls"				"50"
-		}
-		"06"
-		{
-			"var_type"							"FIELD_FLOAT"
-			"spell_amp_per_soul"				"0.25 0.125 0.08 0.065 0.03 0.025 0.025"
-		}
-		"07"
-		{
-			"var_type"							"FIELD_FLOAT"
-			"spell_amp_tooltip"					"0.5"
-		}							
-	}
-}
 "nevermore_custom_requiem"
 {
 	"BaseClass"									"ability_lua"
@@ -24208,6 +24204,21 @@
 			"particle"			"particles/econ/items/lion/lion_ti8/lion_spell_finger_of_death_charge_ti8.vpcf"
 		}
 	}
+	"special_bonus_finger_of_death_health_per_kill"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"20"
+			}
+		}
+	}
+
 	//=================================================================================================================
 	// Furion: Power of Nature 			自然之力
 	//=================================================================================================================
@@ -37125,7 +37136,7 @@
 		}
 	}
 
- "mjz_lion_voodoo"
+	"mjz_lion_voodoo"
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/hero_lion/mjz_lion_voodoo.lua"
@@ -37143,7 +37154,7 @@
 		"AbilityCooldown"				"30.0 28.0 26.0 21.0"
 		"AbilityManaCost"				"125 150 175 200"
 
-		"HasScepterUpgrade"				"1"
+		"HasShardUpgrade"				"1"
 
 		"AbilitySpecial"
 		{	
@@ -37151,7 +37162,6 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"aoe_radius"				"500"
-				"RequiresScepter"			"1"
 			}
 			"02"
 			{

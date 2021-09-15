@@ -1283,10 +1283,18 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 
 * Buffed some skills from the random pool, normal bedlam removed from all pools except magic.
 * Fixed luna lvl 10 talent going in negative
-* Reduced CD for second form ultimate of Piety (buy and use Divine Pray (item) on lina lvl 1 for the hero Piety)
+* Divine Pray can't be bought, now it is given from the beginning of the game
+* Reduced CD for second form ultimate of Piety (use Divine Pray (Lina's starter item))
 * Now courier and lone druid bear(4) can use CDR items (octarine etc)   
 * Fixed games not being saved if a player had space in the name.
 * Fixed the edible Daedalus x3 effect was still on.
+* Added Aghanim's Shard effect for Necromastery (Shadow Fiend)
+* Added Aghanim's Scepter effect for Viscous Nasal Goo (Bristleback) and base armor reduction
+* Quill Spray (Bristleback) stacks now stackable from all sources
+* Willpower (Piety): The chance of applying a buff/debuff is increased if the target is an ally/enemy
+* Hex upgrade moved from Aghanim's Scepter to Aghanim's Shard
+* Now Arcane Aura (Crystal Maiden) works on out-of-world units
+* Fixed and changed Finger of Death (Lion) Max HP per kill talent
 
 
 
