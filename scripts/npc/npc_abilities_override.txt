@@ -1003,6 +1003,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_nevermore_5"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"-14"
+			}
+		}
+	}	
 	"special_bonus_unique_nyx_2"
 	{
 		"AbilitySpecial"
