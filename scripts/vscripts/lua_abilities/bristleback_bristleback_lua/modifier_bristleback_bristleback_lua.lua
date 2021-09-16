@@ -17,6 +17,7 @@ end
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_bristleback_bristleback_lua:OnCreated(kv)
+    if not IsServer() then return end
     -- references
     self.reduction_back = self:GetAbility():GetSpecialValueFor("back_damage_reduction")
     self.reduction_side = self:GetAbility():GetSpecialValueFor("side_damage_reduction")
@@ -30,6 +31,7 @@ end
 
 function modifier_bristleback_bristleback_lua:OnRefresh(kv)
     -- references
+    if not IsServer() then return end
     self.reduction_back = self:GetAbility():GetSpecialValueFor("back_damage_reduction")
     self.reduction_side = self:GetAbility():GetSpecialValueFor("side_damage_reduction")
     --self.angle_back = self:GetAbility():GetSpecialValueFor("back_angle")

@@ -70,6 +70,7 @@ function modifier_vengefulspirit_command_aura_effect_lua:DeclareFunctions()
 	return {MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE}
 end
 function modifier_vengefulspirit_command_aura_effect_lua:GetModifierBaseDamageOutgoing_Percentage(params)
+	if not IsServer() then return end
 	if self:GetAbility() then
 		if (self:GetCaster():PassivesDisabled() and not self:IsDebuff()) or self:GetAbility():GetLevel() < 1 then return end
 		if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then

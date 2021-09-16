@@ -31,7 +31,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"LevelsBetweenUpgrades"         "9"
+		"LevelsBetweenUpgrades"         "12"
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"
@@ -82,7 +82,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stack_limit"			"5 6 7 10"
+				"stack_limit"			"4 6 8 10"
 			}
 			"08"
 			{
@@ -97,7 +97,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"str_multiplier"		"0 0 0.5 1.0"
+				"str_multiplier"		"0 0.05 0.25 0.5"
 			}			
 		}
 	}

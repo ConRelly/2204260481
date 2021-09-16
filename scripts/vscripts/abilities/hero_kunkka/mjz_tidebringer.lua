@@ -42,8 +42,12 @@ function modifier_mjz_tidebringer:OnCreated()
 	end
 end
 function modifier_mjz_tidebringer:OnDestroy()
-	self:GetCaster():RemoveModifierByName("modifier_mjz_tidebringer_sword_particle")
-	self:GetCaster():RemoveModifierByName("modifier_mjz_tidebringer_manual")
+	if self:GetCaster():HasModifier("modifier_mjz_tidebringer_sword_particle") then
+		self:GetCaster():RemoveModifierByName("modifier_mjz_tidebringer_sword_particle")
+	end
+	if self:GetCaster():HasModifier("modifier_mjz_tidebringer_manual") then
+		self:GetCaster():RemoveModifierByName("modifier_mjz_tidebringer_manual")
+	end	
 end
 function modifier_mjz_tidebringer:OnIntervalThink()
 	if IsServer() then
