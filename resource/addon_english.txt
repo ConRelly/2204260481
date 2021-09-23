@@ -7097,12 +7097,14 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_ability_item_plain_perma_Description"				"<h1>Consume: Extracted Essence</h1>Permanently grants Hidden Power to the wielder. Gives %bonus_armor% bonus armor.<br><br>When reused, it reduces Hidden Power CD by 10 seconds.<br><font color='#EC7E68'>It can be used once.</font>\n<h1>Hidden Power</h1>Upon taking fatal damage you become temporarily invincible.<br><br>Cooldown: %cooldown% seconds"
 "DOTA_Tooltip_ability_item_plain_perma_note0"			"Does not prevent suicide."
 "DOTA_Tooltip_modifier_item_plain_ring_perma"					"Hidden Power"
+"DOTA_Tooltip_ability_item_plain_ring_perma_Lore"				"<font color='#FFC300'>Order of AutoTrigger invulnerability/reincarnation: Abilities/Talents -> Undying Helm -> Consumable Aegis -> Gold Ring -> Aegis of Infinity</font>"
 "DOTA_Tooltip_modifier_item_plain_ring_perma_Description"		"Upon taking fatal damage you become temporarily invincible. Not Affected by cooldown reduction."
 "DOTA_Tooltip_modifier_item_plain_ring_perma_invincibility"					"Blessing In Disguise"
 "DOTA_Tooltip_modifier_item_plain_ring_perma_invincibility_Description"		"Temporarily protected from death."
 
 "DOTA_Tooltip_modifier_item_plain_ring_perma2"					"Ancient Hidden Power"
-"DOTA_Tooltip_modifier_item_plain_ring_perma2_Description"		"Upon taking fatal damage you become temporarily invincible. Not Affected by cooldown reduction."
+"DOTA_Tooltip_modifier_item_plain_ring_perma2_Description"		"Upon taking fatal damage you become temporarily invincible. Not Affected by cooldown reduction.
+<font color='#FFC300'>Order of AutoTrigger invulnerability/reincarnation: Abilities/Talents -> Undying Helm -> Consumable Aegis -> Gold Ring -> Aegis of Infinity</font>"
 "DOTA_Tooltip_modifier_item_plain_ring_perma2_invincibility"					"Blessing In Disguise"
 "DOTA_Tooltip_modifier_item_plain_ring_perma2_invincibility_Description"		"Temporarily protected from death."
 

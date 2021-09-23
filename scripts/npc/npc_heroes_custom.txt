@@ -923,7 +923,7 @@
 		"Ability13"			"special_bonus_truestrike"
 		"Ability14"			"special_bonus_cleave_60"
 		"Ability15"			"special_bonus_custom_mana_break_1"
-		"Ability17"			"special_bonus_50_crit_175"
+		"Ability17"			"special_bonus_4_crit_5420"
 
 		"ArmorPhysical"					"5"
 		"AttributeStrengthGain"			"4.300000"
