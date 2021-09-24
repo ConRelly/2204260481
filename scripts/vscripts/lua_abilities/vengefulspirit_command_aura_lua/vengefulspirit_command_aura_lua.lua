@@ -11,7 +11,7 @@ function modifier_vengefulspirit_command_aura_lua:GetModifierAura() return "modi
 function modifier_vengefulspirit_command_aura_lua:GetAuraDuration() return 0.5 end
 function modifier_vengefulspirit_command_aura_lua:GetAuraSearchTeam() return self:GetAbility():GetAbilityTargetTeam() end
 function modifier_vengefulspirit_command_aura_lua:GetAuraSearchType() return self:GetAbility():GetAbilityTargetType() end
-function modifier_vengefulspirit_command_aura_lua:GetAuraSearchFlags() return self:GetAbility():GetAbilityTargetFlags() end
+function modifier_vengefulspirit_command_aura_lua:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD end
 function modifier_vengefulspirit_command_aura_lua:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("aura_radius") end
 
 function modifier_vengefulspirit_command_aura_lua:OnCreated()
@@ -61,16 +61,16 @@ function modifier_vengefulspirit_command_aura_effect_lua:IsDebuff()
 	return false
 end
 function modifier_vengefulspirit_command_aura_effect_lua:OnCreated()
-	if IsServer() then if not self:GetAbility() then self:Destroy() end
-		self.agi_multiplier = self:GetAbility():GetSpecialValueFor("agi_multiplier") / self:GetAbility():GetSpecialValueFor("agi_per_dmg")
-		self.bonus_damage_pct = self:GetAbility():GetSpecialValueFor("bonus_damage_pct")
-	end
+	if not self:GetAbility() then self:Destroy() end
+	self.agi_multiplier = self:GetAbility():GetSpecialValueFor("agi_multiplier") / self:GetAbility():GetSpecialValueFor("agi_per_dmg")
+	self.bonus_damage_pct = self:GetAbility():GetSpecialValueFor("bonus_damage_pct")
+	
 end
 function modifier_vengefulspirit_command_aura_effect_lua:DeclareFunctions()
 	return {MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE}
 end
 function modifier_vengefulspirit_command_aura_effect_lua:GetModifierBaseDamageOutgoing_Percentage(params)
-	if not IsServer() then return end
+	--if not IsServer() then return end
 	if self:GetAbility() then
 		if (self:GetCaster():PassivesDisabled() and not self:IsDebuff()) or self:GetAbility():GetLevel() < 1 then return end
 		if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then

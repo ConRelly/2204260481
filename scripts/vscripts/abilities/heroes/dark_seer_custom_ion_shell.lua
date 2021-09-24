@@ -18,7 +18,10 @@ if IsServer() then
 		self.caster = self:GetCaster()
 		self.ability = self:GetAbility()
 		self.parent = self:GetParent()
-		self.interval = self.ability:GetSpecialValueFor("think_interval") / talent_value(self.caster, "dark_seer_custom_bonus_unique_2")
+		self.interval = self.ability:GetSpecialValueFor("think_interval")
+		if talent_value(self.caster, "dark_seer_custom_bonus_unique_2") ~= 0 then
+			self.interval = self.ability:GetSpecialValueFor("think_interval") / talent_value(self.caster, "dark_seer_custom_bonus_unique_2")
+		end	
 		self.caster = self.ability:GetCaster()
 		-- Particle effects
 		self.particle2 = ParticleManager:CreateParticle("particles/units/heroes/hero_dark_seer/dark_seer_ion_shell.vpcf", PATTACH_POINT, self.caster)
@@ -46,7 +49,10 @@ if IsServer() then
 			local caster_int = self.caster:GetIntellect()
 			local int_mult = self.ability:GetSpecialValueFor("int_mult")
 			local int_dmg  = caster_int * int_mult
-			local radius = self.ability:GetSpecialValueFor("radius") * talent_value(self.caster, "special_bonus_ds_ion_shell_radius")
+			local radius = self.ability:GetSpecialValueFor("radius")
+			if talent_value(self.caster, "special_bonus_ds_ion_shell_radius") ~= 0 then
+				radius = radius * talent_value(self.caster, "special_bonus_ds_ion_shell_radius")
+			end	
 			local damage = (int_dmg + self.ability:GetSpecialValueFor("damage_per_second") + talent_value(self.caster, "special_bonus_unique_dark_seer")) * self.interval
 			self.damage_table.damage = damage
 
