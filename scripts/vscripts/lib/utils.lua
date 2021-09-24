@@ -786,6 +786,42 @@ function CDOTA_Modifier_Lua:CheckMotionControllers()
 	end
 end
 
+-- Dota IMBA utils -------------------------------
+
+-- Separate Tables
+function TableToStringCommaEnt(table)
+	local string = ""
+	local first_value = true
+
+	for _,handle in pairs(table) do
+		if first_value then
+			string = string..tostring(handle:entindex())
+			first_value = false
+		else
+			string = string..","
+			string = string..tostring(handle:entindex())
+		end
+	end
+	return string
+end
+function StringToTableEnt(string, separator)
+	local gmatch_sign
+
+	if separator == " " then
+		gmatch_sign = "%S+"
+	elseif separator == "," then
+		gmatch_sign = "([^,]+)"
+	end
+
+	local return_table = {}
+	for str in string.gmatch(string, gmatch_sign) do
+		local handle = EntIndexToHScript(tonumber(str))
+		table.insert(return_table, handle)
+	end
+	return return_table
+end
+--------------------------------------------------
+
 ----------BossHpBar-----
 function UpdateBossBar(boss, team)
 	CustomNetTables:SetTableValue("game_options", "boss", {

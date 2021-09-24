@@ -243,6 +243,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_bounty_hunter"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"30"
+			}
+		}
+	}
 	"special_bonus_unique_bounty_hunter_2"
 	{
 		"AbilitySpecial"
@@ -250,7 +261,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"63457"
+				"value"				"24000"
 			}
 		}
 	}

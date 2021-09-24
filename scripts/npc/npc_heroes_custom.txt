@@ -956,6 +956,7 @@
 	{
 		"override_hero"			"npc_dota_hero_bounty_hunter"
 
+		"Ability1"				"shuriken_toss"
 		//"Ability1"				"generic_hidden"
 		"Ability2"				"mjz_bounty_hunter_jinada"  //"generic_hidden" //
 		//"Ability3"				"generic_hidden"
@@ -963,7 +964,8 @@
 		"Ability10"				"special_bonus_lifesteal_15"
 		"Ability11"				"special_bonus_mp_1000"
 		"Ability12"				"special_bonus_evasion_50"
-		"Ability13"				"special_bonus_gold_income_300"
+//		"Ability13"				"special_bonus_gold_income_300"
+		"Ability13"				"special_bonus_bh_shuriken_toss_1"
 		"Ability14"				"special_bonus_unique_bounty_hunter"
 		"Ability15"				"special_bonus_magic_resistance_25"
 		"Ability16"				"special_bonus_unique_bounty_hunter_2"

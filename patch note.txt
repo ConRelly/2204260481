@@ -1299,9 +1299,14 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 
 
 
+* Added Aghanim's Scepter and Super Scepter effect for Shuriken Toss (Bounty Hunter)
+* Reduced Shuriken Toss (Bounty Hunter) Damage (and talent) and Cast Range
+* Replaced talent (Bounty Hunter): from +300 GPM to +1000 Shuriken Toss Cast Range and Projectile Speed
+* Reduced Jinada (Bounty Hunter) Gold Steal
 * Fix Darkseer ion shell not doing dmg until you skill all talents
 * Fix Commander aura and it should work again from out of world(hiden , invul, infest, etc).
 * Bounty seems to not crash server anymore. no changes made(probably valve fixed their problem) 
+
 
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.

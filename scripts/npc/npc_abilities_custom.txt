@@ -21643,20 +21643,18 @@
 	}
 	"mjz_bounty_hunter_jinada"
 	{
-		"BaseClass"						"ability_lua"	// "ability_datadriven"
-		"ScriptFile"					"abilities/hero_bounty_hunter/mjz_bounty_hunter_jinada.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/hero_bounty_hunter/mjz_bounty_hunter"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "7"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"7"
 		"AbilitySound"					"Hero_BountyHunter.Jinada"
 		"AbilityTextureName"			"mjz_bounty_hunter_jinada"
-		
-		"AbilityCooldown"				"6.0 5.0 4.0 3.0 2.0 1.0 0.7"
-
+		"AbilityCooldown"				"6.0 5.0 4.0 3.0 2.0 1.0 0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -21667,24 +21665,19 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold_steal"			"40"
+				"gold_steal"			"30"
 				"LinkedSpecialBonus"	"special_bonus_unique_bounty_hunter"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cooldown"				"6.0 5.0 4.0 3.0 2.0 1.0 0.5"
+				"stats_mult"			"3.7 4.0 4.3 4.6 7.9 10.0 20.0"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"stats_mult"			"3.7 4.0 4.3 4.6 7.9 10.0 20.0"
-			}
-			"05"
-			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_mp_toolpip"			"200"
-			}			
+				"hp_mp"					"200"
+			}
 		}
 
 		"precache"
@@ -21694,6 +21687,90 @@
 			"particle"		"particles/units/heroes/hero_bounty_hunter/status_effect_bounty_hunter_jinda_slow.vpcf"
 		}
 	}
+// Bounty Hunter's Shuriken Toss
+	"shuriken_toss"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/hero_bounty_hunter/mjz_bounty_hunter"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"shuriken_toss"
+		"AbilitySound"					"Hero_BountyHunter.Shuriken"
+		"HasScepterUpgrade"				"1"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"7"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"8"
+		"AbilityManaCost"				"160"
+		"precache"
+		{
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+			"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_suriken_toss.vpcf"
+			"particle"		"particles/units/heroes/hero_bounty_hunter/bounty_hunter_suriken_impact.vpcf"
+		}
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"250 500 1000 2000 4000 8000 16000"
+				"LinkedSpecialBonus"	"special_bonus_unique_bounty_hunter_2"
+			}
+			"2"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bounce_aoe"			"7200"
+			}
+			"3"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ministun"				"0.1"
+			}
+			"4"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1000"
+				"LinkedSpecialBonus"	"special_bonus_bh_shuriken_toss_1"
+			}
+			"5"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"750"
+				"LinkedSpecialBonus"	"special_bonus_bh_shuriken_toss_1"
+			}
+			"6"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"scepter_cast_range"	"1500"
+				"LinkedSpecialBonus"	"special_bonus_bh_shuriken_toss_1"
+				"RequiresScepter"		"1"
+			}
+			"7"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"scepter_cooldown"		"6"
+				"RequiresScepter"		"1"
+			}
+		}
+	}
+	"special_bonus_bh_shuriken_toss_1"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"1000"
+			}
+		}
+	}
+
 	//=================================================================================================================
 	// Brewmaster: Drunken Brawler		醉拳
 	//=================================================================================================================

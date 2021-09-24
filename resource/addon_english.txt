@@ -2263,15 +2263,30 @@
 	"DOTA_Tooltip_modifier_mjz_bloodseeker_thirst_buff"					"Thirst Buff"
 	"DOTA_Tooltip_modifier_mjz_bloodseeker_thirst_buff_Description"		"Increases Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, Attack Speed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% and Attack Damage by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_bloodseeker_thirst_stacks"			"+{s:value} Max Thirst Stacks"
-		
+
+	"DOTA_Tooltip_ability_shuriken_toss"					"Shuriken Toss"
+	"DOTA_Tooltip_ability_shuriken_toss_Description"		"Hurls a deadly shuriken at an enemy unit, dealing damage and mini-stunning the target. The shuriken will bounce to any Tracked units who are within a %bounce_aoe% radius of each other.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Applies attack effects from items and abilities."
+	"DOTA_Tooltip_ability_shuriken_toss_scepter_description"		"Upgrades Shuriken Toss. Applies Jinada to it, increases cast range and damage."
+	"DOTA_Tooltip_ability_shuriken_toss_Lore"			"While the shuriken may be small, Gondar's precise aim can cause critical damage."
+	"DOTA_Tooltip_ability_shuriken_toss_Note0"		"This spell interrupts channeling abilities."
+	"DOTA_Tooltip_ability_shuriken_toss_bonus_damage"			"DAMAGE:"
+//	"DOTA_Tooltip_ability_shuriken_toss_bounce_aoe"				"TRACK BOUNCE RANGE:"
+//	"DOTA_Tooltip_ability_shuriken_toss_ministun"				"MINISTUN DURATION:"
+	"DOTA_Tooltip_ability_shuriken_toss_cast_range"				"CAST RANGE:"
+	"DOTA_Tooltip_ability_shuriken_toss_scepter_cast_range"		"SCEPTER CAST RANGE:"
+	"DOTA_Tooltip_ability_shuriken_toss_scepter_cast_range"		"SCEPTER COOLDOWN:"
+	"DOTA_Tooltip_ability_special_bonus_bh_shuriken_toss_1"		"+{s:value} Shuriken Toss Cast Range and Projectile Speed"
+
 	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada"					"Jinada"
-	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_Description"		"Bounty Hunter plans his next hit, dealing bonus damage and stealing some unreliable gold. The %hp_mp_toolpip%%% Max Health and Mana bonus Starts from lvl 6 and up."
+	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_Description"		"Bounty Hunter plans his next hit, dealing bonus damage and stealing some unreliable gold. The %hp_mp%%% Max Health and Mana bonus Starts from lvl 6 and up."
 	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_Lore"				"Whispering an enchantment he learned from Soruq to his faithful blades, Gondar targets vital tendons and joints to disable his opponents."
-	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_Note0"				"Shuriken toss aghanim does not work with this skill"
 	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_bonus_damage"		"Attack Damage Bonus: "
-	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_stats_mult"		  "Bonus Damage From All Stats:"
-	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_hp_mp_toolpip"	   "%Bonus Damage From Max Mana+Health:"
+	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_stats_mult"			"Bonus Damage From All Stats:"
+	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_hp_mp"				"%Bonus Damage From Max Mana+Health:"
 	"DOTA_Tooltip_ability_mjz_bounty_hunter_jinada_gold_steal"			"Gold Stolen: "
+
+	"DOTA_Tooltip_modifier_jinada_gold_tracker"					"Jinada Gold"
+	"DOTA_Tooltip_modifier_jinada_gold_tracker_Description"		"%dMODIFIER_PROPERTY_TOOLTIP% Total Gold Stolen."
 
 		
 	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler"					"Drunken Brawler"
