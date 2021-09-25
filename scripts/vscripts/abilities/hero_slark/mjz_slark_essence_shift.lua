@@ -113,6 +113,7 @@ function modifier_class:OnCreated( kv )
 end
 
 function modifier_class:OnRefresh( kv )
+    if not self:GetAbility() then self:Destroy() end
     local ability = self:GetAbility()
     self.heap_amount = ability:GetSpecialValueFor("heap_amount")
     if IsServer() then

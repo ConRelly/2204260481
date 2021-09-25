@@ -97,7 +97,7 @@ function GetRandomAbilityName( hero )
         --"antimage_custom_mana_break",
         "back_in_time",
         "mjz_slark_essence_shift",
-        "vengefulspirit_command_aura_lua",
+        "custom_mana_regen",
         --"zanto_gari",
         "roshan_inherit_buff_datadriven",
         "monkey_king_custom_jingu_mastery",

@@ -36,9 +36,13 @@ end
 
 
 function modifier_custom_mana_regen:GetModifierConstantManaRegen()
-    return self:GetAbility():GetSpecialValueFor("mana_regen")
+    if self:GetAbility() then 
+        return self:GetAbility():GetSpecialValueFor("mana_regen")
+    end   
 end
 
 function modifier_custom_mana_regen:GetModifierExtraManaPercentage()
-    return self:GetAbility():GetSpecialValueFor("mana_bonus")
+    if self:GetAbility() then
+        return self:GetAbility():GetSpecialValueFor("mana_bonus")
+    end   
 end

@@ -1305,7 +1305,7 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Reduced Jinada (Bounty Hunter) Gold Steal
 * Fix Darkseer ion shell not doing dmg until you skill all talents
 * Fix Commander aura and it should work again from out of world(hiden , invul, infest, etc).
-* Bounty seems to not crash server anymore. no changes made(probably valve fixed their problem) 
+* Bounty seems to still crash server(but less offten). 
 
 
 

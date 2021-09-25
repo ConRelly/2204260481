@@ -66,35 +66,43 @@ function modifier_roshan_inherit_buff_datadriven:DeclareFunctions()
 	return {MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_MODEL_SCALE, MODIFIER_EVENT_ON_ATTACK_START}
 end
 function modifier_roshan_inherit_buff_datadriven:GetModifierPhysicalArmorBonus()
-	local stacks = self:GetStackCount()
-	if stacks > 10 then
-		return stacks * self:GetAbility():GetSpecialValueFor("grow_armor")
-	else
-		local time = GameRules:GetGameTime() / 10
-		return time * self:GetAbility():GetSpecialValueFor("grow_armor") 
-	end
+	if self:GetAbility() then
+		local stacks = self:GetStackCount()
+		if stacks > 10 then
+			return stacks * self:GetAbility():GetSpecialValueFor("grow_armor")
+		else
+			local time = GameRules:GetGameTime() / 10
+			return time * self:GetAbility():GetSpecialValueFor("grow_armor") 
+		end
+	end	
 end
 function modifier_roshan_inherit_buff_datadriven:GetModifierBonusStats_Strength()
-	local stacks = self:GetStackCount()
-	if stacks > 10 then
-		return stacks * self:GetAbility():GetSpecialValueFor("grow_str")
-	else
-		local time = GameRules:GetGameTime() / 10
-		return time * self:GetAbility():GetSpecialValueFor("grow_str") 
+	if self:GetAbility() then
+		local stacks = self:GetStackCount()
+		if stacks > 10 then
+			return stacks * self:GetAbility():GetSpecialValueFor("grow_str")
+		else
+			local time = GameRules:GetGameTime() / 10
+			return time * self:GetAbility():GetSpecialValueFor("grow_str") 
+		end
 	end
 end
 function modifier_roshan_inherit_buff_datadriven:GetModifierModelScale()
-	local scale = self:GetStackCount()*self.model_scale
-	local max_scale = self:GetAbility():GetSpecialValueFor("max_scale")
-	if scale > max_scale then scale = max_scale end
-	return scale
+	if self:GetAbility() then
+		local scale = self:GetStackCount()*self.model_scale
+		local max_scale = self:GetAbility():GetSpecialValueFor("max_scale")
+		if scale > max_scale then scale = max_scale end
+		return scale
+	end	
 end
 function modifier_roshan_inherit_buff_datadriven:OnAttackStart(data)
 	if IsServer() then
 		if data.attacker == self:GetParent() then
-			if RollPseudoRandom(self:GetAbility():GetSpecialValueFor("crit_chance"), self:GetAbility()) then
-				data.attacker:AddNewModifier(data.attacker, self:GetAbility(), "modifier_roshan_inherit_buff_datadriven_crit_buff", {})
-			end
+			if self:GetAbility() then
+				if RollPseudoRandom(self:GetAbility():GetSpecialValueFor("crit_chance"), self:GetAbility()) then
+					data.attacker:AddNewModifier(data.attacker, self:GetAbility(), "modifier_roshan_inherit_buff_datadriven_crit_buff", {})
+				end
+			end	
 		end
 	end
 end

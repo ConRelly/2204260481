@@ -60,10 +60,15 @@ function modifier_blood_madness_timer:OnWaweChange(wawe) self:SetStackCount(wawe
 function modifier_blood_madness_timer:OnTakeDamage(params)
 	if IsServer() then
         if params.unit == self:GetParent() then
-			if params.damage > self:GetParent():GetMaxHealth() then
-				params.damage = self:GetParent():GetMaxHealth()
+			local damage = params.damage
+			if damage > self:GetParent():GetHealth() then
+				damage = self:GetParent():GetHealth()
 			end
-            self:GetCaster():SetModifierStackCount("modifier_blood_madness",self:GetCaster(),self:GetCaster():GetModifierStackCount("modifier_blood_madness",self:GetCaster()) + params.damage)
+			if damage > 300000 then
+				damage = 300000
+			end	
+
+            self:GetCaster():SetModifierStackCount("modifier_blood_madness",self:GetCaster(),self:GetCaster():GetModifierStackCount("modifier_blood_madness",self:GetCaster()) + damage)
         end
 	end
 	return 0
