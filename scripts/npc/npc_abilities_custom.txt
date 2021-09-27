@@ -21754,6 +21754,16 @@
 				"scepter_cooldown"		"6"
 				"RequiresScepter"		"1"
 			}
+			"8"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"super_base_stats"		"1"
+			}
+			"9"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"str_agi_damage"		"2 4 6 8 10 15 20"
+			}
 		}
 	}
 	"special_bonus_bh_shuriken_toss_1"

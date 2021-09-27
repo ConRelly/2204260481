@@ -58,7 +58,11 @@ function shuriken_toss:OnProjectileHit_ExtraData(target, location, extradata)
 		local damage = self:GetSpecialValueFor("bonus_damage") + talent_value(caster, "special_bonus_unique_bounty_hunter_2")
 		local bounce_aoe = self:GetSpecialValueFor("bounce_aoe")
 		local ministun = self:GetSpecialValueFor("ministun")
-
+		local bonus = self:GetSpecialValueFor("super_base_stats")
+		if caster:IsRealHero() then
+			local stats = (caster:GetAgility() + caster:GetStrength()) * self:GetSpecialValueFor("str_agi_damage")
+			damage = damage + stats
+		end	
 		if not target then return end
 
 		target:EmitSound("Hero_BountyHunter.Shuriken.Impact")
@@ -82,9 +86,13 @@ function shuriken_toss:OnProjectileHit_ExtraData(target, location, extradata)
 				})
 			end
 		end
---		if caster:HasSuperScepter() then
+		if caster:HasSuperScepter() then
 			caster:PerformAttack(target, true, true, true, true, false, true, true)
---		end
+			if caster:IsRealHero() then
+				caster:ModifyAgility(bonus)
+				caster:ModifyStrength(bonus)
+			end	
+		end
 		if target:HasModifier("modifier_bounty_hunter_track") then
 			damage = damage * caster:CustomValue("bounty_hunter_track", "toss_crit_multiplier") / 100
 		end
