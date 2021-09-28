@@ -225,7 +225,7 @@
 }
 "npc_dota_hero_monkey_king"
 {
-	"AttackRange"		"320"
+	"AttackRange"		"420"
 	"Ability4"		"monkey_king_custom_jingu_mastery"
 	"Ability5"		"generic_hidden"
 	"Ability13"		"special_bonus_agility_100"
