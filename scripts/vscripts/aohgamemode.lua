@@ -113,6 +113,9 @@ function AOHGameMode:InitGameMode()
 	self._vic_1 = false
 	self.starting_intems = false
 	self.renew = false
+	self.gon = true
+	self.spawned_gon = false
+
 
 	AOHGameMode.isArcane = {}
 	AOHGameMode.isArcane[0] = false
@@ -498,14 +501,18 @@ function AOHGameMode:InitVariables()
 	self._goldRatio = 2.1 - 0.30 * (5 - self._playerNumber)
 	self._expRatio = 1.60 - 0.30 * (5 - self._playerNumber) 
 	if self._playerNumber < 2 and not self.starting_intems then
-		self._goldRatio = 0.7
-		self._expRatio = 0.4
+		self._goldRatio = 0.75
+		self._expRatio = 0.40
 		local playerHero = PlayerResource:GetPlayer(0):GetAssignedHero()
-		self._nPlayerHelp = CreateUnitByName("npc_playerhelp", playerHero:GetAbsOrigin(), true, playerHero, playerHero:GetOwner(), playerHero:GetTeamNumber())
-		self._nPlayerHelp:SetControllableByPlayer(playerHero:GetPlayerID(), true)
-		self._nPlayerHelp:SetTeam(playerHero:GetTeamNumber())
-		self._nPlayerHelp:SetOwner(playerHero)
+
 		Notifications:TopToAll({text="#game_begin_benediction", duration=5})
+		if self.gon and  then
+			self._nPlayerHelp = CreateUnitByName("npc_playerhelp", playerHero:GetAbsOrigin(), true, playerHero, playerHero:GetOwner(), playerHero:GetTeamNumber())
+			self._nPlayerHelp:SetControllableByPlayer(playerHero:GetPlayerID(), true)
+			self._nPlayerHelp:SetTeam(playerHero:GetTeamNumber())
+			self._nPlayerHelp:SetOwner(playerHero)
+			self.spawned_gon = true		
+		end
 	end
 	if self._doubleMode and not self.starting_intems then
 		self._expRatio = self._expRatio / 1.35

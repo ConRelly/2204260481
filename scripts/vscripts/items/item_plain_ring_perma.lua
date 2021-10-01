@@ -181,3 +181,5 @@ modifier_plain_ring_perma_up = class({})
 function modifier_plain_ring_perma_up:IsHidden() return true end
 function modifier_plain_ring_perma_up:IsPurgable() return false end
 function modifier_plain_ring_perma_up:RemoveOnDeath() return false end
+
+

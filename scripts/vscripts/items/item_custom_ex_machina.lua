@@ -23,7 +23,7 @@ function item_custom_ex_machina:OnSpellStart()
             item_custom_ex_machina = true, item_plain_ring = true, item_helm_of_the_undying = true, 
             item_echo_wand = true,
             item_bloodthorn = true, item_cursed_bloodthorn = true, item_random_get_ability_spell = true,
-            item_random_get_ability = true, item_custom_refresher = true, item_video_file = true, --血棘
+            item_random_get_ability = true, item_custom_refresher = true, item_inf_aegis = true, item_video_file = true, --血棘
         })
     end
 end

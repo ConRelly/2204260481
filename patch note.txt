@@ -1311,6 +1311,10 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 
 
 
+* Added a new command for solo: "-gon" = you will receive a second philosophers stone instead of helper unit.
+* Slightly increased gold gain in solo. 
+* Fix Qop  scream of pain.
+
 
 
 

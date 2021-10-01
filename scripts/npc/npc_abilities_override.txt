@@ -1165,7 +1165,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"				"3.0"
+				"value"				"4300.0"
 			}
 		}
 	}
@@ -7661,11 +7661,47 @@
 	
 	"queenofpain_scream_of_pain"
 	{
-		"AbilityCooldown"				"9.0 8.0 7.0 6.5 6.0 5.5 5.0"
+		
 		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "5"
-		"AbilityDamage"					"220 420 890 1380 2500 5900 14500"
-	}
+		"LevelsBetweenUpgrades"		 "7"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"9.0 8.0 7.0 6.5 6.0 5.5 5.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"130"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"area_of_effect"		"650"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"900"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"		"220 620 1890 4380 9500 15900 44500"
+				"LinkedSpecialBonus" "special_bonus_unique_queen_of_pain_2"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+	}	
 	"queenofpain_sonic_wave"
 	{
 		"AbilityCooldown"				"60 50 40"
@@ -12456,7 +12492,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"distance_damage_pct"	"32 66 80 110"
+				"distance_damage_pct"	"35 75 100 150"
 				"LinkedSpecialBonus"	"special_bonus_unique_enchantress_4"			
 			}
 			"02"

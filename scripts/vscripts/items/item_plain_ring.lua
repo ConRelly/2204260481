@@ -127,7 +127,7 @@ function modifier_item_plain_ring:OnCreated(keys)
 		self.parent = self:GetParent()
 		self.ability = self:GetAbility()
 		if self.parent:GetLevel() > 88 then
-			extra = 3
+			extra = 10
 		end	
 		self.invincibility_duration = self.ability:GetSpecialValueFor("duration") + extra
 		self.cooldown = self.ability:GetCooldown(0)
@@ -139,16 +139,16 @@ function modifier_item_plain_ring:OnTakeDamage(keys)
 	if IsServer() then
 		local attacker = keys.attacker
 		local unit = keys.unit
-		if self.parent == unit and self.ability:IsCooldownReady() and self.parent:GetHealth() < 1  then
+		if self.parent == unit and self.ability:IsCooldownReady() and self.parent:GetHealth() < 100  then
 			if has_item(self.parent, "item_plain_ring") and not unit:IsNull() and IsValidEntity(unit) then
-				self.parent:SetHealth(self.parent:GetMaxHealth() * 0.07)
+				self.parent:SetHealth(self.parent:GetMaxHealth() * 0.1)
 				self.parent:AddNewModifier(self.parent, self:GetAbility(), "modifier_item_plain_ring_invincibility", {duration = self.invincibility_duration})
 				self.ability:StartCooldown(self.cooldown * self.parent:GetCooldownReduction())
 				Timers:CreateTimer({
 					endTime = 0.5, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
 					callback = function()
 						if unit and not unit:IsNull() and IsValidEntity(unit) and unit:IsAlive() then
-							self.parent:AddNewModifier(self.parent, self:GetAbility(), "modifier_item_plain_ring_frenzy", {duration = self.invincibility_duration + 5})
+							self.parent:AddNewModifier(self.parent, self:GetAbility(), "modifier_item_plain_ring_frenzy", {duration = self.invincibility_duration + 7})
 							--self.parent:SetAbsOrigin (attacker:GetAbsOrigin ())
 							--FindClearRandomPositionAroundUnit(self.parent, attacker, 250)
 							--attacker:SetHealth(450)
@@ -249,5 +249,5 @@ function modifier_item_plain_ring_frenzy:GetModifierPercentageCasttime()
   return 100
 end
 function modifier_item_plain_ring_frenzy:GetModifierSpellAmplify_Percentage()
-  return 50
+  return 100
 end

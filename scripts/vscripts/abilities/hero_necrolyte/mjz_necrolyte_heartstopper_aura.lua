@@ -93,7 +93,11 @@ end
 modifier_mjz_necrolyte_heartstopper_aura_counter = class({})
 local modifier_counter = modifier_mjz_necrolyte_heartstopper_aura_counter
 
-function modifier_counter:IsHidden() return (self:GetAbility():GetLevel() < 1) end
+function modifier_counter:IsHidden() return
+	if self and self:GetAbility() then
+		(self:GetAbility():GetLevel() < 1)	
+	end	
+end
 function modifier_counter:IsPurgable() return false end
 
 if IsServer() then
