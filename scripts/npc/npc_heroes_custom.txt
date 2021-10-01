@@ -223,15 +223,6 @@
 	"AttackRate"				 "1.5"
 	"ArmorPhysical"			  "10"
 }
-"npc_dota_hero_monkey_king"
-{
-	"AttackRange"		"420"
-	"Ability4"		"monkey_king_custom_jingu_mastery"
-	"Ability5"		"generic_hidden"
-	"Ability13"		"special_bonus_agility_100"
-	"Ability17"	 "special_bonus_8_crit_2750"
-	"AttributeAgilityGain"   "8.2"
-}
 "npc_dota_hero_nevermore"
 {
 	"Ability4"		"nevermore_custom_necromastery"
@@ -1071,8 +1062,13 @@
 
 		"Ability4"				"mjz_monkey_king_jingu_mastery"
 		"Ability5"				"mjz_monkey_king_cloud"//"generic_hidden"
-		"Ability10"			 "special_bonus_spell_block_18"
-		"Ability16"			 "special_bonus_cdr_25"
+		"Ability10"				"special_bonus_spell_block_18"
+		"Ability13"				"special_bonus_agility_100"
+		"Ability16"				"special_bonus_cdr_25"
+		"Ability17"				"special_bonus_8_crit_2750"
+
+		"AttributeAgilityGain"		"8.2"
+		"AttackRange"				"420"
 	}
 
 	//=================================================================================================================

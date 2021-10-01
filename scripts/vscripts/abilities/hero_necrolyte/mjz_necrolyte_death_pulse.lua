@@ -9,9 +9,6 @@ local ability_class = mjz_necrolyte_death_pulse
 function ability_class:GetAOERadius()
 	return self:GetSpecialValueFor('radius') + self:GetCaster():GetCastRangeBonus()
 end
-function ability_class:GetCastRange(vLocation, hTarget)
-	return self:GetSpecialValueFor('radius') + self:GetCaster():GetCastRangeBonus()
-end
 
 function ability_class:OnSpellStart()
 	if not IsServer() then return end
@@ -19,7 +16,6 @@ function ability_class:OnSpellStart()
 	local caster = self:GetCaster()
 	local ability = self
 	local max_count = ability:GetSpecialValueFor("max_count")
-	local projectile_speed = ability:GetSpecialValueFor("projectile_speed")
 	local radius = ability:GetAOERadius()
 	
 	EmitSoundOn("Hero_Necrolyte.DeathPulse", caster)
@@ -33,13 +29,18 @@ function ability_class:OnSpellStart()
 	for _,enemy in pairs(enemies) do
 		if max_count > 0 then
 			max_count = max_count - 1
+			
+			local projectile_speed = caster:GetIdealSpeed() * ability:GetSpecialValueFor("projectile_speed_pct") / 100
+			if enemy == caster then
+				projectile_speed = caster:GetIdealSpeed() * 10
+			end
 
 			ProjectileManager:CreateTrackingProjectile({
 				Target = enemy,
 				Source = caster,
 				Ability = ability,
 				EffectName = "particles/units/heroes/hero_necrolyte/necrolyte_pulse_enemy.vpcf",
-				bDodgeable = true,
+				bDodgeable = false,
 				iMoveSpeed = projectile_speed,
 				-- bProvidesVision = true,
 				-- iVisionRadius = 250,
@@ -47,7 +48,6 @@ function ability_class:OnSpellStart()
 			})
 		end
 	end
-
 end
 
 function ability_class:OnProjectileHit( hTarget, vLocation ) 

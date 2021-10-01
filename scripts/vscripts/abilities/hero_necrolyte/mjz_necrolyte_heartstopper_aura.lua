@@ -1,143 +1,73 @@
-LinkLuaModifier("modifier_mjz_necrolyte_heartstopper_aura","abilities/hero_necrolyte/mjz_necrolyte_heartstopper_aura.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_necrolyte_heartstopper_aura_counter","abilities/hero_necrolyte/mjz_necrolyte_heartstopper_aura.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_mjz_necrolyte_heartstopper_aura_regen","abilities/hero_necrolyte/mjz_necrolyte_heartstopper_aura.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_necrolyte_heartstopper_stack_counter","abilities/hero_necrolyte/mjz_necrolyte_heartstopper_aura.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_necrolyte_heartstopper_aura_effect","abilities/hero_necrolyte/mjz_necrolyte_heartstopper_aura.lua", LUA_MODIFIER_MOTION_NONE)
 
-local modifier_regen_name = "modifier_mjz_necrolyte_heartstopper_aura_regen"
-local modifier_counter_name = "modifier_mjz_necrolyte_heartstopper_aura_counter"
-
+-----------------------
+-- Heartstopper Aura --
+-----------------------
 mjz_necrolyte_heartstopper_aura = class({})
-local ability_class = mjz_necrolyte_heartstopper_aura
-
-function ability_class:GetIntrinsicModifierName()
-	return "modifier_mjz_necrolyte_heartstopper_aura"
+function mjz_necrolyte_heartstopper_aura:GetIntrinsicModifierName() return "modifier_mjz_necrolyte_heartstopper_aura_counter" end
+function mjz_necrolyte_heartstopper_aura:GetAOERadius()
+	if self:GetToggleState() then
+		return self:GetSpecialValueFor("radius") + self:GetCaster():GetCastRangeBonus()
+	else return 0 end
 end
-
-function ability_class:GetAOERadius()
-	return self:GetSpecialValueFor("radius") + self:GetCaster():GetCastRangeBonus()
-end
-function ability_class:GetCastRange(vLocation, hTarget)
-	return self:GetSpecialValueFor("radius") + self:GetCaster():GetCastRangeBonus()
-end
-
-function ability_class:OnToggle()
+function mjz_necrolyte_heartstopper_aura:OnToggle()
 	if IsServer() then
-		local ability = self
-		local caster = self:GetCaster()
-
-		if ability:GetToggleState() then
-			--caster:AddNewModifier( caster, ability, "", nil )
-		else
-			--caster:RemoveModifierByName("")
-		end
+		if self:GetToggleState() then aura_effect = true else aura_effect = false end
 	end
 end
-
-function ability_class:OnUpgrade()
+function mjz_necrolyte_heartstopper_aura:OnUpgrade()
 	if IsServer() then
-		local ability = self
-		local caster = self:GetCaster()
-
-		if ability:GetLevel() == 1 then
-			ability:ToggleAbility()
+		if self:GetLevel() == 1 then
+			self:ToggleAbility()
 		end
 	end
 end
 
------------------------------------------------------------------------------------------
-
-modifier_mjz_necrolyte_heartstopper_aura = class({})
-local modifier_class = modifier_mjz_necrolyte_heartstopper_aura
-
-function modifier_class:IsPassive() return true end
-function modifier_class:IsHidden() return true end
-function modifier_class:IsPurgable() return false end
-
-if IsServer() then
-	function modifier_class:OnCreated()
-		local parent = self:GetParent()
-		local ability = self:GetAbility()
-		if not parent:HasModifier(modifier_counter_name) then
-			parent:AddNewModifier(parent, ability, modifier_counter_name, {})
-		end
-	end
-end
-
------------------------------------------------------------------------------------------
-
-function modifier_class:IsAura() return true end
-
-function modifier_class:GetModifierAura()
-	return "modifier_mjz_necrolyte_heartstopper_aura_effect"
-end
-
-function modifier_class:GetAuraSearchTeam()
-	return DOTA_UNIT_TARGET_TEAM_ENEMY
-end
-
-function modifier_class:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
-end
-
-function modifier_class:GetAuraSearchFlags()
-	return DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
-end
-
-function modifier_class:GetAuraRadius()
-	-- return self:GetAbility():GetSpecialValueFor( "radius" ) + self:GetParent():GetCastRangeBonus()
-	return self:GetAbility():GetAOERadius()
-end
-
------------------------------------------------------------------------------------------
-
+--------------------------------
+-- Heartstopper Aura Modifier --
+--------------------------------
 modifier_mjz_necrolyte_heartstopper_aura_counter = class({})
 local modifier_counter = modifier_mjz_necrolyte_heartstopper_aura_counter
 
-function modifier_counter:IsHidden() return
-	if self and self:GetAbility() then
-		(self:GetAbility():GetLevel() < 1)	
-	end	
-end
+function modifier_counter:IsHidden() return (self:GetStackCount() == 0) end
 function modifier_counter:IsPurgable() return false end
 
-if IsServer() then
-	function modifier_counter:UpdateTooltip()
-		local parent = self:GetParent()
-		local ability = self:GetAbility()
-		local modifier_regen_list = parent:FindAllModifiersByName(modifier_regen_name)
-		self:SetStackCount(#modifier_regen_list)
-	end
-end
-
------------------------------------------------------------------------------------------
-
-modifier_mjz_necrolyte_heartstopper_aura_regen = class({})
-local modifier_regen = modifier_mjz_necrolyte_heartstopper_aura_regen
-
-function modifier_regen:IsHidden() return true end
-function modifier_regen:IsPurgable() return false end
-function modifier_regen:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
-function modifier_regen:DeclareFunctions()
+function modifier_counter:DeclareFunctions()
 	return {MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT}
 end
-function modifier_regen:GetModifierConstantHealthRegen( )
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("health_regen") end
+function modifier_counter:GetModifierConstantHealthRegen()
+	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("health_regen") end
 end
-function modifier_regen:GetModifierConstantManaRegen( )
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana_regen") end
-end
-if IsServer() then
-	function modifier_regen:OnDestroy()
-		local parent = self:GetParent()
-		local modifier_counter = parent:FindModifierByName(modifier_counter_name)
-		if modifier_counter then
-			modifier_counter:UpdateTooltip()
-		end
-	end
+function modifier_counter:GetModifierConstantManaRegen()
+	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("mana_regen") end
 end
 
 -----------------------------------------------------------------------------------------
+function modifier_counter:IsAura() return aura_effect end
+function modifier_counter:GetModifierAura() return "modifier_mjz_necrolyte_heartstopper_aura_effect" end
+function modifier_counter:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
+function modifier_counter:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
+function modifier_counter:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES end
+function modifier_counter:GetAuraRadius() return self:GetAbility():GetAOERadius() end
 
+------------------------------
+-- Heartstopper Aura Stacks --
+------------------------------
+modifier_mjz_necrolyte_heartstopper_stack_counter = class({})
+local modifier_stacks = modifier_mjz_necrolyte_heartstopper_stack_counter
+function modifier_stacks:IsHidden() return true end
+function modifier_stacks:IsPurgable() return false end
+function modifier_stacks:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+function modifier_stacks:OnDestroy()
+	if not IsServer() then return end
+	self:GetParent():FindModifierByName("modifier_mjz_necrolyte_heartstopper_aura_counter"):DecrementStackCount()
+end
+
+------------------------------
+-- Heartstopper Aura Effect --
+------------------------------
 modifier_mjz_necrolyte_heartstopper_aura_effect = class({})
 local modifier_effect = modifier_mjz_necrolyte_heartstopper_aura_effect
 
@@ -146,19 +76,20 @@ function modifier_effect:IsPurgable() return false end
 function modifier_effect:IsDebuff() return true end
 
 if IsServer() then
-	function modifier_effect:DeclareFunctions()
-		return {
-			MODIFIER_EVENT_ON_DEATH,
-		}
+	function modifier_effect:OnCreated()
+		self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("interval"))
 	end
-	function modifier_effect:OnDeath( event )
+
+	function modifier_effect:DeclareFunctions()
+		return {MODIFIER_EVENT_ON_DEATH}
+	end
+	function modifier_effect:OnDeath(event)
+		if self:GetCaster():PassivesDisabled() then return nil end
 		if self:GetParent() ~= event.unit then return end
 
 		local parent = self:GetParent()
 		local caster = self:GetCaster()
 		local ability = self:GetAbility()
-
-		if caster:PassivesDisabled() then return nil end
 
 		local regen_duration = ability:GetSpecialValueFor("regen_duration")
 		local hero_multiplier = ability:GetSpecialValueFor("hero_multiplier")
@@ -168,52 +99,32 @@ if IsServer() then
 			count = hero_multiplier 
 		end
 		for i=1,count do
-			caster:AddNewModifier(caster, ability, modifier_regen_name, {duration = regen_duration})
+			local modifier_counter = caster:AddNewModifier(caster, ability, "modifier_mjz_necrolyte_heartstopper_stack_counter", {duration = regen_duration})
+
+			caster:FindModifierByName("modifier_mjz_necrolyte_heartstopper_aura_counter"):IncrementStackCount()
 		end
-
-		local modifier_counter = caster:FindModifierByName(modifier_counter_name)
-		if modifier_counter then
-			modifier_counter:UpdateTooltip()
-		end
-	end
-
-	function modifier_effect:OnCreated(table)
-		local parent = self:GetParent()
-		local caster = self:GetCaster()
-		local ability = self:GetAbility()
-
-		local interval = ability:GetSpecialValueFor("interval")
-		self:StartIntervalThink(interval)
 	end
 
 	function modifier_effect:OnIntervalThink()
-		if not self:_Enabled() then return nil end
+		if not self:GetAbility():GetToggleState() then return end
+		if self:GetCaster():PassivesDisabled() then return end
 
-		local parent = self:GetParent()
 		local caster = self:GetCaster()
 		local ability = self:GetAbility()
-		local target = self:GetParent()
 
 		local interval = ability:GetSpecialValueFor("interval")
 		local base_damage = ability:GetSpecialValueFor("base_damage")
 		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
-		local damage = base_damage + caster:GetIntellect() * (intelligence_damage / 100.0)
-		damage = damage * interval
+		local damage = base_damage + caster:GetIntellect() * (intelligence_damage / 100)
 
 		ApplyDamage({
 			attacker = caster,
-			victim = target,
+			victim = self:GetParent(),
 			ability = ability,
 			damage_type = ability:GetAbilityDamageType(),
-			damage = damage
+			damage = damage * interval
 		})
 	end
-
-	function modifier_effect:_Enabled( )
-		local ability = self:GetAbility()
-		return ability:GetToggleState()
-	end
-
 end
 
 

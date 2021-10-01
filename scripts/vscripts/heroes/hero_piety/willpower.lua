@@ -97,7 +97,9 @@ function willpower:OnSpellStart()
 		if caster:HasModifier("modifier_divinity_activated") then
 			local Roll = RollPercentage(70)
 			if target:GetTeamNumber() == caster:GetTeamNumber() then
-				if Roll then
+				if target == caster then
+					RandomModifier = TakeBuff()
+				elseif Roll then
 					RandomModifier = TakeBuff()
 				else
 					RandomModifier = TakeDebuff()

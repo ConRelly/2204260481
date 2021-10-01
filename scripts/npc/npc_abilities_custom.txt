@@ -27106,7 +27106,7 @@
 		"MaxLevel"					  "7"
 		"LevelsBetweenUpgrades"		 "5"
 		//"HasScepterUpgrade"				"1"
-		"AbilityCastRange"				"1300"
+		//"AbilityCastRange"				"1300"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCooldown"				"11 10 9 8 7 6 5"
@@ -27145,10 +27145,10 @@
 				"var_type"					"FIELD_INTEGER"
 				"max_count"					"16"
 			}
-			"11"
+			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"projectile_speed"			"400"
+				"projectile_speed_pct"		"50"
 			}
 		}
 
