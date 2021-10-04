@@ -19,12 +19,9 @@ function modifier_generic_handler:OnCreated()
 		self:StartIntervalThink(FrameTime())
 	end
 	piety = false
-	if self:GetParent():GetUnitName() == "npc_dota_hero_lina" and not self:GetParent():HasModifier("modifier_sourcery") then
-		piety = true
-	end
-	if piety then
+	if self:GetParent():GetUnitName() == "npc_dota_hero_lina" and not self:GetParent():HasModifier("modifier_sourcery") and self:GetParent():IsRealHero() and not self:GetParent():IsIllusion() and not piety then
 		self:GetParent():AddItemByName("item_to_piety")
-		piety = false
+		piety = true
 	end
 end
 function modifier_generic_handler:OnIntervalThink()
