@@ -6354,7 +6354,7 @@
 	"Ability1"					"custom_aura_mana_drain"
 	"Ability2"				  "custom_mana_break"
 	"Ability3"				  "custom_mana_void"
-	"Ability4"				  "custom_spell_reflect"
+	//"Ability4"				  "custom_spell_reflect"
 	"Ability5"				  "custom_revenge_behavior"
 	"Ability6"					"custom_blink"
 	"Ability7"					"custom_mana_void_wrapper"
@@ -6370,7 +6370,7 @@
 	"Ability17"				 "custom_antimage_revenge"
 
 	"ArmorPhysical"				"125"
-	"MagicalResistance"			"55"
+	"MagicalResistance"			"90"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"			"1950"
 	"AttackDamageMax"			"7100"

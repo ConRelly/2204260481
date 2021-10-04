@@ -603,7 +603,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"1"
@@ -627,7 +627,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"1"
@@ -733,7 +733,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"1"
@@ -840,7 +840,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"1"
@@ -864,7 +864,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"1"
@@ -888,7 +888,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"1"
@@ -929,7 +929,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"3"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"1"
@@ -969,7 +969,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"3"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"1"
@@ -992,7 +992,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"1"
@@ -1016,7 +1016,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"1"
@@ -1046,7 +1046,7 @@
 			}
 			"c"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"4"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"1"
@@ -1099,7 +1099,7 @@
 			}
 			"c"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"3"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"1"
@@ -1153,7 +1153,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"4"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"1"
@@ -1811,7 +1811,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"15"
@@ -1852,7 +1852,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"1"
@@ -1941,7 +1941,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"15"
 				"UnitsPerSpawn"			"3"
 				"SpawnInterval"			"1"
@@ -2000,7 +2000,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"8"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"1"
@@ -2040,7 +2040,7 @@
 			}
 			"d"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"1"
@@ -2081,7 +2081,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"15"
@@ -2122,7 +2122,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"1"
@@ -2179,7 +2179,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"1"
@@ -2218,7 +2218,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"1"
@@ -2294,7 +2294,7 @@
 			}
 			"c"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"1"
@@ -2317,7 +2317,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"1"
@@ -2902,7 +2902,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"1"
@@ -2991,7 +2991,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"15"
 				"UnitsPerSpawn"			"3"
 				"SpawnInterval"			"1"
@@ -3050,7 +3050,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"8"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"1"
@@ -3090,7 +3090,7 @@
 			}
 			"d"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"1"
@@ -3114,7 +3114,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"1"
@@ -3155,7 +3155,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"1"
@@ -3212,7 +3212,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"1"
@@ -3252,7 +3252,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"1"
@@ -3275,7 +3275,7 @@
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"1"
@@ -3328,7 +3328,7 @@
 			}
 			"c"
 			{
-				"NPCName"				"npc_boss_zombie"
+				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"1"

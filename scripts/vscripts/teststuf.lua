@@ -94,35 +94,35 @@ end
 --if IsServer() then
 function GetRandomAbilityName( hero )                 
     local abilityList = {
-        --"skeleton_king_vampiric_aura",      --骷髅王2
-        --"skeleton_king_mortal_strike",      --骷髅王3
-        --"mjz_obsidian_destroyer_essence_aura",                      -- 全能 3
-        --"antimage_custom_mana_break",          -- 伐木机 3
-        --"phantom_assassin_blur",          -- 潮汐 2
-        --"mjz_vengefulspirit_vengeance",			-- 老奶奶 2
-        --"chaos_knight_chaos_strike",        -- 混沌3
+        --"skeleton_king_vampiric_aura",      
+        --"skeleton_king_mortal_strike",      
+        --"mjz_obsidian_destroyer_essence_aura",                      
+        --"antimage_custom_mana_break",          
+        --"phantom_assassin_blur",          
+        --"mjz_vengefulspirit_vengeance",			
+        --"chaos_knight_chaos_strike",        
         --"mars_bulwark", 
         --"lone_druid_spirit_bear_demolish",   
         --"monkey_king_custom_jingu_mastery", 
         --"mjz_broodmother_insatiable_hunger",    
-        --"abyssal_underlord_atrophy_aura",             -- 滚滚 3
-        --"mjz_clinkz_soul_pact",                -- 赏金 2
-        --"nyx_assassin_custom_vendetta",             -- 先知 2
+        --"abyssal_underlord_atrophy_aura",             
+        --"mjz_clinkz_soul_pact",                
+        --"nyx_assassin_custom_vendetta",             
         --"dark_willow_bedlam",                 
-        --"rubick_arcane_supremacy",          -- 拉比克 3
-        --"jakiro_liquid_fire",               -- 双头龙 3
-        --"obsidian_destroyer_arcane_orb",    -- 黑鸟 1
-        --"mjz_crystal_maiden_brilliance_aura",   -- 冰女 3
+        --"rubick_arcane_supremacy",          
+        --"jakiro_liquid_fire",               
+        --"obsidian_destroyer_arcane_orb",    
+        --"mjz_crystal_maiden_brilliance_aura",   
         --"naga_siren_rip_tide",     -- 沉默 1
         --"imba_phantom_assassin_coup_de_grace", 
-        --"ancient_apparition_chilling_touch",    -- 冰魂 3
-        --"visage_soul_assumption",            -- 蓝猫 3
-        --"enchantress_impetus",              -- 小鹿 1
-        --"wisp_overcharge",                  -- 黑贤 3
-        --"mjz_faceless_void_backtrack",         --3
+        --"ancient_apparition_chilling_touch",   
+        --"visage_soul_assumption",            
+        --"enchantress_impetus",             
+        --"wisp_overcharge",                  
+        --"mjz_faceless_void_backtrack",         
         --"ryze_arcane_mastery",     --4
-        --"mars_gods_rebuke",     -- 龙肤光环 没有光环
-        --"void_spirit_astral_step",       -- 溅射攻击
+        --"mars_gods_rebuke",     
+        --"void_spirit_astral_step",       
         --"phantom_reflex",
         --"ogre_magi_multicast_lua",
         --"mjz_clinkz_death_pact",
@@ -156,7 +156,7 @@ function GetRandomAbilityName( hero )
         --"vengefulspirit_command_aura",
         --"bounty_hunter_jinada", --crash
         --"winter_wyvern_arctic_burn",
-        --"tidehunter_anchor_smash",          -- 潮汐 3
+        --"tidehunter_anchor_smash",          
         --"tidehunter_gush",
         --"life_stealer_custom_deny",
         --"earth_spirit_magnetize",
@@ -173,41 +173,46 @@ function GetRandomAbilityName( hero )
         --"mjz_omniknight_degen_aura",    --probably lagy or maybe unstable   
         --"faceless_void_time_lock",      --to many hits might lock acting.
         --"night_stalker_darkness", 
-        --"dazzle_bad_juju",                  -- 丽娜 3 
+        --"dazzle_bad_juju",                  
         --"mjz_furion_power_of_nature", 
         --"mjz_invoker_magic_master",
+        --"enchantress_natures_attendants",
+        --"hoodwink_scurry",
+        --"hoodwink_bushwhack", 
+        --"oracle_false_promise", -- insta kills
+        --"brewmaster_storm_cyclone", -- probably crash if hero has some stun immunity and/or moves during
+        --"enchantress_natures_attendants",                               
         "phantom_assassin_blur",
         "custom_leap",       
         "ember_spirit_searing_chains",
-        "mjz_troll_warlord_fervor",            -- 老奶奶 3              
-        "beastmaster_inner_beast",      -- 兽王    野性之心
-        "spirit_breaker_greater_bash",            --发条2
-        "sven_great_cleave",                -- sven 2
-        "mjz_night_stalker_hunter_in_the_night", -- test  
-        "magnataur_empower",                -- 猛犸 2
-        "legion_commander_custom_duel",                 -- 猛犸 3
-        "alchemist_chemical_rage",                 -- 马尔斯 2
-        "lone_druid_rabid",       -- 龙骑3
+        "mjz_troll_warlord_fervor",                       
+        "beastmaster_inner_beast",     
+        "spirit_breaker_greater_bash",           
+        "sven_great_cleave",                
+        "mjz_night_stalker_hunter_in_the_night",   
+        "magnataur_empower",                
+        "legion_commander_custom_duel",                
+        "alchemist_chemical_rage",                 
+        "lone_druid_rabid",       
         "templar_assassin_psi_blades",      -- TA 3
-        "mjz_vengefulspirit_vengeance",      -- VS 3         -- 小娜迦 1
-        "mjz_omniknight_repel",           -- 影魔 4
-        "lycan_feral_impulse",              -- 影魔 5
-        "mjz_ursa_overpower",                   -- 拍拍熊 2
-        "ursa_fury_swipes",                 -- 拍拍熊 3
-        "lich_custom_cold_soul2",                  -- 火枪 3
-        "meepo_ransack",                    -- 米波 3
-        "brewmaster_fire_permanent_immolation",           -- 蚂蚁 3    bug
-        "ogre_magi_bloodlust",            -- 血魔 1
-        "elder_titan_natural_order",                 -- 蝙蝠 3
-        "skywrath_mage_ancient_seal",       -- 天怒 3
-        "disruptor_custom_ion_hammer",        -- 冰龙 1 crash on snowball               -- 女王 2
-        "medusa_stone_gaze",              -- 蓝胖 3
-        "tusk_walrus_punch",          -- 哈斯卡 3           
-        "bane_enfeeble",           -- 2
-        "elder_titan_natural_order_spirit",      -- 熊怪 迅捷光环
-        "oracle_false_promise",             -- 坚韧光环
-        "big_thunder_lizard_wardrums_aura",   --战鼓光环
-        "mjz_general_megamorph",            --巨大化
+        "mjz_vengefulspirit_vengeance",     
+        "mjz_omniknight_repel",           
+        "lycan_feral_impulse",              
+        "mjz_ursa_overpower",                
+        "ursa_fury_swipes",                
+        "lich_custom_cold_soul2",                  
+        "meepo_ransack",                   
+        "brewmaster_fire_permanent_immolation",           
+        "ogre_magi_bloodlust",            
+        "elder_titan_natural_order",                 
+        "skywrath_mage_ancient_seal",       
+        "disruptor_custom_ion_hammer",       
+        "medusa_stone_gaze",              
+        "tusk_walrus_punch",                    
+        "bane_enfeeble",          
+        "elder_titan_natural_order_spirit",                   
+        "big_thunder_lizard_wardrums_aura",   
+        "mjz_general_megamorph",            
         "juggernaut_omni_slash",
         "mjz_phantom_assassin_phantom_strike",
         "mjz_spectre_desolate",
@@ -235,8 +240,6 @@ function GetRandomAbilityName( hero )
         "dazzle_poison_touch",
         "dazzle_bad_juju",
         "mirana_leap",
-        "hoodwink_scurry",
-        "hoodwink_bushwhack",
         "doom_bringer_doom",
         "mars_spear",
         "grimstroke_soul_chain",
@@ -283,7 +286,6 @@ function GetRandomAbilityName( hero )
         "shadow_demon_demonic_purge",
         "bloodseeker_blood_bath",
         "bounty_hunter_track",
-        "brewmaster_storm_cyclone",
         "broodmother_incapacitating_bite",
         "death_prophet_spirit_siphon",
         "ancient_apparition_cold_feet",
@@ -302,7 +304,6 @@ function GetRandomAbilityName( hero )
         "nevermore_dark_lord",
         "chen_penitence",
         "enchantress_untouchable",
-        "enchantress_natures_attendants",
         "warlock_shadow_word",
         "huskar_berserkers_blood",
 

@@ -340,18 +340,20 @@ function AOHGameMode:OnPlayerChat(keys)
 			Notifications:Top(keys.playerid, {text="Super Scepter for non-heroes disabled", duration=3, style={color="red"}, continue=false})
 		end
 	end
+
+	if keys.text == "-gon" and self.gon and not self.spawned_gon and keys.playerid == 0 then
+		local player_count = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) 
+		local playerID = keys.playerid
+		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+		if player_count == 1 then
+			self.gon = false
+			hero:AddItemByName("item_philosophers_stone2")
+			Notifications:TopToAll({text="Helper Unit Disabled", style={color="yellow"}, duration=6})
+		end
+	end
+
 end
 
-if keys.text == "-gon" and self.gon and not self.spawned_gon and keys.playerid == 0 then
-	local player_count = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) 
-	local playerID = keys.playerid
-	local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-	if player_count == 1 then
-		self.gon = false
-		hero:AddItemByName("item_philosophers_stone2")
-		Notifications:TopToAll({text="Helper Unit Disabled", style={color="yellow"}, duration=6})
-	end
-end
 
 
 function AOHGameMode:OnPlayerConnect(keys)

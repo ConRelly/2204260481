@@ -506,7 +506,7 @@ function AOHGameMode:InitVariables()
 		local playerHero = PlayerResource:GetPlayer(0):GetAssignedHero()
 
 		Notifications:TopToAll({text="#game_begin_benediction", duration=5})
-		if self.gon and  then
+		if self.gon and not self.spawned_gon then
 			self._nPlayerHelp = CreateUnitByName("npc_playerhelp", playerHero:GetAbsOrigin(), true, playerHero, playerHero:GetOwner(), playerHero:GetTeamNumber())
 			self._nPlayerHelp:SetControllableByPlayer(playerHero:GetPlayerID(), true)
 			self._nPlayerHelp:SetTeam(playerHero:GetTeamNumber())

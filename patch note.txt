@@ -1318,7 +1318,7 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Death Pulse (Necrophos): The projectile speed is now equal to 50% of the hero's speed, not 400, as it was before
 * Heartstopper Aura (Necrophos) is now more optimized and aura will not work if the ability is disabled
 * Fixed Heartstopper Aura (Necrophos) visual AOE range
-
+* Campfires retierd for this patch(they will return as Neutral team)
 
 
 

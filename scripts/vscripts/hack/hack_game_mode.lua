@@ -160,7 +160,7 @@ function HackGameMode:OnGameInProgress( )
             end
         })
         
-        InitCampfires()
+        --InitCampfires()
         self:_AddBossSpawnPointView()
 
         if IsHoliday() or IsLucky() or IsInToolsMode() or true then
@@ -699,14 +699,14 @@ function InitCampfires()
     local team_good = DOTA_TEAM_GOODGUYS
     local team_bad  = DOTA_TEAM_BADGUYS
     local team_neu  = DOTA_TEAM_NEUTRALS
-    local team = team_bad
+    local team = team_neu
 
     for i,pos in ipairs(pos_list) do
         local unit = CreateUnitByName("npc_dota_campfire", pos, true, nil, nil, team)
         unit.mjz_retain = true -- 回合结束后不移除
         unit._spawn_point = pos
         unit:AddNewModifier(unit, nil, "modifier_mjz_hold_spawer", {})
-		AddFOWViewer(team_good, pos, 10, 99999, true)
+		AddFOWViewer(team_good, pos, 1000, 99999, true)
     end
 
 end
