@@ -8966,11 +8966,11 @@
 	}
 
 
-	"ArmorPhysical"			 "75"
+	"ArmorPhysical"			 "55"
 	"MagicalResistance"		 "57"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"		   "2900"
-	"AttackDamageMax"		   "9000"
+	"AttackDamageMin"		   "2400"
+	"AttackDamageMax"		   "8500"
 	"AttackDamageType"		  "DAMAGE_TYPE_ArmorPhysical"
 	"AttackRate"				"2.5"
 	"BaseAttackSpeed"		   "640"
@@ -9072,6 +9072,7 @@
 			"Battlefly"				{ "Item"	"item_mjz_butterfly_blue_5" }
 			"Plain_Ring"			{ "Item"	"item_plain_ring" }
 			"Witchbane"				{ "Item"	"item_heavy_blade" }
+			"Wraith Rapier"			{ "Item"	"item_wraith_rapier" }
 
 		}
 	   "AttachWearables"

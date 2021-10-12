@@ -6,6 +6,8 @@ LinkLuaModifier("modifier_hotd_pure_divinity", "items/hammer_of_the_divine", LUA
 LinkLuaModifier("modifier_hotd_pure_divinity_armor_corruption", "items/hammer_of_the_divine", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_hotd_base_str", "items/hammer_of_the_divine", LUA_MODIFIER_MOTION_NONE)
 
+LinkLuaModifier("modifier_wraith_rapier", "items/hammer_of_the_divine", LUA_MODIFIER_MOTION_NONE)
+
 --------------------------
 -- Hammer Of The Divine --
 --------------------------
@@ -52,11 +54,14 @@ function modifier_hammer_of_the_divine:OnCreated()
 end
 function modifier_hammer_of_the_divine:OnDestroy()
 	if IsServer() then
-		if self:GetCaster():HasModifier("modifier_hotd_unyielding_counter") then
+		if self:GetCaster():HasModifier("modifier_hotd_unyielding") then
 			self:GetCaster():RemoveModifierByName("modifier_hotd_unyielding")
 		end
 		if self:GetCaster():HasModifier("modifier_hotd_unyielding_counter") then
 			self:GetCaster():RemoveModifierByName("modifier_hotd_unyielding_counter")
+		end
+		if self:GetCaster():HasModifier("modifier_hotd_pure_divinity") then
+			self:GetCaster():RemoveModifierByName("modifier_hotd_pure_divinity")
 		end
 	end
 end
@@ -69,8 +74,8 @@ function modifier_hammer_of_the_divine:OnIntervalThink()
 	end
 end
 function modifier_hammer_of_the_divine:DeclareFunctions()
-		return {MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_HEALTH_BONUS,
-		MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_EVENT_ON_ATTACK_START}
+	return {MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_HEALTH_BONUS,
+	MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_EVENT_ON_ATTACK_START}
 end
 function modifier_hammer_of_the_divine:GetModifierBaseAttack_BonusDamage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_base_damage") end
@@ -332,4 +337,68 @@ function modifier_hotd_base_str:OnAbilityExecuted(params)
 		end
 	end
 	return 0
+end
+
+
+
+
+
+-- Wraith Rapier --
+item_wraith_rapier = item_wraith_rapier or class({})
+function item_wraith_rapier:GetIntrinsicModifierName() return "modifier_wraith_rapier" end
+function item_wraith_rapier:OnOwnerDied(params)
+	local hOwner = self:GetOwner()
+	if not hOwner:IsRealHero() then
+		hOwner:DropItem(self, true, true)
+		return
+	end
+	if not hOwner:IsReincarnating() then
+		hOwner:DropItem(self, true, true)
+	end
+end
+
+-- Wraith Rapier Modifier --
+modifier_wraith_rapier = modifier_wraith_rapier or class({})
+function modifier_wraith_rapier:IsHidden() return true end
+function modifier_wraith_rapier:IsPurgable() return false end
+function modifier_wraith_rapier:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+function modifier_wraith_rapier:OnCreated()
+	if IsServer() then if not self:GetAbility() then self:Destroy() end
+		self:StartIntervalThink(FrameTime())
+	end
+end
+function modifier_wraith_rapier:DeclareFunctions()
+	return {MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_EVENT_ON_DEATH}
+end
+function modifier_wraith_rapier:OnIntervalThink()
+	if not self:GetCaster():IsRealHero() then
+		self:GetCaster():DropItem(self:GetAbility(), true, true)
+	end
+end
+function modifier_wraith_rapier:GetModifierBaseAttack_BonusDamage()
+	if self:GetAbility() then
+		if self:GetParent():GetUnitName() == "npc_boss_skeleton_king_angry_new" or self:GetParent():GetUnitName() == "npc_dota_hero_skeleton_king" or self:GetParent():GetUnitName() == "npc_dota_hero_death_prophet" then
+			return self:GetAbility():GetSpecialValueFor("bonus_base_damage")
+		else
+			return -self:GetAbility():GetSpecialValueFor("bonus_base_damage")
+		end
+	end
+end
+function modifier_wraith_rapier:GetModifierBonusStats_Strength()
+	if self:GetAbility() then
+		if self:GetParent():GetUnitName() == "npc_boss_skeleton_king_angry_new" or self:GetParent():GetUnitName() == "npc_dota_hero_skeleton_king" or self:GetParent():GetUnitName() == "npc_dota_hero_death_prophet" then
+			return self:GetAbility():GetSpecialValueFor("bonus_strength")
+		else
+			return -self:GetAbility():GetSpecialValueFor("bonus_strength")
+		end
+	end
+end
+function modifier_wraith_rapier:GetModifierPhysicalArmorBonus()
+	if self:GetAbility() then
+		if self:GetParent():GetUnitName() == "npc_boss_skeleton_king_angry_new" or self:GetParent():GetUnitName() == "npc_dota_hero_skeleton_king" or self:GetParent():GetUnitName() == "npc_dota_hero_death_prophet" then
+			return self:GetAbility():GetSpecialValueFor("bonus_armor")
+		else
+			return -self:GetAbility():GetSpecialValueFor("bonus_armor")
+		end
+	end
 end

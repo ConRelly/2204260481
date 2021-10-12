@@ -325,6 +325,8 @@ function CDOTA_BaseNPC:DropItem(hItem, sNewItemName, bLaunchLoot)
 		hItem:GetContainer():SetRenderColor(230,240,35)
 	elseif sName == "item_arcane_rapier_cus" then
 		hItem:GetContainer():SetRenderColor(35,35,240)
+	elseif sName == "item_wraith_rapier" then
+		hItem:GetContainer():SetRenderColor(95,172,119)
 	end
 
 	if bLaunchLoot then

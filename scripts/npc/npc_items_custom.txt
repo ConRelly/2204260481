@@ -5634,6 +5634,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName" 			"custom/piety"
 		"ItemPurchasable"				"0"
+		"ItemDroppable"					"0"
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0"
 		"ItemShopTags"					"consumable"
@@ -34834,9 +34835,9 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ShouldBeSuggested"				"1"
-		"ItemPurchasable"				"1"
+		"ItemPurchasable"				"0"
 		"ItemKillable"					"0"
-		"ItemSellable"					"1"
+		"ItemSellable"					"0"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"AbilityCooldown"				"50"
 		"AbilitySpecial"
@@ -34945,6 +34946,58 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"corr_duration"				"5"
+			}
+		}
+	}
+// Recipe: Hammer Of The Divine
+	"item_recipe_hammer_of_the_divine"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_hammer_of_the_divine"
+		"ItemRequirements"
+		{
+			"01"						"item_wraith_rapier"
+		}
+	}
+
+// Wraith Rapier
+	"item_wraith_rapier"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/hammer_of_the_divine"
+		"AbilityTextureName"			"custom/wraith_rapier"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShopTags"					"damage;str;armor;unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"wr"
+		"ItemDroppable"					"0"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_base_damage"			"1750"
+			}
+			"2"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_strength"			"800"
+			}
+			"4"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_armor"				"20"
 			}
 		}
 	}

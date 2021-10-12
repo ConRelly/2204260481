@@ -1076,6 +1076,13 @@
 	"DOTA_Tooltip_modifier_hotd_pure_divinity_armor_corruption"					"Pure Armor Corruption"
 	"DOTA_Tooltip_modifier_hotd_pure_divinity_armor_corruption_Description"		"Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
 
+	"DOTA_Tooltip_ability_item_wraith_rapier"					"Wraith Rapier"
+	"DOTA_Tooltip_ability_item_wraith_rapier_note0"		"Герои не являющиеся призраками получают <font color='#e03e2e'>отрицательные бонусы</font>."
+	"DOTA_Tooltip_ability_item_wraith_rapier_Lore"		"Призраки - это круто."
+	"DOTA_Tooltip_ability_item_wraith_rapier_bonus_base_damage"		"+$base_damage"
+	"DOTA_Tooltip_ability_item_wraith_rapier_bonus_strength"		"+$str"
+	"DOTA_Tooltip_ability_item_wraith_rapier_bonus_armor"			"+$armor"
+
 	//#####################################################################################################################\\
 	//##################################################LEGENDARY_ITEMS####################################################\\
 	//#####################################################################################################################\\
