@@ -4,7 +4,7 @@ LinkLuaModifier("modifier_mjz_sandking_epicenter_slow","modifiers/hero_sand_king
 modifier_mjz_sandking_epicenter = class({})
 local modifier_class = modifier_mjz_sandking_epicenter
 
-function modifier_class:IsHidden() return false end
+function modifier_class:IsHidden() return true end
 function modifier_class:IsPurgable() return false end
 
 if IsServer() then
@@ -50,6 +50,11 @@ if IsServer() then
         local epicenter_damage = ability:GetSpecialValueFor('epicenter_damage')
         local str_damage_pct = GetTalentSpecialValueFor(ability, 'str_damage_pct')
         local slow_duration = ability:GetSpecialValueFor('epicenter_slow_duration')
+
+		if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
+			epicenter_damage = epicenter_damage + ability:GetSpecialValueFor("epicenter_shard_dmg_inc")
+			str_damage_pct = str_damage_pct + ability:GetSpecialValueFor("epicenter_shard_str_dmg_inc")
+		end
 
         local damage = epicenter_damage + parent:GetStrength() * (str_damage_pct / 100.0)
 

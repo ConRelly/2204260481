@@ -344,7 +344,7 @@
 		"DisableClumpingBehavior"   "1"
         "EquippedItems"
         {
-            "Boss Resistance"   { "Item"        "item_boss_resistance_50" }
+//			"Boss Resistance"   { "Item"        "item_boss_resistance_50" }
             "Unstoppable"       { "Item"        "item_plain_ring" }
         }
 	}
@@ -907,7 +907,7 @@
 		"DisableClumpingBehavior"   "1"
 		"EquippedItems"
 		{
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
 		}
 		"OffensiveAbilities"
@@ -2284,7 +2284,7 @@
 		"DisableClumpingBehavior"   "1"
 		"EquippedItems"
 		{
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_25" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_25" }
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
 		}
 		"AttachWearables"
@@ -2345,7 +2345,7 @@
 		"DisableClumpingBehavior"   "1"
 		"EquippedItems"
 		{
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
 		}
 		"OffensiveAbilities"
@@ -2745,7 +2745,7 @@
 		"EquippedItems"
 		{
 			"Black King Bar"			{ "item"		"item_black_king_bar_boss"}
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_25" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_25" }
 			"Unstoppable"	   		{ "Item"			"item_boss_unstoppable" }
 			"Desolator"	   			{ "Item"			"item_desolator" }
 			"Desolator"				 { "Item"			"item_plain_ring" }
@@ -2891,7 +2891,7 @@
 		{
 			"Moon Shard"		{ "Item"		"item_moon_shard" }
 			"Moon Shard"		{ "Item"		"item_moon_shard" }
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
 			"Vladmir"	   	{ "Item"		"item_vladmir" }
 			"Vladmir"		   { "Item"		"item_plain_ring" }
@@ -3721,7 +3721,7 @@
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
 			"Radiance"			  { "Item"		"item_radiance_boss" }
 			"Assault"			   { "Item"		"item_assault"  }
-			"Boss Resistance"	   { "Item"		"item_boss_resistance_20" }
+//			"Boss Resistance"	   { "Item"		"item_boss_resistance_20" }
 			"Golden Ring"		   { "Item"		"item_plain_ring" }
 		}
 	}
@@ -4246,7 +4246,7 @@
 		}
 		"EquippedItems"
 		{
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_30" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_30" }
 		}
 		"AttachWearables"
 		{
@@ -4326,7 +4326,7 @@
 		}
 		"EquippedItems"
 		{
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_30" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_30" }
 		}
 		"AttachWearables"
 		{
@@ -4972,7 +4972,7 @@
 				"Mjollnir"				  { "Item"		"item_mjz_mjollnir_2" }
 				"Mjollnir"				  { "Item"		"item_mjz_assault_5" }
 				"Boss Resistance"		   { "Item"		"item_dark_skadi" }
-				"Black King Bar"			{ "item"		"item_boss_resistance_70"}
+//				"Black King Bar"			{ "item"		"item_boss_resistance_70"}
 				"Unstoppable"			   { "Item"		"item_boss_unstoppable" }
 			}
 		}
@@ -5077,7 +5077,7 @@
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
 			"Mjollnir"	   { "Item"		"item_plain_ring" }
 			"Mjollnir"	   { "Item"		"item_mjz_assault_5" }
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
 			"Black King Bar"					{"item"		"item_black_king_bar_boss"}
 		}
 		"AttachWearables"
@@ -5155,7 +5155,7 @@
 		"DisableClumpingBehavior"   "1"
 		"EquippedItems"
 		{
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
 			"Aghs"	   		{ "Item"		"item_ultimate_scepter" }
 			"Aghs"			  { "Item"		"item_mjz_bogduggs_lucky_femur_5" }
 			"Aghs"			  { "Item"		"item_plain_ring" }
@@ -5465,7 +5465,7 @@
 		"EquippedItems"
 		{
 			"Satanic"			{ "Item"			"item_satanic"}
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
 			"Boss Resistance"	   	{ "Item"		"item_mjz_bogduggs_lucky_femur_5" }
 			"Boss Resistance"		   { "Item"		"item_plain_ring" }
 			"Boss Resistance"		   { "Item"		"item_force_blade" }
@@ -5666,7 +5666,7 @@
 		"EquippedItems"
 		{
 			"Unstoppable"	   		{ "Item"		"item_boss_unstoppable" }
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_80" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_80" }
 			"Boss Resistance"	   	{ "Item"		"item_mjz_bogduggs_lucky_femur_5" }
 			"Boss Resistance"		   { "Item"		"item_burning_radiance" }
 			"Gold Ring"				 { "Item"		"item_plain_ring" }
@@ -5803,7 +5803,7 @@
 		}	
 		"EquippedItems"
 		{
-			"Boss Resistance"	  	{ "Item"		"item_boss_resistance_20" }
+//			"Boss Resistance"	  	{ "Item"		"item_boss_resistance_20" }
 			"Boss Resistance"	   { "Item"		"item_mjz_mjollnir_4" }
 			"Boss Resistance"	   { "Item"		"item_abyssal_blade" }
 		}
@@ -5922,7 +5922,7 @@
 		}
 		"EquippedItems"
 		{
-			"Boss Resistance"	  	{ "Item"		"item_boss_resistance_20" }
+//			"Boss Resistance"	  	{ "Item"		"item_boss_resistance_20" }
 		}
 		"AttachWearables"
 		{
@@ -6205,7 +6205,7 @@
 			"MKB"				 { "Item"		"item_monkey_king_bar" }
 			"Moonshard"			 { "Item"		"item_moon_shard"	  }
 			"Skadi"			  { "Item"	   "item_dark_skadi"		   }
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_70" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_70" }
 			"Boss Resistance"		   { "Item"		"item_plain_ring" }
 
 		}
@@ -6313,7 +6313,7 @@
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
 			"Moonshard"			 { "Item"		"item_moon_shard" }
 			"Black King Bar"				{ "Item"		"item_black_king_bar_boss"}
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_25" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_25" }
 			"Boss Resistance"		   { "Item"		"item_abyssal_blade" }
 			"Gold Ring"			 { "Item"		"item_plain_ring" }
 		}
@@ -7151,7 +7151,7 @@
 		{
 			"MKB"			  		{ "Item"		 "item_monkey_king_bar"}
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
-			"Boss Resistance"	   { "Item"		"item_boss_resistance_50" }
+//			"Boss Resistance"	   { "Item"		"item_boss_resistance_50" }
 			"Hyperstone"			{ "Item"			"item_mjz_assault_4"}
 			"Black King Bar"		{ "item"			"item_black_king_bar_boss"}
 			"Gold Ring"			 { "Item"		"item_plain_ring" }
@@ -7277,7 +7277,7 @@
 		{
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
 			"Radiance"			{ "Item"			"item_radiance" }
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
 			"Aganim"		   { "Item"		"item_ultimate_scepter" }
 			"Gold Ring"			 { "Item"		"item_plain_ring" }
 		}
@@ -7373,7 +7373,7 @@
 		{
 			"Unstoppable"		   { "Item"		"item_boss_unstoppable" }
 			"Cloak Of Flames"	   { "Item"		"item_cloak_of_flames" }
-			"Boss Resistance"	   { "Item"		"item_boss_resistance_20" }
+//			"Boss Resistance"	   { "Item"		"item_boss_resistance_20" }
 			"Aganim"				{ "Item"		"item_ultimate_scepter" }
 			"Gold Ring"			 { "Item"		"item_plain_ring" }
 			"Mjollnir"			  { "Item"		"item_mjz_mjollnir_4" }
@@ -7493,7 +7493,7 @@
 		}
 		"EquippedItems"
 		{
-			"Boss Resistance"	  	{ "Item"		"item_boss_resistance_20" }
+//			"Boss Resistance"	  	{ "Item"		"item_boss_resistance_20" }
 		}
 		"AttachWearables"
 		{
@@ -7606,7 +7606,7 @@
 		}
 		"EquippedItems"
 		{
-			"Boss Resistance"	  	{ "Item"		"item_boss_resistance_20" }
+//			"Boss Resistance"	  	{ "Item"		"item_boss_resistance_20" }
 		}
 		"AttachWearables"
 		{
@@ -8511,7 +8511,7 @@
 				"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
 				"Magic blade"			  { "Item"		"item_force_blade" }
 				"Moonshard"			 { "Item"		"item_moon_shard" }
-				"Boss Resistance"	   	{ "Item"		"item_boss_resistance_50" }
+//				"Boss Resistance"	   	{ "Item"		"item_boss_resistance_50" }
 				"Boss Resistance"		   { "Item"		"item_plain_ring" }
 				"Boss Resistance"		   { "Item"		"item_mjz_assault_5" }
 			}
@@ -8781,7 +8781,7 @@
 		{
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
 			"Burning Radiance"	   		{ "Item"		"item_burning_radiance" }
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_30" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_30" }
 
 		}
 		"AttachWearables"
@@ -8924,7 +8924,7 @@
 		{
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
 			"Burning Radiance"	   		{ "Item"		"item_burning_radiance" }
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_70" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_70" }
 			"Battlefly"			  { "Item"		 "item_mjz_butterfly_blue_5" }
 			"Battlefly"			  { "Item"		 "item_plain_ring" }
 			"Battlefly"			  { "Item"		 "item_dark_skadi" }
@@ -9066,12 +9066,12 @@
 		}
 		"EquippedItems"
 		{
-			"Unstoppable"		   { "Item"		"item_boss_unstoppable" }
-			"Burning Radiance"			  { "Item"		"item_burning_radiance" }
-			"Boss Resistance"		   { "Item"		"item_boss_resistance_70" }
-			"Battlefly"			  { "Item"		 "item_mjz_butterfly_blue_5" }
-			"Battlefly"			  { "Item"		 "item_plain_ring" }
-			"Battlefly"			  { "Item"		 "item_heavy_blade" }
+			"Unstoppable"			{ "Item"	"item_boss_unstoppable" }
+			"Burning Radiance"		{ "Item"	"item_burning_radiance" }
+//			"Boss Resistance"		{ "Item"	"item_boss_resistance_70" }
+			"Battlefly"				{ "Item"	"item_mjz_butterfly_blue_5" }
+			"Plain_Ring"			{ "Item"	"item_plain_ring" }
+			"Witchbane"				{ "Item"	"item_heavy_blade" }
 
 		}
 	   "AttachWearables"
@@ -9214,7 +9214,7 @@
 		{
 			"Hyperstone"			{"Item"			"item_hyperstone"}
 			"MKB"				 	{"Item"			"item_monkey_king_bar"}
-			"Boss Resistance"				 	{"Item"			"item_boss_resistance_50"}
+//			"Boss Resistance"				 	{"Item"			"item_boss_resistance_50"}
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }			
 			
 		}
@@ -10567,7 +10567,7 @@
 		{
 			"Unstoppable"	   		{ "Item"		"item_boss_unstoppable" }
 			"Burning Radiance"	   	{ "Item"		"item_burning_radiance" }
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_30" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_30" }
 			"Sphere" 					{ "Item" 		"item_sphere" } 	//林肯法球
 			"Divine Rapier"  			{ "Item"		"item_heavy_blade"} 		//圣剑
 			"Plain ring"  				{ "Item"		"item_plain_ring"} 	//相位鞋
@@ -10676,7 +10676,7 @@
 		"EquippedItems"
 		{
 
-			"Plain ring"				{ "Item"		"item_boss_resistance_50"}  //相位鞋  
+//			"Plain ring"				{ "Item"		"item_boss_resistance_50"}  //相位鞋  
 			//"Plain ring"				{ "Item"		"item_mjz_rage_moon_shard"}
 			//"Plain ring"				{ "Item"		"item_ceremonial_robe"} 
 		}
@@ -11290,7 +11290,7 @@
 			"Scepter"			   { "Item"	   "item_ultimate_scepter"}
 			"Black King Bar"					{ "item"		"item_black_king_bar_boss"}
 			"Kaya"						{ "Item"		"item_kaya"  }
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
 			"Kaya"					  { "Item"		"item_mjz_bogduggs_lucky_femur"  }
 
 		}
@@ -11465,7 +11465,7 @@
 		{
 			"Hyperstone"			{"Item"			"item_mjz_bogduggs_lucky_femur_3"}
 			"MKB"				 	{"Item"			"item_mjz_monkey_king_bar_5"}
-			"Boss Resistance"				 	{"Item"			"item_boss_resistance_50"}
+//			"Boss Resistance"				 	{"Item"			"item_boss_resistance_50"}
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }			
 			
 		}
@@ -11753,7 +11753,7 @@
 				"MKB"			  		{ "Item"		"item_mjz_assault_5"		}
 				"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" 	}
 				"Magic Blade"			{ "Item"		"item_force_blade"  		}
-				"Boss Resistance"	   { "Item"		"item_boss_resistance_30" 	}
+//				"Boss Resistance"	   { "Item"		"item_boss_resistance_30" 	}
 			}
 			"ItemDrops"
 			{
@@ -12644,7 +12644,7 @@
 		{
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
 			"Burning Radiance"	   		{ "Item"		"item_burning_radiance" }
-			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_70" }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_70" }
 			"Plain_ring"	   		   { "Item"		"item_plain_ring" }
 			"Assault"				  { "Item"		"item_mjz_assault_5" }
 			"Butterfly"				{ "Item"		"item_mjz_butterfly_blue_2" }
@@ -12848,10 +12848,7 @@
 				{
 					"Item"					"item_plain_ring"
 				}
-				"Unstoppable Boss"
-				{
-					"Item"					"item_boss_resistance_70"
-				}
+//				"Unstoppable Boss"		{"Item"		"item_boss_resistance_70"}
 				"Abysal Blade"
 				{
 					"Item"					"item_dark_skadi"
@@ -12976,10 +12973,7 @@
 				{
 					"Item"				  "item_plain_ring"
 				}
-				"Unstoppable Boss"
-				{
-					"Item"				  "item_boss_resistance_70"
-				}
+//				"Unstoppable Boss"		{"Item"		"item_boss_resistance_70"}
 				"Abysal Blade"
 				{
 					"Item"				  "item_dark_skadi"
@@ -13302,11 +13296,7 @@
 				{
 					"Item"				  "item_ceremonial_robe2"
 				}
-				"Butterfly"
-				{
-					"Item"				  "item_boss_resistance_70"
-					//"Item"				  "item_sange"
-				}
+//				"Butterfly"		{"Item"		"item_boss_resistance_70"}
 			}	
 
 			"OffensiveAbilities"
@@ -14494,7 +14484,7 @@
 			"Aghs"				  { "Item"		"item_mjz_assault_5" }
 			"Radiance"			  { "Item"		"item_high_tech_boots2" }
 			"Heart"				 { "Item"		"item_shivas_guard_2" }
-			"Unstoppable"		   { "Item"		"item_boss_resistance_50" }
+//			"Unstoppable"		   { "Item"		"item_boss_resistance_50" }
 			"Plain_ring"			{ "Item"		"item_plain_ring" }
 			"Abystal Blade"		 { "Item"		"item_mjz_mjollnir_5" }
 			"Abystal Blade"		 { "Item"		"item_mirror_shield" }
@@ -14660,7 +14650,7 @@
 			"Aghs"				  { "Item"		"item_mjz_assault_5" }
 			"Radiance"			  { "Item"		"item_high_tech_boots2" }
 			"Heart"				 { "Item"		"item_shivas_guard_2" }
-			"Unstoppable"		   { "Item"		"item_boss_resistance_50" }
+//			"Unstoppable"		   { "Item"		"item_boss_resistance_50" }
 			//"Plain_ring"			{ "Item"		"item_plain_ring" }
 			"Abystal Blade"		 { "Item"		"item_mjz_mjollnir_5" }
 			"Abystal Blade"		 { "Item"		"item_mirror_shield" }
@@ -14807,7 +14797,7 @@
 			"Aghs"				  { "Item"		"item_the_leveller" }
 			"Radiance"			  { "Item"		"item_mjz_butterfly_blue_5" }
 			"Heart"				 { "Item"		"item_shivas_guard_2" }
-			"Unstoppable"		   { "Item"		"item_boss_resistance_50" }
+//			"Unstoppable"		   { "Item"		"item_boss_resistance_50" }
 			"Plain_ring"			{ "Item"		"item_plain_ring" }
 			"Abystal Blade"		 { "Item"		"item_mjz_mjollnir_5" }
 			"Abystal Blade"		 { "Item"		"item_mirror_shield" }

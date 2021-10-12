@@ -1,16 +1,20 @@
 require("lib/my")
 
-item_plain_ring = class({})
-
-function item_plain_ring:GetIntrinsicModifierName()
-    return "modifier_item_plain_ring_aura"
-end
-
 LinkLuaModifier("modifier_item_plain_ring_aura", "items/item_plain_ring.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_plain_ring_buff", "items/item_plain_ring.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_plain_ring", "items/item_plain_ring.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_plain_ring_invincibility", "items/item_plain_ring.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_item_plain_ring_frenzy", "items/item_plain_ring.lua", LUA_MODIFIER_MOTION_NONE)
+
+
+item_plain_ring = class({})
+function item_plain_ring:GetIntrinsicModifierName() return "modifier_item_plain_ring_aura" end
+
+
 modifier_item_plain_ring_aura = class({})
-
-
-
+function modifier_item_plain_ring_aura:IsHidden() return true end
+function modifier_item_plain_ring_aura:IsPurgable() return false end
+function modifier_item_plain_ring_aura:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_item_plain_ring_aura:OnCreated(keys)
 	if IsServer() then
 		local parent = self:GetParent()
@@ -22,105 +26,35 @@ function modifier_item_plain_ring_aura:OnCreated(keys)
 		end
 	end	
 end
-
-
-
-function modifier_item_plain_ring_aura:IsHidden()
-    return true
-end
-
-function modifier_item_plain_ring_aura:IsPurgable()
-	return false
-end
-function modifier_item_plain_ring_aura:IsAura()
-    return true
-end
-
-
-function modifier_item_plain_ring_aura:GetAuraRadius()
-    return self:GetAbility():GetSpecialValueFor("aura_radius")
-end
-
-
-function modifier_item_plain_ring_aura:GetAuraSearchTeam()
-    return DOTA_UNIT_TARGET_TEAM_FRIENDLY
-end
-
-
-function modifier_item_plain_ring_aura:GetAuraSearchType()
-    return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
-end
-
-
-function modifier_item_plain_ring_aura:GetModifierAura()
-    return "modifier_item_plain_ring_buff"
-end
-
-
-function modifier_item_plain_ring_aura:GetAttributes()
-    return MODIFIER_ATTRIBUTE_MULTIPLE
-end
-
-
 function modifier_item_plain_ring_aura:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-    }
+	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE}
 end
-
-
 function modifier_item_plain_ring_aura:GetModifierPreAttack_BonusDamage()
-    return 250
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_damage") end
 end
+function modifier_item_plain_ring_aura:IsAura() return true end
+function modifier_item_plain_ring_aura:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("aura_radius") end
+function modifier_item_plain_ring_aura:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_FRIENDLY end
+function modifier_item_plain_ring_aura:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
+function modifier_item_plain_ring_aura:GetModifierAura() return "modifier_item_plain_ring_buff" end
 
 
-
-LinkLuaModifier("modifier_item_plain_ring_buff", "items/item_plain_ring.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_item_plain_ring_buff = class({})
-
-function modifier_item_plain_ring_buff:GetTexture()
-	return "plain_ring"
-end
+function modifier_item_plain_ring_buff:GetTexture() return "plain_ring" end
 function modifier_item_plain_ring_buff:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
-        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-    }
+	return {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT}
 end
-
-
 function modifier_item_plain_ring_buff:GetModifierPhysicalArmorBonus()
-    return 40
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("aura_armor") end
 end
-
-
 function modifier_item_plain_ring_buff:GetModifierConstantManaRegen()
-    return 25
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("aura_mana_regen") end
 end
 
-LinkLuaModifier("modifier_item_plain_ring", "items/item_plain_ring.lua", LUA_MODIFIER_MOTION_NONE)
+
 modifier_item_plain_ring = class({})
-
-function modifier_item_plain_ring:IsHidden()
-	return true
-end
-function modifier_item_plain_ring:IsPurgable()
-	return false
-end
-
-
-
-
-
-function modifier_item_plain_ring:DeclareFunctions()
-	if IsServer() then
-		return {
-			MODIFIER_EVENT_ON_TAKEDAMAGE,
-		}
-	end
-end
-
-
+function modifier_item_plain_ring:IsHidden() return true end
+function modifier_item_plain_ring:IsPurgable() return false end
 function modifier_item_plain_ring:OnCreated(keys)
 	if IsServer() then
 		local extra = 0
@@ -133,8 +67,9 @@ function modifier_item_plain_ring:OnCreated(keys)
 		self.cooldown = self.ability:GetCooldown(0)
 	end
 end
-
-
+function modifier_item_plain_ring:DeclareFunctions()
+	return {MODIFIER_EVENT_ON_TAKEDAMAGE}
+end
 function modifier_item_plain_ring:OnTakeDamage(keys)
 	if IsServer() then
 		local attacker = keys.attacker
@@ -165,18 +100,13 @@ function modifier_item_plain_ring:OnTakeDamage(keys)
 end
 
 
-LinkLuaModifier("modifier_item_plain_ring_invincibility", "items/item_plain_ring.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_item_plain_ring_invincibility = class({})
-
+function modifier_item_plain_ring_invincibility:IsPurgable() return false end
+function modifier_item_plain_ring_invincibility:GetTexture() return "plain_ring_invincibility" end
+function modifier_item_plain_ring_invincibility:GetEffectName() return "particles/world_shrine/dire_shrine_regen.vpcf" end
+function modifier_item_plain_ring_invincibility:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_item_plain_ring_invincibility:DeclareFunctions()
-	return {
-		MODIFIER_PROPERTY_MIN_HEALTH,
-		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
-	}	
-end
-
-function modifier_item_plain_ring_invincibility:IsPurgable()
-	return false
+	return {MODIFIER_PROPERTY_MIN_HEALTH, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE}	
 end
 function modifier_item_plain_ring_invincibility:GetMinHealth()
 	return 1
@@ -184,7 +114,6 @@ end
 function modifier_item_plain_ring_invincibility:GetModifierIncomingDamage_Percentage()
 	return -400
 end
-
 function modifier_item_plain_ring_invincibility:OnDestroy()
 	if IsServer() then
 		local parent = self:GetParent()
@@ -195,25 +124,12 @@ function modifier_item_plain_ring_invincibility:OnDestroy()
 		parent:Heal((parent:GetMaxHealth() * self:GetAbility():GetSpecialValueFor("min_health") * 0.01), parent)		
 	end	
 end
-function modifier_item_plain_ring_invincibility:GetTexture()
-	return "plain_ring_invincibility"
-end
-function modifier_item_plain_ring_invincibility:GetEffectName()
-	return "particles/world_shrine/dire_shrine_regen.vpcf"
-end
-
-function modifier_item_plain_ring_invincibility:GetEffectAttachType()
-	return PATTACH_ABSORIGIN_FOLLOW
-end
 
 
 modifier_item_plain_ring_frenzy = class({})
-LinkLuaModifier("modifier_item_plain_ring_frenzy", "items/item_plain_ring.lua", LUA_MODIFIER_MOTION_NONE)
-
 function modifier_item_plain_ring_frenzy:IsHidden() return true end
 function modifier_item_plain_ring_frenzy:IsPurgable() return false end
 --function modifier_item_plain_ring_frenzy:RemoveOnDeath() return false end
-
 function modifier_item_plain_ring_frenzy:DeclareFunctions()
 	return {
     MODIFIER_PROPERTY_STATUS_RESISTANCE,
@@ -228,26 +144,26 @@ function modifier_item_plain_ring_frenzy:DeclareFunctions()
 end
 
 function modifier_item_plain_ring_frenzy:GetModifierStatusResistance()
-  return 100
+	return 100
 end
 function modifier_item_plain_ring_frenzy:GetModifierHealAmplify_PercentageTarget()
-  return 100
+	return 100
 end
 function modifier_item_plain_ring_frenzy:GetModifierMoveSpeed_Absolute()
-  return 800
+	return 800
 end
 function modifier_item_plain_ring_frenzy:GetModifierAttackSpeedBonus_Constant()
-  return 500
+	return 500
 end
 function modifier_item_plain_ring_frenzy:GetModifierTotalDamageOutgoing_Percentage()
-  return 120
+	return 120
 end
 function modifier_item_plain_ring_frenzy:GetModifierPercentageCooldown()
-  return 90
+	return 90
 end
 function modifier_item_plain_ring_frenzy:GetModifierPercentageCasttime()
-  return 100
+	return 100
 end
 function modifier_item_plain_ring_frenzy:GetModifierSpellAmplify_Percentage()
-  return 100
+	return 100
 end
