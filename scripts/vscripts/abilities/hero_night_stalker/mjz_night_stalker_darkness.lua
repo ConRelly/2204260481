@@ -78,13 +78,22 @@ function modifier_class:DeclareFunctions()
     }
 end
 function modifier_class:GetBonusVisionPercentage( )
-	return self:GetAbility():GetSpecialValueFor('bonus_vision_pct')
+    if self:GetAbility() then
+	    return self:GetAbility():GetSpecialValueFor('bonus_vision_pct')
+    end
+    return 0    
 end
 function modifier_class:GetModifierEvasion_Constant()
-    return self:GetAbility():GetSpecialValueFor('evasion_chance')
+    if self:GetAbility() then
+        return self:GetAbility():GetSpecialValueFor('evasion_chance')
+    end
+    return 0
 end
 function modifier_class:GetModifierModelScale( )
-	return self:GetAbility():GetSpecialValueFor('model_scale')
+    if self:GetAbility() then
+	    return self:GetAbility():GetSpecialValueFor('model_scale')
+    end
+    return 0    
 end
 
 -----------------------------------------------------------------------------------------
@@ -102,10 +111,19 @@ function modifier_damage:DeclareFunctions()
 end
 function modifier_damage:GetModifierPreAttack_BonusDamage()
     if IsServer() then
-        local stack_count = GetTalentSpecialValueFor(self:GetAbility(), 'bonus_damage')
-        if self:GetStackCount() ~= stack_count then
-            self:SetStackCount(stack_count)
-        end
+        if self:GetAbility() then
+            local parent = self:GetParent()
+            local stack_count = GetTalentSpecialValueFor(self:GetAbility(), 'bonus_damage')
+            if parent and HasSuperScepter(parent) then
+                local ms_bonus_attack = self:GetAbility():GetSpecialValueFor('ms_bonus_attack') * 0.01
+                local ms = parent:GetIdealSpeed()
+                local bonus_attck = ms * ms_bonus_attack
+                stack_count = stack_count + bonus_attck
+            end    
+            if self:GetStackCount() ~= stack_count then
+                self:SetStackCount(stack_count)
+            end
+        end    
     end
     return self:GetStackCount()
 end

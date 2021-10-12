@@ -1715,14 +1715,17 @@
 		"Ability2"				"mjz_night_stalker_crippling_fear"
 		"Ability3"				"mjz_night_stalker_hunter_in_the_night"
 		"Ability6"				"mjz_night_stalker_darkness"
+		"Ability10"             "special_bonus_cdr_25"
 		"Ability11"				"special_bonus_magic_resistance_12"
 		"Ability12"				"special_bonus_strength_220"
 		"Ability13"				"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_mspeed"
+		"Ability14"             "special_bonus_hp_6000"
+		"Ability15"				"special_bonus_unique_night_stalker_4"
 		"Ability16"				"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_aspeed"
 		"Ability17"				"special_bonus_unique_mjz_night_stalker_darkness_damage"
 		
 		"AttackRate"				"1.450000"
-		"AttributeStrengthGain"		"5.700000"
+		"AttributeStrengthGain"		"8.700000"
 		"AttributeAgilityGain"		"4.30000"
 	}
 	"npc_dota_hero_phantom_assassin_mjz"

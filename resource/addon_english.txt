@@ -3184,7 +3184,7 @@
 	"DOTA_Tooltip_modifier_mjz_night_stalker_crippling_fear_effect"					"Crippling Fear"
 	"DOTA_Tooltip_modifier_mjz_night_stalker_crippling_fear_effect_Description"		"-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% Move Speed, -%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% Attack Speed"	
 	"DOTA_Tooltip_ability_mjz_night_stalker_darkness"					"Dark Ascension"
-	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_Description"		"Get damage bonus, vision bonus, lifesteal bonus and giving the unit a chance to miss its attacks."
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_Description"		"Get damage bonus, vision bonus, lifesteal bonus and giving the unit a chance to miss its attacks.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Get bonus damage base on %ms_bonus_attack%%%  of your movespeed."
 	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_Lore"				"It is a humbling sight to see when the mightiest of warriors become afraid of the dark."
 	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_duration"					"Duration: "
 	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_bonus_damage"				"Bonus Damage: "
