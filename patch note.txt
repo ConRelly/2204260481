@@ -1320,7 +1320,7 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Fixed Heartstopper Aura (Necrophos) visual AOE range
 * Night Stalker : replaced 2 talents and buffed one, crippling fear slightly buffed, buffed str gain.
 * Added Super Scepter for night stalker ult and small changes to ult numbers.
-* Campfires retierd for this patch(they will return as Neutral team)
+* Campfires retierd for this patch(they will return as Neutral team maybe)
 
 
 
