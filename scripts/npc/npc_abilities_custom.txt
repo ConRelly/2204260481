@@ -27296,6 +27296,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"cooldown_scepter"			"30"
+				"RequiresScepter"			"1"
 			}
 			"09"
 			{
@@ -27433,7 +27434,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"ms_bonus_attack"		"40 60 80 100 150"
-			}			
+			}	
 		}
 
 		"precache"
@@ -27558,6 +27559,7 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"radius_scepter"		"725"
+				"RequiresScepter"		"1"
 			}
 		}
 
@@ -29378,14 +29380,15 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		//"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NONE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Ability.SandKing_Epicenter"
 		"AbilityTextureName"			"mjz_sandking_epicenter"
 
-		"AbilityChannelTime"			"2.0 2.0 2.0"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"HasShardUpgrade"				"1"
+//		"AbilityChannelTime"			"2.0"
+		"AbilityCastPoint"				"2.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 
@@ -29405,7 +29408,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"epicenter_pulses"		"6 8 15"
-				"LinkedSpecialBonus"	"special_bonus_unique_mjz_sandking_epicenter_pulses"	//"special_bonus_unique_sand_king"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_sandking_epicenter_pulses"
 			}
 			"03"
 			{
@@ -29416,12 +29419,12 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"str_damage_pct"		"200 300 400"
-				"LinkedSpecialBonus"	"special_bonus_unique_mjz_sandking_epicenter_strength"	//"special_bonus_unique_sand_king_3"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_sandking_epicenter_strength"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"epicenter_slow"		"-30 -30 -30"
+				"epicenter_slow"		"-30"
 			}
 			"06"
 			{
@@ -29433,25 +29436,40 @@
 				"var_type"						"FIELD_INTEGER"
 				"epicenter_slow_duration"		"3"
 			}
-			"11"
+			"08"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"epicenter_radius_min"			"300"
 			}
-			"12"
+			"09"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"epicenter_radius_max"			"2000"
 			}
-			"13"
+			"10"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"epicenter_radius_increase"		"100"
 			}
-			"14"
+			"11"
 			{
 				"var_type"						"FIELD_FLOAT"
 				"epicenter_pulses_interval"		"0.5"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"epicenter_shard_interval"		"2"
+			}
+			"13"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"epicenter_shard_dmg_inc"		"1000"
+			}
+			"14"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"epicenter_shard_str_dmg_inc"	"50"
 			}
 		}
 

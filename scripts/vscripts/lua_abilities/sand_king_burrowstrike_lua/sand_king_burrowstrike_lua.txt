@@ -12,9 +12,9 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"lua_abilities/sand_king_burrowstrike_lua/sand_king_burrowstrike_lua"
 		"AbilityTextureName"			"sand_king_burrowstrike_lua"
-		"FightRecapLevel"				"1"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"         "5"
+		"HasScepterUpgrade"				"1"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"
@@ -76,13 +76,15 @@
 			}
 			"06"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"cast_range_scepter"		"2000"
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_scepter"	"2000"
+				"RequiresScepter"		"1"
 			}
 			"07"
 			{
-				"var_type"			"FIELD_INTEGER"
+				"var_type"					"FIELD_INTEGER"
 				"burrow_speed_scepter"		"3000"
+				"RequiresScepter"			"1"
 			}
 			"08"
 			{

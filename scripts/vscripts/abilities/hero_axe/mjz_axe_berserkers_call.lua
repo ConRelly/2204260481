@@ -5,6 +5,12 @@ LinkLuaModifier("modifier_mjz_axe_berserkers_call_radius_talent", "abilities/her
 
 -----------------------------------------------------------------------------------------
 mjz_axe_berserkers_call = class({})
+function mjz_axe_berserkers_call:OnAbilityPhaseStart()
+	if IsServer() then
+		EmitSoundOn("Hero_Axe.BerserkersCall.Start", self:GetCaster())
+	end
+	return true
+end
 function mjz_axe_berserkers_call:GetAOERadius()
 	local caster = self:GetCaster()
 	local abiltiy = self

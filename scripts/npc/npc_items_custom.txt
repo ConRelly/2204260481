@@ -886,7 +886,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all"				"250"
+				"bonus_all"				"100"
 			}
 			"03"
 			{
@@ -2891,22 +2891,22 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"aura_armor"			"35"	//hardcoded(tooltip purpose)
+			"aura_armor"				"40"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"aura_mana_regen"					"12.0"// hardcoded
+			"aura_mana_regen"			"20"
 		}
 		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"aura_radius"					"7800"
+			"aura_radius"				"7800"
 		}
-		"05"
+		"06"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_damage"					"15" //hardcoded
+			"bonus_damage"				"250"
 		}
 	}
 }
@@ -5634,6 +5634,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityTextureName" 			"custom/piety"
 		"ItemPurchasable"				"0"
+		"ItemDroppable"					"0"
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0"
 		"ItemShopTags"					"consumable"
@@ -15251,7 +15252,7 @@
 		"BaseClass"						"item_satanic"
 		"AbilityTextureName"			"mjz_satanic"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCooldown"				"30"
 		"AbilitySharedCooldown"			"satanic"
 		"ItemShopTags"					"damage;str;armor;unique;hard_to_tag"
@@ -15322,7 +15323,7 @@
 		"BaseClass"						"item_satanic"
 		"AbilityTextureName"			"mjz_satanic"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCooldown"				"30.0"
 		"AbilitySharedCooldown"			"satanic"
 		"ItemShopTags"					"damage;str;armor;unique;hard_to_tag"
@@ -15393,7 +15394,7 @@
 		"BaseClass"						"item_satanic"
 		"AbilityTextureName"			"mjz_satanic"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCooldown"				"30.0"
 		"AbilitySharedCooldown"			"satanic"
 		"ItemShopTags"					"damage;str;armor;unique;hard_to_tag"
@@ -15465,7 +15466,7 @@
 		"ScriptFile"					"items/mjz_satanic.lua"
 		"AbilityTextureName"			"mjz_satanic"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCooldown"				"30.0"
 		"AbilitySharedCooldown"			"satanic"
 		"ItemShopTags"					"damage;str;armor;unique;hard_to_tag"
@@ -34821,4 +34822,183 @@
 		}
 	}
 
+// Hammer Of The Divine
+	"item_hammer_of_the_divine"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/hammer_of_the_divine"
+		"AbilityTextureName"			"custom/hammer_of_the_divine"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"ItemShopTags"					"damage;str;armor;unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"hotd"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ShouldBeSuggested"				"1"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"AbilityCooldown"				"50"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_base_damage"			"3500"
+			}
+			"2"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_strength"			"1750"
+			}
+			"3"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"base_attack_time"			"1.2"
+			}
+			"4"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_armor"				"57"
+			}
+			"5"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_health"				"6117"
+			}
+			"6"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"unyielding_chance"			"15"
+			}
+			"7"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"unyielding_cs_chance"		"25"
+			}
+			"8"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"unyielding_gs_chance"		"15"
+			}
+			"9"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"unyielding_str"			"28.57"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"unyielding_stack_dur"		"17"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"unyielding_max_stacks"		"7"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"unyielding_lum_hits"		"4"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"overwhelming_chance"		"8"
+			}
+			"14"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"overwhelming_cs_chance"	"12"
+			}
+			"15"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"overwhelming_total_dmg"	"100"
+			}
+			"16"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"overwhelming_duration"		"0.17"
+			}
+			"17"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"overwhelming_lum_hits"		"8"
+			}
+			"18"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"active_duration"			"10"
+			}
+			"19"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"corr_armor_red_pct"		"0.44"
+			}
+			"20"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"corr_armor_red_max"		"120"
+			}
+			"21"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"corr_duration"				"5"
+			}
+		}
+	}
+// Recipe: Hammer Of The Divine
+	"item_recipe_hammer_of_the_divine"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_hammer_of_the_divine"
+		"ItemRequirements"
+		{
+			"01"						"item_wraith_rapier"
+		}
+	}
+
+// Wraith Rapier
+	"item_wraith_rapier"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/hammer_of_the_divine"
+		"AbilityTextureName"			"custom/wraith_rapier"
+		"Model"							"models/props_gameplay/divine_rapier.vmdl"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShopTags"					"damage;str;armor;unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"wr"
+		"ItemDroppable"					"0"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_base_damage"			"1750"
+			}
+			"2"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_strength"			"800"
+			}
+			"4"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_armor"				"20"
+			}
+		}
+	}
 }

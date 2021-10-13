@@ -1310,17 +1310,24 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @�
 
 
 
+* Added new item: Hammer Of The Divine (Idea by ☆ Abuleil ☆)
+* Added Aghanim's Shard effect for Epicenter (Sand King)
+* Fixed Aghanim's Scepter effect for Burrowstrike (Sand King)
 * Added a new command for solo: "-gon" = you will receive a second philosophers stone instead of helper unit.
 * Slightly increased gold gain in solo. 
 * Fix Qop scream of pain.
 * Willpower (Divine Piety): It is guaranteed to apply a buff to the target if the owner was chosen as the target of the ability
-* Death Pulse (Necrophos): When used, the owner will not be able to run from healing projectile and can't be disjointed by allies
+* Death Pulse (Necrophos): When used, the owner will not be able to run from healing projectile and can't be disjointed
 * Death Pulse (Necrophos): The projectile speed is now equal to 50% of the hero's speed, not 400, as it was before
 * Heartstopper Aura (Necrophos) is now more optimized and aura will not work if the ability is disabled
 * Fixed Heartstopper Aura (Necrophos) visual AOE range
 * Night Stalker : replaced 2 talents and buffed one, crippling fear slightly buffed, buffed str gain.
 * Added Super Scepter for night stalker ult and small changes to ult numbers.
-* Campfires retierd for this patch(they will return as Neutral team maybe)
+* Spell Blade: All Attribute bonus reduced by 150
+* Campfires retierd for this patch(they will return as Neutral team probably)
+* Disabled camera distance changer
+* Boss's HP Bar now way more smoother
+* Titanic Soul has been removed from bosses, as passive Status Resistance has been added (This is done to free up the inventory slot)
 
 
 

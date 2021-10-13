@@ -22,9 +22,12 @@ function treant_natures_form:OnHeroCalculateStatBonus()
 end
 function treant_natures_form:OnOwnerDied()
 	if IsServer() then
-		self:GetCaster():SwapAbilities("treant_natures_form_unroot", "treant_natures_form", false, true)
-		self:GetCaster():RemoveModifierByName("modifier_natures_form")
-		ParticleManager:DestroyParticle(root, false)
+		if root == true then
+			self:GetCaster():SwapAbilities("treant_natures_form_unroot", "treant_natures_form", false, true)
+			self:GetCaster():RemoveModifierByName("modifier_natures_form")
+			ParticleManager:DestroyParticle(root_fx, false)
+			root = false
+		end
 	end
 end
 function treant_natures_form:OnSpellStart()
@@ -32,8 +35,9 @@ function treant_natures_form:OnSpellStart()
 		local caster = self:GetCaster()
 		EmitSoundOn("Hero_Treant.Overgrowth.Cast", self:GetCaster())
 		caster:SwapAbilities("treant_natures_form", "treant_natures_form_unroot", false, true)
-		root = ParticleManager:CreateParticle("particles/custom/abilities/heroes/treant_natures_form/treant_natures_form_root.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-		ParticleManager:SetParticleControlEnt(root, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetOrigin(), true)
+		root_fx = ParticleManager:CreateParticle("particles/custom/abilities/heroes/treant_natures_form/treant_natures_form_root.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+		ParticleManager:SetParticleControlEnt(root_fx, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetOrigin(), true)
+		root = true
 		caster:AddNewModifier(caster, self, "modifier_natures_form", {})
 	end
 end
@@ -53,7 +57,8 @@ function treant_natures_form_unroot:OnSpellStart()
 		EmitSoundOn("Hero_Treant.Death", self:GetCaster())
 		caster:SwapAbilities("treant_natures_form_unroot", "treant_natures_form", false, true)
 		caster:RemoveModifierByName("modifier_natures_form")
-		ParticleManager:DestroyParticle(root, false)
+		ParticleManager:DestroyParticle(root_fx, false)
+		root = false
 	end
 end
 
