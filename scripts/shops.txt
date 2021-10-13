@@ -264,6 +264,7 @@
 		"item"      "item_earth_rapier"
 		"item"      "item_wind_rapier"
 		"item"      "item_all_essence"
+		"item"      "item_hammer_of_the_divine"
 		"item"      "item_maple_shield_lua"
 		"item"      "item_god_slayer"
 	}
