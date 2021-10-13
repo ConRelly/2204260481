@@ -40,16 +40,18 @@ function modifier_item_plain_ring_aura:GetModifierAura() return "modifier_item_p
 
 
 modifier_item_plain_ring_buff = class({})
+function modifier_item_plain_ring_buff:IsHidden() return false end
+function modifier_item_plain_ring_buff:IsPurgable() return false end
 function modifier_item_plain_ring_buff:GetTexture() return "plain_ring" end
+function modifier_item_plain_ring_buff:OnCreated()
+	self.aura_armor = self:GetAbility():GetSpecialValueFor("aura_armor")
+	self.aura_mana_regen = self:GetAbility():GetSpecialValueFor("aura_mana_regen")
+end
 function modifier_item_plain_ring_buff:DeclareFunctions()
 	return {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT}
 end
-function modifier_item_plain_ring_buff:GetModifierPhysicalArmorBonus()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("aura_armor") end
-end
-function modifier_item_plain_ring_buff:GetModifierConstantManaRegen()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("aura_mana_regen") end
-end
+function modifier_item_plain_ring_buff:GetModifierPhysicalArmorBonus() return self.aura_armor end
+function modifier_item_plain_ring_buff:GetModifierConstantManaRegen() return self.aura_mana_regen end
 
 
 modifier_item_plain_ring = class({})

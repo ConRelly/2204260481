@@ -346,14 +346,34 @@ end
 -- Wraith Rapier --
 item_wraith_rapier = item_wraith_rapier or class({})
 function item_wraith_rapier:GetIntrinsicModifierName() return "modifier_wraith_rapier" end
-function item_wraith_rapier:OnOwnerDied(params)
-	local hOwner = self:GetOwner()
-	if not hOwner:IsRealHero() then
-		hOwner:DropItem(self, true, true)
-		return
+function item_wraith_rapier:OnOwnerSpawned()
+	if craft then
+		local Parent = self:GetParent()
+		local Location = GetGroundPosition(Parent:GetAbsOrigin(), Parent)
+		Parent:RemoveItem(Parent:FindItemInInventory("item_resurection_pendant"))
+		Parent:RemoveItem(Parent:FindItemInInventory("item_desolator_2"))
+		Parent:RemoveItem(Parent:FindItemInInventory("item_witless_shako"))
+		Parent:RemoveItem(self)
+		Parent:EmitSound("Hero_PhantomAssassin.Arcana_Layer")
+		Parent:AddItemByName("item_hammer_of_the_divine")
 	end
-	if not hOwner:IsReincarnating() then
-		hOwner:DropItem(self, true, true)
+end
+function item_wraith_rapier:OnOwnerDied(params)
+	if not craft then
+		local hOwner = self:GetOwner()
+--[[
+		if not hOwner:IsRealHero() then
+			hOwner:DropItem(self, true, true)
+			return
+		end
+]]
+		if _G.first_drop and hOwner:GetUnitName() == "npc_boss_skeleton_king_angry_new" then
+			hOwner:DropItem(self, true, true)
+			_G.first_drop = false
+		end
+		if not hOwner:IsReincarnating() then
+			hOwner:DropItem(self, true, true)
+		end
 	end
 end
 
@@ -364,6 +384,7 @@ function modifier_wraith_rapier:IsPurgable() return false end
 function modifier_wraith_rapier:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_wraith_rapier:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
+		if _G.first_drop == nil then _G.first_drop = true end
 		self:StartIntervalThink(FrameTime())
 	end
 end
@@ -374,6 +395,10 @@ function modifier_wraith_rapier:OnIntervalThink()
 	if not self:GetCaster():IsRealHero() then
 		self:GetCaster():DropItem(self:GetAbility(), true, true)
 	end
+	local pendant = self:GetParent():FindItemInInventory("item_resurection_pendant")
+	local desol = self:GetParent():FindItemInInventory("item_desolator_2")
+	local shako = self:GetParent():FindItemInInventory("item_witless_shako")
+	if pendant and desol and shako then craft = true else craft = false end
 end
 function modifier_wraith_rapier:GetModifierBaseAttack_BonusDamage()
 	if self:GetAbility() then
