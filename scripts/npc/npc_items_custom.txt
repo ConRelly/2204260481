@@ -34835,11 +34835,11 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ShouldBeSuggested"				"1"
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
 		"ItemSellable"					"0"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"AbilityCooldown"				"50"
+		"AbilityCooldown"				"60"
 		"AbilitySpecial"
 		{
 			"1"
@@ -34850,7 +34850,7 @@
 			"2"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_strength"			"1750"
+				"bonus_strength"			"1450"
 			}
 			"3"
 			{
@@ -34870,22 +34870,22 @@
 			"6"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"unyielding_chance"			"15"
+				"unyielding_chance"			"5"
 			}
 			"7"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"unyielding_cs_chance"		"25"
+				"unyielding_cs_chance"		"10"
 			}
 			"8"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"unyielding_gs_chance"		"15"
+				"unyielding_gs_chance"		"5"
 			}
 			"9"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"unyielding_str"			"28.57"
+				"unyielding_str"			"21.42"
 			}
 			"10"
 			{
@@ -34900,7 +34900,7 @@
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"unyielding_lum_hits"		"4"
+				"unyielding_lum_hits"		"8"
 			}
 			"13"
 			{
@@ -34955,7 +34955,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"61000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_hammer_of_the_divine"
@@ -34976,7 +34976,7 @@
 		"ItemShopTags"					"damage;str;armor;unique;hard_to_tag"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"wr"
-		"ItemDroppable"					"0"
+		"ItemDroppable"					"1"
 		"ItemPurchasable"				"0"
 		"ItemKillable"					"0"
 		"ItemSellable"					"0"
