@@ -34835,7 +34835,7 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ShouldBeSuggested"				"1"
-		"ItemPurchasable"				"1"
+		"ItemPurchasable"				"0"
 		"ItemKillable"					"0"
 		"ItemSellable"					"0"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
@@ -34955,13 +34955,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"61000"
+		"ItemCost"						"50000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_hammer_of_the_divine"
 		"ItemRequirements"
 		{
-			"01"						"item_wraith_rapier"
+			"01"						"item_wraith_rapier;item_resurection_pendant;item_desolator_2;item_witless_shako"
 		}
 	}
 
@@ -34976,7 +34976,7 @@
 		"ItemShopTags"					"damage;str;armor;unique;hard_to_tag"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"wr"
-		"ItemDroppable"					"1"
+		"ItemDroppable"					"0"
 		"ItemPurchasable"				"0"
 		"ItemKillable"					"0"
 		"ItemSellable"					"0"

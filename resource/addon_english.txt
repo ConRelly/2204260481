@@ -1049,6 +1049,7 @@
 	"DOTA_Tooltip_modifier_thunder_power"					"Thunder Power"
 	"DOTA_Tooltip_modifier_thunder_power_Description"		"Thunder Power increases the attack speed by%dMODIFIER_PROPERTY_TOOLTIP%"
 
+	"DOTA_Tooltip_ability_item_recipe_hammer_of_the_divine"				"Hammer Of The Divine Recipe"
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine"					"<font color='#7E09E6'>Hammer Of The Divine</font>"
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine_Description"		"<h1>Active: Pure Divinity</h1> You gain True Strike and Armor Corruption equal to %corr_armor_red_pct%%% of your bonus Strength (Max %corr_armor_red_max%) for %active_duration%s, at the cost of removing (%bonus_armor% + Armor Corruption) Armor from self. <br><br>Debuff Duration: %corr_duration%s \n<h1>Passive: Unyielding</h1> Chance %unyielding_chance%%% on hit increase Base Strength by %unyielding_str%%% for %unyielding_stack_dur%s. <br><br>Max stacks: %unyielding_max_stacks% \n<h1>Passive: Overwhelming Force</h1> Right before attack have a %overwhelming_chance%%% chance to increase %overwhelming_total_dmg%%% bonus total DMG for %overwhelming_duration%s. \n<h1><font color='#EC3D06'>Strength Superiority</font></h1> <font color='#EC3D06'>Only works when your main attribute is Strength and sets the base attack time to %base_attack_time%.</font> \n<h1><font color='#E6BA49'>UP: Luminosity</font></h1>Unyielding: Procs every 8 attacks <br>Overwhelming Force: Procs every 8 attacks \n<h1><font color='#DC5663'>UP: Chaos Strike</font></h1>Unyielding: Increases chance to 10%% <br>Overwhelming Force: Increases chance to 12%% \n<h1><font color='#733A4C'>UP: Grow Strong</font></h1>Unyielding: Increases chance by 5%%"
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine_lore"		"When The Contradiction Of Order & Chaos Combine, A Special Force Is Formed Capable Of Shattering The Thickest Of Armors...<br>---------------------<br><font color='#7E09E6'>Idea by ☆ Abuleil ☆</font>"
@@ -1067,12 +1068,16 @@
 	"DOTA_Tooltip_modifier_hotd_pure_divinity_armor_corruption_Description"		"Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
 
 	"DOTA_Tooltip_ability_item_wraith_rapier"					"Wraith Rapier"
-	"DOTA_Tooltip_ability_item_wraith_rapier_description"       "Drops from "
 	"DOTA_Tooltip_ability_item_wraith_rapier_note0"		"Non-wraith heroes receive <font color='#e03e2e'>negative bonuses</font>."
+	"DOTA_Tooltip_ability_item_wraith_rapier_note1"		"<br>Is part of <font color='#7E09E6'>Hammer Of The Divine</font><br> (the rest of the parts are in the 'Basics' tab)"
 	"DOTA_Tooltip_ability_item_wraith_rapier_Lore"		"Wraiths are cool."
 	"DOTA_Tooltip_ability_item_wraith_rapier_bonus_base_damage"		"+$base_damage"
 	"DOTA_Tooltip_ability_item_wraith_rapier_bonus_strength"		"+$str"
 	"DOTA_Tooltip_ability_item_wraith_rapier_bonus_armor"			"+$armor"
+
+	"DOTA_Tooltip_ability_item_witless_shako_note0"				"Is part of <font color='#7E09E6'>Hammer Of The Divine</font>"
+	"DOTA_Tooltip_ability_item_resurection_pendant_note1"		"<br>Is part of <font color='#7E09E6'>Hammer Of The Divine</font>"
+	"DOTA_Tooltip_ability_item_desolator_2_note1"				"<br>Is part of <font color='#7E09E6'>Hammer Of The Divine</font>"
 
 //###########################################################################################################################
 	
