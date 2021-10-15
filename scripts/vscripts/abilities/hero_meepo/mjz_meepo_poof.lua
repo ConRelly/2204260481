@@ -82,7 +82,7 @@ if IsServer() then
 		local units = FindUnitsInRadius(
 			caster:GetTeamNumber(),
 			position, nil, radius,
-			ability:GetAbilityTargetTeam(),
+			DOTA_UNIT_TARGET_TEAM_ENEMY,
 			ability:GetAbilityTargetType(),
 			ability:GetAbilityTargetFlags(),
 			FIND_CLOSEST, false

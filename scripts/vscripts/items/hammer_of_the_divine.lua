@@ -392,9 +392,11 @@ function modifier_wraith_rapier:DeclareFunctions()
 	return {MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_EVENT_ON_DEATH}
 end
 function modifier_wraith_rapier:OnIntervalThink()
-	if not self:GetCaster():IsRealHero() then
-		self:GetCaster():DropItem(self:GetAbility(), true, true)
-	end
+	if not self:GetCaster():IsIllusion() and self:GetCaster():GetUnitName() ~= "npc_boss_skeleton_king_angry_new" then
+		if not self:GetCaster():IsRealHero() then
+			self:GetCaster():DropItem(self:GetAbility(), true, true)
+		end
+	end	
 	local pendant = self:GetParent():FindItemInInventory("item_resurection_pendant")
 	local desol = self:GetParent():FindItemInInventory("item_desolator_2")
 	local shako = self:GetParent():FindItemInInventory("item_witless_shako")

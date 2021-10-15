@@ -110,7 +110,7 @@
 				"TotalUnitsToSpawn"		"6"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"5"
-			}
+			}						
 
 		}
 		
@@ -140,7 +140,7 @@
 			
 			"c" 
 			{
-				"WaitForTime"			"20"
+				"WaitForTime"			"50"
 				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"9"
 				"UnitsPerSpawn"			"3"

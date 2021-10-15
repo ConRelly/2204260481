@@ -2870,7 +2870,7 @@
 	"ScriptFile"						"items/item_plain_ring.lua"
 	"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"				"plain_ring"
-	"AbilityCooldown"					"220.0"
+	"AbilityCooldown"					"250.0"
 	"ItemShopTags"						"regen_health;regen_mana;mana_pool;health_pool"
 	"ItemQuality"						"epic"
 	"ItemAliases"						"gr;gold ring"

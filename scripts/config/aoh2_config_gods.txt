@@ -3511,7 +3511,7 @@
 			"MaxGold"					"25000"
 			"BagCount"					"1"
 			"BagVariance"				"50"
-			"FixedXP"					"920000"
+			"FixedXP"					"200000"
 
 			"a"
 			{
@@ -3523,6 +3523,39 @@
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"20"
 			}
-		}		
+		}
+		"5" // Gods			
+		{
+			"Title"						"Double Troble"
+			"MaxGold"					"25000"
+			"BagCount"					"1"
+			"BagVariance"				"50"
+			"FixedXP"					"200000"
+
+            "a" 
+			{
+				"NPCName"				"npc_boss_kobold_foreman"
+				"TotalUnitsToSpawn"		"5"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"10"
+			}
+
+			"b"
+			{
+				"WaitForTime"			"40"
+				"NPCName"               "npc_boss_guesstuff_Moran"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"30"
+			}
+			"c"
+			{
+				"WaitForTime"			"50"
+				"NPCName"               "npc_boss_randomstuff_aiolos"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"20"
+			}			
+		}				
 	}	
 }
