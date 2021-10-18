@@ -99,11 +99,6 @@ function AOHGameMode:InitGameMode()
 	AOHGameMode.numPhilo[4] = 0
 	self._hardMode = false
 	_G._hardMode = false
-	if GameRules:IsDaytime() then
-		_G._Sun = true
-	else
-		_G._Sun = false
-	end
 	_G.super_courier = {false, false, false, false, false}
 	self._endlessMode = false
 	self._endlessMode_started = false

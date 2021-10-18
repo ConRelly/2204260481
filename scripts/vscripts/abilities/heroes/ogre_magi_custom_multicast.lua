@@ -186,6 +186,7 @@ function IsExcludeAbility( ability )
 		"item_auto_cast",
 		"item_auto_cast2",
 		"item_aegis_lua",
+		"item_hammer_of_the_divine",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

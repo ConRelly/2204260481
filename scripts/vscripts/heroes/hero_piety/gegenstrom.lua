@@ -53,6 +53,17 @@ function modifier_gegenstrom:IsHidden() return true end
 function modifier_gegenstrom:IsPurgable() return false end
 function modifier_gegenstrom:IsDebuff() return false end
 function modifier_gegenstrom:RemoveOnDeath() return false end
+function modifier_gegenstrom:OnCreated()
+	if IsServer() then if not self:GetAbility() then self:Destroy() end
+		if _G._Sun == nil then
+			if GameRules:IsDaytime() then
+				_G._Sun = true
+			else
+				_G._Sun = false
+			end
+		end
+	end
+end
 --[[
 function modifier_gegenstrom:GetEffectName()
 	return "particles/econ/items/mirana/mirana_2021_immortal/mirana_2021_immortal_moonlight_recipient_golden.vpcf"

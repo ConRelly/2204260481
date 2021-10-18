@@ -1,31 +1,30 @@
 LinkLuaModifier("modifier_mjz_night_stalker_darkness","abilities/hero_night_stalker/mjz_night_stalker_darkness.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_night_stalker_darkness_damage","abilities/hero_night_stalker/mjz_night_stalker_darkness.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_mjz_night_stalker_darkness_lifesteal","abilities/hero_night_stalker/mjz_night_stalker_darkness.lua", LUA_MODIFIER_MOTION_NONE)
 
 mjz_night_stalker_darkness = class({})
 local ability_class = mjz_night_stalker_darkness
 
 if IsServer() then
     function ability_class:OnSpellStart()
-        local ability = self
         local caster = self:GetCaster()
-        local duration = ability:GetSpecialValueFor('duration')
+        local duration = self:GetSpecialValueFor('duration')
         local modifier_name = 'modifier_mjz_night_stalker_darkness'
         local modifier_damage_name = 'modifier_mjz_night_stalker_darkness_damage'
-        local modifier_lifesteal_name = 'modifier_mjz_night_stalker_darkness_lifesteal'
         
-        self:_AddModifier(modifier_name, duration)
-        self:_AddModifier(modifier_damage_name, duration)
-        self:_AddModifier(modifier_lifesteal_name, duration)
+--		self:_AddModifier(modifier_name, duration)
+--		self:_AddModifier(modifier_damage_name, duration)
+		caster:AddNewModifier(caster, self, modifier_name, {duration = duration})
+		caster:AddNewModifier(caster, self, modifier_damage_name, {duration = duration})
         
         local p_name = "particles/units/heroes/hero_night_stalker/nightstalker_ulti.vpcf"
         local nFXIndex = ParticleManager:CreateParticle( p_name, PATTACH_ABSORIGIN_FOLLOW, caster )
-		ParticleManager:SetParticleControl(nFXIndex, 0, caster:GetOrigin()) 
-		ParticleManager:ReleaseParticleIndex(nFXIndex)
+		ParticleManager:SetParticleControl(nFXIndex, 0, caster:GetAbsOrigin())
+		ParticleManager:SetParticleControl(nFXIndex, 1, caster:GetAbsOrigin())
+--		ParticleManager:ReleaseParticleIndex(nFXIndex)
 
         caster:EmitSound("Hero_Nightstalker.Darkness")
     end
-
+--[[
     function ability_class:_AddModifier( modifier_name, duration, is_ability_modifier)
         local ability = self
         local caster = self:GetCaster()
@@ -41,6 +40,7 @@ if IsServer() then
             end
         end
     end
+]]
 end
 
 ---------------------------------------------------------------------------------------
@@ -51,6 +51,19 @@ local modifier_class = modifier_mjz_night_stalker_darkness
 function modifier_class:IsPassive() return false end
 function modifier_class:IsHidden() return false end
 function modifier_class:IsPurgable() return false end
+
+function modifier_class:OnCreated()
+	if IsServer() then
+		GameRules:BeginNightstalkerNight(self:GetDuration())
+		self:StartIntervalThink(FrameTime() * 3)
+	end
+end
+function modifier_class:OnRefresh()
+	self:OnCreated()
+end
+function modifier_class:OnIntervalThink()
+	AddFOWViewer(self:GetCaster():GetTeamNumber(), self:GetCaster():GetAbsOrigin(), self:GetCaster():GetCurrentVisionRange(), FrameTime() * 3, false)
+end
 
 --[[
     function modifier_class:GetEffectName()
@@ -69,12 +82,20 @@ function modifier_class:IsPurgable() return false end
         return 100
     end
 ]]
-
+function modifier_class:CheckState()
+	return {[MODIFIER_STATE_FLYING] = true}
+end
+function modifier_class:OnDestroy()
+	if IsServer() then
+		FindClearSpaceForUnit(self:GetCaster(), self:GetCaster():GetAbsOrigin(), false)
+	end
+end
 function modifier_class:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_EVASION_CONSTANT,
         MODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE,
         MODIFIER_PROPERTY_MODEL_SCALE,
+        MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS,
     }
 end
 function modifier_class:GetBonusVisionPercentage( )
@@ -94,6 +115,10 @@ function modifier_class:GetModifierModelScale( )
 	    return self:GetAbility():GetSpecialValueFor('model_scale')
     end
     return 0    
+end
+function modifier_class:GetActivityTranslationModifiers() return "hunter_night" end
+function modifier_class:GetModifierPureLifesteal()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("lifesteal_pct") end
 end
 
 -----------------------------------------------------------------------------------------
@@ -126,52 +151,6 @@ function modifier_damage:GetModifierPreAttack_BonusDamage()
         end    
     end
     return self:GetStackCount()
-end
-
------------------------------------------------------------------------------------------
-
-modifier_mjz_night_stalker_darkness_lifesteal = class({})
-local modifier_lifesteal = modifier_mjz_night_stalker_darkness_lifesteal
-
-function modifier_lifesteal:IsHidden() return true end
-function modifier_lifesteal:IsPurgable() return false end
-
-if IsServer() then
-    function modifier_lifesteal:DeclareFunctions()
-        return {
-            MODIFIER_EVENT_ON_ATTACK_LANDED,
-        }
-    end
-
-    function modifier_lifesteal:OnAttackLanded(keys)
-        local parent = self:GetParent()
-        local ability = self:GetAbility()
-        local attacker = keys.attacker
-        local target = keys.target
-        local damage = keys.damage
-    
-        if parent == attacker and parent:GetTeamNumber() ~= target:GetTeamNumber() then
-            if not target:IsHero() and not target:IsCreep() then
-                return nil
-            end
-    
-            if parent:IsIllusion() then return nil end
-    
-            local lifesteal_pct = self:GetAbility():GetSpecialValueFor('lifesteal_pct')
-            local lifesteal_amount = damage * (lifesteal_pct / 100.0)
-            parent:Heal(lifesteal_amount, parent)
-            SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, parent, lifesteal_amount, nil)
-    
-            -- Choose the particle to draw
-            local lifesteal_particle = "particles/generic_gameplay/generic_lifesteal.vpcf"
-    
-            -- Heal and fire the particle
-            local lifesteal_pfx = ParticleManager:CreateParticle(lifesteal_particle, PATTACH_ABSORIGIN_FOLLOW, attacker)
-            ParticleManager:SetParticleControl(lifesteal_pfx, 0, attacker:GetAbsOrigin())
-            ParticleManager:ReleaseParticleIndex(lifesteal_pfx)
-            
-        end
-    end    
 end
 
 

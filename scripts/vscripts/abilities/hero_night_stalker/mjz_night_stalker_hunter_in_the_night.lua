@@ -12,34 +12,76 @@ modifier_mjz_night_stalker_hunter_in_the_night = class({})
 function modifier_mjz_night_stalker_hunter_in_the_night:IsPassive() return true end
 function modifier_mjz_night_stalker_hunter_in_the_night:IsHidden() return true end
 function modifier_mjz_night_stalker_hunter_in_the_night:IsPurgable() return false end
-if IsServer() then
-	function modifier_mjz_night_stalker_hunter_in_the_night:OnCreated()
-		self.multiplier = self:GetAbility():GetSpecialValueFor("bonus_in_night") or 0
-		self:StartIntervalThink(FrameTime())
+function modifier_mjz_night_stalker_hunter_in_the_night:OnCreated()
+--[[
+	if IsServer() then
+		if _G._Sun == nil then
+			if GameRules:IsDaytime() then
+				_G._Sun = true
+			else
+				_G._Sun = false
+			end
+		end
 	end
-	function modifier_mjz_night_stalker_hunter_in_the_night:OnIntervalThink()
-		self:BonusModifier("bonus_movement_speed_pct", "modifier_mjz_night_stalker_hunter_in_the_night_mspeed")
-		self:BonusModifier("bonus_attack_speed", "modifier_mjz_night_stalker_hunter_in_the_night_aspeed")
+]]
+	if not self:GetCaster():HasModifier("modifier_night_stalker_hunter_in_the_night") then
+		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_night_stalker_hunter_in_the_night", {})
 	end
-	function modifier_mjz_night_stalker_hunter_in_the_night:BonusModifier(specialName, modifierName)
-		local hCaster = self:GetCaster()
-		local hAbility = self:GetAbility()
-		local hParent = self:GetParent()
-		local bonus = hAbility:GetTalentSpecialValueFor(specialName)
-		if not GameRules:IsDaytime() then
-			bonus = bonus * self.multiplier
+	self:StartIntervalThink(FrameTime())
+end
+--[[
+function modifier_mjz_night_stalker_hunter_in_the_night:OnIntervalThink()
+	local modifiers = self:GetCaster():FindAllModifiers()
+	for _,modifier in pairs(modifiers) do
+		print("modifier: ",modifier,modifier:GetName())
+	end
+end
+]]
+
+function modifier_mjz_night_stalker_hunter_in_the_night:OnDestroy()
+	if self:GetCaster():HasModifier("modifier_night_stalker_hunter_in_the_night") then
+		self:GetCaster():RemoveModifierByName("modifier_night_stalker_hunter_in_the_night")
+	end
+	if self:GetCaster():HasModifier("modifier_mjz_night_stalker_hunter_in_the_night_mspeed") then
+		self:GetCaster():RemoveModifierByName("modifier_mjz_night_stalker_hunter_in_the_night_mspeed")
+	end
+	if self:GetCaster():HasModifier("modifier_mjz_night_stalker_hunter_in_the_night_aspeed") then
+		self:GetCaster():RemoveModifierByName("modifier_mjz_night_stalker_hunter_in_the_night_aspeed")
+	end
+end
+function modifier_mjz_night_stalker_hunter_in_the_night:OnIntervalThink()
+	if IsServer() then
+		if _G._Sun == nil then Sun = GameRules:IsDaytime() else Sun = _G._Sun end
+
+		local modifier_ms = "modifier_mjz_night_stalker_hunter_in_the_night_mspeed"
+		local modifier_as = "modifier_mjz_night_stalker_hunter_in_the_night_aspeed"
+		local multiplier = self:GetAbility():GetTalentSpecialValueFor("bonus_in_night")
+		local bonus_ms_pct = self:GetAbility():GetTalentSpecialValueFor("bonus_movement_speed_pct")
+		local bonus_as = self:GetAbility():GetTalentSpecialValueFor("bonus_attack_speed")
+
+		if not Sun then
+			bonus_ms_pct = bonus_ms_pct * multiplier
+			bonus_as = bonus_as * multiplier
 		end
-		if hParent:PassivesDisabled() then bonus = 0 end
-		local modifier = nil
-		if not hParent:HasModifier(modifierName) then
-			modifier = hParent:AddNewModifier(hCaster, hAbility, modifierName, {})
+
+		if self:GetCaster():PassivesDisabled() then bonus_ms_pct = 0 bonus_as = 0 end
+
+		if not Sun and self:GetCaster():IsAlive() then
+--			if not self:GetCaster():HasModifier(modifier_ms) then
+				local ms_modifier = self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), modifier_ms, {})
+				ms_modifier:SetStackCount(bonus_ms_pct)
+--			end
+--			if not self:GetCaster():HasModifier(modifier_as) then
+				local as_modifier = self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), modifier_as, {})
+				as_modifier:SetStackCount(bonus_as)
+--			end
 		end
-		if modifier == nil then
-			modifier = hParent:FindModifierByName(modifierName)
-		end
-		if modifier ~= nil then
-			if modifier:GetStackCount() ~= bonus then
-				modifier:SetStackCount(bonus)
+		if Sun and self:GetCaster():IsAlive() then
+			if self:GetCaster():HasModifier(modifier_ms) then
+				self:GetCaster():RemoveModifierByName(modifier_ms)
+			end
+			if self:GetCaster():HasModifier(modifier_as) then
+				self:GetCaster():RemoveModifierByName(modifier_as)
 			end
 		end
 	end

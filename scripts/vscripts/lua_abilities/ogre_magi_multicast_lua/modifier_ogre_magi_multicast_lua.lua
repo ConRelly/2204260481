@@ -117,6 +117,7 @@ modifier_ogre_magi_multicast_lua.banned = {
 	["item_auto_cast"] = true,
     ["item_auto_cast2"] = true,  
 	["item_aegis_lua"] = true,
+	["item_hammer_of_the_divine"] = true,
 }
 
 --------------------------------------------------------------------------------
