@@ -228,6 +228,7 @@ if IsServer() then
 		item_pipe_of_dezun = true,
 		item_auto_cast = true,
 		item_auto_cast2 = true,
+		item_hammer_of_the_divine = true,
 		
 	}
 	local include_table = {

@@ -3220,7 +3220,7 @@
 	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_duration"					"Duration: "
 	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_bonus_damage"				"Bonus Damage: "
 	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_bonus_vision_pct"			"%Bonus Vision: "
-	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_lifesteal_pct"				"%Lifesteal: before dmg reduction"
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_lifesteal_pct"				"%Pure Lifesteal:"
 	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_evasion_chance"			"%Evasion Chance: "
 	"DOTA_Tooltip_modifier_mjz_night_stalker_darkness"					"Dark Ascension"
 	"DOTA_Tooltip_modifier_mjz_night_stalker_darkness_Description"		"Get damage bonus, vision bonus, lifesteal bonus and giving the unit a chance to miss its attacks."

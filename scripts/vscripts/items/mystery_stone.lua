@@ -135,6 +135,9 @@ function modifier_mystery_cyclone_active:IsDebuff() return false end
 function modifier_mystery_cyclone_active:IsHidden() return false end
 function modifier_mystery_cyclone_active:IsPurgable() return true end
 function modifier_mystery_cyclone_active:IsStunDebuff() return true end
+function modifier_mystery_cyclone_active:GetPriority()
+	return MODIFIER_PRIORITY_SUPER_ULTRA + 11111
+end
 function modifier_mystery_cyclone_active:IsMotionController() return true end
 function modifier_mystery_cyclone_active:GetMotionControllerPriority() return DOTA_MOTION_CONTROLLER_PRIORITY_HIGH end
 function modifier_mystery_cyclone_active:OnCreated()
@@ -168,16 +171,20 @@ function modifier_mystery_cyclone_active:OnCreated()
 	end
 end
 function modifier_mystery_cyclone_active:OnIntervalThink()
-	if not self:CheckMotionControllers() then
-		self:Destroy()
-		return
+	if IsServer() then
+		if not self:CheckMotionControllers() then
+			self:Destroy()
+			return
+		end
+		self:HorizontalMotion(self:GetParent(), FrameTime())
 	end
-	self:HorizontalMotion(self:GetParent(), FrameTime())
 end
 function modifier_mystery_cyclone_active:HorizontalMotion(unit, time)
 	if not IsServer() then return end
-	local angle = self:GetParent():GetAngles()
-	local new_angle = RotateOrientation(angle, QAngle(0,20,0))
+	self.angle = unit:GetAngles()
+	self.abs = unit:GetAbsOrigin()
+	self.cyc_pos = unit:GetAbsOrigin()
+	local new_angle = RotateOrientation(self.angle, QAngle(0,20,0))
 	self:GetParent():SetAngles(new_angle[1], new_angle[2], new_angle[3])
 	if self:GetElapsedTime() <= 0.3 then
 		self.cyc_pos.z = self.cyc_pos.z + 50
@@ -187,9 +194,9 @@ function modifier_mystery_cyclone_active:HorizontalMotion(unit, time)
 		self.cyc_pos.z = self.cyc_pos.z - self.step
 		self:GetParent():SetAbsOrigin(self.cyc_pos)
 	else
-		local pos = self:GetRandomPosition2D(self:GetParent():GetAbsOrigin(),15)
-		while ((pos - self.abs):Length2D() > 50) do
-			pos = self:GetRandomPosition2D(self:GetParent():GetAbsOrigin(),15)
+		local pos = self:GetRandomPosition2D(self:GetParent():GetAbsOrigin(),10)
+		while ((pos - self.abs):Length2D() > 30) do
+			pos = self:GetRandomPosition2D(self:GetParent():GetAbsOrigin(),10)
 		end
 		self:GetParent():SetAbsOrigin(pos)
 	end
@@ -209,5 +216,5 @@ function modifier_mystery_cyclone_active:OnDestroy()
 	self:GetParent():SetAngles(self.angle[1], self.angle[2], self.angle[3])
 end
 function modifier_mystery_cyclone_active:CheckState()
-	return {[MODIFIER_STATE_STUNNED] = true, [MODIFIER_STATE_INVULNERABLE] = true, [MODIFIER_STATE_NO_HEALTH_BAR] = true}
+	return {[MODIFIER_STATE_STUNNED] = true, [MODIFIER_STATE_INVULNERABLE] = true, [MODIFIER_STATE_NO_HEALTH_BAR] = true, [MODIFIER_STATE_NO_UNIT_COLLISION] = true, [MODIFIER_STATE_MAGIC_IMMUNE] = true, [MODIFIER_STATE_DISARMED] = true}
 end
