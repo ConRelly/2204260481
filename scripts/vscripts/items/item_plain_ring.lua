@@ -78,7 +78,7 @@ function modifier_item_plain_ring:OnTakeDamage(keys)
 		local unit = keys.unit
 		if self.parent == unit and self.ability:IsCooldownReady() and self.parent:GetHealth() < 100  then
 			if has_item(self.parent, "item_plain_ring") and not unit:IsNull() and IsValidEntity(unit) then
-				self.parent:SetHealth(self.parent:GetMaxHealth() * 0.1)
+				self.parent:SetHealth(self.parent:GetMaxHealth() * 0.15)
 				self.parent:AddNewModifier(self.parent, self:GetAbility(), "modifier_item_plain_ring_invincibility", {duration = self.invincibility_duration})
 				self.ability:StartCooldown(self.cooldown * self.parent:GetCooldownReduction())
 				Timers:CreateTimer({
@@ -121,7 +121,7 @@ function modifier_item_plain_ring_invincibility:OnDestroy()
 		local parent = self:GetParent()
 			--ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
 		if parent:GetLevel() > 80 then
-			parent:SetHealth(parent:GetMaxHealth() * 0.4)
+			parent:SetHealth(parent:GetMaxHealth() * 0.35)
 		end	
 		parent:Heal((parent:GetMaxHealth() * self:GetAbility():GetSpecialValueFor("min_health") * 0.01), parent)		
 	end	

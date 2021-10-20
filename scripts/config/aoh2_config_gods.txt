@@ -3526,7 +3526,7 @@
 		}
 		"5" // Gods			
 		{
-			"Title"						"Double Troble"
+			"Title"						"Double Trouble"
 			"MaxGold"					"25000"
 			"BagCount"					"1"
 			"BagVariance"				"50"

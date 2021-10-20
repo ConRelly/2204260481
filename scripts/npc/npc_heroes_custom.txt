@@ -769,6 +769,8 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_undying"
+		"UnitLabel"				"no_underdog"
+
 		"Ability1"				"undying_custom_decay"
 		"Ability5"				"mjz_undying_punch"
 		"Ability10"				"special_bonus_armor_69"
@@ -777,7 +779,7 @@
 		"Ability16"				"special_bonus_reincarnation_90"
 		"Ability17"				"special_bonus_cdr_25"
 
-		"AttributeStrengthGain"		"5.800000"
+		"AttributeStrengthGain"		"7.800000"
 
 	}
 

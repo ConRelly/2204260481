@@ -34870,12 +34870,12 @@
 			"6"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"unyielding_chance"			"5"
+				"unyielding_chance"			"4"
 			}
 			"7"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"unyielding_cs_chance"		"10"
+				"unyielding_cs_chance"		"7"
 			}
 			"8"
 			{
@@ -34890,7 +34890,7 @@
 			"10"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"unyielding_stack_dur"		"17"
+				"unyielding_stack_dur"		"10"
 			}
 			"11"
 			{
