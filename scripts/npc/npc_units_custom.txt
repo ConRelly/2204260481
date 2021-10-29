@@ -9592,6 +9592,7 @@
 	"AttackDamageMin"		   "860"
 	"AttackDamageMax"		   "860"
 	"StatusHealth"			  "10"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 
 }
 "npc_dota_unit_undying_zombie"

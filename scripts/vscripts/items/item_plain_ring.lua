@@ -44,8 +44,10 @@ function modifier_item_plain_ring_buff:IsHidden() return false end
 function modifier_item_plain_ring_buff:IsPurgable() return false end
 function modifier_item_plain_ring_buff:GetTexture() return "plain_ring" end
 function modifier_item_plain_ring_buff:OnCreated()
-	self.aura_armor = self:GetAbility():GetSpecialValueFor("aura_armor")
-	self.aura_mana_regen = self:GetAbility():GetSpecialValueFor("aura_mana_regen")
+	if self:GetAbility() ~= nil then
+		self.aura_armor = self:GetAbility():GetSpecialValueFor("aura_armor")
+		self.aura_mana_regen = self:GetAbility():GetSpecialValueFor("aura_mana_regen")
+	end	
 end
 function modifier_item_plain_ring_buff:DeclareFunctions()
 	return {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT}
