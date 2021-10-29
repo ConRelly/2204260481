@@ -1055,7 +1055,7 @@
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine_lore"		"When The Contradiction Of Order & Chaos Combine, A Special Force Is Formed Capable Of Shattering The Thickest Of Armors...<br>---------------------<br><font color='#7E09E6'>Idea by ☆ Abuleil ☆</font>"
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine_note0"		"1) Item would drop from inventory if main attribute is not Strength can ONLY be held by courier."
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine_note1"		"2) If hero have <font color='#E6BA49'>Luminosity</font> and <font color='#DC5663'>Chaos Strike</font> Overwhelming Force procs every 6 attacks and have 20%% chance together."
-	"DOTA_Tooltip_ability_item_hammer_of_the_divine_note2"		"3) On ranged heroes, Unyielding and Overwhelming Force chance is halved."
+	//"DOTA_Tooltip_ability_item_hammer_of_the_divine_note2"		"3) On ranged heroes, Unyielding and Overwhelming Force chance is halved."
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine_bonus_base_damage"		"+$base_damage"
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine_bonus_strength"			"+$primary_attribute"
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine_bonus_armor"			"+$armor"
