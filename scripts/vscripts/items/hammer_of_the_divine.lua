@@ -28,6 +28,7 @@ function item_hammer_of_the_divine:OnSpellStart()
 			EmitSoundOn("DOTA_Item.Satanic.Activate", self:GetCaster())
 			self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_hotd_pure_divinity", {duration = self:GetSpecialValueFor("active_duration")})
 			self:EndCooldown()
+			self:StartCooldown(2)
 		else
 			self:GetCaster():RemoveModifierByName("modifier_hotd_pure_divinity")
 		end
@@ -159,9 +160,9 @@ function modifier_hammer_of_the_divine:OnAttackStart(keys)
 			self.overwhelming_hits = self.overwhelming_hits + 1
 		end
 	end
-	if caster:IsRangedAttacker() then
+--[[ 	if caster:IsRangedAttacker() then
 		overwhelming_chance = overwhelming_chance / 2
-	end
+	end ]]
 	if RollPercentage(overwhelming_chance) then
 		caster:AddNewModifier(caster, ability, "modifier_hotd_overwhelming_force", {duration = overwhelming_duration})
 	end
@@ -189,10 +190,13 @@ end
 modifier_hotd_unyielding = modifier_hotd_unyielding or class({})
 function modifier_hotd_unyielding:IsHidden() return (self:GetStackCount() == 0) end
 function modifier_hotd_unyielding:IsPurgable() return false end
+function modifier_hotd_unyielding:RemoveOnDeath() return false end
 function modifier_hotd_unyielding:OnDestroy()
 	if IsServer() then
 		if self:GetParent():HasModifier("modifier_hammer_of_the_divine") then
-			self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_hotd_unyielding", {})
+			if self:GetParent():IsAlive() then
+				self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_hotd_unyielding", {})
+			end	
 		end
 	end
 end
@@ -342,12 +346,12 @@ end
 
 
 
-
+local craft1 = true
 -- Wraith Rapier --
 item_wraith_rapier = item_wraith_rapier or class({})
 function item_wraith_rapier:GetIntrinsicModifierName() return "modifier_wraith_rapier" end
 function item_wraith_rapier:OnOwnerSpawned()
-	if craft then
+	if craft and craft1 then
 		local Parent = self:GetParent()
 		local Location = GetGroundPosition(Parent:GetAbsOrigin(), Parent)
 		Parent:RemoveItem(Parent:FindItemInInventory("item_resurection_pendant"))
@@ -356,6 +360,7 @@ function item_wraith_rapier:OnOwnerSpawned()
 		Parent:RemoveItem(self)
 		Parent:EmitSound("Hero_PhantomAssassin.Arcana_Layer")
 		Parent:AddItemByName("item_hammer_of_the_divine")
+		craft1 = false
 	end
 end
 function item_wraith_rapier:OnOwnerDied(params)

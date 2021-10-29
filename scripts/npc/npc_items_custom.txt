@@ -34935,7 +34935,7 @@
 			"19"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"corr_armor_red_pct"		"0.44"
+				"corr_armor_red_pct"		"0.30"
 			}
 			"20"
 			{
