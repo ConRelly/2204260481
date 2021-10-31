@@ -1092,6 +1092,379 @@
 		"AbilityCastGestureSlot"		"DEFAULT"
 	}
 
+
+	//=================================================================================================================
+	// Marci: Dispose
+	//=================================================================================================================
+	"marci_grapple_custom"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"marci_grapple"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Marci.Grapple.Cast"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"175"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		//"AbilityCastGestureSlot"		"DEFAULT"
+		"LevelsBetweenUpgrades"         "7"
+		"MaxLevel"                      "7"
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"190"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"landing_radius"	"275"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"air_duration"		"0.5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"air_height"		"150"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"pull_offset"		"75"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"throw_distance_behind"	"350"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"pull_angle"		"230"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.0 1.2 1.4 1.6 1.8 2.0 2.2"
+				"LinkedSpecialBonus"	"special_bonus_unique_marci_grapple_stun_duration"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"impact_damage"		"270 1430 8190 14250 29540 54800 94500"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Marci: Unleashed
+	//=================================================================================================================
+	"marci_unleash_custom"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"marci_unleash"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Marci.Unleash.Cast"
+		"MaxLevel"                      "7"
+		"LevelsBetweenUpgrades"         "10"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"90"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"250"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"17"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charges_per_flurry"	"10 9 8 7 6 5 4"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"flurry_bonus_attack_speed"	"3500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"time_between_flurries"	"0.2"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pulse_radius"			"800"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pulse_debuff_duration"	"2.0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pulse_damage"			"750 2950 9950 23750 48500 84800 195700"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pulse_move_slow_pct"	"30.0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pulse_attack_slow_pct"	"30.0 50.0 70.0 90 110 130 150"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"max_time_window_per_hit"	"2.0"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movespeed"		"250"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"recovery_fixed_attack_rate"	"0.5"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+	}
+
+	//=================================================================================================================
+	// Marci: Rebound
+	//=================================================================================================================
+	"marci_companion_run_custom"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"marci_companion_run"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Marci.Rebound.Cast"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"800"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"MaxLevel"                      "7"
+		"LevelsBetweenUpgrades"         "10"
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"10"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"move_speed"			"2000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_jump_distance"		"450"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_jump_distance"		"800 1000 1200 1400 1600 1800 2200"
+				"LinkedSpecialBonus"	"special_bonus_unique_marci_lunge_range"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"landing_radius"		"325"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"impact_damage"			"390 1600 8430 17400 48500 82500 178500"
+				"LinkedSpecialBonus"	"special_bonus_unique_marci_lunge_damage"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow_pct"		"50"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"3.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"min_lob_travel_time"	"0.1"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_lob_travel_time"	"0.2"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"min_height_above_lowest"	"250.0"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"min_height_above_highest"	"200.0"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"min_acceleration"		"6000.0"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_acceleration"		"6000.0"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vector_preview_radius"	"100"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ally_buff_duration"	"5.0"
+			}
+			"16"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ally_movespeed_pct"	"50.0"
+			}
+			"17"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"impact_position_offset"	"64"
+			}
+			"18"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"target_abort_distance"		"5500"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Marci: Sidekick
+	//=================================================================================================================
+	"marci_guardian_custom"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"marci_guardian"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Marci.Guardian.Applied"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1600"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"MaxLevel"                      "7"
+		"LevelsBetweenUpgrades"         "10"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"buff_duration"		"6"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lifesteal_pct"			"35"
+				"LinkedSpecialBonus"	"special_bonus_unique_marci_guardian_lifesteal"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"200 535 1650 4650 8850 19540 25600"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_range"	"250"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"nearest_ally_search_range"	"1600"
+			}
+		}
+	}
+
+
 	//=================================================================================================================
 	// Ability: Antimage Counterspell
 	//=================================================================================================================

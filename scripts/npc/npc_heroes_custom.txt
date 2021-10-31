@@ -805,6 +805,7 @@
 		"ArmorPhysical"				"15"
 		"AttackAnimationPoint"		"0.200000"
 		"AttributeStrengthGain"		"11.900000"
+		"UnitLabel"				"no_underdog"
 	}
 
 	//=================================================================================================================
@@ -1695,6 +1696,51 @@
 		"AttributeIntelligenceGain"		"6.2"
 	}
 	
+"npc_dota_hero_marci"
+	{
+
+		"ModelScale"			"1"
+		"VersusScale"			"1"
+
+		"GibType"		"default"
+		"Ability1"		"marci_grapple_custom"
+		"Ability2"		"marci_companion_run_custom"
+		"Ability3"		"marci_guardian_custom"
+		"Ability4"		"bloodseeker_thirst"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"marci_unleash_custom"
+
+
+		"Ability10"		"special_bonus_spell_amplify_65"
+		"Ability11"		"special_bonus_hp_4000"
+		"Ability12"		"special_bonus_unique_marci_grapple_stun_duration"
+		"Ability13"		"special_bonus_unique_marci_lunge_range"
+		"Ability14"		"special_bonus_unique_marci_guardian_magic_immune"
+		"Ability15"		"special_bonus_cdr_25"
+		"Ability16"		"special_bonus_unique_marci_unleash_silence"
+		"Ability17"		"special_bonus_4_crit_5420"
+		"ArmorPhysical"				"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"33"
+		"AttackDamageMax"			"37"
+		"AttackRate"				"1.200000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"150"
+		"ProjectileSpeed"			"0"
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"43"
+		"AttributeStrengthGain"		"15.300000"
+		"AttributeBaseIntelligence"	"19"
+		"AttributeIntelligenceGain"	"4.900000"
+		"AttributeBaseAgility"		"20"
+		"AttributeAgilityGain"		"8.40000"
+		"StatusManaRegen"			"0.5"
+		"MovementSpeed"			"390"
+		"MovementTurnRate"		"0.900000"
+	}
+
+
 	"npc_dota_hero_necrolyte_mjz"			// 瘟疫法师
 	{
 		"override_hero"			"npc_dota_hero_necrolyte"

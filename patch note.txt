@@ -1335,16 +1335,21 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 
 
 
-* Added interaction between Gegenstrom (Piety) and Hunter in the Night (Night Stalker)
+* New Hero: Buffed most of her skills(ult works a little different) and changes some talents, fixed missing icons for swap, better base of attack time, stats grow and ms.
+* New: Buffs and debuffs UI thanks to @Aww (will display more of them in 2 different rows)
+* Added interaction between Gegenstrom (Piety, alternative lina hero) and Hunter in the Night (Night Stalker)
 * A bug with a decrease in characteristics from Hunter in the Night may have been fixed
 * Fixed Hunter in the Night (Night Stalker) model transform at night
 * Fixed Mystery Scepter of Divinity crash
+* Divine hammer now has a 2 sec Cd after activation(to avoid stop by mistake), has no penality on range, fixed Unyielding getting lost on death, fixed a bug that crafted double hammer and reduced proc chance for Unyielding.
+* Removed the forgoten Boss in round 1 in cheat mode(you can test your stuff now).
+* and some other stuff.
 
 
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes37 can be found on the new map version:
+*Update patch notes38 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 

@@ -34875,12 +34875,12 @@
 			"7"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"unyielding_cs_chance"		"7"
+				"unyielding_cs_chance"		"5"
 			}
 			"8"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"unyielding_gs_chance"		"5"
+				"unyielding_gs_chance"		"3"
 			}
 			"9"
 			{

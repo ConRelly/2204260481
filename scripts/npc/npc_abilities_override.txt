@@ -10662,12 +10662,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_amp"				"45 90 135"
+				"damage_amp"				"5 10 15"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"str_percentage"			"35 40 45"
+				"str_percentage"			"50 60 70"
 			}
 		}
 	}
@@ -15034,7 +15034,39 @@
 			}
 		}
 	}	
-		
+	
+	"special_bonus_unique_marci_lunge_range"
+	{
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"1450"
+				"ad_linked_ability"			"marci_companion_run"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+	"special_bonus_unique_marci_unleash_silence"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"						"8241"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"value"				"0.3" // duration
+			}
+		}
+	}
+
+
 	"pugna_life_drain"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"

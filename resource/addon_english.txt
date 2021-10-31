@@ -1051,7 +1051,7 @@
 
 	"DOTA_Tooltip_ability_item_recipe_hammer_of_the_divine"				"Hammer Of The Divine Recipe"
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine"					"<font color='#7E09E6'>Hammer Of The Divine</font>"
-	"DOTA_Tooltip_ability_item_hammer_of_the_divine_Description"		"<h1>Active: Pure Divinity</h1> You gain True Strike and Armor Corruption equal to %corr_armor_red_pct%%% of your bonus Strength (Max %corr_armor_red_max%) for %active_duration%s, at the cost of removing (%bonus_armor% + Armor Corruption) Armor from self. <br><br>Debuff Duration: %corr_duration%s \n<h1>Passive: Unyielding</h1> Chance %unyielding_chance%%% on hit increase Base Strength by %unyielding_str%%% for %unyielding_stack_dur%s. <br><br>Max stacks: %unyielding_max_stacks% \n<h1>Passive: Overwhelming Force</h1> Right before attack have a %overwhelming_chance%%% chance to increase %overwhelming_total_dmg%%% bonus total DMG for %overwhelming_duration%s. \n<h1><font color='#EC3D06'>Strength Superiority</font></h1> <font color='#EC3D06'>Only works when your main attribute is Strength: sets the base attack time to %base_attack_time%.</font> \n<h1><font color='#E6BA49'>UP: Luminosity</font></h1>Unyielding: Procs every 8 attacks <br>Overwhelming Force: Procs every 8 attacks \n<h1><font color='#DC5663'>UP: Chaos Strike</font></h1>Unyielding: Increases chance to 10%% <br>Overwhelming Force: Increases chance to 12%% \n<h1><font color='#733A4C'>UP: Grow Strong</font></h1>Unyielding: Increases chance by 5%%"
+	"DOTA_Tooltip_ability_item_hammer_of_the_divine_Description"		"<h1>Active: Pure Divinity</h1> You gain True Strike and Armor Corruption equal to %corr_armor_red_pct%%% of your bonus Strength (Max %corr_armor_red_max%) for %active_duration%s, at the cost of removing (%bonus_armor% + Armor Corruption) Armor from self. <br><br>Debuff Duration: %corr_duration%s \n<h1>Passive: Unyielding</h1> Chance %unyielding_chance%%% on hit increase Base Strength by %unyielding_str%%% for %unyielding_stack_dur%s. <br><br>Max stacks: %unyielding_max_stacks% \n<h1>Passive: Overwhelming Force</h1> Right before attack have a %overwhelming_chance%%% chance to increase %overwhelming_total_dmg%%% bonus total DMG for %overwhelming_duration%s. \n<h1><font color='#EC3D06'>Strength Superiority</font></h1> <font color='#EC3D06'>Only works when your main attribute is Strength: sets the base attack time to %base_attack_time%.</font> \n<h1><font color='#E6BA49'>UP: Luminosity</font></h1>Unyielding: Procs every 8 attacks <br>Overwhelming Force: Procs every 8 attacks \n<h1><font color='#DC5663'>UP: Chaos Strike</font></h1>Unyielding: Increases chance to 4%% <br>Overwhelming Force: Increases chance to 12%% \n<h1><font color='#733A4C'>UP: Grow Strong</font></h1>Unyielding: Increases chance by 3%%"
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine_lore"		"When The Contradiction Of Order & Chaos Combine, A Special Force Is Formed Capable Of Shattering The Thickest Of Armors...<br>---------------------<br><font color='#7E09E6'>Idea by ☆ Abuleil ☆</font>"
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine_note0"		"1) Item would drop from inventory if main attribute is not Strength can ONLY be held by courier."
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine_note1"		"2) If hero have <font color='#E6BA49'>Luminosity</font> and <font color='#DC5663'>Chaos Strike</font> Overwhelming Force procs every 6 attacks and have 20%% chance together."
@@ -9791,6 +9791,43 @@ Contains all random skills"
 	"DOTA_Tooltip_ability_huskar_inner_fire_custom_disarm_duration"						"DURATION:"
 	"DOTA_Tooltip_ability_huskar_inner_fire_custom_radius"								"RADIUS:"
 	"DOTA_Tooltip_ability_huskar_inner_fire_custom_knockback_distance"					"KNOCKBACK TO:"
+
+	// Marci
+	"DOTA_Tooltip_ability_marci_grapple_custom"							"Dispose"
+	"DOTA_Tooltip_ability_marci_grapple_custom_Description"				"Marci grabs an allied or enemy target and throws it effortlessly behind her, damaging and stunning the unit if it's an enemy. Any enemy units in the landing area will also be damaged and stunned."
+	"DOTA_Tooltip_ability_marci_grapple_custom_Lore"				"Marci excels at removing obstacles from Princess Mirana's path."
+	"DOTA_Tooltip_ability_marci_grapple_custom_throw_distance_behind"		"THROW DISTANCE:"
+	"DOTA_Tooltip_ability_marci_grapple_custom_stun_duration"				"STUN DURATION:"
+	"DOTA_Tooltip_ability_marci_grapple_custom_impact_damage"				"IMPACT DAMAGE:"
+
+	"DOTA_Tooltip_ability_marci_unleash_custom"						"Unleash"
+	"DOTA_Tooltip_ability_marci_unleash_custom_Description"			"Marci taps a hidden power, gaining Fury charges that allow her to deliver a rapid sequence of strikes. The last strike in every Fury combo creates a damaging pulse around the target that slows movement and attack speed for %pulse_debuff_duration%s. In between Fury combos, Marci is unable to attack for %time_between_flurries%s.\n\nMarci receives a basic dispel when Unleash is cast and gains %bonus_movespeed%%% movement speed."
+	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Once a Fury combo is started, each attack must be delivered within 1s or the Fury combo expires."
+	"DOTA_Tooltip_ability_marci_unleash_custom_Lore"					"Though some have sought to understand its origins, Marci rebuffs all attempts to divine the source of her power."
+	"DOTA_Tooltip_ability_marci_unleash_custom_duration"				"DURATION:"
+	"DOTA_Tooltip_ability_marci_unleash_custom_charges_per_flurry"		"STRIKES PER FURY:"
+	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_radius"			"PULSE RADIUS:"
+	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_damage"			"PULSE DAMAGE:"
+	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_move_slow_pct"	"%PULSE MOVEMENT SLOW:"
+	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_attack_slow_pct"	"PULSE ATTACK SLOW:"
+
+	"DOTA_Tooltip_ability_marci_companion_run_custom"						"Rebound"
+	"DOTA_Tooltip_ability_marci_companion_run_custom_Description"			"Vector targeted. Marci bounds to the targeted unit, choosing a direction and distance she will spring away from it. Upon reaching the unit, Marci lunges to her final destination, damaging and slowing enemies in the area.\n\nIf the unit she runs to is an ally, it receives %ally_movespeed_pct%%% bonus movement speed for %ally_buff_duration%s."
+	"DOTA_Tooltip_ability_marci_companion_run_custom_Lore"			"With a friendly or brazen boost, Marci can find her way into the midst of any fight."
+	"DOTA_Tooltip_ability_marci_companion_run_custom_Note0"				"Has %min_jump_distance% minimum jump distance."
+	"DOTA_Tooltip_ability_marci_companion_run_custom_Note1"				"Marci's initial run to her target unit can be disjointed."
+	"DOTA_Tooltip_ability_marci_companion_run_custom_impact_damage"		"IMPACT DAMAGE:"
+	"DOTA_Tooltip_ability_marci_companion_run_custom_movement_slow_pct"	"%MOVEMENT SLOW:"
+	"DOTA_Tooltip_ability_marci_companion_run_custom_debuff_duration"		"SLOW DURATION:"
+	"DOTA_Tooltip_ability_marci_companion_run_custom_max_jump_distance"	"CAST / JUMP RANGE:"
+
+	"DOTA_Tooltip_ability_marci_guardian_custom"						"Sidekick"
+	"DOTA_Tooltip_ability_marci_guardian_custom_Description"			"Marci's loyalty helps ensure survival, imbuing a chosen allied hero and herself with lifesteal and attack damage."
+	"DOTA_Tooltip_ability_marci_guardian_custom_Note0"					"Marci can self-cast Sidekick to buff herself and the nearest allied hero within %nearest_ally_search_range% range."
+	"DOTA_Tooltip_ability_marci_guardian_custom_Lore"					"Marci learned at a young age that the best asset in a scrap is a steady companion."
+	"DOTA_Tooltip_ability_marci_guardian_custom_buff_duration"			"DURATION:"
+	"DOTA_Tooltip_ability_marci_guardian_custom_lifesteal_pct"			"%LIFESTEAL:"
+	"DOTA_Tooltip_ability_marci_guardian_custom_bonus_damage"			"BONUS DAMAGE:"
 
 
 	}
