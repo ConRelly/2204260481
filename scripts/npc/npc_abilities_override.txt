@@ -3671,9 +3671,14 @@
 	}
 	"chaos_knight_phantasm"
 	{
-		"AbilityCooldown"				"45 45 45"
+		"AbilityCooldown"				"50"
 		"AbilitySpecial"
 		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"images_count"				"1"
+			}			
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
@@ -6556,13 +6561,13 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"armor_reduction"			"-4 -8 -12 -19 -26 -32 -40"
+				"armor_reduction"			"-4 -8 -16 -26 -32 -42 -65"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_3"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"120 445 1765 2880 5940 14770 31500"
+				"damage"					"120 645 2765 7880 15940 34770 81500"
 			}
 			"04"
 			{
@@ -7082,7 +7087,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"1400 3750 7500 13500 45600 82500 145000"
+		"AbilityDamage"					"1400 4750 17500 43500 145600 242500 345000"
 
 		"precache"
 		{
