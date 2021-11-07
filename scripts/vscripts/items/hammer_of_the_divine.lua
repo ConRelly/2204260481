@@ -193,10 +193,10 @@ function modifier_hotd_unyielding:IsPurgable() return false end
 function modifier_hotd_unyielding:RemoveOnDeath() return false end
 function modifier_hotd_unyielding:OnDestroy()
 	if IsServer() then
-		if self:GetParent():HasModifier("modifier_hammer_of_the_divine") then
-			if self:GetParent():IsAlive() then
+		if self:GetParent():IsAlive() then
+			if self:GetParent():HasModifier("modifier_hammer_of_the_divine") then
 				self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_hotd_unyielding", {})
-			end	
+			end
 		end
 	end
 end

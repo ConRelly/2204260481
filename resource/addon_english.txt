@@ -2824,14 +2824,13 @@
 
 
 	"DOTA_Tooltip_ability_mjz_io_overcharge"				"Overcharge"
-	"DOTA_Tooltip_ability_mjz_io_overcharge_Description"	"Io gains bonus attack speed,<font color='#0DE4EB'>No Speed Limit</font>, <font color='#0DE4EB'>True Strike</font>, <font color='#0DE4EB'>Stun and Disarm Immunity</font> at the cost of draining a percentage of its current health. If Io is tethered to an ally, that unit also gains the bonuses."
+	"DOTA_Tooltip_ability_mjz_io_overcharge_Description"	"Io gains bonus attack speed,<font color='#0DE4EB'>No Speed Limit</font>, <font color='#0DE4EB'>True Strike</font>, <font color='#0DE4EB'>Stun and Disarm Immunity</font> at the cost of draining a percentage of its current health. If Io is tethered to an ally, that unit also gains some bonuses."
 	"DOTA_Tooltip_ability_mjz_io_overcharge_Lore"			"Drawing on the energy of matter from all worlds, Io begins the unravelling of time."
-	"DOTA_Tooltip_ability_mjz_io_overcharge_drain_pct_tooltip"	"%HEALTH DRAIN:"
+	"DOTA_Tooltip_ability_mjz_io_overcharge_drain_pct"			"%HEALTH DRAIN:"
 	"DOTA_Tooltip_ability_mjz_io_overcharge_bonus_attack_speed"	"ATTACK SPEED:"
 	//"DOTA_Tooltip_ability_mjz_io_overcharge_bonus_damage_pct"	"%INCOMING DAMAGE REDUCTION:"
-	"DOTA_Tooltip_ability_mjz_io_overcharge_Note0"			"Io's tethered unit will also benefit from all the bonuses, but only Io pays the drain in HP."
-	"DOTA_Tooltip_ability_mjz_io_overcharge_Note1"          "Tethered unit will only have 50% uptime for Stun immunity and True Strike"
-	"DOTA_Tooltip_ability_mjz_io_overcharge_Note2"          "Semi Overcharge will not stop the hero to have true strike or stun immunity if he has that from other soruce"
+	"DOTA_Tooltip_ability_mjz_io_overcharge_Note0"          "Tethered unit will only have 50% uptime for Stun immunity and True Strike"
+	"DOTA_Tooltip_ability_mjz_io_overcharge_Note1"          "Semi Overcharge will not stop the hero to have true strike or stun immunity if he has that from other soruce"
 	"DOTA_Tooltip_modifier_mjz_io_overcharge_buff"					"Overcharged"
 	"DOTA_Tooltip_modifier_mjz_io_overcharge_buff_Description"		"Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%.<br>Have No Speed limit, and immune to Disarm.<br>Have True Strike and Stun immunity only when your not affected by Semi Overcharge."
 	"DOTA_Tooltip_modifier_mjz_io_overcharge_cd"                    "Semi Overcharge"

@@ -37,6 +37,7 @@ local modifier_class = modifier_mjz_night_stalker_crippling_fear_aura
 function modifier_class:IsPassive() return false end
 function modifier_class:IsHidden() return false end
 function modifier_class:IsPurgable() return false end
+function modifier_class:RemoveOnDeath() return false end
 
 --[[
 function modifier_class:GetEffectName()
@@ -52,13 +53,30 @@ if IsServer() then
     function modifier_class:OnCreated(table)
         local ability = self:GetAbility()
         local radius = ability:GetSpecialValueFor('radius')
+--[[
         local p_effect = "particles/units/heroes/hero_night_stalker/nightstalker_crippling_fear_aura.vpcf"
 
         local sFX = ParticleManager:CreateParticle( p_effect, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
         ParticleManager:SetParticleControl(sFX, 2, Vector(radius, radius, radius) )
         self:AddParticle(sFX, false, false, -1, false, false)
 		self.particle = sFX
+]]
+		self.particle = ParticleManager:CreateParticle("particles/units/heroes/hero_night_stalker/nightstalker_crippling_fear_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
+		self:AddParticle(self.particle, false, false, -1, false, false)
+		ParticleManager:SetParticleControl(self.particle, 0, self:GetCaster():GetAbsOrigin())
+		ParticleManager:SetParticleControl(self.particle, 1, self:GetCaster():GetAbsOrigin())
+		ParticleManager:SetParticleControl(self.particle, 2, Vector(radius, radius, radius))
+		ParticleManager:SetParticleControl(self.particle, 3, self:GetCaster():GetAbsOrigin())
+		self:StartIntervalThink(FrameTime())
     end
+
+    function modifier_class:OnIntervalThink()
+		if self.particle then
+			ParticleManager:SetParticleControl(self.particle, 0, self:GetCaster():GetAbsOrigin())
+			ParticleManager:SetParticleControl(self.particle, 1, self:GetCaster():GetAbsOrigin())
+			ParticleManager:SetParticleControl(self.particle, 3, self:GetCaster():GetAbsOrigin())
+		end
+	end
 
     function modifier_class:OnDestroy()
         local caster = self:GetParent()
@@ -74,26 +92,12 @@ end
 --------------------------------------------------------------
 
 function modifier_class:IsAura() return true end
-
-function modifier_class:GetModifierAura()
-	return "modifier_mjz_night_stalker_crippling_fear_effect"
-end
-
-function modifier_class:GetAuraSearchTeam()
-	return DOTA_UNIT_TARGET_TEAM_ENEMY
-end
-
-function modifier_class:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
-end
-
-function modifier_class:GetAuraSearchFlags()
-	return DOTA_UNIT_TARGET_FLAG_NONE
-end
-
-function modifier_class:GetAuraRadius()
-	return self:GetAbility():GetSpecialValueFor( "radius" )
-end
+function modifier_class:IsAuraActiveOnDeath() return true end
+function modifier_class:GetModifierAura() return "modifier_mjz_night_stalker_crippling_fear_effect" end
+function modifier_class:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
+function modifier_class:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
+function modifier_class:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_NONE end
+function modifier_class:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("radius") end
 
 
 -------------------------------------------------------------------

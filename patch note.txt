@@ -1355,7 +1355,11 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Ursa OverPower now gives Spell amp too and has a Super Scepter effect.
 * Buffed a lot of skills/talents (mostly dmg ones).Buffed stats growth and attack rate for many of less used heroes.
 * Some heroes gained Underdog status and some lost.
-* WK Aghanim duration down to 3 sec.
+* WK Aghanim's Scepter duration down to 3 sec. and range increased by 100
+* Fixed Overcharge (Io) abuse
+* Overcharge (Io): Stun Immunity and True Strike buff duration reduced to 5 seconds (buff cooldown has not changed)
+* Fixed Titan Relic debuff/buff amplification
+* Crippling Fear (Night Stalker) does not turn off when the hero dies
 
 
 
