@@ -8953,6 +8953,8 @@ Contains all random skills"
 		"DOTA_Tooltip_ability_sniper_shrapnel_lua_duration"									"Duration:"
 		"DOTA_Tooltip_ability_sniper_shrapnel_lua_shrapnel_damage"							"Damage:"
 		"DOTA_Tooltip_ability_sniper_shrapnel_lua_agi_multiplier"							"Agility As Bonus Damage:"
+		"DOTA_Tooltip_modifier_sniper_shrapnel_lua"                                         "Shrapnel"
+
 		"DOTA_Tooltip_ability_sniper_headshot_lua"											"Headshot"
 		"DOTA_Tooltip_ability_sniper_headshot_lua_Description"								"Sniper increases his accuracy, giving him a chance to deal extra damage, works with critical hit or other effects like Assassinate."
 		"DOTA_Tooltip_ability_sniper_headshot_lua_Lore"										"Taking potshots at steepstalkers in his childhood has been thoroughly refined into perfect leads on enemy combatants."

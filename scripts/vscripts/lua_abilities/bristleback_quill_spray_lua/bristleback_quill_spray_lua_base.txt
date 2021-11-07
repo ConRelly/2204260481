@@ -57,17 +57,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quill_base_damage"		"40 190 480 940 1750 2890 6500"
+				"quill_base_damage"		"40 190 880 1640 4750 9890 14500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"quill_stack_damage"	"30 32 34 36 40 60 120"
+				"quill_stack_damage"	"30 32 34 36 40 80 160"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"quill_stack_duration"	"8.0"
+				"quill_stack_duration"	"9.0"
 			}
 			"05"
 			{
@@ -77,7 +77,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"str_multiplier"		"16 19 22 25 30 35 40"
+				"str_multiplier"		"16 19 22 25 35 45 55"
 			}			
 		}
 	}

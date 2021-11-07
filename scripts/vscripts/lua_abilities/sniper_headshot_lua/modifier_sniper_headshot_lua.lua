@@ -14,11 +14,13 @@ end
 -- Initializations
 function modifier_sniper_headshot_lua:OnCreated(kv)
     -- references
-    self.proc_chance = self:GetAbility():GetSpecialValueFor("proc_chance") -- special value
-    self.slow_duration = self:GetAbility():GetSpecialValueFor("slow_duration") -- special value
-    --self.agi_multiplier = self:GetAbility():GetTalentSpecialValueFor("agi_multiplier") -- special value
-    self.knockback_distance = self:GetAbility():GetSpecialValueFor("knockback_distance")
-    self.knockback_agi_multiplier = self:GetAbility():GetSpecialValueFor("knockback_agi_multiplier")
+    if self:GetAbility() then
+        self.proc_chance = self:GetAbility():GetSpecialValueFor("proc_chance") -- special value
+        self.slow_duration = self:GetAbility():GetSpecialValueFor("slow_duration") -- special value
+        --self.agi_multiplier = self:GetAbility():GetTalentSpecialValueFor("agi_multiplier") -- special value
+        self.knockback_distance = self:GetAbility():GetSpecialValueFor("knockback_distance")
+        self.knockback_agi_multiplier = self:GetAbility():GetSpecialValueFor("knockback_agi_multiplier")
+    end    
 end
 
 function modifier_sniper_headshot_lua:OnRefresh(kv)
