@@ -13199,7 +13199,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"345"
+		"ArmorPhysical"				"395"
 		"MagicalResistance"		 "93"
 
 		// Attack
@@ -13882,7 +13882,7 @@
 		//"Ability21"				  "legion_commander_moment_of_courage"
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"			 "120"
+		"ArmorPhysical"			 "220"
 		"MagicalResistance"		 "90"
 
 		// Attack
@@ -14387,7 +14387,7 @@
 	"Ability15"				 "aghanim_laser"
 	"Ability16"				 "draks_unholy_strength"
 	"Ability17"				 "aghanim_blink"	
-	"ArmorPhysical"			 "420"		 // Physical protection.
+	"ArmorPhysical"			 "520"		 // Physical protection.
 	"MagicalResistance"		 "95"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"		   "25000"		// Damage range min.
@@ -14705,7 +14705,7 @@
 	//"Ability15"				 "darkrider_heartbeat"
 	"Ability16"				 "draks_unholy_strength"
 	"Ability17"				 "aghanim_blink"	
-	"ArmorPhysical"			 "369"		 // Physical protection.
+	"ArmorPhysical"			 "420"		 // Physical protection.
 	"MagicalResistance"		 "95"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"		   "1000"		// Damage range min.

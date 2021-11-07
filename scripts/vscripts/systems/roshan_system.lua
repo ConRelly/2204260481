@@ -18,7 +18,7 @@ local MAX_RESPAWN_TIME = 13                        -- 最长刷新时间
 local ROSHAN_CLASS_NAME = "npc_dota_roshan_mega"    -- Roshan 类名
 local ROSHAN_SPAWNER = "roshan_spawner"             -- 出生定位点
 
-if IsInToolsMode() then
+if IsInToolsMode() or GameRules:IsCheatMode() then
     MIN_RESPAWN_TIME = 1.0
     MAX_RESPAWN_TIME = 1.0
 end
@@ -277,6 +277,11 @@ function CRoshanSystem:CreateRoshan()
 
     if ( self._iNum >= 5 ) then
         hRoshan:AddItemByName('item_moon_shard')       -- 银月
+        if self._playernr > 2 then
+            if RollPercentage(10) then
+                hRoshan:AddItemByName('item_all_essence')
+            end    
+        end    
         --hRoshan:AddNewModifier(hRoshan, nil, 'modifier_roshan_bonus', nil)
     end
 

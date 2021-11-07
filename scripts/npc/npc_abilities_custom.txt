@@ -1224,7 +1224,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"time_between_flurries"	"0.2"
+				"time_between_flurries"	"0.2 0.2 0.2 0.2 0.2 0.15 0.1"
 			}
 			"05"
 			{
@@ -1239,7 +1239,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"pulse_damage"			"750 2950 9950 23750 48500 84800 195700"
+				"pulse_damage"			"750 2950 9950 23750 48500 94800 245700"
 			}
 			"08"
 			{
@@ -8953,14 +8953,14 @@
 	"AbilityCastPoint"				"0.1"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	"AbilityCooldown"				"18.0"
-	"AbilityDamage"					"2850"
+	"AbilityDamage"					"4850"
 	"AbilityManaCost"				"0"
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"radius"				"2500"
+			"radius"				"1400"
 		}
 		"02"
 		{
@@ -23299,7 +23299,7 @@
 			"09"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"mana_reg_dmg"		"4.0 4.1 4.2 4.3 4.4 4.5 4.6"
+				"mana_reg_dmg"		"5.0 5.1 5.2 5.3 5.4 5.5 6.6"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_crystal_maiden_forstbite"
 			}
 			"10"
@@ -23327,7 +23327,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"						"3.4"
+				"value"						"5.4"
 			}
 		}
 	}
@@ -23409,7 +23409,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"680"
+				"value"						"1680"
 			}
 		}
 	}
@@ -23576,7 +23576,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"2666"
+				"value"						"12666"
 			}
 		}
 	}
@@ -23706,7 +23706,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"strength_damage"		"300 350 400 450 500 600 700"
+				"strength_damage"		"300 350 400 450 600 800 1000"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_dragon_knight_0106"
 			}
 			"11"
@@ -23743,7 +23743,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"600"
+				"value"						"900"
 			}
 		}
 	}
@@ -23853,7 +23853,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"100 320 750"
+				"bonus_agility"					"300 820 1750"
 			}
 			"02"
 			{
@@ -24014,7 +24014,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"25"
+				"value"						"30"
 			}
 		}
 	}
@@ -24052,7 +24052,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_per_second"				"80 290 1890 2760 4600 8100 17200"
+				"damage_per_second"				"80 290 1890 2760 9600 18100 47200"
 				"LinkedSpecialBonus"			"special_bonus_unique_mjz_ember_spirit_flame_guard_damage_per"
 			}
 			"03"
@@ -24095,7 +24095,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"2700"
+				"value"						"8700"
 			}
 		}
 	}
@@ -24306,7 +24306,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"intelligence_damage"			"0.15"
+				"intelligence_damage"			"0.2"
 				"LinkedSpecialBonus"		"special_bonus_unique_enigma_100"
 			}
 			"03"
@@ -24464,7 +24464,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed_slow"		"-40 -60 -80 -100"
+				"attack_speed_slow"		"-40 -60 -80 -140"
 			}
 			"04"
 			{
@@ -24608,7 +24608,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_per_kill"			"300"
+				"damage_per_kill"			"350"
 				//"LinkedSpecialBonus"		"special_bonus_unique_lion_8"
 			}
 			"06"							//击杀计算时间（多少秒内死亡可以有伤害加成）
@@ -24924,13 +24924,13 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rocket_damage"				"120 320 870 1420 1860 2240 3650"
+				"rocket_damage"				"120 320 1870 3420 9860 18240 36500"
 				"LinkedSpecialBonus"		"special_bonus_unique_mjz_gyrocopter_rocket_barrage_damage" // "special_bonus_unique_gyrocopter_3"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"agi_damage_pct"			"160 200 260 340 480 550"
+				"agi_damage_pct"			"260 300 460 540 780 1050"
 			}
 			"11"
 			{
@@ -24958,7 +24958,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"1350"
+				"value"						"4350"
 			}
 		}
 	}
@@ -25752,7 +25752,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_stats"			"100 110 120 130 140 150 160"
+				"damage_stats"			"140 150 160 170 190 200 220"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_leshrac_diabolic_edict_1"
 			}			
 		}
@@ -25768,7 +25768,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"60"
+				"value"						"80"
 			}
 		}
 	}	
@@ -25943,7 +25943,7 @@
 			"05"							// 智力百分比伤害
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_intelligence_per"	"300 385 480 580 650"
+				"damage_intelligence_per"	"300 385 580 680 750"
 				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_3"
 			}
 			"11"
@@ -26433,6 +26433,7 @@
 				"Aura_Radius" 		"%radius"
 				"Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 				"Aura_Types" 		"DOTA_UNIT_TARGET_HERO"
+				"Aura_Flags" 		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD"
 
 				"Properties"
 				{
@@ -26682,13 +26683,13 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"175 675 1260 2325 3650 4850 7850"
+				"damage"				"175 675 1260 4325 8650 19850 37850"
 				"LinkedSpecialBonus"	"special_bonus_unique_mars_spear_bonus_damage"
 			}
 			"011"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"strength_damage"		"400 550 600 750 800 900 1200"
+				"strength_damage"		"600 750 800 950 1200 1400 1800"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_mars_spear_str_damage"
 			}
 			"02"
@@ -26746,7 +26747,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"800"
+				"value"						"1200"
 			}
 		}
 	}
@@ -27126,7 +27127,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_pct"			"180 260 320 480 570 690 800"
+				"damage_pct"			"280 360 420 580 670 790 900"
 			}
 			"12"
 			{
@@ -27495,12 +27496,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"base_damage"				"180 650 1450 2350 3450 4950 6500"
+				"base_damage"				"180 650 1450 4350 9450 18950 36500"
 			} 	
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"int_damage_multiplier"		"7 8 9 10 11 12 15" 
+				"int_damage_multiplier"		"10 11 12 15 18 22 30" 
 			}
 			"04"
 			{
@@ -28835,7 +28836,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"hp_perc_dmg"				"20.0 40.0 60.0 90.0 100.0 120.0 150.0"
+				"hp_perc_dmg"				"20.0 40.0 60.0 90.0 150.0 200.0 350.0"
 				"LinkedSpecialBonus"		"special_bonus_unique_phoenix_5"
 			}
 			"05"
@@ -29040,7 +29041,7 @@
 		"AbilityTextureName"			"mjz_puck_illusory_orb"
 		"AbilitySound"					"Hero_Puck.Illusory_Orb"
 		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "5"
+		"LevelsBetweenUpgrades"		 "7"
 		"AbilityCastPoint"				"0.1 0.1 0.1 0.1 0.1 0.1 0.1"
 		"AbilityCastRange"				"3000"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
@@ -29083,12 +29084,12 @@
 			"11"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"170 940 1910 2800 6200 12400 21500"
+				"damage"					"170 940 1910 2800 7200 14400 36500"
 			}
 			"12"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"intelligence_damage"		"180 300 520 940 1200 1450 1750"
+				"intelligence_damage"		"280 400 620 940 1800 3450 5750"
 			}
 			// Extra variables
 			"21"
@@ -29426,7 +29427,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"intelligence_damage"			"160 200 240 280 320 360 400" 
+				"intelligence_damage"			"160 200 240 280 380 460 600" 
 				"LinkedSpecialBonus"			"special_bonus_unique_mjz_pugna_nether_ward_intelligence"
 			}
 			"05"
@@ -29473,7 +29474,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"300"
+				"value"						"400"
 			}
 		}
 	}
@@ -29612,7 +29613,7 @@
 			"05"
 			{	
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"80 120 160 200"
+				"damage"				"180 320 460 800"
 				"LinkedSpecialBonus"	"special_bonus_unique_clockwerk_2"
 			}
 			"06"
@@ -29655,7 +29656,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"razor_unstable_current"	// "mjz_razor_unstable_current"
 		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "5"
+		"LevelsBetweenUpgrades"		 "7"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 
 		"HasScepterUpgrade"				"1"
@@ -29677,7 +29678,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"passive_area_damage"		"90 240 500 900 1400 2100 3200"		
+				"passive_area_damage"		"90 340 900 1900 8400 15100 36000"		
 				"LinkedSpecialBonus"		"special_bonus_unique_razor_4"
 			}
 			"03"
@@ -29703,7 +29704,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"attack_damage_pct"		"40 85 160 235 360 420 500"
+				"attack_damage_pct"		"40 85 160 235 460 620 950"
 			}
 		}
 	}
@@ -29791,7 +29792,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"str_damage_pct"		"200 300 400"
+				"str_damage_pct"		"200 400 700"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_sandking_epicenter_strength"
 			}
 			"05"
@@ -29880,7 +29881,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"650"
+				"value"						"950"
 			}
 		}
 	}
@@ -30475,7 +30476,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"960"
+				"value"						"3960"
 			}
 		}
 	}
@@ -30494,7 +30495,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityCastRange"				"700 800 900"
+		"AbilityCastRange"				"1300"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"25"
@@ -30508,7 +30509,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"-9 -15 -28 -44 -69"
+				"armor_reduction"		"-9 -15 -28 -44 -99"
 				"LinkedSpecialBonus"	"special_bonus_unique_slardar_5"
 			}
 			"02"
@@ -30541,7 +30542,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_move_speed"			"20 28 36 44"
+				"bonus_move_speed"			"20 48 86 124"
 			}
 			"02"
 			{
@@ -30580,7 +30581,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Slark.DarkPact.Cast"
-		"LevelsBetweenUpgrades"		 "4"
+		"LevelsBetweenUpgrades"		 "10"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCastRange"				"925"
@@ -30608,7 +30609,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_damage"			"175 450 725 1450"
+				"base_damage"			"175 1950 7250 14500"
 				// "LinkedSpecialBonus"	"special_bonus_unique_slark_2"
 				//"LinkedSpecialBonus"	"special_bonus_unique_mjz_slark_dark_pact_damage"
 			}
@@ -30625,7 +30626,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_damage_pct"		"35 55 65 95"
+				"health_damage_pct"		"35 65 95 165"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_slark_dark_pact_damage"
 			}
 		}
@@ -31043,7 +31044,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"spectre_desolate"
-		"LevelsBetweenUpgrades"		 "5"
+		"LevelsBetweenUpgrades"		 "7"
 		"Maxlevel"					  "7"
 		"AbilitySound"					"Hero_Spectre.Desolate"
 
@@ -31058,7 +31059,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"40 160 320 590 720 950 1225"
+				"bonus_damage"			"40 160 420 890 1420 1850 2325"
 				"LinkedSpecialBonus"	"special_bonus_unique_spectre_2"
 			}
 			"02"
@@ -31371,7 +31372,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"2900"
+				"value"						"3900"
 			}
 		}
 	}
@@ -31424,7 +31425,7 @@
 			"05"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"intelligence_damage"			"120 140 160 180 200 240 300"
+				"intelligence_damage"			"120 140 160 180 200 240 350"
 				"LinkedSpecialBonus"			"special_bonus_unique_mjz_storm_spirit_overload_01"
 			}
 			"06"
@@ -31444,7 +31445,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"250"
+				"value"						"350"
 			}
 		}
 	}
@@ -31532,7 +31533,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"800"
+				"value"						"1000"
 			}
 		}
 	}
@@ -32665,7 +32666,7 @@
 		"HasShardUpgrade"				"1"
 		"AbilitySound"					"Hero_Ursa.Earthshock"
 		"AbilityTextureName"			"mjz_ursa_earthshock"
-
+		"LevelsBetweenUpgrades"         "12"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0"
@@ -32686,12 +32687,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"75 125 475 1225"
+				"damage"					"175 1250 4750 22250"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"str_damage_pct"			"180 300 520 1040"
+				"str_damage_pct"			"180 500 1220 4540"
 			}
 			"04"
 			{
@@ -32756,8 +32757,8 @@
 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-
+		"AbilityCastPoint"				"0.0"
+		"LevelsBetweenUpgrades"         "5"
 		"AbilityCooldown"				"29 26 23 20"
 		"AbilityManaCost"				"75"
 		
@@ -32771,8 +32772,18 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
+				"bonus_spell_amp"			"25 50 75 100"
+			}			
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
 				"duration"					"6 8 10 13"
 			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus"						"2"
+			}						
 		}
 
 		"precache"
@@ -32800,7 +32811,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"60 200 440 820 1200"
+				"bonus_damage"			"160 900 2440 4820 12000"
 			}
 			"02"
 			{
@@ -32852,7 +32863,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"65 145 350 775 1400 2450 6420"
+				"damage"				"65 145 350 775 1800 4450 12420"
 			}
 			"04"
 			{
@@ -33003,7 +33014,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_mult"			"0.6 0.9 1.5 2.1 2.7 3.3 4.0"
+				"mana_mult"			"0.6 0.9 1.5 2.1 2.7 4.3 8.0"
 			}			
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
@@ -33215,7 +33226,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"450"
+				"value"						"850"
 			}
 		}
 	}
@@ -33417,7 +33428,7 @@
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"int_damage"			"100 150 200 250 300 350 500"
+				"int_damage"			"100 150 200 250 300 450 700"
 			}
 			
 		}
@@ -33483,7 +33494,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"350"
+				"value"						"450"
 			}
 		}
 	}

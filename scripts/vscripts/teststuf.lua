@@ -181,7 +181,8 @@ function GetRandomAbilityName( hero )
         --"hoodwink_bushwhack", 
         --"oracle_false_promise", -- insta kills
         --"brewmaster_storm_cyclone", -- probably crash if hero has some stun immunity and/or moves during
-        --"enchantress_natures_attendants",                               
+        --"enchantress_natures_attendants", 
+        --"mjz_night_stalker_hunter_in_the_night", maybe problematic with crash.                        
         "phantom_assassin_blur",
         "custom_leap",       
         "ember_spirit_searing_chains",
@@ -189,7 +190,6 @@ function GetRandomAbilityName( hero )
         "beastmaster_inner_beast",     
         "spirit_breaker_greater_bash",           
         "sven_great_cleave",                
-        "mjz_night_stalker_hunter_in_the_night",   
         "magnataur_empower",                
         "legion_commander_custom_duel",                
         "alchemist_chemical_rage",                 

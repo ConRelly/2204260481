@@ -20393,7 +20393,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"295"
+				"bonus_armor"			"395"
 			}
 			"03"
 			{
@@ -20403,7 +20403,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_attack_speed"		"-165"
+				"aura_attack_speed"		"-199"
 			}
 			"05"
 			{

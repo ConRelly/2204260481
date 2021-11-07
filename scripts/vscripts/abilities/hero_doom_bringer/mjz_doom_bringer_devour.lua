@@ -336,7 +336,7 @@ function modifier_mjz_doom_bringer_devour:OnDestroy() end
 
 -----------------------------------------------------------------------------
 modifier_mjz_doom_bringer_devour_regen = class({})
-function modifier_mjz_doom_bringer_devour_regen:IsHidden() return false end
+function modifier_mjz_doom_bringer_devour_regen:IsHidden() return true end
 function modifier_mjz_doom_bringer_devour_regen:IsPurgable() return false end
 function modifier_mjz_doom_bringer_devour_regen:IsBuff() return true end
 function modifier_mjz_doom_bringer_devour_regen:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end

@@ -9686,18 +9686,18 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"scepter_duration"		"7"
+				"scepter_duration"		"3"
 				"RequiresScepter"			"1"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"	"2200"
+				"aura_radius"	"2300"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius_tooltip_scepter"	"2200"
+				"aura_radius_tooltip_scepter"	"2300"
 				"RequiresScepter"			"1"
 			}
 		}		

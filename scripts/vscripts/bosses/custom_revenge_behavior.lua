@@ -49,7 +49,7 @@ function modifier_custom_revenge_behavior:OnCreated()
 		self.mana_regen_percent = 0
 		self.isDisabled = false;
 		self:StartIntervalThink(self.interval)
-		print(self.revengeAbility:GetAbilityName())
+		--print(self.revengeAbility:GetAbilityName())
 	end
 end
 function modifier_custom_revenge_behavior:OnIntervalThink()
@@ -88,7 +88,7 @@ function modifier_custom_revenge_behavior:GetModifierTotalPercentageManaRegen()
 end
 
 function modifier_custom_revenge_behavior:getPissed()
-	self.parent:Heal(self.parent:GetMaxHealth() * 0.04, nil)
+	self.parent:Heal(self.parent:GetMaxHealth() * 0.1, nil)
     self.parent:CastAbilityNoTarget(self.revengeAbility, -1)
 end
 

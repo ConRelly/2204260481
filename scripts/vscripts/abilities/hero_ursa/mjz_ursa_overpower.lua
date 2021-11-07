@@ -9,7 +9,7 @@ if IsServer() then
 		local ability = self
 		local caster = self:GetCaster()
 		local duration = ability:GetSpecialValueFor('duration')
-
+		local bonus = ability:GetSpecialValueFor('bonus')
 		local modifier_name = 'modifier_mjz_ursa_overpower'
 
 		local modifier = caster:FindModifierByName(modifier_name)
@@ -19,7 +19,14 @@ if IsServer() then
 		else
 			caster:AddNewModifier(caster, ability, modifier_name, {duration = duration})
 		end
-
+		if caster:HasModifier("modifier_super_scepter") then
+			if RollPercentage(50) then
+				if IsValidEntity(caster) and caster:IsAlive() then
+					caster:ModifyAgility(bonus)
+					caster:ModifyStrength(bonus)
+				end	
+			end				
+		end	
 		EmitSoundOn("Hero_Ursa.Overpower", caster)
 	end
 end
@@ -46,12 +53,17 @@ end
 function modifier_class:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
 	}
 	return funcs
 end
 
 function modifier_class:GetModifierAttackSpeedBonus_Constant( )
-	return self:GetAbility():GetSpecialValueFor('bonus_attack_speed')
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor('bonus_attack_speed') end
+end
+
+function modifier_class:GetModifierSpellAmplify_Percentage()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor('bonus_spell_amp') end
 end
 
 if IsServer() then

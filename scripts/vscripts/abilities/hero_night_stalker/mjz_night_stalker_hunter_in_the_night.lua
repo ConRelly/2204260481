@@ -13,6 +13,7 @@ function modifier_mjz_night_stalker_hunter_in_the_night:IsPassive() return true 
 function modifier_mjz_night_stalker_hunter_in_the_night:IsHidden() return true end
 function modifier_mjz_night_stalker_hunter_in_the_night:IsPurgable() return false end
 function modifier_mjz_night_stalker_hunter_in_the_night:OnCreated()
+	if IsServer() then
 --[[
 	if IsServer() then
 		if _G._Sun == nil then
@@ -24,10 +25,11 @@ function modifier_mjz_night_stalker_hunter_in_the_night:OnCreated()
 		end
 	end
 ]]
-	if not self:GetCaster():HasModifier("modifier_night_stalker_hunter_in_the_night") then
-		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_night_stalker_hunter_in_the_night", {})
-	end
-	self:StartIntervalThink(FrameTime())
+		if not self:GetCaster():HasModifier("modifier_night_stalker_hunter_in_the_night") then
+			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_night_stalker_hunter_in_the_night", {})
+		end
+		self:StartIntervalThink(FrameTime())
+	end	
 end
 --[[
 function modifier_mjz_night_stalker_hunter_in_the_night:OnIntervalThink()
