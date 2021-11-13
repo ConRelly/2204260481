@@ -13,13 +13,7 @@
 {
 	"UnitLabel"					"no_underdog"
 
-	//"Ability1"				"atomic_samurai_focused_atomic_slash"
-	//"Ability2"				"mjz_chaos_knight_chaos_strike_2"
 	"Ability3"				"mjz_pudge_rot"
-	//"Ability4"				"jotaro_absolute_defense_2"
-	//"Ability5"				"atomic_samurai_focused_atomic_slash"
-	//"Ability7"				"draks_unholy_strength"
-	//"Ability8"				"faceless_void_time_walk"
 	"Ability5"				"custom_aphotic_shield"
 	"Ability10"				"special_bonus_unique_mjz_pudge_rot_health"
 	"Ability11"				"special_bonus_reincarnation_90"
@@ -527,6 +521,7 @@
 		"Ability6"				"mjz_bloodseeker_rupture"
 		"Ability10"				"special_bonus_unique_bloodseeker"
 		"Ability11"				"special_bonus_cleave_25"
+		"Ability12"             "special_bonus_hp_4000"
 		"Ability14"				"special_bonus_unique_mjz_bloodseeker_rupture_01"
 		"Ability15"				"special_bonus_lifesteal_10"
 		"Ability16"				"special_bonus_cdr_40"
@@ -1647,7 +1642,7 @@
 		"Ability16"				"special_bonus_unique_mjz_centaur_return_aura"
 		"Ability17"				"special_bonus_unique_mjz_centaur_double_edge_strength"
 		"AttributeStrengthGain"				"14.5"
-		"UnitLabel"			  "no_underdog"
+		//"UnitLabel"			  "no_underdog"
 	}
 
 	"npc_dota_hero_clinkz_mjz"
@@ -1873,13 +1868,13 @@
 	"npc_dota_hero_skeleton_king_mjz"			//骷髅王
 	{
 		"override_hero"			"npc_dota_hero_skeleton_king"
-		"UnitLabel"				"no_underdog"
+		//"UnitLabel"				"no_underdog"
 
 		"Ability5"				"mjz_skeleton_king_ghost"
 		"Ability14"				"special_bonus_strength_260"
 		"Ability17"				"special_bonus_cleave_100"
 
-		"AttributeStrengthGain"		"8.900000"
+		"AttributeStrengthGain"		"12.900000"
 		"AttributeAgilityGain"		"5.700000"
 	}
 

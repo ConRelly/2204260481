@@ -1362,6 +1362,13 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Crippling Fear (Night Stalker) does not turn off when the hero dies
 
 
+* Undying Q buff now does not expire and Scales with Str on damage
+* Wraith King ultimate now can be refresh
+* WK and Centaur added to underdog.
+* Marci ult deals more dmg on last 2 lvls.
+* Tinker missing skill is back.
+* Removed some skills from -extramode that where causing crash.
+
 
 
 

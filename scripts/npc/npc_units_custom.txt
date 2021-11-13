@@ -9929,7 +9929,7 @@
 	// Armor
 	//----------------------------------------------------------------
 	"ArmorPhysical"			 "5"		 // Physical protection.
-	"MagicalResistance"			 "10"			// Magical protection.
+	"MagicalResistance"			 "60"			// Magical protection.
 
 	// Attack
 	//----------------------------------------------------------------
@@ -9987,8 +9987,8 @@
 {
 	"Ability7"				  "summon_defense"
 	"Ability8"				  "bloodseeker_thirst" 
-	"ArmorPhysical"			 "75"
-	"MagicalResistance"		 "10"
+	"ArmorPhysical"			 "125"
+	"MagicalResistance"		 "70"
 	"AttackDamageMin"		   "850"
 	"AttackDamageMax"		   "1495"
 	"StatusHealth"				"1300"
@@ -10015,7 +10015,7 @@
 	"Ability7"				  "summon_defense"  
 	"Ability8"				  "bloodseeker_thirst" 	
 	"AttackRate"				"0.7"
-	"MagicalResistance"				"10"
+	"MagicalResistance"				"50"
 	"StatusHealth"			  "1000"
 	"AttackDamageMin"		   "1785"			// Damage range min.
 	"AttackDamageMax"		   "2985"			// Damage range max.

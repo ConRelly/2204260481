@@ -36,11 +36,13 @@ if IsServer() then
 	function modifier_class:GetModifierPreAttack_CriticalStrike(event)
 		local target = event.target 
 		local attacker = event.attacker
-		local ability = self:GetAbility()
-		if ability.crit then
-			local crit_bonus = GetTalentSpecialValueFor(ability, "crit_bonus")
-			return crit_bonus
-		end
+		if self:GetAbility() then
+			local ability = self:GetAbility()
+			if ability.crit then
+				local crit_bonus = GetTalentSpecialValueFor(ability, "crit_bonus")
+				return crit_bonus
+			end
+		end	
 	end
 
 	function modifier_class:OnAttack( event )

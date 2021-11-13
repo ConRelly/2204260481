@@ -228,17 +228,17 @@ function modifier_aghanim_blink_slayer:DeclareFunctions()
 end
 function modifier_aghanim_blink_slayer:GetModifierMagicalResistanceBonus()
 	if not self:GetParent():PassivesDisabled() then
-		return self:GetAbility():GetSpecialValueFor("magic_resist")
+		if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("magic_resist") end
 	end
 end
 function modifier_aghanim_blink_slayer:GetModifierPhysicalArmorBonus()
 	if not self:GetParent():PassivesDisabled() then
-		return self:GetAbility():GetSpecialValueFor("armor_bonus")
+		if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("armor_bonus") end
 	end
 end
 function modifier_aghanim_blink_slayer:GetModifierHealthBonus()
 	if not self:GetParent():PassivesDisabled() then
-		return self:GetAbility():GetSpecialValueFor("health_bonus")
+		if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("health_bonus") end
 	end
 end
 --=================================================================================================

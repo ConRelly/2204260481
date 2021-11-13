@@ -182,11 +182,14 @@ function GetRandomAbilityName( hero )
         --"oracle_false_promise", -- insta kills
         --"brewmaster_storm_cyclone", -- probably crash if hero has some stun immunity and/or moves during
         --"enchantress_natures_attendants", 
-        --"mjz_night_stalker_hunter_in_the_night", maybe problematic with crash.                        
+        --"mjz_night_stalker_hunter_in_the_night", maybe problematic with crash.   
+        --"mjz_juggernaut_blade_fury", crash on mobs  
+        --"keeper_of_the_light_radiant_bind",   crash 
+        --"mjz_troll_warlord_fervor", stats not good  
+        --"viper_viper_strike",             
         "phantom_assassin_blur",
         "custom_leap",       
-        "ember_spirit_searing_chains",
-        "mjz_troll_warlord_fervor",                       
+        "ember_spirit_searing_chains",                   
         "beastmaster_inner_beast",     
         "spirit_breaker_greater_bash",           
         "sven_great_cleave",                
@@ -229,7 +232,6 @@ function GetRandomAbilityName( hero )
         "tusk_tag_team",
         "tidehunter_ravage",
         "viper_nethertoxin",
-        "viper_viper_strike",
         "enigma_midnight_pulse",
         "sniper_headshot", 
         "lich_chain_frost",
@@ -292,13 +294,11 @@ function GetRandomAbilityName( hero )
         "abyssal_underlord_firestorm",
         "faceless_void_time_dilation",
         "enigma_malefice",
-        "keeper_of_the_light_radiant_bind",
         "skywrath_mage_concussive_shot",
         "skywrath_mage_mystic_flare",
         "ogre_magi_ignite",
         "axe_battle_hunger",
         "axe_berserkers_call",
-        "mjz_juggernaut_blade_fury",
         "razor_static_link",
         "riki_smoke_screen",
         "nevermore_dark_lord",

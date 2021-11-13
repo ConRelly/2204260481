@@ -12,28 +12,30 @@ undying_custom_decay = class({})
 
 
 function undying_custom_decay:OnSpellStart()
-    local caster = self:GetCaster()
-    local target = self:GetCursorTarget()
+    if IsServer() then
+        local caster = self:GetCaster()
+        local target = self:GetCursorTarget()
+        local str = caster:GetStrength()
+        local damage = str * self:GetSpecialValueFor("damage")
 
-    local damage = self:GetSpecialValueFor("damage")
+        ApplyDamage({
+            ability = self,
+            attacker = caster,
+            damage = damage,
+            damage_type = self:GetAbilityDamageType(),
+            victim = target
+        })
 
-    ApplyDamage({
-		ability = self,
-		attacker = caster,
-		damage = damage,
-		damage_type = self:GetAbilityDamageType(),
-		victim = target
-    })
+        local duration = self:GetSpecialValueFor("duration")
 
-    local duration = self:GetSpecialValueFor("duration")
+        caster:AddNewModifier(caster, self, "modifier_undying_custom_decay_buff", {
+            duration = duration
+        })
+        
+        caster:EmitSound("Hero_Undying.Decay.Cast")
 
-    caster:AddNewModifier(caster, self, "modifier_undying_custom_decay_buff", {
-        duration = duration
-    })
-    
-    caster:EmitSound("Hero_Undying.Decay.Cast")
-
-    ParticleManager:CreateParticle("particles/econ/items/undying/undying_manyone/undying_pale_tombstone.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+        ParticleManager:CreateParticle("particles/econ/items/undying/undying_manyone/undying_pale_tombstone.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+    end    
 end
 
 
@@ -52,7 +54,9 @@ modifier_undying_custom_decay_hud = class({})
 function modifier_undying_custom_decay_hud:IsBuff()
     return true
 end
-
+function modifier_undying_custom_decay_hud:RemoveOnDeath()
+    return false
+end
 
 function modifier_undying_custom_decay_hud:GetTexture()
     return "undying_decay"
@@ -77,6 +81,9 @@ modifier_undying_custom_decay_buff = class({})
 
 function modifier_undying_custom_decay_buff:IsHidden()
     return true
+end
+function modifier_undying_custom_decay_buff:RemoveOnDeath()
+    return false
 end
 
 

@@ -61,11 +61,13 @@ function modifier_custom_nyx_behavior:OnIntervalThink()
 				self.flippedIntermediate = false
 			end
 		else 
-			ExecuteOrderFromTable({
-				UnitIndex = self.parent:entindex(), 
-				OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
-				TargetIndex = self.ancient:entindex()
-			})
+			if self.ancient then
+				ExecuteOrderFromTable({
+					UnitIndex = self.parent:entindex(), 
+					OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
+					TargetIndex = self.ancient:entindex()
+				})
+			end	
 		end
 	end	
 end

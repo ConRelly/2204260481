@@ -28,39 +28,42 @@ end
 
 function modifier_imba_coup_de_grace:OnCreated()	
 	-- Ability properties
-	self.caster = self:GetCaster()
-	--if self.caster:IsIllusion() then return end
-	self.ability = self:GetAbility()
-	self.parent = self:GetParent()
---	self.ps_coup_modifier = "modifier_imba_phantom_strike_coup_de_grace"			
-	self.modifier_stacks = "modifier_imba_coup_de_grace_crit"
+	if self:GetAbility() then
+		self.caster = self:GetCaster()
+		--if self.caster:IsIllusion() then return end
+		self.ability = self:GetAbility()
+		self.parent = self:GetParent()
+	--	self.ps_coup_modifier = "modifier_imba_phantom_strike_coup_de_grace"			
+		self.modifier_stacks = "modifier_imba_coup_de_grace_crit"
 
-	-- Ability specials
-	self.crit_chance = self.ability:GetSpecialValueFor("crit_chance")								
---	self.crit_increase_duration = self.ability:GetSpecialValueFor("crit_increase_duration")		 			
-	self.crit_bonus = self.ability:GetSpecialValueFor("crit_bonus")
-	self.crit_stack_mult = self.ability:GetSpecialValueFor("crit_increase_mult")
-	if IsServer() then
-		local caster = self:GetCaster()
-		local parent = self:GetParent()
-		local ability = self:GetAbility()
-		if parent:IsIllusion() or parent:HasModifier("modifier_arc_warden_tempest_double") then
-			
-			local mod1 = "modifier_imba_coup_de_grace"
-		-- print("ilusion")
-			local owner = PlayerResource:GetSelectedHeroEntity(parent:GetPlayerOwnerID())
-			if owner then       
-				if parent:HasModifier(mod1) then
-					local modifier1 = parent:FindModifierByName(mod1)
-					if owner:HasModifier(mod1) then
-						local modifier2 = owner:FindModifierByName(mod1)
-						modifier1:SetStackCount(modifier2:GetStackCount())
-					end	
-					--print("illusion nevermore2")
+		-- Ability specials
+		self.crit_chance = self.ability:GetSpecialValueFor("crit_chance")								
+	--	self.crit_increase_duration = self.ability:GetSpecialValueFor("crit_increase_duration")		 			
+		self.crit_bonus = self.ability:GetSpecialValueFor("crit_bonus")
+		self.crit_stack_mult = self.ability:GetSpecialValueFor("crit_increase_mult")
+
+		if IsServer() then
+			local caster = self:GetCaster()
+			local parent = self:GetParent()
+			local ability = self:GetAbility()
+			if parent:IsIllusion() or parent:HasModifier("modifier_arc_warden_tempest_double") then
+				
+				local mod1 = "modifier_imba_coup_de_grace"
+			-- print("ilusion")
+				local owner = PlayerResource:GetSelectedHeroEntity(parent:GetPlayerOwnerID())
+				if owner then       
+					if parent:HasModifier(mod1) then
+						local modifier1 = parent:FindModifierByName(mod1)
+						if owner:HasModifier(mod1) then
+							local modifier2 = owner:FindModifierByName(mod1)
+							modifier1:SetStackCount(modifier2:GetStackCount())
+						end	
+						--print("illusion nevermore2")
+					end    
 				end    
-			end    
+			end
 		end
-	end	
+	end		
 end
 
 function modifier_imba_coup_de_grace:OnRefresh()

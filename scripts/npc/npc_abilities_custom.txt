@@ -1239,7 +1239,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"pulse_damage"			"750 2950 9950 23750 48500 94800 245700"
+				"pulse_damage"			"750 2950 9950 23750 68500 144800 345700"
 			}
 			"08"
 			{
@@ -14798,6 +14798,7 @@
 	"AbilityTextureName"			"undying_decay"
 	"AbilityCastAnimation"			"ACT_DOTA_UNDYING_DECAY"
 	"AbilityCastGestureSlot"		"DEFAULT"
+	"LevelsBetweenUpgrades"         "10"
 	"AbilityCastRange"				"800"
 	"AbilityCastPoint"				"0.45"
 	"AbilityCooldown"				"45.0"
@@ -14809,7 +14810,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"200 450 900 2500"
+			"damage"				"4 5 6 7"
 		}
 		"02"
 		{
