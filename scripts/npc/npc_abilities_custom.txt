@@ -32,6 +32,8 @@
 #base "../vscripts/lua_abilities/bristleback_warpath_lua/bristleback_warpath_lua_base.txt"
 #base "../vscripts/lua_abilities/tinker_laser_lua/tinker_laser_lua.txt"
 
+#base "../vscripts/heroes/hero_kardel/kardel.txt"
+
 #base "../npc/talents/armor.txt"
 #base "../npc/talents/health.txt"
 #base "../npc/talents/spell_amplify.txt"
@@ -31264,8 +31266,8 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"MaxLevel"					  "5"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"MaxLevel"						"10"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityManaCost"				"30"
 		"AbilityCooldown"				"1"
@@ -31279,93 +31281,34 @@
 		
 		"AbilitySpecial"
 		{
-			"01"
+			"1"
 			{
-				"var_type"										"FIELD_INTEGER"
-				"ball_lightning_initial_mana_percentage"		"3"		
+				"var_type"						"FIELD_INTEGER"
+				"bonus_move_speed"				"50 100 150 200 250 300 350 400 450 500"
 			}
-			"02"
+			"2"
 			{
-				"var_type"										"FIELD_INTEGER"
-				"ball_lightning_initial_mana_base"				"15"		
+				"var_type"						"FIELD_FLOAT"
+				"mana_percentage"				"1 2 3 4 5 6 7 8 9 10"
+				"LinkedSpecialBonus"			"special_bonus_unique_mjz_storm_spirit_ball_lightning_02"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
 			}
-			"03"
+			"3"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"ball_lightning_move_speed"			"1250 1475 1700 2000 2750"		
+				"var_type"						"FIELD_INTEGER"
+				"damage"						"150 300 600 1200 2400 4800 9200 18400 36800 73600"
+				"LinkedSpecialBonus"			"special_bonus_unique_mjz_storm_spirit_ball_lightning_01"
 			}
-			"04"
+			"4"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"ball_lightning_aoe"				"650"		
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"560"
 			}
-			"05"
+			"5"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"ball_lightning_travel_cost_base"	"12"		
+				"var_type"						"FIELD_INTEGER"
+				"dmg_reduction"					"0 5 10 15 20 25 30 35 40 45"
 			}
-			"06"
-			{
-				"var_type"								"FIELD_FLOAT"
-				"ball_lightning_travel_cost_percent"	"0.7"		
-			}
-			"07"
-			{
-				"var_type"								"FIELD_INTEGER"
-				"ball_lightning_vision_radius"			"1000"		
-			}
-			// Extra variable
-			"08"
-			{
-				"var_type"								"FIELD_INTEGER"
-				"tree_destroy_radius"					"100"
-			}
-			"09"
-			{
-				"var_type"								"FIELD_INTEGER"
-				"distance_per_mana"						"100"
-			}
-			"10"
-			{
-				"var_type"								"FIELD_FLOAT"
-				"tree_destroy_interval"					"0.5"
-			}
-			"11"
-			{
-				"var_type"								"FIELD_INTEGER"
-				"distance_per_damage"					"100"
-			}
-			"20"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_move_speed"					"220 240 280 300 320"		
-			}
-			"21"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"mana_percentage"					"1 2 3 4 5"		
-			}
-			"22"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"damage"							"120 340 960 2900 3750"
-				"LinkedSpecialBonus"	"special_bonus_unique_mjz_storm_spirit_ball_lightning_01"
-			}
-			"23"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"radius"							"560"
-			}
-			"24"
-			{
-				"var_type"								"FIELD_INTEGER"
-				"scepter_remnant_interval"			"300"		
-			}
-			"25"
-			{
-				"var_type"								"FIELD_INTEGER"
-				"reduction_tooltip"				   "60"		
-			}			
 		}
 	}
 	"special_bonus_unique_mjz_storm_spirit_ball_lightning_01"
@@ -31378,7 +31321,21 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"3900"
+				"value"						"6400"
+			}
+		}
+	}
+	"special_bonus_unique_mjz_storm_spirit_ball_lightning_02"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"1"
 			}
 		}
 	}
@@ -31393,8 +31350,11 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "9"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"9"
+		"HasShardUpgrade"				"1"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"150"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityModifierSupportBonus"	"40"
 
@@ -31420,7 +31380,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"overload_attack_slow"			"-60"
+				"overload_attack_slow"			"-90"
 			}
 			"04"
 			{
@@ -31438,6 +31398,26 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"slow_duration"					"0.6"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"shard_radius"					"750"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"shard_stacks"					"3"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"shard_duration"				"12"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"shard_bonus_as"				"150"
 			}
 		}
 	}
@@ -42100,6 +42080,62 @@
 		}
 	}
 
+// Earth Spirit: Rollin' Stone
+	"rolling_stone"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_earth_spirit/rolling_stone"
+		"AbilityTextureName"			"earth_spirit_magnetize"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"						"10"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityManaCost"				"0"
+		"AbilityCooldown"				"5"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
+		}
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_ms"						"30 60 90 120 150 180 210 240 270 300"
+			}
+			"2"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"remnant_bonus_ms"				"150"
+			}
+			"3"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"health_percentage"				"0.75 1.5 2.25 3 3.75 4.5 5.25 6 6.75 7.5"
+			}
+			"4"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"str_damage"					"50 75 125 200 300 400 550 700 850 1000"
+			}
+			"5"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"						"500"
+			}
+			"6"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"dmg_reduction"					"0 5 10 15 20 25 30 35 40 45"
+			}
+		}
+	}
+
 //////////MOBS//////////
 // Terrorblade (22 wave) Sunder
 	"cast_sunder"
@@ -42592,6 +42628,23 @@
 				"var_type"				"FIELD_INTEGER"
 				"max_radius"			"1000"
 			}			
+		}
+	}
+
+	"damage_meter"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"abilities/damage_meter"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"		"techies_suicide"
+		"MaxLevel"					"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"5"
+			}
 		}
 	}
 }

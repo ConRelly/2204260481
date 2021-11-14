@@ -15547,5 +15547,90 @@
 		}
 	}
 
+	"npc_dota_dummy_misha"
+	{
+		"Model"						"models/heroes/ursa/ursa.vmdl"
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"Hero_Ursa"
+		"Level"						"1"
+		"ModelScale"				"1"
+		"HasInventory"				"1"
+		"CanBeDominated"			"0"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"damage_meter"
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"
+		"MagicalResistance"			"0"
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"1"
+		"AttackDamageMax"			"1"
+		"AttackRate"				"1"
+		"AttackAnimationPoint"		"0.38"
+		"AttackAcquisitionRange"	"9999"
+		"AttackRange"				"150"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"0"
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"70"
+		"HealthBarOffset"			"250"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"400"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1"
+		"StatusHealthRegen"			"0"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"150"		// Range of vision during day light.
+		"VisionNighttimeRange"		"150"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"Creature"
+		{
+			"DisableClumpingBehavior"	 "1"
+			"AttachWearables"
+			{
+				"1" { "ItemDef" "12982" } //Mask of the Sangstrath Fold
+				"2" { "ItemDef" "14944" } //Dipper the Destroyer
+				"3" { "ItemDef" "6893" } //Swift Claw
+				"4" { "ItemDef" "12984" } //Barding of the Sangstrath Fold
+				"5" { "ItemDef" "7654" } //Claws of the Ferocious Heart
+			}
+			"EquippedItems"
+			{
+				"1"
+				{
+					"Item"					"item_branches"
+				}
+			}
+		}
+	}
+
 }
 #base "../vscripts/lua_abilities/mars_arena_of_blood_lua/mars_arena_of_blood_lua_units.txt"

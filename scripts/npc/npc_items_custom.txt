@@ -1315,23 +1315,23 @@
 		"12"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"armor_reduc"					"0.65" 
+			"armor_reduc"					"65" 
 		}
 		"13"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"armor_reduc_tooltip"					"65" 
-		}
-		"14"
 		{
 			"var_type"						"FIELD_FLOAT"
 			"duration"						"1.1" 
 		}
-		"15"
+		"14"
 		{
 			"var_type"						"FIELD_INTEGER"
 			"magic_resist_redu"				 "-25" 
-		}															 
+		}
+		"15"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"projectile_increase"			"60" 
+		}
 	}
 }
 "item_recipe_burning_radiance"
@@ -5646,8 +5646,32 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"items/piety.lua"
-				"Function"				"ChangeHero"
+				"ScriptFile"			"items/transform.lua"
+				"Function"				"ChangeHeroPiety"
+			}
+		}
+	}
+
+	"item_to_kardel"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName" 			"custom/kardel_kit"
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"0"
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"AbilitySpecial"
+		{
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"items/transform.lua"
+				"Function"				"ChangeHeroKardel"
 			}
 		}
 	}
@@ -10579,7 +10603,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"	  		"item_recipe"
-		"ItemCost"						"0"
+		"ItemCost"						"100"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_ethereal_blade_2"
@@ -11916,7 +11940,7 @@
 			"05"						//Debuff	减攻击速度
 			{
 				"var_type"				"FIELD_INTEGER"
-				"debuff_attack_speed"	"-80"
+				"debuff_attack_speed"	"-150"
 			}
 			"06"						//Debuff	持续时间
 			{
@@ -17664,6 +17688,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"chest_4"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 	"ItemGloballyCombinable"		"1"
 	"ItemQuality"					"rare"
 	"ItemPurchasable"				"1"
@@ -18014,6 +18039,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"chest_5"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 	"ItemGloballyCombinable"		"1"
 	"ItemQuality"					"rare"
 	"ItemPurchasable"				"1"

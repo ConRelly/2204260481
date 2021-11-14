@@ -38,16 +38,16 @@ function modifier_doom_devour_lua:OnCreated( kv )
 	-- references
 	self.bonus_gold = self:GetAbility():GetSpecialValueFor( "bonus_gold" )
 	self.bonus_regen = self:GetAbility():GetSpecialValueFor( "regen" )
-	self.regen_str_multiplier = self:GetAbility():GetSpecialValueFor( "regen_str_multiplier" )
-	self.gold_int_multiplier = self:GetAbility():GetSpecialValueFor( "gold_int_multiplier" )
+	self.regen_str_multiplier = self:GetAbility():GetSpecialValueFor( "regen_str_multiplier" ) / 100
+	self.gold_int_multiplier = self:GetAbility():GetSpecialValueFor( "gold_int_multiplier" ) / 100
 end
 
 function modifier_doom_devour_lua:OnRefresh( kv )
 	-- references
 	self.bonus_gold = self:GetAbility():GetSpecialValueFor( "bonus_gold" )
 	self.bonus_regen = self:GetAbility():GetSpecialValueFor( "regen" )
-	self.regen_str_multiplier = self:GetAbility():GetSpecialValueFor( "regen_str_multiplier" )
-	self.gold_int_multiplier = self:GetAbility():GetSpecialValueFor( "gold_int_multiplier" )
+	self.regen_str_multiplier = self:GetAbility():GetSpecialValueFor( "regen_str_multiplier" ) / 100
+	self.gold_int_multiplier = self:GetAbility():GetSpecialValueFor( "gold_int_multiplier" ) / 100
 end
 
 function modifier_doom_devour_lua:OnRemoved()

@@ -38,6 +38,7 @@
 	"dota_ability_variable_secondary_stats"			"Other Attributes"					// $secondary_stats
 	"dota_ability_variable_base_damage"				"Base Damage"						// $base_damage
 	"dota_ability_variable_buff_amp"				"Buff Duration"						// $buff_amp
+	"dota_ability_variable_projectile_speed_pct"	"Attack Projectile Speed"			// $projectile_speed_pct
 
 //############################################################################################################################
 
@@ -47,6 +48,7 @@
 	"npc_dota_custom_creep_24_3"	"Strygwyr"
 	"npc_dota_custom_creep_28_3"	"Huskar"
 	"npc_dota_inv_warrior"			"Ulfsaar"
+	"npc_dota_dummy_misha"			"Misha"
 
 
 	"dota_hud_error_cant_use_on_necrobook"		"Cannot use on necrobook minions."
@@ -399,6 +401,8 @@
 
 	"DOTA_Tooltip_ability_item_to_piety"					"Divine Pray"
 	"DOTA_Tooltip_ability_item_to_piety_description"		"Changes the character to Piety.<br>(It is possible to use only at level 1 and only by Lina)"
+	"DOTA_Tooltip_ability_item_to_kardel"					"Kardel's Kit"
+	"DOTA_Tooltip_ability_item_to_kardel_description"		"Changes the character to Kardel."
 
 //############################################################################################################################
 
@@ -719,6 +723,20 @@
 	"DOTA_Tooltip_modifier_gs_soulbind"					"Soulbind"
 	"DOTA_Tooltip_modifier_gs_soulbind_Description"		"Bound to another unit and leashed."
 	"DOTA_Tooltip_ability_special_bonus_gs_soulbind_cd"			"-{s:value}s Soulbind Cooldown"
+
+// Earth Spirit
+	"DOTA_Tooltip_ability_rolling_stone"					"Rollin’ Stone"
+	"DOTA_Tooltip_ability_rolling_stone_Description"		"Earth Spirit turns into stone and rushes across the battlefield, stunning enemies and causing damage to them. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Allows you to move freely and removes the speed limit."
+	"DOTA_Tooltip_ability_rolling_stone_Lore"			"The stone avalanche is already near."
+	"DOTA_Tooltip_ability_rolling_stone_Note0"		"Destroys trees within a radius of 300."
+	"DOTA_Tooltip_ability_rolling_stone_Note1"		"For the duration of the ability - Rolling Boulder is disabled."
+	"DOTA_Tooltip_ability_rolling_stone_radius"					"Radius:"
+	"DOTA_Tooltip_ability_rolling_stone_bonus_ms"				"Bonus Speed:"
+	"DOTA_Tooltip_ability_rolling_stone_str_damage"				"Strength to Damage:"
+	"DOTA_Tooltip_ability_rolling_stone_health_percentage"		"%HP Drain:"
+	"DOTA_Tooltip_ability_rolling_stone_dmg_reduction"			"%Damage Reduction:"
+	"DOTA_Tooltip_modifier_rolling_stone_buff"					"Rollin’ Stone"
+	"DOTA_Tooltip_modifier_rolling_stone_buff_Description"		"Reduces incoming damage by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%"
 
 //###########################################################################################################################
 	
@@ -2840,7 +2858,6 @@
 	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury"					"Blade Fury"
 	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_Description"		"Causes a bladestorm of destructive force around Juggernaut, rendering him immune to magic and dealing damage to nearby enemy units."
 	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_Lore"				"Yurnero's renowned katana techniques are feared by warriors and sorcerers alike."
-	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_Note0"				""
 	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_duration"			"Duration: "
 	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_radius"				"Radius: "
 	"DOTA_Tooltip_ability_mjz_juggernaut_blade_fury_attack_tick"		"Attack Interval: "
@@ -3718,22 +3735,23 @@ DISPEL TYPE: Strong Dispel"
 	"DOTA_Tooltip_ability_mjz_spectre_reality_Note0"			""
 		
 	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning"							"Ball Lightning"
-	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Description"				"Storm Spirit becomes volatile electricity, charging across the battlefield until he depletes his mana or reaches his target.Takes less damage when is activated"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Description"				"Storm Spirit becomes volatile electricity, charging across the battlefield until he depletes his mana or reaches his target. Takes less damage when is activated. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Allows you to move freely and removes the speed limit."
 	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Lore"						"The Storm is coming in."
-	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Note0"					"Abilities and items can be used while traveling."
-	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Note1"					"This ability will destroy trees."
-	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Note2"					"Storm Spirit is invulnerable during Ball Lightning."
-	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_radius"					"RADIUS:"
-	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_bonus_move_speed"			"%SPEED:"
-	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_damage"					"DAMAGE:"
-	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_mana_percentage"			"%MANA DRAIN PER:"
-	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_reduction_tooltip"		"%Damage Reduction:"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Note0"		"Abilities and items can be used while traveling."
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_Note1"		"This ability will destroy trees."
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_radius"					"Radius:"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_bonus_move_speed"			"Speed:"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_damage"					"Damage:"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_mana_percentage"			"%Mana Drain Per Second:"
+	"DOTA_Tooltip_ability_mjz_storm_spirit_ball_lightning_dmg_reduction"			"%Damage Reduction:"
 	"DOTA_Tooltip_modifier_mjz_storm_spirit_ball_lightning_buff"					"Ball Lightning"
-	"DOTA_Tooltip_modifier_mjz_storm_spirit_ball_lightning_buff_Description"		"Storm Spirit becomes volatile electricity, charging across the battlefield until he depletes his mana or reaches his target. "
+	"DOTA_Tooltip_modifier_mjz_storm_spirit_ball_lightning_buff_Description"		"Storm Spirit becomes volatile electricity, charging across the battlefield until he depletes his mana or reaches his target."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_storm_spirit_ball_lightning_01"	"+{s:value} Ball Lightning Damage"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_storm_spirit_ball_lightning_02"	"-{s:value}% Ball Lightning Mana Drain"
 	
 	"DOTA_Tooltip_ability_mjz_storm_spirit_overload"									"Overload"
 	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_Description"						"Casting a spell creates an electrical charge, which is released in a burst on Storm's next attack, dealing damage and slowing nearby enemies."
+	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_shard_description"		"Can be activated to grant Storm Spirit and allied heroes within %shard_radius% AoE of him %shard_stacks% Overload charges. Provides %shard_bonus_as% Attack Speed. Lasts up to %shard_duration% seconds or until the charges are depleted."
 	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_Lore"								"Pow!  Zip!  Zap!"
 	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_Note0"								"Using items doesn't trigger Overload."
 	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_Note1"								"Overload charges do not stack."
@@ -3747,7 +3765,7 @@ DISPEL TYPE: Strong Dispel"
 	"DOTA_Tooltip_modifier_mjz_storm_spirit_overload_buff_Description"					"Gain charges by casting a spell"
 	"DOTA_Tooltip_modifier_mjz_storm_spirit_overload_debuff"						"Overload Slow"
 	"DOTA_Tooltip_modifier_mjz_storm_spirit_overload_debuff_Description"			"Affected by Storm Spirit's Overload. Move speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and attack speed slowed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
-	"DOTA_Tooltip_ability_special_bonus_unique_mjz_storm_spirit_overload_01"		"+{s:value} Overload Intelligence Damage"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_storm_spirit_overload_01"	"+{s:value}% Overload Intelligence Damage"
 		
 "DOTA_Tooltip_ability_mjz_techies_land_mines"						"Proximity Mines"
 "DOTA_Tooltip_ability_mjz_techies_land_mines_Lore"			"The bane of Toterin!"
@@ -6639,9 +6657,9 @@ Nimbus is not recasted by Thundergod's Wrath."
 "dota_tooltip_modifier_item_blast_staff_debuff_description"  "On impact: Reduce magic resistance by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%"
 
 
+"DOTA_Tooltip_Ability_item_recipe_broken_bow"			"<font color='#E5DF0F'>CrossBow</font> Recipe"
 "DOTA_Tooltip_Ability_item_broken_bow"							  "<font color='#E5DF0F'>CrossBow</font>"
-"DOTA_Tooltip_Ability_item_broken_bow_Description"					"<h1><font color='#ED1F06'>Passive: Crush Armor</font></h1><font color='#25970C'>Works Only on Range heroes</font><br>When cooldown is rdy your attack will reduce enemy base armor by %armor_reduc_tooltip%%% and Magic resistance by %magic_resist_redu%%% for %duration% Seconds <font color='#10D387'>(Duration gets Increased by your Status resistance)</font>
-<h1><font color='#ED1F06'>Passive: Pierce Attack</font></h1><font color='#25970C'>Works Only on Range heroes</font><br>Every attack has %chance_hit%%% chance to increase the counter, on the 3nd counter Launches an additional attack with all the effects, and deal %target_hp_tooltip%%%  of target current Hp as bonus magic damage."
+"DOTA_Tooltip_Ability_item_broken_bow_Description"					"<h1><font color='#ED1F06'>Passive: Crush Armor</font></h1><font color='#25970C'>Works Only on Range heroes</font><br>When cooldown is rdy your attack will reduce enemy base armor by %armor_reduc%%% and Magic resistance by %magic_resist_redu%%% for %duration% Seconds <font color='#10D387'>(Duration gets Increased by your Status resistance)</font> \n<h1><font color='#ED1F06'>Passive: Pierce Attack</font></h1><font color='#25970C'>Works Only on Range heroes</font><br>Every attack has %chance_hit%%% chance to increase the counter, on the 3nd counter Launches an additional attack with all the effects, and deal %target_hp_tooltip%%% of target current Hp as bonus magic damage."
 "DOTA_Tooltip_Ability_item_broken_bow_Lore"							"A derelict crossbow that whispers in the wind."
 "DOTA_Tooltip_Ability_item_broken_bow_Note0"						"Crush Armor shares cooldown with Willbreaker."
 "DOTA_Tooltip_Ability_item_broken_bow_bonus_agility"				"+$agi"
@@ -6651,6 +6669,7 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_ability_item_broken_bow_bonus_damage"					"+$damage"
 "DOTA_Tooltip_Ability_item_broken_bow_bonus_mana_regen"			 "+$mana_regen"  
 "DOTA_Tooltip_Ability_item_broken_bow_bonus_range"				  "+$attack_range"
+"DOTA_Tooltip_ability_item_broken_bow_projectile_increase"			"%+$projectile_speed_pct"
 
 "DOTA_Tooltip_modifier_item_broken_bow_count"					   "CrowsBow Counter"
 "DOTA_Tooltip_modifier_item_broken_bow_count_Description"		   "Counter Number."
@@ -8898,8 +8917,8 @@ Contains all random skills"
 		"DOTA_Tooltip_ability_doom_devour_lua_devour_regen"					"Health Regen:"
 		"DOTA_Tooltip_ability_doom_devour_lua_devour_time"					"Buff Duration:"
 		"DOTA_Tooltip_ability_doom_devour_lua_str_multiplier"					"Str As Damage:"
-		"DOTA_Tooltip_ability_doom_devour_lua_regen_str_multiplier_tooltip"					"Regen For Every 100 <font color='#FF0000'>Strength</font>:"
-		"DOTA_Tooltip_ability_doom_devour_lua_gold_int_multiplier_tooltip"					"Gold For Every 100 <font color='#5499C7'>Intelligence</font>:"
+		"DOTA_Tooltip_ability_doom_devour_lua_regen_str_multiplier"					"Regen For Every 100 <font color='#FF0000'>Strength</font>:"
+		"DOTA_Tooltip_ability_doom_devour_lua_gold_int_multiplier"					"Gold For Every 100 <font color='#5499C7'>Intelligence</font>:"
 
 		"DOTA_Tooltip_modifier_doom_devour_lua"							"Devour"
 		"DOTA_Tooltip_modifier_doom_devour_lua_Description"				"Still digesting that Boss part and gaining %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% bonus regeneration."
@@ -8953,7 +8972,8 @@ Contains all random skills"
 		"DOTA_Tooltip_ability_sniper_shrapnel_lua_duration"									"Duration:"
 		"DOTA_Tooltip_ability_sniper_shrapnel_lua_shrapnel_damage"							"Damage:"
 		"DOTA_Tooltip_ability_sniper_shrapnel_lua_agi_multiplier"							"Agility As Bonus Damage:"
-		"DOTA_Tooltip_modifier_sniper_shrapnel_lua"                                         "Shrapnel"
+		"DOTA_Tooltip_modifier_sniper_shrapnel_lua"						"Shrapnel Slow"
+		"DOTA_Tooltip_modifier_sniper_shrapnel_lua_Description"			"Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
 		"DOTA_Tooltip_ability_sniper_headshot_lua"											"Headshot"
 		"DOTA_Tooltip_ability_sniper_headshot_lua_Description"								"Sniper increases his accuracy, giving him a chance to deal extra damage, works with critical hit or other effects like Assassinate."

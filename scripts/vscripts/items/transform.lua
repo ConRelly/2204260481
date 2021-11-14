@@ -1,4 +1,4 @@
-function ChangeHero(keys)
+function ChangeHeroPiety(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local generic_hidden = false

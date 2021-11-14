@@ -8,15 +8,15 @@ LinkLuaModifier('modifier_mjz_storm_spirit_ball_lightning_dummy', THIS_LUA, LUA_
 
 mjz_storm_spirit_ball_lightning = class({})
 local ability_class = mjz_storm_spirit_ball_lightning
-
--- function ability_class:GetIntrinsicModifierName()
--- 	return 'modifier_mjz_storm_spirit_ball_lightning'
--- end
+--[[
+function ability_class:GetIntrinsicModifierName()
+	return 'modifier_mjz_storm_spirit_ball_lightning'
+end
 
 function ability_class:GetAOERadius()
 	return self:GetSpecialValueFor('radius')
 end
-
+]]
 function ability_class:OnToggle()
 	if IsServer() then
 		local ability = self
@@ -32,7 +32,7 @@ function ability_class:OnToggle()
 end
 
 ----------------------------------------------------------------------------
-
+--[[
 modifier_mjz_storm_spirit_ball_lightning = class({})
 
 function modifier_mjz_storm_spirit_ball_lightning:IsPassive()
@@ -88,7 +88,7 @@ function modifier_dummy:CheckState()
 	}
     return state  
 end
-
+]]
 ----------------------------------------------------------------------------
 
 
@@ -99,12 +99,14 @@ function modifier_buff:IsPurgable() return false end
 function modifier_buff:IsHidden() return false end
 
 function modifier_buff:CheckState()
+	local Flying = nil
+	if self:GetCaster():HasModifier("modifier_super_scepter") then Flying = true end
 	local state = {
 		--[MODIFIER_STATE_NOT_ON_MINIMAP] = true,
 		--[MODIFIER_STATE_UNSELECTABLE] = true,
 		-- [MODIFIER_STATE_OUT_OF_GAME] = true,
 		--[MODIFIER_STATE_INVULNERABLE] = true,
-		-- [MODIFIER_STATE_FLYING] = true,
+		[MODIFIER_STATE_FLYING_FOR_PATHING_PURPOSES_ONLY] = Flying,
 		--[MODIFIER_STATE_NO_HEALTH_BAR] = true,
 		[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
 	}
@@ -114,21 +116,26 @@ end
 function modifier_buff:DeclareFunctions()
 	return {
 		-- MODIFIER_PROPERTY_OVERRIDE_ANIMATION,
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
 		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+		MODIFIER_PROPERTY_IGNORE_MOVESPEED_LIMIT,
 	}
+end
+
+function modifier_buff:GetModifierIgnoreMovespeedLimit()
+	if self:GetCaster():HasModifier("modifier_super_scepter") then return 1 else return 0 end
 end
 
 -- function modifier_buff:GetOverrideAnimation(params)
 --     return ACT_DOTA_OVERRIDE_ABILITY_4
 -- end
 
-function modifier_buff:GetModifierMoveSpeedBonus_Percentage()
+function modifier_buff:GetModifierMoveSpeedBonus_Constant()
 	return self:GetAbility():GetSpecialValueFor('bonus_move_speed')
 end
 
 function modifier_buff:GetModifierIncomingDamage_Percentage()
-    return -60
+	return self:GetAbility():GetSpecialValueFor("dmg_reduction") * (-1)
 end
 
 
@@ -161,7 +168,7 @@ if IsServer() then
 		local caster = self:GetParent()
 		local ability = self:GetAbility()
 		local radius = GetTalentSpecialValueFor(ability, 'radius')
-		local mana_percentage = GetTalentSpecialValueFor(ability, 'mana_percentage')
+		local mana_percentage = self:GetSpecialValueFor("mana_percentage") - talent_value(self:GetCaster(), "special_bonus_unique_mjz_storm_spirit_ball_lightning_02")
 		local mana_per = (parent:GetMaxMana() * mana_percentage / 100) * self.interval
 
 		KillTreesInRadius(parent, parent:GetAbsOrigin(), radius)

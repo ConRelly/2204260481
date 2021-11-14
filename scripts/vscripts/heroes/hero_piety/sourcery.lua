@@ -59,6 +59,7 @@ function modifier_sourcery:IsHidden() return (self:GetStackCount() == 0) end
 function modifier_sourcery:IsPurgable() return false end
 function modifier_sourcery:IsDebuff() return false end
 function modifier_sourcery:RemoveOnDeath() return false end
+function modifier_sourcery:GetPriority() return MODIFIER_PRIORITY_SUPER_ULTRA + 11111 end
 function modifier_sourcery:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
 		local parent = self:GetParent()
