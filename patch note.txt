@@ -1370,12 +1370,15 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Earth Spirit: Added new ability and replaced from Ball Lightning
 * Undying Q buff now does not expire and Scales with Str on damage
 * Wraith King ultimate now can be refresh
-* WK and Centaur added to underdog.
+* Centaur added to underdog.
 * Marci ult deals more dmg on last 2 lvls.
 * Tinker missing skill is back.
 * Frostmourne debuff Attack Speed slow increased from 80 to 150
 * Removed some skills from -extramode that where causing crash.
-
+* Arcanist's Dmg reflection reduced and inscreased his MR and armor stats.
+* Tome of Knowledge restock 15% faster(15% more to buy), bonus xp per use from 150 to 140.
+* titan relic got some small bufs.
+* Fix Devil's Daedalus visual bug of not displaying the bonus dmg.
 
 
 

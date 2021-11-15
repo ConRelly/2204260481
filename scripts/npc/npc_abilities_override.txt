@@ -710,7 +710,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"125"
+				"value"				"225"
 			}
 		}
 	}
@@ -19964,7 +19964,7 @@
 		"ItemStockMax"					"10"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStockInitial"				"1"
-		"ItemStockTime"					"55.0"
+		"ItemStockTime"					"47.0"
 		"ItemInitialStockTime"			"300.0"
 		"ItemStackable"					"1"
 		"ItemInitialCharges"			"1"
@@ -19979,7 +19979,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"xp_per_use"			"150"
+				"xp_per_use"			"140"
 			}
 		}
 	}
@@ -22653,7 +22653,7 @@
 	"ItemPurchasable"				"1"
 	"Model"							"models/props_gameplay/neutral_box.vmdl"
 	
-	"AbilityCooldown"				"30"
+	"AbilityCooldown"				"80"
 
 	// Special	
 	//-------------------------------------------------------------------------------------------------------------
@@ -22667,17 +22667,17 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_aoe_armor"			"25"
+			"bonus_aoe_armor"			"30"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"self_armor"			"25"
+			"self_armor"			"65"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"self_mres"				"25"
+			"self_mres"				"40"
 		}
 		"05"
 		{
@@ -22687,7 +22687,7 @@
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"active_reflection_pct"		"40"
+			"active_reflection_pct"		"15"
 		}
 	}
 }

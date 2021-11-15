@@ -16,7 +16,7 @@
     "SpellDispellableType"                                "SPELL_DISPELLABLE_NO"
 
     "MaxLevel"                                            "7"
-    "LevelsBetweenUpgrades"                               "7"
+    "LevelsBetweenUpgrades"                               "10"
 
     // Casting
     //-------------------------------------------------------------------------------------------------------------
@@ -44,7 +44,7 @@
       "02"
       {
         "var_type"                                        "FIELD_INTEGER"
-        "burn_damage"                                     "25 45 70 100 150 270 410"
+        "burn_damage"                                     "25 45 80 160 290 670 1210"
         "LinkedSpecialBonus"                              "special_bonus_unique_huskar_2"
       }
     }

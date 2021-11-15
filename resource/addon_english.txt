@@ -9468,6 +9468,12 @@ Contains all random skills"
 		"DOTA_Tooltip_ability_item_philosophers_stone2_bonus_mana"	   "+$mana"	 
 		"DOTA_Tooltip_ability_item_philosophers_stone2_bonus_damage"	   "-<font color='#e03e2e'>Attack Damage</font>"
 
+		"DOTA_Tooltip_Ability_item_force_field_Description"		"<h1>Active: Mega Shield</h1> Force Field Aura Grants %active_reflection_pct%%%  Damage Reflection for 5 seconds.\n<h1>Passive: Shield</h1> Grants +%bonus_aoe_armor% armor and +%bonus_aoe_mres%%% Magic Resistance to all allies within %bonus_aoe_radius% radius."
+
+
+
+
+
 		"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_2"	"+{s:value} Aftershock Str Damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_3"	"+{s:value} Fissure Str Damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_01"	"+{s:value} Echo Str Damage"

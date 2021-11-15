@@ -668,7 +668,7 @@
 		"AttributeStrengthGain"			"13.2"
 		"AttributeAgilityGain"			"5.4"
 		"AttributeIntelligenceGain"		"6.8"
-		"AttackRate"					"1.3"
+		"AttackRate"					"1.2"
 		"AttackRange"					"900"
 	}
 
@@ -1856,7 +1856,7 @@
 	"npc_dota_hero_skeleton_king_mjz"			//骷髅王
 	{
 		"override_hero"			"npc_dota_hero_skeleton_king"
-		//"UnitLabel"				"no_underdog"
+		"UnitLabel"				"no_underdog"
 
 		"Ability5"				"mjz_skeleton_king_ghost"
 		"Ability14"				"special_bonus_strength_260"

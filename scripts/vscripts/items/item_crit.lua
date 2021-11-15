@@ -143,6 +143,7 @@ function modifier_item_imba_greater_crit:IsPermanent() return true end
 
 function modifier_item_imba_greater_crit:OnCreated(keys)
 	local parent = self:GetParent()
+	local level = parent:GetLevel()
 	if IsServer() then
 		if not parent:HasModifier("modifier_item_imba_greater_crit_buff") and not parent:HasModifier("modifier_item_imba_greater_crit_edible") then
 			parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_imba_greater_crit_buff", {})
@@ -150,12 +151,12 @@ function modifier_item_imba_greater_crit:OnCreated(keys)
 	
 		if not parent:IsRealHero() or parent:HasModifier("modifier_item_imba_greater_crit_edible") then return end
 
-		local level = parent:GetLevel()
-		self.base_damage = self:GetAbility():GetSpecialValueFor("bonus_damage") * level
-		self.bonus_damage_pct = self:GetAbility():GetSpecialValueFor("bonus_damage_pct")
-
 		self:StartIntervalThink(FrameTime())
 	end
+	if self:GetAbility() then
+		self.base_damage = self:GetAbility():GetSpecialValueFor("bonus_damage") * level
+		self.bonus_damage_pct = self:GetAbility():GetSpecialValueFor("bonus_damage_pct")
+	end		
 end
 function modifier_item_imba_greater_crit:OnIntervalThink() self:OnCreated(keys) end
 function modifier_item_imba_greater_crit:DeclareFunctions()

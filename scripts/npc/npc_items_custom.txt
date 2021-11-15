@@ -10177,7 +10177,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"incoming_damage"			"200"
+				"incoming_damage"			"100"
 			}
 			"04"
 			{
@@ -17623,12 +17623,12 @@
 			"1"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_attack_damage"	"35"
+				"base_attack_damage"	"40"
 			}
 			"2"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"magic_resistance"		"40"
+				"magic_resistance"		"45"
 			}
 			"3"
 			{
@@ -17648,7 +17648,7 @@
 			"6"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"debuff_amp"			"45"
+				"debuff_amp"			"50"
 			}
 			"7"
 			{
@@ -20781,12 +20781,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_armor"		"25"
+				"bonus_armor"		"45"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"4350"
+				"bonus_damage"				"11350"
 				"CalculateSpellDamageTooltip"	"0"
 			}			
 			"05"

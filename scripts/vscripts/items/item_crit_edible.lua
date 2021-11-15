@@ -50,6 +50,7 @@ function modifier_item_imba_greater_crit_edible:AllowIllusionDuplicate() return 
 function modifier_item_imba_greater_crit_edible:GetTexture() return "custom/imba_greater_crit_edible" end
 function modifier_item_imba_greater_crit_edible:OnCreated()
 	local parent = self:GetParent()
+	local level = parent:GetLevel()
 	if IsServer() then
 		if not parent:HasModifier("modifier_item_imba_greater_crit_edible_buff") then
 			parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_imba_greater_crit_edible_buff", {})
@@ -57,12 +58,11 @@ function modifier_item_imba_greater_crit_edible:OnCreated()
 		
 		if not parent:IsRealHero() then return nil end
 
-		local level = parent:GetLevel()
-		self.base_damage = bonus_damage * level
-		self.bonus_damage_pct = bonus_damage_pct
 
 		self:StartIntervalThink(FrameTime())
 	end
+	self.base_damage = bonus_damage * level
+	self.bonus_damage_pct = bonus_damage_pct	
 end
 function modifier_item_imba_greater_crit_edible:OnIntervalThink() self:OnCreated() end	
 function modifier_item_imba_greater_crit_edible:DeclareFunctions()
