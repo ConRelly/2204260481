@@ -60,11 +60,13 @@ end
 function modifier_titan_relic:OnModifierAdded(keys)
 	if self:GetParent():IsIllusion() then return end
 	if self:GetParent():HasModifier("modifier_arc_warden_tempest_double") then return end
-	local pass = true
-	if self:GetAbility() and keys.unit and keys.unit:FindAllModifiers() then
+	pass = true
+	local AllModifiers = keys.unit:FindAllModifiers()
+	if self:GetAbility() and keys.unit and AllModifiers then
 		if keys.unit:GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then
-			for _, modifier in pairs(keys.unit:FindAllModifiers()) do
-				if modifier:IsDebuff() and modifier:GetDuration() > 0 and modifier:GetCaster() == self:GetCaster() and modifier:GetAbility():GetCaster() == self:GetCaster() and GameRules:GetGameTime() - modifier:GetCreationTime() <= FrameTime() then
+			for _, modifier in pairs(AllModifiers) do
+				if modifier:GetName() == "modifier_kill" then return end
+				if modifier:IsDebuff() and modifier:GetDuration() > 0 and modifier:GetCaster() == self:GetCaster() and modifier:GetAbility():GetCaster() == self:GetCaster() and GameRules:GetGameTime() - modifier:GetCreationTime() <= FrameTime() and pass then
 					Timers:CreateTimer(FrameTime(), function()
 						if modifier and pass and not self:IsNull() and self:GetAbility() then
 							modifier:SetDuration(modifier:GetRemainingTime() * (1 + (self:GetAbility():GetSpecialValueFor("debuff_amp") / 100)), true)
@@ -74,8 +76,9 @@ function modifier_titan_relic:OnModifierAdded(keys)
 				end
 			end
 		else
-			for _, modifier in pairs(keys.unit:FindAllModifiers()) do
-				if modifier:GetDuration() > 0 and modifier:GetCaster() == self:GetCaster() and modifier:GetAbility():GetCaster() == self:GetCaster() and GameRules:GetGameTime() - modifier:GetCreationTime() <= FrameTime() then
+			for _, modifier in pairs(AllModifiers) do
+				if modifier:GetName() == "modifier_kill" then return end
+				if modifier:GetDuration() > 0 and modifier:GetCaster() == self:GetCaster() and modifier:GetAbility():GetCaster() == self:GetCaster() and GameRules:GetGameTime() - modifier:GetCreationTime() <= FrameTime() and pass then
 					Timers:CreateTimer(FrameTime(), function()
 						if modifier and pass and not self:IsNull() and self:GetAbility() then
 							modifier:SetDuration(modifier:GetRemainingTime() * (1 + (self:GetAbility():GetSpecialValueFor("buff_amp") / 100)), true)

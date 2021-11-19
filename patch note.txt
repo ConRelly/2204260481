@@ -1391,6 +1391,7 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Arcanist's Armor: Dmg reflection reduced and inscreased his MR and armor stats.
 * Tome of Knowledge: Restock 15% faster(15% more to buy), bonus xp per use from 150 to 140.
 * Titan Relic got some small buffs.
+* Titan Relic: Doesn't increase summon duration
 * Fixed Devil's Daedalus visual bug of not displaying the bonus dmg.
 * Removed one Ring of Aquila and reworked other one (gold cost and recipe don't changed)
 -- Other
