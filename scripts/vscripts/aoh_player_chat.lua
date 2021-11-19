@@ -224,15 +224,29 @@ function AOHGameMode:OnPlayerChat(keys)
 		Notifications:TopToAll({text="Damage Counter ON", style={color="green"}, duration=5})		
 	end]]	
 
-	if keys.text == "-hide" then 
-		local playerID = keys.playerid
-		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-		_HideAbility(hero)
+	if keys.text == "-hide" then
+		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
+
+		for i = 0, hero:GetAbilityCount() do
+			local hAbility = hero:GetAbilityByIndex(i)
+			if hAbility and not hAbility:IsAttributeBonus() and not hAbility:IsHidden() and not string.find(hAbility:GetAbilityName(), "empty") and bit.band(hAbility:GetBehaviorInt(), DOTA_ABILITY_BEHAVIOR_PASSIVE) ~= 0 then
+				if hAbility:GetLevel() == hAbility:GetMaxLevel() then
+					hAbility:SetHidden(true)
+				end
+			end
+		end
 	end
-	if keys.text == "-unhide" then 
-		local playerID = keys.playerid
-		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-		_UnHideAbility(hero)
+	if keys.text == "-unhide" then
+		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
+
+		for i = 0, hero:GetAbilityCount() do
+			local hAbility = hero:GetAbilityByIndex(i)
+			if hAbility and not hAbility:IsAttributeBonus() and hAbility:IsHidden() and not string.find(hAbility:GetAbilityName(), "empty") and bit.band(hAbility:GetBehaviorInt(), DOTA_ABILITY_BEHAVIOR_PASSIVE) ~= 0 then
+				if hAbility:GetLevel() == hAbility:GetMaxLevel() then
+					hAbility:SetHidden(false)
+				end
+			end
+		end
 	end
 
 	function _CreateFakeCourier2(hero)
@@ -251,32 +265,6 @@ function AOHGameMode:OnPlayerChat(keys)
 	
 		
 	end
-
-
-	function _HideAbility(hero)
-		if IsServer() then
-			for i=6,hero:GetAbilityCount() -1 do
-				local hAbility = hero:GetAbilityByIndex( i )
-				if hAbility and not hAbility:IsAttributeBonus() and not hAbility:IsHidden() and not string.find(hAbility:GetAbilityName(), "empty") and bit.band( hAbility:GetBehaviorInt(), DOTA_ABILITY_BEHAVIOR_PASSIVE ) ~= 0 then
-					if hAbility:GetLevel() == hAbility:GetMaxLevel() then
-						hAbility:SetHidden(true)
-					end	
-				end	
-			end
-		end		
-	end
-	function _UnHideAbility(hero)
-		if IsServer() then
-			for i=6,hero:GetAbilityCount() -1 do
-				local hAbility = hero:GetAbilityByIndex( i )
-				if hAbility and not hAbility:IsAttributeBonus() and hAbility:IsHidden() and not string.find(hAbility:GetAbilityName(), "empty") and bit.band( hAbility:GetBehaviorInt(), DOTA_ABILITY_BEHAVIOR_PASSIVE ) ~= 0 then
-					if hAbility:GetLevel() == hAbility:GetMaxLevel() then
-						hAbility:SetHidden(false)
-					end	
-				end	
-			end
-		end		
-	end	
 
 
 	if keys.text == "-double" and not self._doubleMode and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
@@ -306,7 +294,7 @@ function AOHGameMode:OnPlayerChat(keys)
 		self._magdamage[keys.playerid] = 1
 		self._puredamage[keys.playerid] = 1
 	end
-	
+
 	if keys.text == "-renew" then
 		-- CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(keys.playerid), "delete", {})
 		-- for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
@@ -352,6 +340,15 @@ function AOHGameMode:OnPlayerChat(keys)
 		end
 	end
 
+	if keys.text == "-demo" and Cheats:IsEnabled() then
+		if _G.Demo_UI == false then
+			CustomUI:DynamicHud_Create(-1, "Custom_Demo_UI", "file://{resources}/layout/custom_game/hud_workshop_testbed.xml", {})
+			_G.Demo_UI = true
+		else
+			CustomUI:DynamicHud_Destroy(-1, "Custom_Demo_UI")
+			_G.Demo_UI = false
+		end
+	end
 end
 
 

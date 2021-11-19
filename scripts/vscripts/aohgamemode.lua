@@ -255,6 +255,41 @@ function AOHGameMode:InitGameMode()
 	mHackGameMode:InitGameMode()
 	-- Init card points system
 	holdout_card_points:Init()
+
+
+
+
+
+
+
+
+
+	ListenToGameEvent("dota_item_purchased", Dynamic_Wrap(AOHGameMode, "OnItemPurchased"), self)
+
+	_G.Demo_UI = false
+
+	self.m_nPlayerID = 0
+	self.m_tAlliesList = {}
+	self.m_tEnemiesList = {}
+	self.m_nAlliesCount = 0
+	self.m_bFreeSpellsEnabled = false
+	self.m_bInvulnerabilityEnabled = false
+	self.m_bMaxGold = false
+	self.m_nHeroRenderMode = 0;
+
+	CustomGameEventManager:RegisterListener("RefreshButtonPressed", function(...) return self:OnRefreshButtonPressed(...) end)
+	CustomGameEventManager:RegisterListener("LevelUpButtonPressed", function(...) return self:OnLevelUpButtonPressed(...) end)
+	CustomGameEventManager:RegisterListener("MaxLevelButtonPressed", function(...) return self:OnMaxLevelButtonPressed(...) end)
+	CustomGameEventManager:RegisterListener("FreeSpellsButtonPressed", function(...) return self:OnFreeSpellsButtonPressed(...) end)
+	CustomGameEventManager:RegisterListener("InvulnerabilityButtonPressed", function(...) return self:OnInvulnerabilityButtonPressed(...) end)
+	CustomGameEventManager:RegisterListener("MaxGoldButtonPressed", function(...) return self:OnMaxGoldButtonPressed(...) end)
+	CustomGameEventManager:RegisterListener("SpawnEnemyButtonPressed", function(...) return self:OnSpawnEnemyButtonPressed(...) end)
+--	CustomGameEventManager:RegisterListener("LevelUpEnemyButtonPressed", function(...) return self:OnLevelUpEnemyButtonPressed(...) end)
+	CustomGameEventManager:RegisterListener("RemoveSpawnedUnitsButtonPressed", function(...) return self:OnRemoveSpawnedUnitsButtonPressed(...) end)
+	CustomGameEventManager:RegisterListener("DayNightTogglePressed", function(...) return self:OnDayNightToggleButtonPressed(...) end)
+	CustomGameEventManager:RegisterListener("HeroRenderModePressed", function(...) return self:OnHeroRenderModeButtonPressed(...) end)
+	CustomGameEventManager:RegisterListener("PauseButtonPressed", function(...) return self:OnPauseButtonPressed(...) end)
+	CustomGameEventManager:RegisterListener("LeaveButtonPressed", function(...) return self:OnLeaveButtonPressed(...) end)
 end
 
 
@@ -724,19 +759,20 @@ function AOHGameMode:OnHeroLevelUp(event)
 	local nPlayerID = hero:GetPlayerID()
 	local dice_1 = RandomInt(1, 130)
 	local dice_2 = RandomInt(1, 130)
-	local abilityPointsToGive = 0
-	local apEveryXLevel = 5
+	local abilityPointsToGive = 1
+	local apEveryXLevel = 7
 	local fragmentEveryXLevel = 7
 	local cardPointsToGive = 0
 	local cpEveryXLevel = 12
 	local itEveryXLevel = 75
 	local ediblefragment = 20
 
+--[[
 	if hero:HasModifier("modifier_item_imba_skadi_unique") then
 		hero:ModifyIntellect(9)
-	end	
+	end
+]]
 	if (heroLevel % apEveryXLevel == 0) then
-		abilityPointsToGive = 1
 		hero:SetAbilityPoints(unspendAP + abilityPointsToGive)
 	end
 	if (heroLevel % cpEveryXLevel == 0) and not hero:IsIllusion() then
@@ -1148,4 +1184,186 @@ function AOHGameMode:IsEndlessWin()
 		return #self._endlessEnemyList == 0
 	end
 	return false
+end
+
+
+
+
+
+
+
+
+
+-------------------
+-- ItemPurchased --
+-------------------
+function AOHGameMode:OnItemPurchased(event)
+	if self.m_bMaxGold == true then
+		local Buyer = PlayerResource:GetPlayer(event.PlayerID)
+		local BuyerHero = Buyer:GetAssignedHero()
+		BuyerHero:ModifyGold(event.itemcost, true, 0)
+	elseif self.m_bMaxGold == false then
+	end
+end
+
+-------------------
+-- RefreshButton --
+-------------------
+function AOHGameMode:OnRefreshButtonPressed(eventSourceIndex)
+	SendToServerConsole("dota_dev hero_refresh")
+end
+
+-------------------
+-- LevelUpButton --
+-------------------
+function AOHGameMode:OnLevelUpButtonPressed(eventSourceIndex)
+	SendToServerConsole("dota_dev hero_level 1")
+end
+
+--------------------
+-- MaxLevelButton --
+--------------------
+function AOHGameMode:OnMaxLevelButtonPressed(eventSourceIndex, data)
+	local hPlayerHero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
+	SendToServerConsole("dota_dev hero_level 1000")
+--	hPlayerHero:AddExperience(56045, false, false) -- 30 Level
+
+	local Abilities = hPlayerHero:GetAbilityCount()
+	for i = 0, Abilities do
+		local Ability = hPlayerHero:GetAbilityByIndex(i)
+		if Ability and Ability:CanAbilityBeUpgraded() == ABILITY_CAN_BE_UPGRADED and not Ability:IsHidden() then
+			while Ability:GetLevel() < Ability:GetMaxLevel() do
+				hPlayerHero:UpgradeAbility(Ability)
+			end
+		end
+	end
+--	hPlayerHero:SetAbilityPoints(0)
+end
+
+----------------------
+-- FreeSpellsButton --
+----------------------
+function AOHGameMode:OnFreeSpellsButtonPressed(eventSourceIndex)
+	SendToServerConsole("toggle dota_ability_debug")
+	if self.m_bFreeSpellsEnabled == false then
+		self.m_bFreeSpellsEnabled = true
+		SendToServerConsole("dota_dev hero_refresh")
+	elseif self.m_bFreeSpellsEnabled == true then
+		self.m_bFreeSpellsEnabled = false
+	end
+end
+
+---------------------------
+-- InvulnerabilityButton --
+---------------------------
+LinkLuaModifier("lm_take_no_damage", LUA_MODIFIER_MOTION_NONE)
+function AOHGameMode:OnInvulnerabilityButtonPressed(eventSourceIndex, data)
+	local PlayerHero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
+	local AllPlayerUnits = {}
+	AllPlayerUnits = PlayerHero:GetAdditionalOwnedUnits()
+	AllPlayerUnits[#AllPlayerUnits + 1] = PlayerHero
+
+	if self.m_bInvulnerabilityEnabled == false then
+		for _, Unit in pairs(AllPlayerUnits) do
+			Unit:AddNewModifier(PlayerHero, nil, "lm_take_no_damage", nil)
+		end
+		self.m_bInvulnerabilityEnabled = true
+	elseif self.m_bInvulnerabilityEnabled == true then
+		for _, Unit in pairs(AllPlayerUnits) do
+			Unit:RemoveModifierByName("lm_take_no_damage")
+		end
+		self.m_bInvulnerabilityEnabled = false
+	end
+end
+
+
+-------------------
+-- MaxGoldButton --
+-------------------
+function AOHGameMode:OnMaxGoldButtonPressed(eventSourceIndex)
+	if self.m_bMaxGold == false then
+		self.m_bMaxGold = true
+		SendToServerConsole("dota_dev player_givegold 99999")
+	elseif self.m_bMaxGold == true then
+		self.m_bMaxGold = false
+	end
+end
+
+----------------------
+-- SpawnEnemyButton --
+----------------------
+function AOHGameMode:OnSpawnEnemyButtonPressed(eventSourceIndex, data)
+	local PlayerHero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
+
+	self._Misha = CreateUnitByName("npc_dota_dummy_misha", PlayerHero:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS)
+	self._Misha:SetControllableByPlayer(PlayerHero:GetPlayerID(), true)
+
+	table.insert(self.m_tEnemiesList,self._Misha)
+end
+
+--[[
+------------------------
+-- LevelUpEnemyButton --
+------------------------
+function AOHGameMode:OnLevelUpEnemyButtonPressed(eventSourceIndex)
+	for k, v in pairs(self.m_tEnemiesList) do
+		self.m_tEnemiesList[k]:HeroLevelUp(false)
+	end
+end
+]]
+
+------------------------------
+-- RemoveSpawnedUnitsButton --
+------------------------------
+function AOHGameMode:OnRemoveSpawnedUnitsButtonPressed(eventSourceIndex)
+--	for k, v in pairs(self.m_tEnemiesList) do
+	local enemy = self.m_tEnemiesList[1]
+	if enemy then
+		enemy:ForceKill(false)
+		table.remove(self.m_tEnemiesList, 1)
+		enemy:RemoveSelf()
+	end
+	self.m_nEnemiesCount = 0
+end
+
+--------------------------
+-- DayNightToggleButton --
+--------------------------
+function AOHGameMode:OnDayNightToggleButtonPressed(eventSourceIndex)
+	if not _G._Sun then
+		GameRules:SetTimeOfDay(0.75)
+		_G._Sun = true
+	else
+		GameRules:SetTimeOfDay(0.25)
+		_G._Sun = false
+	end
+end
+
+--------------------------
+-- HeroRenderModeButton --
+--------------------------
+function AOHGameMode:OnHeroRenderModeButtonPressed(eventSourceIndex)
+	self.m_nHeroRenderMode = self.m_nHeroRenderMode + 1
+	if self.m_nHeroRenderMode > 8 then
+		self.m_nHeroRenderMode = 0
+	end
+	if self.m_nHeroRenderMode == 1 then
+		self.m_nHeroRenderMode = 2 
+	end
+
+	SendToServerConsole(tostring(string.format("r_hero_debug_render_mode %i", self.m_nHeroRenderMode)))
+end
+
+-----------------
+-- PauseButton --
+-----------------
+function AOHGameMode:OnPauseButtonPressed(eventSourceIndex)
+	SendToServerConsole("dota_pause")
+end
+
+-----------------
+-- LeaveButton --
+-----------------
+function AOHGameMode:OnLeaveButtonPressed(eventSourceIndex)
+	SendToServerConsole("disconnect")
 end

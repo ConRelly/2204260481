@@ -10,18 +10,21 @@ function modifier_generic_handler:IsPermanent() return true end
 
 function modifier_generic_handler:OnCreated()
 	if IsServer() then
-		self.health_regen_amp = 0
-		
 		self.forbidden_inflictors = {
 			"item_blade_mail",
 			"luna_moon_glaive"
 		}
 		self:StartIntervalThink(FrameTime())
-	end
-	piety = false
-	if self:GetParent():GetUnitName() == "npc_dota_hero_lina" and not self:GetParent():HasModifier("modifier_sourcery") and self:GetParent():IsRealHero() and not self:GetParent():IsIllusion() and not piety then
-		self:GetParent():AddItemByName("item_to_piety")
-		piety = true
+		piety = false
+		if self:GetParent():GetUnitName() == "npc_dota_hero_lina" and not self:GetParent():HasModifier("modifier_sourcery") and self:GetParent():IsRealHero() and not self:GetParent():IsIllusion() and not piety then
+			self:GetParent():AddItemByName("item_to_piety")
+			piety = true
+		end
+		kardel = false
+		if self:GetParent():GetUnitName() == "npc_dota_hero_sniper" and not self:GetParent():HasModifier("modifier_kardels_skills") and self:GetParent():IsRealHero() and not self:GetParent():IsIllusion() and not kardel then
+			self:GetParent():AddItemByName("item_to_kardel")
+			kardel = true
+		end
 	end
 end
 function modifier_generic_handler:OnIntervalThink()

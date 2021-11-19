@@ -1362,23 +1362,41 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Crippling Fear (Night Stalker) does not turn off when the hero dies
 
 
+(How about this kind of update sorting?)
+-- NEW
+* Added new transform: Kardel
+* Earth Spirit: Added new ability (Rollinâ€™ Stone) and replaced from Ball Lightning
+* Chen: Added new skill (Command: Traning) and moved Aghanim's Scepter effect
 * Added Super Scepter effect for Ball Lightning (Storm Spirit)
+* Added Super Scepter effect for THE WORLD (Faceless Void)
 * Added Aghanim's Shard effect for Overload (Storm Spirit)
+-- Ability
 * Storm Spirit: Added new talent and replaced from "+250 Health" (right level 15)
-* Overlord (Storm Spirit) Attack Speed slow increased from 60 to 90
+* Overlord (Storm Spirit): Attack Speed slow increased from 60 to 90
 * Rebalanced Ball Lightning (Storm Spirit)
-* Earth Spirit: Added new ability and replaced from Ball Lightning
-* Undying Q buff now does not expire and Scales with Str on damage
-* Wraith King ultimate now can be refresh
+* Insatiable Hunger (Broodmother): Added missing levels
+* Decay (Undying): Now buff does not expire on death and Scales with Str on damage
+* Reincarnation (Wraith King): Now can be refreshed
 * Centaur added to underdog.
-* Marci ult deals more dmg on last 2 lvls.
-* Tinker missing skill is back.
-* Frostmourne debuff Attack Speed slow increased from 80 to 150
+* Unleash (Marci): Deals more dmg on last 2 lvls.
+* Defense Matrix (Tinker) is back.
+* Crypt Swarm (Death Prophet): Cast point reduced by 0.3
+* THE WORLD (Faceless Void): Slightly reworked and changed Aghanim's Scepter effect
+* Undying Punch (Undying): Now Damage and heal depends on Max Health, not the current one, as it was before (Now the description is correct)
+* Undying Punch (Undying): Rescaled numbers
+-- Items
+* Ethereal Blade LVL 2: Added 100 gold cost recipe
+* CrossBow: Added Attack Projectile Speed bonus
+* Frostmourne: Attack Speed slow increased from 80 to 150
+* Arcanist's Armor: Dmg reflection reduced and inscreased his MR and armor stats.
+* Tome of Knowledge: Restock 15% faster(15% more to buy), bonus xp per use from 150 to 140.
+* Titan Relic got some small buffs.
+* Fixed Devil's Daedalus visual bug of not displaying the bonus dmg.
+* Removed one Ring of Aquila and reworked other one (gold cost and recipe don't changed)
+-- Other
 * Removed some skills from -extramode that where causing crash.
-* Arcanist's Dmg reflection reduced and inscreased his MR and armor stats.
-* Tome of Knowledge restock 15% faster(15% more to buy), bonus xp per use from 150 to 140.
-* titan relic got some small bufs.
-* Fix Devil's Daedalus visual bug of not displaying the bonus dmg.
+* An extra skill point is given every 7 levels, instead of 5
+* Added a new command for the cheat lobby "-demo"
 
 
 

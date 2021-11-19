@@ -3,7 +3,33 @@
 	"Language"		"English"
 	"Tokens"
 	{
-		"addon_game_name"								"Hero Attack On Gods"
+		"addon_game_name"								"Hero Attack On Gods"	
+
+		"DemoOptions_MinimizeButton"				"Demo Options"
+		"DemoOptions_UnMinimizeButton"				"  >&#xD;&#xD;&#xD;&#xD;  >"
+		"Hero_ButtonCategory"						"Hero"
+		"Spawn_ButtonCategory"						"Spawn"
+		"Misc_ButtonCategory"						"Customize"
+		"Playback_ButtonCategory"					""
+		"Display_ButtonCategory"					"Display"
+
+		"Refresh_Button"							"Refresh"
+		"LevelUp_Button"							"Level Up"
+		"MaxLevel_Button"							"Level to Max"
+		"FreeSpells_Button"							"Free Spells"
+		"Invulnerability_Button"					"Invulnerability"
+		"Inf_Gold_Button"							"Max Gold"
+		"Enemy_Button"								"Spawn Misha"
+		"LevelUpEnemy_Button"						"Level Up Enemy"
+		"DummyTarget_Button"						"Dummy Target"
+		"RemoveSpawns_Button"						"Remove Spawns"
+		"SelectCosmetics_Button"					"Equip New Items"
+		"ChangeHero_Button"							"Select New Hero"
+		"PauseDemo_Button"							"Pause"
+		"QuitDemo_Button"							"Quit"
+		"DayNight_Button"							"Toggle Day / Night"
+		"HeroRenderMode_Button"						"Hero Display Mode"
+
 ///////////////////////////////////////////////////Aplpn English Translate//////////////////////////////////////////////////
 	"game_begin_benediction"					"It's dangerous to go alone! Take this."
 
@@ -411,6 +437,9 @@
 	"DOTA_Tooltip_modifier_overcharge_stack"				"Overcharge Stacks"
 	"DOTA_Tooltip_modifier_overcharge_stack_Description"	"Gives +%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Attack Damage and +%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% Attack Speed"
 
+	"DOTA_Tooltip_ability_damage_meter"					"Damage-o-Meter"
+	"DOTA_Tooltip_ability_damage_meter_Description"		"<h1>Active: Phys/Mag Armor Increase</h1> \n<h1>HP</h1>Total damage taken \n<h1>HP Regen</h1>Damage per second"
+
 	"DOTA_Tooltip_ability_warrior_dispersion"				"Dispersion"
 	"DOTA_Tooltip_ability_warrior_dispersion_Description"	"Stop hitting yourself"
 	"DOTA_Tooltip_ability_warrior_dispersion_damage_reflection_pct"	"%DAMAGE REFLECTED:"
@@ -444,6 +473,11 @@
 	"dota_tooltip_ability_desire_of_life"				"Desire of Life"
 	"dota_tooltip_ability_desire_of_life_description"	"What doesn't kill you makes you stronger."
 
+
+	"DOTA_Tooltip_Ability_custom_side_gunner"					"Side Gunner"
+	"DOTA_Tooltip_Ability_custom_side_gunner_Description"		"An automatic turret that shoots at a random enemy nearby. Selects the furthest target in range. <h1><font color='#0094FF'>Aghanim's Shard</font></h1> Range is increased by the attack radius \n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1> Reduces the attack interval by x2 \n<h1><font color='#DE3163'>Super Scepter</font></h1> Allows you to attack 2 targets at the same time"
+	"DOTA_Tooltip_Ability_custom_side_gunner_gunner_radius"			"Radius:"
+	"DOTA_Tooltip_Ability_custom_side_gunner_gunner_interval"		"Attack Interval:"
 
 	"DOTA_Tooltip_Ability_clinkz_infernal_breath"				"Infernal Breath"
 	"DOTA_Tooltip_Ability_clinkz_infernal_breath_Description"	"Combat practice pays off, increasing the health and damage Clinkz.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Using his infernal power, has %scepter_chance%%% chance when attacking to deal %scepter_mag_damage%%% magic damage depending on the damage dealt."
@@ -737,6 +771,62 @@
 	"DOTA_Tooltip_ability_rolling_stone_dmg_reduction"			"%Damage Reduction:"
 	"DOTA_Tooltip_modifier_rolling_stone_buff"					"Rollin’ Stone"
 	"DOTA_Tooltip_modifier_rolling_stone_buff_Description"		"Reduces incoming damage by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%"
+
+// Kardel
+	"DOTA_Tooltip_ability_sniper_shoot"					"Shoot"
+	"DOTA_Tooltip_ability_sniper_shoot_Description"		"Makes a shot with the appropriate bullet. \n<font color='#FF423F'>Damage of all bullets depends on the BASE damage, and the range depends on the attack radius.</font>"
+	"DOTA_Tooltip_ability_sniper_shoot_Lore"			"Kardel is one of the best shooters of his people — the gun seemed to be an extension of his hand, and the shot was her touch."
+	"DOTA_Tooltip_ability_sniper_shoot_Note0"			"1) Does not work on critical hits."
+	"DOTA_Tooltip_ability_sniper_shoot_Note1"			"2) Normal bullets instantly kill illusions."
+	"DOTA_Tooltip_ability_sniper_shoot_norm_bullet"			"%Normal bullet Damage:"
+	"DOTA_Tooltip_ability_sniper_shoot_expl_bullet"			"%Explosive bullet Damage:"
+	"DOTA_Tooltip_ability_sniper_shoot_shrap_bullet"		"%Fragment bullet Damage:"
+
+	"DOTA_Tooltip_ability_reload_bullet"					"Reloading"
+	"DOTA_Tooltip_ability_reload_bullet_Description"		"Loads the selected cartridge type."
+	"DOTA_Tooltip_ability_reload_bullet_Lore"			"A necessary skill that life can depend on."
+	"DOTA_Tooltip_ability_reload_bullet_reload_time"		"Reload time:"
+
+	"DOTA_Tooltip_ability_change_bullets_type"					"Change Bullet"
+	"DOTA_Tooltip_ability_change_bullets_type_Description"		"Changes the type of bullets: <br><font color='#BD7D93'>Normal</font> > <font color='#ECF47C'>Explosive</font> > <font color='#5F22DF'>Fragment</font> \n<h1><font color='#BD7D93'>Normal bullets</font></h1> Has 2 damage phases. <br>Deals <font color=\"#ae2f28\">Physical</font> damage. <br>Dodgeable: <font color='#D34348'>No</font> <br>Attack Modifiers: <font color='#5AD142'>Yes</font> <br>Blocked by Linken's Sphere: <font color='#5AD142'>Yes</font> <br>Pierces spell immunity: <font color='#5AD142'>Yes</font> \n<h1><font color='#ECF47C'>Explosive bullets</font></h1> Has 2 damage phases. <br>Deals <font color=\"#ae2f28\">Physical</font> (radius - %expl_phys_radius%) and <font color=\"#5b93d1\">Magical</font> (radius - %expl_magic_radius%) damage. <br>Dodgeable: <font color='#5AD142'>Yes</font> <br>Attack Modifiers: <font color='#D34348'>No</font> <br>Blocked by Linken's Sphere: <font color='#D34348'>No</font> <br>Pierces spell immunity: <font color='#5AD142'>Yes</font>/<font color='#D34348'>No</font> \n<h1><font color='#5F22DF'>Fragment bullets</font></h1> Has 8 damage phases. <br>Deals mixed, but reduced by 35%% damage. <br>Dodgeable: <font color='#5AD142'>Yes</font> <br>Attack Modifiers: <font color='#5AD142'>Yes</font> <br>Blocked by Linken's Sphere: <font color='#5AD142'>Yes</font> <br>Pierces spell immunity: <font color='#5AD142'>Yes</font>"
+	"DOTA_Tooltip_ability_change_bullets_type_Lore"			"There are different types of bullets in Kardel's stock for different situations."
+	"DOTA_Tooltip_ability_change_bullets_type_changing_time"		"Type of bullets change time:"
+
+	"DOTA_Tooltip_ability_pocket_portal"					"Pocket Teleport"
+	"DOTA_Tooltip_ability_pocket_portal_Description"		"Allows you to leave the mechanism. When pressed again, teleports the hero to this mechanism. \n<h1><font color='#0094FF'>Aghanim's Shard</font></h1> Pocket Teleport works on the specified point and disjoint projectiles."
+	"DOTA_Tooltip_ability_pocket_portal_Lore"			"Any sniper should have safe escape routes."
+	"DOTA_Tooltip_ability_pocket_portal_duration"			"Mechanism life time:"
+	"DOTA_Tooltip_modifier_pocket_portal_duration"					"Mechanism Timer"
+	"DOTA_Tooltip_modifier_pocket_portal_duration_Description"		"If you don't use the teleport again, the mechanism will break."
+//	"DOTA_Tooltip_modifier_pocket_portal_evasion"					"Phase shift"
+//	"DOTA_Tooltip_modifier_pocket_portal_evasion_Description"		"Evasion increased by %dMODIFIER_PROPERTY_EVASION_CONSTANT%%%."
+
+	"DOTA_Tooltip_ability_kardels_skills"					"Kardel's Skills"
+	"DOTA_Tooltip_ability_kardels_skills_Description"		"Each dexterity makes the Kardel more accurate, which makes hitting weak spots easier."
+	"DOTA_Tooltip_ability_kardels_skills_Lore"			"The mastery of any Kardel skill sooner or later pays off the effort expended."
+	"DOTA_Tooltip_ability_kardels_skills_dmg_per_agility"		"Base Damage per Agility:"
+
+	"DOTA_Tooltip_ability_hunting_mark"					"Hunting Mark"
+	"DOTA_Tooltip_ability_hunting_mark_Description"		"Cardel's honed hunting skills allow you to track down a target without letting it escape."
+	"DOTA_Tooltip_ability_hunting_mark_Lore"			"Mountain survival and prey tracking skills will come in handy on every battlefield."
+	"DOTA_Tooltip_ability_hunting_mark_Note0"				"5000/10000/25000 gold is required to study 3/5/7 ability level."
+	"DOTA_Tooltip_ability_hunting_mark_ricochet"				"Max ricochets:"
+	"DOTA_Tooltip_ability_hunting_mark_duration"				"Duration:"
+	
+	"DOTA_Tooltip_modifier_normal_bullets"			"Normal bullets"
+	"DOTA_Tooltip_modifier_explosive_bullets"		"Explosive bullets"
+	"DOTA_Tooltip_modifier_shrapnel_bullets"		"Fragment bullets"
+
+	"DOTA_Tooltip_ability_special_bonus_sniper_shoot_bullet_dmg"			"+{s:value}% bullet Damage"
+	"DOTA_Tooltip_ability_special_bonus_pocket_portal_evasion"					"Phase shift"
+	"DOTA_Tooltip_ability_special_bonus_pocket_portal_evasion_Description"		"After using Pocket Teleport, {s:chance}% evasion is given for {s:duration} sec."
+	"DOTA_Tooltip_ability_special_bonus_pocket_portal_cooldown"		"-{s:value}s Pocket Teleport Cooldown"
+	"DOTA_Tooltip_ability_special_bonus_kardel_reloading"					"Slick hands"
+	"DOTA_Tooltip_ability_special_bonus_kardel_reloading_Description"		"Reduces Reloading and Change Bullets time by {s:value} sec."
+	"DOTA_Tooltip_ability_special_bonus_kardels_skills_dmg"				"+{s:value} Kardel's Skills Base Damage per Agility"
+	"DOTA_Tooltip_ability_special_bonus_hunting_mark_direct_shot_bonus"					"Headshot"
+	"DOTA_Tooltip_ability_special_bonus_hunting_mark_direct_shot_bonus_Description"		"Shoot deals {s:value}% damage when aiming at an enemy with Hunting Mark (not a ricochet)"
+
 
 //###########################################################################################################################
 	
@@ -2733,14 +2823,13 @@
 	"DOTA_Tooltip_modifier_mjz_enigma_spacetime_gravity_buff"	   			"SpaceTime Gravity"
 	"DOTA_Tooltip_modifier_mjz_enigma_spacetime_gravity_buff_Description"		"The power returns to its origin."
 	"DOTA_Tooltip_ability_mjz_faceless_the_world"						"THE WORLD"
-	"DOTA_Tooltip_ability_mjz_faceless_the_world_Description"			"Creates a blister in spacetime, trapping all units caught in its sphere of influence and causes you to move very quickly inside it and have %bonus_stuf%%% total damage output increased. Only Faceless Void and his teammates are unaffected.Cannot be Stunned(or other cc) inside.Invisible units in the sphere will be revealed."
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_Description"			"Creates a blister in spacetime, trapping all units caught in its sphere of influence and causes you to move very quickly inside it and increases incoming damage by %bonus_stuf%%% of all trapped. Only Faceless Void and any units he controls are unaffected. Unaffected units cannot be Stunned (or other cc) inside. Invisible enemies in the sphere will be revealed. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Increases duration by %duration_super_scepter% sec. and radius by %radius_super_scepter%"
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_Lore"					"When a rift opens to Claszureme, all poor souls caught within will likely never return."
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_radius"				"RADIUS:"
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_duration"				"DURATION:"
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_bonus_stuf"			"%Total Damage Output Increase:"
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_duration_scepter"				"SCEPTER DURATION:"
-	"DOTA_Tooltip_ability_mjz_faceless_the_world_scepter_description"			"Increases duration. "
-	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_friendly"				"THE WORLD"
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_scepter_description"			"Increases duration and allows allies to move inside sphere."
 	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_enemy"				"THE WORLD"
 	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_enemy_Description"	"Trapped in spacetime. Unable to move or act."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_faceless_the_world_radius"		"+{s:value} THE WORLD AoE"
@@ -4049,7 +4138,8 @@ DISPEL TYPE: Strong Dispel"
 "DOTA_Tooltip_ability_special_bonus_unique_chen_1"	"+5 Holy Persuasion Max Units, Mass Persuasion"
 "DOTA_Tooltip_ability_special_bonus_unique_chen_1_Description"	"Holy persuasion will convert surrounding units as well."
 "DOTA_Tooltip_Ability_special_bonus_unique_chen_custom_1"		 					"Burden Removes No Health"
-"DOTA_Tooltip_Ability_special_bonus_unique_chen_custom_2"		 					"+{s:value} Holy Persuasion Max Units, Mass Persuasion "
+"DOTA_Tooltip_Ability_special_bonus_unique_chen_custom_2"		 					"+{s:value} Holy Persuasion Max Units"
+//, Mass Persuasion"
 "DOTA_Tooltip_ability_special_bonus_unique_gyrocopter_1_Description"	"Massively reduces Homing Missile cooldown."
 "DOTA_Tooltip_ability_special_bonus_unique_huskar"	"+{s:value}s Life Break Channel"
 "DOTA_Tooltip_ability_special_bonus_unique_invoker_11"	"+{s:value} Forged Spirit Armor Stacks"
@@ -5759,18 +5849,22 @@ Upgradeable by Aghanim's Scepter."
 "DOTA_Tooltip_modifier_chen_custom_avatar_debuff"					   "God's Burden"
 "DOTA_Tooltip_modifier_chen_custom_avatar_debuff_Description" 	"This unit moves %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% slower and takes %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% more damage from all sources. When this debuff expires this unit will lose 40% their max health."
 
-"DOTA_Tooltip_ability_chen_custom_holy_persuasion"								"<font color='#f2da5b'>Holy Persuasion</font>"
-"DOTA_Tooltip_ability_chen_custom_holy_persuasion_Description"					"Chen takes control of an enemy or neutral creep. Converted creeps have 130% of Chen total dmg as their base Attack(<font color='#0B775D'>At lvl 4 the converted creeps will get extra dmg from: 33% of your max Hp + Mana, 50 x of your Spell Amp, and 200 x your total armor</font>), Hold Alt for details. not affected by Nebu."
-"DOTA_Tooltip_ability_chen_custom_holy_persuasion_true_strike_chance"		   "%Chance to Convert with True Strike:"
-"DOTA_Tooltip_ability_chen_custom_holy_persuasion_Note0"						"When converted they gain 2 random abilities + thrist, have a chance for true strike, have base attacktime 0.9, extra mana with regeneration, phased, invulnerable and 800 base MS"
-"DOTA_Tooltip_ability_chen_custom_holy_persuasion_max_units"					"MAX UNITS:"
-"DOTA_Tooltip_ability_chen_custom_holy_persuasion_magic_resistance"				"%BONUS MAGIC RESISTANCE:"
-"DOTA_Tooltip_ability_chen_custom_holy_persuasion_scepter_description"			"Allows Holy Persuasion to target Ancient Creeps and adds aghanim buff to your converted creeps"
-"DOTA_Tooltip_modifier_chen_custom_holy_persuasion_buff"						"Holy Persuasion"
-"DOTA_Tooltip_modifier_chen_custom_holy_persuasion_buff_description"			"Persuaded to Chen's cause."
+"DOTA_Tooltip_ability_chen_custom_holy_persuasion"					"<font color='#f2da5b'>Holy Persuasion</font>"
+"DOTA_Tooltip_ability_chen_custom_holy_persuasion_Description"		"Chen takes control of an enemy or neutral creep. Converted creeps have %casters_dmg%%% of Chen total dmg as their base Attack (<font color='#0B775D'>At lvl 4 the converted creeps will get extra dmg from: %hp_mana_to_dmg%%% of your max HP + Mana, %sp_amp_to_dmg% x of your Spell Amp, and %armor_to_dmg% x your total Armor</font>). \nNot affected by N3bu."
+"DOTA_Tooltip_ability_chen_custom_holy_persuasion_scepter_description"		"Allows Holy Persuasion to target Ancient Creeps"
+"DOTA_Tooltip_ability_chen_custom_holy_persuasion_Note0"		"When converted they gain 2 random abilities + Thrist, have a chance for True Strike, have base attacktime 0.9, Fountain Rejuvenation, Phased, Invulnerable and 800 base MS"
+"DOTA_Tooltip_ability_chen_custom_holy_persuasion_max_units"					"Max units:"
+//"DOTA_Tooltip_ability_chen_custom_holy_persuasion_magic_resistance"				"%Bonus Magic Resistance:"
+"DOTA_Tooltip_ability_chen_custom_holy_persuasion_true_strike_chance"			"%Chance to Convert with True Strike:"
+"DOTA_Tooltip_modifier_chen_custom_holy_persuasion_buff"					"Holy Persuasion"
+"DOTA_Tooltip_modifier_chen_custom_holy_persuasion_buff_description"		"Persuaded to Chen's cause."
 
 "DOTA_Tooltip_ability_kill_me_master"					"Kill Me Master"
 "DOTA_Tooltip_ability_kill_me_master_Description"		"Kills this minion in the most brutal way."
+
+"DOTA_Tooltip_ability_update_chen_holy_persuasion"					"Command: Traning"
+"DOTA_Tooltip_ability_update_chen_holy_persuasion_Description"		"Chen calls all his controlled creatures and orders them to retrain their abilities and recalculate their characters."
+"DOTA_Tooltip_ability_update_chen_holy_persuasion_scepter_description"		"Adds Aghanim's Scepter effect to your converted creeps"
 
 
 
@@ -8565,24 +8659,22 @@ Required Level: %required_level%
 
 		//>>>>	Ring of Aquila
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila"								"Ring of Aquila"
-		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_Description"					"<h1>Passive: Aquila Aura</h1>Grants %aura_mana_regen% mana regeneration and %aura_bonus_armor% armor to nearby allies."
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_Description"					"<h1>Passive: Aquila Aura</h1> Grants %aura_mana_regen% mana regeneration and %aura_bonus_armor% armor to nearby allies. <br><br>Radius: %aura_radius% \n<h1>Toggle: Aura</h1> When switching, the aura will turn off, but the attributes of the item will increase by x8."
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_Lore"							"The ring of the fallen Warlord Aquila continues to support armies in battle."
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_bonus_strength"				"+$str"
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_bonus_agility"				"+$agi"
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_bonus_intellect"				"+$int"
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_bonus_damage"					"+$damage"
 		"DOTA_Tooltip_modifier_item_mjz_ring_of_aquila_aura"						"Aquila Aura"
-		"DOTA_Tooltip_modifier_item_mjz_ring_of_aquila_aura_Description"			"Grants mana regeneration and armor to nearby allies."
+		"DOTA_Tooltip_modifier_item_mjz_ring_of_aquila_aura_Description"			"Mana Regeneration increased by %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% <br> Armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
 
-		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive"						"Ring of Aquila (Inactive)"
-		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_Description"			"<h1>Passive: Aquila Aura</h1>Grants %aura_mana_regen% mana regeneration and %aura_bonus_armor% armor."
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive"						"Ring of Aquila"
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_Description"			"<h1>Passive: Aquila Will</h1> Item attributes increased by x8. \n<h1>Toggle: Aura</h1> When switching, the aura will turn on, but the attributes of the item will decrease by x8."
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_Lore"				"The ring of the fallen Warlord Aquila continues to support armies in battle."
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_bonus_strength"		"+$str"
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_bonus_agility"		"+$agi"
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_bonus_intellect"		"+$int"
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_bonus_damage"		"+$damage"
-		"DOTA_Tooltip_modifier_item_mjz_ring_of_aquila_inactive_aura"				"Aquila Aura (Inactive)"
-		"DOTA_Tooltip_modifier_item_mjz_ring_of_aquila_inactive_aura_Description"	"Grants mana regeneration and armor."
 		//<<<<	
 
 		//>>>>	Satanic LVL 2

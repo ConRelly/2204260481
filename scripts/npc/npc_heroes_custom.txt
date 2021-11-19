@@ -78,6 +78,7 @@
 
 	"Ability2"		"chen_custom_holy_persuasion"
 	"Ability6"		"chen_custom_avatar"
+	"Ability7"		"update_chen_holy_persuasion"
 	"Ability10"		"special_bonus_exp_boost_25"
 	"Ability11"		"special_bonus_gold_income_300"
 	"Ability13"		"special_bonus_spell_lifesteal_30"
@@ -498,7 +499,7 @@
 		"Ability11"				"special_bonus_cdr_25"
 		"Ability12"				"special_bonus_truestrike"
 		"Ability13"				"special_bonus_lifesteal_25"
-		"Ability14"				"special_bonus_hp_3250"
+		"Ability14"				"special_bonus_unique_mjz_faceless_the_world_attack_speed"
 		"Ability16"				"special_bonus_attack_speed_250"
 		"Ability17"				"special_bonus_unique_mjz_faceless_the_world_radius"
 
@@ -1479,6 +1480,7 @@
 
 		"Ability1"				"mjz_death_prophet_carrion_swarm"
 		"Ability2"				"death_prophet_custom_moving_life"
+		"Ability4"				"custom_side_gunner"
 		"Ability10"				"special_bonus_hp_regen_50"
 		"Ability12"				"special_bonus_reincarnation_90"
 		"Ability14"				"special_bonus_hp_4000"
@@ -2222,7 +2224,7 @@
 		"Ability1"		"dazzle_poison_touch"
 		"Ability2"		"dazzle_shallow_grave"
 		"Ability3"		"dazzle_shadow_wave"
-		"Ability4"		"generic_hidden"
+		"Ability4"		"custom_side_gunner"
 		"Ability5"		"generic_hidden"
 		"Ability6"		"dazzle_bad_juju_custom"
 		"Ability10"		"special_bonus_gold_income_420"

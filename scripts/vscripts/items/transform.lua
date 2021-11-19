@@ -111,3 +111,121 @@ function ChangeHeroPiety(keys)
 
 	caster:RemoveItem(ability)
 end
+
+
+
+function ChangeHeroKardel(keys)
+	local caster = keys.caster
+	local ability = keys.ability
+	local generic_hidden = false
+	if caster:HasAbility("modifier_kardels_skills") then return end
+	if caster:GetUnitName() == "npc_dota_hero_sniper" and caster:GetLevel() < 2 then
+		if caster:GetAbilityPoints() == 0 then
+			caster:SetAbilityPoints(1)
+		end
+-- Abilities
+	--1
+		if caster:HasAbility("sniper_shrapnel_lua") then
+			caster:AddAbility("sniper_shoot")
+			caster:SwapAbilities("sniper_shrapnel_lua", "sniper_shoot", false, true)
+			caster:RemoveAbility("sniper_shrapnel_lua")
+		end
+	--2
+		if caster:HasAbility("sniper_headshot_lua") then
+			caster:AddAbility("pocket_portal")
+			caster:SwapAbilities("sniper_headshot_lua", "pocket_portal", false, true)
+			caster:RemoveAbility("sniper_headshot_lua")
+		end
+	--3
+		if caster:HasAbility("mjz_sniper_take_aim") then
+			caster:AddAbility("kardels_skills")
+			caster:SwapAbilities("mjz_sniper_take_aim", "kardels_skills", false, true)
+			caster:RemoveAbility("mjz_sniper_take_aim")
+		end
+	--4
+		if caster:HasAbility("mjz_sniper_quick_draw") then
+			caster:AddAbility("reload_bullet")
+			caster:SwapAbilities("mjz_sniper_quick_draw", "reload_bullet", false, true)
+			caster:RemoveAbility("mjz_sniper_quick_draw")
+		end
+	--5
+		if caster:HasAbility("generic_hidden") then
+			caster:AddAbility("change_bullets_type")
+			caster:SwapAbilities("generic_hidden", "change_bullets_type", false, true)
+			caster:RemoveAbility("generic_hidden")
+		end
+	--6
+		if caster:HasAbility("mjz_sniper_assassinate") then
+			caster:AddAbility("hunting_mark")
+			caster:SwapAbilities("mjz_sniper_assassinate", "hunting_mark", false, true)
+			caster:RemoveAbility("mjz_sniper_assassinate")
+		end
+
+
+
+-- Talents
+--[[
+	-- 10 Level
+		--right
+		if caster:HasAbility("special_bonus_agility_100") then
+			caster:AddAbility("")
+			caster:SwapAbilities("special_bonus_agility_100", "", false, true)
+			caster:RemoveAbility("special_bonus_agility_100")
+		end
+]]
+		--left
+		if caster:HasAbility("special_bonus_unique_sniper_3") then
+			caster:AddAbility("special_bonus_sniper_shoot_bullet_dmg")
+			caster:SwapAbilities("special_bonus_unique_sniper_3", "special_bonus_sniper_shoot_bullet_dmg", false, true)
+			caster:RemoveAbility("special_bonus_unique_sniper_3")
+		end
+
+	-- 15 Level
+		--right
+		if caster:HasAbility("special_bonus_attack_damage_400") then
+			caster:AddAbility("special_bonus_kardel_reloading")
+			caster:SwapAbilities("special_bonus_attack_damage_400", "special_bonus_kardel_reloading", false, true)
+			caster:RemoveAbility("special_bonus_attack_damage_400")
+		end
+		--left
+		if caster:HasAbility("special_bonus_unique_sniper_6") then
+			caster:AddAbility("special_bonus_pocket_portal_cooldown")
+			caster:SwapAbilities("special_bonus_unique_sniper_6", "special_bonus_pocket_portal_cooldown", false, true)
+			caster:RemoveAbility("special_bonus_unique_sniper_6")
+		end
+
+	-- 20 Level
+		--right
+		if caster:HasAbility("special_bonus_hp_4000") then
+			caster:AddAbility("special_bonus_attack_range_400")
+			caster:SwapAbilities("special_bonus_hp_4000", "special_bonus_attack_range_400", false, true)
+			caster:RemoveAbility("special_bonus_hp_4000")
+		end
+		--left
+		if caster:HasAbility("special_bonus_unique_mjz_sniper_assassinate_damage") then
+			caster:AddAbility("special_bonus_hunting_mark_direct_shot_bonus")
+			caster:SwapAbilities("special_bonus_unique_mjz_sniper_assassinate_damage", "special_bonus_hunting_mark_direct_shot_bonus", false, true)
+			caster:RemoveAbility("special_bonus_unique_mjz_sniper_assassinate_damage")
+		end
+
+	-- 25 Level
+		--right
+		if caster:HasAbility("special_bonus_spell_immunity") then
+			caster:AddAbility("special_bonus_pocket_portal_evasion")
+			caster:SwapAbilities("special_bonus_spell_immunity", "special_bonus_pocket_portal_evasion", false, true)
+			caster:RemoveAbility("special_bonus_spell_immunity")
+		end
+		--left
+		if caster:HasAbility("special_bonus_unique_sniper_5") then
+			caster:AddAbility("special_bonus_kardels_skills_dmg")
+			caster:SwapAbilities("special_bonus_unique_sniper_5", "special_bonus_kardels_skills_dmg", false, true)
+			caster:RemoveAbility("special_bonus_unique_sniper_5")
+		end
+
+-- Change Ranged Projectile Attack Effect
+--		caster:SetRangedProjectileName("particles/custom/abilities/sourcery/sourcery_attack_effect.vpcf")
+
+		EmitSoundOn("sniper_snip_attack_04", caster)
+	end
+	caster:RemoveItem(ability)
+end

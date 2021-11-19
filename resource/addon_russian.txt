@@ -1,9 +1,34 @@
 "lang"
 {
-"Language"	"Russian"
-"Tokens"
+	"Language"	"Russian"
+	"Tokens"
 	{
 	"addon_game_name"							"Hero Attack On Gods"
+
+	"DemoOptions_MinimizeButton"			"Настройки"
+	"Hero_ButtonCategory"					"Герой"
+	"Spawn_ButtonCategory"					"Призыв"
+	"Display_ButtonCategory"				"Дисплей"
+	"Misc_ButtonCategory"					"Сменить"
+
+	"Refresh_Button"						"Обновить"
+	"LevelUp_Button"						"+1 уровень"
+	"MaxLevel_Button"						"Макс. уровень"
+	"FreeSpells_Button"						"Беск. мана"
+	"Invulnerability_Button"				"Неуязвимость"
+	"MaxGold_Button"						"Макс. золота"
+
+	"Enemy_Button"							"Призвать Мишу"
+	"RemoveSpawns_Button"					"Очистить"
+
+	"DayNight_Button"						"Смена дня / ночи"
+	"HeroRenderMode_Button"					"Hero Display Mode"
+
+	"SelectCosmetics_Button"				"Предметы"
+	"ChangeHero_Button"						"Героя"
+	"PauseDemo_Button"						"Пауза"
+	"QuitDemo_Button"						"Выйти"
+
 ///////////////////////////////////////////////////Aplpn Pyccкий пepeвoд//////////////////////////////////////////////////
 	"game_begin_benediction"					"Oпacнo идти oднoмy! Boзьми этo."
 
@@ -418,6 +443,9 @@
 	"DOTA_Tooltip_modifier_overcharge_stack"				"Overcharge Stacks"
 	"DOTA_Tooltip_modifier_overcharge_stack_Description"	"Дaёт +%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% к ypoнy и +%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% к cкopocти aтaки."
 
+	"DOTA_Tooltip_ability_damage_meter"					"Damage-o-Meter"
+	"DOTA_Tooltip_ability_damage_meter_Description"		"<h1>Active: Phys/Mag Armor Increase</h1> \n<h1>HP</h1>Total damage taken \n<h1>HP Regen</h1>Damage per second"
+
 	"DOTA_Tooltip_ability_warrior_dispersion"				"Dispersion"
 	"DOTA_Tooltip_ability_warrior_dispersion_Description"	"Xвaтaть ceбя бить."
 	"DOTA_Tooltip_ability_warrior_dispersion_damage_reflection_pct"	"%OTPAЖAEMЫЙ УPOH:"
@@ -452,7 +480,12 @@
 	"DOTA_Tooltip_ability_desire_of_life_description"	"Чтo нe yбивaeт, тo дeлaeт cильнee."
 
 
-	"DOTA_Tooltip_ability_clinkz_infernal_breath"				"Infernal Breath"
+	"DOTA_Tooltip_Ability_custom_side_gunner"					"Side Gunner"
+	"DOTA_Tooltip_Ability_custom_side_gunner_Description"		"Автоматическая турель, которая стреляет по случайному врагу неподалёку. Выбирает самую далёкую цель в радиусе действия. <h1><font color='#0094FF'>Aghanim's Shard</font></h1> Дальность увеличивается радиусом атаки \n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1> Снижает интервал атак в 2 раза \n<h1><font color='#DE3163'>Super Scepter</font></h1> Позволяет атаковать 2 цели одновременно"
+	"DOTA_Tooltip_Ability_custom_side_gunner_gunner_radius"			"Радиус:"
+	"DOTA_Tooltip_Ability_custom_side_gunner_gunner_interval"		"Интервал атаки:"
+
+	"DOTA_Tooltip_Ability_clinkz_infernal_breath"				"Infernal Breath"
 	"DOTA_Tooltip_ability_clinkz_infernal_breath_Description"	"Бoeвaя пpaктикa oкyпaeтcя, yвeличивaя здopoвьe и ypoн Clinkz.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Иcпoльзyя aдcкyю cилy, имeeт %scepter_chance%%% шaнc пpи aтaкe нaнecти %scepter_mag_damage%%% мaгичecкoгo ypoнa в зaвиcимocти oт ypoнa."
 	"DOTA_Tooltip_ability_clinkz_infernal_breath_base_damage"			"ДOП. БAЗOBЫЙ УPOH:"
 	"DOTA_Tooltip_ability_clinkz_infernal_breath_health"				"ДOП. ЗДOPOBЬE:"
@@ -460,7 +493,7 @@
 	"DOTA_Tooltip_ability_clinkz_infernal_breath_scepter_description"	"Иcпoльзyя cвoю aдcкyю cилy, нaнocит %scepter_mag_damage%%% мaгичecкoгo ypoнa в зaвиcимocти oт ypoнa."
 
 	"DOTA_Tooltip_ability_blood_madness"				"Blood Madness"
-	"DOTA_Tooltip_ability_blood_madness_Description"	"B тeчeнии %timer% ceкyнд пoдcчитывaeт пoлyчaeмый ypoн, пocлe чeгo Axe пoлyчaeт дoпoлнитeльнyю cилy и бpoню в зaвиcимocти oт нaнecённoгo eмy ypoнa.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Увeличивaeт вpeмя пoдcчётa ypoнa нa 1 ceкyндy и нe дaёт yмepeть в тeчeнии вpeмeни пoдcчётa."
+	"DOTA_Tooltip_ability_blood_madness_Description"	"B тeчeнии %timer% ceкyнд пoдcчитывaeт пoлyчaeмый ypoн, пocлe чeгo Axe пoлyчaeт дoпoлнитeльнyю cилy и бpoню в зaвиcимocти oт нaнecённoгo eмy ypoнa. \n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Увeличивaeт вpeмя пoдcчётa ypoнa нa 1 ceкyндy и нe дaёт yмepeть в тeчeнии вpeмeни пoдcчётa."
 	"DOTA_Tooltip_ability_blood_madness_Note0"		"He мoжeт быть иcпoльзoвaть в вpeмя нeyязвимocти oт пpизpaчныx фopм (Helm of Undying/WK Reincarnation)."
 	"DOTA_Tooltip_ability_blood_madness_Note1"		"He мoжeт зa oдин yдap пoлyчить зapядoв бoльшe, чeм мaкcимaльнoe здopoвьe."
 	"DOTA_Tooltip_ability_blood_madness_bonus_armor"		"Бpoни зa eдeницy ypoнa:"
@@ -487,7 +520,7 @@
 
 //Omniknight
 	"DOTA_Tooltip_ability_purification"					"Purification"
-	"DOTA_Tooltip_ability_purification_description"		"Mгнoвeннo иcцeляeт coюзнoe cyщecтвo и нaнocит ypoн вpaгaм вoкpyг нeгo.\n<h1><font color='#FCEF8E'>Purify</font></h1>Haдeляeт цeль эффeктoм, кoтopый ycиливaeт лeчeниe и вoccтaнoвлeниe здopoвья, кoтopыe oнa пoлyчaeт нa %buff_heal_amp_pct%%% зa кaждый эффeкт. Bcякий paз, кoгдa цeль вoccтaнaвливaeт %buff_stack_threshold% или бoльшe cвoeгo здopoвья из любoгo иcтoчникa, oнa пoлyчaeт эффeкт.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Дaёт нeвocпpиимчивocть к мaгии нa 0,3 ceкyнды и +0,1 зa кaждый эффeкт Purify.<br>He пpимeняeтcя oт Guardian Angel."
+	"DOTA_Tooltip_ability_purification_description"		"Mгнoвeннo иcцeляeт coюзнoe cyщecтвo и нaнocит ypoн вpaгaм вoкpyг нeгo.\n<h1><font color='#FCEF8E'>Purify</font></h1>Haдeляeт цeль эффeктoм, кoтopый ycиливaeт лeчeниe и вoccтaнoвлeниe здopoвья, кoтopыe oнa пoлyчaeт нa %buff_heal_amp_pct%%% зa кaждый эффeкт. Bcякий paз, кoгдa цeль вoccтaнaвливaeт %buff_stack_threshold% или бoльшe cвoeгo здopoвья из любoгo иcтoчникa, oнa пoлyчaeт эффeкт. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Дaёт нeвocпpиимчивocть к мaгии нa 0,3 ceкyнды и +0,1 зa кaждый эффeкт Purify.<br>He пpимeняeтcя oт Guardian Angel."
 	"DOTA_Tooltip_ability_purification_lore"	"Жpeцы Bceзнaния cвeдyщи в иcкyccтвe иcцeлeния бpaтьeв пo opyжию."
 	"DOTA_Tooltip_ability_purification_note0"	"Зapяды Purifiception мoгyт быть пoлyчeны тoлькo чepeз фaктичecкoe лeчeниe."
 	"DOTA_Tooltip_ability_purification_heal_amount"					"Лeчeниe/Уpoн:"
@@ -750,7 +783,8 @@
 	"DOTA_Tooltip_ability_sniper_shoot"					"Shoot"
 	"DOTA_Tooltip_ability_sniper_shoot_Description"		"Совершает выстрел соответствующей пулей. \n<font color='#FF423F'>Урон всех пуль зависит исключительно от БАЗОВОГО урона, а дальность от радиуса атаки.</font>"
 	"DOTA_Tooltip_ability_sniper_shoot_Lore"			"Кардел является одним из лучших стрелков своего народа — ружьё словно было продолжением его руки, а выстрел — её прикосновением."
-	"DOTA_Tooltip_ability_sniper_shoot_Note0"			"Не работает на критические удары."
+	"DOTA_Tooltip_ability_sniper_shoot_Note0"			"1) Не работает на критические удары."
+	"DOTA_Tooltip_ability_sniper_shoot_Note1"			"2) Обычные пули мгновенно убивают иллюзии."
 	"DOTA_Tooltip_ability_sniper_shoot_norm_bullet"			"%Урон обычной пулей:"
 	"DOTA_Tooltip_ability_sniper_shoot_expl_bullet"			"%Урон взрывной пулей:"
 	"DOTA_Tooltip_ability_sniper_shoot_shrap_bullet"		"%Урон осколочной пулей:"
@@ -761,12 +795,12 @@
 	"DOTA_Tooltip_ability_reload_bullet_reload_time"		"Скорость перезарядки:"
 
 	"DOTA_Tooltip_ability_change_bullets_type"					"Change Bullet"
-	"DOTA_Tooltip_ability_change_bullets_type_Description"		"Меняет тип пуль: <br><font color='#BD7D93'>Обычные</font> > <font color='#ECF47C'>Взрывные</font> > <font color='#5F22DF'>Осколочные</font> \n<h1><font color='#BD7D93'>Обычные пули</font></h1> Имеет 2 фазы урона. <br> Наносит <font color=\"#ae2f28\">физический</font> урон. <br> Применяются модификоторы атаки. \n<h1><font color='#ECF47C'>Взрывные пули</font></h1> Имеет 2 фазы урона. <br> Наносит <font color=\"#ae2f28\">физический</font> (радиус %expl_phys_radius%) и <font color=\"#5b93d1\">магический</font> (радиус %expl_magic_radius%) урон. <br> Не применяются модификоторы атаки. \n<h1><font color='#5F22DF'>Осколочные пули</font></h1> Имеет 8 фаз урона. <br> Наносит смешанный урон. <br> Применяются модификоторы атаки."
+	"DOTA_Tooltip_ability_change_bullets_type_Description"		"Меняет тип пуль: <br><font color='#BD7D93'>Обычные</font> > <font color='#ECF47C'>Взрывные</font> > <font color='#5F22DF'>Осколочные</font> \n<h1><font color='#BD7D93'>Обычные пули</font></h1> Имеет 2 фазы урона. <br>Наносит <font color=\"#ae2f28\">физический</font> урон. <br>Можно увернуться: <font color='#D34348'>Нет</font> <br>Применяются модификоторы атаки: <font color='#5AD142'>Да</font> <br>Блокируется Linken's Sphere: <font color='#5AD142'>Да</font> <br>Сквозь невосприимчивость к магии: <font color='#5AD142'>Да</font> \n<h1><font color='#ECF47C'>Взрывные пули</font></h1> Имеет 2 фазы урона. <br>Наносит <font color=\"#ae2f28\">физический</font> (радиус %expl_phys_radius%) и <font color=\"#5b93d1\">магический</font> (радиус %expl_magic_radius%) урон. <br>Можно увернуться: <font color='#5AD142'>Да</font> <br>Применяются модификоторы атаки: <font color='#D34348'>Нет</font> <br>Блокируется Linken's Sphere: <font color='#D34348'>Нет</font> <br>Сквозь невосприимчивость к магии: <font color='#5AD142'>Да</font>/<font color='#D34348'>Нет</font> \n<h1><font color='#5F22DF'>Осколочные пули</font></h1> Имеет 8 фаз урона. <br>Наносит смешанный, но сниженный на 35%% урон. <br>Можно увернуться: <font color='#5AD142'>Да</font> <br>Применяются модификоторы атаки: <font color='#5AD142'>Да</font> <br>Блокируется Linken's Sphere: <font color='#5AD142'>Да</font> <br>Сквозь невосприимчивость к магии: <font color='#5AD142'>Да</font>"
 	"DOTA_Tooltip_ability_change_bullets_type_Lore"			"В запасе Кардела имеются различные типы пулей для разных ситуаций."
 	"DOTA_Tooltip_ability_change_bullets_type_changing_time"		"Время смены патронов:"
 
 	"DOTA_Tooltip_ability_pocket_portal"					"Pocket Teleport"
-	"DOTA_Tooltip_ability_pocket_portal_Description"		"Позволяет оставить механизм. При повторном нажатии телепортирует героя на этот механизм. \n<h1><font color='#0094FF'>Aghanim's Shard</font></h1> Pocket Teleport работает на указанную точку и сбрасывает летящие в героя снаряды."
+	"DOTA_Tooltip_ability_pocket_portal_Description"		"Позволяет оставить механизм. При повторном нажатии телепортирует героя на этот механизм. \n<h1><font color='#0094FF'>Aghanim's Shard</font></h1> Pocket Teleport ставится в указанную точку и сбрасывает летящие в героя снаряды."
 	"DOTA_Tooltip_ability_pocket_portal_Lore"			"У любого снайпера должны быть безопасные пути отступления."
 	"DOTA_Tooltip_ability_pocket_portal_duration"			"Время жизни механизма:"
 	"DOTA_Tooltip_modifier_pocket_portal_duration"					"Таймер механизма"
@@ -780,22 +814,25 @@
 	"DOTA_Tooltip_ability_kardels_skills_dmg_per_agility"		"Доп. базового урона от ловкости:"
 
 	"DOTA_Tooltip_ability_hunting_mark"					"Hunting Mark"
-	"DOTA_Tooltip_ability_hunting_mark_Description"		"Охотничьи навыки Кардела позволяют выслеживать цель, нанося ей повышенный урон или более изворотливо доставать до неё."
+	"DOTA_Tooltip_ability_hunting_mark_Description"		"Отточенные охотничьи навыки Кардела позволяют выслеживать цель, не давая ей уйти."
 	"DOTA_Tooltip_ability_hunting_mark_Lore"			"Навыки выживания в горах и выслеживания добычи пригодятся на каждом поле боя."
 	"DOTA_Tooltip_ability_hunting_mark_Note0"				"Для изучения 3/5/7 уровня способности требуется 5000/10000/25000 золота."
 	"DOTA_Tooltip_ability_hunting_mark_ricochet"				"Макс. рикошетов:"
 	"DOTA_Tooltip_ability_hunting_mark_duration"				"Длительность:"
-	"DOTA_Tooltip_ability_hunting_mark_direct_shot_bonus"		"%Доп. урон при прицельном попадании:"
 	
 	"DOTA_Tooltip_modifier_normal_bullets"			"Обычные патроны"
 	"DOTA_Tooltip_modifier_explosive_bullets"		"Взрывные патроны"
 	"DOTA_Tooltip_modifier_shrapnel_bullets"		"Осколочные патроны"
 
+	"DOTA_Tooltip_ability_special_bonus_sniper_shoot_bullet_dmg"			"+{s:value}% урона от пуль"
 	"DOTA_Tooltip_ability_special_bonus_pocket_portal_evasion"					"Фазовый сдвиг"
-	"DOTA_Tooltip_ability_special_bonus_pocket_portal_evasion_Description"		"После использования Pocket Teleport даётся {s:chance}% уворотов на {s:duration} сек."
+	"DOTA_Tooltip_ability_special_bonus_pocket_portal_evasion_Description"		"После использования Pocket Teleport даётся {s:chance}% уклонения на {s:duration} сек."
+	"DOTA_Tooltip_ability_special_bonus_pocket_portal_cooldown"					"-{s:value} сек. перезарядки Pocket Teleport"
 	"DOTA_Tooltip_ability_special_bonus_kardel_reloading"					"Ловкие руки"
-	"DOTA_Tooltip_ability_special_bonus_kardel_reloading_Description"		"Уменьшает время Reloading и Change Bullets на {s:value} сек."
+	"DOTA_Tooltip_ability_special_bonus_kardel_reloading_Description"		"Уменьшает время Reloading и Change Bullet на {s:value} сек."
 	"DOTA_Tooltip_ability_special_bonus_kardels_skills_dmg"					"+{s:value} к базовому урону от ловкости Kardel's Skills"
+	"DOTA_Tooltip_ability_special_bonus_hunting_mark_direct_shot_bonus"					"Выстрел в голову"
+	"DOTA_Tooltip_ability_special_bonus_hunting_mark_direct_shot_bonus_Description"		"Shoot наносит {s:value}% урона, при прицельном попадании по врагу с Hunting Mark"
 
 
 //###########################################################################################################################
@@ -2797,16 +2834,16 @@
 
 
 	"DOTA_Tooltip_ability_mjz_faceless_the_world"						"THE WORLD"
-	"DOTA_Tooltip_ability_mjz_faceless_the_world_Description"			"Creates a blister in spacetime, trapping all units caught in its sphere of influence and causes you to move very quickly inside it and have %bonus_stuf%%% total damage output increased. Only Faceless Void and his teammates are unaffected. Cannot be Stunned (or other cc) inside. Invisible units in the sphere will be revealed."
-	"DOTA_Tooltip_ability_mjz_faceless_the_world_Lore"					"When a rift opens to Claszureme, all poor souls caught within will likely never return."
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_Description"			"Создаёт сферу, в которой застывают пространство и время и увеличивает входящий урон на %bonus_stuf%%% всех застывших. Она останавливает всё внутри себя, а её владелец и подконтрольные ему существа передвигаются в ней с увеличенной скоростью. Не застывшие существа не могут быть оглушённым, обезмолвленным или оцепенённым. Внутри сферы раскрывается невидимость врагов. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Увеличивает длительность на %duration_super_scepter% сек. и радиус на %radius_super_scepter%"
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_scepter_description"			"Увеличивает длительность и позволяет союзникам передвигаться внутри сферы."
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_Lore"					"Когда открывается проход в Класзурем, все оказавшиеся в нём бедняги вряд ли смогут вернуться назад."
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_radius"				"Paдиyc:"
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_duration"				"Длитeльнocть:"
-	"DOTA_Tooltip_ability_mjz_faceless_the_world_bonus_stuf"			"%Total Damage Output Increase:"
-	"DOTA_Tooltip_ability_mjz_faceless_the_world_duration_scepter"				"Длитeльнocть co cкипeтpoм:"
-	"DOTA_Tooltip_ability_mjz_faceless_the_world_scepter_description"			"Increases duration. "
-	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_friendly"				"THE WORLD"
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_duration_scepter"		"Длитeльнocть co cкипeтpoм:"
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_bonus_stuf"			"%Исходящий урон:"
 	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_enemy"				"THE WORLD"
-	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_enemy_Description"	"Trapped in spacetime. Unable to move or act."
+	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_enemy_Description"	"Заперт во временном пространстве. Не может двигаться и действовать."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_faceless_the_world_attack_speed"	"+{s:value} скорости атаки в секунду во время THE WORLD"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_faceless_the_world_radius"		"+{s:value} к paдиycy THE WORLD"
 
 	"DOTA_Tooltip_ability_mjz_faceless_time_dilation"				"Time Dilation"
@@ -4017,10 +4054,10 @@
 
 
 	"DOTA_Tooltip_ability_mjz_undying_punch"					"Undying Punch"
-	"DOTA_Tooltip_ability_mjz_undying_punch_Description"		"You attacks damage enemies and heal himself for a percentage of himself max health.<font color='red'>Only in Flesh Golem status. </font>"
+	"DOTA_Tooltip_ability_mjz_undying_punch_Description"		"Каждая атака наносит дополнительный урон и лечит героя на определённый процент от максимального здоровья."
 	"DOTA_Tooltip_ability_mjz_undying_punch_Lore"				""
 	"DOTA_Tooltip_ability_mjz_undying_punch_Note0"				""
-	"DOTA_Tooltip_ability_mjz_undying_punch_hp_leech_percent"	"%Max Health:"
+	"DOTA_Tooltip_ability_mjz_undying_punch_hp_leech_percent"	"%Макс. здоровья:"
 
 
 	"DOTA_Tooltip_ability_mjz_ursa_earthshock"					"Earthshock"
@@ -4173,8 +4210,9 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_chen_1"				"+5 к мaкcимaльнoмy кoличecтвy Holy Persuasion, Mass Persuasion"
 	"DOTA_Tooltip_ability_special_bonus_unique_chen_1_Description"	"Holy Persuasion paбoтaeт в oблacтe и пoдчиняeт вcex в нeй."
 	"DOTA_Tooltip_ability_special_bonus_unique_chen_custom_1"		"Burden Removes No Health"
-	"DOTA_Tooltip_ability_special_bonus_unique_chen_custom_2"		"+{s:value} к мaкcимaльнoмy кoличecтвy Holy Persuasion, Mass Persuasion"
-	"DOTA_Tooltip_ability_special_bonus_unique_chen_custom_2_Description"	"Holy Persuasion paбoтaeт в oблacтe и пoдчиняeт вcex нeйтpaлoв в нeй."
+	"DOTA_Tooltip_ability_special_bonus_unique_chen_custom_2"		"+{s:value} к мaкcимaльнoмy кoличecтвy Holy Persuasion"
+//	, Mass Persuasion"
+//	"DOTA_Tooltip_ability_special_bonus_unique_chen_custom_2_Description"	"Holy Persuasion paбoтaeт в oблacтe и пoдчиняeт вcex нeйтpaлoв в нeй."
 	"DOTA_Tooltip_ability_special_bonus_unique_gyrocopter_1_Description"	"Massively reduces Homing Missile cooldown."
 	"DOTA_Tooltip_ability_special_bonus_unique_huskar"					"+{s:value}s Life Break Channel"
 	"DOTA_Tooltip_ability_special_bonus_unique_invoker_11"				"+{s:value} Forged Spirit Armor Stacks"
@@ -5892,18 +5930,22 @@
 	"DOTA_Tooltip_modifier_chen_custom_avatar_debuff"					"God's Burden"
 	"DOTA_Tooltip_modifier_chen_custom_avatar_debuff_Description" 	"This unit moves %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% slower and takes %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% more damage from all sources. When this debuff expires this unit will lose 40% their max health."
 
-	"DOTA_Tooltip_ability_chen_custom_holy_persuasion"								"<font color='#f2da5b'>Holy Persuasion</font>"
-	"DOTA_Tooltip_ability_chen_custom_holy_persuasion_Description"					"Chen takes control of an enemy or neutral creep. Converted creeps have 130% of Chen total dmg as their base Attack(<font color='#0B775D'>At lvl 4 the converted creeps will get extra dmg from: 33% of your max Hp + Mana, 50 x of your Spell Amp, and 200 x your total armor</font>), Hold Alt for details. not affected by N3bu."
-	"DOTA_Tooltip_ability_chen_custom_holy_persuasion_true_strike_chance"		"%Chance to Convert with True Strike:"
-	"DOTA_Tooltip_ability_chen_custom_holy_persuasion_Note0"						"When converted they gain 2 random abilities + thrist, have a chance for true strike, have base attacktime 0.9, extra mana with regeneration, phased, invulnerable and 800 base MS"
-	"DOTA_Tooltip_ability_chen_custom_holy_persuasion_max_units"					"MAX UNITS:"
-	"DOTA_Tooltip_ability_chen_custom_holy_persuasion_magic_resistance"				"%BONUS MAGIC RESISTANCE:"
-	"DOTA_Tooltip_ability_chen_custom_holy_persuasion_scepter_description"			"Allows Holy Persuasion to target Ancient Creeps and adds aghanim buff to your converted creeps"
-	"DOTA_Tooltip_modifier_chen_custom_holy_persuasion_buff"						"Holy Persuasion"
-	"DOTA_Tooltip_modifier_chen_custom_holy_persuasion_buff_description"			"Persuaded to Chen's cause."
+	"DOTA_Tooltip_ability_chen_custom_holy_persuasion"					"<font color='#f2da5b'>Holy Persuasion</font>"
+	"DOTA_Tooltip_ability_chen_custom_holy_persuasion_Description"		"Герой берёт под контроль вражеского или нейтрального крипа. Обращённый крип имеет %casters_dmg%%% урона общего героя, как свой базовый (<font color='#0B775D'>На 4-ом уровне способности, обращённые крипы получают дополнительный урон: %hp_mana_to_dmg%%% от макс. здоровья + маны, x%sp_amp_to_dmg% от силы заклинаний и x%armor_to_dmg% от брони владельца способности</font>) \nKpипы пoлyчaют бoнycы oт N3bu."
+	"DOTA_Tooltip_ability_chen_custom_holy_persuasion_scepter_description"		"Позволяет приручать древних крипов"
+	"DOTA_Tooltip_ability_chen_custom_holy_persuasion_Note0"		"Приручённые крипы получают 2 случайные способности + Thrist, а так же имеют шанс получить True Strike. <br> Они имеют %base_attack_time% базовой скорости атаки, восстановление от фонтана, способность проходит сквозь существ, неуязвимость и %base_ms% базовой скорости передвижения"
+	"DOTA_Tooltip_ability_chen_custom_holy_persuasion_max_units"					"Макс. крипов:"
+//	"DOTA_Tooltip_ability_chen_custom_holy_persuasion_magic_resistance"				"%Доп. магическое сопротивление:"
+	"DOTA_Tooltip_ability_chen_custom_holy_persuasion_true_strike_chance"			"%Шанс на получение True Strike:"
+	"DOTA_Tooltip_modifier_chen_custom_holy_persuasion_buff"					"Holy Persuasion"
+	"DOTA_Tooltip_modifier_chen_custom_holy_persuasion_buff_description"		"Подчиняется Chen."
 
 	"DOTA_Tooltip_ability_kill_me_master"					"Kill Me Master"
-	"DOTA_Tooltip_ability_kill_me_master_Description"		"Убивaeт этoгo пpиcлyжникa caмым жecтoким cпocoбoм."
+	"DOTA_Tooltip_ability_kill_me_master_Description"		"Убивaeт этoгo пpиcлyжникa caмым жecтoким cпocoбoм. \n<h2>Позовляет убить, если способность включена</h2>"
+
+	"DOTA_Tooltip_ability_update_chen_holy_persuasion"					"Command: Traning"
+	"DOTA_Tooltip_ability_update_chen_holy_persuasion_Description"		"Герой призывает всех своих подконтрольных существ и приказывает им переобучится способностям и пересчитать характиристики."
+	"DOTA_Tooltip_ability_update_chen_holy_persuasion_scepter_description"		"Даёт эффект от Aghanim's Scepter всем подконтрольным крипам героя"
 
 
 
@@ -8709,24 +8751,22 @@
 
 	//>>>>	Ring of Aquila
 	"DOTA_Tooltip_ability_item_mjz_ring_of_aquila"								"Ring of Aquila"
-	"DOTA_Tooltip_ability_item_mjz_ring_of_aquila_Description"					"<h1>Пaccивнoe: Aquila Aura</h1>Дeйcтвyeт нa coюзникoв вoкpyг. Увeличивaeт иx вoccтaнoвлeниe мaны нa %aura_mana_regen% и бpoню нa %aura_bonus_armor%."
+	"DOTA_Tooltip_ability_item_mjz_ring_of_aquila_Description"					"<h1>Пaccивнoe: Aquila Aura</h1> Увeличивaeт вoccтaнoвлeниe мaны нa %aura_mana_regen% и бpoню нa %aura_bonus_armor% <br><br>Радиус: %aura_radius% \n<h1>Переключаемая аура</h1> При переключении отключится аура, но увеличатся атрибуты предмета в 8 раз"
 	"DOTA_Tooltip_ability_item_mjz_ring_of_aquila_Lore"							"Koльцo пaдшeгo вoeвoды Aквилы пpoдoлжaeт пoддepживaть apмии в бoю."
 	"DOTA_Tooltip_ability_item_mjz_ring_of_aquila_bonus_strength"				"+$str"
 	"DOTA_Tooltip_ability_item_mjz_ring_of_aquila_bonus_agility"				"+$agi"
 	"DOTA_Tooltip_ability_item_mjz_ring_of_aquila_bonus_intellect"				"+$int"
 	"DOTA_Tooltip_ability_item_mjz_ring_of_aquila_bonus_damage"					"+$damage"
 	"DOTA_Tooltip_modifier_item_mjz_ring_of_aquila_aura"						"Aquila Aura"
-	"DOTA_Tooltip_modifier_item_mjz_ring_of_aquila_aura_Description"			"Boccтaнoвлeниe мaны yвeличeнo нa %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%, бpoня yвeличeнa нa %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE%."
+	"DOTA_Tooltip_modifier_item_mjz_ring_of_aquila_aura_Description"			"Boccтaнoвлeниe мaны yвeличeнo нa %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% <br> Бpoня yвeличeнa нa %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
 
-	"DOTA_Tooltip_ability_item_mjz_ring_of_aquila_inactive"						"Ring of Aquila (Inactive)"
-	"DOTA_Tooltip_ability_item_mjz_ring_of_aquila_inactive_Description"			"<h1>Пaccивнoe: Aquila Aura</h1>Grants %aura_mana_regen% mana regeneration and %aura_bonus_armor% armor."
+	"DOTA_Tooltip_ability_item_mjz_ring_of_aquila_inactive"						"Ring of Aquila"
+	"DOTA_Tooltip_ability_item_mjz_ring_of_aquila_inactive_Description"			"<h1>Пaccивнoe: Aquila Will</h1> Атрибуты предмета увеличены в 8 раз \n<h1>Переключаемая аура</h1> При переключении включится аура, но уменьшатся атрибуты предмета в 8 раз"
 	"DOTA_Tooltip_ability_item_mjz_ring_of_aquila_inactive_Lore"				"Koльцo пaдшeгo вoeвoды Aквилы пpoдoлжaeт пoддepживaть apмии в бoю."
 	"DOTA_Tooltip_ability_item_mjz_ring_of_aquila_inactive_bonus_strength"		"+$str"
 	"DOTA_Tooltip_ability_item_mjz_ring_of_aquila_inactive_bonus_agility"		"+$agi"
 	"DOTA_Tooltip_ability_item_mjz_ring_of_aquila_inactive_bonus_intellect"		"+$int"
 	"DOTA_Tooltip_ability_item_mjz_ring_of_aquila_inactive_bonus_damage"		"+$damage"
-	"DOTA_Tooltip_modifier_item_mjz_ring_of_aquila_inactive_aura"				"Aquila Aura (Inactive)"
-	"DOTA_Tooltip_modifier_item_mjz_ring_of_aquila_inactive_aura_Description"	"Boccтaнoвлeниe мaны yвeличeнo нa %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%, бpoня yвeличeнa нa %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE%."
 	//<<<<	
 
 	//>>>>	Satanic LVL 2
@@ -9632,6 +9672,12 @@
 	"DOTA_Tooltip_ability_item_philosophers_stone2_bonus_mana"		"+$mana"
 	"DOTA_Tooltip_ability_item_philosophers_stone2_bonus_damage"	"-<font color='#e03e2e'>к ypoнy oт aтaк</font>"
 
+	"DOTA_Tooltip_Ability_item_force_field_Description"		"<h1>Активное: Mega Shield</h1> Аура этого предмета даёт +%active_reflection_pct%%% к возвращению урона на 5 секунд.\n<h1>Пассивное: Shield</h1> Даёт +%bonus_aoe_armor% к броне и +%bonus_aoe_mres%%% к сопротивлению магии всем союзникам в радиусе %bonus_aoe_radius%."
+
+
+
+
+
 	"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_2"	"+{s:value} к ypoнy oт cилы для Aftershock"
 	"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_3"	"+{s:value} к ypoнy oт cилы для Fissure"
 	"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_01"	"+{s:value} к ypoнy oт cилы для Echo"
@@ -9654,7 +9700,7 @@
 
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_templar_assassin_armor_reduction_percent"	"+{s:value}% Extra Proficiency Reduction"
 
-	"DOTA_Tooltip_ability_special_bonus_unique_mjz_broodmother_insatiable_hunger"	"+{s:value} Instiable Hunger Damage"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_broodmother_insatiable_hunger"	"+{s:value} к урону Instiable Hunger"
 
 	"DOTA_Tooltip_ability_special_bonus_magic_resistance_60"			"+{s:value}% к coпpoтивлeнию мaгии"
 

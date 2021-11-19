@@ -10241,36 +10241,46 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"magic_resistance"		"20"
+			"base_ms"				"800"
 		}
 		"03"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"max_ancients"				"1"
+			"var_type"				"FIELD_FLOAT"
+			"base_attack_time"		"0.9"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"talent_radius"			"0"
+			"magic_resistance"		"20"
 		}
-		"04"
+		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"true_strike_chance"		"50 55 60 65 70 75 80"
-		}		
+		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"casters_dmg"			"130"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"hp_mana_to_dmg"		"33"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"sp_amp_to_dmg"			"50"
+		}
+		"09"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"armor_to_dmg"			"200"
+		}
 	}
 	"OnSpellStart"
 	{
-		"FireSound"
-		{
-			"EffectName"	"Hero_Chen.HolyPersuasionCast"
-			"Target" 		"CASTER"
-		}
-		"FireSound"
-		{
-			"EffectName"	"Hero_Chen.HolyPersuasionEnemy"
-			"Target" 		"TARGET"
-		}
 		"FireEffect"
 		{
 			"EffectName"		"particles/units/heroes/hero_chen/chen_holy_persuasion.vpcf"
@@ -10310,8 +10320,7 @@
 "kill_me_master"
 {
 	"BaseClass"						"ability_datadriven"
-	"ScriptFile"					"abilities/bosses/custom_antimage_revenge.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 	"AbilityTextureName"			"chen_holy_persuasion"
 	"MaxLevel"					  	"1"
 	"AbilityCooldown"				"0"
@@ -10324,6 +10333,17 @@
 		}
 	}
 }
+"update_chen_holy_persuasion"
+{
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"abilities/heroes/chen_custom_holy_persuasion"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"			"chen_holy_persuasion"
+	"MaxLevel"					  	"1"
+	"HasScepterUpgrade"				"1"
+	"AbilityCooldown"				"300"
+}
+
 "chen_custom_avatar"
 {
 	"BaseClass"					"ability_datadriven"
@@ -12175,6 +12195,7 @@
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	"AbilityCooldown"				"55.0 50.0 45.0 40.0 30.0"
 	"AbilityManaCost"				"100 120 160 200 250"
+	"AbilityCastRange"				"%radius"
 	"HasScepterUpgrade"					"1"
 	"precache"
 	{
@@ -22353,8 +22374,8 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"HasScepterUpgrade"				"1"
-		"MaxLevel"					  "5"
-		"AbilityCastPoint"				"0.2 0.2 0.2 0.2 0.2"
+		"MaxLevel"						"7"
+		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCooldown"				"50"
 		"AbilityManaCost"				"150"
@@ -22370,18 +22391,18 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifesteal_pct"			"2 4 6 8 10"
+				"lifesteal_pct"			"2 4 6 8 10 12 14"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"100 140 180 220 300 350 500"
+				"bonus_attack_speed"	"100 150 200 250 300 350 400"
 				//"LinkedSpecialBonus"	"special_bonus_unique_mjz_broodmother_insatiable_hunger"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"12.0 14.0 16.0 20.0 25.0"
+				"duration"				"12 14 16 18 20 22 25"
 			}			
 		}
 		
@@ -23351,10 +23372,10 @@
 
 		"AbilitySound"					"Hero_DeathProphet.CarrionSwarm"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "5"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
 		"AbilityCastRange"				"810"
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastPoint"				"0.2"
 		"AbilityCooldown"				"8 7 6 5"
 		"AbilityManaCost"				"85 110 135 160"	
 		
@@ -23362,23 +23383,23 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"start_radius"				"110 110 110 110 110 110 110"
+				"var_type"				"FIELD_INTEGER"
+				"start_radius"			"110"
 			}
 			"02"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"end_radius"				"300 300 300 300 300 300 300"
+				"var_type"				"FIELD_INTEGER"
+				"end_radius"			"300"
 			}
 			"03"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"range"						"810 810 810 810 810 810 810"
+				"var_type"				"FIELD_INTEGER"
+				"range"					"810"
 			}
 			"04"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"speed"						"1100 1100 1100 1100 1100 1100 1100"
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1100"
 			}
 			"11"
 			{
@@ -23396,7 +23417,7 @@
 
 		"precache"
 		{
-			"particle" 	"particles/units/heroes/hero_death_prophet/death_prophet_carrion_swarm.vpcf"	//Can't attach the bats
+			"particle" 	"particles/units/heroes/hero_death_prophet/death_prophet_carrion_swarm.vpcf"
 			"particle"	"particles/econ/items/death_prophet/death_prophet_acherontia/death_prophet_acher_swarm.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts"
 		}
@@ -24338,7 +24359,7 @@
 	//=================================================================================================================
 	"mjz_faceless_the_world"
 	{
-		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/hero_faceless_void/mjz_faceless_the_world.lua"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -24346,14 +24367,11 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_FacelessVoid.Chronosphere"
 		"AbilityTextureName"			"mjz_faceless_the_world"
-
 		"HasScepterUpgrade"				"1"
-		
-		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.35 0.35 0.35"
+		"LevelsBetweenUpgrades"			"12"
+		"AbilityCastPoint"				"0.35"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-
-		"AbilityCooldown"				"75.0"
+		"AbilityCooldown"				"100 85 70"
 		"AbilityManaCost"				"150 225 300"
 
 		"AbilityModifierSupportBonus"		"50"
@@ -24363,51 +24381,44 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"1425"
-				"LinkedSpecialBonus"	"special_bonus_unique_mjz_faceless_the_world_radius" //"special_bonus_unique_faceless_void_2"
+				"radius"				"800 1050 1300"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_faceless_the_world_radius"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"4.0 5.0 6.0"
+				"duration"				"4 5 6"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_scepter"		"6.0 7.0 10.0"
+				"duration_scepter"		"6 7 8"
+				"RequiresScepter"		"1"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown_scepter"		"75.0"
+				"var_type"					"FIELD_FLOAT"
+				"duration_super_scepter"	"4"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"vision_radius"			"1475"
-				"LinkedSpecialBonus"	"special_bonus_unique_mjz_faceless_the_world_radius"
+				"radius_super_scepter"	"550"
 			}
-			// Extra
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_interval"			"0.1"
+				"cooldown_scepter"		"75"
 			}
-			// If you want the Chronosphere to ignore Faceless Void then keep it at 1 otherwise set it to 0
 			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"ignore_void"			"1"
-			}
-			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"speed"					"1200"
 			}
-			"09"
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stuf"					"50"
+				"bonus_stuf"			"50"
 			}			
 		}
 
@@ -24424,16 +24435,30 @@
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"575"
+				"var_type"				"FIELD_INTEGER"
+				"value"					"650"
 			}
 		}
 	}
+	"special_bonus_unique_mjz_faceless_the_world_attack_speed"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"25"
+			}
+		}
+	}
+
 	"mjz_faceless_time_dilation"
 	{
 		"BaseClass"						"ability_lua"	// "ability_datadriven"
@@ -32549,91 +32574,21 @@
 	//=================================================================================================================
 	"mjz_undying_punch"
 	{
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/hero_undying/mjz_undying_punch"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"mjz_undying_punch"
-		"MaxLevel"				"1"
-
-		"precache"
-		{
-			"soundfile"		 "soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
-			"particle"		  "particles/units/heroes/hero_life_stealer/life_stealer_feast.vpcf"
-		}
-
+		"MaxLevel"						"3"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_leech_percent"		"10"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_mjz_undying_punch"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-
-				"OnAttackStart"
-				// "%attack_damage" is set to the damage value before mitigation
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_mjz_undying_punch_damage"
-						"Target" 		"CASTER"
-					}
-
-					"RunScript"
-					{
-						"ScriptFile"		"abilities/hero_undying/mjz_undying_punch.lua"
-						"Function"			"undying_attack"
-						"feast_modifier"	"modifier_mjz_undying_punch_damage"
-					}
-				}
-
-				"OnAttack"
-				{
-					"FireEffect"
-					{
-						"EffectName"		"particles/generic_gameplay/generic_lifesteal.vpcf"
-						"EffectAttachType"  "follow_origin"
-						"Target"			"CASTER"
-					}
-
-					"RunScript"
-					{
-						"ScriptFile"	"abilities/hero_undying/mjz_undying_punch.lua"
-						"Function"		"undying_heal"
-					}
-				}			
-			}
-
-			"modifier_mjz_undying_punch_damage"
-			{
-				"IsHidden"		"1"
-				"IsPurgable"	"0"
-
-				"OnAttackLanded"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_mjz_undying_punch_damage"
-						"Target" 		"CASTER"
-					}
-				}
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "1"
-				}
+				"hp_leech_percent"		"5 8 11"
 			}
 		}
 	}
-		
 	
 	
 	//=================================================================================================================
@@ -40403,12 +40358,22 @@
 	}
 	"true_strike"
 	{
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"	 "true_strike"
-		
-		"BaseClass"			 "ability_datadriven"
-
-		"IsOnCastBar"				   "1"
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"		"true_strike"
+		"MaxLevel"					"1"
+		"Modifiers"
+		{
+			"modifier_creeps_true_strike"
+			{
+				"Passive"				"1"
+				"IsHidden"				"1"
+				"States"
+				{
+					"MODIFIER_STATE_CANNOT_MISS"			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
 	}
 	"cold_slashes"
 	{
@@ -42635,7 +42600,7 @@
 	{
 		"BaseClass"					"ability_lua"
 		"ScriptFile"				"abilities/damage_meter"
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"AbilityTextureName"		"techies_suicide"
 		"MaxLevel"					"1"
 		"AbilitySpecial"
@@ -42644,6 +42609,28 @@
 			{
 				"var_type"			"FIELD_FLOAT"
 				"duration"			"5"
+			}
+		}
+	}
+
+	"custom_side_gunner"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"abilities/side_gunner"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"		"gyrocopter_flak_cannon"
+		"MaxLevel"					"1"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"gunner_radius"		"700"
+			}
+			"2"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"gunner_interval"	"1.2"
 			}
 		}
 	}

@@ -72,7 +72,7 @@
 
 	"weapons_armor"
 	{
-		"item"		"item_ring_of_aquila"
+		"item"		"item_mjz_ring_of_aquila"
 		"item"		"item_titan_sliver"
 		"item"		"item_orb_of_destruction"
 		"item"		"item_holy_locket"

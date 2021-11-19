@@ -2978,6 +2978,14 @@
 			"Function"				"add_perma"
 		}
 	}
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"items/item_plain_ring_perma.lua"
+			"Function"				"add_perma"
+		}
+	}
 }
 
 //Ancient plain ring
@@ -5171,7 +5179,7 @@
 
 "item_dev_dagon"
 {
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"BaseClass"						"item_dagon_5"
@@ -5231,7 +5239,7 @@
 }
 "item_ultimate_dagon"
 {
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"BaseClass"						"item_dagon_5"
@@ -9634,7 +9642,7 @@
 	"item_mjz_dagon_v2"
 	{
 		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -14961,33 +14969,31 @@
 			}
 		}
 	}
-	
-	//=================================================================================================================
-	// Ring of Aquila	天鹰之戒
-	//=================================================================================================================
+
+//=================================================================================================================
+// Ring of Aquila
+//=================================================================================================================
 	"item_recipe_mjz_ring_of_aquila"
 	{
 		"BaseClass"						"item_datadriven"
-		
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		
+		"ItemCost"						"900"
 		"ItemRecipe"					"1"
+		"ItemPurchasable"				"1"
+		"ItemShopTags"					""
+		"AbilityTextureName"			"item_recipe_ring_of_aquila"
 		"ItemResult"					"item_mjz_ring_of_aquila"
 		"ItemRequirements"
 		{
-			"01"						"item_wraith_band;item_ring_of_basilius"
+			"01"						"item_wraith_band;item_ring_of_basilius;item_chest_2"
 		}
 	}
-	"item_mjz_ring_of_aquila"				//天鹰之戒（激活状态）
+	"item_mjz_ring_of_aquila"
 	{
 		"BaseClass"						"item_datadriven"
-		// "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"mjz_ring_of_aquila_active"		//"item_ring_of_aquila"
+		"AbilityTextureName"			"mjz_ring_of_aquila_active"
 		"AbilityCastRange" 				"7200"
 
-		"ItemCost"						"1015"
 		"ItemShopTags"					""
 		"ItemQuality"					"rare"
 		"ItemAliases"					"roa;ring of aquila"
@@ -15007,12 +15013,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"10"
+				"bonus_damage"			"8"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"5"
+				"bonus_strength"		"4"
 			}
 			"03"
 			{
@@ -15022,72 +15028,51 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"5"
+				"bonus_intellect"		"4"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"0"
+				"aura_radius"			"7200"
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"7200"
+				"var_type"				"FIELD_FLOAT"
+				"aura_mana_regen"		"18.75"
 			}
 			"07"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_mana_regen"		"1.25"
-			}
-			"08"
-			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"5"
-			}			
+				"aura_bonus_armor"		"30"
+			}
 		}
-
-
-		"OnSpellStart"  //Switch to the inactive version of Ring of Aquila.
+		"OnSpellStart"
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"items/item_mjz_ring_of_aquila.lua"
-				"Function"				"SwapToInactiveStatus"
-				"InactiveItem"			"item_mjz_ring_of_aquila_inactive"
-				"DummyItem"				"item_mjz_ring_of_aquila_dummy"
+				"ScriptFile"		"items/item_mjz_ring_of_aquila.lua"
+				"Function"			"SwitchAura"
 			}
 		}
-
 		"Modifiers"
 		{
-			
 			"modifier_item_mjz_ring_of_aquila"
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"	//可叠加
-	
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"		"20"					//攻击百分比加成
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"			//力量
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 		"%bonus_agility"			//敏捷
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	  	"%bonus_intellect"			//智力
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"				//攻击力
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"				//护甲
-					// "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		"15"					//魔抗加成
-					// "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%bonus_attack_speed"		//攻击速度
-					// "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"100"					//移动速度
-					// "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"10"						//生命恢复速度
-			  		// "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"10"							//魔法恢复速度
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 		"%bonus_agility"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	  	"%bonus_intellect"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 				}
 			}
-
 			"modifier_item_mjz_ring_of_aquila_aura_emitter"
 			{
 				"Passive"				"1"
 				"IsHidden"				"1"
-				
 				"Aura" 					"modifier_item_mjz_ring_of_aquila_aura"
 				"Aura_Radius" 			"%aura_radius"
 				"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -15100,34 +15085,46 @@
 				"Passive"			"0"
 				"IsHidden"			"0"
 				"TextureName"		"item_mjz_ring_of_aquila_active"
-				
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE"				"%aura_bonus_armor"
-					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"						"0.65"  //This is hardcoded due to an obscure engine bug.
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%aura_bonus_armor"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%aura_mana_regen"
 				}
 			}
-
 		}
-
 	}
-	"item_mjz_ring_of_aquila_inactive"		//天鹰之戒（关闭状态）
+
+//=================================================================================================================
+// Ring of Aquila (Inactive)
+//=================================================================================================================
+	"item_recipe_mjz_ring_of_aquila_inactive"
 	{
 		"BaseClass"						"item_datadriven"
-		// "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityTextureName"			"mjz_ring_of_aquila_inactive"		//"item_ring_of_aquila"
-		"AbilityCastRange" 				"7200"
-
-		"ItemCost"						"515"
+		"ItemCost"						"900"
+		"ItemRecipe"					"1"
+		"ItemPurchasable"				"0"
 		"ItemShopTags"					""
+		"AbilityTextureName"			"item_recipe_ring_of_aquila_active"
+		"ItemResult"					"item_mjz_ring_of_aquila_inactive"
+		"ItemRequirements"
+		{
+			"01"						"item_wraith_band;item_ring_of_basilius;item_chest_2"
+		}
+	}
+	"item_mjz_ring_of_aquila_inactive"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"mjz_ring_of_aquila_inactive"
+		"ItemShopTags"					""
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"1"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"roa;ring of aquila"
-		"ItemShareability"				""		
+		"ItemShareability"				""
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ActiveDescriptionLine"			"2"
 		"ShouldBeSuggested"				"1"
-		"ItemPurchasable"				"0"			//从商店购买不到
 
 		// Sound	
 		"UIPickupSound"					"Item.PickUpRingShop"
@@ -15140,117 +15137,49 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"85"
+				"bonus_damage"			"64"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"26"
+				"bonus_strength"		"32"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"55"
+				"bonus_agility"			"80"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"26"
+				"bonus_intellect"		"32"
 			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"0"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"7200"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_mana_regen"		"25.0"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"12"
-			}			
 		}
-
-
-		"OnSpellStart"  //Switch to the inactive version of Ring of Aquila.
+		"OnSpellStart"
 		{
 			"RunScript"
 			{
-				"ScriptFile"			"items/item_mjz_ring_of_aquila.lua"
-				"Function"				"SwapToActiveStatus"
-				"ActiveItem"			"item_mjz_ring_of_aquila"
-				"DummyItem"				"item_mjz_ring_of_aquila_dummy"
+				"ScriptFile"		"items/item_mjz_ring_of_aquila.lua"
+				"Function"			"SwitchAura"
 			}
 		}
-
 		"Modifiers"
 		{
-			
 			"modifier_item_mjz_ring_of_aquila_inactive"
 			{
 				"Passive"			"1"
 				"IsHidden"			"1"
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"	//可叠加
-	
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 				"Properties"
 				{
-					// "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"		"20"					//攻击百分比加成
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"			//力量
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 		"%bonus_agility"			//敏捷
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	  	"%bonus_intellect"			//智力
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"				//攻击力
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"				//护甲
-					// "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		"15"					//魔抗加成
-					// "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%bonus_attack_speed"		//攻击速度
-					// "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"100"					//移动速度
-					// "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"10"						//生命恢复速度
-			  		// "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"10"							//魔法恢复速度
-				}
-			}
-
-			"modifier_item_mjz_ring_of_aquila_inactive_aura_emitter"
-			{
-				"Passive"				"1"
-				"IsHidden"				"1"
-				
-				"Aura" 					"modifier_item_mjz_ring_of_aquila_inactive_aura"
-				"Aura_Radius" 			"%aura_radius"
-				"Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types" 			"DOTA_UNIT_TARGET_HERO"				  //只对自己有效
-				"Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-				"Aura_ApplyToCaster" 	"1"
-			}
-			"modifier_item_mjz_ring_of_aquila_inactive_aura"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"TextureName"		"item_mjz_ring_of_aquila_inactive"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE"				"%aura_bonus_armor"
-					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"						"0.65"  //This is hardcoded due to an obscure engine bug.
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" 		"%bonus_agility"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	  	"%bonus_intellect"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
 				}
 			}
 		}
-
 	}
-	"item_mjz_ring_of_aquila_dummy"			//切换天鹰之戒时的占位符
-	{
-		"BaseClass"					 "item_datadriven"
-		"ItemBaseLevel"				 "1"
-		"ItemPurchasable"				"0"			//从商店购买不到
-	}
-
-
 	
 	//=================================================================================================================
 	// Recipe: Satanic					撒旦之邪力 LVL 2
@@ -17663,22 +17592,6 @@
 		}
 	}
 
-"item_recipe_chest_4"
-{
-	"BaseClass"						"item_datadriven"
-	"Model"							"models/props_gameplay/recipe.vmdl"
-	"AbilityTextureName"			"item_recipe"
-	"ItemCost"						"0"	
-	"ItemShopTags"					""
-	"ItemRecipe"					"1"
-	"ItemResult"					"item_chest_4"
-	"ItemIsNeutralDrop"				"1"
-	"ItemRequirements"
-	{
-		"01"						"item_chest_2;item_chest_2;item_chest_2"
-		//"02"						"item_chest_2;item_chest_2;item_chest_2;item_chest_2;item_chest_2"
-	}
-}
 
 
 //Level 4 Chests
@@ -17694,6 +17607,21 @@
 	"ItemPurchasable"				"1"
 	"ItemSellable"					"1"
 	"ItemCost"						"3000"
+}
+"item_recipe_chest_4"
+{
+	"BaseClass"						"item_datadriven"
+	"Model"							"models/props_gameplay/recipe.vmdl"
+	"AbilityTextureName"			"item_recipe"
+	"ItemCost"						"0"	
+	"ItemShopTags"					""
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_chest_4"
+	"ItemIsNeutralDrop"				"1"
+	"ItemRequirements"
+	{
+		"01"						"item_chest_2;item_chest_2;item_chest_2"
+	}
 }
 
 // Ceremonial Robe 2
@@ -18015,6 +17943,20 @@
 	}
 }
 
+//Level 5 chests
+"item_chest_5"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"chest_5"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+	"ItemGloballyCombinable"		"1"
+	"ItemQuality"					"rare"
+	"ItemPurchasable"				"1"
+	"ItemSellable"					"1"
+	"ItemCost"						"6000"	
+}
 "item_recipe_chest_5"
 {
 	"BaseClass"						"item_datadriven"
@@ -18032,20 +17974,7 @@
 
 	}
 }
-//Level 5 chests
-"item_chest_5"
-{
-	"BaseClass"						"item_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"chest_5"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-	"ItemGloballyCombinable"		"1"
-	"ItemQuality"					"rare"
-	"ItemPurchasable"				"1"
-	"ItemSellable"					"1"
-	"ItemCost"						"6000"	
-}
+
 "item_recipe_custom_apex"
 {
 	"BaseClass"						"item_datadriven"

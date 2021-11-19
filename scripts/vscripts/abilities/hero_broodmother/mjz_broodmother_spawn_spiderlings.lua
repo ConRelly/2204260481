@@ -58,7 +58,7 @@ function mjz_broodmother_spawn_spiderlings:SpawnSpiderlings(hTarget)
         local unitName = self:GetSpiderUnitName()
         local M_NAME = "modifier_mjz_broodmother_spiderlings"
         local aghbuf = "modifier_item_ultimate_scepter_consumed"
-        local chace_srike = self:GetSpecialValueFor("true_strike_chance")
+        local chance_strike = self:GetSpecialValueFor("true_strike_chance")
         local spiderling_duration = self:GetTalentSpecialValueFor( "spiderling_duration")
         local extra_damage = self:GetTalentSpecialValueFor("extra_damage")
         local count = self:GetTalentSpecialValueFor("count")
@@ -80,21 +80,15 @@ function mjz_broodmother_spawn_spiderlings:SpawnSpiderlings(hTarget)
 
             spider:RemoveAbility("broodmother_poison_sting")
             spider:RemoveAbility("broodmother_spawn_spiderite")
-            local icon_strike = "true_strike"
             local ability_trist = "bloodseeker_thirst"
             --local ability_trist = "lycan_shapeshift"
             local searing = spider:AddAbility(ability_trist)
             searing:UpgradeAbility(true)
             searing:SetLevel( hCaster:FindAbilityByName("mjz_broodmother_spawn_spiderlings"):GetLevel() )
-            if RandomInt( 0,100 ) < chace_srike then
-                local strike_tru = "special_bonus_truestrike"
-                local strik = spider:AddAbility(strike_tru)
-                strik:UpgradeAbility(true)
-                strik:SetLevel(1)
-                local ad_icon = spider:AddAbility(icon_strike)
-                ad_icon:UpgradeAbility(true)
-                ad_icon:SetLevel(1)
-            end
+			if RandomInt(0,100) < chance_strike then
+				local true_strike = target:AddAbility("true_strike")
+				true_strike:UpgradeAbility(true)
+			end
             local newAbilityName = GetRandomAbilityName(hero)
             local link_a = spider:AddAbility(newAbilityName)
             link_a:UpgradeAbility(true)
@@ -158,112 +152,111 @@ end
 
 function GetRandomAbilityName(hero)
     local abilityList = {
+-- Passive:
         "beastmaster_inner_beast",
-        "skeleton_king_vampiric_aura",
         "skeleton_king_mortal_strike",
         "spirit_breaker_greater_bash",
         "sven_great_cleave",
         "mjz_obsidian_destroyer_essence_aura",
-        --"antimage_custom_mana_break",
         "mjz_night_stalker_hunter_in_the_night",
-        --"phantom_assassin_blur",
-        "tidehunter_anchor_smash",
         "mjz_omniknight_degen_aura",
-		"mjz_vengefulspirit_vengeance",
         "troll_warlord_fervor",
         "chaos_knight_chaos_strike",
         "mars_bulwark",
-        "magnataur_empower",
-        "legion_commander_custom_duel",
-        "alchemist_chemical_rage",
-        "lone_druid_rabid",
-		"lone_druid_spirit_link",
-        "juggernaut_healing_ward",
-        "lone_druid_spirit_bear_demolish",
+--		"lone_druid_spirit_link",
         "templar_assassin_psi_blades",
+		"mjz_vengefulspirit_vengeance",
         "mjz_vengefulspirit_vengeance",
         "monkey_king_custom_jingu_mastery",
-        "mjz_omniknight_repel",
         "lycan_feral_impulse",
-        "mjz_ursa_overpower",
-        "ursa_fury_swipes",
+        "lycan_feral_impulse",
         "lich_custom_cold_soul",
-        "lycan_feral_impulse",
-        "brewmaster_drunken_brawler",
-        "mjz_broodmother_insatiable_hunger",
         "abyssal_underlord_atrophy_aura",
         "meepo_ransack",
-        "brewmaster_fire_permanent_immolation",           -- bug
+        "brewmaster_fire_permanent_immolation",
         "faceless_void_time_lock",
-        "ogre_magi_bloodlust",
-        --"mjz_clinkz_soul_pact",
         "luna_lunar_blessing",
         "elder_titan_natural_order",
-        "nyx_assassin_custom_vendetta",
-        "skywrath_mage_ancient_seal",
-        "disruptor_custom_ion_hammer",        -- crash on snowball
-        "dark_willow_bedlam",
-        "rubick_arcane_supremacy",
-        "jakiro_liquid_fire",
-        "obsidian_destroyer_arcane_orb",
         "mjz_crystal_maiden_brilliance_aura",
         "naga_siren_rip_tide",
         "imba_phantom_assassin_coup_de_grace",
         "dazzle_bad_juju",
-        "ancient_apparition_chilling_touch",
-        "visage_soul_assumption",
-        "medusa_stone_gaze",
-        "enchantress_impetus",
-        "wisp_overcharge",
-        "tusk_walrus_punch",
-
-        "dark_willow_shadow_realm",
-        "bane_enfeeble",
         "ryze_arcane_mastery",
-        "elder_titan_natural_order_spirit",
-        "oracle_false_promise",
-        "mars_gods_rebuke",
-        "void_spirit_astral_step",
         "big_thunder_lizard_wardrums_aura",
         "phantom_reflex",
         "mjz_general_megamorph",
         "ogre_magi_multicast_lua",
+        "mjz_phantom_assassin_coup_de_grace",
+        "mjz_spectre_desolate",
+        "monkey_king_custom_jingu_mastery",
+        "life_stealer_custom_deny",
+        "mjz_monkey_king_jingu_mastery",
+        "vengefulspirit_command_aura",
+		"sniper_headshot",
+		"mjz_chaos_knight_chaos_strike",
+        "weaver_the_swarm",
+        "weaver_the_swarm",
+		"clinkz_infernal_breath",
+		"nevermore_dark_lord",
+        "rubick_arcane_supremacy",
+-- Active:
+        "enchantress_impetus",
+        "jakiro_liquid_fire",
+        "huskar_burning_spear",
+        "tusk_walrus_punch",
+        "obsidian_destroyer_arcane_orb",
+        "ancient_apparition_chilling_touch",
+        "viper_poison_attack",
+
+        "mars_gods_rebuke",
+        "tidehunter_anchor_smash",
+        "magnataur_empower",
+        "legion_commander_custom_duel",
+        "alchemist_chemical_rage",
+        "lone_druid_rabid",
+        "juggernaut_healing_ward",
+        "mjz_omniknight_repel",
+        "mjz_ursa_overpower",
+        "brewmaster_drunken_brawler",
+        "mjz_broodmother_insatiable_hunger",
+        "ogre_magi_bloodlust",
+        "nyx_assassin_custom_vendetta",
+        "skywrath_mage_ancient_seal",
+        "dark_willow_bedlam",
+        "visage_soul_assumption",
+        "medusa_stone_gaze",
+        "wisp_overcharge",
+        "dark_willow_shadow_realm",
+        "bane_enfeeble",
+        "elder_titan_natural_order_spirit",
+        "oracle_false_promise",
+        "void_spirit_astral_step",
         "juggernaut_omni_slash",
         "mjz_clinkz_death_pact",
         "mjz_night_stalker_darkness",
-        "mjz_phantom_assassin_coup_de_grace",
         "mjz_phantom_assassin_phantom_strike",
-        "mjz_spectre_desolate",
         "mjz_templar_assassin_refraction",
         "mjz_templar_assassin_proficiency",
         "mjz_void_spirit_astral_atlas",
         "mjz_windrunner_powershot",
         "mjz_windrunner_focusfire",
         "omniknight_guardian_angel",
-        "huskar_burning_spear",
         "bloodseeker_custom_thirst",
         "bloodseeker_custom_rampage",
-        --"dark_seer_custom_dark_clone",
         "disruptor_custom_ion_hammer",
         "legion_commander_custom_duel",
-        "life_stealer_custom_deny",
-        "monkey_king_custom_jingu_mastery",
         "rattletrap_custom_battery_assault",
         "sven_gods_strength",
         "tiny_custom_toss",
         "treant_custom_ultimate_sacrifice",
         "witch_doctor_maledict",
-        --"mjz_bloodseeker_rupture",
-       -- "dragon_knight_elder_dragon_form",
         "mjz_faceless_the_world",
         "mjz_axe_berserkers_call",
         "mjz_doom_bringer_doom",
-        "mjz_monkey_king_jingu_mastery",
         "mjz_silencer_global_silence",
         "mjz_mirana_arrow",
         "mjz_drow_ranger_marksmanship",
         "mjz_ember_spirit_flame_guard",
-        "weaver_the_swarm",
         "mjz_furion_power_of_nature",
         "mjz_io_overcharge",
         "enigma_black_hole",
@@ -272,20 +265,11 @@ function GetRandomAbilityName(hero)
         "winter_wyvern_arctic_burn",
         "wisp_tether",
         "tidehunter_ravage",
-        "viper_poison_attack",
         "viper_nethertoxin",
         "viper_viper_strike",
-        "mjz_troll_warlord_battle_trance",
-        "vengefulspirit_command_aura",
         "enigma_midnight_pulse",
-        "sniper_headshot",
-        "mjz_chaos_knight_chaos_strike",
-        "chen_custom_avatar",
         "lich_chain_frost",
-        "weaver_the_swarm",
         "hoodwink_acorn_shot",
-		"clinkz_infernal_breath",
-		"nevermore_dark_lord",
     }
     local randomIndex = RandomInt(1, #abilityList)
     return abilityList[randomIndex]

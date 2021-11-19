@@ -4082,22 +4082,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amp"				"8 12 16 20"
+				"armor"					"4 6 8 10"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_rate"					"4 6 8 10"
+				"heal_rate"				"8 12 16 20"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"		"7200"
+				"aura_radius"			"7200"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"teleport_delay"	"4.0"
+				"teleport_delay"		"4.0"
 			}
 		}
 	}	
@@ -11171,12 +11171,12 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"stack_limit"				"4 6 8 10"
+				"stack_limit"				"4 5 6 7 8 9 10"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stack_duration"			"60.0"
+				"stack_duration"			"60"
 			}
 			"06"
 			{
@@ -11191,12 +11191,12 @@
 			"08"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_min"				"20.0"
+				"damage_min"				"20"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_max"				"900000.0"
+				"damage_max"				"900000"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -13024,8 +13024,9 @@
 	"tidehunter_anchor_smash"
 	{
 	   "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-	   "AbilityCastPoint"	 "0.0"
-	   "LevelsBetweenUpgrades"		  "7"
+		"AbilityCastRange"				"%radius"
+	   "AbilityCastPoint"				"0.0"
+	   "LevelsBetweenUpgrades"			"7"
 	   "AbilitySpecial"
 		{
 			"01"
@@ -21656,48 +21657,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_attack_speed"	"48"
-			}
-		}
-	}
-
-// Recipe: Ring of Aquila
-	"item_recipe_ring_of_aquila"
-	{
-		"ItemCost"						"900"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemPurchasable"				"1"
-		"IsObsolete"					"0"
-		"ItemRequirements"
-		{
-			"01"						"item_wraith_band;item_ring_of_basilius;item_chest_2"
-		}
-	}
-// Ring of Aquila
-	"item_ring_of_aquila"
-	{
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
-		"ItemSellable"					"1"
-		"ItemGloballyCombinable"		"1"
-		"AbilityCastRange" 				"7200"
-		"ItemPurchasable"				"1"
-		"AbilitySpecial"
-		{
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"7200"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_mana_regen"		"12.5"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_bonus_armor"		"20"
 			}
 		}
 	}

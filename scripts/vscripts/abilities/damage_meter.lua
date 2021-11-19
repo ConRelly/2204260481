@@ -1,11 +1,31 @@
 LinkLuaModifier("modifier_damage_meter", "abilities/damage_meter", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_damage_meter2", "abilities/damage_meter", LUA_MODIFIER_MOTION_NONE)
 
+Phys_State = 0
+Mag_State = 0
 ---------------
 -- DPS Meter --
 ---------------
 damage_meter = class({})
 function damage_meter:GetIntrinsicModifierName() return "modifier_damage_meter" end
+function damage_meter:OnSpellStart()
+	if not IsServer() then return end
+	if not self:GetAutoCastState() then
+		if self:GetCaster():GetPhysicalArmorBaseValue() == 200 then
+			Phys_State = 0
+		else
+			Phys_State = Phys_State + 1
+		end
+		self:GetCaster():SetPhysicalArmorBaseValue(Phys_State * 20)
+	else
+		if self:GetCaster():GetBaseMagicalResistanceValue() == 100 then
+			Mag_State = 0
+		else
+			Mag_State = Mag_State + 1
+		end
+		self:GetCaster():SetBaseMagicalResistanceValue(Mag_State * 10)
+	end
+end
 
 modifier_damage_meter = class({})
 function modifier_damage_meter:IsHidden() return true end
@@ -16,8 +36,10 @@ function modifier_damage_meter:DeclareFunctions() return
 	{
 		MODIFIER_EVENT_ON_TAKEDAMAGE,
 		MODIFIER_PROPERTY_MIN_HEALTH,
+		MODIFIER_PROPERTY_MANACOST_PERCENTAGE,
 	}
 end
+function modifier_damage_meter:GetModifierPercentageManacost() return 100 end
 function modifier_damage_meter:GetMinHealth() return 1 end
 function modifier_damage_meter:OnTakeDamage(data)
 	if not IsServer() then return end
@@ -41,9 +63,28 @@ end
 modifier_damage_meter2 = class({})
 function modifier_damage_meter2:IsHidden() return true end
 function modifier_damage_meter2:IsPurgable() return false end
+function modifier_damage_meter2:DeclareFunctions()
+	return {MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT}
+end
+function modifier_damage_meter2:GetModifierConstantHealthRegen()
+	return dps
+end
+function modifier_damage_meter2:OnCreated()
+	CreatedTimer = 1
+	TimerInterval = 0.1
+	self:StartIntervalThink(TimerInterval)
+end
+function modifier_damage_meter2:OnIntervalThink()
+	CreatedTimer = CreatedTimer + TimerInterval
+	dps = math.floor(self:GetCaster():GetMaxHealth() / CreatedTimer)
+--	self:GetCaster():SetMaxMana(dps)
+--	self:GetCaster():SetMana(dps)
+end
 function modifier_damage_meter2:OnDestroy()
 	if not IsServer() then return end
 	self:GetCaster():SetMaxHealth(1)
 	self:GetCaster():SetBaseMaxHealth(1)
 	self:GetCaster():SetHealth(1)
+--	self:GetCaster():SetMaxMana(1)
+--	self:GetCaster():SetMana(1)
 end

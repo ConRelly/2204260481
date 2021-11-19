@@ -10108,350 +10108,350 @@
 }
 
 
-"npc_dota_neutral_kobold"
-{										
+/////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////	NEUTRALS	/////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
 
-	"BountyXP"					"1"		// Experience earn.
-	"BountyGoldMin"				"2"			// Gold earned min.
-	"BountyGoldMax"				"50"			// Gold earned max.
-	"MagicalResistance"			"33"
-}
+/////////////
+// Easy Camps
+/////////////
+// Kobolts
+	"npc_dota_neutral_kobold"
+	{
 
-"npc_dota_neutral_kobold_tunneler"
-{										
-	"BountyXP"					"1"		// Experience earn.
-	"BountyGoldMin"				"1"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}		
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"2"			// Gold earned min.
+		"BountyGoldMax"				"50"			// Gold earned max.
+		"MagicalResistance"			"33"
+	}
+	"npc_dota_neutral_kobold_tunneler"
+	{
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
+	"npc_dota_neutral_kobold_taskmaster"
+	{
+		"AttackDamageMin"			"34"		// Damage range min.
+		"AttackDamageMax"			"45"		// Damage range max.	
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"40"
+		"StatusHealth"				"800"
+	}
 
+// Trolls
+	"npc_dota_neutral_forest_troll_berserker"
+	{
+		"BountyXP"					"5"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"3"
+	}
+	"npc_dota_neutral_forest_troll_high_priest"	
+	{
+		"BountyXP"					"5"		// Experience earn.
+		"BountyGoldMin"				"3"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
 
-"npc_dota_neutral_kobold_taskmaster"
-{					
-	"AttackDamageMin"			"34"		// Damage range min.
-	"AttackDamageMax"			"45"		// Damage range max.	
-	"BountyXP"					"1"		// Experience earn.
-	"BountyGoldMin"				"1"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"40"
-	"StatusHealth"				"800"
-}	
+// Gnolls
+"npc_dota_neutral_gnoll_assassin"
+	{
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"4"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
 
-"npc_dota_neutral_centaur_outrunner"
-{										
-	"BountyXP"					"1"		// Experience earn.
-	"BountyGoldMin"				"1"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}
+// Ghosts
+	"npc_dota_wraith_ghost" // Other
+	{
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
+	"npc_dota_neutral_ghost"
+	{
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
+	"npc_dota_neutral_fel_beast"
+	{
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
 
-"npc_dota_neutral_centaur_khan"
-{										
-	"BountyXP"					"2"		// Experience earn.
-	"BountyGoldMin"				"1"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-	"Ability2"					"mudgolem_cloak_aura"
-	"AttackDamageMin"			"64"
-	"AttackDamageMax"			"72"
-}
+// Harpies
+	"npc_dota_neutral_harpy_scout"
+	{
+		"BountyXP"					"2"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
+	"npc_dota_neutral_harpy_storm"
+	{
+		"BountyXP"					"4"		// Experience earn.
+		"BountyGoldMin"				"60"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
 
-"npc_dota_neutral_fel_beast"
-{										
-	"BountyXP"					"1"		// Experience earn.
-	"BountyGoldMin"				"1"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}		
+///////////////
+// Middle Camps
+///////////////
+// Centaurs
+	"npc_dota_neutral_centaur_outrunner"
+	{
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
+	"npc_dota_neutral_centaur_khan"
+	{
+		"BountyXP"					"2"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+		"Ability2"					"mudgolem_cloak_aura"
+		"AttackDamageMin"			"64"
+		"AttackDamageMax"			"72"
+	}
 
+// Ursas
+	"npc_dota_neutral_polar_furbolg_ursa_warrior"
+	{
+		"BountyXP"					"3"		// Experience earn.
+		"BountyGoldMin"				"2"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
+	"npc_dota_neutral_polar_furbolg_champion"
+	{
+		"BountyXP"					"2"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
 
-"npc_dota_neutral_polar_furbolg_champion"
-{										
-	"BountyXP"					"2"		// Experience earn.
-	"BountyGoldMin"				"1"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}		
+// Mud Golems
+	"npc_dota_neutral_mud_golem"
+	{
+		"BountyXP"					"2"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+	}
+	"npc_dota_neutral_mud_golem_split"
+	{
+		"BountyXP"					"2"		// Experience earn.
+		"BountyGoldMin"				"2"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+	}
+	"npc_dota_neutral_mud_golem_split_doom"
+	{
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"8"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+	}
 
+// Ogres
+	"npc_dota_neutral_ogre_magi"
+	{
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
+	"npc_dota_neutral_ogre_mauler"
+	{
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
 
-"npc_dota_neutral_polar_furbolg_ursa_warrior"
-{										
-	"BountyXP"					"3"		// Experience earn.
-	"BountyGoldMin"				"2"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}	
+// Wolfs
+	"npc_dota_neutral_alpha_wolf"
+	{
+		"StatusHealth"				"700"
+		"BountyXP"					"2"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+		"AttackRate"				"1.0"
+		"AttackAnimationPoint"		"0.3"
+		"AttackDamageMin"			"75"		// Damage range min.
+		"AttackDamageMax"			"83"		// Damage range max.	
+	}
+	"npc_dota_neutral_giant_wolf"
+	{
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
 
-"npc_dota_neutral_mud_golem"
-{										
-	"BountyXP"					"2"		// Experience earn.
-	"BountyGoldMin"				"1"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-}	
+// Wildkins
+	"npc_dota_neutral_enraged_wildkin"
+	{
+		"BountyXP"					"4"		// Experience earn.
+		"BountyGoldMin"				"4"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
+	"npc_dota_neutral_wildkin"
+	{
+		"BountyXP"					"1"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
 
+// Satyrs
+	"npc_dota_neutral_satyr_hellcaller"
+	{
+		"BountyXP"					"4"		// Experience earn.
+		"BountyGoldMin"				"3"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
+	"npc_dota_neutral_satyr_soulstealer"
+	{
+		"BountyXP"					"2"		// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
+	"npc_dota_neutral_satyr_trickster"
+	{
+		"BountyXP"					"8"		// Experience earn.
+		"BountyGoldMin"				"2"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"3"
+	}
 
-"npc_dota_neutral_mud_golem_split"
-{										
-	"BountyXP"					"2"		// Experience earn.
-	"BountyGoldMin"				"2"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
+// Trolls
+	"npc_dota_neutral_dark_troll_warlord"
+	{
+		"BountyXP"					"5"		// Experience earn.
+		"BountyGoldMin"				"3"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
+	"npc_dota_neutral_dark_troll"
+	{
+		"BountyXP"					"3"		// Experience earn.
+		"BountyGoldMin"				"2"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
 
-}	
+// ??
+	"npc_dota_neutral_jungle_stalker"
+	{
+		"BountyXP"					"4"		// Experience earn.
+		"BountyGoldMin"				"3"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+	}
+	"npc_dota_neutral_elder_jungle_stalker"
+	{
+		"BountyXP"					"40"		// Experience earn.
+		"BountyGoldMin"				"5"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+	}
 
+////////////////
+// Ancient Camps
+////////////////
+// Prowlers
+	"npc_dota_neutral_prowler_shaman"
+	{
+		"Ability3"					"spawnlord_aura"	
+		"BountyXP"					"3"		// Experience earn.
+		"BountyGoldMin"				"4"		// Gold earned min.
+		"BountyGoldMax"				"150"		// Gold earned max.
+		"MagicalResistance"			"50"
+		"AttackDamageMin"			"99"		// Damage range min.
+		"AttackDamageMax"			"125"
+	}
+	"npc_dota_neutral_prowler_acolyte"
+	{
+		"AttackDamageMin"			"43"
+		"AttackDamageMax"			"48"
+		"StatusHealth"				"700"		
+		"Ability1"					""
+		"BountyXP"					"3"		// Experience earn.
+		"BountyGoldMin"				"5"		// Gold earned min.
+		"BountyGoldMax"				"150"		// Gold earned max.
+		"MagicalResistance"			"33"
+	}
 
-"npc_dota_neutral_mud_golem_split_doom"
-{										
-	"BountyXP"					"1"		// Experience earn.
-	"BountyGoldMin"				"8"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-}	
+// Golems
+	"npc_dota_neutral_granite_golem"
+	{
+		"BountyXP"					"4"		// Experience earn.
+		"BountyGoldMin"				"4"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+		"MagicalResistance"			"50"
+		"ArmorPhysical"				"6"	
+		"AttackDamageMin"			"97"		// Damage range min.
+		"AttackDamageMax"			"107"
+	}
+	"npc_dota_neutral_rock_golem"
+	{
+		"BountyXP"					"3"		// Experience earn.
+		"BountyGoldMin"				"50"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+	}
 
-"npc_dota_neutral_ogre_mauler"
-{										
-	"BountyXP"					"1"		// Experience earn.
-	"BountyGoldMin"				"1"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}	
+// Lizards
+	"npc_dota_neutral_small_thunder_lizard"
+	{
+		"BountyXP"					"4"		// Experience earn.
+		"BountyGoldMin"				"50"		// Gold earned min.
+		"BountyGoldMax"				"150"		// Gold earned max.
+	}
+	"npc_dota_neutral_big_thunder_lizard"
+	{
+		"BountyXP"					"4"		// Experience earn.
+		"BountyGoldMin"				"50"		// Gold earned min.
+		"BountyGoldMax"				"220"		// Gold earned max.
+		"MagicalResistance"			"50"
+		"AttackRate"				"0.7"		// Speed of attack.
+		"AttackAnimationPoint"		"0.42"
+		"AttackDamageMin"			"55"		// Damage range min.
+		"AttackDamageMax"			"65"		// Damage range max.
+	}
 
-"npc_dota_neutral_ogre_magi"
-{										
-	"BountyXP"					"1"		// Experience earn.
-	"BountyGoldMin"				"1"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}	
+// Dragons
+	"npc_dota_neutral_black_dragon"
+	{
+		"BountyXP"					"13"		// Experience earn.
+		"BountyGoldMin"				"50"		// Gold earned min.
+		"BountyGoldMax"				"280"		// Gold earned max.
+		"MagicalResistance"			"55"
+		"AttackDamageMin"			"93"		// Damage range min.
+		"AttackDamageMax"			"136"		// Damage range max.
+	}
+	"npc_dota_neutral_black_drake"
+	{
+		"BountyXP"					"50"		// Experience earn.
+		"BountyGoldMin"				"190"		// Gold earned min.
+		"BountyGoldMax"				"50"		// Gold earned max.
+	}
 
-"npc_dota_neutral_giant_wolf"
-{										
-	"BountyXP"					"1"		// Experience earn.
-	"BountyGoldMin"				"1"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}		
+/////////////////////////////////////////////////////////////////////////////////////////////
 
-"npc_dota_neutral_alpha_wolf"
-{					
-	"StatusHealth"				"700"
-	"BountyXP"					"2"		// Experience earn.
-	"BountyGoldMin"				"1"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-	"AttackRate"				"1.0"
-	"AttackAnimationPoint"		"0.3"
-	"AttackDamageMin"			"75"		// Damage range min.
-	"AttackDamageMax"			"83"		// Damage range max.	
-}		
-
-"npc_dota_neutral_wildkin"
-{										
-	"BountyXP"					"1"		// Experience earn.
-	"BountyGoldMin"				"1"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}		
-
-"npc_dota_neutral_enraged_wildkin"
-{										
-
-	"BountyXP"					"4"		// Experience earn.
-	"BountyGoldMin"				"4"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}		
-
-"npc_dota_neutral_satyr_soulstealer"
-{										
-	"BountyXP"					"2"		// Experience earn.
-	"BountyGoldMin"				"1"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}			
-
-"npc_dota_neutral_satyr_hellcaller"
-{										
-
-	"BountyXP"					"4"		// Experience earn.
-	"BountyGoldMin"				"3"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}		
-
-"npc_dota_neutral_jungle_stalker"
-{										
-	"BountyXP"					"4"		// Experience earn.
-	"BountyGoldMin"				"3"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-}	
-
-"npc_dota_neutral_elder_jungle_stalker"
-{										
-	"BountyXP"					"40"		// Experience earn.
-	"BountyGoldMin"				"5"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-}	
-
-"npc_dota_neutral_prowler_acolyte"
-{			
-	"AttackDamageMin"			"43"
-	"AttackDamageMax"			"48"
-	"StatusHealth"				"700"		
-	"Ability1"					""
-	"BountyXP"					"3"		// Experience earn.
-	"BountyGoldMin"				"5"		// Gold earned min.
-	"BountyGoldMax"				"150"		// Gold earned max.
-	"MagicalResistance"			"33"
-}	
-
-"npc_dota_neutral_prowler_shaman"
-{						
-
-	"Ability3"					"spawnlord_aura"	
-	"BountyXP"					"3"		// Experience earn.
-	"BountyGoldMin"				"4"		// Gold earned min.
-	"BountyGoldMax"				"150"		// Gold earned max.
-	"MagicalResistance"			"50"
-	"AttackDamageMin"			"99"		// Damage range min.
-	"AttackDamageMax"			"125"
-}
-
-"npc_dota_neutral_rock_golem"
-{										
-	"BountyXP"					"3"		// Experience earn.
-	"BountyGoldMin"				"50"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-}								  
-
-"npc_dota_neutral_granite_golem"
-{										
-	"BountyXP"					"4"		// Experience earn.
-	"BountyGoldMin"				"4"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"50"
-	"ArmorPhysical"				"6"	
-	"AttackDamageMin"			"97"		// Damage range min.
-	"AttackDamageMax"			"107"
-}		
-
-"npc_dota_neutral_big_thunder_lizard"
-{										
-	"BountyXP"					"4"		// Experience earn.
-	"BountyGoldMin"				"50"		// Gold earned min.
-	"BountyGoldMax"				"220"		// Gold earned max.
-	"MagicalResistance"			"50"
-	"AttackRate"				"0.7"		// Speed of attack.
-	"AttackAnimationPoint"		"0.42"
-	"AttackDamageMin"			"55"		// Damage range min.
-	"AttackDamageMax"			"65"		// Damage range max.
-}		
-
-"npc_dota_neutral_small_thunder_lizard"
-{										
-
-	"BountyXP"					"4"		// Experience earn.
-	"BountyGoldMin"				"50"		// Gold earned min.
-	"BountyGoldMax"				"150"		// Gold earned max.
-}		
-
-"npc_dota_neutral_gnoll_assassin"	
-{
-	"BountyXP"					"1"		// Experience earn.
-	"BountyGoldMin"				"4"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}	
-
-"npc_dota_neutral_ghost"	
-{
-	"BountyXP"					"1"		// Experience earn.
-	"BountyGoldMin"				"1"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}	
-
-"npc_dota_wraith_ghost"	
-{
-	"BountyXP"					"1"		// Experience earn.
-	"BountyGoldMin"				"1"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}	
-
-"npc_dota_neutral_dark_troll"	
-{
-	"BountyXP"					"3"		// Experience earn.
-	"BountyGoldMin"				"2"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}	
-
-
-"npc_dota_neutral_dark_troll_warlord"	
-{
-	"BountyXP"					"5"		// Experience earn.
-	"BountyGoldMin"				"3"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}	
-
-"npc_dota_neutral_satyr_trickster"	
-{
-	"BountyXP"					"8"		// Experience earn.
-	"BountyGoldMin"				"2"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"3"
-}	
-
-"npc_dota_neutral_forest_troll_berserker"	
-{
-	"BountyXP"					"5"		// Experience earn.
-	"BountyGoldMin"				"1"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"3"
-}	
-
-"npc_dota_neutral_forest_troll_high_priest"	
-{
-	"BountyXP"					"5"		// Experience earn.
-	"BountyGoldMin"				"3"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}
-
-"npc_dota_neutral_harpy_scout"	
-{
-	"BountyXP"					"2"		// Experience earn.
-	"BountyGoldMin"				"1"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}
-
-
-"npc_dota_neutral_harpy_storm"	
-{
-	"BountyXP"					"4"		// Experience earn.
-	"BountyGoldMin"				"60"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-	"MagicalResistance"			"33"
-}	
-
-"npc_dota_neutral_black_drake"	
-{
-	"BountyXP"					"50"		// Experience earn.
-	"BountyGoldMin"				"190"		// Gold earned min.
-	"BountyGoldMax"				"50"		// Gold earned max.
-}	
-
-"npc_dota_neutral_black_dragon"	
-{
-
-	"BountyXP"					"13"		// Experience earn.
-	"BountyGoldMin"				"50"		// Gold earned min.
-	"BountyGoldMax"				"280"		// Gold earned max.
-	"MagicalResistance"			"55"
-	"AttackDamageMin"			"93"		// Damage range min.
-	"AttackDamageMax"			"136"		// Damage range max.
-}	
 "npc_boss_skeleton_king_new"
 {
 	"BaseClass"					"npc_dota_creature"
@@ -15552,7 +15552,7 @@
 		"Model"						"models/heroes/ursa/ursa.vmdl"
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"Hero_Ursa"
-		"Level"						"1"
+		"Level"						"777"
 		"ModelScale"				"1"
 		"HasInventory"				"1"
 		"CanBeDominated"			"0"
@@ -15560,6 +15560,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"damage_meter"
+		"Ability2"					"windrunner_windrun"
 
 		// Armor
 		//----------------------------------------------------------------
@@ -15573,7 +15574,7 @@
 		"AttackDamageMax"			"1"
 		"AttackRate"				"1"
 		"AttackAnimationPoint"		"0.38"
-		"AttackAcquisitionRange"	"9999"
+		"AttackAcquisitionRange"	"0"
 		"AttackRange"				"150"
 		"ProjectileModel"			""
 		"ProjectileSpeed"			"0"
@@ -15624,10 +15625,7 @@
 			}
 			"EquippedItems"
 			{
-				"1"
-				{
-					"Item"					"item_branches"
-				}
+				"1"		{"Item"		"item_branches"}
 			}
 		}
 	}
