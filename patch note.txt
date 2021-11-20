@@ -1370,6 +1370,19 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Added Super Scepter effect for Ball Lightning (Storm Spirit)
 * Added Super Scepter effect for THE WORLD (Faceless Void)
 * Added Aghanim's Shard effect for Overload (Storm Spirit)
+* Marci : Has now the Highest spell amp talent, Super Scepter effect for Ultimate.
+* Marci Ultimate SS Effects : 
+-Cm Frostbine : 3x dmg
+-Ursa OverPower : 2x stats gain
+-Orange Multicast: + 2 extra multicasts
+-Devil's Daedalus(including edible) : 1.5x critical increase
+-Ultimate Bloodstone : gain an extra stack on every succesful proc.
+-Green Radiance(edible included): Ms multiplayer increased to 10x and has no limit
+-Greater Blast Staff: MR reduction increased to -45 , int multiplayer +5(18) , debuff duration +1s. 
+-Apex: +7% more stats(42%)
+-Cursed Gaze: +3% crit bonus on hit(8%).
+-Slayer Rebound : aditional stacks + 2 instead of 1.
+-Endless wisdom : gain an extra stack.
 -- Ability
 * Storm Spirit: Added new talent and replaced from "+250 Health" (right level 15)
 * Overlord (Storm Spirit): Attack Speed slow increased from 60 to 90
@@ -1414,3 +1427,26 @@ or on Discord(check workshop discussions for links)
 
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update).
+
+
+Marci ult SS Effects : (you can add more if you want, mostly for versatility)
+Cm Frostbine : 3x dmg
+Ursa OverPower : 2x stats gain
+Orange Multicast: + 2 extra multicasts
+Devil's Daedalus(including edible) : 1.5x critical increase
+Ultimate Bloodstone : gain an extra stack on every succesful proc.
+Green Radiance(edible included): Ms multiplayer increased to 10x and has no limit
+Greater Blast Staff: MR reduction increased to -45 , int multiplayer +5(18) , debuff duration +1s. 
+Apex: +7% more stats(42%)
+Cursed Gaze: +3% crit bonus on hit(8%).
+Slayer Rebound : aditional stacks + 2 instead of 1.
+Endless wisdom : gain an extra stack.
+
+
+
+can youse this format for marci SS effect:
+if caster:HasModifier("modifier_super_scepter") then
+    if caster:HasModifier("modifier_marci_unleash_flurry") then
+        special_effect_here = special_effect_here
+    end                                 
+end

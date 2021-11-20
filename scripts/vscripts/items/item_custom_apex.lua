@@ -24,10 +24,16 @@ end
 if IsServer() then
 	function modifier_item_custom_apex:OnCreated()
 		local ability = self:GetAbility()
+		local marci_bonus = 0
 		self.parent = self:GetParent()
+		if self.parent:HasModifier("modifier_super_scepter") then
+			if self.parent:HasModifier("modifier_marci_unleash_flurry") then
+				marci_bonus = 7
+			end                                 
+		end 		
 		self.parent:AddNewModifier(self.parent, self, "modifier_bonus_primary_controller", {})
 		self.modifier = self.parent:AddNewModifier(self.parent, self, "modifier_bonus_primary_token", {
-			bonus = ability:GetSpecialValueFor("primary_stat_percent")})
+			bonus = (ability:GetSpecialValueFor("primary_stat_percent") + marci_bonus)})
 	end
 	
 	function modifier_item_custom_apex:OnDestroy()

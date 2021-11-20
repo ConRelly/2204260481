@@ -24,6 +24,10 @@ if IsServer() then
 				if IsValidEntity(caster) and caster:IsAlive() then
 					caster:ModifyAgility(bonus)
 					caster:ModifyStrength(bonus)
+					if caster:HasModifier("modifier_marci_unleash_flurry") then
+						caster:ModifyAgility(bonus)
+						caster:ModifyStrength(bonus)
+					end						
 				end	
 			end				
 		end	

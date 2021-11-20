@@ -107,6 +107,9 @@ function modifier_item_imba_greater_crit_edible_buff:OnCreated()
 				crit_increase = bonus_crit_dmg_per_lvl_66 * level
 			end
 			crit_increase = crit_increase * 2
+			if parent:HasModifier("modifier_marci_unleash_flurry") then
+				crit_increase = crit_increase * 1.5
+			end				
 		end
 	end
 	self.crit_chance = crit_chance

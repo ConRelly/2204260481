@@ -124,7 +124,12 @@ function modifier_item_radiance_armor_aura_green_edible:OnIntervalThink()
 		end	
 		if ms > 40000 then
 			ms_mult = 1.5
-		end		
+		end
+		if caster:HasModifier("modifier_super_scepter") then
+			if caster:HasModifier("modifier_marci_unleash_flurry") then
+				ms_mult = 10
+			end                                 
+		end 				
 		local ms_bonus_dmg = ms * ms_mult
 		local bonus_agi_dmg = math.ceil(agi * agi_mult)
 		local aura_dmg = 15000

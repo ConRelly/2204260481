@@ -117,13 +117,19 @@ function modifier_back_in_time:OnTakeDamage(keys)
 		ability:StartCooldown(cooldown)
 		parent:SetHealth(parent:GetMaxHealth())
 		local chance = GetTalentSpecialValueFor(ability, "stack_chance")
+		local more_stacks = 1
+		if parent:HasModifier("modifier_super_scepter") then
+			if parent:HasModifier("modifier_marci_unleash_flurry") then
+				more_stacks = 2
+			end                                 
+		end 		
 		if RollPercentage(chance) then
 			local modif_buff = "modifier_back_in_time_buff"
 			local mbuff = parent:FindModifierByName(modif_buff)	
 			if mbuff ~= nil then
 				local stack_increase = ability:GetSpecialValueFor("stack_increase") / 100
 				local nr_stacks = mbuff:GetStackCount()
-				local increase_stak = math.ceil(nr_stacks +(nr_stacks * stack_increase) + 1)
+				local increase_stak = math.ceil(nr_stacks +(nr_stacks * stack_increase) + more_stacks)
 				--print(increase_stak .. " extra stacks")
 				mbuff:SetStackCount(increase_stak)
 			end 

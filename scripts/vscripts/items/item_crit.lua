@@ -203,6 +203,9 @@ function modifier_item_imba_greater_crit_buff:OnCreated()
 					crit_increase = 12 * level
 				end ]]
 				crit_increase = crit_increase * 2
+				if parent:HasModifier("modifier_marci_unleash_flurry") then
+					crit_increase = crit_increase * 1.5
+				end	
 			end
 		
 		self.crit_chance = crit_chance

@@ -1226,7 +1226,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"time_between_flurries"	"0.2 0.2 0.2 0.2 0.2 0.15 0.1"
+				"time_between_flurries"	"0.2 0.2 0.2 0.2 0.2 0.15 0.08"
 			}
 			"05"
 			{
@@ -1241,7 +1241,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"pulse_damage"			"750 2950 9950 23750 68500 144800 345700"
+				"pulse_damage"			"750 2950 9950 23750 68500 144800 385700"
 			}
 			"08"
 			{
@@ -23329,7 +23329,7 @@
 			"10"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus"			"1"
+				"bonus"			"2"
 			}						
 		}
 		

@@ -20,12 +20,18 @@ local item_mjz_bloodstone_active = function(ability)
 		local caster = ability:GetCaster()
 		local restore_duration = ability:GetSpecialValueFor("restore_duration")
 		local charge_chance = ability:GetSpecialValueFor("charge_chance")
+		local bonus_charge = 1
 		if caster and IsValidEntity(caster) and caster:IsAlive() then
+			if caster:HasModifier("modifier_super_scepter") then
+				if caster:HasModifier("modifier_marci_unleash_flurry") then
+					bonus_charge = 2
+				end									
+			end			
 			caster:EmitSound("DOTA_Item.Bloodstone.Cast")
 			caster:RemoveModifierByName("modifier_item_mjz_bloodstone_active")
 			caster:AddNewModifier(caster, ability, "modifier_item_mjz_bloodstone_active", {duration = restore_duration})
 			if RollPercentage(charge_chance) then
-				ability:SetCurrentCharges(ability:GetCurrentCharges() + 1)
+				ability:SetCurrentCharges(ability:GetCurrentCharges() + bonus_charge)
 				if caster:HasModifier("modifier_mjz_bloodstone_charges") then
 					caster:FindModifierByName("modifier_mjz_bloodstone_charges"):SetStackCount(ability:GetCurrentCharges())
 				end	

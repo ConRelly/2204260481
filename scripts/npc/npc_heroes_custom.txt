@@ -805,6 +805,7 @@
 		//"UnitLabel"				"no_underdog"
 
 		//"Ability3"				"mjz_brewmaster_drunken_brawler"
+		"Ability11"             "special_bonus_cdr_20"
 		"Ability13"				"special_bonus_hp_3500"
 		"Ability16"				"special_bonus_unique_brewmaster_6"
 
@@ -1715,13 +1716,13 @@
 		"Ability5"		"generic_hidden"
 		"Ability6"		"marci_unleash_custom"
 
-		"Ability10"		"special_bonus_spell_amplify_65"
+		"Ability10"		"special_bonus_unique_marci_unleash_silence"
 		"Ability11"		"special_bonus_hp_4000"
 		"Ability12"		"special_bonus_unique_marci_grapple_stun_duration"
 		"Ability13"		"special_bonus_unique_marci_lunge_range"
 		"Ability14"		"special_bonus_unique_marci_guardian_magic_immune"
 		"Ability15"		"special_bonus_cdr_25"
-		"Ability16"		"special_bonus_unique_marci_unleash_silence"
+		"Ability16"		"special_bonus_spell_amplify_225"
 		"Ability17"		"special_bonus_4_crit_5420"
 
 		"ArmorPhysical"				"0"

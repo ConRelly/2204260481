@@ -6575,7 +6575,7 @@ This ability has a base cooldown of %base_cooldown% seconds, plus %extra_cooldow
 
 "DOTA_Tooltip_ability_winter_wyvern_winters_curse_Description"		"Winter Wyvern freezes an enemy in place while striking those nearby with a maddening curse which causes them to attack their frozen ally with increased attack speed. The frozen ally and those cursed to attack their ally take less damage from their enemies."
 
-"mystic_dragon_endless_wisdom"													  "Endless wisdom"
+//"mystic_dragon_endless_wisdom"													  "Endless wisdom"
 "DOTA_Tooltip_ability_mystic_dragon_endless_wisdom"									"Endless wisdom"
 "DOTA_Tooltip_ability_mystic_dragon_endless_wisdom_Description"						"Link with a dragon mind and gain knowledge that grows with time."
 "DOTA_Tooltip_ability_mystic_dragon_endless_wisdom_grow_int"						"INT PER STACK"
@@ -9644,6 +9644,7 @@ Contains all random skills"
 	"DOTA_Tooltip_ability_special_bonus_spell_amplify_75"		"+{s:value}% Spell Amplification"
 	"DOTA_Tooltip_ability_special_bonus_spell_amplify_90"		"+{s:value}% Spell Amplification"
 	"DOTA_Tooltip_ability_special_bonus_spell_amplify_125"		"+{s:value}% Spell Amplification"
+	"DOTA_Tooltip_ability_special_bonus_spell_amplify_225"		"+{s:value}% Spell Amplification"
 
 	"DOTA_Tooltip_ability_special_bonus_hp_1500"		"+{s:value} Health"
 	"DOTA_Tooltip_ability_special_bonus_hp_1750"		"+{s:value} Health"
@@ -9921,8 +9922,8 @@ Contains all random skills"
 	"DOTA_Tooltip_ability_marci_grapple_custom_impact_damage"				"IMPACT DAMAGE:"
 
 	"DOTA_Tooltip_ability_marci_unleash_custom"						"Unleash"
-	"DOTA_Tooltip_ability_marci_unleash_custom_Description"			"Marci taps a hidden power, gaining Fury charges that allow her to deliver a rapid sequence of strikes. The last strike in every Fury combo creates a damaging pulse around the target that slows movement and attack speed for %pulse_debuff_duration%s. In between Fury combos, Marci is unable to attack for %time_between_flurries%s.\n\nMarci receives a basic dispel when Unleash is cast and gains %bonus_movespeed%%% movement speed."
-	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Once a Fury combo is started, each attack must be delivered within 1s or the Fury combo expires."
+	"DOTA_Tooltip_ability_marci_unleash_custom_Description"			"Marci taps a hidden power, gaining Fury charges that allow her to deliver a rapid sequence of strikes. The last strike in every Fury combo creates a damaging pulse around the target that slows movement and attack speed for %pulse_debuff_duration%s. In between Fury combos, Marci is unable to attack for %time_between_flurries%s.\n\nMarci receives a basic dispel when Unleash is cast and gains %bonus_movespeed%%% movement speed.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Some Skills and Abilites will get improved when ultimate is active.(pres Alt)"
+	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Super Scepter improve list: Cm Frostbine, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless wisdom."
 	"DOTA_Tooltip_ability_marci_unleash_custom_Lore"					"Though some have sought to understand its origins, Marci rebuffs all attempts to divine the source of her power."
 	"DOTA_Tooltip_ability_marci_unleash_custom_duration"				"DURATION:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_charges_per_flurry"		"STRIKES PER FURY:"

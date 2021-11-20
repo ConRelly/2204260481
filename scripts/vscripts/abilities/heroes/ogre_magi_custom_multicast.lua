@@ -12,7 +12,7 @@ function on_ability_executed(keys)
 	local four_times = ability:GetLevelSpecialValueFor( "multicast_4_times", ability:GetLevel() - 1 )
 	local talent = caster:FindAbilityByName("ogre_magi_custom_bonus_unique_1")
 	local talentRisk = caster:FindAbilityByName("ogre_magi_custom_bonus_unique_2")
-
+	local marci_add = 0
 	if IsExcludeAbility(used_ability) then return false end
 	--if not ability:ProcsMagicStick() then return end
 
@@ -21,18 +21,22 @@ function on_ability_executed(keys)
 		three_times = three_times + talent:GetSpecialValueFor("value")
 		two_times = two_times + talent:GetSpecialValueFor("value")
 	end
-
+	if caster:HasModifier("modifier_super_scepter") then
+		if caster:HasModifier("modifier_marci_unleash_flurry") then
+			marci_add = 2
+		end									
+	end	
 	local rand = RandomInt(1,100)
 	local multicast = 1
     local cursor = used_ability:GetCursorPosition()
 	if rand < two_times then
-		multicast = 2
+		multicast = 2 + marci_add
 	end
 	if rand < three_times then
-		multicast = 3
+		multicast = 3 + marci_add
 	end
 	if rand < four_times then	
-		multicast = 4
+		multicast = 4 + marci_add
 	end
 	if multicast ~= 1 then
 		local abilityName = used_ability:GetAbilityName()

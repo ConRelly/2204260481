@@ -1,7 +1,7 @@
 LinkLuaModifier("modifier_item_blast_staff3", "items/item_blast_staff_3.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_blast_staff_debuff", "items/item_blast_staff_3.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_blast_staff3_proc", "items/item_blast_staff_3.lua", LUA_MODIFIER_MOTION_NONE)
-
+local debuff_bonus = 0
 item_blast_staff_3 = class({})
 function item_blast_staff_3:GetIntrinsicModifierName() return "modifier_item_blast_staff3" end
 function item_blast_staff_3:OnSpellStart()
@@ -39,10 +39,18 @@ if IsServer() then
 		if target and target:IsAlive() and not target:IsMagicImmune() then
 			local parent = self:GetParent()
 			local particleIndex = ParticleManager:CreateParticle("particles/custom/items/blast_staff/blast_staff_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+			local bonus_marci_int_mult = 0
 			ParticleManager:SetParticleControl(particleIndex, 3, target:GetAbsOrigin())
-			local damage = self:GetSpecialValueFor("int_multiplier") * parent:GetIntellect()
 			local duration = self:GetSpecialValueFor("debuff_duration")
-			if not target:HasModifier("modifier_item_blast_staff_debuff") and parent:HasScepter() then
+			if parent:HasModifier("modifier_super_scepter") then
+				if parent:HasModifier("modifier_marci_unleash_flurry") then
+					duration = duration + 1
+					debuff_bonus = -10
+					bonus_marci_int_mult = 5
+				end                                 
+			end 			
+			local damage = (self:GetSpecialValueFor("int_multiplier") + bonus_marci_int_mult) * parent:GetIntellect()
+			if not target:HasModifier("modifier_item_blast_staff_debuff") and parent:HasScepter() then				
 				target:AddNewModifier(parent, self, "modifier_item_blast_staff_debuff", {duration = duration})
 			end
 			ApplyDamage({
@@ -111,7 +119,7 @@ function modifier_item_blast_staff_debuff:DeclareFunctions()
 	return {MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS}
 end
 function modifier_item_blast_staff_debuff:GetModifierMagicalResistanceBonus()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("resist_reduc") end
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("resist_reduc") + debuff_bonus end
 end
 
 

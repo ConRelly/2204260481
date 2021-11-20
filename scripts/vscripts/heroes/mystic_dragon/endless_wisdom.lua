@@ -20,6 +20,12 @@ end
 function StackCountIncrease( keys )
     local caster = keys.caster
     local ability = keys.ability
+	local bonus = 1
+	if caster:HasModifier("modifier_super_scepter") then
+		if caster:HasModifier("modifier_marci_unleash_flurry") then
+			bonus = 2
+		end                                 
+	end 	
     local fleshHeapStackModifier = "modifier_mystic_dragon_endless_wisdom_buff"
     local currentStacks = caster:GetModifierStackCount(fleshHeapStackModifier, ability)
 
@@ -27,7 +33,7 @@ function StackCountIncrease( keys )
 	ParticleManager:ReleaseParticleIndex(pfx)
 
 	caster:AddNewModifier(caster, ability, fleshHeapStackModifier, nil)
-    caster:SetModifierStackCount(fleshHeapStackModifier, ability, (currentStacks + 1))
+    caster:SetModifierStackCount(fleshHeapStackModifier, ability, (currentStacks + bonus))
 end
 
 

@@ -73,7 +73,11 @@ function ability_class:ApplyDamageToEnemy( target )
     else
         damage = (creep_total_damage + manareg) * damage_interval
     end
-
+	if caster:HasModifier("modifier_super_scepter") then
+		if caster:HasModifier("modifier_marci_unleash_flurry") then
+			damage = damage * 3
+		end									
+	end	
     local damageTable =
     {
         victim = target,

@@ -152,7 +152,12 @@ function modifier_item_radiance_armor_aura_green:OnIntervalThink()
 		end	
 		if ms > self.ms_threshold then
 			ms_mult = self.ms_threshold_multi
-		end		
+		end
+		if caster:HasModifier("modifier_super_scepter") then
+			if caster:HasModifier("modifier_marci_unleash_flurry") then
+				ms_mult = 10
+			end                                 
+		end 				
 		local ms_bonus_dmg = ms * ms_mult
 		local bonus_agi_dmg = math.ceil(agi * agi_mult)
 		local aura_dmg = self.base_damage
