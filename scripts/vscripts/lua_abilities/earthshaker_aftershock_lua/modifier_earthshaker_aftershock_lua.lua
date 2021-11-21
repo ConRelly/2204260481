@@ -13,23 +13,25 @@ end
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_earthshaker_aftershock_lua:OnCreated( kv )
-	-- references
-	self.radius = self:GetAbility():GetSpecialValueFor( "aftershock_range" ) -- special value
+	if self:GetAbility() then
+		-- references
+		self.radius = self:GetAbility():GetSpecialValueFor( "aftershock_range" ) -- special value
 
-	if IsServer() then
-		local damage = self:GetAbility():GetAbilityDamage() + (self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier")) -- special value
-		self.duration = self:GetAbility():GetDuration() -- special value
+		if IsServer() then
+			local damage = self:GetAbility():GetAbilityDamage() + (self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier")) -- special value
+			self.duration = self:GetAbility():GetDuration() -- special value
 
-		-- precache damage
-		self.damageTable = {
-			-- victim = target,
-			attacker = self:GetCaster(),
-			damage = damage,
-			damage_type = DAMAGE_TYPE_MAGICAL,
-			ability = self:GetAbility(), --Optional.
-		}
+			-- precache damage
+			self.damageTable = {
+				-- victim = target,
+				attacker = self:GetCaster(),
+				damage = damage,
+				damage_type = DAMAGE_TYPE_MAGICAL,
+				ability = self:GetAbility(), --Optional.
+			}
 
-	end
+		end
+	end	
 end
 
 function modifier_earthshaker_aftershock_lua:OnRefresh( kv )

@@ -118,8 +118,18 @@ function modifier_item_blast_staff_debuff:GetTexture() return "blast_staff_3" en
 function modifier_item_blast_staff_debuff:DeclareFunctions()
 	return {MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS}
 end
+function modifier_item_blast_staff_debuff:OnCreated()
+	local caster = self:GetCaster()
+	self.debuff_bonus = 0
+	if caster:HasModifier("modifier_super_scepter") then
+		if caster:HasModifier("modifier_marci_unleash_flurry") then
+			self.debuff_bonus = -10
+		end                                 
+	end 
+end	
+
 function modifier_item_blast_staff_debuff:GetModifierMagicalResistanceBonus()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("resist_reduc") + debuff_bonus end
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("resist_reduc") + self.debuff_bonus end
 end
 
 

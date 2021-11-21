@@ -173,7 +173,7 @@ function modifier_item_mjz_bloodstone_buff:IsBuff() return true end
 function modifier_item_mjz_bloodstone_buff:RemoveOnDeath() return false end
 function modifier_item_mjz_bloodstone_buff:GetTexture() return "item_mjz_bloodstone" end
 function modifier_item_mjz_bloodstone_buff:DeclareFunctions()
-	if self:GetAbility():GetName() == "item_mjz_bloodstone_ultimate" then
+	if self:GetAbility() and self:GetAbility():GetName() == "item_mjz_bloodstone_ultimate" then
 		return {
 			MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
 			MODIFIER_PROPERTY_MP_REGEN_AMPLIFY_PERCENTAGE,

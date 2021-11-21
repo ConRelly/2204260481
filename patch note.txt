@@ -1411,7 +1411,7 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Removed some skills from -extramode that where causing crash.
 * An extra skill point is given every 7 levels, instead of 5
 * Added a new command for the cheat lobby "-demo"
-
+* Gold gain increasd by 10% in parties of 2 or more players.
 
 
 

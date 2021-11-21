@@ -528,7 +528,7 @@ function AOHGameMode:InitVariables()
 			end
 		end
 	end	
-	self._goldRatio = 2.1 - 0.30 * (5 - self._playerNumber)
+	self._goldRatio = 2.3 - 0.30 * (5 - self._playerNumber)
 	self._expRatio = 1.60 - 0.30 * (5 - self._playerNumber) 
 	if self._playerNumber < 2 and not self.starting_intems then
 		self._goldRatio = 0.75
