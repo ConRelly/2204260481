@@ -11646,7 +11646,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"585 2350 6985"
+				"damage"					"585 2350 8985"
 				"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_5"
 				"CalculateSpellDamageTooltip"	"0"
 			}
@@ -11659,7 +11659,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bounce_radius"				"800 800 0"
+				"bounce_radius"				"800 800 800"
 				"RequiresScepter"		"1"
 			}
 			"04"
@@ -14559,18 +14559,19 @@
 		"AbilityCooldown"				"7"
 		"AbilityManaCost"				"65"
 		"AbilityCastRange"				"1200 1400 1600 1800"
-		"AbilityDamage"					"275 1150 2925 4300"
+		"AbilityDamage"					"275 1850 4925 14300"
 	}
 	"morphling_adaptive_strike_agi"
 	{
 		"AbilityManaCost"				"60"
-		"AbilityCooldown"						"8 7 6 5"
+		"LevelsBetweenUpgrades"         "10"
+		"AbilityCooldown"				"8 7 6 5"
 		"AbilitySpecial"
 		{
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage_max"					"6.5 9.5 12.5 15.0"
+				"damage_max"					"8.5 19.5 32.5 55.5"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
@@ -14578,6 +14579,7 @@
 	"morphling_adaptive_strike_str"
 	{
 		"AbilityManaCost"				"60"
+		"LevelsBetweenUpgrades"         "10"
 		"AbilityCooldown"						"10 9 8 7"
 	}
 	"morphling_morph"
@@ -14588,10 +14590,73 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attributes"		"25 77 144 377"
+				"bonus_attributes"		"45 177 344 777"
 			}
 		}
 	}
+	//=================================================================================================================
+	// Morphling: Morph (Strength Gain)
+	//=================================================================================================================
+	"morphling_morph_str"
+	{
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"points_per_tick"		"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"morph_cooldown"		"0.333 0.166 0.083 0.0416"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"morph_rate_tooltip"	"30 60 120 240"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_cost"				"10"
+			}
+		}
+	}
+
+	"morphling_morph_agi"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"points_per_tick"		"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"morph_cooldown"		"0.333 0.166 0.083 0.0416"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attributes"		"25 77 144 377"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"morph_rate_tooltip"	"30 60 120 240"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_cost"				"10"
+			}
+		}
+	}
+
 	"morphling_replicate"
 	{
 		"AbilityCooldown"				"80 60 40"

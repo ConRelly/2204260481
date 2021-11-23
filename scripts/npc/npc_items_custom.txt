@@ -1254,6 +1254,7 @@
 	"ItemShopTags"					"damage;attack speed"
 	"ItemQuality"					"common"
 	"ItemAliases"					"cross"
+	"ItemShareability"              "ITEM_FULLY_SHAREABLE"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 	"AbilitySpecial"
 	{
@@ -34326,7 +34327,7 @@
 		"ItemKillable"					"0"
 		"ItemDisplayOwnership"			"1"
 		"CustomShop"					"1"
-		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"precache"
