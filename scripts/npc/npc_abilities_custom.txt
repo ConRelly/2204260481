@@ -34659,7 +34659,7 @@
 			"01"
 			{
 				"var_type"				  "FIELD_INTEGER"
-				"sprint_speed"			  "900"
+				"sprint_speed"			  "1100"
 			}
 			"02"
 			{
@@ -34697,7 +34697,7 @@
 			"01"
 			{
 				"var_type"			  "FIELD_INTEGER"
-				"damage"				"95000"
+				"damage"				"195000"
 			}
 			"02"
 			{
@@ -34765,7 +34765,7 @@
 
 		"IsOnCastBar"				   "1"
 		
-		"AbilityCastRange"			  "2500"
+		"AbilityCastRange"			  "9500"
 		"AbilityCastPoint"			  "0.0"
 		"AbilityCooldown"			   "15.0"
 		"AbilityManaCost"			   "0"
@@ -34775,7 +34775,7 @@
 			"01"
 			{
 				"var_type"			  "FIELD_FLOAT"
-				"projectile_speed"	  "950"
+				"projectile_speed"	  "1250"
 			}
 			"02"
 			{
@@ -34785,7 +34785,7 @@
 			"03"
 			{
 				"var_type"			  "FIELD_FLOAT"
-				"projectile_distance"   "3500"
+				"projectile_distance"   "4500"
 			}
 			"04"
 			{
@@ -34795,12 +34795,12 @@
 			"05"
 			{
 				"var_type"			  "FIELD_INTEGER"
-				"movespeed_bonus"	   "250"
+				"movespeed_bonus"	   "950"
 			}
 			"06"
 			{
 				"var_type"			  "FIELD_INTEGER"
-				"attackspeed_bonus"	 "350"
+				"attackspeed_bonus"	 "550"
 			}
 			"07"
 			{
@@ -34859,7 +34859,7 @@
 			"04"
 			{
 				"var_type"			  "FIELD_INTEGER"
-				"torrent_damage"		"9000"
+				"torrent_damage"		"14000"
 			}
 			"05"
 			{
@@ -34945,7 +34945,7 @@
 			"05"
 			{
 				"var_type"		  "FIELD_INTEGER"
-				"bubble_damage"	 "900"
+				"bubble_damage"	 "9000"
 			}
 			"06"
 			{
@@ -35015,7 +35015,7 @@
 			"07"
 			{
 				"var_type"		  "FIELD_INTEGER"
-				"damage"			"9400"
+				"damage"			"13400"
 			}  
 		}
 	}
@@ -35059,7 +35059,7 @@
 			"04"
 			{
 				"var_type"				  "FIELD_INTEGER"
-				"blast_damage"			  "10000"
+				"blast_damage"			  "20000"
 			}
 		}
 	}
@@ -35219,7 +35219,7 @@
 			"01"
 			{
 				"var_type"			  "FIELD_INTEGER"
-				"damage_per_tick"	   "1800"
+				"damage_per_tick"	   "3600"
 			}
 			"02"
 			{
@@ -35249,7 +35249,7 @@
 			"07"
 			{
 				"var_type"			  "FIELD_FLOAT"
-				"damage_tooltip"		"8000"		// damage_per_tick * tick_interval
+				"damage_tooltip"		"16000"		// damage_per_tick * tick_interval
 			}
 		}
 	}

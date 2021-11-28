@@ -3212,11 +3212,19 @@
 			}
 			"b"
 			{
+				"NPCName"				"npc_boss_demon_marauder"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"10"
+			}			
+			"c"
+			{
 				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"1"
 			}
+			
 		}
 		"29" // Wisp					小精灵
 		{
@@ -3389,7 +3397,30 @@
 				"SpawnInterval"			"1"
 			}
 		}
-		"36" // Profesional player				新骷髅王
+		"36" // Spectre					幽鬼
+		{
+			"Title"						"Wombo Combo"
+			"MaxGold"					"5250"
+			"BagCount"					"1"
+			"BagVariance"				"80"
+			"FixedXP"					"99000"
+		
+			"a"
+			{
+				"NPCName"				"npc_boss_spectre_2"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"30"
+			}
+			"b"
+			{
+				"NPCName"				"npc_boss_ursa2"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"1"
+			}
+		}		
+		"37" // Profesional player				新骷髅王
 		{
 			"Title"						"Profesional Football Players"
 			"MaxGold"					"4000"
@@ -3412,7 +3443,7 @@
 				"SpawnInterval"			"1"
 			}
 		}
-		"37" // NEW KING				新骷髅王
+		"38" // NEW KING				新骷髅王
 		{
 			"Title"						"Immortal King Second Part"
 			"MaxGold"					"4000"

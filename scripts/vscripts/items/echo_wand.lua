@@ -310,6 +310,7 @@ if IsServer() then
 							local multicast_3_chance = self.ability:GetSpecialValueFor("multicast_3")
 							local multicast_4_chance = self.ability:GetSpecialValueFor("multicast_4")
 							local chance = RandomInt(1,100)
+							local casts = 0
 							if HasSuperScepter(attacker) then
 								chance = chance / 2
 							end
@@ -322,44 +323,46 @@ if IsServer() then
 							elseif chance <= multicast_1_chance then
 								casts = 1
 							end
-							for count = 2, casts + 1 do
-								Timers:CreateTimer(count * interval, function()
-									if self.echo and not self.echo:IsNull() and IsValidEntity(self.echo) then
-										if not keys.target:IsAlive() then return end
-										if not self.parent:IsAlive() then return end
-										if not self.parent:HasModifier("modifier_ogre_magi_multicast_n") then return end
+							if casts > 0 then 
+								for count = 2, casts + 1 do
+									Timers:CreateTimer(count * interval, function()
+										if self.echo and not self.echo:IsNull() and IsValidEntity(self.echo) then
+											if not keys.target:IsAlive() then return end
+											if not self.parent:IsAlive() then return end
+											if not self.parent:HasModifier("modifier_ogre_magi_multicast_n") then return end
 
-										if self.targetType == 0 then
-											self.parent:SetCursorCastTarget(keys.target)
-										elseif self.targetType == 1 then
-											self.parent:SetCursorPosition(keys.target:GetAbsOrigin())
-										elseif self.targetType == 2 then
-											self.parent:SetCursorTargetingNothing(true)
-										elseif self.targetType == 3 then
-											self.parent:SetCursorCastTarget(self.parent)
+											if self.targetType == 0 then
+												self.parent:SetCursorCastTarget(keys.target)
+											elseif self.targetType == 1 then
+												self.parent:SetCursorPosition(keys.target:GetAbsOrigin())
+											elseif self.targetType == 2 then
+												self.parent:SetCursorTargetingNothing(true)
+											elseif self.targetType == 3 then
+												self.parent:SetCursorCastTarget(self.parent)
+											end
+
+											self.echo:OnSpellStart()
+
+											local counter_speed = 2
+
+											if count == casts + 1 then
+												counter_speed = 1
+											end
+											if count - 1 > 3 then sound = 3 else sound = count end
+
+											local effect_cast = ParticleManager:CreateParticle("particles/custom/abilities/heroes/ogre_magi_multicast/ogre_magi_multicast.vpcf", PATTACH_OVERHEAD_FOLLOW, attacker)
+											ParticleManager:SetParticleControl(effect_cast, 1, Vector(count, counter_speed, 0))
+											ParticleManager:SetParticleControl(effect_cast, 2, Vector(0, counter_speed, 0))
+
+											local sound_line = math.min(sound -1, 3)
+											local sound_cast = "Hero_OgreMagi.Fireblast.x" .. sound_line
+											if sound_line > 0 then
+												attacker:EmitSoundParams(sound_cast, 0, 0.3, 0)
+											end
 										end
-
-										self.echo:OnSpellStart()
-
-										local counter_speed = 2
-
-										if count == casts + 1 then
-											counter_speed = 1
-										end
-										if count - 1 > 3 then sound = 3 else sound = count end
-
-										local effect_cast = ParticleManager:CreateParticle("particles/custom/abilities/heroes/ogre_magi_multicast/ogre_magi_multicast.vpcf", PATTACH_OVERHEAD_FOLLOW, attacker)
-										ParticleManager:SetParticleControl(effect_cast, 1, Vector(count, counter_speed, 0))
-										ParticleManager:SetParticleControl(effect_cast, 2, Vector(0, counter_speed, 0))
-
-										local sound_line = math.min(sound -1, 3)
-										local sound_cast = "Hero_OgreMagi.Fireblast.x" .. sound_line
-										if sound_line > 0 then
-											attacker:EmitSoundParams(sound_cast, 0, 0.3, 0)
-										end
-									end
-								end)
-							end
+									end)
+								end
+							end	
 						end
 						--self.echo:SetChanneling(true)
 						--self.echo:EndChannel(true)

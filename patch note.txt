@@ -1363,6 +1363,8 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 
 
 (How about this kind of update sorting?)
+
+For full Update note visit discord, link can be found in workshop discussions.
 -- NEW
 * Added new transform: Kardel
 * Earth Spirit: Added new ability (Rollinâ€™ Stone) and replaced from Ball Lightning
@@ -1374,6 +1376,7 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Added new item: Life Greaves
 * Attempt to revive Bottle
 * Reworked Stifling Dagger (Phantom Assassin)
+* New Round in part 2 , and another round got an extra boss.
 * Marci : Has now the Highest spell amp talent, Super Scepter effect for Ultimate.
 * Marci Ultimate SS Effects : 
 -Cm Frostbine : 3x dmg
@@ -1383,10 +1386,11 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 -Ultimate Bloodstone : gain an extra stack on every succesful proc.
 -Green Radiance(edible included): Ms multiplayer increased to 10x and has no limit
 -Greater Blast Staff: MR reduction increased to -45 , int multiplayer +5(18) , debuff duration +1s. 
--Apex: +7% more stats(42%)
+-Apex: +7% more stats(42%)(updates on Equip)
 -Cursed Gaze: +3% crit bonus on hit(8%).
 -Slayer Rebound : aditional stacks + 2 instead of 1.
 -Endless wisdom : gain an extra stack.
+-May add more in the future.(open for request with points)
 -- Ability
 * Lone Druid: Added new talent (right level 20)
 * Storm Spirit: Added new talent and replaced from "+250 Health" (right level 15)
@@ -1405,6 +1409,7 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Fixed Earthshaker's "Aftershock AOE" talent
 * Multicast (KotL/Random pool): Removed the extra multicast (now the description is correct) and proc chance increased by 1%
 * True Form (Lone Druid): Added new levels, increased CD and reduced duration
+* Increased Huskar W(burning spear) dmg, same for talent.(might be good with an certain neutral Relic)
 -- Items
 * Ethereal Blade LVL 2: Added 100 gold cost recipe
 * CrossBow: Added Attack Projectile Speed bonus

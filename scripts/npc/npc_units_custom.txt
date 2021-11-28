@@ -6222,6 +6222,116 @@
 		}
 	}
 }
+"npc_boss_spectre_2"
+{
+	"Model"						"models/heroes/spectre/spectre.vmdl"
+	"BaseClass"					"npc_dota_creature"
+	"vscripts"					"bosses/attack_move.lua"
+	"UnitLabel"				 "randomskill"
+	//"vscripts"					"ai/bosses/spectre.lua"
+	"SoundSet"					"Hero_Spectre"
+	"ModelScale"				"1.9"
+	"Level"						"69"
+	"ConsideredHero"			"1"
+	"HasInventory"				"1"
+	"AbilityLayout"				"5"
+	"precache"
+	{
+		"particle_folder"		"particles/units/heroes/hero_spectre"
+	}
+	"Ability1"					"custom_spectral_dagger"
+	"Ability2"				  "custom_dispersion"
+	"Ability3"				  "custom_aphotic_shield"
+	//"Ability3"					"frostivus2018_spectre_active_dispersion"
+	"Ability4"							  "generic_hidden"
+	//"Ability4"					"custom_spectral_dagger_wrapper"
+	"Ability5"							  "generic_hidden"
+	"Ability6"							  "generic_hidden"
+	
+	//"Ability5"					"boss_spectre_reality"
+	//"Ability6"					"boss_spectre_haunt"
+	
+	"ArmorPhysical"				"193"
+	"MagicalResistance"			"90"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"8650"
+	"AttackDamageMax"			"18000"
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"1.35"
+	"BaseAttackSpeed"			"500"
+	"AttackAnimationPoint"		"0.15"
+	"AttackAcquisitionRange"	"4000"
+	"AttackRange"				"170"
+	"ProjectileModel"			""
+	"ProjectileSpeed"			""
+	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+	"BountyGoldMin"				"1"
+	"BountyGoldMax"				"1"
+	"BoundsHullName"			"DOTA_HULL_SIZE_HUGE"
+	"RingRadius"				"170"
+	"HealthBarOffset"			"300"
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"490"
+	"MovementTurnRate"			"0.5"
+	"StatusHealth"				"990000"
+	"StatusHealthRegen"			"15000"
+	"StatusMana"				"12000"
+	"StatusManaRegen"			"1000"
+	"TeamName"					"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"VisionDaytimeRange"		"2600"
+	"VisionNighttimeRange"		"2600"
+	"Creature"
+	{
+		"DisableClumpingBehavior"   "1"
+		"OffensiveAbilities"
+		{
+			"Ability3"
+			{
+				"Name"			  "custom_aphotic_shield"
+				//"Name"				  "frostivus2018_spectre_active_dispersion"
+			}
+			"Ability1"
+			{
+				"Name"				"custom_spectral_dagger"
+				"AOE"				"1"
+				"Radius"			"2000"
+				"MinimumTargets"	"0"
+			}
+			//"Ability5"
+			//{
+			   //"Name"					"boss_spectre_reality"
+			//}
+			//"Ability6"
+			//{
+				//"Name"					"boss_spectre_haunt"
+			//}
+		}
+		"EquippedItems"
+		{
+			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
+			"MKB"				 { "Item"		"item_monkey_king_bar" }
+			"Moonshard"			 { "Item"		"item_moon_shard"	  }
+			"Skadi"			  { "Item"	   "item_dark_skadi"		   }
+//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_70" }
+			"Boss Resistance"		   { "Item"		"item_plain_ring" }
+
+		}
+		"AttachWearables"
+		{
+			"1" { "ItemDef"	 "323"  }
+			"2" { "ItemDef"	 "324"  }
+			"3" { "ItemDef"	 "325"  }
+			//models/heroes/spectre/spectre_weapon.vmdl
+			//"4" { "ItemDef"	 "395"  }
+			"5" { "ItemDef"	 "9204" }
+			//models/items/spectre/entropy_weapon/entropy_weapon.vmdl
+			"6" { "ItemDef"	 "8721"  }
+		}
+	}
+}
 //=================================================================================	
 // Round31 敌法师
 //=================================================================================
@@ -7746,6 +7856,141 @@
 			}
 		}
 }
+"npc_boss_rubick_2"	//拉比克
+{
+	"Model"								 "models/heroes/rubick/rubick.vmdl"
+	"BaseClass"							 "npc_dota_creature"
+	"UnitLabel"				 "randomskill"
+	"vscripts"					"bosses/attack_move.lua"
+	"SoundSet"							  "Hero_Rubick"
+	"VoiceFile"								"soundevents/voscripts/game_sounds_vo_rubick.vsndevts"
+	"GameSoundsFile"						"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
+	"Level"								 "69"
+	"ModelScale"							"0.5"
+	"ConsideredHero"						"1"
+	"HasInventory"							"1"
+	"AbilityLayout"							"6"
+
+	"precache"
+	{
+		"particle_folder"					"particles/units/heroes/hero_rubick"
+		"soundfile"							"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+	}
+
+		"Ability1"							  "custom_laser_arrow"				 
+		"Ability2"							  "custom_omni_slash"
+		"Ability3"								"custom_solar_strike"
+		"Ability4"							  "custom_pain_burst"
+		"Ability5"								"custom_ground_slam"
+		"Ability6"								"custom_arcane_whirl"
+		"Ability7"							  "faceless_void_time_walk"
+		"Ability8"				  			  "ryze_arcane_mastery"
+
+	"ArmorPhysical"						 "176"
+	"MagicalResistance"						"90"
+	"AttackCapabilities"		  			"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"					   "13500"
+	"AttackDamageMax"					   "20475"
+	"AttackRate"							"0.9"
+	"BaseAttackSpeed"						"600"
+	"AttackAnimationPoint"		  		"0.19"
+	"AttackAcquisitionRange"	   			"5000"
+	"AttackRange"						   "600"
+	"ProjectileModel"					   "particles/units/heroes/hero_rubick/rubick_base_attack.vpcf"
+	"ProjectileSpeed"					   "1000"
+	"RingRadius"							"150"
+	"HealthBarOffset"					   "330"
+	"BountyXP"							  "0"
+	"BountyGoldMin"						 "1"
+	"BountyGoldMax"						 "1"
+	"MovementCapabilities"		 			"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"						 "1000"
+	"StatusHealth"						  "1270000"
+	"StatusHealthRegen"					 "10000"
+	"StatusMana"							"47600"
+	"StatusManaRegen"					   "2000"
+	"VisionDaytimeRange"					"3600"
+	"VisionNighttimeRange"				  "3600"
+	"TeamName"							  "DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		 		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	"Creature"
+		{
+			"DisableClumpingBehavior"   "1"
+			//Level Up
+			"HPGain"								"50"
+			"DamageGain"							"2"
+			"ArmorGain"							 "0.25"
+			"MagicResistGain"					   "0.1"
+			"MoveSpeedGain"						 "1"
+			"BountyGain"							"3"
+			"XPGain"								"15"
+			"States"
+			{
+				"Invade"
+				{
+						"Name"						  "Invade"
+						"Aggression"					"100.0"
+						"Avoidance"					 "0.0"
+						"Support"					   "0.0"
+						//"RoamDistance"				"150.0"
+				}
+			}
+			"DefaultState"						  "Invade"
+			"OffensiveAbilities"
+			{
+				"Ability1" 
+				{
+					"Name"					  "custom_laser_arrow"
+					"AOE"						"1"
+					"Radius"					"1500"
+					"MinimumTargets"			"1"
+				}
+				"Ability4"
+				{
+					"Name"					"custom_pain_burst"
+					"AOE"					"1"
+					"Radius"				"350"
+					"MinimumTargets"		"1"
+				}
+				"Ability3" 
+				{
+					"Name"					  "custom_solar_strike"
+				}
+				"Ability2" 
+				{
+					"Name"					  "custom_omni_slash"
+				}
+				"Ability7" 
+				{
+					"Name"					  "faceless_void_time_walk"
+					"AOE"					   "1"
+					"Radius"					"7000"
+					"MinimumTargets"			"0"
+				}
+			}
+			"EquippedItems"
+			{
+				"Unstoppable"	   		{ "Item"		"item_boss_unstoppable" }
+				"Blink Dagger"				{ "Item"			"item_blink"}
+				"Magic Blade"				{ "Item"		"item_force_blade"  }
+				"Boss Resistance"	   	{ "Item"		"item_mjz_mjollnir_4" }
+				"Boss Resistance"	   	{ "Item"		"item_mjz_bogduggs_lucky_femur_5" }
+				"Boss Resistance"		   { "Item"		"item_plain_ring" }
+				"Boss Resistance"		   { "Item"		"item_mirror_shield" }
+			}
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "7507" }
+				"Wearable2"	{ "ItemDef" "8230" }
+				"Wearable3"	{ "ItemDef" "7656" }
+				"Wearable4"	{ "ItemDef" "7658" }
+			}
+		}
+}
+
 "npc_dummy_unit"
 	{
 		// General
@@ -8525,6 +8770,160 @@
 			}
 		}
 	}
+	"npc_boss_demon_marauder_2"
+	{
+		// General
+		//
+		"Model"						"models/heroes/terrorblade/terrorblade.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"UnitLabel"				 "randomskill"
+		"vscripts"					"bosses/attack_move.lua"	// Class of entity of link to.
+		"SoundSet"					"Hero_TerrorBlade"					// Name of sound set.
+		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_terrorblade.vsndevts"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+		"ModelScale"				"0.45"
+		"Level"						"69"
+		"ConsideredHero"			"1"
+		"CanBeDominated"			"0"
+		"HasInventory"				"1"
+		"AbilityLayout"				"6"
+		"precache"
+		{
+			"particle_folder"		"particles/units/heroes/hero_terrorblade"
+		}
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"custom_reflection"			
+		"Ability2"					"custom_infernal_retribution"			
+		"Ability3"					"custom_metamorphosis"			
+		"Ability4"					"custom_demons_gaze"	
+		"Ability5"					"custom_eruption"
+		"Ability6"					"custom_terror_unveiled"
+		"Ability7"					"custom_tb_death"
+		"Ability8"				  	"siltbreaker_kraken_shell5"
+		"Ability9"				 	"mjz_chaos_knight_chaos_strike_2"
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"185"			// Physical protection.
+		"MagicalResistance"			"90"			// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"10500"		// Damage range min.
+		"AttackDamageMax"			"49690"		// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.25"			// Speed of attack.
+		"BaseAttackSpeed"			"600"
+		"AttackAnimationPoint"		"0.39"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"4600"		// Range within a target can be acquired.
+		"AttackRange"				"228"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"900"			// Speed of projectile.
+
+		// Attributes
+		//----------------------------------------------------------------
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"0"			// Base strength
+		"AttributeStrengthGain"		"0"			// Strength bonus per level.
+		"AttributeBaseIntelligence"	"0"			// Base intelligence
+		"AttributeIntelligenceGain"	"0"			// Intelligence bonus per level.
+		"AttributeBaseAgility"		"0"			// Base agility
+		"AttributeAgilityGain"		"0"			// Agility bonus per level.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"450"		// Gold earned min.
+		"BountyGoldMax"				"450"		// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"			// Hull type used for navigation/locomotion.
+		"RingRadius"				"160"
+		"HealthBarOffset"			"340"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"530"		// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1335000"		// Base health.
+		"StatusHealthRegen"			"10000"		// Health regeneration rate.
+		"StatusMana"				"23200"			// Base mana.
+		"StatusManaRegen"			"1000"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"4600"		// Range of vision during day light.
+		"VisionNighttimeRange"		"4600"		// Range of vision at night time.
+		
+		//Inventory
+		
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"DisableClumpingBehavior"   "1"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"						  "Invade"
+					"Aggression"		   			"100.0"
+					"Avoidance"					 "0.0"
+					"Support"					   "0.0"
+					//"RoamDistance"				"150.0"
+				}
+			}
+			"DefaultState"						  "Invade"
+		   
+			"OffensiveAbilities"
+			{
+				"Ability5"
+				{
+					"Name"				"custom_eruption"
+					"Radius"			"1300"
+					"AOE"				"1"
+				}
+				"Ability1"
+				{
+					"Name"				"custom_reflection"
+					"Radius"			"900"
+				}
+			}
+			"EquippedItems"
+			{
+				"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
+				"Magic blade"			  { "Item"		"item_force_blade" }
+				"Moonshard"			 { "Item"		"item_moon_shard" }
+				"Boss Resistance"	   	{ "Item"		"item_shivas_guard_2" }
+				"Boss Resistance"		   { "Item"		"item_plain_ring" }
+				"Boss Resistance"		   { "Item"		"item_mjz_assault_5" }
+			}
+			"AttachWearables"
+			{
+				"Wearable1" { "ItemDef" "5957" }
+				"Wearable2" { "ItemDef" "8276" }
+				"Wearable3" { "ItemDef" "7032" }
+				"Wearable4" { "ItemDef" "7035" }
+				"Wearable5" { "ItemDef" "7036" }
+			}
+		}
+	}
+
 	"npc_phantasm"
 	{
 		// General

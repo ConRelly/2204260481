@@ -19685,7 +19685,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_dmg"				"2420"
+				"rapier_dmg"				"3420"
 			}
 			"02"
 			{
@@ -19710,7 +19710,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rock_dmg"					"37650"
+				"rock_dmg"					"47650"
 			}
 			"07"
 			{
@@ -19735,12 +19735,12 @@
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_armor"				"85"
+				"rapier_armor"				"99"
 			}
 			"13"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_mr"					"25"
+				"rapier_mr"					"30"
 			}
 		}
 		"OnUnequip"

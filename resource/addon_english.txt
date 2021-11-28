@@ -4643,6 +4643,7 @@ Triggers at 40 percent health."
 "DOTA_Tooltip_ability_custom_spirit_siphon_charge_restore_time"		  "CHARGE RESTORE TIME:"
 
 "npc_boss_demon_marauder"					 "Demon Marauder (Boss)"
+"npc_boss_demon_marauder_2"					 "Demon Marauder? (Boss)"
 "DOTA_Tooltip_ability_custom_infernal_retribution"					"Infernal Retribution"
 "DOTA_Tooltip_ability_custom_infernal_retribution_Description"		"When damage is taken, marks the attacker's location to retaliate after a short delay."
 "DOTA_Tooltip_ability_custom_infernal_retribution_damage_pct"		"%DAMAGE:"
@@ -5242,6 +5243,7 @@ The extra targets will not receive other attack effects (such as critical strike
 "DOTA_Tooltip_ability_custom_plasma_field_radius"								"RADIUS:"
 		
 "npc_boss_rubick"					 "Rubick (Boss)"
+"npc_boss_rubick_2"					 "Rubick? (Boss)"
 
 
 "DOTA_Tooltip_ability_custom_laser_arrow"										"Laser"
@@ -5364,6 +5366,7 @@ The extra targets will not receive other attack effects (such as critical strike
 
 "npc_boss_sniper"					 "Sniper (Boss)"
 "npc_boss_spectre"					 "Spectre (Boss)"
+"npc_boss_spectre_2"					 "Spectre? (Boss)"
 
 
 "DOTA_Tooltip_ability_custom_spectral_dagger"						"Spectral Dagger"
