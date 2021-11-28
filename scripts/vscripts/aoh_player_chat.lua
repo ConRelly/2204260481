@@ -347,6 +347,22 @@ function AOHGameMode:OnPlayerChat(keys)
 		else
 			CustomUI:DynamicHud_Destroy(-1, "Custom_Demo_UI")
 			_G.Demo_UI = false
+
+			if self.m_bFreeSpellsEnabled == true then
+				self.m_bFreeSpellsEnabled = false
+				SendToServerConsole("toggle dota_ability_debug")
+			end
+			if self.m_bMaxGold == true then
+				self.m_bMaxGold = false
+			end
+			if self.m_bInvulnerabilityEnabled == true then
+				for _, Unit in pairs(AllPlayerUnits) do
+					Unit:RemoveModifierByName("lm_take_no_damage")
+				end
+				self.m_bInvulnerabilityEnabled = false
+			end
+			self.m_nHeroRenderMode = 0
+			SendToServerConsole(tostring(string.format("r_hero_debug_render_mode %i", 0)))
 		end
 	end
 end

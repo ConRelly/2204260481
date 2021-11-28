@@ -22,6 +22,15 @@ function RefreshPlayers()
 		end
 		heroes[i]:SetHealth(heroes[i]:GetMaxHealth())
 		heroes[i]:SetMana(heroes[i]:GetMaxMana())
+        local heal = ParticleManager:CreateParticle("particles/custom/abilities/refresh_players/heal.vpcf", PATTACH_ABSORIGIN_FOLLOW, heroes[i])
+        ParticleManager:ReleaseParticleIndex(heal)
+	end
+	RefillBottle()
+end
+
+function RefillBottle()
+    local heroes = GetAllRealHeroes()
+    for i=1, #heroes do
         for y=0, 9, 1 do
             local current_item = heroes[i]:GetItemInSlot(y)
             if current_item ~= nil then
@@ -33,8 +42,6 @@ function RefreshPlayers()
                 end
             end
         end
-        local heal = ParticleManager:CreateParticle("particles/custom/abilities/refresh_players/heal.vpcf", PATTACH_ABSORIGIN_FOLLOW, heroes[i])
-        ParticleManager:ReleaseParticleIndex(heal)
 	end
 end
 

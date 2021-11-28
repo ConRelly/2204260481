@@ -41,6 +41,7 @@ end
 ]]
 
 function modifier_mjz_night_stalker_hunter_in_the_night:OnDestroy()
+	if not IsServer() then return end
 	if self:GetCaster():HasModifier("modifier_night_stalker_hunter_in_the_night") then
 		self:GetCaster():RemoveModifierByName("modifier_night_stalker_hunter_in_the_night")
 	end

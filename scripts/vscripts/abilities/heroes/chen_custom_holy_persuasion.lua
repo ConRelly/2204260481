@@ -207,7 +207,7 @@ end
 modifier_agha_scepter_aura = class({})
 function modifier_agha_scepter_aura:IsHidden() return true end
 function modifier_agha_scepter_aura:IsAura() return self:GetCaster():HasScepter() end
-function modifier_agha_scepter_aura:IsAuraActiveOnDeath() return true end
+function modifier_agha_scepter_aura:IsAuraActiveOnDeath() return false end
 function modifier_agha_scepter_aura:GetAuraRadius() return FIND_UNITS_EVERYWHERE end
 function modifier_agha_scepter_aura:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD end
 function modifier_agha_scepter_aura:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_FRIENDLY end

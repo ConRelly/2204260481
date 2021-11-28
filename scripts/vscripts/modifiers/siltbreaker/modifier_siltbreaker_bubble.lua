@@ -1,5 +1,6 @@
 
 modifier_siltbreaker_bubble = class({})
+function modifier_siltbreaker_bubble:IsPurgable() return true end
 
 -----------------------------------------------------------------------------
 

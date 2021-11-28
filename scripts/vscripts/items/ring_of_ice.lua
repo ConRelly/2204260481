@@ -224,6 +224,7 @@ function modifier_pipe_of_dezun_magic_immune_aura:GetAuraSearchTeam() return DOT
 function modifier_pipe_of_dezun_magic_immune_aura:GetAuraDuration() return FrameTime() end
 function modifier_pipe_of_dezun_magic_immune_aura:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
 function modifier_pipe_of_dezun_magic_immune_aura:GetModifierAura() return "modifier_pipe_of_dezun_magic_immune_buff" end
+
 -- Pipe of Dezun Magic Immune BUFF --
 if modifier_pipe_of_dezun_magic_immune_buff == nil then modifier_pipe_of_dezun_magic_immune_buff = class({}) end
 function modifier_pipe_of_dezun_magic_immune_buff:IsHidden() return false end
@@ -235,6 +236,10 @@ function modifier_pipe_of_dezun_magic_immune_buff:GetEffectAttachType() return P
 function modifier_pipe_of_dezun_magic_immune_buff:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 end
+function modifier_pipe_of_dezun_magic_immune_buff:DeclareFunctions()
+	return {MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS}
+end
+function modifier_pipe_of_dezun_magic_immune_buff:GetModifierMagicalResistanceBonus() return 100 end
 function modifier_pipe_of_dezun_magic_immune_buff:CheckState()
 	return {[MODIFIER_STATE_MAGIC_IMMUNE] = true}
 end

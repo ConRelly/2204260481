@@ -1,6 +1,8 @@
 LinkLuaModifier("modifier_mjz_faceless_the_world_dummy", "abilities/hero_faceless_void/mjz_faceless_the_world", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_faceless_the_world_aura_friendly", "abilities/hero_faceless_void/mjz_faceless_the_world", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_faceless_the_world_aura_effect_friendly", "abilities/hero_faceless_void/mjz_faceless_the_world", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_faceless_the_world_aura_enemy", "abilities/hero_faceless_void/mjz_faceless_the_world", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_faceless_the_world_aura_effect_enemy", "abilities/hero_faceless_void/mjz_faceless_the_world", LUA_MODIFIER_MOTION_NONE)
 
 --------------------------------------------------------------------------------
 
@@ -41,7 +43,6 @@ function mjz_faceless_the_world:OnSpellStart()
 		dummy:AddNewModifier(caster, nil, "modifier_phased", {})
 		dummy:AddNewModifier(caster, self, "modifier_kill", {duration = duration})
 		dummy:AddNewModifier(caster, self, "modifier_item_gem_of_true_sight", {duration = duration})
-		dummy:AddNewModifier(caster, self, "modifier_mjz_faceless_the_world_dummy", {duration = duration})
 		dummy:AddNewModifier(caster, self, "modifier_mjz_faceless_the_world_aura_friendly", {duration = duration})
 		dummy:AddNewModifier(caster, self, "modifier_mjz_faceless_the_world_aura_enemy", {duration = duration})
 
@@ -51,31 +52,41 @@ function mjz_faceless_the_world:OnSpellStart()
 	end
 end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-LinkLuaModifier("modifier_mjz_faceless_the_world_aura_effect_friendly", "abilities/hero_faceless_void/mjz_faceless_the_world", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_mjz_faceless_the_world_aura_effect_enemy", "abilities/hero_faceless_void/mjz_faceless_the_world", LUA_MODIFIER_MOTION_NONE)
-
 ----------------------------------------------------------------------
 
-modifier_mjz_faceless_the_world_dummy = class({})
-function modifier_mjz_faceless_the_world_dummy:IsHidden() return true end
-function modifier_mjz_faceless_the_world_dummy:IsPurgable() return false end
-function modifier_mjz_faceless_the_world_dummy:CheckState()
+modifier_mjz_faceless_the_world_aura_friendly = class({})
+function modifier_mjz_faceless_the_world_aura_friendly:IsHidden() return false end
+function modifier_mjz_faceless_the_world_aura_friendly:IsPurgable() return false end
+function modifier_mjz_faceless_the_world_aura_friendly:OnCreated()
+	if not IsServer() then return end
+	local caster = self:GetCaster()
+	local parent = self:GetParent()
+	local radius = self:GetAbility():GetSpecialValueFor("radius") + talent_value(caster, "special_bonus_unique_mjz_faceless_the_world_radius")
+	if caster:HasModifier("modifier_super_scepter") then
+		radius = radius + self:GetAbility():GetSpecialValueFor("radius_super_scepter")
+	end
+	local p_name = "particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
+	local p_name_ball = "particles/econ/items/faceless_void/faceless_void_mace_of_aeons/fv_chronosphere_aeons.vpcf"
+
+	if (IsMakerHero and IsMakerHero(caster)) or caster:HasModifier("modifier_super_scepter") then
+		self.particle_index = ParticleManager:CreateParticle(p_name_ball, PATTACH_ABSORIGIN, caster)
+	else
+		self.particle_index = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN, caster)
+	end
+	ParticleManager:SetParticleControl(self.particle_index, 0, parent:GetOrigin())
+	ParticleManager:SetParticleControl(self.particle_index, 1, Vector(radius, radius, radius))
+	ParticleManager:SetParticleControl(self.particle_index, 4, parent:GetOrigin())
+	ParticleManager:SetParticleControl(self.particle_index, 6, parent:GetOrigin())
+	ParticleManager:SetParticleControl(self.particle_index, 10, parent:GetOrigin())
+end
+function modifier_mjz_faceless_the_world_aura_friendly:OnDestroy()
+	if not IsServer() then return end
+	if self.particle_index then
+		ParticleManager:DestroyParticle(self.particle_index, false)
+		ParticleManager:ReleaseParticleIndex(self.particle_index)
+	end
+end
+function modifier_mjz_faceless_the_world_aura_friendly:CheckState()
 	return {
 		[MODIFIER_STATE_INVULNERABLE] = true,
 		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
@@ -83,43 +94,6 @@ function modifier_mjz_faceless_the_world_dummy:CheckState()
 		[MODIFIER_STATE_UNSELECTABLE] = true,
 	}
 end
-if IsServer() then
-    function modifier_mjz_faceless_the_world_dummy:OnCreated()
-        local caster = self:GetCaster()
-        local parent = self:GetParent()
-        local radius = self:GetAbility():GetSpecialValueFor("radius") + talent_value(caster, "special_bonus_unique_mjz_faceless_the_world_radius")
-		if caster:HasModifier("modifier_super_scepter") then
-			radius = radius + self:GetAbility():GetSpecialValueFor("radius_super_scepter")
-		end
-        local p_name = "particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
-        local p_name_ball = "particles/econ/items/faceless_void/faceless_void_mace_of_aeons/fv_chronosphere_aeons.vpcf"
-
-        if (IsMakerHero and IsMakerHero(caster)) or caster:HasModifier("modifier_super_scepter") then
-            self.particle_index = ParticleManager:CreateParticle(p_name_ball, PATTACH_ABSORIGIN, caster)
-        else
-            self.particle_index = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN, caster)
-        end
-		ParticleManager:SetParticleControl(self.particle_index, 0, parent:GetOrigin())
-		ParticleManager:SetParticleControl(self.particle_index, 1, Vector(radius, radius, radius))
-		ParticleManager:SetParticleControl(self.particle_index, 4, parent:GetOrigin())
-		ParticleManager:SetParticleControl(self.particle_index, 6, parent:GetOrigin())
-		ParticleManager:SetParticleControl(self.particle_index, 10, parent:GetOrigin())
-    end
-
-    function modifier_mjz_faceless_the_world_dummy:OnDestroy()
-        if self.particle_index then
-            ParticleManager:DestroyParticle(self.particle_index, false)
-            ParticleManager:ReleaseParticleIndex(self.particle_index)
-        end
-    end
-end
-
-
-----------------------------------------------------------------------
-
-modifier_mjz_faceless_the_world_aura_friendly = class({})
-function modifier_mjz_faceless_the_world_aura_friendly:IsHidden() return false end
-function modifier_mjz_faceless_the_world_aura_friendly:IsPurgable() return false end
 function modifier_mjz_faceless_the_world_aura_friendly:IsAura() return true end
 function modifier_mjz_faceless_the_world_aura_friendly:GetAuraRadius() return self:GetAbility():GetAOERadius() end
 function modifier_mjz_faceless_the_world_aura_friendly:GetModifierAura() return "modifier_mjz_faceless_the_world_aura_effect_friendly" end
@@ -145,9 +119,7 @@ function modifier_mjz_faceless_the_world_aura_effect_friendly:IsStunDebuff() ret
 function modifier_mjz_faceless_the_world_aura_effect_friendly:IsDebuff() return false end
 function modifier_mjz_faceless_the_world_aura_effect_friendly:OnCreated()
 	if not IsServer() then return end
-	if self:GetParent():HasTalent("special_bonus_unique_mjz_faceless_the_world_attack_speed") then
-		self:StartIntervalThink(0.2)
-	end
+	self:StartIntervalThink(0.2)
 end
 function modifier_mjz_faceless_the_world_aura_effect_friendly:OnIntervalThink()
 	self:SetStackCount(self:GetStackCount() + 1)
@@ -171,7 +143,7 @@ function modifier_mjz_faceless_the_world_aura_effect_friendly:DeclareFunctions()
 	}
 end
 function modifier_mjz_faceless_the_world_aura_effect_friendly:GetModifierAttackSpeedBonus_Constant()
-	return self:GetStackCount() * talent_value(self:GetParent(), "special_bonus_unique_mjz_faceless_the_world_attack_speed") * 0.2
+	return self:GetStackCount() * talent_value(self:GetCaster(), "special_bonus_unique_mjz_faceless_the_world_attack_speed") * 0.2
 end
 function modifier_mjz_faceless_the_world_aura_effect_friendly:GetModifierMoveSpeed_AbsoluteMin()
 	return self:GetAbility():GetSpecialValueFor("speed")
@@ -223,7 +195,6 @@ function modifier_mjz_faceless_the_world_aura_effect_enemy:CheckState()
 		[MODIFIER_STATE_INVISIBLE] = false,
 	}
 end
-
 
 ----------------------------------------------------------------------
 

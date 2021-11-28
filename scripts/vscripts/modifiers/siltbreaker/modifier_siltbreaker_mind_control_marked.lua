@@ -4,7 +4,7 @@ modifier_siltbreaker_mind_control_marked = class ({})
 --------------------------------------------------------------------------------
 
 function modifier_siltbreaker_mind_control_marked:IsPurgable()
-	return false
+	return true
 end
 
 --------------------------------------------------------------------------------

@@ -88,7 +88,7 @@ end
 
 function GetRandomAbilityName( hero )                 
     local abilityList = {
-        "ogre_magi_custom_multicast",      -- 兽王    野性之心
+        "ogre_magi_multicast_n",      -- 兽王    野性之心
         "ogre_magi_multicast_lua",
         "aghanim_blink2",
         "ursa_fury_swipes",

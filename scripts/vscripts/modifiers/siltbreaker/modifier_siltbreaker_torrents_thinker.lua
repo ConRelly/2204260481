@@ -29,7 +29,7 @@ function modifier_siltbreaker_torrents_thinker:OnIntervalThink()
 		ParticleManager:ReleaseParticleIndex( nFXIndex2 )
 
 		EmitSoundOn( "TempleGuardian.Wrath.Explosion", self:GetParent() )
-		local hEnemies = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetOrigin(), nil, self.torrent_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false )
+		local hEnemies = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetOrigin(), nil, self.torrent_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false )
 		for _, hEnemy in pairs( hEnemies ) do
 			if hEnemy ~= nil and hEnemy:IsInvulnerable() == false then
 				local damageInfo =

@@ -30,7 +30,6 @@ function siltbreaker_mind_control:OnAbilityPhaseInterrupted()
 	if IsServer() then
 		ParticleManager:DestroyParticle( self.nPreviewFX, false )
 		StopSoundOn( "Siltbreaker.MindControl.PreCast", self:GetCaster() )
-		print("stoped")
 	end 
 end
 

@@ -283,15 +283,6 @@ if IsServer() then
 		if attacker == self.parent and not keys.target:IsNull() and self.hit then 
 			if self.echo and self.ability:IsCooldownReady() and not self.echo:IsNull() and IsValidEntity(self.echo) then
 				--if self.echo:IsOwnersManaEnough() then
-				if self.targetType == 0 then
-					self.parent:SetCursorCastTarget(keys.target)
-				elseif self.targetType == 1 then
-					self.parent:SetCursorPosition(keys.target:GetAbsOrigin())
-				elseif self.targetType == 2 then
-					self.parent:SetCursorTargetingNothing(true)
-				elseif self.targetType == 3 then
-					self.parent:SetCursorCastTarget(self.parent)		
-				end
 				local cooldown = self.echo:GetCooldown(self.echo:GetLevel())
 				if cooldown < self.minimum_cooldown then
 					cooldown = self.minimum_cooldown
@@ -299,76 +290,86 @@ if IsServer() then
 				local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_rubick/rubick_nullfield_offensive.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
 				ParticleManager:SetParticleControlEnt(fx, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
 				ParticleManager:ReleaseParticleIndex(fx)
-				Timers:CreateTimer(
-					0.05,
-					function()
-						if not keys.target:IsNull() and IsValidEntity(keys.target) then
-							self.ability:StartCooldown(cooldown * attacker:GetCooldownReduction())
-							self.echo:OnSpellStart()
-							if attacker:HasModifier("modifier_multicast_datadriven") then
-								local chance = RandomInt(0, 100)
-								if HasSuperScepter(attacker) then
-									chance = chance / 2
-								end	
-								local effect = "particles/econ/items/ogre_magi/ogre_magi_jackpot/ogre_magi_jackpot_multicast.vpcf"
-								if chance < 5 then	
-									for i= 1, 4 do
-										Timers:CreateTimer({
-											endTime = 0.1 + i * 0.3, 
-											callback = function()
-												if self.echo and not self.echo:IsNull() and IsValidEntity(self.echo) then
-													self.echo:OnSpellStart()
-												end	
-											end
-										})
-									end
-									local effect_cast = ParticleManager:CreateParticle(effect, PATTACH_OVERHEAD_FOLLOW, attacker)
-									ParticleManager:SetParticleControl(effect_cast, 1, Vector(4, 0, 4))									
-								elseif chance < 10 then								
-									for i= 1 , 3 do
-										Timers:CreateTimer({
-											endTime = 0.1 + i * 0.3, 
-											callback = function()
-												if self.echo and not self.echo:IsNull() and IsValidEntity(self.echo) then
-													self.echo:OnSpellStart()
-												end	
-											end
-										})
-									end
-									local effect_cast = ParticleManager:CreateParticle(effect, PATTACH_OVERHEAD_FOLLOW, attacker)
-									ParticleManager:SetParticleControl(effect_cast, 1, Vector(3, 0, 3))								
-								elseif chance < 15 then
-									for i= 1 , 2 do
-										Timers:CreateTimer({
-											endTime = 0.1 + i * 0.3, 
-											callback = function()
-												if self.echo and not self.echo:IsNull() and IsValidEntity(self.echo) then
-													self.echo:OnSpellStart()
-												end
-											end
-										})
-										local effect_cast = ParticleManager:CreateParticle(effect, PATTACH_OVERHEAD_FOLLOW, attacker)
-										ParticleManager:SetParticleControl(effect_cast, 1, Vector(2, 0, 0))										
-									end	
-								elseif chance < 25 then
-									Timers:CreateTimer({
-										endTime = 0.3, 
-										callback = function()
-											if self.echo and not self.echo:IsNull() and IsValidEntity(self.echo) then
-												self.echo:OnSpellStart()
-											end
+--				Timers:CreateTimer(0.05, function()
+--					if not keys.target:IsNull() and IsValidEntity(keys.target) then
+						if self.targetType == 0 then
+							self.parent:SetCursorCastTarget(keys.target)
+						elseif self.targetType == 1 then
+							self.parent:SetCursorPosition(keys.target:GetAbsOrigin())
+						elseif self.targetType == 2 then
+							self.parent:SetCursorTargetingNothing(true)
+						elseif self.targetType == 3 then
+							self.parent:SetCursorCastTarget(self.parent)
+						end
+						self.ability:StartCooldown(cooldown * attacker:GetCooldownReduction())
+						self.echo:OnSpellStart()
+						if attacker:HasModifier("modifier_ogre_magi_multicast_n") then
+							local interval = attacker:CustomValue("ogre_magi_multicast_n", "interval")
+							local multicast_1_chance = self.ability:GetSpecialValueFor("multicast_1")
+							local multicast_2_chance = self.ability:GetSpecialValueFor("multicast_2")
+							local multicast_3_chance = self.ability:GetSpecialValueFor("multicast_3")
+							local multicast_4_chance = self.ability:GetSpecialValueFor("multicast_4")
+							local chance = RandomInt(1,100)
+							if HasSuperScepter(attacker) then
+								chance = chance / 2
+							end
+							if chance < multicast_1_chance then
+								casts = 1
+							end
+							if chance < multicast_2_chance then
+								casts = 2
+							end
+							if chance < multicast_3_chance then
+								casts = 3
+							end
+							if chance < multicast_4_chance then
+								casts = 4
+							end
+							for count = 2, casts + 1 do
+								Timers:CreateTimer(count * interval, function()
+									if self.echo and not self.echo:IsNull() and IsValidEntity(self.echo) then
+										if not keys.target:IsAlive() then return end
+										if not self.parent:IsAlive() then return end
+										if not self.parent:HasModifier("modifier_ogre_magi_multicast_n") then return end
+
+										if self.targetType == 0 then
+											self.parent:SetCursorCastTarget(keys.target)
+										elseif self.targetType == 1 then
+											self.parent:SetCursorPosition(keys.target:GetAbsOrigin())
+										elseif self.targetType == 2 then
+											self.parent:SetCursorTargetingNothing(true)
+										elseif self.targetType == 3 then
+											self.parent:SetCursorCastTarget(self.parent)
 										end
-									})
-									local effect_cast = ParticleManager:CreateParticle(effect, PATTACH_OVERHEAD_FOLLOW, attacker)
-									ParticleManager:SetParticleControl(effect_cast, 1, Vector(1, 0, 0))											
-								end			
-							end	
-							--self.echo:SetChanneling(true)
-							--self.echo:EndChannel(true)
-							--self.echo:UseResources(true, false, false)
-						end	
-					end
-				)
+
+										self.echo:OnSpellStart()
+
+										local counter_speed = 2
+
+										if count == casts + 1 then
+											counter_speed = 1
+											self.hit = true
+										end
+										if count - 1 > 3 then sound = 3 else sound = count end
+
+										local effect_cast = ParticleManager:CreateParticle("particles/custom/abilities/heroes/ogre_magi_multicast/ogre_magi_multicast.vpcf", PATTACH_OVERHEAD_FOLLOW, attacker)
+										ParticleManager:SetParticleControl(effect_cast, 1, Vector(count, counter_speed, 0))
+										ParticleManager:SetParticleControl(effect_cast, 2, Vector(0, counter_speed, 0))
+
+										local sound_line = math.min(sound -1, 3)
+										local sound_cast = "Hero_OgreMagi.Fireblast.x" .. sound_line
+										if sound_line > 0 then
+											attacker:EmitSoundParams(sound_cast, 0, 0.3, 0)
+										end
+									end
+								end)
+							end
+						end
+						--self.echo:SetChanneling(true)
+						--self.echo:EndChannel(true)
+						--self.echo:UseResources(true, false, false)
+--					end
+--				end)
 				self.hit = false
 				--end
 			--[[elseif keys.target:IsConsideredHero() and self.ability:GetCooldownTimeRemaining() > self.minimum_cooldown then

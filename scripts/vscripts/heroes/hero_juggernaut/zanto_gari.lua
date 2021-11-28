@@ -347,13 +347,3 @@ function modifier_special_bonus_zanto_gari_cooldown:RemoveOnDeath() return false
 function modifier_special_bonus_zanto_gari_dmg:IsHidden() return true end
 function modifier_special_bonus_zanto_gari_dmg:IsPurgable() return false end
 function modifier_special_bonus_zanto_gari_dmg:RemoveOnDeath() return false end
-
---[[
-function HasSuperScepter(npc)
-    local modifier_super_scepter = "modifier_item_imba_ultimate_scepter_synth_stats"
-    if npc:HasModifier(modifier_super_scepter) and npc:FindModifierByName(modifier_super_scepter):GetStackCount() > 2 then
-		return true 
-	end	  
-    return false
-end
-]]

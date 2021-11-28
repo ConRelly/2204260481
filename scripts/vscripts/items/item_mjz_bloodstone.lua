@@ -26,7 +26,7 @@ local item_mjz_bloodstone_active = function(ability)
 				if caster:HasModifier("modifier_marci_unleash_flurry") then
 					bonus_charge = 2
 				end									
-			end			
+			end		
 			caster:EmitSound("DOTA_Item.Bloodstone.Cast")
 			caster:RemoveModifierByName("modifier_item_mjz_bloodstone_active")
 			caster:AddNewModifier(caster, ability, "modifier_item_mjz_bloodstone_active", {duration = restore_duration})
@@ -242,7 +242,7 @@ function modifier_item_mjz_bloodstone_active:OnCreated()
 	self.caster = self:GetCaster()
 	local mana_cost_percentage = self:GetAbility():GetSpecialValueFor("mana_cost_percentage")
 	local restore_duration = self:GetAbility():GetSpecialValueFor("restore_duration")
-	if self:GetAbility():GetName() == "item_mjz_bloodstone_ultimate" then
+	if self:GetAbility() and self:GetAbility():GetName() == "item_mjz_bloodstone_ultimate" then
 		restore_duration = restore_duration / 1.25
 	end
 

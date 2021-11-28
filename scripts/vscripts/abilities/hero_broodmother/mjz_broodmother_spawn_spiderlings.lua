@@ -8,7 +8,6 @@ function mjz_broodmother_spawn_spiderlings:OnSpellStart()
     local hCaster = self:GetCaster()
     local hTarget = self:GetCursorTarget()
     local projectile_speed = self:GetSpecialValueFor("projectile_speed")
-    --self.count = self:GetTalentSpecialValueFor("count")
     EmitSoundOn("Hero_Broodmother.SpawnSpiderlingsCast", hCaster)
 
     local pName = "particles/units/heroes/hero_broodmother/broodmother_web_cast.vpcf"
@@ -59,10 +58,9 @@ function mjz_broodmother_spawn_spiderlings:SpawnSpiderlings(hTarget)
         local M_NAME = "modifier_mjz_broodmother_spiderlings"
         local aghbuf = "modifier_item_ultimate_scepter_consumed"
         local chance_strike = self:GetSpecialValueFor("true_strike_chance")
-        local spiderling_duration = self:GetTalentSpecialValueFor( "spiderling_duration")
-        local extra_damage = self:GetTalentSpecialValueFor("extra_damage")
-        local count = self:GetTalentSpecialValueFor("count")
-        --local count = self.count
+        local spiderling_duration = self:GetSpecialValueFor("spiderling_duration")
+        local extra_damage = talent_value(hCaster, "special_bonus_unique_mjz_broodmother_spawn_spiderlings_damage")
+        local count = self:GetSpecialValueFor("count") + talent_value(hCaster, "special_bonus_unique_mjz_broodmother_spawn_spiderlings_count")
         
         EmitSoundOn("Hero_Broodmother.SpawnSpiderlings", hTarget)
         ParticleManager:FireParticle("particles/units/heroes/hero_broodmother/broodmother_spiderlings_spawn.vpcf", PATTACH_POINT, hTarget, {})
@@ -89,12 +87,20 @@ function mjz_broodmother_spawn_spiderlings:SpawnSpiderlings(hTarget)
 				local true_strike = target:AddAbility("true_strike")
 				true_strike:UpgradeAbility(true)
 			end
+
             local newAbilityName = GetRandomAbilityName(hero)
             local link_a = spider:AddAbility(newAbilityName)
             link_a:UpgradeAbility(true)
             link_a:SetLevel(hCaster:FindAbilityByName("mjz_broodmother_spawn_spiderlings"):GetLevel())
-            local newAbilityNameb = GetRandomAbilityName(hero)
-            local link_b = spider:AddAbility(newAbilityNameb)
+
+			local not_same_abilities = false
+			while not not_same_abilities do
+				local newAbilityNameb = GetRandomAbilityName(hero)
+				if newAbilityNameb ~= newAbilityName then
+					link_b = target:AddAbility(newAbilityNameb)
+					not_same_abilities = true
+				end
+			end
             link_b:UpgradeAbility(true)
             link_b:SetLevel(hCaster:FindAbilityByName("mjz_broodmother_spawn_spiderlings"):GetLevel())
 
@@ -133,21 +139,6 @@ function modifier_mjz_broodmother_spiderlings:CheckState()
         [MODIFIER_STATE_NO_HEALTH_BAR] = true,
         [MODIFIER_STATE_NO_UNIT_COLLISION] = true,
     }
-end
-if IsServer() then
-    function modifier_mjz_broodmother_spiderlings:OnCreated()
-        self.caster = self:GetCaster()
-        self.ability = self:GetAbility()
-        self.target = self:GetParent()
-
-        local interval = -1
-        self:OnIntervalThink()
-        self:StartIntervalThink(interval)
-    end
-    function modifier_mjz_broodmother_spiderlings:OnIntervalThink()
-        if self.ability then
-        end
-    end
 end
 
 function GetRandomAbilityName(hero)
@@ -274,38 +265,3 @@ function GetRandomAbilityName(hero)
     local randomIndex = RandomInt(1, #abilityList)
     return abilityList[randomIndex]
 end
-
-
--- talent 
-function HasTalent(unit, talentName)
-    if unit:HasAbility(talentName) then
-        if unit:FindAbilityByName(talentName):GetLevel() > 0 then return true end
-    end
-    return false
-end
-
-function GetTalentSpecialValueFor(ability, value)
-    local base = ability:GetSpecialValueFor(value)
-    local talentName
-    local valueName
-    local kv = ability:GetAbilityKeyValues()
-    for k,v in pairs(kv) do -- trawl through keyvalues
-        if k == "AbilitySpecial" then
-            for l,m in pairs(v) do
-                if m[value] then
-                    talentName = m["LinkedSpecialBonus"]
-                    valueName = m["LinkedSpecialBonusField"]
-                end
-            end
-        end
-    end
-    if talentName then 
-        local talent = ability:GetCaster():FindAbilityByName(talentName)
-        if talent and talent:GetLevel() > 0 then
-            valueName = valueName or 'value'
-            base = base + talent:GetSpecialValueFor(valueName) 
-        end
-    end
-    return base
-end
-

@@ -134,7 +134,7 @@ function GetRandomAbilityName( hero )
         "dazzle_bad_juju",                  -- 丽娜 3
         "ancient_apparition_chilling_touch",    -- 冰魂 3
         "roshan_inherit_buff_datadriven",            -- 蓝猫 3
-        "ogre_magi_custom_multicast",              -- 蓝胖 3
+        "ogre_magi_multicast_n",              -- 蓝胖 3
         "enchantress_impetus",              -- 小鹿 1
         "dark_seer_custom_ion_shell",                  -- 黑贤 3
         "mjz_centaur_return",                   -- 人马 3

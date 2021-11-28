@@ -79,7 +79,7 @@ function modifier_siltbreaker_mouth_beam:DoBeamDamageAndVision()
 		for fDist = 0, self.beam_range, nStepSize do
 			local vPos = self:GetCaster():GetOrigin() + ( self.vBeamDir * fDist )
 
-			local hEnemies = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), vPos, nil, self.damage_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false )
+			local hEnemies = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), vPos, nil, self.damage_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false )
 			for _, hEnemy in pairs( hEnemies ) do
 				if ( not hEnemy ) or ( hEnemy == self:GetCaster() ) then
 					return
@@ -94,7 +94,7 @@ function modifier_siltbreaker_mouth_beam:DoBeamDamageAndVision()
 		end
 
 		for _, hHitEnemy in pairs( hHitEnemies ) do
-			if hHitEnemy and ( not hHitEnemy:IsMagicImmune() ) then
+			if hHitEnemy then
 				local damageInfo = 
 				{
 					victim = hHitEnemy,

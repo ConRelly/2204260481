@@ -839,7 +839,7 @@ You can Support the game with patreon(link in game description, About) and get a
 *illusions will not get the particle effects from aegis protection (guardian angel thing), but they will get the buff.
 *illusions will not get octarine lifesteal (combined with spell blade lags too much and is probably unnecessary)
 *illusions or many units/heroes with high attack speed will lag if you have many on-hit effects, so avoid unnecessary items that affect all and trigger on attack(like basic vladmir)
-*Phanom lancer replaced the fevor with the power of gold.
+*Phantom lancer replaced the fevor with the power of gold.
 *and some other stuff
 
 BristleBack: All his skills reworked(W will not have projectiles, lags in any custom game), 3 talents changed. until next patch confirmation any part 3 win with him will not count
@@ -1366,10 +1366,14 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 -- NEW
 * Added new transform: Kardel
 * Earth Spirit: Added new ability (Rollinâ€™ Stone) and replaced from Ball Lightning
+* Phantom Assassin: Added new ability (Shadow Evasion) and replaced from Phantom Strike
 * Chen: Added new skill (Command: Traning) and moved Aghanim's Scepter effect
 * Added Super Scepter effect for Ball Lightning (Storm Spirit)
 * Added Super Scepter effect for THE WORLD (Faceless Void)
 * Added Aghanim's Shard effect for Overload (Storm Spirit)
+* Added new item: Life Greaves
+* Attempt to revive Bottle
+* Reworked Stifling Dagger (Phantom Assassin)
 * Marci : Has now the Highest spell amp talent, Super Scepter effect for Ultimate.
 * Marci Ultimate SS Effects : 
 -Cm Frostbine : 3x dmg
@@ -1384,6 +1388,7 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 -Slayer Rebound : aditional stacks + 2 instead of 1.
 -Endless wisdom : gain an extra stack.
 -- Ability
+* Lone Druid: Added new talent (right level 20)
 * Storm Spirit: Added new talent and replaced from "+250 Health" (right level 15)
 * Overlord (Storm Spirit): Attack Speed slow increased from 60 to 90
 * Rebalanced Ball Lightning (Storm Spirit)
@@ -1397,6 +1402,9 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * THE WORLD (Faceless Void): Slightly reworked and changed Aghanim's Scepter effect
 * Undying Punch (Undying): Now Damage and heal depends on Max Health, not the current one, as it was before (Now the description is correct)
 * Undying Punch (Undying): Rescaled numbers
+* Fixed Earthshaker's "Aftershock AOE" talent
+* Multicast (KotL/Random pool): Removed the extra multicast (now the description is correct) and proc chance increased by 1%
+* True Form (Lone Druid): Added new levels, increased CD and reduced duration
 -- Items
 * Ethereal Blade LVL 2: Added 100 gold cost recipe
 * CrossBow: Added Attack Projectile Speed bonus
@@ -1407,11 +1415,16 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 * Titan Relic: Doesn't increase summon duration
 * Fixed Devil's Daedalus visual bug of not displaying the bonus dmg.
 * Removed one Ring of Aquila and reworked other one (gold cost and recipe don't changed)
+* Mimic Mace: No longer interrupted if another spell or item is used
+* Cursed Bloodthorn: Changed recipe and recalculated stats
+* Cursed Bloodthorn: Increased Mana Cost and reduced Cooldown
 -- Other
+* Phantom Assassin: base movement speed reduced by 100
 * Removed some skills from -extramode that where causing crash.
 * An extra skill point is given every 7 levels, instead of 5
 * Added a new command for the cheat lobby "-demo"
-* Gold gain increasd by 10% in parties of 2 or more players.
+* Gold gain increased by 10% in parties of 2 or more players.
+* Most of Siltbreaker's abilities can no longer be evaded with Smoke of Deceit (and etc) effect, but can be blocked by Spell Immunity
 
 
 

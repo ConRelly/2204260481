@@ -31,7 +31,7 @@ function modifier_siltbreaker_teleport_thinker:OnDestroy()
 
 		EmitSoundOn( "Siltbreaker.Teleport.Impact", self:GetCaster() )
 
-		local hEnemies = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false )
+		local hEnemies = FindUnitsInRadius( self:GetParent():GetTeamNumber(), self:GetParent():GetOrigin(), nil, self.radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false )
 		for _, hEnemy in pairs( hEnemies ) do
 			if hEnemy ~= nil and hEnemy:IsInvulnerable() == false then
 				local damageInfo =

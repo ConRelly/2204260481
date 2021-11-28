@@ -14,10 +14,12 @@ LinkLuaModifier( "modifier_ogre_magi_multicast_lua", "lua_abilities/ogre_magi_mu
 LinkLuaModifier( "modifier_ogre_magi_multicast_lua_proc", "lua_abilities/ogre_magi_multicast_lua/modifier_ogre_magi_multicast_lua_proc", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_ogre_magi_multicast_lua_self_cast_proc", "lua_abilities/ogre_magi_multicast_lua/modifier_ogre_magi_multicast_lua_self_cast_proc", LUA_MODIFIER_MOTION_NONE )
 
+LinkLuaModifier("modifier_ogre_magi_multicast_n", "abilities/heroes/ogre_magi_multicast_n", LUA_MODIFIER_MOTION_NONE)
+
 --------------------------------------------------------------------------------
 -- Passive Modifier
 function ogre_magi_multicast_lua:GetIntrinsicModifierName()
-	return "modifier_ogre_magi_multicast_lua"
+	return "modifier_ogre_magi_multicast_n"
 end
 
 --------------------------------------------------------------------------------

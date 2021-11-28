@@ -5,85 +5,44 @@
 	//=================================================================================================================
 	"ogre_magi_multicast_lua"
 	{
-		// Ability Technical Aspect
-		// base script folder	: scripts/vscripts
-		// base texture folder	: resource/flash3/images/spellicons
-		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"lua_abilities/ogre_magi_multicast_lua/ogre_magi_multicast_lua"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"ogre_magi_multicast_lua"
-		"FightRecapLevel"				"2"
 		"MaxLevel"						"5"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
 			"particle"	"particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf"
 		}
-		
-		// Ability General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		// Ability Casting
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Ability Resource
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Damage
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"multicast_2_times"		"0.5 0.5 0.5 0.5 0.5"
+				"multicast_2_times"		"50 50 50 50 50"
 			}
 
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"multicast_3_times"		"0 0.15 0.20 0.25 0.35"
+				"multicast_3_times"		"0 15 20 25 35"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"multicast_4_times"		"0 0 0.10 0.15 0.20"
+				"multicast_4_times"		"0 0 10 15 20"
 			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bloodlust_aoe"			"975"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"multicast_2_times_tooltip"		"50"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"multicast_3_times_tooltip"		"0 15 20 25 35"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"multicast_4_times_tooltip"		"0 0 10 15 20"
-			}
-            "08"
+            "04"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"multicast_9_times"		"1 1 1 3 6"
-				"LinkedSpecialBonus"    "special_multicast_ten_chance_lua"
 			}
-            "09"
+            "05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"multicast_delay"		"0.5"
+				"interval"				"0.1"
 			}			
 		}
 	}

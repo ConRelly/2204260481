@@ -10796,7 +10796,6 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityTextureName"			"ogre_magi_multicast"
-	"AbilityCooldown"				"9"
 	// Precache
 	//-------------------------------------------------------------------------------------------------------------
 	"precache"
@@ -10831,12 +10830,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"interval"				"0.5"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"fail_cost"				"30"
+			"interval"				"0.2"
 		}
 	}
 	"Modifiers"
@@ -10861,34 +10855,82 @@
 		}
 	}
 }
-"ogre_magi_custom_bonus_unique_1"
-{
-	"BaseClass"				"special_bonus_undefined"
-	"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
-	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilitySpecial"
+
+// Ogre Magi: Multicast (N)
+	"ogre_magi_multicast_n"
 	{
-		"01"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/heroes/ogre_magi_multicast_n"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName"			"ogre_magi_multicast"
+		"precache"
 		{
-			"var_type"			"FIELD_INTEGER"
-			"value"				"10"
+			"soundfile"		"sounds/weapons/hero/ogre_magi/multicast01.vsnd"
+			"soundfile"		"sounds/weapons/hero/ogre_magi/multicast02.vsnd"
+			"soundfile"		"sounds/weapons/hero/ogre_magi/multicast03.vsnd"
+			"soundfile"		"sounds/ui/challenge_failure.vsnd"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"multicast_2_times"		"60 60 60"
+				"LinkedSpecialBonus"	"ogre_magi_custom_bonus_unique_1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"multicast_3_times"		"0 25 35"
+				"LinkedSpecialBonus"	"ogre_magi_custom_bonus_unique_1"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"multicast_4_times"		"0 0 20"
+				"LinkedSpecialBonus"	"ogre_magi_custom_bonus_unique_1"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"interval"				"0.2"
+			}
 		}
 	}
-}
-"ogre_magi_custom_bonus_unique_2"
-{
-	"BaseClass"				"special_bonus_undefined"
-	"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
-	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilitySpecial"
+	"ogre_magi_custom_bonus_unique_1"
 	{
-		"01"
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
 		{
-			"var_type"			"FIELD_INTEGER"
-			"value"				"0"
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"10"
+			}
 		}
 	}
-}
+	"ogre_magi_custom_bonus_unique_2"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"fail_cost"				"30"
+			}
+			"2"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"risk_cooldown"			"9"
+			}
+		}
+	}
 
 
 "vengefulspirit_custom_nether_swap"
@@ -12195,7 +12237,7 @@
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	"AbilityCooldown"				"55.0 50.0 45.0 40.0 30.0"
 	"AbilityManaCost"				"100 120 160 200 250"
-	"AbilityCastRange"				"%radius"
+	"AbilityCastRange"				"1250"
 	"HasScepterUpgrade"					"1"
 	"precache"
 	{
@@ -22454,7 +22496,7 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"extra_damage"			"0"
-				"LinkedSpecialBonus"	"special_bonus_unique_broodmother_4"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_broodmother_spawn_spiderlings_damage"
 			}
 			"02"
 			{
@@ -22502,7 +22544,22 @@
 				"value"						"1"
 			}
 		}
-	}	
+	}
+	"special_bonus_unique_mjz_broodmother_spawn_spiderlings_damage"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"7500"
+			}
+		}
+	}
+
 	"mjz_centaur_double_edge"
 	{
 		"BaseClass"						"ability_lua"	//"ability_datadriven"
@@ -28751,6 +28808,183 @@
 			}
 		}
 	}
+
+
+// Phantom Assassin's Stifling Dagger
+	"pa_stifling_dagger"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_phantom_assassin/stifling_dagger"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityTextureName"			"phantom_assassin_stifling_dagger"
+		//"HasScepterUpgrade"				"1"
+		"HasShardUpgrade"				"1"
+		"MaxLevel"						"10"
+		"RequiredLevel"					"0"
+		"LevelsBetweenUpgrades"			"5"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"6"
+		"AbilityManaCost"				"30 70 120 180 250 430 520 620 730 850"
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+			"particle"					"particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger.vpcf"
+			"particle"					"particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger_debuff.vpcf"
+			"particle"					"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+		}
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_damage"			"75"
+			}
+			"2"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_factor"			"30 50 70 90 110 130 150 190 210 230"
+			}
+			"3"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_as"				"50 75 100 130 160 190 230 270 300 350"
+				"LinkedSpecialBonus"	"special_bonus_pa_stifling_dagger_attack_speed"
+			}
+			"3"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_as_duration"		"2"
+				"LinkedSpecialBonus"	"special_bonus_pa_stifling_dagger_buff_duration"
+			}
+			"4"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"move_slow"				"50"
+			}
+			"5"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"1.3 1.6 1.9 2.2 2.5 2.8 3.1 3.4 3.7 4"
+			}
+			"6"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dagger_speed"			"1200 1300 1400 1500 1600 1700 1800 1900 2000 2100"
+				"LinkedSpecialBonus"	"special_bonus_pa_stifling_dagger_speed"
+			}
+			"7"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"search_radius"			"400"
+			}
+			"8"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range"			"900 1050 1200 1350 1500 1650 1800 1950 2100 2250"
+			}
+		}
+	}
+	"special_bonus_pa_stifling_dagger_attack_speed"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"250"
+			}
+		}
+	}
+	"special_bonus_pa_stifling_dagger_buff_duration"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"2"
+			}
+		}
+	}
+	"special_bonus_pa_stifling_dagger_speed"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"1000"
+			}
+		}
+	}
+
+// Phantom Evasion
+	"pa_phantom_evasion"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_phantom_assassin/phantom_evasion"
+		"AbilityTextureName"			"mjz_phantom_assassin_phantom_strike"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Phantom_Evasion"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"MaxLevel"						"6"
+		"RequiredLevel"					"0"
+		"LevelsBetweenUpgrades"			"6"
+		"AbilityManaCost"				"25 60 95 130 165 200"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"0.75"
+			}
+			"2"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_distance"			"1000 1600 2200 2800 3400 4000"
+			}
+			"3"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"buff_ms_pct"			"35"
+			}
+			"4"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_duration"			"4"
+			}
+			"5"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"18 16 14 12 10 8"
+			}
+		}
+		
+		"precache"
+		{
+			"soundfile"			"soundevents/random_custom_sounds.vsndevts"
+		}
+	}
+
 	"mjz_phoenix_icarus_dive"
 	{
 		"BaseClass"						"ability_lua"	// "ability_datadriven"

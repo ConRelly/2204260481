@@ -220,7 +220,7 @@
  		"item"		"item_force_blade"
  		"item"		"item_diffusal_blade"
  		"item"		"item_heavens_halberd"
- 		"item"		"item_desolator"
+ 		"item"		"item_desolator_custom"
  		"item"		"item_satanic"
  		"item"		"item_skadi"
  		"item"		"item_mjollnir"

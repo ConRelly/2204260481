@@ -272,14 +272,18 @@ function AOHGameMode:InitGameMode()
 	self.m_tAlliesList = {}
 	self.m_tEnemiesList = {}
 	self.m_nAlliesCount = 0
+	if self.m_bFreeSpellsEnabled == true then
+		SendToServerConsole("toggle dota_ability_debug")
+	end
 	self.m_bFreeSpellsEnabled = false
 	self.m_bInvulnerabilityEnabled = false
 	self.m_bMaxGold = false
-	self.m_nHeroRenderMode = 0;
+	self.m_nHeroRenderMode = 0
 
 	CustomGameEventManager:RegisterListener("RefreshButtonPressed", function(...) return self:OnRefreshButtonPressed(...) end)
 	CustomGameEventManager:RegisterListener("LevelUpButtonPressed", function(...) return self:OnLevelUpButtonPressed(...) end)
 	CustomGameEventManager:RegisterListener("MaxLevelButtonPressed", function(...) return self:OnMaxLevelButtonPressed(...) end)
+	CustomGameEventManager:RegisterListener("SuicideButtonPressed", function(...) return self:OnSuicideButtonPressed(...) end)
 	CustomGameEventManager:RegisterListener("FreeSpellsButtonPressed", function(...) return self:OnFreeSpellsButtonPressed(...) end)
 	CustomGameEventManager:RegisterListener("InvulnerabilityButtonPressed", function(...) return self:OnInvulnerabilityButtonPressed(...) end)
 	CustomGameEventManager:RegisterListener("MaxGoldButtonPressed", function(...) return self:OnMaxGoldButtonPressed(...) end)
@@ -906,6 +910,7 @@ function AOHGameMode:_ThinkPrepTime()
 		end
 		self._currentRound:Begin(self._goldRatio, self._expRatio)
 		self:AtRoundStart()
+		RefillBottle()
 		return
 	end
 
@@ -1220,13 +1225,20 @@ function AOHGameMode:OnLevelUpButtonPressed(eventSourceIndex)
 	SendToServerConsole("dota_dev hero_level 1")
 end
 
+-------------------
+-- SuicideButton --
+-------------------
+function AOHGameMode:OnSuicideButtonPressed(eventSourceIndex)
+	SendToServerConsole("dota_hero_suicide")
+end
+
 --------------------
 -- MaxLevelButton --
 --------------------
 function AOHGameMode:OnMaxLevelButtonPressed(eventSourceIndex, data)
 	local hPlayerHero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
-	SendToServerConsole("dota_dev hero_level 1000")
---	hPlayerHero:AddExperience(56045, false, false) -- 30 Level
+	hPlayerHero:AddExperience(56045, false, false)
+	SendToServerConsole("dota_dev hero_level 971")
 
 	local Abilities = hPlayerHero:GetAbilityCount()
 	for i = 0, Abilities do

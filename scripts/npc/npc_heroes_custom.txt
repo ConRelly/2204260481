@@ -208,6 +208,7 @@
 	"Ability5"		"doom_bringer_empty2"
 	"Ability10"		"special_bonus_armor_69"
 	"Ability12"		"special_bonus_cdr_15"
+	"Ability14"		"special_bonus_unique_lone_druid_8"
 	"Ability15"		"special_bonus_attack_base_damage_100"
 }
 "npc_dota_hero_nevermore"
@@ -228,7 +229,7 @@
 
 "npc_dota_hero_ogre_magi"
 {
-	"Ability6"		"ogre_magi_custom_multicast"
+	"Ability6"		"ogre_magi_multicast_n"
 	"Ability12"		"special_bonus_unique_ogre_magi_2"
 	"Ability13"		"special_bonus_hp_2750"
 	"Ability14"		"special_bonus_exp_boost_30"
@@ -1481,7 +1482,6 @@
 
 		"Ability1"				"mjz_death_prophet_carrion_swarm"
 		"Ability2"				"death_prophet_custom_moving_life"
-		"Ability4"				"custom_side_gunner"
 		"Ability10"				"special_bonus_hp_regen_50"
 		"Ability12"				"special_bonus_reincarnation_90"
 		"Ability14"				"special_bonus_hp_4000"
@@ -1603,7 +1603,7 @@
 		//"Ability3"				"lone_druid_spirit_link"
 		"Ability6"				"mjz_broodmother_insatiable_hunger"
 		"Ability10"				"special_bonus_cleave_20"
-		"Ability14"				"special_bonus_unique_broodmother_4"
+		"Ability14"				"special_bonus_unique_mjz_broodmother_spawn_spiderlings_damage"
 		"Ability15"				"special_bonus_hp_6000"
 		"Ability16"				"special_bonus_unique_mjz_broodmother_insatiable_hunger"
 		"Ability17"				"special_bonus_spell_amplify_100"
@@ -1787,19 +1787,19 @@
 		"override_hero"		"npc_dota_hero_phantom_assassin"
 		"UnitLabel"			"no_underdog"
 
-		"Ability1"			"mjz_phantom_assassin_stifling_dagger"
-		"Ability2"			"mjz_phantom_assassin_phantom_strike"
+		"Ability1"			"pa_stifling_dagger"
+		"Ability2"			"pa_phantom_evasion"
 		"Ability3"			"phantom_assassin_blur"
 		"Ability4"			"phantom_reflex"
 		"Ability6"			"mjz_phantom_assassin_coup_de_grace"
 		"Ability10"			"special_bonus_magic_resistance_12"
-		"Ability11"			"special_bonus_spell_lifesteal_30"
+		"Ability11"			"special_bonus_pa_stifling_dagger_speed"
 		"Ability12"			"special_bonus_attack_damage_100"
 		"Ability13"			"special_bonus_cleave_25"
 		"Ability14"			"special_bonus_lifesteal_25"
-		"Ability15"			"special_bonus_unique_mjz_stifling_dagger"
-		"Ability16"			"special_bonus_unique_phantom_assassin_2"
-		"Ability17"			"special_bonus_attack_speed_250"
+		"Ability15"			"special_bonus_pa_stifling_dagger_buff_duration"
+		"Ability16"			"special_bonus_pa_stifling_dagger_attack_speed"
+		"Ability17"			"special_bonus_unique_phantom_assassin_2"
 
 		"AttackDamageMin"				"37"
 		"AttackDamageMax"				"39"
@@ -1808,7 +1808,7 @@
 		"AttributeAgilityGain"			"9.4"
 		"MovementTurnRate"				"0.900000"
 		"StatusHealthRegen"				"1.25"
-		"MovementSpeed"					"425"
+		"MovementSpeed"					"325"
 	}
 	
 	
