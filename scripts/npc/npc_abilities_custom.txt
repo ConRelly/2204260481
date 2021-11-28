@@ -28890,6 +28890,7 @@
 			}
 		}
 	}
+// Talent: +X Stifling Dagger Attack Speed Bonus
 	"special_bonus_pa_stifling_dagger_attack_speed"
 	{
 		"BaseClass"						"special_bonus_undefined"
@@ -28905,6 +28906,7 @@
 			}
 		}
 	}
+// Talent: +X Stifling Dagger Attack Speed Duration
 	"special_bonus_pa_stifling_dagger_buff_duration"
 	{
 		"BaseClass"						"special_bonus_undefined"
@@ -28920,6 +28922,7 @@
 			}
 		}
 	}
+// Talent: +X Stifling Dagger Projectile Speed
 	"special_bonus_pa_stifling_dagger_speed"
 	{
 		"BaseClass"						"special_bonus_undefined"
@@ -42331,6 +42334,42 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"dmg_reduction"					"0 5 10 15 20 25 30 35 40 45"
+			}
+			"7"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"stun_duration"					"0.25"
+				"LinkedSpecialBonus"			"special_earth_spirit_rolling_stone_stun_duration"
+			}
+		}
+	}
+// Talent: +X sec Rollin' Stone Stun Duration
+	"special_earth_spirit_rolling_stone_stun_duration"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"value"			"0.25"
+			}
+		}
+	}
+// Talent: +X Rollin' Stone Remnant bonus DMG Reduction
+	"special_earth_spirit_rolling_stone_dmg_reduction"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"value"			"5"
 			}
 		}
 	}

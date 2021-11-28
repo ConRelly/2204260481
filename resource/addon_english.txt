@@ -770,8 +770,11 @@
 	"DOTA_Tooltip_ability_rolling_stone_str_damage"				"Strength to Damage:"
 	"DOTA_Tooltip_ability_rolling_stone_health_percentage"		"%HP Drain:"
 	"DOTA_Tooltip_ability_rolling_stone_dmg_reduction"			"%Damage Reduction:"
+	"DOTA_Tooltip_ability_rolling_stone_stun_duration"			"Stun Duration:"
 	"DOTA_Tooltip_modifier_rolling_stone_buff"					"Rollin’ Stone"
 	"DOTA_Tooltip_modifier_rolling_stone_buff_Description"		"Reduces incoming damage by %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%"
+	"DOTA_Tooltip_ability_special_earth_spirit_rolling_stone_stun_duration"		"+{s:value}s Rollin' Stone Stun Duration"
+	"DOTA_Tooltip_ability_special_earth_spirit_rolling_stone_dmg_reduction"		"+{s:value}% Rollin' Stone Remnant bonus DMG Reduction"
 
 // Kardel
 	"DOTA_Tooltip_ability_sniper_shoot"					"Shoot"

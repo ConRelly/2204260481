@@ -90,6 +90,9 @@ function modifier_rolling_stone_buff:GetModifierMoveSpeedBonus_Constant()
 	return self:GetAbility():GetSpecialValueFor("bonus_ms")
 end
 function modifier_rolling_stone_buff:GetModifierIncomingDamage_Percentage()
+	if self:GetCaster():HasModifier("modifier_rolling_stone_remnantbuff") then
+		return (self:GetAbility():GetSpecialValueFor("dmg_reduction") + talent_value(caster, "special_earth_spirit_rolling_stone_dmg_reduction")) * (-1)
+	end
 	return self:GetAbility():GetSpecialValueFor("dmg_reduction") * (-1)
 end
 
@@ -119,20 +122,26 @@ function modifier_rolling_stone_buff:OnIntervalThink()
 	if IsServer() then
 		local caster = self:GetCaster()
 		local str_damage = caster:GetStrength() * self:GetAbility():GetSpecialValueFor("str_damage") / 100
+		local radius = self:GetAbility():GetSpecialValueFor("radius")
+		local stun_duration = self:GetAbility():GetSpecialValueFor("stun_duration") + talent_value(caster, "special_earth_spirit_rolling_stone_stun_duration")
 
-		local unit_list = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, self:GetAbility():GetSpecialValueFor("radius"), self:GetAbility():GetAbilityTargetTeam(), self:GetAbility():GetAbilityTargetType(), self:GetAbility():GetAbilityTargetFlags(), FIND_ANY_ORDER, false)
+		local unit_list = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 		for _, unit in pairs(unit_list) do
 			if unit then
 				ApplyDamage({
 					victim = unit,
 					attacker = caster,
 					damage = str_damage,
-					damage_type = self:GetAbility():GetAbilityDamageType(),
+					damage_type = DAMAGE_TYPE_MAGICAL,
 					ability = self:GetAbility(),
 				})
-				unit:AddNewModifier(caster, self:GetAbility(), "modifier_rolling_stone_stun", {duration = 0.25})
+				unit:AddNewModifier(caster, self:GetAbility(), "modifier_rolling_stone_stun", {duration = stun_duration})
 			end
 		end
+
+		local effect_cast = ParticleManager:CreateParticle("particles/custom/abilities/heroes/earth_spirit_rolling_stone/rolling_stone_aoe.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
+		ParticleManager:SetParticleControl(effect_cast, 1, Vector(radius, radius, radius))
+		ParticleManager:ReleaseParticleIndex(effect_cast)
 	end
 end
 

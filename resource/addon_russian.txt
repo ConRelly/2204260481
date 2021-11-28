@@ -777,8 +777,11 @@
 	"DOTA_Tooltip_ability_rolling_stone_str_damage"				"Уpoн от силы:"
 	"DOTA_Tooltip_ability_rolling_stone_health_percentage"		"%Сжигание здоровья:"
 	"DOTA_Tooltip_ability_rolling_stone_dmg_reduction"			"%Снижение урона:"
+	"DOTA_Tooltip_ability_rolling_stone_stun_duration"			"Длительность оглушения:"
 	"DOTA_Tooltip_modifier_rolling_stone_buff"					"Rollin’ Stone"
 	"DOTA_Tooltip_modifier_rolling_stone_buff_Description"		"Снижает входящий урон на %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%%"
+	"DOTA_Tooltip_ability_special_earth_spirit_rolling_stone_stun_duration"		"+{s:value} сек. длительности оглушения Rollin’ Stone"
+	"DOTA_Tooltip_ability_special_earth_spirit_rolling_stone_dmg_reduction"		"+{s:value}% снижения урона от эффекта копии Rollin’ Stone"
 
 // Kardel
 	"DOTA_Tooltip_ability_sniper_shoot"					"Shoot"

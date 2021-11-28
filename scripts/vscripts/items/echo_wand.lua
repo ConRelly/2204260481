@@ -313,17 +313,14 @@ if IsServer() then
 							if HasSuperScepter(attacker) then
 								chance = chance / 2
 							end
-							if chance < multicast_1_chance then
-								casts = 1
-							end
-							if chance < multicast_2_chance then
-								casts = 2
-							end
-							if chance < multicast_3_chance then
-								casts = 3
-							end
-							if chance < multicast_4_chance then
+							if chance <= multicast_4_chance then
 								casts = 4
+							elseif chance <= multicast_3_chance then
+								casts = 3
+							elseif chance <= multicast_2_chance then
+								casts = 2
+							elseif chance <= multicast_1_chance then
+								casts = 1
 							end
 							for count = 2, casts + 1 do
 								Timers:CreateTimer(count * interval, function()
@@ -348,7 +345,6 @@ if IsServer() then
 
 										if count == casts + 1 then
 											counter_speed = 1
-											self.hit = true
 										end
 										if count - 1 > 3 then sound = 3 else sound = count end
 
