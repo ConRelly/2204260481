@@ -69,7 +69,8 @@ function modifier_pa_phantom_evasion:OnDestroy()
 	self:GetParent():RemoveNoDraw()
 
 	if not self:GetAbility():GetAutoCastState() then
-		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_pa_phantom_evasion_speed", {duration = 4})
+		local buff_duration = self:GetAbility():GetSpecialValueFor("buff_duration")
+		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_pa_phantom_evasion_speed", {duration = buff_duration})
 	end
 end
 function modifier_pa_phantom_evasion:DeclareFunctions()
@@ -83,8 +84,7 @@ function modifier_pa_phantom_evasion:OnOrder(params)
 	local nOrderType = params.order_type
 
 	if hOrderedUnit ~= self:GetParent() then return end
-	if nOrderType == DOTA_UNIT_ORDER_ATTACK_TARGET then self:Destroy() return end
-	if hTargetUnit and hTargetUnit:GetTeamNumber() == self:GetParent():GetTeamNumber() and nOrderType == DOTA_UNIT_ORDER_MOVE_TO_TARGET and not self:GetAbility():GetAutoCastState() then
+	if hTargetUnit and hTargetUnit:GetTeamNumber() == self:GetParent():GetTeamNumber() and (nOrderType == DOTA_UNIT_ORDER_MOVE_TO_TARGET or nOrderType == DOTA_UNIT_ORDER_ATTACK_TARGET or nOrderType == DOTA_UNIT_ORDER_ATTACK_MOVE) and not self:GetAbility():GetAutoCastState() then
 		local max_distance = self:GetAbility():GetSpecialValueFor("max_distance")
 		local distance = (hTargetUnit:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Length2D()
 		local direction = (hTargetUnit:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Normalized()
@@ -102,6 +102,7 @@ function modifier_pa_phantom_evasion:OnOrder(params)
 	
 	self:GetParent():StartGesture(ACT_DOTA_OVERRIDE_ABILITY_2)
 	self:Destroy()
+	return
 end
 
 function modifier_pa_phantom_evasion:CheckState()

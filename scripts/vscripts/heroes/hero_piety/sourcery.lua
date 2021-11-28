@@ -169,7 +169,7 @@ function modifier_sourcery:GetModifierAvoidDamage(keys)
 				self:StartIntervalThink(self.interval)
 			end
 		end
-		if keys.original_damage > 0 and self:GetStackCount() > 0 then
+		if keys.damage > 100 and self:GetStackCount() > 0 then
 			if self:GetStackCount() == self.MaxShields then
 				self:StartIntervalThink(self.interval)
 			end

@@ -3523,12 +3523,12 @@
 	"DOTA_Tooltip_ability_special_bonus_pa_stifling_dagger_buff_duration"		"+{s:value} сек. длительности скорости атаки Stifling Dagger"
 	"DOTA_Tooltip_ability_special_bonus_pa_stifling_dagger_speed"				"+{s:value} к скорости полёта кинжала Stifling Dagger"
 
-	"DOTA_Tooltip_ability_pa_phantom_evasion"					"Phantom Evasion"
+	"DOTA_Tooltip_ability_pa_phantom_evasion"					"Shadow Evasion"
 	"DOTA_Tooltip_ability_pa_phantom_evasion_Description"		"Герой превращается в бревно, позволяя избежать урон, а также: <br><br> <h2>Если способность выключена:</h2> Снижает перезарядку вдвое и при нажатии на союзника - герой перемещается к нему и увеличивает собственную скорость передвижения на %buff_ms_pct%%% <br><br> <h2>Если способность включена:</h2> Удваивает задержку появления и кидает кинжал текущего уровня в ближайшего врага в радиусе прыжка"
 	"DOTA_Tooltip_ability_pa_phantom_evasion_Note0"			"1) Каждые 2 уровня Stifling Dagger добавляет 1 кинжал."
 	"DOTA_Tooltip_ability_pa_phantom_evasion_duration"			"Задержка появления:"
 	"DOTA_Tooltip_ability_pa_phantom_evasion_max_distance"		"Макс. дальность прыжка:"
-	"DOTA_Tooltip_modifier_pa_phantom_evasion"					"Phantom Evasion"
+	"DOTA_Tooltip_modifier_pa_phantom_evasion"					"Shadow Evasion"
 	"DOTA_Tooltip_modifier_pa_phantom_evasion_Description"		"Герой скрыт от атак врагов."
 	"DOTA_Tooltip_modifier_pa_phantom_evasion_speed"					"Phantom Boost"
 	"DOTA_Tooltip_modifier_pa_phantom_evasion_speed_Description"		"Скорость передвижения увеличена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
@@ -4721,6 +4721,7 @@
 
 
 	"npc_boss_demon_marauder"					"Demon Marauder (Boss)"
+	"npc_boss_demon_marauder_2"					"Demon Marauder? (Boss)"
 
 	"DOTA_Tooltip_ability_custom_infernal_retribution"					"Infernal Retribution"
 	"DOTA_Tooltip_ability_custom_infernal_retribution_Description"		"When damage is taken, marks the attacker's location to retaliate after a short delay."
@@ -5324,6 +5325,7 @@
 	"DOTA_Tooltip_ability_custom_plasma_field_radius"								"Paдиyc:"
 
 	"npc_boss_rubick"					"Rubick (Boss)"
+	"npc_boss_rubick_2"					"Rubick? (Boss)"
 
 
 	"DOTA_Tooltip_ability_custom_laser_arrow"										"Laser"
@@ -5446,6 +5448,7 @@
 
 	"npc_boss_sniper"					"Sniper (Boss)"
 	"npc_boss_spectre"					"Spectre (Boss)"
+	"npc_boss_spectre_2"				"Spectre? (Boss)"
 
 
 	"DOTA_Tooltip_ability_custom_spectral_dagger"						"Spectral Dagger"
