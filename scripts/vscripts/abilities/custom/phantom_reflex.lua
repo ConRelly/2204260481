@@ -40,11 +40,13 @@ modifier_phantom_reflex = class({
 
 
 function modifier_phantom_reflex:OnCreated()
-	local dodge_chance_pct = self:GetAbility():GetSpecialValueFor("dodge_chance_pct")
-	if IsServer() then
-		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_faceless_void_backtrack", {dodge_chance_pct = dodge_chance_pct})
-		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_flash_double_attack", nil)
-	end
+	if self:GetAbility() then
+		local dodge_chance_pct = self:GetAbility():GetSpecialValueFor("dodge_chance_pct")	
+		if IsServer() then
+			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_faceless_void_backtrack", {dodge_chance_pct = dodge_chance_pct})
+			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_flash_double_attack", nil)
+		end
+	end	
 end
 function modifier_phantom_reflex:OnDestroy()
 	if IsServer() then

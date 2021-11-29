@@ -15090,7 +15090,7 @@
 	"item_recipe_mjz_ring_of_aquila"
 	{
 		"BaseClass"						"item_datadriven"
-		"ItemCost"						"900"
+		"ItemCost"						"2000"
 		"ItemRecipe"					"1"
 		"ItemPurchasable"				"1"
 		"ItemShopTags"					""
@@ -15127,22 +15127,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"8"
+				"bonus_damage"			"16"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"4"
+				"bonus_strength"		"12"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"10"
+				"bonus_agility"			"25"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"4"
+				"bonus_intellect"		"8"
 			}
 			"05"
 			{
@@ -15251,22 +15251,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"64"
+				"bonus_damage"			"128"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"32"
+				"bonus_strength"		"96"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"80"
+				"bonus_agility"			"200"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"32"
+				"bonus_intellect"		"64"
 			}
 		}
 		"OnSpellStart"

@@ -2841,6 +2841,7 @@
 	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_enemy"				"THE WORLD"
 	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_enemy_Description"	"Trapped in spacetime. Unable to move or act."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_faceless_the_world_radius"		"+{s:value} THE WORLD AoE"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_faceless_the_world_attack_speed" "+{s:value} THE WORLD Attack Speed per second"
 	"DOTA_Tooltip_ability_mjz_faceless_time_dilation"				"Time Dilation"
 	"DOTA_Tooltip_ability_mjz_faceless_time_dilation_Description"	"Faceless Void traps all nearby enemies in a time dilation field for %duration% seconds, slowing their movement and attack speed."
 	"DOTA_Tooltip_ability_mjz_faceless_time_dilation_lore"			"For those facing off against Darkterror, each moment seems to stretch into eternity."

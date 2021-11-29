@@ -21199,8 +21199,8 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "7"
+		"MaxLevel"					  "8"
+		"LevelsBetweenUpgrades"		 "10"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"AbilitySound"					"Hero_FacelessVoid.TimeLockImpact"
 
@@ -21221,12 +21221,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance_pct"			"4 5 6 7 8 9 10"
+				"chance_pct"			"4 5 6 7 8 9 10 15"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"900 3800 7200 14180 29320 48400 74500"
+				"bonus_damage"			"900 4800 12200 24180 42320 88400 144500 348500"
 				"LinkedSpecialBonus"	"special_bonus_unique_faceless_void_3"
 			}
 			"05"
@@ -30345,7 +30345,7 @@
 			"14"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_multiplier_super_scepter"	 "350"
+				"crit_multiplier_super_scepter"	 "450"
 			}
 			"15"
 			{

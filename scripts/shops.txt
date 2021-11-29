@@ -120,6 +120,7 @@
 		"item"		"item_mystery_cyclone"
 		"item"		"item_moonfall"
 		"item"		"item_battlemage_cloth"
+		"item"      "item_mjz_ring_of_aquila"
 		"item"		"item_cus_urn_of_shadows"
 		"item"		"item_medallion_of_courage"
 		"item"		"item_arcane_boots"

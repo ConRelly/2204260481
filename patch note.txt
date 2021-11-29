@@ -1364,7 +1364,7 @@ Request Buff/replace Meepo talents done, request made with 50 quest points by @ã
 
 (How about this kind of update sorting?)
 
-For full Update note visit discord, link can be found in workshop discussions.
+For full Update notes visit discord, the link can be found in workshop discussions.
 -- NEW
 * Added new transform: Kardel
 * Earth Spirit: Added new ability (Rollinâ€™ Stone) and replaced from Ball Lightning
@@ -1376,30 +1376,31 @@ For full Update note visit discord, link can be found in workshop discussions.
 * Added new item: Life Greaves
 * Attempt to revive Bottle
 * Reworked Stifling Dagger (Phantom Assassin)
-* New Round in part 2 , and another round got an extra boss.
-* Marci : Has now the Highest spell amp talent, Super Scepter effect for Ultimate.
+* New Round in part 2, and another round got an extra boss.
+* Marci: Has now the Highest spell amp talent, Super Scepter effect for Ultimate.
 * Marci Ultimate SS Effects : 
--Cm Frostbine : 3x dmg
--Ursa OverPower : 2x stats gain
+-Cm Frostbine: 3x dmg
+-Ursa OverPower: 2x stats gain
 -Orange Multicast: + 2 extra multicasts
 -Devil's Daedalus(including edible) : 1.5x critical increase
--Ultimate Bloodstone : gain an extra stack on every succesful proc.
+-Ultimate Bloodstone: gain an extra stack on every successful proc.
 -Green Radiance(edible included): Ms multiplayer increased to 10x and has no limit
--Greater Blast Staff: MR reduction increased to -45 , int multiplayer +5(18) , debuff duration +1s. 
+-Greater Blast Staff: MR reduction increased to -45, int multiplayer +5(18), debuff duration +1s. 
 -Apex: +7% more stats(42%)(updates on Equip)
 -Cursed Gaze: +3% crit bonus on hit(8%).
--Slayer Rebound : aditional stacks + 2 instead of 1.
--Endless wisdom : gain an extra stack.
--May add more in the future.(open for request with points)
+-Slayer Rebound: additional stacks + 2 instead of 1.
+-Endless wisdom: gain an extra stack.
+-May add more in the future. (open for request with points)
 -- Ability
 * Lone Druid: Added new talent (right level 20)
 * Storm Spirit: Added new talent and replaced from "+250 Health" (right level 15)
 * Overlord (Storm Spirit): Attack Speed slow increased from 60 to 90
+* Silencer Glaives SS effect  from 350% to 450% crit.
 * Rebalanced Ball Lightning (Storm Spirit)
 * Insatiable Hunger (Broodmother): Added missing levels
 * Decay (Undying): Now buff does not expire on death and Scales with Str on damage
 * Reincarnation (Wraith King): Now can be refreshed
-* Centaur added to underdog.
+* Centaur and Slark added to underdogs.
 * Unleash (Marci): Deals more dmg on last 2 lvls.
 * Defense Matrix (Tinker) is back.
 * Crypt Swarm (Death Prophet): Cast point reduced by 0.3
@@ -1408,28 +1409,28 @@ For full Update note visit discord, link can be found in workshop discussions.
 * Undying Punch (Undying): Rescaled numbers
 * Fixed Earthshaker's "Aftershock AOE" talent
 * Multicast (KotL/Random pool): Removed the extra multicast (now the description is correct) and proc chance increased by 1%
-* True Form (Lone Druid): Added new levels, increased CD and reduced duration
-* Increased Huskar W(burning spear) dmg, same for talent.(might be good with an certain neutral Relic)
+* True Form (Lone Druid): Added new levels, increased CD, and reduced duration
+* Increased Huskar W(burning spear) dmg, same for talent. (might be good with a certain neutral Relic)
 -- Items
 * Ethereal Blade LVL 2: Added 100 gold cost recipe
 * CrossBow: Added Attack Projectile Speed bonus
 * Frostmourne: Attack Speed slow increased from 80 to 150
-* Arcanist's Armor: Dmg reflection reduced and inscreased his MR and armor stats.
-* Tome of Knowledge: Restock 15% faster(15% more to buy), bonus xp per use from 150 to 140.
+* Arcanist's Armor: Dmg's reflection reduced and increased his MR and armor stats.
+* Tome of Knowledge: Restock 15% faster(15% more to buy), bonus xp peruse from 150 to 140.
 * Titan Relic got some small buffs.
 * Titan Relic: Doesn't increase summon duration
 * Fixed Devil's Daedalus visual bug of not displaying the bonus dmg.
-* Removed one Ring of Aquila and reworked other one (gold cost and recipe don't changed)
+* Removed one Ring of Aquila and reworked another one (gold cost and recipe don't change)
 * Mimic Mace: No longer interrupted if another spell or item is used
 * Cursed Bloodthorn: Changed recipe and recalculated stats
 * Cursed Bloodthorn: Increased Mana Cost and reduced Cooldown
 -- Other
 * Phantom Assassin: base movement speed reduced by 100
-* Removed some skills from -extramode that where causing crash.
+* Removed some skills from -extramode that were causing a crash.
 * An extra skill point is given every 7 levels, instead of 5
 * Added a new command for the cheat lobby "-demo"
 * Gold gain increased by 10% in parties of 2 or more players.
-* Most of Siltbreaker's abilities can no longer be evaded with Smoke of Deceit (and etc) effect, but can be blocked by Spell Immunity
+* Most of Siltbreaker's abilities can no longer be evaded with the Smoke of Deceit (etc) effect but can be blocked by Spell Immunity
 
 
 
@@ -1437,7 +1438,7 @@ For full Update note visit discord, link can be found in workshop discussions.
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes39 can be found on the new map version:
+*Update patch notes40 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 

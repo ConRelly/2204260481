@@ -146,7 +146,7 @@ function modifier_mjz_faceless_the_world_aura_effect_friendly:GetModifierAttackS
 	return self:GetStackCount() * talent_value(self:GetCaster(), "special_bonus_unique_mjz_faceless_the_world_attack_speed") * 0.2
 end
 function modifier_mjz_faceless_the_world_aura_effect_friendly:GetModifierMoveSpeed_AbsoluteMin()
-	return self:GetAbility():GetSpecialValueFor("speed")
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("speed") end
 end
 
 ----------------------------------------------------------------------

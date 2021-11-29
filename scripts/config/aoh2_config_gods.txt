@@ -3197,7 +3197,7 @@
 		}
 		"28" // Rubick					拉比克
 		{
-			"Title"						"He has his way with Spells"
+			"Title"						"Small but Dangerous"
 			"MaxGold"					"4750"
 			"BagCount"					"1"
 			"BagVariance"				"80"
@@ -3205,14 +3205,14 @@
 				
 			"a"
 			{
-				"NPCName"				"npc_boss_rubick"
+				"NPCName"				"npc_boss_rubick_2"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"30"
 			}
 			"b"
 			{
-				"NPCName"				"npc_boss_demon_marauder"
+				"NPCName"				"npc_boss_demon_marauder_2"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"10"
