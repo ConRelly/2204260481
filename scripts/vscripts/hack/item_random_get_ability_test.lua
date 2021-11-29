@@ -98,7 +98,7 @@ function GetRandomAbilityName( hero )
         "back_in_time",
         "mjz_slark_essence_shift",
         "custom_mana_regen",
-        --"zanto_gari",
+        "custom_side_gunner",
         "roshan_inherit_buff_datadriven",
         "monkey_king_custom_jingu_mastery",
         --"mjz_faceless_void_backtrack",

@@ -223,6 +223,7 @@ function GetRandomAbilityName( hero )
 		"blood_madness",
 		"clinkz_infernal_breath",
 		"mjz_bloodseeker_thirst",
+		"custom_side_gunner",
 
 	}
 	local randomIndex = RandomInt(1, #abilityList)

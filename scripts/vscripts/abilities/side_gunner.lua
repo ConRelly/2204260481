@@ -40,6 +40,7 @@ function modifier_custom_side_gunner:OnIntervalThink()
 
 	if self:GetCaster():HasModifier("modifier_super_scepter") then
 		self:GetCaster():PerformAttack(enemies[2], true, true, true, false, true, false, false)
+		gunner_interval = gunner_interval / 2
 	end
 
 	self:StartIntervalThink(gunner_interval)

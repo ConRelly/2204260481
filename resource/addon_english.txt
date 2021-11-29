@@ -476,7 +476,7 @@
 
 
 	"DOTA_Tooltip_Ability_custom_side_gunner"					"Side Gunner"
-	"DOTA_Tooltip_Ability_custom_side_gunner_Description"		"An automatic turret that shoots at a random enemy nearby. Selects the furthest target in range. <h1><font color='#0094FF'>Aghanim's Shard</font></h1> Range is increased by the attack radius \n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1> Reduces the attack interval by x2 \n<h1><font color='#DE3163'>Super Scepter</font></h1> Allows you to attack 2 targets at the same time"
+	"DOTA_Tooltip_Ability_custom_side_gunner_Description"		"An automatic turret that shoots at a random enemy nearby. Selects the furthest target in range. <h1><font color='#0094FF'>Aghanim's Shard</font></h1> Range is increased by the attack radius \n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1> Reduces the attack interval by x2 \n<h1><font color='#DE3163'>Super Scepter</font></h1> Allows you to attack 2 targets at the same time and Reduces again the attack rate of side gunner by 2x."
 	"DOTA_Tooltip_Ability_custom_side_gunner_gunner_radius"			"Radius:"
 	"DOTA_Tooltip_Ability_custom_side_gunner_gunner_interval"		"Attack Interval:"
 
