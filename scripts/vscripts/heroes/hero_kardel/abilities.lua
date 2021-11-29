@@ -21,11 +21,17 @@ function sniper_shoot:OnUpgrade()
 	self:GetCaster():FindAbilityByName("change_bullets_type"):SetLevel(1)
 end
 function sniper_shoot:GetBehavior()
-	if self:GetCaster():HasScepter() then
+--[[ 	if self:GetCaster():HasScepter() then
 		return DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_AOE
-	end
+	end ]]
 	return self.BaseClass.GetBehavior(self)
 end
+--[[ function sniper_shoot:GetAOERadius()
+	if self:GetCaster():HasScepter() then
+		return self:GetSpecialValueFor("aoe_scepter")
+	end
+	return 0
+end ]]
 function sniper_shoot:OnSpellStart()	
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()

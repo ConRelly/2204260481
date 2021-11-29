@@ -45,6 +45,11 @@
 				"shrap_bullet"				"75"
 				"LinkedSpecialBonus"		"special_bonus_sniper_shoot_bullet_dmg"
 			}
+			"5"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aoe_scepter"				"600"
+			}			
 		}
 	}
 	"special_bonus_sniper_shoot_bullet_dmg"
