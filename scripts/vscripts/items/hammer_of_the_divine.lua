@@ -46,7 +46,6 @@ function modifier_hammer_of_the_divine:GetAttributes() return MODIFIER_ATTRIBUTE
 function modifier_hammer_of_the_divine:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
 		if self:GetCaster():IsIllusion() then return end
-		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_hotd_unyielding", {})
 		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_hotd_base_str", {})
 		self.unyielding_hits = 0
 		self.overwhelming_hits = 0
@@ -55,16 +54,14 @@ function modifier_hammer_of_the_divine:OnCreated()
 end
 function modifier_hammer_of_the_divine:OnDestroy()
 	if IsServer() then
-		if not self:GetAbility() then
-			if self:GetCaster():HasModifier("modifier_hotd_unyielding") then
-				self:GetCaster():RemoveModifierByName("modifier_hotd_unyielding")
-			end
-			if self:GetCaster():HasModifier("modifier_hotd_unyielding_counter") then
-				self:GetCaster():RemoveModifierByName("modifier_hotd_unyielding_counter")
-			end
-			if self:GetCaster():HasModifier("modifier_hotd_pure_divinity") then
-				self:GetCaster():RemoveModifierByName("modifier_hotd_pure_divinity")
-			end
+		if self:GetCaster():HasModifier("modifier_hotd_unyielding") then
+			self:GetCaster():RemoveModifierByName("modifier_hotd_unyielding")
+		end
+		if self:GetCaster():HasModifier("modifier_hotd_unyielding_counter") then
+			self:GetCaster():RemoveModifierByName("modifier_hotd_unyielding_counter")
+		end
+		if self:GetCaster():HasModifier("modifier_hotd_pure_divinity") then
+			self:GetCaster():RemoveModifierByName("modifier_hotd_pure_divinity")
 		end
 	end
 end
@@ -73,6 +70,9 @@ function modifier_hammer_of_the_divine:OnIntervalThink()
 		if self:GetCaster():GetPrimaryAttribute() == 0 or self:GetParent():GetUnitName() == "npc_courier_replacement" then
 		else
 			self:GetCaster():DropItemAtPositionImmediate(self:GetAbility(), self:GetCaster():GetAbsOrigin())
+		end
+		if not self:GetParent():HasModifier("modifier_hotd_unyielding") then
+			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_hotd_unyielding", {})
 		end
 	end
 end
@@ -193,15 +193,6 @@ modifier_hotd_unyielding = modifier_hotd_unyielding or class({})
 function modifier_hotd_unyielding:IsHidden() return (self:GetStackCount() == 0) end
 function modifier_hotd_unyielding:IsPurgable() return false end
 function modifier_hotd_unyielding:RemoveOnDeath() return false end
-function modifier_hotd_unyielding:OnDestroy()
-	if IsServer() then
-		if self:GetParent():IsAlive() then
-			if self:GetParent():HasModifier("modifier_hammer_of_the_divine") then
-				self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_hotd_unyielding", {})
-			end
-		end
-	end
-end
 
 -----------------------
 -- Unyielding Stacks --
