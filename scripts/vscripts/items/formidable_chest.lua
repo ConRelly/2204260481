@@ -66,7 +66,7 @@ end
 
 
 function modifier_item_formidable_chest:GetModifierPhysicalArmorBonus()
-    return self:GetAbility():GetSpecialValueFor("bonus_armor")
+   if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_armor") end
 end
 
 

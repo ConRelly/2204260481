@@ -111,6 +111,9 @@ function sniper_shoot:OnProjectileHit_ExtraData(target, location, extradata)
 	unit_counter = unit_counter + 1
 	if target:HasModifier("modifier_hunting_mark") and unit_counter == 1 then
 		damage = base_damage * talent_value(self:GetCaster(), "special_bonus_hunting_mark_direct_shot_bonus") / 100
+		if damage == 0 then
+			damage = base_damage
+		end	
 	else
 		damage = base_damage
 	end
@@ -169,8 +172,22 @@ end
 function Hit_Enemy(caster, target, ability, damage)
 	if caster:HasModifier("modifier_normal_bullets") then
 		Normal_Shot(caster, target, ability, damage)
+		if IsServer() then
+			if caster:HasModifier("modifier_super_scepter") then
+				if RollPercentage(50) then
+					caster:ModifyAgility(1)
+				end	
+			end
+		end	
 	elseif caster:HasModifier("modifier_explosive_bullets") then
 		Explosive_Shot(caster, target, ability, damage)
+		if IsServer() then
+			if caster:HasModifier("modifier_super_scepter") then
+				if RollPercentage(25) then
+					caster:ModifyIntellect(1)
+				end	
+			end
+		end			
 	elseif caster:HasModifier("modifier_shrapnel_bullets") then
 		Shrapnel_Shot(caster, target, ability, damage)
 	end

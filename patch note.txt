@@ -1441,6 +1441,10 @@ QuickFix and update:
 
 
 
+* Fixed Kardel broken Q on aghanim and fixed Ultimate making him to deal 0 dmg to target until you get the HeadShot talent.
+* Added new Super Scepter for Kardel
+* Fixed Dezolator 3 price.
+
 
 
 

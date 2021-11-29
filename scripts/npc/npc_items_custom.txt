@@ -1859,7 +1859,7 @@
 		}
 	}
 }
-"item_recipe_desolator_3"
+"item_recipe_desolator_3_custom"
 {
 	"BaseClass"						"item_recipe_desolator"
 	"Model"							"models/props_gameplay/recipe.vmdl"
