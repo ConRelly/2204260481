@@ -55,14 +55,16 @@ function modifier_hammer_of_the_divine:OnCreated()
 end
 function modifier_hammer_of_the_divine:OnDestroy()
 	if IsServer() then
-		if self:GetCaster():HasModifier("modifier_hotd_unyielding") then
-			self:GetCaster():RemoveModifierByName("modifier_hotd_unyielding")
-		end
-		if self:GetCaster():HasModifier("modifier_hotd_unyielding_counter") then
-			self:GetCaster():RemoveModifierByName("modifier_hotd_unyielding_counter")
-		end
-		if self:GetCaster():HasModifier("modifier_hotd_pure_divinity") then
-			self:GetCaster():RemoveModifierByName("modifier_hotd_pure_divinity")
+		if not self:GetAbility() then
+			if self:GetCaster():HasModifier("modifier_hotd_unyielding") then
+				self:GetCaster():RemoveModifierByName("modifier_hotd_unyielding")
+			end
+			if self:GetCaster():HasModifier("modifier_hotd_unyielding_counter") then
+				self:GetCaster():RemoveModifierByName("modifier_hotd_unyielding_counter")
+			end
+			if self:GetCaster():HasModifier("modifier_hotd_pure_divinity") then
+				self:GetCaster():RemoveModifierByName("modifier_hotd_pure_divinity")
+			end
 		end
 	end
 end
@@ -207,6 +209,7 @@ end
 modifier_hotd_unyielding_counter = modifier_hotd_unyielding_counter or class({})
 function modifier_hotd_unyielding_counter:IsHidden() return true end
 function modifier_hotd_unyielding_counter:IsPurgable() return false end
+function modifier_hotd_unyielding_counter:RemoveOnDeath() return false end
 function modifier_hotd_unyielding_counter:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_hotd_unyielding_counter:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end

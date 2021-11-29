@@ -4399,6 +4399,7 @@
 	"ItemCost"						"925"	
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
+	"ItemPurchasable"				"0"
 	"ItemResult"					"item_ultimate_butterfly"
 	"ItemRequirements"
 	{
@@ -4410,7 +4411,7 @@
 	"BaseClass"					"item_butterfly"
 	"AbilityTextureName"		"ultimate_butterfly"
 	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"ItemCost"					"13100"
+	"ItemPurchasable"			"0"
 	"ItemShopTags"				"agi;damage;evasion;attack_speed"
 	"ItemQuality"				"epic"
 	"ItemAliases"				"bfly;butterfly"

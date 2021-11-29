@@ -8675,7 +8675,6 @@
 	"DOTA_Tooltip_ability_item_mjz_guardian_greaves_holy_light_Lore"						"One of many holy instruments constructed to honor the Omniscience."
 	"DOTA_Tooltip_ability_item_mjz_guardian_greaves_holy_light_bonus_movement"				"+$move_speed"
 	"DOTA_Tooltip_ability_item_mjz_guardian_greaves_holy_light_bonus_mana"					"+$mana"
-	"DOTA_Tooltip_ability_item_mjz_guardian_greaves_holy_light_bonus_all_stats"				"+$all"
 	"DOTA_Tooltip_ability_item_mjz_guardian_greaves_holy_light_bonus_armor"					"+$armor"
 	"DOTA_Tooltip_modifier_item_mjz_guardian_greaves_holy_light_aura"						"Guardian Aura"
 	"DOTA_Tooltip_modifier_item_mjz_guardian_greaves_holy_light_aura_Description"			"Имeeт %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% бpoни и вoccтaнaвливaeт %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% здopoвья в ceкyндy."

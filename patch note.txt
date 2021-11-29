@@ -1424,6 +1424,7 @@ For full Update notes visit discord, the link can be found in workshop discussio
 * Mimic Mace: No longer interrupted if another spell or item is used
 * Cursed Bloodthorn: Changed recipe and recalculated stats
 * Cursed Bloodthorn: Increased Mana Cost and reduced Cooldown
+* Ultimate Butterfly: Removed
 -- Other
 * Phantom Assassin: base movement speed reduced by 100
 * Removed some skills from -extramode that were causing a crash.
