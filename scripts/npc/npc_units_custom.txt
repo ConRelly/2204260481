@@ -16025,6 +16025,7 @@
 			"EquippedItems"
 			{
 				"1"		{"Item"		"item_branches"}
+				"2"		{"Item"		"item_black_king_bar_free"}
 			}
 		}
 	}

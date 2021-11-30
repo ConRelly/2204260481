@@ -24475,7 +24475,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stuf"			"50"
+				"bonus_stuf"			"10"
 			}			
 		}
 

@@ -104,7 +104,7 @@ function modifier_mjz_faceless_the_world_aura_friendly:GetAuraDuration() return 
 function modifier_mjz_faceless_the_world_aura_friendly:GetAuraEntityReject(target)
 	if target:GetTeam() == self:GetCaster():GetTeam() and self:GetCaster():HasScepter() then
 		return false
-	elseif target == self:GetCaster() or target:GetMainControllingPlayer() == self:GetCaster():GetPlayerOwnerID() then
+	elseif target == self:GetCaster() then
 		return false
 	end
 	return true
@@ -164,7 +164,7 @@ function modifier_mjz_faceless_the_world_aura_enemy:GetAuraDuration() return 0.1
 function modifier_mjz_faceless_the_world_aura_enemy:GetAuraEntityReject(target)
 	if target:GetTeam() == self:GetCaster():GetTeam() and self:GetCaster():HasScepter() then
 		return true
-	elseif target == self:GetCaster() or target:GetMainControllingPlayer() ~= self:GetCaster():GetPlayerOwnerID() then
+	elseif target == self:GetCaster() then
 		return true
 	end
 	return false

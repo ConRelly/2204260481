@@ -20,19 +20,7 @@ function sniper_shoot:OnUpgrade()
 	self:GetCaster():FindAbilityByName("reload_bullet"):SetLevel(1)
 	self:GetCaster():FindAbilityByName("change_bullets_type"):SetLevel(1)
 end
-function sniper_shoot:GetBehavior()
---[[ 	if self:GetCaster():HasScepter() then
-		return DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_AOE
-	end ]]
-	return self.BaseClass.GetBehavior(self)
-end
---[[ function sniper_shoot:GetAOERadius()
-	if self:GetCaster():HasScepter() then
-		return self:GetSpecialValueFor("aoe_scepter")
-	end
-	return 0
-end ]]
-function sniper_shoot:OnSpellStart()	
+function sniper_shoot:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 
@@ -113,7 +101,7 @@ function sniper_shoot:OnProjectileHit_ExtraData(target, location, extradata)
 		damage = base_damage * talent_value(self:GetCaster(), "special_bonus_hunting_mark_direct_shot_bonus") / 100
 		if damage == 0 then
 			damage = base_damage
-		end	
+		end
 	else
 		damage = base_damage
 	end
@@ -176,18 +164,18 @@ function Hit_Enemy(caster, target, ability, damage)
 			if caster:HasModifier("modifier_super_scepter") then
 				if RollPercentage(50) then
 					caster:ModifyAgility(1)
-				end	
+				end
 			end
-		end	
+		end
 	elseif caster:HasModifier("modifier_explosive_bullets") then
 		Explosive_Shot(caster, target, ability, damage)
 		if IsServer() then
 			if caster:HasModifier("modifier_super_scepter") then
 				if RollPercentage(25) then
 					caster:ModifyIntellect(1)
-				end	
+				end
 			end
-		end			
+		end
 	elseif caster:HasModifier("modifier_shrapnel_bullets") then
 		Shrapnel_Shot(caster, target, ability, damage)
 	end
@@ -198,7 +186,7 @@ function Normal_Shot(caster, target, ability, damage)
 		ability = ability,
 		attacker = caster,
 		damage = damage,
-		damage_type = DAMAGE_TYPE_PHYSICAL,
+		damage_type = DAMAGE_TYPE_PURE,
 		damage_flags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
 		victim = target
 	})
@@ -291,7 +279,7 @@ function modifier_shrapnel_bullets:IsPurgable() return false end
 function modifier_shrapnel_bullets:RemoveOnDeath() return false end
 function modifier_shrapnel_bullets:GetTexture() return "custom/abilities/shrap_bullet" end
 function modifier_shrapnel_bullets:DeclareFunctions() return {MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE} end
-function modifier_shrapnel_bullets:GetModifierTotalDamageOutgoing_Percentage() return -35 end
+function modifier_shrapnel_bullets:GetModifierTotalDamageOutgoing_Percentage() return -20 end
 
 
 ---------------
@@ -384,14 +372,11 @@ end
 if pocket_portal == nil then pocket_portal = class({}) end
 function pocket_portal:IsStealable() return false end
 function pocket_portal:GetBehavior()
-	if self:GetCaster():HasModifier("modifier_pocket_portal_duration") then
-		Behavior = DOTA_ABILITY_BEHAVIOR_NO_TARGET
-	elseif self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
-		Behavior = DOTA_ABILITY_BEHAVIOR_POINT
+	if self:GetCaster():HasModifier("modifier_item_aghanims_shard") and not self:GetCaster():HasModifier("modifier_pocket_portal_duration") then
+		return DOTA_ABILITY_BEHAVIOR_POINT
 	else
-		Behavior = DOTA_ABILITY_BEHAVIOR_NO_TARGET
+		return DOTA_ABILITY_BEHAVIOR_NO_TARGET
 	end
-	return Behavior
 end
 function pocket_portal:GetCooldown(lvl)
 	local BaseCD = self.BaseClass.GetCooldown(self, lvl) - talent_value(self:GetCaster(), "special_bonus_pocket_portal_cooldown")
@@ -485,9 +470,43 @@ modifier_kardels_skills = class({})
 function modifier_kardels_skills:IsHidden() return true end
 function modifier_kardels_skills:IsPurgable() return true end
 function modifier_kardels_skills:GetPriority() return MODIFIER_PRIORITY_SUPER_ULTRA + 11111 end
-function modifier_kardels_skills:DeclareFunctions() return {MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS} end
+function modifier_kardels_skills:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
+		MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
+		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+	}
+end
 function modifier_kardels_skills:GetModifierBaseAttack_BonusDamage() return self:GetCaster():GetAgility() * (self:GetAbility():GetSpecialValueFor("dmg_per_agility") + talent_value(self:GetCaster(), "special_bonus_kardels_skills_dmg")) end
 function modifier_kardels_skills:GetModifierAttackRangeBonus() return 550 end
+
+function modifier_kardels_skills:GetModifierBonusStats_Strength()
+	local str = self:GetCaster():GetStrengthGain() * (self:GetCaster():CustomValue("special_bonus_kardels_skills_atr_gain", "str") - 1) * self:GetCaster():GetLevel()
+	if str > 0 then
+		return str
+	end
+	return 0
+end
+function modifier_kardels_skills:GetModifierBonusStats_Agility()
+	local agil = self:GetCaster():GetAgilityGain() * (self:GetCaster():CustomValue("special_bonus_kardels_skills_atr_gain", "agil") - 1) * self:GetCaster():GetLevel()
+	if agil > 0 then
+		if self:GetParent():GetPrimaryAttribute() == DOTA_ATTRIBUTE_AGILITY then
+			return agil
+		else
+			return self:GetCaster():GetAgilityGain() * (self:GetCaster():CustomValue("special_bonus_kardels_skills_atr_gain", "str") - 1) * self:GetCaster():GetLevel()
+		end
+	end
+	return 0
+end
+function modifier_kardels_skills:GetModifierBonusStats_Intellect()
+	local int = self:GetCaster():GetStrengthGain() * (self:GetCaster():CustomValue("special_bonus_kardels_skills_atr_gain", "int") - 1) * self:GetCaster():GetLevel()
+	if int > 0 then
+		return int
+	end
+	return 0
+end
 function modifier_kardels_skills:CheckState()
 	return {[MODIFIER_STATE_DISARMED] = true}
 end

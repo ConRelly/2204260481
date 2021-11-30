@@ -20719,7 +20719,7 @@
 		"ItemIsNeutralDrop"				"1"
 		"ItemRequirements"
 		{
-			"01"						"item_chest_5;item_desolator_3"
+			"01"						"item_chest_5;item_desolator_3_custom"
 		}
 	}
 // Stygian Desolator
@@ -20743,7 +20743,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"corruption_duration"	"15.0"
+				"corruption_duration"	"15"
 			}
 		}
 	}

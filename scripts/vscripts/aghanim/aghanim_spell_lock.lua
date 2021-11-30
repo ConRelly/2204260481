@@ -353,6 +353,12 @@ function modifier_aghanim_spell_lock:DisableSpell()
 			mjz_riki_backstab = true,
 			mjz_invoker_magic_master = true,
 			sourcery = true,
+			lesser_cancel = true,
+			divine_cancel = true,
+			sniper_shoot = true,
+			reload_bullet = true,
+			change_bullets_type = true,
+			kardels_skills = true,
 
 		}      
 

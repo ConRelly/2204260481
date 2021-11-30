@@ -47,6 +47,7 @@ function modifier_bristleback_warpath_lua:OnAbilityFullyCast(params)
 		if params.unit==self:GetParent() and not self:GetParent():PassivesDisabled() then
 			-- check item ability
 			local hAbility = params.ability
+			if hAbility:GetCooldown(hAbility:GetLevel()) <= 0 then return end
 			if hAbility ~= nil and (not hAbility:IsItem()) and (not hAbility:IsToggle()) and self:GetParent():IsAlive() then
 				self:AddStack()
 			end

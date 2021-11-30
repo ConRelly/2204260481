@@ -37,9 +37,11 @@ function modifier_damage_meter:DeclareFunctions() return
 		MODIFIER_EVENT_ON_TAKEDAMAGE,
 		MODIFIER_PROPERTY_MIN_HEALTH,
 		MODIFIER_PROPERTY_MANACOST_PERCENTAGE,
+		MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING,
 	}
 end
 function modifier_damage_meter:GetModifierPercentageManacost() return 100 end
+function modifier_damage_meter:GetModifierPercentageCooldownStacking() return 100 end
 function modifier_damage_meter:GetMinHealth() return 1 end
 function modifier_damage_meter:OnTakeDamage(data)
 	if not IsServer() then return end

@@ -49,18 +49,16 @@ function arcane_supremacy:OnSpellStart()
 		local cd_shard = 0
 		local cd_scepter = 0
 		local cd_super = 0
-		if caster:HasShard() then
+
+		if caster:HasModifier("modifier_item_aghanims_shard") then
 			cd_shard = self:GetSpecialValueFor("bonus_cd_shard")
-			target:AddNewModifier(caster, nil, "modifier_item_aghanims_shard", {duration = duration})
 		end
 		if caster:HasScepter() then
 			cd_scepter = self:GetSpecialValueFor("bonus_cd_scepter")
-			target:AddNewModifier(caster, self, "modifier_item_ultimate_scepter_consumed", {duration = duration})
 		end
-		if HasSuperScepter(caster) then
+		if caster:HasModifier("modifier_super_scepter") then
 			cd_super = self:GetSpecialValueFor("bonus_cd_super")
 			cd_scepter = 0
-			target:AddNewModifier(caster, self, "modifier_super_scepter", {duration = duration})
 		end
 		cd = base_cd + cd_shard + cd_scepter + cd_super
 		self:StartCooldown(cd)
@@ -82,7 +80,7 @@ function modifier_arcane_supremacy:OnIntervalThink()
 		local caster = self:GetCaster()
 		local modifier = "modifier_item_imba_ultimate_scepter_synth_stats"
 		if caster:HasModifier(modifier) and caster:FindModifierByName(modifier):GetStackCount() >= 2 then
-			caster:AddNewModifier(caster, nil, "modifier_super_scepter", {})
+			caster:AddNewModifier(caster, self:GetAbility(), "modifier_super_scepter", {})
 		else
 			if caster:HasModifier("modifier_super_scepter") then
 				caster:RemoveModifierByName("modifier_super_scepter")
@@ -107,4 +105,45 @@ modifier_arcane_supremacy_buff = modifier_arcane_supremacy_buff or class({})
 function modifier_arcane_supremacy_buff:IsDebuff() return false end
 function modifier_arcane_supremacy_buff:IsHidden() return false end
 function modifier_arcane_supremacy_buff:IsPurgable() return false end
+function modifier_arcane_supremacy_buff:RemoveOnDeath() return false end
 --function modifier_arcane_supremacy_buff:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+function modifier_arcane_supremacy_buff:OnCreated()
+	 if IsServer() then
+		local caster = self:GetCaster()
+		local paretn = self:GetParent()
+		local duration = self:GetAbility():GetSpecialValueFor("buff_duration")
+		if caster:HasModifier("modifier_item_aghanims_shard") then
+			if paretn:HasModifier("modifier_item_aghanims_shard") then
+				local ShardModifier = paretn:FindModifierByName("modifier_item_aghanims_shard")
+				if ShardModifier:GetDuration() > 0 and ShardModifier:GetElapsedTime() < duration then
+					paretn:AddNewModifier(caster, nil, "modifier_item_aghanims_shard", {duration = duration})
+				end
+			else
+				paretn:AddNewModifier(caster, nil, "modifier_item_aghanims_shard", {duration = duration})
+			end
+		end
+		if caster:HasScepter() then
+			if paretn:HasScepter() then
+				local ScepterModifier = paretn:FindModifierByName("modifier_item_ultimate_scepter_consumed")
+				if ScepterModifier:GetDuration() > 0 and ScepterModifier:GetElapsedTime() < duration then
+					paretn:AddNewModifier(caster, nil, "modifier_item_ultimate_scepter_consumed", {duration = duration})
+				end
+			else
+				paretn:AddNewModifier(caster, nil, "modifier_item_ultimate_scepter_consumed", {duration = duration})
+			end
+		end
+		if caster:HasModifier("modifier_super_scepter") then
+			if paretn:HasModifier("modifier_super_scepter") then
+				local SSModifier = paretn:FindModifierByName("modifier_super_scepter")
+				if SSModifier:GetDuration() > 0 and SSModifier:GetElapsedTime() < duration then
+					paretn:AddNewModifier(caster, nil, "modifier_super_scepter", {duration = duration})
+				end
+			else
+				paretn:AddNewModifier(caster, nil, "modifier_super_scepter", {duration = duration})
+			end
+		end
+	end
+end
+function modifier_arcane_supremacy_buff:OnRefresh()
+	self:OnCreated()
+end

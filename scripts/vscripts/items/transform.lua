@@ -164,15 +164,13 @@ function ChangeHeroKardel(keys)
 
 
 -- Talents
---[[
 	-- 10 Level
 		--right
 		if caster:HasAbility("special_bonus_agility_100") then
-			caster:AddAbility("")
-			caster:SwapAbilities("special_bonus_agility_100", "", false, true)
+			caster:AddAbility("special_bonus_kardels_skills_atr_gain")
+			caster:SwapAbilities("special_bonus_agility_100", "special_bonus_kardels_skills_atr_gain", false, true)
 			caster:RemoveAbility("special_bonus_agility_100")
 		end
-]]
 		--left
 		if caster:HasAbility("special_bonus_unique_sniper_3") then
 			caster:AddAbility("special_bonus_sniper_shoot_bullet_dmg")

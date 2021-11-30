@@ -482,7 +482,7 @@
 
 
 	"DOTA_Tooltip_Ability_custom_side_gunner"					"Side Gunner"
-	"DOTA_Tooltip_Ability_custom_side_gunner_Description"		"Автоматическая турель, которая стреляет по случайному врагу неподалёку. Выбирает самую далёкую цель в радиусе действия. <h1><font color='#0094FF'>Aghanim's Shard</font></h1> Дальность увеличивается радиусом атаки \n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1> Снижает интервал атак в 2 раза \n<h1><font color='#DE3163'>Super Scepter</font></h1> Позволяет атаковать 2 цели одновременно"
+	"DOTA_Tooltip_Ability_custom_side_gunner_Description"		"Автоматическая турель, которая стреляет по случайному врагу неподалёку. Выбирает самую далёкую цель в радиусе действия. \n<h1><font color='#0094FF'>Aghanim's Shard</font></h1> Дальность увеличивается радиусом атаки \n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1> Снижает интервал атак в 2 раза \n<h1><font color='#DE3163'>Super Scepter</font></h1> Позволяет атаковать 2 цели одновременно и ещё снижает интервал атак в 2 раза"
 	"DOTA_Tooltip_Ability_custom_side_gunner_gunner_radius"			"Радиус:"
 	"DOTA_Tooltip_Ability_custom_side_gunner_gunner_interval"		"Интервал атаки:"
 
@@ -785,10 +785,11 @@
 
 // Kardel
 	"DOTA_Tooltip_ability_sniper_shoot"					"Shoot"
-	"DOTA_Tooltip_ability_sniper_shoot_Description"		"Совершает выстрел соответствующей пулей. \n<font color='#FF423F'>Урон всех пуль зависит исключительно от БАЗОВОГО урона, а дальность от радиуса атаки.</font>"
+	"DOTA_Tooltip_ability_sniper_shoot_Description"		"Совершает выстрел соответствующей пулей. \n<font color='#FF423F'>Урон всех пуль зависит исключительно от БАЗОВОГО урона, а дальность от радиуса атаки.</font> \n<h1><font color='#DE3163'>Super Scepter</font></h1>При попадании: <font color='#BD7D93'>Обычными пулями</font> с 25%% (x2) шансом даётся 1 ловкость и <font color='#ECF47C'>Взрывными пулями</font> с 50%% шансом даётся 1 интеллект."
 	"DOTA_Tooltip_ability_sniper_shoot_Lore"			"Кардел является одним из лучших стрелков своего народа — ружьё словно было продолжением его руки, а выстрел — её прикосновением."
 	"DOTA_Tooltip_ability_sniper_shoot_Note0"			"1) Не работает на критические удары."
 	"DOTA_Tooltip_ability_sniper_shoot_Note1"			"2) Обычные пули мгновенно убивают иллюзии."
+	"DOTA_Tooltip_ability_sniper_shoot_Note2"			"3) Взрывные пули оглушают основную цель на 0,2 сек."
 	"DOTA_Tooltip_ability_sniper_shoot_norm_bullet"			"%Урон обычной пулей:"
 	"DOTA_Tooltip_ability_sniper_shoot_expl_bullet"			"%Урон взрывной пулей:"
 	"DOTA_Tooltip_ability_sniper_shoot_shrap_bullet"		"%Урон осколочной пулей:"
@@ -799,7 +800,7 @@
 	"DOTA_Tooltip_ability_reload_bullet_reload_time"		"Скорость перезарядки:"
 
 	"DOTA_Tooltip_ability_change_bullets_type"					"Change Bullet"
-	"DOTA_Tooltip_ability_change_bullets_type_Description"		"Меняет тип пуль: <br><font color='#BD7D93'>Обычные</font> > <font color='#ECF47C'>Взрывные</font> > <font color='#5F22DF'>Осколочные</font> \n<h1><font color='#BD7D93'>Обычные пули</font></h1> Имеет 2 фазы урона. <br>Наносит <font color=\"#ae2f28\">физический</font> урон. <br>Можно увернуться: <font color='#D34348'>Нет</font> <br>Применяются модификоторы атаки: <font color='#5AD142'>Да</font> <br>Блокируется Linken's Sphere: <font color='#5AD142'>Да</font> <br>Сквозь невосприимчивость к магии: <font color='#5AD142'>Да</font> \n<h1><font color='#ECF47C'>Взрывные пули</font></h1> Имеет 2 фазы урона. <br>Наносит <font color=\"#ae2f28\">физический</font> (радиус %expl_phys_radius%) и <font color=\"#5b93d1\">магический</font> (радиус %expl_magic_radius%) урон. <br>Можно увернуться: <font color='#5AD142'>Да</font> <br>Применяются модификоторы атаки: <font color='#D34348'>Нет</font> <br>Блокируется Linken's Sphere: <font color='#D34348'>Нет</font> <br>Сквозь невосприимчивость к магии: <font color='#5AD142'>Да</font>/<font color='#D34348'>Нет</font> \n<h1><font color='#5F22DF'>Осколочные пули</font></h1> Имеет 8 фаз урона. <br>Наносит смешанный, но сниженный на 35%% урон. <br>Можно увернуться: <font color='#5AD142'>Да</font> <br>Применяются модификоторы атаки: <font color='#5AD142'>Да</font> <br>Блокируется Linken's Sphere: <font color='#5AD142'>Да</font> <br>Сквозь невосприимчивость к магии: <font color='#5AD142'>Да</font>"
+	"DOTA_Tooltip_ability_change_bullets_type_Description"		"Меняет тип пуль: <br><font color='#BD7D93'>Обычные</font> > <font color='#ECF47C'>Взрывные</font> > <font color='#5F22DF'>Осколочные</font> \n<h1><font color='#BD7D93'>Обычные пули</font></h1> Имеет 2 фазы урона. <br>Наносит <font color='#d8ae53'>чистый</font> урон. <br>Можно увернуться: <font color='#E86F6F'>Нет</font> <br>Применяются модификоторы атаки: <font color='#70EA72'>Да</font> <br>Блокируется Linken's Sphere: <font color='#70EA72'>Да</font> <br>Сквозь невосприимчивость к магии: <font color='#70EA72'>Да</font> \n<h1><font color='#ECF47C'>Взрывные пули</font></h1> Имеет 2 фазы урона. <br>Наносит <font color=\"#ae2f28\">физический</font> (радиус %expl_phys_radius%) и <font color=\"#5b93d1\">магический</font> (радиус %expl_magic_radius%) урон. <br>Можно увернуться: <font color='#70EA72'>Да</font> <br>Применяются модификоторы атаки: <font color='#E86F6F'>Нет</font> <br>Блокируется Linken's Sphere: <font color='#E86F6F'>Нет</font> <br>Сквозь невосприимчивость к магии: <font color='#70EA72'>Да</font>/<font color='#E86F6F'>Нет</font> \n<h1><font color='#5F22DF'>Осколочные пули</font></h1> Имеет 8 фаз урона. <br>Наносит смешанный, но сниженный на 20%% урон. <br>Можно увернуться: <font color='#70EA72'>Да</font> <br>Применяются модификоторы атаки: <font color='#70EA72'>Да</font> <br>Блокируется Linken's Sphere: <font color='#70EA72'>Да</font> <br>Сквозь невосприимчивость к магии: <font color='#70EA72'>Да</font>"
 	"DOTA_Tooltip_ability_change_bullets_type_Lore"			"В запасе Кардела имеются различные типы пулей для разных ситуаций."
 	"DOTA_Tooltip_ability_change_bullets_type_changing_time"		"Время смены патронов:"
 
@@ -824,6 +825,8 @@
 	"DOTA_Tooltip_ability_hunting_mark_ricochet"				"Макс. рикошетов:"
 	"DOTA_Tooltip_ability_hunting_mark_duration"				"Длительность:"
 	
+	"DOTA_Tooltip_modifier_hunting_mark"			"Mark Target"
+
 	"DOTA_Tooltip_modifier_normal_bullets"			"Обычные патроны"
 	"DOTA_Tooltip_modifier_explosive_bullets"		"Взрывные патроны"
 	"DOTA_Tooltip_modifier_shrapnel_bullets"		"Осколочные патроны"
@@ -835,6 +838,8 @@
 	"DOTA_Tooltip_ability_special_bonus_kardel_reloading"					"Ловкие руки"
 	"DOTA_Tooltip_ability_special_bonus_kardel_reloading_Description"		"Уменьшает время Reloading и Change Bullet на {s:value} сек."
 	"DOTA_Tooltip_ability_special_bonus_kardels_skills_dmg"					"+{s:value} к базовому урону от ловкости Kardel's Skills"
+	"DOTA_Tooltip_ability_special_bonus_kardels_skills_atr_gain"				"Увеличивает прирост атрибутов в х{s:str}"
+	"DOTA_Tooltip_ability_special_bonus_kardels_skills_atr_gain_Description"	"Если основной атрибут ловкость, то она будет увеличена в х{s:agil}"
 	"DOTA_Tooltip_ability_special_bonus_hunting_mark_direct_shot_bonus"					"Выстрел в голову"
 	"DOTA_Tooltip_ability_special_bonus_hunting_mark_direct_shot_bonus_Description"		"Shoot наносит {s:value}% урона, при прицельном попадании по врагу с Hunting Mark"
 
@@ -2842,7 +2847,7 @@
 
 
 	"DOTA_Tooltip_ability_mjz_faceless_the_world"						"THE WORLD"
-	"DOTA_Tooltip_ability_mjz_faceless_the_world_Description"			"Создаёт сферу, в которой застывают пространство и время и увеличивает входящий урон на %bonus_stuf%%% всех застывших. Она останавливает всё внутри себя, а её владелец и подконтрольные ему существа передвигаются в ней с увеличенной скоростью. Не застывшие существа не могут быть оглушённым, обезмолвленным или оцепенённым. Внутри сферы раскрывается невидимость врагов. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Увеличивает длительность на %duration_super_scepter% сек. и радиус на %radius_super_scepter%"
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_Description"			"Создаёт сферу, в которой застывают пространство и время и увеличивает входящий урон на %bonus_stuf%%% всех застывших. Она останавливает всё внутри себя, а её владелец передвигаeтся в ней с увеличенной скоростью. Не застывшие существа не могут быть оглушённым, обезмолвленным или оцепенённым. Внутри сферы раскрывается невидимость врагов. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Увеличивает длительность на %duration_super_scepter% сек. и радиус на %radius_super_scepter%"
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_scepter_description"			"Увеличивает длительность и позволяет союзникам передвигаться внутри сферы."
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_Lore"					"Когда открывается проход в Класзурем, все оказавшиеся в нём бедняги вряд ли смогут вернуться назад."
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_radius"				"Paдиyc:"
@@ -9492,7 +9497,7 @@
 	"DOTA_Tooltip_ability_bristleback_warpath_lua_Note1"		"He cpaбaтывaeт oт иcпoльзoвaния пpeдмeтoв."
 	"DOTA_Tooltip_ability_bristleback_warpath_lua_damage_per_stack"			"Бoнyc к ypoнy зa эффeкт:"
 	"DOTA_Tooltip_ability_bristleback_warpath_lua_str_multiplier"			"Бoнyc к ypoнy зa эффeкт oт cилы:"
-	"DOTA_Tooltip_ability_bristleback_warpath_lua_move_speed_per_stack"		"%Бoнyc к cтopocти зa эффeкт:"
+	"DOTA_Tooltip_ability_bristleback_warpath_lua_move_speed_per_stack"		"%Бoнyc к cкopocти зa эффeкт:"
 	"DOTA_Tooltip_ability_bristleback_warpath_lua_stack_duration"			"Длитeльнocть oднoгo эффeктa:"
 	"DOTA_Tooltip_ability_bristleback_warpath_lua_max_stacks"				"Maкc. эффeктoв:"
 	"DOTA_Tooltip_ability_bristleback_warpath_lua_spell_amp_per_stack"		"%Бoнyc cилы зaклинaний зa эффeкт:"

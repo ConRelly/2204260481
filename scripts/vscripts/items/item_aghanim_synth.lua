@@ -10,10 +10,10 @@ function AghanimsSynthCast(keys)
 		if not caster:IsRealHero() then return nil end
 	end
 	if caster:HasModifier("modifier_arc_warden_tempest_double") then return nil end
-	
-	if not caster:HasModifier(modifier_synth) then
-		caster:AddNewModifier(caster, nil, modifier_synth, {})
+	if caster:HasModifier(modifier_synth) then
+		caster:RemoveModifierByName(modifier_synth)
 	end
+	caster:AddNewModifier(caster, ability, modifier_synth, {})
 	if caster:HasModifier(modifier_stats) then
 		local modifier = caster:FindModifierByName(modifier_stats)
 		modifier:SetStackCount(modifier:GetStackCount() + 1)
@@ -23,7 +23,7 @@ function AghanimsSynthCast(keys)
 		modifier:SetStackCount(1)
 	end
 	if caster:HasModifier(modifier_stats) and caster:FindModifierByName(modifier_stats):GetStackCount() > 2 then
-		caster:AddNewModifier(caster, nil, "modifier_super_scepter", {})
+		caster:AddNewModifier(caster, ability, "modifier_super_scepter", {})
 	else
 		if caster:HasModifier("modifier_super_scepter") then
 			caster:RemoveModifierByName("modifier_super_scepter")
@@ -43,8 +43,9 @@ function modifier_super_scepter:GetEffectName() return "particles/custom/items/s
 function modifier_super_scepter:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_super_scepter:OnDestroy()
 	if IsServer() then
+		local modifier_stats = "modifier_item_imba_ultimate_scepter_synth_stats"
 		if self:GetCaster():HasModifier(modifier_stats) and self:GetCaster():FindModifierByName(modifier_stats):GetStackCount() > 2 then
-			self:GetCaster():AddNewModifier(self:GetCaster(), nil, "modifier_super_scepter", {})
+			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_super_scepter", {})
 		else
 			if self:GetCaster():HasModifier("modifier_super_scepter") then
 				self:GetCaster():RemoveModifierByName("modifier_super_scepter")
