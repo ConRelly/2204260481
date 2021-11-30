@@ -1450,6 +1450,8 @@ QuickFix and update:
 * Fixed Warpath (Bristleback) stacks abuse
 * Fixed Arcane Supremacy (Rubick) removing Aghanim's effects
 * Fixed Desolator 3 price.
+* Fixed Spirit Guardian Super Scepter effect
+* "-hide" will hide non-keybinded passives
 
 
 

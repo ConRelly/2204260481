@@ -227,7 +227,7 @@ function AOHGameMode:OnPlayerChat(keys)
 	if keys.text == "-hide" then
 		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
 
-		for i = 0, hero:GetAbilityCount() do
+		for i = 6, hero:GetAbilityCount() - 1 do
 			local hAbility = hero:GetAbilityByIndex(i)
 			if hAbility and not hAbility:IsAttributeBonus() and not hAbility:IsHidden() and not string.find(hAbility:GetAbilityName(), "empty") and bit.band(hAbility:GetBehaviorInt(), DOTA_ABILITY_BEHAVIOR_PASSIVE) ~= 0 then
 				if hAbility:GetLevel() == hAbility:GetMaxLevel() then
@@ -239,7 +239,7 @@ function AOHGameMode:OnPlayerChat(keys)
 	if keys.text == "-unhide" then
 		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
 
-		for i = 0, hero:GetAbilityCount() do
+		for i = 6, hero:GetAbilityCount() - 1 do
 			local hAbility = hero:GetAbilityByIndex(i)
 			if hAbility and not hAbility:IsAttributeBonus() and hAbility:IsHidden() and not string.find(hAbility:GetAbilityName(), "empty") and bit.band(hAbility:GetBehaviorInt(), DOTA_ABILITY_BEHAVIOR_PASSIVE) ~= 0 then
 				if hAbility:GetLevel() == hAbility:GetMaxLevel() then

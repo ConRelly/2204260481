@@ -427,26 +427,25 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 			parent:AddNewModifier(parent, self, "modifier_spirit_guardian_bonus_dmg", {})
 		end
 		if HasSuperScepter(parent) then
-			local int_to_dmg = self:GetAbility():GetSpecialValueFor("bonus_int_dmg")
+			local int_to_dmg = self:GetSpecialValueFor("bonus_int_dmg")
 			bonus_int = math.floor(parent:GetIntellect() * lvl * int_to_dmg / 100)
 		end
 	end
 	local radius = 0
 	local damage = ((parent:GetBaseDamageMin() + parent:GetBaseDamageMax()) / 2) + bonus_int + bonus_dmg
 	--local creep_mult = 100--self:GetSpecialValueFor("creep_damage_pct")
-	local damageTable = {
-		attacker = self:GetParent(),
-		damage_type = DAMAGE_TYPE_MAGICAL,
-		ability = self,
-	}
 	local enemies = FindUnitsInRadius(self:GetParent():GetTeamNumber(), target:GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_DAMAGE_FLAG_NONE, FIND_ANY_ORDER	, false)
 	for _,enemy in pairs(enemies) do
-		damageTable.victim = enemy
-		damageTable.damage = damage
 		--if enemy:IsCreep() then
 		--	damageTable.damage = damage * (creep_mult/100)
 		--end
-		ApplyDamage(damageTable)
+		ApplyDamage({
+			victim = enemy,
+			attacker = self:GetParent(),
+			damage = damage,
+			damage_type = DAMAGE_TYPE_MAGICAL,
+			ability = self,
+		})
 		if IsServer() then
 			if HasSuperScepter(self:GetParent()) then
 				self:GetParent():PerformAttack(enemy, true, true, true, false, true, false, true)
