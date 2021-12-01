@@ -78,6 +78,7 @@ print("MONSTER_CONFIG: " .. MONSTER_CONFIG)
 --end
 if Cheats:IsEnabled() then 
 	MONSTER_CONFIG = "aoh2_config_siltbreaker_200809.txt"
+	Convars:SetInt("sv_cheats", 1)
 	print("CHeat mode")
 end	
 

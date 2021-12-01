@@ -3211,9 +3211,10 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_mars_spear_str_damage"		"+{s:value}% к ypoнy oт cилы для Spear Of Mars"
 
 	"DOTA_Tooltip_ability_mjz_medusa_mana_snake"					"Mana Snake"
-	"DOTA_Tooltip_ability_mjz_medusa_mana_snake_Description"		"Regenerates Medusa mana equivalent to 14% of attack damage dealt."
-	"DOTA_Tooltip_ability_mjz_medusa_mana_snake_Lore"				"The snake will absorb the enemy mana."
-	"DOTA_Tooltip_ability_mjz_medusa_mana_snake_mana_steal"			"%MANA STEAL:"	
+	"DOTA_Tooltip_ability_mjz_medusa_mana_snake_Description"		"Восстанавливает ману в размере %mana_steal%%% от урона за удар."
+	"DOTA_Tooltip_ability_mjz_medusa_mana_snake_Lore"		"Змея поглащающая ману врага."
+	"DOTA_Tooltip_ability_mjz_medusa_mana_snake_mana_steal"		"%Кража маны:"
+	
 	"DOTA_Tooltip_ability_mjz_medusa_split_shot"					"Split Shot"
 	"DOTA_Tooltip_ability_mjz_medusa_split_shot_Description"		"Medusa magically splits her shot into several arrows. These arrows deal a lower percent of her normal damage. The extra targets will not receive other attack effects (such as critical strike) and Unique Attack Modifiers."
 	"DOTA_Tooltip_ability_mjz_medusa_split_shot_Lore"				"All who encounter the cursed Gorgon will feel her rage."

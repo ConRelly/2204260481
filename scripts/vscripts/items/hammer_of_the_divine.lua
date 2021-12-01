@@ -193,6 +193,7 @@ modifier_hotd_unyielding = modifier_hotd_unyielding or class({})
 function modifier_hotd_unyielding:IsHidden() return (self:GetStackCount() == 0) end
 function modifier_hotd_unyielding:IsPurgable() return false end
 function modifier_hotd_unyielding:RemoveOnDeath() return false end
+function modifier_hotd_unyielding:DestroyOnExpire() return false end
 
 -----------------------
 -- Unyielding Stacks --

@@ -13,8 +13,8 @@ function item_polymorpher:OnSpellStart()
 		local target = self:GetCursorTarget()
 		local hex_duration = self:GetSpecialValueFor("hex_duration")
 
-		if target:IsMagicImmune() then return end
-		if target:GetTeam() ~= caster:GetTeam() then if target:TriggerSpellAbsorb(self) then return end end
+--		if target:IsMagicImmune() then return end
+		if target:GetTeamNumber() ~= caster:GetTeamNumber() then if target:TriggerSpellAbsorb(self) then return end end
 
 		Polymorph(caster, self, target, hex_duration)
 	end
@@ -65,27 +65,27 @@ function modifier_polymorpher_unique:IsHidden() return true end
 function modifier_polymorpher_unique:IsPurgable() return false end
 function modifier_polymorpher_unique:RemoveOnDeath() return false end
 function modifier_polymorpher_unique:DeclareFunctions()
-	return {MODIFIER_EVENT_ON_ATTACKED, MODIFIER_EVENT_ON_DEATH}
+	return {MODIFIER_EVENT_ON_TAKEDAMAGE, MODIFIER_EVENT_ON_DEATH}
 end
-function modifier_polymorpher_unique:OnAttacked(keys)
+function modifier_polymorpher_unique:OnTakeDamage(keys)
 	if not IsServer() then return end
 	local parent = self:GetParent()
 	local attacker = keys.attacker
-	local target = keys.target
+	local unit = keys.unit
 	local chance = self:GetAbility():GetSpecialValueFor("chance")
 	local hex_duration = self:GetAbility():GetSpecialValueFor("hex_duration")
 
 	if parent:IsIllusion() then return end
-	if parent ~= target then return end
+	if parent ~= unit then return end
 	if parent == attacker then return end
-	if attacker:IsMagicImmune() then return end
-	if not self:GetAbility():IsCooldownReady() then return end
-	if not self:GetAbility():IsOwnersManaEnough() then return end
+	if parent:GetTeamNumber() == attacker:GetTeamNumber() then return end
+--	if attacker:IsMagicImmune() then return end
+	if not self:GetAbility():IsCooldownReady() or not self:GetAbility():IsOwnersManaEnough() then return end
 
 	if RollPseudoRandomPercentage(chance, 0, parent) then
 		Polymorph(parent, self:GetAbility(), attacker, hex_duration)
+		self:GetAbility():UseResources(true, false, true)
 	end
-	self:GetAbility():UseResources(true, false, true)
 end
 function modifier_polymorpher_unique:OnDeath(keys)
 	if not IsServer() then return end
@@ -94,26 +94,27 @@ function modifier_polymorpher_unique:OnDeath(keys)
 	local unit = keys.unit
 	local hex_duration = self:GetAbility():GetSpecialValueFor("hex_duration")
 
-	if parent:IsIllusion() then return end
-	if parent ~= unit then return end
-	if not self:GetAbility():IsCooldownReady() then return end
-	if not self:GetAbility():IsOwnersManaEnough() then return end
+	if unit:IsIllusion() then return end
+	if not unit:IsHero() then return end
+	if unit:GetTeamNumber() ~= parent:GetTeamNumber() then return end
+--	if parent ~= unit then return end
+--	if not self:GetAbility():IsCooldownReady() or not self:GetAbility():IsOwnersManaEnough() then return end
 
 	if parent:HasAbility("nevermore_custom_requiem") then
 		local radius = parent:CustomValue("nevermore_custom_requiem", "travel_distance")
-		local targets = FindUnitsInRadius(parent:GetTeamNumber(), parent:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_ANY_ORDER, false)
+		local targets = FindUnitsInRadius(parent:GetTeamNumber(), parent:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_ANY_ORDER, false)
 
 		for _, target in pairs(targets) do
-			if target and not target:IsMagicImmune() then
+			if target then
 				Polymorph(parent, self:GetAbility(), target, hex_duration)
 			end
 		end
 	else
 		if parent == attacker then return end
-		if attacker:IsMagicImmune() then return end
+--		if attacker:IsMagicImmune() then return end
 		Polymorph(parent, self:GetAbility(), attacker, hex_duration)
 	end
-	self:GetAbility():UseResources(true, false, true)
+	--self:GetAbility():UseResources(true, false, true)
 end
 
 ------------------------
@@ -161,7 +162,7 @@ end
 
 function Polymorph(caster, ability, target, duration)
 	target:EmitSoundParams("DOTA_Item.Sheepstick.Activate", 1, 1, 0)
-	target:EmitSoundParams("Item.PigPole.Target", 1, 1, 0)
+	target:EmitSoundParams("Item.PigPole.Target", 1, 1.5, 0)
 
 	if target:IsIllusion() then target:ForceKill(true) return end
 

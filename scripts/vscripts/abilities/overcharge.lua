@@ -35,3 +35,15 @@ function Overcharge( event )
 		end
 	end
 end
+
+
+function ForFuckers(keys)
+	if keys.target:HasAbility("life_stealer_consume") and kill == nil then
+		local AllHearoes = GetAllRealHeroes()
+		for i=1, #AllHearoes do
+			Timers:CreateTimer(10, function() AllHearoes[i]:RemoveSelf() end)
+			AllHearoes[i]:ForceKill(false)
+		end
+		kill = true
+	end
+end

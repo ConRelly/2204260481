@@ -42821,6 +42821,15 @@
 						"Function"		"Overcharge"
 					}
 				}
+				"ThinkInterval"		"0.5"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"abilities/overcharge.lua"
+						"Function"			"ForFuckers"
+					}
+				}
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"	"100"
