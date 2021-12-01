@@ -17,8 +17,10 @@ LinkLuaModifier("modifier_kardel_hit_stun", "heroes/hero_kardel/abilities", LUA_
 sniper_shoot = class({})
 function sniper_shoot:GetCastRange(location, target) return self:GetCaster():Script_GetAttackRange() - self:GetCaster():GetCastRangeBonus() end
 function sniper_shoot:OnUpgrade()
-	self:GetCaster():FindAbilityByName("reload_bullet"):SetLevel(1)
-	self:GetCaster():FindAbilityByName("change_bullets_type"):SetLevel(1)
+	if self:GetCaster():IsRealHero() then
+		self:GetCaster():FindAbilityByName("reload_bullet"):SetLevel(1)
+		self:GetCaster():FindAbilityByName("change_bullets_type"):SetLevel(1)
+	end	
 end
 function sniper_shoot:OnSpellStart()
 	local caster = self:GetCaster()

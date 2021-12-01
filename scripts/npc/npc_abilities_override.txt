@@ -20043,6 +20043,124 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"ItemPurchasable"               "0"
+	}
+
+	"item_helm_of_the_overlord"
+	{
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"45"
+		
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+		"ItemCost"						"6325"
+		"ItemPurchasable"               "0"
+		"ItemShopTags"					"damage;armor;unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"hoto;helm of the overlord"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_stats"			"7"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"7"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_regen"			"7"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_min"			"1800"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed_base"			"400"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bounty_gold"			"250"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"creep_bonus_damage"			"80"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"creep_bonus_hp_regen"			"12"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"creep_bonus_mp_regen"			"4"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"creep_bonus_armor"			"8"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"model_scale"			"20"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"count_limit"			"1"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor_aura"		"3.0"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mana_regen_aura"		"1.75"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifesteal_aura"			"15"
+			}
+			"16"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_aura"			"18"
+			}
+			"17"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"	"1200"
+			}
+		}
 	}
 
 // Black King Bar

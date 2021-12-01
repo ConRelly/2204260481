@@ -41113,17 +41113,17 @@
 		"01"
 		{
 			"var_type"		  "FIELD_FLOAT"
-			"str_stack"			"0.7"
+			"str_stack"			"1.0"
 		}
 		"02"
 		{
 			"var_type"		  "FIELD_FLOAT"
-			"agi_stack"			"0.7"
+			"agi_stack"			"1.0"
 		}
 		"03"
 		{
 			"var_type"		  "FIELD_FLOAT"
-			"int_stack"			"0.3"
+			"int_stack"			"0.5"
 		}		
 	}
 
