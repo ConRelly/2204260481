@@ -284,6 +284,10 @@ function IsExcludeAbility(ability)
 		"item_spellbook_destruction",
 		"item_blink",
 		"item_custom_refresher",
+		"item_random_get_ability3",
+		"item_random_get_ability_spell",
+		"item_random_get_ability",
+		"item_random_get_ability_onlvl",
 -- Abilities
 		"phoenix_fire_spirits",
 		"mjz_phoenix_sun_ray",
