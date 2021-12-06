@@ -390,6 +390,7 @@
 	"DOTA_Tooltip_ability_item_titan_relic_bonus_ms"				"%+$move_speed"
 	"DOTA_Tooltip_ability_item_titan_relic_debuff_amp"				"%+$debuff_amp"
 	"DOTA_Tooltip_ability_item_titan_relic_buff_amp"				"%+$buff_amp"
+	"DOTA_Tooltip_ability_item_titan_relic_note0"                   "Directly increases Durations of debuffs and buffs"
 
 
 	"DOTA_Tooltip_ability_item_aghanims_fragment"				"Aghanim's Fragment"
@@ -9697,7 +9698,7 @@ Contains all random skills"
 		"DOTA_Tooltip_ability_special_bonus_mjz_meepo_poof_01"    "Poof Gives a Poof Stack every time you use the spell"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_mjz_phoenix_icarus_dive_cdr" "Reduces Icarus Dive CD by {s:value} seconds"
-
+		"DOTA_Tooltip_ability_special_bonus_unique_winter_wyvern_endless_01"    "Endless wisdom increases your mana by {s:value} for every stack"
 
 // Custom Talents
 

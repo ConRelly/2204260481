@@ -84,7 +84,7 @@ function mjz_broodmother_spawn_spiderlings:SpawnSpiderlings(hTarget)
             searing:UpgradeAbility(true)
             searing:SetLevel( hCaster:FindAbilityByName("mjz_broodmother_spawn_spiderlings"):GetLevel() )
 			if RandomInt(0,100) < chance_strike then
-				local true_strike = target:AddAbility("true_strike")
+				local true_strike = spider:AddAbility("true_strike")
 				true_strike:UpgradeAbility(true)
 			end
 
@@ -97,7 +97,7 @@ function mjz_broodmother_spawn_spiderlings:SpawnSpiderlings(hTarget)
 			while not not_same_abilities do
 				local newAbilityNameb = GetRandomAbilityName(hero)
 				if newAbilityNameb ~= newAbilityName then
-					link_b = target:AddAbility(newAbilityNameb)
+					link_b = spider:AddAbility(newAbilityNameb)
 					not_same_abilities = true
 				end
 			end

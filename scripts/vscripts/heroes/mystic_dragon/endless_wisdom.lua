@@ -9,11 +9,27 @@ modifier_mystic_dragon_endless_wisdom_buff = class({
 	IsBuff                  = function(self) return true end,
 	RemoveOnDeath 			= function(self) return false end,
 	DeclareFunctions		= function(self) return 
-		{MODIFIER_PROPERTY_STATS_INTELLECT_BONUS} end,
+		{MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_MANA_BONUS} end,
 })
 
+function modifier_mystic_dragon_endless_wisdom_buff:OnCreated()
+	--if IsServer() then
+	if self:GetAbility() then  
+		self.mana_bonus = talent_value(self:GetParent(), "special_bonus_unique_winter_wyvern_endless_01")
+	end
+	self:StartIntervalThink(5)
+	--end	
+end	
+function modifier_mystic_dragon_endless_wisdom_buff:OnIntervalThink()
+	self:OnCreated()
+	--self:StartIntervalThink(-1)
+end	
 function modifier_mystic_dragon_endless_wisdom_buff:GetModifierBonusStats_Intellect()
-	return self:GetStackCount()*self:GetAbility():GetSpecialValueFor("grow_int")
+	if self:GetAbility() then return self:GetStackCount()*self:GetAbility():GetSpecialValueFor("grow_int") end
+end
+
+function modifier_mystic_dragon_endless_wisdom_buff:GetModifierManaBonus()
+	if self.mana_bonus then return self:GetStackCount() * self.mana_bonus end
 end
 
 --Increases the stack count of Flesh Heap.

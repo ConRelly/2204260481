@@ -38053,6 +38053,12 @@
 				"var_type"					"FIELD_FLOAT"
 				"stack_interval"			"10"
 			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_mana"				"0"
+				"LinkedSpecialBonus"		"special_bonus_unique_winter_wyvern_endless_01"
+			}			
 		}
 		"Modifiers"
 		{
@@ -38070,6 +38076,22 @@
 						"Function"					"StackCountIncrease"
 					}
 				}
+			}
+		}
+	}
+
+// endless talent
+	"special_bonus_unique_winter_wyvern_endless_01"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"value"			"25"
 			}
 		}
 	}

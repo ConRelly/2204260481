@@ -319,6 +319,7 @@ function IsExcludeAbility(ability)
 		"hw_sharpshooter",
 		"hw_sharpshooter_release",
 		"invoker_invoke",
+		"phantom_lancer_phantom_edge",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

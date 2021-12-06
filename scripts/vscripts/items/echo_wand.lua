@@ -229,6 +229,7 @@ if IsServer() then
 		item_auto_cast = true,
 		item_auto_cast2 = true,
 		item_hammer_of_the_divine = true,
+		phantom_lancer_phantom_edge = true,
 		
 	}
 	local include_table = {

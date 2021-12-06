@@ -1456,6 +1456,15 @@ QuickFix and update:
 * And other stuff
 
 
+* Request By @Awesome complete:
+  	-Winter Wyvern has an extra ability, Endless wisdom and a new talent for that .
+* Fixed Broodmother Q spiderlings
+* Fixed the rare random skill book being multicasted.
+* Rebalanced Kardel sniper shot, decrease normal shot % and buffed the other 2.
+* Hard and part2 will give more hp and mr(slightly) to bosses.
+
+
+
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 

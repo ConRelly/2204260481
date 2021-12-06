@@ -52,11 +52,11 @@ function modifier_hard_mode_boss:GetModifierIncomingDamage_Percentage()
 end
 
 function modifier_hard_mode_boss:GetModifierMagicalResistanceBonus()
-	return 50
+	return 55
 end	
 
 function modifier_hard_mode_boss:GetModifierExtraHealthPercentage()
-    return 130
+    return 150
 end  
 
 function modifier_hard_mode_boss:GetModifierTotalDamageOutgoing_Percentage()

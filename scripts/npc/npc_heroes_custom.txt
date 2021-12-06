@@ -2130,10 +2130,11 @@
 
 		//"Ability5"			"mjz_general_mirror_image"
 		//"Ability6"			"mjz_winter_wyvern_ice_age"
+		"Ability5"          "mystic_dragon_endless_wisdom"
 		"Ability6"			"obsidian_destroyer_arcane_orb"
 		"Ability12"			"special_bonus_hp_2750"
 		"Ability15"         "special_bonus_spell_amplify_75"
-		"Ability16"			"special_bonus_mp_800"
+		"Ability16"			"special_bonus_unique_winter_wyvern_endless_01"
 		"Ability17"			"special_bonus_attack_speed_250"
 
 		"AttributeIntelligenceGain"		"9.1"
