@@ -28,14 +28,19 @@ function modifier_ancient_increase_stats:OnIntervalThink()
 					break
 				end
 			end
-			if AncientImmunity then
+			if AncientImmunity == true then
 				if not parent:HasModifier("modifier_invulnerable") then
 					parent:AddNewModifier(parent, nil, "modifier_invulnerable", {})
 				end
-			else
+			elseif AncientImmunity == false then
 				if parent:HasModifier("modifier_invulnerable") then
 					parent:RemoveModifierByName("modifier_invulnerable")
 				end
+			end
+		elseif AncientImmunity == true then
+			if parent:HasModifier("modifier_invulnerable") then
+				parent:RemoveModifierByName("modifier_invulnerable")
+				AncientImmunity = false
 			end
 		end
 
