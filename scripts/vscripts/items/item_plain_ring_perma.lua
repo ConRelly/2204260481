@@ -1,5 +1,11 @@
 require("lib/my")
 
+inv_duration = 6
+min_health = 25
+cooldown = 50
+cooldown_reduction = 10
+bonus_armor = 20
+
 LinkLuaModifier("modifier_item_plain_ring_perma", "items/item_plain_ring_perma.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_plain_ring_perma_armor", "items/item_plain_ring_perma.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_plain_ring_perma_invincibility", "items/item_plain_ring_perma.lua", LUA_MODIFIER_MOTION_NONE)
@@ -10,13 +16,6 @@ LinkLuaModifier("modifier_plain_ring_perma_up", "items/item_plain_ring_perma.lua
 function add_perma(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-
-	local cooldown = ability:GetSpecialValueFor("cooldown")
-	local cooldown_reduction = ability:GetSpecialValueFor("cooldown_reduction")
-	local inv_duration = ability:GetSpecialValueFor("inv_duration")
-	local bonus_armor = ability:GetSpecialValueFor("bonus_armor")
-	local min_health = ability:GetSpecialValueFor("min_health")
-	local health_threshold = ability:GetSpecialValueFor("health_threshold")
 	if caster:HasModifier("modifier_plain_ring_perma_up") then return end
 	if caster:IsHero() and not caster:HasModifier("modifier_arc_warden_tempest_double") then
 		if caster:HasModifier("modifier_item_plain_ring_perma") then
@@ -36,9 +35,9 @@ function add_perma(keys)
 			SendOverheadEventMessage(PlayerResource:GetPlayer(caster:GetPlayerOwnerID()), OVERHEAD_ALERT_GOLD, caster, ability:GetCost() * (33 / 100), nil)
 ]]
 		else
-			caster:AddNewModifier(caster, ability, "modifier_item_plain_ring_perma", {cooldown = cooldown, cooldown_reduction = cooldown_reduction, inv_duration = inv_duration, min_health = min_health, health_threshold = health_threshold, duration = -1})
-			local armor_modifier = caster:AddNewModifier(caster, ability, "modifier_item_plain_ring_perma_armor", {})
-			armor_modifier:SetStackCount(bonus_armor)
+			caster:AddNewModifier(caster, ability, "modifier_item_plain_ring_perma", {})
+			caster:AddNewModifier(caster, ability, "modifier_item_plain_ring_perma_armor", {})
+			caster:FindModifierByName("modifier_item_plain_ring_perma_armor"):SetStackCount(bonus_armor)
 		end
 		if ability:GetCurrentCharges() > 1 then
 			ability:SpendCharge()
@@ -59,54 +58,16 @@ function modifier_item_plain_ring_perma:IsHidden() return (self:GetStackCount() 
 function modifier_item_plain_ring_perma:IsPurgable() return false end
 function modifier_item_plain_ring_perma:RemoveOnDeath() return false end
 function modifier_item_plain_ring_perma:DeclareFunctions()
-	return {MODIFIER_PROPERTY_MIN_HEALTH}
+	return {MODIFIER_EVENT_ON_TAKEDAMAGE}
 end
-function modifier_item_plain_ring_perma:OnCreated(keys)
-	self.cooldown = keys.cooldown
-	self.cooldown_reduction = keys.cooldown_reduction
-	self.inv_duration = keys.inv_duration
-	self.min_health = keys.min_health
-	self.health_threshold = keys.health_threshold
 
+function modifier_item_plain_ring_perma:OnCreated()
 	if IsServer() then
-		self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_ring_invincibility_cd", {})
-	end
-	self:StartIntervalThink(FrameTime())
-end
-function modifier_item_plain_ring_perma:OnIntervalThink()
-	if IsServer() then
-		self.reincarnating = false
-		local parent = self:GetParent()
-		local aegis_charges = parent:FindModifierByName("modifier_aegis")
-		if aegis_charges and aegis_charges:GetStackCount() > 0 then return end
-		if parent:IsReincarnating() then self.reincarnating = true return end
-		if parent:FindModifierByName("modifier_ring_invincibility_cd"):GetStackCount() == 0 then
-			if parent:GetHealthPercent() < self.health_threshold then
---				if parent:GetHealth() <= 0 then
-					if parent:HasModifier("modifier_brewmaster_primal_split") then return end
-					if IsUndyingRdy(parent) then return end
---					parent:SetHealth(1)
-					parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_plain_ring_perma_invincibility", {min_health = self.min_health, duration = self.inv_duration})
-					local cooldown = self.cooldown
-					if parent:HasModifier("modifier_plain_ring_perma_up") then
-						cooldown = self.cooldown - self.cooldown_reduction
-					end
-					parent:FindModifierByName("modifier_ring_invincibility_cd"):SetStackCount(cooldown + 1)
-					parent:FindModifierByName("modifier_ring_invincibility_cd"):StartIntervalThink(1)
-					parent:FindModifierByName("modifier_ring_invincibility_cd"):OnIntervalThink()
-					self:StartIntervalThink(-1)
---				end
-			end
-		end
+		self.parent = self:GetParent()
+		self.ability = self:GetAbility()
+		self.parent:AddNewModifier(self.parent, self.ability, "modifier_ring_invincibility_cd", {})
 	end
 end
-function modifier_item_plain_ring_perma:GetMinHealth()
-	if self.reincarnating then return end
-	if self:GetParent():HasModifier("modifier_item_plain_ring_perma_invincibility") then return end
-	if self:GetParent():HasModifier("modifier_ring_invincibility_cd") then return end
-	return 1
-end
---[[
 function modifier_item_plain_ring_perma:OnTakeDamage(keys)
 	if IsServer() then
 		local aegis_charges = self.parent:FindModifierByName("modifier_aegis")
@@ -122,10 +83,10 @@ function modifier_item_plain_ring_perma:OnTakeDamage(keys)
 					if self.parent:HasModifier("modifier_brewmaster_primal_split") then return end
 					if IsUndyingRdy(unit) then return end
 					unit:SetHealth(1)
-					unit:AddNewModifier(unit, self:GetAbility(), "modifier_item_plain_ring_perma_invincibility", {min_health = self.min_health, duration = self.inv_duration})
-					local cooldown = self.cooldown
+					unit:AddNewModifier(unit, self.ability, "modifier_item_plain_ring_perma_invincibility", {duration = inv_duration})
+					local cooldown = cooldown
 					if unit:HasModifier("modifier_plain_ring_perma_up") then
-						cooldown = self.cooldown - self.cooldown_reduction
+						cooldown = cooldown - cooldown_reduction
 					end
 					unit:FindModifierByName("modifier_ring_invincibility_cd"):SetStackCount(cooldown + 1)
 					unit:FindModifierByName("modifier_ring_invincibility_cd"):StartIntervalThink(1)
@@ -135,7 +96,6 @@ function modifier_item_plain_ring_perma:OnTakeDamage(keys)
 		end
 	end
 end
-]]
 function IsUndyingRdy(unit)
 	local Item = unit:GetItemInSlot(16)
 	if Item ~= nil and IsValidEntity(Item) then
@@ -144,9 +104,6 @@ function IsUndyingRdy(unit)
 				return true
 			end	
 		end	
-	end
-	if unit:HasModifier("modifier_item_helm_of_the_undying_active") then
-		return true
 	end
 	return false	
 end
@@ -178,11 +135,11 @@ end
 function modifier_item_plain_ring_perma_invincibility:GetMinHealth() return 1 end
 function modifier_item_plain_ring_perma_invincibility:GetModifierIncomingDamage_Percentage() return -400 end
 function modifier_item_plain_ring_perma_invincibility:GetModifierTotal_ConstantBlock(params) return params.damage end
-function modifier_item_plain_ring_perma_invincibility:OnCreated(keys)
-	self.min_health = keys.min_health
+function modifier_item_plain_ring_perma_invincibility:OnCreated()
 	if IsServer() then
 		local parent = self:GetParent()
 		parent:FindModifierByName("modifier_item_plain_ring_perma"):SetStackCount(1)
+		self.min_health = min_health
 	end
 end
 function modifier_item_plain_ring_perma_invincibility:OnDestroy()
@@ -214,8 +171,6 @@ function modifier_ring_invincibility_cd:OnIntervalThink()
 		if self:GetStackCount() == 0 then
 			self:GetParent():FindModifierByName("modifier_item_plain_ring_perma"):SetStackCount(0)
 			self:StartIntervalThink(-1)
-			self:GetParent():FindModifierByName("modifier_item_plain_ring_perma"):StartIntervalThink(FrameTime())
-			self:GetParent():FindModifierByName("modifier_item_plain_ring_perma"):OnIntervalThink()
 		end
 	end
 end
