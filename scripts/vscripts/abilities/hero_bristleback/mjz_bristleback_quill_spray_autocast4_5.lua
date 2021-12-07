@@ -67,6 +67,7 @@ function modifier_class:OnIntervalThink()
                 if IsChanneling(parent) then return nil end		-- 施法中
                 if parent:IsSilenced() then return nil end		-- 沉默中
                 if parent:HasModifier("modifier_brewmaster_primal_split") and not target_ability:GetAbilityName() ~= "brewmaster_primal_split" then return nil end
+				if target_ability:GetCooldown(target_ability:GetLevel()) <= 0 then return end
 
                 local radius_auto = target_ability:GetCastRange(parent:GetAbsOrigin(), parent) + caster:GetCastRangeBonus() - 50
                 if radius_auto < 100 then

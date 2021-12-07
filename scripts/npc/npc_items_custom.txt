@@ -1768,6 +1768,97 @@
 	}
 }
 
+// Broken Wings
+	"item_broken_wings"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/broken_wings"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/broken_wings"
+		"ItemShopTags"					"agility;feather;wings;unique"
+		"ItemQuality"					"epic"
+//		"ItemAliases"					"desolator 2"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_range"	"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_cast_range"		"500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"attack_cd"				"0.5"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"feather_max_stacks"	"50"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"feather_spell_amp"		"5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"feather_agi"			"25"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"feather_dmg_red"		"2"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"feather_add_dmg"		"175"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"feather_cd"			"1"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"divinity_duration"		"5"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"wind_rapier_chance"	"15"
+			}
+			"12"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"mimic_mace_attack_rate"	"0.15"
+			}
+		}
+	}
+// Broken Wings Recipe
+	"item_recipe_broken_wings"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"3000"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_broken_wings"
+		"ItemRequirements"
+		{
+			"01"						"item_chest_3;item_mjz_butterfly_green_3;item_branch_component"
+		}
+	}
+
 // Desolator
 	"item_desolator_custom"
 	{
@@ -3087,28 +3178,33 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"cooldown"					"50" // hard
+			"cooldown"					"50"
 		}
 		"02"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"8" // hard
+			"var_type"					"FIELD_INTEGER"
+			"cooldown_reduction"		"10"
 		}
 		"03"
 		{
+			"var_type"					"FIELD_FLOAT"
+			"inv_duration"				"6"
+		}
+		"04"
+		{
 			"var_type"					"FIELD_INTEGER"
-			"aura_armor"			"20"	//hardcoded(tooltip purpose)
+			"bonus_armor"				"20"
 		}
 		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"aura_radius"					"7800" // hard
+			"min_health"				"25"
 		}
-		"05"
+		"06"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_damage"					"15" //hardcoded
-		}				
+			"health_threshold"			"10"
+		}
 	}
 	"OnEquip"
 	{
@@ -5674,42 +5770,40 @@
 		}
 	}
 
-// Recipe: Aghanim's Synth
-	"item_recipe_ultimate_scepter_synth"
+// Aghanim's Scepter 2
+	"item_ultimate_scepter_2"
 	{
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"recipe"
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"ItemCost"						"1600"
-		"ItemShopTags"					""
 		"ItemPurchasable"				"0"
+	}
+// Recipe: Aghanim's Scepter 2
+	"item_recipe_ultimate_scepter_2"
+	{
+		"ItemCost"						"1600"	
+		"ItemShopTags"					""
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_ultimate_scepter_synth"
+		"ItemPurchasable"				"0"
+		"ItemResult"					"item_ultimate_scepter_2"
 		"ItemRequirements"
 		{
 			"01"						"item_ultimate_scepter"
 		}
 	}
+
 // Aghanim's Blessing
 	"item_ultimate_scepter_synth"
 	{
-		"BaseClass"						"item_datadriven"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_aghanim_synth"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName" 			"ultimate_scepter"
 		"CastOnPickup"					"1"
-		"ItemPurchasable"				"0"
-		"AbilityCastRange"				"0"
+		"ItemPurchasable"				"1"
 		"AbilityCastPoint"				"0"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemAliases"					"aghanim; scepter; ultimate"
-		"ItemStackable"					"0"
-		"ItemPermanent"					"0"
-		"ItemInitialCharges"			"1"
-		"ItemRequiresCharges" 			"1"
-		"SideShop"						"0"
 		"MaxUpgradeLevel"				"2"
 		"ItemBaseLevel"					"2"
 		"AbilitySpecial"
@@ -5717,7 +5811,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"10"
+				"bonus_all_stats"		"50"
 			}
 			"02"
 			{
@@ -5730,50 +5824,22 @@
 				"bonus_mana"			"175"
 			}
 		}
-		"OnEquip"
+	}
+// Recipe: Aghanim's Blessing
+	"item_recipe_ultimate_scepter_synth"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"recipe"
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName" 			"item_recipe_ultimate_scepter_2"
+		"ItemCost"						"1600"
+		"ItemShopTags"					""
+		"ItemPurchasable"				"1"
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_ultimate_scepter_synth"
+		"ItemRequirements"
 		{
-			"RunScript"
-			{
-				"ScriptFile"			"items/aghanim.lua"
-				"Function"				"AghanimsSynthCast"
-				"modifier_synth"		"modifier_item_ultimate_scepter_consumed"
-				"modifier_stats"		"modifier_item_ultimate_scepter_synth_stats"
-			}
-		}
-		"Modifiers"
-		{
-			"modifier_item_ultimate_scepter_synth"
-			{
-				"Passive"				"1"
-				"IsHidden"				"1"
-				"IsBuff"				"1"
-				"IsPurgable"			"0"
-				"Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
-					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%bonus_health"
-					"MODIFIER_PROPERTY_MANA_BONUS" 				"%bonus_mana"
-				}
-			}
-			"modifier_item_ultimate_scepter_synth_stats"
-			{
-				"Passive"				"0"
-				"IsHidden"				"1"
-				"IsBuff"				"1"
-				"IsPurgable"			"0"
-				"Attributes"			"MODIFIER_ATTRIBUTE_PERMANENT"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
-					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%bonus_health"
-					"MODIFIER_PROPERTY_MANA_BONUS" 				"%bonus_mana"
-				}
-			}
+			"01"						"item_ultimate_scepter"
 		}
 	}
 
@@ -5896,7 +5962,6 @@
 			{
 				"ScriptFile"			"items/item_aghanim_synth.lua"
 				"Function"				"AghanimsSynthCast"
-				"modifier_synth"		"modifier_item_ultimate_scepter_consumed"
 				"modifier_stats"		"modifier_item_imba_ultimate_scepter_synth_stats"
 			}
 		}
@@ -34934,6 +34999,26 @@
 		}
 	}
 
+// Hammer Of The Divine
+	"item_hammer_of_the_divine_dummy"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"custom/hammer_of_the_divine"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"ItemShopTags"					"damage;str;armor;unique;hard_to_tag"
+		"ItemQuality"					"artifact"
+		"ItemAliases"					"hotd"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"				"1"
+		"ItemKillable"					"1"
+		"ItemSellable"					"0"
+		"ItemCost"						"1000000"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"AbilitySpecial"
+		{
+		}
+	}
 // Hammer Of The Divine
 	"item_hammer_of_the_divine"
 	{

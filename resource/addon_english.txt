@@ -1188,6 +1188,12 @@
 	"DOTA_Tooltip_modifier_hotd_pure_divinity_armor_corruption"					"Pure Armor Corruption"
 	"DOTA_Tooltip_modifier_hotd_pure_divinity_armor_corruption_Description"		"Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
 
+	"DOTA_Tooltip_ability_item_hammer_of_the_divine_dummy"					"<font color='#7E09E6'>Hammer Of The Divine</font>"
+	"DOTA_Tooltip_ability_item_hammer_of_the_divine_dummy_Description"		"<h1>Active: Pure Divinity</h1> You gain True Strike and Armor Corruption equal of your bonus Strength, at the cost of removing Armor from self. \n<h1>Passive: Unyielding</h1> Chance on hit increase Base Strength. <br><br>Max stacks: 7 \n<h1>Passive: Overwhelming Force</h1> Right before attack have a chance to increase bonus total DMG. \n<h1><font color='#EC3D06'>Strength Superiority</font></h1> <font color='#EC3D06'>Only works when your main attribute is Strength: sets the base attack time to 1.2.</font> \n<h1><font color='#E6BA49'>UP: Luminosity</font></h1>Unyielding: Procs every 8 attacks <br>Overwhelming Force: Procs every 8 attacks \n<h1><font color='#DC5663'>UP: Chaos Strike</font></h1>Unyielding: Increases chance to 4%% <br>Overwhelming Force: Increases chance to 12%% \n<h1><font color='#733A4C'>UP: Grow Strong</font></h1>Unyielding: Increases chance by 3%% \n\n <font color='#red'>This item is only an example and is not valid (indicators and refinements are described in the main item)</font>"
+	"DOTA_Tooltip_ability_item_hammer_of_the_divine_dummy_lore"		"When The Contradiction Of Order & Chaos Combine, A Special Force Is Formed Capable Of Shattering The Thickest Of Armors...<br>---------------------<br><font color='#7E09E6'>Idea by ☆ Abuleil ☆</font>"
+	"DOTA_Tooltip_ability_item_hammer_of_the_divine_dummy_note0"		"1) Item would drop from inventory if main attribute is not Strength can ONLY be held by courier."
+	"DOTA_Tooltip_ability_item_hammer_of_the_divine_dummy_note1"		"2) If hero have <font color='#E6BA49'>Luminosity</font> and <font color='#DC5663'>Chaos Strike</font> Overwhelming Force procs every 6 attacks and have 20%% chance together."
+
 	"DOTA_Tooltip_ability_item_wraith_rapier"					"Wraith Rapier"
 	"DOTA_Tooltip_ability_item_wraith_rapier_description"       "Press <font color='#FF3721'>Alt</font> For more Info"
 	"DOTA_Tooltip_ability_item_wraith_rapier_note0"		"Non-wraith heroes receive <font color='#e03e2e'>negative bonuses</font>."
@@ -1200,6 +1206,18 @@
 	"DOTA_Tooltip_ability_item_witless_shako_note0"				"Is part of <font color='#7E09E6'>Hammer Of The Divine</font>"
 	"DOTA_Tooltip_ability_item_resurection_pendant_note1"		"<br>Is part of <font color='#7E09E6'>Hammer Of The Divine</font>"
 	"DOTA_Tooltip_ability_item_desolator_2_note1"				"<br>Is part of <font color='#7E09E6'>Hammer Of The Divine</font>"
+
+	"DOTA_Tooltip_ability_item_broken_wings"					"Broken Wings"
+	"DOTA_Tooltip_ability_item_broken_wings_Description"		"<h1>Passive: Restoration of Feathers</h1> Gives a Feather Stick when landing an attack. <br>Cooldown: %attack_cd%s <br><br> Feather Stack: <br> - %feather_spell_amp%%% Spell Amplification <br> - %feather_agi% Agility <br> - %feather_dmg_red%%% Reduced Total Attack Damage <br><br> Max stacks: %feather_max_stacks% \n<h1>Passive: Scree'auk’s Power</h1> Dealing Magic or Pure Damage expends one Feather Stack charge to deal %feather_add_dmg%%% damage. <br><br>Cooldown: %feather_cd%s \n<h1>Passive: Divinity</h1> When receiving the maximum number of effects, Feather Stacks - enters Divinity. During Divinity, cooldown and Feather Stack сonsumption from Scree'auk's Power are removed. Additionally, ALL mana costs are removed for the duration. After Divinity ends you lose all of your Feather Stacks. <br><br> Duration: %divinity_duration%s \n<h1><font color='#00FF00'>UP: Wind Rapier</font></h1> When receiving a Feather Stack, there is a %wind_rapier_chance%%% chance of also getting a Wind Stack (allows to exceed the limit) \n<h1><font color='#00FF00'>UP: Mimic Mace</font></h1> Sets attack rate to %mimic_mace_attack_rate% \n<h1><font color='#7D9C00'>UP: Ultimate Ethereal Blade</font></h1> Reduces Restoration of Feathers Cooldown by half"
+	"DOTA_Tooltip_ability_item_broken_wings_Lore"					"The wings have a mind of their own, they wish to be whole again."
+	"DOTA_Tooltip_ability_item_broken_wings_Note0"					"1) The effects of multiple Broken Wings don't stack"
+	"DOTA_Tooltip_ability_item_broken_wings_Note1"					"2) Scree'auk’s Power is affected by CDR"
+	"DOTA_Tooltip_ability_item_broken_wings_Note2"					"3) 'ALL mana costs' includes the mana costs of Arcane Crit"
+	"DOTA_Tooltip_ability_item_broken_wings_bonus_cast_range"		"+$cast_range"
+	"DOTA_Tooltip_ability_item_broken_wings_bonus_attack_range"		"+$attack_range"
+	"DOTA_Tooltip_modifier_broken_wings_feather_stacks"					"Feather Stacks"
+	"DOTA_Tooltip_modifier_broken_wings_feather_stacks_Description"		"Spell Amplification increased by %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% <br> Agility increased by %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS% <br> Total Attack Damage reduced by %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%%"
+	"DOTA_Tooltip_modifier_broken_wings_divinity"				"Divinity"
 
 //###########################################################################################################################
 	
@@ -1426,8 +1444,10 @@
 	
 	"dota_tooltip_ability_item_ultimate_scepter_synth"					"Aghanim's Blessing"
 	"dota_tooltip_ability_item_ultimate_scepter_synth_description"		"Activate to consume the scepter, granting you the benefits of an Aghanim's Scepter as a permanent buff.\n\n<font color='#00FF40'>Can only be used once.</font>"
-	"dota_tooltip_modifier_item_ultimate_scepter_consumed"					"Aghanim's Scepter Blessing"
-	"dota_tooltip_modifier_item_ultimate_scepter_consumed_description"		"Permanently granted all benefits from Aghanim's Scepter: Ultimate Upgrade, +10 to all attributes, +175 health, +175 mana"
+	"DOTA_Tooltip_ability_item_ultimate_scepter_synth_Lore"		"The scepter of a wizard with demigod-like powers."
+//	"DOTA_Tooltip_ability_item_ultimate_scepter_synth_bonus_all_stats"		"+$all"
+//	"DOTA_Tooltip_ability_item_ultimate_scepter_synth_bonus_health"			"+$health"
+//	"DOTA_Tooltip_ability_item_ultimate_scepter_synth_bonus_mana"			"+$mana"
 
 	"DOTA_Tooltip_Ability_item_aghanims_shard2"					"Aghanim's Shard"
 	"DOTA_Tooltip_ability_item_aghanims_shard2_Description"		"Upgrades one of your abilities."
@@ -5908,7 +5928,7 @@ Upgradeable by Aghanim's Scepter."
 "DOTA_Tooltip_modifier_chen_custom_holy_persuasion_buff_description"		"Persuaded to Chen's cause."
 
 "DOTA_Tooltip_ability_kill_me_master"					"Kill Me Master"
-"DOTA_Tooltip_ability_kill_me_master_Description"		"Kills this minion in the most brutal way."
+"DOTA_Tooltip_ability_kill_me_master_Description"		"Kills this minion in the most brutal way. \n<h2>Allows you to kill if the ability is enabled</h2>"
 
 "DOTA_Tooltip_ability_update_chen_holy_persuasion"					"Command: Traning"
 "DOTA_Tooltip_ability_update_chen_holy_persuasion_Description"		"Chen calls all his controlled creatures and orders them to retrain their abilities and recalculate their characters."
@@ -7335,7 +7355,7 @@ Nimbus is not recasted by Thundergod's Wrath."
 
 
 "DOTA_Tooltip_ability_item_plain_perma"							"Gold Ring Extract"
-"DOTA_Tooltip_ability_item_plain_perma_Description"				"<h1>Consume: Extracted Essence</h1>Permanently grants Hidden Power to the wielder. Gives %bonus_armor% bonus armor.<br><br>When reused, it reduces Hidden Power CD by 10 seconds. <br><font color='#EC7E68'>It can be used once.</font> \n<h1>Hidden Power</h1>Upon taking fatal damage you become temporarily invincible. <br><br>Cooldown: %cooldown% seconds"
+"DOTA_Tooltip_ability_item_plain_perma_Description"				"<h1>Consume: Extracted Essence</h1>Permanently grants Hidden Power to the wielder. Gives %bonus_armor% bonus armor.<br><br>When reused, it reduces Hidden Power CD by %cooldown_reduction% seconds. <br><font color='#EC7E68'>It can be used once.</font> \n<h1>Hidden Power</h1>Upon taking fatal damage you become temporarily invincible. <br><br>Cooldown: %cooldown% seconds"
 "DOTA_Tooltip_ability_item_plain_perma_note0"			"Does not prevent suicide."
 "DOTA_Tooltip_modifier_item_plain_ring_perma"					"Hidden Power"
 "DOTA_Tooltip_ability_item_plain_perma_Lore"				"<font color='#FFC300'>Order of AutoTrigger invulnerability/reincarnation: Abilities/Talents -> Undying Helm -> Consumable Aegis -> Gold Ring -> Aegis of Infinity</font>"
@@ -9699,6 +9719,7 @@ Contains all random skills"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_mjz_phoenix_icarus_dive_cdr" "Reduces Icarus Dive CD by {s:value} seconds"
 		"DOTA_Tooltip_ability_special_bonus_unique_winter_wyvern_endless_01"    "Endless wisdom increases your mana by {s:value} for every stack"
+
 
 // Custom Talents
 

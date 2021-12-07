@@ -1458,10 +1458,15 @@ QuickFix and update:
 
 * Request By @Awesome complete:
   	-Winter Wyvern has an extra ability, Endless wisdom and a new talent for that .
+* Request by @Siliatra:
+	- Added new item Broken Wings 
 * Fixed Broodmother Q spiderlings
 * Fixed the rare random skill book being multicasted.
 * Rebalanced Kardel sniper shot, decrease normal shot % and buffed the other 2.
 * Hard and part2 will give more hp and mr(slightly) to bosses.
+* Extreme measures have been taken so that the Aghanim's effects is not removed
+* Multi Autocast: cannot autocast 0 CD abilities
+* Added dummy item of Hammer of the Divine in the shop (We will probably need to make a separate window (not in shop) with all the secret items)
 
 
 

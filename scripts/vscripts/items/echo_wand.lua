@@ -119,7 +119,14 @@ function modifier_item_echo_wand:GetModifierFixedAttackRate()
 		if parent:HasAbility(wd_ult) then
 			rate = 0.1
 		end		
-	end		
+	end
+	if parent:HasModifier("modifier_broken_wings") then
+		local BrokenWings = parent:FindItemInInventory("item_broken_wings")
+		rate = BrokenWings:GetSpecialValueFor("mimic_mace_attack_rate")
+		if parent:HasAbility(wd_ult) then
+			rate = 0.1
+		end
+	end
 	return rate
 end
 

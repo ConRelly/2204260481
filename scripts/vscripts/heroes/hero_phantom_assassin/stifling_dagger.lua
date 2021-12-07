@@ -54,7 +54,6 @@ end
 
 function pa_stifling_dagger:LaunchDagger(enemy, super_scepter)
 	if enemy == nil then return end
-	self.super_scepter = super_scepter
 	local dagger_speed = self:GetSpecialValueFor("dagger_speed") + talent_value(self:GetCaster(), "special_bonus_pa_stifling_dagger_speed")
 
 	if super_scepter then
@@ -70,21 +69,22 @@ function pa_stifling_dagger:LaunchDagger(enemy, super_scepter)
 		iMoveSpeed = dagger_speed,
 		EffectName = Effect_Name,
 		vSourceLoc= self:GetCaster():GetAbsOrigin(),
-		Dodgeable = true,
+		bDodgeable = true,
 		bVisibleToEnemies = true,
 		bReplaceExisting = false,
 		ProvidesVision = true,
 		VisionRadius = self:GetSpecialValueFor("search_radius"),
 		iVisionTeamNumber = self:GetCaster():GetTeamNumber(),
 		iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1,
+		ExtraData = {super_scepter = super_scepter}
 	}
 
 	ProjectileManager:CreateTrackingProjectile(dagger_projectile)
 end
 
-function pa_stifling_dagger:OnProjectileThink(location)
+function pa_stifling_dagger:OnProjectileThink_ExtraData(location, ExtraData)
 	local caster = self:GetCaster()
-	if self.super_scepter then
+	if ExtraData.super_scepter then
 		local targets = FindUnitsInRadius(caster:GetTeamNumber(), location, nil, self:GetSpecialValueFor("search_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
 
 		for _, target in pairs(targets) do
@@ -98,7 +98,7 @@ function pa_stifling_dagger:OnProjectileThink(location)
 		end
 	end
 end
-function pa_stifling_dagger:OnProjectileHit(target, location)
+function pa_stifling_dagger:OnProjectileHit_ExtraData(target, location, ExtraData)
 	local caster = self:GetCaster()
 	local slow_duration = self:GetSpecialValueFor("slow_duration")
 	local bonus_as_duration = self:GetSpecialValueFor("bonus_as_duration") + talent_value(caster, "special_bonus_pa_stifling_dagger_buff_duration")

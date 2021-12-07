@@ -20,7 +20,7 @@ function sniper_shoot:OnUpgrade()
 	if self:GetCaster():IsRealHero() then
 		self:GetCaster():FindAbilityByName("reload_bullet"):SetLevel(1)
 		self:GetCaster():FindAbilityByName("change_bullets_type"):SetLevel(1)
-	end	
+	end
 end
 function sniper_shoot:OnSpellStart()
 	local caster = self:GetCaster()

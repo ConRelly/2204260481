@@ -97,25 +97,17 @@ local modifier_class = modifier_mjz_slark_essence_shift_heap
 
 function modifier_class:IsHidden() return (self:GetStackCount() < 1) end
 function modifier_class:IsPurgable() return false end	
-function modifier_class:AllowIllusionDuplicate()
-    return true
-end   
-function modifier_class:OnCreated( kv )
-	
-	local ability = self:GetAbility()
-	self.heap_amount = ability:GetSpecialValueFor("heap_amount")
-	self.heap_type = ability:GetSpecialValueFor("heap_type")
-	self.heap_type = self.heap_type or 1
+function modifier_class:AllowIllusionDuplicate() return true end   
+function modifier_class:OnCreated(kv)
+    if not self:GetAbility() then self:Destroy() end
     if IsServer() then 
-        self:SetStackCount( ability:GetHeapKills() )
+        self:SetStackCount(self:GetAbility():GetHeapKills())
         self:GetParent():CalculateStatBonus(false)
 	end
 end
 
-function modifier_class:OnRefresh( kv )
+function modifier_class:OnRefresh(kv)
     if not self:GetAbility() then self:Destroy() end
-    local ability = self:GetAbility()
-    self.heap_amount = ability:GetSpecialValueFor("heap_amount")
     if IsServer() then
 		self:GetParent():CalculateStatBonus(false)
 	end

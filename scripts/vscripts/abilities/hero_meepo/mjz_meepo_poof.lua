@@ -9,7 +9,6 @@ end
 
 function ability_class:OnAbilityPhaseStart()
 	if IsServer() then
-		local ability = self
 		local caster = self:GetCaster()
 		local player = caster:GetPlayerOwner()
 		local position = caster:GetAbsOrigin()
@@ -21,7 +20,6 @@ function ability_class:OnAbilityPhaseStart()
 		self.nPreviewFX = part
 
 		EmitSoundOn('Hero_Meepo.Poof.Channel', caster)
-		-- ability:CreateVisibilityNode(position, 200, 4)
 	end
 	return true
 end
@@ -31,6 +29,7 @@ function ability_class:OnAbilityPhaseInterrupted()
 		StopSoundOn('Hero_Meepo.Poof.Channel', self:GetCaster())
 		ParticleManager:DestroyParticle( self.nPreviewFX, false )
 	end
+	return true
 end
 
 

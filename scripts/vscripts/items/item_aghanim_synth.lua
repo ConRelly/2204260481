@@ -1,19 +1,19 @@
+LinkLuaModifier("modifier_aghanims_blessing", "items/item_aghanim_synth.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_aghanims_scepter_synth", "items/item_aghanim_synth.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_super_scepter", "items/item_aghanim_synth.lua", LUA_MODIFIER_MOTION_NONE)
 
 function AghanimsSynthCast(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	local modifier_synth = keys.modifier_synth
 	local modifier_stats = keys.modifier_stats
 	local PlayerID = caster:GetPlayerID()
 	if not _G.super_courier[PlayerID] then
 		if not caster:IsRealHero() then return nil end
 	end
 	if caster:HasModifier("modifier_arc_warden_tempest_double") then return nil end
-	if caster:HasModifier(modifier_synth) then
-		caster:RemoveModifierByName(modifier_synth)
+	if not caster:HasModifier("modifier_aghanims_scepter_synth") then
+		caster:AddNewModifier(caster, ability, "modifier_aghanims_scepter_synth", {})
 	end
-	caster:AddNewModifier(caster, ability, modifier_synth, {})
 	if caster:HasModifier(modifier_stats) then
 		local modifier = caster:FindModifierByName(modifier_stats)
 		modifier:SetStackCount(modifier:GetStackCount() + 1)
@@ -33,6 +33,81 @@ function AghanimsSynthCast(keys)
 	caster:RemoveItem(ability)
 end
 
+
+-- Aghanim"s Blessing --
+item_ultimate_scepter_synth = class({})
+function item_ultimate_scepter_synth:OnSpellStart()
+	if not IsServer() then return end
+	local caster = self:GetCaster()
+
+	local str = self:GetSpecialValueFor("bonus_all_stats")
+	local agi = self:GetSpecialValueFor("bonus_all_stats")
+	local int = self:GetSpecialValueFor("bonus_all_stats")
+	local health = self:GetSpecialValueFor("bonus_health")
+	local mana = self:GetSpecialValueFor("bonus_mana")
+
+	if caster:HasModifier("modifier_arc_warden_tempest_double") then return end
+	if caster:HasModifier("modifier_aghanims_scepter_synth") then return end
+	caster:AddNewModifier(caster, self, "modifier_aghanims_scepter_synth", {})
+	caster:EmitSound("Hero_Alchemist.Scepter.Cast")
+	caster:RemoveItem(self)
+end
+function item_ultimate_scepter_synth:GetIntrinsicModifierName() return "modifier_aghanims_blessing" end
+
+modifier_aghanims_blessing = class({})
+function modifier_aghanims_blessing:IsHidden() return false end
+function modifier_aghanims_blessing:IsPurgable() return false end
+function modifier_aghanims_blessing:OnCreated()
+	self:GetAbility():OnSpellStart()
+--	if not IsServer() then return end
+--	self:StartIntervalThink(FrameTime())
+end
+--[[
+function modifier_aghanims_blessing:OnIntervalThink()
+	if not IsServer() then return end
+	if not self:GetParent():HasModifier("modifier_item_ultimate_scepter_consumed") then
+		self:GetParent():AddNewModifier(self:GetParent(), nil, "modifier_item_ultimate_scepter_consumed", {})
+	end
+end
+function modifier_aghanims_blessing:OnDesrtoy()
+	if self:GetParent():HasModifier("modifier_item_ultimate_scepter_consumed") then
+		self:GetParent():RemoveModifierByName("modifier_item_ultimate_scepter_consumed")
+	end
+end
+function modifier_aghanims_blessing:DeclareFunctions()
+    return {
+		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+		MODIFIER_PROPERTY_HEALTH_BONUS,
+		MODIFIER_PROPERTY_MANA_BONUS,		
+    }
+end
+function modifier_aghanims_blessing:GetModifierBonusStats_Strength() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end end
+function modifier_aghanims_blessing:GetModifierBonusStats_Agility() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end end
+function modifier_aghanims_blessing:GetModifierBonusStats_Intellect() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end end
+function modifier_aghanims_blessing:GetModifierHealthBonus() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_health") end end
+function modifier_aghanims_blessing:GetModifierManaBonus() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_mana") end end
+]]
+
+-- Aghanim's Scepter --
+modifier_aghanims_scepter_synth = class({})
+function modifier_aghanims_scepter_synth:IsHidden() return false end
+function modifier_aghanims_scepter_synth:IsPurgable() return false end
+function modifier_aghanims_scepter_synth:RemoveOnDeath() return false end
+function modifier_aghanims_scepter_synth:AllowIllusionDuplicate() return true end
+function modifier_aghanims_scepter_synth:OnCreated()
+	if not IsServer() then return end
+	self:StartIntervalThink(FrameTime())
+end
+function modifier_aghanims_scepter_synth:OnIntervalThink()
+	if not IsServer() then return end
+	if not self:GetParent():HasModifier("modifier_item_ultimate_scepter_consumed") then
+		self:GetParent():AddNewModifier(self:GetParent(), nil, "modifier_item_ultimate_scepter_consumed", {})
+	end
+end
+
+-- Super Scepter --
 modifier_super_scepter = modifier_super_scepter or class({})
 function modifier_super_scepter:IsDebuff() return false end
 function modifier_super_scepter:IsHidden() return true end

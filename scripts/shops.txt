@@ -203,21 +203,21 @@
 		"item"		"item_abyssal_blade"
 		"item"		"item_bloodthorn"
 		"item"		"item_kris_of_agony_one"
+		"item"      "item_hammer_of_the_divine_dummy"
 	}
 
 	// Level 4 - Orange / Orb / Artifacts
 	"artifacts"
 	{
 		"item"      "item_picasso_t"
-		"item"    	"item_helm_of_the_dominator"
+ 		"item"		"item_yasha"
  		"item"		"item_dragon_lance"
 		"item"		"item_sange"
 		"item"      "item_picasso_m"
- 		"item"		"item_yasha"
  		"item"		"item_kaya"
  		"item"      "item_trade_kaya"
-		"item"      "item_picasso_b"
 		"item"		"item_echo_sabre"
+		"item"      "item_picasso_b"
  		"item"		"item_force_blade"
  		"item"		"item_diffusal_blade"
  		"item"		"item_heavens_halberd"

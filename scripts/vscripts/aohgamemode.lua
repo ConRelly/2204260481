@@ -86,6 +86,9 @@ Precache = require "Precache"
 
 function AOHGameMode:InitGameMode()
 	self._nRoundNumber = 1
+	if 	_G.RoundNumber == nil then
+		_G.RoundNumber = 1
+	end
 	self._currentRound = nil
 	self._entAncient = Entities:FindByName(nil, "dota_goodguys_fort")
 	if not self._entAncient then
@@ -652,6 +655,7 @@ function AOHGameMode:OnThink()
 					end
 				end
 				self._nRoundNumber = self._nRoundNumber + 1
+				_G.RoundNumber = _G.RoundNumber + 1
 				if self._nRoundNumber <= #self._vRounds then
 					self._flPrepTimeEnd = GameRules:GetGameTime() + self._flPrepTimeBetweenRounds
 				end
