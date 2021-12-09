@@ -459,8 +459,15 @@ function modifier_picasso_paint_red_blob:OnIntervalThink()
 	if IsServer() then
 		local mix_duration = self:GetAbility():GetSpecialValueFor("mix_duration")
 		if self:GetParent():HasModifier("modifier_picasso_paint_yellow_blob") then
+			if self:GetCaster():IsRealHero() then
+				mix_duration = mix_duration
+				dry_duration = mix_duration
+			else
+				mix_duration = mix_duration / 2
+				dry_duration = mix_duration
+			end
 			self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_picasso_orange_mix", {duration = mix_duration * (1 - self:GetParent():GetStatusResistance())})
-			self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_picasso_dry", {duration = mix_duration})
+			self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_picasso_dry", {duration = dry_duration})
 			self:GetParent():RemoveModifierByName("modifier_picasso_paint_red_blob")
 			self:GetParent():RemoveModifierByName("modifier_picasso_paint_yellow_blob")
 		end
@@ -666,7 +673,7 @@ function modifier_picasso_purple_mix:OnCreated()
 		local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetParent():GetOrigin(), nil, purple_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 		for _,enemy in pairs(enemies) do
 			if enemy~=self:GetCaster() then
-				ApplyDamage({victim = enemy, attacker = self:GetCaster(), damage = dmg, damage_type = DAMAGE_TYPE_PHYSICAL, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION, ability = self:GetAbility()})
+				ApplyDamage({victim = enemy, attacker = self:GetCaster(), damage = dmg, damage_type = DAMAGE_TYPE_PHYSICAL, damage_flags = DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR, ability = self:GetAbility()})
 			end
 		end
 		local purple_mix_pfx = "particles/custom/items/picasso/picasso_purple_mix.vpcf"

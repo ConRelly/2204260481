@@ -345,6 +345,13 @@
 	"dota_tooltip_ability_item_picasso_b_impulse_mode_as"			"%Impulse Mode Attack Speed:"
 	"dota_tooltip_ability_item_picasso_b_impulse_mode_duration"		"Impulse Mode Duration:"
 
+	"DOTA_Tooltip_ability_item_picasso_t_Note0"		"1) Orange Mix lasts half as short if the owner is not a hero"
+	"DOTA_Tooltip_ability_item_picasso_t_Note1"		"2) Purple Mix damage ignores Base Armor"
+	"DOTA_Tooltip_ability_item_picasso_m_Note0"		"1) Orange Mix lasts half as short if the owner is not a hero"
+	"DOTA_Tooltip_ability_item_picasso_m_Note1"		"2) Purple Mix damage ignores Base Armor"
+	"DOTA_Tooltip_ability_item_picasso_b_Note0"		"1) Orange Mix lasts half as short if the owner is not a hero"
+	"DOTA_Tooltip_ability_item_picasso_b_Note1"		"2) Purple Mix damage ignores Base Armor"
+
 	"dota_tooltip_ability_item_picasso_t_lore"		"Stigmata brought from the Honkai Impact universe."
 	"dota_tooltip_ability_item_picasso_m_lore"		"Stigmata brought from the Honkai Impact universe."
 	"dota_tooltip_ability_item_picasso_b_lore"		"Stigmata brought from the Honkai Impact universe."
@@ -9719,7 +9726,6 @@ Contains all random skills"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_mjz_phoenix_icarus_dive_cdr" "Reduces Icarus Dive CD by {s:value} seconds"
 		"DOTA_Tooltip_ability_special_bonus_unique_winter_wyvern_endless_01"    "Endless wisdom increases your mana by {s:value} for every stack"
-
 
 // Custom Talents
 

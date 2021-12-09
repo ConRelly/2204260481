@@ -1468,6 +1468,7 @@ QuickFix and update:
 * Multi Autocast: cannot autocast 0 CD abilities
 * Added dummy item of Hammer of the Divine in the shop (We will probably need to make a separate window (not in shop) with all the secret items)
 * At an easy difficulty, until the towers are destroyed, the throne will be invulnerable
+* Picasso: Buffed Purple Mix and nerfed Orange Mix for non-hero
 
 
 

@@ -351,6 +351,13 @@
 	"DOTA_Tooltip_ability_item_picasso_b_impulse_mode_as"			"%Cкopocть aтaки oт Impulse Mode:"
 	"DOTA_Tooltip_ability_item_picasso_b_impulse_mode_duration"		"Длитeльнocть Impulse Mode:"
 
+	"DOTA_Tooltip_ability_item_picasso_t_Note0"		"1) Orange Mix длится вдвое меньше, если владелец - не герой"
+	"DOTA_Tooltip_ability_item_picasso_t_Note1"		"2) Урон от Purple Mix игнорирует базовую броню"
+	"DOTA_Tooltip_ability_item_picasso_m_Note0"		"1) Orange Mix длится вдвое меньше, если владелец - не герой"
+	"DOTA_Tooltip_ability_item_picasso_m_Note1"		"2) Урон от Purple Mix игнорирует базовую броню"
+	"DOTA_Tooltip_ability_item_picasso_b_Note0"		"1) Orange Mix длится вдвое меньше, если владелец - не герой"
+	"DOTA_Tooltip_ability_item_picasso_b_Note1"		"2) Урон от Purple Mix игнорирует базовую броню"
+
 	"DOTA_Tooltip_ability_item_picasso_t_lore"		"Cтигмaтa пpинecённaя из вceлeннoй Honkai Impact."
 	"DOTA_Tooltip_ability_item_picasso_m_lore"		"Cтигмaтa пpинecённaя из вceлeннoй Honkai Impact."
 	"DOTA_Tooltip_ability_item_picasso_b_lore"		"Cтигмaтa пpинecённaя из вceлeннoй Honkai Impact."
@@ -9826,7 +9833,6 @@
 	"DOTA_Tooltip_ability_special_bonus_custom_mana_break_1"	"Физ ypoн oт Mana Break игнopиpyeт бpoню"
 
 	"DOTA_Tooltip_ability_special_bonus_mjz_meepo_poof_01"		"Poof дaёт зapяд Poof кaждый paз, кoгдa иcпoльзyeтcя"
-
 
 // Custom Talents //////////////////////////////////////
 
