@@ -31707,7 +31707,7 @@
 		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
 		"HasScepterUpgrade"			"0"
-		"LevelsBetweenUpgrades"	 "5"
+		"LevelsBetweenUpgrades"	 "10"
 		"AbilityCastRange"				"1400"
 		"AbilityCastPoint"				"0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
@@ -31738,12 +31738,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"base_damage"				"200 900 3400 9500"
+				"base_damage"				"300 1900 13400 29500"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"int_damage"					"200 300 500 700"
+				"int_damage"					"200 400 800 1600"
 				"LinkedSpecialBonus"			"special_bonus_unique_mjz_techies_land_mines_int_damage"
 			}
 			"05"
@@ -31780,7 +31780,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"1000"
+				"value"						"1400"
 			}
 		}
 	}

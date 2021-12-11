@@ -2090,7 +2090,7 @@
 		"Ability16"		"special_bonus_spell_amplify_125"
 		"Ability17"		"special_bonus_gold_income_300"
 
-		"AttributeIntelligenceGain"		"12.3"
+		"AttributeIntelligenceGain"		"28.3"
 	}
 	"npc_dota_hero_tinker_mjz"
 	{

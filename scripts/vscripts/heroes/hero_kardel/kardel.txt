@@ -30,7 +30,7 @@
 			"2"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"norm_bullet"				"50 70 90 110 150"
+				"norm_bullet"				"50 70 90 110 125"
 				"LinkedSpecialBonus"		"special_bonus_sniper_shoot_bullet_dmg"
 			}
 			"3"
@@ -42,7 +42,7 @@
 			"4"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"shrap_bullet"				"175"
+				"shrap_bullet"				"185"
 				"LinkedSpecialBonus"		"special_bonus_sniper_shoot_bullet_dmg"
 			}
 		}
