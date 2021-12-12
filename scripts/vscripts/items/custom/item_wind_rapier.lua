@@ -46,21 +46,21 @@ function CheckForStats (keys)
 end
 
 function WindRapierProc(keys)
-  if not IsServer() then return end
-	local ability = keys.ability
+	if not IsServer() then return end
 	local caster = keys.caster
-	local buff_duration = ability:GetSpecialValueFor("stack_duration")
+	local ability = keys.ability
 	local max_stacks = ability:GetSpecialValueFor("max_stacks")
 	local StackModifier = "modifier_wind_rapier_agility_buff"
 	local currentStacks = caster:GetModifierStackCount(StackModifier, ability)
 	local agility = caster:GetAgility()
+	local buff_duration = ability:GetSpecialValueFor("stack_duration")
 	local proc_bonus = ability:GetSpecialValueFor("proc_bonus")
 	local agility_gain = proc_bonus * 0.01 * agility
 	caster:AddNewModifier(caster, ability, StackModifier, {Duration = buff_duration, agility_gain = agility_gain})
 	if currentStacks <= (max_stacks - 1) then
 		caster:SetModifierStackCount(StackModifier, ability, (currentStacks + 1))
-	else
-		caster:SetModifierStackCount(StackModifier, ability, (max_stacks))
+--	else
+--		caster:SetModifierStackCount(StackModifier, ability, (max_stacks))
 	end
 end
 

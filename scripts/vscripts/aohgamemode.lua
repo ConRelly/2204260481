@@ -78,7 +78,6 @@ print("MONSTER_CONFIG: " .. MONSTER_CONFIG)
 --end
 if Cheats:IsEnabled() then 
 	MONSTER_CONFIG = "aoh2_config_siltbreaker_200809.txt"
-	Convars:SetInt("sv_cheats", 1)
 	print("CHeat mode")
 end	
 
@@ -268,36 +267,37 @@ function AOHGameMode:InitGameMode()
 
 
 
-	ListenToGameEvent("dota_item_purchased", Dynamic_Wrap(AOHGameMode, "OnItemPurchased"), self)
+	if Cheats:IsEnabled() then
+		ListenToGameEvent("dota_item_purchased", Dynamic_Wrap(AOHGameMode, "OnItemPurchased"), self)
 
-	_G.Demo_UI = false
+		SendToServerConsole("sv_cheats 1")
+		SendToServerConsole("dota_hero_god_mode 0")
 
-	self.m_nPlayerID = 0
-	self.m_tAlliesList = {}
-	self.m_tEnemiesList = {}
-	self.m_nAlliesCount = 0
-	if self.m_bFreeSpellsEnabled == true then
-		SendToServerConsole("toggle dota_ability_debug")
+		_G.Demo_UI = false
+
+		self.m_tEnemiesList = {}
+		if self.m_bFreeSpellsEnabled == true then
+			SendToServerConsole("dota_ability_debug 0")
+		end
+		self.m_bFreeSpellsEnabled = false
+		self.m_bInvulnerabilityEnabled = false
+		self.m_bMaxGold = false
+		self.m_nHeroRenderMode = 0
+
+		CustomGameEventManager:RegisterListener("RefreshButtonPressed", function(...) return self:OnRefreshButtonPressed(...) end)
+		CustomGameEventManager:RegisterListener("LevelUpButtonPressed", function(...) return self:OnLevelUpButtonPressed(...) end)
+		CustomGameEventManager:RegisterListener("MaxLevelButtonPressed", function(...) return self:OnMaxLevelButtonPressed(...) end)
+		CustomGameEventManager:RegisterListener("SuicideButtonPressed", function(...) return self:OnSuicideButtonPressed(...) end)
+		CustomGameEventManager:RegisterListener("FreeSpellsButtonPressed", function(...) return self:OnFreeSpellsButtonPressed(...) end)
+		CustomGameEventManager:RegisterListener("InvulnerabilityButtonPressed", function(...) return self:OnInvulnerabilityButtonPressed(...) end)
+		CustomGameEventManager:RegisterListener("MaxGoldButtonPressed", function(...) return self:OnMaxGoldButtonPressed(...) end)
+		CustomGameEventManager:RegisterListener("SpawnEnemyButtonPressed", function(...) return self:OnSpawnEnemyButtonPressed(...) end)
+		CustomGameEventManager:RegisterListener("RemoveSpawnedUnitsButtonPressed", function(...) return self:OnRemoveSpawnedUnitsButtonPressed(...) end)
+		CustomGameEventManager:RegisterListener("DayNightTogglePressed", function(...) return self:OnDayNightToggleButtonPressed(...) end)
+		CustomGameEventManager:RegisterListener("HeroRenderModePressed", function(...) return self:OnHeroRenderModeButtonPressed(...) end)
+		CustomGameEventManager:RegisterListener("PauseButtonPressed", function(...) return self:OnPauseButtonPressed(...) end)
+		CustomGameEventManager:RegisterListener("LeaveButtonPressed", function(...) return self:OnLeaveButtonPressed(...) end)
 	end
-	self.m_bFreeSpellsEnabled = false
-	self.m_bInvulnerabilityEnabled = false
-	self.m_bMaxGold = false
-	self.m_nHeroRenderMode = 0
-
-	CustomGameEventManager:RegisterListener("RefreshButtonPressed", function(...) return self:OnRefreshButtonPressed(...) end)
-	CustomGameEventManager:RegisterListener("LevelUpButtonPressed", function(...) return self:OnLevelUpButtonPressed(...) end)
-	CustomGameEventManager:RegisterListener("MaxLevelButtonPressed", function(...) return self:OnMaxLevelButtonPressed(...) end)
-	CustomGameEventManager:RegisterListener("SuicideButtonPressed", function(...) return self:OnSuicideButtonPressed(...) end)
-	CustomGameEventManager:RegisterListener("FreeSpellsButtonPressed", function(...) return self:OnFreeSpellsButtonPressed(...) end)
-	CustomGameEventManager:RegisterListener("InvulnerabilityButtonPressed", function(...) return self:OnInvulnerabilityButtonPressed(...) end)
-	CustomGameEventManager:RegisterListener("MaxGoldButtonPressed", function(...) return self:OnMaxGoldButtonPressed(...) end)
-	CustomGameEventManager:RegisterListener("SpawnEnemyButtonPressed", function(...) return self:OnSpawnEnemyButtonPressed(...) end)
---	CustomGameEventManager:RegisterListener("LevelUpEnemyButtonPressed", function(...) return self:OnLevelUpEnemyButtonPressed(...) end)
-	CustomGameEventManager:RegisterListener("RemoveSpawnedUnitsButtonPressed", function(...) return self:OnRemoveSpawnedUnitsButtonPressed(...) end)
-	CustomGameEventManager:RegisterListener("DayNightTogglePressed", function(...) return self:OnDayNightToggleButtonPressed(...) end)
-	CustomGameEventManager:RegisterListener("HeroRenderModePressed", function(...) return self:OnHeroRenderModeButtonPressed(...) end)
-	CustomGameEventManager:RegisterListener("PauseButtonPressed", function(...) return self:OnPauseButtonPressed(...) end)
-	CustomGameEventManager:RegisterListener("LeaveButtonPressed", function(...) return self:OnLeaveButtonPressed(...) end)
 end
 
 
@@ -1220,7 +1220,7 @@ end
 -- RefreshButton --
 -------------------
 function AOHGameMode:OnRefreshButtonPressed(eventSourceIndex)
-	SendToServerConsole("dota_dev hero_refresh")
+	SendToServerConsole("dota_hero_refresh")
 end
 
 -------------------
@@ -1261,12 +1261,14 @@ end
 -- FreeSpellsButton --
 ----------------------
 function AOHGameMode:OnFreeSpellsButtonPressed(eventSourceIndex)
-	SendToServerConsole("toggle dota_ability_debug")
+--	SendToServerConsole("toggle dota_ability_debug")
 	if self.m_bFreeSpellsEnabled == false then
 		self.m_bFreeSpellsEnabled = true
-		SendToServerConsole("dota_dev hero_refresh")
+		SendToServerConsole("dota_hero_refresh")
+		SendToServerConsole("dota_ability_debug 1")
 	elseif self.m_bFreeSpellsEnabled == true then
 		self.m_bFreeSpellsEnabled = false
+		SendToServerConsole("dota_ability_debug 0")
 	end
 end
 
@@ -1301,8 +1303,10 @@ function AOHGameMode:OnMaxGoldButtonPressed(eventSourceIndex)
 	if self.m_bMaxGold == false then
 		self.m_bMaxGold = true
 		SendToServerConsole("dota_dev player_givegold 99999")
+		SendToServerConsole("dota_easybuy 1")
 	elseif self.m_bMaxGold == true then
 		self.m_bMaxGold = false
+		SendToServerConsole("dota_easybuy 0")
 	end
 end
 
@@ -1317,17 +1321,6 @@ function AOHGameMode:OnSpawnEnemyButtonPressed(eventSourceIndex, data)
 
 	table.insert(self.m_tEnemiesList,self._Misha)
 end
-
---[[
-------------------------
--- LevelUpEnemyButton --
-------------------------
-function AOHGameMode:OnLevelUpEnemyButtonPressed(eventSourceIndex)
-	for k, v in pairs(self.m_tEnemiesList) do
-		self.m_tEnemiesList[k]:HeroLevelUp(false)
-	end
-end
-]]
 
 ------------------------------
 -- RemoveSpawnedUnitsButton --

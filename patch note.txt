@@ -1460,6 +1460,8 @@ QuickFix and update:
   	-Winter Wyvern has an extra ability, Endless wisdom and a new talent for that .
 * Request by @Siliatra:
 	- Added new item Broken Wings 
+* Added Aghanim's and Super Scepter for Stone Arrows (Medusa)
+* Added UP: Skadi Bow for Stone Arrows (Medusa)
 * Fixed Broodmother Q spiderlings
 * Fixed the rare random skill book being multicasted.
 * Rebalanced Kardel sniper shot, decrease normal shot % and buffed the other 2.
@@ -1469,6 +1471,7 @@ QuickFix and update:
 * Added dummy item of Hammer of the Divine in the shop (We will probably need to make a separate window (not in shop) with all the secret items)
 * At an easy difficulty, until the towers are destroyed, the throne will be invulnerable
 * Picasso: Buffed Purple Mix and nerfed Orange Mix for non-hero
+* Stone Arrows (Medusa): Slow values have been changed from constant to percentage values and has been rescaled
 
 
 

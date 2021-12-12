@@ -340,7 +340,7 @@ function AOHGameMode:OnPlayerChat(keys)
 		end
 	end
 
-	if keys.text == "-demo" and Cheats:IsEnabled() then
+	if keys.text == "-demo" or keys.text == "-демо" and Cheats:IsEnabled() then
 		if _G.Demo_UI == false then
 			CustomUI:DynamicHud_Create(-1, "Custom_Demo_UI", "file://{resources}/layout/custom_game/hud_workshop_testbed.xml", {})
 			_G.Demo_UI = true

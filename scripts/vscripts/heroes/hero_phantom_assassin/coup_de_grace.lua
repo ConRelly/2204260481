@@ -71,10 +71,13 @@ function modifier_imba_coup_de_grace:OnRefresh()
 end
 
 function modifier_imba_coup_de_grace:DeclareFunctions()
-  local funcs = {MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
-		 MODIFIER_EVENT_ON_ATTACK_LANDED}
-  return funcs
+	return {
+		MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
+		MODIFIER_EVENT_ON_ATTACK_LANDED,
+		MODIFIER_PROPERTY_TOOLTIP,
+	}
 end
+function modifier_imba_coup_de_grace:OnTooltip() return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("crit_increase_mult") end
 
 function modifier_imba_coup_de_grace:GetModifierPreAttack_CriticalStrike(keys)	
 	if IsServer() then

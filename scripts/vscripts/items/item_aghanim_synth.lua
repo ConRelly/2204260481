@@ -92,7 +92,7 @@ function modifier_aghanims_blessing:GetModifierManaBonus() if self:GetAbility() 
 
 -- Aghanim's Scepter --
 modifier_aghanims_scepter_synth = class({})
-function modifier_aghanims_scepter_synth:IsHidden() return false end
+function modifier_aghanims_scepter_synth:IsHidden() return true end
 function modifier_aghanims_scepter_synth:IsPurgable() return false end
 function modifier_aghanims_scepter_synth:RemoveOnDeath() return false end
 function modifier_aghanims_scepter_synth:AllowIllusionDuplicate() return true end

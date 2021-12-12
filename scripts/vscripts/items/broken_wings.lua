@@ -9,6 +9,7 @@ item_broken_wings = class({})
 function item_broken_wings:GetIntrinsicModifierName() return "modifier_broken_wings" end
 
 function item_broken_wings:OnProjectileHit(target, location)
+	if not self:GetCaster():HasItemInInventory("item_broken_wings") then return end
 	if not self:GetCaster():HasModifier("modifier_broken_wings") then return end
 	local caster = self:GetCaster()
 	local max_stacks = self:GetSpecialValueFor("feather_max_stacks")
@@ -79,7 +80,7 @@ function modifier_broken_wings:OnAttackLanded(keys)
 		if self:GetRemainingTime() > 0 then return end
 		local AttackCD = self:GetAbility():GetSpecialValueFor("attack_cd")
 		if owner:HasItemInInventory("item_ultimate_ethereal_blade") then
-			AttackCD = AttackCD / 2
+			AttackCD = AttackCD / 3
 		end
 		target:EmitSound("Item_Desolator.Target")
 --[[
@@ -136,6 +137,7 @@ function modifier_broken_wings_feather_stacks:IsPurgable() return false end
 function modifier_broken_wings_feather_stacks:DestroyOnExpire() return false end
 function modifier_broken_wings_feather_stacks:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
+	self.hit = true
 end
 function modifier_broken_wings_feather_stacks:DeclareFunctions()
 	return {MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE, MODIFIER_EVENT_ON_TAKEDAMAGE}
@@ -157,9 +159,9 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 	local DamageType = keys.damage_type
 	if attacker ~= caster then return end
 	if self:GetStackCount() < 1 then return end
-	if hit == nil then
+	if self.hit == true then
 		if DamageType == DAMAGE_TYPE_MAGICAL or DamageType == DAMAGE_TYPE_PURE then
-			hit = false
+			self.hit = false
 			local damage = math.floor(keys.original_damage) * ((self:GetAbility():GetSpecialValueFor("feather_add_dmg") - 100) / 100)
 			local damage_popup = math.floor(keys.original_damage) * (self:GetAbility():GetSpecialValueFor("feather_add_dmg")/ 100)
 			ApplyDamage({
@@ -177,9 +179,9 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 				type = "null_ultimate",
 				pos = 9
 			})
-			if caster:HasModifier("modifier_broken_wings_divinity") then hit = nil return end
+			if caster:HasModifier("modifier_broken_wings_divinity") then self.hit = true return end
 			local cd = self:GetAbility():GetSpecialValueFor("feather_cd") * self:GetCaster():GetCooldownReduction()
-			Timers:CreateTimer(cd, function() hit = nil end)
+			Timers:CreateTimer(cd, function() self.hit = true end)
 			self:SetStackCount(self:GetStackCount() - 1)
 		end
 	end

@@ -1794,7 +1794,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"attack_cd"				"0.5"
+				"attack_cd"				"0.6"
 			}
 			"04"
 			{

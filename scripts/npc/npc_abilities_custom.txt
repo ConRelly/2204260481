@@ -12636,28 +12636,42 @@
 "medusa_custom_stone_arrows"
 {
 	"BaseClass"						"ability_lua"
-	"ScriptFile"					"abilities/heroes/medusa_custom_stone_arrows.lua"
+	"ScriptFile"					"abilities/heroes/medusa_custom_stone_arrows"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-	"AbilityTextureName"			"medusa_stone_gaze"
-	"MaxLevel"					  "6"
-	"LevelsBetweenUpgrades"		 "6"
+	"AbilityTextureName"			"custom/abilities/medusa_stone_arrows"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"8"
+	"RequiredLevel"					"8"
+	"HasScepterUpgrade"				"1"
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"extra_damage"			"150 350 550 1500 2800 6200"
+			"extra_damage"			"400 800 1600 3200 6400 12800 25600"
 		}
 		"02"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"attack_speed_loss"	 "-25 -40 -55 -50 -40 -30"
+			"var_type"				"FIELD_FLOAT"
+			"attack_speed_loss"		"10 13 16 19 22 25 30"
 		}
 		"03"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"move_speed_loss"	   "-10 -20 -30 -25 -20 -10"
+			"var_type"				"FIELD_FLOAT"
+			"move_speed_loss"		"5 10 15 20 25 30 40"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"stone_gaze_chance"		"7"
+			"RequiresScepter"		"1"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"stone_gaze_duration"	"0.5"
+			"RequiresScepter"		"1"
 		}
 	}
 }
@@ -26421,11 +26435,6 @@
 				"var_type"					"FIELD_FLOAT"
 				"kill_grace_duration"		"35"
 			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"creature_health"			"100"
-			}
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
@@ -26443,16 +26452,6 @@
 				"var_type"					"FIELD_FLOAT"
 				"cooldown_scepter"			"40 30 20"
 				"RequiresScepter"			"1"
-			}
-			"20"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"creature_enabled"			"1"
-			}
-			"22"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_delay"				"0.75"
 			}
 		}
 
