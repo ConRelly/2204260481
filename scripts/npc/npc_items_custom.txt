@@ -1804,7 +1804,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"feather_spell_amp"		"5"
+				"feather_spell_amp"		"3"
 			}
 			"06"
 			{
@@ -1819,12 +1819,12 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"feather_add_dmg"		"175"
+				"feather_add_dmg"		"160"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"feather_cd"			"1"
+				"feather_cd"			"1.5"
 			}
 			"10"
 			{
@@ -1841,6 +1841,11 @@
 				"var_type"					"FIELD_FLOAT"
 				"mimic_mace_attack_rate"	"0.15"
 			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"feather_add_dmg_marci"		"220"
+			}			
 		}
 	}
 // Broken Wings Recipe
@@ -1849,7 +1854,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"3000"
+		"ItemCost"						"9000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_broken_wings"
@@ -4581,7 +4586,7 @@
 {
 	"Model"							"models/props_gameplay/recipe.vmdl"
 	"BaseClass"						"item_recipe_ethereal_blade"
-	"ItemCost"						"100"	
+	"ItemCost"						"3500"	
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	"ItemResult"					"item_ultimate_ethereal_blade"
@@ -4616,17 +4621,17 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_agility"				"40 100 250"
+			"bonus_agility"				"40 100 450"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_strength"			"10"
+			"bonus_strength"			"10 40 150"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_intellect"			"10"
+			"bonus_intellect"			"10 40 250"
 		}
 		"04"
 		{
@@ -4641,12 +4646,12 @@
 		"06"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"blast_agility_multiplier"	"3.0 6.0 10.0"
+			"blast_agility_multiplier"	"3.0 6.0 30.0"
 		}
 		"07"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"blast_damage_base"			"75 150 250"
+			"blast_damage_base"			"75 150 2500"
 		}
 		"08"
 		{
@@ -14566,7 +14571,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"52 200 960 2100 7000"
+				"bonus_damage"				"52 200 960 2100 9000"
 			}
 			"02"
 			{
@@ -14581,7 +14586,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance_damage"		"100 350 950 4550 29080"
+				"bonus_chance_damage"		"100 350 950 4550 39080"
 			}
 		}
 	}
@@ -14619,7 +14624,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"52 200 960 2100 7000"
+				"bonus_damage"				"52 200 960 2100 9000"
 			}
 			"02"
 			{
@@ -14634,7 +14639,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance_damage"		"100 350 950 4550 29080"
+				"bonus_chance_damage"		"100 350 950 4550 39080"
 			}
 		}
 	}
@@ -14673,7 +14678,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"52 200 960 2100 7000"
+				"bonus_damage"				"52 200 960 2100 9000"
 			}
 			"02"
 			{
@@ -14688,7 +14693,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance_damage"		"100 350 950 4550 29080"
+				"bonus_chance_damage"		"100 350 950 4550 39080"
 			}
 		}
 	}
@@ -14727,7 +14732,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"52 200 960 2100 7000"
+				"bonus_damage"				"52 200 960 2100 9000"
 			}
 			"02"
 			{
@@ -14742,7 +14747,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance_damage"		"100 350 950 4550 29080"
+				"bonus_chance_damage"		"100 350 950 4550 39080"
 			}
 		}
 	}
@@ -21026,7 +21031,13 @@
 		{
 			"var_type"					"FIELD_INTEGER"
 			"bonus_str"					"1200"
-		}															
+		}
+		"13"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"block_chance_marci"				"85"
+			//"CalculateSpellDamageTooltip"	"0"
+		}																	
 	}
 }
 

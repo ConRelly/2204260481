@@ -1468,17 +1468,20 @@ QuickFix and update:
 * Hard and part2 will give more hp and mr(slightly) to bosses.
 * Extreme measures have been taken so that the Aghanim's effects is not removed
 * Multi Autocast: cannot autocast 0 CD abilities
-* Added dummy item of Hammer of the Divine in the shop (We will probably need to make a separate window (not in shop) with all the secret items)
+* Added dummy item of Hammer of the Divine in the shop
 * At an easy difficulty, until the towers are destroyed, the throne will be invulnerable
 * Picasso: Buffed Purple Mix and nerfed Orange Mix for non-hero
 * Stone Arrows (Medusa): Slow values have been changed from constant to percentage values and has been rescaled
+* Added another 2 items to Marci Unleash SS : Broken Wings - from 160% to 220% , Maple's Armor - Heavy armor buff from 50% dmg avoid chance to 85%
+* And some other stuff
+
 
 
 
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes42 can be found on the new map version:
+*Update patch notes43 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 
@@ -1500,6 +1503,8 @@ Apex: +7% more stats(42%)
 Cursed Gaze: +3% crit bonus on hit(8%).
 Slayer Rebound : aditional stacks + 2 instead of 1.
 Endless wisdom : gain an extra stack.
+Broken Wings : from 160% to 220%
+Maple's Armor - Heavy armor buff from 50% dmg avoid chance to 85%
 
 
 

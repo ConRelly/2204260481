@@ -21498,7 +21498,7 @@
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"0"
 		"ItemPurchasable"				"1"
-		"AbilityCooldown"				"102.0"
+		"AbilityCooldown"				"112.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -21509,7 +21509,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"9"
+				"duration"				"8"
 			}
 		}
 	}

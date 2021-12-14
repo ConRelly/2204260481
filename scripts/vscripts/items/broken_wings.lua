@@ -162,8 +162,14 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 	if self.hit == true then
 		if DamageType == DAMAGE_TYPE_MAGICAL or DamageType == DAMAGE_TYPE_PURE then
 			self.hit = false
-			local damage = math.floor(keys.original_damage) * ((self:GetAbility():GetSpecialValueFor("feather_add_dmg") - 100) / 100)
-			local damage_popup = math.floor(keys.original_damage) * (self:GetAbility():GetSpecialValueFor("feather_add_dmg")/ 100)
+			local feather_add_dmg = self:GetAbility():GetSpecialValueFor("feather_add_dmg")
+			if caster:HasModifier("modifier_super_scepter") then
+				if caster:HasModifier("modifier_marci_unleash_flurry") then
+					feather_add_dmg = self:GetAbility():GetSpecialValueFor("feather_add_dmg_marci")
+				end                                 
+			end
+			local damage = math.floor(keys.original_damage) * ((feather_add_dmg - 100) / 100)
+			local damage_popup = math.floor(keys.original_damage) * (feather_add_dmg / 100)
 			ApplyDamage({
 				victim = target,
 				attacker = caster,

@@ -127,6 +127,12 @@ function modifier_maple_shield_lua_aura_triger:RemoveOnDeath() return false end
 function modifier_maple_shield_lua_aura_triger:OnCreated()
 	if IsServer() then
 		self.chance = self:GetAbility():GetSpecialValueFor("block_chance")
+		local caster = self:GetParent()
+		if caster:HasModifier("modifier_super_scepter") then
+			if caster:HasModifier("modifier_marci_unleash_flurry") then
+				self.chance = self:GetAbility():GetSpecialValueFor("block_chance_marci")
+			end                                 
+		end		
 	end	
 end
 function modifier_maple_shield_lua_aura_triger:OnDestroy() end

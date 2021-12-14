@@ -14790,7 +14790,7 @@
 	"MagicalResistance"		 "95"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"		   "25000"		// Damage range min.
-	"AttackDamageMax"		   "38000"	   // Damage range max.
+	"AttackDamageMax"		   "48000"	   // Damage range max.
 	"AttackRate"				"1.6"	   // Speed of attack.
 	"BaseAttackSpeed"		   "1300"
 	"AttackAnimationPoint"	  "0.2"	   // Normalized time in animation cycle to attack.
@@ -14805,7 +14805,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "100"	   // Speed.		   
-	"StatusHealth"			  "6700000"	  // Base health.
+	"StatusHealth"			  "7700000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
