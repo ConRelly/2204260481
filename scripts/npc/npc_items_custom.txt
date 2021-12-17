@@ -9861,7 +9861,7 @@
 		"AbilityTextureName"			"mjz_dagon_v2"	//"item_dagon_5"
 		"AbilityCastRange"				"5900"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"16.0"
+		"AbilityCooldown"				"18.0"
 		"AbilitySharedCooldown"			"dagon"
 		"HasScepterUpgrade"				"1"
 		"AbilityManaCost"				"50"
@@ -9882,12 +9882,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_intellect"			"220"	//"15 18 21 24 27"
+				"bonus_intellect"			"270"	//"15 18 21 24 27"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all_stats"			"40"
+				"bonus_all_stats"			"100"
 			}
 			"03"
 			{

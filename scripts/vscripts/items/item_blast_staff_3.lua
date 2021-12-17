@@ -42,17 +42,26 @@ if IsServer() then
 			local bonus_marci_int_mult = 0
 			ParticleManager:SetParticleControl(particleIndex, 3, target:GetAbsOrigin())
 			local duration = self:GetSpecialValueFor("debuff_duration")
+			local chance = 17
 			if parent:HasModifier("modifier_super_scepter") then
 				if parent:HasModifier("modifier_marci_unleash_flurry") then
 					duration = duration + 1
 					debuff_bonus = -10
 					bonus_marci_int_mult = 5
-				end                                 
-			end 			
+					chance = 25
+				end 
+				if has_dagon(parent) then
+					if RollPercentage(chance) then
+						cast_dagon(parent, target)
+					end	
+				end					                                
+			end
+
 			local damage = (self:GetSpecialValueFor("int_multiplier") + bonus_marci_int_mult) * parent:GetIntellect()
 			if not target:HasModifier("modifier_item_blast_staff_debuff") and parent:HasScepter() then				
 				target:AddNewModifier(parent, self, "modifier_item_blast_staff_debuff", {duration = duration})
 			end
+
 			ApplyDamage({
 				ability = self,
 				attacker = parent,
@@ -187,6 +196,31 @@ if IsServer() then
 					end)
 				end
 			end
+		end
+	end
+end
+
+function has_dagon(unit)
+	for i = 0, 6 do
+		local Item = unit:GetItemInSlot(i)
+		if Item ~= nil and IsValidEntity(Item) then
+			if Item:GetName() == "item_mjz_dagon_v2" then
+				return true
+			end	
+		end
+	end
+	return false	
+end
+function cast_dagon(unit, target)
+	for i = 0, 6 do
+		local Item = unit:GetItemInSlot(i)
+		if Item ~= nil and IsValidEntity(Item) then
+			if Item:GetName() == "item_mjz_dagon_v2" then
+				if target and IsValidEntity(target) then
+					unit:SetCursorCastTarget(target)
+					Item:OnSpellStart()
+				end	
+			end	
 		end
 	end
 end

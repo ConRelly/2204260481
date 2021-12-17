@@ -10,6 +10,9 @@ function getrandomskill(npc)
         local skill_lvl = RandomInt(1, 5)
         local skop = RandomInt(1,5) / 10
         local skop2 = RandomInt(6 ,10) / 10
+        if npc == nil then
+            return
+        end
         if npc:GetLevel() > 25 then
             skill_lvl = RandomInt(1, 6)
         end        
@@ -19,10 +22,23 @@ function getrandomskill(npc)
                 skill_lvl = 7
             end    
         end
-        --[[local ability_trist = "mjz_night_stalker_hunter_in_the_night"
-        local searing = npc:AddAbility(ability_trist)
-        searing:UpgradeAbility(true)
-        searing:SetLevel(skill_lvl)]]
+        --[[local ability_trist = "mjz_night_stalker_hunter_in_the_night"]]
+        -- local searing = npc:AddAbility("earth_spirit_rolling_boulder")
+        -- local searing2 = npc:AddAbility("juggernaut_omni_slash")
+        -- local searing3 = npc:AddAbility("slardar_sprint")
+        -- local searing4 = npc:AddAbility("slardar_sprint")
+        -- searing:UpgradeAbility(true)
+        -- searing:SetLevel(skill_lvl)
+
+        -- searing2:UpgradeAbility(true)
+        -- searing2:SetLevel(skill_lvl)
+
+        -- searing3:UpgradeAbility(true)
+        -- searing3:SetLevel(skill_lvl)
+
+        -- searing4:UpgradeAbility(true)
+        -- searing4:SetLevel(skill_lvl)
+        
         Timers:CreateTimer({
             endTime = skop, 
             callback = function()
@@ -30,10 +46,23 @@ function getrandomskill(npc)
                 while not found_valid_ability1 do               
                     local newAbilityName = GetRandomAbilityName(hero)
                     if not npc:HasAbility(newAbilityName) then
-                        local link_a = npc:AddAbility(newAbilityName)
-                        link_a:UpgradeAbility(true)
-                        link_a:SetLevel(skill_lvl)
-                        found_valid_ability1 = true
+                        local status, link_a = xpcall(
+                                function()
+                                  return npc:AddAbility(newAbilityName)
+                                end,
+                                function(msg)
+                                  print(debug.traceback(msg, 3))
+                                  return false
+                                end
+                            )
+                        if link_a then
+                            link_a:UpgradeAbility(true)
+                            link_a:SetLevel(skill_lvl)
+                            found_valid_ability1 = true
+                        end
+                        if link_a == nil then
+                           print('Error: No link_a')
+                        end
                     end   
                 end
             end
@@ -45,10 +74,23 @@ function getrandomskill(npc)
                 while not found_valid_ability2 do
                     local newAbilityNameb = GetRandomAbilityName(hero)
                     if not npc:HasAbility(newAbilityNameb) then                
-                        local link_b = npc:AddAbility(newAbilityNameb)
-                        link_b:UpgradeAbility(true) 
-                        link_b:SetLevel(skill_lvl)
-                        found_valid_ability2 = true
+                        local status, link_b = xpcall(
+                                function()
+                                  return npc:AddAbility(newAbilityNameb)
+                                end,
+                                function(msg)
+                                  print(debug.traceback(msg, 3))
+                                  return false
+                                end
+                            )
+                        if link_b then
+                            link_b:UpgradeAbility(true) 
+                            link_b:SetLevel(skill_lvl)
+                            found_valid_ability2 = true
+                        end
+                        if link_b == nil then
+                            print('Error: No link_b')
+                        end
                     end    
                 end
             end
@@ -61,18 +103,39 @@ function getrandomskill(npc)
                     while not found_valid_ability3 do
                         local newAbilityNamec = GetRandomAbilityName(hero)
                         if not npc:HasAbility(newAbilityNamec) then                              
-                            local link_c = npc:AddAbility(newAbilityNamec)
-                            link_c:UpgradeAbility(true) 
-                            link_c:SetLevel(skill_lvl)
-                            found_valid_ability3 = true
+                            local status, link_c = xpcall(
+                                function()
+                                  return npc:AddAbility(newAbilityNamec)
+                                end,
+                                function(msg)
+                                  print(debug.traceback(msg, 3))
+                                  return false
+                                end
+                            )
+                            if link_c then
+                                link_c:UpgradeAbility(true) 
+                                link_c:SetLevel(skill_lvl)
+                                found_valid_ability3 = true
+                            end
+                            if link_c == nil then
+                                print('Error: No link_c')
+                            end
                         end    
                     end         
                 end 
             end
         })     
             
-        if not npc:HasModifier(M_NAME) then
-            npc:AddNewModifier( npc, nil, M_NAME, {})
+        if npc and not npc:HasModifier(M_NAME) then
+         xpcall(
+                function()
+                  return npc:AddNewModifier( npc, nil, M_NAME, {})
+                end,
+                function(msg)
+                  print(debug.traceback(msg, 3))
+                  return false
+                end
+            )
         end 
         --[[Timers:CreateTimer({
             endTime = skop2 + 0.1, 
@@ -186,7 +249,9 @@ function GetRandomAbilityName( hero )
         --"mjz_juggernaut_blade_fury", crash on mobs  
         --"keeper_of_the_light_radiant_bind",   crash 
         --"mjz_troll_warlord_fervor", stats not good  
-        --"viper_viper_strike",             
+        --"viper_viper_strike", 
+        --"lone_druid_rabid",    -- bugged / causes crash in certain circumstances 
+        --"earth_spirit_rolling_boulder",             
         "phantom_assassin_blur",
         "custom_leap",       
         "ember_spirit_searing_chains",                   
@@ -196,7 +261,6 @@ function GetRandomAbilityName( hero )
         "magnataur_empower",                
         "legion_commander_custom_duel",                
         "alchemist_chemical_rage",                 
-        "lone_druid_rabid",       
         "templar_assassin_psi_blades",      -- TA 3
         "mjz_vengefulspirit_vengeance",     
         "mjz_omniknight_repel",           
@@ -253,11 +317,10 @@ function GetRandomAbilityName( hero )
         "silencer_curse_of_the_silent",
         "bloodseeker_rupture",
         "earth_spirit_boulder_smash",
-        "earth_spirit_rolling_boulder",
         "earthshaker_echo_slam",
         "legion_commander_duel",
         "legion_commander_press_the_attack",
-        "sniper_assassinate",
+        "sniper_assassinate", -- bugs when attacking courrier in certain circumstances
         "warlock_fatal_bonds",
         "lion_finger_of_death",
         "dragon_knight_breathe_fire",
@@ -306,6 +369,7 @@ function GetRandomAbilityName( hero )
         "enchantress_untouchable",
         "warlock_shadow_word",
         "huskar_berserkers_blood",
+        "marci_unleash_custom",
 
     }
     local randomIndex = RandomInt(1, #abilityList)

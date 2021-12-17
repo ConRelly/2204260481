@@ -44,7 +44,7 @@ function arcane_staff_calculate_crit(attacker, victim, damageTable)
 		local damage_mult = 1.8
 
 		local mana_cost = damageTable.damage * 0.8 * (150 / (150 + attacker:GetIntellect()))	
-		if attacker:HasModifier("modifier_broken_wings_divinity") then mana_cost = 0 mana_req = 0 end
+		--if attacker:HasModifier("modifier_broken_wings_divinity") then mana_cost = 0 mana_req = 0 end
 		if mana >= mana_cost and mana >= mana_req then
 			if victim and victim ~= attacker and victim:GetTeamNumber() ~= attacker:GetTeamNumber() then
 				damageTable.damage = damageTable.damage * damage_mult

@@ -6,12 +6,18 @@ function OnSpellStart(keys)
 		local base_damage = ability:GetSpecialValueFor("damage")
 		local damage_per_use = ability:GetSpecialValueFor("damage_per_use")
 		local splash_radius_scepter = ability:GetSpecialValueFor("splash_radius_scepter")
+		local damage_stats = 0
+		if caster:IsRealHero() then
+			damage_stats = caster:GetIntellect() * 10
+		end
 		local use_count = 0
 		if ability:IsItem() then
 			use_count = ability:GetCurrentCharges()
 		end
 		local damage = base_damage + damage_per_use * use_count
-		
+		if caster:HasModifier("modifier_super_scepter") then
+			damage = damage + damage_stats
+		end	
 
 		local units = nil
 		if caster:HasScepter() then
@@ -40,7 +46,7 @@ function OnSpellStart(keys)
 			ApplyDamage({
 				victim = unit, 
 				attacker = caster, 
-				damage = damage * 0.35, 
+				damage = damage * 0.50, 
 				damage_type = ability:GetAbilityDamageType(),
 				ability = ability,
 			})
@@ -50,13 +56,13 @@ function OnSpellStart(keys)
 					ApplyDamage({
 						victim = unit, 
 						attacker = caster, 
-						damage = damage * 0.35, 
+						damage = damage * 0.50, 
 						damage_type = ability:GetAbilityDamageType(),
 						ability = ability,
 					})
 				end
 			)
-			Timers:CreateTimer(
+--[[ 			Timers:CreateTimer(
 				0.1,
 				function()
 					ApplyDamage({
@@ -67,7 +73,7 @@ function OnSpellStart(keys)
 						ability = ability,
 					})
 				end
-			)                        
+			)  ]]                       
 			if ability:IsItem() then
 				local iCharges = use_count + 1
 				ability:SetCurrentCharges(iCharges)

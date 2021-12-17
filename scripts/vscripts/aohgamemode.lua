@@ -1107,6 +1107,8 @@ function AOHGameMode:OnEntitySpawned(event)
 end
 
 
+
+
 function AOHGameMode:OnEntityKilled(event)
 	local killedUnit = EntIndexToHScript(event.entindex_killed)
 	if killedUnit and killedUnit:IsRealHero()  then
@@ -1196,9 +1198,14 @@ function AOHGameMode:IsEndlessWin()
 	return false
 end
 
-
-
-
+-----
+--[[ function CScriptParticleManager:SetParticleControlEnt(particle, controlPoint, unit, particleAttach, attachment, offset, lockOrientation)
+    success = pcall(function() CScriptParticleManager:SetParticleControlEnt(particle, controlPoint, unit, particleAttach, attachment, offset, lockOrientation) end)
+    if success then
+    else
+    end
+end ]]
+-----
 
 
 
