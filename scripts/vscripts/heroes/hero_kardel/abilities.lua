@@ -468,10 +468,17 @@ function kardels_skills:GetManaCost(lvl)
 	return self:GetCaster():GetAgility() * self:GetSpecialValueFor("dmg_per_agility")
 end
 function kardels_skills:GetIntrinsicModifierName() return "modifier_kardels_skills" end
+
 modifier_kardels_skills = class({})
 function modifier_kardels_skills:IsHidden() return true end
 function modifier_kardels_skills:IsPurgable() return true end
 function modifier_kardels_skills:GetPriority() return MODIFIER_PRIORITY_SUPER_ULTRA + 11111 end
+function modifier_kardels_skills:OnCreated()
+	if IsServer() then if not self:GetAbility() then self:Destroy() end
+		self:GetParent():SetUnitName("npc_dota_hero_kardel")
+		self:GetParent():SetEntityName("npc_dota_hero_kardel")
+	end
+end
 function modifier_kardels_skills:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,

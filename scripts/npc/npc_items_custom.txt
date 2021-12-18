@@ -1845,7 +1845,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"feather_add_dmg_marci"		"220"
-			}			
+			}
 		}
 	}
 // Broken Wings Recipe
@@ -2286,17 +2286,17 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_agility"				"40 100 250"
+			"bonus_agility"				"40 100 450"
 		}
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_strength"			"10"
+			"bonus_strength"			"10 40 250"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_intellect"			"10"
+			"bonus_intellect"			"10 40 250"
 		}
 		"04"
 		{
@@ -2311,12 +2311,12 @@
 		"06"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"blast_agility_multiplier"	"3.0 6.0 10.0"
+			"blast_agility_multiplier"	"3 6 30"
 		}
 		"07"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"blast_damage_base"			"75 150 250"
+			"blast_damage_base"			"75 150 2500"
 		}
 		"08"
 		{
@@ -4646,7 +4646,7 @@
 		"06"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"blast_agility_multiplier"	"3.0 6.0 30.0"
+			"blast_agility_multiplier"	"3 6 30"
 		}
 		"07"
 		{

@@ -18,7 +18,7 @@
 		"MaxLevel_Button"							"Level to Max"
 		"FreeSpells_Button"							"Free Spells"
 		"Invulnerability_Button"					"Invulnerability"
-		"Inf_Gold_Button"							"Max Gold"
+		"MaxGold_Button"							"Max Gold"
 		"Suicide_Button"							"Suicide"
 
 		"Enemy_Button"								"Spawn Misha"
@@ -47,6 +47,7 @@
 	"DOTA_Tooltip_Ability_item_portal"		"Portal"
 	"DOTA_Chat_Portal_Pinged"				"Portal here."
 	"npc_dota_hero_piety"					"Piety"
+	"npc_dota_hero_kardel"					"Kardel"
 
 
 	"DOTA_Tooltip_ability_special_bonus_unique_undisarmed"	"Cannot be disarmed"
@@ -7804,7 +7805,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		//<<<<
 		//>>>>	Lion's Dagon
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2"										"Lion's Dagon V2"
-		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Description"							"<h1>Active: Finger of Death</h1>Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each use it.<br><br>Cast Range: %abilitycastrange%\n<h1><font color='#0094FF'>UP: Aghanim's Scepter</font></h1>Hits all enemies in a %splash_radius_scepter% radius. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Deals 10 x Your Int As bonus Damage. When Greater Blast Staff passive hits an target has 17% chance to trigger this item on same target/s. Unloks an hidden utility of this item."
+		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Description"							"<h1>Active: Finger of Death</h1>Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each use it.<br><br>Cast Range: %abilitycastrange%\n<h1><font color='#0094FF'>UP: Aghanim's Scepter</font></h1>Hits all enemies in a %splash_radius_scepter% radius. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Deals 10 x Your Int As bonus Damage. When Greater Blast Staff passive hits an target has 17%% chance to trigger this item on same target/s. Unlocks an hidden utility of this item."
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Lore"									"Lion's Dagon is also the source of his greatest power, capable of flooding victims with malefic force."
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_bonus_intellect"						"+$int"
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_bonus_all_stats"						"+$all"
@@ -10032,8 +10033,8 @@ Contains all random skills"
 	"DOTA_Tooltip_ability_marci_grapple_custom_impact_damage"				"IMPACT DAMAGE:"
 
 	"DOTA_Tooltip_ability_marci_unleash_custom"						"Unleash"
-	"DOTA_Tooltip_ability_marci_unleash_custom_Description"			"Marci taps a hidden power, gaining Fury charges that allow her to deliver a rapid sequence of strikes. The last strike in every Fury combo creates a damaging pulse around the target that slows movement and attack speed for %pulse_debuff_duration%s. In between Fury combos, Marci is unable to attack for %time_between_flurries%s.\n\nMarci receives a basic dispel when Unleash is cast and gains %bonus_movespeed%%% movement speed.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Some Items and Abilites will get improved when ultimate is active.(pres Alt)"
-	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Super Scepter improve list: Cm Frostbine, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, LionDagonV2."
+	"DOTA_Tooltip_ability_marci_unleash_custom_Description"			"Marci taps a hidden power, gaining Fury charges that allow her to deliver a rapid sequence of strikes. The last strike in every Fury combo creates a damaging pulse around the target that slows movement and attack speed for %pulse_debuff_duration%s. In between Fury combos, Marci is unable to attack for %time_between_flurries%s.\n\nMarci receives a basic dispel when Unleash is cast and gains %bonus_movespeed%%% movement speed.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Some Items and Abilites will get improved when ultimate is active.(press Alt)"
+	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Super Scepter improve list: CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2."
 	"DOTA_Tooltip_ability_marci_unleash_custom_Lore"					"Though some have sought to understand its origins, Marci rebuffs all attempts to divine the source of her power."
 	"DOTA_Tooltip_ability_marci_unleash_custom_duration"				"DURATION:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_charges_per_flurry"		"STRIKES PER FURY:"

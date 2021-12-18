@@ -19,32 +19,27 @@ function modifier_class:IsPurgable() return false end
 function modifier_class:IsPermanent() return true end
 
 function modifier_class:DeclareFunctions()
-	local funcs = {
+	return {
 		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,	
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
 	}
-	return funcs
 end
 
 function modifier_class:GetModifierConstantHealthRegen( )
-	return self:GetAbility():GetSpecialValueFor('health_regen')
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor('health_regen') end
 end
 
 function modifier_class:GetModifierMoveSpeedBonus_Percentage( )
-	return self:GetAbility():GetSpecialValueFor('movement_speed')
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor('movement_speed') end
 end
 
 if IsServer() then
 	function modifier_class:OnCreated(table)
-		local parent = self:GetParent()
-		local ability = self:GetAbility()
-		parent:AddNewModifier(parent, ability, 'modifier_mjz_treant_natures_guise_health', {})
+		self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), 'modifier_mjz_treant_natures_guise_health', {})
 	end
 
 	function modifier_class:OnDestroy()
-		local parent = self:GetParent()
-		local ability = self:GetAbility()
-		parent:RemoveModifierByName('modifier_mjz_treant_natures_guise_health')
+		self:GetParent():RemoveModifierByName('modifier_mjz_treant_natures_guise_health')
 	end
 end
 

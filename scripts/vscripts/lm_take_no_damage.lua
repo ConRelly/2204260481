@@ -1,5 +1,7 @@
 lm_take_no_damage = class({})
 function lm_take_no_damage:GetTexture() return "modifier_invulnerable" end
+function lm_take_no_damage:IsPurgable() return false end
+function lm_take_no_damage:RemoveOnDeath() return false end
 function lm_take_no_damage:DeclareFunctions()
 	return {MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL, MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL, MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE}
 end
