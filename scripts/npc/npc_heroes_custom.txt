@@ -2324,7 +2324,7 @@
 
 	"npc_dota_hero_kardel"
 	{
-		"override_hero"			"npc_dota_hero_sniper"
+		"BaseClass"				"npc_dota_hero_sniper"
 		"Model"					"models/heroes/sniper/sniper.vmdl"
 		"IdleExpression"		"scenes/sniper/sniper_exp_idle_01.vcd"
 		"SoundSet"				"Hero_Sniper"
