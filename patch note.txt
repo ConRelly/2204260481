@@ -1477,15 +1477,18 @@ QuickFix and update:
 
 
 
-* "-extra" mode got some reworks in stability thanks to @PR.
+* "-extra" mode got some reworks for stability thanks to @PR. 
 * Broken wings divinity buff will not remove arcane staff mana cost anymore.
 * LionDagonV2 Has a Super Scepter effect.
-* Marci Unleash SS: LionDagonV2 - greater blast staff passive has 25% chance to trigger daggon instead of 15%
+* Marci Unleash SS: LionDagonV2 - greater blast staff passive has 25% chance to trigger dagon instead of 17%
+* Sniper shrapnel visual will only play on the first use then it will not display again until the skill fully stops. (to reduce some of the lag it creates because of a certain build around that)
+* And some other stuff.
+* Might add an quest for "-extra" mode if it proves to be stable.
 
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes43 can be found on the new map version:
+*Update patch notes44 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 
@@ -1509,7 +1512,7 @@ Slayer Rebound : aditional stacks + 2 instead of 1.
 Endless wisdom : gain an extra stack.
 Broken Wings : from 160% to 220%
 Maple's Armor - Heavy armor buff from 50% dmg avoid chance to 85%
-LionDagonV2 - greater blast staff passive has 25% chance to trigger daggon instead of 15%
+LionDagonV2 - greater blast staff passive has 25% chance to trigger daggon instead of 17%
 
 
 can youse this format for marci SS effect:

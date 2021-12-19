@@ -8,7 +8,7 @@ LinkLuaModifier( "modifier_sniper_shrapnel_lua_thinker", "lua_abilities/sniper_s
 function sniper_shrapnel_lua:GetAOERadius()
 	return self:GetSpecialValueFor( "radius" )
 end
-
+--local effects_limit = true
 --------------------------------------------------------------------------------
 -- Ability Start
 function sniper_shrapnel_lua:OnSpellStart()
@@ -21,7 +21,6 @@ function sniper_shrapnel_lua:OnSpellStart()
 	if special_shrapnel_duration_lua and special_shrapnel_duration_lua:GetLevel() ~= 0 then
 		total_duration = total_duration + special_shrapnel_duration_lua:GetSpecialValueFor("value")
 	end
-
 	-- logic
 	CreateModifierThinker(
 		caster,
@@ -34,7 +33,10 @@ function sniper_shrapnel_lua:OnSpellStart()
 	)
 
 	-- effects
+
 	self:PlayEffects( point )
+
+
 end
 
 --------------------------------------------------------------------------------
@@ -62,8 +64,13 @@ function sniper_shrapnel_lua:PlayEffects( point )
 
 	-- Create Sound
 	EmitSoundOn( sound_cast, self:GetCaster() )
-end
+	--effects_limit = false
+	--self:StartIntervalThink(5)
 
+end
+--[[ function sniper_shrapnel_lua:OnIntervalThink()
+	effects_limit = true
+end	 ]]
 -- 获得天赋技能的数据值
 function FindTalentValue(unit, talentName)
     if unit:HasAbility(talentName) then

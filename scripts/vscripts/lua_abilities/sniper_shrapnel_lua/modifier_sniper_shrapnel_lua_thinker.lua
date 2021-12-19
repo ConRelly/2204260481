@@ -9,7 +9,7 @@ end
 function modifier_sniper_shrapnel_lua_thinker:IsPurgable()
     return false
 end
-
+local play_efect_2 = true
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_sniper_shrapnel_lua_thinker:OnCreated(kv)
@@ -39,6 +39,7 @@ function modifier_sniper_shrapnel_lua_thinker:OnDestroy(kv)
     end
     self:StopEffects()
     UTIL_Remove(self:GetParent())
+    play_efect_2 = true
 end
 
 --------------------------------------------------------------------------------
@@ -50,7 +51,10 @@ function modifier_sniper_shrapnel_lua_thinker:OnIntervalThink()
         AddFOWViewer(self:GetCaster():GetTeamNumber(), self:GetParent():GetOrigin(), self.radius, self:GetDuration(), false)
 
         -- effects
-        self:PlayEffects()
+        if play_efect_2 == true then
+            self:PlayEffects()
+            --play_efect_2 = false
+        end   
     else
         local caster = self:GetCaster()
         -- apply debuff around
@@ -74,6 +78,7 @@ function modifier_sniper_shrapnel_lua_thinker:OnIntervalThink()
                     { duration = self.slow_duration } -- kv
             )
         end
+        play_efect_2 = false
     end
 end
 
@@ -91,8 +96,11 @@ function modifier_sniper_shrapnel_lua_thinker:PlayEffects()
 end
 
 function modifier_sniper_shrapnel_lua_thinker:StopEffects()
-    ParticleManager:DestroyParticle(self.effect_cast, false)
-    ParticleManager:ReleaseParticleIndex(self.effect_cast)
-
+    if self.effect_cast ~= nil then
+        ParticleManager:DestroyParticle(self.effect_cast, false)
+        ParticleManager:ReleaseParticleIndex(self.effect_cast)
+    end
     StopSoundOn(self.sound_cast, self:GetParent())
+       
+    play_efect_2 = true
 end
