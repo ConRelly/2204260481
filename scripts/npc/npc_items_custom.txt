@@ -1841,7 +1841,7 @@
 				"var_type"					"FIELD_FLOAT"
 				"mimic_mace_attack_rate"	"0.15"
 			}
-			"08"
+			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"feather_add_dmg_marci"		"220"
@@ -1853,7 +1853,7 @@
 	{
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
-		"AbilityTextureName"			"item_recipe"
+		"AbilityTextureName"			"item_recipe"		
 		"ItemCost"						"9000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
@@ -18268,7 +18268,7 @@
 	"BaseClass"						"item_datadriven"
 	"Model"							"models/props_gameplay/recipe.vmdl"
 	"AbilityTextureName"			"item_recipe"
-	"ItemCost"						"6000"	
+	"ItemCost"						"8000"	
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	"ItemResult"					"item_custom_ex_machina"
@@ -18290,7 +18290,7 @@
 	"ItemAliases"					"ex machina"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-	"AbilityCooldown"				"70.0"
+	"AbilityCooldown"				"85.0"
 	"ItemIsNeutralDrop"				"1"
 	"ItemSellable"					"0"
 	"AbilitySpecial"

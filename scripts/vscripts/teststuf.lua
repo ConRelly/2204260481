@@ -251,7 +251,8 @@ function GetRandomAbilityName( hero )
         --"mjz_troll_warlord_fervor", stats not good  
         --"viper_viper_strike", 
         --"lone_druid_rabid",    -- bugged / causes crash in certain circumstances 
-        --"earth_spirit_rolling_boulder",             
+        --"earth_spirit_rolling_boulder",
+        --"bounty_hunter_track", -- crash when caster disapears.             
         "phantom_assassin_blur",
         "custom_leap",       
         "ember_spirit_searing_chains",                   
@@ -350,7 +351,6 @@ function GetRandomAbilityName( hero )
         "void_spirit_dissimilate",
         "shadow_demon_demonic_purge",
         "bloodseeker_blood_bath",
-        "bounty_hunter_track",
         "broodmother_incapacitating_bite",
         "death_prophet_spirit_siphon",
         "ancient_apparition_cold_feet",

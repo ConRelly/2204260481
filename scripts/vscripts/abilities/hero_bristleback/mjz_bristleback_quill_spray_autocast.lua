@@ -69,6 +69,9 @@ if IsServer() then
         if target_ability == nil then return nil end
         if self:CanCastAbility(target_ability) then
             if IsServer() then 
+                if not IsValidEntity(target_ability) then return nil end 
+                if not IsValidEntity(parent) then return nil end 
+                if not parent:IsAlive() then return nil end                
                 parent:CastAbilityNoTarget(target_ability, parent:GetPlayerOwnerID())
             end    
         end
@@ -79,6 +82,9 @@ if IsServer() then
             if parent:HasScepter() and time then
                 self.target_ability_2_cast_time = GameRules:GetGameTime()
                 if IsServer() then
+                    if not IsValidEntity(target_ability_2) then return nil end 
+                    if not IsValidEntity(parent) then return nil end 
+                    if not parent:IsAlive() then return nil end                    
                     parent:CastAbilityNoTarget(target_ability_2, parent:GetPlayerOwnerID())
                 end     
             end

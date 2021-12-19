@@ -99,7 +99,11 @@ function modifier_class:OnIntervalThink()
             }
             ExecuteOrderFromTable(order)]]
         
-            
+            if not IsValidEntity(first_enemy) then return nil end
+            if not IsValidEntity(target_ability) then return nil end 
+            if not IsValidEntity(parent) then return nil end 
+            if not first_enemy:IsAlive() then return nil end
+            if not parent:IsAlive() then return nil end            
             parent:CastAbilityOnTarget(first_enemy, target_ability, parent:GetPlayerOwnerID()) --parent:CastAbilityOnPosition(first_enemy:GetAbsOrigin(), target_ability, parent:GetPlayerOwnerID())
             
         end 

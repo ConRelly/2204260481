@@ -189,10 +189,14 @@ function modifier_class:OnIntervalThink()
                                  return 0
                                 end
                             )
+                if target_ability == nil then return nil end            
+                if not IsValidEntity(target_ability) then return nil end            
                 if ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_NO_TARGET) then
                     --parent:CastAbilityNoTarget(target_ability, -1)
                     --if IsServer() then
-                    if not IsValidEntity(target_ability) and not IsValidEntity(parent) then return nil end
+                    if parent == nil then return nil end
+                    if not IsValidEntity(parent) then return nil end 
+                    if not parent:IsAlive() then return nil end
                     local status, success = xpcall(
                                 function()
                                   return parent:SetCursorTargetingNothing(true)
@@ -238,7 +242,11 @@ function modifier_class:OnIntervalThink()
                     return nil
                 elseif ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_FRIENDLY then	
                     --parent:CastAbilityOnTarget(parent, target_ability, -1)
-                    if not IsValidEntity(target_ability) and not IsValidEntity(parent) then return nil end
+                    if target_ability == nil then return nil end
+                    if not IsValidEntity(target_ability) then return nil end
+                    if parent == nil then return nil end
+                    if not IsValidEntity(parent) then return nil end 
+                    if not parent:IsAlive() then return nil end                  
                     local status, success = xpcall(
                                 function()
                                   return parent:SetCursorCastTarget(parent)
@@ -284,9 +292,12 @@ function modifier_class:OnIntervalThink()
                 end
                 --local enemy_list = nil
                 --if IsServer() then
+                if caster == nil or caster == false or pos == nil or pos == false or target_ability == false or target_ability == nil then return nil end
                 local enemy_list = FindUnitsInRadius(caster:GetTeamNumber(), pos, nil, radius_auto, 
                         DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, target_ability:GetAbilityTargetFlags(),
                         FIND_ANY_ORDER, false) 
+
+                if enemy_list == nil then return nil end  
                 if enemy_list == false or enemy_list == nil then
                     print('Error: EnemyList')
                 end                          
@@ -296,9 +307,14 @@ function modifier_class:OnIntervalThink()
                             
                     if target_ability == nil then return nil end 
                     if parent == nil then return nil end
-                    if not IsValidEntity(target_ability) and not IsValidEntity(parent) then return nil end
+                    if not IsValidEntity(target_ability) then return nil end 
+                    if not IsValidEntity(parent) then return nil end
                     if ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and (target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH) then
-                        if not IsValidEntity(first_enemy) and not first_enemy:IsAlive() then return nil end
+                        if parent == nil then return nil end
+                        if not IsValidEntity(parent) then return nil end 
+                        if not parent:IsAlive() then return nil end
+                        if not IsValidEntity(first_enemy) then return nil end 
+                        if not first_enemy:IsAlive() then return nil end
                         local status, success = xpcall(
                                 function()
                                   return parent:SetCursorCastTarget(first_enemy)
@@ -316,7 +332,11 @@ function modifier_class:OnIntervalThink()
                         --target_ability:OnSpellStart()
                         --target_ability:UseResources(true, false, true)                                          
                     elseif ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_POINT) then
-                        if not IsValidEntity(first_enemy) and not first_enemy:IsAlive() then return nil end
+                        if parent == nil then return nil end
+                        if not IsValidEntity(parent) then return nil end 
+                        if not parent:IsAlive() then return nil end
+                        if not IsValidEntity(first_enemy) then return nil end 
+                        if not first_enemy:IsAlive() then return nil end                        
                         local status, success = xpcall(
                                 function()
                                   return parent:SetCursorPosition(first_enemy:GetAbsOrigin())
@@ -336,6 +356,11 @@ function modifier_class:OnIntervalThink()
                         --parent:CastAbilityOnPosition(first_enemy:GetAbsOrigin(), target_ability, -1)
                     elseif ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_NO_TARGET) then
                         --if IsServer() then
+                        if parent == nil then return nil end
+                        if not IsValidEntity(parent) then return nil end 
+                        if not parent:IsAlive() then return nil end
+                        if target_ability == nil then return nil end
+                        if not IsValidEntity(target_ability) then return nil end                      
                         local status, success = xpcall(
                                 function()
                                   return parent:SetCursorTargetingNothing(true)
@@ -355,7 +380,13 @@ function modifier_class:OnIntervalThink()
                         --parent:CastAbilityNoTarget(target_ability, -1) 
                     elseif ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_FRIENDLY then	
                         --parent:CastAbilityOnTarget(parent, target_ability, -1)
-                        if not IsValidEntity(first_enemy) and not first_enemy:IsAlive() then return nil end
+                        if parent == nil then return nil end
+                        if not IsValidEntity(parent) then return nil end 
+                        if not parent:IsAlive() then return nil end
+                        if not IsValidEntity(first_enemy) then return nil end 
+                        if not first_enemy:IsAlive() then return nil end
+                        if target_ability == nil then return nil end
+                        if not IsValidEntity(target_ability) then return nil end                          
                         local status, success = xpcall(
                                 function()
                                   return parent:SetCursorCastTarget(first_enemy)

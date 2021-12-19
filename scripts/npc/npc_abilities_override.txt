@@ -20170,7 +20170,7 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemStockInitial"				"1"
 		"ItemStockTime"					"47.0"
-		"ItemInitialStockTime"			"300.0"
+		"ItemInitialStockTime"			"400.0"
 		"ItemStackable"					"1"
 		"ItemInitialCharges"			"1"
 		"AbilityCooldown"				"180.0"

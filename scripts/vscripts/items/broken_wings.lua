@@ -12,14 +12,16 @@ function item_broken_wings:OnProjectileHit(target, location)
 	if not self:GetCaster():HasItemInInventory("item_broken_wings") then return end
 	if not self:GetCaster():HasModifier("modifier_broken_wings") then return end
 	local caster = self:GetCaster()
+	if caster:IsIllusion() then return end
 	local max_stacks = self:GetSpecialValueFor("feather_max_stacks")
 	if not target then return false end
 	if caster:HasModifier("modifier_broken_wings_divinity") then return end
 
 	if not caster:HasModifier("modifier_broken_wings_feather_stacks") then
-		feather_stacks = caster:AddNewModifier(caster, self, "modifier_broken_wings_feather_stacks", {})
+		local feather_stacks = caster:AddNewModifier(caster, self, "modifier_broken_wings_feather_stacks", {})
 		feather_stacks:SetStackCount(1)
 	else
+		local feather_stacks = caster:FindModifierByName("modifier_broken_wings_feather_stacks")
 		feather_stacks:SetStackCount(feather_stacks:GetStackCount() + 1)
 		if feather_stacks:GetStackCount() >= max_stacks then
 			feather_stacks:SetStackCount(max_stacks)

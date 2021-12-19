@@ -60,7 +60,7 @@ end
 function modifier_titan_relic:OnModifierAdded(keys)
 	if self:GetParent():IsIllusion() then return end
 	if self:GetParent():HasModifier("modifier_arc_warden_tempest_double") then return end
-	pass = true
+	local pass = true
 	local AllModifiers = keys.unit:FindAllModifiers()
 	if self:GetAbility() and keys.unit and AllModifiers then
 		if keys.unit:GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then

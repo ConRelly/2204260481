@@ -1,10 +1,10 @@
 require("lib/my")
 
-inv_duration = 6
-min_health = 25
-cooldown = 50
-cooldown_reduction = 10
-bonus_armor = 20
+local inv_duration = 6
+local min_health = 25
+local cooldown = 50
+local cooldown_reduction = 10
+local bonus_armor = 20
 
 LinkLuaModifier("modifier_item_plain_ring_perma", "items/item_plain_ring_perma.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_plain_ring_perma_armor", "items/item_plain_ring_perma.lua", LUA_MODIFIER_MOTION_NONE)

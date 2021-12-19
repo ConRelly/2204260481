@@ -846,8 +846,8 @@ end
 
 _G.lopata = true
 function AOHGameMode:OnTreeCut(keys)
-	local item = CreateItem("item_trusty_shovel", nil, nil)
 	if RollPseudoRandom(1, self) and lopata then
+		local item = CreateItem("item_trusty_shovel", nil, nil)
 		CreateItemOnPositionSync(Vector(keys.tree_x,keys.tree_y,0), item)
 		AddFOWViewer(DOTA_TEAM_GOODGUYS, Vector(keys.tree_x,keys.tree_y,0), 300, 10, false)
 		_G.lopata = false
@@ -1058,18 +1058,34 @@ function AOHGameMode:OnEntitySpawned(event)
 			unit:AddNewModifier(unit, nil, "modifier_power_boss", {})
 		end
 		unit:AddNewModifier(unit, nil, "modifier_boss", {})
-		if self._extra_mode then
-			if unit and unit:GetUnitLabel() == "randomskill" then
-				Timers:CreateTimer(0.5, function( )
-					getrandomskill(unit)
-				end)				
-				if RollPercentage(85) or unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
-					Timers:CreateTimer(1, function( )
-						getrandomskill(unit)
-					end)					
-				end
-			end	
-		end	
+        if self._extra_mode then
+            if unit and unit:GetUnitLabel() == "randomskill" then
+                Timers:CreateTimer(0.5, function( )
+                    xpcall(
+                                function()
+                                  return getrandomskill(unit)
+                                end,
+                                function(msg)
+                                  print(debug.traceback(msg, 3))
+                                  return false
+                                end
+                            )
+                end)                
+                if RollPercentage(85) or unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
+                    Timers:CreateTimer(1, function( )
+                        xpcall(
+                                function()
+                                  return getrandomskill(unit)
+                                end,
+                                function(msg)
+                                  print(debug.traceback(msg, 3))
+                                  return false
+                                end
+                            )
+                    end)                    
+                end
+            end    
+        end
 		if self._hardMode then
 			unit:AddNewModifier(unit, nil, "modifier_hard_mode_boss", {}) 
 			if unit:IsBoss() or unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
