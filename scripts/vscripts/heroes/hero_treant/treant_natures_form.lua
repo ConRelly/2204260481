@@ -67,7 +67,7 @@ function modifier_natures_form:IsHidden() return false end
 function modifier_natures_form:IsPurgable() return false end
 function modifier_natures_form:IsDebuff() return false end
 function modifier_natures_form:RemoveOnDeath() return true end
-function modifier_natures_form:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+--function modifier_natures_form:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_natures_form:DeclareFunctions()
 	return {MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_ATTACKSPEED_PERCENTAGE, MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE}
 end

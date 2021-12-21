@@ -30,7 +30,7 @@ local modifier_class = modifier_mjz_bristleback_quill_spray_autocast4_5
 function modifier_class:IsPassive() return false end
 function modifier_class:IsHidden() return true end
 function modifier_class:IsPurgable() return false end
-
+--function modifier_class:IsPermanent() return true end
 
 function modifier_class:OnCreated(table)
     if IsServer() then

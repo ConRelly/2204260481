@@ -249,7 +249,7 @@
 
 
 	"dota_tooltip_ability_item_ritual_shovel"				"Cursed Shovel"
-	"dota_tooltip_ability_item_ritual_shovel_description"	"<h1>Active: Dig</h1>Sacrificing %hp_loss% health can dig up:<br><br>Ultra Rare Reward - %ultra_rare_chance%%%:<br>Enchanter - 5%%, Edible Fragment - 25%%, Sphere of Water or Sphere of Air - 70%%<br><br>Rare Reward - %rare_chance%%%:<br>Philosopher's Stone - 5%%, Removed Skill Prof - 5%%, Aghanim's Fragment - 20%%, Tome of Knowledge - 20%%, +10 to a random attribute - 50%%<br><br>Random Rune - %rune_chance%%%<br>Healing Salve or Enchanted Mango - %flask_chance%%%<br>Enemy creep - %kobold_chance%%%: Kobold - 80%%<br><br>Replenishes Mana in the amount of 1/2 of sacrificed Health<br><br>Channel for %AbilityChannelTime% second.\n<h1><font color='#A32715'>Shovel's Curse</font></h1>With each subsequent use, the shovel takes an additional %hp_per_stack% Health.\n<h1><font color='#06945D'>UP: Holy Locket (15+ charges)</font></h1>%up_chance%%% chance of not getting the curse.\n<h1>Low Priority</h1>Reduces attack priority on the owner."
+	"dota_tooltip_ability_item_ritual_shovel_description"	"<h1>Active: Dig</h1>Sacrificing %hp_loss% health can dig up:<br><br>Ultra Rare Reward - %ultra_rare_chance%%%:<br>Enchanter - 5%%, Edible Fragment - 25%%, Sphere of Water or Sphere of Air - 70%%<br><br>Rare Reward - %rare_chance%%%:<br>Philosopher's Stone - 5%%, Removed Skill Prof - 5%%, Aghanim's Fragment - 20%%, Tome of Knowledge - 20%%, +10 to a random attribute - 50%%<br><br>Random Rune - %rune_chance%%%<br>Stats Tome - %flask_chance%%%<br>Enemy creep - %kobold_chance%%%: Kobold - 80%%<br><br>Replenishes Mana in the amount of 1/2 of sacrificed Health<br><br>Channel for %AbilityChannelTime% second.\n<h1><font color='#A32715'>Shovel's Curse</font></h1>With each subsequent use, the shovel takes an additional %hp_per_stack% Health.\n<h1><font color='#06945D'>UP: Holy Locket (15+ charges)</font></h1>%up_chance%%% chance of not getting the curse.\n<h1>Low Priority</h1>Reduces attack priority on the owner."
 	"dota_tooltip_ability_item_ritual_shovel_note0"	"Damage from use can be lethal."
 	"dota_tooltip_ability_item_ritual_shovel_Lore"	"Former plaything of a young demon, received as a gift from his uncle."
 	"dota_tooltip_ability_item_ritual_shovel_hp"			"+$health"
@@ -304,17 +304,17 @@
 	"dota_tooltip_ability_item_lier_scarlet_t"				"Lier Scarlet (T)"
 	"dota_tooltip_ability_item_lier_scarlet_t_description"	"Reduces Max HP by %max_hp_pct%%%, but increases all outgoing Damage by %total_dmg%%%.
 	\n<h1>Shortened Reach (2 Pieces)</h1>Reduces the Physical Damage received by %phys_dmg_reduction%%% and increases Status Resistance by %bonus_status_resist%%%.
-	\n<h1>Sword Soul (3 Pieces)</h1>Triggered when Max HP is %health_threshold%%% or less. Gain +%bonus_crit%%% Crit Chance and Crit DMG and death immunity for %3_pieces_duration% seconds.<br><br>Cooldown: %3_pieces_cd% seconds"
+	\n<h1>Sword Soul (3 Pieces)</h1>Triggered when Max HP is %health_threshold%%% or less. Gain +%bonus_crit%%% Crit Chance and %bonus_crit_dmg%%% Crit Dmg * Your Level, %spell_amp%%% Spell Amp and death immunity for %3_pieces_duration% seconds.<br><br>Cooldown: %3_pieces_cd% seconds"
 //M
 	"dota_tooltip_ability_item_lier_scarlet_m"				"Lier Scarlet (M)"
-	"dota_tooltip_ability_item_lier_scarlet_m_description"	"Reduces Max HP by %max_hp_pct%%%, but nearest enemies in radius %aoe_radius% takes %aoe_dmg%%% Physical Damage and heals the owner at %heal_pct%%% of their Max HP every %aoe_interval% seconds.
+	"dota_tooltip_ability_item_lier_scarlet_m_description"	"Reduces Max HP by %max_hp_pct%%%, but nearest enemies in radius %aoe_radius% takes %aoe_dmg%%% Physical Damage every second and heals the owner  %heal_pct%%% of his Max HP every %aoe_interval% seconds.
 	\n<h1>Shortened Reach (2 Pieces)</h1>Reduces the Physical Damage received by %phys_dmg_reduction%%% and increases Status Resistance by %bonus_status_resist%%%.
-	\n<h1>Sword Soul (3 Pieces)</h1>Triggered when Max HP is %health_threshold%%% or less. Gain +%bonus_crit%%% Crit Chance and Crit DMG and death immunity for %3_pieces_duration% seconds.<br><br>Cooldown: %3_pieces_cd% seconds"
+	\n<h1>Sword Soul (3 Pieces)</h1>Triggered when Max HP is %health_threshold%%% or less. Gain +%bonus_crit%%% Crit Chance and %bonus_crit_dmg%%% Crit Dmg * Your Level, %spell_amp%%% Spell Amp and death immunity for %3_pieces_duration% seconds.<br><br>Cooldown: %3_pieces_cd% seconds"
 //B
 	"dota_tooltip_ability_item_lier_scarlet_b"				"Lier Scarlet (B)"
 	"dota_tooltip_ability_item_lier_scarlet_b_description"	"Reduces Max HP by %max_hp_pct%%%, but increases Movement Speed by %bonus_ms_pct%%% and Attack Speed by %bonus_as_pct%%%.
 	\n<h1>Shortened Reach (2 Pieces)</h1>Reduces the Physical Damage received by %phys_dmg_reduction%%% and increases Status Resistance by %bonus_status_resist%%%.
-	\n<h1>Sword Soul (3 Pieces)</h1>Triggered when Max HP is %health_threshold%%% or less. Gain +%bonus_crit%%% Crit Chance and Crit DMG and death immunity for %3_pieces_duration% seconds.<br><br>Cooldown: %3_pieces_cd% seconds"
+	\n<h1>Sword Soul (3 Pieces)</h1>Triggered when Max HP is %health_threshold%%% or less. Gain +%bonus_crit%%% Crit Chance and %bonus_crit_dmg%%% Crit Dmg * Your Level, %spell_amp%%% Spell Amp and death immunity for %3_pieces_duration% seconds.<br><br>Cooldown: %3_pieces_cd% seconds"
 
 	"dota_tooltip_ability_item_lier_scarlet_t_lore"		"Stigmata brought from the Honkai Impact universe."
 	"dota_tooltip_ability_item_lier_scarlet_m_lore"		"Stigmata brought from the Honkai Impact universe."

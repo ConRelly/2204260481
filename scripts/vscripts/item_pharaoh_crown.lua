@@ -23,6 +23,13 @@ end
 if IsServer() then
 function modifier_pharaoh_crown_buff:OnDestroy(keys)
 	self.parent:ForceKill(false)
+	Timers:CreateTimer(3, function()
+		print("force kill 3")
+		if self.parent and self.parent:IsAlive() then
+			print("force kill 4")
+			self.parent:ForceKill(false)
+		end
+	end)			
 end
 function modifier_pharaoh_crown_buff:OnCreated()
 	local ability = self:GetAbility()

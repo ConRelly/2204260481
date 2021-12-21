@@ -237,6 +237,7 @@ if IsServer() then
 		item_auto_cast2 = true,
 		item_hammer_of_the_divine = true,
 		phantom_lancer_phantom_edge = true,
+		treant_natures_form = true,
 		
 	}
 	local include_table = {
@@ -280,8 +281,13 @@ if IsServer() then
 			if cooldown < self.minimum_cooldown then
 				cooldown = self.minimum_cooldown
 			end
+			if keys.ability and keys.ability:GetName() == "item_tome_of_knowledge" then return end
 			self.ability:EndCooldown()
 			self.ability:StartCooldown(cooldown)
+			if keys.ability and keys.ability:GetName() == "phantom_lancer_phantom_edge" then
+				keys.ability:EndCooldown()
+				keys.ability:StartCooldown(1.5)
+			end
 		end	
 	end
 
@@ -311,6 +317,17 @@ if IsServer() then
 						end
 						self.ability:StartCooldown(cooldown * attacker:GetCooldownReduction())
 						self.echo:OnSpellStart()
+						if self.echo and self.echo:GetName() == "vengefulspirit_wave_of_terror_lua" then
+							if self.parent:HasModifier("modifier_atomic_samurai_focused_atomic_slash_2") then
+								local lvl = attacker:GetLevel()
+								local extra_time = (cooldown * 20)
+								if lvl > 30 then
+									extra_time = extra_time + lvl * 3
+								end	
+								self.ability:EndCooldown()
+								self.ability:StartCooldown(extra_time * attacker:GetCooldownReduction())
+							end	
+						end	
 						if attacker:HasModifier("modifier_ogre_magi_multicast_n") then
 							local interval = attacker:CustomValue("ogre_magi_multicast_n", "interval")
 							local multicast_1_chance = self.ability:GetSpecialValueFor("multicast_1")

@@ -44,15 +44,16 @@ function modifier_lier_scarlet_m:OnCreated()
 end end end
 function modifier_lier_scarlet_m:OnIntervalThink()
 	if IsServer() then
+		local caster = self:GetCaster()
 		local heal_pct = self:GetAbility():GetSpecialValueFor("heal_pct")
 		local aoe_dmg = self:GetAbility():GetSpecialValueFor("aoe_dmg")
 		local aoe_radius = self:GetAbility():GetSpecialValueFor("aoe_radius")
-		local dmg = self:GetCaster():GetAttackDamage() * aoe_dmg / 100
+		local dmg = caster:GetAverageTrueAttackDamage(caster) * aoe_dmg / 100
 		local heal = (self:GetCaster():GetMaxHealth() * heal_pct / 100)
 		local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), nil, aoe_radius--[[FIND_UNITS_EVERYWHERE]], DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 		for _,enemy in pairs(enemies) do
 			if enemy ~= self:GetCaster() then
-				local damageTable = {victim = enemy, attacker = self:GetCaster(), damage = dmg, damage_type = DAMAGE_TYPE_PHYSICAL, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION, ability = self:GetAbility()}
+				local damageTable = {victim = enemy, attacker = self:GetCaster(), damage = dmg, damage_type = DAMAGE_TYPE_PHYSICAL, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL, ability = self:GetAbility()}
 				ApplyDamage(damageTable)
 				local aoe_interval = self:GetAbility():GetSpecialValueFor("aoe_interval")
 				Timers:CreateTimer((aoe_interval / 3), function() ApplyDamage(damageTable) end)
@@ -229,17 +230,21 @@ function modifier_lier_scarlet_3_pieces_buff:OnDestroy()
 end
 function modifier_lier_scarlet_3_pieces_buff:DeclareFunctions()
 	return {--MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
-	MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_MIN_HEALTH, MODIFIER_PROPERTY_TOOLTIP}
+	MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_MIN_HEALTH, MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_TOOLTIP}
 end
 function modifier_lier_scarlet_3_pieces_buff:GetModifierCritDMG()
 	if IsServer() then
+		local lvl = self:GetParent():GetLevel()
 		local bonus_crit = self:GetAbility():GetSpecialValueFor("bonus_crit")
+		local bonus_crit_dmg = self:GetAbility():GetSpecialValueFor("bonus_crit_dmg") * lvl
 		if RollPseudoRandom(bonus_crit, self:GetAbility()) then
-			return bonus_crit
+			return bonus_crit_dmg
 		end
 	end
 	return 0
 end
+
+
 function modifier_lier_scarlet_3_pieces_buff:OnTooltip()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_crit") end
 end
@@ -251,6 +256,9 @@ function modifier_lier_scarlet_3_pieces_buff:GetMinHealth()
 end
 function modifier_lier_scarlet_3_pieces_buff:CheckState()
 	return {[MODIFIER_STATE_MAGIC_IMMUNE] = true}
+end
+function modifier_lier_scarlet_3_pieces_buff:GetModifierSpellAmplify_Percentage()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("spell_amp") end
 end
 
 if modifier_lier_scarlet_3_pieces_buff_cd == nil then modifier_lier_scarlet_3_pieces_buff_cd = class({}) end

@@ -1489,14 +1489,24 @@ QuickFix and update:
 * Some Fixes for "-extra" mode , removed track from list was causing crash  and some other changes for stability.
 * Fixed Sniper missing from pick screen.
 * Fixed Broken wings not working on multiple heroes.
-* some other stuff
+* some other fixes.
+
+
+
+* Fix some Kardel abuse
+* Treant Root buffed, from 40% deff to 60% and 100% bonus base dmg to 200%
+* Autocasts toggles will not be stoped by piety ultimate anymore.
+* Buffed Scarlet item set and Cursed Shovel.
+* Fixed lone druid bear getting nebu to multiply with himself.
+* Fixed some other stuff(stuff = mostly small technical details and/or tricks that they need to be discovered in-game not in patch note)
+ "-extra" mode seems to be more stable so give it a try.
 
 
 
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes44 can be found on the new map version:
+*Update patch notes46 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 

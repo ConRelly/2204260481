@@ -41437,7 +41437,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"dmg_reduct"		"40"
+				"dmg_reduct"		"60"
 			}
 			"03"
 			{
@@ -41447,7 +41447,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_dmg"			"100"
+				"bonus_dmg"			"200"
 			}
 			"05"
 			{
@@ -42852,7 +42852,7 @@
 				}
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"	"100"
+					"MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"	"25"
 				}
 				"States"
 				{

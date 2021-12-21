@@ -3,7 +3,7 @@ LinkLuaModifier("modifier_shovel_curse", "items/ritual_shovel", LUA_MODIFIER_MOT
 LinkLuaModifier("modifier_tome_str_bonus", "items/tomes.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_tome_agi_bonus", "items/tomes.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_tome_int_bonus", "items/tomes.lua", LUA_MODIFIER_MOTION_NONE)
-
+local chen_first_spawn = true
 item_ritual_shovel = item_ritual_shovel or class({})
 function item_ritual_shovel:GetIntrinsicModifierName() return "modifier_ritual_shovel" end
 function item_ritual_shovel:OnSpellStart()
@@ -83,13 +83,13 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 				local atr = RandomInt(1, 3)
 				if atr == 1 then
 					self:GetParent():ModifyStrength(10)
-					Add_Attributes(self:GetParent(), "modifier_tome_str_bonus", 10)
+					Add_Attributes(self:GetParent(), "modifier_tome_str_bonus", 50)
 				elseif atr == 2 then
 					self:GetParent():ModifyAgility(10)
-					Add_Attributes(self:GetParent(), "modifier_tome_agi_bonus", 10)
+					Add_Attributes(self:GetParent(), "modifier_tome_agi_bonus", 50)
 				elseif atr == 3 then
 					self:GetParent():ModifyIntellect(10)
-					Add_Attributes(self:GetParent(), "modifier_tome_int_bonus", 10)
+					Add_Attributes(self:GetParent(), "modifier_tome_int_bonus", 50)
 				end
 			end
 		elseif random_int > self.rare and random_int <= self.rune then
@@ -110,13 +110,25 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 				CreateRune(self:GetCursorPosition(), DOTA_RUNE_BOUNTY)
 			end
 		elseif random_int > self.rune and random_int <= self.flask then
-			if RollPseudoRandom(50, self) then
-				SpawnItem("item_flask", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
+			if RollPseudoRandom(33, self) then
+				SpawnItem("item_book_of_strength", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
+			elseif RollPseudoRandom(66, self) then
+				SpawnItem("item_book_of_intelligence", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
 			else
-				SpawnItem("item_enchanted_mango", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
+				SpawnItem("item_book_of_agility", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)	
 			end
 		elseif random_int > self.flask and random_int <= self.kobold then
-			if RollPseudoRandom(80, self) then
+			if chen_first_spawn and self:GetCaster():GetName() == "npc_dota_hero_chen" then
+				chen_first_spawn = false
+				local huskar = CreateUnitByName("npc_dota_custom_creep_28_3", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_BADGUYS)
+				local lvl = self:GetCaster():GetLevel()
+				huskar:SetBaseDamageMax(lvl * 500)
+				if lvl > 65 then
+					lvl = lvl * 10
+				end
+				huskar:SetBaseMaxHealth(lvl * 1000)
+				
+			elseif RollPseudoRandom(80, self) then
 				CreateUnitByName("npc_dota_neutral_kobold", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_BADGUYS)
 			else
 				local random_ultracreep = RandomInt(1, 2)

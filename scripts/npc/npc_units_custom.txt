@@ -15758,7 +15758,7 @@
 		"ModelScale" 					"1.0"
 		"HasInventory"		 "1"
 		"CanBeDominated"			 "0"
-		"UnitLabel"					"npc_dota_custom_creep_28_3"
+		"UnitLabel"					"randomskill"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -15865,7 +15865,7 @@
 		"ModelScale"				"0.9"
 		"HasInventory"				"1"
 		"CanBeDominated"			"0"
-		"UnitLabel"					"npc_dota_inv_warrior"
+		"UnitLabel"					"randomskill"
 
 		// Abilities
 		//----------------------------------------------------------------

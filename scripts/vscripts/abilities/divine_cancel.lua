@@ -32,6 +32,7 @@ PurgeUnpurgable = {
 	["modifier_wisp_tether"] = true,
 	["modifier_wisp_spirits"] = true,
 	["modifier_tiny_tree_grab"] = true,
+	["modifier_tiny_tree_grab"] = true,
 
 -- Bosses
 	["modifier_custom_antimage_revenge"] = true,
@@ -95,7 +96,9 @@ function lesser_cancel:OnSpellStart()
 			for i = 0, target:GetAbilityCount() - 1 do
 				local Ability = target:GetAbilityByIndex(i)
 				if Ability and Ability:GetToggleState() then
-					Ability:ToggleAbility()
+					if Ability:GetName() ~= "mjz_bristleback_quill_spray_autocast4_5" and Ability:GetName() ~= "mjz_bristleback_quill_spray_autocast4" then
+						Ability:ToggleAbility()
+					end	
 				end
 			end
 			if target:IsIllusion() then kill_illusion(target) end
@@ -174,7 +177,9 @@ function divine_cancel:OnSpellStart()
 				for i = 0, target:GetAbilityCount() - 1 do
 					local Ability = target:GetAbilityByIndex(i)
 					if Ability and Ability:GetToggleState() then
-						Ability:ToggleAbility()
+						if Ability:GetName() ~= "mjz_bristleback_quill_spray_autocast4_5" and Ability:GetName() ~= "mjz_bristleback_quill_spray_autocast4" then
+							Ability:ToggleAbility()
+						end	
 					end
 				end
 				if target:IsIllusion() then kill_illusion(target) end

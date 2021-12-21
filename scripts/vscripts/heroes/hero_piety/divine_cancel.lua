@@ -97,7 +97,9 @@ function lesser_cancel:OnSpellStart()
 			for i = 0, target:GetAbilityCount() - 1 do
 				local Ability = target:GetAbilityByIndex(i)
 				if Ability and Ability:GetToggleState() then
-					Ability:ToggleAbility()
+					if not string.find(Ability:GetAbilityName(), "autocast") and Ability:GetName() ~= "medusa_mana_shield" then
+						Ability:ToggleAbility()
+					end	
 				end
 			end
 			if target:IsIllusion() then kill_illusion(target) end
@@ -176,8 +178,10 @@ function divine_cancel:OnSpellStart()
 				end
 				for i = 0, target:GetAbilityCount() - 1 do
 					local Ability = target:GetAbilityByIndex(i)
-					if Ability and Ability:GetToggleState() then
-						Ability:ToggleAbility()
+					if Ability and Ability:GetToggleState() then 
+						if not string.find(Ability:GetAbilityName(), "autocast") and Ability:GetName() ~= "medusa_mana_shield" then
+							Ability:ToggleAbility()
+						end	
 					end
 				end
 				if target:IsIllusion() then kill_illusion(target) end

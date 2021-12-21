@@ -41,7 +41,7 @@ function HolyPersuasion(keys)
 	else
 		if target:IsAncient() then return end
 	end
-
+	if target:GetUnitName() == "npc_dota_inv_warrior" then return end
 	EmitSoundOn("Hero_Chen.HolyPersuasionEnemy", target)
 	target:SetTeam(caster:GetTeamNumber())
 	target:SetOwner(caster)
@@ -112,7 +112,9 @@ function HolyPersuasion(keys)
 	ability:ApplyDataDrivenModifier(caster, target, "modifier_phased", {})
 	ability:ApplyDataDrivenModifier(caster, target, "modifier_fountain_aura_buff", {})
 	FindClearSpaceForUnit(target, target:GetAbsOrigin(), true)
-
+	if target:HasModifier("modifier_boss") then
+		target:RemoveModifierByName("modifier_boss")
+	end	
 	-- Track the unit
 	ability.holy_persuasion_unit_count = ability.holy_persuasion_unit_count + 1
 	table.insert(ability.holy_persuasion_table, target)

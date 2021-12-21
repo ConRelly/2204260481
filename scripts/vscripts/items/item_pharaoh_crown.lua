@@ -22,6 +22,17 @@ end
 if IsServer() then
 function modifier_pharaoh_crown_buff:OnDestroy(keys)
 	self.parent:ForceKill(false)
+	print("force kill Main")
+	if self.parent and self.parent:IsAlive() then
+		print("force kill second")
+		self.parent:ForceKill(false)
+	end
+	Timers:CreateTimer(3, function()
+		if self.parent and self.parent:IsAlive() then
+			print("force kill timer")
+			self.parent:ForceKill(false)
+		end
+	end)	
 end
 function modifier_pharaoh_crown_buff:OnCreated()
 	self.ability = self:GetAbility()
@@ -36,7 +47,7 @@ function modifier_pharaoh_crown_buff:OnCreated()
 	self.parent_regen = self.parent:GetBaseHealthRegen()
 	self.parent_armor = self.parent:GetPhysicalArmorBaseValue()
 	self.caster_base_damage = (self.caster:GetBaseDamageMax() + self.caster:GetBaseDamageMin()) / 2
-	self.parentishero = false
+	self.parentishero = false	
 	if self.parent:IsConsideredHero() then
 		self.parentishero = true
 	end
@@ -68,7 +79,7 @@ function modifier_pharaoh_crown_buff:OnIntervalThink()
 	if self.parent:IsNull() or self.caster:IsNull() then
 		self:Destroy()
 		return
-	end
+	end	
 	local caster_max_health = self.caster:GetMaxHealth()
 	if self.parentishero then
 		self.tempHealth = self.parent:GetHealth() / self.parent:GetMaxHealth() * 1.00000
