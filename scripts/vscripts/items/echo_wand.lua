@@ -238,6 +238,8 @@ if IsServer() then
 		item_hammer_of_the_divine = true,
 		phantom_lancer_phantom_edge = true,
 		treant_natures_form = true,
+		dazzle_shallow_grave = true,
+		aghanim_blink2 = true,
 		
 	}
 	local include_table = {

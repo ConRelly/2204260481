@@ -37294,7 +37294,7 @@
 		"AbilityCastPoint"				"0.0"
 		"MaxLevel"						"4"
 		"AOERadius"						"375 400 425 450"
-		"AbilityCooldown"				"12"
+		"AbilityCooldown"				"17"
 		"AbilityManaCost"				"0"
 		"AbilitySpecial"
 		{

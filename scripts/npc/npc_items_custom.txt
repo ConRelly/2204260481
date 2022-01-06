@@ -20478,7 +20478,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"base_cooldown"			"50.0"
+			"base_cooldown"			"100.0"
 		}
 		"02"
 		{
