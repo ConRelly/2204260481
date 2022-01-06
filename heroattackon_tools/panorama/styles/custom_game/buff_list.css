@@ -1,0 +1,121 @@
+.BuffListRoot
+{
+	horizontal-align: left;
+	vertical-align: bottom;
+	margin-bottom: 185px;
+	width: 100%;
+}
+
+#BuffBlock{
+	horizontal-align: center;
+	max-width: 600px; 
+	flow-children: down;
+}
+
+#buffs_list
+{
+	max-height: 67px;
+	overflow: clip;
+	flow-children: right-wrap;
+}
+
+#debuffs_list
+{
+	max-height: 40px;
+	overflow: clip;
+	flow-children: right-wrap;
+}
+
+.BuffRoot
+{
+	border-radius: 50%;
+}
+
+.BuffRoot.no_buff{
+	visibility: collapse;
+}
+
+#BuffImage,
+#BuffFrame{
+	width: 40px;
+	height: 40px;
+	margin-left: 2px;
+	margin-right: 2px;
+	border-radius: 50%;
+}
+
+#BuffFrame
+{
+	box-shadow: fill #00000099 0px 0px 2.5px 0px;
+}
+
+.is_debuff#BuffFrame{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #a54518 ), to( #652908 ) );
+}
+
+#StackCount{
+	width: 100%;
+	text-shadow: 0px 0px 6px 6 #000000;
+	margin: 5px;
+	vertical-align: center;
+	font-size: 20px;
+
+	font-family: monospaceNumbersFont;
+	color: white;
+	visibility: collapse;
+	text-overflow: shrink;
+	text-align: center;
+}
+
+.has_stacks #StackCount{
+	visibility: visible;
+}
+
+
+#BuffImage{
+	box-shadow: inset #000000aa 0px 1px 16px 1px;
+}
+
+.BuffImg{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	margin: 1.2px;
+}
+
+.ability_buff #ItemImg{
+	visibility: collapse;
+}
+
+.item_buff #AbilityImg{
+	visibility: collapse;
+}
+
+#CircularDuration{
+	height: 100%;
+	width: 100%;
+	border: 50%;
+	background-image: url("s2r://panorama/images/hud/reborn/buff_outline_psd.vtex");
+	background-size: 95% 95%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	wash-color: #8bdd4f;
+}
+.is_debuff #CircularDuration{
+	wash-color: #FC2F02;
+}
+
+.bShrink #BuffFrame{
+	width: 33px;
+	height: 33px;
+}
+
+.bShrink #StackCount{
+	margin: 3px;
+	font-size: 15px;
+}
+
+.bShrink #debuffs_list
+{
+	max-height: 33px;
+}
