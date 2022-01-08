@@ -7959,14 +7959,20 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_pct"	"75 85 100 200" 
+				"damage_pct"	"75 85 100 220" 
 			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"scepter_duration"				"3"
+				"RequiresScepter"		"1"
+			}			
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"scepter_attacks"				"12 18 25 32"
+				"scepter_attacks"				"12 18 27 45"
 				"RequiresScepter"		"1"
-			}
+			}			
 		}
 	}
 	"riki_backstab"
