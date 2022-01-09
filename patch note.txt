@@ -1503,6 +1503,10 @@ QuickFix and update:
 
 
 
+* Increased riky Aghanim diration to 3 sec to match normal and increased his number of hits and dmg.
+* Fixed some Kardel abuse .
+* Added 2 skills to mimic blacklist(used for perma invul/immortal)
+
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 

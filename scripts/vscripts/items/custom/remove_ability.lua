@@ -10,6 +10,8 @@ if IsServer() then
         local ability = keys.ability
         local unit = keys.unit
         local hero = caster
+        local lvl = hero:GetLevel()
+        if lvl < 6 then return nil end
         --print("spell start")
         if hero:HasAbility("doom_bringer_empty2") then
             local doomskill = hero:FindAbilityByName("doom_bringer_empty2")
