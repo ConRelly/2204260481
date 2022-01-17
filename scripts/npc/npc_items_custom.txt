@@ -35120,7 +35120,7 @@
 			"7"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"unyielding_cs_chance"		"5"
+				"unyielding_cs_chance"		"6"
 			}
 			"8"
 			{

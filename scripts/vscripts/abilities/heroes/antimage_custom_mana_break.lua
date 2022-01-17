@@ -47,10 +47,18 @@ function modifier_antimage_custom_mana_break:OnAttackLanded(keys)
 			local mana_per_hit = ability:GetSpecialValueFor("mana_per_hit")
 			local target_mana = target:GetMana()
 			local chance = ability:GetSpecialValueFor("stack_chance")
-			local damage = mana_per_hit * ability:GetSpecialValueFor("mana_burn_as_damage")
+			local lvl = attacker:GetLevel()
 			if HasTalent(attacker, "special_bonus_custom_mana_break_1") then
 				damage_flag = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR
+			end
+			if attacker:HasModifier("modifier_super_scepter") then
+				mana_per_hit = mana_per_hit + lvl
+				chance = ability:GetSpecialValueFor("stack_chance_ss")
+				if attacker:HasModifier("modifier_marci_unleash_flurry") then
+					damage_flag = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR
+				end                                 
 			end				
+			local damage = mana_per_hit * ability:GetSpecialValueFor("mana_burn_as_damage")			
 			target:ReduceMana(mana_per_hit)
 			SendOverheadEventMessage(nil, OVERHEAD_ALERT_MANA_LOSS, target, mana_per_hit, nil)
 			if RandomInt(0,100) < chance then

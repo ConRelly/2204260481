@@ -95,7 +95,8 @@ if IsServer() then
 		end
 
 		local damage_reflect_pct = GetTalentSpecialValueFor(self:GetAbility(), "damage_reflect_pct")
-		local re_damage = params.damage * damage_reflect_pct / 100
+		local re_damage = math.ceil( (params.damage * damage_reflect_pct / 100) * (1 + caster:GetSpellAmplification(false) / 4 ) )
+
 
 		local isTarget = UnitFilter(target, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC+DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, caster:GetTeamNumber()) == UF_SUCCESS
 		if isTarget and IsValidEntity(target) and target:IsAlive() then
@@ -109,7 +110,7 @@ if IsServer() then
 				damage = re_damage,
 				damage_type = params.damage_type,
 				ability = self:GetAbility(),
-				damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+				damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 			})
 		else
 			print("OnTakeDamage: not isTarget")

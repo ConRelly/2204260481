@@ -11276,9 +11276,9 @@
 	"ScriptFile"					"abilities/heroes/antimage_custom_speed.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"antimage_mana_void"
-	"MaxLevel"					  "5"
+	"MaxLevel"					  "6"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-	"AbilityCooldown"			   "9.0 8.5 8.0 7.5 7.0"
+	"AbilityCooldown"			   "9.5 9.0 8.5 8.0 7.5 7.0"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 	"AbilityManaCost"			   "50"
 	"AbilitySpecial"
@@ -11286,7 +11286,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"base_attack_time"		"0.9 0.9 0.9 0.9 0.8"
+			"base_attack_time"		"0.9 0.9 0.9 0.9 0.9 0.8"
 		}
 		"02"
 		{
@@ -11296,14 +11296,13 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"damage"				"500 900 1500 2200 4900"
+			"damage"				"500 900 1500 2200 4900 12500"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"bonus_damage"				"10.0 13.0 17.0 20.0 25.0"
+			"bonus_damage"				"10.0 13.0 17.0 20.0 25.0 45.0"
 		}		
-
 	}
 
 }
@@ -11313,8 +11312,8 @@
 	"ScriptFile"			 		"abilities/heroes/antimage_custom_mana_break.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-	"MaxLevel"					  "7"
-	"LevelsBetweenUpgrades"		 "6"
+	"MaxLevel"					  	"7"
+	"LevelsBetweenUpgrades"		 	"7"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"antimage_mana_break"
 	"HasInnateModifiers"			"1"
@@ -11353,13 +11352,18 @@
 		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_agi"				"1"
+			"bonus_agi"				"2"
 		}
 		"08"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"chance_hit"			"10"
-		}								 
+		}
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"stack_chance_ss"			"40 42 44 46 50 60 75"
+		}										 
 	}
 }
 "special_bonus_custom_mana_break_1"

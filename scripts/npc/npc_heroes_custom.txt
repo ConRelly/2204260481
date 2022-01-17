@@ -874,7 +874,7 @@
 
 		"ArmorPhysical"					"5"
 		"AttributeStrengthGain"			"4.300000"
-		"AttributeAgilityGain"			"9.3"
+		"AttributeAgilityGain"			"29.3"
 		"AttributeIntelligenceGain"		"3.500000"
 	}
 
