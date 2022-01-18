@@ -168,7 +168,7 @@ function SwapToItem(caster, removed_item, added_item)
 	for i=0, 5, 1 do  --Fill all empty slots in the player's inventory with "dummy" items.
 		local current_item = caster:GetItemInSlot(i)
 		if current_item == nil then
-			caster:AddItem(CreateItem("item_imba_dummy", caster, caster))
+			caster:AddItem(CreateItem("item_dummy", caster, caster))
 		end
 	end
 	
@@ -178,7 +178,7 @@ function SwapToItem(caster, removed_item, added_item)
 	for i=0, 5, 1 do  --Remove all dummy items from the player's inventory.
 		local current_item = caster:GetItemInSlot(i)
 		if current_item ~= nil then
-			if current_item:GetName() == "item_imba_dummy" then
+			if current_item:GetName() == "item_dummy" then
 				caster:RemoveItem(current_item)
 			end
 		end

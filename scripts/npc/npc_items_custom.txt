@@ -3206,11 +3206,6 @@
 			"var_type"					"FIELD_INTEGER"
 			"min_health"				"25"
 		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"health_threshold"			"10"
-		}
 	}
 	"OnEquip"
 	{
@@ -6035,6 +6030,38 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"duration_minutes"		"3"
+			}
+		}
+	}
+
+// Tome of Super Scepter
+	"item_tome_of_super_scepter"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"AbilityTextureName"			"custom/tome_of_super_scepter"
+		"ItemCost"						"7500"
+		"ItemIsNeutralDrop"				"0"
+		"ItemPurchasable"				"1"
+		"ItemInitialCharges"			"1"
+		"ItemPermanent"					"0"
+		"IsTempestDoubleClonable"		"0"
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"30"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"items/item_aghanim_synth"
+				"Function"				"SuperScepterTome"
+				"duration"				"%duration"
 			}
 		}
 	}
@@ -9846,33 +9873,29 @@
 		"ItemResult"					"item_mjz_dagon_v2"
 		"ItemRequirements"
 		{
-			//达贡之神力 Lv5（7700） + 卷轴：达贡之神力（1250） + 慧光（2050）
-			//"01"						"item_dagon_5;item_recipe_dagon;item_kaya"
 			"01"						"item_dagon_5;item_kaya"
 		}
 	}
 	"item_mjz_dagon_v2"
 	{
-		"BaseClass"						"item_datadriven"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_dagon"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityTextureName"			"mjz_dagon_v2"	//"item_dagon_5"
+		"AbilityTextureName"			"mjz_dagon_v2"
 		"AbilityCastRange"				"5900"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"18.0"
-		"AbilitySharedCooldown"			"dagon"
-		"HasScepterUpgrade"				"1"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"18"
+//		"AbilitySharedCooldown"			"dagon"
+//		"HasScepterUpgrade"				"1"
 		"AbilityManaCost"				"50"
-		"ItemCost"						"11000"
 		"ItemShopTags"					"mjz;damage;int;str;agi;hard_to_tag"
-		"ItemQuality"					"rare"	
+		"ItemQuality"					"rare"
 		"ItemAliases"					"dagon"
-		// "MaxUpgradeLevel"				"6"
-		"ItemBaseLevel"					"99"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
 		"precache"
 		{
@@ -9883,7 +9906,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_intellect"			"270"	//"15 18 21 24 27"
+				"bonus_intellect"			"270"
 			}
 			"02"
 			{
@@ -9893,63 +9916,42 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"1800"	//"400 500 600 700 800"
+				"damage"					"1800"
 			}
 			"04"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"range_tooltip"				"5900"	//"600 650 700 750 800"
+				"var_type"					"FIELD_FLOAT"
+				"damage_delay"				"0.05"
 			}
 			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_delay"				"0"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"mana_cost_tooltip"			"50"
-			}
-			"07"							//每次使用增加伤害
 			{
 				"var_type"					"FIELD_INTEGER"
 				"damage_per_use"			"400"
 			}
-			"08"							//技能溅射范围
+			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"splash_radius_scepter"		"725"
-				"RequiresScepter"			"1"
 			}
 		}
+	}
 
-		"OnSpellStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"		"items/item_mjz_dagon_v2.lua"
-				"Function"			"OnSpellStart"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_mjz_dagon_v2"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"IsPurgable"		"0"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
-					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_intellect"
-				}
-			}
-		}
+// Cursed Item Slot
+	"item_lions_cursed_item_slot"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_dagon"
+		"AbilityTextureName"			"custom/cursed_item_slot"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityCooldown"				"0"
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop" 		 	"1"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPurchasable"				"0"
+		"ItemDroppable"					"0"
+		"ItemSellable"					"0"
+		
 	}
 	
 "item_recipe_mjz_greater_demon_talon"

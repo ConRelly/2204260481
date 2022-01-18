@@ -1,6 +1,7 @@
 LinkLuaModifier("modifier_aghanims_blessing", "items/item_aghanim_synth.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_aghanims_scepter_synth", "items/item_aghanim_synth.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_super_scepter", "items/item_aghanim_synth.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_tome_of_super_scepter", "items/item_aghanim_synth.lua", LUA_MODIFIER_MOTION_NONE)
 
 function AghanimsSynthCast(keys)
 	local caster = keys.caster
@@ -30,7 +31,7 @@ function AghanimsSynthCast(keys)
 		end
 	end
 	caster:EmitSound("Hero_Alchemist.Scepter.Cast")
-	caster:RemoveItem(ability)
+	ability:SpendCharge()
 end
 
 
@@ -55,7 +56,7 @@ end
 function item_ultimate_scepter_synth:GetIntrinsicModifierName() return "modifier_aghanims_blessing" end
 
 modifier_aghanims_blessing = class({})
-function modifier_aghanims_blessing:IsHidden() return false end
+function modifier_aghanims_blessing:IsHidden() return true end
 function modifier_aghanims_blessing:IsPurgable() return false end
 function modifier_aghanims_blessing:OnCreated()
 	self:GetAbility():OnSpellStart()
@@ -128,3 +129,19 @@ function modifier_super_scepter:OnDestroy()
 		end
 	end
 end
+
+
+function SuperScepterTome(keys)
+	if not keys.caster:HasModifier("modifier_super_scepter") then
+		keys.caster:AddNewModifier(keys.caster, keys.ability, "modifier_super_scepter", {duration = keys.duration})
+		keys.caster:AddNewModifier(keys.caster, keys.ability, "modifier_tome_of_super_scepter", {duration = keys.duration})
+		keys.ability:SpendCharge()
+	end
+end
+
+modifier_tome_of_super_scepter = class({})
+function modifier_tome_of_super_scepter:IsHidden() return false end
+function modifier_tome_of_super_scepter:IsPurgable() return false end
+function modifier_tome_of_super_scepter:RemoveOnDeath() return false end
+function modifier_tome_of_super_scepter:AllowIllusionDuplicate() return false end
+function modifier_tome_of_super_scepter:GetTexture() return "imba_ultimate_scepter_synth" end

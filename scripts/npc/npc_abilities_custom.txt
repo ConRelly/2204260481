@@ -3337,7 +3337,7 @@
 }
 "courier_invisibility"
 {
-	"BaseClass"				"ability_datadriven"
+	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 	"AbilityType"	 				"DOTA_ABILITY_TYPE_BASIC"
 	"OnCreated"
@@ -3345,7 +3345,7 @@
 		"RunScript"
 		{
 			"ScriptFile"	"abilities/other/courier.lua"
-			"Function"		"courier_moveto"
+			"Function"		"remove_courier"
 		}
 	}
 	"Modifiers"
@@ -11302,9 +11302,8 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"bonus_damage"				"10.0 13.0 17.0 20.0 25.0 45.0"
-		}		
+		}
 	}
-
 }
 "antimage_custom_mana_break"
 {
@@ -11312,8 +11311,8 @@
 	"ScriptFile"			 		"abilities/heroes/antimage_custom_mana_break.lua"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-	"MaxLevel"					  	"7"
-	"LevelsBetweenUpgrades"		 	"7"
+	"MaxLevel"					  "7"
+	"LevelsBetweenUpgrades"		 "7"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"antimage_mana_break"
 	"HasInnateModifiers"			"1"
@@ -24661,7 +24660,7 @@
 	//=================================================================================================================
 	"mjz_finger_of_death"
 	{
-		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"BaseClass"						"ability_lua"
 		"AbilityTextureName"			"lion_finger_of_death"
 		"ScriptFile"					"abilities/hero_lion/mjz_finger_of_death.lua"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
@@ -24669,42 +24668,42 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		//"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NONE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"							// Changes dynamically with scepter	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilitySound"					"Hero_Lion.FingerOfDeath"
+		"MaxLevel"						"5"
 		"HasScepterUpgrade"				"1"
-		//"RequiredLevel"				 "1"
 		"AbilityCastRange"				"%cast_range"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-
-		"AbilityCooldown"				"40.0 30.0 25.0"
-		"AbilityManaCost"				"200 220 450"
+		"AbilityCooldown"				"40 36 32 28 24"
+		"AbilityManaCost"				"200 400 800 1400 2200"
 			
-		"AbilityModifierSupportValue"	"0.0"	// Modifier just delays damage
+		"AbilityModifierSupportValue"	"0.0"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cast_range"				"1900"
+				"cast_range"				"900 1100 1300 1500 1700"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cast_range_scepter"		"3900"
+				"cast_range_scepter"		"3000"
+				"RequiresScepter"			"1"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"800 1425 1850"
+				"damage"					"800 1000 1200 1400 1600"
 				"LinkedSpecialBonus"		"special_bonus_unique_lion_3"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"1225 1975 2525"
+				"damage_scepter"			"1000 1250 1500 1800 2200"
 				"LinkedSpecialBonus"		"special_bonus_unique_lion_3"
 				"RequiresScepter"			"1"
 			}
@@ -24714,38 +24713,28 @@
 				"damage_per_kill"			"350"
 				//"LinkedSpecialBonus"		"special_bonus_unique_lion_8"
 			}
-			"06"							//击杀计算时间（多少秒内死亡可以有伤害加成）
+			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"kill_grace_duration"		"35"
+				"kill_grace_duration"		"10"
 			}
-			"07"							//击杀普通单位的血量总值超过指定值，才算一层；不超过就累计击杀血量值
-			{
-				"var_type"					"FIELD_INTEGER"
-				"creature_health"			"200"
-			}
-			"09"							//技能溅射范围
+			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"splash_radius_scepter"		"1925"
+				"splash_radius_scepter"		"900 1300 1700 2100 2500"
 				"RequiresScepter"			"1"
 			}
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"mana_cost_scepter"			"200 220 425"
+				"mana_cost_scepter"			"0"
 				"RequiresScepter"			"1"
 			}
 			"13"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"30.0 25.0 20.0"
+				"cooldown_scepter"			"32 28 24 20 16"
 				"RequiresScepter"			"1"
-			}
-			"20"							//击杀普通单位是否会伤害加成（大于0，表示开启）
-			{
-				"var_type"					"FIELD_INTEGER"
-				"creature_enabled"			"1"
 			}
 			"22"
 			{
@@ -24757,7 +24746,7 @@
 				"var_type"					"FIELD_FLOAT"
 				"damage_per_int"			"0"
 				"LinkedSpecialBonus"		"special_bonus_unique_lion_8"
-			}			
+			}
 		}
 
 		"precache"
@@ -24767,7 +24756,7 @@
 			"particle"			"particles/econ/items/lion/lion_ti8/lion_spell_finger_of_death_charge_ti8.vpcf"
 		}
 	}
-	"special_bonus_finger_of_death_health_per_kill"
+	"special_bonus_finger_of_death_health_per_kill"		// Health per kill
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
@@ -24778,6 +24767,20 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"value"						"20"
+			}
+		}
+	}
+	"special_bonus_finger_of_death_health_inf_kill_duration"	// Inf kill grace duration
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"1"
 			}
 		}
 	}
@@ -42856,7 +42859,7 @@
 				}
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"	"25"
+					"MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"	"100"
 				}
 				"States"
 				{

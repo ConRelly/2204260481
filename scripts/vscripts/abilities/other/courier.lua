@@ -16,7 +16,7 @@ function courier_moveto(keys)
 	)
 
 	-- caster:UpgradeToFlyingCourier()
-	PrintTable(caster)
+	--PrintTable(caster)
 
 	local playerID = caster:GetPlayerOwnerID()
 	local player   = caster:GetPlayerOwner()
@@ -25,4 +25,8 @@ function courier_moveto(keys)
 
 	local pID = #PLAYERS_COURIER + 1
 	PLAYERS_COURIER[pID] = caster
+end
+
+function remove_courier(keys)
+	keys.caster:RemoveSelf()
 end

@@ -88,25 +88,10 @@ function modifier_inf_aegis_stats:IsDebuff() return false end
 function modifier_inf_aegis_stats:RemoveOnDeath() return false end
 function modifier_inf_aegis_stats:OnCreated()
 	self:SetStackCount(1)
-	if IsServer() then
-		self:StartIntervalThink(FrameTime())
-		if not self:GetAbility() then self:Destroy() end
-	end
+	self.proc_stats = self:GetAbility():GetSpecialValueFor("proc_stats")
 end
-function modifier_inf_aegis_stats:DeclareFunctions() return {MODIFIER_PROPERTY_TOOLTIP, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_EVENT_ON_DEATH} end
-function modifier_inf_aegis_stats:OnDeath(keys)
-	if IsServer() then
-		local unit = keys.unit
-		local aegis_charges = self:GetCaster():FindModifierByName("modifier_aegis")
-		if aegis_charges and aegis_charges:GetStackCount() > 0 then return end
-		if self:GetAbility():IsOwnersManaEnough() and self:GetAbility():IsCooldownReady() then
-			if self:GetCaster():IsRealHero() and self:GetParent() == unit then
---				self:IncrementStackCount()
-			end
-		end
-	end
-end
-function modifier_inf_aegis_stats:OnTooltip() return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("proc_stats") end
-function modifier_inf_aegis_stats:GetModifierBonusStats_Strength() if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("proc_stats") end end
-function modifier_inf_aegis_stats:GetModifierBonusStats_Agility() if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("proc_stats") end end
-function modifier_inf_aegis_stats:GetModifierBonusStats_Intellect() if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("proc_stats") end end
+function modifier_inf_aegis_stats:DeclareFunctions() return {MODIFIER_PROPERTY_TOOLTIP, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS} end
+function modifier_inf_aegis_stats:OnTooltip() return self:GetStackCount() * self.proc_stats end
+function modifier_inf_aegis_stats:GetModifierBonusStats_Strength() return self:GetStackCount() * self.proc_stats end
+function modifier_inf_aegis_stats:GetModifierBonusStats_Agility() return self:GetStackCount() * self.proc_stats end
+function modifier_inf_aegis_stats:GetModifierBonusStats_Intellect() return self:GetStackCount() * self.proc_stats end

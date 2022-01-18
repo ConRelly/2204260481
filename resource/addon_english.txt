@@ -2343,15 +2343,17 @@
 "DOTA_Tooltip_ability_mjz_alchemist_goblins_greed_gold"							"GIVE GOLD:"
 "DOTA_Tooltip_ability_mjz_alchemist_goblins_greed_interval"						"INTERVAL:" 
 
-"DOTA_Tooltip_ability_alchemist_power_of_gold"						"Power of gold"
-   "DOTA_Tooltip_ability_alchemist_power_of_gold_Description"			"The kind of power that you can buy! Grants additional attack damage based on hero's Networth."
-   "DOTA_Tooltip_ability_alchemist_power_of_gold_gold_percent"		   "%DMG OF NETWORTH:"
+	"DOTA_Tooltip_ability_alchemist_power_of_gold"					"Power of Gold"
+	"DOTA_Tooltip_ability_alchemist_power_of_gold_Description"		"The kind of power that you can buy! Grants additional attack damage based on hero's Networth."
+	"DOTA_Tooltip_ability_alchemist_power_of_gold_gold_percent"		"%DMG OF NETWORTH:"
+	"DOTA_Tooltip_modifier_hero_alchemist_power_of_gold"					"Gold Power"
+	"DOTA_Tooltip_modifier_hero_alchemist_power_of_gold_Description"		"Damage increased by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% of hero's networth."
  
-"DOTA_Tooltip_ability_alchemist_power_of_gold2"						"Power of gold"
-   "DOTA_Tooltip_ability_alchemist_power_of_gold2_Description"			"The kind of power that you can buy! Grants additional spell power based on hero's Networth."
-   "DOTA_Tooltip_ability_alchemist_power_of_gold2_gold_percent"		   "%DMG OF NETWORTH:"
-   "DOTA_Tooltip_modifier_hero_alchemist_power_of_gold2"					  "Spell power"
-   "DOTA_Tooltip_modifier_hero_alchemist_power_of_gold2_Description"		  "Gain more gold to increase your spell power"
+	"DOTA_Tooltip_ability_alchemist_power_of_gold2"					"Power of Gold"
+	"DOTA_Tooltip_ability_alchemist_power_of_gold2_Description"		"The kind of power that you can buy! Grants additional spell power based on hero's Networth."
+	"DOTA_Tooltip_ability_alchemist_power_of_gold2_gold_percent"		"%DMG OF NETWORTH:"
+	"DOTA_Tooltip_modifier_hero_alchemist_power_of_gold2"					"Gold Power"
+	"DOTA_Tooltip_modifier_hero_alchemist_power_of_gold2_Description"		"Spell Damage increased by %fMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% of hero's networth."
  
 
 
@@ -2892,8 +2894,8 @@
 	"DOTA_Tooltip_ability_mjz_faceless_void_backtrack_dodge_chance_pct"		"%Proc Chance: "
 		
 	"DOTA_Tooltip_ability_mjz_finger_of_death"						"Finger of Death"
-	"DOTA_Tooltip_ability_mjz_finger_of_death_Description"			"Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each life it consumes.\nUpgradable by Aghanim's Scepter."
-	"DOTA_Tooltip_ability_mjz_finger_of_death_scepter_description"	"Increases damage. Decreases cooldown. Finger of Death hits all units in a small area."
+	"DOTA_Tooltip_ability_mjz_finger_of_death_Description"			"Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each life it consumes. \n<h1><font color='#DE3163'>UP: Super Scepter</font></h1> Each use gives 1 charge of Lion's Dagon and increases the damage for each charge multiplied by the base damage of this skill."
+	"DOTA_Tooltip_ability_mjz_finger_of_death_scepter_description"	"Increases damage, reduces cooldown and cancels mana cost. Finger of Death hits all units in a small area."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_Lore"					"Lion's disfigured hand is also the source of his greatest power, capable of flooding victims with malefic force."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_cast_range"				"Cast Range:"
 	"DOTA_Tooltip_ability_mjz_finger_of_death_damage"					"Damage:"
@@ -2908,7 +2910,8 @@
 	"DOTA_Tooltip_modifier_mjz_finger_of_death_bonus_Description"		"Finger of Death gaining +%dMODIFIER_PROPERTY_TOOLTIP% damage."
 	"DOTA_Tooltip_modifier_mjz_finger_of_death_death"					"Finger of Death"
 	"DOTA_Tooltip_modifier_mjz_finger_of_death_death_Description"		"Finger of Death gaining +%dMODIFIER_PROPERTY_TOOLTIP% damage per unit kill."
-	"DOTA_Tooltip_ability_special_bonus_finger_of_death_health_per_kill"		"+{s:value} Max Health Per Finger of Death Kill"
+	"DOTA_Tooltip_ability_special_bonus_finger_of_death_health_per_kill"				"+{s:value} Max Health Per Finger of Death Kill"
+	"DOTA_Tooltip_ability_special_bonus_finger_of_death_health_inf_kill_duration"		"Infinite Duration of Finger of Death Effect"
 		
 	"DOTA_Tooltip_ability_mjz_furion_power_of_nature"					"Power of Nature"
 	"DOTA_Tooltip_ability_mjz_furion_power_of_nature_Description"			"Slow a target for %duration% seconds. At the end of the slow, an additional %damage_pct%%% of all damage taken(after reduction) during the slow will be dealt to the target as magical damage."
@@ -5841,10 +5844,10 @@ The extra targets will not receive other attack effects (such as critical strike
 "DOTA_Tooltip_ability_antimage_custom_mana_break_Note1"					"You can lifeleech the damage dealt by this skill with a Lifesteal aura."
 "DOTA_Tooltip_ability_antimage_custom_mana_break_mana_per_hit"			"MANA BURNED PER HIT:"
 "DOTA_Tooltip_ability_antimage_custom_mana_break_stack_chance"			"%Stacks Chance:"
-"DOTA_Tooltip_ability_antimage_custom_mana_break_bonus_stack"		    "Attack Bonus Per Stack:"
-"DOTA_Tooltip_ability_antimage_custom_mana_break_bonus_hp"			  	"Health Bonus Per Stack:"
-"DOTA_Tooltip_ability_antimage_custom_mana_break_bonus_mp"			  	"Mana Bonus Per Stack:"
-"DOTA_Tooltip_ability_antimage_custom_mana_break_bonus_agi"			  	"Agility Bonus Per Stack:"
+"DOTA_Tooltip_ability_antimage_custom_mana_break_bonus_stack"		   "Attack Bonus Per Stack:"
+"DOTA_Tooltip_ability_antimage_custom_mana_break_bonus_hp"			  "Health Bonus Per Stack:"
+"DOTA_Tooltip_ability_antimage_custom_mana_break_bonus_mp"			  "Mana Bonus Per Stack:"
+"DOTA_Tooltip_ability_antimage_custom_mana_break_bonus_agi"			 "Agility Bonus Per Stack:"
 "DOTA_Tooltip_ability_antimage_custom_mana_break_stack_chance_ss"		"%SS Stacks Chance:"
 
 "dota_tooltip_modifier_antimage_custom_mana_break_buff"					  "Mana Breaker"
@@ -7806,13 +7809,15 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		//<<<<
 		//>>>>	Lion's Dagon
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2"										"Lion's Dagon V2"
-		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Description"							"<h1>Active: Finger of Death</h1>Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each use it.<br><br>Cast Range: %abilitycastrange%\n<h1><font color='#0094FF'>UP: Aghanim's Scepter</font></h1>Hits all enemies in a %splash_radius_scepter% radius. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Deals 10 x Your Int As bonus Damage. When Greater Blast Staff passive hits an target has 17%% chance to trigger this item on same target/s. Unlocks an hidden utility of this item."
+		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Description"							"<h1>Active: Finger of Death</h1>Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each use it.<br><br>Cast Range: %abilitycastrange%\n<h1><font color='#0094FF'>UP: Aghanim's Scepter</font></h1>Hits all enemies in a %splash_radius_scepter% radius. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Deals 10 x Your Int As bonus Damage. When Greater Blast Staff passive hits an target has 17%% chance to trigger this item on same target/s. Unlocks an hidden utility of this item. \n<h1><font color='#FFA32B'>Exclusive:</font> Lion</h1> After use, it applies the Finger of Death ability to the same target. <br><br> Increases the radius from <font color='#0094FF'>Aghanim's Scepter</font> equal to the radius of Finger of Death, but blocks the neutral slot. <br> With 6+ <font color='#DE3163'>Super Synth</font> effects removes this limitation."
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Lore"									"Lion's Dagon is also the source of his greatest power, capable of flooding victims with malefic force."
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_bonus_intellect"						"+$int"
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_bonus_all_stats"						"+$all"
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Note0"                                  "splits the damage in 2 instances for a better effect vs gods."
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_damage"									"Base Damage:"
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_damage_per_use"							"Damage Bonus Per Use:"
+
+		"DOTA_Tooltip_ability_item_lions_cursed_item_slot"			""
 		//<<<<
 "DOTA_Tooltip_Ability_item_mjz_demon_talon"							"Demon Talon"
 "DOTA_Tooltip_Ability_item_mjz_demon_talon_Description"				"<h1>Passive: Second Hand</h1>Grants each attack a %proc_chance%%% chance to pierce through evasion and deal %proc_damage% bonus physical damage. Illusions and units deal half damage."
@@ -8079,6 +8084,11 @@ Required Level: %required_level%
 
 		"dota_tooltip_modifier_item_imba_ultimate_scepter_synth_stats"		"Super Synth"
 		"dota_tooltip_modifier_item_imba_ultimate_scepter_synth_stats_description" "Increase all stats by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% and hp and mana by %dMODIFIER_PROPERTY_HEALTH_BONUS% . Having 3 or More Stacks will count as having <font color='#DE3163'>Super Scepter</font>"
+
+		"DOTA_Tooltip_ability_item_tome_of_super_scepter"					"Tome of Super Scepter"
+		"DOTA_Tooltip_ability_item_tome_of_super_scepter_Description"		"<h1>Use: Consume</h1> Temporarily grants the Super Scepter buff for %duration% seconds."
+		"DOTA_Tooltip_modifier_tome_of_super_scepter"					"Tome of Super Scepter"
+		"DOTA_Tooltip_modifier_tome_of_super_scepter_Description"		"Temporary Gaining Super Scepter hero upgrade."
 
 
 		//>>>>	MJZ Abyssal Blade LVL 2
@@ -10041,7 +10051,7 @@ Contains all random skills"
 	"DOTA_Tooltip_ability_marci_unleash_custom_charges_per_flurry"		"STRIKES PER FURY:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_radius"			"PULSE RADIUS:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_damage"			"PULSE DAMAGE:"
-	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_move_slow_pct"		"%PULSE MOVEMENT SLOW:"
+	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_move_slow_pct"	"%PULSE MOVEMENT SLOW:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_attack_slow_pct"	"PULSE ATTACK SLOW:"
 
 	"DOTA_Tooltip_ability_marci_companion_run_custom"						"Rebound"

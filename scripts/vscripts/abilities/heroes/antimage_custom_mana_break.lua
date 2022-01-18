@@ -77,7 +77,7 @@ function modifier_antimage_custom_mana_break:OnAttackLanded(keys)
 end
 
 
-function modifier_antimage_custom_mana_break_buff:IsHidden() return self:GetAbility() == nil end
+function modifier_antimage_custom_mana_break_buff:IsHidden() return (self:GetAbility() == nil) or (self:GetStackCount() < 1) end
 function modifier_antimage_custom_mana_break_buff:IsDebuff() return false end
 function modifier_antimage_custom_mana_break_buff:IsPurgable() return false end
 function modifier_antimage_custom_mana_break_buff:RemoveOnDeath() return false end

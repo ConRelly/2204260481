@@ -17,6 +17,7 @@
 		"item"		"item_custom_stat_change_agi"
 		"item"		"item_custom_stat_change_int"
 		"item"		"item_tome_of_aghanim"
+		"item"		"item_tome_of_super_scepter"
 		"item"		"item_aghanims_shard"
 		"item"      "item_random_get_ability3"
 		"item"		"item_random_get_ability_spell"

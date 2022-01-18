@@ -1503,14 +1503,27 @@ QuickFix and update:
 
 
 
+* Added new tag: "Exclusive" - It is used personally for a certain hero
+* Added new item: Tome of Super Scepter
+* Added Super Scepter and a bit changed Aghanim's Scepter for Finger of Death (Lion)
 * Increased riky Aghanim diration to 3 sec to match normal and increased his number of hits and dmg.
 * Kardel shot now can be multicasted.
 * Buffed Nyx carapace: will now use 25% of your spell amp(from 0%).
-* Antimage Agi growth from 9.4 to 29.
+* Antimage Agi growth from 9.3 to 29.3
 * Mana Break: Has an SS(super scepter) effect, Doubled the Agi per stack.
 * Marci Unleash SS : added Mana Break - Mimics the Am talent (ignores base armor)
-* Fixed some possible Kardel abuse .
 * Added 2 skills to mimic blacklist(used for perma invul/immortal)
+* Finger of Death (Lion):
+	-- Changed stats and increased ability level
+	-- Kill duration reduced
+	-- Kill duration cannot be stacked
+* Lion's Dagon:
+	-- Added "Exclusive" tag
+	-- Added visual AOE with Aghanim's Scepter
+* Mirror Shield: Added Linken's Sphere to recipe and reduced Echo Shield CD
+* Gold Ring: Now prevents death, not triggered at death
+* Fixed some possible Kardel abuse .
+* Fixed Aegis of Infinity stats
 
 
 

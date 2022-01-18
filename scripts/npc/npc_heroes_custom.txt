@@ -542,7 +542,7 @@
 		"Ability3"				"custom_spiritbreaker_inner_fire"
 		"Ability6"				"mjz_finger_of_death"
 		"Ability10"				"special_bonus_unique_mjz_lion_voodoo_magical_resistance"
-		"Ability12"				"special_bonus_movement_speed_45"
+		"Ability12"				"special_bonus_finger_of_death_health_inf_kill_duration"
 		"Ability13"				"special_bonus_finger_of_death_health_per_kill"
 		"Ability15"				"special_bonus_cdr_40"
 		"Ability16"				"special_bonus_unique_mjz_lion_impale_base_damage"
