@@ -10367,7 +10367,7 @@
 		"ItemStackable"					"0"
 		"AbilityManaCost"				"110"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"70.0"
+		"AbilityCooldown"				"80.0"
 		"AbilitySpecial"
 		{
 			"01"
