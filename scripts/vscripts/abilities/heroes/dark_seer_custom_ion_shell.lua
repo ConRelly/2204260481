@@ -53,7 +53,7 @@ if IsServer() then
 			if talent_value(self.caster, "special_bonus_ds_ion_shell_radius") ~= 0 then
 				radius = radius * talent_value(self.caster, "special_bonus_ds_ion_shell_radius")
 			end	
-			local damage = (int_dmg + self.ability:GetSpecialValueFor("damage_per_second") + talent_value(self.caster, "special_bonus_unique_dark_seer")) * self.interval
+			local damage = (int_dmg + self.ability:GetSpecialValueFor("damage_per_second") + talent_value(self.caster, "special_bonus_unique_dark_seer"))
 			self.damage_table.damage = damage
 
 			local parent_location = self.parent:GetAbsOrigin()

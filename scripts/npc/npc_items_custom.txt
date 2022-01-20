@@ -12131,7 +12131,7 @@
 			"02"						//攻击力（绿字）
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"6650"
+				"bonus_damage"			"16650"
 			}
 			"03"						//攻击速度
 			{
@@ -12162,7 +12162,7 @@
 			"10"						//敏捷+25
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"485"
+				"bonus_agility"			"685"
 			}
 			"11"						//智力+25
 			{
@@ -12187,7 +12187,7 @@
 			"15"						//生命窃取
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_lifesteal"		"4"
+				"attack_lifesteal"		"2"
 			}
 			"20"						//寒冰风暴持续时间（英雄）
 			{
@@ -12224,6 +12224,21 @@
 				"var_type"	  				"FIELD_INTEGER"
 				"frostbite_vision_radius"		"800"
 			}
+			"27"						
+			{
+				"var_type"	  				"FIELD_INTEGER"
+				"bonus_base_agi"			"1"
+			}
+			"28"						
+			{
+				"var_type"	  				"FIELD_INTEGER"
+				"speed_mult_dmg"			"10"
+			}
+			"29"						
+			{
+				"var_type"	  				"FIELD_INTEGER"
+				"healt_reg_mult_dmg"		"5"
+			}									
 
 		}		
 
@@ -12419,6 +12434,9 @@
 						"ScriptFile"		"items/item_mjz_frostmourne.lua"
 						"Function"			"FrostmourneAttack"
 						"health_damage_pct"	"%health_damage_pct"
+						"bonus_base_agi"    "%bonus_base_agi"
+						"speed_mult_dmg"    "%speed_mult_dmg"
+						"healt_reg_mult_dmg"   "%healt_reg_mult_dmg"
 					}
 				}		
 			}

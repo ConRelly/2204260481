@@ -58,7 +58,14 @@ if IsServer() then
             modifier_handler:SetStackCount(count + self.damage_per_use)
         else
             modifier_handler = caster:AddNewModifier(caster, self, self.stack_modifier_name, {})
-            modifier_handler:SetStackCount(self.damage_per_use)
+            local time = GameRules:GetGameTime() / 60
+            if time < 25 then
+                local stack = math.floor(time * 5000)
+                modifier_handler:SetStackCount(stack)
+            else
+                local stack = math.floor(time * 10000)
+                modifier_handler:SetStackCount(stack)     
+            end             
         end
 
         local targets = self:GetTargets()

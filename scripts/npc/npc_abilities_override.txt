@@ -10079,7 +10079,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"great_cleave_damage"	"40 60 80 100"
+				"great_cleave_damage"	"80 100 150 200"
 			}
 		}
 	}
@@ -10091,7 +10091,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"gods_strength_damage"		"120 180 240"		
+				"gods_strength_damage"		"160 230 340"		
 			}
 			"02"
 			{

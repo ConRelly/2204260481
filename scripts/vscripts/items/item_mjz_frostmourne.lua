@@ -42,6 +42,28 @@ function HealthAttack(event)
             damage = event.target:GetHealth() * health_damage_pct,
             damage_type = DAMAGE_TYPE_PHYSICAL
         })
+        if caster:HasModifier("modifier_super_scepter") then
+            local caster_attack = caster:GetAverageTrueAttackDamage(caster)
+            local speed = math.floor(caster:GetIdealSpeed()) * event.speed_mult_dmg
+            local hp_regen = math.floor(caster:GetHealthRegen()) * event.healt_reg_mult_dmg
+            local bonus_agi = event.bonus_base_agi
+            local ss_damage = caster_attack + speed + hp_regen
+            if speed > 50000 then
+                bonus_agi = 1 + bonus_agi + math.floor(speed / 100000)   -- gain 1 extra base agi at 5k speed and for every 10k speed
+                if bonus_agi > 13 then
+                    bonus_agi = 13
+                end    
+            end    
+            caster:ModifyAgility(bonus_agi)   
+            ApplyDamage({
+                ability = ability,
+                victim = event.target,
+                attacker = event.caster,
+                damage = ss_damage,
+                damage_type = DAMAGE_TYPE_PHYSICAL,
+                damage_flags = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR
+            })
+        end            
         ability:StartCooldown(4)
         local coil = ParticleManager:CreateParticle("particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
         ParticleManager:SetParticleControl(coil, 0, event.target:GetAbsOrigin())

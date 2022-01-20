@@ -12493,7 +12493,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage_per_use"			"150 200 250 350 400"
+			"damage_per_use"			"700 800 900 1100 1300"
 			"CalculateSpellDamageTooltip"	"1"
 		}
 		"04"
@@ -12522,14 +12522,14 @@
 		"08"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage_per_use_s"			"200 250 300 450 500"
+			"damage_per_use_s"			"800 900 1100 1500 1800"
 			"CalculateSpellDamageTooltip"	"1"
 			"RequiresScepter"			"1"
 		}
 		"09"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage_per_use_ss"			"300 350 400 650 850"
+			"damage_per_use_ss"			"900 1100 1500 2000 2500"
 			"CalculateSpellDamageTooltip"	"1"
 		}						
 	}
@@ -21080,7 +21080,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_per_second"		"60 290 950 1555 2200 6800 17800"
+			"damage_per_second"		"60 290 950 1555 2200 6800 27800"
 			"LinkedSpecialBonus"	"special_bonus_unique_dark_seer"
 		}
 		"03"
@@ -21091,12 +21091,12 @@
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"think_interval"		"0.4"
+			"think_interval"		"1"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"int_mult"				"3.5 5.0 6.5 8.0 10.0 12.5 15.0"
+			"int_mult"				"5.0 6.5 8.0 12.0 14.5 20.0 35.0"
 		}		
 	}
 	"OnSpellStart"

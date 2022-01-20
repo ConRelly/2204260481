@@ -6178,7 +6178,7 @@ You can't target yourself."
 "DOTA_Tooltip_ability_lion_custom_finger_of_death"										"Finger of Death"
 "DOTA_Tooltip_ability_lion_custom_finger_of_death_Description"							"Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each use.\nUpgradable by Aghanim's Scepter."
 "DOTA_Tooltip_ability_lion_custom_finger_of_death_Lore"									"Lion's disfigured hand is also the source of his greatest power, capable of flooding victims with malefic force."
-"DOTA_Tooltip_ability_lion_custom_finger_of_death_Note0"								"Finger of Death has a 0.25 delay before the damage is applied after the spell is cast, allowing certain abilities to avoid the damage."
+"DOTA_Tooltip_ability_lion_custom_finger_of_death_Note0"								"Finger of Death has a 0.25 delay before the damage is applied after the spell is cast, allowing certain abilities to avoid the damage. Gain extra stacks on first use depending on the curret time of the game."
 "DOTA_Tooltip_ability_lion_custom_finger_of_death_damage"								"All Stats As DAMAGE:"
 "DOTA_Tooltip_ability_lion_custom_finger_of_death_damage_scepter"						"Scepter All Stats As Damage:"
 "DOTA_Tooltip_ability_lion_custom_finger_of_death_damage_super_scepter"				 "<font color='#DE3163'>Super Scepter All Stats As Damage</font>:"
@@ -8607,7 +8607,7 @@ Required Level: %required_level%
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Description"			"<h1>Active: Frost Storm</h1>Encases an enemy unit in ice, prohibiting movement and attack, while dealing damage over time.<br><br>Damage per Second: %frostbite_damage_per_second%<br>Hero Duration: %frostbite_duration_hero% sec.<br>Creep Duration: %frostbite_duration_creep% sec.
 	\n<h1>Passive: Cold Attack</h1>Attacks lower enemy attack speed by %debuff_attack_speed% and movement speed by %debuff_move_speed_pct%%%.<br><br>Duration: %debuff_duration% 
 	\n<h1>Passive: Pure Lifesteal</h1>Heals the attacker for %attack_lifesteal%%% of attack damage dealt Before any Damage reductions.
-	\n<h1><font color='#0597EB'>Passive: Frostbite</font></h1><font color='lightblue'>When item cooldown is rdy and your attack lands on a target, deals 7%% of the target current hp in physical dmg and puts the item on a 4s CD.</font>"
+	\n<h1><font color='#0597EB'>Passive: Frostbite</font></h1><font color='lightblue'>When item cooldown is rdy and your attack lands on a target, deals 7%% of the target current hp in physical dmg and puts the item on a 4s CD.</font>\n<h1><font color='#DE3163'>Super Scepter</font></h1><font color='#0597EB'>Frostbite</font> Now deals an aditional instance of Damage that Ignores Base Armor(attack dmg + %speed_mult_dmg% x movement speed + %healt_reg_mult_dmg% x Hp regen). <font color='#6CDB16'>SpeedTraining</font>: For every <font color='#0597EB'>Frostbite</font> trigger gain %bonus_base_agi% Base Agility, additionally if your MS is above 5k your bonus base agi will increase by %bonus_base_agi% and after that will increase by %bonus_base_agi% for every 10k MS that you have."
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Lore"							"Hail to the king, baby!"
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Note0"						   "Frostbite works only on Real Heroes(no illusions or bear etc.), Damage dealt by frostbite is affected by Spell Amplification"
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_agility"					"+$agi"
