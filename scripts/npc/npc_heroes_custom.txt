@@ -540,6 +540,7 @@
 		"Ability1"				"mjz_lion_impale"
 		"Ability2"				"mjz_lion_voodoo"
 		"Ability3"				"custom_spiritbreaker_inner_fire"
+		"Ability4"              "jotaro_absolute_defense3"
 		"Ability6"				"mjz_finger_of_death"
 		"Ability10"				"special_bonus_unique_mjz_lion_voodoo_magical_resistance"
 		"Ability12"				"special_bonus_finger_of_death_health_inf_kill_duration"

@@ -9,7 +9,7 @@
 		"ScriptFile"					"lua_abilities/earthshaker_aftershock_lua/earthshaker_aftershock_lua"
 		"AbilityTextureName"			"earthshaker_aftershock_lua"
 		"MaxLevel"						"7"
-		"LevelsBetweenUpgrades"         "5"
+		"LevelsBetweenUpgrades"         "7"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -25,12 +25,12 @@
 			"1"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"aftershock_damage"			"75 325 725 1500 2450 4800 9650"
+				"aftershock_damage"			"75 325 725 1500 2450 4800 13650"
 			}
 			"2"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"str_multiplier"			"1 2 4 6 8 10 15"
+				"str_multiplier"			"4 6 8 10 15 20 40"
 				"LinkedSpecialBonus"	    "special_bonus_unique_earthshaker_2"
 			}
 			"3"

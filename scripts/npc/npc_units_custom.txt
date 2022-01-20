@@ -11564,7 +11564,7 @@
 	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
 				
 	"Ability1"					"courier_invincibility"
-	"Ability2"				  "bloodseeker_thirst"
+	"Ability2"				    "bloodseeker_thirst"
 	//"Ability3"				  "dummy_caster_passive"
 	"ArmorPhysical"				"10"		// Physical protection.
 	"MagicalResistance"				"100"			// Magical protection.

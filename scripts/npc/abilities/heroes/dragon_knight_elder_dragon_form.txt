@@ -12,7 +12,7 @@
     "AbilityType"         "DOTA_ABILITY_TYPE_ULTIMATE"
     "SpellImmunityType"       "SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
     "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
-    "LevelsBetweenUpgrades"     "12"
+    "LevelsBetweenUpgrades"     "15"
     "SpellDispellableType"      "SPELL_DISPELLABLE_NO"
     "FightRecapLevel"       "2"
     "AbilitySound"          "Hero_DragonKnight.ElderDragonForm"
@@ -46,22 +46,22 @@
       "02"
       {
         "var_type"          "FIELD_INTEGER"
-        "bonus_movement_speed"    "65 95 195 320"
+        "bonus_movement_speed"    "65 95 195 520"
       }
       "03"
       {
         "var_type"          "FIELD_INTEGER"
-        "bonus_attack_range"    "350 350 350 450"
+        "bonus_attack_range"    "350 350 350 550"
       }
       "04"
       {
         "var_type"          "FIELD_INTEGER"
-        "bonus_attack_damage"   "0 0 5000 12500"
+        "bonus_attack_damage"   "0 0 12000 47500"
       }
       "05"
       {
         "var_type"          "FIELD_INTEGER"
-        "corrosive_breath_damage" "500 1900 9500 35000"
+        "corrosive_breath_damage" "500 3900 19500 335000"
       }
       "06"
       {
@@ -88,7 +88,7 @@
       "10"
       {
         "var_type"            "FIELD_INTEGER"
-        "frost_bonus_attack_speed"    "-20 -20 -20 -80"
+        "frost_bonus_attack_speed"    "-20 -20 -20 -110"
         "LinkedSpecialBonus"      "special_bonus_unique_dragon_knight_5"
       }
       "11"
@@ -104,7 +104,7 @@
       "13"
       {
         "var_type"          "FIELD_INTEGER"
-        "magic_resistance"      "0 0 0 60"
+        "magic_resistance"      "0 0 0 80"
       }
       "14"
       {

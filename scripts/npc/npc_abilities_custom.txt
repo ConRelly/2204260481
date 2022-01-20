@@ -12516,7 +12516,7 @@
 		"07"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage_super_scepter"			"10 12 15 17 20"			
+			"damage_super_scepter"			"15 20 25 30 40"			
 			"CalculateSpellDamageTooltip"	"1"
 		}
 		"08"
@@ -14999,12 +14999,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"150 500 1250 1750 2250 2750 3300"
+				"damage"				"150 500 1250 1750 2250 4750 9300"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"int_as_damage"			"100 200 300 400 500 600 700"
+				"int_as_damage"			"200 300 400 500 800 1200 1500"
 			}
 			"03"
 			{
@@ -22034,7 +22034,7 @@
 		"ScriptFile"					"abilities/hero_bloodseeker/mjz_bloodseeker_thirst.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mjz_bloodseeker_thirst_immortal"
-		"LevelsBetweenUpgrades"         "10"
+		"LevelsBetweenUpgrades"         "15"
 		"HasScepterUpgrade"             "1"
 
 		"AbilitySpecial"
@@ -22042,12 +22042,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"5 10 15 20"
+				"bonus_damage"				"10 20 30 50 100"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"10 15 20 30"
+				"bonus_movement_speed"		"10 15 20 40"
 				// "LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_4"
 			}			
 			"03"
@@ -23861,7 +23861,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_health_regen"			"19 54 97 292 531 937 1826"
+				"bonus_health_regen"			"39 94 197 492 931 1937 3826"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
@@ -23874,9 +23874,16 @@
 			}
 			"03"
 			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_all_attack"				"9 15 20 25 30 40 50"
+				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
+			}
+			"04"
+			{
 				"var_type"						"FIELD_FLOAT"
 				"hp_regen_amp"					"55"
-			}
+			}						
 		}
 	}
 // Dragon's Blood (xX HP Regen/Armor)
@@ -23889,7 +23896,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"						"3"
+				"value"						"4"
 				"ad_linked_ability"			"dragon_knight_dragon_blood"
 			}
 		}
@@ -24868,7 +24875,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"				"650 3950 9500"
+				"bonus_damage"				"650 3950 11500"
 			}
 			"02"
 			{
@@ -26429,7 +26436,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"15 20 25"
+				"damage_scepter"			"20 30 45"
 				"RequiresScepter"			"1"
 			}
 			"05"
@@ -27941,13 +27948,13 @@
 			"01"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_movement_speed_pct"			"12 16 20 24"
+				"bonus_movement_speed_pct"			"22 36 40 64"
 				"LinkedSpecialBonus"				"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_mspeed"
 			}
 			"02"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_attack_speed"				"60 80 100 220"
+				"bonus_attack_speed"				"80 100 220 320"
 				"LinkedSpecialBonus"				"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_aspeed"
 			}
 			"03"
@@ -32467,9 +32474,9 @@
 	{
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"AbilityTextureName"			"mjz_tiny_craggy_exterior"
-		"LevelsBetweenUpgrades"		 "5"
+		"LevelsBetweenUpgrades"		 "10"
 		// "AbilityDamage"						"25 35 45 55"
 		"LearnOnSpawn"					"1"		// 出生时学习此技能、值为等级
 		
@@ -32496,7 +32503,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_armor"				"5 9 14 22"
+				"bonus_armor"				"9 18 32 64"
 			}
 			"04"
 			{
@@ -32506,8 +32513,13 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"return_damage"				"155 480 1255 2555"
+				"return_damage"				"480 1255 2555 12500" 
 			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_magic_res"			"10 15 20 35"
+			}			
 		}
 
 		"Modifiers"
@@ -32520,6 +32532,7 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"      "%bonus_magic_res"
 				}
 
 				"OnAttacked"
@@ -32546,7 +32559,7 @@
 									"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 									"Flags"			"DOTA_UNIT_TARGET_FLAG_MELEE_ONLY"	//只对近战有效
 								}
-								"Type"				"DAMAGE_TYPE_MAGICAL"
+								"Type"				"DAMAGE_TYPE_PURE"
 								"Damage"			"%return_damage"
 							}
 
@@ -33693,7 +33706,8 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Zuus.GodsWrath"
 		"AbilityTextureName"			"mjz_zuus_thundergods_wrath"
-		"MaxLevel"					  "7"
+		"MaxLevel"					    "7"
+		"LevelsBetweenUpgrades"         "10"
 		"AbilityCastRange"				"3900"
 		"AbilityCastPoint"				"0.4"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
@@ -33710,12 +33724,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"base_damage"				"20 90 240 1650 3250 6580 12500" 
+				"base_damage"				"90 440 2650 6250 12580 25500 45100" 
 			} 	
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"intelligence_damage"		"100 150 200 400 800 1000 1200" 
+				"intelligence_damage"		"200 400 800 1000 1200 1500 2500" 
 			}
 			"04"
 			{
@@ -33781,7 +33795,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_slow"			"-20"
+				"blast_slow"			"-80"
 			}
 			
 			"04"
@@ -37768,6 +37782,7 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"int_damage"		"950"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_lion_impale_base_damage"
 			}
 			"01"
 			{
@@ -37809,7 +37824,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"1840"
+				"value"						"3050"
 			}
 		}
 	}

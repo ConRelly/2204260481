@@ -5046,13 +5046,13 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"maximum_health_regen"			"20 30 40 50"
+				"maximum_health_regen"			"30 40 50 70"
 				"LinkedSpecialBonus"			"special_bonus_unique_huskar_6"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"hp_threshold_max"				"50"
+				"hp_threshold_max"				"70"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -10765,7 +10765,7 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_per_stack"				"22 34 55 75 100 150 230"
+				"damage_per_stack"				"22 34 55 95 160 250 430"
 				"LinkedSpecialBonus"			"special_bonus_unique_ursa"
 			}
 		}
@@ -10792,7 +10792,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_base_damage"	"15 20 26 37"
+				"bonus_base_damage"	"15 25 36 47"
 				"LinkedSpecialBonus"	"special_bonus_unique_vengeful_spirit_2"
 			}
 			"02"
@@ -12044,7 +12044,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"accuracy"			"50"
+				"accuracy"			"95"
 			}
 			"03"
 			{
@@ -12534,7 +12534,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"distance_damage_pct"	"35 75 100 150"
+				"distance_damage_pct"	"45 95 150 185"
 				"LinkedSpecialBonus"	"special_bonus_unique_enchantress_4"			
 			}
 			"02"
@@ -15750,7 +15750,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"100 150 250 400"
+				"damage"				"100 150 250 500"
 				"LinkedSpecialBonus"	"special_bonus_unique_spirit_breaker_3"
 			}
 			"03"
@@ -15775,13 +15775,14 @@
 		"MaxLevel"					  "5"
 		"AbilityCastRange"				"1700"
 		"AbilityManaCost"				"125"
+		"LevelsBetweenUpgrades"         "10"
 		"AbilityCooldown"				"25"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"900 1900 4900 9700 27500"
+				"damage"				"1900 4900 19700 47500 132000 825000"
 			}
 			"02"
 			{

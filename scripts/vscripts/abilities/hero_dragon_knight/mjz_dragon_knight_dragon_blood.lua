@@ -14,6 +14,7 @@ function modifier_mjz_dragon_knight_dragon_blood:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+		MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
 		MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE,
 	}
 end
@@ -36,6 +37,20 @@ function modifier_mjz_dragon_knight_dragon_blood:GetModifierPhysicalArmorBonus(p
 	local ability = self:GetAbility()
 	if IsValidEntity(ability) then
 		local value = ability:GetSpecialValueFor("bonus_armor")
+		local stack = self:GetStackCount()
+		if stack > 0 then
+			return value * stack
+		else
+			return value
+		end
+	end
+	return 0
+end
+function modifier_mjz_dragon_knight_dragon_blood:GetModifierDamageOutgoing_Percentage(params)
+	if IsValidEntity(self:GetParent()) and self:GetParent():PassivesDisabled() then return 0 end
+	local ability = self:GetAbility()
+	if IsValidEntity(ability) then
+		local value = ability:GetSpecialValueFor("bonus_all_attack")
 		local stack = self:GetStackCount()
 		if stack > 0 then
 			return value * stack

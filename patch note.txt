@@ -1510,7 +1510,12 @@ QuickFix and update:
 * Kardel shot now can be multicasted.
 * Buffed Nyx carapace: will now use 25% of your spell amp(from 0%).
 * Antimage Agi growth from 9.3 to 29.3
-* Mana Break: Has an SS(super scepter) effect, Doubled the Agi per stack.
+* Mana Break: Has an SS(super scepter) effect. Doubled the Agi per stack.
+* Dragon Blood now has All attack dmg bonus too (affected by talent) , talent 4x .
+* Dragon Knight ultimate buffed on last lvl. Now requires more lvls to upgrade.
+* Cragy Exterior buff : Now gives Magic resit too , more armor , more dmg and dmg type is pure.
+* Laguna blade will start with extra stacks base on the time of game you earn your first stack.
+* Slightly(or more) buffed some other skills from random pool.
 * Marci Unleash SS : added Mana Break - Mimics the Am talent (ignores base armor)
 * Added 2 skills to mimic blacklist(used for perma invul/immortal)
 * Finger of Death (Lion):

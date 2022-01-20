@@ -117,7 +117,14 @@ function modifier_mjz_lina_laguna_blade_bonus:IsHidden() return false end
 function modifier_mjz_lina_laguna_blade_bonus:IsDebuff() return false end
 function modifier_mjz_lina_laguna_blade_bonus:IsPurgable() return false end
 function modifier_mjz_lina_laguna_blade_bonus:RemoveOnDeath() return false end
-function modifier_mjz_lina_laguna_blade_bonus:OnCreated() if not IsServer() then return end self:SetStackCount(1) end
+function modifier_mjz_lina_laguna_blade_bonus:OnCreated()
+	if not IsServer() then return end 
+	local time = GameRules:GetGameTime() / 60
+	if time > 1 then
+		local stack = math.floor(time * 8)
+		self:SetStackCount(stack)
+	end 	
+end
 function modifier_mjz_lina_laguna_blade_bonus:OnRefresh() if not IsServer() then return end self:IncrementStackCount() end
 function modifier_mjz_lina_laguna_blade_bonus:DeclareFunctions() return {MODIFIER_PROPERTY_TOOLTIP} end
 function modifier_mjz_lina_laguna_blade_bonus:OnTooltip() return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("intmult_per_kill") end
