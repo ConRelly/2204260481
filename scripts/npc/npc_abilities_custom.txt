@@ -3345,7 +3345,7 @@
 		"RunScript"
 		{
 			"ScriptFile"	"abilities/other/courier.lua"
-			"Function"		"remove_courier"
+			"Function"		"courier_moveto"
 		}
 	}
 	"Modifiers"
