@@ -103,10 +103,10 @@ if IsServer() then
         "mjz_crystal_maiden_brilliance_aura",   -- 冰女 3
         "mystic_dragon_endless_wisdom",     -- 沉默 1
         "imba_phantom_assassin_coup_de_grace",                -- 女王 2
-        "dazzle_bad_juju",                  -- 丽娜 3
+        "dazzle_bad_juju_custom",                  -- 丽娜 3
         "ancient_apparition_chilling_touch",    -- 冰魂 3
         --"roshan_inherit_buff_datadriven",            -- 蓝猫 3
-        "ogre_magi_custom_multicast",              -- 蓝胖 3
+        "ogre_magi_multicast_n",              -- 蓝胖 3
         "enchantress_impetus",              -- 小鹿 1
         "dark_seer_custom_ion_shell",                  -- 黑贤 3
         "mjz_centaur_return",                   -- 人马 3

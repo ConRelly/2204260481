@@ -21,8 +21,8 @@ end
 if IsServer() then
     function rattletrap_custom_battery_assault:OnProjectileHit(target)
         if target and self.caster and not self.caster:IsIllusion() then
-			local caster_base = (self.caster:GetBaseDamageMax() + self.caster:GetBaseDamageMin()) / 2
-			local caster_base = (self.caster:GetAverageTrueAttackDamage(self.caster) - caster_base) / 2 + caster_base
+			--local caster_base = (self.caster:GetBaseDamageMax() + self.caster:GetBaseDamageMin()) / 2
+			local caster_base = self.caster:GetAverageTrueAttackDamage(self.caster)
             local damage = caster_base * self.attack_as_damage
             ApplyDamage({
                 attacker = self.caster,

@@ -41,6 +41,14 @@ function modifier_drow_ranger_frost_arrows_lua:OnCreated(kv)
         self.agi_multiplier = self.agi_multiplier + special_frost_arrow_agi_multiplier_lua:GetSpecialValueFor( "value" )
     end
     local extra_dmg = 1 + (1 - (target:GetHealthPercent() / 100))
+    if caster:HasModifier("modifier_super_scepter") then
+        if caster:HasModifier("modifier_item_imba_ultimate_scepter_synth_stats") then
+            local ss_stack = caster:FindModifierByName("modifier_item_imba_ultimate_scepter_synth_stats"):GetStackCount()
+            extra_dmg = ((extra_dmg - 1) * ss_stack) + 1
+        else
+            extra_dmg = extra_dmg + 1    
+        end    
+    end   
    --print(extra_dmg .. " dmg mult")
     local damage = ((caster:GetAgility() + caster:GetIntellect()) * self.agi_multiplier) * extra_dmg
     --print(damage .. " damage")

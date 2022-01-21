@@ -163,12 +163,28 @@ function holdout_card_points:_GetPlayerSpells(nPlayerID)
 
         for i = 0, maxAbilities do
             local ability = playerHero:GetAbilityByIndex(i)
-			if ability and not ability:IsAttributeBonus() and not ability:IsHidden() then
-				local abilityName = ability:GetAbilityName()
-				if not string.find(abilityName, "empty") then
-					table.insert(playerAbilities, abilityName)
-				end    
-			end
+            if playerHero:GetUnitName() == "npc_dota_hero_doom_bringer"  then
+                if ability and not ability:IsAttributeBonus() and not ability:IsHidden() and ability ~= playerHero:GetAbilityByIndex(3) then --
+                    local abilityName = ability:GetAbilityName()
+                    if not string.find(abilityName, "empty") then
+                        table.insert(playerAbilities, abilityName)
+                    end    
+                end
+            elseif playerHero:GetUnitName() == "npc_dota_hero_lone_druid" or playerHero:GetUnitName() == "npc_dota_hero_rubick" then
+                if ability and not ability:IsAttributeBonus() and not ability:IsHidden() and ability ~= playerHero:GetAbilityByIndex(3) and ability ~= playerHero:GetAbilityByIndex(4) then --
+                    local abilityName = ability:GetAbilityName()
+                    if not string.find(abilityName, "empty") then
+                        table.insert(playerAbilities, abilityName)
+                    end    
+                end    
+            else
+                if ability and not ability:IsAttributeBonus() and not ability:IsHidden() then --
+                    local abilityName = ability:GetAbilityName()
+                    if not string.find(abilityName, "empty") then
+                        table.insert(playerAbilities, abilityName)
+                    end    
+                end
+            end            
         end
 
         return playerAbilities

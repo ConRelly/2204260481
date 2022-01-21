@@ -41,6 +41,9 @@ function modifier_pharaoh_crown_buff:OnCreated()
 	self.health = self.ability:GetSpecialValueFor("aura_health_mult")
 	self.armor = self.ability:GetSpecialValueFor("aura_armor") * 0.01
 	self.damage = self.ability:GetSpecialValueFor("aura_damage_mult")
+	if self.caster:HasModifier("modifier_super_scepter") then
+		self.damage = self.ability:GetSpecialValueFor("aura_damage_mult") / 2	--smaller = more dmg bonus for summons
+	end	
 	self.interval = self.ability:GetSpecialValueFor("interval")
 	self.parent_health = self.parent:GetMaxHealth()
 	self.parent_damage = (self.parent:GetBaseDamageMax() + self.parent:GetBaseDamageMin()) / 2

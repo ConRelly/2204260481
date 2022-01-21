@@ -2169,32 +2169,35 @@
 	}	
 	"ancient_apparition_chilling_touch"
 	{
-		"AbilityCooldown"			  "3.0 2.0 1.0 0.3"
-		"LevelsBetweenUpgrades"		"8"
+		"MaxLevel"                  "7"
+		"LevelsBetweenUpgrades"		"10"
+		"AbilityCooldown"				"8 7 6 5 4 3 2"
+		"AbilityManaCost"				"75"
+
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"220 2960 8530 15250"
+				"damage"				"220 2960 8530 15250 47500 115000 325400"
 				"LinkedSpecialBonus"	"special_bonus_unique_ancient_apparition_2"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_range_bonus"	"280 360 540 520"
+				"attack_range_bonus"	"550"
 			}
 		}
 	}
 	"ancient_apparition_cold_feet"
 	{
-		"LevelsBetweenUpgrades"		 "5"
+		"LevelsBetweenUpgrades"		 "15"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"90 960 2400 9800"
+				"damage"				"260 9600 24000 298000"
 			}
 			"03"
 			{
@@ -10704,7 +10707,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_amp"				"5 10 15"
+				"damage_amp"				"10"
 			}
 			"04"
 			{
@@ -16766,7 +16769,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"30"
+				"value"				"65"
 			}
 		}
 	}	

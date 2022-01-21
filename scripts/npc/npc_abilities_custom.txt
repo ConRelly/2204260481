@@ -11568,7 +11568,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCooldown"				"3.2 2.8 2.4 1.0 0.9 0.8 0.7"
 	"MaxLevel"					  "7"
-	"LevelsBetweenUpgrades"		 "7"
+	"LevelsBetweenUpgrades"		 "12"
 	"AbilitySpecial"
 	{
 		"01"
@@ -11579,7 +11579,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"gold_damage_pct" 			"30 35 40 45 50 60 75"
+			"gold_damage_pct" 			"5 10 15 20 25 30 40"
 			"CalculateSpellDamageTooltip"	"0"
 		}
 	}
@@ -21588,7 +21588,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "5"
+		"LevelsBetweenUpgrades"		 "10"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"mjz_arc_warden_spark_wraith"
 		"AbilitySound"					"Hero_ArcWarden.SparkWraith.Activate"
@@ -21609,13 +21609,13 @@
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"spark_damage"					"500 1970 4940 7700 11200 14000 22500"
+				"spark_damage"					"500 1970 8940 17700 21200 44000 72500"
 				//"LinkedSpecialBonus"			"special_bonus_unique_arc_warden"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"spark_bonus"					"5 6 7 8 11 14 22"
+				"spark_bonus"					"15 16 17 18 21 24 32"
 				"LinkedSpecialBonus"			"special_bonus_unique_arc_warden"
 			}			
 		}
@@ -21638,7 +21638,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"10"
+				"value"						"18"
 			}
 		}
 	}
@@ -21893,7 +21893,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"str_damage_multiplier"		"14 25 37 52 94"
+				"str_damage_multiplier"		"14 35 67 122 294"
 			}
 			"03"
 			{
@@ -23896,7 +23896,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"						"4"
+				"value"						"5"
 				"ad_linked_ability"			"dragon_knight_dragon_blood"
 			}
 		}
@@ -24717,7 +24717,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_per_kill"			"350"
+				"damage_per_kill"			"450"
 				//"LinkedSpecialBonus"		"special_bonus_unique_lion_8"
 			}
 			"06"

@@ -61,7 +61,7 @@
       "05"
       {
         "var_type"          "FIELD_INTEGER"
-        "corrosive_breath_damage" "500 3900 19500 335000"
+        "corrosive_breath_damage" "500 3900 19500 365000"
       }
       "06"
       {

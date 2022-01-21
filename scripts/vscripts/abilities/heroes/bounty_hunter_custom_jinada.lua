@@ -40,7 +40,20 @@ if IsServer() then
 		self.damage_type = self.ability:GetAbilityDamageType()
 
     end
-    
+	function modifier_bounty_hunter_custom_jinada:OnRefresh()
+		self.ability = self:GetAbility()
+		self.parent = self:GetParent()
+		
+		if self.parent:IsIllusion() then
+			self.gold_amount = self.ability:GetSpecialValueFor("gold_bonus") / 3
+		else
+			self.gold_amount = self.ability:GetSpecialValueFor("gold_bonus")
+		end
+		self.gold_ratio = self.ability:GetSpecialValueFor("gold_damage_pct") * 0.01
+		self.damage_type = self.ability:GetAbilityDamageType()
+
+	end	
+
     function modifier_bounty_hunter_custom_jinada:OnAttack(keys)
 		local attacker = keys.attacker
 		local target = keys.target
@@ -53,7 +66,7 @@ if IsServer() then
 		if self.ability:GetCooldownTimeRemaining() > 0 then
 			return
 		end
-		local damage = self.gold_ratio * self.parent:GetGold()
+		local damage = self.gold_ratio * PlayerResource:GetTotalEarnedGold(self.parent:GetPlayerID())
 		PlayerResource:ModifyGold(self.parent:GetPlayerID(), self.gold_amount, false, DOTA_ModifyGold_Unspecified)
 		local finaldamage = ApplyDamage({
 			ability = self.ability,

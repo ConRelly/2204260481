@@ -1587,6 +1587,7 @@
 		"Ability12"				"special_bonus_hp_3500"
 		"Ability13"				"special_bonus_attack_damage_40"
 		"Ability14"				"special_bonus_cleave_60"
+		"Ability15"             "special_bonus_truestrike"
 		"Ability16"				"special_bonus_unique_alchemist_3"
 
 		"AttributeStrengthGain"			"5.900000"

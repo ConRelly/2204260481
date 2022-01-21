@@ -222,7 +222,7 @@ end
 modifier_mjz_finger_of_death_death = class({})
 function modifier_mjz_finger_of_death_death:IsHidden() return false end
 function modifier_mjz_finger_of_death_death:IsPurgable() return false end
---function modifier_mjz_finger_of_death_death:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+function modifier_mjz_finger_of_death_death:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_mjz_finger_of_death_death:DeclareFunctions()
 	return {MODIFIER_PROPERTY_TOOLTIP}
 end

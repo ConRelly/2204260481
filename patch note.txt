@@ -1509,15 +1509,18 @@ QuickFix and update:
 * Increased riky Aghanim diration to 3 sec to match normal and increased his number of hits and dmg.
 * Kardel shot now can be multicasted.
 * Buffed Nyx carapace: will now use 25% of your spell amp(from 0%).
-* Antimage Agi growth from 9.3 to 29.3
+* Antimage Agi growth from 9.3 to 29.3 and updated his Aghanim's Shard description.
 * Mana Break: Has an SS(super scepter) effect. Doubled the Agi per stack.
-* Dragon Blood now has All attack dmg bonus too (affected by talent) , talent 4x .
+* Drow Ranger, Frost Arrows: Added SS effect
+* Dragon Blood now has All attack dmg bonus too (affected by talent) , talent 5x .
 * Dragon Knight ultimate buffed on last lvl. Now requires more lvls to upgrade.
+* Alchemist Jinada changed to deal dmg base on all colected gold during game(the gold you hold does not matter now). Fixed it was using lvl 1 stats at all lvls.
+* Fix Doom Multicast N.
 * Cragy Exterior buff : Now gives Magic resit too , more armor , more dmg and dmg type is pure.
 * Laguna blade will start with extra stacks base on the time of game you earn your first stack.
 * Lion Finger of Death(random one): buffed on dmg gain and will start with extra stacks base on the time of game you earn your first stack.
 * Darkseer Ion shell higher dmg and the talent will now keep same dmg per instance(before it was same dps but hit more offten)
-* Slightly(or more) buffed some other skills from random pool.
+* Slightly/or heavily buffed some other skills from random pool.
 * Marci Unleash SS : added Mana Break - Mimics the Am talent (ignores base armor)
 * Added 2 skills to mimic blacklist(used for perma invul/immortal)
 * Finger of Death (Lion):
@@ -1530,7 +1533,8 @@ QuickFix and update:
 * Mirror Shield: Added Linken's Sphere to recipe and reduced Echo Shield CD
 * Gold Ring: Now prevents death, not triggered at death
 * Frostmourne bonus dmg increased and now has an Super Scepter Effect.
-* Fixed some possible Kardel abuse .
+* Paraoh Crown now has an Super Scepter effect.
+* Fixed some possible Kardel abuse, swap random skill on doom , rubic to gain more skills.
 * Fixed Aegis of Infinity stats
 
 
