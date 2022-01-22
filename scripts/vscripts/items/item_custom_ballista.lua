@@ -1,6 +1,27 @@
 require("lib/popup")
 item_custom_ballista = class({})
 function item_custom_ballista:GetIntrinsicModifierName() return "modifier_item_custom_ballista" end
+function item_custom_ballista:Spawn()
+	if IsServer() then
+		local caster = self:GetParent()
+		local stacks = 1
+		self:SetCurrentCharges(1)
+		if caster:HasModifier("modifier_super_scepter") then
+			self:SetPurchaseTime(0)
+			if RollPercentage(1) then
+				stacks = RandomInt(6, 20)
+			elseif RollPercentage(7) then
+				stacks = RandomInt(3, 10)
+			elseif RollPercentage(15) then
+				stacks = RandomInt(2, 7)
+			else
+				stacks = RandomInt(1, 5)
+			end	
+			self:SetCurrentCharges(stacks)
+		end	
+	end
+end
+
 
 LinkLuaModifier("modifier_item_custom_ballista", "items/item_custom_ballista.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_item_custom_ballista = class({})
@@ -12,7 +33,7 @@ if IsServer() then
 		self.ability = self:GetAbility()
 		self.parent = self:GetParent()
 		self.parent:RemoveModifierByName("modifier_item_custom_ballista_buff")
-		self.parent:AddNewModifier(self.parent, self.ability, "modifier_item_custom_ballista_buff", {})
+		self.parent:AddNewModifier(self.parent, self.ability, "modifier_item_custom_ballista_buff", {})	
 	end
 	function modifier_item_custom_ballista:OnDestroy()
 		if self.parent and IsValidEntity(self.parent) then
@@ -28,28 +49,33 @@ function modifier_item_custom_ballista_buff:RemoveOnDeath() return false end
 function modifier_item_custom_ballista_buff:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_item_custom_ballista_buff:DeclareFunctions()
     return {MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-	MODIFIER_EVENT_ON_ATTACK_LANDED}
+	MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE, MODIFIER_EVENT_ON_ATTACK_LANDED}
+	
 end
 function modifier_item_custom_ballista_buff:GetModifierAttackRangeBonus()
-    return self:GetAbility():GetSpecialValueFor("attack_range_bonus")
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("attack_range_bonus") end
 end
 function modifier_item_custom_ballista_buff:GetModifierBonusStats_Strength()
-    return self:GetAbility():GetSpecialValueFor("bonus_strength")
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_strength") * self:GetAbility():GetCurrentCharges() end
 end
 function modifier_item_custom_ballista_buff:GetModifierBonusStats_Agility()
-    return self:GetAbility():GetSpecialValueFor("bonus_agility")
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_agility") * self:GetAbility():GetCurrentCharges() end
 end
 function modifier_item_custom_ballista_buff:GetModifierBonusStats_Intellect()
-    return self:GetAbility():GetSpecialValueFor("bonus_intellect")
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_intellect") * self:GetAbility():GetCurrentCharges() end
 end
 function modifier_item_custom_ballista_buff:GetModifierConstantHealthRegen()
-    return self:GetAbility():GetSpecialValueFor("bonus_health_regen")
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_health_regen") * self:GetAbility():GetCurrentCharges() end
 end
+function modifier_item_custom_ballista_buff:GetModifierBaseDamageOutgoing_Percentage()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("base_attack_damage") * self:GetAbility():GetCurrentCharges() end
+end
+
 if IsServer() then
 	function modifier_item_custom_ballista_buff:OnCreated()
 		self.parent = self:GetParent()
 		self.ability = self:GetAbility()
-		self.bonus_damage = self:GetAbility():GetSpecialValueFor("bonus_damage")
+		self.bonus_damage = self:GetAbility():GetSpecialValueFor("bonus_damage") * self:GetAbility():GetCurrentCharges()
 	end
 	function modifier_item_custom_ballista_buff:OnAttackLanded(keys)
         local attacker = keys.attacker

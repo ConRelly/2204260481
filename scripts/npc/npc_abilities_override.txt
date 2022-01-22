@@ -21281,7 +21281,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"175"
+				"bonus_strength"		"275"
 			}
 			"09"
 			{
@@ -21291,7 +21291,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"nuke_str_dmg"			"16.5"
+				"nuke_str_dmg"			"46.5"
 			}
 		}
 	}
@@ -21907,7 +21907,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"secondary_stats"		"96"
+				"secondary_stats"		"156"
 			}
 		}
 	}
@@ -22329,7 +22329,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor_bonus"		"25"
+				"armor_bonus"		"45"
 			}
 		}
 	}
@@ -22367,7 +22367,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"water_hp_regen"		"25"
+				"water_hp_regen"		"45"
 			}
 			"03"
 			{
@@ -22533,7 +22533,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"35"
+				"bonus_movement_speed"	"135"
 			}
 		}
 	}

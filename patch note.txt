@@ -1522,7 +1522,7 @@ QuickFix and update:
 * Darkseer Ion shell higher dmg and the talent will now keep same dmg per instance(before it was same dps but hit more offten)
 * Slightly/or heavily buffed some other skills from random pool.
 * Marci Unleash SS : added Mana Break - Mimics the Am talent (ignores base armor)
-* Added 2 skills to mimic blacklist(used for perma invul/immortal)
+* Added 2 skills to mimic blacklist(used for almost perma invul/immortal)
 * Finger of Death (Lion):
 	-- Changed stats and increased ability level
 	-- Kill duration reduced
@@ -1534,7 +1534,8 @@ QuickFix and update:
 * Gold Ring: Now prevents death, not triggered at death
 * Frostmourne bonus dmg increased and now has an Super Scepter Effect.
 * Paraoh Crown now has an Super Scepter effect.
-* Fixed some possible Kardel abuse, swap random skill on doom , rubic to gain more skills.
+* Ballista now has an Super Scepter effect , bonus % base attack dmg and recipe changed(press Alt on item to see extra stuff).
+* Fixed: some possible Kardel abuse, swap random skill on doom , rubic to gain more skills.
 * Fixed Aegis of Infinity stats
 
 

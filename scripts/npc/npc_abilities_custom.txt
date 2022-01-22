@@ -32719,7 +32719,7 @@
 		"AbilityCastPoint"				"0.0 0.0 0.0"
 		"AbilityCastRange"				"0"	 //"525"
 
-		"AbilityCooldown"				"60"
+		"AbilityCooldown"				"70"
 		"AbilityManaCost"				"50"
 		
 		"AbilitySpecial"
@@ -32747,7 +32747,7 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"scepter_cooldown"	"45"
+				"scepter_cooldown"	"60"
 				"RequiresScepter"	"1"
 			}
 			"08"

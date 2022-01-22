@@ -248,6 +248,22 @@ function AOHGameMode:OnPlayerChat(keys)
 			end
 		end
 	end
+	if keys.text == "-ballista" then
+		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
+		local Item = hero:GetItemInSlot(16)
+		if hero:IsAlive() and IsValidEntity(hero) then
+			if Item ~= nil and IsValidEntity(Item) then
+				if Item:GetName() == "item_custom_ballista" then
+					local charges = Item:GetCurrentCharges() * 5
+					hero:RemoveItem(Item)
+					hero:ModifyAgility(charges)
+					hero:ModifyStrength(charges)
+					hero:ModifyIntellect(charges)
+				end
+			end
+		end				
+	end
+
 
 	function _CreateFakeCourier2(hero)
 		local origin = Vector(-2958, 2031, -969) + RandomVector(100)

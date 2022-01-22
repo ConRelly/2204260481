@@ -17381,7 +17381,7 @@
 	"BaseClass"						"item_datadriven"
 	"Model"							"models/props_gameplay/recipe.vmdl"
 	"AbilityTextureName"			"item_recipe"
-	"ItemCost"						"3775"	
+	"ItemCost"						"5000"	
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	"ItemResult"					"item_broom_handle_copy"
@@ -18224,15 +18224,18 @@
 	"BaseClass"						"item_datadriven"
 	"Model"							"models/props_gameplay/recipe.vmdl"
 	"AbilityTextureName"			"item_recipe"
-	"ItemCost"						"4500"	
+	"ItemCost"						"15500"	
 	"ItemShopTags"					""
+	"ItemStockInitial"				"24"
+	"ItemStockMax"					"25"
+	"ItemStockTime"					"9000.0"	
 	"ItemRecipe"					"1"
 	"ItemResult"					"item_custom_ballista"
 	"ItemIsNeutralDrop"				"1"
 	"ItemRequirements"
 	{
-		"01"						"item_hurricane_pike;item_chest_5"
-		"02"						"item_broom_handle_copy;item_chest_5"
+		"01"						"item_fluffy_hat"
+		"02"						"item_broom_handle_copy"
 	}
 }
 
@@ -18246,8 +18249,12 @@
 	"ItemGloballyCombinable"		"0"
 	"ItemPurchasable"				"1"
 	"ItemIsNeutralDrop"				"1"
-	"ItemSellable"					"0"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemSellable"					"1"
+	"ItemStackable"					"0"
+	"ItemRequiresCharges"			"0"
+	"ItemKillable"	                "1"
+	"ItemShareability"				"ITEM_NOT_SHAREABLE"  // seems becasue its neutral it reamains sharable.
+	"ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER"
 	"Model"							"models/props_gameplay/neutral_box.vmdl"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 	"AbilitySpecial"
@@ -18265,7 +18272,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_agility"			"690"
+			"bonus_agility"			"420"
 		}
 		"04"
 		{
@@ -18280,8 +18287,13 @@
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"		"1000"
+			"bonus_damage"			"1000"
 		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"base_attack_damage"	"15"
+		}		
 	}
 }
 "item_recipe_custom_ex_machina"
@@ -19782,7 +19794,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_str"				"2021"
+				"rapier_str"				"2022"
 			}
 			"03"
 			{
@@ -19832,7 +19844,7 @@
 			"13"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_mr"					"30"
+				"rapier_mr"					"35"
 			}
 		}
 		"OnUnequip"
