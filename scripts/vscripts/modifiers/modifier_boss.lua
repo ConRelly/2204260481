@@ -65,7 +65,7 @@ function modifier_boss:DeclareFunctions()
 end
 function modifier_boss:GetModifierTotalDamageOutgoing_Percentage() return self:GetStackCount() end
 function modifier_boss:GetModifierMoveSpeedBonus_Percentage() return self:GetStackCount() * 0.25 end
-function modifier_boss:GetModifierExtraHealthPercentage() return self:GetStackCount() * 0.6 end
+function modifier_boss:GetModifierExtraHealthPercentage() return self:GetStackCount() * 0.4 end
 function modifier_boss:GetModifierStatusResistanceStacking() return self.status_resist end
 function modifier_boss:OnCreated()
 	local UnitName = self:GetParent():GetUnitName()

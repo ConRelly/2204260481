@@ -10199,7 +10199,7 @@
 	"terrorblade_metamorphosis"
 	{
 		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "5"   
+		"LevelsBetweenUpgrades"		 "10"   
 		"AbilityCooldown"				"45.0"
 		"AbilitySpecial"
 		{
@@ -10216,12 +10216,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"base_attack_time"		"1.15"
+				"base_attack_time"		"0.9"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"90 460 1290 2250 4750 6100 12500"
+				"bonus_damage"			"460 1290 2250 6100 12500 33500 67200"
 			}
 		}
 	}
@@ -10282,7 +10282,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_absorb"			"900 3850 9400 24300 32500"
+				"damage_absorb"			"900 3850 9400 34300 62500"
 				"LinkedSpecialBonus"	"special_bonus_unique_tinker_7"
 			}
 			"02"
@@ -10306,7 +10306,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"15000"
+				"value"				"19000"
 			}
 		}
 	}
@@ -10806,12 +10806,12 @@
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"illusion_damage_out_pct"	"100"
+				"illusion_damage_out_pct"	"300"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"illusion_damage_in_pct"	"100"
+				"illusion_damage_in_pct"	"80"
 			}	
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -10943,7 +10943,7 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"0.8 0.9 1.1 1.2 1.3 1.4 1.5 1.7"
+				"damage_scepter"			"0.9 1.1 1.2 1.3 1.4 1.5 1.7 2.0"
 				"RequiresScepter"			"1"
 			}
 			"08"
@@ -10968,7 +10968,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"					  "8"
-		"LevelsBetweenUpgrades"		 "7"
+		"LevelsBetweenUpgrades"		 "9"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		
 		// Special
@@ -10983,7 +10983,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"30 240 950 1950 2850 5620 19566 32500"
+				"damage"					"240 950 1950 5620 19566 32500 74500 138500"
 			}
 			"03"
 			{
@@ -11006,7 +11006,7 @@
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Venomancer.VenomousGale"
 		"MaxLevel"					  "8"
-		"LevelsBetweenUpgrades"		 "6"
+		"LevelsBetweenUpgrades"		 "8"
 		"HasShardUpgrade"			   "1"
 
 		// Casting
@@ -11036,12 +11036,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"strike_damage"			"150 375 1000 1925 2950 4750 15500 43200"
+				"strike_damage"			"1000 1925 2950 4750 15500 43200 145200 278500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tick_damage"			"145 350 750 1550 2150 3950 19450 54000"
+				"tick_damage"			"750 1550 2150 3950 19450 54000 115200 178500"
 			}
 			"04"
 			{
@@ -11890,7 +11890,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"health"			"250"
+				"health"			"500"
 			}
 		}
 	}
@@ -12097,7 +12097,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor"		"25"
+				"bonus_armor"		"30"
 			}
 			"02"
 			{
@@ -12121,7 +12121,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor"		"15"
+				"bonus_armor"		"25"
 			}
 			"02"
 			{
@@ -12192,6 +12192,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"45.0"
 			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"1500 4000 9000"
+			}			
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -12201,7 +12206,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"20"
+				"bonus_mana_regen"		"100 200 350"
 			}
 			"07"
 			{

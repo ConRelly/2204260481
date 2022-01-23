@@ -18234,7 +18234,7 @@
 	"ItemIsNeutralDrop"				"1"
 	"ItemRequirements"
 	{
-		"01"						"item_fluffy_hat"
+		"01"						"item_fluffy_hat"  // just to be easy to buy multiple times because of the ss effect
 		"02"						"item_broom_handle_copy"
 	}
 }
@@ -18250,7 +18250,7 @@
 	"ItemPurchasable"				"1"
 	"ItemIsNeutralDrop"				"1"
 	"ItemSellable"					"1"
-	"ItemStackable"					"0"
+	"ItemStackable"					"0"  //this needs to be 0 all time or can be easy abused to have 50+ stacks
 	"ItemRequiresCharges"			"0"
 	"ItemKillable"	                "1"
 	"ItemShareability"				"ITEM_NOT_SHAREABLE"  // seems becasue its neutral it reamains sharable.

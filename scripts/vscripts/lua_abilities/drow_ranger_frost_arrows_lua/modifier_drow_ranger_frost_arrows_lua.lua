@@ -17,7 +17,7 @@ end
 function modifier_drow_ranger_frost_arrows_lua:IsPurgable()
     return false
 end
-
+local ss_stack_limit = RandomInt(9, 13)
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_drow_ranger_frost_arrows_lua:OnCreated(kv)
@@ -44,6 +44,9 @@ function modifier_drow_ranger_frost_arrows_lua:OnCreated(kv)
     if caster:HasModifier("modifier_super_scepter") then
         if caster:HasModifier("modifier_item_imba_ultimate_scepter_synth_stats") then
             local ss_stack = caster:FindModifierByName("modifier_item_imba_ultimate_scepter_synth_stats"):GetStackCount()
+            if ss_stack > 9 then
+                ss_stack = ss_stack_limit
+            end    
             extra_dmg = ((extra_dmg - 1) * ss_stack) + 1
         else
             extra_dmg = extra_dmg + 1    

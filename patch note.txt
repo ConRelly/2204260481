@@ -1515,6 +1515,7 @@ QuickFix and update:
 * Dragon Blood now has All attack dmg bonus too (affected by talent) , talent 5x .
 * Dragon Knight ultimate buffed on last lvl. Now requires more lvls to upgrade.
 * Alchemist Jinada changed to deal dmg base on all colected gold during game(the gold you hold does not matter now). Fixed it was using lvl 1 stats at all lvls.
+* Chemical Rage now gives bonus Mana regen and bonus Health.
 * Fix Doom Multicast N.
 * Cragy Exterior buff : Now gives Magic resit too , more armor , more dmg and dmg type is pure.
 * Laguna blade will start with extra stacks base on the time of game you earn your first stack.
@@ -1535,8 +1536,10 @@ QuickFix and update:
 * Frostmourne bonus dmg increased and now has an Super Scepter Effect.
 * Paraoh Crown now has an Super Scepter effect.
 * Ballista now has an Super Scepter effect , bonus % base attack dmg and recipe changed(press Alt on item to see extra stuff).
+* Nerfed Bosses Rolling stone (over time buff), now gives ~40% less hp over time.
 * Fixed: some possible Kardel abuse, swap random skill on doom , rubic to gain more skills.
 * Fixed Aegis of Infinity stats
+
 
 
 
