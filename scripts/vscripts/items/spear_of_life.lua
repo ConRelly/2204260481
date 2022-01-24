@@ -170,6 +170,7 @@ end
 function modifier_life_greaves:OnIntervalThink()
 	if IsServer() then
 		if self:GetParent():IsIllusion() then return end
+		if not self:GetParent():IsAlive() then return end
 		if self:GetAbility():IsCooldownReady() and self:GetCaster():GetHealthPercent() < self:GetAbility():GetSpecialValueFor("aura_bonus_threshold") then
 			self:GetCaster():Purge(false, false, false, true, false)
 			self:GetAbility():OnSpellStart()
@@ -234,9 +235,11 @@ function modifier_life_greaves_aura:OnIntervalThink()
 	end
 end
 function modifier_life_greaves_aura:OnDestroy()
-	if self:GetParent():HasModifier("modifier_life_greaves_aura_threshold") then
-		self:GetParent():RemoveModifierByName("modifier_life_greaves_aura_threshold")
-	end
+	if IsServer() then
+		if self:GetParent():HasModifier("modifier_life_greaves_aura_threshold") then
+			self:GetParent():RemoveModifierByName("modifier_life_greaves_aura_threshold")
+		end
+	end	
 end
 function modifier_life_greaves_aura:DeclareFunctions()
 	return {MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS}

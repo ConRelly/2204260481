@@ -20814,7 +20814,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"3500"
+		"ItemCost"						"10000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_desolator_2"
@@ -20835,12 +20835,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"1900"
+				"bonus_damage"			"11200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-45"
+				"corruption_armor"		"-69"
 			}
 			"03"
 			{
@@ -21120,7 +21120,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"650 1350"
+				"bonus_strength"		"650 1350" // i know the greater ring has more str and str dmg /s. intentional hidden.
 			}
 			"02"
 			{

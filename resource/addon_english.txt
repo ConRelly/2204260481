@@ -4488,7 +4488,7 @@ DISPEL TYPE: Strong Dispel"
 "DOTA_Tooltip_modifier_skeleton_king_mortal_strike_summon"				"Mortal Strike"
 
 "DOTA_Tooltip_modifier_boss"				"Rolling Stone"
-"DOTA_Tooltip_modifier_boss_Description"	"This unit gains +1%% Damage, +0.6%% Max HP and +0.25%% Movement Speed every 2 seconds. <br><br>Already has +%dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% Damage, +%dMODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE%%% Max HP and +%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% Movement Speed."
+"DOTA_Tooltip_modifier_boss_Description"	"This unit gains +1%% Damage, +0.4%% Max HP and +0.25%% Movement Speed every 2 seconds. <br><br>Already has +%dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% Damage, +%dMODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE%%% Max HP and +%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% Movement Speed."
 
 "DOTA_Tooltip_modifier_hard_mode_boss"				"HARD MODE"
 "DOTA_Tooltip_modifier_hard_mode_boss_Description"	"This boss Has a bigger defense and power."
@@ -9674,6 +9674,8 @@ Contains all random skills"
 		"DOTA_Tooltip_ability_item_giants_ring2_bonus_strength"						"+$str"
 		"DOTA_Tooltip_ability_item_giants_ring2_movement_speed"						"+$move_speed"
 		"DOTA_Tooltip_ability_item_giants_ring2_model_scale"						"%+Model Scale"
+
+		"DOTA_Tooltip_ability_item_giants_ring_Note0"                       "Real stats of Greater Giants Ring are hidden, you will need to check the item itself"
 
 		"DOTA_Tooltip_ability_item_recipe_psychic_headband2"			"Psychic Headband Recipe"
 		"DOTA_Tooltip_ability_item_psychic_headband2"					"Psychic Headband"

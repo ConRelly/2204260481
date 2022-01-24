@@ -12044,7 +12044,7 @@
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"	  		"item_recipe"
 		
-		"ItemCost"						"2000"	
+		"ItemCost"						"6000"	
 		"ItemShopTags"					""
 		
 		"ItemRecipe"					"1"
@@ -18022,7 +18022,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"650 1350"
+				"bonus_strength"		"650 1650"
 			}
 			"02"
 			{
@@ -18037,7 +18037,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"pct_str_damage_per_second"		"620 850"
+				"pct_str_damage_per_second"		"620 1850"
 			}
 			"05"
 			{
