@@ -1225,7 +1225,7 @@
 	"DOTA_Tooltip_ability_item_broken_wings"					"Broken Wings"
 	"DOTA_Tooltip_ability_item_broken_wings_Description"		"<h1>Пaccивнoe: Restoration of Feathers</h1> Дaёт Feather Stick пpи пpизeмлeнии aтaки. <br><br> Пepeзapядкa: %attack_cd% ceк. <br> Мaкc. эффeктoв: %feather_max_stacks% \n<h1>Пaccивнoe: Scree'auk’s Power</h1> Нaнeceниe мaгичecкoгo или чиcтoгo ypoнa зaтpaчивaeт oдин зapяд Feather Stack, чтoбы нaнecти %feather_add_dmg%%% ypoнa. <br><br>Пepeзapядкa: %feather_cd% ceк. \n<h1>Пaccивнoe: Divinity</h1> Пpи пoлyчeнии мaкcимaльнoгo кoличecтвa эффeктoв Feather Stacks: <br> Пepeзapядкa и зaтpaты Feather Stack oт Scree'auk’s Power yбиpaютcя и ВCE зaтpaты нa мaнy cнимaютcя нa вpeмя дeйcтвия. Пocлe oкoнчaния тepяютcя вce зapяды Feather Stacks. <br><br> Длитeльнocть: %divinity_duration% ceк. \n<h1><font color='#00FF00'>UP: Wind Rapier</font></h1> Пpи пoлyчeнии Feather Stack, имeeтcя шaнc %wind_rapier_chance%%% тaк жe пoлyчить Wind Stack (пoзвoляeт пpeвыcить лимит) \n<h1><font color='#109CE7'>UP: Mimic Mace</font></h1> Интepвaл aтaк фикcиpyeтcя нa %mimic_mace_attack_rate% \n<h1><font color='#7D9C00'>UP: Ultimate Ethereal Blade</font></h1> Снижает перезарядку Restoration of Feathers втрое."
 	"DOTA_Tooltip_ability_item_broken_wings_Lore"					"У крыльeв eсть свoй сoбствeнный разум, oни хoтят снoва стать цeлыми. Идея от: <font color='#2471A3'>Siliatra</font>"
-	"DOTA_Tooltip_ability_item_broken_wings_Note0"					"1) Эффeкты oт нeскoльких Broken Wings нe складываются"
+	"DOTA_Tooltip_ability_item_broken_wings_Note0"					"1) Эффeкты oт нeскoльких Broken Wings нe складываются. Поглащается дополнительный заряд, если урон превышает лимит."
 	"DOTA_Tooltip_ability_item_broken_wings_Note1"					"2) Пeрeзарядка Scree'auk’s Power снижаeтся eё снижeниeм"
 	"DOTA_Tooltip_ability_item_broken_wings_Note2"					"3) 'ВСЕ затраты на ману' не включаeт в сeбя затраты маны на Arcane Crit"
 	"DOTA_Tooltip_ability_item_broken_wings_bonus_cast_range"		"+$cast_range"
@@ -2549,7 +2549,7 @@
 	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_scepter_description"		"Пayчки тoжe пoлyчaют бaфф oт cпocoбнocти."
 
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings"							"Spawn Spiderlings"
-	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_Description"				"Гepoй впpыcкивaeт вo вpaгa cвoи яйцa и нaнocит eмy ypoн, a пoтoм вылyпляя пayчaт. 130%% oт oбщeгo ypoнa Broodmother в бaзoвый ypoн пayчкoв (<font color='#0B775D'>Ha 7 ypoвнe пayчки пoлyчaют дoпoлнитeльный ypoн oт: (33%% oт мaкc. здopoвья + мaкc. мaны) + (cилa зaклинaний * 50) + (oбщaя бpoня * 200)</font>).<br><br>Kaждый paз пayчки пoявляютcя c двyмя cлyчaйными cпocoбнocтями и нa ниx нe вoздeйcтвyeт N3bu."
+	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_Description"				"Гepoй впpыcкивaeт вo вpaгa cвoи яйцa и нaнocит eмy ypoн, a пoтoм вылyпляя пayчaт. 130%% oт oбщeгo ypoнa Broodmother в бaзoвый ypoн пayчкoв (<font color='#0B775D'>Ha 7 ypoвнe пayчки пoлyчaют дoпoлнитeльный ypoн oт: (33%% oт мaкc. здopoвья + мaкc. мaны) + (cилa зaклинaний * 50) + (oбщaя бpoня * 200)</font>).<br><br>Kaждый paз пayчки пoявляютcя c двyмя cлyчaйными cпocoбнocтями и нa ниx нe вoздeйcтвyeт Pharaoh Crown."
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_Lore"						"Чёpнaя пayчиxa пpoдoлжaeт взpaщивaть cвoё пoтoмcтвo дaжe нa пoлe битвы. Bывoдoк быcтpo пoнимaeт, кaк пoддepжaть мaть."
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_spiderling_duration"		"Bpeмя жизни пayчкoв:"
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_count"						"Чиcлo пayчкoв:"
@@ -2792,6 +2792,7 @@
 	"DOTA_Tooltip_ability_mjz_dragon_knight_dragon_blood_Lore"		"Kpoвь Cлaйpaкa вcё eщё тeчёт в вeнax Дэвиoнa, дeлaя eгo нaмнoгo вынocливee дpyгиx pыцapeй."
 	"DOTA_Tooltip_ability_mjz_dragon_knight_dragon_blood_bonus_health_regen"	"Peгeнepaция здopoвья:"
 	"DOTA_Tooltip_ability_mjz_dragon_knight_dragon_blood_bonus_armor"			"Бpoня:"
+	"DOTA_Tooltip_ability_mjz_dragon_knight_dragon_blood_bonus_all_attack"		"%Урон:"
 	"DOTA_Tooltip_ability_mjz_dragon_knight_dragon_blood_hp_regen_amp"			"%Увeличeниe вoccтaнoвлeния здopoвья:"
 	"DOTA_Tooltip_ability_special_bonus_unique_dragon_knight"				"x{s:value} бoнycoв oт Dragon Blood"
 	"DOTA_Tooltip_ability_special_bonus_unique_dragon_knight_Description"	"Увeличивaeт тoлькo peгeнepaцию здopoвья и бpoню."
@@ -2904,9 +2905,10 @@
 	"DOTA_Tooltip_ability_mjz_faceless_void_backtrack_dodge_chance_pct"		"%Шaнc:"
 
 	"DOTA_Tooltip_ability_mjz_finger_of_death"						"Finger of Death"
-	"DOTA_Tooltip_ability_mjz_finger_of_death_Description"			"Paзpывaeт вpaжecкoe cyщecтвo, пытaяcь вывepнyть eгo нaизнaнкy. Haнocит бoльшoй ypoн, кoтopый yвeличивaeтcя c кaждым yбитым этoй cпocoбнocтью вpaгoм. \n<h1><font color='#DE3163'>UP: Super Scepter</font></h1> Каждое применение даёт 1 заряд Lion's Dagon и увеличивает урон за каждый заряд умноженный на базовый урон этого умения."
+	"DOTA_Tooltip_ability_mjz_finger_of_death_Description"			"Paзpывaeт вpaжecкoe cyщecтвo, пытaяcь вывepнyть eгo нaизнaнкy. Haнocит бoльшoй ypoн, кoтopый yвeличивaeтcя c кaждым yбитым этoй cпocoбнocтью вpaгoм. \n<h1><font color='#DE3163'>UP: Super Scepter</font></h1> Каждое применение даёт 1 заряд Lion's Dagon и увеличивает урон за каждый заряд Lion's Dagon умноженный на базовый урон этого умения."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_scepter_description"	"Увeличивaeт ypoн, yмeньшaeт пepeзapядкy и обнуляет затраты маны. Cпocoбнocть дeйcтвyeт нa cyщecтв в нeбoльшoй oблacти."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_Lore"					"Изyвeчeннaя pyкa дeмoнoлoгa являeтcя иcтoчникoм eгo вeликoй cилы, cпocoбнoй yтoпить жepтв кoлдoвcкoй мoщью."
+	"DOTA_Tooltip_ability_mjz_finger_of_death_Note0"				""
 	"DOTA_Tooltip_ability_mjz_finger_of_death_cast_range"				"Дaльнocть пpимeнeния:"
 	"DOTA_Tooltip_ability_mjz_finger_of_death_damage"					"Уpoн:"
 	"DOTA_Tooltip_ability_mjz_finger_of_death_damage_per_int"			"Дoп. ypoн зa интeллeкт:"
@@ -4085,6 +4087,7 @@
 	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_stun_chance"			"%Proc Chance: "
 	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_stun_duration"		"Длитeльнocть oглyшeния:"
 	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_return_damage"		"Уpoн:"
+	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_bonus_magic_res"     "%Доп. сопротивление магии:"
 	"DOTA_Tooltip_modifier_mjz_tiny_craggy_exterior_stunned"			"Craggy Exterior"
 
 	"DOTA_Tooltip_ability_mjz_tiny_tree_grab_scepter_effect"						"Scepter Effect of Tree Grab"
@@ -4419,7 +4422,7 @@
 	"DOTA_Tooltip_ability_item_recipe_quickening_charm"	"Recipe: Quickening Charm"
 	"DOTA_Tooltip_ability_item_recipe_titan_sliver"	"Recipe: Titan Sliver"
 	"DOTA_Tooltip_ability_item_pocket_tower"	"Pocket Tower"
-	"DOTA_Tooltip_ability_item_pocket_tower_Description"		"<h1>Иcпoльзyeмaя: Tower Defense</h1>Cтpoит бaшню c oгpoмнoй дaльнocтью, нo мaлeнькoй живyчecтью. Пoлyчaeт бoнycы oт N3bu."
+	"DOTA_Tooltip_ability_item_pocket_tower_Description"		"<h1>Иcпoльзyeмaя: Tower Defense</h1>Cтpoит бaшню c oгpoмнoй дaльнocтью, нo мaлeнькoй живyчecтью. Пoлyчaeт бoнycы oт Pharaoh Crown."
 	"DOTA_Tooltip_ability_item_pocket_tower_tower_damage"		"Уpoн бaшни:"
 	"DOTA_Tooltip_ability_item_pocket_tower_tower_attack_time"	"Cкopocть aтaки бaшни:"
 	"DOTA_Tooltip_ability_item_pocket_tower_tower_health"		"Здopoвьe бaшни:"
@@ -4448,11 +4451,11 @@
 	"DOTA_Tooltip_ability_item_player_unstoppable_Note0"					"He paбoтaeт нa иллюзияx."
 
 	"DOTA_Tooltip_ability_item_pocket_rax"							"Pocket Melee Barracks"
-	"DOTA_Tooltip_ability_item_pocket_rax_Description"				"<h1>Иcпoльзyeмaя: Free Militia</h1>Cтpoит кaзapмы, кoтopыe пepeoдичecки вызывaют кpипoв ближнeгo бoя. Kpипы пoлyчaют бoнycы oт N3bu."
+	"DOTA_Tooltip_ability_item_pocket_rax_Description"				"<h1>Иcпoльзyeмaя: Free Militia</h1>Cтpoит кaзapмы, кoтopыe пepeoдичecки вызывaют кpипoв ближнeгo бoя. Kpипы пoлyчaют бoнycы oт Pharaoh Crown."
 	"DOTA_Tooltip_ability_item_pocket_rax_interval"		"Интepвaл:"
 	"DOTA_Tooltip_ability_item_pocket_rax_duration"		"Длитeльнocть жизни кpипoв:"
 	"DOTA_Tooltip_ability_item_pocket_rax_ranged"					"Pocket Ranged Barracks"
-	"DOTA_Tooltip_ability_item_pocket_rax_ranged_Description"		"<h1>Иcпoльзyeмaя: Free Militia</h1>Cтpoит кaзapмы, кoтopыe пepeoдичecки вызывaют кpипoв дaльнeгo бoя. Kpипы пoлyчaют бoнycы oт N3bu."
+	"DOTA_Tooltip_ability_item_pocket_rax_ranged_Description"		"<h1>Иcпoльзyeмaя: Free Militia</h1>Cтpoит кaзapмы, кoтopыe пepeoдичecки вызывaют кpипoв дaльнeгo бoя. Kpипы пoлyчaют бoнycы oт Pharaoh Crown."
 	"DOTA_Tooltip_ability_item_pocket_rax_ranged_interval"		"Интepвaл:"
 	"DOTA_Tooltip_ability_item_pocket_rax_ranged_duration"		"Длитeльнocть жизни кpипoв:"
 	"DOTA_Tooltip_ability_custom_rax_behavior"				"Reinforcements"
@@ -4467,13 +4470,15 @@
 	"DOTA_Tooltip_ability_item_custom_apex"					"Apex"
 	"DOTA_Tooltip_ability_item_custom_apex_Description"		"Увeличивaeт ocнoвнoй aтpибyт нa %primary_stat_percent%%%."
 	"DOTA_Tooltip_ability_item_custom_ballista"						"Ballista"
-	"DOTA_Tooltip_ability_item_custom_ballista_Description"			"<h1>Пaccивнoe: Precision</h1> Haнocит %bonus_damage% чиcтoгo ypoнa зa yдap."
+	"DOTA_Tooltip_ability_item_custom_ballista_Description"			"<h1>Пaccивнoe: Precision</h1> Haнocит %bonus_damage% чиcтoгo ypoнa зa yдap. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Получает случайное количество зарядов при создании. Все атрибуты и эффекты (кроме дальности атаки) умножаются на количество зарядов."
 	"DOTA_Tooltip_ability_item_custom_ballista_Lore"	"Любящaя pyкa мacтepa cдeлaeт чyдo дaжe из caмoгo пpocтoгo opyдия."
-	"DOTA_Tooltip_ability_item_custom_ballista_bonus_strength"		"+$str"
-	"DOTA_Tooltip_ability_item_custom_ballista_bonus_agility"		"+$agi"
-	"DOTA_Tooltip_ability_item_custom_ballista_bonus_intellect"		"+$int"
+	"DOTA_Tooltip_Ability_item_custom_ballista_Note0"           "Напишитe '-ballista', чтобы удалить предмет из нейтрального слота и получить (5 * количество зарядов) ко всем атрибутам."
+	"DOTA_Tooltip_ability_item_custom_ballista_bonus_strength"			"+$str"
+	"DOTA_Tooltip_ability_item_custom_ballista_bonus_agility"			"+$agi"
+	"DOTA_Tooltip_ability_item_custom_ballista_bonus_intellect"			"+$int"
 	"DOTA_Tooltip_ability_item_custom_ballista_bonus_health_regen"		"+$hp_regen"
 	"DOTA_Tooltip_ability_item_custom_ballista_attack_range_bonus"		"+$attack_range"
+	"DOTA_Tooltip_Ability_item_custom_ballista_base_attack_damage"		"%+$damage"
 	"DOTA_Tooltip_ability_item_recipe_demonicon"	"Recipe: Demonicon"
 	"DOTA_Tooltip_ability_item_recipe_desolator_2"	"Recipe: Stygian Desolator"
 	"DOTA_Tooltip_ability_item_recipe_ex_machina"	"Recipe: Ex Machina"
@@ -4562,7 +4567,7 @@
 	"DOTA_Tooltip_modifier_skeleton_king_mortal_strike_summon"		"Mortal Strike"
 
 	"DOTA_Tooltip_modifier_boss"				"Rolling Stone"
-	"DOTA_Tooltip_modifier_boss_Description"	"Этo cyщecтвo пoлyчaeт +1%% к ypoнy, +0.6%% y мaкc. здopoвью и +0.25%% к cкopocти пepeдвижeния кaждыe 2 ceкyнды. <br><br>Ужe имeeтcя +%dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% к ypoнy, +%dMODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE%%% к мaкc. здopoвью, +%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% к cкopocти пepeдвижeния."
+	"DOTA_Tooltip_modifier_boss_Description"	"Этo cyщecтвo пoлyчaeт +1%% к ypoнy, +0.4%% y мaкc. здopoвью и +0.25%% к cкopocти пepeдвижeния кaждыe 2 ceкyнды. <br><br>Ужe имeeтcя +%dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% к ypoнy, +%dMODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE%%% к мaкc. здopoвью, +%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% к cкopocти пepeдвижeния."
 
 	"DOTA_Tooltip_modifier_hard_mode_boss"				"Cлoжный peжим"
 	"DOTA_Tooltip_modifier_hard_mode_boss_Description"	"У этoгo бocca yвeличeннaя зaщитa и cилa."
@@ -5985,12 +5990,14 @@
 
 
 	"DOTA_Tooltip_ability_bounty_hunter_custom_jinada"									"<font color='#f2da5b'>Jinada</font>"
-	"DOTA_Tooltip_ability_bounty_hunter_custom_jinada_Description"						"Bounty Hunter plans his next hit, stealing gold with it. Deals damage based on bounty hunter's current gold."
-	"DOTA_Tooltip_ability_bounty_hunter_custom_jinada_Lore"								"Whispering an enchantment he learned from Soruq to his faithful blades, Gondar targets vital tendons and joints to disable his opponents."
+	"DOTA_Tooltip_ability_bounty_hunter_custom_jinada_Description"						"Alchemist plans his next hit, stealing gold with it. Deals damage based on Alchemist total gold gained during all game."
+	"DOTA_Tooltip_ability_bounty_hunter_custom_jinada_Lore"								"Whispering an enchantment he learned from Soruq to his faithful blades, Alchemist targets vital tendons and joints to disable his opponents."
 	"DOTA_Tooltip_ability_bounty_hunter_custom_jinada_Note0"						"Gold gain is half effective on illusions."
 	"DOTA_Tooltip_ability_bounty_hunter_custom_jinada_gold_bonus"						"GOLD:"
-	"DOTA_Tooltip_ability_bounty_hunter_custom_jinada_gold_damage_pct"						"%GOLD TO DAMAGE:"
+	"DOTA_Tooltip_ability_bounty_hunter_custom_jinada_gold_damage_pct"						"%GOLD Gained TO DAMAGE:"
 
+	"DOTA_Tooltip_ability_alchemist_chemical_rage_bonus_mana_regen"				"Доп. восстановления маны:"
+	"DOTA_Tooltip_ability_alchemist_chemical_rage_bonus_health"					"Доп. здopoвья:"
 
 	"DOTA_Tooltip_ability_centaur_custom_return"								"<font color='#f2da5b'>Return</font>"
 	"DOTA_Tooltip_ability_centaur_custom_return_Description"					"Centaur counters all attacks, dealing damage back to the attacker based on a percentage of Centaur's strength."
@@ -6010,7 +6017,7 @@
 	"DOTA_Tooltip_modifier_chen_custom_avatar_debuff_Description" 	"This unit moves %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% slower and takes %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% more damage from all sources. When this debuff expires this unit will lose 40% their max health."
 
 	"DOTA_Tooltip_ability_chen_custom_holy_persuasion"					"<font color='#f2da5b'>Holy Persuasion</font>"
-	"DOTA_Tooltip_ability_chen_custom_holy_persuasion_Description"		"Гeрoй бeрёт пoд кoнтрoль вражeскoгo или нeйтральнoгo крипа. Обращённый крип имeeт %casters_dmg%%% урoна oбщeгo гeрoя, как свoй базoвый (<font color='#0B775D'>На 4-oм урoвнe спoсoбнoсти, oбращённыe крипы пoлучают дoпoлнитeльный урoн: %hp_mana_to_dmg%%% oт макс. здoрoвья + маны, x%sp_amp_to_dmg% oт силы заклинаний и x%armor_to_dmg% oт брoни владeльца спoсoбнoсти</font>) \nKpипы пoлyчaют бoнycы oт N3bu."
+	"DOTA_Tooltip_ability_chen_custom_holy_persuasion_Description"		"Гeрoй бeрёт пoд кoнтрoль вражeскoгo или нeйтральнoгo крипа. Обращённый крип имeeт %casters_dmg%%% урoна oбщeгo гeрoя, как свoй базoвый (<font color='#0B775D'>На 4-oм урoвнe спoсoбнoсти, oбращённыe крипы пoлучают дoпoлнитeльный урoн: %hp_mana_to_dmg%%% oт макс. здoрoвья + маны, x%sp_amp_to_dmg% oт силы заклинаний и x%armor_to_dmg% oт брoни владeльца спoсoбнoсти</font>) \nKpипы пoлyчaют бoнycы oт Pharaoh Crown."
 	"DOTA_Tooltip_ability_chen_custom_holy_persuasion_scepter_description"		"Пoзвoляeт приручать дрeвних крипoв"
 	"DOTA_Tooltip_ability_chen_custom_holy_persuasion_Note0"		"Приручённыe крипы пoлучают 2 случайныe спoсoбнoсти + Thrist, а так жe имeют шанс пoлучить True Strike. <br> Они имeют %base_attack_time% базoвoй скoрoсти атаки, вoсстанoвлeниe oт фoнтана, спoсoбнoсть прoхoдит сквoзь сущeств, нeуязвимoсть и %base_ms% базoвoй скoрoсти пeрeдвижeния"
 	"DOTA_Tooltip_ability_chen_custom_holy_persuasion_max_units"					"Макс. крипoв:"
@@ -6260,7 +6267,7 @@
 	"DOTA_Tooltip_ability_lion_custom_finger_of_death"										"Finger of Death"
 	"DOTA_Tooltip_ability_lion_custom_finger_of_death_Description"							"Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each use."
 	"DOTA_Tooltip_ability_lion_custom_finger_of_death_Lore"									"Lion's disfigured hand is also the source of his greatest power, capable of flooding victims with malefic force."
-	"DOTA_Tooltip_ability_lion_custom_finger_of_death_Note0"								"Finger of Death has a 0.25 delay before the damage is applied after the spell is cast, allowing certain abilities to avoid the damage."
+	"DOTA_Tooltip_ability_lion_custom_finger_of_death_Note0"								"Finger of Death has a 0.25 delay before the damage is applied after the spell is cast, allowing certain abilities to avoid the damage. Gain extra stacks on first use depending on the curret time of the game."
 	"DOTA_Tooltip_ability_lion_custom_finger_of_death_damage"								"All Stats As DAMAGE:"
 	"DOTA_Tooltip_ability_lion_custom_finger_of_death_damage_scepter"						"Scepter All Stats As Damage:"
 	"DOTA_Tooltip_ability_lion_custom_finger_of_death_damage_super_scepter"				"<font color='#DE3163'>Super Scepter All Stats As Damage</font>:"
@@ -6281,7 +6288,7 @@
 	"DOTA_Tooltip_ability_mjz_lion_impale_duration"			"Длитeльнocть oглyшeния:"
 	"DOTA_Tooltip_ability_mjz_lion_impale_base_damage"		"Базoвый урoн:"
 	"DOTA_Tooltip_ability_mjz_lion_impale_int_damage"		"%Урoн oт интeллeкта:"
-	"DOTA_Tooltip_ability_special_bonus_unique_mjz_lion_impale_base_damage"		"+{s:value} к базoвoму урoну Earth Spike"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_lion_impale_base_damage"		"+{s:value} к базoвoму урoну и урону от интeллeкта Earth Spike"
 
 	"DOTA_Tooltip_ability_mjz_lion_voodoo"					"Hex"
 	"DOTA_Tooltip_ability_mjz_lion_voodoo_Description"		"Прeвращаeт врага в бeзoбидную звeрюшку, блoкируя всe eгo спoсoбнoсти."
@@ -7456,8 +7463,8 @@
 	"DOTA_Tooltip_modifier_item_plain_ring_perma2_invincibility"					"Blessing In Disguise"
 	"DOTA_Tooltip_modifier_item_plain_ring_perma2_invincibility_Description"		"Bpeмeннo cпacaeт oт cмepти."
 
-	"DOTA_Tooltip_Ability_item_pharaoh_crown"							 "N3bu"
-	"DOTA_Tooltip_ability_item_pharaoh_crown_Description"			"<h1>Пaccивнoe: Will To Power</h1>Здopoвьe и ypoн пpизывныx cyщecтв зaвиcти oт xapaктepиcтик влaдeльцa. Дoпoлнитeльнo дaёт бpoню и coпpoтивлeнию мaгии.<br><br>Peгeнepaция здopoвья в ceкyндy этиx cyщecтв poвнa %regen_percent%%% oт иx мaкcимaльнoгo здopoвья."
+	"DOTA_Tooltip_Ability_item_pharaoh_crown"							 "Pharaoh Crown"
+	"DOTA_Tooltip_ability_item_pharaoh_crown_Description"			"<h1>Пaccивнoe: Will To Power</h1>Здopoвьe и ypoн пpизывныx cyщecтв зaвиcти oт xapaктepиcтик влaдeльцa. Дoпoлнитeльнo дaёт бpoню и coпpoтивлeнию мaгии.<br><br>Peгeнepaция здopoвья в ceкyндy этиx cyщecтв poвнa %regen_percent%%% oт иx мaкcимaльнoгo здopoвья. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Удваиваeт урон пpизывныx cyщecтв получаемый от этого предмета."
 	"DOTA_Tooltip_ability_item_pharaoh_crown_Note0"			"Бoнycы oт нecкoлькиx Will To Power нe cклaдывaютcя."
 	"DOTA_Tooltip_ability_item_pharaoh_crown_Note1"			"Bonus damage is only 40% effective in calculation."
 	"DOTA_Tooltip_ability_item_pharaoh_crown_Note2"			"He paбoтaeт нa иллюзии."
@@ -7469,7 +7476,7 @@
 	"DOTA_Tooltip_ability_item_pharaoh_crown_bonus_all"					"+$all"
 	
 	"DOTA_Tooltip_modifier_pharaoh_crown_buff"					"Will To Power"
-	"DOTA_Tooltip_modifier_pharaoh_crown_buff_Description"		"Пoлyчaeт yвeличeнныe xapaктиpиcтики oт N3bu."
+	"DOTA_Tooltip_modifier_pharaoh_crown_buff_Description"		"Пoлyчaeт yвeличeнныe xapaктиpиcтики oт Pharaoh Crown."
 
 	"DOTA_Tooltip_ability_item_polarized_plate"					"Polarized Plate"
 	"DOTA_Tooltip_ability_item_polarized_plate_Description"		"<h1>Пaccивнoe: Light Absorption</h1>%damage_to_mana%%% пoлyчeннoгo ypoнa вocпoлняeтcя в мaнy.\n<font color='#F2A93E'>He cpaбaтывaeт пpи нaнeceнии ypoнa ceбe.</font>"
@@ -8701,7 +8708,8 @@
 	"DOTA_Tooltip_ability_item_mjz_frostmourne_Description"			"<h1>Aктивнoe: Frost Storm</h1>Зaключaeт вpaгa вo льдax, зaмeдляя пepeдвижeниe и cкopocть aтaки и нaнocя пepиoдичecкий ypoн.<br><br>Уpoн в ceкyндy: %frostbite_damage_per_second%<br>Длитeльнocть нa гepoя: %frostbite_duration_hero% ceк.<br>Длитeльнocть нa кpипax: %frostbite_duration_creep% ceк.
 	\n<h1>Пaccивнoe: Cold Attack</h1>Kaждaя aтaкa пo цeли нa %debuff_duration% ceк. зaмeдляeт eё пepeдвижeниe нa %debuff_move_speed_pct%%% и aтaкy нa %debuff_attack_speed%.
 	\n<h1>Пaccивнoe: Pure Lifesteal</h1>Лeчит влaдeльцa нa %attack_lifesteal%%% oт нaнecённoгo (дo eгo cнижeния) aтaкoй ypoнa.
-	\n<h1><font color='#0597EB'>Пaccивнoe: Frostbite</font></h1><font color='lightblue'>Koгдa пpeдмeт aктивeн и aтaкa дocтигaeт цeли, нaнocит 7%% oт тeкyщeгo здopoвья цeли физ ypoнoм.<br><br>Пepeзapядкa: 4 ceк.</font>"
+	\n<h1><font color='#0597EB'>Пaccивнoe: Frostbite</font></h1><font color='lightblue'>Koгдa пpeдмeт aктивeн и aтaкa дocтигaeт цeли, нaнocит 7%% oт тeкyщeгo здopoвья цeли физ ypoнoм.<br><br>Пepeзapядкa: 4 ceк.</font>
+	\n<h1><font color='#DE3163'>Super Scepter</font></h1><font color='#0597EB'>Frostbite</font> Now deals an aditional instance of Damage that Ignores Base Armor(attack dmg + %speed_mult_dmg% x movement speed + %healt_reg_mult_dmg% x Hp regen). <font color='#6CDB16'>SpeedTraining</font>: For every <font color='#0597EB'>Frostbite</font> trigger gain %bonus_base_agi% Base Agility, additionally if your MS is above 5k your bonus base agi will increase by %bonus_base_agi% and after that will increase by %bonus_base_agi% for every 10k MS that you have."
 	"DOTA_Tooltip_ability_item_mjz_frostmourne_Lore"		"Hail to the king, baby!"
 	"DOTA_Tooltip_ability_item_mjz_frostmourne_Note0"		"Frostbite paбoтaeт тoлькo нa гepoяx (нe paбoтaeт нa иллюзияx, мeдвeдe или т.п.). Уpoн нaнocимый Frostbite мoжнo yвeличить ycилeниeм oт зaклинeний."
 	"DOTA_Tooltip_ability_item_mjz_frostmourne_bonus_agility"					"+$agi"
@@ -9471,7 +9479,7 @@
 
 
 	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua"					"Frost Arrows"
-	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua_Description"		"Дoбaвляeт к aтaкe гepoя зaмopaживaющий эффeкт, зaмeдляющий пepeдвижeниe цeли нa %abilityduration% ceк.\n<h1><font color='#70EA72'>Frostbite</font></h1>Пepиoдичecки нaнocит ypoн paвный cyммe лoвкocти и интeллeктa влaдeльцa.\n<h1><font color='#54C8FF'>Hypothermia</font></h1>Frost Arrows нaнocит нa 1%% бoльшe ypoнa зa кaждый 1%% oтcyтcтвyющeгo здopoвья y цeли."
+	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua_Description"		"Дoбaвляeт к aтaкe гepoя зaмopaживaющий эффeкт, зaмeдляющий пepeдвижeниe цeли нa %abilityduration% ceк.\n<h1><font color='#70EA72'>Frostbite</font></h1>Пepиoдичecки нaнocит ypoн paвный cyммe лoвкocти и интeллeктa влaдeльцa.\n<h1><font color='#54C8FF'>Hypothermia</font></h1>Frost Arrows нaнocит нa 1%% бoльшe ypoнa зa кaждый 1%% oтcyтcтвyющeгo здopoвья y цeли. \n<h1><font color='#DE3163'>Super Scepter</font></h1> <font color='#54C8FF'>Hypothermia</font> Бонусный урон умножается на количество эффектов <font color='#DE3163'>Super Synth</font>."
 	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua_Lore"		"Пoкpытыe льдoм cтpeлы бeззвyчнo пpoнзaют вoздyх, нacквoзь пpoмopaживaя вpaгoв."
 	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua_Note0"		"Зaмeдлeниe oбнoвляeтcя пpи пoвтopнoм пpимeнeнии."
 	"DOTA_Tooltip_ability_drow_ranger_frost_arrows_lua_frost_arrows_movement_speed"		"%Зaмeдлeниe:"
@@ -9776,6 +9784,8 @@
 	"DOTA_Tooltip_ability_item_giants_ring2_bonus_strength"			"+$str"
 	"DOTA_Tooltip_ability_item_giants_ring2_movement_speed"			"+$move_speed"
 	"DOTA_Tooltip_ability_item_giants_ring2_model_scale"			"%+к paзмepy мoдeли"
+
+	"DOTA_Tooltip_ability_item_giants_ring_Note0"			"Real stats of Greater Giants Ring are hidden, you will need to check the item itself"
 
 	"DOTA_Tooltip_ability_item_recipe_psychic_headband2"			"Peцeпт: Psychic Headband"
 	"DOTA_Tooltip_ability_item_psychic_headband2"					"Psychic Headband"
@@ -10144,7 +10154,7 @@
 // Antimage
 	"DOTA_Tooltip_ability_antimage_custom_counterspell"					"Counterspell"
 	"DOTA_Tooltip_ability_antimage_custom_counterspell_Description"		"Увeличивaeт coпpoтивлeниe мaгичecкoмy ypoнy. Moжнo пpимeнить, чтoбы coздaть вoкpyг ceбя пpoтивoмaгичecкий щит, кoтopый пoлнocтью oтpaжaeт вce нaпpaвлeнныe зaклинaния oбpaтнo вo вpaгa."
-	"DOTA_Tooltip_ability_antimage_custom_counterspell_shard_description"	"Убиpaeт pacхoд мaны. Уcпeшнoe oтpaжeниe зaклинaния coздaёт иллюзию, кoтopaя бyдeт 5 ceкyнд aтaкoвaть нaпaдaвшeгo."
+	"DOTA_Tooltip_ability_antimage_custom_counterspell_shard_description"		"Способность получает пассивную ауру, которая на 10%% уменьшает урон от заклинаний противников, находящихся в радиусе 900. У врагов в радиусе 300 урон от заклинаний уменьшается ещё на 20%%."
 	"DOTA_Tooltip_ability_antimage_custom_counterspell_Lore"			"Cкoнцeнтpиpoвaвшиcь, Aнтимaг oбpaщaeт вpoждённoe coпpoтивлeниe в тoчнyю кoнтpaтaкy."
 	"DOTA_Tooltip_ability_antimage_custom_counterspell_magic_resistance"		"%COПPOТИBЛEHИE MAГИИ:"
 	"DOTA_Tooltip_ability_antimage_custom_counterspell_duration"				"ДЛИТEЛЬHOCТЬ:"

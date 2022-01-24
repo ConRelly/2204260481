@@ -9,7 +9,7 @@ if modifier_lier_scarlet_t == nil then modifier_lier_scarlet_t = class({}) end
 function modifier_lier_scarlet_t:IsHidden() return true end
 function modifier_lier_scarlet_t:IsPurgable() return false end
 function modifier_lier_scarlet_t:RemoveOnDeath() return false end
-function modifier_lier_scarlet_t:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+--function modifier_lier_scarlet_t:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_lier_scarlet_t:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end if not self:GetParent():IsIllusion() then
 		if not self:GetCaster():HasModifier("modifier_lier_scarlet_pieces_thinker") then self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_lier_scarlet_pieces_thinker", {}) end
@@ -35,7 +35,7 @@ if modifier_lier_scarlet_m == nil then modifier_lier_scarlet_m = class({}) end
 function modifier_lier_scarlet_m:IsHidden() return true end
 function modifier_lier_scarlet_m:IsPurgable() return false end
 function modifier_lier_scarlet_m:RemoveOnDeath() return false end
-function modifier_lier_scarlet_m:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+--function modifier_lier_scarlet_m:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_lier_scarlet_m:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end if not self:GetParent():IsIllusion() then
 		if not self:GetCaster():HasModifier("modifier_lier_scarlet_pieces_thinker") then self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_lier_scarlet_pieces_thinker", {}) end
@@ -81,7 +81,7 @@ if modifier_lier_scarlet_b == nil then modifier_lier_scarlet_b = class({}) end
 function modifier_lier_scarlet_b:IsHidden() return true end
 function modifier_lier_scarlet_b:IsPurgable() return false end
 function modifier_lier_scarlet_b:RemoveOnDeath() return false end
-function modifier_lier_scarlet_b:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+--function modifier_lier_scarlet_b:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_lier_scarlet_b:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end if not self:GetParent():IsIllusion() then
 		if not self:GetCaster():HasModifier("modifier_lier_scarlet_pieces_thinker") then self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_lier_scarlet_pieces_thinker", {}) end
