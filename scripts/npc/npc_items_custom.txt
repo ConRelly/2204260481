@@ -18293,6 +18293,7 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"base_attack_damage"	"15"
+			"CalculateSpellDamageTooltip"  "0"
 		}		
 	}
 }

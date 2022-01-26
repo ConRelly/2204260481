@@ -305,7 +305,7 @@
 	"Ability6"				 "generic_hidden"
 	"Ability7"				 "generic_hidden"
 	"Ability8"				 "generic_hidden"
-	//"Ability9"				 "marci_unleash_custom"	
+	"Ability9"				 "cold_slashes"	
 	"ArmorPhysical"			 "0"
 	"MagicalResistance"		 "0"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"

@@ -14,7 +14,7 @@ end
 local MAX_PRISION_RANGE = 1000                      -- 可以被攻击的范围
 local BONUS_DURATION = 120
 local MIN_RESPAWN_TIME = 1                        -- 最短刷新时间
-local MAX_RESPAWN_TIME = 13                        -- 最长刷新时间
+local MAX_RESPAWN_TIME = 14                        -- 最长刷新时间
 local ROSHAN_CLASS_NAME = "npc_dota_roshan_mega"    -- Roshan 类名
 local ROSHAN_SPAWNER = "roshan_spawner"             -- 出生定位点
 

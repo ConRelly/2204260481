@@ -1543,6 +1543,25 @@ QuickFix and update:
 
 
 
+*DOOM: 
+	--Added 7 new skills(the good stuff) to Doom Random list.
+	--Added back his swap trick, but he can't swap Autocast and fireblast skills now.
+* Ursa(Shovel summon) now has 75% CDR.
+* Lier Scarlet items don't stack anymore(using multiple of the same item for same stats)
+* Magnus:
+   --Ultimate has no cast time, bonus dmg from Str, and a New Super Scepter effect.
+   --Shockwave dmg increased and lvl required.
+   --Empower bonus increased and lvl required
+   --Str per lvl increased to 39.6, attack rate to 1.4 (from 1.5)
+* Buffed Legion Commander Grim Reaper
+* Increased(nerf) krakenShell of gods to 1 mill dmg.  so every 1 mill after reduction dealt with to them they will do a cleanse of debuffs(that can be dispelled).
+* Added new Ability in the Random pools.
+* Made some changes so on -double one of Moran does not stay Perma in invul so often(the other complete fix makes the slash skill unstable).
+
+
+
+
+
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 

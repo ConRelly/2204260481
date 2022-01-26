@@ -23693,7 +23693,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_DoomBringer.InfernalBlade.Target"
 		"AbilityTextureName"			"mjz_doom_bringer_infernal_blade"
-
+		"LevelsBetweenUpgrades"         "10"
 		"AbilityCooldown"				"16 12 8 6"
 		"AbilityManaCost"				"40"
 		"AbilityCastRange"				"%cast_range"
@@ -23716,7 +23716,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"burn_strength_damage_pct"		"80 100 120 260"
+				"burn_strength_damage_pct"		"120 260 420 950"
 				"LinkedSpecialBonus"			"special_bonus_unique_mjz_doom_bringer_infernal_blade_strength"
 			}
 			"04"
@@ -23751,7 +23751,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"240"
+				"value"						"420"
 			}
 		}
 	}	
@@ -26681,7 +26681,7 @@
 		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
 	}
 	
-	"AbilityCastPoint"				"0.3"
+	"AbilityCastPoint"				"0.0"
 	"AbilityCooldown"				"60 57 54 50 47 45 40"
 	"AbilityManaCost"				"350"
 	"AbilityCastRange"				"8500"
@@ -26698,7 +26698,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"polarity_damage"		"850 5650 29700 0 79500 165000 658000"
+			"polarity_damage"		"850 5650 29700 46500 79500 165000 658000"
 		}
 		"03"
 		{
@@ -26715,6 +26715,21 @@
 			"var_type"				"FIELD_INTEGER"
 			"pull_offset"			"150"
 		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"str_damage"			"20 24 45 65 120 190 285"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"ss_currenthp_dmg"			"10"  
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"ultimate_bloodstone_chance"			"40"  
+		}						
 	}
 	
 	"OnAbilityPhaseStart"
@@ -33568,7 +33583,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_Zuus.LightningBolt"
 		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "7"
+		"LevelsBetweenUpgrades"		 "10"
 		"AbilityCastRange"				"1550"
 		"AbilityCastPoint"				"0.0"
 		"AbilityDamage"					"125 400 675 1350 2450 4200 8535"
@@ -33624,7 +33639,7 @@
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"int_damage"			"100 150 200 250 300 450 700"
+				"int_damage"			"150 200 250 300 450 700 1400"
 			}
 			
 		}
@@ -33651,7 +33666,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"	
 		"AbilitySound"					"Hero_Zuus.StaticField"
 		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "6"
+		"LevelsBetweenUpgrades"		 "10"
 		"AbilityTextureName"			"mjz_zuus_static_field"
 
 		"AbilitySpecial"
@@ -33669,7 +33684,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"intelligence_damage"		"80 100 150 230 350 470 600" 
+				"intelligence_damage"		"150 230 350 470 600 900 1300" 
 				"LinkedSpecialBonus"		"special_bonus_unique_mjz_zuus_static_field_intelligence"
 			}
 		}
@@ -33734,12 +33749,12 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"count"						"6 8 10 14 18 22 25" 
+				"count"						"6 8 10 14 18 22 28" 
 			}
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"interval"					"0.30" 
+				"interval"					"0.25" 
 			}
 			"11"
 			{
@@ -34646,7 +34661,7 @@
 			"02"
 			{
 				"var_type"			  "FIELD_INTEGER"
-				"damage_cleanse"		"700000"
+				"damage_cleanse"		"1000000"
 			}
 			"03"
 			{
@@ -42874,7 +42889,7 @@
 				}
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"	"100"
+					"MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"	"75"
 				}
 				"States"
 				{

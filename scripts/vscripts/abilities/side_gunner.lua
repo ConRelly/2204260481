@@ -18,13 +18,15 @@ function modifier_custom_side_gunner:IsHidden() return true end
 function modifier_custom_side_gunner:IsPurgable() return false end
 function modifier_custom_side_gunner:RemoveOnDeath() return false end
 function modifier_custom_side_gunner:OnCreated()
+	if self:GetAbility():GetLevel() < 1 then self:GetAbility():SetLevel(1) end 
 	self:StartIntervalThink(FrameTime())
 end
 function modifier_custom_side_gunner:OnIntervalThink()
 	if not IsServer() then return end
 	if not self:GetCaster():IsAlive() then return end
-	if self:GetCaster():IsIllusion() then return end
+	if self:GetCaster():IsIllusion() then return end 
 	if self:GetCaster():PassivesDisabled() then return end
+	if self:GetAbility():GetLevel() < 1 then return end
 	local gunner_interval = self:GetAbility():GetSpecialValueFor("gunner_interval")
 	local gunner_radius = self:GetAbility():GetSpecialValueFor("gunner_radius")
 

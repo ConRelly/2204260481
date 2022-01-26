@@ -32,7 +32,12 @@ end
 function cold_slashes:OnSpellStart ()
     local hTarget = self:GetCursorTarget ()
     local caster = self:GetCaster() 
-    if hTarget ~= nil then
+    if hTarget:HasModifier("modifier_cold_slashes_target") then
+        self:EndCooldown()
+        self:StartCooldown(5.0)
+        return nil
+    end   
+    if hTarget ~= nil and not hTarget:HasModifier("modifier_cold_slashes_target") then
         hTarget:AddNewModifier (self:GetCaster (), self, "modifier_cold_slashes_target", nil)
         EmitSoundOn ("Hero_Juggernaut.OmniSlash", hTarget)
         
@@ -74,7 +79,6 @@ function modifier_cold_slashes:HeroEffectPriority ()
     return 100
 end
 
-
 function modifier_cold_slashes:CheckState ()
     local state = {
         [MODIFIER_STATE_INVULNERABLE] = true,
@@ -98,7 +102,9 @@ end
 function modifier_cold_slashes_target:IsPurgeException()
     return true
 end
-
+--[[ function modifier_cold_slashes_target:GetAttributes()
+    return MODIFIER_ATTRIBUTE_MULTIPLE  -- freezes the game after multiple uses with 2 or more Units having this skill
+end ]]
 function modifier_cold_slashes_target:OnCreated (kv)
     if IsServer () then
         local hTarget = self:GetParent ()
@@ -127,7 +133,10 @@ end
 
 function modifier_cold_slashes_target:OnRefresh (kv)
     if IsServer () then
-        self.damage = self:GetAbility ():GetSpecialValueFor ("damage")
+        local caster = self:GetAbility():GetCaster()
+		local caster_missing_hp = caster:GetMaxHealth() - caster:GetHealth()
+        local extra_dmg = (self:GetAbility():GetSpecialValueFor("missing_hp") * caster_missing_hp * 0.01) / 10
+        self.damage = self:GetAbility ():GetSpecialValueFor ("damage") + math.ceil(extra_dmg)         
     end
 end
 
@@ -176,8 +185,9 @@ function modifier_cold_slashes_target:OnDestroy (kv)
         target:Stop ()
         caster:Stop ()
         caster:RemoveGesture (ACT_DOTA_ATTACK)
-
-        caster:RemoveModifierByName ("modifier_cold_slashes")
+        if caster:HasModifier("modifier_cold_slashes") and caster:IsAlive() then
+            caster:RemoveModifierByName ("modifier_cold_slashes")
+        end    
         local chance = math.random (100)
 
         if chance <= 82 then

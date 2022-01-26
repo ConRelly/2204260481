@@ -1572,9 +1572,9 @@
 		"Ability15"				"special_bonus_unique_magnus"
 		"Ability17"				"special_bonus_spell_amplify_100"
 
-		"AttributeStrengthGain"		"13.8"
+		"AttributeStrengthGain"		"39.6"
 		"AttributeAgilityGain"		"4.9"
-		"AttackRate"                "1.5"
+		"AttackRate"                "1.4"
 	}
 	//=================================================================================================================
 	"npc_dota_hero_alchemist_mjz"			// 炼金

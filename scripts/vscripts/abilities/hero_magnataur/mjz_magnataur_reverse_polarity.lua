@@ -43,8 +43,30 @@ function ReversePolarity(keys)
 	local hero_stun_duration = ability:GetSpecialValueFor("hero_stun_duration")
 	local creep_stun_duration = ability:GetSpecialValueFor("creep_stun_duration")
 	local pull_offset = ability:GetSpecialValueFor("pull_offset")
-    local polarity_damage = ability:GetSpecialValueFor("polarity_damage")
-
+    local str = caster:GetStrength() * ability:GetSpecialValueFor("str_damage")
+    local polarity_damage = ability:GetSpecialValueFor("polarity_damage") + str
+    local bonus_dmg = target:GetHealth() * (ability:GetSpecialValueFor("ss_currenthp_dmg")/100)
+    if caster:HasModifier("modifier_super_scepter") then
+        caster:ModifyStrength(1)
+        ApplyDamage({
+            ability = ability,
+            attacker = caster,
+            damage = bonus_dmg,
+            damage_type = ability:GetAbilityDamageType(),
+            victim = target
+        })
+        if caster:HasItemInInventory("item_mjz_bloodstone_ultimate") then
+            local chance_blod = ability:GetSpecialValueFor("ultimate_bloodstone_chance")
+            if RollPercentage(chance_blod) then
+                local bloodstone = caster:FindItemInInventory("item_mjz_bloodstone_ultimate")
+                local charges = bloodstone:GetCurrentCharges() + 1
+                if charges > 320 then
+                    charges = 320
+                end    
+                bloodstone:SetCurrentCharges(charges)
+            end    
+        end        
+    end    
     ApplyDamage({
         ability = ability,
         attacker = caster,

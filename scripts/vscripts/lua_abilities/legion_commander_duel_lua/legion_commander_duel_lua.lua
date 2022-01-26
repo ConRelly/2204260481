@@ -16,6 +16,23 @@ function modifier_legion_commander_duel_lua:DeclareFunctions()
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE
 	}
 end
+function modifier_legion_commander_duel_lua:OnCreated()
+	if IsServer() then
+		local ability = self:GetAbility()
+		local parent = self:GetParent()
+		local modifier = self
+		if parent:HasModifier(modifier) then
+			local time = GameRules:GetGameTime() / 60
+			if time > 1 then
+				local mbuff = parent:FindModifierByName(modifier)	
+				local stack = math.floor(time / 2)
+				mbuff:SetStackCount(stack)
+			end 
+		end
+	end	
+
+end	
+
 function modifier_legion_commander_duel_lua:OnDeath(event)
 	if IsServer() then
 		local caster = self:GetCaster()

@@ -261,7 +261,14 @@ if IsServer() then
         "enchantress_untouchable",
         "nevermore_dark_lord",
         "bristleback_warpath_lua",
-        "obs_replay",                     
+        "obs_replay",
+		"jotaro_absolute_defense3",
+		"zanto_gari",
+		"blood_madness",
+		"clinkz_infernal_breath",
+		"mjz_bloodseeker_thirst",
+		"mjz_clinkz_death_pact",
+		"custom_side_gunner",                             
     
         }
         local newAbilityName = abilityList[ RandomInt(1, #abilityList) ]

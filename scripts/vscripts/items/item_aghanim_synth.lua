@@ -59,6 +59,7 @@ modifier_aghanims_blessing = class({})
 function modifier_aghanims_blessing:IsHidden() return true end
 function modifier_aghanims_blessing:IsPurgable() return false end
 function modifier_aghanims_blessing:OnCreated()
+	if not IsServer() then return end
 	self:GetAbility():OnSpellStart()
 --	if not IsServer() then return end
 --	self:StartIntervalThink(FrameTime())

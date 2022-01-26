@@ -229,6 +229,7 @@ function GetRandomAbilityName( hero )
 		"mjz_bloodseeker_thirst",
 		"mjz_clinkz_death_pact",
 		"custom_side_gunner",
+		"mjz_magnataur_reverse_polarity",
 	}
 	local randomIndex = RandomInt(1, #abilityList)
 	return abilityList[randomIndex]   
