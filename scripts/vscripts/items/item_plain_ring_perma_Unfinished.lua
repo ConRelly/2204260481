@@ -64,7 +64,7 @@ function modifier_item_plain_ring_perma:IsHidden() return (self:GetStackCount() 
 function modifier_item_plain_ring_perma:IsPurgable() return false end
 function modifier_item_plain_ring_perma:RemoveOnDeath() return false end
 function modifier_item_plain_ring_perma:DeclareFunctions()
-	return {MODIFIER_PROPERTY_MIN_HEALTH, MODIFIER_EVENT_ON_DEATH_PREVENTED}
+	return {MODIFIER_EVENT_ON_DEATH_PREVENTED}
 end
 function modifier_item_plain_ring_perma:OnCreated(keys)
 	self.cooldown = keys.cooldown
@@ -79,7 +79,16 @@ end
 function modifier_item_plain_ring_perma:OnDeathPrevented(params)
 	if IsServer() then
 		local parent = self:GetParent()
-		if parent == params.unit and parent:IsAlive() and self.DeathPrevented == true then
+		
+		local aegis_charges = self:GetParent():FindModifierByName("modifier_aegis")
+		if aegis_charges and aegis_charges:GetStackCount() > 0 then return end
+		if self:GetParent():IsReincarnating() then return end
+		if self:GetParent():FindModifierByName("modifier_ring_invincibility_cd"):GetStackCount() ~= 0 then return end
+		if self:GetParent():HasModifier("modifier_item_plain_ring_perma_invincibility") then return end
+		if self:GetParent():HasModifier("modifier_brewmaster_primal_split") then return end
+		if IsUndyingRdy(self:GetParent()) == true then return end
+		
+		if parent == params.unit and parent:IsAlive() then
 			parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_plain_ring_perma_invincibility", {min_health = self.min_health, duration = self.inv_duration})
 			local cooldown = self.cooldown
 			if parent:HasModifier("modifier_plain_ring_perma_up") then
@@ -94,12 +103,12 @@ end
 function modifier_item_plain_ring_perma:GetMinHealth()
 	self.DeathPrevented = false
 	local aegis_charges = self:GetParent():FindModifierByName("modifier_aegis")
-	if aegis_charges and aegis_charges:GetStackCount() > 0 then return -1 end
-	if self:GetParent():IsReincarnating() then return -1 end
-	if self:GetParent():FindModifierByName("modifier_ring_invincibility_cd"):GetStackCount() ~= 0 then return -1 end
-	if self:GetParent():HasModifier("modifier_item_plain_ring_perma_invincibility") then return -1 end
-	if self:GetParent():HasModifier("modifier_brewmaster_primal_split") then return -1 end
-	if IsUndyingRdy(self:GetParent()) == true then return -1 end
+	if aegis_charges and aegis_charges:GetStackCount() > 0 then return end
+	if self:GetParent():IsReincarnating() then return end
+	if self:GetParent():FindModifierByName("modifier_ring_invincibility_cd"):GetStackCount() ~= 0 then return end
+	if self:GetParent():HasModifier("modifier_item_plain_ring_perma_invincibility") then return end
+	if self:GetParent():HasModifier("modifier_brewmaster_primal_split") then return end
+	if IsUndyingRdy(self:GetParent()) == true then return end
 	self.DeathPrevented = true
 	return 1
 end

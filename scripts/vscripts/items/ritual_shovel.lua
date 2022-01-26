@@ -5,6 +5,9 @@ LinkLuaModifier("modifier_tome_agi_bonus", "items/tomes.lua", LUA_MODIFIER_MOTIO
 LinkLuaModifier("modifier_tome_int_bonus", "items/tomes.lua", LUA_MODIFIER_MOTION_NONE)
 local chen_first_spawn = true
 item_ritual_shovel = item_ritual_shovel or class({})
+function item_ritual_shovel:GetCastRange(location, target)
+	return 250 - self:GetCaster():GetCastRangeBonus()
+end
 function item_ritual_shovel:GetIntrinsicModifierName() return "modifier_ritual_shovel" end
 function item_ritual_shovel:OnSpellStart()
 	if not IsServer() then return end

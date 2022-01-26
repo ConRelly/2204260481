@@ -3191,7 +3191,7 @@
 	"DOTA_Tooltip_ability_mjz_lycan_shapeshift_relieve_health_drain_per_second_scepter"		"%Health Drain Per Second:"
 
 "DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity"						"Reverse Polarity"
-"DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_Description"			"Magnus changes properties of matter, sucking all nearby enemies in front of him and stunning them with a powerful slam and dealing damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Magnus gains 1 base str for each enemy affected by ultimate and deals an extra instance of %ss_currenthp_dmg%%% of their Health as dmg. <font color='#2512E3'>Bloodstone Ultimate</font> has %ultimate_bloodstone_chance%%% chance to get an stack for each unit affected by this skill."
+"DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_Description"			"Magnus changes properties of matter, sucking all nearby enemies in front of him and stunning them with a powerful slam and dealing damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Magnus gains 1 base str for each enemy affected by ultimate and deals an extra instance of %ss_currenthp_dmg%%% of their Current Health as dmg. <font color='#2512E3'>Bloodstone Ultimate</font> has %ultimate_bloodstone_chance%%% chance to get an stack for each unit affected by this skill."
 "DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_Lore"					"Magnus fights with the fury of the erupting Mt. Joerlak."
 "DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_pull_radius"			"PULL RADIUS:"
 "DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_polarity_damage"		"DAMAGE:"
