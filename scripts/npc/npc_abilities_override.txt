@@ -609,7 +609,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"30"
+				"value"				"100"
 			}
 		}
 	}
@@ -20576,7 +20576,7 @@
 // Recipe: Trident
 	"item_recipe_trident"
 	{
-		"ItemCost"						"2500"
+		"ItemCost"						"5500"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemPurchasable"				"1"
@@ -20601,32 +20601,32 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"133"
+				"bonus_strength"		"333"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"133"
+				"bonus_agility"			"333"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"133"
+				"bonus_intellect"		"333"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"status_resistance"		"60"
+				"status_resistance"		"66"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"133"
+				"bonus_attack_speed"	"166"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus"	"99"
+				"movement_speed_percent_bonus"	"133"
 			}
 			"07"
 			{
@@ -20641,12 +20641,12 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"133"
+				"spell_amp"				"166"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"magic_damage_attack"	"30"
+				"magic_damage_attack"	"13000"
 			}
 		}
 	}

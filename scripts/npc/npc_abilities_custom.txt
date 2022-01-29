@@ -1031,7 +1031,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cooldown_reduction"		"22 34 46 50 65"
+				"cooldown_reduction"		"22 44 56 60 70"
 			}
 			"02"
 			{
@@ -1042,7 +1042,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"8.0"
+				"duration"					"10.0"
 			}
 			"04"
 			{
@@ -1649,7 +1649,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastRange"				"0"
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"60"
 		"AbilityManaCost"				"0"
 
 		"AbilitySpecial"
@@ -12644,7 +12644,7 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityTextureName"			"custom/abilities/medusa_stone_arrows"
 	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"8"
+	"LevelsBetweenUpgrades"			"10"
 	"RequiredLevel"					"8"
 	"HasScepterUpgrade"				"1"
 	"AbilitySpecial"
@@ -12652,7 +12652,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"extra_damage"			"400 800 1600 3200 6400 12800 25600"
+			"extra_damage"			"800 1600 3200 6400 12800 25600 51200"
 		}
 		"02"
 		{
@@ -38074,14 +38074,14 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mystic_dragon/endless_wisdom"
 		"MaxLevel"						"5"
-		"LevelsBetweenUpgrades"			"7"
+		"LevelsBetweenUpgrades"			"12"
 		"RequiredLevel"					"1"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"grow_int"					"0.5 1.0 1.5 2.0 2.5"
+				"grow_int"					"1.0 1.5 2.0 2.5 5.0"
 			}
 			"02"
 			{
@@ -38126,7 +38126,7 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"value"			"25"
+				"value"			"50"
 			}
 		}
 	}

@@ -26,7 +26,7 @@ function modifier_jotaro_absolute_defense3:IsHidden()
 	return true
 end
 function modifier_jotaro_absolute_defense3:GetPriority()
-	return MODIFIER_PRIORITY_HiGH 
+	return MODIFIER_PRIORITY_SUPER_ULTRA
 end
 
 if IsServer() then

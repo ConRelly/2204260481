@@ -5418,7 +5418,7 @@
 "item_dev_dagon"
 {
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"BaseClass"						"item_dagon_5"
 	"AbilityTextureName"			"ultimate_dagon"
@@ -17773,12 +17773,12 @@
 			"4"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"95"
+				"spell_amp"				"145"
 			}
 			"5"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_ms"				"45"
+				"bonus_ms"				"55"
 			}
 			"6"
 			{
@@ -19725,7 +19725,7 @@
 		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
 		"ItemStockInitial"				"0"
-		"ItemStockMax"					"5"
+		"ItemStockMax"					"50"
 		"ItemStockTime"					"999999.0"	
 		"ItemSellable"					"1"
 		"ItemAliases"					"air"
@@ -20265,7 +20265,7 @@
 		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
 		"ItemStockInitial"				"0"
-		"ItemStockMax"					"5"
+		"ItemStockMax"					"50"
 		"ItemStockTime"					"999999.0"	
 		"ItemSellable"					"1"
 		"ItemAliases"					"air"
@@ -31829,7 +31829,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp"					"3300"
+				"hp"					"6300"
 			}
 			"01"
 			{
@@ -31844,7 +31844,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"primary_attribute"		"525"
+				"primary_attribute"		"825"
 			}
 			"03"
 			{
@@ -31854,7 +31854,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"110"
+				"mana_regen"			"310"
 			}
 			"05"
 			{
@@ -31899,8 +31899,13 @@
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_int_dmg"			"25"
+				"bonus_int_dmg"			"50"
 			}
+			"14"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"interval_attack"			"2" // affected by CDR
+			}			
 		}
 	}
 // Spirit Guardian Recipe

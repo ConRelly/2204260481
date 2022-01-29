@@ -2141,6 +2141,8 @@
 
 		"AttributeIntelligenceGain"		"9.1"
 		"AttributeAgilityGain"			"4.7"
+		"AttackRate"                    "1.4"
+		"AttackRange"                   "725"
 	}
 
 	"npc_dota_hero_dawnbreaker"

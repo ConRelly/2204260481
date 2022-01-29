@@ -268,7 +268,8 @@ if IsServer() then
 		"clinkz_infernal_breath",
 		"mjz_bloodseeker_thirst",
 		"mjz_clinkz_death_pact",
-		"custom_side_gunner",                             
+		"custom_side_gunner",
+        "medusa_custom_stone_arrows",                             
     
         }
         local newAbilityName = abilityList[ RandomInt(1, #abilityList) ]

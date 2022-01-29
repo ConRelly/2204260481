@@ -60,7 +60,9 @@ function modifier_item_plain_ring_perma:RemoveOnDeath() return false end
 function modifier_item_plain_ring_perma:DeclareFunctions()
 	return {MODIFIER_EVENT_ON_TAKEDAMAGE}
 end
-
+function modifier_item_plain_ring_perma:GetPriority()
+	return MODIFIER_PRIORITY_LOW 
+end
 function modifier_item_plain_ring_perma:OnCreated()
 	if IsServer() then
 		self.parent = self:GetParent()

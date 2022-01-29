@@ -57,6 +57,7 @@ end
 function modifier_titan_relic:GetModifierMoveSpeedBonus_Percentage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_ms") end
 end
+
 function modifier_titan_relic:OnModifierAdded(keys)
 	if self:GetParent():IsIllusion() then return end
 	if self:GetParent():HasModifier("modifier_arc_warden_tempest_double") then return end

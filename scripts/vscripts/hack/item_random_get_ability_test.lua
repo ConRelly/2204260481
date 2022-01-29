@@ -97,7 +97,7 @@ function GetRandomAbilityName( hero )
         --"antimage_custom_mana_break",
         "custom_side_gunner",
         "back_in_time",
-        "mjz_magnataur_reverse_polarity",
+        "medusa_custom_stone_arrows",
         --"mjz_slark_essence_shift",
         "custom_mana_regen",
         "custom_side_gunner",

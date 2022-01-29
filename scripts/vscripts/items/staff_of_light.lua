@@ -313,8 +313,9 @@ function modifier_spirit_guardian:OnCreated()
 		self.secondary_stats = self:GetAbility():GetSpecialValueFor("secondary_stats")
 		self.agi = self:GetAbility():GetSpecialValueFor("agi")
 		self.str = self:GetAbility():GetSpecialValueFor("str")
+		self.interval_attack = self:GetAbility():GetSpecialValueFor("interval_attack")
 		if not self:GetAbility() then self:Destroy() end if not self:GetParent():IsIllusion() then
-			self:StartIntervalThink(1)
+			self:StartIntervalThink(self.interval_attack)
 			self.pfx3 = ParticleManager:CreateParticle("particles/custom/items/staff_of_light/staff_of_light_ambient_core.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 end end end
 function modifier_spirit_guardian:OnDestroy()
@@ -322,6 +323,16 @@ function modifier_spirit_guardian:OnDestroy()
 		DFX(self.pfx3, false)
 --	ParticleManager:DestroyParticle(self.pfx3, false)
 	end end
+end
+function modifier_spirit_guardian:OnRefresh()
+	if IsServer() then
+		local parent = self:GetParent()
+		local attack_rate = self.interval_attack * parent:GetCooldownReduction()
+		if parent:HasModifier("modifier_spirit_guardian_heal_cd") and HasSuperScepter(parent) then
+			attack_rate = math.floor(attack_rate * 0.4 * 100 ) / 100 -- just so we don't have 14+ decimals numbers
+		end	
+		self:StartIntervalThink(attack_rate)
+	end	
 end
 function modifier_spirit_guardian:DeclareFunctions()
 	return {MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_FIXED_ATTACK_RATE}
@@ -401,6 +412,7 @@ function modifier_spirit_guardian:OnIntervalThink()
 		}
 		ProjectileManager:CreateTrackingProjectile(info)
 		CastEffect(caster, target, projectile_speed)
+		self:OnRefresh()
 	end
 end
 function item_spirit_guardian:OnProjectileHit(target, location)
@@ -412,6 +424,7 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 	local stacks = 0
 	local lvl = parent:GetLevel()
 	local chance = math.floor(lvl / 2)
+	local base_dmg = ((parent:GetBaseDamageMin() + parent:GetBaseDamageMax()) / 2)
 	if IsServer() then
 		if parent:HasModifier("modifier_spirit_guardian_bonus_dmg") then
 			local modif = parent:FindModifierByName("modifier_spirit_guardian_bonus_dmg")
@@ -420,8 +433,8 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 				if RollPercentage(chance) then
 					modif:IncrementStackCount()
 				end
-				stacks = modif:GetStackCount()	
-				bonus_dmg = lvl * stacks
+				stacks = modif:GetStackCount()
+				bonus_dmg = lvl * stacks	
 			end
 		else
 			parent:AddNewModifier(parent, self, "modifier_spirit_guardian_bonus_dmg", {})
@@ -429,10 +442,20 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 		if HasSuperScepter(parent) then
 			local int_to_dmg = self:GetSpecialValueFor("bonus_int_dmg")
 			bonus_int = math.floor(parent:GetIntellect() * lvl * int_to_dmg / 100)
+			local stacks_mult = math.floor(base_dmg / 100) / 1000 + 1
+			if stacks_mult < 1 then
+				stacks_mult = 1
+			elseif stacks_mult > 3 then
+				stacks_mult = 3	
+			end	
+			if stacks > 1 then
+				stacks = math.floor(stacks * stacks_mult)
+				bonus_dmg = lvl * stacks
+			end	
 		end
 	end
 	local radius = 0
-	local damage = ((parent:GetBaseDamageMin() + parent:GetBaseDamageMax()) / 2) + bonus_int + bonus_dmg
+	local damage = base_dmg + bonus_int + bonus_dmg
 	--local creep_mult = 100--self:GetSpecialValueFor("creep_damage_pct")
 	local enemies = FindUnitsInRadius(self:GetParent():GetTeamNumber(), target:GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_DAMAGE_FLAG_NONE, FIND_ANY_ORDER	, false)
 	for _,enemy in pairs(enemies) do

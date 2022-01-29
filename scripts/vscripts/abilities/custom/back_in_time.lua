@@ -19,7 +19,7 @@ function modifier_back_in_time:IsHidden() return true end
 function modifier_back_in_time:IsPurgable() return false end
 function modifier_back_in_time:RemoveOnDeath() return false end
 --function modifier_back_in_time:AllowIllusionDuplicate() return true end
-function modifier_back_in_time:GetPriority() return MODIFIER_PRIORITY_HIGH end
+function modifier_back_in_time:GetPriority() return MODIFIER_PRIORITY_SUPER_ULTRA end
 
 function modifier_back_in_time:OnCreated()
 	if not IsServer() then return end
