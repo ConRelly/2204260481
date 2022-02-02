@@ -1564,10 +1564,16 @@ QuickFix and update:
     -- Now has 2 sec attack rate (from 1) and is affected by CDR
     -- Increased some of his Stats(hp, mana regen and Primary attribute)
     -- Super Scepter now has an aditional 2 effects: 1) Guardian attacks 150% faster during debuff cooldown. 2) For every 1000 base attack snowball stacks will increase by 1% in the final dmg calculations.
+* Radiance Armor : Red , Blue , Green and Edible forms got buffs in multiple places(stats , multiplayers, limiters). Dont Forget some stats from edible forms are better end have even extra effects.
 * Buffed Legion Commander Grim Reaper
 * Buffed Dazzle Ultimate Max CDR by 5% and duration on debuff by 2 sec.
 * Buffed Medusa Stone Arrows by 2x
-* Gold ring will not trigger before or at the same time with Lifeguard and Slayer Rebound anymore.
+* Increased OD arcane orb dmg to 16% on last lvl and changed from 0.0 to 0.3 CD , similar dmg on most cases but removes some of the lag
+* Kardel Shrap bullet now is an 2 dmg instance from 8 but keeps the 8 attacks 
+* Slayer Rebound aura dmg now scales with your lvl.
+* Gold ring will not trigger before or at the same time with Lifeguard anymore.
+* Changed Ballista dmg from every hit to once every 10 hits and increased the dmg to 10x (less lag from arcane staff procs)
+* Trident buffed a little(or more) and made his dmg on hit from 30 to 0 (to avoid unnecessary lag)
 * Increased(nerf) krakenShell of gods to 1 mill dmg.  so every 1 mill after reduction dealt with to them they will do a cleanse of debuffs(that can be dispelled).
 * Added 2 new Ability in the Random pools.
 * Made some changes so on -double one of Moran does not stay Perma in invul so often(the other complete fix makes the slash skill unstable).

@@ -71,31 +71,38 @@ function modifier_item_custom_ballista_buff:GetModifierBaseDamageOutgoing_Percen
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("base_attack_damage") * self:GetAbility():GetCurrentCharges() end
 end
 
+
 if IsServer() then
 	function modifier_item_custom_ballista_buff:OnCreated()
 		self.parent = self:GetParent()
 		self.ability = self:GetAbility()
 		self.bonus_damage = self:GetAbility():GetSpecialValueFor("bonus_damage") * self:GetAbility():GetCurrentCharges()
+		self.chance = self:GetAbility():GetSpecialValueFor("chance")
+		self.attacks = 0
 	end
 	function modifier_item_custom_ballista_buff:OnAttackLanded(keys)
         local attacker = keys.attacker
 		local target = keys.target
         if attacker == self.parent and not attacker:IsNull() then
-			ApplyDamage({
-				ability = self.ability,
-				attacker = attacker,
-				damage = self.bonus_damage,
-				damage_type = DAMAGE_TYPE_PURE,
-				damage_flags = 16,
-				victim = target,
-			})
-			create_popup({
-				target = target,
-				value = self.bonus_damage,
-				color = Vector(183, 47, 234),
-				type = "spell",
-				pos = 6
-			})
+			self.attacks = self.attacks + 1
+			if self.attacks > 9 then
+				ApplyDamage({
+					ability = self.ability,
+					attacker = attacker,
+					damage = self.bonus_damage,
+					damage_type = DAMAGE_TYPE_PURE,
+					damage_flags = 16 + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL,
+					victim = target,
+				})
+				create_popup({
+					target = target,
+					value = self.bonus_damage,
+					color = Vector(183, 47, 234),
+					type = "spell",
+					pos = 6
+				})
+				self.attacks = 0
+			end	
 		end
 	end
 end

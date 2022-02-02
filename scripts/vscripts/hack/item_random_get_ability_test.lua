@@ -95,7 +95,7 @@ function GetRandomAbilityName( hero )
         --"faceless_void_time_lock",
         --"mjz_faceless_void_backtrack",
         --"antimage_custom_mana_break",
-        "custom_side_gunner",
+        "lion_custom_finger_of_death",
         "back_in_time",
         "medusa_custom_stone_arrows",
         --"mjz_slark_essence_shift",

@@ -3027,7 +3027,7 @@
 				"Center"  	"CASTER"
 				"Radius" 	"%aura_radius"
 				"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Flags"	 "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				"Flags"	 	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 			}			
 		}		
@@ -18287,14 +18287,19 @@
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"1000"
+			"bonus_damage"			"10000"
 		}
 		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"base_attack_damage"	"15"
 			"CalculateSpellDamageTooltip"  "0"
-		}		
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"chance"	"10" // changed to Hardcoded Hits 
+		}				
 	}
 }
 "item_recipe_custom_ex_machina"
@@ -18823,22 +18828,22 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"5500"
+			"bonus_health"			"9500"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_stats"			"300"
+			"bonus_stats"			"600"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"35"
+			"bonus_armor"			"65"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_attack"			"1350"
+			"bonus_attack"			"5350"
 		}
 		"06"
 		{
@@ -18853,7 +18858,7 @@
 		"08"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"aura_dmg_pct"			"50"
+			"aura_dmg_pct"			"85"
 		}
 		"09"
 		{
@@ -18863,22 +18868,22 @@
 		"10"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"str_damage"			"7.0"
+			"str_damage"			"12.0"
 		}
 		"11"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"armor_damage"			"100.0"
+			"armor_damage"			"1000.0"
 		}
 		"12"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"str_threshold"			"10000"
+			"str_threshold"			"12000"
 		}
 		"13"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"threshold_multi"		"1.5"
+			"threshold_multi"		"4.5"
 		}
 	}
 }
@@ -18928,22 +18933,22 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"5000"
+			"bonus_health"			"8000"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_stats"			"280"
+			"bonus_stats"			"580"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"35"
+			"bonus_armor"			"65"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_attack"			"1350"
+			"bonus_attack"			"5350"
 		}
 		"06"
 		{
@@ -18958,7 +18963,7 @@
 		"08"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"aura_dmg_pct"			"50"
+			"aura_dmg_pct"			"60"
 		}
 		"09"
 		{
@@ -18968,22 +18973,22 @@
 		"10"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"int_damage"			"7.0"
+			"int_damage"			"15.0"
 		}
 		"11"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"mana_damage"			"120.0"
+			"mana_damage"			"320.0"
 		}
 		"12"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"int_threshold"			"10000"
+			"int_threshold"			"12000"
 		}
 		"13"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"threshold_multi"		"3.5"
+			"threshold_multi"		"5.5"
 		}
 	}
 }
@@ -19033,22 +19038,22 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"5000"
+			"bonus_health"			"8000"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_stats"			"300"
+			"bonus_stats"			"600"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"35"
+			"bonus_armor"			"65"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_attack"			"5350"
+			"bonus_attack"			"15350"
 		}
 		"06"
 		{
@@ -19063,7 +19068,7 @@
 		"08"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"aura_dmg_pct"			"50"
+			"aura_dmg_pct"			"60"
 		}
 		"09"
 		{
@@ -19073,12 +19078,12 @@
 		"10"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"agi_damage"			"7.0"
+			"agi_damage"			"15.0"
 		}
 		"11"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"ms_damage"				"3.5"
+			"ms_damage"				"7.5"
 		}
 		"12"
 		{
@@ -19093,12 +19098,12 @@
 		"14"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"agi_threshold_multi"	"1.5"
+			"agi_threshold_multi"	"4.5"
 		}
 		"15"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"ms_threshold_multi"	"1.5"
+			"ms_threshold_multi"	"4.5"
 		}
 	}
 }
@@ -19289,22 +19294,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"rapier_dmg"			"2825"
+				"rapier_dmg"			"16825"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"rapier_str"			"620"
+				"rapier_str"			"820"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"rapier_agi"			"620"
+				"rapier_agi"			"820"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"rapier_int"			"620"
+				"rapier_int"			"820"
 			}
 			"05"
 			{
@@ -19339,7 +19344,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_d"				"25"
+				"bonus_d"				"35"
 			}
 			"13"
 			{
@@ -19790,12 +19795,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_dmg"				"3420"
+				"rapier_dmg"				"7420"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_str"				"2022"
+				"rapier_str"				"3022"
 			}
 			"03"
 			{
@@ -19815,7 +19820,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rock_dmg"					"47650"
+				"rock_dmg"					"9765"
 			}
 			"07"
 			{
@@ -19840,12 +19845,12 @@
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_armor"				"99"
+				"rapier_armor"				"120"
 			}
 			"13"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_mr"					"35"
+				"rapier_mr"					"40"
 			}
 		}
 		"OnUnequip"
@@ -19870,7 +19875,7 @@
 			"Damage"
 			{
 				"Target"		 "TARGET"
-				"Type"			 "DAMAGE_TYPE_MAGICAL"
+				"Type"			 "DAMAGE_TYPE_PURE"
 				"Damage"		 "%rock_dmg"
 			}
 			"FireSound"
@@ -33086,7 +33091,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"level_mult"					"5"
+				"level_mult"					"20"
 			}
 		}
 		"OnSpellStart"

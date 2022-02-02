@@ -27,7 +27,15 @@ function modifier_blood_madness:IsPurgable() return false end
 function modifier_blood_madness:DeclareFunctions()
 	return {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS}
 end
-function modifier_blood_madness:GetModifierPhysicalArmorBonus(params) return self:GetAbility():GetSpecialValueFor("bonus_armor") * self:GetStackCount() end
+function modifier_blood_madness:GetModifierPhysicalArmorBonus(params)
+	if self:GetAbility() then
+		local bonus_armor = self:GetAbility():GetSpecialValueFor("bonus_armor") * self:GetStackCount()
+		if bonus_armor > 5000 then
+			bonus_armor = 5000
+		end	
+		return bonus_armor
+	end	
+end
 function modifier_blood_madness:GetModifierBonusStats_Strength(params) return self:GetAbility():GetSpecialValueFor("bonus_str") * self:GetStackCount() end
 
 ----------------------------------------------------------------------------------------
@@ -64,8 +72,8 @@ function modifier_blood_madness_timer:OnTakeDamage(params)
 			if damage > self:GetParent():GetHealth() then
 				damage = self:GetParent():GetHealth()
 			end
-			if damage > 300000 then
-				damage = 300000
+			if damage > 200000 then
+				damage = 200000
 			end	
 
             self:GetCaster():SetModifierStackCount("modifier_blood_madness",self:GetCaster(),self:GetCaster():GetModifierStackCount("modifier_blood_madness",self:GetCaster()) + damage)

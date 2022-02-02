@@ -240,10 +240,11 @@ function modifier_effect2:OnIntervalThink()
 		local caster = self:GetCaster()
 		local ability = self:GetAbility()
 		local target = self:GetParent()
+		local lvl = caster:GetLevel()
 		if ability and IsValidEntity(ability) then
 			local interval = ability:GetSpecialValueFor("interval")
-			local base_damage = ability:GetSpecialValueFor("base_damage")
-			if caster:GetLevel() < 29 then
+			local base_damage = ability:GetSpecialValueFor("base_damage") * lvl
+			if lvl < 29 then
 				base_damage = base_damage / 4
 			end	
 			local modif_buff = "modifier_back_in_time_buff"

@@ -44,27 +44,27 @@ function modifier_item_radiance_armor_green_edible:OnDestroy()
 end
 
 function modifier_item_radiance_armor_green_edible:GetModifierHealthBonus()
-	return 5500
+	return 10000
 end
 
 function modifier_item_radiance_armor_green_edible:GetModifierPreAttack_BonusDamage()
-	return 19000
+	return 29000
 end
 
 function modifier_item_radiance_armor_green_edible:GetModifierBonusStats_Strength()
-	return 300
+	return 600
 end
 
 function modifier_item_radiance_armor_green_edible:GetModifierBonusStats_Agility()
-	return 450
+	return 850
 end
 
 function modifier_item_radiance_armor_green_edible:GetModifierBonusStats_Intellect()
-	return 300
+	return 600
 end
 
 function modifier_item_radiance_armor_green_edible:GetModifierPhysicalArmorBonus()
-	return 36
+	return 99
 end
 
 function modifier_item_radiance_armor_green_edible:GetModifierExtraHealthPercentage()
@@ -117,23 +117,24 @@ function modifier_item_radiance_armor_aura_green_edible:OnIntervalThink()
 		local ability = self:GetAbility()
 		local agi = caster:GetAgility()
 		local ms = caster:GetIdealSpeed()
-		local ms_mult = 3
-		local agi_mult = 7
-		if agi > 35000 then 
-			agi_mult = 2.2
+		local ms_mult = 8
+		local agi_mult = 17
+		if agi > 35000 then
+			agi_mult = 12
 		end	
 		if ms > 40000 then
-			ms_mult = 1.5
+			ms_mult = 5.0
 		end
 		if caster:HasModifier("modifier_super_scepter") then
 			if caster:HasModifier("modifier_marci_unleash_flurry") then
-				ms_mult = 10
+				ms_mult = 12
+				agi_mult = 20
 			end                                 
 		end 				
 		local ms_bonus_dmg = ms * ms_mult
 		local bonus_agi_dmg = math.ceil(agi * agi_mult)
 		local aura_dmg = 15000
-		local aura_dmg_pct = 50 / 100
+		local aura_dmg_pct = 1.0
 		local damage = math.ceil(aura_dmg + aura_dmg_pct*caster:GetMaxHealth() + ms_bonus_dmg + bonus_agi_dmg )
 		--print(damage .. " radi dmg")
 		if caster:IsRealHero() then	

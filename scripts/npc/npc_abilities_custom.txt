@@ -32993,7 +32993,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus"						"2"
+				"bonus"						"5"
 			}						
 		}
 
@@ -41113,7 +41113,7 @@
 		"11"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"base_damage"			"1000"
+			"base_damage"			"20"
 		}
 		"12"
 		{

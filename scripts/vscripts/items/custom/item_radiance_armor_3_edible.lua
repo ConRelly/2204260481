@@ -12,7 +12,7 @@ end
 function item_radiance_armor_3_edible:GetCastRange()
 	return 1500
 end
-local radir = 0	
+local radir = 0
 --------------------------------------------------------
 ------------------------------------------------------------
 modifier_item_radiance_armor_3_edible = class({
@@ -45,27 +45,27 @@ end
 function modifier_item_radiance_armor_3_edible:OnDestroy()
 end	
 function modifier_item_radiance_armor_3_edible:GetModifierHealthBonus()
-	return 6000
+	return 14000
 end
 
 function modifier_item_radiance_armor_3_edible:GetModifierPreAttack_BonusDamage()
-	return 2000
+	return 9000
 end
 
 function modifier_item_radiance_armor_3_edible:GetModifierBonusStats_Strength()
-	return 400
+	return 800
 end
 
 function modifier_item_radiance_armor_3_edible:GetModifierBonusStats_Agility()
-	return 300
+	return 600
 end
 
 function modifier_item_radiance_armor_3_edible:GetModifierBonusStats_Intellect()
-	return 300
+	return 600
 end
 
 function modifier_item_radiance_armor_3_edible:GetModifierPhysicalArmorBonus()
-	return 36
+	return 120
 end
 
 function modifier_item_radiance_armor_3_edible:GetModifierExtraHealthPercentage()
@@ -73,7 +73,7 @@ function modifier_item_radiance_armor_3_edible:GetModifierExtraHealthPercentage(
 end
 
 function modifier_item_radiance_armor_3_edible:GetModifierMagicalResistanceBonus()
-	return 37
+	return 40
 end
 
 function modifier_item_radiance_armor_3_edible:GetEffectName()
@@ -95,7 +95,6 @@ function modifier_item_radiance_armor_aura_3_edible:OnCreated()
 		--self.aura_radius = 1500
 		--self.str_damage = 5
 		--self.armor_damage = 100
-
 		self:StartIntervalThink(1)
 		if not caster:IsRealHero() then
 			self:StartIntervalThink(2)	
@@ -124,14 +123,14 @@ function modifier_item_radiance_armor_aura_3_edible:OnIntervalThink()
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
 		local str = caster:GetStrength()
-		local str_mult = 7
+		local str_mult = 15
 		if str > 15000 then 
-			str_mult = 2.1
+			str_mult = 7.5
 		end		
-		local armor_bonus_dmg = 100 * caster:GetPhysicalArmorValue(false)
+		local armor_bonus_dmg = 1000 * caster:GetPhysicalArmorValue(false)
 		local bonus_str_dmg = math.ceil(str * str_mult)
 		local aura_dmg = 15000
-		local aura_dmg_pct = 0.5
+		local aura_dmg_pct = 1.5
 		local damage = math.ceil(aura_dmg + aura_dmg_pct*caster:GetMaxHealth() + armor_bonus_dmg + bonus_str_dmg )
 		--print(damage .. " radi dmg")
 		if caster:IsRealHero() then

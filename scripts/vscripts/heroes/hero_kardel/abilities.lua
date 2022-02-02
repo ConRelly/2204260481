@@ -89,10 +89,22 @@ function sniper_shoot:OnProjectileHit_ExtraData(target, location, extradata)
 		Dodgeable = true
 	elseif caster:HasModifier("modifier_shrapnel_bullets") then
 		if target:TriggerSpellAbsorb(self) then return end
-		instances_count = 8
+		instances_count = 2
+		attacks_count = 8
+		local delay = 0.01
 		base_damage = caster:GetAttackDamage() * (self:GetSpecialValueFor("shrap_bullet") + talent_value(self:GetCaster(), "special_bonus_sniper_shoot_bullet_dmg")) / 100 / instances_count
 		Proj_Effect = "particles/custom/abilities/heroes/kardel_bullets/shrap_bullet_projectile.vpcf"
 		Dodgeable = true
+		for i = 1, attacks_count do
+			delay = delay + 0.02
+			Timers:CreateTimer(delay, function()
+				if target == nil then return end
+				if not target:IsAlive() then return end
+				if target:IsOutOfGame() then return end
+				if target:IsInvulnerable() then return end
+				caster:PerformAttack(target, true, true, true, false, false, true, true)
+			end)			
+		end
 	end
 
 	local enemy_table_string = extradata.enemy_table_string
@@ -164,7 +176,7 @@ function Hit_Enemy(caster, target, ability, damage)
 		Normal_Shot(caster, target, ability, damage)
 		if IsServer() then
 			if caster:HasModifier("modifier_super_scepter") then
-				if RollPercentage(50) then
+				if RollPercentage(45) then -- trigger 2 times /shot so is actually an 2x chance
 					caster:ModifyAgility(1)
 				end
 			end
@@ -173,8 +185,8 @@ function Hit_Enemy(caster, target, ability, damage)
 		Explosive_Shot(caster, target, ability, damage)
 		if IsServer() then
 			if caster:HasModifier("modifier_super_scepter") then
-				if RollPercentage(25) then
-					caster:ModifyIntellect(1)
+				if RollPercentage(40) then  -- can't use mimic with this one unless you get spirit guardian or other skill that has attacks
+					caster:ModifyIntellect(1) -- only one trigger / shot
 				end
 			end
 		end
@@ -182,6 +194,7 @@ function Hit_Enemy(caster, target, ability, damage)
 		Shrapnel_Shot(caster, target, ability, damage)
 	end
 end
+
 function Normal_Shot(caster, target, ability, damage)
 	caster:PerformAttack(target, true, true, true, false, false, true, true)
 	ApplyDamage({
@@ -233,7 +246,7 @@ function Explosive_Shot(caster, target, ability, damage)
 	target:EmitSoundParams("Hero_Gyrocopter.HomingMissile.Destroy", 1, 0.5, 0)
 end
 function Shrapnel_Shot(caster, target, ability, damage)
-	caster:PerformAttack(target, true, true, true, false, false, true, true)
+	--caster:PerformAttack(target, true, true, true, false, false, true, true)
 	local DamageTypeList = {DAMAGE_TYPE_PHYSICAL, DAMAGE_TYPE_MAGICAL, DAMAGE_TYPE_PURE}
 	local Roll = RandomInt(1, #DamageTypeList)
 	ApplyDamage({
@@ -245,7 +258,6 @@ function Shrapnel_Shot(caster, target, ability, damage)
 		victim = target
 	})
 end
-
 
 modifier_kardel_hit_stun = class({})
 function modifier_kardel_hit_stun:IsHidden() return true end

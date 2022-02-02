@@ -56,6 +56,7 @@ function modifier_item_radiance_armor_3:OnCreated()
 				end
 			end
 		end
+		print("radir ".. radir)
 	end
 end
 function modifier_item_radiance_armor_3:OnDestroy()

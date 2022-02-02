@@ -48,27 +48,27 @@ function modifier_item_radiance_armor_blue_edible:OnDestroy()
 end
 
 function modifier_item_radiance_armor_blue_edible:GetModifierHealthBonus()
-	return 5500
+	return 10000
 end
 
 function modifier_item_radiance_armor_blue_edible:GetModifierPreAttack_BonusDamage()
-	return 2000
+	return 9000
 end
 
 function modifier_item_radiance_armor_blue_edible:GetModifierBonusStats_Strength()
-	return 300
+	return 600
 end
 
 function modifier_item_radiance_armor_blue_edible:GetModifierBonusStats_Agility()
-	return 300
+	return 600
 end
 
 function modifier_item_radiance_armor_blue_edible:GetModifierBonusStats_Intellect()
-	return 400
+	return 800
 end
 
 function modifier_item_radiance_armor_blue_edible:GetModifierPhysicalArmorBonus()
-	return 36
+	return 75
 end
 
 function modifier_item_radiance_armor_blue_edible:GetModifierExtraHealthPercentage()
@@ -124,14 +124,14 @@ function modifier_item_radiance_armor_aura_blue_edible:OnIntervalThink()
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
 		local int = caster:GetIntellect()
-		local int_mult = 7
-		if int > 14000 then 
-			int_mult = 4.0
+		local int_mult = 15
+		if int > 16000 then 
+			int_mult = 10.0
 		end		
-		local mana_bonus_dmg = caster:GetMaxMana() * 1.2
+		local mana_bonus_dmg = caster:GetMaxMana() * 3.5
 		local bonus_int_dmg = math.ceil(int * int_mult)
 		local aura_dmg = 15000
-		local aura_dmg_pct = 0.5
+		local aura_dmg_pct = 1.0
 		local damage = math.ceil(aura_dmg + aura_dmg_pct*caster:GetMaxHealth() + mana_bonus_dmg + bonus_int_dmg )
 		--print(damage .. " radi dmg")
 		if caster:IsRealHero() then

@@ -43,6 +43,7 @@ function modifier_hammer_of_the_divine:IsHidden() return true end
 function modifier_hammer_of_the_divine:IsPurgable() return false end
 function modifier_hammer_of_the_divine:RemoveOnDeath() return false end
 function modifier_hammer_of_the_divine:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+function modifier_hammer_of_the_divine:GetPriority() return MODIFIER_PRIORITY_LOW end
 function modifier_hammer_of_the_divine:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
 		if self:GetCaster():IsIllusion() then return end

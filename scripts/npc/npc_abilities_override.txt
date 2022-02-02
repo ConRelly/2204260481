@@ -6830,12 +6830,13 @@
 	}
 	"obsidian_destroyer_arcane_orb"
 	{
+		"AbilityCooldown"				"6 4 2 0.3"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_pool_damage_pct"	"6 8 10 12"
+				"mana_pool_damage_pct"	"6 8 10 16"
 				"LinkedSpecialBonus"	"special_bonus_unique_outworld_devourer"
 			}
 			"02"
@@ -20626,7 +20627,7 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"movement_speed_percent_bonus"	"133"
+				"movement_speed_percent_bonus"	"166"
 			}
 			"07"
 			{
@@ -20646,7 +20647,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"magic_damage_attack"	"13000"
+				"magic_damage_attack"	"0"
 			}
 		}
 	}

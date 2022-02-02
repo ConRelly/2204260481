@@ -9,7 +9,9 @@ end
 function modifier_class:IsPurgable()	-- 能否被驱散
 	return false
 end	
-
+function modifier_class:GetPriority()
+	return MODIFIER_PRIORITY_LOW 
+end
 function modifier_class:OnCreated( kv )
      
         local ability = self:GetAbility()
