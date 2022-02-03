@@ -123,16 +123,22 @@ function modifier_num:OnCreated()
 		if not self:GetAbility() then self:Destroy() end
 		local caster = self:GetParent()
 		--Timers:CreateTimer(0.1, function()
-		if self and self:GetAbility() ~= nil then
+		if self and self:GetAbility() ~= nil and caster:GetPrimaryAttribute() == 2 then
 			caster:AddNewModifier(caster, self:GetAbility(), "modifier_num_sp", {})
 		end	
 		--end)
 	end
+	self:StartIntervalThink(1)
+end
+function modifier_num:OnIntervalThink()
+	if IsServer() then
+		self:OnCreated()
+	end
 end
 function modifier_num:OnDestroy()
 	if IsServer() then
-		if self:GetCaster() ~= nil and self:GetCaster():HasModifier("modifier_num_sp") then
-        	self:GetCaster():RemoveModifierByName("modifier_num_sp")
+		if self:GetParent():HasModifier("modifier_num_sp") then
+        	self:GetParent():RemoveModifierByName("modifier_num_sp")
 		end
     end
 end
@@ -183,7 +189,7 @@ function modifier_num_sp:OnIntervalThink()
 		local hp_regen = caster:GetHealthRegen()
 		local limit = caster:GetLevel() * 2
 		self.spell_amp = 0
-		if caster:IsRealHero() and caster:GetPrimaryAttribute() == 2 then
+		if caster:IsRealHero() then
 			self.spell_amp = math.floor(hp_regen * self:GetAbility():GetSpecialValueFor("hpr_spell_amp") / 100)
 		end
 		if self.spell_amp > limit then

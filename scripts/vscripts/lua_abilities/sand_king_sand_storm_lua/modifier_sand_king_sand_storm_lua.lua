@@ -1,154 +1,75 @@
 modifier_sand_king_sand_storm_lua = class({})
 
 --------------------------------------------------------------------------------
--- Classifications
-function modifier_sand_king_sand_storm_lua:IsHidden()
-	return false
-end
-
-function modifier_sand_king_sand_storm_lua:IsDebuff()
-	return false
-end
-
-function modifier_sand_king_sand_storm_lua:IsPurgable()
-	return false
-end
-
-function modifier_sand_king_sand_storm_lua:GetAttributes()
-	return MODIFIER_ATTRIBUTE_MULTIPLE
-end
+function modifier_sand_king_sand_storm_lua:IsHidden() return false end
+function modifier_sand_king_sand_storm_lua:IsDebuff() return false end
+function modifier_sand_king_sand_storm_lua:IsPurgable() return false end
+function modifier_sand_king_sand_storm_lua:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 
 --------------------------------------------------------------------------------
--- Initializations
-function modifier_sand_king_sand_storm_lua:OnCreated( kv )
-	-- references
-
-	
-	self.radius = self:GetAbility():GetSpecialValueFor( "sand_storm_radius" ) -- special value
-	self.interval = 0.5
+function modifier_sand_king_sand_storm_lua:OnCreated(kv)
+	self.radius = self:GetAbility():GetSpecialValueFor("sand_storm_radius")
+	local interval = self:GetAbility():GetSpecialValueFor("sand_storm_interval")
 
 	if IsServer() then
-		-- initialize
-		self.damage = self:GetAbility():GetTalentSpecialValueFor( "sand_storm_damage" ) + (self:GetCaster():GetStrength() * self:GetAbility():GetTalentSpecialValueFor("str_multiplier")) -- special value
-		self.active = true
+		local damage = self:GetAbility():GetTalentSpecialValueFor("sand_storm_damage") + (self:GetCaster():GetStrength() * self:GetAbility():GetTalentSpecialValueFor("str_multiplier"))
 		self.damageTable = {
 			-- victim = target,
 			attacker = self:GetParent(),
-			damage = self.damage * self.interval,
+			damage = damage * interval,
 			damage_type = self:GetAbility():GetAbilityDamageType(),
-			ability = self:GetAbility(), --Optional.
+			ability = self:GetAbility(),
 		}
 
-		-- Start interval
-		self:StartIntervalThink( self.interval )
-		self:OnIntervalThink()
+		self:StartIntervalThink(interval)
+		self:SandStorm_Effect(self:GetParent(), self.radius)
 
-		-- start effects
-		self:PlayEffects( self.radius )
+		EmitSoundOn("Ability.SandKing_SandStorm.loop", self:GetParent())
 	end
 end
-
-function modifier_sand_king_sand_storm_lua:OnRefresh( kv )
-	-- references
-	
-	self.radius = self:GetAbility():GetSpecialValueFor( "sand_storm_radius" ) -- special value
-
+function modifier_sand_king_sand_storm_lua:OnDestroy(kv)
 	if IsServer() then
-		-- initialize
-		self.damage = self:GetAbility():GetTalentSpecialValueFor( "sand_storm_damage" ) + (self:GetCaster():GetStrength() * self:GetAbility():GetTalentSpecialValueFor("str_multiplier")) -- special value
-		self.damageTable.damage = self.damage * self.interval
-		self.active = kv.start
-		self:SetDuration( kv.duration, true )
+		if self.effect_cast then
+			ParticleManager:DestroyParticle(self.effect_cast, false)
+			ParticleManager:ReleaseParticleIndex(self.effect_cast)
+		end
+
+		StopSoundOn("Ability.SandKing_SandStorm.loop", self:GetParent())
 	end
 end
 
-function modifier_sand_king_sand_storm_lua:OnDestroy( kv )
-	if IsServer() then
-		-- stop effects
-		self:StopEffects()
-	end
-end
-
---------------------------------------------------------------------------------
--- Modifier Effects
 function modifier_sand_king_sand_storm_lua:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_INVISIBILITY_LEVEL,
-	}
-
-	return funcs
+	return {MODIFIER_PROPERTY_INVISIBILITY_LEVEL}
 end
-
-function modifier_sand_king_sand_storm_lua:GetModifierInvisibilityLevel()
-	return 1
-end
-
---------------------------------------------------------------------------------
--- Status Effects
+function modifier_sand_king_sand_storm_lua:GetModifierInvisibilityLevel() return 1 end
 function modifier_sand_king_sand_storm_lua:CheckState()
-	local state = {
-		[MODIFIER_STATE_ATTACK_IMMUNE] = true,
-	}
-
-	return state
+	return {[MODIFIER_STATE_ATTACK_IMMUNE] = true}
 end
 
---------------------------------------------------------------------------------
--- Interval Effects
 function modifier_sand_king_sand_storm_lua:OnIntervalThink()
-	if self.active==0 then return end
+	local enemies = FindUnitsInRadius(self:GetParent():GetTeamNumber(), self:GetParent():GetOrigin(), nil, self.radius, self:GetAbility():GetAbilityTargetTeam(), self:GetAbility():GetAbilityTargetType(), 0, 0, false)
 
-	-- find enemies
-	local enemies = FindUnitsInRadius(
-		self:GetParent():GetTeamNumber(),	-- int, your team number
-		self:GetParent():GetOrigin(),	-- point, center point
-		nil,	-- handle, cacheUnit. (not known)
-		self.radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
-		self:GetAbility():GetAbilityTargetTeam(),	-- int, team filter
-		self:GetAbility():GetAbilityTargetType(),	-- int, type filter
-		0,	-- int, flag filter
-		0,	-- int, order filter
-		false	-- bool, can grow cache
-	)
-
-	-- damage enemies
 	for _,enemy in pairs(enemies) do
 		self.damageTable.victim = enemy
-		ApplyDamage( self.damageTable )
+		ApplyDamage(self.damageTable)
 	end
 
-	-- effects: reposition cloud
 	if self.effect_cast then
-		ParticleManager:SetParticleControl( self.effect_cast, 0, self:GetParent():GetOrigin() )
+		self:SandStorm_Effect(self:GetParent(), self.radius)
 	end
 end
 
 --------------------------------------------------------------------------------
--- Graphics & Animations
-function modifier_sand_king_sand_storm_lua:PlayEffects( radius )
-	-- Get Resources
-	local particle_cast = "particles/units/heroes/hero_sandking/sandking_sandstorm.vpcf"
-	local sound_cast = "Ability.SandKing_SandStorm.loop"
 
-	-- Create Particle
-	self.effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_WORLDORIGIN, nil )
-	ParticleManager:SetParticleControl( self.effect_cast, 0, self:GetParent():GetOrigin() )
-	ParticleManager:SetParticleControl( self.effect_cast, 1, Vector( radius, radius, radius ) )
-
-	-- Create Sound
-	EmitSoundOn( sound_cast, self:GetParent() )
+function modifier_sand_king_sand_storm_lua:SandStorm_Effect(parent, radius)
+	if self.effect_cast then
+		ParticleManager:DestroyParticle(self.effect_cast, false)
+		ParticleManager:ReleaseParticleIndex(self.effect_cast)
+	end
+	self.effect_cast = ParticleManager:CreateParticle("particles/custom/sandking_sandstorm_lua.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+	ParticleManager:SetParticleControl(self.effect_cast, 0, parent:GetOrigin())
+	ParticleManager:SetParticleControl(self.effect_cast, 1, Vector(radius, radius, radius))
 end
-
-function modifier_sand_king_sand_storm_lua:StopEffects()
-	-- Stop particles
-	ParticleManager:DestroyParticle( self.effect_cast, false )
-	ParticleManager:ReleaseParticleIndex( self.effect_cast )
-
-	-- Stop sound
-	local sound_cast = "Ability.SandKing_SandStorm.loop"
-	StopSoundOn( sound_cast, self:GetParent() )
-end
-
 
 function FindTalentValue(unit, talentName)
     if unit:HasAbility(talentName) then

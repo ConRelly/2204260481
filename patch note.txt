@@ -1543,6 +1543,7 @@ QuickFix and update:
 
 
 
+* The "Exclusive" tag will now be written on the ability (Example: *hero_name*'s Exclusive: *item_name*)
 * DOOM:
 	--Added 8 new skills(the good stuff) to Doom Random list.
 	--Added back his swap trick, but he can't swap Autocast and fireblast skills now.
@@ -1556,7 +1557,7 @@ QuickFix and update:
 * Lier Scarlet:
 	-- Bonuses from multiple parts do not stack
 	-- Top and Bottom health reduction increased to 20%
-	-- Middke health reduction reduced to 10%
+	-- Middle health reduction reduced to 10%
 * Cursed Shovel:
 	-- "The fee" has been increased
 	-- Now has fixed cast range
@@ -1575,12 +1576,14 @@ QuickFix and update:
 * Slayer Rebound aura dmg now scales with your lvl.
 * Chemical Rage will overite all other Base attack rate Modifiers(slark passive and Hammer of the Divine).
 * Ursa OverPower stats gain increased to 5.
+* Burrowstrike with Aghanim's Scepter now applies Caustic Finale (as it was written in the description)
+* Reduced Sand Storm (Sand King) particle effects
 * Gold ring will not trigger before or at the same time with Lifeguard anymore.
 * Pure Divinity from Hammer of Divine now will reduce at least 35 armor and has the max a little higher.
 * Changed Ballista dmg from every hit to once every 10 hits and increased the dmg to 7.5x (less lag from arcane staff procs)
 * Trident buffed a little(or more) and made his dmg on hit from 30 to 0 (to avoid unnecessary lag)
 * Increased(nerf) krakenShell of gods to 1 mill dmg.  so every 1 mill dmg after reduction dealt to them they will do a cleanse of debuffs(that can be dispelled).
-* Added 2 new Abilitys in the Random pools.
+* Added 2 new Abilities in the Random pools.
 * Made some changes so on -double one of Moran does not stay Perma in invul so often(the other complete fix makes the slash skill unstable).
 
 

@@ -23,7 +23,7 @@ function modifier_generic_knockback_lua:OnCreated(kv)
 		self.parent = self:GetParent()
 		self.origin = self.parent:GetOrigin()
 		self.distance = kv.distance or 0
-		self.height = kv.height or -1
+		self.height = kv.height or kv.z or -1
 		self.duration = kv.duration or 0
 
 		if kv.direction_x and kv.direction_y then
@@ -33,8 +33,8 @@ function modifier_generic_knockback_lua:OnCreated(kv)
 		end
 		self.tree = kv.tree_destroy_radius or self:GetParent():GetHullRadius()
 
-		if kv.IsStun then self.stun = kv.IsStun == 1 else self.stun = false end
-		if kv.IsFlail then self.flail = kv.IsFlail == 1 else self.flail = true end
+		if kv.IsStun then self.stun = kv.IsStun else self.stun = false end
+		if kv.IsFlail then self.flail = kv.IsFlail else self.flail = true end
 
 		if self.duration == 0 then
 			self:Destroy()

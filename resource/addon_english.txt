@@ -2895,7 +2895,7 @@
 	"DOTA_Tooltip_ability_mjz_faceless_void_backtrack_dodge_chance_pct"		"%Proc Chance: "
 		
 	"DOTA_Tooltip_ability_mjz_finger_of_death"						"Finger of Death"
-	"DOTA_Tooltip_ability_mjz_finger_of_death_Description"			"Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each life it consumes. \n<h1><font color='#DE3163'>UP: Super Scepter</font></h1> Each use gives 1 charge of Lion's Dagon and increases the damage for each Dagon charge multiplied by the base damage of this skill."
+	"DOTA_Tooltip_ability_mjz_finger_of_death_Description"			"Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each life it consumes. \n<h1><font color='#DE3163'>UP: Super Scepter</font></h1> Each use gives 1 charge of Lion's Dagon and increases the damage for each Dagon charge multiplied by the base damage of this skill. \n<h1><font color='#FEDCBA'>Lion's</font> <font color='#FFA32B'>Exclusive:</font> Lion's Dagon</h1> After Lion's Dagon use, it applies the Finger of Death ability to the same target. <br><br> Increases Lion's Dagon radius from <font color='#0094FF'>Aghanim's Scepter</font> equal to the radius of Finger of Death, but blocks the neutral slot. <br> With 6+ <font color='#DE3163'>Super Synth</font> effects removes this limitation."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_scepter_description"	"Increases damage, reduces cooldown and cancels mana cost. Finger of Death hits all units in a small area."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_Lore"					"Lion's disfigured hand is also the source of his greatest power, capable of flooding victims with malefic force."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_Note0"                "Can get multiple stacks from the same unit"
@@ -7816,8 +7816,8 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_manacost_reduction"		"%+$manacost_reduction"
 		//<<<<
 		//>>>>	Lion's Dagon
-		"DOTA_Tooltip_Ability_item_mjz_dagon_v2"										"Lion's Dagon V2"
-		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Description"							"<h1>Active: Finger of Death</h1>Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each use it.<br><br>Cast Range: %abilitycastrange%\n<h1><font color='#0094FF'>UP: Aghanim's Scepter</font></h1>Hits all enemies in a %splash_radius_scepter% radius. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Deals 10 x Your Int As bonus Damage. When Greater Blast Staff passive hits an target has 17%% chance to trigger this item on same target/s. Unlocks an hidden utility of this item. \n<h1><font color='#FFA32B'>Exclusive:</font> Lion</h1> After use, it applies the Finger of Death ability to the same target. <br><br> Increases the radius from <font color='#0094FF'>Aghanim's Scepter</font> equal to the radius of Finger of Death, but blocks the neutral slot. <br> With 6+ <font color='#DE3163'>Super Synth</font> effects removes this limitation."
+		"DOTA_Tooltip_Ability_item_mjz_dagon_v2"										"Lion's Dagon"
+		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Description"							"<h1>Active: Finger of Death</h1>Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each use it.<br><br>Cast Range: %abilitycastrange%\n<h1><font color='#0094FF'>UP: Aghanim's Scepter</font></h1>Hits all enemies in a %splash_radius_scepter% radius. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Deals 10 x Your Int As bonus Damage. When Greater Blast Staff passive hits an target has 17%% chance to trigger this item on same target/s. Unlocks an hidden utility of this item."
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Lore"									"Lion's Dagon is also the source of his greatest power, capable of flooding victims with malefic force."
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_bonus_intellect"						"+$int"
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_bonus_all_stats"						"+$all"
@@ -9222,7 +9222,8 @@ Contains all random skills"
 		"DOTA_Tooltip_ability_sand_king_sand_storm_lua_AbilityDuration"						"Duration:"
 		"DOTA_Tooltip_ability_sand_king_sand_storm_lua_sand_storm_radius"					"Radius:"
 		"DOTA_Tooltip_ability_sand_king_sand_storm_lua_sand_storm_damage"					"Sand Storm Damage:"
-		"DOTA_Tooltip_ability_sand_king_sand_storm_lua_str_multiplier"						"Strength As Bonus Damage:"		
+		"DOTA_Tooltip_ability_sand_king_sand_storm_lua_str_multiplier"						"Strength As Bonus Damage:"
+		"DOTA_Tooltip_modifier_sand_king_sand_storm_lua"			"Sand Storm"
 
 
 		"DOTA_Tooltip_ability_draks_unholy_strength"									"GameTime Power"

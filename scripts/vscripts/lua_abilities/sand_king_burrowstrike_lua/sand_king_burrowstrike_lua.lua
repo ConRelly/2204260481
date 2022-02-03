@@ -100,10 +100,25 @@ function sand_king_burrowstrike_lua:OnProjectileHit( target, location )
 		"modifier_generic_knockback_lua", -- modifier name
 		{
 			duration = 0.52,
-			z = 350,
+			height = 350,
 			IsStun = true,
 		} -- kv
 	)
+	if IsServer() then
+		if caster:HasScepter() then
+			if caster:HasAbility("sandking_caustic_finale") and caster:FindAbilityByName("sandking_caustic_finale"):IsTrained() then
+				local Caustic = caster:FindAbilityByName("sandking_caustic_finale")
+
+				local radius = Caustic:GetTalentSpecialValueFor("caustic_finale_radius")
+				local damage_base = Caustic:GetTalentSpecialValueFor("caustic_finale_damage_base")
+				local damage_pct = Caustic:GetTalentSpecialValueFor("caustic_finale_damage_pct")
+				local duration = Caustic:GetTalentSpecialValueFor("caustic_finale_duration")
+				local slow = Caustic:GetTalentSpecialValueFor("caustic_finale_slow")
+
+				target:AddNewModifier(caster, Caustic, "modifier_sand_king_caustic_finale_orb", {caustic_finale_radius = radius, caustic_finale_damage_base = damage_base, caustic_finale_damage_pct = damage_pct, caustic_finale_slow = slow, duration = duration})
+			end
+		end
+	end
 
 	-- apply damage
 	local damageTable = {

@@ -67,6 +67,11 @@
 				"str_multiplier"		"3.5 4.0 4.5 5.0 6.5 7.5 9.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_sand_king_101"
 			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"sand_storm_interval"	"0.5"
+			}
 		}
 	}
 }
