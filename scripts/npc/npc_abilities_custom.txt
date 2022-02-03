@@ -23958,18 +23958,18 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_agility"					"300 820 1750"
+				"bonus_agility"					"300 820 2750"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"chance_1x"						"3 4 5"
+				"chance_1x"						"4 5 7"
 				"LinkedSpecialBonus"		"special_bonus_unique_drow_ranger_3"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"chance_2x"						"0 1 2"
+				"chance_2x"						"0 2 3"
 				"LinkedSpecialBonus"		"special_bonus_unique_drow_ranger_3"
 			}
 			"04"

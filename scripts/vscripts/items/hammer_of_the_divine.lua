@@ -270,6 +270,10 @@ function modifier_hotd_pure_divinity:OnAttackLanded(keys)
 			local debuff = keys.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_hotd_pure_divinity_armor_corruption", {duration = self:GetAbility():GetSpecialValueFor("corr_duration") * (1 - keys.target:GetStatusResistance())})
 			local armor_reduction = (self:GetCaster():GetStrength() - self:GetCaster():GetBaseStrength()) * self:GetAbility():GetSpecialValueFor("corr_armor_red_pct") / 100
 			local corruption_armor_red_max = self:GetAbility():GetSpecialValueFor("corr_armor_red_max")
+			local corruption_armor_red_min = self:GetAbility():GetSpecialValueFor("corr_armor_red_min")
+			if armor_reduction < corruption_armor_red_min then
+				armor_reduction = corruption_armor_red_min
+			end
 			if armor_reduction > corruption_armor_red_max then
 				armor_reduction = corruption_armor_red_max
 			end

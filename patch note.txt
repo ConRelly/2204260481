@@ -1568,14 +1568,19 @@ QuickFix and update:
 * Buffed Legion Commander Grim Reaper
 * Buffed Dazzle Ultimate Max CDR by 5% and duration on debuff by 2 sec.
 * Buffed Medusa Stone Arrows by 2x
+* Morphling stats per lvl doubled.
+* Drow Marksmanship scales better now with your attack (2.5 times), + 1k agi at lvl 3, and Buffed Drow agility gain per lvl to 32.4
 * Increased OD arcane orb dmg to 16% on last lvl and changed from 0.0 to 0.3 CD , similar dmg on most cases but removes some of the lag
-* Kardel Shrap bullet now is an 2 dmg instance from 8 but keeps the 8 attacks 
+* Kardel Shrap bullet now is an 2 dmg instance from 8 but keeps the 8 attacks(the attacks are split in different frames so it has lower chance to freeze/lag)
 * Slayer Rebound aura dmg now scales with your lvl.
+* Chemical Rage will overite all other Base attack rate Modifiers(slark passive and Hammer of the Divine).
+* Ursa OverPower stats gain increased to 5.
 * Gold ring will not trigger before or at the same time with Lifeguard anymore.
-* Changed Ballista dmg from every hit to once every 10 hits and increased the dmg to 10x (less lag from arcane staff procs)
+* Pure Divinity from Hammer of Divine now will reduce at least 35 armor and has the max a little higher.
+* Changed Ballista dmg from every hit to once every 10 hits and increased the dmg to 7.5x (less lag from arcane staff procs)
 * Trident buffed a little(or more) and made his dmg on hit from 30 to 0 (to avoid unnecessary lag)
-* Increased(nerf) krakenShell of gods to 1 mill dmg.  so every 1 mill after reduction dealt with to them they will do a cleanse of debuffs(that can be dispelled).
-* Added 2 new Ability in the Random pools.
+* Increased(nerf) krakenShell of gods to 1 mill dmg.  so every 1 mill dmg after reduction dealt to them they will do a cleanse of debuffs(that can be dispelled).
+* Added 2 new Abilitys in the Random pools.
 * Made some changes so on -double one of Moran does not stay Perma in invul so often(the other complete fix makes the slash skill unstable).
 
 
@@ -1601,7 +1606,7 @@ Ursa OverPower : 2x stats gain
 Orange Multicast: + 2 extra multicasts
 Devil's Daedalus(including edible) : 1.5x critical increase
 Ultimate Bloodstone : gain an extra stack on every succesful proc.
-Green Radiance(edible included): Ms multiplayer increased to 10x and has no limit
+Green Radiance(edible included 12x): Ms multiplayer increased to 10x and has no limit
 Greater Blast Staff: MR reduction increased to -45 , int multiplayer +5(18) , debuff duration +1s. 
 Apex: +7% more stats(42%)
 Cursed Gaze: +3% crit bonus on hit(8%).

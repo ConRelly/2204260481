@@ -18287,7 +18287,7 @@
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"10000"
+			"bonus_damage"			"7500"
 		}
 		"07"
 		{
@@ -19319,7 +19319,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"debuff_duration"		"5"
+				"debuff_duration"		"6"
 			}
 			"07"
 			{
@@ -35228,13 +35228,18 @@
 			"20"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"corr_armor_red_max"		"120"
+				"corr_armor_red_max"		"135"
 			}
 			"21"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"corr_duration"				"5"
 			}
+			"22"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"corr_armor_red_min"		"35"
+			}			
 		}
 	}
 // Recipe: Hammer Of The Divine

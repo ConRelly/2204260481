@@ -976,9 +976,9 @@
 		"Ability19"				"special_bonus_strength_400"
 		"Ability21"				"special_bonus_8_crit_2750"
 
-		"AttributeIntelligenceGain"		"12.000000"
-		"AttributeStrengthGain"			"12.000000"
-		"AttributeAgilityGain"			"12.000000"
+		"AttributeIntelligenceGain"		"25.000000"
+		"AttributeStrengthGain"			"25.000000"
+		"AttributeAgilityGain"			"25.000000"
 		"AttackRange"					"800"
 		"AttackRate"					"1.3"
 	}
@@ -1121,7 +1121,7 @@
 		"Ability15"				"special_bonus_cdr_30"
 		"Ability17"				"special_frost_arrow_bite_interval_lua"
 
-		"AttributeAgilityGain"		"12.400000"
+		"AttributeAgilityGain"		"32.400000"
 	}
 
 	//=================================================================================================================
