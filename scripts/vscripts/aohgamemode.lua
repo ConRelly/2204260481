@@ -516,7 +516,7 @@ function AOHGameMode:InitVariables()
 					--hero:AddItemByName("item_ward_sentry")
 					CustomGameEventManager:Send_ServerToAllClients("game_begin", {name = PlayerResource:GetSelectedHeroName(playerID), id = playerID})
 					self._playerNumber = self._playerNumber + 1
-					PlayerResource:SetCustomBuybackCooldown(playerID, 90)
+					PlayerResource:SetCustomBuybackCooldown(playerID, 120)
 					--Sounds:CreateSound(playerID, "goh.teme")
 				end
 			end

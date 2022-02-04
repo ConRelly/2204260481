@@ -11574,12 +11574,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"gold_bonus" 			"40"
+			"gold_bonus" 			"20 25 30 35 40 50 60"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"gold_damage_pct" 			"5 10 15 20 25 30 40"
+			"gold_damage_pct" 			"5 10 15 20 30 40 60"
 			"CalculateSpellDamageTooltip"	"0"
 		}
 	}
@@ -30140,7 +30140,7 @@
 			"14"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"epicenter_shard_str_dmg_inc"	"50"
+				"epicenter_shard_str_dmg_inc"	"500"
 			}
 		}
 
@@ -39579,7 +39579,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"4"
+				"value"				"15"
 			}
 		}
 	}	

@@ -85,7 +85,9 @@ if IsServer() then
 			attacker = caster,
 			damage = damage,
 			damage_type = ability:GetAbilityDamageType(),
-			ability = ability
+            damage_flags = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR,
+			ability = ability,
+            
 		}
 		ApplyDamage( damage_info )
     end

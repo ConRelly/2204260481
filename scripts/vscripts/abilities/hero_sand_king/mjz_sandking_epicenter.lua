@@ -1,5 +1,6 @@
 LinkLuaModifier("modifier_mjz_sandking_epicenter","modifiers/hero_sand_king/modifier_mjz_sandking_epicenter.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_sandking_epicenter_shard","abilities/hero_sand_king/mjz_sandking_epicenter", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_sandking_epicenter_slow","modifiers/hero_sand_king/modifier_mjz_sandking_epicenter.lua", LUA_MODIFIER_MOTION_NONE)
 
 mjz_sandking_epicenter = class({})
 local ability_class = mjz_sandking_epicenter
@@ -47,36 +48,38 @@ function modifier_mjz_sandking_epicenter_shard:OnCreated()
 	self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("epicenter_shard_interval"))
 end
 function modifier_mjz_sandking_epicenter_shard:OnIntervalThink()
-	local ability = self:GetAbility()
-	local caster = self:GetCaster()
-	if not caster:IsAlive() then return end
-	if caster:IsIllusion() then return end
-	local radius = ability:GetSpecialValueFor("epicenter_radius_max")
-	local epicenter_damage = ability:GetSpecialValueFor("epicenter_damage") + ability:GetSpecialValueFor("epicenter_shard_dmg_inc")
-	local str_damage_pct = ability:GetSpecialValueFor("str_damage_pct") + ability:GetSpecialValueFor("epicenter_shard_str_dmg_inc") + talent_value(caster, "special_bonus_unique_mjz_sandking_epicenter_strength")
-	local slow_duration = ability:GetSpecialValueFor("epicenter_slow_duration")
+	if IsServer() then
+		local ability = self:GetAbility()
+		local caster = self:GetCaster()
+		if not caster:IsAlive() then return end
+		if caster:IsIllusion() then return end
+		local radius = ability:GetSpecialValueFor("epicenter_radius_max")
+		local epicenter_damage = ability:GetSpecialValueFor("epicenter_damage") + ability:GetSpecialValueFor("epicenter_shard_dmg_inc")
+		local str_damage_pct = ability:GetSpecialValueFor("str_damage_pct") + ability:GetSpecialValueFor("epicenter_shard_str_dmg_inc") + talent_value(caster, "special_bonus_unique_mjz_sandking_epicenter_strength")
+		local slow_duration = ability:GetSpecialValueFor("epicenter_slow_duration")
 
-	local damage = epicenter_damage + caster:GetStrength() * str_damage_pct / 100
+		local damage = epicenter_damage + caster:GetStrength() * str_damage_pct / 100
 
-	local particle_epicenter_fx = ParticleManager:CreateParticle("particles/units/heroes/hero_sandking/sandking_epicenter.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-	ParticleManager:SetParticleControl(particle_epicenter_fx, 0, caster:GetAbsOrigin())
-	ParticleManager:SetParticleControl(particle_epicenter_fx, 1, Vector(radius, radius, 1))
-	ParticleManager:ReleaseParticleIndex(particle_epicenter_fx)
+		local particle_epicenter_fx = ParticleManager:CreateParticle("particles/units/heroes/hero_sandking/sandking_epicenter.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+		ParticleManager:SetParticleControl(particle_epicenter_fx, 0, caster:GetAbsOrigin())
+		ParticleManager:SetParticleControl(particle_epicenter_fx, 1, Vector(radius, radius, 1))
+		ParticleManager:ReleaseParticleIndex(particle_epicenter_fx)
 
-	local enemy_list = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+		local enemy_list = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
-	for _, enemy in pairs(enemy_list) do
-		local damageTable = {
-			victim = enemy,
-			attacker = caster,
-			damage = damage,
-			damage_type = ability:GetAbilityDamageType(),
-			ability = ability,
-		}
-		ApplyDamage(damageTable)
-		enemy:AddNewModifier(caster, ability, "modifier_mjz_sandking_epicenter_slow", {duration = slow_duration})
-	end
-	EmitSoundOn("Hero_Sandking.EpiPulse", self:GetParent())
+		for _, enemy in pairs(enemy_list) do
+			local damageTable = {
+				victim = enemy,
+				attacker = caster,
+				damage = damage,
+				damage_type = ability:GetAbilityDamageType(),
+				ability = ability,
+			}
+			ApplyDamage(damageTable)
+			enemy:AddNewModifier(caster, ability, "modifier_mjz_sandking_epicenter_slow", {duration = slow_duration})
+		end
+		EmitSoundOn("Hero_Sandking.EpiPulse", self:GetParent())
+	end	
 end
 
 

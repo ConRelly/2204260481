@@ -845,13 +845,15 @@
 		"override_hero"			"npc_dota_hero_razor"
 
 		"Ability3"				"mjz_razor_unstable_current"
-		"Ability10"				"special_bonus_hp_1750"
-		"Ability13"				"special_bonus_cdr_12"
-		"Ability14"				"special_bonus_armor_24"
+		"Ability4"              "alchemist_goblins_greed"
+		"Ability10"				"special_bonus_hp_2750"
+		"Ability11"             "special_bonus_armor_24"
+		"Ability13"				"special_bonus_cdr_25"
+		"Ability14"				"special_bonus_spell_amplify_125"
 
 		"AttackRate"				"1.550000"
 		"ProjectileSpeed"			"6000"
-		"AttributeAgilityGain"		"9.7"
+		"AttributeAgilityGain"		"17.7"
 	}
 
 	//=================================================================================================================
