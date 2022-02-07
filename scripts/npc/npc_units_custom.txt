@@ -13465,7 +13465,7 @@
 		"Ability18"				 "lich_custom_cold_soul2"
 
 		"ArmorPhysical"				"295"
-		"MagicalResistance"			"92"
+		"MagicalResistance"			"93"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"800"
@@ -13602,7 +13602,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"395"
-		"MagicalResistance"		 "93"
+		"MagicalResistance"		 "95"
 
 		// Attack
 		//----------------------------------------------------------------
@@ -13637,7 +13637,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"4950000"
+		"StatusHealth"				"5350000"
 		"StatusHealthRegen"			"25000"
 		"StatusMana"				"50000"
 		"StatusManaRegen"			"5500"

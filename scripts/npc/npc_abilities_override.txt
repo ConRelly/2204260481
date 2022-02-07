@@ -6304,7 +6304,6 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"5518"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -6354,7 +6353,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"pull_duration"				"0.0"
+				"pull_duration"				"0.2"
 			}
 			"05"
 			{
@@ -6369,7 +6368,7 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"pull_distance"		"0"
+				"pull_distance"				"1"
 			}
 			"08"
 			{
