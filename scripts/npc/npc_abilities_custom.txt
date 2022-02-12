@@ -22378,7 +22378,7 @@
 			"10"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"tick_interval"				"0.50"
+				"tick_interval"				"0.25"
 			}
 		}
 	}
@@ -22398,7 +22398,7 @@
 			"10"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"tick_interval"				"0.50"
+				"tick_interval"				"0.25"
 			}
 		}
 	}

@@ -33254,7 +33254,7 @@
 			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bash_chance_ranged"			"15"
+				"bash_chance_ranged"			"30"
 			}
 			"08"
 			{
