@@ -1593,6 +1593,11 @@ QuickFix and update:
 
 
 
+* "Easy" Map will not allow you to enable HardMode anymore, any other mods will work(like -full(second round only) , -extra , -double etc). for hard just host the game on the normal map.
+* Magnus Ultimate does not teleport enemys above lvl 15 anymore(it will still dmg/stun them), reduced stun duration, units now first will be teleported to magnus before they take damage(to avoid xp loss from neutrals and other combos) and replaced his skewer with Wardrums Aura.
+* Fixed Ultimate Bloodstone lossing stacks on death if all of them were from Reverse Polarity SS.
+
+
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
 *Update patch notes48 can be found on the new map version:

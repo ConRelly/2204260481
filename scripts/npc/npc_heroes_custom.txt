@@ -1568,6 +1568,7 @@
 	{
 		"override_hero"			"npc_dota_hero_magnataur"
 
+		"Ability3"              "big_thunder_lizard_wardrums_aura"
 		"Ability6"				"mjz_magnataur_reverse_polarity"
 		"Ability12"				"special_bonus_strength_220"
 		"Ability14"				"special_bonus_hp_3500"

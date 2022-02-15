@@ -46,6 +46,30 @@ function ReversePolarity(keys)
     local str = caster:GetStrength() * ability:GetSpecialValueFor("str_damage")
     local polarity_damage = ability:GetSpecialValueFor("polarity_damage") + str
     local bonus_dmg = target:GetHealth() * (ability:GetSpecialValueFor("ss_currenthp_dmg")/100)
+
+	-- The angle the caster is facing
+	local caster_angle = caster:GetForwardVector()
+	-- The caster's position
+	local caster_origin = caster:GetAbsOrigin()
+	-- The vector from the caster to the target position
+	local offset_vector = caster_angle * pull_offset
+	-- The target's new position
+	local new_location = caster_origin + offset_vector
+	
+	-- Moves all the targets under lvl 15 to the position
+    if target:GetLevel() < 15 then
+        target:SetAbsOrigin(new_location)
+        FindClearSpaceForUnit(target, new_location, true)
+    end    
+	
+	-- Applies the stun modifier based on the unit's type
+	if target:IsHero() == true then
+		target:AddNewModifier(caster, ability, "modifier_stunned", {Duration = hero_stun_duration})
+	else
+		target:AddNewModifier(caster, ability, "modifier_stunned", {Duration = creep_stun_duration})
+    end
+    target:EmitSound("Hero_Magnataur.ReversePolarity.Stun")
+    -- Deal bonus base on % hp and other SS bonus effects
     if caster:HasModifier("modifier_super_scepter") then
         caster:ModifyStrength(1)
         ApplyDamage({
@@ -62,39 +86,22 @@ function ReversePolarity(keys)
                 local charges = bloodstone:GetCurrentCharges() + 1
                 if charges > 320 then
                     charges = 320
-                end    
+                end
+				if caster:HasModifier("modifier_mjz_bloodstone_charges") then
+					caster:FindModifierByName("modifier_mjz_bloodstone_charges"):SetStackCount(charges)
+				end                    
                 bloodstone:SetCurrentCharges(charges)
             end    
         end        
-    end    
+    end   
+    --Deal Damage 
     ApplyDamage({
         ability = ability,
         attacker = caster,
         damage = polarity_damage,
         damage_type = ability:GetAbilityDamageType(),
         victim = target
-    })
-
-	-- The angle the caster is facing
-	local caster_angle = caster:GetForwardVector()
-	-- The caster's position
-	local caster_origin = caster:GetAbsOrigin()
-	-- The vector from the caster to the target position
-	local offset_vector = caster_angle * pull_offset
-	-- The target's new position
-	local new_location = caster_origin + offset_vector
-	
-	-- Moves all the targets to the position
-	target:SetAbsOrigin(new_location)
-	FindClearSpaceForUnit(target, new_location, true)
-	
-	-- Applies the stun modifier based on the unit's type
-	if target:IsHero() == true then
-		target:AddNewModifier(caster, ability, "modifier_stunned", {Duration = hero_stun_duration})
-	else
-		target:AddNewModifier(caster, ability, "modifier_stunned", {Duration = creep_stun_duration})
-    end
-	target:EmitSound("Hero_Magnataur.ReversePolarity.Stun")
+    })    
 
 end
 

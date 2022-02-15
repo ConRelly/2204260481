@@ -12403,7 +12403,7 @@
 		"SoundSet"					"Creep_Good_Melee"					
 		"ModelScale"				"1.0"
 		"ConsideredHero"			"1"
-		"Level"					 "3"
+		"Level"					 	"16"
 		
 		"Ability1"					"golden_mine_passive"			
 		"Ability2"					"custom_no_heal_aura"			

@@ -26703,12 +26703,12 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"hero_stun_duration"	"5.25"
+			"hero_stun_duration"	"3.0"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"creep_stun_duration"	"6.0"
+			"creep_stun_duration"	"3.0"
 		}
 		"05"
 		{
