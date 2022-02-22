@@ -290,6 +290,7 @@ function IsExcludeAbility(ability)
 		"item_random_get_ability",
 		"item_random_get_ability_onlvl",
 		"item_imba_ultimate_scepter_synth2",
+		"item_ritual_shovel",
 -- Abilities
 		"phoenix_fire_spirits",
 		"mjz_phoenix_sun_ray",

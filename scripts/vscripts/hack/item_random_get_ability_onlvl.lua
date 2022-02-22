@@ -126,7 +126,7 @@ function GetRandomAbilityName( hero )
 		"alchemist_goblins_greed",			  -- 小娜迦 3
 		"mjz_omniknight_repel",		   -- 影魔 4
 		"lycan_feral_impulse",			  -- 影魔 5
-		"antimage_counterspell",			  -- 敌法 1 crash with snowball 
+		"antimage_custom_counterspell",			  -- 敌法 1 crash with snowball 
 		"mjz_ursa_overpower",				   -- 拍拍熊 2
 		"ursa_fury_swipes",				 -- 拍拍熊 3
 		"lich_custom_cold_soul",				  -- 火枪 3

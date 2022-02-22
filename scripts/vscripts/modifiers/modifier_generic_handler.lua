@@ -61,67 +61,77 @@ end
 -- DOTA_DAMAGE_CATEGORY_SPELL = 0
 function modifier_generic_handler:OnTakeDamage(keys)
 	if keys.attacker == self:GetParent() and not keys.unit:IsBuilding() and not keys.unit:IsOther() and keys.unit:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
+		local spell_heal = 10
+		local normal_hit_heal = 5
 -- Spell lifesteal handler
 		if keys.damage_category == DOTA_DAMAGE_CATEGORY_SPELL and keys.inflictor and self:GetParent():GetSpellLifesteal() > 0 and bit.band(keys.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL) ~= DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL and bit.band(keys.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) ~= DOTA_DAMAGE_FLAG_REFLECTION then
-
-			for _, forbidden_inflictor in pairs(self.forbidden_inflictors) do
-				if keys.inflictor:GetName() == forbidden_inflictor then return end
-			end
-
-			self.lifesteal_pfx = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.attacker)
-			ParticleManager:SetParticleControl(self.lifesteal_pfx, 0, keys.attacker:GetAbsOrigin())
-			ParticleManager:ReleaseParticleIndex(self.lifesteal_pfx)
-			if keys.unit:IsIllusion() then
-				if keys.damage_type == DAMAGE_TYPE_PHYSICAL and keys.unit.GetPhysicalArmorValue and GetReductionFromArmor then
-					keys.damage = keys.original_damage * (1 - GetReductionFromArmor(keys.unit:GetPhysicalArmorValue(false)))
-				elseif keys.damage_type == DAMAGE_TYPE_MAGICAL and keys.unit.GetMagicalArmorValue then
-					keys.damage = keys.original_damage * (1 - GetReductionFromArmor(keys.unit:GetMagicalArmorValue()))
-				elseif keys.damage_type == DAMAGE_TYPE_PURE then
-					keys.damage = keys.original_damage
+			if RollPercentage(spell_heal) then
+				for _, forbidden_inflictor in pairs(self.forbidden_inflictors) do
+					if keys.inflictor:GetName() == forbidden_inflictor then return end
 				end
-			end
-			
-			keys.attacker:Heal(math.max(keys.damage, 0) * self:GetParent():GetSpellLifesteal() * 0.01, keys.attacker)
+
+				self.lifesteal_pfx = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.attacker)
+				ParticleManager:SetParticleControl(self.lifesteal_pfx, 0, keys.attacker:GetAbsOrigin())
+				ParticleManager:ReleaseParticleIndex(self.lifesteal_pfx)
+				if keys.unit:IsIllusion() then
+					if keys.damage_type == DAMAGE_TYPE_PHYSICAL and keys.unit.GetPhysicalArmorValue and GetReductionFromArmor then
+						keys.damage = keys.original_damage * (1 - GetReductionFromArmor(keys.unit:GetPhysicalArmorValue(false)))
+					elseif keys.damage_type == DAMAGE_TYPE_MAGICAL and keys.unit.GetMagicalArmorValue then
+						keys.damage = keys.original_damage * (1 - GetReductionFromArmor(keys.unit:GetMagicalArmorValue()))
+					elseif keys.damage_type == DAMAGE_TYPE_PURE then
+						keys.damage = keys.original_damage
+					end
+				end
+				
+				keys.attacker:Heal(math.max(keys.damage, 0) * self:GetParent():GetSpellLifesteal() * 0.01, keys.attacker)
+
+			end	
 -- Pure spell lifesteal handler
 		elseif keys.damage_category == DOTA_DAMAGE_CATEGORY_SPELL and keys.inflictor and self:GetParent():GetPureSpellLifesteal() > 0 and bit.band(keys.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL) ~= DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL and bit.band(keys.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) ~= DOTA_DAMAGE_FLAG_REFLECTION then
+			if RollPercentage(spell_heal) then
+				for _, forbidden_inflictor in pairs(self.forbidden_inflictors) do
+					if keys.inflictor:GetName() == forbidden_inflictor then return end
+				end
 
-			for _, forbidden_inflictor in pairs(self.forbidden_inflictors) do
-				if keys.inflictor:GetName() == forbidden_inflictor then return end
-			end
+				self.lifesteal_pfx = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.attacker)
+				ParticleManager:SetParticleControl(self.lifesteal_pfx, 0, keys.attacker:GetAbsOrigin())
+				ParticleManager:ReleaseParticleIndex(self.lifesteal_pfx)
+				
+				keys.attacker:Heal(math.max(keys.original_damage, 0) * self:GetParent():GetPureSpellLifesteal() * 0.01, keys.attacker)
 
-			self.lifesteal_pfx = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.attacker)
-			ParticleManager:SetParticleControl(self.lifesteal_pfx, 0, keys.attacker:GetAbsOrigin())
-			ParticleManager:ReleaseParticleIndex(self.lifesteal_pfx)
-			
-			keys.attacker:Heal(math.max(keys.original_damage, 0) * self:GetParent():GetPureSpellLifesteal() * 0.01, keys.attacker)
+			end	
 
 -- Attack lifesteal handler
 		elseif keys.damage_category == DOTA_DAMAGE_CATEGORY_ATTACK and self:GetParent():GetLifesteal() > 0 then
-			if not keys.attacker:IsRealHero() and (keys.attacker:GetMaxHealth() <= 0 or keys.attacker:GetHealth() <= 0) then
-				keys.attacker:SetMaxHealth(keys.attacker:GetBaseMaxHealth())
-				keys.attacker:SetHealth(1)
-			end
-			
-			self.lifesteal_pfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.attacker)
-			ParticleManager:SetParticleControl(self.lifesteal_pfx, 0, keys.attacker:GetAbsOrigin())
-			ParticleManager:ReleaseParticleIndex(self.lifesteal_pfx)
-			
-			if keys.unit:IsIllusion() and keys.unit.GetPhysicalArmorValue and GetReductionFromArmor then
-				keys.damage = keys.original_damage * (1 - GetReductionFromArmor(keys.unit:GetPhysicalArmorValue(false)))
-			end
-			keys.attacker:Heal(keys.damage * self:GetParent():GetLifesteal() * 0.01, keys.attacker)
+			if RollPercentage(normal_hit_heal) then
+				if not keys.attacker:IsRealHero() and (keys.attacker:GetMaxHealth() <= 0 or keys.attacker:GetHealth() <= 0) then
+					keys.attacker:SetMaxHealth(keys.attacker:GetBaseMaxHealth())
+					keys.attacker:SetHealth(1)
+				end
+				
+				self.lifesteal_pfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.attacker)
+				ParticleManager:SetParticleControl(self.lifesteal_pfx, 0, keys.attacker:GetAbsOrigin())
+				ParticleManager:ReleaseParticleIndex(self.lifesteal_pfx)
+				
+				if keys.unit:IsIllusion() and keys.unit.GetPhysicalArmorValue and GetReductionFromArmor then
+					keys.damage = keys.original_damage * (1 - GetReductionFromArmor(keys.unit:GetPhysicalArmorValue(false)))
+				end
+				keys.attacker:Heal(keys.damage * self:GetParent():GetLifesteal() * 0.01, keys.attacker)
+			end	
 -- Pure attack lifesteal handler
 		elseif keys.damage_category == DOTA_DAMAGE_CATEGORY_ATTACK and self:GetParent():GetPureLifesteal() > 0 then
-			if not keys.attacker:IsRealHero() and (keys.attacker:GetMaxHealth() <= 0 or keys.attacker:GetHealth() <= 0) then
-				keys.attacker:SetMaxHealth(keys.attacker:GetBaseMaxHealth())
-				keys.attacker:SetHealth(1)
-			end
-			
-			self.lifesteal_pfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.attacker)
-			ParticleManager:SetParticleControl(self.lifesteal_pfx, 0, keys.attacker:GetAbsOrigin())
-			ParticleManager:ReleaseParticleIndex(self.lifesteal_pfx)
+			if RollPercentage(normal_hit_heal) then
+				if not keys.attacker:IsRealHero() and (keys.attacker:GetMaxHealth() <= 0 or keys.attacker:GetHealth() <= 0) then
+					keys.attacker:SetMaxHealth(keys.attacker:GetBaseMaxHealth())
+					keys.attacker:SetHealth(1)
+				end
+				
+				self.lifesteal_pfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.attacker)
+				ParticleManager:SetParticleControl(self.lifesteal_pfx, 0, keys.attacker:GetAbsOrigin())
+				ParticleManager:ReleaseParticleIndex(self.lifesteal_pfx)
 
-			keys.attacker:Heal(keys.original_damage * self:GetParent():GetPureLifesteal() * 0.01, keys.attacker)
+				keys.attacker:Heal(keys.original_damage * self:GetParent():GetPureLifesteal() * 0.01, keys.attacker)
+			end	
 		end
 	end
 end

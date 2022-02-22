@@ -166,6 +166,7 @@
 "npc_dota_hero_keeper_of_the_light"
 {
 	"Ability9"		"ogre_magi_multicast_lua"
+	"Ability7"		"generic_hidden"
 	"Ability12"		"special_bonus_hp_regen_20"
 
 	"AttributeIntelligenceGain"		"9.3"

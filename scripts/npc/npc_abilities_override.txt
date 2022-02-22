@@ -770,7 +770,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"68000"
+				"value"				"98000"
 			}
 		}
 	}
@@ -6830,13 +6830,13 @@
 	}
 	"obsidian_destroyer_arcane_orb"
 	{
-		"AbilityCooldown"				"6 4 2 0.3"
+		"AbilityCooldown"				"4 3 2 0.25"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_pool_damage_pct"	"6 8 10 16"
+				"mana_pool_damage_pct"	"6 8 12 18"
 				"LinkedSpecialBonus"	"special_bonus_unique_outworld_devourer"
 			}
 			"02"
@@ -16402,20 +16402,6 @@
 		}
 	}
 	
-	"dazzle_shadow_wave"
-	{
-		"AbilityCastRange"				"800 900 1000 1100"
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bounce_radius"		"800"
-			}
-		}
-	}
-	
 	"witch_doctor_voodoo_restoration"
 	{
 		"LevelsBetweenUpgrades"			 "5"
@@ -19971,7 +19957,7 @@
 	{
 		"AbilityCastRange"			"7200"
 		"ItemCost"					"2700"
-		"ItemPurchasable"			"1"
+		"ItemPurchasable"			"0"
 		"AbilityCastRange"			"7200"
 		"AbilitySpecial"
 		{

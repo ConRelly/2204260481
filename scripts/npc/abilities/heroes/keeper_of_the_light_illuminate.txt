@@ -13,9 +13,9 @@
     "SpellImmunityType"                                   "SPELL_IMMUNITY_ENEMIES_NO"
     "FightRecapLevel"                                     "1"
 
-    "MaxLevel"                                            "7"
+    "MaxLevel"                                            "8"
     "RequiredLevel"                                       "1"
-    "LevelsBetweenUpgrades"                               "7"
+    "LevelsBetweenUpgrades"                               "10"
 
     "HasScepterUpgrade"                                   "1"
 
@@ -27,7 +27,7 @@
     // Time
     //-------------------------------------------------------------------------------------------------------------
     "AbilityCooldown"                                     "11"
-    "AbilityChannelTime"                                  "5.0 5.0 5.0 5.0 5.0 4.0 2.5"
+    "AbilityChannelTime"                                  "5.0 5.0 5.0 5.0 5.0 4.0 2.5 2.0" 
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
@@ -40,13 +40,13 @@
       "01"
       {
         "var_type"                                        "FIELD_INTEGER"
-        "total_damage"                                    "950 4500 9500 24500 57500 192500 400000"
+        "total_damage"                                    "950 4500 19500 44500 97500 292500 650000 1450000"
         "LinkedSpecialBonus"                              "special_bonus_unique_keeper_of_the_light"
       }
       "02"
       {
         "var_type"                                        "FIELD_FLOAT"
-        "max_channel_time"                                "5.0 5.0 5.0 5.0 5.0 4.0 2.5"
+        "max_channel_time"                                "5.0 5.0 5.0 5.0 5.0 4.0 2.5 2.0"
       }
       "03"
       {

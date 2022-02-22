@@ -2958,7 +2958,7 @@
 	"ItemResult"					"item_pharaoh_crown"
 	"ItemRequirements"
 	{
-		"01"						"item_vladmir;item_helm_of_the_dominator"
+		"01"						"item_ancient_janggo_2"
 	}
 }
 "item_pharaoh_crown"
@@ -5172,7 +5172,7 @@
 		"05"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"lifesteal"				"2"
+			"lifesteal"				"3"
 		}	
 	}
 }
@@ -5230,7 +5230,7 @@
 		"05"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"lifesteal"				"2"
+			"lifesteal"				"3"
 		}	
 	}
 }
@@ -5281,7 +5281,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"lifesteal"				"4"
+			"lifesteal"				"6"
 		}
 	}
 }
@@ -12188,7 +12188,7 @@
 			"15"						//生命窃取
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_lifesteal"		"2"
+				"attack_lifesteal"		"4"
 			}
 			"20"						//寒冰风暴持续时间（英雄）
 			{
@@ -12239,7 +12239,12 @@
 			{
 				"var_type"	  				"FIELD_INTEGER"
 				"healt_reg_mult_dmg"		"5"
-			}									
+			}
+			"30"						
+			{
+				"var_type"	  				"FIELD_INTEGER"
+				"proc_chance"				"5"
+			}												
 
 		}		
 
@@ -12415,21 +12420,24 @@
 
 				"OnAttackLanded"
 				{
-					//"FireSound"
-					//{
-					//	"EffectName"		"Hero_Abaddon.Attack"
-					//	"Target"			"CASTER"
-					//}
-					"Lifesteal"
+					"Random"
 					{
-						"Target"			"ATTACKER"
-						"LifestealPercent" 	"%attack_lifesteal"
-					}
-					"ApplyModifier"
-					{
-						"ModifierName" 		"modifier_mjz_frostmourne_hungers_debuff"
-						"Target" 			"TARGET"
-					}
+						"Chance"			"%proc_chance"
+						"PseudoRandom"		"DOTA_PSEUDO_RANDOM_ITEM_MKB"
+						"OnSuccess"
+						{
+							"Lifesteal"
+							{
+								"Target"			"ATTACKER"
+								"LifestealPercent" 	"%attack_lifesteal"
+							}
+							"ApplyModifier"
+							{
+								"ModifierName" 		"modifier_mjz_frostmourne_hungers_debuff"
+								"Target" 			"TARGET"
+							}
+						}
+					}				
 					"RunScript"
 					{
 						"ScriptFile"		"items/item_mjz_frostmourne.lua"
@@ -16320,13 +16328,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"custom_recipe"
-		"ItemCost"						"3500"
+		"ItemCost"						"4000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_vladmir"
 		"ItemRequirements"
 		{
-			"01"						"item_vladmir;item_ultimate_orb"
+			"01"						"item_vampire_fangs;item_ultimate_orb"
 			//"01"						"item_chest_1"
 		}
 	}
@@ -16354,7 +16362,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_regen_aura"		"4.0"
+				"mana_regen_aura"		"20.0"
 			}
 			"03"
 			{
@@ -16364,13 +16372,18 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifesteal_aura"		"1"
+				"lifesteal_aura"		"3"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"aura_radius"			"7200"
 			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"proc_chance"			"5"
+			}			
 		}
 		"Modifiers"
 		{	
@@ -16411,11 +16424,19 @@
 				}
 				"OnAttackLanded"
 				{
-					"Lifesteal"
+					"Random"
 					{
-						"Target"				"ATTACKER"
-						"LifestealPercent"		"%lifesteal_aura"
-					}
+						"Chance"			"%proc_chance"
+						"PseudoRandom"		"DOTA_PSEUDO_RANDOM_ITEM_MKB"
+						"OnSuccess"
+						{
+							"Lifesteal"
+							{
+								"Target"				"ATTACKER"
+								"LifestealPercent"		"%lifesteal_aura"
+							}
+						}
+					}						
 //					"RunScript"
 //					{
 //						"ScriptFile"			"items/item_mjz_vladmir.lua"
@@ -16476,13 +16497,18 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifesteal_aura"		"1"
+				"lifesteal_aura"		"3"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"aura_radius"			"7200"
 			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"proc_chance"			"5"
+			}			
 		}
 		"Modifiers"
 		{	
@@ -16523,11 +16549,19 @@
 				}
 				"OnAttackLanded"
 				{
-					"Lifesteal"
+					"Random"
 					{
-						"Target"				"CASTER"
-						"LifestealPercent"		"%lifesteal_aura"
-					}
+						"Chance"			"%proc_chance"
+						"PseudoRandom"		"DOTA_PSEUDO_RANDOM_ITEM_MKB"
+						"OnSuccess"
+						{
+							"Lifesteal"
+							{
+								"Target"				"CASTER"
+								"LifestealPercent"		"%lifesteal_aura"
+							}
+						}
+					}					
 				}
 			}
 		}
@@ -21322,7 +21356,7 @@
 		"05"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"lifesteal"				"2"
+			"lifesteal"				"3"
 		}
 	}
 }
@@ -30898,7 +30932,7 @@
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"37"
 		"ItemShopTags"					"armor;boost_health"
 		"ItemQuality"					"epic"
 		"ItemAlertable"					"1"
@@ -33013,7 +33047,7 @@
 		"ItemResult"					"item_vampire_robe"
 		"ItemRequirements"
 		{
-			"01"						"item_vladmir;item_fire_stone_3"
+			"01"						"item_vampire_fangs;item_fire_stone_3"
 		}
 	}
 

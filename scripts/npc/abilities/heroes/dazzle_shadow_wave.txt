@@ -16,11 +16,11 @@
 
     "MaxLevel"                                            "6"
     "RequiredLevel"                                       "1"
-    "LevelsBetweenUpgrades"                               "2"
+    "LevelsBetweenUpgrades"                               "5"
 
     // Casting
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastRange"                                    "800"
+    "AbilityCastRange"                                    "1200"
     "AbilityCastPoint"                                    "0.3"
 
     // Time
@@ -58,7 +58,7 @@
       "05"
       {
         "var_type"                                        "FIELD_INTEGER"
-        "damage"                                          "180 220 460 600 900 2600" //OAA
+        "damage"                                          "380 1220 2960 4600 13800 26000" //OAA
         "LinkedSpecialBonus"                              "special_bonus_unique_dazzle_2"
       }
     }

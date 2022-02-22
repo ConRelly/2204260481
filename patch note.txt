@@ -1592,10 +1592,18 @@ QuickFix and update:
 
 
 
-
-* "Easy" Map will not allow you to enable HardMode anymore, any other mods will work(like -full(second round only) , -extra , -double etc). for hard just host the game on the normal map.
+* Changed the majority of late game lifesteals and spell lifesteal to a chance base. some will have higher chance then others.
+* "Easy" Map will not allow you to enable HardMode anymore, any other mods will work(like -full(second round only) , -extra , -double etc). for hard just host the other map that has no "easy" in name.
 * Magnus Ultimate does not teleport enemys above lvl 15 anymore(it will still dmg/stun them), reduced stun duration, units now first will be teleported to magnus before they take damage(to avoid xp loss from neutrals and other combos) and replaced his skewer with Wardrums Aura.
+* Buffed Kotol Q  and fixed the multicast swapping around his skill.
+* Shadow Realm int scalling and talent buffed.
+* OD Q buffed a little.
+* Insatiable Hunger now has Spell amp and a new SS effect.
+* Marci Unleash SS : Added Insatiable Hunger = doubles the chance of the SS effect.
+* Fixed random pool using old antimage shield.
 * Fixed Ultimate Bloodstone lossing stacks on death if all of them were from Reverse Polarity SS.
+
+
 
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
@@ -1626,6 +1634,7 @@ Broken Wings : from 160% to 220%
 Maple's Armor - Heavy armor buff from 50% dmg avoid chance to 85%
 LionDagonV2 - greater blast staff passive has 25% chance to trigger daggon instead of 17%
 Antimage Q = Acts as antimage lvl 20 talent (ignores base armor)
+Insatiable Hunger = doubles the chance of the SS effect.
 
 can youse this format for marci SS effect:
 if caster:HasModifier("modifier_super_scepter") then

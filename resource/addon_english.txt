@@ -2539,16 +2539,22 @@
 
 
 	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger"							"Insatiable Hunger"
-	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_Description"				"A violent lust for vital fluids increases Broodmother's attack damage and gives her a vampiric attack."
+	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_Description"				"A violent lust for vital fluids increases Broodmother's attack damage and gives her a %chance%%% chance of vampiric attack.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Has %chance%%% chance on attack to increase your bonus Base dmg by %bonus_atack% and your bonus spell amp by %bonus_amp%."
 	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_Lore"						"While most of her prey is wrapped in silken cocoons and saved for her young, the Broodmother herself has a taste for wandering heroes."
 	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_Note0"						"Fully stacks with other sources of lifesteal."
 	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_bonus_damage"				"BONUS DAMAGE:"
 	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_bonus_attack_speed"			"BONUS ATTACK SPEED:"
-	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_lifesteal_pct"				"%LIFESTEAL:"
+	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_lifesteal_pct"				"%PURE LIFESTEAL:"
+	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_spell_amp"					"%Spell Amp:"
 	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_duration"					"DURATION:"
 	"DOTA_Tooltip_modifier_mjz_broodmother_insatiable_hunger"							"Insatiable Hunger"
 	"DOTA_Tooltip_modifier_mjz_broodmother_insatiable_hunger_Description"				"Increased Damage, Attack Speed, and Lifesteam."
 	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_scepter_description"		"Spiders will get ability buff at the same time."
+
+	"DOTA_Tooltip_modifier_mjz_broodmother_insatiable_hunger_damage"                    "Insatiable Hunger Damage"
+	"DOTA_Tooltip_modifier_mjz_broodmother_insatiable_hunger_damage_Description"        "%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Base Attack Damage"
+	"DOTA_Tooltip_modifier_mjz_broodmother_insatiable_hunger_spellamp"                  "Insatiable Hunger Spell Amp"
+	"DOTA_Tooltip_modifier_mjz_broodmother_insatiable_hunger_spellamp_Description"      "%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Bonus Spell Amplification"
 
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings"							"Spawn Spiderlings"
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_Description"				"Broodmother injects her young into an enemy unit, The spiderlings will hatch.They have 130%% of brood total dmg as their base Attack(<font color='#0B775D'>At lvl 7 the spiders will get extra dmg from: (33%% of your Max Hp + Mana) + (50 x of your Spell Amp) + (150 x your total armor)</font>)<br>Spawn with 2 random abilities every time and are not affected by Pharaoh Crown."
@@ -7995,18 +8001,18 @@ Required Level: %required_level%
 		"DOTA_Tooltip_ability_item_mjz_skadi_5_Lore"					"Extremely rare artifact, guarded by the azure dragons."
 		//<<<<
 "DOTA_Tooltip_Ability_item_mjz_vladmir"					"Second Vladmir's Offering"
-"DOTA_Tooltip_ability_item_mjz_vladmir_Description"							"<h1>Passive: Vladmir's Aura</h1>Grants %lifesteal_aura%%% pure lifesteal, %armor_aura% bonus armor, and %mana_regen_aura% mana regeneration to nearby allies. <br><br>Radius: %aura_radius%"
+"DOTA_Tooltip_ability_item_mjz_vladmir_Description"							"<h1>Passive: Vladmir's Aura</h1>Grants %prock_chance%%% chance to %lifesteal_aura%%% pure lifesteal, %armor_aura% bonus armor, and %mana_regen_aura% mana regeneration to nearby allies. <br><br>Radius: %aura_radius%"
 "DOTA_Tooltip_ability_item_mjz_vladmir_Lore"				"An eerie mask that is haunted with the malice of a fallen vampire."
 "DOTA_Tooltip_ability_item_mjz_vladmir_bonus_all_stats"		"+$all"
 "DOTA_Tooltip_modifier_item_mjz_vladmir_aura"			"Vladmir's Aura"
-"DOTA_Tooltip_modifier_item_mjz_vladmir_aura_Description"	"Gaining 1%% pure lifesteal, as well as %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% mana regen, and %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% armor."
+"DOTA_Tooltip_modifier_item_mjz_vladmir_aura_Description"	"Gaining 5%% chance to 3%% pure lifesteal, as well as %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% mana regen, and %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% armor."
 
 "DOTA_Tooltip_Ability_item_mjz_vladmir_v2"					"Reverse Vladmir's Offering"
-"DOTA_Tooltip_ability_item_mjz_vladmir_v2_Description"							"<h1>Passive: Vladmir's Aura</h1>The one who equip the item heals based on others damage dealt. Grants %lifesteal_aura%%% pure lifesteal, %armor_aura% bonus armor, and %mana_regen_aura% mana regeneration to nearby allies. <br><br>Radius: %aura_radius%"
+"DOTA_Tooltip_ability_item_mjz_vladmir_v2_Description"							"<h1>Passive: Vladmir's Aura</h1>The one who equip the item heals based on others damage dealt. Grants %prock_chance%%% chance to %lifesteal_aura%%% pure lifesteal, %armor_aura% bonus armor, and %mana_regen_aura% mana regeneration to nearby allies. <br><br>Radius: %aura_radius%"
 "DOTA_Tooltip_ability_item_mjz_vladmir_v2_Lore"				"An eerie mask that is haunted with the malice of a fallen vampire."
 "DOTA_Tooltip_ability_item_mjz_vladmir_v2_bonus_all_stats"		"+$all"
 "DOTA_Tooltip_modifier_item_mjz_vladmir_v2_aura"			"Reverse Vladmir's Aura"
-"DOTA_Tooltip_modifier_item_mjz_vladmir_v2_aura_Description"	"Gaining 1%% pure lifesteal (before reductions) for the owner of the aura, as well as %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% mana regen, and %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% armor."
+"DOTA_Tooltip_modifier_item_mjz_vladmir_v2_aura_Description"	"Gaining 3%% pure lifesteal (before reductions) for the owner of the aura, as well as %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% mana regen, and %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% armor."
 
 "DOTA_Tooltip_ability_item_warriors_seal"					   "Warrior's Seal"
 "DOTA_Tooltip_ability_item_warriors_seal_Description"			"<h1>Passive: Favor The Bold </h1>Creates a regenerating shield, blocking %damage_reduction%%% of an incoming attack for each layer, losing a layer every attack. Generates a layer every %interval% seconds, up to %max_stacks% stacks.
@@ -8612,7 +8618,7 @@ Required Level: %required_level%
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne"						"<font color='#05D6EB'>Frostmourne</font>"
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Description"			"<h1>Active: Frost Storm</h1>Encases an enemy unit in ice, prohibiting movement and attack, while dealing damage over time.<br><br>Damage per Second: %frostbite_damage_per_second%<br>Hero Duration: %frostbite_duration_hero% sec.<br>Creep Duration: %frostbite_duration_creep% sec.
 	\n<h1>Passive: Cold Attack</h1>Attacks lower enemy attack speed by %debuff_attack_speed% and movement speed by %debuff_move_speed_pct%%%.<br><br>Duration: %debuff_duration% 
-	\n<h1>Passive: Pure Lifesteal</h1>Heals the attacker for %attack_lifesteal%%% of attack damage dealt Before any Damage reductions.
+	\n<h1>Passive: Pure Lifesteal</h1>Has %proc_chance%%% chance to Heal the attacker for %attack_lifesteal%%% of attack damage dealt Before any Damage reductions.
 	\n<h1><font color='#0597EB'>Passive: Frostbite</font></h1><font color='lightblue'>When item cooldown is rdy and your attack lands on a target, deals 7%% of the target current hp in physical dmg and puts the item on a 4s CD.</font>\n<h1><font color='#DE3163'>Super Scepter</font></h1><font color='#0597EB'>Frostbite</font> Now deals an aditional instance of Damage that Ignores Base Armor(attack dmg + %speed_mult_dmg% x movement speed + %healt_reg_mult_dmg% x Hp regen). <font color='#6CDB16'>SpeedTraining</font>: For every <font color='#0597EB'>Frostbite</font> trigger gain %bonus_base_agi% Base Agility, additionally if your MS is above 5k your bonus base agi will increase by %bonus_base_agi% and after that will increase by %bonus_base_agi% for every 10k MS that you have."
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Lore"							"Hail to the king, baby!"
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Note0"						   "Frostbite works only on Real Heroes(no illusions or bear etc.), Damage dealt by frostbite is affected by Spell Amplification"
@@ -10056,7 +10062,7 @@ Contains all random skills"
 
 	"DOTA_Tooltip_ability_marci_unleash_custom"						"Unleash"
 	"DOTA_Tooltip_ability_marci_unleash_custom_Description"			"Marci taps a hidden power, gaining Fury charges that allow her to deliver a rapid sequence of strikes. The last strike in every Fury combo creates a damaging pulse around the target that slows movement and attack speed for %pulse_debuff_duration%s. In between Fury combos, Marci is unable to attack for %time_between_flurries%s.\n\nMarci receives a basic dispel when Unleash is cast and gains %bonus_movespeed%%% movement speed.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Some Items and Abilites will get improved when ultimate is active.(press Alt)"
-	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Super Scepter improve list: CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>."
+	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Super Scepter improve list: CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger."
 	"DOTA_Tooltip_ability_marci_unleash_custom_Lore"					"Though some have sought to understand its origins, Marci rebuffs all attempts to divine the source of her power."
 	"DOTA_Tooltip_ability_marci_unleash_custom_duration"				"DURATION:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_charges_per_flurry"		"STRIKES PER FURY:"

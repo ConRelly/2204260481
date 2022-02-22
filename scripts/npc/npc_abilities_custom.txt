@@ -22460,9 +22460,29 @@
 			}
 			"04"
 			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"25 34 46 58 70 92 115"
+			}			
+			"05"
+			{
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"12 14 16 18 20 22 25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_atack"			"1500"
 			}			
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chance"				"10"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_amp"				"7"
+			}												
 		}
 		
 		"precache"
@@ -22483,7 +22503,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"6500"
+				"value"						"16500"
 			}
 		}
 	}
@@ -26327,6 +26347,7 @@
 		"BaseClass"						"ability_lua"	// "ability_datadriven"
 		"ScriptFile"					"abilities/hero_lina/mjz_lina_fiery_soul.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"LevelsBetweenUpgrades"         "10"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityTextureName"			"mjz_lina_fiery_soul"
 
@@ -26360,7 +26381,7 @@
 			"06"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"stack_duration"					"20"
+				"stack_duration"					"10"
 			}
 		}
 	}
@@ -26380,12 +26401,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value2"			"3"
+				"value2"			"60"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value3"			"50"
+				"value3"			"60"
 			}
 		}
 	}
@@ -26442,7 +26463,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"intmult_per_kill"			"0.3"
+				"intmult_per_kill"			"0.2"
 			}
 			"06"
 			{
@@ -39770,7 +39791,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"					"3.5"
+				"value"					"7.5"
 			}
 		}
 	}
