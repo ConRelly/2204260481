@@ -27945,7 +27945,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ms_bonus_attack"		"40 60 80 100 150"
+				"ms_bonus_attack"		"100 120 150 200 300"
 			}	
 		}
 

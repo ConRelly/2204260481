@@ -3108,7 +3108,7 @@
 	"ScriptFile"						"items/item_plain_ring.lua"
 	"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"				"plain_ring"
-	"AbilityCooldown"					"250.0"
+	"AbilityCooldown"					"300.0"
 	"ItemShopTags"						"regen_health;regen_mana;mana_pool;health_pool"
 	"ItemQuality"						"epic"
 	"ItemAliases"						"gr;gold ring"
@@ -19819,7 +19819,7 @@
 		"ItemRequiresCharges"			"0"
 		"AllowedInBackpack"				"1"
 		"IsTempestDoubleClonable"		"1"
-		"AbilityCooldown"				"60"
+		"AbilityCooldown"				"75"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"

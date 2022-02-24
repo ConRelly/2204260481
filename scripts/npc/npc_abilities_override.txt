@@ -3072,6 +3072,43 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 
+	"bloodseeker_blood_mist"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"902"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"		
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"FightRecapLevel"				"1"
+		"IsGrantedByScepter"			"1"
+		"HasScepterUpgrade"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"4.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"hp_cost_per_second"	"2"
+			"radius"				"450"
+			"movement_slow"			"25"
+		}
+	}
+
+
 	"bloodseeker_blood_bath"
 	{
 		"LevelsBetweenUpgrades"		   "4"
@@ -3922,66 +3959,82 @@
 	{
 		"AbilityCooldown"				"40 30 20"
 	}
+
+
 	"dazzle_bad_juju"
-  {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"ID"												  "7304" // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-	"AbilityBehavior"									 "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityType"										 "DOTA_ABILITY_TYPE_ULTIMATE"
-	"SpellImmunityType"								   "SPELL_IMMUNITY_ENEMIES_NO"
-	"SpellDispellableType"								"SPELL_DISPELLABLE_NO"
-	"FightRecapLevel"									 "2"
-
-	"MaxLevel"											"5"
-	"RequiredLevel"									   "6"
-	"LevelsBetweenUpgrades"							   "6"
-
-	"HasScepterUpgrade"								   "1"
-
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"									"1200"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
 	{
-	  "01"
-	  {
-		"var_type"										"FIELD_INTEGER"
-		"cooldown_reduction"							  "12 14 16 20 25"
-	  }
-	  "02"
-	  {
-		"var_type"										"FIELD_FLOAT"
-		"armor_reduction"								 "0.3 0.4 0.5 0.6 0.7" //OAA
-		"LinkedSpecialBonus"							  "special_bonus_unique_dazzle_4"
-	  }
-	  "03"
-	  {
-		"var_type"										"FIELD_FLOAT"
-		"duration"										"8.0"
-	  }
-	  "04"
-	  {
-		"var_type"										"FIELD_INTEGER"
-		"radius"										  "1700"
-	  }
-	  "05"
-	  {
-		"var_type"										"FIELD_INTEGER"
-		"scepter_radius"								  "1800"
-		"RequiresScepter"								 "1"
-	  }
-	  "06"
-	  {
-		"var_type"										"FIELD_INTEGER"
-		"scepter_count"								   "8"
-		"RequiresScepter"								 "1"
-	  }
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"7304"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		
+		"LinkedAbility"					"dazzle_good_juju"
+		"MaxLevel"                      "7"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Dazzle.Weave"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastPoint"				"0.2"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1600"		
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"100"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"armor_reduction"			
+			{
+				"value"			"1"
+				"LinkedSpecialBonus"	"special_bonus_unique_dazzle_4"
+			}
+			"duration"					"8 10 12 15 17 20 25"
+			"radius"					"1600"
+			"heal_damage"				"100 240 500 1100 3500 9500 17600"
+		}
 	}
-  }
+
+	"dazzle_good_juju"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"933"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"LinkedAbility"					"dazzle_bad_juju"
+		"HasScepterUpgrade"				"1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastRange"				"250"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"cooldown_reduction"		"1 1.5 2"
+				"item_cooldown_reduction"		
+				{
+					"value"		"35"
+					"RequiresScepter"	"1"
+				}
+				"scepter_mana_cost"			"250"
+				"scepter_cooldown"			"180"
+		}
+	}
+	
+
+
 	"dazzle_shallow_grave"
 	{
 		"AbilityCooldown"				"60 46 42 40"
@@ -14622,7 +14675,7 @@
 			"14"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"scepter_spawn_interval"			"3"
+				"scepter_spawn_interval"			"4"
 				"RequiresScepter"	"1"
 			}
 			"15"

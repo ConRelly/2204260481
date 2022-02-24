@@ -50,6 +50,7 @@ function Desolate (keys)
 			attacker = caster,
 			damage = damage,
 			damage_type = damage_type,
+			ability = ability,
 		}
 		 
 		ApplyDamage(damageTable)

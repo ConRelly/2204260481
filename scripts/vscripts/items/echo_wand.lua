@@ -241,6 +241,7 @@ if IsServer() then
 		dazzle_shallow_grave = true,
 		aghanim_blink2 = true,
 		item_imba_ultimate_scepter_synth2 = true,
+		dazzle_good_juju = true,
 		
 	}
 	local include_table = {
