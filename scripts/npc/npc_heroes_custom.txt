@@ -668,6 +668,8 @@
 		"Ability6"				"huskar_life_break"
 		"Ability10"				"special_bonus_hp_1750"
 		"Ability14"				"special_bonus_spell_amplify_100"
+		"Ability15"				"special_bonus_mp_400"
+		"Ability16"             "special_bonus_cdr_25"
 
 		"AttributeStrengthGain"			"13.2"
 		"AttributeAgilityGain"			"5.4"
@@ -740,7 +742,7 @@
 		"Ability5"				"blood_madness"
 		"Ability6"				"mjz_axe_culling_blade"
 		"Ability10"				"special_bonus_spell_lifesteal_15"
-		"Ability11"				"special_bonus_unique_axe_3"
+		"Ability11"				"special_bonus_hp_4000"
 		"Ability12"				"special_bonus_cdr_25"
 		"Ability13"				"special_bonus_armor_69"
 		"Ability14"				"special_bonus_magic_resistance_60"
@@ -1486,7 +1488,7 @@
 
 		"Ability1"				"mjz_death_prophet_carrion_swarm"
 		"Ability2"				"death_prophet_custom_moving_life"
-		"Ability10"				"special_bonus_hp_regen_50"
+		"Ability10"				"special_bonus_unique_death_prophet_3"
 		"Ability12"				"special_bonus_reincarnation_90"
 		"Ability14"				"special_bonus_hp_4000"
 		"Ability15"				"special_bonus_unique_mjz_death_prophet_carrion_swarm_int"
@@ -1573,6 +1575,7 @@
 		"Ability6"				"mjz_magnataur_reverse_polarity"
 		"Ability12"				"special_bonus_strength_220"
 		"Ability14"				"special_bonus_hp_3500"
+		"Ability13"             "special_bonus_mp_400"
 		"Ability15"				"special_bonus_unique_magnus"
 		"Ability17"				"special_bonus_spell_amplify_100"
 
@@ -2040,16 +2043,18 @@
 //		"Ability1"			"omniknight_purification_lua" //"mjz_omniknight_purification"
 		"Ability1"			"purification"
 		"Ability2"			"omniknight_repel_lua"
+		"Ability3"          "omniknight_hammer_of_purity"
+		"Ability4"			"omniknight_degen_aura"
 		"Ability6"			"guardian_angel"
 		"Ability10"			"special_bonus_hp_4500"
 //		"Ability12"			"special_bonus_strength_820"
 		"Ability12"			"special_bonus_omniknight_purifiception_radius"
 //		"Ability14"			"special_bonus_spell_amplify_125"
 		"Ability14"			"special_bonus_omniknight_purifiception_double"
-		"Ability15"			"special_bonus_exp_boost_30"
+		"Ability11"			"special_bonus_exp_boost_30"
 //		"Ability16"			"special_bonus_cdr_25"
 		"Ability16"			"special_bonus_omniknight_purifiception_heal"
-		"Ability17"			"special_bonus_omniknight_ga_cd"
+		"Ability13"			"special_bonus_omniknight_ga_cd"
 
 		"AttributeStrengthGain"		"8.1"
 	}
@@ -2092,7 +2097,7 @@
 		"Ability12"		"special_bonus_gold_income_120"
 		"Ability13"		"special_bonus_unique_mjz_techies_land_mines_int_damage"
 		"Ability15"		"special_bonus_unique_mjz_techies_suicide_02"
-		"Ability14"		"special_bonus_unique_techies_4"
+		"Ability14"		"special_bonus_cdr_25"
 		"Ability16"		"special_bonus_spell_amplify_125"
 		"Ability17"		"special_bonus_gold_income_300"
 
@@ -2436,5 +2441,54 @@
 		"VisionDaytimeRange"		"1"
 		"VisionNighttimeRange"		"1"
 	}
+
+	"npc_dota_hero_primal_beast"
+	{
+
+
+		"Ability1"				"primal_beast_onslaught"
+		"Ability2"				"primal_beast_trample"
+		"Ability3"				"primal_beast_uproar"
+		"Ability4"				"primal_beast_rock_throw"
+		"Ability5"				"primal_beast_onslaught_release"
+		"Ability6"				"primal_beast_pulverize"
+		"Ability10"				"special_bonus_magic_resistance_40"
+		"Ability11"				"special_bonus_mp_1000"
+		"Ability12"				"special_bonus_cdr_30"
+		"Ability13"				"special_bonus_unique_primal_beast_onslaught_damage"
+		"Ability14"				"special_bonus_unique_primal_beast_trample_attack_damage"
+		"Ability15"				"special_bonus_spell_block_18"
+		"Ability16"				"special_bonus_unique_primal_beast_pulverize_duration"
+		"Ability17"				"special_bonus_reincarnation_90"
+		"AbilityDraftAbilities"
+		{
+			"Ability1"		"primal_beast_onslaught"
+			"Ability2"		"primal_beast_trample"
+			"Ability3"		"primal_beast_uproar"
+			"Ability6"		"primal_beast_pulverize"
+		}		
+		"ArmorPhysical"				"5"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"36"
+		"AttackDamageMax"			"38"
+		"AttackRate"				"1.50000"
+		"AttackAnimationPoint"		"0.60"
+		"AttackAcquisitionRange"	"600"
+		"AttackRange"				"150"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"200"
+		}
+		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		"26"
+		"AttributeStrengthGain"		"34.300000"
+		"AttributeBaseIntelligence"	"16"
+		"AttributeIntelligenceGain"	"9.400000"
+		"AttributeBaseAgility"		"15"
+		"AttributeAgilityGain"		"11.000000"
+		"StatusHealthRegen"			"0"
+		"ShowcasePlayIdleExpression" "0"
+	}
+
 }
  

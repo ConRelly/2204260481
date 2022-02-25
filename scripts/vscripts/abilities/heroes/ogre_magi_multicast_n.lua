@@ -324,6 +324,8 @@ function IsExcludeAbility(ability)
 		"invoker_invoke",
 		"phantom_lancer_phantom_edge",
 		"dazzle_good_juju",
+		"primal_beast_onslaught",
+		"primal_beast_onslaught_release",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do
@@ -399,6 +401,8 @@ function IsExcludeAbility9(ability)
 		"ancient_apparition_ice_blast_release",
 		"zanto_gari",
 		"dazzle_good_juju",
+		"primal_beast_onslaught",
+		"primal_beast_onslaught_release",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

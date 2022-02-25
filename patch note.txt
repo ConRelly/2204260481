@@ -1592,23 +1592,32 @@ QuickFix and update:
 
 
 
-* Changed the majority of late game lifesteals and spell lifesteal to a chance base. some will have higher chance then others.
-* "Easy" Map will not allow you to enable HardMode anymore, any other mods will work(like -full(second round only) , -extra , -double etc). for hard just host the other map that has no "easy" in name.
-* Magnus Ultimate does not teleport enemys above lvl 15 anymore(it will still dmg/stun them), reduced stun duration, units now first will be teleported to magnus before they take damage(to avoid xp loss from neutrals and other combos) and replaced his skewer with Wardrums Aura.
+
+
+
+* Fixed New Patch stuff. Mostly the talents took me a ton of time(had to verify/modify/add lines to all vanilla talents)
+* NEW hero got some "small" buffs. (time to run around boss)
+* Fixed Jug Zanto error.
+* Changed the majority of late-game lifesteals and spell lifesteal to a chance base. some will have a higher chance than others.
+* Removed normal vladmir.  Added back Arcane blink.
+* "Easy" Map will not allow you to enable HardMode anymore, any other mods will work(like -full(second round only), -extra, -double, etc). for hard just host the other map that has no "easy" in the name.
+* Magnus Ultimate does not teleport enemies above lvl 15 anymore(it will still dmg/stun them), reduced stun duration, units now first will be teleported to Magnus before they take damage(to avoid xp loss from neutrals and other combos) and replaced his skewer with Wardrums Aura.
 * Buffed Kotol Q  and fixed the multicast swapping around his skill.
-* Shadow Realm int scalling and talent buffed.
+* Shadow Realm int scaling and talent buffed.
 * OD Q buffed a little.
-* Insatiable Hunger now has Spell amp and a new SS effect.
-* Marci Unleash SS : Added Insatiable Hunger = doubles the chance of the SS effect.
+* Insatiable Hunger now has a Spell amp and a new SS effect.
+* Marci Unleash SS: Added Insatiable Hunger = doubles the chance of the SS effect.
+* Many skills/talents buffs/changes, including ones from random pool. (to many changes to mention here)
 * Fixed random pool using old antimage shield.
-* Fixed Ultimate Bloodstone lossing stacks on death if all of them were from Reverse Polarity SS.
+* Fixed Ultimate Bloodstone losing stacks on death if all of them were from Reverse Polarity SS.
+* If any talent seems to not work report that on the discord bug section.
 
 
 
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes48 can be found on the new map version:
+*Update patch notes50 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 

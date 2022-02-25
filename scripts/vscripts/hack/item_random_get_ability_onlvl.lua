@@ -95,7 +95,7 @@ end
 function GetRandomAbilityName( hero )				 
 	local abilityList = {
 		"beastmaster_inner_beast",	  -- 兽王	野性之心
-		"skeleton_king_vampiric_aura",	  --骷髅王2
+		--"skeleton_king_vampiric_aura",	  --骷髅王2
 		"skeleton_king_mortal_strike",	  --骷髅王3
 		"spirit_breaker_greater_bash",			--发条2
 		--"drow_ranger_marksmanship",	 --大地之灵2

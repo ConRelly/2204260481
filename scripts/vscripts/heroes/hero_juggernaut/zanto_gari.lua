@@ -234,7 +234,7 @@ function modifier_zanto_gari_grace_time_shift:IsHidden() return true end
 function modifier_zanto_gari_grace_time_shift:IsPurgable() return false end
 function modifier_zanto_gari_grace_time_shift:RemoveOnDeath() return false end
 function modifier_zanto_gari_grace_time_shift:DeclareFunctions() return {MODIFIER_PROPERTY_OVERRIDE_ANIMATION} end
-function modifier_zanto_gari_grace_time_shift:GetOverrideAnimation() return ACT_DOTA_SPAWN_STATUE end
+function modifier_zanto_gari_grace_time_shift:GetOverrideAnimation() return ACT_DOTA_CAST_ABILITY_2 end
 function modifier_zanto_gari_grace_time_shift:OnCreated()
 	if IsServer() then
 		self:GetCaster():EmitSound("Zanto_Gari.Grace_Time")
@@ -242,12 +242,12 @@ function modifier_zanto_gari_grace_time_shift:OnCreated()
 		ParticleManager:SetParticleControl(pfx, 0, self:GetCaster():GetAbsOrigin())
 		ParticleManager:SetParticleControl(pfx, 1, self:GetCaster():GetAbsOrigin())
 		ParticleManager:ReleaseParticleIndex(pfx)
-		self:GetCaster():StartGesture(ACT_DOTA_SPAWN_STATUE)
+		self:GetCaster():StartGesture(ACT_DOTA_CAST_ABILITY_2)
 	end
 end
 function modifier_zanto_gari_grace_time_shift:OnDestroy()
 	if IsServer() then
-		self:GetCaster():FadeGesture(ACT_DOTA_SPAWN_STATUE)
+		self:GetCaster():FadeGesture(ACT_DOTA_CAST_ABILITY_2)
 	end
 end
 function modifier_zanto_gari_grace_time_shift:CheckState()

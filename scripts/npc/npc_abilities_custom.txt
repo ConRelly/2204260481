@@ -22896,7 +22896,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"lifesteal"					"85"
+				"lifesteal"					"25"
 			}
 			"06"
 			{
@@ -22917,7 +22917,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"22"
+				"value"						"20"
 			}
 		}
 	}
@@ -41381,7 +41381,7 @@
 				"shard_as"				"25"
 			}
 		}
-		"AbilityCastAnimation"			"ACT_DOTA_SPAWN_STATUE"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	}
 // Zanto Gari bonus DMG from Jugg DMG
 	"special_bonus_zanto_gari_dmg"
