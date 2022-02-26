@@ -77,7 +77,7 @@ print("MONSTER_CONFIG: " .. MONSTER_CONFIG)
 --	print("Load Test MONSTER_CONFIG: " .. MONSTER_CONFIG)
 --end
 if Cheats:IsEnabled() then 
-	MONSTER_CONFIG = "aoh2_config_siltbreaker_200809.txt"
+	MONSTER_CONFIG = "aoh2_config_siltbreaker_200809.txt" --"test_short_rounds.txt" --
 	print("CHeat mode")
 end	
 

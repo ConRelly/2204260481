@@ -50,7 +50,7 @@ end
 if IsServer() then
 	function modifier_axe_custom_counter_helix:OnIntervalThink()
 		if not self.hasTalent then
-			local talent = self.parent:FindAbilityByName("special_bonus_unique_axe_3")
+			local talent = self.parent:FindAbilityByName("special_bonus_unique_axe_3_custom")
 			if talent and talent:GetLevel() > 0 then
 				self.hasTalent = true
 				self:StartIntervalThink(-1)

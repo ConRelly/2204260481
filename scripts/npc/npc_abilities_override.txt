@@ -25,7 +25,7 @@
 #base "abilities/heroes/elder_titan_echo_stomp.txt"
 #base "abilities/heroes/elder_titan_echo_stomp_spirit.txt"
 #base "abilities/heroes/enchantress_natures_attendants.txt"
-#base "abilities/heroes/enigma_black_hole.txt"
+//#base "abilities/heroes/enigma_black_hole.txt"
 #base "abilities/heroes/faceless_void_time_walk.txt"
 #base "abilities/heroes/mirana_leap.txt"
 #base "abilities/heroes/mirana_starfall.txt"
@@ -3747,28 +3747,6 @@
 			}
 		}
 	}
-	"chaos_knight_chaos_strike"
-	{
-		"LevelsBetweenUpgrades"		 "5"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"crit_min"				"220 230 280 350"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"crit_max"				"475 625 1375 2625"
-			}	
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"lifesteal"					"33"
-			}	
-		}
-	}
 
 	//=================================================================================================================
 	// Chaos Knight: Chaos Strike
@@ -4132,14 +4110,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"cooldown_reduction"		"1 1.5 2"
+				"cooldown_reduction"		"0.5 0.75 1"
 				"item_cooldown_reduction"		
 				{
 					"value"		"35"
 					"RequiresScepter"	"1"
 				}
 				"scepter_mana_cost"			"250"
-				"scepter_cooldown"			"180"
+				"scepter_cooldown"			"250"
 		}
 	}
 	
@@ -5002,7 +4980,60 @@
 			}
 		}
 	}
-	
+	//=================================================================================================================
+	// Enigma: Black Hole
+	//=================================================================================================================
+	"enigma_black_hole"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5149"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"MaxLevel"                      "5"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
+
+		"HasShardUpgrade"			"1"
+		"HasScepterUpgrade"			"1"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"275"
+		"AbilityCastPoint"				"0.3"
+		"AbilityChannelTime"			"5.0"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"65"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"350"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"damage"			"500 1350 2900 6800 12850"
+				"radius"			"420"
+				"pull_speed"			"30"
+				"tick_rate"				"0.1"
+				"duration"				"5.0"
+				"vision_radius"			"800"
+				"pull_rotate_speed"		"1.0"
+				"animation_rate"		"0.2"
+				"scepter_pct_damage"	"1.6"
+				"scepter_radius"	"3200"
+				"scepter_drag_speed"	"275"
+				"scepter_pull_rotate_speed"	"0.1"
+		}
+	}	
+
+
 	"faceless_void_chronosphere"
 	{
 		"AbilityCooldown"				"60.0 50.0 30.0"
@@ -10181,6 +10212,68 @@
 		}
 	}
 
+	"slardar_amplify_damage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5117"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Slardar.Amplify_Damage"
+		"LevelsBetweenUpgrades"         "15"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700 800 900"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"25"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"6.0"	// Very valuable compared to cost.
+
+		
+		"AbilityValues"
+		{
+			"armor_reduction"		
+			{ 
+				"value"				"-15 -35 -60"
+				"special_bonus_unique_slardar_5"	"-35"
+			}
+			"duration"
+			{
+				"value"			"18"
+			}
+			"undispellable"
+			{
+				"value"			"0"
+				"special_bonus_unique_slardar_3"	"+1"
+			}
+			"puddle_radius"
+			{
+				"value"			"100"
+			}
+			"puddle_duration"
+			{
+				"value"			"15"
+			}
+		}
+	}
+
 	"slark_shadow_dance"
 	{
 		"AbilityCooldown"				"75 60 45"
@@ -10412,24 +10505,49 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Ability: God's Strength
+	//=================================================================================================================
 	"sven_gods_strength"
 	{
-		"AbilityCooldown"				"60"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5097"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Sven.GodsStrength"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+ 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"110"
+		"AbilityDuration"				"35.0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 150 200"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"gods_strength_damage"		"160 230 340"		
+				"gods_strength_damage"		"200 250 400"	
+				"LinkedSpecialBonus"		"special_bonus_unique_sven_2"	
 			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"gods_strength_bonus_str"		"20 30 40"		
-				"LinkedSpecialBonus"			"special_bonus_unique_sven_2"
-			}
-		}
+		}	
 	}
+
+
 	"sven_warcry"
 	{
 		// General
@@ -16900,6 +17018,53 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+
+	//=================================================================================================================
+	// Hoodwink: Bushwhack
+	//=================================================================================================================
+	"hoodwink_bushwhack"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"8158"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"10"		
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1800"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"trap_radius"		
+			{
+				"value"		"665"
+				"special_bonus_unique_hoodwink_bushwhack_radius"	"+435"
+			}
+			"debuff_duration"		"2.2"
+			"projectile_speed"	"1200"
+			"total_damage"		"890 9780 22470 44420 98500 479500 1825000"
+			"animation_rate"	"0.3"
+			"visual_height"		"50"
+		}
+	}
+
 
 	//=================================================================================================================
 	// Hoodwink: Sharpshooter

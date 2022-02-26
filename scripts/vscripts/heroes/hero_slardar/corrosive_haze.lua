@@ -63,7 +63,7 @@ function modifier_corrosive_haze:DeclareFunctions()
 	return {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_PROVIDES_FOW_POSITION}
 end
 function modifier_corrosive_haze:GetModifierPhysicalArmorBonus()
-	return self:GetStackCount() + talent_value(self:GetCaster(), "special_bonus_unique_slardar_5")
+	return self:GetStackCount() + talent_value(self:GetCaster(), "special_bonus_unique_slardar_corrosive_haze")
 end
 function modifier_corrosive_haze:GetModifierProvidesFOWVision()
 	return 1

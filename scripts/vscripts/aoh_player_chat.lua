@@ -58,6 +58,19 @@ function AOHGameMode:OnPlayerChat(keys)
 			Notifications:TopToAll({text="You Need to Play Normal Map to activate Hard Mode.", style={color="yellow"}, duration=15})
 		end	
 	end
+	if keys.text == "-testsfull" and (not self._endlessMode or not self._hardMode) and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+		if GetMapName() ~= "heroattack_on_easy" then
+			self._endlessMode = true
+			self._hardMode = true
+			_G._hardMode = true
+			Notifications:TopToAll({text="Full Game Enabled test (hard only) ", style={color="red"}, duration=5})
+			self._flPrepTimeBetweenRounds = 12
+			self:_ReadGameConfiguration()
+		else
+			Notifications:TopToAll({text="You Need to Play Normal Map to activate Hard Mode.", style={color="yellow"}, duration=15})
+		end	
+	end
+
 	if keys.text == "-extra" and not self._extra_mode and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		self._extra_mode = true
 		Notifications:TopToAll({text="Extra Mode Enabled, Bosses over lvl 14 will now get 2-6 random skills(Beta) ", style={color="blue"}, duration=9})		

@@ -144,7 +144,7 @@ end
 
 function modifier_aghanim_spell_swap:RestoreSpell()
 	if IsServer() then
-		if self.hDisabledAbility and self.hDummyAbility then
+		if self.hDisabledAbility and self.hDummyAbility and IsValidEntity(self.hDisabledAbility) and IsValidEntity(self.hDummyAbility) then
 			self.hDisabledAbility:SetActivated( true )
 			self.hDisabledAbility.bAghDisabled = false
 			self.hDisabledAbility:SetHidden( false )

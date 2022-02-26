@@ -178,7 +178,7 @@
 "npc_dota_hero_hoodwink"
 {
 	"Ability1"					"hoodwink_custom_acorn_shot"
-	"Ability2"					"hoodwink_custom_bushwhack"
+	//"Ability2"					"hoodwink_custom_bushwhack"
 	"Ability6"					"hw_sharpshooter"
 	"Ability7"					"hw_sharpshooter_release"
 	"Ability10"					"special_bonus_hp_2000"
@@ -1370,9 +1370,11 @@
 		"Ability2"				"mjz_slardar_slithereen_crush"
 		"Ability6"				"corrosive_haze"
 		"Ability12"				"special_bonus_hp_3250"
+		"Ability14"             "special_bonus_cdr_40"
+		"Ability15"             "special_bonus_unique_slardar_corrosive_haze"
 		"Ability16"				"special_bonus_unique_mjz_slardar_slithereen_crush_strength"
 
-		"AttributeStrengthGain"		"16.6"
+		"AttributeStrengthGain"		"18.6"
 		"AttributeAgilityGain"		"5.5"
 		"AttackRate"				"1.5"
 	}
@@ -1764,7 +1766,7 @@
 		"Ability3"				"mjz_necrolyte_heartstopper_aura"
 		"Ability6"				"mjz_necrolyte_reapers_scythe"
 		"Ability10"				"special_bonus_spell_lifesteal_15"
-		"Ability11"				"special_bonus_strength_180"
+		"Ability11"				"special_bonus_cdr_25"
 		"Ability15"				"special_bonus_intelligence_35"
 		"Ability16"				"special_bonus_unique_mjz_necrolyte_heartstopper_aura_intelligence"
 		"Ability17"				"special_bonus_reincarnation_90"
@@ -1856,7 +1858,7 @@
 		"Ability11"				"special_bonus_unique_mjz_pudge_rot_damage"
 		"Ability13"				"special_bonus_unique_mjz_pudge_rot_health"
 		"Ability14"				"special_bonus_unique_mjz_pudge_dismember_duration"
-		"Ability15"				"special_bonus_unique_axe_3"
+		"Ability15"				"special_bonus_unique_axe_3_custom"
 		"Ability16"				"special_bonus_unique_mjz_pudge_dismember_strength_damage"
 		"Ability17"				"special_bonus_unique_mjz_pudge_0302"
 
@@ -2405,7 +2407,7 @@
 		"Ability4"					""
 		"Ability5"					""
 		"Ability6"					""
-		"ArmorPhysical"				"2000"
+		"ArmorPhysical"				"100"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK" // Not melee, to prevent built-in block calcs
 		"AttackDamageMin"			"0"
 		"AttackDamageMax"			"0"

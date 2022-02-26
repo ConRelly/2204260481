@@ -42,8 +42,16 @@ function modifier_darkrider_heartbeat:DeclareFunctions()
     return funcs
 end
 
-function modifier_darkrider_heartbeat:GetModifierHPRegenAmplify_Percentage() return self:GetStackCount() * (-1) * (self:GetAbility():GetSpecialValueFor("health_regen") / 100) end
-function modifier_darkrider_heartbeat:GetModifierConstantManaRegen() return self:GetStackCount() * (-1) * (self:GetAbility():GetSpecialValueFor("mana_regen") / 100) end
+function modifier_darkrider_heartbeat:GetModifierHPRegenAmplify_Percentage()
+    if self:GetAbility() then
+        return self:GetStackCount() * (-1) * (self:GetAbility():GetSpecialValueFor("health_regen") / 100) 
+    end    
+end
+function modifier_darkrider_heartbeat:GetModifierConstantManaRegen()
+    if self:GetAbility() then 
+        return self:GetStackCount() * (-1) * (self:GetAbility():GetSpecialValueFor("mana_regen") / 100)
+    end      
+end
 function modifier_darkrider_heartbeat:IsHidden() return true end
 function modifier_darkrider_heartbeat:IsPurgable() return false end
 

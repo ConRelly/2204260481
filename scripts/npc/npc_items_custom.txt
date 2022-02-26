@@ -1337,7 +1337,7 @@
 }
 "item_recipe_burning_radiance"
 {
-	"BaseClass"					 "item_recipe_radiance"
+	"BaseClass"					 	"item_recipe_radiance"
 	"ItemCost"						"700"
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
@@ -14886,13 +14886,14 @@
 	{
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
-		"ItemCost"						""
+		"AbilityTextureName" 			"recipe"
+		"ItemCost"						"1600"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_radiance_2"
 		"ItemRequirements"
 		{
-			"01"						"item_radiance;item_blades_of_attack;item_recipe_radiance"
+			"01"						"item_radiance;item_blades_of_attack"
 		}
 	}
 	"item_mjz_radiance_2"
@@ -14946,13 +14947,14 @@
 	{
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
-		"ItemCost"						""
+		"AbilityTextureName" 			"recipe"
+		"ItemCost"						"1600"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_radiance_3"
 		"ItemRequirements"
 		{
-			"01"						"item_mjz_radiance_2;item_blades_of_attack;item_recipe_radiance"
+			"01"						"item_mjz_radiance_2;item_blades_of_attack"
 		}
 	}
 	"item_mjz_radiance_3"
@@ -15005,13 +15007,14 @@
 	{
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
-		"ItemCost"						""	
+		"AbilityTextureName" 			"recipe"
+		"ItemCost"						"1600"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_radiance_4"
 		"ItemRequirements"
 		{
-			"01"						"item_mjz_radiance_3;item_blades_of_attack;item_recipe_radiance"
+			"01"						"item_mjz_radiance_3;item_blades_of_attack"
 		}
 	}
 	"item_mjz_radiance_4"
@@ -15064,13 +15067,14 @@
 	{
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
-		"ItemCost"						""	
+		"AbilityTextureName" 			"recipe"
+		"ItemCost"						"1600"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_radiance_5"
 		"ItemRequirements"
 		{
-			"01"						"item_mjz_radiance_4;item_blades_of_attack;item_recipe_radiance"
+			"01"						"item_mjz_radiance_4;item_blades_of_attack"
 		}
 	}
 	"item_mjz_radiance_5"

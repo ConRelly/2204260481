@@ -533,6 +533,8 @@
 		}
 	}
 
+
+
 // Grimstroke: Dark Portrait (Scepter)
 	"grimstroke_dark_portrait"
 	{
@@ -11424,6 +11426,21 @@
 			}
 		}
 	}
+"special_bonus_unique_axe_3_custom"
+{
+	"BaseClass"				"special_bonus_undefined"
+	"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"value"				"1"
+		}
+	}
+}
+
 "axe_custom_last_cleave"
 {
 	"BaseClass"					"ability_datadriven"
@@ -30828,7 +30845,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"armor_reduction"		"-9 -15 -28 -44 -99"
-				"LinkedSpecialBonus"	"special_bonus_unique_slardar_5"
+				"LinkedSpecialBonus"	"special_bonus_unique_slardar_corrosive_haze"
 			}
 			"02"
 			{
@@ -30838,6 +30855,23 @@
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	}
+
+	"special_bonus_unique_slardar_corrosive_haze"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"-35"
+			}
+		}
+	}
+
 
 	//=================================================================================================================
 	// Slark: Essence Shift				能量转移
@@ -41829,7 +41863,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityCastRange"				"3000"
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"25"
+		"AbilityCooldown"				"9"
 		"AbilityManaCost"				"150"
 		"HasScepterUpgrade"				"1"
 		"HasShardUpgrade"				"1"
@@ -41910,7 +41944,7 @@
 			"15"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"agi_damage"				"2"
+				"agi_damage"				"5"
 			}			
 
 		}
@@ -41942,7 +41976,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"2"
+				"value"					"5"
 			}
 		}
 	}

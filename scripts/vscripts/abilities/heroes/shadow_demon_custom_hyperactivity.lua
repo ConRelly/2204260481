@@ -13,6 +13,7 @@ local exclude_items = {
     shadow_demon_disruption = true,
     item_resurection_pendant = true,
     doom_devour_lua = true,
+    dazzle_good_juju = true,
 }
 
 

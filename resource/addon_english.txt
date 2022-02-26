@@ -3808,6 +3808,8 @@ DISPEL TYPE: Strong Dispel"
 	"DOTA_Tooltip_modifier_corrosive_haze"					"Corrosive Haze"
 	"DOTA_Tooltip_modifier_corrosive_haze_Description"		"Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%.\nProvides True Sight to Slardar."
 
+	"DOTA_Tooltip_ability_special_bonus_unique_slardar_corrosive_haze"	"-{s:value} Corrosive Haze Armor"
+
 	"DOTA_Tooltip_ability_mjz_slardar_sprint"					"Guardian Sprint"
 	"DOTA_Tooltip_ability_mjz_slardar_sprint_Description"		"Slardar slithers ahead, moving significantly faster and increases attack speed."
 	"DOTA_Tooltip_ability_mjz_slardar_sprint_Lore"				"As Slardar has made the transition from the Deeps, it has been necessary to use his powerful tail for sprinting instead of swimming."
@@ -4583,6 +4585,7 @@ DISPEL TYPE: Strong Dispel"
 "DOTA_Tooltip_ability_custom_counter_helix_trigger_chance"							"%CHANCE TO HELIX:"
 "npc_boss_bloodseeker"					 "Bloodseeker (Boss)"
 
+"DOTA_Tooltip_ability_special_bonus_unique_axe_3_custom"	"Counter Helix now has same chance to triger when you attack a target"
 
 "DOTA_Tooltip_ability_custom_blood_bath"									"Blood Rite"
 "DOTA_Tooltip_ability_custom_blood_bath_Description"						"Bloodseeker baptizes an area in sacred blood. After %delay_plus_castpoint_tooltip% seconds the ritual completes, causing any enemies caught in the area to take damage and become silenced."
@@ -5635,6 +5638,7 @@ The extra targets will not receive other attack effects (such as critical strike
 "DOTA_Tooltip_ability_custom_black_hole_wisp_duration"					"DURATION:"
 
 "DOTA_Tooltip_ability_enigma_black_hole_duration"								"DURATION:"
+"DOTA_Tooltip_ability_enigma_black_hole_scepter_description"					"Black Hole deals additional damage equivalent to 1.6% of the unit's Max Health per second."
 "DOTA_Tooltip_ability_wisp_ice_shards"							"Ice Shards"
 "DOTA_Tooltip_ability_wisp_ice_shards_Description"				"Wisp compresses shards of ice into a ball of frozen energy that damages all enemies it comes in contact with. When the ball reaches its target destination the shards are released, creating a barrier that lasts for %shard_duration% seconds."
 "DOTA_Tooltip_ability_wisp_ice_shards_shard_width"				"RADIUS:"
@@ -10035,6 +10039,7 @@ Contains all random skills"
 	"DOTA_Tooltip_ability_dazzle_bad_juju_custom_Note0"                             "If total of other CDR is bigger then bad juju then that CDR will be used and bad juju ignored"
 	"DOTA_Tooltip_ability_dazzle_bad_juju_custom_shard_description" 					"Causes Dazzle to launch an attack at the three closest enemies within 1200 range each time he casts an ability."
 
+ 	"DOTA_Tooltip_ability_dazzle_good_juju_Description"								"Whenever Dazzle Casts a Spell, all Dazzle starting abilities cooldowns are reduced."
 
 // Antimage
 	"DOTA_Tooltip_ability_antimage_custom_counterspell"						"Counterspell"

@@ -2,7 +2,7 @@ resist80 = {
 	["npc_boss_shredder"] = true,
 }
 
-resist70 = {
+resist45 = {
 	["npc_dota_creature_snowball_tuskar_2"] = true,
 	["npc_boss_spectre"] = true,
 	["npc_boss_skeleton_king_angry"] = true,
@@ -13,7 +13,7 @@ resist70 = {
 	["npc_dota_boss_aghanim"] = true,
 }
 
-resist50 = {
+resist35 = {
 	["npc_boss_kobold_foreman2"] = true,
 	["npc_boss_spiritbreaker"] = true,
 	["npc_boss_demon_marauder"] = true,
@@ -71,10 +71,10 @@ function modifier_boss:OnCreated()
 	local UnitName = self:GetParent():GetUnitName()
 	if resist80[UnitName] then
 		self.status_resist = 80
-	elseif resist70[UnitName] then
-		self.status_resist = 70
-	elseif resist50[UnitName] then
-		self.status_resist = 50
+	elseif resist45[UnitName] then
+		self.status_resist = 45
+	elseif resist35[UnitName] then
+		self.status_resist = 35
 	elseif resist30[UnitName] then
 		self.status_resist = 30
 	elseif resist25[UnitName] then
