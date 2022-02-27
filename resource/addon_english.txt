@@ -9941,7 +9941,7 @@ Contains all random skills"
 
 // Hoodwink
 	"DOTA_Tooltip_ability_hoodwink_custom_acorn_shot"						"Acorn Shot"
-	"DOTA_Tooltip_ability_hoodwink_custom_acorn_shot_Description"			"Fires Hoodwink's attack with an acorn at the target unit.  The acorn bounces to nearby targets, slowing them and dealing a percentage of Hoodwink's attack with bonus damage.\nIf point targeted, a tree is created at the target position and the acorn will bounce to nearby targets.  The ability may be placed on auto-cast to force this behavior."
+	"DOTA_Tooltip_ability_hoodwink_custom_acorn_shot_Description"			"Fires Hoodwink's attack with an acorn at the target unit.  The acorn bounces to nearby targets, slowing them and dealing a percentage of Hoodwink's attack with bonus damage. \nIf point targeted, a tree is created at the target position and the acorn will bounce to nearby targets.  The ability may be placed on auto-cast to force this behavior."
 	"DOTA_Tooltip_ability_hoodwink_custom_acorn_shot_Lore"					"Though she'll make do with almost anything, Oak and Ironwood acorns make the most effective projectiles -- and the bulk of Hoodwink's stash."
 	"DOTA_Tooltip_ability_hoodwink_custom_acorn_shot_bonus_range"			"BONUS ATTACK RANGE:"
 	"DOTA_Tooltip_ability_hoodwink_custom_acorn_shot_bounce_count"			"BOUNCE COUNT:"
@@ -9953,6 +9953,8 @@ Contains all random skills"
 	"DOTA_Tooltip_ability_hoodwink_custom_acorn_shot_Note1"				"Bounces will seek units in the fog of war in a 525 radius, but not invisible units."
 	"DOTA_Tooltip_ability_hoodwink_custom_acorn_shot_Note2"				"The planted tree lasts for 20 seconds."
 	"DOTA_Tooltip_ability_hoodwink_custom_acorn_shot_Note3"				"Acorn Shot benefits from attack range bonuses."
+
+	"DOTA_Tooltip_ability_hoodwink_acorn_shot_Description"			"Fires Hoodwink's attack with an acorn at the target unit.  The acorn bounces to nearby targets, slowing them and dealing a percentage of Hoodwink's attack with bonus damage. <font color='#3BAB06'>Works only on Ranged heroes</font><\nIf point targeted, a tree is created at the target position and the acorn will bounce to nearby targets.  The ability may be placed on auto-cast to force this behavior."
 
 	"DOTA_Tooltip_ability_hoodwink_custom_bushwhack"						"Bushwhack"
 	"DOTA_Tooltip_ability_hoodwink_custom_bushwhack_Description"			"Tosses a net trap that stuns enemy heroes if they are near a tree in the area.  Affected enemies take damage and are pulled towards the tree nearest to them, and have their vision reduced to 0 for the duration of the stun."

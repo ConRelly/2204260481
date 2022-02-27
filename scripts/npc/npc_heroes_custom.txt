@@ -177,7 +177,7 @@
 }
 "npc_dota_hero_hoodwink"
 {
-	"Ability1"					"hoodwink_custom_acorn_shot"
+	"Ability1"					"hoodwink_acorn_shot"
 	//"Ability2"					"hoodwink_custom_bushwhack"
 	"Ability6"					"hw_sharpshooter"
 	"Ability7"					"hw_sharpshooter_release"
@@ -1475,6 +1475,7 @@
 		"Ability13"				"special_bonus_movement_speed_40"
 		"Ability14"				"special_bonus_unique_nyx"
 		"Ability15"				"special_bonus_reincarnation_90"
+		"Ability16"             "special_bonus_magic_resistance_40"
 		"Ability17"				"special_bonus_cdr_25"
 
 		"AttributeAgilityGain"			"6.2"
@@ -1614,6 +1615,7 @@
 		//"Ability3"				"lone_druid_spirit_link"
 		"Ability6"				"mjz_broodmother_insatiable_hunger"
 		"Ability10"				"special_bonus_cleave_20"
+		"Ability13"             "special_bonus_reincarnation_90"
 		"Ability14"				"special_bonus_unique_mjz_broodmother_spawn_spiderlings_damage"
 		"Ability15"				"special_bonus_hp_6000"
 		"Ability16"				"special_bonus_unique_mjz_broodmother_insatiable_hunger"

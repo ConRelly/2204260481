@@ -57,8 +57,12 @@ end
 modifier_vengefulspirit_command_aura_effect_lua = class({})
 function modifier_vengefulspirit_command_aura_effect_lua:IsHidden() if self:GetAbility() then return (self:GetAbility():GetLevel() < 1) end end
 function modifier_vengefulspirit_command_aura_effect_lua:IsDebuff()
-	if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then return true end
-	return false
+	if self:GetAbility() then
+		if IsValidEntity(self:GetCaster()) and IsValidEntity(self:GetParent()) then
+			if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then return true end
+		end	
+		return false
+	end	
 end
 function modifier_vengefulspirit_command_aura_effect_lua:OnCreated()
 	if not self:GetAbility() then self:Destroy() end

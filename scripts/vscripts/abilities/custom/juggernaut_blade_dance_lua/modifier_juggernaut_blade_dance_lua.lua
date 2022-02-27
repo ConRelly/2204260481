@@ -14,18 +14,22 @@ end
 -- Initializations
 function modifier_juggernaut_blade_dance_lua:OnCreated(kv)
     -- references
-    self.crit_chance = self:GetAbility():GetSpecialValueFor("blade_dance_crit_chance")
-    self.max_crit_chance = self:GetAbility():GetSpecialValueFor("max_crit_chance")
-    self.crit_mult = self:GetAbility():GetSpecialValueFor("blade_dance_crit_mult")
-    self.crit_chance_agi_multiplier = self:GetAbility():GetSpecialValueFor("crit_chance_agi_multiplier")
+    if self:GetAbility() then
+        self.crit_chance = self:GetAbility():GetSpecialValueFor("blade_dance_crit_chance")
+        self.max_crit_chance = self:GetAbility():GetSpecialValueFor("max_crit_chance")
+        self.crit_mult = self:GetAbility():GetSpecialValueFor("blade_dance_crit_mult")
+        self.crit_chance_agi_multiplier = self:GetAbility():GetSpecialValueFor("crit_chance_agi_multiplier")
+    end    
 end
 
 function modifier_juggernaut_blade_dance_lua:OnRefresh(kv)
     -- references
-    self.crit_chance = self:GetAbility():GetSpecialValueFor("blade_dance_crit_chance")
-    self.max_crit_chance = self:GetAbility():GetSpecialValueFor("max_crit_chance")
-    self.crit_mult = self:GetAbility():GetSpecialValueFor("blade_dance_crit_mult")
-    self.crit_chance_agi_multiplier = self:GetAbility():GetSpecialValueFor("crit_chance_agi_multiplier")
+    if self:GetAbility() then
+        self.crit_chance = self:GetAbility():GetSpecialValueFor("blade_dance_crit_chance")
+        self.max_crit_chance = self:GetAbility():GetSpecialValueFor("max_crit_chance")
+        self.crit_mult = self:GetAbility():GetSpecialValueFor("blade_dance_crit_mult")
+        self.crit_chance_agi_multiplier = self:GetAbility():GetSpecialValueFor("crit_chance_agi_multiplier")
+    end   
 end
 
 function modifier_juggernaut_blade_dance_lua:OnDestroy(kv)

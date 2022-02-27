@@ -98,15 +98,22 @@ function modifier_nyx_assassin_custom_vendetta_crit:OnAttackLanded(keys)
     end
 end
 function modifier_nyx_assassin_custom_vendetta_crit:OnCreated()
-    local ability = self:GetAbility()
+    if not IsServer() then return end
+    if self:GetAbility() then
+        local ability = self:GetAbility()
 
-    self.max_crit_stack = ability:GetSpecialValueFor("max_crit_stacks")
-    self.crit_increase = ability:GetSpecialValueFor("crit_increase")
-    self.interval = ability:GetSpecialValueFor("interval")
+        self.max_crit_stack = ability:GetSpecialValueFor("max_crit_stacks")
+        self.crit_increase = ability:GetSpecialValueFor("crit_increase")
+        self.interval = ability:GetSpecialValueFor("interval")
 
-    self:StartIntervalThink(self.interval)
+        self:StartIntervalThink(self.interval)
+    end    
 end
 function modifier_nyx_assassin_custom_vendetta_crit:OnIntervalThink()
+    if not IsServer() then return end
+    if not self:GetAbility() then
+        self:Destroy()
+    end    
     if self:GetStackCount() < self.max_crit_stack then
         self:IncrementStackCount()
     end

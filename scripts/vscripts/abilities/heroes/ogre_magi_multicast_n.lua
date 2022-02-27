@@ -55,7 +55,7 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 
 	local delay = self:GetAbility():GetSpecialValueFor("interval")
 	if used_ability:IsItem() then
-		delay = 0
+		delay = 0.1
 	end
 
 	if self:GetAbility():GetAbilityName() == "ogre_magi_multicast_n" then
@@ -186,8 +186,10 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 								end
 							end
 						end
-						self:Multicast_FX(count, casts)
-						used_ability:OnSpellStart()
+						if IsValidEntity(used_ability) then
+							self:Multicast_FX(count, casts)
+							used_ability:OnSpellStart()
+						end						
 					end)
 				end
 			else
@@ -199,8 +201,10 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 					else
 						caster:SetCursorTargetingNothing(true)
 					end
-					self:Multicast_FX(count, casts)
-					used_ability:OnSpellStart()
+					if IsValidEntity(used_ability) then
+						self:Multicast_FX(count, casts)
+						used_ability:OnSpellStart()
+					end	
 				end)
 			end
 		end

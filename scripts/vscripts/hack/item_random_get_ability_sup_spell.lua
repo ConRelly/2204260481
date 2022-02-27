@@ -243,7 +243,7 @@ function GetRandomAbilityName( hero )
 		"lich_chain_frost",
 		"weaver_the_swarm",
 		"hoodwink_scurry",
-		"hoodwink_custom_acorn_shot",
+		"hoodwink_acorn_shot",
 		"dark_willow_bedlam_lua",
 		"dark_willow_bedlam_lua",
 		"grimstroke_custom_soulstore",

@@ -997,6 +997,27 @@
 		}
 	}
 
+	"special_bonus_unique_nyx"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6130"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"650"
+				"ad_linked_abilities"			"nyx_assassin_spiked_carapace"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+
 	"special_bonus_unique_omniknight_1"
 	{
 		"AbilitySpecial"
@@ -5258,7 +5279,7 @@
 
 	"jakiro_dual_breath"
 	{
-		"LevelsBetweenUpgrades"		 "7"
+		"LevelsBetweenUpgrades"		 "10"
 		"MaxLevel"					  "7"
 		"AbilityCooldown"				"10.0"
 		"AbilityManaCost"				"170"
@@ -5294,7 +5315,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"burn_damage"			"190 440 2150 7400 14750 27450 54820"
+				"burn_damage"			"290 840 6150 13400 27750 67450 144820"
 				"LinkedSpecialBonus"	"special_bonus_unique_jakiro_2"
 			}
 			"07"
@@ -5333,9 +5354,32 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage"				"150 1880 3920 6800 9450 19370 29800 57850 117800 420500"
+				"LinkedSpecialBonus"	"special_bonus_unique_jakiro_8"
 			}
 		}
 	}
+
+	"special_bonus_unique_jakiro_8"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"899"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"	
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"4750"
+				"ad_linked_abilities"			"jakiro_liquid_fire"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+
 	"jakiro_liquid_ice"
 	{
 		// General
@@ -5397,48 +5441,118 @@
 		}		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}	
+
+	//=================================================================================================================
+	// Ability: Jakiro's Macropyre
+	//=================================================================================================================
 	"jakiro_macropyre"
 	{
-		
-		"MaxLevel"					  "8"
-		"AbilityCooldown"				"70"
-		"AbilityManaCost"				"290"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5300"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"					  	"8"
+		"LevelsBetweenUpgrades"         "9"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Jakiro.Macropyre.Cast"
+
+		"HasScepterUpgrade"   			"1"
+		"AbilityDraftUltShardAbility"		"jakiro_liquid_ice"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1400"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"65"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"350"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"150 510 960 1950 3250 7850 9350 14800"
+				"damage"					"850 1710 3560 9450 18500 36500 65200 158400"
+				"LinkedSpecialBonus"		"special_bonus_unique_jakiro_7"
 			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range"				"1400"					
+			}
+			
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"path_radius"				"869"
-			}			
+				"path_radius"				"760"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"10"
+			}	
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"burn_interval"				"0.5"
-			}			
+			}
 			"06"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"250 710 1560 2950 4650 9450 13500 26500"
-				"RequiresScepter"			"1"
+				"var_type"					"FIELD_FLOAT"
+				"linger_duration"			"15"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cast_range_scepter"		"2500"
+				"scepter_bonus_range"			"400"
 				"RequiresScepter"		"1"
 			}
-			"09"
+			"08"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"linger_duration"			"22"
-			}									
+				"scepter_bonus_duration"			"15"
+				"RequiresScepter"		"1"
+			}
+			
 		}	
 	}
+
+	"special_bonus_unique_jakiro_7"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"542"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"	
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"2640"
+				"ad_linked_abilities"			"jakiro_macropyre"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+
+
 	"juggernaut_healing_ward"
 	{
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -16886,17 +17000,46 @@
 	}
 	
 
+	//=================================================================================================================
+	// Gyrocopter: Flak Cannon
+	//=================================================================================================================
 	"gyrocopter_flak_cannon"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5363"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"LevelsBetweenUpgrades"         "5"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Gyrocopter.FlackCannon"
+		"HasScepterUpgrade"				"1"
+
+		"AbilityCastPoint"				"0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20"
-		"AbilityDuration"				"20"
 		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+
+		//Duration
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDuration"				"20"
+						
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"radius"						"1250"
+				"LinkedSpecialBonus"			"special_bonus_unique_gyrocopter_4"
 			}
 			"02"
 			{
@@ -16912,7 +17055,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"fire_rate"						"0.15"
+				"fire_rate"						"0.5 0.4 0.3 0.15"
 				"RequiresScepter"				"1"
 			}
 			"05"
@@ -16922,8 +17065,9 @@
 				"RequiresScepter"				"1"
 			}
 		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
-	
+
 	"leshrac_lightning_storm"
 	{
 		"AbilityDamage"					"100 160 220 280"
@@ -17063,6 +17207,79 @@
 			"animation_rate"	"0.3"
 			"visual_height"		"50"
 		}
+	}
+
+	//=================================================================================================================
+	// Hoodwink: Acorn Shot
+	//=================================================================================================================
+	"hoodwink_acorn_shot"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"8429"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"7"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16 14 12 10 9 8 7"
+		"AbilityCastRange"				"1575"
+		"AbilityCastPoint"				"0.2"
+		"AbilityManaCost"				"105"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{		
+			"01"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"bonus_range"			"225 300 325 350 375 400 450"
+			}
+			"02"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"acorn_shot_damage"		"125 900 2875 8450 18500 36800 58500"
+			}
+			"03"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"base_damage_pct"		"200 325 450 575 700 850"
+			}
+			"04"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"bounce_count"			"6 7 8 9 10 11 12"
+				"LinkedSpecialBonus"		"special_bonus_unique_hoodwink_sharpshooter_speed"
+			}
+			"05"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"bounce_range"			"1925"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"0.35"
+			}
+			"07"
+			{	
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"100"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bounce_delay"			"0.1"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 
 

@@ -421,67 +421,6 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	
-// Hoodwink: Acorn Shot
-	"hoodwink_custom_acorn_shot"
-	{
-		"BaseClass"						"hoodwink_acorn_shot"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityCooldown"				"16 14 12 10 9 8 7"
-		"MaxLevel"						"7"
-		"LevelsBetweenUpgrades"			"7"
-		"AbilityCastRange"				"1875"
-		"AbilityCastPoint"				"0.2"
-		"AbilityManaCost"				"101"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_range"			"225 300 325 350 375 400 450"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"acorn_shot_damage"		"125 900 2875 8450 18500 36800 58500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"base_damage_pct"		"575"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bounce_count"			"6 7 8 9 10 11 12"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bounce_range"			"1925"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"debuff_duration"		"0.25"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"100"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bounce_delay"			"0.1"
-			}
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
-	}
 
 // Hoodwink: Bushwhack
 	"hoodwink_custom_bushwhack"
@@ -13263,14 +13202,14 @@
 	"AbilityType"						"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityTextureName" 				"nyx_assassin_vendetta"
 	"AbilityCastPoint"					"0.0"
-	"AbilityCooldown"					"60.0 50.0 40.0"
+	"AbilityCooldown"					"40.0 30.0 20.0"
 	"AbilityManaCost"					"100 150 200"
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"crit_increase"				"100"
+			"crit_increase"				"200"
 		}
 		"02"
 		{
@@ -13290,7 +13229,7 @@
 		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"spell_amp"					"30 45 80"
+			"spell_amp"					"80 160 300"
 		}
 		"06"
 		{
