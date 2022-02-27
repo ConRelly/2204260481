@@ -20,7 +20,7 @@ function modifier_legion_commander_duel_lua:OnCreated()
 	if IsServer() then
 		local ability = self:GetAbility()
 		local parent = self:GetParent()
-		local modifier = self
+		local modifier = "modifier_legion_commander_duel_lua"
 		if parent:HasModifier(modifier) then
 			local time = GameRules:GetGameTime() / 60
 			if time > 1 then

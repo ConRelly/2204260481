@@ -16,10 +16,15 @@ function AOHGameMode:OnPlayerChat(keys)
 		Notifications:TopToAll({text="Almost Full Game Enabled", style={color="red"}, duration=5})
 		self._flPrepTimeBetweenRounds = 12
 	end
-	if keys.text == "-full" and not self._endlessMode and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
-		self._endlessMode = true
-		Notifications:TopToAll({text="Second part Enabled", style={color="red"}, duration=5})
-		self._flPrepTimeBetweenRounds = 12
+	if keys.text == "-full" and not self._endlessMode and not Cheats:IsEnabled() and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+		local steam_name = PlayerResource:GetPlayerName(0)
+		if keys.playerid == 0 then
+			self._endlessMode = true
+			Notifications:TopToAll({text="Second part Enabled", style={color="red"}, duration=5})
+			self._flPrepTimeBetweenRounds = 12
+		else
+			Notifications:TopToAll({text="Host( "..steam_name.." ) can type '-full' to enable Second part", style={color="red"}, duration=10})	
+		end	
 	end
 	if keys.text == "-all" and (not self._endlessMode or not self._hardMode or not self._doubleMode) and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		if GetMapName() ~= "heroattack_on_easy" then
@@ -46,16 +51,21 @@ function AOHGameMode:OnPlayerChat(keys)
 			Notifications:TopToAll({text="You Need to Play Normal Map to activate Hard Mode.", style={color="yellow"}, duration=15})
 		end	
 	end
-	if keys.text == "-fullgame" and (not self._endlessMode or not self._hardMode) and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
-		if GetMapName() ~= "heroattack_on_easy" then
-			self._endlessMode = true
-			self._hardMode = true
-			_G._hardMode = true
-			Notifications:TopToAll({text="Full Game Enabled (hard only) ", style={color="red"}, duration=5})
-			self._flPrepTimeBetweenRounds = 12
-			self:_ReadGameConfiguration()
+	if keys.text == "-fullgame" and (not self._endlessMode or not self._hardMode) and not Cheats:IsEnabled() and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+		local steam_name = PlayerResource:GetPlayerName(0)
+		if keys.playerid == 0 then
+			if GetMapName() ~= "heroattack_on_easy" then
+				self._endlessMode = true
+				self._hardMode = true
+				_G._hardMode = true
+				Notifications:TopToAll({text="Full Game Enabled (hard only) ", style={color="red"}, duration=5})
+				self._flPrepTimeBetweenRounds = 12
+				self:_ReadGameConfiguration()
+			else
+				Notifications:TopToAll({text="You Need to Play Normal Map to activate Hard Mode.", style={color="yellow"}, duration=15})
+			end
 		else
-			Notifications:TopToAll({text="You Need to Play Normal Map to activate Hard Mode.", style={color="yellow"}, duration=15})
+			Notifications:TopToAll({text="Host( "..steam_name.." ) can type '-fullgame' to enable Full Game(hard only)(part 2 and 3) ", style={color="red"}, duration=10})	
 		end	
 	end
 	if keys.text == "-testsfull" and (not self._endlessMode or not self._hardMode) and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then

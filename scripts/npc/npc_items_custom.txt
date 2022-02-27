@@ -19823,7 +19823,7 @@
 		"ItemRequiresCharges"			"0"
 		"AllowedInBackpack"				"1"
 		"IsTempestDoubleClonable"		"1"
-		"AbilityCooldown"				"75"
+		"AbilityCooldown"				"85"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"

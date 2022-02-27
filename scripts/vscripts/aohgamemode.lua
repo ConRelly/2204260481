@@ -83,6 +83,8 @@ end
 
 Precache = require "Precache"
 
+
+
 function AOHGameMode:InitGameMode()
 	self._nRoundNumber = 1
 	if 	_G.RoundNumber == nil then
@@ -258,9 +260,6 @@ function AOHGameMode:InitGameMode()
 	mHackGameMode:InitGameMode()
 	-- Init card points system
 	holdout_card_points:Init()
-
-
-
 
 
 

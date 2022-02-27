@@ -152,7 +152,7 @@ function HackGameMode:OnGameInProgress( )
 
         local tip = "<font color='green'>Tips:Gain points from quest and reques items,skills,heroes changes find more on discord https://discord.gg/y8Cx69w, commands before game starts(0:00): -full(second part enabled) -fullgame(hard and second part) -hard(has extra bosses and items) -extra(bosses above lvl 14 will have extra random skills from a pool of ~130 skills) -double(2x enemys) -all(fullgame hard double) , During game: -kill (in case of no tomb or can't buyback) -hide (hide all your passive skills that are max lvl and not on a key bind slot) -unhide(unhide all the hidden passives)  </font>"
         GameRules:SendCustomMessage(tip, 0, 0)
-        Notifications:BottomToAll({text="If you want to support or give a tip: Patreon.com/conrelly (automatically get a patreon role on discord that gives you acces to #patreon section(guessing game advanced hints and other tips)) or paypal.me/ConRelly .", style={color="yellow"}, duration=11})
+        Notifications:BottomToAll({text="If you want to support or give a tip: Patreon.com/conrelly (automatically get a patreon role on discord that gives you acces to #patreon section(guessing game advanced hints and other tips)).", style={color="yellow"}, duration=7})
         Timers:CreateTimer({
             endTime = 13, 
             callback = function()
