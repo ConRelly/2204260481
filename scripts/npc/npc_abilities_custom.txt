@@ -29978,7 +29978,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"attack_damage_pct"		"40 85 160 235 460 620 950"
+				"attack_damage_pct"		"40 85 160 235 360 520 750"
 			}
 		}
 	}
@@ -30066,7 +30066,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"str_damage_pct"		"200 400 700"
+				"str_damage_pct"		"300 600 900"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_sandking_epicenter_strength"
 			}
 			"05"
@@ -30117,7 +30117,7 @@
 			"14"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"epicenter_shard_str_dmg_inc"	"500"
+				"epicenter_shard_str_dmg_inc"	"700"
 			}
 		}
 
@@ -30231,7 +30231,7 @@
 		"AbilityUnitDamageType"		 "DAMAGE_TYPE_PURE"   
 		"SpellImmunityType"			 "SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "5"
+		"LevelsBetweenUpgrades"		 "10"
 		"AbilitySound"				  "Hero_Shredder.WhirlingDeath.Cast"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastRange"				"700"
@@ -30254,7 +30254,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"str_damage_pct"			"90 120 160 190 240 300 350"
+				"str_damage_pct"			"90 150 190 280 400 650"
 				"LinkedSpecialBonus"		"special_bonus_unique_mjz_shredder_whirling_death_strength"  //"special_bonus_unique_timbersaw"
 			}
 		}
@@ -30276,7 +30276,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"150"
+				"value"						"350"
 			}
 		}
 	}
@@ -30295,7 +30295,7 @@
 		"AbilitySound"					"Hero_Silencer.GlaivesOfWisdom"
 		"HasScepterUpgrade"				"1"
 		"AbilityTextureName"			"mjz_silencer_glaives_of_wisdom"	// mjz_silencer_glaives_of_wisdom_immortal
-
+		"LevelsBetweenUpgrades"         "5"
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"15"
 		"AbilityCastRange"				"3000"
@@ -30307,7 +30307,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"intellect_damage_pct"		"10 15 25 30"
+				"intellect_damage_pct"		"10 20 30 40"
 				"LinkedSpecialBonus"		"special_bonus_unique_silencer_3"
 			}
 			"02"
@@ -30409,7 +30409,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow_attack_speed"			"-40 -80 -100"
+				"slow_attack_speed"			"-80 -100 -200"
 			}
 			"03"
 			{
@@ -31022,7 +31022,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"1"
+				"value"				"2"
 			}
 		}
 	}

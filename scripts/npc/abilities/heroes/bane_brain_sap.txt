@@ -39,7 +39,7 @@
       "01"
       {
         "var_type"            "FIELD_INTEGER"
-        "brain_sap_damage"        "375 2950 19250 47400 138500 954000 1743000"
+        "brain_sap_damage"        "275 950 1925 4740 13850 95400 174300"
         "LinkedSpecialBonus"      "special_bonus_unique_bane_2"
       }
       "02"

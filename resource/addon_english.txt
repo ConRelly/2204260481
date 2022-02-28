@@ -3845,7 +3845,7 @@ DISPEL TYPE: Strong Dispel"
  Strength +%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%, Agility +%dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%, Intellect +%dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS% "
 	"DOTA_Tooltip_modifier_mjz_slark_essence_shift_fast_attack"					"Fast Attack"
 	"DOTA_Tooltip_modifier_mjz_slark_essence_shift_fast_attack_Description"	   	"Quickly attack the enemy %dMODIFIER_PROPERTY_TOOLTIP% times. "
-	"DOTA_Tooltip_ability_special_bonus_unique_mjz_slark_essence_shift_attack_count"	"+{s:value} extra stack per Death"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_slark_essence_shift_attack_count"	"+{s:value} extra stacks per Death"
 		
 	"DOTA_Tooltip_ability_mjz_sniper_assassinate"				"Assassinate"
 	"DOTA_Tooltip_ability_mjz_sniper_assassinate_Description"	"Sniper locks onto a target enemy unit and, after %total_cast_time_tooltip% seconds, fires a devastating shot that deals damage at long range. <font color='#70EA72'>When the shell strikes the target, it stuns it for %stun_duration%s and causes a scatter shot in a cone, dealing a portion of damage to targets behind the primary target.</font>\nUpgradable by Aghanim's Scepter."

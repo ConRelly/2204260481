@@ -193,7 +193,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"43850"
+				"value"				"8285"
 				"ad_linked_abilities"			"bane_brain_sap"
 			}
 		}
@@ -1223,7 +1223,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"15"
+				"value"				"20"
 				"ad_linked_abilities"			"silencer_glaives_of_wisdom"
 			}
 		}
@@ -4979,15 +4979,45 @@
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Enigma: Midnight Pulse
+	//=================================================================================================================
 	"enigma_midnight_pulse"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5148"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Enigma.Midnight_Pulse"
+		"LevelsBetweenUpgrades"         "5"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_MIDNIGHT_PULSE"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"46 40 35 30"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50 80 110 140"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"750"
+				"radius"					"650"
+				"LinkedSpecialBonus"	"special_bonus_unique_enigma_9"
 			}
 			"02"
 			{
@@ -4997,10 +5027,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"8"
+				"duration"					"7 8 9 10"
+				"LinkedSpecialBonus"	"special_bonus_unique_enigma_8"
 			}
 		}
 	}
+
 	//=================================================================================================================
 	// Enigma: Black Hole
 	//=================================================================================================================
@@ -5252,6 +5284,108 @@
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Huskar: Life Break
+	//=================================================================================================================
+	"huskar_life_break"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5274"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"		
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Huskar.Life_Break"
+
+		"HasScepterUpgrade"			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30 28 26"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0 0 0"		
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"850"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDuration"				"3 4 5"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"health_cost_percent"		"0.05"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"health_damage"				"0.09 0.10 0.11"
+				"LinkedSpecialBonus"		"special_bonus_unique_huskar"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"charge_speed"				"1200"
+			}
+			"04"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"tooltip_health_damage"				"10 11 12"
+				"LinkedSpecialBonus"		"special_bonus_unique_huskar"
+				"LinkedSpecialBonusField"		"value2"
+
+			}
+			"05"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"tooltip_health_cost_percent"		"5"
+				"CalculateSpellDamageTooltip"		"1"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movespeed"					"-60 -60 -60"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_durtion_tooltip"		"3 4 5"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"taunt_duration"		"3.0"
+				"RequiresScepter"		"1"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range_bonus"		"300"
+				"RequiresScepter"		"1"
+			}
+		}
+	}
+
 	"huskar_berserkers_blood"
 	{
 
@@ -8271,24 +8405,50 @@
 			}			
 		}
 	}
+
+	//=================================================================================================================
+	// Razor: Static Link
+	//=================================================================================================================
 	"razor_static_link"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5083"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Ability.static.start"
 		"LevelsBetweenUpgrades"		 "8"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1600"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25"
 		"MaxLevel"					  	"5"
-		"AbilityCastRange"				"1600"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"65"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"drain_length"			"4 5 6 7"
+				"drain_length"			"4 5 6 7 8"
+				"LinkedSpecialBonus"	"special_bonus_unique_razor_3"				
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"drain_duration"		"21.0 21.0 21.0 21.0"
+				"drain_duration"		"21.0"
 			}
 			"03"
 			{
@@ -8296,8 +8456,35 @@
 				"drain_rate"			"65 180 250 425 850"
 				"LinkedSpecialBonus"	"special_bonus_unique_razor"
 			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"drain_range_buffer"	"550"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"200"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"900"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_radius"			"800"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"vision_duration"		"3.34"
+			}
 		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
+
 	"razor_eye_of_the_storm"
 	{
 		// General
@@ -10084,7 +10271,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"intellect_damage_pct"	"25 50 75 100"
+				"intellect_damage_pct"	"25 35 45 60"
 				"LinkedSpecialBonus"	"special_bonus_unique_silencer_3"
 			}
 		}
@@ -10754,17 +10941,44 @@
 			}
 		}
 	}
+
+
+	//=================================================================================================================
+	// Terrorblade: Metamorphosis
+	//=================================================================================================================
 	"terrorblade_metamorphosis"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5621"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Hero_Terrorblade.Metamorphosis"
+        "HasScepterUpgrade"			"1"
+		"AbilityDraftScepterAbility"    "terrorblade_terror_wave"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0."
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"					  "7"
 		"LevelsBetweenUpgrades"		 "10"   
-		"AbilityCooldown"				"45.0"
+		"AbilityCooldown"				"65.0"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"20 22 24 26 28 30 35"
+				"duration"				"10 12 14 16 18 20 25"
+				"LinkedSpecialBonus"	"special_bonus_unique_terrorblade_3"
 			}
 			"02"
 			{
@@ -10776,13 +10990,35 @@
 				"var_type"				"FIELD_FLOAT"
 				"base_attack_time"		"0.9"
 			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_range"			"500"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_attack_range"		"650"
+			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"460 1290 2250 6100 12500 33500 67200"
 			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed_loss"				"0"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"metamorph_aura_tooltip"				"1200"
+			}
 		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+
 	"terrorblade_conjure_image"
 	{
 		"LevelsBetweenUpgrades"						"5"

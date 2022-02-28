@@ -65,7 +65,7 @@ function ability_class:OnEnemyDiedNearby( hVictim, hKiller, kv )
 
 			self.nKills = self.nKills + 1
 			if HasTalent(caster, extra_stack) then
-				self.nKills = self.nKills + 1
+				self.nKills = self.nKills + 2
 			end	
 			local hBuff = caster:FindModifierByName(modifier_stack_name)
 			if hBuff ~= nil then

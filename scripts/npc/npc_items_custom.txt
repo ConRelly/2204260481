@@ -19743,7 +19743,7 @@
 			"22"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_bonus_int"					"9" //harcoded in the level up event
+				"rapier_bonus_int"					"16" //harcoded in the level up event
 			}
 			"23"
 			{
