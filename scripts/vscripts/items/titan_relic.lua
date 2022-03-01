@@ -62,11 +62,13 @@ end
 function modifier_titan_relic:OnModifierAdded(keys)
 	local target = keys.unit
 	local buff = keys.added_buff
+	if buff:IsNull() then return end
 	if buff:GetCaster() ~= self:GetCaster() then return end
 	if self:GetParent():IsIllusion() then return end
 	if self:GetParent():HasModifier("modifier_arc_warden_tempest_double") then return end
 	if buff:GetName() == "modifier_kill" then return end
 	if buff.passed ~= nil then return end
+	if not buff:GetAbility() then return end
 	if self:GetAbility() and target and not self:IsNull() and buff:GetDuration() > 0 and buff:GetAbility():GetCaster() == self:GetCaster() then
 		if target:GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then
 			if buff:IsDebuff() then

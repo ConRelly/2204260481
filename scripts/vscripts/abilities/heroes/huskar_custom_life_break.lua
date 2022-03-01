@@ -73,7 +73,22 @@ if IsServer() then
 		self.interval = self.ability:GetSpecialValueFor("interval") 
 		self.multiplier = 1 + (self.ability:GetSpecialValueFor("multiplier") * 0.01)
 		self.animCounter = 0
-		self:SetStackCount(self.ability:GetSpecialValueFor("damage"))
+		local bonus_lvl = self.caster:GetLevel() * self.ability:GetSpecialValueFor("level_bonus_damage")
+		if self.caster:HasModifier("modifier_super_scepter") then
+			local modif_synth = "modifier_item_imba_ultimate_scepter_synth_stats"
+			if self.caster:HasModifier(modif_synth) then
+				local bonus_stacks = self.caster:FindModifierByName(modif_synth):GetStackCount()
+				if bonus_stacks > 0 then
+					if bonus_stacks > 17 then
+						bonus_stacks = 17
+					end	
+					print("bonus_stacks " ..bonus_stacks)
+					bonus_lvl = bonus_lvl * bonus_stacks
+					print("bonus_lvl " .. bonus_lvl)
+				end	
+			end	
+		end
+		self:SetStackCount(self.ability:GetSpecialValueFor("damage") + bonus_lvl)
 		self:StartIntervalThink(self.interval)
 		self.particle = ParticleManager:CreateParticle("particles/custom/huskar_custom_life_break_channel.vpcf", PATTACH_POINT, self.caster)
 		ParticleManager:SetParticleControlEnt(self.particle, 1, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
@@ -121,8 +136,29 @@ if IsServer() then
 				victim = unit,
 				ability = self.ability,
 				damage_type = self.ability:GetAbilityDamageType(),
-				damage = self:GetStackCount()
+				damage = math.floor(self:GetStackCount() / 4)
 			})
+				ApplyDamage({
+					attacker = self.parent,
+					victim = unit,
+					ability = self.ability,
+					damage_type = self.ability:GetAbilityDamageType(),
+					damage = math.floor(self:GetStackCount() / 4)
+				})
+				ApplyDamage({
+					attacker = self.parent,
+					victim = unit,
+					ability = self.ability,
+					damage_type = self.ability:GetAbilityDamageType(),
+					damage = math.floor(self:GetStackCount() / 4)
+				})
+				ApplyDamage({
+					attacker = self.parent,
+					victim = unit,
+					ability = self.ability,
+					damage_type = self.ability:GetAbilityDamageType(),
+					damage = math.floor(self:GetStackCount() / 4)
+				})										
 			end
 		end
 		StartSoundEvent( "Hero_Phoenix.SuperNova.Explode", explode_point)

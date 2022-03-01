@@ -10477,6 +10477,7 @@
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityCastPoint"				"0.0"
 	"MaxLevel"					  "4"
+	"LevelsBetweenUpgrades"       "12"
 	"AbilityChannelTime"			"10"
 	"AbilityDuration"				"10.0"
 	"AbilityCooldown"				"60 50 40 30"
@@ -10515,6 +10516,11 @@
 			"duration"			"10"
 			"LinkedSpecialBonus"		"special_bonus_unique_huskar"
 		}
+		"7"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"level_bonus_damage"			"10 25 35 50"
+		}		
 	}
 	"precache"
 	{
@@ -29978,7 +29984,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"attack_damage_pct"		"40 85 160 235 360 520 750"
+				"attack_damage_pct"		"40 85 160 235 460 620 830"
 			}
 		}
 	}
