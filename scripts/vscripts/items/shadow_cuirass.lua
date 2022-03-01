@@ -164,6 +164,7 @@ function modifier_shadow_cuirass:OnDestroy()
 		caster:RemoveModifierByName("modifier_seal_act")
 	end
 	if self.echo_modifier then
+		if self.echo_modifier:IsNull() then return end
 		self.echo_modifier:Destroy()
 	end
 end
@@ -248,6 +249,7 @@ function modifier_shadow_cuirass_echo:OnAttackStart(keys)
 			local mod = parent:FindModifierByName("modifier_shadow_cuirass_echo_haste")
 			mod:DecrementStackCount()
 			if mod:GetStackCount() < 1 then
+				if mod:IsNull() then return end
 				mod:Destroy()
 			end
 		end

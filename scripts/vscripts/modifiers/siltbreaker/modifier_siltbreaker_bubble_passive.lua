@@ -24,6 +24,7 @@ function modifier_siltbreaker_bubble_passive:OnCreated( kv )
 
 			EmitSoundOn( "Siltbreaker.Bubble.Drowning", self:GetParent() )
 		else
+			if self:IsNull() then return end
 			self:Destroy()
 			return
 		end

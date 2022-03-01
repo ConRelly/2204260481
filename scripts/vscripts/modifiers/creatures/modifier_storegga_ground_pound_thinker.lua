@@ -35,6 +35,7 @@ end
 function modifier_storegga_ground_pound_thinker:OnIntervalThink()
 	if IsServer() then
 		if self:GetCaster() == nil or self:GetCaster():IsNull() then
+			if self:IsNull() then return end
 			self:Destroy()
 			return
 		end

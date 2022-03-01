@@ -130,6 +130,7 @@ end
 function modifier_damage:OnAttackLanded(keys)
     local parent = self:GetParent()
     local ability = self:GetAbility()
+    if self:IsNull() then return end
     self:Destroy()
 end
 

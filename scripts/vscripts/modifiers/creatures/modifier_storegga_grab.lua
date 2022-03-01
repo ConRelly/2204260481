@@ -50,6 +50,7 @@ function modifier_storegga_grab:OnIntervalThink()
 			self.hTarget:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_storegga_grabbed_debuff", { hold_time = flHoldTime + 10.0  } )		
 			
 		end
+		if self:IsNull() then return end
 		self:Destroy()
 		return
 	end

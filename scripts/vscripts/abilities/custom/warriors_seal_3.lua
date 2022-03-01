@@ -106,7 +106,9 @@ function modifier_item_warriors_seal2:OnAttacked(keys)
 		local damageTaken = keys.damage
 		local new_hp = self.parent:GetHealth() - (damageTaken * self.damage_reduction * self:GetStackCount() * 0.01) 
 		if not self.parent:HasModifier("modifier_item_warriors_seal_buff2") then
-			self:Destroy()
+			if not self:IsNull() then
+				self:Destroy()
+			end	
 			return nil
 		end
 		if self:GetStackCount() > 0 then
@@ -135,7 +137,9 @@ end
 function modifier_item_warriors_seal2:OnIntervalThink()
 	local parent = self:GetParent()
 	if not parent:HasModifier("modifier_item_warriors_seal_buff2") then
-		self:Destroy()
+		if not self:IsNull() then
+			self:Destroy()
+		end	
 		return nil
 	end
 	if self:GetStackCount() < self.max_stacks then

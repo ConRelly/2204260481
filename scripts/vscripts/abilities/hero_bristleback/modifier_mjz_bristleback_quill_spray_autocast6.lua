@@ -97,6 +97,7 @@ function modifier_class:OnIntervalThink()
             return nil
         end
         if not IsValidEntity(parent) or not parent:IsAlive() then
+            if self:IsNull() then return end
             self:Destroy()
             return nil
         end        
@@ -107,6 +108,7 @@ function modifier_class:OnIntervalThink()
                 return nil
             end
             if not IsValidEntity(parent) or not parent:IsAlive() then
+                if self:IsNull() then return end
                 self:Destroy()
                 return nil
             end  
@@ -117,6 +119,7 @@ function modifier_class:OnIntervalThink()
                 return nil
             end
             if not IsValidEntity(parent) or not parent:IsAlive() then
+                if self:IsNull() then return end
                 self:Destroy()
                 return nil
             end                     
@@ -147,6 +150,7 @@ function modifier_class:OnIntervalThink()
                 if IsChanneling(parent) then return nil end		
                 if parent:IsSilenced() then return nil end
                 if parent:IsStunned() then return nil end
+                if self:IsNull() then return end
                 local radius_auto = nil
 
                 local status, success = xpcall(

@@ -49,6 +49,7 @@ if IsServer() then
             end
 
             self:StartIntervalThink(-1)
+            if self:IsNull() then return end
             self:Destroy()
         end
     end

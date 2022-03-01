@@ -1642,8 +1642,12 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 * Fix Terrorblade transform and now has 2 new talents.
 * Fix razor statick link.
 * Fix enigam midnight pulse and added 2 new talents.
+* Fix mars Bulwark.
+* Fix Huskar Lifebomb crash.
+* Fix Titan Relic crash.
 * Buffed silencer glaives scalling.
 * Slark Essence shift talent from 1 to +2 extra stacks and has 3 new talents. 
+* Void frostivus time lock small buff.
 * Ice rapier from 9 to 16 int base increase per level (was disabled by mistake so technically is from 0 to 16)
 
 

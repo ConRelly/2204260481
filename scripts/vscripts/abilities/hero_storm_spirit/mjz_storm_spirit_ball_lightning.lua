@@ -176,7 +176,9 @@ if IsServer() then
 		if parent:GetMana() > mana_per then
 			parent:SpendMana(mana_per, ability)
 		else
-			self:Destroy()
+			if not self:IsNull() then
+				self:Destroy()
+			end	
 			ability:ToggleAbility()
 		end
 

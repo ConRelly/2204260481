@@ -148,6 +148,7 @@ function modifier_cold_slashes_target:OnIntervalThink ()
         --    target:Kill (self:GetAbility (), caster)
         --end
         if  self.jumps <= 0 then
+            if self:IsNull() then return end
             self:Destroy ()
         end
         caster:SetAbsOrigin (target:GetAbsOrigin ())

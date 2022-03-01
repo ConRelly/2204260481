@@ -70,6 +70,7 @@ end
 function modifier_rubick_spell_steal_lua_animation:OnOrder( params )
     if IsServer() then
         if params.unit==self:GetParent() then
+            if self:IsNull() then return end
             self:Destroy()
         end
     end

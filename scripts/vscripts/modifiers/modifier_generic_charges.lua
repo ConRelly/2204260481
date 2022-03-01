@@ -62,6 +62,7 @@ function modifier_generic_charges:OnCreated()
 
 					return 1
 				else
+					if self:IsNull() then return end
 					self:Destroy()
 				end
 			end)

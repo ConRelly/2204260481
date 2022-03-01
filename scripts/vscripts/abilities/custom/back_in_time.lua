@@ -198,7 +198,7 @@ function modifier_class:IsHidden() return true end
 function modifier_class:IsPurgable() return false end
 function modifier_class:RemoveOnDeath() return false end
 function modifier_class:OnCreated()
-	if IsServer() then if not self:GetAbility() then self:Destroy() end end
+	if IsServer() then if not self:GetAbility() then if not self:IsNull() then self:Destroy() end end end
 end
 function modifier_class:IsAura() return true end
 function modifier_class:GetModifierAura() return "modifier_back_in_time_aura_effect" end

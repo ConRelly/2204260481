@@ -136,6 +136,7 @@ function modifier_luna_eclipse_lua:OnIntervalThink()
 	self.counter = self.counter + 1
 	if self.counter>=self.beams then
 		self:StartIntervalThink( -1 )
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end

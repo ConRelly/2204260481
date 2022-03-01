@@ -270,6 +270,7 @@ if IsServer() then
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
         if not IsValidEntity(ability) then return end
+        if self:IsNull() then return end
         self:Destroy()
 
         ability:FastAttack(target)

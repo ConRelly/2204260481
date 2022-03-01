@@ -47,6 +47,7 @@ if IsServer() then
 	function modifier_bonus_primary_controller:OnIntervalThink()
 		local parent = self.parent
 		if self:GetStackCount() <= 0 then
+			if self:IsNull() then return end
 			self:Destroy()
 		end
 		attribute = self.parent:GetPrimaryAttribute()

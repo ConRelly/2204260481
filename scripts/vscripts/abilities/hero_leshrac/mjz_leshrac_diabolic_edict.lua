@@ -71,6 +71,7 @@ if IsServer() then
         local parent = self:GetParent()
         
         if self.num_explosions <= 0 then
+            if self:IsNull() then return end
             self:Destroy()
             return 
         end

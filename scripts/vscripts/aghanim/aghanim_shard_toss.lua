@@ -586,6 +586,7 @@ function modifier_aghanim_shard_hide:OnCreated(kv)
         end
     end
     if self.handler == nil then
+        if self:IsNull() then return end
         self:Destroy()
         return 
     end

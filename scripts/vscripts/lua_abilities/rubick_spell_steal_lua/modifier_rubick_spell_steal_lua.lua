@@ -42,6 +42,7 @@ function modifier_rubick_spell_steal_lua:OnAbilityStart( params )
 			-- Destroy previous animation
 			local modifier = self:GetParent():FindModifierByNameAndCaster( "modifier_rubick_spell_steal_lua_animation", self:GetParent() )
 			if modifier then
+				if modifier:IsNull() then return end
 				modifier:Destroy()
 			end
 

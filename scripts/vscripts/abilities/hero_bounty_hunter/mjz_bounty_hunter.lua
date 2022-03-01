@@ -238,6 +238,7 @@ function modifier_jinada_crit:OnAttackLanded(keys)
 					Jinada(parent, target, ability, false)
 				end
 				ability:UseResources(false, false, true)
+				if self:IsNull() then return end
 				self:Destroy()
 			end
 		end

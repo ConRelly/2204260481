@@ -50,6 +50,7 @@ end
 function requiem:OnUnstolen()
 	-- remove modifier
 	if self.modifier then
+		if self.modifier:IsNull() then return end
 		self.modifier:Destroy()
 		self.modifier = nil
 	end

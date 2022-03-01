@@ -43,6 +43,7 @@ end
 function modifier_aghanim_spell_swap:OnDeath( params )
 	if IsServer() then
 		if params.unit == self.hCrystal then
+			if self:IsNull() then return end
 			self:Destroy()
 		end
 	end
@@ -91,7 +92,9 @@ function modifier_aghanim_spell_swap:DisableSpell()
 		local hAbilityToDisable = NormalAbilities[ nIndexToDisable ]
 
 		if nNextAghDummy == nil or hAbilityToDisable == nil then
-			self:Destroy()
+			if not self:IsNull() then
+				self:Destroy()
+			end	
 			print( "Cannot disable spell:" )
 			print( "Next agh dummy: " .. nNextAghDummy )
 			if hAbilityToDisable ~= nil then

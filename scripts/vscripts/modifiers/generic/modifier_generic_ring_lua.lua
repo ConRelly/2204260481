@@ -82,6 +82,7 @@ end
 function modifier_generic_ring_lua:OnIntervalThink()
 	local radius = self.start_radius + self.speed * self:GetElapsedTime()
 	if radius>self.end_radius then
+		if self:IsNull() then return end
 		self:Destroy()
 		return
 	end

@@ -21194,12 +21194,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance_pct"			"4 5 6 7 8 9 10 15"
+				"chance_pct"			"15 16 17 18 19 20 22 25"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"900 4800 12200 24180 42320 88400 144500 348500"
+				"bonus_damage"			"900 4800 12200 24180 42320 88400 244500 748500"
 				"LinkedSpecialBonus"	"special_bonus_unique_faceless_void_3"
 			}
 			"05"

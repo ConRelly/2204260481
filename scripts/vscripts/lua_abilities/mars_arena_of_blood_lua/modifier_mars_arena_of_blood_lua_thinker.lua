@@ -95,6 +95,7 @@ function modifier_mars_arena_of_blood_lua_thinker:OnIntervalThink()
 		return
 	end
 	if self.phase_duration then
+		if self:IsNull() then return end
 		self:Destroy()
 		return
 	end

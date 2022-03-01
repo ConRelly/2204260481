@@ -350,6 +350,7 @@ function modifier_mars_spear_of_mars_lua:OnCreated( kv )
 
 		-- try apply
 		if self:ApplyHorizontalMotionController() == false then
+			if self:IsNull() then return end
 			self:Destroy()
 		end
 	end
@@ -401,6 +402,7 @@ end
 function modifier_mars_spear_of_mars_lua:UpdateHorizontalMotion( me, dt )
 	-- check projectile data
 	if not self.ability.projectiles[self.projectile] then
+		if self:IsNull() then return end
 		self:Destroy()
 		return
 	end
@@ -416,6 +418,7 @@ end
 
 function modifier_mars_spear_of_mars_lua:OnHorizontalMotionInterrupted()
 	if IsServer() then
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end
@@ -448,6 +451,7 @@ function modifier_mars_spear_of_mars_lua_checker:OnTakeDamage(keys)
 	local parent = self:GetParent()	
 	if keys.inflictor and keys.unit then
 		if keys.unit == parent and keys.inflictor:GetAbilityName() == "mars_arena_of_blood" then
+			if self:IsNull() then return end
 			self:Destroy()
 		end
 	end

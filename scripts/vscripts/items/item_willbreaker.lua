@@ -26,6 +26,7 @@ if IsServer() then
     end
 	
 	function modifier_item_willbreaker:OnDestroy()
+		if self.modifier:IsNull() then return end
 		self.modifier:Destroy()
     end
 end

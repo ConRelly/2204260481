@@ -52,12 +52,14 @@ function modifier_generic_knockback_lua:OnCreated( kv )
 		if self.z~=0 then
 			self.both = self.both+1
 			if self:ApplyVerticalMotionController() == false then 
+				if self:IsNull() then return end
 				self:Destroy()
 			end
 		end
 		if self.distance~=0 then
 			self.both = self.both+1
 			if self:ApplyHorizontalMotionController() == false then 
+				if self:IsNull() then return end
 				self:Destroy()
 			end
 		end
@@ -81,6 +83,7 @@ function modifier_generic_knockback_lua:SyncTime( iDir, dt )
 	if self.both<2 then
 		self.elapsedTime = self.elapsedTime + dt
 		if self.elapsedTime > self.duration then
+			if self:IsNull() then return end
 			self:Destroy()
 		end
 		return
@@ -97,6 +100,7 @@ function modifier_generic_knockback_lua:SyncTime( iDir, dt )
 	
 	-- end motion
 	if self.elapsedTime > self.duration and self.motionTick[1]==self.motionTick[2] then
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end
@@ -114,6 +118,7 @@ end
 
 function modifier_generic_knockback_lua:OnHorizontalMotionInterrupted()
 	if IsServer() then
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end
@@ -131,6 +136,7 @@ end
 
 function modifier_generic_knockback_lua:OnVerticalMotionInterrupted()
 	if IsServer() then
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end

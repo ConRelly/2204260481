@@ -59,6 +59,7 @@ function modifier_zoom_charge_of_darkness:OnIntervalThink()
         self:GetCaster():SetOrigin(self:GetCaster():GetAbsOrigin() + (self.target:GetAbsOrigin() - self:GetCaster():GetAbsOrigin()):Normalized() * self.speed * FrameTime())
         self.traveled_distance = self.traveled_distance + self.speed * FrameTime()
     else
+        if self:IsNull() then return end
         self:Destroy()
     end
 end

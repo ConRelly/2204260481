@@ -110,6 +110,7 @@ if IsServer() then
             if modifier:GetStackCount() > 1 then
                 modifier:DecrementStackCount()
             else 
+                if modifier:IsNull() then return end
                 modifier:Destroy()
             end
         end

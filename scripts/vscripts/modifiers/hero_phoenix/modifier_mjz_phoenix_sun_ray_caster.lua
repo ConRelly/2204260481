@@ -42,6 +42,7 @@ function modifier_class:OnStateChanged(event)
 			or caster:IsHexed() or caster:IsFrozen() 
 			or caster:IsNightmared() or caster:IsOutOfGame() then
 			-- Interrupt the ability
+			if self:IsNull() then return end
 			self:Destroy()
 		end
 	end

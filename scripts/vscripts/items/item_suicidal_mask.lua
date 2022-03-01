@@ -77,6 +77,7 @@ if IsServer() then
 	function modifier_item_suicidal_mask_debuff:OnIntervalThink()
 		if not self.parent:IsOutOfGame() and not self.parent:HasModifier("modifier_dazzle_shallow_grave") then
 			if not self.parent:IsAlive()then
+				if self:IsNull() then return end
 				self:Destroy()
 			end
 			count_modifier = self.parent:FindModifierByName("modifier_item_suicidal_mask_count")

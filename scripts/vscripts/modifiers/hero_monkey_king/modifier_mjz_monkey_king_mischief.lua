@@ -39,12 +39,14 @@ if IsServer() then
 
     function modifier_class:OnAttackStart( keys )
         if keys.attacker == self:GetParent() then
+            if self:IsNull() then return end
             self:Destroy()
         end
     end
     
     function modifier_class:OnTakeDamage( keys )	
         if keys.unit == self:GetParent() or keys.attacker == self:GetParent() then
+            if self:IsNull() then return end
             self:Destroy()
         end
     end
@@ -52,6 +54,7 @@ if IsServer() then
     function modifier_class:OnAbilityFullyCast( keys )
         if keys.unit == self:GetParent() then
             if keys.ability:GetAbilityName() ~= MAIN_ABILITY_NAME then
+                if self:IsNull() then return end
                 self:Destroy() 
             end
         end

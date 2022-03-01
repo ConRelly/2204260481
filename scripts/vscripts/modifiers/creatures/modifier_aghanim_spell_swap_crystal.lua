@@ -62,6 +62,7 @@ function modifier_aghanim_spell_swap_crystal:OnCreated( kv )
 		self:StartIntervalThink( 0.25 )
 		
 		if self:ApplyHorizontalMotionController() == false or self:ApplyVerticalMotionController() == false then 
+			if self:IsNull() then return end
 			self:Destroy()
 			return
 		end
@@ -105,6 +106,7 @@ end
 
 function modifier_aghanim_spell_swap_crystal:OnHorizontalMotionInterrupted()
 	if IsServer() then
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end
@@ -124,6 +126,7 @@ end
 
 function modifier_aghanim_spell_swap_crystal:OnVerticalMotionInterrupted()
 	if IsServer() then
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end

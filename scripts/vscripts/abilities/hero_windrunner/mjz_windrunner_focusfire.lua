@@ -186,6 +186,7 @@ if IsServer() then
         local parent = self:GetParent()
 		local ability = self:GetAbility()
 		if not ability ~= nil and not IsValidEntity(ability) then
+			if self:IsNull() then return end
 			self:Destroy()
 			return
 		end

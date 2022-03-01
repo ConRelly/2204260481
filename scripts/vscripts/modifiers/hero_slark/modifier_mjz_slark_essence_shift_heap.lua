@@ -173,8 +173,9 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
-
-        self:Destroy()
+        if not self:IsNull() then
+            self:Destroy()
+        end            
 
         ability:FastAttack(target)
     end	

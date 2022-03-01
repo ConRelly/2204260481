@@ -120,7 +120,9 @@ end
 function modifier_roshan_inherit_buff_datadriven_crit_buff:OnAttackLanded(data)
 	if IsServer() then
 		if data.attacker == self:GetParent() then
-			self:Destroy()
+			if not self:IsNull() then
+				self:Destroy()
+			end	
 			data.target:AddNewModifier(data.attacker, self:GetAbility(), "modifier_stunned", {Duration = self:GetAbility():GetSpecialValueFor("stun_duration")})
 			EmitSoundOn("DOTA_Item.MKB.Minibash",data.target)
 		end

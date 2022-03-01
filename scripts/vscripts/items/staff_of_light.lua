@@ -349,10 +349,10 @@ function modifier_spirit_guardian:GetModifierBonusStats_Intellect()
 	if self:GetAbility() then if self:GetParent():GetPrimaryAttribute() == 2 then
 	return self.primary_attribute else return self.secondary_stats end end
 end
-function modifier_spirit_guardian:GetModifierConstantManaRegen() return self:GetAbility():GetSpecialValueFor("mana_regen") end
-function modifier_spirit_guardian:GetModifierHealthBonus() return self:GetAbility():GetSpecialValueFor("hp") end
-function modifier_spirit_guardian:GetModifierAttackRangeBonus() return self:GetAbility():GetSpecialValueFor("bonus_attack_range") end
-function modifier_spirit_guardian:GetModifierFixedAttackRate() return self:GetAbility():GetSpecialValueFor("fixed_attack_rate") end
+function modifier_spirit_guardian:GetModifierConstantManaRegen() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana_regen") end end
+function modifier_spirit_guardian:GetModifierHealthBonus() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp") end end
+function modifier_spirit_guardian:GetModifierAttackRangeBonus() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_attack_range") end end
+function modifier_spirit_guardian:GetModifierFixedAttackRate() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("fixed_attack_rate") end end
 
 function modifier_spirit_guardian:OnIntervalThink()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end

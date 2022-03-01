@@ -103,7 +103,9 @@ function modifier_generic_leashed_lua:GetModifierMoveSpeed_Limit( params )
 
 	-- if outside of leash, destroy
 	if wall_distance<(-self.half_width) then
-		self:Destroy()
+		if not self:IsNull() then
+			self:Destroy()
+		end	
 		return 0
 	end
 

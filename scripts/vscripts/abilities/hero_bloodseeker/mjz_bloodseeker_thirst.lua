@@ -65,7 +65,9 @@ function modifier_mjz_bloodseeker_thirst_buff:OnIntervalThink()
 		local stacktimer = self.stack_table[1]
 		if GameRules:GetGameTime() - stacktimer >= power_buff then
 			if self:GetStackCount() == 1 then
-				self:Destroy()
+				if not self:IsNull() then
+					self:Destroy()
+				end	
 				break
 			else
 				table.remove(self.stack_table, 1)

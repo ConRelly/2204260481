@@ -135,6 +135,7 @@ hw_sharpshooter_release = class({})
 function hw_sharpshooter_release:OnSpellStart()
 	local mod = self:GetCaster():FindModifierByName("modifier_hw_sharpshooter")
 	if not mod then return end
+	if mod:IsNull() then return end
 	mod:Destroy()
 end
 

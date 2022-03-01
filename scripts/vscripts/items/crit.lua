@@ -145,6 +145,7 @@ function item_wildthorn:OnSpellStart()
 		target:EmitSound("DOTA_Item.Bloodthorn.Activate")
 
 		if Wildthorn ~= nil then
+			if Wildthorn:IsNull() then return end
 			Wildthorn:Destroy()
 		end
 

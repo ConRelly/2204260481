@@ -36,6 +36,7 @@ function modifier_custom_blizzard_orb_behavior:OnCreated()
 	self.parent = self:GetParent()
 	local parent = self:GetParent()
 	if parent == nil or parent.IsAlive == nil or not (parent and IsValidEntity(parent) and parent:IsAlive()) then
+		if self:IsNull() then return end
 		self:Destroy()
 		return false
 	end

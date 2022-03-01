@@ -31,6 +31,7 @@ function modifier_temple_guardian_hammer_throw:OnCreated( kv )
 
 		self.hHammer = CreateUnitByName( "npc_dota_beastmaster_axe", self:GetParent():GetOrigin(), false, nil, nil, self:GetParent():GetTeamNumber() )
 		if self.hHammer == nil then
+			if self:IsNull() then return end
 			self:Destroy()
 			return		
 		end
@@ -102,7 +103,8 @@ function modifier_temple_guardian_hammer_throw:OnIntervalThink()
 			self.bReturning = true
 		end
 
-		if t >= 0.95 then	
+		if t >= 0.95 then
+			if self:IsNull() then return end	
 			self:Destroy()
 		end
 	end

@@ -70,7 +70,7 @@ function modifier_generic_invisible_lua:OnAbilityExecuted( params )
 	if IsServer() then
 		if not self.ability_reveal then return end
 		if params.unit~=self:GetParent() then return end
-
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end
@@ -79,7 +79,7 @@ function modifier_generic_invisible_lua:OnAttack( params )
 	if IsServer() then
 		if not self.attack_reveal then return end
 		if params.attacker~=self:GetParent() then return end
-
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end

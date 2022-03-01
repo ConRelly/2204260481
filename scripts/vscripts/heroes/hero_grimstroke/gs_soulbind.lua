@@ -83,7 +83,9 @@ end
 function modifier_gs_soulbind:OnDestroy(kv)
 	if IsServer() then
 		self:PlayEffects2(false)
-		self:Destroy()
+		if not self:IsNull() then
+			self:Destroy()
+		end	
 		self.primary = true
 		self.pair = nil
 	end
@@ -128,7 +130,9 @@ function modifier_gs_soulbind:OnIntervalThink()
 	elseif self.pair then
 		if self.pair:IsNull() then
 			self:PlayEffects2(false)
-			self:Destroy()
+			if not self:IsNull() then
+				self:Destroy()
+			end	
 			self.pair = nil
 		else
 			self:Bind()
@@ -165,7 +169,9 @@ function modifier_gs_soulbind:Bind()
 	if distanceToPair < 1000 then
 	else
 		if self.primary then
-			self.pair:Destroy()
+			if not self.pair:IsNull() then
+				self.pair:Destroy()
+			end	
 			self.pair = nil
 			self:PlayEffects2( false )
 		end

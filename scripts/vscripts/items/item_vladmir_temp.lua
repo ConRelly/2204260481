@@ -30,7 +30,9 @@ if IsServer() then
 		Timers:CreateTimer(
             0.9,
             function()
-				self:GetAbility():Destroy()
+				if not self:IsNull() and not self:GetAbility():IsNull() then
+					self:GetAbility():Destroy()
+				end	
 				
 				if parent:GetNumItemsInInventory() < 9 then
 					local item = parent:AddItemByName("item_vladmir's_soul")
@@ -38,6 +40,7 @@ if IsServer() then
 					local item = CreateItem("item_vladmir's_soul", parent, parent)
 					CreateItemOnPositionSync(parent:GetAbsOrigin(), item)
 				end
+				if self:IsNull() then return end
 				self:Destroy()
 			end
 		)

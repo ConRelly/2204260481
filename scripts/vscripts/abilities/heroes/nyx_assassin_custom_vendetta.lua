@@ -64,7 +64,8 @@ end
 
 function modifier_nyx_assassin_custom_vendetta_invis:OnAttackLanded(keys)
     local attacker = keys.attacker
-    if attacker == self:GetParent() then 
+    if attacker == self:GetParent() then
+        if self:IsNull() then return end 
         self:Destroy() 
     end
 end
@@ -112,6 +113,7 @@ end
 function modifier_nyx_assassin_custom_vendetta_crit:OnIntervalThink()
     if not IsServer() then return end
     if not self:GetAbility() then
+        if self:IsNull() then return end
         self:Destroy()
     end    
     if self:GetStackCount() < self.max_crit_stack then

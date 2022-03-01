@@ -15197,23 +15197,79 @@
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Ability: Mars Bulwark
+	//=================================================================================================================
 	"mars_bulwark"
 	{
-		"LevelsBetweenUpgrades"				   "9"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"						"6582"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+        "HasScepterUpgrade"			"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"physical_damage_reduction"			"25 30 40 60"
+				"var_type"						"FIELD_INTEGER"
+				"physical_damage_reduction"		"25 30 40 60"
+				"LinkedSpecialBonus"		"special_bonus_unique_mars_bulwark_damage_reduction"
+
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"forward_angle"					"140"
 			}
 			"03"
 			{
-				"var_type"							"FIELD_INTEGER"
+				"var_type"						"FIELD_INTEGER"
 				"physical_damage_reduction_side"	"15 20 35 50"
+				"LinkedSpecialBonus"		"special_bonus_unique_mars_bulwark_damage_reduction"
+				"LinkedSpecialBonusField"		"value2"
 			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"side_angle"					"240"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"redirect_chance"				"70"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"redirect_range"				"800"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"redirect_speed_penatly"				"20"
+				"LinkedSpecialBonus"		"special_bonus_unique_mars_bulwark_speed"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
+			}
+
+			// Scepter here
+            "08"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "soldier_count"                  "5"
+            }
+            "09"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "soldier_offset"                  "200"
+            }
 		}
 	}
+
+
 	"mars_gods_rebuke"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -16863,6 +16919,11 @@
 				"var_type"					"FIELD_INTEGER"
 				"radius"					"2100"
 			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"1000.0"
+			}			
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
@@ -20587,16 +20648,42 @@
 		"ItemCost"						"200"	
 	}
 
-// Boots of Travel 2
+
+
+	//=================================================================================================================
+	// Travel Boots 2
+	//=================================================================================================================
 	"item_travel_boots_2"
 	{
-		"AbilitySpecial"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"220"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4500"
+		"ItemShopTags"					"teleport;move_speed"
+		"ItemQuality"					"common"
+		"ItemAliases"					"bot;boots of travel;tp"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel"				"2"
+		"ItemBaseLevel"					"2"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"	"180"
-			}
+			"bonus_movement_speed"	"280"
+			"maximum_distance"		"3800"
+			"vision_radius"			"200"
+			"tp_cooldown"			"30"
+			"tp_channel_time"		"0.1"
 		}
 	}
 

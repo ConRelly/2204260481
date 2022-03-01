@@ -163,6 +163,7 @@ if IsServer() then
 		local sound_name = "Hero_Zuus.GodsWrath.Target"
 
 		if self.count < 1  then
+			if self:IsNull() then return end
 			self:Destroy()
 		else
 			self.count = self.count - 1

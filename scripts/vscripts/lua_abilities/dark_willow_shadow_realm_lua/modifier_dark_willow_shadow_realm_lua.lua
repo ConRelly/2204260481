@@ -135,6 +135,7 @@ function modifier_dark_willow_shadow_realm_lua:OnAttack(params)
    -- EmitSoundOn(sound_cast, self:GetParent())
     -- destroy if doesn't have scepter
     if not self.scepter then
+        if self:IsNull() then return end
         self:Destroy()
     end
 end

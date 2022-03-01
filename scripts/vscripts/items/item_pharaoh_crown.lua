@@ -80,6 +80,7 @@ function modifier_pharaoh_crown_buff:OnCreated()
 end
 function modifier_pharaoh_crown_buff:OnIntervalThink()
 	if self.parent:IsNull() or self.caster:IsNull() then
+		if self:IsNull() then return end
 		self:Destroy()
 		return
 	end	

@@ -102,6 +102,7 @@ function modifier_cold_fall_thinker:OnIntervalThink()
 		self:StartIntervalThink( self.interval )
 		self:Burn()
 	else
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end

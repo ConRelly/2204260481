@@ -33,6 +33,7 @@ end
 
 function huskar_custom_life_break:OnChannelFinish( bInterrupted )
 	if self.modifier then
+		if self.modifier:IsNull() then return end
 		self.modifier:Destroy()
 		self.modifier = nil
 	end

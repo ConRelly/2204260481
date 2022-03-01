@@ -101,6 +101,7 @@ function modifier_pa_phantom_evasion:OnOrder(params)
 	end
 	
 	self:GetParent():StartGesture(ACT_DOTA_OVERRIDE_ABILITY_2)
+	if self:IsNull() then return end
 	self:Destroy()
 	return
 end

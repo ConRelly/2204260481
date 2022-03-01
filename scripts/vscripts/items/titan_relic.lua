@@ -12,7 +12,7 @@ function modifier_titan_relic:RemoveOnDeath() return false end
 function modifier_titan_relic:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_titan_relic:OnCreated()
 	if IsServer() then if not self:GetAbility() or self:GetAbility():IsNull() then self:Destroy() return end
-		self:StartIntervalThink(FrameTime())
+		self:StartIntervalThink(FrameTime())	
 	end
 end
 function modifier_titan_relic:OnIntervalThink()
@@ -67,9 +67,13 @@ function modifier_titan_relic:OnModifierAdded(keys)
 		if keys.unit:GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then
 			for _, modifier in pairs(AllModifiers) do
 				if modifier:GetName() == "modifier_kill" then return end
-				if modifier:IsDebuff() and modifier:GetDuration() > 0 and modifier:GetCaster() == self:GetCaster() and modifier:GetAbility():GetCaster() == self:GetCaster() and GameRules:GetGameTime() - modifier:GetCreationTime() <= FrameTime() and pass then
+				if modifier:IsNull() then return end
+				if not modifier:GetAbility() then return end
+				if modifier:GetAbility():IsNull() then return end				
+				if modifier:IsDebuff() and modifier:GetDuration() > 0.5 and modifier:GetCaster() == self:GetCaster() and modifier:GetAbility():GetCaster() == self:GetCaster() and GameRules:GetGameTime() - modifier:GetCreationTime() <= FrameTime() and pass then
 					Timers:CreateTimer(FrameTime(), function()
 						if modifier and pass and not self:IsNull() and self:GetAbility() then
+							if modifier:IsNull() then return end
 							modifier:SetDuration(modifier:GetRemainingTime() * (1 + (self:GetAbility():GetSpecialValueFor("debuff_amp") / 100)), true)
 							pass = false
 						end
@@ -79,15 +83,48 @@ function modifier_titan_relic:OnModifierAdded(keys)
 		else
 			for _, modifier in pairs(AllModifiers) do
 				if modifier:GetName() == "modifier_kill" then return end
-				if modifier:GetDuration() > 0 and modifier:GetCaster() == self:GetCaster() and modifier:GetAbility():GetCaster() == self:GetCaster() and GameRules:GetGameTime() - modifier:GetCreationTime() <= FrameTime() and pass then
-					Timers:CreateTimer(FrameTime(), function()
-						if modifier and pass and not self:IsNull() and self:GetAbility() then
-							modifier:SetDuration(modifier:GetRemainingTime() * (1 + (self:GetAbility():GetSpecialValueFor("buff_amp") / 100)), true)
-							pass = false
-						end
-					end)
+				if modifier:IsNull() then return end			
+				if modifier:GetDuration() > 0 then
+					if not modifier:GetAbility() then return end
+					if modifier:GetAbility():IsNull() then return end
+					if modifier:GetCaster() == self:GetCaster() then
+						if modifier:GetAbility():GetCaster() == self:GetCaster() then
+							if GameRules:GetGameTime() - modifier:GetCreationTime() <= FrameTime() then
+								if pass then
+									Timers:CreateTimer(FrameTime(), function()
+										if modifier and pass and not self:IsNull() and self:GetAbility() then
+											if modifier:IsNull() then return end
+											modifier:SetDuration(modifier:GetRemainingTime() * (1 + (self:GetAbility():GetSpecialValueFor("buff_amp") / 100)), true)
+											pass = false	
+										end
+									end)
+								end	
+							end	
+						end	
+					end	
 				end
 			end
 		end
 	end
 end
+
+
+-- changed the else part so i can find the problem faster, you can revert that back if you want to be more estetic.
+
+
+
+--[[ for _, modifier in pairs(AllModifiers) do
+	if modifier:GetName() == "modifier_kill" then return end
+	if modifier:IsNull() then return end
+	if not modifier:GetAbility() then return end  -- added this to fix illusion error end on spawn error
+	if modifier:GetAbility():IsNull() then return end -- just in case extra guard			
+	if modifier:GetDuration() > 0 and modifier:GetCaster() == self:GetCaster() and modifier:GetAbility():GetCaster() == self:GetCaster() and GameRules:GetGameTime() - modifier:GetCreationTime() <= FrameTime() and pass then
+		Timers:CreateTimer(FrameTime(), function()
+			if modifier and pass and not self:IsNull() and self:GetAbility() then
+				if modifier:IsNull() then return end
+				modifier:SetDuration(modifier:GetRemainingTime() * (1 + (self:GetAbility():GetSpecialValueFor("buff_amp") / 100)), true)
+				pass = false	
+			end
+		end)
+	end
+end ]]

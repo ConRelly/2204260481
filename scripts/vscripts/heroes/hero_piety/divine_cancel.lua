@@ -83,8 +83,10 @@ function lesser_cancel:OnSpellStart()
 				local ModifierName = modifier:GetName()
 				local ModifierDuration = modifier:GetDuration()
 				if ModifierDuration > 0 then
+					if modifier:IsNull() then return end
 					modifier:Destroy()
 				elseif PurgeUnpurgable[ModifierName] then
+					if modifier:IsNull() then return end
 					modifier:Destroy()
 				end
 			end
@@ -113,8 +115,10 @@ function lesser_cancel:OnSpellStart()
 				local ModifierName = modifier:GetName()
 				local ModifierDuration = modifier:GetDuration()
 				if ModifierDuration > 0 then
+					if modifier:IsNull() then return end
 					modifier:Destroy()
 				elseif PurgeUnpurgable[ModifierName] then
+					if modifier:IsNull() then return end
 					modifier:Destroy()
 				end
 			end
@@ -165,8 +169,10 @@ function divine_cancel:OnSpellStart()
 					local ModifierName = modifier:GetName()
 					local ModifierDuration = modifier:GetDuration()
 					if ModifierDuration > 0 then
+						if modifier:IsNull() then return end
 						modifier:Destroy()
 					elseif PurgeUnpurgable[ModifierName] then
+						if modifier:IsNull() then return end
 						modifier:Destroy()
 					end
 				end
@@ -196,8 +202,10 @@ function divine_cancel:OnSpellStart()
 					local ModifierName = modifier:GetName()
 					local ModifierDuration = modifier:GetDuration()
 					if ModifierDuration > 0 then
+						if modifier:IsNull() then return end
 						modifier:Destroy()
 					elseif PurgeUnpurgable[ModifierName] then
+						if modifier:IsNull() then return end
 						modifier:Destroy()
 					end
 				end

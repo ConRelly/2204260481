@@ -205,12 +205,14 @@ function modifier_mjz_ursa_earthshock_movement:OnCreated(params)
 	
 	if self.distance>0 then
 		if self:ApplyHorizontalMotionController() == false then 
+			if self:IsNull() then return end
 			self:Destroy()
 			return
 		end
 	end
 	if self.height>=0 then
 		if self:ApplyVerticalMotionController() == false then 
+			if self:IsNull() then return end
 			self:Destroy()
 			return
 		end
@@ -241,6 +243,7 @@ end
 
 -- This typically gets called if the caster uses a position breaking tool (ex. Blink Dagger) while in mid-motion
 function modifier_mjz_ursa_earthshock_movement:OnHorizontalMotionInterrupted()
+	if self:IsNull() then return end
 	self:Destroy()
 end
 
@@ -254,6 +257,7 @@ end
 
 -- -- This typically gets called if the caster uses a position breaking tool (ex. Earth Spike) while in mid-motion
 function modifier_mjz_ursa_earthshock_movement:OnVerticalMotionInterrupted()
+	if self:IsNull() then return end
 	self:Destroy()
 end
 

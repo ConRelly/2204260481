@@ -68,6 +68,7 @@ function aghanim_crystal_attack:OnSpellStart()
 		if self.nPhase > 6 then
 			self.nPhase = 1
 			self:StartCooldown( CRYSTAL_ATTACKS_COOLDOWN )
+			if self.hActiveBuff:IsNull() then return end
 			self.hActiveBuff:Destroy()
 		end	
 	end

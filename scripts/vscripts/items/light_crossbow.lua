@@ -244,7 +244,9 @@ function modifier_thunder_power:OnIntervalThink()
 		local item_time = self.stack_table[1]
 		if GameRules:GetGameTime() - item_time >= power_buff then
 			if self:GetStackCount() == 1 then
-				self:Destroy()
+				if not self:IsNull() then
+					self:Destroy()
+				end	
 				break
 			else
 				table.remove(self.stack_table, 1)
@@ -284,6 +286,7 @@ function modifier_thunder_hammer_chain_lightning:OnCreated(keys)
 	if self.starting_unit_entindex and EntIndexToHScript(self.starting_unit_entindex) then
 		self.current_unit = EntIndexToHScript(self.starting_unit_entindex)
 	else
+		if self:IsNull() then return end
 		self:Destroy()
 		return
 	end
@@ -316,6 +319,7 @@ function modifier_thunder_hammer_chain_lightning:OnIntervalThink()
 	end
 	if (self.unit_counter >= self.chain_strikes and self.chain_strikes > 0) or not self.zapped then
 		self:StartIntervalThink(-1)
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end

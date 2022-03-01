@@ -4346,7 +4346,25 @@
 	"BountyGoldMin"				"1"
 	"BountyGoldMax"				"1"
 	"UnitLabel" "temp_unit"
+	"MovementSpeed"				"200"		// Speed.
 }
+
+"npc_dota_techies_remote_mine"
+	{
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"1"	// Experience earn.
+		"BountyGoldMin"				"1"		// Gold earned min.
+		"BountyGoldMax"				"1"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"150"		// Speed.
+
+	}
+
 "npc_boss_clockwerk_rush"
 {
 	"Model"						"models/heroes/rattletrap/rattletrap.vmdl"

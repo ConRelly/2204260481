@@ -1,6 +1,7 @@
 modifier_frozen_generic = class({})
 function modifier_frozen_generic:OnCreated(table)
 	if self:GetParent():HasModifier("modifier_status_immunity") then
+		if self:IsNull() then return end
 		self:Destroy()
 		return
 	end

@@ -39,6 +39,7 @@ if IsServer() then
 						local item = CreateItem("item_philosophers_stone", parent, parent)
 						CreateItemOnPositionSync(parent:GetAbsOrigin(), item)
 					end
+					if self:IsNull() then return end
 					self:Destroy()
 				end
 			)
@@ -47,8 +48,9 @@ if IsServer() then
 			Timers:CreateTimer(
 				0.8,
 				function()
-					self:GetAbility():Destroy()
-					
+					if not self:IsNull() and not self:GetAbility():IsNull() then
+						self:GetAbility():Destroy()
+					end		
 					if parent:GetNumItemsInInventory() < 9 then
 						local item = parent:AddItemByName("item_philo_stone_failed")
 						item:SetPurchaseTime(GameRules:GetGameTime() - 10)
@@ -57,6 +59,7 @@ if IsServer() then
 						item:SetPurchaseTime(GameRules:GetGameTime() - 10)
 						CreateItemOnPositionSync(parent:GetAbsOrigin(), item)
 					end
+					if self:IsNull() then return end
 					self:Destroy()
 				end
 			)

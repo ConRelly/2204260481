@@ -160,7 +160,9 @@ function db_celestial_hammer:OnProjectileHitHandle(target, location, handle)
 			end
 		end
 		local mod = data.thinker:FindModifierByName("modifier_db_celestial_hammer_thinker")
-		mod:Destroy()
+		if not mod:IsNull() then
+			mod:Destroy()
+		end	
 
 		local ability = self:GetCaster():FindAbilityByName("db_converge")
 		if ability then
@@ -173,7 +175,7 @@ function db_celestial_hammer:OnProjectileHitHandle(target, location, handle)
 		end
 
 		local converge = self:GetCaster():FindModifierByName("modifier_db_celestial_hammer")
-		if converge then
+		if converge and not converge:IsNull() then
 			converge:Destroy()
 		end
 
@@ -282,6 +284,7 @@ function modifier_db_celestial_hammer:OnCreated(kv)
 	self.parent:SetForwardVector(direction)
 
 	if not self:ApplyHorizontalMotionController() then
+		if self:IsNull() then return end
 		self:Destroy()
 		return
 	end
@@ -309,6 +312,7 @@ end
 function modifier_db_celestial_hammer:UpdateHorizontalMotion(me, dt)
 	local dist = (self.origin - me:GetOrigin()):Length2D()
 	if dist > self.max_range then
+		if self:IsNull() then return end
 		self:Destroy()
 		return
 	end
@@ -353,6 +357,7 @@ end
 function modifier_db_celestial_hammer_nohammer:Decrement()
 	self:DecrementStackCount()
 	if self:GetStackCount() < 1 then
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end

@@ -134,6 +134,7 @@ end
 function CDOTA_Buff:RemoveStacks(stack_amount)
 	local current_stacks = self:GetStackCount()
 	if stack_amount >= current_stacks then
+		if self:IsNull() then return end
 		self:Destroy()
 	else
 		self:SetStackCount(current_stacks-stack_amount)

@@ -133,6 +133,7 @@ function storegga_grab_throw:OnProjectileHit( hTarget, vLocation )
 		EmitSoundOnLocationWithCaster( vLocation, "OgreTank.GroundSmash", self:GetCaster() )
 		
 		if self.hThrowTarget ~= nil then
+			if self.hThrowBuff:IsNull() then return end
 			self.hThrowBuff:Destroy()
 			if self.hThrowTarget:IsRealHero() then
 				local damageInfo =

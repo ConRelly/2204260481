@@ -24,6 +24,7 @@ end
 function modifier_storegga_grabbed_debuff:OnCreated( kv )
 	if IsServer() then
 		if self:ApplyHorizontalMotionController() == false or self:ApplyVerticalMotionController() == false then 
+			if self:IsNull() then return end
 			self:Destroy()
 			return
 		end
@@ -98,6 +99,7 @@ function modifier_storegga_grabbed_debuff:OnIntervalThink()
 			ParticleManager:ReleaseParticleIndex( nFXIndex )
 
 			EmitSoundOnLocationWithCaster( vLocation, "Ability.TossImpact", self:GetCaster() )
+			if self:IsNull() then return end
 			self:Destroy()
 		end	
 	end
@@ -141,6 +143,7 @@ end
 
 function modifier_storegga_grabbed_debuff:OnHorizontalMotionInterrupted()
 	if IsServer() then
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end
@@ -149,6 +152,7 @@ end
 
 function modifier_storegga_grabbed_debuff:OnVerticalMotionInterrupted()
 	if IsServer() then
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end
@@ -164,6 +168,7 @@ end
 function modifier_storegga_grabbed_debuff:OnDeath( params )
 	if IsServer() then
 		if params.unit == self:GetCaster() then
+			if self:IsNull() then return end
 			self:Destroy()
 		end
 	end

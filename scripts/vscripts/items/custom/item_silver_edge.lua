@@ -230,6 +230,7 @@ function modifier_item_imba_silver_edge_invis:OnAttackLanded(keys)
 			end]]
 
 			-- Remove the invis on attack
+			if self:IsNull() then return end
 			self:Destroy()
 			--end
 		end
@@ -241,6 +242,7 @@ function modifier_item_imba_silver_edge_invis:OnAbilityExecuted( keys )
 		local parent =	self:GetParent()
 		-- Remove the invis on cast
 		if keys.unit == parent then
+			if self:IsNull() then return end
 			self:Destroy()
 		end
 	end

@@ -38,6 +38,7 @@ end
 function modifier_storegga_avalanche_thinker:OnIntervalThink()
 	if IsServer() then
 		if self:GetCaster():IsNull() then
+			if self:IsNull() then return end
 			self:Destroy()
 			return
 		end

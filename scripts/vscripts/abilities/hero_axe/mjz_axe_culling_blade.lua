@@ -94,6 +94,7 @@ if IsServer() then
 		local target = self:GetParent()
 		self.success = true
 		ability:OnCullingBladeSuccess(target)
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 	function modifier_mjz_axe_culling_blade_checker:OnCreated(table) self.success = false end

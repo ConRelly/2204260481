@@ -118,6 +118,7 @@ if IsServer() then
         self.stop_distance = ability:GetSpecialValueFor("stop_distance")
 
         if self:ApplyHorizontalMotionController() == false then
+            if self:IsNull() then return end
             self:Destroy()
             return
         end
@@ -158,6 +159,7 @@ if IsServer() then
 
     function modifier_rattletrap_custom_hookshot_dash:UpdateHorizontalMotion(parent, deltaTime)
         if not self.target or not self.target:IsAlive() then
+            if self:IsNull() then return end
             self:Destroy()
         end
 
@@ -169,6 +171,7 @@ if IsServer() then
 
         if distance_to_target <= self.stop_distance then  -- hit unit
             self:OnHitTarget()
+            if self:IsNull() then return end
             self:Destroy()
         end
 
@@ -202,6 +205,7 @@ if IsServer() then
 
 
     function modifier_rattletrap_custom_hookshot_dash:OnHorizontalMotionInterrupted()
+        if self:IsNull() then return end
         self:Destroy()
     end
 end

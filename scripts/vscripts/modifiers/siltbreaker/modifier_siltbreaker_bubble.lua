@@ -29,6 +29,7 @@ end
 
 function modifier_siltbreaker_bubble:OnIntervalThink( )
 	if self:GetAbility() == nil then 
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 	local damageInfo = 

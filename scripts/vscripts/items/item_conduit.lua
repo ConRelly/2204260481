@@ -131,6 +131,7 @@ if IsServer() then
 			if not parent:IsAlive() or not caster:IsAlive() then
 				parent:ForceKill(false)
 				parent:RemoveSelf()
+				if self:IsNull() then return end
 				self:Destroy()
 			end
 		end

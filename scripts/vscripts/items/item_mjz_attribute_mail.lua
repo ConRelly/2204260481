@@ -135,6 +135,7 @@ if IsServer() then
         end
 
         if not inSlot then 
+            if self:IsNull() then return end
             self:Destroy()
             return nil 
         end

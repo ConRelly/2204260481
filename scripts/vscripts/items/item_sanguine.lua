@@ -79,7 +79,10 @@ if IsServer() then
 	
 	function modifier_item_sanguine_controller:OnIntervalThink()
 		if self:GetStackCount() <= 0 then
-			self.modifier:Destroy()
+			if not self.modifier:IsNull() then
+				self.modifier:Destroy()
+			end	
+			if self:IsNull() then return end
 			self:Destroy()
 		end
 		self.modifier:SetStackCount(self.parent:GetMaxHealth() * self:GetStackCount() * self.multiplier * 0.01) 
@@ -183,6 +186,7 @@ if IsServer() then
 	function modifier_item_sanguine:OnDestroy()
 		if self.parent and IsValidEntity(self.parent) then
 			if not self.parent:IsIllusion() then
+				if self.modifier:IsNull() then return end
 				self.modifier:Destroy()
 			end
 		end

@@ -89,6 +89,7 @@ function modifier_imba_echo_sabre:OnAttack(keys)
 			local mod = parent:FindModifierByName("modifier_imba_echo_rapier_haste")
 			mod:DecrementStackCount()
 			if mod:GetStackCount() < 1 then
+				if mod:IsNull() then return end
 				mod:Destroy()
 			end
 		end
@@ -257,6 +258,7 @@ function modifier_imba_reverb_rapier_passive:OnAttack(keys)
 			local mod = parent:FindModifierByName("modifier_imba_echo_rapier_haste")
 			mod:DecrementStackCount()
 			if mod:GetStackCount() < 1 then
+				if mod:IsNull() then return end
 				mod:Destroy()
 			end
 		end

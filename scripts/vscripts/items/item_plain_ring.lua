@@ -97,6 +97,7 @@ function modifier_item_plain_ring:OnTakeDamage(keys)
 				})			
 				--self.parent:EmitSoundParams("Hero_Juggernaut.OmniSlash.Damage", 0, 1.5, 0)
 			else
+				if self:IsNull() then return end
 				self:Destroy()
 			end
 		end

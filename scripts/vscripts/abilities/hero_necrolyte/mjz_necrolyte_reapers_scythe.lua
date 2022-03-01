@@ -82,6 +82,7 @@ if IsServer() then
 	function modifier_class:OnIntervalThink()
 		self:StartIntervalThink(-1)
 		self:_ApplyDamage()
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 

@@ -49,6 +49,7 @@ if IsServer() then
         self.direction = self:GetParent():GetForwardVector()
 
         if self:ApplyHorizontalMotionController() == false then
+            if self:IsNull() then return end
             self:Destroy()
             return
         end

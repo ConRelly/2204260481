@@ -173,6 +173,7 @@ end
 function modifier_mystery_cyclone_active:OnIntervalThink()
 	if IsServer() then
 		if not self:CheckMotionControllers() then
+			if self:IsNull() then return end
 			self:Destroy()
 			return
 		end

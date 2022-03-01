@@ -115,6 +115,7 @@ function modifier_item_maiar_pendant_thinker:OnCreated()
 end
 function modifier_item_maiar_pendant_thinker:OnIntervalThink()
 	if self.parent:GetManaPercent() > self.min_mana or not self.parent:HasItemInInventory("item_maiar_pendant") then
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end

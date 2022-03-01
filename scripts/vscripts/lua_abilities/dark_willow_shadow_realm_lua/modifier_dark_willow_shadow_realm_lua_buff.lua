@@ -77,6 +77,7 @@ function modifier_dark_willow_shadow_realm_lua_buff:OnAttackRecordDestroy( param
 
 	-- destroy buff if attack finished (proc/miss/whatever)
 	--self:StopEffects( false )
+	if self:IsNull() then return end
 	self:Destroy()
 end
 function modifier_dark_willow_shadow_realm_lua_buff:GetModifierProcAttack_BonusDamage_Magical( params )

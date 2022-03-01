@@ -91,7 +91,7 @@ if IsServer() then
 		-- ParticleManager:ReleaseParticleIndex(reflect_pfx)
 
         usedAbilityCaster:EmitSound("Hero_Antimage.Counterspell.Target")
-
+        if self:IsNull() then return end
         self:Destroy()
     end
 

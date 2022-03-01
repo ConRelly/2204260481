@@ -200,6 +200,7 @@ function modifier_imba_coup_de_grace_crit:OnIntervalThink()
             
             -- If after removing the stacks, the table is empty, remove the modifier.
             if #self.stacks_table == 0 then
+				if self:IsNull() then return end
                 self:Destroy()
 
             -- Otherwise, set its stack count
@@ -212,6 +213,7 @@ function modifier_imba_coup_de_grace_crit:OnIntervalThink()
 
         -- If there are no stacks on the table, just remove the modifier.
         else
+			if self:IsNull() then return end
             self:Destroy()
         end
     end

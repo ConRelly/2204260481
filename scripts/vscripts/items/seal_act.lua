@@ -428,6 +428,7 @@ function modifier_seal_ghost_state:OnIntervalThink()
 end
 function modifier_seal_ghost_state:OnRefresh() self:OnCreated() end
 function modifier_seal_ghost_state:OnDestroy()
+	if self:IsNull() then return end
 	self:Destroy()
 end
 function modifier_seal_ghost_state:CheckState() return {[MODIFIER_STATE_ATTACK_IMMUNE] = true, [MODIFIER_STATE_DISARMED] = true} end

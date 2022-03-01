@@ -107,6 +107,7 @@ if IsServer() then
 		if #units == 0 or self.parent:IsOutOfGame() then
 			self.counter = self.counter + 0.25
 			if self.counter >= self.safety then
+				if self:IsNull() then return end
 				self:Destroy()
 			end
 		else

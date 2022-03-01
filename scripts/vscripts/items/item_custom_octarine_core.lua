@@ -155,6 +155,7 @@ function modifier_item_custom_octarine_core_reduction:GetModifierPercentageCoold
 	if IsValidEntity(self:GetAbility()) then
 		return self:GetAbility():GetSpecialValueFor("bonus_cooldown")
 	else
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end

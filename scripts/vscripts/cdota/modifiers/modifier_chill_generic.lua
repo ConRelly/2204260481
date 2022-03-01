@@ -4,6 +4,7 @@ function modifier_chill_generic:OnCreated(table)
 	if IsServer() then
 		if self:GetStackCount() > 99 then
 			self:GetParent():Freeze(self:GetAbility(), self:GetCaster(), 1.5)
+			if self:IsNull() then return end
 			self:Destroy()
 		end
 		self:StartIntervalThink(0.33)
@@ -14,6 +15,7 @@ function modifier_chill_generic:OnRefresh(table)
 	if IsServer() then
 		if self:GetStackCount() > 99 then
 			self:GetParent():Freeze(self:GetAbility(), self:GetCaster(), 1.5)
+			if self:IsNull() then return end
 			self:Destroy()
 		end
 	end
@@ -23,6 +25,7 @@ function modifier_chill_generic:OnIntervalThink()
 	if IsServer() then
 		if self:GetStackCount() > 99 then
 			self:GetParent():Freeze(self:GetAbility(), self:GetCaster(), 1.5)
+			if self:IsNull() then return end
 			self:Destroy()
 		end
 	end

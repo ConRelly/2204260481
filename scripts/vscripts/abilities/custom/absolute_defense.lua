@@ -66,6 +66,7 @@ if IsServer() then
 			self.parent:SetHealth(t.damage + self.parent:GetHealth())
 			local part = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
 			ParticleManager:ReleaseParticleIndex(part)
+			if self:IsNull() then return end
 			self:Destroy()
 		end
 	end

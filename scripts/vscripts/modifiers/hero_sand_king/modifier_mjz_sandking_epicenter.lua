@@ -15,6 +15,7 @@ if IsServer() then
 	end
 
 	function modifier_class:OnDeath()
+        if self:IsNull() then return end
 		self:Destroy()
     end
     
@@ -85,6 +86,7 @@ if IsServer() then
 
         if self.current_pulses >= epicenter_pulses then
             self:StartIntervalThink(-1)
+            if self:IsNull() then return end
             self:Destroy()
         end
     end

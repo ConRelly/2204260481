@@ -49,6 +49,7 @@ end
 
 function modifier_vengefulspirit_command_aura_lua:OnIntervalThink()
 	if self:GetCaster() ~= self:GetParent() and self:GetCaster():IsAlive() then
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end

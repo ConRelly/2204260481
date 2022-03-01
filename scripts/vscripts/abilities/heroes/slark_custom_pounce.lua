@@ -77,6 +77,7 @@ function modifier_slark_custom_pounce:OnCreated(keys)
     self.attack_count = keys.attack_count
 
     if self:ApplyHorizontalMotionController() == false then
+        if self:IsNull() then return end
         self:Destroy()
         return
     end
@@ -109,6 +110,7 @@ function modifier_slark_custom_pounce:UpdateHorizontalMotion(parent, deltaTime)
             for i = 1, self.attack_count do
                 parent:PerformAttack(unit, true, true, true, true, true, false, false)
             end
+            if self:IsNull() then return end
             self:Destroy()
         end
 	end
@@ -116,6 +118,7 @@ end
 
 
 function modifier_slark_custom_pounce:OnHorizontalMotionInterrupted()
+    if self:IsNull() then return end
     self:Destroy()
 end
 

@@ -213,11 +213,13 @@ end
 function modifier_mjz_clinkz_soul_pact_invis:OnAttack(event)
 	if not IsServer() then return end
 	if self:GetParent() ~= event.attacker then return end
+	if self:IsNull() then return end
 	self:Destroy()
 end
 function modifier_mjz_clinkz_soul_pact_invis:OnAbilityExecuted(event)
 	if not IsServer() then return end
 	if self:GetParent() ~= event.unit then return end
+	if self:IsNull() then return end
 	self:Destroy()
 end
 function modifier_mjz_clinkz_soul_pact_invis:OnDestroy()

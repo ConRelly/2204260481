@@ -25,6 +25,7 @@ end
 function modifier_siltbreaker_mind_control:OnCreated( kv )
 	if IsServer() then
 		if self:GetParent():GetForceAttackTarget() then
+			if self:IsNull() then return end
 			self:Destroy()
 			return
 		end
@@ -49,6 +50,7 @@ function modifier_siltbreaker_mind_control:OnCreated( kv )
 
 			self:StartIntervalThink( 1 )
 		else
+			if self:IsNull() then return end
 			self:Destroy()
 			return
 		end
@@ -94,6 +96,7 @@ function modifier_siltbreaker_mind_control:OnIntervalThink()
 		end
 
 		if self.hDesiredTarget == nil or self.hDesiredTarget:IsAlive() == false then
+			if self:IsNull() then return end
 			self:Destroy()
 			return
 		end

@@ -145,6 +145,7 @@ function modifier_generic_arc_lua:UpdateVerticalMotion( me, dt )
 			-- below ground, set height as ground then destroy
 			pos.z = ground
 			me:SetOrigin( pos )
+			if self:IsNull() then return end
 			self:Destroy()
 		end
 	end
@@ -152,11 +153,13 @@ end
 
 function modifier_generic_arc_lua:OnHorizontalMotionInterrupted()
 	self.interrupted = true
+	if self:IsNull() then return end
 	self:Destroy()
 end
 
 function modifier_generic_arc_lua:OnVerticalMotionInterrupted()
 	self.interrupted = true
+	if self:IsNull() then return end
 	self:Destroy()
 end
 
@@ -267,6 +270,7 @@ function modifier_generic_arc_lua:Jump()
 	if self.distance>0 then
 		if not self:ApplyHorizontalMotionController() then
 			self.interrupted = true
+			if self:IsNull() then return end
 			self:Destroy()
 		end
 	end
@@ -275,6 +279,7 @@ function modifier_generic_arc_lua:Jump()
 	if self.height>0 then
 		if not self:ApplyVerticalMotionController() then
 			self.interrupted = true
+			if self:IsNull() then return end
 			self:Destroy()
 		end
 	end

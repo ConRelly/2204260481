@@ -97,6 +97,7 @@ if IsServer() then
         local ability = self:GetAbility()
 
         if not ability then
+            if self:IsNull() then return end
             self:Destroy()
             return
         end

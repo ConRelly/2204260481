@@ -52,7 +52,9 @@ if IsServer() then
             modifier_hit:SetDuration(counter_duration, true)
             modifier_hit:IncrementStackCount()
             if modifier_hit:GetStackCount() >= required_hits then
-                modifier_hit:Destroy()
+                if not modifier_hit:IsNull() then
+                    modifier_hit:Destroy()
+                end    
                 attacker:AddNewModifier(attacker, ability, MODIFIER_BUFF_NAME, {duration = max_duration})
             end
         end

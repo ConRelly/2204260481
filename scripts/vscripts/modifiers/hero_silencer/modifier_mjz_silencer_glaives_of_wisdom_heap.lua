@@ -204,6 +204,7 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local modifier = caster:FindModifierByName('modifier_silencer_int_steal')
 		if modifier then
+			if modifier:IsNull() then return end
 			modifier:Destroy()
 		end
 	end

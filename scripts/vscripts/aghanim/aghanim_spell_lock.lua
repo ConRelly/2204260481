@@ -155,6 +155,7 @@ function modifier_aghanim_spell_lock_handler:OnCreated(kv)
 		if not self.target or self.target:IsIllusion() then
 			if self.target:IsIllusion() then self.target:ForceKill(false) end
 			self.broken = true
+			if self:IsNull() then return end
 			self:Destroy()
 			return
 		end
@@ -316,6 +317,7 @@ end
 function modifier_aghanim_spell_lock:OnDeath( keys )
 	if IsServer() then
 		if keys.unit == self.hCrystal then
+			if self:IsNull() then return end
 			self:Destroy()
 		end
 	end
@@ -415,6 +417,7 @@ function modifier_aghanim_spell_lock:DisableSpell()
 		local hAbilityToDisable = NormalAbilities[ nIndexToDisable ]
 
 		if nNextAghDummy == nil or hAbilityToDisable == nil then
+			if self:IsNull() then return end
 			self:Destroy()
 			return
 		end
@@ -571,6 +574,7 @@ function modifier_aghanim_spell_lock_crystal:OnCreated( kv )
 		self:StartIntervalThink( 0.25 )
 		
 		if self:ApplyHorizontalMotionController() == false or self:ApplyVerticalMotionController() == false then 
+			if self:IsNull() then return end
 			self:Destroy()
 			return
 		end
@@ -653,6 +657,7 @@ end
 
 function modifier_aghanim_spell_lock_crystal:OnHorizontalMotionInterrupted()
 	if IsServer() then
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end
@@ -668,6 +673,7 @@ end
 
 function modifier_aghanim_spell_lock_crystal:OnVerticalMotionInterrupted()
 	if IsServer() then
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end

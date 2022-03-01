@@ -66,6 +66,7 @@ function modifier_flash_speedforce_power_debuff:OnIntervalThink()
 
     if IsServer() then
         if self:GetCaster():IsAlive() == false then
+            if self:IsNull() then return end
             self:Destroy()
         end
     end

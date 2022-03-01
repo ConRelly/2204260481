@@ -44,6 +44,7 @@ function modifier_generic_knockback_lua:OnCreated( kv )
 
 		-- check duration
 		if self.duration == 0 then
+			if self:IsNull() then return end
 			self:Destroy()
 			return
 		end
@@ -63,12 +64,14 @@ function modifier_generic_knockback_lua:OnCreated( kv )
 		print(self.duration)
 		if self.distance>0 then
 			if self:ApplyHorizontalMotionController() == false then 
+				if self:IsNull() then return end
 				self:Destroy()
 				return
 			end
 		end
 		if self.height>=0 then
-			if self:ApplyVerticalMotionController() == false then 
+			if self:ApplyVerticalMotionController() == false then
+				if self:IsNull() then return end 
 				self:Destroy()
 				return
 			end
@@ -150,6 +153,7 @@ end
 function modifier_generic_knockback_lua:OnHorizontalMotionInterrupted()
 	if IsServer() then
 		self.interrupted = true
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end
@@ -168,6 +172,7 @@ end
 function modifier_generic_knockback_lua:OnVerticalMotionInterrupted()
 	if IsServer() then
 		self.interrupted = true
+		if self:IsNull() then return end
 		self:Destroy()
 	end
 end

@@ -81,7 +81,7 @@ if IsServer() then
                 end
 
             )
-
+            if self:IsNull() then return end
             self:Destroy()
         end
     end

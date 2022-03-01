@@ -131,6 +131,7 @@ function ability_class:OnProjectileHit_ExtraData( hTarget, vLocation, table )
         FindClearSpaceForUnit( caster, vLocation, true)
 
         if self.m_hMod and caster:IsAlive() and caster:HasModifier("modifier_mjz_phoenix_icarus_dive") then
+			if self.m_hMod:IsNull() then return end
             self.m_hMod:Destroy()
         end
     end
