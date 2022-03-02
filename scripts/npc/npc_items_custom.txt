@@ -2865,7 +2865,7 @@
 		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_movement"		"101"
+			"bonus_movement"		"200"
 		}
 		"08"
 		{
@@ -3695,20 +3695,7 @@
 		{
 			"ScriptFile"			"items/consumables.lua"
 			"Function"				"item_consumable_used"
-			"modifier"			  "modifier_item_speed_orb_consumed"
-		}
-	}
-	"Modifiers"
-	{
-		"modifier_item_speed_orb_consumed"
-		{
-			"IsBuff"			"1"
-			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
-			"TextureName"		"item_speed_orb"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"		"%bonus"
-			}
+			"modifier"			  	"modifier_item_speed_orb_consumed"
 		}
 	}
 }
@@ -5595,6 +5582,71 @@
 		}
 	}
 
+	"item_recipe_revenants_brooch"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"910"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"6800"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_revenants_brooch"
+		"ItemRequirements"
+		{
+			"01"						"item_witch_blade;item_imba_ultimate_scepter_synth2"
+		}
+	}
+
+	"item_revenants_brooch"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"911"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"45"
+		"AbilityCastPoint"				"0.0"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"250"
+		"ItemCost"						"6200"
+		"ItemShopTags"					"int;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"staff;misery;sm"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{				
+				"bonus_intellect"		"745"				
+				"bonus_attack_speed"	"200"	
+				"bonus_armor"			"42"
+				"projectile_speed"		"600"
+				"int_damage_multiplier"	"35"
+				"slow"	"25"
+				"slow_duration"	"10"
+				"mana_cost"				"100"
+				"damage_penalty"		"0"
+				"passive_cooldown"		"2"
+				"number_of_attacks"		"20"
+				"active_duration"		"15"
+		}
+	}
+
+
 	"item_recipe_psychic_headband"
 	{
 		"BaseClass"						"item_datadriven"
@@ -5955,7 +6007,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"1000"
+				"bonus_mana"			"800"
 			}
 		}
 		"OnSpellStart"
@@ -20147,7 +20199,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_dmg"				"2650"
+				"rapier_dmg"				"9650"
 			}
 			"02"
 			{
@@ -20157,7 +20209,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_agi"				"801"
+				"rapier_agi"				"1200"
 			}
 			"04"
 			{
@@ -20202,12 +20254,12 @@
 			"13"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"stack_max"					"20"
+				"stack_max"					"25"
 			}
 			"14"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"max_stacks"				"20"
+				"max_stacks"				"25"
 			}
 		}
 		"OnUnequip"

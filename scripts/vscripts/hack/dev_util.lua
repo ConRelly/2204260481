@@ -253,7 +253,7 @@ function LearnAbilityOnSpawn( npc)
             if k == "LearnOnSpawn" then
               local level = tonumber(v)
               if ability:GetLevel() < level then
-                print("learn ability: " .. ability:GetName())
+                --print("learn ability: " .. ability:GetName())
                 ability:SetLevel(level)
                 ability:SetHidden(false)
               end

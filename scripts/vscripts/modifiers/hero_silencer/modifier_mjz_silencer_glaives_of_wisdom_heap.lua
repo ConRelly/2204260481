@@ -121,9 +121,8 @@ if IsServer() then
 	
 				self:PlayEffect( hVictim, hKiller, event, heap_amount)
 				if HasSuperScepter(caster) then
-					local chance_nr = math.random(100)
 					local chance = ability:GetSpecialValueFor("second_stack")
-					if chance_nr > chance then
+					if RollPercentage(chance) then
 						self:IncrementHeapAmount(heap_amount)
 						self:PlayEffect( hVictim, hKiller, event, heap_amount * 2)
 						--print(chance_nr .. "luky nr")

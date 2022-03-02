@@ -217,7 +217,7 @@ function modifier_buff:GetModifierAttackSpeedBonus_Constant( )
 end
 
 function modifier_buff:GetModifierIgnoreMovespeedLimit()
-	if self:GetParent() == self:GetCaster() then return 1 else return 0 end
+	return 1
 end
 
 ---------------------------------------------------------------------------------------

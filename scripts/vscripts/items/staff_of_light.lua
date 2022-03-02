@@ -29,8 +29,8 @@ function modifier_staff_of_light:GetModifierBonusStats_Intellect()
 	if self:GetAbility() then if self:GetParent():GetPrimaryAttribute() == 2 then
 	return self:GetAbility():GetSpecialValueFor("primary_attribute") else return 0 end end
 end
-function modifier_staff_of_light:GetModifierConstantManaRegen() return self:GetAbility():GetSpecialValueFor("mana_regen") end
-function modifier_staff_of_light:GetModifierHealthBonus() return self:GetAbility():GetSpecialValueFor("hp") end
+function modifier_staff_of_light:GetModifierConstantManaRegen() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana_regen") end end
+function modifier_staff_of_light:GetModifierHealthBonus() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp") end end
 
 function modifier_staff_of_light:OnIntervalThink()
 	local caster = self:GetParent()
@@ -215,8 +215,8 @@ function modifier_staff_of_light_3:GetModifierBonusStats_Intellect()
 	if self:GetAbility() then if self:GetParent():GetPrimaryAttribute() == 2 then
 	return self:GetAbility():GetSpecialValueFor("primary_attribute") else return 0 end end
 end
-function modifier_staff_of_light_3:GetModifierConstantManaRegen() return self:GetAbility():GetSpecialValueFor("mana_regen") end
-function modifier_staff_of_light_3:GetModifierHealthBonus() return self:GetAbility():GetSpecialValueFor("hp") end
+function modifier_staff_of_light_3:GetModifierConstantManaRegen() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana_regen") end end
+function modifier_staff_of_light_3:GetModifierHealthBonus() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp") end end
 
 function modifier_staff_of_light_3:OnIntervalThink()
 	local caster = self:GetParent()

@@ -142,6 +142,7 @@
 
 	"magics"
 	{
+		"item"      "item_revenants_brooch"
 		"item"		"item_veil_of_discord"
 		"item"		"item_force_staff"
 		"item"		"item_aether_lens"

@@ -7373,7 +7373,9 @@
 		{
 			"var_type"					"FIELD_INTEGER"
 			"damage_reduction_percent"	"0"
-		}
+			"LinkedSpecialBonus"	"special_bonus_unique_luna_7"
+			"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
+		}		
 	}
 	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 }
@@ -22210,11 +22212,11 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilitySound"					"Hero_Brewmaster.Brawler.Crit"
 		"AbilityTextureName"			"brewmaster_drunken_brawler"	//	"mjz_brewmaster_drunken_brawler"
-
+		"LearnOnSpawn"                  "1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		
-		"AbilityCooldown"				"23 21 19 17"
+		"AbilityCooldown"				"23"
 		"AbilityManaCost"				"35 40 45 50"		
 
 		"AbilitySpecial"
@@ -22227,12 +22229,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_chance"				"10 15 20 25"
+				"crit_chance"				"5 7 9 15"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_multiplier"			"200"
+				"crit_multiplier"			"650"
 			}
 			"11"
 			{
@@ -22242,18 +22244,18 @@
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_chance_active"		"50 60 70 80"
+				"crit_chance_active"		"10 14 18 30"
 			}
 			"13"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_multiplier_active"	"260"
+				"crit_multiplier_active"	"1440"
 				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_4"
 			}
 			"14"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"6"
+				"duration"					"10"
 			}
 		}
 
@@ -22264,6 +22266,51 @@
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
 		}
 	}
+
+	//=================================================================================================================
+	// Brewmaster: Drunken Brawler
+	//=================================================================================================================
+	"brewmaster_drunken_brawler_custom"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"brewmaster_drunken_brawler"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilitySound"					"Hero_Brewmaster.Brawler.Crit"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"LevelsBetweenUpgrades"         "7"
+		"LearnOnSpawn"					"1"
+		"MaxLevel"                      "4"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"dodge_chance"		"15 20 25 32"
+			"crit_chance"				"15"
+			"active_multiplier"			"3"
+			"crit_multiplier"			"280 420 860 1650"
+			"magic_resist"	"10 15 20 25"
+			"armor"		"7 34 68 125"
+			"movespeed"				"-25"
+			"slow_duration"				"2"
+			"bonus_move_speed"		"15 37 75 115"
+			"bonus_status_resist"	"25"
+
+		}
+	}
+
 	"mjz_bristleback_quill_spray_autocast"
 	{
 		"BaseClass"						"ability_lua"	// "ability_datadriven"
@@ -25001,7 +25048,7 @@
 		// "SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityTextureName"			"mjz_gyrocopter_rocket_barrage"
 		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "5"
+		"LevelsBetweenUpgrades"		 "7"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0"
@@ -25025,12 +25072,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"agi_damage_pct"			"260 300 460 540 780 1050"
+				"agi_damage_pct"			"260 460 780 1050 1250 1650"
 			}
 			"11"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"interval"					"1.0"
+				"interval"					"0.5"
 			}
 		}
 
@@ -27907,7 +27954,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ms_bonus_attack"		"100 120 150 200 300"
+				"ms_bonus_attack"		"100 150 180 250 350"
 			}	
 		}
 
@@ -30360,7 +30407,7 @@
 			"15"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"second_stack"				"50"
+				"second_stack"				"75"
 			}						
 		}
 

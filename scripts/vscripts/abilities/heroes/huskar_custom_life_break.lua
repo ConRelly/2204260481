@@ -82,9 +82,7 @@ if IsServer() then
 					if bonus_stacks > 17 then
 						bonus_stacks = 17
 					end	
-					print("bonus_stacks " ..bonus_stacks)
 					bonus_lvl = bonus_lvl * bonus_stacks
-					print("bonus_lvl " .. bonus_lvl)
 				end	
 			end	
 		end

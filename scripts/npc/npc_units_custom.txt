@@ -10338,10 +10338,10 @@
 	// Abilities
 	//----------------------------------------------------------------
 	"Ability1"				  "brewmaster_void_astral_pulse"	  // Ability 1
-	"Ability2"				  "generic_hidden"		// Ability 2		
-	"Ability3"				  "generic_hidden"		// Ability 3
-	"Ability4"				  "generic_hidden"
-	"Ability5"				  "generic_hidden"
+	//"Ability2"				  "generic_hidden"		// Ability 2		
+	//"Ability3"				  "generic_hidden"		// Ability 3
+	"Ability4"				  "mjz_brewmaster_drunken_brawler"
+	//"Ability5"				  "generic_hidden"
 	"Ability6"				  "brewmaster_primal_split_cancel"			// Ability 6	
 	"Ability7"				  "summon_defense"
 	"Ability8"				  "bloodseeker_thirst"
@@ -10405,6 +10405,7 @@
 }
 "npc_dota_brewmaster_earth_3"
 {
+	"Ability4"				  "mjz_brewmaster_drunken_brawler"
 	"Ability7"				  "summon_defense"
 	"Ability8"				  "bloodseeker_thirst" 
 	"ArmorPhysical"			 "125"
@@ -10432,6 +10433,7 @@
 }
 "npc_dota_brewmaster_fire_3"
 {
+	//"Ability4"				  "brewmaster_drunken_brawler_custom"
 	"Ability7"				  "summon_defense"  
 	"Ability8"				  "bloodseeker_thirst" 	
 	"AttackRate"				"0.7"
@@ -10457,6 +10459,7 @@
 
 "npc_dota_brewmaster_storm_3"
 {
+	"Ability4"				  "mjz_brewmaster_drunken_brawler"
 	"Ability7"				  "summon_defense"
 	"Ability8"				  "bloodseeker_thirst" 										
 	"AttackRate"				"0.9"

@@ -92,7 +92,7 @@ function GetRandomAbilityName( hero )
         "ogre_magi_multicast_lua",
         --"aghanim_blink2",
         "ursa_fury_swipes",
-        --"faceless_void_time_lock",
+        "brewmaster_drunken_brawler",
         --"mjz_faceless_void_backtrack",
         --"antimage_custom_mana_break",
         "lion_custom_finger_of_death",

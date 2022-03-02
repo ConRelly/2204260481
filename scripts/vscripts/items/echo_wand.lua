@@ -321,15 +321,17 @@ if IsServer() then
 						end
 						self.ability:StartCooldown(cooldown * attacker:GetCooldownReduction())
 						self.echo:OnSpellStart()
-						if self.echo and self.echo:GetName() == "vengefulspirit_wave_of_terror_lua" then
-							if self.parent:HasModifier("modifier_atomic_samurai_focused_atomic_slash_2") then
-								local lvl = attacker:GetLevel()
-								local extra_time = (cooldown * 20)
-								if lvl > 30 then
-									extra_time = extra_time + lvl * 3
+						if self.echo and not self.echo:IsNull() then
+							if self.echo:GetName() == "vengefulspirit_wave_of_terror_lua" then
+								if self.parent:HasModifier("modifier_atomic_samurai_focused_atomic_slash_2") then
+									local lvl = attacker:GetLevel()
+									local extra_time = (cooldown * 20)
+									if lvl > 30 then
+										extra_time = extra_time + lvl * 2
+									end	
+									self.ability:EndCooldown()
+									self.ability:StartCooldown(extra_time * attacker:GetCooldownReduction())
 								end	
-								self.ability:EndCooldown()
-								self.ability:StartCooldown(extra_time * attacker:GetCooldownReduction())
 							end	
 						end	
 						if attacker:HasModifier("modifier_ogre_magi_multicast_n") then

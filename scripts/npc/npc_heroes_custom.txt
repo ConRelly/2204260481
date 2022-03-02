@@ -400,6 +400,7 @@
 }
 "npc_dota_hero_venomancer"
 {
+	"Ability11"     "special_bonus_hp_2000"
 	"Ability12"		"special_bonus_attack_damage_100"
 
 	"AttributeStrengthGain"			"7.7"
@@ -963,6 +964,7 @@
 		"Ability2"				"vengefulspirit_wave_of_terror_lua"
 		"Ability6"				"mjz_vengefulspirit_vengeance"
 		"Ability15"				"special_bonus_unique_wave_of_terror_dmg"
+		"Ability16"             "special_bonus_cdr_25"
 		"Ability17"				"special_bonus_spell_lifesteal_70"
 
 		"AttackRate"					"1.5"
