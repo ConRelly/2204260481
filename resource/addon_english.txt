@@ -1134,6 +1134,9 @@
 	"DOTA_Tooltip_modifier_mana_blade_dispel"				"Inspire"
 	"DOTA_Tooltip_modifier_mana_blade_dispel_Description"	"Applies dispel every second."
 	
+	"DOTA_Tooltip_Ability_item_heavy_blade_Description"				"<h1>Active: Cleanse</h1>Purge Target Enemy or Ally.\n<h1>Passive: Subjugate</h1>Your attacks deal bonus magic damage equal to %damage%%% of your target Max Mana."
+
+
 	"dota_tooltip_ability_item_ice_aluneth"				"Ice Aluneth"
 	"dota_tooltip_ability_item_ice_aluneth_description"	"<h1>Active: Strafe</h1> Instantly moves the hero 250 units to the right or left.<br>Maximum charges: 10\n<h1>Passive: Aethereal Focus</h1> Increases targeted spell and item cast range by %cast_range%.\n Bonus to reduce cast time interrupts bonus from Arcane Blink"
 	"DOTA_Tooltip_ability_item_ice_aluneth_bonus_mana"				"+$mana"

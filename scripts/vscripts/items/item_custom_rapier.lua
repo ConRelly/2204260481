@@ -17,9 +17,11 @@ function modifier_item_custom_rapier:IsPurgable() return false end
 function modifier_item_custom_rapier:IsHidden() return true end
 function modifier_item_custom_rapier:GetTexture() return "rapier" end
 function modifier_item_custom_rapier:GetEffectName()
-	if self:GetAbility():GetAbilityName() == "item_infinite_rapier" then
-		return "particles/custom/infinite_rapier_shell.vpcf"
-	end
+	if self:GetAbility() then
+		if self:GetAbility():GetAbilityName() == "item_infinite_rapier" then
+			return "particles/custom/infinite_rapier_shell.vpcf"
+		end
+	end	
 	return nil
 end
 function modifier_item_custom_rapier:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
@@ -29,7 +31,7 @@ end
 function modifier_item_custom_rapier:OnCreated()
 	self.parent = self:GetParent()
 	if IsServer() then
-		if self.parent:IsHero() then
+		if self.parent:IsHero() and self:GetAbility() then
 			self.damage = self:GetAbility():GetSpecialValueFor("bonus_damage")
 		else
 			self.damage = 0
@@ -52,8 +54,12 @@ function modifier_item_custom_rapier:OnDestroy()
 	end
 end
 function modifier_item_custom_rapier:GetModifierPreAttack_BonusDamage()
-	return self:GetAbility():GetSpecialValueFor("bonus_damage") / 2
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("bonus_damage") / 2
+	end	
 end
 function modifier_item_custom_rapier:GetModifierBaseAttack_BonusDamage()
-	return self:GetAbility():GetSpecialValueFor("bonus_damage") / 2
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("bonus_damage") / 2
+	end	
 end

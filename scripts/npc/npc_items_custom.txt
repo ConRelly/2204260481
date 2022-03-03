@@ -18254,6 +18254,21 @@
 	"ItemSellable"					"1"
 	"ItemCost"						"6000"	
 }
+//Level 5 chests
+"item_chest_6"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"chest_5"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+	"ItemGloballyCombinable"		"1"
+	"ItemQuality"					"rare"
+	"ItemPurchasable"				"1"
+	"ItemSellable"					"1"
+	"ItemCost"						"5000"	
+}
+
 "item_recipe_chest_5"
 {
 	"BaseClass"						"item_datadriven"
@@ -18266,8 +18281,9 @@
 	"ItemIsNeutralDrop"				"1"
 	"ItemRequirements"
 	{
-		"01"						"item_chest_4;item_chest_2;item_chest_2"
-		"02"						"item_chest_2;item_chest_2;item_chest_2;item_chest_2;item_chest_2"
+		"01"						"item_chest_6"
+		"02"						"item_chest_4;item_chest_2;item_chest_2"
+		"03"						"item_chest_2;item_chest_2;item_chest_2;item_chest_2;item_chest_2"
 
 	}
 }

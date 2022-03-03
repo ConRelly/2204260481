@@ -8980,7 +8980,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"value"						"1.5"
+			"value"						"3.5"
 		}
 	}
 }
@@ -23926,7 +23926,7 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"value"						"5"
-				"ad_linked_ability"			"dragon_knight_dragon_blood"
+				"ad_linked_abilities"			"dragon_knight_dragon_blood"
 			}
 		}
 	}
@@ -32438,8 +32438,8 @@
 		"AbilitySound"					"Hero_Tinker.Heat-Seeking_Missile"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastPoint"				"0 0 0 0 0 0 0"
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "7"
+		"MaxLevel"					  	"7"
+		"LevelsBetweenUpgrades"		 	"8"
 		"AbilityCooldown"				"18"
 		"AbilityManaCost"				"250"
 		
@@ -32458,7 +32458,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"intelligence_damage"	"100 150 200 250 350 500 900"
+				"intelligence_damage"	"150 200 250 350 500 900 1200"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_tinker_0203"
 			}
 			"05"
@@ -32499,7 +32499,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"400"
+				"value"						"600"
 			}
 		}
 	}
@@ -41521,7 +41521,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"dmg_reduct"		"60"
+				"dmg_reduct"		"55"
 			}
 			"03"
 			{

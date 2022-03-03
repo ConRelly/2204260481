@@ -36,7 +36,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.4"
-		"LevelsBetweenUpgrades"         "9"
+		"LevelsBetweenUpgrades"         "10"
 		// Ability Resource
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20 18 16 14"
@@ -83,7 +83,7 @@
 			"07"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"int_multiplier"		"2.0 2.4 2.6 3.5"
+				"int_multiplier"		"4.0 5.4 6.6 8.5"
 				"LinkedSpecialBonus"    "special_laser_int_multiplier_lua"
 			}
 		}
