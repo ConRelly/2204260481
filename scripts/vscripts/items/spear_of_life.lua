@@ -119,6 +119,8 @@ LinkLuaModifier("modifier_life_greaves", "items/spear_of_life", LUA_MODIFIER_MOT
 LinkLuaModifier("modifier_life_greaves_aura", "items/spear_of_life", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_life_greaves_aura_threshold", "items/spear_of_life", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_life_greaves_mend", "items/spear_of_life", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_life_greaves_bubble", "items/spear_of_life", LUA_MODIFIER_MOTION_NONE)
+
 if item_life_greaves == nil then item_life_greaves = class({}) end
 function item_life_greaves:GetIntrinsicModifierName() return "modifier_life_greaves" end
 function item_life_greaves:OnSpellStart()
@@ -127,9 +129,10 @@ function item_life_greaves:OnSpellStart()
 	local heal_amount = self:GetSpecialValueFor("heal_amount")
 	local mana_amount_pct = self:GetSpecialValueFor("mana_amount_pct")
 	local mana_amount = self:GetSpecialValueFor("mana_amount")
+	local mend_duration = self:GetSpecialValueFor("mend_duration")
 	caster:Purge(false,true,false,false,false)
 
-	caster:AddNewModifier(caster, self, "modifier_life_greaves_mend", {duration = self:GetSpecialValueFor("mend_duration")})
+	caster:AddNewModifier(caster, self, "modifier_life_greaves_mend", {duration = mend_duration})
 
 	caster:EmitSound("DOTA_Item.FaerieSpark.Activate")
 	caster:EmitSound("Item.GuardianGreaves.Activate")
@@ -154,6 +157,21 @@ function item_life_greaves:OnSpellStart()
 					current_item:SetCurrentCharges(charges + 1)
 					unit:EmitSoundParams("Bottle.Cork", 1, 0.5, 0)
 				end
+			end
+		end
+		if caster:HasModifier("modifier_lier_scarlet_t") or caster:HasModifier("modifier_lier_scarlet_m") or caster:HasModifier("modifier_lier_scarlet_b") then
+			if unit:HasModifier("modifier_lier_scarlet_t") or unit:HasModifier("modifier_lier_scarlet_m") or unit:HasModifier("modifier_lier_scarlet_b") then
+				local MaxHealth_Shield = 25
+				if unit:HasModifier("modifier_lier_scarlet_2_pieces") then
+					MaxHealth_Shield = 75
+				end
+				if unit:HasModifier("modifier_lier_scarlet_3_pieces") then
+					MaxHealth_Shield = 150
+				end
+				if unit:HasModifier("modifier_life_greaves_bubble") then
+					unit:RemoveModifierByName("modifier_life_greaves_bubble")
+				end
+				unit:AddNewModifier(caster, self, "modifier_life_greaves_bubble", {maxhealthshield = MaxHealth_Shield, duration = mend_duration})
 			end
 		end
 	end
@@ -239,7 +257,7 @@ function modifier_life_greaves_aura:OnDestroy()
 		if self:GetParent():HasModifier("modifier_life_greaves_aura_threshold") then
 			self:GetParent():RemoveModifierByName("modifier_life_greaves_aura_threshold")
 		end
-	end	
+	end
 end
 function modifier_life_greaves_aura:DeclareFunctions()
 	return {MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS}
@@ -283,4 +301,60 @@ function modifier_life_greaves_mend:GetModifierIncomingDamage_Percentage()
 end
 function modifier_life_greaves_mend:GetModifierStatusResistanceStacking()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mend_status_resist") end
+end
+
+
+
+-------------------------
+-- Life Greaves Bubble --
+-------------------------
+modifier_life_greaves_bubble = class({})
+function modifier_life_greaves_bubble:IsHidden() return true end
+function modifier_life_greaves_bubble:IsDebuff() return false end
+function modifier_life_greaves_bubble:IsPurgable() return true end
+
+function modifier_life_greaves_bubble:DeclareFunctions()
+	return {MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK}
+end
+
+function modifier_life_greaves_bubble:OnCreated(kv)
+	if not IsServer() then return end
+
+	local caster = self:GetCaster()
+	local target = self:GetParent()
+	local shield_size = target:GetModelRadius()
+	local target_origin = target:GetAbsOrigin()
+
+	self.shield_remaining = kv.maxhealthshield * target:GetMaxHealth() / 100
+
+	local particle = ParticleManager:CreateParticle("particles/custom/items/life_greaves/life_greaves_bubble.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+	local common_vector = Vector(shield_size, 0, shield_size)
+	ParticleManager:SetParticleControl(particle, 1, common_vector)
+	ParticleManager:SetParticleControl(particle, 2, common_vector)
+	ParticleManager:SetParticleControl(particle, 4, common_vector)
+	ParticleManager:SetParticleControl(particle, 5, Vector(shield_size, 0, 0))
+
+	ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target_origin, true)
+	self:AddParticle(particle, false, false, -1, false, false)
+	self:SetStackCount(self.shield_remaining)
+end
+function modifier_life_greaves_bubble:GetModifierTotal_ConstantBlock(kv)
+	if not IsServer() then return end
+
+	local target = self:GetParent()
+	local original_shield_amount = self.shield_remaining
+
+	if kv.original_damage > 0 and bit.band(kv.damage_flags, DOTA_DAMAGE_FLAG_HPLOSS) ~= DOTA_DAMAGE_FLAG_HPLOSS then
+		self.shield_remaining = self.shield_remaining - kv.damage
+		self:SetStackCount(self.shield_remaining)
+
+		if kv.damage < original_shield_amount then
+			SendOverheadEventMessage(nil, OVERHEAD_ALERT_BLOCK, target, kv.damage, nil)
+			return kv.damage
+		else
+			SendOverheadEventMessage(nil, OVERHEAD_ALERT_BLOCK, target, original_shield_amount, nil)
+			self:Destroy()
+			return original_shield_amount
+		end
+	end
 end

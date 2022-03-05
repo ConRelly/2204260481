@@ -3664,41 +3664,35 @@
 			}
 		}
 	}
-"item_speed_orb"
-{
-	"BaseClass"					 "item_datadriven"
-	"AbilityTextureName"			"speed_orb"
-	"ItemCost"						"3500"	
-	"ItemCost"						"3500"
-	"ItemStockInitial"				"300"
-	"ItemStockMax"					"350"
-	"ItemStockTime"					"1500.0"		
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-	"ItemAliases"					"speed"
-	"ItemShopTags"					"consumable"
-	"ItemQuality"					"consumable"
-	"ItemStackable"					"1"
-	"ItemPermanent"					"0"
-	"ItemInitialCharges"			"1"
-	"IsTempestDoubleClonable"		"0"
-	"AbilitySpecial"
-	{			
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus"		 		"100"
-		}
-	}
-	"OnSpellStart"
+
+// Speed Orb
+	"item_speed_orb"
 	{
-		"RunScript"
-		{
-			"ScriptFile"			"items/consumables.lua"
-			"Function"				"item_consumable_used"
-			"modifier"			  	"modifier_item_speed_orb_consumed"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/consumables.lua"
+		"AbilityTextureName"			"speed_orb"
+		"ItemCost"						"3500"
+		"ItemStockInitial"				"300"
+		"ItemStockMax"					"350"
+		"ItemStockTime"					"1500.0"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"ItemAliases"					"speed"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"IsTempestDoubleClonable"		"0"
+		"AbilitySpecial"
+		{			
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus"				"100"
+			}
 		}
 	}
-}
+
 "item_recipe_suicidal_mask"
 {
 	
@@ -5105,7 +5099,41 @@
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Primary Attribute Book
+	//=================================================================================================================
+	"item_primary_attribute_book"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/consumables.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName"			"custom/primary_attribute_book"
 	
+		"Model"							"models/gameplay/attrib_tome_str.vmdl"
+		"skin"							"1"
+
+		"ItemCost"						"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemPurchasable"				"0"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"AbilityCooldown"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_primary_stat"	"50"
+			}
+		}
+	}
+
 "item_recipe_custom_octarine_core_1"
 {
 	"Model"							"models/props_gameplay/recipe.vmdl"
@@ -5683,7 +5711,7 @@
 			"cast_range"			"400 1000"
 			"push_length"			"500 750"
 			"push_duration"			"0.3"
-		}		
+		}
 	}
 
 	"item_recipe_psychic_headband2"
@@ -5723,8 +5751,8 @@
 			"intelligence_pct"		"25 30"
 			"cast_range"			"400 1000"
 			"push_length"			"500 750"
-			"push_duration"			"0.3"
-		}		
+			"push_duration"			"0.2"
+		}
 	}
 
 	"item_helm_of_the_dominator_2"
@@ -23222,7 +23250,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"flask_chance"			"30"
+				"book_chance"			"30"
 			}
 			"08"
 			{
@@ -31080,6 +31108,7 @@
 		"ItemRequirements"
 		{
 			"01"						"item_mjz_guardian_greaves_holy_light;item_ascetic_cap;item_bottle;item_air_essence;item_water_essence"
+			"02"						"item_guardian_greaves;item_ascetic_cap;item_bottle;item_air_essence;item_water_essence"
 		}
 	}
 

@@ -249,7 +249,7 @@
 
 
 	"dota_tooltip_ability_item_ritual_shovel"				"Cursed Shovel"
-	"dota_tooltip_ability_item_ritual_shovel_description"	"<h1>Active: Dig</h1>Sacrificing %hp_loss% health can dig up:<br><br>Ultra Rare Reward - %ultra_rare_chance%%%:<br>Enchanter - 5%%, Edible Fragment - 25%%, Sphere of Water or Sphere of Air - 70%%<br><br>Rare Reward - %rare_chance%%%:<br>Philosopher's Stone - 5%%, Removed Skill Prof - 5%%, Aghanim's Fragment - 20%%, Tome of Knowledge - 20%%, +10 to a random attribute - 50%%<br><br>Random Rune - %rune_chance%%%<br>Stats Tome - %flask_chance%%%<br>Enemy creep - %kobold_chance%%%: Kobold - 80%%<br><br>Replenishes Mana in the amount of 1/2 of sacrificed Health<br><br>Channel for %AbilityChannelTime% second.\n<h1><font color='#A32715'>Shovel's Curse</font></h1>With each subsequent use, the shovel takes an additional %hp_per_stack% Health.\n<h1><font color='#06945D'>UP: Holy Locket (15+ charges)</font></h1>%up_chance%%% chance of not getting the curse.\n<h1>Low Priority</h1>Reduces attack priority on the owner."
+	"dota_tooltip_ability_item_ritual_shovel_description"	"<h1>Active: Dig</h1>Sacrificing %hp_loss% health can dig up:<br><br>Ultra Rare Reward - %ultra_rare_chance%%%:<br>Enchanter - 5%%, Edible Fragment - 25%%, Sphere of Water or Sphere of Air - 70%%<br><br>Rare Reward - %rare_chance%%%:<br>Philosopher's Stone - 5%%, Removed Skill Prof - 5%%, Aghanim's Fragment - 20%%, Tome of Knowledge - 20%%, +10 to a random attribute - 50%%<br><br>Random Rune - %rune_chance%%%<br>Primary Attribute Tome - %book_chance%%%<br>Enemy creep - %kobold_chance%%%: Kobold - 80%%<br><br>Replenishes Mana in the amount of 1/2 of sacrificed Health<br><br>Channel for %AbilityChannelTime% second.\n<h1><font color='#A32715'>Shovel's Curse</font></h1>With each subsequent use, the shovel takes an additional %hp_per_stack% Health.\n<h1><font color='#06945D'>UP: Holy Locket (15+ charges)</font></h1>%up_chance%%% chance of not getting the curse.\n<h1>Low Priority</h1>Reduces attack priority on the owner."
 	"dota_tooltip_ability_item_ritual_shovel_note0"	"Damage from use can be lethal."
 	"dota_tooltip_ability_item_ritual_shovel_Lore"	"Former plaything of a young demon, received as a gift from his uncle."
 	"dota_tooltip_ability_item_ritual_shovel_hp"			"+$health"
@@ -871,7 +871,9 @@
 	"DOTA_Tooltip_modifier_demonic_sword_burn_Description"		"Deals damage once per second"
 	
 	"DOTA_Tooltip_ability_item_life_greaves"				"Life Greaves"
-	"DOTA_Tooltip_ability_item_life_greaves_Description"	"<h1>Active: Mend</h1>Restores %heal_amount% + %heal_amount_pct%%% health and %mana_amount% + %mana_amount_pct%%% mana to all allies, and removes most negative effects from the caster and gives Resistance bonuses. <br>Mend Duration: %mend_duration% seconds.<br><br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span> <br><br> If the owner's health drops below %aura_bonus_threshold%%%, the item is activated automatically and applies <span class=\"GameplayValues GameplayVariable\">Strong Dispel</span>. \n<h1>Passive: Guardian Aura</h1>Grants %aura_health_regen% health regeneration and %aura_armor% armor to allied units. If an allied hero's health falls below %aura_bonus_threshold%%%, they receive bonus %aura_health_regen_threshold% health regeneration and %aura_armor_threshold% armor. \n<h1><font color='#60CCFF'>Fountain Water</font></h1>When used, it replenishes one Bottle charge to all allies.\nMovement speed bonuses from multiple pairs of boots do not stack."
+	"DOTA_Tooltip_ability_item_life_greaves_Description"	"<h1>Active: Mend</h1>Restores %heal_amount% + %heal_amount_pct%%% health and %mana_amount% + %mana_amount_pct%%% mana to all allies, and removes most negative effects from the caster and gives Resistance bonuses. <br>Mend Duration: %mend_duration% seconds.<br><br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span> \n<h1>Passive: Guardian Aura</h1>Grants %aura_health_regen% health regeneration and %aura_armor% armor to allied units. If an allied hero's health falls below %aura_bonus_threshold%%%, they receive bonus %aura_health_regen_threshold% health regeneration and %aura_armor_threshold% armor. \n<h1><font color='#60CCFF'>Fountain Water</font></h1>When used, it replenishes one Bottle charge to all allies. \n<h1><font color='#44211E'>UP: Lier Scarlet</font></h1> After use, it gives the target a shield. <br> Applies to any allied target having Lier Scarlet \nMovement speed bonuses from multiple pairs of boots do not stack."
+	"DOTA_Tooltip_ability_item_life_greaves_Note0"				"If the owner's health drops below %aura_bonus_threshold%%%, the item is activated automatically and applies <span class=\"GameplayValues GameplayVariable\">Strong Dispel</span>."
+	"DOTA_Tooltip_ability_item_life_greaves_Note1"				"<br> 2) One part of Lier Scarlet gives 25%% of shields from Max Health; two parts - 75%%; three parts - 150%%"
 	"DOTA_Tooltip_ability_item_life_greaves_speed"				"+$move_speed"
 	"DOTA_Tooltip_ability_item_life_greaves_mana"				"+$mana"
 	"DOTA_Tooltip_ability_item_life_greaves_armor"				"+$armor"
@@ -2489,7 +2491,7 @@
 	"DOTA_Tooltip_modifier_mjz_brewmaster_drunken_brawler_active"					"Drunken Brawler"
 	"DOTA_Tooltip_modifier_mjz_brewmaster_drunken_brawler_active_Description"		"Gives a chance to avoid attacks and to deal critical damage. "
 
-	"DOTA_Tooltip_ability_brewmaster_drunken_brawler_custom"							"Drunkenn Brawler"
+	"DOTA_Tooltip_ability_brewmaster_drunken_brawler_custom"							"Drunken Brawler"
 	"DOTA_Tooltip_ability_brewmaster_drunken_brawler_custom_Lore"						"When Mangix won his title as the Brewmaster of the Order of Oyo, he also claimed his place in the mastery of inebriation."
 	"DOTA_Tooltip_ability_brewmaster_drunken_brawler_custom_Description"				"Brewmaster can switch stances based on the elements he controls gaining passive bonuses that improve against enemies affected by Cinder Brew.\n<font color=\"#9acd32\">Earth Brawler</font> - Grants %armor% armor and %magic_resist%%% Magic Resistance. Bonuses are %active_multiplier%x when Brewed Up.\n<font color=\"#87ceeb\">Storm Brawler</font> - Grants %dodge_chance%%% evasion and %bonus_move_speed%%% Bonus Move Speed. Bonuses are %active_multiplier%x when Brewed Up\n<font color=\"#FF0000\">Fire Brawler</font> Grants %crit_chance%%% chance to crit for %crit_multiplier%%% of your attack damage. Chance is %active_multiplier%x when Brewed Up."
 	"DOTA_Tooltip_ability_brewmaster_drunken_brawler_custom_Note0"						"Stacks diminishingly with other sources of Evasion."
@@ -2548,7 +2550,7 @@
 
 
 	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger"							"Insatiable Hunger"
-	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_Description"				"A violent lust for vital fluids increases Broodmother's attack damage and gives her a %chance%%% chance of vampiric attack.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Has %chance%%% chance on attack to increase your bonus Base dmg by %bonus_atack% and your bonus spell amp by %bonus_amp%."
+	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_Description"				"A violent lust for vital fluids increases Broodmother's attack damage and gives her a %chance%%% chance of vampiric attack.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Has %chance%%% chance on attack to increase your bonus Base dmg by %bonus_atack% and your bonus spell amp by %bonus_amp%%%."
 	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_Lore"						"While most of her prey is wrapped in silken cocoons and saved for her young, the Broodmother herself has a taste for wandering heroes."
 	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_Note0"						"Fully stacks with other sources of lifesteal."
 	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_bonus_damage"				"BONUS DAMAGE:"
@@ -3273,6 +3275,7 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_mirana_arrow_chance"		"+{s:value}% Sacred Arrow Chance"	
 	"DOTA_Tooltip_ability_mjz_monkey_king_cloud"					"CLOUD"
 	"DOTA_Tooltip_ability_mjz_monkey_king_cloud_Description"		"The cloud that Monkey King rides when flying, one somersault can travel a distance of tens of thousands of miles."
+	"DOTA_Tooltip_ability_mjz_monkey_king_cloud_shard_Description"		"Removes the speed limit and gives slow immunity."
 	"DOTA_Tooltip_ability_mjz_monkey_king_cloud_Lore"				"removes unit collisions"
 	"DOTA_Tooltip_ability_mjz_monkey_king_cloud_bonus_move_speed"	"%MOVEMENT SPEED:"
 	"DOTA_Tooltip_ability_mjz_monkey_king_cloud_mana_pct"			"%MAXIMUM MANA COST PER SECOND:"	
@@ -4036,9 +4039,13 @@ DISPEL TYPE: Strong Dispel"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_tinker_0203"		"+{s:value}% Heat-Seeking Missile Intelligence Damage"
 	
 	"DOTA_Tooltip_ability_mjz_tinker_quick_arm"												"Quick Arm"
-	"DOTA_Tooltip_ability_mjz_tinker_quick_arm_Description"									"CHANNELED - Halve the cooldown on most of Tinker's items and abilities."
+	"DOTA_Tooltip_ability_mjz_tinker_quick_arm_Description"									"CHANNELED - Halve the cooldown on most of Tinker's items and abilities. \n<h1><font color='#DE3163'>Super Scepter</font></h1> It is no longer interruptible and can be used in stun, but the delay is equal to channeling time."
 	"DOTA_Tooltip_ability_mjz_tinker_quick_arm_Lore"										"A new battery here, another set of rockets there, Boush continually improves on existing technology."
-	"DOTA_Tooltip_ability_mjz_tinker_quick_arm_abilitychanneltime"							"TIME TO QUICK ARM:"  
+	"DOTA_Tooltip_ability_mjz_tinker_quick_arm_channel_time"							"TIME TO QUICK ARM:"
+	"DOTA_Tooltip_ability_mjz_tinker_quick_arm_cooldown_reduction"						"%Cooldown Reduction:"
+
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_tinker_quick_arm_channel_time"		"-{s:value}s Quick Arm Time"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_tinker_quick_arm_cdr"				"+{s:value}% Quick Arm Cooldown Reduction"
   
 	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior"						"Craggy Exterior"
 	"DOTA_Tooltip_ability_mjz_tiny_craggy_exterior_Description"			"Causes damage to bounce back on Tiny's attackers. Melee enemies that attack Tiny have a chance of being stunned."
@@ -7202,8 +7209,8 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_ability_item_desolator_custom_Lore"			"The original demonic favorite that served as basis for the beloved mortal design."
 "DOTA_Tooltip_ability_item_desolator_custom_Note0"			"Armor reduction works on buildings."
 "DOTA_Tooltip_ability_item_desolator_custom_bonus_damage"			"+$damage"
-"DOTA_Tooltip_modifier_apl_desolator"					"Desolator"
-"DOTA_Tooltip_modifier_apl_desolator_Description"		"Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
+"DOTA_Tooltip_modifier_apl_desolator_armor"					"Desolator"
+"DOTA_Tooltip_modifier_apl_desolator_armor_Description"		"Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
 
 "DOTA_Tooltip_Ability_item_desolator_2_custom"						 "Desolator 2"
 "DOTA_Tooltip_Ability_item_desolator_2_custom_Description"				"<h1>Passive: Corruption</h1> Your attacks reduce the target's armor by %corruption_armor% for %corruption_duration% seconds."
@@ -7572,6 +7579,10 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 
 "DOTA_Tooltip_modifier_tome_int_bonus"							"Intelligence Bonus"
 "DOTA_Tooltip_modifier_tome_int_bonus_Description"				"Intelligence increased by %dMODIFIER_PROPERTY_TOOLTIP%."
+
+"DOTA_Tooltip_ability_item_primary_attribute_book"					"Primary Attribute Tome"
+"DOTA_Tooltip_ability_item_primary_attribute_book_Description"		"<h1>Use: Consume</h1>Permanently increases your primary attribute by %bonus_primary_stat%."
+"DOTA_Tooltip_ability_item_primary_attribute_book_Lore"		"A book that adapts to the wishes of the owner."
 
 "DOTA_Tooltip_Ability_item_trade_kaya"						"Trade Kaya"
 "DOTA_Tooltip_Ability_item_trade_kaya_Description"			"<h1>Passive: Stats Bargain</h1> Trade Kaya reduces your strength and agility by %stats_reduction%, at the same time that amplifies your magic damage by %spell_amp%%%."
@@ -8635,7 +8646,7 @@ Required Level: %required_level%
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne"						"<font color='#05D6EB'>Frostmourne</font>"
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Description"			"<h1>Active: Frost Storm</h1>Encases an enemy unit in ice, prohibiting movement and attack, while dealing damage over time.<br><br>Damage per Second: %frostbite_damage_per_second%<br>Hero Duration: %frostbite_duration_hero% sec.<br>Creep Duration: %frostbite_duration_creep% sec.
 	\n<h1>Passive: Cold Attack</h1>Attacks lower enemy attack speed by %debuff_attack_speed% and movement speed by %debuff_move_speed_pct%%%.<br><br>Duration: %debuff_duration% 
-	\n<h1>Passive: Pure Lifesteal</h1>Has %proc_chance%%% chance to Heal the attacker for %attack_lifesteal%%% of attack damage.
+	\n<h1>Passive: Pure Lifesteal</h1> Has %proc_chance%%% chance to Heal the attacker for %attack_lifesteal%%% of attack damage.
 	\n<h1><font color='#0597EB'>Passive: Frostbite</font></h1><font color='lightblue'>On attack When cooldown is rdy deals 7%% of the target current hp in physical dmg and puts the item on a 4s CD.</font>\n<h1><font color='#DE3163'>Super Scepter</font></h1><font color='#0597EB'>Frostbite</font> Now deals an aditional instance of Damage that Ignores Base Armor(attack dmg + %speed_mult_dmg% x movement speed + %healt_reg_mult_dmg% x Hp regen). <font color='#6CDB16'>SpeedTraining</font>: For every <font color='#0597EB'>Frostbite</font> trigger gain %bonus_base_agi% Base Agility, additionally if your MS is above 5k your bonus base agi will increase by %bonus_base_agi% and after that will increase by %bonus_base_agi% for every 10k MS."
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Lore"							"Hail to the king, baby!"
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Note0"						   "Frostbite works only on Real Heroes(no illusions or bear etc.), Damage dealt by frostbite is affected by Spell Amplification"
@@ -9952,7 +9963,7 @@ Contains all random skills"
 
 // Hoodwink
 	"DOTA_Tooltip_ability_hoodwink_custom_acorn_shot"						"Acorn Shot"
-	"DOTA_Tooltip_ability_hoodwink_custom_acorn_shot_Description"			"Fires Hoodwink's attack with an acorn at the target unit.  The acorn bounces to nearby targets, slowing them and dealing a percentage of Hoodwink's attack with bonus damage. \nIf point targeted, a tree is created at the target position and the acorn will bounce to nearby targets.  The ability may be placed on auto-cast to force this behavior."
+	"DOTA_Tooltip_ability_hoodwink_custom_acorn_shot_Description"			"Fires Hoodwink's attack with an acorn at the target unit. The acorn bounces to nearby targets, slowing them and dealing a percentage of Hoodwink's attack with bonus damage. \nIf point targeted, a tree is created at the target position and the acorn will bounce to nearby targets.  The ability may be placed on auto-cast to force this behavior."
 	"DOTA_Tooltip_ability_hoodwink_custom_acorn_shot_Lore"					"Though she'll make do with almost anything, Oak and Ironwood acorns make the most effective projectiles -- and the bulk of Hoodwink's stash."
 	"DOTA_Tooltip_ability_hoodwink_custom_acorn_shot_bonus_range"			"BONUS ATTACK RANGE:"
 	"DOTA_Tooltip_ability_hoodwink_custom_acorn_shot_bounce_count"			"BOUNCE COUNT:"
@@ -9965,7 +9976,7 @@ Contains all random skills"
 	"DOTA_Tooltip_ability_hoodwink_custom_acorn_shot_Note2"				"The planted tree lasts for 20 seconds."
 	"DOTA_Tooltip_ability_hoodwink_custom_acorn_shot_Note3"				"Acorn Shot benefits from attack range bonuses."
 
-	"DOTA_Tooltip_ability_hoodwink_acorn_shot_Description"			"Fires Hoodwink's attack with an acorn at the target unit.  The acorn bounces to nearby targets, slowing them and dealing a percentage of Hoodwink's attack with bonus damage. <font color='#3BAB06'>Works only on Ranged heroes</font><\nIf point targeted, a tree is created at the target position and the acorn will bounce to nearby targets.  The ability may be placed on auto-cast to force this behavior."
+	"DOTA_Tooltip_ability_hoodwink_acorn_shot_Description"			"Fires Hoodwink's attack with an acorn at the target unit. The acorn bounces to nearby targets, slowing them and dealing a percentage of Hoodwink's attack with bonus damage. <font color='#3BAB06'>Works only on Ranged heroes</font> \nIf point targeted, a tree is created at the target position and the acorn will bounce to nearby targets. The ability may be placed on auto-cast to force this behavior."
 
 	"DOTA_Tooltip_ability_hoodwink_custom_bushwhack"						"Bushwhack"
 	"DOTA_Tooltip_ability_hoodwink_custom_bushwhack_Description"			"Tosses a net trap that stuns enemy heroes if they are near a tree in the area.  Affected enemies take damage and are pulled towards the tree nearest to them, and have their vision reduced to 0 for the duration of the stun."

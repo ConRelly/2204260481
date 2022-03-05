@@ -77,14 +77,15 @@
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"scepter_bounce_range"	"700"
-			}
-			"07"
-			{
 				"var_type"			"FIELD_FLOAT"
 				"int_multiplier"		"4.0 5.4 6.6 8.5"
 				"LinkedSpecialBonus"    "special_laser_int_multiplier_lua"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"scepter_bounce_range"	"700"
+				"RequiresScepter"		"1"
 			}
 		}
 	}

@@ -5,6 +5,12 @@ LinkLuaModifier("modifier_tome_agi_bonus", "items/tomes.lua", LUA_MODIFIER_MOTIO
 LinkLuaModifier("modifier_tome_int_bonus", "items/tomes.lua", LUA_MODIFIER_MOTION_NONE)
 local chen_first_spawn = true
 item_ritual_shovel = item_ritual_shovel or class({})
+function item_ritual_shovel:IsMuted()
+	if not self:GetCaster():IsRealHero() then
+		return true
+	end
+	return false
+end
 function item_ritual_shovel:GetCastRange(location, target)
 	return 250 - self:GetCaster():GetCastRangeBonus()
 end
@@ -14,8 +20,8 @@ function item_ritual_shovel:OnSpellStart()
 	self.ultra_rare = self:GetSpecialValueFor("ultra_rare_chance")
 	self.rare = self:GetSpecialValueFor("rare_chance") + self.ultra_rare
 	self.rune = self:GetSpecialValueFor("rune_chance") + self.rare
-	self.flask = self:GetSpecialValueFor("flask_chance") + self.rune
-	self.kobold = self:GetSpecialValueFor("kobold_chance") + self.flask
+	self.book_of_stats = self:GetSpecialValueFor("book_chance") + self.rune
+	self.kobold = self:GetSpecialValueFor("kobold_chance") + self.book_of_stats
 	self.pfx = ParticleManager:CreateParticle("particles/econ/events/ti9/shovel_dig.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
 	ParticleManager:SetParticleControl(self.pfx, 0, self:GetCursorPosition())
 	EmitSoundOn("SeasonalConsumable.TI9.Shovel.Dig", self:GetCaster())
@@ -84,15 +90,16 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 				self:GetParent():FindItemInInventory("item_tome_of_knowledge"):EndCooldown()
 			elseif rare > 50 and rare <= 100 then
 				local atr = RandomInt(1, 3)
+				local TomeAttributes = 50
 				if atr == 1 then
-					self:GetParent():ModifyStrength(10)
-					Add_Attributes(self:GetParent(), "modifier_tome_str_bonus", 50)
+					self:GetParent():ModifyStrength(TomeAttributes)
+					Add_Attributes(self:GetParent(), "modifier_tome_str_bonus", TomeAttributes)
 				elseif atr == 2 then
-					self:GetParent():ModifyAgility(10)
-					Add_Attributes(self:GetParent(), "modifier_tome_agi_bonus", 50)
+					self:GetParent():ModifyAgility(TomeAttributes)
+					Add_Attributes(self:GetParent(), "modifier_tome_agi_bonus", TomeAttributes)
 				elseif atr == 3 then
-					self:GetParent():ModifyIntellect(10)
-					Add_Attributes(self:GetParent(), "modifier_tome_int_bonus", 50)
+					self:GetParent():ModifyIntellect(TomeAttributes)
+					Add_Attributes(self:GetParent(), "modifier_tome_int_bonus", TomeAttributes)
 				end
 			end
 		elseif random_int > self.rare and random_int <= self.rune then
@@ -112,15 +119,9 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 			elseif random_rune == 7 then
 				CreateRune(self:GetCursorPosition(), DOTA_RUNE_BOUNTY)
 			end
-		elseif random_int > self.rune and random_int <= self.flask then
-			if RollPseudoRandom(33, self) then
-				SpawnItem("item_book_of_strength", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
-			elseif RollPseudoRandom(66, self) then
-				SpawnItem("item_book_of_intelligence", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
-			else
-				SpawnItem("item_book_of_agility", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)	
-			end
-		elseif random_int > self.flask and random_int <= self.kobold then
+		elseif random_int > self.rune and random_int <= self.book_of_stats then
+			SpawnItem("item_primary_attribute_book", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
+		elseif random_int > self.book_of_stats and random_int <= self.kobold then
 			if chen_first_spawn and self:GetCaster():GetName() == "npc_dota_hero_chen" then
 				chen_first_spawn = false
 				local huskar = CreateUnitByName("npc_dota_custom_creep_28_3", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_BADGUYS)

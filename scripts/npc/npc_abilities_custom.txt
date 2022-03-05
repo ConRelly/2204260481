@@ -23926,7 +23926,7 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"value"						"5"
-				"ad_linked_abilities"			"dragon_knight_dragon_blood"
+				"ad_linked_abilities"		"dragon_knight_dragon_blood"
 			}
 		}
 	}
@@ -27306,6 +27306,8 @@
 			}
 		}
 	}
+
+// Monkey King: Cloud
 	"mjz_monkey_king_cloud"
 	{
 		"BaseClass"						"ability_lua"
@@ -27317,8 +27319,9 @@
 		"AbilityManaCost"				"10"
 		"AbilityCooldown"				"5"
 
+		"HasShardUpgrade"				"1"
 		"MaxLevel"						"1"
-		"LearnOnSpawn"					"1"		// 出生时学习此技能、值为等级
+		"LearnOnSpawn"					"1"
 
 		"AbilitySpecial"
 		{
@@ -27339,6 +27342,7 @@
 			"particle"	"particles/econ/items/monkey_king/arcana/monkey_arcana_cloud.vpcf"
 		}
 	}
+
 	//=================================================================================================================
 	// Monkey King: Jingu Mastery		如意棒法
 	//=================================================================================================================
@@ -32438,7 +32442,7 @@
 		"AbilitySound"					"Hero_Tinker.Heat-Seeking_Missile"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastPoint"				"0 0 0 0 0 0 0"
-		"MaxLevel"					  	"7"
+		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"		 	"8"
 		"AbilityCooldown"				"18"
 		"AbilityManaCost"				"250"
@@ -32503,17 +32507,18 @@
 			}
 		}
 	}
+
 	"mjz_tinker_quick_arm"
 	{
-		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/hero_tinker/mjz_tinker_quick_arm.lua"
 		"AbilityTextureName"			"mjz_tinker_quick_arm"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+//		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilitySound"					"Hero_Tinker.Rearm"
 
-		"AbilityCastPoint"				"0.53 0.53 0.53 0.53"
-		"AbilityChannelTime"			"1.8 1.3 0.75"
+		"AbilityCastPoint"				"0.53"
+//		"AbilityChannelTime"			"1.8 1.3 0.75"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 		"AbilityManaCost"				"100 200 300"
@@ -32521,6 +32526,19 @@
 
 		"AbilitySpecial"
 		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"channel_time"					"1.8 1.3 0.75"
+				"LinkedSpecialBonus"			"special_bonus_unique_mjz_tinker_quick_arm_channel_time"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"cooldown_reduction"			"50"
+				"LinkedSpecialBonus"			"special_bonus_unique_mjz_tinker_quick_arm_cdr"
+			}
 		}
 
 		"precache"
@@ -32529,6 +32547,37 @@
 			"particle"				"particles/units/heroes/hero_tinker/tinker_rearm.vpcf"
 		}
 	}
+	"special_bonus_unique_mjz_tinker_quick_arm_channel_time"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"0.25"
+			}
+		}
+	}
+	"special_bonus_unique_mjz_tinker_quick_arm_cdr"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"15"
+			}
+		}
+	}
+
 	//=================================================================================================================
 	// Tiny: Craggy Exterior			崎岖外表
 	//=================================================================================================================
@@ -33464,7 +33513,6 @@
 				"var_type"					"FIELD_INTEGER"
 				"debuff_duration"			"10"
 			}
-			
 		}
 
 		"precache"
