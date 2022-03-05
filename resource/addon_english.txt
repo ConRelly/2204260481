@@ -182,7 +182,7 @@
 	"DOTA_Tooltip_modifier_abyssal_water_blade_internal_cd_Description"	"At this time, you can't stun with the Bash ability"
 	"DOTA_Tooltip_modifier_abyssal_water_blade_bash"				"Bash"
 	"DOTA_Tooltip_modifier_abyssal_water_blade_bash_Description"	"Stunned"
-
+	"DOTA_Tooltip_modifier_abyssal_water_blade_up"                  "UP:Skadi Bow"
 
 	"dota_tooltip_ability_item_war_fury"				"War Fury"
 	"DOTA_Tooltip_ability_item_war_fury_Description"	"<h1>Active: Chop Tree</h1> Destroy a target tree.<br><br>Cast Range: global\n<h1>Passive: Quell</h1> Increases attack damage against non-hero units by %quelling_bonus% for melee heroes, and %quelling_bonus_ranged% for ranged. \n<h1>Passive: Cleave</h1> Deals %cleave_damage_percent%%% of attack damage as physical damage in a cone up to %cleave_distance% around the target. Deals %cleave_damage_percent_creep%%% against creeps. (Melee Only)"
@@ -3253,7 +3253,7 @@
 	"DOTA_Tooltip_ability_mjz_meepo_meepo_king_experience_radius"			"XP GAIN RADIUS:"
 
 	"DOTA_Tooltip_ability_mjz_meepo_poof"				"Poof"
-	"DOTA_Tooltip_ability_mjz_meepo_poof_Description"	"Drawing mystical energies from the earth, a Meepo can teleport to teammate or itself after channeling for 1.5 seconds, dealing damage in both the departure and arrival locations.\n<h1><font color='#DE3163'>Super Scepter</font></h1> Have %extra_stack_chance%%% chance for an extra <font color='#E8EF1B'>Pooof Stack</font>"
+	"DOTA_Tooltip_ability_mjz_meepo_poof_Description"	"Drawing mystical energies from the earth, a Meepo can teleport to teammate or itself after channeling for 1.5 seconds(toggle to teleport random around yourself), dealing damage in both the departure and arrival locations.\n<h1><font color='#DE3163'>Super Scepter</font></h1> Have %extra_stack_chance%%% chance for an extra <font color='#E8EF1B'>Pooof Stack</font>"
 	"DOTA_Tooltip_ability_mjz_meepo_poof_Lore"			"Sometimes breaking one of the Riftshadow Crystals can be just the trick for getting yourself out of a bind. Or your other self."
 	"DOTA_Tooltip_ability_mjz_meepo_poof_radius"		"RADIUS:"
 	"DOTA_Tooltip_ability_mjz_meepo_poof_poof_damage"	"Str and Agi as Damage:"
@@ -6146,7 +6146,7 @@ You can't target yourself."
 "DOTA_Tooltip_ability_gyrocopter_call_down_scepter_description"				"Adds a Side Gunner that at random attacks enemy units within a 600 radius every 0.9 seconds."
 
 "DOTA_Tooltip_ability_huskar_custom_life_break"										"<font color='#f2da5b'>Life Bomb</font>"
-"DOTA_Tooltip_ability_huskar_custom_life_break_Description"							"Huskar channels his vitality into a single massive explosion, increasing damage by %multiplier_tooltip%%% every second.Hits all enemies in vision.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Bonus Damage from Level gets multiplied with the stacks of <font color='#DE3163'>Super Synth</font>"
+"DOTA_Tooltip_ability_huskar_custom_life_break_Description"							"Huskar channels his vitality into a single massive explosion, increasing damage by %multiplier%%% every 0.2 seconds.Hits all enemies in vision.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Increase duration by 3 seconds. Bonus Damage from Level gets multiplied with the stacks of <font color='#DE3163'>Super Synth</font>"
 "DOTA_Tooltip_ability_huskar_custom_life_break_Note0"							   "Only Death or Huskar can stop the channeling. SS effect has a limit on how many stacks will get counted(is more then 9 and less then 20)"
 "DOTA_Tooltip_ability_huskar_custom_life_break_Note1"                              "Damage is split in 4 instances"
 "DOTA_Tooltip_ability_huskar_custom_life_break_radius"										"RADIUS:"
@@ -6154,7 +6154,7 @@ You can't target yourself."
 "DOTA_Tooltip_ability_huskar_custom_life_break_duration"									"DURATION:"
 "DOTA_Tooltip_ability_huskar_custom_life_break_level_bonus_damage"							"Bonus Damage for every Level:"
 
-"DOTA_Tooltip_modifier_huskar_custom_life_break"							"Life Break"
+"DOTA_Tooltip_modifier_huskar_custom_life_break"							"Spirit Bomb"
 "DOTA_Tooltip_modifier_huskar_custom_life_break_Description"				"Channeling a massive strike."
 
 "DOTA_Tooltip_ability_invoker_custom_forged_spirit_melting_strike"							"<font color='#f2da5b'>Melting Strike</font>"

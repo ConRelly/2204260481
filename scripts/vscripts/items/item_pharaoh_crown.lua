@@ -21,14 +21,15 @@ function modifier_pharaoh_crown_buff:IsPurgable()
 end
 if IsServer() then
 function modifier_pharaoh_crown_buff:OnDestroy(keys)
+	if self.parent:IsNull() then return end
 	self.parent:ForceKill(false)
 	print("force kill Main")
-	if self.parent and self.parent:IsAlive() then
+	if self.parent and not self.parent:IsNull() and self.parent:IsAlive() then
 		print("force kill second")
 		self.parent:ForceKill(false)
 	end
 	Timers:CreateTimer(3, function()
-		if self.parent and self.parent:IsAlive() then
+		if self.parent and not self.parent:IsNull() and self.parent:IsAlive() then
 			print("force kill timer")
 			self.parent:ForceKill(false)
 		end

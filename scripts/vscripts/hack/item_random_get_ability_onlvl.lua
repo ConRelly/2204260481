@@ -134,7 +134,7 @@ function GetRandomAbilityName( hero )
 		--"medusa_split_shot",				-- 美杜莎 1
 		"medusa_mana_shield",			   -- 美杜莎 3
 		"mjz_broodmother_insatiable_hunger",					  -- 白虎 3
-		"abyssal_underlord_atrophy_aura",			 -- 滚滚 3
+		--"abyssal_underlord_atrophy_aura",			 -- 滚滚 3
 		"meepo_ransack",					-- 米波 3
 		"bloodseeker_thirst",		   -- 蚂蚁 3	bug
 		"faceless_void_time_lock",		  -- 虚空 3

@@ -2,7 +2,10 @@ huskar_custom_life_break = class({})
 
 
 function huskar_custom_life_break:OnSpellStart()
+
 	local caster = self:GetCaster()
+
+
 	if caster:HasAbility("special_bonus_unique_huskar") then
 		local talent = caster:FindAbilityByName("special_bonus_unique_huskar")
 		if talent and talent:GetLevel() > 0 then
@@ -18,17 +21,21 @@ function huskar_custom_life_break:OnSpellStart()
 		caster,
 		self,
 		"modifier_huskar_custom_life_break", -- modifier name
-		{ duration = self:GetChannelTime() } -- kv
+		{ duration = self:GetChannelTime()} -- kv
 	)
-	
+
 end
 
 function huskar_custom_life_break:GetChannelTime()
 	local caster = self:GetCaster()
+	local bonus_time = 0
+	if caster:HasModifier("modifier_super_scepter") then
+		bonus_time = 3
+	end	
 	if caster:HasModifier("modifier_huskar_talent1") then
-		return self.BaseClass.GetChannelTime(self) + 5
+		return self.BaseClass.GetChannelTime(self) + 1 + bonus_time
 	end
-    return self.BaseClass.GetChannelTime(self)
+    return self.BaseClass.GetChannelTime(self) + bonus_time
 end
 
 function huskar_custom_life_break:OnChannelFinish( bInterrupted )
@@ -96,7 +103,7 @@ if IsServer() then
 		self.animCounter = self.animCounter + 3
 		ParticleManager:SetParticleControl(self.particle, 1, Vector(self.animCounter, 0, self.animCounter))
 		
-		local units = FindUnitsInRadius(self.parent:GetTeam(), 
+--[[ 		local units = FindUnitsInRadius(self.parent:GetTeam(), 
 			self.parent:GetAbsOrigin(), 
 			nil, 
 			self.radius,
@@ -113,7 +120,7 @@ if IsServer() then
             OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
             TargetIndex = parentIndex
         })
-		end
+		end ]]
 	end
 	function modifier_huskar_custom_life_break:OnDestroy()
 		local explode_point = self:GetParent() 

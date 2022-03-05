@@ -68,7 +68,13 @@ if IsServer() then
 		self:DamageInArea(position_start, radius, damage, damage_type)
 	
 		-- Teleport
-		self:Teleport(position_end)
+
+		if ability:GetAutoCastState() then 
+			FindClearRandomPositionAroundUnit(caster, caster, math.random(250))		
+		else
+			self:Teleport(position_end)
+		end	
+		
 	
 		-- Damage on end position
 		self:DamageInArea(position_end, radius, damage, damage_type)

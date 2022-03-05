@@ -76,6 +76,7 @@ function modifier_broken_wings:OnAttackLanded(keys)
 	if IsServer() then
 		local owner = self:GetParent()
 		local target = keys.target
+		if not owner:IsRealHero() then return end
 --		local max_stacks = self:GetAbility():GetSpecialValueFor("feather_max_stacks")
 		if owner ~= keys.attacker then return end
 		if owner:HasModifier("modifier_broken_wings_divinity") then return end

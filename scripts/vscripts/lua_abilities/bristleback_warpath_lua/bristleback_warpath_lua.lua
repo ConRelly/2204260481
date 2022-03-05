@@ -37,10 +37,14 @@ function modifier_bristleback_warpath_lua:DeclareFunctions()
 	}
 end
 function modifier_bristleback_warpath_lua:GetModifierMoveSpeedBonus_Percentage()
-	return self:GetAbility():GetSpecialValueFor("move_speed_per_stack") * self:GetStackCount()
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("move_speed_per_stack") * self:GetStackCount()
+	end	
 end
 function modifier_bristleback_warpath_lua:GetModifierPreAttack_BonusDamage()
-	return self:GetAbility():GetSpecialValueFor("damage_per_stack") + (self:GetParent():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier")) * self:GetStackCount()
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("damage_per_stack") + (self:GetParent():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier")) * self:GetStackCount()
+	end	
 end
 function modifier_bristleback_warpath_lua:OnAbilityFullyCast(params)
 	if IsServer() then
@@ -58,10 +62,12 @@ function modifier_bristleback_warpath_lua:GetModifierModelScale(params)
 	return 4 * self:GetStackCount()
 end
 function modifier_bristleback_warpath_lua:GetModifierSpellAmplify_Percentage()
-	return self:GetAbility():GetSpecialValueFor("spell_amp_per_stack") * self:GetStackCount()
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("spell_amp_per_stack") * self:GetStackCount()
+	end	
 end
 function modifier_bristleback_warpath_lua:AddStack()
-	if IsServer() and self:GetParent():IsAlive() then
+	if IsServer() and self:GetParent():IsAlive() and self:GetAbility() then
 		local stack_duration = self:GetAbility():GetSpecialValueFor("stack_duration")
 		local modifier = self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_bristleback_warpath_stack_lua", {duration = stack_duration})
 		if modifier then

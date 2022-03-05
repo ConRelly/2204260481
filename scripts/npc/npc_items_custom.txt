@@ -5677,30 +5677,15 @@
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"MaxUpgradeLevel"				"2"
 		"ItemBaseLevel"					"1"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"intelligence_pct"		"25 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"400 1000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"push_length"			"500 750"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"push_duration"			"0.3"
-			}
-		}
+			"intelligence_pct"		"25 30"
+			"cast_range"			"400 1000"
+			"push_length"			"500 750"
+			"push_duration"			"0.3"
+		}		
 	}
+
 	"item_recipe_psychic_headband2"
 	{
 		"BaseClass"						"item_datadriven"
@@ -5733,29 +5718,13 @@
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"MaxUpgradeLevel"				"2"
 		"ItemBaseLevel"					"2"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"intelligence_pct"		"25 30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"400 1000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"push_length"			"500 750"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"push_duration"			"0.2"
-			}
-		}
+			"intelligence_pct"		"25 30"
+			"cast_range"			"400 1000"
+			"push_length"			"500 750"
+			"push_duration"			"0.3"
+		}		
 	}
 
 	"item_helm_of_the_dominator_2"

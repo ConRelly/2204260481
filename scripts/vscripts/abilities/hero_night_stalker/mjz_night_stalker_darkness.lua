@@ -51,8 +51,10 @@ local modifier_class = modifier_mjz_night_stalker_darkness
 function modifier_class:IsPassive() return false end
 function modifier_class:IsHidden() return false end
 function modifier_class:IsPurgable() return false end
+function modifier_class:GetActivityTranslationModifiers() return "hunter_night" end
 
 function modifier_class:OnCreated()
+    self:GetActivityTranslationModifiers()
 	if IsServer() then
 		GameRules:BeginNightstalkerNight(self:GetDuration())
 		self:StartIntervalThink(FrameTime() * 3)
@@ -116,7 +118,6 @@ function modifier_class:GetModifierModelScale( )
     end
     return 0    
 end
-function modifier_class:GetActivityTranslationModifiers() return "hunter_night" end
 function modifier_class:GetModifierPureLifesteal()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("lifesteal_pct") end
 end
@@ -128,6 +129,7 @@ local modifier_damage = modifier_mjz_night_stalker_darkness_damage
 
 function modifier_damage:IsHidden() return true end
 function modifier_damage:IsPurgable() return false end
+function modifier_damage:GetActivityTranslationModifiers() return "hunter_night" end
 
 function modifier_damage:DeclareFunctions()
     return {

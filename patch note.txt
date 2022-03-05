@@ -1679,6 +1679,16 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 * and some other changes.
 
 
+* Fix Dragon blood talent and passive.
+* Fix Dawnbreaker talent.
+* Buff Storm Spirit OverLoad int scaling and talent.
+* Small buff to silencer W (scaling and SS effect)	
+* Removed underlord aura from random pool( not an aura anymore seems)
+* Autocast will ignore Some Toggle autocast spells (like drow Q, clinckz W, etc) 
+* Meepo Puff has a toggle to replace teleport to ally with random teleport around yourself.
+* Huskar Lifebomb: removed taunt effect(now has low priorty in agro, like wards), from 10% dmg increase every 0.2 sec to 13%(because this is compond effect means ~150% more dmg on 10 sec), increased the bonus dmg from lvls, and changed to 7 s base duration and added another SS effect: gives extra duration.
+
+
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 

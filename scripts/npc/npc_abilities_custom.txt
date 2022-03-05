@@ -10480,8 +10480,8 @@
 	"AbilityCastPoint"				"0.0"
 	"MaxLevel"					  "4"
 	"LevelsBetweenUpgrades"       "12"
-	"AbilityChannelTime"			"10"
-	"AbilityDuration"				"10.0"
+	"AbilityChannelTime"			"6"
+	"AbilityDuration"				"6.0"
 	"AbilityCooldown"				"60 50 40 30"
 	"AbilityManaCost"				"150"
 	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -10505,23 +10505,23 @@
 		"4"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"multiplier_tooltip"			"50"
+			"multiplier_tooltip"			"65"
 		}
 		"5"
 		{
 			"var_type"			"FIELD_FLOAT"
-			"multiplier"			"10"
+			"multiplier"			"13"
 		}
 		"6"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"duration"			"10"
+			"duration"			"6"
 			"LinkedSpecialBonus"		"special_bonus_unique_huskar"
 		}
 		"7"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"level_bonus_damage"			"10 25 35 50"
+			"level_bonus_damage"			"25 35 50 100"
 		}		
 	}
 	"precache"
@@ -27164,7 +27164,7 @@
 	{
 		"BaseClass"						"ability_lua"	// "ability_datadriven"
 		"ScriptFile"					"abilities/hero_meepo/mjz_meepo_poof.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES" // DOTA_ABILITY_BEHAVIOR_IMMEDIATE
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES" // DOTA_ABILITY_BEHAVIOR_IMMEDIATE
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		//"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NONE"
@@ -27199,7 +27199,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"extra_stack_chance"				"50"
+				"extra_stack_chance"				"85"
 			}						
 		}
 		"precache"
@@ -30360,7 +30360,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"intellect_damage_pct"		"10 20 30 40"
+				"intellect_damage_pct"		"20 30 40 60"
 				"LinkedSpecialBonus"		"special_bonus_unique_silencer_3"
 			}
 			"02"
@@ -30402,12 +30402,12 @@
 			"14"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_multiplier_super_scepter"	 "450"
+				"crit_multiplier_super_scepter"	 "500"
 			}
 			"15"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"second_stack"				"75"
+				"second_stack"				"90"
 			}						
 		}
 
@@ -31727,7 +31727,7 @@
 			"05"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"intelligence_damage"			"120 140 160 180 200 240 350"
+				"intelligence_damage"			"180 240 300 380 460 540 750"
 				"LinkedSpecialBonus"			"special_bonus_unique_mjz_storm_spirit_overload_01"
 			}
 			"06"
@@ -31767,7 +31767,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"350"
+				"value"						"450"
 			}
 		}
 	}

@@ -10495,6 +10495,8 @@
 "npc_dota_warlock_golem_3"
 {
 	"ConsideredHero"			"0"
+	"Ability2"                "generic_hidden"
+	"Ability3"                "generic_hidden"
 	"Ability4"				  "summon_defense"
 	"AttackRate"				"0.8"
 	"StatusHealthRegen"			"15"

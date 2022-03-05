@@ -2174,7 +2174,7 @@
 	"ancient_apparition_chilling_touch"
 	{
 		"MaxLevel"                  "7"
-		"LevelsBetweenUpgrades"		"10"
+		"LevelsBetweenUpgrades"		"11"
 		"AbilityCooldown"				"8 7 6 5 4 3 2"
 		"AbilityManaCost"				"75"
 
@@ -2183,9 +2183,14 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"220 2960 8530 15250 47500 115000 325400"
+				"damage"				"220 2960 8530 15250 47500 115000 285400"
 				"LinkedSpecialBonus"	"special_bonus_unique_ancient_apparition_2"
 			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"50"
+			}			
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -12262,11 +12267,9 @@
 		}
 	}
 
-	"warlock_shadow_word"
-	{
-		"AbilityCooldown"				"13"
-		"AbilityDamage"					"25 55 145 600"
-	}
+	//=================================================================================================================
+	// Ability: Warlock's Shadow Word
+	//=================================================================================================================
 	"warlock_shadow_word"
 	{
 		// General
@@ -12279,22 +12282,19 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
+		"MaxLevel"					  	"8"
+		"LevelsBetweenUpgrades"		 	"6"		
 		"AbilitySound"					"Hero_Warlock.ShadowWordCastGood"
-		"MaxLevel"					  "8"
-		"LevelsBetweenUpgrades"		 "6"
-		"HasShardUpgrade"			   "1"
+        "HasShardUpgrade"               "1"
+
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"14"
-
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"350 725 1235 1945 2450 4950 13500 67500"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -12310,25 +12310,132 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"damage"					
+				{
+					"value"				"350 725 1235 1945 2450 4950 13500 67500"
+					"LinkedSpecialBonus"		"special_bonus_unique_warlock_7"
+				}
+				"duration"					
+				{
+					"value"				"10.0"
+					"special_bonus_unique_warlock_8"	"+2"
+				}
+				"tick_interval"				"1.0"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	"special_bonus_unique_warlock_7"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"764"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"12.0"
+				"var_type"					"FIELD_INTEGER"
+				"value"				"1400"
+				"ad_linked_abilities"			"warlock_shadow_word"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Warlock's Upheaval
+	//=================================================================================================================
+	"warlock_upheaval"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5164"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_Warlock.Upheaval"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.4"
+		"AbilityChannelTime"			"10 12 14 16"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"32 28 24 20"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"0 0 0 0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"70 80 90 100"		
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aoe"					"500 750 850 1250"
 			}
 			"02"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"tick_interval"				"1.0"
+				"var_type"				"FIELD_INTEGER"
+				"slow_per_second"		"12 17 22 27"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"3.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_slow"				"40 50 60 70"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aspd_per_second"		"25"
 			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
-	}		
-	"warlock_upheaval"
-	{
-		"AbilityCooldown"				"32 28 24 20"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+
+	"special_bonus_unique_warlock_10"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"845"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"25"
+				"ad_linked_abilities"			"warlock_upheaval"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+
 	"warlock_rain_of_chaos"
 	{
 		"AbilityCooldown"				"50"
@@ -12499,54 +12606,7 @@
 			}
 		}
 	}
-	"wisp_overcharge"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"5487"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "7"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0"
-   		"AbilityCastAnimation"			"ACT_INVALID"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"50 70 90 110 130 150 200"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_spell_amp"		"20 22 34 46 50 65"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"hp_regen"			"0.4 0.5 0.6 0.7 0.8 0.9 1.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"			"8"
-			}
-		}
-	}	
+	
 	"wisp_spirits"
 	{
 		"MaxLevel"					  "7"
@@ -18600,6 +18660,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"value"					"3"
+				"ad_linked_abilities"				"dawnbreaker_fire_wreath"
 			}
 		}
 	}	
@@ -24457,8 +24518,8 @@
 		"AbilityValues"
 		{
 				"radius"				"400"
-				"damage"				"40"
-				"attack_speed"			"65"
+				"damage"				"60"
+				"attack_speed"			"155"
 		}
 	}
 

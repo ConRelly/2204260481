@@ -40,6 +40,20 @@ function modifier_class:OnCreated(table)
     end         
 end
 
+local NoAutocast = {
+    
+    ["drow_ranger_frost_arrows_lua"] = true,
+    ["clinkz_searing_arrows"] = true,
+    ["ancient_apparition_chilling_touch"] = true,
+    ["obsidian_destroyer_arcane_orb"] = true,
+    ["enchantress_impetus"] = true,
+    ["mjz_kunkka_tidebringer"] = true,
+    ["huskar_burning_spear"] = true,
+
+
+};
+
+
 function modifier_class:OnIntervalThink()
     if IsServer() then
         local ability = self:GetAbility()
@@ -57,6 +71,8 @@ function modifier_class:OnIntervalThink()
             if target_ability and IsValidEntity(target_ability) and not target_ability:IsAttributeBonus() and not target_ability:IsHidden() and not target_ability:IsToggle() and target_ability:IsActivated() and target_ability:GetLevel() > 0 and target_ability:IsCooldownReady() then  -- Talent-- Dunno
                 if target_ability:IsInAbilityPhase() then return nil end
                 --if not ability:GetToggleState() then return nil end
+                local ability_name = target_ability:GetAbilityName()
+                if NoAutocast[ability_name] == true then return end                
                 if not IsValidEntity(parent) then return nil end
                 if not target_ability:IsCooldownReady() then return nil end
                 if target_ability == nil then return nil end

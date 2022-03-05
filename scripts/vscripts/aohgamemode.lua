@@ -682,7 +682,9 @@ function AOHGameMode:_CheckWin()
 							Notifications:TopToAll({text="You Have Defeated All Mortals and Gods(Higher Difficulty + Double)", style={color="red"}, duration=20})
 						else
 							Notifications:TopToAll({text="You Have Defeated All Mortals and Gods(Higher Difficulty)", style={color="red"}, duration=20})
-						end		
+						end
+					elseif self._doubleMode then
+						Notifications:TopToAll({text="You Have Defeated All Mortals and Gods(Lower Difficulty + Double)", style={color="red"}, duration=20})			
 					else
 						Notifications:TopToAll({text="You Have Defeated All Mortals and Gods (Lower Difficulty)", style={color="red"}, duration=20})
 					end		
@@ -693,6 +695,8 @@ function AOHGameMode:_CheckWin()
 						end
 					})		
 					self._vic_1 = true
+					GameRules.GLOBAL_vic_1 = self._vic_1
+					send_info_if_game_ends()
 				end	
 			elseif self._endlessMode_started and self._hardMode then
 				self._endlessHard_started = true
@@ -706,7 +710,9 @@ function AOHGameMode:_CheckWin()
 						Notifications:TopToAll({text="Part 3 ,You have Done Well Geting This Far(Higher Difficulty +Double)", style={color="red"}, duration=8})
 					else
 						Notifications:TopToAll({text="Part 3 ,You have Done Well Geting This Far", style={color="red"}, duration=8})
-					end		
+					end
+				elseif self._doubleMode then
+					Notifications:TopToAll({text="Part 3 Lower dificulty, You have Done Well Geting This Far (Lower Difficulty +Double)", style={color="red"}, duration=8})			
 				else
 					Notifications:TopToAll({text="Part 3 Lower dificulty, You have Done Well Geting This Far", style={color="red"}, duration=8})
 				end	
@@ -727,7 +733,9 @@ function AOHGameMode:_CheckWin()
 								GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
 							end
 						})
-						self._vic_1 = true						
+						self._vic_1 = true
+						GameRules.GLOBAL_vic_1 = self._vic_1
+						send_info_if_game_ends()						
 					end
 				end		
 			elseif self._endlessMode then
@@ -754,7 +762,9 @@ function AOHGameMode:_CheckWin()
 						GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
 					end
 				})
-				self._vic_1 = true	
+				self._vic_1 = true
+				GameRules.GLOBAL_vic_1 = self._vic_1
+				send_info_if_game_ends()	
 			end
 		end
 	end
@@ -950,6 +960,16 @@ function AOHGameMode:OnEntitySpawned(event)
 	--mHackGameMode:OnNPCSpawned(event)
 	-- Fix for str magic res and more.
 	local unit = EntIndexToHScript(event.entindex)
+	if unit:IsNull() then return end
+	if (unit:GetPlayerOwnerID() == 0 and unit:IsRealHero() and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
+		local steam_name = PlayerResource:GetPlayerName(0)
+		if GetMapName() == "heroattack_on_easy" then
+			Notifications:TopToAll({text="Host( "..steam_name.." ) can type '-full' to enable Second part, check Map description for more", style={color="red"}, duration=10})
+		else	
+			Notifications:TopToAll({text="Host( "..steam_name.." ) can type '-fullgame' to enable Full Game(hard only)(part 2 and 3), check Map description for more ", style={color="red"}, duration=15})
+		end	
+	end	
+
 	if unit and unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 		local not_illusion = not unit:HasModifier('modifier_illusion')
 		if IsValidEntity(unit) and not unit:IsHero()  then
@@ -957,7 +977,7 @@ function AOHGameMode:OnEntitySpawned(event)
 			-- self:_OnHeroFirstSpawned(npc)   
 		end
 	end		
-	if unit and unit:IsHero()then
+	if unit and not unit:IsNull() and unit:IsHero()then
 		if not unit:IsIllusion() then
 			fix_atr_for_hero(unit)
 			fix_atr_for_hero2(unit)
@@ -1128,6 +1148,7 @@ end
 
 function AOHGameMode:OnEntityKilled(event)
 	local killedUnit = EntIndexToHScript(event.entindex_killed)
+	if killedUnit:IsNull() then return end
 	if killedUnit and killedUnit:IsRealHero()  then
 		-- create_ressurection_tombstone(killedUnit)
 		Timers:CreateTimer(1, function( )

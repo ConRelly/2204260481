@@ -1567,6 +1567,7 @@
 		"Ability10"			"special_bonus_gold_income_60"
 		"Ability11"			"special_bonus_unique_wisp_4"
 		"Ability15"			"special_bonus_spell_amplify_125"
+		"Ability16"         "special_bonus_hp_6000"
 		"Ability17"			"special_bonus_attack_damage_120"
 
 		"AttributeStrengthGain"  "9"
@@ -1956,6 +1957,7 @@
 	{
 		"override_hero"			"npc_dota_hero_spectre"
 
+		"ModelScale"            "0.5"
 		"Ability2"				"mjz_spectre_desolate"
 		"Ability3"				"spectre_custom_dispersion"
 		"Ability4"				"mjz_spectre_reality"

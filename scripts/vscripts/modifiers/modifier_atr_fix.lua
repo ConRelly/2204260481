@@ -12,6 +12,9 @@ end
 function modifier_atr_fix:IsPurgable()
     return false
 end
+function modifier_atr_fix:RemoveOnDeath()
+    return false
+end
 function modifier_atr_fix:AllowIllusionDuplicate()
     return true
 end    
@@ -39,8 +42,19 @@ function modifier_atr_fix:GetAttributes()
     return MODIFIER_ATTRIBUTE_PERMANENT
 end
 
+local function settings()
+	SendToConsole("dota_hud_healthbars 1")-- too much health causes lags
+	SendToConsole("dota_hud_disable_damage_numbers true")-- isnt affected by damage filter, and thus useless
+end
+
+
 function modifier_atr_fix:OnCreated()
 	self.parent = self:GetParent()
+    if IsClient() then
+        if self.parent:IsRealHero() then
+		    settings()
+        end    
+	end   
 end
 
 --[[function modifier_atr_fix:GetModifierConstantManaRegen()
