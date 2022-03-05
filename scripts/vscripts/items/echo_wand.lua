@@ -319,8 +319,10 @@ if IsServer() then
 						elseif self.targetType == 3 then
 							self.parent:SetCursorCastTarget(self.parent)
 						end
-						self.ability:StartCooldown(cooldown * attacker:GetCooldownReduction())
-						self.echo:OnSpellStart()
+						if self.echo and not self.echo:IsNull() then
+							self.ability:StartCooldown(cooldown * attacker:GetCooldownReduction())
+							self.echo:OnSpellStart()
+						end	
 						if self.echo and not self.echo:IsNull() then
 							if self.echo:GetName() == "vengefulspirit_wave_of_terror_lua" then
 								if self.parent:HasModifier("modifier_atomic_samurai_focused_atomic_slash_2") then
@@ -371,8 +373,10 @@ if IsServer() then
 											elseif self.targetType == 3 then
 												self.parent:SetCursorCastTarget(self.parent)
 											end
+											if self.echo and not self.echo:IsNull() then
+												self.echo:OnSpellStart()
+											end
 
-											self.echo:OnSpellStart()
 
 											local counter_speed = 2
 

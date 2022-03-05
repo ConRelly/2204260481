@@ -1566,8 +1566,9 @@
 		"Ability8"			"life_stealer_consume"
 		"Ability10"			"special_bonus_gold_income_60"
 		"Ability11"			"special_bonus_unique_wisp_4"
+		"Ability14"         "special_bonus_cdr_15"
 		"Ability15"			"special_bonus_spell_amplify_125"
-		"Ability16"         "special_bonus_hp_6000"
+		"Ability16"         "special_bonus_unique_wisp_9"
 		"Ability17"			"special_bonus_attack_damage_120"
 
 		"AttributeStrengthGain"  "9"

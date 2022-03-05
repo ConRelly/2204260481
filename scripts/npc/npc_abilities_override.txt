@@ -2598,7 +2598,7 @@
 
 	"bane_fiends_grip"
 	{
-		"AbilityCooldown"						"95 85 75"
+		"AbilityCooldown"						"95 85 75 50 40"
 		"MaxLevel"                              "5"
 		"LevelsBetweenUpgrades"                 "15"
 		"AbilitySpecial"
@@ -3944,7 +3944,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_bonus"					"90 580 1900 4850 9680 19840 37420"
+				"damage_bonus"					"90 880 2900 9680 39840 87420 175800"
 				"LinkedSpecialBonus"			"special_bonus_unique_clinkz_1"
 			}
 		}
@@ -12595,18 +12595,82 @@
 			}
 		}
 	}	
+
+
+	//=================================================================================================================
+	// Wisp: Tether
+	//=================================================================================================================
 	"wisp_tether"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5485"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"LevelsBetweenUpgrades"         "4"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+ 		"AbilityCastAnimation"			"ACT_INVALID"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"40 40 40 40"
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"3800"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"radius"					"2800"
+				"movespeed"					
+				{
+					"value"				"6 12 24 64"
+					"special_bonus_unique_wisp_3"	"+26"
+				}
+				"latch_distance"			"2500"
+				"latch_speed"				"1000 1000 1000 1000"
+				"tether_heal_amp"			"0.75 0.9 1.05 1.2"
+				"self_bonus"				"0"
+				"slow"				"15 25 35 45"
+				"slow_duration"				"0.2"
+				"spell_lifesteal"			"10"
+		}
+	}
+
+	"special_bonus_unique_wisp_9"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"7072"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
-			"05"
+			"01"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"tether_heal_amp"			"0.8 0.9 1.0 1.1"
+				"var_type"					"FIELD_INTEGER"
+				"value"				"4000"
+				"ad_linked_abilities"			"wisp_tether"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
 	}
-	
+
 	"wisp_spirits"
 	{
 		"MaxLevel"					  "7"
@@ -17477,25 +17541,7 @@
 			}
 		}
 	}
-	"wisp_tether"
-	{
-		"AbilityCastRange"				"3800"
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"2800"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"latch_distance"			"2500"
-			}
-			
-		}
-	}	
+
 	"zuus_arc_lightning"
 	{
 		"LevelsBetweenUpgrades"		 "3"
@@ -18442,6 +18488,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"value"				"150"
+				"ad_linked_abilities"			"lion_finger_of_death"
 			}
 		}
 	}
@@ -18453,6 +18500,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"value"				"65"
+				"ad_linked_abilities"			"lion_finger_of_death"
 			}
 		}
 	}	

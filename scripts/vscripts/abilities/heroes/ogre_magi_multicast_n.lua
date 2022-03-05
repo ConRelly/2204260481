@@ -39,6 +39,7 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 
 	if caster:IsIllusion() then return end
 	if unit ~= caster then return end
+	if used_ability:IsNull() then return end
 	if used_ability == self:GetAbility() then return end
 	if IsExcludeAbility(used_ability) then return end
 	if caster:PassivesDisabled() then return end
@@ -141,6 +142,7 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 						Timers:CreateTimer((count - 1) * delay, function()
 							if not caster:IsAlive() then return end
 							if used_ability == nil then return end
+							if used_ability:IsNull() then return end
 							local targets = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, target_flags, FIND_ANY_ORDER, false)
 
 							if single then
@@ -162,15 +164,17 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 									end
 								end
 							end
-
-							self:Multicast_FX(count, casts)
-							used_ability:OnSpellStart()
+							if IsValidEntity(used_ability) and not used_ability:IsNull() then
+								self:Multicast_FX(count, casts)
+								used_ability:OnSpellStart()
+							end	
 						end)
 					end
 				else
 					Timers:CreateTimer((count - 1) * delay, function()
 						if not caster:IsAlive() then return end
 						if used_ability == nil then return end
+						if used_ability:IsNull() then return end
 						local targets = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, target_flags, FIND_ANY_ORDER, false)
 						for _, target in pairs(targets) do
 							if target then
@@ -186,7 +190,7 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 								end
 							end
 						end
-						if IsValidEntity(used_ability) then
+						if IsValidEntity(used_ability) and not used_ability:IsNull() then
 							self:Multicast_FX(count, casts)
 							used_ability:OnSpellStart()
 						end						
@@ -196,12 +200,13 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 				Timers:CreateTimer((count - 1) * delay, function()
 					if not caster:IsAlive() then return end
 					if used_ability == nil then return end
+					if used_ability:IsNull() then return end
 					if cursor_position ~= nil then
 						caster:SetCursorPosition(cursor_position)
 					else
 						caster:SetCursorTargetingNothing(true)
 					end
-					if IsValidEntity(used_ability) then
+					if IsValidEntity(used_ability) and not used_ability:IsNull() then
 						self:Multicast_FX(count, casts)
 						used_ability:OnSpellStart()
 					end	
@@ -330,6 +335,7 @@ function IsExcludeAbility(ability)
 		"dazzle_good_juju",
 		"primal_beast_onslaught",
 		"primal_beast_onslaught_release",
+		"queenofpain_blink",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do
