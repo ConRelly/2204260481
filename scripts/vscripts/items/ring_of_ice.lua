@@ -163,7 +163,7 @@ function item_pipe_of_dezun:GetCastRange(location, target) return self:GetSpecia
 function item_pipe_of_dezun:OnSpellStart()
 	local caster = self:GetCaster()
 	local duration = self:GetSpecialValueFor("duration")
-	local radius = self:GetSpecialValueFor("aura_radius")
+	local radius = self:GetSpecialValueFor("active_aura_radius")
 	caster:EmitSound("DOTA_Item.Pipe.Activate")
 	local particle = ParticleManager:CreateParticle("particles/items2_fx/pipe_of_insight_launch.vpcf", PATTACH_ABSORIGIN, caster)
 	ParticleManager:ReleaseParticleIndex(particle)

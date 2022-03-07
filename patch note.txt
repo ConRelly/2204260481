@@ -1681,21 +1681,26 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 * Fix Dragon blood talent and passive.
 * Fix Dawnbreaker talent.
-* Fix some possible multicast crash.
+* Fix some possible multicast crashes.
 * Fix Lion finger bonus int talent.
 * Fix/replaced 2 talents from IO(wisp) 
 * Buff Storm Spirit OverLoad int scaling and talent.
 * Small buff to silencer W (scaling and SS effect)	
-* Removed underlord aura from random pool( not an aura anymore seems)
+* Removed underlord aura from the random pool( not an aura anymore seems)
 * Autocast will ignore Some Toggle autocast spells (like drow Q, clinckz W, etc) 
-* Meepo Puff has a toggle to replace teleport to ally with random teleport around yourself.
-* Huskar Lifebomb: removed taunt effect(now has low priorty in agro, like wards), from 10% dmg increase every 0.2 sec to 13%(because this is compond effect means ~150% more dmg on 10 sec), increased the bonus dmg from lvls, and changed to 7 s base duration and added another SS effect: gives extra duration.
+* Meepo Puff has a toggle to replace teleport to ally with random teleport around yourself, and buffed SS effect chance.
+* Huskar Lifebomb: removed taunt effect(now has low priority in agro, like wards), from 10% dmg increase every 0.2 sec to 13%(because this is a compound effect means ~150% more dmg on 10 sec), increased the bonus dmg from lvls, and changed to 7 s base duration and added another SS effect: gives extra duration.
 * Clinkz searing arrows buffed.
 * WitchBane slightly buffed.
 
 
 
 * Fix viper lvl 25 talent.
+* Fix Kunkka aghanim , increased dmg for torrent and reduced CD for Tidebringer	on last lvl.
+* Fix Invoker lvl 25 talent , increased the other talent to 10x  from 3x and greatly improved most of his skill.
+* Fix Techies ultimate dmg.
+* DarkBloodstone(base on nromal bloodstone) seems to be only for real "Creeps" and Heroes so i might change that in future, for now is more mana and hp(incresed) and 50% hp cost to maybe enable some stuff.
+* Fix Doom ultimate being able to toggle even on CD.
 * Quick Arm (Tinker):
 	-- Added Super Scepter effect
 	-- Added new talents (15 and 20 lvls)
@@ -1712,9 +1717,10 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 
 
+
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes56 can be found on the new map version:
+*Update patch notes57 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 
@@ -1741,6 +1747,8 @@ Maple's Armor - Heavy armor buff from 50% dmg avoid chance to 85%
 LionDagonV2 - greater blast staff passive has 25% chance to trigger daggon instead of 17%
 Antimage Q = Acts as antimage lvl 20 talent (ignores base armor)
 Insatiable Hunger = doubles the chance of the SS effect.
+
+
 
 can youse this format for marci SS effect:
 if caster:HasModifier("modifier_super_scepter") then

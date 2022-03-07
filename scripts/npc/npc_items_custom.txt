@@ -17987,90 +17987,18 @@
 	"ItemSellable"					"1"
 	"MaxUpgradeLevel"				"2"
 	"ItemBaseLevel"					"2"
-	"AbilitySpecial"
+	"AbilityValues"
 	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"425 1425"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_mana"			"425 1900"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_intellect"		"16 170"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"mana_regen_multiplier"	"50 600"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"spell_amp"				"12 70"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"spell_lifesteal_amp"	"15 30"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"hero_lifesteal"		"0"
-		}
-		"08"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"creep_lifesteal"		"0"
-		}
-		"09"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"regen_per_charge"		"0"
-		}
-		"10"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"amp_per_charge"		"0"
-		}
-		"11"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"death_charges"			"0"
-		}
-		"12"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"kill_charges"			"0"
-		}
-		"13"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"charge_range"			"0"
-		}
-		"14"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"initial_charges_tooltip"	"0"
-		}
-		"15"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"restore_duration"		"6"
-		}
-		"16"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"mana_cost_percentage"	"15 30"
-		}
-	}
+		"bonus_health"			"425 4425"
+		"bonus_mana"			"425 5900"
+		"hero_lifesteal"		"0"
+		"creep_lifesteal"		"0"
+		"buff_duration"			"10"
+		"lifesteal_multiplier"	"2"
+		"hp_cost"				"50"
+	}	
 }
+
 
 // Recipe: Giants Ring 2
 	"item_recipe_giants_ring2"
@@ -18237,6 +18165,41 @@
 	}
 }
 
+
+
+"item_chest_6"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"chest_6"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+	"ItemGloballyCombinable"		"1"
+	"ItemQuality"					"rare"
+	"ItemPurchasable"				"1"
+	"ItemSellable"					"1"
+	"ItemCost"						"5000"	
+}
+
+
+"item_recipe_chest_5"
+{
+	"BaseClass"						"item_datadriven"
+	"Model"							"models/props_gameplay/recipe.vmdl"
+	"AbilityTextureName"			"item_recipe"
+	"ItemCost"						"0"	
+	"ItemShopTags"					""
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_chest_5"
+	"ItemIsNeutralDrop"				"0"
+	"ItemRequirements"
+	{
+		"01"						"item_chest_6"
+		"02"						"item_chest_4;item_chest_2;item_chest_2"
+		"03"						"item_chest_2;item_chest_2;item_chest_2;item_chest_2;item_chest_2"
+
+	}
+}
 //Level 5 chests
 "item_chest_5"
 {
@@ -18250,39 +18213,6 @@
 	"ItemPurchasable"				"1"
 	"ItemSellable"					"1"
 	"ItemCost"						"6000"	
-}
-//Level 5 chests
-"item_chest_6"
-{
-	"BaseClass"						"item_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"chest_5"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-	"ItemGloballyCombinable"		"1"
-	"ItemQuality"					"rare"
-	"ItemPurchasable"				"1"
-	"ItemSellable"					"1"
-	"ItemCost"						"5000"	
-}
-
-"item_recipe_chest_5"
-{
-	"BaseClass"						"item_datadriven"
-	"Model"							"models/props_gameplay/recipe.vmdl"
-	"AbilityTextureName"			"item_recipe"
-	"ItemCost"						"0"	
-	"ItemShopTags"					""
-	"ItemRecipe"					"1"
-	"ItemResult"					"item_chest_5"
-	"ItemIsNeutralDrop"				"1"
-	"ItemRequirements"
-	{
-		"01"						"item_chest_6"
-		"02"						"item_chest_4;item_chest_2;item_chest_2"
-		"03"						"item_chest_2;item_chest_2;item_chest_2;item_chest_2;item_chest_2"
-
-	}
 }
 
 "item_recipe_custom_apex"
@@ -23567,7 +23497,7 @@
 			"3"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_as_pct"			"50"
+				"bonus_as_pct"			"35"
 			}
 	//2 piecies
 			"10"
@@ -32048,7 +31978,7 @@
 		"ItemSellable"					"1"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"AbilityCooldown"				"50"
+		"AbilityCooldown"				"55"
 		"AbilityManaCost"				"100"
 		"AbilityCastPoint"				"0"
 		"ItemQuality"					"epic"
@@ -32079,7 +32009,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"active_aura_radius"	"1200"
+				"active_aura_radius"	"2000"
 			}
 			"06"
 			{
@@ -32099,7 +32029,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"75"
+				"bonus_strength"		"275"
 			}
 			"10"
 			{

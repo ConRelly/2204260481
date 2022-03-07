@@ -10495,8 +10495,8 @@
 "npc_dota_warlock_golem_3"
 {
 	"ConsideredHero"			"0"
+	"Ability1"                "generic_hidden"
 	"Ability2"                "generic_hidden"
-	"Ability3"                "generic_hidden"
 	"Ability4"				  "summon_defense"
 	"AttackRate"				"0.8"
 	"StatusHealthRegen"			"15"
@@ -10523,6 +10523,8 @@
 "npc_dota_warlock_golem_scepter_3"
 {
 	"ConsideredHero"			"0"
+	"Ability1"                "generic_hidden"
+	"Ability2"                "generic_hidden"	
 	"Ability4"				  "summon_defense"
 	"AttackRate"				"0.8"
 	"StatusHealthRegen"			"15"

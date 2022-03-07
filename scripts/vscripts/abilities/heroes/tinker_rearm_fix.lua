@@ -36,7 +36,10 @@ local exclude_items = {
     
     --item_bloodthorn = true, 
     item_cursed_bloodthorn = true,  --血棘
-    item_mjz_dagon_v2 = true,
+    item_pipe_of_dezun = true,
+    item_custom_ex_machina = true,
+
+    --item_mjz_dagon_v2 = true,
 }
 
 

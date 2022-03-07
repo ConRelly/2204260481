@@ -679,12 +679,13 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"value"				"5"
+				"ad_linked_abilities"			"invoker_chaos_meteor_ad"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"value_tooltip"				"500"
-				"ad_linked_abilities"			"invoker_chaos_meteor"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"ad_linked_abilities"			"invoker_chaos_meteor_ad"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}			
 		}
 	}
@@ -701,6 +702,30 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_invoker_13"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"724"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"10"
+				"ad_linked_abilities"			"invoker_exort"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+
 	"special_bonus_unique_jakiro_2"
 	{
 		"AbilitySpecial"	
@@ -14717,13 +14742,13 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"travel_distance"		"780 930 1095 1245 1410 1575 1800 2000"
+				"travel_distance"		"780 930 1095 1145 1210 1255 1300 1350"
 				"levelkey"				"wexlevel"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"main_damage"			"80 295 420 1245 1970 3795 6200 24245"
+				"main_damage"			"80 295 420 1245 3970 9795 22700 44245"
 				"LinkedSpecialBonus"		"special_bonus_unique_invoker_6"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 				"levelkey"				"exortlevel"
@@ -14731,7 +14756,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"burn_dps"				"18.5 42 485.5 829 1432.5 2936 4940.0 11450.0"
+				"burn_dps"				"18.5 42 485.5 1829 3432.5 8936 14940.0 31450.0"
 				"LinkedSpecialBonus"		"special_bonus_unique_invoker_6"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 				"levelkey"				"exortlevel"
@@ -14782,7 +14807,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"freeze_damage"			"50 120 280 870 1450 2460 4270 14800"
+				"freeze_damage"			"160 320 880 2940 8960 24920 34800 85400"
 				"levelkey"				"quaslevel"	
 			}
 		}
@@ -14795,13 +14820,13 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"160 320 880 1940 3700 5960 14920 34800"
+				"damage"				"1240 5960 14920 34800 95700 245000 958000 1820000"
 				"levelkey"				"exortlevel"
 			}
 			"08"
 			{
 				"var_type"										"FIELD_FLOAT"
-				"disarm_duration"								 "1.25 2.0 2.25 2.5 2.75 3.0 3.25 3.5"
+				"disarm_duration"								 "1.25 1.30 1.35 1.4 1.45 1.5 1.6 1.7"
 				"levelkey"										"wexlevel"
 			}	
 		}
@@ -14811,28 +14836,39 @@
 		"AbilityCooldown"				"30"
 		"AbilitySpecial"
 		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					"1.5"
+				"levelkey"				"wexlevel"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"area_of_effect"		"775"
+			}			
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_burned"			"150 225 300 375 450 825 1400 2500"
+				"mana_burned"			"50 150 525 1200 4500 12500 35400 65000"
 				"levelkey"				"wexlevel"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_mana_pct"	"1200"
+				"damage_per_mana_pct"	"3500"
 			}
 		}
 	}
 	"invoker_exort"
 	{
-		"LevelsBetweenUpgrades"			 "5"
+		"LevelsBetweenUpgrades"			 "12"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage_per_instance"	"15 28 47 66 195 354 963"
+				"bonus_damage_per_instance"	"47 125 295 654 1263 2750 5680"
 			}
 		}
 	}
@@ -14843,7 +14879,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"spirit_damage"			"150 196 270 368 479 890 1401 2920"
+				"spirit_damage"			"150 196 270 368 479 890 1601 3920"
 				"levelkey"				"exortlevel"
 			}
 		}
@@ -14860,20 +14896,20 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_per_second"		"55 90 290 436 942 1880 2856 7800"
+				"damage_per_second"		"85 480 1436 5942 18800 48560 178000 568000"
 				"levelkey"				"exortlevel"
 			}
 		}
 	}
 	"invoker_quas"
 	{
-		"LevelsBetweenUpgrades"			 "5"
+		"LevelsBetweenUpgrades"			 "12"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"health_regen_per_instance"	"5 8 12 15 54 237 950"
+				"health_regen_per_instance"	"8 15 64 140 337 950 1250"
 			}
 		}
 	}
@@ -14882,10 +14918,15 @@
 		"AbilityCooldown"				"15"
 		"AbilitySpecial"
 		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"area_of_effect"		"240"
+			}			
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"290 450 830 1310 1900 3780 9960 24740"
+				"damage"				"450 1310 4900 9780 29600 54740 116000 247000"
 				"levelkey"				"exortlevel"
 			}
 		}
@@ -14911,14 +14952,14 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"wex_damage"			"180 330 480 830 1580 3930 9480 29530"
+				"wex_damage"			"480 1830 4580 13930 39480 89530 458000 1354000"
 				"levelkey"				"wexlevel"
 			}
 		}
 	}
 	"invoker_wex"
 	{
-		"LevelsBetweenUpgrades"			 "5"
+		"LevelsBetweenUpgrades"			 "12"
 		"AbilitySpecial"
 		{
 			"01"
@@ -14929,7 +14970,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"move_speed_per_instance"	"2 4 6 8 15 22 44"
+				"move_speed_per_instance"	"2 4 6 8 15 22 28"
 			}
 		}
 	}
@@ -14957,7 +14998,7 @@
 	  "02"
 	  {
 		"var_type"										"FIELD_INTEGER"
-		"bonus_damage"									"100 245 360 875 1190 2550 3900"
+		"bonus_damage"									"245 660 1875 3990 9550 19000 27600 64500"
 		"levelkey"										"exortlevel"
 		"LinkedSpecialBonus"							  "special_bonus_unique_invoker_5"
 	  }
@@ -15126,7 +15167,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"35"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -15139,7 +15180,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"torrent_interval"		"0.25"
+				"torrent_interval"		"0.20"
 				"RequiresScepter"			"1"
 			}
 			"02"
@@ -15174,7 +15215,7 @@
 		"AbilitySound"					"Ability.Torrent"
 		"HasScepterUpgrade"				"1"
 		"MaxLevel"						"10"
-		"LevelsBetweenUpgrades"			"7"
+		"LevelsBetweenUpgrades"			"8"
 		"AbilityCastRange"				"1500"
 		"AbilityCastPoint"				"0.4"
 		"AbilityCooldown"				"12"
@@ -15213,7 +15254,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"torrent_damage"			"275 850 1925 4700 8450 19420 27500 42560 65500 145400"
+				"torrent_damage"			"375 1250 3925 8450 19420 42560 75500 145400 324500 698000"
 				"LinkedSpecialBonus"		"special_bonus_unique_kunkka_2"
 			}
 		}		
@@ -17379,7 +17420,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityCastRange"				"3000"
 		"RequiredLevel"				  "6"
-		"LevelsBetweenUpgrades"		  "6"
+		"LevelsBetweenUpgrades"		  "8"
 		"AbilityCooldown"				"12"
 		"MaxLevel"					   "9"
 		"AbilityManaCost"				"240"
@@ -17393,7 +17434,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"2300 3800 5000 420 69 420 69 420 69"
+				"damage"					"4600 9600 18000 34000 47000 69000 192000 425000 1880000"
 			}
 			"03"
 			{
@@ -17408,7 +17449,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"4600 9600 18000 34000 47000 69000 192000 325000 980000"
+				"damage_scepter"			"4600 9600 18000 34000 47000 69000 192000 425000 1880000"
 				"RequiresScepter"			"1"
 			}
 			"07"

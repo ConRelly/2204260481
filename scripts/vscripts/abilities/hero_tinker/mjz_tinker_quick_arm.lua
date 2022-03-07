@@ -73,13 +73,18 @@ function mjz_tinker_quick_arm:HalveCooldowns(caster)
 		item_custom_refresher = true,
 		item_custom_ex_machina = true,
 		item_echo_wand = true,
+		item_pipe_of_dezun = true,
+		item_resurection_pendant = true,
+		item_inf_aegis = true,
 	}
 
     for i = 0, caster:GetAbilityCount() -1 do
-		local ability = caster:GetAbilityByIndex(i)
-		if ability and IsValidEntity(ability) then
-			self:halve_ability_cooldown(ability, exclude_abilities)
-		end
+		if caster and not caster:IsNull() then
+			local ability = caster:GetAbilityByIndex(i)
+			if ability and IsValidEntity(ability) then
+				self:halve_ability_cooldown(ability, exclude_abilities)
+			end
+		end	
     end
 
 	for i = DOTA_ITEM_SLOT_1, DOTA_ITEM_SLOT_6 do
