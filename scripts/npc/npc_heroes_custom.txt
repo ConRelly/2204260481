@@ -1066,6 +1066,7 @@
 		"Ability17"				"special_bonus_spell_lifesteal_15"
 
 		"AttackRate"            "1.4"
+		"AttributeIntelligenceGain" "7.2"
 	}
 	
 	//=================================================================================================================
@@ -1185,7 +1186,7 @@
 		"Ability13"				"special_bonus_attack_speed_100"
 		"Ability15"				"special_bonus_attack_range_200"
 		"Ability12"				"special_bonus_attack_damage_250"
-		"Ability17"				"special_bonus_unique_viper_1"
+		"Ability17"				"special_bonus_unique_viper_6"
 
 		"AttributeAgilityGain"			"7.6"
 		"AttributeStrengthGain"			"6.1"

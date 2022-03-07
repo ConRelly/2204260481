@@ -14525,7 +14525,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_magic_resistance"	"42"
+				"bonus_magic_resistance"	"45"
 				"LinkedSpecialBonus"	"special_bonus_unique_viper_6"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
@@ -14542,6 +14542,27 @@
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	"special_bonus_unique_viper_6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"717"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"2"
+				"ad_linked_abilities"			"viper_corrosive_skin"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
 	}
 
 
@@ -15080,27 +15101,57 @@
 			}
 		}
 	}	
+
+	//=================================================================================================================
+	// Kunkka: Torrent Storm ( scepter ability )
+	//=================================================================================================================
 	"kunkka_torrent_storm"
 	{
-		"AbilityCooldown"				"20"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"319"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"						"1"
+		"FightRecapLevel"				"1"
+		"IsGrantedByScepter"			"1"
+		"HasScepterUpgrade"				"1"
+		"AbilitySound"					"Ability.Torrent"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"250"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"torrent_interval"		"0.2"
+				"torrent_interval"		"0.25"
 				"RequiresScepter"			"1"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"torrent_duration"		"14.0"
+				"torrent_duration"		"5.0"
 				"RequiresScepter"			"1"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"torrent_min_distance"		"50"
+				"torrent_min_distance"		"150"
 				"RequiresScepter"			"1"
 			}
 			"04"
@@ -15111,6 +15162,65 @@
 			}
 		}
 	}
+
+// Kunkka: Torrent
+	"kunkka_torrent"
+	{
+		//"BaseClass"						"kunkka_torrent"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Ability.Torrent"
+		"HasScepterUpgrade"				"1"
+		"MaxLevel"						"10"
+		"LevelsBetweenUpgrades"			"7"
+		"AbilityCastRange"				"1500"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCooldown"				"12"
+		"AbilityManaCost"				"120"
+		"AbilityModifierSupportValue"	"0.5"
+		"AbilityDraftScepterAbility"    "kunkka_torrent_storm"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"325"
+				"LinkedSpecialBonus"		"special_bonus_unique_kunkka"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movespeed_bonus"			"-35"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_duration"				"3"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"0.6"
+				"LinkedSpecialBonus"		"special_bonus_unique_kunkka_7"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"delay"						"1.6"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"torrent_damage"			"275 850 1925 4700 8450 19420 27500 42560 65500 145400"
+				"LinkedSpecialBonus"		"special_bonus_unique_kunkka_2"
+			}
+		}		
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+
 	"kunkka_tidebringer"
 	{
 		"AbilitySpecial"

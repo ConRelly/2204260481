@@ -955,18 +955,21 @@ local IllusionNotLearn = {
 
 LinkLuaModifier("modifier_generic_handler", "modifiers/modifier_generic_handler", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_charges", "modifiers/modifier_charges", LUA_MODIFIER_MOTION_NONE)
+local reminder = true
 function AOHGameMode:OnEntitySpawned(event)
 	
 	--mHackGameMode:OnNPCSpawned(event)
 	-- Fix for str magic res and more.
 	local unit = EntIndexToHScript(event.entindex)
 	if unit:IsNull() then return end
-	if (unit:GetPlayerOwnerID() == 0 and unit:IsRealHero() and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) then
+	if (unit:GetPlayerOwnerID() == 0 and unit:IsRealHero() and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) and reminder then
 		local steam_name = PlayerResource:GetPlayerName(0)
 		if GetMapName() == "heroattack_on_easy" then
 			Notifications:TopToAll({text="Host( "..steam_name.." ) can type '-full' to enable Second part, check Map description for more", style={color="red"}, duration=10})
+			reminder = false
 		else	
 			Notifications:TopToAll({text="Host( "..steam_name.." ) can type '-fullgame' to enable Full Game(hard only)(part 2 and 3), check Map description for more ", style={color="red"}, duration=15})
+			reminder = false
 		end	
 	end	
 

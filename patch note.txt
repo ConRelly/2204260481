@@ -1692,6 +1692,10 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 * Huskar Lifebomb: removed taunt effect(now has low priorty in agro, like wards), from 10% dmg increase every 0.2 sec to 13%(because this is compond effect means ~150% more dmg on 10 sec), increased the bonus dmg from lvls, and changed to 7 s base duration and added another SS effect: gives extra duration.
 * Clinkz searing arrows buffed.
 * WitchBane slightly buffed.
+
+
+
+* Fix viper lvl 25 talent.
 * Quick Arm (Tinker):
 	-- Added Super Scepter effect
 	-- Added new talents (15 and 20 lvls)
