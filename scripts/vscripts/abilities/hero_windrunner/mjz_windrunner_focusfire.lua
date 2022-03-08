@@ -1,12 +1,10 @@
+local MODIFIER_CASTER_NAME = "modifier_mjz_windrunner_focusfire" 
+local MODIFIER_BUFF_NAME = "modifier_mjz_windrunner_focusfire_attackspeed_buff" 
+local MODIFIER_DEBUFF_NAME = "modifier_mjz_windrunner_focusfire_damage_debuff" 
 
-local THIS_LUA = "abilities/hero_windrunner/mjz_windrunner_focusfire.lua"
-local MODIFIER_CASTER_NAME = 'modifier_mjz_windrunner_focusfire' 
-local MODIFIER_BUFF_NAME = 'modifier_mjz_windrunner_focusfire_attackspeed_buff' 
-local MODIFIER_DEBUFF_NAME = 'modifier_mjz_windrunner_focusfire_damage_debuff' 
-
-LinkLuaModifier(MODIFIER_CASTER_NAME, THIS_LUA, LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier(MODIFIER_BUFF_NAME, THIS_LUA, LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier(MODIFIER_DEBUFF_NAME, THIS_LUA, LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier(MODIFIER_CASTER_NAME, "abilities/hero_windrunner/mjz_windrunner_focusfire", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier(MODIFIER_BUFF_NAME, "abilities/hero_windrunner/mjz_windrunner_focusfire", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier(MODIFIER_DEBUFF_NAME, "abilities/hero_windrunner/mjz_windrunner_focusfire", LUA_MODIFIER_MOTION_NONE)
 
 
 mjz_windrunner_focusfire = class({})
@@ -17,45 +15,44 @@ function ability_class:GetCastRange(vLocation, hTarget)
 	return self:GetCaster():Script_GetAttackRange()
 end
 
-
 function ability_class:GetCooldown(iLevel)
 	if self:GetCaster():HasScepter() then
-		return self:GetSpecialValueFor('cooldown_scepter')
+		return self:GetSpecialValueFor("cooldown_scepter")
 	end
     return self.BaseClass.GetCooldown(self, iLevel)
 end
 
 if IsServer() then
-	function ability_class:OnSpellStart( )
-		local ability = self
+	function ability_class:OnSpellStart()
 		local caster = self:GetCaster()
-		local duration = ability:GetSpecialValueFor('duration')
-
-		local modifier_name = MODIFIER_CASTER_NAME
-		local modifier = caster:FindModifierByName(modifier_name)
-		if modifier then
-			modifier:SetDuration(duration, true)
-			modifier:ForceRefresh()
-		else
-			caster:AddNewModifier(caster, ability, modifier_name, {duration = duration})
+		local duration = self:GetSpecialValueFor("duration")
+		if self:GetCaster():HasScepter() then
+			duration = self:GetSpecialValueFor("duration_scepter")
 		end
+
+--		local modifier = caster:FindModifierByName(MODIFIER_CASTER_NAME)
+--		if modifier then
+--			modifier:SetDuration(duration, true)
+--			modifier:ForceRefresh()
+--		else
+			caster:AddNewModifier(caster, self, MODIFIER_CASTER_NAME, {duration = duration})
+--		end
 		
 		EmitSoundOn("Ability.Focusfire", caster)
 	end
 
-	function ability_class:GetFocusfireTarget(  )
+	function ability_class:GetFocusfireTarget()
 		local caster = self:GetCaster()
-		local ability = self
 
 		local at = caster:GetAttackTarget()
-		if at and at == ability.focusfire_target then
+		if at and at == self.focusfire_target then
 			return at
 		end
 		if at and IsValidEntity(at) and at:GetTeam() ~= caster:GetTeam() then
-			ability.focusfire_target = at
+			self.focusfire_target = at
 			return at
 		else
-			local focusfire_target = ability.focusfire_target
+			local focusfire_target = self.focusfire_target
 			if focusfire_target and IsValidEntity(focusfire_target) then
 				if self:_TargetInNearby(focusfire_target) then
 					return focusfire_target
@@ -70,7 +67,6 @@ if IsServer() then
 
 	function ability_class:_TargetInNearby( target )
 		local caster = self:GetCaster()
-		local ability = self
 		
 		local attack_range = caster:Script_GetAttackRange()
 		local distance = self:CalcDistanceBetween(target, caster)
@@ -100,24 +96,15 @@ function modifier_class:IsPassive() return false end
 function modifier_class:IsHidden() return false end
 function modifier_class:IsPurgable() return false end
 
-function modifier_class:DeclareFunctions() 
-	if IsServer() then
-		return {
-			MODIFIER_EVENT_ON_ATTACK_START,
-			-- MODIFIER_EVENT_ON_ATTACK,
-			--MODIFIER_EVENT_ON_ATTACK_LANDED,
-			MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS,
-		} 
-	else
-		return {
-			MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS,
-		}
-	end
+function modifier_class:DeclareFunctions()
+	return {
+		MODIFIER_EVENT_ON_ATTACK_START,
+		-- MODIFIER_EVENT_ON_ATTACK,
+		--MODIFIER_EVENT_ON_ATTACK_LANDED,
+		MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS,
+	}
 end
-
-function modifier_class:GetActivityTranslationModifiers()
-    return "focusfire"
-end
+function modifier_class:GetActivityTranslationModifiers() return "focusfire" end
 
 if IsServer() then
 
@@ -135,29 +122,27 @@ if IsServer() then
 
     end
 
---[[     function modifier_class:OnAttack(keys)
-        if keys.attacker ~= self:GetParent() then return nil end
-        local attacker = keys.attacker
-        local target = keys.target
-        -- local damage = keys.damage
-        local parent = self:GetParent()
-		local ability = self:GetAbility()
-		
-    end
-    
+--[[
     function modifier_class:OnAttackLanded(keys)
-        if keys.attacker ~= self:GetParent() then return nil end
+		if not IsServer() then return end
         local parent = self:GetParent()
-        local ability = self:GetAbility()
-        local attacker = keys.attacker
 		local target = keys.target
-		
-		self:_MiniStunTarget(target)
-	end ]]
+		if not parent:HasTalent("special_bonus_unique_mjz_windrunner_focusfire_ministun") then return end
+        if keys.attacker ~= parent then return end
 
-	function modifier_class:OnCreated(  )
-		local caster = self:GetCaster()
-		local ability = self:GetAbility()
+		local ministun_chance = parent:FindTalentCustomValue("special_bonus_unique_mjz_windrunner_focusfire_ministun", "ministun_chance")
+		local ministun_duration = parent:FindTalentCustomValue("special_bonus_unique_mjz_windrunner_focusfire_ministun", "ministun_duration")
+		local focusfire_target = self:GetAbility():GetFocusfireTarget()
+		
+		if target == focusfire_target then
+			if RollPercentage(ministun_chance) then
+				target:AddNewModifier(parent, self:GetAbility(), "modifier_stunned", {duration = ministun_duration})
+			end
+		end
+	end
+]]
+
+	function modifier_class:OnCreated()
 		local parent = self:GetParent()
 		
 		self.last_attack_target = nil
@@ -165,10 +150,10 @@ if IsServer() then
 		self.on_PerformAttack = false
 
 		if not parent:HasModifier(MODIFIER_BUFF_NAME) then
-			parent:AddNewModifier(caster, ability, MODIFIER_BUFF_NAME, {})
+			parent:AddNewModifier(self:GetCaster(), self:GetAbility(), MODIFIER_BUFF_NAME, {})
 		end
 		if not parent:HasModifier(MODIFIER_DEBUFF_NAME) then
-			parent:AddNewModifier(caster, ability, MODIFIER_DEBUFF_NAME, {})
+			parent:AddNewModifier(self:GetCaster(), self:GetAbility(), MODIFIER_DEBUFF_NAME, {})
 		end
 
 		-- self:StartIntervalThink(0.05)
@@ -176,14 +161,13 @@ if IsServer() then
 	end
 
 	function modifier_class:OnRefresh(table)
-		local parent = self:GetParent()
-		ForceRefreshModifier(parent, MODIFIER_BUFF_NAME)
-		ForceRefreshModifier(parent, MODIFIER_DEBUFF_NAME)
+		ForceRefreshModifier(self:GetParent(), MODIFIER_BUFF_NAME)
+		ForceRefreshModifier(self:GetParent(), MODIFIER_DEBUFF_NAME)
 	end
 
 	function modifier_class:OnIntervalThink()
 		if not IsServer() then return end
-        local parent = self:GetParent()
+		local parent = self:GetParent()
 		local ability = self:GetAbility()
 		if not ability ~= nil and not IsValidEntity(ability) then
 			if self:IsNull() then return end
@@ -209,16 +193,7 @@ if IsServer() then
 
 		if can_PerformAttack then
 			self.on_PerformAttack = true
-			parent:PerformAttack (
-				focusfire_target,     			-- handle hTarget 
-				true,       			-- bool bProcessProcs,		
-				true,     				-- bool bUseCastAttackOrb, 	是否使用攻击法球、特效
-				true,       			-- bool bSkipCooldown		是否跳过攻击间隔
-				true,      				-- bool bIgnoreInvis		是否忽略隐形单位
-				true,      				-- bool bUseProjectile		是否使用攻击投射物
-				false,      			-- bool bFakeAttack			
-				false      				-- bool bNeverMiss			是否不会Miss
-			)
+			parent:PerformAttack (focusfire_target, true, true, true, true, true, false, false)
 
 			-- self:_SetForwardVector(focusfire_target)
 		else
@@ -229,9 +204,7 @@ if IsServer() then
 	end
 	
 	function modifier_class:OnDestroy()
-		local caster = self:GetCaster()
         local parent = self:GetParent()
-		local ability = self:GetAbility()
 
 		if IsValidEntity(parent) then
 			parent:RemoveGesture(ACT_DOTA_ATTACK)
@@ -259,24 +232,7 @@ if IsServer() then
 		end
 	end
 
-	function modifier_class:_MiniStunTarget( target )
-		local parent = self:GetParent()
-		local ability = self:GetAbility()
-		local ministun_chance = GetTalentSpecialValueFor(ability, 'ministun_chance')
-		local ministun_duration = GetTalentSpecialValueFor(ability, 'ministun_duration')
-		local focusfire_target = ability:GetFocusfireTarget()
-		
-		if target == focusfire_target then
-			if RollPercentage(ministun_chance) then
-				-- Add stun modifier (system)
-				target:AddNewModifier(parent, ability, "modifier_stunned", {duration = ministun_duration})
-			end
-		end
-	end
-
 	function modifier_class:_SetForwardVector( focusfire_target )
-		local caster = self:GetCaster()
-		local ability = self:GetAbility()
 		local parent = self:GetParent()
 		
 		local NOW = GameRules:GetGameTime()
@@ -309,26 +265,19 @@ local modifier_buff = modifier_mjz_windrunner_focusfire_attackspeed_buff
 function modifier_buff:IsHidden() return true end
 function modifier_buff:IsPurgable() return false end
 
+function modifier_buff:OnCreated()
+	self:SetStackCount(self:GetAbility():GetSpecialValueFor("bonus_attack_speed"))
+end
+function modifier_buff:OnRefresh()
+	self:OnCreated()
+end
+
 function modifier_buff:DeclareFunctions() 
-	return {
-		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-	} 
+	return {MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT} 
 end
 
-function modifier_buff:GetModifierAttackSpeedBonus_Constant(  )
+function modifier_buff:GetModifierAttackSpeedBonus_Constant()
 	return self:GetStackCount()
-end
-
-if IsServer() then
-	function modifier_buff:OnCreated(table)
-		self:OnRefresh(table)
-	end
-	function modifier_buff:OnRefresh(table)
-		local parent = self:GetParent()
-		local ability = self:GetAbility()
-		local bonus_attack_speed = ability:GetSpecialValueFor('bonus_attack_speed')
-		self:SetStackCount(bonus_attack_speed)
-	end
 end
 
 ---------------------------------------------------------------------------------------
@@ -339,35 +288,25 @@ local modifier_debuff = modifier_mjz_windrunner_focusfire_damage_debuff
 function modifier_debuff:IsHidden() return true end
 function modifier_debuff:IsPurgable() return false end
 
-function modifier_debuff:DeclareFunctions() 
-	return {
-		MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
-	} 
+function modifier_debuff:OnCreated()
+	if not IsServer() then return end
+	if self:GetCaster():HasScepter() then
+		self:SetStackCount(self:GetAbility():GetSpecialValueFor("damage_reduction_scepter"))
+	else
+		self:SetStackCount(self:GetAbility():GetSpecialValueFor("damage_reduction"))
+	end
+end
+function modifier_debuff:OnRefresh()
+	self:OnCreated()
 end
 
-function modifier_debuff:GetModifierDamageOutgoing_Percentage(  )
+function modifier_debuff:DeclareFunctions() 
+	return {MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE} 
+end
+
+function modifier_debuff:GetModifierDamageOutgoing_Percentage()
 	return self:GetStackCount()
 end
-
-if IsServer() then
-	function modifier_debuff:OnCreated(table)
-		self:OnRefresh(table)
-	end
-
-	function modifier_debuff:OnRefresh(table)
-		local caster = self:GetCaster()
-		local parent = self:GetParent()
-		local ability = self:GetAbility()
-		local damage_reduction = ability:GetSpecialValueFor('damage_reduction')
-		local damage_reduction_scepter = ability:GetSpecialValueFor('damage_reduction_scepter')
-		if caster:HasScepter() then
-			self:SetStackCount(damage_reduction_scepter)
-		else
-			self:SetStackCount(damage_reduction)
-		end
-	end
-end
-
 
 -----------------------------------------------------------------------------------------
 

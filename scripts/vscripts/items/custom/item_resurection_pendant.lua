@@ -6,13 +6,20 @@ LinkLuaModifier("modifier_resurrection_pendant", "items/custom/item_resurection_
 item_resurection_pendant = class({})
 function item_resurection_pendant:GetIntrinsicModifierName() return "modifier_resurrection_pendant" end
 function item_resurection_pendant:IsStealable() return false end
+function item_resurection_pendant:GetChannelTime()
+	if self:GetCaster():HasModifier("modifier_super_scepter") then
+		return self:GetSpecialValueFor("channel") / 2
+	else
+		return self:GetSpecialValueFor("channel")
+	end
+end
 function item_resurection_pendant:GetAbilityTextureName()
 	if self:GetCaster():HasModifier("modifier_super_scepter") then
-		return "maiar_pendant_super_scepter"
+		return "custom/resurection_pendant_super_scepter"
 	elseif self:GetCaster():HasScepter() then
-		return "maiar_pendant_scepter"
+		return "custom/resurection_pendant_scepter"
 	end
-	return "maiar_pendant"
+	return "custom/resurection_pendant"
 end
 function item_resurection_pendant:OnChannelThink(interval)
     self:GetCaster():StartGesture(ACT_DOTA_GENERIC_CHANNEL_1)
@@ -89,59 +96,59 @@ modifier_resurrection_pendant = class({})
 function modifier_resurrection_pendant:IsHidden() return true end
 function modifier_resurrection_pendant:IsPurgable() return false end
 function modifier_resurrection_pendant:RemoveOnDeath() return false end
+function modifier_resurrection_pendant:GetTexture()
+	if self:GetCaster():HasModifier("modifier_super_scepter") then
+		return "custom/resurection_pendant_super_scepter_modifier"
+	elseif self:GetCaster():HasScepter() then
+		return "custom/resurection_pendant_scepter_modifier"
+	end
+	return "custom/resurection_pendant_modifier"
+end
 function modifier_resurrection_pendant:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end self:StartIntervalThink(FrameTime()) end
 end
 function modifier_resurrection_pendant:OnIntervalThink()
 	if self:GetParent():HasScepter() then
-		local dead_heroes = {}
 		local heroes = HeroList:GetAllHeroes()
 		local PlayersID = self:GetParent():GetPlayerID()
 		local channel = self:GetAbility():GetChannelTime()
 		local base_cooldown = self:GetAbility():GetSpecialValueFor("base_cooldown")
 		local extra_cooldown = self:GetAbility():GetSpecialValueFor("extra_cooldown")
 		if self:GetParent():HasModifier("modifier_super_scepter") then
-			channel = self:GetAbility():GetChannelTime() / 2
 			extra_cooldown = self:GetAbility():GetSpecialValueFor("extra_cooldown_ss")
 		end
-		for i=1, #heroes do
-			if heroes[i]:IsRealHero() and not heroes[i]:IsAlive() and IsValidEntity(heroes[i]) and heroes[i]:GetLevel() > 0 and not heroes[i]:IsReincarnating() then
-				for itemSlot = 0, 5 do
-					local item = heroes[i]:GetItemInSlot(itemSlot)
-					if item and item:GetName() == "item_inf_aegis" then
-						if item:IsCooldownReady() or item:GetCooldownTimeRemaining() > 42 then
-							return
-						end
+
+		local LivingHeroes = 0
+		
+		for i = 1, #heroes do
+			local inf_aegis_ready = false
+			for itemSlot = 0, 5 do
+				local item = heroes[i]:GetItemInSlot(itemSlot)
+				if item and item:GetName() == "item_inf_aegis" then
+					if item:IsCooldownReady() or item:GetCooldownTimeRemaining() > item:GetSpecialValueFor("cooldown") - channel then
+						inf_aegis_ready = true
 					end
 				end
-				table.insert(dead_heroes,heroes[i])
+			end
+			if heroes[i]:IsRealHero() and (heroes[i]:IsAlive() or heroes[i]:IsReincarnating() or inf_aegis_ready) then
+				LivingHeroes = i
 			end
 		end
-		if #dead_heroes == #heroes then
-			if can_be_triggered and self:GetAbility():IsCooldownReady() then
-				can_be_triggered = false
-				Timers:CreateTimer(channel + (FrameTime() * (PlayersID + 1)), function()
-					dead_heroes = {}
-					for i=1, #heroes do
-						if heroes[i]:IsRealHero() and not heroes[i]:IsAlive() and IsValidEntity(heroes[i]) and heroes[i]:GetLevel() > 0 and not heroes[i]:IsReincarnating() then
-							for itemSlot = 0, 5 do
-								local item = heroes[i]:GetItemInSlot(itemSlot)
-								if item and item:GetName() == "item_inf_aegis" then
-									if item:IsCooldownReady() or item:GetCooldownTimeRemaining() > 42 then
-										return
-									end
-								end
-							end
-							table.insert(dead_heroes,heroes[i])
-						end
+
+--		self:SetStackCount(LivingHeroes)
+
+		if LivingHeroes == 0 then
+			Timers:CreateTimer(channel + (FrameTime() * (PlayersID + 1)), function()
+				local LivingHeroes = 0
+				for i = 1, #heroes do
+					if heroes[i]:IsRealHero() and (heroes[i]:IsAlive() or heroes[i]:IsReincarnating()) then
+						LivingHeroes = i
 					end
-					if #dead_heroes == #heroes then
-						item_resurection_pendant:Used(self:GetParent(), self:GetAbility(), base_cooldown, extra_cooldown)
-					end
-				end)
-			end
-		else
-			can_be_triggered = true
+				end
+				if LivingHeroes == 0 then
+					item_resurection_pendant:Used(self:GetParent(), self:GetAbility(), base_cooldown, extra_cooldown)
+				end
+			end)
 		end
 	end
 end

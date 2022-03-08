@@ -1701,6 +1701,16 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 * Fix Techies ultimate dmg.
 * DarkBloodstone(base on nromal bloodstone) seems to be only for real "Creeps" and Heroes so i might change that in future, for now is more mana and hp(incresed) and 50% hp cost to maybe enable some stuff.
 * Fix Doom ultimate being able to toggle even on CD.
+* Fixed Chaos Strike (Chaos Knight) heal
+* Fixed Soulstore (Grimstroke) stacks
+* Fixed Resurrection Pendant Aghanim's Scepter effect
+* Fixed Mimic Mace cooldown
+* Fixed Shadow Evasion (Phantom Assassin) toggle on ability
+* Stifling Dagger (Phantom Assassin): Added autocast effect for Super Scepter effect (press ALT)
+* Powershot (WindRanger):
+	-- Added Super Scepter and Aghanim's Shard
+	-- Changed and rebalanced
+* Buffed Windrun (WindRanger)
 * Quick Arm (Tinker):
 	-- Added Super Scepter effect
 	-- Added new talents (15 and 20 lvls)
@@ -1711,6 +1721,7 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 * Life Greaves
 	-- Added "UP" - Lier Scarlet
 	-- Added new recipe - by using Guardian Greaves
+* Stygian Desolator: Debuff duration reduced by 5 sec
 
 
 

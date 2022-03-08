@@ -13,7 +13,7 @@ function modifier_mjz_chaos_knight_chaos_strike:OnCreated()
 	end
 end
 function modifier_mjz_chaos_knight_chaos_strike:DeclareFunctions()
-	return {MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE, MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_EVENT_ON_TAKEDAMAGE}
+	return {MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE, MODIFIER_EVENT_ON_ATTACK_LANDED}
 end
 function modifier_mjz_chaos_knight_chaos_strike:GetModifierPreAttack_CriticalStrike(params)
 	if IsServer() and (not self:GetParent():PassivesDisabled()) then
@@ -26,7 +26,7 @@ function modifier_mjz_chaos_knight_chaos_strike:GetModifierPreAttack_CriticalStr
 		end
 	end
 end
-function modifier_mjz_chaos_knight_chaos_strike:OnTakeDamage(params)
+function modifier_mjz_chaos_knight_chaos_strike:OnAttackLanded(params)
 	if IsServer() then
 		local lifesteal = self:GetAbility():GetSpecialValueFor("lifesteal")
 		if self:GetCaster() == params.attacker then
@@ -39,10 +39,7 @@ function modifier_mjz_chaos_knight_chaos_strike:OnTakeDamage(params)
 				self.IsCrit = false
 			end
 		end
-	end
-end
-function modifier_mjz_chaos_knight_chaos_strike:OnAttackLanded(params)
-	if IsServer() then
+
 		local chaos_bolt = self:GetCaster():FindAbilityByName("mjz_chaos_knight_chaos_bolt")
 		if chaos_bolt then
 			if self:GetCaster() == params.attacker and not self:GetCaster():IsIllusion() then

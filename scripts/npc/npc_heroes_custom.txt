@@ -2014,18 +2014,18 @@
 		"AttributeAgilityGain"		"8.8"
 	}
 	
-	"npc_dota_hero_windrunner_mjz"			// 风行者
+	"npc_dota_hero_windrunner"
 	{
-		"override_hero"			"npc_dota_hero_windrunner"
-
 		"Ability1"				"frostivus2018_windrunner_shackleshot"
 		"Ability2"				"mjz_windrunner_powershot"
+		"Ability3"				"windrunner_windrun"
 		"Ability4"				"windrunner_gale_force"
 		"Ability6"				"mjz_windrunner_focusfire"
 		"Ability10"				"special_bonus_cdr_15"
 		"Ability11"				"special_bonus_movement_speed_15"
 		"Ability12"				"special_bonus_unique_mjz_windrunner_powershot_damage"
 		"Ability13"				"special_bonus_attack_range_400"
+		"Ability14"				"special_bonus_unique_windranger"
 		"Ability15"				"special_bonus_truestrike"
 		"Ability16"				"special_bonus_attack_base_damage_200"
 		"Ability17"				"special_bonus_9_crit_2150"
@@ -2258,6 +2258,8 @@
 		"Ability2"		"dazzle_shallow_grave"
 		"Ability3"		"dazzle_shadow_wave"
 		"Ability4"		"custom_side_gunner"
+		"Ability5"		"dzzl_good_juju"
+		//"Ability5"		"dazzle_good_juju"
 		//"Ability5"		"generic_hidden"
 		//"Ability6"		"dazzle_bad_juju_custom"
 		"Ability10"		"special_bonus_gold_income_420"

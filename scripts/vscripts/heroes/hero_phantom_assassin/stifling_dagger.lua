@@ -9,6 +9,12 @@ LinkLuaModifier("modifier_pa_stifling_dagger_buff", "heroes/hero_phantom_assassi
 ---------------------
 pa_stifling_dagger = class({})
 function pa_stifling_dagger:GetCastRange(vLocation, hTarget) return self:GetSpecialValueFor("cast_range") end
+function pa_stifling_dagger:GetBehavior()
+	if self:GetCaster():HasModifier("modifier_super_scepter") then
+		return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_AUTOCAST
+	end
+	return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET
+end
 function pa_stifling_dagger:GetCooldown(level)
 	if self:GetCaster():HasModifier("modifier_super_scepter") then
 		return self.BaseClass.GetCooldown(self, level) - 2
@@ -22,23 +28,30 @@ function pa_stifling_dagger:GetAbilityTextureName()
 	return "phantom_assassin_stifling_dagger"
 end
 function pa_stifling_dagger:OnSpellStart()
+	if not IsServer() then return end
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 	local radius = self:GetSpecialValueFor("search_radius")
-	local super_scepter = false
+	self.super_scepter = false
+	self.blink = false
 	
 	StartSoundEvent("Hero_PhantomAssassin.Dagger.Cast", caster)
 
 	self.hitten_targets = {}
 	
-	local count = 1
 	target:AddNewModifier(caster, self, "modifier_pa_stifling_dagger_marker", {})
 	if self:GetCaster():HasModifier("modifier_super_scepter") then
-		super_scepter = true
+		self.super_scepter = true
 	end
-	self:LaunchDagger(target, super_scepter)
+	if self:GetAutoCastState() then
+		if self.super_scepter then
+			self.blink = true
+		end
+	end
+	self:LaunchDagger(target, self.super_scepter, self.blink)
 
 --[[
+	local count = 1
 	if self:GetCaster():HasScepter() then
 		local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
 		
@@ -52,7 +65,7 @@ function pa_stifling_dagger:OnSpellStart()
 ]]
 end
 
-function pa_stifling_dagger:LaunchDagger(enemy, super_scepter)
+function pa_stifling_dagger:LaunchDagger(enemy, super_scepter, blink)
 	if enemy == nil then return end
 	local dagger_speed = self:GetSpecialValueFor("dagger_speed") + talent_value(self:GetCaster(), "special_bonus_pa_stifling_dagger_speed")
 
@@ -61,6 +74,8 @@ function pa_stifling_dagger:LaunchDagger(enemy, super_scepter)
 	else
 		Effect_Name = "particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger.vpcf"
 	end
+	self.blink = blink
+	self.super_scepter = super_scepter
 
 	local dagger_projectile = {
 		Target = enemy,
@@ -76,7 +91,7 @@ function pa_stifling_dagger:LaunchDagger(enemy, super_scepter)
 		VisionRadius = self:GetSpecialValueFor("search_radius"),
 		iVisionTeamNumber = self:GetCaster():GetTeamNumber(),
 		iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_1,
-		ExtraData = {super_scepter = super_scepter}
+		ExtraData = {}
 	}
 
 	ProjectileManager:CreateTrackingProjectile(dagger_projectile)
@@ -84,8 +99,8 @@ end
 
 function pa_stifling_dagger:OnProjectileThink_ExtraData(location, ExtraData)
 	local caster = self:GetCaster()
-	if ExtraData.super_scepter then
-		local targets = FindUnitsInRadius(caster:GetTeamNumber(), location, nil, self:GetSpecialValueFor("search_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+	if self.blink and self.super_scepter then
+		local targets = FindUnitsInRadius(caster:GetTeamNumber(), location, nil, self:GetSpecialValueFor("search_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_ANY_ORDER, false)
 
 		for _, target in pairs(targets) do
 			if target then
@@ -120,14 +135,12 @@ function pa_stifling_dagger:OnProjectileHit_ExtraData(target, location, ExtraDat
 	target_pos.x = target_pos.x - 125 * distance_vector.x
 	target_pos.y = target_pos.y - 125 * distance_vector.y
 
-	caster:SetAbsOrigin(target_pos)
+--	caster:SetAbsOrigin(target_pos)
 	caster:PerformAttack(target, true, true, true, true, false, false, true)
 	if caster:HasModifier("modifier_item_aghanims_shard") then
 		caster:PerformAttack(target, true, true, true, true, true, true, true)
 	end
-	caster:SetAbsOrigin(initial_pos)
-
-	caster:RemoveModifierByName("modifier_pa_stifling_dagger_dmg_manipulation")
+--	caster:SetAbsOrigin(initial_pos)
 
 	if target:HasModifier("modifier_pa_stifling_dagger_marker") then
 		self:Blink(target)
@@ -135,6 +148,8 @@ function pa_stifling_dagger:OnProjectileHit_ExtraData(target, location, ExtraDat
 
 		target:RemoveModifierByName("modifier_pa_stifling_dagger_marker")
 	end
+
+	caster:RemoveModifierByName("modifier_pa_stifling_dagger_dmg_manipulation")
 	return true
 end
 
@@ -154,7 +169,7 @@ function pa_stifling_dagger:Blink(target)
 
 	local distance = (target:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D()
 	local direction = (target:GetAbsOrigin() - caster:GetAbsOrigin()):Normalized()
-	caster:SetForwardVector(direction)
+--	caster:SetForwardVector(direction)
 	caster:PerformAttack(target, true, true, true, true, true, false, true)
 	caster:MoveToTargetToAttack(target)
 end

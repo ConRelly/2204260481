@@ -163,7 +163,6 @@ function item_pipe_of_dezun:GetCastRange(location, target) return self:GetSpecia
 function item_pipe_of_dezun:OnSpellStart()
 	local caster = self:GetCaster()
 	local duration = self:GetSpecialValueFor("duration")
-	local radius = self:GetSpecialValueFor("active_aura_radius")
 	caster:EmitSound("DOTA_Item.Pipe.Activate")
 	local particle = ParticleManager:CreateParticle("particles/items2_fx/pipe_of_insight_launch.vpcf", PATTACH_ABSORIGIN, caster)
 	ParticleManager:ReleaseParticleIndex(particle)
@@ -216,7 +215,7 @@ function modifier_pipe_of_dezun_magic_immune_aura:GetEffectAttachType() return P
 function modifier_pipe_of_dezun_magic_immune_aura:IsAura() return true end
 function modifier_pipe_of_dezun_magic_immune_aura:IsAuraActiveOnDeath() return false end
 function modifier_pipe_of_dezun_magic_immune_aura:GetAuraRadius()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("aura_radius") end
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("active_aura_radius") end
 end
 function modifier_pipe_of_dezun_magic_immune_aura:GetAttributes() return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE end
 function modifier_pipe_of_dezun_magic_immune_aura:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD + DOTA_UNIT_TARGET_FLAG_INVULNERABLE end

@@ -14,6 +14,7 @@ local exclude_items = {
     item_resurection_pendant = true,
     doom_devour_lua = true,
     dazzle_good_juju = true,
+    dzzl_good_juju = true,
 }
 
 

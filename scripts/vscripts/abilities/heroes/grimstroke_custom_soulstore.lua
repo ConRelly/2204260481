@@ -35,66 +35,57 @@ end
 
 function cast_grimstroke_custom_soulstore(keys)
     if IsServer() then
-        local caster = keys.caster
-        local ability = keys.ability
-        local target = keys.target
-        local modifier = keys.modifier
-        local effect_modifier = keys.effect_modifier
-        local stats = caster:GetIntellect() + caster:GetAgility() + caster:GetStrength()
-        local stats_mult = stats * GetTalentSpecialValueFor(ability, "stats_mul")
-        local stack_count = get_stack_count(caster, modifier)
+		local caster = keys.caster
+		local ability = keys.ability
+		local target = keys.target
+		local modifier = keys.modifier
+		local effect_modifier = keys.effect_modifier
+		if ability:GetCooldown(ability:GetLevel() - 1) > 0 and not ability:IsItem() and not ability:IsToggle() then
+			local stats = caster:GetIntellect() + caster:GetAgility() + caster:GetStrength()
+			local stats_mult = stats * GetTalentSpecialValueFor(ability, "stats_mul")
+			local stack_count = get_stack_count(caster, modifier)
 
-        if stack_count > 0 then
-            target:EmitSound("Hero_Grimstroke.SoulChain.Cast")
+			if stack_count > 0 then
+				target:EmitSound("Hero_Grimstroke.SoulChain.Cast")
 
-            local duration = ability:GetSpecialValueFor("duration")
+				local duration = ability:GetSpecialValueFor("duration")
 
-            if caster:IsOpposingTeam(target:GetTeam()) then
-                local damage = (ability:GetSpecialValueFor("damage") + stats_mult) * stack_count
+				if caster:IsOpposingTeam(target:GetTeam()) then
+					local damage = (ability:GetSpecialValueFor("damage") + stats_mult) * stack_count
 
-                target:AddNewModifier(caster, ability, "modifier_grimstroke_custom_soulstore_buff", {
-                    duration = duration,
-                    damage = damage
-                })
-            else
-                local heal = math.ceil(((ability:GetSpecialValueFor("heal") + stats_mult) * stack_count) / 4)
+					target:AddNewModifier(caster, ability, "modifier_grimstroke_custom_soulstore_buff", {
+						duration = duration,
+						damage = damage
+					})
+				else
+					local heal = math.ceil(((ability:GetSpecialValueFor("heal") + stats_mult) * stack_count) / 4)
 
-                target:AddNewModifier(caster, ability, "modifier_grimstroke_custom_soulstore_buff", {
-                    duration = duration * 3,
-                    heal = heal
-                })
-            end
+					target:AddNewModifier(caster, ability, "modifier_grimstroke_custom_soulstore_buff", {
+						duration = duration * 3,
+						heal = heal
+					})
+				end
 
-            caster:RemoveModifierByName(modifier)
-        else
-            caster:Interrupt()
-            caster:InterruptChannel()
-            ability:RefundManaCost()
-            --ability:EndCooldown()
-        end
-    end   
+				caster:RemoveModifierByName(modifier)
+			else
+				caster:Interrupt()
+				caster:InterruptChannel()
+				ability:RefundManaCost()
+				--ability:EndCooldown()
+			end
+		end
+    end
 end
 
 
 
 
 modifier_grimstroke_custom_soulstore_buff = class({})
-
-
-
-function modifier_grimstroke_custom_soulstore_buff:IsHidden()
-    return false
-end
-
-function modifier_grimstroke_custom_soulstore_buff:IsPurgable()
-    return false
-end
-
+function modifier_grimstroke_custom_soulstore_buff:IsHidden() return false end
+function modifier_grimstroke_custom_soulstore_buff:IsPurgable() return false end
 function modifier_grimstroke_custom_soulstore_buff:GetEffectName()
     return "particles/units/heroes/hero_grimstroke/grimstroke_soulchain_debuff.vpcf"
 end
-
-
 if IsServer() then
     function modifier_grimstroke_custom_soulstore_buff:OnCreated(table)
         self.damage = table.damage or 0

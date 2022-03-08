@@ -17996,7 +17996,7 @@
 		"buff_duration"			"10"
 		"lifesteal_multiplier"	"2"
 		"hp_cost"				"50"
-	}	
+	}
 }
 
 
@@ -20531,41 +20531,41 @@
 	"BaseClass"							"item_lua"
 	"ScriptFile"						"items/custom/item_resurection_pendant.lua"
 	"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-	"AbilityChannelTime"				"6.0"
+	//"AbilityChannelTime"				"6"
 	//"ItemStockInitial"					"2"
 	//"ItemStockMax"						"10"
 	//"ItemStockTime"						"999999.0"
-	"ItemSellable"					  "0"
+	"ItemSellable"						"0"
 	"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_4"
-	"AbilityTextureName"				"maiar_pendant"
-	"ItemDisassembleRule"			   "DOTA_ITEM_DISASSEMBLE_NEVER"
+	"AbilityTextureName"				"custom/resurection_pendant"
+	"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
 	"ItemShareability"					"ITEM_FULLY_SHAREABLE"
-	//"ItemIsNeutralDrop"				 "1"
-	"ItemShopTags"						"resurection;pendant"
+	//"ItemIsNeutralDrop"					"1"
+	"ItemShopTags"						"resurrection;pendant"
 	"ItemQuality"						"epic"
-	"ItemAliases"						"resurection"
+	"ItemAliases"						"resurrection"
 	"ItemDeclarations"					"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"base_cooldown"			"100.0"
+			"base_cooldown"			"100"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"extra_cooldown"		"50.0"
+			"extra_cooldown"		"50"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"channel_tooltip"		"6.0"
+			"extra_cooldown_ss"		"35"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"extra_cooldown_ss"		"35"
+			"channel"				"6"
 		}		
 	}
 }
@@ -21560,7 +21560,7 @@
 			"01"
 			{
 				"var_type"			  "FIELD_FLOAT"
-				"cooldown_reduction"				"28"
+				"cooldown_reduction"				"15"
 			}
 			"02"
 			{

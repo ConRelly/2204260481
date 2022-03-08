@@ -14,6 +14,7 @@ end
 function pa_phantom_evasion:OnSpellStart()
 	if not IsServer() then return end
 	local duration = self:GetSpecialValueFor("duration")
+	local cooldown = self:GetSpecialValueFor("cooldown")
 	self:GetCaster():EmitSound("Phantom_Evasion")
 	self:GetCaster():Stop()
 
@@ -24,24 +25,24 @@ function pa_phantom_evasion:OnSpellStart()
 			local DaggerAbility = self:GetCaster():FindAbilityByName("pa_stifling_dagger")
 			DaggerAbility.hitten_targets = {}
 			local DaggersCount = 0
-			if DaggerAbility:IsTrained() then
-				local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCaster():GetAbsOrigin(), nil, self:GetSpecialValueFor("max_distance"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_CLOSEST, false)
+			if DaggerAbility:GetLevel() > 0 then
+				local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCaster():GetAbsOrigin(), nil, self:GetSpecialValueFor("max_distance"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_CLOSEST, false)
 
 				local MaxDaggers = math.floor(DaggerAbility:GetLevel() / 2)
 				for _, enemy in pairs(enemies) do
 					if DaggersCount < MaxDaggers then
 						DaggersCount = DaggersCount + 1
-						DaggerAbility:LaunchDagger(enemy, false)
+						DaggerAbility:LaunchDagger(enemy, false, false)
 					end
 				end
 			end
 		end
 		self:EndCooldown()
-		self:StartCooldown(self:GetSpecialValueFor("cooldown"))
+		self:StartCooldown(cooldown)
 	else
 		self:GetCaster():Purge(false, true, false, false, false)
 		self:EndCooldown()
-		self:StartCooldown(self:GetSpecialValueFor("cooldown") / 2)
+		self:StartCooldown(cooldown / 2)
 	end
 
 	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_pa_phantom_evasion", {duration = duration})

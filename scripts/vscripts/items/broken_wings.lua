@@ -160,6 +160,7 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 	local target = keys.unit
 	local attacker = keys.attacker
 	local DamageType = keys.damage_type
+	if not caster:IsRealHero() then return end
 	if attacker ~= caster then return end
 	if self:GetStackCount() < 1 then return end
 	if self.hit == true then

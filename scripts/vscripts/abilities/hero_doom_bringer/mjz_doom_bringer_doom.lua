@@ -30,25 +30,26 @@ end
 
 function ability_class:OnToggle()
 	if IsServer() then
-		local ability = self
 		local caster = self:GetCaster()
 
 		if not caster:HasScepter() then return nil end
 
-		if ability:GetToggleState() then
-			caster:AddNewModifier(caster, ability, MODIFIER_CASTER_NAME, {})
+		if self:GetToggleState() then
+			caster:AddNewModifier(caster, self, MODIFIER_CASTER_NAME, {})
 		else
 			caster:RemoveModifierByName(MODIFIER_CASTER_NAME)
+			self:StartCooldown(self:GetCooldown(self:GetLevel() - 1))
 		end
 	end
 end
 
 function ability_class:OnSpellStart()
 	if IsServer() then
-		local ability = self
-		local caster = self:GetCaster()
-		local duration = ability:GetSpecialValueFor('duration')
-		caster:AddNewModifier(caster, ability, MODIFIER_CASTER_NAME, {duration = duration})
+		local duration = self:GetSpecialValueFor("duration")
+		if self:GetCaster():HasModifier(MODIFIER_CASTER_NAME) then
+			self:GetCaster():RemoveModifierByName(MODIFIER_CASTER_NAME)
+		end
+		self:GetCaster():AddNewModifier(self:GetCaster(), self, MODIFIER_CASTER_NAME, {duration = duration})
 	end
 end
 

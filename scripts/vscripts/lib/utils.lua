@@ -169,14 +169,14 @@ function spell_crit(attacker, victim, damageTable)
 		local mana = attacker:GetMana()
 		local health = attacker:GetHealth()
 		local damage_mult = 1.8
-		local mana_cost = damageTable * 0.8 * (150 / (150 + attacker:GetIntellect()))
+		local mana_cost = damageTable.damage * 0.8 * (150 / (150 + attacker:GetIntellect()))
 		if not attacker:HasModifier("immortal_spells_req_hp") then
 			if mana >= mana_cost and mana >= 150 then
 				if victim and victim ~= attacker and victim:GetTeamNumber() ~= attacker:GetTeamNumber() then
-					damageTable = damageTable * damage_mult
+					damageTable.damage = damageTable.damage * damage_mult
 					create_popup({
 						target = victim,
-						value = damageTable,
+						value = damageTable.damage,
 						color = Vector(100, 149, 237),
 						type = "crit",
 						pos = 4
@@ -187,10 +187,10 @@ function spell_crit(attacker, victim, damageTable)
 		else
 			if health >= mana_cost and health >= 150 then
 				if victim and victim ~= attacker and victim:GetTeamNumber() ~= attacker:GetTeamNumber() then
-					damageTable = damageTable * damage_mult
+					damageTable.damage = damageTable.damage * damage_mult
 					create_popup({
 						target = victim,
-						value = damageTable,
+						value = damageTable.damage,
 						color = Vector(100, 149, 18),
 						type = "crit",
 						pos = 4
@@ -200,7 +200,7 @@ function spell_crit(attacker, victim, damageTable)
 			end
 		end
 	end
-    return damageTable
+    return damageTable.damage
 end
 
 function HasSuperScepter(npc)
@@ -843,57 +843,3 @@ function UpdateBossBar(boss, team)
 		team_contest = team
 	})
 end
-
-
-------------------------------------------------------
-
------CastRage------------ some fix for castrange bug , but dota fixed before got to test
-
---[[ if(IsClient() == true) then
-
-  C_DOTA_Ability_Lua.GetCastRangeBonus = function(self, hTarget)
-	  if(not self or self:IsNull() == true) then
-		  return 0
-	  end
-	  local caster = self:GetCaster()
-	  if(not caster or caster:IsNull() == true) then
-		  return 0
-	  end
-	  return caster:GetCastRangeBonus()
-  end
-   
-  C_DOTABaseAbility.GetCastRangeBonus = function(self, hTarget)
-	  if(not self or self:IsNull() == true) then
-		  return 0
-	  end
-	  local caster = self:GetCaster()
-	  if(not caster or caster:IsNull() == true) then
-		  return 0
-	  end
-	  return caster:GetCastRangeBonus()
-  end
-   
-  -- Override from addon_game_mode.lua (paste this code into it)
-  CDOTA_Ability_Lua.GetCastRangeBonus = function(self, hTarget)
-	  if(not self or self:IsNull() == true) then
-		  return 0
-	  end
-	  local caster = self:GetCaster()
-	  if(not caster or caster:IsNull() == true) then
-		  return 0
-	  end
-	  return caster:GetCastRangeBonus()
-  end
-   
-  CDOTABaseAbility.GetCastRangeBonus = function(self, hTarget)
-	  if(not self or self:IsNull() == true) then
-		  return 0
-	  end
-	  local caster = self:GetCaster()
-	  if(not caster or caster:IsNull() == true) then
-		  return 0
-	  end
-	  return caster:GetCastRangeBonus()
-  end
-
-end ]]

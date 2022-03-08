@@ -4133,7 +4133,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		
-		"LinkedAbility"					"dazzle_good_juju"
+		"LinkedAbility"					"dzzl_good_juju"
 		"MaxLevel"                      "7"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Dazzle.Weave"
@@ -12534,6 +12534,60 @@
 			}
 		}
 	}
+
+// Windrunner: Windrun
+	"windrunner_windrun"
+	{
+		"ID"					"5132"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Ability.Windrun"
+		"HasScepterUpgrade"				"1"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"15 14 13 12"
+		"AbilityDuration"				"3 4 5 6"
+		"AbilityManaCost"				"50"
+		"AbilityModifierSupportValue"	"0.1"
+		"AbilityValues"
+		{
+			"movespeed_bonus_pct"			"60"		
+			"evasion_pct_tooltip"			"100"
+			"enemy_movespeed_bonus_pct"	
+			{
+				"value"						"-15 -20 -25 -30"
+			}
+			"radius"					
+			{	
+				"value"								"500"
+				"special_bonus_unique_windranger"	"+500"
+			}
+			"scepter_movespeed_bonus_pct"			
+			{
+				"value"						"-35 -40 -45 -50"
+				"RequiresScepter"			"1"
+			}
+			"scepter_blind"					"40"
+			"duration"						"3 4 5 6"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	"special_bonus_unique_windranger"
+	{
+		"ID"						"6144"
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"1"
+				"ad_linked_abilities"		"windrunner_windrun"
+			}
+		}
+	}
+
 	"windrunner_focusfire"
 	{
 		"AbilitySpecial"
@@ -22835,7 +22889,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"corruption_duration"	"15"
+				"corruption_duration"	"10"
 			}
 		}
 	}

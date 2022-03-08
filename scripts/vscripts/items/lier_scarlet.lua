@@ -43,7 +43,7 @@ function modifier_lier_scarlet_m:OnCreated()
 		self:StartIntervalThink(aoe_interval)
 end end end
 function modifier_lier_scarlet_m:OnIntervalThink()
-	if IsServer() then
+	if IsServer() then if not self:GetAbility() then self:Destroy() return end
 		local caster = self:GetCaster()
 		local heal_pct = self:GetAbility():GetSpecialValueFor("heal_pct")
 		local aoe_dmg = self:GetAbility():GetSpecialValueFor("aoe_dmg")
@@ -196,7 +196,7 @@ function modifier_lier_scarlet_3_pieces:GetMinHealth()
 	end
 end
 function modifier_lier_scarlet_3_pieces:OnIntervalThink()
-	if IsServer() then
+	if IsServer() then if not self:GetAbility() then self:Destroy() return end
 	local max_health = self:GetCaster():GetMaxHealth()
 	local health_threshold = self:GetAbility():GetSpecialValueFor("health_threshold")
 	local buff_duration = self:GetAbility():GetSpecialValueFor("3_pieces_duration")
@@ -223,7 +223,7 @@ function modifier_lier_scarlet_3_pieces_buff:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 end
 function modifier_lier_scarlet_3_pieces_buff:OnDestroy()
-	if IsServer() then
+	if IsServer() then if not self:GetAbility() then self:Destroy() return end
 		local pieces_cd = self:GetAbility():GetSpecialValueFor("3_pieces_cd")
 		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_lier_scarlet_3_pieces_buff_cd", {duration = pieces_cd})
 	end
@@ -233,7 +233,7 @@ function modifier_lier_scarlet_3_pieces_buff:DeclareFunctions()
 	MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_MIN_HEALTH, MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_TOOLTIP}
 end
 function modifier_lier_scarlet_3_pieces_buff:GetModifierCritDMG()
-	if IsServer() then
+	if IsServer() then if not self:GetAbility() then self:Destroy() return end
 		local lvl = self:GetParent():GetLevel()
 		local bonus_crit = self:GetAbility():GetSpecialValueFor("bonus_crit")
 		local bonus_crit_dmg = self:GetAbility():GetSpecialValueFor("bonus_crit_dmg") * lvl

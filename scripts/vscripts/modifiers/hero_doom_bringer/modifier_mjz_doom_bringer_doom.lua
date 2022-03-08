@@ -18,13 +18,12 @@ end
 
 if IsServer() then
 
-	function modifier_caster:OnCreated(table)
-		local parent = self:GetParent()
+	function modifier_caster:OnCreated()
 		local caster = self:GetCaster()
 		local ability = self:GetAbility()
 		local tick_interval = ability:GetSpecialValueFor('tick_interval')
 
-		EmitSoundOn("Hero_DoomBringer.Doom", caster)	-- target
+		EmitSoundOn("Hero_DoomBringer.Doom", caster)
 
 		if caster:HasScepter() then
 			caster:AddNewModifier(caster, ability, 'modifier_mjz_doom_bringer_doom_mana', {})
@@ -35,7 +34,6 @@ if IsServer() then
 
 	function modifier_caster:OnIntervalThink()
 		local parent = self:GetParent()
-		local caster = self:GetCaster()
 		local ability = self:GetAbility()
 		local tick_interval = ability:GetSpecialValueFor('tick_interval')
 		local radius = ability:GetSpecialValueFor('radius')
@@ -89,36 +87,13 @@ end
 ------------------------------------------------
 
 function modifier_caster:IsAura() return true end
-
-function modifier_caster:GetAuraRadius()
-    return self:GetAbility():GetSpecialValueFor("radius")
-end
-
-function modifier_caster:GetModifierAura()
-    return "modifier_mjz_doom_bringer_doom_debuff"
-end
-
-function modifier_caster:GetAuraSearchTeam()
-    return DOTA_UNIT_TARGET_TEAM_ENEMY
-end
-
-function modifier_caster:GetAuraEntityReject(target)
-    return self:GetParent():IsIllusion()
-end
-
-function modifier_caster:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
-end
-
-function modifier_caster:GetAuraSearchFlags()
-	return DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE -- DOTA_UNIT_TARGET_FLAG_NONE
-end
-
-function modifier_caster:GetAuraDuration()
-    return 0.5
-end
-
-------------------------------------------------
+function modifier_caster:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("radius") end
+function modifier_caster:GetModifierAura() return "modifier_mjz_doom_bringer_doom_debuff" end
+function modifier_caster:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
+function modifier_caster:GetAuraEntityReject(target) return self:GetParent():IsIllusion() end
+function modifier_caster:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
+function modifier_caster:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE end
+function modifier_caster:GetAuraDuration() return 0.5 end
 
 ---------------------------------------------------------------------------------------
 
@@ -128,19 +103,19 @@ local modifier_mana = modifier_mjz_doom_bringer_doom_mana
 function modifier_mana:IsHidden() return true end
 function modifier_mana:IsPurgable() return false end
 
-if IsServer() then
-    function modifier_mana:OnCreated()
-        local ability = self:GetAbility()
-        self:StartIntervalThink(1.0)
-    end
+function modifier_mana:OnCreated()
+	self.tick_interval = self:GetAbility():GetSpecialValueFor("tick_interval")
+	self:StartIntervalThink(self.tick_interval)
+end
 
 
-    function modifier_mana:OnIntervalThink()
+function modifier_mana:OnIntervalThink()
+	if IsServer() then
         local ability = self:GetAbility()
         local parent = self:GetParent()
 
 		-- local mana_cost = ability:GetManaCost(ability:GetLevel())
-		local mana_cost = ability:GetSpecialValueFor('mana_second_scepter')
+		local mana_cost = ability:GetSpecialValueFor("mana_second_scepter") * self.tick_interval
         if parent:GetMana() >= mana_cost then
             parent:SpendMana(mana_cost, ability)
         else
@@ -158,6 +133,13 @@ local modifier_debuff = modifier_mjz_doom_bringer_doom_debuff
 function modifier_debuff:IsHidden() return false end
 function modifier_debuff:IsPurgable() return true end
 function modifier_debuff:IsDebuff() return true end
+
+function modifier_debuff:GetStatusEffectName()
+	return "particles/status_fx/status_effect_doom.vpcf"
+end
+function modifier_debuff:StatusEffectPriority()
+	return 10
+end
 
 function modifier_debuff:GetEffectName()
 	return "particles/units/heroes/hero_doom_bringer/doom_bringer_doom.vpcf"

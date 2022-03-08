@@ -6,6 +6,17 @@ require("lib/popup")
 item_echo_wand = class({})
 
 
+function item_echo_wand:CastFilterResult()
+	if not IsServer() then return end
+	if self.echo == nil then return UF_FAIL_CUSTOM end
+	return UF_SUCCESS
+end
+
+function item_echo_wand:GetCustomCastError()
+	if not IsServer() then return end
+	if self.echo == nil then return "#dota_hud_error_echo_wand_no_spell" end
+end
+
 function item_echo_wand:GetIntrinsicModifierName() return "modifier_item_echo_wand" end
 function item_echo_wand:OnSpellStart()
 	local caster = self:GetCaster()
@@ -45,6 +56,9 @@ if IsServer() then
 	function modifier_item_echo_wand:OnDestroy()
 		local parent = self:GetParent()
 		parent:RemoveModifierByName("modifier_item_echo_wand_thinker")
+		if parent:HasModifier("modifier_item_echo_wand_lock") then
+			parent:RemoveModifierByName("modifier_item_echo_wand_lock")
+		end
 	end
 end
 function modifier_item_echo_wand:IsHidden() return true end
@@ -278,10 +292,11 @@ if IsServer() then
 					self.targetType = 3
 					self.echo = keys.ability
 				end
+				item_echo_wand.echo = self.echo
 			end
 		end
-		if keys.unit == self.parent and keys.ability:GetCooldown(keys.ability:GetLevel()) > 1.5 and self.ability:GetCooldownTimeRemaining() > self.minimum_cooldown then
-			local cooldown = self.ability:GetCooldownTimeRemaining() - (keys.ability:GetCooldown(keys.ability:GetLevel()) / 3.5)
+		if keys.unit == self.parent and keys.ability:GetCooldown(keys.ability:GetLevel() - 1) > 1.5 and self.ability:GetCooldownTimeRemaining() > self.minimum_cooldown then
+			local cooldown = self.ability:GetCooldownTimeRemaining() - (keys.ability:GetCooldown(keys.ability:GetLevel() - 1) / 3.5)
 			if cooldown < self.minimum_cooldown then
 				cooldown = self.minimum_cooldown
 			end
@@ -301,7 +316,7 @@ if IsServer() then
 		if attacker == self.parent and not keys.target:IsNull() and self.hit then 
 			if self.echo and self.ability:IsCooldownReady() and not self.echo:IsNull() and IsValidEntity(self.echo) then
 				--if self.echo:IsOwnersManaEnough() then
-				local cooldown = self.echo:GetCooldown(self.echo:GetLevel())
+				local cooldown = self.echo:GetCooldown(self.echo:GetLevel() - 1)
 				if cooldown < self.minimum_cooldown then
 					cooldown = self.minimum_cooldown
 				end
