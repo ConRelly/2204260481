@@ -1697,10 +1697,9 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 * Fix viper lvl 25 talent.
 * Fix Kunkka aghanim , increased dmg for torrent and reduced CD for Tidebringer	on last lvl.
-* Fix Invoker lvl 25 talent , increased the other talent to 10x  from 3x and greatly improved most of his skill.
+* Fix Invoker lvl 25 talent , increased the other talent to 10x  from 3x and greatly improved most of his skills.
 * Fix Techies ultimate dmg.
 * DarkBloodstone(base on nromal bloodstone) seems to be only for real "Creeps" and Heroes so i might change that in future, for now is more mana and hp(incresed) and 50% hp cost to maybe enable some stuff.
-* Fix Doom ultimate being able to toggle even on CD.
 * Fixed Chaos Strike (Chaos Knight) heal
 * Fixed Soulstore (Grimstroke) stacks
 * Fixed Resurrection Pendant Aghanim's Scepter effect
@@ -1711,6 +1710,9 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 	-- Added Super Scepter and Aghanim's Shard
 	-- Changed and rebalanced
 * Buffed Windrun (WindRanger)
+* Removed God Juju Cooldown reduction per spell , now it has only aghanim effects(active + passive).
+* Antimage blink illusion can't be mimic anymore.
+* Fix Antimage extreme speed  only using lvl 1 Base Damage (the bonus dmg per stacks was fine)
 * Quick Arm (Tinker):
 	-- Added Super Scepter effect
 	-- Added new talents (15 and 20 lvls)

@@ -10,7 +10,7 @@ function mjz_windrunner_powershot:GetIntrinsicModifierName() return "modifier_po
 function mjz_windrunner_powershot:GetChannelAnimation() return ACT_DOTA_CAST_ABILITY_2 end
 function mjz_windrunner_powershot:GetChannelTime()
 	if self:GetCaster():HasModifier("modifier_super_scepter") then
-		return self:GetSpecialValueFor("channel_time") - 1
+		return self:GetSpecialValueFor("channel_time") / 2
 	else
 		return self:GetSpecialValueFor("channel_time")
 	end
@@ -107,8 +107,9 @@ function mjz_windrunner_powershot:OnProjectileHit_ExtraData(target, loc, ExtraDa
 		if caster:HasModifier("modifier_item_aghanims_shard") then
 			target:AddNewModifier(caster, self, "modifier_powershot_shard", {duration = self:GetSpecialValueFor("debuff_duration")})
 		end
-
-		target:AddNewModifier(caster, self, "modifier_mjz_windrunner_powershot_debuff", {duration = self:GetSpecialValueFor("debuff_duration")})
+		if not target:HasModifier("modifier_mjz_faceless_the_world_aura_effect_enemy") then
+			target:AddNewModifier(caster, self, "modifier_mjz_windrunner_powershot_debuff", {duration = self:GetSpecialValueFor("debuff_inco_duration")})
+		end	
 
 		local damage = (self.damage or ExtraData.damage) + hits * self:GetSpecialValueFor("damage_increase") / 100
 		ApplyDamage({victim = target, attacker = caster, ability = self, damage_type = self:GetAbilityDamageType(), damage = damage, damage_flags = DOTA_DAMAGE_FLAG_NONE})
@@ -125,19 +126,21 @@ end
 
 modifier_mjz_windrunner_powershot_debuff = class({})
 function modifier_mjz_windrunner_powershot_debuff:IsHidden() return false end
-function modifier_mjz_windrunner_powershot_debuff:IsPurgable() return true end
+function modifier_mjz_windrunner_powershot_debuff:IsPurgable() return false end
 function modifier_mjz_windrunner_powershot_debuff:DeclareFunctions() 
 	return {MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE} 
 end
 function modifier_mjz_windrunner_powershot_debuff:GetModifierIncomingDamage_Percentage()
-	return self:GetAbility():GetSpecialValueFor("debuff_incoming_damage")
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("debuff_incoming_damage")
+	end	
 end
 
 ---------------------------------------------------------------------------------------
 
 modifier_powershot_shard = class({})
 function modifier_powershot_shard:IsHidden() return false end
-function modifier_powershot_shard:IsPurgable() return true end
+function modifier_powershot_shard:IsPurgable() return false end
 function modifier_powershot_shard:OnCreated()
 	if not IsServer() then return end
 	local stack_duration = self:GetAbility():GetSpecialValueFor("debuff_duration")

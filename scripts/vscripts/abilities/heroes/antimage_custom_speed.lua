@@ -36,8 +36,20 @@ if IsServer() then
 		self.damage_type = self.ability:GetAbilityDamageType()
 		self.damage = self.ability:GetSpecialValueFor("damage")
 		self.manaCost = self.ability:GetManaCost(1)
+		self.stack_bonus = self.ability:GetSpecialValueFor("bonus_damage")
     end
     
+    function modifier_antimage_custom_speed:OnRefresh()
+		self.ability = self:GetAbility()
+		self.parent = self:GetParent()
+		self.caster = self:GetCaster()
+		self.duration = self.ability:GetSpecialValueFor("duration")
+		self.damage_type = self.ability:GetAbilityDamageType()
+		self.damage = self.ability:GetSpecialValueFor("damage")
+		self.manaCost = self.ability:GetManaCost(1)
+		self.stack_bonus = self.ability:GetSpecialValueFor("bonus_damage")
+    end
+
     function modifier_antimage_custom_speed:OnAttackStart(keys)
 		local attacker = keys.attacker
         if attacker ~= self.parent then 
@@ -51,7 +63,7 @@ if IsServer() then
 		local bonus_dmg = 1
 		if caster:HasModifier(modifier_buff) then
 			local stacks = caster:FindModifierByName( modifier_buff ):GetStackCount()
-			bonus_dmg = bonus_dmg + stacks * ability:GetSpecialValueFor("bonus_damage")
+			bonus_dmg = bonus_dmg + stacks * self.stack_bonus
 		end		
         local target = keys.target
 		if target ~= null then

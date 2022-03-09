@@ -256,6 +256,7 @@ if IsServer() then
 		aghanim_blink2 = true,
 		item_imba_ultimate_scepter_synth2 = true,
 		dazzle_good_juju = true,
+		antimage_mana_overload = true,
 		
 	}
 	local include_table = {

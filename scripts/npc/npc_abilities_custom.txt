@@ -11022,7 +11022,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 	"AbilityTextureName"			"red_visage_gravekeepers_cloak"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-	"AbilityCooldown"				"1.0"
+	"AbilityCooldown"				"7.0"
 	"precache"
 	{
 		"particle"				  "particles/units/heroes/hero_morphling/morphling_morph_str.vpcf"
@@ -11045,7 +11045,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 	"AbilityTextureName"			"visage_gravekeepers_cloak"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-	"AbilityCooldown"				"1.0"
+	"AbilityCooldown"				"7.0"
 	"precache"
 	{
 		"particle"				  "particles/units/heroes/hero_morphling/morphling_morph_str.vpcf"
@@ -11226,6 +11226,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"antimage_mana_void"
 	"MaxLevel"					  "6"
+	"LevelsBetweenUpgrades"       "8"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityCooldown"			   "9.5 9.0 8.5 8.0 7.5 7.0"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
@@ -25054,7 +25055,7 @@
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0"
 
-		"AbilityCooldown"				"1.0"
+		"AbilityCooldown"				"7.0"
 		"AbilityManaCost"				"60"
 		
 		"AbilitySpecial"
@@ -25293,7 +25294,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"2.0"
+		"AbilityCooldown"				"7.0"
 			
 		"precache"
 		{
@@ -26050,7 +26051,7 @@
 		"LevelsBetweenUpgrades"		 "10"
 		//"RequiredLevel"				 "6"
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"3.0"
+		"AbilityCooldown"				"7.0"
 		"AbilityManaCost"				"70 90 110 170 350"
 		"AOERadius"						"450 550 650 750 1050"
 		"HasScepterUpgrade"				"1"
@@ -27318,7 +27319,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 
 		"AbilityManaCost"				"10"
-		"AbilityCooldown"				"5"
+		"AbilityCooldown"				"7"
 
 		"HasShardUpgrade"				"1"
 		"MaxLevel"						"1"
@@ -28110,7 +28111,7 @@
 		"AbilitySound"					"Hero_NyxAssassin.SpikedCarapace"
 		"MaxLevel"					  "7"
 		"LevelsBetweenUpgrades"		 "5"
-		"AbilityCooldown"				"5"
+		"AbilityCooldown"				"7"
 		"AbilityCastPoint"				"0"
 		"AbilityManaCost"				"10"
 		
@@ -29249,7 +29250,7 @@
 		
 		"AbilityCastPoint"				"0"
  		"AbilityCastAnimation"			"ACT_INVALID"
-		"AbilityCooldown"				"0.25"
+		"AbilityCooldown"				"7.25"
 	}
 	"mjz_phoenix_supernova"
 	{
@@ -29614,7 +29615,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		// "AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastPoint"				"0 0 0 0"
-		"AbilityCooldown"				"2.5"
+		"AbilityCooldown"				"5.5"
 		
 		"AbilitySpecial"
 		{
@@ -31584,7 +31585,7 @@
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityManaCost"				"30"
-		"AbilityCooldown"				"1"
+		"AbilityCooldown"				"7"
 
 		"precache"
 		{
@@ -33451,9 +33452,9 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Ability.Powershot"
-
+		"LevelsBetweenUpgrades"         "10"
 		//"HasScepterUpgrade"				"1"
 		"HasShardUpgrade"				"1"
 
@@ -33483,8 +33484,9 @@
 			"vision_radius"					"400"
 			"vision_duration"				"5"
 			"channel_time"					"3"
-			"debuff_incoming_damage"		"20"
+			"debuff_incoming_damage"		"10"
 			"debuff_duration"				"10"
+			"debuff_inco_duration"			"3"
 			"shot_chance"					"2"
 			"shard_armor"					"7"
 		}
@@ -42425,7 +42427,7 @@
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityManaCost"				"0"
-		"AbilityCooldown"				"5"
+		"AbilityCooldown"				"7"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
