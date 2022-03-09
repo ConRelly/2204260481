@@ -1696,23 +1696,24 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 
 * Fix viper lvl 25 talent.
-* Fix Kunkka aghanim , increased dmg for torrent and reduced CD for Tidebringer	on last lvl.
-* Fix Invoker lvl 25 talent , increased the other talent to 10x  from 3x and greatly improved most of his skills.
+* Fix Kunkka aghanim, increased dmg for torrent, and reduced CD for Tidebringer on the last lvl.
+* Fix Invoker lvl 25 talent, increased the other talent to 10x  from 3x, and greatly improved most of his skills.
 * Fix Techies ultimate dmg.
-* DarkBloodstone(base on nromal bloodstone) seems to be only for real "Creeps" and Heroes so i might change that in future, for now is more mana and hp(incresed) and 50% hp cost to maybe enable some stuff.
+* Fix Nebu(pharaoh crow) working from non-heroes. now it will not kill units on Equip or Unequip(enabling some old tricks).
+* DarkBloodstone(base on normal bloodstone) seems to be only for real "Creeps" and Heroes so i might change that in the future, for now is more mana and hp(increased) and 50% hp cost to maybe enable some stuff.
 * Fixed Chaos Strike (Chaos Knight) heal
 * Fixed Soulstore (Grimstroke) stacks
 * Fixed Resurrection Pendant Aghanim's Scepter effect
 * Fixed Mimic Mace cooldown
-* Fixed Shadow Evasion (Phantom Assassin) toggle on ability
+* Fixed Shadow Evasion (Phantom Assassin) toggle on the ability
 * Stifling Dagger (Phantom Assassin): Added autocast effect for Super Scepter effect (press ALT)
 * Powershot (WindRanger):
 	-- Added Super Scepter and Aghanim's Shard
 	-- Changed and rebalanced
 * Buffed Windrun (WindRanger)
-* Removed God Juju Cooldown reduction per spell , now it has only aghanim effects(active + passive).
-* Antimage blink illusion can't be mimic anymore.
-* Fix Antimage extreme speed  only using lvl 1 Base Damage (the bonus dmg per stacks was fine)
+* Removed God Juju Cooldown reduction per spell, now it has only aghanim effects(active + passive).
+* Antimage blink illusion can't be mimicked anymore.
+* Fix Antimage extreme speed  only using lvl 1 Base Damage (the bonus dmg per stack was fine)
 * Quick Arm (Tinker):
 	-- Added Super Scepter effect
 	-- Added new talents (15 and 20 lvls)
@@ -1733,7 +1734,7 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes57 can be found on the new map version:
+*Update patch notes58 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 

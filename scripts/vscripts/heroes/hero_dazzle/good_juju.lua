@@ -90,7 +90,7 @@ function modifier_dzzl_good_juju:DeclareFunctions()
 end
 
 function modifier_dzzl_good_juju:GetModifierPercentageCooldown(params)
-	if self:GetCaster():HasScepter() and params.ability and params.ability:IsItem() then
+	if self:GetCaster():HasScepter() and params.ability and params.ability:IsItem() and self:GetAbility() then
 		return self:GetAbility():GetSpecialValueFor("item_cooldown_reduction")
 	end
 end
@@ -99,6 +99,7 @@ function modifier_dzzl_good_juju:OnAbilityExecuted(params)
 		local caster = self:GetCaster()
 		local used_ability = params.ability
 		local cdr_per_cast = self:GetAbility():GetSpecialValueFor("cooldown_reduction")
+		if cdr_per_cast == 0 then return end
 		if caster:IsIllusion() then return end
 
 		if params.unit == caster and not used_ability:IsItem() and not used_ability:IsToggle() and used_ability:GetCooldown(used_ability:GetLevel() - 1) > 0 then

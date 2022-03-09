@@ -3020,33 +3020,33 @@
 	}
 	"OnEquip"
 	{
-		"RemoveModifier"
-		{
-			"ModifierName"	"modifier_pharaoh_crown_buff"
-			"Target"
-			{
-				"Center"  	"CASTER"
-				"Radius" 	"%aura_radius"
-				"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Flags"	 	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			}			
-		}		
+		//"RemoveModifier"
+		//{
+		//	"ModifierName"	"modifier_pharaoh_crown_buff"
+		//	"Target"
+		//	{
+		//		"Center"  	"CASTER"
+		//		"Radius" 	"%aura_radius"
+		//		"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		//		"Flags"	 	"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		//		"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		//	}			
+		//}		
 	}
 	"OnUnEquip"
 	{
-		"RemoveModifier"
-		{
-			"ModifierName"	"modifier_pharaoh_crown_buff"
-			"Target"
-			{
-				"Center"  	"CASTER"
-				"Radius" 	"%aura_radius"
-				"Flags"	 "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-				"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			}			
-		}
+		//"RemoveModifier"
+		//{
+		//	"ModifierName"	"modifier_pharaoh_crown_buff"
+		//	"Target"
+		//	{
+		//		"Center"  	"CASTER"
+		//		"Radius" 	"%aura_radius"
+		//		"Flags"	 "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		//		"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		//		"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		//	}			
+		//}
 	}   
 	"Modifiers"
 	{
@@ -31978,7 +31978,7 @@
 		"ItemSellable"					"1"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"AbilityCooldown"				"55"
+		"AbilityCooldown"				"60"
 		"AbilityManaCost"				"100"
 		"AbilityCastPoint"				"0"
 		"ItemQuality"					"epic"

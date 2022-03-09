@@ -71,7 +71,13 @@ function OnSpellStart( keys )
 						ability:OnSpellStart() 
 						return							
 					end	
-				end				   
+				end
+				if newAbilityName == "dzzl_good_juju" then
+					if hero:HasAbility("dazzle_good_juju") then
+						ability:OnSpellStart() 
+						return							
+					end	
+				end									   
 				local newAbility = hero:AddAbility(newAbilityName)	  
 				print("newAbility:" .. newAbilityName)  
 				if slotId > -1 then						  

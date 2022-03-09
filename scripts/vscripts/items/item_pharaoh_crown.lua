@@ -4,6 +4,7 @@ function aura_initiate(keys)
 	if caster ~= parent and not caster:GetUnitLabel() ~= "temp_unit" and not caster:IsIllusion()  then
 		if caster:GetPlayerOwner() == parent:GetPlayerOwner() and not parent:HasModifier("modifier_pharaoh_crown_buff") and parent:GetUnitLabel() ~= "ancient" then
 			if not parent:IsHero() and parent:GetMaxHealth() > 35 or parent:GetUnitLabel() == "pharaoh_ok" or parent:GetUnitLabel() == "temp_unit" then
+				if not caster:IsRealHero() then return end
 				if parent:GetUnitName() ~= "npc_playerhelp" then
 					parent:AddNewModifier(caster, keys.ability, "modifier_pharaoh_crown_buff", {})
 				end
@@ -59,6 +60,7 @@ function modifier_pharaoh_crown_buff:OnCreated()
 	self.ability = self:GetAbility()
 	self.caster = self.ability:GetCaster()
 	self.parent = self:GetParent()
+	if not self.caster:IsRealHero() then return end
 	self.health = self.ability:GetSpecialValueFor("aura_health_mult")
 	self.armor = self.ability:GetSpecialValueFor("aura_armor") * 0.01
 	self.damage = self.ability:GetSpecialValueFor("aura_damage_mult")
@@ -231,7 +233,9 @@ function modifier_pharaoh_crown_magic_armor:DeclareFunctions()
     }
 end
 function modifier_pharaoh_crown_magic_armor:GetModifierMagicalResistanceBonus()
-    return self:GetAbility():GetSpecialValueFor("aura_magic_resistance")
+	if self:GetAbility() then
+    	return self:GetAbility():GetSpecialValueFor("aura_magic_resistance")
+	end	
 end
 LinkLuaModifier("modifier_pharaoh_crown_super_armor", "items/item_pharaoh_crown.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_pharaoh_crown_super_armor = class({})
