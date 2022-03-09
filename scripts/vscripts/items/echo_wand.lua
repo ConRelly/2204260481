@@ -257,6 +257,7 @@ if IsServer() then
 		item_imba_ultimate_scepter_synth2 = true,
 		dazzle_good_juju = true,
 		antimage_mana_overload = true,
+		dzzl_good_juju = true,
 		
 	}
 	local include_table = {

@@ -84,7 +84,7 @@ function mjz_tinker_quick_arm:HalveCooldowns(caster)
 			if ability and IsValidEntity(ability) then
 				self:halve_ability_cooldown(ability, exclude_abilities)
 			end
-		end	
+		end
     end
 
 	for i = DOTA_ITEM_SLOT_1, DOTA_ITEM_SLOT_6 do

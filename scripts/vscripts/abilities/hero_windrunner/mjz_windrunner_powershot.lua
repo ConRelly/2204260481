@@ -109,7 +109,7 @@ function mjz_windrunner_powershot:OnProjectileHit_ExtraData(target, loc, ExtraDa
 		end
 		if not target:HasModifier("modifier_mjz_faceless_the_world_aura_effect_enemy") then
 			target:AddNewModifier(caster, self, "modifier_mjz_windrunner_powershot_debuff", {duration = self:GetSpecialValueFor("debuff_inco_duration")})
-		end	
+		end
 
 		local damage = (self.damage or ExtraData.damage) + hits * self:GetSpecialValueFor("damage_increase") / 100
 		ApplyDamage({victim = target, attacker = caster, ability = self, damage_type = self:GetAbilityDamageType(), damage = damage, damage_flags = DOTA_DAMAGE_FLAG_NONE})
@@ -131,9 +131,7 @@ function modifier_mjz_windrunner_powershot_debuff:DeclareFunctions()
 	return {MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE} 
 end
 function modifier_mjz_windrunner_powershot_debuff:GetModifierIncomingDamage_Percentage()
-	if self:GetAbility() then
-		return self:GetAbility():GetSpecialValueFor("debuff_incoming_damage")
-	end	
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("debuff_incoming_damage")
 end
 
 ---------------------------------------------------------------------------------------

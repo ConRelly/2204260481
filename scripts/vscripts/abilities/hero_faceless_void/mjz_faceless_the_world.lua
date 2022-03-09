@@ -187,8 +187,8 @@ function modifier_mjz_faceless_the_world_aura_effect_enemy:GetModifierIncomingDa
 	if self:GetAbility() and self:GetParent() then
 		if not self:GetParent():HasModifier("modifier_mjz_windrunner_powershot_debuff") then
 			return self:GetAbility():GetSpecialValueFor("bonus_stuf")
-		end	
-	end	
+		end
+	end
 end
 function modifier_mjz_faceless_the_world_aura_effect_enemy:CheckState()
 	return {

@@ -109,6 +109,14 @@ function modifier_resurrection_pendant:OnCreated()
 end
 function modifier_resurrection_pendant:OnIntervalThink()
 	if self:GetParent():HasScepter() then
+		local NotRegister = {
+			["npc_playerhelp"] = true,
+			["npc_dota_target_dummy"] = true,
+			["npc_dummy_unit"] = true,
+			["npc_dota_hero_target_dummy"] = true,
+			["npc_courier_replacement"] = true,
+		}
+
 		local heroes = HeroList:GetAllHeroes()
 		local PlayersID = self:GetParent():GetPlayerID()
 		local channel = self:GetAbility():GetChannelTime()
@@ -130,14 +138,14 @@ function modifier_resurrection_pendant:OnIntervalThink()
 					end
 				end
 			end
-			if heroes[i]:IsRealHero() and (heroes[i]:IsAlive() or heroes[i]:IsReincarnating() or inf_aegis_ready) then
+			if heroes[i]:IsRealHero() and (heroes[i]:IsAlive() or heroes[i]:IsReincarnating() or inf_aegis_ready) and not NotRegister[heroes[i]:GetUnitName()] then
 				LivingHeroes = i
 			end
 		end
 
 --		self:SetStackCount(LivingHeroes)
 
-		if LivingHeroes == 0 then
+		if LivingHeroes == 0 and self:GetAbility():IsCooldownReady() then
 			Timers:CreateTimer(channel + (FrameTime() * (PlayersID + 1)), function()
 				local LivingHeroes = 0
 				for i = 1, #heroes do
@@ -145,7 +153,7 @@ function modifier_resurrection_pendant:OnIntervalThink()
 						LivingHeroes = i
 					end
 				end
-				if LivingHeroes == 0 then
+				if LivingHeroes == 0 and self:GetAbility():IsCooldownReady() then
 					item_resurection_pendant:Used(self:GetParent(), self:GetAbility(), base_cooldown, extra_cooldown)
 				end
 			end)

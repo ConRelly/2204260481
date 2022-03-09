@@ -4184,7 +4184,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"cooldown_reduction"		"0.0 0.0 0.0"
+				"cooldown_reduction"		"0"
 				"item_cooldown_reduction"		
 				{
 					"value"		"25 30 40"

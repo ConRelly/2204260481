@@ -40,14 +40,7 @@ if IsServer() then
     end
     
     function modifier_antimage_custom_speed:OnRefresh()
-		self.ability = self:GetAbility()
-		self.parent = self:GetParent()
-		self.caster = self:GetCaster()
-		self.duration = self.ability:GetSpecialValueFor("duration")
-		self.damage_type = self.ability:GetAbilityDamageType()
-		self.damage = self.ability:GetSpecialValueFor("damage")
-		self.manaCost = self.ability:GetManaCost(1)
-		self.stack_bonus = self.ability:GetSpecialValueFor("bonus_damage")
+		self:OnCreated()
     end
 
     function modifier_antimage_custom_speed:OnAttackStart(keys)
