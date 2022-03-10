@@ -83,5 +83,5 @@ function modifier_item_speed_orb_consumed:DeclareFunctions()
     return {MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT}
 end
 function modifier_item_speed_orb_consumed:GetModifierMoveSpeedBonus_Constant()
-    if self:GetAbility() then return self:GetStackCount() end
+    return self:GetStackCount()
 end

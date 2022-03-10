@@ -948,9 +948,10 @@
 		"Ability10"				"special_bonus_lifesteal_30"
 		"Ability11"				"special_bonus_cdr_15"
 		"Ability12"				"special_bonus_truestrike"
-		"Ability17"				"special_bonus_30_crit_875"
+		"Ability13"             "special_bonus_unique_riki_7"
+ 		"Ability17"				"special_bonus_30_crit_875"
 
-		"AttributeAgilityGain"		"9.60000"
+		"AttributeAgilityGain"		"11.60000"
 		"AttackRate"				"1.500000"
 	}
 	
@@ -2268,7 +2269,7 @@
 		"Ability13"		"special_bonus_spell_amplify_100"
 		"Ability14"		"special_bonus_spell_lifesteal_30"
 		"Ability15"		"special_bonus_unique_dazzle_3"
-		"Ability16"		"special_bonus_unique_dazzle_1"
+		"Ability16"		"special_bonus_unique_dazzle_custom_juju"
 		"Ability17"		"special_bonus_unique_dazzle_4"
 
 		"ArmorPhysical"					"3"

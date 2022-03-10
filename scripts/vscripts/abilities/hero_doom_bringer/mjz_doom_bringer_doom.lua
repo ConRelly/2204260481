@@ -32,6 +32,7 @@ function ability_class:OnToggle()
 	if IsServer() then
 		local caster = self:GetCaster()
 
+
 		if not caster:HasScepter() then return nil end
 
 		if self:GetToggleState() then

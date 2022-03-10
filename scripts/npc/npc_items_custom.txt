@@ -5129,7 +5129,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_primary_stat"	"50"
+				"bonus_primary_stat"	"20"
 			}
 		}
 	}

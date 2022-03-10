@@ -2623,7 +2623,7 @@
 
 	"bane_fiends_grip"
 	{
-		"AbilityCooldown"						"95 85 75 50 40"
+		"AbilityCooldown"						"75"
 		"MaxLevel"                              "5"
 		"LevelsBetweenUpgrades"                 "15"
 		"AbilitySpecial"
@@ -8642,26 +8642,49 @@
 	}	
 
 
+	//=================================================================================================================
+	// Riki: Smoke Screen
+	//=================================================================================================================
 	"riki_smoke_screen"
 	{
-		"AbilityCastRange"				"2050"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5142"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Hero_Riki.Smoke_Screen"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1250"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"24 21 18 15"
 		"AbilityDuration"				"4"
-		"AbilitySpecial"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"65 70 75 80"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"400 455 550 675"
-				"LinkedSpecialBonus"		"special_bonus_unique_riki_7"
-			}			
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
+				"radius"
+				{
+					"value"	"400 455 550 675"
+					"LinkedSpecialBonus"		"special_bonus_unique_riki_7"
+				}
 				"duration"					"4"
-			}			
+				"miss_rate"					"30 45 60 75"
+				"dodge_chance"				"25 50 75 100"
 		}
-	}
+		
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}	
 	"riki_tricks_of_the_trade"
 	{
 		"LevelsBetweenUpgrades"		 "10"
@@ -8755,7 +8778,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"4500"
+				"value"				"5"
 				"ad_linked_abilities"			"riki_blink_strike"
 			}
 		}
@@ -14604,7 +14627,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_magic_resistance"	"45"
+				"bonus_magic_resistance"	"47"
 				"LinkedSpecialBonus"	"special_bonus_unique_viper_6"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
@@ -24280,13 +24303,16 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"350"
+		"ItemCost"						"650"
+		"ItemStockInitial"				"1"
+		"ItemStockMax"					"1"
+		"ItemStockTime"					"2500.0"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_trusty_shovel"
 		"ItemRequirements"
 		{
-			"01"						"item_chest_1"
+			"01"						"item_chest_2"
 		}
 	}
 // Trusty Shovel

@@ -131,7 +131,7 @@ function modifier_mjz_windrunner_powershot_debuff:DeclareFunctions()
 	return {MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE} 
 end
 function modifier_mjz_windrunner_powershot_debuff:GetModifierIncomingDamage_Percentage()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("debuff_incoming_damage")
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("debuff_incoming_damage") end
 end
 
 ---------------------------------------------------------------------------------------

@@ -32110,7 +32110,12 @@
 
 		"AbilityValues"
 		{
-			"cooldown_reduction"		"0"
+			"cooldown_reduction"		
+			{
+				"value"         		"0"
+				"LinkedSpecialBonus"		"special_bonus_unique_dazzle_custom_juju"
+
+			}
 			"item_cooldown_reduction"
 			{
 				"value"					"30 35 42"
@@ -32118,6 +32123,27 @@
 			}
 			"scepter_mana_cost"			"250"
 			"scepter_cooldown"			"250"
+		}
+	}
+
+// good juju talent
+	"special_bonus_unique_dazzle_custom_juju"
+	{
+
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"1.5"
+				"ad_linked_abilities"			"dzzl_good_juju"				
+			}
 		}
 	}
 

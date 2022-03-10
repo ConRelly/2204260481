@@ -34,6 +34,7 @@ if IsServer() then
 
 	function modifier_caster:OnIntervalThink()
 		local parent = self:GetParent()
+		local caster = self:GetCaster()
 		local ability = self:GetAbility()
 		local tick_interval = ability:GetSpecialValueFor('tick_interval')
 		local radius = ability:GetSpecialValueFor('radius')

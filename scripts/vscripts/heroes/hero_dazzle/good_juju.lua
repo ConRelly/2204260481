@@ -98,7 +98,7 @@ function modifier_dzzl_good_juju:OnAbilityExecuted(params)
 	if IsServer() then
 		local caster = self:GetCaster()
 		local used_ability = params.ability
-		local cdr_per_cast = self:GetAbility():GetSpecialValueFor("cooldown_reduction")
+		local cdr_per_cast = self:GetAbility():GetSpecialValueFor("cooldown_reduction") + talent_value(caster, "special_bonus_unique_dazzle_custom_juju")
 		if cdr_per_cast == 0 then return end
 		if caster:IsIllusion() then return end
 
