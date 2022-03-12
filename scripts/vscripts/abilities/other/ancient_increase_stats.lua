@@ -18,7 +18,6 @@ function modifier_ancient_increase_stats:OnIntervalThink()
 	local health_per_round = ability:GetSpecialValueFor("health_per_round")
 	local armor_base = ability:GetSpecialValueFor("armor_base")
 	local armor_per_round = ability:GetSpecialValueFor("armor_per_round")
-	self.parent = self:GetParent()
 	if IsServer() then
 		if not _G._hardMode then
 			local AncientImmunity = false
@@ -58,19 +57,19 @@ function modifier_ancient_increase_stats:OnIntervalThink()
 				local health = maxHealth
 			
 				if round == self.previous_round then
-					health = maxHealth * self.parent:GetHealthPercent() * 0.01
+					health = maxHealth * parent:GetHealthPercent() * 0.01
 				end
 			
-				self.parent:SetMaxHealth(maxHealth)
-				self.parent:SetBaseMaxHealth(maxHealth)
-				self.parent:SetHealth(health)
+				parent:SetMaxHealth(maxHealth)
+				parent:SetBaseMaxHealth(maxHealth)
+				parent:SetHealth(health)
 
 				-- Armor
 				local armor = armor_base + (armor_per_round * round)
 				if part3 then
 					armor = armor_base + (armor_per_round * round) * 60
 				end
-				self.parent:SetPhysicalArmorBaseValue(armor)
+				parent:SetPhysicalArmorBaseValue(armor)
 
 				self.previous_round = round
 
