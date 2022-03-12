@@ -8944,6 +8944,7 @@ Required Level: %required_level%
 "npc_dota_creature_siltbreaker_2"									"Siltbraker Second Form"
 "npc_dota_creature_siltbreaker_clone"								"Siltbreaker Clone"
 "npc_dota_creature_meranth_minion"									"Reefwatch Renegade"
+"npc_dota_creature_swoledar"                                        "Greater Reefwatch Renegade"
 "npc_dota_creature_aghanim_minion"									"Aghanim Minion"
 "npc_dota_creature_siltbreaker_bubble"                              "Siltbreaker Bubble"
 "DOTA_Tooltip_ability_siltbreaker_waves"							"Waves"
@@ -9071,6 +9072,8 @@ Required Level: %required_level%
 "DOTA_Tooltip_ability_item_random_get_ability_onlvl"		 "Random Ability (Uncommon)"
 "DOTA_Tooltip_ability_item_random_get_ability_onlvl_Description"	"Get a Random skill that you don't have
 Contains all random skills"
+
+"DOTA_Tooltip_modifier_tusk_snowball_meteor_burn"          "Tusk Meteor Burn"
 
 
 "DOTA_Tooltip_ability_item_random_get_ability"		 "Random Ability (Rare)"

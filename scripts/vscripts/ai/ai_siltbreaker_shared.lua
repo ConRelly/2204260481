@@ -418,7 +418,7 @@ end
 function AttackMoveFort(thisEntity)
     local ancient = Entities:FindByName(nil, "dota_goodguys_fort")
 	
-    if ancient:IsAlive() and thisEntity:IsAlive() then
+    if ancient and ancient:IsAlive() and thisEntity and thisEntity:IsAlive() then
 		if not thisEntity:IsInvisible() and not thisEntity:IsChanneling() and thisEntity:GetCurrentActiveAbility() == nil and not thisEntity:IsCommandRestricted() then
 			if (CalcDistanceBetweenEntityOBB(thisEntity, ancient) > 800) then
 				if not thisEntity:IsDisarmed() then

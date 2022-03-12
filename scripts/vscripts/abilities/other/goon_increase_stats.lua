@@ -24,7 +24,7 @@ function on_created(keys)
 	caster:SetHasInventory(false)
 	caster:SetCanSellItems(false)
 
-    print("gon stats stuff 26")
+    --print("gon stats stuff 26")
 	local has5 = false
 	local has10 = false
 	local has15 = false

@@ -5449,17 +5449,17 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_int"				"10000"
+			"bonus_int"				"30000"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_str"				"10000"
+			"bonus_str"				"30000"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_agi"				"10000"
+			"bonus_agi"				"30000"
 		}
 		"04"
 		{
@@ -17752,7 +17752,7 @@
 		"02"
 		{
 			"var_type"							   "FIELD_INTEGER"
-			"duration"								"60"
+			"duration"								"6000"
 		}
 				
 	}
@@ -19818,7 +19818,7 @@
 		"ItemRequiresCharges"			"0"
 		"AllowedInBackpack"				"1"
 		"IsTempestDoubleClonable"		"1"
-		"AbilityCooldown"				"85"
+		"AbilityCooldown"				"95"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
@@ -19854,7 +19854,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rock_dmg"					"9765"
+				"rock_dmg"					"8765"
 			}
 			"07"
 			{

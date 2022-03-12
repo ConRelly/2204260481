@@ -98,6 +98,7 @@
 				//"NPCName"               "npc_dota_boss_aghanim"
 				//"NPCName"               "npc_dota_boss_void_spirit"
 				//"NPCName"               "npc_boss_skeleton_king_angry_new"
+				//"NPCName"                 "npc_dota_creature_siltbreaker"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"20"

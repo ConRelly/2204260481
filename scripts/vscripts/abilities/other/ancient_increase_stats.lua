@@ -9,7 +9,7 @@ function modifier_ancient_increase_stats:IsHidden() return true end
 function modifier_ancient_increase_stats:IsPurgable() return false end
 function modifier_ancient_increase_stats:OnCreated()
 	self.previous_round = 0
-	self:StartIntervalThink(0.2)
+	self:StartIntervalThink(0.5)
 end
 function modifier_ancient_increase_stats:OnIntervalThink()
 	local parent = self:GetParent()
@@ -18,6 +18,7 @@ function modifier_ancient_increase_stats:OnIntervalThink()
 	local health_per_round = ability:GetSpecialValueFor("health_per_round")
 	local armor_base = ability:GetSpecialValueFor("armor_base")
 	local armor_per_round = ability:GetSpecialValueFor("armor_per_round")
+	self.parent = self:GetParent()
 	if IsServer() then
 		if not _G._hardMode then
 			local AncientImmunity = false
@@ -44,7 +45,7 @@ function modifier_ancient_increase_stats:OnIntervalThink()
 			end
 		end
 
-		if self.parent and not self.parent:IsNull() and self.parent:IsAlive() then
+		if parent and not parent:IsNull() and parent:IsAlive() then
 			local round = _G.RoundNumber
 			local part3 = GameRules.GLOBAL_endlessHard_started
 			if round and self.previous_round < round then
@@ -72,6 +73,12 @@ function modifier_ancient_increase_stats:OnIntervalThink()
 				self.parent:SetPhysicalArmorBaseValue(armor)
 
 				self.previous_round = round
+
+				--[[ if Cheats:IsEnabled() then
+					if not parent:HasModifier("modifier_invulnerable") then
+						parent:AddNewModifier(parent, nil, "modifier_invulnerable", {})
+					end
+				end ]]					
 			end
 		end
 	end

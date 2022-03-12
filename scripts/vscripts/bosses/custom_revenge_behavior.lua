@@ -54,22 +54,24 @@ function modifier_custom_revenge_behavior:OnCreated()
 end
 function modifier_custom_revenge_behavior:OnIntervalThink()
 	if IsServer() then
-		local health_lost = ((self.parent_previous_health - self.parent:GetHealth()) / self.parent_max_health) * 100
-		if self.health_threshold < health_lost then
-			self.mana_regen_percent = (health_lost - self.health_threshold) * self.mana_regen_mult
-		else
-			self.mana_regen_percent = 0
-		end
-		if self.isDisabled == true or self.parent:IsSilenced() then
-			self.mana_regen_percent = self.mana_regen_percent + self.disable_regen
-		end 	
-		if self.parent:GetManaPercent() > 95 and self.revengeAbility:IsCooldownReady() then
-			self.parent:Purge(false, true, false, true, false)
-			self:getPissed()
-			self.parent:SetMana(0)
-		end
-		self.parent_previous_health = self.parent:GetHealth()
-		self.isDisabled = true;
+		if self.parent and not self.parent:IsNull() and self.revengeAbility and not self.revengeAbility:IsNull() then
+			local health_lost = ((self.parent_previous_health - self.parent:GetHealth()) / self.parent_max_health) * 100
+			if self.health_threshold < health_lost then
+				self.mana_regen_percent = (health_lost - self.health_threshold) * self.mana_regen_mult
+			else
+				self.mana_regen_percent = 0
+			end
+			if self.isDisabled == true or self.parent:IsSilenced() then
+				self.mana_regen_percent = self.mana_regen_percent + self.disable_regen
+			end 	
+			if self.parent:GetManaPercent() > 95 and self.revengeAbility:IsCooldownReady() then
+				self.parent:Purge(false, true, false, true, false)
+				self:getPissed()
+				self.parent:SetMana(0)
+			end
+			self.parent_previous_health = self.parent:GetHealth()
+			self.isDisabled = true;
+		end	
 	end	
 end
 

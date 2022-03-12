@@ -109,6 +109,26 @@ function AOHGameMode:OnPlayerChat(keys)
 		self._physdanage = true
 	end	
 
+	if keys.text == "-dev_stuff" and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME and Cheats:IsEnabled() then
+		if PlayerResource:IsValidPlayerID(0) then
+			if PlayerResource:HasSelectedHero(0) then
+				if PlayerResource:GetPlayer(0) then
+					local hero = PlayerResource:GetSelectedHeroEntity(0)
+					hero:AddItemByName("item_dev_undying")
+					hero:AddItemByName("item_dev_dagon")
+					hero:AddItemByName("item_radiance_armor_3_edible")
+					hero:AddItemByName("item_custom_octarine_core2")
+					--hero:AddItemByName("item_plain_perma")
+					--hero:AddItemByName("item_plain_perma")
+					hero:AddItemByName("item_spirit_guardian")
+					--hero:AddItemByName("item_arcane_staff_edible")
+
+				end
+			end
+		end		
+
+	end
+
 
 	if keys.text == "-autocast" then
 		local playerID = keys.playerid

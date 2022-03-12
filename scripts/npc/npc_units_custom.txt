@@ -12420,6 +12420,78 @@
 		}
 	}
 	
+
+	"npc_dota_creature_swoledar"
+	{
+		//"vscripts"					"ai/ai_meranth_guard.lua"
+		"vscripts"				  "bosses/attack_move.lua"
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/creeps/darkreef/meranth_guard/meranth_guard.vmdl"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"6"
+		"ModelScale" 				"1.5"
+		"ConsideredHero"						"1"
+
+		"Ability1"					"troll_warlord_fervor"
+		"Ability2"					""
+		"Ability3"					""
+		"Ability4"					""
+
+		"ArmorPhysical"				"180"
+		"MagicalResistance"			"90"
+
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"7520"
+		"AttackDamageMax"			"13550"
+		"AttackRate"				"1.0" //"1.35"
+		"AttackAnimationPoint"		"0.33"
+		"AttackAcquisitionRange"	"9200"
+		"AttackRange"				"320"
+		"ProjectileModel"			""
+		"ProjectileSpeed"			"0"
+
+		"RingRadius"				"60"
+		"HealthBarOffset"			"160"
+
+		"BountyXP"					"0"
+		"BountyGoldMin"				"0"
+		"BountyGoldMax"				"0"
+
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"400"
+
+		"StatusHealth"				"290000"
+		"StatusHealthRegen"			"30"
+		"StatusMana"				"10000"
+		"StatusManaRegen"			"150"
+		
+		"VisionDaytimeRange"		"6600"
+		"VisionNighttimeRange"		"6600"
+
+		"TeamName"					"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"PathfindingSearchDepthScale"		"0.1"
+
+		"Creature"
+		{
+			"ItemDrops"
+			{
+				"Consumables"
+				{
+					"Item"
+					{
+						//"1"  			"item_health_potion"
+						//"2"				"item_mana_potion"
+					}
+					"Chance"			"15"
+				}
+			}
+		}
+	}
+
 	"npc_dota_gold_mine"
 	{
 		"BaseClass"					"npc_dota_creature"	
