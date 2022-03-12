@@ -1746,6 +1746,11 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 
 
+* Tome of Super Scepter: Starts selling from the 5th minute and every 5 minutes
+* Aghanim's Fragment now completely shareable, but increased Aghanim's Scepter cost and Super Scepter cost
+
+
+
 
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.

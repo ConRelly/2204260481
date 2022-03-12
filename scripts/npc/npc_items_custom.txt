@@ -6094,6 +6094,10 @@
 		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"1"
 		"ItemInitialCharges"			"1"
+		"ItemStockMax"					"1"
+		"ItemStockInitial"				"0"
+		"ItemStockTime"					"300"
+		"ItemInitialStockTime"			"325"
 		"ItemPermanent"					"0"
 		"IsTempestDoubleClonable"		"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -34945,12 +34949,28 @@
 			"2"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"scepter"				"5"
+				"scepter"				"6"
 			}
 			"3"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"super_scepter"			"15"
+				"super_scepter"			"18"
+			}
+		}
+		"OnEquip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items/aghanims_shard.lua"
+				"Function"			"NoPurchaser"
+			}
+		}
+		"OnUnEquip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"items/aghanims_shard.lua"
+				"Function"			"NoPurchaser"
 			}
 		}
 		"OnSpellStart"
