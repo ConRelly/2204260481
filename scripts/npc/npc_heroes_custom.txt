@@ -443,8 +443,11 @@
 		"override_hero"			"npc_dota_hero_arc_warden"
 
 		"Ability3"				"mjz_arc_warden_spark_wraith"
+		"Ability10"             "special_bonus_cdr_15"
+		"Ability12"             "special_bonus_9_crit_2150"
 		"Ability11"				"special_bonus_hp_2250"
 		"Ability14"				"special_bonus_unique_mjz_arc_warden_0302"
+		"Ability15"             "special_bonus_spell_amplify_100"
 		"Ability16"				"special_bonus_unique_arc_warden"
 
 		"AttributeStrengthGain"			"4.900000"

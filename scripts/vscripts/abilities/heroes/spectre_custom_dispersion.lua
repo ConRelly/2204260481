@@ -30,10 +30,12 @@ end
 function modifier_spectre_custom_dispersion:OnCreated()
 	self.parent = self:GetParent()
 	self.ability = self:GetAbility()
-	self.damage_reflect_pct = self.ability:GetSpecialValueFor("damage_reflection_pct") * 0.01
-	self.min_radius = self.ability:GetSpecialValueFor("min_radius")
-	local think_interval = 3
-	self:StartIntervalThink(think_interval)
+	if self.ability and not self.ability:IsNull() then
+		self.damage_reflect_pct = self.ability:GetSpecialValueFor("damage_reflection_pct") * 0.01
+		self.min_radius = self.ability:GetSpecialValueFor("min_radius")
+		local think_interval = 3
+		self:StartIntervalThink(think_interval)
+	end	
 end
 if IsServer() then
 function modifier_spectre_custom_dispersion:OnTakeDamage (event)
@@ -91,11 +93,13 @@ function modifier_spectre_custom_dispersion:OnTakeDamage (event)
 end
 
 function modifier_spectre_custom_dispersion:OnIntervalThink()
-	local talent = self.parent:FindAbilityByName("special_bonus_unique_spectre_5")
-	if talent and talent:GetLevel() > 0 then
-		self.damage_reflect_pct = self.damage_reflect_pct + talent:GetSpecialValueFor("value") * 0.01
-		self:StartIntervalThink(-1)
-	end
+	if self.parent and not self.parent:IsNull() then
+		local talent = self.parent:FindAbilityByName("special_bonus_unique_spectre_5")
+		if talent and talent:GetLevel() > 0 then
+			self.damage_reflect_pct = self.damage_reflect_pct + talent:GetSpecialValueFor("value") * 0.01
+			self:StartIntervalThink(-1)
+		end
+	end	
 end
 end
 function modifier_spectre_custom_dispersion:IsHidden()

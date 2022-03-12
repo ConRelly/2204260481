@@ -115,6 +115,7 @@ function AddRecordedAction(modifier, keys)
 			["beastmaster_wild_axes"] = true,
 			["item_crit_edible"] = true,
 			["legion_commander_duel_lua"] = true,
+			["item_plain_perma"] = true,
 
 			["sourcery"] = true,
 			["sacred_blink"] = true,
@@ -242,10 +243,13 @@ function PlayVideo(keys)
 			if ability and IsValidEntity(ability) and not ability:IsNull() then 
 				local abilityName = ability:GetAbilityName()
 				local cloneAbility = clone:FindAbilityByName(abilityName)
+				if clone:IsNull() or not clone:IsAlive() then return end
 				if not cloneAbility then cloneAbility = clone:FindItemInInventory(abilityName) end
-				if cloneAbility and cloneAbility:IsActivated() and cloneAbility:IsFullyCastable() then 
-					cloneAbility:EndCooldown()
-					if order == DOTA_UNIT_ORDER_CAST_NO_TARGET then 
+				if cloneAbility and not cloneAbility:IsNull() and cloneAbility:IsActivated() and cloneAbility:IsFullyCastable() then 
+					cloneAbility:EndCooldown() --some new skills/items might do something when the CD ends so im adding a null check again
+					if clone:IsNull() or not clone:IsAlive() then return end
+					if cloneAbility:IsNull() then return end
+					if order == DOTA_UNIT_ORDER_CAST_NO_TARGET then
 						clone:CastAbilityNoTarget(cloneAbility, -1)
 					elseif order == DOTA_UNIT_ORDER_CAST_POSITION then
 						clone:CastAbilityOnPosition(position, cloneAbility, -1)
@@ -259,7 +263,10 @@ function PlayVideo(keys)
 					elseif order == DOTA_UNIT_ORDER_CAST_TOGGLE then
 						clone:CastAbilityToggle(cloneAbility, -1)						
 					end
-					cloneAbility:EndCooldown()
+					if clone:IsNull() or not clone:IsAlive() then return end
+					if not cloneAbility:IsNull() then
+						cloneAbility:EndCooldown()
+					end	
 				end
 			end
 		end)

@@ -1747,17 +1747,20 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 
 * Fix Ursa ultimate and Talent.
-* Fix Arc warden ultimate and crash related to that.
+* Fix Arc warden ultimate and crash related to that, and replaced some of his talents.
+* Gold ring now does not auto consume on equip.
+* Fix some possible crashes with OBS trying to cast or end cooldown for a non existed skill/item(consumable items usually had this problem)
 * Tome of Super Scepter: Starts selling from the 5th minute and every 5 minutes
 * Aghanim's Fragment now completely shareable, but increased Aghanim's Scepter cost and Super Scepter cost
-
+* Marci extra SS effect on broken wings: Max use stacks(base on dmg dealt) is 3 (normal max is 50)
+* Broken Wings will not amp Self Dmg skills anymore, like chen Avatar, etc.
 
 
 
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes60 can be found on the new map version:
+*Update patch notes61 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 
@@ -1779,7 +1782,7 @@ Apex: +7% more stats(42%)
 Cursed Gaze: +3% crit bonus on hit(8%).
 Slayer Rebound : aditional stacks + 2 instead of 1.
 Endless wisdom : gain an extra stack.
-Broken Wings : from 160% to 220%
+Broken Wings : from 160% to 220% , Max use stacks(base on dmg dealt) is 3 (normal max is 50)
 Maple's Armor - Heavy armor buff from 50% dmg avoid chance to 85%
 LionDagonV2 - greater blast staff passive has 25% chance to trigger daggon instead of 17%
 Antimage Q = Acts as antimage lvl 20 talent (ignores base armor)

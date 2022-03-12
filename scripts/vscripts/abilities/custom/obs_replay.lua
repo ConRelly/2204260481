@@ -167,7 +167,7 @@ function modifier_replay:GetModifierPercentageCasttime() return 100 end
 function modifier_replay:OnCreated()
 	if IsServer() then
 		local parent = self:GetParent()
-		if parent and parent:IsIllusion() then
+		if parent and not parent:IsNull() and parent:IsIllusion() then
 			parent:AddNewModifier(parent, self:GetAbility(), "modifier_replay_thinker", {})
 		end
 	end
@@ -175,7 +175,7 @@ end
 function modifier_replay:OnDestroy() 
 	if not IsServer() then return end
 	local parent = self:GetParent()
-	if parent:IsAlive() then 
+	if not parent:IsNull() and parent:IsAlive() then 
 		parent:AddNewModifier(parent, nil, "modifier_illusion", {duration = 1})
 		parent:ForceKill(false)
 	end

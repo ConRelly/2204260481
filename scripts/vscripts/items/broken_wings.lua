@@ -162,14 +162,17 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 	local DamageType = keys.damage_type
 	if not caster:IsRealHero() then return end
 	if attacker ~= caster then return end
+	if target == attacker then return end
 	if self:GetStackCount() < 1 then return end
 	if self.hit == true then
 		if DamageType == DAMAGE_TYPE_MAGICAL or DamageType == DAMAGE_TYPE_PURE then
 			self.hit = false
 			local feather_add_dmg = self:GetAbility():GetSpecialValueFor("feather_add_dmg")
+			local max_used_stacks = 50
 			if caster:HasModifier("modifier_super_scepter") then
 				if caster:HasModifier("modifier_marci_unleash_flurry") then
 					feather_add_dmg = self:GetAbility():GetSpecialValueFor("feather_add_dmg_marci")
+					max_used_stacks = 3
 				end                                 
 			end
 			local orig_dmg = keys.original_damage
@@ -190,7 +193,7 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 				end
 				used_stacks = math.ceil(orig_dmg / limit + 1)
 				if used_stacks > 50 then
-					used_stacks = 50
+					used_stacks = max_used_stacks
 				end
 			end
 			local damage = math.floor(orig_dmg * ((feather_add_dmg - 100) / 100))

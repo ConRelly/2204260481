@@ -16,6 +16,7 @@ LinkLuaModifier("modifier_plain_ring_perma_up", "items/item_plain_ring_perma.lua
 function add_perma(keys)
 	local caster = keys.caster
 	local ability = keys.ability
+	if not caster:IsAlive() then return end
 	if caster:HasModifier("modifier_plain_ring_perma_up") then return end
 	if caster:IsHero() and not caster:HasModifier("modifier_arc_warden_tempest_double") then
 		if caster:HasModifier("modifier_item_plain_ring_perma") then
@@ -37,7 +38,9 @@ function add_perma(keys)
 		else
 			caster:AddNewModifier(caster, ability, "modifier_item_plain_ring_perma", {})
 			caster:AddNewModifier(caster, ability, "modifier_item_plain_ring_perma_armor", {})
-			caster:FindModifierByName("modifier_item_plain_ring_perma_armor"):SetStackCount(bonus_armor)
+			if caster:HasModifier("modifier_item_plain_ring_perma_armor") then
+				caster:FindModifierByName("modifier_item_plain_ring_perma_armor"):SetStackCount(bonus_armor)
+			end	
 		end
 		if ability:GetCurrentCharges() > 1 then
 			ability:SpendCharge()

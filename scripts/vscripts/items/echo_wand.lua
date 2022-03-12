@@ -180,6 +180,7 @@ if IsServer() then
 		item_resurection_pendant = true,
 		item_formidable_chest = true,
 		item_mjz_attribute_mail = true,
+		item_plain_perma = true,
 		--mjz_doom_bringer_devour = true,
 		--mjz_clinkz_soul_pact = true,
 		frostivus2018_clinkz_burning_army = true,
@@ -258,6 +259,8 @@ if IsServer() then
 		dazzle_good_juju = true,
 		antimage_mana_overload = true,
 		dzzl_good_juju = true,
+		mjz_spectre_haunt = true,
+		mjz_spectre_haunt_single = true,
 		
 	}
 	local include_table = {
