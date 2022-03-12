@@ -172,8 +172,8 @@ function SwapToItem(caster, removed_item, added_item)
 			caster:AddItem(CreateItem("item_dummy", caster, caster))
 		end
 	end
-	
-	caster:RemoveItem(removed_item)
+	local removable_item = caster:FindItemInInventory(removed_item)
+	caster:RemoveItem(removable_item)
 	caster:AddItem(CreateItem(added_item, caster, caster))  --This should be put into the same slot that the removed item was in.
 	
 	for i=0, 5, 1 do  --Remove all dummy items from the player's inventory.
