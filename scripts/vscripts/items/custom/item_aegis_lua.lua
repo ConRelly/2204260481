@@ -87,7 +87,9 @@ function modifier_aegis:ReincarnateTime()
 					end
 					self.caster:EmitSound("Aegis.Timer")
 					Timers:CreateTimer(ReincarnateTime + FrameTime(), function()
-						self.caster:AddNewModifier(self.caster, self.ability, "modifier_aegis_buff", {duration = ReincarnateBuffTime})
+						if self.caster and not self.caster:IsNull() and self.ability and not self.ability:IsNull() then
+							self.caster:AddNewModifier(self.caster, self.ability, "modifier_aegis_buff", {duration = ReincarnateBuffTime})
+						end	
 					end)
 					self:SetStackCount(self:GetStackCount() - 1)
 					return ReincarnateTime
@@ -120,8 +122,9 @@ function modifier_aegis_buff:IsHidden() return false end
 function modifier_aegis_buff:OnCreated(table)
 	if not IsServer() then return nil end
 	local parent = self:GetParent()
-	Timers:CreateTimer(0.01, function()
-		if parent ~= nil and not parent:IsIllusion() then
+	--Timers:CreateTimer(0.01, function()
+		if parent ~= nil and not parent:IsNull() and not parent:IsIllusion() and not parent:IsNull() then
+			if self:GetParent():IsNull() then return end
 			local nWingsParticleIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_guardian_angel_omni.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 			ParticleManager:SetParticleControl(nWingsParticleIndex, 0, self:GetParent():GetAbsOrigin())
 			ParticleManager:SetParticleControlEnt(nWingsParticleIndex, 5, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
@@ -132,7 +135,7 @@ function modifier_aegis_buff:OnCreated(table)
 			ParticleManager:SetParticleControlEnt(nHaloParticleIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
 			self:AddParticle(nHaloParticleIndex, false, false, -1, false, false)
 		end
-	end)
+	--end)
 end
 function modifier_aegis_buff:DeclareFunctions()
  return {MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE}

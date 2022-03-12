@@ -2466,18 +2466,60 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Arc warden: Tempest Double
+	//=================================================================================================================
 	"arc_warden_tempest_double"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5683"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_ArcWarden.TempestDouble"
+		"HasScepterUpgrade"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.15"
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"60.0 55.0 50.0"
+
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"22 28 32"
+				"duration"				"20 24 28"
+				"LinkedSpecialBonus"		"special_bonus_unique_arc_warden_6"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bounty"				"180 240 300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"penalty_distance"				"2000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_damage_penalty"				"50"
 			}
 		}
 	}
+
 	"arc_warden_scepter"
 	{
 		"AbilityCooldown"				"25"
@@ -17829,36 +17871,69 @@
 			}
 		}
 	}
+
+
+	//=================================================================================================================
+	// Ursa: Enrage
+	//=================================================================================================================
 	"ursa_enrage"
 	{
-		"AbilityCooldown"				"70 60 50"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5360"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Ursa.Enrage"
+
+		"HasScepterUpgrade"			"1"
 		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastRange"				"0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"80 70 60"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0 0 0"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
-		{
+		{			
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_reduction"			"55"
+				"var_type"						"FIELD_INTEGER"
+				"damage_reduction"			"45 50 55"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"status_resistance"			"66"
+				"status_resistance"			"50 55 60"
+				"LinkedSpecialBonus"			"special_bonus_unique_ursa_8"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"60.0"
-				"LinkedSpecialBonus"		"special_bonus_unique_ursa_3"
+				"duration"					"25 35 45"
+				"LinkedSpecialBonus"	"special_bonus_unique_ursa_3"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"60 50 20"
+				"cooldown_scepter"			"50 45 20"
 				"RequiresScepter"			"1"
 			}
 		}
 	}
+
 
 	"zuus_arc_lightning"
 	{
