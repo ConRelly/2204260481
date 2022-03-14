@@ -1954,7 +1954,7 @@
 		"Ability14"			"special_bonus_hp_4000"
 		"Ability15"			"special_bonus_unique_mjz_sniper_assassinate_damage"
 		"Ability16"			"special_bonus_spell_immunity"
-		"Ability17"			"special_bonus_unique_sniper_5"
+		"Ability17"			"special_bonus_unique_sniper_headshot_lua_agi_multiplier"
 
 		"AttributeAgilityGain"		"9.4"
 		"AttackRate"				"1.4"

@@ -48,11 +48,7 @@ function modifier_sniper_headshot_lua:GetModifierPreAttack_BonusDamage(params)
         if RandomInt(1, 100) <= self.proc_chance then
             local attackerAgility = self:GetParent():GetAgility()
             -- Talent Tree
-            local agi_multiplier = self:GetAbility():GetTalentSpecialValueFor("agi_multiplier")
-            local special_take_aim_agi_multiplier_lua = self:GetParent():FindAbilityByName("special_take_aim_agi_multiplier_lua")
-            if special_take_aim_agi_multiplier_lua and special_take_aim_agi_multiplier_lua:GetLevel() ~= 0 then
-                agi_multiplier = agi_multiplier + special_take_aim_agi_multiplier_lua:GetSpecialValueFor("value")
-            end
+            local agi_multiplier = self:GetAbility():GetSpecialValueFor("agi_multiplier") + talent_value(self:GetParent(), "special_bonus_unique_sniper_headshot_lua_agi_multiplier")
             local headshotDamage = self:GetAbility():GetAbilityDamage() + (attackerAgility * agi_multiplier)
             --[[params.target:AddNewModifier(
                     self:GetParent(), -- player source

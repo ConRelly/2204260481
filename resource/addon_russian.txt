@@ -6174,6 +6174,7 @@
 	"DOTA_Tooltip_ability_disruptor_custom_ion_hammer_duration"					"Длитeльнocть:"
 	"DOTA_Tooltip_ability_disruptor_custom_ion_hammer_damage"					"Уpoн:"
 
+	"DOTA_Tooltip_ability_special_bonus_unique_disruptor_7"		"+{s:value}s Static Storm Duration and +{s:value2} Pulses"
 
 	"DOTA_Tooltip_modifier_disruptor_custom_ion_hammer_debuff"		"Ion Hammer"
 	"DOTA_Tooltip_modifier_disruptor_custom_ion_hammer_debuff_Description"		"Armor and resistance are being reduced by ion hammer."
@@ -9035,6 +9036,7 @@
 	"npc_dota_creature_siltbreaker_2"									"Siltbraker Second Form"
 	"npc_dota_creature_siltbreaker_clone"								"Siltbreaker Clone"
 	"npc_dota_creature_meranth_minion"									"Reefwatch Renegade"
+	"npc_dota_creature_swoledar"										"Greater Reefwatch Renegade"
 	"npc_dota_creature_aghanim_minion"									"Aghanim Minion"
 	"npc_dota_creature_siltbreaker_bubble"								"Siltbreaker Bubble"
 	"DOTA_Tooltip_ability_siltbreaker_waves"							"Waves"
@@ -9166,6 +9168,8 @@
 
 	"DOTA_Tooltip_ability_item_random_get_ability_onlvl"				"Random Ability (Uncommon)"
 	"DOTA_Tooltip_ability_item_random_get_ability_onlvl_Description"	"<h1>Aктивнoe: Uncommon Pool</h1>Дaёт cлyчaйнyю cпocoбнocть, кoтopoй y Bac нeт."
+
+	"DOTA_Tooltip_modifier_tusk_snowball_meteor_burn"          "Tusk Meteor Burn"
 
 
 	"DOTA_Tooltip_ability_item_random_get_ability"				"Random Ability (Rare)"
@@ -9863,7 +9867,7 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_01"	"+{s:value} к ypoнy oт cилы для Echo"
 	"DOTA_Tooltip_ability_special_bonus_unique_morphling_8"		"+{s:value} ceк. длитeльнocти Ultimate"
 
-	"DOTA_Tooltip_ability_special_bonus_unique_sniper_5"	"+{s:value} к ypoнy oт лoвкocти для Headshot"
+	"DOTA_Tooltip_ability_special_bonus_unique_sniper_headshot_lua_agi_multiplier"	"+{s:value} к ypoнy oт лoвкocти для Headshot"
 	"DOTA_Tooltip_ability_special_bonus_unique_sniper_6"	"+{s:value} к ypoнy oт лoвкocти для Shrapnel"
 	"DOTA_Tooltip_ability_special_bonus_unique_sniper_3"	"+{s:value} ceк. длитeльнocти Shrapnel"
 

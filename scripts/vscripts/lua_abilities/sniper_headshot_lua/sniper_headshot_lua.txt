@@ -60,8 +60,8 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"agi_multiplier"			"6.0 7.0 8.0 9.0 13.0 18.0 32.0"
-				"LinkedSpecialBonus"        "special_bonus_unique_sniper_5"
+				"agi_multiplier"			"6 7 8 9 13 18 32"
+				"LinkedSpecialBonus"        "special_bonus_unique_sniper_headshot_lua_agi_multiplier"
 			}
 			"05"
 			{
@@ -78,6 +78,22 @@
 				"var_type"					"FIELD_FLOAT"
 				"knockback_agi_multiplier_tooltip"			"5"
 			}			
+		}
+	}
+
+	"special_bonus_unique_sniper_headshot_lua_agi_multiplier"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"18"
+			}
 		}
 	}
 }

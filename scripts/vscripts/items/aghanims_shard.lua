@@ -52,3 +52,8 @@ function OnSpellStart(keys)
 		end
 	end
 end
+
+function NoPurchaser(keys)
+	if not keys.caster:IsAlive() then return end
+	keys.ability:SetPurchaser(nil)
+end

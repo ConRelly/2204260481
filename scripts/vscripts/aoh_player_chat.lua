@@ -118,7 +118,9 @@ function AOHGameMode:OnPlayerChat(keys)
 					hero:AddItemByName("item_dev_dagon")
 					hero:AddItemByName("item_radiance_armor_3_edible")
 					hero:AddItemByName("item_custom_octarine_core2")
-					for i = 1, 2 do
+
+					local GoldRingCount = 2
+					for i = 1, GoldRingCount do
 						Timers:CreateTimer(0.05 * i, function()
 							local GoldRing = hero:AddItemByName("item_plain_perma")
 							GoldRing:SetPurchaser(hero)

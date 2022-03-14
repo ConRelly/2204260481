@@ -9754,9 +9754,9 @@ Contains all random skills"
 		"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_01"	"+{s:value} Echo Str Damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_morphling_8"	  "+{s:value}s Ultimate Duration"
 
-		"DOTA_Tooltip_ability_special_bonus_unique_sniper_5"	"+{s:value} Headshot Agi Damage"
-		"DOTA_Tooltip_ability_special_bonus_unique_sniper_6"	"+{s:value} Shrapnel Agi Damage"
-		"DOTA_Tooltip_ability_special_bonus_unique_sniper_3"	"+{s:value} Shrapnel Duration"
+		"DOTA_Tooltip_ability_special_bonus_unique_sniper_headshot_lua_agi_multiplier"		"+{s:value} Headshot Agi Damage"
+		"DOTA_Tooltip_ability_special_bonus_unique_sniper_6"		"+{s:value} Shrapnel Agi Damage"
+		"DOTA_Tooltip_ability_special_bonus_unique_sniper_3"		"+{s:value} Shrapnel Duration"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_sand_king_101"	"+{s:value} Sand Storm Str Damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_sand_king_102"	"+{s:value} BurrowStrike Str Damage"
