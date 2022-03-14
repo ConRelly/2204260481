@@ -63,10 +63,10 @@ function modifier_queenofpain_custom_shadow_strike:IsPurgable() return false end
 function modifier_queenofpain_custom_shadow_strike:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 if IsServer() then
 	function modifier_queenofpain_custom_shadow_strike:OnCreated(keys)
-		local interval = self:GetAbility():GetSpecialValueFor("tick_interval") - talent_value(self:GetCaster(), "special_bonus_qop_shadow_strike_tick_interval")
+		local interval = self:GetAbility():GetSpecialValueFor("tick_interval") + talent_value(self:GetCaster(), "special_bonus_qop_shadow_strike_tick_interval")
 		self.tick_damage = self:GetCaster():GetIntellect() * self:GetAbility():GetSpecialValueFor("int_pct_tick") * 0.01
 
-		self:StartIntervalThink(1.0)
+		self:StartIntervalThink(interval)
 	end
 
 

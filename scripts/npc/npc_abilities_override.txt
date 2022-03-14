@@ -413,6 +413,32 @@
 			}
 		}
 	}
+	"special_bonus_unique_disruptor_7"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"517"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"1"
+				"ad_linked_abilities"			"disruptor_static_storm"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value2"				"32"
+				"ad_linked_abilities"			"disruptor_static_storm"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}	
 	"special_bonus_unique_doom_1"
 	{
 		"AbilitySpecial"
@@ -1869,6 +1895,29 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_mp_regen_14"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6255"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"41"
+			}
+		}
+	}
+
 	"abaddon_death_coil"
 	{
 		"LevelsBetweenUpgrades"		"5"
@@ -4441,41 +4490,77 @@
 			}
 		}
 	}	
+
+	//=================================================================================================================
+	// Disruptor: Static Storm
+	//=================================================================================================================
 	"disruptor_static_storm"
 	{
-		"AbilityCooldown"			"50.0"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5461"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"LevelsBetweenUpgrades"         "15"
+		"MaxLevel"                      "5"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Disruptor.StaticStorm.Cast"
+
+		"HasScepterUpgrade"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_STATIC_STORM"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.05"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"225"
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1100"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"500"
+			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"pulses"					"28"
+				"LinkedSpecialBonus"			"special_bonus_unique_disruptor_7"
+				"LinkedSpecialBonusField"		"value2"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_max"				"900 2800 9500"
+				"damage_max"				"1900 9800 29500 85400 446000"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"7.0"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration_scepter"			"8.0"
-				"RequiresScepter"	"1"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"pulses_scepter"			"40"
-				"RequiresScepter"	"1"
+				"duration"					"5.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_disruptor_7"
 			}
 		}
 	}
+
+
+
 	"doom_bringer_infernal_blade"
 	{
 		"AbilityCastRange"				"600"
@@ -17370,7 +17455,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"-28"
+				"value"				"15"
 				"ad_linked_abilities"			"sniper_shrapnel"
 			}
 		}

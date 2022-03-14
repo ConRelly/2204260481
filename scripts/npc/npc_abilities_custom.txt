@@ -13772,7 +13772,7 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"value"			"0.5"
+				"value"			"-0.6"
 			}
 		}
 	}
@@ -33510,11 +33510,11 @@
 			"vision_radius"					"400"
 			"vision_duration"				"5"
 			"channel_time"					"3"
-			"debuff_incoming_damage"		"10"
-			"debuff_duration"				"10"
+			"debuff_incoming_damage"		"5"
+			"debuff_duration"				"9"
 			"debuff_inco_duration"			"3"
 			"shot_chance"					"2"
-			"shard_armor"					"7"
+			"shard_armor"					"5"
 		}
 
 		"precache"

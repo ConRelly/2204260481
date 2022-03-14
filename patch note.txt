@@ -1757,12 +1757,24 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 
 
+* Fix Sniper lvl 25 HeadShot talent going negative.
+* Fix Queen of pain shadow strike talent not working
+* Fix Static Storm ultimate duration, added 2 more lvls to skill, and buffed the talent. 
+* Mana regen +14 talent changed to +41(some heroes have this)
+* Powershot dmg reduction to 5% and shard talent to 5 from 7.
+
+
+
+
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes61 can be found on the new map version:
+*Update patch notes62 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
+
+
+
 
 
 

@@ -6089,6 +6089,7 @@ Upgradeable by Aghanim's Scepter."
 "DOTA_Tooltip_Ability_disruptor_custom_ion_hammer_duration"					"DURATION:"
 "DOTA_Tooltip_Ability_disruptor_custom_ion_hammer_damage"					"DAMAGE:"
 
+"DOTA_Tooltip_ability_special_bonus_unique_disruptor_7"	"+{s:value}s Static Storm Duration and +{s:value2} Pulses"
 
 "DOTA_Tooltip_modifier_disruptor_custom_ion_hammer_debuff"		"Ion Hammer"
 "DOTA_Tooltip_modifier_disruptor_custom_ion_hammer_debuff_Description"		"Armor and resistance are being reduced by ion hammer."
