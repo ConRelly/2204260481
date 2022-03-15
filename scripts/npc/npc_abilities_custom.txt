@@ -10829,19 +10829,19 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"multicast_2_times"		"60 60 60"
+				"multicast_2_times"		"50 50 50"
 				"LinkedSpecialBonus"	"ogre_magi_custom_bonus_unique_1"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"multicast_3_times"		"0 25 35"
+				"multicast_3_times"		"0 20 30"
 				"LinkedSpecialBonus"	"ogre_magi_custom_bonus_unique_1"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"multicast_4_times"		"0 0 20"
+				"multicast_4_times"		"0 0 15"
 				"LinkedSpecialBonus"	"ogre_magi_custom_bonus_unique_1"
 			}
 			"04"

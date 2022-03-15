@@ -181,6 +181,7 @@ if IsServer() then
 		item_formidable_chest = true,
 		item_mjz_attribute_mail = true,
 		item_plain_perma = true,
+		item_earth_rapier = true,
 		--mjz_doom_bringer_devour = true,
 		--mjz_clinkz_soul_pact = true,
 		frostivus2018_clinkz_burning_army = true,
@@ -380,13 +381,17 @@ if IsServer() then
 								for count = 2, casts + 1 do
 									Timers:CreateTimer(count * interval, function()
 										if self.echo and not self.echo:IsNull() and IsValidEntity(self.echo) then
-											if not keys.target:IsAlive() then return end
+											if self.parent:IsNull() then return end
 											if not self.parent:IsAlive() then return end
 											if not self.parent:HasModifier("modifier_ogre_magi_multicast_n") then return end
 
 											if self.targetType == 0 then
+												if keys.target:IsNull() then return end
+												if not keys.target:IsAlive() then return end
 												self.parent:SetCursorCastTarget(keys.target)
 											elseif self.targetType == 1 then
+												if keys.target:IsNull() then return end
+												if not keys.target:IsAlive() then return end												
 												self.parent:SetCursorPosition(keys.target:GetAbsOrigin())
 											elseif self.targetType == 2 then
 												self.parent:SetCursorTargetingNothing(true)
@@ -425,14 +430,6 @@ if IsServer() then
 --					end
 --				end)
 				self.hit = false
-				--end
-			--[[elseif keys.target:IsConsideredHero() and self.ability:GetCooldownTimeRemaining() > self.minimum_cooldown then
-				local cooldown = self.ability:GetCooldownTimeRemaining() - (attacker:GetMaxMana() / keys.target:GetMaxHealth() * self.cooldown_reduction * 100)
-				if cooldown < self.minimum_cooldown then
-					cooldown = self.minimum_cooldown
-				end
-				self.ability:EndCooldown()
-				self.ability:StartCooldown(cooldown)]]
 			end
 		end
 	end

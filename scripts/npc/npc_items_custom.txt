@@ -170,7 +170,7 @@
 	{
 		"BaseClass"					 "item_black_king_bar"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityCooldown"				"15"
+		"AbilityCooldown"				"20"
 		"ItemCost"						"700"
 		"ItemSellable"					"0"
 		"AbilityTextureName"			"free_bar"
@@ -19822,7 +19822,7 @@
 		"ItemRequiresCharges"			"0"
 		"AllowedInBackpack"				"1"
 		"IsTempestDoubleClonable"		"1"
-		"AbilityCooldown"				"95"
+		"AbilityCooldown"				"60"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
@@ -31982,7 +31982,7 @@
 		"ItemSellable"					"1"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"AbilityCooldown"				"60"
+		"AbilityCooldown"				"70"
 		"AbilityManaCost"				"100"
 		"AbilityCastPoint"				"0"
 		"ItemQuality"					"epic"
@@ -32056,6 +32056,9 @@
 		"ItemCost"						"19969"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
+		"ItemStockInitial"				"1"
+		"ItemStockMax"					"1"
+		"ItemStockTime"					"99999.0"		
 		"ItemResult"					"item_pipe_of_dezun"
 		"ItemRequirements"
 		{

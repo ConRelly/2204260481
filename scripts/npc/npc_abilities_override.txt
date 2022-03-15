@@ -538,6 +538,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"value"				"6"
+				"ad_linked_abilities"			"earthshaker_echo_slam"
 			}
 		}
 	}
@@ -2746,73 +2747,7 @@
 			}
 		}
 	}
-	"batrider_sticky_napalm"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"5320"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"AbilitySound"					"Hero_Batrider.StickyNapalm.Impact"
-		"LevelsBetweenUpgrades"		 "7"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"950 1100 1250 1700"
-		"AbilityCastPoint"				"0"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"3"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"20"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.5"	// Works by boosting damage
-
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"60 320 950 1440"
-				"LinkedSpecialBonus"	"special_bonus_unique_batrider_4"
-				"CalculateSpellDamageTooltip"		"1"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"475 450 500 575"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"15"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"movement_speed_pct"	"-2 -4 -6 -8"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"turn_rate_pct"			"-10 -30 -50 -70"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_stacks"			"10 15 20 25"
-			}
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
-	}
 
 
 	//=================================================================================================================
@@ -2826,7 +2761,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"LevelsBetweenUpgrades"		 "10"
+		"LevelsBetweenUpgrades"		 "12"
 		"AbilitySound"					"Hero_Batrider.StickyNapalm.Impact"
 		"HasShardUpgrade"			"1"
 
@@ -2837,7 +2772,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"3.0 3.0 3.0 3.0"
+		"AbilityCooldown"				"5.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -2854,19 +2789,19 @@
 		{
 			"damage"
 			{
-				"value"	"90 1820 9950 24400"
+				"value"	"85 950 1820 3950 8400 15500 21500"
 				"special_bonus_unique_batrider_4"	"+6000"
 				"CalculateSpellDamageTooltip"		"1"
 			}
 			"radius"
 			{
-				"value"								"375 400 425 450"
+				"value"								"275 300 325 350 375 400 450"
 				"special_bonus_unique_batrider_7"	"+275"
 			}
-			"duration" "30"
-			"movement_speed_pct" "-2 -4 -6 -8"			
-			"turn_rate_pct"			"-10 -30 -50 -70"
-			"max_stacks"			"10 20 90 500"
+			"duration" "10"
+			"movement_speed_pct" "-5"			
+			"turn_rate_pct"			"-15"
+			"max_stacks"			"10 20 30 40 50 60 70"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
@@ -22495,7 +22430,7 @@
 // Black King Bar
 	"item_black_king_bar"
 	{
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"50"
 		"AbilitySpecial"
 		{
 			"01"
@@ -23102,7 +23037,7 @@
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"
-		"AbilityCooldown"				"75.0"
+		"AbilityCooldown"				"80.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -23113,7 +23048,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"15"
+				"duration"				"14"
 			}
 		}
 	}

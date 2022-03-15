@@ -1767,6 +1767,8 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 
 
+
+
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
 *Update patch notes62 can be found on the new map version:

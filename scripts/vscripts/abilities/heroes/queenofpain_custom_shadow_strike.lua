@@ -96,5 +96,7 @@ end
 
 
 function modifier_queenofpain_custom_shadow_strike:GetModifierMoveSpeedBonus_Percentage()
-    return self:GetAbility():GetSpecialValueFor("movement_slow")
+    if self:GetAbility() then
+        return self:GetAbility():GetSpecialValueFor("movement_slow")
+    end    
 end
