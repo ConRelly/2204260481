@@ -247,7 +247,8 @@
 		"AbilitySpecial"
 		{
 		}
-	}	
+	}
+
 // Dawnbreaker: Luminosity
 	"dawnbreaker_custom_luminosity"
 	{
@@ -276,12 +277,15 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"bonus_damage"				"220 340 460 580 650 760 1150 1550 2040 2450"
+				"LinkedSpecialBonus"		"special_bonus_unique_dawnbreaker_luminosity_crit"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"attack_count"				"7"
-			}	
+				"LinkedSpecialBonus"			"special_bonus_unique_dawnbreaker_luminosity_attack_count"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
+			}
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
@@ -29949,20 +29953,21 @@
 			"particle"	 "particles/econ/items/clockwerk/clockwerk_paraflare/clockwerk_para_rocket_flare_illumination.vpcf"
 		}
 	}
+
 	//=================================================================================================================
 	// Razor: Unstable Current			不稳定电流
 	//=================================================================================================================
 	"mjz_razor_unstable_current"
 	{
-		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/hero_razor/mjz_razor_unstable_current.lua"
 
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE" // "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityTextureName"			"razor_unstable_current"	// "mjz_razor_unstable_current"
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "7"
+		"AbilityTextureName"			"razor_unstable_current"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"7"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 
 		"HasScepterUpgrade"				"1"
@@ -29973,47 +29978,34 @@
 			"particle"			"particles/units/heroes/hero_razor/razor_unstable_current.vpcf"
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"movement_speed_pct"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"movement_speed_pct"		"4 8 12 16 20 25 30"
+				"value"						"4 8 12 16 20 25 30"
 				"LinkedSpecialBonus"		"special_bonus_unique_razor_3"
 			}
-			"02"
+			"passive_area_damage"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"passive_area_damage"		"90 340 900 1900 8400 15100 36000"		
+				"value"						"90 340 900 1900 8400 15100 36000"
 				"LinkedSpecialBonus"		"special_bonus_unique_razor_4"
 			}
-			"03"
+			"attack_damage_pct"				"40 85 160 235 460 620 830"
+			"passive_area_interval"			"3"
+			"passive_area_interval_scepter"
 			{
-				"var_type"							"FIELD_FLOAT"
-				"passive_area_interval"				"3"		
+				"value"						"2 2 2 2 2 2 1"
+				"RequiresScepter"			"1"
 			}
-			"04"
+			"radius"						"700"
+			"radius_scepter"
 			{
-				"var_type"							"FIELD_FLOAT"
-				"passive_area_interval_scepter"		"2 2 2 2 2 2 1"		
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"700"		
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius_scepter"		"1200"		
-			}
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_damage_pct"		"40 85 160 235 460 620 830"
+				"value"						"1200"
+				"RequiresScepter"			"1"
 			}
 		}
 	}
+
 	"mjz_riki_backstab"
 	{
 		"BaseClass"						"ability_lua"	// "ability_datadriven"
@@ -42526,6 +42518,34 @@
 				"var_type"		"FIELD_FLOAT"
 				"value"			"5"
 			}
+		}
+	}
+
+// Amalgamation
+	"amalgamation"
+	{
+		"BaseClass"                                                            "ability_lua"
+		"ScriptFile"                                                           "heroes/hero_wisp/amalgamation"
+		"AbilityTextureName"                                                   "terrorblade_sunder"
+		"AbilityType"                                                          "DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"                                                      "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"                                                "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"                                                "DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"                                                    "SPELL_IMMUNITY_ENEMIES_YES"
+		"HasScepterUpgrade"                                                    "1"
+		"AbilityCooldown"                                                      "120 60 35"
+		"AbilityManaCost"                                                      "200"
+		"AbilityCastRange"                                                     "150"
+		"AbilityCastPoint"                                                     "0.2"
+		"AbilityValues"
+		{
+			"bonus"						"0"
+			"mana_regen"				"50 100 150"
+			"vis_duration"				"3 2.5 2"
+			"magic_armor"				"-12"
+			"physical_armor"			"-6"
+			"range_scepter"				"900"
+			"stat_scepter"				"1"
 		}
 	}
 

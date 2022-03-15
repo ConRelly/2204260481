@@ -3,7 +3,7 @@ LinkLuaModifier("modifier_earthshaker_aftershock_lua", "lua_abilities/earthshake
 
 earthshaker_aftershock_lua = class({})
 function earthshaker_aftershock_lua:GetCastRange(location, target)
-	return self:GetSpecialValueFor("aftershock_range") + talent_value(self:GetCaster(), "special_bonus_unique_earthshaker_5") - self:GetCaster():GetCastRangeBonus()
+	return self:GetSpecialValueFor("aftershock_range") + talent_value(self:GetCaster(), "special_bonus_unique_es_aftershock_range") - self:GetCaster():GetCastRangeBonus()
 end
 function earthshaker_aftershock_lua:GetIntrinsicModifierName() return "modifier_earthshaker_aftershock_lua" end
 
@@ -24,10 +24,10 @@ function modifier_earthshaker_aftershock_lua:OnAbilityFullyCast(params)
 		if params.unit ~= self:GetParent() or params.ability:IsItem() then return end
 		if params.ability:GetCooldown(params.ability:GetLevel()) <= 0 then return end
 
-		local aftershock_range = self:GetAbility():GetSpecialValueFor("aftershock_range") + talent_value(self:GetCaster(), "special_bonus_unique_earthshaker_5")
+		local aftershock_range = self:GetAbility():GetSpecialValueFor("aftershock_range") + talent_value(self:GetCaster(), "special_bonus_unique_es_aftershock_range")
 		local aftershock_damage = self:GetAbility():GetSpecialValueFor("aftershock_damage")
 		local duration = self:GetAbility():GetSpecialValueFor("duration")
-		local str_damage = self:GetCaster():GetStrength() * (self:GetAbility():GetTalentSpecialValueFor("str_multiplier") + talent_value(self:GetCaster(), "special_bonus_unique_earthshaker_2"))
+		local str_damage = self:GetCaster():GetStrength() * (self:GetAbility():GetTalentSpecialValueFor("str_multiplier") + talent_value(self:GetCaster(), "special_bonus_unique_es_aftershock_str_multiplier"))
 		local damage = aftershock_damage + str_damage
 
 		local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), nil, aftershock_range, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)

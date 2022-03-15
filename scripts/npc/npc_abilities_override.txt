@@ -8663,10 +8663,14 @@
 			}
 		}
 	}
+
+//=================================================================================================================
+// Razor: Plasma Field
+//=================================================================================================================
 	"razor_plasma_field"
 	{   
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "5"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"11"
 		"AbilityManaCost"				"125"
@@ -8676,22 +8680,55 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"damage_min"				"90 200 450 1400 1900 2800 4200"
+				"LinkedSpecialBonus"		"special_bonus_unique_razor_4"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"damage_max"				"150 635 1485 2650 4600 12200"
+				"LinkedSpecialBonus"		"special_bonus_unique_razor_4"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"radius"					"1200"
 			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed"						"636"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow_min"					"5"
+			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow_max"				"25 30 35 40 45 50 55"
-			}			
+				"slow_max"					"25 30 35 40 45 50 55"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_duration"				"1.5"
+			}
+		}
+	}
+// Plasma Field Talent: Damage
+	"special_bonus_unique_razor_4"
+	{
+		"ID"						"6861"
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"8800"
+				"ad_linked_abilities"		"razor_plasma_field"
+			}
 		}
 	}
 

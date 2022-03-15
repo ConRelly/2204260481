@@ -31,18 +31,50 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"str_multiplier"			"4 6 8 10 15 20 40"
-				"LinkedSpecialBonus"	    "special_bonus_unique_earthshaker_2"
+				"LinkedSpecialBonus"	    "special_bonus_unique_es_aftershock_str_multiplier"
 			}
 			"3"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"aftershock_range"			"1200"
-				"LinkedSpecialBonus"	    "special_bonus_unique_earthshaker_5"
+				"LinkedSpecialBonus"	    "special_bonus_unique_es_aftershock_range"
 			}
 			"4"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"duration"					"0.2"
+			}
+		}
+	}
+
+	"special_bonus_unique_es_aftershock_str_multiplier"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"20"
+			}
+		}
+	}
+
+	"special_bonus_unique_es_aftershock_range"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"1200"
 			}
 		}
 	}

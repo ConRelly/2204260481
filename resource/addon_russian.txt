@@ -855,6 +855,27 @@
 	"DOTA_Tooltip_ability_special_bonus_hunting_mark_direct_shot_bonus_Description"		"Shoot нанoсит {s:value}% урoна, при прицeльнoм пoпадании пo врагу с Hunting Mark"
 
 
+	"DOTA_Tooltip_ability_amalgamation"					"Amalgamation"
+	"DOTA_Tooltip_ability_amalgamation_Description"		"You bind yourself to target allied hero. You may cast spells as normal but you share manapool. If host is out of mana your spells take spell cost from host's health. If your host dies, you die as well. \n Host hero is granted bonus mana regen while reducing magic resistance and armor."
+	"DOTA_Tooltip_ability_amalgamation_scepter_Description"		"ARCANE FEAST: Your host gets +1 to all attributes if enemy hero dies within 900 radius."
+	"DOTA_Tooltip_ability_amalgamation_Note0"			"Temporarily breaks invisibility of host when you cast spell or attack. %vis_duration%s"
+	"DOTA_Tooltip_ability_amalgamation_mana_regen"			"%BONUS MANA REGEN"
+	"DOTA_Tooltip_ability_amalgamation_magic_armor"			"%MAGIC RESISTANCE REDUCTION:"
+	"DOTA_Tooltip_ability_amalgamation_physical_armor"		"ARMOR REDUCTION:"
+
+	"DOTA_Tooltip_amalgamation_modifier"					"Arcance Symbiosis"
+	"DOTA_Tooltip_amalgamation_modifier_Description"		"You share mana pool with a host hero."
+
+	"DOTA_Tooltip_amalgamation_target"					"Arcance Symbiosis: Host"
+	"DOTA_Tooltip_amalgamation_target_Description"		"You share mana pool with a symbiot hero. \nIf you don't have mana symbiot's spells take their mana cost from your health. \nGrants bonus mana regen. \nReduces armor and magic resistance. \n\n<br><br>You may disable help from your symbiot to forcefully end the symbiosis when possible."
+
+	"DOTA_Tooltip_amalgamation_bonus"					"Arcane Feast"
+	"DOTA_Tooltip_amalgamation_bonus_Description"		"Granted +1 to all attributes per stack."
+
+	"DOTA_Error_amalgamation_no_self_target"			"No self cast."
+	"DOTA_Error_amalgamation_no_inception"			"Can't cast while being host."
+
+
 //###########################################################################################################################
 
 	"DOTA_Tooltip_ability_item_ice_dagon"				"Ice Dagon"
@@ -3715,24 +3736,29 @@
 	"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_scepter_description"	"Increases damage."
 	"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_Note0"					"Sonic Wave can hit units up to 1150 units away."
 
+
 	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare"				"Rocket Flare"
 	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare_Description"	"Fires a flare that explodes over a given area, damaging enemies and providing vision for 10 seconds."
 	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare_Lore"			"What started as a festive display has become a useful scouting and bombardment tool."
 	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare_cast_range"		"Дaльнocть пpимeнeния:"
 	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare_radius"			"Paдиyc:"
-	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare_damage"			"Уpoн:"	
+	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare_damage"			"Уpoн:"
+
+
 	"DOTA_Tooltip_ability_mjz_razor_unstable_current"					"Unstable Current"
-	"DOTA_Tooltip_ability_mjz_razor_unstable_current_Description"		"Passively increases your movement speed and occasionally hits every unit in the area for some damage."
-	"DOTA_Tooltip_ability_mjz_razor_unstable_current_scepter_description"		"Reduces damage interval, Increases radius."
-	"DOTA_Tooltip_ability_mjz_razor_unstable_current_Lore"				"Merely approaching the Lightning Revenant is rewarded with shock therapy."
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_Description"		"Пассивно увеличивает скорость передвижения и наносит урон всем врагам вокруг героя."
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_scepter_description"		"Снижает интервал и увеличивает радиус."
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_Lore"				"Кто приблизится к призраку молний, в ответ получит шоковую терапию."
 	"DOTA_Tooltip_ability_mjz_razor_unstable_current_Note0"				""
 	"DOTA_Tooltip_ability_mjz_razor_unstable_current_radius"					"Paдиyc:"
-	"DOTA_Tooltip_ability_mjz_razor_unstable_current_movement_speed_pct"		"%Move Speed Bonus: "
-	"DOTA_Tooltip_ability_mjz_razor_unstable_current_passive_area_damage"		"Base Damage: "
-	"DOTA_Tooltip_ability_mjz_razor_unstable_current_attack_damage_pct"			"%Attack as Damage: "
-	"DOTA_Tooltip_ability_mjz_razor_unstable_current_passive_area_interval"		"Damage Interval: "
-	"DOTA_Tooltip_ability_mjz_razor_unstable_current_radius_scepter"					"Scepter Radius: "
-	"DOTA_Tooltip_ability_mjz_razor_unstable_current_passive_area_interval_scepter"		"Scepter Damage Interval: "
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_movement_speed_pct"		"%Доп. скорость:"
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_passive_area_damage"		"Базовый урон:"
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_attack_damage_pct"			"%Доп. урон от атак:"
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_passive_area_interval"		"Интервал:"
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_radius_scepter"					"Радиус со скипeтрoм:"
+	"DOTA_Tooltip_ability_mjz_razor_unstable_current_passive_area_interval_scepter"		"Интервал со скипeтрoм:"
+
+	"DOTA_Tooltip_ability_special_bonus_unique_razor_4"		"+{s:value} к урону от Plasma Field и Unstable Current"
 
 	"DOTA_Tooltip_ability_riki_custom_dagger"					"BackStaber"
 	"DOTA_Tooltip_ability_riki_custom_dagger_Description"		"Deals bonus damage to target from behind "
@@ -9862,7 +9888,8 @@
 
 
 
-	"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_2"	"+{s:value} к ypoнy oт cилы для Aftershock"
+	"DOTA_Tooltip_ability_special_bonus_unique_es_aftershock_str_multiplier"	"+{s:value} к ypoнy oт cилы для Aftershock"
+	"DOTA_Tooltip_ability_special_bonus_unique_es_aftershock_range"				"+{s:value} к радиусу Aftershock"
 	"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_3"	"+{s:value} к ypoнy oт cилы для Fissure"
 	"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_01"	"+{s:value} к ypoнy oт cилы для Echo"
 	"DOTA_Tooltip_ability_special_bonus_unique_morphling_8"		"+{s:value} ceк. длитeльнocти Ultimate"

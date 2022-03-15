@@ -3687,6 +3687,8 @@ DISPEL TYPE: Strong Dispel"
 	"DOTA_Tooltip_ability_mjz_razor_unstable_current_passive_area_interval"		"Damage Interval: "
 	"DOTA_Tooltip_ability_mjz_razor_unstable_current_radius_scepter"					"Scepter Radius: "
 	"DOTA_Tooltip_ability_mjz_razor_unstable_current_passive_area_interval_scepter"		"Scepter Damage Interval: "
+
+	"DOTA_Tooltip_ability_special_bonus_unique_razor_4"		"+{s:value} Plasma Field and Unstable Current Damage"
 	
 	"DOTA_Tooltip_Ability_riki_custom_dagger"				   "BackStaber"
 	"DOTA_Tooltip_Ability_riki_custom_dagger_Description"	   "Deals bonus damage to target from behind "
@@ -9749,7 +9751,8 @@ Contains all random skills"
 
 
 
-		"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_2"	"+{s:value} Aftershock Str Damage"
+		"DOTA_Tooltip_ability_special_bonus_unique_es_aftershock_str_multiplier"	"+{s:value} Aftershock Str Damage"
+		"DOTA_Tooltip_ability_special_bonus_unique_es_aftershock_range"				"+{s:value} Aftershock Radius"
 		"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_3"	"+{s:value} Fissure Str Damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_01"	"+{s:value} Echo Str Damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_morphling_8"	  "+{s:value}s Ultimate Duration"
