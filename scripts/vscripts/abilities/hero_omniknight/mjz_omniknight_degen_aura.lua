@@ -7,8 +7,10 @@ function OnCreatedAura( event )
 	local ability = event.ability
 
 	local modifier_name = 'modifier_mjz_omniknight_degen_aura_attackspeed_bonus'
-	ability:ApplyDataDrivenModifier(caster, target, modifier_name, {})
-	-- target:AddNewModifier(caster, ability, modifier_name, {duration = -1})
+	if ability and not ability:IsNull() then
+		ability:ApplyDataDrivenModifier(caster, target, modifier_name, {})
+		-- target:AddNewModifier(caster, ability, modifier_name, {duration = -1})
+	end	
 end
 
 function OnDestroyAura( event )
@@ -19,7 +21,11 @@ function OnDestroyAura( event )
 	local ability = event.ability
 
 	local modifier_name = 'modifier_mjz_omniknight_degen_aura_attackspeed_bonus'
-	target:RemoveModifierByName(modifier_name)
+	if target and not target:IsNull() then
+		if target:HasModifier(modifier_name) then
+			target:RemoveModifierByName(modifier_name)
+		end	
+	end	
 end
 
 
@@ -46,8 +52,10 @@ function modifier_class:DeclareFunctions()
 end
 
 function modifier_class:GetModifierAttackSpeedBonus_Constant( params )
-	return self.attack_bonus_per
-	-- return -10
+	if self.attack_bonus_per then
+		return self.attack_bonus_per
+		-- return -10
+	end	
 end
 
 function modifier_class:OnCreated( kv )
@@ -60,9 +68,11 @@ function modifier_class:OnCreated( kv )
 end
 
 function modifier_class:OnIntervalThink()
-	local unit = self:GetParent()
-	self.attack_bonus_per = unit:GetAttackSpeed() * self.attack_bonus
+	if self:GetParent() and not self:GetParent():IsNull() then
+		local unit = self:GetParent()
+		self.attack_bonus_per = unit:GetAttackSpeed() * self.attack_bonus
 
-	--print(unit:GetAttackSpeed(), self.attack_bonus, self.attack_bonus_per)
+		--print(unit:GetAttackSpeed(), self.attack_bonus, self.attack_bonus_per)
+	end	
 end
 

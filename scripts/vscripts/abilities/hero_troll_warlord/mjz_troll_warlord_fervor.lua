@@ -67,6 +67,18 @@ if IsServer() then
 
 end
 
+function modifier_class:OnDestroy()
+	local modifier_name = 'modifier_mjz_troll_warlord_fervor_stack'
+	if IsServer() then
+		if self and not self:IsNull() then
+			if self:GetParent() and not self:GetParent():IsNull() then
+				if self:GetParent():HasModifier(modifier_name) then
+					self:GetParent():RemoveModifierByName(modifier_name)
+				end	
+			end	
+		end	
+	end	
+end
 ---------------------------------------------------------------------------------------
 
 modifier_mjz_troll_warlord_fervor_stack = class({})
@@ -87,16 +99,24 @@ function modifier_stack:DeclareFunctions()
 end
 
 function modifier_stack:GetModifierBonusStats_Agility(  )
-	return self:GetAbility():GetSpecialValueFor('bonus_agi') * self:GetStackCount()
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor('bonus_agi') * self:GetStackCount()
+	end	
 end
 function modifier_stack:GetModifierHealthBonus(  )
-	return self:GetAbility():GetSpecialValueFor('bonus_hp') * self:GetStackCount()
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor('bonus_hp') * self:GetStackCount()
+	end	
 end
 function modifier_stack:GetModifierManaBonus(  )
-	return self:GetAbility():GetSpecialValueFor('bonus_mana') * self:GetStackCount()
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor('bonus_mana') * self:GetStackCount()
+	end	
 end
 function modifier_stack:GetModifierAttackRangeBonus(  )
-	return self:GetAbility():GetSpecialValueFor('bonus_range') * self:GetStackCount()
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor('bonus_range') * self:GetStackCount()
+	end	
 end
 
 -----------------------------------------------------------------------------------------

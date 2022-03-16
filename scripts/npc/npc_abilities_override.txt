@@ -549,7 +549,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"7"
+				"value"				"16"
 				"ad_linked_abilities"			"earthshaker_fissure"
 			}
 		}
@@ -1243,6 +1243,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"value"				"2980"
+				"ad_linked_abilities"			"sandking_sand_storm"
 			}
 		}
 	}
@@ -4317,7 +4318,7 @@
 
 	"dazzle_shallow_grave"
 	{
-		"AbilityCooldown"				"60 46 42 40"
+		"AbilityCooldown"				"65 62 59 55"
 	}
 	"death_prophet_carrion_swarm"
 	{
@@ -4367,6 +4368,126 @@
 			}			
 		}
 	}
+
+	//=================================================================================================================
+	// Death Prophet: Exorcism
+	//=================================================================================================================
+	"death_prophet_exorcism"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5093"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_DeathProphet.Exorcism.Cast"
+        "HasScepterUpgrade"			"1"
+        "LevelsBetweenUpgrades"     "12"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.5 0.5 0.5"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"70.0 65.0 40.0"
+		"AbilityDuration"				"35"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"250 350 450"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"1600"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spirits"				"4 8 20"
+				"LinkedSpecialBonus"	"special_bonus_unique_death_prophet"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spirit_speed"			"525"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_distance"			"2000 2000 2000"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"give_up_distance"		"1200 1200 1200"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_damage"			"1500 4500 10600"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_damage"			"1500 4500 10600"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_percent"			"25 25 25"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"average_damage"		"1500 4500 10600"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ghost_spawn_rate"	"0.35"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"scepter_movespeed_slow"	"100"
+				"RequiresScepter"			"1"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"scepter_movespeed_debuff_duration"	"0.3"
+				"RequiresScepter"			"1"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"scepter_spirit_life_duration"	"4"
+				"RequiresScepter"			"1"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"scepter_spirit_bonus_damage"	"1000"
+				"RequiresScepter"			"1"
+				"CalculateSpellDamageTooltip"	"0"
+			}	
+			"15"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_bonus"				"25 50 75"
+			}
+		}
+	}	
+
 	"death_prophet_spirit_siphon"
 	{
 		"AbilityChargeRestoreTime"		"26 22 20 18"
@@ -8599,29 +8720,36 @@
 		}
 	}
 
-//=================================================================================================================
-// Razor: Plasma Field
-//=================================================================================================================
+
+	//=================================================================================================================
+	// Razor: Plasma Field
+	//=================================================================================================================
 	"razor_plasma_field"
-	{   
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"						"7"
-		"LevelsBetweenUpgrades"			"5"
+		"LevelsBetweenUpgrades"			"7"
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"11"
 		"AbilityManaCost"				"125"
+		"FightRecapLevel"				"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_min"				"90 200 450 1400 1900 2800 4200"
-				"LinkedSpecialBonus"		"special_bonus_unique_razor_4"
+				"damage_min"				"90 400 950 4400 9900 12800 22000"
+				"LinkedSpecialBonus"	"special_bonus_unique_razor_4"								
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_max"				"150 635 1485 2650 4600 12200"
-				"LinkedSpecialBonus"		"special_bonus_unique_razor_4"
+				"damage_max"				"350 935 3485 9650 16500 32200 78500"
+				"LinkedSpecialBonus"	"special_bonus_unique_razor_4"								
 			}
 			"03"
 			{
@@ -8631,17 +8759,17 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"speed"						"636"
+				"speed"						"636"  // 1.2 second to reach radius
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow_min"					"5"
+				"slow_min"				"5"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow_max"					"25 30 35 40 45 50 55"
+				"slow_max"				"25 30 35 40 45 50 55"
 			}
 			"07"
 			{
@@ -8650,6 +8778,8 @@
 			}
 		}
 	}
+
+
 // Plasma Field Talent: Damage
 	"special_bonus_unique_razor_4"
 	{
@@ -14677,17 +14807,26 @@
 	}	
 	"troll_warlord_berserkers_rage"
 	{
+		"LevelsBetweenUpgrades"        "4"
 		"AbilitySpecial"
 		{
+
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"100 500 1500 2500"
+			}			
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_move_speed"		"20 60 90 150"
+				"LinkedSpecialBonus"		"special_bonus_unique_troll_warlord_2"				
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_armor"			"6 8 12 22"
+				"LinkedSpecialBonus"		"special_bonus_unique_troll_warlord"
 			}
 			"05"
 			{
@@ -14701,6 +14840,30 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_troll_warlord"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6154"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"32"
+				"ad_linked_abilities"			"troll_warlord_berserkers_rage"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+
 	"troll_warlord_battle_trance"
 	{
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"

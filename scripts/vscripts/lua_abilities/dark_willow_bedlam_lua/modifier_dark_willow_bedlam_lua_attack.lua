@@ -136,48 +136,52 @@ function modifier_dark_willow_bedlam_lua_attack:PlayEffects()
 
 	-- Create Particle
 	-- local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-	local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-	ParticleManager:SetParticleControl( effect_cast, 1, Vector( self.radius, self.radius, self.radius ) )
+	if self and not self:IsNull() and self:GetParent() and not self:GetParent():IsNull() then
+		local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+		ParticleManager:SetParticleControl( effect_cast, 1, Vector( self.radius, self.radius, self.radius ) )
 
-	-- buff particle
-	self:AddParticle(
-		effect_cast,
-		false, -- bDestroyImmediately
-		false, -- bStatusEffect
-		-1, -- iPriority
-		false, -- bHeroEffect
-		false -- bOverheadEffect
-	)
+		-- buff particle
+		self:AddParticle(
+			effect_cast,
+			false, -- bDestroyImmediately
+			false, -- bStatusEffect
+			-1, -- iPriority
+			false, -- bHeroEffect
+			false -- bOverheadEffect
+		)
 
-	-- Create Sound
-	EmitSoundOn( sound_cast, self:GetParent() )
+		-- Create Sound
+		EmitSoundOn( sound_cast, self:GetParent() )
+	end	
 end
 
 function modifier_dark_willow_bedlam_lua_attack:PlayEffects1( target, speed )
-	local particle_cast = "particles/units/heroes/hero_dark_willow/dark_willow_willowisp_base_attack.vpcf"
-	local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, target )
+	if self and not self:IsNull() and target and not target:IsNull() then
+		local particle_cast = "particles/units/heroes/hero_dark_willow/dark_willow_willowisp_base_attack.vpcf"
+		local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, target )
 
-	ParticleManager:SetParticleControlEnt(
-		effect_cast,
-		0,
-		self:GetParent(),
-		PATTACH_POINT_FOLLOW,
-		"attach_hitloc",
-		Vector(0,0,0), -- unknown
-		true -- unknown, true
-	)
-	ParticleManager:SetParticleControlEnt(
-		effect_cast,
-		1,
-		target,
-		PATTACH_POINT_FOLLOW,
-		"attach_hitloc",
-		Vector(0,0,0), -- unknown
-		true -- unknown, true
-	)
-	ParticleManager:SetParticleControl( effect_cast, 2, Vector( speed, 0, 0 ) )
+		ParticleManager:SetParticleControlEnt(
+			effect_cast,
+			0,
+			self:GetParent(),
+			PATTACH_POINT_FOLLOW,
+			"attach_hitloc",
+			Vector(0,0,0), -- unknown
+			true -- unknown, true
+		)
+		ParticleManager:SetParticleControlEnt(
+			effect_cast,
+			1,
+			target,
+			PATTACH_POINT_FOLLOW,
+			"attach_hitloc",
+			Vector(0,0,0), -- unknown
+			true -- unknown, true
+		)
+		ParticleManager:SetParticleControl( effect_cast, 2, Vector( speed, 0, 0 ) )
 
-	return effect_cast
+		return effect_cast
+	end	
 end
 
 

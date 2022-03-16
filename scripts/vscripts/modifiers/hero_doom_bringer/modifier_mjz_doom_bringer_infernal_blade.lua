@@ -148,6 +148,7 @@ if IsServer() then
 
 		local damage = burn_base_damage + caster_strength * (burn_strength_damage_pct / 100.0)
 		local postDmg = ApplyDamage({
+			ability = ability,
 			victim = parent, 
 			attacker = caster, 
 			damage = damage, 

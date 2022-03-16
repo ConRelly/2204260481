@@ -20,6 +20,13 @@ dzzl_good_juju.nonrefresh_items = {
 	item_inf_aegis = true,
 	item_video_file = true,
 }
+--skills that have an togle like function and are able to be casted again during CD (resulting in self CD reduction aka 0 cd)
+local add_penality = {
+	["nevermore_custom_necromastery"] = true,
+
+
+};
+
 
 function dzzl_good_juju:GetIntrinsicModifierName() return "modifier_dzzl_good_juju" end
 
@@ -103,9 +110,14 @@ function modifier_dzzl_good_juju:OnAbilityExecuted(params)
 		if caster:IsIllusion() then return end
 
 		if params.unit == caster and not used_ability:IsItem() and not used_ability:IsToggle() and used_ability:GetCooldown(used_ability:GetLevel() - 1) > 0 then
+
+			local ability_name = used_ability:GetAbilityName()
+			if add_penality[ability_name] then 
+				cdr_per_cast = 0.5
+			end	
 			for i = 0, caster:GetAbilityCount() - 1 do
 				local abil = caster:GetAbilityByIndex(i)
-				if abil then
+				if abil and not abil:IsNull() then
 					local abil_cd = abil:GetCooldownTimeRemaining()
 					if abil_cd > 0 then
 						if abil_cd - cdr_per_cast > 0 then

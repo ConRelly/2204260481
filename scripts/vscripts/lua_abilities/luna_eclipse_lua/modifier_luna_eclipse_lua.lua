@@ -149,87 +149,94 @@ function modifier_luna_eclipse_lua:PlayEffects1()
 	local sound_cast = "Hero_Luna.Eclipse.Cast"
 
 	-- Get Data
-	local effect_cast = nil
-	if self.point then
-		-- effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_WORLDORIGIN, nil )
-		effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_WORLDORIGIN, nil )
-		ParticleManager:SetParticleControl( effect_cast, 0, self.point )
-		
-		-- Create Sound
-		EmitSoundOnLocationWithCaster( self.point, sound_cast, self:GetParent() )
-	else
-		-- effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-		effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-		
-		-- Create Sound
-		EmitSoundOn( sound_cast, self:GetParent() )
-	end
+	if self and not self:IsNull() and self:GetParent() and not self:GetParent():IsNull() then	
+		local effect_cast = nil
+		if self.point then
+			-- effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_WORLDORIGIN, nil )
+			effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_WORLDORIGIN, nil )
+			ParticleManager:SetParticleControl( effect_cast, 0, self.point )
+			
+			-- Create Sound
+			EmitSoundOnLocationWithCaster( self.point, sound_cast, self:GetParent() )
+		else	
+			-- effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+			effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+			
+			-- Create Sound
+			EmitSoundOn( sound_cast, self:GetParent() )
+		end
 
-	ParticleManager:SetParticleControl( effect_cast, 1, Vector( self.radius, 0, 0 ) )
+		ParticleManager:SetParticleControl( effect_cast, 1, Vector( self.radius, 0, 0 ) )
 
-	-- buff particle
-	self:AddParticle(
-		effect_cast,
-		false, -- bDestroyImmediately
-		false, -- bStatusEffect
-		-1, -- iPriority
-		false, -- bHeroEffect
-		false -- bOverheadEffect
-	)
+		-- buff particle
+		self:AddParticle(
+			effect_cast,
+			false, -- bDestroyImmediately
+			false, -- bStatusEffect
+			-1, -- iPriority
+			false, -- bHeroEffect
+			false -- bOverheadEffect
+		)
+	end	
 end
 
 function modifier_luna_eclipse_lua:PlayEffects2( target, point )
 	local particle_cast = "particles/units/heroes/hero_luna/luna_lucent_beam.vpcf" --"particles/econ/items/luna/luna_lucent_ti5/luna_lucent_beam_moonfall.vpcf"
 	local sound_target = "Hero_Luna.Eclipse.Target"
 	local sound_fail = "Hero_Luna.Eclipse.NoTarget"
-	if not target then
-		local vector = point + RandomVector( RandomInt( 0, self.radius ) )
-		local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_WORLDORIGIN, nil )
-		ParticleManager:SetParticleControl( effect_cast, 0, vector )
-		ParticleManager:SetParticleControl( effect_cast, 1, vector )
-		ParticleManager:SetParticleControl( effect_cast, 5, vector )
-		ParticleManager:SetParticleControl( effect_cast, 6, vector )
+	if self and not self:IsNull() then
+		if not target then
+			if self.caster and not self.caster:IsNull() then
+				local vector = point + RandomVector( RandomInt( 0, self.radius ) )
+				local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_WORLDORIGIN, nil )
+				ParticleManager:SetParticleControl( effect_cast, 0, vector )
+				ParticleManager:SetParticleControl( effect_cast, 1, vector )
+				ParticleManager:SetParticleControl( effect_cast, 5, vector )
+				ParticleManager:SetParticleControl( effect_cast, 6, vector )
+				ParticleManager:ReleaseParticleIndex( effect_cast )
+
+				EmitSoundOnLocationWithCaster( vector, sound_fail, self.caster )
+				return
+			end
+			return	
+		end
+
+		-- Create Particle
+		-- local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, target )
+		local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, target )
+		ParticleManager:SetParticleControl( effect_cast, 0, target:GetOrigin() )
+		ParticleManager:SetParticleControlEnt(
+			effect_cast,
+			1,
+			target,
+			PATTACH_ABSORIGIN_FOLLOW,
+			"attach_hitloc",
+			Vector(0,0,0), -- unknown
+			true -- unknown, true
+		)
+		ParticleManager:SetParticleControlEnt(
+			effect_cast,
+			5,
+			target,
+			PATTACH_POINT_FOLLOW,
+			"attach_hitloc",
+			Vector(0,0,0), -- unknown
+			true -- unknown, true
+		)
+		ParticleManager:SetParticleControlEnt(
+			effect_cast,
+			6,
+			target,
+			PATTACH_POINT_FOLLOW,
+			"attach_hitloc",
+			Vector(0,0,0), -- unknown
+			true -- unknown, true
+		)
 		ParticleManager:ReleaseParticleIndex( effect_cast )
 
-		EmitSoundOnLocationWithCaster( vector, sound_fail, self.caster )
-		return
-	end
-
-	-- Create Particle
-	-- local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, target )
-	local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, target )
-	ParticleManager:SetParticleControl( effect_cast, 0, target:GetOrigin() )
-	ParticleManager:SetParticleControlEnt(
-		effect_cast,
-		1,
-		target,
-		PATTACH_ABSORIGIN_FOLLOW,
-		"attach_hitloc",
-		Vector(0,0,0), -- unknown
-		true -- unknown, true
-	)
-	ParticleManager:SetParticleControlEnt(
-		effect_cast,
-		5,
-		target,
-		PATTACH_POINT_FOLLOW,
-		"attach_hitloc",
-		Vector(0,0,0), -- unknown
-		true -- unknown, true
-	)
-	ParticleManager:SetParticleControlEnt(
-		effect_cast,
-		6,
-		target,
-		PATTACH_POINT_FOLLOW,
-		"attach_hitloc",
-		Vector(0,0,0), -- unknown
-		true -- unknown, true
-	)
-	ParticleManager:ReleaseParticleIndex( effect_cast )
-
-	-- Create Sound
-	EmitSoundOn( sound_target, target )
+		-- Create Sound
+		EmitSoundOn( sound_target, target )
+	end	
 end
 
 --talents

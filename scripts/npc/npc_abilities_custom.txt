@@ -13099,8 +13099,9 @@
 	"SpellImmunityType"							"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityType"								"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityCastPoint"							"1.67"
-	"MaxLevel"								  "5"
-	"AbilityCooldown"							"70 65 60 55 50"
+	"LevelsBetweenUpgrades"                     "10"
+	"MaxLevel"								  	"5"
+	"AbilityCooldown"							"70 65 57 50 40"
 	"AbilityCastRange"							"1500"
 	"AbilityManaCost"							"150 200 250 450 1000"
 	"HasScepterUpgrade"							"1"
@@ -13151,7 +13152,7 @@
 		"08"
 		{
 			"var_type"							"FIELD_FLOAT"
-			"agility_mult"						"1.7 3.5 4.3 5.2 7.5"
+			"agility_mult"						"4.5 8.5 12.5 17 24"
 		}		
 	}
 }
@@ -23484,7 +23485,7 @@
 		"LevelsBetweenUpgrades"			"5"
 		"AbilityCastRange"				"810"
 		"AbilityCastPoint"				"0.2"
-		"AbilityCooldown"				"8 7 6 5"
+		"AbilityCooldown"				"5"
 		"AbilityManaCost"				"85 110 135 160"	
 		
 		"AbilitySpecial"
@@ -23682,7 +23683,7 @@
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"3"
+				"cooldown_scepter"			"5"
 			}
 			"10"
 			{
@@ -23728,20 +23729,20 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_DoomBringer.InfernalBlade.Target"
 		"AbilityTextureName"			"mjz_doom_bringer_infernal_blade"
-		"LevelsBetweenUpgrades"         "10"
-		"AbilityCooldown"				"16 12 8 6"
+		"MaxLevel"                      "7"
+		"LevelsBetweenUpgrades"         "12"
+		"AbilityCooldown"				"16 14 12 10 8 6 5"
 		"AbilityManaCost"				"40"
 		"AbilityCastRange"				"%cast_range"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
-		"MaxLevel" 						"4"
 		
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"burn_duration"			"4.0"
+				"burn_duration"			"5.0"
 			}
 			"02"
 			{
@@ -23751,13 +23752,13 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"burn_strength_damage_pct"		"120 260 420 950"
+				"burn_strength_damage_pct"		"120 260 420 650 860 1180 1666"
 				"LinkedSpecialBonus"			"special_bonus_unique_mjz_doom_bringer_infernal_blade_strength"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.6"
+				"stun_duration"			"0.3"
 			}
 			"05"
 			{
@@ -23786,7 +23787,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"420"
+				"value"						"666"
 			}
 		}
 	}	

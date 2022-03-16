@@ -58,7 +58,8 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"20"
+				"value"						"40"
+				"ad_linked_abilities"			"earthshaker_aftershock_lua"
 			}
 		}
 	}
@@ -74,7 +75,8 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"1200"
+				"value"						"1000"
+				"ad_linked_abilities"			"earthshaker_aftershock_lua"
 			}
 		}
 	}

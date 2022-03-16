@@ -143,28 +143,29 @@ end
 function modifier_dark_willow_bedlam_lua:PlayEffects()
 	-- Get Resources
 	local particle_cast = "particles/units/heroes/hero_dark_willow/dark_willow_wisp_aoe_cast.vpcf"
-
-	-- Create Particle
-	-- local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-	local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-	ParticleManager:SetParticleControlEnt(
-		effect_cast,
-		1,
-		self:GetParent(),
-		PATTACH_ABSORIGIN_FOLLOW,
-		"attach_hitloc",
-		Vector(0,0,0), -- unknown
-		true -- unknown, true
-	)
-	ParticleManager:SetParticleControlEnt(
-		effect_cast,
-		2,
-		self:GetParent(),
-		PATTACH_POINT_FOLLOW,
-		"attach_hitloc",
-		Vector(0,0,0), -- unknown
-		true -- unknown, true
-	)
-	ParticleManager:SetParticleControl( effect_cast, 3, Vector( self.rotate_radius, self.rotate_radius, self.rotate_radius ) )
-	ParticleManager:ReleaseParticleIndex( effect_cast )
+	if self and not self:IsNull() and self:GetParent() and not self:GetParent():IsNull() then
+		-- Create Particle
+		-- local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+		local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+		ParticleManager:SetParticleControlEnt(
+			effect_cast,
+			1,
+			self:GetParent(),
+			PATTACH_ABSORIGIN_FOLLOW,
+			"attach_hitloc",
+			Vector(0,0,0), -- unknown
+			true -- unknown, true
+		)
+		ParticleManager:SetParticleControlEnt(
+			effect_cast,
+			2,
+			self:GetParent(),
+			PATTACH_POINT_FOLLOW,
+			"attach_hitloc",
+			Vector(0,0,0), -- unknown
+			true -- unknown, true
+		)
+		ParticleManager:SetParticleControl( effect_cast, 3, Vector( self.rotate_radius, self.rotate_radius, self.rotate_radius ) )
+		ParticleManager:ReleaseParticleIndex( effect_cast )
+	end	
 end

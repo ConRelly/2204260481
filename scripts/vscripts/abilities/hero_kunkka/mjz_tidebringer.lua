@@ -51,9 +51,11 @@ function modifier_mjz_tidebringer:OnDestroy()
 end
 function modifier_mjz_tidebringer:OnIntervalThink()
 	if IsServer() then
-		if (not self:GetCaster():HasModifier("modifier_mjz_tidebringer_sword_particle")) and self:GetAbility():IsCooldownReady() and (self:GetCaster():GetUnitName() == "npc_dota_hero_kunkka") or (self:GetCaster():GetUnitName() == "npc_dota_hero_kunkka_mjz") then
-			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_mjz_tidebringer_sword_particle", {})
-		end
+		if self:GetAbility() and not self:GetAbility():IsNull() and self:GetCaster() and not self:GetCaster():IsNull() then
+			if (not self:GetCaster():HasModifier("modifier_mjz_tidebringer_sword_particle")) and self:GetAbility():IsCooldownReady() and (self:GetCaster():GetUnitName() == "npc_dota_hero_kunkka") or (self:GetCaster():GetUnitName() == "npc_dota_hero_kunkka_mjz") then
+				self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_mjz_tidebringer_sword_particle", {})
+			end
+		end	
 	end
 end
 function modifier_mjz_tidebringer:DeclareFunctions()

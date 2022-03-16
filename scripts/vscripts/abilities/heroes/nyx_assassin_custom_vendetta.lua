@@ -72,12 +72,16 @@ end
 
 
 function modifier_nyx_assassin_custom_vendetta_invis:GetModifierMoveSpeedBonus_Percentage()
-    return self:GetAbility():GetSpecialValueFor("movement_speed")
+    if self:GetAbility() then
+        return self:GetAbility():GetSpecialValueFor("movement_speed")
+    end    
 end
 
 
 function modifier_nyx_assassin_custom_vendetta_invis:GetModifierSpellAmplify_Percentage()
-    return self:GetAbility():GetSpecialValueFor("spell_amp")
+    if self:GetAbility() then
+        return self:GetAbility():GetSpecialValueFor("spell_amp")
+    end     
 end
 
 

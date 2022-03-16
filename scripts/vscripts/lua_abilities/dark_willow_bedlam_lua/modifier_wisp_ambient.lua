@@ -85,36 +85,37 @@ end
 function modifier_wisp_ambient:PlayEffects()
 	-- Get Resources
 	local particle_cast = "particles/units/heroes/hero_dark_willow/dark_willow_willowisp_ambient.vpcf"
+	if self and not self:IsNull() and self:GetParent() and not self:GetParent():IsNull() then
+		-- Create Particle
+		-- self.effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+		self.effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+		ParticleManager:SetParticleControlEnt(
+			self.effect_cast,
+			0,
+			self:GetParent(),
+			PATTACH_POINT_FOLLOW,
+			"attach_hitloc",
+			Vector(0,0,0), -- unknown
+			true -- unknown, true
+		)
+		ParticleManager:SetParticleControlEnt(
+			self.effect_cast,
+			1,
+			self:GetParent(),
+			PATTACH_POINT_FOLLOW,
+			"attach_hitloc",
+			Vector(0,0,0), -- unknown
+			true -- unknown, true
+		)
 
-	-- Create Particle
-	-- self.effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-	self.effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
-	ParticleManager:SetParticleControlEnt(
-		self.effect_cast,
-		0,
-		self:GetParent(),
-		PATTACH_POINT_FOLLOW,
-		"attach_hitloc",
-		Vector(0,0,0), -- unknown
-		true -- unknown, true
-	)
-	ParticleManager:SetParticleControlEnt(
-		self.effect_cast,
-		1,
-		self:GetParent(),
-		PATTACH_POINT_FOLLOW,
-		"attach_hitloc",
-		Vector(0,0,0), -- unknown
-		true -- unknown, true
-	)
-
-	-- buff particle
-	self:AddParticle(
-		self.effect_cast,
-		false, -- bDestroyImmediately
-		false, -- bStatusEffect
-		-1, -- iPriority
-		false, -- bHeroEffect
-		false -- bOverheadEffect
-	)
+		-- buff particle
+		self:AddParticle(
+			self.effect_cast,
+			false, -- bDestroyImmediately
+			false, -- bStatusEffect
+			-1, -- iPriority
+			false, -- bHeroEffect
+			false -- bOverheadEffect
+		)
+	end	
 end

@@ -94,9 +94,11 @@ function modifier_bristleback_warpath_lua:AddStack()
 end
 function modifier_bristleback_warpath_lua:RemoveStack()
 	if IsServer() then
-		if self:GetAbility() and IsValidEntity(self:GetAbility()) then
-			self:GetAbility():DecrementStackCount()
-			self:SetStackCount(math.min(self:GetAbility():GetStackCount(), self:GetAbility():GetSpecialValueFor("max_stacks")))
+		if self and not self:IsNull() then
+			if self:GetAbility() and not self:GetAbility():IsNull() and IsValidEntity(self:GetAbility()) then
+				self:GetAbility():DecrementStackCount()
+				self:SetStackCount(math.min(self:GetAbility():GetStackCount(), self:GetAbility():GetSpecialValueFor("max_stacks")))
+			end
 		end		
 	end
 end

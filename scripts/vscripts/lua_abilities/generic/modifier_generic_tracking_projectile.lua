@@ -75,37 +75,39 @@ end
 --
 function modifier_generic_tracking_projectile:PlayTrackingProjectile( info )
 	-- self.effect_cast = ParticleManager:CreateParticle( info.EffectName, PATTACH_ABSORIGIN, info.Source )
-	self.effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, info.EffectName, PATTACH_ABSORIGIN, info.Source )
-	ParticleManager:SetParticleControlEnt(
-		self.effect_cast,
-		0,
-		info.Source,
-		PATTACH_POINT_FOLLOW,
-		"attach_attack1",
-		Vector(0,0,0), -- unknown
-		true -- unknown, true
-	)
-	ParticleManager:SetParticleControlEnt(
-		self.effect_cast,
-		1,
-		info.Target,
-		PATTACH_POINT_FOLLOW,
-		"attach_hitloc",
-		Vector(0,0,0), -- unknown
-		true -- unknown, true
-	)
-	ParticleManager:SetParticleControlEnt(
-		self.effect_cast,
-		9,
-		info.Source,
-		PATTACH_POINT_FOLLOW,
-		"attach_attack1",
-		Vector(0,0,0), -- unknown
-		true -- unknown, true
-	)
-	ParticleManager:SetParticleControl( self.effect_cast, 2, Vector( info.iMoveSpeed, 0, 0 ) )
+	if self and not self:IsNull() then
+		self.effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, info.EffectName, PATTACH_ABSORIGIN, info.Source )
+		ParticleManager:SetParticleControlEnt(
+			self.effect_cast,
+			0,
+			info.Source,
+			PATTACH_POINT_FOLLOW,
+			"attach_attack1",
+			Vector(0,0,0), -- unknown
+			true -- unknown, true
+		)
+		ParticleManager:SetParticleControlEnt(
+			self.effect_cast,
+			1,
+			info.Target,
+			PATTACH_POINT_FOLLOW,
+			"attach_hitloc",
+			Vector(0,0,0), -- unknown
+			true -- unknown, true
+		)
+		ParticleManager:SetParticleControlEnt(
+			self.effect_cast,
+			9,
+			info.Source,
+			PATTACH_POINT_FOLLOW,
+			"attach_attack1",
+			Vector(0,0,0), -- unknown
+			true -- unknown, true
+		)
+		ParticleManager:SetParticleControl( self.effect_cast, 2, Vector( info.iMoveSpeed, 0, 0 ) )
 
-	return self.effect_cast
+		return self.effect_cast
+	end	
 end
 
 function modifier_generic_tracking_projectile:StopTrackingProjectile()

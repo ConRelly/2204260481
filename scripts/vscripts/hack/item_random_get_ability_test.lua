@@ -97,7 +97,7 @@ function GetRandomAbilityName( hero )
         --"antimage_custom_mana_break",
         "dark_willow_shadow_realm_lua",
         "jotaro_absolute_defense3",
-        --"dazzle_good_juju",
+        "nevermore_custom_necromastery",
         "dzzl_good_juju",
         --"back_in_time",
         --"medusa_custom_stone_arrows",

@@ -46,6 +46,7 @@ if IsServer() then
     end
 
     function modifier_class:OnIntervalThink()
+        if not self:GetAbility() then if not self:IsNull() then self:Destroy() return end end
         local caster = self:GetCaster()
         local ability = self:GetAbility()
         local parent = self:GetParent()

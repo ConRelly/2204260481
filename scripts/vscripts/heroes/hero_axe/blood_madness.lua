@@ -36,7 +36,7 @@ function modifier_blood_madness:GetModifierPhysicalArmorBonus(params)
 		return bonus_armor
 	end	
 end
-function modifier_blood_madness:GetModifierBonusStats_Strength(params) return self:GetAbility():GetSpecialValueFor("bonus_str") * self:GetStackCount() end
+function modifier_blood_madness:GetModifierBonusStats_Strength(params) if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_str") * self:GetStackCount() end end
 
 ----------------------------------------------------------------------------------------
 modifier_blood_madness_checker = class({})

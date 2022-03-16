@@ -311,7 +311,7 @@ if IsServer() then
 			self.ability:StartCooldown(cooldown)
 			if keys.ability and keys.ability:GetName() == "phantom_lancer_phantom_edge" then
 				keys.ability:EndCooldown()
-				keys.ability:StartCooldown(1.5)
+				keys.ability:StartCooldown(1.0)
 			end
 		end	
 	end

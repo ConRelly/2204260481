@@ -1009,8 +1009,9 @@ function AOHGameMode:OnEntitySpawned(event)
 					Timers:CreateTimer({
 						endTime = skip, 
 						callback = function()
+							if unit:IsNull() then return end
 							local ability = playerHero:GetAbilityByIndex(abilitySlot)
-							if ability ~= nil then 
+							if ability ~= nil and not ability:IsNull() then 
 								local abilityLevel = ability:GetLevel()
 								local abilityName = ability:GetAbilityName()
 								if unit and IllusionNotLearn[abilityName] ~= true and not unit:HasAbility(abilityName) and not ability:IsAttributeBonus() then

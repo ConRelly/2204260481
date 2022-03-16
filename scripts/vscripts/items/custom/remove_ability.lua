@@ -23,7 +23,7 @@ if IsServer() then
                 ability:SpendCharge()
                 return nil 
             end
-        end            
+        end         
         
         if hero:HasModifier("modifier_arc_warden_tempest_double") then
             ability:SetActivated(false)
@@ -34,9 +34,24 @@ if IsServer() then
             --print("real hero check")
             local oldAbility = hero:GetAbilityByIndex(0)
             --print(oldAbility:GetName().. " first skill")
+            if oldAbility and oldAbility:GetName()~= "ogre_magi_unrefined_fireblast_lua" then
+                local swap_fireblast = true
+                for i=6,hero:GetAbilityCount() -1 do
+                    if swap_fireblast then
+                        local hAbility = hero:GetAbilityByIndex( i )
+                        if hAbility and not hAbility:IsAttributeBonus() and not hAbility:IsHidden() and not string.find(hAbility:GetAbilityName(), "empty") then  -- Talent-- Dunno
+                            local bAbility = hAbility:GetName()
+                            --print(bAbility .." 7th ability")                     
+                            hero:SwapAbilities( "ogre_magi_unrefined_fireblast_lua", bAbility, true, true )   
+                            swap_fireblast = false
+                        end
+                    end    
+                end               
+            end
             if oldAbility and oldAbility:GetName()~= "ogre_magi_unrefined_fireblast_lua" and oldAbility:GetName()~= "mjz_bristleback_quill_spray_autocast4" and oldAbility:GetName()~= "temporary_slot_used" and oldAbility:GetName()~= "mjz_bristleback_quill_spray_autocast4_5" and oldAbility:GetName()~= "change_bullets_type"  and not string.find(oldAbility:GetAbilityName(), "empty") then
                 local abilityPoints = 1
                 local abilityName = oldAbility:GetName()
+                if oldAbility:GetToggleState() then print("Toggle OF he skill") return end
                 --hero:RemoveItem(ability) 
                 abilityPoints = oldAbility:GetLevel()
                 hero:RemoveAbility(abilityName)

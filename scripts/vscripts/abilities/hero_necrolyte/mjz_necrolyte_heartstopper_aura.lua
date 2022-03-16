@@ -106,6 +106,8 @@ if IsServer() then
 	end
 
 	function modifier_effect:OnIntervalThink()
+		if not self:GetAbility() then return end
+		if self:GetAbility():IsNull() then return end
 		if not self:GetAbility():GetToggleState() then return end
 		if self:GetCaster():PassivesDisabled() then return end
 

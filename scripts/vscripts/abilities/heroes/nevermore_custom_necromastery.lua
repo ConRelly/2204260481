@@ -16,7 +16,7 @@ function nevermore_custom_necromastery:GetBehavior()
 end
 function nevermore_custom_necromastery:GetCooldown(level)
 	if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
-		return 2
+		return 3
 	end
 	return 0
 end

@@ -1506,6 +1506,7 @@
 		"Ability2"				"death_prophet_custom_moving_life"
 		"Ability10"				"special_bonus_unique_death_prophet_3"
 		"Ability12"				"special_bonus_reincarnation_90"
+		"Ability13"             "special_bonus_spell_amplify_100"
 		"Ability14"				"special_bonus_hp_4000"
 		"Ability15"				"special_bonus_unique_mjz_death_prophet_carrion_swarm_int"
 		"Ability16"				"special_bonus_attack_speed_200"

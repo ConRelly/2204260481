@@ -33,6 +33,12 @@ if IsServer() then
 	end
 
 	function modifier_caster:OnIntervalThink()
+		if self and not self:GetAbility() then
+			if not self:IsNull() then
+				self:Destroy()
+			end
+			return	
+		end			
 		local parent = self:GetParent()
 		local caster = self:GetCaster()
 		local ability = self:GetAbility()
@@ -54,6 +60,7 @@ if IsServer() then
 
 		for _,enemy in pairs(enemy_list) do
 			local postDmg = ApplyDamage({
+				ability = ability,
 				victim = enemy, 
 				attacker = caster, 
 				damage = damage, 
@@ -88,7 +95,7 @@ end
 ------------------------------------------------
 
 function modifier_caster:IsAura() return true end
-function modifier_caster:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("radius") end
+function modifier_caster:GetAuraRadius() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("radius") end end
 function modifier_caster:GetModifierAura() return "modifier_mjz_doom_bringer_doom_debuff" end
 function modifier_caster:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
 function modifier_caster:GetAuraEntityReject(target) return self:GetParent():IsIllusion() end
@@ -112,6 +119,12 @@ end
 
 function modifier_mana:OnIntervalThink()
 	if IsServer() then
+		if self and not self:GetAbility() then
+			if not self:IsNull() then
+				self:Destroy()
+			end
+			return	
+		end	
         local ability = self:GetAbility()
         local parent = self:GetParent()
 
@@ -158,12 +171,15 @@ function modifier_debuff:DeclareFunctions()
 end
 
 function modifier_debuff:GetModifierMagicalResistanceBonus()
+	if not self:GetAbility() then return end
 	return self:GetAbility():GetSpecialValueFor('debuff_magical_resistance')
 end
 function modifier_debuff:GetModifierAttackSpeedBonus_Constant()
+	if not self:GetAbility() then return end
 	return self:GetAbility():GetSpecialValueFor('debuff_attack_speed')
 end
 function modifier_debuff:GetModifierMoveSpeedBonus_Percentage()
+	if not self:GetAbility() then return end
 	return self:GetAbility():GetSpecialValueFor('debuff_move_speed')
 end
 -----------------------------------------------------------------------------------------

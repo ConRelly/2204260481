@@ -127,7 +127,7 @@ function modifier_mjz_lina_laguna_blade_bonus:OnCreated()
 end
 function modifier_mjz_lina_laguna_blade_bonus:OnRefresh() if not IsServer() then return end self:IncrementStackCount() end
 function modifier_mjz_lina_laguna_blade_bonus:DeclareFunctions() return {MODIFIER_PROPERTY_TOOLTIP} end
-function modifier_mjz_lina_laguna_blade_bonus:OnTooltip() return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("intmult_per_kill") end
+function modifier_mjz_lina_laguna_blade_bonus:OnTooltip() if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("intmult_per_kill") end end
 
 --Delay Finger modifier
 modifier_mjz_lina_laguna_blade_delay = class({})
@@ -142,7 +142,7 @@ end
 function modifier_mjz_lina_laguna_blade_delay:DeclareFunctions()
 	return {MODIFIER_PROPERTY_TOOLTIP}
 end
-function modifier_mjz_lina_laguna_blade_delay:OnTooltip() return self:GetAbility():GetSpecialValueFor("intmult_per_kill") end
+function modifier_mjz_lina_laguna_blade_delay:OnTooltip() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("intmult_per_kill") end end
 
 
 --------------------------------------------------------------------------------

@@ -6352,7 +6352,7 @@ You can't target yourself."
 "DOTA_Tooltip_ability_nevermore_custom_necromastery_spell_amp_per_soul"				  "%Spell Amp Per Soul:"
 "DOTA_Tooltip_ability_nevermore_custom_necromastery_necromastery_max_souls_scepter"	 "SCEPTER MAX SOULS:"
 "DOTA_Tooltip_ability_nevermore_custom_necromastery_scepter_description"	"Increases max souls by %scepter_bonus_souls%."
-"DOTA_Tooltip_ability_nevermore_necromastery_shard_description"		"Shadow Fiend gains 2 souls per hit. Additionally Shadow Fiend can devour 1 soul to deal a 200%% crit damage with an attack. For each devoured soul but not used, the crit damage increases by an additional 100%%<br>CD: 2s"
+"DOTA_Tooltip_ability_nevermore_custom_necromastery_shard_description"		"Shadow Fiend gains 2 souls per hit. Additionally Shadow Fiend can devour 1 soul to deal a 200%% crit damage with an attack. For each devoured soul but not used, the crit damage increases by an additional 100%%<br>CD: 3s"
 
 
 "DOTA_Tooltip_modifier_nevermore_custom_necromastery"								"Necromastery"

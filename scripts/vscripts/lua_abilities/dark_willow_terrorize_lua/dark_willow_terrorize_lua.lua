@@ -222,20 +222,21 @@ end
 function dark_willow_terrorize_lua:PlayEffects1( point, radius )
 	-- Get Resources
 	local particle_cast = "particles/units/heroes/hero_dark_willow/dark_willow_wisp_spell_marker.vpcf"
+	if self and not self:IsNull() and self:GetCaster() and not self:GetCaster():IsNull() then
+		-- Create Particle
+		-- self.effect_cast1 = ParticleManager:CreateParticleForTeam( particle_cast, PATTACH_WORLDORIGIN, nil, self:GetCaster():GetTeamNumber() )
+		self.effect_cast1 = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_WORLDORIGIN, nil, self:GetCaster():GetTeamNumber() )
+		ParticleManager:SetParticleControl( self.effect_cast1, 0, point )
+		ParticleManager:SetParticleControl( self.effect_cast1, 1, Vector( radius, 0, 0 ) )
 
-	-- Create Particle
-	-- self.effect_cast1 = ParticleManager:CreateParticleForTeam( particle_cast, PATTACH_WORLDORIGIN, nil, self:GetCaster():GetTeamNumber() )
-	self.effect_cast1 = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_WORLDORIGIN, nil, self:GetCaster():GetTeamNumber() )
-	ParticleManager:SetParticleControl( self.effect_cast1, 0, point )
-	ParticleManager:SetParticleControl( self.effect_cast1, 1, Vector( radius, 0, 0 ) )
-
-	-- play sound
-	local sound_cast1 = "Hero_DarkWillow.Fear.Cast"
-	local sound_cast2 = "Hero_DarkWillow.Fear.Wisp"
-	local sound_cast3 = "Hero_DarkWillow.Fear.Location"
-	EmitSoundOn( sound_cast1, self:GetCaster() )
-	EmitSoundOn( sound_cast2, self:GetCaster() )
-	EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), sound_cast3, self:GetCaster() )
+		-- play sound
+		local sound_cast1 = "Hero_DarkWillow.Fear.Cast"
+		local sound_cast2 = "Hero_DarkWillow.Fear.Wisp"
+		local sound_cast3 = "Hero_DarkWillow.Fear.Location"
+		EmitSoundOn( sound_cast1, self:GetCaster() )
+		EmitSoundOn( sound_cast2, self:GetCaster() )
+		EmitSoundOnLocationWithCaster( self:GetCaster():GetOrigin(), sound_cast3, self:GetCaster() )
+	end	
 end
 function dark_willow_terrorize_lua:StopEffects1()
 	-- destroy particle
@@ -254,10 +255,11 @@ end
 function dark_willow_terrorize_lua:PlayEffects2()
 	-- Get Resources
 	local particle_cast = "particles/units/heroes/hero_dark_willow/dark_willow_wisp_spell_channel.vpcf"
-
-	-- Create Particle
-	-- self.effect_cast2 = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self.wisp )
-	self.effect_cast2 = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, self.wisp )
+	if self and not self:IsNull() and self.wisp and not self.wisp:IsNull() then
+		-- Create Particle
+		-- self.effect_cast2 = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self.wisp )
+		self.effect_cast2 = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, self.wisp )
+	end	
 end
 function dark_willow_terrorize_lua:StopEffects2()
 	-- destroy particle
@@ -269,16 +271,17 @@ function dark_willow_terrorize_lua:PlayEffects3( point, radius, number )
 	-- Get Resources
 	local particle_cast = "particles/units/heroes/hero_dark_willow/dark_willow_wisp_spell.vpcf"
 	local sound_cast = "Hero_DarkWillow.Fear.FP"
+	if self and not self:IsNull() then
+		-- Create Particle
+		-- local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_WORLDORIGIN, nil )
+		local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_WORLDORIGIN, nil )
+		ParticleManager:SetParticleControl( effect_cast, 0, point )
+		ParticleManager:SetParticleControl( effect_cast, 1, Vector( radius, 0, radius*2 ) )
+		ParticleManager:ReleaseParticleIndex( effect_cast )
 
-	-- Create Particle
-	-- local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_WORLDORIGIN, nil )
-	local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_WORLDORIGIN, nil )
-	ParticleManager:SetParticleControl( effect_cast, 0, point )
-	ParticleManager:SetParticleControl( effect_cast, 1, Vector( radius, 0, radius*2 ) )
-	ParticleManager:ReleaseParticleIndex( effect_cast )
-
-	-- Create Sound
-	if number>0 then
-		EmitSoundOnLocationWithCaster( point, sound_cast, self:GetCaster() )
-	end
+		-- Create Sound
+		if number>0 then
+			EmitSoundOnLocationWithCaster( point, sound_cast, self:GetCaster() )
+		end
+	end	
 end

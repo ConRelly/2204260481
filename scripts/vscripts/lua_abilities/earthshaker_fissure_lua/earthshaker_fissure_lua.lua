@@ -100,21 +100,22 @@ function earthshaker_fissure_lua:PlayEffects( start_pos, end_pos, duration )
 	-- Get Resources
 	local particle_cast = "particles/units/heroes/hero_earthshaker/earthshaker_fissure.vpcf"
 	local sound_cast = "Hero_EarthShaker.Fissure"
+	if self and not self:IsNull() and self:GetCaster() and not self:GetCaster():IsNull() then
+		-- generate data
+		local caster = self:GetCaster()
 
-	-- generate data
-	local caster = self:GetCaster()
+		-- Create Particle
+		-- local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_WORLDORIGIN, caster )
+		local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_WORLDORIGIN, caster )
+		ParticleManager:SetParticleControl( effect_cast, 0, start_pos )
+		ParticleManager:SetParticleControl( effect_cast, 1, end_pos )
+		ParticleManager:SetParticleControl( effect_cast, 2, Vector( duration, 0, 0 ) )
+		ParticleManager:ReleaseParticleIndex( effect_cast )
 
-	-- Create Particle
-	-- local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_WORLDORIGIN, caster )
-	local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_WORLDORIGIN, caster )
-	ParticleManager:SetParticleControl( effect_cast, 0, start_pos )
-	ParticleManager:SetParticleControl( effect_cast, 1, end_pos )
-	ParticleManager:SetParticleControl( effect_cast, 2, Vector( duration, 0, 0 ) )
-	ParticleManager:ReleaseParticleIndex( effect_cast )
-
-	-- Create Sound
-	EmitSoundOnLocationWithCaster( start_pos, sound_cast, caster )
-	EmitSoundOnLocationWithCaster( end_pos, sound_cast, caster )
+		-- Create Sound
+		EmitSoundOnLocationWithCaster( start_pos, sound_cast, caster )
+		EmitSoundOnLocationWithCaster( end_pos, sound_cast, caster )
+	end	
 end
 
 -- 获得天赋技能的数据值

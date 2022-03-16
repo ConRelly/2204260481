@@ -43,10 +43,12 @@ if IsServer() then
 		local ability = self:GetAbility()
 		local caster = self:GetCaster()
 		local parent = self:GetParent()
-		local pulse_duration = ability:GetSpecialValueFor('pulse_duration')
-		
-		EmitSoundOn("Hero_Slark.DarkPact.Cast", caster)
-		parent:AddNewModifier(caster, ability, "modifier_mjz_slark_dark_pact_effect", {duration = pulse_duration})
+		if ability and not ability:IsNull() then
+			local pulse_duration = ability:GetSpecialValueFor('pulse_duration')
+			
+			EmitSoundOn("Hero_Slark.DarkPact.Cast", caster)
+			parent:AddNewModifier(caster, ability, "modifier_mjz_slark_dark_pact_effect", {duration = pulse_duration})
+		end	
 	end
 end
 
