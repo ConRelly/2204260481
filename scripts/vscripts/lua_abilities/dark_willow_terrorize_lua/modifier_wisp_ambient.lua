@@ -86,6 +86,8 @@ function modifier_wisp_ambient:PlayEffects()
 	-- Get Resources
 	local particle_cast = "particles/units/heroes/hero_dark_willow/dark_willow_willowisp_ambient.vpcf"
 	if self and not self:IsNull() and self:GetParent() and not self:GetParent():IsNull() then
+		if not self:GetAbility()then return end
+		if self:GetAbility():IsNull() then return end		
 		-- Create Particle
 		-- self.effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 		self.effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )

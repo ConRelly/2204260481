@@ -222,7 +222,7 @@ end
 function dark_willow_terrorize_lua:PlayEffects1( point, radius )
 	-- Get Resources
 	local particle_cast = "particles/units/heroes/hero_dark_willow/dark_willow_wisp_spell_marker.vpcf"
-	if self and not self:IsNull() and self:GetCaster() and not self:GetCaster():IsNull() then
+	if self and not self:IsNull() and self:GetCaster() and not self:GetCaster():IsNull() then		
 		-- Create Particle
 		-- self.effect_cast1 = ParticleManager:CreateParticleForTeam( particle_cast, PATTACH_WORLDORIGIN, nil, self:GetCaster():GetTeamNumber() )
 		self.effect_cast1 = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_WORLDORIGIN, nil, self:GetCaster():GetTeamNumber() )
@@ -255,7 +255,7 @@ end
 function dark_willow_terrorize_lua:PlayEffects2()
 	-- Get Resources
 	local particle_cast = "particles/units/heroes/hero_dark_willow/dark_willow_wisp_spell_channel.vpcf"
-	if self and not self:IsNull() and self.wisp and not self.wisp:IsNull() then
+	if self and not self:IsNull() and self.wisp and not self.wisp:IsNull() then		
 		-- Create Particle
 		-- self.effect_cast2 = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self.wisp )
 		self.effect_cast2 = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, self.wisp )

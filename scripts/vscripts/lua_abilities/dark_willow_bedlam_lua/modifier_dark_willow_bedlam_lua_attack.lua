@@ -96,6 +96,8 @@ end
 -- Interval Effects
 function modifier_dark_willow_bedlam_lua_attack:OnIntervalThink()
 	-- find enemies
+	if not self:GetAbility()then return end
+	if self:GetAbility():IsNull() then return end
 	local enemies = FindUnitsInRadius(
 		self:GetCaster():GetTeamNumber(),	-- int, your team number
 		self:GetParent():GetOrigin(),	-- point, center point
@@ -137,6 +139,8 @@ function modifier_dark_willow_bedlam_lua_attack:PlayEffects()
 	-- Create Particle
 	-- local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 	if self and not self:IsNull() and self:GetParent() and not self:GetParent():IsNull() then
+		if not self:GetAbility()then return end
+		if self:GetAbility():IsNull() then return end		
 		local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 		ParticleManager:SetParticleControl( effect_cast, 1, Vector( self.radius, self.radius, self.radius ) )
 
@@ -156,7 +160,7 @@ function modifier_dark_willow_bedlam_lua_attack:PlayEffects()
 end
 
 function modifier_dark_willow_bedlam_lua_attack:PlayEffects1( target, speed )
-	if self and not self:IsNull() and target and not target:IsNull() then
+	if self:GetAbility() and not self:GetAbility():IsNull() and target and not target:IsNull() and self:GetParent() and not self:GetParent():IsNull() then
 		local particle_cast = "particles/units/heroes/hero_dark_willow/dark_willow_willowisp_base_attack.vpcf"
 		local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, target )
 

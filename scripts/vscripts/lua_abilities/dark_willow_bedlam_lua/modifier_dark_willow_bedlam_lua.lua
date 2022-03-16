@@ -92,6 +92,8 @@ end
 
 function modifier_dark_willow_bedlam_lua:OnRefresh( kv )
 	-- refresh references
+	if not self:GetAbility()then return end
+	if self:GetAbility():IsNull() then return end	
 	self.revolution = self:GetAbility():GetSpecialValueFor( "roaming_seconds_per_rotation" )
 	self.rotate_radius = self:GetAbility():GetSpecialValueFor( "roaming_radius" )
 
@@ -144,6 +146,8 @@ function modifier_dark_willow_bedlam_lua:PlayEffects()
 	-- Get Resources
 	local particle_cast = "particles/units/heroes/hero_dark_willow/dark_willow_wisp_aoe_cast.vpcf"
 	if self and not self:IsNull() and self:GetParent() and not self:GetParent():IsNull() then
+		if not self:GetAbility()then return end
+		if self:GetAbility():IsNull() then return end
 		-- Create Particle
 		-- local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 		local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )

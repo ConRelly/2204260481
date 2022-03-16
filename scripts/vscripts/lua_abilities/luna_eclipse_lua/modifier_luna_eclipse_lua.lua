@@ -89,6 +89,8 @@ end
 --------------------------------------------------------------------------------
 -- Interval Effects
 function modifier_luna_eclipse_lua:OnIntervalThink()
+	if not self:GetAbility()then return end
+	if self:GetAbility():IsNull() then return end	
 	local new_moon_chance = self:GetAbility():GetSpecialValueFor("new_moon_chance")
 	local modifier_buffa = "modifier_mjz_luna_under_the_moonlight_buff"
 	local mbuf = self.caster:FindModifierByName(modifier_buffa)
@@ -150,6 +152,8 @@ function modifier_luna_eclipse_lua:PlayEffects1()
 
 	-- Get Data
 	if self and not self:IsNull() and self:GetParent() and not self:GetParent():IsNull() then	
+		if not self:GetAbility()then return end
+		if self:GetAbility():IsNull() then return end		
 		local effect_cast = nil
 		if self.point then
 			-- effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_WORLDORIGIN, nil )
@@ -185,6 +189,8 @@ function modifier_luna_eclipse_lua:PlayEffects2( target, point )
 	local sound_target = "Hero_Luna.Eclipse.Target"
 	local sound_fail = "Hero_Luna.Eclipse.NoTarget"
 	if self and not self:IsNull() then
+		if not self:GetAbility()then return end
+		if self:GetAbility():IsNull() then return end		
 		if not target then
 			if self.caster and not self.caster:IsNull() then
 				local vector = point + RandomVector( RandomInt( 0, self.radius ) )

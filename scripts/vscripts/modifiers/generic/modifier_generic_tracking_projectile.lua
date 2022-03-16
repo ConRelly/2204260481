@@ -76,6 +76,8 @@ end
 function modifier_generic_tracking_projectile:PlayTrackingProjectile( info )
 	-- self.effect_cast = ParticleManager:CreateParticle( info.EffectName, PATTACH_ABSORIGIN, info.Source )
 	if self and not self:IsNull() then
+		if not self:GetAbility()then return end
+		if self:GetAbility():IsNull() then return end		
 		self.effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, info.EffectName, PATTACH_ABSORIGIN, info.Source )
 		ParticleManager:SetParticleControlEnt(
 			self.effect_cast,

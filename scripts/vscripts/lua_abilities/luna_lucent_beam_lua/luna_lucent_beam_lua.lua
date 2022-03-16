@@ -123,7 +123,7 @@ function luna_lucent_beam_lua:PlayEffects2(target)
 
 	-- Create Particle
 	-- local effect_cast = ParticleManager:CreateParticle(particle_cast, PATTACH_ABSORIGIN_FOLLOW, target)
-	if self and not self:IsNull() and target and not target:IsNull() and self:GetCaster() and not self:GetCaster():IsNull() then
+	if self and not self:IsNull() and target and not target:IsNull() and self:GetCaster() and not self:GetCaster():IsNull() then		
 		local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, target)
 		ParticleManager:SetParticleControl(effect_cast, 0, target:GetOrigin())
 		ParticleManager:SetParticleControlEnt(
