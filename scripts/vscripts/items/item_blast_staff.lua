@@ -8,19 +8,25 @@ local parent = self:GetParent()
 	parent:FindModifierByName("modifier_item_blast_staff"):ForceRefresh()
 end
 function item_blast_staff:OnSpellStart()
-	local parent = self:GetParent()
+	local parent = self:GetCaster()
 	local target = self:GetCursorPosition()
 	local strikes = self:GetSpecialValueFor("strikes")
+
+	local range = 1200
+	local projectile_speed = 4100--1500
+--	local direction = (target - parent:GetAbsOrigin()):Normalized()
+--	local spawn_origin = parent:GetAbsOrigin() + direction * range
+
 	for count = 1, strikes do
-		local tempTarget = target + Vector(RandomInt(-150, 150), RandomInt(-150, 150), 0)
+		local tempTarget = target + Vector(RandomInt(-150, 150),RandomInt(-150, 150), 0)
 		local direction = (tempTarget - parent:GetAbsOrigin()):Normalized()
-		local direction = (direction * Vector(1, 1, 0)):Normalized()
+
 		ProjectileManager:CreateLinearProjectile({
-			EffectName = "particles/custom/items/blast_staff/blast_staff_active.vpcf",
 			Ability = self,
-			vSpawnOrigin = parent:GetAbsOrigin() + Vector(0, 0, 100),
-			vVelocity = direction * 4100,
-			fDistance = 1200 + parent:GetCastRangeBonus(),
+			EffectName = "particles/custom/items/blast_staff/blast_staff_active.vpcf",
+			vSpawnOrigin = parent:GetAbsOrigin() + Vector(0,0,100),
+			fDistance = range + parent:GetCastRangeBonus(),
+			vVelocity = direction * projectile_speed * Vector(1,1,0),
 			fStartRadius = 120,
 			fEndRadius = 120,
 			Source = parent,
@@ -33,6 +39,7 @@ function item_blast_staff:OnSpellStart()
 			iUnitTargetType = self:GetAbilityTargetType(),
 		})
 	end
+
 	parent:EmitSound("Hero_Alchemist.UnstableConcoction.Stun")
 	parent:EmitSound("Hero_Alchemist.UnstableConcoction.Stun")
 end

@@ -257,7 +257,7 @@ function CDOTA_BaseNPC:AddChill(hAbility, hCaster, chillDuration, chillAmount)
 	local chillBonus = chillAmount or 1
 	local bonusDur = chillBonus * 0.1
 	local currentChillDuration = 0
-	local currentChill =  self:FindModifierByName("modifier_chill_generic")
+	local currentChill = self:FindModifierByName("modifier_chill_generic")
 	if currentChill then
 		currentChillDuration = currentChill:GetRemainingTime()
 	end
@@ -269,7 +269,7 @@ function CDOTA_BaseNPC:AddChill(hAbility, hCaster, chillDuration, chillAmount)
 	end
 	local modifier = self:AddNewModifier(hCaster, hAbility, "modifier_chill_generic", {Duration = appliedDuration})
 	if modifier then
-		modifier:SetStackCount( modifier:GetStackCount() + chillBonus)
+		modifier:SetStackCount(modifier:GetStackCount() + chillBonus)
 	end
 end
 

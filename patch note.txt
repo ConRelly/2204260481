@@ -1774,6 +1774,31 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 * Earth rapier Half CD but can't be mimicked.
 * Buffed Shadow Fiend ultimate: less cd on higher lvls and scales better with agility.
 * Skills that are toggle ON can't be removed until they are toggle OFF.
+* Fixed a lot of recipe's models
+* (Probably) Fixed Ion Shell (Dark Seer) crash
+* Fixed Slithereen Crush (Slardar) slow talent (left) (10 lvl)
+* Fixed Rollin’ Stone (Earth Spirit) talent (right) (15 lvl)
+* Fixed Wave of Terror (Vengeful Spirit) range with bonus cast range
+* Slithereen Crush (Slardar):
+	-- Added animation and 'phased'
+	-- Increased health cost per second
+* Necromastery (Shadow Fiend): Aghanim's Shard: Changed projectile effect
+* Autocast + Multi Autocast:
+	-- Not required skill point
+	-- Cannot be used when the ability is already there
+* Dream Coil (Puck) is now playable
+* Puck: Added new talent (left) (20 lvl)
+* God Slayer:
+	-- Fixed 5 armor
+	-- Can now be stopped by the "STOP" command
+	-- Does not deal damage if the owner is disarmed
+	-- During God Slash, owner can use abilities or items
+* Remove First Skill/Remove Empty Skill: If inventory, backpack or stash is full then Removed Skill Prof just drop on the floor
+* Mimic Mace: Cannot be triggered while God Slash (God Slayer) is active
+* Fixed Greater Blast Staff/Blast Staff active effects
+* IO: Changed Infest to Amalgamation
+* Now all neutral items of the 5th Tier can be sent to a neutral stash
+* Fixed some (or a lot) stuff and bugs
 
 
 

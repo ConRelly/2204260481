@@ -189,19 +189,8 @@ function modifier_skadi_bow:IsHidden() return true end
 function modifier_skadi_bow:IsPurgable() return false end
 function modifier_skadi_bow:RemoveOnDeath() return false end
 function modifier_skadi_bow:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
-function modifier_skadi_bow:OnCreated()
-	if IsServer() then if not self:GetAbility() then self:Destroy() end
-		self.Default_Attack = self:GetCaster():GetRangedProjectileName()
-		self:GetParent():SetRangedProjectileName("particles/custom/items/skadi_bow/skadi_projectile.vpcf")
-	end
-end
-function modifier_skadi_bow:OnDestroy()
-	if IsServer() then 
-		self:GetParent():SetRangedProjectileName(self.Default_Attack)
-	end
-end
 function modifier_skadi_bow:DeclareFunctions()
-	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_MANA_BONUS, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_MANA_BONUS, MODIFIER_EVENT_ON_ATTACK_LANDED}
+	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_MANA_BONUS, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_MANA_BONUS, MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_PROPERTY_PROJECTILE_NAME}
 end
 function modifier_skadi_bow:GetModifierPreAttack_BonusDamage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("damage") end
@@ -237,6 +226,10 @@ function modifier_skadi_bow:OnAttackLanded(keys)
 		target:AddNewModifier(owner, ability, "modifier_skadi_bow_slow_debuff", {duration = duration * (1 - target:GetStatusResistance())})
 	end
 end
+function modifier_skadi_bow:GetModifierProjectileName()
+	return "particles/custom/items/skadi_bow/skadi_projectile.vpcf"
+end
+
 -- Skadi Bow Slow Debuff
 modifier_skadi_bow_slow_debuff = modifier_skadi_bow_slow_debuff or class({})
 function modifier_skadi_bow_slow_debuff:IsDebuff() return true end

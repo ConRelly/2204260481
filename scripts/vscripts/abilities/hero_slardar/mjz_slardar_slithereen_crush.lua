@@ -2,14 +2,12 @@
 local THIS_LUA = "abilities/hero_slardar/mjz_slardar_slithereen_crush.lua"
 local MODIFIER_LUA = "modifiers/hero_slardar/modifier_mjz_slardar_slithereen_crush.lua"
 
-local MODIFIER_SLOW_NAME = 'modifier_mjz_slardar_slithereen_crush_slow'
-local MODIFIER_DUMMY_NAME = 'modifier_mjz_slardar_slithereen_crush_dummy'
 local MODIFIER_AURA_FRIENDLY_NAME = 'modifier_mjz_slardar_slithereen_crush_aura_friendly'
 local MODIFIER_AURA_ENEMY_NAME = 'modifier_mjz_slardar_slithereen_crush_aura_enemy'
 
-LinkLuaModifier(MODIFIER_SLOW_NAME, THIS_LUA, LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_slardar_slithereen_crush_slow", THIS_LUA, LUA_MODIFIER_MOTION_NONE)
 -- LinkLuaModifier(MODIFIER_ATTACK_SPEED_NAME, THIS_LUA, LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier(MODIFIER_DUMMY_NAME, MODIFIER_LUA, LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_slardar_slithereen_crush_dummy", MODIFIER_LUA, LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier(MODIFIER_AURA_FRIENDLY_NAME, MODIFIER_LUA, LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier(MODIFIER_AURA_ENEMY_NAME, MODIFIER_LUA, LUA_MODIFIER_MOTION_NONE)
 
@@ -90,7 +88,7 @@ if IsServer() then
 				end
 
 				unit:AddNewModifier(caster, ability, 'modifier_stunned', {duration = stun_duration})
-				unit:AddNewModifier(caster, ability, MODIFIER_SLOW_NAME, {duration = stun_duration + slow_duration})
+				unit:AddNewModifier(caster, ability, "modifier_mjz_slardar_slithereen_crush_slow", {duration = stun_duration + slow_duration})
             end
 		end
 		
@@ -112,7 +110,7 @@ if IsServer() then
 		dummy:AddNewModifier(caster, nil, "modifier_phased", {})
 		dummy:AddNewModifier(caster, ability, "modifier_kill", {duration = duration})
 		dummy:AddNewModifier(caster, ability, "modifier_item_gem_of_true_sight", {duration = duration})
-		dummy:AddNewModifier(caster, ability, MODIFIER_DUMMY_NAME, {duration = duration})
+		dummy:AddNewModifier(caster, ability, "modifier_mjz_slardar_slithereen_crush_dummy", {duration = duration})
 		dummy:AddNewModifier(caster, ability, MODIFIER_AURA_FRIENDLY_NAME, {duration = duration})
 		--dummy:AddNewModifier(caster, ability, MODIFIER_AURA_ENEMY_NAME, {duration = duration})
 		
@@ -126,18 +124,23 @@ modifier_mjz_slardar_slithereen_crush_slow = class({})
 function modifier_mjz_slardar_slithereen_crush_slow:IsDebuff() return true end
 function modifier_mjz_slardar_slithereen_crush_slow:IsHidden() return false end
 function modifier_mjz_slardar_slithereen_crush_slow:IsPurgable() return true end
+function modifier_mjz_slardar_slithereen_crush_slow:OnCreated()
+	if self:GetAbility() then
+		self.move_speed_slow = self:GetAbility():GetSpecialValueFor("move_speed_slow") + talent_value(self:GetCaster(), "special_bonus_unique_mjz_slardar_slithereen_crush_slow")
+		self.attack_speed_slow = self:GetAbility():GetSpecialValueFor("attack_speed_slow") + talent_value(self:GetCaster(), "special_bonus_unique_mjz_slardar_slithereen_crush_slow")
+	end
+end
+function modifier_mjz_slardar_slithereen_crush_slow:OnRefresh()
+	self:OnCreated()
+end
 function modifier_mjz_slardar_slithereen_crush_slow:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
 	}
 end
-function modifier_mjz_slardar_slithereen_crush_slow:GetModifierMoveSpeedBonus_Percentage()
-	return self:GetAbility():GetSpecialValueFor('move_speed_slow')
-end
-function modifier_mjz_slardar_slithereen_crush_slow:GetModifierAttackSpeedBonus_Constant()
-	return self:GetAbility():GetSpecialValueFor('attack_speed_slow')
-end
+function modifier_mjz_slardar_slithereen_crush_slow:GetModifierMoveSpeedBonus_Percentage() return self.move_speed_slow end
+function modifier_mjz_slardar_slithereen_crush_slow:GetModifierAttackSpeedBonus_Constant() return self.attack_speed_slow end
 
 ----------------------------------------------------------------------
 

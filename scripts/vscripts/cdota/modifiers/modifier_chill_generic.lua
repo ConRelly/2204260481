@@ -9,7 +9,7 @@ function modifier_chill_generic:GetPriority() return MODIFIER_PRIORITY_HIGH end
 
 function modifier_chill_generic:OnCreated()
 	if IsServer() then
-		if self:GetStackCount() >= 10 then
+		if self:GetStackCount() >= 100 then
 			self:GetParent():Freeze(self:GetAbility(), self:GetCaster(), 1.5)
 			self:Destroy()
 		end
@@ -19,8 +19,8 @@ end
 
 function modifier_chill_generic:OnRefresh()
 	if IsServer() then
-	if self:GetParent():HasModifer("modifier_frozen_generic") then return end
-		if self:GetStackCount() >= 10 then
+	if self:GetParent():HasModifier("modifier_frozen_generic") then return end
+		if self:GetStackCount() >= 100 then
 			self:GetParent():Freeze(self:GetAbility(), self:GetCaster(), 1.5)
 			self:Destroy()
 		end
@@ -29,7 +29,7 @@ end
 
 function modifier_chill_generic:OnIntervalThink()
 	if IsServer() then
-		if self:GetStackCount() >= 10 then
+		if self:GetStackCount() >= 100 then
 			self:GetParent():Freeze(self:GetAbility(), self:GetCaster(), 1.5)
 			self:Destroy()
 		end

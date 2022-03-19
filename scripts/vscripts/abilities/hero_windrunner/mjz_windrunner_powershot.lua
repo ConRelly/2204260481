@@ -3,9 +3,29 @@ LinkLuaModifier("modifier_powershot_passive", "abilities/hero_windrunner/mjz_win
 LinkLuaModifier("modifier_powershot_max_charge", "abilities/hero_windrunner/mjz_windrunner_powershot", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_powershot_shard", "abilities/hero_windrunner/mjz_windrunner_powershot", LUA_MODIFIER_MOTION_NONE)
 
+LinkLuaModifier("modifier_wr_shackleshot_immortal_falcon_bow", "abilities/hero_windrunner/mjz_windrunner_powershot", LUA_MODIFIER_MOTION_NONE)
+
+LinkLuaModifier("modifier_wr_exclusive_frozen", "heroes/hero_windranger/windrun", LUA_MODIFIER_MOTION_NONE)
+
+local wr_exclusive_item = "wr_exclusive_item_modifier"
+
 
 mjz_windrunner_powershot = class({})
-function mjz_windrunner_powershot:GetIntrinsicModifierName() return "modifier_powershot_passive" end
+function mjz_windrunner_powershot:GetIntrinsicModifierName()
+	if IsServer() then
+		if not self:GetCaster():HasModifier("modifier_wr_shackleshot_immortal_falcon_bow") and FindWearables(self:GetCaster(), "models/items/windrunner/ti6_falcon_bow/ti6_falcon_bow_model.vmdl") then
+			self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_wr_shackleshot_immortal_falcon_bow", {})
+		end
+    end
+	return "modifier_powershot_passive"
+end
+function mjz_windrunner_powershot:GetAbilityTextureName()
+    if self:GetCaster():HasModifier("modifier_wr_shackleshot_immortal_falcon_bow") then
+        return "windrunner/peregrine_flight/windrunner_powershot"
+    else
+		return "windrunner_powershot"
+	end
+end
 
 function mjz_windrunner_powershot:GetChannelAnimation() return ACT_DOTA_CAST_ABILITY_2 end
 function mjz_windrunner_powershot:GetChannelTime()
@@ -56,6 +76,32 @@ function mjz_windrunner_powershot:OnChannelFinish(bInterrupted)
 			end
 			caster:AddNewModifier(caster, self, "modifier_powershot_max_charge", {duration = self:GetSpecialValueFor("debuff_duration")})
 		end
+
+		if caster:HasModifier(wr_exclusive_item) then
+			local info = {
+				Ability = self,
+				EffectName = "particles/econ/items/windrunner/windranger_arcana/windranger_arcana_spell_powershot.vpcf",
+				vSpawnOrigin = caster:GetAbsOrigin(),
+				fStartRadius = self:GetSpecialValueFor("arrow_width") / 2,
+				fEndRadius = self:GetSpecialValueFor("arrow_width") / 2,
+				vVelocity = caster:GetForwardVector() * self:GetSpecialValueFor("arrow_speed") * 2,
+				fDistance = distance,
+				Source = caster,
+				iUnitTargetTeam = self:GetAbilityTargetTeam(),
+				iUnitTargetType = self:GetAbilityTargetType(),
+				iUnitTargetFlags = self:GetAbilityTargetFlags(),
+				iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION,
+				bDeleteOnHit = false,
+				fExpireTime = GameRules:GetGameTime() + 10.0,
+				bProvidesVision = true,
+				iVisionRadius = self:GetSpecialValueFor("vision_radius"),
+				iVisionTeamNumber = caster:GetTeamNumber(),
+				ExtraData = {damage = 0, caster = caster, shatter = true}
+			}
+			Timers:CreateTimer(0.5, function()
+				ProjectileManager:CreateLinearProjectile(info)
+			end)
+		end
 	end
 end
 
@@ -97,7 +143,7 @@ end
 
 function mjz_windrunner_powershot:OnProjectileHit_ExtraData(target, loc, ExtraData)
 	if not IsServer() then return end
-	local caster = self:GetCaster() or ExtraData.caster
+	local caster = ExtraData.caster or self:GetCaster()
 
 	if target then
 		local hits_counter = caster:FindModifierByName("modifier_powershot_passive")
@@ -111,12 +157,20 @@ function mjz_windrunner_powershot:OnProjectileHit_ExtraData(target, loc, ExtraDa
 			target:AddNewModifier(caster, self, "modifier_mjz_windrunner_powershot_debuff", {duration = self:GetSpecialValueFor("debuff_inco_duration")})
 		end
 
-		local damage = (self.damage or ExtraData.damage) + hits * self:GetSpecialValueFor("damage_increase") / 100
+		local damage = (ExtraData.damage or self.damage) + hits * self:GetSpecialValueFor("damage_increase") / 100
 		ApplyDamage({victim = target, attacker = caster, ability = self, damage_type = self:GetAbilityDamageType(), damage = damage, damage_flags = DOTA_DAMAGE_FLAG_NONE})
 
 		SendOverheadEventMessage(caster:GetPlayerOwner(), OVERHEAD_ALERT_DAMAGE, target, damage, caster:GetPlayerOwner())
 
 		hits_counter:SetStackCount(hits + 1)
+
+		if target:HasModifier("modifier_wr_exclusive_frozen") and ExtraData.shatter then
+			if caster:HasModifier(wr_exclusive_item) then
+				local frozen = target:FindModifierByName("modifier_wr_exclusive_frozen")
+				frozen:SetStackCount(1)
+				frozen:Destroy()
+			end
+		end
 	else
 		AddFOWViewer(caster:GetTeam(), loc, self:GetSpecialValueFor("vision_radius"), self:GetSpecialValueFor("vision_duration"), true)
 	end
@@ -237,6 +291,12 @@ function modifier_powershot_passive:OnAttackLanded(keys)
 		end
 	end
 end
+
+
+modifier_wr_shackleshot_immortal_falcon_bow = class({})
+function modifier_wr_shackleshot_immortal_falcon_bow:IsHidden() return true end
+function modifier_wr_shackleshot_immortal_falcon_bow:IsPurgable() return false end
+function modifier_wr_shackleshot_immortal_falcon_bow:RemoveOnDeath() return false end
 
 -----------------------------------------------------------------------------------------
 

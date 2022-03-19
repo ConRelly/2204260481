@@ -91,7 +91,7 @@ function modifier_rolling_stone_buff:GetModifierMoveSpeedBonus_Constant()
 end
 function modifier_rolling_stone_buff:GetModifierIncomingDamage_Percentage()
 	if self:GetCaster():HasModifier("modifier_rolling_stone_remnantbuff") then
-		return (self:GetAbility():GetSpecialValueFor("dmg_reduction") + talent_value(caster, "special_earth_spirit_rolling_stone_dmg_reduction")) * (-1)
+		return (self:GetAbility():GetSpecialValueFor("dmg_reduction") + talent_value(self:GetCaster(), "special_earth_spirit_rolling_stone_dmg_reduction")) * (-1)
 	end
 	return self:GetAbility():GetSpecialValueFor("dmg_reduction") * (-1)
 end

@@ -8,10 +8,10 @@ function modifier_sand_king_sand_storm_lua:GetAttributes() return MODIFIER_ATTRI
 
 --------------------------------------------------------------------------------
 function modifier_sand_king_sand_storm_lua:OnCreated(kv)
-	self.radius = self:GetAbility():GetSpecialValueFor("sand_storm_radius")
-	local interval = self:GetAbility():GetSpecialValueFor("sand_storm_interval")
-
 	if IsServer() then
+		self.radius = self:GetAbility():GetTalentSpecialValueFor("sand_storm_radius")
+		local interval = self:GetAbility():GetSpecialValueFor("sand_storm_interval")
+
 		local damage = self:GetAbility():GetTalentSpecialValueFor("sand_storm_damage") + (self:GetCaster():GetStrength() * self:GetAbility():GetTalentSpecialValueFor("str_multiplier"))
 		self.damageTable = {
 			-- victim = target,

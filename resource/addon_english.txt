@@ -86,6 +86,14 @@
 
 	"DOTA_Tooltip_modifier_ceremonial_robe_aura"				"Ceremonial Aura"
 	"DOTA_Tooltip_modifier_ceremonial_robe_aura_Description"	"Status resistance decreased by %dMODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING%%%, and magic damage increased by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%."
+		
+	"DOTA_Tooltip_modifier_minotaur_horn_immune"				"Minotaur Horn"
+	"DOTA_Tooltip_modifier_minotaur_horn_immune_Description"	"Spell Immune."
+		
+	"DOTA_Tooltip_modifier_item_revenants_brooch_counter"				"Phantom Province"
+	"DOTA_Tooltip_modifier_item_revenants_brooch_counter_Description"	"Attacks have True Strike and deal magic damage."
+
+	"DOTA_Tooltip_modifier_naga_riptide_counter"				"Riptide Count"
 
 	"DOTA_Tooltip_Ability_item_cus_force_boots"					"Force Boots"
 	"DOTA_Tooltip_ability_item_cus_force_boots_Description"		"<h1>Active: Force</h1>Dispels the user and pushes them %push_length% units in the direction they are facing.\n<h1>Passive: Speed Unlock</h1> Completely removes the speed limit for the wearer \nMovement speed bonuses from multiple pairs of boots do not stack."
@@ -511,6 +519,21 @@
 	"DOTA_Tooltip_modifier_blood_madness_timer_Description"	""
 	"DOTA_Tooltip_ability_blood_madness_scepter_description"	"Increases damage calculation time by 1 second and does not let you die during calculation time."
 
+//Batrider
+	"DOTA_Tooltip_ability_sticky_napalm"				"Sticky Napalm"
+	"DOTA_Tooltip_ability_sticky_napalm_Description"	"Drenches an area in sticky oil, amplifying damage from Batrider's attacks and abilities and slowing the movement speed and turn rate of enemies in the area. Additional casts of Sticky Napalm continue to increase damage, up to %max_stacks% stacks."
+	"DOTA_Tooltip_ability_sticky_napalm_Lore"	"It's not uncommon to hear the Rider cackle while he increases the flammability of his opponents."
+	"DOTA_Tooltip_ability_sticky_napalm_Note0"		"All damage from Batrider gets amplified, except for some items and item abilities."
+	"DOTA_Tooltip_ability_sticky_napalm_Note1"		"Sticky napalm does not require turning to cast."
+	"DOTA_Tooltip_ability_sticky_napalm_damage"				"EXTRA DAMAGE:"
+	"DOTA_Tooltip_ability_sticky_napalm_radius"				"RADIUS:"
+	"DOTA_Tooltip_ability_sticky_napalm_duration"			"DURATION:"
+	"DOTA_Tooltip_ability_sticky_napalm_ms_slow_pct"		"%MOVEMENT SLOW:"
+	"DOTA_Tooltip_ability_sticky_napalm_turn_rate_pct"		"%TURN RATE SLOW:"
+		
+	"DOTA_Tooltip_modifier_sticky_napalm"					"Sticky Napalm"
+	"DOTA_Tooltip_modifier_sticky_napalm_Description"		"Increasing napalm-caster's damage by %dMODIFIER_PROPERTY_TOOLTIP%. \nSlowing turn rate by %dMODIFIER_PROPERTY_TURN_RATE_PERCENTAGE%%%. \nSlowing movement speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
+
 //Treant Protector
 	"DOTA_Tooltip_ability_treant_natures_form"				"Natures Form"
 	"DOTA_Tooltip_ability_treant_natures_form_description"	"Entangling itself with roots, Treant Protector merges with nature, strengthens its bark"
@@ -620,6 +643,26 @@
 	"DOTA_Tooltip_ability_special_bonus_hw_sharpshooter_agi"				"+{s:value} Sharpshooter Agility as Bonus Damage"
 	"DOTA_Tooltip_ability_special_bonus_hw_sharpshooter_agi_Description"	"Bonus damage is dealt separately from the main damage"
 	"DOTA_Tooltip_ability_special_bonus_unique_hoodwink_sharpshooter_pure_damage"					"Sharpshooter deals Pure Damage"
+
+// Puck
+	"DOTA_Tooltip_ability_faerie_dream_coil"					"Dream Coil"
+	"DOTA_Tooltip_ability_faerie_dream_coil_Description"		"Creates a coil of volatile magic that latches onto enemy Heroes, damaging and leashing them.  If the enemy hero stretches the coil by moving too far away, it snaps, stunning and dealing additional damage."
+	"DOTA_Tooltip_ability_faerie_dream_coil_Lore"		"The Faerie Dragon sows confusion by forcing its enemies to vividly dream about their own mortality."
+	"DOTA_Tooltip_ability_faerie_dream_coil_scepter_description"		"Increases damage from coil breaks, increases coil duration, coil break stun goes through spell immunity."
+	"DOTA_Tooltip_ability_faerie_dream_coil_coil_duration"					"COIL DURATION:"
+	"DOTA_Tooltip_ability_faerie_dream_coil_coil_initial_damage"			"INITIAL DAMAGE:"
+	"DOTA_Tooltip_ability_faerie_dream_coil_coil_break_radius"				"BREAK RADIUS:"
+	"DOTA_Tooltip_ability_faerie_dream_coil_coil_stun_duration"				"BREAK STUN DURATION:"
+	"DOTA_Tooltip_ability_faerie_dream_coil_coil_break_damage"				"BREAK DAMAGE:"
+	"DOTA_Tooltip_ability_faerie_dream_coil_coil_duration_scepter"			"SCEPTER COIL DURATION:"
+	"DOTA_Tooltip_ability_faerie_dream_coil_coil_stun_duration_scepter"		"SCEPTER BREAK STUN DURATION:"
+	"DOTA_Tooltip_ability_faerie_dream_coil_coil_break_damage_scepter"		"SCEPTER BREAK DAMAGE:"
+	"DOTA_Tooltip_modifier_faerie_dream_coil"					"Dream Coiled"
+	"DOTA_Tooltip_modifier_faerie_dream_coil_Description"		"Leashed to the dream coil"
+
+	"DOTA_Tooltip_ability_special_bonus_faerie_dream_coil_cooldown"			"-{s:value}s Dream Coil Cooldown"
+	"DOTA_Tooltip_ability_special_bonus_faerie_dream_coil_rapid_fire"					"Dream Coil Rapid Fire"
+	"DOTA_Tooltip_ability_special_bonus_faerie_dream_coil_rapid_fire_Description"		"Puck instantly attacks all enemies while affected by Dream Coil, every {s:rapid_fire_interval} seconds."
 
 //Spirit Breaker
 	"DOTA_Tooltip_ability_fast_as_f"				"Faster then fakc"
@@ -786,6 +829,32 @@
 	"DOTA_Tooltip_ability_special_earth_spirit_rolling_stone_stun_duration"		"+{s:value}s Rollin' Stone Stun Duration"
 	"DOTA_Tooltip_ability_special_earth_spirit_rolling_stone_dmg_reduction"		"+{s:value}% Rollin' Stone Remnant bonus DMG Reduction"
 
+// Windranger
+	"DOTA_Tooltip_ability_wr_shackleshot"					"Shackleshot"
+	"DOTA_Tooltip_ability_wr_shackleshot_Description"		"Shackles the target to an enemy unit or tree in a line directly behind it. If no unit or tree is present, the stun duration is reduced to %fail_stun_duration%."
+	"DOTA_Tooltip_ability_wr_shackleshot_Lore"			"Windranger's variety of bow skills includes an arrow with thick ropes attached to encumber any escaping target."
+	"DOTA_Tooltip_ability_wr_shackleshot_Note0"		"This spell can shackle two enemies together, stunning them both."
+	"DOTA_Tooltip_ability_wr_shackleshot_Note1"		"Shackleshot can be disjointed."
+	"DOTA_Tooltip_ability_wr_shackleshot_stun_duration"			"SHACKLE DURATION:"
+	"DOTA_Tooltip_ability_wr_shackleshot_shackle_count"			"SHACKLE COUNT:"
+	"DOTA_Tooltip_modifier_wr_shackleshot_stun"					"Shackleshot"
+	"DOTA_Tooltip_modifier_wr_shackleshot_stun_Description"		"Bound by thick ropes from Windranger's ensnaring arrow."
+
+	"DOTA_Tooltip_ability_wr_windrun"					"Windrun"
+	"DOTA_Tooltip_ability_wr_windrun_Description"		"Increases movement speed and adds evasion from all physical attacks, while slowing movement of nearby enemies."
+	"DOTA_Tooltip_ability_wr_windrun_Lore"		"Lyralei enchants gusts of winds to fight incoming attacks."
+	"DOTA_Tooltip_ability_wr_windrun_scepter_description"		"Increases Windrun slow by %scepter_movespeed_bonus_pct%%% and makes it undispellable. Enemies affected by Windrun are blinded by %scepter_blind%%%"
+	"DOTA_Tooltip_ability_wr_windrun_movespeed_bonus_pct"			"%MOVE SPEED BONUS:"
+	"DOTA_Tooltip_ability_wr_windrun_evasion_pct"					"%EVASION:"
+	"DOTA_Tooltip_ability_wr_windrun_enemy_movespeed_bonus_pct"		"%ENEMY SLOW:"		
+	"DOTA_Tooltip_ability_wr_windrun_radius"						"ENEMY SLOW RADIUS:"
+	"DOTA_Tooltip_ability_wr_windrun_duration"						"DURATION:"
+	"DOTA_Tooltip_modifier_wr_windrun"					"Windrun"
+	"DOTA_Tooltip_modifier_wr_windrun_Description"		"Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and evading all physical attacks"
+	"DOTA_Tooltip_modifier_wr_windrun_slow"					"Windrun Slow"
+	"DOTA_Tooltip_modifier_wr_windrun_slow_Description"		"Gusts of wind around Windranger reduce your movement speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+	"DOTA_Tooltip_ability_special_bonus_wr_windrun_radius"			"+{s:value} Windrun Radius"
+
 // Kardel
 	"DOTA_Tooltip_ability_sniper_shoot"					"Shoot"
 	"DOTA_Tooltip_ability_sniper_shoot_Description"		"Makes a shot with the appropriate bullet. \n<font color='#FF423F'>Damage of all bullets depends on the BASE damage, and the range depends on the attack radius.</font> \n<h1><font color='#DE3163'>Super Scepter</font></h1>For every Hit: <font color='#BD7D93'>Normal Shot</font> has 45% chance(x2) to gain 1 base Agi and <font color='#ECF47C'>Explosive Shot</font> has 40% chance to gain 1 base Int."
@@ -847,6 +916,23 @@
 	"DOTA_Tooltip_ability_special_bonus_hunting_mark_direct_shot_bonus_Description"		"Shoot deals {s:value}% damage when aiming at an enemy with Hunting Mark (not a ricochet)"
 
 
+	"DOTA_Tooltip_ability_amalgamation"					"Amalgamation"
+	"DOTA_Tooltip_ability_amalgamation_Description"		"You bind yourself to target allied hero. You may cast spells as normal but you share manapool. If host is out of mana your spells take spell cost from host's health. If your host dies, you die as well. \n Host hero is granted bonus mana regen while reducing magic resistance and armor from the current caster value."
+	"DOTA_Tooltip_ability_amalgamation_scepter_Description"		"Your host gets +%stat_scepter% to all attributes if enemy dies within %range_scepter% radius."
+	"DOTA_Tooltip_ability_amalgamation_Note0"			"1) Temporarily breaks invisibility of host when you cast spell or attack. Duration: %vis_duration%s"
+	"DOTA_Tooltip_ability_amalgamation_Note1"			"2) The caster gets the same control effects as the host"
+	"DOTA_Tooltip_ability_amalgamation_mana_regen"			"%MAX MANA REGEN:"
+	"DOTA_Tooltip_ability_amalgamation_magic_armor"			"%MAGIC ARMOR REDUCTION:"
+	"DOTA_Tooltip_ability_amalgamation_physical_armor"		"%PHYS ARMOR REDUCTION:"
+	"DOTA_Tooltip_amalgamation_modifier"					"Symbios"
+	"DOTA_Tooltip_amalgamation_modifier_Description"		"You share mana pool with a host hero."
+	"DOTA_Tooltip_amalgamation_target"					"Host"
+	"DOTA_Tooltip_amalgamation_target_Description"		"You share mana pool with a symbiot hero. \nIf you don't have mana symbiot's spells take their mana cost from your health. \nGrants bonus mana regen. \nReduces armor and magic resistance. \n\n<br><br>You may disable help from your symbiot to forcefully end the symbiosis when possible."
+	"DOTA_Tooltip_amalgamation_bonus"					"Feast"
+	"DOTA_Tooltip_amalgamation_bonus_Description"		"Gives +%fMODIFIER_PROPERTY_TOOLTIP% to all attributes."
+	"DOTA_Error_amalgamation_no_inception"			"Can't cast while being host."
+
+
 //###########################################################################################################################
 	
 	"DOTA_Tooltip_ability_item_ice_dagon"				"Ice Dagon"
@@ -871,6 +957,7 @@
 	"DOTA_Tooltip_modifier_demonic_sword_burn"					"Blazing Touch"
 	"DOTA_Tooltip_modifier_demonic_sword_burn_Description"		"Deals damage once per second"
 	
+	"DOTA_Tooltip_ability_item_recipe_life_greaves"		"Life Greaves Recipe"
 	"DOTA_Tooltip_ability_item_life_greaves"				"Life Greaves"
 	"DOTA_Tooltip_ability_item_life_greaves_Description"	"<h1>Active: Mend</h1>Restores %heal_amount% + %heal_amount_pct%%% health and %mana_amount% + %mana_amount_pct%%% mana to all allies, and removes most negative effects from the caster and gives Resistance bonuses. <br>Mend Duration: %mend_duration% seconds.<br><br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span> \n<h1>Passive: Guardian Aura</h1>Grants %aura_health_regen% health regeneration and %aura_armor% armor to allied units. If an allied hero's health falls below %aura_bonus_threshold%%%, they receive bonus %aura_health_regen_threshold% health regeneration and %aura_armor_threshold% armor. \n<h1><font color='#60CCFF'>Fountain Water</font></h1>When used, it replenishes one Bottle charge to all allies. \n<h1><font color='#44211E'>UP: Lier Scarlet</font></h1> After use, it gives the target a shield. <br> Applies to any allied target having Lier Scarlet \nMovement speed bonuses from multiple pairs of boots do not stack."
 	"DOTA_Tooltip_ability_item_life_greaves_Note0"				"If the owner's health drops below %aura_bonus_threshold%%%, the item is activated automatically and applies <span class=\"GameplayValues GameplayVariable\">Strong Dispel</span>."
@@ -2747,6 +2834,7 @@
 	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm_int_damage_pct"	"%BONUS INTELLIGENCE DAMAGE:"
 	"DOTA_Tooltip_ability_mjz_death_prophet_carrion_swarm_Note0"		"Can hit units up to 1110 range away."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_death_prophet_carrion_swarm_int"		"+{s:value}% Crypt Swarm Intelligence Damage"
+	"DOTA_Tooltip_ability_special_bonus_unique_dp_carrion_swarm_cooldown"				"-{s:value}s Crypt Swarm Cooldown"
 
 
 	"DOTA_Tooltip_ability_mjz_doom_bringer_devour"				"Devour"
@@ -3704,10 +3792,10 @@ DISPEL TYPE: Strong Dispel"
 	"DOTA_Tooltip_ability_mjz_sandking_epicenter"	"Epicenter"
 	"DOTA_Tooltip_ability_mjz_sandking_epicenter_Description"	"CHANNELED - After channeling for 2 seconds, Sand King sends a disturbance into the earth, causing it to shudder violently. All enemies caught within range will take damage and become slowed. Each subsequent pulse increases the radius of damage dealt."
 	"DOTA_Tooltip_ability_mjz_sandking_epicenter_Lore"	"Many an explorer was lost to the quicksands of the Scintillant Waste."
-	"DOTA_Tooltip_ability_mjz_sandking_epicenter_shard_Description"		"Every %epicenter_shard_interval%s causes an Epicenter Pulse around Sand King in %epicenter_radius_max% AOE. Increases Epicenter Pulse Damage by %epicenter_shard_dmg_inc% and Bonus Strength Damage by %epicenter_shard_str_dmg_inc%%%."
+	"DOTA_Tooltip_ability_mjz_sandking_epicenter_shard_Description"		"Every %epicenter_shard_interval%s causes an Epicenter Pulse around Sand King in %epicenter_radius_max% AOE. Increases Epicenter Pulse Damage by %epicenter_shard_dmg_inc% and Strength As Bonus Damage by %epicenter_shard_str_dmg_inc%."
 	"DOTA_Tooltip_ability_mjz_sandking_epicenter_epicenter_pulses"		"PULSES:"
 	"DOTA_Tooltip_ability_mjz_sandking_epicenter_epicenter_damage"		"DAMAGE PER PULSE:"
-	"DOTA_Tooltip_ability_mjz_sandking_epicenter_str_damage_pct"		"%BONUS STRENGTH DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_sandking_epicenter_str_multiplier"		"STRENGTH AS BONUS DAMAGE:"
 	"DOTA_Tooltip_ability_mjz_sandking_epicenter_epicenter_slow"		"%MOVEMENT SLOW:"
 	"DOTA_Tooltip_ability_mjz_sandking_epicenter_epicenter_slow_as"		"ATTACK SLOW:"
 	"DOTA_Tooltip_ability_mjz_sandking_epicenter_epicenter_slow_duration"	"SLOW DURATION:"
@@ -3718,7 +3806,7 @@ DISPEL TYPE: Strong Dispel"
 	"DOTA_Tooltip_modifier_mjz_sandking_epicenter_slow"					"Epicenter Slow"
 	"DOTA_Tooltip_modifier_mjz_sandking_epicenter_slow_Description"		"Movement speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%. Attack speed slowed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_sandking_epicenter_pulses"	"+{s:value} Epicenter Pulses"
-	"DOTA_Tooltip_ability_special_bonus_unique_mjz_sandking_epicenter_strength"	"+{s:value}% Epicenter Strength Damage"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_sandking_epicenter_strength"	"+{s:value}% Epicenter Str Damage"
 	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor"				"Reactive Armor"
 	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_Description"	"Each time Timbersaw is harmed, he gains increased health regen and armor and magic resistance."
 	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_Lore"			"The saw-suit is equipped to react to the slightest touch with fortified defenses."
@@ -3815,6 +3903,7 @@ DISPEL TYPE: Strong Dispel"
 	"DOTA_Tooltip_ability_mjz_slardar_slithereen_crush_shard_description"		"Causes Slithereen Crush to apply Corrosive Haze for %slow_duration% seconds to units affected. Increases radius by 75."
 	"DOTA_Tooltip_modifier_mjz_slardar_slithereen_crush_aura_effect_friendly"					"Slithereen Crush"
 	"DOTA_Tooltip_modifier_mjz_slardar_slithereen_crush_aura_effect_friendly_Description"		"Provides additional HP Regen, Armor and Status Resistance while in a puddle or in the river."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_slardar_slithereen_crush_slow"		"+{s:value}% Slithereen Crush Attack/Move Slow"
 
 	"DOTA_Tooltip_ability_corrosive_haze"					"Corrosive Haze"
 	"DOTA_Tooltip_ability_corrosive_haze_Description"		"Reduces enemy armor to amplify physical damage and provides True Sight and vision of the targeted unit, revealing invisibility."
@@ -3833,7 +3922,10 @@ DISPEL TYPE: Strong Dispel"
 	"DOTA_Tooltip_ability_mjz_slardar_sprint_bonus_attack_speed"		"BONUS ATTACK SPEED:"
 	"DOTA_Tooltip_ability_mjz_slardar_sprint_health_cost_per_second"	"HEALTH COST PER SECOND:"
 	"DOTA_Tooltip_modifier_mjz_slardar_sprint"					"Guardian Sprint"
-	"DOTA_Tooltip_modifier_mjz_slardar_sprint_Description"	   	"Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and Attack Speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."	
+	"DOTA_Tooltip_modifier_mjz_slardar_sprint_Description"	   	"Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and Attack Speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_slardar_sprint_hp_cost"		"-{s:value}% Guardian Sprint Health Cost per second"
+
+
 "DOTA_Tooltip_ability_mjz_slark_dark_pact"				"Dark Pact"
 "DOTA_Tooltip_ability_mjz_slark_dark_pact_Description"	"After a short delay, Slark sacrifices some of his life blood, purging most negative debuffs and dealing damage to enemy units around him and to himself.  Slark only takes 5%% of the damage.
 
@@ -6745,7 +6837,8 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_Ability_bane_custom_bonus_unique_2"		  "{s:value} Seconds Enfeeble Cooldown"
 "DOTA_Tooltip_Ability_dark_seer_custom_bonus_unique_1"		  "+{s:value} clone to Dark Clone"
 "DOTA_Tooltip_Ability_dark_seer_custom_bonus_unique_2"			"x{s:value} Ion Shell Proc Speed"
-	"DOTA_Tooltip_ability_special_bonus_ds_ion_shell_radius"	"x{s:value} Ion Shell Radius"
+"DOTA_Tooltip_ability_special_bonus_ds_ion_shell_radius"		"x{s:value} Ion Shell Radius"
+"DOTA_Tooltip_ability_special_bonus_ds_ion_shell_damage"		"+{s:value} Ion Shell Damage"
 "DOTA_Tooltip_Ability_gyrocopter_custom_bonus_unique_1"		  "+{s:value} Rocket Barrage Damage"
 "DOTA_Tooltip_Ability_nevermore_custom_bonus_unique_1"		  "+{s:value} Necromastery soul limit"
 "DOTA_Tooltip_Ability_nyx_assassin_custom_bonus_unique_1"		  "+{s:value}% Crit / Sec for Vendett"
@@ -9276,6 +9369,7 @@ Contains all random skills"
 		"DOTA_Tooltip_ability_sand_king_sand_storm_lua_sand_storm_damage"					"Sand Storm Damage:"
 		"DOTA_Tooltip_ability_sand_king_sand_storm_lua_str_multiplier"						"Strength As Bonus Damage:"
 		"DOTA_Tooltip_modifier_sand_king_sand_storm_lua"			"Sand Storm"
+		"DOTA_Tooltip_ability_special_bonus_unique_sand_storm_radius"		"+{s:value} Sand Storm Radius"
 
 
 		"DOTA_Tooltip_ability_draks_unholy_strength"									"GameTime Power"
@@ -9646,6 +9740,7 @@ Contains all random skills"
 	"DOTA_Tooltip_ability_item_god_slayer_Note2"				"3) The item can absorb another copy of himself taking his carges in the process."
 	"DOTA_Tooltip_ability_item_god_slayer_Note3"				"4) The extra pure damage is affected by Spell Damage."
 	"DOTA_Tooltip_ability_item_god_slayer_Note4"				"5) The God Slash ability stops if there are no enemies left in the selected AOE."
+	"DOTA_Tooltip_ability_item_god_slayer_Note5"				"6) Can be stopped by the cancel button."
 	"DOTA_Tooltip_ability_item_god_slayer_Lore"				"An weapon that grows in power along with the wielder, but only the weapon power can be passed to the next Slayer"
 	"DOTA_Tooltip_modifier_dragonborn"						   "Souls Stacks"
 	"DOTA_Tooltip_modifier_dragonborn_Description"			   "As long you keep the item in inventory you will have the stacks, any team member that kills something will give you statcks or base on chance if is not roshan or some wave Bosses(not all)"

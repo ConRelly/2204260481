@@ -251,7 +251,6 @@
 		"item"		"item_mjz_devils_veil"
 		"item"      "item_high_tech_boots2"
 		"item"      "item_titan_relic"
-		"item"      "item_arcane_staff_edible"
 		"item"      "item_echo_wand"
 		"item"      "item_blast_staff_3"
 		"item"		"item_num"

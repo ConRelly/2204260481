@@ -41,12 +41,12 @@ if IsServer() then
                         local hAbility = hero:GetAbilityByIndex( i )
                         if hAbility and not hAbility:IsAttributeBonus() and not hAbility:IsHidden() and not string.find(hAbility:GetAbilityName(), "empty") then  -- Talent-- Dunno
                             local bAbility = hAbility:GetName()
-                            --print(bAbility .." 7th ability")                     
-                            hero:SwapAbilities( "ogre_magi_unrefined_fireblast_lua", bAbility, true, true )   
+                            --print(bAbility .." 7th ability")
+                            hero:SwapAbilities( "ogre_magi_unrefined_fireblast_lua", bAbility, true, true )
                             swap_fireblast = false
                         end
-                    end    
-                end               
+                    end
+                end
             end
             if oldAbility and oldAbility:GetName()~= "ogre_magi_unrefined_fireblast_lua" and oldAbility:GetName()~= "mjz_bristleback_quill_spray_autocast4" and oldAbility:GetName()~= "temporary_slot_used" and oldAbility:GetName()~= "mjz_bristleback_quill_spray_autocast4_5" and oldAbility:GetName()~= "change_bullets_type"  and not string.find(oldAbility:GetAbilityName(), "empty") then
                 local abilityPoints = 1
@@ -58,13 +58,23 @@ if IsServer() then
                 if abilityName == "medusa_mana_shield" then
                     if hero:HasModifier("modifier_medusa_mana_shield") then
                         hero:RemoveModifierByName("modifier_medusa_mana_shield")
-                    end    
+                    end
                 end
                 if hero:HasAbility("temporary_slot_used") then
-                    hero:RemoveAbility("temporary_slot_used")                    
-                end    
+                    hero:RemoveAbility("temporary_slot_used")
+                end
                 hero:SetAbilityPoints(hero:GetAbilityPoints() + abilityPoints)
-                hero:AddItemByName("item_removed_skill")
+				
+				for i = 0, 14 do
+					local item = hero:GetItemInSlot(i)
+					if item == nil then
+						hero:AddItemByName("item_removed_skill")
+						break
+					elseif i == 14 and item ~= nil then
+						hero:DropItem(nil, "item_removed_skill", false, nil, hero)
+					end
+				end
+
                 local newAbility = hero:AddAbility("temporary_slot_used")
                 if newAbility then
                    -- print("newAbility")
@@ -72,32 +82,32 @@ if IsServer() then
                 end
                 ability:SpendCharge()
                 local doomskill_not_removed = true
-                for i=6,hero:GetAbilityCount() -1 do
-                    local hAbility = hero:GetAbilityByIndex( i )
-                    if hAbility and not hAbility:IsAttributeBonus() and not hAbility:IsHidden() and not string.find(hAbility:GetAbilityName(), "empty") then  -- Talent-- Dunno
-                        local bAbility = hAbility:GetName()
-                        --print(bAbility .." 7th ability")                     
-                        hero:SwapAbilities( "temporary_slot_used", bAbility, true, true )
-                        hero:RemoveAbility("temporary_slot_used")
-                        doomskill_not_removed = false
-                        return    
+				for i=1,hero:GetAbilityCount() do
+					if hero:GetAbilityCount() - i > 5 then
+						local hAbility = hero:GetAbilityByIndex(hero:GetAbilityCount() - i)
+						if hAbility and not hAbility:IsAttributeBonus() and not hAbility:IsHidden() and not string.find(hAbility:GetAbilityName(), "empty") then
+							local bAbility = hAbility:GetName()
+							hero:SwapAbilities("temporary_slot_used", bAbility, true, true)
+							hero:RemoveAbility("temporary_slot_used")
+							doomskill_not_removed = false
+							break
+						end
                     end
-                end
-				Timers:CreateTimer(
-					0.60,
-                    function()
-                        if doomskill_not_removed then
-                            hero:AddItemByName("item_remove_doomskill")
-                        end 
+				end
+				Timers:CreateTimer(0.6, function()
+					if doomskill_not_removed then
+						for i = 0, 14 do
+							local item = hero:GetItemInSlot(i)
+							if item == nil then
+								hero:AddItemByName("item_remove_doomskill")
+								break
+							elseif i == 14 and item ~= nil then
+								hero:DropItem(nil, "item_remove_doomskill", false, nil, hero)
+							end
+						end
 					end
-				)                
-             
+				end)
             end
-        end    
+        end
     end
 end
-
------------------------------------------------------------------------------
-
-
-

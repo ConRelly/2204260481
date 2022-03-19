@@ -2749,8 +2749,6 @@
 		}
 	}
 
-
-
 	//=================================================================================================================
 	// Batrider: Sticky Napalm
 	//=================================================================================================================
@@ -2773,7 +2771,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"5.0"
+		"AbilityCooldown"				"5"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -8721,35 +8719,29 @@
 	}
 
 
-	//=================================================================================================================
-	// Razor: Plasma Field
-	//=================================================================================================================
+//=================================================================================================================
+// Razor: Plasma Field
+//=================================================================================================================
 	"razor_plasma_field"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
+	{   
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"7"
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"11"
 		"AbilityManaCost"				"125"
-		"FightRecapLevel"				"1"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"damage_min"				"90 400 950 4400 9900 12800 22000"
-				"LinkedSpecialBonus"	"special_bonus_unique_razor_4"								
+				"LinkedSpecialBonus"		"special_bonus_unique_razor_4"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"damage_max"				"350 935 3485 9650 16500 32200 78500"
-				"LinkedSpecialBonus"	"special_bonus_unique_razor_4"								
+				"LinkedSpecialBonus"		"special_bonus_unique_razor_4"
 			}
 			"03"
 			{
@@ -8764,12 +8756,12 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow_min"				"5"
+				"slow_min"					"5"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"slow_max"				"25 30 35 40 45 50 55"
+				"slow_max"					"25 30 35 40 45 50 55"
 			}
 			"07"
 			{
@@ -8778,8 +8770,6 @@
 			}
 		}
 	}
-
-
 // Plasma Field Talent: Damage
 	"special_bonus_unique_razor_4"
 	{
@@ -22946,7 +22936,6 @@
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_pirate_hat"
-		"ItemIsNeutralDrop"				"1"
 		"ItemRequirements"
 		{
 			"01"						"item_chest_5;item_quicksilver_amulet"
@@ -22977,7 +22966,7 @@
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemPurchasable"				"1"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralDrop"				"0"
 		"ItemRequirements"
 		{
 			"01"		"item_kaya;item_sange;item_yasha;item_chest_5;"
@@ -22992,6 +22981,7 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"
+		"ItemIsNeutralDrop"				"1"
 		"IsObsolete"					"0"
 		"AbilitySpecial"
 		{
@@ -23140,7 +23130,6 @@
 		"AbilityTextureName"			"item_recipe"
 		"ItemCost"						"0"
 		"ItemShopTags"					""
-		"ItemIsNeutralDrop"				"1"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mirror_shield"
 		"ItemRequirements"
@@ -23200,7 +23189,7 @@
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"
-		"AbilityCooldown"				"80.0"
+		"AbilityCooldown"				"80"
 		"AbilitySpecial"
 		{
 			"01"
@@ -23272,7 +23261,6 @@
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_desolator_2"
-		"ItemIsNeutralDrop"				"1"
 		"ItemRequirements"
 		{
 			"01"						"item_chest_5;item_desolator_3_custom"

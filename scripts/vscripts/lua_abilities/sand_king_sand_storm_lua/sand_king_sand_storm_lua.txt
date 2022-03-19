@@ -33,7 +33,7 @@
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1000"
+//		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0"
 		"AbilityDuration"				"10"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -54,12 +54,12 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"sand_storm_radius"		"1000"
+				"LinkedSpecialBonus"	"special_bonus_unique_sand_storm_radius"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"sand_storm_damage"		"80 240 760 1680 4320 9130 18870"
-				"LinkedSpecialBonus"	"special_bonus_unique_sand_king_2"
 			}
 			"03"
 			{
@@ -71,6 +71,21 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"sand_storm_interval"	"0.5"
+			}
+		}
+	}
+// Talent: +X Sand Storm Radius
+	"special_bonus_unique_sand_storm_radius"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"value"			"500"
 			}
 		}
 	}

@@ -262,6 +262,7 @@ if IsServer() then
 		dzzl_good_juju = true,
 		mjz_spectre_haunt = true,
 		mjz_spectre_haunt_single = true,
+		amalgamation = true,
 		
 	}
 	local include_table = {
@@ -322,6 +323,7 @@ if IsServer() then
 		if attacker == self.parent and not keys.target:IsNull() and self.hit then 
 			if self.echo and self.ability:IsCooldownReady() and not self.echo:IsNull() and IsValidEntity(self.echo) then
 				--if self.echo:IsOwnersManaEnough() then
+				if self.parent:HasModifier("modifier_atomic_samurai_focused_atomic_slash_2") then return end
 				local cooldown = self.echo:GetCooldown(self.echo:GetLevel() - 1)
 				if cooldown < self.minimum_cooldown then
 					cooldown = self.minimum_cooldown

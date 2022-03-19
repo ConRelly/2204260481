@@ -11,6 +11,9 @@ LinkLuaModifier(MODIFIER_IMMORTAL_SHOULDERS_NAME, THIS_LUA, LUA_MODIFIER_MOTION_
 mjz_death_prophet_carrion_swarm = class({})
 local ability_class = mjz_death_prophet_carrion_swarm
 
+function ability_class:GetCooldown(level)
+	return self.BaseClass.GetCooldown(self, level) - talent_value(self:GetCaster(), "special_bonus_unique_dp_carrion_swarm_cooldown")
+end
 function ability_class:GetIntrinsicModifierName()
 	if IsServer() then
         self:_CheckImmortal()

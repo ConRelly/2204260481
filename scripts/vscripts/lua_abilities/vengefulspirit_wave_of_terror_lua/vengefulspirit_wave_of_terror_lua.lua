@@ -3,7 +3,7 @@ LinkLuaModifier("modifier_wave_of_terror_armor_reduction", "lua_abilities/vengef
 
 
 function vengefulspirit_wave_of_terror_lua:OnSpellStart()
-	local vDirection = self:GetCursorPosition() - self:GetCaster():GetOrigin()
+	local vDirection = self:GetCursorPosition() - self:GetCaster():GetAbsOrigin()
 	vDirection = vDirection:Normalized()
 
 	self.wave_speed = self:GetSpecialValueFor("wave_speed")
@@ -16,11 +16,11 @@ function vengefulspirit_wave_of_terror_lua:OnSpellStart()
 	local info = {
 		EffectName = "particles/units/heroes/hero_vengeful/vengeful_wave_of_terror.vpcf",
 		Ability = self,
-		vSpawnOrigin = self:GetCaster():GetOrigin(),
+		vSpawnOrigin = self:GetCaster():GetAbsOrigin(),
 		fStartRadius = self.wave_width,
 		fEndRadius = self.wave_width,
 		vVelocity = vDirection * self.wave_speed,
-		fDistance = self:GetCastRange(self:GetCaster():GetOrigin(), self:GetCaster()),
+		fDistance = self:GetCastRange(self:GetCaster():GetAbsOrigin(), self:GetCaster()) + self:GetCaster():GetCastRangeBonus(),
 		Source = self:GetCaster(),
 		iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
 		iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP,
@@ -28,6 +28,7 @@ function vengefulspirit_wave_of_terror_lua:OnSpellStart()
 		bProvidesVision = true,
 		iVisionTeamNumber = self:GetCaster():GetTeamNumber(),
 		iVisionRadius = self.vision_aoe,
+		fExpireTime = GameRules:GetGameTime() + 10,
 	}
 	self.flVisionTimer = self.wave_width / self.wave_speed
 	self.flLastThinkTime = GameRules:GetGameTime()

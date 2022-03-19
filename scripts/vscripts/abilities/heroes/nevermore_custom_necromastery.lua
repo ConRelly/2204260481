@@ -136,7 +136,10 @@ modifier_necromastery_shard = class({})
 function modifier_necromastery_shard:IsHidden() return (self:GetStackCount() < 2) end
 function modifier_necromastery_shard:IsPurgable() return false end
 function modifier_necromastery_shard:DeclareFunctions()
-	return {MODIFIER_PROPERTY_TOOLTIP}
+	return {MODIFIER_PROPERTY_PROJECTILE_NAME, MODIFIER_PROPERTY_TOOLTIP}
+end
+function modifier_necromastery_shard:GetModifierProjectileName()
+	return "particles/units/heroes/hero_nevermore/sf_necromastery_attack.vpcf"
 end
 function modifier_necromastery_shard:GetModifierCritDMG()
 	self:GetParent():RemoveModifierByName("modifier_necromastery_shard")

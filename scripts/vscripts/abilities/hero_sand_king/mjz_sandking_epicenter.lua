@@ -55,10 +55,10 @@ function modifier_mjz_sandking_epicenter_shard:OnIntervalThink()
 		if caster:IsIllusion() then return end
 		local radius = ability:GetSpecialValueFor("epicenter_radius_max")
 		local epicenter_damage = ability:GetSpecialValueFor("epicenter_damage") + ability:GetSpecialValueFor("epicenter_shard_dmg_inc")
-		local str_damage_pct = ability:GetSpecialValueFor("str_damage_pct") + ability:GetSpecialValueFor("epicenter_shard_str_dmg_inc") + talent_value(caster, "special_bonus_unique_mjz_sandking_epicenter_strength")
+		local str_multiplier = ability:GetSpecialValueFor("str_multiplier") + ability:GetSpecialValueFor("epicenter_shard_str_dmg_inc") + talent_value(caster, "special_bonus_unique_mjz_sandking_epicenter_strength")
 		local slow_duration = ability:GetSpecialValueFor("epicenter_slow_duration")
 
-		local damage = epicenter_damage + caster:GetStrength() * str_damage_pct / 100
+		local damage = epicenter_damage + caster:GetStrength() * str_multiplier
 
 		local particle_epicenter_fx = ParticleManager:CreateParticle("particles/units/heroes/hero_sandking/sandking_epicenter.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 		ParticleManager:SetParticleControl(particle_epicenter_fx, 0, caster:GetAbsOrigin())

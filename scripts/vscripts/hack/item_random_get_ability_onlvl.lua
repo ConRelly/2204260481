@@ -6,26 +6,37 @@ function OnSpellStart( keys )
 	local hero = caster
 	if hero:HasModifier("modifier_arc_warden_tempest_double") then
 		ability:SetActivated(false)
-		return nil
+		return
 	end
 	if hero:IsRealHero() then
+--[[
 		local ability4 = hero:GetAbilityByIndex(3)
 		local ability5 = hero:GetAbilityByIndex(4)
 		local ability7 = hero:GetAbilityByIndex(6)
 		local ability8 = hero:GetAbilityByIndex(7)
-
+]]
 		local slotId = -1
-		-- if ability4 then slotId = 4 end
-		-- if ability5 then slotId = 6 end
-		-- if ability7 then slotId = 8 end
-		-- if ability8 then slotId = nil end
+--[[
+		if ability4 then slotId = 4 end
+		if ability5 then slotId = 6 end
+		if ability7 then slotId = 8 end
+		if ability8 then slotId = nil end
 		if ability8 == nil or ability8:GetName() == "generic_hidden" then slotId = 7 end
 		if ability7 == nil or ability7:GetName() == "generic_hidden" then slotId = 6 end
 		if ability5 == nil or ability5:GetName() == "generic_hidden" then slotId = 4 end
 		if ability4 == nil or ability4:GetName() == "generic_hidden" then slotId = 3 end
-		-- if ability8 == nil then slotId = 7 end
-		-- if ability7 == nil then slotId = 6 end
+		if ability8 == nil then slotId = 7 end
+		if ability7 == nil then slotId = 6 end
+]]
+		if hero:GetAbilityByIndex(3) == nil then
+			slotId = -1
+		elseif hero:GetAbilityByIndex(3):GetName() == "generic_hidden" then
+			slotId = 3
+		elseif hero:GetAbilityByIndex(4):GetName() == "generic_hidden" then
+			slotId = 4
+		end
 
+--[[
 		if IsInToolsMode() then
 			print("ability8 :" .. ability8:GetName())
 			print("ability7 :" .. ability7:GetName())
@@ -33,7 +44,7 @@ function OnSpellStart( keys )
 			print("ability4 :" .. ability4:GetName())
 			print("newAbility slotID:" .. slotId)
 		end
-		
+]]
 		if slotId > -1 then
 			local oldAbility = hero:GetAbilityByIndex(slotId)
 			if oldAbility then
@@ -44,7 +55,6 @@ function OnSpellStart( keys )
 		local exclude_table = {
 			faceless_void_backtrack = true,
 			phantom_reflex = true,
-
 		}		
 		local found_valid_ability = false
 		while not found_valid_ability do
@@ -79,9 +89,9 @@ function OnSpellStart( keys )
 				end
 				local newAbility = hero:AddAbility(newAbilityName)	  
 				print("newAbility:" .. newAbilityName)  
-				if slotId > -1 then						  
-					newAbility:SetAbilityIndex(slotId)
-				end
+--				if slotId > -1 then						  
+--					newAbility:SetAbilityIndex(slotId)
+--				end
 				hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
 				found_valid_ability = true
 				hero:RemoveItem(ability)

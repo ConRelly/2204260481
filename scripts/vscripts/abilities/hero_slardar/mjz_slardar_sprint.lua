@@ -5,11 +5,10 @@ local ability_class = mjz_slardar_sprint
 
 function ability_class:OnToggle()
 	if IsServer() then
-		local ability = self
 		local caster = self:GetCaster()
-		if ability:GetToggleState() then
+		if self:GetToggleState() then
 			EmitSoundOn("Hero_Slardar.Sprint", caster)
-			caster:AddNewModifier(caster, ability, 'modifier_mjz_slardar_sprint', {})
+			caster:AddNewModifier(caster, self, 'modifier_mjz_slardar_sprint', {})
 		else
 			caster:RemoveModifierByName('modifier_mjz_slardar_sprint')
 		end
@@ -31,39 +30,36 @@ function modifier_class:GetEffectAttachType()
 	return PATTACH_ABSORIGIN_FOLLOW
 end
 
+if IsServer() then
+	function modifier_class:OnCreated(table)
+		if self:GetAbility() then
+			self.bonus_attack_speed = self:GetAbility():GetSpecialValueFor("bonus_attack_speed")
+			self.bonus_move_speed = self:GetAbility():GetSpecialValueFor("bonus_move_speed")
+			self.health_cost_per_second = self:GetAbility():GetSpecialValueFor("health_cost_per_second") * (1 - talent_value(self:GetCaster(), "special_bonus_unique_mjz_slardar_sprint_hp_cost") / 100)
+			self.tick_interval = self:GetAbility():GetSpecialValueFor("tick_interval")
+		end
+		self:StartIntervalThink(self.tick_interval)
+	end
+
+	function modifier_class:OnIntervalThink()
+		local health_cost = self.health_cost_per_second * self.tick_interval
+
+		local iDesiredHealthValue = self:GetParent():GetHealth() - health_cost
+		self:GetParent():ModifyHealth(iDesiredHealthValue, self:GetAbility(), false, 0)
+	end
+end
 function modifier_class:DeclareFunctions()
 	return {
+		MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS,
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
 	}
 end
 
-function modifier_class:GetModifierAttackSpeedBonus_Constant()
-	return self:GetAbility():GetSpecialValueFor('bonus_attack_speed')
-end
+function modifier_class:GetActivityTranslationModifiers() return "sprint" end
+function modifier_class:GetModifierAttackSpeedBonus_Constant() return self.bonus_attack_speed end
+function modifier_class:GetModifierMoveSpeedBonus_Percentage() return self.bonus_move_speed end
 
-function modifier_class:GetModifierMoveSpeedBonus_Percentage()
-	return self:GetAbility():GetSpecialValueFor('bonus_move_speed')
-end
-
-if IsServer() then
-	function modifier_class:OnCreated(table)
-		local ability = self:GetAbility()
-		local health_cost_per_second = ability:GetSpecialValueFor('health_cost_per_second')
-		local tick_interval = ability:GetSpecialValueFor('tick_interval')
-
-		self:StartIntervalThink(tick_interval)
-	end
-
-	function modifier_class:OnIntervalThink()
-		local parent = self:GetParent()
-		local ability = self:GetAbility()
-		local health_cost_per_second = ability:GetSpecialValueFor('health_cost_per_second')
-		local tick_interval = ability:GetSpecialValueFor('tick_interval')
-
-		local health_cost = health_cost_per_second * tick_interval
-
-		local iDesiredHealthValue = parent:GetHealth() - health_cost
-		parent:ModifyHealth(iDesiredHealthValue, ability, false, 0)
-	end
+function modifier_class:CheckState()
+	return {[MODIFIER_STATE_NO_UNIT_COLLISION] = true}
 end

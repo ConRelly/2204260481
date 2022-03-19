@@ -49,15 +49,15 @@ if IsServer() then
         local radius_increase = ability:GetSpecialValueFor('epicenter_radius_increase')
         local epicenter_pulses = GetTalentSpecialValueFor(ability, 'epicenter_pulses')
         local epicenter_damage = ability:GetSpecialValueFor('epicenter_damage')
-        local str_damage_pct = GetTalentSpecialValueFor(ability, 'str_damage_pct')
+        local str_multiplier = ability:GetSpecialValueFor("str_multiplier") + ability:GetSpecialValueFor("epicenter_shard_str_dmg_inc") + talent_value(caster, "special_bonus_unique_mjz_sandking_epicenter_strength")
         local slow_duration = ability:GetSpecialValueFor('epicenter_slow_duration')
 
 		if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
 			epicenter_damage = epicenter_damage + ability:GetSpecialValueFor("epicenter_shard_dmg_inc")
-			str_damage_pct = str_damage_pct + ability:GetSpecialValueFor("epicenter_shard_str_dmg_inc")
+			str_multiplier = str_multiplier + ability:GetSpecialValueFor("epicenter_shard_str_dmg_inc")
 		end
 
-        local damage = epicenter_damage + parent:GetStrength() * (str_damage_pct / 100.0)
+        local damage = epicenter_damage + parent:GetStrength() * str_multiplier
 
         self.current_pulses = self.current_pulses + 1
 

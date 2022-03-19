@@ -14,7 +14,7 @@ function item_god_slayer:OnSpellStart ()
 	if IsServer() then
 		local thinker = CreateModifierThinker (self:GetCaster(), self, "modifier_atomic_samurai_focused_atomic_slash_thinker_2", {duration = self:GetSpecialValueFor("duration")}, self:GetCursorPosition(), self:GetCaster():GetTeamNumber(), false)
 
-		AddFOWViewer (self:GetCaster():GetTeam (), self:GetCursorPosition(), 450, 4, false)
+		AddFOWViewer(self:GetCaster():GetTeam (), self:GetCursorPosition(), self:GetSpecialValueFor("radius") * 0.75, 4, false)
 		GridNav:DestroyTreesAroundPoint(self:GetCursorPosition(), 500, false)
 
 		EmitSoundOn("Hero_EmberSpirit.SearingChains.Cast", thinker)
@@ -97,7 +97,7 @@ function modifier_dragonborn:GetModifierPhysicalArmorBonus()
 	local stacks = self:GetStackCount() + item_charges
 	local armor = ability:GetSpecialValueFor("armor")
 	local stack_armor = ability:GetSpecialValueFor("stack_armor")
-	local realarmor = stacks * stack_armor
+	local realarmor = stacks * stack_armor + armor
 	return realarmor
 end
 function modifier_dragonborn:GetModifierBonusStats_Strength()
@@ -187,7 +187,7 @@ function modifier_atomic_samurai_focused_atomic_slash_thinker_2:OnCreated(event)
 			self.damage2 = mana * (per_mana_underdog / 100)
 		end
 		self.damage = mana * (per_mana_others / 100)
-		self.mod = self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_atomic_samurai_focused_atomic_slash_2", nil)
+		self.mod = self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_atomic_samurai_focused_atomic_slash_2", {})
 		self.pos = self:GetParent():GetAbsOrigin()
 		self.old_pos = self:GetCaster():GetAbsOrigin()
 
@@ -205,15 +205,15 @@ function modifier_atomic_samurai_focused_atomic_slash_thinker_2:OnDestroy()
 	if IsServer() then
 		if self.mod and not self.mod:IsNull() then
 			self.mod:Destroy()
-
-			self.caster:SetAbsOrigin(self.old_pos)
-			FindClearSpaceForUnit(self.caster, self.old_pos, true)
 		end
+		self.caster:SetAbsOrigin(self.old_pos)
+		FindClearSpaceForUnit(self.caster, self.old_pos, true)
 	end
 end
 
 function modifier_atomic_samurai_focused_atomic_slash_thinker_2:OnIntervalThink()
 	if IsServer() then
+		if not self.caster:HasModifier("modifier_atomic_samurai_focused_atomic_slash_2") then self:Destroy() return end
 		local target = self:Next()
 		if target == nil or target:IsNull() then self:Destroy() return end
 		local pos = target:GetAbsOrigin()
@@ -225,6 +225,8 @@ function modifier_atomic_samurai_focused_atomic_slash_thinker_2:OnIntervalThink(
 
 		self.caster:SetAbsOrigin(target:GetAbsOrigin())
 		FindClearSpaceForUnit(self.caster, target:GetAbsOrigin(), false)
+		
+		if self.caster:IsDisarmed() then return end
 
 		--EmitSoundOn("Hero_Juggernaut.ArcanaTrigger", target)
 		EmitSoundOn("Hero_Juggernaut.ArcanaTrigger.Loadout_1", self.caster)
@@ -249,14 +251,14 @@ function modifier_atomic_samurai_focused_atomic_slash_thinker_2:CreateTrail(pos1
 	end
 end
 
-if modifier_atomic_samurai_focused_atomic_slash_2 == nil then modifier_atomic_samurai_focused_atomic_slash_2 = class({}) end
 
+if modifier_atomic_samurai_focused_atomic_slash_2 == nil then modifier_atomic_samurai_focused_atomic_slash_2 = class({}) end
 function modifier_atomic_samurai_focused_atomic_slash_2:IsHidden() return true end
 function modifier_atomic_samurai_focused_atomic_slash_2:IsPurgable() return false end
 function modifier_atomic_samurai_focused_atomic_slash_2:GetEffectAttachType() return PATTACH_OVERHEAD_FOLLOW end
-function modifier_atomic_samurai_focused_atomic_slash_2:CheckState () return { [MODIFIER_STATE_COMMAND_RESTRICTED] = true,[MODIFIER_STATE_INVULNERABLE] = true, [MODIFIER_STATE_OUT_OF_GAME] = true, [MODIFIER_STATE_NO_UNIT_COLLISION] = true } end
+function modifier_atomic_samurai_focused_atomic_slash_2:CheckState () return { [MODIFIER_STATE_INVULNERABLE] = true, [MODIFIER_STATE_OUT_OF_GAME] = true, [MODIFIER_STATE_NO_UNIT_COLLISION] = true } end
 
-function modifier_atomic_samurai_focused_atomic_slash_2:OnCreated(params)
+function modifier_atomic_samurai_focused_atomic_slash_2:OnCreated()
 	if IsServer() then
 		self:GetCaster():AddNoDraw()
 	end
@@ -265,4 +267,15 @@ function modifier_atomic_samurai_focused_atomic_slash_2:OnDestroy()
 	if IsServer() then
 		self:GetCaster():RemoveNoDraw()
 	end
+end
+function modifier_atomic_samurai_focused_atomic_slash_2:DeclareFunctions()
+	return {MODIFIER_EVENT_ON_ORDER}
+end
+function modifier_atomic_samurai_focused_atomic_slash_2:OnOrder(params)
+	if params.unit ~= self:GetParent() then return end
+	if params.order_type ~= DOTA_UNIT_ORDER_HOLD_POSITION then
+		return
+	end
+	self:Destroy()
+	return 0
 end

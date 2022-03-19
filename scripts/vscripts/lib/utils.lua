@@ -139,6 +139,20 @@ function CDOTABaseAbility:GetTalentSpecialValueFor(value)
 	return base
 end
 
+function FindWearables(unit, wearable_model_name)
+	local model = unit:FirstMoveChild()
+	while model ~= nil do
+		if model:GetClassname() == "dota_item_wearable" then
+			local modelName = model:GetModelName()
+			if modelName == wearable_model_name then
+				return true
+			end
+		end
+		model = model:NextMovePeer()
+	end
+	return false
+end
+
 function create_popup(data)
     local target = data.target
     local value = math.floor(data.value)
@@ -166,6 +180,7 @@ end
 
 function spell_crit(attacker, victim, damageTable)
 	if attacker and attacker:IsHero() then
+		if bit.band(damageTable.damage_flags, DOTA_DAMAGE_FLAG_HPLOSS) == DOTA_DAMAGE_FLAG_HPLOSS or bit.band(damageTable.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) == DOTA_DAMAGE_FLAG_REFLECTION then return end
 		local mana = attacker:GetMana()
 		local health = attacker:GetHealth()
 		local damage_mult = 1.8
@@ -314,7 +329,7 @@ function IsFullSolt( ... )
     end
 end
 
-function CDOTA_BaseNPC:DropItem(hItem, sNewItemName, bLaunchLoot)
+function CDOTA_BaseNPC:DropItem(hItem, sNewItemName, bLaunchLoot, owner, purchaser)
 	local vLocation = GetGroundPosition(self:GetAbsOrigin(), self)
 	local sName
 	local vRandomVector = RandomVector(100)
@@ -324,7 +339,7 @@ function CDOTA_BaseNPC:DropItem(hItem, sNewItemName, bLaunchLoot)
 		self:DropItemAtPositionImmediate(hItem, vLocation)
 	else
 		sName = sNewItemName
-		hItem = CreateItem(sNewItemName, nil, nil)
+		hItem = CreateItem(sNewItemName, owner, purchaser)
 		CreateItemOnPositionSync(vLocation, hItem)
 	end
 

@@ -336,6 +336,7 @@ function IsExcludeAbility(ability)
 		"primal_beast_onslaught",
 		"primal_beast_onslaught_release",
 		"queenofpain_blink",
+		"amalgamation",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do
@@ -367,10 +368,6 @@ function IsExcludeAbility9(ability)
 	local list = {
 -- Items
 -- Abilities
-		"invoker_quas",
-		"invoker_wex",
-		"invoker_exort",
-		"invoker_invoke",
 		"mjz_tinker_quick_arm",
 		"naga_siren_song_of_the_siren",
 		"naga_siren_song_of_the_siren_cancel",
@@ -379,7 +376,6 @@ function IsExcludeAbility9(ability)
 		"keeper_of_the_light_spirit_form_illuminate_end",
 		"pangolier_gyroshell",
 		"pangolier_gyroshell_stop",
-		"ancient_apparition_ice_blast_release",
 		"bane_nightmare",
 		"bane_nightmare_end",
 		"mjz_templar_assassin_trap_teleport",
@@ -410,9 +406,6 @@ function IsExcludeAbility9(ability)
 		"ancient_apparition_ice_blast",
 		"ancient_apparition_ice_blast_release",
 		"zanto_gari",
-		"dazzle_good_juju",
-		"primal_beast_onslaught",
-		"primal_beast_onslaught_release",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

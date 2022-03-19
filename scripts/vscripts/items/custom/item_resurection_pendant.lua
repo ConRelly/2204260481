@@ -27,7 +27,8 @@ end
 
 if IsServer() then
     function item_resurection_pendant:OnChannelFinish(interrupted)
-	self:GetCaster():RemoveGesture(ACT_DOTA_GENERIC_CHANNEL_1)
+		if not self then return end
+		self:GetCaster():RemoveGesture(ACT_DOTA_GENERIC_CHANNEL_1)
         if not interrupted and not self:GetParent():HasModifier("modifier_arc_warden_tempest_double") then
 			local base_cooldown = self:GetSpecialValueFor("base_cooldown")
 			local extra_cooldown = self:GetSpecialValueFor("extra_cooldown")

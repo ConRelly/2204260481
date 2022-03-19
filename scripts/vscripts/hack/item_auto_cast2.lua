@@ -1,21 +1,18 @@
 
 function OnSpellStart( keys )
-    local caster = keys.caster
+    local hero = keys.caster
     local ability = keys.ability
     local unit = keys.unit
-    local hero = caster
 
 
     if hero:HasModifier("modifier_arc_warden_tempest_double") then
         ability:SetActivated(false)
 		return nil
     end
-    
-    
 
- 
+    if hero:HasAbility("mjz_bristleback_quill_spray_autocast4_5") then return end
 
-    if hero:IsRealHero() then
+	if hero:IsRealHero() then
         local ability4 = hero:GetAbilityByIndex(3)
         local ability5 = hero:GetAbilityByIndex(4)
         local ability7 = hero:GetAbilityByIndex(6)
@@ -61,6 +58,9 @@ function OnSpellStart( keys )
                 hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
                 found_valid_ability = true
                 hero:RemoveItem(ability)
+				if newAbility then
+					newAbility:SetLevel(1)
+				end
                 return true                                                   
             end
             break                                                    
