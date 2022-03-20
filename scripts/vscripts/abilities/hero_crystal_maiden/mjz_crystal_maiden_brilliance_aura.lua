@@ -73,6 +73,7 @@ function modifier_manacost:IsBuff() return true end
 function modifier_manacost:DeclareFunctions() return {MODIFIER_PROPERTY_MANACOST_PERCENTAGE} end
 
 function modifier_manacost:GetModifierPercentageManacost()
+	if not self:GetAbility() then return end
 	if IsServer() then
 		local manacost_reduction = GetTalentSpecialValueFor(self:GetAbility(), "manacost_reduction")
 		if self:GetStackCount() ~= manacost_reduction then

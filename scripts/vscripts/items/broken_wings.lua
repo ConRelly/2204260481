@@ -160,6 +160,7 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 	local target = keys.unit
 	local attacker = keys.attacker
 	local DamageType = keys.damage_type
+	if not self:GetAbility() then return end
 	if not caster:IsRealHero() then return end
 	if attacker ~= caster then return end
 	if target == attacker then return end
@@ -169,17 +170,11 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 			self.hit = false
 			local feather_add_dmg = self:GetAbility():GetSpecialValueFor("feather_add_dmg")
 			local max_used_stacks = 50
-			if caster:HasModifier("modifier_super_scepter") then
-				if caster:HasModifier("modifier_marci_unleash_flurry") then
-					feather_add_dmg = self:GetAbility():GetSpecialValueFor("feather_add_dmg_marci")
-					max_used_stacks = 3
-				end                                 
-			end
 			local orig_dmg = keys.original_damage
 			local lvl = caster:GetLevel()
 			local spell_amp = caster:GetSpellAmplification(false)
-			local limit_magic = math.floor( lvl * 100000 / spell_amp)
-			local limit_pure = math.floor( lvl * 10000 / spell_amp)
+			local limit_magic = math.floor( lvl * 60000 / spell_amp)
+			local limit_pure = math.floor( lvl * 4000 / spell_amp)
 			local limit = 0
 			local used_stacks = 1
 			if DamageType == DAMAGE_TYPE_MAGICAL then 
@@ -191,11 +186,19 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 				if caster:HasModifier("modifier_broken_wings_divinity") then 
 					orig_dmg = limit
 				end
-				used_stacks = math.ceil(orig_dmg / limit + 1)
+				used_stacks = math.ceil(orig_dmg / limit + 1) + 3
 				if used_stacks > 50 then
 					used_stacks = max_used_stacks
-				end
+				end			
 			end
+			if caster:HasModifier("modifier_super_scepter") then
+				if caster:HasModifier("modifier_marci_unleash_flurry") then
+					feather_add_dmg = self:GetAbility():GetSpecialValueFor("feather_add_dmg_marci")
+					if used_stacks > 3 then
+						used_stacks = 3
+					end
+				end                                 
+			end				
 			local damage = math.floor(orig_dmg * ((feather_add_dmg - 100) / 100))
 			local damage_popup = math.floor(orig_dmg * (feather_add_dmg / 100))				
 			ApplyDamage({

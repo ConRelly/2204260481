@@ -109,7 +109,7 @@ function modifier_dzzl_good_juju:OnAbilityExecuted(params)
 		if cdr_per_cast == 0 then return end
 		if caster:IsIllusion() then return end
 
-		if params.unit == caster and not used_ability:IsItem() and not used_ability:IsToggle() and used_ability:GetCooldown(used_ability:GetLevel() - 1) > 0 then
+		if params.unit == caster and not used_ability:IsItem() and not used_ability:IsToggle() and used_ability:GetCooldown(used_ability:GetLevel() - 1) > 1 then
 
 			local ability_name = used_ability:GetAbilityName()
 			if add_penality[ability_name] then 

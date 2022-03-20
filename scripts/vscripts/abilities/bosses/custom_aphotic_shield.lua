@@ -39,6 +39,7 @@ function modifier_custom_aphotic_shield:OnCreated(keys)
 end
 function modifier_custom_aphotic_shield:OnDestroy()
 	if IsServer() then
+		if not self:GetAbility() then return end
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
 

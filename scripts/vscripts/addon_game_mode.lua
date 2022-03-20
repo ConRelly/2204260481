@@ -52,7 +52,8 @@ function Precache(context)
 		"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts",
-		"soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
+		"soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_primal_beast.vsndevts",
 	}
 
 	local units = { 

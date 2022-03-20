@@ -45,6 +45,7 @@ if IsServer() then
     function modifier_ion_shell_custom:OnIntervalThink()
 		local caster = self:GetCaster()
 		local parent = self:GetParent()
+		if not self:GetAbility() then return end
 		if IsValidEntity(parent) and IsValidEntity(caster) then
 			local caster_int = caster:GetIntellect()
 			local int_dmg  = caster_int * self:GetAbility():GetSpecialValueFor("int_mult")

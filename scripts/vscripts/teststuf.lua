@@ -22,22 +22,35 @@ function getrandomskill(npc)
                 skill_lvl = 7
             end    
         end
-        --[[local ability_trist = "mjz_night_stalker_hunter_in_the_night"]]
-        -- local searing = npc:AddAbility("earth_spirit_rolling_boulder")
-        -- local searing2 = npc:AddAbility("juggernaut_omni_slash")
-        -- local searing3 = npc:AddAbility("slardar_sprint")
-        -- local searing4 = npc:AddAbility("slardar_sprint")
-        -- searing:UpgradeAbility(true)
-        -- searing:SetLevel(skill_lvl)
+        local test_mode = false  -- comment out this or change to 'test_mode = true' to enable /disable test.
+        if test_mode then
+            local testskill = "primal_beast_uproar_custom"
+            local testskill2 = "primal_beast_uproar_custom"
+            local testskill3 = "primal_beast_onslaught_custom"
+            local testskill4 = "tusk_walrus_punch_2"
 
-        -- searing2:UpgradeAbility(true)
-        -- searing2:SetLevel(skill_lvl)
+            if not npc:HasAbility(testskill) then
+                local searing = npc:AddAbility(testskill)
+                searing:UpgradeAbility(true)
+                searing:SetLevel(skill_lvl)
+            end
+            if not npc:HasAbility(testskill2) then
+                local searing2 = npc:AddAbility(testskill2)   
+                searing2:UpgradeAbility(true)
+                searing2:SetLevel(skill_lvl)           
+            end   
+            if not npc:HasAbility(testskill3) then
+                local searing3 = npc:AddAbility(testskill3)   
+                searing3:UpgradeAbility(true)
+                searing3:SetLevel(skill_lvl)           
+            end  
+            if not npc:HasAbility(testskill4) then
+                local searing4 = npc:AddAbility(testskill4)   
+                searing4:UpgradeAbility(true)
+                searing4:SetLevel(skill_lvl)           
+            end
+        end    
 
-        -- searing3:UpgradeAbility(true)
-        -- searing3:SetLevel(skill_lvl)
-
-        -- searing4:UpgradeAbility(true)
-        -- searing4:SetLevel(skill_lvl)
         
         Timers:CreateTimer({
             endTime = skop, 
@@ -282,7 +295,6 @@ function GetRandomAbilityName( hero )
         "big_thunder_lizard_wardrums_aura",   
         "mjz_general_megamorph",            
         "juggernaut_omni_slash",
-        "mjz_phantom_assassin_phantom_strike",
         "mjz_spectre_desolate",
         "mjz_templar_assassin_proficiency",
         "omniknight_guardian_angel",
@@ -305,7 +317,7 @@ function GetRandomAbilityName( hero )
         "morphling_waveform",
         "nyx_assassin_mana_burn",
         "dazzle_poison_touch",
-        "dazzle_bad_juju",
+        --"dazzle_bad_juju",
         "mirana_leap",
         "doom_bringer_doom",
         "mars_spear",
@@ -370,6 +382,9 @@ function GetRandomAbilityName( hero )
         "warlock_shadow_word",
         "huskar_berserkers_blood",
         "marci_unleash_custom",
+        "primal_beast_onslaught", --can move the boss out of map.
+        "primal_beast_uproar_custom",
+
 
     }
     local randomIndex = RandomInt(1, #abilityList)

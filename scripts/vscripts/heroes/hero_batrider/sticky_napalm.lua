@@ -41,11 +41,13 @@ end
 
 function modifier_sticky_napalm_handler:OnAttackLanded(keys)
 	if IsServer() then
+		if not self:GetAbility() then return end
 		local caster = self:GetCaster()
 		local target = keys.target
 		if caster ~= keys.attacker then return end
-		if not caster:HasModifier("modifier_item_aghanims_shard") then return end
-		if RollPercentage(50) then
+		if not caster:HasModifier("modifier_super_scepter") then return end
+		local chance = self:GetAbility():GetSpecialValueFor("ss_stack_chance")
+		if RollPercentage(chance) then
 			target:AddNewModifier(caster, self:GetAbility(), "modifier_sticky_napalm", {duration = self:GetAbility():GetSpecialValueFor("duration") * (1 - target:GetStatusResistance())})
 		end
 	end
@@ -61,6 +63,7 @@ end
 ----------------------------
 function modifier_sticky_napalm:GetEffectName() return "particles/units/heroes/hero_batrider/batrider_stickynapalm_debuff.vpcf" end
 function modifier_sticky_napalm:GetStatusEffectName() return "particles/status_fx/status_effect_stickynapalm.vpcf" end
+function modifier_sticky_napalm:IsPurgable() return false end
 function modifier_sticky_napalm:OnCreated()
 	self:Recalculate(self:GetAbility())
 
@@ -105,6 +108,7 @@ function modifier_sticky_napalm:GetModifierTurnRate_Percentage() return self.tur
 function modifier_sticky_napalm:OnTooltip() return self:GetStackCount() * self.damage end
 
 function modifier_sticky_napalm:OnTakeDamage(keys)
+	if not self:GetAbility() then return end
 	if keys.attacker == self:GetCaster() and keys.unit == self:GetParent() and (not keys.inflictor or not self.non_trigger_inflictors[keys.inflictor:GetName()]) and bit.band(keys.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) ~= DOTA_DAMAGE_FLAG_REFLECTION then
 		local damage_debuff_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_batrider/batrider_napalm_damage_debuff.vpcf", PATTACH_ABSORIGIN, self:GetParent())
 		ParticleManager:ReleaseParticleIndex(damage_debuff_particle)

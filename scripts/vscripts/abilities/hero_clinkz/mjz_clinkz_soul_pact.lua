@@ -116,7 +116,12 @@ end
 function modifier_mjz_clinkz_soul_pact:OnAttackLanded(keys)
 	if IsServer() then
 		if keys.attacker ~= self:GetParent() then return end
-
+		if not self:GetAbility() then	 
+			if self and not self:IsNull() then
+				self:Destroy()
+			end	
+			return
+		end
 		local caster = self:GetParent()
 		local ability = self:GetAbility()
 		local attacker = keys.attacker

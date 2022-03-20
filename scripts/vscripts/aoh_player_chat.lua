@@ -69,6 +69,8 @@ function AOHGameMode:OnPlayerChat(keys)
 		end	
 	end
 	if keys.text == "-testsfull" and (not self._endlessMode or not self._hardMode) and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+		local steam_name = PlayerResource:GetPlayerName(0)
+		if steam_name ~= "ConRelly" then return end
 		if GetMapName() ~= "heroattack_on_easy" then
 			self._endlessMode = true
 			self._hardMode = true

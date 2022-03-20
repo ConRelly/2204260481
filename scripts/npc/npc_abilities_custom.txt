@@ -9344,6 +9344,102 @@
 		}
 	}
 }
+//Primal beast uproar
+"primal_beast_uproar_custom"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"                     "primal_beast_uproar"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+	"AbilityCooldown"				"20"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+	"AbilityCastGestureSlot"		"DEFAULT"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityValues"
+	{
+		"bonus_damage"				"250 500 750 1000 1250 1750 2500"
+		"bonus_damage_per_stack"	"20 25 35 45 125 235 350"
+		"stack_limit"				"20"
+		"damage_limit"				"5000"
+		"stack_duration"			"20"
+		"move_slow_per_stack"		"50"
+		"slow_duration"				"10.0"
+		"damage_min"				"20"
+		"damage_max"				"2000"
+		"radius"					"1800"
+		"roared_bonus_attack_speed"	"100"
+		"roared_bonus_armor"
+		{
+			"value"					"4 7 10 13 16 19 25"
+			"special_bonus_unique_primal_beast_uproar_armor"	"+3"
+		}
+		"roar_duration"				"7"
+		"should_dispell"
+		{
+			"value"					"1"
+			"special_bonus_unique_primal_beast_roar_dispells"	"+1"
+		}
+	}
+}	
+
+// primal beast onslaught
+"primal_beast_onslaught_custom"
+{
+	// General
+	//------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"primal_beast_onslaught"														
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"//ABILITY_BEHAVIOR_NO_TARGET
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+	"FightRecapLevel"				"1"
+	"MaxLevel"                      "7"
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.15"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	"AbilityCastGestureSlot"		"DEFAULT"
+	//"AbilityCastRange"			"2000"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"45"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"120"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityValues"
+	{
+		"charge_speed"				"1200"
+		"chargeup_time"				"1.0"
+		"slow_pct"					"65"
+		"knockback_radius"			"190"
+		"max_distance"				"2000"
+		"knockback_distance"		"200"
+		"knockback_damage"
+		{
+			"value"					"2100 4200 6329 9380 14500 36500 125600"
+			"special_bonus_unique_primal_beast_onslaught_damage"	"+120"
+		}
+		"slow_duration"				"5"
+		"knockback_duration"		"0.2"
+		"max_charge_time"			"1.0"
+		"turn_rate"					"70"
+		"base_power"				"0.15"
+		"movement_turn_rate"		"50"
+		"stun_duration"				"2.6"
+	}
+}
+
+
 "custom_fury_swipes"
 {
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -42664,14 +42760,14 @@
 		"LevelsBetweenUpgrades"			"12"
 		"AbilityCastRange"				"1800"
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"5"
+		"AbilityCooldown"				"4"
 		"AbilityManaCost"				"20"
 		"AbilityModifierSupportValue"	"0.5"
 		"AbilityValues"
 		{
 			"damage"
 			{
-				"value"				"85 950 1820 3950 8400 15500 21500"
+				"value"				"85 250 720 1150 1800 2550 4400"
 				"LinkedSpecialBonus"				"special_bonus_unique_sticky_napalm_damage"
 				"CalculateSpellDamageTooltip"		"1"
 			}
@@ -42683,6 +42779,7 @@
 			"duration"				"10"
 			"ms_slow_pct"			"5"
 			"turn_rate_pct"			"15"
+			"ss_stack_chance"       "10"
 			"max_stacks"			"10 20 30 40 50 60 70"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -42698,7 +42795,7 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"value"			"6000"
+				"value"			"850"
 			}
 		}
 	}

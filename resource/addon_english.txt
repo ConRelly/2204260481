@@ -521,7 +521,7 @@
 
 //Batrider
 	"DOTA_Tooltip_ability_sticky_napalm"				"Sticky Napalm"
-	"DOTA_Tooltip_ability_sticky_napalm_Description"	"Drenches an area in sticky oil, amplifying damage from Batrider's attacks and abilities and slowing the movement speed and turn rate of enemies in the area. Additional casts of Sticky Napalm continue to increase damage, up to %max_stacks% stacks."
+	"DOTA_Tooltip_ability_sticky_napalm_Description"	"Drenches an area in sticky oil, amplifying damage from Batrider's attacks and abilities and slowing the movement speed and turn rate of enemies in the area. Additional casts of Sticky Napalm continue to increase damage, up to %max_stacks% stacks.\n<h1><font color='#DE3163'>Super Scepter</font></h1>You have %ss_stack_chance%%% chance to add an Stiky Napalm stack when your attack lands on a target."
 	"DOTA_Tooltip_ability_sticky_napalm_Lore"	"It's not uncommon to hear the Rider cackle while he increases the flammability of his opponents."
 	"DOTA_Tooltip_ability_sticky_napalm_Note0"		"All damage from Batrider gets amplified, except for some items and item abilities."
 	"DOTA_Tooltip_ability_sticky_napalm_Note1"		"Sticky napalm does not require turning to cast."
@@ -5711,6 +5711,33 @@ The extra targets will not receive other attack effects (such as critical strike
 "DOTA_Tooltip_ability_custom_primal_roar_slow_movement_speed_pct"			"%MOVEMENT SLOW:"
 "DOTA_Tooltip_ability_custom_primal_roar_slow_attack_speed_pct"				"ATTACK SLOW:"
 
+//primal beast base skills
+
+"DOTA_Tooltip_ability_primal_beast_uproar_custom"								"Uproar"
+"DOTA_Tooltip_ability_primal_beast_uproar_custom_Description"					"The Beast's temper passively provides base bonus damage. Additionally, for every instance of %damage_limit% damage or more Primal Beast takes from enemy heroes, he accumulates stacks of Uproar. \n\n When activated, Primal Beast releases a roar that slows surrounding enemies and grants the Beast additional attack damage and armor for %roar_duration% seconds based on his current stacks of Uproar."
+"DOTA_Tooltip_ability_primal_beast_uproar_custom_Lore"							"Already draped in a broken patchwork of barding and chains upon appearing in the mistwoods, the Beast tolerates no further attempts at subjugation."
+"DOTA_Tooltip_ability_primal_beast_uproar_custom_stack_limit"					"MAX STACKS:"
+"DOTA_Tooltip_ability_primal_beast_uproar_custom_bonus_damage"					"BASE BONUS DAMAGE:"
+"DOTA_Tooltip_ability_primal_beast_uproar_custom_bonus_damage_per_stack"		"BONUS DAMAGE PER STACK:"
+"DOTA_Tooltip_ability_primal_beast_uproar_custom_move_slow_per_stack"			"%SLOW PER STACK:"
+"DOTA_Tooltip_ability_primal_beast_uproar_custom_slow_duration"					"SLOW DURATION:"
+"DOTA_Tooltip_ability_primal_beast_uproar_custom_radius"						"ROAR RADIUS:"
+"DOTA_Tooltip_ability_primal_beast_uproar_custom_roared_bonus_armor"			"ROAR ARMOR BONUS PER STACK:"
+
+
+"DOTA_Tooltip_ability_primal_beast_onslaught_custom"								"Onslaught"
+"DOTA_Tooltip_ability_primal_beast_onslaught_custom_Description"					"Primal Beast charges up and then runs in the chosen direction, knocking back enemies and allies alike. Enemy units are damaged and stunned on impact. The longer the charge duration, the farther Primal Beast's momentum will carry him. \n\n Can be cancelled at any time with the Stop command."
+"DOTA_Tooltip_ability_primal_beast_onslaught_custom_Lore"					"The Beast's single-minded focus on chosen prey leaves all other considerations scattered in his ruinous wake."
+"DOTA_Tooltip_ability_primal_beast_onslaught_custom_charge_speed"					"RUN SPEED:"
+"DOTA_Tooltip_ability_primal_beast_onslaught_custom_max_charge_time"				"TIME TO MAX CHARGE:"
+"DOTA_Tooltip_ability_primal_beast_onslaught_custom_max_distance"					"MAX DISTANCE:"
+"DOTA_Tooltip_ability_primal_beast_onslaught_custom_knockback_damage"				"DAMAGE:"
+"DOTA_Tooltip_ability_primal_beast_onslaught_custom_stun_duration"					"STUN DURATION:"
+//"DOTA_Tooltip_ability_primal_beast_onslaught_custom_release"						"Begin Onslaught"
+//"DOTA_Tooltip_ability_primal_beast_onslaught_custom_release_Description"			"Begins the rush to the specified location."
+
+
+
 "DOTA_Tooltip_ability_beastmaster_wild_axes_min_throw_duration"				"Axes Min Trow Duration:"
 "DOTA_Tooltip_ability_beastmaster_wild_axes_max_throw_duration"				"Axes Max Trow Duration:"
 
@@ -7589,10 +7616,10 @@ Rock is consumed after use."
 "DOTA_Tooltip_modifier_item_speed_orb_consumed"					"Speed Orb Bonus"
 "DOTA_Tooltip_modifier_item_speed_orb_consumed_Description"		"Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
 
-"DOTA_Tooltip_Ability_item_custom_stat_change_str"							"Quest Book"
+"DOTA_Tooltip_Ability_item_custom_stat_change_str"							"Strength Book(available until next patch)"
 "DOTA_Tooltip_Ability_item_custom_stat_change_str_Description"				"<h1>Use: Remodeling</h1> Changes your primary attribute to strength. Fully shareable and cannot be sold."
 "DOTA_Tooltip_Ability_item_custom_stat_change_str_Lore"						"Makes the reader braver."
-"DOTA_Tooltip_Ability_item_custom_stat_change_agi"							"Cheater Book"
+"DOTA_Tooltip_Ability_item_custom_stat_change_agi"							"Wind Book"
 "DOTA_Tooltip_Ability_item_custom_stat_change_agi_Description"				"<h1>Use: Remodeling</h1> Changes your primary attribute to agility. Fully shareable and cannot be sold."
 "DOTA_Tooltip_Ability_item_custom_stat_change_agi_Lore"						"Makes the reader more sly."
 "DOTA_Tooltip_Ability_item_custom_stat_change_int"							"Smart Book"
@@ -9902,6 +9929,9 @@ Contains all random skills"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_mjz_phoenix_icarus_dive_cdr" "Reduces Icarus Dive CD by {s:value} seconds"
 		"DOTA_Tooltip_ability_special_bonus_unique_winter_wyvern_endless_01"    "Endless wisdom increases your mana by {s:value} for every stack"
+
+		"DOTA_Tooltip_Ability_special_bonus_unique_sticky_napalm_damage"        "+{s:value} Stiky nalpam bonus Damage"
+		"DOTA_Tooltip_Ability_special_bonus_unique_sticky_napalm_radius"        "+{s:value} Stiky nalpam bonus Radius"
 
 // Custom Talents
 

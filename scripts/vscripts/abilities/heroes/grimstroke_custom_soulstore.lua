@@ -17,6 +17,7 @@ end
 function on_ability_executed(keys)
     local caster = keys.caster
     local ability = keys.ability
+    if not ability then return end
     local modifier = keys.modifier
     local used_ability = keys.event_ability
 

@@ -77,7 +77,7 @@ print("MONSTER_CONFIG: " .. MONSTER_CONFIG)
 --	print("Load Test MONSTER_CONFIG: " .. MONSTER_CONFIG)
 --end
 if Cheats:IsEnabled() then 
-	MONSTER_CONFIG = "aoh2_config_siltbreaker_200809.txt" --"test_short_rounds.txt" --
+	MONSTER_CONFIG = "aoh2_config_siltbreaker_200809.txt" -- "test_short_rounds.txt" --  
 	print("CHeat mode")
 end	
 
@@ -775,8 +775,8 @@ function AOHGameMode:OnHeroLevelUp(event)
 	local unspendAP = hero:GetAbilityPoints()
 	local heroLevel = hero:GetLevel()
 	local nPlayerID = hero:GetPlayerID()
-	local dice_1 = RandomInt(1, 130)
-	local dice_2 = RandomInt(1, 130)
+	local dice_1 = RandomInt(1, 100)
+	local dice_2 = RandomInt(1, 100)
 	local abilityPointsToGive = 1
 	local apEveryXLevel = 7
 	local fragmentEveryXLevel = 7

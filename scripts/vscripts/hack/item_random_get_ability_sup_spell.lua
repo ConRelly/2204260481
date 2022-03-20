@@ -175,8 +175,8 @@ function GetRandomAbilityName( hero )
 		"mystic_dragon_endless_wisdom",
 		"mystic_dragon_endless_wisdom",
 		"imba_phantom_assassin_coup_de_grace",				-- 女王 2
-		"dazzle_good_juju",				  -- 丽娜 3
-		"dazzle_good_juju",
+		--"dazzle_good_juju",				  -- 丽娜 3
+		"dzzl_good_juju",
 		"ancient_apparition_chilling_touch",	-- 冰魂 3
 		"roshan_inherit_buff_datadriven",			-- 蓝猫 3
 		"ogre_magi_multicast_n",			  -- 蓝胖 3

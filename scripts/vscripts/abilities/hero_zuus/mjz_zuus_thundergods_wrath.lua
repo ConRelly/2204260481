@@ -157,6 +157,7 @@ if IsServer() then
 	end
 
 	function modifier_class:OnIntervalThink()
+		if not self:GetAbility()  then return end
 		local caster = self:GetCaster()
 		local parent = self:GetParent()
 		local ability = self:GetAbility()

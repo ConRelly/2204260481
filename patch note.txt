@@ -1766,15 +1766,14 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 
 
-* Fix Razor Q dmg.
-* Fix Sandking lvl 10 talent.
-* Fix Earthshaker lvl 20 talent.
-* Doom ult and Infernal blade now shows on dmg counter.
-* Doom infernal blade lower cd at max lvl , has more lvls(higher dmg at max lvl and takes more lvls to reach) , and more duration(debuff stacks).
+* Fix Ancient Having way too much hp/armor in Part3
+* Fix: Razor Q dmg, Sandking lvl 10 talent, Earthshaker lvl 20 talent, Tusk Tag team. , Viper W damage.
+* Doom ult and Infernal blade now show on dmg counter.
+* Doom infernal blade lower cd at max lvl, has more lvls(higher dmg at max lvl and takes more lvls to reach), and more duration(debuff stacks).
 * Earth rapier Half CD but can't be mimicked.
 * Buffed Shadow Fiend ultimate: less cd on higher lvls and scales better with agility.
 * Skills that are toggle ON can't be removed until they are toggle OFF.
-* Fixed a lot of recipe's models
+* Fixed a lot of recipe models
 * (Probably) Fixed Ion Shell (Dark Seer) crash
 * Fixed Slithereen Crush (Slardar) slow talent (left) (10 lvl)
 * Fixed Rollin’ Stone (Earth Spirit) talent (right) (15 lvl)
@@ -1788,23 +1787,27 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 	-- Cannot be used when the ability is already there
 * Dream Coil (Puck) is now playable
 * Puck: Added new talent (left) (20 lvl)
+* Batrider Sticky napalm debuff can't be removed now and has a Super Scepter effect.
 * God Slayer:
 	-- Fixed 5 armor
-	-- Can now be stopped by the "STOP" command
+	-- Can now be stopped by the "Hold"(H) command
 	-- Does not deal damage if the owner is disarmed
-	-- During God Slash, owner can use abilities or items
-* Remove First Skill/Remove Empty Skill: If inventory, backpack or stash is full then Removed Skill Prof just drop on the floor
+	-- During God Slash, the owner can use abilities or items
+* Remove First Skill/Remove Empty Skill: If inventory, backpack, or stash is full then Removed Skill Prof just drop on the floor
 * Mimic Mace: Cannot be triggered while God Slash (God Slayer) is active
 * Fixed Greater Blast Staff/Blast Staff active effects
 * IO: Changed Infest to Amalgamation
 * Now all neutral items of the 5th Tier can be sent to a neutral stash
-* Fixed some (or a lot) stuff and bugs
+* Temporary: Added Primary Stat change Str book until next patch.
+* Fixed some (or a lot) stuff and bugs.
+
+
 
 
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes62 can be found on the new map version:
+*Update patch notes63 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 
