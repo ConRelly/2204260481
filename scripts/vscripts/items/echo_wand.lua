@@ -182,6 +182,7 @@ if IsServer() then
 		item_mjz_attribute_mail = true,
 		item_plain_perma = true,
 		item_earth_rapier = true,
+		item_high_tech_boots2 = true,
 		--mjz_doom_bringer_devour = true,
 		--mjz_clinkz_soul_pact = true,
 		frostivus2018_clinkz_burning_army = true,

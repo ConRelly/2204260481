@@ -146,16 +146,17 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 							local targets = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, target_flags, FIND_ANY_ORDER, false)
 
 							if single then
+								if original_target:IsNull() then return end
 								if not original_target:IsAlive() then return end
 								caster:SetCursorCastTarget(original_target)
 							else
 								for _, target in pairs(targets) do
-									if target then
+									if target and not target:IsNull() then
 										caster:SetCursorCastTarget(target)
 									end
 								end
 								for _, target in pairs(targets) do
-									if target then
+									if target and not target:IsNull() then
 										if not proced_targets[target] then
 											proced_targets[target] = true
 											caster:SetCursorCastTarget(target)
@@ -177,12 +178,12 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 						if used_ability:IsNull() then return end
 						local targets = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, target_flags, FIND_ANY_ORDER, false)
 						for _, target in pairs(targets) do
-							if target then
+							if target and not target:IsNull() then
 								caster:SetCursorCastTarget(target)
 							end
 						end
 						for _, target in pairs(targets) do
-							if target then
+							if target and not target:IsNull() then
 								if not proced_targets[target] then
 									proced_targets[target] = true
 									caster:SetCursorCastTarget(target)

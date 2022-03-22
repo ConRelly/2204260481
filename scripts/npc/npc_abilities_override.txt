@@ -19548,7 +19548,7 @@
 	"ItemIsNeutralDrop"				"0"
 	"ItemPurchasable"				"0"
 	"ItemPurchasable"               "0"
-	"AbilityCooldown"				"20"
+	"AbilityCooldown"				"27"
 
 
 	"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -19558,7 +19558,7 @@
 	"AbilityValues"
 	{
 		"bonus_armor"			"25"
-		"radius"				"1200"
+		"radius"				"900"
 		"damage"				"22500"
 		"blind_duration"			"5"
 		"blind_pct"			"100"

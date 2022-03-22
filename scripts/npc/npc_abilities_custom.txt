@@ -8566,13 +8566,14 @@
 {
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-	"BaseClass"					 "spectre_dispersion"
+	"BaseClass"					 	"spectre_dispersion"
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"damage_reflection_pct"	"5"
+			"LinkedSpecialBonus"		"special_bonus_unique_spectre_5"
 		}
 		"02"
 		{

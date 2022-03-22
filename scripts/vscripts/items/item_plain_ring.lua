@@ -164,7 +164,7 @@ function modifier_item_plain_ring_frenzy:GetModifierTotalDamageOutgoing_Percenta
 	return 120
 end
 function modifier_item_plain_ring_frenzy:GetModifierPercentageCooldown()
-	return 90
+	return 85
 end
 function modifier_item_plain_ring_frenzy:GetModifierPercentageCasttime()
 	return 100

@@ -2895,7 +2895,7 @@
 	"ItemAliases"					"boht;boots of tech;tech;speedsters"
 	"ItemSellable"                  "1"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-	"AbilityCooldown"				"28.0"
+	"AbilityCooldown"				"60.0"
 	"AbilitySpecial"
 	{
 		"01"

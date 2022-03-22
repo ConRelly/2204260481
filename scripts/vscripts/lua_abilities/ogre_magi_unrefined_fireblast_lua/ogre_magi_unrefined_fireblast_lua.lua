@@ -28,6 +28,8 @@ function ogre_magi_unrefined_fireblast_lua:OnSpellStart()
 	local target = self:GetCursorTarget()
 
 	-- cancel if linken
+	if not target then return end
+	if target:IsNull() then return end
 	if target:TriggerSpellAbsorb( self ) then
 		return
 	end
