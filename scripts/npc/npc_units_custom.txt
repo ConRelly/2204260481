@@ -206,7 +206,7 @@
 		{
 			"Aghs"	   			{ "Item"		"item_ultimate_scepter" }
 			"Radiance"			  { "Item"		"item_burning_radiance" }
-			"Heart"				 { "Item"		"item_mjz_bogduggs_lucky_femur_5" }
+			"Heart"				 { "Item"		"item_black_powder_bag" }
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
 			"Plain_ring"	   		{ "Item"		"item_plain_ring" }
 			"Shiva Guard"		   { "Item"		"item_mjz_assault_5" }
@@ -2226,7 +2226,7 @@
 			"Sange and Yasha"		   { "Item"		"item_sange_and_yasha" }
 			"Unstoppable"			   { "Item"		"item_boss_unstoppable" }
 			"Gold Ring"				 { "Item"		"item_plain_ring" }
-			"Multicast"				 { "Item"		"item_mjz_bogduggs_lucky_femur_5" }
+			"Multicast"				 { "Item"		"item_black_powder_bag" }
 			"Skadi"					 { "Item"		"item_dark_skadi" }
 			"orb"					   { "Item"		"item_orb_of_destruction" }
 			"dezo"					   { "Item"		"item_desolator_2" }
@@ -3617,7 +3617,7 @@
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
 			"Black King Bar"		{ "item"		"item_black_king_bar_boss"}
 			"Ultimate Scepter"		{ "Item"		   "item_ultimate_scepter"}
-			"Femur"					{ "Item"		   "item_mjz_bogduggs_lucky_femur_5"}
+			"Femur"					{ "Item"		   "item_black_powder_bag"}
 			"Golden Ring"		   { "Item"		   "item_plain_ring"}
 		}
 		"AttachWearables"
@@ -3889,7 +3889,7 @@
 			"Hyperstone"		   			{ "Item"		"item_plain_ring"		  }
 			"Radiance"						{ "Item"		"item_burning_radiance"		 }
 			"Black King Bar"				{ "item"		"item_black_king_bar_boss"}
-			"Boss Resistance"	   		{ "Item"		"item_mjz_bogduggs_lucky_femur_5" }
+			"Boss Resistance"	   		{ "Item"		"item_black_powder_bag" }
 		}
 		"AttachWearables"
 		{
@@ -4008,7 +4008,7 @@
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
 			"Assault Cuirass"		   	{ "Item"		"item_mjz_assault_5" }
 			"Gold Ring"		   	{ "Item"		"item_plain_ring" }
-			"Boss Resistance"	   	{ "Item"		"item_mjz_bogduggs_lucky_femur_5" }
+			"Boss Resistance"	   	{ "Item"		"item_black_powder_bag" }
 		}
 		"AttachWearables"
 		{
@@ -4139,7 +4139,7 @@
 			"Unstoppable"		   { "Item"		"item_boss_unstoppable" }
 			"Assault Cuirass"	   { "Item"		"item_mjz_assault_5" }
 			"Gold Ring"			 { "Item"		"item_plain_ring" }
-			"Boss Resistance"	   { "Item"		"item_mjz_bogduggs_lucky_femur_5" }
+			"Boss Resistance"	   { "Item"		"item_black_powder_bag" }
 			"Storm"				 { "Item"		"item_stormcrafter" }
 		}
 		"AttachWearables"
@@ -4440,7 +4440,7 @@
 		"EquippedItems"
 		{
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
-			"Unstoppable"	   	{ "Item"		"item_mjz_bogduggs_lucky_femur_5" }
+			"Unstoppable"	   	{ "Item"		"item_black_powder_bag" }
 			"Golden Ring"		   { "Item"		"item_plain_ring" }
 			
 		}
@@ -4525,8 +4525,7 @@
 		"EquippedItems"
 		{
 			"Unstoppable"		   { "Item"		"item_boss_unstoppable" }
-			"Unstoppable"		   { "Item"		"item_mjz_bogduggs_lucky_femur_5" }
-			
+			"Unstoppable"		   { "Item"		"item_black_powder_bag" }		
 		}
 		"AttachWearables"
 		{
@@ -4636,7 +4635,7 @@
 			"Magic Blade"						{ "Item"		"item_force_blade"		 }
 			"Scepter"			{"Item"		"item_ultimate_scepter"}
 			"Black King Bar"					{"item"		"item_black_king_bar_boss"}
-			"Kaya"						{ "Item"		"item_mjz_bogduggs_lucky_femur_5"  }
+			"Kaya"						{ "Item"		"item_black_powder_bag"  }
 			"Boss Resistance"	   	{ "Item"		"item_mjz_assault_5" }
 		}
 		"AttachWearables"
@@ -4829,7 +4828,7 @@
 				"UltimateScepter"
 				{
 					"Item"					"item_ultimate_scepter"
-					"Item"					"item_mjz_bogduggs_lucky_femur_5"
+					"Item"					"item_black_powder_bag"
 					"Item"				  "item_radiance_boss"
 					"Item"				  "item_dark_skadi"
 				}
@@ -5178,7 +5177,7 @@
 		{
 //			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
 			"Aghs"	   		{ "Item"		"item_ultimate_scepter" }
-			"Aghs"			  { "Item"		"item_mjz_bogduggs_lucky_femur_5" }
+			"Aghs"			  { "Item"		"item_black_powder_bag" }
 			"Aghs"			  { "Item"		"item_plain_ring" }
 		}
 		"OffensiveAbilities"
@@ -5487,7 +5486,7 @@
 		{
 			"Satanic"			{ "Item"			"item_satanic"}
 //			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_20" }
-			"Boss Resistance"	   	{ "Item"		"item_mjz_bogduggs_lucky_femur_5" }
+			"Boss Resistance"	   	{ "Item"		"item_black_powder_bag" }
 			"Boss Resistance"		   { "Item"		"item_plain_ring" }
 			"Boss Resistance"		   { "Item"		"item_force_blade" }
 		}
@@ -5607,7 +5606,7 @@
 		}
 		"EquippedItems"
 		{
-			"Boss Resistance"		   { "Item"		"item_mjz_bogduggs_lucky_femur_5" }
+			"Boss Resistance"		   { "Item"		"item_black_powder_bag" }
 			"Boss Resistance"		   { "Item"		"item_burning_radiance" }
 		}
 
@@ -5688,7 +5687,7 @@
 		{
 			"Unstoppable"	   		{ "Item"		"item_boss_unstoppable" }
 //			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_80" }
-			"Boss Resistance"	   	{ "Item"		"item_mjz_bogduggs_lucky_femur_5" }
+			"Boss Resistance"	   	{ "Item"		"item_black_powder_bag" }
 			"Boss Resistance"		   { "Item"		"item_burning_radiance" }
 			"Gold Ring"				 { "Item"		"item_plain_ring" }
 		}
@@ -6030,7 +6029,7 @@
 			"Boss Resistance"	  	{ "Item"		"item_burning_radiance" }
 			"Manta Style"	   	{ "Item"		"item_manta" }
 			"Manta Style"	   	{ "Item"		"item_mjz_assault_5" }
-			"Manta Style"	   	{ "Item"		"item_mjz_bogduggs_lucky_femur_5" }
+			"Manta Style"	   	{ "Item"		"item_black_powder_bag" }
 		}
 		"AttachWearables"
 		{
@@ -6709,7 +6708,7 @@
 			"MKB"				 { "Item"		"item_monkey_king_bar"}
 			"Moonshard"			 { "Item"		"item_moon_shard"}
 			"Boss Resistance"	   	{ "Item"		"item_plain_ring" }
-			"Boss Resistance"	   	{ "Item"		"item_mjz_bogduggs_lucky_femur_5" }
+			"Boss Resistance"	   	{ "Item"		"item_black_powder_bag" }
 			
 		}
 		"AttachWearables"
@@ -6842,7 +6841,7 @@
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
 			"bloodthorn"			{ "Item"	"item_burning_radiance"}
 			"Magic Blade"						{ "Item"		"item_force_blade"  }
-			"Kaya"						{ "Item"		"item_mjz_bogduggs_lucky_femur_5"  }
+			"Kaya"						{ "Item"		"item_black_powder_bag"  }
 			"Boss Resistance"	   	{ "Item"		"item_plain_ring" }
 		}
 		"AttachWearables"
@@ -6927,7 +6926,7 @@
 			//"Unstoppable"		   { "Item"		"item_monkey_king_bar_22" }
 			//"bloodthorn"			{ "Item"	"item_burning_radiance"}
 			//"Magic Blade"					   { "Item"		"item_force_blade"  }
-			//"Kaya"					  { "Item"		"item_mjz_bogduggs_lucky_femur_5"  }
+			//"Kaya"					  { "Item"		"item_black_powder_bag"  }
 			//"Boss Resistance"		   { "Item"		"item_plain_ring" }
 		}
 	}
@@ -7748,8 +7747,8 @@
 {
 	"Model"								 "models/heroes/rubick/rubick.vmdl"
 	"BaseClass"							 "npc_dota_creature"
-	"UnitLabel"				 "randomskill"
-	"vscripts"					"bosses/attack_move.lua"
+	"UnitLabel"							 "randomskill"
+	"vscripts"							 "bosses/attack_move.lua"
 	"SoundSet"							  "Hero_Rubick"
 	"VoiceFile"								"soundevents/voscripts/game_sounds_vo_rubick.vsndevts"
 	"GameSoundsFile"						"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
@@ -7864,9 +7863,9 @@
 				"Blink Dagger"				{ "Item"			"item_blink"}
 				"Magic Blade"				{ "Item"		"item_force_blade"  }
 				"Boss Resistance"	   	{ "Item"		"item_mjz_mjollnir_4" }
-				"Boss Resistance"	   	{ "Item"		"item_mjz_bogduggs_lucky_femur_5" }
+				"Boss Resistance"	   	{ "Item"		"item_black_powder_bag" }
 				"Boss Resistance"		   { "Item"		"item_plain_ring" }
-				"Boss Resistance"		   { "Item"		"item_mirror_shield" }
+				"Boss Resistance"		   { "Item"		"item_sphere_custom" }
 			}
 			"AttachWearables"
 			{
@@ -7998,9 +7997,9 @@
 				"Blink Dagger"				{ "Item"			"item_blink"}
 				"Magic Blade"				{ "Item"		"item_force_blade"  }
 				"Boss Resistance"	   	{ "Item"		"item_mjz_mjollnir_4" }
-				"Boss Resistance"	   	{ "Item"		"item_mjz_bogduggs_lucky_femur_5" }
+				"Boss Resistance"	   	{ "Item"		"item_black_powder_bag" }
 				"Boss Resistance"		   { "Item"		"item_plain_ring" }
-				"Boss Resistance"		   { "Item"		"item_mirror_shield" }
+				"Boss Resistance"		   { "Item"		"item_sphere_custom" }
 			}
 			"AttachWearables"
 			{
@@ -11892,7 +11891,7 @@
 		}
 		"EquippedItems"
 		{
-			"Hyperstone"			{"Item"			"item_mjz_bogduggs_lucky_femur_3"}
+			"Hyperstone"			{"Item"			"item_black_powder_bag"}
 			"MKB"				 	{"Item"			"item_mjz_monkey_king_bar_5"}
 //			"Boss Resistance"				 	{"Item"			"item_boss_resistance_50"}
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }			
@@ -12974,7 +12973,7 @@
 				}
 				"mkb"
 				{
-					"Item"					"item_mirror_shield"
+					"Item"					"item_sphere_custom"
 				}
 				"ddd"
 				{
@@ -13356,7 +13355,7 @@
 				}
 				"Butterfly"
 				{
-					"Item"				  "item_mjz_bogduggs_lucky_femur_5"
+					"Item"				  "item_black_powder_bag"
 				}
 			}	
 
@@ -13481,7 +13480,7 @@
 				}
 				"Butterfly"
 				{
-					"Item"				  "item_mjz_bogduggs_lucky_femur_5"
+					"Item"				  "item_black_powder_bag"
 				}
 			}   
 
@@ -14263,7 +14262,7 @@
 				}
 				"MKB"
 				{
-					"Item"				  "item_mjz_bogduggs_lucky_femur_5"
+					"Item"				  "item_black_powder_bag"
 				}
 				 "MKB"
 				{
@@ -14476,7 +14475,7 @@
 				}
 				"MKB"
 				{
-					"Item"				  "item_mjz_bogduggs_lucky_femur_5"
+					"Item"				  "item_black_powder_bag"
 				}
 				 "MKB"
 				{
@@ -14988,7 +14987,7 @@
 //			"Unstoppable"		   { "Item"		"item_boss_resistance_50" }
 			"Plain_ring"			{ "Item"		"item_plain_ring" }
 			"Abystal Blade"		 { "Item"		"item_mjz_mjollnir_5" }
-			"Abystal Blade"		 { "Item"		"item_mirror_shield" }
+			"Abystal Blade"		 { "Item"		"item_sphere_custom" }
 		}		
 		//"AttachWearables"
 		//{
@@ -15154,7 +15153,7 @@
 //			"Unstoppable"		   { "Item"		"item_boss_resistance_50" }
 			//"Plain_ring"			{ "Item"		"item_plain_ring" }
 			"Abystal Blade"		 { "Item"		"item_mjz_mjollnir_5" }
-			"Abystal Blade"		 { "Item"		"item_mirror_shield" }
+			"Abystal Blade"		 { "Item"		"item_sphere_custom" }
 		}		
 		//"AttachWearables"
 		//{
@@ -15301,7 +15300,7 @@
 //			"Unstoppable"		   { "Item"		"item_boss_resistance_50" }
 			"Plain_ring"			{ "Item"		"item_plain_ring" }
 			"Abystal Blade"		 { "Item"		"item_mjz_mjollnir_5" }
-			"Abystal Blade"		 { "Item"		"item_mirror_shield" }
+			"Abystal Blade"		 { "Item"		"item_sphere_custom" }
 		}		
 		//"AttachWearables"
 		//{

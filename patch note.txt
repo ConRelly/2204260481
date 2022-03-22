@@ -1805,6 +1805,21 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 
 
+* Fix Sandking Ultimate
+* Replaced the refresh(lucky femur) item(might have caused crash on very rare situations(rubic boss)) from the bosses that had him with Blast Ring.
+* Replaced Mirror Shield item(just to be sure, bosses reflecting certain spells might lead to a crash) from the bosses who had that with Neutral Linken.
+* Added back some cleaning units code after the round is over (seems it was efficient in part 2 in removing some lag)
+* Batrider Sticky napalm now scales with Int instead of normal dmg and takes fewer lvls to max out.
+* Spell lock(aghanim and Void boss) will not lock your skills if you have 32 skills(max dota skills)
+* Removed a hidden skill(used to capture outpost, that gets added during the game by dota) when you learn a new skill.
+* Leshrac ultimate and Lightning produce less sound, changed Lightning particle with one with less light and ultimate will not produce particles for every tick.
+* Lesharac lvl 25 talent replaced(was for vanilla E) with a new one.
+
+
+
+
+
+
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
 *Update patch notes63 can be found on the new map version:

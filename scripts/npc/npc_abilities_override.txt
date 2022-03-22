@@ -6251,7 +6251,8 @@
 
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"25"
-
+		"HasScepterUpgrade"				"0"
+		"IsGrantedByScepter"			"0"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"75"
@@ -6282,6 +6283,8 @@
 			}
 		}
 	}
+
+
 
 	"lich_frost_nova"
 	{
@@ -14071,7 +14074,7 @@
 	"enchantress_impetus"
 	{
 		"AbilityManaCost"				"65 50 35 20"
-		"LevelsBetweenUpgrades"         "15"
+		"LevelsBetweenUpgrades"         "13"
 		"AbilitySpecial"
 		{
 			"01"
@@ -19531,6 +19534,37 @@
 		}
 	}
 
+//Blast Ring
+"item_black_powder_bag"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"ID"							"834"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"0"
+	"ItemIsNeutralDrop"				"0"
+	"ItemPurchasable"				"0"
+	"ItemPurchasable"               "0"
+	"AbilityCooldown"				"20"
+
+
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+	
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityValues"
+	{
+		"bonus_armor"			"25"
+		"radius"				"1200"
+		"damage"				"22500"
+		"blind_duration"			"5"
+		"blind_pct"			"100"
+	}
+}
+
 // Aether Lens
 	"item_aether_lens"
 	{
@@ -21651,6 +21685,7 @@
 		"ItemQuality"					"common"
 		"ItemAliases"					"bot;boots of travel;tp"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemPurchasable"               "0"
 		"MaxUpgradeLevel"				"2"
 		"ItemBaseLevel"					"2"
 		"ShouldBeSuggested"				"1"

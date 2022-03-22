@@ -996,6 +996,7 @@ function AOHGameMode:OnEntitySpawned(event)
 	Timers:CreateTimer({
 		endTime = 0.1, 
 		callback = function()
+			if unit:IsNull() then return end
 			if unit and IsValidEntity(unit) and unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS and (unit:IsIllusion() or unit:HasModifier("modifier_arc_warden_tempest_double")) then
 				if unit:HasModifier("modifier_death") then return end
 				local playerownerID = unit:GetPlayerOwnerID()

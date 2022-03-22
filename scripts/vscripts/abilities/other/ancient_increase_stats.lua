@@ -52,7 +52,7 @@ function modifier_ancient_increase_stats:OnIntervalThink()
 				-- Health
 				local maxHealth = health_base + (health_per_round * round)
 				if part3 then
-					maxHealth = 150000  --health_base + (health_per_round * round) * 10
+					maxHealth = 220000  --health_base + (health_per_round * round) * 10
 				end
 				local health = maxHealth
 			
@@ -67,7 +67,7 @@ function modifier_ancient_increase_stats:OnIntervalThink()
 				-- Armor
 				local armor = armor_base + (armor_per_round * round)
 				if part3 then
-					armor = 150 --armor_base + (armor_per_round * round) * 20
+					armor = 250 --armor_base + (armor_per_round * round) * 20
 				end
 				parent:SetPhysicalArmorBaseValue(armor)
 

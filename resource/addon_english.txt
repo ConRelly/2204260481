@@ -525,7 +525,7 @@
 	"DOTA_Tooltip_ability_sticky_napalm_Lore"	"It's not uncommon to hear the Rider cackle while he increases the flammability of his opponents."
 	"DOTA_Tooltip_ability_sticky_napalm_Note0"		"All damage from Batrider gets amplified, except for some items and item abilities."
 	"DOTA_Tooltip_ability_sticky_napalm_Note1"		"Sticky napalm does not require turning to cast."
-	"DOTA_Tooltip_ability_sticky_napalm_damage"				"EXTRA DAMAGE:"
+	"DOTA_Tooltip_ability_sticky_napalm_damage"				"Int Extra Damage:"
 	"DOTA_Tooltip_ability_sticky_napalm_radius"				"RADIUS:"
 	"DOTA_Tooltip_ability_sticky_napalm_duration"			"DURATION:"
 	"DOTA_Tooltip_ability_sticky_napalm_ms_slow_pct"		"%MOVEMENT SLOW:"
@@ -2407,13 +2407,23 @@
 		"DOTA_Tooltip_ability_special_bonus_unique_aghanim_8_Description"	"Crystal damage and stun duration are based on the level of Shards of Aghanim, will default to 1 if the ability is not available."
 	
 
+// Boss items
+
+	"DOTA_Tooltip_Ability_item_sphere_custom"										"Linken's Sphere"
+	"DOTA_Tooltip_ability_item_sphere_custom_Description"							"<h1>Passive: Spellblock</h1>Blocks most targeted spells once every %block_cooldown% seconds.\n<h1>Active: Transfer Spellblock</h1>Temporarily removes Spellblock from the item's owner and transfers it to an allied unit for %block_cooldown% seconds.<br><br>Range: %abilitycastrange%"
+	"DOTA_Tooltip_ability_item_sphere_custom_Lore"									"This magical sphere once protected one of the most famous heroes in history."
+	"DOTA_Tooltip_ability_item_sphere_custom_bonus_all_stats"						"+$all"
+	"DOTA_Tooltip_ability_item_sphere_custom_bonus_health_regen"					"+$hp_regen"	
+	"DOTA_Tooltip_ability_item_sphere_custom_bonus_mana_regen"						"+$mana_regen"
+
 	
-"DOTA_Tooltip_ability_golden_mine_passive"								"Gift Money"
-"DOTA_Tooltip_ability_golden_mine_passive_Description"					"Work, work."
-"DOTA_Tooltip_ability_golden_mine_passive_exp"							"GIVE EXP:"
-"DOTA_Tooltip_ability_golden_mine_passive_gold"							"GIVE GOLD:"
-"DOTA_Tooltip_ability_golden_mine_passive_interval"						"INTERVAL:"
-"DOTA_Tooltip_modifier_golden_mine_buff"								"Gift Money"	
+	"DOTA_Tooltip_ability_golden_mine_passive"								"Gift Money"
+	"DOTA_Tooltip_ability_golden_mine_passive_Description"					"Work, work."
+	"DOTA_Tooltip_ability_golden_mine_passive_exp"							"GIVE EXP:"
+	"DOTA_Tooltip_ability_golden_mine_passive_gold"							"GIVE GOLD:"
+	"DOTA_Tooltip_ability_golden_mine_passive_interval"						"INTERVAL:"
+	"DOTA_Tooltip_modifier_golden_mine_buff"								"Gift Money"
+
 	"DOTA_Tooltip_ability_mjz_abyssal_underlord_dark_rift"					"Dark Rift"
 	"DOTA_Tooltip_ability_mjz_abyssal_underlord_dark_rift_Description"		"Heal nearby allied units."
 	"DOTA_Tooltip_ability_mjz_abyssal_underlord_dark_rift_Lore"				"They come without warning, leaving fire and blood where kingdoms once flourished."
@@ -3806,7 +3816,7 @@ DISPEL TYPE: Strong Dispel"
 	"DOTA_Tooltip_modifier_mjz_sandking_epicenter_slow"					"Epicenter Slow"
 	"DOTA_Tooltip_modifier_mjz_sandking_epicenter_slow_Description"		"Movement speed slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%. Attack speed slowed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_sandking_epicenter_pulses"	"+{s:value} Epicenter Pulses"
-	"DOTA_Tooltip_ability_special_bonus_unique_mjz_sandking_epicenter_strength"	"+{s:value}% Epicenter Str Damage"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_sandking_epicenter_strength"	"+{s:value} Epicenter Str Damage"
 	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor"				"Reactive Armor"
 	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_Description"	"Each time Timbersaw is harmed, he gains increased health regen and armor and magic resistance."
 	"DOTA_Tooltip_ability_mjz_shredder_reactive_armor_Lore"			"The saw-suit is equipped to react to the slightest touch with fortified defenses."
@@ -9930,8 +9940,10 @@ Contains all random skills"
 		"DOTA_Tooltip_ability_special_bonus_unique_mjz_phoenix_icarus_dive_cdr" "Reduces Icarus Dive CD by {s:value} seconds"
 		"DOTA_Tooltip_ability_special_bonus_unique_winter_wyvern_endless_01"    "Endless wisdom increases your mana by {s:value} for every stack"
 
-		"DOTA_Tooltip_Ability_special_bonus_unique_sticky_napalm_damage"        "+{s:value} Stiky nalpam bonus Damage"
+		"DOTA_Tooltip_Ability_special_bonus_unique_sticky_napalm_damage"        "+{s:value} Stiky nalpam bonus Int Damage"
 		"DOTA_Tooltip_Ability_special_bonus_unique_sticky_napalm_radius"        "+{s:value} Stiky nalpam bonus Radius"
+
+		"DOTA_Tooltip_ability_special_bonus_unique_mjz_leshrac_lightning_storm_aghanim"			"+{s:value} Lightning Storm Aghanim Count"
 
 // Custom Talents
 

@@ -22,7 +22,21 @@ end
 
 function modifier_aghanim_spell_swap:OnCreated( kv )
 	if IsServer() then
-		self:DisableSpell()
+		local parent = self:GetParent()
+		if parent and not parent:IsNull() then
+			local skills_nr = 0
+			for i=0, 31 do
+				local hAbility = self:GetParent():GetAbilityByIndex( i )
+				if hAbility and not hAbility:IsCosmetic( nil ) then
+					--print( "Counting Ability: ".. skills_nr .. " ".. hAbility:GetAbilityName() .. "  slot " .. i )
+					skills_nr = skills_nr + 1
+				end
+			end
+			print("number skills " .. skills_nr)
+			if skills_nr < 32 then 
+				self:DisableSpell()
+			end	
+		end		
 	end
 end
 
@@ -69,7 +83,7 @@ function modifier_aghanim_spell_swap:DisableSpell()
 			lesser_cancel = true,
 			divine_cancel = true,
 		}		
-		for i=0,DOTA_MAX_ABILITIES-1 do
+		for i=0, 31 do
 			local hAbility = self:GetParent():GetAbilityByIndex( i )
 			if hAbility and not hAbility:IsCosmetic( nil ) and not hAbility:IsAttributeBonus() and hAbility:GetAssociatedPrimaryAbilities() == nil and not hAbility:IsHidden() and not hAbility.bAghDisabled == true and not hAbility.bAghDummy == true and hAbility:IsActivated() and not exclude_table[hAbility:GetAbilityName()] then
 				print( "considering ability for disable: " .. hAbility:GetAbilityName() )
@@ -101,7 +115,7 @@ function modifier_aghanim_spell_swap:DisableSpell()
 				print( "hAbilityToDisable " .. hAbilityToDisable:GetAbilityName() )
 			end
 			return
-		end
+		end	
 
 		local hNewDummyAbility = self:GetParent():AddAbility( tostring( "aghanim_empty_spell" .. nNextAghDummy ) )
 		if hNewDummyAbility then

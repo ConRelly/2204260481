@@ -26080,7 +26080,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"count_scepter"			"1"
-				//"LinkedSpecialBonus"	"special_bonus_unique_leshrac_3"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_leshrac_lightning_storm_aghanim"
 				"RequiresScepter"				"1"
 			}	
 			"09"
@@ -26108,6 +26108,27 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"value"						"500"
+			}
+		}
+	}
+
+	"special_bonus_unique_mjz_leshrac_lightning_storm_aghanim"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"1.0"
+				"ad_linked_abilities"			"mjz_leshrac_lightning_storm"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
 	}
@@ -30207,6 +30228,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"LevelsBetweenUpgrades"         "12"
 		"AbilitySound"					"Ability.SandKing_Epicenter"
 		"AbilityTextureName"			"mjz_sandking_epicenter"
 
@@ -42757,7 +42779,7 @@
 		"AbilitySound"					"Hero_Batrider.StickyNapalm.Impact"
 		"HasShardUpgrade"				"1"
 		"MaxLevel"						"7"
-		"LevelsBetweenUpgrades"			"12"
+		"LevelsBetweenUpgrades"			"9"
 		"AbilityCastRange"				"1800"
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"4"
@@ -42767,7 +42789,7 @@
 		{
 			"damage"
 			{
-				"value"				"85 250 720 1150 1800 2550 4400"
+				"value"				"0.3" // Int * stack as dmg
 				"LinkedSpecialBonus"				"special_bonus_unique_sticky_napalm_damage"
 				"CalculateSpellDamageTooltip"		"1"
 			}
@@ -42795,7 +42817,7 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"value"			"850"
+				"value"			"0.2"
 			}
 		}
 	}

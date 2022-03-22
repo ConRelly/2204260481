@@ -283,9 +283,22 @@ function modifier_aghanim_spell_lock:GetTexture() return "aghanim_spell_locked" 
 
 function modifier_aghanim_spell_lock:OnCreated( kv )
 	if IsServer() then
-		self:DisableSpell()
-
-		self:StartIntervalThink(0.2)
+		local parent = self:GetParent()
+		if parent and not parent:IsNull() then
+			local skills_nr = 0
+			for i=0, 31 do
+				local hAbility = self:GetParent():GetAbilityByIndex( i )
+				if hAbility and not hAbility:IsCosmetic( nil ) then
+					--print( "Counting Ability: ".. skills_nr .. " ".. hAbility:GetAbilityName() .. "  slot " .. i )
+					skills_nr = skills_nr + 1
+				end
+			end
+			print("number skills " .. skills_nr)
+			if skills_nr < 32 then 
+				self:DisableSpell()
+				self:StartIntervalThink(0.2)
+			end	
+		end		
 	end
 end
 
@@ -421,7 +434,6 @@ function modifier_aghanim_spell_lock:DisableSpell()
 			self:Destroy()
 			return
 		end
-
 		local hNewDummyAbility = self:GetParent():AddAbility( tostring( "aghanim_empty_spell" .. nNextAghDummy ) )
 		if hNewDummyAbility then
 			--print( "adding dummy ability for disable: " .. hNewDummyAbility:GetAbilityName() )

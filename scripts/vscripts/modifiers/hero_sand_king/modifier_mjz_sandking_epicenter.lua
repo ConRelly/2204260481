@@ -44,6 +44,7 @@ if IsServer() then
     function modifier_class:OnIntervalThink()
         local ability = self:GetAbility()
         local parent = self:GetParent()
+        local caster = self:GetCaster()
         local radius_min = ability:GetSpecialValueFor('epicenter_radius_min')
         local radius_max = ability:GetSpecialValueFor('epicenter_radius_max')
         local radius_increase = ability:GetSpecialValueFor('epicenter_radius_increase')

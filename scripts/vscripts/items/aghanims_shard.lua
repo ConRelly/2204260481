@@ -54,6 +54,10 @@ function OnSpellStart(keys)
 end
 
 function NoPurchaser(keys)
+	if not keys.caster then return end  -- seems roshan getting killed by aghanim very rare it gives a nill caster error (it might give even if he just dies by anybody and drops shard)
+	if keys.caster:IsNull() then return end
 	if not keys.caster:IsAlive() then return end
-	keys.ability:SetPurchaser(nil)
+	if keys.ability and not keys.ability:IsNull() then
+		keys.ability:SetPurchaser(nil)
+	end	
 end

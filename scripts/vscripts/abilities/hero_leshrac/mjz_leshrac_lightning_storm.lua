@@ -61,9 +61,10 @@ function ability_class:SpellRepeat( params )
     if params.jump_count == 0 or params.initial_target == nil then
         return
     end
-
+    local particle_name = "particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
+    --local orig_particle = "particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf"
     -- hit initial target
-    local lightning = ParticleManager:CreateParticle("particles/units/heroes/hero_leshrac/leshrac_lightning_bolt.vpcf", PATTACH_WORLDORIGIN, params.initial_target)
+    local lightning = ParticleManager:CreateParticle(particle_name, PATTACH_WORLDORIGIN, params.initial_target)
     local loc = params.initial_target:GetAbsOrigin()
     local target = params.initial_target
     local caster = params.caster
@@ -71,7 +72,8 @@ function ability_class:SpellRepeat( params )
     ParticleManager:SetParticleControl(lightning, 0, loc + Vector(0, 0, 1000))
     ParticleManager:SetParticleControl(lightning, 1, loc)
     ParticleManager:SetParticleControl(lightning, 2, loc)
-    EmitSoundOn("Hero_Leshrac.Lightning_Storm", params.initial_target)
+    --EmitSoundOn("Hero_Leshrac.Lightning_Storm", params.initial_target)
+    target:EmitSoundParams("Hero_Leshrac.Lightning_Storm", 0, 0.3, 0)
     local bonus_dmg = 0
     if target:HasModifier(m_slow) then
         bonus_dmg = math.ceil((target:FindModifierByName(m_slow):GetStackCount() + 1) * (caster:GetIntellect() / 10))

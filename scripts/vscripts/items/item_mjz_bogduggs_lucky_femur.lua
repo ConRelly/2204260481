@@ -37,11 +37,13 @@ function modifier_item_mjz_bogduggs_lucky_femur:OnAbilityFullyCast(params)
 		local use_unit = params.unit
 		local use_ability = params.ability
 		local ability = self:GetAbility()
-		
-		if IsExcludeAbility(use_ability) then return false end
 
+		if use_ability:IsNull() then return 0 end
+		if IsExcludeAbility(use_ability) then return false end
 		if not ability then return 0 end
+		if ability:IsNull() then return 0 end
 		if not ability:IsCooldownReady() then return 0 end
+		if use_unit:IsNull() then return 0 end
 		if use_unit ~= self:GetParent() then return 0 end
 		if use_ability == nil then return 0 end
 		if use_ability:IsItem() then return 0 end
@@ -53,9 +55,11 @@ function modifier_item_mjz_bogduggs_lucky_femur:OnAbilityFullyCast(params)
 		if RollPercentage(refresh_pct) then
 			local cooldown = ability:GetCooldown(ability:GetLevel())
 			ability:EndCooldown()
+			if ability:IsNull() then return end --just to be sure in case some stuff happends when cooldown is rdy.
 			ability:StartCooldown(cooldown)
 
 			Timers:CreateTimer(0.25, function()
+				if use_ability:IsNull() then return end
 				use_ability:EndCooldown()
 				local p_name = "particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf"
 				local nFXIndex = ParticleManager:CreateParticle(p_name, PATTACH_OVERHEAD_FOLLOW, self:GetParent())

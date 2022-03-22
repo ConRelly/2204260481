@@ -17,7 +17,8 @@ function ability_class:OnToggle()
         local pszScriptName = "modifier_mjz_leshrac_pulse_nova"
 
         if ability:GetToggleState() then
-            EmitSoundOn("Hero_Leshrac.Pulse_Nova", caster)
+            --EmitSoundOn("Hero_Leshrac.Pulse_Nova", caster)
+            caster:EmitSoundParams("Hero_Leshrac.Pulse_Nova", 0, 0.3, 0)
             caster:AddNewModifier(caster, ability, pszScriptName, {})
         else
             caster:RemoveModifierByName(pszScriptName)
@@ -60,8 +61,8 @@ if IsServer() then
             return
         end
 
-        EmitSoundOn("Hero_Leshrac.Pulse_Nova_Strike", caster)
-
+        --EmitSoundOn("Hero_Leshrac.Pulse_Nova_Strike", caster)
+        caster:EmitSoundParams("Hero_Leshrac.Pulse_Nova_Strike", 0, 0.3, 0)
         self:SpendMana()
 
         local enemy_list = FindUnitsInRadius( caster:GetTeamNumber(), caster:GetAbsOrigin(), caster, radius, 
@@ -69,7 +70,9 @@ if IsServer() then
 
         for _, enemy in ipairs(enemy_list) do
             self:ApplyDamage(enemy)
-            self:ApplyEffect(enemy)
+            if RollPercentage(35) then
+                self:ApplyEffect(enemy)
+            end   
         end
 
     end

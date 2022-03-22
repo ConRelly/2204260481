@@ -544,6 +544,72 @@
 			}
 		}
 	}
+//boss linken
+	//=================================================================================================================
+	// Sphere
+	//=================================================================================================================
+	"item_sphere_custom"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_sphere"														
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"FightRecapLevel"				"1"
+		"ItemIsNeutralDrop"             "1"
+		"ItemPurchasable"               "0"
+		"AbilityCastRange"				"700"
+		"AbilityCooldown"				"7.0"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4600"
+		"ItemShopTags"					"regen_health;regen_mana;str;agi;int;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"ls;linken's sphere"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ActiveDescriptionLine"			"2"
+		"ShouldBeSuggested"				"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"50.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"block_cooldown"		"7.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"upgrade_absorb_duration"		"10.0"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_absorb"		"300"
+			}
+		}
+	}
+
 	"item_recipe_blast_staff_1"
 	{
 		"BaseClass"						"item_datadriven"

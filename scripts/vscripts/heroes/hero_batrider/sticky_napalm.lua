@@ -90,10 +90,13 @@ function modifier_sticky_napalm:OnCreated()
 end
 
 function modifier_sticky_napalm:Recalculate(ability)
+	local caster = self:GetCaster()
+	if caster:IsNull() then return end
+	local caster_int = caster:GetIntellect()
 	self.max_stacks = ability:GetSpecialValueFor("max_stacks")
 	self.ms_slow_pct = ability:GetSpecialValueFor("ms_slow_pct")
 	self.turn_rate_pct = ability:GetSpecialValueFor("turn_rate_pct")
-	self.damage = ability:GetSpecialValueFor("damage") + talent_value(self:GetCaster(), "special_bonus_unique_sticky_napalm_damage")
+	self.damage = math.floor( caster_int * (ability:GetSpecialValueFor("damage") + talent_value(self:GetCaster(), "special_bonus_unique_sticky_napalm_damage")))
 end
 function modifier_sticky_napalm:OnRefresh()
 	self:Recalculate(self:GetAbility())
