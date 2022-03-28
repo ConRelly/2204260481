@@ -174,8 +174,11 @@ function modifier_ring_invincibility_cd:OnIntervalThink()
 			self:SetStackCount(duration)
 		end
 		if self:GetStackCount() == 0 then
-			self:GetParent():FindModifierByName("modifier_item_plain_ring_perma"):SetStackCount(0)
-			self:StartIntervalThink(-1)
+			local GoldRingMod = self:GetParent():FindModifierByName("modifier_item_plain_ring_perma")
+			if GoldRingMod then
+				GoldRingMod:SetStackCount(0)
+				self:StartIntervalThink(-1)
+			end
 		end
 	end
 end

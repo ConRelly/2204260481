@@ -1,4 +1,3 @@
-item_shadow_cuirass = class({})
 LinkLuaModifier("modifier_seal_act", "items/seal_act.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_shadow_cuirass", "items/shadow_cuirass.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("heal_mod", "items/shadow_cuirass.lua", LUA_MODIFIER_MOTION_NONE)
@@ -9,6 +8,10 @@ LinkLuaModifier("modifier_shadow_cuirass_echo_debuff_slow", "items/shadow_cuiras
 LinkLuaModifier("modifier_shadow_cuirass_echo_cd", "items/shadow_cuirass.lua", LUA_MODIFIER_MOTION_NONE)
 
 local interval = FrameTime()
+
+item_shadow_cuirass = class({})
+item_shadow_cuirass_boss = item_shadow_cuirass
+
 function item_shadow_cuirass:OnSpellStart()
  	if IsServer() then
 		local caster = self:GetCaster()
@@ -232,16 +235,14 @@ function modifier_shadow_cuirass_echo:GetAttributes() return MODIFIER_ATTRIBUTE_
 
 function modifier_shadow_cuirass_echo:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
-	local item = self:GetAbility()
-	self.parent = self:GetParent()
 end
 function modifier_shadow_cuirass_echo:DeclareFunctions() return { MODIFIER_EVENT_ON_ATTACK_START } end
 function modifier_shadow_cuirass_echo:OnAttackStart(keys)
-	local item = self:GetAbility()
 	local parent = self:GetParent()
-	if keys.attacker == parent and item and not parent:IsIllusion() and self:GetParent():FindAllModifiersByName(self:GetName())[1] == self and not self:GetParent():HasModifier("modifier_shadow_cuirass_echo_cd") then
---		item:UseResources(false,false,true)
-		parent:AddNewModifier(parent, item, "modifier_shadow_cuirass_echo_haste", {})
+	if keys.attacker == parent and self:GetAbility() and not parent:IsIllusion() and self:GetParent():FindAllModifiersByName(self:GetName())[1] == self and not self:GetParent():HasModifier("modifier_shadow_cuirass_echo_cd") and not self:GetParent():HasModifier("modifier_shadow_cuirass_echo_haste") then
+--		self:GetAbility():UseResources(false,false,true)
+		parent:AddNewModifier(parent, self:GetAbility(), "modifier_shadow_cuirass_echo_haste", {})
+--[[
 		if not keys.target:IsBuilding() and not keys.target:IsOther() then
 			keys.target:AddNewModifier(self.parent, self:GetAbility(), "modifier_shadow_cuirass_echo_debuff_slow", {duration = self:GetAbility():GetSpecialValueFor("duration")})
 		end
@@ -253,6 +254,7 @@ function modifier_shadow_cuirass_echo:OnAttackStart(keys)
 				mod:Destroy()
 			end
 		end
+]]
 	end
 end
 function modifier_shadow_cuirass_echo:OnRemoved()
@@ -265,33 +267,32 @@ end
 -------------------------------------------
 modifier_shadow_cuirass_echo_haste = modifier_shadow_cuirass_echo_haste or class({})
 function modifier_shadow_cuirass_echo_haste:IsDebuff() return false end
-function modifier_shadow_cuirass_echo_haste:IsHidden() return true end
+function modifier_shadow_cuirass_echo_haste:IsHidden() return false end
 function modifier_shadow_cuirass_echo_haste:IsPurgable() return false end
 function modifier_shadow_cuirass_echo_haste:IsPurgeException() return false end
 function modifier_shadow_cuirass_echo_haste:IsStunDebuff() return false end
 function modifier_shadow_cuirass_echo_haste:RemoveOnDeath() return true end
 function modifier_shadow_cuirass_echo_haste:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
-	local item = self:GetAbility()
-	self.parent = self:GetParent()
-	if item then
-		self.duration = item:GetSpecialValueFor("duration")
-		local max_hits = 2
-		self:SetStackCount(max_hits)
-		self.attack_speed_buff = math.max(item:GetSpecialValueFor("attack_speed_buff"), self.parent:GetIncreasedAttackSpeed() * 3)
-	end
+	local max_hits = self:GetAbility():GetSpecialValueFor("echo_attacks")
+	self:SetStackCount(max_hits - 1)
 end
 function modifier_shadow_cuirass_echo_haste:OnRefresh() self:OnCreated() end
-function modifier_shadow_cuirass_echo_haste:DeclareFunctions() return { MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_EVENT_ON_ATTACK } end
+function modifier_shadow_cuirass_echo_haste:DeclareFunctions() return {MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_EVENT_ON_ATTACK, MODIFIER_PROPERTY_IGNORE_ATTACKSPEED_LIMIT} end
 function modifier_shadow_cuirass_echo_haste:OnAttack(keys)
-	if self.parent == keys.attacker then
-		keys.target:AddNewModifier(self.parent, self:GetAbility(), "modifier_shadow_cuirass_echo_debuff_slow", {duration = self:GetAbility():GetSpecialValueFor("duration")})
+	if not IsServer() then return end
+	if self:GetParent() == keys.attacker then
+		keys.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_shadow_cuirass_echo_debuff_slow", {duration = self:GetAbility():GetSpecialValueFor("duration")})
 	end
-	if IsServer() then
+	if self:GetStackCount() > 0 then
+		self:SetStackCount(self:GetStackCount() - 1)
+	else
 		self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_shadow_cuirass_echo_cd", {duration = self:GetAbility():GetSpecialValueFor("echo_cd")})
+		self:Destroy()
 	end
 end
 function modifier_shadow_cuirass_echo_haste:GetModifierAttackSpeedBonus_Constant() return self:GetAbility():GetSpecialValueFor("attack_speed_buff") end
+function modifier_shadow_cuirass_echo_haste:GetModifierAttackSpeed_Limit() return 1 end
 
 -------------------------------------------
 modifier_shadow_cuirass_echo_debuff_slow = modifier_shadow_cuirass_echo_debuff_slow or class({})
@@ -304,9 +305,8 @@ function modifier_shadow_cuirass_echo_debuff_slow:GetTexture() return "custom/sh
 function modifier_shadow_cuirass_echo_debuff_slow:DeclareFunctions() return { MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE } end
 function modifier_shadow_cuirass_echo_debuff_slow:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
-	local item = self:GetAbility()
-	if item then
-		self.slow = item:GetSpecialValueFor("slow_speed") * (-1)
+	if self:GetAbility() then
+		self.slow = self:GetAbility():GetSpecialValueFor("slow_speed") * (-1)
 	end
 end
 function modifier_shadow_cuirass_echo_debuff_slow:GetModifierAttackSpeedBonus_Constant() return self.slow end
@@ -314,12 +314,12 @@ function modifier_shadow_cuirass_echo_debuff_slow:GetModifierMoveSpeedBonus_Perc
 
 -------------------------------------------
 modifier_shadow_cuirass_echo_cd = modifier_shadow_cuirass_echo_cd or class({})
-function modifier_shadow_cuirass_echo_cd:IgnoreTenacity() return true end
+function modifier_shadow_cuirass_echo_cd:IsHidden() return false end
 function modifier_shadow_cuirass_echo_cd:IsPurgable() return false end
-function modifier_shadow_cuirass_echo_cd:IsDebuff() return true end
 function modifier_shadow_cuirass_echo_cd:RemoveOnDeath() return false end
-function modifier_shadow_cuirass_echo_cd:IsHidden() return true end
-function modifier_shadow_cuirass_echo_cd:DeclareFunctions() return {MODIFIER_EVENT_ON_ATTACK} end
+function modifier_shadow_cuirass_echo_cd:IgnoreTenacity() return true end
+function modifier_shadow_cuirass_echo_cd:IsDebuff() return true end
+--function modifier_shadow_cuirass_echo_cd:DeclareFunctions() return {MODIFIER_EVENT_ON_ATTACK} end
 function modifier_shadow_cuirass_echo_cd:OnAttack(keys)
-	self:GetCaster():RemoveModifierByName("modifier_shadow_cuirass_echo_haste")
+	self:GetParent():RemoveModifierByName("modifier_shadow_cuirass_echo_haste")
 end

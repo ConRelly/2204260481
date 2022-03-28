@@ -67,6 +67,7 @@
 	"dota_ability_variable_base_damage"				"Base Damage"						// $base_damage
 	"dota_ability_variable_buff_amp"				"Buff Duration"						// $buff_amp
 	"dota_ability_variable_projectile_speed_pct"	"Attack Projectile Speed"			// $projectile_speed_pct
+	"dota_ability_variable_attack_range_all"		"Attack Range"						// $attack_range_all
 
 //############################################################################################################################
 
@@ -449,6 +450,13 @@
 	"DOTA_Tooltip_ability_item_to_kardel"					"Kardel's Kit"
 	"DOTA_Tooltip_ability_item_to_kardel_description"		"Changes the character to Kardel."
 
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword"			"Master Of Weapons' Sword"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_damage"			"+$damage"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_ms"				"+$move_speed"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_attack_range"		"+$attack_range_all"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_as"				"+$attack"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_all_stats"			"+$all"
+
 //############################################################################################################################
 
 	"DOTA_Tooltip_ability_overcharge"				"Overcharge"
@@ -525,7 +533,7 @@
 	"DOTA_Tooltip_ability_sticky_napalm_Lore"	"It's not uncommon to hear the Rider cackle while he increases the flammability of his opponents."
 	"DOTA_Tooltip_ability_sticky_napalm_Note0"		"All damage from Batrider gets amplified, except for some items and item abilities."
 	"DOTA_Tooltip_ability_sticky_napalm_Note1"		"Sticky napalm does not require turning to cast."
-	"DOTA_Tooltip_ability_sticky_napalm_damage"				"Int Extra Damage:"
+	"DOTA_Tooltip_ability_sticky_napalm_damage"				"INT EXTRA DAMAGE:"
 	"DOTA_Tooltip_ability_sticky_napalm_radius"				"RADIUS:"
 	"DOTA_Tooltip_ability_sticky_napalm_duration"			"DURATION:"
 	"DOTA_Tooltip_ability_sticky_napalm_ms_slow_pct"		"%MOVEMENT SLOW:"
@@ -854,6 +862,19 @@
 	"DOTA_Tooltip_modifier_wr_windrun_slow"					"Windrun Slow"
 	"DOTA_Tooltip_modifier_wr_windrun_slow_Description"		"Gusts of wind around Windranger reduce your movement speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 	"DOTA_Tooltip_ability_special_bonus_wr_windrun_radius"			"+{s:value} Windrun Radius"
+
+// Oracle
+	"DOTA_Tooltip_ability_purifying_flames"					"Purifying Flames"
+	"DOTA_Tooltip_ability_purifying_flames_Description"		"Burns away impurities, dealing heavy magic damage to the target. Application to allies gradually regenerate health over time. The amount of health regenerated over its duration exceeds the amount of initial damage by %heal_pct%%%."
+	"DOTA_Tooltip_ability_purifying_flames_Lore"		"Like a hall of mirrors might amplify the light of a single candle, the shattered walls of the universe can transform the light of prophecy into a burning torch."
+	"DOTA_Tooltip_ability_purifying_flames_Note0"		"1) The healing from Purifying Flames can be stacked with itself."
+	"DOTA_Tooltip_ability_purifying_flames_Note1"		"2) Automatic application applies the ability to enemies."
+	"DOTA_Tooltip_ability_purifying_flames_damage"				"Damage:"
+	"DOTA_Tooltip_ability_purifying_flames_tick_rate"			"Heal interval:"
+	"DOTA_Tooltip_ability_purifying_flames_duration"			"Duration:"
+	"DOTA_Tooltip_modifier_purifying_flames_buff"					"Purifying Flames Heal"
+	"DOTA_Tooltip_modifier_purifying_flames_buff_Description"		"Being healed by Purifying Flames."
+	"DOTA_Tooltip_ability_special_bonus_purifying_flames_cooldown"		"-{s:value}s Purifying Flames Cooldown"
 
 // Kardel
 	"DOTA_Tooltip_ability_sniper_shoot"					"Shoot"
@@ -2510,9 +2531,10 @@
 	"DOTA_Tooltip_ability_mjz_axe_counter_helix_radius"				"Radius: "
 	"DOTA_Tooltip_ability_mjz_axe_counter_helix_trigger_chance"		"%Proc Chance: "
 	"DOTA_Tooltip_ability_mjz_axe_counter_helix_damage"				"Damage: "
-	"DOTA_Tooltip_ability_mjz_axe_counter_helix_strength_per"		"%Strength Bonus:"	
+	"DOTA_Tooltip_ability_mjz_axe_counter_helix_strength_per"		"%Strength Bonus:"
+
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade"					"Culling Blade"
-	"DOTA_Tooltip_ability_mjz_axe_culling_blade_Description"		"Axe spots a weakness and strikes, and then based on the caster strength value multiples of damage.\nUpgradable by Aghanim's Scepter."
+	"DOTA_Tooltip_ability_mjz_axe_culling_blade_Description"		"Axe spots a weakness and strikes, and then based on the caster strength value multiples of damage. \n<h1><font color='#DE3163'>Super Scepter</font></h1> When an enemy is killed with Culling Blade, its cooldown is reset, Axe gains bonus armor permanently by %armor_per_kill%."
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_scepter_description"		"Culling Blade hits all units in a small area."
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_Lore"					"Mogul Khan is the embodiment of battle and fury, launching into a gruesome fatality against those who dare engage the Axe in combat."
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_cast_range"				"Cast Range:"
@@ -7602,14 +7624,14 @@ Rock is consumed after use."
 
 
 "DOTA_Tooltip_ability_item_soul_ring_2"						"Soul Ring LVL 2"
-"DOTA_Tooltip_ability_item_soul_ring_2_Description"			"<h1>Active: Sacrifice</h1> Consume %health_sacrifice% health to temporarily gain %mana_gain% mana.  Lasts %duration% seconds.<br><br>If the mana gained cannot fit in your mana pool, it creates a buffer of mana that will be used before your mana pool."
+"DOTA_Tooltip_ability_item_soul_ring_2_Description"			"<h1>Active: Sacrifice</h1> Consume %health_sacrifice% health to temporarily gain %mana_gain% mana. Lasts %duration% seconds.<br><br>If the mana gained cannot fit in your mana pool, it creates a buffer of mana that will be used before your mana pool."
 "DOTA_Tooltip_ability_item_soul_ring_2_Lore"	"A ring that feeds on the souls of those who wear it."
 "DOTA_Tooltip_ability_item_soul_ring_2_Note0"	"If this mana is not used before the duration ends, the extra mana is lost."
 "DOTA_Tooltip_ability_item_soul_ring_2_bonus_strength"			"+$str"
 "DOTA_Tooltip_ability_item_soul_ring_2_bonus_armor"				"+$armor"
 
 "DOTA_Tooltip_ability_item_soul_ring_3"						"Soul Ring LVL 3"
-"DOTA_Tooltip_ability_item_soul_ring_3_Description"			"<h1>Active: Sacrifice</h1> Consume %health_sacrifice% health to temporarily gain %mana_gain% mana.  Lasts %duration% seconds.<br><br>If the mana gained cannot fit in your mana pool, it creates a buffer of mana that will be used before your mana pool."
+"DOTA_Tooltip_ability_item_soul_ring_3_Description"			"<h1>Active: Sacrifice</h1> Consume %health_sacrifice% health to temporarily gain %mana_gain% mana. Lasts %duration% seconds.<br><br>If the mana gained cannot fit in your mana pool, it creates a buffer of mana that will be used before your mana pool."
 "DOTA_Tooltip_ability_item_soul_ring_3_Lore"	"A ring that feeds on the souls of those who wear it."
 "DOTA_Tooltip_ability_item_soul_ring_3_Note0"	"If this mana is not used before the duration ends, the extra mana is lost."
 "DOTA_Tooltip_ability_item_soul_ring_3_bonus_strength"			"+$str"
@@ -7626,8 +7648,8 @@ Rock is consumed after use."
 "DOTA_Tooltip_modifier_item_speed_orb_consumed"					"Speed Orb Bonus"
 "DOTA_Tooltip_modifier_item_speed_orb_consumed_Description"		"Movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
 
-"DOTA_Tooltip_Ability_item_custom_stat_change_str"							"Strength Book(available until next patch)"
-"DOTA_Tooltip_Ability_item_custom_stat_change_str_Description"				"<h1>Use: Remodeling</h1> Changes your primary attribute to strength. Fully shareable and cannot be sold."
+"DOTA_Tooltip_Ability_item_custom_stat_change_str"							"Strength Book"
+"DOTA_Tooltip_Ability_item_custom_stat_change_str_Description"				"<h1>Use: Remodeling</h1> Changes your primary attribute to strength. Fully shareable and cannot be sold. \n <font color='red'>(Available until next patch)</font>"
 "DOTA_Tooltip_Ability_item_custom_stat_change_str_Lore"						"Makes the reader braver."
 "DOTA_Tooltip_Ability_item_custom_stat_change_agi"							"Wind Book"
 "DOTA_Tooltip_Ability_item_custom_stat_change_agi_Description"				"<h1>Use: Remodeling</h1> Changes your primary attribute to agility. Fully shareable and cannot be sold."

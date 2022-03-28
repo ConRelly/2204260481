@@ -16,7 +16,7 @@ function item_seal_act:GetAbilityTextureName() return "custom/item_seal_1" end
 function item_seal_act:GetIntrinsicModifierName() return "modifier_seal_act" end
 
 modifier_seal_act = class({})
-function modifier_seal_act:IsHidden() return false end
+function modifier_seal_act:IsHidden() return true end	--false
 function modifier_seal_act:GetTexture() return "custom/item_seal_1" end
 function modifier_seal_act:IsPurgable() return false end
 function modifier_seal_act:RemoveOnDeath() return false end
@@ -246,15 +246,17 @@ function modifier_seal_act:OnAbilityExecuted(params)
 		if not caster:IsIllusion() then
 			if params.unit == caster then
 				if not used_ability:IsItem() and not used_ability:IsToggle() then
-					for i=0, 6 do
+					for i=0, DOTA_MAX_ABILITIES - 1 do
 						local abil = caster:GetAbilityByIndex(i)
-						local abil_cd = abil:GetCooldownTimeRemaining()
-						if abil_cd > 0 then
-							if abil_cd - cdr_per_cast > 0 then
-								abil:EndCooldown()
-								abil:StartCooldown(abil_cd - cdr_per_cast)
-							else
-								abil:EndCooldown()
+						if abil then
+							local abil_cd = abil:GetCooldownTimeRemaining()
+							if abil_cd > 0 then
+								if abil_cd - cdr_per_cast > 0 then
+									abil:EndCooldown()
+									abil:StartCooldown(abil_cd - cdr_per_cast)
+								else
+									abil:EndCooldown()
+								end
 							end
 						end
 					end
@@ -347,7 +349,7 @@ function modifier_seal_act:OnAttackLanded(params)
 			if self:GetCaster() == params.attacker then
 				self.col_ud = self.col_ud + 1
 				if self.col_ud >= 3 then
-					local unts = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), nil, overload_raduis, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
+					local unts = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), nil, overload_raduis, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
 					if #unts > 0 then
 						local blessRNG = math.random(1,#unts)
 						local lightningBolt = ParticleManager:CreateParticle("particles/econ/events/ti9/maelstorm_ti9.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
@@ -376,7 +378,8 @@ function modifier_seal_act:OnTakeDamage(params)
 				local maax = parent:GetMaxHealth()/10
 				if taken_dmg >= maax and (not parent:IsIllusion()) then
 					taken_dmg = 0
-					local heroes = HeroList:GetAllHeroes()
+--					local heroes = HeroList:GetAllHeroes()
+					local heroes = FindUnitsInRadius(parent:GetTeamNumber(), parent:GetOrigin(), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 					local list = {}
 					if not parent:HasModifier("modifier_seal_armor") then
 						parent:AddNewModifier(parent, nil, "modifier_seal_armor", {duration = reinforcing_dur})
@@ -414,15 +417,12 @@ modifier_seal_ghost_state = class({})
 function modifier_seal_ghost_state:GetStatusEffectName() return "particles/status_fx/status_effect_ghost.vpcf" end
 function modifier_seal_ghost_state:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
-	self.ability = self:GetAbility()
-	self.caster = self:GetCaster()
-	self.parent = self:GetParent()
-	self.extra_spell_damage_percent = self.ability:GetSpecialValueFor("extra_spell_damage_percent")
+	self.extra_spell_damage_percent = self:GetAbility():GetSpecialValueFor("extra_spell_damage_percent")
 	self:StartIntervalThink(FrameTime())
 end
 function modifier_seal_ghost_state:OnIntervalThink()
 	if not IsServer() then return end
-	if self.parent:IsMagicImmune() then
+	if self:GetParent():IsMagicImmune() then
 		self:GetCaster():RemoveModifierByName("modifier_seal_ghost_state")
 	end
 end

@@ -12,6 +12,7 @@
 "npc_dota_hero_abaddon"
 {
 	"UnitLabel"					"no_underdog"
+
 	"Ability3"				"mjz_pudge_rot"
 	"Ability5"				"custom_aphotic_shield"
 	"Ability10"				"special_bonus_unique_mjz_pudge_rot_health"
@@ -253,9 +254,11 @@
 {
 	"UnitLabel"				 "no_underdog"
 
-	"Ability4"		"mjz_bristleback_quill_spray_autocast2"
+	"Ability3"		"purifying_flames"
+	"Ability4"		"oracle_rain_of_destiny"
 	"Ability10"		"special_bonus_cast_range_150"
 	"Ability12"		"special_bonus_unique_oracle"
+	"Ability13"		"special_bonus_purifying_flames_cooldown"
 	"Ability14"		"special_bonus_cdr_15"
 	"Ability15"		"special_bonus_mp_800"
 	"Ability17"		"special_bonus_all_stats_20"

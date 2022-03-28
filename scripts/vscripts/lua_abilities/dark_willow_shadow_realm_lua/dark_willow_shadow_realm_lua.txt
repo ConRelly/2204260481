@@ -12,7 +12,6 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"lua_abilities/dark_willow_shadow_realm_lua/dark_willow_shadow_realm_lua"
 		"AbilityTextureName"			"dark_willow_shadow_realm_lua"
-		"FightRecapLevel"				"1"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"         "10"
 
@@ -26,6 +25,8 @@
 			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_shadow_attack.vpcf"
 			"particle"	"particles/units/heroes/hero_dark_willow/dark_willow_shadow_attack_dummy.vpcf"
 		}
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastGestureSlot"		"ABSOLUTE"
 		
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------

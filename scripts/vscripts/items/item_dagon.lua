@@ -149,6 +149,7 @@ modifier_lions_cursed_item_slot = class({})
 function modifier_lions_cursed_item_slot:IsHidden() return true end
 function modifier_lions_cursed_item_slot:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_lions_cursed_item_slot:OnCreated()
+	if not IsServer() then return end
 	self:GetAbility():SetSellable(false)
 	self:GetAbility():SetPurchaseTime(0)
 end

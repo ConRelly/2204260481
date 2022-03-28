@@ -610,6 +610,67 @@
 		}
 	}
 
+// Boss's Shadow Cuirass
+	"item_shadow_cuirass_boss"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/shadow_cuirass"
+		"AbilityTextureName"			"custom/shadow_cuirass"
+		"Model"							"models/props_gameplay/treasure_chest001.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"ItemAliases"					"legendary;bm;blademail;kingsbane;carapace"
+		"ItemQuality"					"artifact"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"0"
+		"ItemPurchasable"				"0"
+		"ItemStackable"					"0"
+		"ItemSellable"					"0"
+		"ItemPermanent"					"0"
+		"ItemKillable"					"0"
+		"ItemDisplayOwnership"			"1"
+		"CustomShop"					"1"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"damage"				"85"
+			"str"					"55"
+			"agi"					"30"
+			"int"					"10"
+			"attack_speed"			"100"
+			"armor"					"10"
+			"hp_regen"				"20"
+			"mana_regen"			"2"
+			"reflect"				"30"
+			"slow_speed"			"100"
+			"duration"				"0.8"
+			"echo_cd"				"2"
+			"echo_attacks"			"2"
+			"attack_speed_buff"		"9999"
+			"sacrifice_pct"			"30"
+			"heal_pct"				"40"
+			"bmheal_pct"			"15"
+			"heal_duration"			"3"
+	// Seal Bonuses
+			"overload_dmg"				"150"
+			"overload_raduis"			"2000"
+			"reinforcing_armor"			"8"
+			"reinforcing_dur"			"5"
+			"cdr_per_cast"				"0.75"
+			"bonus_damage_for_wave"				"5"
+			"bonus_armor_for_wave"				"1"
+			"bonus_mag_res_for_wave"			"0.75"
+			"bonus_attack_speed_for_wave"		"6"
+			"bonus_all_stats_for_wave"			"1.5"
+			"bonus_spell_amp_for_wave"			"2"
+			"bonus_spell_lifesteal_per_wave"	"2"
+			"extra_spell_damage_percent"		"-50"
+		}
+	}
+
 	"item_recipe_blast_staff_1"
 	{
 		"BaseClass"						"item_datadriven"
@@ -2895,7 +2956,7 @@
 	"ItemAliases"					"boht;boots of tech;tech;speedsters"
 	"ItemSellable"                  "1"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-	"AbilityCooldown"				"60.0"
+	"AbilityCooldown"				"60"
 	"AbilitySpecial"
 	{
 		"01"
@@ -4900,9 +4961,13 @@
 	"ItemCost"						"8000"	
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
 	"ItemSellable"					"1"
-	"ItemPurchasable"			   	"1"
+	"ItemPurchasable"				"1"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"					"1"
+	"ItemStackable"					"0"
+	"ItemPermanent"					"0"
+	"ItemInitialCharges"			"1"
+	"ItemDisplayCharges"			"1"
 }
 "item_custom_stat_change_agi"
 {
@@ -34171,158 +34236,40 @@
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_damage_for_wave"			"5"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_armor_for_wave"			"1"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_mag_res_for_wave"		"0.75"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_attack_speed_for_wave"	"6"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_all_stats_for_wave"		"1.5"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"extra_spell_damage_percent"	"-50"
-			}
-			"07"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_spell_amp_for_wave"		"2"
-			}
-			"08"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"bonus_spell_lifesteal_per_wave"	"2"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"85"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str"					"55"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agi"					"30"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"10"
-			}
-			"14"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"100"
-			}
-			"15"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"10"
-			}
-			"16"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp_regen"				"20"
-			}
-			"17"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"2"
-			}
-			"18"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"reflect"				"90"
-			}
-			"19"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_speed"			"100"
-			}
-			"20"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.8"
-			}
-			"21"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"echo_cd"				"3.5"
-			}
-			"22"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_speed_buff"		"9999"
-			}
-			"23"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"sacrifice_pct"			"30"
-			}
-			"24"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"heal_duration"			"5"
-			}
-			"25"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"heal_pct"				"40"
-			}
-			"26"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bmheal_pct"			"15"
-			}
-			"30"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"overload_dmg"			"150"
-			}
-			"31"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"overload_raduis"		"2000"
-			}
-			"32"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"reinforcing_armor"		"8"
-			}
-			"33"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"reinforcing_dur"		"5"
-			}
-			"34"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cdr_per_cast"			"0.75"
-			}
+			"damage"				"85"
+			"str"					"55"
+			"agi"					"30"
+			"int"					"10"
+			"attack_speed"			"100"
+			"armor"					"10"
+			"hp_regen"				"20"
+			"mana_regen"			"2"
+			"reflect"				"90"
+			"slow_speed"			"100"
+			"duration"				"0.8"
+			"echo_cd"				"3.5"
+			"echo_attacks"			"2"
+			"attack_speed_buff"		"9999"
+			"sacrifice_pct"			"30"
+			"heal_pct"				"40"
+			"bmheal_pct"			"15"
+			"heal_duration"			"5"
+	// Seal Bonuses
+			"overload_dmg"				"150"
+			"overload_raduis"			"2000"
+			"reinforcing_armor"			"8"
+			"reinforcing_dur"			"5"
+			"cdr_per_cast"				"0.75"
+			"bonus_damage_for_wave"				"5"
+			"bonus_armor_for_wave"				"1"
+			"bonus_mag_res_for_wave"			"0.75"
+			"bonus_attack_speed_for_wave"		"6"
+			"bonus_all_stats_for_wave"			"1.5"
+			"bonus_spell_amp_for_wave"			"2"
+			"bonus_spell_lifesteal_per_wave"	"2"
+			"extra_spell_damage_percent"		"-50"
 		}
 	}
 // Shadow Cuirass Recipe
@@ -35474,6 +35421,44 @@
 				"var_type"				"FIELD_FLOAT"
 				"chance"				"5"
 			}
+		}
+	}
+
+	"item_master_of_weapons_sword"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/master_of_weapons_sword"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"juggernaut_omni_slash"
+		"ItemCost"						"500"
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"16"
+		"AbilityManaCost"				"50"
+		"ItemQuality"					"artifact"
+		"ItemPurchasable"				"0"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"					"7500"
+			"bonus_ms"						"250"
+			"bonus_attack_range"			"300"
+			"bonus_as"						"150"
+			"bonus_all_stats"				"500"
+			"duration"						"2.5"
+			"attack_rate_multiplier"		"2.5"
+			"bounce_range"					"600"
+		}
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+			"particle"					"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf"
+			"particle"					"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_tgt.vpcf"
+			"particle"					"particles/status_fx/status_effect_omnislash.vpcf"
 		}
 	}
 }

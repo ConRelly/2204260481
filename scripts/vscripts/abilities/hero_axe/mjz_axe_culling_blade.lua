@@ -1,8 +1,10 @@
 LinkLuaModifier("modifier_mjz_axe_culling_blade_checker","abilities/hero_axe/mjz_axe_culling_blade.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_axe_culling_blade_boost","abilities/hero_axe/mjz_axe_culling_blade.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_culling_blade_stacks","abilities/hero_axe/mjz_axe_culling_blade", LUA_MODIFIER_MOTION_NONE)
 
 
 mjz_axe_culling_blade = class({})
+function mjz_axe_culling_blade:GetIntrinsicModifierName() return "modifier_culling_blade_stacks" end
 function mjz_axe_culling_blade:GetBehavior()
 	if self:GetCaster():HasScepter() then
 		return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_AOE
@@ -19,60 +21,66 @@ function mjz_axe_culling_blade:GetCastRange(vLocation, hTarget) return self:GetS
 if IsServer() then
 	function mjz_axe_culling_blade:OnSpellStart()
 		local caster = self:GetCaster()
-		local ability = self
 		local target = self:GetCursorTarget()
-		local base_damage = ability:GetSpecialValueFor("base_damage")
-		local str_damage_multiplier = ability:GetSpecialValueFor("str_damage_multiplier")
-		local splash_radius_scepter = ability:GetSpecialValueFor("splash_radius_scepter")
+		local base_damage = self:GetSpecialValueFor("base_damage")
+		local str_damage_multiplier = self:GetSpecialValueFor("str_damage_multiplier")
+		local splash_radius_scepter = self:GetSpecialValueFor("splash_radius_scepter")
 		local damage = base_damage + caster:GetStrength() * str_damage_multiplier
-		local damage_table = {
-			attacker = caster,
-			victim = target,
-			ability = ability,
-			damage = damage,
-			damage_type = ability:GetAbilityDamageType(),
-		}
-		target:AddNewModifier(caster, ability, 'modifier_mjz_axe_culling_blade_checker', {})
-		ApplyDamage(damage_table)
-		self:PlayEffect(target)
+		local success_effect = false
+
 		if caster:HasScepter() then
-			local enemy_list = FindTargetEnemy(caster, target:GetAbsOrigin(), splash_radius_scepter)
-			for _,enemy in pairs(enemy_list) do
-				if enemy ~= target then
-					damage_table.victim = enemy
-					ApplyDamage(damage_table)
-					self:PlayEffect(enemy)
-				end
-			end
+			enemies = FindTargetEnemy(caster, target:GetAbsOrigin(), splash_radius_scepter)
+		else
+			enemies = {target}
 		end
-		target:RemoveModifierByName('modifier_mjz_axe_culling_blade_checker')
+
+		for _,enemy in pairs(enemies) do
+			local checker = enemy:AddNewModifier(caster, self, 'modifier_mjz_axe_culling_blade_checker', {})
+
+			ApplyDamage({
+				attacker = caster,
+				victim = enemy,
+				ability = self,
+				damage = damage,
+				damage_type = self:GetAbilityDamageType(),
+			})
+			self:PlayEffect(enemy)
+
+			if checker.success and not success_effect then
+				local culling_kill_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf", PATTACH_CUSTOMORIGIN, caster)
+				ParticleManager:SetParticleControl(culling_kill_particle, 4, target:GetAbsOrigin())
+				ParticleManager:ReleaseParticleIndex(culling_kill_particle)
+				success_effect = true
+			end
+
+			enemy:RemoveModifierByName('modifier_mjz_axe_culling_blade_checker')
+		end
 	end
+
 	function mjz_axe_culling_blade:OnCullingBladeSuccess(target)
 		local caster = self:GetCaster()
-		local ability = self
-		local speed_radius = ability:GetSpecialValueFor("speed_radius")
-		local speed_duration = ability:GetSpecialValueFor("speed_duration")
-		local sound_success = "Hero_Axe.Culling_Blade_Success"
-		local modifier_mjz_axe_culling_blade_boost_name = 'modifier_mjz_axe_culling_blade_boost'
+		local speed_radius = self:GetSpecialValueFor("speed_radius")
+		local speed_duration = self:GetSpecialValueFor("speed_duration")
 
-		EmitSoundOn(sound_success, caster)
+		EmitSoundOn("Hero_Axe.Culling_Blade_Success", caster)
 
 		local unit_list = FindTargetFriendly(caster, target:GetAbsOrigin(), speed_radius)
 		for _,unit in pairs(unit_list) do
-			unit:AddNewModifier(caster, ability, modifier_mjz_axe_culling_blade_boost_name, {duration = speed_duration})
+			unit:AddNewModifier(caster, self, "modifier_mjz_axe_culling_blade_boost", {duration = speed_duration})
+		end
+
+		if caster:HasModifier("modifier_super_scepter") then
+			caster:AddNewModifier(caster, self, "modifier_culling_blade_stacks", {})
+			self:EndCooldown()
 		end
 	end
 
 	function mjz_axe_culling_blade:OnCullingBladeFail(target)
-		local caster = self:GetCaster()
-		local ability = self
-		local sound_fail = "Hero_Axe.Culling_Blade_Fail"
-		EmitSoundOn(sound_fail, caster)
+		EmitSoundOn("Hero_Axe.Culling_Blade_Fail", self:GetCaster())
 	end
 
-	function mjz_axe_culling_blade:PlayEffect(target )
+	function mjz_axe_culling_blade:PlayEffect(target)
 		local caster = self:GetCaster()
-		local ability = self
 
 		local p_name = "particles/units/heroes/hero_axe/axe_culling_blade.vpcf"
 		local nFXIndex = ParticleManager:CreateParticle( p_name, PATTACH_CUSTOMORIGIN, target );
@@ -82,6 +90,7 @@ if IsServer() then
 end
 
 -----------------------------------------------------------------------------------------
+
 modifier_mjz_axe_culling_blade_checker = class({})
 function modifier_mjz_axe_culling_blade_checker:IsHidden() return true end
 function modifier_mjz_axe_culling_blade_checker:IsPurgable() return false end
@@ -90,24 +99,21 @@ function modifier_mjz_axe_culling_blade_checker:IsBuff() return false end
 if IsServer() then
 	function modifier_mjz_axe_culling_blade_checker:DeclareFunctions() return {MODIFIER_EVENT_ON_DEATH} end
 	function modifier_mjz_axe_culling_blade_checker:OnDeath()
-		local ability = self:GetAbility()
-		local target = self:GetParent()
 		self.success = true
-		ability:OnCullingBladeSuccess(target)
+		self:GetAbility():OnCullingBladeSuccess(self:GetParent())
 		if self:IsNull() then return end
 		self:Destroy()
 	end
 	function modifier_mjz_axe_culling_blade_checker:OnCreated(table) self.success = false end
 	function modifier_mjz_axe_culling_blade_checker:OnDestroy()
-		local ability = self:GetAbility()
-		local target = self:GetParent()
 		if self.success == false then
-			ability:OnCullingBladeFail(target)
+			self:GetAbility():OnCullingBladeFail(self:GetParent())
 		end
 	end
 end
 
 -----------------------------------------------------------------------------------------
+
 modifier_mjz_axe_culling_blade_boost = class({})
 function modifier_mjz_axe_culling_blade_boost:IsHidden() return false end
 function modifier_mjz_axe_culling_blade_boost:IsPurgable() return true end
@@ -133,6 +139,24 @@ if IsServer() then
 		local p_boost = ParticleManager:CreateParticle(p_name, PATTACH_CUSTOMORIGIN, parent)
 		ParticleManager:ReleaseParticleIndex(p_boost)
 	end
+end
+
+-----------------------------------------------------------------------------------------
+
+modifier_culling_blade_stacks = class({})
+function modifier_culling_blade_stacks:IsHidden() return (self:GetStackCount() < 1) end
+function modifier_culling_blade_stacks:IsPurgable() return false end
+function modifier_culling_blade_stacks:RemoveOnDeath() return false end
+function modifier_culling_blade_stacks:OnCreated()
+	self.armor_per_kill = self:GetAbility():GetSpecialValueFor("armor_per_kill")
+--	self:SetStackCount(1)
+end
+function modifier_culling_blade_stacks:OnRefresh()
+	self:SetStackCount(self:GetStackCount() + 1)
+end
+function modifier_culling_blade_stacks:DeclareFunctions() return {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS} end
+function modifier_culling_blade_stacks:GetModifierPhysicalArmorBonus()
+	return self:GetStackCount() * self.armor_per_kill
 end
 
 -----------------------------------------------------------------------------------------

@@ -21906,9 +21906,9 @@
 
 		"AOERadius" 					"%splash_radius_scepter"
 		"AbilityCastRange"				"%cast_range"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityCooldown"				"35.0"
+		"AbilityCooldown"				"35"
 		"AbilityManaCost"				"180"		
 
 		"AbilitySpecial"
@@ -21926,7 +21926,8 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"splash_radius_scepter"		"655"
+				"splash_radius_scepter"		"200"
+				"RequiresScepter"			"1"
 			}
 			"04"
 			{
@@ -21948,10 +21949,15 @@
 				"var_type"					"FIELD_INTEGER"
 				"speed_radius"				"1900"
 			}
-			"10"
+			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"cast_range"				"450"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"armor_per_kill"			"0.2"
 			}
 		}
 
@@ -30244,80 +30250,30 @@
 
 		"AbilityModifierSupportValue"	"0.2"	// Damage is the main component of spell
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"epicenter_pulses"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"epicenter_radius"		"300 400 500 600 700 800 900 1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000"
+				"value"						"6 8 15"
+				"LinkedSpecialBonus"		"special_bonus_unique_mjz_sandking_epicenter_pulses"
 			}
-			"02"
+			"epicenter_damage"				"810 1900 4540"
+			"str_multiplier"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"epicenter_pulses"		"6 8 15"
-				"LinkedSpecialBonus"	"special_bonus_unique_mjz_sandking_epicenter_pulses"
+				"value"						"3 6 9"
+				"LinkedSpecialBonus"		"special_bonus_unique_mjz_sandking_epicenter_strength"
 			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"epicenter_damage"		"810 1900 4540"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str_multiplier"		"3 6 9"
-				"LinkedSpecialBonus"	"special_bonus_unique_mjz_sandking_epicenter_strength"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"epicenter_slow"		"-30"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"epicenter_slow_as"		"-60"
-			}
-			"07"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"epicenter_slow_duration"		"3"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"epicenter_radius_min"			"300"
-			}
-			"09"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"epicenter_radius_max"			"2000"
-			}
-			"10"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"epicenter_radius_increase"		"100"
-			}
-			"11"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"epicenter_pulses_interval"		"0.5"
-			}
-			"12"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"epicenter_shard_interval"		"2"
-			}
-			"13"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"epicenter_shard_dmg_inc"		"1000"
-			}
-			"14"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"epicenter_shard_str_dmg_inc"	"7"
-			}
+			"epicenter_slow"				"-30"
+			"epicenter_slow_as"				"-60"
+			"epicenter_slow_duration"		"3"
+			"epicenter_radius_min"			"300"
+			"epicenter_radius_max"			"2000"
+			"epicenter_radius_increase"		"100"
+			"epicenter_duration"			"4"
+	// Aghanim's Shard
+			"epicenter_shard_interval"		"2"
+			"epicenter_shard_dmg_inc"		"1000"
+			"epicenter_shard_str_dmg_inc"	"7"
 		}
 
 		"precache"
@@ -42778,7 +42734,6 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Batrider.StickyNapalm.Impact"
-		"HasShardUpgrade"				"1"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"9"
 		"AbilityCastRange"				"1800"
@@ -42924,6 +42879,50 @@
 			{
 				"var_type"		"FIELD_FLOAT"
 				"value"			"500"
+			}
+		}
+	}
+
+// Oracle: Purifying Flames
+	"purifying_flames"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_oracle/purifying_flames"
+		"AbilityTextureName"			"oracle_purifying_flames"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"LevelsBetweenUpgrades"			"7"
+		"AbilitySound"					"Hero_Oracle.PurifyingFlames.Damage"
+		"AbilityCastRange"				"1750"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"2"
+		"AbilityManaCost"				"105 110 115 120"
+		"AbilityValues"
+		{
+			"damage"				"250 1400 4650 19600"
+			"heal_pct"				"33"
+			"tick_rate"				"0.5"
+			"duration"				"6"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+// Talent: -Xs Purifying Flames Cooldown
+	"special_bonus_purifying_flames_cooldown"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_FLOAT"
+				"value"			"1.2"
 			}
 		}
 	}
