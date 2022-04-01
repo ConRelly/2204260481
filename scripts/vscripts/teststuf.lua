@@ -229,7 +229,7 @@ function GetRandomAbilityName( hero )
         --"brewmaster_drunken_brawler",                   
         --"luna_lunar_blessing",
         --"mjz_doom_bringer_doom",
-        --"vengefulspirit_command_aura",
+        --"vengefulspirit_command_aura", -- crashes if the unit(non hero) has aghanim and dies
         --"bounty_hunter_jinada", --crash
         --"winter_wyvern_arctic_burn",
         --"tidehunter_anchor_smash",          

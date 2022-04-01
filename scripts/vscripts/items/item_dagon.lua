@@ -96,7 +96,7 @@ function item_mjz_dagon_v2:OnSpellStart()
 		if caster:HasAbility("mjz_finger_of_death") and caster:FindAbilityByName("mjz_finger_of_death"):IsTrained() then
 			Timers:CreateTimer(damage_delay * (damage_instances_count + 1), function()
 				caster:SetCursorCastTarget(target)
-				caster:FindAbilityByName("mjz_finger_of_death"):OnSpellStart()
+				caster:FindAbilityByName("mjz_finger_of_death"):OnSpellStart_dagon()
 			end)
 		end
 	end

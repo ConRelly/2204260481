@@ -1649,6 +1649,7 @@
 		"Ability6"				"mjz_broodmother_insatiable_hunger"
 		"Ability10"				"special_bonus_cleave_20"
 		"Ability13"             "special_bonus_reincarnation_90"
+		"Ability12"             "special_bonus_unique_mjz_broodmother_spawn_spiderlings_duration"
 		"Ability14"				"special_bonus_unique_mjz_broodmother_spawn_spiderlings_damage"
 		"Ability15"				"special_bonus_hp_6000"
 		"Ability16"				"special_bonus_unique_mjz_broodmother_insatiable_hunger"

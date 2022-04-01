@@ -77,7 +77,7 @@ print("MONSTER_CONFIG: " .. MONSTER_CONFIG)
 --	print("Load Test MONSTER_CONFIG: " .. MONSTER_CONFIG)
 --end
 if Cheats:IsEnabled() then 
-	MONSTER_CONFIG = "aoh2_config_siltbreaker_200809.txt" -- "test_short_rounds.txt" --  
+	MONSTER_CONFIG = "aoh2_config_siltbreaker_200809.txt" --  "test_short_rounds.txt" --  
 	print("CHeat mode")
 end	
 
@@ -577,11 +577,11 @@ function AOHGameMode:OnGameRulesStateChange()
 		self._flPrepTimeEnd = GameRules:GetGameTime() + self._flPrepTimeBetweenRounds
 		self:InitVariables() 
 	elseif nNewState == DOTA_GAMERULES_STATE_POST_GAME then
+		send_info_if_game_ends()
 		GameRules:SetSafeToLeave(true)
 		end_screen_setup(self._entAncient and self._entAncient:IsAlive())
 	elseif nNewState == DOTA_GAMERULES_STATE_DISCONNECT then
 		GameRules:SetSafeToLeave(true)
-		send_info_if_game_ends()
 	end
 
 end
@@ -691,6 +691,16 @@ function AOHGameMode:_CheckWin()
 					Timers:CreateTimer({
 						endTime = 15, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
 						callback = function()
+							GameRules:SetSafeToLeave(true)
+							end_screen_setup(self._entAncient and self._entAncient:IsAlive())			
+							PauseGame(true)
+							Timers:CreateTimer({
+								useGameTime = false, 
+								endTime = 0.4, 
+								callback = function()
+									PauseGame(false)
+								end
+							})							
 							GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
 						end
 					})		
@@ -728,8 +738,18 @@ function AOHGameMode:_CheckWin()
 					if self:IsEndlessWin() and not self._vic_1 then
 						Notifications:TopToAll({text="You Have Defeated All Mortals, Try -fullgame to Encounter Final God Bosses", style={color="red"}, duration=10})
 						Timers:CreateTimer({
-							endTime = 10, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
+							endTime = 15, 
 							callback = function()
+								GameRules:SetSafeToLeave(true)
+								end_screen_setup(self._entAncient and self._entAncient:IsAlive())			
+								PauseGame(true)
+								Timers:CreateTimer({
+									useGameTime = false, 
+									endTime = 0.4, 
+									callback = function()
+										PauseGame(false)
+									end
+								})								
 								GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
 							end
 						})
@@ -757,8 +777,18 @@ function AOHGameMode:_CheckWin()
 			elseif not self._vic_1 then
 				Notifications:TopToAll({text="You Have Defeated The Demo Difficulty, Try -fullgame to meet new bosses and final GOD Bosses", style={color="red"}, duration=20})
 				Timers:CreateTimer({
-					endTime = 10,
+					endTime = 15,
 					callback = function()
+						GameRules:SetSafeToLeave(true)
+						end_screen_setup(self._entAncient and self._entAncient:IsAlive())			
+						PauseGame(true)
+						Timers:CreateTimer({
+							useGameTime = false, 
+							endTime = 0.4, 
+							callback = function()
+								PauseGame(false)
+							end
+						})						
 						GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
 					end
 				})
@@ -865,6 +895,7 @@ function AOHGameMode:OnTreeCut(keys)
 	end
 end
 
+local pause_game = true
 function AOHGameMode:_CheckForDefeat()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		if self._entAncient and self._entAncient:IsAlive() then
@@ -873,7 +904,10 @@ function AOHGameMode:_CheckForDefeat()
 				self._ischeckingdefeat = true
 			end
 		else
-			GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
+			send_info_if_game_ends()
+			GameRules:SetSafeToLeave(true)
+			--end_screen_setup(self._entAncient and self._entAncient:IsAlive())			
+			GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)	
 		end
 	end
 end
@@ -1139,7 +1173,7 @@ function AOHGameMode:OnEntitySpawned(event)
 	--		Sounds:CreateSound(playerID, "bleach_fate")
 	--	end 
 	--end
-	if unit:GetUnitName() == "npc_boss_guesstuff_Moran" and Cheats:IsEnabled() then
+	if unit:GetUnitName() == "npc_boss_guesstuff_Moran" and Cheats:IsEnabled() then		
 		GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
 	end
 	--[[if unit:GetUnitName() == "npc_boss_randomstuff_aiolos" and Cheats:IsEnabled() then
@@ -1154,6 +1188,19 @@ end
 function AOHGameMode:OnEntityKilled(event)
 	local killedUnit = EntIndexToHScript(event.entindex_killed)
 	if killedUnit:IsNull() then return end
+	if killedUnit:IsFort() then
+		print("pause game Fort killed")
+		GameRules:SetSafeToLeave(true)
+		end_screen_setup(self._entAncient and self._entAncient:IsAlive())			
+		PauseGame(true)
+		Timers:CreateTimer({
+			useGameTime = false, 
+			endTime = 0.4, 
+			callback = function()
+				PauseGame(false)
+			end
+		})
+	end	
 	if killedUnit and killedUnit:IsRealHero()  then
 		-- create_ressurection_tombstone(killedUnit)
 		Timers:CreateTimer(1, function( )

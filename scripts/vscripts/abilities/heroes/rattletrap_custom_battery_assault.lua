@@ -72,17 +72,19 @@ if IsServer() then
 
 
     function modifier_rattletrap_custom_battery_assault:LaunchRocket(target)
-        self.parent:EmitSound("Hero_Rattletrap.Battery_Assault_Launch")
+        if self:GetAbility() then
+            self.parent:EmitSound("Hero_Rattletrap.Battery_Assault_Launch")
 
-        ProjectileManager:CreateTrackingProjectile({
-            Ability = self.ability,
-            Target = target,
-            Source = self.parent,
-            EffectName = "particles/units/heroes/hero_rattletrap/rattletrap_battery_shrapnel.vpcf",
-            iMoveSpeed = 1000,
-            iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION,
-            bDodgeable = false,
-            flExpireTime = GameRules:GetGameTime() + 5.0,
-        })
+            ProjectileManager:CreateTrackingProjectile({
+                Ability = self.ability,
+                Target = target,
+                Source = self.parent,
+                EffectName = "particles/units/heroes/hero_rattletrap/rattletrap_battery_shrapnel.vpcf",
+                iMoveSpeed = 1000,
+                iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION,
+                bDodgeable = false,
+                flExpireTime = GameRules:GetGameTime() + 5.0,
+            })
+        end   
     end
 end

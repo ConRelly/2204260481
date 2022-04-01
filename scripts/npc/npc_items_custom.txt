@@ -2956,7 +2956,7 @@
 	"ItemAliases"					"boht;boots of tech;tech;speedsters"
 	"ItemSellable"                  "1"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-	"AbilityCooldown"				"60"
+	"AbilityCooldown"				"80"
 	"AbilitySpecial"
 	{
 		"01"
@@ -2967,7 +2967,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"speed_as_block"	"40"
+			"speed_as_block"	"30"
 		}
 		"03"
 		{

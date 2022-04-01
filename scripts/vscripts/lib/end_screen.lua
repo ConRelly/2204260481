@@ -85,16 +85,15 @@ function end_screen_get_data(isWinner)
                         playerInfo.items[item_slot] = item:GetAbilityName()
                     end
                 end
-                if hero:HasModifier("modifier_antimage_custom_mana_break_buff") then
+--[[                 if hero:HasModifier("modifier_antimage_custom_mana_break_buff") then
                     local stacks = hero:FindModifierByName("modifier_antimage_custom_mana_break_buff")
                     local nr_stacks = stacks:GetStackCount()
                     playerInfo.stacksr["mana_break_Stacks"] = nr_stacks
-                end
+                end ]]
                 data.players[playerID] = playerInfo
             end
         end
     end
-
     return data
 end
 

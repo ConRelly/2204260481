@@ -52,18 +52,20 @@ function OnSpellStart( keys )
 				hero:RemoveAbilityByHandle(oldAbility)
 			end
 		end
-		for i=0, 31 do
-			local hAbility = caster:GetAbilityByIndex( i )
-			if hAbility and not hAbility:IsNull() and not hAbility:IsCosmetic( nil ) then
-				local hAbility_name = hAbility:GetAbilityName()
-				if hAbility_name == "ability_capture" then
-					print("Remove: " .. hAbility_name)
-					if caster:HasAbility(hAbility_name) then
-						caster:RemoveAbility(hAbility_name)
+		if caster:GetName() ~= "npc_dota_hero_monkey_king" then
+			for i=0, 31 do
+				local hAbility = caster:GetAbilityByIndex( i )
+				if hAbility and not hAbility:IsNull() and not hAbility:IsCosmetic( nil ) then
+					local hAbility_name = hAbility:GetAbilityName()
+					if hAbility_name == "ability_capture" then
+						print("Remove: " .. hAbility_name)
+						if caster and caster:HasAbility(hAbility_name) then
+							caster:RemoveAbility(hAbility_name)
+						end	
 					end	
 				end	
-			end	
-		end
+			end
+		end	
 
 		local exclude_table = {
 			faceless_void_backtrack = true,

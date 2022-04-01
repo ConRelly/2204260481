@@ -30,6 +30,7 @@
 		"QuitDemo_Button"							"Quit"
 		"DayNight_Button"							"Toggle Day / Night"
 		"HeroRenderMode_Button"						"Hero Display Mode"
+		"npc_dota_goodguys_fort_2"                  "Ancient2"
 
 ///////////////////////////////////////////////////Aplpn English Translate//////////////////////////////////////////////////
 	"game_begin_benediction"					"It's dangerous to go alone! Take this."
@@ -2696,6 +2697,7 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_broodmother_spawn_spiderlings_count"	"+{s:value} Spiders Count"
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_true_strike_chance"		 "%Chance to Spawn with True Strike:"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_broodmother_spawn_spiderlings_damage"		"+{s:value} Spiders Damage"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_broodmother_spawn_spiderlings_duration"		"Spiders Have No Duration"
 
 
 	"DOTA_Tooltip_ability_mjz_centaur_double_edge"								"Double Edge"
@@ -9402,7 +9404,7 @@ Contains all random skills"
 		"DOTA_Tooltip_modifier_sniper_shrapnel_lua_Description"			"Movement speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
 		"DOTA_Tooltip_ability_sniper_headshot_lua"											"Headshot"
-		"DOTA_Tooltip_ability_sniper_headshot_lua_Description"								"Sniper increases his accuracy, giving him a chance to deal extra damage, works with critical hit or other effects like Assassinate."
+		"DOTA_Tooltip_ability_sniper_headshot_lua_Description"								"Sniper increases his accuracy, giving him a chance to deal extra damage, works with critical hit or other effects like Assassinate.\n<h1><font color='#DE3163'>Super Scepter</font></h1> Increases chance by %bonus_proc_chance%%% and Adds Your Level as extra Agility Damage."
 		"DOTA_Tooltip_ability_sniper_headshot_lua_Lore"										"Taking potshots at steepstalkers in his childhood has been thoroughly refined into perfect leads on enemy combatants."
 		"DOTA_Tooltip_ability_sniper_headshot_lua_Note0"									"Works on allied creeps."
 		"DOTA_Tooltip_ability_sniper_headshot_lua_proc_chance"								"%CHANCE:"

@@ -241,6 +241,7 @@ end
 function GetRandomAbilityName(hero)
     local abilityList = {
 -- Passive:
+		--"vengefulspirit_command_aura",  -- crashes when the summon unit dies(aghanim effect) (if is not hero)
         "beastmaster_inner_beast",
         "skeleton_king_mortal_strike",
         "spirit_breaker_greater_bash",
@@ -279,7 +280,6 @@ function GetRandomAbilityName(hero)
         "monkey_king_custom_jingu_mastery",
         "life_stealer_custom_deny",
         "mjz_monkey_king_jingu_mastery",
-        "vengefulspirit_command_aura",
 		"sniper_headshot",
 		"mjz_chaos_knight_chaos_strike",
         "weaver_the_swarm",

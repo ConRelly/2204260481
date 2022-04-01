@@ -2441,6 +2441,7 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"50 70 90 110"
+		"LevelsBetweenUpgrades"         "4"
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
@@ -2463,7 +2464,8 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_speed_bonus"		"50 60 70 80"
+				"attack_speed_bonus"		"50 70 90 120"
+				"LinkedSpecialBonus"		"special_bonus_unique_arc_warden_3"
 			}
 			"04"
 			{
@@ -2471,7 +2473,28 @@
 				"evasion_chance"			"100"
 			}
 		}
-	}	
+	}
+	"special_bonus_unique_arc_warden_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"7104"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"80"
+				"ad_linked_abilities"			"arc_warden_magnetic_field"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+
 	"arc_warden_flux"
 	{
 		"AbilitySpecial"
@@ -8807,7 +8830,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"50"
+		"AbilityCooldown"				"60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -8829,7 +8852,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"28.0"		
+				"duration"			"22.0"	
 			}
 			"03"
 			{

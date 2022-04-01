@@ -22676,6 +22676,22 @@
 		}
 	}
 
+	"special_bonus_unique_mjz_broodmother_spawn_spiderlings_duration"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"1"
+			}
+		}
+	}
+
 	"mjz_centaur_double_edge"
 	{
 		"BaseClass"						"ability_lua"	//"ability_datadriven"
@@ -31395,7 +31411,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"200"
+				"value"						"250"
 			}
 		}
 	}

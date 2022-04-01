@@ -1819,6 +1819,18 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 
 
+* Fixed EndGame scoreboard
+* Removed vanilla Venge passive (comand aura) from random pool for: broodmother spiders , chen units  and Hired gon (solo helper unit) . Seems it was crashing if the unit(non hero) had Aghanim buff and died.
+* Added speedsters to mimic ignore list and increased cd.
+* Sniper Headshot now has an Super Scepter effect.
+* Fixed Lyon dagon triggering an extra loop (dagon--> Lyon ult --> dagon) resulting in higher stacks/time and 2x dmg.
+* Broodmother has a new talent for Q .
+
+
+
+
+
+
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 

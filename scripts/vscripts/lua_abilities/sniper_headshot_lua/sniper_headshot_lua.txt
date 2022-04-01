@@ -77,7 +77,12 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"knockback_agi_multiplier_tooltip"			"5"
-			}			
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bonus_proc_chance"			"10"
+			}						
 		}
 	}
 

@@ -65,6 +65,64 @@ function mjz_finger_of_death:GetUnitDamageType()
 end
 ]]
 
+
+function mjz_finger_of_death:OnSpellStart_dagon()
+	if IsServer() then
+		local caster = self:GetCaster()
+		local target = self:GetCursorTarget()
+		local targets = {target}
+
+		local damage_instances = 2
+
+		local damage_delay = self:GetSpecialValueFor("damage_delay")
+		local kill_grace_duration = self:GetSpecialValueFor("kill_grace_duration")
+		local splash_radius = self:GetSpecialValueFor("splash_radius_scepter")
+	 
+		local base_damage = self:GetSpecialValueFor(value_if_scepter(caster, "damage_scepter", "damage"))
+		local damage_per_kill = self:GetSpecialValueFor("damage_per_kill")
+		local extra_int = GetTalentSpecialValueFor(self, "damage_per_int") * caster:GetIntellect() or 0
+		local kill_count = caster:GetModifierStackCount("modifier_mjz_finger_of_death_bonus", nil)
+		local damage = math.ceil((base_damage + extra_int + damage_per_kill * kill_count) / damage_instances)
+
+		caster:EmitSound("Hero_Lion.FingerOfDeath")
+
+		if caster:HasScepter() then
+			targets = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, splash_radius, self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+		end
+
+		for _, target in pairs(targets) do
+			_PlayEffect(caster, target)
+
+			local sound_default = "Hero_Lion.FingerOfDeathImpact"
+			local sound_immortal = "Hero_Lion.FingerOfDeathImpact.Immortal"
+			local sound_name = value_if_scepter(caster, sound_immortal, sound_default)
+			target:EmitSound(sound_name)
+
+			if not target:TriggerSpellAbsorb(self) then
+				if caster:HasTalent("special_bonus_finger_of_death_health_inf_kill_duration") then
+					target:AddNewModifier(caster, self, "modifier_mjz_finger_of_death_death", {duration = nil})
+				else
+					target:AddNewModifier(caster, self, "modifier_mjz_finger_of_death_death", {duration = kill_grace_duration * (1 - target:GetStatusResistance())})
+				end
+
+				for i = 1, damage_instances do
+					Timers:CreateTimer(damage_delay * FrameTime(), function()
+						if target ~= nil and IsValidEntity(target) and target:IsAlive() and (not target:IsMagicImmune() or caster:HasScepter()) then
+							ApplyDamage({
+								attacker = caster,
+								victim = target,
+								damage = damage,
+								damage_type = DAMAGE_TYPE_MAGICAL,
+								ability = self,
+							})
+						end
+					end)
+				end
+			end
+		end
+		print("dagon finger")
+	end
+end
 function mjz_finger_of_death:OnSpellStart()
 	if IsServer() then
 		local caster = self:GetCaster()
@@ -85,6 +143,7 @@ function mjz_finger_of_death:OnSpellStart()
 
 		if caster:HasModifier("modifier_super_scepter") then
 			if caster:HasItemInInventory("item_mjz_dagon_v2") then
+				self.can_use_dagon = false
 				local Dagon = caster:FindItemInInventory("item_mjz_dagon_v2")
 				damage = damage + (Dagon:GetCurrentCharges() * base_damage / damage_instances)
 

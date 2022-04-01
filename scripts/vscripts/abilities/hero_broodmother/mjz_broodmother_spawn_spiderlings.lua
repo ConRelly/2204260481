@@ -57,8 +57,12 @@ function mjz_broodmother_spawn_spiderlings:SpawnSpiderlings(hTarget)
         local unitName = self:GetSpiderUnitName()
         local M_NAME = "modifier_mjz_broodmother_spiderlings"
         local aghbuf = "modifier_item_ultimate_scepter_consumed"
-        local chance_strike = self:GetSpecialValueFor("true_strike_chance")
+        local chance_strike = self:GetSpecialValueFor("true_strike_chance") 
         local spiderling_duration = self:GetSpecialValueFor("spiderling_duration")
+        local spiderling_no_duration = hCaster:FindAbilityByName("special_bonus_unique_mjz_broodmother_spawn_spiderlings_duration") 
+        if spiderling_no_duration and spiderling_no_duration:GetLevel() ~= 0 then
+            spiderling_duration = 0
+        end        
         local extra_damage = talent_value(hCaster, "special_bonus_unique_mjz_broodmother_spawn_spiderlings_damage")
         local count = self:GetSpecialValueFor("count") + talent_value(hCaster, "special_bonus_unique_mjz_broodmother_spawn_spiderlings_count")
         
@@ -79,7 +83,7 @@ function mjz_broodmother_spawn_spiderlings:SpawnSpiderlings(hTarget)
             spider:RemoveAbility("broodmother_poison_sting")
             spider:RemoveAbility("broodmother_spawn_spiderite")
             local ability_trist = "bloodseeker_thirst"
-            --local ability_trist = "lycan_shapeshift"
+            --local ability_trist = "luna_lunar_blessing"   --testing skills
             local searing = spider:AddAbility(ability_trist)
             searing:UpgradeAbility(true)
             searing:SetLevel( hCaster:FindAbilityByName("mjz_broodmother_spawn_spiderlings"):GetLevel() )
@@ -144,6 +148,7 @@ end
 function GetRandomAbilityName(hero)
     local abilityList = {
 -- Passive:
+        --"vengefulspirit_command_aura",  
         "beastmaster_inner_beast",
         "skeleton_king_mortal_strike",
         "spirit_breaker_greater_bash",
@@ -162,16 +167,16 @@ function GetRandomAbilityName(hero)
         "lycan_feral_impulse",
         "lycan_feral_impulse",
         "lich_custom_cold_soul",
-        "abyssal_underlord_atrophy_aura",
+        --"abyssal_underlord_atrophy_aura",
         "meepo_ransack",
-        "brewmaster_fire_permanent_immolation",
+        --"brewmaster_fire_permanent_immolation",
         "faceless_void_time_lock",
         "luna_lunar_blessing",
         "elder_titan_natural_order",
         --"mjz_crystal_maiden_brilliance_aura",
         "naga_siren_rip_tide",
         "imba_phantom_assassin_coup_de_grace",
-        "dazzle_bad_juju",
+        --"dazzle_bad_juju",
         "ryze_arcane_mastery",
         "big_thunder_lizard_wardrums_aura",
         "phantom_reflex",
@@ -182,7 +187,6 @@ function GetRandomAbilityName(hero)
         "monkey_king_custom_jingu_mastery",
         "life_stealer_custom_deny",
         "mjz_monkey_king_jingu_mastery",
-        "vengefulspirit_command_aura",
 		"sniper_headshot",
 		"mjz_chaos_knight_chaos_strike",
         "weaver_the_swarm",
@@ -203,7 +207,7 @@ function GetRandomAbilityName(hero)
         "tidehunter_anchor_smash",
         "magnataur_empower",
         "legion_commander_custom_duel",
-        "alchemist_chemical_rage",
+        --"alchemist_chemical_rage",
         --"lone_druid_rabid",
         "juggernaut_healing_ward",
         "mjz_omniknight_repel",
@@ -218,7 +222,7 @@ function GetRandomAbilityName(hero)
         "medusa_stone_gaze",
         "wisp_overcharge",
         "dark_willow_shadow_realm",
-        "bane_enfeeble",
+        --"bane_enfeeble",
         "elder_titan_natural_order_spirit",
         "oracle_false_promise",
         "void_spirit_astral_step",
