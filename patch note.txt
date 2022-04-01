@@ -1827,6 +1827,12 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 * Broodmother has a new talent for Q.
 * Some Visage talents swapped around and buffed and added seeker passive on the lvl 3 birds.
 * Boss Spectre dispersion replaced with a custom one (this one should be less laggy). does not stack with dmg reduction.
+* Hammer of the Divine: Chaos Strike (casual) now stacks
+* Culling Blade (Axe):
+	-- Added Super Scepter effect
+	-- Reduced Aghanim's Scepter AOE from 655 to 200
+	-- Now trigger Linken's Sphere
+* (Maybe) Fixed loss of control of Piety or Kardel
 * And some other stuff
 
 

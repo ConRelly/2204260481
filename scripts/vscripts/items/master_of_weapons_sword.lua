@@ -4,6 +4,12 @@ LinkLuaModifier("modifier_mows_image", "items/master_of_weapons_sword", LUA_MODI
 LinkLuaModifier("modifier_mows_remove_as_limit", "items/master_of_weapons_sword", LUA_MODIFIER_MOTION_NONE)
 
 if item_master_of_weapons_sword == nil then item_master_of_weapons_sword = class({}) end
+function item_master_of_weapons_sword:GetCooldown(level)
+	if self:GetCaster():HasModifier("modifier_123123_ability") then
+		return 12 / self:GetCaster():GetCooldownReduction()
+	end
+	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
+end
 function item_master_of_weapons_sword:GetIntrinsicModifierName() return "modifier_mows" end
 
 function item_master_of_weapons_sword:OnSpellStart()
@@ -12,15 +18,15 @@ function item_master_of_weapons_sword:OnSpellStart()
 	local target = self:GetCursorTarget()
 	caster:AddNewModifier(caster, self, "modifier_mows_remove_as_limit", {})
 	local additional_duration = math.floor(caster:GetDisplayAttackSpeed() / 1500)
---	print("Print DisplayAttackSpeed", caster:GetDisplayAttackSpeed())
---	print("Print additional_duration", additional_duration)
+	print("Print DisplayAttackSpeed", caster:GetDisplayAttackSpeed())
+	print("Print additional_duration", additional_duration)
 	local duration = self:GetSpecialValueFor("duration") + caster:FindTalentValue("special_bonus_imba_juggernaut_10") + (additional_duration * 1)
 
 	local previous_position = caster:GetAbsOrigin()
 	
 	caster:Purge(false, true, false, false, false)
 
-	local image = CreateUnitByName(caster:GetUnitName(), caster:GetAbsOrigin(), true, caster, caster:GetOwner(), caster:GetTeamNumber())
+	local image = CreateUnitByName(caster:GetUnitName(), target:GetAbsOrigin(), true, caster, caster:GetOwner(), caster:GetTeamNumber())
 
 	local caster_level = caster:GetLevel()
 	for i = 2, caster_level do
@@ -206,6 +212,11 @@ function modifier_mows_slasher:OnCreated()
 	if not self:GetAbility() then self:Destroy() return end
 
 	if IsServer() then
+		if self.caster:GetPrimaryAttribute() == 0 then
+			self.MaxHealth = self.parent:GetMaxHealth()
+		else
+			self.MaxHealth = 0
+		end
 --		Timers:CreateTimer(FrameTime(), function()
 			if (not self.parent:IsNull()) then
 				
@@ -215,8 +226,8 @@ function modifier_mows_slasher:OnCreated()
 
 				self:BounceAndSlaughter(true)
 				
-				local slash_rate = self.caster:GetSecondsPerAttack() / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
-				
+				local slash_rate = 0.125--self.caster:GetSecondsPerAttack() / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
+
 				self:StartIntervalThink(slash_rate)
 			end
 --		end)
@@ -230,6 +241,46 @@ function modifier_mows_slasher:OnDestroy()
 		self.parent:MoveToPositionAggressive(self.parent:GetAbsOrigin())
 
 		if self.parent:HasModifier("modifier_mows_image") then
+			local ability = self:GetAbility()
+			local image_team = self.parent:GetTeamNumber()
+			local image_loc = self.parent:GetAbsOrigin()
+			local damage = self.parent:GetAttackDamage()
+			local radius = 2000
+			local repeat_times = 1 + (2 * math.floor(self.parent:GetLevel() / 40))
+			if self.caster:GetPrimaryAttribute() == 0 then
+				if self.caster:GetStrength() >= 7500 then
+					DMGflags = DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
+				else
+					DMGflags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
+				end
+			end
+			
+			local nearby_enemies = FindUnitsInRadius(image_team, image_loc, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_ANY_ORDER, false)
+
+			for i = 1, repeat_times do
+				Timers:CreateTimer(0.1 * i, function()
+					if ability then
+						for _,enemy in pairs(nearby_enemies) do
+							ApplyDamage({
+								victim = enemy,
+								attacker = self.caster,
+								ability = ability,
+								damage = damage,
+								damage_type = DAMAGE_TYPE_PHYSICAL,
+								damage_flags = DMGflags,
+							})
+						end
+						if i == 1 or (i + 1 % 3 == 0) then
+							local burst = ParticleManager:CreateParticle("particles/items3_fx/blink_overwhelming_burst.vpcf", PATTACH_WORLDORIGIN, self.caster)
+							ParticleManager:SetParticleControl(burst, 0, image_loc)
+							ParticleManager:SetParticleControl(burst, 1, Vector(radius, 500, 500))
+							ParticleManager:ReleaseParticleIndex(burst)
+							EmitSoundOnLocationWithCaster(image_loc, "Blink_Layer.Overwhelming", self.caster)
+						end
+					end
+				end)
+			end
+
 			self.parent:MakeIllusion()
 			self.parent:RemoveModifierByName("modifier_mows_image")
 
@@ -262,7 +313,7 @@ function modifier_mows_slasher:OnIntervalThink()
 	if not self:GetAbility() then self:Destroy() return end
 	self:BounceAndSlaughter()
 	
-	local slash_rate = self.caster:GetSecondsPerAttack() / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
+	local slash_rate = 0.125--self.caster:GetSecondsPerAttack() / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
 
 	self:StartIntervalThink(slash_rate)
 end
@@ -274,7 +325,7 @@ function modifier_mows_slasher:BounceAndSlaughter(first_slash)
 		order = FIND_CLOSEST
 	end
 	
-	self.nearby_enemies = FindUnitsInRadius(self.parent:GetTeamNumber(), self.parent:GetAbsOrigin(), nil, self.bounce_range, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_INVULNERABLE, order, false)
+	self.nearby_enemies = FindUnitsInRadius(self.parent:GetTeamNumber(), self.parent:GetAbsOrigin(), nil, self.bounce_range, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_INVULNERABLE, order, false)
 	
 	for count = #self.nearby_enemies, 1, -1 do
 		if self.nearby_enemies[count] and (self.nearby_enemies[count]:GetName() == "npc_dota_unit_undying_zombie" or self.nearby_enemies[count]:GetName() == "npc_dota_elder_titan_ancestral_spirit") then
@@ -338,11 +389,13 @@ end
 function modifier_mows_slasher:DeclareFunctions()
 	if not IsServer() then return end
 	if self:GetParent():GetUnitName() == "npc_dota_hero_juggernaut" then
-		return {MODIFIER_PROPERTY_OVERRIDE_ANIMATION}
+		return {MODIFIER_PROPERTY_OVERRIDE_ANIMATION, MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE}
 	end
-	return
+	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE}
 end
+
 function modifier_mows_slasher:GetOverrideAnimation() return ACT_DOTA_OVERRIDE_ABILITY_4 end
+function modifier_mows_slasher:GetModifierPreAttack_BonusDamage() return self.MaxHealth end
 
 function modifier_mows_slasher:CheckState()
 	return {

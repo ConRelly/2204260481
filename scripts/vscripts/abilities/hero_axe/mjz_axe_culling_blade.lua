@@ -26,6 +26,9 @@ if IsServer() then
 		local str_damage_multiplier = self:GetSpecialValueFor("str_damage_multiplier")
 		local splash_radius_scepter = self:GetSpecialValueFor("splash_radius_scepter")
 		local damage = base_damage + caster:GetStrength() * str_damage_multiplier
+
+		if target:TriggerSpellAbsorb(self) then return end
+
 		local success_effect = false
 
 		if caster:HasScepter() then
@@ -69,8 +72,8 @@ if IsServer() then
 			unit:AddNewModifier(caster, self, "modifier_mjz_axe_culling_blade_boost", {duration = speed_duration})
 		end
 
+		caster:AddNewModifier(caster, self, "modifier_culling_blade_stacks", {})
 		if caster:HasModifier("modifier_super_scepter") then
-			caster:AddNewModifier(caster, self, "modifier_culling_blade_stacks", {})
 			self:EndCooldown()
 		end
 	end
@@ -156,7 +159,9 @@ function modifier_culling_blade_stacks:OnRefresh()
 end
 function modifier_culling_blade_stacks:DeclareFunctions() return {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS} end
 function modifier_culling_blade_stacks:GetModifierPhysicalArmorBonus()
-	return self:GetStackCount() * self.armor_per_kill
+	if self:GetCaster():HasModifier("modifier_super_scepter") then
+		return self:GetStackCount() * self.armor_per_kill
+	end
 end
 
 -----------------------------------------------------------------------------------------

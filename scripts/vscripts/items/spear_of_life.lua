@@ -245,10 +245,12 @@ function modifier_life_greaves_aura:OnCreated()
 end
 function modifier_life_greaves_aura:OnIntervalThink()
 	if IsServer() then
-		if self:GetCaster():GetHealthPercent() < self:GetAbility():GetSpecialValueFor("aura_bonus_threshold") then
-			self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_life_greaves_aura_threshold", {})
-		else
-			self:GetParent():RemoveModifierByName("modifier_life_greaves_aura_threshold")
+		if self:GetAbility() then
+			if self:GetCaster():GetHealthPercent() < self:GetAbility():GetSpecialValueFor("aura_bonus_threshold") then
+				self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_life_greaves_aura_threshold", {})
+			else
+				self:GetParent():RemoveModifierByName("modifier_life_greaves_aura_threshold")
+			end
 		end
 	end
 end

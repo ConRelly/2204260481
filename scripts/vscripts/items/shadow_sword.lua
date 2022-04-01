@@ -293,21 +293,17 @@ function modifier_kingsbane_echo:IsPurgable() return false end
 function modifier_kingsbane_echo:RemoveOnDeath() return false end
 function modifier_kingsbane_echo:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_kingsbane_echo:OnCreated()
-	if IsServer() then
-		if not self:GetAbility() then self:Destroy() end
-	end
-	local item = self:GetAbility()
-	self.parent = self:GetParent()
+	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 end
 function modifier_kingsbane_echo:DeclareFunctions() return {MODIFIER_EVENT_ON_ATTACK_START} end
 function modifier_kingsbane_echo:OnAttackStart(keys)
-	local item = self:GetAbility()
 	local parent = self:GetParent()
-	if keys.attacker == parent and item and not parent:IsIllusion() and self:GetParent():FindAllModifiersByName(self:GetName())[1] == self and not self:GetParent():HasModifier("modifier_kingsbane_echo_cd") and not self:GetParent():HasModifier("modifier_arc_warden_tempest_double") then
---		item:UseResources(false,false,true)
-		parent:AddNewModifier(parent, item, "modifier_kingsbane_echo_haste", {})
+	if parent:IsRangedAttacker() then return end
+	if keys.attacker == parent and self:GetAbility() and not parent:IsIllusion() and self:GetParent():FindAllModifiersByName(self:GetName())[1] == self and not self:GetParent():HasModifier("modifier_kingsbane_echo_cd") and not self:GetParent():HasModifier("modifier_arc_warden_tempest_double") then
+--		self:GetAbility():UseResources(false,false,true)
+		parent:AddNewModifier(parent, self:GetAbility(), "modifier_kingsbane_echo_haste", {})
 		if not keys.target:IsBuilding() and not keys.target:IsOther() then
-			keys.target:AddNewModifier(self.parent, self:GetAbility(), "modifier_kingsbane_echo_debuff_slow", {duration = self:GetAbility():GetSpecialValueFor("duration") * (1 - keys.target:GetStatusResistance())})
+			keys.target:AddNewModifier(parent, self:GetAbility(), "modifier_kingsbane_echo_debuff_slow", {duration = self:GetAbility():GetSpecialValueFor("duration") * (1 - keys.target:GetStatusResistance())})
 		end
 		if self:GetParent():HasModifier("modifier_kingsbane_echo_haste") then
 			local mod = self:GetParent():FindModifierByName("modifier_kingsbane_echo_haste")
@@ -335,26 +331,23 @@ function modifier_kingsbane_echo_haste:IsPurgeException() return false end
 function modifier_kingsbane_echo_haste:IsStunDebuff() return false end
 function modifier_kingsbane_echo_haste:RemoveOnDeath() return true end
 function modifier_kingsbane_echo_haste:OnCreated()
-	if IsServer() then
-		if not self:GetAbility() then self:Destroy() end
-	end
-	local item = self:GetAbility()
+	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 	self.parent = self:GetParent()
-	if item then
-		self.duration = item:GetSpecialValueFor("duration")
+	if self:GetAbility() then
+		self.duration = self:GetAbility():GetSpecialValueFor("duration")
 		local max_hits = 2
 		self:SetStackCount(max_hits)
-		self.attack_speed_buff = math.max(item:GetSpecialValueFor("attack_speed_buff"), self.parent:GetIncreasedAttackSpeed() * 3)
+		self.attack_speed_buff = math.max(self:GetAbility():GetSpecialValueFor("attack_speed_buff"), self.parent:GetIncreasedAttackSpeed() * 3)
 	end
 end
 function modifier_kingsbane_echo_haste:OnRefresh() self:OnCreated() end
 function modifier_kingsbane_echo_haste:DeclareFunctions() return {MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_EVENT_ON_ATTACK} end
 function modifier_kingsbane_echo_haste:OnAttack(keys)
-	if self.parent == keys.attacker then
-		keys.target:AddNewModifier(self.parent, self:GetAbility(), "modifier_kingsbane_echo_debuff_slow", {duration = self:GetAbility():GetSpecialValueFor("duration") * (1 - keys.target:GetStatusResistance())})
-	end
 	if IsServer() then
-		self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_kingsbane_echo_cd", {duration = self:GetAbility():GetSpecialValueFor("echo_cd")})
+		if self.parent == keys.attacker then
+			keys.target:AddNewModifier(self.parent, self:GetAbility(), "modifier_kingsbane_echo_debuff_slow", {duration = self:GetAbility():GetSpecialValueFor("duration") * (1 - keys.target:GetStatusResistance())})
+		end
+		self.parent:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_kingsbane_echo_cd", {duration = self:GetAbility():GetSpecialValueFor("echo_cd")})
 	end
 end
 function modifier_kingsbane_echo_haste:GetModifierAttackSpeedBonus_Constant() return self:GetAbility():GetSpecialValueFor("attack_speed_buff") end
@@ -371,9 +364,8 @@ function modifier_kingsbane_echo_debuff_slow:OnCreated()
 	if IsServer() then
 		if not self:GetAbility() then self:Destroy() end
 	end
-	local item = self:GetAbility()
-	if item then
-		self.slow = item:GetSpecialValueFor("slow_speed") * (-1)
+	if self:GetAbility() then
+		self.slow = self:GetAbility():GetSpecialValueFor("slow_speed") * (-1)
 	end
 end
 function modifier_kingsbane_echo_debuff_slow:GetModifierAttackSpeedBonus_Constant() return self.slow end

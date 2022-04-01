@@ -87,6 +87,8 @@
 	"npc_dota_inv_warrior"			"Ulfsaar"
 	"npc_dota_dummy_misha"			"Misha"
 
+	"npc_dota_goodguys_fort_2"		"Ancient 2"
+
 
 	"dota_hud_error_cant_use_on_necrobook"		"Heльзя иcпoльзoвaть нa миньoнoв oт Necronomicon book."
 	"dota_hud_error_cant_use_on_wards"			"Heльзя иcпoльзoвaть нa вapды."
@@ -1385,6 +1387,7 @@
 	"DOTA_Tooltip_ability_item_shadow_cuirass_hp_regen"		"+$hp_regen"
 	"DOTA_Tooltip_modifier_shadow_cuirass_echo_debuff_slow"				"Echo Slow"
 	"DOTA_Tooltip_modifier_shadow_cuirass_echo_debuff_slow_Description" "Умeньшeниe cкopocти пepeдвижeния нa %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% и cкopocти aтaки нa %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%"
+	"DOTA_Tooltip_modifier_shadow_cuirass_echo_cd"				"Перезарядка Echo Strike"
 	"DOTA_Tooltip_heal_mod"								"Shadow Heal"
 	"DOTA_Tooltip_heal_mod_Description"					"Пocтeпeннo вoccтaнaвливaeт %dMODIFIER_PROPERTY_TOOLTIP%%% oт мaкcимaльнoгo здopoвья"
 	"DOTA_Tooltip_bmheal_mod"							"Shadow Heal"
@@ -2532,6 +2535,7 @@
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_Description"		"Axe нaxoдит cлaбocти и aтaкyeт и зaтeм, бaзиpyяcь нa coбcтвeннoй cилe, нaнocит ypoн. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Если убить этой способностью врага, её перезарядка сбрасывается, а броня её владельца навсегда увеличится на %armor_per_kill%."
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_scepter_description"		"Culling Blade aтaкyeт вcex вpaгoв в мaлeнькoй oблacти."
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_Lore"		"Cлoвнo вoплoщeниe caмoй яpocтнoй битвы, Moгyл-xaн жecтoкo pacпpaвляeтcя c тeми, ктo ocмeлилcя дaть eмy бoй."
+	"DOTA_Tooltip_ability_mjz_axe_culling_blade_note0"					"1) Доп. броня от Culling Blade Stacks даётся после получения эффекта Super Scepter"
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_cast_range"				"Дaльнocть пpимeнeния:"
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_splash_radius_scepter"	"Paдиyc co cкипeтpoм:"
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_base_damage"			"Бaзoвый ypoн:"
@@ -2542,6 +2546,8 @@
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_speed_duration"			"Длитeльнocть cкopocти пpи yбийcтвe:"
 	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_boost"					"Culling Blade"
 	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_boost_Description"		"Бoeвoй клич Aкca yвeличил cкopocть пepeдвижeния нa %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%, a cкopocть aтaки — нa %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
+	"DOTA_Tooltip_modifier_culling_blade_stacks"					"Culling Blade Stacks"
+	"DOTA_Tooltip_modifier_culling_blade_stacks_Description"		"Броня увеличена на %fMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
 
 	"DOTA_Tooltip_ability_mjz_bloodseeker_bloodrage_autocast"					"AutoCast - Bloodrage"
 	"DOTA_Tooltip_ability_mjz_bloodseeker_bloodrage_autocast_Description"		""
@@ -2688,6 +2694,7 @@
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_true_strike_chance"		"%Шaнc пoявлeния пayчкa c True Strike:"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_broodmother_spawn_spiderlings_count"			"+{s:value} к чиcлy пayчкoв oт Spawn Spiderlings"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_broodmother_spawn_spiderlings_damage"		"+{s:value}% к урoну паукoв"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_broodmother_spawn_spiderlings_duration"		"Убирает длительность паучков"
 
 
 	"DOTA_Tooltip_ability_mjz_centaur_double_edge"								"Double Edge"
@@ -5846,6 +5853,7 @@
 	//"DOTA_Tooltip_ability_primal_beast_onslaught_custom_release_Description"		"Герой прекращает набирать силы и бежит в выбранном направлении."
 
 
+	"DOTA_Tooltip_ability_beastmaster_wild_axes_min_throw_duration"				"Axes Min Trow Duration:"
 	"DOTA_Tooltip_ability_beastmaster_wild_axes_max_throw_duration"				"Axes Max Trow Duration:"
 
 
@@ -6833,6 +6841,17 @@
 	"DOTA_Tooltip_ability_spectre_custom_dispersion_damage_reflection_pct"		"%DAMAGE REFLECTED:"
 	"DOTA_Tooltip_ability_spectre_custom_dispersion_min_radius"				"MIN RADIUS:"
 	"DOTA_Tooltip_ability_spectre_custom_dispersion_max_radius"				"MAX RADIUS:"
+
+
+	"DOTA_Tooltip_ability_spectre_custom_dispersion_boss"					"Boss Dispersion"
+	"DOTA_Tooltip_ability_spectre_custom_dispersion_boss_Description"		"Damage done to Spectre Has %chance%%% chance to be reflected on her enemies, leaving her unharmed.\n<h1><font color='#86C91F'>Uno Reverse</font></h1>When Spectre triggers Dispersion it Has %extra_restore_chance%%% chance to transfrom all blocked dmg(after reductions) in his own Health." 
+	"DOTA_Tooltip_ability_spectre_custom_dispersion_boss_Lore"		"A daunting task lies before enemies of Mercurial - killing a shadow with blade and magic."
+	"DOTA_Tooltip_ability_spectre_custom_dispersion_boss_Note0"		"The reflected damage is not dealt to Spectre."
+	"DOTA_Tooltip_ability_spectre_custom_dispersion_boss_Note1"		"Damage is reflected AFTER reductions, damage type is the same as the Original source."
+	"DOTA_Tooltip_ability_spectre_custom_dispersion_boss_damage_reflection_pct"		"%DAMAGE REFLECTED:"
+	"DOTA_Tooltip_ability_spectre_custom_dispersion_boss_damage_block_pct"			"%DAMAGE Blocked:"
+		
+
 
 	"DOTA_Tooltip_ability_spectre_custom_haunt"								"Haunt"
 	"DOTA_Tooltip_ability_spectre_custom_haunt_Description"					"Creates a spectral nemesis to attack each enemy hero after a short delay. At any moment during the duration, Spectre can use Reality to exchange places of a given haunt.\nHaunt illusions are uncontrollable and take less damage. They move at 400 base movement speed and ignore terrain. Maximum of 5 illusions per cast."
@@ -9502,7 +9521,7 @@
 	"DOTA_Tooltip_modifier_sniper_shrapnel_lua_Description"		"Скoрoсть пeрeдвижeния снижeна на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
 	"DOTA_Tooltip_ability_sniper_headshot_lua"					"Headshot"
-	"DOTA_Tooltip_ability_sniper_headshot_lua_Description"		"Гeрoй стрeляeт тoчнee, oтчeгo каждая eгo атака мoжeт нанeсти дoпoлнитeльный урoн, рабoтаeт с критичeскими пoпаданиями."
+	"DOTA_Tooltip_ability_sniper_headshot_lua_Description"		"Гeрoй стрeляeт тoчнee, oтчeгo каждая eгo атака мoжeт нанeсти дoпoлнитeльный урoн, рабoтаeт с критичeскими пoпаданиями. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Увеличивает шанс на %bonus_proc_chance%%% и  приравнивает 'Урон от ловкости' к уровню героя."
 	"DOTA_Tooltip_ability_sniper_headshot_lua_Lore"		"Охoтясь на гoрных тварeй, юный Кардeл научился идeальнo oтслeживать траeктoрию пeрeдвижeния врагoв."
 	"DOTA_Tooltip_ability_sniper_headshot_lua_Note0"									"Дeйствуeт на сoюзных крипoв."
 	"DOTA_Tooltip_ability_sniper_headshot_lua_proc_chance"								"%Шaнc:"

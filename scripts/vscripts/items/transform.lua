@@ -105,8 +105,16 @@ function ChangeHeroPiety(keys)
 			caster:RemoveAbility("special_bonus_spell_block_18")
 		end
 
+
+
 -- Change Ranged Projectile Attack Effect
 		caster:SetRangedProjectileName("particles/custom/abilities/sourcery/sourcery_attack_effect.vpcf")
+
+
+
+-- e.t.c
+		caster:SetControllableByPlayer(caster:GetPlayerID(), true)
+		caster:SetOwner(caster)
 	end
 
 	caster:RemoveItem(ability)
@@ -220,10 +228,17 @@ function ChangeHeroKardel(keys)
 			caster:RemoveAbility("special_bonus_unique_sniper_5")
 		end
 
+
+
 -- Change Ranged Projectile Attack Effect
 --		caster:SetRangedProjectileName("particles/custom/abilities/sourcery/sourcery_attack_effect.vpcf")
 
+
+
+-- e.t.c
 		EmitSoundOn("sniper_snip_attack_04", caster)
+		caster:SetControllableByPlayer(caster:GetPlayerID(), true)
+		caster:SetOwner(caster)
 	end
 	caster:RemoveItem(ability)
 end

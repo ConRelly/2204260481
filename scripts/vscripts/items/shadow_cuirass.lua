@@ -281,6 +281,7 @@ function modifier_shadow_cuirass_echo_haste:OnRefresh() self:OnCreated() end
 function modifier_shadow_cuirass_echo_haste:DeclareFunctions() return {MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_EVENT_ON_ATTACK, MODIFIER_PROPERTY_IGNORE_ATTACKSPEED_LIMIT} end
 function modifier_shadow_cuirass_echo_haste:OnAttack(keys)
 	if not IsServer() then return end
+	if keys.target == nil then return end
 	if self:GetParent() == keys.attacker then
 		keys.target:AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_shadow_cuirass_echo_debuff_slow", {duration = self:GetAbility():GetSpecialValueFor("duration")})
 	end

@@ -108,7 +108,7 @@ function modifier_hammer_of_the_divine:OnAttackLanded(keys)
 	local unyielding_modifier = caster:FindModifierByName("modifier_hotd_unyielding")
 	if unyielding_modifier:GetStackCount() == unyielding_max_stacks then return end
 	if unyielding_modifier:GetStackCount() < unyielding_max_stacks then
-		if (caster:HasAbility("mjz_chaos_knight_chaos_strike") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike"):IsTrained()) or (caster:HasAbility("mjz_chaos_knight_chaos_strike_2") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike_2"):IsTrained()) then
+		if (caster:HasAbility("mjz_chaos_knight_chaos_strike") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike"):IsTrained()) or (caster:HasAbility("mjz_chaos_knight_chaos_strike_2") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike_2"):IsTrained())(caster:HasAbility("chaos_knight_chaos_strike") and caster:FindAbilityByName("chaos_knight_chaos_strike"):IsTrained()) then
 			unyielding_chance = ability:GetSpecialValueFor("unyielding_cs_chance")
 		end
 		if caster:HasAbility("roshan_inherit_buff_datadriven") and caster:FindAbilityByName("roshan_inherit_buff_datadriven"):IsTrained() then
@@ -146,13 +146,13 @@ function modifier_hammer_of_the_divine:OnAttackStart(keys)
 	local overwhelming_chance = ability:GetSpecialValueFor("overwhelming_chance")
 	local overwhelming_duration = ability:GetSpecialValueFor("overwhelming_duration")
 	local overwhelming_lum_hits = ability:GetSpecialValueFor("overwhelming_lum_hits")
-	if (caster:HasAbility("mjz_chaos_knight_chaos_strike") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike"):IsTrained()) or (caster:HasAbility("mjz_chaos_knight_chaos_strike_2") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike_2"):IsTrained()) then
+	if (caster:HasAbility("mjz_chaos_knight_chaos_strike") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike"):IsTrained()) or (caster:HasAbility("mjz_chaos_knight_chaos_strike_2") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike_2"):IsTrained()) or (caster:HasAbility("chaos_knight_chaos_strike") and caster:FindAbilityByName("chaos_knight_chaos_strike"):IsTrained()) then
 		overwhelming_chance = ability:GetSpecialValueFor("overwhelming_cs_chance")
 -- NOTE 1
 		overwhelming_lum_hits = 6
 	end
 	if caster:HasAbility("dawnbreaker_custom_luminosity") and caster:FindAbilityByName("dawnbreaker_custom_luminosity"):IsTrained() then
-		if (caster:HasAbility("mjz_chaos_knight_chaos_strike") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike"):IsTrained()) or (caster:HasAbility("mjz_chaos_knight_chaos_strike_2") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike_2"):IsTrained()) then
+		if (caster:HasAbility("mjz_chaos_knight_chaos_strike") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike"):IsTrained()) or (caster:HasAbility("mjz_chaos_knight_chaos_strike_2") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike_2"):IsTrained()) or (caster:HasAbility("chaos_knight_chaos_strike") and caster:FindAbilityByName("chaos_knight_chaos_strike"):IsTrained()) then
 -- NOTE 1
 			overwhelming_chance = 20
 		end
