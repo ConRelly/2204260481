@@ -28,8 +28,8 @@ end
 function purifying_flames:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
-	local damage_flag = DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE
-	
+	local damage_flag = DOTA_DAMAGE_FLAG_NONE
+	local damage = self:GetSpecialValueFor("damage")
 	if target:TriggerSpellAbsorb(self) then return end
 	
 	target:EmitSound("Hero_Oracle.PurifyingFlames.Damage")
@@ -44,15 +44,16 @@ function purifying_flames:OnSpellStart()
 	ParticleManager:ReleaseParticleIndex(pf_cast)
 
 	if target:GetTeamNumber() == caster:GetTeamNumber() then
-		damage_flag = damage_flag + DOTA_DAMAGE_FLAG_NON_LETHAL
+		damage_flag = damage_flag + DOTA_DAMAGE_FLAG_NON_LETHAL + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS 
 		target:AddNewModifier(caster, self, "modifier_purifying_flames_buff", {duration = self:GetSpecialValueFor("duration")})
+		damage = 0 -- it will be changed in the future , just to avoid some abuse
 	end
 	
 	ApplyDamage({
 		attacker 		= caster,
 		victim 			= target,
 		ability 		= self,
-		damage 			= self:GetSpecialValueFor("damage"),
+		damage 			= damage,
 		damage_type		= self:GetAbilityDamageType(),
 		damage_flags	= damage_flag,
 	})

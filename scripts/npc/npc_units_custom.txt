@@ -6150,7 +6150,7 @@
 		"particle_folder"		"particles/units/heroes/hero_spectre"
 	}
 	"Ability1"					"custom_spectral_dagger"
-	"Ability2"				  "custom_dispersion"
+	"Ability2"				  "spectre_custom_dispersion_boss"
 	"Ability3"				  "custom_aphotic_shield"
 	//"Ability3"					"frostivus2018_spectre_active_dispersion"
 	"Ability4"							  "generic_hidden"
@@ -6260,7 +6260,7 @@
 		"particle_folder"		"particles/units/heroes/hero_spectre"
 	}
 	"Ability1"					"custom_spectral_dagger"
-	"Ability2"				  "custom_dispersion"
+	"Ability2"				  "spectre_custom_dispersion_boss"
 	"Ability3"				  "custom_aphotic_shield"
 	//"Ability3"					"frostivus2018_spectre_active_dispersion"
 	"Ability4"							  "generic_hidden"
@@ -10410,6 +10410,7 @@
 {
 
 	"Ability2"				  "summon_defense"
+	"Ability5"				  "bloodseeker_thirst"
 	"ArmorPhysical"				"25"			// Physical protection.
 	"MagicalResistance"				"25"
 	"AttackRate"				"0.8"	   // Speed of attack.

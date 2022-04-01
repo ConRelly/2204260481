@@ -1820,12 +1820,14 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 
 * Fixed EndGame scoreboard
-* Removed vanilla Venge passive (comand aura) from random pool for: broodmother spiders , chen units  and Hired gon (solo helper unit) . Seems it was crashing if the unit(non hero) had Aghanim buff and died.
+* Removed vanilla Venge passive (command aura) from the random pool for: broodmother spiders, chen units, and Hired gon (solo helper unit). Seems it was crashing if the unit(non-hero) had Aghanim buff and died.
 * Added speedsters to mimic ignore list and increased cd.
-* Sniper Headshot now has an Super Scepter effect.
+* Sniper Headshot now has a Super Scepter effect.
 * Fixed Lyon dagon triggering an extra loop (dagon--> Lyon ult --> dagon) resulting in higher stacks/time and 2x dmg.
-* Broodmother has a new talent for Q .
-
+* Broodmother has a new talent for Q.
+* Some Visage talents swapped around and buffed and added seeker passive on the lvl 3 birds.
+* Boss Spectre dispersion replaced with a custom one (this one should be less laggy). does not stack with dmg reduction.
+* And some other stuff
 
 
 
@@ -1834,7 +1836,7 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes63 can be found on the new map version:
+*Update patch notes65 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 

@@ -14522,8 +14522,41 @@
 			"LinkedSpecialBonus"		"special_bonus_unique_spectre_5"
 		}
 	}
-
 }
+
+"spectre_custom_dispersion_boss"
+{
+	"BaseClass"				"ability_lua"
+	"AbilityTextureName"			"spectre_dispersion"
+	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
+	"ScriptFile"					"abilities/heroes/spectre_custom_dispersion_boss.lua"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"extra_restore_chance"			"50"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage_block_pct"		"95"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage_reflection_pct"		"50"
+			//"LinkedSpecialBonus"		"special_bonus_unique_spectre_5"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"chance"			"17"
+		}		
+	}
+}
+
 "techies_time_is_boom"
 {
 	"BaseClass"						"ability_lua"

@@ -101,6 +101,7 @@ function GetRandomAbilityName( hero )
         "jotaro_absolute_defense3",
         "nevermore_custom_necromastery",
         "dzzl_good_juju",
+        "spectre_custom_dispersion_boss",
         --"back_in_time",
         --"medusa_custom_stone_arrows",
         --"mjz_slark_essence_shift",

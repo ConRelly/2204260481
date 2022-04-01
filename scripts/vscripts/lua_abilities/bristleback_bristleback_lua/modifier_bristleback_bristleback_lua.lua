@@ -56,7 +56,7 @@ end
 function modifier_bristleback_bristleback_lua:GetModifierIncomingDamage_Percentage(keys)
     if IsServer() and (not self:GetParent():PassivesDisabled()) then
         if bit.band(keys.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) == DOTA_DAMAGE_FLAG_REFLECTION then
-           return -self.reduction_back
+           return 0
         else   
             self:ThresholdLogic(keys.damage)
             self:PlayEffects()
@@ -74,10 +74,12 @@ function modifier_bristleback_bristleback_lua:ThresholdLogic(damage)
         self.threshold = 0
 
         -- cast quill spray if found
-        local ability = self:GetParent():FindAbilityByName(self.ability_proc)
-        if ability ~= nil and ability:GetLevel() >= 1 then
-            ability:OnSpellStart()
-        end
+        if self:GetParent() and self:GetParent():IsAlive() then
+            local ability = self:GetParent():FindAbilityByName(self.ability_proc)
+            if ability ~= nil and ability:GetLevel() >= 1 then
+                ability:OnSpellStart()
+            end
+        end    
     end
 end
 --------------------------------------------------------------------------------

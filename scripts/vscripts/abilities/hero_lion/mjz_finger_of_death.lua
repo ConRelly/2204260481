@@ -120,7 +120,6 @@ function mjz_finger_of_death:OnSpellStart_dagon()
 				end
 			end
 		end
-		print("dagon finger")
 	end
 end
 function mjz_finger_of_death:OnSpellStart()
