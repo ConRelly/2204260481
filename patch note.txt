@@ -1814,6 +1814,8 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 * Removed a hidden skill(used to capture outpost, that gets added during the game by dota) when you learn a new skill.
 * Leshrac ultimate and Lightning produce less sound, changed Lightning particle with one with less light and ultimate will not produce particles for every tick.
 * Lesharac lvl 25 talent replaced(was for vanilla E) with a new one.
+* Updated scaling for puck dream coil and now has a super scepter effect.
+
 
 
 
@@ -1833,6 +1835,7 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 	-- Reduced Aghanim's Scepter AOE from 655 to 200
 	-- Now trigger Linken's Sphere
 * (Maybe) Fixed loss of control of Piety or Kardel
+* Updated scaling for puck dream coil and now has a super scepter effect.
 * And some other stuff
 
 

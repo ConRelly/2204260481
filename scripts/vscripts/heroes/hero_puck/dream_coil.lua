@@ -18,7 +18,7 @@ function faerie_dream_coil:OnSpellStart()
 	local radius = self:GetSpecialValueFor("coil_radius")
 	local latch_duration = self:GetSpecialValueFor("coil_duration")
 	local latch_duration_scepter = self:GetSpecialValueFor("coil_duration_scepter")
-
+	local init_damage = self:GetSpecialValueFor("coil_initial_damage") * caster:GetIntellect()
 	local target_flag = DOTA_UNIT_TARGET_FLAG_NONE
 	
 	if caster:HasScepter() then
@@ -36,12 +36,12 @@ function faerie_dream_coil:OnSpellStart()
 	local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, target_flag, FIND_ANY_ORDER, false)
 
 	for _, enemy in pairs(enemies) do
-		if not caster:HasScepter() and enemy:IsMagicImmune() then return end
+		if not caster:HasScepter() then if enemy:IsMagicImmune() then return end end
 		ApplyDamage({
 			ability 		= self,
 			victim 			= enemy,
 			attacker 		= caster,
-			damage 			= self:GetSpecialValueFor("initial_damage"),
+			damage 			= init_damage,
 			damage_type		= self:GetAbilityDamageType(),
 			damage_flags 	= DOTA_DAMAGE_FLAG_NONE,
 		})
@@ -61,12 +61,57 @@ end
 function faerie_dream_coil:OnProjectileHit_ExtraData(target, location, data)
 	if not IsServer() then return end
 	
-	if target then
+	if target and IsValidEntity(target) then
 		EmitSoundOnLocationWithCaster(target:GetAbsOrigin(), "Hero_Puck.ProjectileImpact", self:GetCaster())
 	
 		self:GetCaster():PerformAttack(target, false, true, true, false, false, false, false)
+		local caster = self:GetCaster()
+		local ability = self
+		print("projectile hit")
+		if not caster:IsHero() then return end
+		if not caster:HasModifier("modifier_super_scepter") then return end
+		if target and IsValidEntity(target) then 
+			if target:GetTeam() ~= caster:GetTeam() then
+				ApplyDamage({
+					victim = target,
+					attacker = self:GetCaster(),
+					damage = self:_CalcDamage(),
+					damage_type = ability:GetAbilityDamageType(),
+					ability = ability,
+				})
+			end
+		end		
 	end
 end
+
+function faerie_dream_coil:_GetPrimaryStatValue()
+	if not IsServer() then return end
+	local STRENGTH = 0
+	local AGILITY = 1
+	local INTELLIGENCE = 2
+	local unit = self:GetCaster()
+	local pa = unit:GetPrimaryAttribute()
+	local PrimaryStatValue = 0
+	if pa == STRENGTH  then
+		PrimaryStatValue = unit:GetStrength()
+	elseif pa == AGILITY  then
+		PrimaryStatValue = unit:GetAgility()
+	elseif pa == INTELLIGENCE  then
+		PrimaryStatValue = unit:GetIntellect()
+	end
+	return PrimaryStatValue
+end
+
+function faerie_dream_coil:_CalcDamage()
+	if not IsServer() then return end
+	local caster = self:GetCaster()
+	local ability = self
+	local PrimaryStatValue = self:_GetPrimaryStatValue()
+	local stats = caster:GetIntellect() + caster:GetAgility() + caster:GetStrength() + PrimaryStatValue
+	local bonus_dmg = stats * ability:GetSpecialValueFor("ss_talent_stats_dmg")	
+	return math.floor(bonus_dmg)
+end
+
 
 -------------------------
 -- DREAM COIL MODIFIER --
@@ -77,11 +122,15 @@ function modifier_faerie_dream_coil:GetAttributes() return MODIFIER_ATTRIBUTE_MU
 
 function modifier_faerie_dream_coil:OnCreated(params)
 	if self:GetAbility() then
+		local caster = self:GetCaster()
 		self.coil_break_radius			= self:GetAbility():GetSpecialValueFor("coil_break_radius")
 		self.coil_stun_duration			= self:GetAbility():GetSpecialValueFor("coil_stun_duration")
-		self.coil_break_damage			= self:GetAbility():GetSpecialValueFor("coil_break_damage")
-		self.coil_break_damage_scepter	= self:GetAbility():GetSpecialValueFor("coil_break_damage_scepter")
+		self.coil_break_damage			= self:GetAbility():GetSpecialValueFor("coil_break_damage") * caster:GetIntellect()
+		self.coil_break_damage_scepter	= self:GetAbility():GetSpecialValueFor("coil_break_damage_scepter") * caster:GetIntellect()
 		self.coil_stun_duration_scepter	= self:GetAbility():GetSpecialValueFor("coil_stun_duration_scepter")
+		if caster and caster:HasModifier("modifier_super_scepter") then
+			self.coil_break_radius = self:GetAbility():GetSpecialValueFor("coil_break_radius") + self:GetAbility():GetSpecialValueFor("coil_break_radius_ss_bonus")
+		end 	
 	end
 
 	if not IsServer() then return end

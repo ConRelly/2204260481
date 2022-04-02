@@ -8452,7 +8452,7 @@
 	"puck_phase_shift"
 	{
 		"AbilityChannelTime"			"1.5 1.75 2.0 2.25"
-		"AbilityCooldown"				"4.0"
+		"AbilityCooldown"				"15.0"
 		"AbilitySpecial"
 		{
 			"01"

@@ -1161,7 +1161,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charges_per_flurry"	"10 9 8 7 6 5 4"
+				"charges_per_flurry"	"10 9 8 7 6 15 4"
 			}
 			"03"
 			{
@@ -1171,7 +1171,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"time_between_flurries"	"0.2 0.2 0.2 0.2 0.2 0.15 0.08"
+				"time_between_flurries"	"0.2 0.2 0.2 0.2 0.15 0.08 0.07"
 			}
 			"05"
 			{
@@ -1186,7 +1186,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"pulse_damage"			"750 2950 9950 23750 68500 144800 385700"
+				"pulse_damage"			"950 4950 14950 43750 128500 0 685000"
 			}
 			"08"
 			{
@@ -1196,7 +1196,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"pulse_attack_slow_pct"	"30.0 50.0 70.0 90 110 130 150"
+				"pulse_attack_slow_pct"	"30 35 40 45 50 55 60"
 			}
 			"10"
 			{
@@ -29582,26 +29582,29 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"LevelsBetweenUpgrades"         "8"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_Puck.Dream_Coil"
 		"HasScepterUpgrade"				"1"
 		"AbilityCastRange"				"750"
 		"AbilityCastPoint"				"0.1"
-		"AbilityCooldown"				"75"
+		"AbilityCooldown"				"60"
 		"AbilityManaCost"				"100 150 200"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		"AbilityValues"
 		{
 			"coil_duration"				"6"
-			"coil_radius"				"375"
-			"coil_break_radius"			"600"
+			"coil_radius"				"475"
+			"coil_break_radius"			"650"
 			"coil_initial_stun"			"0.5"
-			"coil_initial_damage"		"100 150 200"
-			"coil_stun_duration"		"1.8 2.4 3.0"
-			"coil_break_damage"			"300 400 500"
+			"coil_initial_damage"		"15 35 70"
+			"coil_stun_duration"		"1.0 1.2 1.5"
+			"coil_break_damage"			"50 100 150"
+			"ss_talent_stats_dmg"       "7"
+			"coil_break_radius_ss_bonus" "500"
 			"coil_stun_duration_scepter"
 			{
-				"value"					"1.8 3.0 4.5"
+				"value"					"1.5 1.7 2.2"
 				"RequiresScepter"		"1"
 			}
 			"coil_duration_scepter"
@@ -29611,7 +29614,7 @@
 			}
 			"coil_break_damage_scepter"
 			{
-				"value"					"400 550 700"
+				"value"					"80 150 240"
 				"RequiresScepter"		"1"
 			}
 		}

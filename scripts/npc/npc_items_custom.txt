@@ -4961,7 +4961,7 @@
 	"ItemCost"						"8000"	
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
 	"ItemSellable"					"1"
-	"ItemPurchasable"				"1"
+	"ItemPurchasable"				"0"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemKillable"					"1"
 	"ItemStackable"					"0"

@@ -141,10 +141,20 @@ function modifier_dark_willow_shadow_realm_lua_buff:OnAttackRecordDestroy(params
 end
 function modifier_dark_willow_shadow_realm_lua_buff:GetModifierProcAttack_BonusDamage_Magical(params)
 	if params.record~=self.record then return end
-
+	if not self:GetAbility() then return end
 	local damage = self.damage * self.time
-
-	SendOverheadEventMessage(nil,OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, params.target, damage, self:GetParent():GetPlayerOwner())
+	damage = damage * (1 + self:GetParent():GetSpellAmplification(false))
+	if RollPercentage(20) then    --unfinished
+		damage = damage * 2
+		create_popup({
+			target = params.target,
+			value = damage,
+			color = Vector(5, 129, 232),
+			type = "crit"
+		})
+	else	
+		SendOverheadEventMessage(nil,OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, params.target, damage, self:GetParent():GetPlayerOwner())
+	end	
 
 --	EmitSoundOn("Hero_DarkWillow.Shadow_Realm.Damage", self:GetParent())
 

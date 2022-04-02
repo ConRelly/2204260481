@@ -655,17 +655,17 @@
 
 // Puck
 	"DOTA_Tooltip_ability_faerie_dream_coil"					"Dream Coil"
-	"DOTA_Tooltip_ability_faerie_dream_coil_Description"		"Creates a coil of volatile magic that latches onto enemy Heroes, damaging and leashing them.  If the enemy hero stretches the coil by moving too far away, it snaps, stunning and dealing additional damage."
+	"DOTA_Tooltip_ability_faerie_dream_coil_Description"		"Creates a coil of volatile magic that latches onto enemy Heroes, damaging and leashing them.  If the enemy hero stretches the coil by moving too far away, it snaps, stunning and dealing additional damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1> Rapid Fire talent now adds your total stats x %ss_talent_stats_dmg% as Bonus Magic dmg(Primary Stat is counted twice). Increase Coil brake radius by %coil_break_radius_ss_bonus%."
 	"DOTA_Tooltip_ability_faerie_dream_coil_Lore"		"The Faerie Dragon sows confusion by forcing its enemies to vividly dream about their own mortality."
 	"DOTA_Tooltip_ability_faerie_dream_coil_scepter_description"		"Increases damage from coil breaks, increases coil duration, coil break stun goes through spell immunity."
 	"DOTA_Tooltip_ability_faerie_dream_coil_coil_duration"					"COIL DURATION:"
-	"DOTA_Tooltip_ability_faerie_dream_coil_coil_initial_damage"			"INITIAL DAMAGE:"
+	"DOTA_Tooltip_ability_faerie_dream_coil_coil_initial_damage"			"Int As INITIAL DAMAGE:"
 	"DOTA_Tooltip_ability_faerie_dream_coil_coil_break_radius"				"BREAK RADIUS:"
 	"DOTA_Tooltip_ability_faerie_dream_coil_coil_stun_duration"				"BREAK STUN DURATION:"
-	"DOTA_Tooltip_ability_faerie_dream_coil_coil_break_damage"				"BREAK DAMAGE:"
+	"DOTA_Tooltip_ability_faerie_dream_coil_coil_break_damage"				"Int As BREAK DAMAGE:"
 	"DOTA_Tooltip_ability_faerie_dream_coil_coil_duration_scepter"			"SCEPTER COIL DURATION:"
 	"DOTA_Tooltip_ability_faerie_dream_coil_coil_stun_duration_scepter"		"SCEPTER BREAK STUN DURATION:"
-	"DOTA_Tooltip_ability_faerie_dream_coil_coil_break_damage_scepter"		"SCEPTER BREAK DAMAGE:"
+	"DOTA_Tooltip_ability_faerie_dream_coil_coil_break_damage_scepter"		"Int As SCEPTER BREAK DAMAGE:"
 	"DOTA_Tooltip_modifier_faerie_dream_coil"					"Dream Coiled"
 	"DOTA_Tooltip_modifier_faerie_dream_coil_Description"		"Leashed to the dream coil"
 
