@@ -236,7 +236,7 @@ function GetRandomAbilityName( hero )
 		"mjz_necrolyte_heartstopper_aura",
 		"mjz_lifestealer_poison_sting",
 		"legion_commander_duel_lua",
-		"lich_chain_frost",
+		--"lich_chain_frost",
 		"weaver_the_swarm",
 		"hoodwink_scurry",
 		"hoodwink_acorn_shot",

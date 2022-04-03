@@ -113,8 +113,8 @@ function ChangeHeroPiety(keys)
 
 
 -- e.t.c
-		caster:SetControllableByPlayer(caster:GetPlayerID(), true)
-		caster:SetOwner(caster)
+		--caster:SetControllableByPlayer(caster:GetPlayerID(), true)
+		--caster:SetOwner(caster)
 	end
 
 	caster:RemoveItem(ability)
@@ -222,10 +222,10 @@ function ChangeHeroKardel(keys)
 			caster:RemoveAbility("special_bonus_spell_immunity")
 		end
 		--left
-		if caster:HasAbility("special_bonus_unique_sniper_5") then
+		if caster:HasAbility("special_bonus_unique_sniper_headshot_lua_agi_multiplier") then
 			caster:AddAbility("special_bonus_kardels_skills_dmg")
-			caster:SwapAbilities("special_bonus_unique_sniper_5", "special_bonus_kardels_skills_dmg", false, true)
-			caster:RemoveAbility("special_bonus_unique_sniper_5")
+			caster:SwapAbilities("special_bonus_unique_sniper_headshot_lua_agi_multiplier", "special_bonus_kardels_skills_dmg", false, true)
+			caster:RemoveAbility("special_bonus_unique_sniper_headshot_lua_agi_multiplier")
 		end
 
 
@@ -237,8 +237,8 @@ function ChangeHeroKardel(keys)
 
 -- e.t.c
 		EmitSoundOn("sniper_snip_attack_04", caster)
-		caster:SetControllableByPlayer(caster:GetPlayerID(), true)
-		caster:SetOwner(caster)
+		--caster:SetControllableByPlayer(caster:GetPlayerID(), true)
+		--caster:SetOwner(caster)
 	end
 	caster:RemoveItem(ability)
 end

@@ -142,18 +142,26 @@ end
 function modifier_dark_willow_shadow_realm_lua_buff:GetModifierProcAttack_BonusDamage_Magical(params)
 	if params.record~=self.record then return end
 	if not self:GetAbility() then return end
-	local damage = self.damage * self.time
-	damage = damage * (1 + self:GetParent():GetSpellAmplification(false))
-	if RollPercentage(20) then    --unfinished
-		damage = damage * 2
+	local parent = self:GetParent()
+	local damage = self.damage * self.time * (1 + parent:GetSpellAmplification(false))
+	local ability = self:GetAbility()
+	local chance = ability:GetSpecialValueFor("ss_chance")
+	local crit_power = ability:GetSpecialValueFor("crit_power") * 0.01
+	local crit_status = parent:GetStatusResistance() * crit_power -- status can go negative but is fine 
+	if parent:HasModifier("modifier_super_scepter") and RollPercentage(chance) then    --is not affected by arcane or wings and arcane has a x 1.8 for every hit (that's 4x with 20%)
+		--here other crit sources can be added , like (crit_power + crit_status + crit_etc )
+		local dmg = damage * (crit_power + crit_status )
+
+		damage = dmg
 		create_popup({
 			target = params.target,
 			value = damage,
 			color = Vector(5, 129, 232),
-			type = "crit"
+			type = "crit",
+			pos = 4
 		})
 	else	
-		SendOverheadEventMessage(nil,OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, params.target, damage, self:GetParent():GetPlayerOwner())
+		SendOverheadEventMessage(nil,OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, params.target, damage, parent:GetPlayerOwner())
 	end	
 
 --	EmitSoundOn("Hero_DarkWillow.Shadow_Realm.Damage", self:GetParent())

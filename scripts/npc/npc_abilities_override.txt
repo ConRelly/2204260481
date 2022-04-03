@@ -4164,13 +4164,13 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"latch_duration"		"1.25"
+				"latch_duration"		"2.5"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"latch_damage"		"625 975 2625 9775 17500 28650 74500"
-			}
+				"damage_per_tick"		"625 1275 4625 15775 37500 98650 274500"
+			}			
 		}
 	}
 	
@@ -6435,7 +6435,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_jump_damage"		"1000"
+				"bonus_jump_damage"		"3500"
 			}
 		}			
 	}

@@ -78,6 +78,16 @@
 				"int_multiplier"			    "3.0 3.5 5.0 6.5 8.0 9.5 11.0"
 				"LinkedSpecialBonus"	        "special_bonus_dark_willow_shadow_realm_lua"
 			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"ss_chance"						"20"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"crit_power"					"400"
+			}						
 		}
 	}
 }

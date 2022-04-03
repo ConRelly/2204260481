@@ -1842,10 +1842,20 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 
 
+* Fix Kardel(sniper) crash on round start.  same for Piety
+* Temporary: Added Primary Stat change Str book until next patch <-- finish,  now back to normal (only int and agi change book)
+* Shadow Realm now uses spell amp, added Super Scepter effect. Damage is counted as a normal physical attack in dps tool but is magic.
+* Marci Unleash now has a level where it deals 0 bonus dmg but has more hits. increased dmg for the other lvl's.
+
+
+
+
+
+
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes65 can be found on the new map version:
+*Update patch notes66 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 
