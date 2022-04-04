@@ -1849,6 +1849,46 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 
 
+* Another try to fix Kardel and Piety
+* Fixed Bloodstone (casual)
+* Fixed (and removed) Remote Mines (Techies)
+* Proximity Mines (Techies):
+	-- Is now an ultimate ability
+	-- Levels between upgrades increased by 2 levels
+	-- Total damage increased
+	-- Now applies magic resistance reduction debuff
+	-- Added Aghanim's Shard effect
+	-- Fixed dealing damage (Previously, the damage might not have been inflicted)
+* Blast Off! (Techies): Changed self DMG to Max HP cost
+* Heartstopper Aura (Necrophos):
+	-- Now passive ability
+	-- Rescaled 'Intelligence as Damage'
+	-- Spell Amplification works only to Base Damage
+* Under The Moonlight (Luna):
+	-- 1-st level from the start
+	-- Added new effect
+* Eclipse (Luna):
+	-- Added new talent (right, lvl 20)
+	-- Reduced Max Beams Per Unit
+	-- Night duration cannot be lower then beam duration
+* Sacred Blink (Piety):
+	-- Added new effect to Divine
+	-- Super Scepter target search increased to 200
+* Willpower (Piety):
+	-- Cooldown reduced
+	-- Now non-lethal
+	-- Heal to enemy reduced by 50%
+* Seer Stone:
+	-- Added active ability - Reveal (CD 60 sec)
+	-- Bonus mana reduced from 9500 to 2000
+* Second Vladmir's Offering: Fixed Mana Regen aura
+* Mimic Mace:
+	-- Mana Regen reduced by 70 (Bloodstone no longer gives Mana Regen)
+	-- Added Edible Aether Lens to recipe
+
+
+
+
 
 
 

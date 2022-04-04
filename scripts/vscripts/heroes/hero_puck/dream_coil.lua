@@ -65,19 +65,17 @@ function faerie_dream_coil:OnProjectileHit_ExtraData(target, location, data)
 		EmitSoundOnLocationWithCaster(target:GetAbsOrigin(), "Hero_Puck.ProjectileImpact", self:GetCaster())
 	
 		self:GetCaster():PerformAttack(target, false, true, true, false, false, false, false)
-		local caster = self:GetCaster()
-		local ability = self
-		print("projectile hit")
-		if not caster:IsHero() then return end
-		if not caster:HasModifier("modifier_super_scepter") then return end
+
+		if not self:GetCaster():IsHero() then return end
+		if not self:GetCaster():HasModifier("modifier_super_scepter") then return end
 		if target and IsValidEntity(target) then 
-			if target:GetTeam() ~= caster:GetTeam() then
+			if target:GetTeam() ~= self:GetCaster():GetTeam() then
 				ApplyDamage({
 					victim = target,
 					attacker = self:GetCaster(),
 					damage = self:_CalcDamage(),
-					damage_type = ability:GetAbilityDamageType(),
-					ability = ability,
+					damage_type = self:GetAbilityDamageType(),
+					ability = self,
 				})
 			end
 		end		
@@ -86,17 +84,17 @@ end
 
 function faerie_dream_coil:_GetPrimaryStatValue()
 	if not IsServer() then return end
-	local STRENGTH = 0
-	local AGILITY = 1
-	local INTELLIGENCE = 2
+	-- STRENGTH = 0
+	-- AGILITY = 1
+	-- INTELLIGENCE = 2
 	local unit = self:GetCaster()
 	local pa = unit:GetPrimaryAttribute()
 	local PrimaryStatValue = 0
-	if pa == STRENGTH  then
+	if pa == 0  then
 		PrimaryStatValue = unit:GetStrength()
-	elseif pa == AGILITY  then
+	elseif pa == 1  then
 		PrimaryStatValue = unit:GetAgility()
-	elseif pa == INTELLIGENCE  then
+	elseif pa == 2  then
 		PrimaryStatValue = unit:GetIntellect()
 	end
 	return PrimaryStatValue
@@ -104,11 +102,8 @@ end
 
 function faerie_dream_coil:_CalcDamage()
 	if not IsServer() then return end
-	local caster = self:GetCaster()
-	local ability = self
-	local PrimaryStatValue = self:_GetPrimaryStatValue()
-	local stats = caster:GetIntellect() + caster:GetAgility() + caster:GetStrength() + PrimaryStatValue
-	local bonus_dmg = stats * ability:GetSpecialValueFor("ss_talent_stats_dmg")	
+	local stats = self:GetCaster():GetIntellect() + self:GetCaster():GetAgility() + self:GetCaster():GetStrength() + self:_GetPrimaryStatValue()
+	local bonus_dmg = stats * self:GetSpecialValueFor("ss_talent_stats_dmg")	
 	return math.floor(bonus_dmg)
 end
 

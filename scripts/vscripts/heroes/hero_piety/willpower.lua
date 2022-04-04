@@ -55,7 +55,7 @@ function willpower:OnSpellStart()
 		local caster = self:GetCaster()
 		local target = self:GetCursorTarget()
 
-		if target:TriggerSpellAbsorb(self) then return end
+--		if target:TriggerSpellAbsorb(self) then return end
 
 		local health_sacrifice = self:GetSpecialValueFor("health_sacrifice")
 		local duration = self:GetSpecialValueFor("duration")
@@ -77,11 +77,7 @@ function willpower:OnSpellStart()
 		if target:GetHealth() > damage then
 			target:SetHealth(target:GetHealth() - damage)
 		else
-			if target ~= caster then
-				target:Kill(self, caster)
-			else
-				caster:SetHealth(1)
-			end
+			target:SetHealth(1)
 		end
 		SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, target, damage, nil)
 
@@ -124,22 +120,29 @@ function willpower_heal:RemoveOnDeath() return true end
 function willpower_heal:IsDebuff() return false end
 function willpower_heal:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
+		self.MaxHealth = self:GetParent():GetMaxHealth()
+		self.interval = FrameTime()
+		self:StartIntervalThink(self.interval)
+	end
+end
+function willpower_heal:OnRefresh()
+	if IsServer() then
+		self.MaxHealth = self:GetParent():GetMaxHealth()
 		self.interval = FrameTime()
 		self:StartIntervalThink(self.interval)
 	end
 end
 function willpower_heal:OnIntervalThink()
 	if IsServer() then
-		local caster = self:GetCaster()
 		local parent = self:GetParent()
 		local heal_pct = self:GetAbility():GetSpecialValueFor("health_sacrifice")
 		local heal_duration = self:GetAbility():GetSpecialValueFor("duration")
-		local heal_per_interval = parent:GetMaxHealth() * heal_pct / heal_duration / 100 * self.interval
-		if parent:GetTeamNumber() ~= caster:GetTeamNumber() then
-			heal_per_interval = parent:GetMaxHealth() * heal_pct / heal_duration / 150 * self.interval
+		local heal_per_interval = self.MaxHealth * heal_pct / heal_duration / 100 * self.interval
+		if parent:GetTeamNumber() ~= self:GetCaster():GetTeamNumber() then
+			heal_per_interval = self.MaxHealth * heal_pct / heal_duration / 150 * self.interval
 		end
 
-		parent:Heal(heal_per_interval, caster)
+		parent:Heal(heal_per_interval, self:GetCaster())
 	end
 end
 function willpower_heal:DeclareFunctions() return {MODIFIER_PROPERTY_TOOLTIP} end

@@ -16550,7 +16550,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_regen_aura"		"20.0"
+				"mana_regen_aura"		"20"
 			}
 			"03"
 			{
@@ -16606,7 +16606,7 @@
 				"Properties"
 				{
 					//This is hardcoded due to an obscure engine bug.
-					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"4.0" //"%mana_regen_aura"
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"20" //"%mana_regen_aura"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_aura"
 					"MODIFIER_PROPERTY_TOOLTIP"						"10"
 				}
@@ -18089,50 +18089,50 @@
 	}
 
 
-"item_recipe_dark_bloodstone"
-{
-	"Model"							"models/props_gameplay/recipe.vmdl"
-	"BaseClass"						"item_recipe_bloodstone"
-	"ItemCost"						"100"
-	"ItemShopTags"					""
-	"ItemRecipe"					"1"
-	"ItemResult"					"item_dark_bloodstone"
-	"ItemRequirements"
+	"item_recipe_dark_bloodstone"
 	{
-		"01"						"item_bloodstone;item_chest_4"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_recipe_bloodstone"
+		"ItemCost"						"100"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_dark_bloodstone"
+		"ItemRequirements"
+		{
+			"01"						"item_bloodstone;item_chest_4"
+		}
 	}
-}
-"item_dark_bloodstone"
-{
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"BaseClass"						"item_bloodstone"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"AbilityCastPoint"				"0.0"
-	"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
-	"ItemQuality"					"epic"
-	"ItemAliases"					"dbs;dark bloodstone"
-	"ItemInitialCharges"			"0"
-	"ItemDisplayCharges"			"0"
-	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-	"AbilityTextureName"			"foramon_dark_bloodstone"
-	"ItemInitialCharges"			"0"
-	"ItemDisplayCharges"			"0"
-	"AbilityCooldown"				"24.0"
-	"AbilitySharedCooldown"			"bloodstone"
-	"ItemSellable"					"1"
-	"MaxUpgradeLevel"				"2"
-	"ItemBaseLevel"					"2"
-	"AbilityValues"
+	"item_dark_bloodstone"
 	{
-		"bonus_health"			"425 4425"
-		"bonus_mana"			"425 5900"
-		"hero_lifesteal"		"0"
-		"creep_lifesteal"		"0"
-		"buff_duration"			"10"
-		"lifesteal_multiplier"	"2"
-		"hp_cost"				"50"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"BaseClass"						"item_bloodstone"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastPoint"				"0.0"
+		"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"dbs;dark bloodstone"
+		"ItemInitialCharges"			"0"
+		"ItemDisplayCharges"			"0"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityTextureName"			"foramon_dark_bloodstone"
+		"ItemInitialCharges"			"0"
+		"ItemDisplayCharges"			"0"
+		"AbilityCooldown"				"24.0"
+		"AbilitySharedCooldown"			"bloodstone"
+		"ItemSellable"					"1"
+		"MaxUpgradeLevel"				"2"
+		"ItemBaseLevel"					"2"
+		"AbilityValues"
+		{
+			"bonus_health"			"425 4425"
+			"bonus_mana"			"425 5900"
+			"hero_lifesteal"		"1 2"
+			"creep_lifesteal"		"1 2"
+			"buff_duration"			"10"
+			"lifesteal_multiplier"	"2"
+			"hp_cost"				"10 50"
+		}
 	}
-}
 
 
 // Recipe: Giants Ring 2
@@ -18604,43 +18604,33 @@
 		"01"						"item_chest_5;item_refined_aether_lens"
 	}
 }
-"item_custom_seer_stone"			//先哲之石
-{
-	"BaseClass"						"item_lua"
-	"ScriptFile"					"items/item_custom_seer_stone.lua"
-	"ItemCost"						"8000"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"item_seer_stone"
-	"ItemGloballyCombinable"		"0"
-	"ItemPurchasable"				"1"
-	"ItemSellable"					"1"
-	"ItemIsNeutralDrop"				"0"
-	"Model"							"models/props_gameplay/neutral_box.vmdl"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"AbilitySpecial"
+
+// Seer Stone
+	"item_custom_seer_stone"
 	{
-		"01"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_custom_seer_stone.lua"
+		"ItemCost"						"8000"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"	//	"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_seer_stone"
+		"ItemGloballyCombinable"		"0"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemIsNeutralDrop"				"0"
+		"AbilityCooldown"				"60"
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"AbilityValues"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"cast_range_bonus"			"1500"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
+			"cast_range_bonus"		"1500"
 			"vision_bonus"			"2500"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"bonus_mana"			"9500"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"bonus_mana_regen"			"200"
+			"bonus_mana"			"2000"
+			"bonus_mana_regen"		"200"
+			"radius"				"1200"
+			"duration"				"6"
 		}
 	}
-}
+
 "item_recipe_suicidal_mask"
 {
 	
@@ -21669,7 +21659,7 @@
 		"ItemResult"					"item_echo_wand"
 		"ItemRequirements"
 		{
-			"01"						"item_dark_bloodstone;item_essence_ring;item_trade_kaya_3"
+			"01"						"item_dark_bloodstone;item_essence_ring;item_trade_kaya_3;item_mjz_aether_lens"
 		}
 	}
 // Mimic Mace
@@ -21707,7 +21697,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"140"
+				"bonus_mana_regen"		"70"
 			}
 			"05"
 			{

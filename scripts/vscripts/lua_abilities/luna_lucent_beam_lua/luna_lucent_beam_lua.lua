@@ -13,7 +13,11 @@ luna_lucent_beam_lua = class({})
 LinkLuaModifier("modifier_generic_stunned_lua", "lua_abilities/generic/modifier_generic_stunned_lua", LUA_MODIFIER_MOTION_NONE)
 
 function luna_lucent_beam_lua:OnAbilityPhaseStart()
-	self:PlayEffects1()
+	if not IsServer() then return end
+
+	local precast_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_luna/luna_eclipse_precast.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
+	ParticleManager:SetParticleControlEnt(precast_pfx,	0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetAbsOrigin(), true)
+	ParticleManager:ReleaseParticleIndex(precast_pfx)
 	return true
 end
 
@@ -36,6 +40,16 @@ function luna_lucent_beam_lua:GetBehavior()
 	return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_AOE
 end
 
+function luna_lucent_beam_lua:OnProjectileHit_ExtraData(target, location, data)
+	if not IsServer() then return end
+	
+	if target and IsValidEntity(target) then
+		EmitSoundOnLocationWithCaster(target:GetAbsOrigin(), "Hero_Luna.ProjectileImpact", self:GetCaster())
+	
+		self:GetCaster():PerformAttack(target, false, true, true, false, false, false, false)
+	end
+end
+
 --------------------------------------------------------------------------------
 
 if IsServer() then
@@ -43,61 +57,68 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local target = self:GetCursorTarget()
 		local position = self:GetCursorPosition()
-		local modifier_buffa = "modifier_mjz_luna_under_the_moonlight_buff"
-		local mbuf = caster:FindModifierByName(modifier_buffa)
-		local duration = self:GetSpecialValueFor("stun_duration")
 		local damage = self:GetTalentSpecialValueFor("beam_damage") + (caster:GetAgility() * self:GetTalentSpecialValueFor("agi_multiplier"))
-		local search = self:GetSpecialValueFor("radius")
-		local new_moon_chance = self:GetSpecialValueFor("new_moon_chance")
 
-		-- cancel if linken
 		if not caster:HasShard() and target:TriggerSpellAbsorb(self) then return end
 
-		local damageTable = {
-			victim = target,
-			attacker = caster,
-			damage = damage,
-			damage_type = DAMAGE_TYPE_MAGICAL,
-			ability = self,
-			damage_flags = DOTA_DAMAGE_FLAG_NONE,
-		}
 		if caster:HasShard() then
 			point = position
-			sound_point = position
 			AddFOWViewer(self:GetCaster():GetTeamNumber(), position, self:GetSpecialValueFor("radius"), 1, false)
 		else
-			point = target:GetOrigin()
-			sound_point = target
+			point = target:GetAbsOrigin()
 		end
 
-		targets = FindUnitsInRadius(caster:GetTeamNumber(), point, nil, search, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, 0, false)
+		local targets = FindUnitsInRadius(caster:GetTeamNumber(), point, nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, 0, false)
 
 		for _,enemy in pairs(targets) do
-			damageTable.victim = enemy
-			ApplyDamage(damageTable)
+			ApplyDamage({
+				victim = enemy,
+				attacker = caster,
+				damage = damage,
+				damage_type = DAMAGE_TYPE_MAGICAL,
+				ability = self,
+				damage_flags = DOTA_DAMAGE_FLAG_NONE,
+			})
 
-			enemy:AddNewModifier(
-				caster,
-				self,
-				"modifier_generic_stunned_lua",
-				{duration = duration}
-			)
-			local random_nr = math.random(100)
-			if random_nr < new_moon_chance then
-				if mbuf ~= nil then
-					mbuf:SetStackCount(mbuf:GetStackCount() + 1)
-				end
+			enemy:AddNewModifier(caster, self, "modifier_generic_stunned_lua", {duration = self:GetSpecialValueFor("stun_duration")})
+
+			if math.random(100) < self:GetSpecialValueFor("new_moon_chance") then
+				local moonlight_buff = self:GetCaster():FindModifierByName("modifier_mjz_luna_under_the_moonlight_buff")
+				moonlight_buff:SetStackCount(moonlight_buff:GetStackCount() + 1)
 			end
-			self:PlayEffects2(enemy)
+
+			local beam_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_luna/luna_lucent_beam.vpcf", PATTACH_POINT_FOLLOW, self:GetCaster())
+			ParticleManager:SetParticleControl(beam_pfx, 1, enemy:GetAbsOrigin())
+			ParticleManager:SetParticleControlEnt(beam_pfx,	5, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
+			ParticleManager:SetParticleControlEnt(beam_pfx,	6, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetAbsOrigin(), true)
+			ParticleManager:ReleaseParticleIndex(beam_pfx)
 		end
 		EmitSoundOn("Hero_Luna.LucentBeam.Cast", caster)
+
 		if caster:HasShard() then
 			local enemy_count = 0
-			targets = FindUnitsInRadius(caster:GetTeamNumber(), point, nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_ANY_ORDER, false)
-			for _,enemy in pairs(targets) do
+			local shard_targets = FindUnitsInRadius(caster:GetTeamNumber(), point, nil, 500, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_ANY_ORDER, false)
+			for _,enemy in pairs(shard_targets) do
 				enemy_count = enemy_count + 1
-				caster:PerformAttack(enemy, true, true, true, false, true, false, false)
-				if enemy_count >= (#targets / 2) then
+
+				EmitSoundOnLocationWithCaster(point, "Hero_Luna.Attack", self:GetCaster())
+
+				ProjectileManager:CreateTrackingProjectile({
+					Target 				= enemy,
+					vSourceLoc			= point,
+					Ability 			= self,
+					EffectName 			= self:GetCaster():GetRangedProjectileName() or "particles/units/heroes/hero_luna/luna_base_attack.vpcf",
+					iMoveSpeed			= self:GetCaster():GetProjectileSpeed() or 900,
+					bDrawsOnMinimap 	= false,
+					bDodgeable 			= true,
+					bIsAttack 			= true,
+					bVisibleToEnemies 	= true,
+					bReplaceExisting 	= false,
+					flExpireTime 		= GameRules:GetGameTime() + 10,
+					bProvidesVision 	= false,
+				})
+
+				if enemy_count >= (#shard_targets / 2) then
 					break
 				end
 			end
@@ -105,57 +126,17 @@ if IsServer() then
 		else
 			EmitSoundOn("Hero_Luna.LucentBeam.Target", target)
 		end
+
+		if #targets < 1 then
+			local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_luna/luna_lucent_beam.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
+			ParticleManager:SetParticleControl(particle, 1, position)
+			ParticleManager:SetParticleControl(particle, 5, Vector(0,0,0))
+			ParticleManager:SetParticleControl(particle, 6, Vector(0,0,0))
+			ParticleManager:ReleaseParticleIndex(particle)
+		end
 	end
 end
 
---------------------------------------------------------------------------------
-
-function luna_lucent_beam_lua:PlayEffects1()
-	local particle_cast = "particles/units/heroes/hero_luna/luna_lucent_beam_precast.vpcf"
-	local effect_cast = ParticleManager:CreateParticle(particle_cast, PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
-	ParticleManager:SetParticleControl(effect_cast, 1, Vector(0.4,0,0))
-	ParticleManager:SetParticleControlEnt(effect_cast, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", Vector(0,0,0), true)
-	ParticleManager:ReleaseParticleIndex(effect_cast)
-end
-
-function luna_lucent_beam_lua:PlayEffects2(target)
-	local particle_cast = "particles/econ/items/luna/luna_lucent_ti5_gold/luna_lucent_beam_moonfall_gold.vpcf"
-
-	-- Create Particle
-	-- local effect_cast = ParticleManager:CreateParticle(particle_cast, PATTACH_ABSORIGIN_FOLLOW, target)
-	if self and not self:IsNull() and target and not target:IsNull() and self:GetCaster() and not self:GetCaster():IsNull() then		
-		local effect_cast = assert(loadfile("lua_abilities/rubick_spell_steal_lua/rubick_spell_steal_lua_arcana"))(self, particle_cast, PATTACH_ABSORIGIN_FOLLOW, target)
-		ParticleManager:SetParticleControl(effect_cast, 0, target:GetOrigin())
-		ParticleManager:SetParticleControlEnt(
-			effect_cast,
-			1,
-			target,
-			PATTACH_ABSORIGIN_FOLLOW,
-			"attach_hitloc",
-			Vector(0,0,0), -- unknown
-			true -- unknown, true
-		)
-		ParticleManager:SetParticleControlEnt(
-			effect_cast,
-			5,
-			target,
-			PATTACH_POINT_FOLLOW,
-			"attach_hitloc",
-			Vector(0,0,0), -- unknown
-			true -- unknown, true
-		)
-		ParticleManager:SetParticleControlEnt(
-			effect_cast,
-			6,
-			self:GetCaster(),
-			PATTACH_POINT_FOLLOW,
-			"attach_attack1",
-			Vector(0,0,0), -- unknown
-			true -- unknown, true
-		)
-		ParticleManager:ReleaseParticleIndex(effect_cast)
-	end	
-end
 
 --talents
 function HasTalent(unit, talentName)

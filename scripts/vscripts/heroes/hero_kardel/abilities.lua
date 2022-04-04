@@ -433,6 +433,7 @@ function modifier_pocket_portal_duration:IsHidden() return false end
 function modifier_pocket_portal_duration:IsPurgable() return false end
 function modifier_pocket_portal_duration:RemoveOnDeath() return false end
 function modifier_pocket_portal_duration:OnDestroy()
+	if not IsServer() then return end
 	local caster = self:GetCaster()
 	if pressed then
 --		EmitSoundOnLocationWithCaster(target_point, "DOTA_Item.BlinkDagger.Activate", caster)
@@ -449,15 +450,13 @@ function modifier_pocket_portal_duration:OnDestroy()
 		ParticleManager:SetParticleControl(portal_end, 0, caster:GetOrigin())
 		ParticleManager:ReleaseParticleIndex(portal_end)
 
-		if IsServer() then
-			if caster:HasTalent("special_bonus_pocket_portal_evasion") then
-				local Talent_Evasion = caster:AddNewModifier(caster, self:GetAbility(), "modifier_pocket_portal_evasion", {duration = caster:FindTalentCustomValue("special_bonus_pocket_portal_evasion", "duration")})
-				Talent_Evasion:SetStackCount(self:GetCaster():FindTalentCustomValue("special_bonus_pocket_portal_evasion", "chance"))
-			end
+		if caster:HasTalent("special_bonus_pocket_portal_evasion") then
+			local Talent_Evasion = caster:AddNewModifier(caster, self:GetAbility(), "modifier_pocket_portal_evasion", {duration = caster:FindTalentCustomValue("special_bonus_pocket_portal_evasion", "duration")})
+			Talent_Evasion:SetStackCount(self:GetCaster():FindTalentCustomValue("special_bonus_pocket_portal_evasion", "chance"))
 		end
 	end
 
-	if IsServer() then self:GetAbility():UseResources(false, false, true) end
+	self:GetAbility():UseResources(false, false, true)
 	if portal then
 		ParticleManager:DestroyParticle(portal, false)
 		ParticleManager:ReleaseParticleIndex(portal)
@@ -487,8 +486,8 @@ function modifier_kardels_skills:IsPurgable() return true end
 function modifier_kardels_skills:GetPriority() return MODIFIER_PRIORITY_SUPER_ULTRA + 11111 end
 function modifier_kardels_skills:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
-		self:GetParent():SetUnitName("npc_dota_hero_kardel")
-		self:GetParent():SetEntityName("npc_dota_hero_kardel")
+--		self:GetParent():SetUnitName("npc_dota_hero_kardel")
+--		self:GetParent():SetEntityName("npc_dota_hero_kardel")
 	end
 end
 function modifier_kardels_skills:DeclareFunctions()

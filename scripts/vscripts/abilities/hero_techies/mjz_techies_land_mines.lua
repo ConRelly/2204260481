@@ -1,6 +1,5 @@
-local THIS_LUA = "abilities/hero_techies/mjz_techies_land_mines.lua"
-LinkLuaModifier("modifier_mjz_techies_land_mine", THIS_LUA, LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_mjz_techies_land_mine_trigger", THIS_LUA, LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_techies_land_mine", "abilities/hero_techies/mjz_techies_land_mines.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_techies_land_mine_trigger", "abilities/hero_techies/mjz_techies_land_mines.lua", LUA_MODIFIER_MOTION_NONE)
 
 ---------------------------------------------------------------------------------
 
@@ -18,7 +17,6 @@ end
 function mjz_techies_land_mines:OnSpellStart()
 	if IsServer() then
 		local caster = self:GetCaster()
-		local soundName = "Hero_Techies.LandMine.Plant"
 
 		local mine = CreateUnitByName("npc_dota_techies_land_mine", self:GetCursorPosition(), true, caster, caster, caster:GetTeamNumber())
 		mine:SetControllableByPlayer(caster:GetPlayerID(), true)
@@ -27,35 +25,10 @@ function mjz_techies_land_mines:OnSpellStart()
 		mine:AddNewModifier(caster, self, "modifier_mjz_techies_land_mine_trigger", nil)
 		-- mine:AddRadiusIndicator(caster, self, self:GetAOERadius(), 150, 22, 22, false, false)
 
-		caster:EmitSound(soundName)
+		EmitSoundOnLocationWithCaster(self:GetCursorPosition(), "Hero_Techies.RemoteMine.Plant", caster)
 	end
 end
 
-function mjz_techies_land_mines:CalcDamage( enemy )
-	local caster = self:GetCaster()
-	local ability = self
-	local base_damage = GetTalentSpecialValueFor(ability, "base_damage")
-	local int_damage = GetTalentSpecialValueFor(ability, "int_damage")
-	local building_damage_pct = ability:GetSpecialValueFor("building_damage_pct")
-	local damage = base_damage + caster:GetIntellect() * (int_damage / 100)
-
-	if enemy and IsValidEntity(enemy) and enemy:IsBuilding() then
-		damage = damage * (building_damage_pct / 100)
-	end
-
-	--local bBaseOnly = false
-	--local spellAmp = caster:GetSpellAmplification(bBaseOnly)
-	-- print("spellAmp: ".. tostring(spellAmp))
-	--damage = damage + damage * spellAmp
-
-	return damage
-end
-
-function mjz_techies_land_mines:Parents()
-	local caster = self:GetCaster()
-	local ability = self
-	return caster
-end	
 ------------------------------------------------------------------------------------------
 
 modifier_mjz_techies_land_mine = modifier_mjz_techies_land_mine or class({})
@@ -68,14 +41,12 @@ if IsServer() then
 		self:StartIntervalThink(1.25)
 	end
 	function modifier_mjz_techies_land_mine:OnIntervalThink()
-		local ability = self:GetAbility()
-		local parent = self:GetParent()
 		local caster = self:GetCaster()
 		if caster:IsChanneling() then return end
 		if caster:IsSilenced() then return end
 
-		if ability:GetAutoCastState() and ability:IsFullyCastable() then
-			caster:CastAbilityOnPosition(caster:GetAbsOrigin(), ability, caster:GetTeam())
+		if self:GetAbility():GetAutoCastState() and self:GetAbility():IsFullyCastable() then
+			caster:CastAbilityOnPosition(caster:GetAbsOrigin(), self:GetAbility(), caster:GetTeam())
 		end
 	end
 end
@@ -83,32 +54,22 @@ end
 ------------------------------------------------------------------------------------------
 
 modifier_mjz_techies_land_mine_trigger = modifier_mjz_techies_land_mine_trigger or class({})
-
 function modifier_mjz_techies_land_mine_trigger:IsDebuff() return false end
 function modifier_mjz_techies_land_mine_trigger:IsHidden() return true end
 function modifier_mjz_techies_land_mine_trigger:IsPurgable() return false end
-
 function modifier_mjz_techies_land_mine_trigger:IsPassive() return true end
-
-function modifier_mjz_techies_land_mine_trigger:DeclareFunctions()
-	local functions = {
-		MODIFIER_STATE_INVISIBLE,
-		MODIFIER_STATE_NO_UNIT_COLLISION
-	}
-end
 
 function modifier_mjz_techies_land_mine_trigger:OnCreated(args)
 	if IsServer() then
-		local activationDelay = self:GetAbility():GetSpecialValueFor("activation_delay")
-		local soundName = "Hero_Techies.LandMine.Priming"
-
-		self.active = false
-		Timers:CreateTimer(activationDelay, function()
+		if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
+			activation_delay = FrameTime()
+		else
+			activation_delay = self:GetAbility():GetSpecialValueFor("activation_delay")
+		end
+		Timers:CreateTimer(activation_delay, function()
 			if not self:IsNull() then
-				self.active = true
+				self:GetParent():EmitSound("Hero_Techies.LandMine.Priming")
 				self:StartIntervalThink(FrameTime())
-
-				self:GetParent():EmitSound(soundName)
 			end
 		end)
 	end
@@ -116,52 +77,49 @@ end
 
 function modifier_mjz_techies_land_mine_trigger:OnIntervalThink()
 	if IsServer() then
-		local owner = self:GetParent()
-		local ability = self:GetAbility()
-		local caster = self:GetCaster()
-		local damageType = ability:GetAbilityDamageType()
-		local triggerRadius = ability:GetAOERadius()
-		
+		local mine = self:GetParent()
 		local enemies = FindUnitsInRadius(
-			owner:GetTeamNumber(),
-			owner:GetAbsOrigin(),
+			self:GetCaster():GetTeamNumber(),
+			mine:GetAbsOrigin(),
 			nil,
-			triggerRadius,
-			ability:GetAbilityTargetTeam(),
-			ability:GetAbilityTargetType(),
-			ability:GetAbilityTargetFlags(),
+			self:GetAbility():GetAOERadius(),
+			self:GetAbility():GetAbilityTargetTeam(),
+			self:GetAbility():GetAbilityTargetType(),
+			self:GetAbility():GetAbilityTargetFlags(),
 			FIND_ANY_ORDER,
 			false
 		)
 		if #enemies > 0 then
-			local explosionParticle = ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf", PATTACH_WORLDORIGIN, owner)
-			
-			ParticleManager:SetParticleControl(explosionParticle, 0, owner:GetAbsOrigin())
-			ParticleManager:SetParticleControl(explosionParticle, 1, owner:GetAbsOrigin())
-			ParticleManager:SetParticleControl(explosionParticle, 2, Vector(triggerRadius, 1, 1))
+			local true_damage = self:GetAbility():GetSpecialValueFor("base_damage") + self:GetCaster():GetIntellect() * (self:GetAbility():GetSpecialValueFor("int_damage") + talent_value(self:GetCaster(), "special_bonus_unique_mjz_techies_land_mines_int_damage"))
+
+			local explosionParticle = ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
+			ParticleManager:SetParticleControl(explosionParticle, 0, mine:GetAbsOrigin())
+			ParticleManager:SetParticleControl(explosionParticle, 1, mine:GetAbsOrigin())
+			ParticleManager:SetParticleControl(explosionParticle, 2, Vector(self:GetAbility():GetAOERadius(), 1, 1))
 			ParticleManager:ReleaseParticleIndex(explosionParticle)
 			for _, enemy in pairs(enemies) do
-				local true_damage = ability:CalcDamage(enemy)
-                print(true_damage .. "bomb dmg")
+--				print(true_damage .. "bomb dmg")
 				ApplyDamage({
 					victim = enemy,
-					attacker = caster,
+					attacker = self:GetCaster(),
+					ability = self:GetAbility(),
 					damage = true_damage,
-					damage_type = damageType,
+					damage_type = self:GetAbility():GetAbilityDamageType(),
 					damage_flags = DOTA_DAMAGE_FLAG_NONE,
-					ability = ability
 				})
+				enemy:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_techies_land_mine_burn", {duration = self:GetAbility():GetSpecialValueFor("burn_duration")})
 			end
-			owner:ForceKill(false)
-
-			EmitSoundOn("Hero_Techies.LandMine.Detonate", owner)
+			mine:EmitSound("Hero_Techies.LandMine.Detonate")
+			Timers:CreateTimer(0.1, function()
+				mine:ForceKill(false)
+			end)
 		end
 	end
 end
 
 function modifier_mjz_techies_land_mine_trigger:CheckState()
 	return {
-		[MODIFIER_STATE_INVISIBLE] = self.active, 
+		[MODIFIER_STATE_INVISIBLE] = true,
 		[MODIFIER_STATE_NO_UNIT_COLLISION] = true
 	}
 end

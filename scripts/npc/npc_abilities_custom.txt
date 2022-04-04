@@ -26753,17 +26753,19 @@
 			}
 		}
 	}
+
 	"mjz_luna_under_the_moonlight"
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/hero_luna/mjz_luna_under_the_moonlight.lua"
-		"AbilityTextureName"			"mjz_luna_under_the_moonlight"	//	""mjz_luna_under_the_moonlight""
+		"AbilityTextureName"			"mjz_luna_under_the_moonlight"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"LevelsBetweenUpgrades"		 "5"
+		"LevelsBetweenUpgrades"			"5"
+		"MaxLevel"						"5"
 		"AbilitySound"					"Hero_Luna.LucentBeam.Target"
 
 		"precache"
@@ -26772,46 +26774,18 @@
 			"particle"			"particles/units/heroes/hero_luna/luna_lucent_beam.vpcf"
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"proc_chance"				"5 6 7 8"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"beam_damage"			"30"
-				//"LinkedSpecialBonus"	"special_bonus_unique_luna_1"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"spell_amp"					"0.05"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_hp"				"2"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_mp"				"1"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_agi"				"1"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"spell_amp_tooltip"					"5"
-			}															
+			"proc_chance"			"0 5 6 7 8"
+			"beam_damage"			"30"
+			"spell_amp"				"0.05"
+			"bonus_hp"				"2"
+			"bonus_mp"				"1"
+			"bonus_agi"				"1"
+			"spell_amp_tooltip"		"5"
 		}
-	}	
+	}
+
 	//=================================================================================================================
 	// Lycan: Shapeshift Relieve		解除变身			
 	//=================================================================================================================
@@ -27842,65 +27816,38 @@
 			"particle"			"particles/units/heroes/hero_necrolyte/necrolyte_pulse_friend.vpcf"
 		}
 	}	
-	//=================================================================================================================
-	// Necrolyte: Heartstopper Aura		竭心光环
-	//=================================================================================================================
+
+// Necrolyte: Heartstopper Aura
 	"mjz_necrolyte_heartstopper_aura"
 	{
-		"BaseClass"						"ability_lua"	// "ability_datadriven"
+		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/hero_necrolyte/mjz_necrolyte_heartstopper_aura.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_AURA" // DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "10"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"10"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"mjz_necrolyte_heartstopper_aura"
-		//"AbilityCastRange"				"%radius"
-
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"				"900"
+			"base_damage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"900"		// If you change this, also change the AbilityCastRange above
+				"value"				"80 140 460 780 1100 1350 2150"
+				"CalculateSpellDamageTooltip"	"1"
 			}
-			"02"
+			"intelligence_damage"
 			{
-				"var_type"							"FIELD_FLOAT"
-				"base_damage"						"80 140 460 780 1100 1350 2150" 
-			} 	
-			"03"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"intelligence_damage"				"30 50 70 90 110 130 220" 
-				"LinkedSpecialBonus"				"special_bonus_unique_mjz_necrolyte_heartstopper_aura_intelligence"
-			} 	
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"health_regen"			"9 14 22 28 34 40 100"
-			}		
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen"			"9 14 22 28 34 40 100"
-			}	
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen_duration"		"7"
-			}			
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hero_multiplier" 		"6"
+				"value"					"0.3 0.6 0.9 1.3 1.7 2.1 2.5"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_necrolyte_heartstopper_aura_intelligence"
+				"CalculateSpellDamageTooltip"	"0"
 			}
-			"10"
-			{
-				"var_type"			  "FIELD_FLOAT"
-				"interval"			  "0.6"
-			}
+			"health_regen"			"9 14 22 28 34 40 100"
+			"mana_regen"			"9 14 22 28 34 40 100"
+			"regen_duration"		"7"
+			"hero_multiplier" 		"6"
+			"interval"				"0.6"
 		}
 	}
 	"special_bonus_unique_mjz_necrolyte_heartstopper_aura_intelligence"
@@ -27914,10 +27861,11 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"150"
+				"value"						"1.5"
 			}
 		}
-	}	
+	}
+
 	//=================================================================================================================
 	// Necrolyte's Reaper's Scythe		死亡镰刀
 	//=================================================================================================================
@@ -31960,25 +31908,28 @@
 			}
 		}
 	}
+
+// Techies: Proximity Mines
 	"mjz_techies_land_mines"
 	{
 		"BaseClass"					"ability_lua"
 		"ScriptFile"				"abilities/hero_techies/mjz_techies_land_mines.lua"
 		"AbilityTextureName"		"techies_land_mines"
+		"AbilityType"				"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
-		"HasScepterUpgrade"			"0"
-		"LevelsBetweenUpgrades"	 "10"
-		"AbilityCastRange"				"1400"
-		"AbilityCastPoint"				"0"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"HasShardUpgrade"			"1"
+		"LevelsBetweenUpgrades"		"12"
+		"AbilityCastRange"			"1400"
+		"AbilityCastPoint"			"0"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 
-		"AbilityCooldown"				"2"
-		"AbilityCharges"				"1 2 2 3"
-		"AbilityChargeRestoreTime"		"12"
+		"AbilityCooldown"				"1"
+		"AbilityCharges"				"1 2 3"
+		"AbilityChargeRestoreTime"		"18 15 12"
 		"AbilityManaCost"				"110 130 150 170"
 
 		"precache"
@@ -31987,51 +31938,22 @@
 			"particle"		"particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf"
 		}
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"base_damage"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"400"
+				"value"					"1800 18000 180000"
+				"CalculateSpellDamageTooltip"	"1"
 			}
-			"02"
+			"int_damage"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"proximity_threshold"		"1.6"
+				"value"					"4 12 36"
+				"LinkedSpecialBonus"	"special_bonus_unique_mjz_techies_land_mines_int_damage"
 			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"base_damage"				"300 1900 13400 29500"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"int_damage"					"200 400 800 1600"
-				"LinkedSpecialBonus"			"special_bonus_unique_mjz_techies_land_mines_int_damage"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"building_damage_pct"		"25"
-			}	
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"activation_delay"			"1.75"
-			}
-			// "07"
-			// {
-			// 	"var_type"					"FIELD_INTEGER"
-			// 	"cast_range_scepter_bonus"		"300"
-			// 	"RequiresScepter"			"1"
-			// }
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"AbilityChargeRestoreTime"	""
-				"LinkedSpecialBonus"		"special_bonus_unique_techies_3"
-			}
+			"radius"					"600"
+			"activation_delay"			"1.75"
+			"mres_reduction"			"5 10 15"
+			"burn_duration"				"5"
 		}
 	}
 	"special_bonus_unique_mjz_techies_land_mines_int_damage"
@@ -32044,10 +31966,11 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"1400"
+				"value"						"14"
 			}
 		}
 	}
+
 	"mjz_techies_remote_mines"
 	{
 		"BaseClass"					"ability_lua"
@@ -32164,6 +32087,8 @@
 			}
 		}
 	}
+
+// Techies: Blast Off!
 	"mjz_techies_suicide"
 	{
 		"BaseClass"						"ability_datadriven" // "ability_lua"	
@@ -32175,13 +32100,14 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"LevelsBetweenUpgrades"		 "10"
+		"AOERadius"						"%radius"
+		"LevelsBetweenUpgrades"			"10"
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"1.0"
 		// "AbilityChannelTime"			"0.75"
 		"AbilityCooldown"				"35"
 		"AbilityManaCost"				"0"
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 
 		"precache"
 		{
@@ -32195,77 +32121,53 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"500"
+				"damage"					"900 2000 8300 12000"
+				"LinkedSpecialBonus"		"special_bonus_unique_techies"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"900 2000 8300 12000"
-				"LinkedSpecialBonus"		"special_bonus_unique_techies"
-				//							 special_bonus_unique_mjz_techies_suicide_02
+				"hp_cost"					"100 140 180 220"
+				"LinkedSpecialBonus"		"special_bonus_unique_mjz_techies_suicide_02"
 			}
 			"03"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"silence_duration"			"4 5 6 7"
-			} 
+				"var_type"						"FIELD_FLOAT"
+				"current_hp"					"4"
+				"CalculateSpellDamageTooltip"	"1"
+			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hp_cost"					"100 140 180 220"
-				"LinkedSpecialBonus"		"special_bonus_unique_mjz_techies_suicide_02"
-			} 
+				"radius"					"500"
+			}
 			"05"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.75"
+				"var_type"					"FIELD_FLOAT"
+				"silence_duration"			"4 5 6 7"
 			}
 			"06"
 			{
-				"var_type"							"FIELD_INTEGER"
-				"charge_speed"						"2000"
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"0.75"
 			}
 			"07"
 			{
-				"var_type"							"FIELD_FLOAT"
-				"max_distance"						"5400"
+				"var_type"					"FIELD_INTEGER"
+				"charge_speed"				"2000"
 			}
-			"15"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"respawn_time_percentage"		"0.5"
-			}
-			"16"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"respawn_time_percentage_tooltip"		"50"
-			}
-			"17"
+			"08"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"vision_radius"				"400"
+				"max_distance"				"5400"
 			}
-			"18"
+			"09"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"vision_duration"			"2.0"
+				"var_type"						"FIELD_FLOAT"
+				"max_health_cost"				"20 30 40 50"
+				"CalculateSpellDamageTooltip"	"0"
 			}
-			"19"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"current_hp"				"4.0"
-				"CalculateSpellDamageTooltip" "1"
-			}			
 		}
-
-		// "OnChannelSucceeded" {
-		// 	"RunScript"
-		// 	{
-		// 		"ScriptFile"	"abilities/hero_techies/mjz_techies_suicide.lua"
-		// 		"Function"		"SuicideSucceeded"
-		// 	}
-		// }
-
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -42530,7 +42432,7 @@
 		"LevelsBetweenUpgrades"			"6"
 		"AbilityCastPoint"				"0.25"
 		"AbilityCastRange"				"600"
-		"AbilityCooldown"				"45 42 39 36 33 30 27 24 21 18"
+		"AbilityCooldown"				"28 26 24 22 20 18 16 14 12 10"
 		"AbilityManaCost"				"1"
 		"AbilitySpecial"
 		{

@@ -811,7 +811,7 @@
 		"Ability6"			"luna_eclipse_lua"
 		"Ability12"			"special_bonus_unique_luna_102"
 		"Ability13"			"special_bonus_agility_80"
-		"Ability14"			"special_bonus_armor_69"
+		"Ability14"			"special_bonus_luna_eclipse_end"
 		"Ability15"			"special_bonus_lifesteal_30"
 		"Ability16"			"special_bonus_unique_luna_103"
 		"Ability17"			"special_bonus_unique_luna_101"
@@ -2138,20 +2138,17 @@
 
 		"AttributeIntelligenceGain"		"9.600000"
 	}
-	"npc_dota_hero_techies_mjz"
+	"npc_dota_hero_techies"
 	{
-		"override_hero"			"npc_dota_hero_techies"
-
-		"Ability1"		"mjz_techies_land_mines"
+		"Ability1"		"techies_sticky_bomb"
 		"Ability3"		"mjz_techies_suicide"
-		"Ability4"      "techies_focused_detonate"
-		"Ability6"		"techies_remote_mines"
+		"Ability6"		"mjz_techies_land_mines"
 		"Ability10"		"special_bonus_gold_income_90"
 		"Ability11"		"special_bonus_exp_boost_30"
 		"Ability12"		"special_bonus_gold_income_120"
 		"Ability13"		"special_bonus_unique_mjz_techies_land_mines_int_damage"
-		"Ability15"		"special_bonus_unique_mjz_techies_suicide_02"
 		"Ability14"		"special_bonus_cdr_25"
+		"Ability15"		"special_bonus_unique_mjz_techies_suicide_02"
 		"Ability16"		"special_bonus_spell_amplify_125"
 		"Ability17"		"special_bonus_gold_income_300"
 

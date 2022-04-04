@@ -4170,7 +4170,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_per_tick"		"625 1275 4625 15775 37500 98650 274500"
-			}			
+			}
 		}
 	}
 	
@@ -17924,7 +17924,66 @@
 				"model_scale"				"25"	 // Percentage over model scale
 			}
 		}
-	}	
+	}
+
+// Techies: Sticky Bomb
+	"techies_sticky_bomb"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"12 10 8 6"
+		"AbilityManaCost"				"100 115 130 145"
+		"AbilityValues"
+		{
+			"duration"					"1.2"
+			"countdown"					"1"
+			"radius"
+			{
+				"value"			"250"
+				"special_bonus_unique_techies_2"	"+125"
+			}
+			"damage"					"90 180 270 360"
+			"slow"						"25 35 45 55"
+			"secondary_slow"			"30 40 55 75"
+			"secondary_slow_duration"	"2.5"
+			"explosion_radius"
+			{
+				"value"				"750"
+				"special_bonus_unique_techies_2"	"+125"
+			}
+			"speed"						"500"
+			"acceleration"				"2000"
+			"pre_chase_time"			"0.1"
+		}
+	}
+	
+// Techies: Reactive Taser
+	"techies_reactive_tazer"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"HasScepterUpgrade"				"1"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastRange"				"900"
+		"AbilityCooldown"				"20 18 16 14"
+		"AbilityManaCost"				"60"
+		"AbilityValues"
+		{
+			"duration"				"6"
+			"disarm_duration"		"2.4 2.7 3 3.3"
+			"bonus_ms"				"30 40 55 75"
+			"stun_radius"			"750"
+			"scepter_damage"		"30000"
+		}
+	}
+	
 	"tiny_avalanche"
 	{
 		"AbilityCooldown"				"22 18 14 10"
@@ -19979,89 +20038,16 @@
 		"UpgradeRecipe"					"item_chest_4;item_recipe_dark_bloodstone"
 		"MaxUpgradeLevel"				"2"
 		"ItemBaseLevel"					"1"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"425 1425"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"425 1900"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"16 170"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_regen_multiplier"	"50 600"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"12 70"
-			}	
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spell_lifesteal_amp"	"15 30"
-			}	
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hero_lifesteal"		"0"
-			}			
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"creep_lifesteal"		"0"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen_per_charge"		"0"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"amp_per_charge"		"0"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"death_charges"			"0"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"kill_charges"			"0"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"charge_range"			"0"
-			}
-			"14"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"initial_charges_tooltip"	"0"
-			}
-			"15"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"restore_duration"		"6"
-			}
-			"16"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_cost_percentage"	"15 30"
-			}
-		}	
+			"bonus_health"			"425 4425"
+			"bonus_mana"			"425 5900"
+			"hero_lifesteal"		"1 2"
+			"creep_lifesteal"		"1 2"
+			"buff_duration"			"10"
+			"lifesteal_multiplier"	"2"
+			"hp_cost"				"10 50"
+		}
 	}
 
 // Butterfly

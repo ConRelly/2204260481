@@ -14,21 +14,20 @@ function item_master_of_weapons_sword:GetIntrinsicModifierName() return "modifie
 
 function item_master_of_weapons_sword:OnSpellStart()
 	if not IsServer() then return end
-	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
-	caster:AddNewModifier(caster, self, "modifier_mows_remove_as_limit", {})
-	local additional_duration = math.floor(caster:GetDisplayAttackSpeed() / 1500)
-	print("Print DisplayAttackSpeed", caster:GetDisplayAttackSpeed())
-	print("Print additional_duration", additional_duration)
-	local duration = self:GetSpecialValueFor("duration") + caster:FindTalentValue("special_bonus_imba_juggernaut_10") + (additional_duration * 1)
+	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_mows_remove_as_limit", {})
+	local additional_duration = math.floor(self:GetCaster():GetDisplayAttackSpeed() / 1500)
+--	print("Print DisplayAttackSpeed", self:GetCaster():GetDisplayAttackSpeed())
+--	print("Print additional_duration", additional_duration)
+	local duration = self:GetSpecialValueFor("duration") + (additional_duration * 1)
 
-	local previous_position = caster:GetAbsOrigin()
+	local previous_position = self:GetCaster():GetAbsOrigin()
 	
-	caster:Purge(false, true, false, false, false)
+	self:GetCaster():Purge(false, true, false, false, false)
 
-	local image = CreateUnitByName(caster:GetUnitName(), target:GetAbsOrigin(), true, caster, caster:GetOwner(), caster:GetTeamNumber())
+	local image = CreateUnitByName(self:GetCaster():GetUnitName(), target:GetAbsOrigin(), true, self:GetCaster(), self:GetCaster():GetOwner(), self:GetCaster():GetTeamNumber())
 
-	local caster_level = caster:GetLevel()
+	local caster_level = self:GetCaster():GetLevel()
 	for i = 2, caster_level do
 		image:HeroLevelUp(false)
 	end
@@ -44,7 +43,7 @@ function item_master_of_weapons_sword:OnSpellStart()
 		local ability = image:GetAbilityByIndex(ability_id)
 		if ability then
 			if not non_transfer[ability:GetAbilityName()] then
-				local caster_ability = caster:FindAbilityByName(ability:GetAbilityName())
+				local caster_ability = self:GetCaster():FindAbilityByName(ability:GetAbilityName())
 				if caster_ability then
 					ability:SetLevel(caster_ability:GetLevel())
 				end
@@ -54,7 +53,7 @@ function item_master_of_weapons_sword:OnSpellStart()
 
 	-- Copy Items
 	for item_id = 0, 5 do
-		local item_in_caster = caster:GetItemInSlot(item_id)
+		local item_in_caster = self:GetCaster():GetItemInSlot(item_id)
 		if item_in_caster ~= nil then
 			if not non_transfer[item_in_caster:GetName()] then
 				local item_created = CreateItem (item_in_caster:GetName(), image, image)
@@ -64,7 +63,7 @@ function item_master_of_weapons_sword:OnSpellStart()
 		end
 	end
 	-- Copy Neutral Item
-	local neutral_item = caster:GetItemInSlot(16)
+	local neutral_item = self:GetCaster():GetItemInSlot(16)
 	if neutral_item ~= nil then
 		if not non_transfer[neutral_item:GetName()] then
 			local neutral_item_created = CreateItem (neutral_item:GetName(), image, image)
@@ -74,7 +73,7 @@ function item_master_of_weapons_sword:OnSpellStart()
 	end
 
 	-- Copy Modifiers
-	local caster_modifiers = caster:FindAllModifiers()
+	local caster_modifiers = self:GetCaster():FindAllModifiers()
 	for _,modifier in pairs(caster_modifiers) do
 		if modifier then
 --			local ModifierDuration = modifier:GetDuration()
@@ -89,13 +88,13 @@ function item_master_of_weapons_sword:OnSpellStart()
 	image:SetHasInventory(false)
 	image:SetCanSellItems(false)
 
-	image:AddNewModifier(caster, self, "modifier_mows_image", {duration = duration})
-	image:AddNewModifier(caster, self, "modifier_mows_remove_as_limit", {duration = duration})
+	image:AddNewModifier(self:GetCaster(), self, "modifier_mows_image", {duration = duration})
+	image:AddNewModifier(self:GetCaster(), self, "modifier_mows_remove_as_limit", {duration = duration})
 
-	local modifier_handler = image:AddNewModifier(caster, self, "modifier_mows_slasher", {duration = duration})
+	local modifier_handler = image:AddNewModifier(self:GetCaster(), self, "modifier_mows_slasher", {duration = duration})
 	
 	if modifier_handler then
-		modifier_handler.original_caster = caster
+		modifier_handler.original_caster = self:GetCaster()
 	end
 
 	FindClearSpaceForUnit(image, target:GetAbsOrigin() + RandomVector(128), false)
@@ -110,7 +109,7 @@ function item_master_of_weapons_sword:OnSpellStart()
 		end
 	end)
 
-	caster:RemoveModifierByName("modifier_mows_remove_as_limit")
+	self:GetCaster():RemoveModifierByName("modifier_mows_remove_as_limit")
 
 	if target:TriggerSpellAbsorb(self) then return end
 
@@ -205,20 +204,18 @@ function modifier_mows_slasher:IsDebuff() return false end
 function modifier_mows_slasher:GetStatusEffectName() return "particles/status_fx/status_effect_omnislash.vpcf" end
 
 function modifier_mows_slasher:OnCreated()
-	self.caster = self:GetCaster()
-	self.parent = self:GetParent()
 	self.last_enemy = nil
 
 	if not self:GetAbility() then self:Destroy() return end
 
 	if IsServer() then
-		if self.caster:GetPrimaryAttribute() == 0 then
-			self.MaxHealth = self.parent:GetMaxHealth()
+		if self:GetCaster():GetPrimaryAttribute() == 0 then
+			self.MaxHealth = self:GetParent():GetMaxHealth()
 		else
 			self.MaxHealth = 0
 		end
 --		Timers:CreateTimer(FrameTime(), function()
-			if (not self.parent:IsNull()) then
+			if (not self:GetParent():IsNull()) then
 				
 				self.bounce_range = self:GetAbility():GetSpecialValueFor("bounce_range")
 				
@@ -226,7 +223,7 @@ function modifier_mows_slasher:OnCreated()
 
 				self:BounceAndSlaughter(true)
 				
-				local slash_rate = 0.125--self.caster:GetSecondsPerAttack() / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
+				local slash_rate = 0.125--self:GetCaster():GetSecondsPerAttack() / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
 
 				self:StartIntervalThink(slash_rate)
 			end
@@ -236,19 +233,19 @@ end
 
 function modifier_mows_slasher:OnDestroy()
 	if IsServer() then
-		self.parent:FadeGesture(ACT_DOTA_OVERRIDE_ABILITY_4)
+		self:GetParent():FadeGesture(ACT_DOTA_OVERRIDE_ABILITY_4)
 		
-		self.parent:MoveToPositionAggressive(self.parent:GetAbsOrigin())
+		self:GetParent():MoveToPositionAggressive(self:GetParent():GetAbsOrigin())
 
-		if self.parent:HasModifier("modifier_mows_image") then
+		if self:GetParent():HasModifier("modifier_mows_image") then
 			local ability = self:GetAbility()
-			local image_team = self.parent:GetTeamNumber()
-			local image_loc = self.parent:GetAbsOrigin()
-			local damage = self.parent:GetAttackDamage()
+			local image_team = self:GetParent():GetTeamNumber()
+			local image_loc = self:GetParent():GetAbsOrigin()
+			local damage = self:GetParent():GetAttackDamage()
 			local radius = 2000
-			local repeat_times = 1 + (2 * math.floor(self.parent:GetLevel() / 40))
-			if self.caster:GetPrimaryAttribute() == 0 then
-				if self.caster:GetStrength() >= 7500 then
+			local repeat_times = 1 + (2 * math.floor(self:GetParent():GetLevel() / 40))
+			if self:GetCaster():GetPrimaryAttribute() == 0 then
+				if self:GetCaster():GetStrength() >= 7500 then
 					DMGflags = DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
 				else
 					DMGflags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
@@ -263,7 +260,7 @@ function modifier_mows_slasher:OnDestroy()
 						for _,enemy in pairs(nearby_enemies) do
 							ApplyDamage({
 								victim = enemy,
-								attacker = self.caster,
+								attacker = self:GetCaster(),
 								ability = ability,
 								damage = damage,
 								damage_type = DAMAGE_TYPE_PHYSICAL,
@@ -271,31 +268,31 @@ function modifier_mows_slasher:OnDestroy()
 							})
 						end
 						if i == 1 or (i + 1 % 3 == 0) then
-							local burst = ParticleManager:CreateParticle("particles/items3_fx/blink_overwhelming_burst.vpcf", PATTACH_WORLDORIGIN, self.caster)
+							local burst = ParticleManager:CreateParticle("particles/items3_fx/blink_overwhelming_burst.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
 							ParticleManager:SetParticleControl(burst, 0, image_loc)
 							ParticleManager:SetParticleControl(burst, 1, Vector(radius, 500, 500))
 							ParticleManager:ReleaseParticleIndex(burst)
-							EmitSoundOnLocationWithCaster(image_loc, "Blink_Layer.Overwhelming", self.caster)
+							EmitSoundOnLocationWithCaster(image_loc, "Blink_Layer.Overwhelming", self:GetCaster())
 						end
 					end
 				end)
 			end
 
-			self.parent:MakeIllusion()
-			self.parent:RemoveModifierByName("modifier_mows_image")
+			self:GetParent():MakeIllusion()
+			self:GetParent():RemoveModifierByName("modifier_mows_image")
 
 			for item_id = 0, 5 do
-				local item_in_caster = self.parent:GetItemInSlot(item_id)
+				local item_in_caster = self:GetParent():GetItemInSlot(item_id)
 				if item_in_caster ~= nil then
 					UTIL_Remove(item_in_caster)
 				end
 			end
-			local neutral_item = self.parent:GetItemInSlot(16)
+			local neutral_item = self:GetParent():GetItemInSlot(16)
 			if neutral_item ~= nil then
 				UTIL_Remove(neutral_item)
 			end
 
-			local caster_modifiers = self.parent:FindAllModifiers()
+			local caster_modifiers = self:GetParent():FindAllModifiers()
 			for _,modifier in pairs(caster_modifiers) do
 				if modifier then
 					UTIL_Remove(modifier)
@@ -303,7 +300,7 @@ function modifier_mows_slasher:OnDestroy()
 			end
 
 			if (not self:GetParent():IsNull()) then
-				UTIL_Remove(self.parent)
+				UTIL_Remove(self:GetParent())
 			end
 		end
 	end
@@ -313,7 +310,7 @@ function modifier_mows_slasher:OnIntervalThink()
 	if not self:GetAbility() then self:Destroy() return end
 	self:BounceAndSlaughter()
 	
-	local slash_rate = 0.125--self.caster:GetSecondsPerAttack() / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
+	local slash_rate = 0.125--self:GetCaster():GetSecondsPerAttack() / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
 
 	self:StartIntervalThink(slash_rate)
 end
@@ -325,7 +322,7 @@ function modifier_mows_slasher:BounceAndSlaughter(first_slash)
 		order = FIND_CLOSEST
 	end
 	
-	self.nearby_enemies = FindUnitsInRadius(self.parent:GetTeamNumber(), self.parent:GetAbsOrigin(), nil, self.bounce_range, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_INVULNERABLE, order, false)
+	self.nearby_enemies = FindUnitsInRadius(self:GetParent():GetTeamNumber(), self:GetParent():GetAbsOrigin(), nil, self.bounce_range, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_INVULNERABLE, order, false)
 	
 	for count = #self.nearby_enemies, 1, -1 do
 		if self.nearby_enemies[count] and (self.nearby_enemies[count]:GetName() == "npc_dota_unit_undying_zombie" or self.nearby_enemies[count]:GetName() == "npc_dota_elder_titan_ancestral_spirit") then
@@ -335,21 +332,21 @@ function modifier_mows_slasher:BounceAndSlaughter(first_slash)
 
 	if #self.nearby_enemies >= 1 then
 		for _,enemy in pairs(self.nearby_enemies) do
-			local previous_position = self.parent:GetAbsOrigin()
-			FindClearSpaceForUnit(self.parent, enemy:GetAbsOrigin() + RandomVector(100), false)
+			local previous_position = self:GetParent():GetAbsOrigin()
+			FindClearSpaceForUnit(self:GetParent(), enemy:GetAbsOrigin() + RandomVector(100), false)
 			
 			if not self:GetAbility() then break end
 
-			local current_position = self.parent:GetAbsOrigin()
+			local current_position = self:GetParent():GetAbsOrigin()
 
-			self.parent:FaceTowards(enemy:GetAbsOrigin())
+			self:GetParent():FaceTowards(enemy:GetAbsOrigin())
 			
 			AddFOWViewer(self:GetCaster():GetTeamNumber(), enemy:GetAbsOrigin(), 200, 1, false)
 			
 			if first_slash and enemy:TriggerSpellAbsorb(self:GetAbility()) then
 				break
 			else
-				self.parent:PerformAttack(enemy, true, true, true, true, false, false, false)
+				self:GetParent():PerformAttack(enemy, true, true, true, true, false, false, false)
 			end
 
 --			enemy:EmitSound("Hero_Juggernaut.OmniSlash.Damage")
@@ -360,13 +357,13 @@ function modifier_mows_slasher:BounceAndSlaughter(first_slash)
 			ParticleManager:SetParticleControl(hit_pfx, 1, current_position)
 			ParticleManager:ReleaseParticleIndex(hit_pfx)
 
-			local trail_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf", PATTACH_ABSORIGIN, self.parent)
+			local trail_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf", PATTACH_ABSORIGIN, self:GetParent())
 			ParticleManager:SetParticleControl(trail_pfx, 0, previous_position)
 			ParticleManager:SetParticleControl(trail_pfx, 1, current_position)
 			ParticleManager:ReleaseParticleIndex(trail_pfx)
 
 			if self.last_enemy ~= enemy then
-				local dash_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_juggernaut/juggernaut_omni_dash.vpcf", PATTACH_ABSORIGIN, self.parent)
+				local dash_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_juggernaut/juggernaut_omni_dash.vpcf", PATTACH_ABSORIGIN, self:GetParent())
 				ParticleManager:SetParticleControl(dash_pfx, 0, previous_position)
 				ParticleManager:SetParticleControl(dash_pfx, 2, current_position)
 				ParticleManager:ReleaseParticleIndex(dash_pfx)
@@ -374,7 +371,7 @@ function modifier_mows_slasher:BounceAndSlaughter(first_slash)
 
 			self.last_enemy = enemy
 
-			if self.parent:HasModifier("modifier_mows_image") then
+			if self:GetParent():HasModifier("modifier_mows_image") then
 				self.previous_pos = previous_position
 				self.current_pos = current_position
 			end

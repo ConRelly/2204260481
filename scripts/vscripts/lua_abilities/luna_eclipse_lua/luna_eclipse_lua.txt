@@ -12,18 +12,8 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"lua_abilities/luna_eclipse_lua/luna_eclipse_lua"
 		"AbilityTextureName"			"luna_eclipse_lua"
-		"FightRecapLevel"				"2"
 		"MaxLevel"						"5"
 		"HasScepterUpgrade"				"1"
-		"precache"
-		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
-			"particle"	"particles/units/heroes/hero_luna/luna_eclipse.vpcf"
-			"particle"	"particles/units/heroes/hero_luna/luna_lucent_beam.vpcf"
-		}
-		
-		// Ability General
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -31,84 +21,63 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-
-		// Ability Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0.6"
-
-		// Ability Resource
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"60"
 		"AbilityManaCost"				"150"
-
-		// Damage
-		//-------------------------------------------------------------------------------------------------------------
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
+			"particle"	"particles/units/heroes/hero_luna/luna_eclipse.vpcf"
+			"particle"	"particles/units/heroes/hero_luna/luna_lucent_beam.vpcf"
+		}
+		"AbilityValues"
+		{
+			"radius"					"1200"
+			"beams"
+			{
+				"value"					"20 25 30 35 45"
+				"LinkedSpecialBonus"	"special_bonus_unique_luna_103"
+			}
+			"beams_scepter"
+			{
+				"value"					"30 40 60 80 100"
+				"LinkedSpecialBonus"	"special_bonus_unique_luna_103"
+				"RequiresScepter"		"1"
+			}
+			"hit_count"
+			{
+				"value"					"10 15 20 25 35"
+				"LinkedSpecialBonus"	"special_bonus_unique_luna_103"
+			}
+			"beam_interval"				"0.3"
+			"beam_interval_scepter"
+			{
+				"value"					"0.1"
+				"RequiresScepter"		"1"
+			}
+			"cast_range_scepter"
+			{
+				"value"					"2500"
+				"RequiresScepter"		"1"
+			}
+			"night_duration"			"13"
+			"new_moon_chance"			"20"
+		}
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+	}
+// Talent: Eclipse doesn't end if the owner has died
+	"special_bonus_luna_eclipse_end"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"beams"						"20 25 30 35 45"
-				"LinkedSpecialBonus"	    "special_bonus_unique_luna_103"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"hit_count"					"20 25 30 50 75"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"beam_interval"				"0.3"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"beam_interval_scepter"		"0.1"
-				"RequiresScepter"			"1"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration_tooltip"			"6.0"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"1200"
-			}	
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"beams_scepter"				"30 40 60 80 100"
-				"LinkedSpecialBonus"		"special_bonus_unique_luna_103"
-				"RequiresScepter"			"1"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"hit_count_scepter"			"999"
-				"RequiresScepter"			"1"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration_tooltip_scepter"	"13"
-			}
-			"10"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"cast_range_tooltip_scepter"	"2500"
-				"RequiresScepter"				"1"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"new_moon_chance"			"20"
+				"var_type"		"FIELD_FLOAT"
+				"value"			"1"
 			}
 		}
 	}

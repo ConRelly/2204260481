@@ -64,8 +64,8 @@ function modifier_sourcery:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
 		local parent = self:GetParent()
 		if parent:IsIllusion() or parent:HasModifier("modifier_arc_warden_tempest_double") then Timers:CreateTimer(0.05, function() parent:RemoveSelf() end) parent:ForceKill(false) end
-		parent:SetUnitName("npc_dota_hero_piety")
-		parent:SetEntityName("npc_dota_hero_piety")
+--		parent:SetUnitName("npc_dota_hero_piety")
+--		parent:SetEntityName("npc_dota_hero_piety")
 		parent:SetDayTimeVisionRange(1600)
 		parent:SetNightTimeVisionRange(1600)
 		parent:SetPhysicalArmorBaseValue(10)
@@ -75,15 +75,13 @@ function modifier_sourcery:OnCreated()
 
 		self.MaxShields = self:GetAbility():GetSpecialValueFor("max_shields")
 		self.interval = self:GetAbility():GetSpecialValueFor("shield_interval")
-		self.Divine = false
 		self:SetStackCount(1)
 		layer1 = ParticleManager:CreateParticle("particles/custom/abilities/sourcery/sourcery_layer1.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
 		ParticleManager:SetParticleControlEnt(layer1, 1, parent, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
 		self:AddParticle(layer1, false, false, -1, true, false)
 
 		self:StartIntervalThink(self.interval)
-		if self:GetCaster():HasAbility("divine_cancel") and not self.Divine then
-			self.Divine = true
+		if self:GetCaster():HasModifier("modifier_divinity_activated") then
 			self.interval = self:GetAbility():GetSpecialValueFor("shield_interval") / 2
 			self:StartIntervalThink(self.interval)
 		end
@@ -92,8 +90,7 @@ end
 function modifier_sourcery:OnStackCountChanged()
 	if IsServer() then
 		self:GetCaster():SetRangedProjectileName("particles/custom/abilities/sourcery/sourcery_attack_effect.vpcf")
-		if self:GetCaster():HasAbility("divine_cancel") and not self.Divine then
-			self.Divine = true
+		if self:GetCaster():HasModifier("modifier_divinity_activated") then
 			self.interval = self:GetAbility():GetSpecialValueFor("shield_interval") / 2
 			self:StartIntervalThink(self.interval)
 		end
@@ -107,17 +104,17 @@ function modifier_sourcery:OnIntervalThink()
 	if self:GetStackCount() < self.MaxShields then
 		self:SetStackCount(self:GetStackCount() + 1)
 	end
-	if self:GetStackCount() == 1 then
+	if self:GetStackCount() == 1 and layer1 == nil then
 		layer1 = ParticleManager:CreateParticle("particles/custom/abilities/sourcery/sourcery_layer1.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 		ParticleManager:SetParticleControlEnt(layer1, 1, self:GetParent(), PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
 		self:AddParticle(layer1, false, false, -1, true, false)
 	end
-	if self:GetStackCount() == 2 then
+	if self:GetStackCount() == 2 and layer2 == nil then
 		layer2 = ParticleManager:CreateParticle("particles/custom/abilities/sourcery/sourcery_layer2.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 		ParticleManager:SetParticleControlEnt(layer2, 1, self:GetParent(), PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
 		self:AddParticle(layer2, false, false, -1, true, false)
 	end
-	if self:GetStackCount() == 3 then
+	if self:GetStackCount() == 3 and layer3 == nil then
 		layer3 = ParticleManager:CreateParticle("particles/custom/abilities/sourcery/sourcery_layer3.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 		ParticleManager:SetParticleControlEnt(layer3, 1, self:GetParent(), PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
 		self:AddParticle(layer3, false, false, -1, true, false)
@@ -127,7 +124,7 @@ function modifier_sourcery:OnIntervalThink()
 		self:StartIntervalThink(-1)
 	end
 end
-function modifier_sourcery:IsAura() if IsServer() then return self:GetCaster():HasAbility("divine_cancel") end end
+function modifier_sourcery:IsAura() return self:GetCaster():HasModifier("modifier_divinity_activated") end
 function modifier_sourcery:IsAuraActiveOnDeath() return false end
 function modifier_sourcery:GetAuraRadius()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("aura_radius") end
@@ -163,8 +160,7 @@ end
 function modifier_sourcery:GetModifierAvoidDamage(keys)
 	if self:GetAbility() then
 		if IsServer() then
-			if self:GetCaster():HasAbility("divine_cancel") and not self.Divine then
-				self.Divine = true
+			if self:GetCaster():HasModifier("modifier_divinity_activated") then
 				self.interval = self:GetAbility():GetSpecialValueFor("shield_interval") / 2
 				self:StartIntervalThink(self.interval)
 			end
@@ -173,15 +169,18 @@ function modifier_sourcery:GetModifierAvoidDamage(keys)
 			if self:GetStackCount() == self.MaxShields then
 				self:StartIntervalThink(self.interval)
 			end
-			if self:GetStackCount() == 3 then
+			if self:GetStackCount() == 3 and layer3 then
 				ParticleManager:DestroyParticle(layer3, false)
 				ParticleManager:ReleaseParticleIndex(layer3)
-			elseif self:GetStackCount() == 2 then
+				layer3 = nil
+			elseif self:GetStackCount() == 2 and layer2 then
 				ParticleManager:DestroyParticle(layer2, false)
 				ParticleManager:ReleaseParticleIndex(layer2)
-			elseif self:GetStackCount() == 1 then
+				layer2 = nil
+			elseif self:GetStackCount() == 1 and layer1 then
 				ParticleManager:DestroyParticle(layer1, false)
 				ParticleManager:ReleaseParticleIndex(layer1)
+				layer1 = nil
 			end
 			self:SetStackCount(self:GetStackCount() - 1)
 			if self:GetCaster():HasTalent("special_bonus_unique_sourcery_health_recovery") then

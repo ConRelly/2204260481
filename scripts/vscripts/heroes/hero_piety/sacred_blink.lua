@@ -1,4 +1,5 @@
 LinkLuaModifier("modifier_sacred_blink_buff", "heroes/hero_piety/sacred_blink", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_sacred_blink_ress", "heroes/hero_piety/sacred_blink", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_divinity_activated", "heroes/hero_piety/divine_cancel", LUA_MODIFIER_MOTION_NONE)
 
 ------------------
@@ -26,7 +27,7 @@ function sacred_blink:OnSpellStart()
 		local position_end = self:GetEndPosition(caster, radius, target_flag)
 
 		if caster:HasSuperScepter() then
-			local targets = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, 150, DOTA_UNIT_TARGET_TEAM_BOTH, units_target, target_flag + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, 0, false)
+			local targets = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, 200, DOTA_UNIT_TARGET_TEAM_BOTH, units_target, target_flag + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_ANY_ORDER, false)
 			for _,target in pairs(targets) do
 				ProjectileManager:ProjectileDodge(target)
 				FindClearSpaceForUnit(target, position_end, true)
@@ -40,12 +41,15 @@ function sacred_blink:OnSpellStart()
 		if caster:HasTalent("special_bonus_unique_sacred_blink_building") then
 			units_target = units_target + DOTA_UNIT_TARGET_BUILDING
 		end
-		local units = FindUnitsInRadius(caster:GetTeamNumber(), position_end, nil, radius, DOTA_UNIT_TARGET_TEAM_BOTH, units_target, target_flag, FIND_CLOSEST, false)
+		local units = FindUnitsInRadius(caster:GetTeamNumber(), position_end, nil, radius, DOTA_UNIT_TARGET_TEAM_BOTH, units_target, target_flag, FIND_ANY_ORDER, false)
 		for _,unit in pairs(units) do
 			if unit:GetTeamNumber() == caster:GetTeamNumber() and caster:HasModifier("modifier_item_aghanims_shard") then
 				buff_duration = self:GetSpecialValueFor("buff_duration") + 2
 			end
 			unit:AddNewModifier(caster, self, "modifier_sacred_blink_buff", {duration = buff_duration})
+		end
+		if caster:HasModifier("modifier_divinity_activated") then
+			caster:AddNewModifier(caster, self, "modifier_sacred_blink_ress", {duration = buff_duration})
 		end
 
 		local start_blink = ParticleManager:CreateParticle("particles/custom/abilities/sacred_blink/sacred_blink_end.vpcf", PATTACH_ABSORIGIN, caster)
@@ -99,4 +103,30 @@ function modifier_sacred_blink_buff:GetModifierMoveSpeedBonus_Percentage()
 			return self:GetAbility():GetSpecialValueFor("buff_pct") / 2
 		end
 	end
+end
+
+----------------------------------------
+-- Sacred Blink - Divine Resurrection --
+----------------------------------------
+modifier_sacred_blink_ress = class({})
+function modifier_sacred_blink_ress:IsHidden() return true end
+function modifier_sacred_blink_ress:IsPurgable() return false end
+function modifier_sacred_blink_ress:DeclareFunctions()
+	return {MODIFIER_EVENT_ON_ABILITY_EXECUTED}
+end
+function modifier_sacred_blink_ress:OnAbilityExecuted(params)
+	if IsServer() then
+		if not self:GetCaster():IsIllusion() then
+			if params.unit == self:GetParent() then
+				if params.ability:GetName() == "item_tombstone" then
+					Timers:CreateTimer(params.ability:GetChannelTime() / 2, function()
+--						if params.ability then
+							params.ability:EndChannel(false)
+--						end
+					end)
+				end
+			end
+		end
+	end
+	return 0
 end
