@@ -1852,6 +1852,9 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 * Another try to fix Kardel and Piety
 * Fixed Bloodstone (casual)
 * Fixed (and removed) Remote Mines (Techies)
+* Fixed Shadow Wave (Dazzle) Damage
+* Fixed Crystal Nova (Crystal Maiden) Radius
+* Fixed random skills scrolls for some heroes
 * Proximity Mines (Techies):
 	-- Is now an ultimate ability
 	-- Levels between upgrades increased by 2 levels

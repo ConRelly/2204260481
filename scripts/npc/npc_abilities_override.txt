@@ -14,7 +14,6 @@
 #base "abilities/heroes/dark_willow_bedlam.txt"
 #base "abilities/heroes/dark_willow_shadow_realm.txt"
 #base "abilities/heroes/dazzle_poison_touch.txt"
-#base "abilities/heroes/dazzle_shadow_wave.txt"
 #base "abilities/heroes/doom_bringer_scorched_earth.txt"
 #base "abilities/heroes/dragon_knight_elder_dragon_form.txt"
 #base "abilities/heroes/drow_ranger_marksmanship.txt"
@@ -4079,9 +4078,6 @@
 	}
 	"crystal_maiden_crystal_nova"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"5126"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -4089,31 +4085,18 @@
 		"MaxLevel"                      "7"
 		"LevelsBetweenUpgrades"         "10"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Crystal.CrystalNova"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.3"
-		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"8"
-		
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"275"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"radius"			"425"
+				"LinkedSpecialBonus"	"special_bonus_unique_crystal_maiden_6"
 			}
 			"02"
 			{
@@ -4179,6 +4162,54 @@
 		"AbilityCooldown"				"40 30 20"
 	}
 
+// Dazzle: Shadow Wave
+	"dazzle_shadow_wave"
+	{
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"					"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"					"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"					"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilitySound"							"Hero_Dazzle.Shadow_Wave"
+		"MaxLevel"								"6"
+		"RequiredLevel"							"1"
+		"LevelsBetweenUpgrades"					"5"
+		"AbilityCastRange"						"1200"
+		"AbilityCastPoint"						"0.3"
+		"AbilityCooldown"						"14 12 10 8 7 5"
+		"AbilityManaCost"						"90 100 110 120 220 320"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"bounce_radius"							"1475"
+			}
+			"02"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"damage_radius"							"485"
+				"DamageTypeTooltip"						"DAMAGE_TYPE_NONE"
+			}
+			"03"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"max_targets"							"3 4 5 6 7 8"
+			}
+			"04"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"tooltip_max_targets_inc_dazzle"		"4 5 6 7 8 9"
+			}
+			"05"
+			{
+				"var_type"								"FIELD_INTEGER"
+				"damage"								"380 1220 2960 4600 13800 26000"
+				"LinkedSpecialBonus"					"special_bonus_unique_dazzle_2"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
 
 	"dazzle_bad_juju"
 	{
