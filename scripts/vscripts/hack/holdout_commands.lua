@@ -1,6 +1,5 @@
 
 _G.NEUTRAL_TEAM = 4 -- global const for neutral team int
-_G.DOTA_MAX_ABILITIES = 16
 _G.HERO_MAX_LEVEL = 30
 
 XP_PER_LEVEL_TABLE = {

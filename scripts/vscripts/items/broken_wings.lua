@@ -79,6 +79,8 @@ function modifier_broken_wings:OnAttackLanded(keys)
 		if not owner:IsRealHero() then return end
 --		local max_stacks = self:GetAbility():GetSpecialValueFor("feather_max_stacks")
 		if owner ~= keys.attacker then return end
+		if owner:IsIllusion() then return end
+		if target == nil then return end
 		if owner:HasModifier("modifier_broken_wings_divinity") then return end
 		if self:GetRemainingTime() > 0 then return end
 		local AttackCD = self:GetAbility():GetSpecialValueFor("attack_cd")
@@ -115,7 +117,7 @@ function modifier_broken_wings:OnAttackLanded(keys)
 		end
 ]]
 		ProjectileManager:CreateTrackingProjectile({
-			Target = self:GetCaster(),
+			Target = owner,
 			Source = target,
 			Ability = self:GetAbility(),
 			EffectName = "particles/custom/items/broken_wings/broken_wings_feather.vpcf",

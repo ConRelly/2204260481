@@ -21,7 +21,14 @@ function OnSpellStart( keys )
 			end
 		end
 		if GenericSlots > 0 then
-			caster:RemoveAbility("generic_hidden")
+			for i = 0, DOTA_MAX_ABILITIES - 1 do
+				local abil = caster:GetAbilityByIndex(i)
+				if abil then
+					if abil:GetAbilityName() == "generic_hidden" then
+						caster:RemoveAbility("generic_hidden")
+					end
+				end
+			end
 			if GenericSlots > 1 then
 				for i = 1, GenericSlots - 1 do
 					caster:AddAbility("generic_hidden")

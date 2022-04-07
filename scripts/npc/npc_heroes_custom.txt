@@ -512,6 +512,7 @@
 		"Ability2"				"mjz_faceless_time_dilation"
 		"Ability3"				"frostivus2018_faceless_void_time_lock"
 		"Ability4"				"faceless_void_backtrack"
+		"Ability5"				"generic_hidden"
 		"Ability6"				"mjz_faceless_the_world"
 		"Ability10"				"special_bonus_spell_amplify_100"
 		"Ability11"				"special_bonus_cdr_25"
@@ -602,7 +603,8 @@
 		// "Ability5"				"mjz_tiny_tree_grab_scepter_effect"
 		"Ability11"				"special_bonus_strength_200"
 		"Ability12"				"special_bonus_lifesteal_15"
-		"Ability15"				"special_bonus_cdr_15"
+		"Ability14"				"special_bonus_craggy_exterior_status_resist"
+		"Ability15"				"special_bonus_craggy_exterior_attack"
 		"Ability16"				"special_bonus_armor_69"
 		"Ability17"				"special_bonus_attack_speed_200"
 

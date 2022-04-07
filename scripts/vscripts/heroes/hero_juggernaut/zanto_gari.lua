@@ -31,8 +31,7 @@ function modifier_zanto_gari:OnIntervalThink()
 end
 function zanto_gari:GetManaCost(level)
 	if self:GetCaster():HasScepter() then
-		local cooldown = self.BaseClass.GetManaCost(self, level) + (self:GetCaster():GetLevel() * 50)
-		return cooldown
+		return self:GetCaster():GetMaxMana() * self:GetSpecialValueFor("mana_cost_scepter") / 100
 	end
 	return self.BaseClass.GetManaCost(self, level)
 end
@@ -72,8 +71,7 @@ function zanto_gari:OnSpellStart(recastVector, warpVector, Interrupted)
 		end
 
 		target_flag = DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS
-		local ability_level = self:GetCaster():FindAbilityByName("zanto_gari"):GetLevel()
-		if self:GetCaster():HasScepter() and self:GetCaster():HasShard() and ability_level == 7 then
+		if self:GetCaster():HasScepter() and self:GetCaster():HasShard() and self:GetLevel() == 7 then
 			target_flag = DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ATTACK_IMMUNE + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
 		end
 

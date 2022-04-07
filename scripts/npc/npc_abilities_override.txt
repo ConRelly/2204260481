@@ -18027,18 +18027,6 @@
 			}
 		}
 	}
-	"tiny_tree_grab"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_count"				"9999"
-				"LinkedSpecialBonus"		"special_bonus_unique_tiny_6"
-			}
-		}
-	}
 	"tiny_toss_tree"
 	{
 		"AbilitySpecial"
