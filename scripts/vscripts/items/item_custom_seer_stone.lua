@@ -38,6 +38,7 @@ function modifier_item_custom_seer_stone:OnCreated()
 	self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_custom_seer_stone_buff", {})
 end
 function modifier_item_custom_seer_stone:OnDestroy()
+	if not IsServer() then return end
 	self:GetParent():RemoveModifierByName("modifier_item_custom_seer_stone_buff")
 end
 

@@ -460,11 +460,21 @@
 	"DOTA_Tooltip_ability_item_to_kardel_description"		"Meняeт пepcoнaжa нa Kardel."
 
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword"			"Master Of Weapons' Sword"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword_lore"	"Gifted Sword, From Who Mastered All Weapons..."
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_damage"			"+$damage"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_ms"				"+$move_speed"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_attack_range"		"+$attack_range_all"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_as"				"+$attack"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_all_stats"			"+$all"
+	"DOTA_Tooltip_modifier_true_master_dagger_bleed"					"Кровотечение"
+	"DOTA_Tooltip_modifier_true_master_dagger_bleed_description"		"Наносит 33%% от атаки физ. уроном каждую секунду игнорируя броню"
+
+	"DOTA_Tooltip_ability_true_master"					"The True Master Of Weapons"
+	"DOTA_Tooltip_ability_true_master_description"		"<h1>Long Edged Sword</h1> Attacking from 850 units away will have %sword_crit_chance%%% chance for a %sword_crit_damage%%% Crit. \n<h1>Forbidden Dagger</h1> Bleeding enemy takes 5% dmg AMP, using dagger gives you great mobility, uncaps MS & starts giving 3k MS after LV.65, dodging any Dmg with %dagger_dodge_chance%%% chance. \n<h1>Ancient Gun</h1> Has %dagger_true_strike%%% true-strike chance. <br> Allows to atk always except during disarm debuffs. <br> Gunshots deal x8 Dmg in 4 instances, fixed rate of 3 atk/sec then reloads for a sec."
+	"DOTA_Tooltip_ability_true_master_lore"		"Some choose bullets, others choose blades, why not ALL of them?"
+	"DOTA_Tooltip_modifier_true_master_sword"		"Long Edged Sword"
+	"DOTA_Tooltip_modifier_true_master_dagger"		"Forbidden Dagger"
+	"DOTA_Tooltip_modifier_true_master_gun"			"Ancient Gun"
 
 //############################################################################################################################
 
@@ -3571,25 +3581,25 @@
 
 
 	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn"				"Mana Burn"
-	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_Description"	"Destroys the target's mana, and deals damage equal to the mana burned."
-	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_Lore"			"The tome in Ultimyr describes one scarab with the ability eat away at the mind of lesser beings."
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_Description"	"Выжигает у выбранной цели ману, пропорциональную его текущего запаса, и наносит урон, равный выжженной мане."
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_Lore"		"Книга Ультимира описывает скарабея, который мог разъедать разум низших существ."
 	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_cast_range"		"Дaльнocть пpимeнeния:"
-	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_int_damage_pct"	"%Intelligence as Mana Burned:"
-	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_radius_scepter"	"SCEPTER RADIUS:"
-	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_scepter_description"		"Mana Burn hits all units in a small area."
-	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace"						"Spiked Carapace"
-	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_Description"			"When activated while above ground, Spiked Carapace reflects damage dealt to Nyx Assassin, as well as stunning the source of the damage. 
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_int_damage_pct"	"Сжигание маны от интеллекта:"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_radius_scepter"	"Радиус со скипeтрoм:"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_scepter_description"		"Mana Burn применяется так же и на цели вокруг основной цели."
 
-	While Burrowed, Spiked Carapace instantly stuns nearby enemies when cast."
-	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_Lore"				"While their carapace is relatively thin, it's guarded by a retractable field of razor-sharp spikes."
-	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_Note0"				"The damage is calculated after all reductions. Only 25% of your spell amp is used"
-	// "DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_Note1"				"Spiked Carapace will only trigger on damage from other player controlled units."
-	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_Note2"				"The damage reflected will have the same damage type as it had when it was dealt to Nyx."
-	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_mana_cost_per"		"%MANA/SEC:"
-	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_stun_duration"		"Длитeльнocть oглyшeния:"
-	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_stun_interval"		"STUN INTERVAL:"
-	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_damage_reduction_pct"	"%REDUCTION DAMAGE:"
-	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_damage_reflect_pct"	"%DAMAGE REFLECTED:"	
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace"						"Spiked Carapace"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_Description"			"Полностью блокирует часть урона, отражая урон и оглушая каждого, кто пытался его нанести. \n\nЕсли герой находится под действием Burrow, эта способность мгновенно оглушает всех врагов вокруг."
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_Lore"		"Несмотря на то что сам панцирь скарабея довольно тонкий, его надёжно защищают острые как бритва выдвижные шипы."
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_Note0"		"Наносит урон, уменьшенный вашими показателями сопротивления."
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_Note1"		"Отражённый урон имеет тот же тип, что и наносимый."
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_mana_cost_per"			"%Сжигание маны в секунду:"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_stun_duration"			"Длитeльнocть oглyшeния:"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_stun_interval"			"Интервал оглушения:"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_damage_reduction_pct"	"%Снижение урона:"
+	"DOTA_Tooltip_ability_mjz_nyx_assassin_spiked_carapace_damage_reflect_pct"		"%Отражение урона:"
+
+
 	"DOTA_Tooltip_ability_mjz_omniknight_degen_aura"					"Degen Aura"
 	"DOTA_Tooltip_ability_mjz_omniknight_degen_aura_Description"		"Greatly degenerates the movement and attack capabilities of enemy units that stray too near."
 	"DOTA_Tooltip_ability_mjz_omniknight_degen_aura_Lore"				"The holy embodiment of Purist Thunderwrath is enough to weaken those of lesser faith."

@@ -178,6 +178,26 @@ function create_popup(data)
     ParticleManager:SetParticleControl(particle, 3, color)
 end
 
+function CreateAOE(owner, point, radius, duration, color)
+    color = color or Vector(255, 255, 255)
+    local particle = ParticleManager:CreateParticle("particles/aoe_marker.vpcf", PATTACH_ABSORIGIN, owner.unit or owner)
+
+    ParticleManager:SetParticleControl(particle, 0, point)
+    ParticleManager:SetParticleControl(particle, 1, Vector(radius, duration, 1))
+    ParticleManager:SetParticleControl(particle, 2, color)
+    ParticleManager:ReleaseParticleIndex(particle)
+end
+
+function CreateLine(owner, point, target, duration, start_radius, end_radius)
+    local particle = ParticleManager:CreateParticle("particles/custom/line_aoe_warning.vpcf", PATTACH_ABSORIGIN, owner.unit or owner)
+
+    ParticleManager:SetParticleControl(particle, 1, point)
+    ParticleManager:SetParticleControl(particle, 2, target)
+    ParticleManager:SetParticleControl(particle, 3, Vector(end_radius, start_radius, 0))
+    ParticleManager:SetParticleControl(particle, 4, Vector(duration, 0, 0))
+    ParticleManager:ReleaseParticleIndex(particle)
+end
+
 function spell_crit(attacker, victim, damageTable)
 	if attacker and attacker:IsHero() then
 		if bit.band(damageTable.damage_flags, DOTA_DAMAGE_FLAG_HPLOSS) == DOTA_DAMAGE_FLAG_HPLOSS or bit.band(damageTable.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) == DOTA_DAMAGE_FLAG_REFLECTION then return end

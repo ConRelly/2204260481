@@ -87,6 +87,7 @@ function modifier_broken_wings:OnAttackLanded(keys)
 		if owner:HasItemInInventory("item_ultimate_ethereal_blade") then
 			AttackCD = AttackCD / 3
 		end
+		self:SetDuration(AttackCD, false)
 		target:EmitSound("Item_Desolator.Target")
 --[[
 		if not owner:HasModifier("modifier_broken_wings_feather_stacks") then
@@ -129,7 +130,6 @@ function modifier_broken_wings:OnAttackLanded(keys)
 			iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION,
 			flExpireTime = GameRules:GetGameTime() + 60,
 		})
-		self:SetDuration(AttackCD, false)
 	end
 end
 
@@ -175,23 +175,23 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 			local orig_dmg = keys.original_damage
 			local lvl = caster:GetLevel()
 			local spell_amp = caster:GetSpellAmplification(false)
-			local limit_magic = math.floor( lvl * 60000 / spell_amp)
-			local limit_pure = math.floor( lvl * 4000 / spell_amp)
+			local limit_magic = math.floor(lvl * 60000 / spell_amp)
+			local limit_pure = math.floor(lvl * 4000 / spell_amp)
 			local limit = 0
 			local used_stacks = 1
-			if DamageType == DAMAGE_TYPE_MAGICAL then 
+			if DamageType == DAMAGE_TYPE_MAGICAL then
 				limit = limit_magic
 			elseif DamageType == DAMAGE_TYPE_PURE then
-				limit = limit_pure	
-			end		
+				limit = limit_pure
+			end
 			if orig_dmg > limit then
-				if caster:HasModifier("modifier_broken_wings_divinity") then 
+				if caster:HasModifier("modifier_broken_wings_divinity") then
 					orig_dmg = limit
 				end
 				used_stacks = math.ceil(orig_dmg / limit + 1) + 3
 				if used_stacks > 50 then
 					used_stacks = max_used_stacks
-				end			
+				end
 			end
 			if caster:HasModifier("modifier_super_scepter") then
 				if caster:HasModifier("modifier_marci_unleash_flurry") then
@@ -199,10 +199,12 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 					if used_stacks > 3 then
 						used_stacks = 3
 					end
-				end                                 
-			end				
+				end
+			end
+			if used_stacks > self:GetStackCount() then self.hit = true return end
+
 			local damage = math.floor(orig_dmg * ((feather_add_dmg - 100) / 100))
-			local damage_popup = math.floor(orig_dmg * (feather_add_dmg / 100))				
+			local damage_popup = math.floor(orig_dmg * (feather_add_dmg / 100))
 			ApplyDamage({
 				victim = target,
 				attacker = caster,
@@ -218,6 +220,7 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 				type = "null_ultimate",
 				pos = 9
 			})
+
 			if caster:HasModifier("modifier_broken_wings_divinity") then self.hit = true return end
 			local cd = self:GetAbility():GetSpecialValueFor("feather_cd") * self:GetCaster():GetCooldownReduction()
 			Timers:CreateTimer(cd, function() self.hit = true end)

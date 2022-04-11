@@ -28169,28 +28169,18 @@
 		"HasScepterUpgrade"				"1"
 
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-		"AbilityCastRange"				"%cast_range"
-		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
-		"AbilityCooldown"				"28.0 20.0 12.0 4.0"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCooldown"				"28 20 12 4"
 		"AbilityManaCost"				"50"
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"cast_range"			"1600"
+			"int_damage_pct"		"4 4.5 5 9.5"
+			"radius_scepter"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"cast_range"			"1600"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int_damage_pct"		"400 450 500 950"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"radius_scepter"		"725"
-				"RequiresScepter"		"1"
+				"value"				"725"
+				"RequiresScepter"	"1"
 			}
 		}
 
@@ -28213,8 +28203,8 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_NyxAssassin.SpikedCarapace"
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "5"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
 		"AbilityCooldown"				"7"
 		"AbilityCastPoint"				"0"
 		"AbilityManaCost"				"10"
@@ -43300,6 +43290,47 @@
 				"var_type"			"FIELD_FLOAT"
 				"gunner_interval"	"1.2"
 			}
+		}
+	}
+
+// The True Master Of Weapons (1)
+	"true_master"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"heroes/hero_master_of_weapons/true_master"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"		"gyrocopter_flak_cannon"
+		"LevelsBetweenUpgrades"		"10"
+		"MaxLevel"					"10"
+		"AbilityValues"
+		{
+			"fixed_cooldown"			"3"
+			"sword_bonus_attack_range"	"500"
+			"sword_crit_chance"			"10 20 30 40 50 60 70 80 90 100"
+			"sword_crit_damage"			"100 200 300 450 600 750" // 6/10
+			"dagger_max_attack_range"	"125"
+			"dagger_dodge_chance"		"45"
+			"dagger_65_bonus_ms"		"3000"
+			"dagger_fixed_bat"			"0.9"
+			"dagger_true_strike"		"25"
+		}
+	}
+
+// Forbidden Knowledge (3)
+	"forbidden_knowledge"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"heroes/hero_master_of_weapons/forbidden_knowledge"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"		"gyrocopter_flak_cannon"
+		"RequiredLevel"				"1" //25
+		"MaxLevel"					"1"
+		"AbilityValues"
+		{
+			"fixed_cooldown"		"30"
+			"buff_duration"			"5"
+			"buff_as"				"200"
+			"buff_as_55"			"1500"
 		}
 	}
 }

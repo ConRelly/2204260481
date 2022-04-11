@@ -5,7 +5,7 @@ LinkLuaModifier("modifier_mows_remove_as_limit", "items/master_of_weapons_sword"
 
 if item_master_of_weapons_sword == nil then item_master_of_weapons_sword = class({}) end
 function item_master_of_weapons_sword:GetCooldown(level)
-	if self:GetCaster():HasModifier("modifier_123123_ability") then
+	if self:GetCaster():HasModifier("modifier_dzzl_good_juju") then
 		return 12 / self:GetCaster():GetCooldownReduction()
 	end
 	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
@@ -101,6 +101,8 @@ function item_master_of_weapons_sword:OnSpellStart()
 
 	image:EmitSound("Hero_Juggernaut.OmniSlash")
 
+	self:GetCaster():RemoveModifierByName("modifier_mows_remove_as_limit")
+
 	Timers:CreateTimer(FrameTime(), function()
 		if (not image:IsNull()) then
 			if image:GetUnitName() == "npc_dota_hero_juggernaut" then
@@ -109,19 +111,15 @@ function item_master_of_weapons_sword:OnSpellStart()
 		end
 	end)
 
-	self:GetCaster():RemoveModifierByName("modifier_mows_remove_as_limit")
-
 	if target:TriggerSpellAbsorb(self) then return end
 
 	Timers:CreateTimer(FrameTime(), function()
 		if (not image:IsNull()) then
-			local current_position = image:GetAbsOrigin()
-	
 			image:PerformAttack(target, true, true, true, true, false, false, false)
 
 			local trail_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf", PATTACH_ABSORIGIN, image)
 			ParticleManager:SetParticleControl(trail_pfx, 0, previous_position)
-			ParticleManager:SetParticleControl(trail_pfx, 1, current_position)
+			ParticleManager:SetParticleControl(trail_pfx, 1, image:GetAbsOrigin())
 			ParticleManager:ReleaseParticleIndex(trail_pfx)
 		end
 	end)
@@ -137,7 +135,7 @@ function modifier_mows:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 end
 function modifier_mows:DeclareFunctions()
-	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS}
+	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE}
 end
 function modifier_mows:GetModifierPreAttack_BonusDamage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_damage") end
@@ -159,6 +157,31 @@ function modifier_mows:GetModifierBonusStats_Agility()
 end
 function modifier_mows:GetModifierBonusStats_Intellect()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
+end
+function modifier_mows:GetModifierOverrideAbilitySpecial(params)
+	if self:GetParent() == nil or params.ability == nil then return 0 end
+
+	if self:GetParent():HasModifier("modifier_mows_slasher") then
+		if self:GetParent():HasModifier("modifier_fire_rapier_passive_bonus") then
+			if params.ability:GetAbilityName() == "item_fire_rapier" and params.ability_special_value == "proc_chance" then
+				return 1
+			end
+		end
+	end
+
+	return 0
+end
+function modifier_mows:GetModifierOverrideAbilitySpecialValue(params)
+	if self:GetParent():HasModifier("modifier_mows_slasher") then
+		if self:GetParent():HasModifier("modifier_fire_rapier_passive_bonus") then
+			if params.ability:GetAbilityName() == "item_fire_rapier" and params.ability_special_value == "proc_chance" then
+				local nSpecialLevel = params.ability_special_level
+				return 35--params.ability:GetLevelSpecialValueNoOverride("proc_chance", nSpecialLevel)
+			end
+		end
+	end
+
+	return 0
 end
 
 
@@ -202,12 +225,9 @@ function modifier_mows_slasher:IsPurgable() return false end
 function modifier_mows_slasher:IsDebuff() return false end
 --function modifier_mows_slasher:StatusEffectPriority() return 20 end
 function modifier_mows_slasher:GetStatusEffectName() return "particles/status_fx/status_effect_omnislash.vpcf" end
-
 function modifier_mows_slasher:OnCreated()
 	self.last_enemy = nil
-
 	if not self:GetAbility() then self:Destroy() return end
-
 	if IsServer() then
 		if self:GetCaster():GetPrimaryAttribute() == 0 then
 			self.MaxHealth = self:GetParent():GetMaxHealth()
@@ -216,15 +236,10 @@ function modifier_mows_slasher:OnCreated()
 		end
 --		Timers:CreateTimer(FrameTime(), function()
 			if (not self:GetParent():IsNull()) then
-				
 				self.bounce_range = self:GetAbility():GetSpecialValueFor("bounce_range")
-				
 --				self:GetAbility():SetRefCountsModifiers(false)
-
 				self:BounceAndSlaughter(true)
-				
 				local slash_rate = 0.125--self:GetCaster():GetSecondsPerAttack() / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
-
 				self:StartIntervalThink(slash_rate)
 			end
 --		end)
@@ -238,14 +253,15 @@ function modifier_mows_slasher:OnDestroy()
 		self:GetParent():MoveToPositionAggressive(self:GetParent():GetAbsOrigin())
 
 		if self:GetParent():HasModifier("modifier_mows_image") then
+			local caster = self:GetCaster()
 			local ability = self:GetAbility()
 			local image_team = self:GetParent():GetTeamNumber()
 			local image_loc = self:GetParent():GetAbsOrigin()
-			local damage = self:GetParent():GetAttackDamage()
+			local damage = caster:GetAttackDamage()
 			local radius = 2000
 			local repeat_times = 1 + (2 * math.floor(self:GetParent():GetLevel() / 40))
-			if self:GetCaster():GetPrimaryAttribute() == 0 then
-				if self:GetCaster():GetStrength() >= 7500 then
+			if self:GetParent():GetPrimaryAttribute() == 0 then
+				if self:GetParent():GetStrength() >= 7500 then
 					DMGflags = DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
 				else
 					DMGflags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
@@ -260,7 +276,7 @@ function modifier_mows_slasher:OnDestroy()
 						for _,enemy in pairs(nearby_enemies) do
 							ApplyDamage({
 								victim = enemy,
-								attacker = self:GetCaster(),
+								attacker = caster,
 								ability = ability,
 								damage = damage,
 								damage_type = DAMAGE_TYPE_PHYSICAL,
@@ -268,11 +284,11 @@ function modifier_mows_slasher:OnDestroy()
 							})
 						end
 						if i == 1 or (i + 1 % 3 == 0) then
-							local burst = ParticleManager:CreateParticle("particles/items3_fx/blink_overwhelming_burst.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
+							local burst = ParticleManager:CreateParticle("particles/items3_fx/blink_overwhelming_burst.vpcf", PATTACH_WORLDORIGIN, caster)
 							ParticleManager:SetParticleControl(burst, 0, image_loc)
 							ParticleManager:SetParticleControl(burst, 1, Vector(radius, 500, 500))
 							ParticleManager:ReleaseParticleIndex(burst)
-							EmitSoundOnLocationWithCaster(image_loc, "Blink_Layer.Overwhelming", self:GetCaster())
+							EmitSoundOnLocationWithCaster(image_loc, "Blink_Layer.Overwhelming", caster)
 						end
 					end
 				end)
@@ -413,7 +429,4 @@ function modifier_mows_remove_as_limit:RemoveOnDeath() return false end
 function modifier_mows_remove_as_limit:DeclareFunctions()
 	return {MODIFIER_PROPERTY_IGNORE_ATTACKSPEED_LIMIT}
 end
-function modifier_mows_remove_as_limit:GetModifierAttackSpeed_Limit()
-	return 1
-end
-
+function modifier_mows_remove_as_limit:GetModifierAttackSpeed_Limit() return 1 end

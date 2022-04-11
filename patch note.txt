@@ -1825,11 +1825,11 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 * Removed vanilla Venge passive (command aura) from the random pool for: broodmother spiders, chen units, and Hired gon (solo helper unit). Seems it was crashing if the unit(non-hero) had Aghanim buff and died.
 * Added speedsters to mimic ignore list and increased cd.
 * Sniper Headshot now has a Super Scepter effect.
-* Fixed Lyon dagon triggering an extra loop (dagon--> Lyon ult --> dagon) resulting in higher stacks/time and 2x dmg.
+* Fixed Lion dagon triggering an extra loop (dagon--> Lion ult --> dagon) resulting in higher stacks/time and 2x dmg.
 * Broodmother has a new talent for Q.
 * Some Visage talents swapped around and buffed and added seeker passive on the lvl 3 birds.
 * Boss Spectre dispersion replaced with a custom one (this one should be less laggy). does not stack with dmg reduction.
-* Hammer of the Divine: Chaos Strike (casual) now stacks
+* Hammer of the Divine: Chaos Strike (vanilla) now stacks
 * Culling Blade (Axe):
 	-- Added Super Scepter effect
 	-- Reduced Aghanim's Scepter AOE from 655 to 200
@@ -1850,11 +1850,21 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 
 * Another try to fix Kardel and Piety
-* Fixed Bloodstone (casual)
+* Fixed Bloodstone (vanilla)
 * Fixed (and removed) Remote Mines (Techies)
 * Fixed Shadow Wave (Dazzle) Damage
 * Fixed Crystal Nova (Crystal Maiden) Radius
+* Fixed Flash Golem (Undying) damage amplification
+* Fixed Rip Soul (Undying) damage per unit
+* Fixed Walrus Kick bugs
+* Fixed Broken Wings when the number of stacks was negative
+* Fixed Burrow (Nyx Assassin) damage reduction + ability interactions
 * Fixed random skills scrolls for some heroes
+* Zanto Gari (Juggernaut): Changed Aghanim's Scepter Mana Cost
+* Craggy Exterior (Tiny):
+	-- Procs against all units
+	-- Added damage factor
+	-- Replaced 2 new talents (both, lvl 20)
 * Proximity Mines (Techies):
 	-- Is now an ultimate ability
 	-- Levels between upgrades increased by 2 levels

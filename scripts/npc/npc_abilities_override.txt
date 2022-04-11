@@ -7637,19 +7637,20 @@
 			}
 		}
 	}
-	
+
+// Nyx Assassin: Impale
 	"nyx_assassin_impale"
 	{
-		"AbilityCooldown"				"12.0 11.0 10.0 9.0"
+		"AbilityCooldown"				"12 11 10 9"
 		"AbilitySpecial"
 		{
 			"02"
 			{	
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"1.0 1.1 1.2 1.5"
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"1.0 1.1 1.2 1.5"
 				"LinkedSpecialBonus"	"special_bonus_unique_nyx_4"
 			}
-			"06"
+			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"impale_damage"			"90 160 530 1950"
@@ -7657,6 +7658,8 @@
 			}
 		}
 	}
+
+// Nyx Assassin: Burrow (Scepter ability)
 	"nyx_assassin_burrow"
 	{
 		"AbilityCastPoint"				"0.1"
@@ -7665,24 +7668,22 @@
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
+				"var_type"				"FIELD_FLOAT"
 				"health_regen_rate"		"10"
-				"RequiresScepter"	"1"
-			}			
+			}
 			"02"
 			{
-				"var_type"			"FIELD_FLOAT"
+				"var_type"				"FIELD_FLOAT"
 				"mana_regen_rate"		"0.75"
-				"RequiresScepter"	"1"
 			}
 			"03"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_reduction"			"35"
-				"RequiresScepter"	"1"
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduction"		"35"
 			}
 		}
 	}
+
 	"obsidian_destroyer_arcane_orb"
 	{
 		"AbilityCooldown"				"4 3 2 0.25"
@@ -7700,7 +7701,8 @@
 				"mana_cost_percentage"	"5"
 			}			
 		}
-	}	
+	}
+
 	"obsidian_destroyer_astral_imprisonment"
 	{
 		// General
@@ -11773,35 +11775,18 @@
 	}
 	"tusk_snowball"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"5566"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"			
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Tusk.Snowball.Cast"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1250"
-		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"21 20 19 18"
-
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"75 75 75 75"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"21 19 17 15"
+		"AbilityManaCost"				"75"
 		"AbilitySpecial"
 		{
 			"01"
@@ -11814,7 +11799,6 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"snowball_speed"			"600 625 650 675"
-				"LinkedSpecialBonus"		"special_bonus_unique_tusk_3"
 			}
 			"03"
 			{
@@ -11856,15 +11840,18 @@
 				"var_type"					"FIELD_INTEGER"
 				"snowball_grab_radius"		"350"
 			}
+			"11"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"snowball_speed_bonus"		"50"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
-	}	
+	}
+	
 	"tusk_walrus_kick"
 	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"5672"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -11872,73 +11859,25 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"MaxLevel"						"7"
-		"LevelsBetweenUpgrades"		 "7"
-		"RequiredLevel"				 "1"
-		"FightRecapLevel"				"1"
+		"LevelsBetweenUpgrades"			"7"
+		"RequiredLevel"					"1"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"				"1"
 		"AbilitySound"					"Hero_Tusk.WalrusKick.Target"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.2"
-		"AbilityCastRange"				"150"
+		"AbilityCastRange"				"250"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"8"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12"
 		"AbilityManaCost"				"100"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"crit_multiplier"			"0.0"
-				"RequiresScepter"	"1"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"air_time"					"1.0"
-				"RequiresScepter"	"1"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"push_length"				"300"
-				"RequiresScepter"	"1"
-			}			
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"move_slow"					"40"
-				"RequiresScepter"	"1"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"slow_duration"				"4"
-				"RequiresScepter"	"1"
-			}			
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"cooldown_scepter"			"8"
-				"RequiresScepter"	"1"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"350 950 2200 4100 8200 26300 82500"
-				"RequiresScepter"	"1"
-			}
+			"air_time"						"1.0"
+			"push_length"					"300"
+			"move_slow"						"40"
+			"slow_duration"					"4"
+			"damage"						"350 950 2200 4100 8200 26300 82500"
+			"search_radius"					"250"
+			"creep_cooldown_reduction_pct"	"50"
 		}
 	}
 
@@ -11979,6 +11918,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"damage_amp"				"10"
+				"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
 			}
 			"04"
 			{
@@ -11997,6 +11937,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"damage_per_unit"			"60 175 420 950"
+				"LinkedSpecialBonus"		"special_bonus_unique_undying_6"
 			}			
 			"02"
 			{
