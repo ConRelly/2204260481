@@ -2999,6 +2999,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"ms_dmg_pct"			"50"
 		}
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"marciSS_ms_dmg_pct"			"140"
+		}		
 	}
 }
 
@@ -18624,10 +18629,10 @@
 		{
 			"cast_range_bonus"		"1500"
 			"vision_bonus"			"2500"
-			"bonus_mana"			"2000"
-			"bonus_mana_regen"		"200"
+			"bonus_mana"			"8500"
+			"bonus_mana_regen"		"250"
 			"radius"				"1200"
-			"duration"				"6"
+			"duration"				"15"
 		}
 	}
 

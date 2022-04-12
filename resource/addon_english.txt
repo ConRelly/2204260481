@@ -3760,7 +3760,7 @@ DISPEL TYPE: Strong Dispel"
 	"DOTA_Tooltip_ability_mjz_pudge_rot_Note0"	"Using Rot doesn't interrupt channeling."
 	"DOTA_Tooltip_ability_mjz_pudge_rot_Note1"	"Rot hits invisible units."
 	"DOTA_Tooltip_ability_mjz_pudge_rot_Note2"	"If Pudge is silenced, he can't deactivate Rot if it's activated."
-	"DOTA_Tooltip_ability_mjz_pudge_rot_Note3"	"Pudge can deny himself with this ability."
+	"DOTA_Tooltip_ability_mjz_pudge_rot_Note3"	"Pudge can't deny himself with this ability."
 	"DOTA_Tooltip_modifier_mjz_pudge_rot"				"Rot"
 	"DOTA_Tooltip_modifier_mjz_pudge_rot_Description"	"Causes damage to every fighter in a radius every second."
 	"DOTA_Tooltip_modifier_mjz_pudge_rot_effect"				"Rot"
@@ -3961,7 +3961,7 @@ DISPEL TYPE: Strong Dispel"
 
 
 "DOTA_Tooltip_ability_mjz_slark_dark_pact"				"Dark Pact"
-"DOTA_Tooltip_ability_mjz_slark_dark_pact_Description"	"After a short delay, Slark sacrifices some of his life blood, purging most negative debuffs and dealing damage to enemy units around him and to himself.  Slark only takes 5%% of the damage.
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_Description"	"After a short delay, Slark sacrifices some of his life blood, purging most negative debuffs and dealing damage to enemy units around him and to himself.  Slark only takes 20% of the damage and is not affected by spell amp against him.
 
 DISPEL TYPE: Strong Dispel"
 "DOTA_Tooltip_ability_mjz_slark_dark_pact_Lore"			"Slithereen are capable of quickly regrowing appendages, in case of critical injury, to save their own lives."
@@ -10297,7 +10297,7 @@ Contains all random skills"
 
 	"DOTA_Tooltip_ability_marci_unleash_custom"						"Unleash"
 	"DOTA_Tooltip_ability_marci_unleash_custom_Description"			"Marci taps a hidden power, gaining Fury charges that allow her to deliver a rapid sequence of strikes. The last strike in every Fury combo creates a damaging pulse around the target that slows movement and attack speed for %pulse_debuff_duration%s. In between Fury combos, Marci is unable to attack for %time_between_flurries%s.\n\nMarci receives a basic dispel when Unleash is cast and gains %bonus_movespeed%%% movement speed.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Some Items and Abilites will get improved when ultimate is active.(press Alt)"
-	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Super Scepter improve list: CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger."
+	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Super Scepter improve list: CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger, Speedsters."
 	"DOTA_Tooltip_ability_marci_unleash_custom_Lore"					"Though some have sought to understand its origins, Marci rebuffs all attempts to divine the source of her power."
 	"DOTA_Tooltip_ability_marci_unleash_custom_duration"				"DURATION:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_charges_per_flurry"		"STRIKES PER FURY:"

@@ -7,7 +7,7 @@ function AIThink()
 
     local ancient = Entities:FindByName(nil, "dota_goodguys_fort")
 	
-    if ancient and ancient:IsAlive() and thisEntity:IsAlive() then
+    if ancient and ancient:IsAlive() and not thisEntity:IsNull() and thisEntity:IsAlive() then
 		if not thisEntity:IsInvisible() and not thisEntity:IsChanneling() and thisEntity:GetCurrentActiveAbility() == nil and not thisEntity:IsCommandRestricted() then
 			if (CalcDistanceBetweenEntityOBB(thisEntity, ancient) > 100) then
 				if not thisEntity:IsDisarmed() then

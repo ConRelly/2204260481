@@ -4743,7 +4743,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"burn_damage_pct"		"7.5"
+			"burn_damage_pct"		"8.5"
 			"LinkedSpecialBonus"	"special_bonus_unique_doom_1"
 		}
 		"03"
@@ -4909,19 +4909,12 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration_scepter"		"10"
-			"RequiresScepter"		"1"
+			"deniable_pct"			"10"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"scepter_radius"		"900"
-			"RequiresScepter"		"1"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"deniable_pct"			"15"
+			"scepter_cooldown"		"17"
 		}
 	}
 }

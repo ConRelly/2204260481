@@ -1849,7 +1849,7 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 
 
 
-* Another try to fix Kardel and Piety
+* Fixed Kardel and Piety
 * Fixed Bloodstone (vanilla)
 * Fixed (and removed) Remote Mines (Techies)
 * Fixed Shadow Wave (Dazzle) Damage
@@ -1861,6 +1861,10 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 * Fixed Burrow (Nyx Assassin) damage reduction + ability interactions
 * Fixed random skills scrolls for some heroes
 * Zanto Gari (Juggernaut): Changed Aghanim's Scepter Mana Cost
+* Pudge Rot: now is not lethal dmg for pudge anymore.
+* Slark darkpact self dmg is not affected by spell amp anymore and increased the % self dmg.
+* Added another Marci Unleash SS:
+	-- Speedsters: from 50% ms as bonus dmg to 140%
 * Craggy Exterior (Tiny):
 	-- Procs against all units
 	-- Added damage factor
@@ -1893,7 +1897,7 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 	-- Heal to enemy reduced by 50%
 * Seer Stone:
 	-- Added active ability - Reveal (CD 60 sec)
-	-- Bonus mana reduced from 9500 to 2000
+	-- Bonus mana reduced from 9500 to 8500
 * Second Vladmir's Offering: Fixed Mana Regen aura
 * Mimic Mace:
 	-- Mana Regen reduced by 70 (Bloodstone no longer gives Mana Regen)
@@ -1938,7 +1942,7 @@ Maple's Armor - Heavy armor buff from 50% dmg avoid chance to 85%
 LionDagonV2 - greater blast staff passive has 25% chance to trigger daggon instead of 17%
 Antimage Q = Acts as antimage lvl 20 talent (ignores base armor)
 Insatiable Hunger = doubles the chance of the SS effect.
-
+Speedsters : from 50% ms as bonus dmg to 140%
 
 
 can youse this format for marci SS effect:

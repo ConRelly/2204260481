@@ -85,7 +85,7 @@ if IsServer() then
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
 		local damage = self.damage * self.rate
-		local self_damage = damage / 20
+		local self_damage = damage / 5
 
 		if self.particleFire <= 0 then
 			local p_name = "particles/units/heroes/hero_slark/slark_dark_pact_pulses.vpcf"
@@ -131,7 +131,7 @@ if IsServer() then
 			victim = parent,
 			damage = self_damage,
 			damage_type = ability:GetAbilityDamageType(),
-			damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL + DOTA_DAMAGE_FLAG_HPLOSS,
+			damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 			attacker = parent,
 			ability = ability,
 		})

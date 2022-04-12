@@ -89,6 +89,7 @@ if IsServer() then
 				attacker = caster,
 				damage = flDamagePerTick,
 				damage_type = ability:GetAbilityDamageType(),
+				damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL,
 				ability = ability,
 			}
 			ApplyDamage( damage )

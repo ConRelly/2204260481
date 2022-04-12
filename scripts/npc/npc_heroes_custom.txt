@@ -2546,5 +2546,143 @@
 		"ShowcasePlayIdleExpression" "0"
 	}
 
+
+"npc_dota_hero_kardel"
+    {
+        //"BaseClass"             "npc_dota_hero_sniper"
+        "Model"                 "models/heroes/sniper/sniper.vmdl"
+        "IdleExpression"        "scenes/sniper/sniper_exp_idle_01.vcd"
+        "SoundSet"              "Hero_Sniper"
+        "Enabled"               "1"
+        "Role"                  "Carry,Nuker"
+        "Rolelevels"            "3,3"
+        "Complexity"            "1"
+        "Team"                  "Good"
+        "HeroID"                "145" //35 was sniper
+        "HeroOrderID"           "170" // maybe this one needs to be the same as hero ID
+        "ModelScale"            "0.840000"
+        "LoadoutScale"          "1"
+        "HeroGlowColor"         "237 154 15"
+        "PickSound"             "sniper_snip_spawn_01"
+        "BanSound"              "sniper_snip_anger_01"
+        "GibType"               "default"
+        "LastHitChallengeRival"     "npc_dota_hero_drow_ranger"
+        "HeroSelectSoundEffect"     "Hero_Sniper.Pick"
+
+        "Ability1"      "sniper_shoot"
+        "Ability2"      "pocket_portal"
+        "Ability3"      "kardels_skills"
+        "Ability4"      "reload_bullet"
+        "Ability5"      "change_bullets_type"
+        "Ability6"      "hunting_mark"
+        "Ability10"     "special_bonus_kardels_skills_atr_gain"
+        "Ability11"     "special_bonus_sniper_shoot_bullet_dmg"
+        "Ability12"     "special_bonus_kardel_reloading"
+        "Ability13"     "special_bonus_pocket_portal_cooldown"
+        "Ability14"     "special_bonus_attack_range_400"
+        "Ability15"     "special_bonus_hunting_mark_direct_shot_bonus"
+        "Ability16"     "special_bonus_pocket_portal_evasion"
+        "Ability17"     "special_bonus_kardels_skills_dmg"
+
+        "ArmorPhysical"                 "-1"
+        "AttackCapabilities"            "DOTA_UNIT_CAP_RANGED_ATTACK"
+        "AttackDamageMin"               "13"
+        "AttackDamageMax"               "19"
+        "AttackRate"                    "1.4"
+        "AttackAnimationPoint"          "0.170000"
+        "AttackSpeedActivityModifiers"
+        {
+            "fast"      "266"
+            "faster"    "376"
+            "fastest"   "487"
+        }
+        "AttackAcquisitionRange"        "950"
+        "AttackRange"                   "550"
+        "ProjectileModel"               "particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
+        "ProjectileSpeed"               "3000"
+        "AttributePrimary"              "DOTA_ATTRIBUTE_AGILITY"
+        "AttributeBaseStrength"         "19"
+        "AttributeStrengthGain"         "2.0000"
+        "AttributeBaseIntelligence"     "15"
+        "AttributeIntelligenceGain"     "2.600000"
+        "AttributeBaseAgility"          "27"
+        "AttributeAgilityGain"          "9.4"
+        "MovementSpeed"                 "285"
+        "MovementTurnRate"              "0.700000"
+        "HasAggressiveStance"           "1"
+        "VisionNighttimeRange"          "1400"
+        "BoundsHullName"                "DOTA_HULL_SIZE_HERO"
+        "particle_folder"               "particles/units/heroes/hero_sniper"
+        "GameSoundsFile"                "soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+        "VoiceFile"                     "soundevents/voscripts/game_sounds_vo_sniper.vsndevts"
+        "RenderablePortrait"
+        {
+            "Particles"
+            {
+                "particles/units/heroes/hero_sniper/sniper_loadout.vpcf"        "loadout"
+            }
+        }
+        "ItemSlots"
+        {
+            "0"
+            {
+                "SlotIndex"     "0"
+                "SlotName"      "weapon"
+                "SlotText"      "#LoadoutSlot_Weapon"
+                "TextureWidth"      "256"
+                "TextureHeight"     "256"
+                "MaxPolygonsLOD0"       "2500"
+                "MaxPolygonsLOD1"       "1000"
+            }
+            "1"
+            {
+                "SlotIndex"     "1"
+                "SlotName"      "head"
+                "SlotText"      "#LoadoutSlot_Head_Accessory"
+                "TextureWidth"      "512"
+                "TextureHeight"     "512"
+                "MaxPolygonsLOD0"       "3000"
+                "MaxPolygonsLOD1"       "1200"
+            }
+            "2"
+            {
+                "SlotIndex"     "2"
+                "SlotName"      "shoulder"
+                "SlotText"      "#LoadoutSlot_Shoulder"
+                "TextureWidth"      "512"
+                "TextureHeight"     "512"
+                "MaxPolygonsLOD0"       "3000"
+                "MaxPolygonsLOD1"       "1200"
+            }
+            "3"
+            {
+                "SlotIndex"     "3"
+                "SlotName"      "arms"
+                "SlotText"      "#LoadoutSlot_Arms"
+                "TextureWidth"      "256"
+                "TextureHeight"     "256"
+                "MaxPolygonsLOD0"       "1500"
+                "MaxPolygonsLOD1"       "600"
+            }
+            "4"
+            {
+                "SlotIndex"     "4"
+                "SlotName"      "back"
+                "SlotText"      "#LoadoutSlot_Back"
+                "TextureWidth"      "512"
+                "TextureHeight"     "512"
+                "MaxPolygonsLOD0"       "2500"
+                "MaxPolygonsLOD1"       "1000"
+            }
+            "5"
+            {
+                "SlotIndex"     "5"
+                "SlotName"      "taunt"
+                "SlotText"      "#LoadoutSlot_Taunt"
+            }
+        }
+    }
+
+
 }
  

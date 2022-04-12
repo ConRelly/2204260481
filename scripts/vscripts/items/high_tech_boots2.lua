@@ -18,7 +18,7 @@ end
 modifier_item_high_tech_boots2 = class({})
 function modifier_item_high_tech_boots2:IsHidden() return true end
 function modifier_item_high_tech_boots2:IsPurgable() return false end
-function modifier_item_high_tech_boots2:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+--function modifier_item_high_tech_boots2:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_item_high_tech_boots2:CheckState() 
 	return {[MODIFIER_STATE_NO_UNIT_COLLISION] = true, [MODIFIER_STATE_UNSLOWABLE] = true}
 end
@@ -37,28 +37,50 @@ function modifier_item_high_tech_boots2:DeclareFunctions()
     }
 end
 function modifier_item_high_tech_boots2:GetModifierMoveSpeedBonus_Special_Boots()
-	return self:GetAbility():GetSpecialValueFor("bonus_movement_speed")
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("bonus_movement_speed")
+	end	
 end
 function modifier_item_high_tech_boots2:GetModifierEvasion_Constant()
-	return self:GetAbility():GetSpecialValueFor("bonus_evasion")
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("bonus_evasion")
+	end	
 end
 function modifier_item_high_tech_boots2:GetModifierBonusStats_Agility()
-	return self:GetAbility():GetSpecialValueFor("all_stats")
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("all_stats")
+	end	
 end
 function modifier_item_high_tech_boots2:GetModifierBonusStats_Strength()
-	return self:GetAbility():GetSpecialValueFor("all_stats")
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("all_stats")
+	end	
 end
 function modifier_item_high_tech_boots2:GetModifierBonusStats_Intellect()
-	return self:GetAbility():GetSpecialValueFor("all_stats")
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("all_stats")
+	end	
 end
 function modifier_item_high_tech_boots2:GetModifierMoveSpeedBonus_Percentage()
-	return self:GetAbility():GetSpecialValueFor("bonus_movement")
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("bonus_movement")
+	end	
 end
 function modifier_item_high_tech_boots2:GetModifierPreAttack_BonusDamage()
-	return self:GetParent():GetIdealSpeed() * self:GetAbility():GetSpecialValueFor("ms_dmg_pct") / 100
+	if self:GetAbility() then
+		local caster = self:GetParent()
+		if caster:HasModifier("modifier_marci_unleash_flurry") then
+			if caster:HasModifier("modifier_super_scepter") then
+				return caster:GetIdealSpeed() * self:GetAbility():GetSpecialValueFor("marciSS_ms_dmg_pct") / 100
+			end
+		end	
+		return self:GetParent():GetIdealSpeed() * self:GetAbility():GetSpecialValueFor("ms_dmg_pct") / 100
+	end	
 end
 function modifier_item_high_tech_boots2:GetModifierPhysicalArmorBonus()
-	return self:GetAbility():GetSpecialValueFor("bonus_armor")
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("bonus_armor")
+	end	
 end
 function modifier_item_high_tech_boots2:GetModifierIgnoreMovespeedLimit() return 1 end
 function modifier_item_high_tech_boots2:GetModifierTurnRate_Override() return 1 end
