@@ -43,27 +43,6 @@
 
 "DOTAAbilities"
 {
-	"special_bonus_attributes"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"730"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"MaxLevel"						"14"
-		"LevelsBetweenUpgrades"			"3"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"		"30 60 90 120 150 180 210 240 270 300 330 360 390 420"
-			}
-		}
-	}	
-
 	//Unconventional xx1 mana cost = no demon talon processing
 	"special_bonus_unique_alchemist_3"
 	{
@@ -7680,6 +7659,11 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_reduction"		"35"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"carapace_radius"		"600"
 			}
 		}
 	}

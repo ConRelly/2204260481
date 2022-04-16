@@ -30,7 +30,14 @@ function modifier_true_master:IsPurgable() return false end
 function modifier_true_master:RemoveOnDeath() return false end
 function modifier_true_master:OnCreated()
 	if not IsServer() then return end
-	self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_true_master_sword", {})
+	local RandomWeapon = RandomInt(1, 3)
+	if RandomWeapon == 1 then
+		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_true_master_sword", {})
+	elseif RandomWeapon == 2 then
+		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_true_master_dagger", {})
+	elseif RandomWeapon == 3 then
+		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_true_master_gun", {})
+	end
 end
 function modifier_true_master:DeclareFunctions()
 	return {MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING, MODIFIER_PROPERTY_MODEL_SCALE}
@@ -61,7 +68,7 @@ end
 function modifier_true_master_sword:GetModifierPreAttack_CriticalStrike(params)
 	if IsServer() then
 		if RollPercentage(self:GetAbility():GetSpecialValueFor("sword_crit_chance")) then
-			return self:GetAbility():GetSpecialValueFor("sword_crit_damage")
+			return self:GetAbility():GetLevelSpecialValueFor("sword_crit_damage", RandomInt(1, self:GetAbility():GetLevel()))
 		end
 		return 0
 	end
@@ -97,27 +104,37 @@ function modifier_true_master_dagger:GetModifierAvoidDamage(keys)
 	return 0
 end
 
+-- Dagger Bleeding
 modifier_true_master_dagger_bleed = class({})
 function modifier_true_master_dagger_bleed:IsHidden() return false end
-function modifier_true_master_dagger_bleed:IsPurgable() return true end
+function modifier_true_master_dagger_bleed:IsPurgable() return self.Purgable end
 function modifier_true_master_dagger_bleed:GetTexture() return "custom/abilities/mows_bleed" end
 function modifier_true_master_dagger_bleed:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
-function modifier_true_master_dagger_bleed:OnCreated()
+function modifier_true_master_dagger_bleed:OnCreated(kv)
 	if not IsServer() then return end
-	self.bleed_damage = self:GetCaster():GetAttackDamage() * 0.33
+	self.Purgable = kv.purgable or true
+	self.bleed_damage = self:GetCaster():GetAttackDamage() * self:GetAbility():GetSpecialValueFor("dagger_bleed_damage") / 100
+	if self.Purgable == false then
+		self.bleed_damage = self.bleed_damage + (math.floor((self:GetParent():GetMaxHealth() - self:GetParent():GetHealth()) / 8000) * 0.1 * self.bleed_damage)
+	end
 	self:StartIntervalThink(1)
 end
 function modifier_true_master_dagger_bleed:OnIntervalThink()
 	if not IsServer() then return end
+	if not self:GetAbility() then self:Destroy() return end
 	ApplyDamage({
 		victim = self:GetParent(),
 		attacker = self:GetCaster(),
-		ability = nil,
+		ability = self:GetAbility(),
 		damage = self.bleed_damage,
 		damage_type = DAMAGE_TYPE_PHYSICAL,
 		damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 	})
 end
+function modifier_true_master_dagger_bleed:DeclareFunctions()
+	return {MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE}
+end
+function modifier_true_master_dagger_bleed:GetModifierIncomingDamage_Percentage() return self:GetAbility():GetSpecialValueFor("dagger_bleed_damage_amp") end
 
 ---------
 -- Gun --
@@ -128,6 +145,7 @@ function modifier_true_master_gun:IsPurgable() return false end
 function modifier_true_master_gun:RemoveOnDeath() return false end
 function modifier_true_master_gun:OnCreated()
 	if not IsServer() then return end
+	self.ProjectileSpeed = self:GetParent():GetProjectileSpeed()
 	self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_true_master_gun_reload", {})
 	self:GetParent():SetAttackCapability(DOTA_UNIT_CAP_RANGED_ATTACK)
 	AttachWearable(self:GetParent(), "models/items/pangolier/pangolier_immortal_musket/pangolier_immortal_musket.vmdl", nil)
@@ -139,7 +157,7 @@ function modifier_true_master_gun:OnDestroy()
 	RemoveWearables(self:GetParent())
 end
 function modifier_true_master_gun:DeclareFunctions()
-	return {MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_EVENT_ON_ATTACK_START, MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS, MODIFIER_PROPERTY_PROJECTILE_NAME, MODIFIER_PROPERTY_ATTACK_POINT_CONSTANT, MODIFIER_PROPERTY_FIXED_ATTACK_RATE}
+	return {MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_EVENT_ON_ATTACK_START, MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS, MODIFIER_PROPERTY_PROJECTILE_NAME, MODIFIER_PROPERTY_ATTACK_POINT_CONSTANT, MODIFIER_PROPERTY_FIXED_ATTACK_RATE, MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS}
 end
 function modifier_true_master_gun:GetModifierAttackPointConstant()
 	return -0.3
@@ -147,10 +165,17 @@ end
 function modifier_true_master_gun:GetModifierAttackRangeBonus()
 	return 99999
 end
-function modifier_true_master_gun:GetModifierFixedAttackRate() return 0.33 end
+function modifier_true_master_gun:GetModifierFixedAttackRate() return self:GetAbility():GetSpecialValueFor("gun_bat") end
+function modifier_true_master_gun:GetModifierProjectileSpeedBonus()
+	if self:GetParent():IsRangedAttacker() then
+		return self.ProjectileSpeed * 2
+	end
+	return 0
+end
 function modifier_true_master_gun:OnAttackStart(keys)
 	if not IsServer() then return end
 	if self:GetParent() == keys.attacker then
+		if keys.target == nil then return end
 		self:GetParent():EmitSound("Hero_Pangolier.Swashbuckle.Musket")
 		self:GetParent():StartGesture(ACT_DOTA_CAST_ABILITY_1_END)
 
@@ -163,6 +188,7 @@ end
 function modifier_true_master_gun:OnAttackLanded(keys)
 	if not IsServer() then return end
 	if self:GetParent() == keys.attacker then
+		if keys.target == nil then return end
 		local instance = 4
 		for i = 1, (instance - 1) do
 			ApplyDamage({
@@ -188,6 +214,7 @@ function modifier_true_master_gun:CheckState()
 	return state
 end
 
+-- Gun Reload
 modifier_true_master_gun_reload = class({})
 function modifier_true_master_gun_reload:IsHidden() return self:GetStackCount() > 0 end
 function modifier_true_master_gun_reload:IsDebuff() return true end
@@ -227,8 +254,8 @@ end
 
 
 
-function AttachWearable(unit, modelPath,part)
-	local wearable = SpawnEntityFromTableSynchronous("prop_dynamic", {model = modelPath, DefaultAnim=animation, targetname=DoUniqueString("prop_dynamic")})
+function AttachWearable(unit, modelPath, part)
+	local wearable = SpawnEntityFromTableSynchronous("prop_dynamic", {model = modelPath, DefaultAnim = animation, targetname = DoUniqueString("prop_dynamic")})
 
 	wearable:FollowEntity(unit, true)
 	

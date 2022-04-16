@@ -17688,19 +17688,19 @@
 
 
 
-//Level 2 Chests
-"item_chest_2"
-{
-	"BaseClass"						"item_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-	"ItemGloballyCombinable"		"1"
-	"AbilityTextureName"			"chest_2"
-	"ItemQuality"					"rare"
-	"ItemPurchasable"				"1"
-	"ItemSellable"					"1"
-	"ItemCost"						"1000"	
-}
+// Chest
+	"item_chest_2"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemGloballyCombinable"		"1"
+		"AbilityTextureName"			"chest_2"
+		"ItemQuality"					"rare"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemCost"						"1000"
+	}
 
 "item_recipe_grove_bow_copy"
 {
@@ -17854,24 +17854,41 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"spell_lifesteal"			"20"
+			"spell_lifesteal"		"20"
 		}
 	}
 }
 
-//Level 3 Chests
-"item_chest_3"
-{
-	"BaseClass"						"item_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"chest_3"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemGloballyCombinable"		"1"
-	"ItemQuality"					"rare"
-	"ItemPurchasable"				"1"
-	"ItemSellable"					"1"
-	"ItemCost"						"2000"	
-}
+// Greater Chest
+	"item_chest_3"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"chest_3"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemGloballyCombinable"		"1"
+		"ItemQuality"					"rare"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemCost"						"2000"
+	}
+// Greater Chest Recipe
+	"item_recipe_chest_3"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_chest_3"
+		"ItemIsNeutralDrop"				"0"
+		"ItemRequirements"
+		{
+			"01"						"item_chest_2;item_chest_2"
+		}
+	}
+
 "item_dev_undying"
 {
 	"BaseClass"                     "item_helm_of_the_undying"
@@ -18028,35 +18045,36 @@
 
 
 
-//Level 4 Chests
-"item_chest_4"
-{
-	"BaseClass"						"item_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"chest_4"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-	"ItemGloballyCombinable"		"1"
-	"ItemQuality"					"rare"
-	"ItemPurchasable"				"1"
-	"ItemSellable"					"1"
-	"ItemCost"						"3000"
-}
-"item_recipe_chest_4"
-{
-	"BaseClass"						"item_datadriven"
-	"Model"							"models/props_gameplay/recipe.vmdl"
-	"AbilityTextureName"			"item_recipe"
-	"ItemCost"						"0"	
-	"ItemShopTags"					""
-	"ItemRecipe"					"1"
-	"ItemResult"					"item_chest_4"
-	"ItemIsNeutralDrop"				"1"
-	"ItemRequirements"
+// Major Chest
+	"item_chest_4"
 	{
-		"01"						"item_chest_2;item_chest_2;item_chest_2"
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"chest_4"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemGloballyCombinable"		"1"
+		"ItemQuality"					"rare"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemCost"						"3000"
 	}
-}
+// Major Chest Recipe
+	"item_recipe_chest_4"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_chest_4"
+		"ItemIsNeutralDrop"				"0"
+		"ItemRequirements"
+		{
+			"01"						"item_chest_3;item_chest_2"
+		}
+	}
 
 // Ceremonial Robe 2
 	"item_ceremonial_robe2"
@@ -18307,53 +18325,53 @@
 
 
 
-"item_chest_6"
-{
-	"BaseClass"						"item_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"chest_6"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-	"ItemGloballyCombinable"		"1"
-	"ItemQuality"					"rare"
-	"ItemPurchasable"				"1"
-	"ItemSellable"					"1"
-	"ItemCost"						"5000"	
-}
-
-
-"item_recipe_chest_5"
-{
-	"BaseClass"						"item_datadriven"
-	"Model"							"models/props_gameplay/recipe.vmdl"
-	"AbilityTextureName"			"item_recipe"
-	"ItemCost"						"0"	
-	"ItemShopTags"					""
-	"ItemRecipe"					"1"
-	"ItemResult"					"item_chest_5"
-	"ItemIsNeutralDrop"				"0"
-	"ItemRequirements"
+// Stellar Chest Component
+	"item_chest_6"
 	{
-		"01"						"item_chest_6"
-		"02"						"item_chest_4;item_chest_2;item_chest_2"
-		"03"						"item_chest_2;item_chest_2;item_chest_2;item_chest_2;item_chest_2"
-
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"chest_6"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemGloballyCombinable"		"1"
+		"ItemQuality"					"rare"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemCost"						"5000"
 	}
-}
-//Level 5 chests
-"item_chest_5"
-{
-	"BaseClass"						"item_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"chest_5"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
-	"ItemGloballyCombinable"		"1"
-	"ItemQuality"					"rare"
-	"ItemPurchasable"				"1"
-	"ItemSellable"					"1"
-	"ItemCost"						"6000"	
-}
+
+// Stellar Chest Recipe
+	"item_recipe_chest_5"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_chest_5"
+		"ItemIsNeutralDrop"				"0"
+		"ItemRequirements"
+		{
+			"01"						"item_chest_6"
+			"02"						"item_chest_4;item_chest_3"
+
+		}
+	}
+// Stellar Chest
+	"item_chest_5"
+	{
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"chest_5"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemGloballyCombinable"		"1"
+		"ItemQuality"					"rare"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemCost"						"5000"
+	}
 
 "item_recipe_custom_apex"
 {
@@ -33029,58 +33047,17 @@
 		"ItemQuality"					"epic"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"str"					"190"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"agi"					"190"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"int"					"350"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor"					"43"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"spell_amp"				"60"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration_buff"			"10"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration_debuff"		"5"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"magic_resist_red"		"17"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen_aura"		"95"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"7200"
-			}
+			"all_stats"				"190"
+			"int"					"160"
+			"armor"					"43"
+			"spell_amp"				"60"
+			"duration_buff"			"10"
+			"duration_debuff"		"5"
+			"magic_resist_red"		"17"
+			"mana_regen_aura"		"95"
+			"aura_radius"			"7200"
 		}
 	}
 // Energy Veil Recipe
@@ -34693,159 +34670,45 @@
 		{
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
 		}
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"bonus_damage_for_wave"				"5"
+			"bonus_armor_for_wave"				"1"
+			"bonus_mag_res_for_wave"			"0.75"
+			"bonus_attack_speed_for_wave"		"6"
+			"bonus_all_stats_for_wave"			"1.5"
+			"bonus_spell_amp_for_wave"			"2"
+			"bonus_spell_lifesteal_per_wave"	"2"
+			"extra_spell_damage_percent"		"-50"
+
+			"str"					"270"
+			"agi"					"225"
+			"int"					"650"
+			"armor"					"45"
+			"hp"					"3500"
+			"spell_amp"				"25"
+			"hp_regen_pct"			"7.5"
+			"hp_regen_amp"			"50"
+
+			"aura_radius"			"7200"
+			"hp_aura"				"2200"
+			"int_aura"				"280"
+			"mana_regen_aura"		"69"
+			"duration_buff"			"5"
+			"duration_debuff"		"5"
+			"magic_resist_red"		"25"
+			"hpr_spell_amp"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_damage_for_wave"			"5"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_armor_for_wave"			"1"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_mag_res_for_wave"		"0.75"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_attack_speed_for_wave"	"6"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_all_stats_for_wave"		"1.5"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_spell_amp_for_wave"		"2"
-			}
-			"07"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"bonus_spell_lifesteal_per_wave"	"2"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"extra_spell_damage_percent"	"-50"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str"					"270"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agi"					"225"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int"					"650"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor"					"45"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp"					"3500"
-			}
-			"15"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"spell_amp"				"25"
-			}
-			"16"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp_regen_pct"			"7.5"
-			}
-			"17"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"7200"
-			}
-			"18"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"hp_aura"				"2200"
-			}
-			"19"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int_aura"				"280"
-			}
-			"20"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_regen_aura"		"69"
-			}
-			"21"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration_buff"			"5"
-			}
-			"22"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration_debuff"		"5"
-			}
-			"23"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"magic_resist_red"		"25"
-			}
-			"24"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"hpr_spell_amp"					"0.5"
+				"value"							"0.5"
 				"CalculateSpellDamageTooltip"	"0"
 			}
-			"25"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"search_radius"					"1200"
-			}
-			"30"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"overload_dmg"			"150"
-			}
-			"31"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"overload_raduis"		"2000"
-			}
-			"32"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"reinforcing_armor"		"8"
-			}
-			"33"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"reinforcing_dur"		"5"
-			}
-			"34"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cdr_per_cast"			"0.75"
-			}
-			"35"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_radius_debuff"	"2200"
-			}
+			"search_radius"			"1200"
+			"overload_dmg"			"150"
+			"overload_raduis"		"2000"
+			"reinforcing_armor"		"8"
+			"reinforcing_dur"		"5"
+			"cdr_per_cast"			"0.75"
+			"aura_radius_debuff"	"2200"
 		}
 	}
 // Recipe: Num
@@ -34914,6 +34777,7 @@
 		"ItemPurchasable"				"0"
 		"ItemKillable"					"0"
 		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"precache"
 		{
 			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_dark_seer.vsndevts"
@@ -35419,6 +35283,46 @@
 		}
 	}
 
+// Traxex's Necklace
+	"item_traxexs_necklace"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/traxexs_necklace"
+		"AbilityTextureName" 			"custom/traxexs_necklace"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"AbilityCooldown"				"12"
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0"
+		"AbilityManaCost"				"75"
+		"ItemCost"						"25814"
+		"ItemInitialStockTime"			"325"
+		"ItemStockMax"					"1"
+		"ItemStockInitial"				"0"
+		"ItemStockTime"					"999999"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"1"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemQuality"					"artifact"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_int"						"1000"
+			"bonus_evasion"					"30"
+
+			"active_chill"					"10"
+			"active_radius"					"900"
+			"chill_max"						"1000"
+			"chill_duration"				"6"
+			"chill_thaw_pct"				"5"
+			"freeze_duration"				"2"
+			"freeze_shatter_hp_damage"		"1"
+			"freeze_shatter_radius"			"900"
+		}
+	}
+
 	"item_master_of_weapons_sword"
 	{
 		"BaseClass"						"item_lua"
@@ -35428,25 +35332,28 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"AbilityTextureName"			"juggernaut_omni_slash"
+		"AbilityTextureName"			"default"
 		"ItemCost"						"500"
 		"AbilityCastRange"				"350"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"16"
+		"AbilityCooldown"				"17 14"
 		"AbilityManaCost"				"50"
 		"ItemQuality"					"artifact"
 		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"1"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilityValues"
 		{
-			"bonus_damage"					"7500"
-			"bonus_ms"						"250"
+			"bonus_damage"					"7500 12500"
+			"bonus_ms"						"250 425"
 			"bonus_attack_range"			"300"
-			"bonus_as"						"150"
-			"bonus_all_stats"				"500"
+			"bonus_as"						"150 300"
+			"bonus_all_stats"				"500 1000"
+			
 			"duration"						"2.5"
-			"attack_rate_multiplier"		"2.5"
 			"bounce_range"					"600"
+//			"attack_rate_multiplier"		"2.5"
 		}
 		"precache"
 		{

@@ -1214,10 +1214,8 @@
 	
 	"DOTA_Tooltip_Ability_item_battlemage_cloth"					"Battlemage Cloth"
 	"DOTA_Tooltip_ability_item_battlemage_cloth_Description"		"<h1>Active: Magic Weakness</h1>For %duration_buff% seconds after applying an attack reduce the target's Magic Resistance by %magic_resist_red%%%.<br><br>Debuff duration: %duration_debuff% sec.\n <h1>Passive: Basilius Aura</h1>Grants %mana_regen_aura% Mana Regeneration to allies. <br><br>Radius: %aura_radius%"
-	"DOTA_Tooltip_Ability_item_battlemage_cloth_str"			"+$str"
-	"DOTA_Tooltip_Ability_item_battlemage_cloth_armor"			"+$armor"
-	"DOTA_Tooltip_Ability_item_battlemage_cloth_agi"			"+$agi"
-	"DOTA_Tooltip_Ability_item_battlemage_cloth_int"			"+$int"
+	"DOTA_Tooltip_ability_item_battlemage_cloth_all_stats"		"+$all"
+	"DOTA_Tooltip_ability_item_battlemage_cloth_int"			"+$int"
 	"DOTA_Tooltip_ability_item_battlemage_cloth_spell_amp"		"%+$spell_amp"
 	"DOTA_Tooltip_modifier_battlemage_cloth_debuff"					"Magic Weakness"
 	"DOTA_Tooltip_modifier_battlemage_cloth_debuff_Description"		"Magic Resistance has been reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%"
@@ -1427,6 +1425,7 @@
 	"DOTA_Tooltip_Ability_item_num_hp"				"+$health"
 	"DOTA_Tooltip_Ability_item_num_spell_amp"		"%+$spell_amp"
 	"DOTA_Tooltip_Ability_item_num_hp_regen_pct"	"%+$hp_regen_pct"
+	"DOTA_Tooltip_ability_item_num_hp_regen_amp"	"%+$hp_regen_amp"
 	"DOTA_Tooltip_modifier_num_aura"				"Num Aura"
 	"DOTA_Tooltip_modifier_num_aura_Description"	"Health increased by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Intellegence by %dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS%, Mana Regeneration by %dMODIFIER_PROPERTY_MANA_REGEN_CONSTANT%"
 	"DOTA_Tooltip_modifier_num_sp"				"Wizard's Blood"
@@ -3074,12 +3073,16 @@
 
 "DOTA_Tooltip_modifier_mjz_general_granite_golem_hp_aura_bonus"						"Granite Aura"
 "DOTA_Tooltip_modifier_mjz_general_granite_golem_hp_aura_bonus_Description"			"Health increased by %dMODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE%%%."
+
+
 "DOTA_Tooltip_ability_mjz_general_megamorph"					"MEGAMORPH"
 "DOTA_Tooltip_ability_mjz_general_megamorph_Description"		""
 "DOTA_Tooltip_ability_mjz_general_megamorph_Lore"				""
-"DOTA_Tooltip_ability_mjz_general_megamorph_bonus_damage"		"BONUS DAMAGE:"
-"DOTA_Tooltip_ability_mjz_general_megamorph_attack_range"		"BONUS ATTACK RANGE:"
-"DOTA_Tooltip_ability_mjz_general_megamorph_cast_range"			"BONUS CAST RANGE:"
+"DOTA_Tooltip_ability_mjz_general_megamorph_bonus_damage"		"+$base_damage"
+"DOTA_Tooltip_ability_mjz_general_megamorph_attack_range"		"+$attack_range_all"
+"DOTA_Tooltip_ability_mjz_general_megamorph_cast_range"			"+$cast_range"
+
+
 	"DOTA_Tooltip_ability_mjz_gyrocopter_rocket_barrage"				"Rocket Barrage"
 	"DOTA_Tooltip_ability_mjz_gyrocopter_rocket_barrage_Description"	"Launches a salvo of rockets at nearby enemy units in a radius around the Gyrocopter. "
 	"DOTA_Tooltip_ability_mjz_gyrocopter_rocket_barrage_Lore"			"Aurel's new craft has an increased payload for rockets, enhancing their rapid-fire capabilities."
@@ -3961,9 +3964,7 @@ DISPEL TYPE: Strong Dispel"
 
 
 "DOTA_Tooltip_ability_mjz_slark_dark_pact"				"Dark Pact"
-"DOTA_Tooltip_ability_mjz_slark_dark_pact_Description"	"After a short delay, Slark sacrifices some of his life blood, purging most negative debuffs and dealing damage to enemy units around him and to himself.  Slark only takes 20% of the damage and is not affected by spell amp against him.
-
-DISPEL TYPE: Strong Dispel"
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_Description"	"After a short delay, Slark sacrifices some of his life blood, purging most negative debuffs and dealing damage to enemy units around him and to himself.  Slark only takes 20% of the damage and is not affected by spell amp against him. \n\n<span class=\"GameplayValues GameplayVariable\">Strong Dispel</span>"
 "DOTA_Tooltip_ability_mjz_slark_dark_pact_Lore"			"Slithereen are capable of quickly regrowing appendages, in case of critical injury, to save their own lives."
 "DOTA_Tooltip_ability_mjz_slark_dark_pact_delay"		"DELAY:"
 "DOTA_Tooltip_ability_mjz_slark_dark_pact_radius"		"RADIUS:"
@@ -4457,7 +4458,7 @@ DISPEL TYPE: Strong Dispel"
 "DOTA_Tooltip_ability_item_chest_5_Description"		"Can be used to build a tier 5 neutral item."
 
 "DOTA_Tooltip_ability_item_chest_6"					"Stellar Chest Component"
-"DOTA_Tooltip_ability_item_chest_6_Description"		"Alternative Stellar Chest build :5x Chest or Greater Chest + 2x Chest."
+"DOTA_Tooltip_ability_item_chest_6_Description"		"Alternative Stellar Chest build: \n 1) Major Chest + 2x Chest \n 2) 2x Greater Chest + Chest \n 3) 5x Chest"
 
 "notifications_trade_chest_1"						"Resurrection Pendant reward"
 "notifications_trade_chest_2"						"Consumable Aegis reward"
@@ -7274,16 +7275,6 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_Ability_item_custom_rapier_bonus_damage"						"+$damage"
 
 
-	"Game_notification_fire_rapier_request_message"				"<font color='#FF4500'>SPIRIT OF FIRE RAPIER : </font><font color='#FFD700'> You're too weak to use this relic! <br> STATS REQUIRED : <font color='#FF4500'>750</font></font>"
-	"Game_notification_wind_rapier_request_message"				"<font color='#C0C0C0'>SPIRIT OF WIND RAPIER : </font><font color='#FFD700'> ТYou're too weak to use this relic! <br> STATS REQUIRED  : <font color='#C0C0C0'>500</font></font>"
-	"Game_notification_earth_rapier_request_message"				"<font color='#8B4513'>SPIRIT OF EARTH RAPIER : </font><font color='#FFD700'> You're too weak to use this relic! <br> STATS REQUIRED  : <font color='#8B4513'>500</font></font>"
-	"Game_notification_ice_rapier_request_message"				"<font color='#00FFFF'>SPIRIT OF ICE RAPIER : </font><font color='#FFD700'> You're too weak to use this relic! <br> STATS REQUIRED  : <font color='#00FFFF'>500</font></font>"
-	"Game_notification_cursed_rapier_request_message"				"<font color='#00FF00'>SPIRIT OF CURSED RAPIER : </font><font color='#FFD700'> You're too weak to use this relic! <br> STATS REQUIRED  : <font color='#00FF00'>1000</font></font>"
-	"Game_notification_fire_rapier_request_message1"				"<font color='#FF4500'>SPIRIT OF FIRE RAPIER : </font><font color='#FFD700'> You can not use more than one elemental rapier! "
-	"Game_notification_wind_rapier_request_message1"				"<font color='#C0C0C0'>SPIRIT OF WIND RAPIER : </font><font color='#FFD700'> You can not use more than one elemental rapier! "
-	"Game_notification_earth_rapier_request_message1"				"<font color='#8B4513'>SPIRIT OF EARTH RAPIER : </font><font color='#FFD700'> You can not use more than one elemental rapier! "
-	"Game_notification_ice_rapier_request_message1"				"<font color='#00FFFF'>SPIRIT OF ICE RAPIER : </font><font color='#FFD700'> You can not use more than one elemental rapier! "
-
 	"DOTA_Tooltip_Ability_item_fire_rapier"						"<font color=\"#FF4500\">FIRE RAPIER</font>"
 	"DOTA_Tooltip_ability_item_fire_rapier_Description"			"<h1><font color='#FF4500'>Active: Fire rage</font></h1>Gives the owner of the item the power of fire, giving great power, but reducing the defense to zero!!!
 	\n<h1><font color='#FF4500'>Passive: Melting strike</font></h1>%proc_chance%%% attack chance to burn the enemy's armor (the effect stacks).<br><br>Armor reduction per stack: %armor_penalty%<br>Debuff Duration: %debuff_duration% sec.
@@ -9276,18 +9267,20 @@ Contains all random skills"
 
 "Game_notification_boss_spawn_apex"				"<font color='#DBA901'><br>Can you withstand? </font>  <font color='#FF0000'><br>The Apex of Mages </font>is ready to fight!"
 
-		"DOTA_HUD_Spells_Menu_Swap_Spells_Button"	"Swap Spells Position"
-		"DOTA_HUD_Spells_Menu_Close_Button"			"Close"
-		"DOTA_HUD_Spells_Menu_Open_Button"			"View Config Menu"
-		"DOTA_HUD_Spells_Menu_Spell_Cost"			"Cost"
-		"DOTA_HUD_Spells_Menu_Successful_Purchase"	"Successful Purchase!"
-		"DOTA_HUD_Spells_Menu_Successful_Refund"	"Successful Refund!"
-		"DOTA_HUD_Spells_Menu_Insufficient_CP"		"Insufficient CP"
-		"DOTA_HUD_Spells_Menu_Title"				"CONFIG MENU"
-		"DOTA_HUD_Spells_Menu_Description"			"To swap and ability click on the 2 abilites you want to change position."
+		"DOTA_HUD_Spells_Menu_Swap_Spells_Button"		"Swap Spells Position"
+		"DOTA_HUD_Spells_Menu_Close_Button"				"Close"
+		"DOTA_HUD_Spells_Menu_Open_Button"				"Open Cofig Menu"
+		"DOTA_HUD_Spells_Swap_Menu_Button"				"Swap Menu"
+		"DOTA_HUD_Spells_Hidden_Menu_Button"			"Hidden Menu"
+		"DOTA_HUD_Spells_Menu_Spell_Cost"				"Cost"
+		"DOTA_HUD_Spells_Menu_Successful_Purchase"		"Successful Purchase!"
+		"DOTA_HUD_Spells_Menu_Successful_Refund"		"Successful Refund!"
+		"DOTA_HUD_Spells_Menu_Insufficient_CP"			"Insufficient CP"
+		"DOTA_HUD_Spells_Menu_Title"					"CONFIG MENU"
+		"DOTA_HUD_Spells_Menu_Description"				"To swap and ability click on the 2 abilites you want to change position."
 //		Also can be changed camera distance."
-		"DOTA_HUD_Spells_Menu_Card_Points"			"Press swap button to open your spell list, cost is zer"
-		"DOTA_HUD_Spells_Menu_Card_Point_Book_Used"	"Gained Card Points"
+		"DOTA_HUD_Spells_Menu_Card_Points"				"Press swap button to open your spell list, cost is zer"
+		"DOTA_HUD_Spells_Menu_Card_Point_Book_Used"		"Gained Card Points"
 
 
 "DOTA_Tooltip_ability_ryze_arcane_mastery"		   "Mana Affinity"		
@@ -9457,9 +9450,9 @@ Contains all random skills"
 		"DOTA_Tooltip_ability_aghanim_shard_attack_Description"						 "When channeling spawns crystal shards that explode on impact with an enemy"
 
 		"DOTA_Tooltip_ability_phantom_reflex"								   "Phantom Reflex"
-		"DOTA_Tooltip_ability_phantom_reflex_Description"					   "Phantom Assassin Instincts help her to avoid any damage but she still needs more training to be successful every time, she has a chance to attack a second time after every attack.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Allows you to avoid damage or counterattack. During a counterattack, damage is dealt to all enemies in the direction of the attacker within of %radius%. If the ability is counterattacked, then the cooldown is not reduced by CDR. For each hit, an additional 50/60/70/80/90 mana is spent."
-		"DOTA_Tooltip_ability_phantom_reflex_dodge_chance_pct"			"%Chance To Dodge By Reflex:" 
-		"DOTA_Tooltip_ability_phantom_reflex_double_attack_chance"		"%Chance For A Reflex Hit:"
+		"DOTA_Tooltip_ability_phantom_reflex_Description"					   "Phantom Assassin Instincts help her to avoid any damage but she still needs more training to be successful every time, she has a chance to attack a second time after every attack.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Allows you to avoid damage and counterattack. During a counterattack, damage is dealt to all enemies in the direction of the attacker within of %radius%. If the ability is counterattacked, then the cooldown is not reduced by CDR. For each hit, an additional 50/60/70/80/90 mana is spent."
+		"DOTA_Tooltip_ability_phantom_reflex_dodge_chance_pct"			"%Avoid damage:" 
+		"DOTA_Tooltip_ability_phantom_reflex_double_attack_chance"		"%Second attack:"
 		"DOTA_Tooltip_modifier_counter_slash_trigger"				"Phantom Reflex"
 		"DOTA_Tooltip_modifier_counter_slash_trigger_Description"	"Allows you to dodge any attack and/or counterattack."
 

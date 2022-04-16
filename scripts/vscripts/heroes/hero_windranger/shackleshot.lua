@@ -2,10 +2,7 @@ LinkLuaModifier("modifier_wr_shackleshot_stun", "heroes/hero_windranger/shackles
 
 LinkLuaModifier("modifier_wr_shackleshot_immortal_vedette", "heroes/hero_windranger/shackleshot", LUA_MODIFIER_MOTION_NONE)
 
-LinkLuaModifier("modifier_wr_exclusive_frozen", "heroes/hero_windranger/windrun", LUA_MODIFIER_MOTION_NONE)
-
-local basic_stun_modifier = "modifier_wr_shackleshot_stun"
-local wr_exclusive_item = "wr_exclusive_item_modifier"
+LinkLuaModifier("modifier_traxexs_necklace_frozen", "items/traxexs_necklace", LUA_MODIFIER_MOTION_NONE)
 
 -----------------
 -- Shackleshot --
@@ -30,9 +27,10 @@ end
 
 function wr_shackleshot:OnSpellStart()
 	local target = self:GetCursorTarget()
-	
-	if self:GetCaster():HasModifier(wr_exclusive_item) then
-		basic_stun_modifier = "modifier_wr_exclusive_frozen"
+
+	self:GetCaster().basic_stun_modifier = "modifier_wr_shackleshot_stun"
+	if self:GetCaster():GetUnitName() == "npc_dota_hero_windrunner" and self:GetCaster():HasModifier("modifier_traxexs_necklace") then
+		self:GetCaster().basic_stun_modifier = "modifier_traxexs_necklace_frozen"
 	end
 	self:GetCaster():EmitSound("Hero_Windrunner.ShackleshotCast")
 
@@ -71,7 +69,7 @@ function wr_shackleshot:SearchForShackleTarget(target, target_angle, ignore_list
 			ParticleManager:SetParticleControl(shackleshot_particle, 2, Vector(stun_duration, 0, 0))
 			
 			if target.AddNewModifier then
-				local target_modifier = target:AddNewModifier(self:GetCaster(), self, basic_stun_modifier, {duration = stun_duration * (1 - target:GetStatusResistance())})
+				local target_modifier = target:AddNewModifier(self:GetCaster(), self, self:GetCaster().basic_stun_modifier, {duration = stun_duration * (1 - target:GetStatusResistance())})
 				
 				if target_modifier then
 					target_modifier:AddParticle(shackleshot_particle, false, false, -1, false, false)
@@ -79,7 +77,7 @@ function wr_shackleshot:SearchForShackleTarget(target, target_angle, ignore_list
 			end
 			
 			if enemy.AddNewModifier then
-				enemy:AddNewModifier(self:GetCaster(), self, basic_stun_modifier, {duration = stun_duration * (1 - enemy:GetStatusResistance())})
+				enemy:AddNewModifier(self:GetCaster(), self, self:GetCaster().basic_stun_modifier, {duration = stun_duration * (1 - enemy:GetStatusResistance())})
 			end
 			
 			break
@@ -98,7 +96,7 @@ function wr_shackleshot:SearchForShackleTarget(target, target_angle, ignore_list
 					ParticleManager:SetParticleControl(shackleshot_tree_particle, 1, (tree:GetAbsOrigin() + Vector(0, 0, 150)))
 					ParticleManager:SetParticleControl(shackleshot_tree_particle, 2, Vector(stun_duration, 0, 0))
 
-					local target_modifier = target:AddNewModifier(self:GetCaster(), self, basic_stun_modifier, {tree = tree, duration = stun_duration * (1 - target:GetStatusResistance())})
+					local target_modifier = target:AddNewModifier(self:GetCaster(), self, self:GetCaster().basic_stun_modifier, {tree = tree, duration = stun_duration * (1 - target:GetStatusResistance())})
 
 					Timers:CreateTimer(stun_duration, function()
 						if tree ~= nil then
@@ -139,7 +137,7 @@ function wr_shackleshot:OnProjectileHit_ExtraData(target, location, ExtraData)
 			if next_target then
 				shackled_targets[next_target] = true
 			elseif i == 1 then
-				local stun_modifier = target:AddNewModifier(self:GetCaster(), self, basic_stun_modifier, {duration = self:GetSpecialValueFor("fail_stun_duration") * (1 - target:GetStatusResistance())})
+				local stun_modifier = target:AddNewModifier(self:GetCaster(), self, self:GetCaster().basic_stun_modifier, {duration = self:GetSpecialValueFor("fail_stun_duration") * (1 - target:GetStatusResistance())})
 				
 				if stun_modifier then
 					local shackleshot_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_windrunner/windrunner_shackleshot_single.vpcf", PATTACH_ABSORIGIN, target)

@@ -43,6 +43,18 @@
 
 "DOTAAbilities"
 {
+	"special_bonus_attributes"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/custom_special_bonus_attributes"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"			"attribute_bonus"
+		"MaxLevel"						"14"
+		"AbilityValues"
+		{
+			"all_attributes"		"30 60 90 120 150 180 210 240 270 300 330 360 390 420"
+		}
+	}
 
 //////////////////// FIXED ABILITIES (CUSTOM) \\\\\\\\\\\\\\\\\\\\
 
@@ -4915,6 +4927,7 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"scepter_cooldown"		"17"
+			"RequiresScepter"		"1"
 		}
 	}
 }
@@ -33521,7 +33534,11 @@
 			"vision_radius"					"400"
 			"vision_duration"				"5"
 			"channel_time"					"3"
-			"debuff_incoming_damage"		"5"
+			"debuff_incoming_damage"
+			{
+				"value"						"5"
+				"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
+			}
 			"debuff_duration"				"9"
 			"debuff_inco_duration"			"3"
 			"shot_chance"					"2"
@@ -40236,7 +40253,7 @@
 	"phantom_reflex"
 	{
 		"BaseClass"							"ability_lua"
-		"ScriptFile"						"abilities/custom/phantom_reflex.lua"
+		"ScriptFile"						"heroes/hero_phantom_assassin/phantom_reflex"
 		"LevelsBetweenUpgrades"				"10"
 		"MaxLevel"							"5"
 		"AbilityTextureName"				"phantom_reflex"
@@ -43300,12 +43317,15 @@
 			"fixed_cooldown"			"3"
 			"sword_bonus_attack_range"	"500"
 			"sword_crit_chance"			"10 20 30 40 50 60 70 80 90 100"
-			"sword_crit_damage"			"100 200 300 450 600 750" // 6/10
+			"sword_crit_damage"			"111 222 333 444 555 666 777 888 999 1111"
 			"dagger_max_attack_range"	"125"
 			"dagger_dodge_chance"		"45"
 			"dagger_65_bonus_ms"		"3000"
 			"dagger_fixed_bat"			"0.9"
 			"dagger_true_strike"		"25"
+			"dagger_bleed_damage"		"33"
+			"dagger_bleed_damage_amp"	"5"
+			"gun_bat"					"0.33"
 		}
 	}
 
@@ -43324,6 +43344,43 @@
 			"buff_duration"			"5"
 			"buff_as"				"200"
 			"buff_as_55"			"1500"
+		}
+	}
+
+// My Gifted Weapon... (5)
+	"gifted_weapon"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_master_of_weapons/gifted_weapon"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"juggernaut_omni_slash"
+		"MaxLevel"						"1"
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"14"
+		"AbilityManaCost"				"50"
+		"AbilityValues"
+		{
+			"bonus_damage"					"12500"
+			"bonus_ms"						"425"
+			"bonus_attack_range"			"300"
+			"bonus_as"						"300"
+			"bonus_all_stats"				"1000"
+
+			"duration"						"2.5"
+			"bounce_range"					"600"
+//			"attack_rate_multiplier"		"2.5"
+		}
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+			"particle"					"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf"
+			"particle"					"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_tgt.vpcf"
+			"particle"					"particles/status_fx/status_effect_omnislash.vpcf"
 		}
 	}
 }

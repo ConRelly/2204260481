@@ -252,9 +252,11 @@ end
 
 
 ------------------- Chill & Freeze       目标冻结
-function CDOTA_BaseNPC:AddChill(hAbility, hCaster, chillDuration, chillAmount)
+function CDOTA_BaseNPC:AddChill(hAbility, hCaster, chillDuration, chillAmount, FreezeStacks, FreezeDuration)
 	if not self or self:IsNull() then return end
 	local chillBonus = chillAmount or 1
+	local FreezeStacks = FreezeStacks or 100
+	local FreezeDuration = FreezeDuration or 1.5
 	local bonusDur = chillBonus * 0.1
 	local currentChillDuration = 0
 	local currentChill = self:FindModifierByName("modifier_chill_generic")
@@ -271,6 +273,11 @@ function CDOTA_BaseNPC:AddChill(hAbility, hCaster, chillDuration, chillAmount)
 	if modifier then
 		modifier:SetStackCount(modifier:GetStackCount() + chillBonus)
 	end
+	if self:HasModifier("modifier_frozen_generic") then return end
+	if modifier:GetStackCount() >= FreezeStacks then
+		self:Freeze(hAbility, hCaster, FreezeDuration)
+		modifier:Destroy()
+	end
 end
 
 function CDOTA_BaseNPC:GetChillCount()
@@ -281,7 +288,7 @@ function CDOTA_BaseNPC:GetChillCount()
 	end
 end
 
-function CDOTA_BaseNPC:SetChillCount( count, chillDuration )
+function CDOTA_BaseNPC:SetChillCount(count, chillDuration)
 	if self:HasModifier("modifier_chill_generic") then
 		self:FindModifierByName("modifier_chill_generic"):SetStackCount(count)
 	elseif chillDuration then

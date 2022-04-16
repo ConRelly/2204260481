@@ -109,7 +109,7 @@ function modifier_num:IsPurgable() return false end
 function modifier_num:RemoveOnDeath() return false end
 function modifier_num:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_num:DeclareFunctions()
-	return {MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE}
+	return {MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE, MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE}
 end
 function modifier_num:GetModifierBonusStats_Strength() return self:GetAbility():GetSpecialValueFor("str") end
 function modifier_num:GetModifierBonusStats_Agility() return self:GetAbility():GetSpecialValueFor("agi") end
@@ -118,6 +118,7 @@ function modifier_num:GetModifierHealthBonus() return self:GetAbility():GetSpeci
 function modifier_num:GetModifierPhysicalArmorBonus() return self:GetAbility():GetSpecialValueFor("armor") end
 function modifier_num:GetModifierSpellAmplify_Percentage() return self:GetAbility():GetSpecialValueFor("spell_amp") end
 function modifier_num:GetModifierHealthRegenPercentage() return self:GetAbility():GetSpecialValueFor("hp_regen_pct") end
+function modifier_num:GetModifierHPRegenAmplify_Percentage() return self:GetAbility():GetSpecialValueFor("hp_regen_amp") end
 function modifier_num:OnCreated()
 	if IsServer() then
 		if not self:GetAbility() then self:Destroy() end

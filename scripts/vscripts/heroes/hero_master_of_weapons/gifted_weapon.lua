@@ -1,27 +1,33 @@
-LinkLuaModifier("modifier_mows", "items/master_of_weapons_sword", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_mows_slasher", "items/master_of_weapons_sword", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_mows_image", "items/master_of_weapons_sword", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_mows_remove_as_limit", "items/master_of_weapons_sword", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_gifted_weapon", "heroes/hero_master_of_weapons/gifted_weapon", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_gifted_weapon_slasher", "heroes/hero_master_of_weapons/gifted_weapon", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_gifted_weapon_image", "heroes/hero_master_of_weapons/gifted_weapon", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_gifted_weapon_remove_as_limit", "heroes/hero_master_of_weapons/gifted_weapon", LUA_MODIFIER_MOTION_NONE)
 
-if item_master_of_weapons_sword == nil then item_master_of_weapons_sword = class({}) end
-function item_master_of_weapons_sword:GetCooldown(level)
+gifted_weapon = class({})
+function gifted_weapon:ProcsMagicStick() return false end
+--[[
+function gifted_weapon:Spawn()
+	if IsServer() then
+		self:SetLevel(1)
+	end
+end
+]]
+function gifted_weapon:GetCooldown(level)
 	if self:GetCaster():HasModifier("modifier_dzzl_good_juju") then
-		return 12 / self:GetCaster():GetCooldownReduction()
+		return 9 / self:GetCaster():GetCooldownReduction()
 	end
 	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
 end
-function item_master_of_weapons_sword:GetIntrinsicModifierName()
-	return "modifier_mows"
-end
+function gifted_weapon:GetIntrinsicModifierName() if self:IsTrained() then return "modifier_gifted_weapon" end end
 
-function item_master_of_weapons_sword:OnSpellStart()
+function gifted_weapon:OnSpellStart()
 	if not IsServer() then return end
 	local target = self:GetCursorTarget()
-	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_mows_remove_as_limit", {})
+	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_gifted_weapon_remove_as_limit", {})
 	local additional_duration = math.floor(self:GetCaster():GetDisplayAttackSpeed() / 1500)
 --	print("Print DisplayAttackSpeed", self:GetCaster():GetDisplayAttackSpeed())
 --	print("Print additional_duration", additional_duration)
-	local duration = self:GetSpecialValueFor("duration") + (additional_duration * 1)
+	local duration = self:GetSpecialValueFor("duration") + (additional_duration * 1.5)
 
 	local previous_position = self:GetCaster():GetAbsOrigin()
 	
@@ -90,10 +96,10 @@ function item_master_of_weapons_sword:OnSpellStart()
 	image:SetHasInventory(false)
 	image:SetCanSellItems(false)
 
-	image:AddNewModifier(self:GetCaster(), self, "modifier_mows_image", {duration = duration})
-	image:AddNewModifier(self:GetCaster(), self, "modifier_mows_remove_as_limit", {duration = duration})
+	image:AddNewModifier(self:GetCaster(), self, "modifier_gifted_weapon_image", {duration = duration})
+	image:AddNewModifier(self:GetCaster(), self, "modifier_gifted_weapon_remove_as_limit", {duration = duration})
 
-	local modifier_handler = image:AddNewModifier(self:GetCaster(), self, "modifier_mows_slasher", {duration = duration})
+	local modifier_handler = image:AddNewModifier(self:GetCaster(), self, "modifier_gifted_weapon_slasher", {duration = duration})
 	
 	if modifier_handler then
 		modifier_handler.original_caster = self:GetCaster()
@@ -103,7 +109,7 @@ function item_master_of_weapons_sword:OnSpellStart()
 
 	image:EmitSound("Hero_Juggernaut.OmniSlash")
 
-	self:GetCaster():RemoveModifierByName("modifier_mows_remove_as_limit")
+	self:GetCaster():RemoveModifierByName("modifier_gifted_weapon_remove_as_limit")
 
 	Timers:CreateTimer(FrameTime(), function()
 		if (not image:IsNull()) then
@@ -129,46 +135,45 @@ end
 
 
 -- Sword bonuses
-modifier_mows = class({})
-function modifier_mows:IsHidden() return true end
-function modifier_mows:IsPurgable() return false end
-function modifier_mows:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
-function modifier_mows:OnCreated()
+modifier_gifted_weapon = class({})
+function modifier_gifted_weapon:IsHidden() return true end
+function modifier_gifted_weapon:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
-		if self:GetCaster():FindAbilityByName("gifted_weapon") then
-			self:GetCaster():FindAbilityByName("gifted_weapon"):SetLevel(1)
-			self:GetCaster():FindAbilityByName("gifted_weapon"):SetHidden(false)
-		end
+		Timers:CreateTimer(0.1, function()
+			if self:GetCaster():FindItemInInventory("item_master_of_weapons_sword") then
+				self:GetCaster():RemoveItem(self:GetCaster():FindItemInInventory("item_master_of_weapons_sword"))
+			end
+		end)
 	end
 end
-function modifier_mows:DeclareFunctions()
-	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE}
+function modifier_gifted_weapon:DeclareFunctions()
+	return {MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE}
 end
-function modifier_mows:GetModifierPreAttack_BonusDamage()
+function modifier_gifted_weapon:GetModifierBaseAttack_BonusDamage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_damage") end
 end
-function modifier_mows:GetModifierMoveSpeedBonus_Constant()
+function modifier_gifted_weapon:GetModifierMoveSpeedBonus_Constant()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_ms") end
 end
-function modifier_mows:GetModifierAttackRangeBonus()
+function modifier_gifted_weapon:GetModifierAttackRangeBonus()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_attack_range") end
 end
-function modifier_mows:GetModifierAttackSpeedBonus_Constant()
+function modifier_gifted_weapon:GetModifierAttackSpeedBonus_Constant()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_as") end
 end
-function modifier_mows:GetModifierBonusStats_Strength()
+function modifier_gifted_weapon:GetModifierBonusStats_Strength()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
 end
-function modifier_mows:GetModifierBonusStats_Agility()
+function modifier_gifted_weapon:GetModifierBonusStats_Agility()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
 end
-function modifier_mows:GetModifierBonusStats_Intellect()
+function modifier_gifted_weapon:GetModifierBonusStats_Intellect()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
 end
-function modifier_mows:GetModifierOverrideAbilitySpecial(params)
+function modifier_gifted_weapon:GetModifierOverrideAbilitySpecial(params)
 	if self:GetParent() == nil or params.ability == nil then return 0 end
 
-	if self:GetParent():HasModifier("modifier_mows_slasher") then
+	if self:GetParent():HasModifier("modifier_gifted_weapon_slasher") then
 		if self:GetParent():HasModifier("modifier_fire_rapier_passive_bonus") then
 			if params.ability:GetAbilityName() == "item_fire_rapier" and params.ability_special_value == "proc_chance" then
 				return 1
@@ -178,12 +183,12 @@ function modifier_mows:GetModifierOverrideAbilitySpecial(params)
 
 	return 0
 end
-function modifier_mows:GetModifierOverrideAbilitySpecialValue(params)
-	if self:GetParent():HasModifier("modifier_mows_slasher") then
+function modifier_gifted_weapon:GetModifierOverrideAbilitySpecialValue(params)
+	if self:GetParent():HasModifier("modifier_gifted_weapon_slasher") then
 		if self:GetParent():HasModifier("modifier_fire_rapier_passive_bonus") then
 			if params.ability:GetAbilityName() == "item_fire_rapier" and params.ability_special_value == "proc_chance" then
 				local nSpecialLevel = params.ability_special_level
-				return 35--params.ability:GetLevelSpecialValueNoOverride("proc_chance", nSpecialLevel)
+				return 60--params.ability:GetLevelSpecialValueNoOverride("proc_chance", nSpecialLevel)
 			end
 		end
 	end
@@ -193,11 +198,11 @@ end
 
 
 -- Illusion Modifier
-modifier_mows_image = modifier_mows_image or class ({})
-function modifier_mows_image:IsHidden() return true end
-function modifier_mows_image:IsPurgable() return false end
-function modifier_mows_image:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT end
-function modifier_mows_image:CheckState()
+modifier_gifted_weapon_image = modifier_gifted_weapon_image or class ({})
+function modifier_gifted_weapon_image:IsHidden() return true end
+function modifier_gifted_weapon_image:IsPurgable() return false end
+function modifier_gifted_weapon_image:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT end
+function modifier_gifted_weapon_image:CheckState()
 	return {
 		[MODIFIER_STATE_UNSELECTABLE] = true,
 		[MODIFIER_STATE_COMMAND_RESTRICTED] = true,
@@ -208,8 +213,7 @@ function modifier_mows_image:CheckState()
 		[MODIFIER_STATE_MAGIC_IMMUNE] = true,
 	}
 end
-
-function modifier_mows_image:OnCreated()
+function modifier_gifted_weapon_image:OnCreated()
 	if not IsServer() then return end
 	if self:GetParent():HasModifier("modifier_aegis_buff") then
 		self:GetParent():RemoveModifierByName("modifier_aegis_buff")
@@ -217,48 +221,44 @@ function modifier_mows_image:OnCreated()
 	self:StartIntervalThink(0.5)
 end
 
-function modifier_mows_image:OnIntervalThink()
+function modifier_gifted_weapon_image:OnIntervalThink()
 	if not IsServer() then return end
 
-	if not self:GetParent():HasModifier("modifier_mows_slasher") then
+	if not self:GetParent():HasModifier("modifier_gifted_weapon_slasher") then
 		self:Destroy()
 	end
 end
 
 
-modifier_mows_slasher = modifier_mows_slasher or class({})
-function modifier_mows_slasher:IsHidden() return false end
-function modifier_mows_slasher:IsPurgable() return false end
-function modifier_mows_slasher:IsDebuff() return false end
---function modifier_mows_slasher:StatusEffectPriority() return 20 end
-function modifier_mows_slasher:GetStatusEffectName() return "particles/status_fx/status_effect_omnislash.vpcf" end
-function modifier_mows_slasher:OnCreated()
+modifier_gifted_weapon_slasher = modifier_gifted_weapon_slasher or class({})
+function modifier_gifted_weapon_slasher:IsHidden() return false end
+function modifier_gifted_weapon_slasher:IsPurgable() return false end
+function modifier_gifted_weapon_slasher:IsDebuff() return false end
+--function modifier_gifted_weapon_slasher:StatusEffectPriority() return 20 end
+function modifier_gifted_weapon_slasher:GetStatusEffectName() return "particles/status_fx/status_effect_omnislash.vpcf" end
+function modifier_gifted_weapon_slasher:OnCreated()
 	self.last_enemy = nil
 	if not self:GetAbility() then self:Destroy() return end
 	if IsServer() then
-		if self:GetCaster():GetPrimaryAttribute() == 0 then
-			self.MaxHealth = self:GetParent():GetMaxHealth()
-		else
-			self.MaxHealth = 0
-		end
+		self.MaxHealth = self:GetParent():GetMaxHealth()
 		if (not self:GetParent():IsNull()) then
 			self.bounce_range = self:GetAbility():GetSpecialValueFor("bounce_range")
 			self:BounceAndSlaughter(true)
-			local AttacksNumber = 3
-			local BaseInterval = 0.4
+			local AttacksNumber = 5
+			local BaseInterval = 0.3
 			local slash_rate = BaseInterval / AttacksNumber--self:GetCaster():GetSecondsPerAttack() / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
 			self:StartIntervalThink(slash_rate)
 		end
 	end
 end
 
-function modifier_mows_slasher:OnDestroy()
+function modifier_gifted_weapon_slasher:OnDestroy()
 	if IsServer() then
 		self:GetParent():FadeGesture(ACT_DOTA_OVERRIDE_ABILITY_4)
 		
 		self:GetParent():MoveToPositionAggressive(self:GetParent():GetAbsOrigin())
 
-		if self:GetParent():HasModifier("modifier_mows_image") then
+		if self:GetParent():HasModifier("modifier_gifted_weapon_image") then
 			local caster = self:GetCaster()
 			local ability = self:GetAbility()
 			local image_team = self:GetParent():GetTeamNumber()
@@ -289,7 +289,7 @@ function modifier_mows_slasher:OnDestroy()
 								damage_flags = DMGflags,
 							})
 						end
-						if i == 1 or (i + 1 % 3 == 0) then
+						if i == 1 or i == repeat_times then	--(i + 1 % 3 == 0)
 							local burst = ParticleManager:CreateParticle("particles/items3_fx/blink_overwhelming_burst.vpcf", PATTACH_WORLDORIGIN, caster)
 							ParticleManager:SetParticleControl(burst, 0, image_loc)
 							ParticleManager:SetParticleControl(burst, 1, Vector(radius, 500, 500))
@@ -301,7 +301,7 @@ function modifier_mows_slasher:OnDestroy()
 			end
 
 			self:GetParent():MakeIllusion()
-			self:GetParent():RemoveModifierByName("modifier_mows_image")
+			self:GetParent():RemoveModifierByName("modifier_gifted_weapon_image")
 
 			for item_id = 0, 5 do
 				local item_in_caster = self:GetParent():GetItemInSlot(item_id)
@@ -328,18 +328,18 @@ function modifier_mows_slasher:OnDestroy()
 	end
 end
 
-function modifier_mows_slasher:OnIntervalThink()
+function modifier_gifted_weapon_slasher:OnIntervalThink()
 	if not self:GetAbility() then self:Destroy() return end
 	self:BounceAndSlaughter()
 	
-	local AttacksNumber = 3
-	local BaseInterval = 0.4
+	local AttacksNumber = 5
+	local BaseInterval = 0.3
 	local slash_rate = BaseInterval / AttacksNumber--self:GetCaster():GetSecondsPerAttack() / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
 
 	self:StartIntervalThink(slash_rate)
 end
 
-function modifier_mows_slasher:BounceAndSlaughter(first_slash)
+function modifier_gifted_weapon_slasher:BounceAndSlaughter(first_slash)
 	local order = FIND_ANY_ORDER
 	
 	if first_slash then
@@ -395,7 +395,7 @@ function modifier_mows_slasher:BounceAndSlaughter(first_slash)
 
 			self.last_enemy = enemy
 
-			if self:GetParent():HasModifier("modifier_mows_image") then
+			if self:GetParent():HasModifier("modifier_gifted_weapon_image") then
 				self.previous_pos = previous_position
 				self.current_pos = current_position
 			end
@@ -407,7 +407,7 @@ function modifier_mows_slasher:BounceAndSlaughter(first_slash)
 	end
 end
 
-function modifier_mows_slasher:DeclareFunctions()
+function modifier_gifted_weapon_slasher:DeclareFunctions()
 	if not IsServer() then return end
 	if self:GetParent():GetUnitName() == "npc_dota_hero_juggernaut" then
 		return {MODIFIER_PROPERTY_OVERRIDE_ANIMATION, MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE}
@@ -415,10 +415,9 @@ function modifier_mows_slasher:DeclareFunctions()
 	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE}
 end
 
-function modifier_mows_slasher:GetOverrideAnimation() return ACT_DOTA_OVERRIDE_ABILITY_4 end
-function modifier_mows_slasher:GetModifierPreAttack_BonusDamage() return self.MaxHealth end
-
-function modifier_mows_slasher:CheckState()
+function modifier_gifted_weapon_slasher:GetOverrideAnimation() return ACT_DOTA_OVERRIDE_ABILITY_4 end
+function modifier_gifted_weapon_slasher:GetModifierPreAttack_BonusDamage() return self.MaxHealth end
+function modifier_gifted_weapon_slasher:CheckState()
 	return {
 		[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
 		[MODIFIER_STATE_INVULNERABLE] = true,
@@ -430,11 +429,12 @@ function modifier_mows_slasher:CheckState()
 end
 
 
-modifier_mows_remove_as_limit = class({})
-function modifier_mows_remove_as_limit:IsHidden() return true end
-function modifier_mows_remove_as_limit:IsPurgable() return false end
-function modifier_mows_remove_as_limit:RemoveOnDeath() return false end
-function modifier_mows_remove_as_limit:DeclareFunctions()
+
+modifier_gifted_weapon_remove_as_limit = class({})
+function modifier_gifted_weapon_remove_as_limit:IsHidden() return true end
+function modifier_gifted_weapon_remove_as_limit:IsPurgable() return false end
+function modifier_gifted_weapon_remove_as_limit:RemoveOnDeath() return false end
+function modifier_gifted_weapon_remove_as_limit:DeclareFunctions()
 	return {MODIFIER_PROPERTY_IGNORE_ATTACKSPEED_LIMIT}
 end
-function modifier_mows_remove_as_limit:GetModifierAttackSpeed_Limit() return 1 end
+function modifier_gifted_weapon_remove_as_limit:GetModifierAttackSpeed_Limit() return 1 end

@@ -245,7 +245,16 @@ function CRoshanSystem:CreateRoshan()
 		if (self._iNum >= 6) then
 			hRoshan:AddItemByName("item_aghanims_fragment")
 		end
-		local count = math.floor(self._iNum / 2)
+		local count = math.floor(self._iNum / 3)
+		
+		local heroes = GetAllRealHeroes()
+		for i=1, #heroes do
+			if heroes[i]:GetUnitName() == "npc_dota_hero_rubick" then
+				count = math.floor(self._iNum / 1.5)
+				break
+			end
+		end
+		
 		for rolls = 0, count - 1 do
 			if RandomInt(1, 9 + count) <= 0 + count then
 				hRoshan:AddItemByName("item_aghanims_fragment")

@@ -291,28 +291,45 @@ function AOHGameMode:OnPlayerChat(keys)
 
 	if keys.text == "-hide" then
 		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
-
+		
+		if PlayerResource:GetPlayer(keys.playerid):GetAssignedHero().playerAbilities == nil then
+			PlayerResource:GetPlayer(keys.playerid):GetAssignedHero().playerAbilities = {}
+		end
+		local MenuAbilities = PlayerResource:GetPlayer(keys.playerid):GetAssignedHero().playerAbilities
+		
 		for i = 6, hero:GetAbilityCount() - 1 do
 			local hAbility = hero:GetAbilityByIndex(i)
 			if hAbility and not hAbility:IsAttributeBonus() and not hAbility:IsHidden() and not string.find(hAbility:GetAbilityName(), "empty") and bit.band(hAbility:GetBehaviorInt(), DOTA_ABILITY_BEHAVIOR_PASSIVE) ~= 0 then
 				if hAbility:GetLevel() == hAbility:GetMaxLevel() then
 					hAbility:SetHidden(true)
+					table.insert(MenuAbilities, hAbility:GetAbilityName())
 				end
 			end
 		end
 	end
 	if keys.text == "-unhide" then
 		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
-
+		
+		if PlayerResource:GetPlayer(keys.playerid):GetAssignedHero().playerAbilities == nil then
+			PlayerResource:GetPlayer(keys.playerid):GetAssignedHero().playerAbilities = {}
+		end
+		local MenuAbilities = PlayerResource:GetPlayer(keys.playerid):GetAssignedHero().playerAbilities
+		
 		for i = 6, hero:GetAbilityCount() - 1 do
 			local hAbility = hero:GetAbilityByIndex(i)
 			if hAbility and not hAbility:IsAttributeBonus() and hAbility:IsHidden() and not string.find(hAbility:GetAbilityName(), "empty") and bit.band(hAbility:GetBehaviorInt(), DOTA_ABILITY_BEHAVIOR_PASSIVE) ~= 0 then
 				if hAbility:GetLevel() == hAbility:GetMaxLevel() then
+					for id,ab in pairs(MenuAbilities) do
+						if ab == hAbility:GetAbilityName() then
+							table.remove(MenuAbilities, id)
+						end
+					end
 					hAbility:SetHidden(false)
 				end
 			end
 		end
 	end
+	
 	if keys.text == "-ballista" then
 		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
 		local Item = hero:GetItemInSlot(16)

@@ -91,9 +91,9 @@ end
 function modifier_battlemage_cloth:DeclareFunctions()
 	return {MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE, MODIFIER_EVENT_ON_TAKEDAMAGE}
 end
-function modifier_battlemage_cloth:GetModifierBonusStats_Strength() return self:GetAbility():GetSpecialValueFor("str") end
-function modifier_battlemage_cloth:GetModifierBonusStats_Agility() return self:GetAbility():GetSpecialValueFor("agi") end
-function modifier_battlemage_cloth:GetModifierBonusStats_Intellect() return self:GetAbility():GetSpecialValueFor("int") end
+function modifier_battlemage_cloth:GetModifierBonusStats_Strength() return self:GetAbility():GetSpecialValueFor("all_stats") end
+function modifier_battlemage_cloth:GetModifierBonusStats_Agility() return self:GetAbility():GetSpecialValueFor("all_stats") end
+function modifier_battlemage_cloth:GetModifierBonusStats_Intellect() return self:GetAbility():GetSpecialValueFor("all_stats") + self:GetAbility():GetSpecialValueFor("int") end
 function modifier_battlemage_cloth:GetModifierPhysicalArmorBonus() return self:GetAbility():GetSpecialValueFor("armor") end
 function modifier_battlemage_cloth:GetModifierSpellAmplify_Percentage() return self:GetAbility():GetSpecialValueFor("spell_amp") end
 function modifier_battlemage_cloth:IsAura() return true end

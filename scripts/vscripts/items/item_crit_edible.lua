@@ -112,7 +112,7 @@ function modifier_item_imba_greater_crit_edible_buff:OnCreated()
 			end				
 		end
 	end
-	self.crit_chance = crit_chance
+	self.crit_chance = 50--crit_chance
 	self.crit_damage = crit_increase + base_crit_dmg
 	self:StartIntervalThink(FrameTime())
 end

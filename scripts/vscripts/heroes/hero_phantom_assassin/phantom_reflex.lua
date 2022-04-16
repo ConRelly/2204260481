@@ -1,6 +1,6 @@
-LinkLuaModifier("modifier_phantom_reflex", "abilities/custom/phantom_reflex.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_flash_double_attack", "abilities/custom/phantom_reflex.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_counter_slash_trigger", "abilities/custom/phantom_reflex", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_phantom_reflex", "heroes/hero_phantom_assassin/phantom_reflex", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_flash_double_attack", "heroes/hero_phantom_assassin/phantom_reflex", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_counter_slash_trigger", "heroes/hero_phantom_assassin/phantom_reflex", LUA_MODIFIER_MOTION_NONE)
 
 phantom_reflex = phantom_reflex or class({})
 

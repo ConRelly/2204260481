@@ -5,9 +5,7 @@ LinkLuaModifier("modifier_powershot_shard", "abilities/hero_windrunner/mjz_windr
 
 LinkLuaModifier("modifier_wr_shackleshot_immortal_falcon_bow", "abilities/hero_windrunner/mjz_windrunner_powershot", LUA_MODIFIER_MOTION_NONE)
 
-LinkLuaModifier("modifier_wr_exclusive_frozen", "heroes/hero_windranger/windrun", LUA_MODIFIER_MOTION_NONE)
-
-local wr_exclusive_item = "wr_exclusive_item_modifier"
+LinkLuaModifier("modifier_traxexs_necklace_frozen", "items/traxexs_necklace", LUA_MODIFIER_MOTION_NONE)
 
 
 mjz_windrunner_powershot = class({})
@@ -77,7 +75,7 @@ function mjz_windrunner_powershot:OnChannelFinish(bInterrupted)
 			caster:AddNewModifier(caster, self, "modifier_powershot_max_charge", {duration = self:GetSpecialValueFor("debuff_duration")})
 		end
 
-		if caster:HasModifier(wr_exclusive_item) then
+		if caster:GetUnitName() == "npc_dota_hero_windrunner" and caster:HasModifier("modifier_traxexs_necklace") then
 			local info = {
 				Ability = self,
 				EffectName = "particles/econ/items/windrunner/windranger_arcana/windranger_arcana_spell_powershot.vpcf",
@@ -164,9 +162,9 @@ function mjz_windrunner_powershot:OnProjectileHit_ExtraData(target, loc, ExtraDa
 
 		hits_counter:SetStackCount(hits + 1)
 
-		if target:HasModifier("modifier_wr_exclusive_frozen") and ExtraData.shatter then
-			if caster:HasModifier(wr_exclusive_item) then
-				local frozen = target:FindModifierByName("modifier_wr_exclusive_frozen")
+		if caster:GetUnitName() == "npc_dota_hero_windrunner" and caster:HasModifier("modifier_traxexs_necklace") then
+			if target:HasModifier("modifier_traxexs_necklace_frozen") and ExtraData.shatter then
+				local frozen = target:FindModifierByName("modifier_traxexs_necklace_frozen")
 				frozen:SetStackCount(1)
 				frozen:Destroy()
 			end

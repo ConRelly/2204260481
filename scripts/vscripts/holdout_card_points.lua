@@ -26,6 +26,14 @@ function holdout_card_points:Init()
         return self:_SpellsMenuSwapAbilitiesPosition(...)
     end)
 
+    CustomGameEventManager:RegisterListener("spells_menu_hide_player_spells", function(...)
+        return self:_SpellsMenuHideAbility(...)
+    end)
+
+    CustomGameEventManager:RegisterListener("spells_menu_get_player_spells_hidden", function(...)
+        return self:_SpellsMenuGetHiddenSpells(...)
+    end)
+
 end
 
 function holdout_card_points:_RetrieveCardPoints(nPlayerID)
@@ -194,15 +202,105 @@ function holdout_card_points:_GetPlayerSpells(nPlayerID)
 end
 
 function holdout_card_points:_SpellsMenuSwapAbilitiesPosition(eventSourceIndex, event_data)
-    local nPlayerID = event_data.player_id
-    local firstAbilityName = event_data.first_ability_name
-    local secondAbilityName = event_data.second_ability_name
-    local player = PlayerResource:GetPlayer(nPlayerID)
+	local nPlayerID = event_data.player_id
+	local firstAbilityName = event_data.first_ability_name
+	local secondAbilityName = event_data.second_ability_name
+	local player = PlayerResource:GetPlayer(nPlayerID)
 
-    self:_SwapAbilitiesPosition(nPlayerID, firstAbilityName, secondAbilityName)
+	self:_SwapAbilitiesPosition(nPlayerID, firstAbilityName, secondAbilityName)
 
     CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_swap_player_spells_feedback", { })
 end
+
+
+
+
+function holdout_card_points:_SpellsMenuGetHiddenSpells(eventSourceIndex, event_data)
+    local nPlayerID = event_data.player_id
+    local player = PlayerResource:GetPlayer(nPlayerID)
+	if player:GetAssignedHero().playerAbilities == nil then
+		player:GetAssignedHero().playerAbilities = {}
+	end
+    local playerAbilities = player:GetAssignedHero().playerAbilities--self:_GetPlayerHiddenSpells(nPlayerID)
+
+    CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_get_player_spells_hidden_feedback", { player_abilities = playerAbilities })
+end
+--[[
+function holdout_card_points:_GetPlayerHiddenSpells(nPlayerID)
+    local player = PlayerResource:GetPlayer(nPlayerID)
+    if player and PlayerResource:HasSelectedHero(nPlayerID) then
+        local playerHero = player:GetAssignedHero()
+        local maxAbilities = playerHero:GetAbilityCount() - 1
+		
+		local non_trigger_inflictors = {
+			["special_bonus_attributes"] = true,
+			["ability_capture"] = true,
+		}
+		
+        local playerAbilities = {}
+
+        for i = 0, maxAbilities do
+            local ability = playerHero:GetAbilityByIndex(i)
+            if playerHero:GetUnitName() == "npc_dota_hero_doom_bringer"  then
+                if ability and not ability:IsAttributeBonus() and ability:IsHidden() then
+                    local abilityName = ability:GetAbilityName()
+                    if not string.find(abilityName, "empty") and not string.find(abilityName, "autocast") and not string.find(abilityName, "fireblast") then
+                        table.insert(playerAbilities, abilityName)
+                    end    
+                end
+            elseif playerHero:GetUnitName() == "npc_dota_hero_lone_druid" or playerHero:GetUnitName() == "npc_dota_hero_rubick" then
+                if ability and not ability:IsAttributeBonus() and ability:IsHidden() and ability ~= playerHero:GetAbilityByIndex(3) and ability ~= playerHero:GetAbilityByIndex(4) then
+                    local abilityName = ability:GetAbilityName()
+                    if not string.find(abilityName, "empty") then
+                        table.insert(playerAbilities, abilityName)
+                    end    
+                end    
+            else
+                if ability and not ability:IsAttributeBonus() and ability:IsHidden() then
+                    local abilityName = ability:GetAbilityName()
+                    if not string.find(abilityName, "empty") then
+                        table.insert(playerAbilities, abilityName)
+                    end    
+                end
+            end            
+        end
+
+        return playerAbilities
+    end
+
+    return {}
+end
+]]
+function holdout_card_points:_SpellsMenuHideAbility(eventSourceIndex, event_data)
+	local nPlayerID = event_data.player_id
+	local firstAbilityName = event_data.first_ability_name
+	local player = PlayerResource:GetPlayer(nPlayerID)
+    if player and PlayerResource:HasSelectedHero(nPlayerID) then
+
+		if player:GetAssignedHero().playerAbilities == nil then
+			player:GetAssignedHero().playerAbilities = {}
+		end
+
+		local firstAbility = player:GetAssignedHero():FindAbilityByName(firstAbilityName)
+		if firstAbility and not firstAbility:IsHidden() then
+			firstAbility:SetHidden(true)
+			table.insert(player:GetAssignedHero().playerAbilities, firstAbilityName)
+			CustomGameEventManager:Send_ServerToPlayer(player, "dota_ability_changed", {entityIndex = playerHero})
+			CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_hide_player_spells2_feedback", {})
+		elseif firstAbility and firstAbility:IsHidden() then
+			firstAbility:SetHidden(false)
+			for id,ab in pairs(player:GetAssignedHero().playerAbilities) do
+				if ab == firstAbilityName then
+					table.remove(player:GetAssignedHero().playerAbilities, id)
+				end
+			end
+			
+			CustomGameEventManager:Send_ServerToPlayer(player, "dota_ability_changed", {entityIndex = playerHero})
+			CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_hide_player_spells_feedback", {})
+		end
+	end
+end
+
 
 function holdout_card_points:_SwapAbilitiesPosition(nPlayerID, firstAbilityName, secondAbilityName)
     local player = PlayerResource:GetPlayer(nPlayerID)

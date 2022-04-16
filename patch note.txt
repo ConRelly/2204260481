@@ -1861,10 +1861,6 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 * Fixed Burrow (Nyx Assassin) damage reduction + ability interactions
 * Fixed random skills scrolls for some heroes
 * Zanto Gari (Juggernaut): Changed Aghanim's Scepter Mana Cost
-* Pudge Rot: now is not lethal dmg for pudge anymore.
-* Slark darkpact self dmg is not affected by spell amp anymore and increased the % self dmg.
-* Added another Marci Unleash SS:
-	-- Speedsters: from 50% ms as bonus dmg to 140%
 * Craggy Exterior (Tiny):
 	-- Procs against all units
 	-- Added damage factor
@@ -1903,6 +1899,19 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 	-- Mana Regen reduced by 70 (Bloodstone no longer gives Mana Regen)
 	-- Added Edible Aether Lens to recipe
 
+\/ \/ \/ NOT IN BETA MAP UPDATES, AND STILL NOT IN LIVE UPDATE /\ /\ /\
+
+* Pudge Rot: now is not lethal dmg for pudge anymore.
+* Slark darkpact self dmg is not affected by spell amp anymore and increased the % self dmg.
+* Added another Marci Unleash SS:
+	-- Speedsters: from 50% ms as bonus dmg to 140%
+* Fixed Attribute Bonus abuse
+* Increased Aghanim's Fragment drop from Roshan by 25%, but if there is no Rubick in the team, then Aghanim's Fragment drop from Roshan is halved
+* Simplified recipes for Greater Chest, Major Chest and Stellar Chest (gold cost not changed)
+* Greater Chest and Major Chest now sellable
+* Num: Added Health Regen Amplification from Heart of Tarrasque
+* Added Hide Menu (use Config Menu (up-right screen)). To hide ability: press ALT and Left-click on ability. To unhide ability: press "Hidden Menu" and Left-click on needed ability
+* Burrow (Nyx Assassin): Carapace radius increased to 600
 
 
 
@@ -1943,6 +1952,7 @@ LionDagonV2 - greater blast staff passive has 25% chance to trigger daggon inste
 Antimage Q = Acts as antimage lvl 20 talent (ignores base armor)
 Insatiable Hunger = doubles the chance of the SS effect.
 Speedsters : from 50% ms as bonus dmg to 140%
+
 
 
 can youse this format for marci SS effect:
