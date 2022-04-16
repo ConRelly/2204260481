@@ -18353,9 +18353,8 @@
 		"ItemIsNeutralDrop"				"0"
 		"ItemRequirements"
 		{
-			"01"						"item_chest_6"
-			"02"						"item_chest_4;item_chest_3"
-
+//			"01"						"item_chest_6"
+			"01"						"item_chest_4;item_chest_3"
 		}
 	}
 // Stellar Chest
@@ -35301,8 +35300,8 @@
 		"ItemStockMax"					"1"
 		"ItemStockInitial"				"0"
 		"ItemStockTime"					"999999"
-		"ItemPurchasable"				"0"
-		"ItemSellable"					"0"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
 		"ItemKillable"					"1"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"ItemQuality"					"artifact"

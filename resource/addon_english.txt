@@ -446,6 +446,16 @@
 	"DOTA_Tooltip_ability_item_holy_locket_Description"				"<h1>Active: Energy Charge</h1>Target an allied unit to instantly restore %restore_per_charge% health and mana per charge stored. <br><br>Max %max_charges% charges. Automatically gains a charge every %charge_gain_timer% seconds and whenever a visible enemy within %charge_radius% range uses an ability.\n\n<h1>Passive: Holy Blessing</h1>Amplifies heals you provide by %heal_increase%%%.\n\n<h1>Passive: Regeneration Aura</h1>Grants %aura_health_regen% health regeneration to allies.<br><br>Radius: %aura_radius%\n<h1><font color='#D1954F'>UP: Spirit Vessel</font></h1>Healing using Spirit Vessel gives 1 charge every 0.5 seconds.<br>(Allows you to exceed the charges limit)"
 
 
+	"DOTA_Tooltip_ability_item_recipe_traxexs_necklace"		"Traxex's Necklace Recipe"
+	"DOTA_Tooltip_ability_item_traxexs_necklace"					"Traxex's Necklace"
+	"DOTA_Tooltip_ability_item_traxexs_necklace_description"		"<h1>Active: Icy Chill</h1> Freezes an area and enemies within a radius of %active_radius%, adding %active_chill% to the Chill. \n<h1>Passive: Chill</h1> Every 10 stacks slows enemy by 1%% of movement speed. <br> Every second of the effect, thawing occurs, which reduces stacks by %chill_thaw_pct%%%. <br> When 1000 Chill is reached, the enemy freezes. \n<h1>Passive: Deep Freeze</h1> When the freeze ends, all enemies within a radius of %freeze_shatter_radius% are dealt %freeze_shatter_hp_damage%%% Physical Damage from the Max Health of the frozen."
+	"DOTA_Tooltip_ability_item_traxexs_necklace_bonus_int"			"+$int"
+	"DOTA_Tooltip_ability_item_traxexs_necklace_bonus_evasion"		"%+$evasion"
+	"DOTA_Tooltip_modifier_traxexs_necklace_chill"						"Chill"
+	"DOTA_Tooltip_modifier_traxexs_necklace_chill_description"			"Movement Speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+	"DOTA_Tooltip_modifier_traxexs_necklace_frozen"						"Frozen"
+
+
 	"DOTA_Tooltip_ability_item_to_piety"					"Divine Pray"
 	"DOTA_Tooltip_ability_item_to_piety_description"		"Changes the character to Piety.<br>(It is possible to use only at level 1 and only by Lina)"
 	"DOTA_Tooltip_ability_item_to_kardel"					"Kardel's Kit"
@@ -839,7 +849,7 @@
 
 // Windranger
 	"DOTA_Tooltip_ability_wr_shackleshot"					"Shackleshot"
-	"DOTA_Tooltip_ability_wr_shackleshot_Description"		"Shackles the target to an enemy unit or tree in a line directly behind it. If no unit or tree is present, the stun duration is reduced to %fail_stun_duration%."
+	"DOTA_Tooltip_ability_wr_shackleshot_Description"		"Shackles the target to an enemy unit or tree in a line directly behind it. If no unit or tree is present, the stun duration is reduced to %fail_stun_duration%. \n<font color='#B9DC14'>WindRanger's</font> <font color='#FFA32B'>Exclusive:</font> Traxex's Necklace</h1> Instantly freezes targets."
 	"DOTA_Tooltip_ability_wr_shackleshot_Lore"			"Windranger's variety of bow skills includes an arrow with thick ropes attached to encumber any escaping target."
 	"DOTA_Tooltip_ability_wr_shackleshot_Note0"		"This spell can shackle two enemies together, stunning them both."
 	"DOTA_Tooltip_ability_wr_shackleshot_Note1"		"Shackleshot can be disjointed."
@@ -849,7 +859,7 @@
 	"DOTA_Tooltip_modifier_wr_shackleshot_stun_Description"		"Bound by thick ropes from Windranger's ensnaring arrow."
 
 	"DOTA_Tooltip_ability_wr_windrun"					"Windrun"
-	"DOTA_Tooltip_ability_wr_windrun_Description"		"Increases movement speed and adds evasion from all physical attacks, while slowing movement of nearby enemies."
+	"DOTA_Tooltip_ability_wr_windrun_Description"		"Increases movement speed and adds evasion from all physical attacks, while slowing movement of nearby enemies. \n<font color='#B9DC14'>WindRanger's</font> <font color='#FFA32B'>Exclusive:</font> Traxex's Necklace</h1> Each unsuccessful enemy hit on the owner adds 1-150 Chill stacks."
 	"DOTA_Tooltip_ability_wr_windrun_Lore"		"Lyralei enchants gusts of winds to fight incoming attacks."
 	"DOTA_Tooltip_ability_wr_windrun_scepter_description"		"Increases Windrun slow by %scepter_movespeed_bonus_pct%%% and makes it undispellable. Enemies affected by Windrun are blinded by %scepter_blind%%%"
 	"DOTA_Tooltip_ability_wr_windrun_movespeed_bonus_pct"			"%MOVE SPEED BONUS:"
@@ -4305,7 +4315,7 @@ DISPEL TYPE: Strong Dispel"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_windrunner_focusfire_ministun"	"+{s:ministun_chance}% Ministun Focus Fire"   
 	
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot"										"Powershot"
-	"DOTA_Tooltip_ability_mjz_windrunner_powershot_Description"							"Windranger charges her bow for up to %channel_time% second for a single powerful shot, which deals more damage the longer it is charged. The arrow damages enemies along its path. For each enemy that Powershot hits, its damage is increased by %damage_increase%%%. \n<h1>Straight Shooter</h1> Has a chance to shoot an arrow with random damage when attacking. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Reduces charging by Half. <br> When fully charged, it gives an effect for %debuff_duration% seconds, which increases damage by 1000%%, chance by x5, as well as Straight Shooter deals maximum damage."
+	"DOTA_Tooltip_ability_mjz_windrunner_powershot_Description"							"Windranger charges her bow for up to %channel_time% second for a single powerful shot, which deals more damage the longer it is charged. The arrow damages enemies along its path. For each enemy that Powershot hits, its damage is increased by %damage_increase%%%. \n<h1>Straight Shooter</h1> Has a chance to shoot an arrow with random damage when attacking. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Reduces charging by Half. <br> When fully charged, it gives an effect for %debuff_duration% seconds, which increases damage by 1000%%, chance by x5, as well as Straight Shooter deals maximum damage.  \n<font color='#B9DC14'>WindRanger's</font> <font color='#FFA32B'>Exclusive:</font> Traxex's Necklace</h1> Launches an ice arrow, if the enemy is frozen, the freezing effect is removed, and the enemy is dealt double damage from Deep Freeze."
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot_shard_Description"			"Each hit reduces the target's armor by %shard_armor%. The duration of one effect is %debuff_duration% seconds."
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot_Lore"								"During her early years of training, Lyralei learned to fire powerful arrows that cleaved even trees to reach their targets."
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot_Note0"								"Powershot will destroy trees in its area of effect."

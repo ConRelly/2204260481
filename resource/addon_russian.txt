@@ -456,9 +456,12 @@
 
 	"DOTA_Tooltip_ability_item_recipe_traxexs_necklace"		"Рецепт: Traxex's Necklace"
 	"DOTA_Tooltip_ability_item_traxexs_necklace"					"Traxex's Necklace"
-	"DOTA_Tooltip_ability_item_traxexs_necklace_description"		"<h1>Aктивнoe: Icy Chill</h1> Замораживает область и врагов в радиусе %active_radius%, добавляя %active_chill% к эффекту Chill. \n<h1>Пaccивнoe: Chill</h1> Каждые 10 единиц эффекта замедляет врага на 1%% скорости передвижения. <br> Каждую секунду эффекта происходит оттаивание, которое снижает количество эффектов на %chill_thaw_pct%%%. <br> При достежении 1000 Chill враг замораживается"
+	"DOTA_Tooltip_ability_item_traxexs_necklace_description"		"<h1>Aктивнoe: Icy Chill</h1> Замораживает область и врагов в радиусе %active_radius%, добавляя %active_chill% к эффекту Chill. \n<h1>Пaccивнoe: Chill</h1> Каждые 10 единиц эффекта замедляет врага на 1%% скорости передвижения. <br> Каждую секунду эффекта происходит оттаивание, которое снижает количество эффектов на %chill_thaw_pct%%%. <br> При достежении 1000 Chill враг замораживается. \n<h1>Пaccивнoe: Deep Freeze</h1> Когда заморозка оканчивается, то всем врагам в радиусе %freeze_shatter_radius% наносится %freeze_shatter_hp_damage%%% от макс. здоровья замороженного физ. уроном."
 	"DOTA_Tooltip_ability_item_traxexs_necklace_bonus_int"			"+$int"
 	"DOTA_Tooltip_ability_item_traxexs_necklace_bonus_evasion"		"%+$evasion"
+	"DOTA_Tooltip_modifier_traxexs_necklace_chill"						"Охлаждён"
+	"DOTA_Tooltip_modifier_traxexs_necklace_chill_description"			"Скорость передвижения снижена на %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
+	"DOTA_Tooltip_modifier_traxexs_necklace_frozen"						"Заморожен"
 
 
 	"DOTA_Tooltip_ability_item_to_piety"					"Divine Pray"
@@ -873,7 +876,7 @@
 
 // Windranger
 	"DOTA_Tooltip_ability_wr_shackleshot"					"Shackleshot"
-	"DOTA_Tooltip_ability_wr_shackleshot_Description"		"Связывает цель с находящимся позади неё врагом или деревом. Если цель не будет с чем-либо связана, длительность оглушения сократится до %fail_stun_duration% сек."
+	"DOTA_Tooltip_ability_wr_shackleshot_Description"		"Связывает цель с находящимся позади неё врагом или деревом. Если цель не будет с чем-либо связана, длительность оглушения сократится до %fail_stun_duration% сек. \n<font color='#B9DC14'>WindRanger's</font> <font color='#FFA32B'>Exclusive:</font> Traxex's Necklace</h1> Моментально замораживает цели."
 	"DOTA_Tooltip_ability_wr_shackleshot_Lore"			"Мастерство владения луком позволяет Лиралей выпустить стрелу с толстой верёвкой, которая не даст жертве вырваться."
 	"DOTA_Tooltip_ability_wr_shackleshot_Note0"		"Может связать двух противников, оглушая обоих."
 	"DOTA_Tooltip_ability_wr_shackleshot_Note1"		"Снаряд этой способности можно сбить с цели."
@@ -883,7 +886,7 @@
 	"DOTA_Tooltip_modifier_wr_shackleshot_stun_Description"		"Находится в крепких путах ловчей стрелы Windranger."
 
 	"DOTA_Tooltip_ability_wr_windrun"					"Windrun"
-	"DOTA_Tooltip_ability_wr_windrun_Description"		"Увеличивает скорость передвижения героя и позволяет ему уворачиваться от всех физических атак, при этом замедляя передвижение врагов поблизости."
+	"DOTA_Tooltip_ability_wr_windrun_Description"		"Увеличивает скорость передвижения героя и позволяет ему уворачиваться от всех физических атак, при этом замедляя передвижение врагов поблизости. \n<font color='#B9DC14'>WindRanger's</font> <font color='#FFA32B'>Exclusive:</font> Traxex's Necklace</h1> Каждое неудачное попадание врага по владельцу добавляет 1-150 эффектов Chill."
 	"DOTA_Tooltip_ability_wr_windrun_Lore"		"Лиралей зачаровывает порывы ветра, и они отражают удары по ней."
 	"DOTA_Tooltip_ability_wr_windrun_scepter_description"		"Увеличивает замедление от Windrun на %scepter_movespeed_bonus_pct%%% и делает его неразвеиваемым. Враги под эффектом Windrun имеют шанс промаха в %scepter_blind%%%."
 	"DOTA_Tooltip_ability_wr_windrun_movespeed_bonus_pct"			"%Доп. скорость передвижения:"
@@ -4397,7 +4400,7 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_windrunner_focusfire_ministun"	"+{s:ministun_chance}% шaнc нa мини-oглyшeниe oт Focus Fire"
 
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot"						"Powershot"
-	"DOTA_Tooltip_ability_mjz_windrunner_powershot_Description"			"Герой заряжает лук, чтобы совершить мощный выстрел. Стрела наносит урон врагам. Урон увеличивается по мере зарядки, которая длится не более %channel_time% сек., и увеличивается на %damage_increase%%% с каждым задетым врагом. \n<h1>Straight Shooter</h1> Имеет шанс при атаке выстрелить стрелой со случайным уроном. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Снижает зарядку в 2 раза. <br> При полной зарядке даёт эффект на %debuff_duration% сек., который увеличивает урон на 1000%%, шанс в 5 раз, а так же Straight Shooter наносит максимальный урон."
+	"DOTA_Tooltip_ability_mjz_windrunner_powershot_Description"			"Герой заряжает лук, чтобы совершить мощный выстрел. Стрела наносит урон врагам. Урон увеличивается по мере зарядки, которая длится не более %channel_time% сек., и увеличивается на %damage_increase%%% с каждым задетым врагом. \n<h1>Straight Shooter</h1> Имеет шанс при атаке выстрелить стрелой со случайным уроном. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Снижает зарядку в 2 раза. <br> При полной зарядке даёт эффект на %debuff_duration% сек., который увеличивает урон на 1000%%, шанс в 5 раз, а так же Straight Shooter наносит максимальный урон.  \n<font color='#B9DC14'>WindRanger's</font> <font color='#FFA32B'>Exclusive:</font> Traxex's Necklace</h1> Запускает ледяную стрелу, если враг заморожен, то эффект заморозки снимается, а врагу наносится двойной урон от Deep Freeze."
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot_shard_Description"			"Каждое попадание снижает броню цели на %shard_armor%. Длительность одного эффекта %debuff_duration% секунд."
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot_Lore"		"B пepвыe гoды oбyчeния Лиpaлeй нayчилacь cтpeлять мoщными cтpeлaми, кoтopыe pacкaлывaли дaжe дepeвья, чтoбы дocтичь cвoиx цeлeй."
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot_Note0"			"Powershot yничтoжaeт дepeвья в зoнe пopaжeния."
