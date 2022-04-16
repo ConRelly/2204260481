@@ -8468,14 +8468,14 @@
 	}
 	"puck_phase_shift"
 	{
-		"AbilityChannelTime"			"1.5 1.75 2.0 2.25"
-		"AbilityCooldown"				"15.0"
+		"AbilityChannelTime"			"1.5 1.75 2.0 2.5"
+		"AbilityCooldown"				"17.0"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"1.5 1.75 2.0 2.25"
+				"duration"					"1.5 1.75 2.0 2.5"
 			}
 		}
 	}

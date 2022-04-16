@@ -9,7 +9,7 @@
 
     "MaxLevel"                                            "7"
     "RequiredLevel"                                       "1"
-    "LevelsBetweenUpgrades"                               "5"
+    "LevelsBetweenUpgrades"                               "7"
 
     "AbilityCooldown"                                     "2.5 2.0 1.5 1.0 0.5 0.25 0.20"
 
@@ -31,7 +31,8 @@
       "03"
       {
         "var_type"                                        "FIELD_INTEGER"
-        "bonus_damage"                                    "240 780 2240 4420 9690 15200"
+        "bonus_damage"                                    "540 1780 4240 12420 29690 65200"
+        "LinkedSpecialBonus"                              "special_bonus_unique_weaver_2"
       }
     }
   }
