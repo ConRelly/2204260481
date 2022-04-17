@@ -46,7 +46,7 @@ function modifier_traxexs_necklace:GetModifierProcAttack_BonusDamage_Physical(ke
 		if keys.target == nil then return end
 		local ms_diff = self:GetParent():GetIdealSpeed() - keys.target:GetIdealSpeed()
 		if ms_diff > 0 then
-			SendOverheadEventMessage(nil, OVERHEAD_ALERT_DAMAGE, keys.target, ms_diff, nil)
+--			SendOverheadEventMessage(nil, OVERHEAD_ALERT_DAMAGE, keys.target, ms_diff, nil)
 			return ms_diff
 		end
 	end

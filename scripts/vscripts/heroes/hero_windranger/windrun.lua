@@ -110,11 +110,14 @@ function modifier_wr_windrun:GetModifierEvasion_Constant() return self.evasion_p
 
 function modifier_wr_windrun:OnAttackFail(keys)
 	if not IsServer() then return end
-	if keys.attacker:GetTeam() == self:GetCaster():GetTeam() then return end
-	if keys.attacker:HasModifier("modifier_traxexs_necklace_frozen") then return end
-	if self:GetCaster() == keys.target then
-		local chill = keys.attacker:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_traxexs_necklace_chill", {duration = 2})
-		chill:SetStackCount(chill:GetStackCount() + RandomInt(1, 150))
+	if self:GetCaster():GetUnitName() == "npc_dota_hero_windrunner" and self:GetCaster():HasModifier("modifier_traxexs_necklace") then
+		if keys.attacker:GetTeam() == self:GetCaster():GetTeam() then return end
+		if keys.attacker:HasModifier("modifier_traxexs_necklace_frozen") then return end
+		if self:GetCaster() == keys.target then
+			local TraxexNecklace = self:GetCaster():FindItemInInventory("item_traxexs_necklace")
+			local chill = keys.attacker:AddNewModifier(self:GetCaster(), TraxexNecklace, "modifier_traxexs_necklace_chill", {duration = 2})
+			chill:SetStackCount(chill:GetStackCount() + RandomInt(1, 150))
+		end
 	end
 end
 
