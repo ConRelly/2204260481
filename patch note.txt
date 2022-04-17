@@ -1848,7 +1848,7 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 * Marci Unleash now has a level where it deals 0 bonus dmg but has more hits. increased dmg for the other lvl's.
 
 
-
+Full Patch note can be found on Discord
 * Fixed Kardel and Piety
 * Fixed Bloodstone (vanilla)
 * Fixed (and removed) Remote Mines (Techies)
@@ -1862,10 +1862,12 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 * Fixed random skills scrolls for some heroes
 * Fixed Attribute Bonus abuse
 * Increased Aghanim's Fragment drop from Roshan by 25%, but if there is no Rubick in the team, then Aghanim's Fragment drop from Roshan is halved
-* Simplified recipes for Greater Chest, Major Chest and Stellar Chest (gold cost not changed)
+* Simplified recipes for Greater Chest, Major Chest, and Stellar Chest (gold cost not changed)
 * Greater Chest and Major Chest now sellable
-* Added Hide Menu (use Config Menu (up-right screen)). To hide ability: press ALT and Left-click on ability. To unhide ability: press "Hidden Menu" and Left-click on needed ability
+* Added Hide Menu (use Config Menu (up-right screen)). To hide ability: press ALT and Left-click on ability. To unhide ability: press "Hidden Menu" and Left-click on the needed ability
 * Zanto Gari (Juggernaut): Changed Aghanim's Scepter Mana Cost
+* Puck added a CDR talent.
+* Fixed weaver geminate missing bonus dmg (increased a little) and added back his + 1 geminate talent.
 * Craggy Exterior (Tiny):
 	-- Procs against all units
 	-- Added damage factor
@@ -1909,6 +1911,9 @@ Because of the new update, Dota is a lot more sensitive to errors and prone to c
 	-- Mana Regen reduced by 70 (Bloodstone no longer gives Mana Regen)
 	-- Added Edible Aether Lens to recipe
 * Num: Added Health Regen Amplification from Heart of Tarrasque
+and some other stuff
+
+
 
 
 

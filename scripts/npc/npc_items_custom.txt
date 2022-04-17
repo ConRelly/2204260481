@@ -35291,7 +35291,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"AbilityCooldown"				"12"
+		"AbilityCooldown"				"15"
 		"AbilityCastRange"				"1200"
 		"AbilityCastPoint"				"0"
 		"AbilityManaCost"				"75"
@@ -35311,13 +35311,14 @@
 			"bonus_int"						"1000"
 			"bonus_evasion"					"30"
 
-			"active_chill"					"10"
+			"active_chill"					"150"
+			"active_chill_bonus"			"20"
 			"active_radius"					"900"
 			"chill_max"						"1000"
 			"chill_duration"				"6"
 			"chill_thaw_pct"				"5"
 			"freeze_duration"				"2"
-			"freeze_shatter_hp_damage"		"1"
+			"freeze_shatter_hp_damage"		"2"
 			"freeze_shatter_radius"			"900"
 		}
 	}

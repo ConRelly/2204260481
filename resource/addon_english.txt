@@ -448,9 +448,10 @@
 
 	"DOTA_Tooltip_ability_item_recipe_traxexs_necklace"		"Traxex's Necklace Recipe"
 	"DOTA_Tooltip_ability_item_traxexs_necklace"					"Traxex's Necklace"
-	"DOTA_Tooltip_ability_item_traxexs_necklace_description"		"<h1>Active: Icy Chill</h1> Freezes an area and enemies within a radius of %active_radius%, adding %active_chill% to the Chill. \n<h1>Passive: Chill</h1> Every 10 stacks slows enemy by 1%% of movement speed. <br> Every second of the effect, thawing occurs, which reduces stacks by %chill_thaw_pct%%%. <br> When 1000 Chill is reached, the enemy freezes. \n<h1>Passive: Deep Freeze</h1> When the freeze ends, all enemies within a radius of %freeze_shatter_radius% are dealt %freeze_shatter_hp_damage%%% Physical Damage from the Max Health of the frozen."
+	"DOTA_Tooltip_ability_item_traxexs_necklace_description"		"<h1>Active: Icy Chill</h1> Freezes an area and enemies within a radius of %active_radius%,increasing current Chill stacks by %active_chill_bonus%%% and adding %active_chill% to the Chill stacks. \n<h1>Passive: <font color='#12B5ED'>Chill</font></h1> Every 10 stacks slows enemy by 1%% of movement speed. <br> Every second of the effect, thawing occurs, which reduces stacks by %chill_thaw_pct%%%. <br> When 1000 Chill is reached, the enemy freezes. \n<h1>Passive: <font color='#12EDE0'>Pure Speed</font></h1>On attack Deal bonus Pure damage for every movement speed you have over your target. \n<h1>Passive: <font color='#126FED'>Deep Freeze</font></h1> When the freeze ends, all enemies within a radius of %freeze_shatter_radius% are dealt %freeze_shatter_hp_damage%%% Physical Damage(ignores base armor) from the Max Health of the frozen."
 	"DOTA_Tooltip_ability_item_traxexs_necklace_bonus_int"			"+$int"
 	"DOTA_Tooltip_ability_item_traxexs_necklace_bonus_evasion"		"%+$evasion"
+	"DOTA_Tooltip_ability_item_traxexs_necklace_Note0"              "<font color='#12EDE0'>Pure Speed</font> damage is not affected by spell amp and does not trigger other effects like arcane staff, the dmg will be added to the normal physical attack in the DPS tool."
 	"DOTA_Tooltip_modifier_traxexs_necklace_chill"						"Chill"
 	"DOTA_Tooltip_modifier_traxexs_necklace_chill_description"			"Movement Speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 	"DOTA_Tooltip_modifier_traxexs_necklace_frozen"						"Frozen"

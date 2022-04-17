@@ -25,7 +25,7 @@ function item_traxexs_necklace:OnSpellStart()
 	local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCursorPosition(), nil, self:GetSpecialValueFor("active_radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, 0, FIND_ANY_ORDER, false)
 	for _,enemy in pairs(enemies) do
 		local chill = enemy:AddNewModifier(self:GetCaster(), self, "modifier_traxexs_necklace_chill", {duration = self:GetSpecialValueFor("chill_duration")})
-		chill:SetStackCount(chill:GetStackCount() + self:GetSpecialValueFor("active_chill"))
+		chill:SetStackCount(chill:GetStackCount() * (1 + self:GetSpecialValueFor("active_chill_bonus")/100) + self:GetSpecialValueFor("active_chill"))
 	end
 end
 
@@ -177,7 +177,7 @@ function modifier_traxexs_necklace_frozen:OnDestroy()
 				ability = self:GetAbility(),
 				damage = damage,
 				damage_type = DAMAGE_TYPE_PHYSICAL,--DAMAGE_TYPE_MAGICAL,
-				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,--DOTA_DAMAGE_FLAG_IGNORES_MAGIC_ARMOR,
+				damage_flags = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR,--DOTA_DAMAGE_FLAG_IGNORES_MAGIC_ARMOR,
 			})
 		end
 	end
