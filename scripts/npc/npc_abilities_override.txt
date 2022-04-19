@@ -5110,12 +5110,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"850"
+				"radius"					"1850"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"armor_reduction_pct"		"10 15 20 25"
+				"armor_reduction_pct"		"20 25 30 35"
 			}
 			"03"
 			{

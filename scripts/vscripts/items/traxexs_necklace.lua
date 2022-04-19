@@ -46,10 +46,11 @@ function modifier_traxexs_necklace:GetModifierProcAttack_BonusDamage_Pure(keys)
 	if parent == keys.attacker then
 		if keys.target == nil then return end
 		if parent:IsIllusion() then return end
+		local parent_name = parent:GetUnitName()
 		local ms_diff = parent:GetIdealSpeed() - keys.target:GetIdealSpeed()
 		if ms_diff > 0 then
-			if parent:GetLevel() < 35 then
-				ms_diff = ms_diff / 4
+			if parent_name ~= "npc_dota_hero_windrunner" then
+				ms_diff = ms_diff / 2
 			end	
 --			SendOverheadEventMessage(nil, OVERHEAD_ALERT_DAMAGE, keys.target, ms_diff, nil)
 			return ms_diff
