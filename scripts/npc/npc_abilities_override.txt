@@ -7277,7 +7277,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_per_mana"		"2.3 3.7 4.1 5.5"
+				"damage_per_mana"		"23 37 41 55"
 			}			
 			"02"
 			{

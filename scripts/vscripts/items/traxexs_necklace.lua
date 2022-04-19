@@ -34,18 +34,23 @@ modifier_traxexs_necklace = modifier_traxexs_necklace or class({})
 function modifier_traxexs_necklace:IsHidden() return true end
 function modifier_traxexs_necklace:IsPurgable() return false end
 function modifier_traxexs_necklace:RemoveOnDeath() return false end
-function modifier_traxexs_necklace:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+--function modifier_traxexs_necklace:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end  -- you don't want multiple of same item being best option
 function modifier_traxexs_necklace:DeclareFunctions()
-	return {MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_EVASION_CONSTANT, MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PHYSICAL}
+	return {MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_EVASION_CONSTANT, MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PURE}
 end
 function modifier_traxexs_necklace:GetModifierBonusStats_Intellect() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_int") end end
 function modifier_traxexs_necklace:GetModifierEvasion_Constant() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_evasion") end end
-function modifier_traxexs_necklace:GetModifierProcAttack_BonusDamage_Physical(keys)
+function modifier_traxexs_necklace:GetModifierProcAttack_BonusDamage_Pure(keys)
 	if not IsServer() then return end
-	if self:GetParent() == keys.attacker then
+	local parent = self:GetParent()
+	if parent == keys.attacker then
 		if keys.target == nil then return end
-		local ms_diff = self:GetParent():GetIdealSpeed() - keys.target:GetIdealSpeed()
+		if parent:IsIllusion() then return end
+		local ms_diff = parent:GetIdealSpeed() - keys.target:GetIdealSpeed()
 		if ms_diff > 0 then
+			if parent:GetLevel() < 35 then
+				ms_diff = ms_diff / 4
+			end	
 --			SendOverheadEventMessage(nil, OVERHEAD_ALERT_DAMAGE, keys.target, ms_diff, nil)
 			return ms_diff
 		end

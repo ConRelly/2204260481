@@ -1918,6 +1918,13 @@ and some other stuff
 
 
 
+* Reduced Marci Unleash level required by 1(6 lvls less to max out)
+* Root self dmg from 25% to 20% and interval is 2 times faster(0.2s same dmg for 2 ticks as one before) for self dmg only.
+* Medusa mana shield absorb damage per mana increased by 10x.
+
+
+
+
 
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.

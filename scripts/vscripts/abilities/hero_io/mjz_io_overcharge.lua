@@ -23,7 +23,8 @@ function ability_class:OnToggle()
 		if self:GetToggleState() then
 			caster:AddNewModifier(caster, self, 'modifier_mjz_io_overcharge_caster', {})
 			caster:AddNewModifier(caster, self, MODIFIER_BUFF_NAME, {})
-			EmitSoundOn("Hero_Wisp.Overcharge", caster)
+			--EmitSoundOn("Hero_Wisp.Overcharge", caster)
+			caster:EmitSoundParams("Hero_Wisp.Overcharge", 0, 0.3, 0) -- this type of emit sound seems more easy to use (some sounds need to be tone down or up)
 		else
 			caster:RemoveModifierByName('modifier_mjz_io_overcharge_caster')
 			caster:RemoveModifierByName(MODIFIER_BUFF_NAME)
@@ -39,6 +40,7 @@ local modifier_class = modifier_mjz_io_overcharge
 function modifier_class:IsPassive() return false end
 function modifier_class:IsHidden() return true end
 function modifier_class:IsPurgable() return false end
+
 
 if IsServer() then
 
@@ -144,15 +146,15 @@ end
 modifier_mjz_io_overcharge_buff = class({})
 local modifier_buff = modifier_mjz_io_overcharge_buff
 
+
 function modifier_buff:IsHidden() return false end
 function modifier_buff:IsPurgable() return false end
-
-function modifier_buff:GetEffectName()
-	return "particles/units/heroes/hero_wisp/wisp_overcharge.vpcf"
+--[[ function modifier_buff:GetEffectName()
+	return self.effect
 end
 function modifier_buff:GetEffectAttachType()
 	return PATTACH_ABSORIGIN_FOLLOW
-end
+end ]]
 
 function modifier_buff:GetPriority()
 	return MODIFIER_PRIORITY_ULTRA + 10000
@@ -162,6 +164,10 @@ function modifier_buff:OnCreated()
 	local parent = self:GetParent()
 	local caster = self:GetCaster()
 	local buff_duration = self:GetAbility():GetSpecialValueFor("buff_duration")
+	local effect_wips = "particles/units/heroes/hero_wisp/wisp_overcharge.vpcf" -- this effect is to bright
+	local effect_venom = "particles/hero_venom/venom_immoeral_ambient.vpcf"     -- does not look well on carnage model because of the walk model.
+	self.effect = effect_wips
+	self.model = "models/heroes/hero_venom/venom.vmdl" --temp just for model test. Modifier icon can be venom_passive.png or vhenom_passive.png
 	if parent ~= caster then
 		if not parent:HasModifier(MODIFIER_CD) then
 			cd_modifier = parent:AddNewModifier(caster, self:GetAbility(), MODIFIER_CD, {})
@@ -188,6 +194,7 @@ function modifier_buff:OnIntervalThink()
 				if not parent:HasModifier(MODIFIER_CD) and parent:HasModifier("modifier_mjz_io_overcharge_buff") then
 					cd_modifier = parent:AddNewModifier(caster, self:GetAbility(), MODIFIER_CD, {})
 					cd_modifier:SetStackCount(buff_duration)
+					self.model = "models/heroes/hero_carnage/carnage.vmdl" --temp just for model test . Modifier icon can be carnage.png
 					self:StartIntervalThink(1)
 				end
 			end)
@@ -209,6 +216,7 @@ function modifier_buff:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
 		MODIFIER_PROPERTY_IGNORE_MOVESPEED_LIMIT,
+		MODIFIER_PROPERTY_MODEL_CHANGE
 	}
 end
 
@@ -219,7 +227,7 @@ end
 function modifier_buff:GetModifierIgnoreMovespeedLimit()
 	return 1
 end
-
+function modifier_buff:GetModifierModelChange() return self.model end
 ---------------------------------------------------------------------------------------
 
 modifier_mjz_io_overcharge_cd = class({})

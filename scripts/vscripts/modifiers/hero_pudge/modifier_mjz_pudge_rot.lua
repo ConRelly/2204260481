@@ -66,7 +66,7 @@ if IsServer() then
 		ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 150, 1, 150 ) )
 		self:AddParticle( nFXIndex, false, false, -1, false, false )
 
-		self:StartIntervalThink( self.rot_tick )
+		self:StartIntervalThink( self.rot_tick / 2 )
 	end
 
 	function modifier_class:OnDestroy()
@@ -81,7 +81,7 @@ if IsServer() then
 		local health_damage_pct = GetTalentSpecialValueFor(ability, "health_damage_pct" )
 		local rot_damage = base_damage + caster:GetMaxHealth() * (health_damage_pct / 100.0)
 
-		local flDamagePerTick = math.ceil((self.rot_tick * rot_damage) / 4)
+		local flDamagePerTick = math.ceil((self.rot_tick * rot_damage) / 5)
 
 		if caster:IsAlive() then
 			local damage = {

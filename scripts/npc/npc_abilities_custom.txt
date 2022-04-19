@@ -1148,7 +1148,7 @@
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Marci.Unleash.Cast"
 		"MaxLevel"                      "7"
-		"LevelsBetweenUpgrades"         "10"
+		"LevelsBetweenUpgrades"         "9"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.2"
