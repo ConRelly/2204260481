@@ -11,9 +11,9 @@ LinkLuaModifier("amalgamation_bonus", "heroes/hero_wisp/amalgamation", LUA_MODIF
 amalgamation = class({})
 
 function amalgamation:GetBehavior()
-	local behavior = DOTA_ABILITY_BEHAVIOR_UNIT_TARGET
+	local behavior = DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_AUTOCAST
 	if self:GetCaster():HasModifier("amalgamation_modifier") then
-		behavior = DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_IMMEDIATE
+		behavior = DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_IMMEDIATE + DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE + DOTA_ABILITY_BEHAVIOR_AUTOCAST -- remove autocast if you want to not be able to change states during infest
 	end
 	return behavior
 end
@@ -135,26 +135,32 @@ function amalgamation_modifier:GetModifierManaBonus()
 end
 
 function amalgamation_modifier:CheckState()
-	local state = {
-		[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
-		[MODIFIER_STATE_MAGIC_IMMUNE] = true,
-		[MODIFIER_STATE_INVULNERABLE] = true,
-		[MODIFIER_STATE_UNSELECTABLE] = true,
-		[MODIFIER_STATE_NOT_ON_MINIMAP] = true,
-		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
-		[MODIFIER_STATE_FROZEN] = true,
-		[MODIFIER_STATE_DISARMED] = true,
-		[MODIFIER_STATE_OUT_OF_GAME] = true,
-		[MODIFIER_STATE_TRUESIGHT_IMMUNE] = true,
-		[MODIFIER_STATE_INVISIBLE] = true,
-	}
-	if (self.Host ~= nil) then
-		state[MODIFIER_STATE_STUNNED] = self.Host:IsStunned()
-		state[MODIFIER_STATE_SILENCED] = self.Host:IsSilenced()
-		state[MODIFIER_STATE_MUTED] = self.Host:IsMuted()
-		state[MODIFIER_STATE_COMMAND_RESTRICTED] = self.Host:IsCommandRestricted()
-	end
-	return state
+	if self:GetAbility() then
+		local ability = self:GetAbility()
+		local state = {
+			[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
+			[MODIFIER_STATE_MAGIC_IMMUNE] = true,
+			[MODIFIER_STATE_INVULNERABLE] = true,
+			[MODIFIER_STATE_UNSELECTABLE] = true,
+			[MODIFIER_STATE_NOT_ON_MINIMAP] = true,
+			[MODIFIER_STATE_NO_HEALTH_BAR] = true,
+			[MODIFIER_STATE_FROZEN] = true,
+			[MODIFIER_STATE_DISARMED] = not ability:GetAutoCastState(),
+			[MODIFIER_STATE_OUT_OF_GAME] = true,
+			[MODIFIER_STATE_TRUESIGHT_IMMUNE] = true,
+			[MODIFIER_STATE_INVISIBLE] = true,
+			[MODIFIER_STATE_COMMAND_RESTRICTED] = ability:GetAutoCastState(),
+		}
+		if (self.Host ~= nil) then
+			state[MODIFIER_STATE_STUNNED] = self.Host:IsStunned()
+			state[MODIFIER_STATE_SILENCED] = self.Host:IsSilenced()
+			state[MODIFIER_STATE_MUTED] = self.Host:IsMuted()
+			if self.Host:IsCommandRestricted() then 
+				state[MODIFIER_STATE_COMMAND_RESTRICTED] = self.Host:IsCommandRestricted()
+			end
+		end
+		return state
+	end	
 end
 
 function amalgamation_modifier:OnDeath(kv)

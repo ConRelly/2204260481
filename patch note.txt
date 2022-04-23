@@ -1977,5 +1977,18 @@ if caster:HasModifier("modifier_super_scepter") then
         special_effect_here = special_effect_here
     end                                 
 end
+// trying to come up with the symbiosis effects/conditions. you can add things maybe we end up with something good.
+\n<h1><font color='#DE3163'>Super Scepter</font></h1>  // not decided if Io should have the SS or the Host or both 
+Passive: Symbiosis(color not decided): If all conditions are meet you will merge with your host giving him a part of your stats. Has 2 different forms depending on skill autocast state.
+
+Venom(color black): The host will get as bonus from Your stats: 100% strength, 100% agility, 50% int, 100% of your base movemnt speed, 100% of all attack dmg (base + green)
+
+Carnage(color red): The host will get as bonus from Your stats: 100% strength, 50% agility, 50% int, and 40% of total spell amp.
+Duration : 20 sec
+Exhaust debuff duration: 30 sec (titan relic should probably not increase this)// thinking to make that bigger but being affected by something like status resist,CDR or titan relic but affects in reverse to reduce the duration but still having a min cap like ~20 sec.
+//conditions: infesting a target will proceed to transfrom in venom or carnage if Super scepter is On and host does not have Exhaust debuff on him.
+// alternative you get an button to transfrom, but the exhaust debuffs should still probably be on
+//ideas removed(reason, hard to impletent, lots of potential bugs and abuses, etc): host gets io items (same items will have no effect)
+
 
 * The "Exclusive" tag will now be written on the ability (Example: *hero_name*'s Exclusive: *item_name*)
