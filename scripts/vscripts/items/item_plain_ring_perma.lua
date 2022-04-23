@@ -81,7 +81,7 @@ function modifier_item_plain_ring_perma:OnTakeDamage(keys)
 		if self.parent:IsReincarnating() then return end
 		local unit = keys.unit
 		local attacker = keys.attacker
-		if unit == self.parent and attacker ~= self.parent then
+		if unit == self.parent then
 			--local damage = keys.damage
 			if self.parent:FindModifierByName("modifier_ring_invincibility_cd"):GetStackCount() == 0 then
 				if self.parent:GetHealth() <= 0 then

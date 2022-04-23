@@ -1,0 +1,47 @@
+""
+{
+	"Items"
+	{		
+		"#DOTA_Item_Build_Starting_Items"
+		{
+			"item"		"item_pipe"
+			"item"		"item_philo_stone_temp"	
+			"item"		"item_dragon_scale"
+  		}
+		
+		"#DOTA_Item_Build_Early_Game"
+		{	
+			"item"		"item_plain_perma"
+			"item"		"item_mjz_attribute_mail"
+			"item"		"item_ascetic_cap"
+			"item"		"item_earth_rapier" 
+		}
+		
+		"#DOTA_Item_Build_Mid_Items"			
+		{
+			"item"		"item_bigan_octarine_core"
+  			"item"  	"item_echo_wand"
+  			"item"		"item_pipe_2"
+  			"item"		"item_life_greaves"
+  			"item"		"item_mjz_bogduggs_lucky_femur_5"
+		}
+		
+		"#DOTA_Item_Build_Late_Items"			
+		{
+			"item"		"item_pipe_of_dezun"
+			"item"      "item_force_field"
+			"item"		"item_custom_seer_stone"
+			"item"		"item_ceremonial_robe"
+		}
+
+		"#DOTA_Item_Build_Luxury"
+		{
+			"item"		"item_all_essence"  
+			"item"		"item_weapon_fragment"  
+			"item"		"item_weapon_fragment_complete"
+			"item"		"item_enchanter"
+			"item"		"item_edible_complete"
+			"item"		"item_greater_elemental"
+		}	
+	}
+}

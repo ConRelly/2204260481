@@ -1,0 +1,50 @@
+""
+{
+	"Items"
+	{		
+		"#DOTA_Item_Build_Starting_Items"
+		{
+			"item"		"item_mjz_ring_of_aquila"
+			"item"		"item_philo_stone_temp"		
+  		}
+		
+		"#DOTA_Item_Build_Early_Game"
+		{	
+			"item"		"item_ancient_janggo_2"
+			"item"		"item_custom_octarine_core_1"
+			"item"		"item_plain_perma"
+			"item"		"item_dimensional_doorway"
+			"item"		"item_mjz_dragon_lance"
+		}
+		
+		"#DOTA_Item_Build_Mid_Items"			
+		{
+			"item"		"item_desolator_2"
+			"item"		"item_mjz_assault_5"    		
+			"item"		"item_bigan_octarine_core"
+			"item"		"item_fire_rapier" 
+			"item"		"item_helm_of_the_undying"
+			"item"      "item_broken_wings"
+			"item"		"item_ultimate_ethereal_blade"
+		}
+		
+		"#DOTA_Item_Build_Late_Items"			
+		{
+			"item"      "item_god_slayer"
+			"item"		"item_arcane_staff_edible"
+			"item"		"item_mjz_bloodstone_ultimate"
+			"item"		"item_mjz_monkey_king_bar_5"
+			"item"		"item_imba_silver_edge"
+		}
+
+		"#DOTA_Item_Build_Luxury"
+		{
+			"item"		"item_all_essence"  
+			"item"		"item_weapon_fragment"  
+			"item"		"item_weapon_fragment_complete"
+			"item"		"item_enchanter"
+			"item"		"item_edible_complete"
+			"item"		"item_greater_elemental"
+		}	
+	}
+}

@@ -1921,6 +1921,14 @@ and some other stuff
 * Reduced Marci Unleash level required by 1(6 lvls less to max out)
 * Root self dmg from 25% to 20% and interval is 2 times faster(0.2s same dmg for 2 ticks as one before) for self dmg only.
 * Medusa mana shield absorb damage per mana increased by 10x.
+* Added item build suggestion for : bristle, drow, huskar, Phantom Assassin.  thanks to Siliatra.
+* Phantom Assassin : replaced an talent with the true strike talent.
+* Fixed localization for Hp bar(for big bosses)
+* Gold ring will trigger even on Self dmg now.
+* Commander aura now affects other unnits then heroes, but the bonus is reduced to 20% of the full amount.
+
+
+
 
 
 

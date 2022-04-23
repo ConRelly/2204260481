@@ -4024,6 +4024,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityCastRange"				"7200"
 	"ItemCost"						"9050"
+	"ItemShareability"              "ITEM_FULLY_SHAREABLE"
 	"ItemShopTags"					"tank"
 	"ItemQuality"					"epic"
 	"ItemAliases"					"armor;attack speed;aura"

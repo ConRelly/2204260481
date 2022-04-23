@@ -76,12 +76,16 @@ function modifier_vengefulspirit_command_aura_effect_lua:DeclareFunctions()
 end
 function modifier_vengefulspirit_command_aura_effect_lua:GetModifierBaseDamageOutgoing_Percentage(params)
 	--if not IsServer() then return end
-	if not self:GetParent():IsRealHero() then return end
+	--if not self:GetParent():IsRealHero() then return end
 	if self:GetAbility() and self:GetCaster() then
 		if (self:GetCaster():PassivesDisabled() and not self:IsDebuff()) or self:GetAbility():GetLevel() < 1 then return end
+		local bonus = self.bonus_damage_pct + (self.agi_multiplier * self:GetCaster():GetAgility())
 		if self:GetCaster():GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
-			return -(self.bonus_damage_pct + (self.agi_multiplier * self:GetCaster():GetAgility()))
+			return -bonus
 		end
-		return self.bonus_damage_pct + (self.agi_multiplier * self:GetCaster():GetAgility())
+		if not self:GetParent():IsHero() then
+			return bonus / 5
+		end	
+		return bonus
 	end
 end
