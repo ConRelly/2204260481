@@ -159,7 +159,7 @@ function GetRandomAbilityName( hero )
 		--"dazzle_good_juju",
 		"dzzl_good_juju",
 		"ancient_apparition_chilling_touch",
-		"roshan_inherit_buff_datadriven",
+		"grow_strong",
 		"ogre_magi_multicast_n",
 		"ogre_magi_multicast_n",
 		"enchantress_impetus",

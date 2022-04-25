@@ -161,7 +161,7 @@ function GetRandomAbilityName( hero )
 		"imba_phantom_assassin_coup_de_grace",
 		"dzzl_good_juju",
 		"ancient_apparition_chilling_touch",
-		"roshan_inherit_buff_datadriven",
+		"grow_strong",
 		"ogre_magi_multicast_n",
 		--"enchantress_impetus",
 		"dark_seer_custom_ion_shell",

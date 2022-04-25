@@ -111,7 +111,7 @@ function modifier_hammer_of_the_divine:OnAttackLanded(keys)
 		if (caster:HasAbility("mjz_chaos_knight_chaos_strike") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike"):IsTrained()) or (caster:HasAbility("mjz_chaos_knight_chaos_strike_2") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike_2"):IsTrained())(caster:HasAbility("chaos_knight_chaos_strike") and caster:FindAbilityByName("chaos_knight_chaos_strike"):IsTrained()) then
 			unyielding_chance = ability:GetSpecialValueFor("unyielding_cs_chance")
 		end
-		if caster:HasAbility("roshan_inherit_buff_datadriven") and caster:FindAbilityByName("roshan_inherit_buff_datadriven"):IsTrained() then
+		if caster:HasAbility("grow_strong") and caster:FindAbilityByName("grow_strong"):IsTrained() then
 			unyielding_chance = unyielding_chance + ability:GetSpecialValueFor("unyielding_gs_chance")
 		end
 		if caster:IsRangedAttacker() then

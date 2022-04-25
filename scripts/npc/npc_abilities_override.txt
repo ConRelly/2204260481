@@ -3,7 +3,6 @@
 #base "abilities/heroes/sandking_burrowstrike.txt"
 #base "abilities/heroes/sandking_sand_storm.txt"
 #base "abilities/heroes/shadow_shaman_ether_shock.txt"
-//#base "abilities/heroes/shadow_shaman_mass_serpent_ward.txt"
 #base "abilities/heroes/ember_spirit_sleight_of_fist.txt"
 #base "abilities/heroes/pugna_nether_blast.txt"
 #base "abilities/heroes/bane_brain_sap.txt"
@@ -10419,8 +10418,11 @@
 			}
 		}
 	}
+
+// Shadow Shaman: Voodoo
 	"shadow_shaman_voodoo"
 	{
+		"AbilityCooldown"				"18"
 		"AbilitySpecial"
 		{
 			"01"
@@ -10435,9 +10437,59 @@
 			}
 		}
 	}
+	
+// Shadow Shaman: Ether Shock
+	"shadow_shaman_ether_shock"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"MaxLevel"						"6"
+		"LevelsBetweenUpgrades"			"2"
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"14 12 10 8 7 6"
+		"AbilityManaCost"				"100 120 140 160 260 360"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilitySound"					"Hero_ShadowShaman.EtherShock"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"start_radius"			"200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"end_radius"			"600"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"end_distance"			"600"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"targets"				"10"
+				"LinkedSpecialBonus"	"special_bonus_unique_shadow_shaman_7"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"140 200 360 920 1640 4280"
+				"LinkedSpecialBonus"	"special_bonus_unique_shadow_shaman_3"
+			}
+		}
+	}
+
+// Shadow Shaman: Shackles
 	"shadow_shaman_shackles"
 	{
-		"AbilityChannelTime"			"1.0 1.0 2.0 3.0"
+		"AbilityChannelTime"			"1 1 2 3"
 		"AbilityCooldown"				"17"
 		"AbilitySpecial"
 		{
@@ -10450,15 +10502,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"channel_time"			"1.0 1.0 2.0 3.0"
+				"channel_time"			"1 1 2 3"
 				"LinkedSpecialBonus"	"special_bonus_unique_shadow_shaman_2"
 			}
 		}
 	}
-	"shadow_shaman_voodoo"
-	{
-		"AbilityCooldown"				"18"
-	}
+
 	"shredder_chakram"
 	{
 
@@ -17057,80 +17106,73 @@
 			}			
 		}
 	}
+
+// Shadow Shaman: Mass Serpent Ward
 	"shadow_shaman_mass_serpent_ward"
-  {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	//"ID"												  "5081"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-	//"BaseClass"										   "ability_lua"
-	//"ScriptFile"										  "abilities/oaa_shadow_shaman_mass_serpent_ward.lua"
-	"AbilityTextureName"								  "shadow_shaman_mass_serpent_ward"
-	"AbilityType"										 "DOTA_ABILITY_TYPE_ULTIMATE"
-	"AbilityBehavior"									 "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-	"AbilityUnitDamageType"							   "DAMAGE_TYPE_PHYSICAL"
-	"SpellImmunityType"								   "SPELL_IMMUNITY_ENEMIES_YES"
-	//"FightRecapLevel"									 "2"
-
-	//"MaxLevel"											"5"
-	//"RequiredLevel"									   "6"
-	//"LevelsBetweenUpgrades"							   "6"
-
-	"HasScepterUpgrade"								   "1"
-
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"									"550"
-	"AbilityCastPoint"									"0.3"
-	"AbilityCastAnimation"								"ACT_DOTA_CAST_ABILITY_4"
-
-	// Time
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"									 "60" //OAA
-
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"									 "200 300 400"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
 	{
-	  "01"
-	  {
-		"var_type"										"FIELD_INTEGER"
-		"ward_count"									  "7"
-	  }
-	  "02"
-	  {
-		"var_type"										"FIELD_INTEGER"
-		"damage_tooltip"								  "200 460 860" //OAA
-		"LinkedSpecialBonus"							  "special_bonus_unique_shadow_shaman_4"
-		"CalculateSpellDamageTooltip"					 "0"
-	  }
-	  "03"
-	  {
-		"var_type"										"FIELD_FLOAT"
-		"duration"										"40.0"
-	  }
-	  "04"
-	  {
-		"var_type"										"FIELD_INTEGER"
-		"scepter_range"								   "1000"
-		"RequiresScepter"								 "1"
-	  }
-	  "05"
-	  {
-		"var_type"										"FIELD_INTEGER"
-		"spawn_radius"									"150"
-	  }
-	  "06"
-	  {
-		"var_type"										"FIELD_INTEGER"
-		"hits_to_destroy_tooltip"						 "10"
-		"LinkedSpecialBonus"							  "special_bonus_unique_shadow_shaman_1"
-	  }
+//		"BaseClass"						"ability_lua"
+//		"ScriptFile"					"abilities/oaa_shadow_shaman_mass_serpent_ward.lua"
+		"AbilityTextureName"			"shadow_shaman_mass_serpent_ward"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+//		"MaxLevel"						"5"
+//		"RequiredLevel"					"6"
+//		"LevelsBetweenUpgrades"			"6"
+
+		"HasScepterUpgrade"				"1"
+		"AbilityCastRange"				"550"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilitySound"					"Hero_ShadowShaman.SerpentWard"
+		"AbilityCooldown"				"60"
+		"AbilityManaCost"				"200 350 550"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ward_count"				"7"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_tooltip"			"200 460 860"
+				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_4"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"40"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scepter_range"				"1000"
+				"RequiresScepter"			"1"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"spawn_radius"				"150"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hits_to_destroy_tooltip"	"10"
+				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_1"
+			}
+			"07"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"hits_to_destroy_tooltip_creeps"	"20"
+				"LinkedSpecialBonus"				"special_bonus_unique_shadow_shaman_1"
+			}
+		}
 	}
-  }
+
 //=================================================================================================================
 	// Filler buildings ability (Shrines) 神坛 - 庇佑
 	//=================================================================================================================
@@ -18040,46 +18082,39 @@
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"speed"		"2000.0"
-				"RequiresScepter"			"1"
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"2000.0"
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"range"		"2800"
-				"RequiresScepter"			"1"
+				"var_type"				"FIELD_INTEGER"
+				"range"					"2800"
 			}
 			"03"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"splash_radius"				"950"
-				"RequiresScepter"			"1"
+				"var_type"				"FIELD_INTEGER"
+				"splash_radius"			"950"
 			}
 			"04"
 			{
-				"var_type"			"FIELD_INTEGER"
+				"var_type"				"FIELD_INTEGER"
 				"tree_grab_radius"		"9725"
-				"RequiresScepter"			"1"
 			}
 			"05"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"interval"		"0.10"
-				"RequiresScepter"			"1"
+				"var_type"				"FIELD_FLOAT"
+				"interval"				"0.10"
 			}
 			"06"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"500"
-				"RequiresScepter"			"1"
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"					"500"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"abilitychanneltime"		""
-				"RequiresScepter"			"1"
 			}
 		}
 	}
@@ -19925,48 +19960,21 @@
 		"UpgradeRecipe"				"item_mjz_rage_moon_shard;item_recipe_cursed_bloodthorn"
 		"MaxUpgradeLevel"			"2"
 		"ItemBaseLevel"				"1"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"25 175"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"90 350"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"30 200"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"5.5 22"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"silence_damage_percent"	"30"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"silence_duration"		"5 6"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"target_crit_multiplier"	"130 150"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"tooltip_crit_chance"	"100"
-			}
+			"bonus_intellect"			"20 150"
+			"bonus_attack_speed"		"60 250"
+			"bonus_damage"				"50 300"
+			"bonus_mana_regen"			"5 20"
+			"bonus_magic_resist"		"20 25"
+			
+			"silence_duration"			"5 6"
+			"silence_damage_percent"	"30"
+			"target_crit_multiplier"	"130 150"
+			"tooltip_crit_chance"		"100"
+
+			"duration"					"6"
+			"spell_amp_debuff"			"35"
 		}
 	}
 

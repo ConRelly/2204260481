@@ -87,6 +87,7 @@ function modifier_abyssal_water_blade:OnAttack(keys)
 	if self:GetAbility() and
 	keys.attacker == self:GetParent() and
 	keys.attacker:FindAllModifiersByName(self:GetName())[1] == self and
+	keys.target and
 	not keys.target:IsBuilding() and
 	not keys.target:IsOther() and
 	not keys.attacker:IsIllusion() and
@@ -109,6 +110,7 @@ function modifier_abyssal_water_blade:OnAttack(keys)
 end
 function modifier_abyssal_water_blade:OnAttackLanded(keys)
 	if self:GetAbility() and keys.attacker == self:GetParent() and self.bash_proc then
+		if keys.target == nil then return end
 		local target = keys.target
 		local owner = self:GetCaster()
 		local stun_duration = self:GetAbility():GetSpecialValueFor("stun_duration")

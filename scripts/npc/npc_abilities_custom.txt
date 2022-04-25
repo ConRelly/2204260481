@@ -29780,12 +29780,11 @@
 			}
 		}
 	}
-	//=================================================================================================================
-	//	Pudge: Rot
-	//=================================================================================================================
+
+// Pudge: Rot
 	"mjz_pudge_rot"
 	{
-		"BaseClass"						"ability_lua"	//	"ability_datadriven"
+		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/hero_pudge/mjz_pudge_rot.lua"
 		"AbilityTextureName"			"mjz_pudge_rot"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
@@ -29794,7 +29793,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		// "AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"5.5"
 		
 		"AbilitySpecial"
@@ -29818,14 +29817,12 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"base_damage"			"99 160 490 1200"
-				// "LinkedSpecialBonus"	"special_bonus_unique_pudge_2"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_pudge_rot_damage"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"health_damage_pct"		"22 35 49 60"
-				// "LinkedSpecialBonus"	"special_bonus_unique_pudge_4"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_pudge_rot_health"
 			}
 		}
@@ -29836,6 +29833,7 @@
 			"particle"			"particles/units/heroes/hero_pudge/pudge_rot_recipient.vpcf"
 		}
 	}
+// Talent: +X Rot Base Damage
 	"special_bonus_unique_mjz_pudge_rot_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
@@ -29851,6 +29849,7 @@
 			}
 		}
 	}
+// Talent: +X% Rot Current Health as Damage
 	"special_bonus_unique_mjz_pudge_rot_health"
 	{
 		"BaseClass"						"special_bonus_undefined"
@@ -37515,7 +37514,8 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stats_mult"			"15.0 24.0 32.0 47.0"
+				"stats_mult"			"15 24 32 47"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
 			}
 			"12"
 			{
@@ -39363,105 +39363,60 @@
 	}
 }	
 
-"roshan_inherit_buff_datadriven"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"grow"
-	"MaxLevel"						"6"
-	"LevelsBetweenUpgrades"			"9"
-	"RequiredLevel"					"1"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
+// Choas Knight: Grow Stronk
+	"grow_strong"
 	{
-		"01"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_chaos_knight/grow_strong"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/grow_strong"
+		"MaxLevel"						"6"
+		"LevelsBetweenUpgrades"			"9"
+		"RequiredLevel"					"1"
+		"AbilityValues"
 		{
-			"var_type"							"FIELD_FLOAT"
-			"grow_str"							"0.5 1.0 1.5 2.0 2.5 3.5"
-		}
-		"02"
-		{
-			"var_type"							"FIELD_FLOAT"
-			"grow_armor"						"0.03 0.06 0.09 0.12 0.15 0.18"
-		}
-		"03"
-		{
-			"var_type"							"FIELD_FLOAT"
-			"grow_model"						"0.2"
-		}
-		"04"
-		{
-			"var_type"							"FIELD_FLOAT"
-			"grow_interval"						"12 12 11 11 10 9"
-		}
-		"05"
-		{
-			"var_type"							"FIELD_INTEGER"
-			"crit_chance"						"5"
-		}
-		"06"
-		{
-			"var_type"							"FIELD_FLOAT"
-			"crit_per_str"						"0.5"
-		}
-		"07"
-		{
-			"var_type"							"FIELD_FLOAT"
-			"stun_duration"						"1"
-		}
-		"08"
-		{
-			"var_type"							"FIELD_INTEGER"
-			"max_scale"							"100"
-		}
-	}
-	"precache"
-	{
-		"particle"  "particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf"
-		"particle"  "particles/units/heroes/hero_nevermore/nevermore_necro_souls.vpcf"
-		"soundfile" "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
-	}
-	"Modifiers"
-	{
-
-		"modifier_roshan_inherit_buff_datadriven_collector"
-		{
-			"Passive"			"1"
-			"IsHidden"			"1"
-			"ThinkInterval"  "%grow_interval"
-			"OnIntervalThink"
+			"grow_str"
 			{
-				"RunScript"
-				{
-					"ScriptFile"				"abilities\custom\roshan_inherit_buff.lua"
-					"Function"					"StackCountIncrease"
-				}
-				"FireEffect"
-				{
-					"EffectName"				"particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf"
-					"EffectAttachType"			"follow_overhead"
-					"Target"					"CASTER"
-				}
+				"value"							"0.5 1.0 1.5 2.0 2.5 3.5"
+				"LinkedSpecialBonus"			"special_bonus_unique_ck_grow_strong"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
-		}
-		"modifier_roshan_inherit_buff_datadriven"
-		{
-			"IsHidden"							"1"
-			"Attributes"						"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT"
-			"Properties"
+			"grow_armor"
 			{
-				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"				"%grow_str"
-				"MODIFIER_PROPERTY_MODEL_SCALE"							"%grow_model"
-				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%grow_armor"
-
+				"value"							"0.03 0.06 0.09 0.12 0.15 0.18"
+				"LinkedSpecialBonus"			"special_bonus_unique_ck_grow_strong"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
+			}
+			"grow_model"			"0.2"
+			"grow_interval"			"12 12 11 11 10 9"
+			"max_scale"				"100"
+			"crit_chance"			"5"
+			"crit_per_str"			"0.5"
+			"stun_duration"			"1"
+		}
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf"
+			"particle"  "particles/units/heroes/hero_nevermore/nevermore_necro_souls.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+		}
+	}
+// Talent: xX Grow Strong Bonuses
+	"special_bonus_unique_ck_grow_strong"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"						"2"
 			}
 		}
 	}
-}
+
   //=================================================================================================================
   // Pangolier: Heartpiercer (OAA rework)
   //=================================================================================================================
@@ -40257,7 +40212,7 @@
 		"LevelsBetweenUpgrades"				"10"
 		"MaxLevel"							"5"
 		"AbilityTextureName"				"phantom_reflex"
-		"AbilityCastPoint"					"0.2"
+		"AbilityCastPoint"					"0"
 		"AbilityCooldown"					"16 14 12 10 8"
 		"AbilityManaCost"					"50 60 70 80 90"
 //		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_4"
@@ -40283,7 +40238,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"500"
+				"radius"				"2000"
 			}
 			"05"
 			{
@@ -40293,7 +40248,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"activity_duration"		"0.5"
+				"activity_duration"		"1.5"
 			}
 //			"07"
 //			{
@@ -41399,6 +41354,31 @@
 	}
 ////////////////////////////////////////////////////Aplpn Abilities\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //////////HEROES//////////
+
+// Juggernaut: Quick Blade
+	"juggernaut_blade_dance_lua"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/hero_juggernaut/juggernaut_quick_blade"
+		"AbilityTextureName"			"quick_slash"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"         "9"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+		}
+		"AbilityValues"
+		{
+			"blade_dance_crit_chance"			"5"
+			"blade_dance_crit_mult"				"675 800 925 1450 1650 1820 2150"
+			"crit_chance_agi_multiplier"		"1 1 1 1 1 1 2"
+		}
+	}
+
 // Juggernaut: Zanto Gari
 	"zanto_gari"
 	{
@@ -42015,73 +41995,61 @@
 // Drow Ranger: Multishot
 	"dr_multishot"
 	{
-		"BaseClass"						"ability_lua"	
+		"BaseClass"						"ability_lua"
 		"AbilityTextureName"			"drow_ranger_multishot"
 		"ScriptFile"					"heroes/hero_drow_ranger/multishot"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"IsShardUpgrade"				"1"
+		"IsGrantedByShard"				"1"
 		"AbilityCastPoint"				"0.0"
-		"AbilityChannelTime"			"2.1"
+//		"AbilityChannelTime"			"1.75"
 		"AbilityCooldown"				"26 24 22 20"
 		"AbilityManaCost"				"50 60 70 80"
+		"AbilityValues"
+		{
+			"arrow_waves"				"5"
+			"arrow_per_wave"			"5"
+			"arrow_damage_pct"
+			{
+				"value"						"85 110 135 160"
+				"LinkedSpecialBonus"		"special_bonus_unique_drow_ranger_1"
+			}
+			"arrow_slow_duration"		"1.25 2.25 3.25 4.25"
+			"arrow_width"				"90"
+			"arrow_speed"				"1200"
+			"arrow_range_multiplier"	"2"
+			"arrow_angle"				"50"
+			"arrow_interval"			"0.033"
+			"initial_delay"				"0.1"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_3"
+	}
+
+// Side Gunner
+	"custom_side_gunner"
+	{
+		"BaseClass"					"ability_lua"
+		"ScriptFile"				"abilities/side_gunner"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"		"gyrocopter_flak_cannon"
+		"MaxLevel"					"1"
 		"AbilitySpecial"
 		{
 			"1"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"arrow_waves"				"5"
+				"var_type"			"FIELD_INTEGER"
+				"gunner_radius"		"700"
 			}
 			"2"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"arrow_per_wave"			"5"
-			}			
-			"3"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"arrow_damage_pct"			"85 110 135 160"
-				"LinkedSpecialBonus"		"special_bonus_unique_drow_ranger_1"
-			}
-			"4"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"arrow_slow_duration"		"1.25 2.25 3.25 4.25"
-			}
-			"5"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"arrow_width"				"90"
-			}
-			"6"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"arrow_speed"				"1200"
-			}
-			"7"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"arrow_range_multiplier"	"2"
-			}
-			"8"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"arrow_angle"				"50"
-			}
-			"9"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"arrow_interval"			"0.033"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"initial_delay"				"0.1"
+				"var_type"			"FIELD_FLOAT"
+				"gunner_interval"	"1.2"
 			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_3"
 	}
 	
 // Spirit Breaker: Fast as F
@@ -43281,28 +43249,6 @@
 		}
 	}
 
-	"custom_side_gunner"
-	{
-		"BaseClass"					"ability_lua"
-		"ScriptFile"				"abilities/side_gunner"
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"		"gyrocopter_flak_cannon"
-		"MaxLevel"					"1"
-		"AbilitySpecial"
-		{
-			"1"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"gunner_radius"		"700"
-			}
-			"2"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"gunner_interval"	"1.2"
-			}
-		}
-	}
-
 // The True Master Of Weapons (1)
 	"true_master"
 	{
@@ -43357,7 +43303,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"AbilityTextureName"			"juggernaut_omni_slash"
+		"AbilityTextureName"			"custom/mows_sword"
 		"MaxLevel"						"1"
 		"AbilityCastRange"				"350"
 		"AbilityCastPoint"				"0.1"
@@ -43381,6 +43327,56 @@
 			"particle"					"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf"
 			"particle"					"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_tgt.vpcf"
 			"particle"					"particles/status_fx/status_effect_omnislash.vpcf"
+		}
+	}
+
+// Juggernaut: Thousand Swords
+	"thousand_swords"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_juggernaut/thousand_swords"
+		"AbilityTextureName"			"dawnbreaker_celestial_hammer"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"MaxLevel"						"4"
+//		"LevelsBetweenUpgrades"			"9"
+		"AbilityCastRange"				"2000"
+		"AbilityCastPoint"				"0.25"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"110"
+		"AbilityValues"
+		{
+			"cooldown"							"3"
+			"katana_damage"						"60 90 120 150"
+			"katana_radius"						"160"
+			"katana_speed"						"1500"
+			"travel_speed_pct"					"100"
+			"return_anim_distance_threshold"	"300"
+			"range"								"2000"
+			"limit"								"10"
+		}
+	}
+// Juggernaut: Converge
+	"thousand_swords_converge"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/hero_juggernaut/thousand_swords"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityTextureName"			"dawnbreaker_converge"
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"			"ACT_INVALID"
+		"MaxLevel"						"10"
+		"LevelsBetweenUpgrades"			"9"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+//		"AbilityCastRange"				"375"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"0.25"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
 		}
 	}
 }

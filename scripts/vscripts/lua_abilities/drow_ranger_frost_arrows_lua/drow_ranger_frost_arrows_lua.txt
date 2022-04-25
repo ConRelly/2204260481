@@ -60,6 +60,7 @@
 				"var_type"						"FIELD_FLOAT"
 				"agi_end_int_mult"	            "4.0 4.5 5.0 5.5 6.0 7.0 8.0"
 				"LinkedSpecialBonus"			"special_frost_arrow_agi_multiplier_lua"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_MAGICAL"
 			}
             "03"
 			{

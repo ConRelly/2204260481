@@ -80,7 +80,10 @@ function item_master_of_weapons_sword:OnSpellStart()
 		if modifier then
 --			local ModifierDuration = modifier:GetDuration()
 --			if ModifierDuration > 0 then
-				image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetRemainingTime()})
+				local added_modifier = image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetDuration()})
+				if modifier:GetStackCount() > 0 then
+					added_modifier:SetStackCount(modifier:GetStackCount())
+				end
 --			end
 		end
 	end
@@ -130,7 +133,7 @@ end
 
 -- Sword bonuses
 modifier_mows = class({})
-function modifier_mows:IsHidden() return true end
+function modifier_mows:IsHidden() return self:GetStackCount() == 0 end
 function modifier_mows:IsPurgable() return false end
 function modifier_mows:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_mows:OnCreated()
@@ -142,10 +145,10 @@ function modifier_mows:OnCreated()
 	end
 end
 function modifier_mows:DeclareFunctions()
-	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE}
+	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_TOOLTIP, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE}
 end
 function modifier_mows:GetModifierPreAttack_BonusDamage()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_damage") end
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_damage") + self:GetStackCount() * 40 end
 end
 function modifier_mows:GetModifierMoveSpeedBonus_Constant()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_ms") end
@@ -165,14 +168,15 @@ end
 function modifier_mows:GetModifierBonusStats_Intellect()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
 end
+function modifier_mows:OnTooltip()
+	return self:GetStackCount() * 40
+end
 function modifier_mows:GetModifierOverrideAbilitySpecial(params)
 	if self:GetParent() == nil or params.ability == nil then return 0 end
 
 	if self:GetParent():HasModifier("modifier_mows_slasher") then
-		if self:GetParent():HasModifier("modifier_fire_rapier_passive_bonus") then
-			if params.ability:GetAbilityName() == "item_fire_rapier" and params.ability_special_value == "proc_chance" then
-				return 1
-			end
+		if params.ability:GetAbilityName() == "item_fire_rapier" and params.ability_special_value == "proc_chance" then
+			return 1
 		end
 	end
 
@@ -180,11 +184,9 @@ function modifier_mows:GetModifierOverrideAbilitySpecial(params)
 end
 function modifier_mows:GetModifierOverrideAbilitySpecialValue(params)
 	if self:GetParent():HasModifier("modifier_mows_slasher") then
-		if self:GetParent():HasModifier("modifier_fire_rapier_passive_bonus") then
-			if params.ability:GetAbilityName() == "item_fire_rapier" and params.ability_special_value == "proc_chance" then
-				local nSpecialLevel = params.ability_special_level
-				return 35--params.ability:GetLevelSpecialValueNoOverride("proc_chance", nSpecialLevel)
-			end
+		if params.ability:GetAbilityName() == "item_fire_rapier" and params.ability_special_value == "proc_chance" then
+			local nSpecialLevel = params.ability_special_level
+			return 35--params.ability:GetLevelSpecialValueNoOverride("proc_chance", nSpecialLevel)
 		end
 	end
 
@@ -274,6 +276,8 @@ function modifier_mows_slasher:OnDestroy()
 				end
 			end
 			
+			local expl_bonus_dmg = 0
+			
 			local nearby_enemies = FindUnitsInRadius(image_team, image_loc, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_ANY_ORDER, false)
 
 			for i = 1, repeat_times do
@@ -288,8 +292,14 @@ function modifier_mows_slasher:OnDestroy()
 								damage_type = DAMAGE_TYPE_PHYSICAL,
 								damage_flags = DMGflags,
 							})
+							
+							if expl_bonus_dmg < 200 then
+								local stacks = caster:FindModifierByName("modifier_mows")
+								stacks:SetStackCount(stacks:GetStackCount() + 1)
+								expl_bonus_dmg = expl_bonus_dmg + 40
+							end
 						end
-						if i == 1 or (i + 1 % 3 == 0) then
+						if i == 1 or i == repeat_times then
 							local burst = ParticleManager:CreateParticle("particles/items3_fx/blink_overwhelming_burst.vpcf", PATTACH_WORLDORIGIN, caster)
 							ParticleManager:SetParticleControl(burst, 0, image_loc)
 							ParticleManager:SetParticleControl(burst, 1, Vector(radius, 500, 500))
@@ -299,7 +309,7 @@ function modifier_mows_slasher:OnDestroy()
 					end
 				end)
 			end
-
+			
 			self:GetParent():MakeIllusion()
 			self:GetParent():RemoveModifierByName("modifier_mows_image")
 

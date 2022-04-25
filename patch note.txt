@@ -1917,7 +1917,8 @@ and some other stuff
 
 
 
-
+* Fixed Cursed Bloodthorn
+* Fixed Heartstopper Aura (Necrophos) regen
 * Reduced Marci Unleash level required by 1(6 lvls less to max out)
 * Root self dmg from 25% to 20% and interval is 2 times faster(0.2s same dmg for 2 ticks as one before) for self dmg only.
 * Medusa mana shield absorb damage per mana increased by 10x.
@@ -1926,6 +1927,9 @@ and some other stuff
 * Fixed localization for Hp bar(for big bosses)
 * Gold ring will trigger even on Self dmg now.
 * Commander aura now affects other unnits then heroes, but the bonus is reduced to 20% of the full amount.
+* Seer Stone: Bonus mana regen increased from 200 to 250
+* Added new talent for Chaos Knight (10 lvl, left)		-- Con, you can change talent tree position, if you want
+* Buffed Phantom Reflex SS effect: Radius by x4 and duration by x3
 
 
 

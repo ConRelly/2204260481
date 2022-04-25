@@ -19,15 +19,11 @@ function modifier_counter:IsHidden() return (self:GetStackCount() < 1) end
 function modifier_counter:IsPurgable() return false end
 function modifier_counter:DestroyOnExpire() return false end
 function modifier_counter:OnCreated()
-	self.health_regen = self:GetAbility():GetSpecialValueFor("health_regen")
-	self.mana_regen = self:GetAbility():GetSpecialValueFor("mana_regen")	
 	self:SetStackCount(0)
 end
 function modifier_counter:OnRefresh()
 	if not IsServer() then return end
 	local stack_duration = self:GetAbility():GetSpecialValueFor("regen_duration")
-	self.health_regen = self:GetAbility():GetSpecialValueFor("health_regen")
-	self.mana_regen = self:GetAbility():GetSpecialValueFor("mana_regen")
 	self:SetStackCount(self:GetStackCount() + 1)
 	self:SetDuration(stack_duration, true)
 	Timers:CreateTimer(stack_duration, function()
@@ -41,10 +37,10 @@ function modifier_counter:DeclareFunctions()
 	return {MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT}
 end
 function modifier_counter:GetModifierConstantHealthRegen()
-	if self:GetAbility() then return self:GetStackCount() * self.health_regen end
+	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("health_regen") end
 end
 function modifier_counter:GetModifierConstantManaRegen()
-	if self:GetAbility() then return self:GetStackCount() * self.mana_regen end
+	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("mana_regen") end
 end
 
 -----------------------------------------------------------------------------------------

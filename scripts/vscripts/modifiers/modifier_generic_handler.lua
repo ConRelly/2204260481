@@ -50,7 +50,7 @@ end
 			end
 		end
 	end
-end ]]
+end]]
 
 function modifier_generic_handler:DeclareFunctions()
 	return {MODIFIER_EVENT_ON_TAKEDAMAGE, MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE, MODIFIER_EVENT_ON_ABILITY_FULLY_CAST, MODIFIER_PROPERTY_COOLDOWN_REDUCTION_CONSTANT, MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE}
@@ -69,7 +69,7 @@ function modifier_generic_handler:OnTakeDamage(keys)
 				for _, forbidden_inflictor in pairs(self.forbidden_inflictors) do
 					if keys.inflictor:GetName() == forbidden_inflictor then return end
 				end
-
+				
 				self.lifesteal_pfx = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.attacker)
 				ParticleManager:SetParticleControl(self.lifesteal_pfx, 0, keys.attacker:GetAbsOrigin())
 				ParticleManager:ReleaseParticleIndex(self.lifesteal_pfx)
@@ -83,8 +83,8 @@ function modifier_generic_handler:OnTakeDamage(keys)
 					end
 				end
 				
-				keys.attacker:Heal(math.max(keys.damage, 0) * self:GetParent():GetSpellLifesteal() * 0.01, keys.attacker)
-
+				keys.attacker:HealWithParams(math.max(keys.damage, 0) * self:GetParent():GetSpellLifesteal() * 0.01, keys.inflictor, false, true, self:GetCaster(), true)
+--				keys.attacker:Heal(math.max(keys.damage, 0) * self:GetParent():GetSpellLifesteal() * 0.01, keys.attacker)
 			end	
 -- Pure spell lifesteal handler
 		elseif keys.damage_category == DOTA_DAMAGE_CATEGORY_SPELL and keys.inflictor and self:GetParent():GetPureSpellLifesteal() > 0 and bit.band(keys.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL) ~= DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL and bit.band(keys.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) ~= DOTA_DAMAGE_FLAG_REFLECTION then
@@ -97,8 +97,8 @@ function modifier_generic_handler:OnTakeDamage(keys)
 				ParticleManager:SetParticleControl(self.lifesteal_pfx, 0, keys.attacker:GetAbsOrigin())
 				ParticleManager:ReleaseParticleIndex(self.lifesteal_pfx)
 				
-				keys.attacker:Heal(math.max(keys.original_damage, 0) * self:GetParent():GetPureSpellLifesteal() * 0.01, keys.attacker)
-
+				keys.attacker:HealWithParams(math.max(keys.original_damage, 0) * self:GetParent():GetPureSpellLifesteal() * 0.01, keys.inflictor, false, true, self:GetCaster(), true)
+--				keys.attacker:Heal(math.max(keys.original_damage, 0) * self:GetParent():GetPureSpellLifesteal() * 0.01, keys.attacker)
 			end	
 
 -- Attack lifesteal handler
@@ -116,7 +116,9 @@ function modifier_generic_handler:OnTakeDamage(keys)
 				if keys.unit:IsIllusion() and keys.unit.GetPhysicalArmorValue and GetReductionFromArmor then
 					keys.damage = keys.original_damage * (1 - GetReductionFromArmor(keys.unit:GetPhysicalArmorValue(false)))
 				end
-				keys.attacker:Heal(keys.damage * self:GetParent():GetLifesteal() * 0.01, keys.attacker)
+				
+				keys.attacker:HealWithParams(keys.damage * self:GetParent():GetLifesteal() * 0.01, keys.inflictor, true, true, self:GetCaster(), false)
+--				keys.attacker:Heal(keys.damage * self:GetParent():GetLifesteal() * 0.01, keys.attacker)
 			end	
 -- Pure attack lifesteal handler
 		elseif keys.damage_category == DOTA_DAMAGE_CATEGORY_ATTACK and self:GetParent():GetPureLifesteal() > 0 then
@@ -130,8 +132,9 @@ function modifier_generic_handler:OnTakeDamage(keys)
 				ParticleManager:SetParticleControl(self.lifesteal_pfx, 0, keys.attacker:GetAbsOrigin())
 				ParticleManager:ReleaseParticleIndex(self.lifesteal_pfx)
 
-				keys.attacker:Heal(keys.original_damage * self:GetParent():GetPureLifesteal() * 0.01, keys.attacker)
-			end	
+				keys.attacker:HealWithParams(keys.original_damage * self:GetParent():GetPureLifesteal() * 0.01, keys.inflictor, true, true, self:GetCaster(), false)
+--				keys.attacker:Heal(keys.original_damage * self:GetParent():GetPureLifesteal() * 0.01, keys.attacker)
+			end
 		end
 	end
 end
@@ -168,9 +171,9 @@ function modifier_generic_handler:CheckState()
 		end
 	end
 	return {
-	[MODIFIER_STATE_DISARMED] = disarm,
-	[MODIFIER_STATE_SILENCED] = silence,
-	[MODIFIER_STATE_MUTED] = silence,
+		[MODIFIER_STATE_DISARMED] = disarm,
+		[MODIFIER_STATE_SILENCED] = silence,
+		[MODIFIER_STATE_MUTED] = silence,
 	}
 end
 

@@ -1,7 +1,9 @@
 LinkLuaModifier("modifier_gifted_weapon", "heroes/hero_master_of_weapons/gifted_weapon", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_gifted_weapon_slasher", "heroes/hero_master_of_weapons/gifted_weapon", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_gifted_weapon_image", "heroes/hero_master_of_weapons/gifted_weapon", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_gifted_weapon_remove_as_limit", "heroes/hero_master_of_weapons/gifted_weapon", LUA_MODIFIER_MOTION_NONE)
+
+LinkLuaModifier("modifier_gifted_weapon_no_damage", "heroes/hero_master_of_weapons/gifted_weapon", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_gifted_weapon_invul", "heroes/hero_master_of_weapons/gifted_weapon", LUA_MODIFIER_MOTION_NONE)
 
 gifted_weapon = class({})
 function gifted_weapon:ProcsMagicStick() return false end
@@ -22,112 +24,41 @@ function gifted_weapon:GetIntrinsicModifierName() if self:IsTrained() then retur
 
 function gifted_weapon:OnSpellStart()
 	if not IsServer() then return end
+	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
-	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_gifted_weapon_remove_as_limit", {})
-	local additional_duration = math.floor(self:GetCaster():GetDisplayAttackSpeed() / 1500)
---	print("Print DisplayAttackSpeed", self:GetCaster():GetDisplayAttackSpeed())
+	caster:AddNewModifier(caster, self, "modifier_gifted_weapon_remove_as_limit", {})
+	local additional_duration = math.floor(caster:GetDisplayAttackSpeed() / 1500)
+--	print("Print DisplayAttackSpeed", caster:GetDisplayAttackSpeed())
 --	print("Print additional_duration", additional_duration)
 	local duration = self:GetSpecialValueFor("duration") + (additional_duration * 1.5)
 
-	local previous_position = self:GetCaster():GetAbsOrigin()
+	local previous_position = caster:GetAbsOrigin()
 	
-	self:GetCaster():Purge(false, true, false, false, false)
+	caster:Purge(false, true, false, false, false)
 
-	local image = CreateUnitByName(self:GetCaster():GetUnitName(), target:GetAbsOrigin(), true, self:GetCaster(), self:GetCaster():GetOwner(), self:GetCaster():GetTeamNumber())
+	caster:AddNewModifier(caster, self, "modifier_gifted_weapon_remove_as_limit", {duration = duration})
 
-	local caster_level = self:GetCaster():GetLevel()
-	for i = 2, caster_level do
-		image:HeroLevelUp(false)
-	end
-
-	local non_transfer = {
-		["item_smoke_of_deceit"] = true,
-		["item_ward_observer"] = true,
-		["item_ward_sentry"] = true,
-	}
-
-	-- Copy Abilities
-	for ability_id = 0, DOTA_MAX_ABILITIES - 1 do
-		local ability = image:GetAbilityByIndex(ability_id)
-		if ability then
-			if not non_transfer[ability:GetAbilityName()] then
-				local caster_ability = self:GetCaster():FindAbilityByName(ability:GetAbilityName())
-				if caster_ability and caster_ability:IsTrained() then
-					ability:SetLevel(caster_ability:GetLevel())
-				end
-			end
-		end
-	end
-
-	-- Copy Items
-	for item_id = 0, 5 do
-		local item_in_caster = self:GetCaster():GetItemInSlot(item_id)
-		if item_in_caster ~= nil then
-			if not non_transfer[item_in_caster:GetName()] then
-				local item_created = CreateItem(item_in_caster:GetName(), image, image)
-				image:AddItem(item_created)
-				item_created:SetCurrentCharges(item_in_caster:GetCurrentCharges())
-			end
-		end
-	end
-	-- Copy Neutral Item
-	local neutral_item = self:GetCaster():GetItemInSlot(16)
-	if neutral_item ~= nil then
-		if not non_transfer[neutral_item:GetName()] then
-			local neutral_item_created = CreateItem(neutral_item:GetName(), image, image)
-			image:AddItem(neutral_item_created)
-			neutral_item_created:SetCurrentCharges(neutral_item:GetCurrentCharges())
-		end
-	end
-
-	-- Copy Modifiers
-	local caster_modifiers = self:GetCaster():FindAllModifiers()
-	for _,modifier in pairs(caster_modifiers) do
-		if modifier then
---			local ModifierDuration = modifier:GetDuration()
---			if ModifierDuration > 0 then
-				image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetRemainingTime()})
---			end
-		end
-	end
-
-	image:SetAbilityPoints(0)
-
-	image:SetHasInventory(false)
-	image:SetCanSellItems(false)
-
-	image:AddNewModifier(self:GetCaster(), self, "modifier_gifted_weapon_image", {duration = duration})
-	image:AddNewModifier(self:GetCaster(), self, "modifier_gifted_weapon_remove_as_limit", {duration = duration})
-
-	local modifier_handler = image:AddNewModifier(self:GetCaster(), self, "modifier_gifted_weapon_slasher", {duration = duration})
+	local modifier_handler = caster:AddNewModifier(caster, self, "modifier_gifted_weapon_slasher", {duration = duration})
 	
 	if modifier_handler then
-		modifier_handler.original_caster = self:GetCaster()
+		modifier_handler.original_caster = caster
 	end
 
-	FindClearSpaceForUnit(image, target:GetAbsOrigin() + RandomVector(128), false)
+	FindClearSpaceForUnit(caster, target:GetAbsOrigin() + RandomVector(128), false)
 
-	image:EmitSound("Hero_Juggernaut.OmniSlash")
+	caster:EmitSound("Hero_Juggernaut.OmniSlash")
 
-	self:GetCaster():RemoveModifierByName("modifier_gifted_weapon_remove_as_limit")
-
-	Timers:CreateTimer(FrameTime(), function()
-		if (not image:IsNull()) then
-			if image:GetUnitName() == "npc_dota_hero_juggernaut" then
-				StartAnimation(image, {activity = ACT_DOTA_OVERRIDE_ABILITY_4, rate = 1, duration = duration})
-			end
-		end
-	end)
+	caster:RemoveModifierByName("modifier_gifted_weapon_remove_as_limit")
 
 	if target:TriggerSpellAbsorb(self) then return end
 
 	Timers:CreateTimer(FrameTime(), function()
-		if (not image:IsNull()) then
-			image:PerformAttack(target, true, true, true, true, false, false, false)
+		if (not caster:IsNull()) then
+			caster:PerformAttack(target, true, true, true, true, false, false, false)
 
-			local trail_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf", PATTACH_ABSORIGIN, image)
+			local trail_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf", PATTACH_ABSORIGIN, caster)
 			ParticleManager:SetParticleControl(trail_pfx, 0, previous_position)
-			ParticleManager:SetParticleControl(trail_pfx, 1, image:GetAbsOrigin())
+			ParticleManager:SetParticleControl(trail_pfx, 1, caster:GetAbsOrigin())
 			ParticleManager:ReleaseParticleIndex(trail_pfx)
 		end
 	end)
@@ -136,7 +67,7 @@ end
 
 -- Sword bonuses
 modifier_gifted_weapon = class({})
-function modifier_gifted_weapon:IsHidden() return true end
+function modifier_gifted_weapon:IsHidden() return self:GetStackCount() == 0 end
 function modifier_gifted_weapon:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
 		Timers:CreateTimer(0.1, function()
@@ -147,8 +78,9 @@ function modifier_gifted_weapon:OnCreated()
 	end
 end
 function modifier_gifted_weapon:DeclareFunctions()
-	return {MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE}
+	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE}
 end
+function modifier_gifted_weapon:GetModifierPreAttack_BonusDamage() return self:GetStackCount() * 50 end
 function modifier_gifted_weapon:GetModifierBaseAttack_BonusDamage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_damage") end
 end
@@ -168,16 +100,14 @@ function modifier_gifted_weapon:GetModifierBonusStats_Agility()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
 end
 function modifier_gifted_weapon:GetModifierBonusStats_Intellect()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") + (math.floor(self:GetStackCount() / 4) * 30) end
 end
 function modifier_gifted_weapon:GetModifierOverrideAbilitySpecial(params)
 	if self:GetParent() == nil or params.ability == nil then return 0 end
 
 	if self:GetParent():HasModifier("modifier_gifted_weapon_slasher") then
-		if self:GetParent():HasModifier("modifier_fire_rapier_passive_bonus") then
-			if params.ability:GetAbilityName() == "item_fire_rapier" and params.ability_special_value == "proc_chance" then
-				return 1
-			end
+		if params.ability:GetAbilityName() == "item_fire_rapier" and params.ability_special_value == "proc_chance" then
+			return 1
 		end
 	end
 
@@ -185,48 +115,13 @@ function modifier_gifted_weapon:GetModifierOverrideAbilitySpecial(params)
 end
 function modifier_gifted_weapon:GetModifierOverrideAbilitySpecialValue(params)
 	if self:GetParent():HasModifier("modifier_gifted_weapon_slasher") then
-		if self:GetParent():HasModifier("modifier_fire_rapier_passive_bonus") then
-			if params.ability:GetAbilityName() == "item_fire_rapier" and params.ability_special_value == "proc_chance" then
-				local nSpecialLevel = params.ability_special_level
-				return 60--params.ability:GetLevelSpecialValueNoOverride("proc_chance", nSpecialLevel)
-			end
+		if params.ability:GetAbilityName() == "item_fire_rapier" and params.ability_special_value == "proc_chance" then
+			local nSpecialLevel = params.ability_special_level
+			return 60--params.ability:GetLevelSpecialValueNoOverride("proc_chance", nSpecialLevel)
 		end
 	end
 
 	return 0
-end
-
-
--- Illusion Modifier
-modifier_gifted_weapon_image = modifier_gifted_weapon_image or class ({})
-function modifier_gifted_weapon_image:IsHidden() return true end
-function modifier_gifted_weapon_image:IsPurgable() return false end
-function modifier_gifted_weapon_image:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT end
-function modifier_gifted_weapon_image:CheckState()
-	return {
-		[MODIFIER_STATE_UNSELECTABLE] = true,
-		[MODIFIER_STATE_COMMAND_RESTRICTED] = true,
-		[MODIFIER_STATE_NOT_ON_MINIMAP] = true,
-		[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
-		[MODIFIER_STATE_INVULNERABLE] = true,
-		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
-		[MODIFIER_STATE_MAGIC_IMMUNE] = true,
-	}
-end
-function modifier_gifted_weapon_image:OnCreated()
-	if not IsServer() then return end
-	if self:GetParent():HasModifier("modifier_aegis_buff") then
-		self:GetParent():RemoveModifierByName("modifier_aegis_buff")
-	end
-	self:StartIntervalThink(0.5)
-end
-
-function modifier_gifted_weapon_image:OnIntervalThink()
-	if not IsServer() then return end
-
-	if not self:GetParent():HasModifier("modifier_gifted_weapon_slasher") then
-		self:Destroy()
-	end
 end
 
 
@@ -258,73 +153,63 @@ function modifier_gifted_weapon_slasher:OnDestroy()
 		
 		self:GetParent():MoveToPositionAggressive(self:GetParent():GetAbsOrigin())
 
-		if self:GetParent():HasModifier("modifier_gifted_weapon_image") then
-			local caster = self:GetCaster()
-			local ability = self:GetAbility()
-			local image_team = self:GetParent():GetTeamNumber()
-			local image_loc = self:GetParent():GetAbsOrigin()
-			local damage = caster:GetAttackDamage()
-			local radius = 2000
-			local repeat_times = 1 + (2 * math.floor(self:GetParent():GetLevel() / 40))
-			if self:GetParent():GetPrimaryAttribute() == 0 then
-				if self:GetParent():GetStrength() >= 7500 then
-					DMGflags = DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
-				else
-					DMGflags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
-				end
-			end
-			
-			local nearby_enemies = FindUnitsInRadius(image_team, image_loc, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_ANY_ORDER, false)
-
-			for i = 1, repeat_times do
-				Timers:CreateTimer(0.1 * i, function()
-					if ability then
-						for _,enemy in pairs(nearby_enemies) do
-							ApplyDamage({
-								victim = enemy,
-								attacker = caster,
-								ability = ability,
-								damage = damage,
-								damage_type = DAMAGE_TYPE_PHYSICAL,
-								damage_flags = DMGflags,
-							})
-						end
-						if i == 1 or i == repeat_times then	--(i + 1 % 3 == 0)
-							local burst = ParticleManager:CreateParticle("particles/items3_fx/blink_overwhelming_burst.vpcf", PATTACH_WORLDORIGIN, caster)
-							ParticleManager:SetParticleControl(burst, 0, image_loc)
-							ParticleManager:SetParticleControl(burst, 1, Vector(radius, 500, 500))
-							ParticleManager:ReleaseParticleIndex(burst)
-							EmitSoundOnLocationWithCaster(image_loc, "Blink_Layer.Overwhelming", caster)
-						end
-					end
-				end)
-			end
-
-			self:GetParent():MakeIllusion()
-			self:GetParent():RemoveModifierByName("modifier_gifted_weapon_image")
-
-			for item_id = 0, 5 do
-				local item_in_caster = self:GetParent():GetItemInSlot(item_id)
-				if item_in_caster ~= nil then
-					UTIL_Remove(item_in_caster)
-				end
-			end
-			local neutral_item = self:GetParent():GetItemInSlot(16)
-			if neutral_item ~= nil then
-				UTIL_Remove(neutral_item)
-			end
-
-			local caster_modifiers = self:GetParent():FindAllModifiers()
-			for _,modifier in pairs(caster_modifiers) do
-				if modifier then
-					UTIL_Remove(modifier)
-				end
-			end
-
-			if (not self:GetParent():IsNull()) then
-				UTIL_Remove(self:GetParent())
+		local caster = self:GetCaster()
+		local ability = self:GetAbility()
+		local image_team = self:GetParent():GetTeamNumber()
+		local image_loc = self:GetParent():GetAbsOrigin()
+		local damage = caster:GetAttackDamage()
+		local radius = 2000
+		local repeat_times = 1 + (2 * math.floor(self:GetParent():GetLevel() / 40))
+		if self:GetParent():GetPrimaryAttribute() == 0 then
+			if self:GetParent():GetStrength() >= 7500 then
+				DMGflags = DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
+			else
+				DMGflags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
 			end
 		end
+		
+		local expl_bonus_dmg = 0
+		
+		local nearby_enemies = FindUnitsInRadius(image_team, image_loc, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_ANY_ORDER, false)
+
+		for i = 1, repeat_times do
+			Timers:CreateTimer(0.1 * i, function()
+				if ability then
+					for _,enemy in pairs(nearby_enemies) do
+						ApplyDamage({
+							victim = enemy,
+							attacker = caster,
+							ability = ability,
+							damage = damage,
+							damage_type = DAMAGE_TYPE_PHYSICAL,
+							damage_flags = DMGflags,
+						})
+						
+						if enemy:GetUnitLabel() == "randomskill" then
+							duration = 5
+						else
+							duration = 8
+						end
+						
+						enemy:AddNewModifier(caster, ability, "modifier_silence", {duration = duration})
+						
+						if expl_bonus_dmg < 500 then
+							local stacks = caster:FindModifierByName("modifier_gifted_weapon")
+							stacks:SetStackCount(stacks:GetStackCount() + 1)
+							expl_bonus_dmg = expl_bonus_dmg + 50
+						end
+					end
+					if i == 1 or i == repeat_times then	--(i + 1 % 3 == 0)
+						local burst = ParticleManager:CreateParticle("particles/items3_fx/blink_overwhelming_burst.vpcf", PATTACH_WORLDORIGIN, caster)
+						ParticleManager:SetParticleControl(burst, 0, image_loc)
+						ParticleManager:SetParticleControl(burst, 1, Vector(radius, 500, 500))
+						ParticleManager:ReleaseParticleIndex(burst)
+						EmitSoundOnLocationWithCaster(image_loc, "Blink_Layer.Overwhelming", caster)
+					end
+				end
+			end)
+		end
+		caster:AddNewModifier(caster, ability, "modifier_gifted_weapon_no_damage", {duration = 4})
 	end
 end
 
@@ -394,12 +279,6 @@ function modifier_gifted_weapon_slasher:BounceAndSlaughter(first_slash)
 			end
 
 			self.last_enemy = enemy
-
-			if self:GetParent():HasModifier("modifier_gifted_weapon_image") then
-				self.previous_pos = previous_position
-				self.current_pos = current_position
-			end
-
 			break
 		end
 	else
@@ -438,3 +317,30 @@ function modifier_gifted_weapon_remove_as_limit:DeclareFunctions()
 	return {MODIFIER_PROPERTY_IGNORE_ATTACKSPEED_LIMIT}
 end
 function modifier_gifted_weapon_remove_as_limit:GetModifierAttackSpeed_Limit() return 1 end
+
+
+
+modifier_gifted_weapon_no_damage = class({})
+function modifier_gifted_weapon_no_damage:GetTexture() return "modifier_invulnerable" end
+function modifier_gifted_weapon_no_damage:IsPurgable() return false end
+function modifier_gifted_weapon_no_damage:RemoveOnDeath() return false end
+function modifier_gifted_weapon_no_damage:OnDestroy()
+	if not IsServer() then return end
+	self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_gifted_weapon_invul", {duration = 2})
+end
+function modifier_gifted_weapon_no_damage:DeclareFunctions()
+	return {MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL, MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL, MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE}
+end
+function modifier_gifted_weapon_no_damage:GetAbsoluteNoDamageMagical(params) return 1 end
+function modifier_gifted_weapon_no_damage:GetAbsoluteNoDamagePhysical(params) return 1 end
+function modifier_gifted_weapon_no_damage:GetAbsoluteNoDamagePure(params) return 1 end
+
+
+
+modifier_gifted_weapon_invul = class({})
+function modifier_gifted_weapon_invul:GetTexture() return "modifier_invulnerable" end
+function modifier_gifted_weapon_invul:IsPurgable() return false end
+function modifier_gifted_weapon_invul:RemoveOnDeath() return false end
+function modifier_gifted_weapon_invul:CheckState()
+	return {[MODIFIER_STATE_INVULNERABLE] = true}
+end

@@ -18,7 +18,7 @@ function phantom_reflex:GetManaCost(level)
 end
 function phantom_reflex:GetBehavior()
 	if self:GetCaster():HasModifier("modifier_super_scepter") then
-		return DOTA_ABILITY_BEHAVIOR_NO_TARGET
+		return DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT + DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL + DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING
 	end
 	return DOTA_ABILITY_BEHAVIOR_PASSIVE
 end
@@ -83,18 +83,17 @@ function modifier_counter_slash_trigger:IsHidden() return false end
 function modifier_counter_slash_trigger:IsDebuff() return false end
 function modifier_counter_slash_trigger:IsPurgable() return false end
 function modifier_counter_slash_trigger:RemoveOnDeath() return false end
-function modifier_counter_slash_trigger:DeclareFunctions() return {MODIFIER_EVENT_ON_ATTACKED, MODIFIER_PROPERTY_AVOID_DAMAGE} end
+function modifier_counter_slash_trigger:DeclareFunctions() return {MODIFIER_EVENT_ON_ATTACK, MODIFIER_PROPERTY_AVOID_DAMAGE, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE} end
 function modifier_counter_slash_trigger:GetModifierAvoidDamage()
 	return 1
 end
-function modifier_counter_slash_trigger:OnAttacked(keys)
+function modifier_counter_slash_trigger:OnAttack(keys)
 	if IsServer() then
 		local attacker = keys.attacker
 		local victim = keys.target
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
 		local angle = self:GetAbility():GetSpecialValueFor("angle") / 2
 		local cooldown = self:GetAbility():GetSpecialValueFor("passive_cd")
-		self:GetParent():RemoveModifierByName("modifier_counter_slash_trigger")
 		if self:GetParent() == victim and attacker:GetTeamNumber() ~= victim:GetTeamNumber() then
 			local enemies = FindUnitsInRadius(victim:GetTeamNumber(), victim:GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, 0, false)
 			local origin = victim:GetOrigin()
@@ -117,11 +116,31 @@ function modifier_counter_slash_trigger:OnAttacked(keys)
 					end
 				end
 			end
+			self:GetParent():RemoveModifierByName("modifier_counter_slash_trigger")
 		end
 	end
 end
+--[[
 function modifier_counter_slash_trigger:CheckState()
 	return {[MODIFIER_STATE_STUNNED] = true}
+end
+]]
+function modifier_counter_slash_trigger:GetModifierOverrideAbilitySpecial(params)
+	if self:GetParent() == nil or params.ability == nil then return 0 end
+
+	if params.ability:GetAbilityName() == "mjz_phantom_assassin_coup_de_grace" and params.ability_special_value == "crit_chance" then
+		return 1
+	end
+
+	return 0
+end
+function modifier_counter_slash_trigger:GetModifierOverrideAbilitySpecialValue(params)
+	if params.ability:GetAbilityName() == "mjz_phantom_assassin_coup_de_grace" and params.ability_special_value == "crit_chance" then
+		local nSpecialLevel = params.ability_special_level
+		return params.ability:GetLevelSpecialValueNoOverride("crit_chance", nSpecialLevel) + 50
+	end
+
+	return 0
 end
 
 function Hit(caster, ability, origin, radius, angle)
@@ -146,6 +165,7 @@ function Hit(caster, ability, origin, radius, angle)
 	end
 	PlayEffects1(caster, (point - origin):Normalized(), radius)
 end
+
 
 --------------------------------------------------------------------------------
 function PlayEffects1(caster, direction, radius)

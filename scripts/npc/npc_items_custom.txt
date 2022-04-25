@@ -1635,48 +1635,21 @@
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 	"MaxUpgradeLevel"				"2"
 	"ItemBaseLevel"					"2"
-	"AbilitySpecial"
+	"AbilityValues"
 	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_intellect"		"25 175"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_attack_speed"	"90 350"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"30 200"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"bonus_mana_regen"		"5.5 22"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"silence_damage_percent"	"30"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"silence_duration"		"5 6"
-		}
-		"07"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"target_crit_multiplier"	"130 150"
-		}
-		"08"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"tooltip_crit_chance"	"100"
-		}
+		"bonus_intellect"			"20 150"
+		"bonus_attack_speed"		"60 250"
+		"bonus_damage"				"50 300"
+		"bonus_mana_regen"			"5 20"
+		"bonus_magic_resist"		"20 25"
+		
+		"silence_duration"			"5 6"
+		"silence_damage_percent"	"30"
+		"target_crit_multiplier"	"130 150"
+		"tooltip_crit_chance"		"100"
+
+		"duration"					"6"
+		"spell_amp_debuff"			"35"
 	}
 }
 
@@ -4024,7 +3997,6 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityCastRange"				"7200"
 	"ItemCost"						"9050"
-	"ItemShareability"              "ITEM_FULLY_SHAREABLE"
 	"ItemShopTags"					"tank"
 	"ItemQuality"					"epic"
 	"ItemAliases"					"armor;attack speed;aura"
@@ -23419,10 +23391,7 @@
 		}
 	}
 
- //////////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ////////////////////////////////////////////////// STIGMATA \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\///////////////////////////////////////////////////////
- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\////////////////////////////////////////////////////// 
 // Lier Scarlet T
 	"item_lier_scarlet_t"
 	{
@@ -23738,7 +23707,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hit_cd_3"				"0.2"
+				"hit_cd_3"				"0.35"
 			}
 			"12"
 			{
@@ -23835,7 +23804,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hit_cd_3"				"0.2"
+				"hit_cd_3"				"0.35"
 			}
 			"12"
 			{
@@ -23927,7 +23896,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hit_cd_3"				"0.2"
+				"hit_cd_3"				"0.35"
 			}
 			"12"
 			{
@@ -35333,7 +35302,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"AbilityTextureName"			"default"
+		"AbilityTextureName"			"custom/mows_sword"
 		"ItemCost"						"500"
 		"AbilityCastRange"				"350"
 		"AbilityCastPoint"				"0.3"
