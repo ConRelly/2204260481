@@ -28629,7 +28629,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_chance"				"2 2 3 3 4"
+				"crit_chance"				"2 2 3 4 5"
 				"LinkedSpecialBonus"		"special_bonus_unique_phantom_assassin_2"
 			}
 			"02"
@@ -28640,7 +28640,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"magical_damage_scepter"	"5 7 10 13 17"
+				"magical_damage_scepter"	"5 7 10 15 20"
 				"RequiresScepter"			"1"
 			}
 			"21"
@@ -28676,7 +28676,7 @@
 			"36"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"scepter_crit_bonus_per_minute"	"10 20 30 40 70"
+				"scepter_crit_bonus_per_minute"	"10 20 30 40 75"
 				"RequiresScepter"				"1"
 			}			
 		}
@@ -39807,6 +39807,30 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"value"					"2.0"
+			}
+		}
+	}
+
+	"special_multishot_ss_bonus_dmg_lua"
+	{
+		// Ability Technical Aspect
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		
+		// Ability General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"					"20.0"
+				//"ad_linked_abilities"			"drow_ranger_multishot_lua"
 			}
 		}
 	}

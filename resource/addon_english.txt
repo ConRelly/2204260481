@@ -410,6 +410,7 @@
 	"DOTA_Tooltip_ability_item_titan_relic_debuff_amp"				"%+$debuff_amp"
 	"DOTA_Tooltip_ability_item_titan_relic_buff_amp"				"%+$buff_amp"
 	"DOTA_Tooltip_ability_item_titan_relic_note0"                   "Directly increases Durations of debuffs and buffs"
+	"DOTA_Tooltip_ability_item_titan_relic_note1"                   "If the buff/debuff is aplyed to someone in same team or you it will be considered 'Buff'. Exceptions: Spirit guardian debuff. "
 
 
 	"DOTA_Tooltip_ability_item_aghanims_fragment"				"Aghanim's Fragment"
@@ -2284,7 +2285,7 @@
 	"DOTA_Tooltip_Ability_obs_replay_Description"		"<h1><font color='#178CD8'>Active: Record Video</font></h1> Start recording all actions taken by your hero for a duration, creating an mp4 file when finished. Press again to stop recording early. Cooldown is set equal to the length of the recorded video or 50s if you don't consume the Mp4 file(toggle AutoCast).
 	\n<font color='#E1B70B'>Activate again to Play the Video from your backpack/stash or inventory<br>Enable this skill Autocast(rightclick the skill) to not consume the Video(alt for more info)</font>
 	\n<h1><font color='#32F20C'>Passive: Views</font></h1> The Replays will give views base on spells casted(above certain CD) and by killing neutrals(with the replay).
-	\n<h1><font color='#F13E0E'>Passive: Prospective</font></h1> The Replay hero improves base on future self: He gets your current lvl + recorded lvl and takes 50% less dmg"
+	\n<h1><font color='#F13E0E'>Passive: Prospective</font></h1> The Replay hero improves base on future self: He gets your current lvl + one lvl for every time it was Played and takes 85% less dmg"
 	"DOTA_Tooltip_Ability_obs_replay_str_stack"			 "Bonus Str Per View:"
 	"DOTA_Tooltip_Ability_obs_replay_agi_stack"			 "Bonus Agi Per View:"
 	"DOTA_Tooltip_Ability_obs_replay_int_stack"			 "Bonus Int Per View:"
@@ -9626,12 +9627,18 @@ Contains all random skills"
 		"DOTA_Tooltip_ability_special_frost_arrow_agi_multiplier_lua"	"+{s:value} Frost Arrow Frostbite Damage Multiplier"
 		"DOTA_Tooltip_ability_special_frost_arrow_bite_interval_lua"	"{s:value} Frost Arrow Frostbite Interval"
 		
+
 		"DOTA_Tooltip_ability_drow_ranger_multishot_lua"								"Multishot"
-		"DOTA_Tooltip_ability_drow_ranger_multishot_lua_Description"					"Drow releases a flurry of arrows in continuous salvos, hitting enemies for extra damage.Adds current level of Frost Arrows and Uses all your attack damage (including green damage)."
+		"DOTA_Tooltip_ability_drow_ranger_multishot_lua_Description"					"Drow releases a flurry of arrows in continuous salvos, hitting enemies for extra damage.Adds current level of Frost Arrows and Uses all your attack damage (including green damage).\n<font color='#F9AA1F'>Enable auto-cast to Not apply Frost Arrows</font> \n<h1><font color='#DE3163'>Super Scepter</font></h1> For every multishot individual arrow you have %stacks_chance%%% chance to gain an <font color='#12EAED'>Multishot Experience</font> stack that gives %bonus_agi% Agility and %bonus_mana% mana for every stack. For Every Stack increase this skill final dmg"
 		"DOTA_Tooltip_ability_drow_ranger_multishot_lua_damage_modifier"		"%Total Attack Damage:"
 		"DOTA_Tooltip_ability_drow_ranger_multishot_lua_agi_multiplier"			"Agility As Bonus Damage:"
+		"DOTA_Tooltip_ability_drow_ranger_multishot_lua_bonus_ss"               "%<font color='#DE3163'>Bonus Skill dmg per 100 Stacks:</font>"
+
+		"DOTA_Tooltip_modifier_drow_ranger_multishot_lua_stacks"                "<font color='#12EAED'>Multishot Experience</font>"
+		"DOTA_Tooltip_modifier_drow_ranger_multishot_lua_stacks_description"    "Increases your Agility by %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS% and Mana by %dMODIFIER_PROPERTY_MANA_BONUS% "
 
 		"DOTA_Tooltip_ability_special_multishot_agi_multiplier_lua"				"+{s:value} Multishot Bonus Agility Damage"
+		"DOTA_Tooltip_ability_special_multishot_ss_bonus_dmg_lua"				"+{s:value}% Multishot <font color='#DE3163'>Bonus Skill dmg per 100 Stacks"           
 
 
 		"DOTA_Tooltip_ability_legion_commander_duel_lua"							"Grim Reaper"

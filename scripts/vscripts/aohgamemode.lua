@@ -991,7 +991,7 @@ LinkLuaModifier("modifier_generic_handler", "modifiers/modifier_generic_handler"
 LinkLuaModifier("modifier_charges", "modifiers/modifier_charges", LUA_MODIFIER_MOTION_NONE)
 local reminder = true
 function AOHGameMode:OnEntitySpawned(event)
-	
+	if not IsServer() then return end
 	--mHackGameMode:OnNPCSpawned(event)
 	-- Fix for str magic res and more.
 	local unit = EntIndexToHScript(event.entindex)
@@ -1186,6 +1186,7 @@ end
 
 
 function AOHGameMode:OnEntityKilled(event)
+	if not IsServer() then return end
 	local killedUnit = EntIndexToHScript(event.entindex_killed)
 	if killedUnit:IsNull() then return end
 	if killedUnit:IsFort() then

@@ -54,7 +54,10 @@ TargetUntargetable = {
 	["npc_dota_creature_aghanim_minion"] = true,
 	["npc_dota_boss_aghanim_spear"] = true,
 }
-
+--modifiers that can be added after initial modif removal
+local IgnoreOnsecond = {
+	["modifier_spirit_guardian_heal_cd"] = true,
+}
 -------------------
 -- Lesser Cancel --
 -------------------
@@ -110,12 +113,14 @@ function lesser_cancel:OnSpellStart()
 		if target then
 			for _, modifier in pairs(target:FindAllModifiers()) do
 				local ModifierName = modifier:GetName()
-				local ModifierDuration = modifier:GetDuration()
-				if ModifierDuration > 0 then
-					modifier:Destroy()
-				elseif PurgeUnpurgable[ModifierName] then
-					modifier:Destroy()
-				end
+				if not IgnoreOnsecond[ModifierName] then
+					local ModifierDuration = modifier:GetDuration()
+					if ModifierDuration > 0 then
+						modifier:Destroy()
+					elseif PurgeUnpurgable[ModifierName] then
+						modifier:Destroy()
+					end
+				end	
 			end
 			local UnitName = target:GetUnitName()
 			if TargetUntargetable[UnitName] or target:IsOther() then
@@ -192,12 +197,14 @@ function divine_cancel:OnSpellStart()
 			if target then
 				for _, modifier in pairs(target:FindAllModifiers()) do
 					local ModifierName = modifier:GetName()
-					local ModifierDuration = modifier:GetDuration()
-					if ModifierDuration > 0 then
-						modifier:Destroy()
-					elseif PurgeUnpurgable[ModifierName] then
-						modifier:Destroy()
-					end
+					if not IgnoreOnsecond[ModifierName] then
+						local ModifierDuration = modifier:GetDuration()
+						if ModifierDuration > 0 then
+							modifier:Destroy()
+						elseif PurgeUnpurgable[ModifierName] then
+							modifier:Destroy()
+						end
+					end	
 				end
 			end
 			if target then

@@ -70,31 +70,44 @@ function modifier_custom_zeus_revenge_buff:DeclareFunctions()
     }
 end
 function modifier_custom_zeus_revenge_buff:GetModifierMoveSpeedBonus_Constant()
-	return self:GetAbility():GetSpecialValueFor("movespeed_buff")
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("movespeed_buff")
+	end	
 end
 
 function modifier_custom_zeus_revenge_buff:GetModifierConstantManaRegen()
-    return self:GetAbility():GetSpecialValueFor("mana_regen_buff")
+	if self:GetAbility() then
+    	return self:GetAbility():GetSpecialValueFor("mana_regen_buff")
+	end	
 end
 
 function modifier_custom_zeus_revenge_buff:GetModifierConstantHealthRegen()
-    return self:GetAbility():GetSpecialValueFor("health_regen_buff")
+	if self:GetAbility() then
+   		return self:GetAbility():GetSpecialValueFor("health_regen_buff")
+	end	   
 end
 
 function modifier_custom_zeus_revenge_buff:GetModifierDamageOutgoing_Percentage()
-    return self:GetAbility():GetSpecialValueFor("damage_buff")
+	if self:GetAbility() then
+    	return self:GetAbility():GetSpecialValueFor("damage_buff")
+	end	
 end
 
 function modifier_custom_zeus_revenge_buff:GetModifierAttackSpeedBonus_Constant()
-    return self:GetAbility():GetSpecialValueFor("attackspeed_buff")
+	if self:GetAbility() then
+    	return self:GetAbility():GetSpecialValueFor("attackspeed_buff")
+	end	
 end
 
 
 function modifier_custom_zeus_revenge_buff:OnCreated()
 	self.parent = self:GetParent()
+	if not self:GetAbility() then return end
 	self.caster = self:GetAbility():GetCaster()
-	self.particle = ParticleManager:CreateParticle("particles/econ/events/ti9/mjollnir_shield_ti9_beam_zap.vpcf", PATTACH_POINT, self.caster)
-	ParticleManager:SetParticleControlEnt(self.particle, 1, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
+	if self.parent and not self.parent:IsNull() and self.caster and not self.caster:IsNull() then
+		self.particle = ParticleManager:CreateParticle("particles/econ/events/ti9/mjollnir_shield_ti9_beam_zap.vpcf", PATTACH_POINT, self.caster)
+		ParticleManager:SetParticleControlEnt(self.particle, 1, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
+	end	
 end
 function modifier_custom_zeus_revenge_buff:OnDestroy()
 	ParticleManager:DestroyParticle(self.particle,  true)

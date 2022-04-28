@@ -49,8 +49,10 @@ function modifier_custom_blizzard_orb_behavior:OnCreated()
 	Timers:CreateTimer(
 		delay,
 		function()
-			self.parent:CastAbilityNoTarget(self.blizzard, -1)
-			self:StartIntervalThink(1)
+			if self and not self:IsNull() and self.parent and not self.parent:IsNull() and self.blizzard and not self.blizzard:IsNull() then
+				self.parent:CastAbilityNoTarget(self.blizzard, -1)
+				self:StartIntervalThink(1)
+			end	
 		end
 	)
 end

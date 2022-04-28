@@ -5,7 +5,6 @@ LinkLuaModifier("modifier_recording", "abilities/custom/obs_replay.lua", LUA_MOD
 LinkLuaModifier("modifier_obs_replay", "abilities/custom/obs_replay.lua", LUA_MODIFIER_MOTION_NONE)
 obs_replay = obs_replay or class({})
 function obs_replay:GetIntrinsicModifierName() return "modifier_obs_replay" end
-
 function obs_replay:OnSpellStart()
 	if not IsServer() then return end
 	local caster = self:GetCaster()

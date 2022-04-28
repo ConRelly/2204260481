@@ -29,12 +29,39 @@ end
 function modifier_drow_ranger_multishot_lua:OnCreated( kv )
 	if not IsServer() then return end
 	self.speed = self:GetAbility():GetSpecialValueFor( "arrow_speed" )
+	local parent = self:GetParent()
+	if parent and IsValidEntity(parent) and parent:IsAlive() then
+		if not parent:HasModifier("modifier_drow_ranger_multishot_lua_stacks") then
+			parent:AddNewModifier(parent, self:GetAbility(), "modifier_drow_ranger_multishot_lua_stacks", {})
+			--Update stacks for illussions / OBS / etc.
+			if parent:HasModifier("modifier_drow_ranger_multishot_lua_stacks") then
+				local mod1 = "modifier_drow_ranger_multishot_lua_stacks"
+				local owner = PlayerResource:GetSelectedHeroEntity(parent:GetPlayerOwnerID())
+				if owner then	  
+					local modifier1 = parent:FindModifierByName(mod1)
+					if owner:HasModifier(mod1) then
+						local modifier2 = owner:FindModifierByName(mod1)
+						modifier1:SetStackCount(modifier2:GetStackCount())
+					end	
+				end		
+			end		
+		end
+	end		
 end
 
 function modifier_drow_ranger_multishot_lua:OnRefresh( kv )
 	if not IsServer() then return end
 	self.speed = self:GetAbility():GetSpecialValueFor( "arrow_speed" )
+	self:OnCreated(kv)
 end
+function modifier_drow_ranger_multishot_lua:OnDestroy()
+	if not IsServer() then return end
+	local parent = self:GetParent()
+	local modif = "modifier_drow_ranger_multishot_lua_stacks"
+	if parent and not parent:IsNull() and parent:HasModifier(modif) then
+		parent:RemoveModifierByName(modif)
+	end	
+end	
 
 --------------------------------------------------------------------------------
 -- Modifier Effects
@@ -103,7 +130,9 @@ function modifier_drow_ranger_multishot_lua:InitArrow(target)
 	-- check frost arrows ability
 	local ability = self:GetParent():FindAbilityByName( "drow_ranger_frost_arrows_lua" )
 	if ability and ability:GetLevel()>0 then
-		self.frost = true
+		if not self:GetAbility():GetAutoCastState() then
+			self.frost = true
+		end	
 	end
 
 	-- precache projectile

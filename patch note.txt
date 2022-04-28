@@ -1919,20 +1919,23 @@ and some other stuff
 
 * Fixed Cursed Bloodthorn
 * Fixed Heartstopper Aura (Necrophos) regen
+* Fix Hammer of the divine Unyielding stacks.
 * Reduced Marci Unleash level required by 1(6 lvls less to max out)
-* Root self dmg from 25% to 20% and interval is 2 times faster(0.2s same dmg for 2 ticks as one before) for self dmg only.
+* Pudge Root self dmg from 25% to 20% and interval is 2 times faster(0.2s same dmg for 2 ticks as one before) for self dmg only.
 * Medusa mana shield absorb damage per mana increased by 10x.
 * Added item build suggestion for : bristle, drow, huskar, Phantom Assassin.  thanks to Siliatra.
-* Phantom Assassin : replaced an talent with the true strike talent.
+* Phantom Assassin : replaced an talent with the true strike talent and buffed ultimate by a small amount.
 * Fixed localization for Hp bar(for big bosses)
+* Broken Wings: Increased the dmg limit calculations(buff)
 * Gold ring will trigger even on Self dmg now.
 * Commander aura now affects other unnits then heroes, but the bonus is reduced to 20% of the full amount.
 * Seer Stone: Bonus mana regen increased from 200 to 250
-* Added new talent for Chaos Knight (10 lvl, left)		-- Con, you can change talent tree position, if you want
+* Added new talent for Chaos Knight (10 lvl, left)		
 * Buffed Phantom Reflex SS effect: Radius by x4 and duration by x3
-
-
-
+* Drow Multishot: added Super Scepter effect, new talent, new option autocast to not use frost arrows.
+* OBS Prospectors passive : illusion takes less dmg , extra level now scales with every use on replay.
+* Spirit Guardian: snowball stacks now updates on real illusions(obs, monkey,etc), titan relic now considers the "Defense Mode min Cd" as a debuff(50% increase instead of 15%) and now proper triggers after piety removes initial buff.
+* Monkey king soliders now have a chance(20%) to use the Spirit Guardian attack effect and gets lower after every succes.
 
 
 
@@ -1941,7 +1944,7 @@ and some other stuff
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes66 can be found on the new map version:
+*Update patch notes68 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 
@@ -1954,23 +1957,42 @@ or on Discord(check workshop discussions for links)
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update).
 
 
+
+
 Marci ult SS Effects : (you can add more if you want, mostly for versatility)
-Cm Frostbine : 3x dmg
+
+Cm Frostbite : 3x dmg
+
 Ursa OverPower : 2x stats gain
+
 Orange Multicast: + 2 extra multicasts
+
 Devil's Daedalus(including edible) : 1.5x critical increase
+
 Ultimate Bloodstone : gain an extra stack on every succesful proc.
+
 Green Radiance(edible included 12x): Ms multiplayer increased to 10x and has no limit
+
 Greater Blast Staff: MR reduction increased to -45 , int multiplayer +5(18) , debuff duration +1s. 
+
 Apex: +7% more stats(42%)
+
 Cursed Gaze: +3% crit bonus on hit(8%).
+
 Slayer Rebound : aditional stacks + 2 instead of 1.
+
 Endless wisdom : gain an extra stack.
+
 Broken Wings : from 160% to 220% , Max use stacks(base on dmg dealt) is 3 (normal max is 50)
+
 Maple's Armor - Heavy armor buff from 50% dmg avoid chance to 85%
+
 LionDagonV2 - greater blast staff passive has 25% chance to trigger daggon instead of 17%
+
 Antimage Q = Acts as antimage lvl 20 talent (ignores base armor)
+
 Insatiable Hunger = doubles the chance of the SS effect.
+
 Speedsters : from 50% ms as bonus dmg to 140%
 
 

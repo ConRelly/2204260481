@@ -123,6 +123,7 @@ function AddRecordedAction(modifier, keys)
 			["gegenstrom"] = true,
 			["lesser_cancel"] = true,
 			["divine_cancel"] = true,
+			["amalgamation"] = true,
 		};
 	if ability then
 		local abilityName1 = ability:GetAbilityName()
@@ -152,6 +153,13 @@ function AddRecordedAction(modifier, keys)
 	end
 
 end
+local bonus_lvl = 0
+
+local dont_remove = {
+	dawnbreaker_custom_luminosity = true,
+	--drow_ranger_multishot_lua = true,
+
+}
 
 
 function PlayVideo(keys)
@@ -159,11 +167,10 @@ function PlayVideo(keys)
 	local ability = keys.ability
 	local cloneData = ability.cloneData
 	local lifetime = ability.recordTime + 1
-
-
+	local lvl_limit = caster:GetLevel() * 8
 	--Create the player clone as recorded
 	--local clone = CreateUnitByName(cloneData.name, cloneData.spawnPoint, false, nil, caster, caster:GetTeamNumber())
-	local clones = CreateIllusions(caster, cloneData.name2, { duration = lifetime, outgoing_damage = 100, incoming_damage = -50 }, 1, 50, true, true )
+	local clones = CreateIllusions(caster, cloneData.name2, { duration = lifetime, outgoing_damage = 150, incoming_damage = -85 }, 1, 50, true, true )
 	local clone = clones[1]
 	--clone:SetOwner(caster:GetPlayerOwner())
 	clone:SetAbsOrigin(cloneData.spawnPoint)
@@ -177,14 +184,18 @@ function PlayVideo(keys)
 	--clone:SetOwner(caster)
 	-- Create unit		
 	
-	--Levelup the player
-	for i=1,cloneData.level - 1 do
+	--Levelup the player: base + 1 for each use of the OBS play.
+	bonus_lvl = bonus_lvl + 1
+	if bonus_lvl > lvl_limit then
+		bonus_lvl = lvl_limit	
+	end	
+	for i=1, bonus_lvl do
 		clone:HeroLevelUp(false)
 	end
 	--remove illusion skills
 	for slot = 0, 8 do
 		local oldAbility = clone:GetAbilityByIndex(slot)	
-		if oldAbility and oldAbility:GetAbilityName() ~= "dawnbreaker_custom_luminosity" then
+		if oldAbility and not dont_remove[oldAbility:GetAbilityName()] and not oldAbility:IsAttributeBonus() then
 			clone:RemoveAbilityByHandle(oldAbility)	
 		end
 	end	

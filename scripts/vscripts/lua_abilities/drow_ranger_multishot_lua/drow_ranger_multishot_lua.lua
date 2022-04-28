@@ -1,6 +1,7 @@
 --------------------------------------------------------------------------------
 drow_ranger_multishot_lua = class({})
 LinkLuaModifier("modifier_drow_ranger_multishot_lua", "lua_abilities/drow_ranger_multishot_lua/modifier_drow_ranger_multishot_lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_drow_ranger_multishot_lua_stacks", "lua_abilities/drow_ranger_multishot_lua/drow_ranger_multishot_lua", LUA_MODIFIER_MOTION_NONE)
 
 --------------------------------------------------------------------------------
 -- Passive Modifier
@@ -31,17 +32,31 @@ function drow_ranger_multishot_lua:OnProjectileHit_ExtraData(target, location, d
     local caster = self:GetCaster()
     local damage = (damage_modifier / 100) * caster:GetAverageTrueAttackDamage(caster) + math.floor(caster:GetAgility() * agi_multiplier)
     local slow = self:GetSpecialValueFor("arrow_slow_duration")
+    local chance = self:GetSpecialValueFor("stacks_chance")
+    local ss_bonusdmg = (self:GetSpecialValueFor("bonus_ss") + talent_value(caster, "special_multishot_ss_bonus_dmg_lua")) / 10000 -- 100 stacks
+    if caster:HasModifier("modifier_super_scepter") then
+        if caster:HasModifier("modifier_drow_ranger_multishot_lua_stacks") then
+            local modifier = caster:FindModifierByName("modifier_drow_ranger_multishot_lua_stacks")
+            local stacks = modifier:GetStackCount()
+            if RollPercentage(chance) then
+                modifier:SetStackCount(stacks + 1)
+            end 
+            damage = math.floor( damage * (stacks * ss_bonusdmg  + 1))
+        end
+    end        
 
     -- check frost arrow ability
-    if data.frost == 1 then
-        local ability = self:GetCaster():FindAbilityByName("drow_ranger_frost_arrows_lua")
-        target:AddNewModifier(
-                self:GetCaster(), -- player source
-                ability, -- ability source
-                "modifier_drow_ranger_frost_arrows_lua", -- modifier name
-                { duration = slow } -- kv
-        )
-    end
+    if not self:GetAutoCastState() then
+        if data.frost == 1 then
+            local ability = self:GetCaster():FindAbilityByName("drow_ranger_frost_arrows_lua")
+            target:AddNewModifier(
+                    self:GetCaster(), -- player source
+                    ability, -- ability source
+                    "modifier_drow_ranger_frost_arrows_lua", -- modifier name
+                    { duration = slow } -- kv
+            )
+        end
+    end   
 
     -- damage
     local damageTable = {
@@ -59,4 +74,34 @@ function drow_ranger_multishot_lua:OnProjectileHit_ExtraData(target, location, d
     EmitSoundOn(sound_cast, target)
 
     return true
+end
+
+modifier_drow_ranger_multishot_lua_stacks = class({})
+
+function modifier_drow_ranger_multishot_lua_stacks:IsHidden()
+	return false
+end
+
+function modifier_drow_ranger_multishot_lua_stacks:IsPurgable()
+	return false
+end
+
+function modifier_drow_ranger_multishot_lua_stacks:DeclareFunctions()
+	local funcs = {
+		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+        MODIFIER_PROPERTY_MANA_BONUS,
+	}
+
+	return funcs
+end
+
+function modifier_drow_ranger_multishot_lua_stacks:GetModifierManaBonus()
+    if self:GetAbility() then
+	    return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_mana")
+    end   
+end
+function modifier_drow_ranger_multishot_lua_stacks:GetModifierBonusStats_Agility()
+    if self:GetAbility() then
+	    return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_agi")
+    end   
 end

@@ -58,6 +58,11 @@ end
 function modifier_titan_relic:GetModifierMoveSpeedBonus_Percentage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_ms") end
 end
+--list with self debuffs that player will benifit from them being longer
+local consider_debuff = {
+
+	modifier_spirit_guardian_heal_cd = true,
+}
 
 function modifier_titan_relic:OnModifierAdded(keys)
 	local target = keys.unit
@@ -77,7 +82,11 @@ function modifier_titan_relic:OnModifierAdded(keys)
 			end
 		else
 			buff.passed = true
-			buff:SetDuration(buff:GetDuration() * (1 + (self:GetAbility():GetSpecialValueFor("buff_amp") / 100)), true)
+			if consider_debuff[buff:GetName()] then
+				buff:SetDuration(buff:GetDuration() * (1 + (self:GetAbility():GetSpecialValueFor("debuff_amp") / 100)), true)
+			else
+				buff:SetDuration(buff:GetDuration() * (1 + (self:GetAbility():GetSpecialValueFor("buff_amp") / 100)), true)
+			end	
 		end
 	end
 end

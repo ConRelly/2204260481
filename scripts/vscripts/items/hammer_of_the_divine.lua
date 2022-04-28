@@ -108,7 +108,7 @@ function modifier_hammer_of_the_divine:OnAttackLanded(keys)
 	local unyielding_modifier = caster:FindModifierByName("modifier_hotd_unyielding")
 	if unyielding_modifier:GetStackCount() == unyielding_max_stacks then return end
 	if unyielding_modifier:GetStackCount() < unyielding_max_stacks then
-		if (caster:HasAbility("mjz_chaos_knight_chaos_strike") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike"):IsTrained()) or (caster:HasAbility("mjz_chaos_knight_chaos_strike_2") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike_2"):IsTrained())(caster:HasAbility("chaos_knight_chaos_strike") and caster:FindAbilityByName("chaos_knight_chaos_strike"):IsTrained()) then
+		if (caster:HasAbility("mjz_chaos_knight_chaos_strike") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike"):IsTrained()) or (caster:HasAbility("mjz_chaos_knight_chaos_strike_2") and caster:FindAbilityByName("mjz_chaos_knight_chaos_strike_2"):IsTrained()) or (caster:HasAbility("chaos_knight_chaos_strike") and caster:FindAbilityByName("chaos_knight_chaos_strike"):IsTrained()) then
 			unyielding_chance = ability:GetSpecialValueFor("unyielding_cs_chance")
 		end
 		if caster:HasAbility("grow_strong") and caster:FindAbilityByName("grow_strong"):IsTrained() then

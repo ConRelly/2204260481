@@ -307,6 +307,7 @@ function modifier_spirit_guardian:IsHidden() return true end
 function modifier_spirit_guardian:IsPurgable() return false end
 function modifier_spirit_guardian:RemoveOnDeath() return false end
 --function modifier_spirit_guardian:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+local rollchance = 20 --"global" for moneky soliders. as long the player does unleqip the item the "luky" monkey/s will never rerol for start interval.
 function modifier_spirit_guardian:OnCreated()
 	if IsServer() then
 		self.primary_attribute = self:GetAbility():GetSpecialValueFor("primary_attribute")
@@ -314,10 +315,21 @@ function modifier_spirit_guardian:OnCreated()
 		self.agi = self:GetAbility():GetSpecialValueFor("agi")
 		self.str = self:GetAbility():GetSpecialValueFor("str")
 		self.interval_attack = self:GetAbility():GetSpecialValueFor("interval_attack")
+		local parent = self:GetParent()
 		if not self:GetAbility() then self:Destroy() end if not self:GetParent():IsIllusion() then
-			self:StartIntervalThink(self.interval_attack)
-			self.pfx3 = ParticleManager:CreateParticle("particles/custom/items/staff_of_light/staff_of_light_ambient_core.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
-end end end
+			if parent:HasModifier("modifier_monkey_king_fur_army_soldier") then
+				if RollPercentage(rollchance) then
+					self:StartIntervalThink(self.interval_attack)
+					self.pfx3 = ParticleManager:CreateParticle("particles/custom/items/staff_of_light/staff_of_light_ambient_core.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+					rollchance = rollchance / 2 --there's an way to rerol until all moneky have the spirit guardian, but takes time, this make that strat a lot harder
+				end
+			else
+				self:StartIntervalThink(self.interval_attack)
+				self.pfx3 = ParticleManager:CreateParticle("particles/custom/items/staff_of_light/staff_of_light_ambient_core.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())				
+			end	
+		end 
+	end
+end
 function modifier_spirit_guardian:OnDestroy()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end if not self:GetParent():IsIllusion() and self.pfx3 ~= nil then
 		DFX(self.pfx3, false)
@@ -436,8 +448,33 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 				stacks = modif:GetStackCount()
 				bonus_dmg = lvl * stacks	
 			end
+			--Monkey soliders they don't update their stacks on summon,probably(unless you unequip the item)
+			if parent:HasModifier("modifier_monkey_king_fur_army_soldier") then
+				local mod1 = "modifier_spirit_guardian_bonus_dmg"
+				local owner = PlayerResource:GetSelectedHeroEntity(parent:GetPlayerOwnerID())
+				if owner then	  
+					local modifier1 = parent:FindModifierByName(mod1)
+					if owner:HasModifier(mod1) then
+						local modifier2 = owner:FindModifierByName(mod1)
+						modifier1:SetStackCount(modifier2:GetStackCount())
+					end	
+				end		
+			end			
 		else
-			parent:AddNewModifier(parent, self, "modifier_spirit_guardian_bonus_dmg", {})
+			if parent and IsValidEntity(parent) and parent:IsAlive() then
+				parent:AddNewModifier(parent, self, "modifier_spirit_guardian_bonus_dmg", {})
+				if parent:HasModifier("modifier_spirit_guardian_bonus_dmg") then
+					local mod1 = "modifier_spirit_guardian_bonus_dmg"
+					local owner = PlayerResource:GetSelectedHeroEntity(parent:GetPlayerOwnerID())
+					if owner then	  
+						local modifier1 = parent:FindModifierByName(mod1)
+						if owner:HasModifier(mod1) then
+							local modifier2 = owner:FindModifierByName(mod1)
+							modifier1:SetStackCount(modifier2:GetStackCount())
+						end	
+					end		
+				end
+			end				
 		end
 		if HasSuperScepter(parent) then
 			local int_to_dmg = self:GetSpecialValueFor("bonus_int_dmg")
@@ -504,7 +541,7 @@ function modifier_spirit_guardian_heal:GetModifierAvoidDamage(params)
 	end
 end
 function modifier_spirit_guardian_heal:OnDestroy()
-	if IsServer() then
+	if IsServer() then		
 		if self:GetParent() ~= nil and self:GetParent():IsAlive() and not self:GetParent():IsIllusion() then
 			self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_spirit_guardian_heal_cd", {duration = self:GetAbility():GetSpecialValueFor("internal_cd")})
 		end
