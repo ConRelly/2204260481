@@ -69,7 +69,7 @@ _G.mHackGameMode = HackGameMode()
 local MONSTER_CONFIG_ORIGIN = "aoh2_config.txt"
 local MONSTER_CONFIG_NEW_KING = "aoh2_config_siltbreaker_200809_hard.txt"
 local MONSTER_CONFIG_SILTBREAKER = "aoh2_config_siltbreaker_200809.txt"
-local MONSTER_CONFIG_GODS = "aoh2_config_gods.txt" -- "test_short_rounds.txt" --   
+local MONSTER_CONFIG_GODS =  "aoh2_config_gods.txt" --   "test_short_rounds.txt" -- 
 local MONSTER_CONFIG = MONSTER_CONFIG_GODS
 print("MONSTER_CONFIG: " .. MONSTER_CONFIG)
 --if IsInToolsMode() and false then
@@ -968,7 +968,7 @@ function AOHGameMode:_ThinkPrepTime()
 		self._entPrepTimeQuest = SpawnEntityFromTableSynchronous("quest", { name = "PrepTime", title = "#DOTA_Quest_Holdout_PrepTime" })
 		self._entPrepTimeQuest:SetTextReplaceValue(QUEST_TEXT_REPLACE_VALUE_ROUND, self._nRoundNumber)
 		local round = self._vRounds[self._nRoundNumber]
-		round:Precache()
+		--round:Precache()
 	end
 	self._entPrepTimeQuest:SetTextReplaceValue(QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, self._flPrepTimeEnd - GameRules:GetGameTime())
 end

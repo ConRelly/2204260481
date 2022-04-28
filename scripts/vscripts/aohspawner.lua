@@ -52,7 +52,7 @@ end
 
 
 function AOHSpawner:Precache()
-	PrecacheUnitByNameAsync(self._szNPCClassName, function(sg) self._sg = sg end)
+	--PrecacheUnitByNameAsync(self._szNPCClassName, function(sg) self._sg = sg end)
 end
 
 -- 无尽模式开始

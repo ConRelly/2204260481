@@ -40293,7 +40293,7 @@
 	"phantom_reflex_boss"
 	{
 		"BaseClass"							"ability_lua"
-		"ScriptFile"						"abilities/custom/phantom_reflex.lua"
+		"ScriptFile"						"heroes/hero_phantom_assassin/phantom_reflex.lua"
 		"MaxLevel"						  "1"
 		"IsOnCastBar"					   "0"
 		"AbilityTextureName"				"phantom_reflex"

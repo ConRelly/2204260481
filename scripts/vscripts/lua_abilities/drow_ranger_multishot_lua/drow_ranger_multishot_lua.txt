@@ -92,7 +92,7 @@
 			"10"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"stacks_chance"					"20"
+				"stacks_chance"					"25"
 			}
 			"11"
 			{

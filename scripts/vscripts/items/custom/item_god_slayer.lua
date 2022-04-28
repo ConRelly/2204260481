@@ -71,7 +71,7 @@ function modifier_dragonborn:OnDeath(params)
 			kill_count = ability:GetCurrentCharges()
 		end
 		
-		if params.attacker:GetTeamNumber() == caster:GetTeamNumber() and caster:GetTeamNumber() ~= target:GetTeamNumber() then --and target:IsBoss()
+		if params.attacker and not params.attacker:IsNull() and params.attacker:GetTeamNumber() == caster:GetTeamNumber() and caster:GetTeamNumber() ~= target:GetTeamNumber() then --and target:IsBoss()
 			if RandomInt(0,100) < chance then
 				self:IncrementStackCount()
 				if ability:IsItem() then
@@ -80,7 +80,7 @@ function modifier_dragonborn:OnDeath(params)
 				end
 			end
 		end
-		if params.attacker:GetTeamNumber() == caster:GetTeamNumber() and target:IsBoss() then
+		if params.attacker and params.attacker:GetTeamNumber() == caster:GetTeamNumber() and target:IsBoss() then
 			self:IncrementStackCount()
 			if ability:IsItem() then
 				local iCharges = kill_count + 1
