@@ -15,65 +15,98 @@ function drow_ranger_multishot_lua:OnProjectileHit_ExtraData(target, location, d
     if not target then
         return
     end
-
-    -- get value
-    local damage_modifier = self:GetSpecialValueFor("damage_modifier")
-    local agi_multiplier = self:GetSpecialValueFor("agi_multiplier")
-    -- Talent tree
-    local special_multishot_agi_multiplier_lua = self:GetCaster():FindAbilityByName("special_multishot_agi_multiplier_lua")
-    if (special_multishot_agi_multiplier_lua and special_multishot_agi_multiplier_lua:GetLevel() ~= 0) then
-        agi_multiplier = agi_multiplier + special_multishot_agi_multiplier_lua:GetSpecialValueFor("value")
-    end
-    -- Talent tree
-    local special_multishot_damage_modifier_lua = self:GetCaster():FindAbilityByName("special_multishot_damage_modifier_lua")
-    if (special_multishot_damage_modifier_lua and special_multishot_damage_modifier_lua:GetLevel() ~= 0) then
-        damage_modifier = damage_modifier + special_multishot_damage_modifier_lua:GetSpecialValueFor("value")
-    end
+    --check caster
     local caster = self:GetCaster()
-    local damage = (damage_modifier / 100) * caster:GetAverageTrueAttackDamage(caster) + math.floor(caster:GetAgility() * agi_multiplier)
-    local slow = self:GetSpecialValueFor("arrow_slow_duration")
-    local chance = self:GetSpecialValueFor("stacks_chance")
-    local ss_bonusdmg = (self:GetSpecialValueFor("bonus_ss") + talent_value(caster, "special_multishot_ss_bonus_dmg_lua")) / 10000 -- 100 stacks
-    if caster:HasModifier("modifier_super_scepter") then
-        if caster:HasModifier("modifier_drow_ranger_multishot_lua_stacks") then
-            local modifier = caster:FindModifierByName("modifier_drow_ranger_multishot_lua_stacks")
-            local stacks = modifier:GetStackCount()
-            if RollPercentage(chance) then
-                modifier:SetStackCount(stacks + 1)
-            end 
-            damage = math.floor( damage * (stacks * ss_bonusdmg  + 1))
+
+    if caster and IsValidEntity(caster) and caster:IsAlive() then -- these can trigger on illusions and have travel time , so caster can be deleted by the time it executes
+       -- get value
+        local damage_modifier = self:GetSpecialValueFor("damage_modifier")
+        local agi_multiplier = self:GetSpecialValueFor("agi_multiplier")
+        -- Talent tree
+        local special_multishot_agi_multiplier_lua = self:GetCaster():FindAbilityByName("special_multishot_agi_multiplier_lua")
+        if (special_multishot_agi_multiplier_lua and special_multishot_agi_multiplier_lua:GetLevel() ~= 0) then
+            agi_multiplier = agi_multiplier + special_multishot_agi_multiplier_lua:GetSpecialValueFor("value")
         end
-    end        
-
-    -- check frost arrow ability
-    if not self:GetAutoCastState() then
-        if data.frost == 1 then
-            local ability = self:GetCaster():FindAbilityByName("drow_ranger_frost_arrows_lua")
-            target:AddNewModifier(
-                    self:GetCaster(), -- player source
-                    ability, -- ability source
-                    "modifier_drow_ranger_frost_arrows_lua", -- modifier name
-                    { duration = slow } -- kv
-            )
+        -- Talent tree
+        local special_multishot_damage_modifier_lua = self:GetCaster():FindAbilityByName("special_multishot_damage_modifier_lua")
+        if (special_multishot_damage_modifier_lua and special_multishot_damage_modifier_lua:GetLevel() ~= 0) then
+            damage_modifier = damage_modifier + special_multishot_damage_modifier_lua:GetSpecialValueFor("value")
         end
-    end   
 
-    -- damage
-    local damageTable = {
-        victim = target,
-        attacker = self:GetCaster(),
-        damage = damage,
-        damage_type = self:GetAbilityDamageType(),
-        ability = self, --Optional.
-        -- damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
-    }
-    ApplyDamage(damageTable)
+        local damage = (damage_modifier / 100) * caster:GetAverageTrueAttackDamage(caster) + math.floor(caster:GetAgility() * agi_multiplier)
+        local slow = self:GetSpecialValueFor("arrow_slow_duration")
+        local chance = self:GetSpecialValueFor("stacks_chance")
+        local ss_bonusdmg = (self:GetSpecialValueFor("bonus_ss") + talent_value(caster, "special_multishot_ss_bonus_dmg_lua")) / 10000 -- 100 stacks
+        local modif_multishot = "modifier_drow_ranger_multishot_lua_stacks"
+    
+        if caster:HasModifier("modifier_super_scepter") then
+            if caster:HasModifier(modif_multishot) then
+                local modifier = caster:FindModifierByName(modif_multishot)
+                local stacks = modifier:GetStackCount()
+                if RollPercentage(chance) then
+                    modifier:SetStackCount(stacks + 1)
+                end 
+                damage = math.floor( damage * (stacks * ss_bonusdmg  + 1))
+            else
+                if caster and IsValidEntity(caster) and caster:IsAlive() then
+                    if not caster:HasModifier(modif_multishot) then
+                        caster:AddNewModifier(caster, self, modif_multishot, {})
+                        --Update stacks for illussions / OBS / etc.
+                        if caster:HasModifier(modif_multishot) then
+                            local mod1 = "modifier_drow_ranger_multishot_lua_stacks"
+                            local owner = PlayerResource:GetSelectedHeroEntity(caster:GetPlayerOwnerID())
+                            if owner then	  
+                                local modifier1 = caster:FindModifierByName(mod1)
+                                if owner:HasModifier(mod1) then
+                                    local modifier2 = owner:FindModifierByName(mod1)
+                                    modifier1:SetStackCount(modifier2:GetStackCount())
+                                end	
+                            end		
+                        end
+                        if caster:HasModifier(modif_multishot) then
+                            local time = GameRules:GetGameTime() / 60
+                            if time > 1 then
+                                local mbuff = caster:FindModifierByName(modif_multishot)	
+                                local stack = math.floor(time * 5)
+                                mbuff:SetStackCount(stack)
+                            end
+                        end		
+                    end
+                end                
+            end
+        end   
+           
 
-    -- play effects
-    local sound_cast = "Hero_DrowRanger.ProjectileImpact"
-    EmitSoundOn(sound_cast, target)
+        -- check frost arrow ability
+        if not self:GetAutoCastState() then
+            if data.frost == 1 then
+                local ability = self:GetCaster():FindAbilityByName("drow_ranger_frost_arrows_lua")
+                target:AddNewModifier(
+                        self:GetCaster(), -- player source
+                        ability, -- ability source
+                        "modifier_drow_ranger_frost_arrows_lua", -- modifier name
+                        { duration = slow } -- kv
+                )
+            end
+        end   
 
-    return true
+        -- damage
+        local damageTable = {
+            victim = target,
+            attacker = self:GetCaster(),
+            damage = damage,
+            damage_type = self:GetAbilityDamageType(),
+            ability = self, --Optional.
+            -- damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
+        }
+        ApplyDamage(damageTable)
+
+        -- play effects
+        local sound_cast = "Hero_DrowRanger.ProjectileImpact"
+        EmitSoundOn(sound_cast, target)
+
+        return true
+    end    
 end
 
 modifier_drow_ranger_multishot_lua_stacks = class({})

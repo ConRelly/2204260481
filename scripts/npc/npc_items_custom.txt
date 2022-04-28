@@ -2502,7 +2502,7 @@
 	"AbilityTextureName"			"great_manta"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 	"AbilitySharedCooldown"			"manta"
-	"AbilityCooldown"				"30.0"
+	"AbilityCooldown"				"60.0"
 	"AbilityCastPoint"				"0.0"
 	"AbilityManaCost"				"125"
 	"ItemShopTags"					"agi;str;int;attack_speed;move_speed;hard_to_tag"

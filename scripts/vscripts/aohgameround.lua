@@ -13,6 +13,7 @@ end
 
 
 function AOHGameRound:ReadConfiguration(kv, gameMode, roundNumber)
+	if not IsServer() then return end
 	self._gameMode = gameMode
 	self._nRoundNumber = roundNumber
 	self._sTitle = kv.Title or ""
@@ -60,6 +61,7 @@ end
 
 
 function AOHGameRound:Begin(goldRatio, expRatio)
+	if not IsServer() then return end
 	if not self._endlessMode_started then
 		local title = "Round " .. self._nRoundNumber .. ": " .. self._sTitle
 		Notifications:TopToAll({text=title, duration=6})
@@ -102,6 +104,7 @@ end
 
 
 function AOHGameRound:End()
+	if not IsServer() then return end
 	for _, eID in pairs(self._vEventHandles) do
 		StopListeningToGameEvent(eID)
 	end
@@ -133,6 +136,7 @@ end
 
 
 function AOHGameRound:Think()
+	if not IsServer() then return end
 	for _, spawner in pairs(self._vSpawners) do
 		spawner:Think()
 	end
@@ -145,6 +149,7 @@ end
 
 
 function AOHGameRound:IsFinished()
+	if not IsServer() then return end
 	for _, spawner in pairs(self._vSpawners) do
 		if not spawner:IsFinishedSpawning() then
 			return false
@@ -171,6 +176,7 @@ end
 
 
 function AOHGameRound:GetXPPerCoreUnit()
+	if not IsServer() then return end
 	if self._nCoreUnitsTotal == 0 then
 		return 0
 	else
@@ -180,6 +186,7 @@ end
 
 
 function AOHGameRound:OnNPCSpawned(event)
+	if not IsServer() then return end
 	local spawnedUnit = EntIndexToHScript(event.entindex)
 	if not spawnedUnit or spawnedUnit:IsPhantom() or spawnedUnit:GetClassname() == "npc_dota_thinker" or spawnedUnit:GetUnitName() == "" or spawnedUnit:IsIllusion() then
 		return
@@ -203,6 +210,7 @@ end
 
 
 function AOHGameRound:OnEntityKilled(event)
+	if not IsServer() then return end
 	local killedUnit = EntIndexToHScript(event.entindex_killed)
 	if not killedUnit then
 		return
@@ -233,6 +241,7 @@ end
 
 
 function AOHGameRound:OnHoldoutReviveComplete(event)
+	if not IsServer() then return end
 	local castingHero = EntIndexToHScript(event.caster)
 	if castingHero then
 		local nPlayerID = castingHero:GetPlayerOwnerID()
@@ -245,6 +254,7 @@ end
 
 
 function AOHGameRound:OnItemPickedUp(event)
+	if not IsServer() then return end
 	if event.itemname == "item_bag_of_gold" then
 		local playerStats = self._vPlayerStats[ event.PlayerID ]
 		if playerStats then
@@ -255,6 +265,7 @@ end
 
 
 function AOHGameRound:_CheckForGoldBagDrop(killedUnit)
+	if not IsServer() then return end
 	if self._nGoldRemainingInRound <= 0 then
 		return
 	end

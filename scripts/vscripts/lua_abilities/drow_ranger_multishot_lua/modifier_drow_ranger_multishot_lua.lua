@@ -29,7 +29,7 @@ end
 function modifier_drow_ranger_multishot_lua:OnCreated( kv )
 	if not IsServer() then return end
 	self.speed = self:GetAbility():GetSpecialValueFor( "arrow_speed" )
-	local parent = self:GetParent()
+--[[ 	local parent = self:GetParent()
 	if parent and IsValidEntity(parent) and parent:IsAlive() then
 		if not parent:HasModifier("modifier_drow_ranger_multishot_lua_stacks") then
 			parent:AddNewModifier(parent, self:GetAbility(), "modifier_drow_ranger_multishot_lua_stacks", {})
@@ -46,13 +46,13 @@ function modifier_drow_ranger_multishot_lua:OnCreated( kv )
 				end		
 			end		
 		end
-	end		
+	end	 ]]	
 end
 
 function modifier_drow_ranger_multishot_lua:OnRefresh( kv )
 	if not IsServer() then return end
 	self.speed = self:GetAbility():GetSpecialValueFor( "arrow_speed" )
-	self:OnCreated(kv)
+	--self:OnCreated(kv)
 end
 function modifier_drow_ranger_multishot_lua:OnDestroy()
 	if not IsServer() then return end

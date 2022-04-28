@@ -107,7 +107,7 @@
 			"13"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_ss"					"30"
+				"bonus_ss"					"50"
 				"LinkedSpecialBonus"			"special_multishot_ss_bonus_dmg_lua"
 			}													
 		}

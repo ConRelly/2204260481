@@ -7,6 +7,7 @@ end
 
 
 function AOHSpawner:ReadConfiguration(name, kv, gameRound)
+	if not IsServer() then return end
 	self._gameRound = gameRound
 	self._dependentSpawners = {}
 
@@ -33,6 +34,7 @@ end
 
 
 function AOHSpawner:PostLoad(spawnerList)
+	if not IsServer() then return end
 	self._waitForUnit = spawnerList[self._szWaitForUnit]
 	if self._szWaitForUnit ~= "" and not self._waitForUnit then
 		debug_print(self._szName .. " has a wait for unit " .. self._szWaitForUnit .. " that is missing from the round data.")
@@ -65,6 +67,7 @@ function AOHSpawner:BeginDouble()
 end
 
 function AOHSpawner:_GetInitialWait(roundNumber)
+	if not IsServer() then return end
 	if self._endlessMode_started then
 		--if roundNumber > 17 then
 		--	return 30
@@ -75,6 +78,7 @@ function AOHSpawner:_GetInitialWait(roundNumber)
 	end
 end
 function AOHSpawner:_GetSpawnInterval(roundNumber)
+	if not IsServer() then return end
 	if self._endlessMode_started then
 		--if roundNumber > 19 then
 		--	return 10
@@ -88,6 +92,7 @@ end
 
 
 function AOHSpawner:Begin()
+	if not IsServer() then return end
 	self._nUnitsSpawnedThisRound = 0
 	self._nChampionsSpawnedThisRound = 0
 	self._nUnitsCurrentlyAlive = 0
@@ -115,6 +120,7 @@ end
 
 
 function AOHSpawner:End()
+	if not IsServer() then return end
 	if self._sg ~= nil then
 		UnloadSpawnGroupByHandle(self._sg)
 		self._sg = nil
@@ -127,6 +133,7 @@ end
 
 
 function AOHSpawner:ParentSpawned(parentSpawner)
+	if not IsServer() then return end
 	if parentSpawner == self._groupWithUnit then
 		-- Make sure we use the same spawn location as parentSpawner.
 		self:_DoSpawn()
@@ -140,6 +147,7 @@ end
 
 
 function AOHSpawner:Think()
+	if not IsServer() then return end
 	if not self._flNextSpawnTime then
 		return
 	end
@@ -189,6 +197,7 @@ end
 
 
 function AOHSpawner:_UpdateRandomSpawn()
+	if not IsServer() then return end
 	self._vecSpawnLocation = Vector(0, 0, 0)
 	self._entWaypoint = nil
 
@@ -215,6 +224,7 @@ end
 
 
 function AOHSpawner:_DoSpawn()
+	if not IsServer() then return end
 	local nUnitsToSpawn = math.min(self._nUnitsPerSpawn, self._nTotalUnitsToSpawn - self._nUnitsSpawnedThisRound)
 
 	if nUnitsToSpawn <= 0 then

@@ -20845,7 +20845,7 @@
 // Manta Style
 	"item_manta"
 	{
-		"AbilityCooldown"				"30.0"
+		"AbilityCooldown"				"60.0"
 		"AbilitySharedCooldown"			"manta"
 		"MaxUpgradeLevel"			   "2"
 		"ItemBaseLevel"				 "1"
@@ -23659,7 +23659,7 @@
 		"ItemIsNeutralDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemPurchasable"				"1"
-		"AbilityCooldown"				"20.0"
+		"AbilityCooldown"				"60.0"
 		"AbilitySpecial"
 		{
 			"01"

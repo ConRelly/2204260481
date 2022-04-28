@@ -1933,10 +1933,10 @@ and some other stuff
 * Added new talent for Chaos Knight (10 lvl, left)		
 * Buffed Phantom Reflex SS effect: Radius by x4 and duration by x3
 * Drow Multishot: added Super Scepter effect, new talent, new option autocast to not use frost arrows.
-* OBS Prospectors passive : illusion takes less dmg , extra level now scales with every use on replay.
-* Spirit Guardian: snowball stacks now updates on real illusions(obs, monkey,etc), titan relic now considers the "Defense Mode min Cd" as a debuff(50% increase instead of 15%) and now proper triggers after piety removes initial buff.
+* OBS Prospectors passive : illusion gets extra levels and defense with every use on replay.
+* Spirit Guardian: real illusions(obs, monkey,etc) now copy your hero snowball stacks, titan relic now considers the "Defense Mode min Cd" as a debuff(50% increase instead of 15%) and now proper triggers after piety removes initial buff.
 * Monkey king soliders now have a chance(20%) to use the Spirit Guardian attack effect and gets lower after every succes.
-
+* Changed something on the Spawn and death events that might reduce some of instability(crashes) when a round starts or might make wrose. report if is the second. 
 
 
 
@@ -2011,10 +2011,13 @@ Venom(color black): The host will get as bonus from Your stats: 100% strength, 1
 
 Carnage(color red): The host will get as bonus from Your stats: 100% strength, 50% agility, 50% int, and 40% of total spell amp.
 Duration : 20 sec
-Exhaust debuff duration: 30 sec (titan relic should probably not increase this)// thinking to make that bigger but being affected by something like status resist,CDR or titan relic but affects in reverse to reduce the duration but still having a min cap like ~20 sec.
-//conditions: infesting a target will proceed to transfrom in venom or carnage if Super scepter is On and host does not have Exhaust debuff on him.
-// alternative you get an button to transfrom, but the exhaust debuffs should still probably be on
-//ideas removed(reason, hard to impletent, lots of potential bugs and abuses, etc): host gets io items (same items will have no effect)
+Exhaust debuff duration: 30 sec(not decided host or Io)// thinking to make that bigger but being affected by something like status resist,CDR or titan relic but affects in reverse to reduce the duration but still having a min cap like ~20 sec.
+// *conditions: infesting a target will proceed to transfrom in venom or carnage if Super scepter is On and host does not have Exhaust debuff on him.
+// *alternative you get an button to transfrom, but the exhaust debuffs should still probably be on
+// *conditions2: after unloking SS effect you start to gain Venom or Carnage stacks (up to 100) every stack unlocks %(0.5% per stack, and 1% at 100) of the respective effect
+// *if condition2 then: should he start transforming after certain nr of stacks ? or be a lesser transfrom until 100 stacks(unlock full power)
+// *if condition2 should the host gain the staks(building symbiosi) or Io or maybe both and it gets added (host+Io = 100), stacks gains over time and probably some elements might make them gain faster stacks(up to 2-4 times).
+// *ideas removed(reason, hard to impletent, lots of potential bugs and abuses, etc): host gets io items (same items will have no effect)
 
 
 * The "Exclusive" tag will now be written on the ability (Example: *hero_name*'s Exclusive: *item_name*)

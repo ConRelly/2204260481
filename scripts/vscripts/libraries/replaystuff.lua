@@ -168,9 +168,13 @@ function PlayVideo(keys)
 	local cloneData = ability.cloneData
 	local lifetime = ability.recordTime + 1
 	local lvl_limit = caster:GetLevel() * 8
+	local dmg_reduction = math.floor(bonus_lvl / 5 ) + 25
+	if dmg_reduction > 90 then
+		dmg_reduction = 90
+	end	
 	--Create the player clone as recorded
 	--local clone = CreateUnitByName(cloneData.name, cloneData.spawnPoint, false, nil, caster, caster:GetTeamNumber())
-	local clones = CreateIllusions(caster, cloneData.name2, { duration = lifetime, outgoing_damage = 150, incoming_damage = -85 }, 1, 50, true, true )
+	local clones = CreateIllusions(caster, cloneData.name2, { duration = lifetime, outgoing_damage = 100, incoming_damage = -dmg_reduction }, 1, 50, true, true )
 	local clone = clones[1]
 	--clone:SetOwner(caster:GetPlayerOwner())
 	clone:SetAbsOrigin(cloneData.spawnPoint)
@@ -180,18 +184,18 @@ function PlayVideo(keys)
 	--clone:SetPlayerID(caster:GetPlayerID())
 	clone:AddNewModifier(caster, ability, "modifier_replay", {duration = lifetime})
 	--clone:MakeIllusion()
-	clone:SetAbilityPoints(-1)
 	--clone:SetOwner(caster)
 	-- Create unit		
 	
-	--Levelup the player: base + 1 for each use of the OBS play.
-	bonus_lvl = bonus_lvl + 1
+	--Levelup the illusion: base + 5 for each use of the OBS play. includes others OBS too.
+	bonus_lvl = bonus_lvl + 5
 	if bonus_lvl > lvl_limit then
 		bonus_lvl = lvl_limit	
 	end	
 	for i=1, bonus_lvl do
 		clone:HeroLevelUp(false)
 	end
+	clone:SetAbilityPoints(-1)
 	--remove illusion skills
 	for slot = 0, 8 do
 		local oldAbility = clone:GetAbilityByIndex(slot)	

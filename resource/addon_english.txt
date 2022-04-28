@@ -2285,7 +2285,7 @@
 	"DOTA_Tooltip_Ability_obs_replay_Description"		"<h1><font color='#178CD8'>Active: Record Video</font></h1> Start recording all actions taken by your hero for a duration, creating an mp4 file when finished. Press again to stop recording early. Cooldown is set equal to the length of the recorded video or 50s if you don't consume the Mp4 file(toggle AutoCast).
 	\n<font color='#E1B70B'>Activate again to Play the Video from your backpack/stash or inventory<br>Enable this skill Autocast(rightclick the skill) to not consume the Video(alt for more info)</font>
 	\n<h1><font color='#32F20C'>Passive: Views</font></h1> The Replays will give views base on spells casted(above certain CD) and by killing neutrals(with the replay).
-	\n<h1><font color='#F13E0E'>Passive: Prospective</font></h1> The Replay hero improves base on future self: He gets your current lvl + one lvl for every time it was Played and takes 85% less dmg"
+	\n<h1><font color='#F13E0E'>Passive: Prospective</font></h1> The Replay hero improves base on future self: Every time an mp4 file is Played the replay hero gets 5 extra levels and takes 1% less damage(90 dmg limit and starts from 25)."
 	"DOTA_Tooltip_Ability_obs_replay_str_stack"			 "Bonus Str Per View:"
 	"DOTA_Tooltip_Ability_obs_replay_agi_stack"			 "Bonus Agi Per View:"
 	"DOTA_Tooltip_Ability_obs_replay_int_stack"			 "Bonus Int Per View:"
@@ -2293,6 +2293,7 @@
 	"DOTA_Tooltip_Ability_obs_replay_Note1"					"When recording an action with a target, the replay will attempt to find the nearest target in the original location"
 	"DOTA_Tooltip_Ability_obs_replay_Note2"				 "If you want your replay to toggle autocast skills(like OD Q) manual cast the autocast skill once during recording"
 	"DOTA_Tooltip_Ability_obs_replay_Note3"				 "Spells casted must be above 8s CD (before CDR) and can't be spammed(other unit then replay must cast a 7s+cd (before cdr) for the next spell to give stacks)" 
+	"DOTA_Tooltip_Ability_obs_replay_Note4"              "Max Extra level is limited by your Level * 8 and game max lvl. Prospective progress is counted in common with other OBS players."
 	"DOTA_Tooltip_Ability_obs_replay_lore"					"Don't drop any frames!Base on SwordBacon item(Dota but's)"
 
 	"DOTA_Tooltip_Ability_item_obs_studio"					"OBS Studio"
@@ -9224,7 +9225,7 @@ Required Level: %required_level%
 	"DOTA_Tooltip_modifier_grow_strong"					"Grow Stronger"
 	"DOTA_Tooltip_modifier_grow_strong_Description"		"Current power status =><br>Strength: %fMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%<br>Armor: %fMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
 	"DOTA_Tooltip_ability_special_bonus_unique_ck_grow_strong"					"x{s:value} Grow Strong Bonuses"
-	"DOTA_Tooltip_ability_special_bonus_unique_ck_grow_strong_Description"		"x{s:value} Grow Strong Bonuses"
+	"DOTA_Tooltip_ability_special_bonus_unique_ck_grow_strong_Description"		"Str and Armor: The Extra Str comes as Base"
 
 "DOTA_Tooltip_ability_item_vampire_fangs_copy"								   "Vampire Fangs?"
 "DOTA_Tooltip_ability_item_vampire_fangs_copy_Description"					 "?"

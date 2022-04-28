@@ -1,4 +1,4 @@
-LinkLuaModifier("modifier_grow_strong", "heroes/hero_chaos_knight/grow_strong", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_grow_strong", "heroes/hero_chaos_knight/grow_strong.lua", LUA_MODIFIER_MOTION_NONE)
 
 
 grow_strong = class({})
@@ -26,17 +26,20 @@ function modifier_grow_strong:OnCreated()
 	self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("grow_interval"))
 end
 function modifier_grow_strong:OnIntervalThink()
+	if not IsServer() then return end
 	self:SetStackCount(self:GetStackCount() + 1)
-	if self:GetCaster():HasTalent("special_bonus_unique_ck_grow_strong") then
-		self:GetCaster():ModifyStrength(self:GetAbility():GetSpecialValueFor("grow_str") * talent_value(self:GetCaster(), "special_bonus_unique_ck_grow_strong") * 0.5)
-	end
-	self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("grow_interval"))
+	if self:GetAbility() and not self:GetAbility():IsNull() and self:GetCaster() then
+		if self:GetCaster():HasTalent("special_bonus_unique_ck_grow_strong") then
+			self:GetCaster():ModifyStrength(self:GetAbility():GetSpecialValueFor("grow_str") * talent_value(self:GetCaster(), "special_bonus_unique_ck_grow_strong") * 0.5)
+		end
+		self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("grow_interval"))
+	end	
 end
 function modifier_grow_strong:DeclareFunctions()
 	return {MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_MODEL_SCALE, MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE}
 end
 function modifier_grow_strong:GetModifierBonusStats_Strength()
-	if self:GetAbility() then return self:GetStackCount() * (self:GetAbility():GetSpecialValueFor("grow_str") + self:GetAbility():GetSpecialValueFor("grow_str") * talent_value(self:GetCaster(), "special_bonus_unique_ck_grow_strong")) end
+	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("grow_str") end 
 end
 function modifier_grow_strong:GetModifierPhysicalArmorBonus()
 	if self:GetAbility() then return self:GetStackCount() * (self:GetAbility():GetSpecialValueFor("grow_armor") + self:GetAbility():GetSpecialValueFor("grow_armor") * talent_value(self:GetCaster(), "special_bonus_unique_ck_grow_strong")) end	
