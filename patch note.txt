@@ -1917,27 +1917,28 @@ and some other stuff
 
 
 
+* Added Super Scepter effect for Amalgamation. (Io ultimate)
 * Fixed Cursed Bloodthorn
 * Fixed Heartstopper Aura (Necrophos) regen
 * Fix Hammer of the divine Unyielding stacks.
 * Reduced Marci Unleash level required by 1(6 lvls less to max out)
-* Pudge Root self dmg from 25% to 20% and interval is 2 times faster(0.2s same dmg for 2 ticks as one before) for self dmg only.
+* Pudge Root self dmg from 25% to 20% and the interval is 2 times faster(0.2s same dmg for 2 ticks as one before) for self dmg only.
 * Medusa mana shield absorb damage per mana increased by 10x.
-* Added item build suggestion for : bristle, drow, huskar, Phantom Assassin.  thanks to Siliatra.
-* Phantom Assassin : replaced an talent with the true strike talent and buffed ultimate by a small amount.
+* Added item build suggestions for bristle, drow, huskar, and Phantom Assassin.  thanks to Siliatra.
+* Phantom Assassin: replaced a talent with the true strike talent and buffed ultimate by a small amount.
 * Fixed localization for Hp bar(for big bosses)
 * Broken Wings: Increased the dmg limit calculations(buff)
 * Gold ring will trigger even on Self dmg now.
-* Commander aura now affects other unnits then heroes, but the bonus is reduced to 20% of the full amount.
+* Commander aura now affects other units than heroes, but the bonus is reduced to 20% of the full amount.
 * Seer Stone: Bonus mana regen increased from 200 to 250
 * Added new talent for Chaos Knight (10 lvl, left)		
 * Buffed Phantom Reflex SS effect: Radius by x4 and duration by x3
 * Drow Multishot: added Super Scepter effect, new talent, new option autocast to not use frost arrows.
-* OBS Prospectors passive : illusion gets extra levels and defense with every use on replay.
-* Spirit Guardian: real illusions(obs, monkey,etc) now copy your hero snowball stacks, titan relic now considers the "Defense Mode min Cd" as a debuff(50% increase instead of 15%) and now proper triggers after piety removes initial buff.
-* Monkey king soliders now have a chance(20%) to use the Spirit Guardian attack effect and gets lower after every succes.
-* Changed something on the Spawn and death events that might reduce some of instability(crashes) when a round starts or might make wrose. report if is the second. 
-
+* OBS Prospectors passive: illusion gets extra levels and defense with every use on replay.
+* Spirit Guardian: real illusions(obs, monkey, etc) now copy your hero snowball stacks, titan relic now considers the "Defense Mode min Cd" as a debuff(50% increase instead of 15%), and now proper triggers after piety remove the initial buff.
+* Monkey king soldiers now have a chance(20%) to use the Spirit Guardian attack effect and gets lower after every success.
+* Changed something on the Spawn and death events that might reduce some of the instability(crashes) when a round starts or might make it worse. report if is the second. 
+* Marci Unleash SS effect: Amalgamation can have both Symbiosis effects at the same time. 
 
 
 
@@ -1995,6 +1996,7 @@ Insatiable Hunger = doubles the chance of the SS effect.
 
 Speedsters : from 50% ms as bonus dmg to 140%
 
+Amalgamation can have both Symbiosis effects at the same time
 
 
 can youse this format for marci SS effect:
@@ -2003,21 +2005,5 @@ if caster:HasModifier("modifier_super_scepter") then
         special_effect_here = special_effect_here
     end                                 
 end
-// trying to come up with the symbiosis effects/conditions. you can add things maybe we end up with something good.
-\n<h1><font color='#DE3163'>Super Scepter</font></h1>  // not decided if Io should have the SS or the Host or both 
-Passive: Symbiosis(color not decided): If all conditions are meet you will merge with your host giving him a part of your stats. Has 2 different forms depending on skill autocast state.
-
-Venom(color black): The host will get as bonus from Your stats: 100% strength, 100% agility, 50% int, 100% of your base movemnt speed, 100% of all attack dmg (base + green)
-
-Carnage(color red): The host will get as bonus from Your stats: 100% strength, 50% agility, 50% int, and 40% of total spell amp.
-Duration : 20 sec
-Exhaust debuff duration: 30 sec(not decided host or Io)// thinking to make that bigger but being affected by something like status resist,CDR or titan relic but affects in reverse to reduce the duration but still having a min cap like ~20 sec.
-// *conditions: infesting a target will proceed to transfrom in venom or carnage if Super scepter is On and host does not have Exhaust debuff on him.
-// *alternative you get an button to transfrom, but the exhaust debuffs should still probably be on
-// *conditions2: after unloking SS effect you start to gain Venom or Carnage stacks (up to 100) every stack unlocks %(0.5% per stack, and 1% at 100) of the respective effect
-// *if condition2 then: should he start transforming after certain nr of stacks ? or be a lesser transfrom until 100 stacks(unlock full power)
-// *if condition2 should the host gain the staks(building symbiosi) or Io or maybe both and it gets added (host+Io = 100), stacks gains over time and probably some elements might make them gain faster stacks(up to 2-4 times).
-// *ideas removed(reason, hard to impletent, lots of potential bugs and abuses, etc): host gets io items (same items will have no effect)
-
 
 * The "Exclusive" tag will now be written on the ability (Example: *hero_name*'s Exclusive: *item_name*)

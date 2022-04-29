@@ -961,7 +961,7 @@
 
 
 	"DOTA_Tooltip_ability_amalgamation"					"Amalgamation"
-	"DOTA_Tooltip_ability_amalgamation_Description"		"You bind yourself to target allied hero. You may cast spells as normal but you share manapool. If host is out of mana your spells take spell cost from host's health. If your host dies, you die as well. \n Host hero is granted bonus mana regen while reducing magic resistance and armor from the current caster value.\n<h1><font color='#DE3163'>Super Scepter: Symbiosis</font></h1> You can now enable auto-cast to be able to trigger your attack talent but lose the ability to cast. Depending of the skill auto-cast state your host gains an Compatibility stack, %symbiot_stack_chance%%% every 2 sec.\n<h1><font color='#010101'>Venom</font> Compatibility</h1> At 100 stacks you and your host will transfrom in <font color='#010101'>Venom</font>, the host will gain a % from Your stats: %venom_str%%% str and agi, %venom_int%%% int, %venom_spellamp%%% spell amp.\n<h1><font color='#FF0707'>Carnage</font> Compatibility</h1>At 100 stacks you and your host will transfrom in <font color='#FF0707'>Carnage</font>, the host will gain a % from Your stats: %carnage_str%%% str and agi, %carnage_int%%% int, %carnage_greendmg%%% green damage, %carnage_basedmg%%% base damage, %carnage_base_ms%%% base ms."
+	"DOTA_Tooltip_ability_amalgamation_Description"		"You bind yourself to target allied hero. You may cast spells as normal but you share manapool. If host is out of mana your spells take spell cost from host's health. If your host dies, you die as well. \n Host hero is granted bonus mana regen while reducing magic resistance and armor from the current caster value.\n<h1><font color='#DE3163'>Super Scepter: Symbiosis</font></h1> You can now enable auto-cast to be able to trigger your attack talent but lose the ability to do Actions(toggle again to exit host). Depending of the skill auto-cast state your host gains an Compatibility stack, %symbiot_stack_chance%%% every 2 sec.\n<h1><font color='#010101'>Venom</font> Compatibility</h1> At 100 stacks you and your host will transfrom in <font color='#010101'>Venom</font>, the host will gain a % from Your stats: %venom_str%%% str and agi, %venom_int%%% int, %venom_spellamp%%% spell amp.\n<h1><font color='#FF0707'>Carnage</font> Compatibility</h1>At 100 stacks you and your host will transfrom in <font color='#FF0707'>Carnage</font>, the host will gain a % from Your stats: %carnage_str%%% str and agi, %carnage_int%%% int, %carnage_greendmg%%% green damage, %carnage_basedmg%%% base damage, %carnage_base_ms%%% base ms."
 	"DOTA_Tooltip_ability_amalgamation_scepter_Description"		"Your host gets +%stat_scepter% to all attributes if enemy dies within %range_scepter% radius."
 	"DOTA_Tooltip_ability_amalgamation_Note0"			"1) Temporarily breaks invisibility of host when you cast spell or attack. Duration: %vis_duration%s"
 	"DOTA_Tooltip_ability_amalgamation_Note1"			"2) The caster gets the same control effects as the host"
@@ -980,12 +980,16 @@
 	"DOTA_Tooltip_amalgamation_bonus_Description"		"Gives +%fMODIFIER_PROPERTY_TOOLTIP% to all attributes."
 	"DOTA_Error_amalgamation_no_inception"				"Can't cast while being host."
 
-	"DOTA_Tooltip_modifier_venom"                   		"<h1><font color='#010101'>Venom</font></h1> Compatibility"
-	"DOTA_Tooltip_modifier_venom_description"       		"At 100 you are eligible for <h1><font color='#010101'>Venom</font></h1> Symbiosis"
-	"DOTA_Tooltip_modifier_carnage"                   		"<h1><font color='#FF0707'>Carnage</font></h1> Compatibility"
-	"DOTA_Tooltip_modifier_carnage_description"       		"At 100 you are eligible for <h1><font color='#FF0707'>Carnage</font></h1> Symbiosis"
+	"DOTA_Tooltip_modifier_venom"                   		"<font color='#010101'>Venom</font> Compatibility"
+	"DOTA_Tooltip_modifier_venom_description"       		"At 100 stacks you are eligible for <font color='#010101'>Venom</font> Symbiosis"
+	"DOTA_Tooltip_modifier_carnage"                   		"<font color='#FF0707'>Carnage</font> Compatibility"
+	"DOTA_Tooltip_modifier_carnage_description"       		"At 100 stacks you are eligible for <font color='#FF0707'>Carnage</font> Symbiosis"
 	"DOTA_Tooltip_modifier_symbiosis_exhaust"        		"Symbiosis Exhaust"
 	"DOTA_Tooltip_modifier_symbiosis_exhaust_description" 	"You wont be able to trigger full symbiosis. Exhaust Duration Is Affected by Status resist."
+	"DOTA_Tooltip_modifier_symbiosis_exhaust_trigger"        		"<font color='#DE3163'>Super Scepter: Symbiosis</font>"
+	"DOTA_Tooltip_modifier_symbiosis_exhaust_trigger_description" 	"Full Symbiosis. You gain stats from symbiosis"
+
+
 
 //###########################################################################################################################
 	
@@ -10334,13 +10338,13 @@ Contains all random skills"
 
 	"DOTA_Tooltip_ability_marci_unleash_custom"						"Unleash"
 	"DOTA_Tooltip_ability_marci_unleash_custom_Description"			"Marci taps a hidden power, gaining Fury charges that allow her to deliver a rapid sequence of strikes. The last strike in every Fury combo creates a damaging pulse around the target that slows movement and attack speed for %pulse_debuff_duration%s. In between Fury combos, Marci is unable to attack for %time_between_flurries%s.\n\nMarci receives a basic dispel when Unleash is cast and gains %bonus_movespeed%%% movement speed.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Some Items and Abilites will get improved when ultimate is active.(press Alt)"
-	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Super Scepter improve list: CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger, Speedsters."
+	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Super Scepter improve list: CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger, Speedsters, Amalgamation."
 	"DOTA_Tooltip_ability_marci_unleash_custom_Lore"					"Though some have sought to understand its origins, Marci rebuffs all attempts to divine the source of her power."
 	"DOTA_Tooltip_ability_marci_unleash_custom_duration"				"DURATION:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_charges_per_flurry"		"STRIKES PER FURY:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_radius"			"PULSE RADIUS:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_damage"			"PULSE DAMAGE:"
-	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_move_slow_pct"	"%PULSE MOVEMENT SLOW:"
+	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_move_slow_pct"		"%PULSE MOVEMENT SLOW:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_attack_slow_pct"	"PULSE ATTACK SLOW:"
 
 	"DOTA_Tooltip_ability_marci_companion_run_custom"						"Rebound"

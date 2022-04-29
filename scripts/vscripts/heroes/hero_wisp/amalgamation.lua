@@ -30,7 +30,7 @@ function amalgamation:GetBehavior()
 		behavior = DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_AUTOCAST
 	end	
 	if self:GetCaster():HasModifier("amalgamation_modifier") then
-		behavior = DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_IMMEDIATE + DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE -- + DOTA_ABILITY_BEHAVIOR_AUTOCAST -- remove autocast if you want to not be able to change states during infest
+		behavior = DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_IMMEDIATE + DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE + DOTA_ABILITY_BEHAVIOR_AUTOCAST -- remove autocast if you want to not be able to change states during infest
 	end
 	return behavior
 end
@@ -92,7 +92,9 @@ function amalgamation:EndSymbiosis()
 	SymbiotModifier:Terminate(nil)
 	self:UseResources(false, false, true)
 end
-
+function amalgamation:OnDestroy()
+	self:EndSymbiosis()  
+end	
 
 -------------------------
 -- Amalgamation Caster --
@@ -139,9 +141,23 @@ function amalgamation_modifier:DeclareFunctions()
 		MODIFIER_EVENT_ON_DEATH,
 		MODIFIER_PROPERTY_INVISIBILITY_LEVEL,
 		MODIFIER_EVENT_ON_ATTACK_LANDED,
-		MODIFIER_EVENT_ON_ABILITY_EXECUTED
+		MODIFIER_EVENT_ON_ABILITY_EXECUTED,
+		MODIFIER_EVENT_ON_ORDER
 	}
 end
+
+function amalgamation_modifier:OnOrder(params)
+	if params.unit ~= self:GetParent() then return end
+
+	if params.order_type == DOTA_UNIT_ORDER_CAST_TOGGLE_AUTO then
+		local amalga = self:GetCaster():FindAbilityByName("amalgamation")
+		if amalga then
+			amalga:EndSymbiosis()
+		end	
+	end	
+
+end
+
 
 function amalgamation_modifier:OnStackCountChanged(old)
 	if IsServer() then self:GetParent():CalculateStatBonus(true) end
@@ -320,6 +336,9 @@ function amalgamation_target:OnDestroy()
 		end	
 		if self:GetParent():HasModifier("amalgamation_target_base_attack") then
 			self:GetParent():RemoveModifierByName("amalgamation_target_base_attack")
+		end	
+		if self:GetParent():HasModifier("modifier_symbiosis_exhaust_trigger") then
+			self:GetParent():RemoveModifierByName("modifier_symbiosis_exhaust_trigger")
 		end				
 	end
 end
@@ -333,6 +352,7 @@ function amalgamation_target:OnIntervalThink()
 		local ability = self:GetAbility()
 		local venom_on = false
 		local carnage_on = false
+		local marci = false
 		local transfrom_duration = ability:GetSpecialValueFor("transfrom_duration")
 		local stack_chance = ability:GetSpecialValueFor("symbiot_stack_chance")
 		local HostMagicResist = math.floor(self:GetCaster():GetMagicalArmorValue() * self:GetAbility():GetSpecialValueFor("magic_armor"))
@@ -351,7 +371,6 @@ function amalgamation_target:OnIntervalThink()
 		end
 		if caster:HasModifier("modifier_super_scepter") then
 			-- marci SS
-			local marci = false
 			if parent:HasModifier("modifier_super_scepter") then
 				if parent:HasModifier("modifier_marci_unleash_flurry") then
 					marci = true
@@ -363,35 +382,36 @@ function amalgamation_target:OnIntervalThink()
 			else
 				local venom_modif = parent:FindModifierByName("modifier_venom")
 				if venom_modif  then
-					if not ability:GetAutoCastState() and venom_modif:GetStackCount() > 99 then venom_on = true end
-					if not ability:GetAutoCastState() and RollPercentage(stack_chance) and not venom_modif:GetStackCount() > 99 then			
+					if not ability:GetAutoCastState() and (venom_modif:GetStackCount() > 99) then venom_on = true end
+					if marci and (venom_modif:GetStackCount() > 99) then venom_on = true end
+					if not ability:GetAutoCastState() and RollPercentage(stack_chance) and not (venom_modif:GetStackCount() > 99) then			
 						venom_modif:SetStackCount(venom_modif:GetStackCount() + 1)
 					end	
 				end	
-				print("test return")
 			end	
 			if not parent:HasModifier("modifier_carnage") then
 				parent:AddNewModifier(caster, ability, "modifier_carnage", {})
 			else
 				local carnage_modif = parent:FindModifierByName("modifier_carnage")
 				if carnage_modif then
-					if ability:GetAutoCastState() and carnage_modif:GetStackCount() > 99 then carnage_on = true end
-					if ability:GetAutoCastState() and RollPercentage(stack_chance) and not carnage_modif:GetStackCount() > 99 then
+					if ability:GetAutoCastState() and (carnage_modif:GetStackCount() > 99) then carnage_on = true end
+					if marci and (carnage_modif:GetStackCount() > 99) then carnage_on = true end
+					if ability:GetAutoCastState() and RollPercentage(stack_chance) and not (carnage_modif:GetStackCount() > 99) then
 						carnage_modif:SetStackCount(carnage_modif:GetStackCount() + 1)
 					end	
 				end
-				print("test return 2")
 			end	
 
 			if parent:HasModifier("modifier_symbiosis_exhaust") then return end
+			if not parent:IsHero() then return end
 			local caster_str = caster:GetStrength()
 			local caster_agi = caster:GetAgility()
 			local caster_int = caster:GetIntellect()
 			local caster_spellamp = caster:GetSpellAmplification(false) * (ability:GetSpecialValueFor("venom_spellamp") / 100)
 			local caster_base_ms = caster:GetBaseMoveSpeed()
-			local caster_basedmg = GetAttackDamage()
+			local caster_basedmg = caster:GetAttackDamage()
 			local caster_greendmg = caster:GetAverageTrueAttackDamage(caster) - caster_basedmg
-			if (ability:GetAutoCastState() and venom_on) or (marci and venom_on) then
+			if (not ability:GetAutoCastState() and venom_on) or (marci and venom_on) then
 				if parent and parent:IsAlive() then
 					if not parent:HasModifier("modifier_symbiosis_exhaust_trigger") then
 						parent:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_symbiosis_exhaust_trigger", {duration = transfrom_duration})
@@ -408,7 +428,7 @@ function amalgamation_target:OnIntervalThink()
 				local target_spellamp_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_spell_amp", {})
 				target_spellamp_Modifier:SetStackCount(caster_spellamp)				
 			end
-			if (not ability:GetAutoCastState() and carnage_on) or (marci and carnage_on) then
+			if (ability:GetAutoCastState() and carnage_on) or (marci and carnage_on) then
 				if parent and parent:IsAlive() then
 					if not parent:HasModifier("modifier_symbiosis_exhaust_trigger") then
 						parent:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_symbiosis_exhaust_trigger", {duration = transfrom_duration})
@@ -425,9 +445,9 @@ function amalgamation_target:OnIntervalThink()
 				local target_ms_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_ms_bonus", {})
 				target_ms_Modifier:SetStackCount(caster_base_ms * (ability:GetSpecialValueFor("carnage_base_ms") /100))
 				local target_greendmg_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_bonus_attack", {})
-				target_greendmg_Modifier:SetStackCount((caster_basedmg * (ability:GetSpecialValueFor("carnage_greendmg") / 100) /100) ) -- /100 to avoid to high amount stacks
+				target_greendmg_Modifier:SetStackCount((caster_basedmg * (ability:GetSpecialValueFor("carnage_greendmg") / 100) /1000) ) -- /1000 to avoid to high amount stacks
 				local target_basedmg_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_base_attack", {})
-				target_basedmg_Modifier:SetStackCount((caster_greendmg * (ability:GetSpecialValueFor("carnage_basedmg") / 100)/1000) )	-- /1000 to avoid to high amount stacks							
+				target_basedmg_Modifier:SetStackCount((caster_greendmg * (ability:GetSpecialValueFor("carnage_basedmg") / 100)/100) )	-- /100 to avoid to high amount stacks							
 			end	
 
 		end
@@ -538,7 +558,7 @@ end
 ------------------------
 
 amalgamation_target_str = class({})
-function amalgamation_target_str:IsHidden() return false end
+function amalgamation_target_str:IsHidden() return true end
 function amalgamation_target_str:RemoveOnDeath() return false end
 function amalgamation_target_str:GetAttributes() return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_PERMANENT end
 function amalgamation_target_str:DeclareFunctions()
@@ -549,7 +569,7 @@ function amalgamation_target_str:GetModifierBonusStats_Strength()
 end
 
 amalgamation_target_agi = class({})
-function amalgamation_target_agi:IsHidden() return false end
+function amalgamation_target_agi:IsHidden() return true end
 function amalgamation_target_agi:RemoveOnDeath() return false end
 function amalgamation_target_agi:GetAttributes() return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_PERMANENT end
 function amalgamation_target_agi:DeclareFunctions()
@@ -560,7 +580,7 @@ function amalgamation_target_agi:GetModifierBonusStats_Agility()
 end
 
 amalgamation_target_int = class({})
-function amalgamation_target_int:IsHidden() return false end
+function amalgamation_target_int:IsHidden() return true end
 function amalgamation_target_int:RemoveOnDeath() return false end
 function amalgamation_target_int:GetAttributes() return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_PERMANENT end
 function amalgamation_target_int:DeclareFunctions()
@@ -571,7 +591,7 @@ function amalgamation_target_int:GetModifierBonusStats_Intellect()
 end
 
 amalgamation_target_spell_amp = class({})
-function amalgamation_target_spell_amp:IsHidden() return false end
+function amalgamation_target_spell_amp:IsHidden() return true end
 function amalgamation_target_spell_amp:RemoveOnDeath() return false end
 function amalgamation_target_spell_amp:GetAttributes() return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_PERMANENT end
 function amalgamation_target_spell_amp:DeclareFunctions()
@@ -582,7 +602,7 @@ function amalgamation_target_spell_amp:GetModifierSpellAmplify_Percentage()
 end
 
 amalgamation_target_ms_bonus = class({})
-function amalgamation_target_ms_bonus:IsHidden() return false end
+function amalgamation_target_ms_bonus:IsHidden() return true end
 function amalgamation_target_ms_bonus:RemoveOnDeath() return false end
 function amalgamation_target_ms_bonus:GetAttributes() return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_PERMANENT end
 function amalgamation_target_ms_bonus:DeclareFunctions()
@@ -593,7 +613,7 @@ function amalgamation_target_ms_bonus:GetModifierMoveSpeedBonus_Constant()
 end
 
 amalgamation_target_bonus_attack = class({})
-function amalgamation_target_bonus_attack:IsHidden() return false end
+function amalgamation_target_bonus_attack:IsHidden() return true end
 function amalgamation_target_bonus_attack:RemoveOnDeath() return false end
 function amalgamation_target_bonus_attack:GetAttributes() return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_PERMANENT end
 function amalgamation_target_bonus_attack:DeclareFunctions()
@@ -604,7 +624,7 @@ function amalgamation_target_bonus_attack:GetModifierPreAttack_BonusDamage()
 end
 
 amalgamation_target_base_attack = class({})
-function amalgamation_target_base_attack:IsHidden() return false end
+function amalgamation_target_base_attack:IsHidden() return true end
 function amalgamation_target_base_attack:RemoveOnDeath() return false end
 function amalgamation_target_base_attack:GetAttributes() return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_PERMANENT end
 function amalgamation_target_base_attack:DeclareFunctions()
@@ -622,79 +642,16 @@ function modifier_venom:IsHidden() return false end
 function modifier_venom:RemoveOnDeath() return false end
 function modifier_venom:GetAttributes() return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_PERMANENT end
 function modifier_venom:GetTexture()
-	if self:GetParent():HasModifier("modifier_super_scepter") then
-		if self:GetParent():HasModifier("modifier_marci_unleash_flurry") then
-			return "venom_passive"
-		end                                 
-	end
 	return "vhenom_passive"
 end
-function modifier_venom:GetEffectName()
-	if self:GetParent():HasModifier("modifier_super_scepter") then
-		if self:GetParent():HasModifier("modifier_marci_unleash_flurry") then
-			return "particles/hero_venom/venom_immoeral_ambient.vpcf"
-		end                                 
-	end	
-	return nil
-end
-function modifier_venom:GetEffectAttachType()
-	return PATTACH_ABSORIGIN_FOLLOW
-end
 
-function modifier_venom:OnCreated()
-	self.venom_model = nil
-end	
-function modifier_venom:DeclareFunctions()
-	return {
-		MODIFIER_PROPERTY_MODEL_CHANGE,
-		--MODIFIER_PROPERTY_MODEL_SCALE,
-	}
-end
-function modifier_venom:OnRefresh()
-	if self:GetStackCount() > 99 then
-		if self:GetAbility() and self:GetAbility():GetAutoCastState() then
-			self.venom_model = "models/heroes/hero_venom/venom.vmdl"
-		end	
-	end
-end	
-function modifier_venom:GetModifierModelChange()
-	if self:GetParent():HasModifier("modifier_symbiosis_exhaust") then return end	
-	return self.venom_model
-end
-
---[[ function modifier_venom:GetModifierModelScale()
-	if self:GetAbility() then return self:GetStackCount() / 100 end
-end ]]
 
 modifier_carnage = class({})
 function modifier_carnage:IsHidden() return false end
 function modifier_carnage:RemoveOnDeath() return false end
 function modifier_carnage:GetAttributes() return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_PERMANENT end
-function modifier_venom:GetTexture() return "carnage" end
-function modifier_carnage:OnCreated()
-	self.carnage_model = nil
-end	
-function modifier_carnage:OnRefresh()
-	if self:GetStackCount() > 99 then
-		if self:GetAbility() and not self:GetAbility():GetAutoCastState() then
-			self.carnage_model = "models/heroes/hero_carnage/carnage.vmdl"
-		end	
-	end
-end	
-function modifier_carnage:DeclareFunctions()
-	return {
-		MODIFIER_PROPERTY_MODEL_CHANGE,
-		--MODIFIER_PROPERTY_MODEL_SCALE,
-	}
-end
-function modifier_carnage:GetModifierModelChange()
-	if self:GetParent():HasModifier("modifier_symbiosis_exhaust") then return end
-	return self.carnage_model
-end
+function modifier_carnage:GetTexture() return "carnage" end
 
---[[ function carnage_modifier:GetModifierModelScale()
-	if self:GetAbility() then return self:GetStackCount() / 100 end
-end ]]
 
 ----Symbiosis Exhaust---- target
 modifier_symbiosis_exhaust = class({})
@@ -705,16 +662,35 @@ function modifier_symbiosis_exhaust:RemoveOnDeath() return false end
 function modifier_symbiosis_exhaust:GetAttributes() return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_PERMANENT end
 function modifier_symbiosis_exhaust:OnCreated()
 	if IsServer() then
-		amalgamation:EndSymbiosis()
+		if self:GetParent():HasModifier("amalgamation_target") then
+			self:GetCaster():FindAbilityByName("amalgamation"):EndSymbiosis()
+		end	
 	end	
 end	
 ---Duration -- Exhaust trigger--
 modifier_symbiosis_exhaust_trigger = class({})
 function modifier_symbiosis_exhaust_trigger:IsHidden() return false end
 function modifier_symbiosis_exhaust_trigger:IsDebuff() return true end
-function modifier_symbiosis_exhaust_trigger:GetTexture() return "zoom_charge_of_darkness" end
+function modifier_symbiosis_exhaust_trigger:GetTexture()
+	return "carnage"  --venom_passive  --idk how to add both this seems to work only Client so i can't check GetAutocastState() (server only)
+end
 function modifier_symbiosis_exhaust_trigger:RemoveOnDeath() return false end
 function modifier_symbiosis_exhaust_trigger:GetAttributes() return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_PERMANENT end
+function modifier_symbiosis_exhaust_trigger:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_MODEL_CHANGE,
+	}
+end
+
+function modifier_symbiosis_exhaust_trigger:GetModifierModelChange()
+	if IsServer() then 
+		if self:GetAbility() and self:GetAbility():GetAutoCastState() then	
+			return "models/heroes/hero_carnage/carnage.vmdl"
+		else
+			return "models/heroes/hero_venom/venom.vmdl"
+		end
+	end	
+end
 
 function modifier_symbiosis_exhaust_trigger:OnDestroy()
 	if not IsServer() then return end
