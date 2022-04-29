@@ -42533,6 +42533,20 @@
 			"vis_duration"				"3 2.5 2"
 			"magic_armor"				"-33 -29 -25"
 			"physical_armor"			"-33 -29 -25"
+			"venom_spellamp"           	"40"
+			"venom_str"                 "50"
+			"venom_agi"                 "50"
+			"venom_int"                 "100"
+			"carnage_str"               "100"
+			"carnage_agi"               "100"
+			"carnage_int"               "50"
+			"carnage_greendmg"          "100"
+			"carnage_basedmg"           "100"
+			"carnage_base_ms"           "100"
+			"symbiot_stack_chance"      "20"
+			"exhaust_duration"          "85" // can be reduced by host satus resist
+			"transfrom_duration"        "25"
+
 			"range_scepter"
 			{
 				"value"					"1800"

@@ -19400,9 +19400,12 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"100"
+		"ItemCost"						"3000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
+		"ItemStockInitial"				"3"
+		"ItemStockMax"					"3"
+		"ItemStockTime"					"99999.0"		
 		"ItemResult"					"item_fire_rapier"
 		"ItemRequirements"
 		{
