@@ -21965,7 +21965,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"splash_radius_scepter"		"200"
+				"splash_radius_scepter"		"1800"
 				"RequiresScepter"			"1"
 			}
 			"04"
@@ -21991,7 +21991,7 @@
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cast_range"				"450"
+				"cast_range"				"1450"
 			}
 			"09"
 			{

@@ -1916,7 +1916,7 @@ and some other stuff
 
 
 
-
+* WindRanger's Exclusive item Reveal: Traxex's Necklace - changed his on attack effect from physical dmg to pure and some other changes.
 * Added Super Scepter effect for Amalgamation. (Io ultimate)
 * Fixed Cursed Bloodthorn
 * Fixed Heartstopper Aura (Necrophos) regen
@@ -1937,11 +1937,13 @@ and some other stuff
 * OBS Prospectors passive: illusion gets extra levels and defense with every use on replay.
 * Spirit Guardian: real illusions(obs, monkey, etc) now copy your hero snowball stacks, titan relic now considers the "Defense Mode min Cd" as a debuff(50% increase instead of 15%), and now proper triggers after piety remove the initial buff.
 * Monkey king soldiers now have a chance(20%) to use the Spirit Guardian attack effect and gets lower after every success.
-* Changed something on the Spawn and death events that might reduce some of the instability(crashes) when a round starts or might make it worse. report if is the second. 
+* Changed something on the Spawn and death events that might reduce some of the instability(crashes) when a round starts or might make it worse. try to report it if is the second. 
 * Marci Unleash SS effect: Amalgamation can have both Symbiosis effects at the same time. 
-* Tiny: Grow has more lvls now(buffed), added new talent for grow at lvl 25, Tree Grab : 5k stacks/hits , more bonus dmg /lvl, and now reduces your base attack time after lvl 3. 
+* Tiny: Grow has more lvls now(buffed), added new talent for grow at lvl 25, Tree Grab: 5k stacks/hits, more bonus dmg /lvl, and now reduces your base attack time after lvl 3. 
+* Axe Ultimate has more cast rage and Aghanim aoe is almost 10x bigger.
+* Bounty track now has an Exclusive effect with Seer Stone.
 * Added Tiny Grow in random skills pool.
-* DPS metter will not count "overkill" anymore (just curret hp, the over %hp limit on gods will be conted correctly too), the detailed skills dmg now updates to M(millions) and B(bilions).
+* DPS meter will not count "overkill" anymore (just current hp, the over %hp limit on gods will be counted correctly too), the detailed skills dmg now updates to M(millions) and B(billions).
 * Made the animation for %hp limit hit(goods defense) be more visible.
 * and some other stuff
 
@@ -1951,7 +1953,7 @@ and some other stuff
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes68 can be found on the new map version:
+*Update patch notes69 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 

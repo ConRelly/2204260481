@@ -2637,7 +2637,9 @@
 	"DOTA_Tooltip_modifier_jinada_gold_tracker"					"Jinada Gold"
 	"DOTA_Tooltip_modifier_jinada_gold_tracker_Description"		"%dMODIFIER_PROPERTY_TOOLTIP% Total Gold Stolen."
 
-		
+	"DOTA_Tooltip_ability_bounty_hunter_track_Description"							"Tracks an enemy hero, granting True Sight of the target, and information on how much gold it is carrying. Bounty Hunter moves fast when near the tracked unit and deals critical strikes when attacking it. If the target dies, Bounty Hunter and nearby heroes collect a bonus bounty of gold. Casting Track does not take you out of invisibility.\n<h1><font color='#5ECF7A'>Bounty Hunter</font> <font color='#FFA32B'>Exclusive:</font> Seer Stone</h1> When you cast Seer Stone Reveal: Apply track to all enemies in the Aoe"
+	
+
 	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler"					"Drunken Brawler"
 	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_Description"		"Gives a chance to avoid attacks and to deal critical damage. "
 	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_Lore"				"When Mangix won his title as the Brewmaster of the Order of Oyo, he also claimed his place in the mastery of inebriation."

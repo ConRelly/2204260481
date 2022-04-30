@@ -5762,7 +5762,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"150 1880 3920 6800 9450 19370 29800 57850 117800 420500"
+				"damage"				"150 1880 3920 6800 9450 19370 29800 57850 117800 380500"
 				"LinkedSpecialBonus"	"special_bonus_unique_jakiro_8"
 			}
 		}
@@ -5895,7 +5895,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"850 1710 3560 9450 18500 36500 65200 158400"
+				"damage"					"850 1710 3560 9450 18500 36500 65200 98400"
 				"LinkedSpecialBonus"		"special_bonus_unique_jakiro_7"
 			}
 			"02"
