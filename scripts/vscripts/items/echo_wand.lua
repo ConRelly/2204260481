@@ -268,7 +268,7 @@ if IsServer() then
 		mjz_spectre_haunt = true,
 		mjz_spectre_haunt_single = true,
 		amalgamation = true,
-		
+		phantom_reflex = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

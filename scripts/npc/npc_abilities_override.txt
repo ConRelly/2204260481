@@ -2237,7 +2237,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"220 2960 8530 15250 47500 115000 285400"
+				"damage"				"220 2960 8530 15250 47500 115000 225400"
 				"LinkedSpecialBonus"	"special_bonus_unique_ancient_apparition_2"
 			}
 			"02"
@@ -11394,11 +11394,13 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"movespeed"			"8 22 36 50"
+				"LinkedSpecialBonus"		"special_bonus_unique_sven_6"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_armor"		"9 18 38 85"		
+				"bonus_armor"		"9 18 38 85"
+				"LinkedSpecialBonus"		"special_bonus_unique_sven_7"		
 			}
 			"03"
 			{
@@ -11409,6 +11411,7 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"duration"		"8"
+				"LinkedSpecialBonus"		"special_bonus_unique_sven_5"
 			}
 		}
 	}
@@ -18049,29 +18052,127 @@
 			}
 		}
 	}
+
 	"tiny_grow"
 	{
-		"MaxLevel"						  "12"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilitySound"					"Tiny.Grow"
+		"AbilityCastAnimation"		"ACT_INVALID"
+		"MaxLevel"						  "7"
+		"LevelsBetweenUpgrades"           "10"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"bonus_armor"				"0 22 48 72 122 175 284"
+				"bonus_damage"			
+				{
+					"value"					"3950 4450 9500 17500 28500 37500 56400"
+					"CalculateSpellDamageTooltip"	"0"
+				}
+				"tree_bonus_damage_pct"			
+				{
+					"value"				"50"
+					"special_bonus_unique_tiny_7"	"+50"
+				}
+				"attack_speed_reduction"	"20 40 60 90 120 150 200"
+				"toss_bonus_damage"			"300"
+		}
+	}
+
+	"tiny_tree_grab"
+	{	
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Hero_Tiny.CraggyExterior.Stun"
+		"LinkedAbility"					"tiny_toss_tree"
+		"HasScepterUpgrade"				"1"
+        "HasShardUpgrade"               "1"
+        "AbilityDraftScepterAbility"    "tiny_tree_channel"
+        "LevelsBetweenUpgrades"         "10"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"165"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"19 16 13 10"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"40"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportBonus"		"35"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_armor"				"4 8 18 32 62"
+				"attack_count"				"5000"
+				"LinkedSpecialBonus"	"special_bonus_unique_tiny_6"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"450 950 4450 9500 17500"
+				"bonus_damage"				"200 2500 6700 16400"				
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"attack_speed_reduction"	"20 40 60 90 120"
+				"bonus_damage_buildings"		"55 70 85 100"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_range"				"350"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"splash_width"				"200"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"splash_range"				"400"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"splash_pct"				"40 60 80 100"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bat_increase"				"-0.05 -0.1 -0.2 -0.3"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"speed_reduction"			"0"
 			}
 		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+
+
 	"tiny_tree_channel"
 	{
 		"AbilityCooldown"				"24"

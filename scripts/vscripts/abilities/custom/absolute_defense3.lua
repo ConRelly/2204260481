@@ -36,14 +36,14 @@ if IsServer() then
 
 	end
 	function modifier_jotaro_absolute_defense3:DeclareFunctions()
-		return {MODIFIER_EVENT_ON_TAKEDAMAGE}
+		return {MODIFIER_PROPERTY_AVOID_DAMAGE}
 	end
-	function modifier_jotaro_absolute_defense3:OnTakeDamage(t)
-		if self.ab:IsCooldownReady() and t.unit == self.parent and self.parent:GetMaxHealth()*self.ab:GetSpecialValueFor("hp_pct")/100 <= t.damage and self.ab:GetLevel() >= 1 then
-			if self.parent:HasModifier("modifier_item_helm_of_the_undying_active") then return nil end
+	function modifier_jotaro_absolute_defense3:GetModifierAvoidDamage(t)
+		if self.ab:IsCooldownReady() and t.target == self.parent and self.parent:GetMaxHealth()*self.ab:GetSpecialValueFor("hp_pct")/100 <= t.damage and self.ab:GetLevel() >= 1 then
+			if self.parent:HasModifier("modifier_item_helm_of_the_undying_active") then return 0 end
 			
-			self.parent:SetHealth(t.damage + self.parent:GetHealth())
-			local part = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
+			--self.parent:SetHealth(t.damage + self.parent:GetHealth())
+			local part = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", PATTACH_CENTER_FOLLOW, self.parent)
 			ParticleManager:ReleaseParticleIndex(part)
 			--self.parent:EmitSound("jotaro_absolute_defense")
 			self.ab:StartCooldown(self.ab:GetSpecialValueFor("cooldown"))
@@ -51,8 +51,9 @@ if IsServer() then
 			local ability = self.ab
 			self.parent:AddNewModifier(self.parent, ability, "modifier_item_plain_ring_perma_invincibility", {duration = 2, min_health = 0})
 			--self.ab:UseResources(true, true, true)
-
+			return 1
 		end
+		return 0
 	end
 end
 function modifier_jotaro_absolute_defense3:GetAttributes()

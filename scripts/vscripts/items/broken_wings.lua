@@ -169,6 +169,7 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 	if self:GetStackCount() < 1 then return end
 	if self.hit == true then
 		if DamageType == DAMAGE_TYPE_MAGICAL or DamageType == DAMAGE_TYPE_PURE then
+			if keys.original_damage < 2 then return end -- avoid negative being transformed
 			self.hit = false
 			local feather_add_dmg = self:GetAbility():GetSpecialValueFor("feather_add_dmg")
 			local max_used_stacks = 50

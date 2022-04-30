@@ -356,48 +356,57 @@ end
 function AOHGameMode:OnDamageDealt(damageTable)
 	local attacker_index = damageTable.entindex_attacker_const
 	local victim_index = damageTable.entindex_victim_const
+	local pass = true
 	if attacker_index and victim_index then
 		local attacker = EntIndexToHScript(attacker_index)
 		local victim = EntIndexToHScript(victim_index)
 		if attacker and victim then
 			if attacker.GetPlayerOwnerID then
 				local attackerPlayerId = attacker:GetPlayerOwnerID()
-				if AOHGameMode.isTalon[attackerPlayerId] then
-					--demon_talon_proc(AOHGameMode.isTalon[attackerPlayerId], attacker, victim, damageTable, AOHGameMode.talonCount[attackerPlayerId][0], AOHGameMode.talonCount[attackerPlayerId][1])
-				end
-				if AOHGameMode.isArcane[attackerPlayerId] then
-					if damageTable.damagetype_const ~= 1 then
-						arcane_staff_calculate_crit(attacker, victim, damageTable)
-					end
-				end
-				--if self.dpsinfo then
-				if victim and victim:GetDayTimeVisionRange() ~= 1337 then
-					if attackerPlayerId and attackerPlayerId >= 0 and attacker:IsOpposingTeam(victim:GetTeam()) then
-						player_data_modify_value(attackerPlayerId, "bossDamage", damageTable.damage)
-						gHeroDamage:ModifyValue(attackerPlayerId, "bossDamage", damageTable.damage)
-						gHeroDamage:OnDamageDealt(attackerPlayerId, damageTable)
-						if damageTable.damagetype_const == 2 then
-							self._magdamage[attackerPlayerId] = self._magdamage[attackerPlayerId] + damageTable.damage
-						elseif damageTable.damagetype_const == 1 then
-							self._physdamage[attackerPlayerId] = self._physdamage[attackerPlayerId] + damageTable.damage
-						else
-							self._puredamage[attackerPlayerId] = self._puredamage[attackerPlayerId] + damageTable.damage
+				local victim_name = victim:GetUnitName()
+				if damageTable.damage > 1 then -- pointless to update tables and lag for 0 or 1
+					--if AOHGameMode.isTalon[attackerPlayerId] then
+						--demon_talon_proc(AOHGameMode.isTalon[attackerPlayerId], attacker, victim, damageTable, AOHGameMode.talonCount[attackerPlayerId][0], AOHGameMode.talonCount[attackerPlayerId][1])
+					--end
+					if AOHGameMode.isArcane[attackerPlayerId] then
+						if damageTable.damagetype_const ~= 1 then
+							arcane_staff_calculate_crit(attacker, victim, damageTable)
 						end
 					end
-				end
-				if attacker:IsCreature() and victim:IsRealHero() and victim.GetPlayerOwnerID then
-					local victimPlayerId = victim:GetPlayerOwnerID()
-					if victimPlayerId and victimPlayerId >= 0 then
-						player_data_modify_value(victimPlayerId, "damageTaken", damageTable.damage)
-						gHeroDamage:ModifyValue(victimPlayerId, "damageTaken", damageTable.damage)
+					local dmg_dealt = damageTable.damage --arcane might update this value so i added after arcane
+					--if self.dpsinfo then
+					if victim and victim:GetDayTimeVisionRange() ~= 1337 then --npc conduit
+						if attackerPlayerId and attackerPlayerId >= 0 and attacker:IsOpposingTeam(victim:GetTeam()) then
+							local victim_hp = victim:GetHealth()
+							if dmg_dealt > victim_hp and victim_name ~= "npc_dota_dummy_misha" then
+								dmg_dealt = victim_hp
+							end	
+							player_data_modify_value(attackerPlayerId, "bossDamage", dmg_dealt)
+							gHeroDamage:ModifyValue(attackerPlayerId, "bossDamage", dmg_dealt)
+							gHeroDamage:OnDamageDealt(attackerPlayerId, damageTable)
+							if damageTable.damagetype_const == 2 then
+								self._magdamage[attackerPlayerId] = self._magdamage[attackerPlayerId] + dmg_dealt
+							elseif damageTable.damagetype_const == 1 then
+								self._physdamage[attackerPlayerId] = self._physdamage[attackerPlayerId] + dmg_dealt
+							else
+								self._puredamage[attackerPlayerId] = self._puredamage[attackerPlayerId] + dmg_dealt
+							end
+						end
 					end
-				end
+					if attacker:IsCreature() and victim:IsRealHero() and victim.GetPlayerOwnerID then
+						local victimPlayerId = victim:GetPlayerOwnerID()
+						if victimPlayerId and victimPlayerId >= 0 then
+							player_data_modify_value(victimPlayerId, "damageTaken", dmg_dealt)
+							gHeroDamage:ModifyValue(victimPlayerId, "damageTaken", dmg_dealt)
+						end
+					end
+				end	
 				--end	
 			end
 		end
 	end
 
-	return true
+	return pass
 end
 
 

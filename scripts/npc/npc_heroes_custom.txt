@@ -615,7 +615,7 @@
 		"Ability13"				"special_bonus_unique_tiny"
 		"Ability14"				"special_bonus_craggy_exterior_status_resist"
 		"Ability15"				"special_bonus_craggy_exterior_attack"
-		"Ability16"				"special_bonus_armor_69"
+		"Ability16"				"special_bonus_unique_tiny_7"
 		"Ability17"				"special_bonus_attack_speed_200"
 
 		"AttackRate"				"1.4"

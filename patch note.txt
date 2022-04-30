@@ -1939,6 +1939,12 @@ and some other stuff
 * Monkey king soldiers now have a chance(20%) to use the Spirit Guardian attack effect and gets lower after every success.
 * Changed something on the Spawn and death events that might reduce some of the instability(crashes) when a round starts or might make it worse. report if is the second. 
 * Marci Unleash SS effect: Amalgamation can have both Symbiosis effects at the same time. 
+* Tiny: Grow has more lvls now(buffed), added new talent for grow at lvl 25, Tree Grab : 5k stacks/hits , more bonus dmg /lvl, and now reduces your base attack time after lvl 3. 
+* Added Tiny Grow in random skills pool.
+* DPS metter will not count "overkill" anymore (just curret hp, the over %hp limit on gods will be conted correctly too), the detailed skills dmg now updates to M(millions) and B(bilions).
+* Made the animation for %hp limit hit(goods defense) be more visible.
+* and some other stuff
+
 
 
 
@@ -1996,7 +2002,7 @@ Insatiable Hunger = doubles the chance of the SS effect.
 
 Speedsters : from 50% ms as bonus dmg to 140%
 
-Amalgamation can have both Symbiosis effects at the same time
+Amalgamation : can have both Symbiosis effects at the same time
 
 
 can youse this format for marci SS effect:

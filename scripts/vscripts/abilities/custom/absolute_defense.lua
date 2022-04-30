@@ -35,16 +35,19 @@ if IsServer() then
 		self.parent = self:GetParent()
 	end
 	function modifier_jotaro_absolute_defense:DeclareFunctions()
-		return {MODIFIER_EVENT_ON_TAKEDAMAGE}
+		return {MODIFIER_PROPERTY_AVOID_DAMAGE}
 	end
-	function modifier_jotaro_absolute_defense:OnTakeDamage(t)
-		if self.ab:IsCooldownReady() and t.unit == self.parent and self.parent:GetMaxHealth()*self.ab:GetSpecialValueFor("hp_pct")/100 <= t.damage then
-			self.parent:SetHealth(t.damage + self.parent:GetHealth())
-			local part = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
+	function modifier_jotaro_absolute_defense:GetModifierAvoidDamage(t)
+		if self.ab:IsCooldownReady() and t.target == self.parent and self.parent:GetMaxHealth()*self.ab:GetSpecialValueFor("hp_pct")/100 <= t.damage then
+			--self.parent:SetHealth(t.damage + self.parent:GetHealth())
+			local part = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", PATTACH_CENTER_FOLLOW, self.parent)
 			ParticleManager:ReleaseParticleIndex(part)
+			SendOverheadEventMessage(nil, OVERHEAD_ALERT_BLOCKED, t.target, 0, nil)
 			--self.parent:EmitSound("jotaro_absolute_defense")
 			self.ab:UseResources(true, true, true)
+			return 1
 		end
+		return 0
 	end
 end
 function modifier_jotaro_absolute_defense:GetAttributes()

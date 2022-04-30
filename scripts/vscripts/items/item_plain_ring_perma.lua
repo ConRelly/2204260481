@@ -143,7 +143,9 @@ function modifier_item_plain_ring_perma_invincibility:GetModifierTotal_ConstantB
 function modifier_item_plain_ring_perma_invincibility:OnCreated()
 	if IsServer() then
 		local parent = self:GetParent()
-		parent:FindModifierByName("modifier_item_plain_ring_perma"):SetStackCount(1)
+		if parent:HasModifier("modifier_item_plain_ring_perma") then --Lifeguard skill (jotaro3) triggers this(invincibility) modifier
+			parent:FindModifierByName("modifier_item_plain_ring_perma"):SetStackCount(1)
+		end	
 		self.min_health = min_health
 	end
 end

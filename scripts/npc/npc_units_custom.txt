@@ -298,7 +298,7 @@
 	"ConsideredHero"			"1"
     "HasInventory"            "1"
 	"Ability1"				  "draks_unholy_strength"
-	"Ability2"				  "generic_hidden"
+	"Ability2"				  "generic_hidden" //"jotaro_absolute_defense"
 	"Ability3"				 "generic_hidden"
 	"Ability4"				 "generic_hidden"
 	"Ability5"				 "generic_hidden"
@@ -9978,7 +9978,7 @@
 	"StatusManaRegen"			"30"		// Mana regeneration rate.		 
 	
 	// Vision
-	"VisionDaytimeRange"		"1337"		// Range of vision during day light.
+	"VisionDaytimeRange"		"1337"		// Don't change , is used for dmg calculatuion to exclude this
 	"VisionNighttimeRange"		"1600"		// Range of vision at night time.
 
 	// Team
