@@ -23,16 +23,27 @@ function modifier_grow_strong:GetEffectAttachType()
 end
 
 function modifier_grow_strong:OnCreated()
-	self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("grow_interval"))
+	if not IsServer() then return end
+	if self:GetAbility() and self:GetAbility():IsTrained() then
+		self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("grow_interval"))
+	end	
+end
+function modifier_grow_strong:OnRefresh()
+	if not IsServer() then return end
+	if self:GetAbility() and self:GetAbility():IsTrained() then
+		self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("grow_interval"))
+	end	
 end
 function modifier_grow_strong:OnIntervalThink()
 	if not IsServer() then return end
-	self:SetStackCount(self:GetStackCount() + 1)
-	if self:GetAbility() and not self:GetAbility():IsNull() and self:GetCaster() then
-		if self:GetCaster():HasTalent("special_bonus_unique_ck_grow_strong") then
-			self:GetCaster():ModifyStrength(self:GetAbility():GetSpecialValueFor("grow_str") * talent_value(self:GetCaster(), "special_bonus_unique_ck_grow_strong") * 0.5)
+	if self:GetAbility() and self:GetAbility():IsTrained() then
+		self:SetStackCount(self:GetStackCount() + 1)
+		if self:GetAbility() and not self:GetAbility():IsNull() and self:GetCaster() then
+			if self:GetCaster():HasTalent("special_bonus_unique_ck_grow_strong") then
+				self:GetCaster():ModifyStrength(self:GetAbility():GetSpecialValueFor("grow_str") * talent_value(self:GetCaster(), "special_bonus_unique_ck_grow_strong") * 0.5)
+			end
+			self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("grow_interval"))
 		end
-		self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("grow_interval"))
 	end	
 end
 function modifier_grow_strong:DeclareFunctions()

@@ -1951,9 +1951,17 @@ and some other stuff
 
 
 
+* Fixed Grow Strong if is from random pool getting tons of stacks. Replaced the Icon for skill.
+* Fixed Io ss venom giving a lot less spell amp then it was supposed.
+* Fixed Windrunner ultimate getting broken after you target ground.
+* and some other stuff
+
+
+
+
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes69 can be found on the new map version:
+*Update patch notes70 can be found on the new map version:
 https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
 or on Discord(check workshop discussions for links)
 

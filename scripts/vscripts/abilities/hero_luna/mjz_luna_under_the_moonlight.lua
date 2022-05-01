@@ -121,8 +121,8 @@ function modifier_mjz_luna_under_the_moonlight_buff:OnAttack(keys)
 
 	local attacker = keys.attacker
 	local target = keys.target
-
-	if RollPercentage(50) then --self:GetAbility():GetSpecialValueFor("proc_chance")
+	local chance = self:GetAbility():GetSpecialValueFor("proc_chance")
+	if RollPercentage(chance) then --self:GetAbility():GetSpecialValueFor("proc_chance")
 		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_mjz_luna_under_the_moonlight_buff", {})
 		if keys.target:IsMagicImmune() then return end
 		self:GetAbility():LucentBeam(target)

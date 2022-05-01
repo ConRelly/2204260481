@@ -17999,31 +17999,43 @@
 	}
 	"tiny_toss_tree"
 	{
-		"AbilitySpecial"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6937"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"LinkedAbility"					"tiny_tree_grab"
+		"LevelsBetweenUpgrades"         "10"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2000"
+		"AbilityCastPoint"				"0.2"
+ 		"AbilityCastAnimation"		"ACT_INVALID"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"speed"		"900.0"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"range"		"1300"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"50 90 230 440"
-				"CalculateSpellDamageTooltip"	"0"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"splash_pct"				"60"
-			}
+				"speed"		"1700.0"
+				"range"		"2000"
+				"bonus_damage"				
+				{
+					"value"				"200 2500 6700 16400"
+					"CalculateSpellDamageTooltip"	"0"
+				}
+				"splash_radius"				"475"
+				"movement_slow"				"25"
+				"slow_duration"				"1.5"
+
 		}
 	}
+
+
 	"tiny_craggy_exterior"
 	{
 		"LevelsBetweenUpgrades" 	"15"

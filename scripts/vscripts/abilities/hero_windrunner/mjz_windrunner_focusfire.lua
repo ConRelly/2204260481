@@ -67,19 +67,21 @@ if IsServer() then
 
 	function ability_class:_TargetInNearby(target)
 		local caster = self:GetCaster()
-		
-		local attack_range = caster:Script_GetAttackRange()
-		local distance = self:CalcDistanceBetween(target, caster)
+		if caster and target and not target:IsNull() then
+			local attack_range = caster:Script_GetAttackRange()
+			local distance = CalcDistanceBetweenEntityOBB(target, caster)
 
-		local target_loc = GetGroundPosition(target:GetAbsOrigin(), target)
-		local caster_loc = GetGroundPosition(caster:GetAbsOrigin(), caster)
-		local distance = (target_loc - caster_loc):Length2D()
+			local target_loc = GetGroundPosition(target:GetAbsOrigin(), target)
+			local caster_loc = GetGroundPosition(caster:GetAbsOrigin(), caster)
+			local distance = (target_loc - caster_loc):Length2D()
 
-		if distance <= attack_range then
-			return true
-		else
-			return false
-		end
+			if distance <= attack_range then
+				return true
+			else
+				return false
+			end
+		end	
+		return false
 	end
 end
 

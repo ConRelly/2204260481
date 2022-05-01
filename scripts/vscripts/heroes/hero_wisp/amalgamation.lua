@@ -432,7 +432,7 @@ function amalgamation_target:OnIntervalThink()
 			local caster_str = caster:GetStrength()
 			local caster_agi = caster:GetAgility()
 			local caster_int = caster:GetIntellect()
-			local caster_spellamp = caster:GetSpellAmplification(false) * (ability:GetSpecialValueFor("venom_spellamp") / 100)
+			local caster_spellamp = math.floor(caster:GetSpellAmplification(false) * ability:GetSpecialValueFor("venom_spellamp"))
 			local caster_base_ms = caster:GetBaseMoveSpeed()
 			local caster_basedmg = caster:GetAttackDamage()
 			local caster_greendmg = caster:GetAverageTrueAttackDamage(caster) - caster_basedmg
