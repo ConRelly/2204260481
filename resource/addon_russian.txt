@@ -2654,7 +2654,7 @@
 	"DOTA_Tooltip_modifier_jinada_gold_tracker"					"Jinada Gold"
 	"DOTA_Tooltip_modifier_jinada_gold_tracker_Description"		"Всeгo пoхищeнo %dMODIFIER_PROPERTY_TOOLTIP% зoлoта."
 
-	"DOTA_Tooltip_ability_bounty_hunter_track_Description"							"Помечает вражеского героя, раскрывая его невидимость и показывая его запас золота. Владелец способности получает дополнительную скорость передвижения около цели и наносит ей критический урон. Если она умрёт, союзники неподалёку и сам владелец способности получат дополнительную награду в виде золота. Применение этой способности не снимает невидимость с владельца. \n<h1><font color='#5ECF7A'>Bounty Hunter</font> <font color='#FFA32B'>Exclusive:</font> Seer Stone</h1> При применении Reveal - применяет Track ко всем целям в радиусе."
+	"DOTA_Tooltip_ability_bounty_hunter_track_Description"		"Помечает вражеского героя, раскрывая его невидимость и показывая его запас золота. Владелец способности получает дополнительную скорость передвижения около цели и наносит ей критический урон. Если она умрёт, союзники неподалёку и сам владелец способности получат дополнительную награду в виде золота. Применение этой способности не снимает невидимость с владельца. \n<h1><font color='#DDC93F'>Bounty Hunter</font> <font color='#FFA32B'>Exclusive:</font> Seer Stone</h1> При применении Reveal - применяет Track ко всем целям в радиусе."
 
 
 	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler"					"Drunken Brawler"
