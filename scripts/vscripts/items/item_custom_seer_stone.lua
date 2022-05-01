@@ -25,7 +25,7 @@ function item_custom_seer_stone:OnSpellStart()
 	true_sight:AddNewModifier(caster, self, "modifier_item_custom_seer_stone_true_sight", {duration = duration})
 
 	AddFOWViewer(caster:GetTeamNumber(), self:GetCursorPosition(), radius, duration, false)
-	if caster:HasAbility("bounty_hunter_track") and caster:FindAbilityByName("bounty_hunter_track"):IsTrained() then
+	if caster:GetUnitName() == "npc_dota_hero_bounty_hunter" and caster:HasAbility("bounty_hunter_track") and caster:FindAbilityByName("bounty_hunter_track"):IsTrained() then
 		local track = caster:FindAbilityByName("bounty_hunter_track")
 		local enemies = FindUnitsInRadius(caster:GetTeamNumber(), self:GetCursorPosition(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
 		for _,enemy in pairs(enemies) do

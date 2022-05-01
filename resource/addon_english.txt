@@ -9660,7 +9660,7 @@ Contains all random skills"
 		"DOTA_Tooltip_modifier_drow_ranger_multishot_lua_stacks_description"    "Increases your Agility by %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS% and Mana by %dMODIFIER_PROPERTY_MANA_BONUS% "
 
 		"DOTA_Tooltip_ability_special_multishot_agi_multiplier_lua"				"+{s:value} Multishot Bonus Agility Damage"
-		"DOTA_Tooltip_ability_special_multishot_ss_bonus_dmg_lua"				"+{s:value}% Multishot <font color='#DE3163'>Bonus Skill dmg per 100 Stacks"           
+		"DOTA_Tooltip_ability_special_multishot_ss_bonus_dmg_lua"				"+{s:value}% Multishot <font color='#DE3163'>Bonus Skill dmg per 100 Stacks</font>"           
 
 
 		"DOTA_Tooltip_ability_legion_commander_duel_lua"							"Grim Reaper"

@@ -19,11 +19,15 @@ LinkLuaModifier("modifier_venom", "heroes/hero_wisp/amalgamation", LUA_MODIFIER_
 LinkLuaModifier("modifier_symbiosis_exhaust", "heroes/hero_wisp/amalgamation", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_symbiosis_exhaust_trigger", "heroes/hero_wisp/amalgamation", LUA_MODIFIER_MOTION_NONE)
 
+LinkLuaModifier("modifier_amalgamation", "heroes/hero_wisp/amalgamation", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_symbiosis_carnage", "heroes/hero_wisp/amalgamation", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_symbiosis_venom", "heroes/hero_wisp/amalgamation", LUA_MODIFIER_MOTION_NONE)
+
 ------------------
 -- Amalgamation --
 ------------------
 amalgamation = class({})
-
+function amalgamation:GetIntrinsicModifierName() return "modifier_amalgamation" end
 function amalgamation:GetBehavior()
 	local behavior = DOTA_ABILITY_BEHAVIOR_UNIT_TARGET
 	if self:GetCaster():HasModifier("modifier_super_scepter") then
@@ -672,7 +676,11 @@ modifier_symbiosis_exhaust_trigger = class({})
 function modifier_symbiosis_exhaust_trigger:IsHidden() return false end
 function modifier_symbiosis_exhaust_trigger:IsDebuff() return true end
 function modifier_symbiosis_exhaust_trigger:GetTexture()
-	return "carnage"  --venom_passive  --idk how to add both this seems to work only Client so i can't check GetAutocastState() (server only)
+	if self:GetCaster():HasModifier("modifier_symbiosis_carnage") then
+		return "carnage"
+	elseif self:GetCaster():HasModifier("modifier_symbiosis_venom") then
+		return "venom_passive"
+	end
 end
 function modifier_symbiosis_exhaust_trigger:RemoveOnDeath() return false end
 function modifier_symbiosis_exhaust_trigger:GetAttributes() return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_PERMANENT end
@@ -704,4 +712,36 @@ function modifier_symbiosis_exhaust_trigger:OnDestroy()
 			parent:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_symbiosis_exhaust", {duration = exhaust_duration})
 		end
 	end	
-end		
+end
+
+
+
+modifier_amalgamation = class({})
+function modifier_amalgamation:IsHidden() return true end
+function modifier_amalgamation:OnCreated()
+	self:StartIntervalThink(FrameTime())
+end
+function modifier_amalgamation:OnIntervalThink()
+	if not IsServer() then return end
+	if self:GetAbility():GetAutoCastState() then
+		if not self:GetCaster():HasModifier("modifier_symbiosis_carnage") then
+			self:GetCaster():RemoveModifierByName("modifier_symbiosis_venom")
+			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_symbiosis_carnage", {})
+		end
+	else
+		if not self:GetCaster():HasModifier("modifier_symbiosis_venom") then
+			self:GetCaster():RemoveModifierByName("modifier_symbiosis_carnage")
+			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_symbiosis_venom", {})
+		end
+	end
+end
+
+modifier_symbiosis_carnage = class({})
+function modifier_symbiosis_carnage:IsHidden() return true end
+function modifier_symbiosis_carnage:IsPurgable() return false end
+function modifier_symbiosis_carnage:RemoveOnDeath() return false end
+
+modifier_symbiosis_venom = class({})
+function modifier_symbiosis_venom:IsHidden() return true end
+function modifier_symbiosis_venom:IsPurgable() return false end
+function modifier_symbiosis_venom:RemoveOnDeath() return false end

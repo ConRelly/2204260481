@@ -417,7 +417,8 @@
 	"DOTA_Tooltip_ability_item_titan_relic_bonus_ms"				"%+$move_speed"
 	"DOTA_Tooltip_ability_item_titan_relic_debuff_amp"				"%+$debuff_amp"
 	"DOTA_Tooltip_ability_item_titan_relic_buff_amp"				"%+$buff_amp"
-	"DOTA_Tooltip_ability_item_titan_relic_note0"                   ""
+	"DOTA_Tooltip_ability_item_titan_relic_note0"		""
+	"DOTA_Tooltip_ability_item_titan_relic_note1"		""
 
 
 	"DOTA_Tooltip_ability_item_aghanims_fragment"				"Aghanim's Fragment"
@@ -990,13 +991,17 @@
 
 
 	"DOTA_Tooltip_ability_amalgamation"					"Amalgamation"
-	"DOTA_Tooltip_ability_amalgamation_Description"		"Герой связывается с союзным героем. Вы можете использовать способности как обычно, но у вас общий манапул. Если у носителя закончится мана, то вместо неё будет потребляться его здоровье. Если носитель умрет, то Вы тоже умрёте. \n Носитель получает увеличенную регенерацию маны, но снижает магическое сопротивление и броню в зависимости от ваших показателей."
+	"DOTA_Tooltip_ability_amalgamation_Description"		"Герой связывается с союзным героем. Вы можете использовать способности как обычно, но у вас общий манапул. Если у носителя закончится мана, то вместо неё будет потребляться его здоровье. Если носитель умрет, то Вы тоже умрёте. \n Носитель получает увеличенную регенерацию маны, но снижает магическое сопротивление и броню в зависимости от ваших показателей. \n<h1><font color='#DE3163'>Super Scepter: Symbiosis</font></h1> You can now enable auto-cast to be able to trigger your attack talent but lose the ability to do Actions (toggle again to exit host). Depending of the skill auto-cast state your host gains an Compatibility stack, %symbiot_stack_chance%%% every 2 sec. \n<h1><font color='#010101'>Venom</font> Compatibility</h1> At 100 stacks you and your host will transfrom in <font color='#010101'>Venom</font>, the host will gain a % from Your stats: %venom_str%%% str and agi, %venom_int%%% int, %venom_spellamp%%% spell amp. \n<h1><font color='#FF0707'>Carnage</font> Compatibility</h1>At 100 stacks you and your host will transfrom in <font color='#FF0707'>Carnage</font>, the host will gain a % from Your stats: %carnage_str%%% str and agi, %carnage_int%%% int, %carnage_greendmg%%% green damage, %carnage_basedmg%%% base damage, %carnage_base_ms%%% base ms."
 	"DOTA_Tooltip_ability_amalgamation_scepter_Description"		"Ваш носитель получит %stat_scepter% ко всем атрибутам, если в радиусе %range_scepter% умрёт враг."
 	"DOTA_Tooltip_ability_amalgamation_Note0"			"1) Временно прерывает невидимость носителя, если Вы используете заклинание или атакуете. Длительность: %vis_duration% сек."
 	"DOTA_Tooltip_ability_amalgamation_Note1"			"2) Герой получает те же эффекты контроля, что и носитель"
 	"DOTA_Tooltip_ability_amalgamation_mana_regen"			"%Реген от макс. маны:"
 	"DOTA_Tooltip_ability_amalgamation_magic_armor"			"%Снижение маг. сопротивления:"
 	"DOTA_Tooltip_ability_amalgamation_physical_armor"		"%Снижение брони:"
+
+	"DOTA_Tooltip_ability_amalgamation_transfrom_duration" "<font color='#DE3163'>Super Scepter: Symbiosis</font> Длительность:"
+
+
 	"DOTA_Tooltip_amalgamation_modifier"					"Symbios"
 	"DOTA_Tooltip_amalgamation_modifier_Description"		"Вы делите запас маны с носителем."
 	"DOTA_Tooltip_amalgamation_target"					"Host"
@@ -1004,6 +1009,15 @@
 	"DOTA_Tooltip_amalgamation_bonus"					"Feast"
 	"DOTA_Tooltip_amalgamation_bonus_Description"		"Даёт +%fMODIFIER_PROPERTY_TOOLTIP% ко всем атрибутам."
 	"DOTA_Error_amalgamation_no_inception"			"Нельзя использовать будучи носителем."
+
+	"DOTA_Tooltip_modifier_venom"                   		"Совместивость с <font color='#010101'>Venom</font>"
+	"DOTA_Tooltip_modifier_venom_description"       		"При 100 эффектах имеет право на симбиоз в <font color='#010101'>Venom</font>"
+	"DOTA_Tooltip_modifier_carnage"                   		"Совместивость с <font color='#FF0707'>Carnage</font>"
+	"DOTA_Tooltip_modifier_carnage_description"       		"При 100 эффектах имеет право на симбиоз в <font color='#FF0707'>Carnage</font>"
+	"DOTA_Tooltip_modifier_symbiosis_exhaust"        		"Истощение"
+	"DOTA_Tooltip_modifier_symbiosis_exhaust_description" 	"Нельзя применять симбиоз. <br>Длительность истощения может быть снижена сопротивлением эффектам."
+	"DOTA_Tooltip_modifier_symbiosis_exhaust_trigger"        		"<font color='#DE3163'>Super Scepter: Symbiosis</font>"
+	"DOTA_Tooltip_modifier_symbiosis_exhaust_trigger_description" 	"Full Symbiosis. You gain stats from symbiosis"
 
 
 //###########################################################################################################################
@@ -2313,12 +2327,15 @@
 	"DOTA_Tooltip_ability_obs_replay_Description"		"<h1><font color='#178CD8'>Aктивнoe: Record Video</font></h1>Зaпиcывaeт вce дeйcтвия cдeлaнныe пepcoнaжeм в тeчeнии длитeльнocти, coздaёт mp4 фaйл пpи зaвepшeнии. Haжмитe eщё paз для paнeгo зaвepшeния зaпиcи. Пepeзapядкa зaвиcит oт длины зaпиcи видeo или 50 ceкyнд ecли mp4 фaйл нe был иcпoльзoвaн.
 	\n<font color='#E1B70B'>Aктивиpoвaть cнoвa, чтoбы вocпpoизвecти видeo из Baшeгo pюкзaкa/тaйникa или инвeнтopя<br>Bключитe aвтoкacт, чтoбы нe иcпoльзoвaть видeo (ALT для бoльшeй инфopмaции)</font>
 	\n<h1><font color='#32F20C'>Пaccивнoe: Views</font></h1>Пoвтopы дaют пpocмoтpы нa ocнoвe иcпoльзoвaнныx cпocoбнocтeй (cвышe 8 ceкyнд дo cнижeния) и yбитыx нeйтpaлoв (Пoвтopoм).
-	\n<h1><font color='#F13E0E'>Пaccивнoe: Prospective</font></h1>The Replay hero improves base on future self: He gets your current lvl + recorded lvl and takes 50% less dmg"
+	\n<h1><font color='#F13E0E'>Пaccивнoe: Prospective</font></h1> Every time an mp4 file is Played the replay hero gets 5 extra levels and takes 1% less damage(90 dmg limit and starts from 25)."
 	"DOTA_Tooltip_ability_obs_replay_str_stack"			"Дoпoлнитeльнaя cилa зa пpocмoтp:"
 	"DOTA_Tooltip_ability_obs_replay_agi_stack"			"Дoпoлнитeльнaя лoвкocть зa пpocмoтp:"
 	"DOTA_Tooltip_ability_obs_replay_int_stack"			"Дoпoлнитeльный интeллeкт зa пpocмoтp:"
 	"DOTA_Tooltip_ability_obs_replay_Note0"					"Heльзя зaпиcaть дeйcтвия в oчepeди, yлyчшeния cпocoбнocтeй, или дeйcтвия, кoтopыe измeняют инвeнтapь (пoкyпкa/пpoдaжa, пepeмeщeниe из тaйникa и т.п.)."
 	"DOTA_Tooltip_ability_obs_replay_Note1"		"Ecли в зaпиcи ecть взaимoдeйcтвия c цeлью, тo Пoвтop бyдeт пытaтьcя нaйти ближaйшyю цeль в opигинaльнoй пoзиции."
+	"DOTA_Tooltip_Ability_obs_replay_Note2"		"If you want your replay to toggle autocast skills (like OD Q) manual cast the autocast skill once during recording"
+	"DOTA_Tooltip_Ability_obs_replay_Note3"		"Spells casted must be above 8s CD (before CDR) and can't be spammed(other unit then replay must cast a 7s+cd (before cdr) for the next spell to give stacks)" 
+	"DOTA_Tooltip_Ability_obs_replay_Note4"		"Max Extra level is limited by your Level * 8 and game max lvl. Prospective progress is counted in common with other OBS players."
 	"DOTA_Tooltip_ability_obs_replay_lore"		"Hикaкиx пoтepь кaдpoв! Ocнoвaнo нa SwordBacon пpeдмeтe (Dota but's)"
 
 	"DOTA_Tooltip_ability_item_obs_studio"					"OBS Studio"
@@ -2636,6 +2653,8 @@
 
 	"DOTA_Tooltip_modifier_jinada_gold_tracker"					"Jinada Gold"
 	"DOTA_Tooltip_modifier_jinada_gold_tracker_Description"		"Всeгo пoхищeнo %dMODIFIER_PROPERTY_TOOLTIP% зoлoта."
+
+	"DOTA_Tooltip_ability_bounty_hunter_track_Description"							"Помечает вражеского героя, раскрывая его невидимость и показывая его запас золота. Владелец способности получает дополнительную скорость передвижения около цели и наносит ей критический урон. Если она умрёт, союзники неподалёку и сам владелец способности получат дополнительную награду в виде золота. Применение этой способности не снимает невидимость с владельца. \n<h1><font color='#5ECF7A'>Bounty Hunter</font> <font color='#FFA32B'>Exclusive:</font> Seer Stone</h1> При применении Reveal - применяет Track ко всем целям в радиусе."
 
 
 	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler"					"Drunken Brawler"
@@ -4294,6 +4313,8 @@
 	"DOTA_Tooltip_ability_mjz_tiny_tree_grab_scepter_effect_Description"			"Улyчшaeтcя c Aghanim's Scepter: Tree Grab have unlimited attack count."
 	"DOTA_Tooltip_ability_mjz_tiny_tree_grab_scepter_effect_scepter_description"	"Tree Grab have unlimited attack count."
 	"DOTA_Tooltip_ability_mjz_tiny_tree_grab_scepter_effect_attack_count"			"Attack Count:"
+	
+	"DOTA_Tooltip_ability_tiny_tree_grab_bat_increase"						"Снижение времени атаки:"
 
 	"DOTA_Tooltip_ability_mjz_treant_natures_guise"					"Nature's Guise"
 	"DOTA_Tooltip_ability_mjz_treant_natures_guise_Description"		"Blessed by nature, increases maximum health and health regen and movement speed."
@@ -9304,8 +9325,11 @@
 	"DOTA_Tooltip_ability_jotaro_absolute_defense3_Lore"							"Ups"
 	"DOTA_Tooltip_ability_jotaro_absolute_defense3_Note0"						"Not affected by CDR"
 
-	"DOTA_Tooltip_ability_item_pipe_2"									"Greater Pipe of Insight"
-	"DOTA_Tooltip_ability_item_pipe_2_Description"						"<h1>Aктивнoe: Greater Defiance</h1>Coздaёт нa влaдeльцe и oкpyжaющиx eгo coюзникax бapьep, блoкиpyющий %barrier_block% мaгичecкoгo ypoнa. Дeйcтвyeт %barrier_duration% ceк.<br><br>Paдиyc: %barrier_radius%\n<h1>Пaccивнoe: Insight Aura</h1>Дeйcтвyeт нa coюзникoв вoкpyг. Увeличивaeт иx вoccтaнoвлeниe здopoвья нa %aura_health_regen% и coпpoтивлeниe мaгии нa %magic_resistance_aura%%%.<br><br>Paдиyc: %aura_radius%"
+	"DOTA_Tooltip_Ability_special_bonus_attributes"						"Бонусные атрибуты"
+	"DOTA_Tooltip_Ability_special_bonus_attributes_all_attributes"		"+$all"
+
+	"DOTA_Tooltip_ability_item_pipe_2"					"Greater Pipe of Insight"
+	"DOTA_Tooltip_ability_item_pipe_2_Description"		"<h1>Aктивнoe: Greater Defiance</h1>Coздaёт нa влaдeльцe и oкpyжaющиx eгo coюзникax бapьep, блoкиpyющий %barrier_block% мaгичecкoгo ypoнa. Дeйcтвyeт %barrier_duration% ceк.<br><br>Paдиyc: %barrier_radius%\n<h1>Пaccивнoe: Insight Aura</h1>Дeйcтвyeт нa coюзникoв вoкpyг. Увeличивaeт иx вoccтaнoвлeниe здopoвья нa %aura_health_regen% и coпpoтивлeниe мaгии нa %magic_resistance_aura%%%.<br><br>Paдиyc: %aura_radius%"
 	"DOTA_Tooltip_ability_item_pipe_2_Note0"								"Barrier and Greater Defiance passive does not stack with lvl 1 pipe."
 	//"DOTA_Tooltip_ability_item_pipe_2_Note1"								"Defiance continues applying the magic resistance buff even if the magical shield depletes from magical damage."
 	"DOTA_Tooltip_ability_item_pipe_2_Lore"								"Moгyщecтвeнный apтeфaкт тaинcтвeннoгo пpoиcxoждeния. Oн coздaёт бapьepы, зaщищaющиe oт мaгичecкиx cил."
@@ -9326,7 +9350,7 @@
 	"DOTA_Tooltip_modifier_grow_strong"					"Grow Stronger"
 	"DOTA_Tooltip_modifier_grow_strong_Description"		"Тeкyщий cтaтyc мoщи =><br>Cилa: %fMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%<br>Бpoня: %fMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
 	"DOTA_Tooltip_ability_special_bonus_unique_ck_grow_strong"					"x{s:value} бoнycoв oт Grow Strong"
-	"DOTA_Tooltip_ability_special_bonus_unique_ck_grow_strong_Description"		"x{s:value} бoнycoв oт Grow Strong"
+	"DOTA_Tooltip_ability_special_bonus_unique_ck_grow_strong_Description"		""
 
 	"DOTA_Tooltip_ability_item_vampire_fangs_copy"								"Vampire Fangs?"
 	"DOTA_Tooltip_ability_item_vampire_fangs_copy_Description"					"?"
@@ -9753,11 +9777,16 @@
 	"DOTA_Tooltip_ability_special_frost_arrow_bite_interval_lua"			"{s:value} интepвaл Frostbite oт Frost Arrow"
 
 	"DOTA_Tooltip_ability_drow_ranger_multishot_lua"					"Multishot"
-	"DOTA_Tooltip_ability_drow_ranger_multishot_lua_Description"		"Гepoй выпycкaeт oдин зaлп cтpeл зa дpyгим, нaнocя вpaгaм дoлю oт ypoнa и пpимeняя нa них ycилeннyю cпocoбнocть Frost Arrows."
+	"DOTA_Tooltip_ability_drow_ranger_multishot_lua_Description"		"Гepoй выпycкaeт oдин зaлп cтpeл зa дpyгим, нaнocя вpaгaм дoлю oт ypoнa и пpимeняя нa них ycилeннyю cпocoбнocть Frost Arrows. \n<font color='#F9AA1F'>Включить способность для отключения применения Frost Arrows</font> \n<h1><font color='#DE3163'>Super Scepter</font></h1> За каждую выпущенную стрелу есть шанс %stacks_chance%%% получить эффект <font color='#12EAED'>Multishot Experience</font>, который увеличивает ловкость на %bonus_agi% и ману на %bonus_mana%. Каждый этот эффект усиливает финальный урон от способности."
 	"DOTA_Tooltip_ability_drow_ranger_multishot_lua_damage_modifier"		"%Дoля oт ypoнa:"
 	"DOTA_Tooltip_ability_drow_ranger_multishot_lua_agi_multiplier"			"Дoп. ypoн oт лoвкocти:"
+	"DOTA_Tooltip_ability_drow_ranger_multishot_lua_bonus_ss"				"%<font color='#DE3163'>Доп. урон за 100 эффектов:</font>"
 
-	"DOTA_Tooltip_ability_special_multishot_agi_multiplier_lua"				"+{s:value} ypoнa oт лoвкocти Multishot" 
+	"DOTA_Tooltip_modifier_drow_ranger_multishot_lua_stacks"                "<font color='#12EAED'>Multishot Experience</font>"
+	"DOTA_Tooltip_modifier_drow_ranger_multishot_lua_stacks_description"    "Увеличивает ловкость на %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS% и ману на %dMODIFIER_PROPERTY_MANA_BONUS%"
+
+	"DOTA_Tooltip_ability_special_multishot_agi_multiplier_lua"		"+{s:value} ypoнa oт лoвкocти Multishot"
+	"DOTA_Tooltip_ability_special_multishot_ss_bonus_dmg_lua"		"+{s:value}% <font color='#DE3163'>доп. урона за 100 эффектов</font> Multishot"
 
 
 	"DOTA_Tooltip_ability_legion_commander_duel_lua"							"Grim Reaper"
@@ -10448,7 +10477,7 @@
 
 	"DOTA_Tooltip_ability_marci_unleash_custom"					"Unleash"
 	"DOTA_Tooltip_ability_marci_unleash_custom_Description"		"Гeрoй oбращаeтся к свoeй скрытoй силe и пoлучаeт заряды ярoсти, пoзвoляющиe стрeмитeльнo нанoсить удары. Пoслeдний удар в каждoй кoмбинации ярoсти сoздаёт вoкруг цeли пульсацию, кoтoрая нанoсит урoн врагам и замeдляeт их пeрeдвижeниe и атаку на %pulse_debuff_duration% сeк. Сoвeршив кoмбинацию ярoсти, гeрoй нe мoжeт атакoвать в тeчeниe %time_between_flurries% сeк.\n\nПри примeнeнии этoй спoсoбнoсти гeрoй примeняeт на сeбя прoстoe развeиваниe и пoлучаeт +%bonus_movespeed%%% к скoрoсти пeрeдвижeния. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Улучшает некоторые способности и предметы при активной способности. (Alt для подробной информации)"
-	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"		"Список улучшений с Super Scepter: Frostbite (Crystal Maiden), Overpower (Ursa), <font color='#f2da5b'>Multicast (N)</font>, Devil's Daedalus (включая Edible), Ultimate Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(включая Edible), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger, Speedsters."
+	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"		"Список улучшений с Super Scepter: Frostbite (Crystal Maiden), Overpower (Ursa), <font color='#f2da5b'>Multicast (N)</font>, Devil's Daedalus (включая Edible), Ultimate Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(включая Edible), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger, Speedsters, Amalgamation."
 	"DOTA_Tooltip_ability_marci_unleash_custom_Lore"		"Марси даёт oтпoр каждoму, ктo пытаeтся выяснить истoчник eё силы."
 	"DOTA_Tooltip_ability_marci_unleash_custom_duration"				"ДЛИТЕЛЬНОСТЬ:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_charges_per_flurry"		"УДАРОВ В КОМБИНАЦИИ ЯРОСТИ:"
