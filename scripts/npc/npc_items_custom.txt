@@ -18612,7 +18612,7 @@
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"ItemIsNeutralDrop"				"0"
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"45"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"AbilityValues"

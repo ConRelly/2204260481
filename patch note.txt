@@ -1917,7 +1917,7 @@ and some other stuff
 
 
 * WindRanger's Exclusive item Reveal: Traxex's Necklace - changed his on attack effect from physical dmg to pure and some other changes.
-* Added Super Scepter effect for Amalgamation. (Io ultimate)
+* Added Super Scepter effect for Amalgamation. (Io ultimate) -- might be too strong, so expect some changes next patch if yes.
 * Fixed Cursed Bloodthorn
 * Fixed Heartstopper Aura (Necrophos) regen
 * Fix Hammer of the divine Unyielding stacks.

@@ -34,7 +34,10 @@ function amalgamation:GetBehavior()
 		behavior = DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_AUTOCAST
 	end	
 	if self:GetCaster():HasModifier("amalgamation_modifier") then
-		behavior = DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_IMMEDIATE + DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE + DOTA_ABILITY_BEHAVIOR_AUTOCAST -- remove autocast if you want to not be able to change states during infest
+		behavior = DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_IMMEDIATE + DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE
+		if self:GetCaster():HasModifier("modifier_super_scepter") then
+			behavior = DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_IMMEDIATE + DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE + DOTA_ABILITY_BEHAVIOR_AUTOCAST
+		end	
 	end
 	return behavior
 end
@@ -43,6 +46,21 @@ function amalgamation:GetManaCost(lvl)
 		return 0
 	end
 	return 0--self.BaseClass.GetManaCost(self, lvl)
+end
+function amalgamation:GetAbilityTextureName()
+	local has_modifier = self:GetCaster():HasModifier("amalgamation_modifier")
+	local super_scept = self:GetCaster():HasModifier("modifier_super_scepter")
+	local carnage = self:GetCaster():HasModifier("modifier_symbiosis_carnage")
+	local venom = self:GetCaster():HasModifier("modifier_symbiosis_venom")
+    if has_modifier and super_scept then
+		if venom then
+			return "vhenom_passive"
+			
+		elseif carnage then		
+			return "carnage"
+		end	
+    end
+	return "custom/abilities/amalgamation"
 end
 
 function amalgamation:OnSpellStart()
@@ -151,15 +169,18 @@ function amalgamation_modifier:DeclareFunctions()
 end
 
 function amalgamation_modifier:OnOrder(params)
-	if params.unit ~= self:GetParent() then return end
-
+	if params.unit ~= self:GetCaster() then return end
+    if not self:GetCaster():HasModifier("modifier_super_scepter") then return end
+	if not self:GetCaster():HasModifier("amalgamation_modifier") then return end
 	if params.order_type == DOTA_UNIT_ORDER_CAST_TOGGLE_AUTO then
-		local amalga = self:GetCaster():FindAbilityByName("amalgamation")
-		if amalga then
-			amalga:EndSymbiosis()
-		end	
+		if params.ability then
+			if params.ability:GetAbilityName() ~= "amalgamation" then return end
+			local amalga = self:GetCaster():FindAbilityByName("amalgamation")
+			if amalga then
+				amalga:EndSymbiosis()
+			end			
+		end		
 	end	
-
 end
 
 
@@ -725,13 +746,19 @@ function modifier_amalgamation:OnIntervalThink()
 	if not IsServer() then return end
 	if self:GetAbility():GetAutoCastState() then
 		if not self:GetCaster():HasModifier("modifier_symbiosis_carnage") then
-			self:GetCaster():RemoveModifierByName("modifier_symbiosis_venom")
+			if self:GetCaster():HasModifier("modifier_symbiosis_venom") then
+				self:GetCaster():RemoveModifierByName("modifier_symbiosis_venom")
+			end	
 			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_symbiosis_carnage", {})
+				
 		end
 	else
 		if not self:GetCaster():HasModifier("modifier_symbiosis_venom") then
-			self:GetCaster():RemoveModifierByName("modifier_symbiosis_carnage")
+			if self:GetCaster():HasModifier("modifier_symbiosis_carnage") then
+				self:GetCaster():RemoveModifierByName("modifier_symbiosis_carnage")
+			end	
 			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_symbiosis_venom", {})
+				
 		end
 	end
 end
