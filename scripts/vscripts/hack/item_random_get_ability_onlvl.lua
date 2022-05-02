@@ -238,6 +238,7 @@ function GetRandomAbilityName( hero )
 		"medusa_custom_stone_arrows",
 		"brewmaster_drunken_brawler",
 		"tiny_grow",
+		"naga_siren_rip_tide",
 	}
 	local randomIndex = RandomInt(1, #abilityList)
 	return abilityList[randomIndex]

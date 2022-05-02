@@ -1958,6 +1958,11 @@ and some other stuff
 
 
 
+* Added back the precache wave before spawn code(some other changes to spawn still remain)
+* Rip Tide: increased max lvl , buffed(- armor talent too) , added new talent for naga and added to Random skil pool.
+* Armor bonus from Bosses gold ring aura now shows on other units(it was there but the UI was not showing that), mostly to not get confusion in Test lobby when you try Dummy dps or Misha.
+
+
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 

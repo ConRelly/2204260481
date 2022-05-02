@@ -39,7 +39,7 @@ end
 
 function AOHGameRound:Precache()
 	for _, spawner in pairs(self._vSpawners) do
-		--spawner:Precache()
+		spawner:Precache()
 	end
 end
 

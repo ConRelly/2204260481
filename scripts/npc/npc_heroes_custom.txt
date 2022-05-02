@@ -1056,6 +1056,7 @@
 
 		"Ability2"				"naga_siren_custom_aquatica_grace"
 		"Ability6"				"mjz_naga_siren_song_of_the_siren"
+		"Ability10"             "special_bonus_unique_naga_siren_5"
 		"Ability11"             "special_bonus_cdr_25"
 		"Ability13"				"special_bonus_intelligence_35"
 		"Ability14"				"special_bonus_agility_100"

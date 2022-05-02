@@ -18,6 +18,7 @@ function modifier_item_plain_ring_aura:GetAttributes() return MODIFIER_ATTRIBUTE
 function modifier_item_plain_ring_aura:OnCreated(keys)
 	if IsServer() then
 		local parent = self:GetParent()
+		local caster = self:GetCaster()
 		if parent then
 			if not parent:IsIllusion() or not parent:HasModifier("modifier_arc_warden_tempest_double") then
 				parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_plain_ring", {})
@@ -52,7 +53,7 @@ end
 function modifier_item_plain_ring_buff:DeclareFunctions()
 	return {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT}
 end
-function modifier_item_plain_ring_buff:GetModifierPhysicalArmorBonus() return self.aura_armor end
+function modifier_item_plain_ring_buff:GetModifierPhysicalArmorBonus() return 40 end
 function modifier_item_plain_ring_buff:GetModifierConstantManaRegen() return self.aura_mana_regen end
 
 
@@ -62,13 +63,17 @@ function modifier_item_plain_ring:IsPurgable() return false end
 function modifier_item_plain_ring:OnCreated(keys)
 	if IsServer() then
 		local extra = 0
-		self.parent = self:GetParent()
-		self.ability = self:GetAbility()
-		if self.parent:GetLevel() > 88 then
-			extra = 10
-		end	
-		self.invincibility_duration = self.ability:GetSpecialValueFor("duration") + extra
-		self.cooldown = self.ability:GetCooldown(0)
+		local parent = self:GetParent()
+		local ability = self:GetAbility()
+		if parent and not parent:IsNull() then
+			if parent:GetLevel() > 88 then
+				extra = 10
+			end	
+			if ability then
+				self.invincibility_duration = ability:GetSpecialValueFor("duration") + extra
+				self.cooldown = ability:GetCooldown(0)
+			end
+		end		
 	end
 end
 function modifier_item_plain_ring:DeclareFunctions()

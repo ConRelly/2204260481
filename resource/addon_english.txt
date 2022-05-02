@@ -3361,7 +3361,7 @@
 	"DOTA_Tooltip_modifier_mjz_luna_lunar_blessing_buff_Description"		""
 		
 	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight"					"Under The Moonlight"
-	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_Description"		"Luna increases her deterrent, giving her a chance to deal <font color='#FF5349'>New Moon stacks * her Level or %beam_damage% </font> as damage to enemies.\n<h1><font color='#FF5349'>Passive: New Moon</font></h1> Every time a unit is hit by Under The Moonlight you gain a New Moon Stack." // \n<h1><font color='#B5BFCC'>Passive: The Rising Moon</font></h1> Every time a hero is respawned, you gain 2 New Moon Stacks."
+	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_Description"		"Luna increases her deterrent, giving her a chance to deal <font color='#FF5349'>New Moon stacks * ( 2 x her Level) or %beam_damage% </font> as damage to enemies.\n<h1><font color='#FF5349'>Passive: New Moon</font></h1> Every time a unit is hit by Under The Moonlight you gain a New Moon Stack." // \n<h1><font color='#B5BFCC'>Passive: The Rising Moon</font></h1> Every time a hero is respawned, you gain 2 New Moon Stacks."
 	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_Lore"			"Is There a Moon? "
 	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_proc_chance"			"%Chance:"
 	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_spell_amp_tooltip"	"%Spell Amp Per 100 stacks:"

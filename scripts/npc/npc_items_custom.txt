@@ -3234,7 +3234,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"aura_armor"				"40"
+			"aura_armor"				"40" // hardcoded seems to not show to value(but is there) on other units then parent
 		}
 		"04"
 		{
