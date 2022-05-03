@@ -1964,6 +1964,11 @@ and some other stuff
 
 
 
+* Lowered the broken wings pure dmg limit calculations(magic limit remained the same). was buffed to much in previus patch(even higher then initial implementaion)
+
+
+
+
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
 *Update patch notes70 can be found on the new map version:

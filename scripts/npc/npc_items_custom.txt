@@ -31048,7 +31048,7 @@
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"AbilityCooldown"				"37"
+		"AbilityCooldown"				"40"
 		"ItemShopTags"					"armor;boost_health"
 		"ItemQuality"					"epic"
 		"ItemAlertable"					"1"

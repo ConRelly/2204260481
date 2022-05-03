@@ -177,7 +177,7 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 			local lvl = caster:GetLevel()
 			local spell_amp = caster:GetSpellAmplification(false)
 			local limit_magic = math.floor(lvl * 100000 / spell_amp)
-			local limit_pure = math.floor(lvl * 8000 / spell_amp)
+			local limit_pure = math.floor(lvl * 4000 / spell_amp)
 			local limit = 0
 			local used_stacks = 1
 			if DamageType == DAMAGE_TYPE_MAGICAL then
