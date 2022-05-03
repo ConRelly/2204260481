@@ -18,7 +18,6 @@ function modifier_item_plain_ring_aura:GetAttributes() return MODIFIER_ATTRIBUTE
 function modifier_item_plain_ring_aura:OnCreated(keys)
 	if IsServer() then
 		local parent = self:GetParent()
-		local caster = self:GetCaster()
 		if parent then
 			if not parent:IsIllusion() or not parent:HasModifier("modifier_arc_warden_tempest_double") then
 				parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_plain_ring", {})
@@ -81,26 +80,28 @@ function modifier_item_plain_ring:DeclareFunctions()
 end
 function modifier_item_plain_ring:OnTakeDamage(keys)
 	if IsServer() then
+		local parent = self:GetParent()
+		local ability = self:GetAbility()
 		local attacker = keys.attacker
 		local unit = keys.unit
-		if self.parent == unit and self.ability:IsCooldownReady() and self.parent:GetHealth() < 100  then
-			if has_item(self.parent, "item_plain_ring") and not unit:IsNull() and IsValidEntity(unit) then
-				self.parent:SetHealth(self.parent:GetMaxHealth() * 0.15)
-				self.parent:AddNewModifier(self.parent, self:GetAbility(), "modifier_item_plain_ring_invincibility", {duration = self.invincibility_duration})
-				self.ability:StartCooldown(self.cooldown * self.parent:GetCooldownReduction())
+		if parent and parent == unit and ability and ability:IsCooldownReady() and parent:GetHealth() < 100  then
+			if has_item(parent, "item_plain_ring") and not unit:IsNull() and IsValidEntity(unit) then
+				parent:SetHealth(parent:GetMaxHealth() * 0.15)
+				parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_plain_ring_invincibility", {duration = self.invincibility_duration})
+				ability:StartCooldown(self.cooldown * parent:GetCooldownReduction())
 				Timers:CreateTimer({
 					endTime = 0.5, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
 					callback = function()
 						if unit and not unit:IsNull() and IsValidEntity(unit) and unit:IsAlive() then
-							self.parent:AddNewModifier(self.parent, self:GetAbility(), "modifier_item_plain_ring_frenzy", {duration = self.invincibility_duration + 7})
-							--self.parent:SetAbsOrigin (attacker:GetAbsOrigin ())
-							--FindClearRandomPositionAroundUnit(self.parent, attacker, 250)
+							parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_plain_ring_frenzy", {duration = self.invincibility_duration + 7})
+							--parent:SetAbsOrigin (attacker:GetAbsOrigin ())
+							--FindClearRandomPositionAroundUnit(parent, attacker, 250)
 							--attacker:SetHealth(450)
-							--self.parent:PerformAttack (attacker, true, true, true, true, false, false, true)
+							--parent:PerformAttack (attacker, true, true, true, true, false, false, true)
 						end						
 					end
 				})			
-				--self.parent:EmitSoundParams("Hero_Juggernaut.OmniSlash.Damage", 0, 1.5, 0)
+				--parent:EmitSoundParams("Hero_Juggernaut.OmniSlash.Damage", 0, 1.5, 0)
 			else
 				if self:IsNull() then return end
 				self:Destroy()

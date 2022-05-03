@@ -3165,7 +3165,7 @@
 
 
 	"DOTA_Tooltip_ability_mjz_io_overcharge"				"Overcharge"
-	"DOTA_Tooltip_ability_mjz_io_overcharge_Description"	"Io gains bonus attack speed,<font color='#0DE4EB'>No Speed Limit</font>, <font color='#0DE4EB'>True Strike</font>, <font color='#0DE4EB'>Stun and Disarm Immunity</font> at the cost of draining a percentage of its current health. If Io is tethered to an ally, that unit also gains some bonuses."
+	"DOTA_Tooltip_ability_mjz_io_overcharge_Description"	"Io gains bonus attack speed,<font color='#0DE4EB'>No Speed Limit</font>, <font color='#0DE4EB'>True Strike</font>, <font color='#0DE4EB'>Stun and Disarm Immunity</font> at the cost of draining a percentage of its current health. If Io is tethered to an ally, that unit also gains some bonuses.\n<font color='#FF5733'>Health Drain can Kill thru gold ring</font>"
 	"DOTA_Tooltip_ability_mjz_io_overcharge_Lore"			"Drawing on the energy of matter from all worlds, Io begins the unravelling of time."
 	"DOTA_Tooltip_ability_mjz_io_overcharge_drain_pct"			"%HEALTH DRAIN:"
 	"DOTA_Tooltip_ability_mjz_io_overcharge_bonus_attack_speed"	"ATTACK SPEED:"
@@ -3361,7 +3361,7 @@
 	"DOTA_Tooltip_modifier_mjz_luna_lunar_blessing_buff_Description"		""
 		
 	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight"					"Under The Moonlight"
-	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_Description"		"Luna increases her deterrent, giving her a chance to deal <font color='#FF5349'>New Moon stacks * ( 2 x her Level) or %beam_damage% </font> as damage to enemies.\n<h1><font color='#FF5349'>Passive: New Moon</font></h1> Every time a unit is hit by Under The Moonlight you gain a New Moon Stack." // \n<h1><font color='#B5BFCC'>Passive: The Rising Moon</font></h1> Every time a hero is respawned, you gain 2 New Moon Stacks."
+	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_Description"		"Luna increases her deterrent, giving her a chance to deal <font color='#FF5349'>New Moon stacks * ( 3 x her Level) or %beam_damage% </font> as damage to enemies.\n<h1><font color='#FF5349'>Passive: New Moon</font></h1> Every time a unit is hit by Under The Moonlight you gain a New Moon Stack." // \n<h1><font color='#B5BFCC'>Passive: The Rising Moon</font></h1> Every time a hero is respawned, you gain 2 New Moon Stacks."
 	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_Lore"			"Is There a Moon? "
 	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_proc_chance"			"%Chance:"
 	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_spell_amp_tooltip"	"%Spell Amp Per 100 stacks:"

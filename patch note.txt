@@ -1973,6 +1973,9 @@ and some other stuff
 
 
 
+*Fixed Gold Ring for bosses
+*Luna Moonlight passive now starts with 10% chance instead of 0 and from 2x lvl to 3x lvl.
+
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 

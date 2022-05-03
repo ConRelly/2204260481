@@ -16,7 +16,7 @@ function mjz_luna_under_the_moonlight:LucentBeam(target, stun)
 	local sDur = stun or 0
 	local mbuf = caster:FindModifierByName("modifier_mjz_luna_under_the_moonlight_buff")
 	local stack_count = mbuf:GetStackCount() + 1
-	local level = caster:GetLevel() * 2
+	local level = caster:GetLevel() * 3
 	if level < 30 then
 		level = 30
 	end
