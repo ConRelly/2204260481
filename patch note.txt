@@ -1964,7 +1964,12 @@ and some other stuff
 
 
 
-* Lowered the broken wings pure dmg limit calculations(magic limit remained the same). was buffed to much in previus patch(even higher then initial implementaion)
+
+
+* Lowered the broken wings pure dmg limit calculations(magic limit remained the same). was buffed too much in the previous patch(even higher than the initial implementation)
+* Viper Poison Attack: buffed max number of stacks to 27(30 with shard), added new talent for the skill mr reduction, rescaled mr reduction to match stacks and over.
+* Added Super Scepter effect for Zuus ultimate.
+* Removed Monkey king(temporary maybe), there's a bug from valve with his soldiers' ult, consumed aghanim: every time they spawn they add another aghanim animation on top of the previous one(super laggy after some time)
 
 
 

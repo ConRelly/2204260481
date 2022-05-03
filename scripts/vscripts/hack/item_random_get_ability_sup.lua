@@ -239,6 +239,7 @@ function GetRandomAbilityName( hero )
 		"brewmaster_drunken_brawler",
 		"tiny_grow",
 		"naga_siren_rip_tide",
+		--"viper_poison_attack",  does not work on other heroes , last a single frame on enemy
 
 	}
 	local randomIndex = RandomInt(1, #abilityList)

@@ -26782,7 +26782,7 @@
 
 		"AbilityValues"
 		{
-			"proc_chance"			"0 5 10 15 20"
+			"proc_chance"			"10 12 15 17 22"
 			"beam_damage"			"30"
 			"spell_amp"				"0.05"
 			"bonus_hp"				"2"
@@ -33876,21 +33876,26 @@
 				"var_type"					"FIELD_FLOAT"
 				"count"						"6 8 10 14 18 22 28" 
 			}
-			"09"
+			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"interval"					"0.25" 
 			}
-			"11"
+			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"sight_radius"					"1500"
 			}
-			"15"
+			"07"
 			{
 				"var_type"						"FIELD_FLOAT"
 				"sight_duration"				"1.0"
 			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"enemy_armor_mult_ptc"				"1"
+			}			
 		}
 		"precache"
 		{

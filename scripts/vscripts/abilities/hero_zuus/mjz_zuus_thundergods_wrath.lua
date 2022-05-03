@@ -98,22 +98,37 @@ if IsServer() then
 		local base_damage = ability:GetSpecialValueFor("base_damage")
 		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
 		local damage = base_damage + caster:GetIntellect() * (intelligence_damage / 100.0)
-
+		local damage_ss = damage  -- avoid an multiplayer
+		local bonus_armor_dmg_mult = 1
+		local enemy_armor_mult_ptc = ability:GetSpecialValueFor('enemy_armor_mult_ptc') * 100 -- 1% per armor 
 		local sound_name = "Hero_Zuus.GodsWrath.Target"
+		local super_scepter = false
+		if caster:HasModifier("modifier_super_scepter") then
+			super_scepter = true
+		end	
 		
 		local units = FindTargetEnemy(caster, caster:GetAbsOrigin(), radius)
 		for _,unit in pairs(units) do
-			self:ApplyEffect2(caster, unit)
+			if ability and unit and caster then
+				self:ApplyEffect2(caster, unit)
+				local enemy_armor = unit:GetPhysicalArmorValue(false)
+				if super_scepter and enemy_armor > 1 then
+					bonus_armor_dmg_mult = (enemy_armor / enemy_armor_mult_ptc ) + 1
+					if bonus_armor_dmg_mult > 10 then
+						bonus_armor_dmg_mult = 10
+					end	
+				end 	
+				damage = damage_ss * bonus_armor_dmg_mult -- damage_ss is to avoid damage being getting stronger with every unit
+				--EmitSoundOn(sound_name, unit)
 
-			--EmitSoundOn(sound_name, unit)
-
-			ApplyDamage({
-				attacker = caster,
-				victim = unit,
-				ability = ability,
-				damage_type = ability:GetAbilityDamageType(),
-				damage = damage
-			})	
+				ApplyDamage({
+					attacker = caster,
+					victim = unit,
+					ability = ability,
+					damage_type = ability:GetAbilityDamageType(),
+					damage = damage
+				})
+			end		
 		end
 	end
 
@@ -158,6 +173,7 @@ if IsServer() then
 
 	function modifier_class:OnIntervalThink()
 		if not self:GetAbility()  then return end
+		if not self:GetParent() then return end
 		local caster = self:GetCaster()
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
@@ -173,6 +189,21 @@ if IsServer() then
 		local base_damage = ability:GetSpecialValueFor("base_damage")
 		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
 		local damage = base_damage + caster:GetIntellect() * (intelligence_damage / 100.0)
+		local super_scepter = false
+		local bonus_armor_dmg_mult = 1
+		local enemy_armor_mult_ptc = ability:GetSpecialValueFor('enemy_armor_mult_ptc') * 100 -- 1% per armor 
+		if caster:HasModifier("modifier_super_scepter") then
+			super_scepter = true
+		end	
+
+		local enemy_armor = parent:GetPhysicalArmorValue(false)
+		if super_scepter and enemy_armor > 1 then
+			bonus_armor_dmg_mult = (enemy_armor / enemy_armor_mult_ptc ) + 1
+			if bonus_armor_dmg_mult > 10 then
+				bonus_armor_dmg_mult = 10
+			end
+			damage = damage * bonus_armor_dmg_mult
+		end 
 
 		ability:ApplyEffect2(caster, parent)
 

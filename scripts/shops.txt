@@ -161,6 +161,7 @@
 		"item"		"item_arcane_staff"
 		"item"		"item_blast_staff_1"
 		"item"      "item_heavy_blade"
+		"item"      "item_traxexs_necklace"
 	}
 
 	// Level 3 - Purple Recipes

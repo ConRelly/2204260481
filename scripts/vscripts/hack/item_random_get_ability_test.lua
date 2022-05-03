@@ -83,7 +83,7 @@ function GetRandomAbilityName( hero )
         "nevermore_custom_necromastery",
         "dzzl_good_juju",
         "spectre_custom_dispersion_boss",
-        "naga_siren_rip_tide",
+        "viper_poison_attack",
         --"back_in_time",
         --"medusa_custom_stone_arrows",
         --"mjz_slark_essence_shift",

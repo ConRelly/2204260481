@@ -14961,42 +14961,78 @@
 		}
 	}
 
+
 	"viper_poison_attack"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5218"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"hero_viper.poisonAttack.Cast"
 		"MaxLevel"			  "7"
 		"LevelsBetweenUpgrades" "5"
 		"AbilityCastRange"				"1000"
-		"AbilityCooldown"	   "0.15"
+		"AbilityCooldown"	   			"0.15"
+        "HasShardUpgrade"               "1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.0"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"25"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"duration"						"15"
+				"damage"						"80.0 290.0 745.0 1490.0 3410.0 6950.0 14450.0"
+				"movement_speed"			"2"
+				"magic_resistance"			
+				{
+					"value"			"2"
+					"special_bonus_unique_viper_4"	"+2"
+				}
+				"max_stacks"			"27"
+				"bonus_range"			"125 165 205 245 275 300 350"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	"special_bonus_unique_viper_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6820"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"15"
+				"var_type"					"FIELD_INTEGER"
+				"value"				"1"
+				"ad_linked_abilities"			"viper_poison_attack"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"damage"			  "60.0 220.0 545.0 1290.0 2410.0 4950.0 11450.0"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"movement_speed"			"12"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"magic_resistance"			"9"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_range"			"150"
-			}									
 		}
 	}
-
 	//=================================================================================================================
 	// Viper: Corrosive Skin
 	//=================================================================================================================
