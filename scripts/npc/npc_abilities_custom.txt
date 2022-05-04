@@ -11785,6 +11785,11 @@
 			"var_type"				"FIELD_FLOAT"
 			"debuff_duration"				"5"
 		}
+		"09"
+		{	
+			"var_type"				"FIELD_INTEGER"
+			"lvl_damage"				"110 220 330 440 600 1000 2100"
+		}		
 	}
 }
 "doom_custom_flames"

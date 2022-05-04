@@ -161,7 +161,6 @@
 		"item"		"item_arcane_staff"
 		"item"		"item_blast_staff_1"
 		"item"      "item_heavy_blade"
-		"item"      "item_traxexs_necklace"
 	}
 
 	// Level 3 - Purple Recipes
@@ -256,6 +255,7 @@
 		"item"      "item_blast_staff_3"
 		"item"		"item_num"
 		"item"      "item_broken_wings"
+		"item"      "item_traxexs_necklace"		
 		"item"		"item_spirit_guardian"
 		"item"		"item_imba_greater_crit"
 		"item"      "item_cursed_gaze"

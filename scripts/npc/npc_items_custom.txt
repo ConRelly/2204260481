@@ -19938,7 +19938,7 @@
 		"ItemRequiresCharges"			"0"
 		"AllowedInBackpack"				"1"
 		"IsTempestDoubleClonable"		"1"
-		"AbilityCooldown"				"60"
+		"AbilityCooldown"				"65"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
@@ -19974,7 +19974,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rock_dmg"					"8765"
+				"rock_dmg"					"8265"
 			}
 			"07"
 			{
@@ -35291,8 +35291,12 @@
 			"chill_duration"				"6"
 			"chill_thaw_pct"				"5"
 			"freeze_duration"				"2"
-			"freeze_shatter_hp_damage"		"2"
+			"freeze_shatter_hp_damage"		"3"
 			"freeze_shatter_radius"			"900"
+			"level_mult"                    "3"
+			"armor_mult"                    "1"
+			"spell_amp_mult_ptc"            "15"
+			"freeze_ss_chance"              "30"
 		}
 	}
 

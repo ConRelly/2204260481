@@ -34,10 +34,13 @@ if IsServer() then
         }
     end
 	function modifier_disruptor_custom_ion_hammer:OnCreated()
-        self.ability = self:GetAbility()
-		self.duration = self.ability:GetSpecialValueFor("debuff_duration")
-		self.parent = self:GetParent()
-		self.damage = self.ability:GetSpecialValueFor("damage")
+        if self:GetAbility() then
+            self.ability = self:GetAbility()
+            self.duration = self.ability:GetSpecialValueFor("debuff_duration")
+            self.parent = self:GetParent()
+            local lvl_dmg = self.parent:GetLevel() * self.ability:GetSpecialValueFor("lvl_damage")
+            self.damage = self.ability:GetSpecialValueFor("damage") + lvl_dmg
+        end   
     end
 
     function modifier_disruptor_custom_ion_hammer:OnAttackLanded(keys)
@@ -46,6 +49,7 @@ if IsServer() then
 		
     
         if attacker == self.parent and not target:IsNull() then
+            if not self:GetAbility() then return end
             local debuff_name = "modifier_disruptor_custom_ion_hammer_debuff"
 			
             if not target:HasModifier(debuff_name) then
@@ -84,16 +88,16 @@ function modifier_disruptor_custom_ion_hammer_buff:DeclareFunctions()
 end
 
 function modifier_disruptor_custom_ion_hammer_buff:GetModifierProjectileSpeedBonus()
-    return self:GetAbility():GetSpecialValueFor("projectile_speed_bonus")
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("projectile_speed_bonus") end
 end
 
 
 function modifier_disruptor_custom_ion_hammer_buff:GetModifierBaseAttackTimeConstant()
-    return self:GetAbility():GetSpecialValueFor("caster_slow")
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("caster_slow") end
 end
 
 function modifier_disruptor_custom_ion_hammer_buff:GetModifierModelScale()
-	return self:GetAbility():GetSpecialValueFor("model_mult")
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("model_mult") end
 end	
 
 function modifier_disruptor_custom_ion_hammer_buff:GetModifierAttackPointConstant()
@@ -116,14 +120,14 @@ function modifier_disruptor_custom_ion_hammer_debuff:DeclareFunctions()
     }
 end
 function modifier_disruptor_custom_ion_hammer_debuff:OnCreated(keys)
-	self.armor_decrease = self:GetAbility():GetSpecialValueFor("armor_decrease")
-	self.resist_decrease = self:GetAbility():GetSpecialValueFor("resistance_decrease") 
+	--self.armor_decrease = self:GetAbility():GetSpecialValueFor("armor_decrease")
+	--self.resist_decrease = self:GetAbility():GetSpecialValueFor("resistance_decrease") 
 end
 
 function modifier_disruptor_custom_ion_hammer_debuff:GetModifierPhysicalArmorBonus()
-    return self.armor_decrease * self:GetStackCount()
+   if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("armor_decrease") * self:GetStackCount() end
 end
 
 function modifier_disruptor_custom_ion_hammer_debuff:GetModifierMagicalResistanceBonus()
-    return self.resist_decrease * self:GetStackCount()
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("resistance_decrease") * self:GetStackCount() end
 end

@@ -46,14 +46,43 @@ function modifier_traxexs_necklace:GetModifierProcAttack_BonusDamage_Pure(keys)
 	if parent == keys.attacker then
 		if keys.target == nil then return end
 		if parent:IsIllusion() then return end
+		if not self:GetAbility() then return end
 		local parent_name = parent:GetUnitName()
-		local ms_diff = parent:GetIdealSpeed() - keys.target:GetIdealSpeed()
-		if ms_diff > 0 then
-			if parent_name ~= "npc_dota_hero_windrunner" then
-				ms_diff = ms_diff / 2
+		local lvl_basedmg = parent:GetLevel() * self:GetAbility():GetSpecialValueFor("level_mult")
+		local armor = math.ceil(parent:GetPhysicalArmorValue(false) * self:GetAbility():GetSpecialValueFor("armor_mult")) /100 + 1
+		if armor > 10 then
+			armor = 10
+		end	
+		print("neck armor mult  " ..armor)		
+		local spell_amp = math.ceil(parent:GetSpellAmplification(false) * self:GetAbility():GetSpecialValueFor("spell_amp_mult_ptc")) / 100 + 1 
+		print("neck spell amp  " ..spell_amp)
+		local status_resist = math.ceil(parent:GetStatusResistance() * 100) /100 + 1
+		print("neck status mult  " ..status_resist)
+		local ms_diff = math.floor(parent:GetIdealSpeed() / keys.target:GetIdealSpeed())
+		local damage = 0
+		local armor_mul = 1
+		local spell_mul = 1
+		local status_mult = 1
+		if ms_diff > 1 then
+			if armor > 10 then
+				armor = 10
 			end	
+			if parent_name == "npc_dota_hero_windrunner" then
+				lvl_basedmg = lvl_basedmg * 2
+				ms_diff = ms_diff * 5
+			end
+			if parent:HasModifier("modifier_super_scepter") then	
+				armor_mul = armor
+				status_mult = status_resist
+				spell_mul = spell_amp	
+				if ms_diff > 30 then
+					ms_diff = 30
+				end
+			end
+			damage = lvl_basedmg * ms_diff * armor_mul * spell_mul * status_mult
 --			SendOverheadEventMessage(nil, OVERHEAD_ALERT_DAMAGE, keys.target, ms_diff, nil)
-			return ms_diff
+			print("neck Final Damage:  " ..damage)
+			return damage
 		end
 	end
 	return 0
@@ -99,7 +128,11 @@ end
 function modifier_traxexs_necklace_chill:OnStackCountChanged(old)
 	if not IsServer() then return end
 	if self:GetParent():HasModifier("modifier_traxexs_necklace_frozen") then return end
-	if self:GetStackCount() >= self:GetAbility():GetSpecialValueFor("chill_max") then
+	local ss_chance = 0
+	if self:GetCaster() and self:GetCaster():HasModifier("modifier_super_scepter") then
+		ss_chance = self:GetAbility():GetSpecialValueFor("freeze_ss_chance")
+	end
+	if (self:GetStackCount() >= self:GetAbility():GetSpecialValueFor("chill_max")) or RollPercentage(ss_chance) then
 		if self:GetParent():HasModifier("modifier_traxexs_necklace_chill") then
 			self:GetParent():RemoveModifierByName("modifier_traxexs_necklace_chill")
 		end
@@ -115,7 +148,7 @@ function modifier_traxexs_necklace_chill:OnIntervalThink()
 		end
 		self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_traxexs_necklace_frozen", {duration = self:GetAbility():GetSpecialValueFor("freeze_duration")})
 	end
-	self:SetStackCount(stacks - (stacks * self:GetAbility():GetSpecialValueFor("chill_thaw_pct") / 100))
+	self:SetStackCount(stacks + (stacks * self:GetAbility():GetSpecialValueFor("chill_thaw_pct") / 100))
 end
 function modifier_traxexs_necklace_chill:DeclareFunctions()
 	return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE}

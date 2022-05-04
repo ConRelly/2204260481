@@ -1977,6 +1977,12 @@ and some other stuff
 *Luna Moonlight passive now starts with 10% chance instead of 0 and from 2x lvl to 3x lvl.
 
 
+
+* Traxex's Necklace: New Super Scepter effect, chill stacks now increase by 5% for every second that passes , changed how Pure Speed calculations, added to shop item list.
+* Added another scaling element(lvl) for Disruptor Ion Hammer.
+
+
+
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
 *Update patch notes70 can be found on the new map version:
