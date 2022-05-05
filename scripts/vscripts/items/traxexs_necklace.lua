@@ -50,14 +50,8 @@ function modifier_traxexs_necklace:GetModifierProcAttack_BonusDamage_Pure(keys)
 		local parent_name = parent:GetUnitName()
 		local lvl_basedmg = parent:GetLevel() * self:GetAbility():GetSpecialValueFor("level_mult")
 		local armor = math.ceil(parent:GetPhysicalArmorValue(false) * self:GetAbility():GetSpecialValueFor("armor_mult")) /100 + 1
-		if armor > 10 then
-			armor = 10
-		end	
-		print("neck armor mult  " ..armor)		
 		local spell_amp = math.ceil(parent:GetSpellAmplification(false) * self:GetAbility():GetSpecialValueFor("spell_amp_mult_ptc")) / 100 + 1 
-		print("neck spell amp  " ..spell_amp)
 		local status_resist = math.ceil(parent:GetStatusResistance() * 100) /100 + 1
-		print("neck status mult  " ..status_resist)
 		local ms_diff = math.floor(parent:GetIdealSpeed() / keys.target:GetIdealSpeed())
 		local damage = 0
 		local armor_mul = 1
@@ -81,7 +75,6 @@ function modifier_traxexs_necklace:GetModifierProcAttack_BonusDamage_Pure(keys)
 			end
 			damage = lvl_basedmg * ms_diff * armor_mul * spell_mul * status_mult
 --			SendOverheadEventMessage(nil, OVERHEAD_ALERT_DAMAGE, keys.target, ms_diff, nil)
-			print("neck Final Damage:  " ..damage)
 			return damage
 		end
 	end
