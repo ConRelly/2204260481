@@ -1978,8 +1978,13 @@ and some other stuff
 
 
 
+* Fixed Alchemist ultimate base attack time talent.
+* Fixed Antimage Passive magic resist talent.
 * Traxex's Necklace: New Super Scepter effect, chill stacks now increase by 5% for every second that passes , changed how Pure Speed calculations, added to shop item list.
 * Added another scaling element(lvl) for Disruptor Ion Hammer.
+* Added an interaction with a certain inventory slot for Ultimate Bloodstone.
+
+
 
 
 

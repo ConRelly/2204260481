@@ -130,6 +130,18 @@ function modifier_item_mjz_bloodstone:GetModifierManaBonus()
 end
 
 if IsServer() then
+	local function IsUltimateBInSlot6(unit)
+		local Item = unit:GetItemInSlot(5)
+		if Item ~= nil and IsValidEntity(Item) then
+			if Item:GetName() == "item_mjz_bloodstone_ultimate" then
+				if Item:IsCooldownReady() then
+					return true
+				end	
+			end	
+		end
+		return false	
+	end
+
 	function modifier_item_mjz_bloodstone:OnCreated(table)
 		local parent = self:GetParent()
 		if parent:HasModifier("modifier_mjz_bloodstone_charges") then
@@ -143,6 +155,7 @@ if IsServer() then
 
 	function modifier_item_mjz_bloodstone:OnIntervalThink()
 		local parent = self:GetParent()
+		if not self:GetAbility() then return end
 		if IsValidEntity(parent) and parent:IsRealHero() then
 			local mt = {"modifier_item_mjz_bloodstone_buff", "modifier_mjz_bloodstone_charges"}
 			for _,mname in pairs(mt) do
@@ -150,6 +163,12 @@ if IsServer() then
 					parent:AddNewModifier(self:GetCaster(), self:GetAbility(), mname, {})
 				end
 			end
+			if IsUltimateBInSlot6(parent) and parent:IsAlive() then
+				local bloodstone = parent:GetItemInSlot(5)
+				if bloodstone and bloodstone:IsFullyCastable() and not parent:IsChanneling() then
+					parent:CastAbilityNoTarget(bloodstone, parent:GetPlayerOwnerID())
+				end	
+			end	
 		end
 	end
 
@@ -162,7 +181,10 @@ if IsServer() then
 			end
 		end
 	end
+	
 end
+
+
 
 -------------------------------------------------------------------------------
 

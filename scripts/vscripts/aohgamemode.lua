@@ -356,7 +356,6 @@ end
 function AOHGameMode:OnDamageDealt(damageTable)
 	local attacker_index = damageTable.entindex_attacker_const
 	local victim_index = damageTable.entindex_victim_const
-	local pass = true
 	if attacker_index and victim_index then
 		local attacker = EntIndexToHScript(attacker_index)
 		local victim = EntIndexToHScript(victim_index)
@@ -406,7 +405,7 @@ function AOHGameMode:OnDamageDealt(damageTable)
 		end
 	end
 
-	return pass
+	return true
 end
 
 

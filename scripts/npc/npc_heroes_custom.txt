@@ -901,7 +901,7 @@
 		"UnitLabel"				"no_underdog"
 
 		"Ability1"			"antimage_custom_mana_break"
-		"Ability3"			"antimage_custom_counterspell"
+		"Ability3"			"antimage_counterspell" //	"antimage_custom_counterspell"
 		"Ability5"			"mjz_antimage_mana_void"
 		"Ability6"			"antimage_custom_speed"
 		"Ability10"			"special_bonus_unique_mjz_antimage_mana_void_damage"

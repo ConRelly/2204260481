@@ -8068,6 +8068,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_mana_regen_multiplier"	"%+$mp_regen_amp"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_spell_lifesteal_amp"		"%+$spell_lifesteal_amp"
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_manacost_reduction"		"%+$manacost_reduction"
+		"DOTA_Tooltip_Ability_item_mjz_bloodstone_ultimate_Note0"                   "On Certain inventory slot it will autocast"
 		//<<<<
 		//>>>>	Lion's Dagon
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2"										"Lion's Dagon"
