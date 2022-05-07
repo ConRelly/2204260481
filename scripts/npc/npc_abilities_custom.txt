@@ -42500,15 +42500,15 @@
 			"venom_spellamp"           	"40"
 			"venom_str"                 "50"
 			"venom_agi"                 "50"
-			"venom_int"                 "100"
+			"venom_int"                 "50"
 			"carnage_str"               "100"
-			"carnage_agi"               "100"
-			"carnage_int"               "50"
+			"carnage_agi"               "80"
+			"carnage_int"               "25"
 			"carnage_greendmg"          "100"
 			"carnage_basedmg"           "100"
-			"carnage_base_ms"           "100"
+			"carnage_base_ms"           "20"
 			"symbiot_stack_chance"      "20"
-			"exhaust_duration"          "100" // can be reduced by host satus resist
+			"exhaust_duration"          "110" // can be reduced by host satus resist
 			"transfrom_duration"        "25"
 
 			"range_scepter"

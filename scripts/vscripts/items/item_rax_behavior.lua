@@ -19,7 +19,9 @@ function RaxSpawn( keys )
 	Timers:CreateTimer(
 		0.25, 
 		function()
-			unit:MoveToPositionAggressive(self.owner:GetAbsOrigin())
+			if unit then
+				unit:MoveToPositionAggressive(self.owner:GetAbsOrigin())
+			end
 		end
 	)
 	end

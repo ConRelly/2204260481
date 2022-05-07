@@ -168,6 +168,8 @@ if IsServer() then
 		item_black_king_bar = true,
 		item_pocket_tower = true,
 		item_pocket_barracks = true,
+		item_pocket_rax = true,
+		item_pocket_rax_ranged = true,
 		item_echo_wand = true,
 		item_imba_silver_edge = true,
 		item_silver_edge = true,

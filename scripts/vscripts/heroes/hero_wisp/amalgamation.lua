@@ -433,9 +433,12 @@ function amalgamation_target:OnIntervalThink()
 			local caster_agi = caster:GetAgility()
 			local caster_int = caster:GetIntellect()
 			local caster_spellamp = math.floor(caster:GetSpellAmplification(false) * ability:GetSpecialValueFor("venom_spellamp"))
-			local caster_base_ms = caster:GetBaseMoveSpeed()
+			local caster_base_ms = caster:GetMoveSpeedModifier(caster:GetBaseMoveSpeed(), false) * (ability:GetSpecialValueFor("carnage_base_ms") / 100)
 			local caster_basedmg = caster:GetAttackDamage()
 			local caster_greendmg = caster:GetAverageTrueAttackDamage(caster) - caster_basedmg
+			if caster_base_ms > 20000 then -- in case dota fixes Io Q 
+				caster_base_ms = 20000
+			end	
 			if (not ability:GetAutoCastState() and venom_on) or (marci and venom_on) then
 				if parent and parent:IsAlive() then
 					if not parent:HasModifier("modifier_symbiosis_exhaust_trigger") then

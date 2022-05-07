@@ -1983,8 +1983,8 @@ and some other stuff
 * Traxex's Necklace: New Super Scepter effect, chill stacks now increase by 5% for every second that passes , changed how Pure Speed calculations, added to shop item list.
 * Added another scaling element(lvl) for Disruptor Ion Hammer.
 * Added an interaction with a certain inventory slot for Ultimate Bloodstone.
-
-
+* Amalgamation carnage from base speed (was giving just +320) to all speed but 20% , adjusted int and agility % bonus from SS .
+* Pocket Barracks now can only be one of each type planted at the same time, reduced the recipe stock time by a lot(from 2000s to 300s).
 
 
 

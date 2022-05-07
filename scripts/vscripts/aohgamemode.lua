@@ -1198,7 +1198,6 @@ function AOHGameMode:OnEntityKilled(event)
 	local killedUnit = EntIndexToHScript(event.entindex_killed)
 	if killedUnit:IsNull() then return end
 	if killedUnit:IsFort() then
-		print("pause game Fort killed")
 		GameRules:SetSafeToLeave(true)
 		end_screen_setup(self._entAncient and self._entAncient:IsAlive())			
 		PauseGame(true)

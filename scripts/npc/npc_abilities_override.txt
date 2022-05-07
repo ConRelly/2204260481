@@ -9019,44 +9019,63 @@
 		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}	
+
+
 	"riki_tricks_of_the_trade"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5145"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"HasScepterUpgrade"				"1"
+		"AbilitySound"					"Hero_Riki.TricksOfTheTrade.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
 		"LevelsBetweenUpgrades"		 "10"
 		"AbilityCooldown"				"15"
 		"AbilityCastPoint"				"0.2"
 		"AbilityChannelTime"			"3.0"
-		"AbilitySpecial"
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
+			"radius"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"						"540"
+				"value"		"520"
 				"LinkedSpecialBonus"		"special_bonus_unique_riki_4"
-			}			
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_count"	"9 10 11 12"
 			}
-			"03"
+			"attack_count"	"9 10 11 12"
+			"damage_pct"	"75 85 100 200"
+			"agility_pct"	"55 65 75 85"
+			"scepter_duration"				
 			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_pct"	"75 85 100 220" 
+				"value"			"3"
+				"RequiresScepter"		"1"
 			}
-			"06"
+			"scepter_attacks"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"scepter_duration"				"3"
+				"value"		"12 18 27 45"
 				"RequiresScepter"		"1"
-			}			
-			"05"
+			}
+			"scepter_cast_range"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"scepter_attacks"				"12 18 27 45"
+				"value"		"700"
 				"RequiresScepter"		"1"
-			}			
+			}
+			"dispel"
+			{
+				"value"				"0"
+				"special_bonus_unique_riki_5"	"+1"
+			}
 		}
-	}
+	}	
 	"riki_backstab"
 	{
 		// General
