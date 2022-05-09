@@ -211,6 +211,7 @@ if IsServer() then
 		witch_doctor_maledict = true,
 		mjz_faceless_the_world = true,
 		juggernaut_omni_slash = true,
+		item_dimensional_doorway = true,
 		--mjz_elder_titan_earth_splitter = true,
 		mjz_broodmother_spawn_spiderlings = true,
 		mjz_troll_warlord_battle_trance = true,

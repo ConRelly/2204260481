@@ -1985,6 +1985,13 @@ and some other stuff
 * Added an interaction with a certain inventory slot for Ultimate Bloodstone.
 * Amalgamation carnage from base speed (was giving just +320) to all speed but 20% , adjusted int and agility % bonus from SS .
 * Pocket Barracks now can only be one of each type planted at the same time, reduced the recipe stock time by a lot(from 2000s to 300s).
+* Dimensional dorrway starts 5 recipes(max 10) price increased and consumes a charge on use. //or removed
+* Added Super Scepter effect for Spectre dispersion, and removed the distance limits.
+* Pendant of Resurrection will not work from disconnected players and they will not be resurected unless you use the pendant from inventory first slot.
+* Slayer active can't be used from outside of map(~5.5k range from center map).
+
+
+
 
 
 

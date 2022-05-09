@@ -59,12 +59,15 @@ function modifier_inf_aegis:OnDeath(keys)
 				self.caster:SetBuyBackDisabledByReapersScythe(true)
 --				self.caster:SetRespawnsDisabled(false)
 --				self.caster:SetTimeUntilRespawn(self.reincarnate_delay)
+				local rezPosition = self.caster:GetAbsOrigin()
 				if not self.caster:IsAlive() then
 					Timers:CreateTimer(self.reincarnate_delay, function()
 						self.caster:SetBuyBackDisabledByReapersScythe(false)
 --						self.caster:SetRespawnsDisabled(true)
-						self.caster:RespawnUnit()
---						self.caster:RespawnHero(false, false)
+						--self.caster:RespawnUnit() -- creates the use items from backpack and Stash abuse 
+											
+						self.caster:RespawnHero(false, false)
+						self.caster:SetAbsOrigin(rezPosition)						
 					end)
 				end
 				Timers:CreateTimer(self.reincarnate_delay + FrameTime(), function()

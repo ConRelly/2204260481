@@ -28,19 +28,22 @@ end
 if IsServer() then
     function item_resurection_pendant:OnChannelFinish(interrupted)
 		if not self then return end
-		self:GetCaster():RemoveGesture(ACT_DOTA_GENERIC_CHANNEL_1)
-        if not interrupted and not self:GetParent():HasModifier("modifier_arc_warden_tempest_double") then
-			local base_cooldown = self:GetSpecialValueFor("base_cooldown")
-			local extra_cooldown = self:GetSpecialValueFor("extra_cooldown")
-			if self:GetCaster():HasModifier("modifier_super_scepter") then
-				extra_cooldown = self:GetSpecialValueFor("extra_cooldown_ss")
-			end	
-			self:Used(self:GetCaster(), self, base_cooldown, extra_cooldown)
-        end
+		local plyid = self:GetCaster():GetPlayerID()
+		if PlayerResource:IsValidPlayerID(plyid) then
+			self:GetCaster():RemoveGesture(ACT_DOTA_GENERIC_CHANNEL_1)
+			if not interrupted and not self:GetParent():HasModifier("modifier_arc_warden_tempest_double") then
+				local base_cooldown = self:GetSpecialValueFor("base_cooldown")
+				local extra_cooldown = self:GetSpecialValueFor("extra_cooldown")
+				if self:GetCaster():HasModifier("modifier_super_scepter") then
+					extra_cooldown = self:GetSpecialValueFor("extra_cooldown_ss")
+				end	
+				self:Used(self:GetCaster(), self, base_cooldown, extra_cooldown)
+			end
+		end	
     end
 
     function item_resurection_pendant:Used(caster, ability, base_cooldown, extra_cooldown)
-		local ressurected = item_resurection_pendant:RessurectAll()
+		local ressurected = item_resurection_pendant:RessurectAll(caster)
 		if ressurected > 0 then
 			player_data_modify_value(caster:GetPlayerID(), "saves", ressurected)
 
@@ -57,24 +60,41 @@ if IsServer() then
 		end
     end
 
-    function item_resurection_pendant:RessurectAll()
+    function item_resurection_pendant:RessurectAll(caster)
         local ressurected = 0
-
-        for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-            if PlayerResource:HasSelectedHero(playerID) then
-                local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-                if not hero:IsAlive() then
-					if not hero:IsReincarnating() then
-						local rezPosition = hero:GetAbsOrigin()
-						hero:RespawnHero(false, false)
-						hero:SetAbsOrigin(rezPosition)
-						item_resurection_pendant:RessurectEffect(hero)
-						hero:AddNewModifier(hCaster, hAbility, "modifier_aegis_buff", {duration = 10})
-						ressurected = ressurected + 1
+		if not inventory_slot1(caster) then -- don't resurrect disconnected ppl
+			for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+				if PlayerResource:HasSelectedHero(playerID) and PlayerResource:IsValidPlayerID(playerID) then
+					local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+					if not hero:IsAlive() then
+						if not hero:IsReincarnating() then
+							local rezPosition = hero:GetAbsOrigin()
+							hero:RespawnHero(false, false)
+							hero:SetAbsOrigin(rezPosition)
+							item_resurection_pendant:RessurectEffect(hero)
+							hero:AddNewModifier(hCaster, hAbility, "modifier_aegis_buff", {duration = 10})
+							ressurected = ressurected + 1
+						end
 					end
-                end
-            end
-        end
+				end
+			end
+		else	-- resurrect all
+			for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+				if PlayerResource:HasSelectedHero(playerID) then
+					local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+					if not hero:IsAlive() then
+						if not hero:IsReincarnating() then
+							local rezPosition = hero:GetAbsOrigin()
+							hero:RespawnHero(false, false)
+							hero:SetAbsOrigin(rezPosition)
+							item_resurection_pendant:RessurectEffect(hero)
+							hero:AddNewModifier(hCaster, hAbility, "modifier_aegis_buff", {duration = 10})
+							ressurected = ressurected + 1
+						end
+					end
+				end
+			end
+		end	
 
         return ressurected
     end
@@ -90,6 +110,16 @@ if IsServer() then
     function item_resurection_pendant:DestroyTrees()
         GridNav:DestroyTreesAroundPoint(Vector(0, 0, 0), 3900, false)
     end
+    function inventory_slot1(unit)
+		local Item = unit:GetItemInSlot(0)
+		if Item ~= nil and IsValidEntity(Item) then
+			if Item:GetName() == "item_resurection_pendant" then
+				return true	
+			end	
+		end
+		return false		
+    end
+
 end
 
 
@@ -106,10 +136,12 @@ function modifier_resurrection_pendant:GetTexture()
 	return "custom/resurection_pendant_modifier"
 end
 function modifier_resurrection_pendant:OnCreated()
-	if IsServer() then if not self:GetAbility() then self:Destroy() end self:StartIntervalThink(FrameTime()) end
+	if IsServer() then if not self:GetAbility() then self:Destroy() end self:StartIntervalThink(0) end
 end
 function modifier_resurrection_pendant:OnIntervalThink()
 	if self:GetParent():HasScepter() then
+		local plyid = self:GetParent():GetPlayerID()
+		if not PlayerResource:IsValidPlayerID(plyid) then return end	--disconected ppl
 		local NotRegister = {
 			["npc_playerhelp"] = true,
 			["npc_dota_target_dummy"] = true,
@@ -150,12 +182,12 @@ function modifier_resurrection_pendant:OnIntervalThink()
 			Timers:CreateTimer(channel + (FrameTime() * (PlayersID + 1)), function()
 				local LivingHeroes = 0
 				for i = 1, #heroes do
-					if heroes[i]:IsRealHero() and (heroes[i]:IsAlive() or heroes[i]:IsReincarnating()) then
+					if heroes[i]:IsRealHero() and (heroes[i]:IsAlive() or heroes[i]:IsReincarnating()) and not NotRegister[heroes[i]:GetUnitName()] then
 						LivingHeroes = i
 					end
 				end
 				if LivingHeroes == 0 and self:GetAbility():IsCooldownReady() then
-					item_resurection_pendant:Used(self:GetParent(), self:GetAbility(), base_cooldown, extra_cooldown)
+					item_resurection_pendant:Used(self:GetParent(), self:GetAbility(), base_cooldown, extra_cooldown)							
 				end
 			end)
 		end

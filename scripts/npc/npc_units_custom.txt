@@ -10702,15 +10702,18 @@
 "npc_dota_warlock_golem_scepter_3"
 {
 	"ConsideredHero"			"0"
-	"Ability1"                "generic_hidden"
+	"Ability1"                "bloodseeker_thirst"
 	"Ability2"                "generic_hidden"	
 	"Ability4"				  "summon_defense"
+	//"Ability8"				  ""
 	"AttackRate"				"0.8"
 	"StatusHealthRegen"			"15"
 	"StatusHealth"				"2550"
 	"AttackDamageMin"			"1200"
 	"AttackDamageMax"			"2900"
-	"MovementSpeed"			 "550"
+	"MovementSpeed"			 	"850"
+	"AttackAcquisitionRange"	"4500"		// Range within a target can be acquired.	
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 }
 
 
@@ -16288,7 +16291,7 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		"Creature"
 		{

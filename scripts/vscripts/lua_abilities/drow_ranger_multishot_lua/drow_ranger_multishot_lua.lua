@@ -118,6 +118,9 @@ end
 function modifier_drow_ranger_multishot_lua_stacks:IsPurgable()
 	return false
 end
+function modifier_drow_ranger_multishot_lua_stacks:RemoveOnDeath()
+	return false
+end
 
 function modifier_drow_ranger_multishot_lua_stacks:DeclareFunctions()
 	local funcs = {

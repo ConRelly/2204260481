@@ -12,6 +12,12 @@ function item_god_slayer:GetBehavior() return DOTA_ABILITY_BEHAVIOR_AOE + DOTA_A
 
 function item_god_slayer:OnSpellStart ()
 	if IsServer() then
+		local vcaster = self:GetCaster():GetAbsOrigin()
+		local vcenter = Vector(0,0,0)
+		local distance = (vcenter - vcaster):Length2D()
+		if distance and distance > 5500 then return end
+			
+
 		local thinker = CreateModifierThinker (self:GetCaster(), self, "modifier_atomic_samurai_focused_atomic_slash_thinker_2", {duration = self:GetSpecialValueFor("duration")}, self:GetCursorPosition(), self:GetCaster():GetTeamNumber(), false)
 
 		AddFOWViewer(self:GetCaster():GetTeam (), self:GetCursorPosition(), self:GetSpecialValueFor("radius") * 0.75, 4, false)

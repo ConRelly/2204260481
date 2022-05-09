@@ -116,7 +116,8 @@ function AddRecordedAction(modifier, keys)
 			["item_crit_edible"] = true,
 			["legion_commander_duel_lua"] = true,
 			["item_plain_perma"] = true,
-
+			["item_dimensional_doorway"] = true,
+			
 			["sourcery"] = true,
 			["sacred_blink"] = true,
 			["willpower"] = true,

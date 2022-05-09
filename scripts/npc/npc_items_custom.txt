@@ -17089,7 +17089,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"300 600 1200 2400 5800"
+				"bonus_damage"		"300 700 5000 10000 50000"
 			}
 		}
 
@@ -17147,7 +17147,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"300 600 1200 2400 5800"
+				"bonus_damage"		"300 700 5000 10000 50000"
 			}
 		}
 
@@ -17204,7 +17204,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"300 600 1200 2400 5800"
+				"bonus_damage"		"300 700 5000 10000 50000"
 			}
 		}
 
@@ -17261,7 +17261,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"300 600 1200 2400 5800"
+				"bonus_damage"		"300 700 5000 10000 50000"
 			}
 		}
 
@@ -17318,7 +17318,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"300 600 1200 2400 5800"
+				"bonus_damage"		"300 700 5000 10000 50000"
 			}
 		}
 
@@ -20659,7 +20659,7 @@
 	"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_4"
 	"AbilityTextureName"				"custom/resurection_pendant"
 	"ItemDisassembleRule"				"DOTA_ITEM_DISASSEMBLE_NEVER"
-	"ItemShareability"					"ITEM_FULLY_SHAREABLE"
+	"ItemShareability"					"ITEM_NOT_SHAREABLE"
 	//"ItemIsNeutralDrop"					"1"
 	"ItemShopTags"						"resurrection;pendant"
 	"ItemQuality"						"epic"

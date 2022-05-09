@@ -14465,7 +14465,8 @@
 	"BaseClass"				"ability_lua"
 	"AbilityTextureName"			"spectre_dispersion"
 	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"ScriptFile"					"abilities/heroes/spectre_custom_dispersion.lua"
 	"AbilitySpecial"
 	{
@@ -14484,7 +14485,20 @@
 			"var_type"			"FIELD_INTEGER"
 			"damage_reflection_pct"		"7 12 21 35"
 			"LinkedSpecialBonus"		"special_bonus_unique_spectre_5"
+			"CalculateSpellDamageTooltip"	"0"
 		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage_reflection_pct_ss"		"14 24 42 62"
+			"LinkedSpecialBonus"		"special_bonus_unique_spectre_5"
+			"CalculateSpellDamageTooltip"	"0"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"ss_reflection_mult"		"3"
+		}				
 	}
 }
 
@@ -31493,7 +31507,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"40 160 420 890 1420 1850 2325"
+				"bonus_damage"			"40 160 420 890 1620 2450 3325"
 				"LinkedSpecialBonus"	"special_bonus_unique_spectre_2"
 			}
 			"02"

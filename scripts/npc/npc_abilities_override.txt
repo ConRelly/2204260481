@@ -1387,7 +1387,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"500"
+				"value"				"900"
 				"ad_linked_abilities"			"spectre_desolate"
 			}
 		}
@@ -24367,7 +24367,10 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"100"
+		"ItemStockInitial"				"5"
+		"ItemStockMax"					"10"
+		"ItemStockTime"					"1500.0"		
+		"ItemCost"						"10000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_dimensional_doorway"
@@ -24383,12 +24386,14 @@
 		"ItemIsNeutralDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemPurchasable"				"1"
-		"ItemPermanent"					"1"
-		"ItemRequiresCharges"			"0"
-		"ItemDisplayCharges"			"0"
-		"ItemHideCharges"				"1"
-		"ItemInitialCharges"			"9999"
-		"AbilityCooldown"				"25.0"
+		"ItemPermanent"					"0"
+		"ItemRequiresCharges"			"1"
+		"ItemDisplayCharges"			"1"
+		"ItemHideCharges"				"0"
+		"ItemInitialCharges"			"1"
+		"IsTempestDoubleClonable"		"0"
+		"ItemStackable"					"1"				
+		"AbilityCooldown"				"50.0"
 	}
 
 // Recipe: Craggy Coat
