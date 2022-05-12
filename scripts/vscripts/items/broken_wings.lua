@@ -172,7 +172,7 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 			if keys.original_damage < 2 then return end -- avoid negative being transformed
 			self.hit = false
 			local feather_add_dmg = self:GetAbility():GetSpecialValueFor("feather_add_dmg")
-			local max_used_stacks = 50
+			local max_used_stacks = 49
 			local orig_dmg = keys.original_damage
 			local lvl = caster:GetLevel()
 			local spell_amp = caster:GetSpellAmplification(false)
@@ -180,17 +180,19 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 			local limit_pure = math.floor(lvl * 4000 / spell_amp)
 			local limit = 0
 			local used_stacks = 1
+			local divinity = caster:HasModifier("modifier_broken_wings_divinity")
 			if DamageType == DAMAGE_TYPE_MAGICAL then
 				limit = limit_magic
 			elseif DamageType == DAMAGE_TYPE_PURE then
 				limit = limit_pure
 			end
+			if not divinity and orig_dmg < (limit / 2) then return end
 			if orig_dmg > limit then
-				if caster:HasModifier("modifier_broken_wings_divinity") then
+				if divinity then
 					orig_dmg = limit
 				end
-				used_stacks = math.ceil(orig_dmg / limit + 1) + 3
-				if used_stacks > 50 then
+				used_stacks = math.ceil(orig_dmg / limit + 1) + 2
+				if used_stacks > 49 then
 					used_stacks = max_used_stacks
 				end
 			end
@@ -222,7 +224,7 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 				pos = 9
 			})
 
-			if caster:HasModifier("modifier_broken_wings_divinity") then self.hit = true return end
+			if divinity then self.hit = true return end
 			local cd = self:GetAbility():GetSpecialValueFor("feather_cd") * self:GetCaster():GetCooldownReduction()
 			Timers:CreateTimer(cd, function() self.hit = true end)
 			self:SetStackCount(self:GetStackCount() - used_stacks)

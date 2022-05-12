@@ -9517,57 +9517,32 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
-	"BaseClass"					 "witch_doctor_paralyzing_cask"
+	"BaseClass"					 	"witch_doctor_paralyzing_cask"
 	"AbilityCastRange"				"800"
 	"AbilityCastPoint"				"0.35"
 	"AbilityCooldown"				"15.0"
 	"AbilityDamage"					"700"
 	"AbilityManaCost"				"0"
-	"AbilitySpecial"
+	"AbilityValues"
 	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"hero_duration"			"0.7"
+		"hero_duration"			"1.0"
+		"creep_duration"		"0.5"
+		"base_damage"			"700"
+		"bounce_range"			"1000"
+		"bounces"				
+		{ 
+			"value"					"50"
+			"special_bonus_unique_witch_doctor_3"			"+2"
 		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"creep_duration"		"0.5"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"hero_damage"			"700"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bounce_range"			"950"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bounces"				"50"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"speed"					"1000"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"bounce_delay"			"0.3"
-		}
-		"08"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bounces_tooltip"		"20"
-		}
+		"speed"					"1000"
+		"bounce_delay"			"0.3"
+		"bounce_bonus_damage"			"50"
+		"creep_damage_pct"		"200"
 	}
 	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 }
+
+
 "custom_maledict_wrapper"
 {
 	"BaseClass"						"ability_datadriven"

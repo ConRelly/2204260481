@@ -1980,6 +1980,7 @@ and some other stuff
 
 * Fixed Alchemist ultimate base attack time talent.
 * Fixed Antimage Passive magic resist talent.
+* Fixed Tiny Tree Channel (Scepter).
 * Traxex's Necklace: New Super Scepter effect, chill stacks now increase by 5% for every second that passes , changed how Pure Speed calculations, added to shop item list.
 * Added another scaling element(lvl) for Disruptor Ion Hammer.
 * Added an interaction with a certain inventory slot for Ultimate Bloodstone.
@@ -1988,8 +1989,8 @@ and some other stuff
 * Dimensional dorrway starts 5 recipes(max 10) price increased and consumes a charge on use. //or removed
 * Added Super Scepter effect for Spectre dispersion, and removed the distance limits.
 * Pendant of Resurrection will not work from disconnected players and they will not be resurected unless you use the pendant from inventory first slot.
-* Slayer active can't be used from outside of map(~5.5k range from center map).
-
+* Slayer active can't be used from outside of map(~5.5k range from center of the map).
+* Solo: lvl 7 and 14 slayer fragment is guaranteed now, lvl 20 Edible fragment is guaranteed. To avoid confusion : Only the first 2 slayer fragments and first edible fragment.
 
 
 

@@ -18376,52 +18376,77 @@
 	}
 
 
-	"tiny_tree_channel"
+//=================================================================================================================
+// Ability: Tiny Tree Channel (Scepter)
+//=================================================================================================================
+"tiny_tree_channel"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"ID"					"7850"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED  | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"1"
+	"MaxLevel"						"1"
+    "HasScepterUpgrade"				"1"
+    "IsGrantedByScepter"			"1"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityChannelTime"			"3.7"
+	"AbilityCastRange"				"2600"
+	"AbilityCastPoint"				"0.2"
+	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+	"AbilityChannelAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"24"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"200"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
 	{
-		"AbilityCooldown"				"24"
-		"AbilityChannelTime"			"3.6"
-		"AbilityCastRange"				"2600"
-		"AbilityCastPoint"				"0.2"
-		"AbilitySpecial"
+		"01"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"2000.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"2800"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"splash_radius"			"950"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tree_grab_radius"		"9725"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"interval"				"0.10"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"500"
-				"CalculateSpellDamageTooltip"	"0"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"abilitychanneltime"		""
-			}
+			"var_type"			"FIELD_INTEGER"
+			"speed"		"2800.0"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"range"		"2800"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"splash_radius"				"950"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"tree_grab_radius"		"4500"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"interval"		"0.1"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_damage"				"600"
+			"CalculateSpellDamageTooltip"	"0"
 		}
 	}
+}
+
+
 	"tusk_tag_team"
 	{
 		"MaxLevel"					 "7"

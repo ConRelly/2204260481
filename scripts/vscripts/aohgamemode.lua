@@ -807,6 +807,8 @@ function AOHGameMode:_CheckWin()
 		end
 	end
 end
+local slayer_fragmet = 2
+local edible_bonus_fragment = 1
 function AOHGameMode:OnHeroLevelUp(event)
 	local hero = EntIndexToHScript(event.hero_entindex)
 	-- Save current unspend AP
@@ -822,7 +824,6 @@ function AOHGameMode:OnHeroLevelUp(event)
 	local cpEveryXLevel = 12
 	local itEveryXLevel = 75
 	local ediblefragment = 20
-
 
 	if hero:HasModifier("modifier_item_imba_skadi_unique") then
 		if hero:IsRealHero() then
@@ -853,26 +854,34 @@ function AOHGameMode:OnHeroLevelUp(event)
 		-- Check if main/real hero
 		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
 		if mainHero == hero then
-			if RandomInt( 0,100 ) < 28 then
+			if self._playerNumber < 2 and slayer_fragmet > 0 then
 				mainHero:AddItemByName("item_weapon_fragment")
-			end
-			if self._playerNumber < 4 then
-				if RandomInt( 0,100 ) < 20 then
+				slayer_fragmet = slayer_fragmet - 1
+			else
+				if RandomInt( 0,100 ) < 28 then
 					mainHero:AddItemByName("item_weapon_fragment")
-				end	
-			end
-			if self._playerNumber < 2 then
-				if RandomInt( 0,100 ) < 10 then
-					mainHero:AddItemByName("item_weapon_fragment")
-				end	
-			end				
+				end
+				if self._playerNumber < 4 then
+					if RandomInt( 0,100 ) < 20 then
+						mainHero:AddItemByName("item_weapon_fragment")
+					end	
+				end
+				if self._playerNumber < 2 then
+					if RandomInt( 0,100 ) < 10 then
+						mainHero:AddItemByName("item_weapon_fragment")
+					end	
+				end
+			end					
 		end
 	end
 	if (heroLevel % ediblefragment == 0) and not hero:IsIllusion() then
 		-- Check if main/real hero
 		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
 		if mainHero == hero then
-			if RandomInt( 0,100 ) < 25 then
+			if self._playerNumber < 2 and edible_bonus_fragment > 0 then
+				mainHero:AddItemByName("item_edible_fragment")
+				edible_bonus_fragment = edible_bonus_fragment - 1		
+			elseif RandomInt( 0,100 ) < 25 then
 				mainHero:AddItemByName("item_edible_fragment")
 			end
 		end

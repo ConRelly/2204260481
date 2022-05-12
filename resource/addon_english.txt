@@ -5898,12 +5898,13 @@ The extra targets will not receive other attack effects (such as critical strike
 
 
 "DOTA_Tooltip_ability_custom_paralyzing_cask"								"Paralyzing Cask"
-"DOTA_Tooltip_ability_custom_paralyzing_cask_Description"					"Launches a cask of paralyzing powder that ricochets between enemy units, stunning and damaging those it hits."
+"DOTA_Tooltip_ability_custom_paralyzing_cask_Description"					"Launches a cask of paralyzing powder that ricochets between enemy units, stunning and damaging those it hits. Each bounce deals more damage than the previous one. Deals %creep_damage_pct%%% damage to creeps."
 "DOTA_Tooltip_ability_custom_paralyzing_cask_Lore"							"The Witch Doctor recycles the bones of fallen friends and foes, using the powder as part of his arsenal of charms and alchemy."
 "DOTA_Tooltip_ability_custom_paralyzing_cask_Note0"							"Targets can be hit multiple times, as long as another unit is struck in between the bounces."
-"DOTA_Tooltip_ability_custom_paralyzing_cask_bounces_tooltip"				"BOUNCES:"
+"DOTA_Tooltip_ability_custom_paralyzing_cask_bounces"						"BOUNCES:"
 "DOTA_Tooltip_ability_custom_paralyzing_cask_hero_duration"					"HERO STUN DURATION:"
 "DOTA_Tooltip_ability_custom_paralyzing_cask_hero_damage"					"HERO DAMAGE:"
+"DOTA_Tooltip_ability_custom_paralyzing_cask_bounce_bonus_damage"			"BONUS DAMAGE PER BOUNCE:"
 
 "DOTA_Tooltip_ability_custom_maledict"									"Maledict"
 "DOTA_Tooltip_ability_custom_maledict_Description"						"Curses all enemy Heroes in a small area, causing them to take a set amount of damage each second, as well as bursts of damage every 4 seconds based on how much health they have lost since the curse began."
@@ -7889,6 +7890,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 "DOTA_Tooltip_modifier_item_imba_greater_crit_edible_Description"	"Have all the Stats and effects(including <font color='#0094FF'>Aghanim's Scepter</font>, <font color='#DE3163'>Super Scepter</font> and <font color='#C657C4'>UP: Mana Blade</font>) of a Devil's Daedalus with some stats slightly or greater improved."
 "DOTA_Tooltip_modifier_mana_blade_up_edible"						"<font color='#C657C4'>UP: Mana Blade</font>"
 "DOTA_Tooltip_modifier_mana_blade_up_edible_Description"			"Crit chance increased by %dMODIFIER_PROPERTY_TOOLTIP%%%"
+"DOTA_Tooltip_Ability_item_crit_edible_Note0"                       "The SS extra effect meants after lvl 66 you get 24%% crit dmg for each lvl."
 
 		//=================================================================================================================
 
@@ -9860,17 +9862,17 @@ Contains all random skills"
 
 
 	"DOTA_Tooltip_ability_item_god_slayer"				"<font color='#FF0000'>God Slayer</font>"
-	"DOTA_Tooltip_ability_item_god_slayer_Description"	"<h1><font color='#39CEFE'>Active: God Slash</font></h1>Attacks everything in %radius% AOE for %duration% seconds.<br>Adds extra %mana_per%%% (%mana_per_underdog%%% for Underdog) of your Max mana as <font color='#d8ae53'>pure damage</font> to Gods.\n<h1><font color='#39CEFE'>Passive: God Slayer</font></h1> Increases all outgoing damage by %stuff%%% (%stuff_underdog%%% for Underdog) against full Gods.\n<h1><font color='#EC3F0D'>Passive: Souls Collector</font></h1> Permanently gains an additional soul Charge for item, and a soul stack buff (buff gets lost on Unequip) when your team or you kill: Roshan, few of the wave bosses that i selected or with a %stack_chance%%% (%stack_underdog_chance%%% for Underdog) chance for any unit.\n<h1><font color='#EC3F0D'>Passive: Souls Experience</font></h1> Every Soul Stack and Charge give: <font color='#2ECC71'>%stack_agi% Agility</font>, <font color='#A93226'>%stack_str% Strength</font>, <font color='#5499C7'>%stack_spellamp%%% Spell Damage</font>, <font color='#DC7633'>%stack_armor% Armor</font> and <font color='#078D29'>%stack_health% Bonus Health</font>."
+	"DOTA_Tooltip_ability_item_god_slayer_Description"	"<h1><font color='#39CEFE'>Active: God Slash</font></h1>Attacks everything in %radius% AOE for %duration% seconds.<br>Adds extra %mana_per%%% (%mana_per_underdog%%% for Underdog) of your Max mana as <font color='#d8ae53'>pure damage</font> to Gods.\n<h1><font color='#39CEFE'>Passive: God Slayer</font></h1> Increases all outgoing damage by %stuff%%% (%stuff_underdog%%% for Underdog) against full Gods.\n<h1><font color='#EC3F0D'>Passive: Souls Collector</font></h1> Permanently gains an additional soul Charge for item, and a soul stack buff (buff gets lost on Unequip) when your team or you kill: Roshan or with a %stack_chance%%% (%stack_underdog_chance%%% for Underdog) chance for any unit.\n<h1><font color='#EC3F0D'>Passive: Souls Experience</font></h1> Every Soul Stack and Charge give: <font color='#2ECC71'>%stack_agi% Agility</font>, <font color='#A93226'>%stack_str% Strength</font>, <font color='#5499C7'>%stack_spellamp%%% Spell Damage</font>, <font color='#DC7633'>%stack_armor% Armor</font> and <font color='#078D29'>%stack_health% Bonus Health</font>."
 	"DOTA_Tooltip_ability_item_god_slayer_armor"			"+$armor"
 	"DOTA_Tooltip_ability_item_god_slayer_Note0"				"1) Attack inverval is %attack_interval% and can additionally add hits but with no bonus pure dmg if you have enough attack speed."
 	"DOTA_Tooltip_ability_item_god_slayer_Note1"				"2) Extra DMG of Max mana to non-Gods is only %mana_per_others%%%."
 	"DOTA_Tooltip_ability_item_god_slayer_Note2"				"3) The item can absorb another copy of himself taking his carges in the process."
 	"DOTA_Tooltip_ability_item_god_slayer_Note3"				"4) The extra pure damage is affected by Spell Damage."
 	"DOTA_Tooltip_ability_item_god_slayer_Note4"				"5) The God Slash ability stops if there are no enemies left in the selected AOE."
-	"DOTA_Tooltip_ability_item_god_slayer_Note5"				"6) Can be stopped by the cancel button."
+	"DOTA_Tooltip_ability_item_god_slayer_Note5"				"6) Can be stopped by the cancel button(H)."
 	"DOTA_Tooltip_ability_item_god_slayer_Lore"				"An weapon that grows in power along with the wielder, but only the weapon power can be passed to the next Slayer"
 	"DOTA_Tooltip_modifier_dragonborn"						   "Souls Stacks"
-	"DOTA_Tooltip_modifier_dragonborn_Description"			   "As long you keep the item in inventory you will have the stacks, any team member that kills something will give you statcks or base on chance if is not roshan or some wave Bosses(not all)"
+	"DOTA_Tooltip_modifier_dragonborn_Description"			   "As long you keep the item in inventory you will have the stacks, any team member that kills something will give you statcks or base on chance if is not roshan"
 	   
 	   "DOTA_Tooltip_ability_item_weapon_fragment"				 "<font color='#FF0000'>God Slayer Weapon Fragment</font>"
 	   "DOTA_Tooltip_ability_item_weapon_fragment_Description"	 "Gather with your team 4 of them and create a <font color='#FF0000'>God Slayer</font> item.\nBecause the weapon grows with team kills Timing is important in creating a Slayer weapon so decide with your team the order of who should have the shards"
