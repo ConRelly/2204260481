@@ -16,7 +16,10 @@ function item_broken_wings:OnProjectileHit(target, location)
 	local max_stacks = self:GetSpecialValueFor("feather_max_stacks")
 	if not target then return false end
 	if caster:HasModifier("modifier_broken_wings_divinity") then return end
-
+	if not self.windbuff then
+		self.windbuff = true
+		self.hadwindbuff = false 
+	end	
 	if not caster:HasModifier("modifier_broken_wings_feather_stacks") then
 		local feather_stacks = caster:AddNewModifier(caster, self, "modifier_broken_wings_feather_stacks", {})
 		feather_stacks:SetStackCount(1)
@@ -33,18 +36,22 @@ function item_broken_wings:OnProjectileHit(target, location)
 		local WindChance = self:GetSpecialValueFor("wind_rapier_chance")
 		if RollPercentage(WindChance) then
 			local WindRapier = caster:FindItemInInventory("item_wind_rapier")
-			if caster:HasModifier("modifier_wind_rapier_agility_buff") then
+			local haswindModif = caster:HasModifier("modifier_wind_rapier_agility_buff")
+			if haswindModif then
+				self.hadwindbuff = true
 				local WindRapierStack = caster:FindModifierByName("modifier_wind_rapier_agility_buff")
 				WindRapierStack:SetStackCount(WindRapierStack:GetStackCount() + 1)
-			else
+			elseif self.hadwindbuff then -- fix the bug if you buy wind rapier and never take out of backpack(item is not complete in creation). and keep the backpack Trick.
 				local duration = WindRapier:GetSpecialValueFor("stack_duration")
 				local agility_gain = WindRapier:GetSpecialValueFor("proc_bonus") * 0.01 * caster:GetAgility()
+
 				RapierStacks = caster:AddNewModifier(caster, WindRapier, "modifier_wind_rapier_agility_buff", {agility_gain = agility_gain, duration = duration})
-				RapierStacks:SetStackCount(1)
+				if haswindModif then
+					RapierStacks:SetStackCount(1)
+				end	
 			end
 		end
 	end
-
 	return true
 end
 
@@ -156,6 +163,28 @@ end
 function modifier_broken_wings_feather_stacks:GetModifierDamageOutgoing_Percentage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("feather_dmg_red") * self:GetStackCount() * (-1) end
 end
+
+
+
+local function get_inv_slotnr(unit)
+	if IsServer() then
+		for i = 0, 5 do
+			local found_item = false
+			local Item = unit:GetItemInSlot(i)
+			if Item ~= nil and IsValidEntity(Item) then
+				if Item:GetName() == "item_broken_wings" then
+					found_item = true
+				end
+				if found_item then 
+					return i
+				end	
+			end
+		end	
+		return 0
+	end			
+end
+
+
 function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 	if not IsServer() then return end
 	local caster = self:GetParent()
@@ -169,27 +198,38 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 	if self:GetStackCount() < 1 then return end
 	if self.hit == true then
 		if DamageType == DAMAGE_TYPE_MAGICAL or DamageType == DAMAGE_TYPE_PURE then
-			if keys.original_damage < 2 then return end -- avoid negative being transformed
+			if keys.original_damage < 2 then return end -- avoid negative being transformed in possitive and 2 instead of 1 for possible futture compatibility
 			self.hit = false
 			local feather_add_dmg = self:GetAbility():GetSpecialValueFor("feather_add_dmg")
 			local max_used_stacks = 49
 			local orig_dmg = keys.original_damage
-			local lvl = caster:GetLevel()
+			local lvl = caster:GetLevel() * 40
 			local spell_amp = caster:GetSpellAmplification(false)
-			local limit_magic = math.floor(lvl * 100000 / spell_amp)
-			local limit_pure = math.floor(lvl * 4000 / spell_amp)
+			local limit_magic = math.floor(lvl * 4000 / spell_amp)
+			local limit_pure = math.floor(lvl * 150 / spell_amp)
 			local limit = 0
 			local used_stacks = 1
 			local divinity = caster:HasModifier("modifier_broken_wings_divinity")
+			local inventorySlot = get_inv_slotnr(caster) or 0
 			if DamageType == DAMAGE_TYPE_MAGICAL then
 				limit = limit_magic
 			elseif DamageType == DAMAGE_TYPE_PURE then
 				limit = limit_pure
 			end
-			if not divinity and orig_dmg < (limit / 2) then return end
+			if inventorySlot > 0 then
+				if not divinity and orig_dmg < (limit / inventorySlot) then self.hit = true return end
+			end	
 			if orig_dmg > limit then
 				if divinity then
-					orig_dmg = limit
+					if orig_dmg > (limit * 4) then
+						orig_dmg = limit / 6					
+					elseif orig_dmg > (limit * 3) then
+						orig_dmg = limit / 4	
+					elseif orig_dmg > (limit * 2) then
+						orig_dmg = limit / 3	
+					else
+						orig_dmg = limit / 2
+					end											
 				end
 				used_stacks = math.ceil(orig_dmg / limit + 1) + 2
 				if used_stacks > 49 then

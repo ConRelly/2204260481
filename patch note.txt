@@ -1981,7 +1981,7 @@ and some other stuff
 * Fixed Alchemist ultimate base attack time talent.
 * Fixed Antimage Passive magic resist talent.
 * Fixed Tiny Tree Channel (Scepter).
-* Traxex's Necklace: New Super Scepter effect, chill stacks now increase by 5% for every second that passes , changed how Pure Speed calculations, added to shop item list.
+* Traxex's Necklace: New Super Scepter effect, chill stacks now increase by 5% for every second that passes , changed how Pure Speed calculations works, added to shop item list.
 * Added another scaling element(lvl) for Disruptor Ion Hammer.
 * Added an interaction with a certain inventory slot for Ultimate Bloodstone.
 * Amalgamation carnage from base speed (was giving just +320) to all speed but 20% , adjusted int and agility % bonus from SS .
@@ -1991,7 +1991,10 @@ and some other stuff
 * Pendant of Resurrection will not work from disconnected players and they will not be resurected unless you use the pendant from inventory first slot.
 * Slayer active can't be used from outside of map(~5.5k range from center of the map).
 * Solo: lvl 7 and 14 slayer fragment is guaranteed now, lvl 20 Edible fragment is guaranteed. To avoid confusion : Only the first 2 slayer fragments and first edible fragment.
-
+* Broken wings: 
+	--limiter now scales with your lvl a lot better(40x),(final limit is 80% higher for magic dmg). 
+	--Depending on the slot the item is and if divinity is not up the item will not trigger on dmg instances smaler then limit / inventory slot.(slot 1 = 0 (OFF)). 
+	--In divinity mode item deals less if your dmg instance is higher then limiter(up to 6 times smaler if is above 4x limiter).
 
 
 
