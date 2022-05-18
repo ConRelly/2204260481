@@ -52,6 +52,7 @@ LinkLuaModifier("modifier_aegis_buff", "items/custom/item_aegis_lua", LUA_MODIFI
 LinkLuaModifier("modifier_phys", "modifiers/modifier_phys.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_bristleback_quill_spray_autocast6", "abilities/hero_bristleback/modifier_mjz_bristleback_quill_spray_autocast6.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_boss_hpbar2", "abilities/boss_hpbar2.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_double_trouble", "modifiers/modifier_double_trouble.lua", LUA_MODIFIER_MOTION_NONE)
 
 if AOHGameMode == nil then
 	_G.AOHGameMode = class({})
@@ -1165,11 +1166,14 @@ function AOHGameMode:OnEntitySpawned(event)
         end
 		if self._hardMode then
 			unit:AddNewModifier(unit, nil, "modifier_hard_mode_boss", {}) 
-			if unit:IsBoss() or unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
+			if unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
 				--print("boss moster")
 				unit:AddNewModifier(unit, nil, "modifier_phys", {})
 			end	
 		end
+		if unit:GetUnitName() == "npc_boss_guesstuff_Moran" or  unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
+			unit:AddNewModifier(unit, nil, "modifier_double_trouble", {})
+		end			
 	end
 	if custom_hp_bar[unit:GetUnitName()] == true then
 		unit:AddNewModifier(unit, nil, "modifier_boss_hpbar2", {})

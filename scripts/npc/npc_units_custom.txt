@@ -6161,11 +6161,11 @@
 	//"Ability5"					"boss_spectre_reality"
 	//"Ability6"					"boss_spectre_haunt"
 	
-	"ArmorPhysical"				"93"
-	"MagicalResistance"			"70"
+	"ArmorPhysical"				"150"
+	"MagicalResistance"			"90"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"			"650"
-	"AttackDamageMax"			"1800"
+	"AttackDamageMax"			"3800"
 	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 	"AttackRate"				"1.35"
 	"BaseAttackSpeed"			"200"
@@ -6181,9 +6181,9 @@
 	"RingRadius"				"170"
 	"HealthBarOffset"			"300"
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"290"
+	"MovementSpeed"				"100"
 	"MovementTurnRate"			"0.5"
-	"StatusHealth"				"390000"
+	"StatusHealth"				"490000"
 	"StatusHealthRegen"			"5000"
 	"StatusMana"				"12000"
 	"StatusManaRegen"			"1000"
@@ -6225,7 +6225,7 @@
 			"MKB"				 { "Item"		"item_monkey_king_bar" }
 			"Moonshard"			 { "Item"		"item_moon_shard"	  }
 			"Skadi"			  { "Item"	   "item_dark_skadi"		   }
-//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_70" }
+			"Speedsters"		{ "Item"		"item_high_tech_boots2" }
 			"Boss Resistance"		   { "Item"		"item_plain_ring" }
 
 		}
@@ -6272,7 +6272,7 @@
 	//"Ability6"					"boss_spectre_haunt"
 	
 	"ArmorPhysical"				"193"
-	"MagicalResistance"			"90"
+	"MagicalResistance"			"93"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"			"8650"
 	"AttackDamageMax"			"18000"
@@ -6291,9 +6291,9 @@
 	"RingRadius"				"170"
 	"HealthBarOffset"			"300"
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"490"
+	"MovementSpeed"				"200"
 	"MovementTurnRate"			"0.5"
-	"StatusHealth"				"990000"
+	"StatusHealth"				"1990000"
 	"StatusHealthRegen"			"15000"
 	"StatusMana"				"12000"
 	"StatusManaRegen"			"1000"
@@ -6332,11 +6332,11 @@
 		"EquippedItems"
 		{
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
-			"MKB"				 { "Item"		"item_monkey_king_bar" }
-			"Moonshard"			 { "Item"		"item_moon_shard"	  }
-			"Skadi"			  { "Item"	   "item_dark_skadi"		   }
-//			"Boss Resistance"	   	{ "Item"		"item_boss_resistance_70" }
-			"Boss Resistance"		   { "Item"		"item_plain_ring" }
+			//"MKB"				{ "Item"		"item_monkey_king_bar" }
+			"MJ"			 	{ "Item"		"item_mjz_mjollnir_5"	 }
+			"Skadi"			  	{ "Item"	    "item_dark_skadi"		   }
+			"Speedsters"		{ "Item"		"item_high_tech_boots2" }
+			"Gold Ring"			{ "Item"		"item_plain_ring" }
 
 		}
 		"AttachWearables"

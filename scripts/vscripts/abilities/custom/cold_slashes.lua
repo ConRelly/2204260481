@@ -151,7 +151,7 @@ function modifier_cold_slashes_target:OnIntervalThink ()
             if self:IsNull() then return end
             self:Destroy ()
         end
-        caster:SetAbsOrigin (target:GetAbsOrigin ())
+        --caster:SetAbsOrigin (target:GetAbsOrigin ())
         FindClearRandomPositionAroundUnit(caster, target, math.random(500))
         --FindClearSpaceForUnit (caster, target:GetAbsOrigin (), false)
 
@@ -163,7 +163,7 @@ function modifier_cold_slashes_target:OnIntervalThink ()
         local nFXIndexy = ParticleManager:CreateParticle ("particles/deadpool_multislash_trail.vpcf", PATTACH_ABSORIGIN_FOLLOW, target);
         ParticleManager:SetParticleControl (nFXIndexy, 0, target:GetAbsOrigin ());
         ParticleManager:SetParticleControl (nFXIndexy, 1, caster:GetAbsOrigin ());
-        ParticleManager:ReleaseParticleIndex (nFXIndex);        
+        ParticleManager:ReleaseParticleIndex (nFXIndexy);        
         caster:StartGestureWithPlaybackRate (ACT_DOTA_ATTACK, 2)
         --EmitSoundOn ("Hero_Juggernaut.OmniSlash.Damage", target)
         caster:EmitSoundParams("Hero_Juggernaut.OmniSlash.Damage", 0, 0.5, 0)

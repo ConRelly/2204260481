@@ -24409,7 +24409,7 @@
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemIsNeutralDrop"				"0"
-		"ItemSellable"					"1"
+		"ItemSellable"					"0"
 		"ItemPurchasable"				"1"
 		"ItemPermanent"					"0"
 		"ItemRequiresCharges"			"1"
