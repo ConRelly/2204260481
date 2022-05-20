@@ -9006,7 +9006,7 @@ Required Level: %required_level%
 		//<<<<
 		//>>>>	MJZ Monke King Bar LVL 5
 		"DOTA_Tooltip_Ability_item_mjz_monkey_king_bar_5"							"Monke King Bar LVL 5"
-		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_Description"				"<h1>Passive: Pierce</h1>Grants each attack a %bonus_chance%%% chance to pierce through evasion and deal %bonus_chance_damage% bonus magical damage."
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_Description"				"<h1>Passive: Pierce</h1>Grants each attack a %bonus_chance%%% chance to pierce through evasion and deal %bonus_chance_damage% bonus magical damage.\n<h1><font color='#0597EB'>UP:Frostmourne Frostbite</font></h1><font color='lightblue'> If your level is above 69 Forstbite passive CD is affected by CDR.</font>"
 		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_bonus_damage"				"+$damage"
 		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_bonus_attack_speed"		"+$attack"
 		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_Lore"						"A powerful staff used by a master warrior."

@@ -14763,7 +14763,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"52 200 960 2100 9000"
+				"bonus_damage"				"200 960 2100 4400 19200"
 			}
 			"02"
 			{
@@ -14773,12 +14773,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance"				"75 77 79 81 83"
+				"bonus_chance"				"75 77 79 81 91"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance_damage"		"100 350 950 4550 39080"
+				"bonus_chance_damage"		"100 350 950 4550 99080"
 			}
 		}
 	}
@@ -14816,7 +14816,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"52 200 960 2100 9000"
+				"bonus_damage"				"200 960 2100 4400 19200"
 			}
 			"02"
 			{
@@ -14826,12 +14826,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance"				"75 77 79 81 83"
+				"bonus_chance"				"75 77 79 81 91"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance_damage"		"100 350 950 4550 39080"
+				"bonus_chance_damage"		"100 350 950 4550 99080"
 			}
 		}
 	}
@@ -14870,7 +14870,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"52 200 960 2100 9000"
+				"bonus_damage"				"200 960 2100 4400 19200"
 			}
 			"02"
 			{
@@ -14880,12 +14880,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance"				"75 77 79 81 83"
+				"bonus_chance"				"75 77 79 81 91"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance_damage"		"100 350 950 4550 39080"
+				"bonus_chance_damage"		"100 350 950 4550 99080"
 			}
 		}
 	}
@@ -14924,7 +14924,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"52 200 960 2100 9000"
+				"bonus_damage"				"200 960 2100 4400 19200"
 			}
 			"02"
 			{
@@ -14934,12 +14934,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance"				"75 77 79 81 83"
+				"bonus_chance"				"75 77 79 81 91"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance_damage"		"100 350 950 4550 39080"
+				"bonus_chance_damage"		"100 350 950 4550 99080"
 			}
 		}
 	}

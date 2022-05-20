@@ -2215,7 +2215,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"220 2960 8530 15250 47500 115000 225400"
+				"damage"				"220 2960 8530 15250 47500 115000 195400"
 				"LinkedSpecialBonus"	"special_bonus_unique_ancient_apparition_2"
 			}
 			"02"
@@ -2251,6 +2251,15 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5348"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Ancient_Apparition.IceBlast.Target"
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.01"
@@ -2261,6 +2270,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"55.0"
 		"MaxLevel"					  "5"
+		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"175"
@@ -2271,56 +2281,24 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius_min"			"275"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"radius_grow"			"25.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius_max"			"700"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"path_radius"			"275"
-			}
-			"05"
+			"radius_min"			"100"
+			"radius_grow"			"25.0"
+			"radius_max"			"400"
+			"path_radius"			"100"
+			"frostbite_duration"	"5"
+			"dot_damage"			"250 950 2950 6250 12500"
+			"speed"					"650"
+			"kill_pct"
 			{	
-				"var_type"				"FIELD_FLOAT"
-				"frostbite_duration"	"5"
+				"value"				"5"
+				"special_bonus_unique_ancient_apparition_5"	"+3"
 			}
-			"06"
-			{	
-				"var_type"				"FIELD_FLOAT"
-				"dot_damage"			"250 950 2950 6250 12500"
-			}
-			"07"
-			{	
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"750"
-			}
-			"08"
-			{	
-				"var_type"				"FIELD_FLOAT"
-				"kill_pct"				"6"
-				"LinkedSpecialBonus"	"special_bonus_unique_ancient_apparition_5"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"target_sight_radius"	"500"
-			}
+			"target_sight_radius"	"500"
 		}
 	}
+
 	"ancient_apparition_ice_vortex"
 	{
 		"AbilitySpecial"
@@ -24409,8 +24387,8 @@
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemIsNeutralDrop"				"0"
-		"ItemSellable"					"0"
-		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemPurchasable"				"0"
 		"ItemPermanent"					"0"
 		"ItemRequiresCharges"			"1"
 		"ItemDisplayCharges"			"1"

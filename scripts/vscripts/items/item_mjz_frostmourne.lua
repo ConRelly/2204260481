@@ -28,9 +28,24 @@ function FrostmourneAttack(event)
     end
 end
 
+local function monkey_in_inventory(unit)
+    if IsServer() then
+        for i = 0, 5 do
+            local Item = unit:GetItemInSlot(i)        
+            if Item ~= nil and IsValidEntity(Item) then
+                if Item:GetName() == "item_mjz_monkey_king_bar_5" then
+                    return true	
+                end	
+            end
+        end   
+        return false
+    end    		
+end
+
 function HealthAttack(event)
     --Deal 5% of the target's current health in physical damage
     --造成目标当前生命值5%的物理伤害
+    if not IsServer() then return end
     local ability = event.ability
     local caster = event.caster
     if caster:IsRealHero() and ability:IsCooldownReady() then
@@ -63,14 +78,20 @@ function HealthAttack(event)
                 damage_type = DAMAGE_TYPE_PHYSICAL,
                 damage_flags = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR
             })
-        end            
-        ability:StartCooldown(4)
+        end
+        local lvl = caster:GetLevel()
+        if lvl > 69 and monkey_in_inventory(caster) then
+            local cdr = 4 * caster:GetCooldownReduction()
+            ability:StartCooldown(cdr)
+        else   
+            ability:StartCooldown(4)
+        end   
         local coil = ParticleManager:CreateParticle("particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
         ParticleManager:SetParticleControl(coil, 0, event.target:GetAbsOrigin())
         ParticleManager:ReleaseParticleIndex(coil)                      
     end                   
 end
-
+--not used, heal effects tend to lag if is trigger many times/s
 function HealAndDamageByTargetHP( event )   --FrostmourneRuin
     --take 15% of targets max HP
     local targetHP = event.target:GetMaxHealth() * 0.15
