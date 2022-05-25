@@ -2006,6 +2006,10 @@ and some other stuff
 
 
 
+* Added some extra guards for spectre boss passive to try avoiding some random crashes.
+* Chen Units gain aghanim buff when they are converted or updated like broodmother. If chen has Aghanim's ofc
+
+
 
 
 

@@ -111,6 +111,9 @@ function HolyPersuasion(keys)
 	ability:ApplyDataDrivenModifier(caster, target, "modifier_invulnerable", {})
 	ability:ApplyDataDrivenModifier(caster, target, "modifier_phased", {})
 	ability:ApplyDataDrivenModifier(caster, target, "modifier_fountain_aura_buff", {})
+	if caster:HasScepter() then
+		ability:ApplyDataDrivenModifier(caster, target, "modifier_item_ultimate_scepter_consumed", {})
+	end	
 	FindClearSpaceForUnit(target, target:GetAbsOrigin(), true)
 	if target:HasModifier("modifier_boss") then
 		target:RemoveModifierByName("modifier_boss")
@@ -126,10 +129,10 @@ function HolyPersuasion(keys)
 end
 
 
-LinkLuaModifier("modifier_agha_scepter_aura", "abilities/heroes/chen_custom_holy_persuasion", LUA_MODIFIER_MOTION_NONE)
+--LinkLuaModifier("modifier_agha_scepter_aura", "abilities/heroes/chen_custom_holy_persuasion", LUA_MODIFIER_MOTION_NONE)
 
 update_chen_holy_persuasion = class({})
-function update_chen_holy_persuasion:GetIntrinsicModifierName()	return "modifier_agha_scepter_aura" end
+--function update_chen_holy_persuasion:GetIntrinsicModifierName()	return "modifier_agha_scepter_aura" end
 function update_chen_holy_persuasion:GetCooldown(lvl)
 	return self.BaseClass.GetCooldown(self, lvl) / self:GetCaster():GetCooldownReduction()
 end
@@ -140,7 +143,7 @@ function update_chen_holy_persuasion:OnSpellStart()
 	if IsServer() then
 		local caster = self:GetCaster()
 		local unit_position = 0
-
+		local ability = self
 		local search_controlled = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD, FIND_ANY_ORDER, false)
 		for _, unit in pairs(search_controlled) do
 			if unit ~= caster and unit:GetUnitName() ~= "npc_dota_courier" then
@@ -164,9 +167,12 @@ function update_chen_holy_persuasion:OnSpellStart()
 							wisp_talent:UpgradeAbility(true)
 							wisp_talent:SetLevel(1)
 						end
+						if not unit:HasModifier("modifier_item_ultimate_scepter_consumed") then
+							unit:AddNewModifier(caster, ability, "modifier_item_ultimate_scepter_consumed", {})
+						end								
 					end
 
-					local nAbilities = unit:GetAbilityCount()
+					local nAbilities = unit:GetAbilityCount() - 1
 					for i = 0, nAbilities do
 						local hAbility = unit:GetAbilityByIndex(i)
 						if hAbility and hAbility:CanAbilityBeUpgraded() == ABILITY_CAN_BE_UPGRADED then
@@ -206,7 +212,7 @@ function update_chen_holy_persuasion:OnSpellStart()
 	end
 end
 
-modifier_agha_scepter_aura = class({})
+--[[ modifier_agha_scepter_aura = class({})
 function modifier_agha_scepter_aura:IsHidden() return true end
 function modifier_agha_scepter_aura:IsAura() return self:GetCaster():HasScepter() end
 function modifier_agha_scepter_aura:IsAuraActiveOnDeath() return false end
@@ -215,14 +221,14 @@ function modifier_agha_scepter_aura:GetAuraSearchFlags() return DOTA_UNIT_TARGET
 function modifier_agha_scepter_aura:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_FRIENDLY end
 function modifier_agha_scepter_aura:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
 function modifier_agha_scepter_aura:GetModifierAura() return "modifier_item_ultimate_scepter_consumed" end
-function modifier_agha_scepter_aura:GetAuraDuration() return FrameTime() end
+function modifier_agha_scepter_aura:GetAuraDuration() return 0.5 end
 function modifier_agha_scepter_aura:GetAuraEntityReject(target)
 	if target:GetMainControllingPlayer() ~= self:GetCaster():GetPlayerOwnerID() or target == self:GetCaster() then
 		return true
 	end
 	return false
 end
-
+ ]]
 --[[Author: Pizzalol
 	Date: 06.04.2015.
 	Removes the target from the table]]
