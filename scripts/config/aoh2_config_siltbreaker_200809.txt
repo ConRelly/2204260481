@@ -106,7 +106,7 @@
 
             "b" 
 			{
-				"NPCName"				"npc_boss_kobold_foreman2"
+				//"NPCName"				"npc_boss_kobold_foreman2"
 				//"NPCName"               "npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"

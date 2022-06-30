@@ -40,7 +40,6 @@ function modifier_double_trouble:OnIntervalThink()
                         if unit:GetUnitName() ~= parent:GetUnitName() then -- makes sure it does not activate on -double by removing self and copy of self
                             if unit:GetUnitName() == "npc_boss_guesstuff_Moran" or unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
                                 self.troble_active = true
-                                Notifications:TopToAll({text="Double Trouble Enrage", style={color="red"}, duration=7})
                             end
                         end    
                     end
@@ -65,11 +64,14 @@ function modifier_double_trouble:OnIntervalThink()
                     end
                 end
                 self.teleport_chance = 7 
+            end 
+            if self.solo_boss and not self.announce_msg then
+                self.announce_msg = true
+                Notifications:TopToAll({text="Double Trouble Enrage", style={color="red"}, duration=7})
             end    
         end
     end 
 end
-
 
 function modifier_double_trouble:DeclareFunctions()
 	return {
