@@ -193,9 +193,10 @@
 	"Ability7"					"hw_sharpshooter_release"
 	"Ability10"					"special_bonus_hp_2000"
 	"Ability13"                 "special_bonus_hw_sharpshooter_agi"
+	"Ability17"                 "special_bonus_unique_hoodwink_sharpshooter_pure_damage"
 
 	"AttackRate"				"1.6"
-	"AttributeAgilityGain"		"9.6"
+	"AttributeAgilityGain"		"18.6"
 	"AttributeIntelligenceGain" "6.2"
 	"AttributeStrengthGain"		"4.2"
 }

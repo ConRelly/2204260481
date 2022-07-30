@@ -122,7 +122,7 @@ function modifier_item_imba_greater_crit_edible_buff:DeclareFunctions()
 end
 function modifier_item_imba_greater_crit_edible_buff:GetModifierPreAttack_CriticalStrike()
 	local parent = self:GetParent()
-	if RollPseudoRandomPercentage(self.crit_chance, 0, parent) then
+	if RollPseudoRandomPercentage(self.crit_chance, 0, parent) or parent:HasModifier("modifier_mows_slasher") then
 		if parent:HasModifier("modifier_mana_blade_aura_emitter") then
 			if parent:HasModifier("modifier_mana_blade_up_edible") then
 				local devils_up = parent:FindModifierByName("modifier_mana_blade_up_edible")

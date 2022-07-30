@@ -409,7 +409,7 @@
 			}	
 		}
 		
-		"10" // Bristle					刚被
+		"10" // Bristle					
 		{
 			"Title"						"Die Trying"
 			"MaxGold"					"6600"
@@ -999,7 +999,7 @@
 			}
 		}
 
-		"35" // Siltbreaker				破泞之主
+		"35" // Siltbreaker				
 		{
 			"Title"						"Siltbreaker"
 			"MaxGold"					"8000"
@@ -1593,7 +1593,7 @@
 			}	
 		}
 		
-		"10" // Bristle					刚被
+		"10" // Bristle					
 		{
 			"Title"						"Die Trying"
 			"MaxGold"					"4600"
@@ -3266,7 +3266,7 @@
 				"SpawnInterval"			"1"
 			}
 		}	
-		"31" // Siltbreaker				破泞之主
+		"31" // Siltbreaker				
 		{
 			"Title"						"The not so hard Siltbreaker"
 			"MaxGold"					"4000"

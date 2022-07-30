@@ -2011,6 +2011,23 @@ and some other stuff
 
 
 
+New item : Master of Weapon's, Sword.
+* Fixed Wraith King Ultimate aghanim aura triggering gold ring and still killing you, might have fixed other exceptions of death and trigger gold ring at the same time. Added 1 sec extra duration for Wk aghanim.
+* Fixed the multiple Enrage announce for the last round(enrage was activating acording to the rule, so just visual)
+* Fix Overwhelming blink having 0 blink range
+* Hoodwink: Ultimate SS has an extra effect , agility gain per level almost 2x , added back the talent that changes his ultimate Dmg type, buffed bumerang(in utility).
+* Abysal water blade recipe cost from 25k to 15k.
+
+
+
+
+
+
+
+
+
+
+
 
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.

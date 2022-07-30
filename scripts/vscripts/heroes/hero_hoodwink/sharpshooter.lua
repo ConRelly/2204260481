@@ -37,6 +37,18 @@ function hw_sharpshooter:GetBehavior()
 	end
 	return self.BaseClass.GetBehavior(self)
 end
+function hw_sharpshooter:GetCooldown (nLevel)
+	if not self:GetCaster():HasModifier("modifier_super_scepter") then
+		return self.BaseClass.GetCooldown (self, nLevel)
+	end	
+	if IsServer() then
+		if self:GetCaster():HasModifier("modifier_super_scepter") and self:GetAutoCastState() then -- because GetAutoCastState is server only it will not diplay the CD anymore on skill
+			return self.BaseClass.GetCooldown (self, nLevel) / 3
+		else
+			return self.BaseClass.GetCooldown (self, nLevel)	
+		end
+	end	
+end
 function hw_sharpshooter:GetCastRange(location, target)
 	if not IsServer() then return end
 	if self:GetCaster():HasScepter() then
@@ -45,23 +57,29 @@ function hw_sharpshooter:GetCastRange(location, target)
 	return self:GetTalentSpecialValueFor("arrow_range")
 end
 function hw_sharpshooter:OnSpellStart()
+	if not IsServer() then return end
 	local caster = self:GetCaster()
 	local point = self:GetCursorPosition()
 	local duration = self:GetSpecialValueFor("misfire_time")
-
+	self.brake_full_duration = true
 	if self:GetCaster():HasScepter() then
 		self.delete_on_hit = false
 	else
 		self.delete_on_hit = true
 	end
+
 	if self:GetAutoCastState() then
 		self.delete_on_hit = true
 		self.target_flag = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
 	else
 		self.target_flag = DOTA_UNIT_TARGET_FLAG_NONE
 	end
-
-	caster:AddNewModifier(caster, self, "modifier_hw_sharpshooter", {duration = duration, x = point.x, y = point.y, delete_on_hit = self.delete_on_hit, target_flag = self.target_flag})
+	if self:GetAutoCastState() and caster:HasModifier("modifier_super_scepter") then
+		caster:AddNewModifier(caster, self, "modifier_hw_sharpshooter", {duration = duration / 10, x = point.x, y = point.y, delete_on_hit = self.delete_on_hit, target_flag = self.target_flag})
+		self.brake_full_duration = false
+	else	
+		caster:AddNewModifier(caster, self, "modifier_hw_sharpshooter", {duration = duration, x = point.x, y = point.y, delete_on_hit = self.delete_on_hit, target_flag = self.target_flag})
+	end	
 end
 
 function hw_sharpshooter:OnProjectileThink_ExtraData(location, ExtraData)
@@ -102,10 +120,10 @@ function hw_sharpshooter:OnProjectileHit_ExtraData(target, location, ExtraData)
 
 	local damageTable = {victim = target, attacker = caster, damage = damage, damage_type = damage_type, ability = self, damage_flags = DOTA_DAMAGE_FLAG_NONE}
 	ApplyDamage(damageTable)
-
 	target:AddNewModifier(caster, self, "modifier_hw_sharpshooter_debuff", {duration = ExtraData.duration, x = ExtraData.x, y = ExtraData.y})
 	if damage2 > 0 then 		
-		local damageTable2 = {victim = target, attacker = caster, damage = damage2, damage_type = damage_type, ability = self, damage_flags = DOTA_DAMAGE_FLAG_NONE}
+		local damageTable2 = {victim = target, attacker = caster, damage = damage2 / 2, damage_type = damage_type, ability = self, damage_flags = DOTA_DAMAGE_FLAG_NONE}
+		ApplyDamage(damageTable2)
 		ApplyDamage(damageTable2)
 	end
 	SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, target, damage + damage2, self:GetCaster():GetPlayerOwner())
@@ -166,6 +184,9 @@ function modifier_hw_sharpshooter:OnCreated(kv)
 	self.recoil_distance = self:GetAbility():GetSpecialValueFor("recoil_distance")
 	self.recoil_duration = self:GetAbility():GetSpecialValueFor("recoil_duration")
 	self.recoil_height = self:GetAbility():GetSpecialValueFor("recoil_height")
+	if self:GetAbility():GetAutoCastState() and self.caster:HasModifier("modifier_super_scepter") then
+		self.duration = self.duration / 3
+	end	
 	self.interval = 0.03 
 	self:StartIntervalThink(self.interval)
 	self.projectile_speed = self:GetAbility():GetSpecialValueFor("arrow_speed")
@@ -184,6 +205,7 @@ function modifier_hw_sharpshooter:OnCreated(kv)
 	self.face_target = true
 	self.parent:SetForwardVector(self.current_dir)
 	self.turn_speed = self.interval * self.turn_rate
+
 
 	self.info = {
 		Source = self.parent,

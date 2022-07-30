@@ -302,6 +302,7 @@ function IsExcludeAbility(ability)
 		"item_imba_ultimate_scepter_synth2",
 		"item_ritual_shovel",
 		"item_custom_seer_stone",
+		"item_master_of_weapons_sword",
 -- Abilities
 		"phoenix_fire_spirits",
 		"mjz_phoenix_sun_ray",
@@ -369,6 +370,7 @@ end
 function IsExcludeAbility9(ability)
 	local list = {
 -- Items
+		"item_master_of_weapons_sword",
 -- Abilities
 		"mjz_tinker_quick_arm",
 		"naga_siren_song_of_the_siren",

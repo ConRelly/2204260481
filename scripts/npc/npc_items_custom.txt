@@ -33435,7 +33435,7 @@
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
-		"ItemCost"						"25000"	
+		"ItemCost"						"15000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_abyssal_water_blade"
@@ -35300,6 +35300,25 @@
 		}
 	}
 
+// Recipe: Master Of Weapons
+	"item_recipe_master_of_weapons_sword"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"50000"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemStockInitial"				"1"
+		"ItemStockMax"					"1"
+		"ItemStockTime"					"99999.0"		
+		"ItemResult"					"item_master_of_weapons_sword"
+		"ItemRequirements"
+		{
+			"01"						"item_infinite_rapier;item_enchanter;item_all_essence"
+		}
+	}
+
 	"item_master_of_weapons_sword"
 	{
 		"BaseClass"						"item_lua"
@@ -35309,27 +35328,32 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"AbilityTextureName"			"custom/mows_sword"
+		"AbilityTextureName"			"mows_sword"
 		"ItemCost"						"500"
-		"AbilityCastRange"				"350"
+		"AbilityCastRange"				"550"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"17 14"
+		"AbilityCooldown"				"19"
 		"AbilityManaCost"				"50"
 		"ItemQuality"					"artifact"
-		"ItemPurchasable"				"0"
-		"ItemSellable"					"0"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
 		"ItemKillable"					"1"
+		"AllowedInBackpack"				"0"
+		"IsTempestDoubleClonable"		"0"		
+		//"MaxUpgradeLevel"				"2"
+		//"ItemBaseLevel"					"1"		
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilityValues"
 		{
-			"bonus_damage"					"7500 12500"
-			"bonus_ms"						"250 425"
+			"bonus_damage"					"11500"
+			"bonus_ms"						"350"
 			"bonus_attack_range"			"300"
-			"bonus_as"						"150 300"
-			"bonus_all_stats"				"500 1000"
-			
+			"bonus_as"						"200"
+			"bonus_all_stats"				"750"
+			"fire_rapier_chance"            "33"
 			"duration"						"2.5"
 			"bounce_range"					"600"
+			"radius_expl"                   "2000"
 //			"attack_rate_multiplier"		"2.5"
 		}
 		"precache"

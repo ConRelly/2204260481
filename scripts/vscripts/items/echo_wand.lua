@@ -190,6 +190,7 @@ if IsServer() then
 		item_great_manta = true,
 		item_illusionsts_cape = true,
 		item_life_greaves = true,
+		item_master_of_weapons_sword = true,
 		--mjz_doom_bringer_devour = true,
 		--mjz_clinkz_soul_pact = true,
 		frostivus2018_clinkz_burning_army = true,

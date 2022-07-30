@@ -464,12 +464,29 @@
 	"DOTA_Tooltip_ability_item_to_kardel"					"Kardel's Kit"
 	"DOTA_Tooltip_ability_item_to_kardel_description"		"Changes the character to Kardel."
 
-	"DOTA_Tooltip_ability_item_master_of_weapons_sword"			"Master Of Weapons' Sword"
+
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword"					"Master Of Weapons' Sword"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword_description"		"<h1>Active: Image Of Benedict</h1> Creating a copy of yourself, dashing to enemy target quickly, slashing at a rate of 0.13s dealing x2 total ATK as Dmg & exploding the enemy in a %radius_expl% radius repeating an extra time for every 20 levels you have, gaining and Explosive stack for each repetition, can ignore armor in certain codition. <br> Duration Of Slash = %duration% + (1 every 1500 Attack Speed) sec \n<h1><font color='#FF4500'>UP: Fire Rapier</font></h1> Each slash has %fire_rapier_chance%%% chance to proc Fire Rapier \n<h1><font color='#BE03FF'>UP: Edible Devil's Daedalus</font></h1>All Slashes have 100% Crit chance \n<h1><font color='#FC6BF1'>UP: Good Juju</font></h1> Reduces cooldown to 12 sec"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword_lore"	"Gifted Sword, From Who Mastered All Weapons..."
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword_note0"	"Unaffected by Cooldown Reduction"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_damage"			"+$damage"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_ms"				"+$move_speed"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_attack_range"		"+$attack_range_all"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_as"				"+$attack"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_all_stats"			"+$all"
+
+	"DOTA_Tooltip_modifier_mows"					"Explosive Gains"
+	"DOTA_Tooltip_modifier_mows_description"		"+%dMODIFIER_PROPERTY_TOOLTIP% Bonus DMG , base on your hero level x stacks."
+
+	"DOTA_Tooltip_ability_true_master"					"The True Master Of Weapons"
+	"DOTA_Tooltip_ability_true_master_description"		"<h1>Long Edged Sword</h1> Attacking from 850 units away will have %sword_crit_chance%%% chance for a %sword_crit_damage%%% Crit. \n<h1>Forbidden Dagger</h1> Bleeding enemy takes 5% dmg AMP, using dagger gives you great mobility, uncaps MS & starts giving 3k MS after LV.65, dodging any Dmg with %dagger_dodge_chance%%% chance. \n<h1>Ancient Gun</h1> Has %dagger_true_strike%%% true-strike chance. <br> Allows to atk always except during disarm debuffs. <br> Gunshots deal x8 Dmg in 4 instances, fixed rate of 3 atk/sec then reloads for a sec."
+	"DOTA_Tooltip_ability_true_master_lore"		"Some choose bullets, others choose blades, why not ALL of them?"
+	"DOTA_Tooltip_modifier_true_master_sword"		"Long Edged Sword"
+	"DOTA_Tooltip_modifier_true_master_dagger"		"Forbidden Dagger"
+	"DOTA_Tooltip_modifier_true_master_gun"			"Ancient Gun"
+	"DOTA_Tooltip_modifier_true_master_dagger_bleed"					"Bleeding"
+	"DOTA_Tooltip_modifier_true_master_dagger_bleed_description"		"Deals 33%% of attack damage every second ignoring armor"
+
 
 //############################################################################################################################
 
@@ -643,7 +660,7 @@
 
 //Hoodwink
 	"DOTA_Tooltip_ability_hw_sharpshooter"					"Sharpshooter"
-	"DOTA_Tooltip_ability_hw_sharpshooter_Description"		"Hoodwink charges up and fires a deadly bolt from her crossbow, dealing heavy damage and slow to an enemy Hero.  The damage and debuff duration scale up to max after %max_charge_time% seconds, and the bolt is fired automatically after %misfire_time% seconds.\nHoodwink is knocked backwards for a distance of %recoil_distance% from the force of the shot.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Damage will increase by 100% for every 2000 units of distance to the target. Affects your talent bonus dmg."
+	"DOTA_Tooltip_ability_hw_sharpshooter_Description"		"Hoodwink charges up and fires a deadly bolt from her crossbow, dealing heavy damage and slow to an enemy Hero.  The damage and debuff duration scale up to max after %max_charge_time% seconds, and the bolt is fired automatically after %misfire_time% seconds.\nHoodwink is knocked backwards for a distance of %recoil_distance% from the force of the shot.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Damage will increase by 100% for every 2000 units of distance to the target. Affects your talent bonus dmg. <font color='#8ABF50'>Alternate Shot</font> now reduce your CD and brake duration by 3x, auto release is 10x faster."
 	"DOTA_Tooltip_ability_hw_sharpshooter_scepter_description"		"<font color='#428627'>Normal Shot</font>:<br>Allows the projectile to pass through.<br><br><font color='#8ABF50'>Alternate Shot</font>:<br>Removes the through shot, but allows you to deal damage through spell immunity."
 	"DOTA_Tooltip_ability_hw_sharpshooter_shard_description"		"Increases projectile's range and speed by x2."
 	"DOTA_Tooltip_ability_hw_sharpshooter_Lore"				"While her first arbalest was a chance discovery, Hoodwink now takes great care in carving and caring for her own -- of course with some necessary components pilfered or otherwise cleverly procured."
@@ -651,6 +668,7 @@
 	"DOTA_Tooltip_ability_hw_sharpshooter_max_damage"					"MAX DAMAGE:"
 	"DOTA_Tooltip_ability_hw_sharpshooter_max_slow_debuff_duration"		"MAX DEBUFF DURATION:"
 	"DOTA_Tooltip_ability_hw_sharpshooter_slow_move_pct"				"%MOVE SLOW:"
+	"DOTA_Tooltip_ability_hw_sharpshooter_Note0"                        "Super scepter bonus dmg is applieed in 2 instances(1 + 2) so the skill has 3 instances of dmg in total."
 
 	"DOTA_Tooltip_ability_hw_sharpshooter_release"				"End Sharpshooter"
 	"DOTA_Tooltip_ability_hw_sharpshooter_release_Description"	"Release the charged up shot, regain ability to move and attack."

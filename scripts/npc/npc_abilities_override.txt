@@ -10940,7 +10940,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"scepter_duration"		"3"
+				"scepter_duration"		"4"
 				"RequiresScepter"			"1"
 			}
 			"08"
@@ -19023,6 +19023,98 @@
 	}
 
 	//=================================================================================================================
+	// Ability: Hoodwink: Hunter's Boomerang
+	//=================================================================================================================
+	"hoodwink_hunters_boomerang"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"9627"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_VengefulSpirit.MagicMissile"
+
+		"MaxLevel"						"1"
+		"IsGrantedByScepter"			"1"
+		"HasScepterUpgrade"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"5000"
+		"AbilityCastPoint"				"0.2"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"1500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"350"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"350"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"mark_duration"			"25.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_pct"				"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"35"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"status_resistance"		"25"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spread"				"400"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"min_throw_duration"			"0.5"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_throw_duration"			"1.2"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
 	// Hoodwink: Sharpshooter Release
 	//=================================================================================================================
 	"hoodwink_sharpshooter_release"	
@@ -19100,13 +19192,13 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"value"							"-2.70"  // used for tooltip only
+				"value"							"-2.85"  // used for tooltip only
 				"ad_linked_abilities"			"hoodwink_sharpshooter"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"pct_change"							"90.0"
+				"pct_change"							"95.0"
 			}
 		}
 	}
@@ -19124,6 +19216,12 @@
 
 		"AbilitySpecial"
 		{
+			"01"
+			{
+				"var_type"                  "FIELD_FLOAT"
+				"value"                     "1"
+				"ad_linked_abilities"			"hoodwink_sharpshooter"
+			}
 		}
 	}
 
@@ -22978,7 +23076,7 @@
 	{
 		"ID"							"600"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
-		"AbilityCastRange"				"0"
+		"AbilityCastRange"				"4000"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"16.0"
 		"AbilityManaCost"				"0"
@@ -22995,7 +23093,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blink_range"			"5600"
+				"blink_range"			"4000"
 			}
 			"02"
 			{

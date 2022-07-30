@@ -78,6 +78,7 @@ function modifier_item_plain_ring_perma:OnTakeDamage(keys)
 		if keys.unit ~= self.parent then return end
 		local aegis_charges = self.parent:FindModifierByName("modifier_aegis")
 		if aegis_charges and aegis_charges:GetStackCount() > 0 then return end
+		if self.parent:HasModifier("modifier_skeleton_king_reincarnation_scepter_active") then return end
 		--if self.parent:HasModifier("modifier_item_helm_of_the_undying_active") then return nil end
 		if self.parent:IsReincarnating() then return end
 		local unit = keys.unit
@@ -89,6 +90,17 @@ function modifier_item_plain_ring_perma:OnTakeDamage(keys)
 					if self.parent:HasModifier("modifier_brewmaster_primal_split") then return end
 					if IsUndyingRdy(unit) then return end
 					unit:SetHealth(1000)
+					Timers:CreateTimer({
+						endTime = 0.001, 
+						callback = function()
+							if not unit:IsAlive() then
+								local rezPosition = unit:GetAbsOrigin()						
+								unit:RespawnHero(false, false)
+								unit:SetAbsOrigin(rezPosition)
+								unit:AddNewModifier(unit, self.ability, "modifier_item_plain_ring_perma_invincibility", {duration = inv_duration})
+							end	
+						end
+					})
 					unit:AddNewModifier(unit, self.ability, "modifier_item_plain_ring_perma_invincibility", {duration = inv_duration})
 					local cooldown = cooldown
 					if unit:HasModifier("modifier_plain_ring_perma_up") then
