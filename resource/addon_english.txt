@@ -465,18 +465,84 @@
 	"DOTA_Tooltip_ability_item_to_kardel_description"		"Changes the character to Kardel."
 
 
+	"DOTA_Tooltip_ability_item_adamantium_ingot"                        "<h1><font color='#9E20E7'>Adamantium Ingot</font>"
+	"DOTA_Tooltip_ability_item_adamantium_ingot_description"            "Is Gained after Surviving the '-challenge' Boss , you can type that command any time after part 2 starts. Depending how far you reach you gain extra <h1><font color='#9E20E7'>Adamantium Ingot</font>"
+
+// weapon lvl 1
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword"					"Master Of Weapons' Sword"
-	"DOTA_Tooltip_ability_item_master_of_weapons_sword_description"		"<h1>Active: Image Of Benedict</h1> Creating a copy of yourself, dashing to enemy target quickly, slashing at a rate of 0.13s dealing x2 total ATK as Dmg & exploding the enemy in a %radius_expl% radius repeating an extra time for every 20 levels you have, gaining and Explosive stack for each repetition, can ignore armor in certain codition. <br> Duration Of Slash = %duration% + (1 every 1500 Attack Speed) sec \n<h1><font color='#FF4500'>UP: Fire Rapier</font></h1> Each slash has %fire_rapier_chance%%% chance to proc Fire Rapier \n<h1><font color='#BE03FF'>UP: Edible Devil's Daedalus</font></h1>All Slashes have 100% Crit chance \n<h1><font color='#FC6BF1'>UP: Good Juju</font></h1> Reduces cooldown to 12 sec"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword_description"		"<h1>Active: Image Of Benedict</h1> Creating a copy of yourself, dashing to enemy target quickly, slashing at a rate of %slash_rate% s, dealing x %attack_asdmg_multiplier% total ATK as Dmg & exploding the enemy in a %radius_expl% radius repeating an extra time for every 20 levels you have, gaining and Explosive stack for each repetition, can ignore armor in certain codition. <br> Duration Of Slash = %duration% + (1s every 1500 Attack Speed) \n<h1><font color='#FF4500'>UP: Fire Rapier</font></h1> Each slash has %fire_rapier_chance%%% chance to proc Fire Rapier \n<h1><font color='#BE03FF'>UP: Edible Devil's Daedalus</font></h1>All Slashes have 100% Crit chance \n<h1><font color='#FC6BF1'>UP: Good Juju</font></h1> Reduces cooldown to %good_juju_cd% sec"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_lore"	"Gifted Sword, From Who Mastered All Weapons..."
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_note0"	"Unaffected by Cooldown Reduction"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword_note1"   "A certain type and a certain amount can unlock the ignore armor for explosions"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_damage"			"+$damage"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_ms"				"+$move_speed"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_attack_range"		"+$attack_range_all"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_as"				"+$attack"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_all_stats"			"+$all"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_attack_lvl"        "Explosive Stacks Bonus dmg Per lvl:"
+
 
 	"DOTA_Tooltip_modifier_mows"					"Explosive Gains"
 	"DOTA_Tooltip_modifier_mows_description"		"+%dMODIFIER_PROPERTY_TOOLTIP% Bonus DMG , base on your hero level x stacks."
+// weapon lvl 2
+
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword2"					"<h1><font color='#D308A8'>Master Of Weapons' Sword</font>"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_description"		"<h1>Active: Image Of Benedict</h1> Creating a copy of yourself, dashing to enemy target quickly, slashing at a rate of %slash_rate% s, dealing x %attack_asdmg_multiplier% total ATK as Dmg & exploding the enemy in a %radius_expl% radius repeating an extra time for every 20 levels you have, gaining and Explosive stack for each repetition, can ignore armor in certain codition. <br> Duration Of Slash = %duration% + (1s every 1500 Attack Speed) \n<h1><font color='#FF4500'>UP: Fire Rapier</font></h1> Each slash has %fire_rapier_chance%%% chance to proc Fire Rapier \n<h1><font color='#BE03FF'>UP: Edible Devil's Daedalus</font></h1>All Slashes have 100% Crit chance \n<h1><font color='#FC6BF1'>UP: Good Juju</font></h1> Reduces cooldown to %good_juju_cd% sec"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_lore"	"Gifted Sword, From Who Mastered All Weapons..."
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_note0"	"Unaffected by Cooldown Reduction"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_note1"   "A certain type and a certain amount can unlock the ignore armor for explosions"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_bonus_damage"			"+$damage"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_bonus_ms"				"+$move_speed"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_bonus_attack_range"		"+$attack_range_all"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_bonus_as"				"+$attack"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_bonus_all_stats"		"+$all"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_bonus_attack_lvl"        "Explosive Stacks Bonus dmg Per lvl:"
+
+// weapon lvl 3
+
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword3"					"<h1><font color='#0839D3'>Master Of Weapons' Sword</font>"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_description"		"<h1>Active: Image Of Benedict</h1> Creating a copy of yourself, dashing to enemy target quickly, slashing at a rate of %slash_rate% s, dealing x %attack_asdmg_multiplier% total ATK as Dmg & exploding the enemy in a %radius_expl% radius repeating an extra time for every 20 levels you have, gaining and Explosive stack for each repetition, can ignore armor in certain codition. <br> Duration Of Slash = %duration% + (1s every 1500 Attack Speed) \n<h1><font color='#FF4500'>UP: Fire Rapier</font></h1> Each slash has %fire_rapier_chance%%% chance to proc Fire Rapier \n<h1><font color='#BE03FF'>UP: Edible Devil's Daedalus</font></h1>All Slashes have 100% Crit chance \n<h1><font color='#FC6BF1'>UP: Good Juju</font></h1> Reduces cooldown to %good_juju_cd% sec"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_lore"	"Gifted Sword, From Who Mastered All Weapons..."
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_note0"	"Unaffected by Cooldown Reduction"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_note1"   "A certain type and a certain amount can unlock the ignore armor for explosions"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_bonus_damage"			"+$damage"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_bonus_ms"				"+$move_speed"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_bonus_attack_range"		"+$attack_range_all"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_bonus_as"				"+$attack"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_bonus_all_stats"		"+$all"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_bonus_attack_lvl"        "Explosive Stacks Bonus dmg Per lvl:"
+
+
+// weapon lvl 4
+
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword4"					"<h1><font color='#8608D3'>Master Of Weapons' Sword</font>"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_description"		"<h1>Active: Image Of Benedict</h1> Creating a copy of yourself, dashing to enemy target quickly, slashing at a rate of %slash_rate% s, dealing x %attack_asdmg_multiplier% total ATK as Dmg & exploding the enemy in a %radius_expl% radius repeating an extra time for every 20 levels you have, gaining and Explosive stack for each repetition, can ignore armor in certain codition. <br> Duration Of Slash = %duration% + (1s every 1500 Attack Speed) \n<h1><font color='#FF4500'>UP: Fire Rapier</font></h1> Each slash has %fire_rapier_chance%%% chance to proc Fire Rapier \n<h1><font color='#BE03FF'>UP: Edible Devil's Daedalus</font></h1>All Slashes have 100% Crit chance \n<h1><font color='#FC6BF1'>UP: Good Juju</font></h1> Reduces cooldown to %good_juju_cd% sec"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_lore"	"Gifted Sword, From Who Mastered All Weapons..."
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_note0"	"Unaffected by Cooldown Reduction"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_note1"   "A certain type and a certain amount can unlock the ignore armor for explosions"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_bonus_damage"			"+$damage"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_bonus_ms"				"+$move_speed"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_bonus_attack_range"		"+$attack_range_all"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_bonus_as"				"+$attack"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_bonus_all_stats"		"+$all"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_bonus_attack_lvl"        "Explosive Stacks Bonus dmg Per lvl:"
+
+// weapon lvl 5
+
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword5"					"<h1><font color='#D3081E'>Master Of Weapons' Sword</font>"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_description"		"<h1>Active: Image Of Benedict</h1> Creating a copy of yourself, dashing to enemy target quickly, slashing at a rate of %slash_rate% s, dealing x %attack_asdmg_multiplier% total ATK as Dmg & exploding the enemy in a %radius_expl% radius repeating an extra time for every 20 levels you have, gaining and Explosive stack for each repetition, can ignore armor in certain codition. <br> Duration Of Slash = %duration% + (1s every 1500 Attack Speed) \n<h1><font color='#FF4500'>UP: Fire Rapier</font></h1> Each slash has %fire_rapier_chance%%% chance to proc Fire Rapier \n<h1><font color='#BE03FF'>UP: Edible Devil's Daedalus</font></h1>All Slashes have 100% Crit chance \n<h1><font color='#FC6BF1'>UP: Good Juju</font></h1> Reduces cooldown to %good_juju_cd% sec"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_lore"	"Gifted Sword, From Who Mastered All Weapons..."
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_note0"	"Unaffected by Cooldown Reduction"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_note1"   "A certain type and a certain amount can unlock the ignore armor for explosions"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_bonus_damage"			"+$damage"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_bonus_ms"				"+$move_speed"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_bonus_attack_range"		"+$attack_range_all"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_bonus_as"				"+$attack"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_bonus_all_stats"		"+$all"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_bonus_attack_lvl"        "Explosive Stacks Bonus dmg Per lvl:"
+
+
+
 
 	"DOTA_Tooltip_ability_true_master"					"The True Master Of Weapons"
 	"DOTA_Tooltip_ability_true_master_description"		"<h1>Long Edged Sword</h1> Attacking from 850 units away will have %sword_crit_chance%%% chance for a %sword_crit_damage%%% Crit. \n<h1>Forbidden Dagger</h1> Bleeding enemy takes 5% dmg AMP, using dagger gives you great mobility, uncaps MS & starts giving 3k MS after LV.65, dodging any Dmg with %dagger_dodge_chance%%% chance. \n<h1>Ancient Gun</h1> Has %dagger_true_strike%%% true-strike chance. <br> Allows to atk always except during disarm debuffs. <br> Gunshots deal x8 Dmg in 4 instances, fixed rate of 3 atk/sec then reloads for a sec."
@@ -5158,7 +5224,7 @@ Triggers at 40 percent health."
 "npc_boss_juggernaut"					 "Juggernaut (Boss)"
 "npc_boss_juggernaut_2"				   "Juggernaut with No limiter(Boss)"
 "npc_boss_juggernaut_3"				   "Juggernaut Slasher(Boss)"
-
+"npc_boss_juggernaut_4"				   "Juggernaut Sword Master(Boss)"
 
 "DOTA_Tooltip_ability_custom_blade_fury"									"Blade Fury"
 "DOTA_Tooltip_ability_custom_blade_fury_Description"						"Causes a bladestorm of destructive force around Juggernaut, rendering him immune to magic and dealing damage to nearby enemy units. 

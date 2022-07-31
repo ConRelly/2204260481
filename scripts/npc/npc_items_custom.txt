@@ -35300,7 +35300,29 @@
 		}
 	}
 
-// Recipe: Master Of Weapons
+//Master of weapons Component
+"item_adamantium_ingot"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"Model"							"models/props_gameplay/treasure_chest001.vmdl"
+	//"Effect"	   					"particles/units/heroes/hero_templar_assassin/templar_assassin_trap_stone.vpcf"
+	"AbilityTextureName"			"adamantium_ingot"
+	"ItemCost"						"0"
+	"ItemPurchasable"				"0"
+	"ItemKillable"					"0"
+	"ItemSellable"				    "0"
+	"ItemAliases"					"adamantium ingot"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+	"ItemQuality"				   "artifact"
+	"ItemDisassembleRule"		   "DOTA_ITEM_DISASSEMBLE_NEVER"
+	"ItemStackable"					"0"
+	"ItemPermanent"					"0"
+	"IsTempestDoubleClonable"		"0"
+}
+
+
+// Recipe: Master Of Weapons 1
 	"item_recipe_master_of_weapons_sword"
 	{
 		"BaseClass"						"item_datadriven"
@@ -35315,7 +35337,7 @@
 		"ItemResult"					"item_master_of_weapons_sword"
 		"ItemRequirements"
 		{
-			"01"						"item_infinite_rapier;item_enchanter;item_all_essence"
+			"01"						"item_infinite_rapier;item_enchanter;item_all_essence;item_adamantium_ingot"
 		}
 	}
 
@@ -35340,21 +35362,25 @@
 		"ItemKillable"					"1"
 		"AllowedInBackpack"				"0"
 		"IsTempestDoubleClonable"		"0"		
-		//"MaxUpgradeLevel"				"2"
-		//"ItemBaseLevel"					"1"		
+		//"MaxUpgradeLevel"				"5"
+		//"ItemBaseLevel"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilityValues"
 		{
-			"bonus_damage"					"11500"
-			"bonus_ms"						"350"
-			"bonus_attack_range"			"300"
-			"bonus_as"						"200"
-			"bonus_all_stats"				"750"
-			"fire_rapier_chance"            "33"
-			"duration"						"2.5"
+			"bonus_damage"					"8500"
+			"bonus_ms"						"275"
+			"bonus_attack_range"			"200"
+			"bonus_as"						"180"
+			"bonus_all_stats"				"650"
+			"fire_rapier_chance"            "25"
+			"duration"						"2.0"
 			"bounce_range"					"600"
 			"radius_expl"                   "2000"
-//			"attack_rate_multiplier"		"2.5"
+			"attack_asdmg_multiplier"		"2.0"
+			"slash_rate"                    "0.13"
+			"bonus_attack_lvl"              "1"
+			"good_juju_cd"                  "12"
 		}
 		"precache"
 		{
@@ -35364,4 +35390,283 @@
 			"particle"					"particles/status_fx/status_effect_omnislash.vpcf"
 		}
 	}
+
+
+// Recipe: Master Of Weapons 2
+	"item_recipe_master_of_weapons_sword2"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"7770"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemStockInitial"				"1"
+		"ItemStockMax"					"1"
+		"ItemStockTime"					"99999.0"		
+		"ItemResult"					"item_master_of_weapons_sword2"
+		"ItemRequirements"
+		{
+			"01"						"item_master_of_weapons_sword;item_adamantium_ingot"
+		}
+	}
+
+	"item_master_of_weapons_sword2"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/master_of_weapons_sword"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"mows_sword2"
+		"ItemCost"						"500"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"18"
+		"AbilityManaCost"				"50"
+		"ItemQuality"					"artifact"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"1"
+		"AllowedInBackpack"				"0"
+		"IsTempestDoubleClonable"		"0"		
+		//"MaxUpgradeLevel"				"5"
+		//"ItemBaseLevel"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"					"11500"
+			"bonus_ms"						"305"
+			"bonus_attack_range"			"230"
+			"bonus_as"						"200"
+			"bonus_all_stats"				"800"
+			"fire_rapier_chance"            "28"
+			"duration"						"2.2"
+			"bounce_range"					"700"
+			"radius_expl"                   "2100"
+			"attack_asdmg_multiplier"		"2.5"
+			"slash_rate"                    "0.12"
+			"bonus_attack_lvl"              "1.5"
+			"good_juju_cd"                  "12"
+		}
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+			"particle"					"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf"
+			"particle"					"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_tgt.vpcf"
+			"particle"					"particles/status_fx/status_effect_omnislash.vpcf"
+		}
+	}
+
+// Recipe: Master Of Weapons 3
+	"item_recipe_master_of_weapons_sword3"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"7770"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemStockInitial"				"1"
+		"ItemStockMax"					"1"
+		"ItemStockTime"					"99999.0"		
+		"ItemResult"					"item_master_of_weapons_sword3"
+		"ItemRequirements"
+		{
+			"01"						"item_master_of_weapons_sword2;item_adamantium_ingot"
+		}
+	}
+
+	"item_master_of_weapons_sword3"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/master_of_weapons_sword"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"mows_sword3"
+		"ItemCost"						"500"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"17"
+		"AbilityManaCost"				"50"
+		"ItemQuality"					"artifact"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"1"
+		"AllowedInBackpack"				"0"
+		"IsTempestDoubleClonable"		"0"		
+		//"MaxUpgradeLevel"				"5"
+		//"ItemBaseLevel"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"					"14500"
+			"bonus_ms"						"355"
+			"bonus_attack_range"			"280"
+			"bonus_as"						"240"
+			"bonus_all_stats"				"900"
+			"fire_rapier_chance"            "30"
+			"duration"						"2.3"
+			"bounce_range"					"800"
+			"radius_expl"                   "2200"
+			"attack_asdmg_multiplier"		"3.0"
+			"slash_rate"                    "0.11"
+			"bonus_attack_lvl"              "2"
+			"good_juju_cd"                  "11"
+		}
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+			"particle"					"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf"
+			"particle"					"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_tgt.vpcf"
+			"particle"					"particles/status_fx/status_effect_omnislash.vpcf"
+		}
+	}
+
+// Recipe: Master Of Weapons 4
+	"item_recipe_master_of_weapons_sword4"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"7770"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemStockInitial"				"1"
+		"ItemStockMax"					"1"
+		"ItemStockTime"					"99999.0"		
+		"ItemResult"					"item_master_of_weapons_sword4"
+		"ItemRequirements"
+		{
+			"01"						"item_master_of_weapons_sword3;item_adamantium_ingot"
+		}
+	}
+
+	"item_master_of_weapons_sword4"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/master_of_weapons_sword"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"mows_sword4"
+		"ItemCost"						"500"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"16"
+		"AbilityManaCost"				"50"
+		"ItemQuality"					"artifact"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"1"
+		"AllowedInBackpack"				"0"
+		"IsTempestDoubleClonable"		"0"		
+		//"MaxUpgradeLevel"				"5"
+		//"ItemBaseLevel"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"					"16500"
+			"bonus_ms"						"400"
+			"bonus_attack_range"			"330"
+			"bonus_as"						"300"
+			"bonus_all_stats"				"1000"
+			"fire_rapier_chance"            "32"
+			"duration"						"2.5"
+			"bounce_range"					"900"
+			"radius_expl"                   "2500"
+			"attack_asdmg_multiplier"		"3.5"
+			"slash_rate"                    "0.11"
+			"bonus_attack_lvl"              "2.5"
+			"good_juju_cd"                  "11"
+		}
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+			"particle"					"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf"
+			"particle"					"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_tgt.vpcf"
+			"particle"					"particles/status_fx/status_effect_omnislash.vpcf"
+		}
+	}
+
+// Recipe: Master Of Weapons 5
+	"item_recipe_master_of_weapons_sword5"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"7770"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemStockInitial"				"1"
+		"ItemStockMax"					"1"
+		"ItemStockTime"					"99999.0"		
+		"ItemResult"					"item_master_of_weapons_sword5"
+		"ItemRequirements"
+		{
+			"01"						"item_master_of_weapons_sword4;item_adamantium_ingot"
+		}
+	}
+
+	"item_master_of_weapons_sword5"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/master_of_weapons_sword"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"mows_sword5"
+		"ItemCost"						"500"
+		"AbilityCastRange"				"1500"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"14"
+		"AbilityManaCost"				"50"
+		"ItemQuality"					"artifact"
+		"ItemPurchasable"				"1"
+		"ItemSellable"					"1"
+		"ItemKillable"					"1"
+		"AllowedInBackpack"				"0"
+		"IsTempestDoubleClonable"		"0"		
+		//"MaxUpgradeLevel"				"5"
+		//"ItemBaseLevel"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"	
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"
+		{
+			"bonus_damage"					"25500"
+			"bonus_ms"						"525"
+			"bonus_attack_range"			"400"
+			"bonus_as"						"550"
+			"bonus_all_stats"				"2200"
+			"fire_rapier_chance"            "36"
+			"duration"						"3.0"
+			"bounce_range"					"1500"
+			"radius_expl"                   "3000"
+			"attack_asdmg_multiplier"		"5.0"
+			"slash_rate"                    "0.10"
+			"bonus_attack_lvl"              "3"
+			"good_juju_cd"                  "10"
+		}
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+			"particle"					"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf"
+			"particle"					"particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_tgt.vpcf"
+			"particle"					"particles/status_fx/status_effect_omnislash.vpcf"
+		}
+	}
+
+
 }

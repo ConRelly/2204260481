@@ -53,6 +53,7 @@ LinkLuaModifier("modifier_phys", "modifiers/modifier_phys.lua", LUA_MODIFIER_MOT
 LinkLuaModifier("modifier_mjz_bristleback_quill_spray_autocast6", "abilities/hero_bristleback/modifier_mjz_bristleback_quill_spray_autocast6.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_boss_hpbar2", "abilities/boss_hpbar2.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_double_trouble", "modifiers/modifier_double_trouble.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_infinite_health", "modifiers/modifier_infinite_health.lua", LUA_MODIFIER_MOTION_NONE)
 
 if AOHGameMode == nil then
 	_G.AOHGameMode = class({})
@@ -78,7 +79,7 @@ print("MONSTER_CONFIG: " .. MONSTER_CONFIG)
 --	print("Load Test MONSTER_CONFIG: " .. MONSTER_CONFIG)
 --end
 if Cheats:IsEnabled() then 
-	MONSTER_CONFIG = "aoh2_config_siltbreaker_200809.txt" --  "test_short_rounds.txt" --  
+	MONSTER_CONFIG = "aoh2_config_siltbreaker_200809.txt" --"test_short_rounds.txt" --  
 	print("CHeat mode")
 end	
 
@@ -116,7 +117,7 @@ function AOHGameMode:InitGameMode()
 	self.renew = false
 	self.gon = true
 	self.spawned_gon = false
-
+	self.challenge = false
 
 	AOHGameMode.isArcane = {}
 	AOHGameMode.isArcane[0] = false
@@ -1126,10 +1127,16 @@ function AOHGameMode:OnEntitySpawned(event)
 		["npc_dota_creature_siltbreaker"] = true,
 		["npc_boss_guesstuff_Moran"] = true,
 		["npc_boss_randomstuff_aiolos"] = true,
+		["npc_boss_juggernaut_4"] = true,
 		--["npc_boss_skeletal_archer_new"] = true,
 
 	};	
+	local boss_challenger = {
+		["npc_boss_juggernaut_4"] = true,
+		--["npc_boss_skeleton_king_angry_new"] = true,
 
+
+	};
 
 	if unit and unit:GetTeamNumber() == DOTA_TEAM_BADGUYS and unit:GetUnitName() ~= "npc_dota_thinker" then
 		if self._endlessMode_started then
@@ -1169,8 +1176,12 @@ function AOHGameMode:OnEntitySpawned(event)
 			if unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
 				--print("boss moster")
 				unit:AddNewModifier(unit, nil, "modifier_phys", {})
-			end	
+			end
 		end
+		if boss_challenger[unit:GetUnitName()] == true then
+			unit:AddNewModifier(unit, nil, "modifier_infinite_health", {duration = 420})
+			unit:AddNewModifier(unit, nil, "modifier_kill", {duration = 421})
+		end	
 		if unit:GetUnitName() == "npc_boss_guesstuff_Moran" or  unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
 			unit:AddNewModifier(unit, nil, "modifier_double_trouble", {})
 		end			

@@ -257,7 +257,7 @@ function modifier_cold_fall_burn_thinker:IsAura()
 end
 
 function modifier_cold_fall_burn_thinker:GetAuraRadius()
-    return self:GetAbility():GetSpecialValueFor("burn_distance")
+   if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("burn_distance") end
 end
 
 function modifier_cold_fall_burn_thinker:GetAuraSearchTeam()

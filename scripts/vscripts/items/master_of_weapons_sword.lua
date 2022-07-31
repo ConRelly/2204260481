@@ -4,14 +4,30 @@ LinkLuaModifier("modifier_mows_image", "items/master_of_weapons_sword", LUA_MODI
 LinkLuaModifier("modifier_mows_remove_as_limit", "items/master_of_weapons_sword", LUA_MODIFIER_MOTION_NONE)
 
 if item_master_of_weapons_sword == nil then item_master_of_weapons_sword = class({}) end
-function item_master_of_weapons_sword:GetCooldown(level)
-	if self:GetCaster():HasModifier("modifier_dzzl_good_juju") then
-		return 12 / self:GetCaster():GetCooldownReduction()
-	end
-	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
-end
+
+
+item_master_of_weapons_sword2 = class(item_master_of_weapons_sword)
+item_master_of_weapons_sword3 = class(item_master_of_weapons_sword)
+item_master_of_weapons_sword4 = class(item_master_of_weapons_sword)
+item_master_of_weapons_sword5 = class(item_master_of_weapons_sword)
+
+
+function item_master_of_weapons_sword2:GetIntrinsicModifierName() return "modifier_mows" end
+function item_master_of_weapons_sword3:GetIntrinsicModifierName() return "modifier_mows" end
+function item_master_of_weapons_sword4:GetIntrinsicModifierName() return "modifier_mows" end
+function item_master_of_weapons_sword5:GetIntrinsicModifierName() return "modifier_mows" end
+
 function item_master_of_weapons_sword:GetIntrinsicModifierName()
 	return "modifier_mows"
+end
+
+function item_master_of_weapons_sword:GetCooldown(level)
+	if self:GetCaster():HasModifier("modifier_dzzl_good_juju") then
+		if self:GetAbility() then
+			return self:GetAbility():GetSpecialValueFor("good_juju_cd") / self:GetCaster():GetCooldownReduction()
+		end	
+	end
+	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
 end
 
 function item_master_of_weapons_sword:OnSpellStart()
@@ -82,7 +98,9 @@ function item_master_of_weapons_sword:OnSpellStart()
 --			if ModifierDuration > 0 then
 				local added_modifier = image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetDuration()})
 				if modifier:GetStackCount() > 0 then
-					added_modifier:SetStackCount(modifier:GetStackCount())
+					if added_modifier then
+						added_modifier:SetStackCount(modifier:GetStackCount())
+					end	
 				end
 --			end
 		end
@@ -130,6 +148,517 @@ function item_master_of_weapons_sword:OnSpellStart()
 	end)
 end
 
+--sword2
+function item_master_of_weapons_sword2:GetCooldown(level)
+	if self:GetCaster():HasModifier("modifier_dzzl_good_juju") then
+		if self:GetAbility() then
+			return self:GetAbility():GetSpecialValueFor("good_juju_cd") / self:GetCaster():GetCooldownReduction()
+		end	
+	end
+	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
+end
+
+function item_master_of_weapons_sword2:OnSpellStart()
+	if not IsServer() then return end
+	local target = self:GetCursorTarget()
+	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_mows_remove_as_limit", {})
+	local additional_duration = math.floor(self:GetCaster():GetDisplayAttackSpeed() / 1500)
+--	print("Print DisplayAttackSpeed", self:GetCaster():GetDisplayAttackSpeed())
+--	print("Print additional_duration", additional_duration)
+	local duration = self:GetSpecialValueFor("duration") + (additional_duration * 1)
+
+	local previous_position = self:GetCaster():GetAbsOrigin()
+	
+	self:GetCaster():Purge(false, true, false, false, false)
+
+	local image = CreateUnitByName(self:GetCaster():GetUnitName(), target:GetAbsOrigin(), true, self:GetCaster(), self:GetCaster():GetOwner(), self:GetCaster():GetTeamNumber())
+
+	local caster_level = self:GetCaster():GetLevel()
+	for i = 2, caster_level do
+		image:HeroLevelUp(false)
+	end
+
+	local non_transfer = {
+		["item_smoke_of_deceit"] = true,
+		["item_ward_observer"] = true,
+		["item_ward_sentry"] = true,
+	}
+
+	-- Copy Abilities
+	for ability_id = 0, DOTA_MAX_ABILITIES - 1 do
+		local ability = image:GetAbilityByIndex(ability_id)
+		if ability then
+			if not non_transfer[ability:GetAbilityName()] then
+				local caster_ability = self:GetCaster():FindAbilityByName(ability:GetAbilityName())
+				if caster_ability and caster_ability:IsTrained() then
+					ability:SetLevel(caster_ability:GetLevel())
+				end
+			end
+		end
+	end
+
+	-- Copy Items
+	for item_id = 0, 5 do
+		local item_in_caster = self:GetCaster():GetItemInSlot(item_id)
+		if item_in_caster ~= nil then
+			if not non_transfer[item_in_caster:GetName()] then
+				local item_created = CreateItem(item_in_caster:GetName(), image, image)
+				image:AddItem(item_created)
+				item_created:SetCurrentCharges(item_in_caster:GetCurrentCharges())
+			end
+		end
+	end
+	-- Copy Neutral Item
+	local neutral_item = self:GetCaster():GetItemInSlot(16)
+	if neutral_item ~= nil then
+		if not non_transfer[neutral_item:GetName()] then
+			local neutral_item_created = CreateItem(neutral_item:GetName(), image, image)
+			image:AddItem(neutral_item_created)
+			neutral_item_created:SetCurrentCharges(neutral_item:GetCurrentCharges())
+		end
+	end
+
+	-- Copy Modifiers
+	local caster_modifiers = self:GetCaster():FindAllModifiers()
+	for _,modifier in pairs(caster_modifiers) do
+		if modifier then
+--			local ModifierDuration = modifier:GetDuration()
+--			if ModifierDuration > 0 then
+				local added_modifier = image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetDuration()})
+				if modifier:GetStackCount() > 0 then
+					if added_modifier then
+						added_modifier:SetStackCount(modifier:GetStackCount())
+					end	
+				end
+--			end
+		end
+	end
+
+	image:SetAbilityPoints(0)
+
+	image:SetHasInventory(false)
+	image:SetCanSellItems(false)
+
+	image:AddNewModifier(self:GetCaster(), self, "modifier_mows_image", {duration = duration})
+	image:AddNewModifier(self:GetCaster(), self, "modifier_mows_remove_as_limit", {duration = duration})
+
+	local modifier_handler = image:AddNewModifier(self:GetCaster(), self, "modifier_mows_slasher", {duration = duration})
+	
+	if modifier_handler then
+		modifier_handler.original_caster = self:GetCaster()
+	end
+
+	FindClearSpaceForUnit(image, target:GetAbsOrigin() + RandomVector(128), false)
+
+	image:EmitSound("Hero_Juggernaut.OmniSlash")
+
+	self:GetCaster():RemoveModifierByName("modifier_mows_remove_as_limit")
+
+	Timers:CreateTimer(FrameTime(), function()
+		if (not image:IsNull()) then
+			if image:GetUnitName() == "npc_dota_hero_juggernaut" then
+				StartAnimation(image, {activity = ACT_DOTA_OVERRIDE_ABILITY_4, rate = 1, duration = duration})
+			end
+		end
+	end)
+
+	if target:TriggerSpellAbsorb(self) then return end
+
+	Timers:CreateTimer(FrameTime(), function()
+		if (not image:IsNull()) then
+			image:PerformAttack(target, true, true, true, true, false, false, false)
+
+			local trail_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf", PATTACH_ABSORIGIN, image)
+			ParticleManager:SetParticleControl(trail_pfx, 0, previous_position)
+			ParticleManager:SetParticleControl(trail_pfx, 1, image:GetAbsOrigin())
+			ParticleManager:ReleaseParticleIndex(trail_pfx)
+		end
+	end)
+end
+
+--sword3
+function item_master_of_weapons_sword3:GetCooldown(level)
+	if self:GetCaster():HasModifier("modifier_dzzl_good_juju") then
+		if self:GetAbility() then
+			return self:GetAbility():GetSpecialValueFor("good_juju_cd") / self:GetCaster():GetCooldownReduction()
+		end	
+	end
+	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
+end
+
+function item_master_of_weapons_sword3:OnSpellStart()
+	if not IsServer() then return end
+	local target = self:GetCursorTarget()
+	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_mows_remove_as_limit", {})
+	local additional_duration = math.floor(self:GetCaster():GetDisplayAttackSpeed() / 1500)
+--	print("Print DisplayAttackSpeed", self:GetCaster():GetDisplayAttackSpeed())
+--	print("Print additional_duration", additional_duration)
+	local duration = self:GetSpecialValueFor("duration") + (additional_duration * 1)
+
+	local previous_position = self:GetCaster():GetAbsOrigin()
+	
+	self:GetCaster():Purge(false, true, false, false, false)
+
+	local image = CreateUnitByName(self:GetCaster():GetUnitName(), target:GetAbsOrigin(), true, self:GetCaster(), self:GetCaster():GetOwner(), self:GetCaster():GetTeamNumber())
+
+	local caster_level = self:GetCaster():GetLevel()
+	for i = 2, caster_level do
+		image:HeroLevelUp(false)
+	end
+
+	local non_transfer = {
+		["item_smoke_of_deceit"] = true,
+		["item_ward_observer"] = true,
+		["item_ward_sentry"] = true,
+	}
+
+	-- Copy Abilities
+	for ability_id = 0, DOTA_MAX_ABILITIES - 1 do
+		local ability = image:GetAbilityByIndex(ability_id)
+		if ability then
+			if not non_transfer[ability:GetAbilityName()] then
+				local caster_ability = self:GetCaster():FindAbilityByName(ability:GetAbilityName())
+				if caster_ability and caster_ability:IsTrained() then
+					ability:SetLevel(caster_ability:GetLevel())
+				end
+			end
+		end
+	end
+
+	-- Copy Items
+	for item_id = 0, 5 do
+		local item_in_caster = self:GetCaster():GetItemInSlot(item_id)
+		if item_in_caster ~= nil then
+			if not non_transfer[item_in_caster:GetName()] then
+				local item_created = CreateItem(item_in_caster:GetName(), image, image)
+				image:AddItem(item_created)
+				item_created:SetCurrentCharges(item_in_caster:GetCurrentCharges())
+			end
+		end
+	end
+	-- Copy Neutral Item
+	local neutral_item = self:GetCaster():GetItemInSlot(16)
+	if neutral_item ~= nil then
+		if not non_transfer[neutral_item:GetName()] then
+			local neutral_item_created = CreateItem(neutral_item:GetName(), image, image)
+			image:AddItem(neutral_item_created)
+			neutral_item_created:SetCurrentCharges(neutral_item:GetCurrentCharges())
+		end
+	end
+
+	-- Copy Modifiers
+	local caster_modifiers = self:GetCaster():FindAllModifiers()
+	for _,modifier in pairs(caster_modifiers) do
+		if modifier then
+--			local ModifierDuration = modifier:GetDuration()
+--			if ModifierDuration > 0 then
+				local added_modifier = image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetDuration()})
+				if modifier:GetStackCount() > 0 then
+					if added_modifier then
+						added_modifier:SetStackCount(modifier:GetStackCount())
+					end	
+				end
+--			end
+		end
+	end
+
+	image:SetAbilityPoints(0)
+
+	image:SetHasInventory(false)
+	image:SetCanSellItems(false)
+
+	image:AddNewModifier(self:GetCaster(), self, "modifier_mows_image", {duration = duration})
+	image:AddNewModifier(self:GetCaster(), self, "modifier_mows_remove_as_limit", {duration = duration})
+
+	local modifier_handler = image:AddNewModifier(self:GetCaster(), self, "modifier_mows_slasher", {duration = duration})
+	
+	if modifier_handler then
+		modifier_handler.original_caster = self:GetCaster()
+	end
+
+	FindClearSpaceForUnit(image, target:GetAbsOrigin() + RandomVector(128), false)
+
+	image:EmitSound("Hero_Juggernaut.OmniSlash")
+
+	self:GetCaster():RemoveModifierByName("modifier_mows_remove_as_limit")
+
+	Timers:CreateTimer(FrameTime(), function()
+		if (not image:IsNull()) then
+			if image:GetUnitName() == "npc_dota_hero_juggernaut" then
+				StartAnimation(image, {activity = ACT_DOTA_OVERRIDE_ABILITY_4, rate = 1, duration = duration})
+			end
+		end
+	end)
+
+	if target:TriggerSpellAbsorb(self) then return end
+
+	Timers:CreateTimer(FrameTime(), function()
+		if (not image:IsNull()) then
+			image:PerformAttack(target, true, true, true, true, false, false, false)
+
+			local trail_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf", PATTACH_ABSORIGIN, image)
+			ParticleManager:SetParticleControl(trail_pfx, 0, previous_position)
+			ParticleManager:SetParticleControl(trail_pfx, 1, image:GetAbsOrigin())
+			ParticleManager:ReleaseParticleIndex(trail_pfx)
+		end
+	end)
+end
+
+--sword4
+function item_master_of_weapons_sword4:GetCooldown(level)
+	if self:GetCaster():HasModifier("modifier_dzzl_good_juju") then
+		if self:GetAbility() then
+			return self:GetAbility():GetSpecialValueFor("good_juju_cd") / self:GetCaster():GetCooldownReduction()
+		end	
+	end
+	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
+end
+
+function item_master_of_weapons_sword4:OnSpellStart()
+	if not IsServer() then return end
+	local target = self:GetCursorTarget()
+	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_mows_remove_as_limit", {})
+	local additional_duration = math.floor(self:GetCaster():GetDisplayAttackSpeed() / 1500)
+--	print("Print DisplayAttackSpeed", self:GetCaster():GetDisplayAttackSpeed())
+--	print("Print additional_duration", additional_duration)
+	local duration = self:GetSpecialValueFor("duration") + (additional_duration * 1)
+
+	local previous_position = self:GetCaster():GetAbsOrigin()
+	
+	self:GetCaster():Purge(false, true, false, false, false)
+
+	local image = CreateUnitByName(self:GetCaster():GetUnitName(), target:GetAbsOrigin(), true, self:GetCaster(), self:GetCaster():GetOwner(), self:GetCaster():GetTeamNumber())
+
+	local caster_level = self:GetCaster():GetLevel()
+	for i = 2, caster_level do
+		image:HeroLevelUp(false)
+	end
+
+	local non_transfer = {
+		["item_smoke_of_deceit"] = true,
+		["item_ward_observer"] = true,
+		["item_ward_sentry"] = true,
+	}
+
+	-- Copy Abilities
+	for ability_id = 0, DOTA_MAX_ABILITIES - 1 do
+		local ability = image:GetAbilityByIndex(ability_id)
+		if ability then
+			if not non_transfer[ability:GetAbilityName()] then
+				local caster_ability = self:GetCaster():FindAbilityByName(ability:GetAbilityName())
+				if caster_ability and caster_ability:IsTrained() then
+					ability:SetLevel(caster_ability:GetLevel())
+				end
+			end
+		end
+	end
+
+	-- Copy Items
+	for item_id = 0, 5 do
+		local item_in_caster = self:GetCaster():GetItemInSlot(item_id)
+		if item_in_caster ~= nil then
+			if not non_transfer[item_in_caster:GetName()] then
+				local item_created = CreateItem(item_in_caster:GetName(), image, image)
+				image:AddItem(item_created)
+				item_created:SetCurrentCharges(item_in_caster:GetCurrentCharges())
+			end
+		end
+	end
+	-- Copy Neutral Item
+	local neutral_item = self:GetCaster():GetItemInSlot(16)
+	if neutral_item ~= nil then
+		if not non_transfer[neutral_item:GetName()] then
+			local neutral_item_created = CreateItem(neutral_item:GetName(), image, image)
+			image:AddItem(neutral_item_created)
+			neutral_item_created:SetCurrentCharges(neutral_item:GetCurrentCharges())
+		end
+	end
+
+	-- Copy Modifiers
+	local caster_modifiers = self:GetCaster():FindAllModifiers()
+	for _,modifier in pairs(caster_modifiers) do
+		if modifier then
+--			local ModifierDuration = modifier:GetDuration()
+--			if ModifierDuration > 0 then
+				local added_modifier = image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetDuration()})
+				if modifier:GetStackCount() > 0 then
+					if added_modifier then
+						added_modifier:SetStackCount(modifier:GetStackCount())
+					end	
+				end
+--			end
+		end
+	end
+
+	image:SetAbilityPoints(0)
+
+	image:SetHasInventory(false)
+	image:SetCanSellItems(false)
+
+	image:AddNewModifier(self:GetCaster(), self, "modifier_mows_image", {duration = duration})
+	image:AddNewModifier(self:GetCaster(), self, "modifier_mows_remove_as_limit", {duration = duration})
+
+	local modifier_handler = image:AddNewModifier(self:GetCaster(), self, "modifier_mows_slasher", {duration = duration})
+	
+	if modifier_handler then
+		modifier_handler.original_caster = self:GetCaster()
+	end
+
+	FindClearSpaceForUnit(image, target:GetAbsOrigin() + RandomVector(128), false)
+
+	image:EmitSound("Hero_Juggernaut.OmniSlash")
+
+	self:GetCaster():RemoveModifierByName("modifier_mows_remove_as_limit")
+
+	Timers:CreateTimer(FrameTime(), function()
+		if (not image:IsNull()) then
+			if image:GetUnitName() == "npc_dota_hero_juggernaut" then
+				StartAnimation(image, {activity = ACT_DOTA_OVERRIDE_ABILITY_4, rate = 1, duration = duration})
+			end
+		end
+	end)
+
+	if target:TriggerSpellAbsorb(self) then return end
+
+	Timers:CreateTimer(FrameTime(), function()
+		if (not image:IsNull()) then
+			image:PerformAttack(target, true, true, true, true, false, false, false)
+
+			local trail_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf", PATTACH_ABSORIGIN, image)
+			ParticleManager:SetParticleControl(trail_pfx, 0, previous_position)
+			ParticleManager:SetParticleControl(trail_pfx, 1, image:GetAbsOrigin())
+			ParticleManager:ReleaseParticleIndex(trail_pfx)
+		end
+	end)
+end
+
+--sword5
+function item_master_of_weapons_sword5:GetCooldown(level)
+	if self:GetCaster():HasModifier("modifier_dzzl_good_juju") then
+		if self:GetAbility() then
+			return self:GetAbility():GetSpecialValueFor("good_juju_cd") / self:GetCaster():GetCooldownReduction()
+		end	
+	end
+	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
+end
+
+function item_master_of_weapons_sword5:OnSpellStart()
+	if not IsServer() then return end
+	local target = self:GetCursorTarget()
+	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_mows_remove_as_limit", {})
+	local additional_duration = math.floor(self:GetCaster():GetDisplayAttackSpeed() / 1500)
+--	print("Print DisplayAttackSpeed", self:GetCaster():GetDisplayAttackSpeed())
+--	print("Print additional_duration", additional_duration)
+	local duration = self:GetSpecialValueFor("duration") + (additional_duration * 1)
+
+	local previous_position = self:GetCaster():GetAbsOrigin()
+	
+	self:GetCaster():Purge(false, true, false, false, false)
+
+	local image = CreateUnitByName(self:GetCaster():GetUnitName(), target:GetAbsOrigin(), true, self:GetCaster(), self:GetCaster():GetOwner(), self:GetCaster():GetTeamNumber())
+
+	local caster_level = self:GetCaster():GetLevel()
+	for i = 2, caster_level do
+		image:HeroLevelUp(false)
+	end
+
+	local non_transfer = {
+		["item_smoke_of_deceit"] = true,
+		["item_ward_observer"] = true,
+		["item_ward_sentry"] = true,
+	}
+
+	-- Copy Abilities
+	for ability_id = 0, DOTA_MAX_ABILITIES - 1 do
+		local ability = image:GetAbilityByIndex(ability_id)
+		if ability then
+			if not non_transfer[ability:GetAbilityName()] then
+				local caster_ability = self:GetCaster():FindAbilityByName(ability:GetAbilityName())
+				if caster_ability and caster_ability:IsTrained() then
+					ability:SetLevel(caster_ability:GetLevel())
+				end
+			end
+		end
+	end
+
+	-- Copy Items
+	for item_id = 0, 5 do
+		local item_in_caster = self:GetCaster():GetItemInSlot(item_id)
+		if item_in_caster ~= nil then
+			if not non_transfer[item_in_caster:GetName()] then
+				local item_created = CreateItem(item_in_caster:GetName(), image, image)
+				image:AddItem(item_created)
+				item_created:SetCurrentCharges(item_in_caster:GetCurrentCharges())
+			end
+		end
+	end
+	-- Copy Neutral Item
+	local neutral_item = self:GetCaster():GetItemInSlot(16)
+	if neutral_item ~= nil then
+		if not non_transfer[neutral_item:GetName()] then
+			local neutral_item_created = CreateItem(neutral_item:GetName(), image, image)
+			image:AddItem(neutral_item_created)
+			neutral_item_created:SetCurrentCharges(neutral_item:GetCurrentCharges())
+		end
+	end
+
+	-- Copy Modifiers
+	local caster_modifiers = self:GetCaster():FindAllModifiers()
+	for _,modifier in pairs(caster_modifiers) do
+		if modifier then
+--			local ModifierDuration = modifier:GetDuration()
+--			if ModifierDuration > 0 then
+				local added_modifier = image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetDuration()})
+				if modifier:GetStackCount() > 0 then
+					if added_modifier then
+						added_modifier:SetStackCount(modifier:GetStackCount())
+					end	
+				end
+--			end
+		end
+	end
+
+	image:SetAbilityPoints(0)
+
+	image:SetHasInventory(false)
+	image:SetCanSellItems(false)
+
+	image:AddNewModifier(self:GetCaster(), self, "modifier_mows_image", {duration = duration})
+	image:AddNewModifier(self:GetCaster(), self, "modifier_mows_remove_as_limit", {duration = duration})
+
+	local modifier_handler = image:AddNewModifier(self:GetCaster(), self, "modifier_mows_slasher", {duration = duration})
+	
+	if modifier_handler then
+		modifier_handler.original_caster = self:GetCaster()
+	end
+
+	FindClearSpaceForUnit(image, target:GetAbsOrigin() + RandomVector(128), false)
+
+	image:EmitSound("Hero_Juggernaut.OmniSlash")
+
+	self:GetCaster():RemoveModifierByName("modifier_mows_remove_as_limit")
+
+	Timers:CreateTimer(FrameTime(), function()
+		if (not image:IsNull()) then
+			if image:GetUnitName() == "npc_dota_hero_juggernaut" then
+				StartAnimation(image, {activity = ACT_DOTA_OVERRIDE_ABILITY_4, rate = 1, duration = duration})
+			end
+		end
+	end)
+
+	if target:TriggerSpellAbsorb(self) then return end
+
+	Timers:CreateTimer(FrameTime(), function()
+		if (not image:IsNull()) then
+			image:PerformAttack(target, true, true, true, true, false, false, false)
+
+			local trail_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail.vpcf", PATTACH_ABSORIGIN, image)
+			ParticleManager:SetParticleControl(trail_pfx, 0, previous_position)
+			ParticleManager:SetParticleControl(trail_pfx, 1, image:GetAbsOrigin())
+			ParticleManager:ReleaseParticleIndex(trail_pfx)
+		end
+	end)
+end
 
 -- Sword bonuses
 modifier_mows = class({})
@@ -148,7 +677,7 @@ function modifier_mows:DeclareFunctions()
 	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_TOOLTIP, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE}
 end
 function modifier_mows:GetModifierPreAttack_BonusDamage()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_damage") + self:GetStackCount() * (self:GetParent():GetLevel() * 1) end
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_damage") + self:GetStackCount() * (self:GetParent():GetLevel() * self:GetAbility():GetSpecialValueFor("bonus_attack_lvl")) end
 end
 function modifier_mows:GetModifierMoveSpeedBonus_Constant()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_ms") end
@@ -169,6 +698,7 @@ function modifier_mows:GetModifierBonusStats_Intellect()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
 end
 function modifier_mows:OnTooltip()
+	if self:GetAbility() then return self:GetStackCount() * (self:GetParent():GetLevel() * self:GetAbility():GetSpecialValueFor("bonus_attack_lvl") ) end
 	return self:GetStackCount() * (self:GetParent():GetLevel() * 1)
 end
 function modifier_mows:GetModifierOverrideAbilitySpecial(params)
@@ -182,11 +712,16 @@ function modifier_mows:GetModifierOverrideAbilitySpecial(params)
 
 	return 0
 end
-function modifier_mows:GetModifierOverrideAbilitySpecialValue(params)
+function modifier_mows:GetModifierOverrideAbilitySpecialValue(params)  --need to fix
 	if self:GetParent():HasModifier("modifier_mows_slasher") then
+		if self:GetAbility() then
+			print("get ability special")
+		end	
 		if params.ability:GetAbilityName() == "item_fire_rapier" and params.ability_special_value == "proc_chance" then
-			local nSpecialLevel = params.ability_special_level
-			return 35--params.ability:GetLevelSpecialValueNoOverride("proc_chance", nSpecialLevel)
+			--local nSpecialLevel = params.ability_special_level
+			print("fire rapier part 1")
+			return 30
+			--if self:GetAbility() then print("fire rapier overide") return self:GetAbility():GetSpecialValueFor("fire_rapier_chance") end --params.ability:GetLevelSpecialValueNoOverride("proc_chance", nSpecialLevel)
 		end
 	end
 
@@ -248,7 +783,7 @@ function modifier_mows_slasher:OnCreated()
 			self:BounceAndSlaughter(true)
 			local AttacksNumber = 3
 			local BaseInterval = 0.4
-			local slash_rate = BaseInterval / AttacksNumber--self:GetCaster():GetSecondsPerAttack() / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
+			local slash_rate = self:GetAbility():GetSpecialValueFor("slash_rate") --self:GetCaster():GetSecondsPerAttack() / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
 			self:StartIntervalThink(slash_rate)
 		end
 	end
@@ -265,8 +800,8 @@ function modifier_mows_slasher:OnDestroy()
 			local ability = self:GetAbility()
 			local image_team = self:GetParent():GetTeamNumber()
 			local image_loc = self:GetParent():GetAbsOrigin()
-			local damage = caster:GetAttackDamage()
-			local radius = 2000
+			local damage = caster:GetAverageTrueAttackDamage(caster) * ability:GetSpecialValueFor("attack_asdmg_multiplier")
+			local radius = ability:GetSpecialValueFor("radius_expl")
 			local repeat_times = 1 + (2 * math.floor(self:GetParent():GetLevel() / 40))
 			if self:GetParent():GetPrimaryAttribute() == 0 then
 				if self:GetParent():GetStrength() >= 7500 then
@@ -292,12 +827,13 @@ function modifier_mows_slasher:OnDestroy()
 								damage_type = DAMAGE_TYPE_PHYSICAL,
 								damage_flags = DMGflags,
 							})
-							
 							if expl_bonus_dmg < 200 then
 								if caster:IsAlive() then
-									local stacks = caster:FindModifierByName("modifier_mows")
-									stacks:SetStackCount(stacks:GetStackCount() + 1)
-									expl_bonus_dmg = expl_bonus_dmg + 40
+									if caster:HasModifier("modifier_mows") then
+										local stacks = caster:FindModifierByName("modifier_mows")
+										stacks:SetStackCount(stacks:GetStackCount() + 1)
+										expl_bonus_dmg = expl_bonus_dmg + 40
+									end	
 								end	
 							end
 						end
@@ -345,8 +881,8 @@ function modifier_mows_slasher:OnIntervalThink()
 	self:BounceAndSlaughter()
 	
 	local AttacksNumber = 3
-	local BaseInterval = 0.4
-	local slash_rate = BaseInterval / AttacksNumber--self:GetCaster():GetSecondsPerAttack() / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
+	local BaseInterval = 0.4 
+	local slash_rate = self:GetAbility():GetSpecialValueFor("slash_rate")
 
 	self:StartIntervalThink(slash_rate)
 end

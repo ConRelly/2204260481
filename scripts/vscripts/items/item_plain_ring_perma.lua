@@ -148,7 +148,7 @@ function modifier_item_plain_ring_perma_invincibility:GetTexture() return "plain
 function modifier_item_plain_ring_perma_invincibility:GetEffectName() return "particles/world_shrine/dire_shrine_regen.vpcf" end
 function modifier_item_plain_ring_perma_invincibility:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_item_plain_ring_perma_invincibility:DeclareFunctions()
-	return {MODIFIER_PROPERTY_heal, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK}
+	return {MODIFIER_PROPERTY_MIN_HEALTH, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK}
 end
 function modifier_item_plain_ring_perma_invincibility:GetMinHealth() return 1 end
 function modifier_item_plain_ring_perma_invincibility:GetModifierIncomingDamage_Percentage() return -400 end

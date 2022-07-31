@@ -13705,6 +13705,156 @@
 	}
 }
 
+"npc_boss_juggernaut_4"
+{
+	"Model"					 "models/heroes/juggernaut/juggernaut.vmdl"
+	"BaseClass"				 "npc_dota_creature"
+	"UnitLabel"				 "randomskill"
+	//"vscripts"				  "bosses/attack_move.lua"
+	"SoundSet"				  "Hero_Juggernaut"
+	"ModelScale"				"1.6"
+	"Level"					 "1"
+	"CanBeDominated"			"0"
+	"ConsideredHero"			"1"
+	//"IsBossMonster"			 "1"
+	"HasInventory"			  "1"
+
+	"precache"
+	{
+		"particle_folder"	   "particles/units/heroes/hero_juggernaut"
+		"soundfile"			 "soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
+	}
+
+	"Ability1"				  "juggernaut_blade_dance"
+	"Ability2"				  "mjz_juggernaut_jump_crit"
+	"Ability3"				  "mjz_juggernaut_blade_fury"	
+	"Ability4"				  "siltbreaker_kraken_shell8"
+	"Ability5"				  "custom_omni_slash_jugg"
+	"Ability6"				  "huskar_berserkers_blood"
+	"Ability7"				  "phantom_assassin_blur"
+	"Ability8"				  "bloodseeker_thirst"
+	//"Ability9"				  "siltbreaker_kraken_shell8"
+	"Ability10"				 "leesin_dragons_rage"
+	"Ability11"				  "zoom_charge_of_darkness"
+	"Ability12"				 "mjz_chaos_knight_chaos_strike_2"
+	"Ability13"				 "cold_fall"
+	"Ability16"				 "draks_unholy_strength"
+
+	"ArmorPhysical"			 "420"
+	"MagicalResistance"		 "93"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"		   "500"
+	"AttackDamageMax"		   "2900"
+	"AttackDamageType"		  "DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"0.4"
+	"AttackAnimationPoint"	  "0.39"
+	"BaseAttackSpeed"		   "100"
+	"AttackAcquisitionRange"	"8600"
+	"AttackRange"			   "440"
+	"ProjectileModel"		   ""
+	"ProjectileSpeed"		   ""
+	"AttributePrimary"		  "DOTA_ATTRIBUTE_STRENGTH"
+	"BountyGoldMin"			 "1"
+	"BountyGoldMax"			 "1"
+	"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	"RingRadius"				"100"
+	"HealthBarOffset"		   "240"
+	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
+	"MovementSpeed"			 "550"
+	"MovementTurnRate"		  "0.7"
+	"StatusHealth"			  "100000"
+	"StatusHealthRegen"		 "5000"
+	"StatusMana"				"57750"
+	"StatusManaRegen"		   "2000"
+	"TeamName"				  "DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"VisionDaytimeRange"		"9800"
+	"VisionNighttimeRange"	  "9800"
+
+	"Creature"
+	{
+		"DisableClumpingBehavior"   "1"
+		"EquippedItems"
+			{
+				"Mjollnir"
+				{
+					"Item"				  "item_mjz_mjollnir_5"
+				}
+				"Abysal Blade"
+				{
+					"Item"				  "item_abyssal_blade"
+				}
+				"Plain ring"
+				{
+					"Item"				  "item_shivas_guard_2"
+				}
+//				"Unstoppable Boss"		{"Item"		"item_boss_resistance_70"}
+				"Abysal Blade"
+				{
+					"Item"				  "item_dark_skadi"
+				}
+				"Butterfly"
+				{
+					"Item"				  "item_black_powder_bag"
+				}
+				"Neutral"
+				{
+					"Item"				  "item_ceremonial_robe2"
+				}				
+			}   
+
+		"OffensiveAbilities"
+		{
+			"Ability2"
+			{
+				"Name"			  "mjz_juggernaut_jump_crit"
+			}
+			"Ability3"
+			{
+				"Name"			   "mjz_juggernaut_blade_fury"
+				"AOE"				"500"
+				"Radius"			 "500"
+				"MinimumTargets"	 "0"
+			}
+			"Ability4"
+			{
+				"Name"			  "custom_omni_slash_jugg"
+			}
+			"Ability10"
+			{
+				"Name"			  "leesin_dragons_rage"
+			}			
+			"Ability7"
+			{
+				"Name"			  "phantom_assassin_blur"
+			}
+			"Ability11"
+			{
+				"Name"			  "zoom_charge_of_darkness"
+			}
+			"Ability13"
+			{
+			   "Name"			   "cold_fall"
+			   //"AOE"				"4500"
+			   //"Radius"			 "4500"
+			   //"MinimumTargets"	 "0"
+			}						
+		}
+
+		"AttachWearables"
+		{
+			"1" { "ItemDef"	 "7481" }
+			"2" { "ItemDef"	 "9059" }
+			"3" { "ItemDef"	 "7164" }
+			"4" { "ItemDef"	 "4884" }
+			"5" { "ItemDef"	 "7075" }
+		}
+	}
+}
+
+
 //=================================================================================
 	// Creature: Siltbreaker
 	// Zones: silt_arena
@@ -15167,7 +15317,7 @@
 			"Aghs"				  { "Item"		"item_mjz_assault_5" }
 			"Radiance"			  { "Item"		"item_high_tech_boots2" }
 			"Heart"				 { "Item"		"item_shivas_guard_2" }
-//			"Unstoppable"		   { "Item"		"item_boss_resistance_50" }
+			"Unstoppable"		   { "Item"		"item_willbreaker" }
 			"Plain_ring"			{ "Item"		"item_plain_ring" }
 			"Abystal Blade"		 { "Item"		"item_mjz_mjollnir_5" }
 			"Abystal Blade"		 { "Item"		"item_sphere_custom" }

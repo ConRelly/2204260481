@@ -463,7 +463,26 @@ function AOHGameMode:OnPlayerChat(keys)
 			SendToServerConsole(tostring(string.format("r_hero_debug_render_mode %i", 0)))
 		end
 	end
+
+
+	if keys.text == "-challenge" and keys.playerid == 0 and not self.challenge and self._endlessMode_started then   --
+		local plyID = keys.playerid
+		local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero()
+		local skip = 0.2
+		local number_unit = 1
+		local unit = "npc_boss_juggernaut_4"
+		local name = "Boss"
+		if 	unit == "npc_boss_juggernaut_4" then
+			name = "Juggernaut Sword Master"
+		end	
+		CreateUnitByName(unit, plyhero:GetAbsOrigin() + RandomVector(RandomFloat(200, 1000)) , true, nil, nil, DOTA_TEAM_BADGUYS)
+		Notifications:TopToAll({text="Challenge " .. name, style={color="blue"}, duration=7})
+		self.challenge = true
+	end
+
 end
+
+
 
 
 
