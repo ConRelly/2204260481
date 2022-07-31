@@ -476,7 +476,7 @@ function AOHGameMode:OnPlayerChat(keys)
 			name = "Juggernaut Sword Master"
 		end	
 		CreateUnitByName(unit, plyhero:GetAbsOrigin() + RandomVector(RandomFloat(200, 1000)) , true, nil, nil, DOTA_TEAM_BADGUYS)
-		Notifications:TopToAll({text="Challenge " .. name, style={color="blue"}, duration=7})
+		Notifications:TopToAll({text="Challenge " .. name.." reach lvl 160 for max reward", style={color="blue"}, duration=10})
 		self.challenge = true
 	end
 

@@ -2011,12 +2011,14 @@ and some other stuff
 
 
 
-New item : Master of Weapon's, Sword.
-* Fixed Wraith King Ultimate aghanim aura triggering gold ring and still killing you, might have fixed other exceptions of death and trigger gold ring at the same time. Added 1 sec extra duration for Wk aghanim.
-* Fixed the multiple Enrage announce for the last round(enrage was activating acording to the rule, so just visual)
+New item: Master of Weapon's, Sword, the main ingredient for the item is rewarded after the challenge boss disappears(420s)
+New Challenge Boss -Sword Master: The host can start the challenge by typing "-challenge", after part 2 starts (any time after that). the boss can't die, but he gets a new level(gets harder) and life every time he avoids death, he does not Ai to hunt for the base, is not immune to CCs, and does not block to high % dmg.
+* Fixed Wraith King Ultimate aghanim aura triggering gold ring and still killing you, might have fixed other exceptions of death and trigger gold ring at the same time. Added 1sec extra duration for Wk aghanim.
+* Fixed the multiple Enrage announce for the last round(enrage was activating according to the rule, so just visual)
 * Fix Overwhelming blink having 0 blink range
-* Hoodwink: Ultimate SS has an extra effect , agility gain per level almost 2x , added back the talent that changes his ultimate Dmg type, buffed bumerang(in utility).
-* Abysal water blade recipe cost from 25k to 15k.
+* Hoodwink: Ultimate SS has an extra effect, agility gain per level almost 2x, added back the talent that changes his ultimate Dmg type, buffed boomerang(in utility).
+* Abysal water blade recipe costs from 25k to 15k.
+* and some other small stuff or fixes that i forgot.
 
 
 

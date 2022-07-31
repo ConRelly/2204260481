@@ -303,6 +303,10 @@ function IsExcludeAbility(ability)
 		"item_ritual_shovel",
 		"item_custom_seer_stone",
 		"item_master_of_weapons_sword",
+		"item_master_of_weapons_sword2",
+		"item_master_of_weapons_sword3",
+		"item_master_of_weapons_sword4",
+		"item_master_of_weapons_sword5",		
 -- Abilities
 		"phoenix_fire_spirits",
 		"mjz_phoenix_sun_ray",
@@ -371,6 +375,10 @@ function IsExcludeAbility9(ability)
 	local list = {
 -- Items
 		"item_master_of_weapons_sword",
+		"item_master_of_weapons_sword2",
+		"item_master_of_weapons_sword3",
+		"item_master_of_weapons_sword4",
+		"item_master_of_weapons_sword5",		
 -- Abilities
 		"mjz_tinker_quick_arm",
 		"naga_siren_song_of_the_siren",

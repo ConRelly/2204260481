@@ -22,19 +22,28 @@ function modifier_infinite_health:OnDestroy()
             local lvl = parent:GetLevel()
             local hp = parent:GetHealthPercent()
             create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin())
+            local reward = "1 ingot"
             if lvl > 50 then
                 create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin())
+                reward = "2 ingots"
             end 
             if lvl > 80 then
                 create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin())
+                reward = "3 ingots"
             end
             if lvl > 120 then
                 create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin())
+                reward = "4 ingots"
             end 
             if lvl > 160 then
                 create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin())
-            end                                       
-            Notifications:TopToAll({text="You Have Reached Level "..lvl.." and "..hp.."% Heath" , style={color="red"}, duration=15})
+                reward = "5 ingots"
+            end 
+            if _G._hardMode then                                      
+                Notifications:TopToAll({text="Hard Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward: "..reward , style={color="red"}, duration=15})
+            else
+                Notifications:TopToAll({text="Normal Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward: "..reward , style={color="red"}, duration=15})
+            end    
         end   
     end    
 end    

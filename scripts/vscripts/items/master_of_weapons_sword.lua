@@ -23,8 +23,8 @@ end
 
 function item_master_of_weapons_sword:GetCooldown(level)
 	if self:GetCaster():HasModifier("modifier_dzzl_good_juju") then
-		if self:GetAbility() then
-			return self:GetAbility():GetSpecialValueFor("good_juju_cd") / self:GetCaster():GetCooldownReduction()
+		if self then
+			return (self:GetSpecialValueFor("good_juju_cd") / self:GetCaster():GetCooldownReduction()) / 0.58
 		end	
 	end
 	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
@@ -80,6 +80,9 @@ function item_master_of_weapons_sword:OnSpellStart()
 			end
 		end
 	end
+	image:AddItemByName("item_moon_shard")
+	image:AddItemByName("item_moon_shard")
+
 	-- Copy Neutral Item
 	local neutral_item = self:GetCaster():GetItemInSlot(16)
 	if neutral_item ~= nil then
@@ -151,8 +154,8 @@ end
 --sword2
 function item_master_of_weapons_sword2:GetCooldown(level)
 	if self:GetCaster():HasModifier("modifier_dzzl_good_juju") then
-		if self:GetAbility() then
-			return self:GetAbility():GetSpecialValueFor("good_juju_cd") / self:GetCaster():GetCooldownReduction()
+		if self then
+			return (self:GetSpecialValueFor("good_juju_cd") / self:GetCaster():GetCooldownReduction()) / 0.58
 		end	
 	end
 	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
@@ -208,6 +211,8 @@ function item_master_of_weapons_sword2:OnSpellStart()
 			end
 		end
 	end
+	image:AddItemByName("item_moon_shard")
+	image:AddItemByName("item_moon_shard")	
 	-- Copy Neutral Item
 	local neutral_item = self:GetCaster():GetItemInSlot(16)
 	if neutral_item ~= nil then
@@ -279,8 +284,8 @@ end
 --sword3
 function item_master_of_weapons_sword3:GetCooldown(level)
 	if self:GetCaster():HasModifier("modifier_dzzl_good_juju") then
-		if self:GetAbility() then
-			return self:GetAbility():GetSpecialValueFor("good_juju_cd") / self:GetCaster():GetCooldownReduction()
+		if self then
+			return (self:GetSpecialValueFor("good_juju_cd") / self:GetCaster():GetCooldownReduction()) / 0.58
 		end	
 	end
 	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
@@ -324,7 +329,8 @@ function item_master_of_weapons_sword3:OnSpellStart()
 			end
 		end
 	end
-
+	image:AddItemByName("item_moon_shard")
+	image:AddItemByName("item_moon_shard")
 	-- Copy Items
 	for item_id = 0, 5 do
 		local item_in_caster = self:GetCaster():GetItemInSlot(item_id)
@@ -407,8 +413,8 @@ end
 --sword4
 function item_master_of_weapons_sword4:GetCooldown(level)
 	if self:GetCaster():HasModifier("modifier_dzzl_good_juju") then
-		if self:GetAbility() then
-			return self:GetAbility():GetSpecialValueFor("good_juju_cd") / self:GetCaster():GetCooldownReduction()
+		if self then
+			return (self:GetSpecialValueFor("good_juju_cd") / self:GetCaster():GetCooldownReduction()) / 0.58
 		end	
 	end
 	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
@@ -464,6 +470,8 @@ function item_master_of_weapons_sword4:OnSpellStart()
 			end
 		end
 	end
+	image:AddItemByName("item_moon_shard")
+	image:AddItemByName("item_moon_shard")	
 	-- Copy Neutral Item
 	local neutral_item = self:GetCaster():GetItemInSlot(16)
 	if neutral_item ~= nil then
@@ -535,8 +543,8 @@ end
 --sword5
 function item_master_of_weapons_sword5:GetCooldown(level)
 	if self:GetCaster():HasModifier("modifier_dzzl_good_juju") then
-		if self:GetAbility() then
-			return self:GetAbility():GetSpecialValueFor("good_juju_cd") / self:GetCaster():GetCooldownReduction()
+		if self then
+			return (self:GetSpecialValueFor("good_juju_cd") / self:GetCaster():GetCooldownReduction()) / 0.58
 		end	
 	end
 	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
@@ -592,6 +600,8 @@ function item_master_of_weapons_sword5:OnSpellStart()
 			end
 		end
 	end
+	image:AddItemByName("item_moon_shard")
+	image:AddItemByName("item_moon_shard")	
 	-- Copy Neutral Item
 	local neutral_item = self:GetCaster():GetItemInSlot(16)
 	if neutral_item ~= nil then
@@ -664,7 +674,7 @@ end
 modifier_mows = class({})
 function modifier_mows:IsHidden() return self:GetStackCount() == 0 end
 function modifier_mows:IsPurgable() return false end
-function modifier_mows:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+--function modifier_mows:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_mows:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
 		if self:GetCaster():FindAbilityByName("gifted_weapon") then
@@ -703,7 +713,7 @@ function modifier_mows:OnTooltip()
 end
 function modifier_mows:GetModifierOverrideAbilitySpecial(params)
 	if self:GetParent() == nil or params.ability == nil then return 0 end
-
+	--print("overide 0")
 	if self:GetParent():HasModifier("modifier_mows_slasher") then
 		if params.ability:GetAbilityName() == "item_fire_rapier" and params.ability_special_value == "proc_chance" then
 			return 1
@@ -714,14 +724,9 @@ function modifier_mows:GetModifierOverrideAbilitySpecial(params)
 end
 function modifier_mows:GetModifierOverrideAbilitySpecialValue(params)  --need to fix
 	if self:GetParent():HasModifier("modifier_mows_slasher") then
-		if self:GetAbility() then
-			print("get ability special")
-		end	
 		if params.ability:GetAbilityName() == "item_fire_rapier" and params.ability_special_value == "proc_chance" then
 			--local nSpecialLevel = params.ability_special_level
-			print("fire rapier part 1")
-			return 30
-			--if self:GetAbility() then print("fire rapier overide") return self:GetAbility():GetSpecialValueFor("fire_rapier_chance") end --params.ability:GetLevelSpecialValueNoOverride("proc_chance", nSpecialLevel)
+			if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("fire_rapier_chance") end --params.ability:GetLevelSpecialValueNoOverride("proc_chance", nSpecialLevel)
 		end
 	end
 
