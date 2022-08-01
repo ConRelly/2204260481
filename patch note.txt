@@ -2025,8 +2025,9 @@ New Challenge Boss -Sword Master: The host can start the challenge by typing "-c
 
 
 
-
-
+* Fixed shadow amulet abuse, now has 0 CD as a base not condition (it was used to spam and trick items like mimic mace, blast staff, obs etc is using a 10 sec cd item)
+* Added reward info for challenge boss when DPS Challenge ends
+Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new Role for the Highest score on the month
 
 
 

@@ -20253,6 +20253,104 @@
 		}
 	}
 
+// Shadow Amulet
+	"item_shadow_amulet"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"215"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"FightRecapLevel"				"1"
+
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"0.0"
+		"AbilityManaCost"				"0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1000"
+		"ItemShopTags"					""
+		"ItemAliases"					"shadow amulet"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{			
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fade_time"				"10.0"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Glimmer Cape
+	//=================================================================================================================
+	"item_glimmer_cape"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"254"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"550"
+		"AbilityCooldown"				"34.0"
+		"AbilityManaCost"				"90"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1950"
+		"ItemShopTags"					""
+		"ItemQuality"					"rare"
+		"ItemAliases"					"glimmer cape"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{			
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_magical_armor"	"15"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fade_delay"				"0.8"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"active_magical_armor"	"50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"	"5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"building_duration_limit"			"180"
+			}
+		}
+	}
+
+
+
 // Basher
 	"item_basher"
 	{

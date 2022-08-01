@@ -466,7 +466,7 @@
 
 
 	"DOTA_Tooltip_ability_item_adamantium_ingot"                        "<h1><font color='#9E20E7'>Adamantium Ingot</font>"
-	"DOTA_Tooltip_ability_item_adamantium_ingot_description"            "Is Gained after Surviving the '-challenge' Boss , you can type that command any time after part 2 starts. Depending how far you reach you gain extra <h1><font color='#9E20E7'>Adamantium Ingot</font>"
+	"DOTA_Tooltip_ability_item_adamantium_ingot_description"            "Is Gained after finishing the DPS '-challenge' Boss , you can type that command any time after part 2 starts. Depending how far you reach you gain extra <h1><font color='#9E20E7'>Adamantium Ingot</font>"
 
 // weapon lvl 1
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword"					"Master Of Weapons' Sword"

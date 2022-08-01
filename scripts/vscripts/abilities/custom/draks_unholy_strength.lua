@@ -70,8 +70,8 @@ function modifier_draks_unholy_strength:GetModifierPercentageCooldown()
   if cdr < 0 then 
     cdr = 1
   end 
-  if cdr > 75 then
-    cdr = 75
+  if cdr > 90 then
+    cdr = 90
   end   
   return math.floor(cdr)
 end
