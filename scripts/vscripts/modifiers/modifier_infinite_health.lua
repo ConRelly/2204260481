@@ -21,32 +21,48 @@ function modifier_infinite_health:OnDestroy()
             local parent = self:GetParent()
             local lvl = parent:GetLevel()
             local hp = parent:GetHealthPercent()
-            create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin())
-            local reward = "1 ingot"
+            Drop_gold_bag(parent, 25000)
+            create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin() + RandomVector(RandomFloat(50, 250))
+            local reward = "1 ingot, 1 gold bag"
             if lvl > 50 then
-                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin())
-                reward = "2 ingots"
+                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250))
+                reward = "2 ingots, 2 gold bags"
+                Drop_gold_bag(parent, 25000)
             end 
             if lvl > 80 then
-                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin())
-                reward = "3 ingots"
+                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250))
+                reward = "3 ingots, 3 gold bags"
+                Drop_gold_bag(parent, 25000)
             end
             if lvl > 120 then
-                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin())
-                reward = "4 ingots"
+                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250))
+                reward = "4 ingots, 4 gold bags"
+                Drop_gold_bag(parent, 25000)
             end 
             if lvl > 160 then
-                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin())
-                reward = "5 ingots"
+                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250))
+                reward = "5 ingots, 5 gold bags"
+                Drop_gold_bag(parent, 25000)
             end 
             if _G._hardMode then                                      
                 Notifications:TopToAll({text="Hard Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward: "..reward , style={color="red"}, duration=15})
             else
                 Notifications:TopToAll({text="Normal Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward: "..reward , style={color="red"}, duration=15})
-            end    
+            end
         end   
     end    
+end
+function Drop_gold_bag(unit, nGold)
+    if IsServer() then
+        local newItem = CreateItem("item_bag_of_gold", nil, nil)
+        newItem:SetPurchaseTime(0)
+        newItem:SetCurrentCharges(nGold)
+        local drop = CreateItemOnPositionSync(unit:GetAbsOrigin(), newItem)
+        local dropTarget = unit:GetAbsOrigin() + RandomVector(RandomFloat(50, 550))
+        newItem:LaunchLoot(false, 300, 0.75, dropTarget)
+    end   
 end    
+
 function modifier_infinite_health:DeclareFunctions()
 	return {
     MODIFIER_PROPERTY_MIN_HEALTH,
@@ -96,12 +112,13 @@ function modifier_infinite_health:OnIntervalThink()
                     end                          
                 end
             end
-            self.teleport_chance = 7    
+            self.teleport_chance = 7 
+            if RollPercentage(3) then
+                parent:AddNewModifier(parent, nil, "modifier_invulnerable", {duration = 3})
+            end    
         end
     end 
 end
-
-
 
 
 function modifier_infinite_health:GetModifierIncomingDamage_Percentage()
@@ -110,13 +127,13 @@ function modifier_infinite_health:GetModifierIncomingDamage_Percentage()
         if lvl < 40 then
             return 40 - lvl
         end    
-        return 0  --99 max
+        return 0 
     end    
 end
 function modifier_infinite_health:GetModifierExtraHealthBonus()
     if self:GetParent() then
         local lvl = self:GetParent():GetLevel()
-        local bonus_hp = math.floor( lvl * 50000 )
+        local bonus_hp = math.floor( lvl * 40000 )
         return bonus_hp
     end
 end

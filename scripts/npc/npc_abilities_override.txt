@@ -10909,7 +10909,7 @@
 	}
 	"skeleton_king_reincarnation"
 	{
-		"AbilityCooldown"				"100 95 90"
+		"AbilityCooldown"				"130 120 110"
 		"AbilitySpecial"
 		{
 			"01"

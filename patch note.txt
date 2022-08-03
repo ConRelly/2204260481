@@ -2032,6 +2032,25 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Gold ring now will trigger if you are affected by wraith king ultimate Aghanim (wraith) and have Helm of Undying Rdy in neutral slot, Helm of Undying does not work Wk ultimate aghanim (they do exactly the same thing and wk aura has priority).
+* Fixed Night Stalker passsive not giving anything during the Day, incresed his crippling fear As reduction.
+* Fixed Cleave not working with Slight of Fist (Ember/Sven W).
+* Challenge Boss: 
+--cannot be started after min 100 of game.
+--reduced his base magic reist by ~20% (from 93% to 91%), he does not gain any MR or armor per level btw.
+--base armor from 420 to 380
+--Health increase per level from 50k to 40k
+--now has 3% chance every second to become invul for 3 sec.
+
+
+
+
+
+
+
+
+
+
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 

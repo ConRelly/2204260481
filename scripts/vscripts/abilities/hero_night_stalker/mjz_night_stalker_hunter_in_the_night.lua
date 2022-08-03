@@ -28,7 +28,7 @@ function modifier_mjz_night_stalker_hunter_in_the_night:OnCreated()
 		if not self:GetCaster():HasModifier("modifier_night_stalker_hunter_in_the_night") then
 			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_night_stalker_hunter_in_the_night", {})
 		end
-		self:StartIntervalThink(FrameTime())
+		self:StartIntervalThink(1)
 	end	
 end
 --[[
@@ -69,7 +69,7 @@ function modifier_mjz_night_stalker_hunter_in_the_night:OnIntervalThink()
 
 		if self:GetCaster():PassivesDisabled() then bonus_ms_pct = 0 bonus_as = 0 end
 
-		if not Sun and self:GetCaster():IsAlive() then
+		if self:GetCaster():IsAlive() then
 --			if not self:GetCaster():HasModifier(modifier_ms) then
 				local ms_modifier = self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), modifier_ms, {})
 				ms_modifier:SetStackCount(bonus_ms_pct)
@@ -79,14 +79,14 @@ function modifier_mjz_night_stalker_hunter_in_the_night:OnIntervalThink()
 				as_modifier:SetStackCount(bonus_as)
 --			end
 		end
-		if Sun and self:GetCaster():IsAlive() then
+--[[ 		if Sun and self:GetCaster():IsAlive() then
 			if self:GetCaster():HasModifier(modifier_ms) then
 				self:GetCaster():RemoveModifierByName(modifier_ms)
 			end
 			if self:GetCaster():HasModifier(modifier_as) then
 				self:GetCaster():RemoveModifierByName(modifier_as)
 			end
-		end
+		end ]]
 	end
 end
 

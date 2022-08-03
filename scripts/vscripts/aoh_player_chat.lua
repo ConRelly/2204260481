@@ -465,7 +465,7 @@ function AOHGameMode:OnPlayerChat(keys)
 	end
 
 
-	if keys.text == "-challenge" and keys.playerid == 0 and not self.challenge and self._endlessMode_started then   --
+	if keys.text == "-challenge" and keys.playerid == 0 and not self.challenge then-- and self._endlessMode_started then   --
 		local plyID = keys.playerid
 		local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero()
 		local unit = "npc_boss_juggernaut_4"

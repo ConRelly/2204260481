@@ -713,7 +713,6 @@ function modifier_mows:OnTooltip()
 end
 function modifier_mows:GetModifierOverrideAbilitySpecial(params)
 	if self:GetParent() == nil or params.ability == nil then return 0 end
-	--print("overide 0")
 	if self:GetParent():HasModifier("modifier_mows_slasher") then
 		if params.ability:GetAbilityName() == "item_fire_rapier" and params.ability_special_value == "proc_chance" then
 			return 1
@@ -722,11 +721,10 @@ function modifier_mows:GetModifierOverrideAbilitySpecial(params)
 
 	return 0
 end
-function modifier_mows:GetModifierOverrideAbilitySpecialValue(params)  --need to fix
+function modifier_mows:GetModifierOverrideAbilitySpecialValue(params) 
 	if self:GetParent():HasModifier("modifier_mows_slasher") then
 		if params.ability:GetAbilityName() == "item_fire_rapier" and params.ability_special_value == "proc_chance" then
-			--local nSpecialLevel = params.ability_special_level
-			if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("fire_rapier_chance") end --params.ability:GetLevelSpecialValueNoOverride("proc_chance", nSpecialLevel)
+			if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("fire_rapier_chance") end 
 		end
 	end
 

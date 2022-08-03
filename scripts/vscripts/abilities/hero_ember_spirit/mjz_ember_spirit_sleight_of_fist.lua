@@ -162,7 +162,9 @@ if IsServer() then
 						)
 						
 						-- Move hero there
-						FindClearSpaceForUnit( caster, target:GetAbsOrigin(), false )
+						FindClearRandomPositionAroundUnit(caster, target, math.random(200))
+						--caster:SetAbsOrigin(target:GetAbsOrigin())
+						--FindClearSpaceForUnit( caster, target:GetAbsOrigin(), false )
 						
 						if target:IsHero() then
 							caster:AddNewModifier(caster, ability, modifierHeroName, {})

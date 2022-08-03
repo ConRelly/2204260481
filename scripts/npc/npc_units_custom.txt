@@ -13740,8 +13740,8 @@
 	"Ability13"				 "cold_fall"
 	"Ability16"				 "draks_unholy_strength"
 
-	"ArmorPhysical"			 "420"
-	"MagicalResistance"		 "93"
+	"ArmorPhysical"			 "380"
+	"MagicalResistance"		 "91"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"		   "500"
 	"AttackDamageMax"		   "2900"

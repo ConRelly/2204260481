@@ -119,7 +119,9 @@ function IsUndyingRdy(unit)
 	if Item ~= nil and IsValidEntity(Item) then
 		if Item:GetName() == "item_helm_of_the_undying" then
 			if Item:IsCooldownReady() then
-				return true
+				if not unit:HasModifier("modifier_skeleton_king_reincarnation_scepter") then
+					return true
+				end	
 			end	
 		end	
 	end

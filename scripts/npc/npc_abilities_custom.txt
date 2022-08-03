@@ -27930,12 +27930,12 @@
 			"01"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"slow_movement_speed_pct"			"10 15 20 25"
+				"slow_movement_speed_pct"			"10 20 30 40"
 			}
 			"01"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"slow_attack_speed"					"50 75 100 125"
+				"slow_attack_speed"					"75 125 250 425"
 			}
 			"03"
 			{
