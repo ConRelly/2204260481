@@ -17066,9 +17066,10 @@
 	}
 	"item_red_divine_rapier_lv1" 
 	{
-		"BaseClass" 				"item_datadriven"
+		"BaseClass" 				"item_lua"
+		"ScriptFile"                "items/item_red_divine_rapier.lua"
 		"AbilityTextureName"		"red_divine_rapier"
-		"Model"	   				"models/props_gameplay/divine_rapier.vmdl" 
+		"Model"	   				 	"models/props_gameplay/divine_rapier.vmdl" 
 		"Effect"	   				"particles/generic_gameplay/dropped_item_rapier.vpcf"
 		"ItemQuality"  				"epic"
 
@@ -17089,27 +17090,18 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"300 700 5000 10000 50000"
+				"bonus_damage"		"500 1500 10000 20000 60000"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"swrod_master_bonus_ptc"	"30 40 60 80 120"
-			}			
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_red_divine_rapier_lv1"
+				"swrod_master_bonus_ptc"	"30 45 60 80 120"
+			}
+			"03"
 			{
-				"Passive"			"1"
-				"IsHidden"			"1" 
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
-			} 
+				"var_type"			"FIELD_INTEGER"
+				"bonus_spell_amp"	"30 50 80 110 190"
+			}						
 		}
 	} 
 
@@ -17129,7 +17121,8 @@
 	}
 	"item_red_divine_rapier_lv2" 
 	{
-		"BaseClass" 				"item_datadriven"
+		"BaseClass" 				"item_lua"
+		"ScriptFile"                "items/item_red_divine_rapier.lua"
 		"AbilityTextureName"		"red_divine_rapier"
 		"Model"	   				"models/props_gameplay/divine_rapier.vmdl" 
 		"Effect"	   				"particles/generic_gameplay/dropped_item_rapier.vpcf"
@@ -17152,22 +17145,18 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"300 700 5000 10000 50000"
+				"bonus_damage"		"500 1500 10000 20000 60000"
 			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_red_divine_rapier_lv2"
+			"02"
 			{
-				"Passive"			"1"
-				"IsHidden"			"1" 
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
-			} 
+				"var_type"			"FIELD_INTEGER"
+				"swrod_master_bonus_ptc"	"30 45 60 80 120"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_spell_amp"	"30 50 80 110 190"
+			}						
 		}
 	} 
 
@@ -17186,7 +17175,8 @@
 	}
 	"item_red_divine_rapier_lv3" 
 	{
-		"BaseClass" 				"item_datadriven"
+		"BaseClass" 				"item_lua"
+		"ScriptFile"                "items/item_red_divine_rapier.lua"
 		"AbilityTextureName"		"red_divine_rapier"
 		"Model"	   				"models/props_gameplay/divine_rapier.vmdl" 
 		"Effect"	   				"particles/generic_gameplay/dropped_item_rapier.vpcf"
@@ -17209,22 +17199,18 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"300 700 5000 10000 50000"
+				"bonus_damage"		"500 1500 10000 20000 60000"
 			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_red_divine_rapier_lv3"
+			"02"
 			{
-				"Passive"			"1"
-				"IsHidden"			"1" 
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
-			} 
+				"var_type"			"FIELD_INTEGER"
+				"swrod_master_bonus_ptc"	"30 45 60 80 120"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_spell_amp"	"30 50 80 110 190"
+			}						
 		}
 	} 
 
@@ -17243,7 +17229,8 @@
 	}
 	"item_red_divine_rapier_lv4" 
 	{
-		"BaseClass" 				"item_datadriven"
+		"BaseClass" 				"item_lua"
+		"ScriptFile"                "items/item_red_divine_rapier.lua"
 		"AbilityTextureName"		"red_divine_rapier"
 		"Model"	   				"models/props_gameplay/divine_rapier.vmdl" 
 		"Effect"	   				"particles/generic_gameplay/dropped_item_rapier.vpcf"
@@ -17266,22 +17253,18 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"300 700 5000 10000 50000"
+				"bonus_damage"		"500 1500 10000 20000 60000"
 			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_red_divine_rapier_lv4"
+			"02"
 			{
-				"Passive"			"1"
-				"IsHidden"			"1" 
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
-			} 
+				"var_type"			"FIELD_INTEGER"
+				"swrod_master_bonus_ptc"	"30 45 60 80 120"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_spell_amp"	"30 50 80 110 190"
+			}						
 		}
 	} 
 
@@ -17300,7 +17283,8 @@
 	}
 	"item_red_divine_rapier_lv5" 
 	{
-		"BaseClass" 				"item_datadriven"
+		"BaseClass" 				"item_lua"
+		"ScriptFile"                "items/item_red_divine_rapier.lua"
 		"AbilityTextureName"		"red_divine_rapier"
 		"Model"	   				"models/props_gameplay/divine_rapier.vmdl" 
 		"Effect"	   				"particles/generic_gameplay/dropped_item_rapier.vpcf"
@@ -17323,22 +17307,18 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"300 700 5000 10000 50000"
+				"bonus_damage"		"500 1500 10000 20000 60000"
 			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_item_red_divine_rapier_lv5"
+			"02"
 			{
-				"Passive"			"1"
-				"IsHidden"			"1" 
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
-			} 
+				"var_type"			"FIELD_INTEGER"
+				"swrod_master_bonus_ptc"	"30 45 60 80 120"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_spell_amp"	"30 50 80 110 190"
+			}						
 		}
 	}
 
@@ -35378,7 +35358,7 @@
 			"bonus_attack_range"			"200"
 			"bonus_as"						"180"
 			"bonus_all_stats"				"650"
-			"fire_rapier_chance"            "25"
+			"fire_rapier_chance"            "20"
 			"duration"						"2.0"
 			"bounce_range"					"600"
 			"radius_expl"                   "2000"
@@ -35448,7 +35428,7 @@
 			"bonus_attack_range"			"230"
 			"bonus_as"						"200"
 			"bonus_all_stats"				"800"
-			"fire_rapier_chance"            "26"
+			"fire_rapier_chance"            "21"
 			"duration"						"2.2"
 			"bounce_range"					"700"
 			"radius_expl"                   "2100"
@@ -35517,7 +35497,7 @@
 			"bonus_attack_range"			"280"
 			"bonus_as"						"240"
 			"bonus_all_stats"				"900"
-			"fire_rapier_chance"            "27"
+			"fire_rapier_chance"            "22"
 			"duration"						"2.3"
 			"bounce_range"					"800"
 			"radius_expl"                   "2200"
@@ -35586,7 +35566,7 @@
 			"bonus_attack_range"			"330"
 			"bonus_as"						"300"
 			"bonus_all_stats"				"1000"
-			"fire_rapier_chance"            "28"
+			"fire_rapier_chance"            "24"
 			"duration"						"2.5"
 			"bounce_range"					"900"
 			"radius_expl"                   "2500"

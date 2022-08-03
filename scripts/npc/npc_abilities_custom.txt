@@ -24395,7 +24395,7 @@
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_bonus"				"380 420 480 540 690 780 1100"
+				"crit_bonus"				"380 420 680 740 990 1380 1800"
 			}
 			"14"
 			{
@@ -24571,7 +24571,7 @@
 		"LevelsBetweenUpgrades"			"12"
 		"AbilityCastPoint"				"0.35"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityCooldown"				"100 85 70"
+		"AbilityCooldown"				"100 95 85"
 		"AbilityManaCost"				"150 225 300"
 
 		"AbilityModifierSupportBonus"		"50"

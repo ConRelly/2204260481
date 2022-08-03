@@ -106,6 +106,7 @@ function AOHGameMode:InitGameMode()
 	AOHGameMode.numPhilo[4] = 0
 	self._hardMode = false
 	_G._hardMode = false
+	_G._extra_mode = false
 	_G.super_courier = {false, false, false, false, false}
 	self._endlessMode = false
 	self._endlessMode_started = false

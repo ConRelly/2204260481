@@ -34,6 +34,11 @@ item_custom_refresher.nonrefresh_items = {
 	item_random_get_ability = true,
 	item_inf_aegis = true,
 	item_video_file = true,
+	item_master_of_weapons_sword = true,
+	item_master_of_weapons_sword2 = true,
+	item_master_of_weapons_sword3 = true,
+	item_master_of_weapons_sword4 = true,
+	item_master_of_weapons_sword5 = true,	
 }
 
 function item_custom_refresher:OnSpellStart()

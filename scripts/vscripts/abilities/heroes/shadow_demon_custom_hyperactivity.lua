@@ -15,6 +15,11 @@ local exclude_items = {
     doom_devour_lua = true,
     dazzle_good_juju = true,
     dzzl_good_juju = true,
+	item_master_of_weapons_sword = true,
+	item_master_of_weapons_sword2 = true,
+	item_master_of_weapons_sword3 = true,
+	item_master_of_weapons_sword4 = true,
+	item_master_of_weapons_sword5 = true,    
 }
 
 

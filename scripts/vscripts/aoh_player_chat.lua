@@ -85,6 +85,7 @@ function AOHGameMode:OnPlayerChat(keys)
 
 	if keys.text == "-extra" and not self._extra_mode and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		self._extra_mode = true
+		_G._extra_mode = true
 		Notifications:TopToAll({text="Extra Mode Enabled, Bosses over lvl 14 will now get 2-6 random skills(Beta) ", style={color="blue"}, duration=9})		
 	end	
 
@@ -464,22 +465,26 @@ function AOHGameMode:OnPlayerChat(keys)
 		end
 	end
 
-
-	if keys.text == "-challenge" and keys.playerid == 0 and not self.challenge then-- and self._endlessMode_started then   --
+	local count = 0
+	if keys.text == "-challenge" and keys.playerid == 0 and not self.challenge and self._endlessMode_started then--    --
 		local plyID = keys.playerid
 		local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero()
 		local unit = "npc_boss_juggernaut_4"
 		local name = "Boss"
+		
 		if 	unit == "npc_boss_juggernaut_4" then
 			name = "Juggernaut Sword Master"
 		end
 		if time > 100 then
 			Notifications:TopToAll({text= time .."min Have passed you can't Challenge " .. name.." if More then 100 min have passed", style={color="red"}, duration=15})
-			self.challenge = true	
+			count = count + 1
+			if count > 3 then
+				self.challenge = true	
+			end	
 		else
 
 			CreateUnitByName(unit, plyhero:GetAbsOrigin() + RandomVector(RandomFloat(200, 1000)) , true, nil, nil, DOTA_TEAM_BADGUYS)
-			Notifications:TopToAll({text="Challenge " .. name.." reach lvl 160 for max reward", style={color="blue"}, duration=10})
+			Notifications:TopToAll({text="Challenge " .. name.." reach lvl 170 for max reward", style={color="blue"}, duration=10})
 			self.challenge = true
 		end	
 	end

@@ -26,13 +26,18 @@ local exclude_items = {
     item_rod_of_atos = true,
     item_sheepstick = true,
     item_silver_edge = true,
-	item_custom_fusion_rune = true,
+	item_custom_fusion_rune = true,    
 
     -- New
     item_health_bag = true,
 	item_conduit = true,
 	item_plain_ring = true,
     item_resurection_pendant = true,
+    item_master_of_weapons_sword = true,
+    item_master_of_weapons_sword2 = true,
+    item_master_of_weapons_sword3 = true,
+    item_master_of_weapons_sword4 = true,
+    item_master_of_weapons_sword5 = true,   
     
     --item_bloodthorn = true, 
     item_cursed_bloodthorn = true,  --血棘

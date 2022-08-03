@@ -1,4 +1,5 @@
 LinkLuaModifier("modifier_infinite_health", "modifiers/modifier_infinite_health.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier( "modifier_absolute_no_cc", "modifiers/modifier_absolute_no_cc", LUA_MODIFIER_MOTION_NONE )
 
 modifier_infinite_health = modifier_infinite_health or class({})
 
@@ -22,32 +23,40 @@ function modifier_infinite_health:OnDestroy()
             local lvl = parent:GetLevel()
             local hp = parent:GetHealthPercent()
             Drop_gold_bag(parent, 25000)
-            create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin() + RandomVector(RandomFloat(50, 250))
+            create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin() + RandomVector(RandomFloat(50, 250)))
             local reward = "1 ingot, 1 gold bag"
             if lvl > 50 then
-                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250))
+                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
                 reward = "2 ingots, 2 gold bags"
                 Drop_gold_bag(parent, 25000)
             end 
             if lvl > 80 then
-                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250))
+                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
                 reward = "3 ingots, 3 gold bags"
                 Drop_gold_bag(parent, 25000)
             end
             if lvl > 120 then
-                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250))
+                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
                 reward = "4 ingots, 4 gold bags"
                 Drop_gold_bag(parent, 25000)
             end 
-            if lvl > 160 then
-                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250))
+            if lvl > 170 then
+                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
                 reward = "5 ingots, 5 gold bags"
                 Drop_gold_bag(parent, 25000)
             end 
-            if _G._hardMode then                                      
-                Notifications:TopToAll({text="Hard Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward: "..reward , style={color="red"}, duration=15})
+            if _G._hardMode then
+                if _G._extra_mode then
+                    Notifications:TopToAll({text="Hard Mode + Extra: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward: "..reward , style={color="red"}, duration=15})
+                else                                         
+                    Notifications:TopToAll({text="Hard Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward: "..reward , style={color="red"}, duration=15})
+                end    
             else
-                Notifications:TopToAll({text="Normal Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward: "..reward , style={color="red"}, duration=15})
+                if if _G._extra_mode then
+                    Notifications:TopToAll({text="Normal Mode + Extra: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward: "..reward , style={color="red"}, duration=15})   
+                else
+                    Notifications:TopToAll({text="Normal Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward: "..reward , style={color="red"}, duration=15})
+                end    
             end
         end   
     end    
@@ -113,8 +122,9 @@ function modifier_infinite_health:OnIntervalThink()
                 end
             end
             self.teleport_chance = 7 
-            if RollPercentage(3) then
+            if RollPercentage(4) then
                 parent:AddNewModifier(parent, nil, "modifier_invulnerable", {duration = 3})
+                parent:AddNewModifier(parent, nil, "modifier_absolute_no_cc", {duration = 3})
             end    
         end
     end 
@@ -133,7 +143,7 @@ end
 function modifier_infinite_health:GetModifierExtraHealthBonus()
     if self:GetParent() then
         local lvl = self:GetParent():GetLevel()
-        local bonus_hp = math.floor( lvl * 40000 )
+        local bonus_hp = math.floor( lvl * 50000 )
         return bonus_hp
     end
 end

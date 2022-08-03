@@ -19,6 +19,11 @@ dzzl_good_juju.nonrefresh_items = {
 	item_random_get_ability = true,
 	item_inf_aegis = true,
 	item_video_file = true,
+	item_master_of_weapons_sword = true,
+	item_master_of_weapons_sword2 = true,
+	item_master_of_weapons_sword3 = true,
+	item_master_of_weapons_sword4 = true,
+	item_master_of_weapons_sword5 = true,	
 }
 --skills that have an togle like function and are able to be casted again during CD (resulting in self CD reduction aka 0 cd)
 local add_penality = {
