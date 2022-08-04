@@ -80,6 +80,8 @@ function lesser_cancel:OnSpellStart()
 
 --	for _, target in pairs(targets) do
 		if target and target:IsAlive() then
+			if target:HasModifier("modifier_chen_custom_holy_persuasion_buff") then return end
+			if target:HasModifier("modifier_infinite_health") then return end
 			target:Purge(true, true, false, true, false)
 			for _, modifier in pairs(target:FindAllModifiers()) do
 				local ModifierName = modifier:GetName()
@@ -113,6 +115,8 @@ function lesser_cancel:OnSpellStart()
 --	end
 --	for _, target in pairs(util_units) do
 		if target then
+			if target:HasModifier("modifier_chen_custom_holy_persuasion_buff") then return end
+			if target:HasModifier("modifier_infinite_health") then return end
 			for _, modifier in pairs(target:FindAllModifiers()) do
 				local ModifierName = modifier:GetName()
 				if not IgnoreOnsecond[ModifierName] then				
@@ -168,6 +172,8 @@ function divine_cancel:OnSpellStart()
 
 		for _, target in pairs(targets) do
 			if target and target:IsAlive() then
+				if target:HasModifier("modifier_chen_custom_holy_persuasion_buff") then return end
+				if target:HasModifier("modifier_infinite_health") then return end
 				target:Purge(true, true, false, true, false)
 				for _, modifier in pairs(target:FindAllModifiers()) do
 					local ModifierName = modifier:GetName()
@@ -202,6 +208,8 @@ function divine_cancel:OnSpellStart()
 		end
 		for _, target in pairs(util_units) do
 			if target then
+				if target:HasModifier("modifier_chen_custom_holy_persuasion_buff") then return end
+				if target:HasModifier("modifier_infinite_health") then return end
 				for _, modifier in pairs(target:FindAllModifiers()) do
 					local ModifierName = modifier:GetName()
 					if not IgnoreOnsecond[ModifierName] then

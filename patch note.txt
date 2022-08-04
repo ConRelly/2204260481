@@ -2056,6 +2056,10 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Piety ultimate now does not kills chen creeps and does not affect challenge boss.
+
+
+
 
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.

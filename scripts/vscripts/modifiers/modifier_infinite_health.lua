@@ -52,7 +52,7 @@ function modifier_infinite_health:OnDestroy()
                     Notifications:TopToAll({text="Hard Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward: "..reward , style={color="red"}, duration=15})
                 end    
             else
-                if if _G._extra_mode then
+                if _G._extra_mode then
                     Notifications:TopToAll({text="Normal Mode + Extra: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward: "..reward , style={color="red"}, duration=15})   
                 else
                     Notifications:TopToAll({text="Normal Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward: "..reward , style={color="red"}, duration=15})
