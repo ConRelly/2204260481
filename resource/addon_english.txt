@@ -924,7 +924,7 @@
 
 // Earth Spirit
 	"DOTA_Tooltip_ability_rolling_stone"					"Rollin’ Stone"
-	"DOTA_Tooltip_ability_rolling_stone_Description"		"Earth Spirit turns into stone and rushes across the battlefield, stunning enemies and causing damage to them. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Allows you to move freely and removes the speed limit."
+	"DOTA_Tooltip_ability_rolling_stone_Description"		"Earth Spirit turns into stone and rushes across the battlefield, stunning enemies and causing damage to them. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Allows you to move freely and removes the speed limit. %speed_dmg%%% of your speed is added as bonus dmg to the skill. \n<h1><font color='#F70707'>Challenge Boss</font></h1>Skill tickrate will get divided by the Reward Tier number(1-5)."
 	"DOTA_Tooltip_ability_rolling_stone_Lore"			"The stone avalanche is already near."
 	"DOTA_Tooltip_ability_rolling_stone_Note0"		"Destroys trees within a radius of 300."
 	"DOTA_Tooltip_ability_rolling_stone_Note1"		"For the duration of the ability - Rolling Boulder is disabled."

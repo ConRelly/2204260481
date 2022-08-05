@@ -99,13 +99,16 @@ end
 function modifier_rolling_stone_buff:OnCreated()
 	if IsServer() then
 		local caster = self:GetCaster()
+		local tick_rate = 1
 --		EmitSoundOn("Hero_EarthSpirit.RollingBoulder.Loop", caster)
 		caster:EmitSoundParams("Hero_EarthSpirit.RollingBoulder.Loop", 1, 0.5, 0)
 
 		self.particle = ParticleManager:CreateParticle("particles/units/heroes/hero_earth_spirit/espirit_rollingboulder.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 		ParticleManager:SetParticleControlEnt(self.particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
-
-		self:StartIntervalThink(1)
+		if _G._challenge_bosss > 1 then
+			tick_rate = tick_rate / _G._challenge_bosss
+		end	
+		self:StartIntervalThink(tick_rate)
 	end
 end
 
@@ -122,8 +125,12 @@ function modifier_rolling_stone_buff:OnIntervalThink()
 	if IsServer() then
 		local caster = self:GetCaster()
 		local str_damage = caster:GetStrength() * self:GetAbility():GetSpecialValueFor("str_damage") / 100
+		local speed_dmg = caster:GetIdealSpeed() * self:GetAbility():GetSpecialValueFor("speed_dmg") / 100
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
 		local stun_duration = self:GetAbility():GetSpecialValueFor("stun_duration") + talent_value(caster, "special_earth_spirit_rolling_stone_stun_duration")
+		if caster:HasModifier("modifier_super_scepter") then 
+			str_damage = str_damage + speed_dmg
+		end
 
 		local unit_list = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 		for _, unit in pairs(unit_list) do

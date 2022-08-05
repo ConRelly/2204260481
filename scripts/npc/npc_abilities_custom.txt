@@ -42410,7 +42410,7 @@
 			"4"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"str_damage"					"50 75 125 200 300 400 550 700 850 1000"
+				"str_damage"					"200 300 400 550 700 850 1000 1150 1300 1500"
 			}
 			"5"
 			{
@@ -42428,6 +42428,11 @@
 				"stun_duration"					"0.25"
 				"LinkedSpecialBonus"			"special_earth_spirit_rolling_stone_stun_duration"
 			}
+			"8"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"speed_dmg"					"300"
+			}			
 		}
 	}
 // Talent: +X sec Rollin' Stone Stun Duration

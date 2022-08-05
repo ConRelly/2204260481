@@ -2057,7 +2057,10 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 * Piety ultimate now does not kills chen creeps and does not affect challenge boss.
-
+* Earth spirit Rolling stone:
+--higher str dmg rate
+--SS effect now ads 3x your speed as dmg per tick
+--New Effect : skill will improve base on Challenge boss tier reward 
 
 
 

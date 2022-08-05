@@ -24,38 +24,43 @@ function modifier_infinite_health:OnDestroy()
             local hp = parent:GetHealthPercent()
             Drop_gold_bag(parent, 25000)
             create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin() + RandomVector(RandomFloat(50, 250)))
-            local reward = "1 ingot, 1 gold bag"
+            local reward = "Tier I: 1 ingot, 1 gold bag"
+            _G._challenge_bosss = 1
             if lvl > 50 then
                 create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                reward = "2 ingots, 2 gold bags"
+                reward = "Tier II: 2 ingots, 2 gold bags"
                 Drop_gold_bag(parent, 25000)
+                _G._challenge_bosss = 2
             end 
             if lvl > 80 then
                 create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                reward = "3 ingots, 3 gold bags"
+                reward = "Tier III: 3 ingots, 3 gold bags"
                 Drop_gold_bag(parent, 25000)
+                _G._challenge_bosss = 3
             end
             if lvl > 120 then
                 create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                reward = "4 ingots, 4 gold bags"
+                reward = "Tier IV: 4 ingots, 4 gold bags"
                 Drop_gold_bag(parent, 25000)
+                _G._challenge_bosss = 4
             end 
             if lvl > 170 then
                 create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                reward = "5 ingots, 5 gold bags"
+                reward = "Tier V: 5 ingots, 5 gold bags"
                 Drop_gold_bag(parent, 25000)
+                _G._challenge_bosss = 5
             end 
             if _G._hardMode then
                 if _G._extra_mode then
-                    Notifications:TopToAll({text="Hard Mode + Extra: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward: "..reward , style={color="red"}, duration=15})
+                    Notifications:TopToAll({text="Hard Mode + Extra: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward "..reward , style={color="red"}, duration=15})
                 else                                         
-                    Notifications:TopToAll({text="Hard Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward: "..reward , style={color="red"}, duration=15})
+                    Notifications:TopToAll({text="Hard Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward "..reward , style={color="red"}, duration=15})
                 end    
             else
                 if _G._extra_mode then
-                    Notifications:TopToAll({text="Normal Mode + Extra: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward: "..reward , style={color="red"}, duration=15})   
+                    Notifications:TopToAll({text="Normal Mode + Extra: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward "..reward , style={color="red"}, duration=15})   
                 else
-                    Notifications:TopToAll({text="Normal Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward: "..reward , style={color="red"}, duration=15})
+                    Notifications:TopToAll({text="Normal Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward "..reward , style={color="red"}, duration=15})
                 end    
             end
         end   
