@@ -20,11 +20,21 @@ end
 
 if IsServer() then
     function ability_class:OnProjectileHit(target, location)
+		if not IsServer() then return end
         if target and target:IsAlive() then
             local caster = self:GetCaster()
             local damage_pct = self:GetSpecialValueFor("damage_pct")
             local damage = caster:GetAverageTrueAttackDamage(target) * (damage_pct / 100.0)
-
+			if _G._challenge_bosss > 0 then
+				local target_current_hp = math.floor(target:GetHealth() * ( 0.03 * _G._challenge_bosss))
+				ApplyDamage({
+					ability = self,
+					attacker = caster,
+					victim = target,				
+					damage = target_current_hp,
+					damage_type = self:GetAbilityDamageType(),
+				})
+			end			 
             ApplyDamage({
                 ability = self,
 				attacker = caster,
@@ -32,6 +42,7 @@ if IsServer() then
                 damage = damage,
                 damage_type = self:GetAbilityDamageType(),
             })
+
 
             target:EmitSound("Hero_Mirana.ArrowImpact")
         end

@@ -32,6 +32,7 @@ end
 
 function item_master_of_weapons_sword:OnSpellStart()
 	if not IsServer() then return end
+	if not self:GetCaster():IsRealHero() then return end
 	local target = self:GetCursorTarget()
 	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_mows_remove_as_limit", {})
 	local additional_duration = math.floor(self:GetCaster():GetDisplayAttackSpeed() / 1500)
@@ -163,6 +164,7 @@ end
 
 function item_master_of_weapons_sword2:OnSpellStart()
 	if not IsServer() then return end
+	if not self:GetCaster():IsRealHero() then return end
 	local target = self:GetCursorTarget()
 	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_mows_remove_as_limit", {})
 	local additional_duration = math.floor(self:GetCaster():GetDisplayAttackSpeed() / 1500)
@@ -293,6 +295,7 @@ end
 
 function item_master_of_weapons_sword3:OnSpellStart()
 	if not IsServer() then return end
+	if not self:GetCaster():IsRealHero() then return end
 	local target = self:GetCursorTarget()
 	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_mows_remove_as_limit", {})
 	local additional_duration = math.floor(self:GetCaster():GetDisplayAttackSpeed() / 1500)
@@ -422,6 +425,7 @@ end
 
 function item_master_of_weapons_sword4:OnSpellStart()
 	if not IsServer() then return end
+	if not self:GetCaster():IsRealHero() then return end
 	local target = self:GetCursorTarget()
 	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_mows_remove_as_limit", {})
 	local additional_duration = math.floor(self:GetCaster():GetDisplayAttackSpeed() / 1500)
@@ -552,6 +556,7 @@ end
 
 function item_master_of_weapons_sword5:OnSpellStart()
 	if not IsServer() then return end
+	if not self:GetCaster():IsRealHero() then return end
 	local target = self:GetCursorTarget()
 	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_mows_remove_as_limit", {})
 	local additional_duration = math.floor(self:GetCaster():GetDisplayAttackSpeed() / 1500)

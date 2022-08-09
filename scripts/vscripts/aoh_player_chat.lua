@@ -466,7 +466,7 @@ function AOHGameMode:OnPlayerChat(keys)
 	end
 
 	local count = 0
-	if keys.text == "-challenge" and keys.playerid == 0 and not self.challenge and self._endlessMode_started then--    --
+	if keys.text == "-challenge" and keys.playerid == 0 and not self.challenge and self._endlessMode_started then--     --
 		local plyID = keys.playerid
 		local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero()
 		local unit = "npc_boss_juggernaut_4"
@@ -487,6 +487,22 @@ function AOHGameMode:OnPlayerChat(keys)
 			Notifications:TopToAll({text="Challenge " .. name.." reach lvl 170 for max reward", style={color="blue"}, duration=10})
 			self.challenge = true
 		end	
+	end
+
+	if string.find(keys.text, "-effect_rate") and keys.playerid == 0 then
+		print("reduce effect rate")		
+		local rate_nr = string.custom_remove2(keys.text)
+		print(rate_nr)			 
+		_G._effect_rate = 100 / rate_nr
+
+		Notifications:TopToAll({text= "Effect rate for some skills reduced by "..rate_nr.." times", style={color="yellow"}, duration=6})
+	end
+
+	if keys.text == "-dev_challenge" and keys.playerid == 0 and Cheats:IsEnabled() then
+		_G._challenge_bosss = 5
+	end
+	if keys.text == "-dev_challenge0" and keys.playerid == 0 and Cheats:IsEnabled() then
+		_G._challenge_bosss = 0
 	end
 
 end

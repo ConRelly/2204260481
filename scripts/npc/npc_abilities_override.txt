@@ -1127,7 +1127,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"				"45.0"
+				"value"				"150.0"
 				"ad_linked_abilities"			"phoenix_sun_ray"
 			}
 		}

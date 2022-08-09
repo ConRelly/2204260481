@@ -27,7 +27,33 @@ function string.custom_remove(str)
     str = string.gsub(str, "-register", "")
     return str
 end
-
+function checknumber(num)
+    if num == nil then return false end
+    if type(num) == "number" then
+        return true
+    else
+        return false
+    end
+end
+function string.custom_remove2(str)
+    if str == nil then
+        return nil, "the string parameter is nil"
+    end
+    str = string.gsub(str, " ", "")
+    str = string.gsub(str, "-effect_rate", "")
+    str = tonumber(str)
+    if checknumber(str) then
+        if str > 20 then
+            str = 20
+        end
+        if str < 1 then
+            str = 1
+        end    
+        return str
+    else
+        return 1   
+    end    
+end
 --[[将str的第一个字符转化为大写字符。成功返回转换后的字符串，失败返回nil和失败信息]]
 function string.capitalize(str)
     if str == nil then

@@ -9005,7 +9005,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"185"			// Physical protection.
+		"ArmorPhysical"				"100"			// Physical protection.
 		"MagicalResistance"			"90"			// Magical protection.
 
 		// Attack
@@ -13740,7 +13740,7 @@
 	"Ability13"				 "cold_fall"
 	"Ability16"				 "draks_unholy_strength"
 
-	"ArmorPhysical"			 "390"
+	"ArmorPhysical"			 "290"
 	"MagicalResistance"		 "91"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"		   "500"
@@ -13893,7 +13893,7 @@
 		//"Ability17"				 "troll_warlord_fervor"
 		"Ability18"				 "lich_custom_cold_soul2"
 
-		"ArmorPhysical"				"295"
+		"ArmorPhysical"				"195"
 		"MagicalResistance"			"93"
 
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -14030,7 +14030,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"395"
+		"ArmorPhysical"				"295"
 		"MagicalResistance"		 "95"
 
 		// Attack
@@ -14713,7 +14713,7 @@
 		//"Ability21"				  "legion_commander_moment_of_courage"
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"			 "220"
+		"ArmorPhysical"			 "120"
 		"MagicalResistance"		 "90"
 
 		// Attack
@@ -15218,7 +15218,7 @@
 	"Ability15"				 "aghanim_laser"
 	"Ability16"				 "draks_unholy_strength"
 	"Ability17"				 "aghanim_blink"	
-	"ArmorPhysical"			 "520"		 // Physical protection.
+	"ArmorPhysical"			 "420"		 // Physical protection.
 	"MagicalResistance"		 "95"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"		   "25000"		// Damage range min.
@@ -15237,7 +15237,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "100"	   // Speed.		   
-	"StatusHealth"			  "7700000"	  // Base health.
+	"StatusHealth"			  "9000000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
@@ -15376,7 +15376,7 @@
 	"Ability14"				 "aghanim_shard_attack"
 	"Ability15"				 "aghanim_laser"
 	"Ability16"				 "draks_unholy_strength"	
-	"ArmorPhysical"			 "520"		 // Physical protection.
+	"ArmorPhysical"			 "420"		 // Physical protection.
 	"MagicalResistance"		 "95"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"		   "9000"		// Damage range min.
@@ -15536,7 +15536,7 @@
 	//"Ability15"				 "darkrider_heartbeat"
 	"Ability16"				 "draks_unholy_strength"
 	"Ability17"				 "aghanim_blink"	
-	"ArmorPhysical"			 "420"		 // Physical protection.
+	"ArmorPhysical"			 "400"		 // Physical protection.
 	"MagicalResistance"		 "95"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"		   "1000"		// Damage range min.
@@ -15555,7 +15555,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "700"	   // Speed.		   
-	"StatusHealth"			  "6500000"	  // Base health.
+	"StatusHealth"			  "7500000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
@@ -16430,8 +16430,8 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"1"
 		"StatusHealthRegen"			"0"
-		"StatusMana"				"0"
-		"StatusManaRegen"			"0"
+		"StatusMana"				"65000"
+		"StatusManaRegen"			"1000"
 
 		// Vision
 		//----------------------------------------------------------------

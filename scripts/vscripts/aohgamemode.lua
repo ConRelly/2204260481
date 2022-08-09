@@ -109,6 +109,7 @@ function AOHGameMode:InitGameMode()
 	_G._extra_mode = false
 	_G.super_courier = {false, false, false, false, false}
 	_G._challenge_bosss = 0
+	_G._effect_rate = 100
 	self._endlessMode = false
 	self._endlessMode_started = false
 	self._manaMode = false

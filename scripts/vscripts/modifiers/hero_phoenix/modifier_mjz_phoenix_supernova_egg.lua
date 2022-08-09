@@ -241,7 +241,14 @@ if IsServer() then
 
 		local damage_per_sec = ability:GetSpecialValueFor("damage_per_sec")
 		local hp_damage_per_sec = ability:GetSpecialValueFor("hp_damage_per_sec")
+		local str_dmg = caster:GetStrength() * 20
 		local damage = damage_per_sec + caster:GetMaxHealth() * (hp_damage_per_sec / 100)
+		if _G._challenge_bosss > 1 then
+			damage = damage + str_dmg * _G._challenge_bosss 
+			for i = 1, _G._challenge_bosss do
+				damage = math.floor(damage * 1.2)
+			end 
+		end
 
 		ApplyDamage({
 			victim = parent,

@@ -40,8 +40,13 @@ end
 function modifier_caster:GetModifierPhysicalArmorBonus( )
 	return self:GetAbility():GetSpecialValueFor('bonus_armor')
 end
-function modifier_caster:GetModifierIncomingDamage_Percentage() -- 伤害减少
-    return self:GetAbility():GetSpecialValueFor('reduce_damage')
+function modifier_caster:GetModifierIncomingDamage_Percentage()
+    if self:GetAbility() then
+        if self:GetParent():GetName() == "npc_dota_hero_legion_commander" then
+            return self:GetAbility():GetSpecialValueFor('reduce_damage')
+        end 
+        return 0   
+    end    
 end
 
 if IsServer() then

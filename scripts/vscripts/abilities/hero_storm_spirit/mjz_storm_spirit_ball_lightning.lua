@@ -135,7 +135,12 @@ function modifier_buff:GetModifierMoveSpeedBonus_Constant()
 end
 
 function modifier_buff:GetModifierIncomingDamage_Percentage()
-	return self:GetAbility():GetSpecialValueFor("dmg_reduction") * (-1)
+	if self:GetAbility() then
+		if self:GetParent():GetName() ~= "npc_dota_hero_rubick" then
+			return self:GetAbility():GetSpecialValueFor("dmg_reduction") * (-1)
+		end
+		return 0	
+	end	
 end
 
 

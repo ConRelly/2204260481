@@ -57,13 +57,19 @@ function modifier_effect:DeclareFunctions()
 end
 
 function modifier_effect:GetModifierAttackRangeBonus( )
-	return self:GetAbility():GetSpecialValueFor('radius')
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor('radius')
+	end	
 end
 function modifier_effect:GetBonusDayVision( )
-	return self:GetAbility():GetSpecialValueFor('radius')
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor('radius')
+	end	
 end
 function modifier_effect:GetBonusNightVision( )
-	return self:GetAbility():GetSpecialValueFor('radius')
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor('radius')
+	end	
 end
 
 
@@ -184,21 +190,30 @@ if IsServer() then
 	end
 
 	function modifier_effect:_ApplyDamage(target)
-		local parent = self:GetParent()
-		local caster = self:GetCaster()
-		local ability = self:GetAbility()
+		if IsServer() then
+			local parent = self:GetParent()
+			local caster = self:GetCaster()
+			local ability = self:GetAbility()
 
-		local base_damage = ability:GetSpecialValueFor("base_damage")
-		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
-		local damage = base_damage + caster:GetIntellect() * (intelligence_damage / 100.0)
+			local base_damage = ability:GetSpecialValueFor("base_damage")
+			local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
+			local damage = base_damage + caster:GetIntellect() * (intelligence_damage / 100.0)
+			print("normal dmg: "..damage)
+			if _G._challenge_bosss > 0 then
+				for i = 1, _G._challenge_bosss do
+					damage = math.floor(damage * 1.3)
+					print("tier "..i.. " dmg: "..damage)
+				end 
+			end
 
-		ApplyDamage({
-			attacker = caster,
-			victim = target,
-			ability = ability,
-			damage_type = ability:GetAbilityDamageType(),
-			damage = damage
-		})
+			ApplyDamage({
+				attacker = caster,
+				victim = target,
+				ability = ability,
+				damage_type = ability:GetAbilityDamageType(),
+				damage = damage
+			})
+		end	
 	end
 
 end

@@ -198,19 +198,12 @@ function modifier_item_imba_skadi_unique:IsHidden() return true end
 function modifier_item_imba_skadi_unique:IsDebuff() return false end
 function modifier_item_imba_skadi_unique:IsPurgable() return false end
 function modifier_item_imba_skadi_unique:IsPermanent() return true end
-function modifier_item_imba_skadi_unique:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+--function modifier_item_imba_skadi_unique:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 
 -- Changes the caster's attack projectile, if applicable
 function modifier_item_imba_skadi_unique:OnCreated(keys)
 	if IsServer() then
-		--ChangeAttackProjectileImba(self:GetParent())
-
-		-- Store ability KVs for later usage
-		--[[local ability = self:GetAbility()
-		self.max_duration = ability:GetSpecialValueFor("max_duration")
-		self.min_duration = ability:GetSpecialValueFor("min_duration")
-		self.slow_range_cap = ability:GetSpecialValueFor("slow_range_cap")
-		self.max_distance = ability:GetSpecialValueFor("max_distance")]]
+		self:StartIntervalThink(2)
 	end
 end
 
@@ -220,7 +213,14 @@ function modifier_item_imba_skadi_unique:OnDestroy()
 		--ChangeAttackProjectileImba(self:GetParent())
 	end
 end
-
+function modifier_item_imba_skadi_unique:OnIntervalThink()
+	if IsServer() then
+		if _G._challenge_bosss > 0 then
+			self:SetStackCount(_G._challenge_bosss * 20)
+			self:StartIntervalThink(-1)
+		end
+	end
+end
 -- Declare modifier events/properties
 function modifier_item_imba_skadi_unique:DeclareFunctions()
 	local funcs = {
@@ -235,28 +235,36 @@ end
 
 function modifier_item_imba_skadi_unique:GetModifierBonusStats_Strength()
 	if self:GetAbility() then
-		return self:GetAbility():GetSpecialValueFor("rapier_str")
+		local bonus = (self:GetStackCount() / 100 + 1)
+		if bonus and bonus < 1 then bonus = 1 end
+		return self:GetAbility():GetSpecialValueFor("rapier_str") * bonus
 	end
 	return 0	 
 end
 
 function modifier_item_imba_skadi_unique:GetModifierBonusStats_Agility()
 	if self:GetAbility() then
-		return self:GetAbility():GetSpecialValueFor("rapier_agi") 
+		local bonus = (self:GetStackCount() / 100 + 1)
+		if bonus and bonus < 1 then bonus = 1 end
+		return self:GetAbility():GetSpecialValueFor("rapier_agi")  * bonus
 	end
 	return 0
 end
 
 function modifier_item_imba_skadi_unique:GetModifierBonusStats_Intellect()
 	if self:GetAbility() then
-		return self:GetAbility():GetSpecialValueFor("rapier_int")
+		local bonus = (self:GetStackCount() / 100 + 1)
+		if bonus and bonus < 1 then bonus = 1 end
+		return self:GetAbility():GetSpecialValueFor("rapier_int") * bonus
 	end
 	return 0		 
 end
 	
 function modifier_item_imba_skadi_unique:GetModifierSpellAmplify_Percentage()
 	if self:GetAbility() then
-		return self:GetAbility():GetSpecialValueFor("magic_amp")
+		local bonus = (self:GetStackCount() / 100 + 1)
+		if bonus and bonus < 1 then bonus = 1 end
+		return self:GetAbility():GetSpecialValueFor("magic_amp") * bonus
 	end
 	return 0		
 end

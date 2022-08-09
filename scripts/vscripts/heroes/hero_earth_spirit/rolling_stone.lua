@@ -15,10 +15,14 @@ function rolling_stone:OnToggle()
 			EmitSoundOn("Hero_EarthSpirit.RollingBoulder.Cast", caster)
 			caster:AddNewModifier(caster, self, "modifier_rolling_stone_thinker", {})
 			caster:AddNewModifier(caster, self, "modifier_rolling_stone_buff", {})
-			caster:FindAbilityByName("earth_spirit_rolling_boulder"):SetActivated(false)
+			if caster:HasAbility("earth_spirit_rolling_boulder") then
+				caster:FindAbilityByName("earth_spirit_rolling_boulder"):SetActivated(false)
+			end	
 		else
 			EmitSoundOn("Hero_EarthSpirit.RollingBoulder.Destroy", caster)
-			caster:FindAbilityByName("earth_spirit_rolling_boulder"):SetActivated(true)
+			if caster:HasAbility("earth_spirit_rolling_boulder") then
+				caster:FindAbilityByName("earth_spirit_rolling_boulder"):SetActivated(true)
+			end	
 			caster:RemoveModifierByName("modifier_rolling_stone_thinker")
 			caster:RemoveModifierByName("modifier_rolling_stone_buff")
 		end
@@ -90,10 +94,15 @@ function modifier_rolling_stone_buff:GetModifierMoveSpeedBonus_Constant()
 	return self:GetAbility():GetSpecialValueFor("bonus_ms")
 end
 function modifier_rolling_stone_buff:GetModifierIncomingDamage_Percentage()
-	if self:GetCaster():HasModifier("modifier_rolling_stone_remnantbuff") then
-		return (self:GetAbility():GetSpecialValueFor("dmg_reduction") + talent_value(self:GetCaster(), "special_earth_spirit_rolling_stone_dmg_reduction")) * (-1)
+	if self:GetAbility() then
+		if self:GetCaster():HasModifier("modifier_rolling_stone_remnantbuff") then
+			if (self:GetParent():GetName() == "npc_dota_hero_earth_spirit") then
+				return (self:GetAbility():GetSpecialValueFor("dmg_reduction") + talent_value(self:GetCaster(), "special_earth_spirit_rolling_stone_dmg_reduction")) * (-1)
+			end	
+			return 0
+		end
+		return self:GetAbility():GetSpecialValueFor("dmg_reduction") * (-1)
 	end
-	return self:GetAbility():GetSpecialValueFor("dmg_reduction") * (-1)
 end
 
 function modifier_rolling_stone_buff:OnCreated()
@@ -142,13 +151,16 @@ function modifier_rolling_stone_buff:OnIntervalThink()
 					damage_type = DAMAGE_TYPE_MAGICAL,
 					ability = self:GetAbility(),
 				})
-				unit:AddNewModifier(caster, self:GetAbility(), "modifier_rolling_stone_stun", {duration = stun_duration})
+				if stun_duration > 0 then
+					unit:AddNewModifier(caster, self:GetAbility(), "modifier_rolling_stone_stun", {duration = stun_duration})
+				end	
 			end
 		end
-
-		local effect_cast = ParticleManager:CreateParticle("particles/custom/abilities/heroes/earth_spirit_rolling_stone/rolling_stone_aoe.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
-		ParticleManager:SetParticleControl(effect_cast, 1, Vector(radius, radius, radius))
-		ParticleManager:ReleaseParticleIndex(effect_cast)
+		if RollPercentage(_G._effect_rate) then
+			local effect_cast = ParticleManager:CreateParticle("particles/custom/abilities/heroes/earth_spirit_rolling_stone/rolling_stone_aoe.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
+			ParticleManager:SetParticleControl(effect_cast, 1, Vector(radius, radius, radius))
+			ParticleManager:ReleaseParticleIndex(effect_cast)
+		end	
 	end
 end
 

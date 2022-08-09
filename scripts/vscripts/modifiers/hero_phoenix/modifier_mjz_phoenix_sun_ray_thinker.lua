@@ -79,7 +79,7 @@ if IsServer() then
     
         local tickInterval		= ability:GetSpecialValueFor('tick_interval')
         local baseDamage		= ability:GetSpecialValueFor('base_dmg')
-        local hpPercentDamage	= ability:GetSpecialValueFor('hp_perc_dmg')
+        local hpPercentDamage	= ability:GetSpecialValueFor('hp_perc_dmg') + talent_value(caster, "special_bonus_unique_phoenix_5")
         local base_heal         = ability:GetSpecialValueFor('base_heal')
         local hp_perc_heal      = ability:GetSpecialValueFor('hp_perc_heal')
         local particle_burn_name = "particles/units/heroes/hero_phoenix/phoenix_sunray_beam_enemy.vpcf"
@@ -95,11 +95,38 @@ if IsServer() then
         if distance > pathRadius then
             return
         end
-    
+        local enemy_distance = (target:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D()
         -- Calculate damage
         local damage = baseDamage + caster:GetMaxHealth() * (hpPercentDamage / 100.0)
         damage = damage * tickInterval
-    
+		if _G._challenge_bosss > 0 then
+            local target_health = target:GetHealthPercent()
+            local limiter = _G._challenge_bosss + 1
+            if limiter < 2 then limiter = 2 end
+            if target_health > 50 then 
+                local bonus_dmg_distance = math.floor(enemy_distance / 17) * limiter
+                bonus_dmg_distance = bonus_dmg_distance / 100
+                if bonus_dmg_distance > limiter then
+                    bonus_dmg_distance = limiter
+                end 
+                if bonus_dmg_distance < 1 then
+                    bonus_dmg_distance = 1
+                end 
+                print("above 50% bonus: "..bonus_dmg_distance)                 
+                damage = damage * bonus_dmg_distance
+            else
+                local bonus_dmg_distance = math.floor(200 /  enemy_distance) * limiter
+                bonus_dmg_distance = bonus_dmg_distance / 100
+                if bonus_dmg_distance > limiter then
+                    bonus_dmg_distance = limiter
+                end 
+                if bonus_dmg_distance < 1 then
+                    bonus_dmg_distance = 1
+                end 
+                print("below 50% bonus: "..bonus_dmg_distance)                  
+                damage = damage * bonus_dmg_distance                
+            end    
+		end        
         -- Check team
         -- local isEnemy = caster:IsOpposingTeam( target:GetTeamNumber() )
         local isEnemy = TargetIsEnemy(caster, target)

@@ -2423,7 +2423,7 @@
 		"Ability10"		"special_bonus_unique_earth_spirit_4"
 		"Ability11"		"special_bonus_gold_income_300"
 		"Ability12"		"special_earth_spirit_rolling_stone_dmg_reduction"
-		"Ability13"		"special_earth_spirit_rolling_stone_stun_duration"
+		"Ability13"		"special_bonus_reincarnation_90"
 		"Ability14"		"special_bonus_hp_5000"
 		"Ability15"		"special_bonus_unique_earth_spirit_5"
 		"Ability16"		"special_bonus_unique_earth_spirit_2"

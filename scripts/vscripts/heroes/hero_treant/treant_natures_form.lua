@@ -72,7 +72,14 @@ function modifier_natures_form:DeclareFunctions()
 	return {MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_ATTACKSPEED_PERCENTAGE, MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE}
 end
 function modifier_natures_form:GetModifierAttackRangeBonus() return self:GetAbility():GetSpecialValueFor("attack_range") end
-function modifier_natures_form:GetModifierIncomingDamage_Percentage() return self:GetAbility():GetSpecialValueFor("dmg_reduct") * (-1) end
+function modifier_natures_form:GetModifierIncomingDamage_Percentage()
+	if self:GetAbility()then
+		if self:GetParent():GetName() == "npc_dota_hero_treant" then
+			return self:GetAbility():GetSpecialValueFor("dmg_reduct") * (-1)
+		end	
+		return 0
+	end	
+end
 function modifier_natures_form:GetModifierHPRegenAmplify_Percentage() return self:GetAbility():GetSpecialValueFor("regen_amp") end
 function modifier_natures_form:GetModifierAttackSpeedPercentage() return self:GetAbility():GetSpecialValueFor("as_reduct") * (-1) end
 function modifier_natures_form:GetModifierBaseDamageOutgoing_Percentage() return self:GetAbility():GetSpecialValueFor("bonus_dmg") end

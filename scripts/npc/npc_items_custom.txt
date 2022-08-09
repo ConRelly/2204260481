@@ -18154,7 +18154,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"650 1650"
+				"bonus_strength"		"650 1950"
 			}
 			"02"
 			{
@@ -18169,7 +18169,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"pct_str_damage_per_second"		"620 1850"
+				"pct_str_damage_per_second"		"620 2450"
 			}
 			"05"
 			{
@@ -19463,7 +19463,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_penalty"			"-12"
+				"armor_penalty"			"-11"
 			}
 			"08"
 			{
@@ -20711,7 +20711,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"395"
+				"bonus_armor"			"495"
 			}
 			"03"
 			{
@@ -33190,7 +33190,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"level_mult"					"20"
+				"level_mult"					"18"
 			}
 		}
 		"OnSpellStart"

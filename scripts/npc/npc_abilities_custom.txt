@@ -29170,7 +29170,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastRange"				"%cast_range"
 		"AbilityCastPoint"				"0.01"
-		"AbilityCooldown"				"26"
+		"AbilityCooldown"				"18"
 		"AbilityDuration"				"%duration"
 		"AbilityManaCost"				"0"
 		
@@ -29200,12 +29200,12 @@
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"tick_interval"				"0.3"
+				"tick_interval"				"0.5"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"forward_move_speed"		"250"
+				"forward_move_speed"		"350"
 			}
 			"08"
 			{
@@ -29337,7 +29337,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_damage_per_sec"		"40 80 120 160 200 250 300"
+				"hp_damage_per_sec"		"160 200 250 300 400 500 600"
 			}
 			"05"
 			{
@@ -30187,7 +30187,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 
-		"AbilityCooldown"				"60 50 40"
+		"AbilityCooldown"				"60 50 35"
 		"AbilityManaCost"				"150 225 300"
 
 		"AbilityModifierSupportValue"	"0.2"	// Damage is the main component of spell
@@ -30202,7 +30202,7 @@
 			"epicenter_damage"				"810 1900 4540"
 			"str_multiplier"
 			{
-				"value"						"3 6 9"
+				"value"						"7 12 20"
 				"LinkedSpecialBonus"		"special_bonus_unique_mjz_sandking_epicenter_strength"
 			}
 			"epicenter_slow"				"-30"
@@ -30215,7 +30215,7 @@
 	// Aghanim's Shard
 			"epicenter_shard_interval"		"2"
 			"epicenter_shard_dmg_inc"		"1000"
-			"epicenter_shard_str_dmg_inc"	"7"
+			"epicenter_shard_str_dmg_inc"	"10"
 		}
 
 		"precache"
@@ -30252,7 +30252,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"						"9.5"
+				"value"						"10"
 			}
 		}
 	}
@@ -42425,7 +42425,7 @@
 			"7"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"stun_duration"					"0.25"
+				"stun_duration"					"0.0"
 				"LinkedSpecialBonus"			"special_earth_spirit_rolling_stone_stun_duration"
 			}
 			"8"
@@ -42446,7 +42446,7 @@
 			"01"
 			{
 				"var_type"		"FIELD_FLOAT"
-				"value"			"0.25"
+				"value"			"0.1"
 			}
 		}
 	}

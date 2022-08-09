@@ -26,27 +26,29 @@ function modifier_infinite_health:OnDestroy()
             create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin() + RandomVector(RandomFloat(50, 250)))
             local reward = "Tier I: 1 ingot, 1 gold bag"
             _G._challenge_bosss = 1
-            if lvl > 50 then
+            if lvl > 40 then
                 create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
                 reward = "Tier II: 2 ingots, 2 gold bags"
                 Drop_gold_bag(parent, 25000)
                 _G._challenge_bosss = 2
             end 
-            if lvl > 80 then
+            if lvl > 90 then
                 create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
                 reward = "Tier III: 3 ingots, 3 gold bags"
                 Drop_gold_bag(parent, 25000)
                 _G._challenge_bosss = 3
             end
-            if lvl > 120 then
+            if lvl > 140 then
                 create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                reward = "Tier IV: 4 ingots, 4 gold bags"
+                create_item_drop("item_edible_fragment", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
+                reward = "Tier IV: 4 ingots, 4 gold bags, Edible Fragment"
                 Drop_gold_bag(parent, 25000)
                 _G._challenge_bosss = 4
             end 
-            if lvl > 170 then
+            if lvl > 190 then
                 create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                reward = "Tier V: 5 ingots, 5 gold bags"
+                create_item_drop("item_edible_complete", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
+                reward = "Tier V: 5 ingots, 5 gold bags, Edible fragment + Edible Complete"
                 Drop_gold_bag(parent, 25000)
                 _G._challenge_bosss = 5
             end 
@@ -128,7 +130,9 @@ function modifier_infinite_health:OnIntervalThink()
             end
             self.teleport_chance = 7 
             if RollPercentage(4) then
-                parent:AddNewModifier(parent, nil, "modifier_invulnerable", {duration = 3})
+                if not parent:PassivesDisabled() then
+                    parent:AddNewModifier(parent, nil, "modifier_invulnerable", {duration = 3})
+                end    
                 parent:AddNewModifier(parent, nil, "modifier_absolute_no_cc", {duration = 3})
             end    
         end

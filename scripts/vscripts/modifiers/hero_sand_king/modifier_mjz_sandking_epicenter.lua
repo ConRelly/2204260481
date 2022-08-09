@@ -30,6 +30,11 @@ if IsServer() then
 			end
 
 			self.damage = epicenter_damage + self.caster:GetStrength() * str_multiplier
+			if _G._challenge_bosss > 1 then
+				for i = 1, _G._challenge_bosss do
+					self.damage = math.floor(self.damage * 1.2)
+				end	
+			end
 		end
 		
 		self.current_pulses = 0
@@ -71,12 +76,13 @@ if IsServer() then
 			
 			enemy:AddNewModifier(self.caster, self.ability, 'modifier_mjz_sandking_epicenter_slow', {duration = self.slow_duration})
 		end
-
-		local p_name = "particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
-		local particle = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN, self.parent)
-		ParticleManager:SetParticleControlEnt(particle, 0, self.caster, PATTACH_POINT_FOLLOW, "attach_origin", self.parent:GetAbsOrigin(), true)
-		ParticleManager:SetParticleControl(particle, 1, Vector(radius, radius, radius))
-		ParticleManager:ReleaseParticleIndex(particle)
+		if RollPercentage(_G._effect_rate) then
+			local p_name = "particles/units/heroes/hero_sandking/sandking_epicenter.vpcf"
+			local particle = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN, self.parent)
+			ParticleManager:SetParticleControlEnt(particle, 0, self.caster, PATTACH_POINT_FOLLOW, "attach_origin", self.parent:GetAbsOrigin(), true)
+			ParticleManager:SetParticleControl(particle, 1, Vector(radius, radius, radius))
+			ParticleManager:ReleaseParticleIndex(particle)
+		end	
 
 		if self.current_pulses >= self.epicenter_pulses then
 			self:StartIntervalThink(-1)
