@@ -2056,28 +2056,38 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
-* Piety ultimate now does not kills chen creeps and does not affect challenge boss.
-* Added new host command "-effect_rate number"  number = 1 to 20 , reduce the animation effects rate for some skills (for now Sand king ult/shard and earth spirit ultimate)
-*Challenge Boss:
+* Piety ultimate now does not kill chen creeps and does not affect challenge boss.
+* Added new host command "-effect_rate number"  number = 1 to 20, reduce the animation effects rate for some skills (for now Sand king ult/shard and earth spirit ultimate)
+* Challenge Boss:
 --New mechanic that improves some skills base on the tier reward.
---lowered the level necesary for Tier 2 from 50 to 40 , increased the level requirement for next tiers(every 50 levels, thats 190 for max) 
+--lowered the level necessary for Tier 2 from 50 to 40, increased the level requirement for the next tiers(every 50 levels, that's 190 for max) 
 --Added extra reward for tier 4 edible fragment, and tier 5  fragment from tier 4 + full fragment.
---the chance to get invulnerability is disabled during brake. the chance to get 3 sec cc immunity remains unaffected.
+--the chance to get invulnerability is disabled during brake. the chance to get 3-sec cc immunity remains unaffected.
 * Earth spirit Rolling stone:
 --higher str dmg rate
 --SS effect now ads 3x your speed as dmg per tick
---New Effect : skill will improve base on Challenge boss tier reward
-* Sanking Epicenter has new effect base on Challenge boss tier reward and shard effect rate. less cd , better str dmg ration for all 3 sources. 
-* Rot has new effect base on Challenge boss tier reward.  ---needs test
-* Phoenix nova has new effects base on Challenge boss tier reward, and increaded HP % scalying.
-* Phoenix Sun Ray has new effect base on Challenge boss tier reward. Talent has higer % bonus.
-* Pugna Nether ward has new effect base on Challenge boss tier reward.
-* Mirana arrow has new effect base on Challenge boss tier reward.
-* Ice rapier has new effect base on Challenge boss tier reward.
-* Increase Boss Shiva guard armor bonus by 100 but reduced base armor by 100 for bosses who have that item.
+--New Effect: skill will improve based on Challenge boss tier reward
+* Sandking Epicenter has a new effect base on Challenge boss tier reward and shard effect rate. and base skill buffs: less cd, better str dmg ration for all 3 sources. 
+* Rot has a new effect base on the Challenge boss tier reward.
+* Phoenix nova has new effects based on Challenge boss tier reward and increased HP % scaling.
+* Phoenix Sun Ray has a new effect base on the Challenge boss tier reward. Talent has a higher % bonus.
+* Pugna Nether ward has a new effect base on the Challenge boss tier reward.
+* Mirana arrow has a new effect base on Challenge boss tier reward.
+* Barathrum FTF has a new effect base on the Challenge boss tier reward.
+* Ice rapier has a new effect base on Challenge boss tier reward.
+* Increase Boss Shiva guard armor bonus by 100 but reduce base armor by 100 for bosses who have that item.
 * Increased base hp by ~1mil(that's ~10%) for Gods.
 * Fire rapier armor reduction from 12 to 11, a full point less.
+* Master or Weapons' Sword increased CD and reduced fire rapier proc chance,  increased explosion dmg and now does 2x more extra explosions base on your level.
 * Mana blade level mult from 20 to 18.
+* Fix some bugs and abuses and some other stuff.
+
+
+
+* Giants ring alternative recipe:  made with iron branch special and elemental(only one). 
+
+
+
 
 
 

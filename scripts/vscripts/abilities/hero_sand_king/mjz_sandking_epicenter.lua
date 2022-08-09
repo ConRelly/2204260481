@@ -69,7 +69,7 @@ function modifier_mjz_sandking_epicenter_shard:OnIntervalThink()
 		local slow_duration = ability:GetSpecialValueFor("epicenter_slow_duration")
 
 		local damage = epicenter_damage + caster:GetStrength() * str_multiplier
-		if _G._challenge_bosss > 1 then
+		if _G._challenge_bosss > 0 then
 			for i = 1, _G._challenge_bosss do
 				damage = math.floor(damage * 1.2)
 			end	
@@ -95,7 +95,7 @@ function modifier_mjz_sandking_epicenter_shard:OnIntervalThink()
 			enemy:AddNewModifier(caster, ability, "modifier_mjz_sandking_epicenter_slow", {duration = slow_duration})
 		end
 		EmitSoundOn("Hero_Sandking.EpiPulse", self:GetParent())
-		if _G._challenge_bosss > 1 and challenge_update then
+		if _G._challenge_bosss > 0 and challenge_update then
 			self:OnCreated()
 			challenge_update = false
 		end

@@ -111,8 +111,7 @@ if IsServer() then
                 end 
                 if bonus_dmg_distance < 1 then
                     bonus_dmg_distance = 1
-                end 
-                print("above 50% bonus: "..bonus_dmg_distance)                 
+                end                  
                 damage = damage * bonus_dmg_distance
             else
                 local bonus_dmg_distance = math.floor(200 /  enemy_distance) * limiter
@@ -122,8 +121,7 @@ if IsServer() then
                 end 
                 if bonus_dmg_distance < 1 then
                     bonus_dmg_distance = 1
-                end 
-                print("below 50% bonus: "..bonus_dmg_distance)                  
+                end                  
                 damage = damage * bonus_dmg_distance                
             end    
 		end        

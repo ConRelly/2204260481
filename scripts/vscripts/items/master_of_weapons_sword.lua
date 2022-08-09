@@ -810,7 +810,7 @@ function modifier_mows_slasher:OnDestroy()
 			local image_loc = self:GetParent():GetAbsOrigin()
 			local damage = caster:GetAverageTrueAttackDamage(caster) * ability:GetSpecialValueFor("attack_asdmg_multiplier")
 			local radius = ability:GetSpecialValueFor("radius_expl")
-			local repeat_times = 1 + (2 * math.floor(self:GetParent():GetLevel() / 40))
+			local repeat_times = 1 + (2 * math.floor(self:GetParent():GetLevel() / 20))
 			if self:GetParent():GetPrimaryAttribute() == 0 then
 				if self:GetParent():GetStrength() >= 7500 then
 					DMGflags = DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION

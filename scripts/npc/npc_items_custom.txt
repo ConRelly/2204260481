@@ -18179,6 +18179,52 @@
 		}
 	}
 
+
+
+
+	"item_branches2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_branches"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"Model"							"models/props_gameplay/branch.vmdl"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"400"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0.0"
+		"ItemStockInitial"				"1"
+		"ItemStockMax"					"1"
+		"ItemStockTime"					"99999.0"		
+		"ItemShareability"              "ITEM_FULLY_SHAREABLE_STACKING"
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"1000"
+		"ItemShopTags"					"agi;int;str"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"gg branch;iron branch"
+		"ShouldBeInitiallySuggested"	"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tree_duration"		"20"
+			}
+		}
+	}
+
+
 "item_recipe_pocket_rax"
 {
 	"BaseClass"						"item_datadriven"
@@ -35339,7 +35385,7 @@
 		"ItemCost"						"500"
 		"AbilityCastRange"				"550"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"19"
+		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"50"
 		"ItemQuality"					"artifact"
 		"ItemPurchasable"				"1"
@@ -35358,14 +35404,14 @@
 			"bonus_attack_range"			"200"
 			"bonus_as"						"180"
 			"bonus_all_stats"				"650"
-			"fire_rapier_chance"            "20"
-			"duration"						"2.0"
+			"fire_rapier_chance"            "15"
+			"duration"						"3.0"
 			"bounce_range"					"600"
 			"radius_expl"                   "2000"
 			"attack_asdmg_multiplier"		"2.0"
 			"slash_rate"                    "0.13"
 			"bonus_attack_lvl"              "1"
-			"good_juju_cd"                  "12"
+			"good_juju_cd"                  "17"
 		}
 		"precache"
 		{
@@ -35409,7 +35455,7 @@
 		"ItemCost"						"500"
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"18"
+		"AbilityCooldown"				"24"
 		"AbilityManaCost"				"50"
 		"ItemQuality"					"artifact"
 		"ItemPurchasable"				"1"
@@ -35428,14 +35474,14 @@
 			"bonus_attack_range"			"230"
 			"bonus_as"						"200"
 			"bonus_all_stats"				"800"
-			"fire_rapier_chance"            "21"
+			"fire_rapier_chance"            "16"
 			"duration"						"2.2"
 			"bounce_range"					"700"
 			"radius_expl"                   "2100"
-			"attack_asdmg_multiplier"		"2.5"
+			"attack_asdmg_multiplier"		"4.0"
 			"slash_rate"                    "0.12"
 			"bonus_attack_lvl"              "1.5"
-			"good_juju_cd"                  "12"
+			"good_juju_cd"                  "15"
 		}
 		"precache"
 		{
@@ -35478,7 +35524,7 @@
 		"ItemCost"						"500"
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"17"
+		"AbilityCooldown"				"23"
 		"AbilityManaCost"				"50"
 		"ItemQuality"					"artifact"
 		"ItemPurchasable"				"1"
@@ -35497,14 +35543,14 @@
 			"bonus_attack_range"			"280"
 			"bonus_as"						"240"
 			"bonus_all_stats"				"900"
-			"fire_rapier_chance"            "22"
+			"fire_rapier_chance"            "17"
 			"duration"						"2.3"
 			"bounce_range"					"800"
 			"radius_expl"                   "2200"
-			"attack_asdmg_multiplier"		"3.0"
+			"attack_asdmg_multiplier"		"5.0"
 			"slash_rate"                    "0.11"
 			"bonus_attack_lvl"              "2"
-			"good_juju_cd"                  "11"
+			"good_juju_cd"                  "14"
 		}
 		"precache"
 		{
@@ -35547,7 +35593,7 @@
 		"ItemCost"						"500"
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"16"
+		"AbilityCooldown"				"22"
 		"AbilityManaCost"				"50"
 		"ItemQuality"					"artifact"
 		"ItemPurchasable"				"1"
@@ -35566,14 +35612,14 @@
 			"bonus_attack_range"			"330"
 			"bonus_as"						"300"
 			"bonus_all_stats"				"1000"
-			"fire_rapier_chance"            "24"
+			"fire_rapier_chance"            "18"
 			"duration"						"2.5"
 			"bounce_range"					"900"
 			"radius_expl"                   "2500"
-			"attack_asdmg_multiplier"		"3.5"
+			"attack_asdmg_multiplier"		"6.0"
 			"slash_rate"                    "0.11"
 			"bonus_attack_lvl"              "2.5"
-			"good_juju_cd"                  "11"
+			"good_juju_cd"                  "14"
 		}
 		"precache"
 		{
@@ -35616,7 +35662,7 @@
 		"ItemCost"						"500"
 		"AbilityCastRange"				"1500"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"14"
+		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"50"
 		"ItemQuality"					"artifact"
 		"ItemPurchasable"				"1"
@@ -35635,14 +35681,14 @@
 			"bonus_attack_range"			"400"
 			"bonus_as"						"550"
 			"bonus_all_stats"				"2200"
-			"fire_rapier_chance"            "32"
+			"fire_rapier_chance"            "20"
 			"duration"						"3.0"
 			"bounce_range"					"1500"
 			"radius_expl"                   "3000"
-			"attack_asdmg_multiplier"		"5.0"
+			"attack_asdmg_multiplier"		"8.0"
 			"slash_rate"                    "0.10"
 			"bonus_attack_lvl"              "3"
-			"good_juju_cd"                  "10"
+			"good_juju_cd"                  "12"
 		}
 		"precache"
 		{

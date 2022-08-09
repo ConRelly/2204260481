@@ -24051,6 +24051,25 @@
 			"01"						"item_chest_4;item_mjz_heart_3;item_branch_component"
 		}
 	}
+	"item_recipe_giants_ring3"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"0"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemStockInitial"				"1"
+		"ItemStockMax"					"1"
+		"ItemStockTime"					"99999.0"		
+		"InvalidHeroes"					"npc_dota_hero_monkey_king"
+		"ItemResult"					"item_giants_ring"
+		"ItemRequirements"
+		{
+			"01"						"item_chest_4;item_mjz_heart_3;item_all_essence;item_branches2"
+		}
+	}
+
 // Giants Ring
 	"item_giants_ring"
 	{

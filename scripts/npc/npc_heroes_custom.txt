@@ -1910,6 +1910,7 @@
 		"Ability1"				"axe_custom_counter_helix"
 		"Ability2"				"mjz_pudge_rot"
 		"Ability3"				"mjz_pudge_flesh_heap"
+		"Ability4"				"generic_hidden"
 		"Ability6"				"mjz_pudge_dismember"
 		"Ability10"				"special_bonus_unique_mjz_pudge_0301"
 		"Ability11"				"special_bonus_unique_mjz_pudge_rot_damage"
