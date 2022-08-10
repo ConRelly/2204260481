@@ -9,6 +9,7 @@ function modifier_egg:IsHidden() return true end
 function modifier_egg:IsPurgable() return false end
 
 function modifier_egg:CheckState() 
+
 	local state = {
 		[MODIFIER_STATE_ROOTED]     			= true,
 		[MODIFIER_STATE_COMMAND_RESTRICTED]     = true,
@@ -52,6 +53,8 @@ end
 -- 	return 0.7
 -- end
 
+
+
 ---------------------------------------------------------------
 
 function modifier_egg:IsAura() return true end
@@ -91,10 +94,19 @@ if IsServer() then
 		local pfx = ParticleManager:CreateParticle( "particles/units/heroes/hero_phoenix/phoenix_supernova_egg.vpcf", PATTACH_ABSORIGIN_FOLLOW, egg )
 		ParticleManager:SetParticleControlEnt( pfx, 1, egg, PATTACH_POINT_FOLLOW, "attach_hitloc", egg:GetAbsOrigin(), true )
 		ParticleManager:ReleaseParticleIndex( pfx )
-
+		self:StartIntervalThink(0.25)
 	end
 
 end
+function modifier_egg:OnIntervalThink()
+	local parent = self:GetParent()
+	local caster = self:GetCaster()
+	if parent and caster then
+		if caster:GetAbsOrigin() ~= parent:GetAbsOrigin() then
+			parent:SetAbsOrigin(caster:GetAbsOrigin())
+		end	
+	end	
+end	
 
 function modifier_egg:OnDeath( keys )
 	if not IsServer() then return end

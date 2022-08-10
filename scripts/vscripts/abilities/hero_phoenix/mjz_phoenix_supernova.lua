@@ -72,6 +72,10 @@ function ability_class:SpellTarget( target )
 	if caster:HasScepter() then
 		max_attacks = max_attacks_scepter
 	end
+	if caster:HasModifier("modifier_super_scepter") then
+		max_attacks = max_attacks * ability:GetSpecialValueFor("ss_attacks_mult")
+		duration = duration * ability:GetSpecialValueFor("ss_duration_mult")
+	end	
 
 	target:EmitSound( "Hero_Phoenix.SuperNova.Cast" )
 	target:AddNewModifier(caster, ability, MODIFIER_CASTER_NAME, {duration = duration})

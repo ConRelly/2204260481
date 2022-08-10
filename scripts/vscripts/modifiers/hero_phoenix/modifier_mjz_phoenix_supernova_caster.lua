@@ -6,25 +6,47 @@ function modifier_class:IsHidden() return false end
 function modifier_class:IsPurgable() return false end
 
 function modifier_class:CheckState() 
+
 	local state = {
-		[MODIFIER_STATE_COMMAND_RESTRICTED] 		= true,
-		[MODIFIER_STATE_STUNNED]					= true,
+		--[MODIFIER_STATE_COMMAND_RESTRICTED] 		= true,
+		--[MODIFIER_STATE_IGNORING_MOVE_AND_ATTACK_ORDERS] 		= true,
+		[MODIFIER_STATE_ROOTED]     				= true,
+		[MODIFIER_STATE_DISARMED] 					= true,
+		--[MODIFIER_STATE_STUNNED]					= true,
 		[MODIFIER_STATE_INVULNERABLE]				= true,
 		[MODIFIER_STATE_NO_UNIT_COLLISION]			= true,
-		[MODIFIER_STATE_OUT_OF_GAME]				= true,
+		--[MODIFIER_STATE_OUT_OF_GAME]				= true,
 		[MODIFIER_STATE_NO_HEALTH_BAR]				= true,
-		-- [MODIFIER_STATE_DISARMED] 			= true,
+		[MODIFIER_STATE_MUTED] 						= true,
 		-- [MODIFIER_STATE_STUNNED] 			= true,
 		-- [MODIFIER_STATE_FLYING]				= true,
 
 	}
+	if self:GetCaster() and not self:GetCaster():HasModifier("modifier_super_scepter") then
+		state[MODIFIER_STATE_STUNNED] = true
+		state[MODIFIER_STATE_COMMAND_RESTRICTED] = true
+		state[MODIFIER_STATE_OUT_OF_GAME] = true
+	end
 	return state
 end
 
--- function modifier_class:DeclareFunctions()
--- 	return {
--- 	}
--- end
+function modifier_class:DeclareFunctions()
+	if self:GetCaster() and self:GetCaster():HasModifier("modifier_super_scepter") then	
+		return {
+			MODIFIER_PROPERTY_MODEL_CHANGE,
+			MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE,
+		}
+	end	
+end
+
+
+function modifier_class:GetModifierModelChange()
+	return "models/development/invisiblebox.vmdl"
+end
+
+function modifier_class:GetModifierExtraHealthPercentage()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("ss_bonushp") end
+end
 
 
 if IsServer() then
@@ -40,16 +62,19 @@ if IsServer() then
 		local pfx = ParticleManager:CreateParticle( particleName, PATTACH_ABSORIGIN_FOLLOW, parent )
 		ParticleManager:SetParticleControlEnt( pfx, 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true )
 		ParticleManager:ReleaseParticleIndex(pfx)
+		if not self:GetCaster():HasModifier("modifier_super_scepter") then
+			parent:AddNoDraw()
+		end	
 
-		parent:AddNoDraw()
-
-		self:StartIntervalThink(0.25)
+		self:StartIntervalThink(1.0)
 	end
 
 
 	function modifier_class:OnDestroy()
 		local parent = self:GetParent()
-		parent:RemoveNoDraw()
+		if not self:GetCaster():HasModifier("modifier_super_scepter") then
+			parent:RemoveNoDraw()
+		end			
 	end
 
 	function modifier_class:OnIntervalThink()

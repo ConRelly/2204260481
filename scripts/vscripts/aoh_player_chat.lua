@@ -466,12 +466,19 @@ function AOHGameMode:OnPlayerChat(keys)
 	end
 
 	local count = 0
-	if keys.text == "-challenge" and keys.playerid == 0 and not self.challenge and self._endlessMode_started then--     --
+	local count2 = 0
+	if keys.text == "-challenge" and keys.playerid == 0 and not self.challenge then--     --
 		local plyID = keys.playerid
 		local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero()
 		local unit = "npc_boss_juggernaut_4"
 		local name = "Boss"
-		
+		if not self._endlessMode_started then
+			count2 = count2 + 1
+			if not count2 > 3 then			
+				Notifications:TopToAll({text= "Challenge Works after part 2 any time if no More then 100 min have passed", style={color="red"}, duration=15})
+			end
+			return	
+		end						
 		if 	unit == "npc_boss_juggernaut_4" then
 			name = "Juggernaut Sword Master"
 		end
@@ -484,7 +491,7 @@ function AOHGameMode:OnPlayerChat(keys)
 		else
 
 			CreateUnitByName(unit, plyhero:GetAbsOrigin() + RandomVector(RandomFloat(200, 1000)) , true, nil, nil, DOTA_TEAM_BADGUYS)
-			Notifications:TopToAll({text="Challenge " .. name.." reach lvl 170 for max reward", style={color="blue"}, duration=10})
+			Notifications:TopToAll({text="Challenge " .. name.." reach lvl 190 for max reward", style={color="blue"}, duration=10})
 			self.challenge = true
 		end	
 	end

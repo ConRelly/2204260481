@@ -1139,8 +1139,8 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"10"
-				"ad_linked_abilities"			"phoenix_supernova"
+				"value"				"9"
+				"ad_linked_abilities"			"mjz_phoenix_supernova"
 			}
 		}
 	}	

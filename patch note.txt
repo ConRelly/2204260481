@@ -2085,8 +2085,11 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 * Giants ring alternative recipe:  made with iron branch special and elemental(only one). 
-
-
+* Added announce info if you try to -challenge before part 2.
+* Phoenix SuperNova:
+--now has multiple Super Scepter effects.
+--cannot be mimic anymore.
+--reajusted number of attack to kill because of the ss effect.
 
 
 
