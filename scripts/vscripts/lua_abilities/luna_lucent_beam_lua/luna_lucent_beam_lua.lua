@@ -58,6 +58,13 @@ if IsServer() then
 		local target = self:GetCursorTarget()
 		local position = self:GetCursorPosition()
 		local damage = self:GetTalentSpecialValueFor("beam_damage") + (caster:GetAgility() * self:GetTalentSpecialValueFor("agi_multiplier"))
+		local lvl = caster:GetLevel()
+		if caster:HasModifier("modifier_super_scepter") then
+			if caster:HasModifier("modifier_mjz_luna_under_the_moonlight_buff") then
+				local modif_stack_count = caster:FindModifierByName("modifier_mjz_luna_under_the_moonlight_buff"):GetStackCount()
+				damage = damage + lvl * modif_stack_count
+			end
+		end	
 
 		if not caster:HasShard() and target:TriggerSpellAbsorb(self) then return end
 

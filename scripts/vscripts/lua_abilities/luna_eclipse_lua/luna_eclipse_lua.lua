@@ -120,7 +120,8 @@ function modifier_luna_eclipse_lua:OnIntervalThink()
 
 	local valid_enemy = false
 	local lucent_beam = self:GetCaster():FindAbilityByName("luna_lucent_beam_lua")
-
+	local caster = self:GetCaster()
+	local lvl = caster:GetLevel()
 	for _, enemy in pairs(units) do
 		if not self.hits[enemy:GetEntityIndex()] then
 			self.hits[enemy:GetEntityIndex()] = 0
@@ -137,11 +138,18 @@ function modifier_luna_eclipse_lua:OnIntervalThink()
 			ParticleManager:ReleaseParticleIndex(particle)
 			
 			if lucent_beam then
+				local damage = lucent_beam:GetTalentSpecialValueFor("beam_damage") + (caster:GetAgility() * lucent_beam:GetTalentSpecialValueFor("agi_multiplier"))
+				if caster:HasModifier("modifier_super_scepter") then
+					if caster:HasModifier("modifier_mjz_luna_under_the_moonlight_buff") then
+						local modif_stack_count = caster:FindModifierByName("modifier_mjz_luna_under_the_moonlight_buff"):GetStackCount()
+						damage = damage + lvl * modif_stack_count
+					end
+				end				
 				ApplyDamage({
 					attacker = self:GetCaster(),
 					victim = enemy,
-					ability = lucent_beam,
-					damage = lucent_beam:GetTalentSpecialValueFor("beam_damage"),
+					ability = self:GetAbility(),
+					damage = damage,
 					damage_type = lucent_beam:GetAbilityDamageType(),
 					damage_flags = DOTA_DAMAGE_FLAG_NONE,
 				})

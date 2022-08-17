@@ -110,6 +110,7 @@ function AOHGameMode:InitGameMode()
 	_G.super_courier = {false, false, false, false, false}
 	_G._challenge_bosss = 0
 	_G._effect_rate = 100
+	_G._stalker_chance = 1
 	self._endlessMode = false
 	self._endlessMode_started = false
 	self._manaMode = false
@@ -534,7 +535,7 @@ function AOHGameMode:InitVariables()
 			end
 		end
 		Timers:CreateTimer({
-			endTime = 2,
+			endTime = 1,
 			callback = function()
 				self.starting_intems = true
 				print(self._playerNumber .. " starting players")
@@ -570,6 +571,8 @@ function AOHGameMode:InitVariables()
 	--GameRules.GLOBAL_player_number = self._playerNumber	
 	CustomGameEventManager:Send_ServerToAllClients("frostivus_begins", {})
 end
+
+
 
 -- When game state changes set state in script
 function AOHGameMode:OnGameRulesStateChange()
@@ -943,6 +946,7 @@ function AOHGameMode:CheckForDefeatDelay()
 		if self._entAncient and self._entAncient:IsAlive() then
 			if are_all_heroes_dead() then
 				self._entAncient:ForceKill(false)
+				Notifications:TopToAll({text="You LOST, All Heroes dead When CountDown ended", duration=5})
 				Timers:CreateTimer({
 					endTime = 4,
 					callback = function()

@@ -516,6 +516,17 @@ function AOHGameMode:OnPlayerChat(keys)
 		local commands = "commands before game starts(0:00): <font color='green'>-full</font>(second part enabled)<font color='green'>-fullgame</font> (hard and second part)<font color='green'>-hard</font> (has extra bosses and items)<font color='green'>-extra</font> (bosses above lvl 14 will have extra random skills)<font color='green'>-double</font>(2x enemys) <font color='green'>-all</font> (fullgame hard double) , During game: <font color='green'>-kill</font> (in case you get bugged) <font color='green'>-hide</font> (hide all your passive skills that are max lvl and not on a key bind slot) <font color='green'>-unhide</font>, Host only : <font color='red'>-challenge</font> = sumons a Challenge Boss that you will have to DPS race him for 420 sec. <font color='green'>-effect_rate</font><font color='blue'>number</font>,  number = 1 to 20 , reduce the animation effects rate for some skills. SinglePlayer: <font color='green'>-single</font> = adds an extra courier and gives ancient more regen and armor. <font color='green'>-gon</font> = you will receive a second philosophers stone instead of helper unit" 
 		GameRules:SendCustomMessage(commands, 0, 0)
 	end	
+	if keys.text == "-stalker" then
+		local plyID = keys.playerid
+		local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero()
+		if IsStalkerList(plyhero) and _G._stalker_chance < 2 then
+			_G._stalker_chance = 2
+			Notifications:TopToAll({text= "Kuma Slaker chance Doubled", style={color="green"}, duration=6})
+		elseif IsStalkerList(plyhero) and _G._stalker_chance == 2 then
+			_G._stalker_chance = 1
+			Notifications:TopToAll({text= "Kuma Slaker chance Normal", style={color="red"}, duration=6})
+		end	
+	end	
 end
 
 

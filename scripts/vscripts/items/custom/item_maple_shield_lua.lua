@@ -140,7 +140,7 @@ function modifier_maple_shield_lua_aura_triger:CheckState()
 	return {[MODIFIER_STATE_CANNOT_BE_MOTION_CONTROLLED ] = true}
 end
 function modifier_maple_shield_lua_aura_triger:DeclareFunctions()
-	return {MODIFIER_PROPERTY_AVOID_DAMAGE}
+	return {MODIFIER_PROPERTY_AVOID_DAMAGE, MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE}
 end
 function modifier_maple_shield_lua_aura_triger:GetModifierAvoidDamage(params)
 	if IsServer() then
@@ -152,6 +152,10 @@ function modifier_maple_shield_lua_aura_triger:GetModifierAvoidDamage(params)
 		--	return 0
 		end   
 	end	
+end
+
+function modifier_maple_shield_lua_aura_triger:GetAbsoluteNoDamagePure()  
+    return 1
 end
 
 function HasAuraActive(npc)

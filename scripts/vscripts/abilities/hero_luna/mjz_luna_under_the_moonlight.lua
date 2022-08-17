@@ -11,30 +11,36 @@ end
 
 function mjz_luna_under_the_moonlight:GetIntrinsicModifierName() return "modifier_mjz_luna_under_the_moonlight_buff" end
 function mjz_luna_under_the_moonlight:LucentBeam(target, stun)
-	local caster = self:GetCaster()
-	local position = target:GetAbsOrigin()
-	local sDur = stun or 0
-	local mbuf = caster:FindModifierByName("modifier_mjz_luna_under_the_moonlight_buff")
-	local stack_count = mbuf:GetStackCount() + 1
-	local level = caster:GetLevel() * 3
-	if level < 30 then
-		level = 30
-	end
-	local damage = level * stack_count
-	if not target:TriggerSpellAbsorb(self) then
-		self:DealDamage(caster, target, damage)
-		if sDur > 0 then
-			self:Stun(target, sDur)
+	if IsServer() then
+		local caster = self:GetCaster()
+		local position = target:GetAbsOrigin()
+		local sDur = stun or 0
+		local mbuf = caster:FindModifierByName("modifier_mjz_luna_under_the_moonlight_buff")
+		local stack_count = mbuf:GetStackCount() + 1
+		local bonus_stack = 0
+		if _G._challenge_bosss > 0 then
+			bonus_stack = _G._challenge_bosss
+		end	
+		local level = caster:GetLevel() * (3 + bonus_stack)
+		if level < 30 then
+			level = 30
 		end
-	end
+		local damage = level * stack_count
+		if not target:TriggerSpellAbsorb(self) then
+			self:DealDamage(caster, target, damage)
+			if sDur > 0 then
+				self:Stun(target, sDur)
+			end
+		end
 
-	local beam_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_luna/luna_lucent_beam.vpcf", PATTACH_POINT_FOLLOW, self:GetCaster())
-	ParticleManager:SetParticleControl(beam_pfx, 1, target:GetAbsOrigin())
-	ParticleManager:SetParticleControlEnt(beam_pfx,	5, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
-	ParticleManager:SetParticleControlEnt(beam_pfx,	6, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetAbsOrigin(), true)
-	ParticleManager:ReleaseParticleIndex(beam_pfx)
+		local beam_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_luna/luna_lucent_beam.vpcf", PATTACH_POINT_FOLLOW, self:GetCaster())
+		ParticleManager:SetParticleControl(beam_pfx, 1, target:GetAbsOrigin())
+		ParticleManager:SetParticleControlEnt(beam_pfx,	5, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+		ParticleManager:SetParticleControlEnt(beam_pfx,	6, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetAbsOrigin(), true)
+		ParticleManager:ReleaseParticleIndex(beam_pfx)
 
-	if stun then target:EmitSound("Hero_Luna.LucentBeam.Target") end
+		if stun then target:EmitSound("Hero_Luna.LucentBeam.Target") end
+	end	
 end
 
 function mjz_luna_under_the_moonlight:DealDamage(attacker, target, damage, data, spellText)
@@ -94,10 +100,16 @@ function modifier_mjz_luna_under_the_moonlight_buff:OnCreated()
 			end
 		end
 	end
-	self:SetStackCount(0)
+	--self:SetStackCount(0)
 end
 function modifier_mjz_luna_under_the_moonlight_buff:OnRefresh()
-	self:SetStackCount(self:GetStackCount() + 1)
+	if IsServer() then
+		local stack_up = 1
+		if _G._challenge_bosss > 0 then
+			stack_up = _G._challenge_bosss
+		end			
+		self:SetStackCount(self:GetStackCount() + stack_up)
+	end	
 end
 function modifier_mjz_luna_under_the_moonlight_buff:GetModifierSpellAmplify_Percentage()
 	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("spell_amp") end
@@ -123,8 +135,10 @@ function modifier_mjz_luna_under_the_moonlight_buff:OnAttack(keys)
 	local target = keys.target
 	local chance = self:GetAbility():GetSpecialValueFor("proc_chance")
 	if RollPercentage(chance) then --self:GetAbility():GetSpecialValueFor("proc_chance")
-		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_mjz_luna_under_the_moonlight_buff", {})
-		if keys.target:IsMagicImmune() then return end
-		self:GetAbility():LucentBeam(target)
+		if self:GetCaster():IsAlive() then
+			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_mjz_luna_under_the_moonlight_buff", {})
+			if keys.target:IsMagicImmune() then return end
+			self:GetAbility():LucentBeam(target)
+		end	
 	end
 end

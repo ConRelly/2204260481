@@ -218,6 +218,25 @@ function IsMakerHero(hero)
   return false
 end
 
+function IsStalkerList(hero)
+  if IsServer() then
+    if hero and IsValidEntity(hero) and hero:IsHero() then
+      local playerID = hero:GetPlayerID()
+      local steamID = tostring(PlayerResource:GetSteamID(playerID))   --76561197990627480
+      local list = {
+        "76561198125830286", --kuma
+        "76561197990627480", --nepot
+      }    
+      for k, v in pairs(list) do
+        if tostring(v) == steamID then
+          return true
+        end
+      end
+    end
+    return false
+  end 
+end
+
 
 -- 创建幻象时，不能复制的物品
 function IsIllusionExcludeItem(item)

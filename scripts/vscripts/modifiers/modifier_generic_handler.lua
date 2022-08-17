@@ -61,8 +61,8 @@ end
 -- DOTA_DAMAGE_CATEGORY_SPELL = 0
 function modifier_generic_handler:OnTakeDamage(keys)
 	if keys.attacker == self:GetParent() and not keys.unit:IsBuilding() and not keys.unit:IsOther() and keys.unit:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
-		local spell_heal = 10
-		local normal_hit_heal = 5
+		local spell_heal = 15
+		local normal_hit_heal = 8
 -- Spell lifesteal handler
 		if keys.damage_category == DOTA_DAMAGE_CATEGORY_SPELL and keys.inflictor and self:GetParent():GetSpellLifesteal() > 0 and bit.band(keys.damage_flags, DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL) ~= DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL and bit.band(keys.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) ~= DOTA_DAMAGE_FLAG_REFLECTION then
 			if RollPercentage(spell_heal) then

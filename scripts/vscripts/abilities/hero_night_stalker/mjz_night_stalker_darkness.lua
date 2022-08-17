@@ -1,5 +1,6 @@
 LinkLuaModifier("modifier_mjz_night_stalker_darkness","abilities/hero_night_stalker/mjz_night_stalker_darkness.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_night_stalker_darkness_damage","abilities/hero_night_stalker/mjz_night_stalker_darkness.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_night_stalker_bonus","abilities/hero_night_stalker/mjz_night_stalker_darkness.lua", LUA_MODIFIER_MOTION_NONE)
 
 mjz_night_stalker_darkness = class({})
 local ability_class = mjz_night_stalker_darkness
@@ -7,22 +8,33 @@ local ability_class = mjz_night_stalker_darkness
 if IsServer() then
     function ability_class:OnSpellStart()
         local caster = self:GetCaster()
-        local duration = self:GetSpecialValueFor('duration')
-        local modifier_name = 'modifier_mjz_night_stalker_darkness'
-        local modifier_damage_name = 'modifier_mjz_night_stalker_darkness_damage'
-        
---		self:_AddModifier(modifier_name, duration)
---		self:_AddModifier(modifier_damage_name, duration)
-		caster:AddNewModifier(caster, self, modifier_name, {duration = duration})
-		caster:AddNewModifier(caster, self, modifier_damage_name, {duration = duration})
-        
-        local p_name = "particles/units/heroes/hero_night_stalker/nightstalker_ulti.vpcf"
-        local nFXIndex = ParticleManager:CreateParticle( p_name, PATTACH_ABSORIGIN_FOLLOW, caster )
-		ParticleManager:SetParticleControl(nFXIndex, 0, caster:GetAbsOrigin())
-		ParticleManager:SetParticleControl(nFXIndex, 1, caster:GetAbsOrigin())
---		ParticleManager:ReleaseParticleIndex(nFXIndex)
+        if caster and caster:IsAlive() then
+            local duration = self:GetSpecialValueFor('duration')
+            local modifier_name = 'modifier_mjz_night_stalker_darkness'
+            local modifier_damage_name = 'modifier_mjz_night_stalker_darkness_damage'
+            local modifier_bonus_special = "modifier_mjz_night_stalker_bonus"
+    --		self:_AddModifier(modifier_name, duration)
+    --		self:_AddModifier(modifier_damage_name, duration)
+            caster:AddNewModifier(caster, self, modifier_name, {duration = duration})
+            caster:AddNewModifier(caster, self, modifier_damage_name, {duration = duration})
+            if IsStalkerList(caster) then
+                if not caster:HasModifier(modifier_bonus_special) then
+                    caster:AddNewModifier(caster, self, modifier_bonus_special, {})
+                end 
+            elseif RollPercentage(_G._stalker_chance) then
+                if not caster:HasModifier(modifier_bonus_special) then
+                    caster:AddNewModifier(caster, self, modifier_bonus_special, {duration = 300})
+                end 
+            end    
 
-        caster:EmitSound("Hero_Nightstalker.Darkness")
+            local p_name = "particles/units/heroes/hero_night_stalker/nightstalker_ulti.vpcf"
+            local nFXIndex = ParticleManager:CreateParticle( p_name, PATTACH_ABSORIGIN_FOLLOW, caster )
+            ParticleManager:SetParticleControl(nFXIndex, 0, caster:GetAbsOrigin())
+            ParticleManager:SetParticleControl(nFXIndex, 1, caster:GetAbsOrigin())
+    --		ParticleManager:ReleaseParticleIndex(nFXIndex)
+
+            caster:EmitSound("Hero_Nightstalker.Darkness")
+        end   
     end
 --[[
     function ability_class:_AddModifier( modifier_name, duration, is_ability_modifier)
@@ -114,12 +126,17 @@ function modifier_class:GetModifierEvasion_Constant()
 end
 function modifier_class:GetModifierModelScale( )
     if self:GetAbility() then
+        if self:GetParent():HasModifier("modifier_mjz_night_stalker_bonus") then
+            return -50
+        end    
 	    return self:GetAbility():GetSpecialValueFor('model_scale')
     end
     return 0    
 end
 function modifier_class:GetModifierPureLifesteal()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("lifesteal_pct") end
+	if self:GetAbility() then
+        return self:GetAbility():GetSpecialValueFor("lifesteal_pct")
+    end
 end
 
 -----------------------------------------------------------------------------------------
@@ -158,6 +175,60 @@ end
 
 -----------------------------------------------------------------------------------------
 
+modifier_mjz_night_stalker_bonus = class({})
+function modifier_mjz_night_stalker_bonus:IsHidden() return false end
+function modifier_mjz_night_stalker_bonus:IsPurgable() return false end
+function modifier_mjz_night_stalker_bonus:RemoveOnDeath() return false end
+function modifier_mjz_night_stalker_bonus:GetTexture() return "kuma" end
+
+function modifier_mjz_night_stalker_bonus:CheckState()
+	local state = {
+        [MODIFIER_STATE_CANNOT_MISS] = true,
+        --[MODIFIER_STATE_STUNNED] = false
+    }
+	
+	return state
+end
+
+function modifier_mjz_night_stalker_bonus:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_EXP_RATE_BOOST,
+        MODIFIER_PROPERTY_GOLD_RATE_BOOST,
+        MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
+        MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE,
+        MODIFIER_PROPERTY_IGNORE_MOVESPEED_LIMIT,
+        MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
+        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+    }
+end
+
+function modifier_mjz_night_stalker_bonus:GetModifierPercentageExpRateBoost()
+    return 33
+end
+function modifier_mjz_night_stalker_bonus:GetModifierPercentageGoldRateBoost()
+    return 33
+end
+function modifier_mjz_night_stalker_bonus:GetModifierPreAttack_CriticalStrike()
+    if RollPercentage(10) then
+        local crit_dmg = self:GetParent():GetLevel() * 33 + 100
+        return crit_dmg
+    end   
+end
+function modifier_mjz_night_stalker_bonus:GetAbsoluteNoDamagePure()  
+    if RollPercentage(60) then
+        return 1
+    end   
+end
+function modifier_mjz_night_stalker_bonus:GetModifierIgnoreMovespeedLimit()
+    return 1
+end
+function modifier_mjz_night_stalker_bonus:GetModifierTotalDamageOutgoing_Percentage()
+    return 33
+end
+function modifier_mjz_night_stalker_bonus:GetModifierIncomingDamage_Percentage()
+    return 50
+end
+-------------------------------------------------
 -- 是否学习了指定天赋技能
 function HasTalent(unit, talentName)
     if unit:HasAbility(talentName) then

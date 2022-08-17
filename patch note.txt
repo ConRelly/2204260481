@@ -2090,7 +2090,16 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 --now has multiple Super Scepter effects.
 --cannot be mimic anymore.
 --reajusted number of attack to kill because of the ss effect.
-
+* Increase pure lifesteal on attack chance from 5% to 8%. and pure spell lifesteal chance from 10% to 15%.
+* Night Stalker ultimate Darkness on use has 1% chance to give kuma stalker buff for 5 min.
+* Maple armor Heavy armor buff now gives pure dmg immunity.
+* Luna New Moon:
+--has new effects base on Challenge boss tier reward.
+--proc chance on attack has higher chance and agility and mana per stack doubled.
+* Luna Eclipse fixed (was using only base Q dmg and not the bonus agi) and now it will count separated from Q in the DPS list.
+* Luna Q has a new Super Scepter effect.
+* Increased Revenant's brooch attacks from 20 to 40.
+* Spell Blade chance from 4% to 5%, bonus dmg from 10% to 25%.(btw the chance rng is pseudo-random).
 
 
 

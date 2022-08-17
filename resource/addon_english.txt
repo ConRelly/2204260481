@@ -1360,7 +1360,7 @@
 	"DOTA_Tooltip_modifier_vampire_robe_aura_Description"		"Has %dMODIFIER_PROPERTY_TOOLTIP%%% Lifesteal, %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% Damage, %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor, %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% Health Regeneration and %dMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% Mana Regeneration"
 	
 	"DOTA_Tooltip_Ability_item_mana_blade"					"Mana Blade"
-	"DOTA_Tooltip_ability_item_mana_blade_Description"		"<h1>Active: Inhibit/Inspire</h1><font color='#FF3721'>On enemy:</font> Slow and dispel.<br><font color='#4AFF32'>On allies:</font> Applies dispel every second.<br><br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span><br>Duration: %duration% seconds<br>Range: %AbilityCastRange%\n<h1><font color='#EC0160'>UP: Satanic LVL 5</font></h1>When used on an ally, at the beginning and end of the effect is applied <span class=\"GameplayValues GameplayVariable\">Strong Dispel</span>.<br>Allows to use on allies during stun.\n<h1>Passive:Non Hero Manabreak</h1>Each attack burns %mana_break% mana from the target, and deals %prc% physical damage per burned mana.\n<h1>Passive:Real Hero Manabreak</h1>Each attacks deals %level_mult% X Your Level physical damage per burned mana and Ignores Base Armor.\n<h1>Passive: Mana Blade Aura</h1>+ %aura_int% Intellegence<br>+ %aura_damage% Damage<br>+ %aura_agi% Agility<br><br>Radius: %aura_radius%"
+	"DOTA_Tooltip_ability_item_mana_blade_Description"		"<h1>Active: Inhibit/Inspire</h1><font color='#FF3721'>On enemy:</font> Slow and dispel.<br><font color='#4AFF32'>On allies:</font> Applies dispel every second.<br><br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span><br>Duration: %duration% seconds<br>Range: %AbilityCastRange%\n<h1><font color='#EC0160'>UP: Satanic LVL 5</font></h1>When used on an ally, at the beginning and end of the effect is applied <span class=\"GameplayValues GameplayVariable\">Strong Dispel</span>.<br>Allows to use on allies during stun.\n<h1>Passive:Non Hero Manabreak</h1>Each attack burns %mana_break% mana from the target, and deals %prc% physical damage per burned mana.\n<h1>Passive:Real Hero Manabreak</h1>Each attack burn %mana_break% mana and deals %level_mult% X Your Level physical damage for each point of mana burned and Ignores Base Armor.\n<h1>Passive: Mana Blade Aura</h1>+ %aura_int% Intellegence<br>+ %aura_damage% Damage<br>+ %aura_agi% Agility<br><br>Radius: %aura_radius%"
 	"DOTA_Tooltip_Ability_item_mana_blade_agi"				"+$agi"
 	"DOTA_Tooltip_Ability_item_mana_blade_int"				"+$int"
 	"DOTA_Tooltip_modifier_mana_blade_aura"				"Mana Blade Aura"
@@ -3450,7 +3450,7 @@
 	"DOTA_Tooltip_modifier_mjz_luna_lunar_blessing_buff_Description"		""
 		
 	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight"					"Under The Moonlight"
-	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_Description"		"Luna increases her deterrent, giving her a chance to deal <font color='#FF5349'>New Moon stacks * ( 3 x her Level) or %beam_damage% </font> as damage to enemies.\n<h1><font color='#FF5349'>Passive: New Moon</font></h1> Every time a unit is hit by Under The Moonlight you gain a New Moon Stack." // \n<h1><font color='#B5BFCC'>Passive: The Rising Moon</font></h1> Every time a hero is respawned, you gain 2 New Moon Stacks."
+	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_Description"		"Luna increases her deterrent, giving her a chance to deal <font color='#FF5349'>New Moon stacks * ( 3 x her Level) or %beam_damage% </font> as damage to enemies.\n<h1><font color='#FF5349'>Passive: New Moon</font></h1> Every time a unit is hit by Under The Moonlight you gain a New Moon Stack.\n<h1><font color='#F70707'>Challenge Boss</font></h1>Number of stacks gained by On attack effect is the number of reward Tier(5 max). New moon stacks dmg changed to: stacks x (3 + reward tier) x lvl."
 	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_Lore"			"Is There a Moon? "
 	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_proc_chance"			"%Chance:"
 	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_spell_amp_tooltip"	"%Spell Amp Per 100 stacks:"
@@ -3652,6 +3652,7 @@
 	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_bonus_vision_pct"			"%Bonus Vision: "
 	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_lifesteal_pct"				"%Pure Lifesteal:"
 	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_evasion_chance"			"%Evasion Chance: "
+	"DOTA_Tooltip_ability_mjz_night_stalker_darkness_Note0"                     "On use has 1% chance to give Kuma Stalker buff for 300 sec. Kuma(specific someone) can type '-stalker' to double the chance or reduce back to normal."
 	"DOTA_Tooltip_modifier_mjz_night_stalker_darkness"					"Dark Ascension"
 	"DOTA_Tooltip_modifier_mjz_night_stalker_darkness_Description"		"Get damage bonus, vision bonus, lifesteal bonus and giving the unit a chance to miss its attacks."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_night_stalker_darkness_damage"		"+{s:value} Dark Ascension Bonus Damage"
@@ -3666,6 +3667,8 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_night_stalker_hunter_in_the_night_aspeed"		"+{s:value} Hunter In The Night Attack Speed"
 	"DOTA_Tooltip_modifier_mjz_night_stalker_hunter_in_the_night_aspeed"             "Hunter Bonus"
 
+	"DOTA_Tooltip_modifier_mjz_night_stalker_bonus"	                                "Kuma Stalker"
+	"DOTA_Tooltip_modifier_mjz_night_stalker_bonus_Description"                     "Bonus xp and gold %dMODIFIER_PROPERTY_EXP_RATE_BOOST%%% , 10%% crit chance(33%% x lvl), Ignore ms limit. %dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% Outgoing dmg bonus, %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% incoming dmg reduction, has 60%% chance to block pure dmg, have <font color='#109CE7'> True Strike </font>."
 
 	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn"				"Mana Burn"
 	"DOTA_Tooltip_ability_mjz_nyx_assassin_mana_burn_Description"	"Destroys the target's mana, and deals damage equal to the mana burned.\nUpgradable by Aghanim's Scepter."
@@ -9175,8 +9178,9 @@ Required Level: %required_level%
 		//<<<<
 		//>>>>	Satanic LVL 5
 		"DOTA_Tooltip_Ability_item_mjz_satanic_5"								"Satanic LVL 5"
-		"DOTA_Tooltip_Ability_item_mjz_satanic_5_Description"					"<h1>Active: Unholy Rage</h1>Increases Lifesteal percentage to %unholy_lifesteal_total_tooltip%%% for %unholy_duration% seconds.\n<h1>Passive: Lifesteal</h1>Heals the attacker for %lifesteal_percent%%% of attack damage dealt."	
+		"DOTA_Tooltip_Ability_item_mjz_satanic_5_Description"					"<h1>Active: Unholy Rage</h1>Increases Lifesteal percentage to %unholy_lifesteal_total_tooltip%%% for %unholy_duration% seconds.\n<h1>Passive: Lifesteal</h1>On attack has a chance(press Alt) to Heal the attacker for %lifesteal_percent%%% of attack damage dealt."	
 		"DOTA_Tooltip_Ability_item_mjz_satanic_5_Lore"							"Immense power at the cost of your soul."
+		"DOTA_Tooltip_Ability_item_mjz_satanic_5_Note0"                         "Lifesteal Chance is Global for all Pure lifesteal effects and some normal lifesteal and is 8% for on attack and 15% for spells."
 		"DOTA_Tooltip_Ability_item_mjz_satanic_5_bonus_strength"				"+$str"
 		"DOTA_Tooltip_Ability_item_mjz_satanic_5_bonus_damage"					"+$damage"
 		"DOTA_Tooltip_modifier_mjz_satanic_5_active"				"Unholy Rage"
@@ -9623,7 +9627,7 @@ Contains all random skills"
 		"DOTA_Tooltip_modifier_ogre_magi_multicast_lua_Description"						"This unit has a chance of multicasting spells."
 
 		"DOTA_Tooltip_ability_luna_lucent_beam_lua"											"Lucent Beam"
-		"DOTA_Tooltip_ability_luna_lucent_beam_lua_Description"								"Calls a beam of lunar energy down upon an enemy, damaging and briefly stunning them.\n<h1><font color='#FF5349'>Passive: New Moon</font></h1> Every time a unit is hit by a Lucent Beam you have a %new_moon_chance%%% chance to gain a New Moon Stack."
+		"DOTA_Tooltip_ability_luna_lucent_beam_lua_Description"								"Calls a beam of lunar energy down upon an enemy, damaging and briefly stunning them.\n<h1><font color='#FF5349'>Passive: New Moon</font></h1> Every time a unit is hit by a Lucent Beam you have a %new_moon_chance%%% chance to gain a New Moon Stack.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Ads <font color='#FF5349'>New Moon</font> stacks x lvl as bonus dmg to this spell and Ultimate."
 		"DOTA_Tooltip_ability_luna_lucent_beam_lua_shard_description"		"Allows Lucent beam to be ground targeted. Also releases attacks on up to (target count / 2) random targets within 500 range of the Lucent Beam. Reduces mancost by 50."
 		"DOTA_Tooltip_ability_luna_lucent_beam_lua_Lore"									"Selemene smites those who encroach upon the Nightsilver Woods."
 		"DOTA_Tooltip_ability_luna_lucent_beam_lua_stun_duration"							"Stun Duration:"
@@ -10021,7 +10025,7 @@ Contains all random skills"
 		"dota_tooltip_modifier_item_imba_silver_edge_invis_break_debuff_description"	"Passives are disabled, healing and health regeneration reduced by %dMODIFIER_PROPERTY_TOOLTIP%%%, and outgoing damage reduced by %dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%%."
 
 		"DOTA_Tooltip_ability_item_maple_shield_lua"					"<font color='#010101'>Maple's Armor</font>"
-		"DOTA_Tooltip_ability_item_maple_shield_lua_Description"		"<h1>Active: <font color='#1455EB'>Protection Aura</font></h1>If you are an <font color='#F00B0B'>Strength Hero</font> then you can emit an aura in were all hero allies within the aura range will have their <font color='#70EA72'>damage received redirected to You</font>.<br>Receive an <font color='#14EBE5'>Heavy Armor</font> buff for %duration% sec and the aura will be active as long as you have the buff.<br><br>Aura Radius: %aura_radius%\n<h1>Passive: <font color='#14EBE5'>Strength Mastery</font></h1>If your hero main attribute is Strength then Doubles the amount of Health gained from spell amplification, Str gained from the item, and gain %xp_boost%%% XP Boost\n<h1>Buff: <font color='#14EBE5'>Heavy Armor</font></h1>Can't be Motion Controlled (pushing skills) and have %block_chance%%% chance to block any damage that you receive."
+		"DOTA_Tooltip_ability_item_maple_shield_lua_Description"		"<h1>Active: <font color='#1455EB'>Protection Aura</font></h1>If you are an <font color='#F00B0B'>Strength Hero</font> then you can emit an aura in were all hero allies within the aura range will have their <font color='#70EA72'>damage received redirected to You</font>.<br>Receive an <font color='#14EBE5'>Heavy Armor</font> buff for %duration% sec and the aura will be active as long as you have the buff.<br><br>Aura Radius: %aura_radius%\n<h1>Passive: <font color='#14EBE5'>Strength Mastery</font></h1>If your hero main attribute is Strength then Doubles the amount of Health gained from spell amplification, Str gained from the item, and gain %xp_boost%%% XP Boost\n<h1>Buff: <font color='#14EBE5'>Heavy Armor</font></h1>Can't be Motion Controlled (pushing skills), have %block_chance%%% chance to block any damage that you receive, and you are immune to Pure dmg"
 		"DOTA_Tooltip_ability_item_maple_shield_lua_Note0"				   "Aura apply an 100% dmg reduction buff so any negative dmg reduction debuffs will make them receive dmg."
 		"DOTA_Tooltip_ability_item_maple_shield_lua_Note1"				   "Heavy armor will prevent even you from moving yourself with some skills like Void Time Walk, blinks are fine"
 		"DOTA_Tooltip_ability_item_maple_shield_lua_Note3"				   "Active is disabled for Brewmaster(mostly because he dies if he splits and bugs the summons)"

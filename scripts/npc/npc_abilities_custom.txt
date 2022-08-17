@@ -26729,7 +26729,7 @@
 
 		"AbilityValues"
 		{
-			"proc_chance"			"10 12 15 17 22"
+			"proc_chance"			"10 15 20 25 30"
 			"beam_damage"			"30"
 			"spell_amp"				"0.05"
 			"bonus_hp"				"2"
@@ -29348,13 +29348,13 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_attacks"			"4 6 8 10 12 14 16"
+				"max_attacks"			"4 5 6 7 8 9 10"
 				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_1"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_attacks_scepter"	"6 9 12 15 18 21 24"
+				"max_attacks_scepter"	"6 8 10 12 14 16 18"
 				"LinkedSpecialBonus"	"special_bonus_unique_phoenix_1"
 				"RequiresScepter"		"1"
 			}
