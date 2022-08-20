@@ -2088,18 +2088,26 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * Added announce info if you try to -challenge before part 2.
 * Phoenix SuperNova:
 --now has multiple Super Scepter effects.
---cannot be mimic anymore.
---reajusted number of attack to kill because of the ss effect.
+--cannot be mimicked anymore.
+--readjusted the number of attacks to kill because of the ss effect.
 * Increase pure lifesteal on attack chance from 5% to 8%. and pure spell lifesteal chance from 10% to 15%.
-* Night Stalker ultimate Darkness on use has 1% chance to give kuma stalker buff for 5 min.
+* Night Stalker ultimate Darkness on use has a 1% chance to give Kuma stalker buff for 5 min.
 * Maple armor Heavy armor buff now gives pure dmg immunity.
 * Luna New Moon:
---has new effects base on Challenge boss tier reward.
---proc chance on attack has higher chance and agility and mana per stack doubled.
+--has new effects based on the Challenge boss tier reward.
+--proc chance on attack has higher chance.
 * Luna Eclipse fixed (was using only base Q dmg and not the bonus agi) and now it will count separated from Q in the DPS list.
 * Luna Q has a new Super Scepter effect.
+* Crystal Maiden:
+--reposition a 25 talent to lvl 20 and added a new lvl 25 talent(spell amp).
+--freezing field has a new effect base on the Challenge boss tier reward.
 * Increased Revenant's brooch attacks from 20 to 40.
 * Spell Blade chance from 4% to 5%, bonus dmg from 10% to 25%.(btw the chance rng is pseudo-random).
+* Gold Ring invincibility buff(including Lifeguard skill) now gives + 100% (99% is max) status resistance and 1200 minimum speed.
+* Vampire Claws spell lifesteal from 10% to 30%.
+* Paladin sword spell lifesteal from 8 to 25% and lifesteal from 17 to 25%.
+* Removed ogre lvl 25 talent self dmg effect (trying to see if this is the cause of ogre random crash, in tests he does not seem to have problems)
+* Removed ogre magi Fire shield (shard) , is working only vs real heroes (no sutch thing here on enemy side, with a small exception when they convert one player.)
 
 
 

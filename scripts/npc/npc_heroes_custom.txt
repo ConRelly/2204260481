@@ -241,6 +241,7 @@
 
 "npc_dota_hero_ogre_magi"
 {
+	"Ability5"      "generic_hidden"
 	"Ability6"		"ogre_magi_multicast_n"
 	"Ability12"		"special_bonus_unique_ogre_magi_2"
 	"Ability13"		"special_bonus_hp_2750"
@@ -1588,8 +1589,9 @@
 		"Ability10"				"special_bonus_hp_2000"
 		"Ability12"				"special_bonus_spell_block_18"
 		"Ability14"				"special_bonus_unique_mjz_crystal_maiden_forstbite"
+		"Ability15"				"special_bonus_unique_crystal_maiden_2"
 		"Ability16"				"special_bonus_cdr_25"
-		"Ability17"				"special_bonus_unique_crystal_maiden_2"
+		"Ability17"				"special_bonus_spell_amplify_125"
 
 		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeIntelligenceGain"		"8.8"

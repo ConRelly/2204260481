@@ -81,7 +81,8 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 
 		if self:GetAbility():IsCooldownReady() and caster:HasTalent("ogre_magi_custom_bonus_unique_2") then
 			if casts == 1 then
-				local Dmg = caster:GetMaxHealth() * caster:CustomValue("ogre_magi_custom_bonus_unique_2", "fail_cost") / 100
+--[[ 				local Dmg = (caster:GetMaxHealth() * caster:CustomValue("ogre_magi_custom_bonus_unique_2", "fail_cost") / 100) or 1
+				print("ogre self dmg: "..Dmg)
 				ApplyDamage({
 					ability = self:GetAbility(),
 					attacker = caster,
@@ -89,13 +90,15 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 					damage_type = DAMAGE_TYPE_PURE,
 					damage_flags = DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 					victim = caster,
-				})
+				}) ]]
 				caster:EmitSound("Hero_Alchemist.UnstableConcoction.Stun")
 				local particleFail = ParticleManager:CreateParticle("particles/base_attacks/ranged_tower_bad_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 				ParticleManager:ReleaseParticleIndex(particleFail)
 			else
 				casts = casts * 2
-				self:GetAbility():StartCooldown(caster:CustomValue("ogre_magi_custom_bonus_unique_2", "risk_cooldown"))
+				local set_cooldown = caster:CustomValue("ogre_magi_custom_bonus_unique_2", "risk_cooldown")  or 5
+				--print("ogre self cd: "..set_cooldown)
+				self:GetAbility():StartCooldown(set_cooldown)
 				local particleSuccess = ParticleManager:CreateParticle("particles/econ/items/ogre_magi/ogre_ti8_immortal_weapon/ogre_ti8_immortal_bloodlust_buff_ground_ray.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 				ParticleManager:ReleaseParticleIndex(particleSuccess)
 			end

@@ -258,7 +258,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"86200"
+				"bonus_nova_damage"				"86200"
 				"ad_linked_abilities"			"crystal_maiden_crystal_nova"
 			}
 		}
@@ -24400,12 +24400,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_lifesteal"		"17"
+				"bonus_lifesteal"		"25"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_spell_lifesteal"	"8"
+				"bonus_spell_lifesteal"	"25"
 			}
 			"04"
 			{
@@ -24798,7 +24798,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_lifesteal"			"10"
+				"spell_lifesteal"			"30"
 			}
 		}
 	}

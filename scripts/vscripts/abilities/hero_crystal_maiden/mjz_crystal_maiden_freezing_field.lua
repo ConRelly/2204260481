@@ -154,7 +154,11 @@ if IsServer() then
 		self.radius = ability:GetSpecialValueFor( "explosion_radius" )
 		-- self.tick = ability:GetSpecialValueFor("explosion_interval")
         self.tick = ability:GetSpecialValueFor("damage_interval")
-        
+        self.challenge = 1
+        self.challenge_boss = 0
+        if _G._challenge_bosss > 0 then
+            self.challenge_boss = _G._challenge_bosss / 10
+        end
 		-- self.chillInit = self:GetTalentSpecialValueFor("chill_init")
 		-- self.chillHit = self:GetTalentSpecialValueFor("chill_hit")
 
@@ -176,9 +180,9 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local dummy = self:GetParent()
 		local casterLocation = dummy:GetAbsOrigin()
-		
+
 		ParticleManager:SetParticleControl( self.FXIndex, 0, casterLocation )
-        
+        self.challenge = self.challenge + self.challenge_boss
 		local fxIndex = ParticleManager:FireParticle( "particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_explosion.vpcf", PATTACH_CUSTOMORIGIN, caster, {[0] = attackPoint} )
         -- Timers:CreateTimer(0.25, function()
         --  self:_ApplyDamage_old()
@@ -198,8 +202,7 @@ if IsServer() then
         local targetFlag = ability:GetAbilityTargetFlags()
 
 		local attackPoint = casterLocation
-        local damage = math.ceil(ability:CalcDamage(caster, nil) * self.tick)
-
+        local damage = math.ceil((ability:CalcDamage(caster, nil) * self.tick)* self.challenge)
         local units = caster:FindEnemyUnitsInRadius(attackPoint, self.aura_radius, {type = targetType, flag = targetFlag} )
         for _, unit in pairs(units) do
             -- print("Damage: ".. damage)
