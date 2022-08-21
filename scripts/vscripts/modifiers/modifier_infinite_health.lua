@@ -14,6 +14,9 @@ end
 
 function modifier_infinite_health:OnCreated()
     self.teleport_chance = 100
+    local parentt = self:GetParent()
+    --parentt.mjz_retain = true
+    
     self:StartIntervalThink(1)
 end
 function modifier_infinite_health:OnDestroy()
@@ -26,45 +29,70 @@ function modifier_infinite_health:OnDestroy()
             create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin() + RandomVector(RandomFloat(50, 250)))
             local reward = "Tier I: 1 ingot, 1 gold bag"
             _G._challenge_bosss = 1
-            if lvl > 40 then
-                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                reward = "Tier II: 2 ingots, 2 gold bags"
-                Drop_gold_bag(parent, 25000)
-                _G._challenge_bosss = 2
-            end 
-            if lvl > 90 then
-                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                reward = "Tier III: 3 ingots, 3 gold bags"
-                Drop_gold_bag(parent, 25000)
-                _G._challenge_bosss = 3
-            end
-            if lvl > 140 then
-                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                create_item_drop("item_edible_fragment", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                reward = "Tier IV: 4 ingots, 4 gold bags, Edible Fragment"
-                Drop_gold_bag(parent, 25000)
-                _G._challenge_bosss = 4
-            end 
-            if lvl > 190 then
-                create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                create_item_drop("item_edible_complete", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                reward = "Tier V: 5 ingots, 5 gold bags, Edible fragment + Edible Complete"
-                Drop_gold_bag(parent, 25000)
-                _G._challenge_bosss = 5
-            end 
-            if _G._hardMode then
-                if _G._extra_mode then
-                    Notifications:TopToAll({text="Hard Mode + Extra: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward "..reward , style={color="red"}, duration=15})
-                else                                         
-                    Notifications:TopToAll({text="Hard Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward "..reward , style={color="red"}, duration=15})
-                end    
+            if _G._endlessMode_started then
+                if lvl > 40 then
+                    create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
+                    reward = "Tier II: 2 ingots, 2 gold bags"
+                    Drop_gold_bag(parent, 25000)
+                    _G._challenge_bosss = 2
+                end 
+                if lvl > 90 then
+                    create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
+                    reward = "Tier III: 3 ingots, 3 gold bags"
+                    Drop_gold_bag(parent, 25000)
+                    _G._challenge_bosss = 3
+                end
+                if lvl > 140 then
+                    create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
+                    create_item_drop("item_edible_fragment", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
+                    reward = "Tier IV: 4 ingots, 4 gold bags, Edible Fragment"
+                    Drop_gold_bag(parent, 25000)
+                    _G._challenge_bosss = 4
+                end 
+                if lvl > 190 then
+                    create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
+                    create_item_drop("item_edible_complete", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
+                    reward = "Tier V: 5 ingots, 5 gold bags, Edible fragment + Edible Complete"
+                    Drop_gold_bag(parent, 25000)
+                    _G._challenge_bosss = 5
+                end
             else
-                if _G._extra_mode then
-                    Notifications:TopToAll({text="Normal Mode + Extra: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward "..reward , style={color="red"}, duration=15})   
+                if lvl > 200 then
+                    create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
+                    reward = "Tier II: 2 ingots, 2 gold bags"
+                    Drop_gold_bag(parent, 25000)
+                    _G._challenge_bosss = 2
+                end                      
+            end 
+            if _G._endlessMode_started then               
+                if _G._hardMode then
+                    if _G._extra_mode then
+                        Notifications:TopToAll({text="Hard Mode + Extra: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward "..reward , style={color="red"}, duration=15})
+                    else                                         
+                        Notifications:TopToAll({text="Hard Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward "..reward , style={color="red"}, duration=15})
+                    end    
                 else
-                    Notifications:TopToAll({text="Normal Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward "..reward , style={color="red"}, duration=15})
-                end    
-            end
+                    if _G._extra_mode then
+                        Notifications:TopToAll({text="Normal Mode + Extra: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward "..reward , style={color="red"}, duration=15})   
+                    else
+                        Notifications:TopToAll({text="Normal Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward "..reward , style={color="red"}, duration=15})
+                    end    
+                end
+            else
+                if _G._hardMode then
+                    if _G._extra_mode then
+                        Notifications:TopToAll({text="Part 1 Hard Mode + Extra: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward "..reward , style={color="red"}, duration=15})
+                    else                                         
+                        Notifications:TopToAll({text="Part 1 Hard Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward "..reward , style={color="red"}, duration=15})
+                    end    
+                else
+                    if _G._extra_mode then
+                        Notifications:TopToAll({text="Part 1 Normal Mode + Extra: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward "..reward , style={color="red"}, duration=15})   
+                    else
+                        Notifications:TopToAll({text="Part 1 Normal Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward "..reward , style={color="red"}, duration=15})
+                    end    
+                end                
+            end    
         end   
     end    
 end

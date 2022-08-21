@@ -112,6 +112,7 @@ function AOHGameMode:InitGameMode()
 	_G._effect_rate = 100
 	_G._stalker_chance = 1
 	self._endlessMode = false
+	_G._endlessMode_started = false
 	self._endlessMode_started = false
 	self._manaMode = false
 	self._doubleMode = false
@@ -745,6 +746,7 @@ function AOHGameMode:_CheckWin()
 			
 			elseif self._endlessMode and not self._hardMode then
 				self._endlessMode_started = true
+				_G._endlessMode_started = true
 				self:_ReadGameConfiguration()
 				self._nRoundNumber = 1
 				self._currentRound = nil
@@ -776,6 +778,7 @@ function AOHGameMode:_CheckWin()
 				end		
 			elseif self._endlessMode then
 				self._endlessMode_started = true
+				_G._endlessMode_started = true
 				self:_ReadGameConfiguration()
 				self._nRoundNumber = 1
 				self._currentRound = nil
@@ -815,8 +818,8 @@ function AOHGameMode:_CheckWin()
 		end
 	end
 end
-local slayer_fragmet = 2
-local edible_bonus_fragment = 1
+local slayer_fragmet = 4
+local edible_bonus_fragment = 3
 function AOHGameMode:OnHeroLevelUp(event)
 	local hero = EntIndexToHScript(event.hero_entindex)
 	-- Save current unspend AP
@@ -973,6 +976,7 @@ function AOHGameMode:_ThinkPrepTime()
 		GameRules.GLOBAL_roundNumber = self._nRoundNumber  -- Set a global.
 		GameRules.GLOBAL_endlessHard_started = self._endlessHard_started --another global
 		GameRules.GLOBAL_endlessMode_started = self._endlessMode_started
+		_G._endlessMode_started = self._endlessMode_started
 		GameRules.GLOBAL_extra_mode = self._extra_mode
 		GameRules.GLOBAL_vic_1 = self._vic_1
 		GameRules.GLOBAL_doubleMode	= self._doubleMode

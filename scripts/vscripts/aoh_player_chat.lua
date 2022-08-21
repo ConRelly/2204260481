@@ -472,27 +472,34 @@ function AOHGameMode:OnPlayerChat(keys)
 		local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero()
 		local unit = "npc_boss_juggernaut_4"
 		local name = "Boss"
-		if not self._endlessMode_started then
-			count2 = count2 + 1
-			if not count2 > 3 then			
-				Notifications:TopToAll({text= "Challenge Works after part 2 any time if no More then 100 min have passed", style={color="red"}, duration=15})
-			end
+		if not self._endlessMode_started and not count2 > 0 then
+			count2 = count2 + 1			
+			Notifications:TopToAll({text= "If you challenge boss before Part 2 max reward will be T2 at lvl 200. Type Again -challenge if you are sure", style={color="red"}, duration=15})
 			return	
 		end						
 		if 	unit == "npc_boss_juggernaut_4" then
 			name = "Juggernaut Sword Master"
 		end
+		if time < 40 then
+			Notifications:TopToAll({text= time .."min, unless at least 40 min have passed you can't Challenge " .. name, style={color="red"}, duration=15})
+			count = count + 1
+			if count > 7 then
+				self.challenge = true	
+			end
+			return
+		else		
 		if time > 100 then
 			Notifications:TopToAll({text= time .."min Have passed you can't Challenge " .. name.." if More then 100 min have passed", style={color="red"}, duration=15})
 			count = count + 1
-			if count > 3 then
+			if count > 7 then
 				self.challenge = true	
 			end	
 		else
 
 			CreateUnitByName(unit, plyhero:GetAbsOrigin() + RandomVector(RandomFloat(200, 1000)) , true, nil, nil, DOTA_TEAM_BADGUYS)
-			Notifications:TopToAll({text="Challenge " .. name.." reach lvl 190 for max reward", style={color="blue"}, duration=10})
+			Notifications:TopToAll({text="Challenge " .. name.." reach lvl 190(or 200 for part 1) for max reward ", style={color="blue"}, duration=10})
 			self.challenge = true
+			--npc_boss_juggernaut_4.mjz_retain = true
 		end	
 	end
 

@@ -2112,6 +2112,10 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Single player -- On level drops: guarntee weapon fragment from 2 to 4,  guarantee edible fragment from 1 to 3. 
+* '-challenge' boss command can now can be used in part 1 too after min 40 of game, but max reward is Tier 2 and at lvl 200.
+
+
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
