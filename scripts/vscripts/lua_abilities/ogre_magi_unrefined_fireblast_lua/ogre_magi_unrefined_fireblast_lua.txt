@@ -14,7 +14,7 @@
 		"AbilityTextureName"			"ogre_magi_unrefined_fireblast_lua"
 		"FightRecapLevel"				"1"
 		"MaxLevel"						"1"
-		//"IsGrantedByScepter"			"1"
+		"IsGrantedByScepter"			"1"
 
 		"HasScepterUpgrade"			"1"
 		"precache"
@@ -63,7 +63,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"scepter_mana"		"0.6"
+				"scepter_mana"		"0.25"
 			}
 			"04"
 			{
@@ -78,8 +78,13 @@
 			"06"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"scepter_mana_tooltip"			"60"
-			}			
+				"scepter_mana_tooltip"			"25"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_bonus_dmg"		"5"
+			}						
 		}
 	}
 }

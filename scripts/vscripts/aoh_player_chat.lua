@@ -1,10 +1,13 @@
 require("lib/string")
+local count = 0
+local count2 = 0
 function AOHGameMode:OnPlayerChat(keys)
-	local time = GameRules:GetGameTime() / 60
+	local time = math.floor(GameRules:GetGameTime() / 60)
 	if keys.text == "-hard" and not self._hardMode and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		if GetMapName() ~= "heroattack_on_easy" then
 			self._hardMode = true
 			_G._hardMode = true
+			_G._normal_mode = true
 			Notifications:TopToAll({text="NotEasy mode has been activated.", style={color="red"}, duration=5})
 			self:_ReadGameConfiguration()
 		else
@@ -32,6 +35,7 @@ function AOHGameMode:OnPlayerChat(keys)
 			self._hardMode = true
 			_G._hardMode = true
 			self._doubleMode = true
+			_G._normal_mode = true
 			Notifications:TopToAll({text="Full Game, Hard Double Enabled", style={color="red"}, duration=5})
 			self._flPrepTimeBetweenRounds = 12
 			self:_ReadGameConfiguration()
@@ -44,6 +48,7 @@ function AOHGameMode:OnPlayerChat(keys)
 			self._endlessMode = true
 			self._hardMode = true
 			_G._hardMode = true
+			_G._normal_mode = true
 			Notifications:TopToAll({text="Full Game Hard Enabled", style={color="red"}, duration=5})
 			self._flPrepTimeBetweenRounds = 12
 			self:_ReadGameConfiguration()
@@ -58,6 +63,7 @@ function AOHGameMode:OnPlayerChat(keys)
 				self._endlessMode = true
 				self._hardMode = true
 				_G._hardMode = true
+				_G._normal_mode = true
 				Notifications:TopToAll({text="Full Game Enabled (hard only) ", style={color="red"}, duration=5})
 				self._flPrepTimeBetweenRounds = 12
 				self:_ReadGameConfiguration()
@@ -75,6 +81,7 @@ function AOHGameMode:OnPlayerChat(keys)
 			self._endlessMode = true
 			self._hardMode = true
 			_G._hardMode = true
+			_G._normal_mode = true
 			Notifications:TopToAll({text="Full Game Enabled test (hard only) ", style={color="red"}, duration=5})
 			self._flPrepTimeBetweenRounds = 12
 			self:_ReadGameConfiguration()
@@ -88,6 +95,10 @@ function AOHGameMode:OnPlayerChat(keys)
 		_G._extra_mode = true
 		Notifications:TopToAll({text="Extra Mode Enabled, Bosses over lvl 14 will now get 2-6 random skills(Beta) ", style={color="blue"}, duration=9})		
 	end	
+	if keys.text == "-normal" and not _G._normal_mode and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+		_G._normal_mode = true
+		Notifications:TopToAll({text="Normal Mode Enabled, Base now has normal armor. ", style={color="blue"}, duration=9})		
+	end		
 
 	if keys.text == "-zeromanall" and not self._manaMode and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		self._manaMode = true
@@ -465,14 +476,13 @@ function AOHGameMode:OnPlayerChat(keys)
 		end
 	end
 
-	local count = 0
-	local count2 = 0
+
 	if keys.text == "-challenge" and keys.playerid == 0 and not self.challenge then--     --
 		local plyID = keys.playerid
 		local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero()
 		local unit = "npc_boss_juggernaut_4"
 		local name = "Boss"
-		if not self._endlessMode_started and not count2 > 0 then
+		if not self._endlessMode_started and count2 < 1 then
 			count2 = count2 + 1			
 			Notifications:TopToAll({text= "If you challenge boss before Part 2 max reward will be T2 at lvl 200. Type Again -challenge if you are sure", style={color="red"}, duration=15})
 			return	
@@ -481,17 +491,17 @@ function AOHGameMode:OnPlayerChat(keys)
 			name = "Juggernaut Sword Master"
 		end
 		if time < 40 then
-			Notifications:TopToAll({text= time .."min, unless at least 40 min have passed you can't Challenge " .. name, style={color="red"}, duration=15})
+			Notifications:TopToAll({text= time .." min, unless at least 40 min have passed you can't Challenge " .. name, style={color="red"}, duration=15})
 			count = count + 1
-			if count > 7 then
+			if count > 8 then
 				self.challenge = true	
 			end
 			return
-		else		
+		end	
 		if time > 100 then
-			Notifications:TopToAll({text= time .."min Have passed you can't Challenge " .. name.." if More then 100 min have passed", style={color="red"}, duration=15})
+			Notifications:TopToAll({text= time .." min Have passed you can't Challenge " .. name.." if More then 100 min have passed", style={color="red"}, duration=15})
 			count = count + 1
-			if count > 7 then
+			if count > 8 then
 				self.challenge = true	
 			end	
 		else
@@ -499,7 +509,6 @@ function AOHGameMode:OnPlayerChat(keys)
 			CreateUnitByName(unit, plyhero:GetAbsOrigin() + RandomVector(RandomFloat(200, 1000)) , true, nil, nil, DOTA_TEAM_BADGUYS)
 			Notifications:TopToAll({text="Challenge " .. name.." reach lvl 190(or 200 for part 1) for max reward ", style={color="blue"}, duration=10})
 			self.challenge = true
-			--npc_boss_juggernaut_4.mjz_retain = true
 		end	
 	end
 
@@ -520,7 +529,7 @@ function AOHGameMode:OnPlayerChat(keys)
 	end
 
 	if keys.text == "-commands" and keys.playerid == 0 then
-		local commands = "commands before game starts(0:00): <font color='green'>-full</font>(second part enabled)<font color='green'>-fullgame</font> (hard and second part)<font color='green'>-hard</font> (has extra bosses and items)<font color='green'>-extra</font> (bosses above lvl 14 will have extra random skills)<font color='green'>-double</font>(2x enemys) <font color='green'>-all</font> (fullgame hard double) , During game: <font color='green'>-kill</font> (in case you get bugged) <font color='green'>-hide</font> (hide all your passive skills that are max lvl and not on a key bind slot) <font color='green'>-unhide</font>, Host only : <font color='red'>-challenge</font> = sumons a Challenge Boss that you will have to DPS race him for 420 sec. <font color='green'>-effect_rate</font><font color='blue'>number</font>,  number = 1 to 20 , reduce the animation effects rate for some skills. SinglePlayer: <font color='green'>-single</font> = adds an extra courier and gives ancient more regen and armor. <font color='green'>-gon</font> = you will receive a second philosophers stone instead of helper unit" 
+		local commands = "commands before game starts(0:00): <font color='green'>-full</font>(second part enabled), <font color='green'>-normal</font> (has extra bosses and items), <font color='green'>-fullgame</font> (hard and second part)<font color='green'>-hard</font> (has extra bosses and items)<font color='green'>-extra</font> (bosses above lvl 14 will have extra random skills)<font color='green'>-double</font>(2x enemys) <font color='green'>-all</font> (fullgame hard double) , During game: <font color='green'>-kill</font> (in case you get bugged) <font color='green'>-hide</font> (hide all your passive skills that are max lvl and not on a key bind slot) <font color='green'>-unhide</font>, Host only : <font color='red'>-challenge</font> = sumons a Challenge Boss that you will have to DPS race him for 420 sec. <font color='green'>-effect_rate</font><font color='blue'>number</font>,  number = 1 to 20 , reduce the animation effects rate for some skills. SinglePlayer: <font color='green'>-single</font> = adds an extra courier and gives ancient more regen and armor. <font color='green'>-gon</font> = you will receive a second philosophers stone instead of helper unit" 
 		GameRules:SendCustomMessage(commands, 0, 0)
 	end	
 	if keys.text == "-stalker" then

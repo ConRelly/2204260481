@@ -114,10 +114,12 @@ function AOHGameRound:End()
 		if (not unit:IsTower()) and (not unit.mjz_retain) then
 			--if not self._endlessMode_started then
  			skip = skip + 0.05
+			local name = unit:GetUnitName()
 			Timers:CreateTimer({
 				endTime = 5 + skip, 
 				callback = function()
 					if not unit:IsNull() and IsValidEntity(unit) then
+						print("focekill unit: "..name)
 						unit:ForceKill(false)
 						if not unit:IsNull() and IsValidEntity(unit) then
 							UTIL_Remove(unit)

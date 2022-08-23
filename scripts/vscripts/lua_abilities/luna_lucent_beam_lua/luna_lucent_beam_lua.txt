@@ -62,7 +62,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"agi_multiplier"		"4.0 4.5 5.0 6.5 7.0 8.5 10.0"
+				"agi_multiplier"		"4.0 4.5 5.0 6.5 7.0 7.5 9.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_luna_101"
 			}
 			"04"

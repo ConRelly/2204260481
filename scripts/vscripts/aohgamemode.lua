@@ -113,6 +113,8 @@ function AOHGameMode:InitGameMode()
 	_G._stalker_chance = 1
 	self._endlessMode = false
 	_G._endlessMode_started = false
+	_G._normal_mode = false
+	_G._defeat_extra_lives = 3
 	self._endlessMode_started = false
 	self._manaMode = false
 	self._doubleMode = false
@@ -524,6 +526,9 @@ function AOHGameMode:InitVariables()
 						hero:AddItemByName("item_aegis_lua")
 						--hero:AddItemByName("item_philosophers_stone2")
 					end
+					if not _G._hardMode then 
+						hero:ModifyGold(5000, true, 0)
+					end	
 					if Cheats:IsEnabled() then
 						hero:AddItemByName("item_obs_studio")
 					end	
@@ -541,7 +546,15 @@ function AOHGameMode:InitVariables()
 				self.starting_intems = true
 				print(self._playerNumber .. " starting players")
 			end
-		})		
+		})
+		Timers:CreateTimer({
+			endTime = 25,
+			callback = function()
+				if not _G._normal_mode then
+					Notifications:TopToAll({text="Easy mode: Ancient Has base 5k Armor(only on part 1). type'-normal' before game starts to disable this(or play -hard)", style={color="green"}, duration=12})
+				end	
+			end
+		})			
 	end	
 	if not self.starting_intems then 
 		for playerID = 0, 4 do
@@ -794,7 +807,11 @@ function AOHGameMode:_CheckWin()
 					Notifications:TopToAll({text="Second part has Begin(Lower Difficulty)", style={color="red"}, duration=7})	
 				end	
 			elseif not self._vic_1 then
-				Notifications:TopToAll({text="You Have Defeated The Demo Difficulty, Try -fullgame to meet new bosses and final GOD Bosses", style={color="red"}, duration=20})
+				if not _G._normal_mode then
+					Notifications:TopToAll({text="You Have Defeated Demo Difficulty on Easy, Try '-normal', or -fullgame to meet new bosses and final GOD Bosses", style={color="red"}, duration=20})
+				else
+					Notifications:TopToAll({text="You Have Defeated Demo Difficulty , Try -fullgame to meet new bosses and final GOD Bosses", style={color="red"}, duration=20})
+				end	
 				Timers:CreateTimer({
 					endTime = 15,
 					callback = function()
@@ -940,6 +957,7 @@ function AOHGameMode:_CheckForDefeat()
 	end
 end
 
+local one_time_reward = true
 function AOHGameMode:CheckForDefeatDelay()
 	if self._defeatcounter > 0 then
 		Notifications:TopToAll({text=self._defeatcounter, duration=1})
@@ -948,14 +966,40 @@ function AOHGameMode:CheckForDefeatDelay()
 	else 
 		if self._entAncient and self._entAncient:IsAlive() then
 			if are_all_heroes_dead() then
-				self._entAncient:ForceKill(false)
-				Notifications:TopToAll({text="You LOST, All Heroes dead When CountDown ended", duration=5})
-				Timers:CreateTimer({
-					endTime = 4,
-					callback = function()
-						self._entAncient:ForceKill(false)
-					end
-				})	
+				if _G._defeat_extra_lives > 0 and not _G._hardMode then
+					if one_time_reward then
+						refresh_players_bonus()
+						_G._defeat_extra_lives = _G._defeat_extra_lives - 1
+						Notifications:TopToAll({text="Lives left = " .._G._defeat_extra_lives.. ", Everyone gets 5 lvls, 15k gold and an Edible Fragment.", style={color="green"}, duration=10})
+						self._defeatcounter = 10
+						self._ischeckingdefeat = false
+						one_time_reward = false
+						return nil
+					else
+						refresh_players_bonus()
+						_G._defeat_extra_lives = _G._defeat_extra_lives - 1
+						Notifications:TopToAll({text="Lives left = " .._G._defeat_extra_lives.. ", Everyone gets 5 lvls and 15k gold.", style={color="green"}, duration=10})
+						self._defeatcounter = 10
+						self._ischeckingdefeat = false
+						return nil						
+					end	
+				elseif _G._defeat_extra_lives > 0 and _G._hardMode then
+					refresh_players_bonus()
+					_G._defeat_extra_lives = _G._defeat_extra_lives - 3
+					Notifications:TopToAll({text="Lives left = " .._G._defeat_extra_lives.. ", Everyone gets 5 lvls and 15k gold.", style={color="green"}, duration=10})
+					self._defeatcounter = 10
+					self._ischeckingdefeat = false
+					return nil
+				else	
+					self._entAncient:ForceKill(false)
+					Notifications:TopToAll({text="You LOST, All Heroes dead When CountDown ended with 0 lives left", style={color="red"}, duration=5})
+					Timers:CreateTimer({
+						endTime = 4,
+						callback = function()
+							self._entAncient:ForceKill(false)
+						end
+					})
+				end		
 			else
 				Notifications:TopToAll({text="CLEAR", duration=1})
 				self._defeatcounter = 10
@@ -1029,7 +1073,7 @@ function AOHGameMode:OnEntitySpawned(event)
 	if (unit:GetPlayerOwnerID() == 0 and unit:IsRealHero() and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) and reminder then
 		local steam_name = PlayerResource:GetPlayerName(0)
 		if GetMapName() == "heroattack_on_easy" then
-			Notifications:TopToAll({text="Host( "..steam_name.." ) can type '-full' to enable Second part, check Map description for more", style={color="red"}, duration=10})
+			Notifications:TopToAll({text="Host( "..steam_name.." ) can type '-full' to enable Second part, '-normal' to have normal Ancient armor, check Map description for more", style={color="red"}, duration=10})
 			reminder = false
 		else	
 			Notifications:TopToAll({text="Host( "..steam_name.." ) can type '-fullgame' to enable Full Game(hard only)(part 2 and 3), check Map description for more ", style={color="red"}, duration=15})

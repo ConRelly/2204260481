@@ -172,7 +172,7 @@ function refresh_players()
 			if not hero:IsAlive() then
 				local rezPosition = hero:GetAbsOrigin()
 			    hero:RespawnHero(false, false)
-			    hero:SetAbsOrigin(rezPosition)
+				FindClearSpaceForUnit( hero, rezPosition, true )
 			end
 			hero:SetHealth(hero:GetMaxHealth())
 			hero:SetMana(hero:GetMaxMana())
@@ -190,7 +190,43 @@ function refresh_players()
 		end
 	end
 end
-	
+
+function refresh_players_bonus()
+	if IsServer() then
+		for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+			if PlayerResource:HasSelectedHero(playerID) then
+				local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+				if not hero:IsAlive() then
+					local rezPosition = hero:GetAbsOrigin()
+					hero:RespawnHero(false, false)
+					hero:SetAbsOrigin(rezPosition)
+				end
+				hero:SetHealth(hero:GetMaxHealth())
+				hero:SetMana(hero:GetMaxMana())
+				for y=0, 9, 1 do
+					local current_item = hero:GetItemInSlot(y)
+					if current_item ~= nil then
+						if current_item:GetName() == "item_bottle" then
+							current_item:SetCurrentCharges(3)
+							hero:EmitSoundParams("Bottle.Cork", 1, 0.5, 0)
+							local rf = ParticleManager:CreateParticle("particles/custom/abilities/refresh_players/refill_bottle.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+							ParticleManager:ReleaseParticleIndex(rf)
+						end
+					end
+				end
+				for l=1, 5 do
+					hero:HeroLevelUp(false)
+				end	
+				hero:ModifyGold(15000, true, 0)
+				if not hero.reward_edible_fragment and not _G._hardMode then
+					hero:AddItemByName("item_edible_fragment")
+					hero.reward_edible_fragment = true
+				end	
+			end
+		end
+	end	
+end
+
 
 function are_all_heroes_dead()
 	for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
@@ -204,6 +240,8 @@ function are_all_heroes_dead()
 	return true
 	
 end
+
+
 
 
 -- Returns true if the item was removed.

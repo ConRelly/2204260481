@@ -15,7 +15,7 @@ end
 function modifier_infinite_health:OnCreated()
     self.teleport_chance = 100
     local parentt = self:GetParent()
-    --parentt.mjz_retain = true
+    parentt.mjz_retain = true
     
     self:StartIntervalThink(1)
 end
@@ -25,41 +25,42 @@ function modifier_infinite_health:OnDestroy()
             local parent = self:GetParent()
             local lvl = parent:GetLevel()
             local hp = parent:GetHealthPercent()
+            local vcenter = Vector(0,0,0)
             Drop_gold_bag(parent, 25000)
-            create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin() + RandomVector(RandomFloat(50, 250)))
-            local reward = "Tier I: 1 ingot, 1 gold bag"
+            create_item_drop("item_adamantium_ingot", vcenter + RandomVector(RandomFloat(50, 250)))
+            local reward = "Tier I: 1 ingot, 1 gold bag, Dropped in center of the map"
             _G._challenge_bosss = 1
             if _G._endlessMode_started then
                 if lvl > 40 then
-                    create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                    reward = "Tier II: 2 ingots, 2 gold bags"
+                    create_item_drop("item_adamantium_ingot", vcenter + RandomVector(RandomFloat(50, 250)))
+                    reward = "Tier II: 2 ingots, 2 gold bags, Dropped in center of the map"
                     Drop_gold_bag(parent, 25000)
                     _G._challenge_bosss = 2
                 end 
                 if lvl > 90 then
-                    create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                    reward = "Tier III: 3 ingots, 3 gold bags"
+                    create_item_drop("item_adamantium_ingot", vcenter + RandomVector(RandomFloat(50, 250)))
+                    reward = "Tier III: 3 ingots, 3 gold bags, Dropped in center of the map"
                     Drop_gold_bag(parent, 25000)
                     _G._challenge_bosss = 3
                 end
                 if lvl > 140 then
-                    create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                    create_item_drop("item_edible_fragment", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                    reward = "Tier IV: 4 ingots, 4 gold bags, Edible Fragment"
+                    create_item_drop("item_adamantium_ingot", vcenter + RandomVector(RandomFloat(50, 250)))
+                    create_item_drop("item_edible_fragment", vcenter + RandomVector(RandomFloat(50, 250)))
+                    reward = "Tier IV: 4 ingots, 4 gold bags, Edible Fragment, Dropped in center of the map"
                     Drop_gold_bag(parent, 25000)
                     _G._challenge_bosss = 4
                 end 
                 if lvl > 190 then
-                    create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                    create_item_drop("item_edible_complete", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
+                    create_item_drop("item_adamantium_ingot", vcenter + RandomVector(RandomFloat(50, 250)))
+                    create_item_drop("item_edible_complete", vcenter + RandomVector(RandomFloat(50, 250)))
                     reward = "Tier V: 5 ingots, 5 gold bags, Edible fragment + Edible Complete"
                     Drop_gold_bag(parent, 25000)
                     _G._challenge_bosss = 5
                 end
             else
                 if lvl > 200 then
-                    create_item_drop("item_adamantium_ingot", self:GetParent():GetAbsOrigin()+ RandomVector(RandomFloat(50, 250)))
-                    reward = "Tier II: 2 ingots, 2 gold bags"
+                    create_item_drop("item_adamantium_ingot", vcenter + RandomVector(RandomFloat(50, 250)))
+                    reward = "Tier II: 2 ingots, 2 gold bags, Dropped in center of the map"
                     Drop_gold_bag(parent, 25000)
                     _G._challenge_bosss = 2
                 end                      
@@ -101,11 +102,13 @@ function Drop_gold_bag(unit, nGold)
         local newItem = CreateItem("item_bag_of_gold", nil, nil)
         newItem:SetPurchaseTime(0)
         newItem:SetCurrentCharges(nGold)
-        local drop = CreateItemOnPositionSync(unit:GetAbsOrigin(), newItem)
-        local dropTarget = unit:GetAbsOrigin() + RandomVector(RandomFloat(50, 550))
+        local vcenter = Vector(0,0,0)
+        local drop = CreateItemOnPositionSync(vcenter, newItem)
+        local dropTarget = vcenter + RandomVector(RandomFloat(50, 550))
         newItem:LaunchLoot(false, 300, 0.75, dropTarget)
     end   
 end    
+
 
 function modifier_infinite_health:DeclareFunctions()
 	return {

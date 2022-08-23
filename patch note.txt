@@ -2112,8 +2112,25 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
-* Single player -- On level drops: guarntee weapon fragment from 2 to 4,  guarantee edible fragment from 1 to 3. 
-* '-challenge' boss command can now can be used in part 1 too after min 40 of game, but max reward is Tier 2 and at lvl 200.
+
+* New Mode by default: Easy - Ancient gets 5000 base armor until part 2. gets removed if you play hard mode or type '-normal' before the game starts.
+* Now Normal and Easy mode has 3 lives protection against countdown fail, every time you lose a life all heroes gain 5 levels, 15k gold, and a one-time edible fragment. Hard has 1 fail protection instead of 3 and no edible reward.
+* Single player -- On level drops: guarantee weapon fragment from 2 to 4,  guarantee edible fragment from 1 to 3. 
+* '-challenge' boss command can now be used in part 1 too after min 40 of the game, but the max reward is Tier 2 and at lvl 200(a lot easier to reach than part 2).
+* Now if you start challenge boss between rounds he will not be killed when the next round starts but will be ignored as an enemy and your rounds will move normally.
+* Replaced the Unrefined fireblast from ogre aghanim with the one from Blue multicast and increased current mana bonus dmg from 1x to 5x.
+* Removed Ogre magi Ignite and added a new spell (passive mana core) and a new lvl 10 talent. Still trying to find out ogre magi specific crashes(is probably related to multicast and something else).
+* Radiance Armor: 
+--Edible form now will use a neutral slot so you can teleport after use in the neutral stash. now will show the dmg dealt by the item in dps tooltip.
+--all radiance forms now have a new effect based on the Challenge boss tier reward.
+
+
+
+
+
+
+
+
 
 
 

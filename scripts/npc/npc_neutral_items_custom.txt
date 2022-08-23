@@ -103,6 +103,10 @@
 			"item_custom_ex_machina"			"1"
 			"item_maple_shield_lua"				"1"
 			"item_titan_relic"					"1"
+			"item_radiance_armor_3_edible"      "1"
+			"item_radiance_armor_blue_edible"   "1"
+			"item_radiance_armor_green_edible"  "1"
+
 		}
 	}
 }

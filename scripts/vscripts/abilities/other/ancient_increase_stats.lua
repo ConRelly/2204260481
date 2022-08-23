@@ -11,6 +11,8 @@ function modifier_ancient_increase_stats:OnCreated()
 	self.previous_round = 0
 	self:StartIntervalThink(0.5)
 end
+local runonce = false
+local timerskip = true
 function modifier_ancient_increase_stats:OnIntervalThink()
 	local parent = self:GetParent()
 	local ability = self:GetAbility()
@@ -48,7 +50,6 @@ function modifier_ancient_increase_stats:OnIntervalThink()
 			local round = _G.RoundNumber
 			local part3 = GameRules.GLOBAL_endlessHard_started
 			if round and self.previous_round < round then
-				
 				-- Health
 				local maxHealth = health_base + (health_per_round * round)
 				if part3 then
@@ -79,6 +80,31 @@ function modifier_ancient_increase_stats:OnIntervalThink()
 					end
 				end ]]					
 			end
+			local time = GameRules:GetGameTime()
+			if timerskip then
+				timerskip = false
+				Timers:CreateTimer({
+					endTime = 42,
+					callback = function()
+						if not _G._endlessMode_started and not _G._normal_mode then
+							parent:SetPhysicalArmorBaseValue(5000)
+							timerskip = false
+							runonce = true
+						end
+					end
+				})
+			end	
+			if runonce then
+				if not _G._endlessMode_started and not _G._normal_mode then
+					local base_armor = parent:GetPhysicalArmorBaseValue()
+					if base_armor < 4999 then
+						parent:SetPhysicalArmorBaseValue(5000)
+					end
+				else
+					parent:SetPhysicalArmorBaseValue(2)
+					runonce = false		
+				end
+			end	
 		end
 	end
 end

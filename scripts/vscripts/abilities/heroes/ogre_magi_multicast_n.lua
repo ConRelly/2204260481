@@ -9,7 +9,7 @@ end
 function ogre_magi_multicast_n:OnInventoryContentsChanged(params)
 	local caster = self:GetCaster()
 
-	local FireBlast = caster:FindAbilityByName("ogre_magi_unrefined_fireblast")
+	local FireBlast = caster:FindAbilityByName("ogre_magi_unrefined_fireblast_lua")
 	if not FireBlast then return end
 
 	FireBlast:SetActivated(caster:HasScepter())

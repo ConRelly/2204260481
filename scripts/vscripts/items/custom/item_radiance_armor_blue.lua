@@ -151,7 +151,13 @@ function modifier_item_radiance_armor_aura_blue:OnIntervalThink()
 				if radir < 1 then
 					Notifications:TopToAll({text="#stuf_2", style={color="blue"}, duration=5})
 					radir = radir + 2
-				end			
+				end
+				if _G._challenge_bosss > 0 then
+					local heal_mult = _G._challenge_bosss / 50
+					local heal_amount = damage * heal_mult
+					caster:Heal(heal_amount, caster)
+					ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+				end							
 			end
 		end	
 		if not caster:IsRealHero() then	

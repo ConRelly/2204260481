@@ -10,7 +10,7 @@ function OnSpellStart( keys )
 	local ability = keys.ability
     local modifier_stats2 = 'modifier_item_radiance_armor_3_edible'
     local modifier_stats3 = "modifier_item_radiance_armor_aura_3_edible"
- 
+    if ability:GetCurrentCharges() < 1 then return end
 
     local sound_cast = keys.sound_cast
     local item_name = ability:GetAbilityName()
@@ -42,16 +42,16 @@ function OnSpellStart( keys )
     caster:EmitSound(sound_cast)
 
     ability:SetCurrentCharges( ability:GetCurrentCharges() - 1 )
-    caster:RemoveItem(ability)
+    --caster:RemoveItem(ability)
 
     
     -- Create a Item for one game frame to prevent regular dota interactions from going bad
-    if Timers then
+ --[[    if Timers then
         local item_dummy = CreateItem(item_name, caster, caster)
         caster:AddItem(item_dummy)
         Timers:CreateTimer(0.01, function()
             caster:RemoveItem(item_dummy)
         end)
-    end
+    end ]]
 
 end
