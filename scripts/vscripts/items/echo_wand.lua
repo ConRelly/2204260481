@@ -279,6 +279,8 @@ if IsServer() then
 		amalgamation = true,
 		phantom_reflex = true,
 		mjz_phoenix_supernova = true,
+		enchantress_enchant = true,
+		rubick_spell_steal = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

@@ -466,7 +466,7 @@
 
 
 	"DOTA_Tooltip_ability_item_adamantium_ingot"                        "<h1><font color='#9E20E7'>Adamantium Ingot</font>"
-	"DOTA_Tooltip_ability_item_adamantium_ingot_description"            "Is Gained after finishing the DPS '-challenge' Boss , you can type that command any time after part 2 starts. Depending how far you reach you gain extra <h1><font color='#9E20E7'>Adamantium Ingot</font>"
+	"DOTA_Tooltip_ability_item_adamantium_ingot_description"            "Is Gained after finishing the DPS '-challenge' Boss , you can type that command any time after 40 min of the game(part 1 is max tier 2 reward). Depending how far you reach you gain extra <h1><font color='#9E20E7'>Adamantium Ingot</font>"
 
 // weapon lvl 1
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword"					"Master Of Weapons' Sword"
@@ -10231,7 +10231,7 @@ Contains all random skills"
 	   "DOTA_Tooltip_Ability_item_branch_component"			  "Branch component"
 	   "DOTA_Tooltip_Ability_item_branch_component_description"  "At lvl 20 you will receive one, if you have no plans in building any item from this then you can just sell this (not tradable)"
 	   "DOTA_Tooltip_Ability_item_enchanter"			 "Enchanter"
-	   "DOTA_Tooltip_Ability_item_enchanter_description" "After lvl 10 you have a chance on getting every time you level up, check shop (used to make: radiance armor and other stuff)/nEveryone gets one bonus if after minute 30 of the game someone guess the word/s (you can found the word/s from the title you get when a round starts, gets changed every few updates. More advanced Hints are given in Discord <font color='#F74705'>Patreon only section</font>), you have to type like a command (caps sensitive)."
+	   "DOTA_Tooltip_Ability_item_enchanter_description" "After lvl 9 you have a chance on getting one every time you level up, check shop. \nEveryone gets one bonus if after minute 30 of the game someone guess the word/s (type '-guessing game' for details, More advanced Hints are given in Discord <font color='#F74705'>Patreon only section</font>), you have to type like a command (caps sensitive)."
 
 		"DOTA_Tooltip_Ability_item_branches2"				"Iron Branch Special"
 		"DOTA_Tooltip_ability_item_branches2_Description"						"<h1>Use: Plant Tree</h1> Targets the ground to plant a happy little tree that lasts for %tree_duration% seconds.<br><br>Range: %abilitycastrange%

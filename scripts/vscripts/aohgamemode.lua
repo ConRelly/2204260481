@@ -837,6 +837,7 @@ function AOHGameMode:_CheckWin()
 end
 local slayer_fragmet = 4
 local edible_bonus_fragment = 3
+local encahnter_bonus = 2
 function AOHGameMode:OnHeroLevelUp(event)
 	local hero = EntIndexToHScript(event.hero_entindex)
 	-- Save current unspend AP
@@ -921,7 +922,13 @@ function AOHGameMode:OnHeroLevelUp(event)
 			mainHero:AddItemByName("item_branch_component")
 		end
 	end	
-	if dice_1 == dice_2 and not hero:IsIllusion() and (heroLevel > 9) then
+	if self._playerNumber < 2 and encahnter_bonus > 0 and not hero:IsIllusion() and (heroLevel > 9) then	
+		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
+		if mainHero == hero then
+			mainHero:AddItemByName("item_enchanter")
+			encahnter_bonus = encahnter_bonus - 1
+		end
+	elseif dice_1 == dice_2 and not hero:IsIllusion() and (heroLevel > 9) then
 		-- Check if main/real hero
 		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
 		if mainHero == hero then

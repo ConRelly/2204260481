@@ -105,7 +105,7 @@ function modifier_item_blast_staff3:DeclareFunctions()
 		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
-		MODIFIER_PROPERTY_STATUS_RESISTANCE,
+		MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING,
 	}
 end
 
@@ -121,7 +121,7 @@ end
 function modifier_item_blast_staff3:GetModifierSpellAmplify_Percentage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("spell_amp") end
 end
-function modifier_item_blast_staff3:GetModifierStatusResistance()
+function modifier_item_blast_staff3:GetModifierStatusResistanceStacking()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("status_resist") end
 end	
 

@@ -2127,6 +2127,8 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Single player frist 2 levels after 9 will receive guarantee and Enchanter(2 in total). added an command for '-guessing game'
+
 
 
 

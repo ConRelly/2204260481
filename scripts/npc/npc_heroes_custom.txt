@@ -19,6 +19,7 @@
 	"Ability5"				"custom_aphotic_shield"
 	"Ability10"				"special_bonus_unique_mjz_pudge_rot_health"
 	"Ability11"				"special_bonus_reincarnation_90"
+	"Ability14"             "special_bonus_hp_5000"
 	"Ability15"				"special_bonus_armor_27"
 	"Ability16"				"special_bonus_cdr_15"
 	"Ability17"				"special_bonus_spell_lifesteal_70"
@@ -74,6 +75,7 @@
 "npc_dota_hero_beastmaster"
 {
 	"Ability12"     "special_bonus_magic_resistance_25"
+	"Ability14"     "special_bonus_mp_400"
 	"Ability17"		"special_bonus_cdr_20"
 
 	"AttributeStrengthGain"			"6.2"
@@ -547,7 +549,8 @@
 		"Ability2"			"mjz_life_stealer_feast"
 		"Ability3"			"mjz_lifestealer_anabolic_frenzy"
 		"Ability5"			"life_stealer_custom_deny"
-		"Ability6"			"mjz_lifestealer_poison_sting"	
+		"Ability6"			"mjz_lifestealer_poison_sting"
+		"Ability10"         "special_bonus_hp_2000"	
 		"Ability11"			"special_bonus_unique_mjz_poison_sting_duration"
 		"Ability12"			"special_bonus_reincarnation_90"
 		"Ability13"			"special_bonus_unique_mjz_anabolic_frenzy_move"
@@ -1654,7 +1657,7 @@
 		"Ability13"				"special_bonus_attack_damage_40"
 		"Ability14"				"special_bonus_cleave_60"
 		"Ability15"             "special_bonus_truestrike"
-		"Ability16"				"special_bonus_unique_alchemist_3"
+		"Ability16"				"special_bonus_spell_amplify_100"
 
 		"AttributeStrengthGain"			"5.900000"
 		"AttributeAgilityGain"			"4.700000"
@@ -2154,8 +2157,9 @@
 		"Ability10"				"special_bonus_exp_boost_30"
 		"Ability11"				"special_bonus_mp_regen_14"
 		"Ability12"				"special_bonus_qop_shadow_strike_tick_interval"
+		"Ability14"             "special_bonus_mp_800"
 		"Ability15"				"special_bonus_strength_500"
-		//"Ability17"				"special_bonus_attack_base_damage_200"
+		"Ability17"				"special_bonus_spell_block_18"
 
 		"AttributeIntelligenceGain"		"9.600000"
 	}

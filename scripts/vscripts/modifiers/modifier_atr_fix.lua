@@ -32,7 +32,7 @@ function modifier_atr_fix:DeclareFunctions()
         --MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
         MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
         --MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MAX,
-        MODIFIER_PROPERTY_STATUS_RESISTANCE,
+        MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING,
 	}
 	return funcs
 end
@@ -89,11 +89,11 @@ end
 end]]
 
 
-function modifier_atr_fix:GetModifierStatusResistance()
+function modifier_atr_fix:GetModifierStatusResistanceStacking()
 	local parent_str = self.parent:GetStrength()
     local s_resit = parent_str * 0.0037
     if s_resit > 40 then
-        s_resit = 40
+        s_resit = 30
     end   
     return s_resit
 end

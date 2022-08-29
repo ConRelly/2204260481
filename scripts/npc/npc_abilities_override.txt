@@ -104,18 +104,7 @@
 			}
 		}
 	}
-	"special_bonus_unique_ancient_apparition_2"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"7120"
-				"ad_linked_abilities"			"ancient_apparition_chilling_touch"
-			}
-		}
-	}		
+		
 	"special_bonus_unique_arc_warden"
 	{
 		"AbilitySpecial"
@@ -177,6 +166,22 @@
 			}
 		}
 	}
+	"special_bonus_unique_beastmaster_6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"613"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ad_linked_abilities"			"beastmaster_call_of_the_wild_boar"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_hp"				"500"
+		}
+	}
+
 	"special_bonus_unique_beastmaster"
 	{
 		"AbilitySpecial"
@@ -2203,33 +2208,59 @@
 			}
 		}
 	}	
+
 	"ancient_apparition_chilling_touch"
 	{
-		"MaxLevel"                  "7"
-		"LevelsBetweenUpgrades"		"11"
-		"AbilityCooldown"				"8 7 6 5 4 3 2"
-		"AbilityManaCost"				"75"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5347"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_Ancient_Apparition.ChillingTouchCast"
+		"MaxLevel"                  	"7"
+		"LevelsBetweenUpgrades"			"11"	
+		"HasScepterUpgrade"			"1"
 
-		"AbilitySpecial"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
+			"damage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"220 2960 8530 15250 47500 115000 195400"
-				"LinkedSpecialBonus"	"special_bonus_unique_ancient_apparition_2"
+				"value"				"220 2960 8530 15250 47500 115000 195400"
+				"special_bonus_unique_ancient_apparition_2"		"+14000"
 			}
-			"02"
+			"slow"					"50"
+			"duration"				"1"
+			"attack_range_bonus"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"					"50"
+				"value"				"500"
+				"special_bonus_unique_ancient_apparition_7"		"+350"
 			}
-			"04"
+			"AbilityManaCost"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_range_bonus"	"550"
+				"value"										"30 40 50 60"
+				"special_bonus_scepter"						"-50%"
+			}
+			"AbilityCooldown"				
+			{
+				"value"			"8 7 6 5 4 3 2"
+				"special_bonus_scepter"						"-99%"
 			}
 		}
 	}
+
 	"ancient_apparition_cold_feet"
 	{
 		"LevelsBetweenUpgrades"		 "15"
@@ -2974,21 +3005,30 @@
 	}
 	"beastmaster_inner_beast"
 	{
-		"AbilitySpecial"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5172"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
+			"radius"				"7200"
+			"bonus_attack_speed"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"7200"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"50 75 125 230"
-				"LinkedSpecialBonus"	"special_bonus_unique_beastmaster_4"
+				"value"									"50 75 125 230"
+				"special_bonus_unique_beastmaster_4"		"+100"
 			}
 		}
 	}
+
 	"beastmaster_primal_roar"
 	{
 		// General

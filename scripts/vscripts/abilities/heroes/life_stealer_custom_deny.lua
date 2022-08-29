@@ -39,8 +39,9 @@ if IsServer() then
             if not target:HasModifier(modifier_name) and not self:GetParent():IsIllusion() then
                 target:AddNewModifier(attacker, ability, modifier_name, {})
             end
-
-            target:FindModifierByName(modifier_name):IncrementStackCount()
+            if target:HasModifier(modifier_name) then
+                target:FindModifierByName(modifier_name):IncrementStackCount()
+            end     
         end
     end
 end

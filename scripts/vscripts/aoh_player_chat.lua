@@ -531,7 +531,10 @@ function AOHGameMode:OnPlayerChat(keys)
 	if keys.text == "-commands" and keys.playerid == 0 then
 		local commands = "commands before game starts(0:00): <font color='green'>-full</font>(second part enabled), <font color='green'>-normal</font> (has extra bosses and items), <font color='green'>-fullgame</font> (hard and second part)<font color='green'>-hard</font> (has extra bosses and items)<font color='green'>-extra</font> (bosses above lvl 14 will have extra random skills)<font color='green'>-double</font>(2x enemys) <font color='green'>-all</font> (fullgame hard double) , During game: <font color='green'>-kill</font> (in case you get bugged) <font color='green'>-hide</font> (hide all your passive skills that are max lvl and not on a key bind slot) <font color='green'>-unhide</font>, Host only : <font color='red'>-challenge</font> = sumons a Challenge Boss that you will have to DPS race him for 420 sec. <font color='green'>-effect_rate</font><font color='blue'>number</font>,  number = 1 to 20 , reduce the animation effects rate for some skills. SinglePlayer: <font color='green'>-single</font> = adds an extra courier and gives ancient more regen and armor. <font color='green'>-gon</font> = you will receive a second philosophers stone instead of helper unit" 
 		GameRules:SendCustomMessage(commands, 0, 0)
-	end	
+	end
+	if keys.text == "-guessing game" and keys.playerid == 0 then
+		Notifications:TopToAll({text= "Hint 1: Combine 2 words that can be found in 2 round titles(part 1 and 2), the second word is all low caps and the first word can be found in normal and hard, up to round 15. Hint 2 : the 2 words can be found in a Siltbreaker round and a bristleback round", style={color="yellow"}, duration=17})
+	end			
 	if keys.text == "-stalker" then
 		local plyID = keys.playerid
 		local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero()

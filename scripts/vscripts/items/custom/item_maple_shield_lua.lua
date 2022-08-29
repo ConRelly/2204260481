@@ -61,7 +61,7 @@ function modifier_maple_shield_lua:DeclareFunctions()
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 		MODIFIER_PROPERTY_HEALTH_BONUS,
 		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
-		MODIFIER_PROPERTY_STATUS_RESISTANCE,
+		MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING,
 		MODIFIER_PROPERTY_EXP_RATE_BOOST,
 		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
@@ -73,7 +73,7 @@ end
 function modifier_maple_shield_lua:GetModifierHealthBonus()
 	return math.floor(self:GetParent():GetSpellAmplification(false) * self.hp_spell_multiplier)
 end
-function modifier_maple_shield_lua:GetModifierStatusResistance() return self.status end
+function modifier_maple_shield_lua:GetModifierStatusResistanceStacking() return self.status end
 function modifier_maple_shield_lua:GetModifierPercentageExpRateBoost() return self.xp_boost end
 function modifier_maple_shield_lua:GetModifierMagicalResistanceBonus() return self.magic_resit end
 function modifier_maple_shield_lua:GetModifierBonusStats_Strength() return self.bonus_str end

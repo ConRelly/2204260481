@@ -93,7 +93,7 @@ function modifier_item_imba_bloodthorn:DeclareFunctions()
 		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
 		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
 		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
-		MODIFIER_PROPERTY_STATUS_RESISTANCE,
+		MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING,
 		
 		-- MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE
 	}
@@ -114,7 +114,7 @@ function modifier_item_imba_bloodthorn:GetModifierConstantManaRegen()
 function modifier_item_imba_bloodthorn:GetModifierMagicalResistanceBonus()
 	return self.magic_resist end
 
-function modifier_item_imba_bloodthorn:GetModifierStatusResistance()
+function modifier_item_imba_bloodthorn:GetModifierStatusResistanceStacking()
 	return self.status_resist end	
 
 -- -- Roll for the crit chance

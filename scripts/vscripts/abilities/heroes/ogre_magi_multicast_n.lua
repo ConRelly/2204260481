@@ -347,6 +347,8 @@ function IsExcludeAbility(ability)
 		"primal_beast_onslaught_release",
 		"queenofpain_blink",
 		"amalgamation",
+		"enchantress_enchant",
+		"rubick_spell_steal",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do
@@ -421,6 +423,8 @@ function IsExcludeAbility9(ability)
 		"ancient_apparition_ice_blast",
 		"ancient_apparition_ice_blast_release",
 		"zanto_gari",
+		"enchantress_enchant",
+		"rubick_spell_steal",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do
