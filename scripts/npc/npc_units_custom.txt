@@ -7000,6 +7000,7 @@
 	"StatusManaRegen"		   "5000"
 	"MovementSpeed"			 "1200"
 	//"HasInventory"			  "1"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 }
 "npc_dota_goodguys_fort"
 {
@@ -16385,6 +16386,7 @@
 		"SoundSet"					"Hero_Ursa"
 		"Level"						"777"
 		"ModelScale"				"1"
+		//"ConsideredHero"			"1"
 		"HasInventory"				"1"
 		"CanBeDominated"			"0"
 
@@ -16442,6 +16444,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		"Creature"
 		{

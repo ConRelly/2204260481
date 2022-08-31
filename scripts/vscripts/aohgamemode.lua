@@ -499,8 +499,11 @@ function AOHGameMode:_RenewStats()
 					local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 					hero:AddItemByName("item_edible_fragment")
 					hero:AddItemByName("item_enchanter")
-					if RollPercentage(20) then
+					if RollPercentage(20) or (self._playerNumber < 2) then
 						hero:AddItemByName("item_imba_ultimate_scepter_synth2")
+					end	
+					if self._playerNumber < 2 then
+						hero:AddItemByName("item_red_divine_rapier_lv4")
 					end	
 				end	
 			end

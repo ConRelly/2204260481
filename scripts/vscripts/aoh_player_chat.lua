@@ -118,6 +118,10 @@ function AOHGameMode:OnPlayerChat(keys)
 		self._physdanage = true
 		self:_RenewStats()
 	end
+	if keys.text == "-dev_guessing_game" and Cheats:IsEnabled() then
+		self._physdanage = true
+		self:_RenewStats()	
+	end
 	if keys.text == guessing_gmae_2 and not Cheats:IsEnabled() and time > 30 and not self._physdanage and not GameRules:IsGamePaused() then
 		Notifications:TopToAll({text="#dota_npc_does_bc", style={color="red"}, duration=5})
 		self._physdanage = true

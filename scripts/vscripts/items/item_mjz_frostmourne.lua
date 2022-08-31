@@ -64,7 +64,7 @@ function HealthAttack(event)
             local bonus_agi = event.bonus_base_agi
             local ss_damage = caster_attack + speed + hp_regen
             if speed > 50000 then
-                bonus_agi = 1 + bonus_agi + math.floor(speed / 100000)   -- gain 1 extra base agi at 5k speed and for every 10k speed
+                bonus_agi = 1 + bonus_agi + math.floor(speed / 100000)   -- gain 1 extra base agi at 5k speed and for every 10k speed (takes in account the 10x speed mult)
                 if bonus_agi > 13 then
                     bonus_agi = 13
                 end    

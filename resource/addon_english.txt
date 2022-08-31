@@ -2820,7 +2820,7 @@
 	"DOTA_Tooltip_modifier_mjz_broodmother_insatiable_hunger_spellamp_Description"      "%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Bonus Spell Amplification"
 
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings"							"Spawn Spiderlings"
-	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_Description"				"Broodmother injects her young into an enemy unit, The spiderlings will hatch.They have 130%% of brood total dmg as their base Attack(<font color='#0B775D'>At lvl 7 the spiders will get extra dmg from: (33%% of your Max Hp + Mana) + (50 x of your Spell Amp) + (150 x your total armor)</font>)<br>Spawn with 2 random abilities every time and are not affected by Pharaoh Crown."
+	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_Description"				"Broodmother injects her young into an enemy unit, The spiderlings will hatch.They have %parent_attack_ptc%%% of brood total dmg as their base Attack(<font color='#0B775D'>At lvl 6 the spiders will get extra dmg from: (66%% of your Max Hp + Mana) + (70 x of your Spell Amp) + (300 x your total armor)</font>)<br>Spawn with 2 random abilities every time and are not affected by Pharaoh Crown."
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_Lore"						"Black Arachnia continues to raise her young, even amidst the field of combat.  The brood quickly learns how to support their mother."
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_spiderling_duration"		"LIFETIME:"
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_count"						"COUNT:"
@@ -3086,6 +3086,7 @@
 	"DOTA_Tooltip_ability_mjz_drow_ranger_marksmanship_damage_reduction_scepter"		"%Splinter Damage : "
 	"DOTA_Tooltip_ability_mjz_drow_ranger_marksmanship_scepter_description"		"Causes Drow Ranger's attacks to splinter on the target, hitting nearby units with normal attacks that deal reduced damage." 
 
+	"DOTA_Tooltip_ability_special_bonus_unique_drow_ranger_33"	"+{s:bonus_chance}% Marksmanship Chance"
 
 	"DOTA_Tooltip_ability_mjz_elder_titan_earth_splitter"				"Earth Splitter"
 	"DOTA_Tooltip_ability_mjz_elder_titan_earth_splitter_Description"	"Sends forth a jagged crack in front of Elder Titan. After 3 seconds, the crack implodes, slowing movement while dealing damage to each enemy based on Elder Titan strength. <font color='#F2A93E'>The skill has a random direction added to your target point, but the Spirit always throws in the direction he is pointed.</font>."
@@ -9220,34 +9221,42 @@ Required Level: %required_level%
 
 		//>>>> 	Red Divine Rapier
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv1"							"Red Divine Rapier LVL 1"
-		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv1_Description"				"Increases your damage.\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>.\n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv1_Description"				"Increases your damage.\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>, And blocks %reduction_shield%%% of damage taken from him. \n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv1_Lore"						"So powerful."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv1_bonus_damage"			  "+$damage"
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv1_bonus_spell_amp"         "%+$spell_amp"
 		
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv2"							"Red Divine Rapier LVL 2"
-		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv2_Description"				"Increases your damage.\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>.\n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv2_Description"				"Increases your damage.\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>, And blocks %reduction_shield%%% of damage taken from him. \n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv2_Lore"						"So powerful."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv2_bonus_damage"			  "+$damage"
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv2_bonus_spell_amp"         "%+$spell_amp"
 		
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv3"							"Red Divine Rapier LVL 3"
-		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv3_Description"			   	"Increases your damage.\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>.\n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv3_Description"			   	"Increases your damage.\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>, And blocks %reduction_shield%%% of damage taken from him. \n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv3_Lore"						"So powerful."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv3_bonus_damage"			  "+$damage"
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv3_bonus_spell_amp"         "%+$spell_amp"
 
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv4"							"Red Divine Rapier LVL 4"
-		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv4_Description"				"Increases your damage.\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>.\n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv4_Description"				"Increases your damage.\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>, And blocks %reduction_shield%%% of damage taken from him. \n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv4_Lore"						"So powerful."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv4_bonus_damage"			  "+$damage"
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv4_bonus_spell_amp"         "%+$spell_amp"
 
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5"							"Red Divine Rapier LVL 5"
-		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_Description"				"Increases your damage.\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>.\n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
-		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_Lore"						"So powerful."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_Description"				"<h1>Active:Consume</h1> Get all the stats and effects of this item(base stats improved).\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>, And blocks %reduction_shield%%% of damage taken from him. \n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_Lore"						"So powerful and tasty"
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_bonus_damage"			  "+$damage"
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_bonus_spell_amp"         "%+$spell_amp"
+
+		"DOTA_Tooltip_modifier_item_red_divine_rapier_edible_5"                   "Consumed Red Divine Rapier V"
+		"DOTA_Tooltip_modifier_item_red_divine_rapier_edible_5_description"       "Receive all the stats and effects of the Red Divine Rapier LVL 5"
+
+		"DOTA_Tooltip_modifier_item_red_divine_rapier_deff_bonus"                   "Rapier Shield"
+		"DOTA_Tooltip_modifier_item_red_divine_rapier_deff_bonus_description"       "Blocks a part of the Dmg received from Sword Master"
+
+
 		//<<<<
 "npc_dota_campfire" "Campfire"
 "npc_dota_creature_siltbreaker"										"Siltbreaker"

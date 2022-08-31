@@ -17095,13 +17095,18 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"swrod_master_bonus_ptc"	"30 45 60 80 120"
+				"swrod_master_bonus_ptc"	"30 50 70 100 160"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_spell_amp"	"30 50 80 110 190"
-			}						
+				"bonus_spell_amp"	"30 60 90 140 220"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"reduction_shield"	"30 40 50 60 75"
+			}									
 		}
 	} 
 
@@ -17150,13 +17155,18 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"swrod_master_bonus_ptc"	"30 45 60 80 120"
+				"swrod_master_bonus_ptc"	"30 50 70 100 160"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_spell_amp"	"30 50 80 110 190"
-			}						
+				"bonus_spell_amp"	"30 60 90 140 220"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"reduction_shield"	"30 40 50 60 75"
+			}									
 		}
 	} 
 
@@ -17204,13 +17214,18 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"swrod_master_bonus_ptc"	"30 45 60 80 120"
+				"swrod_master_bonus_ptc"	"30 50 70 100 160"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_spell_amp"	"30 50 80 110 190"
-			}						
+				"bonus_spell_amp"	"30 60 90 140 220"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"reduction_shield"	"30 40 50 60 75"
+			}									
 		}
 	} 
 
@@ -17258,13 +17273,18 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"swrod_master_bonus_ptc"	"30 45 60 80 120"
+				"swrod_master_bonus_ptc"	"30 50 70 100 160"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_spell_amp"	"30 50 80 110 190"
-			}						
+				"bonus_spell_amp"	"30 60 90 140 220"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"reduction_shield"	"30 40 50 60 75"
+			}									
 		}
 	} 
 
@@ -17278,7 +17298,7 @@
 		"ItemResult"					"item_red_divine_rapier_lv5"
 		"ItemRequirements"
 		{
-			"01"						"item_red_divine_rapier_lv4;item_red_divine_rapier_lv4"
+			"01"						"item_red_divine_rapier_lv4;item_red_divine_rapier_lv4;item_edible_fragment"
 		}
 	}
 	"item_red_divine_rapier_lv5" 
@@ -17290,11 +17310,13 @@
 		"Effect"	   				"particles/generic_gameplay/dropped_item_rapier.vpcf"
 		"ItemQuality"  				"epic"
 
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 
 		"ItemCost"	 				"115200"
 		"ItemKillable" 				"0" 
 		"ItemSellable" 				"1"
+		"ItemInitialCharges"		"1"
+		"ItemRequiresCharges" 		"1"		
 		"ItemPurchasable" 			"1"
 		"ItemDroppable" 			"1"
 		"ItemShareability" 			"ITEM_FULLY_SHAREABLE"
@@ -17312,13 +17334,18 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"swrod_master_bonus_ptc"	"30 45 60 80 120"
+				"swrod_master_bonus_ptc"	"30 50 70 100 160"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_spell_amp"	"30 50 80 110 190"
-			}						
+				"bonus_spell_amp"	"30 60 90 140 220"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"reduction_shield"	"30 40 50 60 75"
+			}									
 		}
 	}
 

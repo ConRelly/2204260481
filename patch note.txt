@@ -2126,10 +2126,14 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
-
-* Single player frist 2 levels after 9 will receive guarantee and Enchanter(2 in total). added an command for '-guessing game'
-
-
+* Changed Many talents that where replaced by the last dota update. --alch
+* Single player:
+--frist 2 levels after 9 will receive guarantee Enchanter(2 in total).
+--guessing game S scepter item bonus now from 20% to 100% chance on getting, and added an Red Rapier lvl 4 item as an extra bonus(rember to have enough space)
+* Added an command for '-guessing game' , gives some info/tips
+* Broodmother spiderlings now have Siege attack (250% bonus dmg to gods, only for phys attacks), the skill scales better with the hero and from lvl 6 instead of 7.
+* Red Rapier Sword Master Counter now has an extra effect.
+* Red Rapier lvl 5 now has an Active component(consume), and requires edible fragment to be made(can be disassembled if you only want the stats temporary and not the perma consume)
 
 
 

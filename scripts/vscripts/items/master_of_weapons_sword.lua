@@ -679,6 +679,7 @@ end
 modifier_mows = class({})
 function modifier_mows:IsHidden() return self:GetStackCount() == 0 end
 function modifier_mows:IsPurgable() return false end
+
 --function modifier_mows:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_mows:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
@@ -835,7 +836,7 @@ function modifier_mows_slasher:OnDestroy()
 								damage_type = DAMAGE_TYPE_PHYSICAL,
 								damage_flags = DMGflags,
 							})
-							if expl_bonus_dmg < 200 then
+							if expl_bonus_dmg < 320 then
 								if caster:IsAlive() then
 									if caster:HasModifier("modifier_mows") then
 										local stacks = caster:FindModifierByName("modifier_mows")
