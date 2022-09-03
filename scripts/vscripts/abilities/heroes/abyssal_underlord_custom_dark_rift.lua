@@ -108,7 +108,7 @@ if IsServer() then
 				victim = unit,
 				ability = self.ability,
 				damage_type = self.ability:GetAbilityDamageType(),
-				damage = self:GetStackCount() / #units
+				damage = self:GetStackCount()
 			})
 			end
 		end
@@ -116,8 +116,12 @@ if IsServer() then
 			ability1 = self.caster:FindAbilityByName("abyssal_underlord_firestorm")
 			ability2 = self.caster:FindAbilityByName("abyssal_underlord_pit_of_malice")
 			self.caster:SetCursorPosition(self.parent:GetAbsOrigin())
-			ability1:OnSpellStart()
-			ability2:OnSpellStart()
+			if ability1 then
+				ability1:OnSpellStart()
+			end
+			if ability2 then	
+				ability2:OnSpellStart()
+			end	
 		end
 	end
 

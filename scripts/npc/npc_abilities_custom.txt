@@ -3056,6 +3056,62 @@
 		}
 	}
 }
+"special_bonus_attack_base_damage_3000"
+{
+	"BaseClass"						"special_bonus_attack_base_damage_45"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"value"				"3000"
+		}
+	}
+}
+"special_bonus_attack_base_damage_4000"
+{
+	"BaseClass"						"special_bonus_attack_base_damage_45"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"value"				"4000"
+		}
+	}
+}
+"special_bonus_attack_base_damage_5000"
+{
+	"BaseClass"						"special_bonus_attack_base_damage_45"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"value"				"5000"
+		}
+	}
+}
+"special_bonus_attack_base_damage_8000"
+{
+	"BaseClass"						"special_bonus_attack_base_damage_45"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"value"				"8000"
+		}
+	}
+}
 "special_bonus_50_crit_175"
 {
 	"BaseClass"						"special_bonus_30_crit_2"
@@ -3199,7 +3255,91 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
+			"value"				"180"
+		}
+	}
+}
+"special_bonus_mp_regen_120"
+{
+	"BaseClass"				"special_bonus_mp_regen_14"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
 			"value"				"120"
+		}
+	}
+}
+"special_bonus_mp_regen_100"
+{
+	"BaseClass"				"special_bonus_mp_regen_14"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"value"				"100"
+		}
+	}
+}
+"special_bonus_mp_regen_150"
+{
+	"BaseClass"				"special_bonus_mp_regen_14"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"value"				"150"
+		}
+	}
+}
+"special_bonus_mp_regen_300"
+{
+	"BaseClass"				"special_bonus_mp_regen_14"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"value"				"300"
+		}
+	}
+}
+"special_bonus_mp_regen_400"
+{
+	"BaseClass"				"special_bonus_mp_regen_14"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"value"				"400"
+		}
+	}
+}
+"special_bonus_mp_regen_500"
+{
+	"BaseClass"				"special_bonus_mp_regen_14"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"value"				"500"
 		}
 	}
 }
@@ -14967,7 +15107,7 @@
 	"AbilityCastPoint"			  "0.1"
 	"AbilityCastAnimation"		  "ACT_DOTA_CAST_ABILITY_4"
 	"AbilityCastRange"			  "600"
-	"AbilityCooldown"			   "40.0 35.0 30.0"
+	"AbilityCooldown"			   "60.0 50.0 40.0"
 	"AbilityManaCost"			   "150 200 250"
 	"HasScepterUpgrade"				"1"
 	"AbilitySpecial"
@@ -14980,17 +15120,17 @@
 		"02"
 		{
 			"var_type"			  "FIELD_INTEGER"
-			"stat_damage_pct"			  "300"
+			"stat_damage_pct"			  "800 1600 2400"
 		}
 		"03"
 		{
 			"var_type"			  "FIELD_INTEGER"
-			"radius"				"1200"
+			"radius"				"1800"
 		}
 		"04"
 		{
 			"var_type"			  "FIELD_INTEGER"
-			"damage_radius"		"600"
+			"damage_radius"		"1000"
 		}
 		"05"
 		{
@@ -15000,7 +15140,7 @@
 		"06"
 		{
 			"var_type"			  "FIELD_FLOAT"
-			"stat_damage_pct_tooltip"			  "3.0"
+			"stat_damage_pct_tooltip"			  "8 16 24"
 		}
 		"07"
 		{
@@ -21396,17 +21536,17 @@
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"regen_rate"					"1.0 2.0 3.0"
+				"regen_rate"					"10.0 15.0 25.0"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_armor"					"12 28 42"
+				"bonus_armor"					"12 38 72"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"magic_resistance"				"10 20 30"
+				"magic_resistance"				"20 30 50"
 			}
 		}
 
@@ -23624,6 +23764,83 @@
 		}
 	}
 	//=================================================================================================================
+	// Death Prophet: Exorcism
+	//=================================================================================================================
+
+	"death_prophet_exorcism_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"							"death_prophet_exorcism"													
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_DeathProphet.Exorcism.Cast"
+        "HasScepterUpgrade"			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50.0"
+		"AbilityDuration"				"35"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200 300 400"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"				"1600"
+			"spirits"				
+			{
+				"value"					"4 8 20"
+				"LinkedSpecialBonus"	"special_bonus_unique_death_prophet"
+			}
+			"spirit_speed"			"525"
+			"max_distance"			"2000 2000 2000"
+			"give_up_distance"		"1200 1200 1200"
+			"min_damage"			"1500 4500 10600"
+			"max_damage"			"1500 4500 10600"
+			"heal_percent"			"25 25 25"
+			"average_damage"		"1500 4500 10600"
+			"ghost_spawn_rate"	"0.35"
+			"scepter_movespeed_slow"
+			{
+				"value"				"100"
+				"RequiresScepter"			"1"
+			}
+			"scepter_movespeed_debuff_duration"	
+			{
+				"value"				"0.3"
+				"RequiresScepter"			"1"
+			}
+			"scepter_spirit_life_duration"	
+			{
+				"value"				"4"
+				"RequiresScepter"			"1"
+			}
+			"scepter_spirit_bonus_damage"	
+			{	
+				"value"					"150"
+				"RequiresScepter"			"1"
+				"CalculateSpellDamageTooltip"	"0"
+			}	
+			"movement_base"					"20 30 40"
+			"movement_bonus"				"40 80 120"
+		}
+	}
+
+
+	//=================================================================================================================
 	// Doom Bringer: Devour
 	//=================================================================================================================
 	"mjz_doom_bringer_devour"
@@ -23723,7 +23940,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"125 490 1925"
+				"damage"				"425 1990 4925"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_doom_bringer_doom_damage" 	//"special_bonus_unique_doom_5"				
 			}
 			"03"
@@ -23787,7 +24004,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"12666"
+				"value"						"22666"
 			}
 		}
 	}
@@ -24135,6 +24352,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"value"						"2"
+				"ad_linked_abilities"			"mjz_drow_ranger_marksmanship"
 			}
 		}
 	}
@@ -31776,7 +31994,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"1"
+				"value"						"5"
 			}
 		}
 	}
@@ -32357,7 +32575,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"3200"
+				"value"						"23200"
 			}
 		}
 	}
@@ -32869,7 +33087,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"trance_duration"		"6.0"		
+				"trance_duration"		"7.0"		
 			}
 			"02"
 			{

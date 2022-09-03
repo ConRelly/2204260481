@@ -488,7 +488,7 @@ function AOHGameMode:OnPlayerChat(keys)
 		local name = "Boss"
 		if not self._endlessMode_started and count2 < 1 then
 			count2 = count2 + 1			
-			Notifications:TopToAll({text= "If you challenge boss before Part 2 max reward will be T2 at lvl 200. Type Again -challenge if you are sure", style={color="red"}, duration=15})
+			Notifications:TopToAll({text= "If you challenge boss before Part 2 max reward will be T2 at lvl 150+. Type Again -challenge if you are sure", style={color="red"}, duration=15})
 			return	
 		end						
 		if 	unit == "npc_boss_juggernaut_4" then
@@ -511,7 +511,7 @@ function AOHGameMode:OnPlayerChat(keys)
 		else
 
 			CreateUnitByName(unit, plyhero:GetAbsOrigin() + RandomVector(RandomFloat(200, 1000)) , true, nil, nil, DOTA_TEAM_BADGUYS)
-			Notifications:TopToAll({text="Challenge " .. name.." reach lvl 190(or 200 for part 1) for max reward ", style={color="blue"}, duration=10})
+			Notifications:TopToAll({text="Challenge " .. name.." reach lvl 190(or 150 for part 1) for max reward ", style={color="blue"}, duration=10})
 			self.challenge = true
 		end	
 	end

@@ -1,5 +1,6 @@
 LinkLuaModifier("modifier_mjz_troll_warlord_battle_trance","abilities/hero_troll_warlord/mjz_troll_warlord_battle_trance.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_troll_warlord_battle_trance_lifesteal","abilities/hero_troll_warlord/mjz_troll_warlord_battle_trance.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_troll_warlord_battle_trance_cd","abilities/hero_troll_warlord/mjz_troll_warlord_battle_trance.lua", LUA_MODIFIER_MOTION_NONE)
 
 -------------------------------------------------------
 mjz_troll_warlord_battle_trance = class({})
@@ -55,10 +56,14 @@ function ability_class:CastBattleTrance( target )
 	local caster = self:GetCaster()
 	local pszScriptName = "modifier_mjz_troll_warlord_battle_trance"
 	local m_lifesteal = "modifier_mjz_troll_warlord_battle_trance_lifesteal"
+    local m_cd = "modifier_mjz_troll_warlord_battle_trance_cd"
 	local duration = ability:GetSpecialValueFor("trance_duration")
-
-	target:AddNewModifier(caster, ability, pszScriptName, {duration = duration})
-	target:AddNewModifier(caster, ability, m_lifesteal, {duration = duration})
+    local cd_duration = duration * 1.7
+    if not target:HasModifier(m_cd) then
+        target:AddNewModifier(caster, ability, pszScriptName, {duration = duration})
+        target:AddNewModifier(caster, ability, m_lifesteal, {duration = duration})
+        target:AddNewModifier(caster, ability, m_cd, {duration = cd_duration})
+    end   
 end
 
 ---------------------------------------------------------------------------------------
@@ -120,8 +125,12 @@ if IsServer() then
 	end
 end
 
----------------------------------------------------------------------------------------
-
+-----------------------------CD Battle trance----------------------------------------------------------
+modifier_mjz_troll_warlord_battle_trance_cd = class({})
+function modifier_mjz_troll_warlord_battle_trance_cd:IsHidden() return false end
+function modifier_mjz_troll_warlord_battle_trance_cd:IsPurgable() return false end
+function modifier_mjz_troll_warlord_battle_trance_cd:RemoveOnDeath() return false end
+function modifier_mjz_troll_warlord_battle_trance_cd:IsDebuff() return true end
 
 -----------------------------------------------------------------------------------------
 

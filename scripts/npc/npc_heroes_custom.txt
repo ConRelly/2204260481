@@ -145,6 +145,8 @@
 "npc_dota_hero_enchantress"
 {
 	"Ability11"		"special_bonus_exp_boost_25"
+	"Ability17"     "special_bonus_spell_amplify_125"
+
 
 	"AttributeIntelligenceGain"		"16.1"
 }
@@ -179,7 +181,8 @@
 {
 	"Ability9"		"ogre_magi_multicast_lua"
 	"Ability7"		"generic_hidden"
-	"Ability12"		"special_bonus_hp_regen_20"
+	"Ability12"		"special_bonus_gold_income_300"
+	"Ability16"     "special_bonus_unique_keeper_of_the_light_illuminate_cooldown"
 
 	"AttributeIntelligenceGain"		"9.3"
 }
@@ -210,7 +213,8 @@
 	"Ability11"		"special_bonus_unique_lich_1"
 	"Ability12"		"special_bonus_reincarnation_90"
 	"Ability13"		"special_bonus_cdr_25"
-	"Ability16"		"special_bonus_attack_base_damage_200"
+	"Ability14"     "special_bonus_spell_amplify_100"
+	"Ability16"		"special_bonus_mp_regen_400"
 	//"Ability17"		"special_bonus_cdr_25"
 
 	"AttributeIntelligenceGain"		"6.9"
@@ -223,7 +227,7 @@
 	"Ability10"		"special_bonus_armor_69"
 	"Ability12"		"special_bonus_cdr_15"
 	"Ability14"		"special_bonus_unique_lone_druid_8"
-	"Ability15"		"special_bonus_attack_base_damage_100"
+	"Ability15"		"special_bonus_attack_base_damage_3000"
 }
 "npc_dota_hero_nevermore"
 {
@@ -330,6 +334,7 @@
 	"Ability6"		"shadow_demon_custom_hyperactivity"
 	"Ability10"		"special_bonus_spell_lifesteal_10"
 	"Ability11"		"special_bonus_strength_200"
+	"Ability13"     "special_bonus_exp_boost_25"
 	"Ability14"		"special_bonus_magic_resistance_40"
 	"Ability16"		"special_bonus_hp_6000"
 	"Ability17"		"special_bonus_spell_amplify_100"
@@ -340,6 +345,7 @@
 {
 	"Ability11"		"special_bonus_hp_1750"
 	"Ability15"		"special_bonus_unique_shadow_shaman_4"
+	"Ability16"     "special_bonus_attack_base_damage_8000"
 	"Ability17"		"special_bonus_cdr_25"
 
 	"AttributeIntelligenceGain"		"14.1"
@@ -373,7 +379,7 @@
 	"Ability13"		"special_bonus_unique_sven_3"
 	"Ability14"		"special_bonus_mp_1000"
 	"Ability15"		"special_bonus_cdr_15"
-	"Ability17"		"special_bonus_attack_base_damage_200"
+	"Ability17"		"special_bonus_attack_base_damage_5000"
 
 	"ArmorPhysical"				"3"
 	"AttackRate"				"1.450000"
@@ -395,7 +401,7 @@
 {
 	"Ability11"		"special_bonus_unique_tusk_6"
 	"Ability12"		"special_bonus_hp_3250"
-	"Ability17"		"special_bonus_attack_base_damage_200"
+	"Ability17"		"special_bonus_attack_base_damage_8000"
 
 	"ArmorPhysical"				"10"
 	"AttackRate"				"1.400000"
@@ -444,6 +450,7 @@
 "npc_dota_hero_warlock"
 {
 	"Ability14"		"special_bonus_hp_5000"
+	"Ability11"     "special_bonus_exp_boost_25"
 
 	"AttributeIntelligenceGain"		"14.8"
 }
@@ -596,6 +603,7 @@
 		"Ability13"				"special_bonus_cdr_25"
 		"Ability14"				"special_bonus_strength_820"
 		"Ability15"				"special_bonus_reincarnation_90"
+		"Ability17"             "special_bonus_spell_amplify_100"
 
 		"AttributeIntelligenceGain"		"9.6"
 		"AttributeAgilityGain"			"6.8"
@@ -666,8 +674,9 @@
 		"Ability12"				"special_bonus_cleave_40"
 		"Ability14"				"special_bonus_armor_24"
 		"Ability15"				"special_bonus_zanto_gari_dmg"
-		"Ability16"				"special_bonus_attack_base_damage_200"
+		"Ability16"				"special_bonus_attack_base_damage_500"
 		"Ability14"				"special_bonus_truestrike"
+		"Ability17"				"special_bonus_mp_regen_400"
 
 		"AttributeStrengthGain"			"4.9"
 		"AttributeAgilityGain"			"9.7"
@@ -1025,6 +1034,7 @@
 		"Ability18"				"special_bonus_truestrike"
 		"Ability19"				"special_bonus_strength_400"
 		"Ability21"				"special_bonus_8_crit_2750"
+		"Ability22"             "special_bonus_mp_regen_500"
 
 		"AttributeIntelligenceGain"		"25.000000"
 		"AttributeStrengthGain"			"25.000000"
@@ -1049,6 +1059,7 @@
 		"Ability15"				"special_bonus_attack_speed_120"
 		"Ability14"				"special_bonus_unique_mjz_doom_bringer_infernal_blade_strength"
 		"Ability16"				"special_bonus_unique_mjz_doom_bringer_doom_damage"
+		"Ability17"             "special_bonus_reincarnation_90"
 
 		"AttackDamageMin"		"40"
 		"AttackDamageMax"		"56"
@@ -1103,8 +1114,10 @@
 		"Ability2"				"mjz_silencer_glaives_of_wisdom"
 		"Ability6"				"mjz_silencer_global_silence"
 		"Ability10"				"special_bonus_armor_18"
+		"Ability12"             "special_bonus_magic_resistance_40"
 		"Ability13"				"special_bonus_attack_speed_100"
 		"Ability14"				"special_bonus_hp_4000"
+		"Ability16"             "special_bonus_mp_regen_400"
 		"Ability17"				"special_bonus_spell_lifesteal_15"
 
 		"AttackRate"            "1.4"
@@ -1118,11 +1131,12 @@
 		"override_hero"			"npc_dota_hero_abyssal_underlord"
 
 		"Ability4"				"abyssal_underlord_dark_portal"
-		"Ability6"				"mjz_abyssal_underlord_dark_rift"
+		"Ability6"				"abyssal_underlord_custom_dark_rift"
 		"Ability7"				"generic_hidden"
 		"Ability10"				"special_bonus_armor_15"
 		"Ability12"				"special_bonus_strength_400"
-		"Ability13"				"special_bonus_all_stats_10"
+		"Ability13"				"special_bonus_all_stats_20"
+		"Ability16"             "special_bonus_reincarnation_90"
 		"Ability17"				"special_bonus_30_crit_2"
 
 		"AttackRate"					"1.400000"
@@ -1139,10 +1153,11 @@
 
 		"Ability2"				"mjz_mirana_arrow"
 		// "Ability12"			"special_bonus_unique_mirana_3"
-		"Ability10"				"special_bonus_attack_damage_15"
+		"Ability10"				"special_bonus_mp_regen_200"
 		"Ability11"				"special_bonus_hp_1500"
 		"Ability12"				"special_bonus_unique_mjz_mirana_arrow_chance"
 		"Ability14"				"special_bonus_spell_amplify_40"
+		"Ability15"             "special_bonus_attack_base_damage_4000"
 		"Ability16"				"special_bonus_attack_range_300"
 		"Ability17"				"special_bonus_unique_mirana_2"
 
@@ -1227,7 +1242,7 @@
 		//"Ability16"				"special_bonus_unique_mjz_viper_nethertoxin_magic_resistance"
 		"Ability13"				"special_bonus_attack_speed_100"
 		"Ability15"				"special_bonus_attack_range_200"
-		"Ability12"				"special_bonus_unique_viper_4"
+		"Ability12"				"special_bonus_mp_regen_300"
 		"Ability17"				"special_bonus_unique_viper_6"
 
 		"AttributeAgilityGain"			"7.6"
@@ -1329,10 +1344,11 @@
 		"override_hero"			"npc_dota_hero_gyrocopter"
 
 		"Ability1"				"mjz_gyrocopter_rocket_barrage"
-		"Ability11"				"special_bonus_hp_2000"
+		"Ability10"             "special_bonus_unique_gyrocopter_2"
+		"Ability11"				"special_bonus_truestrike"
 		"Ability12"				"special_bonus_attack_base_damage_200"
 		"Ability13"				"special_bonus_unique_mjz_gyrocopter_rocket_barrage_damage"
-		"Ability15"				"special_bonus_unique_gyrocopter_5"
+		"Ability15"				"special_bonus_spell_block_18"
 		"Ability16"				"special_bonus_cdr_30"
 		"Ability17"				"special_bonus_5_crit_3250"
 
@@ -1373,9 +1389,9 @@
 		"Ability6"				"mjz_legion_commander_duel"
 		"Ability10"				"special_bonus_spell_block_18"
 		"Ability11"				"special_bonus_unique_legion_commander_chance"
-		"Ability12"				"special_bonus_attack_speed_60"
+		"Ability12"				"special_bonus_attack_speed_100"
 		"Ability13"				"special_bonus_cdr_15"
-		"Ability14"				"special_bonus_unique_legion_commander_5"
+		"Ability14"				"special_bonus_mp_regen_300"
 		"Ability16"				"special_bonus_unique_mjz_legion_commander_duel_damage"
 		"Ability17"				"special_bonus_4_crit_5420"
 
@@ -1400,6 +1416,7 @@
 		"Ability6"				"bristleback_warpath_lua"
 		"Ability11"				"special_bonus_cleave_100"
 		"Ability12"				"special_bonus_magic_resistance_40"
+		"Ability13"             "special_bonus_strength_400"
 		"Ability14"				"special_bonus_armor_69"
 		"Ability15"				"special_bonus_hp_6000"
 		"Ability16"             "special_bonus_spell_amplify_100"
@@ -1546,7 +1563,7 @@
 		"Ability10"				"special_bonus_unique_death_prophet_3"
 		"Ability12"				"special_bonus_reincarnation_90"
 		"Ability13"             "special_bonus_spell_amplify_100"
-		"Ability14"				"special_bonus_hp_4000"
+		"Ability14"				"special_bonus_unique_death_prophet_5"
 		"Ability15"				"special_bonus_unique_mjz_death_prophet_carrion_swarm_int"
 		"Ability16"				"special_bonus_attack_speed_200"
 
@@ -1562,6 +1579,9 @@
 		"UnitLabel"				"no_underdog"
 
 		"Ability6"				"mjz_elder_titan_earth_splitter"
+		"Ability10"				"special_bonus_strength_220"
+		"Ability12"             "special_bonus_spell_amplify_75"
+		"Ability13"				"special_bonus_mp_800"
 		"Ability16"				"special_bonus_unique_mjz_elder_titan_earth_splitter_strength"
 
 		"AttributeStrengthGain"		"12.3"
@@ -1732,8 +1752,9 @@
 		"Ability10"				"special_bonus_cast_range_150"
 		"Ability11"             "special_bonus_mp_400"
 		"Ability13"				"special_bonus_all_stats_20"
+		"Ability12"             "special_bonus_gold_income_420"
 		"Ability14"				"special_bonus_hp_4000"
-		"Ability15"				"special_bonus_unique_enigma_5"
+		"Ability15"				"special_bonus_mp_regen_300"
 		"Ability16"             "special_bonus_spell_amplify_125"
 		"Ability17"				"special_bonus_unique_enigma_100"
 
@@ -1774,6 +1795,7 @@
 		"Ability12"				"special_bonus_strength_280"
 		"Ability13"				"special_bonus_armor_24"
 		"Ability14"				"special_bonus_unique_mjz_mars_spear_str_damage"
+		"Ability15"             "special_bonus_unique_mars_rebuke_cooldown"
 		"Ability17"				"special_bonus_magic_resistance_40"
 
 		"AttributeStrengthGain"			"11.1"
@@ -2137,11 +2159,11 @@
 		"Ability1"				"mjz_puck_illusory_orb"
 		"Ability4"				"mjz_puck_ethereal_jaunt"
 		"Ability6"				"faerie_dream_coil"
-		"Ability10"				"special_bonus_unique_puck_6"
+		"Ability10"				"special_bonus_intelligence_30"
 		"Ability11"				"special_bonus_unique_puck_7"
 		"Ability12"				"special_bonus_spell_amplify_69"
-		"Ability13"				"special_bonus_mp_regen_14"
-		"Ability14"				"special_bonus_unique_puck_2"
+		"Ability13"				"special_bonus_mp_regen_300"
+		"Ability14"				"special_bonus_spell_block_18"
 		"Ability15"				"special_bonus_faerie_dream_coil_cooldown"
 		"Ability16"				"special_bonus_cdr_30"
 		"Ability17"				"special_bonus_faerie_dream_coil_rapid_fire"
@@ -2535,7 +2557,7 @@
 		"Ability10"				"special_bonus_magic_resistance_40"
 		"Ability11"				"special_bonus_mp_1000"
 		"Ability12"				"special_bonus_cdr_30"
-		"Ability13"				"special_bonus_unique_primal_beast_onslaught_damage"
+		"Ability13"				"special_bonus_mp_regen_400"
 		"Ability14"				"special_bonus_unique_primal_beast_trample_attack_damage"
 		"Ability15"				"special_bonus_spell_block_18"
 		"Ability16"				"special_bonus_unique_primal_beast_pulverize_duration"

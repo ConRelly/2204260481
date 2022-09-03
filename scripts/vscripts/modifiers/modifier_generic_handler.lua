@@ -14,7 +14,7 @@ function modifier_generic_handler:OnCreated()
 			"item_blade_mail",
 			"luna_moon_glaive"
 		}
-		self:StartIntervalThink(FrameTime())
+		self:StartIntervalThink(0.5)
 		piety = false
 		if self:GetParent():GetUnitName() == "npc_dota_hero_lina" and not self:GetParent():HasModifier("modifier_sourcery") and self:GetParent():IsRealHero() and not self:GetParent():IsIllusion() and not piety then
 			self:GetParent():AddItemByName("item_to_piety")

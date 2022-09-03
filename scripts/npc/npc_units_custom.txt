@@ -85,7 +85,7 @@
 	}
 
 	"Ability1"					"custom_carrion_swarm"
-	"Ability2"					"death_prophet_exorcism"
+	"Ability2"					"death_prophet_exorcism_2"
 	"Ability3"					"custom_carrion_swarm_wrapper"
 	"Ability4"				  "custom_overgrowth"
 	"Ability5"				  "death_prophet_spirit_siphon"
@@ -154,7 +154,7 @@
 		{
 			"Ability2"
 			{
-				"Name"			  "death_prophet_exorcism"
+				"Name"			  "death_prophet_exorcism_2"
 			}  
 			 "Ability6"
 			{
@@ -16379,6 +16379,75 @@
 		}
 	}
 
+	// Fake unit used to preview spirits
+	"dota_death_prophet_exorcism_spirit"
+	{										
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/death_prophet/death_prophet_ghost.vmdl"	// Model.
+		"wearable"					"8652"
+		"BaseClass"					"npc_dota_error"
+		"SoundSet"					"0"			// Name of sound set.
+		"Level"						"0"
+		"ModelScale"				"1.4"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					""			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+		"AttackDamageMin"			"0"			// Damage range min.
+		"AttackDamageMax"			"0"			// Damage range max.	
+		"AttackRate"				"1.0"		// Speed of attack.
+		"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"0"			// Range within a target can be acquired.
+		"AttackRange"				"0"			// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HUGE"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"120"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"0"		// Experience earn.
+		"BountyGoldMin"				"16"			// Gold earned min.
+		"BountyGoldMax"				"20"			// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+		"MovementSpeed"				"0"			// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"100"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1600"			// Range of vision during day light.
+		"VisionNighttimeRange"		"600"			// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+	}
+
 	"npc_dota_dummy_misha"
 	{
 		"Model"						"models/heroes/ursa/ursa.vmdl"
@@ -16444,7 +16513,7 @@
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO" // DOTA_COMBAT_CLASS_DEFEND_STRUCTURE  , DOTA_COMBAT_CLASS_DEFEND_HERO
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		"Creature"
 		{

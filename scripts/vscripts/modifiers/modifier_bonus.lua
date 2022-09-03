@@ -46,25 +46,27 @@ end
 if IsServer() then
 	function modifier_bonus_primary_controller:OnIntervalThink()
 		local parent = self.parent
-		if self:GetStackCount() <= 0 then
-			if self:IsNull() then return end
-			self:Destroy()
-		end
-		attribute = self.parent:GetPrimaryAttribute()
-		if attribute == 0 then
-			self.str = (self.parent:GetStrength() - self.str) * self:GetStackCount() * 0.01
-			self.agi = 0
-			self.int = 0
-		elseif attribute == 1 then
-			self.agi = (self.parent:GetAgility() - self.agi) * self:GetStackCount() * 0.01
-			self.str = 0
-			self.int = 0
-		else
-			self.int = (self.parent:GetIntellect() - self.int) * self:GetStackCount() * 0.01
-			self.agi = 0
-			self.str = 0
-		end
-		self.parent:CalculateStatBonus(false)
+		if parent:IsHero() then
+			if self:GetStackCount() <= 0 then
+				if self:IsNull() then return end
+				self:Destroy()
+			end
+			attribute = self.parent:GetPrimaryAttribute()
+			if attribute == 0 then
+				self.str = (self.parent:GetStrength() - self.str) * self:GetStackCount() * 0.01
+				self.agi = 0
+				self.int = 0
+			elseif attribute == 1 then
+				self.agi = (self.parent:GetAgility() - self.agi) * self:GetStackCount() * 0.01
+				self.str = 0
+				self.int = 0
+			else
+				self.int = (self.parent:GetIntellect() - self.int) * self:GetStackCount() * 0.01
+				self.agi = 0
+				self.str = 0
+			end
+			self.parent:CalculateStatBonus(false)
+		end	
 		--RefreshStatS(parent)
 	end
 end
@@ -84,9 +86,9 @@ function modifier_bonus_primary_token:RemoveOnDeath()
 	return false
 end
 
-function modifier_bonus_primary_token:GetAttributes()
+--[[ function modifier_bonus_primary_token:GetAttributes()
     return MODIFIER_ATTRIBUTE_MULTIPLE
-end
+end ]]
 
 if IsServer() then
 	function modifier_bonus_primary_token:OnCreated(keys)

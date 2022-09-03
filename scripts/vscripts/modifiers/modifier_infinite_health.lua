@@ -58,7 +58,7 @@ function modifier_infinite_health:OnDestroy()
                     _G._challenge_bosss = 5
                 end
             else
-                if lvl > 200 then
+                if lvl > 150 then
                     create_item_drop("item_adamantium_ingot", vcenter + RandomVector(RandomFloat(50, 250)))
                     reward = "Tier II: 2 ingots, 2 gold bags, Dropped in center of the map"
                     Drop_gold_bag(parent, 25000)

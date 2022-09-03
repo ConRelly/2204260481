@@ -2126,14 +2126,31 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
-* Changed Many talents that where replaced by the last dota update. --alch
+* Changed Many talents that were replaced by the last dota update and some more. Some skills were buffed/changed.
 * Single player:
---frist 2 levels after 9 will receive guarantee Enchanter(2 in total).
---guessing game S scepter item bonus now from 20% to 100% chance on getting, and added an Red Rapier lvl 4 item as an extra bonus(rember to have enough space)
-* Added an command for '-guessing game' , gives some info/tips
+--first 2 levels after 9 will receive a guarantee Enchanter(2 in total).
+--guessing game S scepter item bonus now from 20% to 100% chance on getting, and added a Red Rapier lvl 4 item as a bonus (remember to have enough space)
+* Added a command for '-guessing game', gives some info/tips
 * Broodmother spiderlings now have Siege attack (250% bonus dmg to gods, only for phys attacks), the skill scales better with the hero and from lvl 6 instead of 7.
 * Red Rapier Sword Master Counter now has an extra effect.
-* Red Rapier lvl 5 now has an Active component(consume), and requires edible fragment to be made(can be disassembled if you only want the stats temporary and not the perma consume)
+* Red Rapier lvl 5 now has an Active component(consume), and requires an edible fragment to be made(can be disassembled if you only want the stats temporary and not perma)
+* Challenge boss max reward for Part 1 from lvl 200 to 150.
+* Added Hp bar for the gold farming tree(cant be selected).
+* Added back the %Max hp dmg for Death prophet E(spirit siphon), added the lvl 20 talent for that skill, and added more lvls.
+* Death Prophet Ultimate now Has more Levels to Scale.  Lowered the Boss Death Prophet ultimate Aganim bonus dmg(now is not the same as the hero).
+* Lone Druid's true form ultimate duration now is Perma.
+* Abysal Underlord has a new Ultimate,  Q now has 2x burn rate(same % per burn so 2xdmg)
+
+
+
+
+
+
+
+
+
+
+
 
 
 

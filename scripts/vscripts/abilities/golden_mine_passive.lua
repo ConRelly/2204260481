@@ -21,7 +21,7 @@ function modifier_golden_mine_passive:CheckState()
 		-- [MODIFIER_STATE_MAGIC_IMMUNE] 			= true,
 		-- [MODIFIER_STATE_LOW_ATTACK_PRIORITY]  	= true,
         -- [MODIFIER_STATE_NO_UNIT_COLLISION]		= true,
-        [MODIFIER_STATE_NO_HEALTH_BAR]          = true,
+        --[MODIFIER_STATE_NO_HEALTH_BAR]          = true,
     } 
 end
 

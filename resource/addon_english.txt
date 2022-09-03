@@ -3002,6 +3002,25 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_death_prophet_carrion_swarm_int"		"+{s:value}% Crypt Swarm Intelligence Damage"
 	"DOTA_Tooltip_ability_special_bonus_unique_dp_carrion_swarm_cooldown"				"-{s:value}s Crypt Swarm Cooldown"
 
+	"DOTA_Tooltip_ability_death_prophet_spirit_siphon_damage_pct"               "%Drain Max HP As Bonus dmg: "
+
+	"DOTA_Tooltip_ability_death_prophet_exorcism_2"									"Exorcism"
+	"DOTA_Tooltip_ability_death_prophet_exorcism_2_Description"						"Unleashes evil spirits to drain the life of nearby enemy units and structures. At the end of the spell's duration, Death Prophet is healed in proportion to the damage dealt. Deals 50% damage to buildings. Lasts %abilityduration% seconds.<br/> Passively grants Movement Speed."
+	"DOTA_Tooltip_ability_death_prophet_exorcism_2_scepter_description"				"Whenever an enemy is affected by Death Prophet's spells or when she attacks an enemy, a ghost will fly out, slow and hit the enemy for an increased bonus of its usual damage then return to her with life."
+	"DOTA_Tooltip_ability_death_prophet_exorcism_2_Lore"								"Over time, the banshee remnants of her previous lives return to haunt the present."
+	"DOTA_Tooltip_ability_death_prophet_exorcism_2_Note0"								"Radius represents the area in which the spirits will acquire targets around Death Prophet."
+	"DOTA_Tooltip_ability_death_prophet_exorcism_2_Note1"								"Spirit damage isn't reduced by damage block abilities."
+	"DOTA_Tooltip_ability_death_prophet_exorcism_2_radius"							"RADIUS:"
+	"DOTA_Tooltip_ability_death_prophet_exorcism_2_spirits"							"SPIRITS:"
+	"DOTA_Tooltip_ability_death_prophet_exorcism_2_heal_percent"						"%LIFE DRAIN:"
+	"DOTA_Tooltip_ability_death_prophet_exorcism_2_average_damage"					"SPIRIT DAMAGE:"
+	"DOTA_Tooltip_ability_death_prophet_exorcism_2_scepter_movespeed_slow"				"%MOVESPEED SLOW:"
+	"DOTA_Tooltip_ability_death_prophet_exorcism_2_scepter_movespeed_debuff_duration"					"SLOW DURATION:"
+	"DOTA_Tooltip_ability_death_prophet_exorcism_2_scepter_spirit_bonus_damage"					"%SPIRIT BONUS DAMAGE:"
+	"DOTA_Tooltip_ability_death_prophet_exorcism_2_movement_bonus"						"%ACTIVE MOVEMENT BONUS:"
+	"DOTA_Tooltip_ability_death_prophet_exorcism_2_movement_base"							"%PASSIVE MOVEMENT BONUS:"
+
+
 
 	"DOTA_Tooltip_ability_mjz_doom_bringer_devour"				"Devour"
 	"DOTA_Tooltip_ability_mjz_doom_bringer_devour_Description"	"Consumes the soul of an enemy."
@@ -3086,7 +3105,7 @@
 	"DOTA_Tooltip_ability_mjz_drow_ranger_marksmanship_damage_reduction_scepter"		"%Splinter Damage : "
 	"DOTA_Tooltip_ability_mjz_drow_ranger_marksmanship_scepter_description"		"Causes Drow Ranger's attacks to splinter on the target, hitting nearby units with normal attacks that deal reduced damage." 
 
-	"DOTA_Tooltip_ability_special_bonus_unique_drow_ranger_33"	"+{s:bonus_chance}% Marksmanship Chance"
+	"DOTA_Tooltip_ability_special_bonus_unique_drow_ranger_33"	"+{s:value}% Marksmanship Chance"
 
 	"DOTA_Tooltip_ability_mjz_elder_titan_earth_splitter"				"Earth Splitter"
 	"DOTA_Tooltip_ability_mjz_elder_titan_earth_splitter_Description"	"Sends forth a jagged crack in front of Elder Titan. After 3 seconds, the crack implodes, slowing movement while dealing damage to each enemy based on Elder Titan strength. <font color='#F2A93E'>The skill has a random direction added to your target point, but the Spirit always throws in the direction he is pointed.</font>."
@@ -4356,6 +4375,9 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 	"DOTA_Tooltip_modifier_mjz_troll_warlord_battle_trance"					 "Battle Trance"
 	"DOTA_Tooltip_modifier_mjz_troll_warlord_battle_trance_Description"		 "Granting %MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% attack speed, %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% movement speed, and %dMODIFIER_PROPERTY_TOOLTIP%%% lifesteal. Troll cannot die during Battle Trance."
 
+	"DOTA_Tooltip_modifier_mjz_troll_warlord_battle_trance_cd"               "Battle Trance Debuff"
+	"DOTA_Tooltip_modifier_mjz_troll_warlord_battle_trance_cd_Description"   "Cannot be affected by Battle Trance buff"	
+
 	"DOTA_Tooltip_ability_mjz_troll_warlord_fervor"				"Fervor"
 	"DOTA_Tooltip_ability_mjz_troll_warlord_fervor_Description"	"With %stack_chance%%% chance for each blow on the same target, Troll gains increased Stats. If Troll changes targets, the stacks drop to half."
 	"DOTA_Tooltip_ability_mjz_troll_warlord_fervor_Lore"		"If at first you don't succeed, strike, and strike again."
@@ -4545,7 +4567,17 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 
 "DOTA_Tooltip_ability_special_bonus_attack_base_damage_100"		"+{s:value} Base Damage"
 "DOTA_Tooltip_ability_special_bonus_attack_base_damage_200"		"+{s:value} Base Damage"
-"DOTA_Tooltip_ability_special_bonus_mp_regen_30"				"+{s:value} Mana Regen"
+"DOTA_Tooltip_ability_special_bonus_attack_base_damage_3000"	"+{s:value} Base Damage"
+"DOTA_Tooltip_ability_special_bonus_attack_base_damage_4000"	"+{s:value} Base Damage"
+"DOTA_Tooltip_ability_special_bonus_attack_base_damage_5000"	"+{s:value} Base Damage"
+"DOTA_Tooltip_ability_special_bonus_attack_base_damage_8000"	"+{s:value} Base Damage"
+"DOTA_Tooltip_ability_special_bonus_mp_regen_14"				"+{s:value} Mana Regen"
+"DOTA_Tooltip_ability_special_bonus_mp_regen_120"				"+{s:value} Mana Regen"
+"DOTA_Tooltip_ability_special_bonus_mp_regen_100"				"+{s:value} Mana Regen"
+"DOTA_Tooltip_ability_special_bonus_mp_regen_150"				"+{s:value} Mana Regen"
+"DOTA_Tooltip_ability_special_bonus_mp_regen_300"				"+{s:value} Mana Regen"
+"DOTA_Tooltip_ability_special_bonus_mp_regen_400"				"+{s:value} Mana Regen"
+"DOTA_Tooltip_ability_special_bonus_mp_regen_500"				"+{s:value} Mana Regen"
 "DOTA_Tooltip_ability_special_bonus_spell_amplify_100"			"+{s:value}% Spell Amplification"
 "DOTA_Tooltip_ability_special_bonus_reincarnation_90"			"Gains Reincarnation {s:value} CD"
 "DOTA_Tooltip_ability_item_boss_resistance_20"							"Titanic Soul"
@@ -6167,12 +6199,12 @@ The extra targets will not receive other attack effects (such as critical strike
 "DOTA_Tooltip_ability_abyssal_underlord_pit_of_malice_replace_ensnare_duration"	"DISABLE DURATION:"
 
 "DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift"							"<font color='#f2da5b'>Unstable Rift</font>"
-"DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_Description"				"Opens an unstable rift at a target hero's location, increasing its primary attribute by %primary_stat_percent%%% and storing the stats of all nearby heroes. After a delay, explodes spreading damage evenly over all enemies hit. Cooldown is %cooldown_reduce% seconds lower when cast on allies.
+"DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_Description"				"Opens an unstable rift at a target hero's location, increasing its primary attribute by %primary_stat_percent%%% and storing the stats of all nearby heroes. After a delay, explodes damaging all enemies in range. Cooldown is %cooldown_reduce% seconds lower when cast on allies.
  Passively increases Underlord's primary attribute by %primary_stat_percent%%%"
 "DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_duration"					"DURATION:"
 "DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_stat_damage_pct_tooltip"			"DAMAGE PER STAT:"
 "DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_radius"					"RADIUS:"
-"DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_scepter_description"		"Dark Bomb will immediately cast Pit of Malice and Firestorm on explosion."
+"DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_scepter_description"		"<font color='#f2da5b'>Unstable Rift</font> will immediately cast Pit of Malice and Firestorm on explosion."
 
 
 "DOTA_Tooltip_modifier_abyssal_underlord_custom_dark_rift"						"Unstable Rift"
@@ -6305,6 +6337,9 @@ Upgradeable by Aghanim's Scepter."
 "DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_Note0"					"Searing Arrows deal damage to structures.Disabled for clinkz skeletons (lag)"
 "DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_Note1"					"The damage is directly added to Clinkz' attack damage, as physical damage."
 "DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_damage_bonus"				"BONUS DAMAGE:"
+
+"DOTA_Tooltip_ability_special_bonus_unique_jakiro_2"	"+{s:bonus_burn_damage}% Dual Breath Damage and +{s:bonus_AbilityCastRange}% Range"
+
 
 "DOTA_Tooltip_ability_clinkz_custom_wind_walk"						"Skeleton Walk"
 "DOTA_Tooltip_ability_clinkz_custom_wind_walk_Description"			"Clinkz moves invisibly through units until the moment he attacks or uses an ability.\nUpgradable by Aghanim's Scepter."
