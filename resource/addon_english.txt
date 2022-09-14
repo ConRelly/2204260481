@@ -295,6 +295,7 @@
 	"DOTA_Tooltip_modifier_elder_titan_echo_stomp"					"Sleeping"
 	"DOTA_Tooltip_modifier_elder_titan_echo_stomp_Description"		""
 
+	"DOTA_Tooltip_ability_elder_titan_natural_order_magic_resistance_pct"	"%BASE RESIST REDUCTION(only on Spirit skill):"
 
 	"dota_tooltip_ability_item_lunar_shield"				"Lunar Shield"
 	"dota_tooltip_ability_item_lunar_shield_description"	"<h1>Active: Reserve Reserve Battery</h1><font color='#0094FF'>UP: Aghanim's Scepter</font><br>Fully restores shields regardless of Shield Reboot and Shield Recovery.
@@ -658,7 +659,7 @@
 
 //Omniknight
 	"dota_tooltip_ability_purification"					"Purification"
-	"dota_tooltip_ability_purification_description"		"Instantly heals a friendly unit and damaging all nearby enemy units.\n<h1><font color='#FCEF8E'>Purify</font></h1>Blesses the target with a buff that amplifies all heals and health regeneration it receives by %buff_heal_amp_pct%%% for each stack of the buff. Whenever the target recovers %buff_stack_threshold% or more of its health from any source, it gains a stack.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Gain Spell Immunity for 1.75 seconds and +0,1 for each Purify stack.<br>Not applicable from Guardian Angel."
+	"dota_tooltip_ability_purification_description"		"Instantly heals a friendly unit and damaging all nearby enemy units.\n<h1><font color='#FCEF8E'>Purify</font></h1>Blesses the target with a buff that amplifies all heals and health regeneration it receives by %buff_heal_amp_pct%%% for each stack of the buff. Whenever the target recovers %buff_stack_threshold% or more of its health from any source, it gains a stack.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Gain Spell Immunity for 1.75 seconds and +0,2 for each Purify stack.<br>Half Duration from Guardian Angel."
 	"dota_tooltip_ability_purification_lore"	"Priests of the Omniscience are adept at removing impurities from fellow warriors."
 	"dota_tooltip_ability_purification_note0"	"Stacks of Purifiception can only be gained through actual healing done."
 	"dota_tooltip_ability_purification_heal_amount"			"HEAL/DAMAGE:"
@@ -4574,6 +4575,7 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 "DOTA_Tooltip_ability_special_bonus_mp_regen_14"				"+{s:value} Mana Regen"
 "DOTA_Tooltip_ability_special_bonus_mp_regen_120"				"+{s:value} Mana Regen"
 "DOTA_Tooltip_ability_special_bonus_mp_regen_100"				"+{s:value} Mana Regen"
+"DOTA_Tooltip_ability_special_bonus_mp_regen_200"				"+{s:value} Mana Regen"
 "DOTA_Tooltip_ability_special_bonus_mp_regen_150"				"+{s:value} Mana Regen"
 "DOTA_Tooltip_ability_special_bonus_mp_regen_300"				"+{s:value} Mana Regen"
 "DOTA_Tooltip_ability_special_bonus_mp_regen_400"				"+{s:value} Mana Regen"
@@ -5994,7 +5996,7 @@ The extra targets will not receive other attack effects (such as critical strike
 "DOTA_Tooltip_ability_custom_black_hole_wisp_duration"					"DURATION:"
 
 "DOTA_Tooltip_ability_enigma_black_hole_duration"								"DURATION:"
-"DOTA_Tooltip_ability_enigma_black_hole_scepter_description"					"Black Hole deals additional damage equivalent to 1.6% of the unit's Max Health per second."
+"DOTA_Tooltip_ability_enigma_black_hole_scepter_description"					"Black Hole deals additional damage equivalent to 1.0% of the unit's Max Health per second."
 "DOTA_Tooltip_ability_wisp_ice_shards"							"Ice Shards"
 "DOTA_Tooltip_ability_wisp_ice_shards_Description"				"Wisp compresses shards of ice into a ball of frozen energy that damages all enemies it comes in contact with. When the ball reaches its target destination the shards are released, creating a barrier that lasts for %shard_duration% seconds."
 "DOTA_Tooltip_ability_wisp_ice_shards_shard_width"				"RADIUS:"
@@ -6211,7 +6213,7 @@ The extra targets will not receive other attack effects (such as critical strike
 "DOTA_Tooltip_modifier_abyssal_underlord_custom_dark_rift_Description"			"An unstable rift is increasing this unit's primary attribute."
 
 "DOTA_Tooltip_ability_antimage_custom_mana_break"						"<font color='#f2da5b'>Mana Break</font>"
-"DOTA_Tooltip_ability_antimage_custom_mana_break_Description"			"Has %chance_hit%%% to Burn an opponent's mana on attack. Mana Break deals %mana_burn_as_damage% X mana burned as damage to the target.\n<h1>Passive: <font color='#D33E02'>Mana Breaker</font></h1><h1>Have a %stack_chance%%% chance to gain stacks base on how much mana you have destroyed with this skill yourself</h1>\n<h1><font color='#DE3163'>Super Scepter</font></h1>Increase the chance of getting an stack.  Mana Burned is increased by your Level number"
+"DOTA_Tooltip_ability_antimage_custom_mana_break_Description"			"Has %chance_hit%%% chance to Burn an opponent's mana on attack. Mana Break deals %mana_burn_as_damage% X mana burned as damage to the target.\n<h1>Passive: <font color='#D33E02'>Mana Breaker</font></h1><h1>Have a %stack_chance%%% chance to gain stacks base on how much mana you have destroyed with this skill yourself</h1>\n<h1><font color='#DE3163'>Super Scepter</font></h1>Increase the chance of getting an stack.  Mana Burned is increased by your Level number"
 "DOTA_Tooltip_ability_antimage_custom_mana_break_Lore"					"A modified technique of the Turstarkuri monks' peaceful ways is to turn magical energies on their owner."
 "DOTA_Tooltip_ability_antimage_custom_mana_break_Note0"					"Mana Burn is blocked by spell immunity.SS= Super Scepter"
 "DOTA_Tooltip_ability_antimage_custom_mana_break_Note1"					"You can lifeleech the damage dealt by this skill with a Lifesteal aura."
@@ -9404,7 +9406,7 @@ Required Level: %required_level%
 	"DOTA_Tooltip_ability_item_aegis_lua"									  "Consumable Aegis"
 	"DOTA_Tooltip_ability_item_aegis_lua_Description"						  "Consume to have his effect"
 	"DOTA_Tooltip_modifier_aegis"											   "Aegis of the Immortal"
-	"DOTA_Tooltip_modifier_aegis_Description"								   "Reincarnation: Consumes a charge to brings you to life with full health and mana 7 seconds after you die. Meanwhile grant you Power of Reincarnation buff."
+	"DOTA_Tooltip_modifier_aegis_Description"								   "Reincarnation: Consumes a charge to brings you to life with full health and mana 7 seconds after you die. Meanwhile grant you Power of Reincarnation buff for 14 sec on top of the 7sec basic one."
 	
 	"DOTA_Tooltip_modifier_aegis_buff"										  "Aegis Protection"
 	"DOTA_Tooltip_modifier_aegis_buff_Description"							  "Reduce %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% incoming damage, and increase %dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% OUTGOING damage."  

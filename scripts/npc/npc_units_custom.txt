@@ -10245,7 +10245,7 @@
 	"AttackRange"				"700"
 }	
 
-"npc_dota_beastmaster_boar_4"
+"npc_dota_beastmaster_boar"
 {
 	"Ability3"				  "summon_defense"
 	"AttackDamageMin"		   "1000"
@@ -10253,6 +10253,7 @@
 	"MagicalResistance"				"85"		// Magical protection.
 	"StatusHealthRegen"			"5.0"		// Health regeneration rate.
 	"AttackRate"				"0.6"
+	"MovementSpeed"				"620"
 	"AttackAcquisitionRange"	"1950"
 	"AttackRange"				"1700"
 }	
@@ -10700,7 +10701,7 @@
 	"AttackDamageMin"			"640"
 	"AttackDamageMax"			"960"
 }
-"npc_dota_warlock_golem_scepter_3"
+"npc_dota_warlock_golem"
 {
 	"ConsideredHero"			"0"
 	"Ability1"                "bloodseeker_thirst"
@@ -10709,7 +10710,7 @@
 	//"Ability8"				  ""
 	"AttackRate"				"0.8"
 	"StatusHealthRegen"			"15"
-	"StatusHealth"				"2550"
+	//"StatusHealth"				"2750"
 	"AttackDamageMin"			"1200"
 	"AttackDamageMax"			"2900"
 	"MovementSpeed"			 	"850"
@@ -14501,7 +14502,7 @@
 		//"Ability21"				  "aghanim_empty_spell6"
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"			 "190"
+		"ArmorPhysical"			 "150"
 		"MagicalResistance"		 "90"
 
 		// Attack
@@ -14537,7 +14538,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"			  "1860000"
+		"StatusHealth"			  "2860000"
 		"StatusHealthRegen"		 "6000"
 		"StatusMana"				"45000"
 		"StatusManaRegen"		   "2500"
@@ -14608,8 +14609,12 @@
 				}
 				 "MKB"
 				{
-					"Item"				  "item_radiance_boss"
+					"Item"				  "item_shivas_guard_2"
 				}
+				 "MKB"
+				{
+					"Item"				  "item_ceremonial_robe2"
+				}				
 			}
 			 "OffensiveAbilities"
 			{
@@ -14715,7 +14720,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"			 "120"
-		"MagicalResistance"		 "90"
+		"MagicalResistance"		 "91"
 
 		// Attack
 		//----------------------------------------------------------------
@@ -14750,7 +14755,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"			  "1860000"
+		"StatusHealth"			  "2060000"
 		"StatusHealthRegen"		 "10000"
 		"StatusMana"				"45000"
 		"StatusManaRegen"		   "2500"
@@ -15396,7 +15401,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "100"	   // Speed.		   
-	"StatusHealth"			  "7700000"	  // Base health.
+	"StatusHealth"			  "9000000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   

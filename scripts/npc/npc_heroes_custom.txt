@@ -235,11 +235,11 @@
 	"Ability6"		"nevermore_custom_requiem"
 	"Ability10"		"special_bonus_spell_amplify_35"
 	"Ability12"		"special_bonus_all_stats_10"
-	"Ability13"		"special_bonus_attack_range_125"
+	"Ability13"		"special_bonus_unique_nevermore_shadowraze_cooldown"
 	"Ability14"		"special_bonus_unique_nevermore_5"
-	"Ability15"     "special_bonus_hp_4000"
+	"Ability15"     "special_bonus_cdr_40"
 	"Ability16"		"special_bonus_unique_nevermore_1"
-	"Ability17"     "special_bonus_cdr_40"
+	"Ability17"     "special_bonus_unique_nevermore_raze_procsattacks"
 
 	"AttributeAgilityGain"			"7.9"
 	"AttributeIntelligenceGain"		"6.3"
@@ -390,6 +390,7 @@
 	"Ability10"			  "special_bonus_lifesteal_25"
 	"Ability11"           "special_bonus_spell_amplify_100"
 	"Ability12"			  "special_bonus_magic_resistance_40"
+	"Ability14"           "special_bonus_mp_regen_300"
 	"Ability17"			  "special_bonus_unique_tidehunter_8"
 
 	"AttackRate"					"1.5"
@@ -1674,6 +1675,7 @@
 
 		"Ability1"				"bounty_hunter_custom_jinada"
 		"Ability3"				"mjz_alchemist_goblins_greed"
+		"Ability10"             "special_bonus_all_stats_20"
 		"Ability12"				"special_bonus_hp_3500"
 		"Ability13"				"special_bonus_attack_damage_40"
 		"Ability14"				"special_bonus_cleave_60"
@@ -1714,6 +1716,7 @@
 		
 		"Ability2"				"mjz_centaur_double_edge"
 		"Ability3"				"mjz_centaur_return"
+		"Ability5"              "custom_aphotic_shield"
 		"Ability12"				"special_bonus_strength_250"
 		"Ability13"				"special_bonus_unique_mjz_centaur_double_edge_radius"
 		"Ability14"				"special_bonus_unique_mjz_centaur_return_strength"
@@ -1746,6 +1749,7 @@
 	"npc_dota_hero_enigma_mjz"			// 谜团
 	{
 		"override_hero"			"npc_dota_hero_enigma"
+		"UnitLabel"				"no_underdog"
 
 		"Ability2"				"mjz_omniknight_repel"
 		"Ability5"				"mjz_enigma_spacetime_gravity"
@@ -2529,8 +2533,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"5000"
-		"StatusMana"				"5000"
+		"StatusHealth"				"1000000"
+		"StatusMana"				"50000"
 		"StatusManaRegen"			"100"
 
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"

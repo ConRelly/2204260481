@@ -3287,6 +3287,20 @@
 		}
 	}
 }
+"special_bonus_mp_regen_200"
+{
+	"BaseClass"				"special_bonus_mp_regen_14"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"value"				"200"
+		}
+	}
+}
 "special_bonus_mp_regen_150"
 {
 	"BaseClass"				"special_bonus_mp_regen_14"
@@ -11464,8 +11478,8 @@
 		}
 		"07"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_agi"				"2"
+			"var_type"				"FIELD_FLOAT"
+			"bonus_agi"				"1.2"
 		}
 		"08"
 		{
@@ -43423,7 +43437,7 @@
 				}
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"	"100"
+					"MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"	"95"
 				}
 				"States"
 				{

@@ -1764,7 +1764,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"45"
+				"value"				"100"
 				"ad_linked_abilities"			"warlock_rain_of_chaos"
 			}
 		}
@@ -3024,25 +3024,51 @@
 		}
 	}
 
+
+	//=================================================================================================================
+	// Beastmaster: Call of the Wild Boar
+	//=================================================================================================================
 	"beastmaster_call_of_the_wild_boar"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"7230"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilitySound"					"Hero_Beastmaster.Call.Boar"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
 		"LevelsBetweenUpgrades"		 "5"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"45"
-		"AbilitySpecial"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60 65 70 75"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
+			
+			"duration"							"75"
+			"boar_base_max_health"				"300 450 600 750"
+			"boar_base_damage"					"150 300 400 1400"
+			"boar_bonus_damage"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"duration"				"75 75 75 75"
+				"value"										"0"
+				"special_bonus_unique_beastmaster_2"		"+3500"
 			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"boar_damage_tooltip"				"150 300 400 1400"
-				"LinkedSpecialBonus"	"special_bonus_unique_beastmaster_2"
-			}				
+			"boar_base_xp_bounty"				"60 70 80 90"
+			"boar_base_movespeed"				"320 430 540 750"
+			"boar_moveslow_tooltip"				"10 18 26 34"
+			"boar_poison_duration_tooltip"		"3.0"
 		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
+
 	"beastmaster_call_of_the_wild_hawk"
 	{
 		// General
@@ -3904,6 +3930,73 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Centaur: Stampede
+	//=================================================================================================================
+	"centaur_stampede"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5517"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"LevelsBetweenUpgrades"		 "10"
+		"MaxLevel"                   "5"
+		"AbilitySound"					"Hero_Centaur.Stampede"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+        //"HasScepterUpgrade"             "1"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"250"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.2"	// hits everything on the map
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"			
+			{
+				"value"						"9"
+				"special_bonus_unique_centaur_7"	"+1"
+			}
+			"scepter_bonus_duration"     
+			{
+				"special_bonus_scepter"		"+1"
+			}
+			"base_damage"		"0"
+			"strength_damage"	
+			{
+				"value"							"32.0 86.0 144.0 220 340"			
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"slow_duration"		"3"
+			"radius"			"105"
+			"slow_movement_speed"			"100"
+			"damage_reduction"	
+			{
+			//	"special_bonus_scepter"	"+20 +25 +30"
+			}
+			"AbilityCooldown"
+			{
+				"value"					"80"
+				"special_bonus_unique_centaur_5"	"-45"
+			}
+			"has_flying_movement"	
+			{
+			//	"special_bonus_scepter"	"+1"
+			}
+		}
+	}
+
 	"chaos_knight_chaos_bolt"
 	{
 		"AbilitySpecial"
@@ -5627,7 +5720,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_percent"			"0.7 0.8 0.9 1.1"
+				"damage_percent"			"1.0 2.0 3.0 4.0"
 			}
 			"03"
 			{
@@ -5684,8 +5777,8 @@
 				"vision_radius"			"800"
 				"pull_rotate_speed"		"1.0"
 				"animation_rate"		"0.2"
-				"scepter_pct_damage"	"1.6"
-				"scepter_radius"	"3200"
+				"scepter_pct_damage"	"1.0"
+				"scepter_radius"	"2500"
 				"scepter_drag_speed"	"275"
 				"scepter_pull_rotate_speed"	"0.1"
 		}
@@ -12383,6 +12476,76 @@
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Undying: Flesh Golem
+	//=================================================================================================================
+	"undying_flesh_golem"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5447"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Undying.FleshGolem"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"HasShardUpgrade"				"1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"100 90 80"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 125 150"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow"						"40 45 50"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_amp"				"10"
+				"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_duration"					"6"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"str_percentage"			"50 60 70"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"40"
+			}	
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_bonus"			"30 40 50"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"shard_cooldown_reduction"			"0.0"
+				"RequiresShard"				"1"
+			}
+		}
+	}	
 	"undying_soul_rip"
 	{
 		"LevelsBetweenUpgrades"			 "7"
@@ -13248,45 +13411,93 @@
 		}
 	}
 
+
+	//=================================================================================================================
+	// Ability: Warlock's Rain of Chaos / Chaotic Offering
+	//=================================================================================================================
 	"warlock_rain_of_chaos"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5165"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"2"
+		"HasScepterUpgrade"			"1"
+		"AbilitySound"					"Hero_Warlock.RainOfChaos"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"50"
-		"AbilitySpecial"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"500"		
+		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1500"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// Primarily about the summon
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
+			"golem_duration"			"40"
+			"stun_duration"				"1.0"
+			"aoe"						"600"
+			"golem_hp"					"1000 1850 2700"
+			"golem_dmg"					"760 1100 2560"
+			"golem_armor"				"9 29 42"
+			"golem_movement_speed"		"320 540 760"
+			"golem_health_regen"		"100 250 750"
+			"golem_gold_bounty"			"100 150 200"
+			"stun_delay"				"0.5"
+			"number_of_golems_scepter"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"golem_duration"			"40 40 40"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"golem_hp_tooltip"			"1000 1850 2700"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"golem_dmg_tooltip"			"760 1100 2460"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"golem_regen_tooltip"		"15 30 150"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"golem_hp_tooltip_scepter"	"750 1400 2050"
+				"value"	"2"
 				"RequiresScepter"		"1"
 			}
-			"10"
+			"golem_hp_scepter"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"golem_dmg_tooltip_scepter"	"720 960 2300"
+				"value"			"900 1700 2600"
 				"RequiresScepter"		"1"
+			}
+			"golem_dmg_scepter"
+			{
+				"value"				"660 1000 2420"
+				"RequiresScepter"		"1"
+			}
+			"golem_gold_bounty_scepter"
+			{
+				"value"					"50 75 100"
+				"RequiresScepter"		"1"
+			}
+			"bonus_magic_resistance"
+			{
+				"value"			"0"
+				"special_bonus_unique_warlock_1"		"+80"
+
+			}
+			"bonus_armor"
+			{
+				"value"			"0"
+				"special_bonus_unique_warlock_2"		"+100"
 			}
 		}
 	}
+
 	"warlock_golem_flaming_fists"
 	{
 		"AbilitySpecial"
@@ -25360,7 +25571,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"secondary_stats"		"156"
+				"secondary_stats"		"299"
 			}
 		}
 	}
@@ -25785,7 +25996,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"armor_bonus"		"45"
+				"armor_bonus"		"65"
 			}
 		}
 	}
@@ -25818,18 +26029,59 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"all_stats"				"25"
+				"all_stats"				"125"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"water_hp_regen"		"45"
+				"water_hp_regen"		"95"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"water_mp_regen"		"25"
+				"water_mp_regen"		"85"
 			}
+		}
+	}
+//elixir
+	"item_overflowing_elixir"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"588"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemIsNeutralDrop"				"1"
+		"ItemPurchasable"				"0"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"45.0"
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health"			"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana"			"200"
+			}		
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"			"4"
+			}		
 		}
 	}
 

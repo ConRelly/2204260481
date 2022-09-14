@@ -24,7 +24,7 @@ modifier_item_radiance_armor_blue_edible = class({
 	RemoveOnDeath           = function(self) return false end,
 	AllowIllusionDuplicate  = function(self) return true end,
 	GetTexture              = function(self) return "radiance_armor_blue" end, 
-	GetAuraRadius 			= function(self) return 1700 end,
+	GetAuraRadius 			= function(self) return 2300 end,
 	GetAuraSearchTeam 		= function(self) return DOTA_UNIT_TARGET_TEAM_ENEMY end,
 	GetAuraSearchType 		= function(self) return DOTA_UNIT_TARGET_HERO end,
 	GetModifierAura 		= function(self) return "modifier_item_radiance_armor_aura_blue_edible" end,
@@ -64,7 +64,7 @@ function modifier_item_radiance_armor_blue_edible:GetModifierBonusStats_Agility(
 end
 
 function modifier_item_radiance_armor_blue_edible:GetModifierBonusStats_Intellect()
-	return 800
+	return 1050
 end
 
 function modifier_item_radiance_armor_blue_edible:GetModifierPhysicalArmorBonus()

@@ -64,22 +64,28 @@ end
 end]]
 
 function modifier_atr_fix:GetModifierSpellAmplify_Percentage()
-    local parent_int = self.parent:GetIntellect()  
-    local amp = parent_int * 0.03
-    return amp
+    if self.parent then
+        local parent_int = self.parent:GetIntellect()  
+        local amp = parent_int * 0.03
+        return amp
+    end     
 end
 
 function modifier_atr_fix:GetCustomStackingCDR()
-	local parent_int = self.parent:GetIntellect()
-    local cdr = parent_int * 0.0025
-    if cdr > 50 then
-        cdr = 50
-    end    
-    return cdr
+    if self.parent then
+        local parent_int = self.parent:GetIntellect()
+        local cdr = parent_int * 0.0025
+        if cdr > 50 then
+            cdr = 50
+        end    
+        return cdr
+    end  
 end
 
 function modifier_atr_fix:GetModifierBaseAttack_BonusDamage()
-    return self.parent:GetAgility()
+    if self.parent then
+        return self.parent:GetAgility()
+    end  
 end
 
 --[[function modifier_atr_fix:GetModifierBaseDamageOutgoing_Percentage()
@@ -90,10 +96,12 @@ end]]
 
 
 function modifier_atr_fix:GetModifierStatusResistanceStacking()
-	local parent_str = self.parent:GetStrength()
-    local s_resit = parent_str * 0.0037
-    if s_resit > 40 then
-        s_resit = 30
-    end   
-    return s_resit
+    if self.parent then
+        local parent_str = self.parent:GetStrength()
+        local s_resit = parent_str * 0.0037
+        if s_resit > 40 then
+            s_resit = 30
+        end   
+        return s_resit
+    end    
 end

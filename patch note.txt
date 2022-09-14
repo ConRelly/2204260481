@@ -2142,16 +2142,20 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * Abysal Underlord has a new Ultimate,  Q now has 2x burn rate(same % per burn so 2xdmg)
 
 
+* Fix broodmother Q.
+* Replaced 2 talents for Nevermore.
+* Added an extra skill for Centaur and some lvl's to his ult.
+* On Respawn now you have an extra 2 seconds off second guardian protection(over 100% dmg reduction). to avoid some of the instant dieBack
+* Aegis now gives again 14-sec reincarnation buff on top of the 7 sec one (so you have 7 sec of 100%+ dmg reduction). Same for Infinite Aegis.
+* From last Dota update custom Items seems too not show Channeling bar, but they work. will try too find a way to fix that(seems is not simple or just something new)
 
 
 
-
-
-
-
-
-
-
+* Edible Randiance armor aura range increased from 1500 to min 2000 (blue has +300 extra)
+* Heores afk with Fontain invulnerability will not count as alive for the contdown timer.
+* Fixed warlock golem and beastmaster boar missing summon protection.
+* Enigma Aghanim's effect from 1.6% to 1% and midnight pulse from 1.1% max to 4%. He is not underdog anymore.
+* Omniknight Purification ss effect base duration to 1.75s and now works from guardian angel too but has half duration .
 
 
 

@@ -21,7 +21,7 @@ function purification:OnSpellStart()
 	local rare_cast_response = "omniknight_omni_ability_purif_03"
 	local target_cast_response = {"omniknight_omni_ability_purif_01", "omniknight_omni_ability_purif_02", "omniknight_omni_ability_purif_04", "omniknight_omni_ability_purif_05", "omniknight_omni_ability_purif_06", "omniknight_omni_ability_purif_07", "omniknight_omni_ability_purif_08"}
 	local self_cast_response = {"omniknight_omni_ability_purif_01", "omniknight_omni_ability_purif_05", "omniknight_omni_ability_purif_06", "omniknight_omni_ability_purif_07", "omniknight_omni_ability_purif_08"}
-
+	local bkb_duration = 1
 	if caster == target then
 		if RollPercentage(50) then
 			EmitSoundOn(self_cast_response[math.random(1, #self_cast_response)], caster)
@@ -33,19 +33,19 @@ function purification:OnSpellStart()
 			EmitSoundOn(target_cast_response[math.random(1,#target_cast_response)], caster)
 		end
 	end
-	if IsServer() then
+--[[ 	if IsServer() then
 		if HasSuperScepter(caster) then
-			local super_scepter_duration = 0.3
+			local super_scepter_duration = 1.75
 			if caster:HasModifier("modifier_purification_buff") then
 				stacks = caster:FindModifierByName("modifier_purification_buff"):GetStackCount()
 			else
 				stacks = 0
 			end
-			local duration = super_scepter_duration + (stacks * 0.1)
+			local duration = super_scepter_duration + (stacks * 0.2)
 			target:AddNewModifier(caster, self, "modifier_black_king_bar_immune", {duration = duration})
 		end
-	end
-	Purification(caster, self, target)
+	end ]]
+	Purification(caster, self, target, bkb_duration)
 
 	if caster:HasTalent("special_bonus_omniknight_purifiception_double") then
 		local allies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, 20000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
@@ -60,7 +60,7 @@ function purification:OnSpellStart()
 	end
 end
 
-function Purification(caster, ability, target)
+function Purification(caster, ability, target, bkb_duration)
 	local particle_cast = "particles/units/heroes/hero_omniknight/omniknight_purification_cast.vpcf"
 	local particle_aoe = "particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
 	local particle_hit = "particles/units/heroes/hero_omniknight/omniknight_purification_hit.vpcf"
@@ -72,6 +72,29 @@ function Purification(caster, ability, target)
 
 	heal_amount = heal_amount + (caster:FindTalentValue("special_bonus_omniknight_purifiception_heal") * target:GetMaxHealth() / 100)
 	radius = radius + (caster:FindTalentValue("special_bonus_omniknight_purifiception_radius"))
+	if IsServer() then
+		if HasSuperScepter(caster) then
+			if bkb_duration and bkb_duration > 0 then
+				local super_scepter_duration = 1.75
+				if caster:HasModifier("modifier_purification_buff") then
+					stacks = caster:FindModifierByName("modifier_purification_buff"):GetStackCount()
+				else
+					stacks = 0
+				end
+				local duration = super_scepter_duration + (stacks * 0.2)
+				target:AddNewModifier(caster, self, "modifier_black_king_bar_immune", {duration = duration})
+			elseif bkb_duration and bkb_duration < 1 then
+				local super_scepter_duration = 0.90
+				if caster:HasModifier("modifier_purification_buff") then
+					stacks = caster:FindModifierByName("modifier_purification_buff"):GetStackCount()
+				else
+					stacks = 0
+				end
+				local duration = super_scepter_duration + (stacks * 0.1)
+				target:AddNewModifier(caster, self, "modifier_black_king_bar_immune", {duration = duration})				
+			end	
+		end
+	end
 
 	local particle_cast_fx = ParticleManager:CreateParticle(particle_cast, PATTACH_ABSORIGIN_FOLLOW, caster)
 	ParticleManager:SetParticleControlEnt(particle_cast_fx, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
@@ -274,10 +297,11 @@ function modifier_ga:OnIntervalThink()
 			local caster = self:GetCaster()
 			local ability = self:GetCaster():FindAbilityByName("purification")
 			local parent = self:GetParent()
+			local bkb_duration = 0
 			local allies = FindUnitsInRadius(caster:GetTeamNumber(), parent:GetAbsOrigin(), nil, 1, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 			for _,ally in pairs(allies) do
 				if RollPseudoRandom(20, caster) then
-					Purification(caster, ability, ally)
+					Purification(caster, ability, ally, bkb_duration)
 					break
 				end
 			end

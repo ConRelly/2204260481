@@ -112,7 +112,7 @@ function mjz_broodmother_spawn_spiderlings:SpawnSpiderlings(hTarget)
             if hCaster:HasScepter() then
                 spider:AddNewModifier(hCaster, self, aghbuf, {})
             end
-            local caster_damage = hCaster:GetAverageTrueAttackDamage(hCaster) * ((self:GetSpecialValueFor("parent_attack_ptc") / 100)
+            local caster_damage = hCaster:GetAverageTrueAttackDamage(hCaster) * (self:GetSpecialValueFor("parent_attack_ptc") / 100)
             local spider_lvl = hCaster:FindAbilityByName("mjz_broodmother_spawn_spiderlings"):GetLevel()
             if spider_lvl > 5 then
                 caster_damage = caster_damage + ((hCaster:GetMaxHealth() + hCaster:GetMaxMana()) * 0.66) + (hCaster:GetSpellAmplification(false) * 7000) + (hCaster:GetPhysicalArmorValue(false) * 300)

@@ -349,6 +349,7 @@ function IsExcludeAbility(ability)
 		"amalgamation",
 		"enchantress_enchant",
 		"rubick_spell_steal",
+		"chaos_knight_phantasm",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do
@@ -425,6 +426,7 @@ function IsExcludeAbility9(ability)
 		"zanto_gari",
 		"enchantress_enchant",
 		"rubick_spell_steal",
+		"chaos_knight_phantasm",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

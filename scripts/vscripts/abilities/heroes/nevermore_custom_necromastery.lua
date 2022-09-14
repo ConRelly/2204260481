@@ -66,10 +66,12 @@ function modifier_nevermore_custom_necromastery:OnIntervalThink()
 		local stacks = self:GetCaster():FindModifierByName("modifier_nevermore_custom_necromastery"):GetStackCount()
 		if stacks < 1 then return end
 		if self:GetAbility():IsCooldownReady() and not self:GetParent():PassivesDisabled() then
-			if self:GetAbility():GetAutoCastState() then
-				self:GetAbility():OnSpellStart()
-				self:GetAbility():UseResources(false, false, true)
-			end
+			if self:GetParent():IsAlive() then
+				if self:GetAbility():GetAutoCastState() then
+					self:GetAbility():OnSpellStart()
+					self:GetAbility():UseResources(false, false, true)
+				end
+			end	
 		end
 		self:StartIntervalThink(FrameTime())
 	end

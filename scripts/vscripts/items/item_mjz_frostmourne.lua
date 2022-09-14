@@ -30,7 +30,7 @@ end
 
 local function monkey_in_inventory(unit)
     if IsServer() then
-        for i = 0, 5 do
+        for i = 0, 6 do
             local Item = unit:GetItemInSlot(i)        
             if Item ~= nil and IsValidEntity(Item) then
                 if Item:GetName() == "item_mjz_monkey_king_bar_5" then

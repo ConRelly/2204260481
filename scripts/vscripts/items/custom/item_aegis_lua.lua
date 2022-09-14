@@ -86,9 +86,10 @@ function modifier_aegis:ReincarnateTime()
 						AddFOWViewer(self.caster:GetTeamNumber(), self.caster:GetAbsOrigin(), self.caster:GetNightTimeVisionRange(), ReincarnateTime, true)
 					end
 					self.caster:EmitSound("Aegis.Timer")
-					Timers:CreateTimer(ReincarnateTime + FrameTime(), function()
-						if self.caster and not self.caster:IsNull() and self.ability and not self.ability:IsNull() then
-							self.caster:AddNewModifier(self.caster, self.ability, "modifier_aegis_buff", {duration = ReincarnateBuffTime})
+					Timers:CreateTimer(ReincarnateTime + 0.08, function()
+						if self.caster and not self.caster:IsNull() then
+							self.caster:AddNewModifier(self.caster, nil, "modifier_aegis_buff", {duration = ReincarnateBuffTime})
+							--self.caster:AddNewModifier(self.caster, nil, "modifier_aegis_buff", {duration = 3})
 						end	
 					end)
 					self:SetStackCount(self:GetStackCount() - 1)
@@ -119,6 +120,7 @@ function modifier_aegis_buff:IsDebuff() return false end
 function modifier_aegis_buff:GetTexture() return "omniknight_repel" end
 function modifier_aegis_buff:IsPurgable() return false end
 function modifier_aegis_buff:IsHidden() return false end
+function modifier_aegis_buff:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_aegis_buff:OnCreated(table)
 	if not IsServer() then return nil end
 	local parent = self:GetParent()

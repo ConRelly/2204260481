@@ -53,10 +53,10 @@ if IsServer() then
 					end		
 					if parent:GetNumItemsInInventory() < 9 then
 						local item = parent:AddItemByName("item_philo_stone_failed")
-						item:SetPurchaseTime(GameRules:GetGameTime() - 10)
+						item:SetPurchaseTime(0)
 					else
 						local item = CreateItem("item_philo_stone_failed", parent, parent)
-						item:SetPurchaseTime(GameRules:GetGameTime() - 10)
+						item:SetPurchaseTime(0)
 						CreateItemOnPositionSync(parent:GetAbsOrigin(), item)
 					end
 					if self:IsNull() then return end

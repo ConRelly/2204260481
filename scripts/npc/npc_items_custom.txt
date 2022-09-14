@@ -17744,7 +17744,7 @@
 	"ItemShareability"				"ITEM_NOT_SHAREABLE"
 	"ItemIsNeutralDrop"				"0"
 	"ItemPurchasable"			   "0"
-	"ItemCost"					  "2600"
+	"ItemCost"					  "2500"
 	"ItemSellable"					"1"
 	"AbilitySpecial"
 	{

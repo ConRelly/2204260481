@@ -20,8 +20,10 @@ function increase_modifier(caster, target, ability, modifier)
 		local newCount = target:GetModifierStackCount(modifier, caster) + 1
         target:SetModifierStackCount(modifier, caster, newCount)
 	else
-		ability:ApplyDataDrivenModifier(caster, target, modifier, nil)
-		target:SetModifierStackCount(modifier, caster, 1)
+		if target:IsAlive() then
+			ability:ApplyDataDrivenModifier(caster, target, modifier, nil)
+			target:SetModifierStackCount(modifier, caster, 1)
+		end
     end
 end
 
@@ -233,7 +235,9 @@ function are_all_heroes_dead()
 		if PlayerResource:HasSelectedHero(playerID) then
 			local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 			if hero and hero:IsAlive() then
-				return false
+				if not hero:HasModifier("modifier_fountain_invulnerability") then
+					return false
+				end	
 			end
 		end
 	end
