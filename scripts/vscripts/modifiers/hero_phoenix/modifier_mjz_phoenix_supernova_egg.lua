@@ -266,7 +266,8 @@ if IsServer() then
 			victim = parent,
 			attacker = caster,
 			damage = damage,
-			damage_type = ability:GetAbilityDamageType()
+			damage_type = ability:GetAbilityDamageType(),
+			ability = ability
 		})
 
 		self:StartIntervalThink(1.0)

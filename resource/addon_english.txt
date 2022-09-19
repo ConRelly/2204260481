@@ -2821,7 +2821,7 @@
 	"DOTA_Tooltip_modifier_mjz_broodmother_insatiable_hunger_spellamp_Description"      "%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Bonus Spell Amplification"
 
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings"							"Spawn Spiderlings"
-	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_Description"				"Broodmother injects her young into an enemy unit, The spiderlings will hatch.They have %parent_attack_ptc%%% of brood total dmg as their base Attack(<font color='#0B775D'>At lvl 6 the spiders will get extra dmg from: (66%% of your Max Hp + Mana) + (70 x of your Spell Amp) + (300 x your total armor)</font>)<br>Spawn with 2 random abilities every time and are not affected by Pharaoh Crown."
+	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_Description"				"Broodmother injects her young into an enemy unit, The spiderlings will hatch.They have %parent_attack_ptc%%% of brood total dmg as their base Attack(<font color='#0B775D'>At lvl 6 the spiders will get extra dmg from:  Max Hp + Mana + (70 x of your Spell Amp) + (500 x your total armor)</font>)<br>Spawn with 3 random abilities every time and are not affected by Pharaoh Crown."
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_Lore"						"Black Arachnia continues to raise her young, even amidst the field of combat.  The brood quickly learns how to support their mother."
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_spiderling_duration"		"LIFETIME:"
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_count"						"COUNT:"
@@ -3109,7 +3109,7 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_drow_ranger_33"	"+{s:value}% Marksmanship Chance"
 
 	"DOTA_Tooltip_ability_mjz_elder_titan_earth_splitter"				"Earth Splitter"
-	"DOTA_Tooltip_ability_mjz_elder_titan_earth_splitter_Description"	"Sends forth a jagged crack in front of Elder Titan. After 3 seconds, the crack implodes, slowing movement while dealing damage to each enemy based on Elder Titan strength. <font color='#F2A93E'>The skill has a random direction added to your target point, but the Spirit always throws in the direction he is pointed.</font>."
+	"DOTA_Tooltip_ability_mjz_elder_titan_earth_splitter_Description"	"Sends forth a jagged crack in front of Elder Titan. After 3 seconds, the crack implodes, slowing movement while dealing damage to each enemy based on Elder Titan strength. <font color='#F2A93E'>The skill has a random direction added to your target point, but the Spirit always throws in the direction he is pointed.</font>.\n<h1><font color='#DE3163'>Super Scepter</font></h1> When the ultimate explodes adds Tectonic debuffs to enemys. Every Tectonic stack makes the enemy take %SS_bonus_tooltip%%% more dmg from this ultimate."
 	"DOTA_Tooltip_ability_mjz_elder_titan_earth_splitter_Note0"		 "Tip: Follow your target with the spirit for easy spirit targeting"
 	"DOTA_Tooltip_ability_mjz_elder_titan_earth_splitter_Lore"			"That which he created, the titan tears asunder."
 	"DOTA_Tooltip_ability_mjz_elder_titan_earth_splitter_crack_width"		"CRACK WIDTH:"
@@ -3122,6 +3122,9 @@
 	"DOTA_Tooltip_modifier_mjz_elder_titan_earth_splitter_slow"					"Earth Splitter"
 	"DOTA_Tooltip_modifier_mjz_elder_titan_earth_splitter_slow_Description"		"Slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_elder_titan_earth_splitter_strength"	"+{s:value} Earth Splitter Strength Multiplier"
+
+	"DOTA_Tooltip_modifier_mjz_elder_titan_earth_splitter_ss"					"Tectonic"
+	"DOTA_Tooltip_modifier_mjz_elder_titan_earth_splitter_ss_Description"		"Earth Spliter deals %dMODIFIER_PROPERTY_TOOLTIP%%% more dmg to this target"
 
 	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard"					"Flame Guard"
 	"DOTA_Tooltip_ability_mjz_ember_spirit_flame_guard_Description"		"Ember Spirit surrounds himself with a ring of fire that consumes incoming damage,  leaving his unharmed. Flame Guard deals damage per second in an area around Ember Spirit while Flame Guard is active. "
@@ -3479,9 +3482,12 @@
 	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_bonus_hp"			"Bonus Hp per stack:"
 	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_bonus_mp"			"Bonus Mana per stack:"
 	"DOTA_Tooltip_ability_mjz_luna_under_the_moonlight_bonus_agi"			"Bonus Agility per stack:"
-	"DOTA_Tooltip_modifier_mjz_luna_under_the_moonlight_buff"					"New Moon"
-	"DOTA_Tooltip_modifier_mjz_luna_under_the_moonlight_buff_Description"		"Increase spell amp by %fMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%%, Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Mana by %dMODIFIER_PROPERTY_MANA_BONUS%, Agility by %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%."
-		
+	"DOTA_Tooltip_modifier_mjz_luna_under_the_moonlight_buff"				"New Moon"
+	"DOTA_Tooltip_modifier_mjz_luna_under_the_moonlight_buff_Description"	"Increase spell amp by %fMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%%, Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Mana by %dMODIFIER_PROPERTY_MANA_BONUS%, Agility by %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%."
+	
+	"DOTA_Tooltip_modifier_lucent_beam_ss_mult"								"DarkMoon"			
+	"DOTA_Tooltip_modifier_lucent_beam_ss_mult_Description"					"Lucent beam , Under the moonlight and Eclise deals  %dMODIFIER_PROPERTY_TOOLTIP%%% more dmg to this target.
+
 	"DOTA_Tooltip_ability_mjz_lycan_shapeshift_relieve"					"Shapeshift Relieve"
 	"DOTA_Tooltip_ability_mjz_lycan_shapeshift_relieve_Description"		"Immediately remove the transform effect."
 	"DOTA_Tooltip_ability_mjz_lycan_shapeshift_relieve_scepter_description"		"There is no time limit for the Shapeshift.<br>Drains %health_drain_per_second_scepter%%% Health per second."
@@ -9446,10 +9452,9 @@ Contains all random skills"
 "DOTA_Tooltip_ability_item_random_get_ability_spell_Description"	"Get a Random skill.\nSpell amp, cdr and some spell dmg skills have higher chance"
 
 "DOTA_Tooltip_ability_item_resurection_pendant"							"<font color='#f2da5b'>Resurrection Pendant</font>"
-"DOTA_Tooltip_ability_item_resurection_pendant_Description"				"<h1>Active: Resurrect</h1>After a delay of %channel% sec  it resurrects all the allies. \nThis ability has a base cooldown of %base_cooldown% seconds, plus %extra_cooldown% seconds for every ally that was resurrected.\n<font color='#F2A93E'>Resurrection Pendant is not affected by cooldown reduction.</font>\n<font color='#F2A93E'>Works From Courier Inventory.</font>\n<font color='#F2A93E'>Only in Slot 1 resurrects diconnected players.</font>\n<h1><font color='#0094FF'>UP: Aghanim's Scepter</font></h1>Automatically activated when all the heroes are dead.\n<h1><font color='#DE3163'>UP: Super Scepter</font></h1>Reduces activation time by x2 and the extra cooldown for every ally is reduced to %extra_cooldown_ss% seconds."
+"DOTA_Tooltip_ability_item_resurection_pendant_Description"				"<h1>Active: Resurrect</h1>After a delay of %channel% sec  it resurrects all the allies. \nThis ability has a base cooldown of %base_cooldown% seconds, plus %extra_cooldown% seconds for every ally that was resurrected.\n<font color='#F2A93E'>Resurrection Pendant is not affected by cooldown reduction.</font>\n<font color='#F2A93E'>Works From Courier Inventory.</font>\n<font color='#F2A93E'>Only in Slot 1 resurrects diconnected players.</font>\n<h1><font color='#0094FF'>UP: Aghanim's Scepter</font></h1>Automatically activated when all the heroes are dead. Fontain invulnerability does not count as alive.\n<h1><font color='#DE3163'>UP: Super Scepter</font></h1>Reduces activation time by x2 and the extra cooldown for every ally is reduced to %extra_cooldown_ss% seconds."
 "DOTA_Tooltip_ability_item_resurection_pendant_Lore"					"Rooftrellen calls the ancestral spirit of nature, releasing its power through all of his kin."
 "DOTA_Tooltip_ability_item_resurection_pendant_note0"					"Shop sells max 1 pendant."
-
 "DOTA_Tooltip_ability_item_dragon_head_2"						   "Greater Dragon Head"
 "DOTA_Tooltip_ability_item_dragon_head_2_Description"				"<h1>Passive: Dragon Aura</h1> Grants %aura_bonus_health% health, %aura_bonus_extra_health%%% bonus health, and %aura_bonus_strength% strength to nearby allied units.<br><br>Radius: %aura_radius%"
 "DOTA_Tooltip_ability_item_dragon_head_2_Note0"						"Multiple instances of Dragon Aura do not stack."
@@ -9674,7 +9679,7 @@ Contains all random skills"
 		"DOTA_Tooltip_modifier_ogre_magi_multicast_lua_Description"						"This unit has a chance of multicasting spells."
 
 		"DOTA_Tooltip_ability_luna_lucent_beam_lua"											"Lucent Beam"
-		"DOTA_Tooltip_ability_luna_lucent_beam_lua_Description"								"Calls a beam of lunar energy down upon an enemy, damaging and briefly stunning them.\n<h1><font color='#FF5349'>Passive: New Moon</font></h1> Every time a unit is hit by a Lucent Beam you have a %new_moon_chance%%% chance to gain a New Moon Stack.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Ads <font color='#FF5349'>New Moon</font> stacks x lvl as bonus dmg to this spell and Ultimate."
+		"DOTA_Tooltip_ability_luna_lucent_beam_lua_Description"								"Calls a beam of lunar energy down upon an enemy, damaging and briefly stunning them.\n<h1><font color='#FF5349'>Passive: New Moon</font></h1> Every time a unit is hit by a Lucent Beam you have a %new_moon_chance%%% chance to gain a New Moon Stack.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Ads <font color='#FF5349'>New Moon</font> stacks x lvl as bonus dmg to this spell and Ultimate. Every time an enemy is hit by Q ability(Lucent Beam) they gain an DarkMoon Debuff stack, all 3 luna skills will deal %SS_bonus%%% more dmg for each stack."
 		"DOTA_Tooltip_ability_luna_lucent_beam_lua_shard_description"		"Allows Lucent beam to be ground targeted. Also releases attacks on up to (target count / 2) random targets within 500 range of the Lucent Beam. Reduces mancost by 50."
 		"DOTA_Tooltip_ability_luna_lucent_beam_lua_Lore"									"Selemene smites those who encroach upon the Nightsilver Woods."
 		"DOTA_Tooltip_ability_luna_lucent_beam_lua_stun_duration"							"Stun Duration:"

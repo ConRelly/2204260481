@@ -71,7 +71,7 @@ function ability_class:OnSpellStart()
 	if target ~= nil then
 		-- Applies the ministun and the damage to the target
 		target:AddNewModifier(caster, ability, "modifier_stunned", {duration = stun_time})
-		ApplyDamage({victim = target, attacker = caster, damage = damage, damage_type = ability:GetAbilityDamageType()})
+		ApplyDamage({victim = target, attacker = caster, damage = damage, damage_type = ability:GetAbilityDamageType(), ability = ability})
 
 		if create_popup_by_damage_type then
 			create_popup_by_damage_type({

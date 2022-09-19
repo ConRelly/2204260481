@@ -75,6 +75,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"new_moon_chance"		"35"
 			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"SS_bonus"		"1.0"    // tooltip, hard coded
+			}			
 		}
 	}
 }

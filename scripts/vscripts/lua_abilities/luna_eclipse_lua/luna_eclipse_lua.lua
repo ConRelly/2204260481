@@ -144,7 +144,15 @@ function modifier_luna_eclipse_lua:OnIntervalThink()
 						local modif_stack_count = caster:FindModifierByName("modifier_mjz_luna_under_the_moonlight_buff"):GetStackCount()
 						damage = damage + lvl * modif_stack_count
 					end
-				end				
+					if enemy and enemy:HasModifier("modifier_lucent_beam_ss_mult") then
+						local modif_moon = enemy:FindModifierByName("modifier_lucent_beam_ss_mult")	
+						if modif_moon then 
+							local stacks_moon = modif_moon:GetStackCount()
+							damage = math.floor( damage * (1 + (stacks_moon / 100)))
+						end
+					end						
+				end	
+
 				ApplyDamage({
 					attacker = self:GetCaster(),
 					victim = enemy,

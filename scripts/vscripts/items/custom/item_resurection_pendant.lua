@@ -172,7 +172,9 @@ function modifier_resurrection_pendant:OnIntervalThink()
 				end
 			end
 			if heroes[i]:IsRealHero() and (heroes[i]:IsAlive() or heroes[i]:IsReincarnating() or inf_aegis_ready) and not NotRegister[heroes[i]:GetUnitName()] then
-				LivingHeroes = i
+				if not heroes[i]:HasModifier("modifier_fountain_invulnerability") then
+					LivingHeroes = i
+				end	
 			end
 		end
 
@@ -183,7 +185,9 @@ function modifier_resurrection_pendant:OnIntervalThink()
 				local LivingHeroes = 0
 				for i = 1, #heroes do
 					if heroes[i]:IsRealHero() and (heroes[i]:IsAlive() or heroes[i]:IsReincarnating()) and not NotRegister[heroes[i]:GetUnitName()] then
-						LivingHeroes = i
+						if not heroes[i]:HasModifier("modifier_fountain_invulnerability") then
+							LivingHeroes = i
+						end	
 					end
 				end
 				if LivingHeroes == 0 and self:GetAbility():IsCooldownReady() then

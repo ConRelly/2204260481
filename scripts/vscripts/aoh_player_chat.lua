@@ -1,6 +1,7 @@
 require("lib/string")
 local count = 0
 local count2 = 0
+local count3 = 4
 function AOHGameMode:OnPlayerChat(keys)
 	local time = math.floor(GameRules:GetGameTime() / 60)
 	if keys.text == "-hard" and not self._hardMode and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
@@ -550,6 +551,23 @@ function AOHGameMode:OnPlayerChat(keys)
 			Notifications:TopToAll({text= "Kuma Slaker chance Normal", style={color="red"}, duration=6})
 		end	
 	end	
+	if keys.text == "-symbiosis" then
+		local plyID = keys.playerid
+		local plyhero = PlayerResource:GetPlayer(plyID):GetName()
+		if plyhero and plyhero == "npc_dota_hero_wisp" then
+			if count3 > 0 then
+				if _G.symbiosisOn then
+					_G.symbiosisOn = false
+					count3 = count3 - 1
+					Notifications:TopToAll({text= "Symbiosis SS effect OFF, comands left: " ..count3, style={color="red"}, duration=6})
+				else
+					_G.symbiosisOn = true
+					count3 = count3 - 1
+					Notifications:TopToAll({text= "Symbiosis SS effect ON, comands left: " ..count3, style={color="red"}, duration=6})
+				end
+			end
+		end	
+	end
 end
 
 

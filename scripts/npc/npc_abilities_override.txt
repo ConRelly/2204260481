@@ -5542,7 +5542,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"magic_resistance_pct"		"2 10 15 20"
+				"magic_resistance_pct"		"5 9 13 17"
 			}
 		}
 	}
@@ -5558,12 +5558,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"armor_reduction_pct"		"10 15 20 25"
+				"armor_reduction_pct"		"20 25 30 35"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"magic_resistance_pct"		"10 15 20 25"
+				"magic_resistance_pct"		"5 9 13 17"
 			}
 		}
 	}	
@@ -13711,13 +13711,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"radius"					"2800"
+				"radius"					"2200"
 				"movespeed"					
 				{
 					"value"				"6 12 24 64"
 					"special_bonus_unique_wisp_3"	"+26"
 				}
-				"latch_distance"			"2500"
+				"latch_distance"			"3500"
 				"latch_speed"				"1000 1000 1000 1000"
 				"tether_heal_amp"			"0.75 0.9 1.05 1.2"
 				"self_bonus"				"0"
@@ -13726,6 +13726,29 @@
 				"spell_lifesteal"			"10"
 		}
 	}
+
+	//=================================================================================================================
+	// Wisp: Tether
+	//=================================================================================================================
+	"wisp_tether_break"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5489"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"LinkedAbility"					"wisp_tether"
+		"LevelsBetweenUpgrades"         "4"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0 0 0 0"
+ 		"AbilityCastAnimation"			"ACT_INVALID"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5.0 5.0 5.0 5.0"
+	}
+
 
 	"special_bonus_unique_wisp_9"
 	{
@@ -13742,7 +13765,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"4000"
+				"value"				"6000"
 				"ad_linked_abilities"			"wisp_tether"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
@@ -15317,41 +15340,48 @@
 		}
 	}
 }
-"phantom_lancer_phantom_edge"
-{
-	"MaxLevel"					"7"
-	"LevelsBetweenUpgrades"	   "5"
-	"AbilityCooldown"				"10"
-	"AbilitySpecial"
+
+
+	//=================================================================================================================
+	// Ability: Phantom Lancer's Phantom Rush / Phantom Edge
+	//=================================================================================================================
+	"phantom_lancer_phantom_edge"
 	{
-		"01"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5068"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilitySound"			"Hero_PhantomLancer.PhantomEdge"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"HasScepterUpgrade"				"0"
+		"MaxLevel"					"7"
+		"LevelsBetweenUpgrades"	   "5"
+		"AbilityCooldown"				"10"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"min_distance"		"150"
+				"min_distance"		"150"
+				"max_distance"				
+				{
+					"value"				"1500 1700 1900 2200 2500 3000 3500"
+					"LinkedSpecialBonus"		"special_bonus_unique_phantom_lancer"
+				}
+				"bonus_speed"		"3500"
+				"bonus_agility"		"188 260 385 510 777 999 1777"
+				"agility_duration"		
+				{
+					"value"			"15.0"
+					"special_bonus_unique_phantom_lancer_2"		"+20"
+				}
 		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"max_distance"				"900 1200 1500 1700 1900 2200 2500"
-			"LinkedSpecialBonus"		"special_bonus_unique_phantom_lancer"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"bonus_speed"		"2000"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"bonus_agility"		"44 188 260 385 510 777 999"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"agility_duration"		"12.0"
-		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
-}
+
+
 "special_bonus_unique_phantom_lancer_3"
 	{
 		"AbilitySpecial"

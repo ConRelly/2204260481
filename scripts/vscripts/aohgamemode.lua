@@ -111,6 +111,7 @@ function AOHGameMode:InitGameMode()
 	_G._challenge_bosss = 0
 	_G._effect_rate = 100
 	_G._stalker_chance = 1
+	_G._symbiosisOn = true	
 	self._endlessMode = false
 	_G._endlessMode_started = false
 	_G._normal_mode = false

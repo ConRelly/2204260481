@@ -11,6 +11,7 @@ Ability checklist (erase if done/checked):
 --------------------------------------------------------------------------------
 luna_lucent_beam_lua = class({})
 LinkLuaModifier("modifier_generic_stunned_lua", "lua_abilities/generic/modifier_generic_stunned_lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_lucent_beam_ss_mult", "lua_abilities/luna_lucent_beam_lua/luna_lucent_beam_lua.lua", LUA_MODIFIER_MOTION_NONE)
 
 function luna_lucent_beam_lua:OnAbilityPhaseStart()
 	if not IsServer() then return end
@@ -59,6 +60,7 @@ if IsServer() then
 		local position = self:GetCursorPosition()
 		local damage = self:GetTalentSpecialValueFor("beam_damage") + (caster:GetAgility() * self:GetTalentSpecialValueFor("agi_multiplier"))
 		local lvl = caster:GetLevel()
+		local dark_moon_modif = "modifier_lucent_beam_ss_mult"
 		if caster:HasModifier("modifier_super_scepter") then
 			if caster:HasModifier("modifier_mjz_luna_under_the_moonlight_buff") then
 				local modif_stack_count = caster:FindModifierByName("modifier_mjz_luna_under_the_moonlight_buff"):GetStackCount()
@@ -78,6 +80,15 @@ if IsServer() then
 		local targets = FindUnitsInRadius(caster:GetTeamNumber(), point, nil, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, 0, false)
 
 		for _,enemy in pairs(targets) do
+			if caster:HasModifier("modifier_super_scepter") then
+				if enemy and enemy:HasModifier(dark_moon_modif) then
+					local modif_moon = enemy:FindModifierByName(dark_moon_modif)	
+					if modif_moon then 
+						local stacks_moon = modif_moon:GetStackCount()
+						damage = math.floor( damage * (1 + (stacks_moon / 100)))
+					end
+				end	
+			end	
 			ApplyDamage({
 				victim = enemy,
 				attacker = caster,
@@ -86,13 +97,25 @@ if IsServer() then
 				ability = self,
 				damage_flags = DOTA_DAMAGE_FLAG_NONE,
 			})
+			if enemy then
+				enemy:AddNewModifier(caster, self, "modifier_generic_stunned_lua", {duration = self:GetSpecialValueFor("stun_duration")})
+				if caster:HasModifier("modifier_super_scepter") then
+					if not enemy:HasModifier(dark_moon_modif) then
+						enemy:AddNewModifier(caster, self, dark_moon_modif, {})
+					else
+						local modif_moon = enemy:FindModifierByName(dark_moon_modif)	
+						if modif_moon then 
+							local stacks_moon = modif_moon:GetStackCount()
+							modif_moon:SetStackCount(stacks_moon + 1)
+						end
+					end	
+				end	
 
-			enemy:AddNewModifier(caster, self, "modifier_generic_stunned_lua", {duration = self:GetSpecialValueFor("stun_duration")})
-
-			if math.random(100) < self:GetSpecialValueFor("new_moon_chance") then
-				local moonlight_buff = self:GetCaster():FindModifierByName("modifier_mjz_luna_under_the_moonlight_buff")
-				moonlight_buff:SetStackCount(moonlight_buff:GetStackCount() + 1)
-			end
+				if math.random(100) < self:GetSpecialValueFor("new_moon_chance") then
+					local moonlight_buff = self:GetCaster():FindModifierByName("modifier_mjz_luna_under_the_moonlight_buff")
+					moonlight_buff:SetStackCount(moonlight_buff:GetStackCount() + 1)
+				end
+			end	
 
 			local beam_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_luna/luna_lucent_beam.vpcf", PATTACH_POINT_FOLLOW, self:GetCaster())
 			ParticleManager:SetParticleControl(beam_pfx, 1, enemy:GetAbsOrigin())
@@ -143,6 +166,20 @@ if IsServer() then
 		end
 	end
 end
+
+---SS mult Modifier
+modifier_lucent_beam_ss_mult = class({})
+function modifier_lucent_beam_ss_mult:IsHidden() return false end
+function modifier_lucent_beam_ss_mult:IsDebuff() return true end
+function modifier_lucent_beam_ss_mult:IsPurgable() return false end
+function modifier_lucent_beam_ss_mult:GetTexture() return "darkmoon" end
+function modifier_lucent_beam_ss_mult:DeclareFunctions()
+	return {MODIFIER_PROPERTY_TOOLTIP}
+end
+function modifier_lucent_beam_ss_mult:OnTooltip() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("SS_bonus") * self:GetStackCount() end end
+
+
+
 
 
 --talents

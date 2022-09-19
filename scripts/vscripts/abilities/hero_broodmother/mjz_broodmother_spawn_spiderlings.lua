@@ -82,12 +82,12 @@ function mjz_broodmother_spawn_spiderlings:SpawnSpiderlings(hTarget)
 
             spider:RemoveAbility("broodmother_poison_sting")
             spider:RemoveAbility("broodmother_spawn_spiderite")
-            local ability_trist = "bloodseeker_thirst"
+            --local ability_trist = "bloodseeker_thirst"
             --local ability_trist = "luna_lunar_blessing"   --testing skills
-            local searing = spider:AddAbility(ability_trist)
-            searing:UpgradeAbility(true)
-            searing:SetLevel( hCaster:FindAbilityByName("mjz_broodmother_spawn_spiderlings"):GetLevel() )
-			if RandomInt(0,100) < chance_strike then
+            --local searing = spider:AddAbility(ability_trist)
+            --searing:UpgradeAbility(true)
+            --searing:SetLevel( hCaster:FindAbilityByName("mjz_broodmother_spawn_spiderlings"):GetLevel() )
+			if RandomInt(0,100) <= chance_strike then
 				local true_strike = spider:AddAbility("true_strike")
 				true_strike:UpgradeAbility(true)
 			end
@@ -108,6 +108,20 @@ function mjz_broodmother_spawn_spiderlings:SpawnSpiderlings(hTarget)
             link_b:UpgradeAbility(true)
             link_b:SetLevel(hCaster:FindAbilityByName("mjz_broodmother_spawn_spiderlings"):GetLevel())
 
+			local not_same_abilitiesb = false
+            local link_c = false
+			while not not_same_abilitiesb do
+				local newAbilityNamec = GetRandomAbilityName(hero)
+				if newAbilityNamec ~= newAbilityName and newAbilityNamec ~= newAbilityNameb then
+					link_c = spider:AddAbility(newAbilityNamec)
+					not_same_abilitiesb = true
+				end
+			end
+            if link_c then
+                link_c:UpgradeAbility(true)
+                link_c:SetLevel(hCaster:FindAbilityByName("mjz_broodmother_spawn_spiderlings"):GetLevel())
+            end    
+
             spider:AddNewModifier(hCaster, self, M_NAME, {})
             if hCaster:HasScepter() then
                 spider:AddNewModifier(hCaster, self, aghbuf, {})
@@ -115,7 +129,7 @@ function mjz_broodmother_spawn_spiderlings:SpawnSpiderlings(hTarget)
             local caster_damage = hCaster:GetAverageTrueAttackDamage(hCaster) * (self:GetSpecialValueFor("parent_attack_ptc") / 100)
             local spider_lvl = hCaster:FindAbilityByName("mjz_broodmother_spawn_spiderlings"):GetLevel()
             if spider_lvl > 5 then
-                caster_damage = caster_damage + ((hCaster:GetMaxHealth() + hCaster:GetMaxMana()) * 0.66) + (hCaster:GetSpellAmplification(false) * 7000) + (hCaster:GetPhysicalArmorValue(false) * 300)
+                caster_damage = caster_damage + ((hCaster:GetMaxHealth() + hCaster:GetMaxMana())) + (hCaster:GetSpellAmplification(false) * 7000) + (hCaster:GetPhysicalArmorValue(false) * 500)
             end
             spider:SetBaseDamageMin(caster_damage + extra_damage)
             spider:SetBaseDamageMax(caster_damage + extra_damage)
@@ -138,12 +152,21 @@ function modifier_mjz_broodmother_spiderlings:CheckState()
         -- [MODIFIER_STATE_STUNNED] = true,
         -- [MODIFIER_STATE_ROOTED] = true,
         -- [MODIFIER_STATE_FROZEN] = true,
-        -- [MODIFIER_STATE_INVISIBLE] = false,
+        --[MODIFIER_STATE_INVISIBLE] = false,
         [MODIFIER_STATE_INVULNERABLE] = true,
         [MODIFIER_STATE_NO_HEALTH_BAR] = true,
         [MODIFIER_STATE_NO_UNIT_COLLISION] = true,
     }
 end
+function modifier_mjz_broodmother_spiderlings:DeclareFunctions()
+	return {
+        MODIFIER_PROPERTY_IGNORE_MOVESPEED_LIMIT,
+
+	}
+end
+
+function modifier_mjz_broodmother_spiderlings:GetModifierIgnoreMovespeedLimit() return 1 end
+  
 
 function GetRandomAbilityName(hero)
     local abilityList = {

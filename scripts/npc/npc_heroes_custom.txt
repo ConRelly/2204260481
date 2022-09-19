@@ -841,6 +841,7 @@
 		"Ability3"			"mjz_luna_lunar_blessing"
 		"Ability4"			"mjz_luna_under_the_moonlight"
 		"Ability6"			"luna_eclipse_lua"
+		"Ability11"         "special_bonus_cdr_15"
 		"Ability12"			"special_bonus_unique_luna_102"
 		"Ability13"			"special_bonus_agility_80"
 		"Ability14"			"special_bonus_luna_eclipse_end"

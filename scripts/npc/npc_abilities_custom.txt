@@ -12677,7 +12677,7 @@
 		"09"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage_per_use_ss"			"900 1100 1500 2000 2500"
+			"damage_per_use_ss"			"1500 2000 2500 3000 3500"
 			"CalculateSpellDamageTooltip"	"1"
 		}						
 	}
@@ -22762,7 +22762,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"true_strike_chance"				"50 55 60 65 70 75 90"
+				"true_strike_chance"				"50 55 60 65 70 90 100"
 			}
 			"06"
 			{
@@ -24462,6 +24462,16 @@
 				"var_type"					"FIELD_INTEGER"
 				"total_steps"				"12"
 			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"SS_bonus"					"100"  //smaler = biger bonus per stack. 100 = 1%
+			}
+			"14"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"SS_bonus_tooltip"					"1"
+			}						
 		}
 
 		"precache"
@@ -26975,9 +26985,9 @@
 			"proc_chance"			"10 15 20 25 30"
 			"beam_damage"			"30"
 			"spell_amp"				"0.05"
-			"bonus_hp"				"2"
+			"bonus_hp"				"3"
 			"bonus_mp"				"1"
-			"bonus_agi"				"1"
+			"bonus_agi"				"2"
 			"spell_amp_tooltip"		"5"
 		}
 	}

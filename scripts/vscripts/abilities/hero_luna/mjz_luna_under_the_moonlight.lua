@@ -25,7 +25,16 @@ function mjz_luna_under_the_moonlight:LucentBeam(target, stun)
 		if level < 30 then
 			level = 30
 		end
-		local damage = level * stack_count
+		local damage = level * stack_count		
+		if caster:HasModifier("modifier_super_scepter") then
+			if target and target:HasModifier("modifier_lucent_beam_ss_mult") then
+				local modif_moon = target:FindModifierByName("modifier_lucent_beam_ss_mult")	
+				if modif_moon then 
+					local stacks_moon = modif_moon:GetStackCount()
+					damage = math.floor( damage * (1 + (stacks_moon / 100)))
+				end
+			end	
+		end			
 		if not target:TriggerSpellAbsorb(self) then
 			self:DealDamage(caster, target, damage)
 			if sDur > 0 then

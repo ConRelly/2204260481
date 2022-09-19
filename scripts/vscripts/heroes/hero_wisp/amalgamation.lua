@@ -428,6 +428,7 @@ function amalgamation_target:OnIntervalThink()
 			end	
 
 			if parent:HasModifier("modifier_symbiosis_exhaust") then return end
+			if not _G._symbiosisOn then return end 
 			if not parent:IsHero() then return end
 			local caster_str = caster:GetStrength()
 			local caster_agi = caster:GetAgility()

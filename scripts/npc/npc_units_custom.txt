@@ -6987,10 +6987,13 @@
 	//"Ability10"				 "special_bonus_truestrike"
 	"ArmorPhysical"				"40"
 	"MagicalResistance"			"85"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"	
+	"ProjectileModel"			""       //"particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
+	"ProjectileSpeed"			"2000"	
 	"AttackRate"				"0.7"
 	"AttackDamageMin"			"250"
-	"AttackDamageMax"			"350"
-	"AttackAcquisitionRange"	"1400"	   // Range within a target can be acquired.
+	"AttackDamageMax"			"350"	
+	"AttackAcquisitionRange"	"4000"	   // Range within a target can be acquired.
 	"AttackRange"			   "250"	
 	"BountyXP"					"0"
 	"BountyGoldMin"				"0"
@@ -6998,7 +7001,7 @@
 	"StatusHealth"				"100"
 	"StatusMana"				"40000"
 	"StatusManaRegen"		   "5000"
-	"MovementSpeed"			 "1200"
+	"MovementSpeed"			 "1700"
 	//"HasInventory"			  "1"
 	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 }

@@ -1,6 +1,6 @@
 -- LinkLuaModifier("modifier_mjz_elder_titan_earth_splitter", "abilities/hero_elder_titan/mjz_elder_titan_earth_splitter.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_elder_titan_earth_splitter_slow", "abilities/hero_elder_titan/mjz_elder_titan_earth_splitter.lua", LUA_MODIFIER_MOTION_NONE)
-
+LinkLuaModifier("modifier_mjz_elder_titan_earth_splitter_ss", "abilities/hero_elder_titan/mjz_elder_titan_earth_splitter.lua", LUA_MODIFIER_MOTION_NONE)
 mjz_elder_titan_earth_splitter = class({})
 local ability_class = mjz_elder_titan_earth_splitter
 
@@ -92,6 +92,8 @@ if IsServer() then
 		local damage = caster:GetStrength() * str_damage_multiplier
 		local slow_duration = GetTalentSpecialValueFor(ability, "slow_duration")
 		local modifier_slow_name = 'modifier_mjz_elder_titan_earth_splitter_slow'
+		local modifier_tectonic = "modifier_mjz_elder_titan_earth_splitter_ss"
+		local ss_bonus_dmg = GetTalentSpecialValueFor(ability, "SS_bonus")
 
 		local p = ParticleManager:CreateParticle("particles/units/heroes/hero_elder_titan/elder_titan_earth_splitter.vpcf", PATTACH_ABSORIGIN, caster)
 		ParticleManager:SetParticleControl(p, 0, casterLoc)
@@ -103,16 +105,30 @@ if IsServer() then
 		Timers:CreateTimer(crack_time, function ()
 			local unitGroup = GetUnitsInLine(caster, ability, casterLoc, point, crack_width)
 			for _,unit in pairs(unitGroup) do
-				unit:AddNewModifier(caster, ability, modifier_slow_name, {duration = slow_duration})
+				if unit then
+					unit:AddNewModifier(caster, ability, modifier_slow_name, {duration = slow_duration})
+					if caster:HasModifier("modifier_super_scepter") then
+						if not unit:HasModifier(modifier_tectonic) then
+							unit:AddNewModifier(caster, self, modifier_tectonic, {})
+						else
+							local modif_earth = unit:FindModifierByName(modifier_tectonic)	
+							if modif_earth then 
+								local earth_stacks = modif_earth:GetStackCount()
+								modif_earth:SetStackCount(earth_stacks + 1)
+								damage = math.floor( damage * (1 + (earth_stacks / ss_bonus_dmg)))
+							end
+						end	
+					end
 
-				local damageTable = {
-					victim = unit,
-					attacker = caster,
-					damage = damage,
-					damage_type = ability:GetAbilityDamageType(),
-					ability = ability,
-				}
-				ApplyDamage(damageTable)
+					local damageTable = {
+						victim = unit,
+						attacker = caster,
+						damage = damage,
+						damage_type = ability:GetAbilityDamageType(),
+						ability = ability,
+					}
+					ApplyDamage(damageTable)
+				end	
 			end
 		end)
 	end
@@ -172,6 +188,18 @@ function modifier_class:GetModifierMoveSpeedBonus_Percentage( )
 end
 
 -----------------------------------------------------------------------------------------
+modifier_mjz_elder_titan_earth_splitter_ss = class({})
+
+function modifier_mjz_elder_titan_earth_splitter_ss:IsHidden() return false end
+function modifier_mjz_elder_titan_earth_splitter_ss:IsPurgable() return false end
+function modifier_mjz_elder_titan_earth_splitter_ss:GetTexture() return "earth_spliter_ss" end
+function modifier_mjz_elder_titan_earth_splitter_ss:DeclareFunctions()
+	return {MODIFIER_PROPERTY_TOOLTIP}
+end
+function modifier_mjz_elder_titan_earth_splitter_ss:OnTooltip() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("SS_bonus_tooltip") * self:GetStackCount() end end
+
+
+
 
 -- 获取旋转后的点
 function GetRotationPoint( originPoint, radius, angle )
