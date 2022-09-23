@@ -553,17 +553,17 @@ function AOHGameMode:OnPlayerChat(keys)
 	end	
 	if keys.text == "-symbiosis" then
 		local plyID = keys.playerid
-		local plyhero = PlayerResource:GetPlayer(plyID):GetName()
+		local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero():GetUnitName()
 		if plyhero and plyhero == "npc_dota_hero_wisp" then
 			if count3 > 0 then
 				if _G.symbiosisOn then
 					_G.symbiosisOn = false
 					count3 = count3 - 1
-					Notifications:TopToAll({text= "Symbiosis SS effect OFF, comands left: " ..count3, style={color="red"}, duration=6})
+					Notifications:TopToAll({text= "Symbiosis SS Compatibility effect OFF, comands left: " ..count3, style={color="red"}, duration=6})
 				else
 					_G.symbiosisOn = true
 					count3 = count3 - 1
-					Notifications:TopToAll({text= "Symbiosis SS effect ON, comands left: " ..count3, style={color="red"}, duration=6})
+					Notifications:TopToAll({text= "Symbiosis SS Compatibility effect ON, comands left: " ..count3, style={color="green"}, duration=6})
 				end
 			end
 		end	

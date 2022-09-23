@@ -17751,7 +17751,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_gpm"			"555"
+			"bonus_gpm"			"999"
 		}
 	}
 }

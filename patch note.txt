@@ -2152,7 +2152,7 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 * Edible Randiance armor aura range increased from 1500 to min 2000 (blue has +300 extra)
-* Heores afk with Fontain invulnerability will not count as alive for the contdown timer. Resurrection pendant aghanim and SS effect updated so it does the same.
+* Heores afk with Fontain invulnerability will not count as alive for the contdown timer. Resurrection pendant aghanim effect updated so it does the same.
 * Fixed warlock golem and beastmaster boar missing summon protection.
 * Enigma Aghanim's effect from 1.6% to 1% and midnight pulse from 1.1% max to 4%. He is not underdog anymore.
 * Omniknight Purification ss effect base duration to 1.75s, duration per stack to 0.2 and now works from guardian angel too but has half duration .
@@ -2161,7 +2161,12 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * Under the moonlight passive bonus hp per stack from 2 to 3, bonus agi from 1 to 2.
 * Elder Titan Earth Splitter has a new Super Scepter effect.
 * Fixed Elder titan aura having higher mr reduction then the description (25% instead of 20%)  and reduced to 17% at max lvl.
+* Fixed Barracks spawn interval and duration not maching the item description.
 * Broodmother spiderlings now are range(same range), they have no speed limit by default (no need for passive), they have 3 random skills and from 95% to 100% true strike chance at max lvl, they scale better with hp,mp and armor.
+* Philosophers stone version 2 from 555 gpm to 999.
+* IO Symbiosis SS Compatibility effect now can be disabled or enabled (max 4 changes) with the command "-symbiosis", only by io. 
+
+
 
 
 

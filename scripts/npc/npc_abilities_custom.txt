@@ -11357,13 +11357,23 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"interval"		"15"
+			"interval"		"30"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"		"40"
+			"duration"		"90"
 		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"interval_range"			"55"
+		}		
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration_range"			"180"
+		}		
 	}
 }	
 "rax_custom_refund"

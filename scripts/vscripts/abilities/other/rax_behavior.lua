@@ -29,6 +29,11 @@ if IsServer() then
 		self.unitName = keys.name
 		self.interval = self.ability:GetSpecialValueFor("interval")
 		self.duration = self.ability:GetSpecialValueFor("duration")
+		if self.unitName == "npc_dota_creep_goodguys_ranged" then
+			self.interval = self.ability:GetSpecialValueFor("interval_range")
+			self.duration = self.ability:GetSpecialValueFor("duration_range")
+		end	
+
 		self.target = self.parent:GetAbsOrigin()
 		self:StartIntervalThink(self.interval)
 	end
