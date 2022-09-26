@@ -2711,6 +2711,11 @@
 		"AbilityCooldown"				"25"
 	}
 
+
+
+	//=================================================================================================================
+	// Ability: Axe Battle Hunger
+	//=================================================================================================================
 	"axe_battle_hunger"
 	{
 		// General
@@ -2720,10 +2725,10 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"LevelsBetweenUpgrades"         "10"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
+		"LevelsBetweenUpgrades"         "10"
 		"AbilitySound"					"Hero_Axe.Battle_Hunger"
 		
 		// Casting
@@ -2747,25 +2752,37 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportValue"	"0.1"	// Primarily about the damage
+
+		"HasScepterUpgrade" 			"1"
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"duration"					"15.0"
-				"slow"
-				{
-					"value"			"-17"
-					"special_bonus_unique_axe_6"	"-10"
-				}
-				"damage_per_second"			"145 990 4800 13990"
-				"armor_multiplier"			
-				{
-					"value"			"25 75 125 200"
-					"special_bonus_unique_axe"	"x10"
-				}
+			"duration"					"20.0"
+			"slow"
+			{
+				"value"			"-17"
+				"special_bonus_unique_axe_6"	"-10"
+			}
+			"damage_per_second"			"545 2990 16800 38990"
+			"armor_multiplier"			
+			{
+				"value"			"25 75 125 200"
+				"special_bonus_unique_axe"	"x10"
+			}
+			"scepter_armor_change"
+			{
+				"special_bonus_scepter"				"+25"
+			}
+			"speed_bonus"
+			{
+				"value"			"0"
+				"special_bonus_unique_axe_8"	"+40"
+			}
 		}		
 	}
+
 
 	"bane_fiends_grip"
 	{

@@ -21821,10 +21821,11 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilitySound"					"Hero_Axe.Berserkers_Call"
 		"AbilityTextureName"			"mjz_axe_berserkers_call"
-
+		"LevelsBetweenUpgrades"         "5"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_1"
 		"AbilityCastGestureSlot"		"DEFAULT"
+		"HasShardUpgrade"				"1"
 		"AbilityCooldown"				"26 24 22 20"
 		"AbilityManaCost"				"80"	
 		
@@ -21839,17 +21840,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"10"
+				"bonus_armor"			"10 20 30 40"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor_per"		"100"
+				"bonus_armor_per"		"25 50 75 100"
 			}	
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.0 2.4 3.5 4.1"
+				"duration"				"2.0 2.5 3.5 5.0"
 			}
 		}
 

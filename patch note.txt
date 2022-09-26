@@ -2171,6 +2171,13 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Now custom tooltips are in English only(can't update other languages if i don't know them)
+* Brood spiders now update their attack every 10 sec (an buff will show the 'countdown')
+* Axe Call will add an buff/debuff on enemy that prevents that enemy to answer another call untill the buff expires. can't  have call almost 100% uptime on an enemy anymore.
+* Added shard effect for Axe berzerker call and increased its max duration to 5 sec.
+
+
+
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 

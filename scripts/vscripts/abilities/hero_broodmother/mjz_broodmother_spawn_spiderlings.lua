@@ -1,8 +1,10 @@
 LinkLuaModifier("modifier_mjz_broodmother_spiderlings", "abilities/hero_broodmother/mjz_broodmother_spawn_spiderlings.lua", LUA_MODIFIER_MOTION_NONE)
-
+LinkLuaModifier("modifier_mjz_broodmother_spiderlings_updater", "abilities/hero_broodmother/mjz_broodmother_spawn_spiderlings.lua", LUA_MODIFIER_MOTION_NONE)
 
 -----------------------------------------------------------------------------------------
 mjz_broodmother_spawn_spiderlings = class({})
+local caster_damage = 0
+local M_updater = "modifier_mjz_broodmother_spiderlings_updater"
 function mjz_broodmother_spawn_spiderlings:OnSpellStart()
     if not IsServer() then return end
     local hCaster = self:GetCaster()
@@ -123,10 +125,11 @@ function mjz_broodmother_spawn_spiderlings:SpawnSpiderlings(hTarget)
             end    
 
             spider:AddNewModifier(hCaster, self, M_NAME, {})
+            spider:AddNewModifier(hCaster, self, M_updater, {duration = 10})
             if hCaster:HasScepter() then
                 spider:AddNewModifier(hCaster, self, aghbuf, {})
             end
-            local caster_damage = hCaster:GetAverageTrueAttackDamage(hCaster) * (self:GetSpecialValueFor("parent_attack_ptc") / 100)
+            caster_damage = hCaster:GetAverageTrueAttackDamage(hCaster) * (self:GetSpecialValueFor("parent_attack_ptc") / 100)
             local spider_lvl = hCaster:FindAbilityByName("mjz_broodmother_spawn_spiderlings"):GetLevel()
             if spider_lvl > 5 then
                 caster_damage = caster_damage + ((hCaster:GetMaxHealth() + hCaster:GetMaxMana())) + (hCaster:GetSpellAmplification(false) * 7000) + (hCaster:GetPhysicalArmorValue(false) * 500)
@@ -143,6 +146,34 @@ function mjz_broodmother_spawn_spiderlings:SpawnSpiderlings(hTarget)
 end
 
 
+
+local function Update_attack(parent, hCaster, caster_damage)
+	if IsServer() then
+        local extra_damage = talent_value(hCaster, "special_bonus_unique_mjz_broodmother_spawn_spiderlings_damage")
+        local spider_lvl = hCaster:FindAbilityByName("mjz_broodmother_spawn_spiderlings"):GetLevel()
+        if spider_lvl > 5 then
+            caster_damage = caster_damage + ((hCaster:GetMaxHealth() + hCaster:GetMaxMana())) + (hCaster:GetSpellAmplification(false) * 7000) + (hCaster:GetPhysicalArmorValue(false) * 500)
+        end
+        parent:SetBaseDamageMin(caster_damage + extra_damage)
+        parent:SetBaseDamageMax(caster_damage + extra_damage)
+	end
+end
+
+----------------------------------------------------------------------------------------
+modifier_mjz_broodmother_spiderlings_updater = class({})
+function modifier_mjz_broodmother_spiderlings_updater:IsHidden() return false end
+function modifier_mjz_broodmother_spiderlings_updater:IsPurgable() return false end
+function modifier_mjz_broodmother_spiderlings_updater:OnDestroy()
+    if IsServer() then
+        local parent = self:GetParent()
+        local hCaster = self:GetCaster()
+        if parent and parent:IsAlive() then
+            parent:AddNewModifier(hCaster, self:GetAbility(), M_updater, {duration = 10})
+            local caster_damage = hCaster:GetAverageTrueAttackDamage(hCaster) * (self:GetAbility():GetSpecialValueFor("parent_attack_ptc") / 100)
+            Update_attack(parent, hCaster, caster_damage)        
+        end 
+    end      
+end   
 ---------------------------------------------------------------------------------------
 modifier_mjz_broodmother_spiderlings = class({})
 function modifier_mjz_broodmother_spiderlings:IsHidden() return true end

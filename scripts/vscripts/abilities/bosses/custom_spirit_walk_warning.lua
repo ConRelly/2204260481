@@ -15,7 +15,9 @@ function custom_spirit_walk_warning:OnSpellStart()
 	Timers:CreateTimer(
 		delay, 
 		function()
-			caster:CastAbilityOnTarget(caster, caster:FindAbilityByName("custom_spirit_walk"), -1)
+			if caster:HasAbility("custom_spirit_walk") then
+				caster:CastAbilityOnTarget(caster, caster:FindAbilityByName("custom_spirit_walk"), -1)
+			end	
 		end
 	)
 end

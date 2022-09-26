@@ -2648,10 +2648,15 @@
 	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_bonus_armor"		"Base Armor Bonus: "
 	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_bonus_armor_per"	"%Extra Armor Bonus: "
 	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_duration"			"Duration: "
+	"DOTA_Tooltip_ability_mjz_axe_berserkers_call_shard_Description" "Apply Battle Hunger on the Enemys you Call"
 	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_caster"				"Berserker's Call"
 	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_caster_Description"	"Armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
 	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_enemy"				"Berserker's Call"
 	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_enemy_Description"	"You are forced to Axe"	
+
+	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_enemy_CD"           "On Phone"
+	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_enemy_CD_Description" "This Enemy is busy from another Call, try later"
+
 	"DOTA_Tooltip_ability_mjz_axe_counter_helix"					"Counter Helix"
 	"DOTA_Tooltip_ability_mjz_axe_counter_helix_Description"		"When attacked, Axe performs a helix counter attack, dealing pure damage to all nearby enemies."
 	"DOTA_Tooltip_ability_mjz_axe_counter_helix_Lore"				"Axe is the only reinforcement this army needs."
@@ -2830,6 +2835,10 @@
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_true_strike_chance"		 "%Chance to Spawn with True Strike:"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_broodmother_spawn_spiderlings_damage"		"+{s:value} Spiders Damage"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_broodmother_spawn_spiderlings_duration"		"Spiders Have No Duration"
+
+	"DOTA_Tooltip_modifier_mjz_broodmother_spiderlings_updater"                         "Updater"
+	"DOTA_Tooltip_modifier_mjz_broodmother_spiderlings_updater_Description"             "Updates the Spiders attack on expiration"
+
 
 
 	"DOTA_Tooltip_ability_mjz_centaur_double_edge"								"Double Edge"
