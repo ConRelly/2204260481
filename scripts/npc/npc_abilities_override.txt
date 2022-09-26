@@ -8173,24 +8173,48 @@
 		}
 	}
 
+
+	//=================================================================================================================
+	// Obsidian Destroyer: Arcane Orb
+	//=================================================================================================================
 	"obsidian_destroyer_arcane_orb"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5391"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilitySound"					"Hero_ObsidianDestroyer.ArcaneOrb"
+		
+		"AbilityCastRange"				"450"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
 		"AbilityCooldown"				"4 3 2 0.25"
-		"AbilitySpecial"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
+			"mana_pool_damage_pct"	
 			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_pool_damage_pct"	"6 8 12 18"
-				"LinkedSpecialBonus"	"special_bonus_unique_outworld_devourer"
+				"value"										"10 12 14 16"
+				"special_bonus_unique_outworld_devourer"	"+4"
 			}
-			"02"
+			"mana_cost_percentage"							"5"
+			"bounce_radius"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"mana_cost_percentage"	"5"
-			}			
+				"value"										"0"			
+			}
 		}
-	}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}	
+
+
 
 	"obsidian_destroyer_astral_imprisonment"
 	{
