@@ -3157,7 +3157,7 @@
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_crit_bonus"			"%CRITICAL DAMAGE:"
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_attack_count"		"ATTACK COUNT:"
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Note0"	"Targets are determined when the spell is cast."
-	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Note1"	"A regular attack is done to each target every 0.1 seconds."
+	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Note1"	"A regular attack is done to each target every %attack_interval% seconds."
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Note2"	"Any attack modifier that Xin/Sven has (such as Critical Strike, Bash, Cleave, or Orb effects) will be applied normally on these attacks."
 	"DOTA_Tooltip_modifier_mjz_ember_spirit_sleight_of_fist_charge_counter"		"Sleight of Fist Charges"
 	"DOTA_Tooltip_modifier_mjz_ember_spirit_sleight_of_fist_charge"				"Sleight of Fist Charges"	

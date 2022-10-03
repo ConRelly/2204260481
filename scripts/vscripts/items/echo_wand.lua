@@ -282,6 +282,7 @@ if IsServer() then
 		enchantress_enchant = true,
 		rubick_spell_steal = true,
 		chaos_knight_phantasm = true,
+		terrorblade_custom_reflection = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

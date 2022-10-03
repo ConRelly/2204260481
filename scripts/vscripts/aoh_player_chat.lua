@@ -115,7 +115,7 @@ function AOHGameMode:OnPlayerChat(keys)
 		self.renew = true
 	end
 	if keys.text == guessing_game_1 and not Cheats:IsEnabled() and time > 30 and not self._physdanage and not GameRules:IsGamePaused() then
-		Notifications:TopToAll({text="#dota_npc_does_ab", style={color="red"}, duration=7})
+		Notifications:TopToAll({text="#dota_npc_does_ab", style={color="red"}, duration=12})
 		self._physdanage = true
 		self:_RenewStats()
 	end
@@ -568,6 +568,31 @@ function AOHGameMode:OnPlayerChat(keys)
 			end
 		end	
 	end
+
+	if keys.text == item_trick_1 then
+		local plyID = keys.playerid
+		local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero()
+		if plyhero then
+			local Item = plyhero:GetItemInSlot(7)
+			if Item ~= nil and IsValidEntity(Item) then
+				if plyhero.Item then
+					if IsValidEntity(plyhero.Item) and Item ~= plyhero.Item then
+						plyhero:DropItemAtPositionImmediate(plyhero.Item, plyhero:GetAbsOrigin())
+					end
+				end		
+				plyhero.Item = Item
+				if plyhero:HasItemInInventory(plyhero.Item:GetName()) then
+					plyhero.Item:SetItemState(1)
+					local name_item = plyhero.Item:GetName()
+					name_item = string.gsub(name_item, "item_", "")
+					name_item = string.gsub(name_item, "_", " ")
+					Notifications:Top(plyID, {text="Set item ( "..name_item .." ), you can move that to any backpack slot or stash" , style={color="red"}, duration=12})
+					Notifications:Top(plyID, {text="Unequip/equip any other item to gain ( "..name_item .." ) stats" , style={color="yellow"}, duration=12})
+				end	
+			end
+		end	
+	end
+
 end
 
 

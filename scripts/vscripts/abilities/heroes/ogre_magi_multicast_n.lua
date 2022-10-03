@@ -350,6 +350,7 @@ function IsExcludeAbility(ability)
 		"enchantress_enchant",
 		"rubick_spell_steal",
 		"chaos_knight_phantasm",
+		"terrorblade_custom_reflection",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do
@@ -427,6 +428,7 @@ function IsExcludeAbility9(ability)
 		"enchantress_enchant",
 		"rubick_spell_steal",
 		"chaos_knight_phantasm",
+		"terrorblade_custom_reflection",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

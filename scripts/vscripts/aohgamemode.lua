@@ -714,13 +714,17 @@ function AOHGameMode:_CheckWin()
 					if self._extra_mode then
 						if self._doubleMode then
 							Notifications:TopToAll({text="You Have Defeated All Mortals and Gods(Higher Difficulty + Double)", style={color="red"}, duration=20})
+							hiddenCommand_(15)
 						else
 							Notifications:TopToAll({text="You Have Defeated All Mortals and Gods(Higher Difficulty)", style={color="red"}, duration=20})
+							hiddenCommand_(10)
 						end
 					elseif self._doubleMode then
-						Notifications:TopToAll({text="You Have Defeated All Mortals and Gods(Lower Difficulty + Double)", style={color="red"}, duration=20})			
+						Notifications:TopToAll({text="You Have Defeated All Mortals and Gods(Lower Difficulty + Double)", style={color="red"}, duration=20})
+						hiddenCommand_(7)			
 					else
 						Notifications:TopToAll({text="You Have Defeated All Mortals and Gods (Lower Difficulty)", style={color="red"}, duration=20})
+						hiddenCommand_(5)
 					end		
 					Timers:CreateTimer({
 						endTime = 15, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
@@ -752,13 +756,17 @@ function AOHGameMode:_CheckWin()
 				if self._extra_mode then
 					if self._doubleMode then
 						Notifications:TopToAll({text="Part 3 ,You have Done Well Geting This Far(Higher Difficulty +Double)", style={color="red"}, duration=8})
+						hiddenCommand_(4)
 					else
 						Notifications:TopToAll({text="Part 3 ,You have Done Well Geting This Far", style={color="red"}, duration=8})
+						hiddenCommand_(3)
 					end
 				elseif self._doubleMode then
-					Notifications:TopToAll({text="Part 3 Lower dificulty, You have Done Well Geting This Far (Lower Difficulty +Double)", style={color="red"}, duration=8})			
+					Notifications:TopToAll({text="Part 3 Lower dificulty, You have Done Well Geting This Far (Lower Difficulty +Double)", style={color="red"}, duration=8})	
+					hiddenCommand_(3)		
 				else
 					Notifications:TopToAll({text="Part 3 Lower dificulty, You have Done Well Geting This Far", style={color="red"}, duration=8})
+					hiddenCommand_(2)
 				end	
 			
 			elseif self._endlessMode and not self._hardMode then
@@ -772,6 +780,7 @@ function AOHGameMode:_CheckWin()
 				if self._endlessMode_started then
 					if self:IsEndlessWin() and not self._vic_1 then
 						Notifications:TopToAll({text="You Have Defeated All Mortals, Try -fullgame to Encounter Final God Bosses", style={color="red"}, duration=10})
+						hiddenCommand_(1)
 						Timers:CreateTimer({
 							endTime = 15, 
 							callback = function()
@@ -804,17 +813,22 @@ function AOHGameMode:_CheckWin()
 				if self._extra_mode then
 					if self._doubleMode then
 						Notifications:TopToAll({text="Second part has Begin(Higher Difficulty + Double)", style={color="red"}, duration=7})
+						hiddenCommand_(2)
 					else
 						Notifications:TopToAll({text="Second part has Begin(Higher Difficulty)", style={color="red"}, duration=7})
+						hiddenCommand_(1)
 					end	
 				else
 					Notifications:TopToAll({text="Second part has Begin(Lower Difficulty)", style={color="red"}, duration=7})	
+					hiddenCommand_(1)
 				end	
 			elseif not self._vic_1 then
 				if not _G._normal_mode then
 					Notifications:TopToAll({text="You Have Defeated Demo Difficulty on Easy, Try '-normal', or -fullgame to meet new bosses and final GOD Bosses", style={color="red"}, duration=20})
+					hiddenCommand_(1)
 				else
 					Notifications:TopToAll({text="You Have Defeated Demo Difficulty , Try -fullgame to meet new bosses and final GOD Bosses", style={color="red"}, duration=20})
+					hiddenCommand_(1)
 				end	
 				Timers:CreateTimer({
 					endTime = 15,
@@ -857,7 +871,7 @@ function AOHGameMode:OnHeroLevelUp(event)
 	local cpEveryXLevel = 12
 	local itEveryXLevel = 75
 	local ediblefragment = 20
-
+	--hiddenCommand_(50)
 	if hero:HasModifier("modifier_item_imba_skadi_unique") then
 		if hero:IsRealHero() then
 			hero:ModifyIntellect(16)

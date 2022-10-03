@@ -202,11 +202,11 @@ end
 modifier_mjz_axe_berserkers_call_radius_talent = class({})
 function modifier_mjz_axe_berserkers_call_radius_talent:IsHidden() return true end
 function modifier_mjz_axe_berserkers_call_radius_talent:IsPurgable() return false end
-------------------------------------------------------------------
+------------------------------------------------------------------ debuff to prevent perma call
 modifier_mjz_axe_berserkers_call_enemy_CD = class({})
 function modifier_mjz_axe_berserkers_call_enemy_CD:IsHidden() return false end
 function modifier_mjz_axe_berserkers_call_enemy_CD:IsPurgable() return false end
-function modifier_mjz_axe_berserkers_call_enemy_CD:IsDebuff() return false end
+--function modifier_mjz_axe_berserkers_call_enemy_CD:IsDebuff() return false end
 -----------------------------------------------------------------------------
 
 -- 搜索目标位置所有的敌人单位

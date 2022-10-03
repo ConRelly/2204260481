@@ -118,7 +118,7 @@ function GetNetworth(hero)
     end
 end
 
-function GetItemName(hero, slot)
+--[[ function GetItemName(hero, slot)
     local item = hero:GetItemInSlot(slot)
     if item then
         local itemName = item:GetAbilityName()
@@ -127,7 +127,7 @@ function GetItemName(hero, slot)
     else
         return ""
     end
-end
+end ]]
 
 --NOTE THAT THIS FUNCTION RELIES ON YOUR npc_items_custom.txt
 --having "ID" properly set to unique values (within your mod)
