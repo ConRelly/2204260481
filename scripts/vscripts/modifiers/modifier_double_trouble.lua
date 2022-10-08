@@ -16,7 +16,12 @@ function modifier_double_trouble:IsPurgable() return false end
 function modifier_double_trouble:OnCreated()
     self.solo_boss = false
     self.teleport_chance = 100
-    self:StartIntervalThink(1)
+    Timers:CreateTimer({
+        endTime = 15, 
+        callback = function()
+            self:StartIntervalThink(1)    
+        end
+    })
 end
 
 function modifier_double_trouble:OnIntervalThink()
@@ -25,7 +30,7 @@ function modifier_double_trouble:OnIntervalThink()
         if parent and IsValidEntity(parent) and parent:IsAlive() then
             if self.troble_active then
                 self.solo_boss = true
-                for _, unit in pairs(FindUnitsInRadius(DOTA_TEAM_BADGUYS, Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
+                for _, unit in pairs(FindUnitsInRadius(DOTA_TEAM_BADGUYS, Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD, FIND_ANY_ORDER, false)) do
                     if not unit:IsNull() and IsValidEntity(unit) and unit:IsAlive() then
                         if unit ~= parent then -- don't use :GetName()  or it will enable the solo_boss effects on 2 bosses with same name
                             if unit:GetUnitName() == "npc_boss_guesstuff_Moran" or unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
@@ -35,7 +40,7 @@ function modifier_double_trouble:OnIntervalThink()
                     end
                 end
             else
-                for _, unit in pairs(FindUnitsInRadius(DOTA_TEAM_BADGUYS, Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
+                for _, unit in pairs(FindUnitsInRadius(DOTA_TEAM_BADGUYS, Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD, FIND_ANY_ORDER, false)) do
                     if not unit:IsNull() and IsValidEntity(unit) and unit:IsAlive() then
                         if unit:GetUnitName() ~= parent:GetUnitName() then -- makes sure it does not activate on -double by removing self and copy of self
                             if unit:GetUnitName() == "npc_boss_guesstuff_Moran" or unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then

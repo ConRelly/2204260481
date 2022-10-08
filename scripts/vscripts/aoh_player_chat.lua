@@ -1,4 +1,5 @@
 require("lib/string")
+LinkLuaModifier("modifier_reload_bullet_channel_command", "heroes/hero_kardel/abilities", LUA_MODIFIER_MOTION_NONE)
 local count = 0
 local count2 = 0
 local count3 = 4
@@ -565,6 +566,25 @@ function AOHGameMode:OnPlayerChat(keys)
 					count3 = count3 - 1
 					Notifications:TopToAll({text= "Symbiosis SS Compatibility effect ON, comands left: " ..count3, style={color="green"}, duration=6})
 				end
+			end
+		end	
+	end
+
+	if keys.text == "-reload_buff" then
+		local plyID = keys.playerid
+		local hero = PlayerResource:GetPlayer(plyID):GetAssignedHero()
+		local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero():GetUnitName()
+		if plyhero and plyhero == "npc_dota_hero_sniper" then
+			if _G.reload_buff then
+				_G.reload_buff = false
+				hero:AddNewModifier(hero, nil, "modifier_reload_bullet_channel_command", {})
+				Notifications:Top(plyID, {text= "Reload Modifier buff is now Hidden", style={color="red"}, duration=6})
+			else
+				_G.reload_buff = true
+				if hero:HasModifier("modifier_reload_bullet_channel_command") then
+					hero:RemoveModifierByName("modifier_reload_bullet_channel_command")
+				end	
+				Notifications:Top(plyID, {text= "Reload Modifier buff is now Shown" , style={color="green"}, duration=6})
 			end
 		end	
 	end

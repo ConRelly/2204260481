@@ -10,6 +10,9 @@ LinkLuaModifier("modifier_hunting_mark", "heroes/hero_kardel/abilities", LUA_MOD
 
 LinkLuaModifier("modifier_kardel_hit_stun", "heroes/hero_kardel/abilities", LUA_MODIFIER_MOTION_NONE)
 
+LinkLuaModifier("modifier_reload_bullet_channel", "heroes/hero_kardel/abilities", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_reload_bullet_channel_command", "heroes/hero_kardel/abilities", LUA_MODIFIER_MOTION_NONE)
+
 
 -----------
 -- Shoot --
@@ -25,22 +28,38 @@ end
 function sniper_shoot:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
-
-	caster:RemoveModifierByName("modifier_sniper_bullet")
+	if caster:HasModifier("modifier_sniper_bullet") then
+		local modfi_snip = caster:FindModifierByName("modifier_sniper_bullet")
+		if modfi_snip then
+			local stacks = modfi_snip:GetStackCount()
+			if stacks > 1 then
+				modfi_snip:DecrementStackCount()
+			else
+				caster:RemoveModifierByName("modifier_sniper_bullet")
+			end	
+		end	
+	end	
+	--caster:RemoveModifierByName("modifier_sniper_bullet")
 
 	unit_counter = 0
 	local enemy_table = {}
 	table.insert(enemy_table, target)
 	local enemy_table_string = TableToStringCommaEnt(enemy_table)
-
+	Proj_Effect = ""
 	if caster:HasModifier("modifier_normal_bullets") then
-		Proj_Effect = "particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
+		if RollPercentage(_G._effect_rate) then
+			Proj_Effect = "particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
+		end	
 		Dodgeable = false
 	elseif caster:HasModifier("modifier_explosive_bullets") then
-		Proj_Effect = "particles/custom/abilities/heroes/kardel_bullets/expl_bullet_projectile.vpcf"
+		if RollPercentage(_G._effect_rate) then
+			Proj_Effect = "particles/custom/abilities/heroes/kardel_bullets/expl_bullet_projectile.vpcf"
+		end	
 		Dodgeable = true
 	elseif caster:HasModifier("modifier_shrapnel_bullets") then
-		Proj_Effect = "particles/custom/abilities/heroes/kardel_bullets/shrap_bullet_projectile.vpcf"
+		if RollPercentage(_G._effect_rate) then
+			Proj_Effect = "particles/custom/abilities/heroes/kardel_bullets/shrap_bullet_projectile.vpcf"
+		end	
 		Dodgeable = true
 	end
 
@@ -80,12 +99,12 @@ function sniper_shoot:OnProjectileHit_ExtraData(target, location, extradata)
 		if target:TriggerSpellAbsorb(self) then return end
 		instances_count = 2
 		base_damage = caster:GetAttackDamage() * (self:GetSpecialValueFor("norm_bullet") + talent_value(self:GetCaster(), "special_bonus_sniper_shoot_bullet_dmg")) / 100 / instances_count
-		Proj_Effect = "particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
+		--Proj_Effect = "particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
 		Dodgeable = false
 	elseif caster:HasModifier("modifier_explosive_bullets") then
 		instances_count = 1
 		base_damage = caster:GetAttackDamage() * (self:GetSpecialValueFor("expl_bullet") + talent_value(self:GetCaster(), "special_bonus_sniper_shoot_bullet_dmg")) / 100 / instances_count
-		Proj_Effect = "particles/custom/abilities/heroes/kardel_bullets/expl_bullet_projectile.vpcf"
+		--Proj_Effect = "particles/custom/abilities/heroes/kardel_bullets/expl_bullet_projectile.vpcf"
 		Dodgeable = true
 	elseif caster:HasModifier("modifier_shrapnel_bullets") then
 		if target:TriggerSpellAbsorb(self) then return end
@@ -93,7 +112,7 @@ function sniper_shoot:OnProjectileHit_ExtraData(target, location, extradata)
 		attacks_count = 8
 		local delay = 0.01
 		base_damage = caster:GetAttackDamage() * (self:GetSpecialValueFor("shrap_bullet") + talent_value(self:GetCaster(), "special_bonus_sniper_shoot_bullet_dmg")) / 100 / instances_count
-		Proj_Effect = "particles/custom/abilities/heroes/kardel_bullets/shrap_bullet_projectile.vpcf"
+		--Proj_Effect = "particles/custom/abilities/heroes/kardel_bullets/shrap_bullet_projectile.vpcf"
 		Dodgeable = true
 		for i = 1, attacks_count do
 			delay = delay + 0.02
@@ -237,11 +256,12 @@ function Explosive_Shot(caster, target, ability, damage)
 			victim = enemy_bg
 		})
 	end
-
-	local expl_pfx = ParticleManager:CreateParticle("particles/custom/abilities/heroes/kardel_bullets/expl_bullet.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
-	ParticleManager:SetParticleControl(expl_pfx, 0, target:GetAbsOrigin())
-	ParticleManager:SetParticleControl(expl_pfx, 2, Vector(explosive_bullet_bg, 1, 1))
-	ParticleManager:ReleaseParticleIndex(expl_pfx)
+	if RollPercentage(_G._effect_rate) then
+		local expl_pfx = ParticleManager:CreateParticle("particles/custom/abilities/heroes/kardel_bullets/expl_bullet.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+		ParticleManager:SetParticleControl(expl_pfx, 0, target:GetAbsOrigin())
+		ParticleManager:SetParticleControl(expl_pfx, 2, Vector(explosive_bullet_bg, 1, 1))
+		ParticleManager:ReleaseParticleIndex(expl_pfx)
+	end	
 	target:AddNewModifier(caster, ability, "modifier_kardel_hit_stun", {duration = 0.2})
 	target:EmitSoundParams("Hero_Gyrocopter.HomingMissile.Destroy", 1, 0.5, 0)
 end
@@ -270,16 +290,37 @@ function modifier_kardel_hit_stun:GetEffectName() return "particles/custom/abili
 function modifier_kardel_hit_stun:GetEffectAttachType() return PATTACH_OVERHEAD_FOLLOW end
 
 
+
 modifier_sniper_bullet = class({})
-function modifier_sniper_bullet:IsHidden() return true end
+function modifier_sniper_bullet:IsHidden() return false end
 function modifier_sniper_bullet:IsPurgable() return false end
 function modifier_sniper_bullet:RemoveOnDeath() return false end
+function modifier_sniper_bullet:GetTexture() return "custom/abilities/norm_bullet" end
+function modifier_sniper_bullet:GetCustomStackingCDR()
+	if self:GetParent():HasModifier("modifier_super_scepter") then
+		local stacks = self:GetStackCount()
+		if stacks > 50 then
+			stacks = 50
+		end
+		return stacks
+	else
+		return 0	
+	end	
+end
+
+modifier_reload_bullet_channel_command = class({})
+function modifier_reload_bullet_channel_command:IsHidden()return true end
+function modifier_reload_bullet_channel_command:IsPurgable() return false end
+function modifier_reload_bullet_channel_command:RemoveOnDeath() return false end
+
 
 modifier_normal_bullets = class({})
 function modifier_normal_bullets:IsHidden() return false end
 function modifier_normal_bullets:IsPurgable() return false end
 function modifier_normal_bullets:RemoveOnDeath() return false end
 function modifier_normal_bullets:GetTexture() return "custom/abilities/norm_bullet" end
+
+
 
 modifier_explosive_bullets = class({})
 function modifier_explosive_bullets:IsHidden() return false end
@@ -295,30 +336,84 @@ function modifier_shrapnel_bullets:GetTexture() return "custom/abilities/shrap_b
 function modifier_shrapnel_bullets:DeclareFunctions() return {MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE} end
 function modifier_shrapnel_bullets:GetModifierTotalDamageOutgoing_Percentage() return -20 end
 
+modifier_reload_bullet_channel = class({})
+function modifier_reload_bullet_channel:IsHidden() return not self:GetParent():HasModifier("modifier_reload_bullet_channel_command") end
+function modifier_reload_bullet_channel:IsPurgable() return false end
+function modifier_reload_bullet_channel:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+
 
 ---------------
 -- Reloading --
 ---------------
 reload_bullet = class({})
 function reload_bullet:GetChannelTime()
-	return self:GetSpecialValueFor("reload_time") - talent_value(self:GetCaster(), "special_bonus_kardel_reloading")
+	if self:GetCaster():HasModifier("modifier_super_scepter") then
+		return 0
+	else	
+		return self:GetSpecialValueFor("reload_time") - talent_value(self:GetCaster(), "special_bonus_kardel_reloading")
+	end	
+end
+function reload_bullet:GetBehavior()
+	if self:GetCaster():HasModifier("modifier_super_scepter") then
+		return DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE + DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL + DOTA_ABILITY_BEHAVIOR_IMMEDIATE + DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE
+	end
+	return DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE
 end
 function reload_bullet:OnAbilityPhaseStart() EmitSoundOn("Pre_Reload", self:GetCaster()) return true end
+function reload_bullet:OnSpellStart()
+	if IsServer() then
+		local caster = self:GetCaster()
+		if caster:HasModifier("modifier_super_scepter") then
+			caster:AddNewModifier(caster, self, "modifier_reload_bullet_channel", {duration = self:GetSpecialValueFor("reload_time") - talent_value(self:GetCaster(), "special_bonus_kardel_reloading")})
+		end	
+	end	
+end	
 function reload_bullet:OnChannelFinish(Interrupted)
 	if IsServer() then
 		local caster = self:GetCaster()
+		local ability = self
 		if not Interrupted then
-			if not (caster:HasModifier("modifier_normal_bullets") or caster:HasModifier("modifier_explosive_bullets") or caster:HasModifier("modifier_shrapnel_bullets")) then
+			self:reload_success(caster, ability)			
+--[[ 			if not (caster:HasModifier("modifier_normal_bullets") or caster:HasModifier("modifier_explosive_bullets") or caster:HasModifier("modifier_shrapnel_bullets")) then
 				caster:AddNewModifier(caster, self, "modifier_normal_bullets", {})
 			end
 			caster:AddNewModifier(caster, self, "modifier_sniper_bullet", {})
-			EmitSoundOn("End_Reload", caster)
+			EmitSoundOn("End_Reload", caster) ]]
 		else
 			StopSoundOn("Pre_Reload", caster)
 		end
 	end
 end
 
+
+function reload_bullet:reload_success(caster, ability)
+	if IsServer() then
+		if caster and caster:IsAlive() then
+			if not (caster:HasModifier("modifier_normal_bullets") or caster:HasModifier("modifier_explosive_bullets") or caster:HasModifier("modifier_shrapnel_bullets")) then
+				caster:AddNewModifier(caster, ability, "modifier_normal_bullets", {})
+			end	
+			if not caster:HasModifier("modifier_sniper_bullet") then
+				caster:AddNewModifier(caster, ability, "modifier_sniper_bullet", {})
+				caster:FindModifierByName("modifier_sniper_bullet"):SetStackCount(1)
+			else
+				local modif = caster:FindModifierByName("modifier_sniper_bullet")
+				if modif then
+					local stacks = modif:GetStackCount()
+					if stacks < 1000 then
+						modif:IncrementStackCount()
+					end	
+				end	
+			end	
+			EmitSoundOn("End_Reload", caster)
+		end	
+	end	
+end	
+function modifier_reload_bullet_channel:OnDestroy()
+	local ability = self:GetAbility()
+	if ability then
+		ability:reload_success(self:GetCaster(), ability)
+	end	
+end
 
 --------------------
 -- Change Bullets --
@@ -371,7 +466,7 @@ function modifier_change_bullets_type:OnIntervalThink()
 	if self:GetCaster():HasModifier("modifier_sniper_bullet") then
 		self:GetAbility():SetActivated(true)
 		self:GetCaster():FindAbilityByName("sniper_shoot"):SetActivated(true)
-		self:GetCaster():FindAbilityByName("reload_bullet"):SetActivated(false)
+		--self:GetCaster():FindAbilityByName("reload_bullet"):SetActivated(false)
 	else
 		self:GetAbility():SetActivated(false)
 		self:GetCaster():FindAbilityByName("sniper_shoot"):SetActivated(false)
@@ -551,7 +646,7 @@ end
 
 modifier_hunting_mark = class({})
 function modifier_hunting_mark:IsHidden() return false end
-function modifier_hunting_mark:IsPurgable() return true end
+function modifier_hunting_mark:IsPurgable() return false end
 function modifier_hunting_mark:OnCreated()
 	local effect_cast = ParticleManager:CreateParticleForTeam("particles/custom/abilities/heroes/kardel_hunting_mark/hunting_mark.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent(), self:GetCaster():GetTeamNumber())
 	ParticleManager:SetParticleControlEnt(effect_cast, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)

@@ -2176,10 +2176,29 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * Axe Call will add a debuff on the enemy that prevents that enemy to answer another call until the buff expires. can't have call almost 100% uptime on an enemy anymore.
 * Added shard effect for Axe berzerker call and increased its max duration to 5 sec.
 * Terror blade Q can't be multicasted or mimic anymore.
-* Changed some talents, valve keeps chanings skills and talents soruce so new talents from valve will overide the old value(if is the same talent).
+* Changed some talents, valve keeps changing skills and talents soruce so new talents from valve will overide the old value(if is the same talent).
 
 
 
+* Fixed Juggernaut missing talent and replaced 2 talents with omnislash ones.
+* Buffed Zanto Gari's last level stats, aghanim mana cost from 25% to 10%, and the talent.
+* Dazzle shallow grave cd is the same on all lvls now.
+
+
+
+
+* Fix CM Q intrerupting channeling.
+* Dazzle shadow wave how now less max targets and can't me multicasted.
+* Fix Double Trouble solo boss effect being trigger temporary (when other boss is outofworld or invul)
+* Omniknight Purification has an extra SS effect, reduced the Raw dmg/heal numbers but increased the %HP talent, now scales with spell amp too (only 30%). dmg is dealt in 2 instances.
+* Hammer of purity does not intrerupt movement now.
+* Nature Guise passive now has lvl scalling element.
+* Kardel(sniper form2):
+--Reload bullet now can be used multiple times before shoting (each use will add 1 more bullet)
+--Added new Super Scepter effects for Kardel(sniper form 2)
+--Hunting Mark now is undispelable
+--Now Starts with Multicast(N)
+* Multicast animation and sound effects will now proc at maxt 1 time/s for each player, and now is affected by the '-effect_rate nr' command in case you want even less animation on that.
 
 
 

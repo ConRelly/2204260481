@@ -71,6 +71,7 @@ function Purification(caster, ability, target, bkb_duration)
 	EmitSoundOn("Hero_Omniknight.Purification", caster)
 
 	heal_amount = heal_amount + (caster:FindTalentValue("special_bonus_omniknight_purifiception_heal") * target:GetMaxHealth() / 100)
+	local damage = heal_amount
 	radius = radius + (caster:FindTalentValue("special_bonus_omniknight_purifiception_radius"))
 	if IsServer() then
 		if HasSuperScepter(caster) then
@@ -93,6 +94,7 @@ function Purification(caster, ability, target, bkb_duration)
 				local duration = super_scepter_duration + (stacks * 0.1)
 				target:AddNewModifier(caster, self, "modifier_black_king_bar_immune", {duration = duration})				
 			end	
+			damage = heal_amount + (caster:FindTalentValue("special_bonus_omniknight_purifiception_heal") * target:GetMaxHealth() / 100)
 		end
 	end
 
@@ -109,14 +111,16 @@ function Purification(caster, ability, target, bkb_duration)
 	local spell_power = caster:GetSpellAmplification(false)
 
 	local heal = heal_amount
-	local damage = heal
+
+	damage = damage * (1 + caster:GetSpellAmplification(false) / 4)
 	target:Heal(heal, caster)
 	SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, target, heal, nil)
 
 	local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 	for _,enemy in pairs(enemies) do
 		if not enemy:IsMagicImmune() then
-			ApplyDamage({victim = enemy, attacker = caster, damage = damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION, ability = ability })
+			ApplyDamage({victim = enemy, attacker = caster, damage = damage/2, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION, ability = ability })
+			ApplyDamage({victim = enemy, attacker = caster, damage = damage/2, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION, ability = ability })
 
 			local particle_hit_fx = ParticleManager:CreateParticle(particle_hit, PATTACH_ABSORIGIN_FOLLOW, enemy)
 			ParticleManager:SetParticleControlEnt(particle_hit_fx, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)

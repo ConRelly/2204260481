@@ -1,4 +1,5 @@
 LinkLuaModifier("modifier_ogre_magi_multicast_n", "abilities/heroes/ogre_magi_multicast_n", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_ogre_magi_multicast_n_no_animation", "abilities/heroes/ogre_magi_multicast_n", LUA_MODIFIER_MOTION_NONE)
 
 ogre_magi_multicast_n = class({})
 function ogre_magi_multicast_n:GetIntrinsicModifierName() return "modifier_ogre_magi_multicast_n" end
@@ -220,13 +221,25 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 	end
 end
 
+
+modifier_ogre_magi_multicast_n_no_animation = class({})
+function modifier_ogre_magi_multicast_n_no_animation:IsHidden() return true end
+function modifier_ogre_magi_multicast_n_no_animation:IsPurgable() return false end
+
+
 function modifier_ogre_magi_multicast_n:Multicast_FX(count, casts)
 	local caster = self:GetCaster()
 	local ten = 0
 	local counter_speed = 2
+	if caster:HasModifier("modifier_ogre_magi_multicast_n_no_animation") then return end
 
+	if not caster:HasModifier("modifier_ogre_magi_multicast_n_no_animation") then	
+		local duration = 100 / _G._effect_rate		
+		caster:AddNewModifier(caster, self:GetAbility(), "modifier_ogre_magi_multicast_n_no_animation", {duration = duration})
+	end
 	if count == casts then counter_speed = 1 end
 	if count - 1 > 3 then sound = 3 else sound = count end
+
 
 --[[
 	if effect_cast and (count - 1) > 1 and (count - 1) < (casts + 1) then
@@ -351,6 +364,7 @@ function IsExcludeAbility(ability)
 		"rubick_spell_steal",
 		"chaos_knight_phantasm",
 		"terrorblade_custom_reflection",
+		"dazzle_shadow_wave",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do
@@ -429,6 +443,7 @@ function IsExcludeAbility9(ability)
 		"rubick_spell_steal",
 		"chaos_knight_phantasm",
 		"terrorblade_custom_reflection",
+		"dazzle_shadow_wave",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

@@ -110,6 +110,7 @@ function AOHGameMode:InitGameMode()
 	_G.super_courier = {false, false, false, false, false}
 	_G._challenge_bosss = 0
 	_G._effect_rate = 100
+	_G.reload_buff = true
 	_G._stalker_chance = 1
 	_G._symbiosisOn = true	
 	self._endlessMode = false

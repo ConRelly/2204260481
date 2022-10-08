@@ -26,11 +26,17 @@ function modifier_class:DeclareFunctions()
 end
 
 function modifier_class:GetModifierConstantHealthRegen( )
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor('health_regen') end
+	if self:GetAbility() then
+		local lvl = 1 + (self:GetCaster():GetLevel() * (self:GetAbility():GetSpecialValueFor('bonus_lvl_ptc') /100 ))
+		return self:GetAbility():GetSpecialValueFor('health_regen') * lvl
+ 	end
 end
 
 function modifier_class:GetModifierMoveSpeedBonus_Percentage( )
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor('movement_speed') end
+	if self:GetAbility() then
+		local lvl = 1 + (self:GetCaster():GetLevel() * (self:GetAbility():GetSpecialValueFor('bonus_lvl_ptc') /100 ))	
+		return self:GetAbility():GetSpecialValueFor('movement_speed') * lvl
+	end	
 end
 
 if IsServer() then
@@ -63,7 +69,9 @@ end
 
 function modifier_health:GetModifierHealthBonus( )
 	if IsServer() then
-		local health = GetTalentSpecialValueFor(self:GetAbility(), 'health')
+		local lvl = 1 + (self:GetCaster():GetLevel() * (self:GetAbility():GetSpecialValueFor('bonus_lvl_ptc') /100 ))
+		local health = GetTalentSpecialValueFor(self:GetAbility(), 'health') * lvl
+
 		if self:GetStackCount() ~= health then
 			self:SetStackCount(health)
 		end

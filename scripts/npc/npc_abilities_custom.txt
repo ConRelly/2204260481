@@ -3112,6 +3112,27 @@
 		}
 	}
 }
+
+"special_bonus_cleave_85"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"					"special_bonus_cleave_40"													
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"value"				"40"
+		}
+	}
+}
+
 "special_bonus_50_crit_175"
 {
 	"BaseClass"						"special_bonus_30_crit_2"
@@ -32474,7 +32495,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"						"1.5"
+				"value"						"1.3"
 				"ad_linked_abilities"			"dzzl_good_juju"				
 			}
 		}
@@ -33061,8 +33082,13 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"movement_speed"			"14 18 24 28 34 46 60"
+				"movement_speed"			"14 18 24 28 34 40 50"
 			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_lvl_ptc"					"3"
+			}			
 		}
 	}
 	"special_bonus_unique_mjz_treant_natures_guise_health"
@@ -41648,8 +41674,8 @@
 		"RequiredLevel"					"10"
 		"LevelsBetweenUpgrades"			"10"
 		"AbilityUpgradeGoldCost"		"0 0 0 0 0 0 25000"
-		"AbilityCharges"				"2 2 2 2 2 3 4"
-		"AbilityChargeRestoreTime"		"32 30 28 26 24 22 20"
+		"AbilityCharges"				"2 2 2 2 2 3 5"
+		"AbilityChargeRestoreTime"		"32 30 28 26 24 22 15"
 		"HasScepterUpgrade"				"1"
 		"HasShardUpgrade"				"1"
 		"AbilitySound"					"Hero_VoidSpirit.AstralStep.Start"
@@ -41666,11 +41692,11 @@
 		{
 			"radius"				"270"
 			"min_travel_distance"	"10"
-			"max_travel_distance"	"1000 1250 1500 1750 2000 2250 2500"
+			"max_travel_distance"	"1000 1250 1500 1750 2000 2250 3500"
 			"pop_damage_delay"		"0.3"
 			"pop_damage"
 			{
-				"value"				"200 1500 3500 7000 15000 35000 100000"
+				"value"				"200 1500 3500 7000 15000 35000 140000"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"attack_speed_multi"	"1"
@@ -41679,7 +41705,7 @@
 			"hidden_ones_duration"	"0.5"
 			"pt_base_attack"		"120"
 			"shard_as"				"25"
-			"mana_cost_scepter"		"25"
+			"mana_cost_scepter"		"10"
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -41698,7 +41724,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"200"
+				"value"					"400"
 			}
 		}
 	}
@@ -41894,7 +41920,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"heal_amount"				"620 3200 12280 26500 44000 52000 94000"
+				"heal_amount"				"620 3200 9280 16500 24000 42000 64000"
 			}
 			"02"
 			{
@@ -41938,7 +41964,7 @@
 			"01"
 			{
 				"var_type"				  "FIELD_INTEGER"
-				"value"						"25"
+				"value"						"75"
 			}
 		}
 	}

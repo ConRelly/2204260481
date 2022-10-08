@@ -169,7 +169,7 @@ function ChangeHeroKardel(keys)
 			caster:RemoveAbility("mjz_sniper_assassinate")
 		end
 
-
+		caster:AddAbility("ogre_magi_multicast_n")
 
 -- Talents
 	-- 10 Level

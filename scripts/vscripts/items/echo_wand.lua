@@ -283,6 +283,7 @@ if IsServer() then
 		rubick_spell_steal = true,
 		chaos_knight_phantasm = true,
 		terrorblade_custom_reflection = true,
+		dazzle_shadow_wave = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,
@@ -423,23 +424,24 @@ if IsServer() then
 												self.echo:OnSpellStart()
 											end
 
+											if not attacker:HasModifier("modifier_ogre_magi_multicast_n_no_animation") then
+												local counter_speed = 2
 
-											local counter_speed = 2
+												if count == casts + 1 then
+													counter_speed = 1
+												end
+												if count - 1 > 3 then sound = 3 else sound = count end
 
-											if count == casts + 1 then
-												counter_speed = 1
-											end
-											if count - 1 > 3 then sound = 3 else sound = count end
+												local effect_cast = ParticleManager:CreateParticle("particles/custom/abilities/heroes/ogre_magi_multicast/ogre_magi_multicast.vpcf", PATTACH_OVERHEAD_FOLLOW, attacker)
+												ParticleManager:SetParticleControl(effect_cast, 1, Vector(count, counter_speed, 0))
+												ParticleManager:SetParticleControl(effect_cast, 2, Vector(0, counter_speed, 0))
 
-											local effect_cast = ParticleManager:CreateParticle("particles/custom/abilities/heroes/ogre_magi_multicast/ogre_magi_multicast.vpcf", PATTACH_OVERHEAD_FOLLOW, attacker)
-											ParticleManager:SetParticleControl(effect_cast, 1, Vector(count, counter_speed, 0))
-											ParticleManager:SetParticleControl(effect_cast, 2, Vector(0, counter_speed, 0))
-
-											local sound_line = math.min(sound -1, 3)
-											local sound_cast = "Hero_OgreMagi.Fireblast.x" .. sound_line
-											if sound_line > 0 then
-												attacker:EmitSoundParams(sound_cast, 0, 0.3, 0)
-											end
+												local sound_line = math.min(sound -1, 3)
+												local sound_cast = "Hero_OgreMagi.Fireblast.x" .. sound_line
+												if sound_line > 0 then
+													attacker:EmitSoundParams(sound_cast, 0, 0.3, 0)
+												end
+											end	
 										end
 									end)
 								end

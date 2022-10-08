@@ -659,7 +659,7 @@
 
 //Omniknight
 	"dota_tooltip_ability_purification"					"Purification"
-	"dota_tooltip_ability_purification_description"		"Instantly heals a friendly unit and damaging all nearby enemy units.\n<h1><font color='#FCEF8E'>Purify</font></h1>Blesses the target with a buff that amplifies all heals and health regeneration it receives by %buff_heal_amp_pct%%% for each stack of the buff. Whenever the target recovers %buff_stack_threshold% or more of its health from any source, it gains a stack.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Gain Spell Immunity for 1.75 seconds and +0,2 for each Purify stack.<br>Half Duration from Guardian Angel."
+	"dota_tooltip_ability_purification_description"		"Instantly heals a friendly unit and damaging all nearby enemy units.\n<h1><font color='#FCEF8E'>Purify</font></h1>Blesses the target with a buff that amplifies all heals and health regeneration it receives by %buff_heal_amp_pct%%% for each stack of the buff. Whenever the target recovers %buff_stack_threshold% or more of its health from any source, it gains a stack.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Gain Spell Immunity for 1.75 seconds and +0,2 for each Purify stack.<br>Half Duration from Guardian Angel. Purification talent bonus dmg from Hp will count as 2x.\n<font color='#F17C26'>Uses only 25% of spell amp.</font>"
 	"dota_tooltip_ability_purification_lore"	"Priests of the Omniscience are adept at removing impurities from fellow warriors."
 	"dota_tooltip_ability_purification_note0"	"Stacks of Purifiception can only be gained through actual healing done."
 	"dota_tooltip_ability_purification_heal_amount"			"HEAL/DAMAGE:"
@@ -992,7 +992,7 @@
 
 // Kardel
 	"DOTA_Tooltip_ability_sniper_shoot"					"Shoot"
-	"DOTA_Tooltip_ability_sniper_shoot_Description"		"Makes a shot with the appropriate bullet. \n<font color='#FF423F'>Damage of all bullets depends on the BASE damage, and the range depends on the attack radius.</font> \n<h1><font color='#DE3163'>Super Scepter</font></h1>For every Hit: <font color='#BD7D93'>Normal Shot</font> has 45% chance(x2) to gain 1 base Agi and <font color='#ECF47C'>Explosive Shot</font> has 40% chance to gain 1 base Int."
+	"DOTA_Tooltip_ability_sniper_shoot_Description"		"Makes a shot with the appropriate bullet. \n<font color='#FF423F'>Damage of all bullets depends on the BASE damage, and the range depends on the attack radius.</font> \n<h1><font color='#DE3163'>Super Scepter</font></h1>For every Hit: <font color='#BD7D93'>Normal Shot</font> has 45% chance(x2) to gain 1 base Agi and <font color='#ECF47C'>Explosive Shot</font> has 40% chance to gain 1 base Int. \n<font color='#F17C26'>Host can Type '-effect_rate 1-20' (a number from 1-20) to reduce the effect rate. </font> "
 	"DOTA_Tooltip_ability_sniper_shoot_Lore"			"Kardel is one of the best shooters of his people — the gun seemed to be an extension of his hand, and the shot was her touch."
 	"DOTA_Tooltip_ability_sniper_shoot_Note0"			"1) Does not work on critical hits."
 	"DOTA_Tooltip_ability_sniper_shoot_Note1"			"2) Normal bullets instantly kill illusions."
@@ -1002,9 +1002,13 @@
 	"DOTA_Tooltip_ability_sniper_shoot_shrap_bullet"		"%Fragment bullet Damage:"
 
 	"DOTA_Tooltip_ability_reload_bullet"					"Reloading"
-	"DOTA_Tooltip_ability_reload_bullet_Description"		"Loads the selected cartridge type."
+	"DOTA_Tooltip_ability_reload_bullet_Description"		"Loads the selected cartridge type.\n<font color='#F17C26'>Type '-reload_buff' to hidde/show reload modifier</font>  \n<h1><font color='#DE3163'>Super Scepter</font></h1> Channel does not intrerupt you anymore and can be done in paralel(limited by the skill cd). Every Bulet(stack) gives 1% CDR (max 50%)."
 	"DOTA_Tooltip_ability_reload_bullet_Lore"			"A necessary skill that life can depend on."
 	"DOTA_Tooltip_ability_reload_bullet_reload_time"		"Reload time:"
+	"DOTA_Tooltip_modifier_reload_bullet_channel"          "Reload"
+	"DOTA_Tooltip_modifier_sniper_bullet"               "Sniper Bullets"
+	"DOTA_Tooltip_modifier_sniper_bullet_Description"               "Consumes an Sniper Bullet with each ability shot, Mimic mace and multicast does not require bullets but they will cost you bullets on proc."
+
 
 	"DOTA_Tooltip_ability_change_bullets_type"					"Change Bullet"
 	"DOTA_Tooltip_ability_change_bullets_type_Description"		"Changes the type of bullets: <br><font color='#BD7D93'>Normal</font> > <font color='#ECF47C'>Explosive</font> > <font color='#5F22DF'>Fragment</font> \n<h1><font color='#BD7D93'>Normal bullets</font></h1> Has 2 damage phases. <br>Deals <font color='#d8ae53'>Pure</font> damage. <br>Dodgeable: <font color='#E86F6F'>No</font> <br>Attack Modifiers: <font color='#70EA72'>Yes</font> <br>Blocked by Linken's Sphere: <font color='#70EA72'>Yes</font> <br>Pierces spell immunity: <font color='#70EA72'>Yes</font> \n<h1><font color='#ECF47C'>Explosive bullets</font></h1> Has 1 damage phases. <br>Deals <font color=\"#ae2f28\">Physical</font> (radius - %expl_phys_radius%) and <font color=\"#5b93d1\">Magical</font> (radius - %expl_magic_radius%) damage. <br>Dodgeable: <font color='#70EA72'>Yes</font> <br>Attack Modifiers: <font color='#E86F6F'>No</font> <br>Blocked by Linken's Sphere: <font color='#E86F6F'>No</font> <br>Pierces spell immunity: <font color='#70EA72'>Yes</font>/<font color='#E86F6F'>No</font> \n<h1><font color='#5F22DF'>Fragment bullets</font></h1> Has 8 damage phases for normal attacks and 2 damage instances for ability. <br>Deals mixed damage. <br>Dodgeable: <font color='#70EA72'>Yes</font> <br>Attack Modifiers: <font color='#70EA72'>Yes</font> <br>Blocked by Linken's Sphere: <font color='#70EA72'>Yes</font> <br>Pierces spell immunity: <font color='#70EA72'>Yes</font>"
@@ -4370,7 +4374,7 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 	"DOTA_Tooltip_ability_tiny_tree_grab_bat_increase"						"BASE ATTACK TIME Reduction:"
 
 	"DOTA_Tooltip_ability_mjz_treant_natures_guise"					"Nature's Guise"
-	"DOTA_Tooltip_ability_mjz_treant_natures_guise_Description"		"Blessed by nature, increases maximum health and health regen and movement speed."
+	"DOTA_Tooltip_ability_mjz_treant_natures_guise_Description"		"Blessed by nature, increases maximum health and health regen and movement speed. All ability stats are increased by %bonus_lvl_ptc%%% for each lvl you have."
 	"DOTA_Tooltip_ability_mjz_treant_natures_guise_health"			"BONUS HEALTH:"
 	"DOTA_Tooltip_ability_mjz_treant_natures_guise_health_regen"	"BONUS HEALTH REGEN:"
 	"DOTA_Tooltip_ability_mjz_treant_natures_guise_movement_speed"	"%MOVEMENT SPEED:"
@@ -6775,7 +6779,7 @@ You can't target yourself."
 "DOTA_Tooltip_Ability_ogre_magi_custom_multicast_note0"								"Charged Conduit cannot be multicast"
 
 "DOTA_Tooltip_Ability_ogre_magi_multicast_n"					"<font color='#f2da5b'>Multicast(N)</font>"
-"DOTA_Tooltip_Ability_ogre_magi_multicast_n_Description"		"Enables Ogre Magi to cast his abilities (No Ultimates) and items multiple times with each use. \n<h1><font color='#7A19CF'>Mimic Mace</font></h1>Mimic Mace skills (including ultimates) will have a chance for extra multicast from 1 to 4 (25/15/10/5%) \n<h1><font color='#DE3163'>Super Scepter</font></h1>Doubles the Chance for <font color='#7A19CF'>Mimic Mace</font> to multicast."
+"DOTA_Tooltip_Ability_ogre_magi_multicast_n_Description"		"Enables Ogre Magi to cast his abilities (No Ultimates) and items multiple times with each use. \n<h1><font color='#7A19CF'>Mimic Mace</font></h1>Mimic Mace skills (including ultimates) will have a chance for extra multicast from 1 to 4 (25/15/10/5%) \n<h1><font color='#DE3163'>Super Scepter</font></h1>Doubles the Chance for <font color='#7A19CF'>Mimic Mace</font> to multicast.\n<font color='#F17C26'>type(host only) '-effect_rate nr' (nr = 1-20) to reduce the frequency of the animation</font> "
 "DOTA_Tooltip_Ability_ogre_magi_multicast_n_multicast_2_times"		"%2X CAST CHANCE:"
 "DOTA_Tooltip_Ability_ogre_magi_multicast_n_multicast_3_times"		"%3X CAST CHANCE:"
 "DOTA_Tooltip_Ability_ogre_magi_multicast_n_multicast_4_times"		"%4X CAST CHANCE:"
