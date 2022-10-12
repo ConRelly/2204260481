@@ -19,6 +19,8 @@ function modifier_infinite_health:OnCreated()
     
     self:StartIntervalThink(1)
 end
+
+
 function modifier_infinite_health:OnDestroy()
     if IsServer() then
         if self:GetParent() then
@@ -108,6 +110,17 @@ function Drop_gold_bag(unit, nGold)
         newItem:LaunchLoot(false, 300, 0.75, dropTarget)
     end   
 end    
+
+function create_item_drop(item_name, pos)
+	local item = CreateItem(item_name, nil, nil)
+	item:SetPurchaseTime(0)
+	item:SetStacksWithOtherOwners(true)
+
+	local drop = CreateItemOnPositionSync(pos, item)
+	item:LaunchLoot(false, 300, 0.75, pos)
+	drop.Holdout_IsLootDrop = true
+end
+
 
 
 function modifier_infinite_health:DeclareFunctions()

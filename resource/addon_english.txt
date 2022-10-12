@@ -4373,6 +4373,7 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 	
 	"DOTA_Tooltip_ability_tiny_tree_grab_bat_increase"						"BASE ATTACK TIME Reduction:"
 
+
 	"DOTA_Tooltip_ability_mjz_treant_natures_guise"					"Nature's Guise"
 	"DOTA_Tooltip_ability_mjz_treant_natures_guise_Description"		"Blessed by nature, increases maximum health and health regen and movement speed. All ability stats are increased by %bonus_lvl_ptc%%% for each lvl you have."
 	"DOTA_Tooltip_ability_mjz_treant_natures_guise_health"			"BONUS HEALTH:"
@@ -4415,6 +4416,7 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 	"DOTA_Tooltip_ability_mjz_undying_punch_Note0"				""
 	"DOTA_Tooltip_ability_mjz_undying_punch_hp_leech_percent"	"%Max Health: "
 		
+
 	"DOTA_Tooltip_ability_mjz_ursa_earthshock"					"Earthshock"
 	"DOTA_Tooltip_ability_mjz_ursa_earthshock_Description"		"Ursa leaps forward %hop_distance% units and slams the earth, causing a powerful shock to damage and slow all enemy units in a nearby area for %abilityduration% seconds."
 	"DOTA_Tooltip_ability_mjz_ursa_earthshock_Lore"				"The very steps of a male ursine shake the ground as well as the resolve of opposing warriors."

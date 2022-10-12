@@ -82,6 +82,8 @@ function modifier_mjz_tidebringer:OnAttackStart(params)
 		end
 	end
 end
+
+
 function modifier_mjz_tidebringer:OnAttackLanded(params)
 	local ability = self:GetAbility()
 	if self:GetParent():PassivesDisabled() then return end
