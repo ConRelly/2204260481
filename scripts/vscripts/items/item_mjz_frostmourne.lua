@@ -48,6 +48,10 @@ function HealthAttack(event)
     if not IsServer() then return end
     local ability = event.ability
     local caster = event.caster
+    local dmg_flag = DOTA_DAMAGE_FLAG_NONE
+    if caster:HasModifier("modifier_super_scepter") then
+        dmg_flag = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR
+    end  
     if caster:IsRealHero() and ability:IsCooldownReady() then
         local health_damage_pct = event.health_damage_pct
         ApplyDamage({
@@ -55,7 +59,8 @@ function HealthAttack(event)
             victim = event.target,
             attacker = event.caster,
             damage = event.target:GetHealth() * health_damage_pct,
-            damage_type = DAMAGE_TYPE_PHYSICAL
+            damage_type = DAMAGE_TYPE_PHYSICAL,
+            damage_flags = dmg_flag
         })
         if caster:HasModifier("modifier_super_scepter") then
             local caster_attack = caster:GetAverageTrueAttackDamage(caster)

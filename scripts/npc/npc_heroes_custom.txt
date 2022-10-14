@@ -565,6 +565,7 @@
 		"Ability14"			"special_bonus_evasion_40"
 		"Ability15"			"special_bonus_unique_mjz_poison_sting_claw_damage"
 		"Ability16"			"special_bonus_unique_mjz_life_stealer_feast_strength"
+		"Ability17"         "special_bonus_unique_lifestealer_rage"
 
 		"AttributeStrengthGain"		"11"
 		"AttributeAgilityGain"		"5.5"

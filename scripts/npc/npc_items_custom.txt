@@ -12400,7 +12400,7 @@
 			"29"						
 			{
 				"var_type"	  				"FIELD_INTEGER"
-				"healt_reg_mult_dmg"		"5"
+				"healt_reg_mult_dmg"		"21"
 			}
 			"30"						
 			{
@@ -23325,6 +23325,7 @@
 		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilitySpecial"

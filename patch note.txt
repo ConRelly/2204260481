@@ -2193,13 +2193,15 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * Omniknight Purification has an extra SS effect, reduced the Raw dmg/heal numbers but increased the %HP talent, now scales with spell amp too (only 30%). dmg is dealt in 2 instances.
 * Hammer of purity does not intrerupt movement now.
 * Nature Guise passive now has lvl scalling element.
+* Octarine Core now works with the extra slot.
 * Kardel(sniper form2):
 --Reload bullet now can be used multiple times before shoting (each use will add 1 more bullet)
 --Added new Super Scepter effects for Kardel(sniper form 2)
 --Hunting Mark now is undispelable
 --Now Starts with Multicast(N)
+* Frostmourne SS effect -ignores base armor, now affects both the extra dmg and the original frostbie dmg, the hp regen in dmg from 5x to 21x.
 * Multicast animation and sound effects will now proc at maxt 1 time/s for each player, and now is affected by the '-effect_rate nr' command in case you want even less animation on that.
-
+* Str now gives 8x more regen (from 0.05 to 0.4)
 
 
 

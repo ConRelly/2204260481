@@ -270,7 +270,8 @@ if IsServer() then
 		"mjz_clinkz_death_pact",
 		"custom_side_gunner",
         "medusa_custom_stone_arrows",
-        "brewmaster_drunken_brawler",                             
+        "brewmaster_drunken_brawler", 
+        "grow_strong",                            
     
         }
         local newAbilityName = abilityList[ RandomInt(1, #abilityList) ]

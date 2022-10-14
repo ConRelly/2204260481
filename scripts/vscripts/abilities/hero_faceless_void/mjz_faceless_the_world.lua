@@ -185,7 +185,7 @@ function modifier_mjz_faceless_the_world_aura_effect_enemy:DeclareFunctions()
 end
 function modifier_mjz_faceless_the_world_aura_effect_enemy:GetModifierIncomingDamage_Percentage()
 	if self:GetAbility() and self:GetParent() then
-		if not self:GetParent():HasModifier("modifier_mjz_windrunner_powershot_debuff") then
+		if not self:GetParent():HasModifier("modifier_mjz_windrunner_powershot_debuff") or not self:GetParent():HasModifier("modifier_undying_flesh_golem_slow") then
 			return self:GetAbility():GetSpecialValueFor("bonus_stuf")
 		end
 	end

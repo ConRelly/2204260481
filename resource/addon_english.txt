@@ -3447,6 +3447,8 @@
 "DOTA_Tooltip_ability_mjz_life_stealer_rage_Lore"				"The madness and brutality of N'aix makes him a vicious and unrelenting foe in combat."
 "DOTA_Tooltip_ability_mjz_life_stealer_rage_Note0"				"Upon casting, many buffs and debuffs will be removed."	
 
+"DOTA_Tooltip_ability_special_bonus_unique_lifestealer_rage"    "+{s:value}s Rage Duration" 
+
 
 	"DOTA_Tooltip_ability_mjz_lina_fiery_soul"				"Fiery Soul"
 	"DOTA_Tooltip_ability_mjz_lina_fiery_soul_Description"	"Grants bonus attack speed and movement speed and spell damage each time Lina casts a spell. Stacks with itself. Lasts %stack_duration% seconds."
@@ -9024,7 +9026,7 @@ Required Level: %required_level%
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Description"			"<h1>Active: Frost Storm</h1>Encases an enemy unit in ice, prohibiting movement and attack, while dealing damage over time.<br><br>Damage per Second: %frostbite_damage_per_second%<br>Hero Duration: %frostbite_duration_hero% sec.<br>Creep Duration: %frostbite_duration_creep% sec.
 	\n<h1>Passive: Cold Attack</h1>Attacks lower enemy attack speed by %debuff_attack_speed% and movement speed by %debuff_move_speed_pct%%%.<br><br>Duration: %debuff_duration% 
 	\n<h1>Passive: Pure Lifesteal</h1> Has %proc_chance%%% chance to Heal the attacker for %attack_lifesteal%%% of attack damage.
-	\n<h1><font color='#0597EB'>Passive: Frostbite</font></h1><font color='lightblue'>On attack When cooldown is rdy deals 7%% of the target current hp in physical dmg and puts the item on a 4s CD.</font>\n<h1><font color='#DE3163'>Super Scepter</font></h1><font color='#0597EB'>Frostbite</font> Now deals an aditional instance of Damage that Ignores Base Armor(attack dmg + %speed_mult_dmg% x movement speed + %healt_reg_mult_dmg% x Hp regen). <font color='#6CDB16'>SpeedTraining</font>: For every <font color='#0597EB'>Frostbite</font> trigger gain %bonus_base_agi% Base Agility, additionally if your MS is above 5k your bonus base agi will increase by %bonus_base_agi% and after that will increase by %bonus_base_agi% for every 10k MS."
+	\n<h1><font color='#0597EB'>Passive: Frostbite</font></h1><font color='lightblue'>On attack When cooldown is rdy deals 7%% of the target current hp in physical dmg and puts the item on a 4s CD.</font>\n<h1><font color='#DE3163'>Super Scepter</font></h1><font color='#0597EB'>Frostbite</font> Now deals an aditional instance of Damage and Ignores Base Armor(attack dmg + %speed_mult_dmg% x movement speed + %healt_reg_mult_dmg% x Hp regen). <font color='#6CDB16'>SpeedTraining</font>: For every <font color='#0597EB'>Frostbite</font> trigger gain %bonus_base_agi% Base Agility, additionally if your MS is above 5k your bonus base agi will increase by %bonus_base_agi% and after that will increase by %bonus_base_agi% for every 10k MS."
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Lore"							"Hail to the king, baby!"
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Note0"						   "Frostbite works only on Real Heroes(no illusions or bear etc.), Damage dealt by frostbite is affected by Spell Amplification"
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_agility"					"+$agi"

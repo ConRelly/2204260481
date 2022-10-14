@@ -74,13 +74,15 @@ if IsServer() then
 
 		if params.unit == self:GetParent() then
 			local ability_used = params.ability
-			if ability_used ~= nil and not ability_used:IsItem() then
-				local restore_chance = ability:GetSpecialValueFor("restore_chance")
-				local random_number = math.random( 1, 100 )
-				if random_number <= restore_chance then
-					RestoreMana(ability, parent)
+			if ability then
+				if ability_used ~= nil and not ability_used:IsItem() then
+					local restore_chance = ability:GetSpecialValueFor("restore_chance")
+					local random_number = math.random( 1, 100 )
+					if random_number <= restore_chance then
+						RestoreMana(ability, parent)
+					end
 				end
-			end
+			end	
 		end
 	end	
 

@@ -204,7 +204,9 @@ function modifier_picasso_m_shelter_mode:DeclareFunctions()
 	return {MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_STATUS_RESISTANCE}
 end
 function modifier_picasso_m_shelter_mode:GetModifierIncomingPhysicalDamage_Percentage()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("shelter_mode_phys_inc") * (-1) end
+	if not self:GetParent():HasModifier("modifier_phys") then
+		if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("shelter_mode_phys_inc") * (-1) end
+	end	
 end
 function modifier_picasso_m_shelter_mode:GetModifierStatusResistance()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("shelter_mode_resist") end

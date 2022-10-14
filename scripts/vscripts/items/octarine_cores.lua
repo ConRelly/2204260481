@@ -38,7 +38,8 @@ function item_mjz_ipomoea_aquatica:GetIntrinsicModifierName() return ipomoea_aqu
 modifier_custom_octarine_core_1 = class({})
 function modifier_custom_octarine_core_1:IsHidden() return true end
 function modifier_custom_octarine_core_1:IsPurgable() return false end
-function modifier_custom_octarine_core_1:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+function modifier_custom_octarine_core_1:RemoveOnDeath() return false end
+--function modifier_custom_octarine_core_1:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_custom_octarine_core_1:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
 		self:StartIntervalThink(FrameTime())
@@ -77,7 +78,8 @@ end
 modifier_bigan_octarine_core = class({})
 function modifier_bigan_octarine_core:IsHidden() return true end
 function modifier_bigan_octarine_core:IsPurgable() return false end
-function modifier_bigan_octarine_core:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+function modifier_bigan_octarine_core:RemoveOnDeath() return false end
+--function modifier_bigan_octarine_core:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_bigan_octarine_core:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
 		self:StartIntervalThink(FrameTime())
@@ -200,6 +202,7 @@ end
 modifier_item_mjz_ipomoea_aquatica = class({})
 function modifier_item_mjz_ipomoea_aquatica:IsHidden() return true end
 function modifier_item_mjz_ipomoea_aquatica:IsPurgable() return false end
+function modifier_item_mjz_ipomoea_aquatica:RemoveOnDeath() return false end
 function modifier_item_mjz_ipomoea_aquatica:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_item_mjz_ipomoea_aquatica:DeclareFunctions()
 	return {MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_MANA_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS}
