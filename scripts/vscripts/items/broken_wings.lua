@@ -218,6 +218,7 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 			end
 			if inventorySlot > 0 then
 				if not divinity and orig_dmg < (limit / inventorySlot) then self.hit = true return end
+				used_stacks = 0
 			end	
 			if orig_dmg > limit then
 				if divinity then

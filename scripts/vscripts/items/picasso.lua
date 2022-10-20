@@ -660,7 +660,9 @@ function modifier_picasso_orange_mix:GetEffectAttachType() return PATTACH_ABSORI
 function modifier_picasso_orange_mix:OnCreated() if IsServer() then if not self:GetAbility() then self:Destroy() end end end
 function modifier_picasso_orange_mix:DeclareFunctions() return {MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE} end
 function modifier_picasso_orange_mix:GetModifierIncomingPhysicalDamage_Percentage()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("orange_mix") end
+	if not self:GetParent():HasModifier("modifier_phys") then
+		if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("orange_mix") end
+	end
 end
 
 if modifier_picasso_purple_mix == nil then modifier_picasso_purple_mix = class({}) end

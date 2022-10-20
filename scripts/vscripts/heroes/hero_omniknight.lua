@@ -112,7 +112,7 @@ function Purification(caster, ability, target, bkb_duration)
 
 	local heal = heal_amount
 
-	damage = damage * (1 + caster:GetSpellAmplification(false) / 4)
+	damage = damage * (1 + spell_power / 4)
 	target:Heal(heal, caster)
 	SendOverheadEventMessage(nil, OVERHEAD_ALERT_HEAL, target, heal, nil)
 

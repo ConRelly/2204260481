@@ -40,40 +40,44 @@ if IsServer() then
 				local post_damage = event.damage
 				local original_damage = event.original_damage
 				local unit = event.attacker
-				if unit:GetTeam() ~= self.parent:GetTeam() then
-					if RollPercentage(self.chance) then
-						local vparent = self.parent:GetAbsOrigin()
-						local vUnit = unit:GetAbsOrigin()
+				if unit and not unit:IsNull() and unit:IsAlive() then
+					if self.parent and not self.parent:IsNull() and self.parent:IsAlive() then
+						if unit:GetTeam() ~= self.parent:GetTeam() then
+							if RollPercentage(self.chance) then
+								local vparent = self.parent:GetAbsOrigin()
+								local vUnit = unit:GetAbsOrigin()
 
-						local reflect_damage = 0.0
-						local particle_name = ""
+								local reflect_damage = 0.0
+								local particle_name = ""
 
-						reflect_damage = post_damage * self.damage_reflect_pct
-						--particle_name = "particles/units/heroes/hero_spectre/spectre_dispersion.vpcf"
-						particle_name = "particles/units/heroes/hero_spectre/spectre_dispersion_b_fallback_mid.vpcf"
-						if self.parent and not self.parent:IsNull() and self.parent:IsAlive() then
-							self.parent:SetHealth(self.parent:GetHealth() + (post_damage * self.damage_block_pct) )
-							if RollPercentage(self.extra_restore_chance) then
-								self.parent:SetHealth(self.parent:GetHealth() + (post_damage * self.damage_block_pct) )
-							end	
-						
-							if unit and not unit:IsNull() and unit:IsAlive() then
-								--Create particle
-								local particle = ParticleManager:CreateParticle( particle_name, PATTACH_POINT_FOLLOW, self.parent )
-								ParticleManager:SetParticleControl(particle, 0, vparent)
-								ParticleManager:SetParticleControl(particle, 1, vUnit)
-								ParticleManager:SetParticleControl(particle, 2, vparent)
-								ApplyDamage({
-									ability = self.ability,
-									attacker = self.parent,
-									damage = reflect_damage,
-									damage_type = event.damage_type,
-									damage_flags = DOTA_DAMAGE_FLAG_REFLECTION,
-									victim = unit,
-								})
+								reflect_damage = post_damage * self.damage_reflect_pct
+								--particle_name = "particles/units/heroes/hero_spectre/spectre_dispersion.vpcf"
+								particle_name = "particles/units/heroes/hero_spectre/spectre_dispersion_b_fallback_mid.vpcf"
+								if self.parent and not self.parent:IsNull() and self.parent:IsAlive() then
+									self.parent:SetHealth(self.parent:GetHealth() + (post_damage * self.damage_block_pct) )
+									if RollPercentage(self.extra_restore_chance) then
+										self.parent:SetHealth(self.parent:GetHealth() + (post_damage * self.damage_block_pct) )
+									end	
+								
+									if unit and not unit:IsNull() and unit:IsAlive() then
+										--Create particle
+										local particle = ParticleManager:CreateParticle( particle_name, PATTACH_POINT_FOLLOW, self.parent )
+										ParticleManager:SetParticleControl(particle, 0, vparent)
+										ParticleManager:SetParticleControl(particle, 1, vUnit)
+										ParticleManager:SetParticleControl(particle, 2, vparent)
+										ApplyDamage({
+											ability = self.ability,
+											attacker = self.parent,
+											damage = reflect_damage,
+											damage_type = event.damage_type,
+											damage_flags = DOTA_DAMAGE_FLAG_REFLECTION,
+											victim = unit,
+										})
+									end
+								end	
 							end
-						end	
-					end	
+						end		
+					end
 				end
 			end
 		end

@@ -266,17 +266,18 @@ function modifier_kingsbane:OnTakeDamage(params)
 			local reflect_damage = damage * (reflect / 100)
 			if not caster:HasModifier("modifier_shadow_cuirass") then
 				if attacker ~= nil and target == caster and reflect_damage ~= 0 then
-					if attacker ~= caster and attacker:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_HPLOSS) ~= DOTA_DAMAGE_FLAG_HPLOSS and bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) ~= DOTA_DAMAGE_FLAG_REFLECTION then
-						if caster:GetAttackCapability() == 1 then
-							if caster.att_target ~= nil then
+					if caster.att_target ~= nil and not caster.att_target:IsNull() and caster.att_target:IsAlive() then
+						if attacker ~= caster and attacker:GetTeamNumber() ~= self:GetParent():GetTeamNumber() and bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_HPLOSS) ~= DOTA_DAMAGE_FLAG_HPLOSS and bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) ~= DOTA_DAMAGE_FLAG_REFLECTION then
+							if caster:GetAttackCapability() == 1 then
+								
 								if caster.att_target ~= caster then
 									local sw = ParticleManager:CreateParticle("particles/custom/items/shadow_sword/reflect.vpcf", PATTACH_ABSORIGIN, caster.att_target)
 									ParticleManager:SetParticleControlEnt(sw, 1, caster, PATTACH_POINT_FOLLOW, "attach_attack1", caster:GetOrigin(), true)
 									ApplyDamage({victim = caster.att_target, attacker = caster, damage = reflect_damage, damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_REFLECTION + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL, ability = self:GetAbility()})
-								end
+								end	
 							end
 						end
-					end
+					end	
 				end
 			end
 		end

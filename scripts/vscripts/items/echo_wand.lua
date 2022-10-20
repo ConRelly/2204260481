@@ -41,7 +41,9 @@ function modifier_item_echo_wand_lock:IsHidden() return false end
 function modifier_item_echo_wand_lock:IsDebuff() return true end
 function modifier_item_echo_wand_lock:IsPurgable() return false end
 function modifier_item_echo_wand_lock:RemoveOnDeath() return false end
-function modifier_item_echo_wand_lock:GetTexture() return "echo_wand_disabled" end
+function modifier_item_echo_wand_lock:GetTexture()
+	return "echo_wand_disabled"
+end
 
 LinkLuaModifier("modifier_item_echo_wand", "items/echo_wand.lua", LUA_MODIFIER_MOTION_NONE)
 
@@ -284,6 +286,7 @@ if IsServer() then
 		chaos_knight_phantasm = true,
 		terrorblade_custom_reflection = true,
 		dazzle_shadow_wave = true,
+		reload_bullet = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

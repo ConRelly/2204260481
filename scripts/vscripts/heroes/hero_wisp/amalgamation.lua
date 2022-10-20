@@ -395,6 +395,7 @@ function amalgamation_target:OnIntervalThink()
 			amalgamation_modifier:Terminate(nil)
 		end
 		if caster:HasModifier("modifier_super_scepter") then
+			--if not _G.symbiosisOn then return end -- "symbiosis" comand will turn off even the gaining stacks
 			-- marci SS
 			if parent:HasModifier("modifier_super_scepter") then
 				if parent:HasModifier("modifier_marci_unleash_flurry") then

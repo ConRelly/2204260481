@@ -271,7 +271,8 @@ if IsServer() then
 		"custom_side_gunner",
         "medusa_custom_stone_arrows",
         "brewmaster_drunken_brawler", 
-        "grow_strong",                            
+        "grow_strong", 
+        "vengefulspirit_wave_of_terror_lua",                           
     
         }
         local newAbilityName = abilityList[ RandomInt(1, #abilityList) ]

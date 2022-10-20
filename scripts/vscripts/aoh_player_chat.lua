@@ -553,39 +553,43 @@ function AOHGameMode:OnPlayerChat(keys)
 		end	
 	end	
 	if keys.text == "-symbiosis" then
-		local plyID = keys.playerid
-		local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero():GetUnitName()
-		if plyhero and plyhero == "npc_dota_hero_wisp" then
-			if count3 > 0 then
-				if _G.symbiosisOn then
-					_G.symbiosisOn = false
-					count3 = count3 - 1
-					Notifications:TopToAll({text= "Symbiosis SS Compatibility effect OFF, comands left: " ..count3, style={color="red"}, duration=6})
-				else
-					_G.symbiosisOn = true
-					count3 = count3 - 1
-					Notifications:TopToAll({text= "Symbiosis SS Compatibility effect ON, comands left: " ..count3, style={color="green"}, duration=6})
+		if IsServer() then
+			local plyID = keys.playerid
+			local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero():GetUnitName()
+			if plyhero and plyhero == "npc_dota_hero_wisp" then
+				if count3 > 0 then
+					if _G.symbiosisOn then
+						_G.symbiosisOn = false
+						count3 = count3 - 1
+						Notifications:TopToAll({text= "Symbiosis SS Compatibility effect OFF, comands left: " ..count3, style={color="red"}, duration=6})
+					else
+						_G.symbiosisOn = true
+						count3 = count3 - 1
+						Notifications:TopToAll({text= "Symbiosis SS Compatibility effect ON, comands left: " ..count3, style={color="green"}, duration=6})
+					end
 				end
-			end
+			end	
 		end	
 	end
 
 	if keys.text == "-reload_buff" then
-		local plyID = keys.playerid
-		local hero = PlayerResource:GetPlayer(plyID):GetAssignedHero()
-		local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero():GetUnitName()
-		if plyhero and plyhero == "npc_dota_hero_sniper" then
-			if _G.reload_buff then
-				_G.reload_buff = false
-				hero:AddNewModifier(hero, nil, "modifier_reload_bullet_channel_command", {})
-				Notifications:Top(plyID, {text= "Reload Modifier buff is now Hidden", style={color="red"}, duration=6})
-			else
-				_G.reload_buff = true
-				if hero:HasModifier("modifier_reload_bullet_channel_command") then
-					hero:RemoveModifierByName("modifier_reload_bullet_channel_command")
-				end	
-				Notifications:Top(plyID, {text= "Reload Modifier buff is now Shown" , style={color="green"}, duration=6})
-			end
+		if IsServer() then
+			local plyID = keys.playerid
+			local hero = PlayerResource:GetPlayer(plyID):GetAssignedHero()
+			local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero():GetUnitName()
+			if plyhero and plyhero == "npc_dota_hero_sniper" then
+				if _G.reload_buff then
+					_G.reload_buff = false
+					hero:AddNewModifier(hero, nil, "modifier_reload_bullet_channel_command", {})
+					Notifications:Top(plyID, {text= "Reload Modifier buff is now Hidden", style={color="red"}, duration=6})
+				else
+					_G.reload_buff = true
+					if hero:HasModifier("modifier_reload_bullet_channel_command") then
+						hero:RemoveModifierByName("modifier_reload_bullet_channel_command")
+					end	
+					Notifications:Top(plyID, {text= "Reload Modifier buff is now Shown" , style={color="green"}, duration=6})
+				end
+			end	
 		end	
 	end
 

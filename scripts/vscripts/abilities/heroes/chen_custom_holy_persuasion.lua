@@ -322,7 +322,7 @@ function GetRandomAbilityName(hero)
         "wisp_overcharge",
         "dark_willow_shadow_realm",
         "bane_enfeeble",
-        "elder_titan_natural_order_spirit",
+        --"elder_titan_natural_order_spirit",
         "oracle_false_promise",
         "void_spirit_astral_step",
         "juggernaut_omni_slash",

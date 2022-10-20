@@ -258,6 +258,8 @@ function GetRandomAbilityName( hero )
 		"brewmaster_drunken_brawler",
 		"tiny_grow",
 		"naga_siren_rip_tide",
+		"vengefulspirit_wave_of_terror_lua",
+		"vengefulspirit_wave_of_terror_lua",
 		--"viper_poison_attack",
 	}
 	local randomIndex = RandomInt(1, #abilityList)

@@ -365,6 +365,8 @@ function IsExcludeAbility(ability)
 		"chaos_knight_phantasm",
 		"terrorblade_custom_reflection",
 		"dazzle_shadow_wave",
+		"pocket_portal",
+		"reload_bullet",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do
@@ -444,6 +446,8 @@ function IsExcludeAbility9(ability)
 		"chaos_knight_phantasm",
 		"terrorblade_custom_reflection",
 		"dazzle_shadow_wave",
+		"pocket_portal",
+		"reload_bullet",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

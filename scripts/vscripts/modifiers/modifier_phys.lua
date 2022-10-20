@@ -1,11 +1,13 @@
 
+
+LinkLuaModifier("modifier_phys", "modifiers/modifier_phys.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_phys = class({})
 
 function modifier_phys:IsBuff()
     return true
 end
 function modifier_phys:IsHidden()
-    return true
+    return false
 end
 
 function modifier_phys:GetTexture()
@@ -28,13 +30,13 @@ function modifier_phys:GetModifierIncomingPhysicalDamage_Percentage()
 	local parent = self:GetParent()
 	local armor = parent:GetPhysicalArmorValue(false)
 	local base = 0
-	if armor < 85 then 
-		if armor < 1 then
-			base = -87 
+	if armor < 110 then 
+		if armor < 5 then
+			base = -90 
 		else	
-			base = (82 - armor) * (-1)
+			base = math.floor((84 - (armor / 1.3))) * (-1)
 		end
-	end    
+	end   
 	return base
 end
 

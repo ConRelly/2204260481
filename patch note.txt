@@ -2187,21 +2187,49 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
-* Fix CM Q intrerupting channeling.
-* Dazzle shadow wave how now less max targets and can't me multicasted.
-* Fix Double Trouble solo boss effect being trigger temporary (when other boss is outofworld or invul)
-* Omniknight Purification has an extra SS effect, reduced the Raw dmg/heal numbers but increased the %HP talent, now scales with spell amp too (only 30%). dmg is dealt in 2 instances.
-* Hammer of purity does not intrerupt movement now.
-* Nature Guise passive now has lvl scalling element.
+* Fix CM Q interrupting channeling.
+* Dazzle shadow wave how now fewer max targets and can't be multicasted. Dazzle is no longer Underdog.
+* Fix Double Trouble solo boss effect being trigger temporary (when another boss is out of the world or invul)
+* Fix Amalgamation SS (io ult) starting on OFF by default.
+* Fixed some talents, and replaced lvl 10 venge talent.
+* Removed Natural order (-magic resist one) from spiders/chen pool. (does not work anymore with them)
+* Omniknight Purification has an extra SS effect, reduced the Raw dmg/heal numbers but increased the %HP talent, and now scales with spell amp too (only 30%). dmg is dealt with in 2 instances.
+* Hammer of purity does not interrupt movement now.
+* Nature Guise passive now has lvl scaling element.
 * Octarine Core now works with the extra slot.
 * Kardel(sniper form2):
---Reload bullet now can be used multiple times before shoting (each use will add 1 more bullet)
+--Reload bullet now can be used multiple times before shooting (each use will add 1 more bullet)
 --Added new Super Scepter effects for Kardel(sniper form 2)
---Hunting Mark now is undispelable
+--Hunting Mark now cannot be dispelled.
 --Now Starts with Multicast(N)
-* Frostmourne SS effect -ignores base armor, now affects both the extra dmg and the original frostbie dmg, the hp regen in dmg from 5x to 21x.
-* Multicast animation and sound effects will now proc at maxt 1 time/s for each player, and now is affected by the '-effect_rate nr' command in case you want even less animation on that.
+--Reduced SS bonus effect rate.
+* Frostmourne SS effect -ignores base armor, now affects both the extra dmg and the original frostbite dmg, the hp regen in dmg from 5x to 21x.
+* Multicast animation and sound effects will now proc at max 1 time/s for each player, and now is affected by the '-effect_rate nr' command in case you want even less animation on that.
 * Str now gives 8x more regen (from 0.05 to 0.4)
+* Fire rapier armor reduction from 11 to 12, chance from 5% to 6%, and duration from 6 to 7 sec.
+* Added a dynamic physical reduction to all bosses above lvl 79 (before only aiolos had and was not well balanced): 
+---the closer to 0 armor the higher the physical reduction, you will still deal like 2-3-4x dmg if you reach negative armor compared with 100,200+ armor)
+* CrossBow crush armor effect duration from 1.1s to 2s.
+* Willbraker from 5.5-sec cd to 5, duration from 0.7 to 1.5s, armor reduction from 50% to 40%.
+* Hammer of the divine max armor reduction from 135 to 195 and min reduction from 35 to 55.
+* Added Wave of Terror in the random ability pool. armor reduction per 100 agility adjusted to a fixed 1, talent bonus agi dmg increased by 3.
+* Broken Wings will not consume wings stacks if is not in slot 1 and the dmg instance is not over the dynamic limit.
+* Added new item: Greater Orb of Destruction.
+* Red divine rapier now gives more bonus dmg against challenge boss (including extra from edible)
+* Ion shell now uses str+int and is reduced from max 35x to 30x. Added an autocast option, when enabled it will use the stats of the hero on(str+int).
+* Kunkka Tidebringer now Has a Super Scepter Effect, has a lower cd at the start, and has a new talent for it.
+* Void The world Crono now does not take dmg reduction from the enemy but gives the ally's 50% Dmg output.
+* Undying Ultimate does not make the enemy take more dmg anymore, now has an increased Str bonus.
+* Added "-effect_rate nr" for 2 new spells (Karder and kunkka)
+* and some other stuff and fixes.
+
+
+
+
+* Tone down kardel , reload bullet can't be multicasted or mimic.
+
+
+
 
 
 

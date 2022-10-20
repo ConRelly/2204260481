@@ -2440,26 +2440,54 @@
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Ability: Antimage Blink
+	//=================================================================================================================
 	"antimage_blink"
 	{
-		"LevelsBetweenUpgrades"		 "5"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5004"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+
+        "HasScepterUpgrade"             "0"
+        "LevelsBetweenUpgrades"		 "5"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-		"AbilitySpecial"
+		
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"45"
+		
+		"AbilitySound"					"Hero_Antimage.Blink_out"
+
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blink_range"			"925 1300 2075 3950"
-				"LinkedSpecialBonus"		"special_bonus_unique_antimage_3"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
+				"AbilityCooldown"				
+				{
+					"value"			"15 13 11 9"
+					"special_bonus_unique_antimage"	"-2"
+				}
+				"AbilityCastRange"			
+				{
+					"value"					"925 1300 2075 3450"
+					"special_bonus_unique_antimage_3"	"+1250"
+				}
 				"min_blink_range"		"200"
-			}
 		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"		
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
+
 	"antimage_spell_shield"
 	{
 		// General
@@ -4429,18 +4457,18 @@
 			"02"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"damage_radius"							"220"
+				"damage_radius"							"420"
 				"DamageTypeTooltip"						"DAMAGE_TYPE_NONE"
 			}
 			"03"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"max_targets"							"2"
+				"max_targets"							"3"
 			}
 			"04"
 			{
 				"var_type"								"FIELD_INTEGER"
-				"tooltip_max_targets_inc_dazzle"		"3"
+				"tooltip_max_targets_inc_dazzle"		"4"
 			}
 			"05"
 			{
@@ -4528,7 +4556,7 @@
 
 	"dazzle_shallow_grave"
 	{
-		"AbilityCooldown"				"70"
+		"AbilityCooldown"				"75"
 	}
 	"death_prophet_carrion_swarm"
 	{
@@ -5542,27 +5570,36 @@
 			}
 		}
 	}
+
+
+	//=================================================================================================================
+	// Elder Titan: Natural Order
+	//=================================================================================================================
 	"elder_titan_natural_order"
 	{
-		"AbilitySpecial"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5593"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+ 		"AbilityCastAnimation"			"ACT_INVALID"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
+			"radius"					
 			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"1850"
+				"value"		"1850"
+				"special_bonus_unique_elder_titan_5"	"+100"
 			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"armor_reduction_pct"		"20 25 30 35"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"magic_resistance_pct"		"5 9 13 17"
-			}
+			"armor_reduction_pct"	    "20 25 30 35"
+			"magic_resistance_pct"		"5 9 13 17"
 		}
 	}
+
 	"elder_titan_natural_order_spirit"
 	{
 		"AbilitySpecial"
@@ -7963,6 +8000,11 @@
 		}
 	}
 
+
+
+	//=================================================================================================================
+	// Naga Siren: Rip Tide
+	//=================================================================================================================
 	"naga_siren_rip_tide"
 	{
 		// General
@@ -7979,7 +8021,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCastPoint"				"0"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -7987,21 +8029,47 @@
 		{
 			"hits"						
 			{
-				"value"					"7"
-				"special_bonus_unique_naga_siren_5" -2
+				"value"											"6"
 			}
 			"armor_reduction"			
 			{	
-				"value"					"-4 -8 -16 -26 -32 -42 -55 -65"
+				"value"						"-4 -8 -16 -26 -32 -42 -55 -85"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_3"
 			}
-			"damage"					"620 2845 7765 16880 35940 84770 181500 421500"
-			"radius"					"600"
+			"damage"	
+			{
+				"value"				"620 2845 7765 16880 35940 84770 181500 421500"
+				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_2"
+			}
+			"radius"					"300"
 			"duration"					"4.0"
 			"debuff_duration"			"10"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+
+	"special_bonus_unique_naga_siren_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6398"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"45240"
+				"ad_linked_abilities"		"naga_siren_rip_tide"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+
+
 	"special_bonus_unique_naga_siren_5"
 	{
 		// General
@@ -8128,7 +8196,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"presence_armor_reduction"		"-3 -8 -14 -18 -24 -29 -35 -52"
+				"presence_armor_reduction"		"-5 -9 -14 -18 -29 -39 -55 -82"
 				"LinkedSpecialBonus"			"special_bonus_unique_nevermore_5"
 			}
 			"02"
@@ -9715,7 +9783,18 @@
 				"value"				"1000"
 			}
 		}
-	}	
+	}
+	"special_bonus_intelligence_8"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"150"
+			}
+		}
+	}		
 	"special_bonus_intelligence_10"
 	{
 		"AbilitySpecial"

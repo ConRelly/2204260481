@@ -40,52 +40,53 @@ function sniper_shoot:OnSpellStart()
 		end	
 	end	
 	--caster:RemoveModifierByName("modifier_sniper_bullet")
+	if target and IsValidEntity(target) and target:IsAlive() then
+		unit_counter = 0
+		local enemy_table = {}
+		table.insert(enemy_table, target)
+		local enemy_table_string = TableToStringCommaEnt(enemy_table)
+		Proj_Effect = ""
+		if caster:HasModifier("modifier_normal_bullets") then
+			if RollPercentage(_G._effect_rate) then
+				Proj_Effect = "particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
+			end	
+			Dodgeable = false
+		elseif caster:HasModifier("modifier_explosive_bullets") then
+			if RollPercentage(_G._effect_rate) then
+				Proj_Effect = "particles/custom/abilities/heroes/kardel_bullets/expl_bullet_projectile.vpcf"
+			end	
+			Dodgeable = true
+		elseif caster:HasModifier("modifier_shrapnel_bullets") then
+			if RollPercentage(_G._effect_rate) then
+				Proj_Effect = "particles/custom/abilities/heroes/kardel_bullets/shrap_bullet_projectile.vpcf"
+			end	
+			Dodgeable = true
+		end
 
-	unit_counter = 0
-	local enemy_table = {}
-	table.insert(enemy_table, target)
-	local enemy_table_string = TableToStringCommaEnt(enemy_table)
-	Proj_Effect = ""
-	if caster:HasModifier("modifier_normal_bullets") then
-		if RollPercentage(_G._effect_rate) then
-			Proj_Effect = "particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
-		end	
-		Dodgeable = false
-	elseif caster:HasModifier("modifier_explosive_bullets") then
-		if RollPercentage(_G._effect_rate) then
-			Proj_Effect = "particles/custom/abilities/heroes/kardel_bullets/expl_bullet_projectile.vpcf"
-		end	
-		Dodgeable = true
-	elseif caster:HasModifier("modifier_shrapnel_bullets") then
-		if RollPercentage(_G._effect_rate) then
-			Proj_Effect = "particles/custom/abilities/heroes/kardel_bullets/shrap_bullet_projectile.vpcf"
-		end	
-		Dodgeable = true
-	end
+		local info = 
+		{
+			Target = target,
+			Source = caster,
+			Ability = self,	
+			EffectName = Proj_Effect,
+			iMoveSpeed = caster:GetProjectileSpeed(),
+			vSourceLoc = caster:GetAbsOrigin(),
+			bDrawsOnMinimap = false,
+			bDodgeable = Dodgeable,
+			bIsAttack = false,
+			bVisibleToEnemies = true,
+			bReplaceExisting = false,
+			flExpireTime = GameRules:GetGameTime() + 60,
+			bProvidesVision = true,
+			iVisionRadius = 400,
+			iVisionTeamNumber = caster:GetTeamNumber(),
+			ExtraData = {target = target:entindex(), enemy_table_string = enemy_table_string}
+		}
+		ProjectileManager:CreateTrackingProjectile(info)
 
-	local info = 
-	{
-		Target = target,
-		Source = caster,
-		Ability = self,	
-		EffectName = Proj_Effect,
-		iMoveSpeed = caster:GetProjectileSpeed(),
-		vSourceLoc = caster:GetAbsOrigin(),
-		bDrawsOnMinimap = false,
-		bDodgeable = Dodgeable,
-		bIsAttack = false,
-		bVisibleToEnemies = true,
-		bReplaceExisting = false,
-		flExpireTime = GameRules:GetGameTime() + 60,
-		bProvidesVision = true,
-		iVisionRadius = 400,
-		iVisionTeamNumber = caster:GetTeamNumber(),
-		ExtraData = {target = target:entindex(), enemy_table_string = enemy_table_string}
-	}
-	ProjectileManager:CreateTrackingProjectile(info)
-
-	EmitSoundOn("Sniper_Shoot", caster)
-	EmitSoundOn("Hero_Sniper.AssassinateProjectile", caster)
+		EmitSoundOn("Sniper_Shoot", caster)
+		EmitSoundOn("Hero_Sniper.AssassinateProjectile", caster)
+	end	
 end
 function sniper_shoot:OnProjectileHit_ExtraData(target, location, extradata)
 	if not IsServer() then return nil end
@@ -109,7 +110,7 @@ function sniper_shoot:OnProjectileHit_ExtraData(target, location, extradata)
 	elseif caster:HasModifier("modifier_shrapnel_bullets") then
 		if target:TriggerSpellAbsorb(self) then return end
 		instances_count = 2
-		attacks_count = 8
+		attacks_count = 4
 		local delay = 0.01
 		base_damage = caster:GetAttackDamage() * (self:GetSpecialValueFor("shrap_bullet") + talent_value(self:GetCaster(), "special_bonus_sniper_shoot_bullet_dmg")) / 100 / instances_count
 		--Proj_Effect = "particles/custom/abilities/heroes/kardel_bullets/shrap_bullet_projectile.vpcf"
@@ -195,7 +196,7 @@ function Hit_Enemy(caster, target, ability, damage)
 		Normal_Shot(caster, target, ability, damage)
 		if IsServer() then
 			if caster:HasModifier("modifier_super_scepter") then
-				if RollPercentage(45) then -- trigger 2 times /shot so is actually an 2x chance
+				if RollPercentage(20) then -- trigger 2 times /shot so is actually an 2x chance
 					caster:ModifyAgility(1)
 				end
 			end
@@ -204,7 +205,7 @@ function Hit_Enemy(caster, target, ability, damage)
 		Explosive_Shot(caster, target, ability, damage)
 		if IsServer() then
 			if caster:HasModifier("modifier_super_scepter") then
-				if RollPercentage(40) then  -- can't use mimic with this one unless you get spirit guardian or other skill that has attacks
+				if RollPercentage(25) then  -- can't use mimic with this one unless you get spirit guardian or other skill that has attacks
 					caster:ModifyIntellect(1) -- only one trigger / shot
 				end
 			end
@@ -493,7 +494,7 @@ function pocket_portal:GetCooldown(lvl)
 	return BaseCD
 end
 function pocket_portal:GetCastRange(location, target)
-	if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then return 800 end
+	if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then return 3500 end
 	return 0
 end
 function pocket_portal:GetCastPoint()

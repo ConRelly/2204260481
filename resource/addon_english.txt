@@ -568,7 +568,7 @@
 	"DOTA_Tooltip_modifier_overcharge_stack_Description"	"Gives +%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% Attack Damage and +%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% Attack Speed"
 
 	"DOTA_Tooltip_ability_damage_meter"					"Damage-o-Meter"
-	"DOTA_Tooltip_ability_damage_meter_Description"		"<h1>Active: Phys/Mag Armor Increase</h1> \n<h1>HP</h1>Total damage taken \n<h1>HP Regen</h1>Damage per second"
+	"DOTA_Tooltip_ability_damage_meter_Description"		"<h1>Active: Phys/Mag Armor Increase</h1>(toggle AutoCast for phy/mag), Adds/removes Panoply Buff on use \n<h1>HP</h1>Total damage taken \n<h1>HP Regen</h1>Damage per second"
 
 	"DOTA_Tooltip_ability_warrior_dispersion"				"Dispersion"
 	"DOTA_Tooltip_ability_warrior_dispersion_Description"	"Stop hitting yourself"
@@ -992,7 +992,7 @@
 
 // Kardel
 	"DOTA_Tooltip_ability_sniper_shoot"					"Shoot"
-	"DOTA_Tooltip_ability_sniper_shoot_Description"		"Makes a shot with the appropriate bullet. \n<font color='#FF423F'>Damage of all bullets depends on the BASE damage, and the range depends on the attack radius.</font> \n<h1><font color='#DE3163'>Super Scepter</font></h1>For every Hit: <font color='#BD7D93'>Normal Shot</font> has 45% chance(x2) to gain 1 base Agi and <font color='#ECF47C'>Explosive Shot</font> has 40% chance to gain 1 base Int. \n<font color='#F17C26'>Host can Type '-effect_rate 1-20' (a number from 1-20) to reduce the effect rate. </font> "
+	"DOTA_Tooltip_ability_sniper_shoot_Description"		"Makes a shot with the appropriate bullet. \n<font color='#FF423F'>Damage of all bullets depends on the BASE damage, and the range depends on the attack radius.</font> \n<h1><font color='#DE3163'>Super Scepter</font></h1>For every Hit: <font color='#BD7D93'>Normal Shot</font> has 20% chance(x2) to gain 1 base Agi and <font color='#ECF47C'>Explosive Shot</font> has 25% chance to gain 1 base Int. \n<font color='#F17C26'>Host can Type '-effect_rate 1-20' (a number from 1-20) to reduce the effect rate. </font> "
 	"DOTA_Tooltip_ability_sniper_shoot_Lore"			"Kardel is one of the best shooters of his people — the gun seemed to be an extension of his hand, and the shot was her touch."
 	"DOTA_Tooltip_ability_sniper_shoot_Note0"			"1) Does not work on critical hits."
 	"DOTA_Tooltip_ability_sniper_shoot_Note1"			"2) Normal bullets instantly kill illusions."
@@ -1011,7 +1011,7 @@
 
 
 	"DOTA_Tooltip_ability_change_bullets_type"					"Change Bullet"
-	"DOTA_Tooltip_ability_change_bullets_type_Description"		"Changes the type of bullets: <br><font color='#BD7D93'>Normal</font> > <font color='#ECF47C'>Explosive</font> > <font color='#5F22DF'>Fragment</font> \n<h1><font color='#BD7D93'>Normal bullets</font></h1> Has 2 damage phases. <br>Deals <font color='#d8ae53'>Pure</font> damage. <br>Dodgeable: <font color='#E86F6F'>No</font> <br>Attack Modifiers: <font color='#70EA72'>Yes</font> <br>Blocked by Linken's Sphere: <font color='#70EA72'>Yes</font> <br>Pierces spell immunity: <font color='#70EA72'>Yes</font> \n<h1><font color='#ECF47C'>Explosive bullets</font></h1> Has 1 damage phases. <br>Deals <font color=\"#ae2f28\">Physical</font> (radius - %expl_phys_radius%) and <font color=\"#5b93d1\">Magical</font> (radius - %expl_magic_radius%) damage. <br>Dodgeable: <font color='#70EA72'>Yes</font> <br>Attack Modifiers: <font color='#E86F6F'>No</font> <br>Blocked by Linken's Sphere: <font color='#E86F6F'>No</font> <br>Pierces spell immunity: <font color='#70EA72'>Yes</font>/<font color='#E86F6F'>No</font> \n<h1><font color='#5F22DF'>Fragment bullets</font></h1> Has 8 damage phases for normal attacks and 2 damage instances for ability. <br>Deals mixed damage. <br>Dodgeable: <font color='#70EA72'>Yes</font> <br>Attack Modifiers: <font color='#70EA72'>Yes</font> <br>Blocked by Linken's Sphere: <font color='#70EA72'>Yes</font> <br>Pierces spell immunity: <font color='#70EA72'>Yes</font>"
+	"DOTA_Tooltip_ability_change_bullets_type_Description"		"Changes the type of bullets: <br><font color='#BD7D93'>Normal</font> > <font color='#ECF47C'>Explosive</font> > <font color='#5F22DF'>Fragment</font> \n<h1><font color='#BD7D93'>Normal bullets</font></h1> Has 2 damage phases. <br>Deals <font color='#d8ae53'>Pure</font> damage. <br>Dodgeable: <font color='#E86F6F'>No</font> <br>Attack Modifiers: <font color='#70EA72'>Yes</font> <br>Blocked by Linken's Sphere: <font color='#70EA72'>Yes</font> <br>Pierces spell immunity: <font color='#70EA72'>Yes</font> \n<h1><font color='#ECF47C'>Explosive bullets</font></h1> Has 1 damage phases. <br>Deals <font color=\"#ae2f28\">Physical</font> (radius - %expl_phys_radius%) and <font color=\"#5b93d1\">Magical</font> (radius - %expl_magic_radius%) damage. <br>Dodgeable: <font color='#70EA72'>Yes</font> <br>Attack Modifiers: <font color='#E86F6F'>No</font> <br>Blocked by Linken's Sphere: <font color='#E86F6F'>No</font> <br>Pierces spell immunity: <font color='#70EA72'>Yes</font>/<font color='#E86F6F'>No</font> \n<h1><font color='#5F22DF'>Fragment bullets</font></h1> Has 6 normal attacks and 2 damage instances for ability. <br>Deals mixed damage. <br>Dodgeable: <font color='#70EA72'>Yes</font> <br>Attack Modifiers: <font color='#70EA72'>Yes</font> <br>Blocked by Linken's Sphere: <font color='#70EA72'>Yes</font> <br>Pierces spell immunity: <font color='#70EA72'>Yes</font>"
 	"DOTA_Tooltip_ability_change_bullets_type_Lore"			"There are different types of bullets in Kardel's stock for different situations."
 	"DOTA_Tooltip_ability_change_bullets_type_changing_time"		"Type of bullets change time:"
 
@@ -1019,6 +1019,7 @@
 	"DOTA_Tooltip_ability_pocket_portal_Description"		"Allows you to leave the mechanism. When pressed again, teleports the hero to this mechanism. \n<h1><font color='#0094FF'>Aghanim's Shard</font></h1> Pocket Teleport works on the specified point and disjoint projectiles."
 	"DOTA_Tooltip_ability_pocket_portal_Lore"			"Any sniper should have safe escape routes."
 	"DOTA_Tooltip_ability_pocket_portal_duration"			"Mechanism life time:"
+	"DOTA_Tooltip_ability_pocket_portal_shard_Description" 	"Pocket Teleport works on the specified point and disjoint projectiles. (3500 base range)"
 	"DOTA_Tooltip_modifier_pocket_portal_duration"					"Mechanism Timer"
 	"DOTA_Tooltip_modifier_pocket_portal_duration_Description"		"If you don't use the teleport again, the mechanism will break."
 //	"DOTA_Tooltip_modifier_pocket_portal_evasion"					"Phase shift"
@@ -1463,7 +1464,7 @@
 	"DOTA_Tooltip_ability_item_broken_wings_Description"		"<h1>Passive: Restoration of Feathers</h1> Gives a Feather Stick when landing an attack. <br><br> Cooldown: %attack_cd%s <br> Max stacks: %feather_max_stacks% \n<h1>Passive: Scree'auk’s Power</h1> Dealing Magic or Pure Damage expends one Feather Stack charge to deal %feather_add_dmg%%% damage ((2)Alt for details). <br><br>Cooldown: %feather_cd%s (CDR-Yes) \n<h1>Passive: Divinity</h1> When receiving the maximum number of effects, Feather Stacks - enters Divinity. During Divinity, cooldown and Feather Stack сonsumption from Scree'auk's Power are removed. Additionally, normal mana costs are removed for the duration. After Divinity ends you lose all of your Feather Stacks. <br><br> Duration: %divinity_duration%s \n<h1><font color='#00FF00'>UP: Wind Rapier</font></h1> When receiving a Feather Stack, there is a %wind_rapier_chance%%% chance of also getting a Wind Stack (allows to exceed the limit) \n<h1><font color='#00FF00'>UP: Mimic Mace</font></h1> Sets attack rate to %mimic_mace_attack_rate% \n<h1><font color='#7D9C00'>UP: Ultimate Ethereal Blade</font></h1> Reduces Restoration of Feathers Cooldown by x3"
 	"DOTA_Tooltip_ability_item_broken_wings_Lore"					"The wings have a mind of their own, they wish to be whole again. Ideea By:<font color='#2471A3'>Siliatra</font>"
 	"DOTA_Tooltip_ability_item_broken_wings_Note0"					"1) Can consume more stacks if dmg is above a certain dinamic value." // limited text space on item
-	"DOTA_Tooltip_ability_item_broken_wings_Note1"                  "2) Scree'auk’s Power will trigger only if Divinity OR the Dmg soruce is more then: Limit(lvl * 40 * 4k / spellamp) divided by the item inventory (slot-1).(slot 1 disable this feature) pure is 150 instead of 5k"
+	"DOTA_Tooltip_ability_item_broken_wings_Note1"                  "2) Scree'auk’s Power will trigger only if Divinity OR the Dmg soruce is more then: Limit(lvl * 40 * 4k / spellamp) divided by the item inventory (slot-1).(slot 1 disable this feature) pure is 150 instead of 4k"
 	"DOTA_Tooltip_ability_item_broken_wings_bonus_cast_range"		"+$cast_range"
 	"DOTA_Tooltip_ability_item_broken_wings_bonus_attack_range"		"+$attack_range"
 	"DOTA_Tooltip_modifier_broken_wings_feather_stacks"					"Feather Stacks"
@@ -3177,7 +3178,7 @@
 	"DOTA_Tooltip_modifier_mjz_enigma_spacetime_gravity_buff"	   			"SpaceTime Gravity"
 	"DOTA_Tooltip_modifier_mjz_enigma_spacetime_gravity_buff_Description"		"The power returns to its origin."
 	"DOTA_Tooltip_ability_mjz_faceless_the_world"						"THE WORLD"
-	"DOTA_Tooltip_ability_mjz_faceless_the_world_Description"			"Creates a blister in spacetime, trapping all units caught in its sphere of influence and causes you to move very quickly inside it and increases incoming damage by %bonus_stuf%%% of all trapped. Only Faceless Void and any units he controls are unaffected. Unaffected units cannot be Stunned (or other cc) inside. Invisible enemies in the sphere will be revealed. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Increases duration by %duration_super_scepter% sec. and radius by %radius_super_scepter%"
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_Description"			"Creates a blister in spacetime, trapping all units caught in its sphere of influence and causes you to move very quickly inside it and increases for you and your ally the Outgoing damage by %bonus_stuf%%% . Only Faceless Void and any units he controls are unaffected. Unaffected units cannot be Stunned (or other cc) inside. Invisible enemies in the sphere will be revealed. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Increases duration by %duration_super_scepter% sec. and radius by %radius_super_scepter%"
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_Lore"					"When a rift opens to Claszureme, all poor souls caught within will likely never return."
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_radius"				"RADIUS:"
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_duration"				"DURATION:"
@@ -3322,14 +3323,17 @@
 	"DOTA_Tooltip_ability_mjz_juggernaut_jump_crit_crit_damage"		"%Critical Damage: "
 		
 	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer"					"Tidebringer"
-	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_Description"		"Kunkka's legendary sword grants increased damage and cleaves a large area of effect in front of him for a single strike."
+	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_Description"		"Kunkka's legendary sword grants increased damage and cleaves a large area of effect in front of him for a single strike.\n<h1><font color='#DE3163'>Super Scepter</font></h1>The bonus dmg(green) from skill and str is Affected by %ss_bonus%%% of your spell amp</font>\n<font color='#F17C26'>type(host only) '-effect_rate nr' (nr = 1-20) to reduce the frequency of the animation(activates after you lvlup the skill)</font>"
 	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_Lore"				"A lost Claddish soul inhabits Kunkka's trusty Tidebringer, empowering it to destroy demons of the Cataract."
 	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_Note0"				""
 	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_cleave_distance"		"Cleave Distance: "
 	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_damage_bonus"          "Damage Bonus:"
 	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_strength_damage_pct"	"%Strength as Damage: "
 	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_cleave_damage"			"%Cleave Damage: "
-		
+	"DOTA_Tooltip_ability_mjz_kunkka_tidebringer_cooldown"          	"Cooldown:"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_kunkka_tidebringer"	"-{s:value}s Tidebringer Cooldown."		
+
+
 	"DOTA_Tooltip_ability_mjz_legion_commander_duel"				"Duel"
 	"DOTA_Tooltip_ability_mjz_legion_commander_duel_Description"	"Legion Commander and the target enemy are NOT forced to attack each other for a short duration.  Neither can use items or abilities. If either target dies during the duration, its cooldown is reset.\nUpgradable by Aghanim's Scepter."
 	"DOTA_Tooltip_ability_mjz_legion_commander_duel_Lore"			"To face a soldier of Stonehall in single combat is a challenge few can resist."
@@ -6384,7 +6388,7 @@ Upgradeable by Aghanim's Scepter."
 
 
 "DOTA_Tooltip_ability_dark_seer_custom_ion_shell"										"Ion Shell"
-"DOTA_Tooltip_ability_dark_seer_custom_ion_shell_Description"							"Surrounds the target unit with a bristling shield that damages enemy units in an area around it."
+"DOTA_Tooltip_ability_dark_seer_custom_ion_shell_Description"							"Surrounds the target unit with a bristling shield that damages enemy units in an area around it.\n Enable Autocast to use your target stats(str+int) for dmg (works even after spell is casted)."
 "DOTA_Tooltip_ability_dark_seer_custom_ion_shell_Lore"									"The Dark Seer slices holes into the 'Land Behind the Wall,' causing prismatic energy to seep forth."
 "DOTA_Tooltip_ability_dark_seer_custom_ion_shell_Note0"								"Deals small amounts of damage in 0.4 intervals."
 "DOTA_Tooltip_ability_dark_seer_custom_ion_shell_Note1"								"Doesn't damage the target it is cast on."
@@ -6392,7 +6396,7 @@ Upgradeable by Aghanim's Scepter."
 "DOTA_Tooltip_ability_dark_seer_custom_ion_shell_radius"								"RADIUS:"
 "DOTA_Tooltip_ability_dark_seer_custom_ion_shell_duration"								"DURATION:"
 "DOTA_Tooltip_ability_dark_seer_custom_ion_shell_damage_per_second"					"DAMAGE PER SECOND:"
-"DOTA_Tooltip_ability_dark_seer_custom_ion_shell_int_mult"						  "Intelligence As Bonus Damage:"
+"DOTA_Tooltip_ability_dark_seer_custom_ion_shell_int_mult"						  "Int + Str As Bonus Damage:"
 "DOTA_Tooltip_modifier_ion_shell_custom"						"Ion Shell"
 "DOTA_Tooltip_modifier_ion_shell_custom_Description"			"Doing damage to nearby enemies"
 
@@ -7046,7 +7050,7 @@ This ability has a base cooldown of %base_cooldown% seconds, plus %extra_cooldow
 "DOTA_Tooltip_ability_undying_custom_decay_damage"						"Str As Damage:"
 "DOTA_Tooltip_ability_undying_custom_decay_str_bonus"					"STRENGTH STEAL:"
 "DOTA_Tooltip_ability_undying_custom_decay_duration"					"STEAL DURATION:"
-"DOTA_Tooltip_ability_undying_custom_decay_scepter_description"			"Reduces cooldown by half if his original cd, but remains a fix value."
+"DOTA_Tooltip_ability_undying_custom_decay_scepter_description"			"Reduces cooldown by half of his original cd"
 
 "DOTA_Tooltip_modifier_undying_custom_decay_hud"						"Decay"
 "DOTA_Tooltip_modifier_undying_custom_decay_hud_Description"			"Strength increased by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%."
@@ -7250,10 +7254,11 @@ Nimbus is not recasted by Thundergod's Wrath."
 
 "DOTA_Tooltip_Ability_item_recipe_blast_staff_3"			   "Recipe: Blast Staff 2"
 "DOTA_Tooltip_Ability_item_blast_staff_3"						"Greater Blast Staff"
-"DOTA_Tooltip_ability_item_blast_staff_3_Description"			"<h1>Active: Burst Flare</h1> Emits %strikes% blasts of energy that deal %int_multiplier% times your intelligence in damage.\n<h1>Passive: Reactive Blast</h1>Every time you cast an ability (at least 1 sec. CD) a second blast follows it, dealing %int_multiplier% times your intelligence in damage.\n<h1><font color='#006E92'>Passive: Caster Mastery</font></h1> For Every 5 seconds of the ability casted Cooldown(before CDR) you fire an aditional blast.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>When a Blast hits, but before it deals damage to an enemy will apply a debuff for %debuff_duration% s that reduces enemy magic resistance by %resist_reduc%%%."
+"DOTA_Tooltip_ability_item_blast_staff_3_Description"			"<h1>Active: Burst Flare</h1> Emits %strikes% blasts of energy that deal %int_multiplier% times your intelligence in damage.\n<h1>Passive: Reactive Blast</h1>Every time you cast an ability (at least 1 sec. CD) a second blast follows it, dealing %int_multiplier% times your intelligence in damage.\n<h1><font color='#006E92'>Passive: Caster Mastery</font></h1> For Every 5 seconds of the ability casted Cooldown(before CDR) you fire an aditional blast.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>When a Blast hits, but before it deals damage to an enemy will apply a debuff for %debuff_duration% s that reduces enemy magic resistance by %resist_reduc%%%.\n<h1><font color='#2AD563'>UP: Giant's Ring</font></h1>The Blasts dmg now uses your Str instead of Int."
 "DOTA_Tooltip_ability_item_blast_staff_3_Lore"					"Sucks in magic from the air, and expels it on command."
-"DOTA_Tooltip_ability_item_blast_staff_3_Note0"				 "The number of extra blasts is roundup (a 6s cd ability will count as an 10s)"
-"DOTA_Tooltip_ability_item_blast_staff_3_Note1"				 "Ability must have more then 3 sec CD (beofre CDR) to fire extra blasts"
+//"DOTA_Tooltip_ability_item_blast_staff_3_Note0"				 "The number of extra blasts is roundup (a 6s cd ability will count as an 10s)"
+"DOTA_Tooltip_ability_item_blast_staff_3_Note0"				 "Ability must have more then 3 sec CD (beofre CDR) to fire extra blasts"
+"DOTA_Tooltip_ability_item_blast_staff_3_Note1"              "All str after 30k will only count as 10%, for the UP giant's ring effect"
 "DOTA_Tooltip_ability_item_blast_staff_3_bonus_intellect"		"+$int"
 "DOTA_Tooltip_ability_item_blast_staff_3_bonus_strength"		"+$str"
 "DOTA_Tooltip_ability_item_blast_staff_3_bonus_agility"			"+$agi"
@@ -9307,7 +9312,7 @@ Required Level: %required_level%
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv4_bonus_spell_amp"         "%+$spell_amp"
 
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5"							"Red Divine Rapier LVL 5"
-		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_Description"				"<h1>Active:Consume</h1> Get all the stats and effects of this item(base stats improved).\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>, And blocks %reduction_shield%%% of damage taken from him. \n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_Description"				"<h1>Active:Consume</h1> Get all the stats and effects of this item(stats slightly improved).\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>, And blocks %reduction_shield%%% of damage taken from him. \n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_Lore"						"So powerful and tasty"
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_bonus_damage"			  "+$damage"
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_bonus_spell_amp"         "%+$spell_amp"
@@ -9406,6 +9411,15 @@ Required Level: %required_level%
 "DOTA_Tooltip_ability_item_pipe_2_health_regen"						 "+$hp_regen"
 "DOTA_Tooltip_ability_item_pipe_2_magic_resistance"					 "%+$spell_resist"
 "DOTA_Tooltip_ability_item_pipe_2_bonus_all_stats"					  "+$all"
+
+
+"DOTA_Tooltip_Ability_item_orb_of_destruction_2"						"Greater Orb of Destruction"
+"DOTA_Tooltip_Ability_item_orb_of_destruction_2_Description"		"<h1>Passive: Impeding Corruption</h1> Attacks reduce the target's armor and movement speed. Slow amount varies based on whether the wearer is melee or ranged."
+"DOTA_Tooltip_Ability_item_orb_of_destruction_2_Lore"		"An ingot of chaos suspended in wizard's ether, housed within an arcanist's orb."
+"DOTA_Tooltip_Ability_item_orb_of_destruction_2_armor_reduction"		"ARMOR REDUCTION:"
+"DOTA_Tooltip_Ability_item_orb_of_destruction_2_slow_melee"		"%SLOW (MELEE):"
+"DOTA_Tooltip_Ability_item_orb_of_destruction_2_slow_range"		"%SLOW (RANGE):"
+"DOTA_Tooltip_Ability_item_orb_of_destruction_2_duration"		"DURATION:"
 
 "DOTA_Tooltip_ability_item_all_essence"								 "Elemental"
 "DOTA_Tooltip_ability_item_all_essence_Description"					 "Combined from all elements that drop in hard mode, Use in evolving items"
@@ -9542,9 +9556,10 @@ Contains all random skills"
 		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_damage_agi_multiplier"		"Agility As Bonus Damage:"
 		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_duration"					"<br>Debuff Duration:"
 		"DOTA_Tooltip_ability_vengefulspirit_wave_of_terror_lua_vision_duration"			"Vision Duration:"
-		"DOTA_Tooltip_modifier_vs_wave_of_terror_armor_reduction"					"Wave of Terror"
-		"DOTA_Tooltip_modifier_vs_wave_of_terror_armor_reduction_Description"		"Base armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
+		"DOTA_Tooltip_modifier_wave_of_terror_armor_reduction"					"Wave of Terror"
+		"DOTA_Tooltip_modifier_wave_of_terror_armor_reduction_Description"		"Base armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
 		"DOTA_Tooltip_ability_special_bonus_unique_wave_of_terror_dmg"		"+{s:value} Wave of Terror Agility As Bonus Damage"
+
 
 		"DOTA_Tooltip_ability_omniknight_purification_lua"									"Purification"
 		"DOTA_Tooltip_ability_omniknight_purification_lua_Description"						"Instantly heals a friendly unit and damages all nearby enemy units. Also grants a strength based magic resitance."
@@ -10025,8 +10040,8 @@ Contains all random skills"
 
 		"DOTA_Tooltip_modifier_underdog"										 "Underdog Buff"
 		"DOTA_Tooltip_modifier_underdog_description"							 "Acquired by the less popular heroes on their first death after lvl 35, increase the following stats by: <font color='#05DDEF'>%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Damage</font>, <font color='#10DE33'>%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% All Stats</font> and <font color='#DE9619'>%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% Attack Damage</font>"
-		"DOTA_Tooltip_modifier_phys"											 "Last"
-		//"DOTA_Tooltip_modifier_phys_description"								 "bonus %dMODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE% "
+		"DOTA_Tooltip_modifier_phys"											 "Panoply"
+		"DOTA_Tooltip_modifier_phys_description"								 "Activates under 110 armor, Gains bonus %dMODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE%%% physical dmg reduction "
 
 
 	"DOTA_Tooltip_ability_item_god_slayer"				"<font color='#FF0000'>God Slayer</font>"

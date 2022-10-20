@@ -196,7 +196,7 @@ function modifier_item_red_divine_rapier_edible_5:GetModifierTotalDamageOutgoing
 	if params.attacker == target then return end
 	if self:GetParent():HasModifier("modifier_item_red_divine_rapier") then return 0 end
 	if parent:IsHero() then
-		local damage = 160
+		local damage = 240
 		if target:GetUnitName() == "npc_boss_juggernaut_4" then  --npc_dota_dummy_misha  --npc_boss_juggernaut_4
 			if not self.trigger then
 				self.trigger = 1	

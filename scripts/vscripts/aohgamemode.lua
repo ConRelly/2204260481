@@ -112,7 +112,7 @@ function AOHGameMode:InitGameMode()
 	_G._effect_rate = 100
 	_G.reload_buff = true
 	_G._stalker_chance = 1
-	_G._symbiosisOn = true	
+	_G.symbiosisOn = true	
 	self._endlessMode = false
 	_G._endlessMode_started = false
 	_G._normal_mode = false
@@ -1146,6 +1146,7 @@ function AOHGameMode:OnEntitySpawned(event)
 						endTime = skip, 
 						callback = function()
 							if unit:IsNull() then return end
+							if not unit:IsAlive() then return end
 							local ability = playerHero:GetAbilityByIndex(abilitySlot)
 							if ability ~= nil and not ability:IsNull() then 
 								local abilityLevel = ability:GetLevel()
@@ -1219,7 +1220,10 @@ function AOHGameMode:OnEntitySpawned(event)
 
 
 	};
-
+--[[ 	if unit and unit:GetUnitName() == "npc_dota_dummy_misha" then 
+		unit:AddNewModifier(unit, nil, "modifier_phys", {})
+		print("misha phy buff")
+	end	 ]]
 	if unit and unit:GetTeamNumber() == DOTA_TEAM_BADGUYS and unit:GetUnitName() ~= "npc_dota_thinker" then
 		if self._endlessMode_started then
 			unit:AddNewModifier(unit, nil, "modifier_power_boss", {})
@@ -1254,12 +1258,14 @@ function AOHGameMode:OnEntitySpawned(event)
             end    
         end
 		if self._hardMode then
-			unit:AddNewModifier(unit, nil, "modifier_hard_mode_boss", {}) 
-			if unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
+			unit:AddNewModifier(unit, nil, "modifier_hard_mode_boss", {})
+		end
+		if (unit:GetLevel() > 79) then
+			--if unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
 				--print("boss moster")
 				unit:AddNewModifier(unit, nil, "modifier_phys", {})
-			end
-		end
+			--end
+		end			
 		if boss_challenger[unit:GetUnitName()] == true then
 			unit:AddNewModifier(unit, nil, "modifier_infinite_health", {duration = 420})
 			unit:AddNewModifier(unit, nil, "modifier_kill", {duration = 421})

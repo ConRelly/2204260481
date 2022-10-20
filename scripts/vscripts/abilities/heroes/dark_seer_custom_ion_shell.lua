@@ -47,7 +47,10 @@ if IsServer() then
 		local parent = self:GetParent()
 		if not self:GetAbility() then return end
 		if IsValidEntity(parent) and IsValidEntity(caster) then
-			local caster_int = caster:GetIntellect()
+			local caster_int = caster:GetIntellect() + caster:GetStrength()
+			if parent and parent:IsHero() and self:GetAbility():GetAutoCastState() then
+				caster_int = parent:GetIntellect() + parent:GetStrength()
+			end	
 			local int_dmg  = caster_int * self:GetAbility():GetSpecialValueFor("int_mult")
 			local radius = self:GetAbility():GetSpecialValueFor("radius")
 

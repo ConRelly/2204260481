@@ -299,7 +299,7 @@
     "HasInventory"            "1"
 	"Ability1"				  "draks_unholy_strength"
 	"Ability2"				  "generic_hidden" //"jotaro_absolute_defense"
-	"Ability3"				 "generic_hidden"
+	"Ability3"				 "spectre_custom_dispersion_boss" //"generic_hidden"
 	"Ability4"				 "generic_hidden"
 	"Ability5"				 "generic_hidden"
 	"Ability6"				 "generic_hidden"
@@ -348,7 +348,7 @@
         "EquippedItems"
         {
 //			"Boss Resistance"   { "Item"        "item_boss_resistance_50" }
-            "Unstoppable"       { "Item"        "item_plain_ring" }
+            //"Unstoppable"       { "Item"        "item_plain_ring" }
         }
 	}
 
@@ -1638,7 +1638,7 @@
 	"vscripts"				  "bosses/attack_move.lua"
 	"SoundSet"				  "Hero_Ursa"
 	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_ursa.vsndevts"
-	"Level"					 "7"
+	"Level"					 "80"
 	"ModelScale"				"1.5"
 	"ConsideredHero"			"1"
 	"HasInventory"			  "1"
@@ -1823,7 +1823,7 @@
 	"SoundSet"				  "Hero_Bristleback"
 	"VoiceFile"				 "soundevents/voscripts/game_sounds_vo_bristleback.vsndevts"
 	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_bristleback.vsndevts"
-	"Level"					 "16"
+	"Level"					 "81"
 	"ConsideredHero"			"1"
 	"CanBeDominated"			"0"
 	"HasInventory"			  "1"
@@ -1840,8 +1840,8 @@
 	"Ability5"				  "aghanim_empty_spell2"
 	"Ability6"				  "aghanim_empty_spell3"
 
-	"ArmorPhysical"			 "129"
-	"MagicalResistance"		 "85"
+	"ArmorPhysical"			 "289"
+	"MagicalResistance"		 "89"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"		   "4000"
 	"AttackDamageMax"		   "23500"
@@ -1861,7 +1861,7 @@
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_GROUND"
 	"MovementSpeed"			 "400"
 	"MovementTurnRate"		  "0.2"
-	"StatusHealth"			  "570000"
+	"StatusHealth"			  "670000"
 	"StatusHealthRegen"		 "1.0"
 	"StatusMana"				"2000"
 	"StatusManaRegen"		   "250"
@@ -2144,7 +2144,7 @@
 	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
 	"VoiceFile"				 "soundevents/voscripts/game_sounds_vo_luna.vsndevts"
 	"HasInventory"			  "1"
-	"Level"					 "16"
+	"Level"					 "80"
 	"ModelScale"				"1.6"
 	"ConsideredHero"			"1"
 	"CanBeDominated"			"0"
@@ -2172,7 +2172,7 @@
 	"Ability15"				 "generic_hidden"
 	"Ability16"				 "generic_hidden"	
 	"Ability17"				 "custom_luna_invis"
-	"ArmorPhysical"			 "124"
+	"ArmorPhysical"			 "224"
 	"MagicalResistance"		 "85"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -4039,7 +4039,7 @@
 	"SoundSet"				  "Hero_Kunkka"
 	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
 	"ModelScale"				"1.5"
-	"Level"					 "24"
+	"Level"					 "80"
 	"CanBeDominated"			"0"
 	"ConsideredHero"			"1"
 	"HasInventory"			  "1"
@@ -4063,8 +4063,8 @@
 	"Ability8"				  "ryze_arcane_mastery"
 	"Ability9"				  "morphling_waveform"
 
-	"ArmorPhysical"			 "128"
-	"MagicalResistance"		 "85"
+	"ArmorPhysical"			 "288"
+	"MagicalResistance"		 "86"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"		   "4900"
 	"AttackDamageMax"		   "28100"
@@ -6141,7 +6141,7 @@
 	//"vscripts"					"ai/bosses/spectre.lua"
 	"SoundSet"					"Hero_Spectre"
 	"ModelScale"				"1.5"
-	"Level"						"51"
+	"Level"						"80"
 	"ConsideredHero"			"1"
 	"HasInventory"				"1"
 	"AbilityLayout"				"5"
@@ -6161,7 +6161,7 @@
 	//"Ability5"					"boss_spectre_reality"
 	//"Ability6"					"boss_spectre_haunt"
 	
-	"ArmorPhysical"				"150"
+	"ArmorPhysical"				"190"
 	"MagicalResistance"			"90"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"			"650"
@@ -7464,7 +7464,7 @@
 		{
 			"MKB"			  		{ "Item"		 "item_monkey_king_bar"}
 			"Unstoppable"	   	{ "Item"		"item_boss_unstoppable" }
-//			"Boss Resistance"	   { "Item"		"item_boss_resistance_50" }
+			"Boss Resistance"	   { "Item"		"item_high_tech_boots2" }
 			"Hyperstone"			{ "Item"			"item_mjz_assault_4"}
 			"Black King Bar"		{ "item"			"item_black_king_bar_boss"}
 			"Gold Ring"			 { "Item"		"item_plain_ring" }
@@ -7615,7 +7615,7 @@
 	"vscripts"				  "bosses/attack_move.lua"
 	"SoundSet"							  "Hero_Mirana"
 	"GameSoundsFile"						"soundevents/game_sounds_heroes/game_sounds_mirana.vsndevts"
-	"Level"								 "31"
+	"Level"								 "80"
 	"ModelScale"							"1.8"
 	"ConsideredHero"						"1"
 	"HasInventory"						  "1"
@@ -7633,11 +7633,11 @@
 	"Ability5"							  "generic_hidden"
 	"Ability6"							  "generic_hidden"
 
-	"ArmorPhysical"						 "145"
-	"MagicalResistance"					 "85"
+	"ArmorPhysical"						 "245"
+	"MagicalResistance"					 "86"
 	"AttackCapabilities"					"DOTA_UNIT_CAP_RANGED_ATTACK"
 	"AttackDamageMin"					   "3475"
-	"AttackDamageMax"					   "14850"
+	"AttackDamageMax"					   "18850"
 	"AttackRate"							"1.0"
 	"AttackAnimationPoint"				  "0.3"
 	"AttackAcquisitionRange"				"5000"
@@ -8068,7 +8068,7 @@
 	"SoundSet"							  "Hero_Rubick"
 	"VoiceFile"								"soundevents/voscripts/game_sounds_vo_rubick.vsndevts"
 	"GameSoundsFile"						"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
-	"Level"								 "69"
+	"Level"								 "80"
 	"ModelScale"							"0.5"
 	"ConsideredHero"						"1"
 	"HasInventory"							"1"
@@ -8089,7 +8089,7 @@
 		"Ability7"							  "faceless_void_time_walk"
 		"Ability8"				  			  "ryze_arcane_mastery"
 
-	"ArmorPhysical"						 "176"
+	"ArmorPhysical"						 "276"
 	"MagicalResistance"						"90"
 	"AttackCapabilities"		  			"DOTA_UNIT_CAP_RANGED_ATTACK"
 	"AttackDamageMin"					   "13500"
@@ -8834,7 +8834,7 @@
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_terrorblade.vsndevts"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
 		"ModelScale"				"1.55"
-		"Level"						"39"
+		"Level"						"65"
 		"ConsideredHero"			"1"
 		"CanBeDominated"			"0"
 		"HasInventory"				"1"
@@ -8856,7 +8856,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"85"			// Physical protection.
+		"ArmorPhysical"				"135"			// Physical protection.
 		"MagicalResistance"			"75"			// Magical protection.
 
 		// Attack
@@ -8985,7 +8985,7 @@
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_terrorblade.vsndevts"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
 		"ModelScale"				"0.45"
-		"Level"						"69"
+		"Level"						"80"
 		"ConsideredHero"			"1"
 		"CanBeDominated"			"0"
 		"HasInventory"				"1"
@@ -9009,7 +9009,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"100"			// Physical protection.
+		"ArmorPhysical"				"280"			// Physical protection.
 		"MagicalResistance"			"90"			// Magical protection.
 
 		// Attack
@@ -9056,7 +9056,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1335000"		// Base health.
+		"StatusHealth"				"1435000"		// Base health.
 		"StatusHealthRegen"			"10000"		// Health regeneration rate.
 		"StatusMana"				"23200"			// Base mana.
 		"StatusManaRegen"			"1000"			// Mana regeneration rate.
@@ -13358,7 +13358,7 @@
 	"vscripts"					"bosses/attack_move.lua"
 	"SoundSet"					"Hero_Tidehunter"
 	"ModelScale"				"1.5"
-	"Level"						"54"
+	"Level"						"80"
 	"CanBeDominated"			"0"
 	"ConsideredHero"			"1"
 	"HasInventory"				"1"
@@ -13370,8 +13370,8 @@
 	"Ability5"					"siltbreaker_torrents"
 	"Ability6"				  "morphling_waveform"
 
-	"ArmorPhysical"				"85"
-	"MagicalResistance"			"84"
+	"ArmorPhysical"				"185"
+	"MagicalResistance"			"85"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"			"1300"
 	"AttackDamageMax"			"12010"
@@ -13588,7 +13588,7 @@
 	"vscripts"				  "bosses/attack_move.lua"
 	"SoundSet"				  "Hero_Juggernaut"
 	"ModelScale"				"1.6"
-	"Level"					 "65"
+	"Level"					 "80"
 	"CanBeDominated"			"0"
 	"ConsideredHero"			"1"
 	//"IsBossMonster"			 "1"
@@ -13611,8 +13611,8 @@
 	//"Ability9"				  "siltbreaker_kraken_shell8"
 	"Ability10"				 "leesin_dragons_rage"
 
-	"ArmorPhysical"			 "142"
-	"MagicalResistance"		 "83"
+	"ArmorPhysical"			 "242"
+	"MagicalResistance"		 "85"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"		   "500"
 	"AttackDamageMax"		   "2900"

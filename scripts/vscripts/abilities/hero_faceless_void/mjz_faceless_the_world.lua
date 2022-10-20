@@ -140,6 +140,7 @@ function modifier_mjz_faceless_the_world_aura_effect_friendly:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN,
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+		MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
 	}
 end
 function modifier_mjz_faceless_the_world_aura_effect_friendly:GetModifierAttackSpeedBonus_Constant()
@@ -148,7 +149,9 @@ end
 function modifier_mjz_faceless_the_world_aura_effect_friendly:GetModifierMoveSpeed_AbsoluteMin()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("speed") end
 end
-
+function modifier_mjz_faceless_the_world_aura_effect_friendly:GetModifierTotalDamageOutgoing_Percentage()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_stuf") end
+end
 ----------------------------------------------------------------------
 
 modifier_mjz_faceless_the_world_aura_enemy = class({})
@@ -177,19 +180,19 @@ function modifier_mjz_faceless_the_world_aura_effect_enemy:IsHidden() return fal
 function modifier_mjz_faceless_the_world_aura_effect_enemy:IsPurgable() return false end
 function modifier_mjz_faceless_the_world_aura_effect_enemy:IsStunDebuff() return true end
 function modifier_mjz_faceless_the_world_aura_effect_enemy:IsDebuff() return true end
-function modifier_mjz_faceless_the_world_aura_effect_enemy:DeclareFunctions()
+--[[ function modifier_mjz_faceless_the_world_aura_effect_enemy:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN,
         MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
 	}
-end
-function modifier_mjz_faceless_the_world_aura_effect_enemy:GetModifierIncomingDamage_Percentage()
+end ]]
+--[[ function modifier_mjz_faceless_the_world_aura_effect_enemy:GetModifierIncomingDamage_Percentage()
 	if self:GetAbility() and self:GetParent() then
 		if not self:GetParent():HasModifier("modifier_mjz_windrunner_powershot_debuff") or not self:GetParent():HasModifier("modifier_undying_flesh_golem_slow") then
 			return self:GetAbility():GetSpecialValueFor("bonus_stuf")
 		end
 	end
-end
+end ]]
 function modifier_mjz_faceless_the_world_aura_effect_enemy:CheckState()
 	return {
 		[MODIFIER_STATE_STUNNED] = true,

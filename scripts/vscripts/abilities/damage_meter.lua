@@ -1,5 +1,6 @@
 LinkLuaModifier("modifier_damage_meter", "abilities/damage_meter", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_damage_meter2", "abilities/damage_meter", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_phys", "modifiers/modifier_phys.lua", LUA_MODIFIER_MOTION_NONE)
 
 Phys_State = 0
 Mag_State = 0
@@ -10,6 +11,7 @@ damage_meter = class({})
 function damage_meter:GetIntrinsicModifierName() return "modifier_damage_meter" end
 function damage_meter:OnSpellStart()
 	if not IsServer() then return end
+	local caster = self:GetCaster()
 	if not self:GetAutoCastState() then
 		if self:GetCaster():GetPhysicalArmorBaseValue() == 200 then
 			Phys_State = 0
@@ -25,6 +27,11 @@ function damage_meter:OnSpellStart()
 		end
 		self:GetCaster():SetBaseMagicalResistanceValue(Mag_State * 10)
 	end
+	if not caster:HasModifier("modifier_phys") then
+		caster:AddNewModifier(caster, self, "modifier_phys", {})
+	else
+		caster:RemoveModifierByName("modifier_phys")	
+	end	
 end
 
 modifier_damage_meter = class({})

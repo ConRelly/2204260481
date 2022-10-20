@@ -166,6 +166,59 @@
 		}
 	}
 
+
+// Recipe: Orb of Destruction
+	"item_recipe_orb_of_destruction_2"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"12000"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_orb_of_destruction_2"
+		"ItemRequirements"
+		{
+			"01"						"item_orb_of_destruction;item_all_essence"
+		}
+	}
+// Orb of Destruction
+	"item_orb_of_destruction_2"
+	{
+		"BaseClass"						"item_orb_of_destruction"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"		
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemIsNeutralDrop"				"0"
+		"ItemSellable"					"1"
+		"ItemGloballyCombinable"		"0"
+		"ItemPurchasable"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_reduction"		"87"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_melee"			"35"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_range"			"25"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"9"
+			}
+		}
+	}
+
+
+
 	"item_black_king_bar_free"
 	{
 		"BaseClass"					 "item_black_king_bar"
@@ -1448,7 +1501,7 @@
 		"13"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"duration"						"1.1" 
+			"duration"						"2.0" 
 		}
 		"14"
 		{
@@ -4837,13 +4890,13 @@
 	"ItemAliases"					"willbreaker"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AbilityCooldown"				"5.5"
+	"AbilityCooldown"				"5.0"
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"			  "FIELD_INTEGER"
-			"armor_reduction_pct"				"50"
+			"armor_reduction_pct"				"40"
 		}
 		"02"
 		{
@@ -4853,7 +4906,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"duration"			"0.7"
+			"duration"			"1.5"
 		}
 		"04"
 		{
@@ -17095,7 +17148,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"swrod_master_bonus_ptc"	"30 50 70 100 160"
+				"swrod_master_bonus_ptc"	"50 70 100 150 220"
 			}
 			"03"
 			{
@@ -17155,7 +17208,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"swrod_master_bonus_ptc"	"30 50 70 100 160"
+				"swrod_master_bonus_ptc"	"50 70 100 150 220"
 			}
 			"03"
 			{
@@ -17214,7 +17267,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"swrod_master_bonus_ptc"	"30 50 70 100 160"
+				"swrod_master_bonus_ptc"	"50 70 100 150 220"
 			}
 			"03"
 			{
@@ -17273,7 +17326,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"swrod_master_bonus_ptc"	"30 50 70 100 160"
+				"swrod_master_bonus_ptc"	"50 70 100 150 220"
 			}
 			"03"
 			{
@@ -17334,7 +17387,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"swrod_master_bonus_ptc"	"30 50 70 100 160"
+				"swrod_master_bonus_ptc"	"50 70 100 150 220"
 			}
 			"03"
 			{
@@ -19526,17 +19579,17 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"proc_chance"			"5"
+				"proc_chance"			"6"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"debuff_duration"		"6"
+				"debuff_duration"		"7"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_penalty"			"-11"
+				"armor_penalty"			"-12"
 			}
 			"08"
 			{
@@ -35190,17 +35243,17 @@
 			"20"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"corr_armor_red_max"		"135"
+				"corr_armor_red_max"		"195"
 			}
 			"21"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"corr_duration"				"5"
+				"corr_duration"				"7"
 			}
 			"22"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"corr_armor_red_min"		"35"
+				"corr_armor_red_min"		"55"
 			}			
 		}
 	}

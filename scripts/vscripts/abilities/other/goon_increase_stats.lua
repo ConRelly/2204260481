@@ -201,7 +201,7 @@ function GetRandomAbilityName(hero)
         "dark_willow_shadow_realm",
         "bane_enfeeble",
         "ryze_arcane_mastery",
-        "elder_titan_natural_order_spirit",
+        --"elder_titan_natural_order_spirit",
         "oracle_false_promise",
         "mars_gods_rebuke",
         "void_spirit_astral_step",

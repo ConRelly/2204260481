@@ -92,7 +92,7 @@ end
 -- a little anoying that because the self.solo_boss variable is on Only on server side and it will not update the UI with correct numbers like the Speed. (visual only)
 function modifier_double_trouble:GetModifierIncomingDamage_Percentage()
     if not self.solo_boss then return end    
-	return -5  --95 total 
+	return -6  --96 total 
 end
 function modifier_double_trouble:GetModifierHealAmplify_PercentageTarget()
     if not self.solo_boss then return end

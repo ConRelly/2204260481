@@ -6,6 +6,16 @@ LinkLuaModifier("modifier_mjz_tidebringer_manual", "abilities/hero_kunkka/mjz_ti
 -- Tidebringer --
 -----------------
 mjz_kunkka_tidebringer = class({})
+
+function mjz_kunkka_tidebringer:GetCooldown(level)
+	--if not IsServer() then return end
+	local cooldown = self:GetSpecialValueFor("cooldown") + talent_value(self:GetCaster(), "special_bonus_unique_mjz_kunkka_tidebringer")
+--[[ 	if self:GetCaster():HasTalent("special_bonus_unique_mjz_kunkka_tidebringer") then
+		local talent_cooldown = cooldown + self:GetCaster():FindTalentValue("special_bonus_unique_mjz_kunkka_tidebringer")
+		return talent_cooldown
+	end ]]
+	return cooldown
+end
 function mjz_kunkka_tidebringer:GetIntrinsicModifierName() return "modifier_mjz_tidebringer" end
 function mjz_kunkka_tidebringer:GetCastRange(location, target) return self:GetCaster():Script_GetAttackRange() end
 function mjz_kunkka_tidebringer:IsStealable() return false end
@@ -39,14 +49,20 @@ function modifier_mjz_tidebringer:IsPurgable() return false end
 function modifier_mjz_tidebringer:OnCreated()
 	if IsServer() then
 		self:StartIntervalThink(FrameTime())
+		if _G._effect_rate < 100 then
+			local time = 100 / _G._effect_rate
+			self:StartIntervalThink(time)	
+		end	
 	end
 end
 function modifier_mjz_tidebringer:OnDestroy()
-	if self:GetCaster():HasModifier("modifier_mjz_tidebringer_sword_particle") then
-		self:GetCaster():RemoveModifierByName("modifier_mjz_tidebringer_sword_particle")
-	end
-	if self:GetCaster():HasModifier("modifier_mjz_tidebringer_manual") then
-		self:GetCaster():RemoveModifierByName("modifier_mjz_tidebringer_manual")
+	if IsServer() then
+		if self:GetCaster():HasModifier("modifier_mjz_tidebringer_sword_particle") then
+			self:GetCaster():RemoveModifierByName("modifier_mjz_tidebringer_sword_particle")
+		end
+		if self:GetCaster():HasModifier("modifier_mjz_tidebringer_manual") then
+			self:GetCaster():RemoveModifierByName("modifier_mjz_tidebringer_manual")
+		end
 	end	
 end
 function modifier_mjz_tidebringer:OnIntervalThink()
@@ -66,19 +82,24 @@ function modifier_mjz_tidebringer:OnAttackStart(params)
 		local parent = self:GetParent()
 		local target = params.target
 		if (parent == params.attacker) and (target:GetTeamNumber() ~= parent:GetTeamNumber()) and (target.IsCreep or target.IsHero) then
-			local strength_damage_pct = self:GetAbility():GetTalentSpecialValueFor("strength_damage_pct")
-			local str_damage = params.attacker:GetStrength() * (strength_damage_pct / 100)
-			if not target:IsBuilding() then
+			if self:GetCaster():HasModifier("modifier_mjz_tidebringer_manual") or self:GetAbility():GetAutoCastState() then
 				if self:GetAbility():IsCooldownReady() and not (parent:PassivesDisabled()) then
-					if self:GetCaster():HasModifier("modifier_mjz_tidebringer_manual") or self:GetAbility():GetAutoCastState() then
-						self.pass_attack = true
-						self.bonus_damage = self:GetAbility():GetSpecialValueFor("damage_bonus") + str_damage
-					else
-						self.pass_attack = false
-						self.bonus_damage = 0
-					end
-				end
-			end
+					local strength_damage_pct = self:GetAbility():GetTalentSpecialValueFor("strength_damage_pct")
+					local spell_power = parent:GetSpellAmplification(false)
+					local str_damage = (params.attacker:GetStrength() * (strength_damage_pct / 100)) + self:GetAbility():GetSpecialValueFor("damage_bonus")
+					local str_spellamp_dmg = str_damage
+					local ss_bonus = self:GetAbility():GetSpecialValueFor("ss_bonus") / 100
+					if parent:HasModifier("modifier_super_scepter") then
+						str_spellamp_dmg = math.floor(str_damage  * (1 + spell_power * ss_bonus ))
+					end	
+					self.pass_attack = true
+					self.bonus_damage = str_spellamp_dmg
+					print("tidebringer: "..str_spellamp_dmg)
+				end	
+			else
+				self.pass_attack = false
+				self.bonus_damage = 0					
+			end	
 		end
 	end
 end
@@ -92,18 +113,20 @@ function modifier_mjz_tidebringer:OnAttackLanded(params)
 		local target = params.target
 		if params.attacker == parent and (not parent:IsIllusion()) and self.pass_attack then
 			self.pass_attack = false
-			self.bonus_damage = 0
 			local range = self:GetAbility():GetSpecialValueFor("cleave_distance")
 			local radius_start = self:GetAbility():GetSpecialValueFor("cleave_starting_width")
 			local radius_end = self:GetAbility():GetSpecialValueFor("cleave_ending_width")
-			parent:RemoveModifierByName("modifier_mjz_tidebringer_sword_particle")
+			if parent:HasModifier("modifier_mjz_tidebringer_sword_particle") then
+				parent:RemoveModifierByName("modifier_mjz_tidebringer_sword_particle")
+			end	
 			if target ~= nil and target:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
 				target:EmitSound("Hero_Kunkka.TidebringerDamage")
                 local cleaveDamage = params.damage * (ability:GetTalentSpecialValueFor("cleave_damage") / 100)
 
-				local enemies_to_cleave = FindUnitsInCone(self:GetParent():GetTeamNumber(), CalculateDirection(params.target, self:GetParent()), self:GetParent():GetAbsOrigin(), radius_start, radius_end, range, nil, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_ANY_ORDER, false)
+				--local enemies_to_cleave = FindUnitsInCone(self:GetParent():GetTeamNumber(), CalculateDirection(params.target, self:GetParent()), self:GetParent():GetAbsOrigin(), radius_start, radius_end, range, nil, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_ANY_ORDER, false)
 
 				DoCleaveAttack(params.attacker, params.target, ability, cleaveDamage, radius_start, radius_end, range, "particles/units/heroes/hero_kunkka/kunkka_spell_tidebringer.vpcf")
+				self.bonus_damage = 0
 				ability:UseResources(false, false, true)
 				if self:GetCaster():HasModifier("modifier_mjz_tidebringer_manual") then
 					self:GetCaster():RemoveModifierByName("modifier_mjz_tidebringer_manual")

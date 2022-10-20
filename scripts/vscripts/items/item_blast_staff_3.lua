@@ -63,8 +63,14 @@ if IsServer() then
 					end	
 				end					                                
 			end
-
-			local damage = (self:GetSpecialValueFor("int_multiplier") + bonus_marci_int_mult) * parent:GetIntellect()
+			local stats_parent = parent:GetIntellect()
+			if parent:HasModifier("modifier_item_giants_ring") then
+				stats_parent = parent:GetStrength()
+				if stats_parent > 30000 then
+					stats_parent = 27000 + (parent:GetStrength()/10)
+				end	
+			end	
+			local damage = (self:GetSpecialValueFor("int_multiplier") + bonus_marci_int_mult) * stats_parent
 			if not target:HasModifier("modifier_item_blast_staff_debuff") and parent:HasScepter() then				
 				target:AddNewModifier(parent, self, "modifier_item_blast_staff_debuff", {duration = duration})
 			end
