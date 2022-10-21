@@ -13,6 +13,7 @@ LinkLuaModifier("modifier_kardel_hit_stun", "heroes/hero_kardel/abilities", LUA_
 LinkLuaModifier("modifier_reload_bullet_channel", "heroes/hero_kardel/abilities", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_reload_bullet_channel_command", "heroes/hero_kardel/abilities", LUA_MODIFIER_MOTION_NONE)
 
+LinkLuaModifier("modifier_reload_bullet_auto", "heroes/hero_kardel/abilities", LUA_MODIFIER_MOTION_NONE)
 
 -----------
 -- Shoot --
@@ -347,6 +348,10 @@ function modifier_reload_bullet_channel:GetAttributes() return MODIFIER_ATTRIBUT
 -- Reloading --
 ---------------
 reload_bullet = class({})
+function reload_bullet:GetIntrinsicModifierName()
+	return "modifier_reload_bullet_auto"
+end	
+
 function reload_bullet:GetChannelTime()
 	if self:GetCaster():HasModifier("modifier_super_scepter") then
 		return 0
@@ -356,11 +361,11 @@ function reload_bullet:GetChannelTime()
 end
 function reload_bullet:GetBehavior()
 	if self:GetCaster():HasModifier("modifier_super_scepter") then
-		return DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE + DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL + DOTA_ABILITY_BEHAVIOR_IMMEDIATE + DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE
+		return DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE + DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL + DOTA_ABILITY_BEHAVIOR_IMMEDIATE + DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE + DOTA_ABILITY_BEHAVIOR_AUTOCAST
 	end
-	return DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE
+	return DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE + DOTA_ABILITY_BEHAVIOR_AUTOCAST
 end
-function reload_bullet:OnAbilityPhaseStart() EmitSoundOn("Pre_Reload", self:GetCaster()) return true end
+function reload_bullet:OnAbilityPhaseStart() self:GetCaster():EmitSoundParams("Pre_Reload", 1, 0.4, 0) return true end
 function reload_bullet:OnSpellStart()
 	if IsServer() then
 		local caster = self:GetCaster()
@@ -386,6 +391,33 @@ function reload_bullet:OnChannelFinish(Interrupted)
 	end
 end
 
+-------------------------------
+-- Auto Reload Modifier --
+-------------------------------
+modifier_reload_bullet_auto = class({})
+function modifier_reload_bullet_auto:IsHidden() return true end
+function modifier_reload_bullet_auto:OnCreated()
+	self:StartIntervalThink(FrameTime())
+end
+
+function modifier_reload_bullet_auto:OnIntervalThink()
+    if IsServer() then
+        local caster = self:GetCaster()
+		if not caster then return end
+		if not self:GetAbility() then return end
+        if not self:GetAbility():GetAutoCastState() then return end
+        if not self:GetAbility():IsCooldownReady() then return end
+        if self:GetAbility():GetLevel() < 1 then return end
+        if not self:GetAbility():IsFullyCastable() then return end
+        if caster:IsIllusion() then return end
+        if not caster:IsRealHero() then return end
+        if caster:IsSilenced() then return end
+		if caster:IsChanneling() then return end
+        caster:CastAbilityNoTarget(self:GetAbility(), caster:GetPlayerOwnerID())
+    end
+end
+
+
 
 function reload_bullet:reload_success(caster, ability)
 	if IsServer() then
@@ -405,14 +437,16 @@ function reload_bullet:reload_success(caster, ability)
 					end	
 				end	
 			end	
-			EmitSoundOn("End_Reload", caster)
+			caster:EmitSoundParams("End_Reload", 1, 0.4, 0)
 		end	
 	end	
 end	
 function modifier_reload_bullet_channel:OnDestroy()
-	local ability = self:GetAbility()
-	if ability then
-		ability:reload_success(self:GetCaster(), ability)
+	if IsServer() then
+		local ability = self:GetAbility()
+		if ability then
+			ability:reload_success(self:GetCaster(), ability)
+		end
 	end	
 end
 

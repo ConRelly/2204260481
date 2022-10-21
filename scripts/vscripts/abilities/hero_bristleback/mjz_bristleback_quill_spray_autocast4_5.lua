@@ -35,7 +35,7 @@ function modifier_class:IsPurgable() return false end
 function modifier_class:OnCreated(table)
     if IsServer() then
         local ability = self:GetAbility()
-        local tick_interval = ability:GetSpecialValueFor('tick_interval')
+        local tick_interval = ability:GetSpecialValueFor('tick_interval')  
         self:StartIntervalThink(tick_interval) 
     end         
 end

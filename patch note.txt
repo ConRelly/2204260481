@@ -2226,10 +2226,15 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
-* Tone down kardel , reload bullet can't be multicasted or mimic.
+* Tone down kardel(reduced some of his numbers) , reload bullet can't be multicasted or mimic.
 
 
 
+* Reload now has self autocast option, from 0.4 to 0.9 cd (similar to shot)
+* Autocast(single one) now has 0.1s tick rate on sniper/karder
+* Updated tooltip for change bullet type skill (sharpell one)
+* Reduced some of the Kardel damage numbers. 
+* And some other stuff
 
 
 

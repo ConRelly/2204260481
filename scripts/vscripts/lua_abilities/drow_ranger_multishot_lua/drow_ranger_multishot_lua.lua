@@ -66,9 +66,12 @@ function drow_ranger_multishot_lua:OnProjectileHit_ExtraData(target, location, d
                         if caster:HasModifier(modif_multishot) then
                             local time = GameRules:GetGameTime() / 60
                             if time > 1 then
-                                local mbuff = caster:FindModifierByName(modif_multishot)	
+                                local mbuff = caster:FindModifierByName(modif_multishot)
                                 local stack = math.floor(time * 5)
-                                mbuff:SetStackCount(stack)
+                                local orig_stacks = mbuff:GetStackCount()
+                                if orig_stacks < stack then
+                                    mbuff:SetStackCount(stack)
+                                end    
                             end
                         end		
                     end

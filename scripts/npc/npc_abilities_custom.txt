@@ -15069,7 +15069,7 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityTextureName"			"treant_overgrowth"
 	"AbilityCastPoint"				"0.3"
-	"AbilityChannelTime"			"4.0 3.0 2.0"
+	"AbilityChannelTime"			"2.0 1.5 1.0"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	"AbilityManaCost"				"350 250 150"
 	"precache"
@@ -22134,7 +22134,7 @@
 	"mjz_bloodseeker_bloodrage_autocast"
 	{
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_TOGGLE "
+		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilityTextureName"			"bloodseeker_bloodrage"
 
 		"AbilityCooldown"			   "0.3"
@@ -22546,7 +22546,7 @@
 	{
 		"BaseClass"						"ability_lua"	// "ability_datadriven"
 		"ScriptFile"					"abilities/hero_bristleback/mjz_bristleback_quill_spray_autocast.lua"
-		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_TOGGLE "
+		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"AbilityTextureName"			"bristleback_quill_spray"
 
 		"AbilityCooldown"			   "5.0"

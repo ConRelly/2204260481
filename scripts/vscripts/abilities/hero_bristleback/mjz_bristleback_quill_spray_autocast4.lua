@@ -38,7 +38,9 @@ function modifier_class:OnCreated(table)
     if IsServer() then
         local ability = self:GetAbility()
         local tick_interval = ability:GetSpecialValueFor('tick_interval')
-
+        if self:GetCaster() and self:GetCaster():GetUnitName() == "npc_dota_hero_sniper" then
+            tick_interval = 0.1
+        end 
         self:StartIntervalThink(tick_interval) 
     end         
 end

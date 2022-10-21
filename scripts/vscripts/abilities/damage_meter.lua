@@ -13,7 +13,7 @@ function damage_meter:OnSpellStart()
 	if not IsServer() then return end
 	local caster = self:GetCaster()
 	if not self:GetAutoCastState() then
-		if self:GetCaster():GetPhysicalArmorBaseValue() == 200 then
+		if self:GetCaster():GetPhysicalArmorBaseValue() == 420 then
 			Phys_State = 0
 		else
 			Phys_State = Phys_State + 1

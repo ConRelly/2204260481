@@ -14,7 +14,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"						"5"
 		"LevelsBetweenUpgrades"			"10"
-		"AbilityCooldown"				"0.70"
+		"AbilityCooldown"				"0.90"
 		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"precache"
@@ -31,7 +31,7 @@
 			"2"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"norm_bullet"				"30 35 40 45 55"
+				"norm_bullet"				"20 25 30 35 40"
 				"LinkedSpecialBonus"		"special_bonus_sniper_shoot_bullet_dmg"
 			}
 			"3"
@@ -43,7 +43,7 @@
 			"4"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"shrap_bullet"				"180"
+				"shrap_bullet"				"165"
 				"LinkedSpecialBonus"		"special_bonus_sniper_shoot_bullet_dmg"
 			}
 		}
@@ -58,7 +58,7 @@
 			"1"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"value"				"25"
+				"value"				"20"
 			}
 		}
 	}
@@ -69,8 +69,8 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/hero_kardel/abilities"
 		"AbilityTextureName"			"mjz_sniper_assassinate"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"AbilityCooldown"				"0.4"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityCooldown"				"0.90"
 		"MaxLevel"						"1"
 		"precache"
 		{
@@ -210,7 +210,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"dmg_per_agility"				"0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0"
+				"dmg_per_agility"				"0.4 0.8 1.2 1.6 2.0 2.4 2.8 3.2 3.6 4.0"
 				"LinkedSpecialBonus"			"special_bonus_kardels_skills_dmg"
 			}
 		}
@@ -272,7 +272,7 @@
 		"LevelsBetweenUpgrades"			"12"
 		"AbilityUpgradeGoldCost"		"0 0 5000 0 10000 0 25000"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"40"
+		"AbilityCooldown"				"70"
 		"AbilityManaCost"				"25"
 		"AbilitySpecial"
 		{
@@ -304,7 +304,7 @@
 			"1"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"value"				"150"
+				"value"				"135"
 			}
 		}
 	}
