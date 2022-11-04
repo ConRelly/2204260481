@@ -581,13 +581,13 @@ function AOHGameMode:OnPlayerChat(keys)
 				if _G.reload_buff then
 					_G.reload_buff = false
 					hero:AddNewModifier(hero, nil, "modifier_reload_bullet_channel_command", {})
-					Notifications:Top(plyID, {text= "Reload Modifier buff is now Hidden", style={color="red"}, duration=6})
+					Notifications:Top(plyID, {text= "Reload Modifier buff is now Shown", style={color="green"}, duration=6})
 				else
 					_G.reload_buff = true
 					if hero:HasModifier("modifier_reload_bullet_channel_command") then
 						hero:RemoveModifierByName("modifier_reload_bullet_channel_command")
 					end	
-					Notifications:Top(plyID, {text= "Reload Modifier buff is now Shown" , style={color="green"}, duration=6})
+					Notifications:Top(plyID, {text= "Reload Modifier buff is now Hidden" , style={color="red"}, duration=6})
 				end
 			end	
 		end	

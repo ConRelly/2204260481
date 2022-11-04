@@ -18120,36 +18120,102 @@
 	}
 
 
+
+	//=================================================================================================================
+	// Pugna: Life Drain
+	//=================================================================================================================
 	"pugna_life_drain"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5189"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"MaxLevel"					  "7"
-		"AbilityCastRange"				"2700"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"1"
+		"MaxLevel"					  "9"
+		"HasShardUpgrade"			"1"
+		"HasScepterUpgrade"			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"4700"
 		"AbilityCastPoint"				"0.2"
+		"AbilityChannelTime"			"10.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"225"
-		"AbilityChannelTime"			"20"
-		"AbilitySpecial"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
+			"health_drain"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"health_drain"					"150 650 1100 2250 3500 6400 11500"
+				"value"					"450 1650 4100 12250 23500 46400 91500 285000 675000"
 				"CalculateSpellDamageTooltip"	"1"
 			}
-			"02"
+			"tick_rate"					"0.50"
+			"drain_buffer"				"800"
+			"shard_damage_pct_from_ward"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"scepter_health_drain"			"200 600 1800 3750 7200 12500 26550"
-				"RequiresScepter"		"1"
+				"value"				"180"
+				"RequiresShard"		"1"
 			}
-			"05"
+			"bonus_heal_pct"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"scepter_cooldown"			"5"
-				"RequiresScepter"		"1"
+				"value"					"0"
+				"special_bonus_unique_pugna_1"			"+20"
+			}
+			"spell_amp_drain_rate"
+			{
+				"value"						"0"
+				"special_bonus_scepter"		"+25"
+			}
+			"spell_amp_drain_max"
+			{
+				"value"						"0"
+				"special_bonus_scepter"		"+175"
+			}
+			"spell_amp_drain_rate_ward"
+			{
+				"value"						"0"
+				"special_bonus_scepter"		"+12"
+			}
+			"spell_amp_drain_duration"
+			{
+				"value"						"0"
+				"special_bonus_scepter"		"+12"
 			}			
+			"max_spell_amp_drain_pct"
+			{
+				"value"						"0"
+				"special_bonus_scepter"		"+100"
+			}	
+			"AbilityCooldown"				
+			{
+				"value"						"11"		
+				"special_bonus_scepter"		"-50%"
+			}
 		}
 	}
+
 
 // Shadow Shaman: Mass Serpent Ward
 	"shadow_shaman_mass_serpent_ward"

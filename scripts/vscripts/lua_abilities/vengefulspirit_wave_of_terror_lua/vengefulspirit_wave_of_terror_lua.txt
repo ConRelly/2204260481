@@ -67,7 +67,7 @@
 			"07"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_agi_multiplier"		"2.0 2.5 3.0 3.5 4.0 5.0 6.0"
+				"damage_agi_multiplier"		"1.5 2.0 2.5 3.0 3.5 4.0 4.5"
 				"LinkedSpecialBonus"		"special_bonus_unique_wave_of_terror_dmg"
 			}
 			"08"
@@ -93,7 +93,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"						"9"
+				"value"						"9.0"
 			}
 		}
 	}

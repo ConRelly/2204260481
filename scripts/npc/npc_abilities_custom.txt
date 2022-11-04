@@ -40156,7 +40156,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"					"15.0"
+				"value"					"7.0"
 			}
 		}
 	}

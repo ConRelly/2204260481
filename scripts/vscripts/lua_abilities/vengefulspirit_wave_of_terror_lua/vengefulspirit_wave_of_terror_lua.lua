@@ -71,10 +71,10 @@ function modifier_wave_of_terror_armor_reduction:GetEffectAttachType()
 	return PATTACH_ABSORIGIN_FOLLOW
 end
 function modifier_wave_of_terror_armor_reduction:OnCreated()
-	self.armor_reduction = self:GetAbility():GetSpecialValueFor("armor_reduction") - math.floor(self:GetAbility():GetSpecialValueFor("armor_agi_multiplier") / 100 * self:GetCaster():GetAgility()) + talent_value(self:GetCaster(), "special_bonus_unique_vengeful_spirit_4")
+	self.armor_reduction = self:GetAbility():GetSpecialValueFor("armor_reduction") - math.floor(self:GetAbility():GetSpecialValueFor("armor_agi_multiplier") / 300 * self:GetCaster():GetAgility()) + talent_value(self:GetCaster(), "special_bonus_unique_vengeful_spirit_4")
 end
 function modifier_wave_of_terror_armor_reduction:OnRefresh()
-	self.armor_reduction = self:GetAbility():GetSpecialValueFor("armor_reduction") - math.floor(self:GetAbility():GetSpecialValueFor("armor_agi_multiplier") / 100 * self:GetCaster():GetAgility()) + talent_value(self:GetCaster(), "special_bonus_unique_vengeful_spirit_4")
+	self.armor_reduction = self:GetAbility():GetSpecialValueFor("armor_reduction") - math.floor(self:GetAbility():GetSpecialValueFor("armor_agi_multiplier") / 300 * self:GetCaster():GetAgility()) + talent_value(self:GetCaster(), "special_bonus_unique_vengeful_spirit_4")
 end
 function modifier_wave_of_terror_armor_reduction:DeclareFunctions()
 	return {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS}
