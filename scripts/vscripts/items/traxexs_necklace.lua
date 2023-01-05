@@ -58,8 +58,8 @@ function modifier_traxexs_necklace:GetModifierProcAttack_BonusDamage_Pure(keys)
 		local spell_mul = 1
 		local status_mult = 1
 		if ms_diff > 1 then
-			if armor > 10 then
-				armor = 10
+			if armor > 15 then
+				armor = 15
 			end	
 			if parent_name == "npc_dota_hero_windrunner" then
 				lvl_basedmg = lvl_basedmg * 2

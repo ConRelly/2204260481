@@ -153,6 +153,10 @@ function AOHGameMode:OnPlayerChat(keys)
 		end
 	end
 
+	if keys.text == "-dev_modifiers" and keys.playerid == 0 and Cheats:IsEnabled() then
+		print_hero_all_modifiers()
+	end
+
 
 	if keys.text == "-autocast" then
 		local playerID = keys.playerid

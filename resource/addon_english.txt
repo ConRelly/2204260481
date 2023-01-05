@@ -454,7 +454,7 @@
 	"DOTA_Tooltip_ability_item_traxexs_necklace_bonus_int"			"+$int"
 	"DOTA_Tooltip_ability_item_traxexs_necklace_bonus_evasion"		"%+$evasion"
 	"DOTA_Tooltip_ability_item_traxexs_necklace_Note0"              "<font color='#12EDE0'>Pure Speed</font> damage no spell amp, does not trigger damage mult effects, the dmg will be added to the normal physical attack in the DPS tool."
-	"DOTA_Tooltip_ability_item_traxexs_necklace_Note1"              "Limits: armor mult 10x , speed diference 30x(same limit for windrunner) "
+	"DOTA_Tooltip_ability_item_traxexs_necklace_Note1"              "Limits: armor mult 15x , speed diference 30x(same limit for windrunner) "
 	"DOTA_Tooltip_modifier_traxexs_necklace_chill"						"Chill"
 	"DOTA_Tooltip_modifier_traxexs_necklace_chill_description"			"Movement Speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 	"DOTA_Tooltip_modifier_traxexs_necklace_frozen"						"Frozen"
