@@ -2237,8 +2237,10 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * And some other stuff
 
 
-
-
+* Fixed Spell swap menu(broken from last dota patch)
+* Traxex's Necklace armor scaling limit from 10x to 15x.
+* Venge wave of Terror armor reduction scallying with agi tone down.
+* and some other stuff.
 
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.
