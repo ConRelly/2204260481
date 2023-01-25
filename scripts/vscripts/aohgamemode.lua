@@ -527,6 +527,7 @@ function AOHGameMode:InitVariables()
 					hero:AddItemByName("item_aegis_lua")
 					hero:AddItemByName("item_aegis_lua")
 					hero:AddItemByName("item_aegis_lua")
+					hero:AddItemByName("item_philosophers_stone")
 					if self._extra_mode then	
 						hero:AddItemByName("item_aegis_lua")
 						--hero:AddItemByName("item_philosophers_stone2")

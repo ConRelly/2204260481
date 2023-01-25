@@ -188,7 +188,7 @@ function modifier_num_sp:OnIntervalThink()
 	if IsServer() then
 		local caster = self:GetCaster()
 		local hp_regen = caster:GetHealthRegen()
-		local limit = caster:GetLevel() * 2
+		local limit = caster:GetLevel() * 3
 		self.spell_amp = 0
 		if caster:IsRealHero() then
 			self.spell_amp = math.floor(hp_regen * self:GetAbility():GetSpecialValueFor("hpr_spell_amp") / 100)

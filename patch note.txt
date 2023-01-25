@@ -2243,6 +2243,18 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * and some other stuff.
 
 
+* Philosophers stone from 500 gpm to 777 and now is given to all players at the start of the game(can't be bought). you can type the command "-sellstone" to sell (10k in first ~3 min of the game or half price anytime after)
+* Silencer has a new talent at lvl 10 (+1 heap) that affects ss too.
+* Buffed Snapfire ult, Q, and shredder
+* Slark heap stacks multiplayer moved from lvl 25 to lvl 10 and from +2 to +3 bonus stacks.
+* Num spell amp limit from hp regen from 2x lvl to 3x.
+
+
+* Removed bane special illusions from aghanim (they don't desappear completely and lang the game)
+* Replaced venge comander aura (had same special illusion like bane) with the custom commander aura(scales with agi).
+
+
+
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
 *Update patch notes70 can be found on the new map version:

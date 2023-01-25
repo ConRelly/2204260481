@@ -45,7 +45,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"agi_multiplier"	"4 5 6 7 8 9 10"
+				"agi_multiplier"	"1 2 3 4 5 6 7"
 			}
 			"04"
 			{

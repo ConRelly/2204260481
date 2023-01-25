@@ -30761,7 +30761,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_chance_scepter"		"15"
+				"crit_chance_scepter"		"20"
 			}
 			"04"
 			{
@@ -30777,6 +30777,7 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"heap_amount"			"1"
+				"LinkedSpecialBonus"	"special_bonus_unique_silencer_2_custom"
 			}
 			"12"
 			{
@@ -30814,6 +30815,25 @@
 			"particle"		"particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf"
 		}
 	}
+
+//silencer glaives talet
+	"special_bonus_unique_silencer_2_custom"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"1"
+			}
+		}
+	}
+
+
 	//=================================================================================================================
 	// Silencer: Glaives of Wisdom		智慧之刃
 	//=================================================================================================================
@@ -31471,7 +31491,7 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"heap_amount"			"1 1 1 1 2 2 2.5"
-				//"LinkedSpecialBonus"	"special_bonus_unique_mjz_slark_essence_shift_attack_count"
+				//"LinkedSpecialBonus"	"special_bonus_unique_mjz_slark_essence_shift_attack_count"  //heap bonus talent hardcoded for 3x
 			}
 			"12"						// 1 = Strength, 2 = Agility and str , 3 = Intelligence ,str and agi .
 			{
@@ -31500,10 +31520,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"2"
+				"value"				"3"
 			}
 		}
 	}
+
+
 	"mjz_slark_pounce"
 	{
 		"BaseClass"						"ability_lua"	//	"ability_datadriven"

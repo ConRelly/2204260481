@@ -1015,6 +1015,7 @@
 
 		"Ability1"				"vengefulspirit_magic_missile_lua"
 		"Ability2"				"vengefulspirit_wave_of_terror_lua"
+		"Ability3"              "vengefulspirit_command_aura_lua"
 		"Ability6"				"mjz_vengefulspirit_vengeance"
 		"Ability7"				"juggernaut_omni_slash"
 		"Ability15"				"special_bonus_unique_wave_of_terror_dmg"
@@ -1117,7 +1118,7 @@
 
 		"Ability2"				"mjz_silencer_glaives_of_wisdom"
 		"Ability6"				"mjz_silencer_global_silence"
-		"Ability10"				"special_bonus_armor_18"
+		"Ability10"				"special_bonus_unique_silencer_2_custom"
 		"Ability12"             "special_bonus_magic_resistance_40"
 		"Ability13"				"special_bonus_attack_speed_100"
 		"Ability14"				"special_bonus_hp_4000"
@@ -2004,12 +2005,12 @@
 		"Ability3"				"mjz_slark_essence_shift"
 		//"Ability4"				"mjz_slark_pounce"
 		"Ability10"				"special_bonus_intelligence_30"
-		"Ability11"             "special_bonus_hp_2000"
+		"Ability11"             "special_bonus_unique_mjz_slark_essence_shift_attack_count"  // actually is heap bonus
 		"Ability12"				"special_bonus_truestrike"
-		"Ability13"             "special_bonus_cdr_25"
+		"Ability13"             "special_bonus_spell_amplify_75"
 		"Ability14"				"special_bonus_unique_mjz_slark_dark_pact_damage"
 		"Ability15"				"special_bonus_9_crit_2150"
-		"Ability17"				"special_bonus_unique_mjz_slark_essence_shift_attack_count"
+		"Ability17"				"special_bonus_cdr_25"
 
 		"ArmorPhysical"				"-2"
 		"AttackRate"				"1.450000"

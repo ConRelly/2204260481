@@ -17796,8 +17796,8 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"ItemShareability"				"ITEM_NOT_SHAREABLE"
 	"ItemIsNeutralDrop"				"0"
-	"ItemPurchasable"			   "0"
-	"ItemCost"					  "2500"
+	"ItemPurchasable"			   	"0"
+	"ItemCost"					  	"2500"
 	"ItemSellable"					"1"
 	"AbilitySpecial"
 	{
@@ -17826,13 +17826,13 @@
 {
 	"ItemIsNeutralDrop"				"1"
 	"ItemSellable"					"0"
-	"BaseClass"					 "item_lua"
+	"BaseClass"					 	"item_lua"
 	"ScriptFile"					"items/item_philo_stone_temp.lua"
 	"ItemCost"						"0"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"item_philosophers_stone"
 	"ItemGloballyCombinable"		"0"
-	"ItemPurchasable"				"1"
+	"ItemPurchasable"				"0"
 	"ItemInitialCharges"			"1"
 	"AbilitySpecial"
 	{

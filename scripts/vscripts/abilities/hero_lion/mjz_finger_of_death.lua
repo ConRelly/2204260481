@@ -125,6 +125,7 @@ end
 function mjz_finger_of_death:OnSpellStart()
 	if IsServer() then
 		local caster = self:GetCaster()
+		--if caster:IsIllusion() then return end
 		local target = self:GetCursorTarget()
 		local targets = {target}
 
@@ -139,7 +140,6 @@ function mjz_finger_of_death:OnSpellStart()
 		local extra_int = GetTalentSpecialValueFor(self, "damage_per_int") * caster:GetIntellect() or 0
 		local kill_count = caster:GetModifierStackCount("modifier_mjz_finger_of_death_bonus", nil)
 		local damage = math.ceil((base_damage + extra_int + damage_per_kill * kill_count) / damage_instances)
-
 		if caster:HasModifier("modifier_super_scepter") then
 			if caster:HasItemInInventory("item_mjz_dagon_v2") then
 				self.can_use_dagon = false

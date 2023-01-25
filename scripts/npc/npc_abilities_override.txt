@@ -2814,24 +2814,69 @@
 
 	"bane_fiends_grip"
 	{
-		"AbilityCooldown"						"75"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5013"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Bane.FiendsGrip"
+
+		"HasScepterUpgrade"			"1"
 		"MaxLevel"                              "5"
 		"LevelsBetweenUpgrades"                 "15"
-		"AbilitySpecial"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"625"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"300"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"04"
+			"fiend_grip_tick_interval"		"0.5"
+			"fiend_grip_mana_drain"	
 			{
-				"var_type"						"FIELD_INTEGER"
-				"fiend_grip_damage"				"800 12800 59000 95400 185000"
+				"value"						"5"
+				"special_bonus_unique_bane_9"			"+5"
 			}
-			"03"
+			"AbilityChannelTime"
 			{
-				"var_type"						"FIELD_FLOAT"
-				"abilitychanneltime"			"6.0"
-				"LinkedSpecialBonus"			"special_bonus_unique_bane_3"
-			}			
+				"value"					"6.0"
+				"special_bonus_unique_bane_3"		"+5"
+			}
+			"fiend_grip_damage"
+			{
+				"value"			"1700 12800 59000 95400 185000"
+				"CalculateSpellDamageTooltip" "1"
+			}
+			"AbilityCooldown"				
+			{
+				"value"	"95"
+				"special_bonus_scepter"	"-45"
+			}
+			"illusion_count"
+			{
+				"special_bonus_scepter" "+0"
+			}
+			"scepter_incoming_illusion_damage"
+			{
+				"special_bonus_scepter"	"+200"
+			}
 		}
 	}
+
 
 	"bane_nightmare"
 	{
@@ -18380,7 +18425,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"180 850 2200 4900 7500 14500 22500"
+				"damage"					"680 2850 9200 24900 67500 145000 422500"
 				"LinkedSpecialBonus"		"special_bonus_unique_snapfire_7"
 			}
 			"02"
@@ -18416,12 +18461,12 @@
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"point_blank_range"			"600"
+				"point_blank_range"			"500"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"point_blank_dmg_bonus_pct"	"300.0"
+				"point_blank_dmg_bonus_pct"	"500.0"
 			}
 		}
 	}
@@ -18489,174 +18534,143 @@
 				}
 		}
 	}	
-"snapfire_mortimer_kisses"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"ID"							"6482"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-	"MaxLevel"					  "7"
-	"AbilitySound"					"Hero_Snapfire.MortimerBlob.Launch"
 
-	// Gobble up scepter ability not tied to any spell in regular game, for AD, associating it here.
-	"AbilityDraftUltScepterAbility" "snapfire_gobble_up"
-	"AbilityDraftUltScepterPreAbility" "snapfire_spit_creep"
-
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"3000"
-	"AbilityCastPoint"				"0.5"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-
-	// Damage
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"60"
-	"AbilityDuration"				"6.0"
-
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"250"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
+	//=================================================================================================================
+	// Ability: Snapfire Mortimer Kisses
+	//=================================================================================================================
+	"snapfire_mortimer_kisses"
 	{
-		"01"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"6482"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_Snapfire.MortimerBlob.Launch"
+		"MaxLevel"					  	"7"
+		// Gobble up scepter ability not tied to any spell in regular game, for AD, associating it here.
+		"AbilityDraftUltScepterAbility" "snapfire_gobble_up"
+		"AbilityDraftUltScepterPreAbility" "snapfire_spit_creep"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"3000"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60"
+		"AbilityDuration"				"5.5"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125 150 175"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"projectile_count"		"8 10 14 18 22 26 30"
-			"LinkedSpecialBonus"	"special_bonus_unique_snapfire_1"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"projectile_speed"		"1800"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"projectile_width"		"230"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"impact_radius"			"475"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_per_impact"		"1460 2240 6320 9400 24000 42500 78000"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration_tooltip"		"6.0"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
+			"projectile_count"
+			{
+				"value"		"8 10 14 18 22 26 30"
+				"special_bonus_unique_snapfire_1"	"+10"
+			}
+			"projectile_speed"		"1700"
+			"projectile_width"		"130"
+			"impact_radius"			"275"
+			"damage_per_impact"
+			{
+				"value"		"1460 6240 16320 39400 84000 142500 478000"
+				"special_bonus_unique_snapfire_mortimer_kisses_impact_damage"		"+36000"
+			}
+			"duration_tooltip"		"5.5"
 			"projectile_vision"		"500"
-		}
-		"08"
-		{
-			"var_type"				"FIELD_FLOAT"
 			"turn_rate"				"75"
-		}
-		"09"
-		{
-			"var_type"				"FIELD_FLOAT"
 			"burn_interval"			"0.5"
-		}
-		"10"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"burn_damage"			"750 1475 4700 7500 18500 31500 47800"
-		}
-		"11"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"move_slow_pct"			"25"
-			"LinkedSpecialBonus"	"special_bonus_unique_snapfire_4"
-		}
-		"12"
-		{
-			"var_type"				"FIELD_FLOAT"
+			"burn_damage"					
+			{
+				"value"					"750 3475 9700 27500 48500 91500 147800"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"move_slow_pct"
+			{
+				"value"			"25"
+				"special_bonus_unique_snapfire_4"	"+20"
+			}
 			"burn_ground_duration"	"3.0"
-		}
-		"13"
-		{
-			"var_type"				"FIELD_FLOAT"
 			"dist_change_speed"		"75"
-		}
-		"14"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"min_range"				"300"
-		}
-		"15"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"min_lob_travel_time"	"0.4"
-		}
-		"16"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"max_lob_travel_time"	"0.8"
-		}
-		"17"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"delay_after_last_projectile"	"0.4"
-		}
-		"18"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"burn_linger_duration"	"5.0"
+			"min_range"				"400"
+			"min_lob_travel_time"	"0.3"
+			"max_lob_travel_time"	"0.5"
+			"delay_after_last_projectile"	"0.2"
+			"burn_linger_duration"	"1.0"
 		}
 	}
-}
+
+
 	"snapfire_gobble_up"
 	{
 		"AbilityCooldown"				"18"
 	}
+
+	
+	//=================================================================================================================
+	// Ability: Snapfire Lil Shredder
+	//=================================================================================================================
 	"snapfire_lil_shredder"
 	{
-		"AbilityCooldown"				"36 32 28 24"
-		"AbilityDuration"				"20"
-		"AbilitySpecial"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"6488"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Snapfire.ExplosiveShells.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastRange"				"800"
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40"
+		"LevelsBetweenUpgrades"			"15"
+		"AbilityDuration"				"15"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50 65 80 95"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"70 100 230 960"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"buffed_attacks"			"30 60 90 120"
-			}
-			"07"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"armor_reduction_per_attack"	"0.1"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"armor_duration"				"5"
-			}
+				"damage"					"650 6745 37450 348500"
+				"buffed_attacks"			
+				{
+					"value"		"15 30 45 60"
+					"special_bonus_unique_snapfire_2"	"+20"
+				}
+				"attack_speed_bonus"		"300 400 500 600"
+				"attack_range_bonus"		"100 250 375 500"
+				"buff_duration_tooltip"		"15 30 45 60"
+				"base_attack_time"			"0.7"
+				"armor_reduction_per_attack"	"0.4 0.6 0.8 1"
+				"armor_duration"				"5.0"
 		}
 	}
-	
+
+
 	"special_bonus_unique_snapfire_7"
 	{
 		"AbilitySpecial"
@@ -25875,14 +25889,24 @@
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemIsNeutralDrop"				"1"
-		"ItemCost"						"1600"
+		"ItemCost"						"10000"
 		"ItemSellable"					"1"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gpm"				"501"
+				"bonus_gpm"			"777"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_mana"		"2000"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"-130"
 			}
 		}
 	}

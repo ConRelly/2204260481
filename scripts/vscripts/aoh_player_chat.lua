@@ -368,6 +368,29 @@ function AOHGameMode:OnPlayerChat(keys)
 		end				
 	end
 
+	if keys.text == "-sellstone" then
+		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
+		local Item = hero:GetItemInSlot(16)
+		local plyID = keys.playerid
+		if hero:IsAlive() and IsValidEntity(hero) then
+			if Item ~= nil and IsValidEntity(Item) then
+				if Item:GetName() == "item_philosophers_stone" then
+					local gold = 0
+					if time < 4 then
+						hero:RemoveItem(Item)
+						hero:ModifyGold(10000, true, 0)
+						gold = 10000
+					else
+						hero:RemoveItem(Item)
+						hero:ModifyGold(5000, true, 0)	
+						gold = 5000
+					end	
+					Notifications:Top(plyID, {text="Sold Philosophers stone for "..gold .."  gold after ".. time .. " minutes" , style={color="yellow"}, duration=12})
+				end
+			end
+		end				
+	end
+
 
 	function _CreateFakeCourier2(hero)
 		local origin = Vector(-2958, 2031, -969) + RandomVector(100)

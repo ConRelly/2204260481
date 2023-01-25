@@ -287,6 +287,7 @@ if IsServer() then
 		terrorblade_custom_reflection = true,
 		dazzle_shadow_wave = true,
 		reload_bullet = true,
+		snapfire_lil_shredder = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

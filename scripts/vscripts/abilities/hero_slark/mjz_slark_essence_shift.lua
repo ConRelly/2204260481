@@ -64,8 +64,10 @@ function ability_class:OnEnemyDiedNearby( hVictim, hKiller, kv )
 			end
 
 			self.nKills = self.nKills + 1
+            local counter = 1
 			if HasTalent(caster, extra_stack) then
-				self.nKills = self.nKills + 2
+				self.nKills = self.nKills + 3
+                counter = counter + 3
 			end	
 			local hBuff = caster:FindModifierByName(modifier_stack_name)
 			if hBuff ~= nil then
@@ -74,7 +76,7 @@ function ability_class:OnEnemyDiedNearby( hVictim, hKiller, kv )
 			end
 
 			local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf", PATTACH_OVERHEAD_FOLLOW, caster )
-			ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 1, 0, 0 ) )
+			ParticleManager:SetParticleControl( nFXIndex, counter, Vector( 1, 0, 0 ) )
 			ParticleManager:ReleaseParticleIndex( nFXIndex )
 		end
 	end

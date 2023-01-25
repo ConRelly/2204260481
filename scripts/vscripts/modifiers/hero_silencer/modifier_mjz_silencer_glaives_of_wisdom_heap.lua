@@ -119,14 +119,17 @@ if IsServer() then
 			if hKiller == caster or self:InNearby(hVictim) then
 				self:IncrementHeapAmount(heap_amount)
 	
-				self:PlayEffect( hVictim, hKiller, event, heap_amount)
 				if HasSuperScepter(caster) then
 					local chance = ability:GetSpecialValueFor("second_stack")
 					if RollPercentage(chance) then
 						self:IncrementHeapAmount(heap_amount)
 						self:PlayEffect( hVictim, hKiller, event, heap_amount * 2)
 						--print(chance_nr .. "luky nr")
-					end	
+					else
+						self:PlayEffect( hVictim, hKiller, event, heap_amount)	
+					end
+				else
+					self:PlayEffect( hVictim, hKiller, event, heap_amount)		
 				end	
 			end
 		end

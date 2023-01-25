@@ -1551,7 +1551,7 @@
 	"DOTA_Tooltip_modifier_item_durandal_Description"	""
 
 	"DOTA_Tooltip_Ability_item_num"				"Num"
-	"DOTA_Tooltip_Ability_item_num_Description"	"<h1>Active: Nullify Aura</h1>Reduce magic resistance by %magic_resist_red%%% in a %aura_radius_debuff% radius.<br>Aura Duration: %duration_buff% seconds<br></font><font color='#25970C'>Aura Duration is Affected by your Status resistance.</font><br><br>If there are 2 or more allied units within a %search_radius% radius of the enemy, the Magic Resistance reduction increases to 37,5%%.\n<h1>Passive: Wizard's Blood</h1>%hpr_spell_amp%%% of Health Regeneration is transferred to Spell Amplification(up to 2x your level) if main attribute is Intelligence.\n<h1>Passive: Num Aura</h1>+ %hp_aura% Health<br>+ %int_aura% Intellegence<br>+ %mana_regen_aura% Mana Regeneration<br><br>Radius: %aura_radius%."
+	"DOTA_Tooltip_Ability_item_num_Description"	"<h1>Active: Nullify Aura</h1>Reduce magic resistance by %magic_resist_red%%% in a %aura_radius_debuff% radius.<br>Aura Duration: %duration_buff% seconds<br></font><font color='#25970C'>Aura Duration is Affected by your Status resistance.</font><br><br>If there are 2 or more allied units within a %search_radius% radius of the enemy, the Magic Resistance reduction increases to 37,5%%.\n<h1>Passive: Wizard's Blood</h1>%hpr_spell_amp%%% of Health Regeneration is transferred to Spell Amplification(up to 3x your level) if main attribute is Intelligence.\n<h1>Passive: Num Aura</h1>+ %hp_aura% Health<br>+ %int_aura% Intellegence<br>+ %mana_regen_aura% Mana Regeneration<br><br>Radius: %aura_radius%."
 	"DOTA_Tooltip_Ability_item_num_lore"				"Mysterious cube-parasite, being the heart of the wizard uses his life energy and gives destructive power"
 	"DOTA_Tooltip_Ability_item_num_note0"				"Excess health regeneration from Spells Require HP is credited to Wizard's Blood"
 	"DOTA_Tooltip_Ability_item_num_str"				"+$str"
@@ -4053,12 +4053,15 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_heap_range"			"Enemy Death Radius: "
 	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_heap_amount"			"Intelligence Bonus per Death: "
 	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_heap_amount_hero"		"Intelligence Bonus per Death (Hero): "
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_note0"                 "Talent Affects Super Scepter effect too (+1)"
 	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_crit_chance_scepter"			"%Scepter Critical Chance: "
 	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_crit_multiplier_scepter"		"%Scepter Critical Damage:"
 	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_crit_multiplier_super_scepter" "%<font color='#DE3163'>Super Scepter Critical Damage:</font>"
-	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_second_stack" "%<font color='#DE3163'>Super Scepter Chance for an Extra Stack per Death:</font>"
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_second_stack" "%<font color='#DE3163'>SS Chance for an Extra Stack per Death:</font>"
 	"DOTA_Tooltip_modifier_mjz_silencer_glaives_of_wisdom_heap"				"Heap Intelligence"
 	"DOTA_Tooltip_modifier_mjz_silencer_glaives_of_wisdom_heap_Description"	"Silencer will gaining Intelligence from any enemy he kills, and any enemy that dies within 4225 range."	
+	"DOTA_Tooltip_ability_special_bonus_unique_silencer_2_custom"		"+{s:value} Heap Intelligence per death"
+
 	"DOTA_Tooltip_ability_mjz_silencer_global_silence"				"Global Silence"	
 	"DOTA_Tooltip_ability_mjz_silencer_global_silence_Description"	"Silencer stops all sound, preventing enemy heroes and units on the range from casting spells."
 	"DOTA_Tooltip_ability_mjz_silencer_global_silence_Lore"			"With a shock to the ground, all magic and sound pauses, and Nortrom fulfills his prophecy."
@@ -4172,7 +4175,8 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 	"DOTA_Tooltip_modifier_mjz_slark_essence_shift_fast_attack"					"Fast Attack"
 	"DOTA_Tooltip_modifier_mjz_slark_essence_shift_fast_attack_Description"	   	"Quickly attack the enemy %dMODIFIER_PROPERTY_TOOLTIP% times. "
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_slark_essence_shift_attack_count"	"+{s:value} extra stacks per Death"
-		
+	
+
 	"DOTA_Tooltip_ability_mjz_sniper_assassinate"				"Assassinate"
 	"DOTA_Tooltip_ability_mjz_sniper_assassinate_Description"	"Sniper locks onto a target enemy unit and, after %total_cast_time_tooltip% seconds, fires a devastating shot that deals damage at long range. <font color='#70EA72'>When the shell strikes the target, it stuns it for %stun_duration%s and causes a scatter shot in a cone, dealing a portion of damage to targets behind the primary target.</font>\nUpgradable by Aghanim's Scepter."
 	"DOTA_Tooltip_ability_mjz_sniper_assassinate_scepter_description"	"Turns Assassinate into a ground target AoE ability, that after the channel period launches a critical strike, can proc headshot and other on hit effects on units in the AoE."
@@ -4716,7 +4720,7 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 "DOTA_Tooltip_ability_item_pocket_tower_tower_attack_time"		"TOWER ATTACK SPEED:"
 "DOTA_Tooltip_ability_item_pocket_tower_tower_health"		"TOWER HEALTH:"
 "DOTA_Tooltip_ability_item_pocket_tower_tower_range"		"TOWER RANGE:"
-"DOTA_Tooltip_ability_item_philosophers_stone_Description"			"Increases gold income and mana, while reducing outgoing attack damage. Limited to 1 per player."	
+"DOTA_Tooltip_ability_item_philosophers_stone_Description"			"Increases gold income and mana, while reducing outgoing attack damage.<font color='#e03e2e'>Can be used on courier</font>\n Using command <font color='#e03e2e'>'-sellstone'</font> Can be sold at full price (10k) before game reaches ~3 min or at half price anytime after. Needs to be in your neutral slot for sell to work. "	
 
 
 //Level 4 Chest
@@ -7116,6 +7120,8 @@ The ward will have increased dmg base on hero total dmg and after lvl 30 it will
 Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_Ability_zuus_custom_thundergods_wrath_lore"				"The Lord of Heaven smites all who oppose him."
 
+
+"DOTA_Tooltip_ability_bane_fiends_grip_scepter_description"						"Reduces Fiend's Grip cooldown by %bonus_AbilityCooldown%."
 
 "DOTA_Tooltip_modifier_zuus_custom_thundergods_wrath"				   "Thundergod's Wrath"
 "DOTA_Tooltip_modifier_zuus_custom_thundergods_wrath_Description"	   "The next thunder spell used will be recasted."
