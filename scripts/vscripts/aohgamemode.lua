@@ -499,13 +499,17 @@ function AOHGameMode:_RenewStats()
 			if PlayerResource:HasSelectedHero(playerID) then
 				if PlayerResource:GetPlayer(playerID) then
 					local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-					hero:AddItemByName("item_edible_fragment")
-					hero:AddItemByName("item_enchanter")
+					DropItemOrInventory(playerID, "item_edible_fragment")
+					DropItemOrInventory(playerID, "item_enchanter")
+					--hero:AddItemByName("item_edible_fragment")
+					--hero:AddItemByName("item_enchanter")
 					if RollPercentage(20) or (self._playerNumber < 2) then
-						hero:AddItemByName("item_imba_ultimate_scepter_synth2")
+						DropItemOrInventory(playerID, "item_imba_ultimate_scepter_synth2")
+						--hero:AddItemByName("item_imba_ultimate_scepter_synth2")
 					end	
 					if self._playerNumber < 2 then
-						hero:AddItemByName("item_red_divine_rapier_lv4")
+						DropItemOrInventory(playerID, "item_red_divine_rapier_lv4")
+						--hero:AddItemByName("item_red_divine_rapier_lv4")
 					end	
 				end	
 			end
@@ -522,21 +526,30 @@ function AOHGameMode:InitVariables()
 			if PlayerResource:IsValidPlayerID(playerID) then
 				if PlayerResource:HasSelectedHero(playerID) then
 					local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-					hero:AddItemByName("item_black_king_bar_free")
+--[[ 					hero:AddItemByName("item_black_king_bar_free")
 					hero:AddItemByName("item_random_get_ability")
 					hero:AddItemByName("item_aegis_lua")
 					hero:AddItemByName("item_aegis_lua")
 					hero:AddItemByName("item_aegis_lua")
-					hero:AddItemByName("item_philosophers_stone")
+					hero:AddItemByName("item_philosophers_stone") ]]
+					DropItemOrInventory(playerID, "item_black_king_bar_free")
+					DropItemOrInventory(playerID, "item_random_get_ability")
+					DropItemOrInventory(playerID, "item_aegis_lua")
+					DropItemOrInventory(playerID, "item_aegis_lua")
+					DropItemOrInventory(playerID, "item_aegis_lua")
+					DropItemOrInventory(playerID, "item_philosophers_stone")
+					
 					if self._extra_mode then	
-						hero:AddItemByName("item_aegis_lua")
+						--hero:AddItemByName("item_aegis_lua")
+						DropItemOrInventory(playerID, "item_aegis_lua")
 						--hero:AddItemByName("item_philosophers_stone2")
 					end
 					if not _G._hardMode then 
 						hero:ModifyGold(5000, true, 0)
 					end	
 					if Cheats:IsEnabled() then
-						hero:AddItemByName("item_obs_studio")
+						DropItemOrInventory(playerID, "item_obs_studio")
+						--hero:AddItemByName("item_obs_studio")
 					end	
 					--hero:AddItemByName("item_ward_sentry")
 					CustomGameEventManager:Send_ServerToAllClients("game_begin", {name = PlayerResource:GetSelectedHeroName(playerID), id = playerID})
@@ -660,7 +673,8 @@ function AOHGameMode:DistributeChests()
 			if PlayerResource:HasSelectedHero(playerID) then
 				local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 				if hero then
-					hero:AddItemByName(chestName)
+					DropItemOrInventory(playerID, chestName)
+					--hero:AddItemByName(chestName)
 				end
 			end
 		end
@@ -888,7 +902,8 @@ function AOHGameMode:OnHeroLevelUp(event)
 		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
 		if mainHero == hero then
 			--cardPointsToGive = 1
-			mainHero:AddItemByName("item_random_get_ability_onlvl")
+			DropItemOrInventory(nPlayerID, "item_random_get_ability_onlvl")
+			--mainHero:AddItemByName("item_random_get_ability_onlvl")
 			--holdout_card_points:_BuyCardPoints(nPlayerID, cardPointsToGive)
 		end
 	end	
@@ -896,7 +911,8 @@ function AOHGameMode:OnHeroLevelUp(event)
 		-- Check if main/real hero
 		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
 		if mainHero == hero then
-			mainHero:AddItemByName("item_weapon_fragment")
+			DropItemOrInventory(nPlayerID, "item_weapon_fragment")
+			--mainHero:AddItemByName("item_weapon_fragment")
 		end
 	end
 	if (heroLevel % fragmentEveryXLevel == 0) and not hero:IsIllusion() then
@@ -904,20 +920,24 @@ function AOHGameMode:OnHeroLevelUp(event)
 		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
 		if mainHero == hero then
 			if self._playerNumber < 2 and slayer_fragmet > 0 then
-				mainHero:AddItemByName("item_weapon_fragment")
+				--mainHero:AddItemByName("item_weapon_fragment")
+				DropItemOrInventory(nPlayerID, "item_weapon_fragment")
 				slayer_fragmet = slayer_fragmet - 1
 			else
 				if RandomInt( 0,100 ) < 28 then
-					mainHero:AddItemByName("item_weapon_fragment")
+					DropItemOrInventory(nPlayerID, "item_weapon_fragment")
+					--mainHero:AddItemByName("item_weapon_fragment")
 				end
 				if self._playerNumber < 4 then
 					if RandomInt( 0,100 ) < 20 then
-						mainHero:AddItemByName("item_weapon_fragment")
+						DropItemOrInventory(nPlayerID, "item_weapon_fragment")
+						--mainHero:AddItemByName("item_weapon_fragment")
 					end	
 				end
 				if self._playerNumber < 2 then
 					if RandomInt( 0,100 ) < 10 then
-						mainHero:AddItemByName("item_weapon_fragment")
+						DropItemOrInventory(nPlayerID, "item_weapon_fragment")
+						--mainHero:AddItemByName("item_weapon_fragment")
 					end	
 				end
 			end					
@@ -928,10 +948,12 @@ function AOHGameMode:OnHeroLevelUp(event)
 		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
 		if mainHero == hero then
 			if self._playerNumber < 2 and edible_bonus_fragment > 0 then
-				mainHero:AddItemByName("item_edible_fragment")
+				--mainHero:AddItemByName("item_edible_fragment")
+				DropItemOrInventory(nPlayerID, "item_edible_fragment")
 				edible_bonus_fragment = edible_bonus_fragment - 1		
 			elseif RandomInt( 0,100 ) < 25 then
-				mainHero:AddItemByName("item_edible_fragment")
+				DropItemOrInventory(nPlayerID, "item_edible_fragment")
+				--mainHero:AddItemByName("item_edible_fragment")
 			end
 		end
 	end
@@ -939,20 +961,23 @@ function AOHGameMode:OnHeroLevelUp(event)
 		-- Check if main/real hero
 		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
 		if mainHero == hero then
-			mainHero:AddItemByName("item_branch_component")
+			DropItemOrInventory(nPlayerID, "item_branch_component")
+			--mainHero:AddItemByName("item_branch_component")
 		end
 	end	
 	if self._playerNumber < 2 and encahnter_bonus > 0 and not hero:IsIllusion() and (heroLevel > 9) then	
 		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
 		if mainHero == hero then
-			mainHero:AddItemByName("item_enchanter")
+			DropItemOrInventory(nPlayerID, "item_enchanter")
+			--mainHero:AddItemByName("item_enchanter")
 			encahnter_bonus = encahnter_bonus - 1
 		end
 	elseif dice_1 == dice_2 and not hero:IsIllusion() and (heroLevel > 9) then
 		-- Check if main/real hero
 		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
 		if mainHero == hero then
-			mainHero:AddItemByName("item_enchanter")
+			DropItemOrInventory(nPlayerID, "item_enchanter")
+			--mainHero:AddItemByName("item_enchanter")
 		end
 	end							
 end

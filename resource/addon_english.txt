@@ -2663,8 +2663,8 @@
 	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_enemy"				"Berserker's Call"
 	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_enemy_Description"	"You are forced to Axe"	
 
-	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_enemy_CD"           "On Phone"
-	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_enemy_CD_Description" "This Enemy is busy from another Call, try later"
+	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_enemy_cd"           "On Phone"
+	"DOTA_Tooltip_modifier_mjz_axe_berserkers_call_enemy_cd_Description" "This Enemy is busy from another Call, try later"
 
 	"DOTA_Tooltip_ability_mjz_axe_counter_helix"					"Counter Helix"
 	"DOTA_Tooltip_ability_mjz_axe_counter_helix_Description"		"When attacked, Axe performs a helix counter attack, dealing pure damage to all nearby enemies."

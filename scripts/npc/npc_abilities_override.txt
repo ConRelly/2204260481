@@ -18659,7 +18659,7 @@
 				"buffed_attacks"			
 				{
 					"value"		"15 30 45 60"
-					"special_bonus_unique_snapfire_2"	"+20"
+					"special_bonus_unique_snapfire_2"	"+30"
 				}
 				"attack_speed_bonus"		"300 400 500 600"
 				"attack_range_bonus"		"100 250 375 500"
@@ -25888,6 +25888,7 @@
 	"item_philosophers_stone"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPurchasable"				"0"
 		"ItemIsNeutralDrop"				"1"
 		"ItemCost"						"10000"
 		"ItemSellable"					"1"

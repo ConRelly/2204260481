@@ -4,7 +4,7 @@
 
 LinkLuaModifier('modifier_roshan_bonus', 'modifiers/modifier_roshan_bonus', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_roshan_bonus_burn', 'modifiers/modifier_roshan_bonus_burn', LUA_MODIFIER_MOTION_NONE)
-
+--require("lib/utils")
 -- Manage Game Mode Roshan
 if CRoshanSystem == nil then
 	CRoshanSystem = class({})
@@ -19,8 +19,8 @@ local ROSHAN_CLASS_NAME = "npc_dota_roshan_mega"    -- Roshan 类名
 local ROSHAN_SPAWNER = "roshan_spawner"             -- 出生定位点
 
 if IsInToolsMode() or GameRules:IsCheatMode() then
-    MIN_RESPAWN_TIME = 1.0
-    MAX_RESPAWN_TIME = 1.0
+    MIN_RESPAWN_TIME = 0.1
+    MAX_RESPAWN_TIME = 0.1
 end
 -- Indicates the time Respawn should be done
 CRoshanSystem._flRespawnTime = -1.0
@@ -150,6 +150,9 @@ function CRoshanSystem:OnEntityKilled(tData)
 
     self._iNum = self._iNum + 1
     print('Roshan die! The next roshan will be: #' .. self._iNum)
+    --give SS to one of the players by turn
+
+    OnRoshDeath(keys)
 
     -- Random Respawn Time
     self:SetRespawnTime(RandomFloat(MIN_RESPAWN_TIME, MAX_RESPAWN_TIME))
@@ -223,7 +226,7 @@ function CRoshanSystem:CreateRoshan()
     print(self._playernr .. " number of player/s")
     -- No more wait...
     self._flRespawnTime = -1.0
-
+    self._ss_drop = false
     -- Roshan creation
     local hRoshan = CreateUnitByName(ROSHAN_CLASS_NAME, self._SpawnPosition, true, nil, nil, DOTA_TEAM_NEUTRALS)
     hRoshan:SetAngles(self._SpawnAngles.x, self._SpawnAngles.y, self._SpawnAngles.z)
@@ -261,7 +264,7 @@ function CRoshanSystem:CreateRoshan()
 			end
 		end
 	end
-
+    _ss_rosh_drop = false
     if ( self._iNum >= 3 ) then
         local random_nr = math.random(0,100)
         local chance = 18
@@ -272,13 +275,16 @@ function CRoshanSystem:CreateRoshan()
             chance = 37
         end
         if self._playernr > 3 then
-            chance = 40
+            chance = 45
         end                    
         if random_nr < chance then
             print(random_nr .. " luky nr")
-            hRoshan:AddItemByName('item_imba_ultimate_scepter_synth2')       
+            _ss_rosh_drop = true
+            print("SS drop true")
+            --hRoshan:AddItemByName('item_imba_ultimate_scepter_synth2')       
         end    
     end
+ 
 
     --if ( self._iNum >= 4 ) then
     --    hRoshan:AddItemByName('item_ultimate_scepter_2')        -- 神杖
@@ -307,3 +313,149 @@ function CRoshanSystem:CreateRoshan()
     -- Ready!
     return hRoshan
 end
+
+local NotRegister = {
+    ["npc_playerhelp"] = true,
+    ["npc_dota_target_dummy"] = true,
+    ["npc_dummy_unit"] = true,
+    ["npc_dota_hero_target_dummy"] = true,
+    ["npc_courier_replacement"] = true,
+}
+
+-- Create a table to store the players who have received the item
+local received_item = {}
+
+--[[ function OnRoshDeath(keys)
+    -- Check if the chance to give an item proc
+    if _ss_rosh_drop then
+      -- Get a list of all players in the game
+      local players = {}
+      for i = 0, DOTA_MAX_PLAYERS - 1 do
+        if PlayerResource:IsValidPlayer(i) then
+            local hero = PlayerResource:GetSelectedHeroEntity(i)
+            if not NotRegister[hero:GetUnitName()] then
+                table.insert(players, i)
+            end
+        end
+      end
+
+      -- Check if all players have received the item
+      local all_received = true
+      for _, playerID in pairs(players) do
+        if not received_item[playerID] then
+          all_received = false
+          break
+        end
+      end
+
+      if all_received then
+        -- Reset the table if all players have received the item
+        received_item = {}
+        print("all players recived")
+      end
+
+      -- Shuffle the list of players
+      for i = #players, 2, -1 do
+        local j = math.random(i)
+        players[i], players[j] = players[j], players[i]
+      end
+
+      -- Give the item to the first player in the list who hasn't received it
+      for _, playerID in pairs(players) do
+        if not received_item[playerID] then
+          -- Give the item to the player
+          local item = CreateItem("item_imba_ultimate_scepter_synth2", nil, nil)
+          local player = PlayerResource:GetPlayer(playerID)
+          local hero = player:GetAssignedHero()
+          hero:AddItem(item)
+          local steam_name = PlayerResource:GetPlayerName(playerID)
+          Notifications:TopToAll({text="Player "..steam_name.. ", was his turn for rosh SS", style={color="green"}, duration=5})  
+          -- Mark the player as having received the item
+          received_item[playerID] = true
+
+          break
+        end
+      end
+    end
+end ]]
+
+
+--local dropped_items = {}
+--local collected_items = {} 
+function OnRoshDeath(keys)
+    -- Check if the chance to give an item proc
+    if _ss_rosh_drop then
+      -- Get a list of all players in the game
+      local players = {}
+      for i = 0, DOTA_MAX_PLAYERS - 1 do
+        if PlayerResource:IsValidPlayer(i) then
+            local hero = PlayerResource:GetSelectedHeroEntity(i)
+            if not NotRegister[hero:GetUnitName()] then
+                table.insert(players, i)
+            end
+        end
+      end
+
+      -- Check if all players have received the item
+      local all_received = true
+      for _, playerID in pairs(players) do
+        if not received_item[playerID] then
+          all_received = false
+          break
+        end
+      end
+
+      if all_received then
+        -- Reset the table if all players have received the item
+        received_item = {}
+        print("all players recived")
+      end
+
+      -- Shuffle the list of players
+      players = shuffle(players)
+      -- Give the item to the first player in the list who hasn't received it
+      for _, playerID in pairs(players) do
+        if not received_item[playerID] then
+            -- Give the item to the player
+            DropItemOrInventory(playerID, "item_imba_ultimate_scepter_synth2")
+            local steam_name = PlayerResource:GetPlayerName(playerID)
+            Notifications:TopToAll({text="Player "..steam_name.. ", was his turn for rosh SS", style={color="green"}, duration=5})              
+            received_item[playerID] = true 
+            break
+        end
+      end
+    end
+end
+
+function shuffle(t)
+    local n = #t
+    while n > 1 do
+        local k = math.random(n)
+        t[n], t[k] = t[k], t[n]
+        n = n - 1
+    end
+    return t
+end
+
+
+--[[ function CRoshanSystem:OnItemPickedUp(event)
+	if not IsServer() then return end
+    CollectStoredItem(event.PlayerID)
+end
+
+
+function CollectStoredItem(playerID)
+    if dropped_items[playerID] then
+        local player = PlayerResource:GetPlayer(playerID)
+        local hero = player:GetAssignedHero()
+        local success = hero:AddItem(dropped_items[playerID])
+        if success then
+            Notifications:Top(playerID,{text="You have collected your stored item", style={color="green"}, duration=5})
+            collected_items[playerID] = true
+            dropped_items[playerID] = nil
+        else
+            Notifications:Top(playerID,{text="Your inventory is full, please clear some space", style={color="red"}, duration=5})
+        end
+    end
+end
+ ]]

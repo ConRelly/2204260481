@@ -221,7 +221,8 @@ function refresh_players_bonus()
 				end	
 				hero:ModifyGold(15000, true, 0)
 				if not hero.reward_edible_fragment and not _G._hardMode then
-					hero:AddItemByName("item_edible_fragment")
+					--hero:AddItemByName("item_edible_fragment")
+					DropItemOrInventory(playerID, "item_edible_fragment")
 					hero.reward_edible_fragment = true
 				end	
 			end

@@ -2,7 +2,7 @@ LinkLuaModifier("modifier_mjz_axe_berserkers_call_caster","abilities/hero_axe/mj
 LinkLuaModifier("modifier_mjz_axe_berserkers_call_armor_bonus", "abilities/hero_axe/mjz_axe_berserkers_call.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_axe_berserkers_call_enemy", "abilities/hero_axe/mjz_axe_berserkers_call.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_axe_berserkers_call_radius_talent", "abilities/hero_axe/mjz_axe_berserkers_call.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_mjz_axe_berserkers_call_enemy_CD", "abilities/hero_axe/mjz_axe_berserkers_call.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_axe_berserkers_call_enemy_cd", "abilities/hero_axe/mjz_axe_berserkers_call.lua", LUA_MODIFIER_MOTION_NONE)
 -----------------------------------------------------------------------------------------
 mjz_axe_berserkers_call = class({})
 function mjz_axe_berserkers_call:OnAbilityPhaseStart()
@@ -41,7 +41,7 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local ability = self
 		local modifier_name = "modifier_mjz_axe_berserkers_call_enemy"
-		local modifier_CD = "modifier_mjz_axe_berserkers_call_enemy_CD"
+		local modifier_CD = "modifier_mjz_axe_berserkers_call_enemy_cd"
 	
 		local duration = ability:GetSpecialValueFor('duration')
 		local radius = GetTalentSpecialValueFor(ability, 'radius')
@@ -203,10 +203,10 @@ modifier_mjz_axe_berserkers_call_radius_talent = class({})
 function modifier_mjz_axe_berserkers_call_radius_talent:IsHidden() return true end
 function modifier_mjz_axe_berserkers_call_radius_talent:IsPurgable() return false end
 ------------------------------------------------------------------ debuff to prevent perma call
-modifier_mjz_axe_berserkers_call_enemy_CD = class({})
-function modifier_mjz_axe_berserkers_call_enemy_CD:IsHidden() return false end
-function modifier_mjz_axe_berserkers_call_enemy_CD:IsPurgable() return false end
---function modifier_mjz_axe_berserkers_call_enemy_CD:IsDebuff() return false end
+modifier_mjz_axe_berserkers_call_enemy_cd = class({})
+function modifier_mjz_axe_berserkers_call_enemy_cd:IsHidden() return false end
+function modifier_mjz_axe_berserkers_call_enemy_cd:IsPurgable() return false end
+--function modifier_mjz_axe_berserkers_call_enemy_cd:IsDebuff() return false end
 -----------------------------------------------------------------------------
 
 -- 搜索目标位置所有的敌人单位

@@ -17824,7 +17824,7 @@
 }
 "item_philo_stone_temp"
 {
-	"ItemIsNeutralDrop"				"1"
+	"ItemIsNeutralDrop"				"0"
 	"ItemSellable"					"0"
 	"BaseClass"					 	"item_lua"
 	"ScriptFile"					"items/item_philo_stone_temp.lua"

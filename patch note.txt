@@ -2255,6 +2255,24 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+
+* Roshan now drops the Super Scepter directly into the inventory of a random player each time it dies and the ss drops procs(it will not get another one until all get one). The chance is determined by the number of players in the game.
+* The chance for 4 and 5 players has been increased from 40% to 45%. The chance for 3 players remains at 37%, for 2 players 25%, and for 1 player at 18%.
+* Most of the items that get rewarded by the system now drop on the ground if inventory/backpack/stash is full instead of just losing them.
+* Fix still being able to buy Philo stone tru neutral shop.
+* Snapfire new talent (25% cdr), and increased lil shredder talent from 20 to 30.
+
+
+
+
+
+
+
+
+
+
+
+
 * I recommend playing the map from the workshop link, this one is mostly a backup.
 
 *Update patch notes70 can be found on the new map version:
