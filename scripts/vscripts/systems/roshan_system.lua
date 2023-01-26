@@ -419,7 +419,7 @@ function OnRoshDeath(keys)
             -- Give the item to the player
             DropItemOrInventory(playerID, "item_imba_ultimate_scepter_synth2")
             local steam_name = PlayerResource:GetPlayerName(playerID)
-            Notifications:TopToAll({text="Player "..steam_name.. ", was his turn for rosh SS", style={color="green"}, duration=5})              
+            Notifications:TopToAll({text="Player "..steam_name.. ", was his turn for rosh SS(can be shared)", style={color="green"}, duration=5})              
             received_item[playerID] = true 
             break
         end

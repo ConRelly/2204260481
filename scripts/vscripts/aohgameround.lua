@@ -190,6 +190,7 @@ end
 function AOHGameRound:OnNPCSpawned(event)
 	if not IsServer() then return end
 	local spawnedUnit = EntIndexToHScript(event.entindex)
+	if not IsValidEntity(spawnedUnit) then return end
 	if not spawnedUnit or spawnedUnit:IsPhantom() or spawnedUnit:GetClassname() == "npc_dota_thinker" or spawnedUnit:GetUnitName() == "" or spawnedUnit:IsIllusion() then
 		return
 	end
@@ -203,7 +204,16 @@ function AOHGameRound:OnNPCSpawned(event)
 		table.insert(self._vEnemiesRemaining, spawnedUnit)
 		spawnedUnit:SetDeathXP(0)
 		spawnedUnit.unitName = spawnedUnit:GetUnitName()
-		
+		Timers:CreateTimer(120, -- 2 minutes in seconds
+		function()
+		  if not spawnedUnit:IsNull() and IsValidEntity(spawnedUnit) and spawnedUnit:IsAlive() then
+			print("enemey unit is alive after 2 min")
+			spawnedUnit:SetAbsOrigin(Vector(0, 0, 0)) -- or whatever the center of the map is
+			FindClearSpaceForUnit(spawnedUnit, Vector(0, 0, 0), true)
+			AddFOWViewer(DOTA_TEAM_GOODGUYS, spawnedUnit:GetAbsOrigin(), 1200, 120, false)
+		  end
+		end)		
+
 		if self._endlessMode_started then
 			GameRules.GameMode:AddEndlessEnemy(spawnedUnit)
 		end
@@ -214,6 +224,7 @@ end
 function AOHGameRound:OnEntityKilled(event)
 	if not IsServer() then return end
 	local killedUnit = EntIndexToHScript(event.entindex_killed)
+	if not IsValidEntity(killedUnit) then return end
 	if not killedUnit then
 		return
 	end
@@ -238,7 +249,15 @@ function AOHGameRound:OnEntityKilled(event)
 			playerStats.nCreepsKilled = playerStats.nCreepsKilled + 1
 		end
 	end
-
+	Timers:CreateTimer(7, 
+	function()
+		if not killedUnit:IsNull() and IsValidEntity(killedUnit) and killedUnit:IsAlive() then -- check if the unit is still alive (it might have been removed from the _vEnemiesRemaining table)
+			print("killed unit is alive")
+			killedUnit:SetAbsOrigin(Vector(0, 0, 0)) 
+			FindClearSpaceForUnit(killedUnit, Vector(0, 0, 0), true)
+			AddFOWViewer(DOTA_TEAM_GOODGUYS, killedUnit:GetAbsOrigin(), 1200, 180, false)
+		end
+	end)
 end
 
 
@@ -302,3 +321,6 @@ function AOHGameRound:_CheckForGoldBagDrop(killedUnit)
 	local dropTarget = killedUnit:GetAbsOrigin() + RandomVector(RandomFloat(50, 350))
 	newItem:LaunchLoot(false, 300, 0.75, dropTarget)
 end
+
+
+

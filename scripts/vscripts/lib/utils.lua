@@ -898,3 +898,79 @@ function DropItemOrInventory(playerID, itemName)
 		end
 	end	
 end
+-------Lot Drops-----
+local received_item = {}
+local NotRegister = {
+    ["npc_playerhelp"] = true,
+    ["npc_dota_target_dummy"] = true,
+    ["npc_dummy_unit"] = true,
+    ["npc_dota_hero_target_dummy"] = true,
+    ["npc_courier_replacement"] = true,
+}
+function OnLootDropItem(itemName)
+      -- Get a list of all players in the game
+	local players = {}
+	for i = 0, DOTA_MAX_PLAYERS - 1 do
+		if PlayerResource:IsValidPlayer(i) then
+			local hero = PlayerResource:GetSelectedHeroEntity(i)
+			if not NotRegister[hero:GetUnitName()] then
+				table.insert(players, i)
+			end
+		end
+	end
+
+	-- Check if all players have received the item
+	local all_received = true
+	for _, playerID in pairs(players) do
+		if not received_item[playerID] then
+			all_received = false
+			break
+		end
+	end
+
+	if all_received then
+		-- Reset the table if all players have received the item
+		received_item = {}
+		print("all players recived loot drops")
+	end
+
+	-- Shuffle the list of players
+	players = shuffle(players)
+	-- Give the item to the first player in the list who hasn't received it
+	for _, playerID in pairs(players) do
+		if not received_item[playerID] then
+			-- Give the item to the player
+			DropLootOrInventory(playerID, itemName)             
+			received_item[playerID] = true 
+			break
+		end
+	end
+
+end
+function shuffle(t)
+    local n = #t
+    while n > 1 do
+        local k = math.random(n)
+        t[n], t[k] = t[k], t[n]
+        n = n - 1
+    end
+    return t
+end
+
+----drops for loot items --
+function DropLootOrInventory(playerID, itemName)
+	if IsServer() then
+		local player = PlayerResource:GetPlayer(playerID)
+		local hero = player:GetAssignedHero()
+		local item = CreateItem(itemName, nil, nil)
+		local success = hero:AddItem(item)
+		if not success then
+			local origin = hero:GetAbsOrigin()
+			local newItem = CreateItem(itemName, nil, nil)
+			newItem:SetPurchaseTime(0)
+			local drop = CreateItemOnPositionSync(origin, newItem )
+			local pos_launch = origin+RandomVector(RandomFloat(150,200))
+			newItem:LaunchLoot(false, 200, 0.75, pos_launch)
+		end
+	end	
+end

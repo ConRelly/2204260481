@@ -526,30 +526,30 @@ function AOHGameMode:InitVariables()
 			if PlayerResource:IsValidPlayerID(playerID) then
 				if PlayerResource:HasSelectedHero(playerID) then
 					local hero = PlayerResource:GetSelectedHeroEntity(playerID)
---[[ 					hero:AddItemByName("item_black_king_bar_free")
+					hero:AddItemByName("item_black_king_bar_free")
 					hero:AddItemByName("item_random_get_ability")
 					hero:AddItemByName("item_aegis_lua")
 					hero:AddItemByName("item_aegis_lua")
 					hero:AddItemByName("item_aegis_lua")
-					hero:AddItemByName("item_philosophers_stone") ]]
-					DropItemOrInventory(playerID, "item_black_king_bar_free")
+					hero:AddItemByName("item_philosophers_stone")
+--[[ 					DropItemOrInventory(playerID, "item_black_king_bar_free")
 					DropItemOrInventory(playerID, "item_random_get_ability")
 					DropItemOrInventory(playerID, "item_aegis_lua")
 					DropItemOrInventory(playerID, "item_aegis_lua")
 					DropItemOrInventory(playerID, "item_aegis_lua")
-					DropItemOrInventory(playerID, "item_philosophers_stone")
+					DropItemOrInventory(playerID, "item_philosophers_stone") ]]
 					
 					if self._extra_mode then	
-						--hero:AddItemByName("item_aegis_lua")
-						DropItemOrInventory(playerID, "item_aegis_lua")
+						hero:AddItemByName("item_aegis_lua")
+						--DropItemOrInventory(playerID, "item_aegis_lua")
 						--hero:AddItemByName("item_philosophers_stone2")
 					end
 					if not _G._hardMode then 
 						hero:ModifyGold(5000, true, 0)
 					end	
 					if Cheats:IsEnabled() then
-						DropItemOrInventory(playerID, "item_obs_studio")
-						--hero:AddItemByName("item_obs_studio")
+						--DropItemOrInventory(playerID, "item_obs_studio")
+						hero:AddItemByName("item_obs_studio")
 					end	
 					--hero:AddItemByName("item_ward_sentry")
 					CustomGameEventManager:Send_ServerToAllClients("game_begin", {name = PlayerResource:GetSelectedHeroName(playerID), id = playerID})
@@ -1406,7 +1406,8 @@ end
 function AOHGameMode:CheckForLootItemDrop(killedUnit)
 	for _, itemDropInfo in pairs(self._vLootItemDropsList) do
 		if RollPercentage(itemDropInfo.nChance) then
-			create_item_drop(itemDropInfo.szItemName, killedUnit:GetAbsOrigin())
+			OnLootDropItem(itemDropInfo.szItemName)
+			--create_item_drop(itemDropInfo.szItemName, killedUnit:GetAbsOrigin())
 		end
 	end
 end

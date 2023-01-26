@@ -35,6 +35,26 @@
 			"Item"					"item_book_of_intelligence"
 			"Chance"				"1"
 		}
+		"item_earth_essence"
+		{
+			"Item"					"item_earth_essence"
+			"Chance"				"1"
+		}
+		"HealingSalve"
+		{
+			"Item"					"item_fire_essence"
+			"Chance"				"1"
+		}
+		"RandomSkill"
+		{
+			"Item"					"item_air_essence"
+			"Chance"				"1"
+		}
+		"EnchantedMango"
+		{
+			"Item"					"item_water_essence"
+			"Chance"				"1"
+		}				
 	}
 		"LinkedXPEnemies"
 	{

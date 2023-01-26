@@ -37,7 +37,7 @@ function modifier_siltbreaker_bubble:OnIntervalThink( )
 		victim = self:GetParent(),
 		attacker = self:GetCaster(),
 		damage = self.bubble_damage,
-		damage_type = self:GetAbility():GetAbilityDamageType(),
+		damage_type = DAMAGE_TYPE_MAGICAL,
 		ability = self,
 	}
 

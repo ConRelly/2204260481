@@ -2264,9 +2264,9 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
-
-
-
+* Most loot drops from mobs/bosses now will drop in the inventory of players(by turn, random) and on the ground near them if their inv is full. 
+* Reversed the starting items to be given normally (seems sometimes players were missing starting items)
+* Added a check for units that have been alive for more than 2 min to be teleported in the middle of the map and have vision around them, this might help with identifying if the round stuck was because of an unit stuck outside map.
 
 
 
