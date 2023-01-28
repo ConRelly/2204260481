@@ -5,16 +5,20 @@ function OnEquip(keys)
 	if not IsServer() then return nil end
 	local caster = keys.caster
 	local modifier = "modifier_item_mjz_aether_lens"
-	if caster:HasModifier("modifier_item_mjz_aether_lens_stats") then return end
-	if caster:HasModifier(modifier) then caster:RemoveModifierByName(modifier) end
-	caster:AddNewModifier(caster, keys.ability, modifier, {})
+	if caster then
+		if caster:HasModifier("modifier_item_mjz_aether_lens_stats") then return end
+		if caster:HasModifier(modifier) then caster:RemoveModifierByName(modifier) end
+		caster:AddNewModifier(caster, keys.ability, modifier, {})
+	end
 end
 function OnUnequip(keys)
 	if not IsServer() then return nil end
 	local caster = keys.caster
 	local ability = keys.ability
 	local modifier = "modifier_item_mjz_aether_lens"
-	if caster:HasModifier(modifier) then caster:RemoveModifierByName(modifier) end
+	if caster then
+		if caster:HasModifier(modifier) then caster:RemoveModifierByName(modifier) end
+	end	
 end
 
 function OnSpellStart(keys)

@@ -2271,6 +2271,10 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Trying to fix the rounds stuck sometimes (the reward from every 6 rounds does not drop on the ground if inventory is full)
+* Pendant of Resurrection now has 5 sec channeling time from 6.
+* Gold bags now expire after 25 min instead of 10.
+* and some other fixes.
 
 
 * I recommend playing the map from the workshop link, this one is mostly a backup.

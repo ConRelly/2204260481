@@ -117,6 +117,7 @@ function AOHGameMode:InitGameMode()
 	_G._endlessMode_started = false
 	_G._normal_mode = false
 	_G._defeat_extra_lives = 3
+	_G._give_gold_bags = true
 	self._endlessMode_started = false
 	self._manaMode = false
 	self._doubleMode = false
@@ -670,13 +671,15 @@ function AOHGameMode:DistributeChests()
 		-- Notifications:TopToAll({text="Trade your chest in for a tier " .. temp .. " neutral item", duration=5})
 		Notifications:TopToAll({text="#notifications_trade_chest_" .. temp, duration=5})
 		for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-			if PlayerResource:HasSelectedHero(playerID) then
-				local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-				if hero then
-					DropItemOrInventory(playerID, chestName)
-					--hero:AddItemByName(chestName)
+			if PlayerResource:IsValidPlayer(playerID) then
+				if PlayerResource:HasSelectedHero(playerID) then
+					local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+					if hero then
+						--DropItemOrInventory(playerID, chestName)
+						hero:AddItemByName(chestName)
+					end
 				end
-			end
+			end	
 		end
 	end
 end
@@ -878,6 +881,7 @@ function AOHGameMode:OnHeroLevelUp(event)
 	local unspendAP = hero:GetAbilityPoints()
 	local heroLevel = hero:GetLevel()
 	local nPlayerID = hero:GetPlayerID()
+	if not PlayerResource:IsValidPlayer(nPlayerID) then return end
 	local dice_1 = RandomInt(1, 100)
 	local dice_2 = RandomInt(1, 100)
 	local abilityPointsToGive = 1

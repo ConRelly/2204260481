@@ -249,15 +249,17 @@ function AOHGameRound:OnEntityKilled(event)
 			playerStats.nCreepsKilled = playerStats.nCreepsKilled + 1
 		end
 	end
-	Timers:CreateTimer(7, 
-	function()
-		if not killedUnit:IsNull() and IsValidEntity(killedUnit) and killedUnit:IsAlive() then -- check if the unit is still alive (it might have been removed from the _vEnemiesRemaining table)
-			print("killed unit is alive")
-			killedUnit:SetAbsOrigin(Vector(0, 0, 0)) 
-			FindClearSpaceForUnit(killedUnit, Vector(0, 0, 0), true)
-			AddFOWViewer(DOTA_TEAM_GOODGUYS, killedUnit:GetAbsOrigin(), 1200, 180, false)
-		end
-	end)
+	if killedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+		Timers:CreateTimer(7, 
+		function()
+			if not killedUnit:IsNull() and IsValidEntity(killedUnit) and killedUnit:IsAlive() then -- check if the unit is still alive (it might have been removed from the _vEnemiesRemaining table)
+				print("killed unit is alive")
+				killedUnit:SetAbsOrigin(Vector(0, 0, 0)) 
+				FindClearSpaceForUnit(killedUnit, Vector(0, 0, 0), true)
+				AddFOWViewer(DOTA_TEAM_GOODGUYS, killedUnit:GetAbsOrigin(), 1200, 180, false)	
+			end
+		end)
+	end	
 end
 
 
@@ -314,12 +316,14 @@ function AOHGameRound:_CheckForGoldBagDrop(killedUnit)
 	self._nGoldRemainingInRound = math.max(0, self._nGoldRemainingInRound - nGoldToDrop)
 	self._nGoldBagsRemaining = math.max(0, self._nGoldBagsRemaining - 1)
 
+
 	local newItem = CreateItem("item_bag_of_gold", nil, nil)
 	newItem:SetPurchaseTime(0)
 	newItem:SetCurrentCharges(nGoldToDrop)
 	local drop = CreateItemOnPositionSync(killedUnit:GetAbsOrigin(), newItem)
 	local dropTarget = killedUnit:GetAbsOrigin() + RandomVector(RandomFloat(50, 350))
 	newItem:LaunchLoot(false, 300, 0.75, dropTarget)
+	
 end
 
 

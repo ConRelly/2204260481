@@ -79,13 +79,15 @@ function modifier_arcane_supremacy:OnIntervalThink()
 	if IsServer() then
 		local caster = self:GetCaster()
 		local modifier = "modifier_item_imba_ultimate_scepter_synth_stats"
-		if caster:HasModifier(modifier) and caster:FindModifierByName(modifier):GetStackCount() >= 2 then
-			caster:AddNewModifier(caster, self:GetAbility(), "modifier_super_scepter", {})
-		else
-			if caster:HasModifier("modifier_super_scepter") then
-				caster:RemoveModifierByName("modifier_super_scepter")
+		if caster then
+			if caster:HasModifier(modifier) and caster:FindModifierByName(modifier):GetStackCount() >= 2 then
+				caster:AddNewModifier(caster, self:GetAbility(), "modifier_super_scepter", {})
+			else
+				if caster:HasModifier("modifier_super_scepter") then
+					caster:RemoveModifierByName("modifier_super_scepter")
+				end
 			end
-		end
+		end	
 	end
 end
 function modifier_arcane_supremacy:DeclareFunctions()

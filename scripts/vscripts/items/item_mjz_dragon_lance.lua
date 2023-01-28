@@ -7,16 +7,20 @@ function OnEquip(keys)
 	local ability = keys.ability
     local modifier = 'modifier_item_mjz_dragon_lance'
     local modifier_stats = 'modifier_item_mjz_dragon_lance_stats'
-    if not caster:IsRangedAttacker() then return nil end
-    if caster:HasModifier(modifier_stats) then return nil end
-    if caster:HasModifier(modifier) then caster:RemoveModifierByName(modifier) end
-    caster:AddNewModifier(caster, ability, modifier, {})
+    if caster then
+        if not caster:IsRangedAttacker() then return nil end
+        if caster:HasModifier(modifier_stats) then return nil end
+        if caster:HasModifier(modifier) then caster:RemoveModifierByName(modifier) end
+        caster:AddNewModifier(caster, ability, modifier, {})
+    end   
 end
 function OnUnequip(keys)
     if not IsServer() then return nil end
     local caster = keys.caster
     local modifier = 'modifier_item_mjz_dragon_lance'
-    if caster:HasModifier(modifier) then caster:RemoveModifierByName(modifier) end
+    if caster then
+        if caster:HasModifier(modifier) then caster:RemoveModifierByName(modifier) end
+    end   
 end
 function OnSpellStart(keys)
     if not IsServer() then return nil end
@@ -25,22 +29,26 @@ function OnSpellStart(keys)
 	local modifier = 'modifier_item_mjz_dragon_lance'
     local modifier_stats = 'modifier_item_mjz_dragon_lance_stats'
     local sound_cast = keys.sound_cast
-    local item_name = ability:GetAbilityName()
-    if caster:HasModifier(modifier_stats) then return nil end
-    caster:AddNewModifier(caster, ability, modifier_stats, {})
-    caster:EmitSound(sound_cast)
-    ability:SetCurrentCharges(ability:GetCurrentCharges() - 1)
-    caster:RemoveItem(ability)
-	caster:RemoveModifierByName(modifier)
+    if ability and caster then
+        local item_name = ability:GetAbilityName()
+        if caster:HasModifier(modifier_stats) then return nil end
+        caster:AddNewModifier(caster, ability, modifier_stats, {})
+        caster:EmitSound(sound_cast)
+        ability:SetCurrentCharges(ability:GetCurrentCharges() - 1)
+        caster:RemoveItem(ability)
+        caster:RemoveModifierByName(modifier)
 
-    -- Create a Item for one game frame to prevent regular dota interactions from going bad
-    if Timers then
-        local item_dummy = CreateItem(item_name, caster, caster)
-        caster:AddItem(item_dummy)
-        Timers:CreateTimer(FrameTime(), function()
-            caster:RemoveItem(item_dummy)
-        end)
-    end
+        -- Create a Item for one game frame to prevent regular dota interactions from going bad
+        if Timers then
+            local item_dummy = CreateItem(item_name, caster, caster)
+            caster:AddItem(item_dummy)
+            Timers:CreateTimer(FrameTime(), function()
+                if caster then
+                    caster:RemoveItem(item_dummy)
+                end    
+            end)   
+        end
+    end  
 end
 
 

@@ -883,19 +883,23 @@ end
 
 function DropItemOrInventory(playerID, itemName)
 	if IsServer() then
-		local player = PlayerResource:GetPlayer(playerID)
-		local hero = player:GetAssignedHero()
-		local item = CreateItem(itemName, hero, hero)
-		local success = hero:AddItem(item)
-		if not success then
-			local origin = hero:GetAbsOrigin()
-			local newItem = CreateItem(itemName, hero, hero)
-			newItem:SetPurchaseTime(0)
-			local drop = CreateItemOnPositionSync(origin, newItem )
-			local pos_launch = origin+RandomVector(RandomFloat(150,200))
-			newItem:LaunchLoot(false, 200, 0.75, pos_launch)
-			Notifications:Top(playerID,{text="Your inventory is full, item has been dropped near you", style={color="red"}, duration=5})
-		end
+		if PlayerResource:IsValidPlayer(playerID) then
+			Timers:CreateTimer((0.01 + playerID) / 10, function()		
+				local player = PlayerResource:GetPlayer(playerID)
+				local hero = player:GetAssignedHero()
+				local item = CreateItem(itemName, hero, hero)
+				local success = hero:AddItem(item)
+				if not success then
+					local origin = hero:GetAbsOrigin()
+					local newItem = CreateItem(itemName, hero, hero)
+					newItem:SetPurchaseTime(0)
+					local drop = CreateItemOnPositionSync(origin, newItem )
+					local pos_launch = origin+RandomVector(RandomFloat(150,200))
+					newItem:LaunchLoot(false, 200, 0.75, pos_launch)
+					Notifications:Top(playerID,{text="Your inventory is full, item has been dropped near you", style={color="red"}, duration=5})
+				end
+			end)
+		end		
 	end	
 end
 -------Lot Drops-----
@@ -960,17 +964,22 @@ end
 ----drops for loot items --
 function DropLootOrInventory(playerID, itemName)
 	if IsServer() then
-		local player = PlayerResource:GetPlayer(playerID)
-		local hero = player:GetAssignedHero()
-		local item = CreateItem(itemName, nil, nil)
-		local success = hero:AddItem(item)
-		if not success then
-			local origin = hero:GetAbsOrigin()
-			local newItem = CreateItem(itemName, nil, nil)
-			newItem:SetPurchaseTime(0)
-			local drop = CreateItemOnPositionSync(origin, newItem )
-			local pos_launch = origin+RandomVector(RandomFloat(150,200))
-			newItem:LaunchLoot(false, 200, 0.75, pos_launch)
-		end
+		if PlayerResource:IsValidPlayer(playerID) then
+			Timers:CreateTimer((0.01 + playerID) / 10, function()
+				local player = PlayerResource:GetPlayer(playerID)
+				local hero = player:GetAssignedHero()
+				local item = CreateItem(itemName, nil, nil)
+				local success = hero:AddItem(item)
+				if not success then
+					local origin = hero:GetAbsOrigin()
+					local newItem = CreateItem(itemName, nil, nil)
+					newItem:SetPurchaseTime(0)
+					local drop = CreateItemOnPositionSync(origin, newItem )
+					local pos_launch = origin+RandomVector(RandomFloat(150,200))
+					newItem:LaunchLoot(false, 200, 0.75, pos_launch)
+				end
+			end)
+		end	
 	end	
 end
+
