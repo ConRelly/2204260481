@@ -34,6 +34,14 @@ local item_mjz_bloodstone_active = function(ability)
 				ability:SetCurrentCharges(ability:GetCurrentCharges() + bonus_charge)
 				if caster:HasModifier("modifier_mjz_bloodstone_charges") then
 					caster:FindModifierByName("modifier_mjz_bloodstone_charges"):SetStackCount(ability:GetCurrentCharges())
+					local charges = caster:FindModifierByName("modifier_mjz_bloodstone_charges"):GetStackCount()
+					if caster:HasModifier("modifier_item_mjz_bloodstone_buff_edible") then
+						local modif_buff = "modifier_item_mjz_bloodstone_buff_edible"
+						local mbuff = caster:FindModifierByName(modif_buff)	
+						if mbuff ~= nil then
+							mbuff:SetStackCount(charges)
+						end
+					end	
 				end	
 			end
 		end
@@ -159,7 +167,7 @@ if IsServer() then
 		if IsValidEntity(parent) and parent:IsRealHero() then
 			local mt = {"modifier_item_mjz_bloodstone_buff", "modifier_mjz_bloodstone_charges"}
 			for _,mname in pairs(mt) do
-				if not parent:HasModifier(mname) then
+				if not parent:HasModifier(mname) and not parent:HasModifier("modifier_item_mjz_bloodstone_buff_edible") then
 					parent:AddNewModifier(self:GetCaster(), self:GetAbility(), mname, {})
 				end
 			end

@@ -254,6 +254,7 @@
 		"item"      "item_echo_wand"
 		"item"      "item_blast_staff_3"
 		"item"		"item_num"
+		"item"      "item_mjz_bloodstone_edible"
 		"item"      "item_broken_wings"
 		"item"      "item_traxexs_necklace"
 		"item"      "item_master_of_weapons_sword"		

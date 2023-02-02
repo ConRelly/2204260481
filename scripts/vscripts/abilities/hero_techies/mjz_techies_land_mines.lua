@@ -91,14 +91,13 @@ function modifier_mjz_techies_land_mine_trigger:OnIntervalThink()
 		)
 		if #enemies > 0 then
 			local true_damage = self:GetAbility():GetSpecialValueFor("base_damage") + self:GetCaster():GetIntellect() * (self:GetAbility():GetSpecialValueFor("int_damage") + talent_value(self:GetCaster(), "special_bonus_unique_mjz_techies_land_mines_int_damage"))
-
-			local explosionParticle = ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
-			ParticleManager:SetParticleControl(explosionParticle, 0, mine:GetAbsOrigin())
-			ParticleManager:SetParticleControl(explosionParticle, 1, mine:GetAbsOrigin())
-			ParticleManager:SetParticleControl(explosionParticle, 2, Vector(self:GetAbility():GetAOERadius(), 1, 1))
-			ParticleManager:ReleaseParticleIndex(explosionParticle)
+--[[ 				local explosionParticle = ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
+				ParticleManager:SetParticleControl(explosionParticle, 0, mine:GetAbsOrigin())
+				ParticleManager:SetParticleControl(explosionParticle, 1, mine:GetAbsOrigin())
+				ParticleManager:SetParticleControl(explosionParticle, 2, Vector(self:GetAbility():GetAOERadius(), 1, 1))
+				ParticleManager:ReleaseParticleIndex(explosionParticle) ]]
 			for _, enemy in pairs(enemies) do
---				print(true_damage .. "bomb dmg")
+				print(true_damage .. "bomb dmgg")
 				ApplyDamage({
 					victim = enemy,
 					attacker = self:GetCaster(),
@@ -109,10 +108,10 @@ function modifier_mjz_techies_land_mine_trigger:OnIntervalThink()
 				})
 				enemy:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_techies_land_mine_burn", {duration = self:GetAbility():GetSpecialValueFor("burn_duration")})
 			end
-			mine:EmitSound("Hero_Techies.LandMine.Detonate")
-			Timers:CreateTimer(0.1, function()
+			--mine:EmitSound("Hero_Techies.LandMine.Detonate")
+--[[ 			Timers:CreateTimer(0.1, function()
 				mine:ForceKill(false)
-			end)
+			end) ]]
 		end
 	end
 end

@@ -13366,6 +13366,98 @@
 		}		
 	}
 }
+
+///Nevermore Q
+
+"mjz_nevermore_shadowraze"
+{
+	"BaseClass"					    "ability_lua"
+	"ScriptFile"					"abilities/hero_nevermore/mjz_nevermore_shadowraze.lua"
+	"AbilityTextureName"		    "shadow_raze_custom"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+	"LevelsBetweenUpgrades"         "7"
+	"MaxLevel"                      "7"
+	"FightRecapLevel"				"1"
+
+	"AbilityCastRange"				"1000 1100 1200 1300 1400 1500 1700"
+	"AbilityCastPoint"				"0.55"
+	"AbilityCastAnimation"			"ACT_DOTA_RAZE_3"
+	"AbilityCharges"				"3"
+	"AbilityChargeRestoreTime"		"7"
+	"AbilityCooldown"				"3"
+	"AbilityManaCost"				"90"
+
+	// "HasScepterUpgrade"				"1"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"shadowraze_range"				"1000 1100 1200 1300 1400 1500 1700"
+			"CalculateSpellDamageTooltip"	"0"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"shadowraze_damage"				"250 2200 7200 14000 24500 45000 75000"		
+			// "LinkedSpecialBonus" 			"special_bonus_unique_nevermore_2"
+			//"LinkedSpecialBonus" 			"special_bonus_unique_mjz_nevermore_shadowraze_damage"
+		}
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"shadowraze_radius"				"350"
+			"CalculateSpellDamageTooltip"	"0"
+		}
+		"12"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage_per_soul"				"1"
+			"CalculateSpellDamageTooltip"	"0"
+		}
+		"14"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"stack_bonus_damage_agi" 		"0.5"
+			"CalculateSpellDamageTooltip"	"0"
+		}
+		"15"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"stack_bonus_duration"			"8"
+			"CalculateSpellDamageTooltip"	"0"
+		}
+	}
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_nevermore/nevermore_shadowraze.vpcf"
+		"particle"  "particles/units/heroes/hero_nevermore/nevermore_shadowraze_debuff.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+	}
+}
+"special_bonus_unique_mjz_nevermore_shadowraze_agi_bonus"
+{
+	"BaseClass"						"special_bonus_undefined"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"value"						"1"
+		}
+	}
+}
+
+
 "nyx_assassin_custom_bonus_unique_1"
 {
 	"BaseClass"				"special_bonus_undefined"

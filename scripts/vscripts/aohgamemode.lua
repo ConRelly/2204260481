@@ -66,6 +66,8 @@ require("aoh_player_chat")
 require("lib/mys")
 require("lib/uless")
 
+
+
 _G.mHackGameMode = HackGameMode()
 
 local MONSTER_CONFIG_ORIGIN = "aoh2_config.txt"
@@ -117,7 +119,6 @@ function AOHGameMode:InitGameMode()
 	_G._endlessMode_started = false
 	_G._normal_mode = false
 	_G._defeat_extra_lives = 3
-	_G._give_gold_bags = true
 	self._endlessMode_started = false
 	self._manaMode = false
 	self._doubleMode = false
@@ -615,7 +616,9 @@ function AOHGameMode:OnGameRulesStateChange()
 		for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
 			if PlayerResource:IsValidPlayerID(playerID) then
 				if not PlayerResource:HasSelectedHero(playerID) then
-					PlayerResource:GetPlayer(playerID):MakeRandomHeroSelection()	
+					if PlayerResource:GetPlayer(playerID) then
+						PlayerResource:GetPlayer(playerID):MakeRandomHeroSelection()
+					end		
 				end
 			end
 		end
@@ -1165,6 +1168,7 @@ function AOHGameMode:OnEntitySpawned(event)
 			if unit and IsValidEntity(unit) and unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS and (unit:IsIllusion() or unit:HasModifier("modifier_arc_warden_tempest_double")) then
 				if unit:HasModifier("modifier_death") then return end
 				local playerownerID = unit:GetPlayerOwnerID()
+				if not PlayerResource:GetPlayer(playerownerID) then return end
 				local player = PlayerResource:GetPlayer(playerownerID)
 				local playerHero = player:GetAssignedHero()
 				local maxAbilities = playerHero:GetAbilityCount() - 1

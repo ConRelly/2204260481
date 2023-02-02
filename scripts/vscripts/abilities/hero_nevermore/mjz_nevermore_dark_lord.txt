@@ -1,0 +1,69 @@
+	
+	"mjz_nevermore_dark_lord"
+	{
+		"BaseClass"					    "ability_lua"
+		"ScriptFile"					"abilities/hero_nevermore/mjz_nevermore_dark_lord.lua"
+		"AbilityTextureName"		    "mjz_nevermore_dark_lord"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Nevermore.RequiemOfSouls"
+
+		"AbilityCastRange"				"1200"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius" 						"1200"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"presence_armor_reduction"		"-4 -5 -6 -7"
+				// "LinkedSpecialBonus"			"special_bonus_unique_nevermore_5"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"presence_resist_reduction"		"-6 -8 -10 -12"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_per_soul"				"2 4 6 8"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"61"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"requiem_speed"					"700"
+			}
+			"62"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"requiem_width_start"			"125"
+			}
+			"63"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"requiem_width_end"				"425"
+			}
+		}
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_nevermore/nevermore_requiemofsouls.vpcf"
+			"particle"  "particles/units/heroes/hero_nevermore/nevermore_requiemofsouls_line.vpcf"
+			"particle"  "particles/units/heroes/hero_nevermore/nevermore_wings.vpcf"
+			"particle"  "particles/units/heroes/hero_nevermore/nevermore_requiemofsouls_a.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_nevermore.vsndevts"
+		}
+	}
+	

@@ -64,11 +64,9 @@ if IsServer() then
 			local bool = false	
 			local attacker = keys.attacker
 			local target = keys.target
-			if RollPercentage(4) then
-				bool = true
-			end			
-			--local chance = RollPercentage(6)
-			if bool then
+
+			local randomSeed = math.random(1, 100)
+			if randomSeed <= 10 then					
 				--[[
 				if not attacker:HasModifier("modifier_item_force_blade") then
 					self:Destroy()

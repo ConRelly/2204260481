@@ -127,16 +127,7 @@ function AOHGameMode:OnPlayerChat(keys)
 	if keys.text == guessing_gmae_2 and not Cheats:IsEnabled() and time > 30 and not self._physdanage and not GameRules:IsGamePaused() then
 		Notifications:TopToAll({text="#dota_npc_does_bc", style={color="red"}, duration=5})
 		self._physdanage = true
-	end	
-	if keys.text == "-gold_bags" and keys.playerid == 0 then
-		if not _G._give_gold_bags then
-			_G._give_gold_bags = true
-			Notifications:TopToAll({text="Gold Bags drop directly in player inventory", style={color="yellow"}, duration=9})	
-		else
-			_G._give_gold_bags = false
-			Notifications:TopToAll({text="Gold bags drop on ground", style={color="blue"}, duration=9})		
-		end	
-	end	
+	end		
 
 	if keys.text == "-dev_stuff" and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME and Cheats:IsEnabled() then
 		if PlayerResource:IsValidPlayerID(0) then

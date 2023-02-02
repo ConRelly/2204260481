@@ -18164,6 +18164,24 @@
 		}
 	}
 
+	"special_bonus_unique_marci_guardian_magic_immune"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"						"8239"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"value"				"3.5"
+				"ad_linked_abilities"			"marci_guardian"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
 
 
 	//=================================================================================================================
@@ -19830,18 +19848,20 @@
 			"02"
 			{	
 				"var_type"				"FIELD_INTEGER"
-				"acorn_shot_damage"		"125 900 2875 8450 18500 36800 58500"
+				"acorn_shot_damage"		"125 900 2875 8450 18500 56800 158500"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"03"
 			{	
 				"var_type"				"FIELD_INTEGER"
-				"base_damage_pct"		"200 325 450 575 700 850"
+				"base_damage_pct"		"95 185 325 575 900 1250"	
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"04"
 			{	
 				"var_type"				"FIELD_INTEGER"
 				"bounce_count"			"6 7 8 9 10 11 12"
-				"LinkedSpecialBonus"		"special_bonus_unique_hoodwink_sharpshooter_speed"
+				"LinkedSpecialBonus"		"special_bonus_unique_hoodwink_acorn_shot_bounces"
 			}
 			"05"
 			{	
@@ -19863,8 +19883,33 @@
 				"var_type"				"FIELD_FLOAT"
 				"bounce_delay"			"0.1"
 			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"projectile_speed"			"2500"
+			}			
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+
+  	"special_bonus_unique_hoodwink_acorn_shot_bounces"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"9513"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"value"							"6"
+				"ad_linked_abilities"			"hoodwink_acorn_shot"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
 	}
 
 
@@ -20250,20 +20295,21 @@
 	//=================================================================================================================
 	//Primal Beast: Trample
 	//=================================================================================================================
+
 	"primal_beast_trample"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"994"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"LevelsBetweenUpgrades"         "10"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"LevelsBetweenUpgrades"         "10"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30 27 24 21"
+
 		"AbilityManaCost"				"90 85 80 75"
 
 		// Damage.
@@ -20282,17 +20328,33 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"effect_radius"				"830"
+			"effect_radius"				"750"
 			"step_distance"				"80"
-			"base_damage"				"650 2500 4500 15000"
+			"base_damage"
+			{
+				"value"							"650 2500 4500 15000"			
+				"CalculateSpellDamageTooltip"	"1"
+			}
 			"duration"					"5.5"
 			"attack_damage"
 			{
 				"value"					"40 80 120 160"
 				"special_bonus_unique_primal_beast_trample_attack_damage"	"+140"
 			}
+			"bonus_magic_resistance"
+			{
+				"value"					"0"
+				"special_bonus_unique_primal_beast_trample_magic_resist"		"+30"
+			}
+			
+			"AbilityCooldown"				
+			{
+				"value"				"30 27 24 21"
+				"special_bonus_unique_primal_beast_trample_cooldown"	"-5"
+			}				
 		}
 	}
+
 
 	//=================================================================================================================
 	// Primal Beast: Uproar
@@ -20351,14 +20413,14 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED  | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AnimationIgnoresModelScale"      	"1"
 		"MaxLevel"                      "7"
 		"LevelsBetweenUpgrades"         "10"
+
 		"AbilityDraftUltShardAbility"		"primal_beast_rock_throw"
-		"HasShardUpgrade" 					"1"
-		
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.25"
@@ -20369,7 +20431,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"200"
 		"AbilityCooldown"				"40"
-		"AbilityDamage"					"1500 24000  63500 129500 370000 613000 1280000"
 		
 
 		// Cost
@@ -20385,11 +20446,21 @@
 			"ministun"					"0.1"
 			"cast_range"				"200"
 			"animation_rate"			"1.5"			// FLAIL MULTIPLIER ON ENEMY UNITS
+			"damage"
+			{
+				"value"						"1500 24000  63500 129500 370000 613000 1280000"
+
+			}
 			"channel_time"
 			{
 				"value"					"2.3"
 				"special_bonus_unique_primal_beast_pulverize_duration"	"+200%"
 			}
+            "pierce_immunity"
+            {
+            	"value"						"0"
+            	"special_bonus_unique_primal_beast_pulverize_pierces_magic_immunity"		"+1"
+            }
 		}
 	}
 

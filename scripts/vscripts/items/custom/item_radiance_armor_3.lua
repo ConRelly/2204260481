@@ -171,3 +171,4 @@ function modifier_item_radiance_armor_aura_3:OnIntervalThink()
 		ApplyDamage({victim = parent, attacker = caster, ability = ability, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
 	end	
 end
+

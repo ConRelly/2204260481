@@ -1,6 +1,7 @@
 require("lib/mys")
 LinkLuaModifier("modifier_item_radiance_armor_blue_edible", "items/custom/item_radiance_armor_blue_edible", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_radiance_armor_aura_blue_edible", "items/custom/item_radiance_armor_blue_edible", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_radiance_armor_blue_unlocked", "items/custom/item_radiance_armor_blue_edible", LUA_MODIFIER_MOTION_NONE)
 require("lib/notifications")
 item_radiance_armor_blue_edible = class({})
 
@@ -135,12 +136,16 @@ function modifier_item_radiance_armor_aura_blue_edible:OnIntervalThink()
 		local damage = math.ceil(aura_dmg + aura_dmg_pct*caster:GetMaxHealth() + mana_bonus_dmg + bonus_int_dmg )
 		--print(damage .. " radi dmg")
 		if caster:IsRealHero() then
-			if HasSpeedsters(caster) and HasFalenSky(caster) and not GameRules:IsCheatMode() then
+			local unlocked = caster:HasModifier("modifier_radiance_armor_blue_unlocked")
+			if (HasSpeedsters(caster) and HasFalenSky(caster) and not GameRules:IsCheatMode()) or unlocked then
 				damage = damage * 4
 				if radir < 1 then
 					Notifications:TopToAll({text="#stuf_2", style={color="blue"}, duration=5})
 					radir = radir + 2
-				end			
+				end	
+				if not unlocked then
+					caster:AddNewModifier(caster, ability, "modifier_radiance_armor_blue_unlocked", {})
+				end							
 			end
 			if _G._challenge_bosss > 0 then
 				local heal_mult = _G._challenge_bosss / 50
@@ -156,3 +161,7 @@ function modifier_item_radiance_armor_aura_blue_edible:OnIntervalThink()
 	end
 end
 
+modifier_radiance_armor_blue_unlocked = modifier_radiance_armor_blue_unlocked or class({})
+function modifier_radiance_armor_blue_unlocked:IsHidden() return false end
+function modifier_radiance_armor_blue_unlocked:IsPurgable() return false end
+function modifier_radiance_armor_blue_unlocked:RemoveOnDeath() return false end

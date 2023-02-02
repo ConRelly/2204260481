@@ -197,6 +197,7 @@ if IsServer() then
 		item_master_of_weapons_sword3 = true,
 		item_master_of_weapons_sword4 = true,
 		item_master_of_weapons_sword5 = true,
+		item_mjz_bloodstone_ultimate_edible = true,
 		--mjz_doom_bringer_devour = true,
 		--mjz_clinkz_soul_pact = true,
 		frostivus2018_clinkz_burning_army = true,

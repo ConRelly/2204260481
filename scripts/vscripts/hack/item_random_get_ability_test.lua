@@ -79,7 +79,7 @@ function GetRandomAbilityName( hero )
         --"mjz_faceless_void_backtrack",
         --"antimage_custom_mana_break",
         "vengefulspirit_wave_of_terror_lua",
-        --"dark_willow_shadow_realm_lua",
+        "naga_siren_rip_tide",
         "jotaro_absolute_defense3",
         "nevermore_custom_necromastery",
         "dzzl_good_juju",

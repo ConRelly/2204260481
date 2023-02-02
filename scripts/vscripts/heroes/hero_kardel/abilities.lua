@@ -46,19 +46,20 @@ function sniper_shoot:OnSpellStart()
 		local enemy_table = {}
 		table.insert(enemy_table, target)
 		local enemy_table_string = TableToStringCommaEnt(enemy_table)
+		local randomSeed = math.random(1, 100)		
 		Proj_Effect = ""
 		if caster:HasModifier("modifier_normal_bullets") then
-			if RollPercentage(_G._effect_rate) then
+			if randomSeed <= _G._effect_rate then
 				Proj_Effect = "particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
 			end	
 			Dodgeable = false
 		elseif caster:HasModifier("modifier_explosive_bullets") then
-			if RollPercentage(_G._effect_rate) then
+			if randomSeed <= _G._effect_rate then
 				Proj_Effect = "particles/custom/abilities/heroes/kardel_bullets/expl_bullet_projectile.vpcf"
 			end	
 			Dodgeable = true
 		elseif caster:HasModifier("modifier_shrapnel_bullets") then
-			if RollPercentage(_G._effect_rate) then
+			if randomSeed <= _G._effect_rate then
 				Proj_Effect = "particles/custom/abilities/heroes/kardel_bullets/shrap_bullet_projectile.vpcf"
 			end	
 			Dodgeable = true

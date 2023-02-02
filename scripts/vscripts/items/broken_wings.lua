@@ -288,9 +288,11 @@ function modifier_broken_wings_divinity:GetEffectAttachType()
 end
 function modifier_broken_wings_divinity:OnCreated()
 	if IsServer() then
-		local player = PlayerResource:GetPlayer(self:GetParent():GetPlayerID())
-		screen_pfx = ParticleManager:CreateParticleForPlayer("particles/custom/items/broken_wings/broken_wings_divinity_screen.vpcf", PATTACH_ABSORIGIN, self:GetParent(), player)
-		ParticleManager:SetParticleControl(screen_pfx, 1, Vector(1, 0, 0))
+		if PlayerResource:GetPlayer(self:GetParent():GetPlayerID()) then
+			local player = PlayerResource:GetPlayer(self:GetParent():GetPlayerID())
+			screen_pfx = ParticleManager:CreateParticleForPlayer("particles/custom/items/broken_wings/broken_wings_divinity_screen.vpcf", PATTACH_ABSORIGIN, self:GetParent(), player)
+			ParticleManager:SetParticleControl(screen_pfx, 1, Vector(1, 0, 0))
+		end	
 	end
 end
 function modifier_broken_wings_divinity:OnDestroy()

@@ -322,7 +322,8 @@ function IsExcludeAbility(ability)
 		"item_master_of_weapons_sword2",
 		"item_master_of_weapons_sword3",
 		"item_master_of_weapons_sword4",
-		"item_master_of_weapons_sword5",		
+		"item_master_of_weapons_sword5",
+		"item_mjz_bloodstone_ultimate_edible",		
 -- Abilities
 		"phoenix_fire_spirits",
 		"mjz_phoenix_sun_ray",
@@ -401,7 +402,8 @@ function IsExcludeAbility9(ability)
 		"item_master_of_weapons_sword2",
 		"item_master_of_weapons_sword3",
 		"item_master_of_weapons_sword4",
-		"item_master_of_weapons_sword5",		
+		"item_master_of_weapons_sword5",
+		"item_mjz_bloodstone_ultimate_edible",		
 -- Abilities
 		"mjz_tinker_quick_arm",
 		"naga_siren_song_of_the_siren",

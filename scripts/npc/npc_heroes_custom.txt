@@ -196,6 +196,7 @@
 	"Ability6"					"hw_sharpshooter"
 	"Ability7"					"hw_sharpshooter_release"
 	"Ability10"					"special_bonus_hp_2000"
+	"Ability12"                 "special_bonus_unique_hoodwink_acorn_shot_bounces"
 	"Ability13"                 "special_bonus_hw_sharpshooter_agi"
 	"Ability17"                 "special_bonus_unique_hoodwink_sharpshooter_pure_damage"
 
@@ -230,11 +231,12 @@
 }
 "npc_dota_hero_nevermore"
 {
+	"Ability1"      "mjz_nevermore_shadowraze"
 	"Ability4"		"nevermore_custom_necromastery"
 	"Ability6"		"nevermore_custom_requiem"
 	"Ability10"		"special_bonus_spell_amplify_35"
 	"Ability12"		"special_bonus_all_stats_10"
-	"Ability13"		"special_bonus_unique_nevermore_shadowraze_cooldown"
+	"Ability13"		"special_bonus_unique_mjz_nevermore_shadowraze_agi_bonus"
 	"Ability14"		"special_bonus_unique_nevermore_5"
 	"Ability15"     "special_bonus_cdr_40"
 	"Ability16"		"special_bonus_unique_nevermore_1"
@@ -1052,12 +1054,13 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_doom_bringer"
-		"UnitLabel"				"no_underdog"
+		//"UnitLabel"				"no_underdog"
 		
 		"Ability1"				"mjz_doom_bringer_devour"
 		"Ability3"				"mjz_doom_bringer_infernal_blade"
 		"Ability5"				"generic_hidden"
 		"Ability6"				"mjz_doom_bringer_doom"
+		"Ability10"             "special_bonus_mp_regen_200"
 		"Ability11"				"special_bonus_movement_speed_30"
 		"Ability12"				"special_bonus_armor_24"
 		"Ability13"				"special_bonus_unique_mjz_doom_bringer_devour_strength"
@@ -2564,7 +2567,7 @@
 		"Ability5"				"primal_beast_onslaught_release"
 		"Ability6"				"primal_beast_pulverize"
 		"Ability10"				"special_bonus_magic_resistance_40"
-		"Ability11"				"special_bonus_mp_1000"
+		"Ability11"				"special_bonus_unique_primal_beast_trample_magic_resist"
 		"Ability12"				"special_bonus_cdr_30"
 		"Ability13"				"special_bonus_mp_regen_400"
 		"Ability14"				"special_bonus_unique_primal_beast_trample_attack_damage"

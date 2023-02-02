@@ -156,7 +156,8 @@ function modifier_rolling_stone_buff:OnIntervalThink()
 				end	
 			end
 		end
-		if RollPercentage(_G._effect_rate) then
+		local randomSeed = math.random(1, 100)
+		if randomSeed <= _G._effect_rate then
 			local effect_cast = ParticleManager:CreateParticle("particles/custom/abilities/heroes/earth_spirit_rolling_stone/rolling_stone_aoe.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
 			ParticleManager:SetParticleControl(effect_cast, 1, Vector(radius, radius, radius))
 			ParticleManager:ReleaseParticleIndex(effect_cast)

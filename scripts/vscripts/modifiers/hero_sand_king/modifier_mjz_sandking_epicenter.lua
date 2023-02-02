@@ -19,7 +19,7 @@ if IsServer() then
 			self.radius_min = self.ability:GetSpecialValueFor("epicenter_radius_min")
 			self.radius_max = self.ability:GetSpecialValueFor("epicenter_radius_max")
 			self.radius_increase = self.ability:GetSpecialValueFor("epicenter_radius_increase")
-			self.epicenter_pulses = GetTalentSpecialValueFor(self.ability, "epicenter_pulses")
+			self.epicenter_pulses = self.ability:GetSpecialValueFor("epicenter_pulses") + talent_value(self.caster, "special_bonus_unique_mjz_sandking_epicenter_pulses")
 			local epicenter_damage = self.ability:GetSpecialValueFor("epicenter_damage")
 			local str_multiplier = self.ability:GetSpecialValueFor("str_multiplier") + talent_value(self.caster, "special_bonus_unique_mjz_sandking_epicenter_strength")
 			self.slow_duration = self.ability:GetSpecialValueFor("epicenter_slow_duration")

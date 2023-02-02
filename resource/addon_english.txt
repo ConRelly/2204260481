@@ -1318,7 +1318,17 @@
 	"DOTA_Tooltip_Ability_item_skadi_bow_mana"			"+$mana"
 	"DOTA_Tooltip_modifier_skadi_bow_slow_debuff"					"Frost Attack"
 	"DOTA_Tooltip_modifier_skadi_bow_slow_debuff_Description"		"Reduces Attack Speed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and all heal, regeneration and lifesteal by %dMODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE%%%"
-	
+
+
+	"DOTA_Tooltip_Ability_item_skadi_bow_edible"							  		"<font color='#BE03FF'>Edible Skadi Bow</font>"
+	"DOTA_Tooltip_Ability_item_skadi_bow_edible_Description"				  		"<h1>Active: Consume</h1> Get All the Stats and effects from Edible Skadi Bow with some stats slightly or greater improved. Slow effect is now an 2000 range Aura"
+	"DOTA_Tooltip_modifier_skadi_bow_edible"				"<font color='#BE03FF'>Edible Skadi Bow</font>"
+	"DOTA_Tooltip_modifier_skadi_bow_edible_Description"	"Have all the Stats and effects like Skadi Bow with some stats slightly or greater improved. Slow effect is now an 2000 range Aura"	
+
+	"DOTA_Tooltip_modifier_skadi_bow_slow_debuff_edible"					"Frost Aura"
+	"DOTA_Tooltip_modifier_skadi_bow_slow_debuff_edible_Description"		"Reduces Attack Speed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%, Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% and all heal, regeneration and lifesteal by %dMODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE%%%"
+
+
 	"DOTA_Tooltip_Ability_item_apollo_bow"					"Apollo's Bow"
 	"DOTA_Tooltip_Ability_item_apollo_bow_damage"			"+$damage"
 	"DOTA_Tooltip_ability_item_apollo_bow_attack_speed"		"+$attack"
@@ -1429,7 +1439,7 @@
 
 	"DOTA_Tooltip_ability_item_recipe_hammer_of_the_divine"				"Hammer Of The Divine Recipe"
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine"					"<font color='#7E09E6'>Hammer Of The Divine</font>"
-	"DOTA_Tooltip_ability_item_hammer_of_the_divine_Description"		"<h1>Active: Pure Divinity</h1> You gain True Strike and Armor Corruption equal to %corr_armor_red_pct%%% of your bonus Strength (Max %corr_armor_red_max%) for %active_duration%s, at the cost of removing (%bonus_armor% + Armor Corruption) Armor from self. <br><br>Debuff Duration: %corr_duration%s \n<h1>Passive: Unyielding</h1> Chance %unyielding_chance%%% on hit increase Base Strength by %unyielding_str%%% for %unyielding_stack_dur%s. <br><br>Max stacks: %unyielding_max_stacks% \n<h1>Passive: Overwhelming Force</h1> Right before attack have a %overwhelming_chance%%% chance to increase %overwhelming_total_dmg%%% bonus total DMG for %overwhelming_duration%s. \n<h1><font color='#EC3D06'>Strength Superiority</font></h1> <font color='#EC3D06'>Only works when your main attribute is Strength: sets the base attack time to %base_attack_time%.</font> \n<h1><font color='#E6BA49'>UP: Luminosity</font></h1>Unyielding: Procs every 8 attacks <br>Overwhelming Force: Procs every 8 attacks \n<h1><font color='#DC5663'>UP: Chaos Strike</font></h1>Unyielding: Increases chance to 4%% <br>Overwhelming Force: Increases chance to 12%% \n<h1><font color='#733A4C'>UP: Grow Strong</font></h1>Unyielding: Increases chance by 3%%"
+	"DOTA_Tooltip_ability_item_hammer_of_the_divine_Description"		"<h1>Active: Pure Divinity</h1> You gain True Strike and Armor Corruption equal to %corr_armor_red_pct%%% of your bonus Strength (Max %corr_armor_red_max%) for %active_duration%s, at the cost of removing (%bonus_armor% + Armor Corruption) Armor from self. <br><br>Debuff Duration: %corr_duration%s \n<h1>Passive: Unyielding</h1> Chance %unyielding_chance%%% on hit increase Base Strength by %unyielding_str%%% for %unyielding_stack_dur%s. <br><br>Max stacks: %unyielding_max_stacks% \n<h1>Passive: Overwhelming Force</h1> Right before attack have a %overwhelming_chance%%% chance to increase %overwhelming_total_dmg%%% bonus total DMG for %overwhelming_duration%s. \n<h1><font color='#EC3D06'>Strength Superiority</font></h1> <font color='#EC3D06'>Only works when your main attribute is Strength: sets the base attack time to %base_attack_time%.</font> \n<h1><font color='#E6BA49'>UP: Luminosity</font></h1>Unyielding: Procs every 8 attacks <br>Overwhelming Force: Procs every 8 attacks \n<h1><font color='#DC5663'>UP: Chaos Strike</font></h1>Unyielding: Increases chance to %unyielding_cs_chance%%% <br>Overwhelming Force: Increases chance to %overwhelming_cs_chance%%% \n<h1><font color='#733A4C'>UP: Grow Strong</font></h1>Unyielding: Increases chance by %unyielding_gs_chance%%%"
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine_lore"		"When The Contradiction Of Order & Chaos Combine, A Special Force Is Formed Capable Of Shattering The Thickest Of Armors...<br>---------------------<br><font color='#7E09E6'>Idea by ☆ Abuleil ☆</font>"
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine_note0"		"1) Item would drop from inventory if main attribute is not Strength can ONLY be held by courier."
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine_note1"		"2) If hero have <font color='#E6BA49'>Luminosity</font> and <font color='#DC5663'>Chaos Strike</font> Overwhelming Force procs every 6 attacks and have 20%% chance together."
@@ -6740,6 +6750,22 @@ You can't target yourself."
 "DOTA_Tooltip_ability_nevermore_custom_requiem_Note0"								"One line is generated from Shadow Fiend for every 3 souls in his possession."
 "DOTA_Tooltip_ability_nevermore_custom_requiem_agility_mult"				  		"Agility As Bonus Damage:"
 
+
+"DOTA_Tooltip_ability_mjz_nevermore_shadowraze"									"<font color='#f2da5b'>Shadowraze</font>"
+"DOTA_Tooltip_ability_mjz_nevermore_shadowraze_Description"						"Shadow Fiend razes the ground directly dealing damage to nearest enemy units in his range. Adds a stacking damage amplifier on the target that causes the enemy to take bonus Shadowraze damage per stack."
+"DOTA_Tooltip_ability_mjz_nevermore_shadowraze_Lore"								"Nevermore's trademark for harvesting souls."
+"DOTA_Tooltip_ability_mjz_nevermore_shadowraze_Note0"								"Stack duration refreshes on stack gain."
+"DOTA_Tooltip_ability_mjz_nevermore_shadowraze_shadowraze_range"					"RANGE:"
+"DOTA_Tooltip_ability_mjz_nevermore_shadowraze_stack_bonus_damage_agi"				"BONUS DAMAGE PER STACK PER AGI:"
+"DOTA_Tooltip_ability_mjz_nevermore_shadowraze_stack_bonus_duration"				"STACK DURATION:"
+"DOTA_Tooltip_ability_mjz_nevermore_shadowraze_shadowraze_damage"					"BASE DAMAGE:"
+
+"DOTA_Tooltip_Ability_special_bonus_unique_mjz_nevermore_shadowraze_agi_bonus"				"+{s:value} Base Agility for each enemy hit with<font color='#f2da5b'>Shadowraze</font>"	
+"DOTA_Tooltip_modifier_mjz_nevermore_shadowraze_stack"                             "Deal bonus damage with <font color='#f2da5b'>Shadowraze</font> for each stack x 0.5 x agi"
+"DOTA_Tooltip_modifier_mjz_nevermore_shadowraze_stack"								"<font color='#f2da5b'>Shadowraze</font>"
+"DOTA_Tooltip_modifier_mjz_nevermore_shadowraze_stack_description"					"Receiving %dMODIFIER_PROPERTY_TOOLTIP% bonus damage from each Shadowraze attack.
+
+
 "DOTA_Tooltip_ability_nyx_assassin_custom_mana_strike"						"<font color='#f2da5b'>Mana Strike</font>"
 "DOTA_Tooltip_ability_nyx_assassin_custom_mana_strike_Description"			"Deals damage based on Nyx's current mana, but costs %mana_cost%%% of his current mana."
 "DOTA_Tooltip_ability_nyx_assassin_custom_mana_strike_Lore"					"The tome in Ultimyr describes one scarab with the ability eat away at the mind of lesser beings."
@@ -7341,6 +7367,8 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_ability_item_radiance_armor_3_str_damage"				 "AURA Strength As Bonus Damage:"
 "DOTA_Tooltip_ability_item_radiance_armor_3_armor_damage"			   "AURA Armor As Bonus Damage:"
 
+"DOTA_Tooltip_modifier_radiance_armor_red_unlocked"                     "Red Radiance Power Unlocked"
+
 "DOTA_Tooltip_ability_item_radiance_armor_blue"							"<font color='#0D81EE'>Greater Radiance Armor</font>"
 "DOTA_Tooltip_ability_item_radiance_armor_blue_Description"				"The light from this artifact is so strong that it burns all enemies(except neutrals)!\nIf you have over %int_threshold% Int the int multiplayer will drop to %threshold_multi%\n<font color='#0B78C8'>Power Unlock: If you meet some Unknown conditions all Damage from this item will be multiplied by 4</font>, find a Medium Hint on discord <font color='#F74705'>Patreon only section</font>\n<h1><font color='#F70707'>Challenge Boss</font></h1>On radiance tick (<font color='#E32948'>2%</font> x reward Tier) of this item damage will heal you.(damage amplifications will not count)"
 "DOTA_Tooltip_ability_item_radiance_armor_blue_bonus_stats"				"+$all"
@@ -7355,6 +7383,8 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_ability_item_radiance_armor_blue_int_damage"			  "AURA Intelligence As Bonus Damage:"
 "DOTA_Tooltip_ability_item_radiance_armor_blue_mana_damage"			 "%AURA Max Mana As Bonus Damage:"
 
+"DOTA_Tooltip_modifier_radiance_armor_blue_unlocked"                     "Blue Radiance Power Unlocked"
+
 "DOTA_Tooltip_ability_item_radiance_armor_green"							"<font color='#18B426'>Greater Radiance Armor</font>"
 "DOTA_Tooltip_ability_item_radiance_armor_green_Description"				"The light from this artifact is so strong that it burns all enemies(except neutrals)!\nIf you have over %agi_threshold% Agi the agi multiplayer will drop to %agi_threshold_multi%\nIf you have over %ms_threshold% Ms the ms multiplayer will drop to %ms_threshold_multi%\n<font color='#15C700'>Power Unlock: If you meet some Unknown conditions all Damage from this item will be multiplied by 4</font>, find a Medium Hint on discord <font color='#F74705'>Patreon only section</font>\n<h1><font color='#F70707'>Challenge Boss</font></h1>On radiance tick (<font color='#E32948'>2%</font> x reward Tier) of this item damage will heal you.(damage amplifications will not count)"
 "DOTA_Tooltip_ability_item_radiance_armor_green_bonus_stats"				"+$all"
@@ -7368,6 +7398,8 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_ability_item_radiance_armor_green_aura_dmg_pct"				"%AURA SELF MAX HEALTH DAMAGE:"
 "DOTA_Tooltip_ability_item_radiance_armor_green_agi_damage"				 "AURA Agility As Bonus Damage:"
 "DOTA_Tooltip_ability_item_radiance_armor_green_ms_damage"				  "AURA MS As Bonus Damage:"
+
+"DOTA_Tooltip_modifier_radiance_armor_green_unlocked"                     "Green Radiance Power Unlocked"
 
 "DOTA_Tooltip_ability_item_corrupted_diffusal_blade"						"Corrupted Diffusal Blade"
 "DOTA_Tooltip_ability_item_corrupted_diffusal_blade_Description"			"<h1>Active: Inhibit</h1> Targets an enemy, slowing it for %purge_slow_duration% seconds.<br><br>Range: %cast_range_tooltip%
@@ -8242,6 +8274,14 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_ability_item_mjz_bloodstone_ultimate_manacost_reduction"		"%+$manacost_reduction"
 		"DOTA_Tooltip_Ability_item_mjz_bloodstone_ultimate_Note0"                   "On Certain inventory slot it will autocast"
 		//<<<<
+
+		//Bloodstone Ultiamte Edible
+
+		"DOTA_Tooltip_Ability_item_mjz_bloodstone_edible"							 "<font color='#BE03FF'>Edible Bloodstone Ultimate</font>"
+		"DOTA_Tooltip_Ability_item_mjz_bloodstone_edible_Description"				 "<h1>Active: Consume</h1> Get All the Stats and effects from Bloodstone Ultimate with some stats slightly or greater improved.<br>It will lose the active Component but Stacks will be saved, you can use other bloodstone if you want to increase the stacks more."
+		"DOTA_Tooltip_modifier_item_mjz_bloodstone_buff_edible"						 "<font color='#BE03FF'>Edible Bloodstone Ultimate</font>"
+		"DOTA_Tooltip_modifier_item_mjz_bloodstone_buff_edible_Description"			 "%dMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% mana regen , %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell amp, and other Ultimate Bloodstone stats improved."		
+
 		//>>>>	Lion's Dagon
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2"										"Lion's Dagon"
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Description"							"<h1>Active: Finger of Death</h1>Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each use it.<br><br>Cast Range: %abilitycastrange%\n<h1><font color='#0094FF'>UP: Aghanim's Scepter</font></h1>Hits all enemies in a %splash_radius_scepter% radius. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Deals 10 x Your Int As bonus Damage. When Greater Blast Staff passive hits an target has 17%% chance to trigger this item on same target/s. Unlocks an hidden utility of this item."

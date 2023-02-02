@@ -74,7 +74,8 @@ function modifier_mjz_sandking_epicenter_shard:OnIntervalThink()
 				damage = math.floor(damage * 1.2)
 			end	
 		end
-		if RollPercentage(_G._effect_rate) then
+		local randomSeed = math.random(1, 100)
+		if randomSeed <= _G._effect_rate then		
 			local particle_epicenter_fx = ParticleManager:CreateParticle("particles/units/heroes/hero_sandking/sandking_epicenter.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 			ParticleManager:SetParticleControl(particle_epicenter_fx, 0, caster:GetAbsOrigin())
 			ParticleManager:SetParticleControl(particle_epicenter_fx, 1, Vector(radius, radius, 1))

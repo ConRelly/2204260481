@@ -8659,6 +8659,59 @@
 			}
 		}
 	}
+
+//=================================================================================================================
+// Recipe: Edible Bloodstone Ultimate
+//=================================================================================================================
+
+"item_recipe_mjz_bloodstone_edible"
+{
+	"BaseClass"						"item_datadriven"
+	"Model"							"models/props_gameplay/recipe.vmdl"
+	"AbilityTextureName"			"item_recipe"
+	"ItemCost"						"25000"
+	"ItemShopTags"					""
+	"ItemRecipe"					"1"
+	//"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemResult"					"item_mjz_bloodstone_edible"
+	"ItemRequirements"
+	{
+		"01"						"item_mjz_bloodstone_ultimate;item_edible_complete"
+	}
+//=================================================================================================================
+//Edible Bloodstone Ultimate
+//=================================================================================================================	
+}
+"item_mjz_bloodstone_edible"
+{
+	"BaseClass"						"item_lua"
+	"ScriptFile"					"items/item_mjz_bloodstone_edible.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+	"AbilityTextureName"			"mjz_bloodstone_edible"
+	"ItemCost"						"60000"
+	"ItemShopTags"					"regen_health;regen_mana;mana_pool;health_pool"
+	"ItemQuality"					"epic"
+	"ItemAliases"					"bs;bloodstone,edible"
+	"ItemStackable"					"0"
+	"ItemPermanent"					"0"
+	"ItemSellable"					"0"
+	"ItemKillable"					"0"
+	"ItemPurchasable"				"1"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS" 
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	"ShouldBeSuggested"				"1"
+	"precache"
+	{
+		"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+	}
+	"AbilitySpecial"
+	{
+	}
+}
+
+
+
 	"item_recipe_mjz_bogduggs_lucky_femur"
 	{
 		"Model"							"models/props_gameplay/recipe.vmdl"
@@ -21566,22 +21619,22 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_intelligence"	"190"
+			"bonus_intelligence"	"290"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"3500"
+			"bonus_health"			"4500"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_mana"			"3500"
+			"bonus_mana"			"4500"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"bonus_cooldown"		"45"
+			"bonus_cooldown"		"49"
 		}
 		"05"
 		{
@@ -32866,6 +32919,58 @@
 		}
 	}
 
+//=================================================================================================================
+// Recipe: Edible Skadi
+//=================================================================================================================
+
+"item_recipe_skadi_bow_edible"
+{
+	"BaseClass"						"item_datadriven"
+	"Model"							"models/props_gameplay/recipe.vmdl"
+	"AbilityTextureName"			"item_recipe"
+	"ItemCost"						"10000"
+	"ItemShopTags"					""
+	"ItemRecipe"					"1"
+	//"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemResult"					"item_skadi_bow_edible"
+	"ItemRequirements"
+	{
+		"01"						"item_skadi_bow;item_edible_fragment"
+	}
+//=================================================================================================================
+//Edible Skadi 
+//=================================================================================================================	
+}
+"item_skadi_bow_edible"
+{
+	"BaseClass"						"item_lua"
+	"ScriptFile"					"items/item_skadi_bow_edible.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+	"AbilityTextureName"			"custom/item_skadi_bow_edible"
+	"ItemCost"						"40000"
+	"ItemShopTags"					"damage"
+	"ItemQuality"					"epic"
+	"ItemAliases"					"skadi;bow,edible"
+	"ItemStackable"					"0"
+	"ItemPermanent"					"0"
+	"ItemSellable"					"0"
+	"ItemKillable"					"0"
+	"ItemPurchasable"				"1"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS" 
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	"ShouldBeSuggested"				"1"
+	"precache"
+	{
+		"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+	}
+	"AbilitySpecial"
+	{
+	}
+}
+
+
+
 // Apollo's Bow
 	"item_apollo_bow"
 	{
@@ -33953,15 +34058,162 @@
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
-		"ItemCost"						"0"	
+		"ItemCost"						"5000"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_thunder_hammer"
+		"ItemResult"					"item_thunder_gods_might"
 		"ItemRequirements"
 		{
-			"01"						"item_mjollnir;item_light_crossbow_3"
+			"01"						"item_mjollnir;item_chest_5"
 		}
 	}
+
+// Hammer of thor
+	"item_thunder_gods_might"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_thunder_gods_might.lua"
+		"AbilityTextureName"			"custom/thunder_hammer"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"AbilityCastPoint"				"0"
+		"AbilityCastRange"				"1000"		
+		"AbilityCooldown"				"35"
+		"AbilityManaCost"				"50"
+		"ItemQuality"					"epic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"24"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"65"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_aura"				"200"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_aura"					"30"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ms_aura"				"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"1000"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"static_dur"			"15"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"static_chance"			"20"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"static_strikes"		"6"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"static_damage"			"250"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"static_radius"			"900"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"static_cooldown"		"0.2"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chain_chance"			"30"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chain_damage"			"200"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chain_strikes"			"18"
+			}
+			"16"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chain_radius"			"900"
+			}
+			"17"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chain_delay"			"0.06"
+			}
+			"18"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chain_cooldown"		"0.1"
+			}
+			"19"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_as"				"40"
+			}
+			"20"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_dur"				"3"
+			}
+			"21"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_range"			"1000"
+			}
+		}
+	}
+// Hammer Of Thor
+	"item_recipe_thunder_hammer"
+	{
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName" 			"item_recipe"
+		"ItemCost"						"100"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_thunder_gods_might"
+		"ItemRequirements"
+		{
+			"01"						"item_mjollnir"
+		}
+	}
+
+
 
 //#############---RELICS---###################################################################################
 
@@ -35416,6 +35668,28 @@
 		}
 	}
 
+
+"item_recipe_adamantium_ingot"
+{
+	"AbilityTextureName"				"item_recipe"
+	"BaseClass"						"item_datadriven"
+	"Model"							"models/props_gameplay/recipe.vmdl"
+	"ItemCost"						"100"
+	"ItemShopTags"					""
+	"ItemRecipe"					"1"
+	"ItemStockInitial"				"0"
+	"ItemStockMax"					"5"
+	"ItemStockTime"					"99999.0"	
+	"ItemResult"					"item_adamantium_ingot"
+	"ItemRequirements"
+	{
+		"01"						"item_edible_fragment"
+		//"02"						"item_chest_1"
+	}
+}
+
+
+
 //Master of weapons Component
 "item_adamantium_ingot"
 {
@@ -35431,7 +35705,7 @@
 	"ItemAliases"					"adamantium ingot"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 	"ItemQuality"				   "artifact"
-	"ItemDisassembleRule"		   "DOTA_ITEM_DISASSEMBLE_NEVER"
+	"ItemDisassembleRule"		   "DOTA_ITEM_DISASSEMBLE_ALWAYS"
 	"ItemStackable"					"0"
 	"ItemPermanent"					"0"
 	"IsTempestDoubleClonable"		"0"

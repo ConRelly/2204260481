@@ -48,15 +48,15 @@ end
 
 
 function modifier_item_custom_octarine_core:GetModifierHealthBonus()
-    return 3500
+    return 4500
 end
 
 function modifier_item_custom_octarine_core:GetModifierManaBonus()
-    return 3500
+    return 4500
 end
 
 function modifier_item_custom_octarine_core:GetModifierBonusStats_Intellect()
-    return 190
+    return 290
 end
 
 
@@ -160,7 +160,7 @@ end
 
 function modifier_item_custom_octarine_core_reduction:GetModifierPercentageCooldown()
 	--if IsValidEntity(self:GetAbility()) then
-	return 45
+	return 49
 	--else
 	--	self:Destroy()
 	--end

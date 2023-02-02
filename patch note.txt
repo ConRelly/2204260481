@@ -2277,11 +2277,21 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * and some other fixes.
 
 
-* I recommend playing the map from the workshop link, this one is mostly a backup.
 
-*Update patch notes70 can be found on the new map version:
-https://steamcommunity.com/sharedfiles/filedetails?id=2427761601
-or on Discord(check workshop discussions for links)
+
+* Added new items: Edible bloodstone ultimate, edible Skadi Bow(this one requires only one edible fragment).
+* Improved slightly the stats of edible octarine.
+* Adamantium(reward from challenge boss) can now be disassembled into an edible fragment.
+* Fixed Sandking talent for Epicenter pulses.
+* Fixed PrimalBeast ultimate dmg not scaling with lvls.
+* Fixed Archon shot dealing 0 dmg and a lot of dmg with negative dmg (mimic), buffed last levels, and added new talent for lvl 15.
+* Replaced Doom lvl 10 talent, and he is now underdog.
+* Marci bkb talent from 1.5s to 3.5s.
+* Replaced Nevermore Q with an custom one and added a new talent for that. 
+* Challenge bosss gold per bag from 25k to 35k, for the non part 2 one is 35k and 45k for the tier 2 reward(lvl 150).
+* Added an icon buff when you unlock the power for Edible Radiances, after that you can change anything and it will remain power unlocked.
+* and some other fixes 
+
 
 
 
@@ -2289,7 +2299,7 @@ or on Discord(check workshop discussions for links)
 
 
 **Update Notes spellings will get corrected before the live update.
-**If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update).
+**If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).
 
 
 

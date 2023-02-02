@@ -57,9 +57,11 @@ function CRoshanSystem:Init()
     for playerID = 0, 4 do  
         if PlayerResource:IsValidPlayerID(playerID) then
             if PlayerResource:HasSelectedHero(playerID) then
-                local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-                self._playernr = self._playernr + 1
-                --Sounds:CreateSound(playerID, "goh.teme")
+                if PlayerResource:GetPlayer(playerID) then
+                    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+                    self._playernr = self._playernr + 1
+                    --Sounds:CreateSound(playerID, "goh.teme")
+                end
             end
         end 
     end       
@@ -325,59 +327,6 @@ local NotRegister = {
 -- Create a table to store the players who have received the item
 local received_item = {}
 
---[[ function OnRoshDeath(keys)
-    -- Check if the chance to give an item proc
-    if _ss_rosh_drop then
-      -- Get a list of all players in the game
-      local players = {}
-      for i = 0, DOTA_MAX_PLAYERS - 1 do
-        if PlayerResource:IsValidPlayer(i) then
-            local hero = PlayerResource:GetSelectedHeroEntity(i)
-            if not NotRegister[hero:GetUnitName()] then
-                table.insert(players, i)
-            end
-        end
-      end
-
-      -- Check if all players have received the item
-      local all_received = true
-      for _, playerID in pairs(players) do
-        if not received_item[playerID] then
-          all_received = false
-          break
-        end
-      end
-
-      if all_received then
-        -- Reset the table if all players have received the item
-        received_item = {}
-        print("all players recived")
-      end
-
-      -- Shuffle the list of players
-      for i = #players, 2, -1 do
-        local j = math.random(i)
-        players[i], players[j] = players[j], players[i]
-      end
-
-      -- Give the item to the first player in the list who hasn't received it
-      for _, playerID in pairs(players) do
-        if not received_item[playerID] then
-          -- Give the item to the player
-          local item = CreateItem("item_imba_ultimate_scepter_synth2", nil, nil)
-          local player = PlayerResource:GetPlayer(playerID)
-          local hero = player:GetAssignedHero()
-          hero:AddItem(item)
-          local steam_name = PlayerResource:GetPlayerName(playerID)
-          Notifications:TopToAll({text="Player "..steam_name.. ", was his turn for rosh SS", style={color="green"}, duration=5})  
-          -- Mark the player as having received the item
-          received_item[playerID] = true
-
-          break
-        end
-      end
-    end
-end ]]
 
 
 --local dropped_items = {}
@@ -389,10 +338,12 @@ function OnRoshDeath(keys)
       local players = {}
       for i = 0, DOTA_MAX_PLAYERS - 1 do
         if PlayerResource:IsValidPlayer(i) then
-            local hero = PlayerResource:GetSelectedHeroEntity(i)
-            if not NotRegister[hero:GetUnitName()] then
-                table.insert(players, i)
-            end
+            if PlayerResource:GetPlayer(i) then
+                local hero = PlayerResource:GetSelectedHeroEntity(i)
+                if not NotRegister[hero:GetUnitName()] then
+                    table.insert(players, i)
+                end
+            end   
         end
       end
 
@@ -415,15 +366,17 @@ function OnRoshDeath(keys)
       players = shuffle(players)
       -- Give the item to the first player in the list who hasn't received it
       for _, playerID in pairs(players) do
-        if not received_item[playerID] then
-            -- Give the item to the player
-            DropItemOrInventory(playerID, "item_imba_ultimate_scepter_synth2")
-            local steam_name = PlayerResource:GetPlayerName(playerID)
-            Notifications:TopToAll({text="Player "..steam_name.. ", was his turn for rosh SS(can be shared)", style={color="green"}, duration=5})              
-            received_item[playerID] = true 
-            break
+            --if PlayerResource:GetPlayer(playerID) then
+                if not received_item[playerID] then
+                    -- Give the item to the player
+                    DropItemOrInventory(playerID, "item_imba_ultimate_scepter_synth2")
+                    local steam_name = PlayerResource:GetPlayerName(playerID)
+                    Notifications:TopToAll({text="Player "..steam_name.. ", was his turn for rosh SS(can be shared)", style={color="green"}, duration=5})              
+                    received_item[playerID] = true 
+                    break
+                end
+            --end   
         end
-      end
     end
 end
 

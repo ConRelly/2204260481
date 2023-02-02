@@ -884,21 +884,23 @@ end
 function DropItemOrInventory(playerID, itemName)
 	if IsServer() then
 		if PlayerResource:IsValidPlayer(playerID) then
-			Timers:CreateTimer((0.01 + playerID) / 10, function()		
-				local player = PlayerResource:GetPlayer(playerID)
-				local hero = player:GetAssignedHero()
-				local item = CreateItem(itemName, hero, hero)
-				local success = hero:AddItem(item)
-				if not success then
-					local origin = hero:GetAbsOrigin()
-					local newItem = CreateItem(itemName, hero, hero)
-					newItem:SetPurchaseTime(0)
-					local drop = CreateItemOnPositionSync(origin, newItem )
-					local pos_launch = origin+RandomVector(RandomFloat(150,200))
-					newItem:LaunchLoot(false, 200, 0.75, pos_launch)
-					Notifications:Top(playerID,{text="Your inventory is full, item has been dropped near you", style={color="red"}, duration=5})
-				end
-			end)
+			if PlayerResource:GetPlayer(playerID) then
+				Timers:CreateTimer((0.01 + playerID) / 10, function()		
+					local player = PlayerResource:GetPlayer(playerID)
+					local hero = player:GetAssignedHero()
+					local item = CreateItem(itemName, hero, hero)
+					local success = hero:AddItem(item)
+					if not success then
+						local origin = hero:GetAbsOrigin()
+						local newItem = CreateItem(itemName, hero, hero)
+						newItem:SetPurchaseTime(0)
+						local drop = CreateItemOnPositionSync(origin, newItem )
+						local pos_launch = origin+RandomVector(RandomFloat(150,200))
+						newItem:LaunchLoot(false, 200, 0.75, pos_launch)
+						Notifications:Top(playerID,{text="Your inventory is full, item has been dropped near you", style={color="red"}, duration=5})
+					end
+				end)
+			end	
 		end		
 	end	
 end
@@ -916,9 +918,11 @@ function OnLootDropItem(itemName)
 	local players = {}
 	for i = 0, DOTA_MAX_PLAYERS - 1 do
 		if PlayerResource:IsValidPlayer(i) then
-			local hero = PlayerResource:GetSelectedHeroEntity(i)
-			if not NotRegister[hero:GetUnitName()] then
-				table.insert(players, i)
+			if PlayerResource:GetPlayer(i) then
+				local hero = PlayerResource:GetSelectedHeroEntity(i)
+				if not NotRegister[hero:GetUnitName()] then
+					table.insert(players, i)
+				end
 			end
 		end
 	end
@@ -942,11 +946,13 @@ function OnLootDropItem(itemName)
 	players = shuffle(players)
 	-- Give the item to the first player in the list who hasn't received it
 	for _, playerID in pairs(players) do
-		if not received_item[playerID] then
-			-- Give the item to the player
-			DropLootOrInventory(playerID, itemName)             
-			received_item[playerID] = true 
-			break
+		if PlayerResource:GetPlayer(playerID) then
+			if not received_item[playerID] then
+				-- Give the item to the player
+				DropLootOrInventory(playerID, itemName)             
+				received_item[playerID] = true 
+				break
+			end
 		end
 	end
 
@@ -965,20 +971,22 @@ end
 function DropLootOrInventory(playerID, itemName)
 	if IsServer() then
 		if PlayerResource:IsValidPlayer(playerID) then
-			Timers:CreateTimer((0.01 + playerID) / 10, function()
-				local player = PlayerResource:GetPlayer(playerID)
-				local hero = player:GetAssignedHero()
-				local item = CreateItem(itemName, nil, nil)
-				local success = hero:AddItem(item)
-				if not success then
-					local origin = hero:GetAbsOrigin()
-					local newItem = CreateItem(itemName, nil, nil)
-					newItem:SetPurchaseTime(0)
-					local drop = CreateItemOnPositionSync(origin, newItem )
-					local pos_launch = origin+RandomVector(RandomFloat(150,200))
-					newItem:LaunchLoot(false, 200, 0.75, pos_launch)
-				end
-			end)
+			if PlayerResource:GetPlayer(playerID) then
+				Timers:CreateTimer((0.01 + playerID) / 10, function()
+					local player = PlayerResource:GetPlayer(playerID)
+					local hero = player:GetAssignedHero()
+					local item = CreateItem(itemName, nil, nil)
+					local success = hero:AddItem(item)
+					if not success then
+						local origin = hero:GetAbsOrigin()
+						local newItem = CreateItem(itemName, nil, nil)
+						newItem:SetPurchaseTime(0)
+						local drop = CreateItemOnPositionSync(origin, newItem )
+						local pos_launch = origin+RandomVector(RandomFloat(150,200))
+						newItem:LaunchLoot(false, 200, 0.75, pos_launch)
+					end
+				end)
+			end	
 		end	
 	end	
 end

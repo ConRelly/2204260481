@@ -113,6 +113,8 @@ function modifier_light_crossbow_3:GetAuraSearchTeam() return DOTA_UNIT_TARGET_T
 function modifier_light_crossbow_3:GetAuraDuration() return FrameTime() end
 function modifier_light_crossbow_3:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
 function modifier_light_crossbow_3:GetModifierAura() return "modifier_light_crossbow_3_aura" end
+
+
 ------------------------
 --LIGHT CROSSBOW3 AURA--
 ------------------------

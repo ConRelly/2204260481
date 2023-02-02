@@ -48,10 +48,18 @@ function modifier_abyssal_water_blade:OnCreated()
 end
 function modifier_abyssal_water_blade:OnIntervalThink()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
-		if self:GetCaster():HasModifier("modifier_skadi_bow") and self:GetCaster():HasModifier("modifier_abyssal_water_blade") then
-			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_abyssal_water_blade_up", {})
+		local has_skadi_bow_edible = self:GetCaster():HasModifier("modifier_skadi_bow_edible")
+		local has_skadi_bow = self:GetCaster():HasModifier("modifier_skadi_bow")
+		local has_water_blade = self:GetCaster():HasModifier("modifier_abyssal_water_blade")
+		local has_water_up = self:GetCaster():HasModifier("modifier_abyssal_water_blade_up")
+		if has_water_blade and (has_skadi_bow or has_skadi_bow_edible)  then
+			if not has_water_up then
+				self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_abyssal_water_blade_up", {})
+			end	
 		else
-			self:GetCaster():RemoveModifierByName("modifier_abyssal_water_blade_up")
+			if has_water_up then
+				self:GetCaster():RemoveModifierByName("modifier_abyssal_water_blade_up")
+			end	
 		end
 	end
 end

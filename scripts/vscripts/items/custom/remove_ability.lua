@@ -60,6 +60,17 @@ if IsServer() then
                         hero:RemoveModifierByName("modifier_medusa_mana_shield")
                     end
                 end
+                if abilityName == "naga_siren_rip_tide" then
+                    if hero:HasModifier("modifier_naga_siren_rip_tide") then
+                        hero:RemoveModifierByName("modifier_naga_siren_rip_tide")
+                    end
+                    if hero:HasModifier("modifier_naga_siren_rip_tide_passive") then
+                        hero:RemoveModifierByName("modifier_naga_siren_rip_tide_passive")
+                    end
+                    if hero:HasModifier("modifier_naga_riptide_counter") then
+                        hero:RemoveModifierByName("modifier_naga_riptide_counter")
+                    end                                       
+                end                
                 if hero:HasAbility("temporary_slot_used") then
                     hero:RemoveAbility("temporary_slot_used")
                 end
