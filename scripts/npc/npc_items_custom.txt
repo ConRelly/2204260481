@@ -27304,7 +27304,7 @@
 		"ItemPurchasable"				"0"
 		"ItemKillable"					"0"
 		"ItemSellable"					"0"
-		"AbilityCastRange"				"750"
+		"AbilityCastRange"				"7500"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"component"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
@@ -27313,22 +27313,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"as_aura"				"10 20 30"
+				"as_aura"				"50 100 150"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_aura"				"100 200 400"
+				"mana_aura"				"1000 2000 4000"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magic_resist_aura"		"15 20 25"
+				"magic_resist_aura"		"15 20 35"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
+				"aura_radius"			"7500"
 			}
 		}
 	}
@@ -27338,13 +27338,14 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"	
+		"ItemCost"						"5000"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_ring_of_ice"
 		"ItemRequirements"
 		{
-			"01"						"item_shadow;item_ice;item_air"
+			"01"						"item_air_essence;item_water_essence"
+			"02"                        "item_weapon_fragment"
 		}
 	}
 
@@ -27359,10 +27360,10 @@
 		"AbilityTextureName"			"custom/item_ring_of_ice_2"
 		"MaxUpgradeLevel"				"3"
 		"ItemBaseLevel"					"2"
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
-		"ItemSellable"					"0"
-		"AbilityCastRange"				"750"
+		"ItemSellable"					"1"
+		"AbilityCastRange"				"7500"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"common"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
@@ -27371,22 +27372,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"as_aura"				"10 20 30"
+				"as_aura"				"50 100 150"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_aura"				"100 200 400"
+				"mana_aura"				"1000 2000 4000"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magic_resist_aura"		"15 20 25"
+				"magic_resist_aura"		"15 20 35"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
+				"aura_radius"			"7500"
 			}
 		}
 	}
@@ -27418,10 +27419,10 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel"				"3"
 		"ItemBaseLevel"					"3"
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
-		"ItemSellable"					"0"
-		"AbilityCastRange"				"750"
+		"ItemSellable"					"1"
+		"AbilityCastRange"				"7500"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"rare"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
@@ -27430,22 +27431,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"as_aura"				"10 20 30"
+				"as_aura"				"50 100 150"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_aura"				"100 200 400"
+				"mana_aura"				"1000 2000 4000"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magic_resist_aura"		"15 20 25"
+				"magic_resist_aura"		"15 20 35"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"750"
+				"aura_radius"			"7500"
 			}
 		}
 	}
@@ -27455,14 +27456,14 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"	
+		"ItemCost"						"5000"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_ring_of_ice_3"
 		"ItemRequirements"
 		{
-			"01"						"item_ring_of_ice_2;item_ring_of_ice"
-			"02"						"item_shadow_gem;item_ice_gem;item_air_gem"
+			"01"						"item_ring_of_ice_2;item_all_essence"
+			"02"						"item_ring_of_ice_2;item_weapon_fragment;item_weapon_fragment"
 		}
 	}
 
@@ -33926,19 +33927,19 @@
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/light_crossbow.lua"
-		"AbilityTextureName"			"custom/thunder_hammer"
+		"AbilityTextureName"			"mjz_mjollnir"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"ItemPurchasable"				"0"
 		"ItemKillable"					"0"
 		"ItemSellable"					"0"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"AbilityCastPoint"				"0"
 		"AbilityCastRange"				"1000"		
-		"AbilityCooldown"				"35"
-		"AbilityManaCost"				"50"
+		"AbilityCooldown"				"50"
+		"AbilityManaCost"				"100"
 		"ItemQuality"					"epic"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
@@ -33947,33 +33948,33 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"24"
+				"bonus_damage_lvl"			"200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"65"
+				"bonus_attack_speed"	"120"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_aura"				"200"
+				"hp_aura"				"4000"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_aura"					"30"
+				"damage_aura"					"100"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"ms_aura"				"20"
+				"ms_aura"				"200"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"1000"
+				"aura_radius"			"7200"
 			}
 			"07"
 			{
@@ -33993,7 +33994,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"static_damage"			"250"
+				"static_damage"			"150"  //ptc dmg of the hero attack dmg (base+green)
 			}
 			"11"
 			{
@@ -34003,22 +34004,22 @@
 			"12"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"static_cooldown"		"0.2"
+				"static_cooldown"		"0.1"
 			}
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"chain_chance"			"30"
+				"chain_chance"			"20"
 			}
 			"14"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"chain_damage"			"200"
+				"chain_damage"			"1000"  //bonus dmg per hero lvl
 			}
 			"15"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"chain_strikes"			"18"
+				"chain_strikes"			"9"
 			}
 			"16"
 			{
@@ -34043,28 +34044,18 @@
 			"20"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"buff_dur"				"3"
+				"buff_dur"				"7"
 			}
 			"21"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"cast_range"			"1000"
 			}
-		}
-	}
-// Hammer Of God Recipe
-	"item_recipe_thunder_hammer"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"item_recipe"
-		"ItemCost"						"5000"	
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_thunder_gods_might"
-		"ItemRequirements"
-		{
-			"01"						"item_mjollnir;item_chest_5"
+			"22"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"charge_awaken"			  "200"
+			}			
 		}
 	}
 
@@ -34073,17 +34064,17 @@
 	{
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/item_thunder_gods_might.lua"
-		"AbilityTextureName"			"custom/thunder_hammer"
+		"AbilityTextureName"			"custom/thunder_hammer_base"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"ItemPurchasable"				"0"
 		"ItemKillable"					"0"
 		"ItemSellable"					"0"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"AbilityCastPoint"				"0"
-		"AbilityCastRange"				"1000"		
-		"AbilityCooldown"				"35"
-		"AbilityManaCost"				"50"
+		"AbilityCastRange"				"2000"		
+		"AbilityCooldown"				"80"
+		"AbilityManaCost"				"600"
 		"ItemQuality"					"epic"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
@@ -34092,127 +34083,179 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"24"
+				"bonus_damage_ptc"			"50"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"65"
+				"bonus_attack_speed"	"200"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_aura"				"200"
+				"all"					"500"
 			}
 			"04"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_aura"					"30"
-				"CalculateSpellDamageTooltip"	"0"
+				"var_type"				"FIELD_FLOAT"
+				"static_dur"			"10"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"ms_aura"				"20"
+				"static_chance"			"10"
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"1000"
+				"var_type"				"FIELD_FLOAT"
+				"static_strikes"		"4"
 			}
-			"07"
+			"7"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"static_dur"			"15"
+				"chain_damage"			"250"
 			}
-			"08"
+			"8"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"static_chance"			"20"
+				"static_radius"			"1200"
 			}
-			"09"
+			"9"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"static_strikes"		"6"
+				"stats_mult_dmg"			"5"
 			}
 			"10"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"static_damage"			"250"
+				"var_type"				"FIELD_INTEGER"
+				"chain_radius"			"2000"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"static_radius"			"900"
+				"chain_delay"			"0.5"
 			}
 			"12"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"static_cooldown"		"0.2"
+				"ss_spell_amp"				"15"
 			}
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"chain_chance"			"30"
+				"static_ptc_dmg"			"0"
 			}
 			"14"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"chain_damage"			"200"
+				"speed_bost"			  "1000"
 			}
 			"15"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"chain_strikes"			"18"
-			}
-			"16"
+				"charge_awaken"			  "50"
+			}			
+		}
+	}
+// Hammer Of Thor Awaken
+
+	"item_thunder_gods_might2"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/item_thunder_gods_might.lua"
+		"AbilityTextureName"			"custom/thunder_hammer"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"ItemPurchasable"				"0"
+		"ItemKillable"					"0"
+		"ItemSellable"					"0"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"AbilityCastPoint"				"0"
+		"AbilityCastRange"				"2000"	
+		"AbilityCooldown"				"70"
+		"AbilityManaCost"				"500"
+		"ItemQuality"					"epic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilitySpecial"
+		{
+			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chain_radius"			"900"
+				"bonus_damage_ptc"			"120"
 			}
-			"17"
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"all"					"1200"
+			}
+			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"chain_delay"			"0.06"
+				"static_dur"			"10"
 			}
-			"18"
+			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"chain_cooldown"		"0.1"
+				"static_chance"			"15"
 			}
-			"19"
+			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"buff_as"				"40"
+				"static_strikes"		"4"
 			}
-			"20"
+			"7"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"buff_dur"				"3"
-			}
-			"21"
+				"static_damage"			"250"
+			}			
+			"7"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"cast_range"			"1000"
+				"chain_damage"			"10"
+			}
+			"8"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"static_radius"			"1700"
+			}
+			"9"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stats_mult_dmg"			"1"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"chain_radius"			"2000"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chain_delay"			"0.3"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ss_spell_amp"				"20"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"static_ptc_dmg"			"1"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"speed_bost"			  "2000"
 			}
 		}
 	}
-// Hammer Of Thor
-	"item_recipe_thunder_hammer"
-	{
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"BaseClass"						"item_datadriven"
-		"AbilityTextureName" 			"item_recipe"
-		"ItemCost"						"100"	
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_thunder_gods_might"
-		"ItemRequirements"
-		{
-			"01"						"item_mjollnir"
-		}
-	}
-
 
 
 //#############---RELICS---###################################################################################
@@ -35031,15 +35074,15 @@
 			"hp_regen_amp"			"50"
 
 			"aura_radius"			"7200"
-			"hp_aura"				"2200"
-			"int_aura"				"280"
-			"mana_regen_aura"		"69"
+			"hp_aura"				"4200"
+			"int_aura"				"380"
+			"mana_regen_aura"		"169"
 			"duration_buff"			"5"
 			"duration_debuff"		"5"
 			"magic_resist_red"		"25"
 			"hpr_spell_amp"
 			{
-				"value"							"0.5"
+				"value"							"1.0"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"search_radius"			"1200"

@@ -66,7 +66,7 @@ if IsServer() then
 			local target = keys.target
 
 			local randomSeed = math.random(1, 100)
-			if randomSeed <= 10 then					
+			if randomSeed <= 4 then					
 				--[[
 				if not attacker:HasModifier("modifier_item_force_blade") then
 					self:Destroy()

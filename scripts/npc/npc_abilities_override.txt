@@ -250,7 +250,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"27500"
+				"value"				"37500"
 				"ad_linked_abilities"			"clinkz_searing_arrows"
 			}
 		}
@@ -4327,6 +4327,59 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 
+//=================================================================================================================
+// Clinkz: Strafe
+//=================================================================================================================
+"clinkz_strafe"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"ID"							"5259"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"FightRecapLevel"				"1"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.0"
+	"LevelsBetweenUpgrades"         "8"
+	"AbilityChannelTime"			"1.5 1.9 2.3 2.7"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	"AbilityCastGestureSlot"		"DEFAULT"
+	"AbilityChannelAnimation"	"ACT_DOTA_CHANNEL_ABILITY_1"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"30 26 22 18"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"45 60 75 90"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityValues"
+	{
+			"wave_count"
+			{
+				"value"			"6 9 15 23"
+				"LinkedSpecialBonus"		"special_bonus_unique_clinkz_12"
+			}
+			"range"	"1250 1800 1950 2400"				
+			"damage_pct"	
+			{
+				"value"		"190 220 250 380"				
+				"special_bonus_unique_clinkz_4"	"+120"
+			}
+		
+	}
+	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+}
+
+
 	"clinkz_searing_arrows"
 	{
 		"AbilityCastPoint"				"0.0"
@@ -4336,17 +4389,42 @@
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"10"
 		"AbilityCooldown"				"0.0"		
-		"AbilityManaCost"				"10"
+		"AbilityManaCost"				"0"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_bonus"					"90 880 2900 9680 39840 87420 175800"
+				"damage_bonus"					"290 1880 4900 19680 49840 187420 375800"
 				"LinkedSpecialBonus"			"special_bonus_unique_clinkz_1"
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_clinkz_12"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"617"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"12"
+				"ad_linked_abilities"			"clinkz_strafe"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+
 "clinkz_wind_walk"
   {
 	
@@ -8086,7 +8164,7 @@
 				"value"				"620 2845 7765 16880 35940 84770 181500 421500"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_2"
 			}
-			"radius"					"300"
+			"radius"					"701"
 			"duration"					"4.0"
 			"debuff_duration"			"10"
 		}

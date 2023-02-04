@@ -13384,8 +13384,8 @@
 	"MaxLevel"                      "7"
 	"FightRecapLevel"				"1"
 
-	"AbilityCastRange"				"1000 1100 1200 1300 1400 1500 1700"
-	"AbilityCastPoint"				"0.55"
+	"AbilityCastRange"				"2000 2100 2200 2300 2400 2500 2700"
+	"AbilityCastPoint"				"0.20"
 	"AbilityCastAnimation"			"ACT_DOTA_RAZE_3"
 	"AbilityCharges"				"3"
 	"AbilityChargeRestoreTime"		"7"

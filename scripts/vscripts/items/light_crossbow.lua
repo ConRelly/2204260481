@@ -169,7 +169,7 @@ function modifier_thunder_hammer:OnCreated()
         if not self:GetAbility() then self:Destroy() end
     end
 	if self:GetAbility() then
-		self.bonus_damage = self:GetAbility():GetSpecialValueFor("bonus_damage")
+		self.bonus_damage = self:GetCaster():GetLevel() * self:GetAbility():GetSpecialValueFor("bonus_damage_lvl")
 		self.bonus_attack_speed = self:GetAbility():GetSpecialValueFor("bonus_attack_speed")
 		self.chain_chance = self:GetAbility():GetSpecialValueFor("chain_chance")
 		self.chain_cooldown = self:GetAbility():GetSpecialValueFor("chain_cooldown")
@@ -200,7 +200,7 @@ function modifier_thunder_hammer:OnAttackLanded(keys)
 		self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_thunder_hammer_chain_lightning", {starting_unit_entindex = keys.target:entindex()})
 
 		--UP: Lightning Shard
-		if self:GetCaster():HasModifier("modifier_lightning_shard") or self:GetCaster():HasModifier("modifier_lightning_shard_consume") then
+		if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
 			local power_buff = self:GetAbility():GetSpecialValueFor("buff_dur")
 			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_thunder_power", {duration = power_buff})
 		end
@@ -209,6 +209,27 @@ function modifier_thunder_hammer:OnAttackLanded(keys)
 		self.bChainCooldown = true
 		self:StartIntervalThink(self.chain_cooldown)
 		self.true_hit = false
+		------gain stacks for Evolution---
+		local caster = self:GetCaster()
+		local ability = self:GetAbility()
+		local bonus_charge = 1
+		local has_ss = caster:HasModifier("modifier_super_scepter")
+		local marci_ult = caster:HasModifier("modifier_marci_unleash_flurry")
+		local charges = ability:GetCurrentCharges()
+		local limit = ability:GetSpecialValueFor("charge_awaken") 
+		local evolve = (charges >= limit)
+		if has_ss and marci_ult then
+			bonus_charge = 2								
+		end	            
+		ability:SetCurrentCharges(charges + bonus_charge)
+		if evolve then
+			if not self.evolve_check then
+				print("item has evolved")
+				caster:RemoveItem(ability)
+				caster:AddItemByName("item_thunder_gods_might") 				
+				self.evolve_check = true
+			end  
+		end 
 	end
 end
 function modifier_thunder_hammer:IsAura() return true end
@@ -277,7 +298,18 @@ function modifier_thunder_hammer_chain_lightning:OnCreated(keys)
     end
 	if not IsServer() then return end
 	if self:GetAbility() then
-		self.chain_damage = self:GetAbility():GetSpecialValueFor("chain_damage")
+		if self:GetCaster() then
+			local ability = self:GetAbility()
+			local caster = self:GetCaster()
+			local lvl_dmg = caster:GetLevel() * ability:GetSpecialValueFor("chain_damage")
+			local attack_dmg_mult = ability:GetSpecialValueFor("static_damage") / 100
+			local caster_attack = caster:GetAverageTrueAttackDamage(caster) * attack_dmg_mult
+			local damage = caster_attack + lvl_dmg
+			self.chain_damage = damage
+			print("chain dmg: "..damage)
+		else
+			self.chain_damage = self:GetAbility():GetSpecialValueFor("chain_damage")
+		end	
 		self.chain_strikes = self:GetAbility():GetSpecialValueFor("chain_strikes")
 		self.chain_radius = self:GetAbility():GetSpecialValueFor("chain_radius")
 		self.chain_delay = self:GetAbility():GetSpecialValueFor("chain_delay")
@@ -315,7 +347,7 @@ function modifier_thunder_hammer_chain_lightning:OnIntervalThink()
 			self.current_unit = enemy
 			self.units_affected[self.current_unit] = true
 			self.zapped = true
-			ApplyDamage({ victim = enemy, damage = self.chain_damage, damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_NONE, attacker = self:GetCaster(), ability = self:GetAbility() })
+			ApplyDamage({ victim = enemy, damage = self.chain_damage, damage_type = DAMAGE_TYPE_PHYSICAL, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION, attacker = self:GetCaster(), ability = self:GetAbility() })
 			break
 		end
 	end
@@ -340,13 +372,23 @@ function modifier_thunder_hammer_static:OnCreated()
     end
 	if not IsServer() then return end
 	if self:GetAbility() then
+		if self:GetCaster() then
+			local ability = self:GetAbility()
+			local caster = self:GetCaster()
+			local lvl_dmg = caster:GetLevel() * ability:GetSpecialValueFor("chain_damage")
+			local attack_dmg_mult = ability:GetSpecialValueFor("static_damage") / 100
+			local caster_attack = caster:GetAverageTrueAttackDamage(caster) * attack_dmg_mult
+			local damage = caster_attack + lvl_dmg
+			self.static_damage = damage
+		else
+			self.static_damage = self:GetAbility():GetSpecialValueFor("static_damage")	
+		end
 		self.static_chance = self:GetAbility():GetSpecialValueFor("static_chance")
 		self.static_strikes = self:GetAbility():GetSpecialValueFor("static_strikes")
-		self.static_damage = self:GetAbility():GetSpecialValueFor("static_damage")
 		self.static_radius = self:GetAbility():GetSpecialValueFor("static_radius")
 		self.static_cooldown = self:GetAbility():GetSpecialValueFor("static_cooldown")
 	else
-	self.static_chance = 0 self.static_strikes = 0 self.static_damage = 0 self.static_radius = 0 self.static_cooldown = 0
+		self.static_chance = 0 self.static_strikes = 0 self.static_damage = 0 self.static_radius = 0 self.static_cooldown = 0
 	end
 	self.bStaticCooldown = false
 	self.shield_particle = ParticleManager:CreateParticle("particles/items2_fx/mjollnir_shield.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
@@ -406,7 +448,8 @@ function modifier_thunder_hammer_aura:DeclareFunctions()
 	return { MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT }
 end
 function modifier_thunder_hammer_aura:GetModifierPreAttack_BonusDamage()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("damage_aura") end
+	local caster_lvl = self:GetCaster():GetLevel()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("damage_aura") * caster_lvl end
 end
 function modifier_thunder_hammer_aura:GetModifierHealthBonus()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp_aura") end

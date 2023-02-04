@@ -1,6 +1,8 @@
 local THIS_LUA = "abilities/hero_nevermore/mjz_nevermore_shadowraze.lua"
 -- LinkLuaModifier("modifier_mjz_nevermore_shadowraze", THIS_LUA, LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_nevermore_shadowraze_stack", THIS_LUA, LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_nevermore_shadowraze_stack_agi", THIS_LUA, LUA_MODIFIER_MOTION_NONE)
+
 
 mjz_nevermore_shadowraze = mjz_nevermore_shadowraze or class({})
 
@@ -26,7 +28,7 @@ function mjz_nevermore_shadowraze:_FindSpellPosition()
     local hAbility = self
     local startPos = hCaster:GetAbsOrigin()
     local direction = hCaster:GetForwardVector()
-    local distance = hAbility:GetTalentSpecialValueFor("shadowraze_range")
+    local distance = hAbility:GetTalentSpecialValueFor("shadowraze_range") + hCaster:GetCastRangeBonus()
     local radius = hAbility:GetTalentSpecialValueFor("shadowraze_radius")
     
     distance = distance + hCaster:GetCastRangeBonus()
@@ -74,7 +76,15 @@ function mjz_nevermore_shadowraze:Spell_Shadowraze(hPosition)
                 damage = damage, damage_type = hAbility:GetAbilityDamageType() 
             })
             if HasTalent(hCaster, "special_bonus_unique_mjz_nevermore_shadowraze_agi_bonus") then
-                hCaster:ModifyAgility(1)
+                local bonus = 2
+                hCaster:ModifyAgility(bonus)
+                if hCaster:HasModifier("modifier_mjz_nevermore_shadowraze_stack_agi") then
+                    local modifier = hCaster:FindModifierByName("modifier_mjz_nevermore_shadowraze_stack_agi")
+                    modifier:SetStackCount(modifier:GetStackCount() + bonus)
+                else
+                    hCaster:AddNewModifier(hCaster, hAbility, "modifier_mjz_nevermore_shadowraze_stack_agi", {})
+                    hCaster:FindModifierByName("modifier_mjz_nevermore_shadowraze_stack_agi"):SetStackCount(bonus)
+                end                
             end  
             if HasTalent(hCaster, "special_bonus_unique_nevermore_raze_procsattacks") then
                 if not enemy:IsNull() and enemy:IsAlive() and hCaster:IsAlive() then
@@ -159,6 +169,20 @@ function modifier_mjz_nevermore_shadowraze_stack:GetEffectName()
 	return "particles/units/heroes/hero_nevermore/nevermore_shadowraze_debuff.vpcf"
 end
 
+----stack tooltip
+if modifier_mjz_nevermore_shadowraze_stack_agi == nil then modifier_mjz_nevermore_shadowraze_stack_agi = class({}) end
+local modifier_shadowraze_agi = modifier_mjz_nevermore_shadowraze_stack_agi
+
+function modifier_shadowraze_agi:IsHidden() return false end
+function modifier_shadowraze_agi:IsPurgable() return false end
+function modifier_shadowraze_agi:IsDebuff() return false end
+function modifier_shadowraze_agi:RemoveOnDeath() return false end
+function modifier_shadowraze_agi:DeclareFunctions()
+	return {MODIFIER_PROPERTY_TOOLTIP}
+end
+function modifier_shadowraze_agi:OnTooltip()
+	return self:GetStackCount()
+end
 --talents
 function HasTalent(unit, talentName)
     if unit:HasAbility(talentName) then

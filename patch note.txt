@@ -2295,6 +2295,16 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Num spell amp per hp regen increased to 1% from 0.5% , and the limit to 4x your lvl, int and mana regen aura increased.
+* Clinkz got new talents and some buffs.
+* Naga tide passive increased aoe from 300 to over 700. 
+* Reworked Loot drop system and now will count each type of item you receive and you wont get another one of that type until everyone gets one.
+* lvl 10 will now give you an Elemental (including other mode then hard)
+
+
+
+
+
 
 
 
@@ -2342,12 +2352,19 @@ Speedsters : from 50% ms as bonus dmg to 140%
 
 Amalgamation : can have both Symbiosis effects at the same time
 
+Thor Hammer : gains +2 charges instead of 1 per proc.
 
 can youse this format for marci SS effect:
 if caster:HasModifier("modifier_super_scepter") then
     if caster:HasModifier("modifier_marci_unleash_flurry") then
         special_effect_here = special_effect_here
     end                                 
+end
+or this one :
+local has_ss = caster:HasModifier("modifier_super_scepter")
+local marci_ult = caster:HasModifier("modifier_marci_unleash_flurry")
+if has_ss and marci_ult then
+    bonus_charge = 2
 end
 
 * The "Exclusive" tag will now be written on the ability (Example: *hero_name*'s Exclusive: *item_name*)

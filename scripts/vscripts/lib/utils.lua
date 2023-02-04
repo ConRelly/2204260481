@@ -905,7 +905,7 @@ function DropItemOrInventory(playerID, itemName)
 	end	
 end
 -------Lot Drops-----
-local received_item = {}
+--local received_item = {}
 local NotRegister = {
     ["npc_playerhelp"] = true,
     ["npc_dota_target_dummy"] = true,
@@ -913,6 +913,11 @@ local NotRegister = {
     ["npc_dota_hero_target_dummy"] = true,
     ["npc_courier_replacement"] = true,
 }
+local max_item_count = 1
+local item_count = {
+
+}
+
 function OnLootDropItem(itemName)
       -- Get a list of all players in the game
 	local players = {}
@@ -927,34 +932,47 @@ function OnLootDropItem(itemName)
 		end
 	end
 
-	-- Check if all players have received the item
+	-- Check if all players have received the maximum allowed number of the item
 	local all_received = true
 	for _, playerID in pairs(players) do
-		if not received_item[playerID] then
+		if item_count[playerID .. "_" .. itemName] then
+			if item_count[playerID .. "_" .. itemName] < max_item_count then
+				all_received = false
+				break	
+			end
+		else
 			all_received = false
-			break
-		end
+			break	
+		end	
 	end
 
+	-- Reset the count for the item if all players have received the maximum allowed number
 	if all_received then
-		-- Reset the table if all players have received the item
-		received_item = {}
-		print("all players recived loot drops")
+		for _, playerID in pairs(players) do
+			item_count[playerID .. "_" .. itemName] = 0
+		end
+		print("all players received the maximum number of " .. itemName)
 	end
+
 
 	-- Shuffle the list of players
 	players = shuffle(players)
-	-- Give the item to the first player in the list who hasn't received it
+	-- Give the item to the first player in the list who hasn't received the maximum allowed number of that item
 	for _, playerID in pairs(players) do
 		if PlayerResource:GetPlayer(playerID) then
-			if not received_item[playerID] then
+			if not item_count[playerID .. "_" .. itemName] or item_count[playerID .. "_" .. itemName] < max_item_count then
 				-- Give the item to the player
-				DropLootOrInventory(playerID, itemName)             
-				received_item[playerID] = true 
+				DropLootOrInventory(playerID, itemName)
+				item_count[playerID .. "_" .. itemName] = (item_count[playerID .. "_" .. itemName] or 0) + 1
 				break
 			end
 		end
 	end
+	print("item_count:")
+	for key, value in pairs(item_count) do
+		print("  " .. key .. ": " .. value)
+	end	
+
 
 end
 function shuffle(t)
@@ -966,6 +984,7 @@ function shuffle(t)
     end
     return t
 end
+
 
 ----drops for loot items --
 function DropLootOrInventory(playerID, itemName)
@@ -979,7 +998,7 @@ function DropLootOrInventory(playerID, itemName)
 					local success = hero:AddItem(item)
 					if not success then
 						local origin = hero:GetAbsOrigin()
-						local newItem = CreateItem(itemName, nil, nil)
+						local newItem = CreateItem(itemName, hero, nil)
 						newItem:SetPurchaseTime(0)
 						local drop = CreateItemOnPositionSync(origin, newItem )
 						local pos_launch = origin+RandomVector(RandomFloat(150,200))

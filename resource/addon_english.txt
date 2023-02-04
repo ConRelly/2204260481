@@ -69,6 +69,7 @@
 	"dota_ability_variable_buff_amp"				"Buff Duration"						// $buff_amp
 	"dota_ability_variable_projectile_speed_pct"	"Attack Projectile Speed"			// $projectile_speed_pct
 	"dota_ability_variable_attack_range_all"		"Attack Range"						// $attack_range_all
+	"dota_ability_variable_bonus_damage_lvl"	    "Bonus Damage per lvl"              // $b_damage_per_lvl
 
 //############################################################################################################################
 
@@ -1427,15 +1428,52 @@
 	"DOTA_Tooltip_modifier_avernus_chestplate_buff_ally_Description"		"Your ally takes damage for you. You should be ashamed of yourself..."
 	
 	"DOTA_Tooltip_Ability_item_thunder_hammer"					"Thunder Hammer"
-	"DOTA_Tooltip_Ability_item_thunder_hammer_Description"		"<h1>Thunder Charge</h1>For %static_dur% seconds. surrounds the selected creature with a charged shield that has a %static_chance%%% chance of dealing %static_damage% magic damage to the attacking enemy and %static_strikes% others within a %static_radius% radius.<br><br>Cast Range: %cast_range%\n<h1>Chain Lightning</h1>Each attack has a %chain_chance%%% chance of creating a chain lightning bolt that can jump %chain_strikes% times between random enemies within a %chain_radius% radius, dealing %chain_damage% magic damage each.\n<h1><font color='#BFBFBF'>UP: Lightning Shard</font></h1>Each use of Chain Lightning gives an effect that increases the attack speed by %buff_as% for %buff_dur% sec.\n<h1>Thunder Hammer Aura</h1>+ %hp_aura% Health<br>+ %damage_aura% Damage<br>+ %ms_aura% Movement Speed<br><br>Radius: %aura_radius%"
-	"DOTA_Tooltip_Ability_item_thunder_hammer_damage"			 "+$damage"
-	"DOTA_Tooltip_ability_item_thunder_hammer_attack_speed"		 "+$attack"
+	"DOTA_Tooltip_Ability_item_thunder_hammer_Description"		"<h1>Thunder Charge</h1>For %static_dur% seconds. surrounds the selected creature with a charged shield that has a %static_chance%%% chance of dealing Chain Lightning damage to the attacking enemy and %static_strikes% others within a %static_radius% radius.<br><br>Cast Range: %cast_range%\n<h1>Chain Lightning</h1>Each attack has a %chain_chance%%% chance of creating a chain lightning bolt that can jump %chain_strikes% times between random enemies within a %chain_radius% radius, dealing %static_damage%%% of your attack + %chain_damage% x your lvl in Physical damage to each one.\n<h1><font color='#BFBFBF'>UP: Aghanim's Shard</font></h1>Each use of Chain Lightning gives an effect that increases the attack speed by %buff_as% for %buff_dur% sec.\n<h1>Thunder Hammer Aura</h1>+ %hp_aura% Health<br>+ %damage_aura% Bonus Damage per lvl<br>+ %ms_aura% Movement Speed<br><br>Radius: %aura_radius%\n<h1><font color='#7AC20A'>Evolve</font></h1>Every time Chain Lightning procs you gain a charge, Evolves at %charge_awaken% charges."
+	"DOTA_Tooltip_Ability_item_thunder_hammer_bonus_damage_lvl"	    "+$b_damage_per_lvl"
+	"DOTA_Tooltip_ability_item_thunder_hammer_bonus_attack_speed"		 "+$attack"
+	"DOTA_Tooltip_Ability_item_thunder_hammer_Note0"            "Not Affected by SpellAmp"
 	"DOTA_Tooltip_modifier_thunder_hammer_aura"				"Thunder Hammer Aura"
 	"DOTA_Tooltip_modifier_thunder_hammer_aura_Description"	"Increases Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Damage by %dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% and Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%"
 	"DOTA_Tooltip_modifier_thunder_hammer_static"						"Thunder Charge"
 	"DOTA_Tooltip_modifier_thunder_hammer_static_Description"			"With a %dMODIFIER_PROPERTY_TOOLTIP%%% chance, it fires lightning at the attacking enemy"
 	"DOTA_Tooltip_modifier_thunder_power"					"Thunder Power"
 	"DOTA_Tooltip_modifier_thunder_power_Description"		"Thunder Power increases the attack speed by%dMODIFIER_PROPERTY_TOOLTIP%"
+
+//Thunder Gods Might  %+$damage  bonus_attack_speed
+
+	"DOTA_Tooltip_Ability_item_thunder_gods_might"                           "<font color='#7AC20A'>Thunder Gods Might</font>"
+	"DOTA_Tooltip_Ability_item_thunder_gods_might_Description"				 "<h1><font color='#07ECFF'>Thor's Essence</font></h1>Electrifies the air around you, dealing <font color='#07ECFF'>Lightning Strike</font> damage every %chain_delay% sec to all enemies in %chain_radius% aoe for %static_dur% sec. This active also grants %speed_bost% speed boost, removes the movespeed limit, and makes the wielder immune to one randomly determined type of damage (<font color='#DF01A5'>physical</font>,<font color='#045FB4'> magic</font>, or <font color='#81F7F3'>pure</font>) for the duration.\n<h1><font color='#07ECFF'>Lightning Strike</font></h1>Each attack has a %chain_chance%%% chance of creating a chain lightning bolt that can affect up to %static_strikes% enemies in a %chain_radius% radius of the attacked enemy, dealing %chain_damage%%% of hero attack dmg + %stats_mult_dmg% x all your stats as physical damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Ignores enemy base armor and now uses %ss_spell_amp%%% of your spell amplification instead of 0.\n<h1><font color='#E20624'>Awaken</font></h1>Every time <font color='#07ECFF'>Lightning Strike</font> procs you gain a charge, Awakens at %charge_awaken% charges."
+	"DOTA_Tooltip_Ability_item_thunder_gods_might_bonus_damage_ptc"			 "%+$damage"
+	"DOTA_Tooltip_ability_item_thunder_gods_might_bonus_attack_speed"		 "+$attack"
+	"DOTA_Tooltip_Ability_item_thunder_gods_might_all"                       "+$all"
+	"DOTA_Tooltip_Ability_item_thunder_gods_might_Note0"					 "Not Affected by SpellAmp(until ss effect)"
+
+
+	"DOTA_Tooltip_modifier_item_thunder_god_might_aura_debuff"              "<font color='#07ECFF'>Thor's Essence</font>"
+	"DOTA_Tooltip_modifier_item_thunder_god_might_aura"                     "<font color='#07ECFF'>Thor's Essence</font>"
+	"DOTA_Tooltip_modifier_item_thunder_god_might_aura_Description"         "Removes your speed limit and zaps all enemis in your Essence range."
+	
+	"DOTA_Tooltip_modifier_item_thunder_god_might_immune"					"Thor's Ward"
+	"DOTA_Tooltip_modifier_item_thunder_god_might_immune_Description"		"Gives Absolute protection against one randomly determined type of damage :<font color='#DF01A5'>physical</font>,<font color='#045FB4'> magic</font>, or <font color='#81F7F3'>pure</font>"
+	"DOTA_Tooltip_modifier_item_thunder_cd_limit"							"Thor's Ward CD Limit"
+	"DOTA_Tooltip_modifier_item_thunder_cd_limit_Description"               "Can't be affected again the Thor's Ward absolute protection until this debuff expires"
+
+
+//Thunder Gods Might Awaken  
+
+	"DOTA_Tooltip_Ability_item_thunder_gods_might2"                           "<font color='#E20624'>Thunder Gods Might Awaken</font>"
+	"DOTA_Tooltip_Ability_item_thunder_gods_might2_Description"				 "<h1><font color='#07ECFF'>Thor's Essence</font></h1>Electrifies the air around you, dealing physical damage equal to %static_ptc_dmg%%% of the target's current health plus what is higher (%static_damage%%% attack + 1% for each 10 charges ) OR (%stats_mult_dmg% for every 20 charges x All your stats)  every %chain_delay% sec to all enemies in %chain_radius% aoe for %static_dur% sec. This active also grants %speed_bost% speed boost, removes the movespeed limit, and makes the wielder immune to one randomly determined type of damage (<font color='#DF01A5'>physical</font>,<font color='#045FB4'> magic</font>, or <font color='#81F7F3'>pure</font>) for the duration.\n<h1><font color='#E20624'>Lightning Strike</font></h1>Each attack has a %chain_chance%%% chance of creating a chain lightning bolt that can affect up to %static_strikes% enemies in a %chain_radius% radius of the attacked enemy, dealing (%chain_damage%%% + 1% per 10 charges) of hero True attack (includes crit dmg) OR (%stats_mult_dmg% for every 20 charges x All your stats), the highest one as physical damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Ignores enemy base armor and now uses %ss_spell_amp%%% of your spell amplification instead of 0.\n<h1><font color='#E20624'>Lightning Boost</font></h1>Every time <font color='#07ECFF'>Lightning Strike</font> procs you gain a charge."
+	"DOTA_Tooltip_Ability_item_thunder_gods_might2_bonus_damage_ptc"			 "%+$damage"
+	"DOTA_Tooltip_ability_item_thunder_gods_might2_bonus_attack_speed"		 "+$attack"
+	"DOTA_Tooltip_Ability_item_thunder_gods_might2_all"                       "+$all"
+	"DOTA_Tooltip_Ability_item_thunder_gods_might2_Note0"					 "Not Affected by SpellAmp(until ss effect), up to 3000 charges are fully calculated after that only 10% of them"
+	"DOTA_Tooltip_Ability_item_thunder_gods_might2_Note1"					 "True Attack is the attack dmg taken by enemy from the attack dmg dealt but before is reduced by anything, this includes critical strike if both proc at the same time"
+
+
+	"DOTA_Tooltip_modifier_item_thunder_god_might_aura_debuff2"              "<font color='#07ECFF'>Thor's Essence</font>"
+	"DOTA_Tooltip_modifier_item_thunder_god_might_aura2"                     "<font color='#07ECFF'>Thor's Essence</font>"
+	"DOTA_Tooltip_modifier_item_thunder_god_might_aura2_Description"         "Removes your speed limit and zaps all enemis in your Essence range."
+
 
 	"DOTA_Tooltip_ability_item_recipe_hammer_of_the_divine"				"Hammer Of The Divine Recipe"
 	"DOTA_Tooltip_ability_item_hammer_of_the_divine"					"<font color='#7E09E6'>Hammer Of The Divine</font>"
@@ -6761,9 +6799,12 @@ You can't target yourself."
 "DOTA_Tooltip_ability_mjz_nevermore_shadowraze_shadowraze_damage"					"BASE DAMAGE:"
 
 "DOTA_Tooltip_Ability_special_bonus_unique_mjz_nevermore_shadowraze_agi_bonus"				"+{s:value} Base Agility for each enemy hit with<font color='#f2da5b'>Shadowraze</font>"	
-"DOTA_Tooltip_modifier_mjz_nevermore_shadowraze_stack"                             "Deal bonus damage with <font color='#f2da5b'>Shadowraze</font> for each stack x 0.5 x agi"
+
 "DOTA_Tooltip_modifier_mjz_nevermore_shadowraze_stack"								"<font color='#f2da5b'>Shadowraze</font>"
 "DOTA_Tooltip_modifier_mjz_nevermore_shadowraze_stack_description"					"Receiving %dMODIFIER_PROPERTY_TOOLTIP% bonus damage from each Shadowraze attack.
+"DOTA_Tooltip_modifier_mjz_nevermore_shadowraze_stack_agi"								"<font color='#f2da5b'>Shadowraze</font>"
+"DOTA_Tooltip_modifier_mjz_nevermore_shadowraze_stack_agi_description"					"You have colected %dMODIFIER_PROPERTY_TOOLTIP%  Base Agility.
+
 
 
 "DOTA_Tooltip_ability_nyx_assassin_custom_mana_strike"						"<font color='#f2da5b'>Mana Strike</font>"

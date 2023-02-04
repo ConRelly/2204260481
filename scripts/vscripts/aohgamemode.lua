@@ -972,6 +972,13 @@ function AOHGameMode:OnHeroLevelUp(event)
 			--mainHero:AddItemByName("item_branch_component")
 		end
 	end	
+	if (heroLevel == 10) and not hero:IsIllusion() then
+		-- Check if main/real hero
+		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
+		if mainHero == hero then
+			DropItemOrInventory(nPlayerID, "item_all_essence")
+		end
+	end	
 	if self._playerNumber < 2 and encahnter_bonus > 0 and not hero:IsIllusion() and (heroLevel > 9) then	
 		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
 		if mainHero == hero then

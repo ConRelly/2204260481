@@ -120,10 +120,13 @@ LinkLuaModifier("modifier_wildthorn_buff", "items/crit", LUA_MODIFIER_MOTION_NON
 item_wildthorn = class({})
 function item_wildthorn:GetIntrinsicModifierName() return "modifier_wildthorn" end
 function item_wildthorn:CastFilterResultTarget(Target)
-	if not self:GetCaster():HasModifier("modifier_life_greaves") and Target:GetTeam() == self:GetCaster():GetTeam() then
-		return UF_FAIL_CUSTOM
-	end
-	return UF_SUCCESS
+	if Target and Target:GetTeam() and self:GetCaster() and self:GetCaster():GetTeam() then
+		if not self:GetCaster():HasModifier("modifier_life_greaves") and Target:GetTeam() == self:GetCaster():GetTeam() then
+			return UF_FAIL_CUSTOM
+		end
+		return UF_SUCCESS
+	end	
+	--return UF_FAIL_CUSTOM
 end
 function item_wildthorn:GetCustomCastErrorTarget(Target)
 	if not self:GetCaster():HasModifier("modifier_life_greaves") and Target:GetTeam() == self:GetCaster():GetTeam() then
