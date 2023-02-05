@@ -23,37 +23,37 @@
 		"book_of_strength"
 		{
 			"Item"					"item_book_of_strength"
-			"Chance"				"1"
+			"Chance"				"5"
 		}
 		"book_of_agility"
 		{
 			"Item"					"item_book_of_agility"
-			"Chance"				"1"
+			"Chance"				"5"
 		}
 		"book_of_intelligence"
 		{
 			"Item"					"item_book_of_intelligence"
-			"Chance"				"1"
+			"Chance"				"5"
 		}
 		"item_earth_essence"
 		{
 			"Item"					"item_earth_essence"
-			"Chance"				"1"
+			"Chance"				"5"
 		}
 		"HealingSalve"
 		{
 			"Item"					"item_fire_essence"
-			"Chance"				"1"
+			"Chance"				"5"
 		}
 		"RandomSkill"
 		{
 			"Item"					"item_air_essence"
-			"Chance"				"1"
+			"Chance"				"5"
 		}
 		"EnchantedMango"
 		{
 			"Item"					"item_water_essence"
-			"Chance"				"1"
+			"Chance"				"5"
 		}				
 	}
 		"LinkedXPEnemies"

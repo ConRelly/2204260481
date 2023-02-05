@@ -495,6 +495,7 @@
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bkb;black king bar"
 		"ItemSellable"					"0"
+		"ItemPurchasable"               "0"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"0"
 		"AbilitySpecial"
@@ -14338,7 +14339,7 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		
+		"ItemPurchasable"               "0"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"2"
@@ -14472,7 +14473,7 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		
+		"ItemPurchasable"               "0"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"	//可以拆分
 		"MaxUpgradeLevel"				"5"
 		"ItemBaseLevel"					"3"
@@ -14598,7 +14599,7 @@
 
 		"AbilityCooldown"				"35.0"
 		"AbilityManaCost"				"50"
-		
+		"ItemPurchasable"               "0"
 		"ItemCost"						"22400"
 		"ItemShopTags"					"damage;attack_speed;unique"
 		"ItemQuality"					"artifact"
@@ -14733,7 +14734,7 @@
 
 		"AbilityCooldown"				"35.0"
 		"AbilityManaCost"				"50"
-		
+		"ItemPurchasable"               "0"
 		"ItemCost"						"28000"
 		"ItemShopTags"					"damage;attack_speed;unique"
 		"ItemQuality"					"artifact"
@@ -29482,11 +29483,9 @@
 		"Model"							"models/props_gameplay/red_box.vmdl" 
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
 		"AbilityTextureName"			"custom/item_light_crossbow"
-		"MaxUpgradeLevel"				"3"
-		"ItemBaseLevel"					"1"
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
-		"ItemSellable"					"0"
+		"ItemSellable"					"1"
 		"AbilityCastRange"				"800"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"component"
@@ -29496,24 +29495,49 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage_aura"					"5 15 30"
+				"damage_aura"					"25"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"ms_aura"				"10 15 20"
+				"ms_aura"				"80"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_aura"				"100 150 200"
+				"hp_aura"				"2000"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"800"
+				"aura_radius"			"3200"
 			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"static_chance"			"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"static_strikes"		"9"
+			}
+			"7"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chain_damage"			"75"
+			}
+			"8"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"static_radius"			"1000"
+			}
+			"9"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"charge_awaken"			"200"
+			}									
 		}
 	}
 // Light Crossbow Recipe
@@ -29522,13 +29546,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"	
+		"ItemCost"						"5000"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_light_crossbow"
 		"ItemRequirements"
 		{
-			"01"						"item_air;item_fire;item_light"
+			"01"						"item_mjollnir;item_all_essence"
 		}
 	}
 
@@ -29541,53 +29565,61 @@
 		"Model"							"models/props_gameplay/red_box.vmdl" 
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
 		"AbilityTextureName"			"custom/item_light_crossbow_2"
-		"MaxUpgradeLevel"				"3"
-		"ItemBaseLevel"					"2"
 		"ItemPurchasable"				"0"
 		"ItemKillable"					"0"
 		"ItemSellable"					"0"
 		"AbilityCastRange"				"800"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"common"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage_aura"					"5 15 30"
+				"damage_aura"					"35"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"ms_aura"				"10 15 20"
+				"ms_aura"				"140"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_aura"				"100 150 200"
+				"hp_aura"				"4000"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"800"
+				"aura_radius"			"4200"
 			}
-		}
-	}
-// Light Crossbow 2 Recipe
-	"item_recipe_light_crossbow_2"
-	{
-		"BaseClass"						"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_light_crossbow_2"
-		"ItemRequirements"
-		{
-			"01"						"item_light_crossbow;item_light_crossbow"
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"static_chance"			"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"static_strikes"		"8"
+			}
+			"7"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chain_damage"			"90"
+			}
+			"8"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"static_radius"			"1100"
+			}
+			"9"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"charge_awaken"			"250"
+			}									
 		}
 	}
 
@@ -29601,54 +29633,61 @@
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
 		"AbilityTextureName"			"custom/item_light_crossbow_3"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-		"MaxUpgradeLevel"				"3"
-		"ItemBaseLevel"					"3"
 		"ItemPurchasable"				"0"
 		"ItemKillable"					"0"
 		"ItemSellable"					"0"
 		"AbilityCastRange"				"800"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"rare"
-		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage_aura"					"5 15 30"
+				"damage_aura"					"50"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"ms_aura"				"10 15 20"
+				"ms_aura"				"185"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"hp_aura"				"100 150 200"
+				"hp_aura"				"7500"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_radius"			"800"
+				"aura_radius"			"7200"
 			}
-		}
-	}
-// Light Crossbow 3 Recipe
-	"item_recipe_light_crossbow_3"
-	{
-		"BaseClass"						"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"	
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_light_crossbow_3"
-		"ItemRequirements"
-		{
-			"01"						"item_light_crossbow_2;item_light_crossbow"
-			"02"						"item_air_gem;item_fire_gem;item_light_gem"
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"static_chance"			"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"static_strikes"		"7"
+			}
+			"7"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chain_damage"			"120"
+			}
+			"8"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"static_radius"			"1200"
+			}
+			"9"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"charge_awaken"			"400"
+			}									
 		}
 	}
 
@@ -34054,8 +34093,8 @@
 			"22"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"charge_awaken"			  "200"
-			}			
+				"charge_awaken"			  "2000"
+			}							
 		}
 	}
 
@@ -34083,7 +34122,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_ptc"			"50"
+				"bonus_damage_ptc"			"100"
 			}
 			"02"
 			{
@@ -34153,7 +34192,7 @@
 			"15"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"charge_awaken"			  "50"
+				"charge_awaken"			  "1500"
 			}			
 		}
 	}
@@ -34182,7 +34221,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_ptc"			"120"
+				"bonus_damage_ptc"			"150"
 			}
 			"02"
 			{

@@ -272,6 +272,7 @@
 		"item"      "item_all_essence"
 		"item"      "item_maple_shield_lua"
 		"item"      "item_god_slayer"
+		"item"      "item_light_crossbow"
 	}
 
 	"pregame"

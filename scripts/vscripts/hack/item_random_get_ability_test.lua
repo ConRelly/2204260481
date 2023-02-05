@@ -71,7 +71,7 @@ end
 
 function GetRandomAbilityName( hero )
     local abilityList = {
-        "ogre_magi_multicast_n",
+        --"ogre_magi_multicast_n",
         "ogre_magi_multicast_lua",
         --"aghanim_blink2",
         "ursa_fury_swipes",

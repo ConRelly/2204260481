@@ -46,7 +46,6 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 	if caster:PassivesDisabled() then return end
 	if used_ability:IsToggle() then return end
 	if used_ability:GetCooldown(used_ability:GetLevel()) <= 0 then return end
-	if used_ability:GetAbilityType() == 1 then return end
 	if used_ability:GetCaster() ~= caster then return end
 --	if not original_target then return end
 
@@ -61,6 +60,7 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 	end
 
 	if self:GetAbility():GetAbilityName() == "ogre_magi_multicast_n" then
+		if used_ability:GetAbilityType() == 1 then return end
 		if IsExcludeAbilityN(used_ability) then return end
 		if caster:HasModifier("modifier_super_scepter") then
 			if caster:HasModifier("modifier_marci_unleash_flurry") then
@@ -139,7 +139,7 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 
 		for count = 1, casts - 1 do
 			count = count + 1
-			if original_target ~= nil then
+			if original_target ~= nil and used_ability ~= nil then
 				local radius = used_ability:GetCastRange(original_target:GetOrigin(), original_target) + 300
 				if original_target:GetTeamNumber() ~= caster:GetTeamNumber() then
 					if used_ability then
@@ -226,17 +226,19 @@ modifier_ogre_magi_multicast_n_no_animation = class({})
 function modifier_ogre_magi_multicast_n_no_animation:IsHidden() return true end
 function modifier_ogre_magi_multicast_n_no_animation:IsPurgable() return false end
 
-
+local count_number = 0
 function modifier_ogre_magi_multicast_n:Multicast_FX(count, casts)
 	local caster = self:GetCaster()
 	local ten = 0
 	local counter_speed = 2
 	if caster:HasModifier("modifier_ogre_magi_multicast_n_no_animation") then return end
 
-	if not caster:HasModifier("modifier_ogre_magi_multicast_n_no_animation") then	
-		local duration = 100 / _G._effect_rate		
+	if not caster:HasModifier("modifier_ogre_magi_multicast_n_no_animation") and count_number > 11 then	
+		local duration = (100 / _G._effect_rate) + 1		
 		caster:AddNewModifier(caster, self:GetAbility(), "modifier_ogre_magi_multicast_n_no_animation", {duration = duration})
+		count_number = 0 
 	end
+	count_number = count_number + 1
 	if count == casts then counter_speed = 1 end
 	if count - 1 > 3 then sound = 3 else sound = count end
 
@@ -323,7 +325,10 @@ function IsExcludeAbility(ability)
 		"item_master_of_weapons_sword3",
 		"item_master_of_weapons_sword4",
 		"item_master_of_weapons_sword5",
-		"item_mjz_bloodstone_ultimate_edible",		
+		"item_mjz_bloodstone_ultimate_edible",
+		"item_thunder_hammer",
+		"item_thunder_gods_might",
+		"item_thunder_gods_might2",		
 -- Abilities
 		"phoenix_fire_spirits",
 		"mjz_phoenix_sun_ray",
@@ -403,7 +408,10 @@ function IsExcludeAbility9(ability)
 		"item_master_of_weapons_sword3",
 		"item_master_of_weapons_sword4",
 		"item_master_of_weapons_sword5",
-		"item_mjz_bloodstone_ultimate_edible",		
+		"item_mjz_bloodstone_ultimate_edible",
+		"item_thunder_hammer",	
+		"item_thunder_gods_might",
+		"item_thunder_gods_might2",	
 -- Abilities
 		"mjz_tinker_quick_arm",
 		"naga_siren_song_of_the_siren",

@@ -968,12 +968,6 @@ function OnLootDropItem(itemName)
 			end
 		end
 	end
-	print("item_count:")
-	for key, value in pairs(item_count) do
-		print("  " .. key .. ": " .. value)
-	end	
-
-
 end
 function shuffle(t)
     local n = #t

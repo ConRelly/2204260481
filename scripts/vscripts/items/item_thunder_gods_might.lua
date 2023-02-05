@@ -87,7 +87,7 @@ function modifier_item:OnCreated()
 end
 -- bonus dmg_ptc, As and all stats bonus
 function modifier_item:GetModifierBaseDamageOutgoing_Percentage()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("damage_ptc") end
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_damage_ptc") end
 end
 function modifier_item:GetModifierAttackSpeedBonus_Constant()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end
@@ -116,6 +116,8 @@ function modifier_item:GetModifierProcAttack_Feedback(keys)
             if not target then return end
             if not target:IsAlive() then return end
             if not caster:IsAlive() then return end
+            local static_radius = ability:GetSpecialValueFor("static_radius")
+            local static_strikes = ability:GetSpecialValueFor("static_strikes")
             local damage_typ = DAMAGE_TYPE_PHYSICAL
             local damage_flag = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
             local stats_mult = ability:GetSpecialValueFor("stats_mult_dmg")
@@ -125,9 +127,9 @@ function modifier_item:GetModifierProcAttack_Feedback(keys)
             local caster_attack = caster:GetAverageTrueAttackDamage(target) * attack_dmg_mult
             local damage = caster_attack + all_stats            
             local particleName = "particles/items_fx/chain_lightning.vpcf"
-            local has_modifier = caster:HasModifier("modifier_super_scepter")
+            local has_ss = caster:HasModifier("modifier_super_scepter")
             -- uses 20% of the spell amp
-            if has_modifier then
+            if has_ss then
                 damage = damage * (1 + caster:GetSpellAmplification(false) * ss_spell_amp)
                 damage_flag = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR
             end 
@@ -137,13 +139,13 @@ function modifier_item:GetModifierProcAttack_Feedback(keys)
             ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
             ParticleManager:ReleaseParticleIndex(particle)
             -- Get a list of all nearby enemies within a 900 range
-            local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, 900, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
+            local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, static_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
             local enemies_hit = 0
             caster:EmitSoundParams("Item.Maelstrom.Chain_Lightning.Jump", 1, 0.7, 0)
             -- For each enemy found, repeat the damage and particle effect on them
             for _, enemy in pairs(enemies) do
                 -- Check if the number of enemies hit is less than 4
-                if enemies_hit < 4 then
+                if enemies_hit < static_strikes then
                     local damageTable = {
                     attacker = caster,
                     victim = enemy,
@@ -163,7 +165,6 @@ function modifier_item:GetModifierProcAttack_Feedback(keys)
                 end
             end
             local bonus_charge = 1
-            local has_ss = caster:HasModifier("modifier_super_scepter")
             local marci_ult = caster:HasModifier("modifier_marci_unleash_flurry")
             local charges = ability:GetCurrentCharges()
             local limit = ability:GetSpecialValueFor("charge_awaken") 
@@ -171,12 +172,23 @@ function modifier_item:GetModifierProcAttack_Feedback(keys)
             if has_ss and marci_ult then
                 bonus_charge = 2								
             end	            
-			ability:SetCurrentCharges(charges + bonus_charge)
+			ability:SetCurrentCharges(charges + bonus_charge)               
             if evolve then
                 if not self.evolve_check then
-                    print("item has evolved")
+                    local zeus_ultimate_particle = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf" 
+                    local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+                    local zeus_ultimate_sound = "Hero_Zuus.GodsWrath"
+                    --Renders the particle on the target
+                    local particle_eff = ParticleManager:CreateParticle(particle, PATTACH_WORLDORIGIN, caster)
+                    -- Raise 1000 value if you increase the camera height above 1000
+                    ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+                    ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
+                    ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+                    EmitSoundOn(zeus_ultimate_sound, caster)                    
+                    caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
+                    -- Remove the old item and add the evolved item
                     caster:RemoveItem(ability)
-                    caster:AddItemByName("item_thunder_gods_might_2")                   
+                    caster:AddItemByName("item_thunder_gods_might2")                                                      
                     self.evolve_check = true
                 end  
             end        
@@ -197,7 +209,7 @@ function modifier_item2:OnCreated()
 end
 -- bonus dmg_ptc, As and all stats bonus
 function modifier_item2:GetModifierBaseDamageOutgoing_Percentage()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("damage_ptc") end
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_damage_ptc") end
 end
 function modifier_item2:GetModifierAttackSpeedBonus_Constant()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end
@@ -225,7 +237,9 @@ function modifier_item2:GetModifierProcAttack_Feedback(keys)
             local caster = self:GetCaster()
             if not target then return end
             if not target:IsAlive() then return end
-            if not caster:IsAlive() then return end  
+            if not caster:IsAlive() then return end 
+            local static_radius = ability:GetSpecialValueFor("static_radius") 
+            local static_strikes = ability:GetSpecialValueFor("static_strikes")
             local damage_typ = DAMAGE_TYPE_PHYSICAL
             local damage_flag = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
             local ss_spell_amp = ability:GetSpecialValueFor("ss_spell_amp") / 100  
@@ -240,10 +254,8 @@ function modifier_item2:GetModifierProcAttack_Feedback(keys)
             local damage = 0
             if all_stats > caster_attack then
                 damage = all_stats
-                print("dmg allsts: "..damage)
             else
                 damage = caster_attack
-                print("dmg attack: "..damage)
             end                
             local particleName = "particles/items_fx/chain_lightning.vpcf"
             local has_modifier = caster:HasModifier("modifier_super_scepter")
@@ -257,14 +269,14 @@ function modifier_item2:GetModifierProcAttack_Feedback(keys)
             ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
             ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
             ParticleManager:ReleaseParticleIndex(particle)
-            -- Get a list of all nearby enemies within a 900 range
-            local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, 900, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
+            -- Get a list of all nearby enemies in range
+            local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, static_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
             local enemies_hit = 0
             caster:EmitSoundParams("Item.Maelstrom.Chain_Lightning.Jump", 1, 0.7, 0)
             -- For each enemy found, repeat the damage and particle effect on them
             for _, enemy in pairs(enemies) do
                 -- Check if the number of enemies hit is less than 4
-                if enemies_hit < 4 then
+                if enemies_hit < static_strikes then
                     local damageTable = {
                     attacker = caster,
                     victim = enemy,
@@ -347,7 +359,6 @@ if IsServer() then
         local has_ss_modif = caster:HasModifier("modifier_super_scepter")
          -- uses 20% of the spell amp with SS
         if has_ss_modif then
-            print("spell amp: "..ss_spell_amp)
             damage_per_tick = damage_per_tick * (1 + caster:GetSpellAmplification(false)* ss_spell_amp )
             damage_flag = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR
         end    
@@ -419,17 +430,14 @@ if IsServer() then
         local damage = 0
         if all_stats > caster_attack then
             damage = all_stats
-            print("dmg allsts: "..damage)
         else
             damage = caster_attack
-            print("dmg attack: "..damage)
         end 
         local hp_ptc_dmg = self:GetAbility():GetSpecialValueFor("static_ptc_dmg") / 100 
         local damage_per_tick = damage + (parent:GetHealth() * hp_ptc_dmg)
         local has_ss_modif = caster:HasModifier("modifier_super_scepter")
          -- uses 20% of the spell amp with SS
         if has_ss_modif then
-            print("spell amp: "..ss_spell_amp)
             damage_per_tick = damage_per_tick * (1 + caster:GetSpellAmplification(false) * ss_spell_amp )
             damage_flag = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR
         end    
@@ -471,13 +479,10 @@ function modifier_item_thunder_god_might_immune:OnCreated()
         if not caster:IsAlive() then return end
         if random_index == 1 then
             caster:AddNewModifier(caster, nil, "modifier_item_thunder_physical", {})
-            print("OnCreated type imune: physical ")
         elseif random_index == 2 then
             caster:AddNewModifier(caster, nil, "modifier_item_thunder_magical", {})
-            print("OnCreated type imune: magical ")
         elseif random_index == 3 then
-            caster:AddNewModifier(caster, nil, "modifier_item_thunder_pure", {}) 
-            print("OnCreated type imune: pure")  
+            caster:AddNewModifier(caster, nil, "modifier_item_thunder_pure", {})  
         end    
         caster:AddNewModifier(caster, nil, "modifier_item_thunder_physical", {duration = duration})
         self.shield_particle = ParticleManager:CreateParticle("particles/items2_fx/mjollnir_shield.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
@@ -589,4 +594,4 @@ local cd_buff = modifier_item_thunder_cd_limit
 function cd_buff:IsHidden() return false end
 function cd_buff:IsPurgable() return false end
 function cd_buff:RemoveOnDeath() return false end
-function cd_buff:IsBuff() return false end
+function cd_buff:IsDebuff() return true end

@@ -69,7 +69,7 @@
 	"dota_ability_variable_buff_amp"				"Buff Duration"						// $buff_amp
 	"dota_ability_variable_projectile_speed_pct"	"Attack Projectile Speed"			// $projectile_speed_pct
 	"dota_ability_variable_attack_range_all"		"Attack Range"						// $attack_range_all
-	"dota_ability_variable_bonus_damage_lvl"	    "Bonus Damage per lvl"              // $b_damage_per_lvl
+	"dota_ability_variable_bonus_damage_lvl"	    "Bonus Damage per lvl"              // $bonus_damage_lvl
 
 //############################################################################################################################
 
@@ -1427,13 +1427,13 @@
 	"DOTA_Tooltip_modifier_avernus_chestplate_buff_ally"					"Patronage"
 	"DOTA_Tooltip_modifier_avernus_chestplate_buff_ally_Description"		"Your ally takes damage for you. You should be ashamed of yourself..."
 	
-	"DOTA_Tooltip_Ability_item_thunder_hammer"					"Thunder Hammer"
-	"DOTA_Tooltip_Ability_item_thunder_hammer_Description"		"<h1>Thunder Charge</h1>For %static_dur% seconds. surrounds the selected creature with a charged shield that has a %static_chance%%% chance of dealing Chain Lightning damage to the attacking enemy and %static_strikes% others within a %static_radius% radius.<br><br>Cast Range: %cast_range%\n<h1>Chain Lightning</h1>Each attack has a %chain_chance%%% chance of creating a chain lightning bolt that can jump %chain_strikes% times between random enemies within a %chain_radius% radius, dealing %static_damage%%% of your attack + %chain_damage% x your lvl in Physical damage to each one.\n<h1><font color='#BFBFBF'>UP: Aghanim's Shard</font></h1>Each use of Chain Lightning gives an effect that increases the attack speed by %buff_as% for %buff_dur% sec.\n<h1>Thunder Hammer Aura</h1>+ %hp_aura% Health<br>+ %damage_aura% Bonus Damage per lvl<br>+ %ms_aura% Movement Speed<br><br>Radius: %aura_radius%\n<h1><font color='#7AC20A'>Evolve</font></h1>Every time Chain Lightning procs you gain a charge, Evolves at %charge_awaken% charges."
-	"DOTA_Tooltip_Ability_item_thunder_hammer_bonus_damage_lvl"	    "+$b_damage_per_lvl"
+	"DOTA_Tooltip_Ability_item_thunder_hammer"					"<font color='#FF00FF'>Thunder Hammer</font>"
+	"DOTA_Tooltip_Ability_item_thunder_hammer_Description"		"<h1>Thunder Charge</h1>For %static_dur% seconds. surrounds the selected creature with a charged shield that has a %static_chance%%% chance of dealing <font color='#07ECFF'>Chain Lightning</font> damage to the attacking enemy and %static_strikes% others within a %static_radius% radius.<br><br>Cast Range: %cast_range%\n<h1><font color='#07ECFF'>Chain Lightning</font></h1>Each attack has a %chain_chance%%% chance of creating a chain lightning bolt that can jump %chain_strikes% times between random enemies within a %chain_radius% radius, dealing %static_damage%%% of your attack + %chain_damage% x your lvl in Physical damage to each one.\n<h1><font color='#004E9C'>UP: Aghanim's Shard</font></h1>Each use of Chain Lightning gives an effect that increases the attack speed by %buff_as% for %buff_dur% sec.\n<h1>Thunder Hammer Aura</h1>+ %hp_aura% Health<br>+ %damage_aura% Bonus Damage per lvl<br>+ %ms_aura% Movement Speed<br><br>Radius: %aura_radius%\n<h1><font color='#7AC20A'>Evolve</font></h1>Every time <font color='#07ECFF'>Chain Lightning</font> procs you gain a charge, Evolves at %charge_awaken% charges."
+	"DOTA_Tooltip_Ability_item_thunder_hammer_bonus_damage_lvl"	    "+$bonus_damage_lvl"
 	"DOTA_Tooltip_ability_item_thunder_hammer_bonus_attack_speed"		 "+$attack"
 	"DOTA_Tooltip_Ability_item_thunder_hammer_Note0"            "Not Affected by SpellAmp"
 	"DOTA_Tooltip_modifier_thunder_hammer_aura"				"Thunder Hammer Aura"
-	"DOTA_Tooltip_modifier_thunder_hammer_aura_Description"	"Increases Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Damage by %dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% and Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%"
+	"DOTA_Tooltip_modifier_thunder_hammer_aura_Description"	"Increases Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Damage by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% and Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%"
 	"DOTA_Tooltip_modifier_thunder_hammer_static"						"Thunder Charge"
 	"DOTA_Tooltip_modifier_thunder_hammer_static_Description"			"With a %dMODIFIER_PROPERTY_TOOLTIP%%% chance, it fires lightning at the attacking enemy"
 	"DOTA_Tooltip_modifier_thunder_power"					"Thunder Power"
@@ -1442,7 +1442,7 @@
 //Thunder Gods Might  %+$damage  bonus_attack_speed
 
 	"DOTA_Tooltip_Ability_item_thunder_gods_might"                           "<font color='#7AC20A'>Thunder Gods Might</font>"
-	"DOTA_Tooltip_Ability_item_thunder_gods_might_Description"				 "<h1><font color='#07ECFF'>Thor's Essence</font></h1>Electrifies the air around you, dealing <font color='#07ECFF'>Lightning Strike</font> damage every %chain_delay% sec to all enemies in %chain_radius% aoe for %static_dur% sec. This active also grants %speed_bost% speed boost, removes the movespeed limit, and makes the wielder immune to one randomly determined type of damage (<font color='#DF01A5'>physical</font>,<font color='#045FB4'> magic</font>, or <font color='#81F7F3'>pure</font>) for the duration.\n<h1><font color='#07ECFF'>Lightning Strike</font></h1>Each attack has a %chain_chance%%% chance of creating a chain lightning bolt that can affect up to %static_strikes% enemies in a %chain_radius% radius of the attacked enemy, dealing %chain_damage%%% of hero attack dmg + %stats_mult_dmg% x all your stats as physical damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Ignores enemy base armor and now uses %ss_spell_amp%%% of your spell amplification instead of 0.\n<h1><font color='#E20624'>Awaken</font></h1>Every time <font color='#07ECFF'>Lightning Strike</font> procs you gain a charge, Awakens at %charge_awaken% charges."
+	"DOTA_Tooltip_Ability_item_thunder_gods_might_Description"				 "<h1><font color='#07ECFF'>Thor's Essence</font></h1>Electrifies the air around you, dealing <font color='#07ECFF'>Lightning Strike</font> damage every %chain_delay% sec to all enemies in %chain_radius% aoe for %static_dur% sec. This active also grants %speed_bost% speed boost, removes the movespeed limit, and makes the wielder immune to one randomly determined type of damage (<font color='#DF01A5'>physical</font>,<font color='#045FB4'> magic</font>, or <font color='#81F7F3'>pure</font>) for the duration.\n<h1><font color='#07ECFF'>Lightning Strike</font></h1>Each attack has a %static_chance%%% chance of creating a chain lightning bolt that can affect up to %static_strikes% enemies in a %chain_radius% radius of the attacked enemy, dealing %chain_damage%%% of hero attack dmg + %stats_mult_dmg% x all your stats as physical damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Ignores enemy base armor and now uses %ss_spell_amp%%% of your spell amplification instead of 0.\n<h1><font color='#E20624'>Awaken</font></h1>Every time <font color='#07ECFF'>Lightning Strike</font> procs you gain a charge, Awakens at %charge_awaken% charges."
 	"DOTA_Tooltip_Ability_item_thunder_gods_might_bonus_damage_ptc"			 "%+$damage"
 	"DOTA_Tooltip_ability_item_thunder_gods_might_bonus_attack_speed"		 "+$attack"
 	"DOTA_Tooltip_Ability_item_thunder_gods_might_all"                       "+$all"
@@ -1462,7 +1462,7 @@
 //Thunder Gods Might Awaken  
 
 	"DOTA_Tooltip_Ability_item_thunder_gods_might2"                           "<font color='#E20624'>Thunder Gods Might Awaken</font>"
-	"DOTA_Tooltip_Ability_item_thunder_gods_might2_Description"				 "<h1><font color='#07ECFF'>Thor's Essence</font></h1>Electrifies the air around you, dealing physical damage equal to %static_ptc_dmg%%% of the target's current health plus what is higher (%static_damage%%% attack + 1% for each 10 charges ) OR (%stats_mult_dmg% for every 20 charges x All your stats)  every %chain_delay% sec to all enemies in %chain_radius% aoe for %static_dur% sec. This active also grants %speed_bost% speed boost, removes the movespeed limit, and makes the wielder immune to one randomly determined type of damage (<font color='#DF01A5'>physical</font>,<font color='#045FB4'> magic</font>, or <font color='#81F7F3'>pure</font>) for the duration.\n<h1><font color='#E20624'>Lightning Strike</font></h1>Each attack has a %chain_chance%%% chance of creating a chain lightning bolt that can affect up to %static_strikes% enemies in a %chain_radius% radius of the attacked enemy, dealing (%chain_damage%%% + 1% per 10 charges) of hero True attack (includes crit dmg) OR (%stats_mult_dmg% for every 20 charges x All your stats), the highest one as physical damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Ignores enemy base armor and now uses %ss_spell_amp%%% of your spell amplification instead of 0.\n<h1><font color='#E20624'>Lightning Boost</font></h1>Every time <font color='#07ECFF'>Lightning Strike</font> procs you gain a charge."
+	"DOTA_Tooltip_Ability_item_thunder_gods_might2_Description"				 "<h1><font color='#07ECFF'>Thor's Essence</font></h1>Electrifies the air around you, dealing physical damage equal to %static_ptc_dmg%%% of the target's current health plus what is higher (%static_damage%%% attack + 1% for each 10 charges ) OR (%stats_mult_dmg% for every 20 charges x All your stats)  every %chain_delay% sec to all enemies in %chain_radius% aoe for %static_dur% sec. This active also grants %speed_bost% speed boost, removes the movespeed limit, and makes the wielder immune to one randomly determined type of damage (<font color='#DF01A5'>physical</font>,<font color='#045FB4'> magic</font>, or <font color='#81F7F3'>pure</font>) for the duration.\n<h1><font color='#E20624'>Lightning Strike</font></h1>Each attack has a %static_chance%%% chance of creating a chain lightning bolt that can affect up to %static_strikes% enemies in a %chain_radius% radius of the attacked enemy, dealing (%chain_damage%%% + 1% per 10 charges) of hero True attack (includes crit dmg) OR (%stats_mult_dmg% for every 20 charges x All your stats), the highest one as physical damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Ignores enemy base armor and now uses %ss_spell_amp%%% of your spell amplification instead of 0.\n<h1><font color='#E20624'>Lightning Boost</font></h1>Every time <font color='#07ECFF'>Lightning Strike</font> procs you gain a charge."
 	"DOTA_Tooltip_Ability_item_thunder_gods_might2_bonus_damage_ptc"			 "%+$damage"
 	"DOTA_Tooltip_ability_item_thunder_gods_might2_bonus_attack_speed"		 "+$attack"
 	"DOTA_Tooltip_Ability_item_thunder_gods_might2_all"                       "+$all"
@@ -2248,20 +2248,20 @@
 
 //LIGHT CROSSBOW
 //1
-	"DOTA_Tooltip_Ability_item_light_crossbow"					 "Light Crossbow"
-	"DOTA_Tooltip_Ability_item_light_crossbow_Description"		 "<h1>Passive: Light Crossbow Aura</h1>+ %hp% Health<br>+ %damage% Damage<br>+ %speed% Movement Speed<br><br>Radius: %aura_radius%"
-	"DOTA_Tooltip_modifier_item_light_crossbow_aura"				 	"Light Crossbow Aura (Level 1)"
-	"DOTA_Tooltip_modifier_item_light_crossbow_aura_Description"		"Increases Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Damage by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% and Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
+	"DOTA_Tooltip_Ability_item_light_crossbow"					 "<font color='#E20624'>Evolving Light Crossbow</font>"
+	"DOTA_Tooltip_Ability_item_light_crossbow_Description"		 "<h1>Passive: Light Crossbow Aura</h1>+ %hp_aura% Health<br>+ %damage_aura%%% Damage<br>+ %ms_aura% Movement Speed<br><br>Radius: %aura_radius%.\n<h1><font color='#07ECFF'>Lightning Strike</font></h1>Each attack has a %static_chance%%% chance of creating a chain lightning bolt that can affect up to %static_strikes% enemies in a %chain_radius% radius of the attacked enemy, dealing %chain_damage%%% of hero attack dmg as physical damage.\n<h1><font color='#F7B906'>Evolve</font></h1>Every time <font color='#07ECFF'>Lightning Strike</font> procs you gain a charge, Evolves at %charge_awaken% charges."
+	"DOTA_Tooltip_modifier_light_crossbow_1_aura"				 	"Light Crossbow Aura (Level 1)"
+	"DOTA_Tooltip_modifier_light_crossbow_1_aura_Description"		"Increases Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Damage by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% and Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
 //2
-	"DOTA_Tooltip_Ability_item_light_crossbow_2"					 "Light Crossbow"
-	"DOTA_Tooltip_Ability_item_light_crossbow_2_Description"		 "<h1>Passive: Light Crossbow Aura</h1>+ %hp% Health<br>+ %damage% Damage<br>+ %speed% Movement Speed<br><br>Radius: %aura_radius%"
-	"DOTA_Tooltip_modifier_item_light_crossbow_aura_2"				 	"Light Crossbow Aura (Level 2)"
-	"DOTA_Tooltip_modifier_item_light_crossbow_aura_2_Description"	 	"Increases Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Damage by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% and Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
+	"DOTA_Tooltip_Ability_item_light_crossbow_2"					 "<font color='#F7B906'>Evolving Light Crossbow 2</font>"
+	"DOTA_Tooltip_Ability_item_light_crossbow_2_Description"		 "<h1>Passive: Light Crossbow Aura</h1>+ %hp_aura% Health<br>+ %damage_aura%%% Damage<br>+ %ms_aura% Movement Speed<br><br>Radius: %aura_radius%. \n<h1><font color='#07ECFF'>Lightning Strike</font></h1>Each attack has a %static_chance%%% chance of creating a chain lightning bolt that can affect up to %static_strikes% enemies in a %chain_radius% radius of the attacked enemy, dealing %chain_damage%%% of hero attack dmg as physical damage.\n<h1><font color='#F7B906'>Evolve</font></h1>Every time <font color='#07ECFF'>Lightning Strike</font> procs you gain a charge, Evolves at %charge_awaken% charges."
+	"DOTA_Tooltip_modifier_light_crossbow_2_aura"				 	"Light Crossbow Aura (Level 2)"
+	"DOTA_Tooltip_modifier_light_crossbow_2_aura_Description"	 	"Increases Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Damage by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% and Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
 //3
-	"DOTA_Tooltip_Ability_item_light_crossbow_3"					 "Light Crossbow"
-	"DOTA_Tooltip_Ability_item_light_crossbow_3_Description"		 "<h1>Passive: Light Crossbow Aura</h1>+ %hp% Health<br>+ %damage% Damage<br>+ %speed% Movement Speed<br><br>Radius: %aura_radius%"
-	"DOTA_Tooltip_modifier_item_light_crossbow_aura_3"				 	"Light Crossbow Aura (Level 3)"
-	"DOTA_Tooltip_modifier_item_light_crossbow_aura_3_Description"	 	"Increases Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Damage by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% and Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
+	"DOTA_Tooltip_Ability_item_light_crossbow_3"					 "<font color='#F7B906'>Evolving Light Crossbow 3</font>"
+	"DOTA_Tooltip_Ability_item_light_crossbow_3_Description"		 "<h1>Passive: Light Crossbow Aura</h1>+ %hp_aura% Health<br>+ %damage_aura%%% Damage<br>+ %ms_aura% Movement Speed<br><br>Radius: %aura_radius%. \n<h1><font color='#07ECFF'>Lightning Strike</font></h1>Each attack has a %static_chance%%% chance of creating a chain lightning bolt that can affect up to %static_strikes% enemies in a %chain_radius% radius of the attacked enemy, dealing %chain_damage%%% of hero attack dmg as physical damage.\n<h1><font color='#FF00FF'>Evolve</font></h1>Every time <font color='#07ECFF'>Lightning Strike</font> procs you gain a charge, Evolves at %charge_awaken% charges."
+	"DOTA_Tooltip_modifier_light_crossbow_3_aura"				 	"Light Crossbow Aura (Level 3)"
+	"DOTA_Tooltip_modifier_light_crossbow_3_aura_Description"	 	"Increases Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Damage by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% and Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
 
 //URN OF LIFE
 //1
@@ -7698,6 +7698,8 @@ Nimbus is not recasted by Thundergod's Wrath."
 
 "DOTA_Tooltip_modifier_item_dragon_head_aura_buff"					"Dragon Aura"
 "DOTA_Tooltip_modifier_item_dragon_head_aura_buff_Description"		"The presence of a Dragon Head is increasing your health by %dMODIFIER_PROPERTY_HEALTH_BONUS% and your strength by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%."
+"DOTA_Tooltip_modifier_item_dragon_head_2_aura_buff"					"Greater Dragon Aura"
+"DOTA_Tooltip_modifier_item_dragon_head_2_aura_buff_Description"		"The presence of a Dragon Head is increasing your health by %dMODIFIER_PROPERTY_HEALTH_BONUS% and your strength by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%."
 "DOTA_Tooltip_ability_item_great_ethereal_blade"							"Great Ethereal Blade"
 "DOTA_Tooltip_ability_item_great_ethereal_blade_Description"				"<h1>Active: Ether Blast</h1>Converts the target unit to ethereal form, rendering them immune to physical damage, but unable to attack and %ethereal_damage_bonus%%% more vulnerable to magic damage.  Lasts for %duration_ally% seconds on allies and %duration% seconds on enemies.<br><br>  Enemy targets are also slowed by %blast_movement_slow%%%, and take %blast_agility_multiplier%x your primary attribute + %blast_damage_base% as magical damage.<br><br>Range: %tooltip_range%"
 "DOTA_Tooltip_ability_item_great_ethereal_blade_Note0"						"Shares cooldown with Ghost Scepter."
@@ -10599,7 +10601,7 @@ Contains all random skills"
  	"DOTA_Tooltip_ability_dazzle_good_juju_Description"								"Whenever Dazzle Casts a Spell, all Dazzle starting abilities cooldowns are reduced."
 
 	"DOTA_Tooltip_ability_dzzl_good_juju"					"Good Juju"
-	"DOTA_Tooltip_ability_dzzl_good_juju_Description"		"Whenever Dazzle Casts a Spell, all of its abilities cooldowns are reduced."
+	"DOTA_Tooltip_ability_dzzl_good_juju_Description"		"Whenever Dazzle Casts a Spell, all of its abilities cooldowns are reduced.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Good Juju reduces all item Cooldowns by %item_cooldown_reduction%%% and can be cast on an ally to refresh all item cooldowns."
 	"DOTA_Tooltip_ability_dzzl_good_juju_scepter_Description"			"Good Juju reduces all item Cooldowns by %item_cooldown_reduction%%% and can be cast on an ally to refresh all item cooldowns."
 	"DOTA_Tooltip_ability_dzzl_good_juju_Lore"	"Each invocation of the Nothl realm helps it further permeate the surroundings of our own."
 	"DOTA_Tooltip_ability_dzzl_good_juju_cooldown_reduction"			"COOLDOWN REDUCTION PER SPELL:"

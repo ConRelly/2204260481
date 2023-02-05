@@ -77,13 +77,14 @@ function mjz_tinker_quick_arm:HalveCooldowns(caster)
 		item_resurection_pendant = true,
 		item_inf_aegis = true,
 	}
+	if not caster or caster:IsNull() then
+		return
+	end
 
     for i = 0, caster:GetAbilityCount() -1 do
-		if caster and not caster:IsNull() then
-			local ability = caster:GetAbilityByIndex(i)
-			if ability and IsValidEntity(ability) then
-				self:halve_ability_cooldown(ability, exclude_abilities)
-			end
+		local ability = caster:GetAbilityByIndex(i)
+		if ability and IsValidEntity(ability) then
+			self:halve_ability_cooldown(ability, exclude_abilities)
 		end
     end
 
@@ -120,5 +121,9 @@ function modifier_quick_arm_scepter:IsHidden() return false end
 function modifier_quick_arm_scepter:IsPurgable() return true end
 function modifier_quick_arm_scepter:RemoveOnDeath() return false end
 function modifier_quick_arm_scepter:OnDestroy()
-	self:GetAbility():HalveCooldowns(self:GetCaster())
+	if IsServer() then
+		if self:GetAbility() then
+			self:GetAbility():HalveCooldowns(self:GetCaster())
+		end
+	end	
 end
