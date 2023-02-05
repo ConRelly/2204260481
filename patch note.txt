@@ -2303,7 +2303,7 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * Reworked Loot drop system and now will count each type of item you receive and you won't get another one of that type until everyone gets one.
 * lvl 10 will now give you an Elemental (including other modes)
 * Fixed Multicast Blue not casting Ultimates like the Orange one (the orange one is supposed to not cast them). changed some particle limitations that were preventing the number go above 2, it's stil limited for lag reasons.
-
+* and other small stuff or fixes.
 
 
 

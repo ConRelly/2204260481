@@ -126,7 +126,7 @@ function modifier_item:GetModifierProcAttack_Feedback(keys)
             local all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect()) * stats_mult
             local caster_attack = caster:GetAverageTrueAttackDamage(target) * attack_dmg_mult
             local damage = caster_attack + all_stats            
-            local particleName = "particles/items_fx/chain_lightning.vpcf"
+            local particleName = "particles/particle_test/chain_lightning_green.vpcf" --"particles/items_fx/chain_lightning.vpcf"
             local has_ss = caster:HasModifier("modifier_super_scepter")
             -- uses 20% of the spell amp
             if has_ss then
@@ -160,7 +160,7 @@ function modifier_item:GetModifierProcAttack_Feedback(keys)
                     local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
                     ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
                     ParticleManager:SetParticleControlEnt(particle, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
-                    ParticleManager:ReleaseParticleIndex(particle)
+
                     enemies_hit = enemies_hit + 1
                 end
             end
@@ -257,7 +257,7 @@ function modifier_item2:GetModifierProcAttack_Feedback(keys)
             else
                 damage = caster_attack
             end                
-            local particleName = "particles/items_fx/chain_lightning.vpcf"
+            local particleName = "particles/particle_test/chain_lightning_red.vpcf"--"particles/items_fx/chain_lightning.vpcf"
             local has_modifier = caster:HasModifier("modifier_super_scepter")
             -- uses 20% of the spell amp
             if has_modifier then
@@ -371,7 +371,7 @@ if IsServer() then
             ability = ability,
         } 
         ApplyDamage(damageTable)
-        local particleName = "particles/items_fx/chain_lightning.vpcf"
+        local particleName = "particles/particle_test/chain_lightning_green.vpcf" --"particles/items_fx/chain_lightning.vpcf"
         local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
         ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_attack1", caster:GetAbsOrigin(), true)
         ParticleManager:SetParticleControlEnt(particle, 1, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)        
@@ -450,7 +450,7 @@ if IsServer() then
             ability = ability,
         } 
         ApplyDamage(damageTable)
-        local particleName = "particles/items_fx/chain_lightning.vpcf"
+        local particleName = "particles/particle_test/chain_lightning_red.vpcf" --"particles/items_fx/chain_lightning.vpcf"
         local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
         ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_attack1", caster:GetAbsOrigin(), true)
         ParticleManager:SetParticleControlEnt(particle, 1, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)        
