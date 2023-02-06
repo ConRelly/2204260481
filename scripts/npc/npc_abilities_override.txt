@@ -11723,7 +11723,28 @@
 				"RequiresScepter"	"1"
 			}
 		}
-	}	
+	}
+	//=================================================================================================================
+	// Skywrath Mage: Shield of the Scion (shard ability)
+	//=================================================================================================================
+	"skywrath_mage_shield_of_the_scion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"833"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"IsGrantedByShard"				"1"
+		"MaxLevel"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"stack_duration"			"135"
+			"bonus_intelligence"		"5"
+			"bonus_armor"				"1.0"
+		}
+	}		
 	"slardar_slithereen_crush"
 	{
 		"AbilityDamage"					"400 980 2600 9400"
@@ -19282,35 +19303,49 @@
 		}
 	}
 
+
+	//=================================================================================================================
+	// Tiny: Grow
+	//=================================================================================================================
 	"tiny_grow"
 	{
-
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5109"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilitySound"					"Tiny.Grow"
 		"AbilityCastAnimation"		"ACT_INVALID"
 		"MaxLevel"						  "7"
-		"LevelsBetweenUpgrades"           "10"
+		"LevelsBetweenUpgrades"           "10"		
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"bonus_armor"				"0 22 48 72 122 175 284"
-				"bonus_damage"			
-				{
-					"value"					"3950 4450 9500 17500 28500 37500 56400"
-					"CalculateSpellDamageTooltip"	"0"
-				}
-				"tree_bonus_damage_pct"			
-				{
-					"value"				"50"
-					"special_bonus_unique_tiny_7"	"+50"
-				}
-				"attack_speed_reduction"	"20 40 60 90 120 150 200"
-				"toss_bonus_damage"			"300"
+			"bonus_armor"				"0 22 48 72 122 175 284"
+			"bonus_damage"			
+			{
+				"value"					"3950 7450 12500 17500 28500 37500 56400"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"tree_bonus_damage_pct"			
+			{
+				"value"				"50"
+				"special_bonus_unique_tiny_7"	"+50"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_NONE"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"attack_speed_reduction"	"5 10 15 20 25 40 60"
+			"toss_bonus_damage"
+			{
+				"value"					"900 3000 9000 19500 38500 67500 86400"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
+			}
 		}
 	}
+
 
 	"tiny_tree_grab"
 	{	
@@ -19741,7 +19776,7 @@
 			}
 			"scepter_radius"
 			{
-				"value"								"1200"
+				"value"								"2000"
 				"RequiresScepter"					"1"
 			}
 		}

@@ -29527,6 +29527,7 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"chain_damage"			"75"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"8"
 			{
@@ -29609,6 +29610,7 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"chain_damage"			"90"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"8"
 			{
@@ -29677,6 +29679,7 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"chain_damage"			"120"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"8"
 			{
@@ -34023,7 +34026,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"static_chance"			"20"
+				"static_chance"			"30"
 			}
 			"09"
 			{
@@ -34043,7 +34046,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"static_cooldown"		"0.1"
+				"static_cooldown"		"0.15"
 			}
 			"13"
 			{
@@ -34122,17 +34125,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_ptc"			"100"
+				"bonus_damage_ptc"			"120"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"200"
+				"bonus_attack_speed"	"250"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"all"					"500"
+				"all"					"900"
 			}
 			"04"
 			{
@@ -34142,7 +34145,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"static_chance"			"10"
+				"static_chance"			"20"
 			}
 			"06"
 			{
@@ -34153,6 +34156,7 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"chain_damage"			"250"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"8"
 			{
@@ -34162,7 +34166,7 @@
 			"9"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stats_mult_dmg"			"5"
+				"stats_mult_dmg"			"10"
 			}
 			"10"
 			{
@@ -34172,7 +34176,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"chain_delay"			"0.5"
+				"chain_delay"			"0.4"
 			}
 			"12"
 			{
@@ -34221,7 +34225,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_ptc"			"150"
+				"bonus_damage_ptc"			"170"
 			}
 			"02"
 			{
@@ -34231,17 +34235,17 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"all"					"1200"
+				"all"					"1450"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"static_dur"			"10"
+				"static_dur"			"12"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"static_chance"			"15"
+				"static_chance"			"20"
 			}
 			"06"
 			{
@@ -34251,12 +34255,14 @@
 			"7"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"static_damage"			"250"
+				"static_damage"			"150"
+				"CalculateSpellDamageTooltip"	"0"
 			}			
 			"7"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"chain_damage"			"10"
+				"chain_damage"			"20"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"8"
 			{
@@ -34271,12 +34277,12 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chain_radius"			"2000"
+				"chain_radius"			"2500"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"chain_delay"			"0.3"
+				"chain_delay"			"0.2"
 			}
 			"12"
 			{

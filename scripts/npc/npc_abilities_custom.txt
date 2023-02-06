@@ -3380,7 +3380,7 @@
 }
 "special_bonus_spell_amplify_100"
 {
-	"BaseClass"				"special_bonus_spell_amplify_25"
+	"BaseClass"						"special_bonus_spell_amplify_25"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilitySpecial"
@@ -30161,7 +30161,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"80"
+				"value"						"210"
 			}
 		}
 	}
@@ -31058,9 +31058,10 @@
 		"AbilityTextureName"			"mjz_skywrath_mage_arcane_bolt"
 
 		"HasScepterUpgrade"				"1"
-		"Maxlevel"					  "7"
+		"Maxlevel"					    "7"
+		"LevelsBetweenUpgrades"         "5"
 		"AbilityCastRange"				"%cast_range"
-		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"5.0"
 		"AbilityManaCost"				"60"
 		
@@ -31069,7 +31070,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bolt_speed"			"500"
+				"bolt_speed"			"700"
 			}
 			"02"
 			{
@@ -31079,12 +31080,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bolt_damage"			"60 180 300 1200"
+				"bolt_damage"			"360 1280 4900 9000 14500 27000 46000"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"int_multiplier"				"1 1 1 1 2 3 5"
+				"int_multiplier"				"1 2 3 4 5 7 10"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"05"
@@ -31112,7 +31113,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range"			"1000"
+				"cast_range"			"1700"
 			}
 		}
 

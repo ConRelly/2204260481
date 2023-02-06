@@ -1963,7 +1963,7 @@
 		"Ability16"				"special_bonus_unique_mjz_pudge_dismember_strength_damage"
 		"Ability17"				"special_bonus_unique_mjz_pudge_0302"
 
-		"AttributeStrengthGain"		"12.500000"
+		"AttributeStrengthGain"		"22.500000"
 		"StatusHealthRegen"			"1.25"
 		"ArmorPhysical"				"-1"
 		"MagicalResistance"			"30"

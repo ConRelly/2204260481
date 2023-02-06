@@ -35,7 +35,7 @@ function modifier_light_crossbow_1:GetModifierProcAttack_Feedback(keys)
             local attack_dmg_mult = ability:GetSpecialValueFor("chain_damage") / 100        
             local caster_attack = caster:GetAverageTrueAttackDamage(target) * attack_dmg_mult
             local damage = caster_attack           
-            local particleName = "particles/items_fx/chain_lightning.vpcf"
+            local particleName = "particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_maelstrom_v2_item.vpcf" --"particles/items_fx/chain_lightning.vpcf"
             -- Create the chain lightning particle effect
             local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
             ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
@@ -171,7 +171,7 @@ function modifier_light_crossbow_2:GetModifierProcAttack_Feedback(keys)
             local attack_dmg_mult = ability:GetSpecialValueFor("chain_damage") / 100        
             local caster_attack = caster:GetAverageTrueAttackDamage(target) * attack_dmg_mult
             local damage = caster_attack           
-            local particleName = "particles/items_fx/chain_lightning.vpcf"
+            local particleName = "particles/econ/events/ti10/maelstrom_ti10.vpcf" --"particles/items_fx/chain_lightning.vpcf"
             -- Create the chain lightning particle effect
             local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
             ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
@@ -306,7 +306,7 @@ function modifier_light_crossbow_3:GetModifierProcAttack_Feedback(keys)
             local attack_dmg_mult = ability:GetSpecialValueFor("chain_damage") / 100        
             local caster_attack = caster:GetAverageTrueAttackDamage(target) * attack_dmg_mult
             local damage = caster_attack           
-            local particleName = "particles/items_fx/chain_lightning.vpcf"
+            local particleName = "particles/econ/events/fall_2022/maelstrom/maelstrom_fall2022.vpcf" --"particles/items_fx/chain_lightning.vpcf"
             -- Create the chain lightning particle effect
             local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
             ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
@@ -614,7 +614,7 @@ function modifier_thunder_hammer_chain_lightning:OnIntervalThink()
 	for _, enemy in pairs(FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self.current_unit:GetAbsOrigin(), nil, self.chain_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_CLOSEST, false)) do
 		if not self.units_affected[enemy] then
 			enemy:EmitSound("Item.Maelstrom.Chain_Lightning.Jump")
-			self.zap_particle = ParticleManager:CreateParticle("particles/items_fx/chain_lightning.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.current_unit)
+			self.zap_particle = ParticleManager:CreateParticle("particles/econ/events/spring_2021/maelstrom_spring_2021.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.current_unit)
 			if self.unit_counter == 0 then
 				ParticleManager:SetParticleControlEnt(self.zap_particle, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
 			else
@@ -645,7 +645,7 @@ end
 --THUNDER HAMMER STATIC--
 -------------------------
 modifier_thunder_hammer_static = modifier_thunder_hammer_static or class({})
-function modifier_thunder_hammer_static:GetStatusEffectName() return "particles/status_fx/status_effect_mjollnir_shield.vpcf" end
+function modifier_thunder_hammer_static:GetStatusEffectName() return "particles/econ/events/ti8/mjollnir_shield_ti8.vpcf" end
 function modifier_thunder_hammer_static:OnCreated()
 	if IsServer() then
         if not self:GetAbility() then self:Destroy() end
@@ -670,8 +670,9 @@ function modifier_thunder_hammer_static:OnCreated()
 	else
 		self.static_chance = 0 self.static_strikes = 0 self.static_damage = 0 self.static_radius = 0 self.static_cooldown = 0
 	end
+	local name7 = "particles/econ/events/ti8/mjollnir_shield_ti8.vpcf" --green
 	self.bStaticCooldown = false
-	self.shield_particle = ParticleManager:CreateParticle("particles/items2_fx/mjollnir_shield.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+	self.shield_particle = ParticleManager:CreateParticle(name7, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 	self:AddParticle(self.shield_particle, false, false, -1, false, false)
 end
 function modifier_thunder_hammer_static:OnIntervalThink()
@@ -688,7 +689,7 @@ function modifier_thunder_hammer_static:OnTakeDamage(keys)
 		self:GetParent():EmitSound("Item.Maelstrom.Chain_Lightning.Jump")
 		if (keys.attacker:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Length2D() <= self.static_radius and not keys.attacker:IsBuilding() and not keys.attacker:IsOther() and keys.attacker:GetTeamNumber() ~= self:GetParent():GetTeamNumber() then
 			local static_particle = nil
-			static_particle = ParticleManager:CreateParticle("particles/items_fx/chain_lightning.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.attacker)
+			static_particle = ParticleManager:CreateParticle("particles/econ/events/ti8/maelstorm_ti8.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.attacker)
 			ParticleManager:SetParticleControlEnt(static_particle, 0, keys.attacker, PATTACH_POINT_FOLLOW, "attach_hitloc", keys.attacker:GetAbsOrigin(), true)
 			ParticleManager:SetParticleControlEnt(static_particle, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
 			ParticleManager:ReleaseParticleIndex(static_particle)
@@ -697,7 +698,7 @@ function modifier_thunder_hammer_static:OnTakeDamage(keys)
 		local unit_count = 0
 		for _, enemy in pairs(FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetParent():GetAbsOrigin(), nil, self.static_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_ANY_ORDER, false)) do
 			if enemy ~= keys.attacker then
-				static_particle = ParticleManager:CreateParticle("particles/items_fx/chain_lightning.vpcf", PATTACH_ABSORIGIN_FOLLOW, enemy)
+				static_particle = ParticleManager:CreateParticle("particles/econ/events/ti8/maelstorm_ti8.vpcf", PATTACH_ABSORIGIN_FOLLOW, enemy)
 				ParticleManager:SetParticleControlEnt(static_particle, 0, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
 				ParticleManager:SetParticleControlEnt(static_particle, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
 				ParticleManager:ReleaseParticleIndex(static_particle)

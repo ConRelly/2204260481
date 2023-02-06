@@ -83,7 +83,8 @@ function modifier_item:RemoveOnDeath() return false end
 function modifier_item:DeclareFunctions()
 	return {MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_PROCATTACK_FEEDBACK}
 end
-function modifier_item:OnCreated()   
+function modifier_item:OnCreated()
+    self.last_use = 0   
 end
 -- bonus dmg_ptc, As and all stats bonus
 function modifier_item:GetModifierBaseDamageOutgoing_Percentage()
@@ -109,6 +110,11 @@ function modifier_item:GetModifierProcAttack_Feedback(keys)
         if not parent:IsRealHero() then return end 
         local ability = self:GetAbility()
         if not ability then return end
+        -- Check if enough time has passed since the last usage , self.last_use is first saved as 0 in OnCreated()
+        local current_time = GameRules:GetGameTime()        
+        if self.last_use and current_time - self.last_use < 0.15 then
+            return
+        end           
         local chance = ability:GetSpecialValueFor("static_chance")
         local randomSeed = math.random(1, 100)
         if randomSeed <= chance then
@@ -116,6 +122,7 @@ function modifier_item:GetModifierProcAttack_Feedback(keys)
             if not target then return end
             if not target:IsAlive() then return end
             if not caster:IsAlive() then return end
+            self.last_use = current_time            
             local static_radius = ability:GetSpecialValueFor("static_radius")
             local static_strikes = ability:GetSpecialValueFor("static_strikes")
             local damage_typ = DAMAGE_TYPE_PHYSICAL
@@ -126,7 +133,7 @@ function modifier_item:GetModifierProcAttack_Feedback(keys)
             local all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect()) * stats_mult
             local caster_attack = caster:GetAverageTrueAttackDamage(target) * attack_dmg_mult
             local damage = caster_attack + all_stats            
-            local particleName = "particles/particle_test/chain_lightning_green.vpcf" --"particles/items_fx/chain_lightning.vpcf"
+            local particleName = "particles/econ/events/ti8/maelstorm_ti8.vpcf" --"particles/items_fx/chain_lightning.vpcf"
             local has_ss = caster:HasModifier("modifier_super_scepter")
             -- uses 20% of the spell amp
             if has_ss then
@@ -205,7 +212,8 @@ function modifier_item2:DeclareFunctions()
 	return {MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_PROCATTACK_FEEDBACK}
 end
 function modifier_item2:OnCreated() 
-    self.orig_dmg = 0  
+    self.orig_dmg = 0 
+    self.last_use = 0
 end
 -- bonus dmg_ptc, As and all stats bonus
 function modifier_item2:GetModifierBaseDamageOutgoing_Percentage()
@@ -226,11 +234,15 @@ end
 function modifier_item2:GetModifierProcAttack_Feedback(keys)
 	if IsServer() then
         local parent = self:GetParent()
-        local target = keys.target
-        --if parent ~= keys.attacker then return end
+        local target = keys.target       
         if not parent:IsRealHero() then return end 
         local ability = self:GetAbility()
         if not ability then return end
+        -- Check if enough time has passed since the last usage , self.last_use is first saved as 0 in OnCreated()
+        local current_time = GameRules:GetGameTime()
+        if self.last_use and current_time - self.last_use < 0.15 then
+            return
+        end       
         local chance = ability:GetSpecialValueFor("static_chance")
         local randomSeed = math.random(1, 100)
         if randomSeed <= chance then
@@ -238,6 +250,8 @@ function modifier_item2:GetModifierProcAttack_Feedback(keys)
             if not target then return end
             if not target:IsAlive() then return end
             if not caster:IsAlive() then return end 
+            -- Store the time when the ability was used
+            self.last_use = current_time            
             local static_radius = ability:GetSpecialValueFor("static_radius") 
             local static_strikes = ability:GetSpecialValueFor("static_strikes")
             local damage_typ = DAMAGE_TYPE_PHYSICAL
@@ -257,7 +271,7 @@ function modifier_item2:GetModifierProcAttack_Feedback(keys)
             else
                 damage = caster_attack
             end                
-            local particleName = "particles/particle_test/chain_lightning_red.vpcf"--"particles/items_fx/chain_lightning.vpcf"
+            local particleName = "particles/econ/events/ti9/maelstorm_ti9.vpcf" --"particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_maelstrom_v2_item.vpcf" --"particles/particle_test/chain_lightning_red.vpcf"
             local has_modifier = caster:HasModifier("modifier_super_scepter")
             -- uses 20% of the spell amp
             if has_modifier then
@@ -308,6 +322,7 @@ function modifier_item2:GetModifierProcAttack_Feedback(keys)
 	end
 end
 
+
 --------Aura------
 modifier_item_thunder_god_might_aura = modifier_item_thunder_god_might_aura or class({})
 
@@ -352,9 +367,13 @@ if IsServer() then
         local stats_mult = self:GetAbility():GetSpecialValueFor("stats_mult_dmg")
         local attack_dmg_mult = self:GetAbility():GetSpecialValueFor("chain_damage") / 100
         local ss_spell_amp = self:GetAbility():GetSpecialValueFor("ss_spell_amp") / 100        
-        local all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect()) * stats_mult
+        local all_stats = 0
         local caster_attack = caster:GetAverageTrueAttackDamage(caster) * attack_dmg_mult
-        local damage = caster_attack + all_stats
+        local damage = caster_attack
+        if caster:IsHero() then
+            all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect()) * stats_mult
+            damage = caster_attack + all_stats
+        end   
         local damage_per_tick = damage 
         local has_ss_modif = caster:HasModifier("modifier_super_scepter")
          -- uses 20% of the spell amp with SS
@@ -371,7 +390,7 @@ if IsServer() then
             ability = ability,
         } 
         ApplyDamage(damageTable)
-        local particleName = "particles/particle_test/chain_lightning_green.vpcf" --"particles/items_fx/chain_lightning.vpcf"
+        local particleName = "particles/econ/events/ti8/maelstorm_ti8.vpcf" --"particles/particle_test/chain_lightning_green.vpcf" 
         local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
         ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_attack1", caster:GetAbsOrigin(), true)
         ParticleManager:SetParticleControlEnt(particle, 1, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)        
@@ -424,10 +443,13 @@ if IsServer() then
             charges = 2700 + math.floor(charges / 10)
         end              
         local stats_mult = ability:GetSpecialValueFor("stats_mult_dmg") * ( charges / 20)
-        local attack_dmg_mult = (ability:GetSpecialValueFor("static_damage") / 100) + (charges / 1000)      
-        local all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect()) * stats_mult
+        local attack_dmg_mult = (ability:GetSpecialValueFor("static_damage") / 100) + (charges / 500)      
+        local all_stats = 0
         local caster_attack = caster:GetAverageTrueAttackDamage(caster) * attack_dmg_mult
         local damage = 0
+        if caster:IsHero() then
+            all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect()) * stats_mult
+        end        
         if all_stats > caster_attack then
             damage = all_stats
         else
@@ -450,7 +472,7 @@ if IsServer() then
             ability = ability,
         } 
         ApplyDamage(damageTable)
-        local particleName = "particles/particle_test/chain_lightning_red.vpcf" --"particles/items_fx/chain_lightning.vpcf"
+        local particleName = "particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_maelstrom_v2_item.vpcf" --"particles/particle_test/chain_lightning_red.vpcf" 
         local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
         ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_attack1", caster:GetAbsOrigin(), true)
         ParticleManager:SetParticleControlEnt(particle, 1, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)        
@@ -474,18 +496,38 @@ function modifier_item_thunder_god_might_immune:OnCreated()
     if IsServer() then           
         local sound_name = "DOTA_Item.Mjollnir.Activate"
         local caster = self:GetCaster()
-        local random_index = RandomInt(1, 3)
-        local duration = self:GetAbility():GetSpecialValueFor("static_dur") + 10
+        local random_index = RandomInt(1, 4)
+        local particle_name = ""
+        local name0 = "particles/items2_fx/mjollnir_shield_unused.vpcf" -- no sparks blue aura
+        --local name1 = "particles/econ/events/fall_2022/mjollnir/mjollnir_shield_fall2022.vpcf" -- dark orange 
+        --local name2 = "particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_mjollnir_shield.vpcf"  --purple /phys deff color
+        local name3 = "particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_mjollnir_shield_v2.vpcf" --more redis/phys
+        local name4 = "particles/econ/events/spring_2021/mjollnir_shield_spring_2021.vpcf" -- rainbow
+        local name5 = "particles/econ/events/ti9/mjollnir_shield_ti9.vpcf" --better purple effect
+        local name6 = "particles/econ/events/ti10/mjollnir_shield_ti10.vpcf" -- yellow
+        --local name7 = "particles/econ/events/ti8/mjollnir_shield_ti8.vpcf" --green
+
+        if not self:GetAbility() then return end
+        --local duration = self:GetAbility():GetSpecialValueFor("static_dur") + 10
         if not caster:IsAlive() then return end
         if random_index == 1 then
             caster:AddNewModifier(caster, nil, "modifier_item_thunder_physical", {})
+            particle_name = name3
         elseif random_index == 2 then
             caster:AddNewModifier(caster, nil, "modifier_item_thunder_magical", {})
+            particle_name = name5
+            self.blue_particle = ParticleManager:CreateParticle(name0, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+            self:AddParticle(self.blue_particle, false, false, -1, false, false)
         elseif random_index == 3 then
-            caster:AddNewModifier(caster, nil, "modifier_item_thunder_pure", {})  
+            caster:AddNewModifier(caster, nil, "modifier_item_thunder_pure", {})
+            particle_name = name6
+        elseif random_index == 4 then 
+            caster:AddNewModifier(caster, nil, "modifier_item_thunder_physical", {})
+            caster:AddNewModifier(caster, nil, "modifier_item_thunder_magical", {})
+            caster:AddNewModifier(caster, nil, "modifier_item_thunder_pure", {})
+            particle_name = name4
         end    
-        caster:AddNewModifier(caster, nil, "modifier_item_thunder_physical", {duration = duration})
-        self.shield_particle = ParticleManager:CreateParticle("particles/items2_fx/mjollnir_shield.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+        self.shield_particle = ParticleManager:CreateParticle(particle_name, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
         self:AddParticle(self.shield_particle, false, false, -1, false, false)
 
         caster:EmitSound(sound_name)
@@ -494,11 +536,17 @@ function modifier_item_thunder_god_might_immune:OnCreated()
 end
 
 function modifier_item_thunder_god_might_immune:GetTexture()
-    if self:GetParent():HasModifier("modifier_item_thunder_physical") then
+    --all_color_resit
+    local phy_modif = self:GetParent():HasModifier("modifier_item_thunder_physical")
+    local magic_modif = self:GetParent():HasModifier("modifier_item_thunder_magical")
+    local pure_modif = self:GetParent():HasModifier("modifier_item_thunder_pure")
+    if phy_modif and magic_modif and pure_modif then    
+        return "all_color_resit"
+    elseif phy_modif then 
         return "spirit_orb_red"
-    elseif self:GetParent():HasModifier("modifier_item_thunder_magical") then
+    elseif magic_modif then
         return "spirit_orb_blue"
-    elseif self:GetParent():HasModifier("modifier_item_thunder_pure") then
+    elseif pure_modif then
         return "spirit_orb"
     end
 end 
@@ -509,10 +557,14 @@ end
 
 function modifier_item_thunder_god_might_immune:OnDestroy()
     if IsServer() then
-        if self.particle then
-            ParticleManager:DestroyParticle(self.particle, false)
-            ParticleManager:ReleaseParticleIndex(self.particle)
+        if self.shield_particle then
+            ParticleManager:DestroyParticle(self.shield_particle, false)
+            ParticleManager:ReleaseParticleIndex(self.shield_particle)
         end 
+        if self.blue_particle then
+            ParticleManager:DestroyParticle(self.blue_particle, false)
+            ParticleManager:ReleaseParticleIndex(self.blue_particle)
+        end    
         self:GetCaster():StopSound("DOTA_Item.Mjollnir.Loop")
         local physical = self:GetParent():HasModifier("modifier_item_thunder_physical")
         local magical = self:GetParent():HasModifier("modifier_item_thunder_magical")

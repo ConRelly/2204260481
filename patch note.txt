@@ -2307,6 +2307,25 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* New item changes:
+--Added a 4th effect for the new item last forms active (immune to all), now every type of effect of that shield will have its own particle effect/color.
+--Better Chain Lightning effects and colors for each form. 
+--Increased chance to proc for higher forms.
+--Decreased the interval for active (last forms)
+--And some other changes to last form(aoe,scaling etc)
+--Added a note for one of the forms that it uses magic dmg on the active.
+* Buffed Skywrath Q , Modified his ultimate to deal full dmg every 0.3 instead of dividing that dmg over 2.4 sec (that's almost 10x boost)
+* Added another Marci ult SS Effect: Evolving Light CrossBow and all his forms: gains +2 charges instead of 1 per proc (was added since last patch, just not in patch note)
+
+
+
+* Adjusted tiny ultimate bonus attack speed and made clear in the description that is a good bonus not negative. Increased toss bonus dmg.
+* Pudge flesh heap talent from 80 to 210%, he now gains 22.5 str /lvl from 12.5. 
+* New item changes:
+--Thunder hammer from now requires 500 more stacks to evolve. (helps tank/magic/support builds to keep that form)
+--Last 2 forms now have a fixed internal CD (0.15s)(TH already had), this will help with making the item not be over-good on already op heroes (usually meles that can hit 30-40times/s )
+
+
 
 
 **Update Notes spellings will get corrected before the live update.
