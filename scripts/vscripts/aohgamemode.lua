@@ -119,6 +119,7 @@ function AOHGameMode:InitGameMode()
 	_G._endlessMode_started = false
 	_G._normal_mode = false
 	_G._defeat_extra_lives = 3
+	_G._no_gold_bags = false
 	self._endlessMode_started = false
 	self._manaMode = false
 	self._doubleMode = false

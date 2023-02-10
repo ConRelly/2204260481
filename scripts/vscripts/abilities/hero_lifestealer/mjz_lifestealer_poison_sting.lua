@@ -120,7 +120,7 @@ if IsServer() then
         ParticleManager:SetParticleControl(iParticle, 1, Vector(0, tdamage, 6))
         ParticleManager:SetParticleControl(iParticle, 2, Vector(1, math.floor(math.log10(tdamage))+2, 100))
         ParticleManager:SetParticleControl(iParticle, 3, Vector(85+80,26+40,139+40))        
-        
+        self:AddParticle(iParticle, false, false, -1, false, false)
         ApplyDamage({
             victim = hParent, 
             attacker = caster, 

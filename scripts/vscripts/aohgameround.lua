@@ -252,7 +252,8 @@ function AOHGameRound:OnEntityKilled(event)
 	if killedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 		Timers:CreateTimer(7, 
 		function()
-			if not killedUnit:IsNull() and IsValidEntity(killedUnit) and killedUnit:IsAlive() then -- check if the unit is still alive (it might have been removed from the _vEnemiesRemaining table)
+			-- check if the unit is still alive (it might have been removed from the _vEnemiesRemaining table)			
+			if not killedUnit:IsNull() and IsValidEntity(killedUnit) and killedUnit:IsAlive() then 
 				print("killed unit is alive")
 				killedUnit:SetAbsOrigin(Vector(0, 0, 0)) 
 				FindClearSpaceForUnit(killedUnit, Vector(0, 0, 0), true)
@@ -286,7 +287,6 @@ function AOHGameRound:OnItemPickedUp(event)
 	end
 end
 
-
 function AOHGameRound:_CheckForGoldBagDrop(killedUnit)
 	if not IsServer() then return end
 	if self._nGoldRemainingInRound <= 0 then
@@ -313,18 +313,58 @@ function AOHGameRound:_CheckForGoldBagDrop(killedUnit)
 	if nGoldToDrop <= 0 then
 		return
 	end
-	self._nGoldRemainingInRound = math.max(0, self._nGoldRemainingInRound - nGoldToDrop)
-	self._nGoldBagsRemaining = math.max(0, self._nGoldBagsRemaining - 1)
 
-
-	local newItem = CreateItem("item_bag_of_gold", nil, nil)
-	newItem:SetPurchaseTime(0)
-	newItem:SetCurrentCharges(nGoldToDrop)
-	local drop = CreateItemOnPositionSync(killedUnit:GetAbsOrigin(), newItem)
-	local dropTarget = killedUnit:GetAbsOrigin() + RandomVector(RandomFloat(50, 350))
-	newItem:LaunchLoot(false, 300, 0.75, dropTarget)
-	
+	--check if there's only one player connected to the game, give gold directly to him if yes
+	if self:RecountPlayers2() < 2 then
+		-- Give the gold directly to the player
+		if self.solo_player_id and PlayerResource:HasSelectedHero(self.solo_player_id) then
+			if PlayerResource:GetPlayer(self.solo_player_id) then
+				local player = PlayerResource:GetSelectedHeroEntity(self.solo_player_id)		
+				player:ModifyGold(nGoldToDrop, false, 0)
+				SendOverheadEventMessage(player, OVERHEAD_ALERT_GOLD, player, nGoldToDrop, nil)
+				EmitSoundOn("General.Coins", player)				
+			end	
+		end
+	 --else check if the comand to disable goldbags is on, if yes give the gold(divided) directly to remaning players 	
+	elseif _G._no_gold_bags == true then
+		for playerID = 0, 4 do
+			if PlayerResource:IsValidPlayerID(playerID) then
+				if PlayerResource:HasSelectedHero(playerID) then
+					if PlayerResource:GetPlayer(playerID) then
+						local player = PlayerResource:GetSelectedHeroEntity(playerID)
+						local gold_divided = math.floor(nGoldToDrop / self:RecountPlayers2())
+						player:ModifyGold(gold_divided, false, 0)
+						SendOverheadEventMessage(player, OVERHEAD_ALERT_GOLD, player, nGoldToDrop, nil)
+						EmitSoundOn("General.Coins", player)						
+					end	
+				end
+			end
+		end
+	else
+		if killedUnit then
+			-- Drop the gold bag as usual
+			local newItem = CreateItem("item_bag_of_gold", nil, nil)
+			newItem:SetPurchaseTime(0)
+			newItem:SetCurrentCharges(nGoldToDrop)
+			local drop = CreateItemOnPositionSync(killedUnit:GetAbsOrigin(), newItem)
+			local dropTarget = killedUnit:GetAbsOrigin() + RandomVector(RandomFloat(50, 350))
+			newItem:LaunchLoot(false, 300, 0.75, dropTarget)
+		end	
+	end	
 end
 
-
-
+function AOHGameRound:RecountPlayers2()
+	self._playerNumber_ = 0
+	for playerID = 0, 4 do
+		if PlayerResource:IsValidPlayerID(playerID) then
+			if PlayerResource:HasSelectedHero(playerID) then
+				if PlayerResource:GetPlayer(playerID) then
+					local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+					self._playerNumber_ = self._playerNumber_ + 1
+					self.solo_player_id = playerID
+				end	
+			end
+		end
+	end	
+	return self._playerNumber_
+end

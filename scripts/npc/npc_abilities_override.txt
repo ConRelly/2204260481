@@ -8098,6 +8098,11 @@
 	{
 		"AbilitySpecial"
 		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"illusion_duration"			"20"
+			}			
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
@@ -8120,6 +8125,12 @@
 				"var_type"								"FIELD_INTEGER"
 				"tooltip_incoming_damage_total_pct"		"250 200 150 100"
 			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"images_count"				"3 3 3 3"
+				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren"
+			}			
 		}
 	}
 

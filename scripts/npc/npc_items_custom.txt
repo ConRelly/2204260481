@@ -12805,7 +12805,6 @@
 		}		
 	}
 	
-	
 "item_recipe_mjz_great_holy_locket"
 {
 	"BaseClass"						"item_datadriven"
@@ -13635,17 +13634,17 @@
 			"01"
 			{
 				"var_type"										"FIELD_INTEGER"
-				"bonus_strength"								"45"
+				"bonus_strength"								"1"
 			}
 			"02"
 			{
 				"var_type"										"FIELD_INTEGER"
-				"bonus_agility"									"120"
+				"bonus_agility"									"1"
 			}
 			"03"
 			{
 				"var_type"										"FIELD_INTEGER"
-				"bonus_intellect"								"45"
+				"bonus_intellect"								"1"
 			}
 			"04"
 			{
@@ -17860,6 +17859,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"bonus_gpm"			"999"
 		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_damage"		"-2000"
+		}		
 	}
 }
 "item_recipe_philo_stone_temp"
@@ -20326,6 +20330,9 @@
 			}
 		}
 	}
+
+
+
 "item_recipe_earth_essence"
 	{
 		"AbilityTextureName"			"item_recipe"
@@ -29539,7 +29546,7 @@
 				"var_type"				"FIELD_FLOAT"
 				"charge_awaken"			"200"
 			}									
-		}
+		}				
 	}
 // Light Crossbow Recipe
 	"item_recipe_light_crossbow"

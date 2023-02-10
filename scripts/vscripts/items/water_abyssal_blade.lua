@@ -124,10 +124,11 @@ function modifier_abyssal_water_blade:OnAttackLanded(keys)
 		local stun_duration = self:GetAbility():GetSpecialValueFor("stun_duration")
 		local internal_bash_cd = self:GetAbility():GetSpecialValueFor("internal_bash_cd")
 		self.bash_proc = false
-		bash_fx = ParticleManager:CreateParticle("particles/custom/items/abyssal_water_blade/abyssal_bash.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.attacker)
+		local bash_fx = ParticleManager:CreateParticle("particles/custom/items/abyssal_water_blade/abyssal_bash.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.attacker)
 		ParticleManager:SetParticleControlEnt(bash_fx, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true)
 		ParticleManager:SetParticleControlEnt(bash_fx, 1, keys.attacker, PATTACH_ABSORIGIN, "attach_hitloc", keys.attacker:GetOrigin(), true)
 		ParticleManager:SetParticleControlEnt(bash_fx, 3, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true)
+		ParticleManager:ReleaseParticleIndex(bash_fx)
 		target:EmitSound("DOTA_Item.SkullBasher")
 		target:EmitSoundParams("Hero_MonkeyKing.Spring.Water", 1, 0.5, 0)
 		local bash_incdmg = 0

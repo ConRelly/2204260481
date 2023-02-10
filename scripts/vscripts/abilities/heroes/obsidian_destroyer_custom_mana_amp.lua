@@ -9,6 +9,7 @@ function obsidian_destroyer_custom_mana_amp:OnSpellStart()
 	local amp = caster:AddNewModifier(caster, self, "modifier_mana_amp_custom_active", {duration = self:GetSpecialValueFor("duration")})
 	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+    ParticleManager:ReleaseParticleIndex(particle)
 end
 
 

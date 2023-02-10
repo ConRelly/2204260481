@@ -13,6 +13,97 @@ function modifier_light_crossbow_1:RemoveOnDeath() return false end
 function modifier_light_crossbow_1:DeclareFunctions()
 	return { MODIFIER_PROPERTY_PROCATTACK_FEEDBACK,}
 end
+
+function OnAttackLanded_NotUsed(keys)
+	local isServer = IsServer()
+	if not isServer then return end
+	local target = keys.target
+	local caster = keys.caster 
+	local ability = keys.ability
+	if not ability then return end	
+	if not target then return end
+	local target_alive = target:IsAlive()
+	--local is_realHero = caster:IsRealHero()	
+	if not target_alive then return end
+	--if not is_realHero then return end
+	local static_radius = ability:GetSpecialValueFor("static_radius")
+	local static_strikes = ability:GetSpecialValueFor("static_strikes")
+	local damage_typ = DAMAGE_TYPE_PHYSICAL
+	local damage_flag = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
+	local attack_dmg_mult = ability:GetSpecialValueFor("chain_damage") / 100        
+	local caster_attack = caster:GetAverageTrueAttackDamage(target) * attack_dmg_mult
+	local damage = caster_attack           
+	local particleName = "particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_maelstrom_v2_item.vpcf" --"particles/items_fx/chain_lightning.vpcf"
+	-- Create the chain lightning particle effect
+	local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
+	ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+	ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+	ParticleManager:ReleaseParticleIndex(particle)
+	ParticleManager:DestroyParticle(particle, false)
+	-- Get a list of all nearby enemies within a 900 range
+	local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, static_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
+	local enemies_hit = 0
+	caster:EmitSoundParams("Item.Maelstrom.Chain_Lightning.Jump", 1, 0.7, 0)
+	-- For each enemy found, repeat the damage and particle effect on them
+	for _, enemy in pairs(enemies) do
+		-- Check if the number of enemies hit is less than 4
+		if enemies_hit < static_strikes then
+			local damageTable = {
+			attacker = caster,
+			victim = enemy,
+			damage = damage,
+			damage_type = damage_typ,
+			damage_flags = damage_flag,
+			ability = ability,
+			}
+			ApplyDamage(damageTable)
+			
+			-- Create the chain lightning particle effect for each enemy
+			--local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
+			ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+			ParticleManager:SetParticleControlEnt(particle, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
+			ParticleManager:ReleaseParticleIndex(particle)
+			ParticleManager:DestroyParticle(particle, false)
+			enemies_hit = enemies_hit + 1
+			target = enemy
+		end
+	end
+	ParticleManager:DestroyParticle(particle, false)
+	local bonus_charge = 1
+	local has_ss = caster:HasModifier("modifier_super_scepter")
+	local marci_ult = caster:HasModifier("modifier_marci_unleash_flurry")
+	local charges = ability:GetCurrentCharges()
+	local limit = ability:GetSpecialValueFor("charge_awaken") 
+	local evolve = (charges >= limit)
+	if has_ss and marci_ult then
+		bonus_charge = 2								
+	end	            
+	ability:SetCurrentCharges(charges + bonus_charge)               
+	if evolve then
+		if not ability.evolve_check then
+			local zeus_ultimate_particle = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf" 
+			local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+			local zeus_ultimate_sound = "Hero_Zuus.GodsWrath"
+			--Renders the particle on the target
+			local particle_eff = ParticleManager:CreateParticle(particle, PATTACH_WORLDORIGIN, caster)
+			-- Raise 1000 value if you increase the camera height above 1000
+			ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+			ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
+			ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+			ParticleManager:ReleaseParticleIndex(particle_eff)
+			ParticleManager:DestroyParticle(particle_eff, false)
+			EmitSoundOn(zeus_ultimate_sound, caster)                    
+			caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
+			-- Remove the old item and add the evolved item
+			caster:RemoveItem(ability)
+			caster:AddItemByName("item_light_crossbow_2")                                                      
+			ability.evolve_check = true
+		end  
+	end        
+   
+end
+
+
 function modifier_light_crossbow_1:GetModifierProcAttack_Feedback(keys)
 	if IsServer() then
         local parent = self:GetParent()
@@ -32,72 +123,74 @@ function modifier_light_crossbow_1:GetModifierProcAttack_Feedback(keys)
 			local static_strikes = ability:GetSpecialValueFor("static_strikes")
             local damage_typ = DAMAGE_TYPE_PHYSICAL
             local damage_flag = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
-            local attack_dmg_mult = ability:GetSpecialValueFor("chain_damage") / 100        
+            local attack_dmg_mult = ability:GetSpecialValueFor("chain_damage") / 100         
             local caster_attack = caster:GetAverageTrueAttackDamage(target) * attack_dmg_mult
-            local damage = caster_attack           
-            local particleName = "particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_maelstrom_v2_item.vpcf" --"particles/items_fx/chain_lightning.vpcf"
-            -- Create the chain lightning particle effect
-            local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
-            ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
-            ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
-            ParticleManager:ReleaseParticleIndex(particle)
-            -- Get a list of all nearby enemies within a 900 range
-            local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, static_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
-            local enemies_hit = 0
-            caster:EmitSoundParams("Item.Maelstrom.Chain_Lightning.Jump", 1, 0.7, 0)
-            -- For each enemy found, repeat the damage and particle effect on them
-            for _, enemy in pairs(enemies) do
-                -- Check if the number of enemies hit is less than 4
-                if enemies_hit < static_strikes then
-                    local damageTable = {
-                    attacker = caster,
-                    victim = enemy,
-                    damage = damage,
-                    damage_type = damage_typ,
-                    damage_flags = damage_flag,
-                    ability = ability,
-                    }
-                    ApplyDamage(damageTable)
-                   
-                    -- Create the chain lightning particle effect , from enemy to the rest in his aoe(not really a chain effect)
-                    local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
-                    ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
-                    ParticleManager:SetParticleControlEnt(particle, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
-                    ParticleManager:ReleaseParticleIndex(particle)
-                    enemies_hit = enemies_hit + 1
-                end
-            end
-            local bonus_charge = 1
-            local has_ss = caster:HasModifier("modifier_super_scepter")
-            local marci_ult = caster:HasModifier("modifier_marci_unleash_flurry")
-            local charges = ability:GetCurrentCharges()
-            local limit = ability:GetSpecialValueFor("charge_awaken") 
-            local evolve = (charges >= limit)
-            if has_ss and marci_ult then
-                bonus_charge = 2								
-            end	            
+            local damage = caster_attack  			        
+			local particleName = "particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_maelstrom_v2_item.vpcf" --"particles/items_fx/chain_lightning.vpcf"
+			-- Create the chain lightning particle effect
+			local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
+			ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+			ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+			ParticleManager:ReleaseParticleIndex(particle)
+			-- Get a list of all nearby enemies within a 900 range
+			local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, static_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
+			local enemies_hit = 0
+			caster:EmitSoundParams("Item.Maelstrom.Chain_Lightning.Jump", 1, 0.7, 0)
+			-- For each enemy found, repeat the damage and particle effect on them
+			for _, enemy in pairs(enemies) do
+				-- Check if the number of enemies hit is less than 4
+				if enemies_hit < static_strikes then
+					local damageTable = {
+					attacker = caster,
+					victim = enemy,
+					damage = damage,
+					damage_type = damage_typ,
+					damage_flags = damage_flag,
+					ability = ability,
+					}
+					ApplyDamage(damageTable)
+					
+					-- Create the chain lightning particle effect , from enemy to the rest in his aoe(not really a chain effect)
+					local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
+					ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+					ParticleManager:SetParticleControlEnt(particle, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
+					ParticleManager:ReleaseParticleIndex(particle)
+					enemies_hit = enemies_hit + 1
+					target = enemy
+				end
+			end
+			local bonus_charge = 1
+			local has_ss = caster:HasModifier("modifier_super_scepter")
+			local marci_ult = caster:HasModifier("modifier_marci_unleash_flurry")
+			local charges = ability:GetCurrentCharges()
+			local limit = ability:GetSpecialValueFor("charge_awaken") 
+			local evolve = (charges >= limit)
+			if has_ss and marci_ult then
+				bonus_charge = 2								
+			end	            
 			ability:SetCurrentCharges(charges + bonus_charge)               
-            if evolve then
-                if not self.evolve_check then
+			if evolve then
+				if not self.evolve_check then
 					local zeus_ultimate_particle = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf" 
 					local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
 					local zeus_ultimate_sound = "Hero_Zuus.GodsWrath"
-                    --Renders the particle on the target
-                    local particle_eff = ParticleManager:CreateParticle(particle, PATTACH_WORLDORIGIN, caster)
-                    -- Raise 1000 value if you increase the camera height above 1000
-                    ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-                    ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
-                    ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-                    EmitSoundOn(zeus_ultimate_sound, caster)                    
-                    caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
-                    -- Remove the old item and add the evolved item
-                    caster:RemoveItem(ability)
-                    caster:AddItemByName("item_light_crossbow_2")                                                      
-                    self.evolve_check = true
-                end  
-            end        
-        end   
-	end
+					--Renders the particle on the target
+					local particle_eff = ParticleManager:CreateParticle(particle, PATTACH_WORLDORIGIN, caster)
+					-- Raise 1000 value if you increase the camera height above 1000
+					ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+					ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
+					ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+					ParticleManager:ReleaseParticleIndex(particle_eff)
+					EmitSoundOn(zeus_ultimate_sound, caster)                    
+					caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
+					-- Remove the old item and add the evolved item
+					caster:RemoveItem(ability)
+					caster:AddItemByName("item_light_crossbow_2")                                                      
+					self.evolve_check = true
+				end  
+			end  
+		end	      
+	end   
 end
 
 function modifier_light_crossbow_1:IsAura() return true end
@@ -154,7 +247,7 @@ function modifier_light_crossbow_2:GetModifierProcAttack_Feedback(keys)
         local parent = self:GetParent()
         local target = keys.target
         --if parent ~= keys.attacker then return end
-        if not parent:IsRealHero() then return end 
+        --if not parent:IsRealHero() then return end 
         local ability = self:GetAbility()
         if not ability then return end
         local chance = ability:GetSpecialValueFor("static_chance")
@@ -177,6 +270,7 @@ function modifier_light_crossbow_2:GetModifierProcAttack_Feedback(keys)
             ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
             ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
             ParticleManager:ReleaseParticleIndex(particle)
+			--self:AddParticle(particle, false, false, -1, false, false)
             -- Get a list of all nearby enemies within a 900 range
             local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, static_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
             local enemies_hit = 0
@@ -199,8 +293,10 @@ function modifier_light_crossbow_2:GetModifierProcAttack_Feedback(keys)
                     local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
                     ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
                     ParticleManager:SetParticleControlEnt(particle, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
+					--self:AddParticle(particle, false, false, -1, false, false)
                     ParticleManager:ReleaseParticleIndex(particle)
                     enemies_hit = enemies_hit + 1
+					target = enemy
                 end
             end
             local bonus_charge = 1
@@ -224,7 +320,8 @@ function modifier_light_crossbow_2:GetModifierProcAttack_Feedback(keys)
                     ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
                     ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
                     ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-                    EmitSoundOn(zeus_ultimate_sound, caster)                    
+                    ParticleManager:ReleaseParticleIndex(particle_eff)
+					EmitSoundOn(zeus_ultimate_sound, caster)                    
                     caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
                     -- Remove the old item and add the evolved item
                     caster:RemoveItem(ability)
@@ -336,6 +433,7 @@ function modifier_light_crossbow_3:GetModifierProcAttack_Feedback(keys)
                     ParticleManager:SetParticleControlEnt(particle, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
                     ParticleManager:ReleaseParticleIndex(particle)
                     enemies_hit = enemies_hit + 1
+					target = enemy
                 end
             end
             local bonus_charge = 1
@@ -359,7 +457,8 @@ function modifier_light_crossbow_3:GetModifierProcAttack_Feedback(keys)
                     ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
                     ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
                     ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-                    EmitSoundOn(zeus_ultimate_sound, caster)                    
+					ParticleManager:ReleaseParticleIndex(particle_eff)
+					EmitSoundOn(zeus_ultimate_sound, caster)                    
                     caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
                     -- Remove the old item and add the evolved item
                     caster:RemoveItem(ability)
@@ -446,6 +545,7 @@ function modifier_thunder_hammer:OnCreated()
 		self.chain_chance = 0 self.chain_cooldown = 0
 	end
 	self.bChainCooldown = false
+	self.last_use = 0 
 end
 function modifier_thunder_hammer:OnIntervalThink()
 	self.bChainCooldown = false
@@ -453,17 +553,17 @@ function modifier_thunder_hammer:OnIntervalThink()
 end
 function modifier_thunder_hammer:DeclareFunctions()
 	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
-			MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_EVENT_ON_ATTACK, MODIFIER_EVENT_ON_ORDER}
+	MODIFIER_PROPERTY_PROCATTACK_FEEDBACK,}
 end
 function modifier_thunder_hammer:GetModifierPreAttack_BonusDamage() return self.bonus_damage end
 function modifier_thunder_hammer:GetModifierAttackSpeedBonus_Constant() return self.bonus_attack_speed end
-function modifier_thunder_hammer:OnAttack(keys)
-	if keys.attacker == self:GetParent() and self:GetParent():IsAlive() and not self.bChainCooldown and not self:GetParent():IsIllusion() and self:GetParent():GetTeamNumber() ~= keys.target:GetTeamNumber() then
+function modifier_thunder_hammer:OnAttack(keys) --and not self:GetParent():IsIllusion()
+	if keys.attacker == self:GetParent() and self:GetParent():IsAlive() and not self.bChainCooldown  and self:GetParent():GetTeamNumber() ~= keys.target:GetTeamNumber() then
 	self.true_hit = true
 	end
 end
-function modifier_thunder_hammer:OnAttackLanded(keys)
-	if keys.attacker == self:GetParent() and self:GetParent():IsAlive() and not self.bChainCooldown and not self:GetParent():IsIllusion() and self:GetParent():GetTeamNumber() ~= keys.target:GetTeamNumber() and RollPseudoRandom(self.chain_chance, self:GetAbility()) and self.true_hit then
+function modifier_thunder_hammer:OnAttackLanded(keys)  --and not self:GetParent():IsIllusion()
+	if keys.attacker == self:GetParent() and self:GetParent():IsAlive() and not self.bChainCooldown and self:GetParent():GetTeamNumber() ~= keys.target:GetTeamNumber() and RollPseudoRandom(self.chain_chance, self:GetAbility()) and self.true_hit then
 		self:GetParent():EmitSound("Item.Maelstrom.Chain_Lightning")
 		self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_thunder_hammer_chain_lightning", {starting_unit_entindex = keys.target:entindex()})
 
@@ -501,6 +601,7 @@ function modifier_thunder_hammer:OnAttackLanded(keys)
 				ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
 				ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
 				ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+				ParticleManager:ReleaseParticleIndex(particle_eff)
 				EmitSoundOn(zeus_ultimate_sound, caster)                    
 				caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
 				-- Remove the old item and add the evolved ite			
@@ -511,6 +612,109 @@ function modifier_thunder_hammer:OnAttackLanded(keys)
 		end 
 	end
 end
+---new on attack feedback, on attack land is not used
+function modifier_thunder_hammer:GetModifierProcAttack_Feedback(keys)
+	if IsServer() then
+        local parent = self:GetParent()
+        local target = keys.target
+        --if parent ~= keys.attacker then return end
+        --if not parent:IsRealHero() then return end 
+        local ability = self:GetAbility()
+        if not ability then return end
+        -- Check if enough time has passed since the last usage , self.last_use is first saved as 0 in OnCreated()
+        local current_time = GameRules:GetGameTime()        
+        if self.last_use and current_time - self.last_use < 0.15 then
+            return
+        end           
+        local chance = ability:GetSpecialValueFor("static_chance")
+        local randomSeed = math.random(1, 100)
+        if randomSeed <= chance then
+            local caster = self:GetCaster()
+            if not target then return end
+            if not target:IsAlive() then return end
+            if not caster:IsAlive() then return end
+            self.last_use = current_time            
+            local static_radius = ability:GetSpecialValueFor("static_radius")
+            local static_strikes = ability:GetSpecialValueFor("static_strikes")
+            local damage_typ = DAMAGE_TYPE_PHYSICAL
+            local damage_flag = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
+			local lvl_dmg = caster:GetLevel() * ability:GetSpecialValueFor("chain_damage")
+            local attack_dmg_mult = ability:GetSpecialValueFor("chain_damage") / 100 
+            local caster_attack = caster:GetAverageTrueAttackDamage(target) * attack_dmg_mult
+            local damage = caster_attack + lvl_dmg        
+            local particleName = "particles/econ/events/spring_2021/maelstrom_spring_2021.vpcf"
+            local has_ss = caster:HasModifier("modifier_super_scepter")
+			--UP: Aghanim Shard
+			if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
+				local power_buff = self:GetAbility():GetSpecialValueFor("buff_dur")
+				self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_thunder_power", {duration = power_buff})
+			end			
+            -- Create the chain lightning particle effect
+            local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
+            ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+            ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+            ParticleManager:ReleaseParticleIndex(particle)
+            -- Get a list of all nearby enemies within "static_radius" range
+            local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, static_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
+            local enemies_hit = 0
+            caster:EmitSoundParams("Item.Maelstrom.Chain_Lightning.Jump", 1, 0.7, 0)
+            -- For each enemy found, repeat the damage and particle effect on them
+            for _, enemy in pairs(enemies) do
+                -- Check if the number of enemies hit is less than 4
+                if enemies_hit < static_strikes then
+                    local damageTable = {
+                    attacker = caster,
+                    victim = enemy,
+                    damage = damage,
+                    damage_type = damage_typ,
+                    damage_flags = damage_flag,
+                    ability = ability,
+                    }
+                    ApplyDamage(damageTable)
+                   
+                    -- Create the chain lightning particle effect , from enemy to the rest in his aoe(different chain effect)
+                    local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
+                    ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+                    ParticleManager:SetParticleControlEnt(particle, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
+                    ParticleManager:ReleaseParticleIndex(particle)
+                    enemies_hit = enemies_hit + 1
+                    target = enemy
+                end
+            end
+            local bonus_charge = 1
+            local marci_ult = caster:HasModifier("modifier_marci_unleash_flurry")
+            local charges = ability:GetCurrentCharges()
+            local limit = ability:GetSpecialValueFor("charge_awaken") 
+            local evolve = (charges >= limit)
+            if has_ss and marci_ult then
+                bonus_charge = 2								
+            end	            
+			ability:SetCurrentCharges(charges + bonus_charge)               
+            if evolve then
+                if not self.evolve_check then
+                    local zeus_ultimate_particle = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf" 
+                    local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+                    local zeus_ultimate_sound = "Hero_Zuus.GodsWrath"
+                    --Renders the particle on the target
+                    local particle_eff = ParticleManager:CreateParticle(particle, PATTACH_WORLDORIGIN, caster)
+                    -- Raise 1000 value if you increase the camera height above 1000
+                    ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+                    ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
+                    ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+                    EmitSoundOn(zeus_ultimate_sound, caster)                    
+                    caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
+                    -- Remove the old item and add the evolved item
+                    caster:RemoveItem(ability)
+                    caster:AddItemByName("item_thunder_gods_might")                                                      
+                    self.evolve_check = true
+                end  
+            end        
+        end   
+	end
+end
+
+
+
 function modifier_thunder_hammer:IsAura() return true end
 function modifier_thunder_hammer:IsAuraActiveOnDeath() return false end
 function modifier_thunder_hammer:GetAuraRadius()
@@ -692,6 +896,7 @@ function modifier_thunder_hammer_static:OnTakeDamage(keys)
 			static_particle = ParticleManager:CreateParticle("particles/econ/events/ti8/maelstorm_ti8.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.attacker)
 			ParticleManager:SetParticleControlEnt(static_particle, 0, keys.attacker, PATTACH_POINT_FOLLOW, "attach_hitloc", keys.attacker:GetAbsOrigin(), true)
 			ParticleManager:SetParticleControlEnt(static_particle, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
+			--self:AddParticle(static_particle, false, false, -1, false, false)
 			ParticleManager:ReleaseParticleIndex(static_particle)
 			ApplyDamage({ victim = keys.attacker, damage = self.static_damage, damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_NONE, attacker = self:GetCaster(), ability = self:GetAbility() })
 		end
@@ -701,6 +906,7 @@ function modifier_thunder_hammer_static:OnTakeDamage(keys)
 				static_particle = ParticleManager:CreateParticle("particles/econ/events/ti8/maelstorm_ti8.vpcf", PATTACH_ABSORIGIN_FOLLOW, enemy)
 				ParticleManager:SetParticleControlEnt(static_particle, 0, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
 				ParticleManager:SetParticleControlEnt(static_particle, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
+				--self:AddParticle(static_particle, false, false, -1, false, false)
 				ParticleManager:ReleaseParticleIndex(static_particle)
 				ApplyDamage({ victim = enemy, damage = self.static_damage, damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_NONE, attacker = self:GetCaster(), ability = self:GetAbility() })
 				unit_count = unit_count + 1

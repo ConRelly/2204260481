@@ -86,6 +86,7 @@ end
 function modifier_item:OnCreated()
     self.last_use = 0   
 end
+
 -- bonus dmg_ptc, As and all stats bonus
 function modifier_item:GetModifierBaseDamageOutgoing_Percentage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_damage_ptc") end
@@ -167,8 +168,9 @@ function modifier_item:GetModifierProcAttack_Feedback(keys)
                     local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
                     ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
                     ParticleManager:SetParticleControlEnt(particle, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
-
+                    ParticleManager:ReleaseParticleIndex(particle)
                     enemies_hit = enemies_hit + 1
+                    target = enemy
                 end
             end
             local bonus_charge = 1
@@ -213,7 +215,7 @@ function modifier_item2:DeclareFunctions()
 end
 function modifier_item2:OnCreated() 
     self.orig_dmg = 0 
-    self.last_use = 0
+    self.last_use = 0    
 end
 -- bonus dmg_ptc, As and all stats bonus
 function modifier_item2:GetModifierBaseDamageOutgoing_Percentage()
@@ -307,6 +309,7 @@ function modifier_item2:GetModifierProcAttack_Feedback(keys)
                     ParticleManager:SetParticleControlEnt(particle, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
                     ParticleManager:ReleaseParticleIndex(particle)
                     enemies_hit = enemies_hit + 1
+                    target = enemy
                 end
             end 
             local bonus_charge = 1
@@ -329,7 +332,7 @@ modifier_item_thunder_god_might_aura = modifier_item_thunder_god_might_aura or c
 function modifier_item_thunder_god_might_aura:IsAura() return true end
 function modifier_item_thunder_god_might_aura:IsAuraActiveOnDeath() return false end
 function modifier_item_thunder_god_might_aura:IsHidden() return true end
-function modifier_item_thunder_god_might_aura:GetAuraDuration() return 1 end
+function modifier_item_thunder_god_might_aura:GetAuraDuration() return 0.2 end
 function modifier_item_thunder_god_might_aura:GetModifierAura() return "modifier_item_thunder_god_might_aura_debuff" end
 function modifier_item_thunder_god_might_aura:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
 function modifier_item_thunder_god_might_aura:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
@@ -344,6 +347,7 @@ local modifier_effect = modifier_item_thunder_god_might_aura_debuff
 function modifier_effect:IsHidden() return false end
 function modifier_effect:IsPurgable() return false end
 function modifier_effect:IsDebuff() return true end
+function modifier_effect:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 
 if IsServer() then
 	function modifier_effect:OnCreated()
@@ -393,7 +397,9 @@ if IsServer() then
         local particleName = "particles/econ/events/ti8/maelstorm_ti8.vpcf" --"particles/particle_test/chain_lightning_green.vpcf" 
         local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
         ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_attack1", caster:GetAbsOrigin(), true)
-        ParticleManager:SetParticleControlEnt(particle, 1, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)        
+        ParticleManager:SetParticleControlEnt(particle, 1, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)   
+        self:AddParticle(particle, false, false, -1, false, false)  
+        --ParticleManager:ReleaseParticleIndex(particle)   
 	end
 end
 
@@ -403,7 +409,7 @@ modifier_item_thunder_god_might_aura2 = modifier_item_thunder_god_might_aura2 or
 function modifier_item_thunder_god_might_aura2:IsAura() return true end
 function modifier_item_thunder_god_might_aura2:IsAuraActiveOnDeath() return false end
 function modifier_item_thunder_god_might_aura2:IsHidden() return true end
-function modifier_item_thunder_god_might_aura2:GetAuraDuration() return 1 end
+function modifier_item_thunder_god_might_aura2:GetAuraDuration() return 0.2 end
 function modifier_item_thunder_god_might_aura2:GetModifierAura() return "modifier_item_thunder_god_might_aura_debuff2" end
 function modifier_item_thunder_god_might_aura2:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
 function modifier_item_thunder_god_might_aura2:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
@@ -418,7 +424,7 @@ local modifier_effect2 = modifier_item_thunder_god_might_aura_debuff2
 function modifier_effect2:IsHidden() return false end
 function modifier_effect2:IsPurgable() return false end
 function modifier_effect2:IsDebuff() return true end
-
+function modifier_effect2:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 if IsServer() then
 	function modifier_effect2:OnCreated()
         if self:GetAbility() then
@@ -472,10 +478,12 @@ if IsServer() then
             ability = ability,
         } 
         ApplyDamage(damageTable)
-        local particleName = "particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_maelstrom_v2_item.vpcf" --"particles/particle_test/chain_lightning_red.vpcf" 
+        local particleName = "particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_maelstrom_v2_item.vpcf" --"particles/particle_test/chain_lightning_red.vpcf"  
         local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
         ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_attack1", caster:GetAbsOrigin(), true)
-        ParticleManager:SetParticleControlEnt(particle, 1, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)        
+        ParticleManager:SetParticleControlEnt(particle, 1, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
+        --ParticleManager:ReleaseParticleIndex(particle) 
+        self:AddParticle(particle, false, false, -1, false, false)
 	end
 end
 
@@ -487,7 +495,6 @@ function modifier_item_thunder_god_might_immune:IsHidden() return false end
 function modifier_item_thunder_god_might_immune:IsPurgable() return false end
 function modifier_item_thunder_god_might_immune:IsBuff() return true end
 function modifier_item_thunder_god_might_immune:RemoveOnDeath() return true end
-function modifier_item_thunder_god_might_immune:GetStatusEffectName() return "particles/status_fx/status_effect_mjollnir_shield.vpcf" end   
 function modifier_item_thunder_god_might_immune:DeclareFunctions()
     return {MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL, MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL, MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE}
 end
@@ -616,7 +623,7 @@ function modifier_item_speed:DeclareFunctions()
 end
 function modifier_item_speed:GetModifierMoveSpeedBonus_Constant() return 1000 end
 function modifier_item_speed:GetModifierIgnoreMovespeedLimit() return 1 end
-
+    
 ----immune type indicators modifiers---
 --physical--
 modifier_item_thunder_physical = modifier_item_thunder_physical or class({})

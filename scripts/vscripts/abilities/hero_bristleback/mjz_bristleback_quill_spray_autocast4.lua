@@ -84,8 +84,10 @@ function modifier_class:OnIntervalThink()
                 if not target_ability:IsFullyCastable() then return nil end
                 if parent:IsIllusion() then return nil end
                 if not parent:IsRealHero() then return nil end
-                if IsChanneling(parent) then return nil end		-- 施法中
-                if parent:IsSilenced() then return nil end		-- 沉默中
+                if IsChanneling(parent) and not ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
+                    return nil
+                end
+                if parent:IsSilenced() then return nil end
                 if parent:HasModifier("modifier_brewmaster_primal_split") and not target_ability:GetAbilityName() ~= "brewmaster_primal_split" then return nil end
 
                 local radius_auto = target_ability:GetCastRange(parent:GetAbsOrigin(), parent) + caster:GetCastRangeBonus() - 50

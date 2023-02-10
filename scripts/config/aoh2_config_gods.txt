@@ -1812,9 +1812,9 @@
 			"b"
 			{
 				"NPCName"				"npc_boss_kobold_foreman"
-				"TotalUnitsToSpawn"		"10"
+				"TotalUnitsToSpawn"		"16"
 				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"15"
+				"SpawnInterval"			"30"
 			}
 		}
 
@@ -2265,8 +2265,8 @@
 			"b" 
 			{
 				"NPCName"				"npc_boss_kobold_foreman"
-				"TotalUnitsToSpawn"		"18"
-				"UnitsPerSpawn"			"3"
+				"TotalUnitsToSpawn"		"20"
+				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"20"
 			}
 		}		
@@ -3307,7 +3307,7 @@
 			"b" 
 			{
 				"NPCName"				"npc_boss_kobold_foreman"
-				"TotalUnitsToSpawn"		"18"
+				"TotalUnitsToSpawn"		"30"
 				"UnitsPerSpawn"			"3"
 				"SpawnInterval"			"10"
 			}
@@ -3478,7 +3478,7 @@
 				//"NPCName"               "npc_dota_boss_aghanim"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"5"
+				"SpawnInterval"			"12"
 			}
 
             "b" 
@@ -3487,7 +3487,7 @@
 				//"NPCName"               "npc_boss_deathprophet"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"5"
+				"SpawnInterval"			"12"
 			}
 		}			
 		"2" // God			骷髅弓箭手
@@ -3524,7 +3524,7 @@
 				//"NPCName"               "npc_dota_boss_aghanim"
 				"TotalUnitsToSpawn"		"12"
 				"UnitsPerSpawn"			"1"
-				"SpawnInterval"			"5"
+				"SpawnInterval"			"12"
 			}
 
             "b" 
@@ -3533,7 +3533,7 @@
 				//"NPCName"               "npc_boss_deathprophet"
 				"TotalUnitsToSpawn"		"12"
 				"UnitsPerSpawn"			"1"
-				"SpawnInterval"			"5"
+				"SpawnInterval"			"12"
 			}
 		}		
 		"4" // God			骷髅弓箭手
@@ -3566,14 +3566,14 @@
             "a" 
 			{
 				"NPCName"				"npc_boss_kobold_foreman"
-				"TotalUnitsToSpawn"		"5"
+				"TotalUnitsToSpawn"		"6"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"10"
 			}
 
 			"b"
 			{
-				"WaitForTime"			"40"
+				"WaitForTime"			"60"
 				"NPCName"               "npc_boss_guesstuff_Moran"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
@@ -3581,7 +3581,7 @@
 			}
 			"c"
 			{
-				"WaitForTime"			"50"
+				"WaitForTime"			"65"
 				"NPCName"               "npc_boss_randomstuff_aiolos"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"

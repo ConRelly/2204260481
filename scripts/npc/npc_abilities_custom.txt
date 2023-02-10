@@ -13430,7 +13430,7 @@
 		"15"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"stack_bonus_duration"			"8"
+			"stack_bonus_duration"			"15"
 			"CalculateSpellDamageTooltip"	"0"
 		}
 	}

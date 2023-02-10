@@ -442,7 +442,7 @@ if IsServer() then
 												local effect_cast = ParticleManager:CreateParticle("particles/custom/abilities/heroes/ogre_magi_multicast/ogre_magi_multicast.vpcf", PATTACH_OVERHEAD_FOLLOW, attacker)
 												ParticleManager:SetParticleControl(effect_cast, 1, Vector(count, counter_speed, 0))
 												ParticleManager:SetParticleControl(effect_cast, 2, Vector(0, counter_speed, 0))
-
+												ParticleManager:ReleaseParticleIndex(effect_cast)
 												local sound_line = math.min(sound -1, 3)
 												local sound_cast = "Hero_OgreMagi.Fireblast.x" .. sound_line
 												if sound_line > 0 then

@@ -61,6 +61,7 @@ if IsServer() then
 			target:FindModifierByName(debuff_name):SetDuration(self.duration, true)
 			local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_silencer/silencer_global_silence.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 			ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_ABSORIGIN, "follow_overhead", target:GetAbsOrigin(), true)
+            ParticleManager:ReleaseParticleIndex(particle)
 			EmitSoundOn("Hero_Rattletrap.Rocket_Flare.Explode", target)
 			ApplyDamage({
 				ability = self.ability,

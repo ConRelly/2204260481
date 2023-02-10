@@ -18,6 +18,7 @@ function item_soul_ring_3:OnSpellStart()
 	soul_ring = ParticleManager:CreateParticle("particles/items2_fx/soul_ring.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	ParticleManager:SetParticleControlEnt(soul_ring, 0, caster, PATTACH_ABSORIGIN_FOLLOW, nil, caster:GetOrigin(), true)
 	ParticleManager:SetParticleControl(soul_ring, 1, Vector(self:GetSpecialValueFor("duration"), 0, 0))
+	ParticleManager:ReleaseParticleIndex(soul_ring)
 	caster:GiveMana(mana_gain)
 	SendOverheadEventMessage(nil, OVERHEAD_ALERT_MANA_ADD, caster, mana_gain, nil)
 	if caster:FindItemInInventory("item_trusty_shovel") then

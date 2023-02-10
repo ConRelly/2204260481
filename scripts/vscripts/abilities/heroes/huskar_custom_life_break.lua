@@ -170,8 +170,10 @@ if IsServer() then
 		ParticleManager:DestroyParticle(self.particle,  true)
 		local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_huskar/huskar_inner_fire_ring_b.vpcf", PATTACH_POINT, self.caster)
 		ParticleManager:SetParticleControlEnt(particle, 0, self.parent, PATTACH_ABSORIGIN, "attach_absorigin", self.parent:GetAbsOrigin(), true)
+		ParticleManager:ReleaseParticleIndex(particle)
 		local particle = ParticleManager:CreateParticle("particles/custom/huskar_custom_life_break_end.vpcf", PATTACH_POINT, self.caster)
 		ParticleManager:SetParticleControlEnt(particle, 1, self.parent, PATTACH_ABSORIGIN, "attach_absorigin", self.parent:GetAbsOrigin(), true)
+		ParticleManager:ReleaseParticleIndex(particle)
 	end
 end
 LinkLuaModifier("modifier_huskar_talent1", "abilities/heroes/huskar_custom_life_break.lua", LUA_MODIFIER_MOTION_NONE)

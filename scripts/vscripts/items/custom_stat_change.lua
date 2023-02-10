@@ -19,7 +19,7 @@ function item_custom_stat_change:OnSpellStart()
 	if fx2 ~= nil then
 		ParticleManager:SetParticleControlEnt(fx2, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
 	end
-
+	ParticleManager:ReleaseParticleIndex(fx2)
 	local modifier = caster:AddNewModifier(caster, self, "modifier_item_stat_change", {})
 	modifier:SetStackCount(temp)
 	modifier:OnRefresh()
