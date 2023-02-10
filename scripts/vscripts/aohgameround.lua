@@ -313,6 +313,8 @@ function AOHGameRound:_CheckForGoldBagDrop(killedUnit)
 	if nGoldToDrop <= 0 then
 		return
 	end
+	self._nGoldRemainingInRound = math.max(0, self._nGoldRemainingInRound - nGoldToDrop)
+	self._nGoldBagsRemaining = math.max(0, self._nGoldBagsRemaining - 1)	
 
 	--check if there's only one player connected to the game, give gold directly to him if yes
 	if self:RecountPlayers2() < 2 then

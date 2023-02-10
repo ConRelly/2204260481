@@ -2330,9 +2330,9 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * Fixed some particles not being properly destroyed and starting to lag over time/use (last 2 forms for new item had that). one of the fixes for this particular lag was to reconnect to the game.
 * Optimized the attack trigger for the 4th form of the new item (Thunder Hammer) to be less resource intensive (reduce some of the lag).
 * SF stacks from Q now last 15 sec from 8, new talent for ursa.
-* The 999 philosophers stone (given by -gon in solo or dig) now has -2000 dmg , mostly for ppl who like to hit tree.
+* The 999 gpm Philosopher's stone (given by -gon in solo or dig) now has -2000 dmg , mostly for ppl who like to hit tree.
 * When there is only one player now it will no longer drop gold bags(gold will be given directly)
-* New command for multiplayer : '-goldbags'(host) if you want to enable/disable goldbags dropping(it will divide the gold among connected players)
+* New command for multiplayer : '-goldbags'(host, might change for all next patch) if you want to enable/disable goldbags dropping(it will divide the gold among connected players)
 
 
 

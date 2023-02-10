@@ -414,7 +414,7 @@ function AOHGameMode:OnPlayerChat(keys)
 		self._doubleMode = true
 		Notifications:TopToAll({text="#game_mode_double_monsters_enabled", style={color="yellow"}, duration=5})
 	end
-	if keys.text == "-goldbags" and keys.playerid == 0 then
+	if keys.text == "-goldbags" then
 		if not _G._no_gold_bags then
 			_G._no_gold_bags = true
 			Notifications:TopToAll({text="Gold will be divided directly among connected playes", style={color="green"}, duration=7})
