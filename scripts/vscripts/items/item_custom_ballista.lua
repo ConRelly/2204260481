@@ -8,14 +8,14 @@ function item_custom_ballista:Spawn()
 		self:SetCurrentCharges(1)
 		if caster:HasModifier("modifier_super_scepter") then
 			self:SetPurchaseTime(0)
-			if RollPercentage(1) then
+			if RollPercentage(2) then
 				stacks = RandomInt(6, 20)
 			elseif RollPercentage(7) then
-				stacks = RandomInt(3, 10)
+				stacks = RandomInt(5, 13)
 			elseif RollPercentage(15) then
-				stacks = RandomInt(2, 7)
+				stacks = RandomInt(5, 10)
 			else
-				stacks = RandomInt(1, 5)
+				stacks = RandomInt(2, 7)
 			end	
 			self:SetCurrentCharges(stacks)
 		end	
@@ -49,7 +49,7 @@ function modifier_item_custom_ballista_buff:RemoveOnDeath() return false end
 function modifier_item_custom_ballista_buff:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_item_custom_ballista_buff:DeclareFunctions()
     return {MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-	MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE, MODIFIER_EVENT_ON_ATTACK_LANDED}
+	MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE, MODIFIER_PROPERTY_PROCATTACK_FEEDBACK}
 	
 end
 function modifier_item_custom_ballista_buff:GetModifierAttackRangeBonus()
@@ -77,32 +77,32 @@ if IsServer() then
 		self.parent = self:GetParent()
 		self.ability = self:GetAbility()
 		self.bonus_damage = self:GetAbility():GetSpecialValueFor("bonus_damage") * self:GetAbility():GetCurrentCharges()
-		self.chance = self:GetAbility():GetSpecialValueFor("chance")
+		--self.chance = self:GetAbility():GetSpecialValueFor("chance")
 		self.attacks = 0
 	end
-	function modifier_item_custom_ballista_buff:OnAttackLanded(keys)
+	function modifier_item_custom_ballista_buff:GetModifierProcAttack_Feedback(keys)
         local attacker = keys.attacker
 		local target = keys.target
-        if attacker == self.parent and not attacker:IsNull() then
-			self.attacks = self.attacks + 1
-			if self.attacks > 9 then
-				ApplyDamage({
-					ability = self.ability,
-					attacker = attacker,
-					damage = self.bonus_damage,
-					damage_type = DAMAGE_TYPE_PURE,
-					damage_flags = 16 + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL,
-					victim = target,
-				})
-				create_popup({
-					target = target,
-					value = self.bonus_damage,
-					color = Vector(183, 47, 234),
-					type = "spell",
-					pos = 6
-				})
-				self.attacks = 0
-			end	
-		end
+		local parent = self:GetParent()
+		self.attacks = self.attacks + 1
+		if self.attacks > 9 then
+			local damageTable = {
+				victim = target,
+				attacker = attacker,
+				damage = self.bonus_damage,
+				damage_type = DAMAGE_TYPE_PURE,
+				damage_flags = 16 + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL,
+				ability = self.ability, 
+			}
+			ApplyDamage(damageTable)
+			create_popup({
+				target = target,
+				value = self.bonus_damage,
+				color = Vector(183, 47, 234),
+				type = "spell",
+				pos = 6
+			})
+			self.attacks = 0
+		end	
 	end
 end

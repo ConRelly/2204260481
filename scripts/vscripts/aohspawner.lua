@@ -253,7 +253,7 @@ function AOHSpawner:_DoSpawn()
 			self._nUnitsSpawnedThisRound = self._nUnitsSpawnedThisRound + 1
 			self._nUnitsCurrentlyAlive = self._nUnitsCurrentlyAlive + 1
 			entUnit.Holdout_IsCore = true
-			entUnit:SetDeathXP(self._gameRound:GetXPPerCoreUnit())
+			--entUnit:SetDeathXP(self._gameRound:GetXPPerCoreUnit())  --xp now is given globally tru 'AOHGameRound:GiveXPToAllHeroes(drop_xp)' (dead gets half of their xp given to alive)
 		end
 	end
 end

@@ -13,6 +13,31 @@ function GetAllRealHeroes()
     return rheroes
 end
 
+local NotRegister = {
+    ["npc_playerhelp"] = true,
+    ["npc_dota_target_dummy"] = true,
+    ["npc_dummy_unit"] = true,
+    ["npc_dota_hero_target_dummy"] = true,
+    ["npc_courier_replacement"] = true,
+}
+function GetAllRealHeroesCon()
+	local rheroes = {}
+	for i = 0, DOTA_MAX_PLAYERS - 1 do
+		if PlayerResource:IsValidPlayer(i) then
+			if PlayerResource:GetPlayer(i) then
+				local hero = PlayerResource:GetSelectedHeroEntity(i)
+				if not NotRegister[hero:GetUnitName()] then
+					table.insert(rheroes, hero)
+				end
+			end   
+		end
+	end
+    return rheroes
+end
+
+
+
+
 function RefreshPlayers()
     local heroes = GetAllRealHeroes()
     for i=1, #heroes do
@@ -27,6 +52,7 @@ function RefreshPlayers()
 	end
 	RefillBottle()
 end
+
 
 function RefillBottle()
     local heroes = GetAllRealHeroes()

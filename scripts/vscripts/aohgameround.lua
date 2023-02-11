@@ -239,6 +239,7 @@ function AOHGameRound:OnEntityKilled(event)
 		self._nCoreUnitsKilled = self._nCoreUnitsKilled + 1
 		self:_CheckForGoldBagDrop(killedUnit)
 		self._gameMode:CheckForLootItemDrop(killedUnit)
+		self:GiveXPToAllHeroes(self:GetXPPerCoreUnit())
 	end
 
 	local attackerUnit = EntIndexToHScript(event.entindex_attacker or -1)
@@ -261,6 +262,38 @@ function AOHGameRound:OnEntityKilled(event)
 			end
 		end)
 	end	
+end
+
+function AOHGameRound:GiveXPToAllHeroes(drop_xp)
+	if not IsServer() then return end
+	local heroes = GetAllRealHeroesCon()
+	local alive_heroes = {}
+	local dead_heroes = {}
+	local dead_xp = 0
+	--divine alive and dead heroes and save total xp for dead heroes.
+	for i = 1, #heroes do
+		if heroes[i]:IsAlive() then
+			table.insert(alive_heroes, heroes[i])
+		elseif not heroes[i]:IsAlive() then
+			dead_xp = dead_xp + math.floor(drop_xp / (#heroes * 2))
+			table.insert(dead_heroes, heroes[i])
+		end
+	end
+	--subtract the dead_xp from toal = alive_xp, give the xp to all heroes
+	local alive_xp = drop_xp - dead_xp
+	if #alive_heroes > 0 then
+		for i = 1, #alive_heroes do
+			alive_heroes[i]:AddExperience(math.floor(alive_xp / #alive_heroes), false, false)
+			SendOverheadEventMessage(nil, OVERHEAD_ALERT_XP, alive_heroes[i], math.floor(alive_xp / #alive_heroes), nil)
+		end
+	end	
+
+	for i = 1, #dead_heroes do
+		if not dead_heroes[i]:IsAlive() then
+			dead_heroes[i]:AddExperience(math.floor(dead_xp / #dead_heroes), false, false)
+			SendOverheadEventMessage(nil, OVERHEAD_ALERT_XP, dead_heroes[i], math.floor(dead_xp / #dead_heroes), nil)
+		end
+	end
 end
 
 

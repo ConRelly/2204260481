@@ -718,11 +718,30 @@ function AOHGameMode:OnThink()
 			end
 		end
 		self:_CheckWin()
+		self:TrackDisconnectedPlayers()
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then		-- Safe guard catching any state that may exist beyond DOTA_GAMERULES_STATE_POST_GAME
 		return nil
 	end
 	return 1
 end
+local ABANDONED_THRESHOLD = 420 -- 7 minutes in seconds
+
+function AOHGameMode:TrackDisconnectedPlayers()
+	if not IsServer() then return end
+	local current_time = GameRules:GetDOTATime(false, false)
+	for i = 0, PlayerResource:GetPlayerCount() - 1 do
+		local player = PlayerResource:GetPlayer(i)
+		if not player then
+			local disconnect_time = PlayerResource:GetDisconnectTime(i)
+			if current_time - disconnect_time >= ABANDONED_THRESHOLD then
+				-- set player state to abandoned
+				PlayerResource:SetAbandoned(i, true)
+			end
+		end
+	end
+end
+
+
 
 function AOHGameMode:_RevealShop()
 	local shopPos = Entities:FindByName(nil, "the_shop"):GetAbsOrigin()

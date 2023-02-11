@@ -9,12 +9,19 @@ function autoapply( keys )
 	ability:SetCurrentCharges( ability:GetCurrentCharges() - 1 )
 	caster:RemoveItem(ability)
 end
-
-
+function _IsUndyingHero(playerid)
+	local hero = PlayerResource:GetSelectedHeroEntity(playerid)
+	if hero:GetUnitName() == "npc_dota_hero_undying" then
+		return true
+	else
+		return false
+	end	
+end
 function OnSpellStart(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	if caster:HasModifier("modifier_item_aghanims_shard") and (caster:HasModifier("modifier_item_ultimate_scepter_consumed") or caster:HasModifier("modifier_item_ultimate_scepter")) then
+	local playerid = caster:GetPlayerOwnerID()
+	if (caster:HasModifier("modifier_item_aghanims_shard") or _IsUndyingHero(playerid)) and (caster:HasModifier("modifier_item_ultimate_scepter_consumed") or caster:HasModifier("modifier_item_ultimate_scepter")) then
 		if ability:GetCurrentCharges() >= keys.Super_Scepter then
 			if (ability:GetCurrentCharges() - keys.Super_Scepter) == 0 then
 				caster:RemoveItem(ability)
@@ -26,7 +33,7 @@ function OnSpellStart(keys)
 			caster:AddItem(item)
 			caster:EmitSoundParams("Item.MoonShard.Consume", 1, 0.5, 0)
 		end
-	elseif caster:HasModifier("modifier_item_aghanims_shard") then
+	elseif (caster:HasModifier("modifier_item_aghanims_shard") or _IsUndyingHero(playerid))  then
 		if ability:GetCurrentCharges() >= keys.Scepter then
 			if (ability:GetCurrentCharges() - keys.Scepter) == 0 then
 				caster:RemoveItem(ability)
@@ -38,7 +45,7 @@ function OnSpellStart(keys)
 			caster:AddItem(item)
 			caster:EmitSoundParams("Item.MoonShard.Consume", 1, 0.5, 0)
 		end
-	else
+	elseif not _IsUndyingHero(playerid) then
 		if ability:GetCurrentCharges() >= keys.Shard then
 			if (ability:GetCurrentCharges() - keys.Shard) == 0 then
 				caster:RemoveItem(ability)
