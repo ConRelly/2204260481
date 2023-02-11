@@ -2339,7 +2339,7 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 * Xp from wave enemies is now global, disconnected players won't get any, dead heroes will only get half and the other half will be shared among living heroes.
 * If a player is disconnected for more than 7 minutes, they will get Abaddon status (their items should be dropable in this state).
-* Undying now can't create Aghanim's Shard from the Rossan fragments (it will be considered as if he already has the shard).
+* Undying now can't create Aghanim's Shard from the Roshan fragments (it will be considered as if he already has the shard).
 * Ballista SS effect will now have a minimum of 2 charges, and there's a slightly higher chance for greater success.
 
 

@@ -718,13 +718,14 @@ function AOHGameMode:OnThink()
 			end
 		end
 		self:_CheckWin()
-		self:TrackDisconnectedPlayers()
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then		-- Safe guard catching any state that may exist beyond DOTA_GAMERULES_STATE_POST_GAME
 		return nil
 	end
 	return 1
 end
-local ABANDONED_THRESHOLD = 420 -- 7 minutes in seconds
+
+--just an idea , GetDisconnectTime , SetAbandoned functions does not exist
+--[[ local ABANDONED_THRESHOLD = 420 -- 7 minutes in seconds
 
 function AOHGameMode:TrackDisconnectedPlayers()
 	if not IsServer() then return end
@@ -739,7 +740,7 @@ function AOHGameMode:TrackDisconnectedPlayers()
 			end
 		end
 	end
-end
+end ]]
 
 
 

@@ -328,7 +328,8 @@ function IsExcludeAbility(ability)
 		"item_mjz_bloodstone_ultimate_edible",
 		"item_thunder_hammer",
 		"item_thunder_gods_might",
-		"item_thunder_gods_might2",		
+		"item_thunder_gods_might2",	
+		"item_pipe_of_dezun",	
 -- Abilities
 		"phoenix_fire_spirits",
 		"mjz_phoenix_sun_ray",
@@ -412,6 +413,7 @@ function IsExcludeAbility9(ability)
 		"item_thunder_hammer",	
 		"item_thunder_gods_might",
 		"item_thunder_gods_might2",	
+		"item_pipe_of_dezun",
 -- Abilities
 		"mjz_tinker_quick_arm",
 		"naga_siren_song_of_the_siren",
