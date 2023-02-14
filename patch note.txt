@@ -2344,6 +2344,19 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Added back the 7 min disconnected gets kick, not sure how exactly will work and it might delete the hero and provoke some bug (report if yes). 
+* Added techies ultimate explode to the list of effects that can be reduced with "-effect_rate nr", fixed his bombs sometimes deal the dmg more then once per bomb to the same unit.
+* Reduced some of the part 1 "small brake" time.
+* Hard mode will give bonus armor to enemies based on their lvl.
+* Reduced Thunder Hammer requirement for next evolve.
+* Void , Aiolos , Moran have more HP.
+* and some other stuff.
+
+
+
+
+
+
 
 
 **Update Notes spellings will get corrected before the live update.

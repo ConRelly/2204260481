@@ -35,6 +35,7 @@ function modifier_hard_mode_boss:DeclareFunctions()
 		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
 		MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE,
 		MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
+		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 	}
 	return funcs
 end
@@ -47,6 +48,16 @@ end
 	--return 0.5
 --end
 
+function modifier_hard_mode_boss:GetModifierPhysicalArmorBonus() 
+	local parent = self:GetParent()
+	local lvl = parent:GetLevel() or 10
+	if lvl > 15 then 
+		lvl = lvl + 30
+	else
+		lvl = lvl + 14	
+	end	
+	return lvl
+end
 function modifier_hard_mode_boss:GetModifierIncomingDamage_Percentage()
 	return -65
 end

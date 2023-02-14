@@ -2201,6 +2201,7 @@
 	}
 	"npc_dota_hero_techies"
 	{
+		//"UnitLabel"				"no_underdog"
 		"Ability1"		"techies_sticky_bomb"
 		"Ability3"		"mjz_techies_suicide"
 		"Ability6"		"mjz_techies_land_mines"

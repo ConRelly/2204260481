@@ -1814,7 +1814,7 @@
 				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"16"
 				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"30"
+				"SpawnInterval"			"15"
 			}
 		}
 
@@ -2265,7 +2265,7 @@
 			"b" 
 			{
 				"NPCName"				"npc_boss_kobold_foreman"
-				"TotalUnitsToSpawn"		"20"
+				"TotalUnitsToSpawn"		"16"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"20"
 			}
@@ -3478,7 +3478,7 @@
 				//"NPCName"               "npc_dota_boss_aghanim"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"12"
+				"SpawnInterval"			"18"
 			}
 
             "b" 
@@ -3487,7 +3487,7 @@
 				//"NPCName"               "npc_boss_deathprophet"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"12"
+				"SpawnInterval"			"18"
 			}
 		}			
 		"2" // God			骷髅弓箭手

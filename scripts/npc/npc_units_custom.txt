@@ -486,7 +486,7 @@
 	"Model"						"models/creeps/neutral_creeps/n_creep_dragonspawn_a/n_creep_dragonspawn_a.vmdl"
 	"SoundSet"					"n_creep_Melee"
 	"ModelScale"				"1.0"
-	"Level"						"3"
+	"Level"						"6"
 	"ConsideredHero"			"1"
 
 	//"Ability1"					"custom_acid_spray"
@@ -495,8 +495,8 @@
 	"ArmorPhysical"				"14"
 	"MagicalResistance"			"35"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"			"265"
-	"AttackDamageMax"			"570"
+	"AttackDamageMin"			"565"
+	"AttackDamageMax"			"970"
 	"AttackRate"				"1.3"
 	"AttackAnimationPoint"		"0.3"
 	"AttackAcquisitionRange"	"4000"
@@ -517,7 +517,7 @@
 		"run"		"220"
 	}
 	"MovementTurnRate"			"0.5"
-	"StatusHealth"				"1060"
+	"StatusHealth"				"1760"
 	"StatusHealthRegen"			"0.25"
 	"StatusMana"				"100"
 	"StatusManaRegen"			"10"
@@ -558,7 +558,7 @@
 	"vscripts"					"bosses/attack_move.lua"
 	"SoundSet"					"Hero_Juggernaut"
 	"ModelScale"				"1.6"
-	"Level"						"4"
+	"Level"						"19"
 	"CanBeDominated"			"0"
 	"ConsideredHero"			"1"
 	"HasInventory"				"1"
@@ -1737,7 +1737,7 @@
 	"SoundSet"				  "Hero_Bristleback"
 	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_bristleback.vsndevts"
 	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_bristleback.vsndevts"
-	"Level"						"16"
+	"Level"						"26"
 	"ConsideredHero"			"1"
 	"CanBeDominated"			"0"
 	"HasInventory"				"1"
@@ -2043,7 +2043,7 @@
 	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_luna.vsndevts"
 	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_luna.vsndevts"
 	"HasInventory"			  "1"
-	"Level"						"16"
+	"Level"						"28"
 	"ModelScale" 				"1.7"
 	"ConsideredHero"			"1"
 	"CanBeDominated"			"0"
@@ -2458,7 +2458,7 @@
 	"vscripts"					"bosses/attack_move.lua"
 	"SoundSet"					"Hero_Tidehunter"
 	"ModelScale"				"1.5"
-	"Level"						"16"
+	"Level"						"36"
 	"CanBeDominated"			"0"
 	"ConsideredHero"			"1"
 	"HasInventory"				"1"
@@ -2624,7 +2624,7 @@
 	"vscripts"					"bosses/attack_move.lua"	// Class of entity of link to.
 	"SoundSet"					"Hero_NyxAssassin"					// Name of sound set.
 	"ModelScale"				"2.0"
-	"Level"						"16"
+	"Level"						"38"
 	"CanBeDominated"			"0"
 	"ConsideredHero"			"1"
 	"HasInventory"				"1"
@@ -14042,8 +14042,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"23000"
-		"AttackDamageMax"			"28750"
+		"AttackDamageMin"			"28000"
+		"AttackDamageMax"			"34750"
 		"AttackRate"				"0.5"
 		"BaseAttackSpeed"		   "850"
 		"AttackAnimationPoint"		"0.53"
@@ -14506,8 +14506,8 @@
 		//"Ability21"				  "aghanim_empty_spell6"
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"			 "150"
-		"MagicalResistance"		 "90"
+		"ArmorPhysical"			 "200"
+		"MagicalResistance"		 "91"
 
 		// Attack
 		//----------------------------------------------------------------
@@ -14542,8 +14542,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"			  "2860000"
-		"StatusHealthRegen"		 "6000"
+		"StatusHealth"			  "3660000"
+		"StatusHealthRegen"		 "10000"
 		"StatusMana"				"45000"
 		"StatusManaRegen"		   "2500"
 		
@@ -14724,7 +14724,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"			 "120"
-		"MagicalResistance"		 "91"
+		"MagicalResistance"		 "92"
 
 		// Attack
 		//----------------------------------------------------------------
@@ -14759,8 +14759,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"			  "2060000"
-		"StatusHealthRegen"		 "10000"
+		"StatusHealth"			  "3260000"
+		"StatusHealthRegen"		 "15000"
 		"StatusMana"				"45000"
 		"StatusManaRegen"		   "2500"
 		
@@ -15229,7 +15229,7 @@
 	"Ability16"				 "draks_unholy_strength"
 	"Ability17"				 "aghanim_blink"	
 	"ArmorPhysical"			 "420"		 // Physical protection.
-	"MagicalResistance"		 "95"
+	"MagicalResistance"		 "96"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"		   "25000"		// Damage range min.
 	"AttackDamageMax"		   "48000"	   // Damage range max.
@@ -15247,7 +15247,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "100"	   // Speed.		   
-	"StatusHealth"			  "9500000"	  // Base health.
+	"StatusHealth"			  "12500000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
@@ -15405,7 +15405,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "100"	   // Speed.		   
-	"StatusHealth"			  "9500000"	  // Base health.
+	"StatusHealth"			  "12500000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
@@ -15547,7 +15547,7 @@
 	"Ability16"				 "draks_unholy_strength"
 	"Ability17"				 "aghanim_blink"	
 	"ArmorPhysical"			 "400"		 // Physical protection.
-	"MagicalResistance"		 "95"
+	"MagicalResistance"		 "96"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"		   "1000"		// Damage range min.
 	"AttackDamageMax"		   "1000"	   // Damage range max.
@@ -15565,7 +15565,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "700"	   // Speed.		   
-	"StatusHealth"			  "8000000"	  // Base health.
+	"StatusHealth"			  "9000000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   

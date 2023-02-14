@@ -23,7 +23,7 @@ function modifier_power_boss:GetModifierTotalDamageOutgoing_Percentage() return 
 function modifier_power_boss:GetModifierStatusResistanceStacking() return 30 end
 function modifier_power_boss:GetModifierIncomingDamage_Percentage() return -25 end
 function modifier_power_boss:GetModifierMagicalResistanceBonus() return 65 end
-function modifier_power_boss:GetModifierPhysicalArmorBonus() return 50 end
+function modifier_power_boss:GetModifierPhysicalArmorBonus() return 60 end
 function modifier_power_boss:GetModifierExtraHealthPercentage() return 220 end
 
 --[[
@@ -40,7 +40,7 @@ end
 if IsServer() then
 	function modifier_power_boss:OnCreated()
 		local parent = self:GetParent()
-		self.player_count = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS)
+		--self.player_count = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS)
 	end
 end
 

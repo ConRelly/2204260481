@@ -21,7 +21,7 @@ function mjz_techies_land_mines:OnSpellStart()
 		local mine = CreateUnitByName("npc_dota_techies_land_mine", self:GetCursorPosition(), true, caster, caster, caster:GetTeamNumber())
 		mine:SetControllableByPlayer(caster:GetPlayerID(), true)
 		mine:SetOwner(caster)
-		mine:AddNewModifier(caster, self, "modifier_techies_land_mine", nil)
+		--mine:AddNewModifier(caster, self, "modifier_techies_land_mine", nil)
 		mine:AddNewModifier(caster, self, "modifier_mjz_techies_land_mine_trigger", nil)
 		-- mine:AddRadiusIndicator(caster, self, self:GetAOERadius(), 150, 22, 22, false, false)
 
@@ -91,11 +91,14 @@ function modifier_mjz_techies_land_mine_trigger:OnIntervalThink()
 		)
 		if #enemies > 0 then
 			local true_damage = self:GetAbility():GetSpecialValueFor("base_damage") + self:GetCaster():GetIntellect() * (self:GetAbility():GetSpecialValueFor("int_damage") + talent_value(self:GetCaster(), "special_bonus_unique_mjz_techies_land_mines_int_damage"))
---[[ 				local explosionParticle = ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
-				ParticleManager:SetParticleControl(explosionParticle, 0, mine:GetAbsOrigin())
-				ParticleManager:SetParticleControl(explosionParticle, 1, mine:GetAbsOrigin())
-				ParticleManager:SetParticleControl(explosionParticle, 2, Vector(self:GetAbility():GetAOERadius(), 1, 1))
-				ParticleManager:ReleaseParticleIndex(explosionParticle) ]]
+ 			if RollPercentage(_G._effect_rate) then
+				local explosionParticle = ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
+					ParticleManager:SetParticleControl(explosionParticle, 0, mine:GetAbsOrigin())
+					ParticleManager:SetParticleControl(explosionParticle, 1, mine:GetAbsOrigin())
+					ParticleManager:SetParticleControl(explosionParticle, 2, Vector(self:GetAbility():GetAOERadius(), 1, 1))
+					self:AddParticle(explosionParticle, false, false, 0, false, false)
+					ParticleManager:ReleaseParticleIndex(explosionParticle)
+			end		
 			for _, enemy in pairs(enemies) do
 				print(true_damage .. "bomb dmgg")
 				ApplyDamage({
@@ -108,10 +111,14 @@ function modifier_mjz_techies_land_mine_trigger:OnIntervalThink()
 				})
 				enemy:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_techies_land_mine_burn", {duration = self:GetAbility():GetSpecialValueFor("burn_duration")})
 			end
+			mine:EmitSoundParams( "Hero_Techies.RemoteMine.Detonate", 0, 0.7, 0)
 			--mine:EmitSound("Hero_Techies.LandMine.Detonate")
---[[ 			Timers:CreateTimer(0.1, function()
-				mine:ForceKill(false)
-			end) ]]
+			Timers:CreateTimer(0.1, function()
+				if mine ~= nil then
+					mine:ForceKill(false)
+				end	
+			end)
+			self:StartIntervalThink(-1)
 		end
 	end
 end

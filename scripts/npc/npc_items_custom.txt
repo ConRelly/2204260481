@@ -20898,7 +20898,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"495"
+				"bonus_armor"			"525"
 			}
 			"03"
 			{
@@ -34103,7 +34103,7 @@
 			"22"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"charge_awaken"			  "2000"
+				"charge_awaken"			  "1600"
 			}							
 		}
 	}
