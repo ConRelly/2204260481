@@ -4270,62 +4270,7 @@
 		}
 	}
 
-	//=================================================================================================================
-	// Clinkz: Strafe
-	//=================================================================================================================
-	"clinkz_strafe"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"5259"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
-	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0"
-		"LevelsBetweenUpgrades"         "8"
-		"AbilityChannelTime"			"1.5 1.9 2.3 2.7"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityChannelAnimation"	"ACT_DOTA_CHANNEL_ABILITY_1"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"28 24 20 16"
-		
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"40 50 60 70"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"wave_count"					"6 9 15 23"
-				"LinkedSpecialBonus"		"special_bonus_unique_clinkz_12"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_speed_bonus_pct"	"90 120 150 180"
-				"LinkedSpecialBonus"			"special_bonus_unique_clinkz_7"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"range"						"1250 1600 1950 2900"				
-			}
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
-	}
 
 //=================================================================================================================
 // Clinkz: Strafe
@@ -4363,18 +4308,17 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityValues"
 	{
-			"wave_count"
-			{
-				"value"			"6 9 15 23"
-				"LinkedSpecialBonus"		"special_bonus_unique_clinkz_12"
-			}
-			"range"	"1250 1800 1950 2400"				
-			"damage_pct"	
-			{
-				"value"		"190 220 250 380"				
-				"special_bonus_unique_clinkz_4"	"+120"
-			}
-		
+		"wave_count"
+		{
+			"value"			"6 9 15 23"
+			"LinkedSpecialBonus"		"special_bonus_unique_clinkz_12"
+		}
+		"range"	"1250 1800 1950 2400"				
+		"damage_pct"	
+		{
+			"value"		"90 120 180 220"				
+			"special_bonus_unique_clinkz_4"	"+80"
+		}		
 	}
 	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 }
@@ -4680,6 +4624,14 @@
 	"dazzle_shallow_grave"
 	{
 		"AbilityCooldown"				"75"
+		"AbilitySpecial"
+		{
+			"01"
+			{	
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"3.0 3.3 3.6 4.0"
+			}
+		}			
 	}
 	"death_prophet_carrion_swarm"
 	{
@@ -6795,6 +6747,10 @@
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
 	
 	"leshrac_pulse_nova"
 	{
@@ -19376,7 +19332,7 @@
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"165"
+		"AbilityCastRange"				"3650"
 		"AbilityCastPoint"				"0.2"
 
 		// Time		

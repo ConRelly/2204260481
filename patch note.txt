@@ -2353,6 +2353,7 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * and some other stuff.
 
 
+* New SS effect for Leshrac Lightning Storm and a new talent.
 
 
 

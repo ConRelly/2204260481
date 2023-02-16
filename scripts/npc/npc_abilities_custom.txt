@@ -26484,12 +26484,12 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"slow_duration"			"7.0"
-				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_2"
+				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_lightning_storm_duration"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"interval_scepter"		"0.4"
+				"interval_scepter"		"0.5"
 				"RequiresScepter"		"1"
 			}
 			"08"
@@ -26509,7 +26509,12 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_int"		"10" // hardcoded
-			}			
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ss_chance"			"15" 
+			}						
 		}
 	}
 	"special_bonus_unique_mjz_leshrac_lightning_storm_int_damage"
@@ -26527,6 +26532,23 @@
 			}
 		}
 	}
+
+	"special_bonus_unique_leshrac_lightning_storm_duration"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"5"
+			}
+		}
+	}
+
 
 	"special_bonus_unique_mjz_leshrac_lightning_storm_aghanim"
 	{

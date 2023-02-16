@@ -1,6 +1,8 @@
 
 LinkLuaModifier("modifier_mjz_leshrac_lightning_storm", "abilities/hero_leshrac/mjz_leshrac_lightning_storm.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_leshrac_lightning_storm_slow", "abilities/hero_leshrac/mjz_leshrac_lightning_storm.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_leshrac_lightning_storm_int", "abilities/hero_leshrac/mjz_leshrac_lightning_storm.lua", LUA_MODIFIER_MOTION_NONE)
+
 
 mjz_leshrac_lightning_storm = class({})
 local ability_class = mjz_leshrac_lightning_storm
@@ -139,12 +141,19 @@ function modifier_class:IsPurgable() return false end
 
 if IsServer() then
 
+
     function modifier_class:OnCreated(table)
         local ability = self:GetAbility()
         local interval_scepter = ability:GetSpecialValueFor('interval_scepter')
+        local caster = self:GetCaster()
+        local has_ss = caster:HasModifier("modifier_super_scepter")
+        if has_ss then
+            interval_scepter = interval_scepter / 2
 
+        end   
         self:StartIntervalThink(interval_scepter)
     end
+
 
     function modifier_class:OnIntervalThink()
         local caster = self:GetCaster()
@@ -155,7 +164,12 @@ if IsServer() then
 
         local radius = ability:GetAOERadius()
         local count  = GetTalentSpecialValueFor(ability, "count_scepter")
-        
+        --SS effect
+        local chance = ability:GetSpecialValueFor("ss_chance")        
+        local has_ss = caster:HasModifier("modifier_super_scepter")
+        local modif_tooltip = "modifier_mjz_leshrac_lightning_storm_int"
+        local has_modif_tooltip = caster:HasModifier(modif_tooltip)  
+        ----
         ability.jump_count = ability:GetSpecialValueFor("jump_count")
         ability.radius = ability:GetSpecialValueFor("radius")
         ability.jump_delay = ability:GetSpecialValueFor("jump_delay")
@@ -183,6 +197,21 @@ if IsServer() then
                     ability = ability,
                     bounceTable = {} 
                 })
+                if has_ss then
+                    local randomSeed = math.random(1, 100)
+                    if randomSeed <= chance then
+                        local bonus = 1
+                        caster:ModifyIntellect(bonus)
+                        if has_modif_tooltip then
+                            local modifier = caster:FindModifierByName(modif_tooltip)
+                            modifier:SetStackCount(modifier:GetStackCount() + bonus)
+                        elseif not caster:HasModifier("modifier_tome_of_super_scepter") then
+                            local modifier = caster:AddNewModifier(caster, ability, modif_tooltip, {})
+                            modifier:SetStackCount(bonus)
+                            self:OnCreated()  
+                        end      
+                    end         
+                end                
             end
         end
 
@@ -231,6 +260,23 @@ function modifier_mjz_leshrac_lightning_storm_slow:GetEffectAttachType()
 end
 
 ------------------------------------------------------------------------------
+----stack tooltip
+if modifier_mjz_leshrac_lightning_storm_int == nil then modifier_mjz_leshrac_lightning_storm_int = class({}) end
+local modifier_lightning_storm_int = modifier_mjz_leshrac_lightning_storm_int
+
+function modifier_lightning_storm_int:IsHidden() return false end
+function modifier_lightning_storm_int:IsPurgable() return false end
+function modifier_lightning_storm_int:IsDebuff() return false end
+function modifier_lightning_storm_int:RemoveOnDeath() return false end
+function modifier_lightning_storm_int:DeclareFunctions()
+	return {MODIFIER_PROPERTY_TOOLTIP}
+end
+function modifier_lightning_storm_int:OnTooltip()
+	return self:GetStackCount()
+end
+
+
+
 
 -- 是否学习了指定天赋技能
 function HasTalent(unit, talentName)
