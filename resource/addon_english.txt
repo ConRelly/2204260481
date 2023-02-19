@@ -4559,7 +4559,7 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot_Note0"								"Powershot will destroy trees in its area of effect."
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot_arrow_range"							"RANGE:"
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot_attack_damage"						"%ATTACK DAMAGE:"
-	"DOTA_Tooltip_ability_mjz_windrunner_powershot_debuff_incoming_damage"				"%INCREASED ENEMY INCOMING DAMAGE:"
+	//"DOTA_Tooltip_ability_mjz_windrunner_powershot_debuff_incoming_damage"				"%INCREASED ENEMY INCOMING DAMAGE:"
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot_debuff_inco_duration"				"DEBUFF DURATION:"
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot_shot_chance"							"%STRAIGHT SHOOTER CHANCE:"
 	"DOTA_Tooltip_modifier_mjz_windrunner_powershot_debuff"								"You be shot by an arrow"

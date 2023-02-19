@@ -1,4 +1,4 @@
-LinkLuaModifier("modifier_mjz_windrunner_powershot_debuff", "abilities/hero_windrunner/mjz_windrunner_powershot.lua", LUA_MODIFIER_MOTION_NONE)
+--LinkLuaModifier("modifier_mjz_windrunner_powershot_debuff", "abilities/hero_windrunner/mjz_windrunner_powershot.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_powershot_passive", "abilities/hero_windrunner/mjz_windrunner_powershot", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_powershot_max_charge", "abilities/hero_windrunner/mjz_windrunner_powershot", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_powershot_shard", "abilities/hero_windrunner/mjz_windrunner_powershot", LUA_MODIFIER_MOTION_NONE)
@@ -151,9 +151,9 @@ function mjz_windrunner_powershot:OnProjectileHit_ExtraData(target, loc, ExtraDa
 		if caster:HasModifier("modifier_item_aghanims_shard") then
 			target:AddNewModifier(caster, self, "modifier_powershot_shard", {duration = self:GetSpecialValueFor("debuff_duration")})
 		end
-		if not target:HasModifier("modifier_mjz_faceless_the_world_aura_effect_enemy") then
+--[[ 		if not target:HasModifier("modifier_mjz_faceless_the_world_aura_effect_enemy") then
 			target:AddNewModifier(caster, self, "modifier_mjz_windrunner_powershot_debuff", {duration = self:GetSpecialValueFor("debuff_inco_duration")})
-		end
+		end ]]
 
 		local damage = (ExtraData.damage or self.damage) + hits * self:GetSpecialValueFor("damage_increase") / 100
 		ApplyDamage({victim = target, attacker = caster, ability = self, damage_type = self:GetAbilityDamageType(), damage = damage, damage_flags = DOTA_DAMAGE_FLAG_NONE})
@@ -174,9 +174,9 @@ function mjz_windrunner_powershot:OnProjectileHit_ExtraData(target, loc, ExtraDa
 	end
 end
 
----------------------------------------------------------------------------------------
+-------------removed , incoming dmg amp brackets last wave balance and future implementations--------------------------
 
-modifier_mjz_windrunner_powershot_debuff = class({})
+--[[ modifier_mjz_windrunner_powershot_debuff = class({})
 function modifier_mjz_windrunner_powershot_debuff:IsHidden() return false end
 function modifier_mjz_windrunner_powershot_debuff:IsPurgable() return false end
 function modifier_mjz_windrunner_powershot_debuff:DeclareFunctions() 
@@ -185,7 +185,7 @@ end
 function modifier_mjz_windrunner_powershot_debuff:GetModifierIncomingDamage_Percentage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("debuff_incoming_damage") end
 end
-
+ ]]
 ---------------------------------------------------------------------------------------
 
 modifier_powershot_shard = class({})
@@ -308,7 +308,7 @@ function CalculateDirection(ent1, ent2)
 	return direction
 end
 
--- 获得技能数据中的数据值，如果学习了连接的天赋技能，就返回相加结果
+
 function GetTalentSpecialValueFor(ability, value)
     local base = ability:GetSpecialValueFor(value)
     local talentName

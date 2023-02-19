@@ -429,7 +429,7 @@ function amalgamation_target:OnIntervalThink()
 			end	
 
 			if parent:HasModifier("modifier_symbiosis_exhaust") then return end
-			if not _G._symbiosisOn then return end 
+			if not _G.symbiosisOn then return end 
 			if not parent:IsHero() then return end
 			local caster_str = caster:GetStrength()
 			local caster_agi = caster:GetAgility()
@@ -446,38 +446,41 @@ function amalgamation_target:OnIntervalThink()
 					if not parent:HasModifier("modifier_symbiosis_exhaust_trigger") then
 						parent:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_symbiosis_exhaust_trigger", {duration = transfrom_duration})
 					end
-				end					
-				---stats
-				local target_str_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_str", {})
-				target_str_Modifier:SetStackCount(caster_str * (ability:GetSpecialValueFor("venom_str") / 100) )
-				local target_agi_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_agi", {})
-				target_agi_Modifier:SetStackCount(caster_agi * (ability:GetSpecialValueFor("venom_agi") / 100) )
-				local target_int_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_int", {})
-				target_int_Modifier:SetStackCount(caster_int * (ability:GetSpecialValueFor("venom_int") / 100) )
-				---stats
-				local target_spellamp_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_spell_amp", {})
-				target_spellamp_Modifier:SetStackCount(caster_spellamp)				
+								
+				    ---stats
+					local target_str_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_str", {})
+					target_str_Modifier:SetStackCount(caster_str * (ability:GetSpecialValueFor("venom_str") / 100) )
+					local target_agi_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_agi", {})
+					target_agi_Modifier:SetStackCount(caster_agi * (ability:GetSpecialValueFor("venom_agi") / 100) )
+					local target_int_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_int", {})
+					target_int_Modifier:SetStackCount(caster_int * (ability:GetSpecialValueFor("venom_int") / 100) )
+					---stats
+					local target_spellamp_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_spell_amp", {})
+					target_spellamp_Modifier:SetStackCount(caster_spellamp)	
+				end			
 			end
 			if (ability:GetAutoCastState() and carnage_on) or (marci and carnage_on) then
 				if parent and parent:IsAlive() then
 					if not parent:HasModifier("modifier_symbiosis_exhaust_trigger") then
 						parent:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_symbiosis_exhaust_trigger", {duration = transfrom_duration})
 					end
-				end					
-				---stats
-				local target_str_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_str", {})
-				target_str_Modifier:SetStackCount(caster_str * (ability:GetSpecialValueFor("carnage_str") / 100) )
-				local target_agi_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_agi", {})
-				target_agi_Modifier:SetStackCount(caster_agi * (ability:GetSpecialValueFor("carnage_agi") / 100) )
-				local target_int_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_int", {})
-				target_int_Modifier:SetStackCount(caster_int * (ability:GetSpecialValueFor("carnage_int") / 100) )
-				---stats
-				local target_ms_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_ms_bonus", {})
-				target_ms_Modifier:SetStackCount(caster_base_ms * (ability:GetSpecialValueFor("carnage_base_ms") /100))
-				local target_greendmg_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_bonus_attack", {})
-				target_greendmg_Modifier:SetStackCount((caster_basedmg * (ability:GetSpecialValueFor("carnage_greendmg") / 100) /1000) ) -- /1000 to avoid to high amount stacks
-				local target_basedmg_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_base_attack", {})
-				target_basedmg_Modifier:SetStackCount((caster_greendmg * (ability:GetSpecialValueFor("carnage_basedmg") / 100)/100) )	-- /100 to avoid to high amount stacks							
+								
+					---stats
+					local target_str_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_str", {})
+					target_str_Modifier:SetStackCount(caster_str * (ability:GetSpecialValueFor("carnage_str") / 100) )
+					local target_agi_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_agi", {})
+					target_agi_Modifier:SetStackCount(caster_agi * (ability:GetSpecialValueFor("carnage_agi") / 100) )
+					local target_int_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_int", {})
+					target_int_Modifier:SetStackCount(caster_int * (ability:GetSpecialValueFor("carnage_int") / 100) )
+					---stats
+					local target_ms_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_ms_bonus", {})
+					target_ms_Modifier:SetStackCount(caster_base_ms * (ability:GetSpecialValueFor("carnage_base_ms") /100))
+					local target_greendmg_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_bonus_attack", {})
+					target_greendmg_Modifier:SetStackCount((caster_basedmg * (ability:GetSpecialValueFor("carnage_greendmg") / 100) /1000) ) -- /1000 to avoid to high amount stacks
+					local target_basedmg_Modifier = parent:AddNewModifier(caster, ability, "amalgamation_target_base_attack", {})
+					target_basedmg_Modifier:SetStackCount((caster_greendmg * (ability:GetSpecialValueFor("carnage_basedmg") / 100)/100) )	-- /100 to avoid to high amount stacks							
+				end
+
 			end	
 
 		end

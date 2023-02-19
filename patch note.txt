@@ -2354,7 +2354,8 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 * New SS effect for Leshrac Lightning Storm and a new talent.
-
+* Fix Amalgamation SS effect not transforming the host.
+* Fix edible octarine giving 45% cdr instead of 49%.
 
 
 

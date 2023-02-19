@@ -187,13 +187,13 @@ function modifier_bigan_octarine_core_edible_eated:DeclareFunctions()
 	return {MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_MANA_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS}
 end
 function modifier_bigan_octarine_core_edible_eated:GetModifierHealthBonus()
-	return 3500
+	return 4500
 end
 function modifier_bigan_octarine_core_edible_eated:GetModifierManaBonus()
-	return 3500
+	return 4500
 end
 function modifier_bigan_octarine_core_edible_eated:GetModifierBonusStats_Intellect()
-	return 190
+	return 290
 end
 
 ----------------------
@@ -231,7 +231,7 @@ function modifier_octarine_core_cdr:RemoveOnDeath() return false end
 function modifier_octarine_core_cdr:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT end
 function modifier_octarine_core_cdr:GetModifierPureSpellLifesteal()
 	if self:GetCaster():HasModifier(ocratine3_eated) then
-		return 2
+		return 3
 	end
 	if self:GetAbility() then
 		return self:GetAbility():GetSpecialValueFor("lifesteal")
@@ -239,7 +239,7 @@ function modifier_octarine_core_cdr:GetModifierPureSpellLifesteal()
 end
 function modifier_octarine_core_cdr:GetCustomStackingCDR()
 	if self:GetCaster():HasModifier(ocratine3_eated) then
-		return 45
+		return 49
 	end
 	if self:GetAbility() then
 		return self:GetAbility():GetSpecialValueFor("bonus_cooldown")

@@ -33970,7 +33970,7 @@
 			"channel_time"					"3"
 			"debuff_incoming_damage"
 			{
-				"value"						"5"
+				"value"						"0"
 				"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
 			}
 			"debuff_duration"				"9"
@@ -43000,7 +43000,7 @@
 			}
 			"stat_scepter"
 			{
-				"value"					"0.1"
+				"value"					"0.2"
 				"RequiresScepter"		"1"
 			}
 		}
