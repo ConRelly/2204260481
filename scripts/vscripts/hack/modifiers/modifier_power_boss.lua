@@ -24,7 +24,7 @@ function modifier_power_boss:GetModifierStatusResistanceStacking() return 30 end
 function modifier_power_boss:GetModifierIncomingDamage_Percentage() return -25 end
 function modifier_power_boss:GetModifierMagicalResistanceBonus() return 65 end
 function modifier_power_boss:GetModifierPhysicalArmorBonus() return 60 end
-function modifier_power_boss:GetModifierExtraHealthPercentage() return 220 end
+function modifier_power_boss:GetModifierExtraHealthPercentage() return 240 end
 
 --[[
 function modifier_power_boss:OnAttack(keys)

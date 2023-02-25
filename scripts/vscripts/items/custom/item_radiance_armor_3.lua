@@ -104,6 +104,7 @@ function modifier_item_radiance_armor_aura_3:OnCreated()
 		
 		local caster = self:GetCaster()
 		local ability = self:GetAbility()
+		if caster == nil then return end
 		self.base_damage = ability:GetSpecialValueFor("aura_dmg")
 		self.aura_dmg_pct = ability:GetSpecialValueFor("aura_dmg_pct")
 		self.aura_radius = ability:GetSpecialValueFor("aura_radius")
@@ -137,6 +138,7 @@ end
 function modifier_item_radiance_armor_aura_3:OnIntervalThink()
 	if IsServer() then
 		local caster = self:GetCaster()
+		if caster == nil then return end
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
 		local str = caster:GetStrength()

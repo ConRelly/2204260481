@@ -6773,7 +6773,7 @@ You can't target yourself."
 "DOTA_Tooltip_ability_nevermore_custom_necromastery_Description"	"Shadow Fiend steals the soul from units he hits, gaining bonus damage. On death, he releases %necromastery_soul_release%%% of them from bondage."
 "DOTA_Tooltip_ability_nevermore_custom_necromastery_Lore"								"Harvested souls swirl in and out of the Abysm, empowering the Shadow Fiend to increase the size of his collection."
 "DOTA_Tooltip_ability_nevermore_custom_necromastery_necromastery_max_souls"				"MAX SOULS:"
-"DOTA_Tooltip_ability_nevermore_custom_necromastery_necromastery_damage_per_soul"		"DAMAGE PER SOUL:"
+"DOTA_Tooltip_ability_nevermore_custom_necromastery_necromastery_damage_per_soul"		"BASE DAMAGE PER SOUL:"
 "DOTA_Tooltip_ability_nevermore_custom_necromastery_spell_amp_per_soul"				  "%Spell Amp Per Soul:"
 "DOTA_Tooltip_ability_nevermore_custom_necromastery_necromastery_max_souls_scepter"	 "SCEPTER MAX SOULS:"
 "DOTA_Tooltip_ability_nevermore_custom_necromastery_scepter_description"	"Increases max souls by %scepter_bonus_souls%."
@@ -6781,7 +6781,7 @@ You can't target yourself."
 
 
 "DOTA_Tooltip_modifier_nevermore_custom_necromastery"								"Necromastery"
-"DOTA_Tooltip_modifier_nevermore_custom_necromastery_Description"					"Stored souls granting an additional %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% bonus damage and %fMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% spell amplification."
+"DOTA_Tooltip_modifier_nevermore_custom_necromastery_Description"					"Stored souls granting an additional %dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% bonus BaseDamage and %fMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% spell amplification."
 "DOTA_Tooltip_modifier_necromastery_shard"					"Necromastery Crit"
 "DOTA_Tooltip_modifier_necromastery_shard_Description"		"The next attack will deal %dMODIFIER_PROPERTY_TOOLTIP%%% crit damage."
 "DOTA_Tooltip_ability_nevermore_custom_requiem"										"<font color='#f2da5b'>Requiem of Souls</font>"
@@ -6793,6 +6793,8 @@ You can't target yourself."
 "DOTA_Tooltip_ability_nevermore_custom_requiem_Lore"								"The captured souls of those past slain are released to ravage their former allies."
 "DOTA_Tooltip_ability_nevermore_custom_requiem_Note0"								"One line is generated from Shadow Fiend for every 3 souls in his possession."
 "DOTA_Tooltip_ability_nevermore_custom_requiem_agility_mult"				  		"Agility As Bonus Damage:"
+
+"DOTA_Tooltip_Ability_special_bonus_unique_mjz_nevermore_custom_requiem_agi"				"+{s:value} Agility as bonus Damage for <font color='#f2da5b'>Requiem of Souls</font>"	
 
 
 "DOTA_Tooltip_ability_mjz_nevermore_shadowraze"									"<font color='#f2da5b'>Shadowraze</font>"
@@ -6807,9 +6809,9 @@ You can't target yourself."
 "DOTA_Tooltip_Ability_special_bonus_unique_mjz_nevermore_shadowraze_agi_bonus"				"+{s:value} Base Agility for each enemy hit with<font color='#f2da5b'>Shadowraze</font>"	
 
 "DOTA_Tooltip_modifier_mjz_nevermore_shadowraze_stack"								"<font color='#f2da5b'>Shadowraze</font>"
-"DOTA_Tooltip_modifier_mjz_nevermore_shadowraze_stack_description"					"Receiving %dMODIFIER_PROPERTY_TOOLTIP% bonus damage from each Shadowraze attack.
+"DOTA_Tooltip_modifier_mjz_nevermore_shadowraze_stack_description"					"Receiving %dMODIFIER_PROPERTY_TOOLTIP% bonus damage from each Shadowraze attack."
 "DOTA_Tooltip_modifier_mjz_nevermore_shadowraze_stack_agi"								"<font color='#f2da5b'>Shadowraze</font>"
-"DOTA_Tooltip_modifier_mjz_nevermore_shadowraze_stack_agi_description"					"You have colected %dMODIFIER_PROPERTY_TOOLTIP%  Base Agility.
+"DOTA_Tooltip_modifier_mjz_nevermore_shadowraze_stack_agi_description"					"You have colected %dMODIFIER_PROPERTY_TOOLTIP%  Base Agility."
 
 
 
@@ -9534,7 +9536,7 @@ Required Level: %required_level%
 "DOTA_Tooltip_Ability_item_orb_of_destruction_2_duration"		"DURATION:"
 
 "DOTA_Tooltip_ability_item_all_essence"								 "Elemental"
-"DOTA_Tooltip_ability_item_all_essence_Description"					 "Combined from all elements that drop in hard mode, Use in evolving items"
+"DOTA_Tooltip_ability_item_all_essence_Description"					 "Combined from all elements that drop in hard mode, Use in evolving items or Dissasemble to get elemental Sphere's"
 
 	"DOTA_Tooltip_ability_grow_strong"				"Grow Strong"
 	"DOTA_Tooltip_ability_grow_strong_Description"	"Become stronger as time passes! \n<h1><font color='#F67C16'>Passive: Strong Attack </h1></font><h2><font color='#F67C16'> You have a %crit_chance%%% chance to attack with immense power, inflicting (%crit_per_str%%% * owner's Strength) + 100% damage and stunning the target! </font> </h2>"

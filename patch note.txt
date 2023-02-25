@@ -2344,6 +2344,8 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+
+
 * Added back the 7 min disconnected gets kick, not sure how exactly will work and it might delete the hero and provoke some bug (report if yes). 
 * Added techies ultimate explode to the list of effects that can be reduced with "-effect_rate nr", fixed his bombs sometimes deal the dmg more then once per bomb to the same unit.
 * Reduced some of the part 1 "small brake" time.
@@ -2353,9 +2355,23 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * and some other stuff.
 
 
-* New SS effect for Leshrac Lightning Storm and a new talent.
-* Fix Amalgamation SS effect not transforming the host.
-* Fix edible octarine giving 45% cdr instead of 49%.
+
+* New SS effect for Leshrac Lightning Storm and new talent.
+* Fixed Amalgamation SS effect to not transform the host.
+* Fixed Edible Octarine to give 49% CDR instead of 45%.
+* Removed last debuff for Dmg reduction (Wind Ranger W).
+* Nevermore has a new talent, more souls from Aghanim, Necromastery dmg from souls buffed (talent too) and now the bonus dmg is base dmg, btw his ult works with blue multicast.
+* Lowered Clinkz strafe dmg % bonus 
+* Techies, Bane is no longer an underdog.
+* Dazzle W "adjusted".
+* Spheres no longer drop, instead Elemental has 2x chance to drop (same result but less work to manage).
+* Fixed Crystal Maiden Ultimate with Blue multicast that lasts forever, still works but now all extra casts disappear after 10 sec (max channeling duration).
+* Arcane Blink Dagger range fixed and some of its effect stats slightly buffed.
+* Fixed some lags and potential crashes with Spectre dispersion (including the boss one).
+* Report if there's another channeling ability that bugs with multicasts.
+* and some other stuff
+
+
 
 
 

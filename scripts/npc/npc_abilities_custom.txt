@@ -13252,7 +13252,7 @@
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_4"
 		"MaxLevel"							"7"
-		"LevelsBetweenUpgrades"				"5"
+		"LevelsBetweenUpgrades"				"7"
 		"HasScepterUpgrade"					"1"
 		"HasShardUpgrade"					"1"
 		"precache"
@@ -13266,7 +13266,7 @@
 			"1"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"necromastery_damage_per_soul"		"2 4 6 8 10 12 15"
+				"necromastery_damage_per_soul"		"4 8 12 16 25 35 50"
 				"LinkedSpecialBonus"				"special_bonus_unique_nevermore_1"
 			}
 			"2"
@@ -13277,12 +13277,12 @@
 			"3"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"necromastery_max_souls_scepter"	"110 120 140 150 170 190 240"
+				"necromastery_max_souls_scepter"	"160 170 190 200 220 240 290"
 			}
 			"4"
 			{
 				"var_type"							"FIELD_FLOAT"
-				"scepter_bonus_souls"				"50"
+				"scepter_bonus_souls"				"100"
 			}
 			"5"
 			{
@@ -13363,9 +13363,27 @@
 		{
 			"var_type"							"FIELD_FLOAT"
 			"agility_mult"						"4.5 8.5 12.5 17 24"
+			 "LinkedSpecialBonus" 				"special_bonus_unique_mjz_nevermore_custom_requiem_agi"
 		}		
 	}
 }
+
+"special_bonus_unique_mjz_nevermore_custom_requiem_agi"
+{
+	"BaseClass"						"special_bonus_undefined"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"value"						"12"
+		}
+	}
+}
+
 
 ///Nevermore Q
 

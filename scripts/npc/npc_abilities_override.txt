@@ -1001,7 +1001,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"5"
+				"value"				"20"
 				"ad_linked_abilities"			"nevermore_necromastery"
 			}
 		}
@@ -4623,7 +4623,7 @@
 
 	"dazzle_shallow_grave"
 	{
-		"AbilityCooldown"				"75"
+		"AbilityCooldown"				"95"
 		"AbilitySpecial"
 		{
 			"01"
@@ -24377,7 +24377,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"0"
+		"AbilityCastRange"				"2800"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"15.0"
 		"AbilityManaCost"				"0"
@@ -24397,14 +24397,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"blink_range"			"7200"
+				"blink_range"			"2800"
 				"blink_damage_cooldown"	"0.0"
 				"blink_range_clamp"		"960"
 				"bonus_intellect"		"650"
-				"duration"		"6"
-				"cast_pct_improvement"		"50"
-				"manacost_reduction"		"25"
-				"debuff_amp"					"20"
+				"duration"		"7"
+				"cast_pct_improvement"		"100"
+				"manacost_reduction"		"50"
+				"debuff_amp"					"25"
 		}
 	}
 

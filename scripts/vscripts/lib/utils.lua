@@ -264,6 +264,10 @@ function spell_crit(attacker, victim, damageTable)
     return damageTable.damage
 end
 
+
+
+
+
 function HasSuperScepter(npc)
 	if npc:HasModifier("modifier_super_scepter") then
 		return true

@@ -92,6 +92,7 @@ function modifier_item_radiance_armor_aura_blue_edible:OnCreated()
 	if IsServer() then
 		local caster = self:GetCaster()
 		local ability = self:GetAbility()
+		if caster == nil then return end
 		--self.base_damage = 15000
 		--self.aura_dmg_pct = 50
 		--self.aura_radius = 1500
@@ -122,6 +123,7 @@ end
 function modifier_item_radiance_armor_aura_blue_edible:OnIntervalThink()
 	if IsServer() then
 		local caster = self:GetCaster()
+		if caster == nil then return end
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
 		local int = caster:GetIntellect()

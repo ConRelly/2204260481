@@ -154,6 +154,8 @@ if IsServer() then
 		self.radius = ability:GetSpecialValueFor( "explosion_radius" )
 		-- self.tick = ability:GetSpecialValueFor("explosion_interval")
         self.tick = ability:GetSpecialValueFor("damage_interval")
+        self.ch_duration = ability:GetChannelTime()
+        self.last_use = GameRules:GetGameTime()
         self.challenge = 1
         self.challenge_boss = 0
         if _G._challenge_bosss > 0 then
@@ -180,7 +182,18 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local dummy = self:GetParent()
 		local casterLocation = dummy:GetAbsOrigin()
-
+        local current_time = GameRules:GetGameTime()
+        if ability then
+            self.ch_duration = ability:GetChannelTime()
+        end    
+        if self.last_use == nil then
+            print("not self last use")
+            self.last_use = GameRules:GetGameTime()
+        end    
+        if self.last_use and ability and (current_time - self.last_use > self.ch_duration) then
+            self:OnDestroy( kv )
+            return
+        end 
 		ParticleManager:SetParticleControl( self.FXIndex, 0, casterLocation )
         self.challenge = self.challenge + self.challenge_boss
 		local fxIndex = ParticleManager:FireParticle( "particles/units/heroes/hero_crystalmaiden/maiden_freezing_field_explosion.vpcf", PATTACH_CUSTOMORIGIN, caster, {[0] = attackPoint} )

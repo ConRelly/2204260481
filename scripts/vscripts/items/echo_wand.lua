@@ -291,6 +291,7 @@ if IsServer() then
 		dazzle_shadow_wave = true,
 		reload_bullet = true,
 		snapfire_lil_shredder = true,
+		warlock_fatal_bonds = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

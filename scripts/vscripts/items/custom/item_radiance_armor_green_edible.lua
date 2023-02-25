@@ -90,6 +90,7 @@ function modifier_item_radiance_armor_aura_green_edible:OnCreated()
 		--self.aura_radius = 1500
 		--self.str_damage = 5
 		--self.armor_damage = 100
+		if caster == nil then return end
 		self:StartIntervalThink(1)
 		if not caster:IsRealHero() then	
 			self:StartIntervalThink(2)
@@ -116,6 +117,7 @@ function modifier_item_radiance_armor_aura_green_edible:OnIntervalThink()
 	if IsServer() then
 		local caster = self:GetCaster()
 		local parent = self:GetParent()
+		if caster == nil then return end
 		local ability = self:GetAbility()
 		local agi = caster:GetAgility()
 		local ms = caster:GetIdealSpeed()

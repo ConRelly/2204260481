@@ -55,68 +55,75 @@ function modifier_spectre_custom_dispersion:OnRefresh()
 	end	
 end
 
-if IsServer() then
-	function modifier_spectre_custom_dispersion:OnTakeDamage (event)
-		
-		if event.unit == self.parent then
-			if event.damage_flags ~= 16 then
-				local post_damage = event.damage
-				local original_damage = event.original_damage
-				local unit = event.attacker
-				if unit:GetTeam() ~= self.parent:GetTeam() then
-					if post_damage < 2 then return end  -- make dmg checks grater then 1 dmg to keep the option for future stuff that might deal only 1 dmg(1 hit).
-					local vparent = self.parent:GetAbsOrigin()
-					local vUnit = unit:GetAbsOrigin()
-					--local distance = (vUnit - vparent):Length2D()
-					local reflect_damage = 0.0
-					local particle_name = ""
 
-					
-					
-					--Within 300 radius		
-					--if distance <= self.min_radius then
-					reflect_damage = original_damage * self.damage_reflect_pct
-					particle_name = "particles/units/heroes/hero_spectre/spectre_dispersion.vpcf"
-					if self.parent and not self.parent:IsNull() and self.parent:IsAlive() then
-						self.parent:SetHealth(self.parent:GetHealth() + (post_damage * self.defense_ptc) )
-					
-						--Between 301 and 475 radius
-						--[[ else
-							local ratio = self.damage_reflect_pct * (1 - (distance - self.min_radius) * 0.142857 * 0.01)
-							reflect_damage = original_damage *  ratio
-							particle_name = "particles/units/heroes/hero_spectre/spectre_dispersion_b_fallback_mid.vpcf"
-							if self.parent:IsAlive() then
-								self.parent:SetHealth(self.parent:GetHealth() + (post_damage * ratio) )
-							end
-						end ]]
-						if unit and not unit:IsNull() and unit:IsAlive() then
-							--Create particle
-							local particle = ParticleManager:CreateParticle( particle_name, PATTACH_POINT_FOLLOW, self.parent )
-							ParticleManager:SetParticleControl(particle, 0, vparent)
-							ParticleManager:SetParticleControl(particle, 1, vUnit)
-							ParticleManager:SetParticleControl(particle, 2, vparent)
-							
-							ApplyDamage({
-								ability = self.ability,
-								attacker = self.parent,
-								damage = reflect_damage,
-								damage_type = DAMAGE_TYPE_MAGICAL,
-								damage_flags = DOTA_DAMAGE_FLAG_REFLECTION,
-								victim = unit,
-							})
+function modifier_spectre_custom_dispersion:OnTakeDamage (event)
+	if self.parent and event.unit == self.parent then
+		if event.damage_flags ~= 16 then
+			if not IsServer() then return end
+			local post_damage = event.damage
+			local original_damage = event.original_damage
+			local unit = event.attacker
+			if unit:GetTeam() ~= self.parent:GetTeam() then
+				if post_damage < 2 then return end  -- make dmg checks grater then 1 dmg to keep the option for future stuff that might deal only 1 dmg(1 hit).
+				if self.ability == nil then return end
+				if self.defense_ptc == nil then return end
+				if self.damage_reflect_pct == nil then return end
+				local vparent = self.parent:GetAbsOrigin()
+				local vUnit = unit:GetAbsOrigin()
+				--local distance = (vUnit - vparent):Length2D()
+				local reflect_damage = 0.0
+				local particle_name = ""
+
+				
+				
+				--Within 300 radius		
+				--if distance <= self.min_radius then
+				reflect_damage = original_damage * self.damage_reflect_pct
+				particle_name = "particles/units/heroes/hero_spectre/spectre_dispersion.vpcf"
+				if self.parent and not self.parent:IsNull() and self.parent:IsAlive() then
+					self.parent:SetHealth(self.parent:GetHealth() + (post_damage * self.defense_ptc) )
+				
+					--Between 301 and 475 radius
+					--[[ else
+						local ratio = self.damage_reflect_pct * (1 - (distance - self.min_radius) * 0.142857 * 0.01)
+						reflect_damage = original_damage *  ratio
+						particle_name = "particles/units/heroes/hero_spectre/spectre_dispersion_b_fallback_mid.vpcf"
+						if self.parent:IsAlive() then
+							self.parent:SetHealth(self.parent:GetHealth() + (post_damage * ratio) )
 						end
-					end	
-				end
+					end ]]
+					if unit and not unit:IsNull() and unit:IsAlive() then
+						--Create particle
+						local particle = ParticleManager:CreateParticle( particle_name, PATTACH_POINT_FOLLOW, self.parent )
+						ParticleManager:SetParticleControl(particle, 0, vparent)
+						ParticleManager:SetParticleControl(particle, 1, vUnit)
+						ParticleManager:SetParticleControl(particle, 2, vparent)
+						ParticleManager:ReleaseParticleIndex(particle)
+						ApplyDamage({
+							ability = self.ability,
+							attacker = self.parent,
+							damage = reflect_damage,
+							damage_type = DAMAGE_TYPE_MAGICAL,
+							damage_flags = DOTA_DAMAGE_FLAG_REFLECTION,
+							victim = unit,
+						})
+					end
+				end	
 			end
 		end
 	end
-
-	function modifier_spectre_custom_dispersion:OnIntervalThink()
-		if self.parent and not self.parent:IsNull() then
-			self:OnRefresh()
-		end	
-	end
 end
+
+function modifier_spectre_custom_dispersion:OnIntervalThink()
+	if not IsServer() then return end
+	if self.parent and not self.parent:IsNull() then
+		self:OnRefresh()
+	else	
+		self:StartIntervalThink(-1)
+	end	
+end
+
+
 function modifier_spectre_custom_dispersion:IsHidden()
 	return true
 end

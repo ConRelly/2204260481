@@ -174,7 +174,7 @@ function mjz_windrunner_powershot:OnProjectileHit_ExtraData(target, loc, ExtraDa
 	end
 end
 
--------------removed , incoming dmg amp brackets last wave balance and future implementations--------------------------
+-------------removed , incoming dmg amp brackes last wave balance and future implementations--------------------------
 
 --[[ modifier_mjz_windrunner_powershot_debuff = class({})
 function modifier_mjz_windrunner_powershot_debuff:IsHidden() return false end

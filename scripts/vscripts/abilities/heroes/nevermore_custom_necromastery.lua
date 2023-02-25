@@ -77,11 +77,13 @@ function modifier_nevermore_custom_necromastery:OnIntervalThink()
 	end
 end
 function modifier_nevermore_custom_necromastery:DeclareFunctions()
-	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE, MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_EVENT_ON_DEATH}
+	return {MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE, MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE, MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_EVENT_ON_DEATH}
 end
-function modifier_nevermore_custom_necromastery:GetModifierPreAttack_BonusDamage() return self:GetStackCount() * (self:GetAbility():GetSpecialValueFor("necromastery_damage_per_soul") + talent_value(self:GetParent(), "special_bonus_unique_nevermore_1")) end
+function modifier_nevermore_custom_necromastery:GetModifierBaseAttack_BonusDamage() if self:GetAbility() then return self:GetStackCount() * (self:GetAbility():GetSpecialValueFor("necromastery_damage_per_soul") + talent_value(self:GetParent(), "special_bonus_unique_nevermore_1")) end end
 function modifier_nevermore_custom_necromastery:GetModifierSpellAmplify_Percentage()
-	return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("spell_amp_per_soul")
+	if self:GetAbility() then
+		return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("spell_amp_per_soul")
+	end	
 end
 function modifier_nevermore_custom_necromastery:OnAttackLanded(keys)
 	if IsServer() then

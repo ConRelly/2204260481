@@ -141,6 +141,7 @@ end
 function modifier_item_radiance_armor_aura_green:OnIntervalThink()
 	if IsServer() then
 		local caster = self:GetCaster()
+		if caster == nil then return end
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
 		local agi = caster:GetAgility()
