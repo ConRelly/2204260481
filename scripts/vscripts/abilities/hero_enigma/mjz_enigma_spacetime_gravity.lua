@@ -139,6 +139,7 @@ if IsServer() then
 		local ability = self:GetAbility()
 		local caster = self:GetCaster()
 		self.particles = {}
+		if ability == nil then return end
 		local base_damage = ability:GetSpecialValueFor("damage_per_level") * caster:GetLevel()
 		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
 		self.damage = math.ceil((base_damage + caster:GetIntellect() * (intelligence_damage * caster:GetLevel())) * 0.35)
@@ -147,7 +148,8 @@ if IsServer() then
 		local visionRange = ability:GetAOERadius()
 		parent:SetDayTimeVisionRange(visionRange)
 		parent:SetNightTimeVisionRange(visionRange)
-
+		self.last_use = GameRules:GetGameTime()
+		self.ch_duration = ability:GetSpecialValueFor("duration")
 		self:ApplyEffect()
 		self:StartIntervalThink(0.35)
 	end
@@ -156,7 +158,22 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
-
+		if ability == nil then return end
+        local current_time = GameRules:GetGameTime()
+		if self.ch_duration == nil then
+        	self.ch_duration = ability:GetSpecialValueFor("duration")  
+		end 
+        if self.last_use == nil then
+            print("not self last use")
+            self.last_use = GameRules:GetGameTime()
+        end    
+        if self.last_use and ability and (current_time - self.last_use > self.ch_duration) then
+			ability:SpellFinish()
+			if self then
+            	self:Destroy()
+			end	
+            return
+        end 
 		if not caster:IsChanneling() then
 			ability:SpellFinish()
 		end

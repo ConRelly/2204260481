@@ -21,13 +21,13 @@ end
 -- Initializations
 function modifier_mars_arena_of_blood_lua_thinker:OnCreated( kv )
 	-- references
-	self.delay = self:GetAbility():GetSpecialValueFor( "formation_time" )
+	if self:GetAbility() == nil then return end
+	self.delay = self:GetAbility():GetSpecialValueFor( "formation_time")
 	self.duration = self:GetAbility():GetSpecialValueFor( "duration" )
 	self.radius = self:GetAbility():GetSpecialValueFor( "radius" )
 
 	if IsServer() then
 		self.thinkers = {}
-
 		-- Start interval
 		self.phase_delay = true
 		self:StartIntervalThink( self.delay )

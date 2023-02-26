@@ -8,6 +8,7 @@ Ability checklist (erase if done/checked):
 - Illusion behavior
 - Stolen behavior
 ]]
+LinkLuaModifier( "modifier_mars_arena_of_blood_lua_knockback_cd", "lua_abilities/mars_arena_of_blood_lua/modifier_mars_arena_of_blood_lua_spear_aura", LUA_MODIFIER_MOTION_NONE )
 --------------------------------------------------------------------------------
 modifier_mars_arena_of_blood_lua_spear_aura = class({})
 
@@ -22,22 +23,45 @@ function modifier_mars_arena_of_blood_lua_spear_aura:IsDebuff()
 end
 
 function modifier_mars_arena_of_blood_lua_spear_aura:IsPurgable()
+	return false
+end
+
+modifier_mars_arena_of_blood_lua_knockback_cd = class({})
+
+--------------------------------------------------------------------------------
+-- Classifications
+function modifier_mars_arena_of_blood_lua_knockback_cd:IsHidden()
 	return true
 end
+
+function modifier_mars_arena_of_blood_lua_knockback_cd:IsDebuff()
+	return true
+end
+
+function modifier_mars_arena_of_blood_lua_knockback_cd:IsPurgable()
+	return false
+end
+
 
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_mars_arena_of_blood_lua_spear_aura:OnCreated( kv )
 	-- references
+	if self:GetAbility() == nil then return end
+	local caster = self:GetCaster()
+	if caster == nil then return end
 	self.radius = self:GetAbility():GetSpecialValueFor( "radius" )
 	self.width = self:GetAbility():GetSpecialValueFor( "spear_distance_from_wall" )
-	self.duration = self:GetAbility():GetSpecialValueFor( "spear_attack_interval" )
 	self.damage = self:GetAbility():GetSpecialValueFor( "spear_damage" ) + (self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier"))
 	self.knockback_duration = 0.1
-
 	self.parent = self:GetParent()
 	self.spear_radius = self.radius-self.width
-
+	local has_ss = caster:HasModifier("modifier_super_scepter")
+	if has_ss then
+		self.duration = self:GetAbility():GetSpecialValueFor( "ss_spear_attack_interval" )
+	else
+		self.duration = self:GetAbility():GetSpecialValueFor( "spear_attack_interval" )
+	end		
 	if not IsServer() then return end
 	self.owner = kv.isProvidedByAura~=1
 	self.aura_origin = self:GetParent():GetOrigin()
@@ -46,7 +70,7 @@ function modifier_mars_arena_of_blood_lua_spear_aura:OnCreated( kv )
 		self.aura_origin = Vector( kv.aura_origin_x, kv.aura_origin_y, 0 )
 		local direction = self.aura_origin-self:GetParent():GetOrigin()
 		direction.z = 0
-
+		
 		-- damage
 		local damageTable = {
 			victim = self:GetParent(),
@@ -56,7 +80,11 @@ function modifier_mars_arena_of_blood_lua_spear_aura:OnCreated( kv )
 			ability = self:GetAbility(), --Optional.
 		}
 		ApplyDamage(damageTable)
-
+		local back_duration = 4
+		if has_ss then
+			caster:PerformAttack(self:GetParent(), true, true, true, false, false, false, true)
+			back_duration = 2
+		end	
 		-- animate soldiers
 		local arena_walls = Entities:FindAllByClassnameWithin( "npc_dota_phantomassassin_gravestone", self.parent:GetOrigin(), 680 )
 		for _,arena_wall in pairs(arena_walls) do
@@ -70,26 +98,28 @@ function modifier_mars_arena_of_blood_lua_spear_aura:OnCreated( kv )
 		-- play effects
 		self:PlayEffects( direction:Normalized() )
 
-		-- knockback if not having spear buff
+		-- knockback if not having spear buff or CD limiter
 		if self:GetParent():HasModifier( "modifier_mars_spear_of_mars_lua" ) then return end
 		if self:GetParent():HasModifier( "modifier_mars_spear_of_mars_lua_debuff" ) then return end
+		if self:GetParent():HasModifier( "modifier_mars_arena_of_blood_lua_knockback_cd" ) then return end
 		self:GetParent():AddNewModifier(
 			self:GetCaster(), -- player source
 			self:GetAbility(), -- ability source
 			"modifier_generic_knockback_lua", -- modifier name
 			{
 				duration = self.knockback_duration,
-				distance = 100,
+				distance = 400,
 				height = 30,
 				direction_x = direction.x,
 				direction_y = direction.y,
 			} -- kv
 		)
+		self:GetParent():AddNewModifier(caster, self:GetAbility(), "modifier_mars_arena_of_blood_lua_knockback_cd", {duration = back_duration})
 	end
 end
 
 function modifier_mars_arena_of_blood_lua_spear_aura:OnRefresh( kv )
-	
+	--self:OnCreated()
 end
 
 function modifier_mars_arena_of_blood_lua_spear_aura:OnRemoved()

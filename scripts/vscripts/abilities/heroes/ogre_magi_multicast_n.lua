@@ -374,6 +374,7 @@ function IsExcludeAbility(ability)
 		"dazzle_shadow_wave",
 		"pocket_portal",
 		"reload_bullet",
+		"enigma_black_hole",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

@@ -95,8 +95,8 @@ function modifier_pharaoh_crown_buff:OnCreated()
 	self.armormodifier:SetStackCount(self.caster:GetPhysicalArmorValue(false) * self.armor)
 	self.damagemodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_pharaoh_crown_damage", {})
 	self.damagemodifier:SetStackCount((self.parent_damage * ((self.caster:GetAverageTrueAttackDamage(self.caster) - self.caster_base_damage) / 2.5 + self.caster_base_damage)) / self.damage)
-	self.regenmodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_pharaoh_crown_regen", {})
-	self.regenmodifier:SetStackCount(self.parent_regen * (self.caster:GetMaxHealth() / self.health))
+	--self.regenmodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_pharaoh_crown_regen", {})
+	--self.regenmodifier:SetStackCount(self.parent_regen * (self.caster:GetMaxHealth() / self.health))
 	self.magicarmormodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_pharaoh_crown_magic_armor", {})
 	self.parent:AddNewModifier(self.caster, self.ability, "modifier_pharaoh_crown_super_armor", {duration = 3.0})
 	self:StartIntervalThink(self.interval)
@@ -130,7 +130,7 @@ function modifier_pharaoh_crown_buff:OnIntervalThink()
 	end
 	self.armormodifier:SetStackCount(self.caster:GetPhysicalArmorValue(false) * self.armor)
 	self.damagemodifier:SetStackCount((self.parent_damage * ((self.caster:GetAverageTrueAttackDamage(self.caster) - self.caster_base_damage) / 2.5 + self.caster_base_damage)) / self.damage)
-	self.regenmodifier:SetStackCount(self.parent_regen * (caster_max_health / self.health))
+	--self.regenmodifier:SetStackCount(self.parent_regen * (caster_max_health / self.health))
 	if self.parent:GetHealth() < 1 then
 		self.parent:ForceKill(true)
 	end
@@ -193,7 +193,7 @@ end
 function modifier_pharaoh_crown_armor:GetModifierPhysicalArmorBonus()
     return self:GetStackCount()
 end
-LinkLuaModifier("modifier_pharaoh_crown_regen", "items/item_pharaoh_crown.lua", LUA_MODIFIER_MOTION_NONE)
+--[[ LinkLuaModifier("modifier_pharaoh_crown_regen", "items/item_pharaoh_crown.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_pharaoh_crown_regen = class({})
 function modifier_pharaoh_crown_regen:IsBuff()
     return true
@@ -215,7 +215,7 @@ function modifier_pharaoh_crown_regen:GetModifierConstantHealthRegen()
 end
 function modifier_pharaoh_crown_regen:GetModifierHealthRegenPercentage()
     return 1.5
-end
+end ]]
 LinkLuaModifier("modifier_pharaoh_crown_magic_armor", "items/item_pharaoh_crown.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_pharaoh_crown_magic_armor = class({})
 function modifier_pharaoh_crown_magic_armor:IsBuff()

@@ -2372,6 +2372,10 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * and some other stuff
 
 
+* Fixed Enigma multicast blackhole.
+* Added new SS effect for Mars Ultimate.
+* Changed Mars Ultimate Aoe to 3000 and added internal cd for knockback.
+* Pharaoh no longer gives regen. 
 
 
 

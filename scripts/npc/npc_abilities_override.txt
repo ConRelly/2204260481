@@ -2967,6 +2967,10 @@
 			}			
 		}
 	}
+
+	//=================================================================================================================
+	// Batrider: Flaming Lasso
+	//=================================================================================================================
 	"batrider_flaming_lasso"
 	{
 		// General
@@ -2983,8 +2987,6 @@
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Batrider.FlamingLasso.Cast"
 		"MaxLevel"					  "5"
-
-		"HasShardUpgrade"			"1"
 		"HasScepterUpgrade"			"1"
 
 		// Casting
@@ -2995,54 +2997,38 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"175"
-		"AbilityCooldown"				"50"
+		
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"225"
+		"AbilityManaCost"				"200"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"duration"				"5"
+			"drag_distance"			"300"
+			"break_distance"		"625"
+			"damage"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"5.0"
+				"value"			"900 4600 18000 47900 299800"
+				"CalculateSpellDamageTooltip" "1"
 			}
-			"02"
+			"grab_radius_scepter"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"drag_distance"			"300"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"break_distance"		"425"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"grab_radius"		"600"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"grab_radius_scepter"		"600"
+				"value"		"500"
 				"RequiresScepter"		"1"
 			}
-			"06"
+			"AbilityCooldown"				
 			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"		"400 2600 8000 27900 99800"
+				"value"				"60"
+				"special_bonus_unique_batrider_6"			"-10"
 			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"allied_cooldown"		"25"
-			}
+
 		}
 	}
+
 
 // Beastmaster: Wild Axes
 	"beastmaster_wild_axes"
@@ -15342,13 +15328,116 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	}
 
-// Oracle: False Promise
+
+	//=================================================================================================================
+	// Oracle: False Promise
+	//=================================================================================================================
 	"oracle_false_promise"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5640"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Hero_Oracle.FalsePromise.Cast"
+
+        "HasShardUpgrade"               "1"
+
+		"AbilityDraftUltScepterAbility"		"oracle_rain_of_destiny"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1800 1900 2700"
-		"AbilityCooldown"				"60 60 60"
-		"AbilityManaCost"				"200 400 600"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 150 200"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"
+			{
+				"value"				"7 8.5 10"
+				"special_bonus_unique_oracle"	"+2.0"
+			}
+			"radius"				"400"
+			"shard_fade_time"
+			{
+				"value"								"0.2"
+				"RequiresShard"						"1"
+			}
+			"AbilityCooldown"
+			{
+				"value"								"110 100 90"
+				"special_bonus_unique_oracle_6"		"-10"
+			}			
+			"bonus_armor"
+			{
+				"value"								"0"
+				"special_bonus_unique_oracle_9"		"+100"
+			}	
+			"heal_amp_pct"
+			{
+				"value"							"100"
+				"special_bonus_shard"			"+25"
+			}
+		}
 	}
+
+	"oracle_rain_of_destiny"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"932"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"IsGrantedByScepter"			"1"
+		"MaxLevel"						"3"
+		"LevelsBetweenUpgrades"         "15"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastRange"				"2650"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"radius"				"1250"
+				"duration"				"10"
+				"damage"				
+				{
+					"value"					"2800 15400 60000"
+					"CalculateSpellDamageTooltip"	"1"
+				}
+				"tick_rate"				"0.5"
+				"heal_amp"				"25"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+	}
+
+
+
 	"special_bonus_unique_oracle_5"
 	{
 		"AbilitySpecial"
@@ -15362,29 +15451,6 @@
 		}
 	}
 
-// Oracle: Rain of Destiny
-	"oracle_rain_of_destiny"
-	{
-		"ID"							"932"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"IsGrantedByScepter"			"1"
-		"MaxLevel"						"1"
-		"AbilityCastPoint"				"0.2"
-		"AbilityCastRange"				"1200"
-		"AbilityCooldown"				"60"
-		"AbilityManaCost"				"150"
-		"AbilityValues"
-		{
-			"radius"				"1200"
-			"duration"				"10"
-			"damage"				"2500"
-			"tick_rate"				"0.5"
-			"heal_amp"				"25"
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
-	}
 
 
 "phantom_lancer_spirit_lance"
@@ -20937,6 +21003,110 @@
 
 
 //#################################### DOTA ITEMS ####################################\\
+
+	//=================================================================================================================
+	// Sentry Ward
+	//=================================================================================================================
+	"item_ward_sentry"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"43"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"Model"							"models/props_gameplay/sentry_ward_bundle.vmdl"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"3500"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"1.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"50"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"sentry ward"
+		"ItemStackable"					"1"
+		"ItemPurchasable"				"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemStockMax"					"5"
+		"ItemStockInitial"				"2"
+		"ItemStockTime"					"500"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
+		"ItemSupport"					"1"
+		"IsTempestDoubleClonable"		"0"
+		"ShouldBeInitiallySuggested"	"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"lifetime"								"600"
+			"vision_range"							"1000"
+			"true_sight_range"						"1200"
+			"health"								"100"
+			"duration_minutes_tooltip"				"10"
+		}
+	}
+
+
+
+	//=================================================================================================================
+	// Observer Wards
+	//=================================================================================================================
+	"item_ward_observer"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"42"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_SUPPRESS_ASSOCIATED_CONSUMABLE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+		"Model"							"models/props_gameplay/observer_ward_bundle.vmdl"
+		
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"3500"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"1.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemAliases"					"observer ward"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemStockMax"					"4"
+		"ItemStockInitial"				"2"
+		"ItemStockTime"					"200.0"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES"
+		"ItemSupport"					"1"
+		"IsTempestDoubleClonable"		"0"
+		"ShouldBeInitiallySuggested"	"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"lifetime"				"900"
+			"vision_range_tooltip"	"2000"
+			"health"				"100"
+			"duration_minutes_tooltip"				"15"
+		}
+	}
+
 // Abyssal Blade
 	"item_abyssal_blade"
 	{
@@ -23986,25 +24156,6 @@
 	}
 
 
-// Observer Ward
-	"item_ward_observer"
-	{
-		"ItemStockMax"					"10"
-		"ItemStockTime"					"60.0"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"lifetime"						"900"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"duration_minutes_tooltip"		"15"
-			}
-		}
-	}
 
 // Bottle
 	"item_bottle"

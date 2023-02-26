@@ -1805,9 +1805,9 @@
 
 		"Ability1"				"mjz_mars_spear"
 		"Ability6"				"mars_arena_of_blood_lua"
-		"Ability11"				"special_bonus_magic_resistance_10"
+		"Ability11"				"special_bonus_unique_mars_bulwark_redirect_chance"
 		"Ability12"				"special_bonus_strength_280"
-		"Ability13"				"special_bonus_armor_24"
+		"Ability13"				"special_bonus_armor_69"
 		"Ability14"				"special_bonus_unique_mjz_mars_spear_str_damage"
 		"Ability15"             "special_bonus_unique_mars_rebuke_cooldown"
 		"Ability17"				"special_bonus_magic_resistance_40"
