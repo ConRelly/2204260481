@@ -11809,7 +11809,7 @@
 				
 	"Ability1"					"courier_invincibility"
 	"Ability2"				    "bloodseeker_thirst"
-	//"Ability3"				  "dummy_caster_passive"
+	"Ability3"				  	"mjz_bristleback_quill_spray_autocastp"
 	"ArmorPhysical"				"10"		// Physical protection.
 	"MagicalResistance"				"100"			// Magical protection.
 

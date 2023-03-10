@@ -19,7 +19,9 @@ function modifier_double_trouble:OnCreated()
     Timers:CreateTimer({
         endTime = 15, 
         callback = function()
-            self:StartIntervalThink(1)    
+            if self then
+                self:StartIntervalThink(1)  
+            end  
         end
     })
 end

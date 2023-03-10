@@ -22,6 +22,24 @@ function modifier_flash_backtrack:OnCreated()
         self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_flash_double_attack", nil)
     end
 end
+function modifier_flash_backtrack:DeclareFunctions()
+	return {MODIFIER_PROPERTY_AVOID_DAMAGE}
+end
+function modifier_flash_backtrack:GetModifierAvoidDamage(params)
+	if IsServer() then
+        if self:GetParent() and self:GetParent():PassivesDisabled() then
+            local randomSeed = math.random(1, 100)
+            if randomSeed <= 50 then
+                local iParticleID = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+                ParticleManager:ReleaseParticleIndex(iParticleID)
+                return 1
+            end   
+        end
+        return 0 
+	end	
+end
+
+
 function modifier_flash_backtrack:OnRefresh()
 	self:OnCreated()
 end

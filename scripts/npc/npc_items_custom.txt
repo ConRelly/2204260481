@@ -2339,7 +2339,7 @@
 "item_recipe_furious_cyclone"
 {
 	"Model"							"models/props_gameplay/recipe.vmdl"
-	"BaseClass"					 "item_recipe_cyclone"
+	"BaseClass"					 	"item_recipe_cyclone"
 	"ItemCost"						"1600"
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
@@ -18698,7 +18698,7 @@
 	"ItemGloballyCombinable"		"0"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"Model"							"models/props_gameplay/neutral_box.vmdl"
-	"AbilityCooldown"				"0.0"
+	"AbilityCooldown"				"60.0"
 
 	"AbilityCastRange"				"7550"
 
@@ -20678,7 +20678,7 @@
 		"AbilityTextureName"				"imba_silver_edge"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCooldown"					"100.0"
+		"AbilityCooldown"					"60.0"
 		"AbilityManaCost"					"75"
 		"AbilitySharedCooldown"				"shadow_blade"
 		"ItemCost"							"5150"

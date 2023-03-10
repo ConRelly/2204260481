@@ -173,6 +173,9 @@ function modifier_class:OnIntervalThink()
                         return nil
                     end                    
                     if item:GetCooldown(item:GetLevel()) <= 0 then return end
+                    if parent:IsInvisible() then
+                        AttackNearestEnemy(parent)
+                    end
                     use_ability(item, caster, parent)
                 end
             end
@@ -181,6 +184,40 @@ function modifier_class:OnIntervalThink()
 end
 
 
+----keep search and attack ---- 
+function FindEnemiesInRange(unit, range)
+    local enemies = FindUnitsInRadius(
+      unit:GetTeamNumber(),
+      unit:GetAbsOrigin(),
+      nil,
+      range,
+      DOTA_UNIT_TARGET_TEAM_ENEMY,
+      DOTA_UNIT_TARGET_ALL,
+      DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE,
+      FIND_CLOSEST,
+      false
+    )
+    
+    if #enemies > 0 then
+      return enemies[1]
+    else
+      return nil
+    end
+end
+  
+  
+function AttackNearestEnemy(unit)
+    local agro_range = 7500
+    local range = unit:GetAttackRange()
+    local agro_enemy = FindEnemiesInRange(unit, agro_range)
+    local enemy = FindEnemiesInRange(unit, range)
+    if agro_enemy then
+        unit:MoveToTargetToAttack(agro_enemy)
+    end
+    if enemy then
+        unit:PerformAttack(enemy, true, true, true, false, true, false, false)
+    end
+end
 
 
 -----------------------------------------------------------------------------------------
@@ -254,8 +291,8 @@ function use_ability(ability, caster, parent )
             end    
         elseif ability_behavior_includes(ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_FRIENDLY then	
             if ability and IsValidEntity(ability) and IsValidEntity(parent) and parent:IsAlive() then
-                parent:CastAbilityOnTarget(parent, target_ability, parent:GetPlayerOwnerID())
-            end    
+                parent:CastAbilityOnTarget(parent, ability, parent:GetPlayerOwnerID())
+            end  
         else
             return nil    
         end    

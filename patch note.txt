@@ -2396,6 +2396,15 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Added new skill for couriers (autocast items and search and attack)
+* Fixed Slark passive not getting essence stacks when there's someone else with the same passive.
+* Fixed Doom Ultimate.
+* Lina Ultimate now deals Dmg in 2 instances.
+* SilverEdge back to 60s cd. 
+* More items can be cast with itemautocast (most self-targets were not working, Eul will not work).
+* and some other changes.
+
+
 
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).

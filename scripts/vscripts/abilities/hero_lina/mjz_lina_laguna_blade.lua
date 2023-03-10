@@ -85,7 +85,7 @@ function mjz_lina_laguna_blade:OnSpellStart()
 			if not target:IsMagicImmune() or caster:HasScepter() then
 				local kill_grace_duration = self:GetSpecialValueFor("kill_grace_duration")
 				target:AddNewModifier(self:GetCaster(), self, "modifier_mjz_lina_laguna_blade_delay", {duration = kill_grace_duration})
-
+				damage = damage / 2
 				ApplyDamage({
 					attacker = caster,
 					victim = target,
@@ -93,6 +93,14 @@ function mjz_lina_laguna_blade:OnSpellStart()
 					damage_type = DAMAGE_TYPE_MAGICAL,
 					ability = self,
 				})
+
+				ApplyDamage({
+					attacker = caster,
+					victim = target,
+					damage = damage,
+					damage_type = DAMAGE_TYPE_MAGICAL,
+					ability = self,
+				})				
 			end
 		end
 	end

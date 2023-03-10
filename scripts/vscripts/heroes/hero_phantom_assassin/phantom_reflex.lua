@@ -48,10 +48,30 @@ function modifier_phantom_reflex:OnCreated()
 		end
 	end	
 end
+function modifier_phantom_reflex:DeclareFunctions()
+	return {MODIFIER_PROPERTY_AVOID_DAMAGE}
+end
+function modifier_phantom_reflex:GetModifierAvoidDamage(params)
+	if IsServer() then
+        if self:GetParent() and self:GetParent():PassivesDisabled() then
+            local randomSeed = math.random(1, 100)
+            if randomSeed <= 40 then
+                local iParticleID = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+                ParticleManager:ReleaseParticleIndex(iParticleID)
+                return 1
+            end   
+        end
+        return 0 
+	end	
+end
+
+
 function modifier_phantom_reflex:OnDestroy()
 	if IsServer() then
-		self:GetParent():RemoveModifierByName("modifier_faceless_void_backtrack")
-		self:GetParent():RemoveModifierByName("modifier_flash_double_attack")
+		if self:GetParent() and IsValidEntity(self:GetParent()) then
+			self:GetParent():RemoveModifierByName("modifier_faceless_void_backtrack")
+			self:GetParent():RemoveModifierByName("modifier_flash_double_attack")
+		end	
 	end
 end
 

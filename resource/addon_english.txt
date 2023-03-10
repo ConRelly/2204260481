@@ -2864,6 +2864,13 @@
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast5_Lore"			""
 
 
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp"					"Item AutoCast"
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_Description"		"Autocast Inventory slots 1-3 and searches all map for enemies to attack (even if the courier is invisible aka shadow blade)"
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_tick_interval"	  "Interval Check:"
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_Note0"			  "Some items might not work"
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_Lore"              "Are you pressing any buttons ? or even paying attention to your courier"
+
+
 	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger"							"Insatiable Hunger"
 	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_Description"				"A violent lust for vital fluids increases Broodmother's attack damage and gives her a %chance%%% chance of vampiric attack.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Has %chance%%% chance on attack to increase your bonus Base dmg by %bonus_atack% and your bonus spell amp by %bonus_amp%%%."
 	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_Lore"						"While most of her prey is wrapped in silken cocoons and saved for her young, the Broodmother herself has a taste for wandering heroes."

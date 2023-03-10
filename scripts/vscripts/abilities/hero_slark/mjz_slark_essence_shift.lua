@@ -202,9 +202,13 @@ local modifier_heap_aura = modifier_mjz_slark_essence_shift_heap_aura
 function modifier_heap_aura:IsHidden()
     return true
 end
-function modifier_heap_aura:IsPurgable()	-- 能否被驱散
+function modifier_heap_aura:IsPurgable()	
 	return false
 end
+function modifier_heap_aura:GetAttributes()	
+	return MODIFIER_ATTRIBUTE_MULTIPLE
+end
+
 
 if IsServer() then
     function modifier_heap_aura:DeclareFunctions()
