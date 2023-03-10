@@ -21,10 +21,10 @@ function modifier_power_boss:GetModifierTotalPercentageManaRegen() return 0.5 en
 ]]
 function modifier_power_boss:GetModifierTotalDamageOutgoing_Percentage() return 80 end
 function modifier_power_boss:GetModifierStatusResistanceStacking() return 30 end
-function modifier_power_boss:GetModifierIncomingDamage_Percentage() return -25 end
+function modifier_power_boss:GetModifierIncomingDamage_Percentage() return -15 end
 function modifier_power_boss:GetModifierMagicalResistanceBonus() return 65 end
-function modifier_power_boss:GetModifierPhysicalArmorBonus() return 60 end
-function modifier_power_boss:GetModifierExtraHealthPercentage() return 240 end
+function modifier_power_boss:GetModifierPhysicalArmorBonus() return 80 end
+function modifier_power_boss:GetModifierExtraHealthPercentage() return 260 end
 
 --[[
 function modifier_power_boss:OnAttack(keys)

@@ -114,7 +114,7 @@
 			{
 				"NPCName"				"npc_boss_kobold_foreman2"
 				//"NPCName"               "npc_boss_randomstuff_aiolos"
-				//"NPCName"               "npc_boss_deathprophet"
+				//"NPCName"               "npc_boss_antimage_female"
 				//"NPCName"               "npc_dota_boss_aghanim"
 				//"NPCName"               "npc_dota_boss_void_spirit"
 				//"NPCName"               "npc_boss_skeleton_king_angry_new"
@@ -126,7 +126,7 @@
 
             "b" 
 			{
-				//"NPCName"				"npc_boss_kobold_foreman2"
+				//"NPCName"				"npc_boss_lycan"
 				//"NPCName"               "npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"

@@ -60,7 +60,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"agi_multiplier"			"6 7 8 9 13 18 32"
+				"agi_multiplier"			"10 13 15 17 20 28 42"
 				"LinkedSpecialBonus"        "special_bonus_unique_sniper_headshot_lua_agi_multiplier"
 			}
 			"05"
@@ -97,7 +97,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"18"
+				"value"						"28"
 			}
 		}
 	}

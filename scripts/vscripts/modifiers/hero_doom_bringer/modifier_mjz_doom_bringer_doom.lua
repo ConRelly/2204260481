@@ -43,7 +43,7 @@ if IsServer() then
 		local caster = self:GetCaster()
 		local ability = self:GetAbility()
 		local tick_interval = ability:GetSpecialValueFor('tick_interval')
-		local radius = ability:GetSpecialValueFor('radius')
+		local radius = parent:Script_GetAttackRange() + 150 --ability:GetSpecialValueFor('radius')
 
 		local damage = GetTalentSpecialValueFor(ability, 'damage')
 		damage = damage * tick_interval
@@ -95,7 +95,7 @@ end
 ------------------------------------------------
 
 function modifier_caster:IsAura() return true end
-function modifier_caster:GetAuraRadius() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("radius") end end
+function modifier_caster:GetAuraRadius() if self:GetCaster() then return self:GetCaster():Script_GetAttackRange() + 250 end end
 function modifier_caster:GetModifierAura() return "modifier_mjz_doom_bringer_doom_debuff" end
 function modifier_caster:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
 function modifier_caster:GetAuraEntityReject(target) return self:GetParent():IsIllusion() end

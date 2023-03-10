@@ -34,20 +34,21 @@ function modifier_custom_aphotic_shield:OnCreated(keys)
 		ParticleManager:SetParticleControl(self.particle, 2, Vector(shield_size, 0, shield_size))
 		ParticleManager:SetParticleControl(self.particle, 4, Vector(shield_size, 0, shield_size))
 		ParticleManager:SetParticleControl(self.particle, 5, Vector(shield_size, 0, 0))
-		ParticleManager:SetParticleControlEnt(self.particle, 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
+		self:AddParticle(self.particle, false, false, -1, false, false)
 	end
 end
+
 function modifier_custom_aphotic_shield:OnDestroy()
 	if IsServer() then
 		if not self:GetAbility() then return end
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
-
-		parent:EmitSound("Hero_Abaddon.AphoticShield.Destroy")
-
-		ParticleManager:DestroyParticle(self.particle, false)
-		ParticleManager:ReleaseParticleIndex(self.particle)
-
+		if parent then
+			parent:EmitSound("Hero_Abaddon.AphoticShield.Destroy")
+		else
+			return
+		end
+		if parent and not parent:IsAlive() then return end
 		local damage = self.total_damage * self.damage_percentage
 
 		local units = FindUnitsInRadius(parent:GetTeam(), parent:GetAbsOrigin(), nil, self.damage_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, 0, 0, false)

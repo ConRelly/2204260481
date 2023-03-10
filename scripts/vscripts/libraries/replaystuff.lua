@@ -125,6 +125,7 @@ function AddRecordedAction(modifier, keys)
 			["lesser_cancel"] = true,
 			["divine_cancel"] = true,
 			["amalgamation"] = true,
+			["lone_druid_spirit_bear"] = true,
 		};
 	if ability then
 		local abilityName1 = ability:GetAbilityName()

@@ -4609,7 +4609,7 @@
 
 	"dazzle_shallow_grave"
 	{
-		"AbilityCooldown"				"95"
+		"AbilityCooldown"				"120"
 		"AbilitySpecial"
 		{
 			"01"
@@ -19034,7 +19034,7 @@
 	}
 	"spirit_breaker_nether_strike"
 	{
-		"MaxLevel"					  "5"
+		"MaxLevel"					  "6"
 		"AbilityCastRange"				"1700"
 		"AbilityManaCost"				"125"
 		"LevelsBetweenUpgrades"         "10"

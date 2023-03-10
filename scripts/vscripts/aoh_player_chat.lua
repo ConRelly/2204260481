@@ -525,8 +525,13 @@ function AOHGameMode:OnPlayerChat(keys)
 	end
 
 
-	if keys.text == "-challenge" and keys.playerid == 0 and not self.challenge then--     --
+	if keys.text == "-challenge" and not self.challenge then
 		local plyID = keys.playerid
+		if PlayerResource:GetPlayer(0) then
+			if plyID ~= 0 then
+				return
+			end	
+		end
 		local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero()
 		local unit = "npc_boss_juggernaut_4"
 		local name = "Boss"
@@ -567,6 +572,27 @@ function AOHGameMode:OnPlayerChat(keys)
 		_G._effect_rate = 100 / rate_nr
 
 		Notifications:TopToAll({text= "Effect rate for some skills reduced by "..rate_nr.." times", style={color="yellow"}, duration=6})
+	end
+
+	if string.find(keys.text, "-itemauto1") then
+		print("pass")
+		local plyID = keys.playerid	
+		local slot_nr = string.custom_remove3(keys.text)
+		if slot_nr then
+			print(slot_nr)			 
+			_G._itemauto1[keys.playerid] = slot_nr - 1
+			Notifications:Top(plyID, {text= "You have set itemAutocast 1 on slot: "..slot_nr  , style={color="red"}, duration=6})
+		end		
+	end
+	if string.find(keys.text, "-itemauto2") then
+		print("pass")
+		local plyID = keys.playerid	
+		local slot_nr = string.custom_remove4(keys.text)
+		if slot_nr then
+			print(slot_nr)			 
+			_G._itemauto1[keys.playerid] = slot_nr - 1
+			Notifications:Top(plyID, {text= "You have set itemAutocast 2 on slot: "..slot_nr  , style={color="red"}, duration=6})
+		end
 	end
 
 	if keys.text == "-dev_challenge" and keys.playerid == 0 and Cheats:IsEnabled() then

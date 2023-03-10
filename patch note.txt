@@ -2379,6 +2379,22 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Added an extra effect for MultiAutocast, now you can select up to 2 item slots to autocast(some items might not be casted), commands are in descripton (-itemauto1Nrslot, -itemauto2Nrslot).
+* Added new talent for Sniper (True Strike) and buffed some of his skills. 
+* Sniper is no longer an underdog
+* Hoodwink has an extra effect for his Super Scepter ultimate (no longer gets knockback on shot).
+* Fixed Meepo ultimate not giving bonus xp for bosses
+* Doom Ultimate AOE scales with attack range + 250. (similar for Razor Static Field)
+* Reduced Spectral Dagger from boss duration, so it will not crash if the debuff is still on 5 seconds after the boss dies. Did some modifications, now there's 7s(dota default dead units cleaning).
+* Fixed models for boss wolf summons and Antimage.
+* Fixed OBS to not cast Lone Druid Bear (crashes).
+* When the host disconnects, other players can use the -challenge command to challenge the DPS boss.
+* Added new Super Scepter effect for Earthshaker Aftershock. removed stun effect, added "effect_rate nr" command for this spell(check alt notes).  
+* Added extra Marci Ult SS effect: Aftershock - adds +4s in calculations for any ability over 1 sec cd.
+* And some other stuff and fixes. hardmode might be harder.
+
+
+
 
 
 **Update Notes spellings will get corrected before the live update.
@@ -2427,6 +2443,7 @@ Amalgamation : can have both Symbiosis effects at the same time
 
 Evolving Light CrossBow and all his forms : gains +2 charges instead of 1 per proc.
 
+Aftershock : Adds +4s in calculations for any ability over 1 sec cd.
 
 
 can youse this format for marci SS effect:

@@ -52,14 +52,14 @@ function modifier_hard_mode_boss:GetModifierPhysicalArmorBonus()
 	local parent = self:GetParent()
 	local lvl = parent:GetLevel() or 10
 	if lvl > 15 then 
-		lvl = lvl + 30
+		lvl = lvl + 60
 	else
-		lvl = lvl + 14	
+		lvl = lvl + 30	
 	end	
 	return lvl
 end
 function modifier_hard_mode_boss:GetModifierIncomingDamage_Percentage()
-	return -65
+	return -75
 end
 
 function modifier_hard_mode_boss:GetModifierMagicalResistanceBonus()
@@ -67,11 +67,11 @@ function modifier_hard_mode_boss:GetModifierMagicalResistanceBonus()
 end	
 
 function modifier_hard_mode_boss:GetModifierExtraHealthPercentage()
-    return 180
+    return 220
 end  
 
 function modifier_hard_mode_boss:GetModifierTotalDamageOutgoing_Percentage()
-    return 125       -- 伤害增强20%
+    return 150       -- 伤害增强20%
 end
 
 

@@ -44,29 +44,30 @@ if IsServer() then
     function modifier_class:_SpellStart( )
         local caster = self:GetCaster()
         local ability = self:GetAbility()
+        if caster and ability then
+            if caster:IsIllusion() then return nil end
 
-        if caster:IsIllusion() then return nil end
+            if ability:_IsReady() then
+                local radius = ability:GetAOERadius()
+                local enemy_list = FindTargetEnemy(caster, caster:GetAbsOrigin(), radius)
 
-		if ability:_IsReady() then
-			local radius = ability:GetAOERadius()
-			local enemy_list = FindTargetEnemy(caster, caster:GetAbsOrigin(), radius)
+                if #enemy_list > 0 then
+                    ability:_StartCooldown()
 
-			if #enemy_list > 0 then
-                ability:_StartCooldown()
+                    caster:EmitSound('Hero_Razor.UnstableCurrent.Strike')
 
-				caster:EmitSound('Hero_Razor.UnstableCurrent.Strike')
+                    local damage_base = GetTalentSpecialValueFor(ability, 'passive_area_damage')
+                    local attack_damage_pct = ability:GetSpecialValueFor('attack_damage_pct')
+                    local caster_attack = caster:GetAverageTrueAttackDamage(caster)
+                    local damage_attack = caster_attack * ( attack_damage_pct / 100)
+                    local damage_amount = damage_base + damage_attack
 
-                local damage_base = GetTalentSpecialValueFor(ability, 'passive_area_damage')
-				local attack_damage_pct = ability:GetSpecialValueFor('attack_damage_pct')
-				local caster_attack = caster:GetAverageTrueAttackDamage(caster)
-                local damage_attack = caster_attack * ( attack_damage_pct / 100)
-                local damage_amount = damage_base + damage_attack
-
-				for _,enemy in pairs(enemy_list) do
-					self:_SpellTarget(enemy, damage_amount)
-				end
-			end
-		end
+                    for _,enemy in pairs(enemy_list) do
+                        self:_SpellTarget(enemy, damage_amount)
+                    end
+                end
+            end
+        end  
     end
 
 	function modifier_class:_SpellTarget( target, damage )

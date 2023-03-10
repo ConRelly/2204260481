@@ -10,7 +10,7 @@ mjz_doom_bringer_doom = class({})
 local ability_class = mjz_doom_bringer_doom
 
 function ability_class:GetAOERadius()
-	return self:GetSpecialValueFor('radius')
+	if self:GetCaster() then self:GetCaster():Script_GetAttackRange() + 250 return --self:GetSpecialValueFor('radius')
 end
 
 function ability_class:GetBehavior()

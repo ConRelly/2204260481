@@ -106,7 +106,6 @@ function AOHGameMode:InitGameMode()
 	AOHGameMode.numPhilo[2] = 0
 	AOHGameMode.numPhilo[3] = 0
 	AOHGameMode.numPhilo[4] = 0
-	self._hardMode = false
 	_G._hardMode = false
 	_G._extra_mode = false
 	_G.super_courier = {false, false, false, false, false}
@@ -115,11 +114,14 @@ function AOHGameMode:InitGameMode()
 	_G.reload_buff = true
 	_G._stalker_chance = 1
 	_G.symbiosisOn = true	
-	self._endlessMode = false
 	_G._endlessMode_started = false
 	_G._normal_mode = false
 	_G._defeat_extra_lives = 3
 	_G._no_gold_bags = false
+	_G._itemauto1 = {}
+	_G._itemauto2 = {}
+	self._hardMode = false
+	self._endlessMode = false
 	self._endlessMode_started = false
 	self._manaMode = false
 	self._doubleMode = false
@@ -367,6 +369,7 @@ function AOHGameMode.IncrementPhilo(PlayerID)
 	AOHGameMode.numPhilo[PlayerID] = AOHGameMode.numPhilo[PlayerID] + 1
 end
 
+--GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(AOHGameMode, 'OnDamageDealt'), self)
 function AOHGameMode:OnDamageDealt(damageTable)
 	local attacker_index = damageTable.entindex_attacker_const
 	local victim_index = damageTable.entindex_victim_const
@@ -378,25 +381,21 @@ function AOHGameMode:OnDamageDealt(damageTable)
 				local attackerPlayerId = attacker:GetPlayerOwnerID()
 				local victim_name = victim:GetUnitName()
 				if damageTable.damage > 1 then -- pointless to update tables and lag for 0 or 1
-					--if AOHGameMode.isTalon[attackerPlayerId] then
-						--demon_talon_proc(AOHGameMode.isTalon[attackerPlayerId], attacker, victim, damageTable, AOHGameMode.talonCount[attackerPlayerId][0], AOHGameMode.talonCount[attackerPlayerId][1])
-					--end
 					if AOHGameMode.isArcane[attackerPlayerId] then
 						if damageTable.damagetype_const ~= 1 then
 							arcane_staff_calculate_crit(attacker, victim, damageTable)
 						end
 					end
-					local dmg_dealt = damageTable.damage --arcane might update this value so i added after arcane
-					--if self.dpsinfo then
-					if victim and victim:GetDayTimeVisionRange() ~= 1337 then --npc conduit
+					local dmg_dealt = damageTable.damage -- arcane staff might update this value so i added after isArcane
+					if victim and victim:GetDayTimeVisionRange() ~= 1337 then --npc conduit(1337)
 						if attackerPlayerId and attackerPlayerId >= 0 and attacker:IsOpposingTeam(victim:GetTeam()) then
-							local victim_hp = victim:GetHealth()
-							if dmg_dealt > victim_hp and victim_name ~= "npc_dota_dummy_misha" then
+							local victim_hp = victim:GetHealth() --get victim curent healt so we make sure we don't record overkill dps
+							if dmg_dealt > victim_hp and victim_name ~= "npc_dota_dummy_misha" then --exception
 								dmg_dealt = victim_hp
 							end	
 							player_data_modify_value(attackerPlayerId, "bossDamage", dmg_dealt)
 							gHeroDamage:ModifyValue(attackerPlayerId, "bossDamage", dmg_dealt)
-							gHeroDamage:OnDamageDealt(attackerPlayerId, damageTable)
+							gHeroDamage:OnDamageDealt(attackerPlayerId, damageTable, dmg_dealt, attacker, victim )
 							if damageTable.damagetype_const == 2 then
 								self._magdamage[attackerPlayerId] = self._magdamage[attackerPlayerId] + dmg_dealt
 							elseif damageTable.damagetype_const == 1 then
@@ -414,7 +413,6 @@ function AOHGameMode:OnDamageDealt(damageTable)
 						end
 					end
 				end	
-				--end	
 			end
 		end
 	end
@@ -557,7 +555,7 @@ function AOHGameMode:InitVariables()
 					--hero:AddItemByName("item_ward_sentry")
 					CustomGameEventManager:Send_ServerToAllClients("game_begin", {name = PlayerResource:GetSelectedHeroName(playerID), id = playerID})
 					self._playerNumber = self._playerNumber + 1
-					PlayerResource:SetCustomBuybackCooldown(playerID, 120)
+					PlayerResource:SetCustomBuybackCooldown(playerID, 180)
 					--Sounds:CreateSound(playerID, "goh.teme")
 				end
 			end
@@ -938,7 +936,7 @@ function AOHGameMode:OnHeroLevelUp(event)
 		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
 		if mainHero == hero then
 			--cardPointsToGive = 1
-			DropItemOrInventory(nPlayerID, "item_random_get_ability_onlvl")
+			DropItemOrInventory2(nPlayerID, "item_random_get_ability_onlvl")
 			--mainHero:AddItemByName("item_random_get_ability_onlvl")
 			--holdout_card_points:_BuyCardPoints(nPlayerID, cardPointsToGive)
 		end
@@ -997,7 +995,7 @@ function AOHGameMode:OnHeroLevelUp(event)
 		-- Check if main/real hero
 		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
 		if mainHero == hero then
-			DropItemOrInventory(nPlayerID, "item_branch_component")
+			DropItemOrInventory2(nPlayerID, "item_branch_component")
 			--mainHero:AddItemByName("item_branch_component")
 		end
 	end	
@@ -1035,7 +1033,7 @@ function AOHGameMode:OnTreeCut(keys)
 	end
 end
 
-local pause_game = true
+
 function AOHGameMode:_CheckForDefeat()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		if self._entAncient and self._entAncient:IsAlive() then
@@ -1151,6 +1149,7 @@ local IllusionNotLearn = {
 		["dawnbreaker_luminosity"] = true,
 		["dawnbreaker_custom_luminosity"] = true,
 		["obs_replay"] = true,
+		["lone_druid_spirit_bear"] = true,
 		--["legion_commander_duel_lua"] = true,
 		--["custom_drow_ranger_trueshot"] = true,
 		--["ability_random_custom_gold"] = true,

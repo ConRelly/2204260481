@@ -541,9 +541,11 @@ function modifier_spirit_guardian_heal:GetModifierAvoidDamage(params)
 	end
 end
 function modifier_spirit_guardian_heal:OnDestroy()
-	if IsServer() then		
-		if self:GetParent() ~= nil and self:GetParent():IsAlive() and not self:GetParent():IsIllusion() then
-			self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_spirit_guardian_heal_cd", {duration = self:GetAbility():GetSpecialValueFor("internal_cd")})
+	if IsServer() then	
+		if self:GetAbility() then	
+			if self:GetParent() ~= nil and self:GetParent():IsAlive() and not self:GetParent():IsIllusion() then
+				self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_spirit_guardian_heal_cd", {duration = self:GetAbility():GetSpecialValueFor("internal_cd")})
+			end
 		end
 	end
 end

@@ -8800,7 +8800,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"dagger_path_duration"	"6.0"
+			"dagger_path_duration"	"3.0"
 		}
 		"04"
 		{
@@ -24091,7 +24091,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"850"
+				"radius"				"250"
 			}
 			"02"
 			{
@@ -30597,10 +30597,10 @@
 				"value"						"2 2 2 2 2 2 1"
 				"RequiresScepter"			"1"
 			}
-			"radius"						"700"
+			"radius"						"1200"
 			"radius_scepter"
 			{
-				"value"						"1200"
+				"value"						"100"
 				"RequiresScepter"			"1"
 			}
 		}
@@ -31753,7 +31753,7 @@
 		"AbilityCastPoint"				"0.5"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
-		"AbilityCooldown"				"20.0 15.0 13.0"
+		"AbilityCooldown"				"20.0 15.0 10.0"
 		"AbilityManaCost"				"35 40 45"
 		
 		"AbilityModifierSupportValue"	"0.0"	// Modifier just does damage
@@ -31768,7 +31768,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"cast_range"				"3000"
+				"cast_range"				"3500"
 			}
 			"03"
 			{
@@ -31783,7 +31783,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"assassinate_damage"		"400 950 2700"
+				"assassinate_damage"		"1900 5950 22700"
 				// "LinkedSpecialBonus"		"special_bonus_unique_mjz_sniper_assassinate_damage" 
 			}
 			"06"
@@ -31804,13 +31804,13 @@
 			"09"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"scepter_crit_bonus"		"680"
+				"scepter_crit_bonus"		"980"
 				// "LinkedSpecialBonus"		"special_bonus_unique_mjz_sniper_assassinate_damage" 
 			}
 			"10"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"1.5"
+				"stun_duration"				"1.0"
 			}
 			"13"
 			{
@@ -31838,7 +31838,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"250"
+				"value"						"450"
 			}
 		}
 	}
@@ -31945,7 +31945,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_range"			"150 250 400 500"
+				"bonus_attack_range"			"250 450 700 1000"
 				"LinkedSpecialBonus"			"special_bonus_unique_sniper_6"
 			}
 			"02"
@@ -40565,12 +40565,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hero_kill_heal"		"12 18 24 1800"
+				"hero_kill_heal"		"12 18 24 2800"
 			}		
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"creep_kill_heal"		"8 12 16 50"
+				"creep_kill_heal"		"8 12 16 80"
 			}		
 			"05"
 			{

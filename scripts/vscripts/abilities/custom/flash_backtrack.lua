@@ -16,10 +16,8 @@ function modifier_flash_backtrack:GetEffectName() return "particles/econ/items/o
 function modifier_flash_backtrack:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 
 function modifier_flash_backtrack:OnCreated()
-    local dodge_chance_pct = self:GetAbility():GetSpecialValueFor("dodge_chance_pct")
-    --if self:GetCaster():HasModifier("modifier_flash_speedforce_power") then dodge_chance_pct = dodge_chance_pct + self:GetCaster():FindAbilityByName("flash_speedforce_power"):GetSpecialValueFor("ultimate_bonus_pct") end
-
     if IsServer() then
+        local dodge_chance_pct = self:GetAbility():GetSpecialValueFor("dodge_chance_pct")
         self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_faceless_void_backtrack", {dodge_chance_pct = dodge_chance_pct})
         self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_flash_double_attack", nil)
     end
@@ -43,8 +41,8 @@ function modifier_flash_double_attack:OnAttackLanded(params)
         self:GetCaster():PerformAttack(params.target, true, true, true, true, false, false, false)
         --EmitSoundOn("Hero_FacelessVoid.TimeLockImpact", params.target)
         params.attacker:EmitSoundParams("Hero_FacelessVoid.TimeLockImpact", 0, 0.1, 0)
-        local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_timedialate.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
-        ParticleManager:SetParticleControl(particle, 0, self:GetCaster():GetAbsOrigin())
-        ParticleManager:ReleaseParticleIndex(particle)
+        --local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_timedialate.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
+        --ParticleManager:SetParticleControl(particle, 0, self:GetCaster():GetAbsOrigin())
+        --ParticleManager:ReleaseParticleIndex(particle)
     end
 end

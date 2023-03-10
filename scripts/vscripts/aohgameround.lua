@@ -116,7 +116,7 @@ function AOHGameRound:End()
  			skip = skip + 0.05
 			local name = unit:GetUnitName()
 			Timers:CreateTimer({
-				endTime = 5 + skip, 
+				endTime = 10 + skip, 
 				callback = function()
 					if not unit:IsNull() and IsValidEntity(unit) then
 						print("focekill unit: "..name)

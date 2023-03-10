@@ -54,6 +54,49 @@ function string.custom_remove2(str)
         return 1   
     end    
 end
+--autocast select item1 slot
+function string.custom_remove3(str)
+    if str == nil then
+        return nil, "the string parameter is nil"
+    end
+    str = string.gsub(str, " ", "")
+    str = string.gsub(str, "-itemauto1", "")
+    str = tonumber(str)
+    if checknumber(str) then
+        if str > 6 then
+            str = 1
+        end
+        if str < 1 then
+            str = 1
+        end    
+        return str
+    else
+        return 1   
+    end    
+end
+--autocast select item2 slot
+function string.custom_remove4(str)
+    if str == nil then
+        return nil, "the string parameter is nil"
+    end
+    str = string.gsub(str, " ", "")
+    str = string.gsub(str, "-itemauto2", "")
+    str = tonumber(str)
+    if checknumber(str) then
+        if str == 81 then
+            return 17
+        end    
+        if str > 6 then
+            str = 2
+        end
+        if str < 1 then
+            str = 2
+        end    
+        return str
+    else
+        return 2  
+    end    
+end
 --[[将str的第一个字符转化为大写字符。成功返回转换后的字符串，失败返回nil和失败信息]]
 function string.capitalize(str)
     if str == nil then

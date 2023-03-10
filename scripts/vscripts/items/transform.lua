@@ -202,10 +202,10 @@ function ChangeHeroKardel(keys)
 
 	-- 20 Level
 		--right
-		if caster:HasAbility("special_bonus_hp_4000") then
+		if caster:HasAbility("special_bonus_truestrike") then
 			caster:AddAbility("special_bonus_attack_range_400")
-			caster:SwapAbilities("special_bonus_hp_4000", "special_bonus_attack_range_400", false, true)
-			caster:RemoveAbility("special_bonus_hp_4000")
+			caster:SwapAbilities("special_bonus_truestrike", "special_bonus_attack_range_400", false, true)
+			caster:RemoveAbility("special_bonus_truestrike")
 		end
 		--left
 		if caster:HasAbility("special_bonus_unique_mjz_sniper_assassinate_damage") then

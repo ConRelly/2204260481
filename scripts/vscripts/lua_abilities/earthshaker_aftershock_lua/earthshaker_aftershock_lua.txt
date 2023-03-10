@@ -30,7 +30,7 @@
 			"2"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"str_multiplier"			"4 6 8 10 15 20 40"
+				"all_multiplier"			"4 6 8 10 15 20 40"
 				"LinkedSpecialBonus"	    "special_bonus_unique_es_aftershock_str_multiplier"
 			}
 			"3"
@@ -42,7 +42,7 @@
 			"4"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"0.2"
+				"duration"					"0.0"
 			}
 		}
 	}

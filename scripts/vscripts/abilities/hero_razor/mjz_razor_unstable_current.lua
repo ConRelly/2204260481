@@ -13,8 +13,8 @@ function ability_class:GetAbilityTextureName()
 end
 
 function ability_class:GetAOERadius()
-    if self:GetCaster():HasScepter() then
-        return self:GetSpecialValueFor("radius_scepter")
+    if self:GetCaster() and self:GetCaster():HasScepter() then
+        return self:GetCaster():Script_GetAttackRange() + 100 --self:GetSpecialValueFor("radius_scepter")
     end
 	return self:GetSpecialValueFor("radius")	 -- return self.BaseClass.GetAOERadius(self)
 end

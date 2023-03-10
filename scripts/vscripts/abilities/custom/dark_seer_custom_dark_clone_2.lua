@@ -58,6 +58,7 @@ function dark_seer_custom_dark_clone_2:OnSpellStart()
 		["mjz_troll_warlord_battle_trance_scepter"] = true,
 		["skeleton_king_reincarnation"] = true,
 		["mjz_skeleton_king_ghost"] = true,
+		["lone_druid_spirit_bear"] = true,
 	}
 
 	local playerHero = target

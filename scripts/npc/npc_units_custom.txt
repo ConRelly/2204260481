@@ -300,8 +300,8 @@
 	"Ability1"				  "draks_unholy_strength"
 	"Ability2"				  "generic_hidden" //"jotaro_absolute_defense"
 	"Ability3"				 "spectre_custom_dispersion_boss" //"generic_hidden"
-	"Ability4"				 "generic_hidden"
-	"Ability5"				 "generic_hidden"
+	//"Ability4"				 "custom_aphotic_shield" //"generic_hidden"
+	"Ability5"				 "generic_hidden" //"generic_hidden"
 	"Ability6"				 "generic_hidden"
 	"Ability7"				 "generic_hidden"
 	"Ability8"				 "generic_hidden"
@@ -346,6 +346,29 @@
 	"Creature"
 	{
 		"DisableClumpingBehavior"   "1"
+		"OffensiveAbilities"
+		{
+			//"Ability4"
+			//{
+			//	"Name"			  "custom_aphotic_shield"
+			//	//"Name"				  "frostivus2018_spectre_active_dispersion"
+			//}
+			//"Ability5"
+			//{
+			//	"Name"				"custom_spectral_dagger"
+			//	"AOE"				"1"
+			//	"Radius"			"2000"
+			//	"MinimumTargets"	"0"
+			//}
+			//"Ability5"
+			//{
+			   //"Name"					"boss_spectre_reality"
+			//}
+			//"Ability6"
+			//{
+				//"Name"					"boss_spectre_haunt"
+			//}
+		}		
         "EquippedItems"
         {
 //			"Boss Resistance"   { "Item"        "item_boss_resistance_50" }
@@ -3733,7 +3756,7 @@
 "npc_custom_wolf"
 {
 	//"Model"						"models/items/lycan/wolves/ambry_summon/ambry_summon.vmdl"
-	"Model"		"models/items/lycan/ultimate/frostivus2018_lycan_winter_snow_wolf_shapeshift/frostivus2018_lycan_winter_snow_wolf_shapeshift.vmdl"
+	"Model"						"models/items/lycan/ultimate/frostivus2018_lycan_savage_beast_form/frostivus2018_lycan_savage_beast_form.vmdl"
 	"BaseClass"					"npc_dota_creature"
 	"vscripts"					"bosses/attack_move.lua"
 	"SoundSet"					"Hero_Lycan"
@@ -6560,6 +6583,14 @@
 			//"Gold Ring"				 { "Item"		"item_plain_ring" }
 
 		}
+		"AttachWearables"
+		{
+			"Wearable1" { "ItemDef" "13783" }
+			"Wearable1"	{ "ItemDef" "708" }
+			"Wearable2"	{ "ItemDef" "714" }
+			"Wearable1"	{ "ItemDef" "715" }
+			"Wearable5"	{ "ItemDef" "716" }
+		}		
 	}
 }
 //=================================================================================	

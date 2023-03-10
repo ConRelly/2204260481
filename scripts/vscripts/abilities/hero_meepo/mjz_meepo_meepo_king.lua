@@ -6,9 +6,9 @@ LinkLuaModifier("modifier_mjz_meepo_meepo_king_experience", "abilities/hero_meep
 mjz_meepo_meepo_king = class({})
 local ability_class = mjz_meepo_meepo_king
 
-function ability_class:GetAOERadius()
+--[[ function ability_class:GetAOERadius()
 	return self:GetSpecialValueFor('experience_radius')
-end
+end ]]
 
 function ability_class:GetIntrinsicModifierName()
 	return "modifier_mjz_meepo_meepo_king"
@@ -31,7 +31,8 @@ function modifier_mjz_meepo_meepo_king:DeclareFunctions()
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
 		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
-		MODIFIER_PROPERTY_MODEL_SCALE,		
+		MODIFIER_PROPERTY_MODEL_SCALE,
+		MODIFIER_PROPERTY_EXP_RATE_BOOST,	
     }
 end
 
@@ -59,11 +60,14 @@ function modifier_mjz_meepo_meepo_king:GetModifierModelScale()
     return self:GetAbility():GetSpecialValueFor('model_multiplier')
 end
 
+function modifier_mjz_meepo_meepo_king:GetModifierPercentageExpRateBoost()
+    return self:GetAbility():GetSpecialValueFor('experience_pct')
+end
 ------------------------------------------------
 
-function modifier_mjz_meepo_meepo_king:IsAura()
+--[[ function modifier_mjz_meepo_meepo_king:IsAura()
 	return true
-end
+end ]]
 
 function modifier_mjz_meepo_meepo_king:GetAuraRadius()
     return self:GetAbility():GetSpecialValueFor("experience_radius")
@@ -100,7 +104,7 @@ end
 modifier_mjz_meepo_meepo_king_experience = class({})
 
 function modifier_mjz_meepo_meepo_king_experience:IsPassive()  return true end
-function modifier_mjz_meepo_meepo_king_experience:IsHidden()  return true end
+function modifier_mjz_meepo_meepo_king_experience:IsHidden()  return false end
 function modifier_mjz_meepo_meepo_king_experience:IsPurgable()  return false end
 
 if IsServer() then

@@ -51,13 +51,8 @@ function modifier_spectre_custom_dispersion_boss:OnTakeDamage (event)
 							if self.extra_restore_chance == nil then return end
 							local vparent = self.parent:GetAbsOrigin()
 							local vUnit = unit:GetAbsOrigin()
-
 							local reflect_damage = 0.0
-							local particle_name = ""
-
 							reflect_damage = post_damage * self.damage_reflect_pct
-							--particle_name = "particles/units/heroes/hero_spectre/spectre_dispersion.vpcf"
-							particle_name = "particles/units/heroes/hero_spectre/spectre_dispersion_b_fallback_mid.vpcf"
 							if self.parent and not self.parent:IsNull() and self.parent:IsAlive() then
 								self.parent:SetHealth(self.parent:GetHealth() + (post_damage * self.damage_block_pct) )
 								if RollPercentage(self.extra_restore_chance) then
@@ -65,12 +60,7 @@ function modifier_spectre_custom_dispersion_boss:OnTakeDamage (event)
 								end	
 							
 								if unit and not unit:IsNull() and unit:IsAlive() then
-									--Create particle
-									local particle = ParticleManager:CreateParticle( particle_name, PATTACH_POINT_FOLLOW, self.parent )
-									ParticleManager:SetParticleControl(particle, 0, vparent)
-									ParticleManager:SetParticleControl(particle, 1, vUnit)
-									ParticleManager:SetParticleControl(particle, 2, vparent)
-									ParticleManager:ReleaseParticleIndex(particle)
+
 									ApplyDamage({
 										ability = self.ability,
 										attacker = self.parent,

@@ -21,31 +21,17 @@ function HeroDamageStat:OnUpdateThink( )
     end
 end
 
-function HeroDamageStat:OnDamageDealt(playerID, damageTable)
-    local attacker_index = damageTable.entindex_attacker_const
-	local victim_index = damageTable.entindex_victim_const
-	if attacker_index and victim_index then
-        local attacker = EntIndexToHScript(attacker_index)
-        local victim = EntIndexToHScript(victim_index)
-        if damageTable.damage < 2 then return end
-        if attacker and victim then
-			if attacker.GetPlayerOwnerID then
-				local attackerPlayerId = attacker:GetPlayerOwnerID()
-                if victim and victim:GetDayTimeVisionRange() ~= 1337 then   -- ~= npc_conduit
-                    if attackerPlayerId and attackerPlayerId >= 0 and attacker:IsOpposingTeam(victim:GetTeam()) then
-                        local ability = nil
-                        local victim_hp = victim:GetHealth()
-                        local damage_dealt = damageTable.damage
-                        local victim_name = victim:GetUnitName()
-                        if damage_dealt > victim_hp and victim_name ~= "npc_dota_dummy_misha" then
-                            damage_dealt = victim_hp
-                        end    
-                        if damageTable.entindex_inflictor_const then
-                            ability = EntIndexToHScript(damageTable.entindex_inflictor_const)
-                        end
-                        self:ModifyDamage(attackerPlayerId, damageTable.damagetype_const, damage_dealt, ability)
-                    end
+function HeroDamageStat:OnDamageDealt(playerID, damageTable, dmg_dealt, attacker, victim)
+    if attacker and victim then
+        if attacker.GetPlayerOwnerID then
+            local attackerPlayerId = playerID
+            if attackerPlayerId then
+                local ability = nil
+                local damage_dealt = dmg_dealt 
+                if damageTable.entindex_inflictor_const then
+                    ability = EntIndexToHScript(damageTable.entindex_inflictor_const)
                 end
+                self:ModifyDamage(attackerPlayerId, damageTable.damagetype_const, damage_dealt, ability)
             end
         end
     end

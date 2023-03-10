@@ -19,7 +19,7 @@
 		"ItemKillable"					"0"
 		"ItemStackable"					"1"
 		"ItemPermanent"					"0"
-		"ItemStockTime"					"880"
+		"ItemStockTime"					"1280"
 		"ItemStockMax"					"5"
 		"ItemStockInitial"				"1"
 		"ItemInitialCharges"			"1"
@@ -20678,7 +20678,7 @@
 		"AbilityTextureName"				"imba_silver_edge"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"SpellImmunityType"					"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCooldown"					"60.0"
+		"AbilityCooldown"					"100.0"
 		"AbilityManaCost"					"75"
 		"AbilitySharedCooldown"				"shadow_blade"
 		"ItemCost"							"5150"
@@ -20842,7 +20842,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"base_cooldown"			"100"
+			"base_cooldown"			"120"
 		}
 		"02"
 		{

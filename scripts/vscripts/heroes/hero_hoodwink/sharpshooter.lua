@@ -248,11 +248,19 @@ function modifier_hw_sharpshooter:OnDestroy()
 	self.info.ExtraData = {damage = self.damage * pct, duration = self.duration * pct, x = direction.x, y = direction.y, sound = sound:entindex(), damage2 = self.damage2}
 	ProjectileManager:CreateLinearProjectile(self.info)
 
-	local mod = self.caster:AddNewModifier(self.caster, self, "modifier_generic_knockback_lua", {duration = self.recoil_duration, height = self.recoil_height, distance = self.recoil_distance, direction_x = -direction.x, direction_y = -direction.y})
+	local has_ss = self.caster:HasModifier("modifier_super_scepter")
+	if has_ss then
+		StopSoundOn("Hero_Hoodwink.Sharpshooter.Channel", self.caster)
+		EmitSoundOn("Hero_Hoodwink.Sharpshooter.Cast", self.caster)
+	else
+		local mod = self.caster:AddNewModifier(self.caster, self, "modifier_generic_knockback_lua", {duration = self.recoil_duration, height = self.recoil_height, distance = self.recoil_distance, direction_x = -direction.x, direction_y = -direction.y})
+		self:PlayEffects4(mod)
+	end	
+	
 
 	self.caster:SwapAbilities("hw_sharpshooter", "hw_sharpshooter_release", true, false)
 
-	self:PlayEffects4(mod)
+	
 	self:GetParent():FadeGesture(ACT_DOTA_CHANNEL_ABILITY_6)
 	self.caster:Stop()
 end
