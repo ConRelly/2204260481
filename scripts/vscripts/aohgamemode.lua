@@ -716,7 +716,7 @@ function AOHGameMode:OnThink()
 			end
 		end
 		self:_CheckWin()
-		self:TrackDisconnectedPlayers()
+		--self:TrackDisconnectedPlayers()
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then		-- Safe guard catching any state that may exist beyond DOTA_GAMERULES_STATE_POST_GAME
 		return nil
 	end
@@ -724,7 +724,7 @@ function AOHGameMode:OnThink()
 end
 
 
-local ABANDONED_THRESHOLD = 420 -- 7 minutes in seconds
+--[[ local ABANDONED_THRESHOLD = 420 -- 7 minutes in seconds
 local disconnected_players = {}
 
 function AOHGameMode:TrackDisconnectedPlayers()
@@ -748,7 +748,7 @@ function AOHGameMode:TrackDisconnectedPlayers()
 		end
 	end
 end
-
+ ]]
 
 function AOHGameMode:_RevealShop()
 	local shopPos = Entities:FindByName(nil, "the_shop"):GetAbsOrigin()

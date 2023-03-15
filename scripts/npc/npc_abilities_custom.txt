@@ -28954,10 +28954,10 @@
 		"AbilityTextureName"			"omniknight_repel"		//	"mjz_omniknight_repel"
 
 		"AbilityCastRange"				"2500"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 		
 		"AbilityCooldown"				"26.0 22.0 18.0 14.0"
-		"AbilityManaCost"				"50 55 60 65"
+		"AbilityManaCost"				"50"
 
 		"AbilityModifierSupportValue"	"3.0"	// Value much higher than cost.
 
@@ -40784,7 +40784,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dodge_chance_pct"			"55"
+				"dodge_chance_pct"			"70"
 			}
 			"02"
 			{

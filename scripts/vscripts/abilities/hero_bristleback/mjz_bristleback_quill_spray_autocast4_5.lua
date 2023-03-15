@@ -123,25 +123,25 @@ function modifier_class:OnIntervalThink()
                     local first_enemy = enemy_list[1]
                     if target_ability == nil then return nil end 
                     if parent == nil then return nil end                   
-                        if ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and (target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH) then
-                            if target_ability and IsValidEntity(target_ability) and IsValidEntity(first_enemy) and IsValidEntity(parent) and parent:IsAlive() and first_enemy:IsAlive() then
-                                parent:CastAbilityOnTarget(first_enemy, target_ability, parent:GetPlayerOwnerID())
-                            end   
-                        elseif ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_POINT) then
-                            if target_ability and IsValidEntity(target_ability) and IsValidEntity(first_enemy) and IsValidEntity(parent) and parent:IsAlive() and first_enemy:IsAlive() then
-                                parent:CastAbilityOnPosition(first_enemy:GetAbsOrigin(), target_ability, parent:GetPlayerOwnerID())
-                            end   
-                        elseif ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_NO_TARGET) then
-                            if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
-                                parent:CastAbilityNoTarget(target_ability, parent:GetPlayerOwnerID()) 
-                            end    
-                        elseif ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_FRIENDLY then	
-                            if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
-                                parent:CastAbilityOnTarget(parent, target_ability, parent:GetPlayerOwnerID())
-                            end    
-                        else
-                            return nil    
+                    if ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and (target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH) then
+                        if target_ability and IsValidEntity(target_ability) and IsValidEntity(first_enemy) and IsValidEntity(parent) and parent:IsAlive() and first_enemy:IsAlive() then
+                            parent:CastAbilityOnTarget(first_enemy, target_ability, parent:GetPlayerOwnerID())
+                        end   
+                    elseif ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_POINT) then
+                        if target_ability and IsValidEntity(target_ability) and IsValidEntity(first_enemy) and IsValidEntity(parent) and parent:IsAlive() and first_enemy:IsAlive() then
+                            parent:CastAbilityOnPosition(first_enemy:GetAbsOrigin(), target_ability, parent:GetPlayerOwnerID())
+                        end   
+                    elseif ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_NO_TARGET) then
+                        if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
+                            parent:CastAbilityNoTarget(target_ability, parent:GetPlayerOwnerID()) 
                         end    
+                    elseif ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_FRIENDLY then	
+                        if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
+                            parent:CastAbilityOnTarget(parent, target_ability, parent:GetPlayerOwnerID())
+                        end    
+                    else
+                        return nil    
+                    end    
                     return nil
                 end
             end       

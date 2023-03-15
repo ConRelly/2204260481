@@ -2418,6 +2418,10 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * First boss (Clinkz): slightly less hp and much less mana regen (from 70s to 40s)
 
 
+* Fixed unrefined fireblast not working with autocast and reduced some of his mana cost to 10%
+* Fixed phantom reflex for PA.
+
+
 
 
 **Update Notes spellings will get corrected before the live update.

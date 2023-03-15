@@ -8,15 +8,18 @@ function ogre_magi_multicast_n:GetCooldown(lvl)
 	return self:GetCaster():CustomValue("ogre_magi_custom_bonus_unique_2", "risk_cooldown") / self:GetCaster():GetCooldownReduction()
 end
 function ogre_magi_multicast_n:OnInventoryContentsChanged(params)
-	local caster = self:GetCaster()
+	if IsServer() then
+		local caster = self:GetCaster()
 
-	local FireBlast = caster:FindAbilityByName("ogre_magi_unrefined_fireblast_lua")
-	if not FireBlast then return end
+		local FireBlast = caster:FindAbilityByName("ogre_magi_unrefined_fireblast_lua")
+		if not FireBlast then return end
 
-	FireBlast:SetActivated(caster:HasScepter())
-	FireBlast:SetHidden(not caster:HasScepter())
+		FireBlast:SetActivated(caster:HasScepter())
+		FireBlast:SetHidden(not caster:HasScepter())
 
-	if FireBlast:GetLevel() < 1 then FireBlast:SetLevel(1) end
+		if FireBlast:GetLevel() < 1 then FireBlast:SetLevel(1) end
+
+	end
 end
 
 

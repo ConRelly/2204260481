@@ -19,7 +19,10 @@ function ogre_magi_unrefined_fireblast_lua:GetManaCost( level )
 
 	return math.floor( self:GetCaster():GetMana() * pct )
 end
-
+function ogre_magi_unrefined_fireblast_lua:GetBehavior()
+	return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET
+end
+  
 --------------------------------------------------------------------------------
 -- Ability Start
 function ogre_magi_unrefined_fireblast_lua:OnSpellStart()
