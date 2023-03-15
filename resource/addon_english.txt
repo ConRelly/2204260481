@@ -2856,6 +2856,7 @@
 	in case it doesn't work type '-autocast6' to relearn the skill(disable toggle before). type '-removeauto2' to delete the skill and restore the Enchanter"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_tick_interval"	  "Interval Check:"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Note0"			  "It will cast the first non hotkey viabile(excluding passives toggle etc) ability, if the ability is not rdy it will cast the next ability"
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Note1"              "Autocast will stop at the first Passive ability , if you want to you use the ItemAutocast make sure you don't have a passive ability at the end."
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Lore"              "Are you pressing any buttons ?"
 
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast5"					"AutoCast - Shadow Poison"

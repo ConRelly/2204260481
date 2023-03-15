@@ -590,7 +590,7 @@ function AOHGameMode:OnPlayerChat(keys)
 		local slot_nr = string.custom_remove4(keys.text)
 		if slot_nr then
 			print(slot_nr)			 
-			_G._itemauto1[keys.playerid] = slot_nr - 1
+			_G._itemauto2[keys.playerid] = slot_nr - 1
 			Notifications:Top(plyID, {text= "You have set itemAutocast 2 on slot: "..slot_nr  , style={color="red"}, duration=6})
 		end
 	end

@@ -11274,13 +11274,13 @@
 	"HealthBarOffset"			"150"
 	"BountyXP"					"0"		// Experience earn.
 	"BountyGoldMin"				"25"		// Gold earned min.
-	"BountyGoldMax"				"30"		// Gold earned max.
+	"BountyGoldMax"				"40"		// Gold earned max.
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 	"MovementSpeed"				"300"		// Speed.			
-	"StatusHealth"				"3800"		// Base health.
+	"StatusHealth"				"3200"		// Base health.
 	"StatusHealthRegen"			"2"		// Health regeneration rate.
 	"StatusMana"				"400"			// Base mana.
-	"StatusManaRegen"			"70"		// Mana regeneration rate.		 
+	"StatusManaRegen"			"30"		// Mana regeneration rate.		 
 	"VisionDaytimeRange"		"1600"		// Range of vision during day light.
 	"VisionNighttimeRange"		"1600"		// Range of vision at night time.
 	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
@@ -16503,6 +16503,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"damage_meter"
 		"Ability2"					"windrunner_windrun"
+		//"Ability3"                  "flash_backtrack"
 
 		// Armor
 		//----------------------------------------------------------------

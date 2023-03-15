@@ -2405,6 +2405,20 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * and some other changes.
 
 
+* Fixed itemautocast for heroes not working for 2 slots at the same time.
+* Fixed Curier being able to cast Pipe of Dezun.
+* Reduced some of the slayer attribute mail reflection.
+
+
+
+
+* Fixed gods and demigods taking 3-5 times more dmg then usual(some dota patch made one of their defenses dispelable).
+* Attribute mail back to normal 100% reflection.(don't forget centaur has a talent for that)
+* Added 0.2 and 0.3s more cd to kardel, he can probably qualify for Ancient (victory) role in discord.
+* First boss (Clinkz): slightly less hp and much less mana regen (from 70s to 40s)
+
+
+
 
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).
@@ -2469,3 +2483,6 @@ if has_ss and marci_ult then
 end
 
 * The "Exclusive" tag will now be written on the ability (Example: *hero_name*'s Exclusive: *item_name*)
+
+
+

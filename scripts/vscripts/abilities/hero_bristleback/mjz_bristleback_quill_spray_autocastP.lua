@@ -44,7 +44,7 @@ end
 
 local NoAutocastItem = {
     
-    --["drow_ranger_frost_arrows_lua"] = true,
+    ["item_pipe_of_dezun"] = true,
 
 
 

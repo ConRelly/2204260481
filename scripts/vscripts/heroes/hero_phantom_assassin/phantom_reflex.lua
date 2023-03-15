@@ -41,9 +41,9 @@ modifier_phantom_reflex = class({
 
 function modifier_phantom_reflex:OnCreated()
 	if self:GetAbility() then
-		local dodge_chance_pct = self:GetAbility():GetSpecialValueFor("dodge_chance_pct")	
+		--local dodge_chance_pct = self:GetAbility():GetSpecialValueFor("dodge_chance_pct")	
 		if IsServer() then
-			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_faceless_void_backtrack", {dodge_chance_pct = dodge_chance_pct})
+			--self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_faceless_void_backtrack", {dodge_chance_pct = dodge_chance_pct})
 			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_flash_double_attack", nil)
 		end
 	end	
@@ -51,15 +51,25 @@ end
 function modifier_phantom_reflex:DeclareFunctions()
 	return {MODIFIER_PROPERTY_AVOID_DAMAGE}
 end
-function modifier_phantom_reflex:GetModifierAvoidDamage(params)
+function modifier_flash_backtrack:GetModifierAvoidDamage(params)
 	if IsServer() then
-        if self:GetParent() and self:GetParent():PassivesDisabled() then
-            local randomSeed = math.random(1, 100)
-            if randomSeed <= 40 then
-                local iParticleID = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
-                ParticleManager:ReleaseParticleIndex(iParticleID)
-                return 1
-            end   
+        local parent = self:GetParent()
+        if parent then
+            if parent:PassivesDisabled() then
+                local randomSeed = math.random(1, 100)
+                if randomSeed <= 45 then
+                    --local iParticleID = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+                    --ParticleManager:ReleaseParticleIndex(iParticleID)
+                    return 1
+                end  
+            else
+                local randomSeed = math.random(1, 100)
+                if randomSeed <= 70 then
+                    --local iParticleID = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+                    --ParticleManager:ReleaseParticleIndex(iParticleID)
+                    return 1
+                end				   
+            end             
         end
         return 0 
 	end	
