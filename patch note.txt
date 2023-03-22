@@ -2423,6 +2423,10 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* If a player is disconnected for more then 7 minutes, most of his items(inventory + backpack + stash) will be distributed to other players as new items(loot drop rule). 
+* Fixed Light CrossBow frist form not clearing particles well and creating permanent lag(or until reconnect), add something(extra partcile clears) for other forms too but based on tests only first form was doing that lag somehow.
+* Removed the effects (dodge and double attack) on Phantom Reflex skill (small help in adding some fps to low end pcs).
+
 
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).

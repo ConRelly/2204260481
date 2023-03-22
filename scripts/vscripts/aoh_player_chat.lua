@@ -125,8 +125,8 @@ function AOHGameMode:OnPlayerChat(keys)
 		self:_RenewStats()	
 	end
 	if keys.text == "-dev_disc" and Cheats:IsEnabled() and keys.playerid == 0 then
-		DisconnectClient(1, false)
-		print("disconnected comand")
+		--self:TrackDisconnectedPlayers()
+		print("track disc comand")
 	end
 
 

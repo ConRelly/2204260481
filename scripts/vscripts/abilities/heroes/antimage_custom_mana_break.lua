@@ -130,6 +130,10 @@ function modifier_antimage_custom_mana_break:OnRefresh()
 	local caster = self:GetCaster()
 	local ability = self:GetAbility()
 	local stack = ability:GetSpecialValueFor("mana_per_hit")
+	local lvl = caster:GetLevel()
+	if caster:HasModifier("modifier_super_scepter") then
+		stack = stack + lvl
+	end		
 	local final_stack = stack / 40
 	local mbuff = caster:FindModifierByName(modifier_buff)
 	if mbuff ~= nil then

@@ -3,6 +3,7 @@
 ------------------
 LinkLuaModifier("modifier_light_crossbow_1", "items/light_crossbow.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_light_crossbow_1_aura", "items/light_crossbow.lua", LUA_MODIFIER_MOTION_NONE)
+--LinkLuaModifier("modifier_light_crossbow_lightning", "items/light_crossbow.lua", LUA_MODIFIER_MOTION_NONE)
 if item_light_crossbow == nil then item_light_crossbow = class({}) end
 function item_light_crossbow:GetIntrinsicModifierName() return "modifier_light_crossbow_1" end
 
@@ -38,8 +39,8 @@ function OnAttackLanded_NotUsed(keys)
 	local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
 	ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
 	ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
-	ParticleManager:ReleaseParticleIndex(particle)
 	ParticleManager:DestroyParticle(particle, false)
+	ParticleManager:ReleaseParticleIndex(particle)
 	-- Get a list of all nearby enemies within a 900 range
 	local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, static_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
 	local enemies_hit = 0
@@ -62,8 +63,8 @@ function OnAttackLanded_NotUsed(keys)
 			--local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
 			ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 			ParticleManager:SetParticleControlEnt(particle, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
-			ParticleManager:ReleaseParticleIndex(particle)
 			ParticleManager:DestroyParticle(particle, false)
+			ParticleManager:ReleaseParticleIndex(particle)
 			enemies_hit = enemies_hit + 1
 			target = enemy
 		end
@@ -131,6 +132,7 @@ function modifier_light_crossbow_1:GetModifierProcAttack_Feedback(keys)
 			local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
 			ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
 			ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+			ParticleManager:DestroyParticle(particle, false)
 			ParticleManager:ReleaseParticleIndex(particle)
 			-- Get a list of all nearby enemies within a 900 range
 			local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, static_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
@@ -154,6 +156,7 @@ function modifier_light_crossbow_1:GetModifierProcAttack_Feedback(keys)
 					local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
 					ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 					ParticleManager:SetParticleControlEnt(particle, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
+					ParticleManager:DestroyParticle(particle, false)
 					ParticleManager:ReleaseParticleIndex(particle)
 					enemies_hit = enemies_hit + 1
 					target = enemy
@@ -192,6 +195,9 @@ function modifier_light_crossbow_1:GetModifierProcAttack_Feedback(keys)
 		end	      
 	end   
 end
+
+
+
 
 function modifier_light_crossbow_1:IsAura() return true end
 function modifier_light_crossbow_1:IsAuraActiveOnDeath() return false end
@@ -269,7 +275,8 @@ function modifier_light_crossbow_2:GetModifierProcAttack_Feedback(keys)
             local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
             ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
             ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
-            ParticleManager:ReleaseParticleIndex(particle)
+			ParticleManager:DestroyParticle(particle, false)
+			ParticleManager:ReleaseParticleIndex(particle)
 			--self:AddParticle(particle, false, false, -1, false, false)
             -- Get a list of all nearby enemies within a 900 range
             local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, static_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
@@ -294,7 +301,8 @@ function modifier_light_crossbow_2:GetModifierProcAttack_Feedback(keys)
                     ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
                     ParticleManager:SetParticleControlEnt(particle, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
 					--self:AddParticle(particle, false, false, -1, false, false)
-                    ParticleManager:ReleaseParticleIndex(particle)
+					ParticleManager:DestroyParticle(particle, false)
+					ParticleManager:ReleaseParticleIndex(particle)
                     enemies_hit = enemies_hit + 1
 					target = enemy
                 end
@@ -320,7 +328,8 @@ function modifier_light_crossbow_2:GetModifierProcAttack_Feedback(keys)
                     ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
                     ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
                     ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-                    ParticleManager:ReleaseParticleIndex(particle_eff)
+					ParticleManager:DestroyParticle(particle_eff, false)
+					ParticleManager:ReleaseParticleIndex(particle_eff)
 					EmitSoundOn(zeus_ultimate_sound, caster)                    
                     caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
                     -- Remove the old item and add the evolved item
@@ -408,7 +417,8 @@ function modifier_light_crossbow_3:GetModifierProcAttack_Feedback(keys)
             local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
             ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
             ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
-            ParticleManager:ReleaseParticleIndex(particle)
+			ParticleManager:DestroyParticle(particle, false)
+			ParticleManager:ReleaseParticleIndex(particle)
             -- Get a list of all nearby enemies within a 900 range
             local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, static_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
             local enemies_hit = 0
@@ -431,7 +441,8 @@ function modifier_light_crossbow_3:GetModifierProcAttack_Feedback(keys)
                     local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
                     ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
                     ParticleManager:SetParticleControlEnt(particle, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
-                    ParticleManager:ReleaseParticleIndex(particle)
+					ParticleManager:DestroyParticle(particle, false)
+					ParticleManager:ReleaseParticleIndex(particle)
                     enemies_hit = enemies_hit + 1
 					target = enemy
                 end
@@ -457,6 +468,7 @@ function modifier_light_crossbow_3:GetModifierProcAttack_Feedback(keys)
                     ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
                     ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
                     ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+					ParticleManager:DestroyParticle(particle_eff, false)
 					ParticleManager:ReleaseParticleIndex(particle_eff)
 					EmitSoundOn(zeus_ultimate_sound, caster)                    
                     caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
@@ -601,6 +613,7 @@ function modifier_thunder_hammer:OnAttackLanded(keys)  --and not self:GetParent(
 				ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
 				ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
 				ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+				ParticleManager:DestroyParticle(particle_eff, false)
 				ParticleManager:ReleaseParticleIndex(particle_eff)
 				EmitSoundOn(zeus_ultimate_sound, caster)                    
 				caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
@@ -653,6 +666,7 @@ function modifier_thunder_hammer:GetModifierProcAttack_Feedback(keys)
             local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
             ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
             ParticleManager:SetParticleControlEnt(particle, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+			ParticleManager:DestroyParticle(particle, false)
             ParticleManager:ReleaseParticleIndex(particle)
             -- Get a list of all nearby enemies within "static_radius" range
             local enemies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, static_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, FIND_CLOSEST, false)
@@ -676,7 +690,8 @@ function modifier_thunder_hammer:GetModifierProcAttack_Feedback(keys)
                     local particle = ParticleManager:CreateParticle(particleName, PATTACH_CUSTOMORIGIN, caster)
                     ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
                     ParticleManager:SetParticleControlEnt(particle, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
-                    ParticleManager:ReleaseParticleIndex(particle)
+					ParticleManager:DestroyParticle(particle, false)
+					ParticleManager:ReleaseParticleIndex(particle)
                     enemies_hit = enemies_hit + 1
                     target = enemy
                 end
@@ -701,7 +716,9 @@ function modifier_thunder_hammer:GetModifierProcAttack_Feedback(keys)
                     ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
                     ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
                     ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-                    EmitSoundOn(zeus_ultimate_sound, caster)                    
+					ParticleManager:DestroyParticle(particle_eff, false)
+					ParticleManager:ReleaseParticleIndex(particle_eff)                   
+					EmitSoundOn(zeus_ultimate_sound, caster)                    
                     caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
                     -- Remove the old item and add the evolved item
                     caster:RemoveItem(ability)
@@ -897,6 +914,7 @@ function modifier_thunder_hammer_static:OnTakeDamage(keys)
 			ParticleManager:SetParticleControlEnt(static_particle, 0, keys.attacker, PATTACH_POINT_FOLLOW, "attach_hitloc", keys.attacker:GetAbsOrigin(), true)
 			ParticleManager:SetParticleControlEnt(static_particle, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
 			--self:AddParticle(static_particle, false, false, -1, false, false)
+			ParticleManager:DestroyParticle(static_particle, false)		
 			ParticleManager:ReleaseParticleIndex(static_particle)
 			ApplyDamage({ victim = keys.attacker, damage = self.static_damage, damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_NONE, attacker = self:GetCaster(), ability = self:GetAbility() })
 		end
@@ -907,6 +925,7 @@ function modifier_thunder_hammer_static:OnTakeDamage(keys)
 				ParticleManager:SetParticleControlEnt(static_particle, 0, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
 				ParticleManager:SetParticleControlEnt(static_particle, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
 				--self:AddParticle(static_particle, false, false, -1, false, false)
+				ParticleManager:DestroyParticle(static_particle, false)
 				ParticleManager:ReleaseParticleIndex(static_particle)
 				ApplyDamage({ victim = enemy, damage = self.static_damage, damage_type = DAMAGE_TYPE_MAGICAL, damage_flags = DOTA_DAMAGE_FLAG_NONE, attacker = self:GetCaster(), ability = self:GetAbility() })
 				unit_count = unit_count + 1

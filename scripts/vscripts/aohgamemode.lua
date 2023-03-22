@@ -716,7 +716,7 @@ function AOHGameMode:OnThink()
 			end
 		end
 		self:_CheckWin()
-		--self:TrackDisconnectedPlayers()
+		self:TrackDisconnectedPlayers()
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then		-- Safe guard catching any state that may exist beyond DOTA_GAMERULES_STATE_POST_GAME
 		return nil
 	end
@@ -724,8 +724,20 @@ function AOHGameMode:OnThink()
 end
 
 
---[[ local ABANDONED_THRESHOLD = 420 -- 7 minutes in seconds
+
+
+local ABANDONED_THRESHOLD = 420 -- 7 minutes in seconds
 local disconnected_players = {}
+local dropped_heroes = {}
+-- List of items that should not be dropped
+local item_exceptions = {
+	["item_branch_component"] = true,
+	["item_broken_wings"] = true,
+	["item_psychic_headband"] = true,
+	["item_psychic_headband2"] = true,
+	["item_tpscroll"] = true,
+
+}
 
 function AOHGameMode:TrackDisconnectedPlayers()
 	if not IsServer() then return end
@@ -740,15 +752,46 @@ function AOHGameMode:TrackDisconnectedPlayers()
 			end
 
 			if disconnected_players[i] >= ABANDONED_THRESHOLD then
-				-- kick the player from the game
-				DisconnectClient(i, false)
+				local hero = PlayerResource:GetSelectedHeroEntity(i)
+				if hero and not dropped_heroes[hero] then
+					-- drop hero's items on the ground with no owner
+					for j = 0, 8 do
+						local item = hero:GetItemInSlot(j)
+						if item and not item_exceptions[item:GetName()] then
+							--local pos = hero:GetAbsOrigin()
+							--local drop = CreateItemOnPositionSync(pos, item)
+							--drop:SetContainedItem(item)
+							OnLootDropItem(item:GetName())
+							item:RemoveSelf()
+						end
+					end
+
+					-- drop hero's stash items on the ground with no owner
+					for j = 9, 14 do
+						local item = hero:GetItemInSlot(j)
+						if item and not item_exceptions[item:GetName()] then
+							--local pos = hero:GetAbsOrigin()
+							--local drop = CreateItemOnPositionSync(pos, item)
+							--drop:SetContainedItem(item)
+							OnLootDropItem(item:GetName())
+							item:RemoveSelf()
+						end
+					end
+
+					-- mark hero as dropped
+					Notifications:TopToAll({text="Player disconnected for more then 7 min , most of his items have ben distributed to other players", style={color="red"}, duration=7})
+					dropped_heroes[hero] = true
+				end
 			end
 		else	
 			disconnected_players[i] = 0
 		end
 	end
 end
- ]]
+
+
+
+
 
 function AOHGameMode:_RevealShop()
 	local shopPos = Entities:FindByName(nil, "the_shop"):GetAbsOrigin()

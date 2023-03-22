@@ -68,7 +68,7 @@ function modifier_flash_double_attack:OnAttackLanded(params)
     if params.attacker == self:GetParent() and params.target:IsMagicImmune() == false and RollPercentage(roll) and IsServer() then
         self:GetCaster():PerformAttack(params.target, true, true, true, true, false, false, false)
         --EmitSoundOn("Hero_FacelessVoid.TimeLockImpact", params.target)
-        params.attacker:EmitSoundParams("Hero_FacelessVoid.TimeLockImpact", 0, 0.1, 0)
+        --params.attacker:EmitSoundParams("Hero_FacelessVoid.TimeLockImpact", 0, 0.1, 0)
         --local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_timedialate.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
         --ParticleManager:SetParticleControl(particle, 0, self:GetCaster():GetAbsOrigin())
         --ParticleManager:ReleaseParticleIndex(particle)

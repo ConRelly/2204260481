@@ -167,6 +167,7 @@ function modifier_class:OnIntervalThink()
                     if not IsValidEntity(parent) then return nil end
                     if not item:IsCooldownReady() then return nil end
                     if item == nil then return nil end
+                    if not item:IsActivated() then return end
                     if parent:IsIllusion() then return nil end
                     if not parent:IsRealHero() then return nil end
                     if IsChanneling(parent) and not ability_behavior_includes(item, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
