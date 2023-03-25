@@ -86,6 +86,7 @@ if IsServer() then
 --				ParticleManager:SetParticleControlOrientation(coup_pfx, 1, self:GetCaster():GetForwardVector() * (-1), self:GetCaster():GetRightVector(), self:GetCaster():GetUpVector())
 				local direction = (target:GetOrigin() - self:GetCaster():GetOrigin()):Normalized()
 				ParticleManager:SetParticleControlForward(coup_pfx, 1, -direction)
+				ParticleManager:DestroyParticle(coup_pfx, false)
 				ParticleManager:ReleaseParticleIndex(coup_pfx)
 			end
 

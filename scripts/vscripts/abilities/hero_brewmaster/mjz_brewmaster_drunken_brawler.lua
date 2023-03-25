@@ -76,6 +76,7 @@ function modifier_mjz_brewmaster_drunken_brawler:OnAttackLanded(keys)
 		if self.crit then
 			local crit_effect_name = "particles/units/heroes/hero_brewmaster/brewmaster_drunken_brawler_crit.vpcf"
 			local crit_effect = ParticleManager:CreateParticle(crit_effect_name, PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
+			ParticleManager:DestroyParticle(crit_effect, false)
 			ParticleManager:ReleaseParticleIndex(crit_effect)
 		end
 	end

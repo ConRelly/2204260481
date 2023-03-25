@@ -130,6 +130,7 @@ function modifier_mjz_lion_voodoo:OnCreated()
 	end
 
 	local part = ParticleManager:CreateParticle(partname, PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+	ParticleManager:DestroyParticle(part, false)
 	ParticleManager:ReleaseParticleIndex(part)
 end
 

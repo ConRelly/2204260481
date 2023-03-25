@@ -96,6 +96,7 @@ if IsServer() then
 		caster:EmitSound("Hero_LegionCommander.Duel.Victory")
 		local p_name = "particles/units/heroes/hero_legion_commander/legion_commander_duel_victory.vpcf"
 		local duel_victory_particle = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN_FOLLOW, caster)
+		ParticleManager:DestroyParticle(duel_victory_particle, false)
 		ParticleManager:ReleaseParticleIndex(duel_victory_particle)
 	end
 end

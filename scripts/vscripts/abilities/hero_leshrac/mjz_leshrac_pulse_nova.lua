@@ -125,6 +125,7 @@ if IsServer() then
         
         local p_name = self.p_name or "particles/units/heroes/hero_leshrac/leshrac_pulse_nova.vpcf"
         local particle = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN_FOLLOW, target)
+        ParticleManager:DestroyParticle(particle, false)
         ParticleManager:ReleaseParticleIndex(particle)
     end
 

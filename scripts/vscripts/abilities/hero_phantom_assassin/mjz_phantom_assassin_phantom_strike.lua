@@ -69,6 +69,7 @@ function mjz_phantom_assassin_phantom_strike:BlinkTo( target )
 	EmitSoundOnLocationWithCaster(caster:GetAbsOrigin(), "Hero_PhantomAssassin.Strike.Start", caster)
 	
 	local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_phantom_assassin/phantom_assassin_phantom_strike_start.vpcf", PATTACH_ABSORIGIN, caster)
+	ParticleManager:DestroyParticle(fx, false)
 	ParticleManager:ReleaseParticleIndex(fx)
 
 	local point = target:GetAbsOrigin() + (caster:GetAbsOrigin() - target:GetAbsOrigin()):Normalized() * 50
@@ -78,6 +79,7 @@ function mjz_phantom_assassin_phantom_strike:BlinkTo( target )
 
 	local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_phantom_assassin/phantom_assassin_phantom_strike_end.vpcf", PATTACH_CUSTOMORIGIN, caster)
     ParticleManager:SetParticleControl(fx, 0, point)
+	ParticleManager:DestroyParticle(fx, false)
 	ParticleManager:ReleaseParticleIndex(fx)
 	
 end

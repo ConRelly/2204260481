@@ -53,6 +53,7 @@ function modifier_spectre_strong_gravity:OnIntervalThink()
 			EmitSoundOn("Hero_Spectre.HauntCast", caster)
 			local effect = "particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf"
 			local pfx = ParticleManager:CreateParticle(effect, PATTACH_ABSORIGIN_FOLLOW, parent)
+			ParticleManager:DestroyParticle(pfx, false)
 			ParticleManager:ReleaseParticleIndex(pfx)
 		end
 	end

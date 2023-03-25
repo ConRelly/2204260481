@@ -128,5 +128,5 @@
 	"npc_dota_hero_marci" "1"
 	"npc_dota_hero_primal_beast" "1"
 	//"npc_dota_hero_kardel"			"1"
-
+	"npc_dota_hero_muerta"     "1"
 }

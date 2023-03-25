@@ -238,6 +238,7 @@ function KillTreesInRadius(caster, center, radius)
     for _,tree in pairs(trees) do
         local particle_fx = ParticleManager:CreateParticle(particle, PATTACH_ABSORIGIN, caster)
         ParticleManager:SetParticleControl(particle_fx, 0, tree:GetAbsOrigin())
+		ParticleManager:DestroyParticle(particle_fx, false)
         ParticleManager:ReleaseParticleIndex(particle_fx)
     end
     GridNav:DestroyTreesAroundPoint(center, radius, false)

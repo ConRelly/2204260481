@@ -367,6 +367,7 @@ function ability_class:PlayEffects( projID, duration )
 	ParticleManager:SetParticleControl( effect_cast, 1, data.direction*1000 )
 	ParticleManager:SetParticleControl( effect_cast, 2, Vector( duration, 0, 0 ) )
 	ParticleManager:SetParticleControlForward( effect_cast, 0, data.direction )
+	ParticleManager:DestroyParticle(effect_cast, false)
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 
 	-- Create Sound

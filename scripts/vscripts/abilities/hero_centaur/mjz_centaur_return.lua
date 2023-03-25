@@ -148,6 +148,7 @@ if IsServer() then
 		local particle = ParticleManager:CreateParticle(p_name, PATTACH_CUSTOMORIGIN_FOLLOW, parent)
 		ParticleManager:SetParticleControlEnt(particle, 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
 		ParticleManager:SetParticleControlEnt(particle, 1, attacker, PATTACH_POINT_FOLLOW, "attach_hitloc", attacker:GetAbsOrigin(), true)
+		ParticleManager:DestroyParticle(particle, false)
 		ParticleManager:ReleaseParticleIndex(particle)
 
 		ReturnDamage(caster, ability, attacker)

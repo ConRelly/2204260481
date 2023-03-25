@@ -77,6 +77,7 @@ function ability_class:OnEnemyDiedNearby( hVictim, hKiller, kv )
 
 			local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_pudge/pudge_fleshheap_count.vpcf", PATTACH_OVERHEAD_FOLLOW, caster )
 			ParticleManager:SetParticleControl( nFXIndex, counter, Vector( 1, 0, 0 ) )
+            ParticleManager:DestroyParticle(nFXIndex, false)
 			ParticleManager:ReleaseParticleIndex( nFXIndex )
 		end
 	end

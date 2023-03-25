@@ -34,6 +34,7 @@ function modifier_mjz_chaos_knight_chaos_strike:OnAttackLanded(params)
 				local heal = params.damage * lifesteal / 100
 				self:GetParent():Heal(heal, self:GetAbility())
 				local effect_cast = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+				ParticleManager:DestroyParticle(effect_cast, false)
 				ParticleManager:ReleaseParticleIndex(effect_cast)
 				EmitSoundOn("Hero_ChaosKnight.ChaosStrike", self:GetParent())
 				self.IsCrit = false

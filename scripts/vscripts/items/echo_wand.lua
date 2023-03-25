@@ -292,6 +292,7 @@ if IsServer() then
 		reload_bullet = true,
 		snapfire_lil_shredder = true,
 		warlock_fatal_bonds = true,
+		muerta_pierce_the_veil = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

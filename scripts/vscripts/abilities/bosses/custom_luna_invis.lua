@@ -17,6 +17,8 @@ function custom_luna_invis:OnSpellStart()
 	ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_ABSORIGIN, "attach_absorigin", caster:GetAbsOrigin(), true)
 	local particle2 = ParticleManager:CreateParticle("particles/units/heroes/hero_mirana/mirana_moonlight_cast.vpcf", PATTACH_POINT, caster)
 	ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+	ParticleManager:DestroyParticle(particle, false)
+	ParticleManager:DestroyParticle(particle2, false)
 	ParticleManager:ReleaseParticleIndex(particle)
 	ParticleManager:ReleaseParticleIndex(particle2)
 end

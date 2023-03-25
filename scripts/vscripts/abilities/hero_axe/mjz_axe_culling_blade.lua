@@ -52,6 +52,7 @@ if IsServer() then
 			if checker.success and not success_effect then
 				local culling_kill_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf", PATTACH_CUSTOMORIGIN, caster)
 				ParticleManager:SetParticleControl(culling_kill_particle, 4, target:GetAbsOrigin())
+				ParticleManager:DestroyParticle(culling_kill_particle, false)
 				ParticleManager:ReleaseParticleIndex(culling_kill_particle)
 				success_effect = true
 			end
@@ -88,6 +89,7 @@ if IsServer() then
 		local p_name = "particles/units/heroes/hero_axe/axe_culling_blade.vpcf"
 		local nFXIndex = ParticleManager:CreateParticle( p_name, PATTACH_CUSTOMORIGIN, target );
 		ParticleManager:SetParticleControlEnt( nFXIndex, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
+		ParticleManager:DestroyParticle(nFXIndex, false)
 		ParticleManager:ReleaseParticleIndex( nFXIndex );
 	end
 end
@@ -140,6 +142,7 @@ if IsServer() then
 		local parent = self:GetParent()
 		local p_name = "particles/units/heroes/hero_axe/axe_culling_blade_boost.vpcf"
 		local p_boost = ParticleManager:CreateParticle(p_name, PATTACH_CUSTOMORIGIN, parent)
+		ParticleManager:DestroyParticle(p_boost, false)
 		ParticleManager:ReleaseParticleIndex(p_boost)
 	end
 end

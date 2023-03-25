@@ -33,14 +33,14 @@ function modifier_class:GetModifierAttackSpeedBonus_Constant()
 end
 
 function modifier_class:GetModifierAttackRangeBonus()
-	if IsServer() then if self:GetAbility() then
-			local attack_range = self:GetAbility():GetSpecialValueFor("bonus_attack_range")
-			if self:GetParent():IsRangedAttacker() then
-				return attack_range
-			else
-				return attack_range / 2
-			end
-	end end
+	if self:GetAbility() then
+        local attack_range = self:GetAbility():GetSpecialValueFor("bonus_attack_range")
+        if self:GetParent():IsRangedAttacker() then
+            return attack_range
+        else
+            return attack_range / 2
+        end
+	end 
 end
 
 

@@ -332,14 +332,14 @@
 		"run"	   "190"
 	}
 	"MovementTurnRate"		  "0.5"
-	"StatusHealth"			  "600000"
+	"StatusHealth"			  "6000000"
 	"StatusHealthRegen"		 "0"
 	"StatusMana"				"10000"
 	"StatusManaRegen"		   "500"
 	"TeamName"				  "DOTA_TEAM_BADGUYS"
 	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
 	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_HERO"
-	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	"VisionDaytimeRange"		"2400"
 	"VisionNighttimeRange"	  "2400"
 

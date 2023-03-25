@@ -27,6 +27,7 @@ function mjz_clinkz_soul_pact:OnSpellStart()
 		caster:AddNewModifier(caster, self, "modifier_mjz_clinkz_soul_pact_invis", {duration = duration})
 		local invis_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_clinkz/clinkz_windwalk.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 		ParticleManager:SetParticleControlEnt(invis_pfx, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetOrigin(), true)
+		ParticleManager:DestroyParticle(invis_pfx, false)
 		ParticleManager:ReleaseParticleIndex(invis_pfx)
 	end
 

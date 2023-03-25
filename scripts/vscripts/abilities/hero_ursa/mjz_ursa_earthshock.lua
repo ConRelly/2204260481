@@ -66,6 +66,7 @@ function ability_class:ApplyEarthShock()
 		ParticleManager:SetParticleControl( nFXIndex, 0, caster:GetOrigin() )
 		ParticleManager:SetParticleControlForward( nFXIndex, 0, caster:GetForwardVector() )
 		ParticleManager:SetParticleControl( nFXIndex, 1, Vector(radius / 2, radius / 2, radius / 2) )
+		ParticleManager:DestroyParticle(nFXIndex, false)
 		ParticleManager:ReleaseParticleIndex( nFXIndex )
 
 		EmitSoundOn("Hero_Ursa.Earthshock", caster)

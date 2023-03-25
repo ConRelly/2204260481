@@ -13,6 +13,7 @@ function OnAbilityPhaseStart(keys)
 		ParticleManager:SetParticleControl(nParticleIndex, 1, Vector(radius, 0, 0))
 		ParticleManager:SetParticleControl(nParticleIndex, 2, Vector(ability:GetCastPoint(), 0, 0))
 		ParticleManager:SetParticleControl(nParticleIndex, 3, caster:GetAbsOrigin())
+        ParticleManager:DestroyParticle(nParticleIndex, false)
 		ParticleManager:ReleaseParticleIndex(nParticleIndex)
 end
 

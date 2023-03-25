@@ -28,6 +28,7 @@ function world_devour:OnSpellStart()
         local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/doom/doom_ti8_immortal_arms/doom_ti8_immortal_devour.vpcf", PATTACH_CUSTOMORIGIN, nil );
         ParticleManager:SetParticleControlEnt( nFXIndex, 1, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetOrigin() + Vector( 0, 0, 96 ), true );
         ParticleManager:SetParticleControlEnt( nFXIndex, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true );
+        ParticleManager:DestroyParticle(nFXIndex, false)
         ParticleManager:ReleaseParticleIndex( nFXIndex );
 
         FindClearSpaceForUnit(target, self:GetCaster():GetAbsOrigin(), true)
@@ -48,6 +49,7 @@ function world_devour:CreateExplosion(caster)
     ParticleManager:SetParticleControl(nFXIndex, 3, caster:GetAbsOrigin())
     ParticleManager:SetParticleControl(nFXIndex, 6, caster:GetAbsOrigin())
     ParticleManager:SetParticleControl (nFXIndex, 1, Vector (750, 750, 0))
+    ParticleManager:DestroyParticle(nFXIndex, false)
     ParticleManager:ReleaseParticleIndex( nFXIndex )
 
     EmitSoundOn( "Hero_ObsidianDestroyer.SanityEclipse.TI8", self:GetCaster() )

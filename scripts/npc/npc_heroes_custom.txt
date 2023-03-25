@@ -2611,6 +2611,58 @@
 	}
 
 
+"npc_dota_hero_muerta"
+	{
+
+		"ModelScale"		"1"
+
+		"UnitLabel"     "no_underdog"
+		"Ability1"		"muerta_dead_shot"
+		"Ability2"		"muerta_the_calling"
+		"Ability3"		"muerta_gunslinger"
+		"Ability4"		"generic_hidden"
+		"Ability5"		"generic_hidden"
+		"Ability6"		"muerta_pierce_the_veil"
+		"Ability7"		"generic_hidden"
+		"Ability8"		"generic_hidden"
+		"Ability9"		"generic_hidden"
+		"Ability10"		"special_bonus_magic_resistance_60"
+		"Ability11"		"special_bonus_reincarnation_90"
+		"Ability12"		"special_bonus_unique_muerta_dead_shot_range"
+		"Ability13"		"special_bonus_attack_damage_100"
+		"Ability14"		"special_bonus_unique_muerta_dead_shot_charges"
+		"Ability15"		"special_bonus_unique_muerta_gunslinger_double_shot_chance"
+		"Ability16"		"special_bonus_unique_muerta_the_calling_num_revenants"
+		"Ability17"		"special_bonus_unique_muerta_dead_shot_damage"
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"24"
+		"AttackDamageMax"		"32"
+		"AttackRate"		"1.5"
+		"BaseAttackSpeed"		"250"
+		"AttackAnimationPoint"		"0.35"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"170"
+			"faster"	"650"
+			"fastest"	"900"
+		}
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"775"
+		"ProjectileModel"			"particles/units/heroes/hero_muerta/muerta_base_attack.vpcf"
+		"ProjectileSpeed"		"3000"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_INTELLECT"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"7.000000"
+		"AttributeBaseIntelligence"		"24"
+		"AttributeIntelligenceGain"		"14.300000"
+		"AttributeBaseAgility"		"22"
+		"AttributeAgilityGain"		"9.000000"
+		"MovementSpeed"		"365"
+		"MovementTurnRate"		"0.700000"
+
+	}
+
 
 }
  

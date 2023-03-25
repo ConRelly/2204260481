@@ -115,6 +115,7 @@ function mjz_lina_laguna_blade:_PlayEffect(caster, target)
 	ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_attack2", caster:GetAbsOrigin(), true)
 	ParticleManager:SetParticleControl(particle, 1, target:GetAbsOrigin())
 	ParticleManager:SetParticleControl(particle, 2, target:GetAbsOrigin())
+	ParticleManager:DestroyParticle(particle, false)
 	ParticleManager:ReleaseParticleIndex(particle)
 end
 

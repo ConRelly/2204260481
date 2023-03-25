@@ -46,6 +46,7 @@ function mjz_luna_under_the_moonlight:LucentBeam(target, stun)
 		ParticleManager:SetParticleControl(beam_pfx, 1, target:GetAbsOrigin())
 		ParticleManager:SetParticleControlEnt(beam_pfx,	5, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 		ParticleManager:SetParticleControlEnt(beam_pfx,	6, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetAbsOrigin(), true)
+		ParticleManager:DestroyParticle(beam_pfx, false)
 		ParticleManager:ReleaseParticleIndex(beam_pfx)
 
 		if stun then target:EmitSound("Hero_Luna.LucentBeam.Target") end

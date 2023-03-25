@@ -6,6 +6,7 @@ require("lib/my")
 local function swap_effect(hero1, hero2)
 	local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_vengeful/vengeful_nether_swap.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero1)
 	ParticleManager:SetParticleControlEnt(fx, 1, hero2, PATTACH_ABSORIGIN_FOLLOW, nil, hero2:GetOrigin(), false)
+    ParticleManager:DestroyParticle(fx, false)
     ParticleManager:ReleaseParticleIndex(fx)
     EmitSoundOn("Hero_VengefulSpirit.NetherSwap", hero1)
 end

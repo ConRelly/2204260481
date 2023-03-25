@@ -100,6 +100,7 @@ if IsServer() then
 		local void_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_manavoid.vpcf", PATTACH_POINT_FOLLOW, target)
 		ParticleManager:SetParticleControlEnt(void_pfx, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetOrigin(), true)
 		ParticleManager:SetParticleControl(void_pfx, 1, Vector(mana_void_aoe_radius,0,0))
+		ParticleManager:DestroyParticle(void_pfx, false)
 		ParticleManager:ReleaseParticleIndex(void_pfx)
 
 		EmitSoundOn("Hero_Antimage.ManaVoid", target)

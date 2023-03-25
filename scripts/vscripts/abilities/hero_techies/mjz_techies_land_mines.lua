@@ -97,7 +97,7 @@ function modifier_mjz_techies_land_mine_trigger:OnIntervalThink()
 					ParticleManager:SetParticleControl(explosionParticle, 1, mine:GetAbsOrigin())
 					ParticleManager:SetParticleControl(explosionParticle, 2, Vector(self:GetAbility():GetAOERadius(), 1, 1))
 					self:AddParticle(explosionParticle, false, false, 0, false, false)
-					ParticleManager:ReleaseParticleIndex(explosionParticle)
+					--ParticleManager:ReleaseParticleIndex(explosionParticle)
 			end		
 			for _, enemy in pairs(enemies) do
 				print(true_damage .. "bomb dmgg")

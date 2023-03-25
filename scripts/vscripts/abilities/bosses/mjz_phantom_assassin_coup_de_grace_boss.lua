@@ -155,6 +155,7 @@ function PlayEffect( caster, target)
 	ParticleManager:SetParticleControl( nFXIndex, 1, target:GetOrigin() )
 	ParticleManager:SetParticleControlForward( nFXIndex, 1, -caster:GetForwardVector())
 	ParticleManager:SetParticleControlEnt( nFXIndex, 10, target, PATTACH_ABSORIGIN_FOLLOW, nil, target:GetOrigin(), true )
+	ParticleManager:DestroyParticle(nFXIndex, false)
 	ParticleManager:ReleaseParticleIndex( nFXIndex )
 	
 end

@@ -163,7 +163,7 @@ function modifier_template:PlayEffects()
 	)
 	ParticleManager:SetParticleControlForward( effect_cast, iControlPoint, vForward )
 	SetParticleControlOrientation( effect_cast, iControlPoint, vForward, vRight, vUp )
-	ParticleManager:ReleaseParticleIndex( effect_cast )
+	--ParticleManager:ReleaseParticleIndex( effect_cast )
 
 	-- buff particle
 	self:AddParticle(

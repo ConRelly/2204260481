@@ -98,6 +98,7 @@ if IsServer() then
 			}, ability) 
 			
 			local FX = ParticleManager:CreateParticle("particles/units/heroes/hero_tinker/tinker_missle_explosion.vpcf", PATTACH_POINT, target)
+			ParticleManager:DestroyParticle(FX, false)
 			ParticleManager:ReleaseParticleIndex(FX)
 
 			EmitSoundOn("Hero_Tinker.Heat-Seeking_Missile.Impact", target)
@@ -128,6 +129,7 @@ if IsServer() then
 
 		local dud_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_tinker/tinker_missile_dud.vpcf", PATTACH_ABSORIGIN, target)
 		ParticleManager:SetParticleControlEnt(dud_pfx, 0, target, PATTACH_POINT_FOLLOW, "attach_attack3", target:GetAbsOrigin(), true)
+		ParticleManager:DestroyParticle(dud_pfx, false)
 		ParticleManager:ReleaseParticleIndex(dud_pfx)
 	end
 

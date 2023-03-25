@@ -182,6 +182,7 @@ if IsServer() then
 		local p_name = p_list[p_id]
 		local p_attack = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN_FOLLOW, ward)
 		ParticleManager:SetParticleControl(p_attack, 1, target:GetAbsOrigin())
+		ParticleManager:DestroyParticle(p_attack, false)
 		ParticleManager:ReleaseParticleIndex(p_attack)
 
 		--target:EmitSound("Hero_Pugna.NetherWard.Target")

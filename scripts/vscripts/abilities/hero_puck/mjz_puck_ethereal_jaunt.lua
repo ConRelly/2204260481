@@ -54,6 +54,7 @@ function ability_class:PlayEffects( point )
 	-- Create Particle
 	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN, self:GetCaster() )
 	ParticleManager:SetParticleControl( effect_cast, 0, point )
+    ParticleManager:DestroyParticle(effect_cast, false)
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 
 	-- Create Sound

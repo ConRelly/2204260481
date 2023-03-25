@@ -14,7 +14,8 @@ item_custom_refresher.nonrefresh_abilities = {
 	treant_custom_ultimate_sacrifice = true,
 	obsidian_destroyer_custom_mana_amp = true,
 	obs_replay = true,
-	arcane_supremacy = true
+	arcane_supremacy = true,
+	muerta_pierce_the_veil = true,
 }
 
 item_custom_refresher.nonrefresh_items = {

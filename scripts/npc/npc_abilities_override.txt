@@ -20665,6 +20665,210 @@
         }
     } 
 
+// Muerta
+	//=================================================================================================================
+	// MUERTA: Dead Shot
+	//=================================================================================================================
+	"muerta_dead_shot"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5751"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_TREE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Muerta.DeadShot.Cast"
+		"LevelsBetweenUpgrades"         "7"
+		"MaxLevel"                      "10"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+ 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastPoint"				"0.15"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"10"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"160"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCastRange"			
+			{
+				"value"						"1500"
+				"special_bonus_unique_muerta_dead_shot_range"	"+750"
+			}
+			"damage"
+			{
+				"value"						"775 4500 18500 34000 95400 215000 425000"
+				"special_bonus_unique_muerta_dead_shot_damage"	"+37000"
+			}
+			"speed"							"2000"
+			"radius"						"200"
+			"ricochet_radius_start"			"315"
+			"ricochet_radius_end"			"315"
+			"ricochet_distance_multiplier"	"1.5"
+			"ricochet_fear_duration"		"1.5"
+			"impact_slow_percent"			"-50"
+			"impact_slow_duration"			"0.5"
+		}
+	}
+
+	//=================================================================================================================
+	// MUERTA: The Calling
+	//=================================================================================================================
+	"muerta_the_calling"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5752"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CAN_SELF_CAST"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_Muerta.Revenants.Cast"
+		"LevelsBetweenUpgrades"         "7"
+		"MaxLevel"                      "9"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1580"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"225"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"damage"						"375 2400 8500 14000 45400 105000 165000"
+			"duration"						"12"
+			"hit_radius"					"420"
+			"dead_zone_distance"			"640"
+			"num_revenants"
+			{
+				"value"						"3"
+				"special_bonus_unique_muerta_the_calling_num_revenants"	"+2"
+			}
+			"speed_initial"					"0.5"
+			"speed_max"						"3.0"
+			"acceleration"			"1.0"
+			"rotation_initial"		"0"
+			"debug_draw"					"0"
+			"aura_movespeed_slow"			"-30"
+			"aura_attackspeed_slow"			"-30 -40 -50 -60 -70 -90 -120"
+			"silence_duration"				"0.1"
+			"rotation_direction"			"-1"
+			"show_warning"					"1"
+		}
+	}
+	
+	//=================================================================================================================
+	// MUERTA: Gunslinger
+	//=================================================================================================================
+	"muerta_gunslinger"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5753"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		//"AbilitySound"					"Hero_PhantomAssassin.CoupDeGrace"
+		"LevelsBetweenUpgrades"         "5"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"double_shot_chance"
+			{
+				"value"					"20 30 40 50"
+				"special_bonus_unique_muerta_gunslinger_double_shot_chance"	"+20"
+			}
+			"target_search_bonus_range"	"150"
+		}
+	}
+
+	//=================================================================================================================
+	// MUERTA: Pierce the Veil
+	//=================================================================================================================
+	"muerta_pierce_the_veil"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5754"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Muerta.PierceTheVeil.Cast"
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"MaxLevel"                      "5"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"120"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"550"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"					"5 6 7 8 9"
+			"transform_duration"		"0.35"
+			"base_damage_pct"			"50"
+			"modelscale"				"-50"
+			"bonus_damage"				"900 2750 4300 12500 25000"
+		}
+	}
+
+	//=================================================================================================================
+	// Talent: MUERTA Deadshot charges
+	//=================================================================================================================
+  	"special_bonus_unique_muerta_dead_shot_charges"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5755"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"value"							"3"
+				"ad_linked_abilities"			"muerta_dead_shot"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+
+
+
+
 
 	"special_bonus_unique_omniknight_7"
 	{

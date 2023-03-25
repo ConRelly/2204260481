@@ -273,6 +273,7 @@ function Jinada(parent, target, ability, track)
 		parent:EmitSound("Hero_BountyHunter.Jinada")
 		local particle_hit_fx = ParticleManager:CreateParticle("particles/units/heroes/hero_bounty_hunter/bounty_hunter_jinda_slow.vpcf", PATTACH_ABSORIGIN, parent)
 		ParticleManager:SetParticleControl(particle_hit_fx, 0, target:GetAbsOrigin())
+		ParticleManager:DestroyParticle(particle_hit_fx, false)
 		ParticleManager:ReleaseParticleIndex(particle_hit_fx)
 	end
 --	if target:IsHero() or target:IsCreature() then
@@ -284,6 +285,7 @@ function Jinada(parent, target, ability, track)
 --		ParticleManager:SetParticleControlEnt(gold_pfx, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 		ParticleManager:SetParticleControlEnt(gold_pfx, 0, target, PATTACH_POINT_FOLLOW, nil, target:GetAbsOrigin(), true)
 		ParticleManager:SetParticleControlEnt(gold_pfx, 1, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
+		ParticleManager:DestroyParticle(gold_pfx, false)
 		ParticleManager:ReleaseParticleIndex(gold_pfx)
 
 		parent:ModifyGold(gold_steal, false, DOTA_ModifyGold_Unspecified)

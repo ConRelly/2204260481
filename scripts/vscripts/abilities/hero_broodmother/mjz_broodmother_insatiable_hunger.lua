@@ -77,6 +77,7 @@ if IsServer() then
                 local lifesteal = ParticleManager:CreateParticle("particles/units/heroes/hero_skeletonking/wraith_king_vampiric_aura_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
                 ParticleManager:SetParticleControlEnt(lifesteal, 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
                 ParticleManager:SetParticleControlEnt(lifesteal, 1, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
+                ParticleManager:DestroyParticle(lifesteal, false)
                 ParticleManager:ReleaseParticleIndex(lifesteal)
                     
                 local flHeal = damageDealt * lifesteal_pct / 100

@@ -73,6 +73,7 @@ if IsServer() then
 		local p = ParticleManager:CreateParticle(EffectName, PATTACH_ABSORIGIN_FOLLOW, caster)
 		ParticleManager:SetParticleControl(p, 0, caster:GetAbsOrigin())
 		ParticleManager:SetParticleControl(p, 2, Vector(radius, 1, 1))
+		ParticleManager:DestroyParticle(p, false)
 		ParticleManager:ReleaseParticleIndex(p)
 	end
 	function mjz_axe_berserkers_call:CheckRadius()

@@ -64,6 +64,7 @@ if IsServer() then
 		for _,unit in pairs(units) do
 			local particle = ParticleManager:CreateParticle(particle_name, PATTACH_ABSORIGIN_FOLLOW, unit)
 			ParticleManager:SetParticleControl(particle, 0, unit:GetAbsOrigin())
+			ParticleManager:DestroyParticle(particle, false)
 			ParticleManager:ReleaseParticleIndex(particle)
 
 			

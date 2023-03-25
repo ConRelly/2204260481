@@ -93,6 +93,7 @@ function god_overvoid_thinker:OnIntervalThink()
             EmitSoundOn("Hero_ObsidianDestroyer.EssenceAura", unit)
             
             local particl = ParticleManager:CreateParticle ("particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf", PATTACH_POINT_FOLLOW, unit)
+            ParticleManager:DestroyParticle(particl, false)
             ParticleManager:ReleaseParticleIndex( particl )
 			ApplyDamage({victim = unit, attacker = self:GetAbility():GetCaster(), ability = self:GetAbility(), damage = unit:GetMaxHealth()*(self:GetAbility():GetSpecialValueFor("hp_loss")/100), damage_type = DAMAGE_TYPE_PURE})
 		end

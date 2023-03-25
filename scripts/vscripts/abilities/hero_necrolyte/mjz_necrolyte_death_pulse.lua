@@ -146,6 +146,7 @@ if IsServer() then
 		local scythe_fx = ParticleManager:CreateParticle(p_name_start_sullen_harvest, PATTACH_ABSORIGIN_FOLLOW, target)
 		ParticleManager:SetParticleControlEnt(scythe_fx, 0, caster, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
 		ParticleManager:SetParticleControlEnt(scythe_fx, 1, target, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+		ParticleManager:DestroyParticle(scythe_fx, false)
 		ParticleManager:ReleaseParticleIndex(scythe_fx)
 	end
 

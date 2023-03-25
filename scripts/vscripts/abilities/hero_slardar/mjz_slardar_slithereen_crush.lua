@@ -54,6 +54,7 @@ if IsServer() then
 		local nFXIndex = ParticleManager:CreateParticle(particle_splash, PATTACH_WORLDORIGIN, nil)
 		ParticleManager:SetParticleControl(nFXIndex, 0, caster:GetOrigin())
 		ParticleManager:SetParticleControl(nFXIndex, 1, Vector(radius, radius, radius))
+		ParticleManager:DestroyParticle(nFXIndex, false)
 		ParticleManager:ReleaseParticleIndex(nFXIndex)
 
 		local unit_list = FindUnitsInRadius(
@@ -77,6 +78,7 @@ if IsServer() then
 			if unit then
 				local particle_hit_fx = ParticleManager:CreateParticle(particle_hit, PATTACH_ABSORIGIN, unit)
 				ParticleManager:SetParticleControl(particle_hit_fx, 0, unit:GetAbsOrigin())
+				ParticleManager:DestroyParticle(particle_hit_fx, false)
 				ParticleManager:ReleaseParticleIndex( particle_hit_fx )
 
 				damageTable.victim = unit

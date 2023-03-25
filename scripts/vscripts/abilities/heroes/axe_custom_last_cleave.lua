@@ -28,7 +28,8 @@ function cast_last_cleave(keys)
 	ParticleManager:SetParticleControlEnt(culling_kill_particle, 2, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target_location, true)
 	ParticleManager:SetParticleControlEnt(culling_kill_particle, 4, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target_location, true)
 	ParticleManager:SetParticleControlEnt(culling_kill_particle, 8, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target_location, true)
-	ParticleManager:ReleaseParticleIndex(culling_kill_particle)
+	ParticleManager:DestroyParticle(culling_kill_particle, false)
+    ParticleManager:ReleaseParticleIndex(culling_kill_particle)
     Timers:CreateTimer(
         0.25, 
         function()
@@ -46,6 +47,7 @@ function refresh_culling(keys)
 	local culling_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_axe/axe_culling_blade_boost_glow_inner.vpcf", PATTACH_CUSTOMORIGIN, keys.caster)
 	ParticleManager:SetParticleControlEnt(culling_particle, 0, keys.caster, PATTACH_POINT_FOLLOW, "attach_hitloc", keys.caster:GetAbsOrigin(), true)
 	ParticleManager:SetParticleControlEnt(culling_particle, 1, keys.caster, PATTACH_POINT_FOLLOW, "attach_hitloc", keys.caster:GetAbsOrigin(), true)
-	ParticleManager:ReleaseParticleIndex(culling_particle)
+	ParticleManager:DestroyParticle(culling_particle, false)
+    ParticleManager:ReleaseParticleIndex(culling_particle)
 	keys.ability:EndCooldown()
 end

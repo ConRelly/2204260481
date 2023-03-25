@@ -12,6 +12,7 @@ if IsServer() then
         local caster = self:GetCaster()
 
         local effect = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_blink_start.vpcf", PATTACH_ABSORIGIN, caster)
+        ParticleManager:DestroyParticle(effect, false)
         ParticleManager:ReleaseParticleIndex(effect)
 
         caster:EmitSound("Hero_Antimage.Blink_out")
@@ -25,6 +26,7 @@ if IsServer() then
                 local caster = self:GetCaster()
 
                 local effect = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_blink_end.vpcf", PATTACH_ABSORIGIN, caster)
+                ParticleManager:DestroyParticle(effect, false)
                 ParticleManager:ReleaseParticleIndex(effect)
 
                 caster:EmitSound("Hero_Antimage.Blink_in")

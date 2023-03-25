@@ -131,6 +131,7 @@ if IsServer() then
 		local pfx = ParticleManager:CreateParticle(pfx_name, PATTACH_CUSTOMORIGIN, nil)
 		ParticleManager:SetParticleControl(pfx, 0, pos)
 		ParticleManager:SetParticleControl(pfx, 1, Vector(duration, 0, 0))
+		ParticleManager:DestroyParticle(pfx, false)
 		ParticleManager:ReleaseParticleIndex(pfx)
 
 		AddFOWViewer(caster:GetTeamNumber(), pos, radius, duration, false)

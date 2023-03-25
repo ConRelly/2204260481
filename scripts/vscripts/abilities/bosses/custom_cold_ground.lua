@@ -79,6 +79,7 @@ if IsServer() then
 
         local particle = ParticleManager:CreateParticle("particles/econ/items/crystal_maiden/crystal_maiden_cowl_of_ice/maiden_crystal_nova_cowlofice.vpcf", PATTACH_ABSORIGIN, dummy)
         ParticleManager:SetParticleControl(particle, 3, Vector(damage_radius, 0, 0))
+        ParticleManager:DestroyParticle(particle, false)
         ParticleManager:ReleaseParticleIndex(particle)
         
         caster:EmitSound("Hero_Crystal.CrystalNova")

@@ -21,7 +21,7 @@ function mjz_nyx_assassin_spiked_carapace:OnToggle()
 						ParticleManager:SetParticleControl(nfx, 0, target:GetAbsOrigin())
 						ParticleManager:SetParticleControlEnt(nfx, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 						ParticleManager:SetParticleControl(nfx, 2, Vector(1,0,0))
-						
+						ParticleManager:DestroyParticle(nfx, false)
 						ParticleManager:ReleaseParticleIndex(nfx)
 						
 						target:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = stun_duration})
@@ -85,7 +85,7 @@ if IsServer() then
 				ParticleManager:SetParticleControl(nfx, 0, target:GetAbsOrigin())
 				ParticleManager:SetParticleControlEnt(nfx, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 				ParticleManager:SetParticleControl(nfx, 2, Vector(1,0,0))
-				
+				ParticleManager:DestroyParticle(nfx, false)
 				ParticleManager:ReleaseParticleIndex(nfx)
 				
 				target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = self:GetAbility():GetSpecialValueFor("stun_duration")})

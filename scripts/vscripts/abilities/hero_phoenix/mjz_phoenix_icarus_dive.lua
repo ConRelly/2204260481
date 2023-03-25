@@ -174,6 +174,7 @@ function ability_class:PlayEffects( target, direction )
 	-- Create Particle
 	local effect_cast = ParticleManager:CreateParticle( p_cast, PATTACH_ABSORIGIN_FOLLOW, target )
 	ParticleManager:SetParticleControlForward( effect_cast, 1, direction )
+	ParticleManager:DestroyParticle(effect_cast, false)
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 end
 

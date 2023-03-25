@@ -16,6 +16,7 @@ function reverse_polarity:OnAbilityPhaseStart()
     ParticleManager:SetParticleControl(nFXIndex, 1, Vector(1300, 1300, 0))
     ParticleManager:SetParticleControl(nFXIndex, 2, Vector(2, 1, 0))
     ParticleManager:SetParticleControl(nFXIndex, 3, self.hTarget)
+    ParticleManager:DestroyParticle(nFXIndex, false)
     ParticleManager:ReleaseParticleIndex (nFXIndex)
     EmitSoundOn( "Hero_Magnataur.ReversePolarity.Anim", self:GetCaster() )
     return true

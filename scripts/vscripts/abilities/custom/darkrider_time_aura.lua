@@ -22,6 +22,7 @@ function darkrider_time_aura:OnSpellStart(  )
         ParticleManager:SetParticleControl( nFXIndex, 0, self:GetCaster():GetOrigin() );
         ParticleManager:SetParticleControl( nFXIndex, 1, Vector(self:GetSpecialValueFor("radius"), self:GetSpecialValueFor("radius"), 0));
         ParticleManager:SetParticleControl( nFXIndex, 6, Vector(1, 1, 0));
+        ParticleManager:DestroyParticle(nFXIndex, false)
         ParticleManager:ReleaseParticleIndex(nFXIndex)
     end
 end

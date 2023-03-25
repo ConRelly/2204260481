@@ -378,6 +378,7 @@ function IsExcludeAbility(ability)
 		"pocket_portal",
 		"reload_bullet",
 		"enigma_black_hole",
+		"muerta_pierce_the_veil",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

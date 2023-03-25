@@ -205,6 +205,7 @@ function _PlayEffect(caster, target)
 	ParticleManager:SetParticleControl(particle_finger_fx, 6, target:GetAbsOrigin())
 	ParticleManager:SetParticleControl(particle_finger_fx, 7, target:GetAbsOrigin())
 	ParticleManager:SetParticleControlEnt(particle_finger_fx, 10, caster, PATTACH_ABSORIGIN, "attach_attack2", caster:GetAbsOrigin(), true)
+	ParticleManager:DestroyParticle(particle_finger_fx, false)
 	ParticleManager:ReleaseParticleIndex(particle_finger_fx)
 end
 

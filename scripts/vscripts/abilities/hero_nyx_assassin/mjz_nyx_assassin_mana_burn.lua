@@ -63,6 +63,7 @@ function mjz_nyx_assassin_mana_burn:OnSpellStart()
 
 			local particle_manaburn_fx = ParticleManager:CreateParticle("particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn.vpcf", PATTACH_CUSTOMORIGIN, enemy)
 			ParticleManager:SetParticleControlEnt(particle_manaburn_fx, 0, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", enemy:GetAbsOrigin(), true)
+			ParticleManager:DestroyParticle(particle_manaburn_fx, false)
 			ParticleManager:ReleaseParticleIndex(particle_manaburn_fx)
 
 		end

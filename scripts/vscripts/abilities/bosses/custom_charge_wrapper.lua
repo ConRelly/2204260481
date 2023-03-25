@@ -25,6 +25,7 @@ function charge_wrapper(keys)
 			ParticleManager:SetParticleControl(fx, 2, point)
 			ParticleManager:SetParticleControl(fx, 3, Vector(keys.radius, keys.radius, 1))
 			ParticleManager:SetParticleControl(fx, 4, Vector(keys.delay, 1, 1))
+			ParticleManager:DestroyParticle(fx, false)
 			ParticleManager:ReleaseParticleIndex(fx)
 			local spell = caster:FindAbilityByName("custom_charge_of_darkness")
 			if caster:IsMoving() then

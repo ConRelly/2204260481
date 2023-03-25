@@ -26,6 +26,7 @@ if IsServer() then
 		local p_name = "particles/units/heroes/hero_silencer/silencer_global_silence.vpcf"
 		local particle = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN_FOLLOW, caster)
 		ParticleManager:SetParticleControl( particle, 0, caster:GetAbsOrigin() )
+        ParticleManager:DestroyParticle(particle, false)
 		ParticleManager:ReleaseParticleIndex(particle)
 
 		local enemy_list = FindTargetEnemy(caster, caster:GetAbsOrigin(), radius)

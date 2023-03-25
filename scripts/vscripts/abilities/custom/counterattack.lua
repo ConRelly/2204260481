@@ -35,6 +35,7 @@ if IsServer() then
 			ParticleManager:SetParticleControl(nFX, 2, Vector(1,1,1) )
 			ParticleManager:SetParticleControl(nFX, 4, data.attacker:GetAbsOrigin() )
 			ParticleManager:SetParticleControl(nFX, 5, Vector(1,1,1) )
+			ParticleManager:DestroyParticle(nFX, false)
 			ParticleManager:ReleaseParticleIndex(nFX)
 			self.parent:PerformAttack(data.attacker, true, true, true, true, false, false, true)
 			EmitSoundOn("jotaro_counterattack", data.attacker)

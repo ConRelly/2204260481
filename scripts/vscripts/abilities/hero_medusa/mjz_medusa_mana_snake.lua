@@ -52,6 +52,7 @@ if IsServer() then
 			if self:_IsEnemy(target) then
 				local p_name = "particles/custom/mjz_manasteal.vpcf"
 				local particle = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN_FOLLOW, parent)
+				ParticleManager:DestroyParticle(particle, false)
 				ParticleManager:ReleaseParticleIndex(particle)
 
 				local mana_gain = damage * (mana_steal / 100.0)

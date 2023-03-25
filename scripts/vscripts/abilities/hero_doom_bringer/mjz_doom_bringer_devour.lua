@@ -17,6 +17,7 @@ if IsServer() then
 			local pfx = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN_FOLLOW, caster)
     		ParticleManager:SetParticleControlEnt(pfx, 0, target, PATTACH_POINT_FOLLOW, "attach_origin", target:GetAbsOrigin(), true)
 			ParticleManager:SetParticleControlEnt(pfx, 1, caster, PATTACH_POINT_FOLLOW, "attach_origin", caster:GetAbsOrigin(), true)
+            ParticleManager:DestroyParticle(pfx, false)
 			ParticleManager:ReleaseParticleIndex(pfx)
 			
 			EmitSoundOn("Hero_DoomBringer.Devour", target)

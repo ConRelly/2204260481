@@ -2428,6 +2428,20 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * Removed the effects (dodge and double attack) on Phantom Reflex skill (small help in adding some fps to low end pcs).
 
 
+
+* Added Muerta, her ultimate can't be refreshed. any win with her will not count for the Victory Role on Discord, but for Moran Slayer will.
+* Fixed Vengeful Spirit's Vengeance ultimate not giving attack range.
+* If you find any ability/item effects that persist (the lag) even after the animation ends and nothing is happening to provoke the lag, report them on discord #bugs 
+* and some other stuff
+
+
+
+
+
+
+
+
+
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).
 

@@ -238,6 +238,7 @@ function create_popup(data)
     ParticleManager:SetParticleControl(particle, 1, Vector(pre, value, pos))
     ParticleManager:SetParticleControl(particle, 2, Vector(duration, size, 0))
     ParticleManager:SetParticleControl(particle, 3, color)
+	ParticleManager:DestroyParticle(particle, false)
 	ParticleManager:ReleaseParticleIndex(particle)
 end
 

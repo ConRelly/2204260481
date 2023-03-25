@@ -155,6 +155,7 @@ function KillLoot( item, drop )
 	local nFXIndex = ParticleManager:CreateParticle( "particles/items2_fx/veil_of_discord.vpcf", PATTACH_CUSTOMORIGIN, drop )
 	ParticleManager:SetParticleControl( nFXIndex, 0, drop:GetOrigin() )
 	ParticleManager:SetParticleControl( nFXIndex, 1, Vector( 35, 35, 25 ) )
+	ParticleManager:DestroyParticle(nFXIndex, false)
 	ParticleManager:ReleaseParticleIndex( nFXIndex )
 --	EmitGlobalSound("Item.PickUpWorld")
 

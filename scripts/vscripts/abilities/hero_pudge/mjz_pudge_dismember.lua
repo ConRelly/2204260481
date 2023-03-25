@@ -191,6 +191,7 @@ function PM_FireParticle(effect, attach, owner, cps)
 			end
 		end
 	end
+    ParticleManager:DestroyParticle(FX, false)
 	ParticleManager:ReleaseParticleIndex(FX)
 end
 

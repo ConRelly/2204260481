@@ -32,6 +32,7 @@ if IsServer() then
 		ParticleManager:SetParticleControlEnt(nFXIndex, 0, caster, PATTACH_ABSORIGIN_FOLLOW, nil, casterPosition, true)
 		ParticleManager:SetParticleControlEnt(nFXIndex, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", casterPosition, true)
         ParticleManager:SetParticleControlEnt(nFXIndex, 2, caster, PATTACH_ABSORIGIN_FOLLOW, nil, casterPosition, true)
+        ParticleManager:DestroyParticle(nFXIndex, false)
         ParticleManager:ReleaseParticleIndex(nFXIndex)
     end
 
@@ -86,6 +87,7 @@ function KillTreesInRadius(caster, center, radius)
     for _,tree in pairs(trees) do
         local particle_fx = ParticleManager:CreateParticle(particle, PATTACH_ABSORIGIN, caster)
         ParticleManager:SetParticleControl(particle_fx, 0, tree:GetAbsOrigin())
+        ParticleManager:DestroyParticle(particle_fx, false)
         ParticleManager:ReleaseParticleIndex(particle_fx)
     end
     GridNav:DestroyTreesAroundPoint(center, radius, false)

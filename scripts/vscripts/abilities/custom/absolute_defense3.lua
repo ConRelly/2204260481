@@ -44,6 +44,7 @@ if IsServer() then
 			
 			--self.parent:SetHealth(t.damage + self.parent:GetHealth())
 			local part = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", PATTACH_CENTER_FOLLOW, self.parent)
+			ParticleManager:DestroyParticle(part, false)
 			ParticleManager:ReleaseParticleIndex(part)
 			--self.parent:EmitSound("jotaro_absolute_defense")
 			self.ab:StartCooldown(self.ab:GetSpecialValueFor("cooldown"))
@@ -74,6 +75,7 @@ if IsServer() then
 		if t.unit == self.parent and self.parent:GetMaxHealth()*self.ab:GetSpecialValueFor("hp_pct") <= t.damage then
 			self.parent:SetHealth(t.damage + self.parent:GetHealth())
 			local part = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
+			ParticleManager:DestroyParticle(part, false)
 			ParticleManager:ReleaseParticleIndex(part)
 			if self:IsNull() then return end
 			self:Destroy()

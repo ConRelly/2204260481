@@ -608,6 +608,7 @@ function modifier_iron_will:PlayEffects( target )
 	-- play effects
 	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, target )
 	ParticleManager:SetParticleControl( effect_cast, 1, target:GetOrigin() )
+	ParticleManager:DestroyParticle(effect_cast, false)
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 end
 
@@ -633,6 +634,7 @@ function leesin_tempest:OnSpellStart()
 	local part = ParticleManager:CreateParticle("particles/units/heroes/hero_ursa/ursa_earthshock.vpcf", PATTACH_ABSORIGIN, caster)
 	ParticleManager:SetParticleControl(part, 0, caster:GetAbsOrigin())
 	ParticleManager:SetParticleControl(part, 1, Vector(1,1,1))
+	ParticleManager:DestroyParticle(part, false)
 	ParticleManager:ReleaseParticleIndex(part)
 	
 	local enemies = FindUnitsInRadius(
@@ -704,6 +706,7 @@ function leesin_cripple:OnSpellStart()
 	local duration = ability:GetSpecialValueFor("slow_duration")
 	local particle_circle_fx = ParticleManager:CreateParticle("particles/units/heroes/hero_mirana/mirana_starfall_circle.vpcf", PATTACH_ABSORIGIN, caster)
 	ParticleManager:SetParticleControl(particle_circle_fx, 0, caster:GetAbsOrigin())
+	ParticleManager:DestroyParticle(particle_circle_fx, false)
 	ParticleManager:ReleaseParticleIndex(particle_circle_fx)
 	
 	local enemies = FindUnitsInRadius(

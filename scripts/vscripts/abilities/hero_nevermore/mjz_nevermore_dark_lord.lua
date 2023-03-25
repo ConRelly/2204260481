@@ -47,6 +47,7 @@ function mjz_nevermore_dark_lord:ReleaseSouls(bDeath)
 		ParticleManager:SetParticleControl(particle_lines_fx, 0, caster:GetAbsOrigin())
 		ParticleManager:SetParticleControl(particle_lines_fx, 1, direction*speed)
 		ParticleManager:SetParticleControl(particle_lines_fx, 2, Vector(0, distance/speed, 0))
+        ParticleManager:DestroyParticle(particle_lines_fx, false)
 		ParticleManager:ReleaseParticleIndex(particle_lines_fx)
 
         self:FireLinearProjectile("", direction*speed, distance, width_start, 

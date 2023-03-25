@@ -129,6 +129,7 @@ if IsServer() then
 	
 		-- Create Particle
 		local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, target )
+		ParticleManager:DestroyParticle(effect_cast, false)
 		ParticleManager:ReleaseParticleIndex( effect_cast )
 	
 		-- Create Sound

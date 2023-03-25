@@ -204,6 +204,7 @@ function ryze_rune_prison:OnSpellStart()
 	
 	local particle_fx = ParticleManager:CreateParticle(particle, PATTACH_ABSORIGIN, target)
 	ParticleManager:SetParticleControl(particle_fx, 0, target:GetAbsOrigin())
+	ParticleManager:DestroyParticle(particle_fx, false)
 	ParticleManager:ReleaseParticleIndex(particle_fx)
 	
 	local damageTable = {victim = target,

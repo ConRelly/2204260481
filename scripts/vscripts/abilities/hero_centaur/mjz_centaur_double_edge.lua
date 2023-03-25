@@ -111,6 +111,7 @@ function mjz_centaur_double_edge:ApplyEffect( target, radius )
 	local caster = self:GetCaster()
 	local iParticleID = ParticleManager:CreateParticle("particles/units/heroes/hero_centaur/centaur_double_edge_body.vpcf", PATTACH_CUSTOMORIGIN, nil)
 	ParticleManager:SetParticleControlEnt(iParticleID, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+	ParticleManager:DestroyParticle(iParticleID, false)
 	ParticleManager:ReleaseParticleIndex(iParticleID)
 
 	local p_name = "particles/units/heroes/hero_centaur/centaur_double_edge.vpcf"
@@ -123,6 +124,7 @@ function mjz_centaur_double_edge:ApplyEffect( target, radius )
 	ParticleManager:SetParticleControlEnt(iParticleID, 3, target, PATTACH_ABSORIGIN_FOLLOW, nil, target:GetAbsOrigin(), true)
 	ParticleManager:SetParticleControlEnt(iParticleID, 5, caster, PATTACH_POINT_FOLLOW, "attach_head", caster:GetAbsOrigin(), true)
 	ParticleManager:SetParticleControl(iParticleID, 6, Vector(radius, radius, radius))
+	ParticleManager:DestroyParticle(iParticleID, false)
 	ParticleManager:ReleaseParticleIndex(iParticleID)
 
 end

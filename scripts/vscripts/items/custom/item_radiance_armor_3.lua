@@ -164,7 +164,9 @@ function modifier_item_radiance_armor_aura_3:OnIntervalThink()
 				local heal_mult = _G._challenge_bosss / 50
 				local heal_amount = damage * heal_mult
 				caster:Heal(heal_amount, caster)
-				ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+				local particle = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+				ParticleManager:DestroyParticle(particle, false)
+				ParticleManager:ReleaseParticleIndex( particle )
 			end			
 		end	
 		if not caster:IsRealHero() then

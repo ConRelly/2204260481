@@ -16,7 +16,7 @@ function modifier_siltbreaker_torrents_thinker:OnCreated( kv )
 
 		local nFXIndex = ParticleManager:CreateParticle( "particles/act_2/siltbreaker_spell_torrent_bubbles.vpcf", PATTACH_ABSORIGIN, self:GetParent() )
 		self:AddParticle( nFXIndex, false, false, -1, false, false )
-		ParticleManager:ReleaseParticleIndex( nFXIndex )
+		--ParticleManager:ReleaseParticleIndex( nFXIndex )
 	end
 end
 

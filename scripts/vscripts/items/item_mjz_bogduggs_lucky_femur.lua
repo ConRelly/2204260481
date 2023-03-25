@@ -86,6 +86,7 @@ function IsExcludeAbility(ability)
 		"obsidian_destroyer_arcane_orb",
 		"wisp_tether_break",
 		"arcane_supremacy",
+		"muerta_pierce_the_veil",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

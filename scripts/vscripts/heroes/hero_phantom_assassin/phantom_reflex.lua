@@ -27,6 +27,7 @@ function phantom_reflex:OnSpellStart()
 	
     local reflect = ParticleManager:CreateParticle("particles/custom/items/durandal/mana_shield_act_sphere.vpcf", PATTACH_POINT_FOLLOW, self:GetCaster())
 	ParticleManager:SetParticleControl(reflect, 0, self:GetCaster():GetOrigin())
+	ParticleManager:DestroyParticle(reflect, false)
 	ParticleManager:ReleaseParticleIndex(reflect)
 end
 function phantom_reflex:GetIntrinsicModifierName() return "modifier_phantom_reflex" end

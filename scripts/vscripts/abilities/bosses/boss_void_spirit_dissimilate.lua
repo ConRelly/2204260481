@@ -256,6 +256,7 @@ function modifier_boss_void_spirit_dissimilate:PlayEffects2( point, hit )
 	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_WORLDORIGIN, self:GetParent() )
 	ParticleManager:SetParticleControl( effect_cast, 0, point )
 	ParticleManager:SetParticleControl( effect_cast, 1, Vector( self.target_radius, 0, 0 ) )
+	ParticleManager:DestroyParticle(effect_cast, false)
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 
 

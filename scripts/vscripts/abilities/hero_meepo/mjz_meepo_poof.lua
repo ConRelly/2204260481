@@ -178,6 +178,7 @@ if IsServer() then
 		local part2 = ParticleManager:CreateParticle("particles/units/heroes/hero_meepo/meepo_poof_end.vpcf", PATTACH_ABSORIGIN, caster) 
 		ParticleManager:SetParticleControl(part2, 0, position) 
 		ParticleManager:SetParticleControl(part2, 1, Vector(200,0,0)) 
+		ParticleManager:DestroyParticle(part2, false)
 		ParticleManager:ReleaseParticleIndex(part2)
 	end
 

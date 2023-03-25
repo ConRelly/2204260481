@@ -66,6 +66,7 @@ function aghanim_blink:OnProjectileHit( hTarget, vLocation )
 		ParticleManager:SetParticleControl( nFXIndex, 1, self:GetCaster():GetAbsOrigin() )
 		ParticleManager:SetParticleControlEnt( nFXIndex, 2, self:GetCaster(), PATTACH_ABSORIGIN_FOLLOW, nil, self.vStartLocation, true )
 		ParticleManager:SetParticleFoWProperties( nFXIndex, 0, 2, 64.0 )
+		ParticleManager:DestroyParticle(nFXIndex, false)
 		ParticleManager:ReleaseParticleIndex( nFXIndex )
 	end
 

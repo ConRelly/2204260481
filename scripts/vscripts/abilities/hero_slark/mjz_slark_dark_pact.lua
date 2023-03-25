@@ -36,6 +36,7 @@ if IsServer() then
 		local p_name = "particles/units/heroes/hero_slark/slark_dark_pact_start.vpcf"
 		local p_index = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN_FOLLOW, parent)
 		ParticleManager:SetParticleControlEnt(p_index, 1, parent, PATTACH_ABSORIGIN_FOLLOW, nil, parent:GetAbsOrigin(), true)
+		ParticleManager:DestroyParticle(p_index, false)
 		ParticleManager:ReleaseParticleIndex(p_index)
 	end
 
@@ -92,6 +93,7 @@ if IsServer() then
 			local p_index = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN_FOLLOW, parent)
             ParticleManager:SetParticleControlEnt(p_index, 1, parent, PATTACH_ABSORIGIN_FOLLOW, nil, parent:GetAbsOrigin(), true)
 			ParticleManager:SetParticleControl(p_index, 2, Vector(self.radius, self.radius, self.radius))
+			ParticleManager:DestroyParticle(p_index, false)
 			ParticleManager:ReleaseParticleIndex(p_index)
 
 			self.particleFire = 1

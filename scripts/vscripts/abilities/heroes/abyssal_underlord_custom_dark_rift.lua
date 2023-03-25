@@ -86,9 +86,11 @@ if IsServer() then
 		self.fx2 = ParticleManager:CreateParticle("particles/custom/abbysal_underlord_custom_darkrift_end.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
 		ParticleManager:SetParticleControlEnt(self.fx2, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
 		ParticleManager:SetParticleControlEnt(self.fx2, 5, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
+		ParticleManager:DestroyParticle(self.fx2, false)
 		ParticleManager:ReleaseParticleIndex(self.fx2)
 		local effect_cast2 = ParticleManager:CreateParticle( "particles/custom/custom_bomb_distort.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 		ParticleManager:SetParticleControlEnt(effect_cast2, 0, self.parent, PATTACH_ABSORIGIN, "attach_absorigin", self.parent:GetAbsOrigin(), true)
+		ParticleManager:DestroyParticle(effect_cast2, false)
 		ParticleManager:ReleaseParticleIndex( effect_cast2 )
 		local units = FindUnitsInRadius(self.parent:GetTeam(), 
 			self.parent:GetAbsOrigin(), 

@@ -43,6 +43,7 @@ function ability_class:OnSpellStart()
 		local p_name = "particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf"
 		local p_index = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN_FOLLOW, caster)
 		ParticleManager:SetParticleControl(p_index, 1, caster:GetAbsOrigin())
+		ParticleManager:DestroyParticle(p_index, false)
 		ParticleManager:ReleaseParticleIndex(p_index)
 
 		-- AddFOWViewer(caster:GetTeam(), caster:GetAbsOrigin(), sight_radius, sight_duration, false)
@@ -139,6 +140,7 @@ if IsServer() then
     	ParticleManager:SetParticleControl(p_index, 0, target:GetAbsOrigin())
       	ParticleManager:SetParticleControl(p_index, 1, Vector(target:GetAbsOrigin().x, target:GetAbsOrigin().y, 2000))
 		ParticleManager:SetParticleControl(p_index, 2, target:GetAbsOrigin())
+		ParticleManager:DestroyParticle(p_index, false)
 		ParticleManager:ReleaseParticleIndex(p_index)
 	end
 
@@ -148,6 +150,7 @@ if IsServer() then
 		ParticleManager:SetParticleControl(p_index, 0, Vector(target:GetAbsOrigin().x, target:GetAbsOrigin().y, target:GetAbsOrigin().z + target:GetBoundingMaxs().z ))
 		ParticleManager:SetParticleControl(p_index, 1, Vector(target:GetAbsOrigin().x, target:GetAbsOrigin().y, 2000))
 		ParticleManager:SetParticleControl(p_index, 2, Vector(target:GetAbsOrigin().x, target:GetAbsOrigin().y, target:GetAbsOrigin().z + target:GetBoundingMaxs().z ))
+		ParticleManager:DestroyParticle(p_index, false)
 		ParticleManager:ReleaseParticleIndex(p_index)
 	end
 

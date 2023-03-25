@@ -31,6 +31,7 @@ if IsServer() then
 		local p_index = ParticleManager:CreateParticle(p_name, PATTACH_WORLDORIGIN, nil)
 		ParticleManager:SetParticleControl(p_index, 0, caster:GetAbsOrigin())
 		ParticleManager:SetParticleControl(p_index, 1, Vector(radius, radius, radius))
+		ParticleManager:DestroyParticle(p_index, false)
 		ParticleManager:ReleaseParticleIndex(p_index)
 
 		local unit_list = FindUnitsInRadius(
