@@ -19,7 +19,8 @@ local exclude_items = {
 	item_master_of_weapons_sword2 = true,
 	item_master_of_weapons_sword3 = true,
 	item_master_of_weapons_sword4 = true,
-	item_master_of_weapons_sword5 = true,    
+	item_master_of_weapons_sword5 = true,  
+    muerta_pierce_the_veil = true,
 }
 
 

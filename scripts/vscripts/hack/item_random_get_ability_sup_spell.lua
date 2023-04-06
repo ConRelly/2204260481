@@ -111,7 +111,7 @@ function GetRandomAbilityName( hero )
 		--"alchemist_goblins_greed",
 		"mjz_omniknight_repel",
 		--"mjz_huskar_berserkers_blood",
-		"antimage_custom_counterspell",
+		"antimage_counterspell",
 		"lycan_feral_impulse",
 		--"ursa_fury_swipes",
 		--"sniper_headshot_lua",

@@ -19,7 +19,7 @@ function modifier_double_trouble:OnCreated()
     Timers:CreateTimer({
         endTime = 15, 
         callback = function()
-            if self then
+            if self ~= nil and not self:IsNull() then
                 self:StartIntervalThink(1)  
             end  
         end

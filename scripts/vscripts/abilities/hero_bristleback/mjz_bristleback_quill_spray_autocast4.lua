@@ -68,6 +68,7 @@ function modifier_class:OnIntervalThink()
         --local target_ability = parent:GetAbilityByIndex(2)
         --local target_ability_2 = self.target_ability_2
         if not IsValidEntity(parent) then return nil end
+        if parent:HasModifier("modifier_mows_image") then return end
         for i=6,parent:GetAbilityCount() -1 do
 
             if parent == nil then return nil end

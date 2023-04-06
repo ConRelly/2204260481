@@ -10,6 +10,8 @@
 		"Hero_ButtonCategory"						"Hero"
 		"Spawn_ButtonCategory"						"Spawn"
 		"Misc_ButtonCategory"						"Customize"
+///////////////coments ///////////
+
 		"Playback_ButtonCategory"					""
 		"Display_ButtonCategory"					"Display"
 
@@ -9566,13 +9568,13 @@ Required Level: %required_level%
 "DOTA_Tooltip_ability_item_grove_bow_copy"								   "Grove Bow?"
 "DOTA_Tooltip_ability_item_grove_bow_copy_Description"					 "?" 
 
-	"DOTA_Tooltip_ability_item_aegis_lua"									  "Consumable Aegis"
-	"DOTA_Tooltip_ability_item_aegis_lua_Description"						  "Consume to have his effect"
-	"DOTA_Tooltip_modifier_aegis"											   "Aegis of the Immortal"
-	"DOTA_Tooltip_modifier_aegis_Description"								   "Reincarnation: Consumes a charge to brings you to life with full health and mana 7 seconds after you die. Meanwhile grant you Power of Reincarnation buff for 14 sec on top of the 7sec basic one."
-	
-	"DOTA_Tooltip_modifier_aegis_buff"										  "Aegis Protection"
-	"DOTA_Tooltip_modifier_aegis_buff_Description"							  "Reduce %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% incoming damage, and increase %dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% OUTGOING damage."  
+"DOTA_Tooltip_ability_item_aegis_lua"									  "Consumable Aegis"
+"DOTA_Tooltip_ability_item_aegis_lua_Description"						  "Consume to have his effect"
+"DOTA_Tooltip_modifier_aegis"											   "Aegis of the Immortal"
+"DOTA_Tooltip_modifier_aegis_Description"								   "Reincarnation: Consumes a charge to brings you to life with full health and mana 7 seconds after you die. Meanwhile grant you Power of Reincarnation buff for 14 sec on top of the 7sec basic one."
+
+"DOTA_Tooltip_modifier_aegis_buff"										  "Aegis Protection"
+"DOTA_Tooltip_modifier_aegis_buff_Description"							  "Reduce %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% incoming damage, and increase %dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% OUTGOING damage."  
 
 "dota_tooltip_ability_pangolier_heartpiercer_oaa"											   "Heartpiercer"
 "dota_tooltip_ability_pangolier_heartpiercer_oaa_description"								   "Pangolier reads his enemies perfectly, deftly slipping his blade past defenses. Each attack has a chance to negate 60%% of enemy <font color='#FFA500'>base armor</font> and slow the target for a duration, activating after a short delay."
@@ -10165,9 +10167,17 @@ Contains all random skills"
 		"npc_boss_guesstuff_Moran"											   "Moran(GOD)"
 
 		"DOTA_Tooltip_modifier_underdog"										 "Underdog Buff"
-		"DOTA_Tooltip_modifier_underdog_description"							 "Acquired by the less popular heroes on their first death after lvl 35, increase the following stats by: <font color='#05DDEF'>%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Damage</font>, <font color='#10DE33'>%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% All Stats</font> and <font color='#DE9619'>%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% Attack Damage</font>"
+		"DOTA_Tooltip_modifier_underdog_Description"							 "Acquired by the less popular heroes on their first death after lvl 35, increase the following stats by: <font color='#05DDEF'>%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Damage</font>, <font color='#10DE33'>%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% All Stats</font> and <font color='#DE9619'>%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% Attack Damage</font>"
 		"DOTA_Tooltip_modifier_phys"											 "Panoply"
-		"DOTA_Tooltip_modifier_phys_description"								 "Activates under 110 armor, Gains bonus %dMODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE%%% physical dmg reduction "
+		"DOTA_Tooltip_modifier_phys_Description"								 "Activates under 110 armor, Gains bonus %dMODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE%%% physical dmg reduction "
+
+		"DOTA_Tooltip_modifier_bottom_50"										 "<font color='#EDD50F'>Top 50 Underdog's</font>"
+		"DOTA_Tooltip_modifier_bottom_50_Description"							 "Applied to the bottom 50 least played heroes (list updates automatically, check Discord for more details/site). Grants a significant boost to their stats and combat capabilities based on their <font color='#FF0000'>level</font>. <br><font color='#10DE33'>+%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% All Stats</font><br><font color='#05DDEF'>+%dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% Total Attack Damage Output</font> <br> <font color='#05DDEF'>+%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Amplification</font><br><font color='#DE9619'>+%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% Outgoing Damage</font><br><font color='#10DE33'>+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor</font><br><font color='#FFA500'>+%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% Magical Resistance</font> <br> <font color='#FFA500'>+%dMODIFIER_PROPERTY_EXP_RATE_BOOST%%% Experience Gain</font>."
+		"DOTA_Tooltip_modifier_bottom_20"										 "<font color='#77ED0F'>Top 20 Underdog's</font>"
+		"DOTA_Tooltip_modifier_bottom_20_Description"							 "Applied to the bottom 20 least played heroes (list updates automatically, check Discord for more details/site). Grants a significant boost to their stats and combat capabilities based on their <font color='#FF0000'>level</font>. <br><font color='#10DE33'>+%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% All Stats</font><br><font color='#05DDEF'>+%dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% Total Attack Damage Output</font> <br> <font color='#05DDEF'>+%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Amplification</font><br><font color='#DE9619'>+%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% Outgoing Damage</font><br><font color='#10DE33'>+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor</font><br><font color='#FFA500'>+%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% Magical Resistance</font> <br> <font color='#FFA500'>+%dMODIFIER_PROPERTY_EXP_RATE_BOOST%%% Experience Gain</font>."
+		"DOTA_Tooltip_modifier_bottom_10"										 "<font color='#FF0000'>Top 10 Underdog's</font>"
+		"DOTA_Tooltip_modifier_bottom_10_Description"                            "Applied to the bottom 10 least played heroes (list updates automatically, check Discord for more details/site). Grants a significant boost to their stats and combat capabilities based on their <font color='#FF0000'>level</font>. <br><font color='#10DE33'>+%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% All Stats</font><br><font color='#05DDEF'>+%dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% Total Attack Damage Output</font> <br> <font color='#05DDEF'>+%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Amplification</font><br><font color='#DE9619'>+%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% Outgoing Damage</font><br><font color='#10DE33'>+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor</font><br><font color='#FFA500'>+%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% Magical Resistance</font> <br> <font color='#FFA500'>+%dMODIFIER_PROPERTY_EXP_RATE_BOOST%%% Experience Gain</font>."
+
 
 
 	"DOTA_Tooltip_ability_item_god_slayer"				"<font color='#FF0000'>God Slayer</font>"

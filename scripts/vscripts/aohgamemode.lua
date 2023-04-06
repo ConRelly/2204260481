@@ -416,7 +416,6 @@ function AOHGameMode:OnDamageDealt(damageTable)
 			end
 		end
 	end
-
 	return true
 end
 
@@ -1229,6 +1228,7 @@ function AOHGameMode:OnEntitySpawned(event)
 		if not unit:IsIllusion() then
 			fix_atr_for_hero(unit)
 			fix_atr_for_hero2(unit)
+			check_hero_ranking(unit)
 		end
 		unit:AddNewModifier(unit, nil, "modifier_generic_handler", {})
 		unit:AddNewModifier(unit, nil, "modifier_aegis_buff", {duration = 7})

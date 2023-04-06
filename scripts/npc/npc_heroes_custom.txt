@@ -14,7 +14,7 @@
 "npc_dota_hero_abaddon"
 {
 	"UnitLabel"					"no_underdog"
-
+	//"Ability1"              "aghanim_laser"
 	"Ability3"				"mjz_pudge_rot"
 	"Ability5"				"custom_aphotic_shield"
 	"Ability10"				"special_bonus_unique_mjz_pudge_rot_health"
@@ -906,7 +906,7 @@
 
 		"Ability3"				"mjz_razor_unstable_current"
 		"Ability4"              "alchemist_goblins_greed"
-		"Ability10"				"special_bonus_hp_2750"
+		"Ability10"				"special_bonus_unique_alchemist_8"
 		"Ability11"             "special_bonus_armor_24"
 		"Ability13"				"special_bonus_cdr_25"
 		"Ability14"				"special_bonus_spell_amplify_125"
@@ -2629,7 +2629,7 @@
 		"Ability10"		"special_bonus_magic_resistance_60"
 		"Ability11"		"special_bonus_reincarnation_90"
 		"Ability12"		"special_bonus_unique_muerta_dead_shot_range"
-		"Ability13"		"special_bonus_attack_damage_100"
+		"Ability13"		"special_bonus_cdr_25"
 		"Ability14"		"special_bonus_unique_muerta_dead_shot_charges"
 		"Ability15"		"special_bonus_unique_muerta_gunslinger_double_shot_chance"
 		"Ability16"		"special_bonus_unique_muerta_the_calling_num_revenants"
@@ -2639,7 +2639,7 @@
 		"AttackDamageMin"		"24"
 		"AttackDamageMax"		"32"
 		"AttackRate"		"1.5"
-		"BaseAttackSpeed"		"250"
+		"BaseAttackSpeed"		"350"
 		"AttackAnimationPoint"		"0.35"
 		"AttackSpeedActivityModifiers"
 		{

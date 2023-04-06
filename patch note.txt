@@ -2436,9 +2436,14 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
-
-
-
+* Added a new system that will give a special buff for the top 50, 20 and 10 least played heroes (list of heroes is automatically updated at the start of the game) check discord #updates for the site if you'd like to see some data including the ranking for played heroes.
+* Muerta: fixed Q having 3 extra lvls, replaced attack talent with a 25% cdr one, W has an extra lvl and now works on autocast.
+* Aghanim: Spinning Spiral duration reduced (Aoe range reduced as well)
+* Pudge self dmg from root reduced from 20% to less than 7%.
+* Fixed perma-loop of item autocast with Master of Swords item.
+* Puck E and OD W cooldowns increased.
+* Antimage's counterspell from the random pool is now the same as the one Antimage has (to eliminate the chance of Antimage getting another one that will not work anyway).
+* and some other stuff
 
 
 

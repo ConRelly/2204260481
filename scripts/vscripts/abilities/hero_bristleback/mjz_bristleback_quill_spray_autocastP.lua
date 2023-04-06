@@ -66,7 +66,7 @@ function modifier_class:OnIntervalThink()
         --Autocast for items
         for i=0, 2 do
             local item = parent:GetItemInSlot(i)
-            if item and IsValidEntity(item) and item:IsFullyCastable() then
+            if item and IsValidEntity(item) and item:IsFullyCastable() and item:IsActivated() then
                 -- more checks 
                 local ability = item:GetAbilityName()
                 if ability == nil then return end

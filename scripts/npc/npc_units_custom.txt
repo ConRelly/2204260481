@@ -332,7 +332,7 @@
 		"run"	   "190"
 	}
 	"MovementTurnRate"		  "0.5"
-	"StatusHealth"			  "6000000"
+	"StatusHealth"			  "600000"
 	"StatusHealthRegen"		 "0"
 	"StatusMana"				"10000"
 	"StatusManaRegen"		   "500"
@@ -355,10 +355,10 @@
 			//}
 			//"Ability5"
 			//{
-			//	"Name"				"custom_spectral_dagger"
-			//	"AOE"				"1"
-			//	"Radius"			"2000"
-			//	"MinimumTargets"	"0"
+			//   "Name"				"aghanim_shard_attack"
+			//   "AOE"				"1"
+			//   "Radius"				"2000"
+			//   "MinimumTargets"		"0"
 			//}
 			//"Ability5"
 			//{

@@ -71,11 +71,13 @@ function modifier_class:OnIntervalThink()
         if not ability:GetToggleState() then return nil end
         if parent == nil then return nil end
         if not IsValidEntity(parent) then return nil end
+        if parent:HasModifier("modifier_mows_image") then return end
         for i=6,parent:GetAbilityCount() -1 do
 
             if parent == nil then return nil end
             local target_ability = parent:GetAbilityByIndex( i )       
             if target_ability and IsValidEntity(target_ability) and not target_ability:IsAttributeBonus() and not target_ability:IsHidden() and not target_ability:IsToggle() and target_ability:IsActivated() and target_ability:GetLevel() > 0 and target_ability:IsCooldownReady() then  -- Talent-- Dunno
+                --print("initial pass")
                 if target_ability:IsInAbilityPhase() then return nil end
                 --if not ability:GetToggleState() then return nil end
                 local ability_name = target_ability:GetAbilityName()
@@ -102,7 +104,8 @@ function modifier_class:OnIntervalThink()
                     if ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_NO_TARGET) and not (target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH)  then
                         if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
                             parent:CastAbilityNoTarget(target_ability, parent:GetPlayerOwnerID())
-                        end    
+                        end 
+                        --print("no target")  
                         return nil
                     end   
                 local enemy_list = 0
@@ -110,32 +113,41 @@ function modifier_class:OnIntervalThink()
                     enemy_list = FindUnitsInRadius(caster:GetTeamNumber(), pos, nil, radius_auto, 
                         target_ability:GetAbilityTargetTeam(), target_ability:GetAbilityTargetType(), target_ability:GetAbilityTargetFlags() + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE,
                         FIND_ANY_ORDER, false)
+                        --print("pass1")
                 elseif target_ability:GetAbilityTargetTeam() ~= 0 then
                     enemy_list = FindUnitsInRadius(caster:GetTeamNumber(), pos, nil, radius_auto, 
                         target_ability:GetAbilityTargetTeam(), DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, target_ability:GetAbilityTargetFlags() + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE,
                         FIND_ANY_ORDER, false) 
+                        --print("pass2")
                 else
                     enemy_list = FindUnitsInRadius(caster:GetTeamNumber(), pos, nil, radius_auto, 
                         DOTA_UNIT_TARGET_TEAM_BOTH, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, target_ability:GetAbilityTargetFlags() + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE,
-                        FIND_ANY_ORDER, false)                             
+                        FIND_ANY_ORDER, false)   
+                        --print("pass3")                          
                 end                     
                 if #enemy_list > 0 then
+                    --print("more then 1 enemy pass")
                     local first_enemy = enemy_list[1]
                     if target_ability == nil then return nil end 
-                    if parent == nil then return nil end                   
+                    if parent == nil then return nil end
+                    --print("decide what to cast")                
                     if ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and (target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH) then
+                        --print("cast1")
                         if target_ability and IsValidEntity(target_ability) and IsValidEntity(first_enemy) and IsValidEntity(parent) and parent:IsAlive() and first_enemy:IsAlive() then
-                            parent:CastAbilityOnTarget(first_enemy, target_ability, parent:GetPlayerOwnerID())
+                            parent:CastAbilityOnTarget(first_enemy, target_ability, parent:GetPlayerOwnerID())   
                         end   
                     elseif ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_POINT) then
+                        --print("cast2")
                         if target_ability and IsValidEntity(target_ability) and IsValidEntity(first_enemy) and IsValidEntity(parent) and parent:IsAlive() and first_enemy:IsAlive() then
                             parent:CastAbilityOnPosition(first_enemy:GetAbsOrigin(), target_ability, parent:GetPlayerOwnerID())
                         end   
                     elseif ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_NO_TARGET) then
+                        --print("cast3")
                         if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
                             parent:CastAbilityNoTarget(target_ability, parent:GetPlayerOwnerID()) 
                         end    
                     elseif ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_FRIENDLY then	
+                        --print("cast4")
                         if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
                             parent:CastAbilityOnTarget(parent, target_ability, parent:GetPlayerOwnerID())
                         end    

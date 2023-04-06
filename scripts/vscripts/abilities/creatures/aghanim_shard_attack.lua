@@ -47,7 +47,7 @@ function aghanim_shard_attack:OnChannelThink( flInterval )
 	if IsServer() then
 		if self.nPattern == PATTERN_SPIRAL then
 			self:ThinkSpirals( flInterval )
-		end
+		end	
 	end
 end
 
@@ -57,10 +57,10 @@ function aghanim_shard_attack:OnChannelFinish( bInterrupted )
 	if IsServer() then
 		StopSoundOn( "Aghanim.ShardAttack.Loop", self:GetCaster() )
 		ParticleManager:DestroyParticle( self.nChannelFX, false )
+		ParticleManager:ReleaseParticleIndex( self.nChannelFX )
 		self.nCastCount = self.nCastCount + 1
 	end
 end
-
 -------------------------------------------------------------------------------
 
 function aghanim_shard_attack:OnSpellStart()
@@ -198,6 +198,8 @@ function aghanim_shard_attack:ThinkSpiralProjectile( info )
 	local vLoc = ProjectileManager:GetLinearProjectileLocation( info.nHandle ) 
 	vLoc.z = GetGroundHeight( vLoc, self:GetCaster() ) + 50
 	info.attachEnt:SetAbsOrigin( vLoc )
+
+	
 	--ParticleManager:SetParticleControl( info.nFXIndex, 0, vLoc )
 
 	--local flSpeedColorFactor = self.flCurSpeed / self.spiral_projectile_speed
@@ -251,7 +253,7 @@ function aghanim_shard_attack:LaunchCrystals( vVel, flDist, flRadius )
 		Source = self:GetCaster(),
 		iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
 		iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-		fExpireTime = GameRules:GetGameTime() + 10.0,
+		fExpireTime = GameRules:GetGameTime() + 6.0,
 	}
 
 	return ProjectileManager:CreateLinearProjectile( info )

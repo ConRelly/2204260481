@@ -804,7 +804,7 @@ function modifier_mows_slasher:OnDestroy()
 		
 		self:GetParent():MoveToPositionAggressive(self:GetParent():GetAbsOrigin())
 
-		if self:GetParent():HasModifier("modifier_mows_image") then
+		if self:GetParent():HasModifier("modifier_mows_image") and self:GetCaster() then
 			local caster = self:GetCaster()
 			local ability = self:GetAbility()
 			local image_team = self:GetParent():GetTeamNumber()
@@ -850,6 +850,7 @@ function modifier_mows_slasher:OnDestroy()
 							local burst = ParticleManager:CreateParticle("particles/items3_fx/blink_overwhelming_burst.vpcf", PATTACH_WORLDORIGIN, caster)
 							ParticleManager:SetParticleControl(burst, 0, image_loc)
 							ParticleManager:SetParticleControl(burst, 1, Vector(radius, 500, 500))
+							ParticleManager:DestroyParticle(burst, false)
 							ParticleManager:ReleaseParticleIndex(burst)
 							EmitSoundOnLocationWithCaster(image_loc, "Blink_Layer.Overwhelming", caster)
 						end
