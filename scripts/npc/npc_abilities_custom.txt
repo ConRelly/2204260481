@@ -43227,6 +43227,7 @@
 		"AbilityValues"
 		{
 			"damage"				"250 1400 4650 19600"
+			"int_dmg"               "15 20 25 30"
 			"heal_pct"				"33"
 			"tick_rate"				"0.5"
 			"duration"				"6"

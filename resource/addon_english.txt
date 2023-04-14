@@ -971,11 +971,12 @@
 
 // Oracle
 	"DOTA_Tooltip_ability_purifying_flames"					"Purifying Flames"
-	"DOTA_Tooltip_ability_purifying_flames_Description"		"Burns away impurities, dealing heavy magic damage to the target. Application to allies gradually regenerate health over time. The amount of health regenerated over its duration exceeds the amount of initial damage by %heal_pct%%%."
+	"DOTA_Tooltip_ability_purifying_flames_Description"		"Burns away impurities, dealing heavy magic damage to the target. Application to allies gradually regenerate health over time. The amount of health regenerated over its duration exceeds the amount of initial damage by %heal_pct%%%. <br> <font color='#ED7E0F'>Rightclick to enable Autocast</font>"
 	"DOTA_Tooltip_ability_purifying_flames_Lore"		"Like a hall of mirrors might amplify the light of a single candle, the shattered walls of the universe can transform the light of prophecy into a burning torch."
-	"DOTA_Tooltip_ability_purifying_flames_Note0"		"1) The healing from Purifying Flames can be stacked with itself."
+	"DOTA_Tooltip_ability_purifying_flames_Note0"		"1) The healing from Purifying Flames can be stacked with itself. Bonus int dmg will not count for healing."
 	"DOTA_Tooltip_ability_purifying_flames_Note1"		"2) Automatic application applies the ability to enemies."
 	"DOTA_Tooltip_ability_purifying_flames_damage"				"Damage:"
+	"DOTA_Tooltip_ability_purifying_flames_int_dmg"				"Int As Damage:"
 	"DOTA_Tooltip_ability_purifying_flames_tick_rate"			"Heal interval:"
 	"DOTA_Tooltip_ability_purifying_flames_duration"			"Duration:"
 	"DOTA_Tooltip_modifier_purifying_flames_buff"					"Purifying Flames Heal"

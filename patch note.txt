@@ -2446,6 +2446,12 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * and some other stuff
 
 
+* Added some fail retries if the least played hero list is not retrieved from the site on the first try, and some extra tries if a hero spawns and the list is still not retrieved.
+* Oracle Purifying Flames now has Int as a bonus dmg. Its in-build autocast now searches for the closest enemy instead of any random enemy in range.
+* Added Purifying Flames to the random skill pool.
+
+
+
 
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).

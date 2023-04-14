@@ -261,6 +261,8 @@ function GetRandomAbilityName( hero )
 		"vengefulspirit_wave_of_terror_lua",
 		"vengefulspirit_wave_of_terror_lua",
 		--"viper_poison_attack",
+		"purifying_flames",
+		"purifying_flames",
 	}
 	local randomIndex = RandomInt(1, #abilityList)
 	return abilityList[randomIndex]

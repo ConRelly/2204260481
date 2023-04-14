@@ -34,7 +34,8 @@ function purifying_flames:OnSpellStart()
 	
 	target:EmitSound("Hero_Oracle.PurifyingFlames.Damage")
 	target:EmitSound("Hero_Oracle.PurifyingFlames")
-
+	local int_dmg = caster:GetIntellect() * self:GetSpecialValueFor("int_dmg")
+	damage = damage + int_dmg
 	local pf = ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_purifyingflames_hit.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 	ParticleManager:SetParticleControlEnt(pf, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 	ParticleManager:ReleaseParticleIndex(pf)
@@ -108,7 +109,7 @@ function modifier_purifying_flames:OnIntervalThink()
         if caster:IsSilenced() then return end
 
         local radius = self:GetAbility():GetCastRange(caster:GetAbsOrigin(), caster) + caster:GetCastRangeBonus()
-        local enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, self:GetAbility():GetAbilityTargetType(), self:GetAbility():GetAbilityTargetFlags(), FIND_ANY_ORDER, false)
+        local enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, self:GetAbility():GetAbilityTargetType(), self:GetAbility():GetAbilityTargetFlags(), FIND_CLOSEST, false)
 
         if #enemies > 0 then
             if not IsValidEntity(enemies[1]) then return end

@@ -244,6 +244,7 @@ function GetRandomAbilityName( hero )
 		"naga_siren_rip_tide",
 		--"viper_poison_attack",  does not work on other heroes , last a single frame on enemy
 		"vengefulspirit_wave_of_terror_lua",
+		"purifying_flames",
 
 	}
 	local randomIndex = RandomInt(1, #abilityList)

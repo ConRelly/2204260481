@@ -240,7 +240,8 @@ function GetRandomAbilityName( hero )
 		"tiny_grow",
 		"naga_siren_rip_tide",
 		"vengefulspirit_wave_of_terror_lua",
-		--"viper_poison_attack",
+		--"viper_poison_attack", --bugged if the hero is not created with it
+		"purifying_flames",
 	}
 	local randomIndex = RandomInt(1, #abilityList)
 	return abilityList[randomIndex]
