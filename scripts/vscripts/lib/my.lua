@@ -219,7 +219,7 @@ function refresh_players_bonus()
 				for l=1, 5 do
 					hero:HeroLevelUp(false)
 				end	
-				local bonus_gold = (3 + time) * 500
+				local bonus_gold = (5 + time) * 500
 				hero:ModifyGold(bonus_gold, true, 0)
 				if not hero.reward_edible_fragment and not _G._hardMode then
 					--hero:AddItemByName("item_edible_fragment")

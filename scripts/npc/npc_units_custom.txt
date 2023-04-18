@@ -10225,7 +10225,9 @@
 	"AttackRate"				"1.30"
 	"AttackDamageMin"		   "860"
 	"AttackDamageMax"		   "860"
-	"StatusHealth"			  "10"
+	"StatusHealth"			  "10" 
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"50"
 	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 
 }

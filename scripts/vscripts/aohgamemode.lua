@@ -483,9 +483,9 @@ function AOHGameMode:RecountPlayers()
 		end
 	end
 	Timers:CreateTimer({
-		endTime = 0.1, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
+		endTime = 0.1, 
 		callback = function()
-			self.InitVariables()
+			self:InitVariables()
 			if self._playerNumber == 0 then
 				send_info_if_game_ends_2()
 			end	
@@ -547,7 +547,7 @@ function AOHGameMode:InitVariables()
 					if not _G._hardMode then 
 						hero:ModifyGold(5000, true, 0)
 					else
-						hero:ModifyGold(2500, true, 0)	
+						hero:ModifyGold(4000, true, 0)	
 					end	
 					if Cheats:IsEnabled() then
 						--DropItemOrInventory(playerID, "item_obs_studio")
@@ -562,7 +562,7 @@ function AOHGameMode:InitVariables()
 			end
 		end
 		Timers:CreateTimer({
-			endTime = 1,
+			endTime = 0.1,
 			callback = function()
 				self.starting_intems = true
 				print(self._playerNumber .. " starting players")
@@ -584,8 +584,13 @@ function AOHGameMode:InitVariables()
 			end
 		end
 	end	
-	self._goldRatio = 2.3 - 0.30 * (5 - self._playerNumber)
-	self._expRatio = 1.60 - 0.30 * (5 - self._playerNumber) 
+	self._goldRatio = 2.3 - (0.30 * (5 - self._playerNumber))
+	print("updating ratios")
+	self._expRatio = 1.60 - (0.30 * (5 - self._playerNumber))
+	if self._playerNumber < 2 then
+		self._goldRatio = 0.85
+		self._expRatio = 0.40
+	end	
 	if self._playerNumber < 2 and not self.starting_intems then
 		self._goldRatio = 0.75
 		self._expRatio = 0.40
@@ -600,7 +605,7 @@ function AOHGameMode:InitVariables()
 			self.spawned_gon = true		
 		end
 	end
-	if self._doubleMode and not self.starting_intems then
+	if self._doubleMode then
 		self._expRatio = self._expRatio / 1.35
 	end
 	--GameRules.GLOBAL_player_number = self._playerNumber	
@@ -1095,6 +1100,7 @@ function AOHGameMode:_CheckForDefeat()
 end
 
 local one_time_reward = true
+
 function AOHGameMode:CheckForDefeatDelay()
 	if self._defeatcounter > 0 then
 		Notifications:TopToAll({text=self._defeatcounter, duration=1})
@@ -1102,12 +1108,14 @@ function AOHGameMode:CheckForDefeatDelay()
 		return 1
 	else 
 		if self._entAncient and self._entAncient:IsAlive() then
+			local time = math.floor(GameRules:GetGameTime() / 60)
+			local bonus_gold = (5 + time) * 500
 			if are_all_heroes_dead() then
 				if _G._defeat_extra_lives > 0 and not _G._hardMode then
 					if one_time_reward then
 						refresh_players_bonus()
 						_G._defeat_extra_lives = _G._defeat_extra_lives - 1
-						Notifications:TopToAll({text="Lives left = " .._G._defeat_extra_lives.. ", Everyone gets 5 lvls, 15k gold and an Edible Fragment.", style={color="green"}, duration=10})
+						Notifications:TopToAll({text="Lives left = " .._G._defeat_extra_lives.. ", Everyone gets 5 lvls, " ..bonus_gold.. " gold and an Edible Fragment.", style={color="green"}, duration=10})
 						self._defeatcounter = 10
 						self._ischeckingdefeat = false
 						one_time_reward = false
@@ -1115,7 +1123,7 @@ function AOHGameMode:CheckForDefeatDelay()
 					else
 						refresh_players_bonus()
 						_G._defeat_extra_lives = _G._defeat_extra_lives - 1
-						Notifications:TopToAll({text="Lives left = " .._G._defeat_extra_lives.. ", Everyone gets 5 lvls and 15k gold.", style={color="green"}, duration=10})
+						Notifications:TopToAll({text="Lives left = " .._G._defeat_extra_lives.. ", Everyone gets 5 lvls and  " ..bonus_gold.. "  gold.", style={color="green"}, duration=10})
 						self._defeatcounter = 10
 						self._ischeckingdefeat = false
 						return nil						
@@ -1123,7 +1131,7 @@ function AOHGameMode:CheckForDefeatDelay()
 				elseif _G._defeat_extra_lives > 0 and _G._hardMode then
 					refresh_players_bonus()
 					_G._defeat_extra_lives = _G._defeat_extra_lives - 3
-					Notifications:TopToAll({text="Lives left = " .._G._defeat_extra_lives.. ", Everyone gets 5 lvls and 15k gold.", style={color="green"}, duration=10})
+					Notifications:TopToAll({text="Lives left = " .._G._defeat_extra_lives.. ", Everyone gets 5 lvls and " ..bonus_gold.. " gold.", style={color="green"}, duration=10})
 					self._defeatcounter = 10
 					self._ischeckingdefeat = false
 					return nil
@@ -1169,8 +1177,10 @@ function AOHGameMode:_ThinkPrepTime()
 		if self._doubleMode then
 			self._currentRound:BeginDouble()
 		end
+
 		self._currentRound:Begin(self._goldRatio, self._expRatio)
 		self:AtRoundStart()
+		self:RecountPlayers()
 		RefillBottle()
 		return
 	end

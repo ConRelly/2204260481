@@ -4858,7 +4858,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0.1"
-		"AbilityCharges"				"5"
+		"AbilityCharges"				"4"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -4884,12 +4884,12 @@
 			}
 			"shard_bonus_charges"			
 			{
-				"value"	"1"
+				"value"	"3"
 				"RequiresShard"				"1"
 			}
 			"shard_fear_duration"			
 			{
-				"value"		"1.5"
+				"value"		"0.0"
 				"RequiresShard"				"1"
 			}
 			"shard_consecutive_siphon_duration"			
@@ -12928,6 +12928,7 @@
 	"venomancer_plague_ward"
 	{
 		"LevelsBetweenUpgrades"				 "3"
+		"AbilityUnitTargetTeam"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityManaCost"						"15 20 25 30"
 		"AbilityCooldown"				"8"
 		"AbilitySpecial"

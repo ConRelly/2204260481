@@ -36701,7 +36701,7 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"chaos_knight_chaos_strike"		//"mjz_chaos_knight_chaos_strike"
-		"IsOnCastBar"				   "0"		
+		"IsOnCastBar"				    "0"		
 
 		"precache"
 		{
@@ -36714,23 +36714,23 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_damage"				"2020 250 300 2520"
+				"crit_damage"				"2020 250 300 3220"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_chance"				"2 2 2 3"
+				"crit_chance"				"2 2 2 4"
 				"LinkedSpecialBonus"		"special_bonus_unique_mjz_chaos_strike"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"armor_reduction"			"-190"
+				"armor_reduction"			"-720"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"armor_reduction_duration"	"25"
+				"armor_reduction_duration"	"35"
 			}
 			"05"
 			{

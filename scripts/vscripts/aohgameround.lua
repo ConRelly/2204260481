@@ -82,7 +82,6 @@ function AOHGameRound:Begin(goldRatio, expRatio)
 			nPlayersResurrected = 0
 		}
 	end
-
 	self._nGoldRemainingInRound = self._nMaxGold * goldRatio
 	self._nFixedXP = self._nFixedXP * expRatio
 	self._nGoldBagsRemaining = self._nBagCount
