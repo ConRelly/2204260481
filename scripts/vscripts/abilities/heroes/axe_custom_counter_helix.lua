@@ -2,6 +2,10 @@ axe_custom_counter_helix = class({})
 LinkLuaModifier( "modifier_axe_custom_counter_helix", "abilities/heroes/axe_custom_counter_helix.lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
+
+function axe_custom_counter_helix:GetAOERadius()
+	if self:GetCaster() then return self:GetCaster():Script_GetAttackRange() + 100 end 
+end
 -- Passive Modifier
 function axe_custom_counter_helix:GetIntrinsicModifierName()
 	return "modifier_axe_custom_counter_helix"
@@ -24,11 +28,11 @@ end
 	function modifier_axe_custom_counter_helix:OnCreated( kv )
 		-- references
 		self.ability = self:GetAbility()
-		self.radius = self.ability:GetSpecialValueFor( "radius" )
 		self.chance = self.ability:GetSpecialValueFor( "trigger_chance" ) + 1
 		self.hpRatio = self.ability:GetSpecialValueFor( "health_ratio" ) * 0.01
 		self.hasTalent = false
 		self.parent = self:GetParent()
+		self.radius = self.parent:Script_GetAttackRange() + 100
 		self.teamNumber = self.parent:GetTeamNumber()
 		
 		self.damage = 0
@@ -85,12 +89,14 @@ function modifier_axe_custom_counter_helix:OnAttackLanded( params )
 				-- roll dice
 				if RandomInt(1,100)>self.chance then return end
 				self.damage = self.baseDamage + self.parent:GetMaxHealth() * self.hpRatio
+				local parent = self:GetParent()
+				local radius = parent:Script_GetAttackRange() + 100
 				-- find enemies
 				local enemies = FindUnitsInRadius(
 					self.teamNumber,	-- int, your team number
 					self.parent:GetOrigin(),	-- point, center point
 					nil,	-- handle, cacheUnit. (not known)
-					self.radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+					radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
 					DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
 					DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
 					DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,	-- int, flag filter

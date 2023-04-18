@@ -2451,6 +2451,19 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * Added Purifying Flames to the random skill pool.
 
 
+* Database changes, the free version was getting more daily unique visitors then allowed.
+
+
+* Added 3 new incons in top left corner (discord invite, etc)
+* Pudge's Counter Helix range now scales with attack range.
+* Axe now has the Counter Helix on attack talent again.
+* Doom is no longer a Legacy Underdog. Added 2 new talents (High Crit and True Strike)
+* Hard start gold is now +2.5k (Easy was and is +5k)
+* Second chance bonus gold now scales with playtime, 1500 + (500 for each minute of game time) so on a 90min+ it will give ~50k gold.
+* Fixed Phoneix SunRay not showing up in the DSP tool (the dmg was still counted but in the "normal attack" category)
+* and some other stuff
+
+
 
 
 **Update Notes spellings will get corrected before the live update.

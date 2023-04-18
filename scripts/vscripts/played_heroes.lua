@@ -3,7 +3,7 @@ LinkLuaModifier("modifier_bottom_20", "modifiers/modifier_bottom_20.lua", LUA_MO
 LinkLuaModifier("modifier_bottom_10", "modifiers/modifier_bottom_10.lua", LUA_MODIFIER_MOTION_NONE)
 
 -- The URL of the server that provides the hero play counts.
-local HERO_PLAY_COUNTS_URL = "https://conrelly.000webhostapp.com/played_heroes.txt"
+local HERO_PLAY_COUNTS_URL = "https://conrelly.com/played_heroes.txt"
 
 -- A table that maps hero names to modifier names based on their play counts.
 local hero_modifiers = {}

@@ -129,7 +129,7 @@ if IsServer() then
         "skeleton_king_vampiric_aura",      --骷髅王2
         "skeleton_king_mortal_strike",      --骷髅王3
         "spirit_breaker_greater_bash",            --发条2
-        "drow_ranger_marksmanship",     --大地之灵2
+        --"drow_ranger_marksmanship",     --大地之灵2
         "sven_great_cleave",                -- sven 2
         "mjz_kunkka_tidebringer",               -- 船长 2
         "mjz_pudge_flesh_heap",                 -- 屠夫 3

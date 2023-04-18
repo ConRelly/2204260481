@@ -3717,7 +3717,11 @@
 		{
 			"dodge_chance"		"15 20 25 32"
 			"crit_chance"				"10"
-			"active_multiplier"			"3"
+			"active_multiplier"			
+			{
+				"value"						"3"
+				"special_bonus_unique_brewmaster_8"		"+1"
+			}
 			"crit_multiplier"			"380 620 960 2150"
 			"magic_resist"	"10 15 20 25"
 			"armor"		"7 34 68 125"
@@ -3728,6 +3732,7 @@
 
 		}
 	}
+
 
 
 	"special_bonus_unique_brewmaster_4"
@@ -12280,6 +12285,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"460 1290 2250 6100 12500 33500 67200"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"07"
 			{
@@ -15379,7 +15385,7 @@
 			}
 			"AbilityCooldown"
 			{
-				"value"								"110 100 90"
+				"value"								"125"
 				"special_bonus_unique_oracle_6"		"-10"
 			}			
 			"bonus_armor"
@@ -15445,7 +15451,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"				"1.2"
+				"value"				"1.0"
 				"ad_linked_abilities"			"oracle_purifying_flames"
 			}
 		}

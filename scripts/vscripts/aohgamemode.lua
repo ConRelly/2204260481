@@ -546,6 +546,8 @@ function AOHGameMode:InitVariables()
 					end
 					if not _G._hardMode then 
 						hero:ModifyGold(5000, true, 0)
+					else
+						hero:ModifyGold(2500, true, 0)	
 					end	
 					if Cheats:IsEnabled() then
 						--DropItemOrInventory(playerID, "item_obs_studio")

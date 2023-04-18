@@ -33,7 +33,9 @@
 		"DayNight_Button"							"Toggle Day / Night"
 		"HeroRenderMode_Button"						"Hero Display Mode"
 		"npc_dota_goodguys_fort_2"                  "Ancient2"
-
+		"ui_top_hud_buttons_discord"				"Discord"
+		"ui_top_hud_buttons_patreon"				"Patreon"
+		"ui_top_hud_buttons_site"					"Game Data Site"
 ///////////////////////////////////////////////////Aplpn English Translate//////////////////////////////////////////////////
 	"game_begin_benediction"					"It's dangerous to go alone! Take this."
 
@@ -5019,6 +5021,7 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 "npc_boss_bloodseeker"					 "Bloodseeker (Boss)"
 
 "DOTA_Tooltip_ability_special_bonus_unique_axe_3_custom"	"Counter Helix now has same chance to triger when you attack a target"
+"DOTA_Tooltip_ability_special_bonus_unique_axe_3"	"Counter Helix now has same chance to triger when you attack a target"
 
 "DOTA_Tooltip_ability_custom_blood_bath"									"Blood Rite"
 "DOTA_Tooltip_ability_custom_blood_bath_Description"						"Bloodseeker baptizes an area in sacred blood. After %delay_plus_castpoint_tooltip% seconds the ritual completes, causing any enemies caught in the area to take damage and become silenced."
@@ -6346,7 +6349,7 @@ Extreme Speed uses the stacks to deal bonus damage."
 "DOTA_Tooltip_ability_axe_custom_counter_helix_Note0"									"Counter Helix triggers when the attack hits.Max Health as damage."
 "DOTA_Tooltip_ability_axe_custom_counter_helix_Lore"									"Pudge is the only reinforcement this army needs."
 "DOTA_Tooltip_ability_axe_custom_counter_helix_damage"									"DAMAGE:"
-"DOTA_Tooltip_ability_axe_custom_counter_helix_radius"									"RADIUS:"
+"DOTA_Tooltip_ability_axe_custom_counter_helix_radius"									"RADIUS: AttackRange + "
 "DOTA_Tooltip_ability_axe_custom_counter_helix_trigger_chance"							"%CHANCE TO HELIX:"
 "DOTA_Tooltip_ability_axe_custom_counter_helix_health_ratio"							"%HEALTH RATIO:"
 
@@ -10173,11 +10176,11 @@ Contains all random skills"
 		"DOTA_Tooltip_modifier_phys_Description"								 "Activates under 110 armor, Gains bonus %dMODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE%%% physical dmg reduction "
 
 		"DOTA_Tooltip_modifier_bottom_50"										 "<font color='#EDD50F'>Top 50 Underdog's</font>"
-		"DOTA_Tooltip_modifier_bottom_50_Description"							 "Applied to the bottom 50 least played heroes (list updates automatically, check Discord for more details/site). Grants a significant boost to their stats and combat capabilities based on their <font color='#FF0000'>level</font>. <br><font color='#10DE33'>+%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% All Stats</font><br><font color='#05DDEF'>+%dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% Total Attack Damage Output</font> <br> <font color='#05DDEF'>+%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Amplification</font><br><font color='#DE9619'>+%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% Outgoing Damage</font><br><font color='#10DE33'>+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor</font><br><font color='#FFA500'>+%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% Magical Resistance</font> <br> <font color='#FFA500'>+%dMODIFIER_PROPERTY_EXP_RATE_BOOST%%% Experience Gain</font>."
+		"DOTA_Tooltip_modifier_bottom_50_Description"							 "Applied to the bottom 50 least played heroes (list updates automatically, check Discord for more details/site(conrelly.com)). Grants a significant boost to their stats and combat capabilities based on their <font color='#FF0000'>level</font>. <br><font color='#10DE33'>+%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% All Stats</font><br><font color='#05DDEF'>+%dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% Total Attack Damage Output</font> <br> <font color='#05DDEF'>+%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Amplification</font><br><font color='#DE9619'>+%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% Outgoing Damage</font><br><font color='#10DE33'>+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor</font><br><font color='#FFA500'>+%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% Magical Resistance</font> <br> <font color='#FFA500'>+%dMODIFIER_PROPERTY_EXP_RATE_BOOST%%% Experience Gain</font>."
 		"DOTA_Tooltip_modifier_bottom_20"										 "<font color='#77ED0F'>Top 20 Underdog's</font>"
-		"DOTA_Tooltip_modifier_bottom_20_Description"							 "Applied to the bottom 20 least played heroes (list updates automatically, check Discord for more details/site). Grants a significant boost to their stats and combat capabilities based on their <font color='#FF0000'>level</font>. <br><font color='#10DE33'>+%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% All Stats</font><br><font color='#05DDEF'>+%dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% Total Attack Damage Output</font> <br> <font color='#05DDEF'>+%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Amplification</font><br><font color='#DE9619'>+%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% Outgoing Damage</font><br><font color='#10DE33'>+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor</font><br><font color='#FFA500'>+%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% Magical Resistance</font> <br> <font color='#FFA500'>+%dMODIFIER_PROPERTY_EXP_RATE_BOOST%%% Experience Gain</font>."
+		"DOTA_Tooltip_modifier_bottom_20_Description"							 "Applied to the bottom 20 least played heroes (list updates automatically, check Discord for more details/site(conrelly.com)). Grants a significant boost to their stats and combat capabilities based on their <font color='#FF0000'>level</font>. <br><font color='#10DE33'>+%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% All Stats</font><br><font color='#05DDEF'>+%dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% Total Attack Damage Output</font> <br> <font color='#05DDEF'>+%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Amplification</font><br><font color='#DE9619'>+%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% Outgoing Damage</font><br><font color='#10DE33'>+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor</font><br><font color='#FFA500'>+%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% Magical Resistance</font> <br> <font color='#FFA500'>+%dMODIFIER_PROPERTY_EXP_RATE_BOOST%%% Experience Gain</font>."
 		"DOTA_Tooltip_modifier_bottom_10"										 "<font color='#FF0000'>Top 10 Underdog's</font>"
-		"DOTA_Tooltip_modifier_bottom_10_Description"                            "Applied to the bottom 10 least played heroes (list updates automatically, check Discord for more details/site). Grants a significant boost to their stats and combat capabilities based on their <font color='#FF0000'>level</font>. <br><font color='#10DE33'>+%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% All Stats</font><br><font color='#05DDEF'>+%dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% Total Attack Damage Output</font> <br> <font color='#05DDEF'>+%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Amplification</font><br><font color='#DE9619'>+%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% Outgoing Damage</font><br><font color='#10DE33'>+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor</font><br><font color='#FFA500'>+%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% Magical Resistance</font> <br> <font color='#FFA500'>+%dMODIFIER_PROPERTY_EXP_RATE_BOOST%%% Experience Gain</font>."
+		"DOTA_Tooltip_modifier_bottom_10_Description"                            "Applied to the bottom 10 least played heroes (list updates automatically, check Discord for more details/site(conrelly.com)). Grants a significant boost to their stats and combat capabilities based on their <font color='#FF0000'>level</font>. <br><font color='#10DE33'>+%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% All Stats</font><br><font color='#05DDEF'>+%dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% Total Attack Damage Output</font> <br> <font color='#05DDEF'>+%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Amplification</font><br><font color='#DE9619'>+%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% Outgoing Damage</font><br><font color='#10DE33'>+%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% Armor</font><br><font color='#FFA500'>+%dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% Magical Resistance</font> <br> <font color='#FFA500'>+%dMODIFIER_PROPERTY_EXP_RATE_BOOST%%% Experience Gain</font>."
 
 
 

@@ -89,6 +89,7 @@ function modifier_item_broken_bow:OnAttackLanded(keys)
 						ParticleManager:SetParticleControl(iParticle, 1, Vector(0, damage, 6))
 						ParticleManager:SetParticleControl(iParticle, 2, Vector(1, math.floor(math.log10(damage))+2, 100))
 						ParticleManager:SetParticleControl(iParticle, 3, Vector(165,66,179))
+						ParticleManager:ReleaseParticleIndex( iParticle )
 						parent:PerformAttack(target, true, true, true, true, true, false, false)
 
 						ApplyDamage({

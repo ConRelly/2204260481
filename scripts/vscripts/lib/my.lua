@@ -192,7 +192,7 @@ function refresh_players()
 		end
 	end
 end
-
+local time = math.floor(GameRules:GetGameTime() / 60)
 function refresh_players_bonus()
 	if IsServer() then
 		for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
@@ -219,7 +219,8 @@ function refresh_players_bonus()
 				for l=1, 5 do
 					hero:HeroLevelUp(false)
 				end	
-				hero:ModifyGold(15000, true, 0)
+				local bonus_gold = (3 + time) * 500
+				hero:ModifyGold(bonus_gold, true, 0)
 				if not hero.reward_edible_fragment and not _G._hardMode then
 					--hero:AddItemByName("item_edible_fragment")
 					Timers:CreateTimer((RandomInt(1,20) / 100 ), function()

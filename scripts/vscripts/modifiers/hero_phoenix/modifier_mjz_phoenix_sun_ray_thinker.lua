@@ -132,6 +132,7 @@ if IsServer() then
         if isEnemy then
             -- Remove HP
             ApplyDamage( {
+                ability     = ability,
                 victim		= target,
                 attacker	= caster,
                 damage		= damage,

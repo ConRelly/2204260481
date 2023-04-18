@@ -11555,7 +11555,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityCastRange"				"595"
+		//"AbilityCastRange"				"595"
 		"AbilityCooldown"				"0.3"
 
 		"AbilityDamage"					"75 125 175 250"
@@ -11564,7 +11564,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"595"
+				"radius"					"100"
 			}
 			"02"
 			{
@@ -22005,7 +22005,7 @@
 		"AbilityTextureName"			"axe_counter_helix"		//	"mjz_axe_counter_helix"
 		"AOERadius"						"%radius"
 		
-		"AbilityCooldown"				"0.4 0.3 0.2 0.1"
+		"AbilityCooldown"				"0.3"
 		// "AbilityDamage"					"100 140 180 220"
 
 		"AbilitySpecial"
@@ -22018,7 +22018,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"trigger_chance"			"25"
+				"trigger_chance"			"20"
 			}
 			"03"
 			{
@@ -22028,7 +22028,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cooldown"					"0.4 0.3 0.2 0.1"
+				"cooldown"					"0.3"
 			}
 			"05"
 			{
