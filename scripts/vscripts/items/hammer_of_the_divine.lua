@@ -249,7 +249,7 @@ function modifier_hotd_pure_divinity:OnCreated()
 	end
 end
 function modifier_hotd_pure_divinity:OnDestroy()
-	if IsServer() then self:GetAbility():UseResources(false, false, true) end
+	if IsServer() then self:GetAbility():UseResources(false, false, false, true) end
 end
 function modifier_hotd_pure_divinity:DeclareFunctions()
 	return {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_TOOLTIP, MODIFIER_EVENT_ON_ATTACK_LANDED}

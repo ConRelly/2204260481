@@ -196,7 +196,7 @@ function KillTreesInRadius(caster, center, radius, ability)
 	for _, r in ipairs(RemnantAroundCaster) do
 		if r:GetUnitName() == "npc_dota_earth_spirit_stone" then
 			r:Kill(nil, nil)
-			caster:AddNewModifier(caster, ability, "modifier_rolling_stone_remnantbuff", {duration = 3})
+			caster:AddNewModifier(caster, ability, "modifier_rolling_stone_remnantbuff", {duration = 10})
 		end
 	end
 end

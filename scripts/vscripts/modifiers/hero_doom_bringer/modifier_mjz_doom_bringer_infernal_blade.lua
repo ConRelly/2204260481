@@ -47,7 +47,7 @@ if IsServer() then
 			-- ability:PayManaCost()
 			-- ability:StartCooldown(ability:GetCooldownTimeRemaining())
 			-- void UseResources(bool bMana, bool bGold, bool bCooldown)
-			ability:UseResources(true, false, true)
+			ability:UseResources(true, true, false, true)
 
 			--[[
 				local caster = attacker

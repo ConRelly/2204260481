@@ -231,7 +231,7 @@ function modifier_class:OnIntervalThink()
                         end
                         local test = xpcall(
                                 function()
-                                  return target_ability:UseResources(true, false, true)
+                                  return target_ability:UseResources(true, true, false, true)
                                 end,
                                 function(msg)
                                   print(debug.traceback(msg, 3))
@@ -280,7 +280,7 @@ function modifier_class:OnIntervalThink()
                         end  
                         xpcall(
                                 function()
-                                  return target_ability:UseResources(true, false, true)  
+                                  return target_ability:UseResources(true, true, false, true)  
                                 end,
                                 function(msg)
                                   print(debug.traceback(msg, 3))
@@ -423,7 +423,7 @@ function modifier_class:OnIntervalThink()
                         end
                         xpcall(
                                 function()
-                                  return target_ability:UseResources(true, false, true) 
+                                  return target_ability:UseResources(true, true, false, true) 
                                 end,
                                 function(msg)
                                   print(debug.traceback(msg, 3))

@@ -84,7 +84,7 @@ function modifier_polymorpher_unique:OnTakeDamage(keys)
 
 	if RollPseudoRandomPercentage(chance, 0, parent) then
 		Polymorph(parent, self:GetAbility(), attacker, hex_duration)
-		self:GetAbility():UseResources(true, false, true)
+		self:GetAbility():UseResources(true, true, false, true)
 	end
 end
 function modifier_polymorpher_unique:OnDeath(keys)

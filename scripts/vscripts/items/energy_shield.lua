@@ -42,7 +42,7 @@ function modifier_energy_shield_1:OnIntervalThink()
 		end
 		if caster:HasModifier("modifier_tranquilboots") and caster:HasScepter() and caster:GetHealth() < (caster:GetMaxHealth() * self:GetAbility():GetSpecialValueFor("threshold") / 100) and self:GetAbility():IsCooldownReady() then
 			caster:FindItemInInventory("item_energy_shield"):OnSpellStart()
-			self:GetAbility():UseResources(true, false, true)
+			self:GetAbility():UseResources(true, true, false, true)
 		end
 	end
 end
@@ -173,7 +173,7 @@ function modifier_energy_shield_2:OnIntervalThink()
 		end
 		if caster:HasModifier("modifier_tranquilboots") and caster:HasScepter() and caster:GetHealth() < (caster:GetMaxHealth() * self:GetAbility():GetSpecialValueFor("threshold") / 100) and self:GetAbility():IsCooldownReady() then
 			caster:FindItemInInventory("item_energy_shield_2"):OnSpellStart()
-			self:GetAbility():UseResources(true, false, true)
+			self:GetAbility():UseResources(true, true, false, true)
 		end
 	end
 end
@@ -307,7 +307,7 @@ function modifier_energy_shield_3:OnIntervalThink()
 		end
 		if caster:HasModifier("modifier_tranquilboots") and caster:HasScepter() and caster:GetHealth() < (caster:GetMaxHealth() * self:GetAbility():GetSpecialValueFor("threshold") / 100) and self:GetAbility():IsCooldownReady() then
 			caster:FindItemInInventory("item_energy_shield_3"):OnSpellStart()
-			self:GetAbility():UseResources(true, false, true)
+			self:GetAbility():UseResources(true, true, false, true)
 		end
 	end
 end
@@ -504,7 +504,7 @@ function modifier_energy_sphere_mana_shield:GetModifierIncomingDamage_Percentage
 			ParticleManager:ReleaseParticleIndex(shield_particle)
 		end
 		local mana_before = self:GetParent():GetMana()
-		self:GetParent():ReduceMana(mana_to_block)
+		self:GetParent():Script_ReduceMana(mana_to_block, nil)
 		local mana_after = self:GetParent():GetMana()
 		return math.min(self.absorb_pct, self.absorb_pct * self:GetParent():GetMana() / math.max(mana_to_block, 1)) * (-1)
 	end
@@ -569,7 +569,7 @@ function modifier_lunar_shield:OnIntervalThink()
 		end
 		if caster:HasModifier("modifier_tranquilboots") and caster:HasScepter() and caster:GetHealth() < (caster:GetMaxHealth() * self:GetAbility():GetSpecialValueFor("threshold") / 100) and self:GetAbility():IsCooldownReady() then
 			caster:FindItemInInventory("item_lunar_shield"):OnSpellStart()
-			self:GetAbility():UseResources(true, false, true)
+			self:GetAbility():UseResources(true, true, false, true)
 		end
 
 		for i = DOTA_ITEM_SLOT_1, DOTA_ITEM_SLOT_6 do

@@ -192,16 +192,29 @@ function HackGameMode:OnGameInProgress( )
 end
 
 function HackGameMode:OnEntityKilled(keys)
-    --local killed_unit = EntIndexToHScript( keys.entindex_killed )
+    local killed_unit = EntIndexToHScript( keys.entindex_killed )
     -- local killer = nil
     -- if keys.entindex_attacker then
     --     killer = EntIndexToHScript( keys.entindex_attacker )
     -- end
 
-
-    Timers:CreateTimer(1, function( )
-        mRoshanSystem:OnEntityKilled(keys)
-    end)
+    if killed_unit:GetUnitName() == "npc_dota_roshan_mega" then
+        Timers:CreateTimer(1, function( )
+            mRoshanSystem:OnEntityKilled(keys)
+        end)
+    
+        local unit = killed_unit
+        local pos = unit:GetAbsOrigin()
+        -- Transfer inventory items to the ground
+        for i = 0, 16 do
+          local item = unit:GetItemInSlot(i)
+          if item then
+            local drop = CreateItemOnPositionSync(pos, item )
+            local pos_launch = pos+RandomVector(RandomFloat(150,200))
+            item:LaunchLoot(false, 200, 0.75, pos_launch)        
+          end
+        end         
+    end
 
     local func = function (hero)
         local exp = 30

@@ -50,7 +50,7 @@ function mjz_nyx_assassin_mana_burn:OnSpellStart()
 			
 			local mana_to_burn = math.min(enemy:GetMana(), self:GetCaster():GetIntellect() * GetTalentSpecialValueFor(self, "int_damage_pct"))
 
-			enemy:ReduceMana(mana_to_burn)
+			enemy:Script_ReduceMana(mana_to_burn, self)
 			SendOverheadEventMessage(nil, OVERHEAD_ALERT_MANA_LOSS, enemy, mana_to_burn, nil)
 
 			ApplyDamage({

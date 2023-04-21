@@ -237,7 +237,7 @@ function modifier_jinada_crit:OnAttackLanded(keys)
 				if not target:IsBuilding() and not target:IsTower() then
 					Jinada(parent, target, ability, false)
 				end
-				ability:UseResources(false, false, true)
+				ability:UseResources(true, true, true, true)
 				if self:IsNull() then return end
 				self:Destroy()
 			end

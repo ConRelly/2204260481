@@ -54,9 +54,21 @@ function modifier_atr_fix:OnCreated()
         if self.parent:IsRealHero() then
 		    settings()
         end    
-	end   
+	end  
+    self:StartIntervalThink(0.5) 
 end
-
+function modifier_atr_fix:OnIntervalThink()
+    if IsServer() then
+        if self.parent then
+            -- Get the hero entity
+            -- Calculate the base magical resistance value to counteract the int bonus
+            local int = self.parent:GetIntellect()
+            local baseValue = (-0.1 * int) + 30
+            -- Set the hero's base magical resistance value
+            self.parent:SetBaseMagicalResistanceValue(baseValue)
+        end
+    end
+end    
 --[[function modifier_atr_fix:GetModifierConstantManaRegen()
     local parent_int = self.parent:GetIntellect()
     local m_regen = parent_int * 0.0375

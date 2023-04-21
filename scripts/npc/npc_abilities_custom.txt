@@ -1147,6 +1147,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Marci.Unleash.Cast"
+		"HasScepterUpgrade"				"1"
 		"MaxLevel"                      "7"
 		"LevelsBetweenUpgrades"         "9"
 		// Casting
@@ -1155,7 +1156,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"90"
+		"AbilityCooldown"				"110"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -1163,67 +1164,43 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"duration"				"16"
+			"charges_per_flurry"	"10 9 8 7 6 15 4"
+			"flurry_bonus_attack_speed"	"3500"
+			"time_between_flurries"	"0.2 0.2 0.2 0.2 0.15 0.08 0.07"
+			"pulse_radius"			"800"
+			"pulse_debuff_duration"	"2.0"
+			"pulse_damage"					
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"17"
+				"value"			"3500 9500 24950 53750 168500 0 685000"
+				"CalculateSpellDamageTooltip" "1"
 			}
-			"02"
+			"pulse_move_slow_pct"	"30.0"
+			"pulse_attack_slow_pct"	"30 35 40 45 50 55 60"
+			"max_time_window_per_hit"	"1.0"
+			"bonus_movespeed"		
 			{
-				"var_type"				"FIELD_INTEGER"
-				"charges_per_flurry"	"10 9 8 7 6 15 4"
+				"value"		"250"
+				"special_bonus_unique_marci_unleash_speed"	"+150"
 			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"flurry_bonus_attack_speed"	"3500"
+			"recovery_fixed_attack_rate"	"0.5"
+			"shard_push_length"		"300"
+			"scepter_cooldown_reduction"
+			{		
+				"value"					"25.0"
+				"RequiresScepter"		"1"
 			}
-			"04"
+			"dispel"			
 			{
-				"var_type"				"FIELD_FLOAT"
-				"time_between_flurries"	"0.2 0.2 0.2 0.2 0.15 0.08 0.07"
+				"value"			"0"
+				"special_bonus_scepter"	"+1"
 			}
-			"05"
+			"pulse_silence_duration"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"pulse_radius"			"800"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pulse_debuff_duration"	"2.0"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"pulse_damage"			"3500 9500 24950 53750 168500 0 685000"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pulse_move_slow_pct"	"30.0"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pulse_attack_slow_pct"	"30 35 40 45 50 55 60"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"max_time_window_per_hit"	"2.0"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movespeed"		"250"
-			}
-			"12"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"recovery_fixed_attack_rate"	"0.5"
+				"value"			"0"
+				"special_bonus_scepter"	"+0.5"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
@@ -1244,6 +1221,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"FightRecapLevel"				"1"
+		"HasShardUpgrade"				"1"
 		"AbilitySound"					"Hero_Marci.Rebound.Cast"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -25857,14 +25835,14 @@
 		"AbilityTextureName"			"juggernaut_blade_fury"		// "mjz_juggernaut_blade_fury"
 
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCastPoint"				"0"
 		"AOERadius"						"%radius"
 		
-		"AbilityCooldown"				"28.0 25.0 22.0 19.0"
-		"AbilityDuration"				"5.0 5.0 5.0 5.0"
+		"AbilityCooldown"				"38.0"
+		"AbilityDuration"				"5.0"
 		// "AbilityDamage"					"80 100 120 140"
 
-		"AbilityManaCost"				"25 25 25 25"		
+		"AbilityManaCost"				"25"		
 
 		"AbilitySpecial"
 		{
@@ -25886,7 +25864,7 @@
 			"04"
 			{
 				"var_type"				  "FIELD_FLOAT"
-				"duration"				  "5.0 5.0 5.0 5.0"
+				"duration"				  "5.0"
 			}
 		}
 
@@ -27488,7 +27466,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_steal"			"14"
+				"mana_steal"			"4"
 			}
 		}
 

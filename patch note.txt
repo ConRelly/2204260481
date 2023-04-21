@@ -2471,6 +2471,32 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * Fixed xp and gold ratio not updating base on players left. 
 
 
+* Fixed not getting items at start (can't be 100% sure with multiplayer, so report if is not)
+* Fixed second chance gold not being the same amount as the announce
+
+
+* Evolving Light Crossbow forms (except the last form) will get more stacks per proc if the hero is the top underdog (1,2 or 3).
+* Clock Battery Assault Aoe scales with bonus casting range
+* Fire Rapier armor reduction debuff duration increased by 1 
+* Added Alchemist Chemical Rage bat reduction talent
+* Replaced unused Razor talent.
+
+
+* New Dota patch fixes
+* Fixed crash on game startup, and most other crashes, but remain to be seen. 
+* Other balance stuff and broken stuff.
+* Will see next days what else needs to be changed/fixed.
+
+
+
+* Added Tome of XP back in the shop.
+* Lunar Blessing now has the same effect as Apex (gives all stats but half effect on Universal Heroes)
+* Added back clinckz old W
+* Marci Aghanim added effect and shard, replaced lvl 10 talent 
+* Medusa Shield fixed, replaced unused Medusa talent with one for Mana Shield.
+* and some other stuff
+
+
 
 
 **Update Notes spellings will get corrected before the live update.

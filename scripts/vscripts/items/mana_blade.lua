@@ -28,20 +28,20 @@ function OnAttackLanded(event)
 	if caster:IsRealHero() then
 		if tmana > 0 then
 			if tmana > mana_break then
-				target:ReduceMana(mana_break)
+				target:Script_ReduceMana(mana_break, ability)
 				ApplyDamage({victim = target, attacker = caster, damage = mana_break * lvl, damage_type = DAMAGE_TYPE_PHYSICAL, damage_flags = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR, ability = ability})
 			else
-				target:ReduceMana(tmana)
+				target:Script_ReduceMana(tmana, ability)
 				ApplyDamage({victim = target, attacker = caster, damage = tmana * lvl, damage_type = DAMAGE_TYPE_PHYSICAL, damage_flags = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR, ability = ability})
 			end
 		end
 
 	elseif tmana > 0 then
 		if tmana > mana_break then
-			target:ReduceMana(mana_break)
+			target:Script_ReduceMana(mana_break, ability)
 			ApplyDamage({victim = target, attacker = caster, damage = mana_break * prc, damage_type = DAMAGE_TYPE_PHYSICAL, ability = ability})
 		else
-			target:ReduceMana(tmana)
+			target:Script_ReduceMana(tmana, ability)
 			ApplyDamage({victim = target, attacker = caster, damage = tmana * prc, damage_type = DAMAGE_TYPE_PHYSICAL, ability = ability})
 		end
 	end

@@ -62,7 +62,7 @@ function modifier_generic_orb_effect_v1_0:OnAttack( params )
 	-- register attack if being cast and fully castable
 	if self.cast and self.ability:IsFullyCastable() then
 		-- use mana and cd
-		self.ability:UseResources( true, false, true )
+		self.ability:UseResources(true, true, false, true )
 
 		-- record the attack
 		self.records[params.record] = true

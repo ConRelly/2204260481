@@ -407,7 +407,7 @@ function willpower_magic_armor_inc:IsDebuff() return false end
 function willpower_magic_armor_inc:IsPurgable() return false end
 function willpower_magic_armor_inc:OnCreated()
 	if IsServer() then
-		self:SetStackCount((self:GetCaster():GetMagicalArmorValue() * self:GetAbility():GetSpecialValueFor("modifier_affect")))
+		self:SetStackCount((self:GetCaster():Script_GetMagicalArmorValue(false, self:GetCaster()) * self:GetAbility():GetSpecialValueFor("modifier_affect")))
 	end
 end
 function willpower_magic_armor_inc:DeclareFunctions()
@@ -795,7 +795,7 @@ function willpower_magic_armor_red:IsDebuff() return true end
 function willpower_magic_armor_red:IsPurgable() return false end
 function willpower_magic_armor_red:OnCreated()
 	if IsServer() then
-		self:SetStackCount((self:GetCaster():GetMagicalArmorValue() * self:GetAbility():GetSpecialValueFor("modifier_affect")) * (-1))
+		self:SetStackCount((self:GetCaster():Script_GetMagicalArmorValue(false, self:GetCaster()) * self:GetAbility():GetSpecialValueFor("modifier_affect")) * (-1))
 	end
 end
 function willpower_magic_armor_red:DeclareFunctions()

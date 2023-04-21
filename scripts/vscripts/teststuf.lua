@@ -381,7 +381,7 @@ function GetRandomAbilityName( hero )
         "enchantress_untouchable",
         "warlock_shadow_word",
         "huskar_berserkers_blood",
-        "marci_unleash_custom",
+        "marci_unleash",
         "primal_beast_onslaught", --can move the boss out of map.
         "primal_beast_uproar_custom",
 

@@ -587,7 +587,7 @@ function modifier_pocket_portal_duration:OnDestroy()
 		end
 	end
 
-	self:GetAbility():UseResources(false, false, true)
+	self:GetAbility():UseResources(false, false, false, true)
 	if portal then
 		ParticleManager:DestroyParticle(portal, false)
 		ParticleManager:ReleaseParticleIndex(portal)

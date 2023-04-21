@@ -3,6 +3,15 @@ LinkLuaModifier("modifier_rattletrap_custom_battery_assault", "abilities/heroes/
 rattletrap_custom_battery_assault = class({})
 
 
+function rattletrap_custom_battery_assault:GetCastRange()
+    local caster = self:GetCaster()
+    local ability = self
+    if self and caster then
+        local radius = ability:GetSpecialValueFor("radius") + caster:GetCastRangeBonus()
+        return radius
+    end    
+end    
+
 function rattletrap_custom_battery_assault:OnSpellStart()
     self.caster = self:GetCaster()
     self.caster:EmitSound("Hero_Rattletrap.Battery_Assault")
@@ -49,7 +58,7 @@ if IsServer() then
     function modifier_rattletrap_custom_battery_assault:OnCreated()
         self.ability = self:GetAbility()
 		self.parent = self:GetParent()
-        self.radius = self.ability:GetSpecialValueFor("radius")
+        self.radius = self.ability:GetSpecialValueFor("radius") + self.parent:GetCastRangeBonus()
         self.interval = self.ability:GetSpecialValueFor("interval") + talent_value(self:GetCaster(), "rattletrap_custom_bonus_unique_1")
         self:StartIntervalThink(self.interval)
     end

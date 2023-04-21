@@ -132,6 +132,7 @@ function AOHGameMode:InitGameMode()
 	self.gon = true
 	self.spawned_gon = false
 	self.challenge = false
+	self.frist_init = false
 
 	AOHGameMode.isArcane = {}
 	AOHGameMode.isArcane[0] = false
@@ -483,9 +484,11 @@ function AOHGameMode:RecountPlayers()
 		end
 	end
 	Timers:CreateTimer({
-		endTime = 0.1, 
+		endTime = 0.5, 
 		callback = function()
-			self:InitVariables()
+			if self.frist_init then
+				self:InitVariables()
+			end	
 			if self._playerNumber == 0 then
 				send_info_if_game_ends_2()
 			end	
@@ -493,6 +496,7 @@ function AOHGameMode:RecountPlayers()
 		end
 	})		
 end
+
 function AOHGameMode:_RenewStats()
 	for playerID = 0, 4 do
 		if PlayerResource:IsValidPlayerID(playerID) then
@@ -517,6 +521,7 @@ function AOHGameMode:_RenewStats()
 	end		
 end
 -- Initiates variables that need to be set to values
+
 function AOHGameMode:InitVariables()
 	if not self.starting_intems then 
 		for playerID = 0, 4 do
@@ -633,6 +638,7 @@ function AOHGameMode:OnGameRulesStateChange()
 		GameRules:GetGameModeEntity():SetThink("OnUpdateThink", self, 9)
 		-- GameRules:GetGameModeEntity():SetThink("OnUpdateThink", gHeroDamage, 2)
 		self._flPrepTimeEnd = GameRules:GetGameTime() + self._flPrepTimeBetweenRounds
+		self.frist_init = true
 		self:InitVariables() 
 	elseif nNewState == DOTA_GAMERULES_STATE_POST_GAME then
 		send_info_if_game_ends()

@@ -192,7 +192,7 @@ function modifier_life_greaves:OnIntervalThink()
 		if self:GetAbility():IsCooldownReady() and self:GetCaster():GetHealthPercent() < self:GetAbility():GetSpecialValueFor("aura_bonus_threshold") then
 			self:GetCaster():Purge(false, false, false, true, false)
 			self:GetAbility():OnSpellStart()
-			self:GetAbility():UseResources(true, false, true)
+			self:GetAbility():UseResources(true, true, false, true)
 		end
 		if self:GetParent():HasModifier("modifier_bottle_regeneration") then
 			if not self:GetParent():HasModifier("modifier_life_greaves_mend") then

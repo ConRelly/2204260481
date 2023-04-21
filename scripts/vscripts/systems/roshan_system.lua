@@ -19,7 +19,7 @@ local ROSHAN_CLASS_NAME = "npc_dota_roshan_mega"    -- Roshan 类名
 local ROSHAN_SPAWNER = "roshan_spawner"             -- 出生定位点
 
 if IsInToolsMode() or GameRules:IsCheatMode() then
-    MIN_RESPAWN_TIME = 1
+    MIN_RESPAWN_TIME = 0.1
     MAX_RESPAWN_TIME = 1
 end
 -- Indicates the time Respawn should be done
@@ -78,13 +78,13 @@ function CRoshanSystem:Init()
     -- self._SpawnAngles = hSpawner:GetAnglesAsVector()
     -- 获得定位点的位置，作为 Roshan 的出生点
     self._SpawnPosition = hSpawner:GetAbsOrigin()  
+    print("Spawn position: " .. tostring(self._SpawnPosition))
     -- self._SpawnPosition = hRoshan:GetAbsOrigin()
 
 
     -- Bye!
     if hSpawner then UTIL_Remove(hSpawner) end
     if hRoshan then UTIL_Remove(hRoshan) end
-
     -- We create our own Roshan
     self:CreateRoshan()
     print("Nr of Players is "..self._playernr)
@@ -118,7 +118,7 @@ function CRoshanSystem:OnEntityKilled(tData)
     if ( hRoshan:GetEntityIndex() ~= tData.entindex_killed ) then
         return
     end
-
+    print("on Rosh killed")
     -- 
     if ( hRoshan:HasModifier('modifier_roshan_bonus') ) then
         if (hKiller:IsRealHero()) then
@@ -153,9 +153,9 @@ function CRoshanSystem:OnEntityKilled(tData)
     self._iNum = self._iNum + 1
     print('Roshan die! The next roshan will be: #' .. self._iNum)
     --give SS to one of the players by turn
-
-    OnRoshDeath(keys)
-
+    if killedUnit:GetUnitName() == "npc_dota_roshan_mega" then
+        OnRoshDeath(killedUnit)    
+    end
     -- Random Respawn Time
     self:SetRespawnTime(RandomFloat(MIN_RESPAWN_TIME, MAX_RESPAWN_TIME))
 end
@@ -177,7 +177,6 @@ function CRoshanSystem:Think()
     if ( hRoshan and hRoshan:IsAlive() ) then
         self:RoshanThink(hRoshan)
     end
-    
 end
 
 -- Keeps Roshan inside his prison
@@ -232,13 +231,12 @@ function CRoshanSystem:CreateRoshan()
     -- Roshan creation
     local hRoshan = CreateUnitByName(ROSHAN_CLASS_NAME, self._SpawnPosition, true, nil, nil, DOTA_TEAM_NEUTRALS)
     hRoshan:SetAngles(self._SpawnAngles.x, self._SpawnAngles.y, self._SpawnAngles.z)
-
     -- Items
     if ( self._iNum >= 0 ) then
         if ( self._iNum <= 13 ) then 
             hRoshan:AddItemByName('item_chest_2') 
         end       
-    end    
+    end   
     -- Second kill
 	if ( self._iNum >= 2 ) then
 		if ( self._iNum <= 9 ) then
@@ -312,7 +310,7 @@ function CRoshanSystem:CreateRoshan()
 
     self._roshan_instance = hRoshan
 
-    -- Ready!
+    -- Ready! 
     return hRoshan
 end
 
@@ -331,8 +329,10 @@ local received_item = {}
 
 --local dropped_items = {}
 --local collected_items = {} 
-function OnRoshDeath(keys)
+function OnRoshDeath(unit)
     -- Check if the chance to give an item proc
+   
+
     if _ss_rosh_drop then
       -- Get a list of all players in the game
       local players = {}

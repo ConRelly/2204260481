@@ -2220,7 +2220,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bounty_multiplier"		"9.0 15.0 20.0 25.0"
+				"bounty_multiplier"		"25.0"
 			}
 		}
 	}
@@ -7859,13 +7859,12 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"					"5506"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"		
 		"AbilitySound"					"Hero_Medusa.ManaShield.On"
-
+		"MaxLevel"						"5"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
 		"LevelsBetweenUpgrades"        "10"
 
 		// Special
@@ -7874,14 +7873,15 @@
 		{
 			"damage_per_mana"		
 			{
-				"value"								"23 37 41 55"
-				"special_bonus_unique_medusa_6"		"+45"
+				"value"								"10 20 30 40 50"
+				"special_bonus_unique_medusa_6"		"+20"
 			}
-			"absorption_pct"						"40 45 50 60"
-			"bonus_mana"							"520 1800 2400 5000"
+			"absorption_pct"						"40 45 50 55 60"
+			"bonus_mana"							"520 1800 2400 5000 7000"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+
 
 	"medusa_stone_gaze"
 	{
@@ -18322,6 +18322,79 @@
 		}
 	}
 
+	//=================================================================================================================
+	// Marci: Unleashed
+	//=================================================================================================================
+	"marci_unleash"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Marci.Unleash.Cast"
+		"HasScepterUpgrade"				"1"
+		"MaxLevel"                      "7"
+		"LevelsBetweenUpgrades"         "9"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"110"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"250"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"				"16"
+			"charges_per_flurry"	"10 9 8 7 6 15 4"
+			"flurry_bonus_attack_speed"	"3500"
+			"time_between_flurries"	"0.2 0.2 0.2 0.2 0.15 0.08 0.07"
+			"pulse_radius"			"800"
+			"pulse_debuff_duration"	"2.0"
+			"pulse_damage"					
+			{
+				"value"			"3500 9500 24950 53750 168500 0 685000"
+				"CalculateSpellDamageTooltip" "1"
+			}
+			"pulse_move_slow_pct"	"30.0"
+			"pulse_attack_slow_pct"	"30 35 40 45 50 55 60"
+			"max_time_window_per_hit"	"1.0"
+			"bonus_movespeed"		
+			{
+				"value"		"250"
+				"special_bonus_unique_marci_unleash_speed"	"+150"
+			}
+			"recovery_fixed_attack_rate"	"0.5"
+			"shard_push_length"		"300"
+			"scepter_cooldown_reduction"
+			{		
+				"value"					"25.0"
+				"RequiresScepter"		"1"
+			}
+			"dispel"			
+			{
+				"value"			"0"
+				"special_bonus_scepter"	"+1"
+			}
+			"pulse_silence_duration"
+			{
+				"value"			"0"
+				"special_bonus_scepter"	"+0.3"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+	}
+
+
 
 	//=================================================================================================================
 	// Pugna: Life Drain
@@ -24592,6 +24665,7 @@
 		"ItemCost"						"600"
 		"ItemStockMax"					"10"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPurchasable"				"1"
 		"ItemStockInitial"				"1"
 		"ItemStockTime"					"47.0"
 		"ItemInitialStockTime"			"400.0"

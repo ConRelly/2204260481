@@ -109,7 +109,7 @@ function modifier_item_broken_bow:OnAttackLanded(keys)
 						local armor_reduction = target:GetPhysicalArmorBaseValue() * self:GetAbility():GetSpecialValueFor("armor_reduc") / 100
 						local dubuff_modifier = target:AddNewModifier(attacker, ability, "modifier_item_willbreaker_debuff", {duration = self:GetAbility():GetSpecialValueFor("duration") * (1 + parent:GetStatusResistance())})
 						dubuff_modifier:SetStackCount(armor_reduction)
-						ability:UseResources(false, false, true)
+						ability:UseResources(false, false, false, true)
 						local particle = ParticleManager:CreateParticle("particles/econ/items/underlord/underlord_ti8_immortal_weapon/underlord_ti8_immortal_pitofmalice_burst_spark.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 						ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 						ParticleManager:ReleaseParticleIndex(particle)

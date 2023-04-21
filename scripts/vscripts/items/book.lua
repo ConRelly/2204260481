@@ -189,7 +189,7 @@ function modifier_spellbook_destruction_mana_drain:OnIntervalThink()
 		end
 		local mana_drain_per_interval = self.mana_drain_sec * self.mana_drain_interval
 		local mana_regen_red = self:GetCaster():GetManaRegen() * self.mana_drain_interval
-		self:GetCaster():ReduceMana(mana_drain_per_interval + (mana_regen_red * 0.95))
+		self:GetCaster():Script_ReduceMana(mana_drain_per_interval + (mana_regen_red * 0.95), self:GetAbility())
 	end
 end
 function modifier_spellbook_destruction_mana_drain:DeclareFunctions()

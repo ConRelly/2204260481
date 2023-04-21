@@ -52,7 +52,7 @@ function modifier_drow_ranger_agility_strike_lua:GetModifierPreAttack_CriticalSt
             local crit_bonus = 100 + self.agi_multiplier * self:GetCaster():GetAgility()
             self.record = params.record
             -- cooldown
-            self:GetAbility():UseResources(false, false, true)
+            self:GetAbility():UseResources(false, false, false, true)
             return crit_bonus
         end
     end

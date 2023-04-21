@@ -169,7 +169,7 @@ function modifier_durandal_shield:GetModifierIncomingDamage_Percentage(keys)
 			ParticleManager:ReleaseParticleIndex(shield_particle)
 		end
 		local mana_before = self:GetCaster():GetMana()
-		self:GetCaster():ReduceMana(mana_to_block)
+		self:GetCaster():Script_ReduceMana(mana_to_block, nil)
 		local mana_after = self:GetCaster():GetMana()
 		return math.min(self.absorb, self.absorb * self:GetCaster():GetMana() / math.max(mana_to_block, 1)) * (-1)
 	end

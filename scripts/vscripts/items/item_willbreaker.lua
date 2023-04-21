@@ -138,7 +138,7 @@ if IsServer() then
 					)
 					if modifier then
 						modifier:SetStackCount(target:GetPhysicalArmorBaseValue() * self.armor_reduction)
-						self.ability:UseResources(false, false, true)
+						self.ability:UseResources(false, false, false, true)
 						local particle = ParticleManager:CreateParticle("particles/econ/items/underlord/underlord_ti8_immortal_weapon/underlord_ti8_immortal_pitofmalice_burst_spark.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 						ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 						ParticleManager:DestroyParticle(particle, false)

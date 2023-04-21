@@ -112,7 +112,7 @@ function modifier_axe_custom_counter_helix:OnAttackLanded( params )
 				end
 
 				-- cooldown
-				self.ability:UseResources( false, false, true )
+				self.ability:UseResources(false, false, false, true )
 
 				-- effects
 				self:PlayEffects()

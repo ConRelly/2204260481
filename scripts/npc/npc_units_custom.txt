@@ -49,8 +49,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		// Vision
@@ -130,8 +128,6 @@
 	"StatusMana"				"25500"
 	"StatusManaRegen"			"2000"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"2600"
 	"VisionNighttimeRange"		"2600"
@@ -271,8 +267,6 @@
 	"StatusMana"				"12000"
 	"StatusManaRegen"			"200"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"2400"
 	"VisionNighttimeRange"		"2400"
@@ -337,8 +331,6 @@
 	"StatusMana"				"10000"
 	"StatusManaRegen"		   "500"
 	"TeamName"				  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 	"VisionDaytimeRange"		"2400"
 	"VisionNighttimeRange"	  "2400"
@@ -421,8 +413,6 @@
 	"StatusMana"				"100"
 	"StatusManaRegen"			"8"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"800"
@@ -477,8 +467,6 @@
 	"StatusMana"				"100"
 	"StatusManaRegen"			"10"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"1400"
 	"VisionNighttimeRange"		"1400"
@@ -545,8 +533,6 @@
 	"StatusMana"				"100"
 	"StatusManaRegen"			"10"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"1400"
 	"VisionNighttimeRange"		"1400"
@@ -625,8 +611,6 @@
 	"StatusMana"				"750"
 	"StatusManaRegen"			"20"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"5000"
 	"VisionNighttimeRange"		"5000"
@@ -708,8 +692,6 @@
 	"VisionDaytimeRange"					"1600"
 	"VisionNighttimeRange"		  		"1600"
 	"TeamName"							  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_HERO"
-	"CombatClassDefend"						"DOTA_COMBAT_CLASS_DEFEND_HERO"
 	"UnitRelationshipClass"		 		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	"Creature"
@@ -763,8 +745,6 @@
 	"VisionDaytimeRange"					"3600"
 	"VisionNighttimeRange"		  		"3600"
 	"TeamName"							  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_HERO"
-	"CombatClassDefend"						"DOTA_COMBAT_CLASS_DEFEND_HERO"
 	"UnitRelationshipClass"		 		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	"Creature"
@@ -833,8 +813,6 @@
 	"StatusMana"				"900"
 	"StatusManaRegen"			"20"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"1600"
 	"VisionNighttimeRange"		"1600"
@@ -922,8 +900,6 @@
 	"StatusManaRegen"			"20"
 
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	"VisionDaytimeRange"		"1500"
@@ -1019,8 +995,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	// Vision
@@ -1116,8 +1090,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	// Vision
@@ -1204,8 +1176,6 @@
 
 	// Team
 	"TeamName"				  "DOTA_TEAM_BADGUYS"		 // Team name.
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	// Vision
@@ -1296,8 +1266,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	// Vision
@@ -1404,8 +1372,6 @@
 	"VisionDaytimeRange"					"2600"
 	"VisionNighttimeRange"		  		"2600"
 	"TeamName"							  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"						"DOTA_COMBAT_CLASS_ATTACK_HERO"
-	"CombatClassDefend"						"DOTA_COMBAT_CLASS_DEFEND_HERO"
 	"UnitRelationshipClass"		 		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	"Creature"
@@ -1521,8 +1487,6 @@
 	"StatusMana"				"3450"
 	"StatusManaRegen"			"300"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"850"
 	"VisionNighttimeRange"		"800"
@@ -1611,8 +1575,6 @@
 	"VisionDaytimeRange"		"2400"
 	"VisionNighttimeRange"		"2400"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	//"vscripts"					"ai/npc_boss_ursa.lua"
@@ -1701,8 +1663,6 @@
 	"VisionDaytimeRange"		"2400"
 	"VisionNighttimeRange"	  "2400"
 	"TeamName"				  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	//"vscripts"					"ai/npc_boss_ursa.lua"
@@ -1803,8 +1763,6 @@
 	"StatusMana"				"2000"
 	"StatusManaRegen"			"250"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"6400"
 	"VisionNighttimeRange"		"6400"
@@ -1890,8 +1848,6 @@
 	"StatusMana"				"2000"
 	"StatusManaRegen"		   "250"
 	"TeamName"				  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"6400"
 	"VisionNighttimeRange"	  "6400"
@@ -1968,8 +1924,6 @@
 	"StatusMana"				"1000"
 	"StatusManaRegen"			"100"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"6400"
 	"VisionNighttimeRange"		"6400"
@@ -2030,8 +1984,6 @@
 	"StatusMana"				"0"
 	"StatusManaRegen"			"0"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"6400"
 	"VisionNighttimeRange"		"6400"
@@ -2117,8 +2069,6 @@
 	"VisionDaytimeRange"		"2600"
 	"VisionNighttimeRange"		"2600"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	"Creature"
@@ -2220,8 +2170,6 @@
 	"VisionDaytimeRange"		"2600"
 	"VisionNighttimeRange"	  "2600"
 	"TeamName"				  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_HERO"
-	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	"Creature"
@@ -2300,8 +2248,6 @@
 	"VisionDaytimeRange"		"1400"
 	"VisionNighttimeRange"		"800"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"vscripts"					"bosses/attack_ancient.lua"
 	"HasInventory"				"1"
@@ -2363,8 +2309,6 @@
 	"VisionDaytimeRange"		"2600"
 	"VisionNighttimeRange"		"2600"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	"Creature"
@@ -2442,8 +2386,6 @@
 	"StatusMana"				"1550"
 	"StatusManaRegen"			"100"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"6400"
 	"VisionNighttimeRange"		"6400"
@@ -2521,8 +2463,6 @@
 	"StatusMana"				"6500"
 	"StatusManaRegen"			"500"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"6600"
 	"VisionNighttimeRange"		"6600"
@@ -2619,8 +2559,6 @@
 	"VisionDaytimeRange"		"6600"		// Range of vision during day light.
 	"VisionNighttimeRange"		"6600"		// Range of vision at night time.
 	"TeamName"					"DOTA_TEAM_BADGUYS"							// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	"Creature"
@@ -2715,8 +2653,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	// Vision
@@ -2867,8 +2803,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	// Vision
@@ -2990,8 +2924,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	"Creature"
@@ -3087,8 +3019,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	// Vision
@@ -3229,8 +3159,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	// Vision
@@ -3370,8 +3298,6 @@
 
 	// Team
 	"TeamName"									  "DOTA_TEAM_BADGUYS"											// Team name.
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	// Creature Data
@@ -3503,8 +3429,6 @@
 	"VisionDaytimeRange"					"3600"
 	"VisionNighttimeRange"				  "3600"
 	"TeamName"							  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"				 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	"Creature"
@@ -3616,8 +3540,6 @@
 	"StatusMana"				"8500"
 	"StatusManaRegen"			"850"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"5600"
 	"VisionNighttimeRange"		"5600"
@@ -3715,8 +3637,6 @@
 	"StatusMana"				"20250"
 	"StatusManaRegen"			"2020"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"6600"
 	"VisionNighttimeRange"		"6600"
@@ -3789,8 +3709,6 @@
 	"VisionNighttimeRange"		"3600"
 	
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 }
 //=================================================================================	
@@ -3852,8 +3770,6 @@
 	"StatusMana"				"3500"
 	"StatusManaRegen"			"25"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"6800"
 	"VisionNighttimeRange"		"6800"
@@ -3989,8 +3905,6 @@
 	"StatusMana"				"12500"
 	"StatusManaRegen"			"420"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"1600"
 	"VisionNighttimeRange"		"1600"
@@ -4113,8 +4027,6 @@
 	"StatusMana"				"45000"
 	"StatusManaRegen"		   "420"
 	"TeamName"				  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"1600"
 	"VisionNighttimeRange"	  "1600"
@@ -4232,8 +4144,6 @@
 	"VisionDaytimeRange"					"3600"
 	"VisionNighttimeRange"				  "3600"
 	"TeamName"							  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"				 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	"Creature"
@@ -4327,8 +4237,6 @@
 	"VisionDaytimeRange"					"6600"
 	"VisionNighttimeRange"				  "6600"
 	"TeamName"							  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"				 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	"Creature"
@@ -4442,8 +4350,6 @@
 	"StatusMana"				"9000"
 	"StatusManaRegen"			"1000"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"6600"
 	"VisionNighttimeRange"		"6600"
@@ -4527,8 +4433,6 @@
 	"StatusMana"				"9000"
 	"StatusManaRegen"		   "1000"
 	"TeamName"				  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"3600"
 	"VisionNighttimeRange"	  "3600"
@@ -4628,8 +4532,6 @@
 	"VisionDaytimeRange"					"3600"
 	"VisionNighttimeRange"				  "3600"
 	"TeamName"							  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"				 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	"Creature"
@@ -4711,8 +4613,6 @@
 	"VisionDaytimeRange"		"1600"		// Range of vision during day light.
 	"VisionNighttimeRange"		"1600"		// Range of vision at night time.
 	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 }
 "npc_dota_creature_snowball_tuskar"
@@ -4778,8 +4678,6 @@
 
 		// Team
 		"TeamName"					"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		//Inventory
@@ -4924,8 +4822,6 @@
 
 		// Team
 		"TeamName"				  "DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		//Inventory
@@ -5086,8 +4982,6 @@
 	"VisionDaytimeRange"					"2600"
 	"VisionNighttimeRange"				  "2600"
 	"TeamName"							  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"				 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	"Creature"
@@ -5190,8 +5084,6 @@
 	"VisionDaytimeRange"					"2600"
 	"VisionNighttimeRange"				  "2600"
 	"TeamName"							  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"				 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	"Creature"
@@ -5285,8 +5177,6 @@
 	"StatusMana"				"15000"
 	"StatusManaRegen"			"200"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"1600"
 	"VisionNighttimeRange"		"1600"
@@ -5367,8 +5257,6 @@
 	"VisionDaytimeRange"					"6600"
 	"VisionNighttimeRange"				  "6600"
 	"TeamName"							  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"				 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	"Creature"
@@ -5460,8 +5348,6 @@
 
 	// Team
 	"TeamName"									  "DOTA_TEAM_NEUTRALS"											// Team name.
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	// Creature Data
@@ -5589,8 +5475,6 @@
 
 	// Team
 	"TeamName"									  "DOTA_TEAM_NEUTRALS"											// Team name.
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	// Creature Data
@@ -5696,8 +5580,6 @@
 	"StatusMana"				"9000"
 	"StatusManaRegen"			"700"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"1600"
 	"VisionNighttimeRange"		"1600"
@@ -5801,8 +5683,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	// Vision
@@ -5924,8 +5804,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	// Vision
@@ -6031,8 +5909,6 @@
 	"StatusMana"				"14000"
 	"StatusManaRegen"			"1000"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"2600"
 	"VisionNighttimeRange"		"2600"
@@ -6119,8 +5995,6 @@
 	"StatusMana"				"8000"
 	"StatusManaRegen"			"1000"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"2600"
 	"VisionNighttimeRange"		"2600"
@@ -6212,8 +6086,6 @@
 	"StatusMana"				"12000"
 	"StatusManaRegen"			"1000"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"2600"
 	"VisionNighttimeRange"		"2600"
@@ -6322,8 +6194,6 @@
 	"StatusMana"				"12000"
 	"StatusManaRegen"			"1000"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"2600"
 	"VisionNighttimeRange"		"2600"
@@ -6445,8 +6315,6 @@
 	"StatusMana"				"35000"
 	"StatusManaRegen"			"2000"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"1600"
 	"VisionNighttimeRange"		"1600"
@@ -6551,8 +6419,6 @@
 	"StatusMana"				"35000"
 	"StatusManaRegen"			"3000"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"4600"
 	"VisionNighttimeRange"		"4600"
@@ -6679,8 +6545,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	// Vision
@@ -6825,8 +6689,6 @@
 
 	// Team
 	"TeamName"							  "DOTA_TEAM_NEUTRALS"											// Team name.
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		 		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	// Creature Data
@@ -6948,8 +6810,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"				  "DOTA_TEAM_GOODGUYS"							// Team name.
-		"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 		"ImmuneToOmnislash"		 "1"
@@ -7015,8 +6875,9 @@
 {
 	//"UnitLabel"				 "pharaoh_ok"
 	"Ability2"					""
-	"Ability3"				  ""
+	"Ability7"				  ""
 	//"Ability10"				 "special_bonus_truestrike"
+	"Ability16"					"creep_siege"
 	"ArmorPhysical"				"40"
 	"MagicalResistance"			"85"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"	
@@ -7035,7 +6896,6 @@
 	"StatusManaRegen"		   "5000"
 	"MovementSpeed"			 "1700"
 	//"HasInventory"			  "1"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 }
 "npc_dota_goodguys_fort"
 {
@@ -7138,8 +6998,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 		
 		// Vision
@@ -7225,8 +7083,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BARRACKS"
 		
 		// Vision
@@ -7447,8 +7303,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	// Vision
@@ -7539,8 +7393,6 @@
 	"VisionDaytimeRange"		"1600"		// Range of vision during day light.
 	"VisionNighttimeRange"		"1600"		// Range of vision at night time.
 	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 }
 "npc_boss_mirana"
@@ -7594,8 +7446,6 @@
 	"VisionDaytimeRange"					"3600"
 	"VisionNighttimeRange"				  "3600"
 	"TeamName"							  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"				 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"Creature"
 	{
@@ -7690,8 +7540,6 @@
 	"VisionDaytimeRange"					"3600"
 	"VisionNighttimeRange"				  "3600"
 	"TeamName"							  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"				 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"Creature"
 	{
@@ -7805,8 +7653,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	// Vision
@@ -7909,8 +7755,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	// Vision
@@ -8013,8 +7857,6 @@
 	"VisionDaytimeRange"					"3600"
 	"VisionNighttimeRange"				  "3600"
 	"TeamName"							  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		 		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	"Creature"
@@ -8147,8 +7989,6 @@
 	"VisionDaytimeRange"					"3600"
 	"VisionNighttimeRange"				  "3600"
 	"TeamName"							  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		 		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	"Creature"
@@ -8293,8 +8133,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName" "DOTA_TEAM_GOODGUYS" // Team name.
-		"CombatClassAttack" "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-		"CombatClassDefend" "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 		// Vision
 		//----------------------------------------------------------------
@@ -8371,8 +8209,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName" "DOTA_TEAM_GOODGUYS" // Team name.
-		"CombatClassAttack" "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-		"CombatClassDefend" "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 		// Vision
 		//----------------------------------------------------------------
@@ -8450,8 +8286,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName" "DOTA_TEAM_GOODGUYS" // Team name.
-		"CombatClassAttack" "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-		"CombatClassDefend" "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 		// Vision
 		//----------------------------------------------------------------
@@ -8497,8 +8331,6 @@
 	"VisionDaytimeRange"		"1200"
 	"VisionNighttimeRange"		"1200"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	"Creature"
@@ -8575,8 +8407,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	"Creature"
@@ -8671,8 +8501,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"									  "DOTA_TEAM_NEUTRALS"											// Team name.
-		"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-		"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 		// Creature Data
@@ -8751,8 +8579,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"									  "DOTA_TEAM_NEUTRALS"											// Team name.
-		"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-		"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 		// Creature Data
@@ -8828,8 +8654,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		"Creature"
@@ -8943,8 +8767,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		// Vision
@@ -9096,8 +8918,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		// Vision
@@ -9236,8 +9056,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		// Vision
@@ -9356,8 +9174,6 @@
 	"StatusMana"				"17000"
 	"StatusManaRegen"			"2000"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"3600"
 	"VisionNighttimeRange"		"3600"
@@ -9488,8 +9304,6 @@
 	"StatusMana"				"28000"
 	"StatusManaRegen"			"2000"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"6600"
 	"VisionNighttimeRange"		"6600"
@@ -9634,8 +9448,6 @@
 	"StatusMana"				"28000"
 	"StatusManaRegen"		   "2000"
 	"TeamName"				  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"6600"
 	"VisionNighttimeRange"	  "6600"
@@ -9790,8 +9602,6 @@
 
 	// Team
 	"TeamName"									  "DOTA_TEAM_BADGUYS"											// Team name.
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	// Creature Data
@@ -9898,8 +9708,6 @@
 	"VisionDaytimeRange"		"2600"		// Range of vision during day light.
 	"VisionNighttimeRange"		"2600"		// Range of vision at night time.
 	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 }
 
@@ -9947,8 +9755,6 @@
 	"VisionDaytimeRange"		"2600"		// Range of vision during day light.
 	"VisionNighttimeRange"		"2600"		// Range of vision at night time.
 	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"Creature"
 	{
@@ -10019,8 +9825,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	"Creature"
@@ -10108,8 +9912,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	
 	"Creature"
@@ -10172,14 +9974,14 @@
 }
 "npc_dota_venomancer_plague_ward_4"
 {
+	"Ability16"					"creep_siege"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 	"AttackDamageMin"		   "900"	   // Damage range min.
 	"AttackDamageMax"		   "900"	   // Damage range max.
 	"StatusHealth"			  "400"	   // Base health.
 	"AttackRate"				"1.0"
 	"AttackAcquisitionRange"	"1400"	   // Range within a target can be acquired.
-	"AttackRange"			   "1400"	   // Range within a target can be attacked
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_SIEGE"	
+	"AttackRange"			   "1400"	   // Range within a target can be attacked	
 }
 
 "npc_dota_unit_tombstone1"
@@ -10225,10 +10027,10 @@
 	"AttackRate"				"1.30"
 	"AttackDamageMin"		   "860"
 	"AttackDamageMax"		   "860"
+	"Ability16"					"creep_siege"
 	"StatusHealth"			  "10" 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 	"MovementSpeed"				"50"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 
 }
 "npc_dota_unit_undying_zombie"
@@ -10480,6 +10282,7 @@
 	"Ability5"				  ""		  // Ability 5.
 	//"Ability6"				  "bloodseeker_thirst"
 	"Ability7"				  "owner_buff" 
+	"Ability16"					"creep_siege"
 	// Armor
 	//----------------------------------------------------------------
 	"ArmorPhysical"			 "0"		 // Physical protection.
@@ -10523,8 +10326,6 @@
 	// Team
 	//----------------------------------------------------------------
 	"TeamName"				  "DOTA_TEAM_GOODGUYS"			// Team name.
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 	
 	// Vision
@@ -10563,6 +10364,7 @@
 	"Ability6"				  "brewmaster_primal_split_cancel"			// Ability 6	
 	"Ability7"				  "summon_defense"
 	"Ability8"				  "bloodseeker_thirst"
+	"Ability16"					"creep_siege"
 
 	// Armor
 	//----------------------------------------------------------------
@@ -10606,8 +10408,6 @@
 	// Team
 	//----------------------------------------------------------------
 	"TeamName"				  "DOTA_TEAM_NEUTRALS"							// Team name.
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 }	
 "npc_dota_brewmaster_earth_1"
@@ -10653,7 +10453,8 @@
 {
 	//"Ability4"				  "brewmaster_drunken_brawler_custom"
 	"Ability7"				  "summon_defense"  
-	"Ability8"				  "bloodseeker_thirst" 	
+	"Ability8"				  "bloodseeker_thirst" 
+	"Ability16"					"creep_siege"	
 	"AttackRate"				"0.7"
 	"MagicalResistance"				"50"
 	"StatusHealth"			  "1000"
@@ -10661,7 +10462,6 @@
 	"AttackDamageMax"		   "2985"			// Damage range max.
 	"MovementSpeed"			 "750"	   // Speed.
 	//"UnitLabel"					"pharaoh_ok"
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 }
 "npc_dota_brewmaster_storm_1"
 {								
@@ -10745,6 +10545,7 @@
 	"Ability2"                "generic_hidden"	
 	"Ability4"				  "summon_defense"
 	//"Ability8"				  ""
+	"Ability16"					"creep_siege"
 	"AttackRate"				"0.8"
 	"StatusHealthRegen"			"15"
 	//"StatusHealth"				"2750"
@@ -10752,7 +10553,6 @@
 	"AttackDamageMax"			"2900"
 	"MovementSpeed"			 	"850"
 	"AttackAcquisitionRange"	"4500"		// Range within a target can be acquired.	
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
 }
 
 
@@ -11156,8 +10956,6 @@
 	"StatusMana"				"25000"
 	"StatusManaRegen"			"2000"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"2600"
 	"VisionNighttimeRange"		"2600"
@@ -11286,8 +11084,6 @@
 	"VisionDaytimeRange"		"1600"		// Range of vision during day light.
 	"VisionNighttimeRange"		"1600"		// Range of vision at night time.
 	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"HasInventory"			  "1"
 	"Creature"
@@ -11353,7 +11149,7 @@
 		"Level"						"1"
 
 		// Abilities
-		"Ability1"					""
+		"Ability1"					"creep_siege"
 
 		// Armor
 		"ArmorPhysical"				"20"
@@ -11405,8 +11201,6 @@
 
 		// Team
 		"TeamName"					"DOTA_TEAM_GOODGUYS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 		
 		// Vision
@@ -11427,7 +11221,7 @@
 		"Level"						"1"
 
 		// Abilities
-		"Ability1"					""
+		"Ability1"					"creep_siege"
 
 		// Armor
 		"ArmorPhysical"				"20"
@@ -11479,8 +11273,6 @@
 
 		// Team
 		"TeamName"					"DOTA_TEAM_GOODGUYS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 		
 		// Vision
@@ -11550,8 +11342,6 @@
 
 		// Team
 		"TeamName"					"DOTA_TEAM_GOODGUYS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 		
 		// Vision
@@ -11574,6 +11364,7 @@
 		
 		// Abilities
 		"Ability1"					""
+		"Ability16"					"creep_siege"
 
 		// Armor
 		"ArmorPhysical"				"200"
@@ -11623,8 +11414,6 @@
 
 		// Team
 		"TeamName"					"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 		
 		// Vision
@@ -11684,8 +11473,6 @@
 
 		// Team
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 	}	
 	
@@ -11717,6 +11504,7 @@
 
 		// Abilities
 		"Ability1"					"tower_increase_stats"
+		"Ability16"					"creep_siege"
 
 		// Armor
 		"ArmorPhysical"				"0"
@@ -11768,8 +11556,6 @@
 
 		// Team
 		"TeamName"					"DOTA_TEAM_GOODGUYS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 		
 		// Vision
@@ -11806,9 +11592,6 @@
 	"AttackRange"				"500"		// Range within a target can be attacked.
 	//"ProjectileModel"			"particles/units/heroes/hero_witchdoctor/witchdoctor_ward_attack.vpcf" // Particle system model for projectile.
 	"ProjectileSpeed"			"1000"		// Speed of projectile.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
-				
 	"Ability1"					"courier_invincibility"
 	"Ability2"				    "bloodseeker_thirst"
 	"Ability3"				  	"mjz_bristleback_quill_spray_autocastp"
@@ -11829,8 +11612,6 @@
 	"StatusMana"				"500"
 	"StatusManaRegen"			"15"
 	"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_COURIER"
 	"VisionDaytimeRange"		"1800"		// Range of vision during day light.
 	"VisionNighttimeRange"		"1800"		// Range of vision at night time.
@@ -11908,8 +11689,6 @@
 	"VisionDaytimeRange"					"4600"
 	"VisionNighttimeRange"				  "4600"
 	"TeamName"							  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"				 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	"Creature"
@@ -12049,8 +11828,6 @@
 
 	// Team
 	"TeamName"									  "DOTA_TEAM_BADGUYS"											// Team name.
-	"CombatClassAttack"					 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"					 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	// Creature Data
@@ -12184,8 +11961,6 @@
 		"StatusManaRegen"			"0"
 
 		"TeamName"					"DOTA_TEAM_GOODGUYS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 		
 		"VisionDaytimeRange"		"1"
@@ -12238,8 +12013,6 @@
 
 	// Team
 	"TeamName"					"DOTA_TEAM_GOODGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 	
 	// Vision
@@ -12292,8 +12065,6 @@
 
 	// Team
 	"TeamName"				  "DOTA_TEAM_GOODGUYS"
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 	
 	// Vision
@@ -12376,8 +12147,6 @@
 		"VisionNighttimeRange"		"3600"
 
 		"TeamName"					"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 		"HasInventory"				"1"
@@ -12490,8 +12259,6 @@
 		"VisionNighttimeRange"		"6000"
 
 		"TeamName"					"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 		"HasInventory"				"1"
@@ -12563,8 +12330,6 @@
 		"VisionNighttimeRange"		"0"
 
 		"TeamName"					"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 	}
 	//=================================================================================
@@ -12618,8 +12383,6 @@
 		"VisionNighttimeRange"		"6600"
 
 		"TeamName"					"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 		"PathfindingSearchDepthScale"		"0.1"
@@ -12690,8 +12453,6 @@
 		"VisionNighttimeRange"		"6600"
 
 		"TeamName"					"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 		"PathfindingSearchDepthScale"		"0.1"
@@ -12726,7 +12487,8 @@
 		"Ability1"					"golden_mine_passive"			
 		"Ability2"					"custom_no_heal_aura"			
 		"Ability3"					""			
-		"Ability4"					""			
+		"Ability4"					""
+		"Ability16"					"creep_siege"			
 
 		"ArmorPhysical"				"-520"		// Physical protection.
 		"MagicalResistance"			"-50"			// Magical protection.
@@ -12761,8 +12523,6 @@
 		"StatusManaRegen"			"2000"		// Mana regeneration rate.
 
 		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
 		
 		"VisionDaytimeRange"		"900"		// Range of vision during day light.
@@ -12832,21 +12592,21 @@
 		"VisionNighttimeRange"		"0"		// Range of vision at night time.
 
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 	}
+
+
 	//// 肉山
 	"npc_dota_roshan_mega"
 	{
-		"BaseClass"					"npc_dota_roshan"	// Class of entity of link to.
+		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/creeps/roshan/roshan.vmdl"	// Model.
 		"SoundSet"					"Roshan"					// Name of sound set.
 		"ModelScale"				"1.5"
 		"Level"						"60"
 		"ConsideredHero"			"1"
 		"IsAncient"					"1"		//远古
-		"IsBossMonster"			 "1"
+
 				
 		// Abilities
 		"Ability1"					"roshan_spell_block"	// Ability 1.
@@ -12897,8 +12657,6 @@
 
 		// Team
 		"TeamName"					"DOTA_TEAM_NEUTRALS"			// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		// Vision
@@ -12988,8 +12746,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 		
 		// Vision
@@ -13045,8 +12801,6 @@
 	"VisionDaytimeRange"		"1600"		// Range of vision during day light.
 	"VisionNighttimeRange"		"1600"		// Range of vision at night time.
 	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"Creature"
 	{
@@ -13165,8 +12919,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_HERO"
 
 		// Creature Data
@@ -13296,8 +13048,6 @@
 	"StatusMana"				"37000"
 	"StatusManaRegen"			"2000"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"2600"
 	"VisionNighttimeRange"		"2600"
@@ -13431,8 +13181,6 @@
 	"StatusMana"				"15000"
 	"StatusManaRegen"			"2000"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"1600"
 	"VisionNighttimeRange"		"1600"
@@ -13547,8 +13295,6 @@
 	"StatusMana"				"17750"
 	"StatusManaRegen"			"2000"
 	"TeamName"					"DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"2800"
 	"VisionNighttimeRange"		"2800"
@@ -13672,8 +13418,6 @@
 	"StatusMana"				"17750"
 	"StatusManaRegen"		   "2000"
 	"TeamName"				  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"2800"
 	"VisionNighttimeRange"	  "2800"
@@ -13806,8 +13550,6 @@
 	"StatusMana"				"57750"
 	"StatusManaRegen"		   "2000"
 	"TeamName"				  "DOTA_TEAM_BADGUYS"
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_BASIC"
-	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"VisionDaytimeRange"		"15800"
 	"VisionNighttimeRange"	  "15800"
@@ -13967,8 +13709,6 @@
 		"VisionNighttimeRange"		"2600"
 
 		"TeamName"					"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 		"HasInventory"				"1"
@@ -14067,6 +13807,7 @@
 		"Ability21"				 "draks_unholy_strength"
 		"Ability22"				 "special_bonus_spell_block_18"
 
+
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"295"
@@ -14118,8 +13859,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 		"HasInventory"				"1"
@@ -14318,8 +14057,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 	}	
 
@@ -14390,8 +14127,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 	}	
 
@@ -14469,8 +14204,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		// Vision
@@ -14537,6 +14270,7 @@
 		"Ability19"				  "aghanim_empty_spell4"
 		"Ability20"				  "bloodseeker_thirst_3"
 		//"Ability21"				  "aghanim_empty_spell6"
+		"Ability21"				 "creep_siege"
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"			 "200"
@@ -14588,8 +14322,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"				  "DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 		"HasInventory"			  "1"
@@ -14754,6 +14486,7 @@
 		"Ability19"				  "aghanim_empty_spell4"
 		"Ability20"				  "bloodseeker_thirst_3"
 		//"Ability21"				  "legion_commander_moment_of_courage"
+		"Ability21"				 "creep_siege"
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"			 "120"
@@ -14805,8 +14538,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"				  "DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 		"HasInventory"			  "1"
@@ -14945,7 +14676,7 @@
 		"ModelScale"				"1.2"
 		"ConsideredHero"			"1"
 		//"IsAncient"				 "1"
-		"IsBossMonster"			 "1"
+		//"IsBossMonster"			 "1"
 
 		// Minimap
 		//----------------------------------------------------------------
@@ -15020,8 +14751,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"				  "DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 		//"HasInventory"				"1"
@@ -15126,8 +14855,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"				  "DOTA_TEAM_NEUTRALS"
-		"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	}
 
@@ -15204,8 +14931,6 @@
 	// Team
 	//----------------------------------------------------------------
 	"TeamName"											"DOTA_TEAM_NEUTRALS"	  // Team name.
-	"CombatClassAttack"								   "DOTA_COMBAT_CLASS_ATTACK_HERO"
-	"CombatClassDefend"								   "DOTA_COMBAT_CLASS_DEFEND_HERO"
 	"UnitRelationshipClass"							   "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 
 	// Vision
@@ -15260,7 +14985,8 @@
 	"Ability14"				 "aghanim_shard_attack"
 	"Ability15"				 "aghanim_laser"
 	"Ability16"				 "draks_unholy_strength"
-	"Ability17"				 "aghanim_blink"	
+	"Ability17"				 "aghanim_blink"
+	"Ability18"				 "creep_siege"	
 	"ArmorPhysical"			 "420"		 // Physical protection.
 	"MagicalResistance"		 "96"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -15287,8 +15013,6 @@
 	"VisionDaytimeRange"		"9600"	  // Range of vision during day light.
 	"VisionNighttimeRange"	  "9600"	  // Range of vision at night time.
 	"TeamName"				  "DOTA_TEAM_BADGUYS"							// Team name.
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_HERO"
-	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
 	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"Creature"
 	{
@@ -15418,7 +15142,8 @@
 	"Ability13"				 "mjz_chaos_knight_chaos_strike_2"
 	"Ability14"				 "aghanim_shard_attack"
 	"Ability15"				 "aghanim_laser"
-	"Ability16"				 "draks_unholy_strength"	
+	"Ability16"				 "draks_unholy_strength"
+	"Ability17"				 "creep_siege"	
 	"ArmorPhysical"			 "420"		 // Physical protection.
 	"MagicalResistance"		 "95"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -15445,8 +15170,6 @@
 	"VisionDaytimeRange"		"9600"	  // Range of vision during day light.
 	"VisionNighttimeRange"	  "9600"	  // Range of vision at night time.
 	"TeamName"				  "DOTA_TEAM_BADGUYS"							// Team name.
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_HERO"
-	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
 	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"Creature"
 	{
@@ -15579,6 +15302,7 @@
 	//"Ability15"				 "darkrider_heartbeat"
 	"Ability16"				 "draks_unholy_strength"
 	"Ability17"				 "aghanim_blink"	
+	"Ability18"				 "creep_siege"
 	"ArmorPhysical"			 "400"		 // Physical protection.
 	"MagicalResistance"		 "96"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -15605,8 +15329,6 @@
 	"VisionDaytimeRange"		"9600"	  // Range of vision during day light.
 	"VisionNighttimeRange"	  "9600"	  // Range of vision at night time.
 	"TeamName"				  "DOTA_TEAM_BADGUYS"							// Team name.
-	"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_HERO"
-	"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_STRUCTURE"
 	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"Creature"
 	{
@@ -15757,8 +15479,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"				  "DOTA_TEAM_NEUTRALS"
-		"CombatClassAttack"		 "DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"		 "DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_ATTACHED"
 	}
 
@@ -15804,8 +15524,6 @@
 	"VisionDaytimeRange"		"1600"		// Range of vision during day light.
 	"VisionNighttimeRange"		"1600"		// Range of vision at night time.
 	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"Creature"
 	{
@@ -15920,7 +15638,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		"Creature"
@@ -16012,7 +15729,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		"Creature"
@@ -16104,7 +15820,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		"Creature"
@@ -16193,7 +15908,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		"Creature"
@@ -16287,7 +16001,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		
 		"Creature"
@@ -16394,7 +16107,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		"Creature"
 		{
@@ -16439,6 +16151,7 @@
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
+		"Ability16"					"creep_siege"
 
 		// Armor
 		//----------------------------------------------------------------
@@ -16485,8 +16198,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
 	}
 
@@ -16555,8 +16266,6 @@
 		// Team
 		//----------------------------------------------------------------
 		"TeamName"					"DOTA_TEAM_NEUTRALS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO" // DOTA_COMBAT_CLASS_DEFEND_STRUCTURE  , DOTA_COMBAT_CLASS_DEFEND_HERO
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		"Creature"
 		{

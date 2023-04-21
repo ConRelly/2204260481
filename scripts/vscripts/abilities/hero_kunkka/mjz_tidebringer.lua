@@ -127,7 +127,7 @@ function modifier_mjz_tidebringer:OnAttackLanded(params)
 
 				DoCleaveAttack(params.attacker, params.target, ability, cleaveDamage, radius_start, radius_end, range, "particles/units/heroes/hero_kunkka/kunkka_spell_tidebringer.vpcf")
 				self.bonus_damage = 0
-				ability:UseResources(false, false, true)
+				ability:UseResources(true, false, false, true)
 				if self:GetCaster():HasModifier("modifier_mjz_tidebringer_manual") then
 					self:GetCaster():RemoveModifierByName("modifier_mjz_tidebringer_manual")
 				end

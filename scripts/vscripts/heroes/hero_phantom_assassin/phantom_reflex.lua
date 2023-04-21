@@ -189,7 +189,7 @@ function Hit(caster, ability, origin, radius, angle)
 
 		if angle_diff <= angle then
 			if not ability:IsOwnersManaEnough() then return end
-			ability:UseResources(true, false, false)
+			ability:UseResources(true, true, false, false)
 			caster:PerformAttack(enemy, true, true, true, true, false, false, true)
 
 			PlayEffects2(enemy, origin, cast_direction)

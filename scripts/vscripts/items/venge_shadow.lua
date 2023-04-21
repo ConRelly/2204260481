@@ -24,7 +24,7 @@ function item_venge_shadow:OnOwnerDied()
 			illusion:AddNewModifier(self:GetCaster(), self, "modifier_vengefulspirit_hybrid_special", {})
 			FindClearSpaceForUnit(illusion, self:GetCaster():GetAbsOrigin() + Vector(RandomInt(0, 1), RandomInt(0, 1), 0) * 108, true)
 			PlayerResource:NewSelection(self:GetCaster():GetPlayerID(), super_illusions)
-			self:UseResources(false, false, true)
+			self:UseResources(true, false, false, true)
 		end
 	end
 end

@@ -77,7 +77,7 @@ function modifier_generic_handler:OnTakeDamage(keys)
 					if keys.damage_type == DAMAGE_TYPE_PHYSICAL and keys.unit.GetPhysicalArmorValue and GetReductionFromArmor then
 						keys.damage = keys.original_damage * (1 - GetReductionFromArmor(keys.unit:GetPhysicalArmorValue(false)))
 					elseif keys.damage_type == DAMAGE_TYPE_MAGICAL and keys.unit.GetMagicalArmorValue then
-						keys.damage = keys.original_damage * (1 - GetReductionFromArmor(keys.unit:GetMagicalArmorValue()))
+						keys.damage = keys.original_damage * (1 - GetReductionFromArmor(keys.unit:Script_GetMagicalArmorValue(false, keys.unit)))
 					elseif keys.damage_type == DAMAGE_TYPE_PURE then
 						keys.damage = keys.original_damage
 					end

@@ -45,7 +45,7 @@ if IsServer() then
 			ParticleManager:ReleaseParticleIndex(part)
 			SendOverheadEventMessage(nil, OVERHEAD_ALERT_BLOCKED, t.target, 0, nil)
 			--self.parent:EmitSound("jotaro_absolute_defense")
-			self.ab:UseResources(true, true, true)
+			self.ab:UseResources(true, true, true, true)
 			return 1
 		end
 		return 0

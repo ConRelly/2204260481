@@ -92,7 +92,7 @@ function modifier_drow_ranger_multishot_lua:OnAttack( params )
 	self:InitArrow(params.target)
 
 	-- cooldown
-	self:GetAbility():UseResources( false, false, true )
+	self:GetAbility():UseResources(false, false, false, true )
 end
 
 function modifier_drow_ranger_multishot_lua:InitArrow(target)

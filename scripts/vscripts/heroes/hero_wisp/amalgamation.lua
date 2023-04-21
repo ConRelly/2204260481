@@ -112,7 +112,7 @@ end
 function amalgamation:EndSymbiosis()
 	local SymbiotModifier = self:GetCaster():FindModifierByName("amalgamation_modifier")
 	SymbiotModifier:Terminate(nil)
-	self:UseResources(false, false, true)
+	self:UseResources(false, false, false, true)
 end
 function amalgamation:OnDestroy()
 	self:EndSymbiosis()  
@@ -380,7 +380,7 @@ function amalgamation_target:OnIntervalThink()
 		local marci = false
 		local transfrom_duration = ability:GetSpecialValueFor("transfrom_duration")
 		local stack_chance = ability:GetSpecialValueFor("symbiot_stack_chance")
-		local HostMagicResist = math.floor(self:GetCaster():GetMagicalArmorValue() * self:GetAbility():GetSpecialValueFor("magic_armor"))
+		local HostMagicResist = math.floor(self:GetCaster():Script_GetMagicalArmorValue(false, self:GetCaster()) * self:GetAbility():GetSpecialValueFor("magic_armor"))
 		local HostArmor = math.floor(self:GetCaster():GetPhysicalArmorValue(false) * self:GetAbility():GetSpecialValueFor("physical_armor") / 100)
 		local HostMagicResist_Modifier = self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "amalgamation_target_magic_armor", {})
 		HostMagicResist_Modifier:SetStackCount(HostMagicResist)

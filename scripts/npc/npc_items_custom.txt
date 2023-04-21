@@ -19642,7 +19642,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"debuff_duration"		"7"
+				"debuff_duration"		"8"
 			}
 			"07"
 			{

@@ -9,7 +9,7 @@ function item_inf_aegis:GetIntrinsicModifierName() return "modifier_inf_aegis" e
 function item_inf_aegis:IsRefreshable() return false end
 function item_inf_aegis:item(keys, self)
 	if not self.caster:HasModifier("modifier_item_aegis") then
-		self.ability:UseResources(false, false, true)
+		self.ability:UseResources(false, false, false, true)
 		particle_death_fx = ParticleManager:CreateParticle("particles/items_fx/aegis_respawn_timer.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 		ParticleManager:SetParticleAlwaysSimulate(particle_death_fx)
 		ParticleManager:SetParticleControl(particle_death_fx, 0, keys.unit:GetAbsOrigin())

@@ -69,7 +69,7 @@ function modifier_nevermore_custom_necromastery:OnIntervalThink()
 			if self:GetParent():IsAlive() then
 				if self:GetAbility():GetAutoCastState() then
 					self:GetAbility():OnSpellStart()
-					self:GetAbility():UseResources(false, false, true)
+					self:GetAbility():UseResources(false, false, false, true)
 				end
 			end	
 		end

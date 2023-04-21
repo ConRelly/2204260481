@@ -62,7 +62,7 @@ if IsServer() then
 		if target ~= null then
 			self.parent:AddNewModifier(self.parent, self.ability, "modifier_antimage_custom_speed_active", {duration = self.duration})
 			self.parent:AddNewModifier(self.parent, self.ability, "modifier_rune_haste", {duration = self.duration})
-			self.ability:UseResources(true, false, true)
+			self.ability:UseResources(true, true, false, true)
 			self.parent:EmitSoundParams("Hero_AntiMage.ManaVoid", 0, 0.2, 0)
 			--local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_manavoid.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
 			--ParticleManager:SetParticleControlEnt(fx, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)

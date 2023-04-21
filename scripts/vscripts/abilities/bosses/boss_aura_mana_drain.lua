@@ -8,7 +8,7 @@ function aura_mana_drain(keys)
 	if ability then
 		local drain = ability:GetSpecialValueFor("drain_pct") * 0.01
 	
-		target:ReduceMana(drain * target:GetMana())
+		target:Script_ReduceMana(drain * target:GetMana(), nil)
 	end
 
 end

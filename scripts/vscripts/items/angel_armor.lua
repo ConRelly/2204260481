@@ -132,6 +132,6 @@ function modifier_angel_armor_buff_ally:GetModifierIncomingDamage_Percentage(kv)
 	end
 end
 function modifier_angel_armor_buff_ally:GetModifierMagicalResistanceBonus()
-	return self:GetCaster():GetMagicalArmorValue()*25
+	return self:GetCaster():Script_GetMagicalArmorValue(false, self:GetCaster())*25
 end
 ]]

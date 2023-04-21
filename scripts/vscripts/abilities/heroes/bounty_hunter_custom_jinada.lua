@@ -75,7 +75,7 @@ if IsServer() then
 			damage_type = self.damage_type,
 			victim = target
 		})
-		self.ability:UseResources(false, false, true)
+		self.ability:UseResources(false, false, false, true)
 		self.parent:EmitSoundParams("Hero_BountyHunter.Jinada", 0, 0.65, 0)
 		local fx = ParticleManager:CreateParticle("particles/custom/jinada.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
         ParticleManager:SetParticleControlEnt(fx, 0, target, PATTACH_ABSORIGIN, "attach_origin", target:GetAbsOrigin(), true)

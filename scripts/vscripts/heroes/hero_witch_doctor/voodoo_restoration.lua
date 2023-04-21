@@ -69,7 +69,7 @@ function modifier_wd_voodoo_restoration:OnIntervalThink()
 	if not self:GetCaster():IsAlive() then return end
 
 	if self:GetCaster():GetMana() >= self:GetAbility():GetManaCost(-1) then
-		self:GetCaster():ReduceMana(self.manacost)
+		self:GetCaster():Script_ReduceMana(self.manacost, self:GetAbility())
 	else
 		self:GetAbility():ToggleAbility()
 	end

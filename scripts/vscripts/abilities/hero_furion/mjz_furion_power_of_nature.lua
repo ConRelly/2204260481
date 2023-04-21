@@ -46,7 +46,7 @@ if IsServer() then
 					target:AddNewModifier(caster, ability, modifier_debuff_name, {duration = duration })
 
 					-- ability:StartCooldown(ability:GetCooldownTimeRemaining())
-					ability:UseResources(true, false, true)
+					ability:UseResources(true, true, false, true)
 				end
 			end
 		end

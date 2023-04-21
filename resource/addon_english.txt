@@ -475,7 +475,7 @@
 	"DOTA_Tooltip_ability_item_adamantium_ingot_description"            "Is Gained after finishing the DPS '-challenge' Boss , you can type that command any time after 40 min of the game(part 1 is max tier 2 reward). Depending how far you reach you gain extra <h1><font color='#9E20E7'>Adamantium Ingot</font>"
 
 // weapon lvl 1
-	"DOTA_Tooltip_ability_item_master_of_weapons_sword"					"Master Of Weapons' Sword"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword"					"Master Of Weapons Sword"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_description"		"<h1>Active: Image Of Benedict</h1> Creating a copy of yourself, dashing to enemy target quickly, slashing at a rate of %slash_rate% s, dealing x %attack_asdmg_multiplier% total ATK as Dmg & exploding the enemy in a %radius_expl% radius repeating an extra time for every 20 levels you have, gaining an Explosive stack for each repetition, can ignore armor in certain codition. <br> Duration Of Slash = %duration% + (1s every 1500 Attack Speed) \n<h1><font color='#FF4500'>UP: Fire Rapier</font></h1> Each slash has %fire_rapier_chance%%% chance to proc Fire Rapier \n<h1><font color='#BE03FF'>UP: Edible Devil's Daedalus</font></h1>All Slashes have 100% Crit chance \n<h1><font color='#FC6BF1'>UP: Good Juju</font></h1> Reduces cooldown to %good_juju_cd% sec"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_lore"	"Gifted Sword, From Who Mastered All Weapons..."
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_note0"	"Unaffected by Cooldown Reduction"
@@ -1437,6 +1437,7 @@
 	"DOTA_Tooltip_Ability_item_thunder_hammer_bonus_damage_lvl"	    "+$bonus_damage_lvl"
 	"DOTA_Tooltip_ability_item_thunder_hammer_bonus_attack_speed"		 "+$attack"
 	"DOTA_Tooltip_Ability_item_thunder_hammer_Note0"            "Pasive <font color='#07ECFF'>Chain Lightning</font> Not Affected by SpellAmp, but the active yes."
+	"DOTA_Tooltip_Ability_item_thunder_hammer_Note1"                "Top Underdgos get +1,2,3 stacks more per proc"
 	"DOTA_Tooltip_modifier_thunder_hammer_aura"				"Thunder Hammer Aura"
 	"DOTA_Tooltip_modifier_thunder_hammer_aura_Description"	"Increases Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Damage by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% and Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%"
 	"DOTA_Tooltip_modifier_thunder_hammer_static"						"Thunder Charge"
@@ -1451,7 +1452,7 @@
 	"DOTA_Tooltip_Ability_item_thunder_gods_might_bonus_damage_ptc"			 "%+$damage"
 	"DOTA_Tooltip_ability_item_thunder_gods_might_bonus_attack_speed"		 "+$attack"
 	"DOTA_Tooltip_Ability_item_thunder_gods_might_all"                       "+$all"
-	"DOTA_Tooltip_Ability_item_thunder_gods_might_Note0"					 "Not Affected by SpellAmp(until ss effect)"
+	"DOTA_Tooltip_Ability_item_thunder_gods_might_Note0"					 "Not Affected by SpellAmp(until ss effect), Top Underdgos get +1,2,3 stacks more per proc"
 	"DOTA_Tooltip_Ability_item_thunder_gods_might_Note1"					 "<font color='#07ECFF'>Lightning Strike</font> Has an fixed Internal CD of 0.15s"
 
 	"DOTA_Tooltip_modifier_item_thunder_god_might_aura_debuff"              "<font color='#07ECFF'>Thor's Essence</font>"
@@ -2255,16 +2256,19 @@
 //1
 	"DOTA_Tooltip_Ability_item_light_crossbow"					 "<font color='#E20624'>Evolving Light Crossbow</font>"
 	"DOTA_Tooltip_Ability_item_light_crossbow_Description"		 "<h1>Passive: Light Crossbow Aura</h1>+ %hp_aura% Health<br>+ %damage_aura%%% Damage<br>+ %ms_aura% Movement Speed<br><br>Radius: %aura_radius%.\n<h1><font color='#07ECFF'>Lightning Strike</font></h1>Each attack has a %static_chance%%% chance of creating a chain lightning bolt that can affect up to %static_strikes% enemies in a %static_radius% radius of the attacked enemy, dealing %chain_damage%%% of hero attack dmg as physical damage.\n<h1><font color='#F7B906'>Evolve</font></h1>Every time <font color='#07ECFF'>Lightning Strike</font> procs you gain a charge, Evolves at %charge_awaken% charges."
+	"DOTA_Tooltip_Ability_item_light_crossbow_Note0"                "Top Underdgos get +1,2,3 stacks more per proc"
 	"DOTA_Tooltip_modifier_light_crossbow_1_aura"				 	"Light Crossbow Aura (Level 1)"
-	"DOTA_Tooltip_modifier_light_crossbow_1_aura_Description"		"Increases Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Damage by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% and Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
+	"DOTA_Tooltip_modifier_light_crossbow_1_aura_Description"		"Increases Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Damage by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% and Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."	
 //2
 	"DOTA_Tooltip_Ability_item_light_crossbow_2"					 "<font color='#F7B906'>Evolving Light Crossbow 2</font>"
 	"DOTA_Tooltip_Ability_item_light_crossbow_2_Description"		 "<h1>Passive: Light Crossbow Aura</h1>+ %hp_aura% Health<br>+ %damage_aura%%% Damage<br>+ %ms_aura% Movement Speed<br><br>Radius: %aura_radius%. \n<h1><font color='#07ECFF'>Lightning Strike</font></h1>Each attack has a %static_chance%%% chance of creating a chain lightning bolt that can affect up to %static_strikes% enemies in a %static_radius% radius of the attacked enemy, dealing %chain_damage%%% of hero attack dmg as physical damage.\n<h1><font color='#F7B906'>Evolve</font></h1>Every time <font color='#07ECFF'>Lightning Strike</font> procs you gain a charge, Evolves at %charge_awaken% charges."
+	"DOTA_Tooltip_Ability_item_light_crossbow_2_Note0"                "Top Underdgos get +1,2,3 stacks more per proc"
 	"DOTA_Tooltip_modifier_light_crossbow_2_aura"				 	"Light Crossbow Aura (Level 2)"
 	"DOTA_Tooltip_modifier_light_crossbow_2_aura_Description"	 	"Increases Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Damage by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% and Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
 //3
 	"DOTA_Tooltip_Ability_item_light_crossbow_3"					 "<font color='#F7B906'>Evolving Light Crossbow 3</font>"
 	"DOTA_Tooltip_Ability_item_light_crossbow_3_Description"		 "<h1>Passive: Light Crossbow Aura</h1>+ %hp_aura% Health<br>+ %damage_aura%%% Damage<br>+ %ms_aura% Movement Speed<br><br>Radius: %aura_radius%. \n<h1><font color='#07ECFF'>Lightning Strike</font></h1>Each attack has a %static_chance%%% chance of creating a chain lightning bolt that can affect up to %static_strikes% enemies in a %static_radius% radius of the attacked enemy, dealing %chain_damage%%% of hero attack dmg as physical damage.\n<h1><font color='#FF00FF'>Evolve</font></h1>Every time <font color='#07ECFF'>Lightning Strike</font> procs you gain a charge, Evolves at %charge_awaken% charges."
+	"DOTA_Tooltip_Ability_item_light_crossbow_3_Note0"               "Top Underdgos get +1,2,3 stacks more per proc"
 	"DOTA_Tooltip_modifier_light_crossbow_3_aura"				 	"Light Crossbow Aura (Level 3)"
 	"DOTA_Tooltip_modifier_light_crossbow_3_aura_Description"	 	"Increases Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Damage by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% and Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
 
@@ -2888,7 +2892,7 @@
 	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_duration"					"DURATION:"
 	"DOTA_Tooltip_modifier_mjz_broodmother_insatiable_hunger"							"Insatiable Hunger"
 	"DOTA_Tooltip_modifier_mjz_broodmother_insatiable_hunger_Description"				"Increased Damage, Attack Speed, and Lifesteam."
-	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_scepter_description"		"Spiders will get ability buff at the same time."
+	"DOTA_Tooltip_ability_mjz_broodmother_insatiable_hunger_scepter_Description"		"Spiders will get ability buff at the same time."
 
 	"DOTA_Tooltip_modifier_mjz_broodmother_insatiable_hunger_damage"                    "Insatiable Hunger Damage"
 	"DOTA_Tooltip_modifier_mjz_broodmother_insatiable_hunger_damage_Description"        "%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE% Base Attack Damage"
@@ -2900,7 +2904,7 @@
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_Lore"						"Black Arachnia continues to raise her young, even amidst the field of combat.  The brood quickly learns how to support their mother."
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_spiderling_duration"		"LIFETIME:"
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_count"						"COUNT:"
-	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_scepter_description"		"I will let you figure out what Aghanim does to this skill"
+	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_scepter_Description"		"I will let you figure out what Aghanim does to this skill"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_broodmother_spawn_spiderlings_count"	"+{s:value} Spiders Count"
 	"DOTA_Tooltip_ability_mjz_broodmother_spawn_spiderlings_true_strike_chance"		 "%Chance to Spawn with True Strike:"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_broodmother_spawn_spiderlings_damage"		"+{s:value} Spiders Damage"
@@ -3555,7 +3559,7 @@
 	"DOTA_Tooltip_modifier_mjz_lina_laguna_blade_delay_Description"		"Laguna Blade gaining +%dMODIFIER_PROPERTY_TOOLTIP% Int Multiplier per unit kill."
 		
 	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing"					"Lunar Blessing"
-	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing_Description"		"Increases the primary attribute for Luna and nearby allied heroes. Luna is also blessed with increased vision range at night."
+	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing_Description"		"Increases the primary attribute(Or All Stats but half effect for Universal heroes) for Luna and nearby allied heroes. Luna is also blessed with increased vision range at night."
 	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing_Lore"				"The Goddess of the Moon smiles upon her kin."
 	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing_radius"			"Radius: "
 	"DOTA_Tooltip_ability_mjz_luna_lunar_blessing_tooltip_bonus_night_vision"		"Night Vision Bonus: "
@@ -4830,7 +4834,7 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 "DOTA_Tooltip_ability_item_recipe_custom_apex"	"Recipe: Apex"
 "DOTA_Tooltip_ability_item_recipe_custom_ballista"	"Recipe: Ballista"
 "DOTA_Tooltip_Ability_item_custom_apex"					"Apex"
-"DOTA_Tooltip_Ability_item_custom_apex_Description"		"Increases your primary attribute by %primary_stat_percent%%%."
+"DOTA_Tooltip_Ability_item_custom_apex_Description"		"Increases your primary attribute by %primary_stat_percent%%% Or for universal all Stats but half effect."
 "DOTA_Tooltip_Ability_item_custom_ballista"						"Ballista"
 "DOTA_Tooltip_Ability_item_custom_ballista_Description"			"<h1>Passive: Precision</h1>Every %chance% hits will to deal %bonus_damage% pure damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Get a random number of Charges on Creation. All item stats and effects except Attack Range gets multiplied by charges, regardless if you have SS buff."
 "DOTA_Tooltip_Ability_item_custom_ballista_Lore"			"It actually does work on melee."
@@ -10685,6 +10689,7 @@ Contains all random skills"
 
 	"DOTA_Tooltip_ability_marci_unleash_custom"						"Unleash"
 	"DOTA_Tooltip_ability_marci_unleash_custom_Description"			"Marci taps a hidden power, gaining Fury charges that allow her to deliver a rapid sequence of strikes. The last strike in every Fury combo creates a damaging pulse around the target that slows movement and attack speed for %pulse_debuff_duration%s. In between Fury combos, Marci is unable to attack for %time_between_flurries%s.\n\nMarci receives a basic dispel when Unleash is cast and gains %bonus_movespeed%%% movement speed.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Some Items and Abilites will get improved when ultimate is active.(press Alt)"
+	"DOTA_Tooltip_ability_marci_unleash_custom_scepter_Description"	"Reduces Unleash cooldown by %scepter_cooldown_reduction% seconds and causes Unleash to apply a basic dispel on Marci. While Unleash is Active, all of Marci's abilities unleash pulses when cast. All of Marci's unleash pulses will silence units for %pulse_silence_duration% seconds.<br><br>DISPEL TYPE: Basic Dispel"
 	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Super Scepter improve list: CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger, Speedsters, Amalgamation,<font color='#E20624'>Evolving Light Crossbow(all)</font>, Aftershock."
 	"DOTA_Tooltip_ability_marci_unleash_custom_Lore"					"Though some have sought to understand its origins, Marci rebuffs all attempts to divine the source of her power."
 	"DOTA_Tooltip_ability_marci_unleash_custom_duration"				"DURATION:"
@@ -10694,8 +10699,13 @@ Contains all random skills"
 	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_move_slow_pct"		"%PULSE MOVEMENT SLOW:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_attack_slow_pct"	"PULSE ATTACK SLOW:"
 
+	"DOTA_Tooltip_ability_marci_unleash_Description"			"Marci taps a hidden power, gaining Fury charges that allow her to deliver a rapid sequence of strikes. The last strike in every Fury combo creates a damaging pulse around the target that slows movement and attack speed for %pulse_debuff_duration%s. In between Fury combos, Marci is unable to attack for %time_between_flurries%s.\n\nMarci receives a basic dispel when Unleash is cast and gains %bonus_movespeed%%% movement speed.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Some Items and Abilites will get improved when ultimate is active.(press Alt)"
+	"DOTA_Tooltip_ability_marci_unleash_Note0"					"Super Scepter improve list: CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger, Speedsters, Amalgamation,<font color='#E20624'>Evolving Light Crossbow(all)</font>, Aftershock."
+
+
 	"DOTA_Tooltip_ability_marci_companion_run_custom"						"Rebound"
 	"DOTA_Tooltip_ability_marci_companion_run_custom_Description"			"Vector targeted. Marci bounds to the targeted unit, choosing a direction and distance she will spring away from it. Upon reaching the unit, Marci lunges to her final destination, damaging and slowing enemies in the area.\n\nIf the unit she runs to is an ally, it receives %ally_movespeed_pct%%% bonus movement speed for %ally_buff_duration%s."
+	"DOTA_Tooltip_ability_marci_companion_run_custom_shard_Description"	"Rebound can be cast on enemies and causes Marci to also get the speed boost when she casts it."
 	"DOTA_Tooltip_ability_marci_companion_run_custom_Lore"			"With a friendly or brazen boost, Marci can find her way into the midst of any fight."
 	"DOTA_Tooltip_ability_marci_companion_run_custom_Note0"				"Has %min_jump_distance% minimum jump distance."
 	"DOTA_Tooltip_ability_marci_companion_run_custom_Note1"				"Marci's initial run to her target unit can be disjointed."

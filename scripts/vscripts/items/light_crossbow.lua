@@ -168,8 +168,18 @@ function modifier_light_crossbow_1:GetModifierProcAttack_Feedback(keys)
 			local charges = ability:GetCurrentCharges()
 			local limit = ability:GetSpecialValueFor("charge_awaken") 
 			local evolve = (charges >= limit)
+			local underdog10 = caster:HasModifier("modifier_bottom_10")
+			local underdog20 = caster:HasModifier("modifier_bottom_20")
+			local underdog50 = caster:HasModifier("modifier_bottom_50")
+			if underdog10 then
+				bonus_charge = bonus_charge + 3
+			elseif underdog20 then
+				bonus_charge = bonus_charge + 2
+			elseif underdog50 then
+				bonus_charge = bonus_charge + 1
+			end	
 			if has_ss and marci_ult then
-				bonus_charge = 2								
+				bonus_charge = bonus_charge + 1								
 			end	            
 			ability:SetCurrentCharges(charges + bonus_charge)               
 			if evolve then
@@ -313,9 +323,19 @@ function modifier_light_crossbow_2:GetModifierProcAttack_Feedback(keys)
             local charges = ability:GetCurrentCharges()
             local limit = ability:GetSpecialValueFor("charge_awaken") 
             local evolve = (charges >= limit)
-            if has_ss and marci_ult then
-                bonus_charge = 2								
-            end	            
+			local underdog10 = caster:HasModifier("modifier_bottom_10")
+			local underdog20 = caster:HasModifier("modifier_bottom_20")
+			local underdog50 = caster:HasModifier("modifier_bottom_50")
+			if underdog10 then
+				bonus_charge = bonus_charge + 3
+			elseif underdog20 then
+				bonus_charge = bonus_charge + 2
+			elseif underdog50 then
+				bonus_charge = bonus_charge + 1
+			end	
+			if has_ss and marci_ult then
+				bonus_charge = bonus_charge + 1								
+			end	           
 			ability:SetCurrentCharges(charges + bonus_charge)               
             if evolve then
                 if not self.evolve_check then
@@ -453,9 +473,19 @@ function modifier_light_crossbow_3:GetModifierProcAttack_Feedback(keys)
             local charges = ability:GetCurrentCharges()
             local limit = ability:GetSpecialValueFor("charge_awaken") 
             local evolve = (charges >= limit)
-            if has_ss and marci_ult then
-                bonus_charge = 2								
-            end	            
+			local underdog10 = caster:HasModifier("modifier_bottom_10")
+			local underdog20 = caster:HasModifier("modifier_bottom_20")
+			local underdog50 = caster:HasModifier("modifier_bottom_50")
+			if underdog10 then
+				bonus_charge = bonus_charge + 3
+			elseif underdog20 then
+				bonus_charge = bonus_charge + 2
+			elseif underdog50 then
+				bonus_charge = bonus_charge + 1
+			end	
+			if has_ss and marci_ult then
+				bonus_charge = bonus_charge + 1								
+			end	          
 			ability:SetCurrentCharges(charges + bonus_charge)               
             if evolve then
                 if not self.evolve_check then
@@ -598,8 +628,18 @@ function modifier_thunder_hammer:OnAttackLanded(keys)  --and not self:GetParent(
 		local charges = ability:GetCurrentCharges()
 		local limit = ability:GetSpecialValueFor("charge_awaken") 
 		local evolve = (charges >= limit)		
+		local underdog10 = caster:HasModifier("modifier_bottom_10")
+		local underdog20 = caster:HasModifier("modifier_bottom_20")
+		local underdog50 = caster:HasModifier("modifier_bottom_50")
+		if underdog10 then
+			bonus_charge = bonus_charge + 3
+		elseif underdog20 then
+			bonus_charge = bonus_charge + 2
+		elseif underdog50 then
+			bonus_charge = bonus_charge + 1
+		end	
 		if has_ss and marci_ult then
-			bonus_charge = 2								
+			bonus_charge = bonus_charge + 1								
 		end	            
 		ability:SetCurrentCharges(charges + bonus_charge)
 		if evolve then
@@ -701,9 +741,19 @@ function modifier_thunder_hammer:GetModifierProcAttack_Feedback(keys)
             local charges = ability:GetCurrentCharges()
             local limit = ability:GetSpecialValueFor("charge_awaken") 
             local evolve = (charges >= limit)
-            if has_ss and marci_ult then
-                bonus_charge = 2								
-            end	            
+			local underdog10 = caster:HasModifier("modifier_bottom_10")
+			local underdog20 = caster:HasModifier("modifier_bottom_20")
+			local underdog50 = caster:HasModifier("modifier_bottom_50")
+			if underdog10 then
+				bonus_charge = bonus_charge + 3
+			elseif underdog20 then
+				bonus_charge = bonus_charge + 2
+			elseif underdog50 then
+				bonus_charge = bonus_charge + 1
+			end	
+			if has_ss and marci_ult then
+				bonus_charge = bonus_charge + 1								
+			end	            
 			ability:SetCurrentCharges(charges + bonus_charge)               
             if evolve then
                 if not self.evolve_check then

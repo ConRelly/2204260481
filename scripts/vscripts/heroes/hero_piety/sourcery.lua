@@ -243,7 +243,7 @@ function modifier_sourcery_aura:GetModifierPhysicalArmorBonus()
 end
 function modifier_sourcery_aura:GetModifierMagicalResistanceBonus()
 	if self:GetAbility() then
-		local armor = self:GetCaster():GetMagicalArmorValue() * self:GetAbility():GetSpecialValueFor("aura_armor")
+		local armor = self:GetCaster():Script_GetMagicalArmorValue(false, self:GetCaster()) * self:GetAbility():GetSpecialValueFor("aura_armor")
 		if self:GetStackCount() == 0 then
 			if self:GetCaster():HasModifier("modifier_sourcery_active") then
 				return armor

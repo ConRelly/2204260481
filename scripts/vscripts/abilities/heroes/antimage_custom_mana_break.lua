@@ -59,7 +59,7 @@ function modifier_antimage_custom_mana_break:OnAttackLanded(keys)
 				end                                 
 			end				
 			local damage = mana_per_hit * ability:GetSpecialValueFor("mana_burn_as_damage")			
-			target:ReduceMana(mana_per_hit)
+			target:Script_ReduceMana(mana_per_hit, nil)
 			SendOverheadEventMessage(nil, OVERHEAD_ALERT_MANA_LOSS, target, mana_per_hit, nil)
 			if RandomInt(0,100) < chance then
 				self:OnRefresh()
