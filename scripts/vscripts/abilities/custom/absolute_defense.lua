@@ -27,9 +27,9 @@ function modifier_jotaro_absolute_defense:IsHidden()
 	return true
 end
 function modifier_jotaro_absolute_defense:GetPriority()
-	return MODIFIER_PRIORITY_HiGH 
+	return MODIFIER_PRIORITY_LOW
 end
-if IsServer() then
+--[[ if IsServer() then
 	function modifier_jotaro_absolute_defense:OnCreated(t)
 		self.ab = self:GetAbility()
 		self.parent = self:GetParent()
@@ -45,12 +45,13 @@ if IsServer() then
 			ParticleManager:ReleaseParticleIndex(part)
 			SendOverheadEventMessage(nil, OVERHEAD_ALERT_BLOCKED, t.target, 0, nil)
 			--self.parent:EmitSound("jotaro_absolute_defense")
-			self.ab:UseResources(true, true, true, true)
-			return 1
-		end
+			self.ab:UseResources(false, false, false, true)
+			return 0
+		end 
 		return 0
 	end
-end
+
+end ]]
 function modifier_jotaro_absolute_defense:GetAttributes()
     return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE + MODIFIER_ATTRIBUTE_PERMANENT
 end

@@ -730,13 +730,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"800"	
+		"ItemCost"						"1000"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_blast_staff_1"
 		"ItemRequirements"
 		{
-			"01"						"item_dagon;item_mystic_staff"
+			"01"						"item_mjz_kaya_5"
 		}
 	}	
 	"item_blast_staff_1"
@@ -1482,7 +1482,7 @@
 		"09"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"chance_hit"				"10"
+			"chance_hit"				"20"
 		}
 		"10"
 		{
@@ -1497,7 +1497,7 @@
 		"12"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"armor_reduc"					"65" 
+			"armor_reduc"					"75" 
 		}
 		"13"
 		{
@@ -4897,7 +4897,7 @@
 		"01"
 		{
 			"var_type"			  "FIELD_INTEGER"
-			"armor_reduction_pct"				"40"
+			"armor_reduction_pct"				"60"
 		}
 		"02"
 		{
@@ -5464,7 +5464,9 @@
 	}
 }
 "item_dagon"
+
 {
+	"ItemPurchasable"				"0"
 	"AbilitySpecial"
 	{
 		"01"
@@ -5491,6 +5493,7 @@
 }
 "item_dagon_2"
 {
+	"ItemPurchasable"				"0"
 	"AbilitySpecial"
 	{
 		"01"
@@ -5517,6 +5520,7 @@
 }
 "item_dagon_3"
 {
+	"ItemPurchasable"				"0"
 	"AbilitySpecial"
 	{
 		"01"
@@ -5543,6 +5547,7 @@
 }
 "item_dagon_4"
 {
+	"ItemPurchasable"				"0"
 	"AbilitySpecial"
 	{
 		"01"
@@ -5569,6 +5574,7 @@
 }
 "item_dagon_5"
 {
+	"ItemPurchasable"				"0"
 	"AbilitySpecial"
 	{
 		"01"
@@ -5660,6 +5666,7 @@
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"BaseClass"						"item_dagon_5"
+	"ItemPurchasable"				"0"
 	"AbilityTextureName"			"ultimate_dagon"
 	"AbilityCastRange"				"2400"
 	"AbilityCastPoint"				"0.0"
@@ -7516,7 +7523,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_negative_armor"	"5 8 11 17 30"
+				"aura_negative_armor"	"5 10 15 25 50"
 			}
 		}
 	}
@@ -10137,13 +10144,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"1250"	
+		"ItemCost"						"2600"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_dagon_v2"
 		"ItemRequirements"
 		{
-			"01"						"item_dagon_5;item_kaya"
+			"01"						"item_essence_ring;item_mjz_kaya_5"
 		}
 	}
 	"item_mjz_dagon_v2"
@@ -18086,7 +18093,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ScriptFile"					"items/titan_relic.lua"
 		"AbilityTextureName"			"custom/titan_relic"
-		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemSellable"					"1"
 		"ItemIsNeutralDrop"				"1"
 		"ItemPurchasable"				"1"
@@ -18584,7 +18591,7 @@
 	"ItemStackable"					"0"  //this needs to be 0 all time or can be easy abused to have 50+ stacks
 	"ItemRequiresCharges"			"0"
 	"ItemKillable"	                "1"
-	"ItemShareability"				"ITEM_NOT_SHAREABLE"  // seems becasue its neutral it reamains sharable.
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"  // seems becasue its neutral it reamains sharable.
 	"ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER"
 	"Model"							"models/props_gameplay/neutral_box.vmdl"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
@@ -20898,7 +20905,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"525"
+				"bonus_armor"			"425"
 			}
 			"03"
 			{
@@ -33696,7 +33703,7 @@
 			"23"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"up_bash_incdmg"		"100"
+				"up_bash_incdmg"		"150"
 			}
 		}
 	}
@@ -35495,12 +35502,12 @@
 			"1"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_base_damage"			"3500"
+				"bonus_base_damage"			"35000"
 			}
 			"2"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_strength"			"1450"
+				"bonus_strength"			"1650"
 			}
 			"3"
 			{
@@ -35565,7 +35572,7 @@
 			"15"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"overwhelming_total_dmg"	"100"
+				"overwhelming_total_dmg"	"120"
 			}
 			"16"
 			{
@@ -35590,17 +35597,17 @@
 			"20"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"corr_armor_red_max"		"195"
+				"corr_armor_red_max"		"325"
 			}
 			"21"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"corr_duration"				"7"
+				"corr_duration"				"15"
 			}
 			"22"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"corr_armor_red_min"		"55"
+				"corr_armor_red_min"		"100"
 			}			
 		}
 	}

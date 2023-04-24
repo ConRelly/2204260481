@@ -295,14 +295,14 @@
 	"Ability2"				  "generic_hidden" //"jotaro_absolute_defense"
 	"Ability3"				 "spectre_custom_dispersion_boss" //"generic_hidden"
 	//"Ability4"				 "custom_aphotic_shield" //"generic_hidden"
-	"Ability5"				 "generic_hidden" //"generic_hidden"
+	//"Ability5"				 "jotaro_absolute_defense" //"generic_hidden"
 	"Ability6"				 "generic_hidden"
 	"Ability7"				 "generic_hidden"
 	"Ability8"				 "generic_hidden"
 	//"Ability9"				 "cold_slashes"	
 	"ArmorPhysical"			 "0"
 	"MagicalResistance"		 "0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 	"AttackDamageMin"		   "26"
 	"AttackDamageMax"		   "30"
 	"AttackRate"				"1.3"
@@ -10554,6 +10554,154 @@
 	"MovementSpeed"			 	"850"
 	"AttackAcquisitionRange"	"4500"		// Range within a target can be acquired.	
 }
+
+
+	// Major Imp
+	"npc_dota_warlock_major_imp"
+	{
+		// General
+		//----------------------------------------------------------------
+		//"Model"						"models/items/warlock/golem/greevil_master_greevil_golem/greevil_master_greevil_golem.vmdl"	// Model.
+		"Model"						"models/heroes/warlock/warlock_demon.vmdl"	// Model.
+		"BaseClass"					"npc_dota_unit_warlock_imp"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"2"
+		"ModelScale" 					".60"
+		"IsNeutralUnitType"			"1"
+		"ScaleSet"					"ScaleSet_imp"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"warlock_imp_explode"			// Ability 1
+		"Ability2"                  "bloodseeker_thirst"
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"40"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"1000"		// Damage range min.
+		"AttackDamageMax"			"1500"		// Damage range max.	
+		"AttackRate"				"2"		// Speed of attack.
+		"BaseAttackSpeed"			"200"
+		"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"8500"		// Range within a target can be acquired.
+		"AttackRange"				"110"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"50"
+		"HealthBarOffset"			"180"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"30"		// Experience earn.
+		"BountyGoldMin"				"5"			// Gold earned min.
+		"BountyGoldMax"				"5"			// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"550"		// Speed.
+		"MovementTurnRate"			"0.9"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"2500"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"HasInventory"				"0"
+	}
+
+	// Minor Imp
+	"npc_dota_warlock_minor_imp"
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models/heroes/warlock/warlock_demon.vmdl"	// Model.
+		"BaseClass"					"npc_dota_unit_warlock_imp"
+		"SoundSet"					"n_creep_Melee"
+		"Level"						"1"
+		"ModelScale" 					".40"
+		"IsNeutralUnitType"			"1"
+		"ScaleSet"					"ScaleSet_imp"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"warlock_imp_explode"			// Ability 1
+		"Ability2"                  "bloodseeker_thirst"
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"20"			// Physical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"380"		// Damage range min.
+		"AttackDamageMax"			"480"		// Damage range max.	
+		"AttackRate"				"2"		// Speed of attack.
+		"BaseAttackSpeed"			"200"
+		"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"8500"		// Range within a target can be acquired.
+		"AttackRange"				"100"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			"0"			// Speed of projectile.		   
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"40"
+		"HealthBarOffset"			"150"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"17"		// Experience earn.
+		"BountyGoldMin"				"3"			// Gold earned min.
+		"BountyGoldMax"				"3"			// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"550"		// Speed.
+		"MovementTurnRate"			"0.5"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"2000"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"HasInventory"				"0"
+	}
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////

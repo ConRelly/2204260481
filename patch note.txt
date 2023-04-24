@@ -2497,6 +2497,20 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * and some other stuff
 
 
+* Fixed Demigods and Gods not taking dmg from magic and physical.
+* Increased xp and gold ratio by ~30%. 
+* Removed vanilla dagon
+* Assault Cuirass lvl 5 has 50 armor reduction aura from 30
+* Stygian Desolator has 10 more armor reduction
+* Willbreaker from 40% base armor reduction to 75% base armor reduction
+* Crossbow - base armor reduced from 65% to 75%.
+* Warlock Shard Goblins buffed (hp, attack, ms, explosion), but they will not have the Summoner Time passive.
+* Abyssal Water Blade UP effect increased from 100% to 150%.
+* Boss Shiva now has 100 less armor.
+* Hammer of the Divine item received some buffs.
+* and some other stuff/fixes
+
+
 
 
 **Update Notes spellings will get corrected before the live update.

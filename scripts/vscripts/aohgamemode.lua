@@ -382,12 +382,21 @@ function AOHGameMode:OnDamageDealt(damageTable)
 				local attackerPlayerId = attacker:GetPlayerOwnerID()
 				local victim_name = victim:GetUnitName()
 				if damageTable.damage > 1 then -- pointless to update tables and lag for 0 or 1
-					if AOHGameMode.isArcane[attackerPlayerId] then
-						if damageTable.damagetype_const ~= 1 then
+					if damageTable.damagetype_const ~= 1 then
+						if AOHGameMode.isArcane[attackerPlayerId] then
 							arcane_staff_calculate_crit(attacker, victim, damageTable)
 						end
 					end
 					local dmg_dealt = damageTable.damage -- arcane staff might update this value so i added after isArcane
+					if victim:HasModifier("modifier_jotaro_absolute_defense") then
+						if victim:GetMaxHealth() * 0.07 <= dmg_dealt then
+							local part = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", PATTACH_CENTER_FOLLOW, victim)
+							ParticleManager:DestroyParticle(part, false)
+							ParticleManager:ReleaseParticleIndex(part)
+							SendOverheadEventMessage(nil, OVERHEAD_ALERT_BLOCKED, victim, 0, nil)
+							return false							
+						end	
+					end	
 					if victim and victim:GetDayTimeVisionRange() ~= 1337 then --npc conduit(1337)
 						if attackerPlayerId and attackerPlayerId >= 0 and attacker:IsOpposingTeam(victim:GetTeam()) then
 							local victim_hp = victim:GetHealth() --get victim curent healt so we make sure we don't record overkill dps
@@ -589,16 +598,16 @@ function AOHGameMode:InitVariables()
 			end
 		end
 	end	
-	self._goldRatio = 2.3 - (0.30 * (5 - self._playerNumber))
+	self._goldRatio = 3.0 - (0.3 * (5 - self._playerNumber))
 	print("updating ratios")
-	self._expRatio = 1.60 - (0.30 * (5 - self._playerNumber))
+	self._expRatio = 2.0 - (0.3 * (5 - self._playerNumber))
 	if self._playerNumber < 2 then
-		self._goldRatio = 0.85
-		self._expRatio = 0.40
+		self._goldRatio = 0.9
+		self._expRatio = 0.5
 	end	
 	if self._playerNumber < 2 and not self.starting_intems then
-		self._goldRatio = 0.75
-		self._expRatio = 0.40
+		self._goldRatio = 0.9
+		self._expRatio = 0.5
 		local playerHero = PlayerResource:GetPlayer(0):GetAssignedHero()
 
 		Notifications:TopToAll({text="#game_begin_benediction", duration=5})

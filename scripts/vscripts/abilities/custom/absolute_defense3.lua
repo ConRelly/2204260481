@@ -39,7 +39,7 @@ if IsServer() then
 		return {MODIFIER_PROPERTY_AVOID_DAMAGE}
 	end
 	function modifier_jotaro_absolute_defense3:GetModifierAvoidDamage(t)
-		if self.ab:IsCooldownReady() and t.target == self.parent and self.parent:GetMaxHealth()*self.ab:GetSpecialValueFor("hp_pct")/100 <= t.damage and self.ab:GetLevel() >= 1 then
+		if self.ab:IsCooldownReady() and t.target == self.parent and self.parent:GetMaxHealth()*self.ab:GetSpecialValueFor("hp_pct")/100 <= t.original_damage and self.ab:GetLevel() >= 1 then
 			if self.parent:HasModifier("modifier_item_helm_of_the_undying_active") then return 0 end
 			
 			--self.parent:SetHealth(t.damage + self.parent:GetHealth())

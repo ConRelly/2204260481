@@ -39769,7 +39769,7 @@
 			"01"
 			{
 				"var_type"		  "FIELD_FLOAT"
-				"hp_pct"			"5"
+				"hp_pct"			"5"  //hardcoded 7%
 			}
 		}
 	}
@@ -39790,7 +39790,7 @@
 			"01"
 			{
 				"var_type"		  "FIELD_FLOAT"
-				"hp_pct"			"10"
+				"hp_pct"			"10" //hardcoded
 			}
 		}
 	}
@@ -39811,7 +39811,7 @@
 		"01"
 		{
 			"var_type"		  "FIELD_FLOAT"
-			"hp_pct"			"65.0"
+			"hp_pct"			"100.0"
 		}
 		"02"
 		{

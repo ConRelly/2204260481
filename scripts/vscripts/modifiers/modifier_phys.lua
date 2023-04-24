@@ -32,7 +32,7 @@ function modifier_phys:GetModifierIncomingPhysicalDamage_Percentage()
 	local base = 0
 	if armor < 110 then 
 		if armor < 5 then
-			base = -90 
+			base = -88 
 		else	
 			base = math.floor((84 - (armor / 1.3))) * (-1)
 		end

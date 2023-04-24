@@ -101,19 +101,19 @@ function modifier_abyssal_water_blade:OnAttack(keys)
 	not keys.attacker:IsIllusion() and
 	not keys.attacker:HasModifier("modifier_abyssal_water_blade_internal_cd") and
 	not keys.attacker:HasModifier("modifier_monkey_king_fur_army_soldier") and
-	not keys.attacker:HasModifier("modifier_monkey_king_fur_army_soldier_hidden") and
-	not keys.attacker:HasAbility("faceless_void_time_lock") and
-	not keys.attacker:HasAbility("spirit_breaker_greater_bash") and
-	not keys.attacker:HasAbility("slardar_bash") then
-		if self:GetParent():IsRangedAttacker() then
-			if RollPseudoRandom(self:GetAbility():GetSpecialValueFor("bash_chance_ranged"), self) then
+	not keys.attacker:HasModifier("modifier_monkey_king_fur_army_soldier_hidden") then --and
+	--not keys.attacker:HasAbility("faceless_void_time_lock") and
+	--not keys.attacker:HasAbility("spirit_breaker_greater_bash") and
+	--not keys.attacker:HasAbility("slardar_bash") then
+		--if self:GetParent():IsRangedAttacker() then
+--[[ 			if RollPseudoRandom(self:GetAbility():GetSpecialValueFor("bash_chance_ranged"), self) then
 				self.bash_proc = true
-			end
-		else
+			end ]]
+		--else
 			if RollPseudoRandom(self:GetAbility():GetSpecialValueFor("bash_chance_melee"), self) then
 				self.bash_proc = true
 			end
-		end
+		--end
 	end
 end
 function modifier_abyssal_water_blade:OnAttackLanded(keys)
