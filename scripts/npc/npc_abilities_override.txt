@@ -9752,7 +9752,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"LevelsBetweenUpgrades"		 "10"
-		"AbilityCooldown"				"15"
+		"AbilityCooldown"				"19"
 		"AbilityCastPoint"				"0.2"
 		"AbilityChannelTime"			"3.0"
 
@@ -11089,6 +11089,29 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+
+	"special_bonus_unique_shadow_demon_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6542"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"1.5"
+				"ad_linked_abilities"			"shadow_demon_shadow_poison"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+
+
 	"shadow_demon_demonic_purge"
 	{
 		// General

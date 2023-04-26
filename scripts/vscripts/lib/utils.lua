@@ -402,7 +402,7 @@ function CDOTA_BaseNPC:DropItem(hItem, sNewItemName, bLaunchLoot, owner, purchas
 	end
 
 	if bLaunchLoot then
-		--hItem:LaunchLoot(false, 250, 0.5, vLocation + vRandomVector)
+		hItem:LaunchLoot(false, 250, 0.5, vLocation + vRandomVector, nil)
 	end
 end
 
@@ -926,7 +926,7 @@ function DropItemOrInventory(playerID, itemName)
 						newItem:SetPurchaseTime(0)
 						local drop = CreateItemOnPositionSync(origin, newItem )
 						local pos_launch = origin+RandomVector(RandomFloat(150,200))
-						--newItem:LaunchLoot(false, 200, 0.75, pos_launch)
+						newItem:LaunchLoot(false, 200, 0.75, pos_launch, nil)
 						Notifications:Top(playerID,{text="Your inventory is full, item has been dropped near you", style={color="red"}, duration=5})
 					end
 				end)
@@ -951,7 +951,7 @@ function DropItemOrInventory2(playerID, itemName)
 						newItem:SetPurchaseTime(0)
 						local drop = CreateItemOnPositionSync(origin, newItem )
 						local pos_launch = origin+RandomVector(RandomFloat(150,200))
-						--newItem:LaunchLoot(false, 200, 0.75, pos_launch)
+						newItem:LaunchLoot(false, 200, 0.75, pos_launch, nil)
 						Notifications:Top(playerID,{text="Your inventory is full, item has been dropped near you(owner)", style={color="red"}, duration=5})
 					end
 				end)
@@ -1052,7 +1052,7 @@ function DropLootOrInventory(playerID, itemName)
 						newItem:SetPurchaseTime(0)
 						local drop = CreateItemOnPositionSync(origin, newItem )
 						local pos_launch = origin+RandomVector(RandomFloat(150,200))
-						--newItem:LaunchLoot(false, 200, 0.75, pos_launch)
+						newItem:LaunchLoot(false, 200, 0.75, pos_launch, nil)
 					end
 				end)
 			end	

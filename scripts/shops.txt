@@ -84,6 +84,8 @@
 		"item"      "item_timeless_relic"
 		"item"		"item_air_essence"
 		"item"		"item_water_essence"
+		"item"		"item_fire_essence"
+		"item"		"item_earth_essence"
 		"item"      "item_weapon_fragment"
 		"item"      "item_removed_skill"
 		"item"      "item_enchanter"

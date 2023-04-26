@@ -131,7 +131,7 @@ function AOHGameMode:_GoldDropConsoleCommand( cmdName, goldToDrop )
 		spawnPoint = heroEnt:GetAbsOrigin()
 	end
 	local drop = CreateItemOnPositionSync( spawnPoint, newItem )
-	--newItem:LaunchLoot( true, 300, 0.75, spawnPoint + RandomVector( RandomFloat( 50, 350 ) ) )
+	newItem:LaunchLoot( true, 300, 0.75, spawnPoint + RandomVector( RandomFloat( 50, 350 ) ), nil )
 end
 
 

@@ -2520,11 +2520,21 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+
 * Fixed the new dota update bug (waves not continuing)
 * Trying to fix some rare bug on multicast self targeting(and sucide because of that). i can't replicate it so report if orgre is still doing that.
 * Beastmaster Aghanim skill now has more lvls and better dmg.
 * Seer Stone CD reduced to 30 sec.
 * The new Dota update may have brought some more bugs (crashes).
+
+
+* Changed the air sphere to fire sphere from Ring of Ice
+* Fire sphere now can be made from any other element and Earth sphere from air or water. (can't do that with all spheres because of infitite loop crash)
+* Greater orb of destruction from 87 to 99 armor reduction, duration to 15 sec.
+* Replaced lvl 25 Shadow Demon talent with -1.5s shadow poison cd.
+
+
+
 
 
 

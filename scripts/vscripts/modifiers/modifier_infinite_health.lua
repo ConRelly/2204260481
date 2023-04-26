@@ -107,7 +107,7 @@ function Drop_gold_bag(unit, nGold)
         local vcenter = Vector(0,0,0)
         local drop = CreateItemOnPositionSync(vcenter, newItem)
         local dropTarget = vcenter + RandomVector(RandomFloat(50, 550))
-        --newItem:LaunchLoot(false, 300, 0.75, dropTarget)
+        newItem:LaunchLoot(false, 300, 0.75, dropTarget, nil)
     end   
 end    
 
@@ -117,7 +117,7 @@ function create_item_drop(item_name, pos)
 	item:SetStacksWithOtherOwners(true)
 
 	local drop = CreateItemOnPositionSync(pos, item)
-	--item:LaunchLoot(false, 300, 0.75, pos)
+	item:LaunchLoot(false, 300, 0.75, pos, nil)
 	drop.Holdout_IsLootDrop = true
 end
 

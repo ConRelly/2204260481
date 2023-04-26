@@ -138,7 +138,7 @@ function AOHGameRound:End()
 	local maxRadius = 2250
 	local runePos = GetRandomPointOnMap(center, minRadius, maxRadius)
 	local itemPos = GetRandomPointOnMap(center, minRadius, maxRadius)
-	if RollPercentage(50) then
+	if RollPercentage(100) then
 		local rune = CreateRune(runePos, DOTA_RUNE_XP)
 		create_item_drop("item_tome_of_knowledge", itemPos)
 	end
@@ -149,7 +149,7 @@ function create_item_drop(item_name, pos)
 	item:SetPurchaseTime(0)
 	item:SetStacksWithOtherOwners(true)
 	local drop = CreateItemOnPositionSync(pos, item)
-	--item:LaunchLoot(false, 300, 0.75, pos)
+	item:LaunchLoot(false, 300, 0.75, pos, nil)
 end
 
 
@@ -408,7 +408,7 @@ function AOHGameRound:_CheckForGoldBagDrop(killedUnit)
 			newItem:SetCurrentCharges(nGoldToDrop)
 			local drop = CreateItemOnPositionSync(killedUnit:GetAbsOrigin(), newItem)
 			local dropTarget = killedUnit:GetAbsOrigin() + RandomVector(RandomFloat(50, 350))
-			--newItem:LaunchLoot(false, 300, 0.75, dropTarget)
+			newItem:LaunchLoot(false, 300, 0.75, dropTarget, nil)
 		end	
 	end	
 end

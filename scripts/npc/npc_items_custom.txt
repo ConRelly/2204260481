@@ -197,7 +197,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"87"
+				"armor_reduction"		"99"
 			}
 			"02"
 			{
@@ -212,7 +212,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"9"
+				"duration"				"15"
 			}
 		}
 	}
@@ -19873,6 +19873,8 @@
 		{
 			//"01"						"item_chest_1"
 			"01"						"item_water_essence"
+			"02"                        "item_air_essence"
+			"03"                        "item_earth_essence"
 		}
 	}
 
@@ -20389,6 +20391,7 @@
 			//"01"						"item_fire_essence"
 			//"02"						"item_water_essence"
 			"01"						"item_air_essence"
+			"02"						"item_water_essence"
 		}
 	}   
 
@@ -27393,7 +27396,7 @@
 		"ItemResult"					"item_ring_of_ice"
 		"ItemRequirements"
 		{
-			"01"						"item_air_essence;item_water_essence"
+			"01"						"item_fire_essence;item_water_essence"
 			"02"                        "item_weapon_fragment"
 		}
 	}

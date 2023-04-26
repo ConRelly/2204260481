@@ -112,7 +112,7 @@ function DropItemWithTimer( unit, item_name, loot_duration )
 	local drop = CreateItemOnPositionForLaunch( spawnPoint, newItem )
 	local dropRadius = RandomFloat( 50, 100 )
 
-	--newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, spawnPoint + RandomVector( dropRadius ) )
+	newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, spawnPoint + RandomVector( dropRadius ))
 	if loot_duration then
 		newItem:SetContextThink( "KillLoot", function() return KillLoot( newItem, drop ) end, loot_duration )
 	end
@@ -124,7 +124,7 @@ function DropItemWithTimerGround( unit, item_name, loot_duration )
 	local newItem = CreateItem( item_name, nil, nil )
 	local drop = CreateItemOnPositionForLaunch( spawnPoint, newItem )
 
-	--newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, spawnPoint )
+	newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, spawnPoint)
 	if loot_duration then
 		newItem:SetContextThink( "KillLoot", function() return KillLoot( newItem, drop ) end, loot_duration )
 	end
@@ -139,7 +139,7 @@ function DropItemWithTimerAndRoll( unit, item_name, roll_percentage, loot_durati
 	local drop = CreateItemOnPositionForLaunch( spawnPoint, newItem )
 	local dropRadius = RandomFloat( 50, 100 )
 
-	--newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, spawnPoint + RandomVector( dropRadius ) )
+	newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, spawnPoint + RandomVector( dropRadius ))
 	if loot_duration then
 		newItem:SetContextThink( "KillLoot", function() return KillLoot( newItem, drop ) end, loot_duration )
 	end
@@ -215,7 +215,7 @@ function CreateNewItem( keys )
 	local drop = CreateItemOnPositionForLaunch( spawnPoint, newItem )
 	local dropRadius = RandomFloat( 50, 100 )
 
-	--newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, spawnPoint + RandomVector( dropRadius ) )
+	newItem:LaunchLootInitialHeight( false, 0, 150, 0.5, spawnPoint + RandomVector( dropRadius ))
 end
 
 function DealDamagePerTick( keys )

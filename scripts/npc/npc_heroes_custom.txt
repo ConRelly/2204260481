@@ -339,7 +339,7 @@
 	"Ability11"		"special_bonus_strength_200"
 	"Ability13"     "special_bonus_exp_boost_25"
 	"Ability14"		"special_bonus_magic_resistance_40"
-	"Ability16"		"special_bonus_hp_6000"
+	"Ability16"		"special_bonus_unique_shadow_demon_3"
 	"Ability17"		"special_bonus_spell_amplify_100"
 
 	"AttributeIntelligenceGain"		"15.3"
