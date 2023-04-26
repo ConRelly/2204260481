@@ -125,11 +125,21 @@ function AOHGameMode:OnPlayerChat(keys)
 		self._physdanage = true
 		self:_RenewStats()	
 	end
-	if keys.text == "-dev_disc" and Cheats:IsEnabled() and keys.playerid == 0 then
-		--self:TrackDisconnectedPlayers()
-		print("track disc comand")
+	function GetRandomPointOnMap(center, minRadius, maxRadius)
+		local direction = RandomVector(1)
+		local distance = RandomFloat(minRadius, maxRadius)
+		local offset = direction * distance
+		local pos = center + offset
+		return GetGroundPosition(pos, nil)
 	end
-
+	if keys.text == "-dev_rune" and Cheats:IsEnabled() and keys.playerid == 0 then
+		local center = Vector(0, 0, 0)
+		local minRadius = 50
+		local maxRadius = 750
+		local runePos = GetRandomPointOnMap(center, minRadius, maxRadius)
+		local rune = CreateRune(runePos, DOTA_RUNE_XP)
+		print("track rune comand")
+	end
 
 	
 	if keys.text == guessing_gmae_2 and not Cheats:IsEnabled() and time > 30 and not self._physdanage and not GameRules:IsGamePaused() then

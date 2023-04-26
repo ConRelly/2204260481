@@ -6,7 +6,7 @@ function OnUnequip(keys)
 	local container = item:GetContainer()
 	if container then
 		container:SetRenderColor(139,69,13)
-		item:LaunchLoot(false, 150, 0.5, vLocation + vRandomVector)
+		--item:LaunchLoot(false, 150, 0.5, vLocation + vRandomVector)
 	end
 end
 

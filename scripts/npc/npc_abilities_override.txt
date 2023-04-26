@@ -3043,7 +3043,7 @@
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"12"
 		"RequiredLevel"					"0"
-		"HasScepterUpgrade"				"1"
+		//"HasScepterUpgrade"				"1"
 		"AbilityCastRange"				"1500"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCooldown"				"8"
@@ -3098,6 +3098,65 @@
 				"max_throw_duration"		"0.9 0.9 0.8 0.8 0.7 0.7 0.6"
 			}
 		}
+	}
+
+	//=================================================================================================================
+	// Beastmaster: Wild Axes
+	//=================================================================================================================
+	"beastmaster_wild_axes"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5168"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Beastmaster.Wild_Axes"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"12"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1500"
+		"AbilityCastPoint"				"0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"					"275"
+			"spread"					"450"
+			"range"						"1500"
+			"axe_damage"
+			{
+				"value"					"90 870 1900 2730 5960 9890 22450"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"duration"						"12"
+			"damage_amp"
+			{
+				"value"				"1 2 3 4 5 7 10"
+				"special_bonus_unique_beastmaster_9"		"+2.5"
+			}
+			"AbilityCooldown"				
+			{
+				"value"			"8"
+				"special_bonus_unique_beastmaster_wild_axe_cooldown"						"-5"
+			}			
+			"min_throw_duration"						"0.7 0.7 0.6 0.6 0.5 0.4 0.3"
+			"max_throw_duration"						"0.9 0.9 0.8 0.8 0.7 0.7 0.6"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 
 
@@ -3223,6 +3282,10 @@
 		}
 	}
 
+
+	//=================================================================================================================
+	// Beastmaster: Primal Roar
+	//=================================================================================================================
 	"beastmaster_primal_roar"
 	{
 		// General
@@ -3238,6 +3301,8 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Beastmaster.Primal_Roar"
+
+		"AbilityDraftUltScepterAbility"		"beastmaster_drums_of_slom"
 		"MaxLevel"					  "9"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -3246,15 +3311,15 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"42"
+		
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200"		
+		"AbilityManaCost"				"150"		
 		
 		// Cast Range
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600 800 1000 1200 1400 1600 2000 2400 2800"
+		"AbilityCastRange"				"600"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -3263,65 +3328,85 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"duration"					"3"
+			"damage"					
 			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"3.0"
+				"value"			"950 4250 12600 23500 48750 95000 195600 420000 754600"
+				"CalculateSpellDamageTooltip" "1"
 			}
-			"02"
+			"side_damage"				
 			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"950 4250 12600 23500 48750 95000 195600 420000 754600"
+				"value"			"450 2250 6600 13500 28750 45000 105600 220000 454600"
+				"CalculateSpellDamageTooltip" "1"
 			}
-			"03"
+			"damage_radius"				
 			{
-				"var_type"					"FIELD_INTEGER"
-				"side_damage"				"450 2250 6600 13500 28750 45000 105600 220000 454600"
+				"value"		"900"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+				"CalculateSpellDamageTooltip"		"0"
 			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_radius"				"600"
+			"slow_movement_speed_pct"	"-60"
+			"slow_attack_speed_pct"		"-60"
+			"push_distance"				"450"
+			"push_duration"				"1.0"
+			"slow_duration"				"3"
+			"movement_speed"			"300"
+			"movement_speed_duration"			"10"
+			"AbilityCooldown"
+			{ 
+				"value"				"42"
+				"special_bonus_unique_beastmaster_7"		"-30"
 			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"slow_movement_speed_pct"	"-60"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"slow_attack_speed_pct"		"-60"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"push_distance"				"450"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"push_duration"				"1.0"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"5"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"movement_speed"			"400"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"movement_speed_duration"			"10"
-			}
+
 		}
 	}
+
+
+	//=================================================================================================================
+	// Beastmaster: Drums of Slom (scepter)
+	//=================================================================================================================
+	"beastmaster_drums_of_slom"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1005"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_ElderTitan.EchoStomp"
+		"IsGrantedByScepter"			"1"
+		"MaxLevel"						"5"
+		"LevelsBetweenUpgrades"         "18"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"						"800"
+			"max_stacks"					"70"
+			"stack_decay_time"				"0.5"
+			"min_drum_hit_interval"			"0.4"
+			"max_drum_hit_interval"			"3"
+
+			"base_damage"						
+			{
+				"value"			"900 6800 26500 137000 245000"
+				"CalculateSpellDamageTooltip" "1"
+			}
+			"heal_pct"						"1"
+			"creep_heal_pct"				"1"
+			"aura_radius"					"1200"
+		}
+	}
+
 	"bloodseeker_thirst"
 	{
 		// General
@@ -24755,7 +24840,7 @@
 		"ItemCost"						"600"
 		"ItemStockMax"					"10"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
-		"ItemPurchasable"				"1"
+		"ItemPurchasable"				"0"
 		"ItemStockInitial"				"1"
 		"ItemStockTime"					"47.0"
 		"ItemInitialStockTime"			"400.0"

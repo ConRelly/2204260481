@@ -28,7 +28,7 @@ if IsServer() then
 		self.parent = self:GetParent()
 		if self.parent:HasModifier("modifier_super_scepter") then
 			if self.parent:HasModifier("modifier_marci_unleash_flurry") then
-				marci_bonus = 7
+				marci_bonus = 10
 			end                                 
 		end 		
 		self.parent:AddNewModifier(self.parent, self, "modifier_bonus_primary_controller", {})

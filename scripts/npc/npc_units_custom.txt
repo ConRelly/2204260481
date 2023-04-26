@@ -12654,7 +12654,7 @@
 
 
 		"BountyGoldMin"				"2000"		// Gold earned min.
-		"BountyGoldMax"				"10000"		// Gold earned max.
+		"BountyGoldMax"				"4000"		// Gold earned max.
 
 		"BoundsHullName"			"DOTA_HULL_SIZE_BARRACKS"			// Hull type used for navigation/locomotion.
 		"RingRadius"				"100"

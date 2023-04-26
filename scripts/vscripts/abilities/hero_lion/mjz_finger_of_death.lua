@@ -347,7 +347,7 @@ function GrantItemDropToHero(hPlayerHero, szItemName)
 		newItem:SetSellable(true)
 		local drop = CreateItemOnPositionSync(hPlayerHero:GetAbsOrigin(), newItem)
 		local dropTarget = hPlayerHero:GetAbsOrigin() + RandomVector(RandomFloat(50, 150))
-		newItem:LaunchLoot(false, 150, 0.75, dropTarget)
+		--newItem:LaunchLoot(false, 150, 0.75, dropTarget)
 
 		return newItem
 	end

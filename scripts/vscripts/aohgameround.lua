@@ -133,6 +133,32 @@ function AOHGameRound:End()
 	for _,spawner in pairs(self._vSpawners) do
 		spawner:End()
 	end
+	local center = Vector(0, 0, 0)
+	local minRadius = 50
+	local maxRadius = 2250
+	local runePos = GetRandomPointOnMap(center, minRadius, maxRadius)
+	local itemPos = GetRandomPointOnMap(center, minRadius, maxRadius)
+	if RollPercentage(50) then
+		local rune = CreateRune(runePos, DOTA_RUNE_XP)
+		create_item_drop("item_tome_of_knowledge", itemPos)
+	end
+end
+
+function create_item_drop(item_name, pos)
+	local item = CreateItem(item_name, nil, nil)
+	item:SetPurchaseTime(0)
+	item:SetStacksWithOtherOwners(true)
+	local drop = CreateItemOnPositionSync(pos, item)
+	--item:LaunchLoot(false, 300, 0.75, pos)
+end
+
+
+function GetRandomPointOnMap(center, minRadius, maxRadius)
+	local direction = RandomVector(1)
+	local distance = RandomFloat(minRadius, maxRadius)
+	local offset = direction * distance
+	local pos = center + offset
+	return GetGroundPosition(pos, nil)
 end
 
 
@@ -382,7 +408,7 @@ function AOHGameRound:_CheckForGoldBagDrop(killedUnit)
 			newItem:SetCurrentCharges(nGoldToDrop)
 			local drop = CreateItemOnPositionSync(killedUnit:GetAbsOrigin(), newItem)
 			local dropTarget = killedUnit:GetAbsOrigin() + RandomVector(RandomFloat(50, 350))
-			newItem:LaunchLoot(false, 300, 0.75, dropTarget)
+			--newItem:LaunchLoot(false, 300, 0.75, dropTarget)
 		end	
 	end	
 end

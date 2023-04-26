@@ -2511,6 +2511,21 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * and some other stuff/fixes
 
 
+* Reduced the gold reward from the killing tree from 2k-10k to 2k-4k and increased the xp and gold reward per tick (xp by 2x and gold by 2.5x).
+* Apex and Luna Blessing (btw, they don't stack) now give all stats with full effect for Universal Heroes, from half effect.
+* Primary Attribute Tome now works on Universal Heroes and gives 20 to all.
+* Added xp rune and shield to cursed shovel list.
+* An xp rune will appear at the end of each round and 50% for an xp tome too (seems xp tome can't be put in shop anymore) and seems xp runes won't give any xp until at least 10.
+* Reduced Greater Pipe shield.
+
+
+
+* Fixed the new dota update bug (waves not continuing)
+* Trying to fix some rare bug on multicast self targeting(and sucide because of that). i can't replicate it so report if orgre is still doing that.
+* Beastmaster Aghanim skill now has more lvls and better dmg.
+* Seer Stone CD reduced to 30 sec.
+* The new Dota update may have brought some more bugs (crashes).
+
 
 
 **Update Notes spellings will get corrected before the live update.

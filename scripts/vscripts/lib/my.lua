@@ -307,7 +307,7 @@ function create_item_drop(item_name, pos)
 	item:SetStacksWithOtherOwners(true)
 
 	local drop = CreateItemOnPositionSync(pos, item)
-	item:LaunchLoot(false, 300, 0.75, pos)
+	--item:LaunchLoot(false, 300, 0.75, pos)
 	drop.Holdout_IsLootDrop = true
 end
 

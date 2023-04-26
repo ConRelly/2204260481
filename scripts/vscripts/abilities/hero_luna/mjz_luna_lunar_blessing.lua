@@ -98,9 +98,9 @@ function modifier_class:_Init()
 		elseif pa == 2 then
 			self.int_bonus = bonus
 		else
-			local bonus1 = math.floor(unit:GetIntellect() * (self.primary_attribute_per / 200))
-			local bonus2 = math.floor(unit:GetAgility() * (self.primary_attribute_per / 200))
-			local bonus3 = math.floor(unit:GetStrength() * (self.primary_attribute_per / 200))			
+			local bonus1 = math.floor(unit:GetIntellect() * (self.primary_attribute_per / 100))
+			local bonus2 = math.floor(unit:GetAgility() * (self.primary_attribute_per / 100))
+			local bonus3 = math.floor(unit:GetStrength() * (self.primary_attribute_per / 100))			
 			self.int_bonus = bonus1 
 			self.agi_bonus = bonus2 
 			self.str_bonus = bonus3 

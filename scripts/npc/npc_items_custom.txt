@@ -141,7 +141,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"barrier_block"			"600000"
+				"barrier_block"			"100000"
 			}
 			"09"
 			{
@@ -161,7 +161,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"barrier_block_creep"	"2500000"
+				"barrier_block_creep"	"100000"
 			}
 		}
 	}
@@ -18723,6 +18723,39 @@
 		}
 	}
 }
+
+"item_custom_fusion_rune"
+{
+	"BaseClass"						"item_lua"
+	"ScriptFile"					"items/item_custom_fusion_rune_2.lua"
+	"AbilityTextureName"			"item_fusion_rune"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"ItemSellable"					"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+	"AbilityCooldown"				"60.0"
+
+	"AbilityCastRange"				"7550"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"		"30"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"cooldown"		"60"
+		}
+	}
+}
+
+
 "item_recipe_phoenix_ash2"
 {
 	"BaseClass"						"item_datadriven"
@@ -18788,7 +18821,7 @@
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"ItemIsNeutralDrop"				"0"
-		"AbilityCooldown"				"45"
+		"AbilityCooldown"				"30"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"AbilityValues"
@@ -22616,6 +22649,7 @@
 //			"10"						"item_shadow"
 //		}
 //	}
+
 
 // Divine Rapier
 	"item_rapier_cus"

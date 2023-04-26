@@ -209,6 +209,7 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 					if not caster:IsAlive() then return end
 					if used_ability == nil then return end
 					if used_ability:IsNull() then return end
+					if ability_behavior_includes(used_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) then return end
 					if cursor_position ~= nil then
 						caster:SetCursorPosition(cursor_position)
 					else

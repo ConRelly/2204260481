@@ -109,18 +109,20 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 			elseif random_rune == 2 then
 				CreateRune(self:GetCursorPosition(), DOTA_RUNE_HASTE)
 			elseif random_rune == 3 then
-				CreateRune(self:GetCursorPosition(), DOTA_RUNE_REGENERATION)
+				CreateRune(self:GetCursorPosition(), DOTA_RUNE_SHIELD)
 			elseif random_rune == 4 then
 				CreateRune(self:GetCursorPosition(), DOTA_RUNE_ARCANE)
 			elseif random_rune == 5 then
 				CreateRune(self:GetCursorPosition(), DOTA_RUNE_INVISIBILITY)
 			elseif random_rune == 6 then
-				CreateRune(self:GetCursorPosition(), DOTA_RUNE_WATER)
+				CreateRune(self:GetCursorPosition(), DOTA_RUNE_XP)
 			elseif random_rune == 7 then
 				CreateRune(self:GetCursorPosition(), DOTA_RUNE_BOUNTY)
 			end
 		elseif random_int > self.rune and random_int <= self.book_of_stats then
 			SpawnItem("item_primary_attribute_book", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
+			CreateRune(self:GetCursorPosition(), DOTA_RUNE_XP)
+			CreateRune(self:GetCursorPosition(), DOTA_RUNE_SHIELD)
 		elseif random_int > self.book_of_stats and random_int <= self.kobold then
 			if chen_first_spawn and self:GetCaster():GetName() == "npc_dota_hero_chen" then
 				chen_first_spawn = false

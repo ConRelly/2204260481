@@ -21150,12 +21150,12 @@
 			"02"
 			{
 				"var_type"			  "FIELD_FLOAT"
-				"exp"					"5" 	// regular: 1.8
+				"exp"					"10" 	// regular: 1.8
 			}
 			"03"
 			{
 				"var_type"			  "FIELD_FLOAT"
-				"gold"		  		"8" 	// regular: 1.8
+				"gold"		  		"20" 	// regular: 1.8
 			}
 			"04"
 			{
@@ -39769,7 +39769,7 @@
 			"01"
 			{
 				"var_type"		  "FIELD_FLOAT"
-				"hp_pct"			"5"  //hardcoded 7%
+				"hp_pct"			"5"  //hardcoded %7
 			}
 		}
 	}
