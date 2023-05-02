@@ -261,7 +261,7 @@ function modifier_pipe_of_dezun_magic_immune_buff:OnRefresh()
 		local parent = self:GetParent()
 		if parent and IsValidEntity(parent) and parent:IsAlive() then
 			if self:GetAbility() then
-				parent:AddNewModifier(parent, self:GetAbility(), "modifier_pipe_of_dezun_magic_immune_aura_limiter", {duration = 6})
+				parent:AddNewModifier(parent, self:GetAbility(), "modifier_pipe_of_dezun_magic_immune_aura_limiter", {duration = 8})
 			end	
 		end	
 	end	
@@ -271,7 +271,7 @@ function modifier_pipe_of_dezun_magic_immune_buff:OnDestroy()
 		local parent = self:GetParent()
 		if parent and IsValidEntity(parent) and parent:IsAlive() then
 			if self:GetAbility() then
-				parent:AddNewModifier(parent, self:GetAbility(), "modifier_pipe_of_dezun_magic_immune_aura_limiter", {duration = 6})
+				parent:AddNewModifier(parent, self:GetAbility(), "modifier_pipe_of_dezun_magic_immune_aura_limiter", {duration = 8})
 			end	
 		end	
 	end	

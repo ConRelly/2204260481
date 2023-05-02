@@ -212,7 +212,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"15"
+				"duration"				"5"
 			}
 		}
 	}
@@ -2185,27 +2185,27 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"250 500"
+			"bonus_health"			"500 1000"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"		"15 30"
+			"bonus_strength"		"50 100"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aura_radius"			"7000 7200"
+			"aura_radius"			"5000 7200"
 		}
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aura_bonus_health"		"1750 2250"
+			"aura_bonus_health"		"2750 4250"
 		}
 		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aura_bonus_strength"	"50 275"
+			"aura_bonus_strength"	"150 375"
 		}		
 	}
 }
@@ -2242,32 +2242,32 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"250 500"
+			"bonus_health"			"550 1000"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"		"15 30"
+			"bonus_strength"		"50 100"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aura_radius"			"7000 7200"
+			"aura_radius"			"5000 7200"
 		}
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aura_bonus_health"		"1750 2250"
+			"aura_bonus_health"		"2750 4250"
 		}
 		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aura_bonus_strength"	"50 275"
+			"aura_bonus_strength"	"150 375"
 		}
 		"08"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"aura_bonus_extra_health"	"15"
+			"aura_bonus_extra_health"	"20"
 		}		
 	}
 }
@@ -7547,7 +7547,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"2500"	
+		"ItemCost"						"500"	
 		"ItemShopTags"					""
 		"IsObsolete"					"0"
 		
@@ -7556,8 +7556,8 @@
 		"ItemPurchasable"				"1"
 		"ItemRequirements"
 		{
-			"01"						"item_formidable_chest"
-			"02"						"item_platemail;item_platemail;item_chainmail;item_chainmail;item_branches"
+			"01"						"item_formidable_chest;item_mjz_heart_4"
+			"02"						"item_mjz_heart_4;item_platemail;item_platemail;item_chainmail;item_chainmail;item_branches"
 		}
 	}
 	"item_mjz_attribute_mail"
@@ -7616,6 +7616,21 @@
 				"attr_return"			"100"
 				"LinkedSpecialBonus"		"special_bonus_unique_mjz_centaur_return_strength"
 			}
+			 "06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health"			"17"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"				"350"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen_pct"				"8"
+			}						
 		}
 
 		"precache"
@@ -13065,12 +13080,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"45 135 185 280 495"
+				"bonus_strength"		"45 135 185 280 695"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"400 800 1200 1600 4500"
+				"bonus_health"			"1000 1800 3200 5600 12000"
 			}
 			"03"
 			{
@@ -13080,7 +13095,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"health_regen_rate"		"1.0"
+				"health_regen_rate"		"3.0"
 			}
 			"05"
 			{
@@ -13134,12 +13149,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"45 135 185 280 495"
+				"bonus_strength"		"45 135 185 280 695"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"400 800 1200 1600 4500"
+				"bonus_health"			"1000 1800 3200 5600 12000"
 			}
 			"03"
 			{
@@ -13149,7 +13164,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"health_regen_rate"		"1.0"
+				"health_regen_rate"		"4.0"
 			}
 			"05"
 			{
@@ -13203,12 +13218,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"45 135 185 280 495"
+				"bonus_strength"		"45 135 185 280 695"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"400 800 1200 1600 4500"
+				"bonus_health"			"1000 1800 3200 5600 12000"
 			}
 			"03"
 			{
@@ -13218,7 +13233,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"health_regen_rate"		"1.0"
+				"health_regen_rate"		"5.0"
 			}
 			"05"
 			{
@@ -13275,12 +13290,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"45 135 185 280 495"
+				"bonus_strength"		"45 135 185 280 695"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"400 800 1200 1600 4500"
+				"bonus_health"			"1000 1800 3200 5600 12000"
 			}
 			"03"
 			{
@@ -13290,7 +13305,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"health_regen_rate"		"15.0"
+				"health_regen_rate"		"20.0"
 			}
 			"05"
 			{
@@ -18724,37 +18739,6 @@
 	}
 }
 
-"item_custom_fusion_rune"
-{
-	"BaseClass"						"item_lua"
-	"ScriptFile"					"items/item_custom_fusion_rune_2.lua"
-	"AbilityTextureName"			"item_fusion_rune"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-	"ItemSellable"					"0"
-	"ItemGloballyCombinable"		"0"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"Model"							"models/props_gameplay/neutral_box.vmdl"
-	"AbilityCooldown"				"60.0"
-
-	"AbilityCastRange"				"7550"
-
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"		"30"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"cooldown"		"60"
-		}
-	}
-}
-
 
 "item_recipe_phoenix_ash2"
 {
@@ -19511,7 +19495,7 @@
 			"2"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"66"
+				"bonus_damage"					"366" //per lvl
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"3"
@@ -21075,12 +21059,12 @@
 			"6"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stack_str"				"20"
+				"stack_str"				"25"
 			}
 			"7"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stack_agi"				"20"
+				"stack_agi"				"40"
 			}
 			"8"
 			{
@@ -35908,7 +35892,7 @@
 			"radius_expl"                   "2000"
 			"attack_asdmg_multiplier"		"2.0"
 			"slash_rate"                    "0.13"
-			"bonus_attack_lvl"              "1"
+			"bonus_attack_lvl"              "2"
 			"good_juju_cd"                  "17"
 		}
 		"precache"
@@ -35978,7 +35962,7 @@
 			"radius_expl"                   "2100"
 			"attack_asdmg_multiplier"		"4.0"
 			"slash_rate"                    "0.12"
-			"bonus_attack_lvl"              "1.5"
+			"bonus_attack_lvl"              "3.0"
 			"good_juju_cd"                  "15"
 		}
 		"precache"
@@ -36047,7 +36031,7 @@
 			"radius_expl"                   "2200"
 			"attack_asdmg_multiplier"		"5.0"
 			"slash_rate"                    "0.11"
-			"bonus_attack_lvl"              "2"
+			"bonus_attack_lvl"              "4"
 			"good_juju_cd"                  "14"
 		}
 		"precache"
@@ -36116,7 +36100,7 @@
 			"radius_expl"                   "2500"
 			"attack_asdmg_multiplier"		"6.0"
 			"slash_rate"                    "0.11"
-			"bonus_attack_lvl"              "2.5"
+			"bonus_attack_lvl"              "6.0"
 			"good_juju_cd"                  "14"
 		}
 		"precache"
@@ -36185,7 +36169,7 @@
 			"radius_expl"                   "3000"
 			"attack_asdmg_multiplier"		"8.0"
 			"slash_rate"                    "0.10"
-			"bonus_attack_lvl"              "3"
+			"bonus_attack_lvl"              "8"
 			"good_juju_cd"                  "12"
 		}
 		"precache"

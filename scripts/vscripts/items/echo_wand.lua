@@ -296,7 +296,7 @@ if IsServer() then
 	}
 	local include_table = {
 		riki_blink_strike = true,
-		phantom_assassin_phantom_strike = true,
+		--phantom_assassin_phantom_strike = true,
 		luna_eclipse_lua = true,
 		--obsidian_destroyer_custom_sanity_eclipse = true,
 	}

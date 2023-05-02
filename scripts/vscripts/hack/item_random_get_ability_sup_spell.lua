@@ -246,7 +246,7 @@ function GetRandomAbilityName( hero )
 		"mjz_crystal_maiden_frostbite",
 		"enchantress_untouchable",
 		"bristleback_warpath_lua",
-		"obs_replay",
+		--"obs_replay",
 		"jotaro_absolute_defense3",
 		"zanto_gari",
 		"blood_madness",

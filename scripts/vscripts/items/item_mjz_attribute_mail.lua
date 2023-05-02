@@ -66,11 +66,24 @@ end
 function modifier_item_mjz_attribute_mail:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
+        MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+        MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE,
+
     }
 end
 
 function modifier_item_mjz_attribute_mail:GetModifierPhysicalArmorBonus()
-    return self:GetAbility():GetSpecialValueFor("bonus_armor")
+    if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_armor") end
+end
+function modifier_item_mjz_attribute_mail:GetModifierExtraHealthPercentage()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_health") end
+end
+function modifier_item_mjz_attribute_mail:GetModifierBonusStats_Strength()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_strength") end
+end
+function modifier_item_mjz_attribute_mail:GetModifierHealthRegenPercentage()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp_regen_pct") end
 end
 
 ------------------------------------------------------------------------------------------

@@ -93,11 +93,18 @@ function item_master_of_weapons_sword:OnSpellStart()
 			neutral_item_created:SetCurrentCharges(neutral_item:GetCurrentCharges())
 		end
 	end
+	local ignore_modifiers = {
+		["modifier_wind_rapier_agility_buff"] = true,
+		["modifier_item_pharaoh_crown"] = true,
+		["modifier_item_pharaoh_crown_initiate"] = true,
+		["modifier_custom_no_heal_effect"] = true,
+		--["modifier_wind_rapier_agility_buff"] = true,
+	}
 
 	-- Copy Modifiers
 	local caster_modifiers = self:GetCaster():FindAllModifiers()
 	for _,modifier in pairs(caster_modifiers) do
-		if modifier then
+		if modifier and not ignore_modifiers[modifier:GetName()] then
 --			local ModifierDuration = modifier:GetDuration()
 --			if ModifierDuration > 0 then
 				local added_modifier = image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetDuration()})

@@ -16413,7 +16413,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
-		"MaxLevel"					  	"7"
+		"MaxLevel"					  	"8"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
@@ -16429,29 +16429,28 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"				"15"
+			"duration"				"20"
 
 			"damage"
 			{
-				"value"				"920 4720 13600 26800 45500 97500 385400"
+				"value"				"1920 6720 18600 36800 65500 157500 385400 1220000"
 				"special_bonus_unique_viper_2"	"+43200"
 			}
-			"bonus_movement_speed"	"-50"
+			"bonus_movement_speed"	"-25"
 			"bonus_attack_speed"	"-80"
 			"AbilityCooldown"
 			{
 				"value"				"30"
-				"special_bonus_unique_viper_8"		"-50%"
+				"special_bonus_unique_viper_8"		"-70%"
 			}
 			"AbilityManaCost"
 			{
 				"value"				"400"
-				"special_bonus_unique_viper_8"		"-50%"
+				"special_bonus_unique_viper_8"		"-70%"
 			}
 			"projectile_speed"	"1200"
 			"max_charges"			"2"
 			"charge_restore_time"	"30.0"
-
 		}
 	}
 
@@ -19941,6 +19940,59 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Zuus: Arc Lightning
+	//=================================================================================================================
+	"zuus_arc_lightning"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5110"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"LevelsBetweenUpgrades"		    "3"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"		
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilitySound"					"Hero_Zuus.ArcLightning.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"850"
+		"AbilityCastPoint"				"0.2"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1.6"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 85 90 95"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"arc_damage"
+			{
+				"value"			"120 310 550 1210"
+			}
+			"radius"				"500 500 500 500"
+			"jump_count"			"5 7 9 15"
+			"jump_delay"			"0.25 0.25 0.25 0.25"
+			"damage_health_pct"		
+			{
+				"value"				"0 1 2 3"
+				"special_bonus_unique_zeus_2"	"+1"
+
+			}				
+		}
+		
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+
 	"special_bonus_unique_zeus_2"
 	{
 		"AbilitySpecial"
@@ -24826,7 +24878,7 @@
 // Black King Bar
 	"item_black_king_bar"
 	{
-		"AbilityCooldown"				"50"
+		"AbilityCooldown"				"70"
 		"AbilitySpecial"
 		{
 			"01"
@@ -26926,7 +26978,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"15"
+				"duration"				"6"
 			}
 		}
 	}

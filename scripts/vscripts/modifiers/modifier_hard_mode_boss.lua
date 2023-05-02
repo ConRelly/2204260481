@@ -52,9 +52,7 @@ function modifier_hard_mode_boss:GetModifierPhysicalArmorBonus()
 	local parent = self:GetParent()
 	local lvl = parent:GetLevel() or 10
 	if lvl > 15 then 
-		lvl = lvl + 60
-	else
-		lvl = lvl + 30	
+		lvl = lvl + 50	
 	end	
 	return lvl
 end

@@ -138,7 +138,7 @@ function AOHGameRound:End()
 	local maxRadius = 2250
 	local runePos = GetRandomPointOnMap(center, minRadius, maxRadius)
 	local itemPos = GetRandomPointOnMap(center, minRadius, maxRadius)
-	if RollPercentage(100) then
+	if RollPercentage(90) then
 		local rune = CreateRune(runePos, DOTA_RUNE_XP)
 		create_item_drop("item_tome_of_knowledge", itemPos)
 	end

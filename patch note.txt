@@ -2528,10 +2528,27 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * The new Dota update may have brought some more bugs (crashes).
 
 
-* Changed the air sphere to fire sphere from Ring of Ice
-* Fire sphere now can be made from any other element and Earth sphere from air or water. (can't do that with all spheres because of infitite loop crash)
-* Greater orb of destruction from 87 to 99 armor reduction, duration to 15 sec.
-* Replaced lvl 25 Shadow Demon talent with -1.5s shadow poison cd.
+
+
+* Fixed the new dota bug that freezes the game at min 7 (was something with neutrals)
+* Changed air sphere to fire sphere from ring of ice
+* The fire sphere can now be made from any other element and the earth sphere can be made from air or water. (can't do this with all spheres due to infinite loop crash)
+* Greater Orb of Destruction armor reduction from 87 to 99.
+* Replaced lvl 25 Shadow Demon talent with -1.5s Shadow Poison cd.
+* Early bosses in Hard have 30 less armor and later bosses have 10 less armor.
+* Xp tome per round from 50% to 90%.
+* Alchemist Jinada has lower cd at higher levels and increased % dmg.
+* Viper Ultimate CDR talent added and one more lvl added to Ultimate.
+* Devil's Daedalus bonus dmg per lvl increased from 66 to 366 and the edible version is also slightly better.
+* Master of Weapon's bonus dmg per lvl from explosion stacks increased (for all forms).
+* God Slayer agi per stack increased from 20 to 40, str from 20 to 25.
+* Heart of Tarrasque lvl 5 hp regen increased from 15 to 20 and a little more str.
+* Attribute Mail now builds from Tarrasque lvl 4 and has additional stats (hp % regen , bonus % hp and str).
+* Dragonhead stats buffed (both lvls).
+* Fixed a bug with Master of Weapons and Wind Rapier.
+* Fusion Rune fixed.
+* Reduced Dragon Scale Burn duration to 6 sec (was crashing on illusions if Burn was still on target 7 sec after illusion died).
+* Boss Caustic Finale duration from 7s to 3 (ChaosKnight/void round had a chance to crash because of that)
 
 
 

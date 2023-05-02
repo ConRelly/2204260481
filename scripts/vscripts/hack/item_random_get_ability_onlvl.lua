@@ -226,7 +226,7 @@ function GetRandomAbilityName( hero )
 		"enchantress_untouchable",
 		"nevermore_dark_lord",
 		"bristleback_warpath_lua",
-		"obs_replay",
+		--"obs_replay",
 		"jotaro_absolute_defense3",
 		"zanto_gari",
 		"blood_madness",

@@ -1,5 +1,5 @@
 -- Item Bonus
-bonus_damage = 77
+bonus_damage = 420
 bonus_damage_pct = 66
 
 -- Crit Chance

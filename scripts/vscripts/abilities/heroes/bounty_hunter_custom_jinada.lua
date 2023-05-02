@@ -60,10 +60,10 @@ if IsServer() then
         if attacker ~= self.parent then 
             return 
 		end
-		if target:GetUnitName() == "npc_dota_hero_target_dummy" then
+--[[ 		if target:GetUnitName() == "npc_dota_hero_target_dummy" then
 			return
-		end		
-		if self.ability:GetCooldownTimeRemaining() > 0 then
+		end ]]		
+		if not self.ability:IsCooldownReady() then
 			return
 		end
 		local damage = self.gold_ratio * PlayerResource:GetTotalEarnedGold(self.parent:GetPlayerID())
