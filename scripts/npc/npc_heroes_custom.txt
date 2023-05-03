@@ -14,7 +14,6 @@
 "npc_dota_hero_abaddon"
 {
 	"UnitLabel"					"no_underdog"
-	//"Ability1"              "aghanim_laser"
 	"Ability3"				"mjz_pudge_rot"
 	"Ability5"				"custom_aphotic_shield"
 	"Ability10"				"special_bonus_unique_mjz_pudge_rot_health"
@@ -2138,14 +2137,15 @@
 		"Ability5"				"mjz_zuus_lightning"
 		"Ability6"				"mjz_zuus_thundergods_wrath"
 		"Ability7"				"mjz_bristleback_quill_spray_autocast3"
-		"Ability10"				"special_bonus_cdr_15"
+		"Ability10"				"special_bonus_intelligence_30"
 		// "Ability13"				"special_bonus_unique_zeus"
 		"Ability11"				"special_bonus_hp_6000"
 		"Ability12"				"special_bonus_reincarnation_90"
 		"Ability13"				"special_bonus_unique_mjz_zuus_static_field_intelligence"
-		"Ability14"             "special_bonus_spell_amplify_100"
+		"Ability14"             "special_bonus_cdr_20"
 		"Ability15"				"special_bonus_mp_1000"
-
+		"Ability16"				"special_bonus_spell_amplify_100"
+		"Ability17"   			"special_bonus_unique_zeus_2"         
 		"AttributeIntelligenceGain"		"8.5"
 	}
 	

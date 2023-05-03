@@ -249,6 +249,8 @@ function AOHSpawner:_DoSpawn()
 		local vSpawnLocation = vBaseSpawnLocation + RandomVector(RandomFloat(0, 200))
 
 		local entUnit = CreateUnitByName(self._szNPCClassName, vSpawnLocation, true, nil, nil, DOTA_TEAM_BADGUYS)
+		-- Set the unit to respawn after it dies
+		entUnit:SetUnitCanRespawn(true)	
 		if entUnit then
 			self._nUnitsSpawnedThisRound = self._nUnitsSpawnedThisRound + 1
 			self._nUnitsCurrentlyAlive = self._nUnitsCurrentlyAlive + 1

@@ -2272,12 +2272,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"travel_distance"		"1600"
+				"travel_distance"		"1500"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"travel_speed"			"300"
+				"travel_speed"			"450"
 			}			
 			"05"
 			{
@@ -2297,17 +2297,17 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"main_damage"			"10000"
+				"main_damage"			"19000"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"burn_duration"			"4.0"
+				"burn_duration"			"2.5"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"burn_dps"				"3246"
+				"burn_dps"				"8246"
 
 			}
 		}
@@ -2340,7 +2340,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_multiplier"			"12.0"
+				"crit_multiplier"			"25.0"
 			}
 			"02"
 			{
@@ -2370,7 +2370,7 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"1550"
+				"damage"					"2550"
 			}
 			"08"
 			{
@@ -3609,7 +3609,7 @@
 "custom_mana_void_wrapper"
 {
 	"BaseClass"					 "ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -3619,7 +3619,8 @@
 	"AbilityCastPoint"				"0.0"
 	"AbilityCooldown"				"15"
 	"AbilityManaCost"				"0"
-	"IsCastableWhileHidden" "1"
+	"IsOnCastBar"				    "0"
+//	"IsCastableWhileHidden" "1"
 	"AbilitySpecial"
 	{
 		"01"
@@ -3656,7 +3657,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"BaseClass"					 "antimage_mana_void"
 	"AbilityCastRange"				"800"
-	"AbilityCastPoint"				"0.25"
+	"AbilityCastPoint"				"0.8"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	"AbilityCooldown"				"15.0"
 	"AbilityManaCost"				"0"
@@ -3665,7 +3666,7 @@
 		"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"mana_void_damage_per_mana"		"9"
+			"mana_void_damage_per_mana"		"15"
 		}
 		"02"
 		{

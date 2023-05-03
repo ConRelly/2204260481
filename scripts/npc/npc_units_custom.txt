@@ -363,7 +363,7 @@
 		}		
         "EquippedItems"
         {
-//			"Boss Resistance"   { "Item"        "item_boss_resistance_50" }
+			//"Boss Resistance"   { "Item"        "item_dragon_scale" }
             //"Unstoppable"       { "Item"        "item_plain_ring" }
         }
 	}
@@ -6374,9 +6374,9 @@
 	}
 
 	"Ability1"					"custom_aura_mana_drain"
-	"Ability2"				  "custom_mana_break"
-	"Ability3"				  "custom_mana_void"
-	//"Ability4"				  "custom_spell_reflect"
+	"Ability2"				  "custom_mana_void"
+	"Ability3"				  "custom_mana_break"
+	"Ability4"				  "generic_hidden"
 	"Ability5"				  "custom_revenge_behavior"
 	"Ability6"					"custom_blink"
 	"Ability7"					"custom_mana_void_wrapper"
@@ -6389,7 +6389,7 @@
 	"Ability14"					"generic_hidden"
 	"Ability15"					"generic_hidden"
 	"Ability16"					"generic_hidden"
-	"Ability17"				 "custom_antimage_revenge"
+	"Ability17"				    "custom_antimage_revenge"
 
 	"ArmorPhysical"				"125"
 	"MagicalResistance"			"90"

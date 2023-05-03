@@ -71,9 +71,11 @@ if IsServer() then
 					ApplyDamage(damage_table)
 					EmitSoundOn("Hero_Nevermore.Shadowraze.Arcana", u)
 				end
-				ParticleManager:DestroyParticle(particleIndex, true)
+				ParticleManager:DestroyParticle(particleIndex, false)
+				ParticleManager:DestroyParticle(particleEndIndex, false)
+				ParticleManager:ReleaseParticleIndex(particleIndex)
+				ParticleManager:ReleaseParticleIndex(particleEndIndex)
 				EmitSoundOn("Hero_Antimage.ManaVoid", dummy)
-				
 				dummy:ForceKill(false)
 			end
 		)

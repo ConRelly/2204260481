@@ -47,7 +47,7 @@ function modifier_custom_revenge_behavior:OnCreated()
 		self.parent_previous_health = self.parent:GetHealth()
 		self.disable_regen = self.ability:GetSpecialValueFor("disable_regen")
 		self.mana_regen_percent = 0
-		self.isDisabled = false;
+		self.isDisabled = false
 		self:StartIntervalThink(self.interval)
 		--print(self.revengeAbility:GetAbilityName())
 	end

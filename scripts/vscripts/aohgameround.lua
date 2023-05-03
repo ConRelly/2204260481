@@ -109,18 +109,20 @@ function AOHGameRound:End()
 	end
 	self._vEventHandles = {}
 	local skip = 0.05
-	for _, unit in pairs(FindUnitsInRadius(DOTA_TEAM_BADGUYS, Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
+	for _, unit in pairs(FindUnitsInRadius(DOTA_TEAM_BADGUYS, Vector(0, 0, 0), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_DEAD, FIND_ANY_ORDER, false)) do
 		if (not unit:IsTower()) and (not unit.mjz_retain) then
 			--if not self._endlessMode_started then
- 			skip = skip + 0.05
+ 			skip = skip + 0.03
 			local name = unit:GetUnitName()
 			Timers:CreateTimer({
-				endTime = 10 + skip, 
+				endTime = 50 + skip, 
 				callback = function()
-					if not unit:IsNull() and IsValidEntity(unit) then
-						print("focekill unit: "..name)
-						unit:ForceKill(false)
-						if not unit:IsNull() and IsValidEntity(unit) then
+					if unit and not unit:IsNull() and IsValidEntity(unit) then
+						--print("focekill unit: "..name .." or remove if Dead")
+						if unit:IsAlive() then
+							unit:ForceKill(false)
+						elseif not unit:IsNull() and IsValidEntity(unit) then
+							--print("remove unit: "..name )
 							UTIL_Remove(unit)
 						end	
 					end	

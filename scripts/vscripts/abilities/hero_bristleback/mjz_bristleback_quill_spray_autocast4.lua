@@ -54,6 +54,7 @@ local NoAutocast = {
     ["enchantress_impetus"] = true,
     ["mjz_kunkka_tidebringer"] = true,
     ["huskar_burning_spear"] = true,
+    ["rubick_spell_steal"] = true,
 
 
 };

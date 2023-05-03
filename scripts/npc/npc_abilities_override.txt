@@ -19918,28 +19918,7 @@
 	}
 
 
-	"zuus_arc_lightning"
-	{
-		"LevelsBetweenUpgrades"		 "3"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
-		"AbilityCooldown"				"1.6" //"1.6"
-		"AbilityCastRange"				"1050"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"arc_damage"			"80 210 450 1210"
-				"LinkedSpecialBonus"	"special_bonus_unique_zeus_2"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"jump_delay"			"0.20"
-			}
-		}
-	}
+
 	//=================================================================================================================
 	// Zuus: Arc Lightning
 	//=================================================================================================================
@@ -19983,7 +19962,7 @@
 			"jump_delay"			"0.25 0.25 0.25 0.25"
 			"damage_health_pct"		
 			{
-				"value"				"0 1 2 3"
+				"value"				"3"
 				"special_bonus_unique_zeus_2"	"+1"
 
 			}				

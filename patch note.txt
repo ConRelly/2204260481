@@ -2553,6 +2553,12 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Now spawned enemies by wave round will not be deleted by dota 7 sec after that and by a custom system after ~1min, this will help with many crashes from new dota update rule when debuffs linger more then 7 sec after death.
+* Fixed Antimage boss not using some skills correctly
+* Replaced some unused talents from Zeus.
+* and some other stuff
+
+
 
 
 **Update Notes spellings will get corrected before the live update.

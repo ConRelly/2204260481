@@ -243,16 +243,18 @@ function generic_target(keys)
 	local delay = keys.delay
 	local spell = caster:FindAbilityByName(spells_target[keys.ability_index])
 	target:AddNewModifier(caster, ability, "modifier_target_delay", {duration = delay})
-	Timers:CreateTimer(
-		delay - spell:GetCastPoint(), 
-		function()
-			if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil then
-				return 0.5
+	if spell then
+		Timers:CreateTimer(
+			delay - spell:GetCastPoint(), 
+			function()
+				if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil then
+					return 0.5
+				end
+				spell:EndCooldown()
+				caster:CastAbilityOnTarget(target, spell, -1)
 			end
-			spell:EndCooldown()
-			caster:CastAbilityOnTarget(target, spell, -1)
-		end
-	)
+		)
+	end	
 end
 
 function generic_target_random(keys)
