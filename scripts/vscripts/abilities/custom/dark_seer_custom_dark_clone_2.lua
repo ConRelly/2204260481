@@ -23,7 +23,7 @@ function dark_seer_custom_dark_clone_2:OnSpellStart()
 	illusion:AddNewModifier(caster, self, "modifier_kill", {duration = duration})
 	if caster:HasScepter() then
 		if caster:HasModifier("modifier_item_aghanims_shard") then
-			illusion:AddNewModifier(caster, self, "modifier_item_aghanims_shard", {})
+			--illusion:AddNewModifier(caster, self, "modifier_item_aghanims_shard", {})
 		end
 		illusion:AddNewModifier(caster, self, "modifier_item_ultimate_scepter_consumed", {})
 		if caster:HasModifier("modifier_super_scepter") then

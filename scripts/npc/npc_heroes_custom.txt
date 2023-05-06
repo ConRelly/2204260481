@@ -101,6 +101,7 @@
 {
 	"Ability2"		"dark_seer_custom_ion_shell"
 	"Ability4"		"generic_hidden"
+	//"Ability4"		"dark_seer_normal_punch"
 	"Ability6"		"dark_seer_custom_dark_clone_2"
 	"Ability10"		"special_bonus_ds_ion_shell_radius"
 	"Ability11"		"special_bonus_armor_18"
@@ -433,7 +434,10 @@
 {
 	"Ability11"     "special_bonus_hp_2000"
 	"Ability12"		"special_bonus_attack_damage_100"
+	"Ability14"		"special_bonus_unique_venomancer_4"
 	"Ability15"     "special_bonus_unique_venomancer_poisonsting_regen_reduction"
+	"Ability16"		"special_bonus_unique_venomancer_5"	
+	
 
 	"AttributeStrengthGain"			"7.7"
 	"AttributeIntelligenceGain"		"6.4"
@@ -2179,7 +2183,7 @@
 		"Ability4"				"mjz_puck_ethereal_jaunt"
 		"Ability6"				"faerie_dream_coil"
 		"Ability10"				"special_bonus_intelligence_30"
-		"Ability11"				"special_bonus_unique_puck_7"
+		"Ability11"				"special_bonus_unique_puck_mjz_orb"
 		"Ability12"				"special_bonus_spell_amplify_69"
 		"Ability13"				"special_bonus_mp_regen_300"
 		"Ability14"				"special_bonus_spell_block_18"

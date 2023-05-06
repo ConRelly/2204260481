@@ -293,6 +293,7 @@ if IsServer() then
 		snapfire_lil_shredder = true,
 		warlock_fatal_bonds = true,
 		muerta_pierce_the_veil = true,
+		mjz_silencer_global_silence = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

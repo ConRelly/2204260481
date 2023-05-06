@@ -105,9 +105,16 @@ function modifier_class:OnIntervalThink()
                     end   
                 local enemy_list = 0
                 if target_ability:GetAbilityTargetType() ~= 0 then                          
-                    enemy_list = FindUnitsInRadius(caster:GetTeamNumber(), pos, nil, radius_auto, 
-                        target_ability:GetAbilityTargetTeam(), target_ability:GetAbilityTargetType(), target_ability:GetAbilityTargetFlags() + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE,
-                        FIND_ANY_ORDER, false)
+                    if target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH then
+                        enemy_list = FindUnitsInRadius(caster:GetTeamNumber(), pos, nil, radius_auto, 
+                            DOTA_UNIT_TARGET_TEAM_ENEMY, target_ability:GetAbilityTargetType(), target_ability:GetAbilityTargetFlags() + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE,
+                            FIND_ANY_ORDER, false)                     
+                    else    
+                        enemy_list = FindUnitsInRadius(caster:GetTeamNumber(), pos, nil, radius_auto, 
+                            target_ability:GetAbilityTargetTeam(), target_ability:GetAbilityTargetType(), target_ability:GetAbilityTargetFlags() + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE,
+                            FIND_ANY_ORDER, false)
+                            --print("pass1")
+                    end
                 elseif target_ability:GetAbilityTargetTeam() ~= 0 then
                         enemy_list = FindUnitsInRadius(caster:GetTeamNumber(), pos, nil, radius_auto, 
                             target_ability:GetAbilityTargetTeam(), DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, target_ability:GetAbilityTargetFlags() + DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE,

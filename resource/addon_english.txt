@@ -3986,6 +3986,9 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 	"DOTA_Tooltip_ability_mjz_puck_ethereal_jaunt"	"Ethereal Jaunt"
 	"DOTA_Tooltip_ability_mjz_puck_ethereal_jaunt_Description"	"Teleports Puck to a flying Illusory Orb."	
 
+"DOTA_Tooltip_ability_special_bonus_unique_puck_mjz_orb"	"+{s:value}% Illusory Orb speed and distance"
+
+
 "DOTA_Tooltip_ability_mjz_pudge_dismember"											"Dismember"
 "DOTA_Tooltip_ability_mjz_pudge_dismember_Description"								"CHANNELED - Pudge chows down on an enemy unit, disabling it and dealing damage over time. Pudge gets healed for the same amount he damages. "
 "DOTA_Tooltip_ability_mjz_pudge_dismember_Lore"										"'When I'm through with these vermin, they'll be fit for a pie!'"
@@ -10590,7 +10593,7 @@ Contains all random skills"
 
 	"DOTA_Tooltip_ability_grimstroke_custom_spirit_walk"						"Ink Swell"
 	"DOTA_Tooltip_ability_grimstroke_custom_spirit_walk_Description"			"Grimstroke shrouds an allied unit in ink, increasing its movement speed. Enemies in range of the allied unit are damaged with inky tendrils over time. After %buff_duration% seconds it triggers, applying damage and stun in an area around the unit in proportion to how long ink tendril was near any hero."
-	"DOTA_Tooltip_ability_grimstroke_custom_spirit_walk_shard_description"			"Causes Ink Swell to deal 40% more damage and heal the target for 40% of the damage Ink Swell deals. Upon expiration, the target will receive a strong dispell."
+	"DOTA_Tooltip_ability_grimstroke_custom_spirit_walk_shard_description"		"Causes Ink Swell to deal %shard_bonus_damage_pct%%% more damage and heal the target for %shard_heal_pct%%% of the damage Ink Swell deals. Upon expiration, the target will receive a strong dispel.<br><br>DISPEL TYPE: Strong Dispel"
 	"DOTA_Tooltip_ability_grimstroke_custom_spirit_walk_Lore"					"Now that the rise of the ink tide no longer threatens to overwhelm Grimstroke, its tendrils of power are never far from his hand."
 	"DOTA_Tooltip_ability_grimstroke_custom_spirit_walk_buff_duration"			"BUFF DURATION:"
 	"DOTA_Tooltip_ability_grimstroke_custom_spirit_walk_movespeed_bonus_pct"	"%MOVEMENT SPEED BONUS:"

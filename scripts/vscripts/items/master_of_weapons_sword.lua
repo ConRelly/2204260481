@@ -98,7 +98,7 @@ function item_master_of_weapons_sword:OnSpellStart()
 		["modifier_item_pharaoh_crown"] = true,
 		["modifier_item_pharaoh_crown_initiate"] = true,
 		["modifier_custom_no_heal_effect"] = true,
-		--["modifier_wind_rapier_agility_buff"] = true,
+		["modifier_item_aghanims_shard"] = true,
 	}
 
 	-- Copy Modifiers

@@ -19,6 +19,7 @@ function ability_class:OnSpellStart()
 		local projectile_radius = GetTalentSpecialValueFor(ability, "radius")
 		local projectile_distance = GetTalentSpecialValueFor(ability, "max_distance")
 		local projectile_speed = GetTalentSpecialValueFor(ability, "orb_speed")
+		print("speed: "..projectile_speed)
 		local vision_radius = GetTalentSpecialValueFor(ability, "orb_vision")
 		local vision_duration = GetTalentSpecialValueFor(ability, "vision_duration")
 
@@ -42,6 +43,7 @@ function ability_class:OnSpellStart()
 			EffectName = projectile_name,
 			fDistance = projectile_distance,
 			fStartRadius = projectile_radius,
+			fExpireTime = GameRules:GetGameTime() + 10,
 			fEndRadius =projectile_radius,
 			vVelocity = projectile_direction * projectile_speed,
 		
@@ -181,7 +183,7 @@ end
 -----------------------------------------------------------------------------------------
 
 
--- 是否学习了指定天赋技能
+
 function HasTalent(unit, talentName)
     if unit:HasAbility(talentName) then
         if unit:FindAbilityByName(talentName):GetLevel() > 0 then return true end
@@ -189,26 +191,36 @@ function HasTalent(unit, talentName)
     return false
 end
 
--- 获得技能数据中的数据值，如果学习了连接的天赋技能，就返回相加结果
 function GetTalentSpecialValueFor(ability, value)
     local base = ability:GetSpecialValueFor(value)
     local talentName
+    local talentOperation
     local kv = ability:GetAbilityKeyValues()
     for k,v in pairs(kv) do -- trawl through keyvalues
         if k == "AbilitySpecial" then
             for l,m in pairs(v) do
                 if m[value] then
                     talentName = m["LinkedSpecialBonus"]
+                    talentOperation = m["LinkedSpecialBonusOperation"]
                 end
             end
         end
     end
     if talentName then 
         local talent = ability:GetCaster():FindAbilityByName(talentName)
-        if talent and talent:GetLevel() > 0 then base = base + talent:GetSpecialValueFor("value") end
+        if talent and talent:GetLevel() > 0 then 
+            local talentValue = talent:GetSpecialValueFor("value")
+            if talentOperation == "SPECIAL_BONUS_PERCENTAGE_ADD" then
+                base = base + base * talentValue * 0.01
+            else
+                base = base + talentValue
+            end
+        end
     end
     return base
 end
+
+
 
 --[[
     A quick function to create popups.

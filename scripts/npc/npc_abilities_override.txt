@@ -1239,18 +1239,7 @@
 			}
 		}
 	}
-	"special_bonus_unique_silencer"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"4560"
-				"ad_linked_abilities"			"silencer_curse_of_the_silent"
-			}
-		}
-	}
+
 	"special_bonus_unique_silencer_3"
 	{
 		"AbilitySpecial"
@@ -7958,7 +7947,7 @@
 		{
 			"damage_per_mana"		
 			{
-				"value"								"10 20 30 40 50"
+				"value"								"10 15 20 25 30"
 				"special_bonus_unique_medusa_6"		"+20"
 			}
 			"absorption_pct"						"40 45 50 55 60"
@@ -11446,31 +11435,67 @@
 		}
 
 	}
+	
+
+	//=================================================================================================================
+	// Silencer: Arcane Curse
+	//=================================================================================================================
 	"silencer_curse_of_the_silent"
 	{
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityCastPoint"				"0.25 0.25 0.25 0.25"
-		//"LevelsBetweenUpgrades"		"3"
-		"AbilitySpecial"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5377"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"LevelsBetweenUpgrades"         "7"
+		"MaxLevel"                      "7"
+		"AbilitySound"					"Hero_Silencer.Curse.Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"145"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.5"	// Mainly about damage
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
+			"damage"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"damage"			"90 480 1360 3500"
-				"LinkedSpecialBonus"	"special_bonus_unique_silencer"
+				"value"							"480 3500 9400 26500 58000 120000 245000"
+				"special_bonus_unique_silencer"		"+4500"
 			}
-			"03"
+			"application_damage"				"880 5500 14000 36500 78000 180000 345000"
+
+			"radius"			"500"
+			"duration"			"14"
+			"penalty_duration"			"2"
+			"movespeed"			"-10"
+			"penalty_multiplier"			"5"
+			"undispellable"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"			"14"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"penalty_duration"			"7"
+				"value"					"0"
+				"special_bonus_unique_silencer_arcane_curse_undispellable"		"+1"
 			}
 		}
-	}	
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}		
 	"silencer_last_word"
 	{
 		"AbilitySpecial"
@@ -13075,74 +13100,135 @@
 			}
 		}
 	}
+	"venomancer_latent_poison"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"986"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_QueenOfPain.ShadowStrike"
+		"IsGrantedByShard"				"1"
+		"MaxLevel"						"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.2"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+	
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"duration_damage"				
+				{
+					"value"					"2000"
+					"CalculateSpellDamageTooltip"	"1"
+				}
+				"movement_slow"			"-10"
+				"projectile_speed"		"1800"
+				"damage_interval"		"1.0"
+				"duration"				"7"
+				"explosion_damage"		"50000"
+				"explosion_stun_duration"	"1.6"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
+	}
+
+	//=================================================================================================================
+	// Venomancer: Poison Nova
+	//=================================================================================================================
 	"venomancer_poison_nova"
 	{
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5181"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Venomancer.PoisonNova"
-		"HasScepterUpgrade"				"1"
-		"MaxLevel"						"8"
-		"AbilityCastPoint"				"0.0"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityCooldown"				"50"
-		"AbilityManaCost"				"300"
-		"AbilityModifierSupportValue"	"0.0"
-		"AbilitySpecial"
+		"IsGrantedByScepter"			"1"
+		"MaxLevel"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
+			"radius"					"2500"
+			"start_radius"				"455"
+			"duration"					"25"
+			"damage"					"2"
+			"magic_resist"				"-30"
+			"speed"						"550"
+			"trigger_cd"				"10"
+		}
+	}
+
+	//=================================================================================================================
+	// Venomancer: Noxious Plague
+	//=================================================================================================================
+	"venomancer_noxious_plague"
+	{
+		"ID"			"1105"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilitySound"					"Hero_Venomancer.PoisonNova"
+		"FightRecapLevel"				"1"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"45"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.15"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200 300 400"
+
+		"AbilityValues"
+		{
+			"debuff_duration"			"30"
+			"impact_damage"				"1200 3240 6750"
+			"health_damage"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"1030"
-				"LinkedSpecialBonus"		"special_bonus_unique_venomancer_6"
+				"value"							"1.0"
+				"special_bonus_unique_venomancer_4" "1.0"
 			}
-			"02"
+			"debuff_radius"				"1000"
+			"movement_slow_max"			"30"
+			"attack_slow"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"start_radius"				"255"
+				"value"					"0"
+				"special_bonus_unique_venomancer_5"	"+200"
 			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"18"
-				"LinkedSpecialBonus"		"special_bonus_unique_venomancer_4"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"0.5 0.6 0.7 0.8 0.9 1.0 1.1 1.2"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"45"
-				"RequiresScepter"			"1"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration_scepter"			"21"
-				"LinkedSpecialBonus"		"special_bonus_unique_venomancer_4"
-				"RequiresScepter"			"1"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"0.9 1.1 1.2 1.3 1.4 1.5 1.7 2.0"
-				"RequiresScepter"			"1"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"speed"						"700"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"base_damage"				"120 480 1200 3240 6750 9400 12300 19500"
-			}
+
+			"projectile_speed"			"1200"		
 		}
 	}
 
@@ -14157,7 +14243,7 @@
 				}
 				"latch_distance"			"3500"
 				"latch_speed"				"1000 1000 1000 1000"
-				"tether_heal_amp"			"0.75 0.9 1.05 1.2"
+				"tether_heal_amp"			"60 80 100 120"
 				"self_bonus"				"0"
 				"slow"				"15 25 35 45"
 				"slow_duration"				"0.2"

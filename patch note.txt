@@ -2553,10 +2553,23 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
-* Now spawned enemies by wave round will not be deleted by dota 7 sec after that and by a custom system after ~1min, this will help with many crashes from new dota update rule when debuffs linger more then 7 sec after death.
+* Now spawned enemies by wave round will not be deleted by dota 7 sec after death and by a custom system after ~1min, this will help with many crashes from new dota update rule when debuffs linger more then 7 sec after death.
 * Fixed Antimage boss not using some skills correctly
 * Replaced some unused talents from Zeus.
 * and some other stuff
+
+
+
+* Autocast will now only target enemies with skills that have both options (enemy and ally).
+* Added new talent for Puck Q and probably fixed the bug where the orb did not disappear.
+* Darkseer Ultimate no longer gives shard to clone (seems to cause a crash/bug).
+* Silencer Q buffed (lvl, dmg and silence multiplayer)
+* Medusa Stone Arrows Up Skadi Bow no longer works from the backpack, but now works with the edible version.
+* Updated Io Q numbers to reflect Dota change from 1.2 x multiplayer to 120%.
+* Venomancer new ult and Aghanim fixed and updated.
+* Updated Grimstroke shard and Ink Swell dmg.
+* And other stuff and fixes.
+
 
 
 
