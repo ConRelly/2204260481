@@ -24,6 +24,7 @@ end
 function modifier_siltbreaker_passive:OnCreated( kv )
 	if IsServer() then
 		self:GetCaster().bInTorrents = false
+		self:GetParent().bAbsoluteNoCC = true
 	end
 end
 

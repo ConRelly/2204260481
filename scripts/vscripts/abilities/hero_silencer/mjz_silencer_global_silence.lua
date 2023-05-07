@@ -58,6 +58,7 @@ function modifier_debuff:GetEffectAttachType()
 end
 
 function modifier_debuff:CheckState()
+    if self:GetParent().bAbsoluteNoCC then return end
 	local state = {
 		[MODIFIER_STATE_SILENCED] = true,
 	}

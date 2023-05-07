@@ -2572,6 +2572,15 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Clinkz: Added back Clinckz Fire Barage, replaced 3 talents, Infernal Breath now has a talent and replaces Q. 
+* Fixed some CCs being able to affect gods and demigods, some still remain but have a higher cd or less duration.
+* Fixed Invoker being able to remove its ultimate.
+* and other fixes.
+
+
+
+
+
 
 
 **Update Notes spellings will get corrected before the live update.

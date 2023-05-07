@@ -143,6 +143,7 @@ function modifier_cold_clockwork:GetEffectName()
 end
 
 function modifier_cold_clockwork:CheckState()
+    if self:GetParent().bAbsoluteNoCC then return end
     local state = {
         [MODIFIER_STATE_SILENCED] = true
     }

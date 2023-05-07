@@ -13,6 +13,7 @@ function modifier_class:IsStunDebuff()
 end
 
 function modifier_class:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	local state = {
 		[MODIFIER_STATE_STUNNED] = true,
 		[MODIFIER_STATE_INVISIBLE] = false,

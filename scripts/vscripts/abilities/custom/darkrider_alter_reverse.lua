@@ -95,7 +95,10 @@ end
 function modifier_darkrider_alter_reverse_aura_debuff:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_darkrider_alter_reverse_aura_debuff:DeclareFunctions() return {MODIFIER_PROPERTY_OVERRIDE_ANIMATION} end
 function modifier_darkrider_alter_reverse_aura_debuff:GetOverrideAnimation( params ) return ACT_DOTA_FLAIL end
-function modifier_darkrider_alter_reverse_aura_debuff:CheckState() return {[MODIFIER_STATE_COMMAND_RESTRICTED] = true, [MODIFIER_STATE_STUNNED] = true} end
+function modifier_darkrider_alter_reverse_aura_debuff:CheckState()
+     if self:GetParent().bAbsoluteNoCC then return end
+     return {[MODIFIER_STATE_COMMAND_RESTRICTED] = true, [MODIFIER_STATE_STUNNED] = true}
+end
 
 if modifier_darkrider_alter_reverse_aura == nil then modifier_darkrider_alter_reverse_aura = class({}) end
 

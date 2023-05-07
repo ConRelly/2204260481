@@ -99,6 +99,7 @@ function modifier_frostbite:IsPurgable() return false end
 function modifier_frostbite:IsDebuff() return true end
 function modifier_frostbite:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_frostbite:CheckState()
+    if self:GetParent().bAbsoluteNoCC then return end
     local state = {
         -- [MODIFIER_STATE_STUNNED] = true,
         [MODIFIER_STATE_ROOTED] = true,

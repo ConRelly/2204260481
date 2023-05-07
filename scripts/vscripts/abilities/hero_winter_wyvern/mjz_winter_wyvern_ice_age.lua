@@ -101,6 +101,7 @@ function modifier_class_prisoner:IsHidden() return false end
 function modifier_class_prisoner:IsPurgable() return false end
 
 function modifier_class_prisoner:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	local state = { [MODIFIER_STATE_STUNNED] = true,
 					[MODIFIER_STATE_FROZEN] = true,
 					--[MODIFIER_STATE_SPECIALLY_DENIABLE] = true,

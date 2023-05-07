@@ -15,6 +15,7 @@ function modifier_generic_knockback_lua:DeclareFunctions()
 	return {MODIFIER_PROPERTY_OVERRIDE_ANIMATION}
 end
 function modifier_generic_knockback_lua:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {[MODIFIER_STATE_STUNNED] = self.stun}
 end
 

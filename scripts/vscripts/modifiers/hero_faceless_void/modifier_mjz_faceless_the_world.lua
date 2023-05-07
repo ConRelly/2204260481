@@ -161,6 +161,7 @@ function modifier_effect_enemy:IsHidden() return false end
 function modifier_effect_enemy:IsPurgable() return false end
 
 function modifier_effect_enemy:CheckState()
+    if self:GetParent().bAbsoluteNoCC then return end
 	local state = {
 		[MODIFIER_STATE_STUNNED] = true,
 		[MODIFIER_STATE_FROZEN] = true,

@@ -273,12 +273,16 @@ function modifier_wildthorn_debuff:OnCreated()
 end
 function modifier_wildthorn_debuff:CheckState()
 	local passives = nil
+	local silenced = true
 	if self:GetCaster():HasModifier("modifier_super_scepter") then
 		passives = true
 	end
+	if self:GetParent().bAbsoluteNoCC then 
+		silenced = false
+	end
 	return {
 		[MODIFIER_STATE_MUTED] = true,
-		[MODIFIER_STATE_SILENCED] = true,
+		[MODIFIER_STATE_SILENCED] = silenced,
 		[MODIFIER_STATE_EVADE_DISABLED] = true,
 		[MODIFIER_STATE_PASSIVES_DISABLED] = passives,
 	}

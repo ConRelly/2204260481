@@ -303,6 +303,7 @@ function modifier_db_celestial_hammer:DeclareFunctions()
 end
 function modifier_db_celestial_hammer:GetModifierDisableTurning() return 1 end
 function modifier_db_celestial_hammer:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {[MODIFIER_STATE_STUNNED] = true}
 end
 function modifier_db_celestial_hammer:OnIntervalThink()

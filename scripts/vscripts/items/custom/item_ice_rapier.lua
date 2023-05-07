@@ -353,6 +353,7 @@ function modifier_item_imba_skadi_freeze:StatusEffectPriority()
 
 -- Declare modifier states
 function modifier_item_imba_skadi_freeze:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	local states = {
 		[MODIFIER_STATE_ROOTED] = true,
 	}

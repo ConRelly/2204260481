@@ -162,6 +162,7 @@ end
 
 if IsServer() then
     function modifier_effect_enemy:OnCreated()
+        if self:GetParent().bAbsoluteNoCC then return end
         local parent = self:GetParent()
         parent:InterruptMotionControllers(false)
     end

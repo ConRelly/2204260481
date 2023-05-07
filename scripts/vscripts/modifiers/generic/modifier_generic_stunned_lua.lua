@@ -13,6 +13,7 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_generic_stunned_lua:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	local state = {
 	[MODIFIER_STATE_STUNNED] = true,
 	}

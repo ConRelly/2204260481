@@ -184,6 +184,7 @@ function modifier_stun:GetOverrideAnimation()
 end
 
 function modifier_stun:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return { [MODIFIER_STATE_STUNNED] = true}
 end
 -----------------------------------------------------------------------------------------

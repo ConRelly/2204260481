@@ -17,6 +17,7 @@ end
 --------------------------------------------------------------------------------
 -- Modifier State
 function modifier_generic_silenced_lua:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	local state = {
 		[MODIFIER_STATE_SILENCED] = true,
 	}

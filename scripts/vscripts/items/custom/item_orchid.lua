@@ -155,6 +155,7 @@ end
 
 -- Declare modifier states
 function modifier_item_imba_orchid_debuff:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {
 		[MODIFIER_STATE_SILENCED] = true
 	}
@@ -439,6 +440,7 @@ function modifier_item_imba_bloodthorn_debuff_disarm:IsDebuff() return true end
 function modifier_item_imba_bloodthorn_debuff_disarm:IsPurgable() return false end
 
 function modifier_item_imba_bloodthorn_debuff_disarm:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {
 		[MODIFIER_STATE_DISARMED]		= true,
 		--[MODIFIER_STATE_EVADE_DISABLED] = true

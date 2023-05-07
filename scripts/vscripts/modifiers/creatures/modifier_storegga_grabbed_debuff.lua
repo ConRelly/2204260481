@@ -57,6 +57,7 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_storegga_grabbed_debuff:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	local state = 
 	{
 		[MODIFIER_STATE_STUNNED] = true,

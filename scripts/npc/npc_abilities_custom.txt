@@ -21517,12 +21517,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.1"
+				"duration"				"0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_creep"		"0.03"
+				"duration_creep"		"0"
 			}
 			"03"
 			{
@@ -42025,6 +42025,8 @@
 		}
 	}
 
+
+
 // Treant Protector: Natures Form
 	"treant_natures_form"
 	{
@@ -42116,10 +42118,27 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"scepter_chance"		"10"
-				"RequiresScepter"		"1"
+				//"RequiresScepter"		"1"
+				"LinkedSpecialBonus"	"special_bonus_clinkz_infernal_breath"
 			}
 		}
 	}
+
+	"special_bonus_clinkz_infernal_breath" 
+	{
+		"BaseClass"						"special_bonus_undefined"														
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"5"
+			}
+		}
+	}
+
 // Omniknight: Purification
 	"purification"
 	{

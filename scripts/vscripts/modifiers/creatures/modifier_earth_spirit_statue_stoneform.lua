@@ -103,6 +103,7 @@ end
 -------------------------------------------------------------------------------
 
 function modifier_earth_spirit_statue_stoneform:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	local state =
 	{
 		[ MODIFIER_STATE_STUNNED ] = true,

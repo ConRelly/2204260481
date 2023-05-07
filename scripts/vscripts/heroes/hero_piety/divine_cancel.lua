@@ -260,6 +260,7 @@ function modifier_divine_cancel:OnCreated()
 	ParticleManager:SetParticleControl(particle, 0, self:GetParent():GetAbsOrigin())
 end
 function modifier_divine_cancel:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
     return {
 		[MODIFIER_STATE_STUNNED] = true,
 		[MODIFIER_STATE_BLIND] = true,

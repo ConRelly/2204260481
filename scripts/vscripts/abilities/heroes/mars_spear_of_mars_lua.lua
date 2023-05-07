@@ -385,6 +385,7 @@ end
 --------------------------------------------------------------------------------
 -- Status Effects
 function modifier_mars_spear_of_mars_lua:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	local state = {
 		[MODIFIER_STATE_STUNNED] = true,
 	}
@@ -516,6 +517,7 @@ end
 --------------------------------------------------------------------------------
 -- Status Effects
 function modifier_mars_spear_of_mars_lua_debuff:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	local state = {
 		[MODIFIER_STATE_NO_UNIT_COLLISION] = true,
 		[MODIFIER_STATE_STUNNED] = true,

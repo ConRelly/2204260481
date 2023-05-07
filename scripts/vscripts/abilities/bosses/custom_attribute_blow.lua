@@ -89,6 +89,7 @@ end
 
 
 function modifier_custom_attribute_blow_stun:CheckState()
+    if self:GetParent().bAbsoluteNoCC then return end
 	return {
         [MODIFIER_STATE_STUNNED] = true,
     }

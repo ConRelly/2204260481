@@ -187,6 +187,7 @@ function modifier_stun:IsPurgable() return false end
 function modifier_stun:IsDebuff() return false end
 
 function modifier_stun:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {
 		[MODIFIER_STATE_STUNNED] = true,
 	}

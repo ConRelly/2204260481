@@ -38,6 +38,7 @@ function modifier_debuff:IsDebuff() return true end
 function modifier_debuff:IsPurgable() return false end
 
 function modifier_debuff:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {
 		[MODIFIER_STATE_STUNNED] = true,
 		-- [MODIFIER_STATE_INVULNERABLE] = true,

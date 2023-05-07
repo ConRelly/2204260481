@@ -131,6 +131,7 @@ end
 --------------------------------------------------------------------------------
 -- Status Effects
 function modifier_generic_knockback_lua:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	local state = {
 		[MODIFIER_STATE_STUNNED] = self.stun,
 	}

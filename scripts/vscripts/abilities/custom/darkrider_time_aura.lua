@@ -70,7 +70,8 @@ function modifier_darkrider_time_aura:GetStatusEffectName() return "particles/st
 function modifier_darkrider_time_aura:StatusEffectPriority() return 1000 end
 function modifier_darkrider_time_aura:CheckState()
     if IsServer() then 
-        if self:GetCaster() ~= self:GetParent() then 
+        if self:GetCaster() ~= self:GetParent() then
+            if self:GetParent().bAbsoluteNoCC then return end 
             return {[MODIFIER_STATE_STUNNED] = true,[MODIFIER_STATE_FROZEN] = true}
         end 
     end 

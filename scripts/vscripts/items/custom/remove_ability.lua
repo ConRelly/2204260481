@@ -2,6 +2,20 @@
 --remove_ability = class({})
 --local ability_class = remove_ability
 require("lib/notifications")
+-- don't remove ability list
+local abilityList = {
+    ["ogre_magi_unrefined_fireblast_lua"] = true,
+    ["mjz_bristleback_quill_spray_autocast4"] = true,
+    ["temporary_slot_used"] = true,
+    ["mjz_bristleback_quill_spray_autocast4_5"] = true,
+    ["change_bullets_type"] = true,
+    ["invoker_quas"] = true,
+    ["invoker_wex"] = true,
+    ["invoker_exort"] = true,
+    ["invoker_invoke"] = true,
+
+  }
+
 
 if IsServer() then
 	function OnSpellStart(keys)
@@ -48,10 +62,10 @@ if IsServer() then
                     end
                 end
             end
-            if oldAbility and oldAbility:GetName()~= "ogre_magi_unrefined_fireblast_lua" and oldAbility:GetName()~= "mjz_bristleback_quill_spray_autocast4" and oldAbility:GetName()~= "temporary_slot_used" and oldAbility:GetName()~= "mjz_bristleback_quill_spray_autocast4_5" and oldAbility:GetName()~= "change_bullets_type"  and not string.find(oldAbility:GetAbilityName(), "empty") then
+            if oldAbility and not abilityList[oldAbility:GetName()] and not string.find(oldAbility:GetAbilityName(), "empty") then
                 local abilityPoints = 1
                 local abilityName = oldAbility:GetName()
-                if oldAbility:GetToggleState() then print("Toggle OF he skill") return end
+                if oldAbility:GetToggleState() then print("Toggle OF the skill") return end
                 --hero:RemoveItem(ability) 
                 abilityPoints = oldAbility:GetLevel()
                 hero:RemoveAbility(abilityName)

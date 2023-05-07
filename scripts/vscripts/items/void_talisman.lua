@@ -40,6 +40,7 @@ function modifier_void_talisman_debuff:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 end
 function modifier_void_talisman_debuff:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {[MODIFIER_STATE_ROOTED] = true}
 end
 
@@ -85,6 +86,7 @@ function modifier_void_talisman_2_debuff:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 end
 function modifier_void_talisman_2_debuff:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {[MODIFIER_STATE_ROOTED] = true}
 end
 
@@ -130,6 +132,7 @@ function modifier_void_talisman_3_debuff:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 end
 function modifier_void_talisman_3_debuff:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {[MODIFIER_STATE_ROOTED] = true}
 end
 
@@ -185,6 +188,7 @@ function modifier_talisman_of_atos_debuff:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 end
 function modifier_talisman_of_atos_debuff:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {[MODIFIER_STATE_ROOTED] = true}
 end
 -- Talisman Of Atos Damage Reduction

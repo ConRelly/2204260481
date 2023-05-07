@@ -127,6 +127,7 @@ end
 function modifier_mjz_faceless_the_world_aura_effect_friendly:GetEffectName() return "particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf" end
 function modifier_mjz_faceless_the_world_aura_effect_friendly:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_mjz_faceless_the_world_aura_effect_friendly:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {
         [MODIFIER_STATE_NO_UNIT_COLLISION] = true,
 		[MODIFIER_STATE_STUNNED] = false,
@@ -193,7 +194,9 @@ end ]]
 		end
 	end
 end ]]
+
 function modifier_mjz_faceless_the_world_aura_effect_enemy:CheckState()
+	--if self:GetParent().bAbsoluteNoCC then return end
 	return {
 		[MODIFIER_STATE_STUNNED] = true,
 		[MODIFIER_STATE_FROZEN] = true,

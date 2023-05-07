@@ -157,6 +157,7 @@ end
 
 function modifier_generic_handler:CheckState()
 	if IsServer() then
+		if self:GetParent().bAbsoluteNoCC then return end
 		local disarm = nil
 		local silence = nil
 		local mute = nil

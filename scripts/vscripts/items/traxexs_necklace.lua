@@ -215,6 +215,7 @@ function modifier_traxexs_necklace_frozen:OnDestroy()
 	end
 end
 function modifier_traxexs_necklace_frozen:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {[MODIFIER_STATE_STUNNED] = true, [MODIFIER_STATE_FROZEN] = true, [MODIFIER_STATE_ROOTED] = true, [MODIFIER_STATE_INVISIBLE] = false}
 end
 function modifier_traxexs_necklace_frozen:DeclareFunctions()

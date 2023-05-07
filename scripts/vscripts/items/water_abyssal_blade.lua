@@ -189,7 +189,7 @@ modifier_abyssal_water_blade_bash = modifier_abyssal_water_blade_bash or class({
 function modifier_abyssal_water_blade_bash:IsHidden() return false end
 function modifier_abyssal_water_blade_bash:IsPurgeException() return true end
 function modifier_abyssal_water_blade_bash:IsStunDebuff() return true end
-function modifier_abyssal_water_blade_bash:CheckState() return {[MODIFIER_STATE_STUNNED] = true} end
+function modifier_abyssal_water_blade_bash:CheckState() if self:GetParent().bAbsoluteNoCC then return end return {[MODIFIER_STATE_STUNNED] = true} end
 function modifier_abyssal_water_blade_bash:GetEffectName() return "particles/generic_gameplay/generic_stunned.vpcf" end
 function modifier_abyssal_water_blade_bash:GetEffectAttachType() return PATTACH_OVERHEAD_FOLLOW end
 function modifier_abyssal_water_blade_bash:OnCreated()

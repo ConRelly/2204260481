@@ -14,6 +14,7 @@ function modifier_mjz_g_frozen:GetTexture()
 end
 
 function modifier_mjz_g_frozen:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
     local state = { 
             [MODIFIER_STATE_ROOTED] = true,
             [MODIFIER_STATE_INVISIBLE] = false,

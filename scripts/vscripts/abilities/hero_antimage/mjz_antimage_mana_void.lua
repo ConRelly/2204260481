@@ -121,6 +121,7 @@ function modifier_stunned:GetEffectName() return "particles/generic_gameplay/gen
 function modifier_stunned:GetEffectAttachType() return PATTACH_OVERHEAD_FOLLOW end
 
 function modifier_stunned:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
     local state = {
 		[MODIFIER_STATE_STUNNED] = true,
 	}

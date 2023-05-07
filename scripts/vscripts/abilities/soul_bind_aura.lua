@@ -113,6 +113,7 @@ function modifier_soul_bind_aura_dead:OnDestroy()
 	end
 end
 function modifier_soul_bind_aura_dead:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {[MODIFIER_STATE_FROZEN] = true, [MODIFIER_STATE_NO_HEALTH_BAR] = true, [MODIFIER_STATE_LOW_ATTACK_PRIORITY] = true, [MODIFIER_STATE_MAGIC_IMMUNE] = true, [MODIFIER_STATE_UNSELECTABLE] = true, [MODIFIER_STATE_STUNNED] = true}
 end
 

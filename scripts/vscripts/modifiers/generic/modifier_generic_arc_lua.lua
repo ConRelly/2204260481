@@ -107,6 +107,7 @@ end
 --------------------------------------------------------------------------------
 -- Status Effects
 function modifier_generic_arc_lua:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	local state = {
 		[MODIFIER_STATE_STUNNED] = self.isStun or false,
 		[MODIFIER_STATE_COMMAND_RESTRICTED] = self.isRestricted or false,

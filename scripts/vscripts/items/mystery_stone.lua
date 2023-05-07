@@ -217,5 +217,6 @@ function modifier_mystery_cyclone_active:OnDestroy()
 	self:GetParent():SetAngles(self.angle[1], self.angle[2], self.angle[3])
 end
 function modifier_mystery_cyclone_active:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {[MODIFIER_STATE_STUNNED] = true, [MODIFIER_STATE_INVULNERABLE] = true, [MODIFIER_STATE_NO_HEALTH_BAR] = true, [MODIFIER_STATE_NO_UNIT_COLLISION] = true, [MODIFIER_STATE_MAGIC_IMMUNE] = true, [MODIFIER_STATE_DISARMED] = true}
 end

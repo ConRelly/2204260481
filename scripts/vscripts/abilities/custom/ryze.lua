@@ -255,6 +255,7 @@ function modifier_rune_prison_root:GetEffectName()
 function modifier_rune_prison_root:GetEffectAttachType()
 	return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_rune_prison_root:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {[MODIFIER_STATE_ROOTED] = true}
 end
 

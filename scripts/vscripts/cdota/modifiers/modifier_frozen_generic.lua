@@ -30,6 +30,8 @@ function modifier_frozen_generic:OnIntervalThink()
 end
 
 function modifier_frozen_generic:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
+	if self:GetParent().bAbsoluteNoStun then return end
 	return {[MODIFIER_STATE_STUNNED] = true, [MODIFIER_STATE_FROZEN] = true, [MODIFIER_STATE_ROOTED] = true, [MODIFIER_STATE_INVISIBLE] = false}
 end
 

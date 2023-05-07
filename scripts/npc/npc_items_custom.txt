@@ -6489,7 +6489,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_duration"			"0.5"
+				"bash_duration"			"0.0"
 			}
 			"11"
 			{
@@ -6504,7 +6504,7 @@
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"2"
+				"stun_duration"			"0"
 			}
 		}
 	}
@@ -6597,7 +6597,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_duration"			"0.5"
+				"bash_duration"			"0.0"
 			}
 			"11"
 			{
@@ -6612,7 +6612,7 @@
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"2"
+				"stun_duration"			"0"
 			}
 		}
 	}
@@ -6705,7 +6705,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_duration"			"0.5"
+				"bash_duration"			"0.0"
 			}
 			"11"
 			{
@@ -6720,7 +6720,7 @@
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"2"
+				"stun_duration"			"0"
 			}
 		}
 	}
@@ -6811,7 +6811,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_duration"			"0.5"
+				"bash_duration"			"0.0"
 			}
 			"11"
 			{
@@ -6826,7 +6826,7 @@
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"2"
+				"stun_duration"			"0"
 			}
 		}
 	}

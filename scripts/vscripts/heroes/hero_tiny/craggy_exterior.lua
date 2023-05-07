@@ -59,7 +59,7 @@ function modifier_mjz_tiny_craggy_exterior_stunned:IsHidden() return false end
 function modifier_mjz_tiny_craggy_exterior_stunned:IsPurgeException() return true end
 function modifier_mjz_tiny_craggy_exterior_stunned:IsStunDebuff() return true end
 function modifier_mjz_tiny_craggy_exterior_stunned:GetTexture() return "mjz_tiny_craggy_exterior" end
-function modifier_mjz_tiny_craggy_exterior_stunned:CheckState() return {[MODIFIER_STATE_STUNNED] = true} end
+function modifier_mjz_tiny_craggy_exterior_stunned:CheckState() if self:GetParent().bAbsoluteNoCC then return end return {[MODIFIER_STATE_STUNNED] = true} end
 function modifier_mjz_tiny_craggy_exterior_stunned:GetEffectName() return "particles/generic_gameplay/generic_stunned.vpcf" end
 function modifier_mjz_tiny_craggy_exterior_stunned:GetEffectAttachType() return PATTACH_OVERHEAD_FOLLOW end
 function modifier_mjz_tiny_craggy_exterior_stunned:DeclareFunctions() return {MODIFIER_PROPERTY_OVERRIDE_ANIMATION} end

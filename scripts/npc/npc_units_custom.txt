@@ -293,16 +293,16 @@
     "HasInventory"            "1"
 	"Ability1"				  "draks_unholy_strength"
 	"Ability2"				  "generic_hidden" //"jotaro_absolute_defense"
-	"Ability3"				 "spectre_custom_dispersion_boss" //"generic_hidden"
-	//"Ability4"				 "custom_aphotic_shield" //"generic_hidden"
+	//"Ability3"				 "spectre_custom_dispersion_boss" //"generic_hidden"
+	//"Ability4"				 "ability_absolute_no_cc" //"generic_hidden"
 	//"Ability5"				 "jotaro_absolute_defense" //"generic_hidden"
-	"Ability6"				 "generic_hidden"
+	"Ability6"				 "custom_fury_swipes"
 	"Ability7"				 "generic_hidden"
 	"Ability8"				 "generic_hidden"
 	//"Ability9"				 "cold_slashes"	
 	"ArmorPhysical"			 "0"
 	"MagicalResistance"		 "0"
-	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"		   "26"
 	"AttackDamageMax"		   "30"
 	"AttackRate"				"1.3"
@@ -16364,7 +16364,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"damage_meter"
 		"Ability2"					"windrunner_windrun"
-		//"Ability3"                  "flash_backtrack"
+		//"Ability3"                  "ability_absolute_no_cc"
 
 		// Armor
 		//----------------------------------------------------------------

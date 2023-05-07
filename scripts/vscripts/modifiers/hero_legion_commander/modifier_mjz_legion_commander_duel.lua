@@ -12,6 +12,7 @@ function modifier_caster:IsHidden() return false end
 function modifier_caster:IsPurgable() return false end
 
 function modifier_caster:CheckState()
+    
 	local state = {
         --[MODIFIER_STATE_COMMAND_RESTRICTED] = true,     -- 不能控制
         [MODIFIER_STATE_MUTED] = true,                  -- 不能使用物品
@@ -91,6 +92,7 @@ function modifier_enemy:IsHidden() return false end
 function modifier_enemy:IsPurgable() return false end
 
 function modifier_enemy:CheckState()
+    if self:GetParent().bAbsoluteNoCC then return end
 	local state = {
         [MODIFIER_STATE_COMMAND_RESTRICTED] = true,     -- 不能控制
         [MODIFIER_STATE_MUTED] = true,                  -- 不能使用物品

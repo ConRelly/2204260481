@@ -277,6 +277,7 @@ function modifier_hw_sharpshooter:GetModifierMoveSpeed_Limit() return 0.1 end
 function modifier_hw_sharpshooter:GetModifierTurnRate_Percentage() return -self.turn_rate end
 function modifier_hw_sharpshooter:GetModifierDisableTurning() return 1 end
 function modifier_hw_sharpshooter:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {[MODIFIER_STATE_DISARMED] = true}
 end
 function modifier_hw_sharpshooter:OnIntervalThink()

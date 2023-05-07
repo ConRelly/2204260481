@@ -212,6 +212,11 @@ modifier_aghanim_blink_slayer = class({})
 function modifier_aghanim_blink_slayer:IsHidden() return true end
 function modifier_aghanim_blink_slayer:IsDebuff() return false end
 function modifier_aghanim_blink_slayer:IsPurgable() return false end
+function modifier_aghanim_blink_slayer:OnCreated()
+	if IsServer() then
+		self:GetParent().bAbsoluteNoStun = true
+	end
+end
 function modifier_aghanim_blink_slayer:CheckState()
 	local state = {}
 	if not self:GetParent():PassivesDisabled() then

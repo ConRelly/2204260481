@@ -19,7 +19,6 @@ function ability_class:OnSpellStart()
 		local projectile_radius = GetTalentSpecialValueFor(ability, "radius")
 		local projectile_distance = GetTalentSpecialValueFor(ability, "max_distance")
 		local projectile_speed = GetTalentSpecialValueFor(ability, "orb_speed")
-		print("speed: "..projectile_speed)
 		local vision_radius = GetTalentSpecialValueFor(ability, "orb_vision")
 		local vision_duration = GetTalentSpecialValueFor(ability, "vision_duration")
 

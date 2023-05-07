@@ -147,6 +147,7 @@ end
 --------------------------------------------------------------------------------
 -- Status Effects
 function modifier_skywrath_mage_custom_ancient_seal:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	local state = {
 		[MODIFIER_STATE_SILENCED] = true,
 	}

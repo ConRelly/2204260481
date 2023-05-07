@@ -176,6 +176,7 @@ function modifier_wr_shackleshot_stun:IsStunDebuff() return true end
 function modifier_wr_shackleshot_stun:GetEffectName() return "particles/generic_gameplay/generic_stunned.vpcf" end
 function modifier_wr_shackleshot_stun:GetEffectAttachType() return PATTACH_OVERHEAD_FOLLOW end
 function modifier_wr_shackleshot_stun:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {[MODIFIER_STATE_STUNNED] = true}
 end
 

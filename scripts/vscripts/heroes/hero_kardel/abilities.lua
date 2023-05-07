@@ -286,7 +286,7 @@ modifier_kardel_hit_stun = class({})
 function modifier_kardel_hit_stun:IsHidden() return true end
 function modifier_kardel_hit_stun:IsDebuff() return true end
 function modifier_kardel_hit_stun:IsStunDebuff() return true end
-function modifier_kardel_hit_stun:CheckState() return {[MODIFIER_STATE_STUNNED] = true} end
+function modifier_kardel_hit_stun:CheckState() if self:GetParent().bAbsoluteNoCC then return end return {[MODIFIER_STATE_STUNNED] = true} end
 function modifier_kardel_hit_stun:DeclareFunctions() return {MODIFIER_PROPERTY_OVERRIDE_ANIMATION} end
 function modifier_kardel_hit_stun:GetOverrideAnimation(params) return ACT_DOTA_DISABLED end
 function modifier_kardel_hit_stun:GetEffectName() return "particles/custom/abilities/heroes/kardel_bullets/kardel_hit_stun.vpcf" end

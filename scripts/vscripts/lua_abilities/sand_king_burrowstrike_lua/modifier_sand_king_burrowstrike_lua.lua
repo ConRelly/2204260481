@@ -33,6 +33,7 @@ end
 --------------------------------------------------------------------------------
 -- Status Effects
 function modifier_sand_king_burrowstrike_lua:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	local state = {
 		[MODIFIER_STATE_STUNNED] = true,
 	}

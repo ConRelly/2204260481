@@ -14,6 +14,7 @@ function modifier_class:IsHidden() return false end
 function modifier_class:IsPurgable() return true end
 
 function modifier_class:CheckState() 
+	if self:GetParent().bAbsoluteNoCC then return end
 	local state = {
 		-- [MODIFIER_STATE_NO_UNIT_COLLISION] 	= true,
 		[MODIFIER_STATE_DISARMED] 			= true,

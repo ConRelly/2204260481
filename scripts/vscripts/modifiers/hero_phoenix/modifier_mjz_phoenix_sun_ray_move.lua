@@ -7,6 +7,7 @@ function modifier_rooted:IsHidden() return true end
 function modifier_rooted:IsPurgable() return false end
 
 function modifier_rooted:CheckState() 
+	if self:GetParent().bAbsoluteNoCC then return end
 	local state = {
 		[MODIFIER_STATE_ROOTED]     = true,
 	}

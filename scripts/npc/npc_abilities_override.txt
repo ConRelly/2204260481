@@ -6,8 +6,8 @@
 #base "abilities/heroes/ember_spirit_sleight_of_fist.txt"
 #base "abilities/heroes/pugna_nether_blast.txt"
 #base "abilities/heroes/bane_brain_sap.txt"
-#base "abilities/heroes/bounty_hunter_wind_walk.txt"
-#base "abilities/heroes/brewmaster_thunder_clap.txt"
+//#base "abilities/heroes/bounty_hunter_wind_walk.txt"
+//#base "abilities/heroes/brewmaster_thunder_clap.txt"
 #base "abilities/heroes/chaos_knight_reality_rift.txt"
 #base "abilities/heroes/dark_seer_vacuum.txt"
 #base "abilities/heroes/dark_willow_bedlam.txt"
@@ -3319,7 +3319,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"					"3"
+			"duration"					"0"
 			"damage"					
 			{
 				"value"			"950 4250 12600 23500 48750 95000 195600 420000 754600"
@@ -3668,6 +3668,70 @@
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Bounty Hunter: Wind Walk / Shadow Walk
+	//=================================================================================================================
+	"bounty_hunter_wind_walk"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5287"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		//"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilitySound"					"Hero_BountyHunter.WindWalk"
+
+        "HasShardUpgrade"               "1"
+		"AbilityCastRange"				"650"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"65"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"duration"					"20.0 25.0 30.0 35.0"
+				"fade_time"					"1.0 0.75 0.5 0.25"
+				"stun_duration"				
+				{
+					"value"										"0"
+				}
+				"AbilityCooldown"				
+				{
+					"value"		"18 17 16 15"
+					"special_bonus_shard" "-5"
+				}
+				"AbilityChargeRestoreTime"		
+				{
+					"value"	"15 14 13 12"
+					"RequiresShard"		"1"
+				}
+				"ally_fade_time"
+				{
+					"value"			"1.0"
+					"RequiresShard"		"1"
+				}
+				"damage_reduction_pct"
+				{
+					"value"										"0"
+					"special_bonus_unique_bounty_hunter_9"		"+35"
+				}
+
+
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+
 	"brewmaster_cinder_brew"
 	{
 		// General
@@ -3731,6 +3795,69 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
+
+	//=================================================================================================================
+	// Brewmaster: Thunder Clap
+	//=================================================================================================================
+	"brewmaster_thunder_clap"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5400"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_Brewmaster.ThunderClap"
+	    "MaxLevel"                                            "6"
+	    "LevelsBetweenUpgrades"                               "2"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"13"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.4"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"90"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"400"
+				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_7"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"190 260 430 1200 1900 3200"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_slow"				"45"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed_slow"			"25 35 45 55 75 100"
+			}			
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"4.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_brewmaster_3"
+			}	
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
 
 	"special_bonus_unique_brewmaster_5"
 	{
@@ -4337,56 +4464,54 @@
 
 
 
-//=================================================================================================================
-// Clinkz: Strafe
-//=================================================================================================================
-"clinkz_strafe"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"ID"							"5259"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-	"FightRecapLevel"				"1"
 
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastPoint"				"0.0"
-	"LevelsBetweenUpgrades"         "8"
-	"AbilityChannelTime"			"1.5 1.9 2.3 2.7"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-	"AbilityCastGestureSlot"		"DEFAULT"
-	"AbilityChannelAnimation"	"ACT_DOTA_CHANNEL_ABILITY_1"
 
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"30 26 22 18"
-	
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"45 60 75 90"
-	
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityValues"
+
+	//=================================================================================================================
+	// Clinkz: Burning Barrage
+	//=================================================================================================================
+	"clinkz_burning_barrage"
 	{
-		"wave_count"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5259"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"1"
+		"IsGrantedByShard"				"1"
+		"LevelsBetweenUpgrades"         "10"
+		"MaxLevel"						"4"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2"
+		"AbilityChannelTime"			"2.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityChannelAnimation"	"ACT_DOTA_CHANNEL_ABILITY_1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"22"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"45 60 75 90"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"value"			"6 9 15 23"
-			"LinkedSpecialBonus"		"special_bonus_unique_clinkz_12"
+			"wave_count"		"10 15 20 35"
+			"range"				"1250 1800 1950 2400"				
+			"damage_pct"		"100 180 250 320"
 		}
-		"range"	"1250 1800 1950 2400"				
-		"damage_pct"	
-		{
-			"value"		"90 120 180 220"				
-			"special_bonus_unique_clinkz_4"	"+80"
-		}		
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
-	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
-}
+
 
 
 	"clinkz_searing_arrows"
@@ -5953,7 +6078,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"65"
+		"AbilityCooldown"				"125"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -11864,7 +11989,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.01"
+				"duration"				"0"
 			}
 		}
 	}
@@ -15391,12 +15516,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.01"
+				"duration"				"0"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration_creep"		"0.01"
+				"duration_creep"		"0"
 			}
 			"03"
 			{
@@ -19381,12 +19506,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.01"
+				"duration"				"0"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"knockback_duration"	"0.01"
+				"knockback_duration"	"0"
 			}
 			"05"
 			{
@@ -20971,7 +21096,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"200"
-		"AbilityCooldown"				"40"
+		"AbilityCooldown"				"45"
 		
 
 		// Cost
@@ -20994,7 +21119,7 @@
 			}
 			"channel_time"
 			{
-				"value"					"2.3"
+				"value"					"1.0"
 				"special_bonus_unique_primal_beast_pulverize_duration"	"+200%"
 			}
             "pierce_immunity"
@@ -21765,7 +21890,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_duration"			"0.2"
+				"bash_duration"			"0.0"
 			}
 			"11"
 			{
@@ -21780,7 +21905,7 @@
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"2"
+				"stun_duration"			"0"
 			}
 		}
 	}

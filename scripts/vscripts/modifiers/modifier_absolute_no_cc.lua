@@ -12,11 +12,10 @@ end
 function modifier_absolute_no_cc:IsPurgable()
 	return false
 end
-
 --------------------------------------------------------------------------------
 
 function modifier_absolute_no_cc:GetPriority()
-	return MODIFIER_PRIORITY_ULTRA + 10000
+	return MODIFIER_PRIORITY_SUPER_ULTRA + 900000
 end
 
 --------------------------------------------------------------------------------
@@ -30,18 +29,20 @@ end
 -----------------------------------------------------------------------------------------
 
 function modifier_absolute_no_cc:CheckState()
-	local state =
-	{
-		[MODIFIER_STATE_HEXED] = false,
-		[MODIFIER_STATE_ROOTED] = false,
-		[MODIFIER_STATE_SILENCED] = false,
-		[MODIFIER_STATE_STUNNED] = false,
-		[MODIFIER_STATE_FROZEN] = false,
-		[MODIFIER_STATE_FEARED] = false,
-		[MODIFIER_STATE_DISARMED] = false,
-		[MODIFIER_STATE_COMMAND_RESTRICTED] = false,
-		--[MODIFIER_STATE_IGNORING_MOVE_AND_ATTACK_ORDERS] = true,
-		[MODIFIER_STATE_CANNOT_BE_MOTION_CONTROLLED] = true,
-	}
-	return state
+	if IsServer() then
+		local state =
+		{
+			[MODIFIER_STATE_HEXED] = false,
+			[MODIFIER_STATE_ROOTED] = false,
+			[MODIFIER_STATE_SILENCED] = false,
+			[MODIFIER_STATE_STUNNED] = false,
+			[MODIFIER_STATE_FROZEN] = false,
+			[MODIFIER_STATE_FEARED] = false,
+			[MODIFIER_STATE_DISARMED] = false,
+			[MODIFIER_STATE_COMMAND_RESTRICTED] = false,
+			--[MODIFIER_STATE_IGNORING_MOVE_AND_ATTACK_ORDERS] = true,
+			[MODIFIER_STATE_CANNOT_BE_MOTION_CONTROLLED] = true,
+		}	
+		return state
+	end
 end

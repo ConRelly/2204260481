@@ -94,6 +94,7 @@ function modifier_mjz_lion_voodoo:GetEffectAttachType()
 end
 
 function modifier_mjz_lion_voodoo:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {
 		[ MODIFIER_STATE_HEXED ] = false,
 		[ MODIFIER_STATE_MUTED ] = true,

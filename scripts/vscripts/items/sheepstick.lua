@@ -151,6 +151,7 @@ function modifier_polymorpher_debuff:GetModifierMoveSpeedOverride() return self:
 function modifier_polymorpher_debuff:GetModifierModelChange() return "models/props_gameplay/pig.vmdl" end
 function modifier_polymorpher_debuff:GetVisualZDelta() return 0 end
 function modifier_polymorpher_debuff:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {
 		[MODIFIER_STATE_HEXED] = true,
 		[MODIFIER_STATE_DISARMED] = true,

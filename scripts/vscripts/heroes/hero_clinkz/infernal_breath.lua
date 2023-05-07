@@ -20,22 +20,24 @@ function modifier_clinkz_infernal_breath:OnAttackLanded(keys)
 	if self:GetCaster():HasScepter() then
 	local target = keys.target
 	local dmg = keys.damage
-	local scepter_mag_damage = self:GetAbility():GetSpecialValueFor("scepter_mag_damage")
-	local scepter_damage = dmg * (scepter_mag_damage * 0.01)
-		if keys.attacker == self:GetParent() then
-			if RollPseudoRandom(self:GetAbility():GetSpecialValueFor("scepter_chance"), self:GetAbility()) then
+	local parent = self:GetParent()
+		if keys.attacker == parent then
+			local chance = self:GetAbility():GetSpecialValueFor("scepter_chance") + talent_value(parent, "special_bonus_clinkz_infernal_breath")
+			if RollPercentage(chance) then
+				local scepter_mag_damage = self:GetAbility():GetSpecialValueFor("scepter_mag_damage")
+				local scepter_damage = dmg * (scepter_mag_damage * 0.01)
 				ApplyDamage({
 					victim = target,
 					damage = scepter_damage,
 					damage_type = DAMAGE_TYPE_MAGICAL,
 					damage_flags = DOTA_DAMAGE_FLAG_NONE,
-					attacker = self:GetParent(),
+					attacker = parent,
 					ability = self:GetAbility()
 					})
 				SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, target, scepter_damage, nil)
-				local particleName = "particles/custom/abilities/clinkz_infernal_breath/clinkz_infernal_breath_hit.vpcf"
-				local pfx = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, target)
-				ParticleManager:SetParticleControlEnt(pfx, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+				--local particleName = "particles/custom/abilities/clinkz_infernal_breath/clinkz_infernal_breath_hit.vpcf"
+				--local pfx = ParticleManager:CreateParticle(particleName, PATTACH_ABSORIGIN_FOLLOW, target)
+				--ParticleManager:SetParticleControlEnt(pfx, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 			end
 		end
 	end

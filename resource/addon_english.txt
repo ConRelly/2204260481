@@ -615,11 +615,15 @@
 	"DOTA_Tooltip_Ability_custom_side_gunner_gunner_interval"		"Attack Interval:"
 
 	"DOTA_Tooltip_Ability_clinkz_infernal_breath"				"Infernal Breath"
+	"DOTA_Tooltip_Ability_clinkz_infernal_breath_Lore"          "Flames danced in Clinkz's eyes as he drew upon his infernal strength, striking fear into his enemies."
 	"DOTA_Tooltip_Ability_clinkz_infernal_breath_Description"	"Combat practice pays off, increasing the health and damage Clinkz.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Using his infernal power, has %scepter_chance%%% chance when attacking to deal %scepter_mag_damage%%% magic damage depending on the damage dealt."
 	"DOTA_Tooltip_Ability_clinkz_infernal_breath_base_damage"			"BONUS BASE DAMAGE:"
 	"DOTA_Tooltip_Ability_clinkz_infernal_breath_health"				"BONUS HEALTH:"
 	"DOTA_Tooltip_Ability_clinkz_infernal_breath_scepter_mag_damage"	"%MAGIC DAMAGE AS DAMAGE:"
+	"DOTA_Tooltip_Ability_clinkz_infernal_breath_scepter_chance"		"%Scepter Chance:"
 	"DOTA_Tooltip_Ability_clinkz_infernal_breath_scepter_description"	"Using his infernal power, deals %scepter_mag_damage%%% magic damage depending on the damage."
+
+	"DOTA_Tooltip_Ability_special_bonus_clinkz_infernal_breath"		"+{s:value}% Infernal Breath chance"
 
 	"DOTA_Tooltip_ability_blood_madness"				"Blood Madness"
 	"DOTA_Tooltip_ability_blood_madness_Description"	"Calculates damage taken for %timer% seconds and increase Axe strength and armor, depending on the damage dealt to him.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Increases damage calculation time by 1 second and does not let you die during calculation time."
