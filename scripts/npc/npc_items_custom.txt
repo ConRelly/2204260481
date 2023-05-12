@@ -18602,11 +18602,13 @@
 	"ItemGloballyCombinable"		"0"
 	"ItemPurchasable"				"1"
 	"ItemIsNeutralDrop"				"1"
-	"ItemSellable"					"1"
+	//"TokenTier"						"1"
+	"ItemSellable"					"0"
 	"ItemStackable"					"0"  //this needs to be 0 all time or can be easy abused to have 50+ stacks
 	"ItemRequiresCharges"			"0"
 	"ItemKillable"	                "1"
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"  // seems becasue its neutral it reamains sharable.
+	//"ItemPermanent"               	"1"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"  // seems becasue its neutral it reamains sharable.
 	"ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER"
 	"Model"							"models/props_gameplay/neutral_box.vmdl"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
@@ -20655,7 +20657,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"Model"							"models/props_gameplay/red_box.vmdl"
 		//"Effect"						"particles/econ/events/ti7/teleport_start_ti7_spin_water.vpcf"
 		"AbilityTextureName"			"all_elements"
@@ -20664,7 +20666,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
-		"ItemSellable"					"0"
+		"ItemSellable"					"1"
 		"ItemAliases"					"elements"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemQuality"					"artifact"
@@ -20673,6 +20675,16 @@
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
 		"IsTempestDoubleClonable"		"0"
+		//"TokenTier"						"1"
+		//"ItemIsNeutralDrop"             "1"
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/custom/sell_elemental"
+				"Function"		"OnSpellStart"
+			}
+		}		
 	}
 
 	//=================================================================================================================
@@ -21687,13 +21699,54 @@
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	//"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemResult"					"item_radiance_armor_3_edible"
+	"ItemResult"					"item_radiance_armor_3_edible_n"
 	"ItemRequirements"
 	{
 		"01"						"item_radiance_armor_3;item_edible_complete"
 		//"02"						"item_chest_1"
 	}
 }
+"item_radiance_armor_3_edible_n"
+{
+	"BaseClass"						"item_datadriven"
+	// "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+	"AbilityTextureName"			"radiance_armor_3"
+
+
+	"ItemCost"						"20000"
+	"ItemShopTags"					"boost_mana;mana_pool"
+	"ItemQuality"					"rare"
+	"ItemAliases"					"radiance"
+	"ItemStackable"					"0"
+	"ItemSellable"				  	"0"
+	"ItemKillable"				  	"0"
+	"ItemInitialCharges"			"1"
+	"ItemPurchasable"				"1"
+	"ItemRequiresCharges" 			"1"
+	"ItemIsNeutralDrop"				"1"
+	//"TokenTier"						"5"
+	"ItemPermanent"               	"1"
+	"ItemDisassembleRule"		   	"DOTA_ITEM_DISASSEMBLE_NEVER" 	
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE" 
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	"ShouldBeSuggested"				"1"
+	
+	"precache"
+	{
+		"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+	}
+	
+	"OnEquip"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"items/custom/item_radiance_armor_edible_3.lua"
+			"Function"				"OnCreated_"
+		}
+	}
+}
+
 "item_radiance_armor_3_edible"
 {
 	"BaseClass"						"item_datadriven"
@@ -21713,6 +21766,7 @@
 	"ItemPurchasable"				"1"
 	"ItemRequiresCharges" 			"1"
 	"ItemIsNeutralDrop"				"1"
+	//"TokenTier"						"5"
 	"ItemPermanent"               	"1"
 	"ItemDisassembleRule"		   	"DOTA_ITEM_DISASSEMBLE_NEVER" 	
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE" 
@@ -21743,13 +21797,56 @@
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	//"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemResult"					"item_radiance_armor_blue_edible"
+	"ItemResult"					"item_radiance_armor_blue_edible_n"
 	"ItemRequirements"
 	{
 		//"02"						"item_chest_1"
 		"01"						"item_radiance_armor_blue;item_edible_complete"
 	}
 }
+"item_radiance_armor_blue_edible_n"
+{
+	"BaseClass"						"item_datadriven"
+	// "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+	"AbilityTextureName"			"radiance_armor_blue"
+
+
+	"ItemCost"						"20000"
+	"ItemShopTags"					"boost_mana;mana_pool"
+	"ItemQuality"					"rare"
+	"ItemAliases"					"radiance"
+	"ItemStackable"					"0"
+	"ItemPermanent"					"0"
+	"ItemSellable"				 	"0"
+	"ItemKillable"				  	"0"
+	"ItemInitialCharges"			"1"
+	"ItemPurchasable"				"1"
+	"ItemRequiresCharges" 			"1"
+	"ItemIsNeutralDrop"				"1"
+	//"TokenTier"						"1"
+	"ItemPermanent"               	"1"
+	"ItemDisassembleRule"		   	"DOTA_ITEM_DISASSEMBLE_NEVER" 
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	"ShouldBeSuggested"				"1"
+	
+	"precache"
+	{
+		"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+	}
+	
+
+	"OnEquip"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"items/custom/item_radiance_armor_edible_blue.lua"
+			"Function"				"OnCreated_"
+		}
+	}	
+}
+
 "item_radiance_armor_blue_edible"
 {
 	"BaseClass"						"item_datadriven"
@@ -21770,9 +21867,10 @@
 	"ItemPurchasable"				"1"
 	"ItemRequiresCharges" 			"1"
 	"ItemIsNeutralDrop"				"1"
+	//"TokenTier"						"1"
 	"ItemPermanent"               	"1"
 	"ItemDisassembleRule"		   	"DOTA_ITEM_DISASSEMBLE_NEVER" 
-	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 	"ShouldBeSuggested"				"1"
 	
@@ -21780,7 +21878,7 @@
 	{
 		"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
 	}
-	
+		
 	"OnSpellStart"
 	{
 		"RunScript"
@@ -21791,6 +21889,7 @@
 		}
 	}
 }
+
 "item_recipe_radiance_armor_green_edible"
 {
 	"BaseClass"						"item_datadriven"
@@ -21800,13 +21899,55 @@
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	//"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemResult"					"item_radiance_armor_green_edible"
+	"ItemResult"					"item_radiance_armor_green_edible_n"
 	"ItemRequirements"
 	{
 		//"01"						"item_chest_1"
 		"01"						"item_radiance_armor_green;item_edible_complete"
 	}
 }
+
+"item_radiance_armor_green_edible_n"
+{
+	"BaseClass"						"item_datadriven"
+	// "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+	"AbilityTextureName"			"radiance_armor_green"
+
+
+	"ItemCost"						"20000"
+	"ItemShopTags"					"boost_mana;mana_pool"
+	"ItemQuality"					"rare"
+	"ItemAliases"					"radiance"
+	"ItemStackable"					"0"
+	"ItemSellable"				  "0"
+	"ItemKillable"				  "0"
+	"ItemInitialCharges"			"1"
+	"ItemPurchasable"				"1"
+	"ItemRequiresCharges" 			"1"
+	"ItemIsNeutralDrop"				"1"
+	//"TokenTier"						"5"
+	"ItemPermanent"               	"1"
+	"ItemDisassembleRule"		   	"DOTA_ITEM_DISASSEMBLE_NEVER"	
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE" 
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	"ShouldBeSuggested"				"1"
+	
+	"precache"
+	{
+		"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts"
+	}
+	
+	"OnEquip"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"items/custom/item_radiance_armor_edible_green.lua"
+			"Function"				"OnCreated_"
+		}
+	}
+}
+
 "item_radiance_armor_green_edible"
 {
 	"BaseClass"						"item_datadriven"
@@ -21826,6 +21967,7 @@
 	"ItemPurchasable"				"1"
 	"ItemRequiresCharges" 			"1"
 	"ItemIsNeutralDrop"				"1"
+	//"TokenTier"						"5"
 	"ItemPermanent"               	"1"
 	"ItemDisassembleRule"		   	"DOTA_ITEM_DISASSEMBLE_NEVER"	
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE" 

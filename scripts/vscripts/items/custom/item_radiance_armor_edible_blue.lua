@@ -9,7 +9,7 @@ function OnSpellStart( keys )
     local caster = keys.caster
 	local ability = keys.ability
     local modifier_stats2 = 'modifier_item_radiance_armor_blue_edible'
-    local modifier_stats3 = "modifier_item_radiance_armor_aura_blue_edible"
+    local modifier_stats3 = "modifier_item_radiance_armor_aura_blue_edible"    
     if ability:GetCurrentCharges() < 1 then return end
 
     local sound_cast = keys.sound_cast
@@ -35,23 +35,17 @@ function OnSpellStart( keys )
     end
     
     caster:AddNewModifier(caster, ability, modifier_stats2, {})
-    --caster:AddNewModifier(caster, ability, modifier_stats3, {})
-
-
-    
     caster:EmitSound(sound_cast)
-
     ability:SetCurrentCharges( ability:GetCurrentCharges() - 1 )
-    --caster:RemoveItem(ability)
 
-    
-    -- Create a Item for one game frame to prevent regular dota interactions from going bad
---[[     if Timers then
-        local item_dummy = CreateItem(item_name, caster, caster)
-        caster:AddItem(item_dummy)
-        Timers:CreateTimer(0.01, function()
-            caster:RemoveItem(item_dummy)
-        end)
-    end ]]
+end
+function OnCreated_(keys)
+    if not IsServer() then return nil end
 
+    local caster = keys.caster
+	local ability = keys.ability
+    if caster and ability then
+        DropNeutralItemAtPositionForHero("item_radiance_armor_blue_edible", caster:GetAbsOrigin(), caster, 5, false)
+        caster:RemoveItem(ability) 
+    end
 end

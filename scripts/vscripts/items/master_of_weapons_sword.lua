@@ -55,6 +55,10 @@ function item_master_of_weapons_sword:OnSpellStart()
 		["item_smoke_of_deceit"] = true,
 		["item_ward_observer"] = true,
 		["item_ward_sentry"] = true,
+		["item_all_essence"] = true,
+		["item_thunder_hammer"] = true,
+		["item_thunder_gods_might"] = true,
+		["item_thunder_gods_might2"] = true,
 	}
 
 	-- Copy Abilities
@@ -99,6 +103,12 @@ function item_master_of_weapons_sword:OnSpellStart()
 		["modifier_item_pharaoh_crown_initiate"] = true,
 		["modifier_custom_no_heal_effect"] = true,
 		["modifier_item_aghanims_shard"] = true,
+		["modifier_mows_remove_as_limit"] = true,
+		["modifier_thunder_gods_might"] = true,
+		["modifier_thunder_gods_might2"] = true,
+		["modifier_thunder_hammer"] = true,
+		["modifier_item_thunder_god_might_aura"] = true,
+		["modifier_item_thunder_god_might_aura2"] = true,
 	}
 
 	-- Copy Modifiers

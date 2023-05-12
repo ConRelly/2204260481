@@ -441,6 +441,16 @@ function AOHGameMode:OnPlayerChat(keys)
 			Notifications:TopToAll({text="Gold will be given as dropped GoldBags", style={color="yellow"}, duration=7})			
 		end	
 	end
+	if keys.text == "-weapon_fragment" and keys.playerid == 0 then
+		if not _G._sell_slayer_fragmets then
+			_G._sell_slayer_fragmets = true
+			Notifications:TopToAll({text="Weapon Fragments will go directly to shop stock instead of players inventory", style={color="green"}, duration=7})
+		else
+			_G._sell_slayer_fragmets = false
+			Notifications:TopToAll({text="Weapon Fragments reverted to normal drop", style={color="yellow"}, duration=7})			
+		end	
+	end
+	
 	if keys.text == "-single" and not self._singleMode and keys.playerid == 0 then
 		local player_count = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) 
 		local playerID = keys.playerid

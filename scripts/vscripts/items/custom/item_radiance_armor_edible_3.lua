@@ -55,3 +55,14 @@ function OnSpellStart( keys )
     end ]]
 
 end
+
+function OnCreated_(keys)
+    if not IsServer() then return nil end
+
+    local caster = keys.caster
+	local ability = keys.ability
+    if caster and ability then
+        DropNeutralItemAtPositionForHero("item_radiance_armor_3_edible", caster:GetAbsOrigin(), caster, 5, false)
+        caster:RemoveItem(ability) 
+    end
+end

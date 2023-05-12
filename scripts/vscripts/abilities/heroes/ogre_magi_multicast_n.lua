@@ -333,7 +333,8 @@ function IsExcludeAbility(ability)
 		"item_thunder_hammer",
 		"item_thunder_gods_might",
 		"item_thunder_gods_might2",	
-		"item_pipe_of_dezun",	
+		"item_pipe_of_dezun",
+		"item_all_essence",	
 -- Abilities
 		"phoenix_fire_spirits",
 		"mjz_phoenix_sun_ray",
@@ -480,6 +481,7 @@ function SingleTargetAbility(ability)
 	local list = {
 		"ogre_magi_fireblast",
 		"ogre_magi_unrefined_fireblast",
+		--"grimstroke_custom_ink_creature",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

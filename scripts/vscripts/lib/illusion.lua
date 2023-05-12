@@ -53,8 +53,13 @@ local IllusionNotCopy = {
     ["item_imba_ultimate_scepter_synth2"] = true,
     ["item_obs_studio"] = true, 
     ["item_god_slayer"] = true,
+    ["item_all_essence"] = true,
+    ["item_master_of_weapons_sword"] = true,
+    ["item_master_of_weapons_sword2"] = true,
+    ["item_master_of_weapons_sword3"] = true,
+    ["item_master_of_weapons_sword4"] = true,
+    ["item_master_of_weapons_sword5"] = true,
 };
-
 
 
 function copy_items(target, illusion)

@@ -70,6 +70,9 @@ function modifier_aegis:ReincarnateTime()
 		if self.caster:IsRealHero() and not self.caster:IsReincarnating() then
 			if self.caster:GetHealth() < 1 then
 				if self:GetStackCount() >= 1 then
+					if _G._playerNumber and _G._playerNumber < 2 then
+						ReincarnateTime = 5
+					end	
 					particle_death_fx = ParticleManager:CreateParticle("particles/items_fx/aegis_respawn_timer.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.caster)
 					ParticleManager:SetParticleAlwaysSimulate(particle_death_fx)
 					ParticleManager:SetParticleControl(particle_death_fx, 0, self.caster:GetAbsOrigin())

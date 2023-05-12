@@ -10,10 +10,11 @@ function cast_grimstroke_custom_ink_creature(keys)
         Target = target,
         Source = caster,
         EffectName = "particles/units/heroes/hero_grimstroke/grimstroke_phantom_return.vpcf",
-        iMoveSpeed = 2000,
+        iMoveSpeed = 3000,
+        bReplaceExisting = false,
         iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION,
         bDodgeable = false,
-        flExpireTime = GameRules:GetGameTime() + 5.0,
+        flExpireTime = GameRules:GetGameTime() + 10.0,
     })
 
     caster:EmitSound("Hero_Grimstroke.InkCreature.Cast")

@@ -200,6 +200,7 @@ if IsServer() then
 		item_mjz_bloodstone_ultimate_edible = true,
 		item_thunder_gods_might = true,
 		item_thunder_gods_might2 = true,
+		item_all_essence = true,
 		--mjz_doom_bringer_devour = true,
 		--mjz_clinkz_soul_pact = true,
 		frostivus2018_clinkz_burning_army = true,

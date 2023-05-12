@@ -9567,7 +9567,7 @@ Required Level: %required_level%
 "DOTA_Tooltip_Ability_item_orb_of_destruction_2_duration"		"DURATION:"
 
 "DOTA_Tooltip_ability_item_all_essence"								 "Elemental"
-"DOTA_Tooltip_ability_item_all_essence_Description"					 "Combined from all elements that drop in hard mode, Use in evolving items or Dissasemble to get elemental Sphere's"
+"DOTA_Tooltip_ability_item_all_essence_Description"					 "Combined from all elements that drop in hard mode, Use in evolving items or Dissasemble to get elemental Sphere's. \n<font color='#F67C16'>On Use: Sell the item(not full price) and increase the item stock for Air and Water by 2 </font>"
 
 	"DOTA_Tooltip_ability_grow_strong"				"Grow Strong"
 	"DOTA_Tooltip_ability_grow_strong_Description"	"Become stronger as time passes! \n<h1><font color='#F67C16'>Passive: Strong Attack </h1></font><h2><font color='#F67C16'> You have a %crit_chance%%% chance to attack with immense power, inflicting (%crit_per_str%%% * owner's Strength) + 100% damage and stunning the target! </font> </h2>"
@@ -9590,7 +9590,7 @@ Required Level: %required_level%
 "DOTA_Tooltip_ability_item_aegis_lua"									  "Consumable Aegis"
 "DOTA_Tooltip_ability_item_aegis_lua_Description"						  "Consume to have his effect"
 "DOTA_Tooltip_modifier_aegis"											   "Aegis of the Immortal"
-"DOTA_Tooltip_modifier_aegis_Description"								   "Reincarnation: Consumes a charge to brings you to life with full health and mana 7 seconds after you die. Meanwhile grant you Power of Reincarnation buff for 14 sec on top of the 7sec basic one."
+"DOTA_Tooltip_modifier_aegis_Description"								   "Reincarnation: Consumes a charge to brings you to life with full health and mana 7(5for solo) seconds after you die. Meanwhile grant you Power of Reincarnation buff for 14 sec on top of the 7sec basic one."
 
 "DOTA_Tooltip_modifier_aegis_buff"										  "Aegis Protection"
 "DOTA_Tooltip_modifier_aegis_buff_Description"							  "Reduce %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% incoming damage, and increase %dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% OUTGOING damage."  
@@ -9622,7 +9622,7 @@ Contains all random skills"
 
 
 "DOTA_Tooltip_ability_item_random_get_ability"		 "Random Ability (Rare)"
-"DOTA_Tooltip_ability_item_random_get_ability_Description"	"Get a Random skill that you don't have.\nSlightly better skill pool then Uncommon.\n<font color='#04DB2B'>Use to get a new skill or you can use this to buy a Random Ability (Mage) (buy recipe)</font>"
+"DOTA_Tooltip_ability_item_random_get_ability_Description"	"Get a Random skill that you don't have.\nSlightly better skill pool then Uncommon.\n<font color='#04DB2B'>Use to get a new skill or you can use this to buy a Random Ability (RareM) (buy recipe)</font>"
 "DOTA_Tooltip_ability_item_random_get_ability3"		 "Craftable Random Ability (Rare)"
 "DOTA_Tooltip_ability_item_random_get_ability3_Description"	"Get a Random skill that you don't have.\nSlightly better skill pool then Uncommon.\n<font color='#04DB2B'>Use to get a new skill or you can use this to buy a Mage skill book (buy recipe)</font>"
 
@@ -10129,28 +10129,41 @@ Contains all random skills"
 		"dota_tooltip_ability_item_custom_octarine_core2_Lore"						"At the core of spellcraft are spectrums only the very gifted can sense."
 		"DOTA_Tooltip_ability_item_custom_octarine_core2_Note0"						"After you consume don't buy again Octarine Core or you will lose your cdr and spell lifesteal consume effect"
 		
-		"dota_tooltip_ability_item_radiance_armor_3_edible"							  "Edible Greater Radiance Armor Red"
+		"DOTA_Tooltip_ability_item_radiance_armor_3_edible"							  "Edible Greater Radiance Armor Red"
 		"DOTA_Tooltip_ability_item_radiance_armor_3_edible_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Red.\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
 		"DOTA_Tooltip_ability_item_radiance_armor_3_edible_Note0"						"After you consume don't buy/equip again Radiance armor no matter the type or you will lose the consume effect. 10%% chance for lifesteal" 
-		"dota_tooltip_modifier_item_radiance_armor"									  "Radiance Armor"
-		"dota_tooltip_modifier_item_radiance_armor_3_edible"							 "Red Radiance Armor"
-		"dota_tooltip_modifier_item_radiance_armor_blue_edible"							 "Blue Radiance Armor"
-		"dota_tooltip_modifier_item_radiance_armor_green_edible"							 "Green Radiance Armor"
 
-		"dota_tooltip_modifier_item_radiance_armor_aura_3_edible"							 "Burning Red Radiance Armor Aura(edible)"
-		"dota_tooltip_modifier_item_radiance_armor_aura_blue_edible"						  "Burning Blue Radiance Armor Aura(edible)"
-		"dota_tooltip_modifier_item_radiance_armor_aura_green_edible"						 "Burning Green Radiance Armor Aura(edible)"
-		"dota_tooltip_modifier_item_radiance_armor_aura_3"									"Burning Red Radiance Armor Aura"
-		"dota_tooltip_modifier_item_radiance_armor_aura_blue"								 "Burning Blue Radiance Armor Aura"
-		"dota_tooltip_modifier_item_radiance_armor_aura_green"								"Burning Green Radiance Armor Aura"
+		"DOTA_Tooltip_ability_item_radiance_armor_3_edible_n"							  "Edible Greater Radiance Armor Red"
+		"DOTA_Tooltip_ability_item_radiance_armor_3_edible_n_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Red.\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
+		"DOTA_Tooltip_ability_item_radiance_armor_3_edible_n_Note0"						"After you consume don't buy/equip again Radiance armor no matter the type or you will lose the consume effect. 10%% chance for lifesteal" 
+
+
+		"Dota_tooltip_modifier_item_radiance_armor"									  "Radiance Armor"
+		"Dota_tooltip_modifier_item_radiance_armor_3_edible"							 "Red Radiance Armor"
+		"Dota_tooltip_modifier_item_radiance_armor_blue_edible"							 "Blue Radiance Armor"
+		"Dota_tooltip_modifier_item_radiance_armor_blue_edible_n"							 "Blue Radiance Armor"
+		"Dota_tooltip_modifier_item_radiance_armor_green_edible"							 "Green Radiance Armor"
+
+		"Dota_Tooltip_modifier_item_radiance_armor_aura_3_edible"							 "Burning Red Radiance Armor Aura(edible)"
+		"Dota_Tooltip_modifier_item_radiance_armor_aura_blue_edible"						  "Burning Blue Radiance Armor Aura(edible)"
+		"Dota_Tooltip_modifier_item_radiance_armor_aura_green_edible"						 "Burning Green Radiance Armor Aura(edible)"
+
+		"Dota_tooltip_modifier_item_radiance_armor_aura_3"									"Burning Red Radiance Armor Aura"
+		"Dota_tooltip_modifier_item_radiance_armor_aura_blue"								 "Burning Blue Radiance Armor Aura"
+		"Dota_tooltip_modifier_item_radiance_armor_aura_green"								"Burning Green Radiance Armor Aura"
  
 
  
-		"dota_tooltip_ability_item_radiance_armor_blue_edible"							  "Edible Greater Radiance Armor Blue"
+		"Dota_tooltip_ability_item_radiance_armor_blue_edible"							  "Edible Greater Radiance Armor Blue"
 		"DOTA_Tooltip_ability_item_radiance_armor_blue_edible_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Blue.\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
 		"DOTA_Tooltip_ability_item_radiance_armor_blue_edible_Note0"						"After you consume don't buy/equip again Radiance armor no matter the type or you will lose the consume effect" 
 
-		"dota_tooltip_ability_item_radiance_armor_green_edible"							  "Edible Greater Radiance Armor Green"
+		"Dota_tooltip_ability_item_radiance_armor_blue_edible_n"							  "Edible Greater Radiance Armor Blue"
+		"DOTA_Tooltip_ability_item_radiance_armor_blue_edible_n_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Blue.\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
+		"DOTA_Tooltip_ability_item_radiance_armor_blue_edible_n_Note0"						"After you consume don't buy/equip again Radiance armor no matter the type or you will lose the consume effect" 
+
+
+		"Dota_tooltip_ability_item_radiance_armor_green_edible"							  "Edible Greater Radiance Armor Green"
 		"DOTA_Tooltip_ability_item_radiance_armor_green_edible_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Green.\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
 		"DOTA_Tooltip_ability_item_radiance_armor_green_edible_Note0"						"After you consume don't buy/equip again Radiance armor no matter the type or you will lose the consume effect"
 
@@ -10213,7 +10226,7 @@ Contains all random skills"
 	"DOTA_Tooltip_modifier_dragonborn_Description"			   "As long you keep the item in inventory you will have the stacks, any team member that kills something will give you statcks or base on chance if is not roshan"
 	   
 	   "DOTA_Tooltip_ability_item_weapon_fragment"				 "<font color='#FF0000'>God Slayer Weapon Fragment</font>"
-	   "DOTA_Tooltip_ability_item_weapon_fragment_Description"	 "Gather with your team 4 of them and create a <font color='#FF0000'>God Slayer</font> item.\nBecause the weapon grows with team kills Timing is important in creating a Slayer weapon so decide with your team the order of who should have the shards"
+	   "DOTA_Tooltip_ability_item_weapon_fragment_Description"	 "Gather with your team 4 of them and create a <font color='#FF0000'>God Slayer</font> item.\nBecause the weapon grows with team kills Timing is important in creating a Slayer weapon so decide with your team the order of who should have the fragments. \n<font color='#F67C16'>Host can type '-weapon_fragment' and the item will drop directly in shop(stock) instead of players inventory </font>"
 	   "DOTA_Tooltip_ability_item_weapon_fragment_Note0"		   "Every 7 lvls you have a 28% chance to get a weapon fragment , in teams of 3 players or less you get to roll for a second shard and for solo you get to roll 28% 2 times and an extra roll with 56% chance(equal with 4 players)"
 
 	   "DOTA_Tooltip_ability_item_weapon_fragment_complete"				 "<font color='#FF0000'>God Slayer Weapon Fragment complete</font>"

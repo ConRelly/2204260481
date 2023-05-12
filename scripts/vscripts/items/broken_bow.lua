@@ -72,15 +72,16 @@ function modifier_item_broken_bow:OnAttackLanded(keys)
 	if IsServer() then
 		local attacker = keys.attacker
 		local parent = self:GetParent()
-		if attacker == parent and not attacker:IsNull() and attacker:IsRangedAttacker() and attacker:IsAlive() and not attacker:IsIllusion() then
+		local target = keys.target
+		if attacker == parent and not attacker:IsNull() and attacker:IsRangedAttacker() and attacker:IsAlive() and not attacker:IsIllusion() and target and IsValidEntity(target) and target:IsAlive() then
 			local ability = self:GetAbility()
+			if ability == nil then return end
 			local chance = ability:GetSpecialValueFor("chance_hit")
-			local target_hp = ability:GetSpecialValueFor("target_hp")
-			local target = keys.target
-			local stack_count = parent:FindModifierByName("modifier_item_broken_bow_count")
 			if RollPercentage(chance) then
-				stack_count:SetStackCount(stack_count:GetStackCount() + 1)
-				if stack_count:GetStackCount() >= self:GetAbility():GetSpecialValueFor("attacks_needed") then
+				local target_hp = ability:GetSpecialValueFor("target_hp")
+				local stack_count = parent:FindModifierByName("modifier_item_broken_bow_count")				
+				local attacks_needed = (ability:GetSpecialValueFor("attacks_needed") - 2) or 1
+				if stack_count:GetStackCount() > attacks_needed then
 					if target:IsAlive() then
 						local damage = math.floor(target:GetHealth() / target_hp)
 						stack_count:SetStackCount(0)
@@ -100,10 +101,12 @@ function modifier_item_broken_bow:OnAttackLanded(keys)
 							damage_type = DAMAGE_TYPE_MAGICAL,
 						})
 					end
-				end
+				else
+					stack_count:SetStackCount(stack_count:GetStackCount() + 1)	
+				end	
 			end
-			if attacker == parent and not target:IsNull() and target:IsAlive() then 
-				if ability:IsCooldownReady() then
+			if ability:IsCooldownReady() then
+				if attacker == parent and not target:IsNull() and target:IsAlive() then 
 					if not target:HasModifier("modifier_item_willbreaker_debuff") then
 						--print(durationz .. " duration")
 						local armor_reduction = target:GetPhysicalArmorBaseValue() * self:GetAbility():GetSpecialValueFor("armor_reduc") / 100

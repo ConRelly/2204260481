@@ -120,6 +120,8 @@ function AOHGameMode:InitGameMode()
 	_G._no_gold_bags = false
 	_G._itemauto1 = {}
 	_G._itemauto2 = {}
+	_G._playerNumber = 0
+	_G._sell_slayer_fragmets = false
 	self._hardMode = false
 	self._endlessMode = false
 	self._endlessMode_started = false
@@ -251,13 +253,15 @@ function AOHGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetUseCustomHeroLevels(true)
 	GameRules:GetGameModeEntity():SetCustomHeroMaxLevel(999)
 	GameRules:GetGameModeEntity():SetMaximumAttackSpeed(1100)
+	GameRules:GetGameModeEntity():SetNeutralStashEnabled(true)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_AGILITY_ATTACK_SPEED,0.05)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP,3.5)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP_REGEN,0.4)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_AGILITY_ARMOR, 0.01)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN,0.07)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA, 3)
---	GameRules:GetGameModeEntity():SetCameraDistanceOverride(1300)
+	--GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MAGIC_RESIST, 0)  -- not implemented by dota yet
+	GameRules:GetGameModeEntity():SetCameraDistanceOverride(1400)
 	GameRules:GetGameModeEntity():SetHUDVisible(26,false)
 	ListenToGameEvent("npc_spawned", Dynamic_Wrap(AOHGameMode, 'OnEntitySpawned'), self)
 	ListenToGameEvent("entity_killed", Dynamic_Wrap(AOHGameMode, 'OnEntityKilled'), self)
@@ -492,6 +496,7 @@ function AOHGameMode:RecountPlayers()
 				if PlayerResource:GetPlayer(playerID) then
 					local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 					self._playerNumber = self._playerNumber + 1
+					_G._playerNumber = self._playerNumber
 				end	
 			end
 		end
@@ -1023,22 +1028,42 @@ function AOHGameMode:OnHeroLevelUp(event)
 		if mainHero == hero then
 			if self._playerNumber < 2 and slayer_fragmet > 0 then
 				--mainHero:AddItemByName("item_weapon_fragment")
-				DropItemOrInventory(nPlayerID, "item_weapon_fragment")
+				if _G._sell_slayer_fragmets then
+					GameRules:IncreaseItemStock(DOTA_TEAM_GOODGUYS, "item_weapon_fragment", 1, -1)
+					Notifications:Top(nPlayerID,{text="Personal: A Slayer weapon fragment has ben added to shop from your drop", style={color="yellow"}, duration=8})
+				else	
+					DropItemOrInventory(nPlayerID, "item_weapon_fragment")
+				end
 				slayer_fragmet = slayer_fragmet - 1
 			else
 				if RandomInt( 0,100 ) < 28 then
-					DropItemOrInventory(nPlayerID, "item_weapon_fragment")
+					if _G._sell_slayer_fragmets then
+						GameRules:IncreaseItemStock(DOTA_TEAM_GOODGUYS, "item_weapon_fragment", 1, -1)
+						Notifications:Top(nPlayerID,{text="Personal: A Slayer weapon fragment has ben added to shop from your drop", style={color="yellow"}, duration=8})
+					else	
+						DropItemOrInventory(nPlayerID, "item_weapon_fragment")
+					end
 					--mainHero:AddItemByName("item_weapon_fragment")
 				end
 				if self._playerNumber < 4 then
 					if RandomInt( 0,100 ) < 20 then
-						DropItemOrInventory(nPlayerID, "item_weapon_fragment")
+						if _G._sell_slayer_fragmets then
+							GameRules:IncreaseItemStock(DOTA_TEAM_GOODGUYS, "item_weapon_fragment", 1, -1)
+							Notifications:Top(nPlayerID,{text="Personal: A Slayer weapon fragment has ben added to shop from your drop", style={color="yellow"}, duration=8})
+						else	
+							DropItemOrInventory(nPlayerID, "item_weapon_fragment")
+						end	
 						--mainHero:AddItemByName("item_weapon_fragment")
 					end	
 				end
 				if self._playerNumber < 2 then
 					if RandomInt( 0,100 ) < 10 then
-						DropItemOrInventory(nPlayerID, "item_weapon_fragment")
+						if _G._sell_slayer_fragmets then
+							GameRules:IncreaseItemStock(DOTA_TEAM_GOODGUYS, "item_weapon_fragment", 1, -1)
+							Notifications:Top(nPlayerID,{text="Personal: A Slayer weapon fragment has ben added to shop from your drop", style={color="yellow"}, duration=8})
+						else	
+							DropItemOrInventory(nPlayerID, "item_weapon_fragment")
+						end
 						--mainHero:AddItemByName("item_weapon_fragment")
 					end	
 				end
@@ -1189,6 +1214,7 @@ function AOHGameMode:_ThinkPrepTime()
 		GameRules.GLOBAL_vic_1 = self._vic_1
 		GameRules.GLOBAL_doubleMode	= self._doubleMode
 		GameRules.GLOBAL_hardMode = self._hardMode
+
 		self._currentRound = self._vRounds[self._nRoundNumber]
 		--if self._endlessMode_started then
 		--	self._currentRound:BeginEndless(#self._vRounds)

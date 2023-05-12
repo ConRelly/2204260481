@@ -133,7 +133,7 @@ if IsServer() then
 			bIsAttack = false,
 			bVisibleToEnemies = true,
 			bReplaceExisting = false,
-			flExpireTime = GameRules:GetGameTime() + 60,
+			flExpireTime = GameRules:GetGameTime() + 15,
 			bProvidesVision = false,
 			ExtraData = {target = target:entindex()}
 		}
