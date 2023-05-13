@@ -8781,12 +8781,14 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"14000"
+			"damage"				"16000"
+			"LinkedSpecialBonus"		"special_bonus_unique_spectre_6"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"bonus_movespeed"		"250"
+			"LinkedSpecialBonus"		"special_bonus_unique_spectre_3"
 		}
 		"03"
 		{
@@ -15400,7 +15402,7 @@
 			"1"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"mana_per_second"			"12 16 20 24"
+				"mana_per_second"			"30 60 100 400"
 			}
 			"2"
 			{
@@ -15412,12 +15414,12 @@
 			"3"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"heal"						"26 94 292 640"
+				"heal"						"150 950 1800 3640"
 			}
 			"4"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"heal_interval"				"0.5"
+				"heal_interval"				"0.7"
 			}
 			"5"
 			{
@@ -15429,6 +15431,11 @@
 				"var_type"					"FIELD_INTEGER"
 				"int_to_heal"				"20 30 40 50"
 			}
+			"7"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"enemy_damage_pct"				"100" // tooltip
+			}			
 		}
 	}
 // Talent: Witch Doctor: Voodoo Restoration: +{vaule}% Max HP heal

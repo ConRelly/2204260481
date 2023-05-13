@@ -2578,14 +2578,18 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * and other fixes.
 
 
-* Elemental item now can be sold by using his active , it will add 2 water and air spheres in shop stock.
-* Aegis respawn time is reduced to 5 sec if there's only one player connected in game.
-* Added new command (written on item), '-weapon_fragment' , it will make so the weapon fragments will drop directly in shop stock instead of players inventory. When the fragment drops it will give you a personal notification that other players can't see 
-* Changed some code logic to Crossbow (trying to fix the over 3 stacks bug and not procking until you repick the item)
-* Radiance edible forms now can be teleported again in neutral stash.
-* Increased the default zoom to 1400 from ~1100
-* Fixed last forms of Evolving Light CrossBow working on Master sword illusion.
-* Fixed OD Astral bugging with aghanim.
+
+* Elemental item can now be sold by using its active, it will add 2 water and air orbs to the shop stock.
+* Aegis respawn time reduced to 5 sec when only one player is connected.
+* Added new command (written on item), '-weapon_fragment', it will cause the weapon fragments to drop directly into the shop stock instead of the player's inventory. When the fragment drops, it will give you a personal notification that other players can't see. 
+* Changed some code logic on the crossbow (trying to fix the over 3 stacks bug and not procking until you re-pick the item (I can't replicate the bug, but it existed)).
+* Radiance edible forms can now be teleported back to a neutral stash.
+* Increased default zoom to 1400 from ~1100
+* Witch Doctor Voodoo Restoration now also deals Dmg and has a Super Scepter effect. and fixed the mana cost talent
+* Fixed last forms of Evolving Light CrossBow working on Master Sword Illusion.
+* Fixed OD Astral bug with Aghanim.
+* Fixed Spectre Dagger missing damage stat.
+* Temporarily disabled Piety (until some of the crash interactions with Ult are fixed)
 
 
 

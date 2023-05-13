@@ -410,6 +410,7 @@ function AOHGameMode:OnPlayerChat(keys)
 	end
 
 
+
 	function _CreateFakeCourier2(hero)
 		local origin = Vector(-2958, 2031, -969) + RandomVector(100)
 		local courier_replacement = CreateUnitByName("npc_courier_replacement", origin, true, hero, hero:GetOwner(), hero:GetTeamNumber())

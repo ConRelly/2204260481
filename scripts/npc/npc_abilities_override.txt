@@ -12120,7 +12120,8 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"375 930 1850 6400"
+				"damage"				"675 1930 6850 25400"
+				"LinkedSpecialBonus"		"special_bonus_unique_spectre_6"
 			}
 			"02"
 			{

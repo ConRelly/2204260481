@@ -277,6 +277,7 @@ function AOHGameMode:InitGameMode()
 	-- 玩家重新连接
 	ListenToGameEvent("player_reconnected", Dynamic_Wrap(AOHGameMode, 'OnPlayerReconnect'), self)
 	ListenToGameEvent("player_disconnected", Dynamic_Wrap(AOHGameMode, 'OnPlayerDisconnect'), self)
+
 	GameRules:GetGameModeEntity():SetThink("OnThink", self, 1.0)
 	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(AOHGameMode, 'OnDamageDealt'), self)
 	gHeroDamage:InitGameMode()
@@ -1283,10 +1284,10 @@ function AOHGameMode:OnEntitySpawned(event)
 	end		
 	if unit and not unit:IsNull() and unit:IsHero()then
 		if not unit:IsIllusion() then
-			fix_atr_for_hero(unit)
 			fix_atr_for_hero2(unit)
 			check_hero_ranking(unit)
 		end
+		fix_atr_for_hero(unit)
 		unit:AddNewModifier(unit, nil, "modifier_generic_handler", {})
 		unit:AddNewModifier(unit, nil, "modifier_aegis_buff", {duration = 7})
 		unit:AddNewModifier(unit, nil, "modifier_aegis_buff", {duration = 2})
