@@ -140,7 +140,11 @@ function AOHGameMode:OnPlayerChat(keys)
 		local rune = CreateRune(runePos, DOTA_RUNE_XP)
 		print("track rune comand")
 	end
-
+	if keys.text == "-dev_location" and Cheats:IsEnabled() and keys.playerid == 0 then
+		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
+		local location = hero:GetAbsOrigin()
+		print("current location: ".. tostring(location))
+	end	
 	
 	if keys.text == guessing_gmae_2 and not Cheats:IsEnabled() and time > 30 and not self._physdanage and not GameRules:IsGamePaused() then
 		Notifications:TopToAll({text="#dota_npc_does_bc", style={color="red"}, duration=5})

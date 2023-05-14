@@ -8585,7 +8585,7 @@ Required Level: %required_level%
 "DOTA_Tooltip_Ability_item_warriors_seal_2_Lore"					"A mystic shield that protects the brave, but only for a while."
 
 "DOTA_Tooltip_ability_item_mjz_attribute_mail"						   "Attribute Mail"
-"DOTA_Tooltip_ability_item_mjz_attribute_mail_Description"				"<h1>Active: Wideshield</h1> Grants %damage_reduction%%%  damage reduction for %duration% seconds to all allies in a %radius% radius.\n<h1>Passive: Return</h1>The owner reflect enemy attacks, dealing %attr_return%%% pure damage from the main attribute."
+"DOTA_Tooltip_ability_item_mjz_attribute_mail_Description"				"<h1>Active: Wideshield</h1> Grants %damage_reduction%%%  damage reduction for %duration% seconds to all allies in a %radius% radius.\n<h1>Passive: Return</h1>The owner reflect enemy attacks, dealing %attr_return%%% pure damage from the main attribute(Universal heroes use Half of All stats)."
 "DOTA_Tooltip_ability_item_mjz_attribute_mail_bonus_armor"				"+$armor"
 "DOTA_Tooltip_ability_item_mjz_attribute_mail_bonus_health"				"%+Bonus Hp"
 "DOTA_Tooltip_ability_item_mjz_attribute_mail_bonus_strength"			"+$str"
@@ -10226,7 +10226,7 @@ Contains all random skills"
 	"DOTA_Tooltip_modifier_dragonborn_Description"			   "As long you keep the item in inventory you will have the stacks, any team member that kills something will give you statcks or base on chance if is not roshan"
 	   
 	   "DOTA_Tooltip_ability_item_weapon_fragment"				 "<font color='#FF0000'>God Slayer Weapon Fragment</font>"
-	   "DOTA_Tooltip_ability_item_weapon_fragment_Description"	 "Gather with your team 4 of them and create a <font color='#FF0000'>God Slayer</font> item.\nBecause the weapon grows with team kills Timing is important in creating a Slayer weapon so decide with your team the order of who should have the fragments. \n<font color='#F67C16'>Host can type '-weapon_fragment' and the item will drop directly in shop(stock) instead of players inventory </font>"
+	   "DOTA_Tooltip_ability_item_weapon_fragment_Description"	 "Gather with your team 4 of them and create a <font color='#FF0000'>God Slayer</font> item.\nBecause the weapon grows with team kills Timing is important in creating a Slayer weapon so decide with your team the order of who should have the fragments. \n<font color='#F67C16'>Host can type '-weapon_fragment' and the item will drop directly in players inventory </font>"
 	   "DOTA_Tooltip_ability_item_weapon_fragment_Note0"		   "Every 7 lvls you have a 28% chance to get a weapon fragment , in teams of 3 players or less you get to roll for a second shard and for solo you get to roll 28% 2 times and an extra roll with 56% chance(equal with 4 players)"
 
 	   "DOTA_Tooltip_ability_item_weapon_fragment_complete"				 "<font color='#FF0000'>God Slayer Weapon Fragment complete</font>"

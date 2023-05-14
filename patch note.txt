@@ -2594,6 +2594,14 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Fixed recent Dota brake: early weaves that stopped progressing due to skills that act like a unit (Death Ward, Waver Bugs, etc).
+* Gold bags and weapon fragment commands now start as On by default and you have to type them in if you want them to drop as before.
+* Attribute mail reflect now works on universal heroes, reflects half of all stats.
+* Xp Rune now drops in a small area near the shrine.
+
+
+
+
 
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).

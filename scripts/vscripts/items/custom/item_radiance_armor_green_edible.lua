@@ -118,6 +118,7 @@ function modifier_item_radiance_armor_aura_green_edible:OnIntervalThink()
 		local caster = self:GetCaster()
 		local parent = self:GetParent()
 		if caster == nil then return end
+		if not caster:IsHero() then return end
 		local ability = self:GetAbility()
 		local agi = caster:GetAgility()
 		local ms = caster:GetIdealSpeed()

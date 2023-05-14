@@ -136,9 +136,10 @@ function AOHGameRound:End()
 		spawner:End()
 	end
 	local center = Vector(0, 0, 0)
+	local rune_position = Vector(-2307.83, 276, 448)
 	local minRadius = 50
 	local maxRadius = 2250
-	local runePos = GetRandomPointOnMap(center, minRadius, maxRadius)
+	local runePos = GetRandomPointOnMap(rune_position, 50, 350)
 	local itemPos = GetRandomPointOnMap(center, minRadius, maxRadius)
 	if RollPercentage(90) then
 		local rune = CreateRune(runePos, DOTA_RUNE_XP)
@@ -192,7 +193,7 @@ function AOHGameRound:IsFinished()
 	end
 
 	local nEnemiesRemaining = #self._vEnemiesRemaining
-	if nEnemiesRemaining == 0 then
+	if nEnemiesRemaining < 1 then
 		return true
 	end
 
@@ -226,7 +227,7 @@ function AOHGameRound:OnNPCSpawned(event)
 	end
 
 	if spawnedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-	
+		if spawnedUnit:GetLevel() < 5 and spawnedUnit:GetUnitName() ~= "npc_boss_juggernaut_4" then return end
 		spawnedUnit:SetMustReachEachGoalEntity(true)
 		table.insert(self._vEnemiesRemaining, spawnedUnit)
 		spawnedUnit:SetDeathXP(0)

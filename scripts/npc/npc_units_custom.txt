@@ -229,7 +229,7 @@
 	"Model"						"models/creeps/neutral_creeps/n_creep_kobold/kobold_a/n_creep_kobold_a.vmdl"
 	"SoundSet"					"n_creep_Melee"
 	"ModelScale"				"1.0"
-	"Level"						"3"
+	"Level"						"5"
 	"ConsideredHero"			"1"
 	"Ability1"				  "generic_hidden"
 	"Ability2"				  "generic_hidden"
@@ -377,7 +377,7 @@
 	"Model"						"models/creeps/neutral_creeps/n_creep_kobold/kobold_c/n_creep_kobold_c.vmdl"
 	"SoundSet"					"n_creep_Melee"
 	"ModelScale"				"1.4"
-	"Level"						"3"
+	"Level"						"5"
 	"CanBeDominated"			"0"
 	"ConsideredHero"			"1"
 	
@@ -432,7 +432,7 @@
 	"Model"						"models/creeps/neutral_creeps/n_creep_kobold/kobold_b/n_creep_kobold_b.vmdl"
 	"SoundSet"					"n_creep_Melee"
 	"ModelScale"				"1.5"
-	"Level"						"1"
+	"Level"						"5"
 	"ConsideredHero"			"1"
 
 	"Ability1"					"custom_acid_spray"
@@ -662,7 +662,7 @@
 	"vscripts"					"bosses/attack_move.lua"
 	"SoundSet"							  "Hero_Undying"
 	"GameSoundsFile"						"soundevents/game_sounds_heroes/game_sounds_undying.vsndevts"
-	"Level"								 "3"
+	"Level"								 "5"
 	"ModelScale"							"0.5"
 	"CanBeDominated"						"0"
 	"ConsideredHero"						"1"
@@ -850,7 +850,7 @@
 	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
 	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_faceless_void.vsndevts"
 	"ModelScale"				"1.4"
-	"Level"						"3"
+	"Level"						"5"
 	"ConsideredHero"			"1"
 	"CanBeDominated"			"0"
 	"HasInventory"				"1"
@@ -2536,8 +2536,8 @@
 	"MagicalResistance"			"45"
 	
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageMin"			"280"		// Damage range min.
-	"AttackDamageMax"			"890"		// Damage range max.
+	"AttackDamageMin"			"480"		// Damage range min.
+	"AttackDamageMax"			"1290"		// Damage range max.
 	"AttackRate"				"1.7"		// Speed of attack.
 	"BaseAttackSpeed"			"120"
 	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
@@ -2875,7 +2875,7 @@
 	"BaseClass"					"npc_dota_creature"
 	"vscripts"					"bosses/attack_move.lua"
 	"SoundSet"					"Hero_DragonKnight"
-	"Level"						"3"
+	"Level"						"5"
 	"ModelScale" 				"1.0"
 	"UnitLabel" "temp_unit"
 	"ConsideredHero"			"1"
@@ -3680,7 +3680,7 @@
 	"BaseClass"					"npc_dota_creature"
 	"vscripts"					"bosses/attack_move.lua"
 	"SoundSet"					"Hero_Lycan"
-	"Level"						"3"
+	"Level"						"5"
 	"ConsideredHero"			"1"
 	"ModelScale" 				"1"
 	
@@ -5620,7 +5620,7 @@
 	"vscripts"					"bosses/attack_move.lua"	// Class of entity of link to.
 	"SoundSet"					"Hero_EmberSpirit"	
 	"ModelScale"				"1.1"
-	"Level"						"3"
+	"Level"						"5"
 	"ConsideredHero"			"1"
 	"HasInventory"				"1"
 	"precache"
@@ -8594,7 +8594,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
 		"SoundSet"					"Hero_ElderTitan"
-		"Level"						"16"
+		"Level"						"3"
 		"ModelScale" 				"1.5"
 		"UnitLabel" "temp_unit"
 		
@@ -9720,7 +9720,7 @@
 	"vscripts"					"bosses/attack_move.lua"
 	"SoundSet"					"Hero_Clinkz"
 	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
-	"Level"						"8"
+	"Level"						"3"
 	"ModelScale" 				"1.1"
 	"precache"
 	{
@@ -12123,7 +12123,7 @@
 	"BaseClass"					"npc_dota_creature"  //"npc_dota_clinkz_skeleton_archer_frostivus2018"
 	"Model"						"models/heroes/clinkz/clinkz_archer.vmdl"
 	"SoundSet"					"Hero_Clinkz"
-	"Level"						"3"
+	"Level"						"5"
 	"ModelScale"				"0.7"
 	"wearable"					"669"
 
@@ -12490,7 +12490,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/creeps/darkreef/meranth_guard/meranth_guard.vmdl"
 		"SoundSet"					"n_creep_Melee"
-		"Level"						"6"
+		"Level"						"3"
 		"ModelScale" 				"1.0"
 		"ConsideredHero"						"1"
 
@@ -12560,7 +12560,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"Model"						"models/creeps/darkreef/meranth_guard/meranth_guard.vmdl"
 		"SoundSet"					"n_creep_Melee"
-		"Level"						"6"
+		"Level"						"3"
 		"ModelScale" 				"1.5"
 		"ConsideredHero"						"1"
 
@@ -12630,7 +12630,7 @@
 		"SoundSet"					"Creep_Good_Melee"					
 		"ModelScale"				"1.0"
 		"ConsideredHero"			"1"
-		"Level"					 	"16"
+		"Level"					 	"3"
 		
 		"Ability1"					"golden_mine_passive"			
 		"Ability2"					"custom_no_heal_aura"			

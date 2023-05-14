@@ -11,7 +11,7 @@ function OnSpellStart( keys )
     local modifier_stats2 = 'modifier_item_radiance_armor_3_edible'
     local modifier_stats3 = "modifier_item_radiance_armor_aura_3_edible"
     if ability:GetCurrentCharges() < 1 then return end
-
+    if not caster:IsRealHero() then return end
     local sound_cast = keys.sound_cast
     local item_name = ability:GetAbilityName()
 	local radiance_table = {
@@ -62,7 +62,9 @@ function OnCreated_(keys)
     local caster = keys.caster
 	local ability = keys.ability
     if caster and ability then
-        DropNeutralItemAtPositionForHero("item_radiance_armor_3_edible", caster:GetAbsOrigin(), caster, 5, false)
-        caster:RemoveItem(ability) 
+        local item = DropNeutralItemAtPositionForHero("item_radiance_armor_3_edible", caster:GetAbsOrigin(), caster, 5, false)
+        if item then
+            caster:RemoveItem(ability) 
+        end
     end
 end

@@ -117,11 +117,11 @@ function AOHGameMode:InitGameMode()
 	_G._endlessMode_started = false
 	_G._normal_mode = false
 	_G._defeat_extra_lives = 3
-	_G._no_gold_bags = false
+	_G._no_gold_bags = true
 	_G._itemauto1 = {}
 	_G._itemauto2 = {}
 	_G._playerNumber = 0
-	_G._sell_slayer_fragmets = false
+	_G._sell_slayer_fragmets = true
 	self._hardMode = false
 	self._endlessMode = false
 	self._endlessMode_started = false
