@@ -95,7 +95,10 @@ function modifier_infinite_health:OnDestroy()
                         Notifications:TopToAll({text="Part 1 Normal Mode: You Have Reached Level "..lvl.." and "..hp.."% Heath, Reward "..reward , style={color="red"}, duration=15})
                     end    
                 end                
-            end    
+            end 
+            if self:GetParent():IsAlive() then
+                self:GetParent():SetHealth(1000)
+            end 
         end   
     end    
 end

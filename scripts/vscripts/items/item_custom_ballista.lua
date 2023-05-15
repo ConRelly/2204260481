@@ -83,9 +83,7 @@ if IsServer() then
 	function modifier_item_custom_ballista_buff:GetModifierProcAttack_Feedback(keys)
         local attacker = keys.attacker
 		local target = keys.target
-		local parent = self:GetParent()
-		self.attacks = self.attacks + 1
-		if self.attacks > 9 then
+		if self.attacks > 8 then
 			local damageTable = {
 				victim = target,
 				attacker = attacker,
@@ -103,6 +101,8 @@ if IsServer() then
 				pos = 6
 			})
 			self.attacks = 0
+		else
+			self.attacks = self.attacks + 1
 		end	
 	end
 end

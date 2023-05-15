@@ -23,32 +23,32 @@
 		"book_of_strength"
 		{
 			"Item"					"item_book_of_strength"
-			"Chance"				"5"
+			"Chance"				"1"
 		}
 		"book_of_agility"
 		{
 			"Item"					"item_book_of_agility"
-			"Chance"				"5"
+			"Chance"				"1"
 		}
 		"book_of_intelligence"
 		{
 			"Item"					"item_book_of_intelligence"
-			"Chance"				"5"
+			"Chance"				"1"
 		}
 		"item_earth_essence"
 		{
 			"Item"					"item_earth_essence"
-			"Chance"				"5"
+			"Chance"				"0"
 		}
 		"HealingSalve"
 		{
 			"Item"					"item_fire_essence"
-			"Chance"				"5"
+			"Chance"				"0"
 		}
 		"RandomSkill"
 		{
 			"Item"					"item_air_essence"
-			"Chance"				"5"
+			"Chance"				"0"
 		}
 		"EnchantedMango"
 		{
@@ -113,7 +113,7 @@
 			"a"
 			{
 				"NPCName"				"npc_boss_kobold_foreman2"
-				//"NPCName"               "npc_boss_tiny"
+				//"NPCName"               "npc_boss_clockwerk_rush_kinder"
 				//"NPCName"               "npc_boss_antimage_female"
 				//"NPCName"               "npc_dota_boss_aghanim"
 				//"NPCName"               "npc_dota_boss_void_spirit"

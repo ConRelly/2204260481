@@ -876,7 +876,8 @@
 		"Ability11"             "special_bonus_cdr_20"
 		"Ability13"				"special_bonus_hp_3500"
 		"Ability16"				"special_bonus_unique_brewmaster_6"
-
+		
+		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeStrengthGain"			"9.8"
 		"AttributeIntelligenceGain"		"5.5"
 	}

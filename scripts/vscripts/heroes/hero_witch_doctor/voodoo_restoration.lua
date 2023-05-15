@@ -141,6 +141,9 @@ function modifier_wd_voodoo_restoration_heal:OnIntervalThink()
 			SendOverheadEventMessage(parent, OVERHEAD_ALERT_HEAL, parent, heal, parent)
 		else
 			heal = (talent_heal + self.heal + int_to_heal) * self.interval
+			if _G._challenge_bosss > 0 then
+				heal = ((talent_heal + self.heal + int_to_heal) * _G._challenge_bosss) * self.interval					
+			end	
 			local damage_table = {
 				attacker = caster,
 				victim = parent,

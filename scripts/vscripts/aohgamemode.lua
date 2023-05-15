@@ -1438,7 +1438,7 @@ function AOHGameMode:OnEntitySpawned(event)
 		end			
 		if boss_challenger[unit:GetUnitName()] == true then
 			unit:AddNewModifier(unit, nil, "modifier_infinite_health", {duration = 420})
-			unit:AddNewModifier(unit, nil, "modifier_kill", {duration = 421})
+			--unit:AddNewModifier(unit, nil, "modifier_kill", {duration = 421})
 		end	
 		if unit:GetUnitName() == "npc_boss_guesstuff_Moran" or  unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
 			unit:AddNewModifier(unit, nil, "modifier_double_trouble", {})

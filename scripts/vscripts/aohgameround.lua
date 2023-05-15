@@ -215,6 +215,14 @@ function AOHGameRound:GetXPPerCoreUnit()
 end
 
 
+local skip_name = {
+    
+    ["npc_boss_randomstuff_aiolos_demo"] = true,
+    ["npc_dota_invisible_vision_source"] = true,
+
+
+};
+
 function AOHGameRound:OnNPCSpawned(event)
 	if not IsServer() then return end
 	local spawnedUnit = EntIndexToHScript(event.entindex)
@@ -222,7 +230,7 @@ function AOHGameRound:OnNPCSpawned(event)
 	if not spawnedUnit or spawnedUnit:IsPhantom() or spawnedUnit:GetClassname() == "npc_dota_thinker" or spawnedUnit:GetUnitName() == "" or spawnedUnit:IsIllusion() then
 		return
 	end
-	if spawnedUnit:GetUnitLabel() == "temp_unit" or spawnedUnit:GetUnitLabel() == "pharaoh_ok" or spawnedUnit:GetUnitName() == "npc_dota_invisible_vision_source" then
+	if spawnedUnit:GetUnitLabel() == "temp_unit" or spawnedUnit:GetUnitLabel() == "pharaoh_ok" or skip_name[spawnedUnit:GetUnitName()] == true then
 		return
 	end
 

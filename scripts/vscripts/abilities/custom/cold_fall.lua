@@ -12,18 +12,20 @@ function cold_fall:OnChannelFinish()
 		local caster = self:GetCaster()
 		local point = self:GetCursorPosition()
 		Timers:CreateTimer({
-			endTime = math.random(2, 14), -- when this timer should first execute, you can omit this if you want it to run first on the next frame
+			endTime = math.random(2, 7),
 			callback = function()
 			-- create thinker
-				CreateModifierThinker(
-				caster, -- player source
-				self, -- ability source
-				"modifier_cold_fall_thinker", -- modifier name
-				{}, -- kv
-				point,
-				self:GetCaster():GetTeamNumber(),
-				false
-				)
+				if caster and IsValidEntity(caster) and caster:IsAlive() then
+					CreateModifierThinker(
+					caster, -- player source
+					self, -- ability source
+					"modifier_cold_fall_thinker", -- modifier name
+					{}, -- kv
+					point,
+					self:GetCaster():GetTeamNumber(),
+					false
+					)
+				end	
 			end
 		})
 	end

@@ -37,6 +37,14 @@ function modifier_bottom_10:DeclareFunctions()
     return funcs
 end
 
+function modifier_bottom_10:CheckState()
+	local state = {
+        [MODIFIER_STATE_CANNOT_MISS] = true,
+    }
+	
+	return state
+end
+
 function modifier_bottom_10:GetModifierBonusStats_Strength()
     return self:GetParent():GetLevel() * 30
 end
