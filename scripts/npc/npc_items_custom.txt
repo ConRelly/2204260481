@@ -34402,7 +34402,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage_ptc"			"170"
+				"bonus_damage_ptc"			"150"
 			}
 			"02"
 			{
@@ -34464,7 +34464,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"ss_spell_amp"				"20"
+				"ss_spell_amp"				"15"
 			}
 			"13"
 			{

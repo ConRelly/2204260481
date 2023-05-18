@@ -199,7 +199,7 @@ end
 function modifier_infinite_health:GetModifierExtraHealthBonus()
     if self:GetParent() then
         local lvl = self:GetParent():GetLevel()
-        local bonus_hp = math.floor( lvl * 50000 )
+        local bonus_hp = math.floor( lvl * 60000 )
         return bonus_hp
     end
 end

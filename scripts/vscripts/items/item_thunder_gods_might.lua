@@ -289,7 +289,7 @@ function modifier_item2:GetModifierProcAttack_Feedback(keys)
             end                
             local particleName = "particles/econ/events/ti9/maelstorm_ti9.vpcf" --"particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_maelstrom_v2_item.vpcf" --"particles/particle_test/chain_lightning_red.vpcf"
             local has_modifier = caster:HasModifier("modifier_super_scepter")
-            -- uses 20% of the spell amp
+            -- uses 15% of the spell amp
             if has_modifier then
                 damage = damage * (1 + caster:GetSpellAmplification(false) * ss_spell_amp)
                 damage_flag = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR

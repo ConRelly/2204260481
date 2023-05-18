@@ -887,7 +887,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"absorb_per_hero_hit"	"3000 4500 7600 17500 21500 42500 100000"
+				"absorb_per_hero_hit"	"900 1800 3120 9160 14000 21500 50000"
 			}
 			"07"
 			{
@@ -21388,7 +21388,7 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/heroes/dark_seer_custom_ion_shell"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"

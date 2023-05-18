@@ -2608,6 +2608,18 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * Added True Strike as a bonus effect for the top 10 and 20 Underdogs+. 
 * Added Challenge boss effect for Voodoo Restoration.
 * Slightly buffed Wich Doctor Death Skull(R).
+* Fixed some rare potential crash with god Meteor fall(sword master version).
+
+
+
+
+* Fixed boss lycan wolves that could stuck wave if they were not killed before the expiration time kicked in (60 sec since summon).
+* Increased Lycan(Hero) wolfs agro range to almost global
+* Ion Shell can only target allies now (the buff)
+
+
+
+
 
 
 

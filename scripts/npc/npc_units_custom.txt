@@ -3680,7 +3680,7 @@
 	"BaseClass"					"npc_dota_creature"
 	"vscripts"					"bosses/attack_move.lua"
 	"SoundSet"					"Hero_Lycan"
-	"Level"						"5"
+	"Level"						"3"
 	"ConsideredHero"			"1"
 	"ModelScale" 				"1"
 	
@@ -7183,6 +7183,7 @@
 	"MagicalResistance"			"25"		// Magical protection.
 	"StatusHealthRegen"			"2.0"		// Health regeneration rate.
 	"StatusHealth"				"500"
+	"AttackAcquisitionRange"	"7500"
 }
 "npc_dota_lycan_wolf2"
 {
