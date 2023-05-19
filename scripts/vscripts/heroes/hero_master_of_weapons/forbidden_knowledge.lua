@@ -15,7 +15,7 @@ function modifier_forbidden_knowledge_buff:IsHidden() return true end
 function modifier_forbidden_knowledge_buff:IsPurgable() return false end
 function modifier_forbidden_knowledge_buff:RemoveOnDeath() return false end
 function modifier_forbidden_knowledge_buff:OnCreated()
-	if self:GetAbility() then
+	if self:GetAbility() and self:GetCaster() then
 		self:GetCaster():EmitSound("Hero_Sven.WarCry")
 		if self:GetCaster():GetLevel() >= 55 then
 			self:SetStackCount(self:GetAbility():GetSpecialValueFor("buff_as_55"))

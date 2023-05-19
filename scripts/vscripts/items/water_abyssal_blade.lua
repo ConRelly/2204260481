@@ -199,8 +199,11 @@ function modifier_abyssal_water_blade_bash:DeclareFunctions() return {MODIFIER_P
 function modifier_abyssal_water_blade_bash:GetModifierIncomingPhysicalDamage_Percentage(keys)
 	if self:GetAbility() then
 		local attacker = keys.attacker
-		if attacker:HasModifier("modifier_abyssal_water_blade_up") then
+		local target = keys.target
+		if attacker:HasModifier("modifier_abyssal_water_blade_up") and not target:HasModifier("modifier_phys") then
 			return self:GetAbility():GetSpecialValueFor("up_bash_incdmg")
+		elseif attacker:HasModifier("modifier_abyssal_water_blade_up") and target:HasModifier("modifier_phys") then
+			return self:GetAbility():GetSpecialValueFor("up_bash_incdmg") / 10
 		else
 			return 0
 		end

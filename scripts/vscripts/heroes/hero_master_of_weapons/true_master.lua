@@ -195,7 +195,7 @@ function modifier_true_master_gun:OnAttackLanded(keys)
 				victim = keys.target,
 				attacker = self:GetCaster(),
 				ability = self:GetAbility(),
-				damage = self:GetParent():GetAttackDamage() * 1.33,
+				damage = keys.original_damage * 1.33,
 				damage_type = DAMAGE_TYPE_MAGICAL,
 				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 			})

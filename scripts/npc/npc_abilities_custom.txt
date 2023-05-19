@@ -39923,7 +39923,7 @@
 	"AbilityTextureName"								  "pangolier_heartpiercer"
 	"AbilityBehavior"									 "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"SpellImmunityType"								   "SPELL_IMMUNITY_ENEMIES_NO"
-	"SpellDispellableType"								"SPELL_DISPELLABLE_YES"
+	"SpellDispellableType"								"SPELL_DISPELLABLE_NO"
 
 	"MaxLevel"											"7"
 	"RequiredLevel"									   "1"

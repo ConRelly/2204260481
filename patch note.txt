@@ -2619,6 +2619,12 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Fixed Abyssal Blade to increase physical dmg of normal attack by ~13.5x vs. gods instead of ~2x (when armor was below 100).
+* Picasson Orange Mix now works vs. Gods (gives ~60% physical bonus vs. Gods).
+-- Both bonus effects (Abyssal and/or Orange Mix) are at maximum effectiveness when Gods armor is closer to 0 or below 0. 
+* Replaced Pango 3nd skill and 2 talents.
+
+
 
 
 

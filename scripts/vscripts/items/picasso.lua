@@ -662,6 +662,8 @@ function modifier_picasso_orange_mix:DeclareFunctions() return {MODIFIER_PROPERT
 function modifier_picasso_orange_mix:GetModifierIncomingPhysicalDamage_Percentage()
 	if not self:GetParent():HasModifier("modifier_phys") then
 		if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("orange_mix") end
+	else
+		if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("orange_mix") / 10 end	
 	end
 end
 

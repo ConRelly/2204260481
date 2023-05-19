@@ -563,7 +563,7 @@
 	"DOTA_Tooltip_modifier_true_master_gun"			"Ancient Gun"
 	"DOTA_Tooltip_modifier_true_master_dagger_bleed"					"Bleeding"
 	"DOTA_Tooltip_modifier_true_master_dagger_bleed_description"		"Deals 33%% of attack damage every second ignoring armor"
-
+	"DOTA_Tooltip_modifier_true_master_gun_reload"  "Reloading"
 
 //############################################################################################################################
 
