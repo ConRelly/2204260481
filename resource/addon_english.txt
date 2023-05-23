@@ -556,14 +556,17 @@
 
 
 	"DOTA_Tooltip_ability_true_master"					"The True Master Of Weapons"
-	"DOTA_Tooltip_ability_true_master_description"		"<h1>Long Edged Sword</h1> Attacking from 850 units away will have %sword_crit_chance%%% chance for a %sword_crit_damage%%% Crit. \n<h1>Forbidden Dagger</h1> Bleeding enemy takes 5% dmg AMP, using dagger gives you great mobility, uncaps MS & starts giving 3k MS after LV.65, dodging any Dmg with %dagger_dodge_chance%%% chance. \n<h1>Ancient Gun</h1> Has %dagger_true_strike%%% true-strike chance. <br> Allows to atk always except during disarm debuffs. <br> Gunshots deal x8 Dmg in 4 instances, fixed rate of 3 atk/sec then reloads for a sec."
+	"DOTA_Tooltip_ability_true_master_description"		"<h1>Long Edged Sword</h1> Gets 850 bonus attack range and have %sword_crit_chance%%% chance for a %sword_crit_damage%%% Crit. \n<h1>Forbidden Dagger</h1>Getting %dagger_aura_range% range close to an enemy will give them bleed status for %dagger_bleed_duration% s(read enemy debuff description), using dagger removes your MS limit dodging any Dmg with %dagger_dodge_chance%%% chance but forces you to have %dagger_max_attack_range% attack range. \n<h1><font color='#DE3163'>Super Scepter</font></h1><font color='#EB3904'>BloodTrail</font>: Being in %dagger_ss_range% range or closer of your bleeding victim will give you <font color='#EB3904'>BloodTrail</font> stacks every second base on how many bleeding stacks the enemy has. \n<h1><font color='#F70707'>Challenge Boss</font></h1>Increase <font color='#EB3904'>BloodTrail</font> range by <font color='#5BE424'>100%</font> for every Reward Tier. \n<h1>Ancient Gun</h1> Has %dagger_true_strike%%% true-strike chance. <br> Allows to atk always except during disarm debuffs. <br> Gunshots deals 8x your original dmg(crit inclusive) in 4 instances of magical dmg, fixed attack rate of 3 atk/sec then reloads for a sec."
 	"DOTA_Tooltip_ability_true_master_lore"		"Some choose bullets, others choose blades, why not ALL of them?"
+	"DOTA_Tooltip_ability_true_master_note0"    "Gun shot dmg is not affected by spell amp, Bleed duration is affected by your status resistance(positive)"
 	"DOTA_Tooltip_modifier_true_master_sword"		"Long Edged Sword"
 	"DOTA_Tooltip_modifier_true_master_dagger"		"Forbidden Dagger"
 	"DOTA_Tooltip_modifier_true_master_gun"			"Ancient Gun"
 	"DOTA_Tooltip_modifier_true_master_dagger_bleed"					"Bleeding"
-	"DOTA_Tooltip_modifier_true_master_dagger_bleed_description"		"Deals 33%% of attack damage every second ignoring armor"
+	"DOTA_Tooltip_modifier_true_master_dagger_bleed_description"		"Victim gets 1 stack for every 700 units moved durring bleeding, Deals 20%% of your attack damage per stack every second ignoring armor + 1%% of target currect hp <br>Physical dmg and Not affected by spell amp<br>Duration is affected by your status resistance."
 	"DOTA_Tooltip_modifier_true_master_gun_reload"  "Reloading"
+	"DOTA_Tooltip_modifier_true_master_dagger_stacks"  "<font color='#EB3904'>BloodTrail</font>"
+	"DOTA_Tooltip_modifier_true_master_dagger_stacks_description" "Gain bonus stacks base on enemy bleeding stacks: <br><font color='#10DE33'>+%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% Str and Agi</font> <br><font color='#8FF00C'>+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% bonus Attack dmg</font> <br><font color='#F0CA0C'>+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% movement speed bonus</font> <br><font color='#EB3904'>+%dMODIFIER_PROPERTY_HEALTH_BONUS% bonus HP</font>"
 
 //############################################################################################################################
 

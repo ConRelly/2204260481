@@ -283,16 +283,17 @@
 }
 "npc_dota_hero_pangolier"
 {
-	//"Ability4"					"true_master"
+	"UnitLabel"				   "no_underdog"
 	"Ability2"					"pangolier_heartpiercer_oaa"
 	"Ability3"				    "imba_phantom_assassin_coup_de_grace"
 	//"Ability3"					"forbidden_knowledge"
 	//"Ability5"					"gifted_weapon"
+	"Ability8"					"true_master"
 	"Ability10"					"special_bonus_evasion_30"
 	"Ability12"                 "special_bonus_attack_speed_100"
 	"Ability15"					"special_bonus_strength_280"
 	"Ability17"					"special_bonus_cdr_25"
-
+	"ModelScale"				"0.8"
 	"AttributeAgilityGain"			"17.8"
 }
 "npc_dota_hero_phantom_lancer"

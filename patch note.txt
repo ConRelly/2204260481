@@ -2627,6 +2627,11 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Added new skill to pangolier (it has 3 forms)
+* Removed pangolier from legacy underdogs list.
+
+
+
 
 
 **Update Notes spellings will get corrected before the live update.

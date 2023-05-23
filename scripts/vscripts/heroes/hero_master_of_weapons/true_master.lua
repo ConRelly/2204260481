@@ -2,8 +2,11 @@ LinkLuaModifier("modifier_true_master", "heroes/hero_master_of_weapons/true_mast
 LinkLuaModifier("modifier_true_master_sword", "heroes/hero_master_of_weapons/true_master", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_true_master_dagger", "heroes/hero_master_of_weapons/true_master", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_true_master_dagger_bleed", "heroes/hero_master_of_weapons/true_master", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_true_master_dagger_stacks", "heroes/hero_master_of_weapons/true_master", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_true_master_gun", "heroes/hero_master_of_weapons/true_master", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_true_master_gun_reload", "heroes/hero_master_of_weapons/true_master", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_true_master_dagger_bleed_initial", "heroes/hero_master_of_weapons/true_master", LUA_MODIFIER_MOTION_NONE)
+
 
 true_master = class({})
 function true_master:GetIntrinsicModifierName() return "modifier_true_master" end
@@ -23,6 +26,19 @@ function true_master:OnSpellStart()
 		self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_true_master_gun", {})
 	end
 end
+function true_master:GetAbilityTextureName()
+	local sword = self:GetCaster():HasModifier("modifier_true_master_sword")
+	local dagger = self:GetCaster():HasModifier("modifier_true_master_dagger")
+	local gun = self:GetCaster():HasModifier("modifier_true_master_gun")
+    if sword then
+		return "msword"
+	elseif dagger then		
+		return "mdagger"
+	elseif gun then	
+		return "mgun"
+	end	
+	return "msword"
+end
 
 modifier_true_master = class({})
 function modifier_true_master:IsHidden() return true end
@@ -39,9 +55,12 @@ function modifier_true_master:OnCreated()
 		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_true_master_gun", {})
 	end
 end
-function modifier_true_master:DeclareFunctions()
+
+
+--[[ function modifier_true_master:DeclareFunctions()
 	return {MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING, MODIFIER_PROPERTY_MODEL_SCALE}
 end
+
 function modifier_true_master:GetModifierPercentageCooldownStacking()
 	if self:GetParent():GetLevel() >= 35 then
 		return 30
@@ -50,7 +69,7 @@ function modifier_true_master:GetModifierPercentageCooldownStacking()
 end
 function modifier_true_master:GetModifierModelScale()
 	return -50
-end
+end ]]
 
 -----------
 -- Sword --
@@ -67,7 +86,7 @@ function modifier_true_master_sword:GetModifierAttackRangeBonus()
 end
 function modifier_true_master_sword:GetModifierPreAttack_CriticalStrike(params)
 	if IsServer() then
-		if RollPercentage(self:GetAbility():GetSpecialValueFor("sword_crit_chance")) then
+		if self:GetAbility() and RollPercentage(self:GetAbility():GetSpecialValueFor("sword_crit_chance")) then
 			return self:GetAbility():GetLevelSpecialValueFor("sword_crit_damage", RandomInt(1, self:GetAbility():GetLevel()))
 		end
 		return 0
@@ -77,64 +96,221 @@ end
 ------------
 -- Dagger --
 ------------
+
 modifier_true_master_dagger = class({})
+function modifier_true_master_dagger:IsAura() return true end
 function modifier_true_master_dagger:IsHidden() return false end
 function modifier_true_master_dagger:IsPurgable() return false end
 function modifier_true_master_dagger:RemoveOnDeath() return false end
+function modifier_true_master_dagger:GetAuraRadius() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("dagger_aura_range") end end
+function modifier_true_master_dagger:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
+function modifier_true_master_dagger:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
+function modifier_true_master_dagger:GetModifierAura() return "modifier_true_master_dagger_bleed_initial" end
+function modifier_true_master_dagger:GetAuraDuration() return -1 end
 function modifier_true_master_dagger:DeclareFunctions()
-	return {MODIFIER_PROPERTY_MAX_ATTACK_RANGE, MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_IGNORE_MOVESPEED_LIMIT, MODIFIER_PROPERTY_AVOID_DAMAGE, MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT}
+	return {MODIFIER_PROPERTY_MAX_ATTACK_RANGE, MODIFIER_PROPERTY_IGNORE_MOVESPEED_LIMIT, MODIFIER_PROPERTY_AVOID_DAMAGE,}
 end
 function modifier_true_master_dagger:GetModifierMaxAttackRange()
-	return self:GetAbility():GetSpecialValueFor("dagger_max_attack_range")
-end
-function modifier_true_master_dagger:GetModifierMoveSpeedBonus_Constant()
-	if self:GetCaster():GetLevel() >= 65 then
-		return self:GetAbility():GetSpecialValueFor("dagger_65_bonus_ms")
-	end
-	return 0
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("dagger_max_attack_range")
+	end	
 end
 function modifier_true_master_dagger:GetModifierIgnoreMovespeedLimit() return 1 end
-function modifier_true_master_dagger:GetModifierBaseAttackTimeConstant() return self:GetAbility():GetSpecialValueFor("dagger_fixed_bat") end
 function modifier_true_master_dagger:GetModifierAvoidDamage(keys)
 	if keys.damage > 0 then
-		if RollPercentage(self:GetAbility():GetSpecialValueFor("dagger_dodge_chance")) then
+		if self:GetAbility() and RollPercentage(self:GetAbility():GetSpecialValueFor("dagger_dodge_chance")) then
 			return 1
 		end
 	end
 	return 0
 end
 
+-- Dagger Stacking buff
+modifier_true_master_dagger_stacks = class({})
+function modifier_true_master_dagger_stacks:IsHidden() return false end
+function modifier_true_master_dagger_stacks:IsPurgable() return false end
+function modifier_true_master_dagger_stacks:RemoveOnDeath() return false end
+function modifier_true_master_dagger_stacks:IsPermanent() return true end
+function modifier_true_master_dagger_stacks:GetTexture() return "blood_stacks" end
+function modifier_true_master_dagger_stacks:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+		MODIFIER_PROPERTY_HEALTH_BONUS,
+	}
+end
+function modifier_true_master_dagger_stacks:GetModifierBonusStats_Agility()
+	if not self:GetAbility() then return end
+	return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("dagger_stack_agi")
+end
+function modifier_true_master_dagger_stacks:GetModifierBonusStats_Strength()
+	if not self:GetAbility() then return end
+	return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("dagger_stack_str")
+end
+function modifier_true_master_dagger_stacks:GetModifierPreAttack_BonusDamage()
+	if not self:GetAbility() then return end
+	return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("dagger_stack_dmg")
+end
+function modifier_true_master_dagger_stacks:GetModifierMoveSpeedBonus_Constant()
+	if not self:GetAbility() then return end
+	return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("dagger_stack_ms")
+end
+function modifier_true_master_dagger_stacks:GetModifierHealthBonus()
+	if not self:GetAbility() then return end
+	return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("dagger_stack_hp")
+end
+
+
+
+-- Dagger Bleeding initial 
+modifier_true_master_dagger_bleed_initial = class({})
+function modifier_true_master_dagger_bleed_initial:IsHidden() return true end
+function modifier_true_master_dagger_bleed_initial:IsPurgable() return false end
+function modifier_true_master_dagger_bleed_initial:GetTexture() return "custom/abilities/mows_bleed" end
+function modifier_true_master_dagger_bleed_initial:OnCreated(kv)
+	if not IsServer() then return end
+	if not self:GetAbility() then return end
+	if not self:GetCaster() then return end
+	local parent = self:GetParent()
+	local caster = self:GetCaster()
+	local duration = self:GetAbility():GetSpecialValueFor("dagger_bleed_duration") * (1 + caster:GetStatusResistance())
+	if parent and not parent:HasModifier("modifier_true_master_dagger_bleed") then
+		parent:AddNewModifier(caster, self:GetAbility(), "modifier_true_master_dagger_bleed", {duration = duration})
+	end
+end
+
+
 -- Dagger Bleeding
 modifier_true_master_dagger_bleed = class({})
 function modifier_true_master_dagger_bleed:IsHidden() return false end
-function modifier_true_master_dagger_bleed:IsPurgable() return self.Purgable end
+function modifier_true_master_dagger_bleed:IsPurgable() return false end
 function modifier_true_master_dagger_bleed:GetTexture() return "custom/abilities/mows_bleed" end
-function modifier_true_master_dagger_bleed:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_true_master_dagger_bleed:OnCreated(kv)
 	if not IsServer() then return end
-	self.Purgable = kv.purgable or true
-	self.bleed_damage = self:GetCaster():GetAttackDamage() * self:GetAbility():GetSpecialValueFor("dagger_bleed_damage") / 100
-	if self.Purgable == false then
-		self.bleed_damage = self.bleed_damage + (math.floor((self:GetParent():GetMaxHealth() - self:GetParent():GetHealth()) / 8000) * 0.1 * self.bleed_damage)
-	end
-	self:StartIntervalThink(1)
+	if not self:GetAbility() then return end
+	if not self:GetCaster() then return end
+	local parent = self:GetParent()
+	local caster = self:GetCaster()
+	local stacks = self:GetStackCount()
+	print("on created dagger bleed")
+	self.stack_expire_times = {}
+	self.heal_reduction = 0
+	if stacks > 0 then 
+		self:StartIntervalThink(1)
+	else
+		self:StartIntervalThink(-1)	
+	end	
 end
+
 function modifier_true_master_dagger_bleed:OnIntervalThink()
 	if not IsServer() then return end
 	if not self:GetAbility() then self:Destroy() return end
-	ApplyDamage({
-		victim = self:GetParent(),
-		attacker = self:GetCaster(),
-		ability = self:GetAbility(),
-		damage = self.bleed_damage,
-		damage_type = DAMAGE_TYPE_PHYSICAL,
-		damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-	})
+	local stacks = self:GetStackCount() or 0
+	local caster = self:GetCaster()
+	local parent = self:GetParent()
+	local ability = self:GetAbility()
+	if caster and parent and parent:IsAlive() and stacks > 1 then
+		self.heal_reduction = self:GetAbility():GetSpecialValueFor("dagger_bleed_heal_reduction") 
+		local bleed_damage = (caster:GetAttackDamage() * ability:GetSpecialValueFor("dagger_bleed_damage") / 100) * stacks
+		bleed_damage = math.floor(bleed_damage + (parent:GetHealth() * 0.01))
+		ApplyDamage({
+			victim = parent,
+			attacker = caster,
+			ability = ability,
+			damage = bleed_damage,
+			damage_type = DAMAGE_TYPE_PHYSICAL,
+			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR,
+		})
+		if caster:HasModifier("modifier_super_scepter") then
+			local distance = (parent:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D()
+			local dager_ss_range = ability:GetSpecialValueFor("dagger_ss_range")
+			if _G._challenge_bosss > 0 then
+				dager_ss_range = dager_ss_range * (_G._challenge_bosss + 1)
+			end	
+			if distance <= dager_ss_range then 
+				if caster:HasModifier("modifier_true_master_dagger_stacks") then
+					local modifier = caster:FindModifierByName("modifier_true_master_dagger_stacks")
+					modifier:SetStackCount(modifier:GetStackCount() + stacks)
+				else
+					local new_modif = caster:AddNewModifier(caster, ability, "modifier_true_master_dagger_stacks", {})
+					new_modif:SetStackCount(stacks)
+				end	
+			end	
+		end	
+		self:UpdateStacks()	
+	end
 end
+
 function modifier_true_master_dagger_bleed:DeclareFunctions()
-	return {MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE}
+	return {
+		MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET,
+		MODIFIER_EVENT_ON_UNIT_MOVED,
+	}
 end
-function modifier_true_master_dagger_bleed:GetModifierIncomingDamage_Percentage() return self:GetAbility():GetSpecialValueFor("dagger_bleed_damage_amp") end
+
+function modifier_true_master_dagger_bleed:GetModifierHealAmplify_PercentageTarget()
+	return -self.heal_reduction * self:GetStackCount()
+end
+
+function modifier_true_master_dagger_bleed:OnUnitMoved(keys)
+    if not IsServer() then return end
+    local parent = self:GetParent()
+    if keys.unit == parent and self:GetAbility() and not parent:IsMagicImmune() and not parent:IsInvulnerable() then
+        local caster = self:GetCaster()
+        if caster and caster:HasModifier("modifier_true_master_dagger") then
+            if parent.previoustick then
+                local distance = (parent:GetAbsOrigin() - parent.previoustick):Length2D()
+                parent.distance_accumulated = (parent.distance_accumulated or 0) + distance
+                if parent.distance_accumulated >= 700 and self:GetStackCount() < self:GetAbility():GetSpecialValueFor("dagger_bleed_max_stacks") then
+                    self:IncrementStackCount()
+                    self:ForceRefresh()
+					self:StartIntervalThink(1)
+                    parent.distance_accumulated = parent.distance_accumulated - 700
+                end
+                parent.previoustick = parent:GetAbsOrigin()
+            else
+                parent.previoustick = parent:GetAbsOrigin()
+            end
+        end
+    end
+end
+
+
+
+function modifier_true_master_dagger_bleed:OnRefresh(kv)
+	if IsServer() then
+		local duration = self:GetDuration()
+		local current_game_time = GameRules:GetGameTime()
+		table.insert(self.stack_expire_times, current_game_time + duration)
+	end
+end
+function modifier_true_master_dagger_bleed:OnDestroy(kv)
+	if not IsServer() then return end
+	local parent = self:GetParent()
+	parent.previoustick = nil
+end	
+
+function modifier_true_master_dagger_bleed:GetEffectName()
+	return "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
+end
+
+function modifier_true_master_dagger_bleed:UpdateStacks()
+    if IsServer() then
+        local current_game_time = GameRules:GetGameTime()
+        for i = #self.stack_expire_times, 1, -1 do
+            if self.stack_expire_times[i] <= current_game_time then
+                table.remove(self.stack_expire_times, i)
+            end
+        end
+        self:SetStackCount(#self.stack_expire_times)
+    end
+end
+
+
+----dagger end ---
+
 
 ---------
 -- Gun --
@@ -163,7 +339,7 @@ function modifier_true_master_gun:GetModifierAttackPointConstant()
 	return -0.3
 end
 function modifier_true_master_gun:GetModifierAttackRangeBonus()
-	return 99999
+	return 8000
 end
 function modifier_true_master_gun:GetModifierFixedAttackRate() return self:GetAbility():GetSpecialValueFor("gun_bat") end
 function modifier_true_master_gun:GetModifierProjectileSpeedBonus()
@@ -195,7 +371,7 @@ function modifier_true_master_gun:OnAttackLanded(keys)
 				victim = keys.target,
 				attacker = self:GetCaster(),
 				ability = self:GetAbility(),
-				damage = keys.original_damage * 1.33,
+				damage = keys.original_damage * 2,
 				damage_type = DAMAGE_TYPE_MAGICAL,
 				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
 			})

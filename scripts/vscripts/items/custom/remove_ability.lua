@@ -13,6 +13,7 @@ local abilityList = {
     ["invoker_wex"] = true,
     ["invoker_exort"] = true,
     ["invoker_invoke"] = true,
+    ["true_master"] = true,
 
   }
 
