@@ -1,5 +1,5 @@
 LinkLuaModifier("modifier_mjz_ursa_overpower","abilities/hero_ursa/mjz_ursa_overpower.lua", LUA_MODIFIER_MOTION_NONE)
-
+LinkLuaModifier("modifier_mjz_ursa_overpower_bonus_str_agi","abilities/hero_ursa/mjz_ursa_overpower.lua", LUA_MODIFIER_MOTION_NONE)
 mjz_ursa_overpower = class({})
 local ability_class = mjz_ursa_overpower
 
@@ -11,7 +11,10 @@ if IsServer() then
 		local duration = ability:GetSpecialValueFor('duration')
 		local bonus = ability:GetSpecialValueFor('bonus')
 		local modifier_name = 'modifier_mjz_ursa_overpower'
-
+		local name = caster:GetUnitName()
+		if name == "npc_dota_hero_ursa" then
+			bonus = bonus * 3
+		end	
 		local modifier = caster:FindModifierByName(modifier_name)
 		if modifier then
 			modifier:SetDuration(duration, true)
@@ -22,12 +25,18 @@ if IsServer() then
 		if caster:HasModifier("modifier_super_scepter") then
 			if RollPercentage(50) then
 				if IsValidEntity(caster) and caster:IsAlive() then
-					caster:ModifyAgility(bonus)
-					caster:ModifyStrength(bonus)
 					if caster:HasModifier("modifier_marci_unleash_flurry") then
-						caster:ModifyAgility(bonus)
-						caster:ModifyStrength(bonus)
+						bonus = bonus * 2
 					end						
+					caster:ModifyAgility(bonus)
+					caster:ModifyStrength(bonus)	
+					if caster:HasModifier("modifier_mjz_ursa_overpower_bonus_str_agi") then
+						local modifier = caster:FindModifierByName("modifier_mjz_ursa_overpower_bonus_str_agi")
+						modifier:SetStackCount(modifier:GetStackCount() + bonus)
+					else
+						caster:AddNewModifier(caster, ability, "modifier_mjz_ursa_overpower_bonus_str_agi", {})
+						caster:FindModifierByName("modifier_mjz_ursa_overpower_bonus_str_agi"):SetStackCount(bonus)
+					end										
 				end	
 			end				
 		end	
@@ -36,6 +45,19 @@ if IsServer() then
 end
 
 
+if modifier_mjz_ursa_overpower_bonus_str_agi == nil then modifier_mjz_ursa_overpower_bonus_str_agi = class({}) end
+local modifier_overpower_bonus_stat = modifier_mjz_ursa_overpower_bonus_str_agi
+
+function modifier_overpower_bonus_stat:IsHidden() return false end
+function modifier_overpower_bonus_stat:IsPurgable() return false end
+function modifier_overpower_bonus_stat:IsDebuff() return false end
+function modifier_overpower_bonus_stat:RemoveOnDeath() return false end
+function modifier_overpower_bonus_stat:DeclareFunctions()
+	return {MODIFIER_PROPERTY_TOOLTIP}
+end
+function modifier_overpower_bonus_stat:OnTooltip()
+	return self:GetStackCount()
+end
 
 ---------------------------------------------------------------------------------------
 

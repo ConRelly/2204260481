@@ -50,7 +50,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"proc_chance"					"20"
+				"proc_chance"					"25"
 			}
 			"03"
 			{
@@ -60,7 +60,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"agi_multiplier"			"10 13 15 17 20 28 42"
+				"agi_multiplier"			"10 13 15 17 20 28 54"
 				"LinkedSpecialBonus"        "special_bonus_unique_sniper_headshot_lua_agi_multiplier"
 			}
 			"05"
@@ -97,7 +97,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"28"
+				"value"						"32"
 			}
 		}
 	}

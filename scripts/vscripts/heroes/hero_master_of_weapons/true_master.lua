@@ -57,6 +57,12 @@ function modifier_true_master:OnCreated()
 end
 
 
+function modifier_true_master:CheckState()
+	local state = {[MODIFIER_STATE_CANNOT_MISS] = true}
+	return state
+end
+
+
 --[[ function modifier_true_master:DeclareFunctions()
 	return {MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING, MODIFIER_PROPERTY_MODEL_SCALE}
 end
@@ -196,7 +202,6 @@ function modifier_true_master_dagger_bleed:OnCreated(kv)
 	local stacks = self:GetStackCount()
 	print("on created dagger bleed")
 	self.stack_expire_times = {}
-	self.heal_reduction = 0
 	if stacks > 0 then 
 		self:StartIntervalThink(1)
 	else
@@ -212,7 +217,6 @@ function modifier_true_master_dagger_bleed:OnIntervalThink()
 	local parent = self:GetParent()
 	local ability = self:GetAbility()
 	if caster and parent and parent:IsAlive() and stacks > 1 then
-		self.heal_reduction = self:GetAbility():GetSpecialValueFor("dagger_bleed_heal_reduction") 
 		local bleed_damage = (caster:GetAttackDamage() * ability:GetSpecialValueFor("dagger_bleed_damage") / 100) * stacks
 		bleed_damage = math.floor(bleed_damage + (parent:GetHealth() * 0.01))
 		ApplyDamage({
@@ -251,7 +255,7 @@ function modifier_true_master_dagger_bleed:DeclareFunctions()
 end
 
 function modifier_true_master_dagger_bleed:GetModifierHealAmplify_PercentageTarget()
-	return -self.heal_reduction * self:GetStackCount()
+	return -4 * self:GetStackCount() -- hardcoded or -self:GetAbility():GetSpecialValueFor("dagger_bleed_heal_reduction") * self:GetStackCount()
 end
 
 function modifier_true_master_dagger_bleed:OnUnitMoved(keys)
@@ -259,7 +263,7 @@ function modifier_true_master_dagger_bleed:OnUnitMoved(keys)
     local parent = self:GetParent()
     if keys.unit == parent and self:GetAbility() and not parent:IsMagicImmune() and not parent:IsInvulnerable() then
         local caster = self:GetCaster()
-        if caster and caster:HasModifier("modifier_true_master_dagger") then
+        if caster and (caster:HasModifier("modifier_true_master_dagger") or RollPercentage(70)) then
             if parent.previoustick then
                 local distance = (parent:GetAbsOrigin() - parent.previoustick):Length2D()
                 parent.distance_accumulated = (parent.distance_accumulated or 0) + distance

@@ -48,16 +48,35 @@ function ability_class:ApplyEarthShock()
 				local fs = caster:FindAbilityByName("ursa_fury_swipes")
 				if fs then
 					local fury_swipes = enemy:AddNewModifier(caster, fs, "modifier_ursa_fury_swipes_damage_increase", {duration = fs:GetSpecialValueFor("bonus_reset_time")})
-					fury_swipes:SetStackCount(fury_swipes:GetStackCount() + 5)
-					damage = base_damage + (fury_swipes:GetStackCount() * fs:GetSpecialValueFor("damage_per_stack"))
+					local bonus_dmg = 1
+					local fury_dmg = fs:GetSpecialValueFor("damage_per_stack") / 2
+					if caster:HasModifier("modifier_super_scepter") then
+						local lvl = caster:GetLevel() + 5
+						fury_swipes:SetStackCount(fury_swipes:GetStackCount() + lvl)
+						bonus_dmg = 1 + (math.floor(fury_swipes:GetStackCount() * 0.1 ) / 100)
+						base_damage = base_damage * bonus_dmg
+						
+					else	
+						fury_swipes:SetStackCount(fury_swipes:GetStackCount() + 5)
+					end	
+					local shard_dmg = (fury_swipes:GetStackCount() * fury_dmg)
+					ApplyDamage({
+						victim = enemy,
+						attacker = caster,
+						damage = shard_dmg,
+						damage_type = self:GetAbilityDamageType(),
+						ability = self
+					})	
 				end
 			end
 			ApplyDamage({
 				victim = enemy,
 				attacker = caster,
-				damage = damage,
-				damage_type = self:GetAbilityDamageType()
+				damage = base_damage,
+				damage_type = self:GetAbilityDamageType(),
+				ability = self
 			})
+		
 
 			enemy:AddNewModifier(caster, self, "modifier_mjz_ursa_earthshock", {duration = duration})
 		end

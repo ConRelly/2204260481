@@ -1156,9 +1156,9 @@
 		"Ability12"				"special_bonus_strength_400"
 		"Ability13"				"special_bonus_all_stats_20"
 		"Ability16"             "special_bonus_reincarnation_90"
-		"Ability17"				"special_bonus_30_crit_2"
+		"Ability17"				"special_bonus_8_crit_2750"
 
-		"AttackRate"					"1.400000"
+		"AttackRate"					"1.4"
 		"AttributeAgilityGain"			"6.2"
 		"AttributeIntelligenceGain"		"7.4"
 		"AttributeStrengthGain"			"15.6"

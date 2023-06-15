@@ -50,7 +50,7 @@ function modifier_hammer_of_the_divine:OnCreated()
 		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_hotd_base_str", {})
 		self.unyielding_hits = 0
 		self.overwhelming_hits = 0
-		self:StartIntervalThink(FrameTime())
+		self:StartIntervalThink(1)
 	end
 end
 function modifier_hammer_of_the_divine:OnDestroy()
@@ -68,10 +68,10 @@ function modifier_hammer_of_the_divine:OnDestroy()
 end
 function modifier_hammer_of_the_divine:OnIntervalThink()
 	if IsServer() then
-		if self:GetCaster():GetPrimaryAttribute() == 0 or self:GetParent():GetUnitName() == "npc_courier_replacement" then
+--[[ 		if self:GetCaster():GetPrimaryAttribute() == 0 or self:GetParent():GetUnitName() == "npc_courier_replacement" then
 		else
 			self:GetCaster():DropItemAtPositionImmediate(self:GetAbility(), self:GetCaster():GetAbsOrigin())
-		end
+		end ]]
 		if not self:GetParent():HasModifier("modifier_hotd_unyielding") then
 			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_hotd_unyielding", {})
 		end
@@ -88,7 +88,11 @@ function modifier_hammer_of_the_divine:GetModifierBonusStats_Strength()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_strength") end
 end
 function modifier_hammer_of_the_divine:GetModifierBaseAttackTimeConstant()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("base_attack_time") end
+	local parent = self:GetParent()
+	local str = parent:GetStrength()
+	if str > 15000 then
+		if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("base_attack_time") end
+	end
 end
 function modifier_hammer_of_the_divine:GetModifierPhysicalArmorBonus()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_armor") end
@@ -354,31 +358,36 @@ function item_wraith_rapier:OnOwnerSpawned()
 	if craft and craft1 then
 		local Parent = self:GetParent()
 		local Location = GetGroundPosition(Parent:GetAbsOrigin(), Parent)
-		Parent:RemoveItem(Parent:FindItemInInventory("item_resurection_pendant"))
-		Parent:RemoveItem(Parent:FindItemInInventory("item_desolator_2"))
-		Parent:RemoveItem(Parent:FindItemInInventory("item_witless_shako"))
-		Parent:RemoveItem(self)
-		Parent:EmitSound("Hero_PhantomAssassin.Arcana_Layer")
-		Parent:AddItemByName("item_hammer_of_the_divine")
-		craft1 = false
+		local item1 = Parent:FindItemInInventory("item_resurection_pendant")
+		local item2 = Parent:FindItemInInventory("item_desolator_2")
+		local item3 = Parent:FindItemInInventory("item_witless_shako")
+		if item1 and item2 and item3 then
+			Parent:RemoveItem(item1)
+			Parent:RemoveItem(item2)
+			Parent:RemoveItem(item3)
+			Parent:RemoveItem(self)
+			Parent:EmitSound("Hero_PhantomAssassin.Arcana_Layer")
+			Parent:AddItemByName("item_hammer_of_the_divine")
+			craft1 = false
+		end	
 	end
 end
 function item_wraith_rapier:OnOwnerDied(params)
 	if not craft then
 		local hOwner = self:GetOwner()
---[[
+
 		if not hOwner:IsRealHero() then
 			hOwner:DropItem(self, true, true)
 			return
 		end
-]]
+
 		if _G.first_drop and hOwner:GetUnitName() == "npc_boss_skeleton_king_angry_new" then
 			hOwner:DropItem(self, true, true)
 			_G.first_drop = false
 		end
-		if not hOwner:IsReincarnating() then
+--[[ 		if not hOwner:IsReincarnating() then
 			hOwner:DropItem(self, true, true)
-		end
+		end ]]
 	end
 end
 
@@ -390,7 +399,7 @@ function modifier_wraith_rapier:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIP
 function modifier_wraith_rapier:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
 		if _G.first_drop == nil then _G.first_drop = true end
-		self:StartIntervalThink(FrameTime())
+		self:StartIntervalThink(1)
 	end
 end
 function modifier_wraith_rapier:DeclareFunctions()
@@ -409,28 +418,16 @@ function modifier_wraith_rapier:OnIntervalThink()
 end
 function modifier_wraith_rapier:GetModifierBaseAttack_BonusDamage()
 	if self:GetAbility() then
-		if self:GetParent():GetUnitName() == "npc_boss_skeleton_king_angry_new" or self:GetParent():GetUnitName() == "npc_dota_hero_skeleton_king" or self:GetParent():GetUnitName() == "npc_dota_hero_death_prophet" then
-			return self:GetAbility():GetSpecialValueFor("bonus_base_damage")
-		else
-			return -self:GetAbility():GetSpecialValueFor("bonus_base_damage")
-		end
+		return self:GetAbility():GetSpecialValueFor("bonus_base_damage")
 	end
 end
 function modifier_wraith_rapier:GetModifierBonusStats_Strength()
 	if self:GetAbility() then
-		if self:GetParent():GetUnitName() == "npc_boss_skeleton_king_angry_new" or self:GetParent():GetUnitName() == "npc_dota_hero_skeleton_king" or self:GetParent():GetUnitName() == "npc_dota_hero_death_prophet" then
-			return self:GetAbility():GetSpecialValueFor("bonus_strength")
-		else
-			return -self:GetAbility():GetSpecialValueFor("bonus_strength")
-		end
+		return self:GetAbility():GetSpecialValueFor("bonus_strength")
 	end
 end
 function modifier_wraith_rapier:GetModifierPhysicalArmorBonus()
 	if self:GetAbility() then
-		if self:GetParent():GetUnitName() == "npc_boss_skeleton_king_angry_new" or self:GetParent():GetUnitName() == "npc_dota_hero_skeleton_king" or self:GetParent():GetUnitName() == "npc_dota_hero_death_prophet" then
-			return self:GetAbility():GetSpecialValueFor("bonus_armor")
-		else
-			return -self:GetAbility():GetSpecialValueFor("bonus_armor")
-		end
+		return self:GetAbility():GetSpecialValueFor("bonus_armor")
 	end
 end

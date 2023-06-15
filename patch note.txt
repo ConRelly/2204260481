@@ -2627,8 +2627,25 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
-* Added new skill to pangolier (it has 3 forms)
-* Removed pangolier from legacy underdogs list.
+* Added new skill to Pangolier (it has 3 forms)
+* Removed Pangolier from legacy underdogs list.
+
+
+
+
+* Added True Strike to Pango's new skill, Dagger Bleed can now get stacks on enemy movement even when not in Dagger Form but with a 70% chance instead of 100%, added healing reduction to Bleed description.
+* Fixed Invoker spells not being able to be used on Mimic.
+* Buffed Invoker lvl 25 talents , his QWE and some other spells.
+* Increased Elder Titan ultimate Str scaling (talent too), reduced Spirit Aura magic rezist removal.
+* Fixed Ursa Earthshok skill icon not seeding in dps tooltip.
+* Added new Super Scepter effect for Ursa Earthshok and made shard description clearer (press Alt for note). Can no longer be mimicked.
+* Overpower SS effect now has triple effect on Ursa. Added tooltip to show how much stat you have accumulated.
+* Meepo Puff SS effect now has a 35% and 15% chance for more stacks, 2x str pe stack and made so the skill only targets allies (autocast can now spam the skill with no one around).
+* Sniper Headshot base proc chance increased from 20 to 25%, increased agi mult on last lvl and talent.
+* Spell Blade chance increased from 5% to 7%.
+* Wraith Rapier has better stats, can be dropped, no longer drops on death and every hero gets the stats. Alt hint on how to get Hammer of the Divine gives more info. 
+* Hammer of the Divine can now be used by any type of hero instead of just Str. Increased bonus Str and HP and attack time from 1.2 to 1.1.
+
 
 
 

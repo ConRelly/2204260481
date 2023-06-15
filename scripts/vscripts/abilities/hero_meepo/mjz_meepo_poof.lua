@@ -47,6 +47,8 @@ if IsServer() then
 		local damage_type = ability:GetAbilityDamageType()
 		local modif_buff = "modifier_mjz_meepo_puff_buff"
 		local ss_chance = ability:GetSpecialValueFor("extra_stack_chance")
+		local ss_chance3x = ability:GetSpecialValueFor("extra_stack_chance3x")
+		local ss_chance6x = ability:GetSpecialValueFor("extra_stack_chance6x")
 		if HasTalent(caster,"special_bonus_mjz_meepo_poof_01") then
 			if not caster:HasModifier(modif_buff) then
 				caster:AddNewModifier(caster, ability, modif_buff, {})
@@ -54,7 +56,11 @@ if IsServer() then
 				local modif_b = caster:FindModifierByName(modif_buff)
 				modif_b:IncrementStackCount()
 				if HasSuperScepter(caster) then
-					if RollPercentage(ss_chance) then
+					if RollPercentage(ss_chance6x) then
+						modif_b:SetStackCount(modif_b:GetStackCount() + 6)
+					elseif RollPercentage(ss_chance3x) then
+						modif_b:SetStackCount(modif_b:GetStackCount() + 3)
+					elseif RollPercentage(ss_chance) then
 						modif_b:IncrementStackCount()
 					end	
 				end	
@@ -200,7 +206,7 @@ function modifier_mjz_meepo_puff_buff:DeclareFunctions()
 end
 
 function modifier_mjz_meepo_puff_buff:GetModifierBonusStats_Strength()
-    return self:GetStackCount()
+    return self:GetStackCount() * 2
 end
 function modifier_mjz_meepo_puff_buff:OnCreated()
     if not IsServer() then return nil end

@@ -297,6 +297,7 @@ if IsServer() then
 		mjz_silencer_global_silence = true,
 		pangolier_gyroshell = true,
 		true_master = true,
+		mjz_ursa_earthshock = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,
@@ -317,22 +318,31 @@ if IsServer() then
 		if not IsServer() then return end
 		--if not keys.ability:ProcsMagicStick() then return end   -- items and a lot of skills will be broken if this is enabled
 		self.hit = true
+		local abi_name = keys.ability:GetAbilityName()
+		--print("pass1 ".. abi_name)
 		if keys.unit == self.parent and not self.parent:HasModifier("modifier_item_echo_wand_lock") and not ability_behavior_includes(keys.ability, DOTA_ABILITY_BEHAVIOR_CHANNELLED) and not keys.ability:IsToggle() then
+			--print("pass2 ".. abi_name)
 			if not exclude_table[keys.ability:GetAbilityName()] then
+				--print("pass3 ".. abi_name)
 				if (ability_behavior_includes(keys.ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and (keys.ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or keys.ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH)) or include_table[keys.ability:GetAbilityName()] then
 					self.targetType = 0
 					self.echo = keys.ability
+					--print("pass4 ".. abi_name)
 				elseif ability_behavior_includes(keys.ability, DOTA_ABILITY_BEHAVIOR_POINT) then
 					self.targetType = 1
 					self.echo = keys.ability
+					--print("pass5 ".. abi_name)
 				elseif ability_behavior_includes(keys.ability, DOTA_ABILITY_BEHAVIOR_NO_TARGET) then
 					self.targetType = 2
 					self.echo = keys.ability
+					--print("pass6 ".. abi_name)
 				elseif (ability_behavior_includes(keys.ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and (keys.ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_FRIENDLY)) then	
 					self.targetType = 3
 					self.echo = keys.ability
+					--print("pass7 ".. abi_name)
 				end
 				item_echo_wand.echo = self.echo
+				--print("pass8 ".. abi_name)
 			end
 		end
 		if keys.unit == self.parent and keys.ability:GetCooldown(keys.ability:GetLevel() - 1) > 1.5 and self.ability:GetCooldownTimeRemaining() > self.minimum_cooldown then

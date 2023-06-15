@@ -1078,7 +1078,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"chance_tooltip"				"5" 
+				"chance_tooltip"				"7" 
 			}		
 		}
 		"Modifiers"					
@@ -35670,22 +35670,22 @@
 			"2"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_strength"			"1650"
+				"bonus_strength"			"4200"
 			}
 			"3"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"base_attack_time"			"1.2"
+				"base_attack_time"			"1.1"
 			}
 			"4"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"bonus_armor"				"57"
+				"bonus_armor"				"200"
 			}
 			"5"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_health"				"6117"
+				"bonus_health"				"9117"
 			}
 			"6"
 			{
@@ -35801,7 +35801,7 @@
 		"ItemShopTags"					"damage;str;armor;unique;hard_to_tag"
 		"ItemQuality"					"artifact"
 		"ItemAliases"					"wr"
-		"ItemDroppable"					"0"
+		"ItemDroppable"					"1"
 		"ItemPurchasable"				"0"
 		"ItemKillable"					"0"
 		"ItemSellable"					"0"
@@ -35812,17 +35812,17 @@
 			"1"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_base_damage"			"1750"
+				"bonus_base_damage"			"17500"
 			}
 			"2"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_strength"			"800"
+				"bonus_strength"			"2600"
 			}
 			"4"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"bonus_armor"				"20"
+				"bonus_armor"				"120"
 			}
 		}
 	}
