@@ -134,6 +134,7 @@ function IsHoliday()
   return false
 end
 
+
 function IsLucky()
   local time = StrSplit(GetSystemTime(), ':')
   return tonumber(time[3]) % 2 == 1

@@ -3,8 +3,6 @@
 
 	"attributes"
 	{
-		"item"		"item_tome_of_knowledge"
-		"item"      "item_tome_of_knowledge_2"
 		"item"      "item_aegis_lua"
 		"item"		"item_speed_orb"
 		"item"		"item_tome_bargain"

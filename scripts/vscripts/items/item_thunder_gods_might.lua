@@ -278,7 +278,7 @@ function modifier_item2:GetModifierProcAttack_Feedback(keys)
                 charges = 2700 + math.floor(charges / 10)
             end              
             local stats_mult = ability:GetSpecialValueFor("stats_mult_dmg") * ( charges / 20)
-            local attack_dmg_mult = (ability:GetSpecialValueFor("chain_damage") / 100) + (charges / 1000)      
+            local attack_dmg_mult = (ability:GetSpecialValueFor("chain_damage") / 100) + (charges / 2000)      
             local all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect()) * stats_mult
             local caster_attack = keys.original_damage * attack_dmg_mult
             local damage = 0
@@ -335,7 +335,8 @@ function modifier_item2:GetModifierProcAttack_Feedback(keys)
             --local evolve = (charges >= limit)
             if has_ss and marci_ult then
                 bonus_charge = 2								
-            end	            
+            end	
+            charges = ability:GetCurrentCharges()            
 			ability:SetCurrentCharges(charges + bonus_charge)                   
         end   
 	end

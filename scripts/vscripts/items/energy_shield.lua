@@ -555,7 +555,7 @@ function modifier_lunar_shield:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() self:GetCaster():SetMaxHealth(self:GetCaster():GetBaseMaxHealth()) self:GetCaster():Heal(self:GetCaster():GetBaseMaxHealth(), self:GetCaster()) end
 		local caster = self:GetCaster()
 		caster:AddNewModifier(caster, self:GetAbility(), "modifier_lunar_shield_check", {})
-		self:StartIntervalThink(FrameTime())
+		self:StartIntervalThink(0.15)
 		if not caster:HasModifier("modifier_lunar_shield_cd") and not caster:HasModifier("modifier_lunar_shield_absorb") then
 			caster:AddNewModifier(caster, self:GetAbility(), "modifier_lunar_shield_absorb", {})
 		end
@@ -572,15 +572,15 @@ function modifier_lunar_shield:OnIntervalThink()
 			self:GetAbility():UseResources(true, true, false, true)
 		end
 
-		for i = DOTA_ITEM_SLOT_1, DOTA_ITEM_SLOT_6 do
+--[[ 		for i = DOTA_ITEM_SLOT_1, DOTA_ITEM_SLOT_6 do
 			local item = self:GetParent():GetItemInSlot(i)
 			if item then
 				if item:GetAbilityName() == "item_lunar_shield" then
 					item:SetSellable(false)
-					item:SetDroppable(false)
+					--item:SetDroppable(false)
 				end
 			end
-		end
+		end ]]
 	end
 end
 function modifier_lunar_shield:OnDestroy()

@@ -199,7 +199,7 @@ end
 
 -----------------------------------------------------------------------------------------
 
--- 是否学习了指定天赋技能
+
 function HasTalent(unit, talentName)
     if unit:HasAbility(talentName) then
         if unit:FindAbilityByName(talentName):GetLevel() > 0 then return true end
@@ -207,7 +207,6 @@ function HasTalent(unit, talentName)
     return false
 end
 
--- 获得技能数据中的数据值，如果学习了连接的天赋技能，就返回相加结果
 function GetTalentSpecialValueFor(ability, value, keyName)
     local base = ability:GetSpecialValueFor(value)
     local talentName

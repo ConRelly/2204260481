@@ -5,8 +5,7 @@
 		"#DOTA_Item_Build_Starting_Items"
 		{
 			"item"		"item_dragon_scale"
-			"item"		"item_philo_stone_temp"
-			"item"		"item_tome_of_knowledge"		
+			"item"		"item_philo_stone_temp"		
   		}
 		
 		"#DOTA_Item_Build_Early_Game"

@@ -1267,17 +1267,17 @@
 		"06"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_all_stats"					"58"
+			"bonus_all_stats"					"258"
 		}
 		"07"
 		{
 			"var_type"					"FIELD_FLOAT"
-			"bonus_mana_regen"					"28.0"
+			"bonus_mana_regen"					"58.0"
 		}
 		"08"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"aura_attackspeed"			"50"
+			"aura_attackspeed"			"75"
 		}
 	}
 }
@@ -20035,27 +20035,27 @@
 			"18"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"magic_amp"					"190"
+				"magic_amp"					"220"
 			}
 			"19"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_str"					"200"
+				"rapier_str"					"350"
 			}
 			"20"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_agi"					"200"
+				"rapier_agi"					"350"
 			}
 			"21"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_int"					"1150"
+				"rapier_int"					"1450"
 			}
 			"22"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_bonus_int"					"16" //harcoded in the level up event
+				"rapier_bonus_int"					"20" //harcoded in the level up event
 			}
 			"23"
 			{
@@ -31905,7 +31905,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"all_stats"				"50"
+				"all_stats"				"550"
 			}
 			"02"
 			{
@@ -33462,14 +33462,14 @@
 		"ShouldBeSuggested"				"1"
 		"AbilityValues"
 		{
-			"all_stats"				"190"
-			"int"					"160"
-			"armor"					"43"
-			"spell_amp"				"60"
-			"duration_buff"			"10"
-			"duration_debuff"		"5"
-			"magic_resist_red"		"17"
-			"mana_regen_aura"		"95"
+			"all_stats"				"690"
+			"int"					"510"
+			"armor"					"120"
+			"spell_amp"				"135"
+			"duration_buff"			"15"
+			"duration_debuff"		"7"
+			"magic_resist_red"		"25"
+			"mana_regen_aura"		"195"
 			"aura_radius"			"7200"
 		}
 	}
@@ -33479,13 +33479,13 @@
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
-		"ItemCost"						"9000"	
+		"ItemCost"						"25000"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_battlemage_cloth"
 		"ItemRequirements"
 		{
-			"01"						"item_veil_of_discord;item_ultimate_orb;item_kaya;item_platemail"
+			"01"						"item_veil_of_discord;item_enchanter"
 		}
 	}
 
@@ -35286,19 +35286,19 @@
 			"bonus_spell_lifesteal_per_wave"	"2"
 			"extra_spell_damage_percent"		"-50"
 
-			"str"					"270"
-			"agi"					"225"
-			"int"					"650"
+			"str"					"490"
+			"agi"					"325"
+			"int"					"950"
 			"armor"					"45"
-			"hp"					"3500"
-			"spell_amp"				"25"
+			"hp"					"5500"
+			"spell_amp"				"50"
 			"hp_regen_pct"			"7.5"
 			"hp_regen_amp"			"50"
 
 			"aura_radius"			"7200"
 			"hp_aura"				"4200"
 			"int_aura"				"380"
-			"mana_regen_aura"		"169"
+			"mana_regen_aura"		"210"
 			"duration_buff"			"5"
 			"duration_debuff"		"5"
 			"magic_resist_red"		"25"
@@ -35322,13 +35322,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"custom_recipe"
-		"ItemCost"						"10000"	
+		"ItemCost"						"24000"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_num"
 		"ItemRequirements"
 		{
-			"01"						"item_battlemage_cloth;item_mjz_heart_3;item_all_essence"
+			"01"						"item_veil_of_discord;item_mjz_heart_3;item_all_essence"
 		}
 	}
 

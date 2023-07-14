@@ -1319,7 +1319,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"580"
+				"value"				"980"
 				"ad_linked_abilities"			"shadow_shaman_mass_serpent_ward"
 			}
 		}
@@ -6853,9 +6853,33 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"hp_regen"				"60 200 950 1550 3000 6500 8750"
+				"LinkedSpecialBonus"	"special_bonus_unique_legion_commander_6"
 			}
 		}
 	}
+	//=================================================================================================================
+	// Ability: Special Bonus
+	//=================================================================================================================
+	"special_bonus_unique_legion_commander_6"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"463"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"3000"
+				"ad_linked_abilities"			"legion_commander_press_the_attack"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}	
 	"legion_commander_duel"
 	{
 
@@ -14065,8 +14089,8 @@
 			"golem_duration"			"40"
 			"stun_duration"				"1.0"
 			"aoe"						"600"
-			"golem_hp"					"1000 1850 2700"
-			"golem_dmg"					"760 1100 2560"
+			"golem_hp"					"1000 1850 3700"
+			"golem_dmg"					"960 1200 4500"
 			"golem_armor"				"9 29 42"
 			"golem_movement_speed"		"320 540 760"
 			"golem_health_regen"		"100 250 750"
@@ -14079,12 +14103,12 @@
 			}
 			"golem_hp_scepter"
 			{
-				"value"			"900 1700 2600"
+				"value"			"900 1700 3200"
 				"RequiresScepter"		"1"
 			}
 			"golem_dmg_scepter"
 			{
-				"value"				"660 1000 2420"
+				"value"				"860 1000 4420"
 				"RequiresScepter"		"1"
 			}
 			"golem_gold_bounty_scepter"
@@ -14101,12 +14125,12 @@
 			"bonus_armor"
 			{
 				"value"			"0"
-				"special_bonus_unique_warlock_2"		"+100"
+				"special_bonus_unique_warlock_2"		"+200"
 			}
 			"tooltip_golem_armor"
 			{
-				"value"			"8 12 14"
-				"special_bonus_unique_warlock_2"		"+100"
+				"value"			"18 62 120"
+				"special_bonus_unique_warlock_2"		"+200"
 			}			
 		}
 	}
@@ -18833,7 +18857,7 @@
 			"pulse_debuff_duration"	"2.0"
 			"pulse_damage"					
 			{
-				"value"			"3500 9500 24950 53750 168500 0 685000"
+				"value"			"5500 19500 94950 193750 768500 0 2685000"
 				"CalculateSpellDamageTooltip" "1"
 			}
 			"pulse_move_slow_pct"	"30.0"
@@ -18859,7 +18883,7 @@
 			"pulse_silence_duration"
 			{
 				"value"			"0"
-				"special_bonus_scepter"	"+0.3"
+				"special_bonus_scepter"	"+0.1"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
@@ -18975,7 +18999,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 //		"MaxLevel"						"5"
 //		"RequiredLevel"					"6"
-//		"LevelsBetweenUpgrades"			"6"
+		"LevelsBetweenUpgrades"			"15"
 
 		"HasScepterUpgrade"				"1"
 		"AbilityCastRange"				"550"
@@ -18994,7 +19018,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_tooltip"			"200 460 860"
+				"damage_tooltip"			"200 460 2860"
 				"LinkedSpecialBonus"		"special_bonus_unique_shadow_shaman_4"
 				"CalculateSpellDamageTooltip"	"0"
 			}
@@ -24120,6 +24144,50 @@
 		}
 	}
 
+
+	//=================================================================================================================
+	// Ancient Janggo of Endurance
+	//=================================================================================================================
+	"item_boots_of_bearing"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"931"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"ItemPermanent"					"1"
+		"FightRecapLevel"				"1"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30.0"
+		//"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4275"
+		"ItemShopTags"					"str;agi;int;damage;move_speed;attack_speed;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"marching boots"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"aura_movement_speed"	"120"
+			"bonus_str"				"180"
+			"bonus_int"				"180"
+			"bonus_attack_speed_pct"	"150"
+			"bonus_movement_speed_pct"	"80"
+			"duration"				"15"
+			"radius"				"7200"
+			"bonus_movement_speed"	"165"
+			"bonus_health_regen"	"150"
+			"bonus_ms_duration"		"3.5"
+		}
+	}
+
 // Radiance
 	"item_radiance"
 	{
@@ -25174,7 +25242,7 @@
 		"ItemInitialStockTime"			"400.0"
 		"ItemStackable"					"1"
 		"ItemInitialCharges"			"1"
-		"AbilityCooldown"				"180.0"
+		"AbilityCooldown"				"30.0"
 		"AbilitySpecial"
 		{
 			"01"

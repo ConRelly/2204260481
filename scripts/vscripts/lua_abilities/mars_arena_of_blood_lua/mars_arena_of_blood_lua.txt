@@ -107,13 +107,18 @@
 			"12"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"str_multiplier"	"5.0 9.0 15.0 22.0 38.0"
+				"str_multiplier"	"5.0 9.0 15.0 25.0 50.0"
 			}
 			"13"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"ss_spear_attack_interval"	"0.2"
-			}			
+			}
+			"14"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"challenge_mult"	"50"
+			}						
 		}
 	}
 }

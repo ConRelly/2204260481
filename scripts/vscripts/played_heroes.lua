@@ -82,6 +82,7 @@ function GetLeastPlayedHeroes()
     sendRequest()
 end
 
+
 -- Checks the hero's ranking and adds the appropriate modifier if necessary.
 local delays = 0
 function check_hero_ranking(unit)
@@ -98,10 +99,54 @@ function check_hero_ranking(unit)
         local modifier_name = hero_modifiers[hero_name]
         if modifier_name and not unit:HasModifier(modifier_name) then
             unit:AddNewModifier(unit, nil, modifier_name, {})
-            --print("Added modifier: " .. modifier_name .. " to " .. hero_name)
+            
+        elseif IsSunday() then
+            if CheckModifiers(unit) then
+                unit:AddNewModifier(unit, nil, "modifier_bottom_50", {}) 
+            end
         end
     end
 end
+
+
+local modifiers = {
+    "modifier_bottom_10",
+    "modifier_bottom_20",
+    "modifier_bottom_50"
+}
+
+function CheckModifiers(unit)
+    for _, modifierName in pairs(modifiers) do
+        if unit:HasModifier(modifierName) then
+            return false -- The hero has one of the modifiers, so return false
+        end
+    end
+
+    return true -- The hero doesn't have any of the modifiers, so return true
+end
+
+
+
+
+function IsSunday()
+    if _G.IsSunday_1 then
+        return true
+    end   
+    local date = StrSplit(GetSystemDate(), '/')
+    local c = 20
+    local y = tonumber(date[3])
+    local m = tonumber(date[1])
+    local d = tonumber(date[2])
+
+    local w = y + math.floor(y / 4) + math.floor(c / 4) - 2 * c + math.floor(26 * (m + 1) / 10) + d - 1
+    local wday = w % 7
+    if wday == 0 then
+        wday = 7
+        _G.IsSunday_1 = true
+    end
+    return wday == 7
+end
+
 
 -- Call GetLeastPlayedHeroes to start fetching the hero play counts.
 GetLeastPlayedHeroes()

@@ -2649,6 +2649,25 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Sunday's All non-Top Underdog Heroes will receive the Top 50 Underdog buff.
+* Added a general recommended item build for all heroes.
+* Reduced Tome of Knowledge CD to 30s
+* Void Ult affecting (CC) gods fixed.
+* Final form of Evolving Crossbow changed from 1% per 10 charges to 1% per 20 charges (passive proc dmg %); other dmg formulas remain the same.
+* Fixed last form of Evolving Crossbow not being able to get more than 3k charges.
+* Added challenge effect for Mars Ultimate and increased Str mult for last 2 levels.
+* Battlemage Cloth stats increased, now requires an enchanter to build.
+* Ice Rapier stats slightly buffed and now Challenge bonus also affects Cold Wisdom passive. 
+* Marci Unleash Pulse dmg increased on all levels. 
+* Shadow Shaman wards base dmg much higher (~3x more) on last lvl, but requires more lvls to reach. Dmg talent also increased. Fixed lvl 3 to have pierce dmg instead of just siege.
+* Warlock golem dmg increased. Imp hp increased.
+* And a few other fixes and changes.
+
+
+
+
+
+
 
 
 **Update Notes spellings will get corrected before the live update.

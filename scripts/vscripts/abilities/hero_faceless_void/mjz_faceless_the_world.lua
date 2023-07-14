@@ -196,7 +196,7 @@ end ]]
 end ]]
 
 function modifier_mjz_faceless_the_world_aura_effect_enemy:CheckState()
-	--if self:GetParent().bAbsoluteNoCC then return end
+	if self:GetParent().bAbsoluteNoCC then return end
 	return {
 		[MODIFIER_STATE_STUNNED] = true,
 		[MODIFIER_STATE_FROZEN] = true,

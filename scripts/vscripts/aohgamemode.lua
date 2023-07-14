@@ -54,6 +54,9 @@ LinkLuaModifier("modifier_mjz_bristleback_quill_spray_autocast6", "abilities/her
 LinkLuaModifier("modifier_boss_hpbar2", "abilities/boss_hpbar2.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_double_trouble", "modifiers/modifier_double_trouble.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_infinite_health", "modifiers/modifier_infinite_health.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_boss_truesight_aura", "bosses/boss_true_sight.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("boss_truesight_modifier", "bosses/boss_true_sight.lua", LUA_MODIFIER_MOTION_NONE)
+
 
 if AOHGameMode == nil then
 	_G.AOHGameMode = class({})
@@ -998,7 +1001,9 @@ function AOHGameMode:OnHeroLevelUp(event)
 	--hiddenCommand_(50)
 	if hero:HasModifier("modifier_item_imba_skadi_unique") then
 		if hero:IsRealHero() then
-			hero:ModifyIntellect(16)
+			local bonus = 8 * _G._challenge_bosss
+			local base = 20 + bonus
+			hero:ModifyIntellect(base)
 		end	
 	end
 

@@ -53,6 +53,7 @@ function modifier_mars_arena_of_blood_lua_spear_aura:OnCreated( kv )
 	self.radius = self:GetAbility():GetSpecialValueFor( "radius" )
 	self.width = self:GetAbility():GetSpecialValueFor( "spear_distance_from_wall" )
 	self.damage = self:GetAbility():GetSpecialValueFor( "spear_damage" ) + (self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier"))
+	self.challenge_mult = self:GetAbility():GetSpecialValueFor( "challenge_mult" ) / 100
 	self.knockback_duration = 0.1
 	self.parent = self:GetParent()
 	self.spear_radius = self.radius-self.width
@@ -61,7 +62,12 @@ function modifier_mars_arena_of_blood_lua_spear_aura:OnCreated( kv )
 		self.duration = self:GetAbility():GetSpecialValueFor( "ss_spear_attack_interval" )
 	else
 		self.duration = self:GetAbility():GetSpecialValueFor( "spear_attack_interval" )
-	end		
+	end	
+	if _G._challenge_bosss and _G._challenge_bosss > 0 then
+		self.damage = self.damage * (1 + _G._challenge_bosss * self.challenge_mult)
+		print("challenge boss tier: " .._G._challenge_bosss)
+	end	
+	print("mars dmg: ".. self.damage)
 	if not IsServer() then return end
 	self.owner = kv.isProvidedByAura~=1
 	self.aura_origin = self:GetParent():GetOrigin()

@@ -13,8 +13,8 @@
 			"item"		"item_ancient_janggo_2"
 			"item"		"item_custom_octarine_core_1"
 			"item"		"item_plain_perma"
-			"item"		"item_dimensional_doorway"
 			"item"		"item_mjz_dragon_lance"
+			"item"      "item_light_crossbow"
 		}
 		
 		"#DOTA_Item_Build_Mid_Items"			

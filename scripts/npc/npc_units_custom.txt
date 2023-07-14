@@ -10026,10 +10026,10 @@
 {
 	"UnitLabel"					"pharaoh_ok"
 	"AttackRate"				"1.30"
-	"AttackDamageMin"		   "860"
-	"AttackDamageMax"		   "860"
-	"Ability16"					"creep_siege"
-	"StatusHealth"			  "10" 
+	"AttackDamageMin"		   "2860"
+	"AttackDamageMax"		   "2860"
+	"Ability1"				   "creep_siege"
+	"StatusHealth"			   "10" 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 	"MovementSpeed"				"50"
 
@@ -10520,24 +10520,24 @@
 	"AttackRate"				"0.8"
 	"StatusHealthRegen"			"15"
 	"StatusHealth"				"2700"
-	"AttackDamageMin"			"940"
-	"AttackDamageMax"			"3260"
+	"AttackDamageMin"			"4900"
+	"AttackDamageMax"			"4900"
 }
 "npc_dota_warlock_golem_scepter_1"
 {
 	"ConsideredHero"			"0"
 	"StatusHealthRegen"			"5"
 	"StatusHealth"				"950"
-	"AttackDamageMin"			"500"
-	"AttackDamageMax"			"720"
+	"AttackDamageMin"			"2500"
+	"AttackDamageMax"			"2500"
 }
 "npc_dota_warlock_golem_scepter_2"
 {
 	"ConsideredHero"			"1"
 	"StatusHealthRegen"			"10"
 	"StatusHealth"				"1500"
-	"AttackDamageMin"			"640"
-	"AttackDamageMax"			"960"
+	"AttackDamageMin"			"5400"
+	"AttackDamageMax"			"5400"
 }
 "npc_dota_warlock_golem"
 {
@@ -10614,7 +10614,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2500"		// Base health.
+		"StatusHealth"				"7500"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
@@ -10687,7 +10687,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2000"		// Base health.
+		"StatusHealth"				"5000"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
@@ -13995,7 +13995,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"5350000"
+		"StatusHealth"				"5950000"
 		"StatusHealthRegen"			"25000"
 		"StatusMana"				"50000"
 		"StatusManaRegen"			"5500"
@@ -15155,7 +15155,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "100"	   // Speed.		   
-	"StatusHealth"			  "12500000"	  // Base health.
+	"StatusHealth"			  "15500000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
@@ -15294,7 +15294,7 @@
 	"Ability16"				 "draks_unholy_strength"
 	"Ability17"				 "creep_siege"	
 	"ArmorPhysical"			 "420"		 // Physical protection.
-	"MagicalResistance"		 "95"
+	"MagicalResistance"		 "96"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"		   "9000"		// Damage range min.
 	"AttackDamageMax"		   "32000"	   // Damage range max.
@@ -15312,7 +15312,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "100"	   // Speed.		   
-	"StatusHealth"			  "12500000"	  // Base health.
+	"StatusHealth"			  "15500000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
@@ -15471,7 +15471,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "700"	   // Speed.		   
-	"StatusHealth"			  "9000000"	  // Base health.
+	"StatusHealth"			  "11000000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
