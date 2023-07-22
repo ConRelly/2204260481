@@ -67,7 +67,7 @@ function HackGameMode:InitGameMode()
 		-- 设置展示时间
 		GameRules:SetShowcaseTime(0)
 		-- 设置游戏准备时间
-        GameRules:SetPreGameTime(9000)
+        GameRules:SetPreGameTime(9)
 
         -- GameRules:GetGameModeEntity():SetMaximumAttackSpeed(1000)
     else

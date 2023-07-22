@@ -137,7 +137,7 @@ function modifier_class:OnIntervalThink()
                     if target_ability == nil then return nil end 
                     if parent == nil then return nil end
                     --print("decide what to cast")                
-                    if ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and (target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH) then
+                    if (ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) or target_ability:GetAbilityName() == "tinker_warp_grenade") and (target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH) then
                         --print("cast1")
                         if target_ability and IsValidEntity(target_ability) and IsValidEntity(first_enemy) and IsValidEntity(parent) and parent:IsAlive() and first_enemy:IsAlive() then
                             parent:CastAbilityOnTarget(first_enemy, target_ability, parent:GetPlayerOwnerID())   

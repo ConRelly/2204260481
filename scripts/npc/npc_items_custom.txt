@@ -5947,7 +5947,7 @@
 		"ItemStockTime"					"1"			  
 		"ItemStockInitial"				"0"
 		"ItemStockMax"					"1"
-		"InvalidHeroes"					"npc_dota_hero_undying"
+		//"InvalidHeroes"					"npc_dota_hero_undying"
 		"ItemInitialStockTime"			"120.0"
 	}
 
@@ -20666,7 +20666,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
-		"ItemSellable"					"1"
+		"ItemSellable"					"0"
 		"ItemAliases"					"elements"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemQuality"					"artifact"

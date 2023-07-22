@@ -102,7 +102,7 @@ function modifier_aghanims_scepter_synth:RemoveOnDeath() return false end
 function modifier_aghanims_scepter_synth:AllowIllusionDuplicate() return true end
 function modifier_aghanims_scepter_synth:OnCreated()
 	if not IsServer() then return end
-	self:StartIntervalThink(FrameTime())
+	self:StartIntervalThink(0.5)
 end
 function modifier_aghanims_scepter_synth:OnIntervalThink()
 	if not IsServer() then return end
@@ -120,6 +120,26 @@ function modifier_super_scepter:RemoveOnDeath() return false end
 function modifier_super_scepter:AllowIllusionDuplicate() return true end
 function modifier_super_scepter:GetEffectName() return "particles/custom/items/super_scepter/super_scepter_amb.vpcf" end
 function modifier_super_scepter:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
+
+function modifier_super_scepter:CheckState()
+	local parent = self:GetParent()
+	if parent and parent:GetUnitName() == "npc_dota_hero_muerta" then
+		return {[MODIFIER_STATE_CANNOT_MISS] = true}
+	end	
+end
+function modifier_super_scepter:DeclareFunctions()
+    return {
+		MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
+		
+    }
+end
+function modifier_super_scepter:GetModifierBaseAttackTimeConstant()
+	local parent = self:GetParent()
+	if parent and parent:GetUnitName() == "npc_dota_hero_muerta" then
+	    return 1.1
+    end   
+end	
+
 function modifier_super_scepter:OnDestroy()
 	if IsServer() then
 		local modifier_stats = "modifier_item_imba_ultimate_scepter_synth_stats"

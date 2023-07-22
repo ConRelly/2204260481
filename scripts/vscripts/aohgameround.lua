@@ -60,7 +60,7 @@ end
 
 
 
-function AOHGameRound:Begin(goldRatio, expRatio)
+function AOHGameRound:Begin(goldRatio, expRatio, roundNum)
 	if not IsServer() then return end
 	if not self._endlessMode_started then
 		local title = "Round " .. self._nRoundNumber .. ": " .. self._sTitle
@@ -98,11 +98,13 @@ function AOHGameRound:Begin(goldRatio, expRatio)
 		self._nCoreUnitsTotal = self._nCoreUnitsTotal + spawner:GetTotalUnitsToSpawn()
 	end
 	self._nCoreUnitsKilled = 0
-	
+	CustomGameEventManager:Send_ServerToAllClients("round_started", {
+		round = roundNum
+	  })	
 end
 
 
-function AOHGameRound:End()
+function AOHGameRound:End(roundNum)
 	if not IsServer() then return end
 	for _, eID in pairs(self._vEventHandles) do
 		StopListeningToGameEvent(eID)
@@ -145,6 +147,9 @@ function AOHGameRound:End()
 		local rune = CreateRune(runePos, DOTA_RUNE_XP)
 		create_item_drop("item_tome_of_knowledge", itemPos)
 	end
+	CustomGameEventManager:Send_ServerToAllClients("round_ended", {
+		round = roundNum  
+	  })	
 end
 
 function create_item_drop(item_name, pos)

@@ -2667,9 +2667,16 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Added a toggle button for detailed skill/item dmg to show only for last round and current round or default (all time dmg).
+* Added Super Scepter effect to Muerta.
+* Broken Wings dmg limit (determines the number of wings consumed and dmg dealt in Divinity mode) increased from lvl * 4k / spell_amp, to lvl * 10k / spell_amp (from 150 to 500 for pure dmg).
+* Gods and demigods now emit a pulse every 30 sec that makes all units unable to be invisible/smoke for 7 sec (it does not give vision).
+* Fixed some spells not working with autocast. 
+* And other stuff.
 
 
 
+////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).
 

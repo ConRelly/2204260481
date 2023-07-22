@@ -55,7 +55,7 @@ LinkLuaModifier("modifier_boss_hpbar2", "abilities/boss_hpbar2.lua", LUA_MODIFIE
 LinkLuaModifier("modifier_double_trouble", "modifiers/modifier_double_trouble.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_infinite_health", "modifiers/modifier_infinite_health.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_boss_truesight_aura", "bosses/boss_true_sight.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("boss_truesight_modifier", "bosses/boss_true_sight.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_boss_truesight", "bosses/boss_true_sight.lua", LUA_MODIFIER_MOTION_NONE)
 
 
 if AOHGameMode == nil then
@@ -138,7 +138,7 @@ function AOHGameMode:InitGameMode()
 	self.spawned_gon = false
 	self.challenge = false
 	self.frist_init = false
-
+	GameRules.GLOBAL_roundNumber = 1
 	AOHGameMode.isArcane = {}
 	AOHGameMode.isArcane[0] = false
 	AOHGameMode.isArcane[1] = false
@@ -732,7 +732,7 @@ function AOHGameMode:OnThink()
 		elseif self._currentRound ~= nil then
 			self._currentRound:Think()
 			if self._currentRound:IsFinished() then
-				self._currentRound:End()
+				self._currentRound:End(self._nRoundNumber)
 				self._currentRound = nil
 				if not self._hardMode and not self._endlessMode then
 					refresh_players()
@@ -1229,7 +1229,7 @@ function AOHGameMode:_ThinkPrepTime()
 			self._currentRound:BeginDouble()
 		end
 
-		self._currentRound:Begin(self._goldRatio, self._expRatio)
+		self._currentRound:Begin(self._goldRatio, self._expRatio, self._nRoundNumber)
 		self:AtRoundStart()
 		self:RecountPlayers()
 		RefillBottle()
@@ -1439,6 +1439,7 @@ function AOHGameMode:OnEntitySpawned(event)
 			--if unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
 				--print("boss moster")
 				unit:AddNewModifier(unit, nil, "modifier_phys", {})
+				unit:AddNewModifier(unit, nil, "modifier_boss_truesight_aura", {})
 			--end
 		end			
 		if boss_challenger[unit:GetUnitName()] == true then

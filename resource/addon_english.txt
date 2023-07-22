@@ -1535,7 +1535,7 @@
 	"DOTA_Tooltip_ability_item_broken_wings_Description"		"<h1>Passive: Restoration of Feathers</h1> Gives a Feather Stick when landing an attack. <br><br> Cooldown: %attack_cd%s <br> Max stacks: %feather_max_stacks% \n<h1>Passive: Scree'auk’s Power</h1> Dealing Magic or Pure Damage expends one Feather Stack charge to deal %feather_add_dmg%%% damage ((2)Alt for details). <br><br>Cooldown: %feather_cd%s (CDR-Yes) \n<h1>Passive: Divinity</h1> When receiving the maximum number of effects, Feather Stacks - enters Divinity. During Divinity, cooldown and Feather Stack сonsumption from Scree'auk's Power are removed. Additionally, normal mana costs are removed for the duration. After Divinity ends you lose all of your Feather Stacks. <br><br> Duration: %divinity_duration%s \n<h1><font color='#00FF00'>UP: Wind Rapier</font></h1> When receiving a Feather Stack, there is a %wind_rapier_chance%%% chance of also getting a Wind Stack (allows to exceed the limit) \n<h1><font color='#00FF00'>UP: Mimic Mace</font></h1> Sets attack rate to %mimic_mace_attack_rate% \n<h1><font color='#7D9C00'>UP: Ultimate Ethereal Blade</font></h1> Reduces Restoration of Feathers Cooldown by x3"
 	"DOTA_Tooltip_ability_item_broken_wings_Lore"					"The wings have a mind of their own, they wish to be whole again. Ideea By:<font color='#2471A3'>Siliatra</font>"
 	"DOTA_Tooltip_ability_item_broken_wings_Note0"					"1) Can consume more stacks if dmg is above a certain dinamic value." // limited text space on item
-	"DOTA_Tooltip_ability_item_broken_wings_Note1"                  "2) Scree'auk’s Power will trigger only if Divinity OR the Dmg soruce is more then: Limit(lvl * 40 * 4k / spellamp) divided by the item inventory (slot-1).(slot 1 disable this feature) pure is 150 instead of 4k"
+	"DOTA_Tooltip_ability_item_broken_wings_Note1"                  "2) Scree'auk’s Power will trigger only if Divinity OR the Dmg soruce is more then: Limit(lvl * 40 * 10k / spellamp) divided by the item inventory (slot-1).(slot 1 disable this feature) pure is 500 instead of 10k"
 	"DOTA_Tooltip_ability_item_broken_wings_bonus_cast_range"		"+$cast_range"
 	"DOTA_Tooltip_ability_item_broken_wings_bonus_attack_range"		"+$attack_range"
 	"DOTA_Tooltip_modifier_broken_wings_feather_stacks"					"Feather Stacks"
@@ -2462,6 +2462,9 @@
 	"npc_dota_earth_spirit_boss"			"Kaolin Guardian"
 	"npc_boss_skeletal_archer_new"		  "Bone Fletcher(BOSS)"
 	"npc_boss_skeleton_king_angry_new"	  "Undead Lord(BOSS)"
+
+	"Dota_tooltip_modifier_boss_truesight" "All Seeing EYE"
+	"Dota_tooltip_modifier_boss_truesight_Description" "Cannot be invisible for the duration"
 
 
 	"DOTA_Tooltip_Ability_obs_replay"					"<font color='#178CD8'>Slayer OBS Studio</font>"
@@ -7222,6 +7225,7 @@ This ability has a base cooldown of %base_cooldown% seconds, plus %extra_cooldow
 "DOTA_Tooltip_modifier_mystic_dragon_endless_wisdom_buff"					"Endless wisdom"
 "DOTA_Tooltip_modifier_mystic_dragon_endless_wisdom_buff_Description"		"Dragons knows more answers, than you have questions..."
 
+
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull"							"<font color='#f2da5b'>Death Skull</font>"
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_Description"				"Fires skulls in a direction, dealing damage to the first enemies that they find.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Death Skull shoots at your attack speed."
 "DOTA_Tooltip_Ability_witch_doctor_death_ward_Description"						"CANNELED-Summons a deadly ward to attack all enemies, last maximum %duration_tooltip% seconds."
@@ -10760,6 +10764,10 @@ Contains all random skills"
 	"DOTA_Tooltip_ability_marci_guardian_custom_buff_duration"			"DURATION:"
 	"DOTA_Tooltip_ability_marci_guardian_custom_lifesteal_pct"			"%LIFESTEAL:"
 	"DOTA_Tooltip_ability_marci_guardian_custom_bonus_damage"			"BONUS DAMAGE:"
+
+
+//Muerta
+	"DOTA_Tooltip_Ability_muerta_pierce_the_veil_Description"				"Muerta transforms, becoming immune to physical damage. All of her attack damage is dealt as magical damage. Muerta gains bonus attack damage and phased movement.<br><br>Muerta can attack ethereal units, but deals no damage to Magic Immune targets.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Gain <font color='#0DE4EB'>True Strike</font> and 1.1 base attack time <br><br>DISPEL TYPE: Basic Dispel"
 
 
 	}

@@ -205,8 +205,8 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 			local orig_dmg = keys.original_damage
 			local lvl = caster:GetLevel() * 40
 			local spell_amp = caster:GetSpellAmplification(false)
-			local limit_magic = math.floor(lvl * 4000 / spell_amp)
-			local limit_pure = math.floor(lvl * 150 / spell_amp)
+			local limit_magic = math.floor(lvl * 10000 / spell_amp)
+			local limit_pure = math.floor(lvl * 500 / spell_amp)
 			local limit = 0
 			local used_stacks = 1
 			local divinity = caster:HasModifier("modifier_broken_wings_divinity")

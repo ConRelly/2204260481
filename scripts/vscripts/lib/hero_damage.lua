@@ -31,13 +31,14 @@ function HeroDamageStat:OnDamageDealt(playerID, damageTable, dmg_dealt, attacker
                 if damageTable.entindex_inflictor_const then
                     ability = EntIndexToHScript(damageTable.entindex_inflictor_const)
                 end
-                self:ModifyDamage(attackerPlayerId, damageTable.damagetype_const, damage_dealt, ability)
+                local round = GameRules.GLOBAL_roundNumber --added new 
+                self:ModifyDamage(attackerPlayerId, damageTable.damagetype_const, damage_dealt, ability, round) --added "round" 
             end
         end
     end
 end
-
-function HeroDamageStat:ModifyDamage(playerID, damagetype, damage, ability)
+--original version with no round
+--[[ function HeroDamageStat:ModifyDamage(playerID, damagetype, damage, ability)
     local inflictor = "other"
     if ability then
         inflictor = ability:GetName()  -- ITEM: item_
@@ -63,7 +64,39 @@ function HeroDamageStat:ModifyDamage(playerID, damagetype, damage, ability)
     end
 
       
+end ]]
+
+--new version with round start
+function HeroDamageStat:ModifyDamage(playerID, damagetype, damage, ability, round)
+    local inflictor = "other"
+    if ability then
+        inflictor = ability:GetName()  -- ITEM: item_
+        -- print("Damage Ability: " .. ability:GetName())
+    end  
+
+    if damagetype == DAMAGE_TYPE_MAGICAL then
+        self._magdamage[playerID] = self._magdamage[playerID] or {}
+        self._magdamage[playerID][inflictor] = self._magdamage[playerID][inflictor] or {}
+        self._magdamage[playerID][inflictor][round] = self._magdamage[playerID][inflictor][round] or 0
+        self._magdamage[playerID][inflictor][round] = self._magdamage[playerID][inflictor][round] + damage
+    elseif damagetype == DAMAGE_TYPE_PHYSICAL then
+        if inflictor == "other" then
+            inflictor = "attack"
+        end
+
+        self._physdamage[playerID] = self._physdamage[playerID] or {}
+        self._physdamage[playerID][inflictor] = self._physdamage[playerID][inflictor] or {}
+        self._physdamage[playerID][inflictor][round] = self._physdamage[playerID][inflictor][round] or 0
+        self._physdamage[playerID][inflictor][round] = self._physdamage[playerID][inflictor][round] + damage
+    else
+        self._puredamage[playerID] = self._puredamage[playerID] or {}
+        self._puredamage[playerID][inflictor] = self._puredamage[playerID][inflictor] or {}
+        self._puredamage[playerID][inflictor][round] = self._puredamage[playerID][inflictor][round] or 0
+        self._puredamage[playerID][inflictor][round] = self._puredamage[playerID][inflictor][round] + damage
+    end
 end
+---end of new version
+
 
 function HeroDamageStat:SetValue(playerID, key, value)
     local data = self.GLOBAL_PLAYER_DATA[playerID]

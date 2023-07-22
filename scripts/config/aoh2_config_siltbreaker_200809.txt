@@ -113,7 +113,7 @@
 			"a"
 			{
 				"NPCName"				"npc_boss_kobold_foreman2"
-				//"NPCName"               "npc_boss_clockwerk_rush_kinder"
+				//"NPCName"               "npc_boss_randomstuff_aiolos"
 				//"NPCName"               "npc_boss_antimage_female"
 				//"NPCName"               "npc_dota_boss_aghanim"
 				//"NPCName"               "npc_dota_boss_void_spirit"
