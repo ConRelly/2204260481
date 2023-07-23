@@ -69,11 +69,17 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 			elseif ultra_rare > 5 and ultra_rare <= 30 then
 				SpawnItem("item_edible_fragment", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, false)
 			elseif ultra_rare > 30 and ultra_rare <= 100 then
-				local random_essence = RandomInt(1, 2)
-				if random_essence == 1 then
-					SpawnItem("item_water_essence", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
-				elseif random_essence == 2 then
-					SpawnItem("item_air_essence", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
+				local atr = RandomInt(1, 3)
+				local TomeAttributes = 200
+				if atr == 1 then
+					self:GetParent():ModifyStrength(TomeAttributes)
+					Add_Attributes(self:GetParent(), "modifier_tome_str_bonus", TomeAttributes)
+				elseif atr == 2 then
+					self:GetParent():ModifyAgility(TomeAttributes)
+					Add_Attributes(self:GetParent(), "modifier_tome_agi_bonus", TomeAttributes)
+				elseif atr == 3 then
+					self:GetParent():ModifyIntellect(TomeAttributes)
+					Add_Attributes(self:GetParent(), "modifier_tome_int_bonus", TomeAttributes)
 				end
 			end
 		elseif random_int > self.ultra_rare and random_int <= self.rare then
@@ -121,8 +127,6 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 			end
 		elseif random_int > self.rune and random_int <= self.book_of_stats then
 			SpawnItem("item_primary_attribute_book", self:GetCursorPosition(), ITEM_FULLY_SHAREABLE, true)
-			CreateRune(self:GetCursorPosition(), DOTA_RUNE_XP)
-			CreateRune(self:GetCursorPosition(), DOTA_RUNE_SHIELD)
 		elseif random_int > self.book_of_stats and random_int <= self.kobold then
 			if chen_first_spawn and self:GetCaster():GetName() == "npc_dota_hero_chen" then
 				chen_first_spawn = false

@@ -145,7 +145,14 @@ function AOHGameMode:OnPlayerChat(keys)
 		local location = hero:GetAbsOrigin()
 		print("current location: ".. tostring(location))
 	end	
-	
+	if keys.text == "-dev_enemy" and keys.playerid == 0 then
+		if _G._dev_enemy then
+			_G._dev_enemy = false
+		else
+			_G._dev_enemy = true
+			_G._dev_enemy_ano = true
+		end	
+	end		
 	if keys.text == guessing_gmae_2 and not Cheats:IsEnabled() and time > 30 and not self._physdanage and not GameRules:IsGamePaused() then
 		Notifications:TopToAll({text="#dota_npc_does_bc", style={color="red"}, duration=5})
 		self._physdanage = true

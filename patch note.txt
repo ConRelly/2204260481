@@ -2666,13 +2666,23 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
-
 * Added a toggle button for detailed skill/item dmg to show only for last round and current round or default (all time dmg).
 * Added Super Scepter effect to Muerta.
 * Broken Wings dmg limit (determines the number of wings consumed and dmg dealt in Divinity mode) increased from lvl * 4k / spell_amp, to lvl * 10k / spell_amp (from 150 to 500 for pure dmg).
 * Gods and demigods now emit a pulse every 30 sec that makes all units unable to be invisible/smoke for 7 sec (it does not give vision).
 * Fixed some spells not working with autocast. 
 * And other stuff.
+
+
+
+* Fixed Cursed Shovel summoning Ulfsaar (ursa) to make it so rounds bug and don't continue anymore.
+* Replaced Cursed Shovel reward spheres with +200 to a random attribute. Fixed main attribute tome roll to not give xp and shield rune as extra.
+* Battlemage Cloth has an alternate recipe (Elemental or Enchanter) and Mr reduction from -25% to -30%.
+* Added alternate recipe for MKB 5 (Branch instead of Enchanter)
+* MKB (Monkey King Bar) combo with Frostmourne now works at lvl 35+ instead of lvl 69+. Changed from 91% to 94%.
+* Spirit Guardian SS effect from 1000 base attack to increase stack final number by 1% -> to 200 (5x better). Primary attr bonus to from 825 to 1325.
+* Previous patch note: Undying can now buy Aghanim's Shard.
+* and some other fixes.
 
 
 

@@ -479,11 +479,11 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 		if HasSuperScepter(parent) then
 			local int_to_dmg = self:GetSpecialValueFor("bonus_int_dmg")
 			bonus_int = math.floor(parent:GetIntellect() * lvl * int_to_dmg / 100)
-			local stacks_mult = math.floor(base_dmg / 100) / 1000 + 1
+			local stacks_mult = math.floor(base_dmg / 100) / 200 + 1
 			if stacks_mult < 1 then
 				stacks_mult = 1
-			elseif stacks_mult > 3 then
-				stacks_mult = 3	
+			elseif stacks_mult > 12 then
+				stacks_mult = 12	
 			end	
 			if stacks > 1 then
 				stacks = math.floor(stacks * stacks_mult)

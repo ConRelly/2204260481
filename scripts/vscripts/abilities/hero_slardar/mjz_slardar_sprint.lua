@@ -57,9 +57,8 @@ function modifier_class:DeclareFunctions()
 end
 
 function modifier_class:GetActivityTranslationModifiers() return "sprint" end
-function modifier_class:GetModifierAttackSpeedBonus_Constant() return self.bonus_attack_speed end
-function modifier_class:GetModifierMoveSpeedBonus_Percentage() return self.bonus_move_speed end
-
+function modifier_class:GetModifierAttackSpeedBonus_Constant() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end end
+function modifier_class:GetModifierMoveSpeedBonus_Percentage() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_move_speed") end end
 function modifier_class:CheckState()
 	return {[MODIFIER_STATE_NO_UNIT_COLLISION] = true}
 end

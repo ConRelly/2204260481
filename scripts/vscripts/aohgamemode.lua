@@ -125,6 +125,8 @@ function AOHGameMode:InitGameMode()
 	_G._itemauto2 = {}
 	_G._playerNumber = 0
 	_G._sell_slayer_fragmets = true
+	_G._dev_enemy = false
+	_G._dev_enemy_ano = false
 	self._hardMode = false
 	self._endlessMode = false
 	self._endlessMode_started = false

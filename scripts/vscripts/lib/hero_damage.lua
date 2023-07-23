@@ -37,34 +37,7 @@ function HeroDamageStat:OnDamageDealt(playerID, damageTable, dmg_dealt, attacker
         end
     end
 end
---original version with no round
---[[ function HeroDamageStat:ModifyDamage(playerID, damagetype, damage, ability)
-    local inflictor = "other"
-    if ability then
-        inflictor = ability:GetName()  -- ITEM: item_
-        -- print("Damage Ability: " .. ability:GetName())
-    end  
 
-    if damagetype == DAMAGE_TYPE_MAGICAL then
-        self._magdamage[playerID] = self._magdamage[playerID] or {}
-        self._magdamage[playerID][inflictor] = self._magdamage[playerID][inflictor] or 0
-        self._magdamage[playerID][inflictor] = self._magdamage[playerID][inflictor] + damage
-    elseif damagetype == DAMAGE_TYPE_PHYSICAL then
-        if inflictor == "other" then
-            inflictor = "attack"
-        end
-
-        self._physdamage[playerID] = self._physdamage[playerID] or {}
-        self._physdamage[playerID][inflictor] = self._physdamage[playerID][inflictor] or 0
-        self._physdamage[playerID][inflictor] = self._physdamage[playerID][inflictor] + damage
-    else
-        self._puredamage[playerID] = self._puredamage[playerID] or {}
-        self._puredamage[playerID][inflictor] = self._puredamage[playerID][inflictor] or 0
-        self._puredamage[playerID][inflictor] = self._puredamage[playerID][inflictor] + damage
-    end
-
-      
-end ]]
 
 --new version with round start
 function HeroDamageStat:ModifyDamage(playerID, damagetype, damage, ability, round)

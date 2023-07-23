@@ -85,7 +85,7 @@ function HealthAttack(event)
             })
         end
         local lvl = caster:GetLevel()
-        if lvl > 69 and monkey_in_inventory(caster) then
+        if lvl > 35 and monkey_in_inventory(caster) then
             local cdr = 4 * caster:GetCooldownReduction()
             ability:StartCooldown(cdr)
         else   

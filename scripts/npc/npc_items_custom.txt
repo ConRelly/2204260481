@@ -15025,13 +15025,14 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"custom_recipe"
-		"ItemCost"						"12000"
+		"ItemCost"						"10000"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_mjz_monkey_king_bar_5"
 		"ItemRequirements"
 		{
 			"01"						"item_mjz_monkey_king_bar_4;item_enchanter"
+			"02"						"item_mjz_monkey_king_bar_4;item_branch_component"
 		}
 	}
 	"item_mjz_monkey_king_bar_5"
@@ -15062,7 +15063,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_chance"				"75 77 79 81 91"
+				"bonus_chance"				"75 77 79 81 94"
 			}
 			"04"
 			{
@@ -23617,17 +23618,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp"					"500"
+				"hp"					"2500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"str"					"15"
+				"str"					"150"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"12"
+				"armor"					"32"
 			}
 			"04"
 			{
@@ -23657,7 +23658,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_loss"				"150"
+				"hp_loss"				"250"
 			}
 			"10"
 			{
@@ -32390,7 +32391,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"primary_attribute"		"825"
+				"primary_attribute"		"1325"
 			}
 			"03"
 			{
@@ -33468,7 +33469,7 @@
 			"spell_amp"				"135"
 			"duration_buff"			"15"
 			"duration_debuff"		"7"
-			"magic_resist_red"		"25"
+			"magic_resist_red"		"30"
 			"mana_regen_aura"		"195"
 			"aura_radius"			"7200"
 		}
@@ -33485,7 +33486,8 @@
 		"ItemResult"					"item_battlemage_cloth"
 		"ItemRequirements"
 		{
-			"01"						"item_veil_of_discord;item_enchanter"
+			"01"						"item_veil_of_discord;item_all_essence"
+			"02"						"item_veil_of_discord;item_enchanter"
 		}
 	}
 

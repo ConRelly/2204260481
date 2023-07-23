@@ -198,6 +198,13 @@ function AOHGameRound:IsFinished()
 	end
 
 	local nEnemiesRemaining = #self._vEnemiesRemaining
+	if _G._dev_enemy then
+		print("Enemies remaining: " ..nEnemiesRemaining)
+		if _G._dev_enemy_ano then
+			Notifications:TopToAll({text="Enemies remaining: " ..nEnemiesRemaining, style={color="red"}, duration=10})
+			_G._dev_enemy_ano = false
+		end	
+	end
 	if nEnemiesRemaining < 1 then
 		return true
 	end
@@ -245,11 +252,14 @@ function AOHGameRound:OnNPCSpawned(event)
 		table.insert(self._vEnemiesRemaining, spawnedUnit)
 		spawnedUnit:SetDeathXP(0)
 		spawnedUnit.unitName = spawnedUnit:GetUnitName()
+		if _G._dev_enemy then
+			print("enemey added in list: "..spawnedUnit.unitName)
+		end
 		Timers:CreateTimer(120, -- 2 minutes in seconds
 		function()
 		  if not spawnedUnit:IsNull() and IsValidEntity(spawnedUnit) and spawnedUnit:IsAlive() then
 			print("enemey unit is alive after 2 min")
-			spawnedUnit:SetAbsOrigin(Vector(0, 0, 0)) -- or whatever the center of the map is
+			spawnedUnit:SetAbsOrigin(Vector(0, 0, 0)) 
 			FindClearSpaceForUnit(spawnedUnit, Vector(0, 0, 0), true)
 			AddFOWViewer(DOTA_TEAM_GOODGUYS, spawnedUnit:GetAbsOrigin(), 1200, 120, false)
 		  end

@@ -16195,7 +16195,7 @@
 		"Model"						"models/heroes/ursa/ursa.vmdl"
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"Hero_Ursa"
-		"Level"						"26"
+		"Level"						"4"
 		"ModelScale"				"0.9"
 		"HasInventory"				"1"
 		"CanBeDominated"			"0"

@@ -43743,7 +43743,7 @@
 					"RunScript"
 					{
 						"ScriptFile"	"abilities/overcharge.lua"
-						"Function"		"Overcharge"
+						"Function"		"	"
 					}
 				}
 				"ThinkInterval"		"0.5"
