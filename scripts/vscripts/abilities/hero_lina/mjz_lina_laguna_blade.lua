@@ -29,7 +29,11 @@ function mjz_lina_laguna_blade:GetCastRange(vLocation, hTarget)
 end
 function mjz_lina_laguna_blade:GetCooldown(iLevel)
 	if self:GetCaster():HasScepter() then
-		return self:GetSpecialValueFor("cooldown_scepter")
+		if self:GetCaster():HasModifier("modifier_super_scepter") then
+			return self:GetSpecialValueFor("cooldown_scepter_ss")
+		else
+			return self:GetSpecialValueFor("cooldown_scepter")
+		end	
 	end
 	return self.BaseClass.GetCooldown(self, iLevel)
 end
@@ -142,6 +146,7 @@ function modifier_mjz_lina_laguna_blade_bonus:OnTooltip() if self:GetAbility() t
 modifier_mjz_lina_laguna_blade_delay = class({})
 function modifier_mjz_lina_laguna_blade_delay:IsHidden() return false end
 function modifier_mjz_lina_laguna_blade_delay:IsPurgable() return false end
+function modifier_mjz_lina_laguna_blade_delay:GetAttributes() if self:GetCaster() and self:GetCaster():HasModifier("modifier_super_scepter") then return MODIFIER_ATTRIBUTE_MULTIPLE end end
 function modifier_mjz_lina_laguna_blade_delay:OnRemoved()
 	if not IsServer() then return end
 	if not self:GetParent():IsAlive() then

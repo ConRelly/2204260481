@@ -2686,6 +2686,25 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+
+
+* Added Super Scepter effect for Lina Laguna blade.
+* Lion Finger of death(random pool one) has an extra effect for SS (less CD) and better dmg per int ratio and better dmg gain per use and gains more strating stacks / time passed when learned(used for first time).
+* Dream Coil now works with autocast.
+* Pango Dagger base aura range to gain stacks from 400 to 1000. Reduced True Master fixed cd from 3s to 0.5s.
+* Fixed(or it should) the new toggle button(DMG view) visually apearing On if anyone else has hit on.
+
+
+
+
+
+
+
+
+
+
+
+
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).

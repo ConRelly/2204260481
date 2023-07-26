@@ -7,7 +7,11 @@ lion_custom_finger_of_death = class({})
 
 function lion_custom_finger_of_death:GetCooldown(iLevel)
     if self:GetCaster():HasScepter() then
-        return self:GetSpecialValueFor("cooldown_scepter")
+        if self:GetCaster():HasModifier("modifier_super_scepter") then
+            return self:GetSpecialValueFor("cooldown_scepter_ss")
+        else
+            return self:GetSpecialValueFor("cooldown_scepter")
+        end
     end
     return self.BaseClass.GetCooldown(self, iLevel)
 end
@@ -60,10 +64,10 @@ if IsServer() then
             modifier_handler = caster:AddNewModifier(caster, self, self.stack_modifier_name, {})
             local time = GameRules:GetGameTime() / 60
             if time < 25 then
-                local stack = math.floor(time * 5000)
+                local stack = math.floor(time * 10000)
                 modifier_handler:SetStackCount(stack)
             else
-                local stack = math.floor(time * 10000)
+                local stack = math.floor(time * 15000)
                 modifier_handler:SetStackCount(stack)     
             end             
         end

@@ -329,6 +329,7 @@ function modifier_true_master_gun:OnCreated()
 	self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_true_master_gun_reload", {})
 	self:GetParent():SetAttackCapability(DOTA_UNIT_CAP_RANGED_ATTACK)
 	AttachWearable(self:GetParent(), "models/items/pangolier/pangolier_immortal_musket/pangolier_immortal_musket.vmdl", nil)
+	self.armed = true
 end
 function modifier_true_master_gun:OnDestroy()
 	if not IsServer() then return end
@@ -358,27 +359,24 @@ function modifier_true_master_gun:OnAttackStart(keys)
 		if keys.target == nil then return end
 		self:GetParent():EmitSound("Hero_Pangolier.Swashbuckle.Musket")
 		self:GetParent():StartGesture(ACT_DOTA_CAST_ABILITY_1_END)
-
-		self.pierce_proc = false
-		if RollPercentage(self:GetAbility():GetSpecialValueFor("dagger_true_strike")) then
-			self.pierce_proc = true
-		end
 	end
 end
 function modifier_true_master_gun:OnAttackLanded(keys)
 	if not IsServer() then return end
 	if self:GetParent() == keys.attacker then
-		if keys.target == nil then return end
-		local instance = 4
-		for i = 1, (instance - 1) do
-			ApplyDamage({
-				victim = keys.target,
-				attacker = self:GetCaster(),
-				ability = self:GetAbility(),
-				damage = keys.original_damage * 2,
-				damage_type = DAMAGE_TYPE_MAGICAL,
-				damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-			})
+		if self.armed then
+			if keys.target == nil then return end
+			local instance = 4
+			for i = 1, (instance - 1) do
+				ApplyDamage({
+					victim = keys.target,
+					attacker = self:GetCaster(),
+					ability = self:GetAbility(),
+					damage = keys.original_damage * 2,
+					damage_type = DAMAGE_TYPE_MAGICAL,
+					damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
+				})
+			end
 		end
 	end
 end
@@ -388,9 +386,6 @@ end
 function modifier_true_master_gun:GetActivityTranslationModifiers() return "musket" end
 function modifier_true_master_gun:CheckState()
 	local state = {[MODIFIER_STATE_STUNNED] = false}
-	if self.pierce_proc then
-		state = {[MODIFIER_STATE_STUNNED] = false, [MODIFIER_STATE_CANNOT_MISS] = true}
-	end
 	return state
 end
 
@@ -410,13 +405,16 @@ end
 function modifier_true_master_gun_reload:OnAttack(keys)
 	if not IsServer() then return end
 	if self:GetParent() == keys.attacker then
+		if not self.armed then return end
 		if self:GetStackCount() > 0 then
 			self:SetStackCount(self:GetStackCount() - 1)
 		end
 		if self:GetStackCount() == 0 then
+			self.armed = false
 			Timers:CreateTimer(1, function()
 				if self:GetAbility() then
 					self:SetStackCount(3)
+					self.armed = true
 				end
 			end)
 		end

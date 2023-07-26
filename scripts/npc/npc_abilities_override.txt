@@ -12696,7 +12696,7 @@
 		"AbilityValues"
 		{
 				"damage"					"15000 150000 1500000"
-				"knockback_distance"		"600"
+				"knockback_distance"		"600 600 0"
 				"range_reduction"		"40"
 				"debuff_duration"		"3"
 		}

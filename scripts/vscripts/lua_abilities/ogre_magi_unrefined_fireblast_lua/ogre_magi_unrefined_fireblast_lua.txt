@@ -70,7 +70,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stats_multiplier"			"15.0"
+				"stats_multiplier"			"17.0"
 			}
 			"06"
 			{
@@ -80,7 +80,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"mana_bonus_dmg"		"5"
+				"mana_bonus_dmg"		"15"
 			}						
 		}
 	}

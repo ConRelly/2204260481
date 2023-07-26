@@ -96,6 +96,8 @@ function faerie_dream_coil:_GetPrimaryStatValue()
 		PrimaryStatValue = unit:GetAgility()
 	elseif pa == 2  then
 		PrimaryStatValue = unit:GetIntellect()
+	else 
+		PrimaryStatValue = (unit:GetIntellect() + unit:GetAgility() + unit:GetStrength()) / 2
 	end
 	return PrimaryStatValue
 end
@@ -173,7 +175,7 @@ function modifier_faerie_dream_coil:OnIntervalThink()
 end
 
 function modifier_faerie_dream_coil:CheckState()
-	return {[MODIFIER_STATE_TETHERED] = true}
+	--return {[MODIFIER_STATE_TETHERED] = true}
 end
 
 ---------------------------
