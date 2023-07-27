@@ -231,7 +231,7 @@ function Normal_Shot(caster, target, ability, damage)
 		Timers:CreateTimer(2, function()
 			target:RemoveSelf()
 		end)
-		target:ForceKill(false)
+		target:Kill(nil,nil)
     end
 end
 function Explosive_Shot(caster, target, ability, damage)

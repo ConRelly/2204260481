@@ -124,7 +124,7 @@ function lesser_cancel:OnSpellStart()
 			end
 			local UnitName = target:GetUnitName()
 			if TargetUntargetable[UnitName] or target:IsOther() then
-				target:ForceKill(false)
+				target:Kill(nil,nil)	
 			end
 		end
 --	end

@@ -227,7 +227,7 @@ function divine_cancel:OnSpellStart()
 			if target then
 				local UnitName = target:GetUnitName()
 				if TargetUntargetable[UnitName] or target:IsOther() then
-					target:ForceKill(false)
+					target:Kill(nil,nil)
 				end
 			end
 		end

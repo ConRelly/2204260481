@@ -28,11 +28,13 @@ function Overcharge( event )
 		end
 		if _G._hardMode then
 			if caster:GetModifierStackCount(modifier, ability) == 100 then
-				caster:ForceKill(false)
+				caster:Kill(nil,nil)
+				--caster:ForceKill(false)
 			end
 		else
 			if caster:GetModifierStackCount(modifier, ability) == 50 then
-				caster:ForceKill(false)
+				caster:Kill(nil,nil)
+				--caster:ForceKill(false)
 			end
 		end
 	end	

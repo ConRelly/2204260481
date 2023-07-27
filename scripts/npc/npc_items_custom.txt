@@ -1067,18 +1067,18 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all"				"100"
+				"bonus_all"				"150"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"			"25"
+				"bonus_damage"			"30"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"chance_tooltip"				"7" 
+				"chance_tooltip"				"8" 
 			}		
 		}
 		"Modifiers"					

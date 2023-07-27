@@ -91,7 +91,7 @@ if IsServer() then
         if parent:IsAlive() then
 			parent:ForceKill(false)
 			parent:RemoveSelf()
-			print("heyo conduit")
+			--print("heyo conduit")
 		end
     end
 	

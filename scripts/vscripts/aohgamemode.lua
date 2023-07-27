@@ -1143,8 +1143,17 @@ function AOHGameMode:_CheckForDefeat()
 				self._ischeckingdefeat = true
 			end
 		else
+			print("end game post")
 			send_info_if_game_ends()
 			GameRules:SetSafeToLeave(true)
+			PauseGame(true)
+			Timers:CreateTimer({
+				useGameTime = false, 
+				endTime = 0.4, 
+				callback = function()
+					PauseGame(false)
+				end
+			})			
 			--end_screen_setup(self._entAncient and self._entAncient:IsAlive())			
 			GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)	
 		end
@@ -1188,12 +1197,14 @@ function AOHGameMode:CheckForDefeatDelay()
 					self._ischeckingdefeat = false
 					return nil
 				else	
-					self._entAncient:ForceKill(false)
+					print("anciend 1")
+					self._entAncient:Kill(nil,nil)
+					print("anciend killed")
 					Notifications:TopToAll({text="You LOST, All Heroes dead When CountDown ended with 0 lives left", style={color="red"}, duration=5})
 					Timers:CreateTimer({
 						endTime = 4,
 						callback = function()
-							self._entAncient:ForceKill(false)
+							self._entAncient:Kill(nil,nil)
 						end
 					})
 				end		
@@ -1488,6 +1499,7 @@ function AOHGameMode:OnEntityKilled(event)
 	local killedUnit = EntIndexToHScript(event.entindex_killed)
 	if killedUnit:IsNull() then return end
 	if killedUnit:IsFort() then
+		print("game end fort dead")
 		GameRules:SetSafeToLeave(true)
 		end_screen_setup(self._entAncient and self._entAncient:IsAlive())			
 		PauseGame(true)

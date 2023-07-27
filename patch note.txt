@@ -2687,13 +2687,14 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
-
-* Added Super Scepter effect for Lina Laguna blade.
-* Lion Finger of death(random pool one) has an extra effect for SS (less CD) and better dmg per int ratio and better dmg gain per use and gains more strating stacks / time passed when learned(used for first time).
+* Fixed no EndScreen when ending(losing) game by countdown.(those games where not recorded ether)
+* Added Super Scepter effect to Lina Laguna Blade.
+* Lion's Finger of Death (Random Pool One) has an extra effect for SS (less CD) and better dmg per int ratio and dmg gain per use, and gains more strat stacks / time elapsed when learned (first use).
 * Dream Coil now works with autocast.
-* Pango Dagger base aura range to gain stacks from 400 to 1000. Reduced True Master fixed cd from 3s to 0.5s.
-* Fixed(or it should) the new toggle button(DMG view) visually apearing On if anyone else has hit on.
-
+* Pango Dagger base aura range to gain stacks increased from 400 to 1000. True Master fixed cd reduced from 3s to 0.4s.
+* Fixed (or should have fixed) the new toggle button (DMG view) to not show up visually when someone else has it on.
+* SpellBlade increased proc rate by 1% and other stats.
+* Broken Wings buffed again to 15k and 1k (magic and pure) for feather consumption and divinity from 10k and 500. (Alt on item for details)
 
 
 

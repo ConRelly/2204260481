@@ -122,7 +122,10 @@ function AOHGameRound:End(roundNum)
 					if unit and not unit:IsNull() and IsValidEntity(unit) then
 						--print("focekill unit: "..name .." or remove if Dead")
 						if unit:IsAlive() then
-							unit:ForceKill(false)
+							unit:Kill(nil,nil)
+							if unit:IsAlive() then
+								unit:ForceKill(false)
+							end
 						elseif not unit:IsNull() and IsValidEntity(unit) then
 							--print("remove unit: "..name )
 							UTIL_Remove(unit)

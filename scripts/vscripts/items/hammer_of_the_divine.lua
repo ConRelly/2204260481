@@ -91,7 +91,7 @@ function modifier_hammer_of_the_divine:GetModifierBaseAttackTimeConstant()
 	local parent = self:GetParent()
 	local str = parent:GetStrength()
 	if str > 15000 then
-		if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("base_attack_time") end
+		return 1.1
 	end
 end
 function modifier_hammer_of_the_divine:GetModifierPhysicalArmorBonus()

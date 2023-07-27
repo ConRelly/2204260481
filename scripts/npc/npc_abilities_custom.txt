@@ -43847,7 +43847,7 @@
 		"MaxLevel"					"10"
 		"AbilityValues"
 		{
-			"fixed_cooldown"			"0.5"
+			"fixed_cooldown"			"0.4"
 			"sword_bonus_attack_range"	"500"
 			"sword_crit_chance"			"15"
 			"sword_crit_damage"			"444 888 1555 2333 3777 4666 6777 8888 9999 11111"
