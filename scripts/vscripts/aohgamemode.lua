@@ -260,7 +260,7 @@ function AOHGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetMaximumAttackSpeed(1100)
 	GameRules:GetGameModeEntity():SetNeutralStashEnabled(true)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_AGILITY_ATTACK_SPEED,0.05)
-	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP,3.5)
+	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP,2.5)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP_REGEN,0.4)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_AGILITY_ARMOR, 0.01)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN,0.07)
@@ -1472,11 +1472,11 @@ function AOHGameMode:OnEntitySpawned(event)
 			Sounds:CreateSound(i, "goh.teme")
 		end
 	end
-	if unit:GetUnitName() == "npc_dota_boss_void_spirit" then
+--[[ 	if unit:GetUnitName() == "npc_dota_boss_void_spirit" then
 		for i=0,9 do
 			Sounds:CreateSound(i, "bleach_fate")
 		end
-	end		
+	end	 ]]	
 	--for playerID = 0, 4 do
 	--	if unit:GetUnitName() == "npc_boss_skeletal_archer_new" then
 	--		Sounds:CreateSound(playerID, "bleach_fate")
@@ -1737,7 +1737,7 @@ function AOHGameMode:OnRemoveSpawnedUnitsButtonPressed(eventSourceIndex)
 --	for k, v in pairs(self.m_tEnemiesList) do
 	local enemy = self.m_tEnemiesList[1]
 	if enemy then
-		enemy:ForceKill(false)
+		enemy:Kill(nil,nil)
 		table.remove(self.m_tEnemiesList, 1)
 		enemy:RemoveSelf()
 	end

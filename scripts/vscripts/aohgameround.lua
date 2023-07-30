@@ -98,8 +98,16 @@ function AOHGameRound:Begin(goldRatio, expRatio, roundNum)
 		self._nCoreUnitsTotal = self._nCoreUnitsTotal + spawner:GetTotalUnitsToSpawn()
 	end
 	self._nCoreUnitsKilled = 0
+	local round_nr = roundNum
+	local part_2 = GameRules.GLOBAL_endlessMode_started     
+	local part_3 = GameRules.GLOBAL_endlessHard_started
+	if part_3 then
+		round_nr = 38 + round_nr + 44
+	elseif part_2 then
+		round_nr = 44 + round_nr
+	end 	
 	CustomGameEventManager:Send_ServerToAllClients("round_started", {
-		round = roundNum
+		round = round_nr
 	  })	
 end
 
@@ -142,16 +150,25 @@ function AOHGameRound:End(roundNum)
 	end
 	local center = Vector(0, 0, 0)
 	local rune_position = Vector(-2307.83, 276, 448)
+	local tome_position = Vector(1959.51, -1382.75, 448)
 	local minRadius = 50
 	local maxRadius = 2250
 	local runePos = GetRandomPointOnMap(rune_position, 50, 350)
-	local itemPos = GetRandomPointOnMap(center, minRadius, maxRadius)
+	local itemPos = GetRandomPointOnMap(tome_position, 50, 350)
 	if RollPercentage(90) then
 		local rune = CreateRune(runePos, DOTA_RUNE_XP)
 		create_item_drop("item_tome_of_knowledge", itemPos)
 	end
+	local round_nr = roundNum
+	local part_2 = GameRules.GLOBAL_endlessMode_started     
+	local part_3 = GameRules.GLOBAL_endlessHard_started
+	if part_3 then
+		round_nr = 38 + round_nr + 44
+	elseif part_2 then
+		round_nr = 44 + round_nr
+	end 	
 	CustomGameEventManager:Send_ServerToAllClients("round_ended", {
-		round = roundNum  
+		round = round_nr  
 	  })	
 end
 

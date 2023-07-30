@@ -87,7 +87,7 @@ if IsServer() then
         "abyssal_underlord_atrophy_aura",             -- 滚滚 3
         "meepo_ransack",                    -- 米波 3
         "bloodseeker_thirst",           -- 蚂蚁 3    bug
-        "faceless_void_time_lock",          -- 虚空 3
+        "void_custom_bash",          -- 虚空 3
         "mjz_lina_laguna_blade",            -- 血魔 1
         "mjz_clinkz_soul_pact",                -- 赏金 2
         "luna_lunar_blessing",              -- 露娜 3
@@ -170,7 +170,7 @@ if IsServer() then
         "abyssal_underlord_atrophy_aura",             -- 滚滚 3
         "meepo_ransack",                    -- 米波 3
         "bloodseeker_thirst",           -- 蚂蚁 3    bug
-        "faceless_void_time_lock",          -- 虚空 3
+        "void_custom_bash",          -- 虚空 3
         "mjz_lina_laguna_blade",            -- 血魔 1
         "mjz_clinkz_soul_pact",                -- 赏金 2
         "luna_lunar_blessing",              -- 露娜 3

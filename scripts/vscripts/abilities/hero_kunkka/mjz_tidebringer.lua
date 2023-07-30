@@ -94,7 +94,7 @@ function modifier_mjz_tidebringer:OnAttackStart(params)
 					end	
 					self.pass_attack = true
 					self.bonus_damage = str_spellamp_dmg
-					print("tidebringer: "..str_spellamp_dmg)
+					--print("tidebringer: "..str_spellamp_dmg)
 				end	
 			else
 				self.pass_attack = false

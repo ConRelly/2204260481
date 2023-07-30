@@ -2700,7 +2700,18 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
-
+* Reduced the hp gain from str from 3.5 to 2.5 (this can be seen as a buff or nerf depending on your build/goal).
+* Increased mana shield absorption ratio from 30 at max lvl to 60.
+* Fixed Super Scepter effect blocking some item/skill base attack rate modifiers.
+* Fixed detailed dmg tooltip overriding some rounds when you get in part 2 or 3(not tested).
+* Increased base speed of couriers to 1500.
+* Sladar Bash passive now replaced with custom passive with different effect and SS effect.
+* Void Time Lock passive (random pool one) is now replaced with a similar custom one (given to void and in random pool).  
+* Buffed Trident stats (most of them except "all stats")
+* Veil of Discord buffed.
+* Int and Universal Heroes have a 3x chance to gain a Multicast passive when using Random Ability (Uncommon).
+* Tome of Knowledge now spawns near a shrine and has a 0.5s cd.
+* and other stuff
 
 
 

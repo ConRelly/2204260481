@@ -1067,18 +1067,18 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_all"				"150"
+				"bonus_all"				"250"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"			"30"
+				"bonus_damage"			"35"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"chance_tooltip"				"8" 
+				"chance_tooltip"				"10" 
 			}		
 		}
 		"Modifiers"					
@@ -6151,6 +6151,7 @@
 		"ItemAliases"					"aghanim; scepter; ultimate; synth; alchemist"
 		"ItemStackable"					"0"
 		"ItemPermanent"					"0"
+		"ItemKillable"					"0"
 		"ItemPurchasable"				"1"
 		"SideShop"						"0"
 		"ItemSellable"					"1"
@@ -35757,7 +35758,7 @@
 			"19"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"corr_armor_red_pct"		"0.30"
+				"corr_armor_red_pct"		"0.70"
 			}
 			"20"
 			{

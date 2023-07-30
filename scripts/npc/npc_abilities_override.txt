@@ -8097,11 +8097,11 @@
 		{
 			"damage_per_mana"		
 			{
-				"value"								"10 15 20 25 30"
-				"special_bonus_unique_medusa_6"		"+20"
+				"value"								"20 25 30 40 60"
+				"special_bonus_unique_medusa_6"		"+40"
 			}
 			"absorption_pct"						"40 45 50 55 60"
-			"bonus_mana"							"520 1800 2400 5000 7000"
+			"bonus_mana"							"520 1800 2400 5000 7500"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -24912,6 +24912,48 @@
 		}
 	}
 
+	//=================================================================================================================
+	// Veil of discord
+	//=================================================================================================================
+	"item_veil_of_discord"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"190"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"7"
+		"AbilityCastRange"				"2200"
+		"AbilityCastPoint"				"0.0"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+		"ItemCost"						"1525"
+		"ItemShopTags"					"int;armor;regen_health;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"vod;veil of discord"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_all_stats"		"150"
+			"aura_mana_regen"		"25"
+			"aura_radius"			"7200"
+			"spell_amp"				"22"
+			"debuff_radius"			"1600"
+			"resist_debuff_duration"	"30.0"
+		}
+	}
+
+
 // Vladmir's Offering
 	"item_vladmir"
 	{
@@ -25233,7 +25275,7 @@
 		"ItemInitialStockTime"			"400.0"
 		"ItemStackable"					"1"
 		"ItemInitialCharges"			"1"
-		"AbilityCooldown"				"30.0"
+		"AbilityCooldown"				"0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -25618,7 +25660,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"166"
+				"bonus_attack_speed"	"333"
 			}
 			"06"
 			{
@@ -25633,12 +25675,12 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_regen_multiplier"	"33"
+				"mana_regen_multiplier"	"233"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"166"
+				"spell_amp"				"266"
 			}
 			"10"
 			{

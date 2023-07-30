@@ -120,6 +120,10 @@ function modifier_super_scepter:RemoveOnDeath() return false end
 function modifier_super_scepter:AllowIllusionDuplicate() return true end
 function modifier_super_scepter:GetEffectName() return "particles/custom/items/super_scepter/super_scepter_amb.vpcf" end
 function modifier_super_scepter:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
+function modifier_super_scepter:GetPriority()
+	return MODIFIER_PRIORITY_LOW
+end
+
 
 function modifier_super_scepter:CheckState()
 	local parent = self:GetParent()
@@ -128,10 +132,13 @@ function modifier_super_scepter:CheckState()
 	end	
 end
 function modifier_super_scepter:DeclareFunctions()
-    return {
-		MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
-		
-    }
+	local parent = self:GetParent()
+	if parent and parent:GetUnitName() == "npc_dota_hero_muerta" then
+		return {
+			MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
+			
+		}
+	end
 end
 function modifier_super_scepter:GetModifierBaseAttackTimeConstant()
 	local parent = self:GetParent()

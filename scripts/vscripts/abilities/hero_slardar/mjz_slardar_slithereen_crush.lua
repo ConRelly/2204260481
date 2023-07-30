@@ -49,7 +49,7 @@ if IsServer() then
 			ability = ability,
 		}
 		
-		EmitSoundOn("Hero_Slardar.Slithereen_Crush", caster)
+		EmitSoundOn("Hero_SlardarSlithereen_Crush.", caster)
 
 		local nFXIndex = ParticleManager:CreateParticle(particle_splash, PATTACH_WORLDORIGIN, nil)
 		ParticleManager:SetParticleControl(nFXIndex, 0, caster:GetOrigin())

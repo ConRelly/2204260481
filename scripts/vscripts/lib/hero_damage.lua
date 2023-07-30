@@ -31,7 +31,15 @@ function HeroDamageStat:OnDamageDealt(playerID, damageTable, dmg_dealt, attacker
                 if damageTable.entindex_inflictor_const then
                     ability = EntIndexToHScript(damageTable.entindex_inflictor_const)
                 end
+
                 local round = GameRules.GLOBAL_roundNumber --added new 
+                local part_2 = GameRules.GLOBAL_endlessMode_started     
+                local part_3 = GameRules.GLOBAL_endlessHard_started
+                if part_3 then
+                    round = 38 + round + 44
+                elseif part_2 then
+                    round = 44 + round
+                end   
                 self:ModifyDamage(attackerPlayerId, damageTable.damagetype_const, damage_dealt, ability, round) --added "round" 
             end
         end

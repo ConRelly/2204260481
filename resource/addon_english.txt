@@ -8297,6 +8297,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_lock_bonus_damage"	"BONUS DAMAGE:"
 		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_lock_radius"			"RADIUS:"
 		
+		
 		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_walk"					"Time Walk"
 		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_walk_Description"		"Rushes to a target location while backtracking any damage taken the last %backtrack_duration% seconds. <font color='#70EA72'>Applies damage to units passed through.</font>"
 		"DOTA_Tooltip_ability_frostivus2018_faceless_void_time_walk_Lore"				"Darkterror tears a hole in time, passing through Claszureme, and appearing back in an instant."
@@ -9636,7 +9637,7 @@ Required Level: %required_level%
 
 "DOTA_Tooltip_ability_item_random_get_ability_onlvl"		 "Random Ability (Uncommon)"
 "DOTA_Tooltip_ability_item_random_get_ability_onlvl_Description"	"Get a Random skill that you don't have
-Contains all random skills"
+Contains all random skills<br> if your primary attribute is Int or Universal there's a 3x higher chance to gain multicast skill."
 
 "DOTA_Tooltip_modifier_tusk_snowball_meteor_burn"          "Tusk Meteor Burn"
 
@@ -10517,8 +10518,8 @@ Contains all random skills"
       "DOTA_Tooltip_modifier_item_force_field_effect_description"    "Increases your Armor and Magic Resist by 25"
       "DOTA_Tooltip_modifier_item_force_field_bonus_aura"  			 "Reflection Duration Bonus"
       "DOTA_Tooltip_modifier_item_force_field_bonus_aura_description" "Emits an aura that gives and Arcanist reflection to everyone in range for the duration"
-      "DOTA_Tooltip_modifier_item_force_field_bonus"  "Arcanist Reflection"
-      "DOTA_Tooltip_modifier_item_force_field_bonus_Description" "Reflects 40% of damage taken back to the attacker"
+      "DOTA_Tooltip_modifier_item_force_field_bonus"  				  "Arcanist Reflection"
+      "DOTA_Tooltip_modifier_item_force_field_bonus_Description"      "Reflects 40% of damage taken back to the attacker"
 //////////////////// FIXED ABILITIES (CUSTOM) \\\\\\\\\\\\\\\\\\\\
 
 // Dawnbreaker
@@ -10769,6 +10770,38 @@ Contains all random skills"
 
 //Muerta
 	"DOTA_Tooltip_Ability_muerta_pierce_the_veil_Description"				"Muerta transforms, becoming immune to physical damage. All of her attack damage is dealt as magical damage. Muerta gains bonus attack damage and phased movement.<br><br>Muerta can attack ethereal units, but deals no damage to Magic Immune targets.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Gain <font color='#0DE4EB'>True Strike</font> and 1.1 base attack time <br><br>DISPEL TYPE: Basic Dispel"
+
+
+//void
+
+	"DOTA_Tooltip_ability_special_bonus_void_custom_bash"				"+{s:value}% <font color='#9370DB'>Time Jab</font> Damage"
+
+	"DOTA_Tooltip_ability_void_custom_bash"								"<font color='#9370DB'>Time Jab</font>"
+	"DOTA_Tooltip_ability_void_custom_bash_Description"					"Adds a chance for an attack to strike through the folds of time, instantly attacking the target again for bonus pure damage."
+	"DOTA_Tooltip_ability_void_custom_bash_Lore"						"Void ruptures the timeline, landing an extra hit on his foe in the blink of an eye."
+	"DOTA_Tooltip_ability_void_custom_bash_Note0"                       "The extra hit is an another attack and can self proc."
+	"DOTA_Tooltip_ability_void_custom_bash_bash_chance"					"%PROC CHANCE:"
+	"DOTA_Tooltip_ability_void_custom_bash_bash_damage_ptc"				"%PROC BASE ATTACK AS DAMAGE:"
+
+//slardar
+
+
+	"DOTA_Tooltip_ability_slardar_custom_bash"                   "Bash"
+	"DOTA_Tooltip_ability_slardar_custom_bash_Description"       "Grants a chance on attack to bash the target and deal damage. Bashed target gains a <font color='#FF8C00'>Crushed Armor</font> debuff and after that for next 10 bashes each one will increase the debuff stack by a random value between 1 and 20 that reduces armor by %armor_reduction% per stack.\n<h1><font color='#DE3163'>Super Scepter</font></h1> After <font color='#FF8C00'>Crushed Armor</font> reaches its 10th round of stacks each bash after that will give you %bonus_stacks_ptc%%% of <font color='#FF8C00'>Crushed Armor</font> stacks as a permanent stacking buff <font color='#50C878'>Reprisal</font>.<br> Bash now deals bonus damage base on number of <font color='#50C878'>Reprisal</font> stacks x your lvl"
+	"DOTA_Tooltip_ability_slardar_custom_bash_Lore"              "Slardar has mastered the technique of focusing his bash to shred his enemy's defenses."
+	"DOTA_Tooltip_ability_slardar_custom_bash_Note0"             "Damage Is affected by spell amp"
+	"DOTA_Tooltip_ability_slardar_custom_bash_bash_chance"       "BASH CHANCE:"
+	"DOTA_Tooltip_ability_slardar_custom_bash_bash_damage"       "BASH DAMAGE:"  
+	"DOTA_Tooltip_ability_slardar_custom_bash_armor_duration"    "ARMOR REDUCTION DURATION:"
+
+
+
+	"DOTA_Tooltip_modifier_armor_reduction_bash"               "<font color='#FF8C00'>Crushed Armor</font>"  
+	"DOTA_Tooltip_modifier_armor_reduction_bash_Description"   "Armor reduced by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% per stack"
+
+	"DOTA_Tooltip_modifier_armor_reduction_bash_stacks"                        "<font color='#50C878'>Reprisal</font>"
+	"DOTA_Tooltip_modifier_armor_reduction_bash_stacks_Description"            "Gives %dMODIFIER_PROPERTY_TOOLTIP% to your hero Base damage(white) and Bash now deals %dMODIFIER_PROPERTY_TOOLTIP2% bonus Damage"
+
 
 
 	}

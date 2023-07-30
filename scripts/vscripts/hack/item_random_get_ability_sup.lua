@@ -144,7 +144,7 @@ function GetRandomAbilityName( hero )
 		--"abyssal_underlord_atrophy_aura",
 		--"meepo_ransack",
 		--"bloodseeker_thirst",
-		--"faceless_void_time_lock",
+		"void_custom_bash",
 		"mjz_lina_laguna_blade",
 		"mjz_clinkz_soul_pact",
 		--"luna_lunar_blessing",

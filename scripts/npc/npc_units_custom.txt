@@ -11751,7 +11751,7 @@
 	"HealthBarOffset"			"140"	
 
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"			// Type of locomotion - ground, air
-	"MovementSpeed"				"551"		// Speed
+	"MovementSpeed"				"1500"		// Speed
 	"MovementTurnRate"			"0.5"		// Turning rate.
 	"BountyXP"					"349"			// Experience earn.
 	"BountyGoldMin"				"0"		// Gold earned min.
@@ -16397,7 +16397,7 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
 		"MovementSpeed"				"400"		// Speed.
 
 		// Status
