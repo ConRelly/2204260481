@@ -407,6 +407,8 @@ function AOHGameMode:OnDamageDealt(damageTable)
 							local part = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", PATTACH_CENTER_FOLLOW, victim)
 							ParticleManager:DestroyParticle(part, false)
 							ParticleManager:ReleaseParticleIndex(part)
+							local iParticleID = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
+							ParticleManager:ReleaseParticleIndex(iParticleID)							
 							SendOverheadEventMessage(nil, OVERHEAD_ALERT_BLOCKED, victim, 0, nil)
 							return false							
 						end	

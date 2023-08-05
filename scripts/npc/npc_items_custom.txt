@@ -10671,7 +10671,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"outgoing_damage"			"60"
+				"all_attack_bonus"			"30"
 			}
 			"03"
 			{
@@ -10683,6 +10683,11 @@
 				"var_type"					"FIELD_INTEGER"
 				"duration"					"20"
 			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"spell_amp"			        "300"
+			}			
 		}
 		"precache"
 		{
@@ -21073,7 +21078,7 @@
 			"6"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stack_str"				"25"
+				"stack_str"				"30"
 			}
 			"7"
 			{
@@ -21113,7 +21118,7 @@
 			"14"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_per_underdog"		"20"
+				"mana_per_underdog"		"25"
 			}
 			"15"
 			{
@@ -21128,12 +21133,12 @@
 			"17"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stuff"					"15"
+				"stuff"					"25"
 			}
 			"18"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stuff_underdog"		"45"
+				"stuff_underdog"		"40"
 			}
 		}	
 	}

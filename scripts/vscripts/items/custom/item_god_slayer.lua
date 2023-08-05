@@ -148,7 +148,7 @@ function modifier_dragonborn:GetModifierTotalDamageOutgoing_Percentage(params)
 	if IsServer() then
 		local damage = ability:GetSpecialValueFor("stuff")
 		local damage_underdog = ability:GetSpecialValueFor("stuff_underdog")
-		if caster:HasModifier("modifier_underdog") and (caster:GetUnitName() ~= "npc_dota_hero_dawnbreaker") then
+		if caster:HasModifier("modifier_underdog") then
 			damage = damage_underdog
 		end
 		if target:GetLevel() >= 89 then

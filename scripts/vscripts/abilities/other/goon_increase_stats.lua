@@ -35,6 +35,13 @@ function on_created(keys)
 	Timers:CreateTimer(
 		function()
 			round = GameRules.GLOBAL_roundNumber
+            local part_2 = GameRules.GLOBAL_endlessMode_started     
+            local part_3 = GameRules.GLOBAL_endlessHard_started
+            if part_3 then
+                round = 38 + round + 44
+            elseif part_2 then
+                round = 44 + round
+            end             
 			if round ~= previous_round and round then
 				if caster and not caster:IsNull() and caster:IsAlive() and caster:FindAbilityByName("goon_increase_stats") then
 					local level = caster:GetLevel()
@@ -63,7 +70,6 @@ function on_created(keys)
 					end
 					if round > 20 and not has20 then
 						caster:SetHasInventory(true)
-						caster:AddItemByName("item_satanic")
 						caster:SetHasInventory(false)
 						skill_lvl = 4
 						has20 = true

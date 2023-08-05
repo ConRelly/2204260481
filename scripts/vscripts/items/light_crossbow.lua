@@ -172,9 +172,9 @@ function modifier_light_crossbow_1:GetModifierProcAttack_Feedback(keys)
 			local underdog20 = caster:HasModifier("modifier_bottom_20")
 			local underdog50 = caster:HasModifier("modifier_bottom_50")
 			if underdog10 then
-				bonus_charge = bonus_charge + 3
+				bonus_charge = bonus_charge + 1
 			elseif underdog20 then
-				bonus_charge = bonus_charge + 2
+				bonus_charge = bonus_charge + 1
 			elseif underdog50 then
 				bonus_charge = bonus_charge + 1
 			end	
@@ -327,9 +327,9 @@ function modifier_light_crossbow_2:GetModifierProcAttack_Feedback(keys)
 			local underdog20 = caster:HasModifier("modifier_bottom_20")
 			local underdog50 = caster:HasModifier("modifier_bottom_50")
 			if underdog10 then
-				bonus_charge = bonus_charge + 3
+				bonus_charge = bonus_charge + 1
 			elseif underdog20 then
-				bonus_charge = bonus_charge + 2
+				bonus_charge = bonus_charge + 1
 			elseif underdog50 then
 				bonus_charge = bonus_charge + 1
 			end	
@@ -477,9 +477,9 @@ function modifier_light_crossbow_3:GetModifierProcAttack_Feedback(keys)
 			local underdog20 = caster:HasModifier("modifier_bottom_20")
 			local underdog50 = caster:HasModifier("modifier_bottom_50")
 			if underdog10 then
-				bonus_charge = bonus_charge + 3
+				bonus_charge = bonus_charge + 1
 			elseif underdog20 then
-				bonus_charge = bonus_charge + 2
+				bonus_charge = bonus_charge + 1
 			elseif underdog50 then
 				bonus_charge = bonus_charge + 1
 			end	
@@ -632,9 +632,9 @@ function modifier_thunder_hammer:OnAttackLanded(keys)  --and not self:GetParent(
 		local underdog20 = caster:HasModifier("modifier_bottom_20")
 		local underdog50 = caster:HasModifier("modifier_bottom_50")
 		if underdog10 then
-			bonus_charge = bonus_charge + 3
+			bonus_charge = bonus_charge + 1
 		elseif underdog20 then
-			bonus_charge = bonus_charge + 2
+			bonus_charge = bonus_charge + 1
 		elseif underdog50 then
 			bonus_charge = bonus_charge + 1
 		end	
@@ -745,9 +745,9 @@ function modifier_thunder_hammer:GetModifierProcAttack_Feedback(keys)
 			local underdog20 = caster:HasModifier("modifier_bottom_20")
 			local underdog50 = caster:HasModifier("modifier_bottom_50")
 			if underdog10 then
-				bonus_charge = bonus_charge + 3
+				bonus_charge = bonus_charge + 1
 			elseif underdog20 then
-				bonus_charge = bonus_charge + 2
+				bonus_charge = bonus_charge + 1
 			elseif underdog50 then
 				bonus_charge = bonus_charge + 1
 			end	

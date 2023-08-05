@@ -10,6 +10,10 @@ function reverse_polarity:GetCooldown( nLevel )
 end
 
 function reverse_polarity:OnAbilityPhaseStart()
+    local gameTime = GameRules:GetGameTime()
+    local minutes = math.floor(gameTime / 60)
+    local seconds = math.floor(gameTime % 60)
+    print(string.format("%d:%02d", minutes, seconds))   
     self.hTarget = self:GetCaster():GetAbsOrigin()
     local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_magnataur/magnataur_reverse_polarity.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
     ParticleManager:SetParticleControl(nFXIndex, 0, Vector(1300, 1300, 0))

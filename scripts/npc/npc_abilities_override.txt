@@ -1620,11 +1620,33 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"				"0.1"
+				"value"				"0.0"
 				"ad_linked_abilities"			"tusk_walrus_punch"
 			}
 		}
 	}
+
+	"special_bonus_unique_tusk_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6962"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"9"
+				"ad_linked_abilities"			"tusk_walrus_punch"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
+
 	"special_bonus_unique_underlord_2"
 	{
 		"AbilitySpecial"
@@ -25675,7 +25697,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_regen_multiplier"	"233"
+				"mana_regen_multiplier"	"999"
 			}
 			"09"
 			{

@@ -48,11 +48,20 @@ function modifier_item_mjz_devils_veil_buff:GetEffectName()
 	return "particles/units/heroes/hero_doom_bringer/doom_bringer_doom.vpcf"
 end
 function modifier_item_mjz_devils_veil_buff:DeclareFunctions()
-	return {MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE}
+	return {MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE, MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE}
 end
-function modifier_item_mjz_devils_veil_buff:GetModifierTotalDamageOutgoing_Percentage()
-	return self:GetAbility():GetSpecialValueFor("outgoing_damage")
+function modifier_item_mjz_devils_veil_buff:GetModifierDamageOutgoing_Percentage()
+    if self:GetAbility() then
+	    return self:GetAbility():GetSpecialValueFor("all_attack_bonus")
+    end
+end
+function modifier_item_mjz_devils_veil_buff:GetModifierSpellAmplify_Percentage()
+    if self:GetAbility() then
+	    return self:GetAbility():GetSpecialValueFor("spell_amp")
+    end
 end
 function modifier_item_mjz_devils_veil_buff:GetModifierIncomingDamage_Percentage()
-	return self:GetAbility():GetSpecialValueFor("incoming_damage") + 100
+    if self:GetAbility() then
+	    return self:GetAbility():GetSpecialValueFor("incoming_damage") + 100
+    end
 end

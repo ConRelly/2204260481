@@ -83,6 +83,7 @@ if IsServer() then
 	function modifier_item_custom_ballista_buff:GetModifierProcAttack_Feedback(keys)
         local attacker = keys.attacker
 		local target = keys.target
+		if not attacker:IsRealHero() then return end
 		if self.attacks > 8 then
 			local damageTable = {
 				victim = target,

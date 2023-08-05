@@ -27,7 +27,7 @@ function modifier_bottom_50:DeclareFunctions()
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-        MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
+        --MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
         MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
@@ -50,9 +50,9 @@ function modifier_bottom_50:GetModifierBonusStats_Intellect()
     return self:GetParent():GetLevel() * 15
 end
 
-function modifier_bottom_50:GetModifierTotalDamageOutgoing_Percentage()
+--[[ function modifier_bottom_50:GetModifierTotalDamageOutgoing_Percentage()
     return self:GetParent():GetLevel() * 0.3
-end
+end ]]
 
 function modifier_bottom_50:GetModifierSpellAmplify_Percentage()
     return self:GetParent():GetLevel() * 3

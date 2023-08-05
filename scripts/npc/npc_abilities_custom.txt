@@ -27275,7 +27275,7 @@
 	"BaseClass"						"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	// "AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
@@ -30021,15 +30021,15 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		"AbilityValues"
 		{
-			"coil_duration"				"6"
+			"coil_duration"				"7"
 			"coil_radius"				"475"
 			"coil_break_radius"			"650"
 			"coil_initial_stun"			"0.5"
 			"coil_initial_damage"		"15 35 70"
 			"coil_stun_duration"		"1.0 1.2 1.5"
 			"coil_break_damage"			"50 100 150"
-			"ss_talent_stats_dmg"       "7"
-			"coil_break_radius_ss_bonus" "500"
+			"ss_talent_stats_dmg"       "15"
+			"coil_break_radius_ss_bonus" "2000"
 			"coil_stun_duration_scepter"
 			{
 				"value"					"1.5 1.7 2.2"
@@ -30058,7 +30058,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"rapid_fire_interval"		"0.6"
+				"rapid_fire_interval"		"0.5"
 			}
 		}
 	}
@@ -44019,10 +44019,10 @@
 			
 			"bash_damage_ptc"		
 			{
-				"value"								"50"
+				"value"								"40"
 				"LinkedSpecialBonus" 				"special_bonus_void_custom_bash"
 			}			
-			"bash_chance"							"16"
+			"bash_chance"							"15"
 		}	
 	}
 
@@ -44036,7 +44036,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"50"
+				"value"					"40"
 			}
 		}
 	}

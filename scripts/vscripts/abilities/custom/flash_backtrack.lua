@@ -31,7 +31,7 @@ function modifier_flash_backtrack:GetModifierAvoidDamage(params)
         if parent then
             if parent:PassivesDisabled() then
                 local randomSeed = math.random(1, 100)
-                if randomSeed <= 55 then
+                if randomSeed <= 60 then
                     --local iParticleID = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
                     --ParticleManager:ReleaseParticleIndex(iParticleID)
                     return 1

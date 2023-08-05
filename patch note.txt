@@ -2717,6 +2717,24 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Fixed Reverse Polarity on autocast only triggering if neutral creeps are in vision (now searches for boss/lane enmies too)
+* Fixed Debuff icons not showing in UI if you have more then 15 buffs displayed. 
+* Increased Trident mana regen bonus.
+* Buffed some stats of Puck Dream Coil(bonus dmg , attack rate , break radius,duration). 
+* Dazzle has higher probabillity of crash, the reason is unknown yet. try to avoid the hero until the source of crash is found and fixed. 
+* Underdog vanilla does not stack with top 10 and 20 Underdogs(50 still yes). removed outgoing dmg bonus from top underdogs.
+* Devil's Veil changed from 60% Outgoing dmg to 30% All attack + 300% spell amp (in some situations will result in more dmg and some less)
+* Small buffs for god slayer.
+* Reduced void Time Jab dmg by 10% (same for talent) and chance by 1%.
+
+
+
+
+
+
+
+
+
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).
