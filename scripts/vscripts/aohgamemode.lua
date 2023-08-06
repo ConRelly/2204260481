@@ -404,11 +404,11 @@ function AOHGameMode:OnDamageDealt(damageTable)
 					local dmg_dealt = damageTable.damage -- arcane staff might update this value so i added after isArcane
 					if victim:HasModifier("modifier_jotaro_absolute_defense") then
 						if victim:GetMaxHealth() * 0.07 <= dmg_dealt then
-							local part = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", PATTACH_CENTER_FOLLOW, victim)
+							local part = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", PATTACH_OVERHEAD_FOLLOW, victim)
 							ParticleManager:DestroyParticle(part, false)
 							ParticleManager:ReleaseParticleIndex(part)
-							local iParticleID = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, victim)
-							ParticleManager:ReleaseParticleIndex(iParticleID)							
+							local iParticleID = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_OVERHEAD_FOLLOW, victim)
+							ParticleManager:ReleaseParticleIndex(iParticleID)													
 							SendOverheadEventMessage(nil, OVERHEAD_ALERT_BLOCKED, victim, 0, nil)
 							return false							
 						end	
@@ -1354,38 +1354,7 @@ function AOHGameMode:OnEntitySpawned(event)
 			end
 		end
 		})		
-	--[[Timers:CreateTimer({
-		endTime = 0.1, 
-		callback = function()
-			if unit and unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS and unit:HasModifier("modifier_replay") then
-				local playerownerID = unit:GetPlayerOwnerID()
-				local player = PlayerResource:GetPlayer(playerownerID)
-				local playerHero = player:GetAssignedHero()
-				local maxAbilities = playerHero:GetAbilityCount() - 1
-				local skip = 0.05
-				print("illusion created")
-				for abilitySlot=0, maxAbilities do
-					skip = skip + 0.05
-					Timers:CreateTimer({
-						endTime = skip, 
-						callback = function()
-							local ability = playerHero:GetAbilityByIndex(abilitySlot)
-							if ability ~= nil then 
-								local abilityLevel = ability:GetLevel()
-								local abilityName = ability:GetAbilityName()
-								if unit and IllusionNotLearn[abilityName] ~= true and not unit:HasAbility(abilityName) and not ability:IsAttributeBonus() then
-									if unit and abilityLevel > 0 then
-										local illusionAbility = unit:AddAbility(abilityName)
-										illusionAbility:SetLevel(abilityLevel)
-									end
-								end
-							end
-						end
-					})		
-				end
-			end
-		end
-	})]]
+
 	local custom_hp_bar = {
 		["npc_dota_boss_void_spirit"] = true,
 		["npc_boss_skeleton_king_angry_new"] = true,
@@ -1459,7 +1428,8 @@ function AOHGameMode:OnEntitySpawned(event)
 		end			
 		if boss_challenger[unit:GetUnitName()] == true then
 			unit:AddNewModifier(unit, nil, "modifier_infinite_health", {duration = 420})
-			--unit:AddNewModifier(unit, nil, "modifier_kill", {duration = 421})
+			unit:AddNewModifier(unit, nil, "modifier_phys", {})
+			--unit:AddNewModifier(unit, nil, "modifier_kill", {duration = 421}) -- forcekill bugs rounds
 		end	
 		if unit:GetUnitName() == "npc_boss_guesstuff_Moran" or  unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
 			unit:AddNewModifier(unit, nil, "modifier_double_trouble", {})

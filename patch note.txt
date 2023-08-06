@@ -2717,16 +2717,20 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
-* Fixed Reverse Polarity on autocast only triggering if neutral creeps are in vision (now searches for boss/lane enmies too)
-* Fixed Debuff icons not showing in UI if you have more then 15 buffs displayed. 
-* Increased Trident mana regen bonus.
-* Buffed some stats of Puck Dream Coil(bonus dmg , attack rate , break radius,duration). 
-* Dazzle has higher probabillity of crash, the reason is unknown yet. try to avoid the hero until the source of crash is found and fixed. 
-* Underdog vanilla does not stack with top 10 and 20 Underdogs(50 still yes). removed outgoing dmg bonus from top underdogs.
-* Devil's Veil changed from 60% Outgoing dmg to 30% All attack + 300% spell amp (in some situations will result in more dmg and some less)
-* Small buffs for god slayer.
-* Reduced void Time Jab dmg by 10% (same for talent) and chance by 1%.
-
+* Fixed Reverse Polarity on autocast to only trigger when neutral creeps are in vision (now also searches for boss/lane enemies).
+* Fixed debuff icons not showing in UI when you have more than 15 buffs. 
+* Trident mana regeneration bonus increased.
+* Buffed some stats on Puck Dream Coil (bonus dmg, attack rate, break radius, duration). 
+* Underdog Vanilla does not stack with top 10 and 20 Underdog (50 still does). removed outgoing dmg bonus from top Underdog.
+* Devil's Veil changed from 60% outgoing dmg to 30% all attack + 300% spell amp (in some situations will result in more dmg and some less).
+* Minor buffs to God Slayer.
+* Void Time Jab dmg reduced by 10% (same for talent) and chance reduced by 1%.
+* Increased juggernaut lvl 25 base attack talent and agility gain per lvl to 29.7 . 
+* Challenge boss has the Panoply buff that gods have (he was too weak against normal physical attacks compared to magic or pure).
+* Increase ursa Fury Swipe dmg (talent too)
+* Gods % hp dmg limit block animation moved above head to be more clear to see (and added an extra animation: BackTrack animation)
+* Dazzle has a higher chance of crash, the reason is still unknown, try to avoid the hero until the cause of the crash is found and fixed. 
+* and some other stuff
 
 
 

@@ -1600,18 +1600,6 @@
 				"ad_linked_abilities"			"tusk_snowball"
 			}
 		}
-	}
-	"special_bonus_unique_tusk_3"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1240"
-				"ad_linked_abilities"			"tusk_tag_team"
-			}
-		}
 	}	
 	"special_bonus_unique_tusk_7"
 	{
@@ -1678,7 +1666,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"320"
+				"value"				"1420"
 				"ad_linked_abilities"			"ursa_fury_swipes"
 			}
 		}
@@ -13182,7 +13170,7 @@
 				"bonus_reset_time_roshan"		"10"
 				"damage_per_stack"				
 				{
-					"value"					"22 34 55 95 160 250 430"
+					"value"					"55 95 160 250 430 950 1450"
 					"LinkedSpecialBonus"			"special_bonus_unique_ursa"
 				}
 		}
@@ -19199,7 +19187,7 @@
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"point_blank_range"			"500"
+				"point_blank_range"			"850"
 			}
 			"09"
 			{
@@ -19207,11 +19195,6 @@
 				"point_blank_dmg_bonus_pct"	"500.0"
 			}
 		}
-	}
-	"snapfire_firesnap_cookie"
-	{
-		"AbilityCooldown"				"21 18 15 12"
-		"AbilityCastRange"				"1000"
 	}
 
 	//=================================================================================================================
@@ -19382,7 +19365,7 @@
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"40"
-		"LevelsBetweenUpgrades"			"15"
+		"LevelsBetweenUpgrades"			"12"
 		"AbilityDuration"				"15"
 
 		// Cost
@@ -20129,42 +20112,55 @@
 }
 
 
+
+	//=================================================================================================================
+	// Tusk: Tag Team
+	//=================================================================================================================
 	"tusk_tag_team"
 	{
-		"MaxLevel"					 "7"
-		"LevelsBetweenUpgrades"		"7"		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"7322"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.		
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Hero_Tusk.FrozenSigil"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"					 	"7"
+		"LevelsBetweenUpgrades"			"7"		
 		"AbilityCooldown"				"30"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"70"
-		"AbilitySpecial"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
+			"bonus_damage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"140 780 2920 8160 14000 19400 27500"
-				"LinkedSpecialBonus"	"special_bonus_unique_tusk_3"
+				"value"						"140 780 2920 8160 14000 19400 27500"		
+				"special_bonus_unique_tusk_3"		"+2640"
 			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"movement_slow"				"35"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"0.4"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"debuff_duration"			"15"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"550"
-			}
+			"movement_slow"				"35"
+			"slow_duration"				"0.4"
+			"debuff_duration"			"15"
+			"radius"				"650"
 		}
 	}
+
 
 
 	//=================================================================================================================

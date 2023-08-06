@@ -4704,6 +4704,7 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 "DOTA_Tooltip_ability_special_bonus_attack_base_damage_4000"	"+{s:value} Base Damage"
 "DOTA_Tooltip_ability_special_bonus_attack_base_damage_5000"	"+{s:value} Base Damage"
 "DOTA_Tooltip_ability_special_bonus_attack_base_damage_8000"	"+{s:value} Base Damage"
+"DOTA_Tooltip_ability_special_bonus_attack_base_damage_16000"	"+{s:value} Base Damage"
 "DOTA_Tooltip_ability_special_bonus_mp_regen_14"				"+{s:value} Mana Regen"
 "DOTA_Tooltip_ability_special_bonus_mp_regen_120"				"+{s:value} Mana Regen"
 "DOTA_Tooltip_ability_special_bonus_mp_regen_100"				"+{s:value} Mana Regen"

@@ -3028,7 +3028,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"value"				"900"
+			"value"				"1900"
 		}
 	}
 }
@@ -3042,7 +3042,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"value"				"2100"
+			"value"				"3100"
 		}
 	}
 }
@@ -3099,6 +3099,21 @@
 		{
 			"var_type"					"FIELD_INTEGER"
 			"value"				"8000"
+		}
+	}
+}
+
+"special_bonus_attack_base_damage_16000"
+{
+	"BaseClass"						"special_bonus_attack_base_damage_45"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"value"					"16000"
 		}
 	}
 }
@@ -41937,11 +41952,11 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"MaxLevel"						"7"
-		"RequiredLevel"					"10"
-		"LevelsBetweenUpgrades"			"10"
+		"RequiredLevel"					"7"
+		"LevelsBetweenUpgrades"			"8"
 		"AbilityUpgradeGoldCost"		"0 0 0 0 0 0 25000"
 		"AbilityCharges"				"2 2 2 2 2 3 5"
-		"AbilityChargeRestoreTime"		"32 30 28 26 24 22 15"
+		"AbilityChargeRestoreTime"		"17 16 15 14 12 10 8"
 		"HasScepterUpgrade"				"1"
 		"HasShardUpgrade"				"1"
 		"AbilitySound"					"Hero_VoidSpirit.AstralStep.Start"
@@ -41962,7 +41977,7 @@
 			"pop_damage_delay"		"0.3"
 			"pop_damage"
 			{
-				"value"				"200 1500 3500 7000 15000 35000 140000"
+				"value"				"1500 3500 7000 15000 35000 95000 175000"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"attack_speed_multi"	"1"

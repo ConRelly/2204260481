@@ -427,7 +427,7 @@
 	"Ability11"		"special_bonus_attack_speed_60"
 	"Ability13"		"special_bonus_hp_5500"
 	"Ability14"		"special_bonus_lifesteal_15"
-	"Ability16"		"special_bonus_attack_base_damage_100"
+	"Ability16"		"special_bonus_attack_base_damage_4000"
 	"Ability17"		"special_bonus_magic_resistance_40"
 
 	"AttributeAgilityGain"			"7.1"
@@ -688,11 +688,11 @@
 		"Ability14"				"special_bonus_truestrike"
 		//"Ability14"				"special_bonus_armor_24"
 		"Ability15"				"special_bonus_zanto_gari_dmg"
-		"Ability16"				"special_bonus_attack_base_damage_5000"
+		"Ability16"				"special_bonus_attack_base_damage_16000"
 		"Ability17"				"special_bonus_mp_regen_400"
 
 		"AttributeStrengthGain"			"4.9"
-		"AttributeAgilityGain"			"9.7"
+		"AttributeAgilityGain"			"29.7"
 		"AttributeIntelligenceGain"		"3.3"
 	}
 	
@@ -1459,6 +1459,7 @@
 		"Ability10"				"special_bonus_unique_mjz_slardar_sprint_hp_cost"
 		"Ability11"				"special_bonus_unique_mjz_slardar_slithereen_crush_slow"
 		"Ability12"				"special_bonus_hp_3250"
+		"Ability13"				"special_bonus_spell_block_18"
 		"Ability14"             "special_bonus_cdr_40"
 		"Ability15"             "special_bonus_unique_slardar_corrosive_haze"
 		"Ability16"				"special_bonus_unique_mjz_slardar_slithereen_crush_strength"
