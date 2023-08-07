@@ -47,7 +47,7 @@
       "start_radius"        "200"
       "end_radius"        "500"
       "end_distance"        "600 700 800 900 1000 2100"
-      "targets"         "10"
+      "targets"         "0"
       "damage"
       { 
         "value"     "120 860 1880 3960 9320 14200"

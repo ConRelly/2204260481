@@ -33,33 +33,29 @@ function modifier_ogre_magi_multicast_n:DeclareFunctions()
 end
 function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 	if not IsServer() then return end
-	local used_ability = params.ability
-	local original_target = params.target
 	local unit = params.unit
 	local caster = self:GetCaster()
+	if unit ~= caster then return end
+	if unit ~= self:GetParent() then return end
+	if caster:IsIllusion() then return end
+	if params.ability:IsNull() then return end
+	if params.ability == self:GetAbility() then return end
+	if IsExcludeAbility(params.ability) then return end
+	if caster:PassivesDisabled() then return end
+	if params.ability:IsToggle() then return end
+	if params.ability:GetCooldown(params.ability:GetLevel()) <= 0 then return end
+	if params.ability:GetCaster() ~= caster then return end
+	local casts = 1
+	local used_ability = params.ability
+	local original_target = params.target
 	local cursor_position = used_ability:GetCursorPosition()
 	local cursor_target = used_ability:GetCursorTarget()
 	local marci_add = 0
 
-	if caster:IsIllusion() then return end
-	if unit ~= caster then return end
-	if used_ability:IsNull() then return end
-	if used_ability == self:GetAbility() then return end
-	if IsExcludeAbility(used_ability) then return end
-	if caster:PassivesDisabled() then return end
-	if used_ability:IsToggle() then return end
-	if used_ability:GetCooldown(used_ability:GetLevel()) <= 0 then return end
-	if used_ability:GetCaster() ~= caster then return end
---	if not original_target then return end
-
---	if bit.band(used_ability:GetBehaviorInt(), DOTA_ABILITY_BEHAVIOR_POINT) ~= 0 then return end
---	if bit.band(used_ability:GetBehaviorInt(), DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET) ~= 0 then return end
-
-	local casts = 1
 
 	local delay = self:GetAbility():GetSpecialValueFor("interval")
 	if used_ability:IsItem() then
-		delay = 0.1
+		delay = 0.03
 	end
 
 	if self:GetAbility():GetAbilityName() == "ogre_magi_multicast_n" then
@@ -85,16 +81,6 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 
 		if self:GetAbility():IsCooldownReady() and caster:HasTalent("ogre_magi_custom_bonus_unique_2") then
 			if casts == 1 then
---[[ 				local Dmg = (caster:GetMaxHealth() * caster:CustomValue("ogre_magi_custom_bonus_unique_2", "fail_cost") / 100) or 1
-				print("ogre self dmg: "..Dmg)
-				ApplyDamage({
-					ability = self:GetAbility(),
-					attacker = caster,
-					damage = Dmg,
-					damage_type = DAMAGE_TYPE_PURE,
-					damage_flags = DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION,
-					victim = caster,
-				}) ]]
 				caster:EmitSound("Hero_Alchemist.UnstableConcoction.Stun")
 				local particleFail = ParticleManager:CreateParticle("particles/base_attacks/ranged_tower_bad_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 				ParticleManager:ReleaseParticleIndex(particleFail)
@@ -139,23 +125,25 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 		if bit.band(used_ability:GetAbilityTargetFlags(), DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES) ~= 0 then
 			target_flags = target_flags + DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
 		end
-
+		local ability = used_ability
+		local origin_timer_target = original_target
 		for count = 1, casts - 1 do
 			count = count + 1
-			if original_target ~= nil and used_ability ~= nil then
-				local radius = used_ability:GetCastRange(original_target:GetOrigin(), original_target) + 300
-				if original_target:GetTeamNumber() ~= caster:GetTeamNumber() then
-					if used_ability then
+			if origin_timer_target ~= nil and ability ~= nil then
+				local radius = ability:GetCastRange(origin_timer_target:GetOrigin(), origin_timer_target) + 300
+				if origin_timer_target:GetTeamNumber() ~= caster:GetTeamNumber() then
+					if ability then
 						Timers:CreateTimer((count - 1) * delay, function()
 							if not caster:IsAlive() then return end
-							if used_ability == nil then return end
-							if used_ability:IsNull() then return end
+							if ability == nil then return end
+							if ability:IsNull() then return end
 							local targets = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, target_flags, FIND_ANY_ORDER, false)
 
 							if single then
-								if original_target:IsNull() then return end
-								if not original_target:IsAlive() then return end
-								caster:SetCursorCastTarget(original_target)
+								if origin_timer_target:IsNull() then return end
+								if not origin_timer_target:IsAlive() then return end
+								if origin_timer_target:GetTeamNumber() == caster:GetTeamNumber() then return end
+								caster:SetCursorCastTarget(origin_timer_target)
 							else
 								for _, target in pairs(targets) do
 									if target and not target:IsNull() then
@@ -172,17 +160,17 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 									end
 								end
 							end
-							if IsValidEntity(used_ability) and not used_ability:IsNull() then
+							if IsValidEntity(ability) and not ability:IsNull() then
 								self:Multicast_FX(count, casts)
-								used_ability:OnSpellStart()
+								ability:OnSpellStart()
 							end	
 						end)
 					end
 				else
 					Timers:CreateTimer((count - 1) * delay, function()
 						if not caster:IsAlive() then return end
-						if used_ability == nil then return end
-						if used_ability:IsNull() then return end
+						if ability == nil then return end
+						if ability:IsNull() then return end
 						local targets = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, target_flags, FIND_ANY_ORDER, false)
 						for _, target in pairs(targets) do
 							if target and not target:IsNull() then
@@ -198,26 +186,26 @@ function modifier_ogre_magi_multicast_n:OnAbilityFullyCast(params)
 								end
 							end
 						end
-						if IsValidEntity(used_ability) and not used_ability:IsNull() then
+						if IsValidEntity(ability) and not ability:IsNull() then
 							self:Multicast_FX(count, casts)
-							used_ability:OnSpellStart()
+							ability:OnSpellStart()
 						end						
 					end)
 				end
 			else
 				Timers:CreateTimer((count - 1) * delay, function()
 					if not caster:IsAlive() then return end
-					if used_ability == nil then return end
-					if used_ability:IsNull() then return end
-					if ability_behavior_includes(used_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) then return end
+					if ability == nil then return end
+					if ability:IsNull() then return end
+					if ability_behavior_includes(ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) then return end
 					if cursor_position ~= nil then
 						caster:SetCursorPosition(cursor_position)
 					else
 						caster:SetCursorTargetingNothing(true)
 					end
-					if IsValidEntity(used_ability) and not used_ability:IsNull() then
+					if IsValidEntity(ability) and not ability:IsNull() then
 						self:Multicast_FX(count, casts)
-						used_ability:OnSpellStart()
+						ability:OnSpellStart()
 					end	
 				end)
 			end

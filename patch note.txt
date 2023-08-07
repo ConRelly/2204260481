@@ -2736,6 +2736,11 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Dazzle Poison Touch now only affects the primary target (multi-target could have some weird interactions with Multicast and result in self or ally deny).
+* Made some changes to Multicast(both) that may remove the rare self-deny with Fireblast or other skills and probably some rare crashes with Ogre. 
+
+
+
 
 
 

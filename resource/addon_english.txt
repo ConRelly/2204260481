@@ -10698,6 +10698,8 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 
  	"DOTA_Tooltip_ability_dazzle_good_juju_Description"								"Whenever Dazzle Casts a Spell, all Dazzle starting abilities cooldowns are reduced."
 
+
+
 	"DOTA_Tooltip_ability_dzzl_good_juju"					"Good Juju"
 	"DOTA_Tooltip_ability_dzzl_good_juju_Description"		"Whenever Dazzle Casts a Spell, all of its abilities cooldowns are reduced.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Good Juju reduces all item Cooldowns by %item_cooldown_reduction%%% and can be cast on an ally to refresh all item cooldowns."
 	"DOTA_Tooltip_ability_dzzl_good_juju_scepter_Description"			"Good Juju reduces all item Cooldowns by %item_cooldown_reduction%%% and can be cast on an ally to refresh all item cooldowns."
@@ -10706,6 +10708,8 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 	"DOTA_Tooltip_ability_dzzl_good_juju_item_cooldown_reduction"		"%ITEM COOLDOWN REDUCTION:"
 
 	"DOTA_Tooltip_ability_special_bonus_unique_dazzle_custom_juju"	"+{s:value}s Good Juju Cooldown Reduction"
+
+	"DOTA_Tooltip_ability_dazzle_poison_touch_Description"							"Releases a poison that strikes the enemy. Deals damage over time and slows the target. Anytime the target get attacked by Dazzle, the debuff duration is refreshed and slow is increased."
 
 // Antimage
 	"DOTA_Tooltip_ability_antimage_custom_counterspell"						"Counterspell"
