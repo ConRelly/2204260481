@@ -184,7 +184,13 @@ function aghanim_laser:OnChannelFinish( bInterrupted )
 
 		self:GetCaster():RemoveModifierByName("modifier_aghanim_laser_channel")
 		self.hTracking:ForceKill(false)
-		UTIL_Remove( self.hTracking )
+--		if self.hTracking then
+			--print("remove Tracking")
+
+
+			UTIL_Remove( self.hTracking )
+			--print("removed traking done")			
+--		end
 		self.hTracking = nil
 
 		if self.beamProjectile == nil then return end
@@ -284,7 +290,11 @@ function modifier_aghanim_laser_burn_thinker:OnDestroy()
 	if IsServer() then
 		StopSoundOn( "n_black_dragon.Fireball.Target", self:GetParent() )
 		ParticleManager:DestroyParticle( self.burnPatch, false )
-		UTIL_Remove( self:GetParent() )
+		if self:GetParent() then
+			--print("remove parent")
+			UTIL_Remove( self:GetParent() )
+			--print("removed parent done")
+		end
 	end
 end
 

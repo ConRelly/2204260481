@@ -25,6 +25,8 @@ LinkLuaModifier( "modifier_mjz_blacklist", "hack/modifiers/modifier_mjz_blacklis
 LinkLuaModifier( "modifier_boss_runes", "hack/modifiers/modifier_boss_runes", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_gm_single_fort", "hack/modifiers/modifier_gm_single_fort", LUA_MODIFIER_MOTION_NONE )
 
+
+
 --LinkLuaModifier("modifier_tiny_scepter_effect", "hack/modifier_tiny_scepter_effect.lua", LUA_MODIFIER_MOTION_NONE)
 
 require('systems/roshan_system')
@@ -409,6 +411,7 @@ function HackGameMode:_CreateFakeCourier(hero)
 	self._nPlayerHelp = courier_replacement
 
     courier_replacement:AddNewModifier(courier_replacement, nil, "modifier_mjz_fake_courier", {})
+
 
 	local playerID = hero:GetPlayerID()
 	local player = hero:GetPlayerOwner()

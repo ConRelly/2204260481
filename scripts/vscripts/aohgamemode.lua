@@ -57,7 +57,6 @@ LinkLuaModifier("modifier_infinite_health", "modifiers/modifier_infinite_health.
 LinkLuaModifier("modifier_boss_truesight_aura", "bosses/boss_true_sight.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_boss_truesight", "bosses/boss_true_sight.lua", LUA_MODIFIER_MOTION_NONE)
 
-
 if AOHGameMode == nil then
 	_G.AOHGameMode = class({})
 	-- Make card points system a global for access by items
@@ -195,6 +194,9 @@ function AOHGameMode:InitGameMode()
 	Convars:SetInt("dota_max_physical_items_purchase_limit", 99)
 	Convars:SetInt("cl_init_scaleform", 1)		--Unfortunately, we have to keep doing this until Valve decides to implement Read/WriteKV in Panorama
     Convars:SetInt("dota_hud_healthbars", 1)
+
+	Convars:SetInt("dota_pause_force_unpause_time ", 9999)
+	Convars:SetInt("dota_pause_same_team_resume_time_disconnected", 9999)
 	MonsterStyle:InitGameMode()
 	self:_ReadGameConfiguration()
 
@@ -282,7 +284,6 @@ function AOHGameMode:InitGameMode()
 	-- 玩家重新连接
 	ListenToGameEvent("player_reconnected", Dynamic_Wrap(AOHGameMode, 'OnPlayerReconnect'), self)
 	ListenToGameEvent("player_disconnected", Dynamic_Wrap(AOHGameMode, 'OnPlayerDisconnect'), self)
-
 	GameRules:GetGameModeEntity():SetThink("OnThink", self, 1.0)
 	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(AOHGameMode, 'OnDamageDealt'), self)
 	gHeroDamage:InitGameMode()
@@ -291,7 +292,6 @@ function AOHGameMode:InitGameMode()
 	mHackGameMode:InitGameMode()
 	-- Init card points system
 	holdout_card_points:Init()
-
 
 
 
@@ -1297,20 +1297,22 @@ function AOHGameMode:OnEntitySpawned(event)
 
 	if unit and unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
 		local not_illusion = not unit:HasModifier('modifier_illusion')
-		if IsValidEntity(unit) and not unit:IsHero()  then
+		if IsValidEntity(unit) and (not unit:IsHero() or unit:GetUnitName()== "npc_courier_replacement") then 
 			LearnAbilityOnSpawn(unit)
 			-- self:_OnHeroFirstSpawned(npc)   
 		end
 	end		
-	if unit and not unit:IsNull() and unit:IsHero()then
-		if not unit:IsIllusion() then
-			fix_atr_for_hero2(unit)
-			check_hero_ranking(unit)
+	if unit and not unit:IsNull() and unit:IsHero() then
+		if unit:GetUnitName() ~= "npc_courier_replacement" then
+			if not unit:IsIllusion() then
+				fix_atr_for_hero2(unit)
+				check_hero_ranking(unit)
+			end
+			fix_atr_for_hero(unit)
+			unit:AddNewModifier(unit, nil, "modifier_generic_handler", {})
+			unit:AddNewModifier(unit, nil, "modifier_aegis_buff", {duration = 7})
+			unit:AddNewModifier(unit, nil, "modifier_aegis_buff", {duration = 2})
 		end
-		fix_atr_for_hero(unit)
-		unit:AddNewModifier(unit, nil, "modifier_generic_handler", {})
-		unit:AddNewModifier(unit, nil, "modifier_aegis_buff", {duration = 7})
-		unit:AddNewModifier(unit, nil, "modifier_aegis_buff", {duration = 2})
 	end	
 	if unit and (unit:GetUnitName()== "npc_courier_replacement" or unit:GetUnitName()== "npc_dota_lone_druid_bear4") then
 		unit:AddNewModifier(unit, nil, "modifier_generic_handler", {})

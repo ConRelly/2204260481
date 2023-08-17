@@ -16,7 +16,7 @@ function nevermore_custom_necromastery:GetBehavior()
 end
 function nevermore_custom_necromastery:GetCooldown(level)
 	if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
-		return 3
+		return 2
 	end
 	return 0
 end
@@ -57,7 +57,7 @@ function modifier_nevermore_custom_necromastery:OnCreated()
 				end
 			end
 		end
-		self:StartIntervalThink(FrameTime())
+		self:StartIntervalThink(0.1)
 	end
 end
 function modifier_nevermore_custom_necromastery:OnIntervalThink()
@@ -73,7 +73,7 @@ function modifier_nevermore_custom_necromastery:OnIntervalThink()
 				end
 			end	
 		end
-		self:StartIntervalThink(FrameTime())
+		self:StartIntervalThink(0.1)
 	end
 end
 function modifier_nevermore_custom_necromastery:DeclareFunctions()
@@ -147,9 +147,9 @@ function modifier_necromastery_shard:GetModifierProjectileName()
 end
 function modifier_necromastery_shard:GetModifierCritDMG()
 	self:GetParent():RemoveModifierByName("modifier_necromastery_shard")
-	return 100 + (100 * self:GetStackCount())
+	return 100 + (400 * self:GetStackCount())
 end
 function modifier_necromastery_shard:OnTooltip()
-	return 100 + (100 * self:GetStackCount())
+	return 100 + (400 * self:GetStackCount())
 end
 

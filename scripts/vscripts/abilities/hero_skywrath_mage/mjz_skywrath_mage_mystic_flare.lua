@@ -178,7 +178,7 @@ function modifier_mjz_skywrath_mage_mystic_flare_thinker:PlayEffects( radius, du
 	-- Create Particle
 	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN, self:GetParent() )
 	ParticleManager:SetParticleControl( effect_cast, 1, Vector( radius, duration, interval ) )
-	ParticleManager:DestroyParticle(effect_cast, false)
+	--ParticleManager:DestroyParticle(effect_cast, false)
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 
 	-- Create Sound

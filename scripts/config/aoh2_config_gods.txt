@@ -606,7 +606,7 @@
 				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"1"
+				"SpawnInterval"			"10"
 			}
 		}
 

@@ -13,10 +13,10 @@ end
 
 -----------------------------------------------------------------------
 
-function storegga_avalanche:ProcsMagicStick()
+--[[ function storegga_avalanche:ProcsMagicStick()
 	return false
 end
-
+ ]]
 --------------------------------------------------------------------------------
 
 function storegga_avalanche:GetChannelAnimation()

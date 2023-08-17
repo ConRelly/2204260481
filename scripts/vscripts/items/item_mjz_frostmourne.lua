@@ -1,4 +1,4 @@
-
+LinkLuaModifier("modifier_frostmore_stack_agi",  "items/item_mjz_frostmourne.lua",LUA_MODIFIER_MOTION_NONE )
 
 function FrostmourneRuin(event)
 	if IsServer() then
@@ -30,7 +30,7 @@ end
 
 local function monkey_in_inventory(unit)
     if IsServer() then
-        for i = 0, 6 do
+        for i = 0, 7 do
             local Item = unit:GetItemInSlot(i)        
             if Item ~= nil and IsValidEntity(Item) then
                 if Item:GetName() == "item_mjz_monkey_king_bar_5" then
@@ -70,11 +70,17 @@ function HealthAttack(event)
             local ss_damage = caster_attack + speed + hp_regen
             if speed > 50000 then
                 bonus_agi = 1 + bonus_agi + math.floor(speed / 100000)   -- gain 1 extra base agi at 5k speed and for every 10k speed (takes in account the 10x speed mult)
-                if bonus_agi > 13 then
-                    bonus_agi = 13
+                if bonus_agi > 15 then
+                    bonus_agi = 15
                 end    
             end    
-            caster:ModifyAgility(bonus_agi)   
+            caster:ModifyAgility(bonus_agi) 
+            if not caster:HasModifier("modifier_frostmore_stack_agi") then 
+                caster:AddNewModifier(caster, ability, "modifier_frostmore_stack_agi", {})
+                _Updatestack_count(bonus_agi, caster)
+            else   
+                _Updatestack_count(bonus_agi, caster) 
+            end  
             ApplyDamage({
                 ability = ability,
                 victim = event.target,
@@ -86,10 +92,10 @@ function HealthAttack(event)
         end
         local lvl = caster:GetLevel()
         if lvl > 35 and monkey_in_inventory(caster) then
-            local cdr = 4 * caster:GetCooldownReduction()
+            local cdr = 3 * caster:GetCooldownReduction()
             ability:StartCooldown(cdr)
         else   
-            ability:StartCooldown(4)
+            ability:StartCooldown(3)
         end   
         local coil = ParticleManager:CreateParticle("particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
         ParticleManager:SetParticleControl(coil, 0, event.target:GetAbsOrigin())
@@ -128,4 +134,30 @@ function DropItemOnDeath(keys)
             end
         end
     end
+end
+
+
+
+----stack tooltip
+if modifier_frostmore_stack_agi == nil then modifier_frostmore_stack_agi = class({}) end
+
+
+function modifier_frostmore_stack_agi:IsHidden() return false end
+function modifier_frostmore_stack_agi:IsPurgable() return false end
+function modifier_frostmore_stack_agi:IsDebuff() return false end
+function modifier_frostmore_stack_agi:RemoveOnDeath() return false end
+function modifier_frostmore_stack_agi:DeclareFunctions()
+	return {MODIFIER_PROPERTY_TOOLTIP}
+end
+function modifier_frostmore_stack_agi:OnTooltip()
+	return self:GetStackCount()
+end
+
+function _Updatestack_count( count, owner )
+    local modifier = "modifier_frostmore_stack_agi"
+
+    if owner:HasModifier(modifier) then
+        local newCount = owner:GetModifierStackCount(modifier, owner) + count
+        owner:SetModifierStackCount(modifier, owner, newCount) 
+    end 
 end

@@ -9,7 +9,7 @@
 		"Effect"						"particles/generic_gameplay/dropped_aegis.vpcf"
 		"AbilityTextureName"			"item_aegis"
 		"ItemIsNeutralDrop" 		 	"0"
-		"AbilityCooldown"				"0.4"
+		"AbilityCooldown"				"0.7"
 		"ItemCost"						"15000"
 		"ItemShopTags"					""
 		"ItemQuality"					"artifact"
@@ -12390,7 +12390,7 @@
 		"ItemQuality"					"epic"
 		"ItemShopTags"					"epic"
 		"ItemAliases"					"mjz;frostmourne"
-		"ItemDeclarations"			  "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
+		"ItemDeclarations"			   "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
 
 		"precache"
 		{
@@ -12434,7 +12434,7 @@
 			"03"						//攻击速度
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"120"
+				"bonus_attack_speed"	"220"
 			}
 			"04"						//Debuff	减移动速度百分比
 			{
@@ -12460,27 +12460,27 @@
 			"10"						//敏捷+25
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"685"
+				"bonus_agility"			"885"
 			}
 			"11"						//智力+25
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"385"
+				"bonus_intellect"		"585"
 			}
 			"12"						//力量+50
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"525"
+				"bonus_strength"		"825"
 			}
 			"13"						//生命值+120
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"3750"
+				"bonus_health"			"9750"
 			}
 			"14"						//魔法值+120
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"3500"
+				"bonus_mana"			"7500"
 			}
 			"15"						//生命窃取
 			{
@@ -12696,7 +12696,7 @@
 				"Passive"					"1"
 				"IsDebuff"					"0"
 				"IsPurgable"				"0"
-				"IsHidden"					"0"
+				"IsHidden"					"1"
 				
 				"EffectAttachType"			"follow_origin"
 				// "Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
@@ -12705,8 +12705,8 @@
 
 				"Properties"
 				{
-					// "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" 		"%bonus_damage"				//攻击力（白字）
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"				//攻击力（绿字）
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" 		"%bonus_damage"				//攻击力（白字）
+					//"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"				//攻击力（绿字）
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"		//攻击速度
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
@@ -20984,7 +20984,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"hp_regen_degen_aura"	"80"
+				"hp_regen_degen_aura"	"90"
 			}
 		}
 	}

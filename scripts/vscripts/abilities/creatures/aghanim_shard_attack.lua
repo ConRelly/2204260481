@@ -27,10 +27,10 @@ end
 
 ----------------------------------------------------------------------------------------
 
-function aghanim_shard_attack:ProcsMagicStick()
+--[[ function aghanim_shard_attack:ProcsMagicStick()
 	return false
 end
-
+ ]]
 --------------------------------------------------------------------------------
 
 function aghanim_shard_attack:OnAbilityPhaseStart()

@@ -4099,6 +4099,8 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 	"DOTA_Tooltip_ability_mjz_riki_backstab_agility_damage"		"%Agility as Damage: "
 	"DOTA_Tooltip_ability_mjz_riki_backstab_health_regen"		"Health Regen: "
 		
+	"DOTA_Tooltip_ability_special_bonus_unique_riki_6"			"-3s Tricks of the Trade Cooldown"
+
 	"DOTA_Tooltip_ability_mjz_sandking_epicenter"	"Epicenter"
 	"DOTA_Tooltip_ability_mjz_sandking_epicenter_Description"	"CHANNELED - After channeling for 2 seconds, Sand King sends a disturbance into the earth, causing it to shudder violently. All enemies caught within range will take damage and become slowed. Each subsequent pulse increases the radius of damage dealt.\n<h1><font color='#F70707'>Challenge Boss</font></h1>Shard tickrate will get divided by the Reward Tier number(1-5). Increase Pulse final dmg by <font color='#5BE424'>20%</font> for every Reward Tier(max 248%)."
 	"DOTA_Tooltip_ability_mjz_sandking_epicenter_Lore"	"Many an explorer was lost to the quicksands of the Scintillant Waste."
@@ -6823,7 +6825,7 @@ You can't target yourself."
 "DOTA_Tooltip_ability_nevermore_custom_necromastery_spell_amp_per_soul"				  "%Spell Amp Per Soul:"
 "DOTA_Tooltip_ability_nevermore_custom_necromastery_necromastery_max_souls_scepter"	 "SCEPTER MAX SOULS:"
 "DOTA_Tooltip_ability_nevermore_custom_necromastery_scepter_description"	"Increases max souls by %scepter_bonus_souls%."
-"DOTA_Tooltip_ability_nevermore_custom_necromastery_shard_description"		"Shadow Fiend gains 2 souls per hit. Additionally Shadow Fiend can devour 1 soul to deal a 200%% crit damage with an attack. For each devoured soul but not used, the crit damage increases by an additional 100%%<br>CD: 3s"
+"DOTA_Tooltip_ability_nevermore_custom_necromastery_shard_description"		"Shadow Fiend gains 2 souls per hit. Additionally Shadow Fiend can devour 1 soul to deal a 500%% crit damage with an attack. For each devoured soul but not used, the crit damage increases by an additional 400%%<br>CD: 2s"
 
 
 "DOTA_Tooltip_modifier_nevermore_custom_necromastery"								"Necromastery"
@@ -6848,11 +6850,12 @@ You can't target yourself."
 "DOTA_Tooltip_ability_mjz_nevermore_shadowraze_Lore"								"Nevermore's trademark for harvesting souls."
 "DOTA_Tooltip_ability_mjz_nevermore_shadowraze_Note0"								"Stack duration refreshes on stack gain."
 "DOTA_Tooltip_ability_mjz_nevermore_shadowraze_shadowraze_range"					"RANGE:"
+"DOTA_Tooltip_ability_mjz_nevermore_shadowraze_shadowraze_radius"					"RADIUS:"
 "DOTA_Tooltip_ability_mjz_nevermore_shadowraze_stack_bonus_damage_agi"				"BONUS DAMAGE PER STACK PER AGI:"
 "DOTA_Tooltip_ability_mjz_nevermore_shadowraze_stack_bonus_duration"				"STACK DURATION:"
 "DOTA_Tooltip_ability_mjz_nevermore_shadowraze_shadowraze_damage"					"BASE DAMAGE:"
 
-"DOTA_Tooltip_Ability_special_bonus_unique_mjz_nevermore_shadowraze_agi_bonus"				"+{s:value} Base Agility for each enemy hit with<font color='#f2da5b'>Shadowraze</font>"	
+"DOTA_Tooltip_Ability_special_bonus_unique_mjz_nevermore_shadowraze_agi_bonus"				"+{s:value} Base Agility for each enemy hit with <font color='#f2da5b'>Shadowraze</font>"	
 
 "DOTA_Tooltip_modifier_mjz_nevermore_shadowraze_stack"								"<font color='#f2da5b'>Shadowraze</font>"
 "DOTA_Tooltip_modifier_mjz_nevermore_shadowraze_stack_description"					"Receiving %dMODIFIER_PROPERTY_TOOLTIP% bonus damage from each Shadowraze attack."
@@ -9198,7 +9201,7 @@ Required Level: %required_level%
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Description"			"<h1>Active: Frost Storm</h1>Encases an enemy unit in ice, prohibiting movement and attack, while dealing damage over time.<br><br>Damage per Second: %frostbite_damage_per_second%<br>Hero Duration: %frostbite_duration_hero% sec.<br>Creep Duration: %frostbite_duration_creep% sec.
 	\n<h1>Passive: Cold Attack</h1>Attacks lower enemy attack speed by %debuff_attack_speed% and movement speed by %debuff_move_speed_pct%%%.<br><br>Duration: %debuff_duration% 
 	\n<h1>Passive: Pure Lifesteal</h1> Has %proc_chance%%% chance to Heal the attacker for %attack_lifesteal%%% of attack damage.
-	\n<h1><font color='#0597EB'>Passive: Frostbite</font></h1><font color='lightblue'>On attack When cooldown is rdy deals 7%% of the target current hp in physical dmg and puts the item on a 4s CD.</font>\n<h1><font color='#DE3163'>Super Scepter</font></h1><font color='#0597EB'>Frostbite</font> Now deals an aditional instance of Damage and Ignores Base Armor(attack dmg + %speed_mult_dmg% x movement speed + %healt_reg_mult_dmg% x Hp regen). <font color='#6CDB16'>SpeedTraining</font>: For every <font color='#0597EB'>Frostbite</font> trigger gain %bonus_base_agi% Base Agility, additionally if your MS is above 5k your bonus base agi will increase by %bonus_base_agi% and after that will increase by %bonus_base_agi% for every 10k MS."
+	\n<h1><font color='#0597EB'>Passive: Frostbite</font></h1><font color='lightblue'>On attack When cooldown is rdy deals 7%% of the target current hp in physical dmg and puts the item on a 3s CD.</font>\n<h1><font color='#DE3163'>Super Scepter</font></h1><font color='#0597EB'>Frostbite</font> Now deals an aditional instance of Damage and Ignores Base Armor(attack dmg + %speed_mult_dmg% x movement speed + %healt_reg_mult_dmg% x Hp regen). <font color='#6CDB16'>SpeedTraining</font>: For every <font color='#0597EB'>Frostbite</font> trigger gain %bonus_base_agi% Base Agility, additionally if your MS is above 5k your bonus base agi will increase by %bonus_base_agi% and after that will increase by %bonus_base_agi% for every 10k MS."
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Lore"							"Hail to the king, baby!"
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_Note0"						   "Frostbite works only on Real Heroes(no illusions or bear etc.), Damage dealt by frostbite is affected by Spell Amplification"
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_agility"					"+$agi"
@@ -9206,10 +9209,12 @@ Required Level: %required_level%
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_strength"					"+$str"
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_mana"						"+$mana"
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_health"					"+$health"
-		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_damage"					"+$damage"
+		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_damage"					"+$base_damage"
 		"DOTA_Tooltip_Ability_item_mjz_frostmourne_bonus_attack_speed"				"+$attack"
 		"DOTA_Tooltip_modifier_mjz_frostmourne"										"Frostmourne"
 		"DOTA_Tooltip_modifier_mjz_frostmourne_Description"							"Hail to the king, baby!"
+		"DOTA_Tooltip_modifier_frostmore_stack_agi"	                                "Frostmourne SS"
+		"DOTA_Tooltip_modifier_frostmore_stack_agi_Description"						"You gained %dMODIFIER_PROPERTY_TOOLTIP% Base agility"
 		"DOTA_Tooltip_modifier_mjz_frostmourne_hungers_debuff"						"Frostmourne"
 		"DOTA_Tooltip_modifier_mjz_frostmourne_hungers_debuff_Description"			"Attacks lower enemy attack speed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% and movement speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 		"DOTA_Tooltip_modifier_mjz_frostmourne_frostbite"							"Frost Storm"
@@ -10235,7 +10240,7 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 
 
 	"DOTA_Tooltip_ability_item_god_slayer"				"<font color='#FF0000'>God Slayer</font>"
-	"DOTA_Tooltip_ability_item_god_slayer_Description"	"<h1><font color='#39CEFE'>Active: God Slash</font></h1>Attacks everything in %radius% AOE for %duration% seconds.<br>Adds extra %mana_per%%% (%mana_per_underdog%%% for Underdog) of your Max mana as <font color='#d8ae53'>pure damage</font> to Gods.\n<h1><font color='#39CEFE'>Passive: God Slayer</font></h1> Increases all outgoing damage by %stuff%%% (%stuff_underdog%%% for Underdog) against full Gods.\n<h1><font color='#EC3F0D'>Passive: Souls Collector</font></h1> Permanently gains an additional soul Charge for item, and a soul stack buff (buff gets lost on Unequip) when your team or you kill: Roshan or with a %stack_chance%%% (%stack_underdog_chance%%% for Underdog) chance for any unit.\n<h1><font color='#EC3F0D'>Passive: Souls Experience</font></h1> Every Soul Stack and Charge give: <font color='#2ECC71'>%stack_agi% Agility</font>, <font color='#A93226'>%stack_str% Strength</font>, <font color='#5499C7'>%stack_spellamp%%% Spell Damage</font>, <font color='#DC7633'>%stack_armor% Armor</font> and <font color='#078D29'>%stack_health% Bonus Health</font>."
+	"DOTA_Tooltip_ability_item_god_slayer_Description"	"<h1><font color='#39CEFE'>Active: God Slash</font></h1>Attacks everything in %radius% AOE for %duration% seconds.<br>Adds extra %mana_per%%% (%mana_per_underdog%%% for Underdog) of your Max mana as <font color='#d8ae53'>pure damage</font> to Gods.\n<h1><font color='#39CEFE'>Passive: God Slayer</font></h1> Increases all outgoing damage by %stuff%%% (%stuff_underdog%%% for Underdog) against full Gods.\n<h1><font color='#EC3F0D'>Passive: Souls Collector</font></h1> Permanently gains an additional soul Charge for item, and a soul stack buff (buff gets lost on Unequip) when your team or you kill : with a %stack_chance%%% (%stack_underdog_chance%%% for Underdog) chance for any unit.\n<h1><font color='#EC3F0D'>Passive: Souls Experience</font></h1> Every Soul Stack and Charge give: <font color='#2ECC71'>%stack_agi% Agility</font>, <font color='#A93226'>%stack_str% Strength</font>, <font color='#5499C7'>%stack_spellamp%%% Spell Damage</font>, <font color='#DC7633'>%stack_armor% Armor</font> and <font color='#078D29'>%stack_health% Bonus Health</font>."
 	"DOTA_Tooltip_ability_item_god_slayer_armor"			"+$armor"
 	"DOTA_Tooltip_ability_item_god_slayer_Note0"				"1) Attack inverval is %attack_interval% and can additionally add hits but with no bonus pure dmg if you have enough attack speed."
 	"DOTA_Tooltip_ability_item_god_slayer_Note1"				"2) Extra DMG of Max mana to non-Gods is only %mana_per_others%%%."

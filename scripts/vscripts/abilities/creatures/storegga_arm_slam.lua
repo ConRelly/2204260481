@@ -13,10 +13,10 @@ end
 
 --------------------------------------------------------------------------------
 
-function storegga_arm_slam:ProcsMagicStick()
+--[[ function storegga_arm_slam:ProcsMagicStick()
 	return false
 end
-
+ ]]
 --------------------------------------------------------------------------------
 
 function storegga_arm_slam:OnAbilityPhaseStart()

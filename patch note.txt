@@ -2743,6 +2743,39 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Fix Courier to be some new type of universal crep hero(back to normal). (lone druid bear might have some bugs too)
+* try to report bugs or moments you think lead to crash, new patch 7.34 comes with bugs as usual.
+
+
+
+* Courier is now back to act like lone druid bear(almost real hero)
+* Fix Crash (Replaced an blink skill from demi and gods, seems to have some still unknown bad interactions sometimes)
+
+
+
+* Fix Magic resist , octarine and some other bugs.
+
+* Removed blink from aghanim (testing to see if fixes crash in multiplayer)
+
+
+* Removed Aghanim Laser(seems to crash on Dedicated servers only). added back the blink skill.
+
+
+
+
+* Increased nevermore custom Raze: range, aoe, agi talent gain per hit.(lvl 1 has higher range but less dmg).
+* Fixed nevermore raze not showing real range 
+* Reduced Nevermore Shard CD to 2s and buffed crit per stack to 400%. 
+* Aegis CD increased to 0.7 and not affected by normal CDR
+* Some minor buffs to DragonKnight (new talent and ult buffs)
+* Replaced a lvl 25 Viper talent.
+* Fixed Couriers being able to use Tombstone (resurrect players).
+* Buffed Frostmore stats (changed bonus dmg to base dmg and increased other stats), reduced Frostbite CD to 3s and added a tooltip to show how much agility is gained. 
+* Removed the pause limit and CD for dedicated servers (idk yet how to increase or remove the force unpause after 30s in solo)
+
+
+
+
 
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.

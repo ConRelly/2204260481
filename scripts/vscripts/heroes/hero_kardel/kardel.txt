@@ -15,7 +15,7 @@
 		"MaxLevel"						"5"
 		"LevelsBetweenUpgrades"			"10"
 		"AbilityCooldown"				"1.20"
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"precache"
 		{

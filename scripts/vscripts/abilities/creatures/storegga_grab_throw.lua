@@ -12,9 +12,9 @@ end
 
 --------------------------------------------------------------------------------
 
-function storegga_grab_throw:ProcsMagicStick()
+--[[ function storegga_grab_throw:ProcsMagicStick()
 	return false
-end
+end ]]
 
 --------------------------------------------------------------------------------
 

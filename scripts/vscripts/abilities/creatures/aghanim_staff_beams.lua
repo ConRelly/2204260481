@@ -22,10 +22,10 @@ end
 
 --------------------------------------------------------------------------------
 
-function aghanim_staff_beams:ProcsMagicStick()
+--[[ function aghanim_staff_beams:ProcsMagicStick()
 	return false
 end
-
+ ]]
 --------------------------------------------------------------------------------
 
 function aghanim_staff_beams:OnAbilityPhaseStart()

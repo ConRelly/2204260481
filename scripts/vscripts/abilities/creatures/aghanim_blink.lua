@@ -1,15 +1,15 @@
-aghanim_blink = class{}
+aghanim_blink1 = class{}
 
 ----------------------------------------------------------------------------------------
 
-function aghanim_blink:Precache( context )
+function aghanim_blink1:Precache( context )
 	PrecacheResource( "particle", "particles/creatures/aghanim/aghanim_preimage.vpcf", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts", context )
 end
 
 ----------------------------------------------------------------------------------------
 
-function aghanim_blink:OnSpellStart()
+function aghanim_blink1:OnSpellStart()
 	if IsServer() == false then
 		return
 	end
@@ -48,7 +48,7 @@ end
 
 ----------------------------------------------------------------------------------------
 
-function aghanim_blink:OnProjectileHit( hTarget, vLocation )
+function aghanim_blink1:OnProjectileHit( hTarget, vLocation )
 	if IsServer() then
 		local vDirection = vLocation - self:GetCaster():GetAbsOrigin()
 		vDirection.z = 0.0

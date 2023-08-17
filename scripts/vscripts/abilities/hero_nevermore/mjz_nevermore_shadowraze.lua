@@ -10,7 +10,6 @@ mjz_nevermore_shadowraze = mjz_nevermore_shadowraze or class({})
 --     return self:GetSpecialValueFor("radius")
 -- end
 
-
 function mjz_nevermore_shadowraze:OnSpellStart()
     if not IsServer() then return end
     local hCaster = self:GetCaster()
@@ -76,7 +75,7 @@ function mjz_nevermore_shadowraze:Spell_Shadowraze(hPosition)
                 damage = damage, damage_type = hAbility:GetAbilityDamageType() 
             })
             if HasTalent(hCaster, "special_bonus_unique_mjz_nevermore_shadowraze_agi_bonus") then
-                local bonus = 2
+                local bonus = 6
                 hCaster:ModifyAgility(bonus)
                 if hCaster:HasModifier("modifier_mjz_nevermore_shadowraze_stack_agi") then
                     local modifier = hCaster:FindModifierByName("modifier_mjz_nevermore_shadowraze_stack_agi")

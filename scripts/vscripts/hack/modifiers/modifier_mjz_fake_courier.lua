@@ -10,13 +10,24 @@ if IsServer() then
     
     function modifier:DeclareFunctions() 
         return { 
-            MODIFIER_PROPERTY_MODEL_CHANGE
+            MODIFIER_PROPERTY_MODEL_CHANGE,
+            MODIFIER_EVENT_ON_ABILITY_EXECUTED
         }
     end
     
     function modifier:GetModifierModelChange()
         return self:GetParent().targetModel
     end
+    function modifier:OnAbilityExecuted(params)
+        if params.ability:GetName() == "item_tombstone" then
+            -- Prevent the courier from continuing the channel
+            if params.unit == self:GetParent() then
+                params.unit:Interrupt()
+            end
+        end
+    end
+    
+
 
     function modifier:OnCreated(table)
         self:OnIntervalThink()

@@ -26,6 +26,9 @@ function modifier_aegis_up:OnIntervalThink()
 	end
 end
 ]]
+function item_aegis_lua:GetCooldown(level)
+	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
+end
 function item_aegis_lua:OnSpellStart()
 	if IsServer() then
 		local hCaster = self:GetCaster()

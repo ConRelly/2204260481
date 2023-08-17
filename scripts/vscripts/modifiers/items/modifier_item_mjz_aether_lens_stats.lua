@@ -41,5 +41,5 @@ function modifier:GetModifierSpellAmplify_Percentage()
 end    
 
 function modifier:GetModifierPercentageCasttime()
-    return 100
+    return 500
 end    

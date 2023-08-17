@@ -13,10 +13,10 @@ function storegga_grab:Precache( context )
 end
 
 --------------------------------------------------------------------------------
-
+--[[ 
 function storegga_grab:ProcsMagicStick()
 	return false
-end
+end ]]
 
 --------------------------------------------------------------------------------
 

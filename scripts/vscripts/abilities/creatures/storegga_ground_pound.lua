@@ -10,10 +10,10 @@ end
 
 --------------------------------------------------------------------------------
 
-function storegga_ground_pound:ProcsMagicStick()
+--[[ function storegga_ground_pound:ProcsMagicStick()
 	return false
 end
-
+ ]]
 --------------------------------------------------------------------------------
 
 function storegga_ground_pound:GetChannelAnimation()

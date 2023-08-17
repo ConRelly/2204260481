@@ -1,6 +1,7 @@
 require("lib/string")
 require("played_heroes")
 LinkLuaModifier("modifier_reload_bullet_channel_command", "heroes/hero_kardel/abilities", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier( "modifier_prevent_tombstone_channel_custom", "modifiers/modifier_prevent_tombstone_channel.lua", LUA_MODIFIER_MOTION_NONE )
 local count = 0
 local count2 = 0
 local count3 = 4
@@ -431,7 +432,6 @@ function AOHGameMode:OnPlayerChat(keys)
 		--self._nPlayerHelp = courier_replacement
 	
 		courier_replacement:AddNewModifier(courier_replacement, nil, "modifier_mjz_fake_courier", {})
-	
 		local playerID = hero:GetPlayerID()
 		local player = hero:GetPlayerOwner()
 		-- local courier = PlayerResource:GetNthCourierForTeam(playerID, DOTA_TEAM_GOODGUYS) 

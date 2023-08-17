@@ -292,7 +292,8 @@
 	"ConsideredHero"			"1"
     "HasInventory"            "1"
 	"Ability1"				  "draks_unholy_strength"
-	"Ability2"				  "generic_hidden" //"jotaro_absolute_defense"
+	//"Ability2"				  "custom_omni_slash_jugg_2" //"jotaro_absolute_defense"
+	"Ability3"                "custom_riki_blink_strike"
 	//"Ability3"				 "spectre_custom_dispersion_boss" //"generic_hidden"
 	//"Ability4"				 "ability_absolute_no_cc" //"generic_hidden"
 	//"Ability5"				 "jotaro_absolute_defense" //"generic_hidden"
@@ -340,11 +341,16 @@
 		"DisableClumpingBehavior"   "1"
 		"OffensiveAbilities"
 		{
-			//"Ability4"
+			//"Ability2"
 			//{
-			//	"Name"			  "custom_aphotic_shield"
-			//	//"Name"				  "frostivus2018_spectre_active_dispersion"
+			//   "Name"				"custom_omni_slash_jugg_2"
+
 			//}
+			"Ability3"
+			{
+			   "Name"				"custom_riki_blink_strike"
+
+			}			
 			//"Ability5"
 			//{
 			//   "Name"				"aghanim_shard_attack"
@@ -13933,8 +13939,8 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"aghanim_laser"
-		"Ability2"					"aghanim_blink"
+		//"Ability1"					"aghanim_laser"
+		"Ability2"					"custom_riki_blink_strike"
 		"Ability3"					"aghanim_spell_swap"
 		"Ability4"					"aghanim_empty_spell1"
 		"Ability5"					"custom_vitality_rend_2"
@@ -13965,10 +13971,10 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"28000"
-		"AttackDamageMax"			"34750"
-		"AttackRate"				"0.5"
-		"BaseAttackSpeed"		   "850"
+		"AttackDamageMin"			"29000"
+		"AttackDamageMax"			"38750"
+		"AttackRate"				"0.6"
+		"BaseAttackSpeed"		    "850"
 		"AttackAnimationPoint"		"0.53"
 		"AttackAcquisitionRange"	"8800"
 		"AttackRange"				"1600"
@@ -14068,18 +14074,18 @@
 				   //"Radius"			 "2000"
 				   //"MinimumTargets"	  "1"
 				//}
-				"Ability1"
-				{
-				   "Name"				"aghanim_laser"
-				   "AOE"				"1"
-				   "Radius"			 "7000"
-				   "MinimumTargets"	 "0"
-				}
 				"Ability2"
 				{
-				   "Name"				"aghanim_blink"
+				   "Name"				"custom_riki_blink_strike"
 
-				}
+				}				
+				//"Ability1"
+				//{
+				//   "Name"				"aghanim_laser"
+				//   "AOE"				"1"
+				//   "Radius"			 "7000"
+				//   "MinimumTargets"	 "0"
+				//}
 				"Ability16"
 				{
 				   "Name"			   "custom_omni_slash_jugg_2"
@@ -14398,7 +14404,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"				  "aghanim_blink3"
+		"Ability1"				  "custom_riki_blink_strike"
 		"Ability2"				  "boss_void_spirit_dissimilate"
 		"Ability3"				  "aghsfort_void_spirit_boss_resonant_pulse"
 		"Ability4"				  "aghanim_empty_spell1"
@@ -14566,10 +14572,7 @@
 				//}
 				"Ability1"
 				{
-					"Name"			  "aghanim_blink3"
-					"AOE"				"1"
-					"Radius"			 "2000"
-					"MinimumTargets"	 "0"
+					"Name"			  "custom_riki_blink_strike"
 				}				
 				"Ability6"
 				{
@@ -14614,7 +14617,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"				  "aghanim_blink3"
+		"Ability1"				  "custom_riki_blink_strike"
 		"Ability2"				  "boss_void_spirit_dissimilate"
 		"Ability3"				  "aghsfort_void_spirit_boss_resonant_pulse"
 		"Ability4"				  "phantom_reflex_boss"
@@ -14778,10 +14781,7 @@
 				//}
 				"Ability1"
 				{
-					"Name"			  "aghanim_blink3"
-					"AOE"				"1"
-					"Radius"			 "2000"
-					"MinimumTargets"	 "0"
+					"Name"			  "custom_riki_blink_strike"
 				}
 				"Ability10"
 				{
@@ -15132,15 +15132,15 @@
 	"Ability12"				 "siltbreaker_kraken_shell8"
 	"Ability13"				 "mjz_chaos_knight_chaos_strike_2"
 	"Ability14"				 "aghanim_shard_attack"
-	"Ability15"				 "aghanim_laser"
+	//"Ability15"				 "aghanim_laser"
 	"Ability16"				 "draks_unholy_strength"
-	"Ability17"				 "aghanim_blink"
+	"Ability17"				 "custom_riki_blink_strike"
 	"Ability18"				 "creep_siege"	
 	"ArmorPhysical"			 "420"		 // Physical protection.
 	"MagicalResistance"		 "96"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"		   "25000"		// Damage range min.
-	"AttackDamageMax"		   "48000"	   // Damage range max.
+	"AttackDamageMin"		   "34000"		// Damage range min.
+	"AttackDamageMax"		   "58000"	   // Damage range max.
 	"AttackRate"				"1.6"	   // Speed of attack.
 	"BaseAttackSpeed"		   "1300"
 	"AttackAnimationPoint"	  "0.2"	   // Normalized time in animation cycle to attack.
@@ -15155,7 +15155,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "100"	   // Speed.		   
-	"StatusHealth"			  "15500000"	  // Base health.
+	"StatusHealth"			  "16500000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
@@ -15188,7 +15188,7 @@
 			}
 			"Ability17"
 			{
-			   "Name"			   "aghanim_blink"
+			   "Name"			   "custom_riki_blink_strike"
 			}								  
 			"Ability2"
 			{
@@ -15202,13 +15202,13 @@
 			   "Radius"			 "7800"
 			   "MinimumTargets"	 "0"
 			}
-			"Ability15"
-			{
-			   "Name"			   "aghanim_laser"
-			   "AOE"				"1"
-			   "Radius"			 "3000"
-			   "MinimumTargets"	 "0"			  
-			}			 
+			//"Ability15"
+			//{
+			//   "Name"			   "aghanim_laser"
+			//   "AOE"				"1"
+			//   "Radius"			 "3000"
+			//   "MinimumTargets"	 "0"			  
+			//}			 
 			"Ability3"
 			{
 				"Name"			  "zoom_charge_of_darkness"
@@ -15290,7 +15290,7 @@
 	"Ability12"				 "siltbreaker_kraken_shell8"
 	"Ability13"				 "mjz_chaos_knight_chaos_strike_2"
 	"Ability14"				 "aghanim_shard_attack"
-	"Ability15"				 "aghanim_laser"
+	//"Ability15"				 "aghanim_laser"
 	"Ability16"				 "draks_unholy_strength"
 	"Ability17"				 "creep_siege"	
 	"ArmorPhysical"			 "420"		 // Physical protection.
@@ -15354,13 +15354,13 @@
 			{
 				"Name"			  "leesin_dragons_rage"
 			}
-			"Ability15"
-			{
-			   "Name"			   "aghanim_laser"
-			   "AOE"				"1"
-			   "Radius"			 "3000"
-			   "MinimumTargets"	 "0"			  
-			}			
+			//"Ability15"
+			//{
+			//   "Name"			   "aghanim_laser"
+			//   "AOE"				"1"
+			//   "Radius"			 "3000"
+			//   "MinimumTargets"	 "0"			  
+			//}			
 			"Ability4"
 			{
 			   "Name"			   "darkrider_alter_reverse"
@@ -15450,7 +15450,7 @@
 	//"Ability14"				 "aghanim_shard_attack"
 	//"Ability15"				 "darkrider_heartbeat"
 	"Ability16"				 "draks_unholy_strength"
-	"Ability17"				 "aghanim_blink"	
+	"Ability17"				 "custom_riki_blink_strike"	
 	"Ability18"				 "creep_siege"
 	"ArmorPhysical"			 "400"		 // Physical protection.
 	"MagicalResistance"		 "96"
@@ -15496,12 +15496,12 @@
 		"OffensiveAbilities"
 		{
 
-			"Ability2"
+			"Ability17"
 			{
-			   "Name"			   "aghanim_blink"
+			   "Name"			   "custom_riki_blink_strike"
 
 			}				   
-			"Ability17"
+			"Ability2"
 			{
 			   "Name"			   "leesin_dragons_rage"
 			}

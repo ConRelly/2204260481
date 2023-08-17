@@ -14,7 +14,7 @@ function item_mjz_ability_point:OnSpellStart()
     if IsServer() then
         local caster = self:GetCaster()
         
-        if caster and IsValidEntity(caster) and caster:IsRealHero() then
+        if caster and IsValidEntity(caster) then
             caster:SetAbilityPoints(caster:GetAbilityPoints() + 1)
             caster:RemoveItem(self)
             caster:EmitSound("DOTA_Item.HotD.Activate")
