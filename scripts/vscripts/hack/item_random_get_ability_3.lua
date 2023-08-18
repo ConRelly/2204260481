@@ -125,7 +125,7 @@ function GetRandomAbilityName( hero )
         "nyx_assassin_custom_vendetta",             -- 先知 2
         "skywrath_mage_ancient_seal",       -- 天怒 3
         "mjz_axe_counter_helix",        -- 冰龙 1
-        "dark_willow_bedlam",                      -- 巫医 2
+        --"dark_willow_bedlam",                      -- 巫医 2
         "alchemist_power_of_gold2",                 -- 巫妖 2
         "alchemist_power_of_gold",          -- 干扰者 3
         "rubick_arcane_supremacy",          -- 拉比克 3

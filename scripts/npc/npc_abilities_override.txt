@@ -2126,7 +2126,7 @@
         "HasShardUpgrade"               "1"
 
 		"AbilityCastRange"				"600 625 650 675"
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastPoint"				"0.2"
 		"FightRecapLevel"				"1"
 
 		// Cost
@@ -3165,7 +3165,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1500"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -3350,7 +3350,7 @@
 		"MaxLevel"					  "9"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -3532,7 +3532,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastPoint"				"0.2"
 		"AbilityCooldown"				"4.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	
@@ -3588,7 +3588,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"8"
 		"AbilityManaCost"				"120 125 130 135"
 
@@ -3872,7 +3872,7 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.1"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -4449,7 +4449,7 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.4 0.4 0.4"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -4684,7 +4684,7 @@
 		"AbilityValues"
 		{
 			"AbilityCastRange"				"700"
-			"AbilityCastPoint"				"0.3"
+			"AbilityCastPoint"				"0.1"
 			"AbilityCooldown"
 			{
 				"value"										"8"
@@ -4756,7 +4756,7 @@
 		"RequiredLevel"							"1"
 		"LevelsBetweenUpgrades"					"5"
 		"AbilityCastRange"						"1200"
-		"AbilityCastPoint"						"0.3"
+		"AbilityCastPoint"						"0.1"
 		"AbilityCooldown"						"14 12 10 8 7 5"
 		"AbilityManaCost"						"90 100 110 120 220 320"
 		"AbilitySpecial"
@@ -4904,7 +4904,7 @@
         "LevelsBetweenUpgrades"     "12"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.5 0.5 0.5"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -5308,7 +5308,7 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"550 550 550"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
@@ -5525,7 +5525,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.6"
+		"AbilityCastPoint"				"0.1"
 		"FightRecapLevel"				"1"
 
 		// Time		
@@ -6588,7 +6588,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 
-		"AbilityCastPoint"				"0.35"
+		"AbilityCastPoint"				"0.1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -6778,7 +6778,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1400"
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -8260,7 +8260,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.2"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -9050,7 +9050,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastPoint"				"0.2"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -12514,7 +12514,7 @@
 		//-------------------------------------------------------------------------------------------------------------
  		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -12652,7 +12652,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0."
+		"AbilityCastPoint"				"0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -14025,7 +14025,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -14083,72 +14083,7 @@
 		}
 	}
 
-	//=================================================================================================================
-	// Ability: Warlock's Upheaval
-	//=================================================================================================================
-	"warlock_upheaval"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"5164"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"AbilitySound"					"Hero_Warlock.Upheaval"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.4"
-		"AbilityChannelTime"			"10 12 14 16"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"32 28 24 20"
-
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"0 0 0 0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 80 90 100"		
-		
-		// Cast Range
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1200"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aoe"					"500 750 850 1250"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_per_second"		"12 17 22 27"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_slow"				"40 50 60 70"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aspd_per_second"		"25"
-			}
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
-	}
 
 	//=================================================================================================================
 	// Ability: Warlock's Upheaval
@@ -14167,7 +14102,7 @@
 		"LevelsBetweenUpgrades"         "4"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.1"
 		"AbilityChannelTime"			"10 12 14 16"
 
 		// Damage.
@@ -14253,7 +14188,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -14394,7 +14329,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Ability.Windrun"
 		"HasScepterUpgrade"				"1"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"15 14 13 12"
 		"AbilityDuration"				"3 4 5 6"
 		"AbilityManaCost"				"50"
@@ -14738,7 +14673,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1500"
-		"AbilityCastPoint"				"0.35"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 
@@ -14810,7 +14745,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -15814,7 +15749,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.45 0.45 0.45"
+		"AbilityCastPoint"				"0.1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -15969,7 +15904,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1800 1900 2700"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 		
 		// Time		
@@ -17251,7 +17186,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
@@ -17333,7 +17268,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"3000"
 		"AbilityCastRangeBuffer"		"600"
-		"AbilityCastPoint"				"2.0 2.0 2.0"
+		"AbilityCastPoint"				"0.3"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -17418,7 +17353,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		
 		// Time		
@@ -17473,7 +17408,7 @@
 		"MaxLevel"						"10"
 		"LevelsBetweenUpgrades"			"8"
 		"AbilityCastRange"				"1500"
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"12"
 		"AbilityManaCost"				"120"
 		"AbilityModifierSupportValue"	"0.5"
@@ -17579,7 +17514,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_GHOST_SHIP"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastRange"				"8000"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -18209,7 +18144,7 @@
 		"MaxLevel"					  "7"
 		"AbilityCastAnimation"			"ACT_DOTA_MK_STRIKE"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"1600"
 
 		// Time		
@@ -18712,7 +18647,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"2475"
-		"AbilityCastPoint"				"0.45"
+		"AbilityCastPoint"				"0.0"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -18973,6 +18908,62 @@
 	}
 
 	//=================================================================================================================
+	// Marci: Sidekick
+	//=================================================================================================================
+	"marci_guardian"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"8234"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Marci.Guardian.Applied"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1700"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"MaxLevel"                      "7"
+		"LevelsBetweenUpgrades"         "10"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"45"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"lifesteal_pct"
+			{
+				"value"			"30"
+				"special_bonus_unique_marci_guardian_lifesteal"	"+15"
+			}
+			"bonus_damage"		
+			{
+				"value"				"800 1535 5650 24650 48850 89540 155600"
+				"special_bonus_unique_marci_guardian_damage"			"+65"
+			}
+			"bonus_attack_range"	"250"
+			"nearest_ally_search_range"	"2500"
+			"max_partner_distance"				"3500"
+			"max_partner_penalty"				"50"
+			"creep_lifesteal_reduction_pct"		"40"
+
+		}
+	}
+
+	//=================================================================================================================
 	// Marci: Unleashed
 	//=================================================================================================================
 	"marci_unleash"
@@ -18990,7 +18981,7 @@
 		"LevelsBetweenUpgrades"         "9"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -19070,8 +19061,8 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"4700"
-		"AbilityCastPoint"				"0.2"
-		"AbilityChannelTime"			"10.0"
+		"AbilityCastPoint"				"0.0"
+		"AbilityChannelTime"			"20.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 		
@@ -19158,7 +19149,7 @@
 
 		"HasScepterUpgrade"				"1"
 		"AbilityCastRange"				"550"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilitySound"					"Hero_ShadowShaman.SerpentWard"
 		"AbilityCooldown"				"60"
@@ -19286,7 +19277,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AnimationPlaybackRate"			"1.2" // 1.0 corresponds to cast point of 0.45 or so
 
@@ -19371,7 +19362,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 
 		// Time
@@ -19433,7 +19424,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"3000"
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Damage
@@ -21405,7 +21396,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCooldown"               "25"
         "AbilityManaCost"               "85"
-        "AbilityCastPoint"              "0.5"
+        "AbilityCastPoint"              "0.1"
         "AbilityCastRange"              "1800"
 
         // Damage.
@@ -27441,17 +27432,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_int"				"30"
+				"bonus_int"				"45"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mp_regen"				"35.5"
+				"mp_regen"				"45.5"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_gain"			"1375"
+				"health_gain"			"2575"
 			}
 			"04"
 			{
@@ -27489,17 +27480,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"14"
+				"bonus_armor"			"18"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp_regen"		"38"
+				"bonus_hp_regen"		"48"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_sec"		"580"
+				"damage_per_sec"		"780"
 			}
 			"04"
 			{
@@ -27994,12 +27985,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"75 250"
+				"bonus_damage"			"195 650"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"8 20"
+				"bonus_armor"			"18 40"
 			}
 		}
 	}

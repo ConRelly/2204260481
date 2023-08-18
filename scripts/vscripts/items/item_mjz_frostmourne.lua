@@ -1,5 +1,5 @@
 LinkLuaModifier("modifier_frostmore_stack_agi",  "items/item_mjz_frostmourne.lua",LUA_MODIFIER_MOTION_NONE )
-
+LinkLuaModifier("modifier_frostmore_mkb_up",  "items/item_mjz_frostmourne.lua",LUA_MODIFIER_MOTION_NONE )
 function FrostmourneRuin(event)
 	if IsServer() then
         -- body
@@ -51,55 +51,66 @@ function HealthAttack(event)
     local dmg_flag = DOTA_DAMAGE_FLAG_NONE
     if caster:HasModifier("modifier_super_scepter") then
         dmg_flag = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR
-    end  
-    if caster:IsRealHero() and ability:IsCooldownReady() then
-        local health_damage_pct = event.health_damage_pct
-        ApplyDamage({
-            ability = ability,
-            victim = event.target,
-            attacker = event.caster,
-            damage = event.target:GetHealth() * health_damage_pct,
-            damage_type = DAMAGE_TYPE_PHYSICAL,
-            damage_flags = dmg_flag
-        })
-        if caster:HasModifier("modifier_super_scepter") then
-            local caster_attack = caster:GetAverageTrueAttackDamage(caster)
-            local speed = math.floor(caster:GetIdealSpeed()) * event.speed_mult_dmg
-            local hp_regen = math.floor(caster:GetHealthRegen()) * event.healt_reg_mult_dmg
-            local bonus_agi = event.bonus_base_agi
-            local ss_damage = caster_attack + speed + hp_regen
-            if speed > 50000 then
-                bonus_agi = 1 + bonus_agi + math.floor(speed / 100000)   -- gain 1 extra base agi at 5k speed and for every 10k speed (takes in account the 10x speed mult)
-                if bonus_agi > 15 then
-                    bonus_agi = 15
-                end    
-            end    
-            caster:ModifyAgility(bonus_agi) 
-            if not caster:HasModifier("modifier_frostmore_stack_agi") then 
-                caster:AddNewModifier(caster, ability, "modifier_frostmore_stack_agi", {})
-                _Updatestack_count(bonus_agi, caster)
-            else   
-                _Updatestack_count(bonus_agi, caster) 
-            end  
+    end
+    local cd_rdy =  ability:IsCooldownReady()
+    if caster:IsRealHero() and cd_rdy then
+        if event.target then
+            local health_damage_pct = event.health_damage_pct
+            local hp_damage = event.target:GetHealth() * health_damage_pct
             ApplyDamage({
                 ability = ability,
                 victim = event.target,
                 attacker = event.caster,
-                damage = ss_damage,
+                damage = hp_damage,
                 damage_type = DAMAGE_TYPE_PHYSICAL,
-                damage_flags = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR
+                damage_flags = dmg_flag
             })
-        end
-        local lvl = caster:GetLevel()
-        if lvl > 35 and monkey_in_inventory(caster) then
-            local cdr = 3 * caster:GetCooldownReduction()
-            ability:StartCooldown(cdr)
-        else   
-            ability:StartCooldown(3)
-        end   
-        local coil = ParticleManager:CreateParticle("particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
-        ParticleManager:SetParticleControl(coil, 0, event.target:GetAbsOrigin())
-        ParticleManager:ReleaseParticleIndex(coil)                      
+            if caster:HasModifier("modifier_super_scepter") then
+                local caster_attack = caster:GetAverageTrueAttackDamage(caster)
+                local speed = math.floor(caster:GetIdealSpeed()) * event.speed_mult_dmg
+                local hp_regen = math.floor(caster:GetHealthRegen()) * event.healt_reg_mult_dmg
+                local bonus_agi = event.bonus_base_agi
+                local ss_damage = caster_attack + speed + hp_regen
+                if speed > 50000 then
+                    bonus_agi = 1 + bonus_agi + math.floor(speed / 100000)   -- gain 1 extra base agi at 5k speed and for every 10k speed (takes in account the 10x speed mult)
+                    if bonus_agi > 15 then
+                        bonus_agi = 15
+                    end    
+                end    
+                caster:ModifyAgility(bonus_agi) 
+                if not caster:HasModifier("modifier_frostmore_stack_agi") then 
+                    caster:AddNewModifier(caster, ability, "modifier_frostmore_stack_agi", {})
+                    _Updatestack_count(bonus_agi, caster)
+                else   
+                    _Updatestack_count(bonus_agi, caster) 
+                end  
+                ApplyDamage({
+                    ability = ability,
+                    victim = event.target,
+                    attacker = event.caster,
+                    damage = ss_damage,
+                    damage_type = DAMAGE_TYPE_PHYSICAL,
+                    damage_flags = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR
+                })
+            end
+            local lvl = caster:GetLevel()
+            local has_mkb_up = caster:HasModifier("modifier_frostmore_mkb_up")
+            if lvl > 35 and monkey_in_inventory(caster) then
+                local cdr = 3 * caster:GetCooldownReduction()
+                ability:StartCooldown(cdr)
+                if not has_mkb_up then
+                    caster:AddNewModifier(caster, ability, "modifier_frostmore_mkb_up", {})
+                end    
+            else 
+                ability:StartCooldown(3)
+                if has_mkb_up then
+                    caster:RemoveModifierByName("modifier_frostmore_mkb_up")
+                end    
+            end   
+            local coil = ParticleManager:CreateParticle("particles/units/heroes/hero_abaddon/abaddon_aphotic_shield_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, event.target)
+            ParticleManager:SetParticleControl(coil, 0, event.target:GetAbsOrigin())
+            ParticleManager:ReleaseParticleIndex(coil)  
+        end                    
     end                   
 end
 --not used, heal effects tend to lag if is trigger many times/s
@@ -136,7 +147,15 @@ function DropItemOnDeath(keys)
     end
 end
 
-
+function check_mkb_up(keys)
+    if IsServer() then
+        local caster = keys.caster
+        local has_mkb_up = caster:HasModifier("modifier_frostmore_mkb_up") 
+        if has_mkb_up then
+            caster:RemoveModifierByName("modifier_frostmore_mkb_up") 
+        end
+    end    
+end    
 
 ----stack tooltip
 if modifier_frostmore_stack_agi == nil then modifier_frostmore_stack_agi = class({}) end
@@ -161,3 +180,18 @@ function _Updatestack_count( count, owner )
         owner:SetModifierStackCount(modifier, owner, newCount) 
     end 
 end
+--- MKB UP true strike
+if modifier_frostmore_mkb_up == nil then modifier_frostmore_mkb_up = class({}) end
+
+
+function modifier_frostmore_mkb_up:IsHidden() return true end
+function modifier_frostmore_mkb_up:IsPurgable() return false end
+function modifier_frostmore_mkb_up:IsDebuff() return false end
+function modifier_frostmore_mkb_up:RemoveOnDeath() return false end
+function modifier_frostmore_mkb_up:DeclareFunctions()
+	return {MODIFIER_PROPERTY_IGNORE_MOVESPEED_LIMIT}
+end
+function modifier_frostmore_mkb_up:CheckState()
+	return {[MODIFIER_STATE_CANNOT_MISS] = true}
+end
+function modifier_frostmore_mkb_up:GetModifierIgnoreMovespeedLimit() return 1 end

@@ -404,13 +404,15 @@ function AOHGameMode:OnDamageDealt(damageTable)
 					local dmg_dealt = damageTable.damage -- arcane staff might update this value so i added after isArcane
 					if victim:HasModifier("modifier_jotaro_absolute_defense") then
 						if victim:GetMaxHealth() * 0.07 <= dmg_dealt then
+							local limit_hp = victim:GetMaxHealth() * 0.035
 							local part = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", PATTACH_OVERHEAD_FOLLOW, victim)
 							ParticleManager:DestroyParticle(part, false)
 							ParticleManager:ReleaseParticleIndex(part)
 							local iParticleID = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_OVERHEAD_FOLLOW, victim)
 							ParticleManager:ReleaseParticleIndex(iParticleID)													
 							SendOverheadEventMessage(nil, OVERHEAD_ALERT_BLOCKED, victim, 0, nil)
-							return false							
+							dmg_dealt = limit_hp
+							--return false							
 						end	
 					end	
 					if victim and victim:GetDayTimeVisionRange() ~= 1337 then --npc conduit(1337)
@@ -615,7 +617,7 @@ function AOHGameMode:InitVariables()
 			end
 		end
 	end	
-	self._goldRatio = 3.0 - (0.3 * (5 - self._playerNumber))
+	self._goldRatio = 3.5 - (0.25 * (5 - self._playerNumber))
 	print("updating ratios")
 	self._expRatio = 2.0 - (0.3 * (5 - self._playerNumber))
 	if self._playerNumber < 2 then

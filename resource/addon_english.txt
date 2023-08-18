@@ -2816,6 +2816,8 @@
 
 	"DOTA_Tooltip_ability_bounty_hunter_track_Description"							"Tracks an enemy hero, granting True Sight of the target, and information on how much gold it is carrying. Bounty Hunter moves fast when near the tracked unit and deals critical strikes when attacking it. If the target dies, Bounty Hunter and nearby heroes collect a bonus bounty of gold. Casting Track does not take you out of invisibility.\n<h1><font color='#DDC93F'>Bounty Hunter</font> <font color='#FFA32B'>Exclusive:</font> Seer Stone</h1> When you cast Seer Stone Reveal: Apply track to all enemies in the Aoe"
 	
+	"DOTA_Tooltip_ability_special_bonus_unique_bounty_hunter_custom_gold"	"+{s:value} Jinada Gold Steal"
+
 
 	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler"					"Drunken Brawler"
 	"DOTA_Tooltip_ability_mjz_brewmaster_drunken_brawler_Description"		"Gives a chance to avoid attacks and to deal critical damage. "
@@ -3290,7 +3292,7 @@
 	"DOTA_Tooltip_ability_mjz_faceless_void_backtrack_dodge_chance_pct"		"%Proc Chance: "
 		
 	"DOTA_Tooltip_ability_mjz_finger_of_death"						"Finger of Death"
-	"DOTA_Tooltip_ability_mjz_finger_of_death_Description"			"Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each life it consumes. \n<h1><font color='#DE3163'>UP: Super Scepter</font></h1> Each use gives 1 charge of Lion's Dagon and increases the damage for each Dagon charge multiplied by the base damage of this skill. \n<h1><font color='#6E32A5'>Lion's</font> <font color='#FFA32B'>Exclusive:</font> Lion's Dagon</h1> After Lion's Dagon use, it applies the Finger of Death ability to the same target. <br><br> Increases Lion's Dagon radius from <font color='#0094FF'>Aghanim's Scepter</font> equal to the radius of Finger of Death, but blocks the neutral slot. <br> With 6+ <font color='#DE3163'>Super Synth</font> effects removes this limitation."
+	"DOTA_Tooltip_ability_mjz_finger_of_death_Description"			"Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each life it consumes. \n<h1><font color='#DE3163'>UP: Super Scepter</font></h1> Each use gives 1 charge of Lion's Dagon and increases the damage for each Dagon charge multiplied by the base damage of this skill. \n<h1><font color='#6E32A5'>Lion's</font> <font color='#FFA32B'>Exclusive:</font> Lion's Dagon</h1> After Lion's Dagon use, it applies the Finger of Death ability to the same target. <br><br> Increases Lion's Dagon radius from <font color='#0094FF'>Aghanim's Scepter</font> equal to the radius of Finger of Death, but blocks the neutral slot. <br> With 5+ <font color='#DE3163'>Super Synth</font> effects removes this limitation."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_scepter_description"	"Increases damage, reduces cooldown and cancels mana cost. Finger of Death hits all units in a small area."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_Lore"					"Lion's disfigured hand is also the source of his greatest power, capable of flooding victims with malefic force."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_Note0"                "Can get multiple stacks from the same unit"
@@ -7891,7 +7893,7 @@ Nimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_modifier_item_high_tech_boots_active_Description"		"Temporarily evading a portion of all damage."
 
 "DOTA_Tooltip_ability_item_high_tech_boots2"							 "Speedsters"
-"DOTA_Tooltip_ability_item_high_tech_boots2_Description"					"<h1>Active: Speed Force</h1> Avoids a portion of all incoming damage equal to %speed_as_block%%% of your movement speed for %duration% seconds.\n<h1>Passive: Speedster</h1>Removes speed limit, and cannot be slowed or blocked by units.\n<h1>Passive: Supersonic Strike</h1>%ms_dmg_pct%%% of Movement Speed is transferred to Attack Damage."
+"DOTA_Tooltip_ability_item_high_tech_boots2_Description"					"<h1>Active: Speed Force</h1> Avoids a portion of all incoming damage equal to %speed_as_block%%% of your movement speed for %duration% seconds.\n<h1>Passive: Speedster</h1>Removes speed limit, and cannot be slowed or blocked by units.\n<h1>Passive: Supersonic Strike</h1>%ms_dmg_pct%%% of Movement Speed is transferred to Base Attack Damage."
 "DOTA_Tooltip_ability_item_high_tech_boots2_Lore"						"Theorized to move the universe rather than move you."
 "DOTA_Tooltip_ability_item_high_tech_boots2_Note0"					  "Your turn rate will be set to 1(highest turn rate)"
 "DOTA_Tooltip_ability_item_high_tech_boots2_bonus_movement_speed"	"+$move_speed"
@@ -8409,7 +8411,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_damage"									"Base Damage:"
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_damage_per_use"							"Damage Bonus Per Use:"
 
-		"DOTA_Tooltip_ability_item_lions_cursed_item_slot"			""
+		"DOTA_Tooltip_ability_item_lions_cursed_item_slot"								"If lion has Aghanim and equips Lion's Dagon will get his Slot blocked until he Reaches 5 Super Scepters eaten"
 		//<<<<
 "DOTA_Tooltip_Ability_item_mjz_demon_talon"							"Demon Talon"
 "DOTA_Tooltip_Ability_item_mjz_demon_talon_Description"				"<h1>Passive: Second Hand</h1>Grants each attack a %proc_chance%%% chance to pierce through evasion and deal %proc_damage% bonus physical damage. Illusions and units deal half damage."
@@ -8730,12 +8732,12 @@ Required Level: %required_level%
 		//<<<<
 		//>>>>	MJZ Edible Aether Lens
 		"DOTA_Tooltip_Ability_item_mjz_aether_lens"							"Edible Aether Lens"
-		"DOTA_Tooltip_ability_item_mjz_aether_lens_Description"				"<h1>Active: Eat</h1><font color='#00FF40'>Increases Cast Range by 250, Spell Damage by 25%% and removes cast time.</font>\n<h1>Passive: Aethereal Focus</h1>Increases Cast Range by %cast_range_bonus%."
+		"DOTA_Tooltip_ability_item_mjz_aether_lens_Description"				"<h1>Active: Eat</h1><font color='#00FF40'>Increases Cast Range by 250, Spell Damage by 25%% and reduces cast time to half.</font>\n<h1>Passive: Aethereal Focus</h1>Increases Cast Range by %cast_range_bonus%."
 		"DOTA_Tooltip_ability_item_mjz_aether_lens_bonus_mana"				"+$mana"
 		"DOTA_Tooltip_ability_item_mjz_aether_lens_bonus_mana_regen"		"+$mana_regen"
 		"DOTA_Tooltip_ability_item_mjz_aether_lens_Lore"					"Polished with the incantation of his final breath, the gift of a dying mage to his sickly son."
 		"DOTA_Tooltip_modifier_item_mjz_aether_lens_stats"					"Edible Aether Lens"
-		"DOTA_Tooltip_modifier_item_mjz_aether_lens_stats_Description"		"Increases Cast Range by %dMODIFIER_PROPERTY_CAST_RANGE_BONUS%, Spell Damage by %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% and removes cast time."
+		"DOTA_Tooltip_modifier_item_mjz_aether_lens_stats_Description"		"Increases Cast Range by %dMODIFIER_PROPERTY_CAST_RANGE_BONUS%, Spell Damage by %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% and reduce cast time to Half."
 		//<<<<
 		
 		//>>>>	Armlet of Mordiggian LVL 2
@@ -9339,7 +9341,7 @@ Required Level: %required_level%
 		//<<<<
 		//>>>>	MJZ Monke King Bar LVL 5
 		"DOTA_Tooltip_Ability_item_mjz_monkey_king_bar_5"							"Monke King Bar LVL 5"
-		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_Description"				"<h1>Passive: Pierce</h1>Grants each attack a %bonus_chance%%% chance to pierce through evasion and deal %bonus_chance_damage% bonus magical damage.\n<h1><font color='#0597EB'>UP:Frostmourne Frostbite</font></h1><font color='lightblue'> If your level is above 35 Forstbite passive CD is affected by CDR.</font>"
+		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_Description"				"<h1>Passive: Pierce</h1>Grants each attack a %bonus_chance%%% chance to pierce through evasion and deal %bonus_chance_damage% bonus magical damage.\n<h1><font color='#0597EB'>UP:Frostmourne Frostbite</font></h1><font color='lightblue'> If your level is above 35 Forstbite passive CD is affected by CDR, Gain <font color='#07ECFF'>TrueStrike</font> and No Speed limit.</font>"
 		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_bonus_damage"				"+$damage"
 		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_bonus_attack_speed"		"+$attack"
 		"DOTA_Tooltip_ability_item_mjz_monkey_king_bar_5_Lore"						"A powerful staff used by a master warrior."

@@ -277,7 +277,7 @@ function Jinada(parent, target, ability, track)
 		ParticleManager:ReleaseParticleIndex(particle_hit_fx)
 	end
 --	if target:IsHero() or target:IsCreature() then
-		local gold_steal = parent:CustomValue("mjz_bounty_hunter_jinada", "gold_steal") + talent_value(parent, "special_bonus_unique_bounty_hunter")
+		local gold_steal = parent:CustomValue("mjz_bounty_hunter_jinada", "gold_steal") + talent_value(parent, "special_bonus_unique_bounty_hunter_custom_gold")
 		
 		local gold_pfx = ParticleManager:CreateParticle("particles/units/heroes/hero_bounty_hunter/bounty_hunter_jinada.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
 --		ParticleManager:SetParticleControl(gold_pfx, 0, target:GetAbsOrigin())

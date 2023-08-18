@@ -2777,6 +2777,35 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+
+
+
+* Round 1 Clinkz reduced mana regen, arrow dmg, and reduced his hp by more than half. Round 2 Dragon attack dmg reduced, Round 3 Juggernaut boss reduced his hp by more than half.
+* Finger of Death exclusive effect to unlock neutral slot from 6SS to 5SS.
+* Increased Gold Ratio (more gold) for 2 or more players.
+* Increased Roshan Super Scepter drop rate for all player combinations(nr),now after Roshan nr 5 instead of 10% to drop an Elemental is now 100%(2 times max),after that is normal chance(10%),that's only for 2+ players.
+* Reduced cast time for most skills (mostly those above 0.3s)
+* Updated Marci E(Sidekick) and replaced 2 talents.
+* Dragonhead item buffed.
+* Monkey King Bar 5 UP effect now adds TrueStrike and no speed limit.
+* Frostmore's Frostbite speed and HP regeneration multiplayer increased.
+* Speedster passive from bonus attack Dmg to base attack Dmg (reduced from 50% to 30%, 90% for Marci).
+* Demigods and Gods Hp limit block (7%maxhp) when triggered will now only reduce that dmg source to 3.5% instead of blocking it.
+* Speed orbs can now be shared.
+* Removed Normal Dark Willow Bedlam from random pool and other sources (it was crashing the game).
+* Fixed Dragon Knight Fire Breath animation bug during Slayer (and probably some other animations too).
+* And some other stuff
+
+
+
+
+
+
+
+
+
+
+
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).
@@ -2818,7 +2847,7 @@ Antimage Q = Acts as antimage lvl 20 talent (ignores base armor)
 
 Insatiable Hunger = doubles the chance of the SS effect.
 
-Speedsters : from 50% ms as bonus dmg to 140%
+Speedsters : from 30% ms as base attack dmg to 90%
 
 Amalgamation : can have both Symbiosis effects at the same time
 

@@ -78,7 +78,7 @@ function GetRandomAbilityName( hero )
         --"brewmaster_drunken_brawler",
         --"mjz_faceless_void_backtrack",
         --"antimage_custom_mana_break",
-        "dark_willow_bedlam",
+        --"dark_willow_bedlam", 
         "dark_willow_bedlam_lua",
         "naga_siren_rip_tide",
         "jotaro_absolute_defense3",

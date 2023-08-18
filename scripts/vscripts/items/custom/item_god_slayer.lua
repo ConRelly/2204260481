@@ -229,9 +229,9 @@ function modifier_atomic_samurai_focused_atomic_slash_thinker_2:OnIntervalThink(
 		end
 		self:CreateTrail(pos2, pos)
 
-		self.caster:SetAbsOrigin(target:GetAbsOrigin())
-		FindClearSpaceForUnit(self.caster, target:GetAbsOrigin(), false)
-		
+		--self.caster:SetAbsOrigin(target:GetAbsOrigin())
+		--FindClearSpaceForUnit(self.caster, target:GetAbsOrigin(), false)
+		FindClearRandomPositionAroundUnit(self.caster, target, math.random(120))
 		if self.caster:IsDisarmed() then return end
 
 		--EmitSoundOn("Hero_Juggernaut.ArcanaTrigger", target)

@@ -74,8 +74,9 @@ if IsServer() then
 			vVelocity = vDirection * speed,
 			fDistance = range,
 			Source = caster,
+			fExpireTime = GameRules:GetGameTime() + 5,
 			iUnitTargetTeam = self:GetAbilityTargetTeam(),
-			iUnitTargetType = self:GetAbilityTargetType() ,
+			iUnitTargetType = self:GetAbilityTargetType(),
 		}
 		ProjectileManager:CreateLinearProjectile(info)
 	end

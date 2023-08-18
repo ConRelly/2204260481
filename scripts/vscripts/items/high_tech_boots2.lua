@@ -30,7 +30,7 @@ function modifier_item_high_tech_boots2:DeclareFunctions()
 		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
-		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+		MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
 		MODIFIER_PROPERTY_IGNORE_MOVESPEED_LIMIT,
 		MODIFIER_PROPERTY_TURN_RATE_OVERRIDE,
@@ -66,7 +66,7 @@ function modifier_item_high_tech_boots2:GetModifierMoveSpeedBonus_Percentage()
 		return self:GetAbility():GetSpecialValueFor("bonus_movement")
 	end	
 end
-function modifier_item_high_tech_boots2:GetModifierPreAttack_BonusDamage()
+function modifier_item_high_tech_boots2:GetModifierBaseAttack_BonusDamage()
 	if self:GetAbility() then
 		local caster = self:GetParent()
 		if caster:HasModifier("modifier_marci_unleash_flurry") then
@@ -94,10 +94,12 @@ function modifier_item_high_tech_boots2_active:DeclareFunctions()
 	return {MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK}
 end
 function modifier_item_high_tech_boots2_active:GetModifierTotal_ConstantBlock(keys)
-	local parent = self:GetParent()
-	local finalBlock = (parent:GetIdealSpeed() * self:GetAbility():GetSpecialValueFor("speed_as_block"))  * 0.01
-	parent:AddNewModifier(parent, nil, "modifier_item_high_tech_boots2_effect", {duration = 1})
-	return finalBlock
+	if self:GetAbility() then
+		local parent = self:GetParent()
+		local finalBlock = (parent:GetIdealSpeed() * self:GetAbility():GetSpecialValueFor("speed_as_block"))  * 0.01
+		parent:AddNewModifier(parent, nil, "modifier_item_high_tech_boots2_effect", {duration = 1})
+		return finalBlock
+	end
 end
 
 

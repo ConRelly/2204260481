@@ -137,7 +137,7 @@ function GetRandomAbilityName( hero )
 		"nyx_assassin_custom_vendetta",
 		--"skywrath_mage_ancient_seal",
 		--"mjz_axe_counter_helix",
-		"dark_willow_bedlam",
+		--"dark_willow_bedlam", --crash
 		--"dark_willow_bedlam",
 		--"dark_willow_bedlam",
 		"alchemist_power_of_gold2",

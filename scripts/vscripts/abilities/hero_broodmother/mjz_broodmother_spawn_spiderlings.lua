@@ -271,7 +271,7 @@ function GetRandomAbilityName(hero)
         "ogre_magi_bloodlust",
         "nyx_assassin_custom_vendetta",
         "skywrath_mage_ancient_seal",
-        "dark_willow_bedlam",
+        --"dark_willow_bedlam",
         "visage_soul_assumption",
         "medusa_stone_gaze",
         "wisp_overcharge",

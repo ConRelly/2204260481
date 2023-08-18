@@ -217,6 +217,7 @@ function CRoshanSystem:SetRespawnTime(flMinutes)
 end
 
 -- Create Roshan
+local essence_drop = 2
 function CRoshanSystem:CreateRoshan()
     local hRoshan = self:GetRoshan()
     if ( hRoshan ) then
@@ -267,15 +268,15 @@ function CRoshanSystem:CreateRoshan()
     _ss_rosh_drop = false
     if ( self._iNum >= 3 ) then
         local random_nr = math.random(0,100)
-        local chance = 18
+        local chance = 20
         if self._playernr == 2 then
-            chance = 25
+            chance = 35
         end
         if self._playernr == 3 then
-            chance = 37
+            chance = 45
         end
         if self._playernr > 3 then
-            chance = 45
+            chance = 50
         end                    
         if random_nr < chance then
             print(random_nr .. " luky nr")
@@ -289,11 +290,14 @@ function CRoshanSystem:CreateRoshan()
     --if ( self._iNum >= 4 ) then
     --    hRoshan:AddItemByName('item_ultimate_scepter_2')        -- 神杖
     --end
-
+ 
     if ( self._iNum >= 5 ) then
         hRoshan:AddItemByName('item_moon_shard')       -- 银月
         if self._playernr > 2 then
-            if RollPercentage(10) then
+            if essence_drop > 0  then
+                hRoshan:AddItemByName('item_all_essence')
+                essence_drop = essence_drop -1
+            elseif RollPercentage(10) then
                 hRoshan:AddItemByName('item_all_essence')
             end    
         end    

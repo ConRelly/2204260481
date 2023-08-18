@@ -189,7 +189,7 @@ function GetRandomAbilityName(hero)
         "nyx_assassin_custom_vendetta",
         "skywrath_mage_ancient_seal",
         "disruptor_custom_ion_hammer",        -- crash on snowball
-        "dark_willow_bedlam",
+        --"dark_willow_bedlam",
         "rubick_arcane_supremacy",
         "jakiro_liquid_fire",
         "obsidian_destroyer_arcane_orb",

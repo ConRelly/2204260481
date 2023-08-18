@@ -2185,12 +2185,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"500 1000"
+			"bonus_health"			"1000 3000"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"		"50 100"
+			"bonus_strength"		"100 300"
 		}
 		"05"
 		{
@@ -2200,12 +2200,12 @@
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aura_bonus_health"		"2750 4250"
+			"aura_bonus_health"		"3750 12250"
 		}
 		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aura_bonus_strength"	"150 375"
+			"aura_bonus_strength"	"200 675"
 		}		
 	}
 }
@@ -2242,12 +2242,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"550 1000"
+			"bonus_health"			"1000 3000"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"		"50 100"
+			"bonus_strength"		"100 300"
 		}
 		"05"
 		{
@@ -2257,12 +2257,12 @@
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aura_bonus_health"		"2750 4250"
+			"aura_bonus_health"		"3750 12250"
 		}
 		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aura_bonus_strength"	"150 375"
+			"aura_bonus_strength"	"200 675"
 		}
 		"08"
 		{
@@ -3024,12 +3024,12 @@
 		"08"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"ms_dmg_pct"			"50"
+			"ms_dmg_pct"			"30"
 		}
 		"09"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"marciSS_ms_dmg_pct"			"140"
+			"marciSS_ms_dmg_pct"			"90"
 		}		
 	}
 }
@@ -3836,6 +3836,7 @@
 		"ItemStockTime"					"1500.0"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"ItemAliases"					"speed"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemStackable"					"1"
@@ -4445,7 +4446,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_base_damage"		 		"150"
+			"bonus_base_damage"		 		"250"
 		}
 		"01"
 		{
@@ -12530,12 +12531,12 @@
 			"28"						
 			{
 				"var_type"	  				"FIELD_INTEGER"
-				"speed_mult_dmg"			"10"
+				"speed_mult_dmg"			"20"
 			}
 			"29"						
 			{
 				"var_type"	  				"FIELD_INTEGER"
-				"healt_reg_mult_dmg"		"21"
+				"healt_reg_mult_dmg"		"35"
 			}
 			"30"						
 			{
@@ -12561,6 +12562,11 @@
 		}
 		"OnUnequip"
 		{
+			"RunScript"
+			{
+				"ScriptFile"			"items/item_mjz_frostmourne.lua"
+				"Function"				"check_mkb_up"
+			}			
 		}
 		"OnOwnerDied"
 		{
@@ -17679,7 +17685,7 @@
 			"09"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"phase_duration"				"15.0"
+				"phase_duration"				"60.0"
 			}
 			"10"
 			{
