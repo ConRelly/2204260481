@@ -355,7 +355,7 @@
 	{
 		"Ability1"					"backdoor_protection_in_base"//偷塔保护
 		"Ability2"					"filler_ability"			//庇佑
-		"Ability3"					"goodguys_healers"			// 无敌
+		//"Ability3"					"goodguys_healers"			// 无敌
 
 		"StatusHealth"				"3750"
 	}

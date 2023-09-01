@@ -1467,7 +1467,7 @@
 		"06"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_damage"					"7350"
+			"bonus_damage"					"12400"
 		}
 		"07"
 		{
@@ -1482,7 +1482,7 @@
 		"09"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"chance_hit"				"20"
+			"chance_hit"				"35"
 		}
 		"10"
 		{
@@ -18164,7 +18164,7 @@
 			"7"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"buff_amp"				"15"
+				"buff_amp"				"25"
 			}
 			"8"
 			{
@@ -20526,7 +20526,7 @@
 			"12"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"stack_duration"			"3"
+				"stack_duration"			"5"
 			}
 			"13"
 			{

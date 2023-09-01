@@ -2724,59 +2724,6 @@
 			}
 		}
 	}
-	//=================================================================================================================
-	// Arc warden: Tempest Double
-	//=================================================================================================================
-	"arc_warden_tempest_double"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"5683"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"FightRecapLevel"				"2"
-		"AbilitySound"					"Hero_ArcWarden.TempestDouble"
-		"HasScepterUpgrade"				"1"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.15"
-		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
-		"AbilityCastGestureSlot"		"DEFAULT"
-		
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60.0 55.0 50.0"
-
-
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"18 22 26"
-				"LinkedSpecialBonus"		"special_bonus_unique_arc_warden_6"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bounty"				"180 240 300"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"penalty_distance"				"2000"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_damage_penalty"				"50"
-			}
-		}
-	}
 
 	"arc_warden_scepter"
 	{
@@ -8730,8 +8677,8 @@
 		{
 			"mana_pool_damage_pct"	
 			{
-				"value"										"10 12 14 16"
-				"special_bonus_unique_outworld_devourer"	"+4"
+				"value"										"14 16 18 20"
+				"special_bonus_unique_outworld_devourer"	"+9"
 			}
 			"mana_cost_percentage"							"5"
 			"bounce_radius"

@@ -260,7 +260,10 @@
 		}
 	}
 
-// Dawnbreaker: Luminosity
+
+	//=================================================================================================================
+	// Ability: Dawnbreaker Luminosity
+	//=================================================================================================================
 	"dawnbreaker_custom_luminosity"
 	{
 		"BaseClass"						"dawnbreaker_luminosity"
@@ -272,49 +275,37 @@
 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastPoint"				"0.0"
-		"AbilitySpecial"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+
+
+		"AbilityValues"
 		{
-			"01"
+			"attack_count"				
 			{
-				"var_type"					"FIELD_INTEGER"
-				"heal_radius"				"1450"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"heal_pct"					"7"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"220 340 460 580 650 760 1150 1550 2040 2450"
-				"LinkedSpecialBonus"		"special_bonus_unique_dawnbreaker_luminosity_crit"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_count"				"7"
+				"value"		"6"
 				"LinkedSpecialBonus"			"special_bonus_unique_dawnbreaker_luminosity_attack_count"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"				  
 			}
-			"05"
+			"heal_radius"				
 			{
-				"var_type"					"FIELD_FLOAT"
-				"proc_cooldown"				"0.00"
+				"value"		"1450"
+				"affected_by_aoe_increase"	"1"	
 			}
-			"06"
+			"heal_pct"					"50"
+			"heal_from_creeps"			"30"
+			"bonus_damage"				
 			{
-				"var_type"					"FIELD_INTEGER"
-				"heal_from_creeps"			"30"
+				"value"		"220 340 460 580 650 760 1150 1550 2040 2450"
+				"LinkedSpecialBonus"		"special_bonus_unique_dawnbreaker_luminosity_crit"
 			}	
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"allied_healing_pct"		"25"
-			}				
-		
+			"proc_cooldown"				"0.00"
+			"allied_healing_pct"		"50"
+			"cooldown_reduction"		"2"
 		}
 	}
+
 
 // Dawnbreaker: Solar Guardian
 	"dawnbreaker_custom_solar_guardian"
@@ -11586,7 +11577,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"health_ratio"					"10"
+				"health_ratio"					"40"
 			}
 		}
 	}
@@ -30337,7 +30328,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_damage_pct"		"22 35 49 60"
+				"health_damage_pct"		"42 65 89 140"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_pudge_rot_health"
 			}
 		}
@@ -30376,7 +30367,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"35"
+				"value"						"55"
 			}
 		}
 	}
@@ -41741,7 +41732,7 @@
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"crit_chance"			"7"
+			"crit_chance"			"8"
 		}
 		"06"
 		{
@@ -41751,7 +41742,7 @@
 		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"stack_chance"			"50"
+			"stack_chance"			"55"
 			"LinkedSpecialBonus"	"special_bonus_unique_weaver_back_in_time"
 		}
 		"08"
@@ -41762,7 +41753,7 @@
 		"09"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"ms_stack"				"30"
+			"ms_stack"				"50"
 		}
 		"10"
 		{
@@ -43888,14 +43879,14 @@
 			"dagger_bleed_damage"		"20"
 			"dagger_bleed_damage_amp"	"5"
 			"dagger_bleed_heal_reduction" "4" // hardcoded
-			"dagger_bleed_max_stacks"    "15"
-			"dagger_bleed_duration"      "10"
+			"dagger_bleed_max_stacks"    "20"
+			"dagger_bleed_duration"      "12"
 			"dagger_aura_range"          "300"
 			"gun_bat"					"0.33"
-			"dagger_stack_agi"          "0.30"
-			"dagger_stack_str"          "0.30"
-			"dagger_stack_dmg"          "15"
-			"dagger_stack_ms"           "0.20"
+			"dagger_stack_agi"          "0.7"
+			"dagger_stack_str"          "0.7"
+			"dagger_stack_dmg"          "25"
+			"dagger_stack_ms"           "0.5"
 			"dagger_stack_hp"           "5"
 			"dagger_ss_range"           "1000"
 		}

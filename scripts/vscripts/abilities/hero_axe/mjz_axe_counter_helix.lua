@@ -1,7 +1,7 @@
 
 function OnAttackStart( keys )
 	local caster = keys.caster
-	if HasTalent(caster, 'special_bonus_unique_axe_3') then
+	if HasTalent(caster, 'special_bonus_unique_axe_3_custom') then
 		CounterHelix(keys)
 	end
 end

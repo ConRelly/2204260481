@@ -18,7 +18,7 @@ function modifier_siltbreaker_bubble:OnCreated( kv )
 	self.bubble_tick = self:GetAbility():GetSpecialValueFor( "bubble_tick" )
 	self.bubble_damage = self:GetAbility():GetSpecialValueFor( "bubble_damage" )
 
-	self:GetParent():AddNewModifier( nil, nil, "modifier_disable_aggro", { duration = -1 } )
+	--self:GetParent():AddNewModifier( nil, nil, "modifier_disable_aggro", { duration = -1 } )
 
 	self.hBubble = CreateUnitByName( "npc_dota_creature_siltbreaker_bubble", self:GetParent():GetAbsOrigin(), false, self:GetParent(), self:GetParent(), self:GetCaster():GetTeamNumber() )
 

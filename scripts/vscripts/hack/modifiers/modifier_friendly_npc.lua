@@ -11,7 +11,7 @@ end
 
 function modifier_friendly_npc:OnCreated()
 	if IsServer() then
-		self:GetParent():AddNewModifier( nil, nil, "modifier_disable_aggro", { duration = -1 } )
+		--self:GetParent():AddNewModifier( nil, nil, "modifier_disable_aggro", { duration = -1 } )
 	end
 end
 

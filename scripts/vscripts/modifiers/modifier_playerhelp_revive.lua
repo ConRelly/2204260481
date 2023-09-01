@@ -1,4 +1,5 @@
 
+--LinkLuaModifier("modifier_playerhelp_revive", "modifiers/modifier_playerhelp_revive.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_playerhelp_revive = class({})
 
 

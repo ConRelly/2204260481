@@ -203,7 +203,7 @@ function modifier_true_master_dagger_bleed:OnCreated(kv)
 	print("on created dagger bleed")
 	self.stack_expire_times = {}
 	if stacks > 0 then 
-		self:StartIntervalThink(1)
+		self:StartIntervalThink(0.5)
 	else
 		self:StartIntervalThink(-1)	
 	end	
@@ -225,7 +225,7 @@ function modifier_true_master_dagger_bleed:OnIntervalThink()
 			ability = ability,
 			damage = bleed_damage,
 			damage_type = DAMAGE_TYPE_PHYSICAL,
-			damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR,
+			damage_flags = DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR,
 		})
 		if caster:HasModifier("modifier_super_scepter") then
 			local distance = (parent:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D()
@@ -233,13 +233,14 @@ function modifier_true_master_dagger_bleed:OnIntervalThink()
 			if _G._challenge_bosss > 0 then
 				dager_ss_range = dager_ss_range * (_G._challenge_bosss + 1)
 			end	
+			local give_staks = math.ceil(stacks / 2)
 			if distance <= dager_ss_range then 
 				if caster:HasModifier("modifier_true_master_dagger_stacks") then
 					local modifier = caster:FindModifierByName("modifier_true_master_dagger_stacks")
-					modifier:SetStackCount(modifier:GetStackCount() + stacks)
+					modifier:SetStackCount(modifier:GetStackCount() + give_staks)
 				else
 					local new_modif = caster:AddNewModifier(caster, ability, "modifier_true_master_dagger_stacks", {})
-					new_modif:SetStackCount(stacks)
+					new_modif:SetStackCount(give_staks)
 				end	
 			end	
 		end	
@@ -267,11 +268,11 @@ function modifier_true_master_dagger_bleed:OnUnitMoved(keys)
             if parent.previoustick then
                 local distance = (parent:GetAbsOrigin() - parent.previoustick):Length2D()
                 parent.distance_accumulated = (parent.distance_accumulated or 0) + distance
-                if parent.distance_accumulated >= 700 and self:GetStackCount() < self:GetAbility():GetSpecialValueFor("dagger_bleed_max_stacks") then
+                if parent.distance_accumulated >= 500 and self:GetStackCount() < self:GetAbility():GetSpecialValueFor("dagger_bleed_max_stacks") then
                     self:IncrementStackCount()
                     self:ForceRefresh()
 					self:StartIntervalThink(1)
-                    parent.distance_accumulated = parent.distance_accumulated - 700
+                    parent.distance_accumulated = parent.distance_accumulated - 500
                 end
                 parent.previoustick = parent:GetAbsOrigin()
             else

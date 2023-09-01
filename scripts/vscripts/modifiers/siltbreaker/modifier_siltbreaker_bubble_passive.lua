@@ -13,7 +13,7 @@ function modifier_siltbreaker_bubble_passive:OnCreated( kv )
 	if IsServer() then
 		self.hOwner = self:GetParent():GetOwnerEntity()
 
-		self:GetParent():AddNewModifier( nil, nil, "modifier_disable_aggro", { duration = -1 } )
+		--self:GetParent():AddNewModifier( nil, nil, "modifier_disable_aggro", { duration = -1 } )
 		self:GetParent():AddNewModifier( nil, nil, "modifier_magic_immune", { duration = -1 } )
 
 		if self.hOwner then

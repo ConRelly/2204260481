@@ -2802,7 +2802,15 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* FIXED last dota patch major bugs (report on discord if you find more), javascript code is still w8-ting for valve
 
+* Fixed arc warden ultimate location and added CDR talent for clone.
+* Added axe counter helix talent. increased pudge counter helix hp ratio.
+* Root (Pudge and Abaddon) now deals full dmg for each tick instead of splitting for 1s dps (for enemy), and some other buffs for %dmg and challenge bonus. 
+* Slayer Rebound Aura dmg now scales by 5 times your Zenkai stacks instead of 1x.
+* Titan Relic positive buff duration increased from 15% to 25%.
+* Broken Bow now provides base attack instead of bonus dmg(12k) and passive proc from 20% to 35%.
+* Pango Dagger Form Bleed Trail now ticks every 0.5s instead of 1s, gives more stats per stack, duration to 12s from 10s, distance enemy has to make for a stack from 700 units to 500.
 
 
 

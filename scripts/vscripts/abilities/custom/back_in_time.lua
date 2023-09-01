@@ -249,7 +249,7 @@ function modifier_effect2:OnIntervalThink()
 			end	
 			local modif_buff = "modifier_back_in_time_buff"
 			local mbuff = caster:FindModifierByName(modif_buff)	
-			local nr_stacks = mbuff:GetStackCount()
+			local nr_stacks = mbuff:GetStackCount() * 5
 			local damage = base_damage * nr_stacks
 			if damage == 0 then return nil end
 			damage = damage * interval

@@ -1,4 +1,5 @@
 
+--LinkLuaModifier("modifier_hard_mode_boss", "modifiers/modifier_hard_mode_boss.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_hard_mode_boss = class({})
 
 function modifier_hard_mode_boss:IsBuff()

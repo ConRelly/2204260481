@@ -1,3 +1,5 @@
+
+--LinkLuaModifier("modifier_boss", "modifiers/modifier_boss.lua", LUA_MODIFIER_MOTION_NONE)
 resist80 = {
 	["npc_boss_shredder"] = true,
 }

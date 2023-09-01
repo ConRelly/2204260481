@@ -108,6 +108,12 @@ function AOHGameMode:InitGameMode()
 	AOHGameMode.numPhilo[2] = 0
 	AOHGameMode.numPhilo[3] = 0
 	AOHGameMode.numPhilo[4] = 0
+	AOHGameMode.edible_frag = {}
+	AOHGameMode.edible_frag[0] = 2
+	AOHGameMode.edible_frag[1] = 2
+	AOHGameMode.edible_frag[2] = 2
+	AOHGameMode.edible_frag[3] = 2
+	AOHGameMode.edible_frag[4] = 2	
 	_G._hardMode = false
 	_G._extra_mode = false
 	_G.super_courier = {false, false, false, false, false}
@@ -1089,10 +1095,18 @@ function AOHGameMode:OnHeroLevelUp(event)
 			if self._playerNumber < 2 and edible_bonus_fragment > 0 then
 				--mainHero:AddItemByName("item_edible_fragment")
 				DropItemOrInventory(nPlayerID, "item_edible_fragment")
-				edible_bonus_fragment = edible_bonus_fragment - 1		
+				edible_bonus_fragment = edible_bonus_fragment - 1
+			elseif AOHGameMode.numPhilo[nPlayerID] > 0 and heroLevel > 79 then
+				print("guarantee edible")
+				DropItemOrInventory(nPlayerID, "item_edible_fragment")
+				AOHGameMode.numPhilo[nPlayerID] = 0				
 			elseif RandomInt( 0,100 ) < 25 then
 				DropItemOrInventory(nPlayerID, "item_edible_fragment")
 				--mainHero:AddItemByName("item_edible_fragment")
+			end
+			if AOHGameMode.numPhilo[nPlayerID] > 0 then
+				print("guarantee edible")
+				DropItemOrInventory(nPlayerID, "item_edible_fragment")
 			end
 		end
 	end

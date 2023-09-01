@@ -146,13 +146,13 @@ if IsServer() then
 				rot_damage = math.floor(rot_damage * 1.5)
 			end 
 		end
-		local flDamagePerTick = math.ceil(self.rot_tick * rot_damage)
+		--local flDamagePerTick = math.ceil(self.rot_tick * rot_damage) -- not used for a buff reason and reduce in process
 
 		if caster:IsAlive() then
 			local damage = {
 				victim = parent,
 				attacker = caster,
-				damage = flDamagePerTick,
+				damage = rot_damage,
 				damage_type = ability:GetAbilityDamageType(),
 				ability = ability,
 			}

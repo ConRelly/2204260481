@@ -31,7 +31,7 @@ function modifier_item_broken_bow:DeclareFunctions()
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
 		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
 		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
-		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+		MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
 		MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
 		MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS,
 
@@ -53,7 +53,7 @@ end
 function modifier_item_broken_bow:GetModifierConstantManaRegen()
 	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
 end
-function modifier_item_broken_bow:GetModifierPreAttack_BonusDamage()
+function modifier_item_broken_bow:GetModifierBaseAttack_BonusDamage()
 	return self:GetAbility():GetSpecialValueFor("bonus_damage")
 end
 function modifier_item_broken_bow:GetModifierAttackRangeBonus()
