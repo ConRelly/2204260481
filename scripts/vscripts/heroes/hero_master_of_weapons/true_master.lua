@@ -6,6 +6,8 @@ LinkLuaModifier("modifier_true_master_dagger_stacks", "heroes/hero_master_of_wea
 LinkLuaModifier("modifier_true_master_gun", "heroes/hero_master_of_weapons/true_master", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_true_master_gun_reload", "heroes/hero_master_of_weapons/true_master", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_true_master_dagger_bleed_initial", "heroes/hero_master_of_weapons/true_master", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_true_master_dagger_bleed_buff_speed", "heroes/hero_master_of_weapons/true_master", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_true_master_dagger_bleed_buff_speed_aura", "heroes/hero_master_of_weapons/true_master", LUA_MODIFIER_MOTION_NONE)
 
 
 true_master = class({})
@@ -200,7 +202,6 @@ function modifier_true_master_dagger_bleed:OnCreated(kv)
 	local parent = self:GetParent()
 	local caster = self:GetCaster()
 	local stacks = self:GetStackCount()
-	print("on created dagger bleed")
 	self.stack_expire_times = {}
 	if stacks > 0 then 
 		self:StartIntervalThink(0.5)
@@ -216,9 +217,18 @@ function modifier_true_master_dagger_bleed:OnIntervalThink()
 	local caster = self:GetCaster()
 	local parent = self:GetParent()
 	local ability = self:GetAbility()
-	if caster and parent and parent:IsAlive() and stacks > 1 then
+	if caster and parent and parent:IsAlive() and stacks > 0 then
 		local bleed_damage = (caster:GetAttackDamage() * ability:GetSpecialValueFor("dagger_bleed_damage") / 100) * stacks
 		bleed_damage = math.floor(bleed_damage + (parent:GetHealth() * 0.01))
+		if ability:GetAutoCastState() then
+			if not parent:HasModifier("modifier_true_master_dagger_bleed_buff_speed") then
+				parent:AddNewModifier(caster, ability, "modifier_true_master_dagger_bleed_buff_speed", {})
+			end	
+		else
+			if parent:HasModifier("modifier_true_master_dagger_bleed_buff_speed") then
+				parent:RemoveModifierByName("modifier_true_master_dagger_bleed_buff_speed")
+			end
+		end	
 		ApplyDamage({
 			victim = parent,
 			attacker = caster,
@@ -247,6 +257,7 @@ function modifier_true_master_dagger_bleed:OnIntervalThink()
 		self:UpdateStacks()	
 	end
 end
+
 
 function modifier_true_master_dagger_bleed:DeclareFunctions()
 	return {
@@ -295,6 +306,9 @@ function modifier_true_master_dagger_bleed:OnDestroy(kv)
 	if not IsServer() then return end
 	local parent = self:GetParent()
 	parent.previoustick = nil
+	if parent:HasModifier("modifier_true_master_dagger_bleed_buff_speed") then
+		parent:RemoveModifierByName("modifier_true_master_dagger_bleed_buff_speed")
+	end
 end	
 
 function modifier_true_master_dagger_bleed:GetEffectName()
@@ -312,7 +326,66 @@ function modifier_true_master_dagger_bleed:UpdateStacks()
         self:SetStackCount(#self.stack_expire_times)
     end
 end
+---bleed speed enemy
+modifier_true_master_dagger_bleed_buff_speed = class({})
+function modifier_true_master_dagger_bleed_buff_speed:IsHidden() return true end
+function modifier_true_master_dagger_bleed_buff_speed:IsPurgable() return false end
+function modifier_true_master_dagger_bleed_buff_speed:IsDebuff() return false end
+function modifier_true_master_dagger_bleed_buff_speed:IsAura()
+	return true
+end
+function modifier_true_master_dagger_bleed_buff_speed:GetModifierAura()
+	return "modifier_true_master_dagger_bleed_buff_speed_aura"
+end
+function modifier_true_master_dagger_bleed_buff_speed:GetAuraRadius()
+	return 3200
+end
+function modifier_true_master_dagger_bleed_buff_speed:GetAuraSearchTeam()
+	return DOTA_UNIT_TARGET_TEAM_ENEMY
+end
 
+function modifier_true_master_dagger_bleed_buff_speed:GetAuraSearchType()
+	return DOTA_UNIT_TARGET_HERO
+end
+function modifier_true_master_dagger_bleed_buff_speed:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+		MODIFIER_PROPERTY_IGNORE_MOVESPEED_LIMIT,
+		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN
+	}
+end
+
+function modifier_true_master_dagger_bleed_buff_speed:GetModifierMoveSpeedBonus_Constant()
+	return 250
+end
+function modifier_true_master_dagger_bleed_buff_speed:GetModifierIgnoreMovespeedLimit()
+	return 1
+end
+function modifier_true_master_dagger_bleed_buff_speed:GetModifierMoveSpeed_AbsoluteMin()
+	return 600
+end
+
+--aura
+modifier_true_master_dagger_bleed_buff_speed_aura = class({})
+function modifier_true_master_dagger_bleed_buff_speed_aura:IsHidden() return false end
+function modifier_true_master_dagger_bleed_buff_speed_aura:IsPurgable() return false end
+function modifier_true_master_dagger_bleed_buff_speed_aura:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT,
+		MODIFIER_PROPERTY_IGNORE_MOVESPEED_LIMIT,
+		MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN
+	}
+end
+
+function modifier_true_master_dagger_bleed_buff_speed_aura:GetModifierMoveSpeedBonus_Constant()
+	return 250
+end
+function modifier_true_master_dagger_bleed_buff_speed_aura:GetModifierIgnoreMovespeedLimit()
+	return 1
+end
+function modifier_true_master_dagger_bleed_buff_speed_aura:GetModifierMoveSpeed_AbsoluteMin()
+	return 750
+end
 
 ----dagger end ---
 

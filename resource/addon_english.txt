@@ -562,7 +562,7 @@
 
 
 	"DOTA_Tooltip_ability_true_master"					"The True Master Of Weapons"
-	"DOTA_Tooltip_ability_true_master_description"		"<h1>Long Edged Sword</h1> Gets 850 bonus attack range and have %sword_crit_chance%%% chance for a %sword_crit_damage%%% Crit. \n<h1>Forbidden Dagger</h1>Getting %dagger_aura_range% range close to an enemy will give them bleed status for %dagger_bleed_duration% s(read enemy debuff description), using dagger removes your MS limit dodging any Dmg with %dagger_dodge_chance%%% chance but forces you to have %dagger_max_attack_range% attack range. \n<h1><font color='#DE3163'>Super Scepter</font></h1><font color='#EB3904'>BloodTrail</font>: Being in %dagger_ss_range% range or closer of your bleeding victim will give you <font color='#EB3904'>BloodTrail</font> stacks every 0.5s base on half of bleeding stacks the enemy has. \n<h1><font color='#F70707'>Challenge Boss</font></h1>Increase <font color='#EB3904'>BloodTrail</font> range by <font color='#5BE424'>100%</font> for every Reward Tier. \n<h1>Ancient Gun</h1> Allows to atk always except during disarm debuffs. <br> Gunshots deals 8x your original dmg(crit inclusive) in 4 instances of magical dmg, fixed attack rate of 3 atk/sec then reloads for a sec. \n<h1>Has True Strike in all forms</h1>"
+	"DOTA_Tooltip_ability_true_master_description"		"<h1>Long Edged Sword</h1> Gets 850 bonus attack range and have %sword_crit_chance%%% chance for a %sword_crit_damage%%% Crit. \n<h1>Forbidden Dagger</h1>Getting %dagger_aura_range% range close to an enemy will give them bleed status for %dagger_bleed_duration% s(read enemy debuff description), using dagger removes your MS limit dodging any Dmg with %dagger_dodge_chance%%% chance but forces you to have %dagger_max_attack_range% attack range. \n<h1><font color='#DE3163'>Super Scepter</font></h1><font color='#EB3904'>BloodTrail</font>: Being in %dagger_ss_range% range or closer of your bleeding victim will give you <font color='#EB3904'>BloodTrail</font> stacks every 0.5s base on half of bleeding stacks the enemy has. \n<h1><font color='#F70707'>Challenge Boss</font></h1>Increase <font color='#EB3904'>BloodTrail</font> range by <font color='#5BE424'>100%</font> for every Reward Tier. \n<h1>Ancient Gun</h1> Allows to atk always except during disarm debuffs. <br> Gunshots deals 8x your original dmg(crit inclusive) in 4 instances of magical dmg, fixed attack rate of 3 atk/sec then reloads for a sec. \n<h1>Has True Strike in all forms</h1> Note: Autocast ON makes an bleeding enemy move faster(min 600 speed) and Allies faster"
 	"DOTA_Tooltip_ability_true_master_lore"		"Some choose bullets, others choose blades, why not ALL of them?"
 	"DOTA_Tooltip_ability_true_master_note0"    "Gun shot dmg is not affected by spell amp, Bleed duration is affected by your status resistance(positive)"
 	"DOTA_Tooltip_ability_true_master_note1"    "If form is not Dagger, bleed has 70%% chance give a stack after 500 units moved instead of 100%"
@@ -574,6 +574,10 @@
 	"DOTA_Tooltip_modifier_true_master_gun_reload"  "Reloading"
 	"DOTA_Tooltip_modifier_true_master_dagger_stacks"  "<font color='#EB3904'>BloodTrail</font>"
 	"DOTA_Tooltip_modifier_true_master_dagger_stacks_description" "Gain bonus stacks base on enemy bleeding stacks: <br><font color='#10DE33'>+%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% Str and Agi</font> <br><font color='#8FF00C'>+%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% bonus Attack dmg</font> <br><font color='#F0CA0C'>+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT% movement speed bonus</font> <br><font color='#EB3904'>+%dMODIFIER_PROPERTY_HEALTH_BONUS% bonus HP</font>"
+
+	"DOTA_Tooltip_modifier_true_master_dagger_bleed_buff_speed_aura"					"Bleeding enemy Aura"
+	"DOTA_Tooltip_modifier_true_master_dagger_bleed_buff_speed_aura_Description"		"You move faster(min 750) with no speed limit from an fast bleeding enemy<br> Enemy Aura range: 3200"
+
 
 //############################################################################################################################
 
@@ -2749,10 +2753,11 @@
 	"DOTA_Tooltip_ability_mjz_axe_counter_helix_strength_per"		"%Strength Bonus:"
 
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade"					"Culling Blade"
-	"DOTA_Tooltip_ability_mjz_axe_culling_blade_Description"		"Axe spots a weakness and strikes, and then based on the caster strength value multiples of damage. \n<h1><font color='#DE3163'>Super Scepter</font></h1> When an enemy is killed with Culling Blade, its cooldown is reset, Axe gains bonus armor permanently by %armor_per_kill%."
+	"DOTA_Tooltip_ability_mjz_axe_culling_blade_Description"		"Axe spots a weakness and strikes, and then based on the caster strength value multiples of damage. \n<h1><font color='#DE3163'>Super Scepter</font></h1> When an enemy is killed with Culling Blade, its cooldown is reset, Axe gains bonus armor permanently by %armor_per_kill%.<br>Enemys struck by axe ultimate start bleeding and take Axe lvl * armor as pure dmg for %ss_duration% seconds"
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_scepter_description"		"Culling Blade hits all units in a small area."
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_Lore"					"Mogul Khan is the embodiment of battle and fury, launching into a gruesome fatality against those who dare engage the Axe in combat."
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_note0"					"1) Additional armor from Culling Blade Stacks is given after receiving the Super Scepter effect."
+	"DOTA_Tooltip_ability_mjz_axe_culling_blade_note1"					"2) Duration of ss Bleed is affected by your status resistance, multiple of bleed stacks"
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_cast_range"				"Cast Range:"
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_splash_radius_scepter"		"Scepter Splash Radius:"
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_base_damage"	   		"Base Damage:"
@@ -2766,6 +2771,9 @@
 	"DOTA_Tooltip_modifier_culling_blade_stacks"					"Culling Blade Stacks"
 	"DOTA_Tooltip_modifier_culling_blade_stacks_Description"		"Armor increased by %fMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
 	
+	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_ss_bleed"					"Culling Blade Bleed"
+	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_ss_bleed_Description"      "Receive pure bleed dmg every second. Duration can be extended by caster status resistance"
+
 	"DOTA_Tooltip_ability_mjz_bloodseeker_bloodrage_autocast"					"AutoCast - Bloodrage"
 	"DOTA_Tooltip_ability_mjz_bloodseeker_bloodrage_autocast_Description"		""
 	"DOTA_Tooltip_ability_mjz_bloodseeker_bloodrage_autocast_Lore"				""
@@ -5056,7 +5064,7 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 "npc_boss_bloodseeker"					 "Bloodseeker (Boss)"
 
 "DOTA_Tooltip_ability_special_bonus_unique_axe_3_custom"	"Counter Helix now has same chance to triger when you attack a target"
-"DOTA_Tooltip_ability_special_bonus_unique_axe_3"			"Counter Helix now has same chance to triger when you attack a target"
+//"DOTA_Tooltip_ability_special_bonus_unique_axe_3"			"Counter Helix now has same chance to triger when you attack a target"
 
 "DOTA_Tooltip_ability_custom_blood_bath"									"Blood Rite"
 "DOTA_Tooltip_ability_custom_blood_bath_Description"						"Bloodseeker baptizes an area in sacred blood. After %delay_plus_castpoint_tooltip% seconds the ritual completes, causing any enemies caught in the area to take damage and become silenced."

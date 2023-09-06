@@ -22237,8 +22237,13 @@
 			"09"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"armor_per_kill"			"0.2"
+				"armor_per_kill"			"1.0"
 			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"ss_duration"				"4.0"
+			}			
 		}
 
 		"precache"
@@ -43863,7 +43868,7 @@
 	{
 		"BaseClass"					"ability_lua"
 		"ScriptFile"				"heroes/hero_master_of_weapons/true_master"
-		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 		"AbilityTextureName"		"msword"
 		"LevelsBetweenUpgrades"		"10"
 		"MaxLevel"					"10"
@@ -43879,7 +43884,7 @@
 			"dagger_bleed_damage"		"20"
 			"dagger_bleed_damage_amp"	"5"
 			"dagger_bleed_heal_reduction" "4" // hardcoded
-			"dagger_bleed_max_stacks"    "20"
+			"dagger_bleed_max_stacks"    "30"
 			"dagger_bleed_duration"      "12"
 			"dagger_aura_range"          "300"
 			"gun_bat"					"0.33"

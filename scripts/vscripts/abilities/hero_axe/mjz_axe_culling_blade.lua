@@ -1,7 +1,7 @@
 LinkLuaModifier("modifier_mjz_axe_culling_blade_checker","abilities/hero_axe/mjz_axe_culling_blade.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_axe_culling_blade_boost","abilities/hero_axe/mjz_axe_culling_blade.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_culling_blade_stacks","abilities/hero_axe/mjz_axe_culling_blade", LUA_MODIFIER_MOTION_NONE)
-
+LinkLuaModifier("modifier_mjz_axe_culling_blade_ss_bleed","abilities/hero_axe/mjz_axe_culling_blade", LUA_MODIFIER_MOTION_NONE)
 
 mjz_axe_culling_blade = class({})
 function mjz_axe_culling_blade:GetIntrinsicModifierName() return "modifier_culling_blade_stacks" end
@@ -26,7 +26,7 @@ if IsServer() then
 		local str_damage_multiplier = self:GetSpecialValueFor("str_damage_multiplier")
 		local splash_radius_scepter = self:GetSpecialValueFor("splash_radius_scepter")
 		local damage = base_damage + caster:GetStrength() * str_damage_multiplier
-
+		local duration = self:GetSpecialValueFor("ss_duration") * (1 + caster:GetStatusResistance())
 		if target:TriggerSpellAbsorb(self) then return end
 
 		local success_effect = false
@@ -39,14 +39,16 @@ if IsServer() then
 
 		for _,enemy in pairs(enemies) do
 			local checker = enemy:AddNewModifier(caster, self, 'modifier_mjz_axe_culling_blade_checker', {})
-
+			if caster:HasModifier("modifier_super_scepter") then
+				enemy:AddNewModifier(caster, self, 'modifier_mjz_axe_culling_blade_ss_bleed', {duration = duration})	
+			end	
 			ApplyDamage({
 				attacker = caster,
 				victim = enemy,
 				ability = self,
 				damage = damage,
 				damage_type = self:GetAbilityDamageType(),
-			})
+			})		
 			self:PlayEffect(enemy)
 
 			if checker.success and not success_effect then
@@ -169,7 +171,38 @@ end
 
 -----------------------------------------------------------------------------------------
 
+---bleed
+modifier_mjz_axe_culling_blade_ss_bleed = class({})
+function modifier_mjz_axe_culling_blade_ss_bleed:IsHidden() return false end
+function modifier_mjz_axe_culling_blade_ss_bleed:IsPurgable() return false end
+function modifier_mjz_axe_culling_blade_ss_bleed:IsDebuff() return true end
+function modifier_mjz_axe_culling_blade_ss_bleed:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 
+function modifier_mjz_axe_culling_blade_ss_bleed:OnCreated()
+	if IsServer()then
+		self:StartIntervalThink(1)
+	end	
+end	
+function modifier_mjz_axe_culling_blade_ss_bleed:OnIntervalThink()
+	if IsServer()then
+		local parent = self:GetParent()
+		local caster = self:GetCaster()
+		local ability = self:GetAbility()
+		if ability and parent then
+			local lvl = caster:GetLevel()
+			local armor = caster:GetPhysicalArmorValue(false)
+			local ss_damage = math.floor(lvl * armor)
+			ApplyDamage({
+				attacker = caster,
+				victim = parent,
+				ability = ability,
+				damage = ss_damage,
+				damage_type = DAMAGE_TYPE_PURE,
+			})			
+		end	
+	end	
+end	
+---
 -- 搜索目标位置所有的敌人单位
 function FindTargetEnemy(caster, point, radius)
 	local iTeamNumber = caster:GetTeamNumber()

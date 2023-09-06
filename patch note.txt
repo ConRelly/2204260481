@@ -2814,6 +2814,15 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+
+* UI fixes (Dmg table and other UI buttons)
+* Buffed meepo loot (talent too)
+* Fixed description for Axe lvl 25 talent, increased Ult SS armor gain to 1 from 0.2 and added new SS effect to his ultimate.
+* Pango True Master now has toggle(autocast) feature to make bleeding enemies move faster with a min speed of 600 and make the enemy emit an aura (3200 range) that makes heroes move even faster with no speed limit(min 750ms).
+
+
+
+
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).

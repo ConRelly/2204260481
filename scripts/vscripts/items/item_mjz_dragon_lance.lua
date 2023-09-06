@@ -69,6 +69,12 @@ function modifier_item_mjz_dragon_lance_stats:OnCreated(keys)
 end
 function modifier_item_mjz_dragon_lance_stats:AllowIllusionDuplicate() return true end    
 function modifier_item_mjz_dragon_lance_stats:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT end
+function modifier_item_mjz_dragon_lance_stats:StatusEffectPriority()
+	return MODIFIER_PRIORITY_ULTRA + 100000
+end
+function modifier_item_mjz_dragon_lance_stats:GetPriority()
+	return MODIFIER_PRIORITY_ULTRA + 100000
+end
 function modifier_item_mjz_dragon_lance_stats:GetTexture() return "modifiers/mjz_dragon_lance" end
 function modifier_item_mjz_dragon_lance_stats:DeclareFunctions() return {MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_TOOLTIP} end
 function modifier_item_mjz_dragon_lance_stats:GetModifierAttackRangeBonus(htable) return 440 end

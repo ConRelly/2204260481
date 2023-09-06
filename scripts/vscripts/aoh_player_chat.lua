@@ -576,16 +576,16 @@ function AOHGameMode:OnPlayerChat(keys)
 		if 	unit == "npc_boss_juggernaut_4" then
 			name = "Juggernaut Sword Master"
 		end
-		if time < 40 then
-			Notifications:TopToAll({text= time .." min, unless at least 40 min have passed you can't Challenge " .. name, style={color="red"}, duration=15})
+		if time < 30 then
+			Notifications:TopToAll({text= time .." min, unless at least 30 min have passed you can't Challenge " .. name, style={color="red"}, duration=15})
 			count = count + 1
 			if count > 8 then
 				self.challenge = true	
 			end
 			return
 		end	
-		if time > 100 then
-			Notifications:TopToAll({text= time .." min Have passed you can't Challenge " .. name.." if More then 100 min have passed", style={color="red"}, duration=15})
+		if time > 120 then
+			Notifications:TopToAll({text= time .." min Have passed you can't Challenge " .. name.." if More then 120 min have passed", style={color="red"}, duration=15})
 			count = count + 1
 			if count > 8 then
 				self.challenge = true	

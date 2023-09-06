@@ -929,7 +929,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"1377"
+				"value"				"5900"
 				"ad_linked_abilities"			"meepo_ransack"
 			}
 		}
@@ -8269,6 +8269,8 @@
 			}
 		}
 	}	
+
+
 	//=================================================================================================================
 	// Meepo: Ransack
 	//=================================================================================================================
@@ -8280,28 +8282,29 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"LevelsBetweenUpgrades"  "10"
+		"LevelsBetweenUpgrades"  		"12"
 		"AbilitySound"					"Hero_Meepo.Geostrike"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{		
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_steal_heroes"	"35 169 420 1123"
-				"LinkedSpecialBonus"		"special_bonus_unique_meepo_6"
-			}			
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"health_steal_creeps"	"35 169 420 1123"
-				"LinkedSpecialBonus"		"special_bonus_unique_meepo_6"
-			}			
+				"health_steal_heroes"	
+				{
+					"value"						"235 969 2320 5523"
+					"LinkedSpecialBonus"		"special_bonus_unique_meepo_6"
+					"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
+				}
+				"health_steal_creeps"	
+				{
+					"value"						"235 969 2320 5523"
+					"LinkedSpecialBonus"		"special_bonus_unique_meepo_6"
+					"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
+				}			
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+
 
 	"meepo_poof"
 	{
@@ -9972,7 +9975,7 @@
 			"AbilityCooldown"				
 			{
 				"value"		"18"
-				"special_bonus_unique_riki_6"		"-3"
+				"special_bonus_unique_riki_6"		"-4"
 			}			
 			"radius"
 			{

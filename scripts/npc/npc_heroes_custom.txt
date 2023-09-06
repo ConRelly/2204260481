@@ -1308,8 +1308,9 @@
 		"Ability11"				"special_bonus_cdr_15"
 		"Ability13"				"special_bonus_magic_resistance_20"
 		"Ability14"				"special_bonus_mjz_meepo_poof_01"
-		"Ability16"				"special_bonus_truestrike"
-		"Ability17"				"special_bonus_spell_amplify_100"
+		"Ability15"				"special_bonus_truestrike"
+		"Ability16"				"special_bonus_spell_amplify_100"
+		"Ability17"				"special_bonus_unique_meepo_6"
 
 		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeAgilityGain"		"6.7"
