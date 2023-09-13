@@ -350,15 +350,15 @@ function modifier_spirit_guardian:DeclareFunctions()
 	return {MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_FIXED_ATTACK_RATE}
 end
 function modifier_spirit_guardian:GetModifierBonusStats_Strength()
-	if self:GetAbility() then if self:GetParent():GetPrimaryAttribute() == 0 then
+	if self:GetAbility() then if (self:GetParent():GetPrimaryAttribute() == 0 or self:GetParent():GetPrimaryAttribute() == 3) then
 	return self.primary_attribute + self.str else return self.secondary_stats + self.str end end
 end
 function modifier_spirit_guardian:GetModifierBonusStats_Agility()
-	if self:GetAbility() then if self:GetParent():GetPrimaryAttribute() == 1 then
+	if self:GetAbility() then if (self:GetParent():GetPrimaryAttribute() == 1 or self:GetParent():GetPrimaryAttribute() == 3) then
 	return self.primary_attribute + self.agi else return self.secondary_stats + self.agi end end
 end
 function modifier_spirit_guardian:GetModifierBonusStats_Intellect()
-	if self:GetAbility() then if self:GetParent():GetPrimaryAttribute() == 2 then
+	if self:GetAbility() then if (self:GetParent():GetPrimaryAttribute() == 2 or self:GetParent():GetPrimaryAttribute() == 3) then
 	return self.primary_attribute else return self.secondary_stats end end
 end
 function modifier_spirit_guardian:GetModifierConstantManaRegen() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("mana_regen") end end
@@ -523,7 +523,7 @@ function modifier_spirit_guardian_heal:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
 		self.avoid_chance = 0
 		local parent = self:GetParent()
-		if parent:IsRealHero() and (parent:GetPrimaryAttribute() == 2) then
+		if parent:IsRealHero() and (parent:GetPrimaryAttribute() == 2 or parent:GetPrimaryAttribute() == 3) then
 			self.avoid_chance = self:GetAbility():GetSpecialValueFor("avoid_chance")
 		end
 	end

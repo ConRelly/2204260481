@@ -2813,12 +2813,23 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * Pango Dagger Form Bleed Trail now ticks every 0.5s instead of 1s, gives more stats per stack, duration to 12s from 10s, distance enemy has to make for a stack from 700 units to 500.
 
 
-
-
 * UI fixes (Dmg table and other UI buttons)
 * Buffed meepo loot (talent too)
 * Fixed description for Axe lvl 25 talent, increased Ult SS armor gain to 1 from 0.2 and added new SS effect to his ultimate.
 * Pango True Master now has toggle(autocast) feature to make bleeding enemies move faster with a min speed of 600 and make the enemy emit an aura (3200 range) that makes heroes move even faster with no speed limit(min 750ms).
+
+
+
+
+* Replaced an unused lvl 25 Axe talent with a custom one.
+* Sleight of Fist now has a Super Scepter effect and the Ember Charge talent was fixed to scale with CDR.
+* Flaming Cape: Removed 2x Dmg during Glimmer buff and added a new passive, increased base stats.
+* Demonic Blade base stats increased. 
+* Edible Fragment now has a 100% chance at lvl 80 if you have not received any before(from lvl up).
+* Spirit Guardian now considers Universal Heroes to have all stats as their primary attribute (so even the Int passive will work on them + stats).
+* Fixed Quick Blade (crit) not working.
+* Added new talent for Juggernaut lvl 25 (for Quick Blade) and removed Blade Dance crit ability.
+* And some other stuff.
 
 
 

@@ -79,7 +79,7 @@ function modifier_flaming_cape_invis:OnCreated()
 	self.fade_delay = self:GetAbility():GetSpecialValueFor("fade_delay")
 	if not IsServer() then return end
 	self.counter = 0
-	self:StartIntervalThink(FrameTime())
+	self:StartIntervalThink(0.1)
 end
 function modifier_flaming_cape_invis:OnRefresh() self:OnCreated() end
 function modifier_flaming_cape_invis:OnIntervalThink()
@@ -140,7 +140,15 @@ function modifier_flaming_cape_flames_burn:GetAttributes() return MODIFIER_ATTRI
 function modifier_flaming_cape_flames_burn:OnCreated()
 	if not self:GetAbility() then self:Destroy() return end
 	self.damage_interval = self:GetAbility():GetSpecialValueFor("damage_interval")
-	self.base_damage = self:GetAbility():GetSpecialValueFor("base_damage") * self.damage_interval
+	local lvl = self:GetCaster():GetLevel()
+	local charges = 1
+	if lvl > 34 then
+		charges = self:GetAbility():GetCurrentCharges()
+		if charges < 1 then
+			charges = 1
+		end	
+	end	
+	self.base_damage = self:GetAbility():GetSpecialValueFor("base_damage") * charges * self.damage_interval
 	if IsServer() then
 		self.burn = ParticleManager:CreateParticle("particles/custom/items/flaming_cape/flaming_cape_burn.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 		ParticleManager:SetParticleControl(self.burn, 0, self:GetParent():GetAbsOrigin())
@@ -151,9 +159,10 @@ end
 function modifier_flaming_cape_flames_burn:OnIntervalThink()
 	if self:GetAbility() then
 		local burn_damage = self.base_damage
-		if self:GetCaster():HasModifier("modifier_flaming_cape_invis") then
-			burn_damage = self.base_damage * 2
-		end
+		if self:GetCaster():HasModifier("modifier_demonic_sword") then
+			burn_damage = burn_damage * (1 + (self:GetAbility():GetSpecialValueFor("up_dmg") / 100))
+		end	
+
 		ApplyDamage({
 			victim = self:GetParent(),
 			attacker = self:GetCaster(),
@@ -210,7 +219,15 @@ function modifier_flaming_cape_up_radiance_flames_burn:GetAttributes() return MO
 function modifier_flaming_cape_up_radiance_flames_burn:OnCreated()
 	if not self:GetAbility() then self:Destroy() return end
 	self.damage_interval = self:GetAbility():GetSpecialValueFor("damage_interval")
-	self.base_damage = self:GetAbility():GetSpecialValueFor("base_damage") * (1 + (self:GetAbility():GetSpecialValueFor("up_dmg") / 100)) * self.damage_interval
+	local lvl = self:GetCaster():GetLevel()
+	local charges = 1
+	if lvl > 34 then
+		charges = self:GetAbility():GetCurrentCharges()
+		if charges < 1 then
+			charges = 1
+		end	
+	end		
+	self.base_damage = self:GetAbility():GetSpecialValueFor("base_damage") * (1 + (self:GetAbility():GetSpecialValueFor("up_dmg") / 100)) * charges * self.damage_interval
 	if IsServer() then
 		self.burn = ParticleManager:CreateParticle("particles/custom/items/flaming_cape/flaming_cape_burn.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 		ParticleManager:SetParticleControl(self.burn, 0, self:GetParent():GetAbsOrigin())
@@ -221,9 +238,6 @@ end
 function modifier_flaming_cape_up_radiance_flames_burn:OnIntervalThink()
 	if self:GetAbility() then
 		local burn_damage = self.base_damage
-		if self:GetCaster():HasModifier("modifier_flaming_cape_invis") then
-			burn_damage = self.base_damage * 2
-		end
 		ApplyDamage({
 			victim = self:GetParent(),
 			attacker = self:GetCaster(),

@@ -89,12 +89,25 @@ if IsServer() then
     end
 
     function modifier_crit:GetModifierPreAttack_BonusDamage()
-    	return self:GetAbility():GetSpecialValueFor("bonus_damage")
+        if self:GetAbility() then
+            local base = self:GetAbility():GetSpecialValueFor("bonus_damage")
+            local parent = self:GetParent()
+            if parent:HasModifier("modifier_super_scepter") then
+                local lvl = parent:GetLevel()
+                base = base * lvl
+            end    
+    	    return base
+        end
     end
 
     function modifier_crit:GetModifierPreAttack_CriticalStrike()
         local crit_chance = self:GetAbility():GetSpecialValueFor("crit_chance")
         local crit_bonus = self:GetAbility():GetSpecialValueFor("crit_bonus")
+        local parent = self:GetParent()
+        if parent:HasModifier("modifier_super_scepter") then
+            local lvl = parent:GetLevel()
+            crit_bonus = crit_bonus + (lvl * 50)
+        end    
         if RollPercentage(crit_chance) then
             return crit_bonus
         end
@@ -154,7 +167,7 @@ if IsServer() then
         local caster = self:GetCaster()
         local parent = self:GetParent()
         local charge_count = GetTalentSpecialValueFor(ability, 'charge_count')
-        local charge_restore_time = ability:GetSpecialValueFor('charge_restore_time')
+        local charge_restore_time = ability:GetSpecialValueFor('charge_restore_time') * parent:GetCooldownReduction()
         local modifier_self = self:GetName()
 
         local new_charge_count = ability._current_charge + 1

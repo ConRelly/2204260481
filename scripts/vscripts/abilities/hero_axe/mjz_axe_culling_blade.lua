@@ -2,7 +2,7 @@ LinkLuaModifier("modifier_mjz_axe_culling_blade_checker","abilities/hero_axe/mjz
 LinkLuaModifier("modifier_mjz_axe_culling_blade_boost","abilities/hero_axe/mjz_axe_culling_blade.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_culling_blade_stacks","abilities/hero_axe/mjz_axe_culling_blade", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_axe_culling_blade_ss_bleed","abilities/hero_axe/mjz_axe_culling_blade", LUA_MODIFIER_MOTION_NONE)
-
+LinkLuaModifier("modifier_mjz_axe_culling_blade_checker_1","abilities/hero_axe/mjz_axe_culling_blade.lua", LUA_MODIFIER_MOTION_NONE)
 mjz_axe_culling_blade = class({})
 function mjz_axe_culling_blade:GetIntrinsicModifierName() return "modifier_culling_blade_stacks" end
 function mjz_axe_culling_blade:GetBehavior()
@@ -28,7 +28,7 @@ if IsServer() then
 		local damage = base_damage + caster:GetStrength() * str_damage_multiplier
 		local duration = self:GetSpecialValueFor("ss_duration") * (1 + caster:GetStatusResistance())
 		if target:TriggerSpellAbsorb(self) then return end
-
+		local enemies = {target}
 		local success_effect = false
 
 		if caster:HasScepter() then
@@ -61,12 +61,13 @@ if IsServer() then
 
 			enemy:RemoveModifierByName('modifier_mjz_axe_culling_blade_checker')
 		end
+
 	end
 
 	function mjz_axe_culling_blade:OnCullingBladeSuccess(target)
 		local caster = self:GetCaster()
 		local speed_radius = self:GetSpecialValueFor("speed_radius")
-		local speed_duration = self:GetSpecialValueFor("speed_duration")
+		local speed_duration = self:GetSpecialValueFor("speed_duration") * (1 + caster:GetStatusResistance())
 
 		EmitSoundOn("Hero_Axe.Culling_Blade_Success", caster)
 
@@ -76,8 +77,22 @@ if IsServer() then
 		end
 
 		caster:AddNewModifier(caster, self, "modifier_culling_blade_stacks", {})
+	
 		if caster:HasModifier("modifier_super_scepter") then
 			self:EndCooldown()
+		end
+	end
+	function mjz_axe_culling_blade:OnCullingBladeSuccess_2(target)
+		local caster = self:GetCaster()
+		local speed_radius = self:GetSpecialValueFor("speed_radius")
+		local speed_duration = self:GetSpecialValueFor("speed_duration") * (1 + caster:GetStatusResistance())
+
+		local unit_list = FindTargetFriendly(caster, target:GetAbsOrigin(), speed_radius)
+		for _,unit in pairs(unit_list) do
+			unit:AddNewModifier(caster, self, "modifier_mjz_axe_culling_blade_boost", {duration = speed_duration})
+		end
+		if not target:HasModifier("modifier_mjz_axe_culling_blade_checker") then
+			caster:AddNewModifier(caster, self, "modifier_culling_blade_stacks", {})
 		end
 	end
 
@@ -102,26 +117,49 @@ modifier_mjz_axe_culling_blade_checker = class({})
 function modifier_mjz_axe_culling_blade_checker:IsHidden() return true end
 function modifier_mjz_axe_culling_blade_checker:IsPurgable() return false end
 function modifier_mjz_axe_culling_blade_checker:IsDebuff() return false end
-function modifier_mjz_axe_culling_blade_checker:IsBuff() return false end
 if IsServer() then
 	function modifier_mjz_axe_culling_blade_checker:DeclareFunctions() return {MODIFIER_EVENT_ON_DEATH} end
-	function modifier_mjz_axe_culling_blade_checker:OnDeath()
+	function modifier_mjz_axe_culling_blade_checker:OnDeath(event)
 		self.success = true
-		self:GetAbility():OnCullingBladeSuccess(self:GetParent())
-		if self:IsNull() then return end
-		self:Destroy()
+		if self:GetAbility() then
+			local parent = self:GetParent()
+			if parent ~= event.unit then return end
+			self:GetAbility():OnCullingBladeSuccess(self:GetParent())
+			if self:IsNull() then return end
+			self:Destroy()
+		end
 	end
 	function modifier_mjz_axe_culling_blade_checker:OnCreated(table) self.success = false end
 	function modifier_mjz_axe_culling_blade_checker:OnDestroy()
 		if self.success == false then
-			self:GetAbility():OnCullingBladeFail(self:GetParent())
+			if self:GetAbility() then
+				self:GetAbility():OnCullingBladeFail(self:GetParent())
+			end
 		end
 	end
 end
-
+---
+modifier_mjz_axe_culling_blade_checker_1 = class({})
+function modifier_mjz_axe_culling_blade_checker_1:IsHidden() return false end
+function modifier_mjz_axe_culling_blade_checker_1:IsPurgable() return false end
+function modifier_mjz_axe_culling_blade_checker_1:IsDebuff() return false end
+function modifier_mjz_axe_culling_blade_checker_1:GetTexture() return "mjz_axe_culling_blade" end
+if IsServer() then
+	function modifier_mjz_axe_culling_blade_checker_1:DeclareFunctions() return {MODIFIER_EVENT_ON_DEATH} end
+	function modifier_mjz_axe_culling_blade_checker_1:OnDeath(event)
+		if self:GetAbility() then
+			local parent = self:GetParent()
+			if parent ~= event.unit then return end
+			if parent:HasModifier("modifier_mjz_axe_culling_blade_checker") then return end
+			self:GetAbility():OnCullingBladeSuccess_2(self:GetParent())
+		end
+	end
+end
 -----------------------------------------------------------------------------------------
 
 modifier_mjz_axe_culling_blade_boost = class({})
+
+-- Retain the previous properties
 function modifier_mjz_axe_culling_blade_boost:IsHidden() return false end
 function modifier_mjz_axe_culling_blade_boost:IsPurgable() return true end
 function modifier_mjz_axe_culling_blade_boost:IsBuff() return true end
@@ -132,12 +170,34 @@ function modifier_mjz_axe_culling_blade_boost:GetEffectAttachType() return PATTA
 function modifier_mjz_axe_culling_blade_boost:DeclareFunctions()
 	return { MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE}
 end
+
 function modifier_mjz_axe_culling_blade_boost:GetModifierAttackSpeedBonus_Constant()
 	return self:GetAbility():GetSpecialValueFor('attack_speed_bonus')
 end
 
 function modifier_mjz_axe_culling_blade_boost:GetModifierMoveSpeedBonus_Percentage()
 	return self:GetAbility():GetSpecialValueFor('move_speed_bonus')
+end
+
+-- Add the aura properties
+function modifier_mjz_axe_culling_blade_boost:IsAura()
+	if talent_value(self:GetCaster(), "special_bonus_unique_mjz_axe_culling_blade_1") > 0 then
+		return true 
+	else
+		return false
+	end	
+end
+function modifier_mjz_axe_culling_blade_boost:GetAuraRadius() return 3200 end 
+function modifier_mjz_axe_culling_blade_boost:GetModifierAura() return "modifier_mjz_axe_culling_blade_checker_1" end
+function modifier_mjz_axe_culling_blade_boost:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
+function modifier_mjz_axe_culling_blade_boost:GetAuraSearchType() return DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO end
+function modifier_mjz_axe_culling_blade_boost:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_NONE end
+function modifier_mjz_axe_culling_blade_boost:GetAuraEntityReject(hEntity)
+	-- Those that also has this modifier will not receive kill count aura
+	if hEntity and hEntity:HasModifier("modifier_mjz_axe_culling_blade_checker") then
+		return true
+	end
+	return false
 end
 if IsServer() then
 	function modifier_mjz_axe_culling_blade_boost:OnCreated(table)
@@ -148,7 +208,7 @@ if IsServer() then
 		ParticleManager:ReleaseParticleIndex(p_boost)
 	end
 end
-
+---
 -----------------------------------------------------------------------------------------
 
 modifier_culling_blade_stacks = class({})

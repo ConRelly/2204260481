@@ -1,5 +1,4 @@
 #base "../vscripts/abilities/custom/ryze.txt"
-#base "../vscripts/abilities/custom/juggernaut_blade_dance_lua/juggernaut_blade_dance_lua.txt"
 #base "../vscripts/lua_abilities/vengefulspirit_wave_of_terror_lua/vengefulspirit_wave_of_terror_lua.txt"
 #base "../vscripts/lua_abilities/vengefulspirit_command_aura_lua/vengefulspirit_command_aura_lua.txt"
 #base "../vscripts/lua_abilities/vengefulspirit_magic_missile_lua/vengefulspirit_magic_missile_lua.txt"
@@ -22222,12 +22221,12 @@
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"speed_duration"			"6"
+				"speed_duration"			"10"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"speed_radius"				"1900"
+				"speed_radius"				"7200"
 			}
 			"08"
 			{
@@ -22255,6 +22254,25 @@
 			"particle"		"particles/units/heroes/hero_axe/axe_cullingblade_sprint.vpcf"
 		}
 	}
+
+//mjz_axe_culling_blade talent
+	"special_bonus_unique_mjz_axe_culling_blade_1"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"1"
+			}
+		}
+	}
+
+
 	"mjz_bloodseeker_bloodrage_autocast"
 	{
 		"BaseClass"						"ability_datadriven"
@@ -41948,8 +41966,30 @@
 		"AbilityValues"
 		{
 			"blade_dance_crit_chance"			"5"
-			"blade_dance_crit_mult"				"675 800 925 1450 1650 1820 2150"
+			"blade_dance_crit_mult"	
+			{
+				"value"						"675 800 925 1450 1650 1820 2150"
+				"special_bonus_unique_juggernaut_blade_dance_lua_1"	"+985"
+			}			
+			
 			"crit_chance_agi_multiplier"		"1 1 1 1 1 1 2"
+			"max_crit_chance"                   "80"
+		}
+	}
+
+//Talent
+	"special_bonus_unique_juggernaut_blade_dance_lua_1"
+	{
+		"BaseClass"				"special_bonus_undefined"
+		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"value"			"985"
+			}
 		}
 	}
 

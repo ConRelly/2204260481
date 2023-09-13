@@ -1096,17 +1096,15 @@ function AOHGameMode:OnHeroLevelUp(event)
 				--mainHero:AddItemByName("item_edible_fragment")
 				DropItemOrInventory(nPlayerID, "item_edible_fragment")
 				edible_bonus_fragment = edible_bonus_fragment - 1
-			elseif AOHGameMode.numPhilo[nPlayerID] > 0 and heroLevel > 79 then
-				print("guarantee edible")
+				AOHGameMode.edible_frag[nPlayerID] = 0
+			elseif AOHGameMode.edible_frag[nPlayerID] > 0 and heroLevel > 79 then
 				DropItemOrInventory(nPlayerID, "item_edible_fragment")
-				AOHGameMode.numPhilo[nPlayerID] = 0				
+				AOHGameMode.edible_frag[nPlayerID] = 0	
+				Notifications:Top(nPlayerID,{text="Personal: lvl 80 guarantee edible fragment, if you have not received any until now", style={color="yellow"}, duration=9})			
 			elseif RandomInt( 0,100 ) < 25 then
 				DropItemOrInventory(nPlayerID, "item_edible_fragment")
+				AOHGameMode.edible_frag[nPlayerID] = 0
 				--mainHero:AddItemByName("item_edible_fragment")
-			end
-			if AOHGameMode.numPhilo[nPlayerID] > 0 then
-				print("guarantee edible")
-				DropItemOrInventory(nPlayerID, "item_edible_fragment")
 			end
 		end
 	end
@@ -1139,7 +1137,11 @@ function AOHGameMode:OnHeroLevelUp(event)
 			DropItemOrInventory(nPlayerID, "item_enchanter")
 			--mainHero:AddItemByName("item_enchanter")
 		end
-	end							
+	end	
+	if hero:HasItemInInventory("item_flaming_cape") and not hero:IsIllusion() then
+		local flaming_cape = hero:FindItemInInventory("item_flaming_cape")
+		flaming_cape:SetCurrentCharges(flaming_cape:GetCurrentCharges() + 1)
+	end						
 end
 
 _G.lopata = true

@@ -294,7 +294,7 @@
 
 
 	"dota_tooltip_ability_item_flaming_cape"				"Flaming Cape"
-	"dota_tooltip_ability_item_flaming_cape_description"	"<h1>Active: Glimmer</h1> After a %fade_delay% second delay, grants invisibility and %active_magical_armor%%% magic resistance to you or a target allied unit for %duration% seconds.<br><br>Range: %abilitycastrange%<br><br>Can be cast while channelling.\n<h1>Passive: Wild Flames</h1>Burns enemy units for %base_damage% magic damage per second.<br>When Glimmer is active on the owner, damage from Wild Flames increases by x2.<br><br>Radius: %aura_radius%\n<h1><font color='#FFB247'>UP: Demonic Blade</font></h1>Increases Wild Flames damage by %up_dmg%%%.<br>Applies the Wild Flames effect on an ally when Glimmer is active."
+	"dota_tooltip_ability_item_flaming_cape_description"	"<h1>Active: Glimmer</h1> After a %fade_delay% second delay, grants invisibility and %active_magical_armor%%% magic resistance to you or a target allied unit for %duration% seconds.<br><br>Range: %abilitycastrange%<br><br>Can be cast while channelling.\n<h1>Passive: Wild Flames</h1>Burns enemy units for %base_damage% magic damage per second.<br>After lvl 35 base dmg is multipled with item charges(<font color='#86C91F'>ReEquip after lvl 35 to take effect</font>).<br><br>Radius: %aura_radius%\n<h1><font color='#86C91F'>Level Mastery</font></h1>Gain an item charge for each level your hero gains with this item in inventory \n<h1><font color='#FFB247'>UP: Demonic Blade</font></h1>Increases Wild Flames damage by %up_dmg%%%.<br>Applies the Wild Flames effect on an ally when Glimmer is active."
 	"DOTA_Tooltip_ability_item_flaming_cape_note0"				"Wild Flames doesn't work on Illusions, but the UP from Demonic Blade still works."
 	"dota_tooltip_ability_item_flaming_cape_bonus_armor"				"+$armor"
 	"dota_tooltip_ability_item_flaming_cape_bonus_magic_resist"			"%+$spell_resist"
@@ -1127,7 +1127,7 @@
 	"DOTA_Tooltip_ability_item_demonic_sword_Lore"	"A demonic sword that surrounds the wearer with a bright glow that turns all surrounding enemies to ash."
 	"DOTA_Tooltip_ability_item_demonic_sword_note0"			"1) Blazing Touch does not work on illusions."
 	"DOTA_Tooltip_ability_item_demonic_sword_note1"			"2) Hellfire effect stacks from multiple sources."
-	"DOTA_Tooltip_ability_item_demonic_sword_damage"		"+$damage"
+	"DOTA_Tooltip_ability_item_demonic_sword_damage"		"+$base_damage"
 	"DOTA_Tooltip_ability_item_demonic_sword_armor"			"+$armor"
 	"DOTA_Tooltip_ability_item_demonic_sword_hp"			"+$health"
 	"DOTA_Tooltip_modifier_demonic_sword_burn_aura"				"Hellfire Burn"
@@ -1242,7 +1242,7 @@
 	"DOTA_Tooltip_modifier_item_earth_cuirass_aura_debuff_Description"	"Reduces armor by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
 	
 	"DOTA_Tooltip_ability_item_spirit_guardian"				"<font color='#E59647'>Spirit Guardian</font>"
-	"DOTA_Tooltip_ability_item_spirit_guardian_Description"	"<h1>Active: Defense Mode</h1>Spirit stops attacking, but heals the owner. If the owner has a full health, then heals an ally in the attack radius + %range_buffer% with the lowest health percentage.<br>Spirit Healing is equal to the owner's base damage + Snowball stacks.<br>Healing duration: %guardian_heal_duration% seconds.\n<h1><font color='#0DAFEC'>Passive: Instincts (Int)</font></h1>Have a chance to Avoid %avoid_chance%%% of all dmg taken during Defense Mode, only if your primary attribute is Intelligence.</font>\n<h1><font color='#17CCEC'>Passive: Snowball</font></h1>Every Hit landed by Spirit will increase your <font color='#17CCEC'>Snowball</font> stack by one and have a chance(half your lvl) for an extra stack.\n<h1><font color='#C47D0F'>Passive: Spirit Guardian</font></h1>Spirit attacks the closest enemy within the attack radius + %range_buffer% every %interval_attack% sec(CDR-Yes).<br>Spirit Damage is equal to the owner's base damage plus <font color='#17CCEC'>Snowball</font> stacks X Your Level.<br>Damage Type: <font color=\"#0D7DEC\">Magical</font><br><font color='#DD9510'>Limits Your attack speed to fixed rate of %fixed_attack_rate% attacks/s.\n<h1><font color='#DE3163'>Super Scepter</font></h1>For every Guardian Attack triggers an normal attack from your hero with all the proc effects. Adds %bonus_int_dmg%%% <font color=\"#17BFEC\">Int</font> X Level to guadian damage. During 'Defemse Mode min Cooldown' debuff, guardian attack rate is 150% faster.For every 200 Base attack your <font color='#17CCEC'>Snowball</font> stack count will be considered 1% higher in the Final calculations."
+	"DOTA_Tooltip_ability_item_spirit_guardian_Description"	"<h1>Active: Defense Mode</h1>Spirit stops attacking, but heals the owner. If the owner has a full health, then heals an ally in the attack radius + %range_buffer% with the lowest health percentage.<br>Spirit Healing is equal to the owner's base damage + Snowball stacks.<br>Healing duration: %guardian_heal_duration% seconds.\n<h1><font color='#0DAFEC'>Passive: Instincts (Int)</font></h1>Have a chance to Avoid %avoid_chance%%% of all dmg taken during Defense Mode, only if your primary attribute is Int or Universal.</font>\n<h1><font color='#17CCEC'>Passive: Snowball</font></h1>Every Hit landed by Spirit will increase your <font color='#17CCEC'>Snowball</font> stack by one and have a chance(half your lvl) for an extra stack.\n<h1><font color='#C47D0F'>Passive: Spirit Guardian</font></h1>Spirit attacks the closest enemy within the attack radius + %range_buffer% every %interval_attack% sec(CDR-Yes).<br>Spirit Damage is equal to the owner's base damage plus <font color='#17CCEC'>Snowball</font> stacks X Your Level.<br>Damage Type: <font color=\"#0D7DEC\">Magical</font><br><font color='#DD9510'>Limits Your attack speed to fixed rate of %fixed_attack_rate% attacks/s.\n<h1><font color='#DE3163'>Super Scepter</font></h1>For every Guardian Attack triggers an normal attack from your hero with all the proc effects. Adds %bonus_int_dmg%%% <font color=\"#17BFEC\">Int</font> X Level to guadian damage. During 'Defemse Mode min Cooldown' debuff, guardian attack rate is 150% faster.For every 200 Base attack your <font color='#17CCEC'>Snowball</font> stack count will be considered 1% higher in the Final calculations."
 	"DOTA_Tooltip_ability_item_spirit_guardian_note0"			"Healing interval and attack interval witch is %interval_attack% sec is affected by CDR"
 	"DOTA_Tooltip_ability_item_spirit_guardian_note1"			"Additional attack from Super Scepter has a True Strike."
 	"DOTA_Tooltip_Ability_item_spirit_guardian_hp"					"+$health"
@@ -2753,7 +2753,7 @@
 	"DOTA_Tooltip_ability_mjz_axe_counter_helix_strength_per"		"%Strength Bonus:"
 
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade"					"Culling Blade"
-	"DOTA_Tooltip_ability_mjz_axe_culling_blade_Description"		"Axe spots a weakness and strikes, and then based on the caster strength value multiples of damage. \n<h1><font color='#DE3163'>Super Scepter</font></h1> When an enemy is killed with Culling Blade, its cooldown is reset, Axe gains bonus armor permanently by %armor_per_kill%.<br>Enemys struck by axe ultimate start bleeding and take Axe lvl * armor as pure dmg for %ss_duration% seconds"
+	"DOTA_Tooltip_ability_mjz_axe_culling_blade_Description"		"Axe spots a weakness and strikes, and then based on the caster strength value multiples of damage.<br> If the Target dies all allies receive an Culling Blade Boost buff. \n<h1><font color='#DE3163'>Super Scepter</font></h1> When an enemy is killed with Culling Blade, its cooldown is reset, Axe gains bonus armor permanently by %armor_per_kill%.<br>Enemys struck by axe ultimate start bleeding and take Axe lvl * armor as pure dmg for %ss_duration% seconds"
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_scepter_description"		"Culling Blade hits all units in a small area."
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_Lore"					"Mogul Khan is the embodiment of battle and fury, launching into a gruesome fatality against those who dare engage the Axe in combat."
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_note0"					"1) Additional armor from Culling Blade Stacks is given after receiving the Super Scepter effect."
@@ -2766,11 +2766,17 @@
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_attack_speed_bonus"		"KILL ATTACK SPEED BONUS:"
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_speed_radius"			"KILL SPEED RADIUS:"
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_speed_duration"			"KILL SPEED DURATION:"
-	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_boost"					"Culling Blade"
+	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_boost"					"Culling Blade Boost"
 	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_boost_Description"		"Axe releases a war cry, giving all nearby allies %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% bonus movement and %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% bonus attack speed"
 	"DOTA_Tooltip_modifier_culling_blade_stacks"					"Culling Blade Stacks"
 	"DOTA_Tooltip_modifier_culling_blade_stacks_Description"		"Armor increased by %fMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
 	
+	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_checker_1"					"Culling Blade Death Aura"
+	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_checker_1_Description"       "If this unit dies it will give Axe an Culling Blade stack and will refresh the Culling Blade Boost duration"
+
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_axe_culling_blade_1"	"Culling Blade Boost now emits an 3200 aura that affects enemies"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_axe_culling_blade_1_Description" "Enemies that die and are affected by aura will give Axe Culling Blade Stacks"
+
 	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_ss_bleed"					"Culling Blade Bleed"
 	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_ss_bleed_Description"      "Receive pure bleed dmg every second. Duration can be extended by caster status resistance"
 
@@ -3248,7 +3254,7 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_ember_spirit_flame_guard_damage_per"		"+{s:value} Flame Guard DPS"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_damage"	"+{s:value}% Flame Guard Attack Damage"	
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist"					"Sleight of Fist"
-	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Description"		"Ember Spirit Or sven dashes around with blazing speed, attacking all enemies in the targeted area of effect, then returning to his start location. "
+	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Description"		"Ember Spirit Or sven dashes around with blazing speed, attacking all enemies in the targeted area of effect, then returning to his start location. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Increase Critical Damage by 50% for each hero lvl you have.<br> Now this skill Bonus Damage is multiplayed with your level."
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Lore"			"The studied warrior must whip and weave through its enemies, burning each without pause."
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_radius"				"RADIUS:"
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_bonus_damage"		"BONUS DAMAGE:"
@@ -5065,6 +5071,8 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 
 "DOTA_Tooltip_ability_special_bonus_unique_axe_3_custom"	"Counter Helix now has same chance to triger when you attack a target"
 //"DOTA_Tooltip_ability_special_bonus_unique_axe_3"			"Counter Helix now has same chance to triger when you attack a target"
+
+
 
 "DOTA_Tooltip_ability_custom_blood_bath"									"Blood Rite"
 "DOTA_Tooltip_ability_custom_blood_bath_Description"						"Bloodseeker baptizes an area in sacred blood. After %delay_plus_castpoint_tooltip% seconds the ritual completes, causing any enemies caught in the area to take damage and become silenced."
@@ -9710,6 +9718,8 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 "DOTA_Tooltip_ability_juggernaut_blade_dance_lua_blade_dance_crit_chance"			"%CRITICAL CHANCE:"
 "DOTA_Tooltip_ability_juggernaut_blade_dance_lua_crit_chance_agi_multiplier"		"CRIT CHANCE PER 1000 AGI:"
 "DOTA_Tooltip_ability_juggernaut_blade_dance_lua_max_crit_chance"					"%MAX CRITICAL CHANCE:"
+
+"DOTA_Tooltip_ability_special_bonus_unique_juggernaut_blade_dance_lua_1"			"+{s:value}% Quick Blade Critical Damage"
 
 		"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua"								"Commander Aura"
 		"DOTA_Tooltip_ability_vengefulspirit_command_aura_lua_Description"					"Vengeful Spirit's presence increases the physical damage of nearby friendly units. If Vengeful Spirit is slain, her killer will be possessed with a negative Vengeance Aura, reducing the damage of her killer and its nearby allies until Vengeful Spirit revives."

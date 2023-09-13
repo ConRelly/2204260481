@@ -28075,11 +28075,11 @@
 	"item_force_field"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"ItemCost"						"25000"
+		"ItemCost"						"20000"
 		"ItemIsNeutralDrop"				"1"
 		"ItemPurchasable"				"1"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
-		"AbilityCooldown"				"80"
+		"AbilityCooldown"				"65"
 		"AbilitySpecial"
 		{
 			"01"
@@ -28095,12 +28095,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"self_armor"			"65"
+				"self_armor"			"95"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"self_mres"				"40"
+				"self_mres"				"45"
 			}
 			"05"
 			{
@@ -28110,7 +28110,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"active_reflection_pct"		"15"
+				"active_reflection_pct"		"20"
 			}
 		}
 	}

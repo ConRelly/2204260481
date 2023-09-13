@@ -53,7 +53,7 @@ if IsServer() then
 		local ability = self
 		local caster = self:GetCaster()
 		local charge_count = GetTalentSpecialValueFor(ability, 'charge_count')
-		local charge_restore_time = ability:GetSpecialValueFor('charge_restore_time')
+		local charge_restore_time = ability:GetSpecialValueFor('charge_restore_time') * caster:GetCooldownReduction()
 
 		if charge_count == 0 then return nil end
 

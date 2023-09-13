@@ -234,9 +234,9 @@ function modifier_demonic_sword:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 end
 function modifier_demonic_sword:DeclareFunctions()
-	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_EVENT_ON_ATTACK_LANDED}
+	return {MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_EVENT_ON_ATTACK_LANDED}
 end
-function modifier_demonic_sword:GetModifierPreAttack_BonusDamage()
+function modifier_demonic_sword:GetModifierBaseAttack_BonusDamage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("damage") end
 end
 function modifier_demonic_sword:GetModifierPhysicalArmorBonus()

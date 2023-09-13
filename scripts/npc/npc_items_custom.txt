@@ -22310,12 +22310,12 @@
 			"1"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"25"
+				"bonus_armor"			"75"
 			}
 			"2"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_magic_resist"	"50"
+				"bonus_magic_resist"	"60"
 			}
 			"3"
 			{
@@ -22335,7 +22335,7 @@
 			"6"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"1300"
+				"aura_radius"			"1600"
 			}
 			"7"
 			{
@@ -31373,12 +31373,12 @@
 			"1"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"3400"
+				"damage"				"11400"
 			}
 			"2"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"43"
+				"armor"					"85"
 			}
 			"3"
 			{
@@ -31398,12 +31398,12 @@
 			"6"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"dps"					"21000"
+				"dps"					"28000"
 			}
 			"7"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dps_aura"				"7000"
+				"dps_aura"				"9500"
 			}
 			"8"
 			{
@@ -31418,7 +31418,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"current_hp_damage"		"1.0"
+				"current_hp_damage"		"3.0"
 			}
 		}
 	}
