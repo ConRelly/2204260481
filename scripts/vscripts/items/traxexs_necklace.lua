@@ -58,8 +58,8 @@ function modifier_traxexs_necklace:GetModifierProcAttack_BonusDamage_Pure(keys)
 		local spell_mul = 1
 		local status_mult = 1
 		if ms_diff > 1 then
-			if armor > 15 then
-				armor = 15
+			if armor > 30 then
+				armor = 30
 			end	
 			if parent_name == "npc_dota_hero_windrunner" then
 				lvl_basedmg = lvl_basedmg * 2
@@ -69,8 +69,8 @@ function modifier_traxexs_necklace:GetModifierProcAttack_BonusDamage_Pure(keys)
 				armor_mul = armor
 				status_mult = status_resist
 				spell_mul = spell_amp	
-				if ms_diff > 30 then
-					ms_diff = 30
+				if ms_diff > 45 then
+					ms_diff = 45
 				end
 			end
 			damage = lvl_basedmg * ms_diff * armor_mul * spell_mul * status_mult
@@ -211,6 +211,22 @@ function modifier_traxexs_necklace_frozen:OnDestroy()
 				damage_type = DAMAGE_TYPE_PHYSICAL,--DAMAGE_TYPE_MAGICAL,
 				damage_flags = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR,--DOTA_DAMAGE_FLAG_IGNORES_MAGIC_ARMOR,
 			})
+			ApplyDamage({
+				victim = target,
+				attacker = self:GetCaster(),
+				ability = self:GetAbility(),
+				damage = damage,
+				damage_type = DAMAGE_TYPE_PHYSICAL,--DAMAGE_TYPE_MAGICAL,
+				damage_flags = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR,--DOTA_DAMAGE_FLAG_IGNORES_MAGIC_ARMOR,
+			})
+			ApplyDamage({
+				victim = target,
+				attacker = self:GetCaster(),
+				ability = self:GetAbility(),
+				damage = damage,
+				damage_type = DAMAGE_TYPE_PHYSICAL,--DAMAGE_TYPE_MAGICAL,
+				damage_flags = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR,--DOTA_DAMAGE_FLAG_IGNORES_MAGIC_ARMOR,
+			})						
 		end
 	end
 end

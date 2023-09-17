@@ -72,3 +72,6 @@ LinkLuaModifier("modifier_item_warriors_seal_buff2", "abilities/custom/warriors_
 LinkLuaModifier("modifier_item_plain_ring_perma2", "items/item_plain_ring_perma2.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_warriors_seal2", "abilities/custom/warriors_seal_3.lua", LUA_MODIFIER_MOTION_NONE)
 --
+LinkLuaModifier("modifier_flaming_cape_charges", "items/flaming_cape.lua", LUA_MODIFIER_MOTION_NONE)
+
+LinkLuaModifier("modifier_kill_unit", "modifiers/modifier_kill_unit.lua", LUA_MODIFIER_MOTION_NONE)

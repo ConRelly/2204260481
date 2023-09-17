@@ -112,7 +112,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"10"
+				"value"				"52"
 				"ad_linked_abilities"			"arc_warden_spark_wraith"
 			}
 		}
@@ -1378,7 +1378,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"				"3"
+				"value"				"4"
 				"ad_linked_abilities"			"slark_shadow_dance"
 			}
 		}
@@ -1739,7 +1739,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"43750"
+				"value"					"63750"
 				"ad_linked_abilities"		"void_spirit_resonant_pulse"
 			}
 		}
@@ -1751,7 +1751,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"value"					"1950"
+				"value"					"9550"
 				"ad_linked_abilities"		"void_spirit_astral_step"
 			}
 		}
@@ -2126,7 +2126,7 @@
         "HasShardUpgrade"               "1"
 
 		"AbilityCastRange"				"600 625 650 675"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		"FightRecapLevel"				"1"
 
 		// Cost
@@ -2306,7 +2306,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1800"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		
@@ -2614,120 +2614,206 @@
 		"AbilityCastGestureSlot"		"DEFAULT"
 		
 	}	
+
+
+	//=================================================================================================================
+	// Arc Warden: Magnetic Field
+	//=================================================================================================================
 	"arc_warden_magnetic_field"
-	{
-
-		"HasShardUpgrade"			   "1"
-	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50 70 90 110"
-		"LevelsBetweenUpgrades"         "4"
-		
-		// Cast Range
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1400"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"420"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"3.5 4.5 5.5 6.5"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_speed_bonus"		"50 70 90 120"
-				"LinkedSpecialBonus"		"special_bonus_unique_arc_warden_3"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"evasion_chance"			"100"
-			}
-		}
-	}
-	"special_bonus_unique_arc_warden_3"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"7104"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ID"							"5678"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"		
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_ArcWarden.MagneticField.Cast"
+
+        "HasShardUpgrade"               "1"
+		"LevelsBetweenUpgrades"         "7"
+		"MaxLevel"                      "7"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_AW_MAGNETIC_FIELD"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"120"
 		
+		// Cast Range
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1500"
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"					
 			{
-				"var_type"					"FIELD_FLOAT"
-				"value"				"80"
-				"ad_linked_abilities"			"arc_warden_magnetic_field"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+				"value"		"420"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"duration"					"3.5 4.0 4.5 5.0 5.5 6.0 6.5"
+			"tempest_duration"			"4.5 5.0 5.5 6.0 6.5 7.0 8.0"
+			"attack_speed_bonus"		
+			{
+				"value" 				"100 120 140 160 180 200 220"
+				"special_bonus_unique_arc_warden_3" 		"+125"
+			}
+			"evasion_chance"			"100"
+			"shard_magic_resist"
+			{
+
+				"value"						"50"
+				"RequiresShard"				"1"
+			}
+			"shard_slow_pct"
+			{
+				"value"						"30"
+				"RequiresShard"				"1"
+			}
+			"attack_range_bonus"				"250"
+			"attack_magic_damage"				
+			{
+				"value"								"1200 9000 16000 26000 45000 80000 120000"
+				"special_bonus_unique_arc_warden_3" 		"+22500"
+			}
+			"AbilityCooldown"
+			{
+				"value"						"25"
+				"special_bonus_unique_arc_warden_9"		"-8"
+			}
+			"attack_damage_bonus"
+			{
+				"value"								"1520 3200 12000 46000 125000 195000 280000"
+				"special_bonus_unique_arc_warden_3" 		"+34500"
 			}
 		}
 	}
 
+
+	//=================================================================================================================
+	// Arc Warden: Flux
+	//=================================================================================================================
 	"arc_warden_flux"
 	{
-		"AbilitySpecial"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5677"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_ArcWarden.Flux.Target"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"duration"						"9"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_per_second"				"40 80 160 980"
-				"LinkedSpecialBonus"			"special_bonus_unique_arc_warden_2"
-			}
+				"duration"						
+				{
+					"value"			"6.0"
+					"special_bonus_unique_arc_warden_4"	"+3.5"
+				}
+				
+				"damage_per_second"				
+				{
+					"value"		"900 1600 2700 5800"
+					"special_bonus_unique_arc_warden_2"		"+1400"
+				}
+				"tempest_damage_per_second"				
+				{
+					"value"		"1200 1900 3700 7800"
+					"special_bonus_unique_arc_warden_2"		"+1400"
+				}
+				"search_radius"					"225"
+				"think_interval"				"0.5"
+				"move_speed_slow_pct"				"14 21 28 35"
+				"tempest_move_speed_slow_pct"		"6 10 14 18"
+				"AbilityCastRange"			
+				{
+					"value"				"1000 1200 1400 1600"
+					"special_bonus_unique_arc_warden_5"	"+1750"
+				}
 		}
-	}
-	"special_bonus_unique_arc_warden_2"
-	{
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"value"				"980"
-				"ad_linked_abilities"			"arc_warden_flux"
-			}
-		}
-	}
-	"arc_warden_spark_wraith"
-	{
-		"AbilityCastPoint"				"0.2"
-		"AbilityCooldown"				"8.0 8.0 8.0 8.0"
-		"AbilitySpecial"
-		{
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"spark_damage"					"275 350 425 1500"
-				"LinkedSpecialBonus"			"special_bonus_unique_arc_warden"
-			}
-		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 
-	"arc_warden_scepter"
+
+
+	//=================================================================================================================
+	// Arc warden: Tempest Double
+	//=================================================================================================================
+	"arc_warden_tempest_double"
 	{
-		"AbilityCooldown"				"25"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5683"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_ArcWarden.TempestDouble"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.15"
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+		"AbilityCastGestureSlot"		"DEFAULT"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"55"
+		"AbilityCastRange"				"2000"
+
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"
+			{
+				"value"				"18 22 26"
+				"special_bonus_unique_arc_warden_6"		"+12"
+			}
+			"bounty"				"180 240 300"
+			"penalty_distance"			
+			{
+				"value"	"2000"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"ignore_penalty_distance"		
+			{
+				"value"						"0"
+				"special_bonus_unique_arc_warden_8"		"+1"
+			}
+			"attack_damage_penalty"				"50"
+			"tempest_double_cooldown_reduction"
+			{
+				"value"							"0"
+				"special_bonus_unique_arc_warden_7"		"+50"
+			}
+		}
 	}
 
 
@@ -2754,7 +2840,7 @@
 		//-------------------------------------------------------------------------------------------------------------
  		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_2"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -2825,7 +2911,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"625"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Cost
@@ -2982,7 +3068,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -3021,75 +3107,7 @@
 	}
 
 
-// Beastmaster: Wild Axes
-	"beastmaster_wild_axes"
-	{
-		"ID"							"5168"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"MaxLevel"						"7"
-		"LevelsBetweenUpgrades"			"12"
-		"RequiredLevel"					"0"
-		//"HasScepterUpgrade"				"1"
-		"AbilityCastRange"				"1500"
-		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"8"
-		"AbilityManaCost"				"80"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"255"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"spread"					"450"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"range"						"1500"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"axe_damage"				"90 870 1900 2730 5960 9890 22450"
-				"LinkedSpecialBonus"		"special_bonus_unique_beastmaster"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"6"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_amp"				"1 2 3 4 5 7 10"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"scepter_cooldown"			"0.1"
-				"RequiresScepter"			"1"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"min_throw_duration"		"0.7 0.7 0.6 0.6 0.5 0.4 0.3"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"max_throw_duration"		"0.9 0.9 0.8 0.8 0.7 0.7 0.6"
-			}
-		}
-	}
+
 
 	//=================================================================================================================
 	// Beastmaster: Wild Axes
@@ -3099,7 +3117,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"					"5168"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -3164,7 +3182,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		"LevelsBetweenUpgrades"		 "5"
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -3208,7 +3226,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"LevelsBetweenUpgrades"		 "5"
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -3297,7 +3315,7 @@
 		"MaxLevel"					  "9"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -3479,7 +3497,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"4.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	
@@ -3535,7 +3553,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"8"
 		"AbilityManaCost"				"120 125 130 135"
 
@@ -3750,7 +3768,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastRange"				"1450"
 
 		// Time		
@@ -3819,7 +3837,7 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -4110,7 +4128,7 @@
 		"AbilityCastRange"				"1000"
 		"MaxLevel"                      "5"
 		"LevelsBetweenUpgrades"         "5"
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"0.0"
 		"AbilityManaCost"				"40"
 		"AbilityCharges"				"2 3 4 5 6"
@@ -4152,7 +4170,7 @@
 		"HasScepterUpgrade"				"1"
 		"IsGrantedByScepter"			"1"
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCharges"				"2"
 		"AbilityChargeRestoreTime"		"20"
@@ -4489,7 +4507,7 @@
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		"AbilityChannelTime"			"2.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -4631,7 +4649,7 @@
 		"AbilityValues"
 		{
 			"AbilityCastRange"				"700"
-			"AbilityCastPoint"				"0.1"
+			"AbilityCastPoint"				"0.0"
 			"AbilityCooldown"
 			{
 				"value"										"8"
@@ -4660,7 +4678,7 @@
 	"dark_willow_bramble_maze"
 	{
 		"AbilityCastRange"				"1400"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 		"MaxLevel"					  "7"
 		"LevelsBetweenUpgrades"		 "7"
 		
@@ -4703,7 +4721,7 @@
 		"RequiredLevel"							"1"
 		"LevelsBetweenUpgrades"					"5"
 		"AbilityCastRange"						"1200"
-		"AbilityCastPoint"						"0.1"
+		"AbilityCastPoint"						"0.0"
 		"AbilityCooldown"						"14 12 10 8 7 5"
 		"AbilityManaCost"						"90 100 110 120 220 320"
 		"AbilitySpecial"
@@ -4755,7 +4773,7 @@
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Dazzle.Weave"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1600"		
@@ -4790,7 +4808,7 @@
 		"HasScepterUpgrade"				"1"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCastRange"				"250"
 		
@@ -4832,124 +4850,7 @@
 	}
 
 
-	//=================================================================================================================
-	// Death Prophet: Exorcism
-	//=================================================================================================================
-	"death_prophet_exorcism"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"5093"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"FightRecapLevel"				"2"
-		"AbilitySound"					"Hero_DeathProphet.Exorcism.Cast"
-        "HasScepterUpgrade"			"1"
-        "LevelsBetweenUpgrades"     "12"
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.1"
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70.0 65.0 40.0"
-		"AbilityDuration"				"35"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"250 350 450"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"1600"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spirits"				"4 8 20"
-				"LinkedSpecialBonus"	"special_bonus_unique_death_prophet"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spirit_speed"			"525"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_distance"			"2000 2000 2000"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"give_up_distance"		"1200 1200 1200"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"min_damage"			"1500 4500 10600"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_damage"			"1500 4500 10600"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_percent"			"25 25 25"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"average_damage"		"1500 4500 10600"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"ghost_spawn_rate"	"0.35"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"scepter_movespeed_slow"	"100"
-				"RequiresScepter"			"1"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"scepter_movespeed_debuff_duration"	"0.3"
-				"RequiresScepter"			"1"
-			}
-			"13"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"scepter_spirit_life_duration"	"4"
-				"RequiresScepter"			"1"
-			}
-			"14"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"scepter_spirit_bonus_damage"	"1000"
-				"RequiresScepter"			"1"
-				"CalculateSpellDamageTooltip"	"0"
-			}	
-			"15"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"movement_bonus"				"25 50 75"
-			}
-		}
-	}	
 
 	//=================================================================================================================
 	// Death Prophet: Exorcism
@@ -5096,7 +4997,7 @@
 			}
 			"shard_consecutive_siphon_duration"			
 			{
-				"value"		"3"
+				"value"		"300"
 				"RequiresShard"				"1"
 			}
 		}
@@ -5472,7 +5373,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0.0"
 		"FightRecapLevel"				"1"
 
 		// Time		
@@ -6102,7 +6003,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_MIDNIGHT_PULSE"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -6157,7 +6058,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"275"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityChannelTime"			"5.0"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
@@ -6233,7 +6134,7 @@
 
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"7500"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"90"
 		"AbilityManaCost"				"130 140 150 160"
 		"LevelsBetweenUpgrades"		 "5"
@@ -6411,7 +6312,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -6725,7 +6626,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1400"
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -6859,7 +6760,7 @@
 	}
 	"juggernaut_swift_slash"
 	{
-		"AbilityCastPoint"				"0.15"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"18"
 		"AbilityManaCost"				"100"
 		"AbilitySpecial"
@@ -6983,7 +6884,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"650"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
@@ -7143,7 +7044,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		"LevelsBetweenUpgrades"		"10"
 		"MaxLevel"					 "7"
 
@@ -7274,7 +7175,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1850"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_6"
 
 		// Time		
@@ -7395,7 +7296,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
 		// Time		
@@ -7470,11 +7371,11 @@
 	}	
 	"lina_dragon_slave"
 	{
-		"AbilityCastPoint"				"0.25 0.25 0.25 0.25"
+		"AbilityCastPoint"				"0.1"
 	}
 	"lina_light_strike_array"
 	{
-		"AbilityCastPoint"				"0.35 0.35 0.35 0.35"
+		"AbilityCastPoint"				"0.1"
 		"AbilitySpecial"
 		{				
 			"03"
@@ -7880,7 +7781,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -7944,85 +7845,7 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}	
-	"magnataur_shockwave"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
-		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "12"
-		"HasScepterUpgrade"			 "1"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"2700"
-		"AbilityCastPoint"				"0.3"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"9"
-		"AbilityDuration"				"0.6875 0.6875 0.6875 0.6875 0.6875 0.6875 0.6875"
-
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"100"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"shock_speed"				"2000"
-			}
-			
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"shock_width"				"350"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"shock_damage"				"375 4750 17250 49500 142500 477500 3850000"
-				"LinkedSpecialBonus"	"special_bonus_unique_magnus_4"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"pull_duration"				"0.2"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"movement_slow"				"75"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"				"2"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"pull_distance"				"1"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"basic_slow_duration"		"0.9"
-				"LinkedSpecialBonus"	"special_bonus_unique_magnus_6"
-			}
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
-	}
 
 	//=================================================================================================================
 	// Magnataur: Shockwave
@@ -8045,7 +7868,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"2000"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -8207,7 +8030,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -8508,7 +8331,7 @@
 	"nevermore_shadowraze1"
 	{
 		"AbilityCooldown"				"9"
-		"AbilityCastPoint"				"0.25"
+		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"100"
 		"AbilitySpecial"
 		{
@@ -8533,7 +8356,7 @@
 	"nevermore_shadowraze2"
 	{
 		"AbilityCooldown"				"9"
-		"AbilityCastPoint"				"0.25"
+		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"100"
 		"AbilitySpecial"
 		{
@@ -8558,7 +8381,7 @@
 	"nevermore_shadowraze3"
 	{
 		"AbilityCooldown"				"9"
-		"AbilityCastPoint"				"0.25"
+		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"100"
 		"AbilitySpecial"
 		{
@@ -8720,7 +8543,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -8791,7 +8614,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"350"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -9000,7 +8823,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -9147,7 +8970,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.15"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
@@ -9237,7 +9060,7 @@
 	}
 	"phantom_assassin_phantom_strike"
 	{
-		"AbilityCastPoint"				"0.15"
+		"AbilityCastPoint"				"0.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -9756,7 +9579,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1600"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -9919,7 +9742,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1250"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -11357,7 +11180,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 
 		// Cost
@@ -11478,7 +11301,7 @@
 		"MaxLevel"						"6"
 		"LevelsBetweenUpgrades"			"2"
 		"AbilityCastRange"				"900"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"14 12 10 8 7 6"
 		"AbilityManaCost"				"100 120 140 160 260 360"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
@@ -11686,7 +11509,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1200"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -11761,7 +11584,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastRange"				"900"
 
 		// Time		
@@ -12116,7 +11939,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700 800 900"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
@@ -12179,7 +12002,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"28"
+		"AbilityCooldown"				"25"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -12192,7 +12015,7 @@
 			
 			"duration"					
 			{	
-				"value"			"2 2.25 2.5"
+				"value"			"2 3.25 4.5"
 				"LinkedSpecialBonus"	"special_bonus_unique_slark_3"
 			}
 			"fade_time"					"0.0 0.0 0.0"
@@ -12200,10 +12023,10 @@
 			"bonus_regen"			
 			{
 				"value"				"1600 4900 15000"
-				"special_bonus_unique_slark_8"	"+4000"
+				"special_bonus_unique_slark_8"	"+7000"
 			}
-			"activation_delay"			"0.5 0.5 0.5"
-			"neutral_disable"			"2.0 2.0 2.0"
+			"activation_delay"			"0.1 0.1 0.1"
+			"neutral_disable"			"0.0 0.0 0.0"
 		}
 	}
 		
@@ -12355,7 +12178,7 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastRange"				"7300"
 
 		// Time		
@@ -12711,7 +12534,7 @@
 		"MaxLevel"						"5"
 		"LevelsBetweenUpgrades"			"10"
 		"AbilityCastRange"				"1400"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"100"
@@ -12772,7 +12595,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		
 		
@@ -13076,7 +12899,7 @@
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"				"1"
 		"AbilitySound"					"Hero_Tusk.WalrusKick.Target"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"250"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		"AbilityCooldown"				"12"
@@ -13395,7 +13218,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -13480,7 +13303,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"900"
-		"AbilityCastPoint"				"0.15"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Cost
@@ -13725,7 +13548,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -13906,7 +13729,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_FATAL_BONDS"
 		"AbilityCastRange"				"1000"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -14343,7 +14166,7 @@
 		"MaxLevel"						"1"
 		"IsShardUpgrade"				"1"
 		"IsGrantedByShard"				"1"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"0"
 		"AbilityCooldown"				"40"
 		"AbilityManaCost"				"150"
@@ -15910,7 +15733,7 @@
 		"LevelsBetweenUpgrades"         "15"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"2650"
 
 		// Time		
@@ -16655,7 +16478,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
 		"MaxLevel"					  	"8"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		// Time		
@@ -17218,7 +17041,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"3000"
 		"AbilityCastRangeBuffer"		"600"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
@@ -17544,7 +17367,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1400"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		
@@ -17670,7 +17493,7 @@
 	}
 	"lone_druid_spirit_link"
 	{
-		"AbilityCastPoint"				"0.25"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"43 36 29 25"
 		"AbilitySpecial"
 		{
@@ -17935,7 +17758,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"MaxLevel"					  "7"
 		"LevelsBetweenUpgrades"		 "5"
 
@@ -17995,7 +17818,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.25"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -18443,7 +18266,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"525"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"8"
 		"AbilityManaCost"				"110"
 			
@@ -18517,7 +18340,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1600"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		
 		
@@ -19471,20 +19294,26 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"damage"					"650 6745 37450 348500"
-				"buffed_attacks"			
-				{
-					"value"		"15 30 45 60"
-					"special_bonus_unique_snapfire_2"	"+30"
-				}
-				"attack_speed_bonus"		"300 400 500 600"
-				"attack_range_bonus"		"100 250 375 500"
-				"buff_duration_tooltip"		"15 30 45 60"
-				"base_attack_time"			"0.7"
-				"armor_reduction_per_attack"	"0.4 0.6 0.8 1"
-				"armor_duration"				"5.0"
+			"damage"					"650 6745 37450 348500"
+			"buffed_attacks"			
+			{
+				"value"		"15 30 45 60"
+				"special_bonus_unique_snapfire_2"	"+30"
+			}
+			"damage_pct"
+			{
+				"value"	"0"
+				"special_bonus_unique_snapfire_6"	"+360"
+			}				
+			"attack_speed_bonus"		"300 400 500 600"
+			"attack_range_bonus"		"100 250 375 500"
+			"buff_duration_tooltip"		"15 30 45 60"
+			"base_attack_time"			"0.7"
+			"armor_reduction_per_attack"	"0.4 0.6 0.8 1"
+			"armor_duration"				"5.0"
 		}
 	}
+
 
 
 	"special_bonus_unique_snapfire_7"
@@ -19872,7 +19701,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"12 10 8 6"
 		"AbilityManaCost"				"100 115 130 145"
 		"AbilityValues"
@@ -19951,7 +19780,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"2000"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
  		"AbilityCastAnimation"		"ACT_INVALID"
 
 		// Special
@@ -20065,7 +19894,7 @@
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"3650"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -20156,7 +19985,7 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityChannelTime"			"3.7"
 	"AbilityCastRange"				"2600"
-	"AbilityCastPoint"				"0.2"
+	"AbilityCastPoint"				"0.0"
 	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 	"AbilityChannelAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
@@ -20341,7 +20170,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"850"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -20641,7 +20470,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1800"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		
 		// Time		
@@ -20690,7 +20519,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"16 14 12 10 9 8 7"
 		"AbilityCastRange"				"1575"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"105"
 
 		// Special
@@ -20898,7 +20727,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"5000"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -21109,7 +20938,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.15"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"MaxLevel"                      "7"
 		"LevelsBetweenUpgrades"         "10"
@@ -21280,7 +21109,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.25"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		"AbilityChannelAnimation"	"ACT_DOTA_CHANNEL_ABILITY_5"
 
@@ -21346,7 +21175,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCooldown"               "25"
         "AbilityManaCost"               "85"
-        "AbilityCastPoint"              "0.1"
+        "AbilityCastPoint"              "0.0"
         "AbilityCastRange"              "1800"
 
         // Damage.
@@ -21399,7 +21228,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
  		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-		"AbilityCastPoint"				"0.15"
+		"AbilityCastPoint"				"0.0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -21453,7 +21282,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1580"
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 
 		// Time		
@@ -25120,7 +24949,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"350"
 
 		// Time		
@@ -26359,7 +26188,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"model_scale"			"40 50"
+				"model_scale"			"25 35"
 			}
 			"04"
 			{

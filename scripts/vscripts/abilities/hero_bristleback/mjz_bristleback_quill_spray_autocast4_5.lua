@@ -9,6 +9,18 @@ LinkLuaModifier(MODIFIER_NAME, THIS_LUA, LUA_MODIFIER_MOTION_NONE)
 mjz_bristleback_quill_spray_autocast4_5 = class({})
 local ability_class = mjz_bristleback_quill_spray_autocast4_5
 
+
+
+function ability_class:OnOwnerSpawned()
+	local caster = self:GetCaster()
+	local ability = self
+
+	if ability and ability:GetToggleState() then
+		caster:AddNewModifier(caster, ability, MODIFIER_NAME, {})
+    end
+end
+function ability_class:ResetToggleOnRespawn() return false end
+
 function ability_class:OnToggle()
     if IsServer() then
         local ability = self
@@ -56,9 +68,7 @@ local NoAutocast = {
 
 local NoAutocastItem = {
     
-    --["drow_ranger_frost_arrows_lua"] = true,
-
-
+    ["item_echo_wand"] = true,
 
 };
 
@@ -68,20 +78,25 @@ function modifier_class:OnIntervalThink()
         local ability = self:GetAbility()
         local caster = self:GetCaster()
         local parent = self:GetParent()
+        local starting_skill = 6
         if not ability:GetToggleState() then return nil end
         if parent == nil then return nil end
         if not IsValidEntity(parent) then return nil end
-        if parent:HasModifier("modifier_mows_image") then return end
-        for i=6,parent:GetAbilityCount() -1 do
+        if parent:HasModifier("modifier_mows_image") then return end 
+        if parent:HasModifier("modifier_fountain_invulnerability") then return end
+        if parent:HasModifier("modifier_arc_warden_tempest_double") then
+            starting_skill = 0
+        end
+        for i=starting_skill,parent:GetAbilityCount() -1 do
 
             if parent == nil then return nil end
             local target_ability = parent:GetAbilityByIndex( i )       
-            if target_ability and IsValidEntity(target_ability) and not target_ability:IsAttributeBonus() and not target_ability:IsHidden() and not target_ability:IsToggle() and target_ability:IsActivated() and target_ability:GetLevel() > 0 and target_ability:IsCooldownReady() then  -- Talent-- Dunno
+            if target_ability and IsValidEntity(target_ability) and not target_ability:IsAttributeBonus() and not target_ability:IsHidden() and not target_ability:IsToggle() and target_ability:IsActivated() and target_ability:GetLevel() > 0 and target_ability:IsCooldownReady() and not target_ability:IsPassive() and not ( NoAutocast[target_ability:GetAbilityName()] == true) then  -- Talent-- Dunno
                 --print("initial pass")
                 if target_ability:IsInAbilityPhase() then return nil end
                 --if not ability:GetToggleState() then return nil end
                 local ability_name = target_ability:GetAbilityName()
-                if NoAutocast[ability_name] == true then return end                
+                --if NoAutocast[ability_name] == true then return end                
                 if not IsValidEntity(parent) then return nil end
                 if not target_ability:IsCooldownReady() then return nil end
                 if target_ability == nil then return nil end
@@ -97,9 +112,13 @@ function modifier_class:OnIntervalThink()
 				if target_ability:GetCooldown(target_ability:GetLevel()) <= 0 then return end
 
                 local radius_auto = target_ability:GetCastRange(parent:GetAbsOrigin(), parent) + caster:GetCastRangeBonus() - 50
-                if radius_auto < 100 then
+                if radius_auto then
+                    if radius_auto < 100 then
+                        radius_auto = 500
+                    end
+                else
                     radius_auto = 500
-                end    
+                end   
                 local pos = parent:GetAbsOrigin()
                     if ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_NO_TARGET) and not (target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH)  then
                         if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
@@ -174,8 +193,32 @@ function modifier_class:OnIntervalThink()
             if _G._itemauto2[playerID] ~= nil then
                 table.insert(item_auto_slots, _G._itemauto2[playerID])
             end
-            for _, slot in ipairs(item_auto_slots) do
-                local item = parent:GetItemInSlot(slot)
+            if parent:HasModifier("modifier_arc_warden_tempest_double") then
+                for slot=0 ,4 do
+                    local item = parent:GetItemInSlot(slot)
+                    if item and IsValidEntity(item) and item:IsFullyCastable() then
+                        -- more checks 
+                        local ability = item:GetAbilityName()
+                        if ability == nil then return end
+                        if ability == "" then return end
+                        if NoAutocastItem[ability] == true then return end                
+                        if not IsValidEntity(parent) then return nil end
+                        if not item:IsCooldownReady() then return nil end
+                        if item == nil then return nil end
+                        if not item:IsActivated() then return end
+                        if parent:IsIllusion() then return nil end
+                        if not parent:IsRealHero() then return nil end
+                        if IsChanneling(parent) and not ability_behavior_includes(item, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
+                            return nil
+                        end                    
+                        if item:GetCooldown(item:GetLevel()) <= 0 then return end
+                        if parent:IsInvisible() then
+                            AttackNearestEnemy(parent)
+                        end
+                        use_ability(item, caster, parent)
+                    end
+                end 
+                local item = parent:GetItemInSlot(16)     
                 if item and IsValidEntity(item) and item:IsFullyCastable() then
                     -- more checks 
                     local ability = item:GetAbilityName()
@@ -196,6 +239,31 @@ function modifier_class:OnIntervalThink()
                         AttackNearestEnemy(parent)
                     end
                     use_ability(item, caster, parent)
+                end                     
+            else
+                for _, slot in ipairs(item_auto_slots) do
+                    local item = parent:GetItemInSlot(slot)
+                    if item and IsValidEntity(item) and item:IsFullyCastable() then
+                        -- more checks 
+                        local ability = item:GetAbilityName()
+                        if ability == nil then return end
+                        if ability == "" then return end
+                        if NoAutocastItem[ability] == true then return end                
+                        if not IsValidEntity(parent) then return nil end
+                        if not item:IsCooldownReady() then return nil end
+                        if item == nil then return nil end
+                        if not item:IsActivated() then return end
+                        if parent:IsIllusion() then return nil end
+                        if not parent:IsRealHero() then return nil end
+                        if IsChanneling(parent) and not ability_behavior_includes(item, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
+                            return nil
+                        end                    
+                        if item:GetCooldown(item:GetLevel()) <= 0 then return end
+                        if parent:IsInvisible() then
+                            AttackNearestEnemy(parent)
+                        end
+                        use_ability(item, caster, parent)
+                    end
                 end
             end
         end           
@@ -268,7 +336,11 @@ function use_ability(ability, caster, parent )
     if not IsServer() then return end
     --local parent = caster:GetOwner()
     local radius_auto = ability:GetCastRange(parent:GetAbsOrigin(), parent) + caster:GetCastRangeBonus() - 50  
-    if radius_auto < 100 then
+    if radius_auto then
+        if radius_auto < 100 then
+            radius_auto = 500
+        end
+    else
         radius_auto = 500
     end    
     local pos = parent:GetAbsOrigin()

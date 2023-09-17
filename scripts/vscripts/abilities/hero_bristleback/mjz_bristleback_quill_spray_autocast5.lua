@@ -11,6 +11,17 @@ LinkLuaModifier(MODIFIER_NAME, THIS_LUA, LUA_MODIFIER_MOTION_NONE)
 mjz_bristleback_quill_spray_autocast5 = class({})
 local ability_class = mjz_bristleback_quill_spray_autocast5
 
+function ability_class:OnOwnerSpawned()
+	local caster = self:GetCaster()
+	local ability = self
+
+	if ability and ability:GetToggleState() then
+		caster:AddNewModifier(caster, ability, MODIFIER_NAME, {})
+    end
+end
+function ability_class:ResetToggleOnRespawn() return false end
+
+
 function ability_class:OnToggle()
     if IsServer() then
         local ability = self

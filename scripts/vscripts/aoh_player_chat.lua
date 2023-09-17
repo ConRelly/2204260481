@@ -153,7 +153,16 @@ function AOHGameMode:OnPlayerChat(keys)
 			_G._dev_enemy = true
 			_G._dev_enemy_ano = true
 		end	
-	end		
+	end	
+	if keys.text == "-autoskip" and keys.playerid == 0 then
+		if _G.auto_skipp then
+			_G.auto_skipp = false
+			Notifications:TopToAll({text="Autoskip OFF", style={color="blue"}, duration=5})	
+		else
+			_G.auto_skipp = true
+			Notifications:TopToAll({text="Autoskip ON", style={color="blue"}, duration=5})	
+		end	
+	end			
 	if keys.text == guessing_gmae_2 and not Cheats:IsEnabled() and time > 30 and not self._physdanage and not GameRules:IsGamePaused() then
 		Notifications:TopToAll({text="#dota_npc_does_bc", style={color="red"}, duration=5})
 		self._physdanage = true

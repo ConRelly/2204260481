@@ -26,6 +26,16 @@ function mjz_bristleback_quill_spray_autocast:OnHeroCalculateStatBonus(params)
 	end
 end
 local ability_class = mjz_bristleback_quill_spray_autocast
+function ability_class:OnOwnerSpawned()
+	local caster = self:GetCaster()
+	local ability = self
+
+	if ability and ability:GetToggleState() then
+		caster:AddNewModifier(caster, ability, MODIFIER_NAME, {})
+    end
+end
+function ability_class:ResetToggleOnRespawn() return false end
+
 
 function ability_class:OnToggle()
     if IsServer() then

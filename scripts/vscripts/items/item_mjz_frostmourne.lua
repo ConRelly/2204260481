@@ -184,7 +184,7 @@ end
 if modifier_frostmore_mkb_up == nil then modifier_frostmore_mkb_up = class({}) end
 
 
-function modifier_frostmore_mkb_up:IsHidden() return true end
+function modifier_frostmore_mkb_up:IsHidden() return false end
 function modifier_frostmore_mkb_up:IsPurgable() return false end
 function modifier_frostmore_mkb_up:IsDebuff() return false end
 function modifier_frostmore_mkb_up:RemoveOnDeath() return false end

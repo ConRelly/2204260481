@@ -7,12 +7,17 @@ local ability_class = mjz_ursa_earthshock
 
 function ability_class:GetAOERadius()
 	local caster = self:GetCaster()
-	local base_radius = self:GetSpecialValueFor("shock_radius") + talent_value(caster, "special_bonus_unique_mjz_ursa_earthshock_radius") + talent_value(caster, "special_bonus_unique_ursa_5")
+	local base_radius = self:GetSpecialValueFor("shock_radius") + talent_value(caster, "special_bonus_unique_mjz_ursa_earthshock_radius")
 
 	return base_radius
 end
 
+function ability_class:GetCastRange(vLocation, hTarget)
+	local caster = self:GetCaster()
+	local base_radius = self:GetSpecialValueFor("shock_radius") + talent_value(caster, "special_bonus_unique_mjz_ursa_earthshock_radius")
 
+	return base_radius
+end
 function ability_class:OnSpellStart()
 	if not IsServer() then return end
 	if not self:GetCaster():HasModifier("modifier_mjz_ursa_earthshock_movement") then
@@ -49,7 +54,7 @@ function ability_class:ApplyEarthShock()
 				if fs then
 					local fury_swipes = enemy:AddNewModifier(caster, fs, "modifier_ursa_fury_swipes_damage_increase", {duration = fs:GetSpecialValueFor("bonus_reset_time")})
 					local bonus_dmg = 1
-					local fury_dmg = fs:GetSpecialValueFor("damage_per_stack") / 2
+					local fury_dmg = (fs:GetSpecialValueFor("damage_per_stack") + talent_value(caster, "special_bonus_unique_ursa")) / 2
 					if caster:HasModifier("modifier_super_scepter") then
 						local lvl = caster:GetLevel() + 5
 						fury_swipes:SetStackCount(fury_swipes:GetStackCount() + lvl)

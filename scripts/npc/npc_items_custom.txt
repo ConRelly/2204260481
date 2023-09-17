@@ -1078,7 +1078,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"chance_tooltip"				"10" 
+				"chance_tooltip"				"12" 
 			}		
 		}
 		"Modifiers"					
@@ -3267,7 +3267,7 @@
 	"ScriptFile"						"items/item_plain_ring.lua"
 	"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"				"plain_ring"
-	"AbilityCooldown"					"300.0"
+	"AbilityCooldown"					"360.0"
 	"ItemShopTags"						"regen_health;regen_mana;mana_pool;health_pool"
 	"ItemQuality"						"epic"
 	"ItemAliases"						"gr;gold ring"
@@ -15535,22 +15535,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"16"
+				"bonus_damage"			"55"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"12"
+				"bonus_strength"		"37"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"25"
+				"bonus_agility"			"45"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"8"
+				"bonus_intellect"		"32"
 			}
 			"05"
 			{
@@ -15659,22 +15659,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"128"
+				"bonus_damage"			"550"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"96"
+				"bonus_strength"		"370"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"200"
+				"bonus_agility"			"450"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"64"
+				"bonus_intellect"		"320"
 			}
 		}
 		"OnSpellStart"
@@ -18327,22 +18327,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"650 1950"
+				"bonus_strength"		"650 2250"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movement_speed"		"160 260"
+				"movement_speed"		"160 290"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"model_scale"			"40 50"
+				"model_scale"			"25 35"
 			}
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"pct_str_damage_per_second"		"620 2450"
+				"pct_str_damage_per_second"		"620 4750"
 			}
 			"05"
 			{
@@ -19944,7 +19944,6 @@
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
 		"ItemDroppable"					"1"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS | DECLARE_PURCHASES_IN_SPEECH"
 		"ItemContributesToNetWorthWhenDropped"	"0"
 		"ItemStackable"					"0"
 		"ItemRequiresCharges"			"0"
@@ -22367,6 +22366,117 @@
 		"ItemRequirements"
 		{
 			"01"						"item_glimmer_cape*;item_cloak_of_flames;item_removed_skill"
+		}
+	}
+
+//Demonic Flaming Cape
+	"item_demonic_flaming_cape"
+	{
+		"BaseClass"						"item_lua"
+		"AbilityTextureName"			"custom/demonic_flaming_cape"
+		"ScriptFile"					"items/demonic_flaming_cape"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"		
+		"AbilitySharedCooldown"			"glimmer_cape"
+		"ItemPurchasable"				"1"
+		"AbilityCastRange"				"1300"
+		"AbilityCooldown"				"28"
+		"AbilityManaCost"				"150"
+		"ItemQuality"					"epic"
+		"ItemShopTags"					"magic_resist"
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"185"
+			}
+			"2"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_magic_resist"	"65"
+			}
+			"3"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fade_delay"			"0.3"
+			}
+			"4"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"active_magical_armor"	"70"
+			}
+			"5"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"10"
+			}
+			"6"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"1900"
+			}
+			"7"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_damage"			"15500"
+			}
+			"8"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_interval"		"1"
+			}
+			"9"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"up_dmg"				"100"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_armor_ptc"		"250"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"base_attack_damage"	"22500"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ss_damage_interval"	"0.7"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"current_hp_damage"		"2"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"armor_damage"			"10"
+			}															
+		}
+	}
+// Recipe: Demonic Flaming Cape
+	"item_recipe_demonic_flaming_cape"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"14000"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_demonic_flaming_cape"
+		"ItemRequirements"
+		{
+			"01"						"item_flaming_cape;item_demonic_sword;item_edible_fragment"
 		}
 	}
 
@@ -35942,7 +36052,7 @@
 			"freeze_shatter_radius"			"900"
 			"level_mult"                    "3"
 			"armor_mult"                    "1"
-			"spell_amp_mult_ptc"            "15"
+			"spell_amp_mult_ptc"            "25"
 			"freeze_ss_chance"              "30"
 		}
 	}

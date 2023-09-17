@@ -29,6 +29,7 @@
 
 	"misc"
 	{
+		"item"      "item_mjz_ring_of_aquila"
 		"item"		"item_keen_optic"
 		"item"		"item_repair_kit"
 		"item"		"item_royal_jelly"
@@ -252,6 +253,7 @@
 		"item"		"item_mjz_devils_veil"
 		"item"      "item_high_tech_boots2"
 		"item"      "item_titan_relic"
+		"item"      "item_demonic_flaming_cape"
 		"item"      "item_echo_wand"
 		"item"      "item_blast_staff_3"
 		"item"		"item_num"

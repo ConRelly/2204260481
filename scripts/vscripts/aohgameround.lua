@@ -266,7 +266,7 @@ function AOHGameRound:OnNPCSpawned(event)
 		return
 	end
 
-	if spawnedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+	if (spawnedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS) or spawnedUnit:GetUnitName() == "npc_dota_badguys_fillers_custom" then
 		if spawnedUnit:GetLevel() < 5 and spawnedUnit:GetUnitName() ~= "npc_boss_juggernaut_4" then return end
 		spawnedUnit:SetMustReachEachGoalEntity(true)
 		table.insert(self._vEnemiesRemaining, spawnedUnit)
@@ -291,7 +291,7 @@ function AOHGameRound:OnNPCSpawned(event)
 	end
 end
 
-
+local ent_pause = true
 function AOHGameRound:OnEntityKilled(event)
 	if not IsServer() then return end
 	local killedUnit = EntIndexToHScript(event.entindex_killed)
@@ -300,12 +300,14 @@ function AOHGameRound:OnEntityKilled(event)
 		return
 	end
 
+
 	for i, unit in pairs(self._vEnemiesRemaining) do
 		if killedUnit == unit then
 			table.remove(self._vEnemiesRemaining, i)
 			break
 		end
 	end	
+	
 	if killedUnit.Holdout_IsCore then
 		self._nCoreUnitsKilled = self._nCoreUnitsKilled + 1
 		self:_CheckForGoldBagDrop(killedUnit)
@@ -333,6 +335,23 @@ function AOHGameRound:OnEntityKilled(event)
 			end
 		end)
 	end	
+	if killedUnit:GetUnitName() ~= "npc_dota_badguys_fillers_custom" then	
+		if ent_pause then 
+			if GameRules.GLOBAL_currentRound:IsFinished() then
+				if killedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS and killedUnit:GetLevel() > 4 then
+					local vLocation = Vector(-19.779533, -1422.612671, 320.000000)
+					local skip_unit = CreateUnitByName("npc_dota_badguys_fillers_custom",vLocation, true, nil, nil, DOTA_TEAM_BADGUYS)
+					skip_unit:SetAbsOrigin(vLocation)
+					FindClearSpaceForUnit( skip_unit, vLocation, true )
+					AddFOWViewer(DOTA_TEAM_GOODGUYS, skip_unit:GetAbsOrigin(), 1200, 120, false)
+					ent_pause = false
+				end
+			end
+		end					
+	end
+	if killedUnit:GetUnitName() == "npc_dota_badguys_fillers_custom" then
+		ent_pause = true
+	end		
 end
 
 function AOHGameRound:GiveXPToAllHeroes(drop_xp)

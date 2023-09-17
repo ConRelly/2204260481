@@ -132,6 +132,7 @@ function AOHGameMode:InitGameMode()
 	_G._sell_slayer_fragmets = true
 	_G._dev_enemy = false
 	_G._dev_enemy_ano = false
+	_G.auto_skipp = false
 	self._hardMode = false
 	self._endlessMode = false
 	self._endlessMode_started = false
@@ -1141,7 +1142,11 @@ function AOHGameMode:OnHeroLevelUp(event)
 	if hero:HasItemInInventory("item_flaming_cape") and not hero:IsIllusion() then
 		local flaming_cape = hero:FindItemInInventory("item_flaming_cape")
 		flaming_cape:SetCurrentCharges(flaming_cape:GetCurrentCharges() + 1)
-	end						
+	end	
+	if hero:HasItemInInventory("item_demonic_flaming_cape") and not hero:IsIllusion() then
+		local flaming_cape = hero:FindItemInInventory("item_demonic_flaming_cape")
+		flaming_cape:SetCurrentCharges(flaming_cape:GetCurrentCharges() + 1)
+	end							
 end
 
 _G.lopata = true
@@ -1217,9 +1222,7 @@ function AOHGameMode:CheckForDefeatDelay()
 					self._ischeckingdefeat = false
 					return nil
 				else	
-					print("anciend 1")
 					self._entAncient:Kill(nil,nil)
-					print("anciend killed")
 					Notifications:TopToAll({text="You LOST, All Heroes dead When CountDown ended with 0 lives left", style={color="red"}, duration=5})
 					Timers:CreateTimer({
 						endTime = 4,
@@ -1255,6 +1258,7 @@ function AOHGameMode:_ThinkPrepTime()
 		GameRules.GLOBAL_hardMode = self._hardMode
 
 		self._currentRound = self._vRounds[self._nRoundNumber]
+		GameRules.GLOBAL_currentRound = self._currentRound
 		--if self._endlessMode_started then
 		--	self._currentRound:BeginEndless(#self._vRounds)
 		--end
@@ -1312,8 +1316,12 @@ function AOHGameMode:OnEntitySpawned(event)
 			reminder = false
 		end	
 	end	
-
-	if unit and unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+	if unit:GetUnitName()== "npc_dota_badguys_fillers_custom" then
+		if  _G.auto_skipp then
+			unit:AddNewModifier(unit, nil, "modifier_kill_unit", {duration = 0.5})
+		end
+	end	
+	if unit and unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS or unit:GetUnitName()== "npc_dota_badguys_fillers_custom" then
 		local not_illusion = not unit:HasModifier('modifier_illusion')
 		if IsValidEntity(unit) and (not unit:IsHero() or unit:GetUnitName()== "npc_courier_replacement") then 
 			LearnAbilityOnSpawn(unit)
@@ -1403,7 +1411,7 @@ function AOHGameMode:OnEntitySpawned(event)
 		unit:AddNewModifier(unit, nil, "modifier_phys", {})
 		print("misha phy buff")
 	end	 ]]
-	if unit and unit:GetTeamNumber() == DOTA_TEAM_BADGUYS and unit:GetUnitName() ~= "npc_dota_thinker" then
+	if unit and unit:GetTeamNumber() == DOTA_TEAM_BADGUYS and unit:GetUnitName() ~= "npc_dota_thinker" and unit:GetUnitName() ~= "npc_dota_badguys_fillers_custom" then
 		if self._endlessMode_started then
 			unit:AddNewModifier(unit, nil, "modifier_power_boss", {})
 		end
@@ -1491,7 +1499,6 @@ function AOHGameMode:OnEntityKilled(event)
 	local killedUnit = EntIndexToHScript(event.entindex_killed)
 	if killedUnit:IsNull() then return end
 	if killedUnit:IsFort() then
-		print("game end fort dead")
 		GameRules:SetSafeToLeave(true)
 		end_screen_setup(self._entAncient and self._entAncient:IsAlive())			
 		PauseGame(true)

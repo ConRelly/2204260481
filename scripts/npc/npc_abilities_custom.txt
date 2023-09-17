@@ -69,7 +69,7 @@
 		"MaxLevel"						"10"
 		"LevelsBetweenUpgrades"			"9"
 		//"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.05"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCooldown"				"11"
 		"AbilityManaCost"				"80"
@@ -161,7 +161,7 @@
 		"MaxLevel"						"10"
 		"LevelsBetweenUpgrades"			"9"
 		"AbilityCastRange"				"2000"
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0.05"
 		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"110"
 		"AbilitySpecial"
@@ -319,7 +319,7 @@
 		"MaxLevel"						"9"	
 		"LevelsBetweenUpgrades"			"9"
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0.05"
 		"AbilityChannelTime"			"0.1"
 		"AbilityCooldown"				"65"
 		"AbilityManaCost"				"250"
@@ -384,7 +384,7 @@
 		"MaxLevel"						"10"
 		"LevelsBetweenUpgrades"			"7"
 		"AbilityCastRange"				"1500"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.05"
 		"AbilityCooldown"				"12"
 		"AbilityManaCost"				"120"
 		"AbilityModifierSupportValue"	"0.5"
@@ -438,7 +438,7 @@
 		"AbilityCastRange"				"1800"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"7"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.05"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCooldown"				"14"
 		"AbilityManaCost"				"120"
@@ -597,7 +597,7 @@
         "HasShardUpgrade"               "1"
 		"AbilityCooldown"				"17"
 		"AbilityCastRange"				"1150"
-		"AbilityCastPoint"				"0.15"
+		"AbilityCastPoint"				"0.05"
 		"AbilityManaCost"				"150"
 		"AbilityModifierSupportValue"	"0.75"
 		"AbilitySpecial"
@@ -679,7 +679,7 @@
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"6"
 		"AbilityCastRange"				"1500"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.05"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCooldown"				"8.0 7.5 7.0 6.5 6.0 5.5 5.0"
 		"AbilityManaCost"				"130"
@@ -903,6 +903,7 @@
 		}
 	}
 
+
 // Void Spirit: Astral Step
 	"void_spirit_custom_astral_step"
 	{
@@ -922,53 +923,43 @@
 		"AbilityCharges"				"5 7 9 15 30 35 40"
 		"AbilityChargeRestoreTime"		"14 13 12 11 10 9 8"
 		"AbilityManaCost"				"200"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"350"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"AbilityCharges"		"5 7 9 15 30 35 40"
-				"LinkedSpecialBonus"	"special_bonus_unique_void_spirit_9"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"AbilityChargeRestoreTime"	"14 13 12 11 10 9 8"
-				"LinkedSpecialBonus"		"special_bonus_unique_void_spirit_1"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
+				"radius"				
+				{
+					"value"	"370"
+					"affected_by_aoe_increase"	"1"		
+				}
+				"AbilityChargeRestoreTime"	
+				{
+					"value"			"14 13 12 11 10 9 8"
+					"special_bonus_unique_void_spirit_1"	"-4"
+				}
 				"min_travel_distance"	"300"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_travel_distance"	"700 900 1100 1500 1800 2400 2800"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"pop_damage_delay"		"0.05"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"pop_damage"			"900 1750 2850 3950 7250 14500 32500"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"movement_slow_pct"		"30 40 50 55 60 65 70"
-			}
+				"max_travel_distance"	"900 1400 1900 2300 2800 3500 7000"
+				"pop_damage_delay"		
+				{
+					"value"	"0"
+					"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+				}
+				"pop_damage"			
+				{
+					"value"					"2750 8850 23950 67250 145000 325000 950000"
+					"CalculateSpellDamageTooltip"	"1"
+				}
+				"movement_slow_pct"		"50"
+				"ability_chance_pct"
+				{
+					"value"				"100"
+
+				}
+				"attack_chance_pct"
+				{
+					"value"				"100"
+				}
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-	}
+	}	
 
 //Dazzle Bad Juju
 	"dazzle_bad_juju_custom"
@@ -1071,7 +1062,7 @@
 		"AbilitySound"					"Hero_Marci.Grapple.Cast"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.05"
 		"AbilityCastRange"				"175"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		//"AbilityCastGestureSlot"		"DEFAULT"
@@ -1153,7 +1144,7 @@
 		"LevelsBetweenUpgrades"         "9"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.05"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -1226,7 +1217,7 @@
 		"AbilitySound"					"Hero_Marci.Rebound.Cast"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0.05"
 		"AbilityCastRange"				"800"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"MaxLevel"                      "7"
@@ -1422,7 +1413,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -5663,7 +5654,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 	"AbilityCastRange"				"3000"
-	"AbilityCastPoint"				"0.9"
+	"AbilityCastPoint"				"0.1"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 	"AbilityCooldown"				"1"
 	"AbilityManaCost"				"0"
@@ -8574,52 +8565,65 @@
 	"AbilityType"										 "DOTA_ABILITY_TYPE_ULTIMATE"
 	"SpellDispellableType"								"SPELL_DISPELLABLE_NO"
 
-	"MaxLevel"											"5"
-	"RequiredLevel"									   "6"
-	"LevelsBetweenUpgrades"							   "6"
+	"MaxLevel"											"1"
 
-	"HasScepterUpgrade"								   "0"
 
-	// Time
+	"FightRecapLevel"				"2"
+	"AbilitySound"					"Hero_Abaddon.BorrowedTime"
+	"HasShardUpgrade"				"0"
+	"HasScepterUpgrade"				"1"
+
+	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"									 "60" //OAA
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+	"AbilityCastGestureSlot"		"ABSOLUTE"
 
+	"HasScepterUpgrade"			"1"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"									 "0"
+	"AbilityManaCost"				"0"
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
+	"AbilityValues"
 	{
-	  "01"
-	  {
-		"var_type"										"FIELD_INTEGER"
-		"hp_threshold"									"100000"
-	  }
-	  "02"
-	  {
-		"var_type"										"FIELD_FLOAT"
-		"duration"										"10.0"
-	  }
-	  "03"
-	  {
-		"var_type"										"FIELD_FLOAT"
-		"duration_scepter"								"10.0"	//OAA
-		"RequiresScepter"								 "1"
-	  }
-	  "04"
-	  {
-		"var_type"										"FIELD_INTEGER"
-		"ally_threshold_scepter"						  "525"
-		"RequiresScepter"								 "1"
-	  }
-	  "05"
-	  {
-		"var_type"										"FIELD_INTEGER"
-		"redirect_range_scepter"						  "900" //OAA
-		"RequiresScepter"								 "1"
-	  }
+		"AbilityCooldown"				
+		{
+			"value"								"60"
+		}
+		"hp_threshold"							"100000"
+		"duration"								"10"
+		"duration_scepter"
+		{
+			"value"								"13"
+			"RequiresScepter"					"1"
+		}
+		"ally_threshold_scepter"
+		{
+			"value"								"525"
+			"RequiresScepter"					"1"
+		}
+		"redirect_range_scepter"
+		{
+			"value"								"1200"
+			"RequiresScepter"					"1"
+			"affected_by_aoe_increase"	"1"
+		}
+		"immolate_damage"
+		{
+			"value"								"0"
+			"special_bonus_unique_abaddon_immolation"	"+95"
+		}
+		"immolate_aoe"
+		{
+			"value"								"0"
+			"special_bonus_unique_abaddon_immolation"	"+400"
+			"affected_by_aoe_increase"	"1"
+		}
+		"immolate_tick"							".25"
 	}
   }
 "custom_abaddon_borrowed_time_2"
@@ -10359,7 +10363,7 @@
 	}
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastPoint"				"0.3"
+	"AbilityCastPoint"				"0.1"
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"4900"
@@ -10494,7 +10498,7 @@
 	"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 	"AbilityTextureName"		"chen_hand_of_god"
 	"AbilityCastRange"			"3200"
-	"AbilityCastPoint"			"0.3"
+	"AbilityCastPoint"			"0.1"
 	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	"AbilityCooldown"			"66.0 55.0 40.0"
 	"AbilityManaCost"			"200"
@@ -10836,7 +10840,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityCastRange"				"8500"
-	"AbilityCastPoint"				"0.25"
+	"AbilityCastPoint"				"0.1"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"AbilityTextureName"			"obsidian_destroyer_sanity_eclipse"
@@ -11102,7 +11106,7 @@
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"700 950 1200"
-	"AbilityCastPoint"				"0.3 0.3 0.3"
+	"AbilityCastPoint"				"0.1"
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"45.0 30.0 15.0"
@@ -11800,7 +11804,7 @@
 	"AbilityCastRange"				"900"
 	"MaxLevel"					  "7"
 	"LevelsBetweenUpgrades"		 "5"
-	"AbilityCastPoint"				"0.5 0.5 0.5 0.5 0.5 0.4 0.2"
+	"AbilityCastPoint"				"0.1"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	"AbilityCooldown"				"15 14 12 11 10 8 7"
 	"AbilityManaCost"				"90 100 110 120 160 200 300"
@@ -11999,7 +12003,7 @@
 	"AbilityTextureName"			"furion_wrath_of_nature"
 	"AbilityType"				"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityCastRange"				"1200"
-	"AbilityCastPoint"				"0.25"
+	"AbilityCastPoint"				"0.1"
 	"AbilityChannelTime"			"10.0"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	"AbilityCooldown"				"4"
@@ -12411,7 +12415,7 @@
 	"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityTextureName" 			"legion_commander_duel"
-	"AbilityCastPoint"				"0.2"
+	"AbilityCastPoint"				"0.1"
 	"MaxLevel"					  "5"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	"AbilityCooldown"				"55.0 50.0 45.0 40.0 30.0"
@@ -12587,7 +12591,7 @@
 	"AbilityCastRange"			  "1200"
 	"MaxLevel"					  "7"
 	"LevelsBetweenUpgrades"		 "5"
-	"AbilityCastPoint"				"0.2"
+	"AbilityCastPoint"				"0.1"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	"AbilityCooldown"				"12 11 10 9 8 7 6"
 	"AbilityManaCost"				"50 60 65 70 100 150 200"
@@ -12643,7 +12647,7 @@
 	"MaxLevel"						  "5"
 	"HasScepterUpgrade"					"1"
 	"AbilityCastRange"					"2200"
-	"AbilityCastPoint"					"0.3 0.3 0.3 0.3 0.3"
+	"AbilityCastPoint"					"0.1"
 	"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_4"
 	"AbilityCooldown"					"45"
 	"AbilityManaCost"					"200 325 450 650 1200"
@@ -12763,7 +12767,7 @@
 	"MaxLevel"					  "7"
 	"LevelsBetweenUpgrades"		 "5"
 	"AbilityCastRange"				"3500"
-	"AbilityCastPoint"				"0.25"
+	"AbilityCastPoint"				"0.1"
 	"AbilityCooldown"				"14.0"
 	"AbilityManaCost"				"100"
 	"AbilitySpecial"
@@ -13118,7 +13122,7 @@
 	}
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastPoint"				"0.5 0.5 0.5"
+	"AbilityCastPoint"				"0.1"
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"85 70 55"
@@ -13406,7 +13410,7 @@
 	"FightRecapLevel"				"1"
 
 	"AbilityCastRange"				"2500 1100 1200 1300 1500 1700 2500"
-	"AbilityCastPoint"				"0.20"
+	"AbilityCastPoint"				"0.1"
 	"AbilityCastAnimation"			"ACT_DOTA_RAZE_3"
 	"AbilityCharges"				"3"
 	"AbilityChargeRestoreTime"		"7"
@@ -13504,7 +13508,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 	"AbilityTextureName"			"nyx_assassin_mana_burn"
 	"AbilityCastRange"				"1200"
-	"AbilityCastPoint"				"0.31"
+	"AbilityCastPoint"				"0.1"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	"AbilityCooldown"				"18 15 12 9"
 	"AbilityManaCost"				"0"
@@ -13758,7 +13762,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"AbilityTextureName"			"pugna_nether_ward"
-	"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+	"AbilityCastPoint"				"0.1"
 	"AbilityCooldown"				"22.5 20.0 17.5 15" 
 	"AbilityDuration"				"30.0"
 	"AbilityManaCost"				"80"		
@@ -14047,7 +14051,7 @@
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"queenofpain_shadow_strike"
 	"AbilityCastRange"				"700 950 1200 1550"
-	"AbilityCastPoint"				"0.4"
+	"AbilityCastPoint"				"0.1"
 	"MaxLevel"					  "7"
 	"LevelsBetweenUpgrades"		 "5"
 	"RequiredLevel"				 "1"
@@ -14329,7 +14333,7 @@
 	"RequiredLevel"				 "1"	 
 	"AbilityTextureName" 			"rattletrap_rocket_flare"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-	"AbilityCastPoint"				"0.3 0.3 0.3 0.3 0.3 0.3 0.3"
+	"AbilityCastPoint"				"0.1"
 	"AbilityCastRange"				"0"
 	"AbilityCooldown"				"20.0 18.0 16.0 14.0 12.0 10.0 7.0"
 	"AbilityManaCost"				"50 60 70 80 160 240 360"
@@ -14407,7 +14411,7 @@
 	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityType"				"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityTextureName"		"shadow_demon_demonic_purge"
-	"AbilityCastPoint"			"0.8"
+	"AbilityCastPoint"			"0.1"
 	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 	"AbilityCooldown"			"70.0"
 	"AbilityManaCost"			"200 250 300"
@@ -14474,7 +14478,7 @@
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityTextureName"			"shadow_demon_soul_catcher"
 	"AbilityCastRange"			  "1400"
-	"AbilityCastPoint"				"0.2"
+	"AbilityCastPoint"				"0.1"
 	"MaxLevel"					  "7"
 	"LevelsBetweenUpgrades"		 "7"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
@@ -14836,7 +14840,7 @@
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"2700"
-	"AbilityCastPoint"				"0.5"
+	"AbilityCastPoint"				"0.1"
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"30"
@@ -14939,7 +14943,7 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilitySound"					"Hero_Tinker.Rearm"
 	"AbilityTextureName"			"terrorblade_sunder"
-	"AbilityCastPoint"				"0.2"
+	"AbilityCastPoint"				"0.1"
 	"AbilityChannelTime"			"0.66"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
@@ -15222,7 +15226,7 @@
 	"AbilityCastGestureSlot"		"DEFAULT"
 	"LevelsBetweenUpgrades"         "10"
 	"AbilityCastRange"				"800"
-	"AbilityCastPoint"				"0.45"
+	"AbilityCastPoint"				"0.1"
 	"AbilityCooldown"				"40.0"
 	"AbilityDuration"				"100.0 125.0 150.0 225.0"
 	"AbilityManaCost"				"85 95 105 115"
@@ -15324,7 +15328,7 @@
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 		"HasScepterUpgrade"				"1"
 		"Maxlevel"						"7"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"1100"
 		"AbilityChannelTime"			"7.0"
 		"AbilityCooldown"				"20"
@@ -15766,7 +15770,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
@@ -15832,7 +15836,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"1750"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"8.0"
@@ -16257,7 +16261,7 @@
 		"AbilityTextureName"			"crystal_maiden_brilliance_aura"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"20.0"
@@ -17134,7 +17138,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"2400"
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.1"
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"16.0"
@@ -17221,7 +17225,7 @@
 		"AbilityTextureName"		"tiny_craggy_exterior"
 		// Casting
 		//-----------------------------------------------------------------------------------------------
-		"AbilityCastPoint"			"0.3"
+		"AbilityCastPoint"			"0.1"
 		// Time
 		//-----------------------------------------------------------------------------------------------
 		"AbilityCooldown"			"16.0"
@@ -20809,7 +20813,7 @@
 	"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 
 	"AbilityCastRange"				"1000"
-	"AbilityCastPoint"				"0.4"
+	"AbilityCastPoint"				"0.1"
 	"AbilityCooldown"				"35"
 	"AbilityManaCost"				"0"
 	"AbilitySpecial"
@@ -20908,7 +20912,7 @@
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"3000"
-	"AbilityCastPoint"				"0.25"
+	"AbilityCastPoint"				"0.1"
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 	// Damage
@@ -21323,7 +21327,7 @@
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		"AbilityCastRange"				"1400"
 
@@ -21404,7 +21408,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityTextureName"			"dark_seer_ion_shell"
 		"AbilityCastRange"				"2600"
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"40"
 		"AbilityManaCost"				"120"
 		"MaxLevel"						"7"
@@ -21477,7 +21481,7 @@
 		"AbilitySound"					"Hero_FacelessVoid.TimeWalk"
 
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 
 		"AbilityCooldown"				"15 12 9 6"
 		"AbilityManaCost"				"40"
@@ -21831,7 +21835,7 @@
 		"AbilityTextureName"			"mjz_antimage_mana_void"
 
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCooldown"				"60.0"
 		"AbilityManaCost"				"275"
@@ -21961,7 +21965,7 @@
 		"AbilitySound"					"Hero_Axe.Berserkers_Call"
 		"AbilityTextureName"			"mjz_axe_berserkers_call"
 		"LevelsBetweenUpgrades"         "5"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_1"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"HasShardUpgrade"				"1"
@@ -22185,7 +22189,7 @@
 
 		"AOERadius" 					"%splash_radius_scepter"
 		"AbilityCastRange"				"%cast_range"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCooldown"				"35"
 		"AbilityManaCost"				"180"		
@@ -22512,7 +22516,7 @@
 		"HasScepterUpgrade"				"1"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"7"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"8"
 		"AbilityManaCost"				"160"
 		"precache"
@@ -22855,7 +22859,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"HasScepterUpgrade"				"1"
 		"MaxLevel"						"7"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCooldown"				"50"
 		"AbilityManaCost"				"150"
@@ -22941,7 +22945,7 @@
 		"MaxLevel"					  "7"
 		"LevelsBetweenUpgrades"		 "7"
 		"AbilityCastRange"				"3500"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"20"
 		"HasScepterUpgrade"			 "1"
 		"AbilityManaCost"				"10"
@@ -23054,7 +23058,7 @@
 		"LevelsBetweenUpgrades"		 "5"
 		"AbilityCooldown"				"4.0"
 		"AbilityCastRange"				"150 150 150 150 200 250 250"
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.1"
 		"AbilityManaCost"				"0 0 0 0 0 0 0"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 
@@ -23185,7 +23189,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"150"
+				"value"						"200"
 			}
 		}
 	}
@@ -23438,7 +23442,7 @@
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"5"
 		"AbilityCastRange"				"7900"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCooldown"				"50"
 		"AbilityManaCost"				"10"
@@ -23468,7 +23472,7 @@
 			"5"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"permanent_bonus"		"10 13 19 22 25 28 35"
+				"permanent_bonus"		"50 73 99 122 185 228 385"
 				"LinkedSpecialBonus"	"special_bonus_unique_clinkz_101"
 			}
 			"6"
@@ -23811,7 +23815,7 @@
 		"HasScepterUpgrade"             "1"
 		//"AOERadius"						"%radius"
 		"AbilityCastRange"				"1400"
-		"AbilityCastPoint"				"0.3 "
+		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"11" //"9.0 8.0 7.0 6.0"
 		"AbilityManaCost"				"200"
 		"AbilityModifierSupportValue"	"0.5"	// Applies multiple modifiers
@@ -23911,7 +23915,7 @@
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"5"
 		"AbilityCastRange"				"810"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"5"
 		"AbilityManaCost"				"85 110 135 160"	
 		
@@ -24084,7 +24088,7 @@
 		"AbilitySound"					"Hero_DoomBringer.Devour"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"LevelsBetweenUpgrades"		 "5"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"3000 3000 4000 6000"
 		"AbilityCooldown"				"70 60 50 40"
 		"AbilityManaCost"				"40 50 60 70"
@@ -24150,7 +24154,7 @@
 
 		"HasScepterUpgrade"				"1"
 		
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
@@ -24328,7 +24332,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityTextureName"			"mjz_dragon_knight_breathe_fire"
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"14 13 12 9 8 7 5"
 		"AbilityManaCost"				"50"
 		"AbilitySpecial"
@@ -24978,7 +24982,7 @@
 		"AbilityUnitDamageType"		 "DAMAGE_TYPE_PURE"
 		"AbilityCastRange"				"275"
 		//"RequiredLevel"				 "1"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityChannelTime"			"4.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
@@ -25035,7 +25039,7 @@
 		"AbilityTextureName"			"mjz_faceless_the_world"
 		"HasScepterUpgrade"				"1"
 		"LevelsBetweenUpgrades"			"12"
-		"AbilityCastPoint"				"0.35"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCooldown"				"95"
 		"AbilityManaCost"				"150 225 300"
@@ -25266,7 +25270,7 @@
 		"MaxLevel"						"5"
 		"HasScepterUpgrade"				"1"
 		"AbilityCastRange"				"%cast_range"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCooldown"				"40 36 32 28 24"
 		"AbilityManaCost"				"200 400 800 1400 2200"
@@ -25488,7 +25492,7 @@
 		"AbilityTextureName"			"naga_siren_mirror_image"
 		"MaxLevel"						"4"
 
-		"AbilityCastPoint"				"0.65"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"45"
 		"AbilityManaCost"				"0"
 
@@ -26057,7 +26061,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"			"mjz_juggernaut_jump_crit"
 
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"7"
 		"AbilityManaCost"				"10"		
 		"AbilityCastRange"				"1900"
@@ -26345,7 +26349,7 @@
 		"HasScepterUpgrade"				"1"
 
 		"AbilityCastRange"				"%cast_range"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		"AbilityCooldown"				"60.0 60.0 60.0"
@@ -26438,7 +26442,7 @@
 		"MaxLevel"					  "7"
 		"LevelsBetweenUpgrades"		 "8"
 		//"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.5"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"26"
 		"AbilityManaCost"				"155"
 			
@@ -26521,7 +26525,7 @@
 		"AbilityCastRange"				"1650"
 		"MaxLevel"					  "7"
 		"LevelsBetweenUpgrades"		 "8"
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"4.0"
 		"AbilityManaCost"				"200"
 		"HasScepterUpgrade"				"1"
@@ -27436,7 +27440,7 @@
 		"MaxLevel"					  "7"
 		"LevelsBetweenUpgrades"		 "5"
 		"AbilityCastRange"				"3800"
-		"AbilityCastPoint"				"0.25"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"14.0"
 		"AbilityManaCost"				"100"
 
@@ -27567,7 +27571,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityTextureName"			"medusa_split_shot"	// "mjz_medusa_split_shot"
 
-		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+		"AbilityCastPoint"				"0.1"
 
 		"precache"
 		{
@@ -27799,7 +27803,7 @@
 		"AbilityTextureName"			"mjz_meepo_poof"
 		"LevelsBetweenUpgrades"         "10"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-		"AbilityCastPoint"				"1.5"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"12 10 8 6"
 		"AbilityManaCost"				"80"
 
@@ -28119,7 +28123,7 @@
 		"AbilitySound"					"Hero_Morphling.Replicate"
 		"MaxLevel"					  "7"
 		"AbilityCastRange"				"7000"
-		"AbilityCastPoint"				"0.25"
+		"AbilityCastPoint"				"0.1"
  		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 		"RequiredLevel"				 "1"
 		"AbilityCooldown"				"90"
@@ -28186,7 +28190,7 @@
 
 		"HasScepterUpgrade"				"1"
 
-		"AbilityCastPoint"				"1.0"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"1000 1200 1400"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
@@ -28245,7 +28249,7 @@
 		"AbilityTextureName"			"mjz_naga_siren_song_of_the_siren_cancel"
 		"MaxLevel"						"1"
 		
-		"AbilityCastPoint"				"0 0 0"
+		"AbilityCastPoint"				"0"
  		"AbilityCastAnimation"			"ACT_INVALID"
 
 		"AbilityCooldown"				"1.0 1.0 1.0"
@@ -28391,7 +28395,7 @@
 
 
 		"AbilityCastRange"				"%radius"
-		"AbilityCastPoint"				"0.55"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		"AbilityCooldown"				"%cooldown"
@@ -28471,7 +28475,7 @@
 		"AbilitySound"					"Hero_Nightstalker.Trickling_Fear"
 		"LevelsBetweenUpgrades"         "8"
 		"AbilityCastRange"				"675"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"50 60 80 100"
 
@@ -28521,7 +28525,7 @@
 		"AbilitySound"					"Hero_Nightstalker.Darkness"
 		"MaxLevel"					  "5"
 		"LevelsBetweenUpgrades"       "8"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCooldown"				"70"
 		"AbilityManaCost"				"200"
@@ -28672,7 +28676,7 @@
 		"HasScepterUpgrade"				"1"
 
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"28 20 12 4"
 		"AbilityManaCost"				"50"
 		
@@ -28910,7 +28914,7 @@
 		"AbilityTextureName"			"omniknight_purification"	//	"mjz_omniknight_purification"
 
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+		"AbilityCastPoint"				"0.1"
 		
 		"AbilityCooldown"				"10.0"
 		"AbilityManaCost"				"10 20 40 60"
@@ -29488,7 +29492,7 @@
 		"MaxLevel"						"10"
 		"RequiredLevel"					"0"
 		"LevelsBetweenUpgrades"			"5"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"6"
 		"AbilityManaCost"				"30 70 120 180 250 430 520 620 730 850"
 		"precache"
@@ -29635,7 +29639,7 @@
 		"AbilitySound"					"Hero_Phoenix.SunRay.Cast"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastRange"				"1575"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"36 34 32 30"
 		"AbilityManaCost"				"90 100 110 120"
 		"AbilityDamage"					"400 1150 2900 7500"
@@ -30165,7 +30169,7 @@
 		
 		"HasScepterUpgrade"			"1"
 		"AbilityCastRange"				"160"
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
 		"AbilityChannelTime"			"3.0 3.0 3.0"
@@ -30414,7 +30418,7 @@
 		"LevelsBetweenUpgrades"		 "5"
 		"AbilitySound"					"Hero_Pugna.NetherWard"
 
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"%cast_range"
 
 		"AbilityCooldown"				"35.0"
@@ -30508,7 +30512,7 @@
 		"AbilityTextureName"			"mjz_queenofpain_sonic_wave"
 
 		"AbilityCastRange"				"1700"
-		"AbilityCastPoint"				"0.452 0.452 0.452"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		"AbilityCooldown"				"70 60 50 45 40 35 30"
@@ -30596,7 +30600,7 @@
 		"AbilitySound"					"Hero_Rattletrap.Rocket_Flare.Fire"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"%cast_range"
 		
 		"AbilityCooldown"				"16.0 14.0 12.0 10.0"
@@ -31084,7 +31088,7 @@
 		"AbilitySound"					"Hero_Silencer.GlobalSilence.Cast"
 		"AbilityTextureName"			"mjz_silencer_global_silence"
 
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCooldown"				"45.0"
 		"AbilityDuration"				"%duration"
@@ -31854,7 +31858,7 @@
 		
 		"AbilityCastRange"				"%cast_range"
 		"AbilityCastRangeBuffer"		"600"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		"AbilityCooldown"				"20.0 15.0 10.0"
@@ -32141,7 +32145,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Spectre.Haunt"
 
-		"AbilityCastPoint"				"0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 
 		"AbilityCooldown"				"100 80 60"
@@ -32287,7 +32291,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"MaxLevel"						"10"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityManaCost"				"30"
 		"AbilityCooldown"				"7"
@@ -32533,7 +32537,7 @@
 		"AbilityDraftPreAbility"		"techies_focused_detonate"
 
 		"AbilityCastRange"				"500"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
 		"AbilityCooldown"				"8"
@@ -32650,7 +32654,7 @@
 		"AOERadius"						"%radius"
 		"LevelsBetweenUpgrades"			"10"
 		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 		// "AbilityChannelTime"			"0.75"
 		"AbilityCooldown"				"35"
 		"AbilityManaCost"				"0"
@@ -32763,7 +32767,7 @@
 		"HasScepterUpgrade"				"1"
 
 		"MaxLevel"						"3"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"250"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
@@ -33019,7 +33023,7 @@
 		"MaxLevel"						"1"
 		"AbilityTextureName"			"templar_assassin_self_trap"
 
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"0.5"
 		"AbilityManaCost"				"0"
 		"AbilitySpecial"
@@ -33212,7 +33216,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilitySound"					"Hero_Tinker.Rearm"
 
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 //		"AbilityChannelTime"			"1.8 1.3 0.75"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
@@ -33573,6 +33577,7 @@
 	}
 	
 	
+
 	//=================================================================================================================
 	// Ursa: Earthshock
 	//=================================================================================================================
@@ -33598,55 +33603,21 @@
 		"AbilityDuration"				"4.0"
 		"AbilityManaCost"				"85"
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"shock_radius"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"shock_radius"				"385"
-				"LinkedSpecialBonus"		"special_bonus_unique_mjz_ursa_earthshock_radius"
-				"LinkedSpecialBonus0"		"special_bonus_unique_ursa_5"
+				"value""385"
+				"special_bonus_unique_mjz_ursa_earthshock_radius" "+950"
 			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"175 1250 4750 22250"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"str_damage_pct"			"180 500 1220 4540"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"movement_slow"				"-25 -35 -45 -55"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"duration"					"4"
-			}
-			"6"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"hop_distance"					"250"
-			}
-			"7"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"hop_duration"		"0.25"
-			}
-			"8"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"hop_height"		"83"
-			}
-			"9"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"ss_bonus_tooltip"			"1" // tooltip
-			}					
+			"damage"	"175 1250 4750 22250"
+			"str_damage_pct"	"180 500 1220 4540"
+			"movement_slow"	"-25 -35 -45 -55"
+			"duration"	"4"
+			"hop_distance"	"150"
+			"hop_duration"	"0.05"
+			"hop_height"	"83"
+			"ss_bonus_tooltip"	"1"
 		}
 
 		"precache"
@@ -33655,6 +33626,7 @@
 			"particle"		"particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"
 		}
 	}
+
 	"special_bonus_unique_mjz_ursa_earthshock_radius"
 	{
 		"BaseClass"						"special_bonus_undefined"
@@ -33666,7 +33638,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"800"
+				"value"						"950"
 			}
 		}
 	}
@@ -33770,7 +33742,7 @@
 		"LevelsBetweenUpgrades"		 "5"
 		"MaxLevel"						"7"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"%cast_range"
 
 		"AbilityCooldown"				"8.0"
@@ -33886,7 +33858,7 @@
 		"AnimationPlaybackRate"			"1.5" // 1.0 corresponds to cast point of 0.3
 		"RequiredLevel"				 "6"
 		"LevelsBetweenUpgrades"		 "9"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 
 		"AbilityCooldown"				"0.1"
 		"AbilityCharges"				"3 5 7 9 12 15 20"
@@ -33900,7 +33872,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"330"
+				"radius"				"370"
 			}
 			"02"
 			{
@@ -33942,7 +33914,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_mult"			"0.6 0.9 1.5 2.1 2.7 4.3 8.0"
+				"mana_mult"			   "4 6 8 12 18 26 52"
 			}			
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
@@ -34144,7 +34116,7 @@
 		"AbilitySound"					"Hero_WinterWyvern.WintersCurse.Target"
 
 		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		"AbilityCooldown"				"100 80 60"
@@ -34233,7 +34205,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilitySound"					"Hero_Zuus.GodsWrath"
 
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		"AbilityCooldown"				"46"
 		"AbilityManaCost"				"90"
@@ -34432,12 +34404,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"intelligence_damage"		"200 400 800 1000 1200 1500 2500" 
+				"intelligence_damage"		"200 400 800 1000 1200 1500 2200" 
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"count"						"6 8 10 14 18 22 28" 
+				"count"						"6 8 10 14 18 22 24" 
 			}
 			"05"
 			{
@@ -38077,7 +38049,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"normal_cast_point"		"0.5"
+				"normal_cast_point"		"0.1"
 			}
 			"11"
 			{
@@ -38615,7 +38587,7 @@
 	"AbilityType"				"DOTA_ABILITY_TYPE_ULTIMATE"
 	"AbilityTextureName"		"dark_seer_wall_of_replica"
 	"AbilityCastRange"			"1300"
-	"AbilityCastPoint"			"0.2"
+	"AbilityCastPoint"			"0.1"
 	//"LearnOnSpawn"			  "1"
 	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 	"AbilityCooldown"			"60.0 50.0 40.0"
@@ -40262,7 +40234,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"15"
+				"value"				"235"
 			}
 		}
 	}
@@ -40465,7 +40437,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"					"4.5"
+				"value"					"32"
 			}
 		}
 	}	
@@ -41972,8 +41944,8 @@
 				"special_bonus_unique_juggernaut_blade_dance_lua_1"	"+985"
 			}			
 			
-			"crit_chance_agi_multiplier"		"1 1 1 1 1 1 2"
-			"max_crit_chance"                   "80"
+			"crit_chance_agi_multiplier"		"1 1 1.1 1.2 1.3 1.4 1.5"
+			"max_crit_chance"                   "75"
 		}
 	}
 
@@ -42093,7 +42065,7 @@
 		"MaxLevel"						"7"
 		"HasScepterUpgrade"				"1"
 		"AbilityTextureName"			"custom/abilities/axe_blood_madness"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"100"
 		"AbilityManaCost"				"50 100 150 200 250 300 350"
 		"AbilityDuration"				"15"
@@ -42142,7 +42114,7 @@
 		"AbilityTextureName"			"treant_natures_grasp"
 		"MaxLevel"						"1"
 		"AbilityCooldown"				"1"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 		"IsGrantedByScepter"			"1"
 		"HasScepterUpgrade"				"1"
 		"AbilityManaCost"				"0"
@@ -42183,7 +42155,7 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityTextureName"			"treant/fungal_protector_icons/treant_natures_guise"
 		"MaxLevel"						"1"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"               "3"
 	}
 
@@ -42256,7 +42228,7 @@
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"         "10"
 		"AbilityCastRange"				"575"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"14 13 12 11 10 9 8"
 		"AbilityManaCost"				"75 85 95 105 115 125 135"
 		"precache"
@@ -42371,7 +42343,7 @@
 		"MaxLevel"							"7"
 		"HasScepterUpgrade"					"1"
 		"AbilityCooldown"					"100 95 90 85 80 75 70"
-		"AbilityCastPoint"					"0.3"
+		"AbilityCastPoint"					"0.0"
 		"AbilityCastRange"					"600"
 		"AbilityManaCost"					"100 150 200 250 300 350 400"
 		"precache"
@@ -42771,7 +42743,7 @@
 		"MaxLevel"						"10"
 		"LevelsBetweenUpgrades"         "5"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-		"AbilityCastPoint"				"0.25"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"30 28 26 24 22 20 18 16 14 12"
 		"AbilityManaCost"				"100 200 250 350 400 500 550 650 700 800"
 		"AOERadius"						"%search_radius"
@@ -42992,7 +42964,7 @@
 		"MaxLevel"						"3"
 		"RequiredLevel"					"10"
 		"LevelsBetweenUpgrades"			"20"
-		"AbilityCastPoint"				"0.25"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"1000"
 		"AbilityCooldown"				"80"
 		"AbilityManaCost"				"250"
@@ -43039,7 +43011,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"						"10"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityManaCost"				"0"
 		"AbilityCooldown"				"7"
@@ -43141,7 +43113,7 @@
 		"AbilityCooldown"				"120 60 35"
 		"AbilityManaCost"				"400 900 1000"
 		"AbilityCastRange"				"150"
-		"AbilityCastPoint"				"0.2"
+		"AbilityCastPoint"				"0.1"
 		"AbilityValues"
 		{
 			"mana_regen"				"0.5 1 2"
@@ -43260,7 +43232,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"AbilitySound"					"Hero_Windrunner.ShackleshotCast"
 		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.15"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"16 14 12 10"
 		"AbilityManaCost"				"70 85 100 115"
 		"AbilityValues"
@@ -43350,7 +43322,7 @@
 		"LevelsBetweenUpgrades"			"7"
 		"AbilitySound"					"Hero_Oracle.PurifyingFlames.Damage"
 		"AbilityCastRange"				"1750"
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"2"
 		"AbilityManaCost"				"105 110 115 120"
 		"AbilityValues"
@@ -44005,7 +43977,7 @@
 		"MaxLevel"						"4"
 //		"LevelsBetweenUpgrades"			"9"
 		"AbilityCastRange"				"2000"
-		"AbilityCastPoint"				"0.25"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"110"
 		"AbilityValues"
@@ -44155,6 +44127,27 @@
 		}
 		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+
+"ability_ward_like"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"					 "ability_lua"
+		"AbilityTextureName"			"ward_like_pasive"
+		"ScriptFile"					"abilities/ability_ward_like"
+		"LearnOnSpawn"										"1"
+		"MaxLevel"					  "1"
+		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+		"IsOnCastBar"				   "1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+		}
 	}
 
 }

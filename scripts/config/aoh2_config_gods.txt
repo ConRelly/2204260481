@@ -1,6 +1,6 @@
 "dota_holdout"
 {
-	"PrepTimeBetweenRounds"			"13"
+	"PrepTimeBetweenRounds"			"10"
 	"ItemExpireTime"				"1500"
 	
 	"ItemDrops"
@@ -606,7 +606,7 @@
 				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"10"
+				"SpawnInterval"			"1"
 			}
 		}
 
@@ -1054,7 +1054,7 @@
 		}
 		"37" // Tiny boss				新骷髅王
 		{
-			"Title"						"Montain + A small brake"
+			"Title"						"Montain"
 			"MaxGold"					"8000"
 			"BagCount"					"1"
 			"BagVariance"				"50"
@@ -1071,8 +1071,8 @@
 			{
 				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"20"
-				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"5"
+				"UnitsPerSpawn"			"5"
+				"SpawnInterval"			"2"
 			}
 		}
 		"38" // Wisp					小精灵
@@ -1108,7 +1108,7 @@
 		
 		"39" // Tiny boss				新骷髅王
 		{
-			"Title"						"SpiritTiny + a small brake to prepare for finall bosses"
+			"Title"						"SpiritTiny"
 			"MaxGold"					"10000"
 			"BagCount"					"1"
 			"BagVariance"				"50"
@@ -1132,8 +1132,8 @@
 			{
 				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
-				"UnitsPerSpawn"			"1"
-				"SpawnInterval"			"5"
+				"UnitsPerSpawn"			"2"
+				"SpawnInterval"			"1"
 			}
 		}
         "40" // VoidSpirit					小精灵
@@ -1293,7 +1293,7 @@
 				//"NPCName"               "npc_boss_deathprophet"
 				"TotalUnitsToSpawn"		"6"
 				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"5"
+				"SpawnInterval"			"1"
 			}
 
 		}
@@ -1796,7 +1796,7 @@
 		
 		"19" // Lycan					变身狼人
 		{
-			"Title"						"Wolf, and a small brake"
+			"Title"						"Wolf"
 			"MaxGold"					"5700"
 			"BagCount"					"1"
 			"BagVariance"				"50"
@@ -1813,8 +1813,8 @@
 			{
 				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"16"
-				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"15"
+				"UnitsPerSpawn"			"4"
+				"SpawnInterval"			"2"
 			}
 		}
 
@@ -2066,7 +2066,7 @@
 		
 		"29" // Spectre					幽鬼
 		{
-			"Title"						"Lost, and small brake"
+			"Title"						"Lost"
 			"MaxGold"					"9250"
 			"BagCount"					"1"
 			"BagVariance"				"50"
@@ -2084,7 +2084,7 @@
 				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"15"
+				"SpawnInterval"			"1"
 			}
 		}
 		
@@ -2249,7 +2249,7 @@
 		}
 		"38" // Tiny boss				新骷髅王
 		{
-			"Title"						"Montain + A small brake"
+			"Title"						"Montain"
 			"MaxGold"					"8000"
 			"BagCount"					"2"
 			"BagVariance"				"50"
@@ -2266,8 +2266,8 @@
 			{
 				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"16"
-				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"20"
+				"UnitsPerSpawn"			"4"
+				"SpawnInterval"			"1"
 			}
 		}		
 		"39" // Wisp					小精灵
@@ -2350,8 +2350,8 @@
 			{
 				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"12"
-				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"5"
+				"UnitsPerSpawn"			"4"
+				"SpawnInterval"			"1"
 			}
 		}
 		
@@ -3291,7 +3291,7 @@
 		}
 		"32" // Tiny boss				新骷髅王
 		{
-			"Title"						"Montain + A small brake"
+			"Title"						"Montain"
 			"MaxGold"					"4000"
 			"BagCount"					"2"
 			"BagVariance"				"80"
@@ -3308,8 +3308,8 @@
 			{
 				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"30"
-				"UnitsPerSpawn"			"3"
-				"SpawnInterval"			"10"
+				"UnitsPerSpawn"			"5"
+				"SpawnInterval"			"1"
 			}
 		}
 		"33" // Wisp					小精灵
@@ -3370,7 +3370,7 @@
 				"NPCName"				"npc_boss_kobold_foreman"
 				"TotalUnitsToSpawn"		"12"
 				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"5"
+				"SpawnInterval"			"1"
 			}
 		}
 		
@@ -3478,7 +3478,7 @@
 				//"NPCName"               "npc_dota_boss_aghanim"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"18"
+				"SpawnInterval"			"2"
 			}
 
             "b" 
@@ -3487,7 +3487,7 @@
 				//"NPCName"               "npc_boss_deathprophet"
 				"TotalUnitsToSpawn"		"10"
 				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"18"
+				"SpawnInterval"			"2"
 			}
 		}			
 		"2" // God			骷髅弓箭手
@@ -3524,7 +3524,7 @@
 				//"NPCName"               "npc_dota_boss_aghanim"
 				"TotalUnitsToSpawn"		"12"
 				"UnitsPerSpawn"			"1"
-				"SpawnInterval"			"12"
+				"SpawnInterval"			"2"
 			}
 
             "b" 
@@ -3533,7 +3533,7 @@
 				//"NPCName"               "npc_boss_deathprophet"
 				"TotalUnitsToSpawn"		"12"
 				"UnitsPerSpawn"			"1"
-				"SpawnInterval"			"12"
+				"SpawnInterval"			"2"
 			}
 		}		
 		"4" // God			骷髅弓箭手

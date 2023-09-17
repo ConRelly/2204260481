@@ -2834,6 +2834,29 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Added new item (made by fusing Flaming Cape + Demonic Blade)
+* Fixed Pango True Master dagger bleed to tick every 0.5s instead of every 1s.
+* Reduced the majority of cast times for skills again (now most of them are 0.1 or lower or 0)
+* Boss Gold Ring CD reduced from 300s to 360s.
+* Reduced Ursa Earthshok fly time (works better with multicast), fixed Autocast not using talent range to autocast, fixed Shard not using talent dmg for Fury Swipes.
+* Increased the amp usage of Traxex's necklace spell from 15% to 25% and increased its mult limits for armor and speed from 15 and 30 to 30 and 45, DeepFreeze dmg now triggers 3x (as 3 separate dmg instances).
+* Centaur return now ignores base armor, talent increased to 200% (added note for attribute mail affected by Centaur talent)
+* Snapfire lvl 25 Shredder talent increased to 360%.
+* After you kill the last unit for the round, a Building/Ward like unit will appear, kill that unit when you are ready to proceed to the next round (host can type "-autoskip" and that unit will die instantly on spawn).
+* Shortened the rounds that were supposed to add a "small brake". 
+* Buffed Ring of Aquila switch off stats.
+* Buffed some Void Spirit stats (ults, talents, int gain)
+* Increased Dark Willow Bedlam int scaling (including talent), no longer stacks with itself.
+* Arcwarden bubble fixed and buffed
+* Multi-Autocast now ignores passives and on Arc Warden Illusion should cast all its spells and items (slot 1-5 + neutral).
+* Autocast now stays toggled on after death and respawn (taking into account the respawn fontain invulnerability).
+* And some other stuff.
+
+
+
+
+
+
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).

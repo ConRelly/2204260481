@@ -4,7 +4,7 @@ LinkLuaModifier("modifier_flaming_cape_flames_aura", "items/flaming_cape.lua", L
 LinkLuaModifier("modifier_flaming_cape_flames_burn", "items/flaming_cape.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_flaming_cape_up_radiance_flames", "items/flaming_cape.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_flaming_cape_up_radiance_flames_burn", "items/flaming_cape.lua", LUA_MODIFIER_MOTION_NONE)
-
+LinkLuaModifier("modifier_flaming_cape_charges", "items/flaming_cape.lua", LUA_MODIFIER_MOTION_NONE)
 ------------------
 -- Flaming Cape --
 ------------------
@@ -129,6 +129,15 @@ function modifier_flaming_cape_flames_aura:GetAuraSearchType() return DOTA_UNIT_
 function modifier_flaming_cape_flames_aura:GetModifierAura() return "modifier_flaming_cape_flames_burn" end
 function modifier_flaming_cape_flames_aura:GetAuraRadius() return self:GetAbility():GetSpecialValueFor("aura_radius") end
 
+--- charge modif---
+
+if modifier_flaming_cape_charges == nil then modifier_flaming_cape_charges = class({}) end
+function modifier_flaming_cape_charges:IsHidden() return true end
+function modifier_flaming_cape_charges:IsDebuff() return false end
+function modifier_flaming_cape_charges:IsPurgable() return false end
+function modifier_flaming_cape_charges:RemoveOnDeath() return false end
+------
+
 ------------------------
 -- Flames Aura Effect --
 ------------------------
@@ -138,22 +147,39 @@ function modifier_flaming_cape_flames_burn:IsDebuff() return true end
 function modifier_flaming_cape_flames_burn:IsPurgable() return false end
 function modifier_flaming_cape_flames_burn:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_flaming_cape_flames_burn:OnCreated()
-	if not self:GetAbility() then self:Destroy() return end
-	self.damage_interval = self:GetAbility():GetSpecialValueFor("damage_interval")
-	local lvl = self:GetCaster():GetLevel()
+	local ability = self:GetAbility()
+	if not ability then self:Destroy() return end
+	local caster = self:GetCaster()
+	self.damage_interval = ability:GetSpecialValueFor("damage_interval")
+	local lvl = caster:GetLevel()
 	local charges = 1
 	if lvl > 34 then
-		charges = self:GetAbility():GetCurrentCharges()
+		charges = ability:GetCurrentCharges()
 		if charges < 1 then
 			charges = 1
 		end	
 	end	
-	self.base_damage = self:GetAbility():GetSpecialValueFor("base_damage") * charges * self.damage_interval
+	self.base_damage = ability:GetSpecialValueFor("base_damage") * charges * self.damage_interval
 	if IsServer() then
 		self.burn = ParticleManager:CreateParticle("particles/custom/items/flaming_cape/flaming_cape_burn.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 		ParticleManager:SetParticleControl(self.burn, 0, self:GetParent():GetAbsOrigin())
-		ParticleManager:SetParticleControl(self.burn, 1, self:GetCaster():GetAbsOrigin())
+		ParticleManager:SetParticleControl(self.burn, 1, caster:GetAbsOrigin())
 		self:StartIntervalThink(self.damage_interval)
+		---charge modif--
+		charges = ability:GetCurrentCharges()
+		if charges < 1 then
+			charges = 1
+		end			
+		local charges_modifer = caster:FindModifierByName("modifier_flaming_cape_charges")
+		if charges_modifer then
+			charges_modifer:SetStackCount(charges)
+		else
+			caster:AddNewModifier(caster, ability, "modifier_flaming_cape_charges", {})
+			charges_modifer = caster:FindModifierByName("modifier_flaming_cape_charges")
+			if charges_modifer then
+				charges_modifer:SetStackCount(charges)
+			end	
+		end		
 	end
 end
 function modifier_flaming_cape_flames_burn:OnIntervalThink()

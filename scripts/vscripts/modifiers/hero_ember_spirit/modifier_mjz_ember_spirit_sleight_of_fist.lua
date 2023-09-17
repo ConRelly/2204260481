@@ -106,7 +106,7 @@ if IsServer() then
         local parent = self:GetParent()
         if parent:HasModifier("modifier_super_scepter") then
             local lvl = parent:GetLevel()
-            crit_bonus = crit_bonus + (lvl * 50)
+            crit_bonus = crit_bonus + (lvl * 45)
         end    
         if RollPercentage(crit_chance) then
             return crit_bonus

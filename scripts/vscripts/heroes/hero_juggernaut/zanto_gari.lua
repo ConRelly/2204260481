@@ -222,7 +222,7 @@ modifier_zanto_gari_armor_pierce = modifier_zanto_gari_armor_pierce or class({})
 function modifier_zanto_gari_armor_pierce:IsHidden() return true end
 function modifier_zanto_gari_armor_pierce:IsPurgable() return false end
 function modifier_zanto_gari_armor_pierce:DeclareFunctions() return {MODIFIER_PROPERTY_IGNORE_PHYSICAL_ARMOR} end
-function modifier_zanto_gari_armor_pierce:GetModifierIgnorePhysicalArmor() return 1 end
+function modifier_zanto_gari_armor_pierce:GetModifierIgnorePhysicalArmor() return 0 end
 
 ---------------------------------
 -- Zanto Gari Grace Time Shift --

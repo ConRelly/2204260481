@@ -282,7 +282,7 @@ function modifier_true_master_dagger_bleed:OnUnitMoved(keys)
                 if parent.distance_accumulated >= 500 and self:GetStackCount() < self:GetAbility():GetSpecialValueFor("dagger_bleed_max_stacks") then
                     self:IncrementStackCount()
                     self:ForceRefresh()
-					self:StartIntervalThink(1)
+					self:StartIntervalThink(0.5)
                     parent.distance_accumulated = parent.distance_accumulated - 500
                 end
                 parent.previoustick = parent:GetAbsOrigin()

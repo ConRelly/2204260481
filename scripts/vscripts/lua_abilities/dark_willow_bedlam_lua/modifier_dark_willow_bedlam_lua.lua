@@ -25,10 +25,6 @@ function modifier_dark_willow_bedlam_lua:IsPurgable()
 	return false
 end
 
-function modifier_dark_willow_bedlam_lua:GetAttributes()
-	return MODIFIER_ATTRIBUTE_MULTIPLE
-end
-
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_dark_willow_bedlam_lua:OnCreated( kv )

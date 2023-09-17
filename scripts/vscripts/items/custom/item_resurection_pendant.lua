@@ -14,10 +14,12 @@ function item_resurection_pendant:GetChannelTime()
 	end
 end
 function item_resurection_pendant:GetAbilityTextureName()
-	if self:GetCaster():HasModifier("modifier_super_scepter") then
-		return "custom/resurection_pendant_super_scepter"
-	elseif self:GetCaster():HasScepter() then
-		return "custom/resurection_pendant_scepter"
+	if self:GetCaster() then
+		if self:GetCaster():HasModifier("modifier_super_scepter") then
+			return "custom/resurection_pendant_super_scepter"
+		elseif self:GetCaster():HasScepter() then
+			return "custom/resurection_pendant_scepter"
+		end
 	end
 	return "custom/resurection_pendant"
 end

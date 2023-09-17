@@ -53,7 +53,7 @@
 	"DOTA_Chat_Portal_Pinged"				"Portal here."
 	"npc_dota_hero_piety"					"Piety"
 	"npc_dota_hero_kardel"					"Kardel"
-
+	"npc_dota_badguys_fillers_custom"              "Kill Me for Next Round"
 
 	"DOTA_Item_Build_core_magic_Items"     "Spell power items"
 	"DOTA_Item_Build_core_phy_Items"       "Physical items"
@@ -80,6 +80,7 @@
 	"dota_ability_variable_projectile_speed_pct"	"Attack Projectile Speed"			// $projectile_speed_pct
 	"dota_ability_variable_attack_range_all"		"Attack Range"						// $attack_range_all
 	"dota_ability_variable_bonus_damage_lvl"	    "Bonus Damage per lvl"              // $bonus_damage_lvl
+	"dota_ability_variable_bonus_armor_ptc"	    	"Armor, from Base"              	    		// $bonus_armor_ptc
 
 //############################################################################################################################
 
@@ -296,9 +297,23 @@
 	"dota_tooltip_ability_item_flaming_cape"				"Flaming Cape"
 	"dota_tooltip_ability_item_flaming_cape_description"	"<h1>Active: Glimmer</h1> After a %fade_delay% second delay, grants invisibility and %active_magical_armor%%% magic resistance to you or a target allied unit for %duration% seconds.<br><br>Range: %abilitycastrange%<br><br>Can be cast while channelling.\n<h1>Passive: Wild Flames</h1>Burns enemy units for %base_damage% magic damage per second.<br>After lvl 35 base dmg is multipled with item charges(<font color='#86C91F'>ReEquip after lvl 35 to take effect</font>).<br><br>Radius: %aura_radius%\n<h1><font color='#86C91F'>Level Mastery</font></h1>Gain an item charge for each level your hero gains with this item in inventory \n<h1><font color='#FFB247'>UP: Demonic Blade</font></h1>Increases Wild Flames damage by %up_dmg%%%.<br>Applies the Wild Flames effect on an ally when Glimmer is active."
 	"DOTA_Tooltip_ability_item_flaming_cape_note0"				"Wild Flames doesn't work on Illusions, but the UP from Demonic Blade still works."
+	"DOTA_Tooltip_ability_item_flaming_cape_note1"				"Demonic Flaming Cape will retain this item charges(they get saved/updated on your hero on the first tick of burn on enemy)"
 	"dota_tooltip_ability_item_flaming_cape_bonus_armor"				"+$armor"
 	"dota_tooltip_ability_item_flaming_cape_bonus_magic_resist"			"%+$spell_resist"
-	"dota_tooltip_modifier_flaming_cape_up_radiance_flames"			"UP: Demonic Blade"
+	"dota_tooltip_modifier_flaming_cape_up_radiance_flames_burn"			"UP: Demonic Blade"
+	"dota_tooltip_modifier_flaming_cape_flames_burn"					"Burning Flaming Cape"
+
+
+	//demonic flaming cape
+	"dota_tooltip_ability_item_demonic_flaming_cape"				"Demonic Flaming Cape"
+	"dota_tooltip_ability_item_demonic_flaming_cape_description"	"<h1>Active: Glimmer</h1> After a %fade_delay% second delay, grants invisibility and %active_magical_armor%%% magic resistance to you or a target allied unit for %duration% seconds.<br><br>Range: %abilitycastrange%<br><br>Can be cast while channelling.\n<h1>Passive: Wild Flames</h1>Burns enemy units for %base_damage% + %armor_damage% x your physical armor as magic damage per second.<br>After lvl 35 base dmg(including armor) is multipled with item charges(<font color='#86C91F'>ReEquip after lvl 35 to take effect</font>).<br>Wild Flames burns %current_hp_damage%%% of enemy current hp as an separate damage instance<br><br>Radius: %aura_radius%\n<h1><font color='#86C91F'>Level Mastery</font></h1>Gain an item charge for each level your hero gains with this item in inventory \n<h1><font color='#DE3163'>Super Scepter: </font><font color='#FFB247'>Demonic Power</font></h1>Increases Wild Flames damage by %up_dmg%%%.<br>Applies the Wild Flames effect on an ally when Glimmer is active.<br> Change damage interval to %ss_damage_interval% s"
+	"DOTA_Tooltip_ability_item_demonic_flaming_cape_note0"				"Wild Flames doesn't work on Illusions, but the Demonic power glimmer still works"
+	"dota_tooltip_ability_item_demonic_flaming_cape_bonus_armor"				"+$armor"
+	"dota_tooltip_ability_item_demonic_flaming_cape_bonus_armor_ptc"			"%+$bonus_armor_ptc"
+	"dota_tooltip_ability_item_demonic_flaming_cape_bonus_magic_resist"			"%+$spell_resist"
+	"dota_tooltip_modifier_demonic_flaming_cape_flames_burn"					"Burning Demonic Flaming Cape"
+	"dota_tooltip_ability_item_demonic_flaming_cape_base_attack_damage"			"+$base_damage"
+	"dota_tooltip_modifier_demonic_flaming_cape_up_radiance_flames_burn"		"SS: Demonic Power"	
 
 
 	"dota_tooltip_ability_item_spellbook_destruction"				"Spellbook: Destruction"
@@ -461,11 +476,11 @@
 
 	"DOTA_Tooltip_ability_item_recipe_traxexs_necklace"				"Traxex's Necklace Recipe"
 	"DOTA_Tooltip_ability_item_traxexs_necklace"					"Traxex's Necklace"
-	"DOTA_Tooltip_ability_item_traxexs_necklace_description"		"<h1>Active: Icy Chill</h1> Freezes an area and enemies within a radius of %active_radius%, increasing current Chill stacks by %active_chill_bonus%%% and adding %active_chill% to the Chill stacks. \n<h1>Passive: <font color='#12B5ED'>Chill</font></h1> Every 10 stacks slows enemy by 1%% of movement speed. <br> Every second the effect of the cold intensifies , which increase stacks by %chill_thaw_pct%%%. <br> When 1000 Chill is reached, the enemy freezes. \n<h1>Passive: <font color='#12EDE0'>Pure Speed</font></h1>On attack Deal bonus Pure damage for: How many times you are faster then your target(speed diff) x %level_mult% times your level<br><font color='#B9DC14'>WindRanger</font><font color='#ED6212'> Gets 5x the speed diference and 2x the level mult.</font>\n<h1><font color='#DE3163'>Super Scepter</font></h1><font color='#12EDE0'>Pure Speed</font> damage increases by: %armor_mult%%% for every point of Phy armor that you have, %spell_amp_mult_ptc%%% of your spell amp, your Status resist.(all are multiplayers)<br>Every time the target gains or loses Chill stacks there's %freeze_ss_chance%%% chance to trigger <font color='#126FED'>Deep Freeze</font>.  \n<h1>Passive: <font color='#126FED'>Deep Freeze</font></h1> When the freeze ends, all enemies within a radius of %freeze_shatter_radius% are dealt %freeze_shatter_hp_damage%%% Physical Damage(ignores base armor) from the Max Health of the frozen."
+	"DOTA_Tooltip_ability_item_traxexs_necklace_description"		"<h1>Active: Icy Chill</h1> Freezes an area and enemies within a radius of %active_radius%, increasing current Chill stacks by %active_chill_bonus%%% and adding %active_chill% to the Chill stacks. \n<h1>Passive: <font color='#12B5ED'>Chill</font></h1> Every 10 stacks slows enemy by 1%% of movement speed. <br> Every second the effect of the cold intensifies , which increase stacks by %chill_thaw_pct%%%. <br> When 1000 Chill is reached, the enemy freezes. \n<h1>Passive: <font color='#12EDE0'>Pure Speed</font></h1>On attack Deal bonus Pure damage for: How many times you are faster then your target(speed diff) x %level_mult% times your level<br><font color='#B9DC14'>WindRanger</font><font color='#ED6212'> Gets 5x the speed diference and 2x the level mult.</font>\n<h1><font color='#DE3163'>Super Scepter</font></h1><font color='#12EDE0'>Pure Speed</font> damage increases by: %armor_mult%%% for every point of Phy armor that you have, %spell_amp_mult_ptc%%% of your spell amp, your Status resist.(all are multiplayers)<br>Every time the target gains or loses Chill stacks there's %freeze_ss_chance%%% chance to trigger <font color='#126FED'>Deep Freeze</font>.  \n<h1>Passive: <font color='#126FED'>Deep Freeze</font></h1> When the freeze ends, all enemies within a radius of %freeze_shatter_radius% are dealt %freeze_shatter_hp_damage%%% Physical Damage(ignores base armor) from the Max Health of the frozen 3 times."
 	"DOTA_Tooltip_ability_item_traxexs_necklace_bonus_int"			"+$int"
 	"DOTA_Tooltip_ability_item_traxexs_necklace_bonus_evasion"		"%+$evasion"
 	"DOTA_Tooltip_ability_item_traxexs_necklace_Note0"              "<font color='#12EDE0'>Pure Speed</font> damage no spell amp, does not trigger damage mult effects, the dmg will be added to the normal physical attack in the DPS tool."
-	"DOTA_Tooltip_ability_item_traxexs_necklace_Note1"              "Limits: armor mult 15x , speed diference 30x(same limit for windrunner) "
+	"DOTA_Tooltip_ability_item_traxexs_necklace_Note1"              "Limits: armor mult 30x , speed diference 45x(same limit for windrunner) "
 	"DOTA_Tooltip_modifier_traxexs_necklace_chill"						"Chill"
 	"DOTA_Tooltip_modifier_traxexs_necklace_chill_description"			"Movement Speed reduced by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%"
 	"DOTA_Tooltip_modifier_traxexs_necklace_frozen"						"Frozen"
@@ -2897,7 +2912,7 @@
 	in case it doesn't work type '-autocast6' to relearn the skill(disable toggle before). type '-removeauto2' to delete the skill and restore the Enchanter"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_tick_interval"	  "Interval Check:"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Note0"			  "It will cast the first non hotkey viabile(excluding passives toggle etc) ability, if the ability is not rdy it will cast the next ability"
-	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Note1"              "Autocast will stop at the first Passive ability , if you want to you use the ItemAutocast make sure you don't have a passive ability at the end."
+	//"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Note1"              "Autocast will stop at the first Passive ability , if you want to you use the ItemAutocast make sure you don't have a passive ability at the end."
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Lore"              "Are you pressing any buttons ?"
 
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast5"					"AutoCast - Shadow Poison"
@@ -2966,7 +2981,7 @@
 	"DOTA_Tooltip_ability_mjz_centaur_return_return_damage"		"Base Damage: "
 	"DOTA_Tooltip_ability_mjz_centaur_return_strength_pct"		"%Strength as Bonus Damage: "
 	"DOTA_Tooltip_modifier_mjz_centaur_return_buff"					"Return"
-	"DOTA_Tooltip_modifier_mjz_centaur_return_buff_Description"		"Centaur counters all attacks, dealing damage back to the attacker based on a percentage of Centaur's strength."
+	"DOTA_Tooltip_modifier_mjz_centaur_return_buff_Description"		"Centaur counters all attacks, dealing damage back to the attacker based on a percentage of Centaur's strength.<br>Ignores base armor."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_centaur_return_strength"		"+{s:value}% Return Strength Damage"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_centaur_return_aura"			"Gains Return Aura"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_centaur_return_aura_Description"		"Friendly units in a {s:value} radius around Centaur gain the effects of Return; the damage is based on Centaur's strength."
@@ -3254,7 +3269,7 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_ember_spirit_flame_guard_damage_per"		"+{s:value} Flame Guard DPS"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_damage"	"+{s:value}% Flame Guard Attack Damage"	
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist"					"Sleight of Fist"
-	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Description"		"Ember Spirit Or sven dashes around with blazing speed, attacking all enemies in the targeted area of effect, then returning to his start location. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Increase Critical Damage by 50% for each hero lvl you have.<br> Now this skill Bonus Damage is multiplayed with your level."
+	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Description"		"Ember Spirit Or sven dashes around with blazing speed, attacking all enemies in the targeted area of effect, then returning to his start location. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Increase Critical Damage by 45% for each hero lvl you have.<br> Now this skill Bonus Damage is multiplayed with your level."
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Lore"			"The studied warrior must whip and weave through its enemies, burning each without pause."
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_radius"				"RADIUS:"
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_bonus_damage"		"BONUS DAMAGE:"
@@ -8633,6 +8648,7 @@ Required Level: %required_level%
 "DOTA_Tooltip_ability_item_mjz_attribute_mail_bonus_health"				"%+Bonus Hp"
 "DOTA_Tooltip_ability_item_mjz_attribute_mail_bonus_strength"			"+$str"
 "DOTA_Tooltip_ability_item_mjz_attribute_mail_hp_regen_pct"			    "%+$hp_regen_pct"
+"DOTA_Tooltip_ability_item_mjz_attribute_mail_note0"                    "Centaur Return Strength talent affects this item"
 "DOTA_Tooltip_ability_item_mjz_attribute_mail_Lore"						"Idea by Pepe XL."
 "DOTA_Tooltip_modifier_item_mjz_attribute_mail_buff"					  "Attribute Mail"
 "DOTA_Tooltip_modifier_item_mjz_attribute_mail_buff_Description"		  "Attribute Mail is providing damage reduction."
@@ -9237,6 +9253,8 @@ Required Level: %required_level%
 		"DOTA_Tooltip_modifier_mjz_frostmourne_hungers_debuff_Description"			"Attacks lower enemy attack speed by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% and movement speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 		"DOTA_Tooltip_modifier_mjz_frostmourne_frostbite"							"Frost Storm"
 		"DOTA_Tooltip_modifier_mjz_frostmourne_frostbite_Description"				"Encases an enemy unit in ice, prohibiting movement and attack, while dealing damage over time. "
+		"DOTA_Tooltip_modifier_frostmore_mkb_up"                                    "<font color='#0597EB'>UP:Frostmourne Frostbite</font>"
+
 		//<<<<	
 		"DOTA_Tooltip_Ability_item_mjz_guardian_greaves_holy_light"								"Guardian Greaves (Holy Light)"
 		"DOTA_Tooltip_Ability_item_mjz_guardian_greaves_holy_light_Description"					"<h1>Active: Holy Light</h1>Restores %replenish_health_pct%%% health and %replenish_mana_pct%%% mana to nearby allies, and removes most negative effects from the caster.<br><br>Radius: %aura_radius%<br><br>Dispel Type: <span class=\"GameplayValues GameplayVariable\">Basic Dispel</span>\n<h1>Passive: Guardian Aura</h1>Provides nearby allies with %aura_health_regen% health regeneration and %aura_armor% bonus armor.<br><br>Radius: %aura_radius%"		
@@ -9396,7 +9414,7 @@ Required Level: %required_level%
 
 		//>>>>	Ring of Aquila
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila"								"Ring of Aquila"
-		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_Description"					"<h1>Passive: Aquila Aura</h1> Grants %aura_mana_regen% mana regeneration and %aura_bonus_armor% armor to nearby allies. <br><br>Radius: %aura_radius% \n<h1>Toggle: Aura</h1> When switching, the aura will turn off, but the attributes of the item will increase by x8."
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_Description"					"<h1>Passive: Aquila Aura</h1> Grants %aura_mana_regen% mana regeneration and %aura_bonus_armor% armor to nearby allies. <br><br>Radius: %aura_radius% \n<h1>Toggle: Aura</h1> When switching, the aura will turn off, but the attributes of the item will increase by x10."
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_Lore"							"The ring of the fallen Warlord Aquila continues to support armies in battle."
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_bonus_strength"				"+$str"
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_bonus_agility"				"+$agi"
@@ -9406,7 +9424,7 @@ Required Level: %required_level%
 		"DOTA_Tooltip_modifier_item_mjz_ring_of_aquila_aura_Description"			"Mana Regeneration increased by %fMODIFIER_PROPERTY_MANA_REGEN_CONSTANT% <br> Armor increased by %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%"
 
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive"						"Ring of Aquila"
-		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_Description"			"<h1>Passive: Aquila Will</h1> Item attributes increased by x8. \n<h1>Toggle: Aura</h1> When switching, the aura will turn on, but the attributes of the item will decrease by x8."
+		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_Description"			"<h1>Passive: Aquila Will</h1> Item attributes increased by x10. \n<h1>Toggle: Aura</h1> When switching, the aura will turn on, but the attributes of the item will decrease by x10."
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_Lore"				"The ring of the fallen Warlord Aquila continues to support armies in battle."
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_bonus_strength"		"+$str"
 		"DOTA_Tooltip_Ability_item_mjz_ring_of_aquila_inactive_bonus_agility"		"+$agi"
@@ -10239,6 +10257,9 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 		"DOTA_Tooltip_modifier_mjz_bristleback_quill_spray_autocast6"				 "Higher Difficulty"
 		"DOTA_Tooltip_modifier_mjz_bristleback_quill_spray_autocast6_Description"	 "Gets extra 2-6 skills(has a special Ai to cast those random skills)
 		units under lvl 50 they get the skills with random lvls between 1-6 and for units with lvl 50+ skills with random lvls between 4-7, and ~75% chance to get aghanim and aghanim shard buff"
+
+		"dota_tooltip_ability_ability_ward_like"                               "AutoSkipNote"
+		"dota_tooltip_ability_ability_ward_like_Description"                   "Host can Type: <font color='#EDD50F'>-autoskip</font> to turn On or Off<br>If is On this unit will die automatically On Spawn"
 
 		"npc_boss_randomstuff_aiolos"											"AIOLOS (GOD)"
 		"npc_boss_randomstuff_aiolos_demo"									   "AIOLOS (GOD)Demo version"

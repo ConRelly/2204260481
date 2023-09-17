@@ -146,6 +146,9 @@ function AOHSpawner:ParentSpawned(parentSpawner)
 end
 
 
+
+
+
 function AOHSpawner:Think()
 	if not IsServer() then return end
 	if not self._flNextSpawnTime then
@@ -157,7 +160,6 @@ function AOHSpawner:Think()
 		for _,s in pairs(self._dependentSpawners) do
 			s:ParentSpawned(self)
 		end
-
 		if self:IsFinishedSpawning() then
 			self._flNextSpawnTime = nil
 		else

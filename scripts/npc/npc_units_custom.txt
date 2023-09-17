@@ -13678,7 +13678,7 @@
 	"Ability13"				 "cold_fall"
 	"Ability16"				 "draks_unholy_strength"
 
-	"ArmorPhysical"			 "290"
+	"ArmorPhysical"			 "295"
 	"MagicalResistance"		 "91"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"		   "500"
@@ -14001,7 +14001,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"5950000"
+		"StatusHealth"				"6750000"
 		"StatusHealthRegen"			"25000"
 		"StatusMana"				"50000"
 		"StatusManaRegen"			"5500"
@@ -15155,7 +15155,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "100"	   // Speed.		   
-	"StatusHealth"			  "16500000"	  // Base health.
+	"StatusHealth"			  "18500000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
@@ -15312,7 +15312,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "100"	   // Speed.		   
-	"StatusHealth"			  "15500000"	  // Base health.
+	"StatusHealth"			  "18500000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
@@ -15471,7 +15471,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "700"	   // Speed.		   
-	"StatusHealth"			  "11000000"	  // Base health.
+	"StatusHealth"			  "12000000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
@@ -16434,6 +16434,59 @@
 			}
 		}
 	}
+
+
+
+	"npc_dota_badguys_fillers_custom"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_ward_base"	// Class of entity of link to.
+		"Model"						"models/props_structures/muerta_minigame_effigy.vmdl"	// Model.
+		"SoundSet"					""					// Name of sound set.
+		"Level"						"10"
+		"ModelScale"					"2.5"
+		"MinimapIcon"				"minimap_ward_obs"
+		"MinimapIconSize"				"300"
+ 		//"wearable"				"7555"
+
+ 		//Ability
+ 		"Ability1"					"ability_ward_like"
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"460"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"			// Type of locomotion - ground, air 
+		"MovementSpeed"				"0"			// Speed
+		"MovementTurnRate"			"0"			// Turning rate.	
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"100"		// Base health.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"100"			// Experience earn.
+		"BountyGoldMin"				"100"		// Gold earned min.
+		"BountyGoldMax"				"100"		// Gold earned max.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"			// Team name.
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_WARD"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"1600"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1600"		// Range of vision at night time.
+	}	
+
+
 
 }
 #base "../vscripts/lua_abilities/mars_arena_of_blood_lua/mars_arena_of_blood_lua_units.txt"

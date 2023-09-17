@@ -11,9 +11,9 @@ LinkLuaModifier( "modifier_item_imba_skadi_freeze", "items/custom/item_ice_rapie
 
 function item_ice_rapier:GetIntrinsicModifierName() return "modifier_item_imba_skadi" end
 function item_ice_rapier:GetCastRange()
-	if IsServer() then
+--[[ 	if IsServer() then
 		return
-	end
+	end ]]
 	local caster = self:GetCaster()
 	if caster and caster:HasModifier("modifier_item_imba_skadi") then
 		return caster:GetModifierStackCount("modifier_item_imba_skadi", caster)

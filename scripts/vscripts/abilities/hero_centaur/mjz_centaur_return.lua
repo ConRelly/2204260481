@@ -162,7 +162,8 @@ if IsServer() then
 		local return_damage = damage + caster_str * (str_return / 100.0)
 		ApplyDamage({ 
 			victim = attacker, attacker = caster, ability = ability, 
-			damage = return_damage, damage_type = ability:GetAbilityDamageType() 
+			damage = return_damage, damage_type = ability:GetAbilityDamageType(),
+			damage_flags = DOTA_DAMAGE_FLAG_IGNORES_BASE_PHYSICAL_ARMOR,
 		})
 	end
 end
