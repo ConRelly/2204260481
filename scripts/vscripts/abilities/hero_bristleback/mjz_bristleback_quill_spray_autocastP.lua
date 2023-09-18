@@ -44,9 +44,7 @@ end
 
 local NoAutocastItem = {
     
-    ["item_pipe_of_dezun"] = true,
-
-
+    --["item_pipe_of_dezun"] = true,
 
 };
 
@@ -64,7 +62,7 @@ function modifier_class:OnIntervalThink()
             AttackNearestEnemy(parent)
         end   
         --Autocast for items
-        for i=0, 2 do
+        for i=0, 3 do
             local item = parent:GetItemInSlot(i)
             if item and IsValidEntity(item) and item:IsFullyCastable() and item:IsActivated() then
                 -- more checks 
@@ -80,9 +78,28 @@ function modifier_class:OnIntervalThink()
                 end                   
                 if item:GetCooldown(item:GetLevel()) <= 0 then return end
                 if parent:IsInvisible() then return end
-                use_ability(item, caster, parent)
+                self.pirate_cast = false
+                self:use_ability(item, caster, parent)
             end
-        end          
+        end 
+        local item = parent:GetItemInSlot(16)
+        if item and IsValidEntity(item) and item:IsFullyCastable() and item:IsActivated() then
+            -- more checks 
+            local ability = item:GetAbilityName()
+            if ability == nil then return end
+            if ability == "" then return end
+            if NoAutocastItem[ability] == true then return end                
+            if not IsValidEntity(parent) then return nil end
+            if not item:IsCooldownReady() then return nil end
+            if parent:IsIllusion() then return nil end
+            if IsChanneling(parent) and not ability_behavior_includes(item, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
+                return nil
+            end                   
+            if item:GetCooldown(item:GetLevel()) <= 0 then return end
+            if parent:IsInvisible() then return end
+            self.pirate_cast = false
+            self:use_ability(item, caster, parent)
+        end                 
     end          
 end
 
@@ -142,15 +159,27 @@ function IsChanneling(unit)
 			end
 		end
 	end
+    local Item = unit:GetItemInSlot( 16 )
+    if Item ~= nil then
+        if Item:IsChanneling() then
+            return true
+        end
+    end    
 	return false
 end
 
 
 
-function use_ability(ability, caster, parent )
+function modifier_class:use_ability(ability, caster, parent )
     if not IsServer() then return end
-    --local parent = caster:GetOwner()
-    local radius_auto = ability:GetCastRange(parent:GetAbsOrigin(), parent) + caster:GetCastRangeBonus() - 50  
+    --local parent = caster:GetOwner() 
+    local pirate_loc1 = Vector(-980.678894, -1213.073242, 320.000000)-- +  RandomVector(40)
+    local pirate_loc2 = Vector(964.100281, -1222.740845, 320.000000)-- + RandomVector(40)
+    local radius_auto = ability:GetCastRange(parent:GetAbsOrigin(), parent) + caster:GetCastRangeBonus() - 50
+    if ability:GetAbilityName() == "item_pirate_hat" then
+        self.pirate_cast = true
+        radius_auto = 7200
+    end
     if radius_auto < 100 then
         radius_auto = 500
     end    
@@ -195,7 +224,18 @@ function use_ability(ability, caster, parent )
             end   
         elseif ability_behavior_includes(ability, DOTA_ABILITY_BEHAVIOR_POINT) then
             if ability and IsValidEntity(ability) and IsValidEntity(first_enemy) and IsValidEntity(parent) and parent:IsAlive() and first_enemy:IsAlive() then
-                parent:CastAbilityOnPosition(first_enemy:GetAbsOrigin(), ability, parent:GetPlayerOwnerID())
+                if self.pirate_cast then
+                    local location = Vector(0, 0 , 0) 
+                    local roll = RandomInt(1, 2)
+                    if roll > 1 then
+                        location =  pirate_loc1
+                    else
+                        location =  pirate_loc2
+                    end    
+                    parent:CastAbilityOnPosition(location, ability, parent:GetPlayerOwnerID())
+                else
+                    parent:CastAbilityOnPosition(first_enemy:GetAbsOrigin(), ability, parent:GetPlayerOwnerID())  
+                end
             end   
         elseif ability_behavior_includes(ability, DOTA_ABILITY_BEHAVIOR_NO_TARGET) then
             if ability and IsValidEntity(ability) and IsValidEntity(parent) and parent:IsAlive() then

@@ -2834,6 +2834,8 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+
+
 * Added new item (made by fusing Flaming Cape + Demonic Blade)
 * Fixed Pango True Master dagger bleed to tick every 0.5s instead of every 1s.
 * Reduced the majority of cast times for skills again (now most of them are 0.1 or lower or 0)
@@ -2854,6 +2856,13 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+
+* Increased Enchanter drop rate from lvl up by ~30%.
+* Now if you never dropped an enchanter from lvlup til lvl 25, it will give you a guarantee, and same for lvl 82 for a second one.
+* MultiAutocast has a limited alternative (special branch)
+* Courier item autocast now goes up to slot 4(from 1-3) + neutral slot.
+* Void Spirit Resonant Pulse buffed (defense part)
+* Courier can autocast Dezun again.
 
 
 

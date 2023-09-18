@@ -9770,6 +9770,51 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}	
 
+	"riki_blink_strike"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5143"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilitySound"					"Hero_Riki.Blink_Strike"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900 1700 2800 4900"
+		"AbilityCastPoint"				"0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.1"
+		"AbilityCharges"				"2"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50 55 60 65"
+		
+		// Special
+		"AbilityValues"
+		{
+			
+			"bonus_damage"
+			{
+				"value"					"620"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"AbilityChargeRestoreTime"
+			{
+				"value"							"25 21 17 13"
+				"special_bonus_unique_riki_9" "-4"				
+			}
+			"slow"						"3.0"
+		}
+		
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
 
 	"riki_tricks_of_the_trade"
 	{
@@ -13701,11 +13746,63 @@
 
 
 
+
+
+	//=================================================================================================================
+	// Void Spirit: Dissimilate
+	//=================================================================================================================
 	"void_spirit_dissimilate"
 	{
-		"AbilityDamage"					"260 540 1220 3300"
-	}
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"6470"	// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		//"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_VoidSpirit.Dissimilate.Cast"
 
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20 17 14 11"
+
+		// Damage
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"500 2800 5600 9400"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"130"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"phase_duration"		"2.0"
+			"destination_fx_radius"	"183" // proportional to distance_offset
+			"portals_per_ring"		"6"
+			"angle_per_ring_portal"	"60"
+			"first_ring_distance_offset"	
+			{
+				"value"		"520"
+				"affected_by_aoe_increase"	"1"		
+			}
+			"damage_radius"			"275" // proportional to distance_offset
+			"has_outer_ring"
+			{
+				"value"				"1"
+				"special_bonus_unique_void_spirit_dissimilate_outerring"			"+1"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
 
 	//=================================================================================================================
 	// Ability: Warlock's Fatal Bonds
@@ -25541,6 +25638,7 @@
 		"ItemGloballyCombinable"		"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"AbilityCastRange"				"250"
 		"ItemPurchasable"				"1"
 		"AbilitySpecial"
 		{

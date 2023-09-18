@@ -114,6 +114,12 @@ function AOHGameMode:InitGameMode()
 	AOHGameMode.edible_frag[2] = 2
 	AOHGameMode.edible_frag[3] = 2
 	AOHGameMode.edible_frag[4] = 2	
+	AOHGameMode.enchanter_drop = {}
+	AOHGameMode.enchanter_drop[0] = 2
+	AOHGameMode.enchanter_drop[1] = 2
+	AOHGameMode.enchanter_drop[2] = 2
+	AOHGameMode.enchanter_drop[3] = 2
+	AOHGameMode.enchanter_drop[4] = 2	
 	_G._hardMode = false
 	_G._extra_mode = false
 	_G.super_courier = {false, false, false, false, false}
@@ -1002,8 +1008,8 @@ function AOHGameMode:OnHeroLevelUp(event)
 	local heroLevel = hero:GetLevel()
 	local nPlayerID = hero:GetPlayerID()
 	if not PlayerResource:IsValidPlayer(nPlayerID) then return end
-	local dice_1 = RandomInt(1, 100)
-	local dice_2 = RandomInt(1, 100)
+	local dice_1 = RandomInt(1, 70)
+	local dice_2 = RandomInt(1, 70)
 	local abilityPointsToGive = 1
 	local apEveryXLevel = 7
 	local fragmentEveryXLevel = 7
@@ -1130,6 +1136,7 @@ function AOHGameMode:OnHeroLevelUp(event)
 			DropItemOrInventory(nPlayerID, "item_enchanter")
 			--mainHero:AddItemByName("item_enchanter")
 			encahnter_bonus = encahnter_bonus - 1
+			AOHGameMode.enchanter_drop[nPlayerID] = 0
 		end
 	elseif dice_1 == dice_2 and not hero:IsIllusion() and (heroLevel > 9) then
 		-- Check if main/real hero
@@ -1137,7 +1144,22 @@ function AOHGameMode:OnHeroLevelUp(event)
 		if mainHero == hero then
 			DropItemOrInventory(nPlayerID, "item_enchanter")
 			--mainHero:AddItemByName("item_enchanter")
+			AOHGameMode.enchanter_drop[nPlayerID] = AOHGameMode.enchanter_drop[nPlayerID] - 1
 		end
+	elseif AOHGameMode.enchanter_drop[nPlayerID] > 1 and not hero:IsIllusion() and (heroLevel > 25) then
+		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
+		if mainHero == hero then
+			DropItemOrInventory(nPlayerID, "item_enchanter")
+			AOHGameMode.enchanter_drop[nPlayerID] = AOHGameMode.enchanter_drop[nPlayerID] - 1
+			Notifications:Top(nPlayerID,{text="Personal: lvl 25+ guarantee enchanter, if you have not received any until now", style={color="yellow"}, duration=7})
+		end	
+	elseif AOHGameMode.enchanter_drop[nPlayerID] > 0 and not hero:IsIllusion() and (heroLevel > 82) then
+		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
+		if mainHero == hero then
+			DropItemOrInventory(nPlayerID, "item_enchanter")
+			AOHGameMode.enchanter_drop[nPlayerID] = AOHGameMode.enchanter_drop[nPlayerID] - 1
+			Notifications:Top(nPlayerID,{text="Personal: lvl 82+ guarantee enchanter, if you have not received more then 1 until now", style={color="yellow"}, duration=7})
+		end		
 	end	
 	if hero:HasItemInInventory("item_flaming_cape") and not hero:IsIllusion() then
 		local flaming_cape = hero:FindItemInInventory("item_flaming_cape")

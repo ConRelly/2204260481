@@ -850,12 +850,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"650"
+				"radius"				"850"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed"					"800"
+				"speed"					"900"
 			}
 			"03"
 			{
@@ -871,7 +871,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"base_absorb_amount"	"900 1800 3120 9160 14000 21500 47960"
+				"base_absorb_amount"	"2900 9800 15120 39160 84000 181500 347960"
 			}
 			"06"
 			{
@@ -39162,7 +39162,7 @@
 			"06"
 			{
 				"var_type"			  "FIELD_INTEGER"
-				"absorb_per_hero_hit"   "200 220 240 260 35000"
+				"absorb_per_hero_hit"   "200 220 240 260 45000"
 			}
 			"07"
 			{

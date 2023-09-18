@@ -2909,7 +2909,7 @@
 
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5"					"Multi AutoCast"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Description"		"Cast all non hotkey abilities and upt to 2 items slots. Type '-itemauto1Nr' and '-itemauto2Nr' (Nr = from 1 to 6) to set the itemsSlots.
-	in case it doesn't work type '-autocast6' to relearn the skill(disable toggle before). type '-removeauto2' to delete the skill and restore the Enchanter"
+	in case it doesn't work type '-autocast6' to relearn the skill(disable toggle before). type '-removeauto2' to delete the skill and restore the Enchanter(even from special branch)"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_tick_interval"	  "Interval Check:"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Note0"			  "It will cast the first non hotkey viabile(excluding passives toggle etc) ability, if the ability is not rdy it will cast the next ability"
 	//"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Note1"              "Autocast will stop at the first Passive ability , if you want to you use the ItemAutocast make sure you don't have a passive ability at the end."
@@ -2922,7 +2922,7 @@
 
 
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp"					"Item AutoCast"
-	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_Description"		"Autocast Inventory slots 1-3 and searches all map for enemies to attack (even if the courier is invisible aka shadow blade)"
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_Description"		"Autocast Inventory slots 1-4 and searches all map for enemies to attack (even if the courier is invisible aka shadow blade)"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_tick_interval"	  "Interval Check:"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_Note0"			  "Some items might not work"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_Lore"              "Are you pressing any buttons ? or even paying attention to your courier"

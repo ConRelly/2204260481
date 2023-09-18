@@ -26,7 +26,6 @@ end
 function modifier_ward_like:IsPurgable()
     return false
 end
-
 function modifier_ward_like:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL,

@@ -4281,8 +4281,8 @@
 	"ItemCost"						"10000"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"ItemAliases"					"intelligence tome;int"
-	"ItemStockInitial"				"15"
-	"ItemStockMax"					"20"
+	"ItemStockInitial"				"25"
+	"ItemStockMax"					"30"
 	"ItemStockTime"					"1500.0"
 	"ItemKillable"				  "0"   
 	"ItemShopTags"					"consumable"
@@ -17155,6 +17155,7 @@
 	{
 
 		"01"						"item_auto_cast;item_enchanter"
+		"02"						"item_auto_cast;item_branches2;"
 	}
 }
 
@@ -18351,7 +18352,6 @@
 			}
 		}
 	}
-
 
 
 
@@ -22451,6 +22451,7 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"ss_damage_interval"	"0.7"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"13"
 			{
@@ -25551,7 +25552,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"1200"
+				"aura_radius"			"7200"
 			}			
 			"08"
 			{
@@ -25573,6 +25574,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"barrier_block_creep"	"400"
 			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"active_aura_radius"	"7200"
+			}			
 		}
 	}
 // Upgraded Pipe of Insight Recipe

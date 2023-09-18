@@ -160,7 +160,7 @@ function item_pipe_of_dezun:GetCooldown(level)
 	end
 	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
 end
-function item_pipe_of_dezun:GetCastRange(location, target) return self:GetSpecialValueFor("active_aura_radius") end
+function item_pipe_of_dezun:GetCastRange(location, target) return self:GetSpecialValueFor("aura_radius") end
 function item_pipe_of_dezun:OnSpellStart()
 	local caster = self:GetCaster()
 	local duration = self:GetSpecialValueFor("duration")
@@ -216,7 +216,7 @@ function modifier_pipe_of_dezun_magic_immune_aura:GetEffectAttachType() return P
 function modifier_pipe_of_dezun_magic_immune_aura:IsAura() return true end
 function modifier_pipe_of_dezun_magic_immune_aura:IsAuraActiveOnDeath() return false end
 function modifier_pipe_of_dezun_magic_immune_aura:GetAuraRadius()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("active_aura_radius") end
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("aura_radius") end
 end
 function modifier_pipe_of_dezun_magic_immune_aura:GetAttributes() return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE end
 function modifier_pipe_of_dezun_magic_immune_aura:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD + DOTA_UNIT_TARGET_FLAG_INVULNERABLE end
