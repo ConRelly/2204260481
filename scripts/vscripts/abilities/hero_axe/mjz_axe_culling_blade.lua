@@ -75,14 +75,21 @@ if IsServer() then
 		for _,unit in pairs(unit_list) do
 			unit:AddNewModifier(caster, self, "modifier_mjz_axe_culling_blade_boost", {duration = speed_duration})
 		end
-
-		caster:AddNewModifier(caster, self, "modifier_culling_blade_stacks", {})
+		if not caster:HasModifier("modifier_mjz_axe_culling_blade_boost") then
+			caster:AddNewModifier(caster, self, "modifier_culling_blade_stacks", {})
+		end
 	
 		if caster:HasModifier("modifier_super_scepter") then
 			self:EndCooldown()
 		end
 	end
-	function mjz_axe_culling_blade:OnCullingBladeSuccess_2(target)
+	function mjz_axe_culling_blade:OnCullingBladeSuccess_2(target, hKiller, kv)
+		if target == nil or hKiller == nil or target:IsIllusion() then
+			return
+		end
+		if target:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+			return
+		end		
 		local caster = self:GetCaster()
 		local speed_radius = self:GetSpecialValueFor("speed_radius")
 		local speed_duration = self:GetSpecialValueFor("speed_duration") * (1 + caster:GetStatusResistance())
@@ -144,17 +151,7 @@ function modifier_mjz_axe_culling_blade_checker_1:IsHidden() return false end
 function modifier_mjz_axe_culling_blade_checker_1:IsPurgable() return false end
 function modifier_mjz_axe_culling_blade_checker_1:IsDebuff() return false end
 function modifier_mjz_axe_culling_blade_checker_1:GetTexture() return "mjz_axe_culling_blade" end
-if IsServer() then
-	function modifier_mjz_axe_culling_blade_checker_1:DeclareFunctions() return {MODIFIER_EVENT_ON_DEATH} end
-	function modifier_mjz_axe_culling_blade_checker_1:OnDeath(event)
-		if self:GetAbility() then
-			local parent = self:GetParent()
-			if parent ~= event.unit then return end
-			if parent:HasModifier("modifier_mjz_axe_culling_blade_checker") then return end
-			self:GetAbility():OnCullingBladeSuccess_2(self:GetParent())
-		end
-	end
-end
+
 -----------------------------------------------------------------------------------------
 
 modifier_mjz_axe_culling_blade_boost = class({})
@@ -187,7 +184,7 @@ function modifier_mjz_axe_culling_blade_boost:IsAura()
 		return false
 	end	
 end
-function modifier_mjz_axe_culling_blade_boost:GetAuraRadius() return 3200 end 
+function modifier_mjz_axe_culling_blade_boost:GetAuraRadius() return 7200 end 
 function modifier_mjz_axe_culling_blade_boost:GetModifierAura() return "modifier_mjz_axe_culling_blade_checker_1" end
 function modifier_mjz_axe_culling_blade_boost:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
 function modifier_mjz_axe_culling_blade_boost:GetAuraSearchType() return DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO end
@@ -199,6 +196,18 @@ function modifier_mjz_axe_culling_blade_boost:GetAuraEntityReject(hEntity)
 	end
 	return false
 end
+function modifier_mjz_axe_culling_blade_boost:DeclareFunctions() return {MODIFIER_EVENT_ON_DEATH} end
+function modifier_mjz_axe_culling_blade_boost:OnDeath(event)
+	if not IsServer() then return end
+	if event.attacker ~= self:GetParent() then return end
+	if self:GetAbility() then
+		local caster = self:GetCaster()
+		--local ability = self:GetAbility()
+		local target = event.unit
+		local hKiller = event.attacker
+		self:GetAbility():OnCullingBladeSuccess_2(target, hKiller)
+	end
+end	
 if IsServer() then
 	function modifier_mjz_axe_culling_blade_boost:OnCreated(table)
 		local parent = self:GetParent()

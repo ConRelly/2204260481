@@ -1153,12 +1153,12 @@ function AOHGameMode:OnHeroLevelUp(event)
 			AOHGameMode.enchanter_drop[nPlayerID] = AOHGameMode.enchanter_drop[nPlayerID] - 1
 			Notifications:Top(nPlayerID,{text="Personal: lvl 25+ guarantee enchanter, if you have not received any until now", style={color="yellow"}, duration=7})
 		end	
-	elseif AOHGameMode.enchanter_drop[nPlayerID] > 0 and not hero:IsIllusion() and (heroLevel > 82) then
+	elseif AOHGameMode.enchanter_drop[nPlayerID] > 0 and not hero:IsIllusion() and (heroLevel > 63) then
 		local mainHero = PlayerResource:GetSelectedHeroEntity(nPlayerID)
 		if mainHero == hero then
 			DropItemOrInventory(nPlayerID, "item_enchanter")
 			AOHGameMode.enchanter_drop[nPlayerID] = AOHGameMode.enchanter_drop[nPlayerID] - 1
-			Notifications:Top(nPlayerID,{text="Personal: lvl 82+ guarantee enchanter, if you have not received more then 1 until now", style={color="yellow"}, duration=7})
+			Notifications:Top(nPlayerID,{text="Personal: lvl 64+ guarantee enchanter, if you have not received more then 1 until now", style={color="yellow"}, duration=7})
 		end		
 	end	
 	if hero:HasItemInInventory("item_flaming_cape") and not hero:IsIllusion() then
@@ -1347,7 +1347,9 @@ function AOHGameMode:OnEntitySpawned(event)
 		local not_illusion = not unit:HasModifier('modifier_illusion')
 		if IsValidEntity(unit) and (not unit:IsHero() or unit:GetUnitName()== "npc_courier_replacement") then 
 			LearnAbilityOnSpawn(unit)
-			-- self:_OnHeroFirstSpawned(npc)   
+			-- self:_OnHeroFirstSpawned(npc) 
+		elseif IsValidEntity(unit) and (not unit:IsHero() or unit:GetUnitLabel()== "spirit_bear") then
+			LearnAbilityOnSpawn(unit)
 		end
 	end		
 	if unit and not unit:IsNull() and unit:IsHero() then
@@ -1575,7 +1577,7 @@ function AOHGameMode:OnEntityKilled(event)
 		else	
 			Notifications:TopToAll({text="You Have Defeated The God MORAN(Lower Dificulty)", style={color="red"}, duration=15})
 		end	
-	end			
+	end		
 	mHackGameMode:OnEntityKilled(event)
 end
 

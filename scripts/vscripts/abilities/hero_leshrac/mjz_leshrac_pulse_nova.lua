@@ -8,6 +8,16 @@ local ability_class = mjz_leshrac_pulse_nova
 function ability_class:GetAOERadius()
     return self:GetSpecialValueFor("radius") + self:GetCaster():GetCastRangeBonus()
 end
+function ability_class:OnOwnerSpawned()
+	local caster = self:GetCaster()
+	local ability = self
+
+	if ability and ability:GetToggleState() then
+        caster:EmitSoundParams("Hero_Leshrac.Pulse_Nova", 0, 0.3, 0)
+		caster:AddNewModifier(caster, ability, "modifier_mjz_leshrac_pulse_nova", {})
+    end
+end
+function ability_class:ResetToggleOnRespawn() return false end
 
 function ability_class:OnToggle()
     if IsServer() then
@@ -52,7 +62,7 @@ if IsServer() then
         local ability = self:GetAbility()
         local parent = self:GetParent()
         local radius = ability:GetAOERadius()
-
+        if parent:HasModifier("modifier_fountain_invulnerability") then return end
         if not caster:IsAlive() then
             ability:ToggleAbility()
             return 

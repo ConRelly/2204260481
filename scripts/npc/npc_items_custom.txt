@@ -17147,15 +17147,14 @@
 	"AbilityTextureName"				"item_recipe"
 	"BaseClass"						"item_datadriven"
 	"Model"							"models/props_gameplay/recipe.vmdl"
-	"ItemCost"						"9000"
+	"ItemCost"						"16000"
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	"ItemResult"					"item_auto_cast2"
 	"ItemRequirements"
 	{
 
-		"01"						"item_auto_cast;item_enchanter"
-		"02"						"item_auto_cast;item_branches2;"
+		"01"						"item_auto_cast"
 	}
 }
 

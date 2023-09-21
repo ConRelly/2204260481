@@ -227,7 +227,8 @@
 	"Ability5"		"doom_bringer_empty2"
 	"Ability10"		"special_bonus_armor_69"
 	"Ability12"		"special_bonus_cdr_15"
-	"Ability14"		"special_bonus_unique_lone_druid_8"
+	"Ability13"     "special_bonus_unique_lone_druid_5"
+	"Ability14"		"special_bonus_unique_lone_druid_2"
 	"Ability15"		"special_bonus_attack_base_damage_3000"
 }
 "npc_dota_hero_nevermore"
@@ -397,6 +398,7 @@
 	"Ability11"           "special_bonus_spell_amplify_100"
 	"Ability12"			  "special_bonus_magic_resistance_40"
 	"Ability14"           "special_bonus_mp_regen_300"
+	"Ability15"           "special_bonus_attack_base_damage_8000"
 	"Ability17"			  "special_bonus_unique_tidehunter_8"
 
 	"AttackRate"					"1.5"
@@ -1745,7 +1747,7 @@
 		
 		"Ability2"				"mjz_centaur_double_edge"
 		"Ability3"				"mjz_centaur_return"
-		"Ability5"              "custom_aphotic_shield"
+		"Ability7"              "custom_aphotic_shield"
 		"Ability12"				"special_bonus_strength_250"
 		"Ability13"				"special_bonus_unique_mjz_centaur_double_edge_radius"
 		"Ability14"				"special_bonus_unique_mjz_centaur_return_strength"

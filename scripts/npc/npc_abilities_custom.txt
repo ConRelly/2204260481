@@ -837,7 +837,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_VoidSpirit.Pulse.Cast"
 		"HasScepterUpgrade"				"1"
-		"AbilityCastRange"				"0"
+		"AbilityCastRange"				"5000"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -40982,7 +40982,8 @@
 		//"AbilityDamage"					"0"
 		//"AbilityCooldown"				"0.0"
 		//"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		//"SpellDispellableType"			"SPELL_DISPELLABLE_NO"		
+		//"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"                     "1"		
 		//"LearnOnSpawn"				  "1"
 		"RequiredLevel"				 "1"
 		//"HasScepterUpgrade"				"1"
@@ -41009,7 +41010,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_health_regen"			"1 45 60"
+				"bonus_health_regen"			"1"
 			}
 			"01"
 			{
@@ -41060,7 +41061,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_health_regen"			"1 45 60"
+				"bonus_health_regen"			"1"
 			}
 			"01"
 			{

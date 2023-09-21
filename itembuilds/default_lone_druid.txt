@@ -4,44 +4,77 @@
 	{		
 		"#DOTA_Item_Build_Starting_Items"
 		{
-			"item"		"item_dragon_scale"
-			"item"		"item_philo_stone_temp"		
+			"item"		"item_dragon_scale"	
+			"item"		"item_essence_ring"	
+			"item"		"item_broom_handle"
+			"item"		"item_plain_perma"
   		}
 		
-		"#DOTA_Item_Build_Early_Game"
+		"#DOTA_Item_Build_early_general_Items"
 		{	
-			"item"		"item_pirate_hat"
-			"item"		"item_pharaoh_crown"
+			"item"		"item_ancient_janggo_2"
+			"item"		"item_dragon_head"
+			"item"		"item_pipe_2"
 			"item"		"item_echo_sabre_5"
+			"item"		"item_titan_sliver"
+			"item"		"item_bigan_octarine_core"
+			"item"		"item_helm_of_the_undying"
+			"item"		"item_pirate_hat"			
+			"item"		"item_enchanter"
+			"item"		"item_all_essence"
+			"item"		"item_weapon_fragment"			
 		}
 		
-		"#DOTA_Item_Build_Mid_Items"			
+		"#DOTA_Item_Build_core_phy_Items"			
 		{
-			"item"		"item_illusionsts_cape"
-			"item"		"item_imba_greater_crit"
-			"item"		"item_fire_rapier" 
-			"item"		"item_mjz_dragon_lance "
-			"item"		"item_vladmir"
-			"item"		"item_god_slayer"
-		}
-		
-		"#DOTA_Item_Build_Late_Items"			
-		{
-			"item"		"item_ex_machina"
+			"item"      "item_light_crossbow"
+			"item"		"item_willbreaker"
+			"item"		"item_desolator_2"
+			"item"		"item_orb_of_destruction_2"
+			"item"		"item_mjz_assault_5"    		
+			"item"		"item_fire_rapier"
 			"item"		"item_imba_silver_edge"
-			"item"		"item_radiance_armor_green"
-			"item"		"item_mjz_monkey_king_bar_5"   	
-			"item"		"item_tome_bargain"
+			"item"		"item_imba_greater_crit"
+			"item"		"item_abyssal_water_blade"
+			"item"		"item_broken_bow"
+		}
+		
+
+		"#DOTA_Item_Build_core_magic_Items"
+		{
+			"item"		"item_mjz_dagon_v2"
+			"item"		"item_blast_staff_1"
+			"item"		"item_mjz_preserved_skull"
+			"item"      "item_echo_wand"
+			"item"		"item_arcane_staff_edible"
+			"item"		"item_num"
+			"item"      "item_mjz_bloodstone_ultimate"
+			"item"		"item_spirit_guardian"
+			"item"		"item_ice_rapier"
 		}
 
 		"#DOTA_Item_Build_Luxury"
 		{
-			"item"		"item_all_essence"  
-			"item"		"item_weapon_fragment"  
-			"item"		"item_weapon_fragment_complete"
-			"item"		"item_enchanter"
-			"item"		"item_edible_complete"
-			"item"		"item_greater_elemental"
+			"item"      "item_light_crossbow"
+			"item"      "item_god_slayer"
+			"item"      "item_maple_shield_lua"
+			"item"      "item_broken_wings"
+			"item"		"item_ultimate_ethereal_blade"
+			"item"		"item_arcane_staff_edible"
+			"item"      "item_high_tech_boots2"
+			"item"		"item_custom_apex"
+			"item"		"item_custom_ballista"
+			"item"		"item_trident"	
+			"item"		"item_imba_greater_crit"
+			"item"		"item_radiance_armor_2"
+			"item"      "item_imba_silver_edge"
+			"item"      "item_mjz_frostmourne"
+			"item"      "item_master_of_weapons_sword"
+			"item"      "item_hammer_of_the_divine"
+			"item"		"item_fire_rapier"
+			"item"		"item_ice_rapier"
+			"item"      "item_earth_rapier"
+			"item"      "item_wind_rapier"					
 		}	
 	}
 }

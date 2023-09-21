@@ -64,14 +64,14 @@ function modifier_class:OnIntervalThink()
         --Autocast for items
         for i=0, 3 do
             local item = parent:GetItemInSlot(i)
-            if item and IsValidEntity(item) and item:IsFullyCastable() and item:IsActivated() then
+            if item and IsValidEntity(item) and not item:IsPassive() and item:IsFullyCastable() and item:IsActivated() and item:IsCooldownReady() and not ( NoAutocastItem[item:GetAbilityName()] == true) then
                 -- more checks 
                 local ability = item:GetAbilityName()
                 if ability == nil then return end
                 if ability == "" then return end
                 if NoAutocastItem[ability] == true then return end                
                 if not IsValidEntity(parent) then return nil end
-                if not item:IsCooldownReady() then return nil end
+               -- if not item:IsCooldownReady() then return nil end
                 if parent:IsIllusion() then return nil end
                 if IsChanneling(parent) and not ability_behavior_includes(item, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
                     return nil
@@ -83,14 +83,14 @@ function modifier_class:OnIntervalThink()
             end
         end 
         local item = parent:GetItemInSlot(16)
-        if item and IsValidEntity(item) and item:IsFullyCastable() and item:IsActivated() then
+        if item and IsValidEntity(item) and item:IsFullyCastable() and item:IsActivated() and item:IsCooldownReady() then
             -- more checks 
             local ability = item:GetAbilityName()
             if ability == nil then return end
             if ability == "" then return end
             if NoAutocastItem[ability] == true then return end                
             if not IsValidEntity(parent) then return nil end
-            if not item:IsCooldownReady() then return nil end
+           --if not item:IsCooldownReady() then return nil end
             if parent:IsIllusion() then return nil end
             if IsChanneling(parent) and not ability_behavior_includes(item, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
                 return nil

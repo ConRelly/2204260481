@@ -240,7 +240,7 @@ if IsServer() then
 		doom_devour_lua = true,
 		mjz_axe_berserkers_call = true,
 		mjz_skeleton_king_ghost = true,
-		--centaur_stampede = true,   --does not have dmg reduction anymore
+		centaur_stampede = true,   
 		mjz_templar_assassin_refraction = true,
 		hoodwink_sharpshooter_release = true,
 		brewmaster_primal_split = true,

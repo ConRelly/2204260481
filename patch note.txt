@@ -2866,6 +2866,23 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Courier AutoCast will now ignore passive items and move to the next item to cast instead of stopping on them.
+* Axe new lvl 25 talent logic changed so that it always gives the correct number of stacks on enemy deaths.
+* MultiAutocast item now only cost gold (removed enchanter cost and increased gold cost).
+* Second Enchanter guarantee if you don't get a second one from level up now drops at lvl 64 from 82.
+
+
+
+
+* Lone Druid Bear now uses the owner buff instead of Nebu for scaling.
+* Increased Lone Bear stats per level (HP and Attack), reduced base attack time, and replaced/buffed some Lone Druid talents.
+* Bear at skill level 4 now has the item autocast skill.
+* WD Restoration and Pulse Nova now retain their toggle state after death.
+* Centaur's ultimate damage reduction bonus restored and his Aghanim scepter added.
+* and some other stuff.
+
+
+
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).

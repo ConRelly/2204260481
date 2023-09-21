@@ -24,6 +24,20 @@ function wd_voodoo_restoration:GetManaCost(hTarget)
 	return self.BaseClass.GetManaCost(self, hTarget)
 end
 
+---toggle persist on death
+function wd_voodoo_restoration:OnOwnerSpawned()
+	local caster = self:GetCaster()
+	local ability = self
+
+	if ability and ability:GetToggleState() then
+		EmitSoundOn("Hero_WitchDoctor.Voodoo_Restoration", caster)
+		EmitSoundOn("Hero_WitchDoctor.Voodoo_Restoration.Loop", caster)
+		caster:AddNewModifier(caster, ability, "modifier_wd_voodoo_restoration", {})
+    end
+end
+function wd_voodoo_restoration:ResetToggleOnRespawn() return false end
+
+
 function wd_voodoo_restoration:OnToggle()
 	if self:GetToggleState() then
 		EmitSoundOn("Hero_WitchDoctor.Voodoo_Restoration", self:GetCaster())

@@ -2783,14 +2783,14 @@
 	"DOTA_Tooltip_ability_mjz_axe_culling_blade_speed_duration"			"KILL SPEED DURATION:"
 	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_boost"					"Culling Blade Boost"
 	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_boost_Description"		"Axe releases a war cry, giving all nearby allies %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% bonus movement and %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% bonus attack speed"
-	"DOTA_Tooltip_modifier_culling_blade_stacks"					"Culling Blade Stacks"
+	"DOTA_Tooltip_modifier_culling_blade_stacks"					"Armor Blade Stacks"
 	"DOTA_Tooltip_modifier_culling_blade_stacks_Description"		"Armor increased by %fMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%."
 	
 	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_checker_1"					"Culling Blade Death Aura"
-	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_checker_1_Description"       "If this unit dies it will give Axe an Culling Blade stack and will refresh the Culling Blade Boost duration"
+	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_checker_1_Description"       "If this unit dies by someone with Culling Blade Boost buff it will give Axe an Armor Blade Stack and will refresh the Culling Blade Boost duration"
 
-	"DOTA_Tooltip_ability_special_bonus_unique_mjz_axe_culling_blade_1"	"Culling Blade Boost now emits an 3200 aura that affects enemies"
-	"DOTA_Tooltip_ability_special_bonus_unique_mjz_axe_culling_blade_1_Description" "Enemies that die and are affected by aura will give Axe Culling Blade Stacks"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_axe_culling_blade_1"	"Culling Blade Boost now gives Axe Armor Blade Stacks"
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_axe_culling_blade_1_Description" "Killing an enemy under Culling Blade Boost will give Axe Armor Blade Stacks and refresh Boost duration"
 
 	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_ss_bleed"					"Culling Blade Bleed"
 	"DOTA_Tooltip_modifier_mjz_axe_culling_blade_ss_bleed_Description"      "Receive pure bleed dmg every second. Duration can be extended by caster status resistance"
@@ -2909,7 +2909,7 @@
 
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5"					"Multi AutoCast"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Description"		"Cast all non hotkey abilities and upt to 2 items slots. Type '-itemauto1Nr' and '-itemauto2Nr' (Nr = from 1 to 6) to set the itemsSlots.
-	in case it doesn't work type '-autocast6' to relearn the skill(disable toggle before). type '-removeauto2' to delete the skill and restore the Enchanter(even from special branch)"
+	in case it doesn't work type '-autocast6' to relearn the skill(disable toggle before). type '-removeauto2' to delete the skill"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_tick_interval"	  "Interval Check:"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Note0"			  "It will cast the first non hotkey viabile(excluding passives toggle etc) ability, if the ability is not rdy it will cast the next ability"
 	//"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast4_5_Note1"              "Autocast will stop at the first Passive ability , if you want to you use the ItemAutocast make sure you don't have a passive ability at the end."
@@ -2922,7 +2922,7 @@
 
 
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp"					"Item AutoCast"
-	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_Description"		"Autocast Inventory slots 1-4 and searches all map for enemies to attack (even if the courier is invisible aka shadow blade)"
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_Description"		"Autocast Inventory slots 1-4 + Neutral and searches all map for enemies to attack (even if the courier is invisible aka shadow blade)"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_tick_interval"	  "Interval Check:"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_Note0"			  "Some items might not work"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_Lore"              "Are you pressing any buttons ? or even paying attention to your courier"
@@ -2986,6 +2986,8 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_centaur_return_aura"			"Gains Return Aura"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_centaur_return_aura_Description"		"Friendly units in a {s:value} radius around Centaur gain the effects of Return; the damage is based on Centaur's strength."
 
+
+	"DOTA_Tooltip_ability_centaur_stampede_damage_reduction"				"%DAMAGE REDUCTION:"
 
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt"						"Chaos Bolt"
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_Description"			"Throws a mysterious bolt of energy at the target unit. It stuns for a random duration and deals random damage.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Always has a maximum stun duration and damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Increases damage by х%str_multiplier_scepter% of the owner's strength."
@@ -4130,7 +4132,6 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 	"DOTA_Tooltip_ability_mjz_riki_backstab_agility_damage"		"%Agility as Damage: "
 	"DOTA_Tooltip_ability_mjz_riki_backstab_health_regen"		"Health Regen: "
 		
-	"DOTA_Tooltip_ability_special_bonus_unique_riki_6"			"-3s Tricks of the Trade Cooldown"
 
 	"DOTA_Tooltip_ability_mjz_sandking_epicenter"	"Epicenter"
 	"DOTA_Tooltip_ability_mjz_sandking_epicenter_Description"	"CHANNELED - After channeling for 2 seconds, Sand King sends a disturbance into the earth, causing it to shudder violently. All enemies caught within range will take damage and become slowed. Each subsequent pulse increases the radius of damage dealt.\n<h1><font color='#F70707'>Challenge Boss</font></h1>Shard tickrate will get divided by the Reward Tier number(1-5). Increase Pulse final dmg by <font color='#5BE424'>20%</font> for every Reward Tier(max 248%)."
@@ -10027,7 +10028,7 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 		"DOTA_Tooltip_ability_owner_buff_Note0"					   "Has: 33%% effect on Hired Gon(Dragon Knight unit), 20%% effect on clinkz skeletons."
 		"DOTA_Tooltip_ability_owner_buff_description"				 "Increase base attack dmg by:<font color='#EB1D05'>owner 150%% total attack dmg</font> and after owner lvl 30 <font color='#05EB2B'>other owner stats will be added too as extra base dmg</font> like:<font color='#08E3DC'>50x spell amplification</font>,<font color='#EB8605'>100x armor</font> and <font color='#EB8605'>50%% max mana and hp</font>."
 		"dota_tooltip_modifier_owner_buff"							"Owner Buff"
-		"dota_tooltip_modifier_owner_buff_description"				"Increase base attack dmg by %dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE%  base on owner following stats: total attack dmg , spell amp , armor , max hp and max mp"
+		"dota_tooltip_modifier_owner_buff_description"				"Increase base attack dmg base on owner following stats: total attack dmg , spell amp , armor , max hp and max mp"
 
 		"DOTA_Tooltip_ability_bristleback_bristleback_2"				"BristleBack"
 
@@ -10544,8 +10545,7 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 	   "dota_tooltip_ability_item_auto_cast"					 "Learn AutoCast"
 	   "dota_tooltip_ability_item_auto_cast_description"		 "Learn an toggle ability that will automatically cast first non hotkey ability that can be casted"
 	   "dota_tooltip_ability_item_auto_cast2"					 "Learn Multi AutoCast"
-	   "dota_tooltip_ability_item_auto_cast2_description"		 "Learn an toggle ability that will automatically cast All non hotkey abilities that can be casted
-	   Enchanter can be restored with -removeauto2 command"	
+	   "dota_tooltip_ability_item_auto_cast2_description"		 "Learn an toggle ability that will automatically cast All non hotkey abilities that can be casted"	
 
 	   "DOTA_Tooltip_modifier_item_warriors_seal2"			   "Ancient Armor stacks"
 	   "DOTA_Tooltip_Ability_warriors_seal_3"              "Ancient Armor Stacks"

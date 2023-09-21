@@ -323,8 +323,7 @@ function AOHGameMode:OnPlayerChat(keys)
 			local ability = hero:FindAbilityByName("mjz_bristleback_quill_spray_autocast4_5")
 			if not ability:GetToggleState() then
 				hero:RemoveAbility("mjz_bristleback_quill_spray_autocast4_5")
-				hero:AddItemByName("item_enchanter")
-				Notifications:TopToAll({text="Removed multi autocast and restored Enchanter", style={color="yellow"}, duration=3})				 
+				Notifications:TopToAll({text="Removed multi autocast", style={color="yellow"}, duration=3})				 
 			end					   
 		end	
 	end										

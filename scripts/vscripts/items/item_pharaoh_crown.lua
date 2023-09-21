@@ -5,7 +5,7 @@ function aura_initiate(keys)
 		if caster:GetPlayerOwner() == parent:GetPlayerOwner() and not parent:HasModifier("modifier_pharaoh_crown_buff") and parent:GetUnitLabel() ~= "ancient" then
 			if not parent:IsHero() and parent:GetMaxHealth() > 35 or parent:GetUnitLabel() == "pharaoh_ok" or parent:GetUnitLabel() == "temp_unit" then
 				if not caster:IsRealHero() then return end
-				if parent:GetUnitName() ~= "npc_playerhelp" then
+				if parent:GetUnitName() ~= "npc_playerhelp" and parent:GetUnitLabel() ~= "spirit_bear" then
 					parent:AddNewModifier(caster, keys.ability, "modifier_pharaoh_crown_buff", {})
 				end
 			end

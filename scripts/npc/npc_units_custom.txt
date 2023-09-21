@@ -10128,8 +10128,11 @@
 	"ConsideredHero"			"1"
 	"AttackDamageMin"			"125"
 	"AttackDamageMax"			"195"
-	"UnitLabel"				 "pharaoh_ok"	
-	"StatusHealth"			  "2000"
+	//"UnitLabel"				 "pharaoh_ok"
+	"StatusHealthRegen"		  "100"	
+	"StatusHealth"			  "4000"
+	"StatusMana"			  "1300"		// Base mana.
+	"Ability7"				  "owner_buff"
 }
 "npc_dota_lone_druid_bear2"
 {
@@ -10137,9 +10140,13 @@
 	"Ability6"				  "lone_druid_spirit_bear_entangle2"
 	"ConsideredHero"			"1"
 	"AttackDamageMin"			"145"
-	"AttackDamageMax"			"245"	
-	"UnitLabel"					"pharaoh_ok"
-	"StatusHealth"			  "8000"
+	"AttackDamageMax"			"245"
+	"AttackAcquisitionRange"	"1800"	
+	//"UnitLabel"					"pharaoh_ok"
+	"StatusHealthRegen"			"600"
+	"StatusHealth"			  "9000"
+	"StatusMana"			  "5500"		// Base mana.
+	"Ability7"				  "owner_buff"
 }
 "npc_dota_lone_druid_bear3"
 {
@@ -10147,19 +10154,28 @@
 	"Ability6"				  "lone_druid_spirit_bear_entangle2"
 	"ConsideredHero"			"1"
 	"AttackDamageMin"			"265"
-	"AttackDamageMax"			"365"	
-	"UnitLabel"					"pharaoh_ok"
-	"StatusHealth"			  "12000"
+	"AttackDamageMax"			"365"
+	"AttackAcquisitionRange"	"2500"
+	//"UnitLabel"					"pharaoh_ok"
+	"StatusHealthRegen"			"1400"
+	"StatusHealth"			  "20000"
+	"StatusMana"			  "13000"		// Base mana.
+	"Ability7"				  "owner_buff"
 }
 "npc_dota_lone_druid_bear4"
 {
 	"Ability5"				  "bloodseeker_thirst"
 	"Ability6"				  "lone_druid_spirit_bear_entangle2"
+	"Ability7"				  "owner_buff"
+	"Ability8"                "mjz_bristleback_quill_spray_autocastp"
 	"ConsideredHero"			"1"
 	"AttackDamageMin"			"985"
-	"AttackDamageMax"			"1485"	
-	"UnitLabel"					"pharaoh_ok"
-	"StatusHealth"			  "25000"
+	"AttackDamageMax"			"1485"
+	"AttackAcquisitionRange"	"2500"
+	//"UnitLabel"					"pharaoh_ok"
+	"StatusHealthRegen"			"3500"
+	"StatusHealth"			  "40000"
+	"StatusMana"			  "35000"		// Base mana.                
 }
 "npc_dota_furion_treant_1"
 {

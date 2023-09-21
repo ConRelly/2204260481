@@ -4201,37 +4201,7 @@
 		}
 	}
 
-	"centaur_stampede"
-	{
-		"LevelsBetweenUpgrades"		 "10"
-		"AbilityCooldown"				"85"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"7.0"
-			}			
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"strength_damage"	"32.0 86.0 244.0"
-				"CalculateSpellDamageTooltip"	"1"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_reduction"	"70"
-				"RequiresScepter"	"1"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_reduction_tooltip_scepter"	"70"
-				"RequiresScepter"	"1"
-			}
-		}
-	}
+
 	//=================================================================================================================
 	// Centaur: Stampede
 	//=================================================================================================================
@@ -4267,7 +4237,7 @@
 		{
 			"duration"			
 			{
-				"value"						"9"
+				"value"						"7"
 				"special_bonus_unique_centaur_7"	"+1"
 			}
 			"scepter_bonus_duration"     
@@ -4277,27 +4247,115 @@
 			"base_damage"		"0"
 			"strength_damage"	
 			{
-				"value"							"32.0 86.0 144.0 220 340"			
+				"value"							"32.0 86 144 220 540"			
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"slow_duration"		"3"
-			"radius"			"105"
-			"slow_movement_speed"			"100"
-			"damage_reduction"	
+			"radius"			"300"
+			"slow_movement_speed"			"60"
+			"damage_reduction"	 		
 			{
-			//	"special_bonus_scepter"	"+20 +25 +30"
+				"value"                "35 40 45 50 55"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 			"AbilityCooldown"
 			{
-				"value"					"80"
+				"value"					"125"
 				"special_bonus_unique_centaur_5"	"-45"
 			}
 			"has_flying_movement"	
 			{
-			//	"special_bonus_scepter"	"+1"
+				"special_bonus_scepter"	"+1"
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Centaur: Work Horse
+	//=================================================================================================================
+	"centaur_work_horse"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1135"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET |  DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		"IsGrantedByScepter"			"1"
+		"AbilitySound"					"Hero_Centaur.Stampede"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"24"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"					"15"
+			"melee_attack_range"		"400"
+			"air_duration"		"0.5"
+			"air_height"		"450"
+			"break_distance"		"600"
+		}
+	}
+
+	//=================================================================================================================
+	// Centaur: Mount
+	//=================================================================================================================
+	"centaur_mount"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"980"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET |  DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"1"
+		"MaxLevel"						"1"
+		"IsGrantedByScepter"			"1"
+		"AbilitySound"					"Hero_Centaur.Stampede"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_4"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30"
+		"AbilityCastRange"				"2500"
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"					"15"
+			"melee_attack_range"		"400"
+			"air_duration"		"0.5"
+			"air_height"		"450"
+			"break_distance"		"600"
+		}
+	}
+
+
 
 	"chaos_knight_chaos_bolt"
 	{
@@ -14639,44 +14697,67 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}	
+
+
+	//=================================================================================================================
+	// Witch Doctor: Maledict
+	//=================================================================================================================
 	"witch_doctor_maledict"
 	{
-		"AbilityCooldown"				"60.0"
-		"AbilityDuration"				"10.0"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5140"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_WitchDoctor.Maledict_Cast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1575"
+		"AbilityCastPoint"				"0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60"
+		"AbilityDuration"				"12.0"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"85 256 484 1120"
-		"AbilitySpecial"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"105 110 115 120"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"480"
-				"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_6"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"abilityduration"			""
-				"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_4"
-				"LinkedSpecialBonusField"		"value"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"2 4 6 8"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
+				"radius"
+				{
+					"value"			"480"
+					"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_6"
+					"affected_by_aoe_increase"	"1"
+				}
+				"bonus_damage"				
+				{
+					"value"			"2 4 6 8"
+					"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_7"
+				}
 				"bonus_damage_threshold"	"100"
-			}			
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"ticks"						"3"
-				"LinkedSpecialBonusField"		"value2"
-			}		
+				"ticks"
+				{
+					"value"		"3"
+					"LinkedSpecialBonusField"		"value2"
+				}			
 		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
 	}
+
 	"special_bonus_unique_witch_doctor_7"
 	{
 		"AbilitySpecial"
@@ -16172,19 +16253,45 @@
 			}
 		}
 	}
+
+	
+	//=================================================================================================================
+	// Tidehunter: Kraken Shell
+	//=================================================================================================================
 	"tidehunter_kraken_shell"
 	{
-		"AbilitySpecial"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5119"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySound"					"Hero_Tidehunter.KrakenShell"
+		"LevelsBetweenUpgrades"	        "7"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
+			"damage_reduction"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_reduction"		"15 30 90 290"
-				"LinkedSpecialBonus"	"special_bonus_unique_tidehunter_4"
-				"CalculateSpellDamageTooltip"	"0"
+				"value"				"160 1340 5200 27000"
+				
 			}
+			"damage_cleanse"
+			{
+				"value"		"600 550 500 450"
+				"special_bonus_unique_tidehunter_6"	"-100"
+
+			}
+			"damage_reset_interval"	"7.0"
+			"bonus_reduction_per_stack"
+			{
+				"value"				"0"
+				"special_bonus_unique_tidehunter_4"	"+4"
+			}				
+			
 		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
+
 	"tidehunter_ravage"
 	{
 		"AbilityCooldown"				"80 60 40"
@@ -17557,37 +17664,95 @@
 		}
 	}		
 	
+	//=================================================================================================================
+	// Lone Druid: Summon Spirit Bear
+	//=================================================================================================================
 	"lone_druid_spirit_bear"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5412"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+		"DisplayAdditionalHeroes"	"1"
+		"AbilitySound"					"Hero_LoneDruid.SpiritBear.Cast"
+
+		"HasScepterUpgrade"			"1"
 		"LevelsBetweenUpgrades"		 "7"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"50.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75 75 75 75"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bear_hp"					"4000 9000 20000 40000"
+			"bear_regen_tooltip"		"100 600 1400 3500"
+			"bear_bat"
+			{
+				"value"					"1.35 1.25 1.15 1.0"
+				"special_bonus_unique_lone_druid_10"	"-0.2"
+			}
+			"bear_armor"				"30 90 150 320"
+			"backlash_damage"			"10.0"
+			"bear_movespeed"			
+			{
+				"value"			"340 360 380 400"
+				"special_bonus_unique_lone_druid_11"		"+350"
+
+			}
+			"bear_magic_resistance"
+			{
+				"value"			"0"
+				"special_bonus_unique_lone_druid_5"		"+65"
+			}
+			"bonus_bear_hp"
+			{
+				"value"					"0"
+				"special_bonus_unique_lone_druid_7"		"+35000"
+			}
+			"bonus_bear_armor"
+			{
+				"value"				"0"
+				"special_bonus_unique_lone_druid_2"	"+200"
+			}
+			"damage_gain_per_druid_level"			"1000"
+			"hp_gain_per_druid_level"				"1000"
+
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
+	"special_bonus_unique_lone_druid_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"6508"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bear_hp"					"1000 1100 1200 1300"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"bear_bat"					"1.45 1.35 1.25 1.15"
-				"LinkedSpecialBonus"	"special_bonus_unique_lone_druid_10"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bear_armor"				"3 4 5 6"
-				"LinkedSpecialBonus"	"special_bonus_unique_lone_druid_2"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"35.0"
-				"RequiresScepter"			"1"
+				"value"				"65"
+				"ad_linked_abilities"			"lone_druid_spirit_bear"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
 	}
+
 	"lone_druid_spirit_link"
 	{
 		"AbilityCastPoint"				"0.1"
@@ -17613,55 +17778,55 @@
 		}
 	}
 	
+	//=================================================================================================================
+	// Lone Druid: True Form
+	//=================================================================================================================
 	"lone_druid_true_form"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5415"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Hero_LoneDruid.TrueForm.Cast"
 		"MaxLevel"						"5"
 		"LevelsBetweenUpgrades"			"12"
-		"AbilityCooldown"				"60"
-		"AbilitySpecial"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200"	
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
+			"bonus_armor"				"10 20 40 80 160"
+			"bonus_hp"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_armor"				"10 15 20 25 30"
+				"value"					"1000 2000 4000 6000 14000"
+				"special_bonus_unique_lone_druid_7"	"+35000"
 			}
-			"02"
+			"base_attack_time"			"1.4 1.3 1.2 1.1 1.0"
+			"duration"					"-1"
+			"transformation_time"		"1.9 1.8 1.6 1.3 0.5"
+			"AbilityCooldown"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_hp"					"1000 2000 4000 6000 8000"
-				"LinkedSpecialBonus"		"special_bonus_unique_lone_druid_7"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"base_attack_time"			"1.4 1.3 1.2 1.1 1.0"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"-1"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"transformation_time"		"1.9 1.8 1.6 1.3 0.9"
-			}
+				"value"					"100"
+				"special_bonus_unique_lone_druid_8"			"-50%"
+			}	
 		}
 	}
-	"special_bonus_unique_lone_druid_8"
-	{
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"value"				"20"
-				"ad_linked_abilities"			"lone_druid_true_form"
-			}
-		}
-	}
+
 
 	"lone_druid_spirit_bear_demolish"
 	{
