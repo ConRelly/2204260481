@@ -15,7 +15,20 @@ function modifier_class:IsPurgable() return false end
 ------------------------------------------------
 
 function modifier_class:IsAura() return true end
+function modifier_class:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
 
+	}
+end
+function modifier_class:GetModifierIncomingDamage_Percentage()
+	if self:GetAbility() then
+		if self:GetParent():GetName() ~= "npc_dota_hero_rubick" then
+			return self:GetAbility():GetSpecialValueFor("dmg_reduction") * (-1)
+		end
+		return 0	
+	end	
+end
 function modifier_class:GetAuraRadius()
     return self:GetAbility():GetSpecialValueFor("rot_radius")
     -- return self:GetAbility():GetAOERadius()
@@ -81,7 +94,7 @@ if IsServer() then
 		local health_damage_pct = GetTalentSpecialValueFor(ability, "health_damage_pct" )
 		local rot_damage = base_damage + caster:GetMaxHealth() * (health_damage_pct / 100.0)
 
-		local flDamagePerTick = math.ceil((self.rot_tick * rot_damage) / 16)
+		local flDamagePerTick = math.ceil((self.rot_tick * rot_damage) / 20)
 
 		if caster:IsAlive() then
 			local damage = {

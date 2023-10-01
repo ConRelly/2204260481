@@ -117,7 +117,7 @@ function modifier_mjz_storm_spirit_overload_buff:OnCreated( ... )
 	if IsServer() then
 		local parent = self:GetParent()
 		self.buff_fx = ParticleManager:CreateParticle("particles/units/heroes/hero_stormspirit/stormspirit_overload_ambient.vpcf", PATTACH_CUSTOMORIGIN, parent)
-		ParticleManager:SetParticleControlEnt(self.buff_fx, 0, parent, PATTACH_POINT_FOLLOW, "attach_attack1", parent:GetAbsOrigin(), true)
+		ParticleManager:SetParticleControlEnt(self.buff_fx, 0, parent, PATTACH_POINT_FOLLOW, "attach_attack1", parent:GetAbsOrigin(), true)	
 	end
 end
 

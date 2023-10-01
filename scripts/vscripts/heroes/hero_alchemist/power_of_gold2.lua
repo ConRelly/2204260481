@@ -27,6 +27,9 @@ function modifier_hero_alchemist_power_of_gold2:OnIntervalThink()
 		local earnedgold_dmg = self:GetAbility():GetSpecialValueFor("gold_percent")
 		local earnedgold = PlayerResource:GetTotalEarnedGold(self:GetCaster():GetPlayerID())
 		local networth = (startergold + earnedgold) * earnedgold_dmg / 100
+		if networth > 800 then
+			networth = 720 + (networth / 10)
+		end	
 		self:SetStackCount(networth)
 	end
 end

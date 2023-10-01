@@ -146,11 +146,17 @@ function modifier_item_radiance_armor_aura_3:OnIntervalThink()
 		local str_mult = self.str_damage
 		if str > self.str_threshold then 
 			str_mult = self.threshold_multi
-		end		
+		end	
+		local aura_dmg_pct = ability:GetSpecialValueFor("aura_dmg_pct")/100
+		if caster:HasModifier("modifier_super_scepter") then
+			if caster:HasModifier("modifier_marci_unleash_flurry") then
+				str_mult = 20
+				aura_dmg_pct = aura_dmg_pct * 2
+			end                                 
+		end 		
 		local armor_bonus_dmg = self.armor_damage * caster:GetPhysicalArmorValue(false)
 		local bonus_str_dmg = math.ceil(str * str_mult)
 		local aura_dmg = self.base_damage
-		local aura_dmg_pct = ability:GetSpecialValueFor("aura_dmg_pct")/100
 		local damage = math.ceil(aura_dmg + aura_dmg_pct*caster:GetMaxHealth() + armor_bonus_dmg + bonus_str_dmg )
 		--print(damage .. " radi dmg")
 		if caster:IsRealHero() then

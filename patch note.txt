@@ -2883,6 +2883,20 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Added "effect_rate nr" for luna ultimate to limit Q animations and made so that the Blue/purple light from ultimate does not stack if you have multiple ultimates running at the same time.
+* Replaced Storm Spirit R effect to something a lot less bright.
+* Added an extra Super Scepter effect for Storm Ball Lightning.
+* Root now gives caster damage reduction when is active.
+* Increased Radiance armor % Max HP as dmg for all forms, slightly some other stats and now certain amount of stats will not reduce the multiplayer but increase.
+* Added SS effect for Marci ult for Red radiance armor too and updated the green one description (had an hidden effect for edible) 
+
+
+
+
+
+
+
+
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).
@@ -2902,7 +2916,9 @@ Devil's Daedalus(including edible) : 1.5x critical increase
 
 Ultimate Bloodstone : gain an extra stack on every succesful proc.
 
-Green Radiance(edible included 12x): Ms multiplayer increased to 10x and has no limit
+Green Radiance: Ms multiplayer increased to 15x(edible 20x) and agi mult to 25x (27x edible)
+
+Red Radiance : Str multiplayer increased to 20x (25x edible) and %hp dmg by 2x.
 
 Greater Blast Staff: MR reduction increased to -45 , int multiplayer +5(18) , debuff duration +1s. 
 

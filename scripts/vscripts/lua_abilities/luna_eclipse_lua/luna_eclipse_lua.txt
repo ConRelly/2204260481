@@ -22,7 +22,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityCastRange"				"0"
-		"AbilityCastPoint"				"0.6"
+		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"60"
 		"AbilityManaCost"				"150"
 		"precache"

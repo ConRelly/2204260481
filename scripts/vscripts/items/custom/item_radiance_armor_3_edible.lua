@@ -46,15 +46,15 @@ end
 function modifier_item_radiance_armor_3_edible:OnDestroy()
 end	
 function modifier_item_radiance_armor_3_edible:GetModifierHealthBonus()
-	return 14000
+	return 18000
 end
 
 function modifier_item_radiance_armor_3_edible:GetModifierPreAttack_BonusDamage()
-	return 9000
+	return 29000
 end
 
 function modifier_item_radiance_armor_3_edible:GetModifierBonusStats_Strength()
-	return 1050
+	return 1450
 end
 
 function modifier_item_radiance_armor_3_edible:GetModifierBonusStats_Agility()
@@ -66,15 +66,15 @@ function modifier_item_radiance_armor_3_edible:GetModifierBonusStats_Intellect()
 end
 
 function modifier_item_radiance_armor_3_edible:GetModifierPhysicalArmorBonus()
-	return 120
+	return 345
 end
 
 function modifier_item_radiance_armor_3_edible:GetModifierExtraHealthPercentage()
-	return 35
+	return 40
 end
 
 function modifier_item_radiance_armor_3_edible:GetModifierMagicalResistanceBonus()
-	return 40
+	return 55
 end
 
 function modifier_item_radiance_armor_3_edible:GetEffectName()
@@ -127,14 +127,20 @@ function modifier_item_radiance_armor_aura_3_edible:OnIntervalThink()
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
 		local str = caster:GetStrength()
-		local str_mult = 15
+		local str_mult = 14
 		if str > 15000 then 
-			str_mult = 7.5
-		end		
+			str_mult = 17
+		end	
+		local aura_dmg_pct = 2.0
+		if caster:HasModifier("modifier_super_scepter") then
+			if caster:HasModifier("modifier_marci_unleash_flurry") then
+				str_mult = 25
+				aura_dmg_pct = 4
+			end                                 
+		end 			
 		local armor_bonus_dmg = 1000 * caster:GetPhysicalArmorValue(false)
 		local bonus_str_dmg = math.ceil(str * str_mult)
 		local aura_dmg = 15000
-		local aura_dmg_pct = 1.5
 		local damage = math.ceil(aura_dmg + aura_dmg_pct*caster:GetMaxHealth() + armor_bonus_dmg + bonus_str_dmg )
 		--print(damage .. " radi dmg")
 		if caster:IsRealHero() then

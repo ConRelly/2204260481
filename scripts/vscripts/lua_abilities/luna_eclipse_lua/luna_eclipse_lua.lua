@@ -70,8 +70,7 @@ function luna_eclipse_lua:OnSpellStart()
 	GameRules:BeginTemporaryNight(night_duration)
 end
 
-
-
+eclipse_effect_custom = true
 -- Eclipse Modifier
 modifier_luna_eclipse_lua = class({})
 function modifier_luna_eclipse_lua:IsHidden() return false end
@@ -91,20 +90,23 @@ function modifier_luna_eclipse_lua:OnCreated(params)
 	end
 	self.hit_count = self:GetAbility():GetSpecialValueFor("hit_count")
 	self.radius = self:GetAbility():GetSpecialValueFor("radius")
+	self.effect_check = false
+	-- particle condition
+	if eclipse_effect_custom then
+		eclipse_effect_custom = false
+		self.effect_check = true
+		local eclipse_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_luna/luna_eclipse.vpcf", PATTACH_POINT, self:GetCaster())
+		ParticleManager:SetParticleControl(eclipse_particle, 1, Vector(self.radius, 0, 0))
 
-	local eclipse_particle = ParticleManager:CreateParticle("particles/units/heroes/hero_luna/luna_eclipse.vpcf", PATTACH_POINT, self:GetCaster())
-	ParticleManager:SetParticleControl(eclipse_particle, 1, Vector(self.radius, 0, 0))
+		if params.x then
+			self.target_position = Vector(params.x, params.y, params.z)
+			ParticleManager:SetParticleControl(eclipse_particle, 0, self.target_position)
+		end
 
-	if params.x then
-		self.target_position = Vector(params.x, params.y, params.z)
-		ParticleManager:SetParticleControl(eclipse_particle, 0, self.target_position)
+		self:AddParticle(eclipse_particle, false, false, -1, false, false)
 	end
-
-	self:AddParticle(eclipse_particle, false, false, -1, false, false)
-
 	self.counter = 0
 	self.hits = {}
-
 	self:StartIntervalThink(self.beam_interval)
 end
 
@@ -131,12 +133,13 @@ function modifier_luna_eclipse_lua:OnIntervalThink()
 			self.hits[enemy:GetEntityIndex()] = self.hits[enemy:GetEntityIndex()] + 1
 
 			enemy:EmitSound("Hero_Luna.Eclipse.Target")
-
-			local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_luna/luna_eclipse_impact.vpcf", PATTACH_POINT, self:GetCaster())
-			ParticleManager:SetParticleControl(particle, 1, enemy:GetAbsOrigin())
-			ParticleManager:SetParticleControlEnt(particle,	5, enemy, PATTACH_POINT, "attach_hitloc", enemy:GetAbsOrigin(), true)
-			ParticleManager:ReleaseParticleIndex(particle)
-			
+			local randomSeed = math.random(1, 100)
+			if randomSeed <= _G._effect_rate then
+				local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_luna/luna_eclipse_impact.vpcf", PATTACH_POINT, self:GetCaster())
+				ParticleManager:SetParticleControl(particle, 1, enemy:GetAbsOrigin())
+				ParticleManager:SetParticleControlEnt(particle,	5, enemy, PATTACH_POINT, "attach_hitloc", enemy:GetAbsOrigin(), true)
+				ParticleManager:ReleaseParticleIndex(particle)
+			end
 			if lucent_beam then
 				local damage = lucent_beam:GetTalentSpecialValueFor("beam_damage") + (caster:GetAgility() * lucent_beam:GetTalentSpecialValueFor("agi_multiplier"))
 				if caster:HasModifier("modifier_super_scepter") then
@@ -188,7 +191,13 @@ function modifier_luna_eclipse_lua:OnIntervalThink()
 		self:Destroy()
 	end
 end
-
+function modifier_luna_eclipse_lua:OnDestroy()
+	if IsServer() then
+		if self.effect_check then
+			eclipse_effect_custom = true
+		end
+	end
+end	
 --------------------------------------------------------------------------------
 
 

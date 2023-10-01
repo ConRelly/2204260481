@@ -19043,7 +19043,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_dmg_pct"			"10"
+				"aura_dmg_pct"			"50"
 			}
 			"09"
 			{
@@ -19130,7 +19130,7 @@
 		"08"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"aura_dmg_pct"			"25"
+			"aura_dmg_pct"			"75"
 		}
 		"09"
 		{
@@ -19196,12 +19196,12 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"65"
+			"bonus_armor"			"165"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_attack"			"5350"
+			"bonus_attack"			"25350"
 		}
 		"06"
 		{
@@ -19216,7 +19216,7 @@
 		"08"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"aura_dmg_pct"			"85"
+			"aura_dmg_pct"			"185"
 		}
 		"09"
 		{
@@ -19241,7 +19241,7 @@
 		"13"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"threshold_multi"		"4.5"
+			"threshold_multi"		"14.0"
 		}
 	}
 }
@@ -19301,12 +19301,12 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"65"
+			"bonus_armor"			"120"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_attack"			"5350"
+			"bonus_attack"			"20050"
 		}
 		"06"
 		{
@@ -19321,7 +19321,7 @@
 		"08"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"aura_dmg_pct"			"60"
+			"aura_dmg_pct"			"140"
 		}
 		"09"
 		{
@@ -19346,7 +19346,7 @@
 		"13"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"threshold_multi"		"5.5"
+			"threshold_multi"		"17.5"
 		}
 	}
 }
@@ -19406,12 +19406,12 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"65"
+			"bonus_armor"			"155"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_attack"			"15350"
+			"bonus_attack"			"85350"
 		}
 		"06"
 		{
@@ -19426,7 +19426,7 @@
 		"08"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"aura_dmg_pct"			"60"
+			"aura_dmg_pct"			"135"
 		}
 		"09"
 		{
@@ -19436,7 +19436,7 @@
 		"10"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"agi_damage"			"15.0"
+			"agi_damage"			"13.0"
 		}
 		"11"
 		{
@@ -19456,12 +19456,12 @@
 		"14"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"agi_threshold_multi"	"4.5"
+			"agi_threshold_multi"	"16.5"
 		}
 		"15"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"ms_threshold_multi"	"4.5"
+			"ms_threshold_multi"	"8.5"
 		}
 	}
 }

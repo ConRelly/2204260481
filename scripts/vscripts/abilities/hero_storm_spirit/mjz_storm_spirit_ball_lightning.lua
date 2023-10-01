@@ -150,12 +150,16 @@ if IsServer() then
 		local parent = self:GetParent()
 		EmitSoundOn("Hero_StormSpirit.BallLightning.Loop", parent)
 
-		local p_name = "particles/units/heroes/hero_stormspirit/stormspirit_ball_lightning.vpcf"
+--[[ 		local p_name = "particles/units/heroes/hero_stormspirit/stormspirit_ball_lightning.vpcf"
 		local particle = ParticleManager:CreateParticle(p_name, PATTACH_ABSORIGIN_FOLLOW, parent)
 		ParticleManager:SetParticleControlEnt(particle, 1, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
-		self.particle = particle
-
-		self.interval = 0.25
+		self.particle = particle ]]  
+		--particle above to bright
+	
+		local nFXIndex = ParticleManager:CreateParticle("particles/hero_flash/flash_custom_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
+		self:AddParticle(nFXIndex, false, false, -1, false, true)
+ 
+		self.interval = 0.50
 		self:StartIntervalThink(self.interval)
 	end
 
@@ -163,8 +167,8 @@ if IsServer() then
 		local parent = self:GetParent()
 		StopSoundOn("Hero_StormSpirit.BallLightning.Loop", parent)
 		StopSoundEvent("Hero_StormSpirit.BallLightning.Loop", parent)
-		ParticleManager:DestroyParticle(self.particle, true)
-		ParticleManager:ReleaseParticleIndex(self.particle)
+		--ParticleManager:DestroyParticle(self.particle, true)
+		--ParticleManager:ReleaseParticleIndex(self.particle)
 	end
 
 
@@ -173,6 +177,9 @@ if IsServer() then
 		local caster = self:GetParent()
 		local ability = self:GetAbility()
 		local radius = GetTalentSpecialValueFor(ability, 'radius')
+		if caster:HasModifier("modifier_super_scepter") then
+			radius = radius * 2
+		end
 		local mana_percentage = self:GetSpecialValueFor("mana_percentage") - talent_value(self:GetCaster(), "special_bonus_unique_mjz_storm_spirit_ball_lightning_02")
 		local mana_per = (parent:GetMaxMana() * mana_percentage / 100) * self.interval
 
@@ -196,7 +203,20 @@ if IsServer() then
 		local ability = self:GetAbility()
 		local radius = GetTalentSpecialValueFor(ability, 'radius')
 		local damage = GetTalentSpecialValueFor(ability, 'damage')
-
+		if caster:HasModifier("modifier_super_scepter") then
+			local mult = 1
+			local armor_mult = (caster:GetPhysicalArmorValue(false) / 50) + 1
+			local spell_amp = 1 + caster:GetSpellAmplification(false)
+			if armor_mult > spell_amp then
+				mult = armor_mult
+			else
+				mult = spell_amp
+			end	
+			if mult > 30 then
+				mult = 27 + (mult / 10)
+			end	
+			damage = damage * mult
+		end
 		local damage_per = damage * self.interval
 		local damageTable = {
 			victim = nil,

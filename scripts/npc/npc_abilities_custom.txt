@@ -30358,6 +30358,11 @@
 				"health_damage_pct"		"42 65 89 140"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_pudge_rot_health"
 			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dmg_reduction"			"30 35 40 45 50"
+			}			
 		}
 		"precache"
 		{
@@ -32345,7 +32350,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"6400"
+				"value"						"16400"
 			}
 		}
 	}

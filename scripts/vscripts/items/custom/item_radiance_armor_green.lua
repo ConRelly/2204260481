@@ -157,7 +157,8 @@ function modifier_item_radiance_armor_aura_green:OnIntervalThink()
 		end
 		if caster:HasModifier("modifier_super_scepter") then
 			if caster:HasModifier("modifier_marci_unleash_flurry") then
-				ms_mult = 10
+				ms_mult = 15
+				agi_mult = 27
 			end                                 
 		end 				
 		local ms_bonus_dmg = ms * ms_mult

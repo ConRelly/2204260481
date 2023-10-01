@@ -50,7 +50,7 @@ function modifier_item_radiance_armor_green_edible:GetModifierHealthBonus()
 end
 
 function modifier_item_radiance_armor_green_edible:GetModifierPreAttack_BonusDamage()
-	return 29000
+	return 110000
 end
 
 function modifier_item_radiance_armor_green_edible:GetModifierBonusStats_Strength()
@@ -58,7 +58,7 @@ function modifier_item_radiance_armor_green_edible:GetModifierBonusStats_Strengt
 end
 
 function modifier_item_radiance_armor_green_edible:GetModifierBonusStats_Agility()
-	return 1050
+	return 1150
 end
 
 function modifier_item_radiance_armor_green_edible:GetModifierBonusStats_Intellect()
@@ -123,17 +123,17 @@ function modifier_item_radiance_armor_aura_green_edible:OnIntervalThink()
 		local agi = caster:GetAgility()
 		local ms = caster:GetIdealSpeed()
 		local ms_mult = 8
-		local agi_mult = 17
+		local agi_mult = 15
 		if agi > 35000 then
-			agi_mult = 12
+			agi_mult = 18
 		end	
 		if ms > 40000 then
-			ms_mult = 5.0
+			ms_mult = 9.0
 		end
 		if caster:HasModifier("modifier_super_scepter") then
 			if caster:HasModifier("modifier_marci_unleash_flurry") then
-				ms_mult = 12
-				agi_mult = 20
+				ms_mult = 20
+				agi_mult = 27
 			end                                 
 		end 				
 		local ms_bonus_dmg = ms * ms_mult
