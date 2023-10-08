@@ -155,7 +155,8 @@ function item_pipe_of_dezun:IsMuted()
 	return true
 end
 function item_pipe_of_dezun:GetCooldown(level)
-	if self:GetCaster():HasModifier("modifier_item_mjz_attribute_mail") then
+	if self:GetCaster():HasItemInInventory("item_mjz_attribute_mail") then
+	--if self:GetCaster():HasModifier("modifier_item_mjz_attribute_mail") then  -- old check
 		return self.BaseClass.GetCooldown(self, level)
 	end
 	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()

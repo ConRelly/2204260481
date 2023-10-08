@@ -91,7 +91,7 @@ function modifier_class:OnIntervalThink()
 
             if parent == nil then return nil end
             local target_ability = parent:GetAbilityByIndex( i )       
-            if target_ability and IsValidEntity(target_ability) and not target_ability:IsAttributeBonus() and not target_ability:IsHidden() and not target_ability:IsToggle() and target_ability:IsActivated() and target_ability:GetLevel() > 0 and target_ability:IsCooldownReady() and not target_ability:IsPassive() and not ( NoAutocast[target_ability:GetAbilityName()] == true) then  -- Talent-- Dunno
+            if target_ability and IsValidEntity(target_ability) and not target_ability:IsAttributeBonus() and not target_ability:IsHidden() and not target_ability:IsToggle() and target_ability:IsActivated() and target_ability:GetLevel() > 0 and target_ability:IsCooldownReady() and not target_ability:IsPassive() and not ( NoAutocast[target_ability:GetAbilityName()] == true) and not (target_ability:GetCooldown(target_ability:GetLevel()) <= 0) then  -- Talent-- Dunno
                 --print("initial pass")
                 if target_ability:IsInAbilityPhase() then return nil end
                 --if not ability:GetToggleState() then return nil end
@@ -104,13 +104,15 @@ function modifier_class:OnIntervalThink()
                 if not target_ability:IsFullyCastable() then return nil end
                 if parent:IsIllusion() then return nil end
                 if not parent:IsRealHero() then return nil end
+                --print("ability name: ".. ability_name)
                 if IsChanneling(parent) and not ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
                     return nil
                 end
+                --print("pass 0.5")
                 if parent:IsSilenced() then return nil end		
                 if parent:HasModifier("modifier_brewmaster_primal_split") and not target_ability:GetAbilityName() ~= "brewmaster_primal_split" then return nil end
-				if target_ability:GetCooldown(target_ability:GetLevel()) <= 0 then return end
-
+				--if target_ability:GetCooldown(target_ability:GetLevel()) <= 0 then return end
+                --print("pass 1")
                 local radius_auto = target_ability:GetCastRange(parent:GetAbsOrigin(), parent) + caster:GetCastRangeBonus() - 50
                 if radius_auto then
                     if radius_auto < 100 then
@@ -120,13 +122,16 @@ function modifier_class:OnIntervalThink()
                     radius_auto = 500
                 end   
                 local pos = parent:GetAbsOrigin()
-                    if ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_NO_TARGET) and not (target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH)  then
-                        if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
-                            parent:CastAbilityNoTarget(target_ability, parent:GetPlayerOwnerID())
-                        end 
-                        --print("no target")  
-                        return nil
-                    end   
+                --print("pass 2")
+                if ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_NO_TARGET) and not (target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH)  then
+                   --print("A no target : name: " .. ability_name)
+                    if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
+                        parent:CastAbilityNoTarget(target_ability, parent:GetPlayerOwnerID())
+                    end 
+                    --print("no target")  
+                    return nil
+                end  
+                --print("pass 3") 
                 local enemy_list = 0
                 if target_ability:GetAbilityTargetType() ~= 0 then
                     if target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH then

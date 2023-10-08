@@ -30361,7 +30361,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dmg_reduction"			"30 35 40 45 50"
+				"dmg_reduction"			"35 40 45 50"
 			}			
 		}
 		"precache"
@@ -32420,7 +32420,7 @@
 			"05"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"intelligence_damage"			"180 240 300 380 460 540 750"
+				"intelligence_damage"			"180 240 300 380 460 540 950"
 				"LinkedSpecialBonus"			"special_bonus_unique_mjz_storm_spirit_overload_01"
 			}
 			"06"
@@ -32460,7 +32460,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"450"
+				"value"						"650"
 			}
 		}
 	}

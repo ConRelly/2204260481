@@ -19013,22 +19013,22 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"2500"
+				"bonus_health"			"4500"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stats"			"80"
+				"bonus_stats"			"280"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"20"
+				"bonus_armor"			"80"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack"			"250"
+				"bonus_attack"			"9550"
 			}
 			"06"
 			{
@@ -19038,12 +19038,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_dmg"				"6500"
+				"aura_dmg"				"7500"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"aura_dmg_pct"			"50"
+				"aura_dmg_pct"			"60"
 			}
 			"09"
 			{
@@ -19100,22 +19100,22 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"4000"
+			"bonus_health"			"7000"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_stats"			"160"
+			"bonus_stats"			"460"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"30"
+			"bonus_armor"			"130"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_attack"			"350"
+			"bonus_attack"			"13500"
 		}
 		"06"
 		{
@@ -19130,7 +19130,7 @@
 		"08"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"aura_dmg_pct"			"75"
+			"aura_dmg_pct"			"100"
 		}
 		"09"
 		{
@@ -19196,7 +19196,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"165"
+			"bonus_armor"			"225"
 		}
 		"05"
 		{
@@ -19301,7 +19301,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"120"
+			"bonus_armor"			"160"
 		}
 		"05"
 		{
@@ -19396,7 +19396,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"8000"
+			"bonus_health"			"9000"
 		}
 		"03"
 		{
@@ -19406,7 +19406,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"155"
+			"bonus_armor"			"185"
 		}
 		"05"
 		{
@@ -21725,7 +21725,7 @@
 	"AbilityTextureName"			"radiance_armor_3"
 
 
-	"ItemCost"						"20000"
+	"ItemCost"						"110000"
 	"ItemShopTags"					"boost_mana;mana_pool"
 	"ItemQuality"					"rare"
 	"ItemAliases"					"radiance"
@@ -21733,7 +21733,7 @@
 	"ItemSellable"				  	"0"
 	"ItemKillable"				  	"0"
 	"ItemInitialCharges"			"1"
-	"ItemPurchasable"				"1"
+	"ItemPurchasable"				"0"
 	"ItemRequiresCharges" 			"1"
 	"ItemIsNeutralDrop"				"1"
 	//"TokenTier"						"5"
@@ -21823,7 +21823,7 @@
 	"AbilityTextureName"			"radiance_armor_blue"
 
 
-	"ItemCost"						"20000"
+	"ItemCost"						"110000"
 	"ItemShopTags"					"boost_mana;mana_pool"
 	"ItemQuality"					"rare"
 	"ItemAliases"					"radiance"
@@ -21832,7 +21832,7 @@
 	"ItemSellable"				 	"0"
 	"ItemKillable"				  	"0"
 	"ItemInitialCharges"			"1"
-	"ItemPurchasable"				"1"
+	"ItemPurchasable"				"0"
 	"ItemRequiresCharges" 			"1"
 	"ItemIsNeutralDrop"				"1"
 	//"TokenTier"						"1"
@@ -21901,7 +21901,7 @@
 	}
 }
 
-"item_recipe_radiance_armor_green_edible"
+"item_recipe_radiance_armor_green_edible_n"
 {
 	"BaseClass"						"item_datadriven"
 	"Model"							"models/props_gameplay/recipe.vmdl"
@@ -21967,7 +21967,7 @@
 	"AbilityTextureName"			"radiance_armor_green"
 
 
-	"ItemCost"						"20000"
+	"ItemCost"						"120000"
 	"ItemShopTags"					"boost_mana;mana_pool"
 	"ItemQuality"					"rare"
 	"ItemAliases"					"radiance"
@@ -21975,7 +21975,7 @@
 	"ItemSellable"				  "0"
 	"ItemKillable"				  "0"
 	"ItemInitialCharges"			"1"
-	"ItemPurchasable"				"1"
+	"ItemPurchasable"				"0"
 	"ItemRequiresCharges" 			"1"
 	"ItemIsNeutralDrop"				"1"
 	//"TokenTier"						"5"

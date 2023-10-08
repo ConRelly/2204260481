@@ -108,12 +108,12 @@ function modifier_class:OnIntervalThink()
                     radius_auto = 500
                 end    
                 local pos = parent:GetAbsOrigin()
-                    if ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_NO_TARGET) and not (target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH)  then
-                        if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
-                            parent:CastAbilityNoTarget(target_ability, parent:GetPlayerOwnerID())
-                        end    
-                        return nil
-                    end   
+                if ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_NO_TARGET) and not (target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH)  then
+                    if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
+                        parent:CastAbilityNoTarget(target_ability, parent:GetPlayerOwnerID())
+                    end    
+                    return nil
+                end   
                 local enemy_list = 0
                 if target_ability:GetAbilityTargetType() ~= 0 then                          
                     if target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH then

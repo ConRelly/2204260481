@@ -4,7 +4,7 @@ function OnSpellStart(keys)
 	local caster = keys.caster
 	if target:GetTeam() == caster:GetTeam() then
 		ability:ApplyDataDrivenModifier(caster, target, "modifier_mana_blade_dispel", {duration = keys.duration})
-		if caster:HasModifier("modifier_mjz_satanic_5") then
+		if caster:HasItemInInventory("item_mjz_satanic_5") then	
 			target:Purge(false,true,false,true,false)
 		else
 			target:Purge(false,true,false,false,false)
@@ -49,7 +49,11 @@ end
 
 
 function Dispel(keys)
-	keys.target:Purge(false,true,false,false,false)
+	if keys.caster:HasItemInInventory("item_mjz_satanic_5") then	
+		keys.target:Purge(false,true,false,true,false)
+	else
+		keys.target:Purge(false,true,false,false,false)
+	end	
 end
 function DispelEnd(keys)
 	if keys.caster:HasModifier("modifier_mjz_satanic_5") then

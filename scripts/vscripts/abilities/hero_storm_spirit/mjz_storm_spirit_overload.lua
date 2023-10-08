@@ -3,6 +3,7 @@ local THIS_LUA = "abilities/hero_storm_spirit/mjz_storm_spirit_overload.lua"
 LinkLuaModifier('modifier_mjz_storm_spirit_overload', THIS_LUA, LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_mjz_storm_spirit_overload_aura', THIS_LUA, LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_mjz_storm_spirit_overload_buff', THIS_LUA, LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier('modifier_mjz_storm_spirit_overload_debuff', THIS_LUA, LUA_MODIFIER_MOTION_NONE)
 
 local MODIFIER_BALL_BUFF = 'modifier_mjz_storm_spirit_ball_lightning_buff'
 local MODIFIER_OVERLOAD_BUFF = 'modifier_mjz_storm_spirit_overload_buff'
@@ -137,9 +138,12 @@ function modifier_mjz_storm_spirit_overload_buff:OnAttacked(event)
 		-- if caster:PassivesDisabled() then return nil end
 
 		--target:EmitSound("Hero_StormSpirit.Overload")
-		local discharge_fx = ParticleManager:CreateParticle("particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge.vpcf", PATTACH_ABSORIGIN, parent)
-		ParticleManager:SetParticleControl(discharge_fx, 0, target:GetAbsOrigin())
-		ParticleManager:ReleaseParticleIndex(discharge_fx)
+		local randomSeed = math.random(1, 100)
+		if randomSeed <= _G._effect_rate then		
+			local discharge_fx = ParticleManager:CreateParticle("particles/units/heroes/hero_stormspirit/stormspirit_overload_discharge.vpcf", PATTACH_ABSORIGIN, parent)
+			ParticleManager:SetParticleControl(discharge_fx, 0, target:GetAbsOrigin())
+			ParticleManager:ReleaseParticleIndex(discharge_fx)
+		end
 
 		local radius = GetTalentSpecialValueFor(ability, 'overload_aoe')
 		local slow_duration = GetTalentSpecialValueFor(ability, 'slow_duration')

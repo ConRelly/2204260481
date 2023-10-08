@@ -1099,7 +1099,7 @@
 	"DOTA_Tooltip_ability_amalgamation_Description"		"You bind yourself to target allied hero. You may cast spells as normal but you share manapool. If host is out of mana your spells take spell cost from host's health. If your host dies, you die as well. \n Host hero is granted bonus mana regen while reducing magic resistance and armor from the current caster value. <font color='#F06109'>type '-symbiosis' to disable/enable Compatibility SS effect.</font>\n<h1><font color='#DE3163'>Super Scepter: Symbiosis</font></h1> You can now enable auto-cast to be able to trigger your attack talent but lose the ability to do Actions(toggle again to exit host). Depending of the skill auto-cast state your host gains an Compatibility stack, %symbiot_stack_chance%%% every 2 sec.\n<h1><font color='#010101'>Venom</font> Compatibility</h1> At 100 stacks you and your host will transfrom in <font color='#010101'>Venom</font>, the host will gain a % from Your stats: %venom_str%%% str and agi, %venom_int%%% int, %venom_spellamp%%% spell amp(from total spell amp IO has).\n<h1><font color='#FF0707'>Carnage</font> Compatibility</h1>At 100 stacks you and your host will transfrom in <font color='#FF0707'>Carnage</font>, the host will gain a % from Your stats: %carnage_str%%% str, %carnage_agi%%% agi, %carnage_int%%% int, %carnage_greendmg%%% green damage, %carnage_basedmg%%% base damage, %carnage_base_ms%%%  ms."
 	"DOTA_Tooltip_ability_amalgamation_scepter_Description"		"Your host gets +%stat_scepter% to all attributes if enemy dies within %range_scepter% radius."
 	"DOTA_Tooltip_ability_amalgamation_Note0"			"1) Temporarily breaks invisibility of host when you cast spell or attack. Duration: %vis_duration%s"
-	"DOTA_Tooltip_ability_amalgamation_Note1"			"2) The caster gets the same control effects as the host"
+	"DOTA_Tooltip_ability_amalgamation_Note1"			"2) The caster gets the same control effects as the host, Exhaust base duration is %exhaust_duration% s"
 	"DOTA_Tooltip_ability_amalgamation_mana_regen"			"%MAX MANA REGEN:"
 	"DOTA_Tooltip_ability_amalgamation_magic_armor"			"%MAGIC ARMOR REDUCTION:"
 	"DOTA_Tooltip_ability_amalgamation_physical_armor"		"%PHYS ARMOR REDUCTION:"
@@ -1120,7 +1120,7 @@
 	"DOTA_Tooltip_modifier_carnage"                   		"<font color='#FF0707'>Carnage</font> Compatibility"
 	"DOTA_Tooltip_modifier_carnage_description"       		"At 100 stacks you are eligible for <font color='#FF0707'>Carnage</font> Symbiosis"
 	"DOTA_Tooltip_modifier_symbiosis_exhaust"        		"Symbiosis Exhaust"
-	"DOTA_Tooltip_modifier_symbiosis_exhaust_description" 	"You wont be able to trigger full symbiosis. Exhaust Duration Is Affected by Status resist."
+	"DOTA_Tooltip_modifier_symbiosis_exhaust_description" 	"You wont be able to trigger full symbiosis. Exhaust Duration can be Reduced by your Status Resistance."
 	"DOTA_Tooltip_modifier_symbiosis_exhaust_trigger"        		"<font color='#DE3163'>Super Scepter: Symbiosis</font>"
 	"DOTA_Tooltip_modifier_symbiosis_exhaust_trigger_description" 	"Full Symbiosis. You gain stats from symbiosis"
 
@@ -1277,6 +1277,7 @@
 	"DOTA_Tooltip_Ability_item_pipe_of_dezun"				"Pipe Of Dezun"
 	"DOTA_Tooltip_Ability_item_pipe_of_dezun_Description"	"<h1>Active: Dezun's Immunity</h1>Within a radius of %active_aura_radius% from the owner gives allies Spell Immunity and 100%% Magic Resistance for %duration% seconds.\n<h1><font color='#814417'>UP: Attribute Mail</font></h1>Allows your CDR to affect the cooldown. \n<h1>Passive: Pipe Of Dezun Aura</h1>+ %hp_regen_aura% Health Regen<br>+ %magic_resist_aura%%% Magic Resistance<br>+ %mana_aura% Mana<br>+ %as_aura% Attack Speed<br><br>Radius: %aura_radius%"
 	"DOTA_Tooltip_ability_item_pipe_of_dezun_magic_resist"		"%+$spell_resist"
+	"DOTA_Tooltip_Ability_item_pipe_of_dezun_note0"          "<font color='#814417'>UP: Attribute Mail</font>: takes effect even from backpack"
 	"DOTA_Tooltip_Ability_item_pipe_of_dezun_health_regen"		"+$hp_regen"
 	"DOTA_Tooltip_Ability_item_pipe_of_dezun_bonus_strength"	"+$str"
 	"DOTA_Tooltip_Ability_item_pipe_of_dezun_bonus_all_stats"	"+$all"
@@ -3896,6 +3897,7 @@
 	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_magical_damage_scepter"		"%SCEPTER Bonus Magical Damage:"
 	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_scepter_crit_bonus_per_minute"	 "%SCEPTER Extra Crit Damage Per Minute:"
 
+	"DOTA_Tooltip_ability_special_bonus_unique_phantom_assassin_2"	"+{s:value}% Coup de Grace chance"
 
 	"DOTA_Tooltip_modifier_mjz_phantom_assassin_coup_de_grace_bonus"				"Coup de Grace"
 	"DOTA_Tooltip_modifier_mjz_phantom_assassin_coup_de_grace_bonus_Description"	"Total Attack increased"
@@ -4381,7 +4383,7 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_storm_spirit_ball_lightning_02"	"-{s:value}% Ball Lightning Mana Drain"
 	
 	"DOTA_Tooltip_ability_mjz_storm_spirit_overload"									"Overload"
-	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_Description"						"Casting a spell creates an electrical charge, which is released in a burst on Storm's next attack, dealing damage and slowing nearby enemies."
+	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_Description"						"Casting a spell creates an electrical charge, which is released in a burst on Storm's next attack, dealing damage and slowing nearby enemies. \n<font color='#F17C26'>Host can Type '-effect_rate 1-20' (a number from 1-20) to reduce the effect rate. </font>"
 	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_shard_description"		"Can be activated to grant Storm Spirit and allied heroes within %shard_radius% AoE of him %shard_stacks% Overload charges. Provides %shard_bonus_as% Attack Speed. Lasts up to %shard_duration% seconds or until the charges are depleted."
 	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_Lore"								"Pow!  Zip!  Zap!"
 	"DOTA_Tooltip_ability_mjz_storm_spirit_overload_Note0"								"Using items doesn't trigger Overload."
@@ -10209,7 +10211,9 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 		"Dota_tooltip_modifier_item_radiance_armor_3_edible"							 "Red Radiance Armor"
 		"Dota_tooltip_modifier_item_radiance_armor_blue_edible"							 "Blue Radiance Armor"
 		"Dota_tooltip_modifier_item_radiance_armor_blue_edible_n"							 "Blue Radiance Armor"
+
 		"Dota_tooltip_modifier_item_radiance_armor_green_edible"							 "Green Radiance Armor"
+		"Dota_tooltip_modifier_item_radiance_armor_green_edible_n"							 "Green Radiance Armor"
 
 		"Dota_Tooltip_modifier_item_radiance_armor_aura_3_edible"							 "Burning Red Radiance Armor Aura(edible)"
 		"Dota_Tooltip_modifier_item_radiance_armor_aura_blue_edible"						  "Burning Blue Radiance Armor Aura(edible)"
@@ -10233,6 +10237,12 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 		"Dota_tooltip_ability_item_radiance_armor_green_edible"							  "Edible Greater Radiance Armor Green"
 		"DOTA_Tooltip_ability_item_radiance_armor_green_edible_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Green.\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
 		"DOTA_Tooltip_ability_item_radiance_armor_green_edible_Note0"						"After you consume don't buy/equip again Radiance armor no matter the type or you will lose the consume effect"
+
+		"Dota_tooltip_ability_item_radiance_armor_green_edible_n"							  "Edible Greater Radiance Armor Green"
+		"DOTA_Tooltip_ability_item_radiance_armor_green_edible_n_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Green.\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
+		"DOTA_Tooltip_ability_item_radiance_armor_green_edible_n_Note0"							"After you consume don't buy/equip again Radiance armor no matter the type or you will lose the consume effect"
+
+
 
 		"dota_tooltip_ability_zoom_charge_of_darkness"								"Unstoppable Movement"
 		"dota_tooltip_ability_leesin_dragons_rage"									"Roundhouse kick"
@@ -10783,11 +10793,11 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 	"DOTA_Tooltip_ability_marci_grapple_custom_throw_distance_behind"		"THROW DISTANCE:"
 	"DOTA_Tooltip_ability_marci_grapple_custom_stun_duration"				"STUN DURATION:"
 	"DOTA_Tooltip_ability_marci_grapple_custom_impact_damage"				"IMPACT DAMAGE:"
-
+//not used 
 	"DOTA_Tooltip_ability_marci_unleash_custom"						"Unleash"
 	"DOTA_Tooltip_ability_marci_unleash_custom_Description"			"Marci taps a hidden power, gaining Fury charges that allow her to deliver a rapid sequence of strikes. The last strike in every Fury combo creates a damaging pulse around the target that slows movement and attack speed for %pulse_debuff_duration%s. In between Fury combos, Marci is unable to attack for %time_between_flurries%s.\n\nMarci receives a basic dispel when Unleash is cast and gains %bonus_movespeed%%% movement speed.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Some Items and Abilites will get improved when ultimate is active.(press Alt)"
 	"DOTA_Tooltip_ability_marci_unleash_custom_scepter_Description"	"Reduces Unleash cooldown by %scepter_cooldown_reduction% seconds and causes Unleash to apply a basic dispel on Marci. While Unleash is Active, all of Marci's abilities unleash pulses when cast. All of Marci's unleash pulses will silence units for %pulse_silence_duration% seconds.<br><br>DISPEL TYPE: Basic Dispel"
-	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Super Scepter improve list: CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger, Speedsters, Amalgamation,<font color='#E20624'>Evolving Light Crossbow(all)</font>, Aftershock."
+	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Super Scepter improve list: CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible and <font color='#E20624'>RED</font>), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger, Speedsters, Amalgamation,<font color='#E20624'>Evolving Light Crossbow(all)</font>, Aftershock."
 	"DOTA_Tooltip_ability_marci_unleash_custom_Lore"					"Though some have sought to understand its origins, Marci rebuffs all attempts to divine the source of her power."
 	"DOTA_Tooltip_ability_marci_unleash_custom_duration"				"DURATION:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_charges_per_flurry"		"STRIKES PER FURY:"
@@ -10795,9 +10805,9 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_damage"			"PULSE DAMAGE:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_move_slow_pct"		"%PULSE MOVEMENT SLOW:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_attack_slow_pct"	"PULSE ATTACK SLOW:"
-
+//used
 	"DOTA_Tooltip_ability_marci_unleash_Description"			"Marci taps a hidden power, gaining Fury charges that allow her to deliver a rapid sequence of strikes. The last strike in every Fury combo creates a damaging pulse around the target that slows movement and attack speed for %pulse_debuff_duration%s. In between Fury combos, Marci is unable to attack for %time_between_flurries%s.\n\nMarci receives a basic dispel when Unleash is cast and gains %bonus_movespeed%%% movement speed.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Some Items and Abilites will get improved when ultimate is active.(press Alt)"
-	"DOTA_Tooltip_ability_marci_unleash_Note0"					"Super Scepter improve list: CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger, Speedsters, Amalgamation,<font color='#E20624'>Evolving Light Crossbow(all)</font>, Aftershock."
+	"DOTA_Tooltip_ability_marci_unleash_Note0"					"Super Scepter improve list: CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible and <font color='#E20624'>RED</font>), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger, Speedsters, Amalgamation,<font color='#E20624'>Evolving Light Crossbow(all)</font>, Aftershock."
 
 
 	"DOTA_Tooltip_ability_marci_companion_run_custom"						"Rebound"

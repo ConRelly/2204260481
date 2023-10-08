@@ -66,7 +66,7 @@ function modifier_item_radiance_armor_3_edible:GetModifierBonusStats_Intellect()
 end
 
 function modifier_item_radiance_armor_3_edible:GetModifierPhysicalArmorBonus()
-	return 345
+	return 365
 end
 
 function modifier_item_radiance_armor_3_edible:GetModifierExtraHealthPercentage()

@@ -2883,15 +2883,15 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
-* Added "effect_rate nr" for luna ultimate to limit Q animations and made so that the Blue/purple light from ultimate does not stack if you have multiple ultimates running at the same time.
-* Replaced Storm Spirit R effect to something a lot less bright.
+* Added "effect_rate nr" for Luna Ultimate to limit Q animations, and made the blue/purple light from Ultimate not stack when multiple Ultimates are running at the same time.
+* Replaced the Storm Spirit R effect with something much less bright.
 * Added an extra Super Scepter effect for Storm Ball Lightning.
-* Root now gives caster damage reduction when is active.
-* Increased Radiance armor % Max HP as dmg for all forms, slightly some other stats and now certain amount of stats will not reduce the multiplayer but increase.
-* Added SS effect for Marci ult for Red radiance armor too and updated the green one description (had an hidden effect for edible) 
-
-
-
+* Added "effect_rate nr" for Storm Overlord.
+* Root now provides damage reduction to the caster when active.
+* Increased Radiance Armor % Max HP as dmg for all forms, slightly or more for some other stats, and now a certain amount of stats will not decrease multiplayer but increase it.
+* Added SS effect for Marci Ult for red radiance armor as well and updated the description for the green one (had a hidden effect for edible). 
+* Dezun CDR UP now also includes the backpack slots same for Mana Blade UP
+* and some other fixes.
 
 
 

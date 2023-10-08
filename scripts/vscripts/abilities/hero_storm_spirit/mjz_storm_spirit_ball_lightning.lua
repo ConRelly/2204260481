@@ -216,6 +216,7 @@ if IsServer() then
 				mult = 27 + (mult / 10)
 			end	
 			damage = damage * mult
+			radius = radius * 2
 		end
 		local damage_per = damage * self.interval
 		local damageTable = {
