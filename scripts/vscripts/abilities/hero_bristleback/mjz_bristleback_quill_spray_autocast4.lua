@@ -66,6 +66,22 @@ local NoAutocast = {
     ["mjz_kunkka_tidebringer"] = true,
     ["huskar_burning_spear"] = true,
     ["rubick_spell_steal"] = true,
+    --["hw_sharpshooter_release"] = true,
+    
+};
+
+local TargetSpell = {
+    
+    ["tinker_warp_grenade"] = true,
+    ["hoodwink_hunters_boomerang"] = true,
+
+
+};
+
+local PointSpell = {
+    
+    --["techies_sticky_bomb"] = true,
+    --["hoodwink_hunters_boomerang"] = true,
 
 
 };
@@ -139,11 +155,11 @@ function modifier_class:OnIntervalThink()
                     local first_enemy = enemy_list[1]
                     if target_ability == nil then return nil end 
                     if parent == nil then return nil end                   
-                        if ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and (target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH) then
+                        if (ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) or TargetSpell[target_ability:GetAbilityName()]) and (target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH) then
                             if target_ability and IsValidEntity(target_ability) and IsValidEntity(first_enemy) and IsValidEntity(parent) and parent:IsAlive() and first_enemy:IsAlive() then
                                 parent:CastAbilityOnTarget(first_enemy, target_ability, parent:GetPlayerOwnerID())
                             end   
-                        elseif ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_POINT) then
+                        elseif (ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_POINT) or PointSpell[target_ability:GetAbilityName()]) then
                             if target_ability and IsValidEntity(target_ability) and IsValidEntity(first_enemy) and IsValidEntity(parent) and parent:IsAlive() and first_enemy:IsAlive() then
                                 parent:CastAbilityOnPosition(first_enemy:GetAbsOrigin(), target_ability, parent:GetPlayerOwnerID())
                             end   

@@ -770,7 +770,7 @@
 
 //Hoodwink
 	"DOTA_Tooltip_ability_hw_sharpshooter"					"Sharpshooter"
-	"DOTA_Tooltip_ability_hw_sharpshooter_Description"		"Hoodwink charges up and fires a deadly bolt from her crossbow, dealing heavy damage and slow to an enemy Hero.  The damage and debuff duration scale up to max after %max_charge_time% seconds, and the bolt is fired automatically after %misfire_time% seconds.\nHoodwink is knocked backwards for a distance of %recoil_distance% from the force of the shot.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Damage will increase by 100% for every 2000 units of distance to the target. Affects your talent bonus dmg. <font color='#8ABF50'>Alternate Shot</font> now reduce your CD and brake duration by 3x, auto release is 10x faster."
+	"DOTA_Tooltip_ability_hw_sharpshooter_Description"		"Hoodwink charges up and fires a deadly bolt from her crossbow, dealing heavy damage and slow to an enemy Hero.  The damage and debuff duration scale up to max after %max_charge_time% seconds, and the bolt is fired automatically after %misfire_time% seconds.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Damage will increase by 100% for every 2000 units of distance to the target. Affects your talent bonus dmg. <font color='#8ABF50'>Alternate Shot</font> now reduce your CD and brake duration by 3x, auto release is 10x faster."
 	"DOTA_Tooltip_ability_hw_sharpshooter_scepter_description"		"<font color='#428627'>Normal Shot</font>:<br>Allows the projectile to pass through.<br><br><font color='#8ABF50'>Alternate Shot</font>:<br>Removes the through shot, but allows you to deal damage through spell immunity."
 	"DOTA_Tooltip_ability_hw_sharpshooter_shard_description"		"Increases projectile's range and speed by x2."
 	"DOTA_Tooltip_ability_hw_sharpshooter_Lore"				"While her first arbalest was a chance discovery, Hoodwink now takes great care in carving and caring for her own -- of course with some necessary components pilfered or otherwise cleverly procured."
@@ -1106,6 +1106,11 @@
 
 	"DOTA_Tooltip_ability_amalgamation_transfrom_duration" "<font color='#DE3163'>Super Scepter: Symbiosis</font> Duration:"
 
+	"DOTA_Tooltip_ability_amalgatoggle"					"Symbios Pass"
+	"DOTA_Tooltip_ability_amalgatoggle_Description"     "Enable Autocast(rightclick) ability to allow your host to transform in one of the Symbiosis characters(If all SS conditions are meet)\n<h1><font color='#DE3163'>Super Scepter</font></h1> When you Level up this skill (at lvl 1 and 2) you will get an Super Scepter item and an Edible Fragment"
+	"DOTA_Tooltip_ability_amalgatoggle_Note0"           "SS effect works even if you missed frist lvl up (1) if you have SS on the second level up you will get both rewards"
+
+	"DOTA_Tooltip_modifier_symbiosis_ready"            "Symbios Pass ON"
 
 	"DOTA_Tooltip_amalgamation_modifier"					"Symbios"
 	"DOTA_Tooltip_amalgamation_modifier_Description"		"You share mana pool with a host hero."
@@ -1114,6 +1119,9 @@
 	"DOTA_Tooltip_amalgamation_bonus"					"Feast"
 	"DOTA_Tooltip_amalgamation_bonus_Description"		"Gives +%fMODIFIER_PROPERTY_TOOLTIP% to all attributes."
 	"DOTA_Error_amalgamation_no_inception"				"Can't cast while being host."
+
+
+	
 
 	"DOTA_Tooltip_modifier_venom"                   		"<font color='#010101'>Venom</font> Compatibility"
 	"DOTA_Tooltip_modifier_venom_description"       		"At 100 stacks you are eligible for <font color='#010101'>Venom</font> Symbiosis"
@@ -3543,11 +3551,11 @@
 	"DOTA_Tooltip_modifier_mjz_lifestealer_poison_sting_buff_Description"  "Increase Strength by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% and Health by %dMODIFIER_PROPERTY_HEALTH_BONUS% "
 
 	"DOTA_Tooltip_ability_mjz_life_stealer_feast"				"Feast"
-	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Description"	"Lifestealer's attacks damage enemies and heal himself for a percentage of his max strength."
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Description"	"Lifestealer's attacks damage enemies and heal himself for a percentage of his max strength. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Lifestealer bonus damage now is increased further by 5% for each level he has."
 	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Lore"			"After escaping from his cell in Devarque, N'aix subsisted on flesh and bones of those unfortunate to cross his path."
 	"DOTA_Tooltip_ability_mjz_life_stealer_feast_str_damage_pct"	"%MAX STRENGTH:"
 	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Note0"	"Stacks additively with other sources of Lifesteal."
-	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Note1"	"Affects Spell Immune units."
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Note1"	"When the attack starts Lifestealer gets bonus green dmg base on his Str."
 	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Note2"	"The heal is independent of the damage."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_life_stealer_feast_strength"	"+{s:value}% Feast Damage/Lifesteal"	
 
@@ -10676,6 +10684,10 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 	"DOTA_Tooltip_ability_hoodwink_custom_bushwhack_total_damage"			"DAMAGE:"
 	"DOTA_Tooltip_ability_hoodwink_custom_bushwhack_Note0"					"Units can be freed from the stun by destroying the tree."
 
+
+	"DOTA_Tooltip_ability_hoodwink_decoy_Description"				"Hoodwink turns invisible, and creates a decoy illusion. If the illusion is attacked or hit by a targeted ability, it is destroyed and it throws a lesser bushwhack towards the enemy."
+
+	"DOTA_Tooltip_ability_hoodwink_hunters_boomerang_Description"	"Tosses a boomerang in an arc. The boomerang will deal damage and apply a Hunter's Mark that causes affected enemies to be slowed and be more vulnerable to spell damage."
 
 // Grimstroke
 	"DOTA_Tooltip_ability_grimstroke_custom_dark_artistry"							"Stroke of Fate"

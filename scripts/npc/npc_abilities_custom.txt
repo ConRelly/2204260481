@@ -42480,6 +42480,8 @@
 		"LevelsBetweenUpgrades"         "10"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"		
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -44155,5 +44157,19 @@
 		{
 		}
 	}
+
+
+
+
+	"amalgatoggle"
+    {
+        "BaseClass"                 "ability_lua"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+        "AbilityTextureName"        "venom_out"
+		"MaxLevel"					  "2"        
+        "ScriptFile"                "heroes/hero_wisp/amalgatoggle.lua"
+        "AbilityCooldown"           "0"
+        "LevelsBetweenUpgrades"     "24"
+    }
 
 }

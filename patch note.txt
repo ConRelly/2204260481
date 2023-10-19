@@ -2896,6 +2896,19 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Added a toggle/passive button for the IO Symbiosis transformation and a new SS effect for this skill. Removed Spirits skill and replaced it with a related talent.
+* Added new Super Scepter effect to Lifestealer Feast.
+* Increased Top Underdog server check timeout (should help some regions with the bug of not getting the Top Underdog buff).
+* Fireblast from Multicast should no longer be able to self (or ally) dmg.
+* Fixed Hoodwink Sharpshooter projectiles not disappearing on autocast and made autocast only search for enemy targets.
+* Added Sharpshooter projectile/charge time talent back.
+* Fixed autocast to now work with Viper W and techis sticky bombs.
+* Arcade servers seem to be much less available for all maps (some valve thing)
+
+
+
+
+
 
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.

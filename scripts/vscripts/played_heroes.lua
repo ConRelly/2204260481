@@ -14,7 +14,7 @@ function GetLeastPlayedHeroes()
     local delay = 50 / (retries + 1)
     local function sendRequest()
         local request = CreateHTTPRequestScriptVM("GET", HERO_PLAY_COUNTS_URL)
-        request:SetHTTPRequestAbsoluteTimeoutMS(2000)
+        request:SetHTTPRequestAbsoluteTimeoutMS(30000)
         request:Send(function(response)
             if response.StatusCode == 200 then
                 local hero_play_counts = {}

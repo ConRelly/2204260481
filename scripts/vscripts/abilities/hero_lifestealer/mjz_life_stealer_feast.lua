@@ -122,9 +122,8 @@ function modifier_damage:DeclareFunctions()
         MODIFIER_EVENT_ON_ATTACK_LANDED
     } 
 end
-function modifier_damage:GetModifierPreAttack_BonusDamage() 
-    
-    return self:GetStackCount()
+function modifier_damage:GetModifierPreAttack_BonusDamage()    
+    return self:GetStackCount() * 1000
 end
 
 function modifier_damage:OnAttackLanded(keys)
@@ -138,9 +137,13 @@ if IsServer() then
     function modifier_damage:OnCreated(table)
         local parent = self:GetParent()
         local ability = self:GetAbility()
-        local str_damage_pct = GetTalentSpecialValueFor(ability, "str_damage_pct")
-
-        local damage = parent:GetStrength() * (str_damage_pct / 100.0)
+        local str_damage_pct = (GetTalentSpecialValueFor(ability, "str_damage_pct") / 100)
+        local has_ss = parent:HasModifier("modifier_super_scepter")
+        if has_ss then
+            local lvl = (parent:GetLevel() / 20 ) + 1
+            str_damage_pct = str_damage_pct * lvl
+        end
+        local damage = math.ceil((parent:GetStrength() * str_damage_pct) / 1000)
         self:SetStackCount(damage)
     end
 end

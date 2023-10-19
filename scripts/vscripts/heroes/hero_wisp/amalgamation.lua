@@ -427,10 +427,20 @@ function amalgamation_target:OnIntervalThink()
 					end	
 				end
 			end	
-
+			local amalgat = self:GetCaster():FindAbilityByName("amalgatoggle")
+			if amalgat then
+				if amalgat:GetAutoCastState() then
+                    caster:AddNewModifier(caster, self, "modifier_symbiosis_ready", {})    
+                else
+                    if caster:HasModifier("modifier_symbiosis_ready") then
+                        caster:RemoveModifierByName("modifier_symbiosis_ready")
+                    end
+                end 				
+			end
 			if parent:HasModifier("modifier_symbiosis_exhaust") then return end
 			if not _G.symbiosisOn then return end 
 			if not parent:IsHero() then return end
+			if not caster:HasModifier("modifier_symbiosis_ready") then return end
 			local caster_str = caster:GetStrength()
 			local caster_agi = caster:GetAgility()
 			local caster_int = caster:GetIntellect()
@@ -438,9 +448,10 @@ function amalgamation_target:OnIntervalThink()
 			local caster_base_ms = caster:GetMoveSpeedModifier(caster:GetBaseMoveSpeed(), false) * (ability:GetSpecialValueFor("carnage_base_ms") / 100)
 			local caster_basedmg = caster:GetAttackDamage()
 			local caster_greendmg = caster:GetAverageTrueAttackDamage(caster) - caster_basedmg
-			if caster_base_ms > 20000 then -- in case dota fixes Io Q 
-				caster_base_ms = 20000
+			if caster_base_ms > 30000 then -- in case dota fixes Io Q 
+				caster_base_ms = 30000
 			end	
+
 			if (not ability:GetAutoCastState() and venom_on) or (marci and venom_on) then
 				if parent and parent:IsAlive() then
 					if not parent:HasModifier("modifier_symbiosis_exhaust_trigger") then

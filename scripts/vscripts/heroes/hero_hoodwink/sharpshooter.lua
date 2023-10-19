@@ -50,11 +50,11 @@ function hw_sharpshooter:GetCooldown (nLevel)
 	end	
 end
 function hw_sharpshooter:GetCastRange(location, target)
-	if not IsServer() then return end
-	if self:GetCaster():HasScepter() then
-		return self:GetTalentSpecialValueFor("arrow_range") * self:GetSpecialValueFor("scepter_bonus")
+	--if not IsServer() then return end
+	if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
+		return self:GetSpecialValueFor("arrow_range") * self:GetSpecialValueFor("scepter_bonus")
 	end
-	return self:GetTalentSpecialValueFor("arrow_range")
+	return self:GetSpecialValueFor("arrow_range")
 end
 function hw_sharpshooter:OnSpellStart()
 	if not IsServer() then return end
@@ -221,7 +221,7 @@ function modifier_hw_sharpshooter:OnCreated(kv)
 	    fDistance = self.projectile_range,
 	    fStartRadius = self.projectile_width,
 	    fEndRadius = self.projectile_width,
-	
+		fExpireTime = GameRules:GetGameTime() + 5,
 		bHasFrontalCone = false,
 		bReplaceExisting = false,
 		

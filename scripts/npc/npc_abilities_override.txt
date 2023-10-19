@@ -16621,6 +16621,8 @@
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"10"
 		"AbilityCooldown"				"19"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"		
 		"AbilitySpecial"
 		{
 			"01"
@@ -19961,10 +19963,12 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"		
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"12 10 8 6"
+		"LevelsBetweenUpgrades"         "5"
 		"AbilityManaCost"				"100 115 130 145"
 		"AbilityValues"
 		{
@@ -19973,16 +19977,16 @@
 			"radius"
 			{
 				"value"			"250"
-				"special_bonus_unique_techies_2"	"+125"
+				"special_bonus_unique_techies_2"	"+325"
 			}
-			"damage"					"90 180 270 360"
+			"damage"					"290 1800 9700 36000"
 			"slow"						"25 35 45 55"
 			"secondary_slow"			"30 40 55 75"
 			"secondary_slow_duration"	"2.5"
 			"explosion_radius"
 			{
 				"value"				"750"
-				"special_bonus_unique_techies_2"	"+125"
+				"special_bonus_unique_techies_2"	"+325"
 			}
 			"speed"						"500"
 			"acceleration"				"2000"
@@ -20752,7 +20756,7 @@
 				"value"		"665"
 				"special_bonus_unique_hoodwink_bushwhack_radius"	"+435"
 			}
-			"debuff_duration"		"2.2"
+			"debuff_duration"		"1.2"
 			"projectile_speed"	"1200"
 			"total_damage"		"890 9780 22470 44420 98500 479500 1825000"
 			"animation_rate"	"0.3"
@@ -20965,6 +20969,7 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_6"
 	}
 
+
 	//=================================================================================================================
 	// Ability: Hoodwink: Hunter's Boomerang
 	//=================================================================================================================
@@ -20974,7 +20979,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"					"9627"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -20983,8 +20988,7 @@
 		"AbilitySound"					"Hero_VengefulSpirit.MagicMissile"
 
 		"MaxLevel"						"1"
-		"IsGrantedByScepter"			"1"
-		"HasScepterUpgrade"				"1"
+		"IsGrantedByShard"				"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -20993,7 +20997,7 @@
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"7"
+		"AbilityCooldown"				"18"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -21001,61 +21005,30 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"350"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"350"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
+				"speed"					"1900"
+				"radius"				
+				{
+					"value"		"350"
+					"affected_by_aoe_increase"	"1"	
+				}
+				"damage"				"9500"
 				"mark_duration"			"25.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"slow_pct"				"20"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"spell_amp"				"35"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"status_resistance"		"25"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spread"				"400"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"min_throw_duration"			"0.5"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"max_throw_duration"			"1.2"
-			}
+				"spread"				
+				{
+					"value"		"400"
+					"affected_by_aoe_increase"	"1"	
+				}
+				"min_throw_duration"			"0.3"
+				"max_throw_duration"			"0.5"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
+
 
 	//=================================================================================================================
 	// Hoodwink: Sharpshooter Release
