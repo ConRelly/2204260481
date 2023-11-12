@@ -4285,7 +4285,7 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 
 
 "DOTA_Tooltip_ability_mjz_slark_dark_pact"				"Dark Pact"
-"DOTA_Tooltip_ability_mjz_slark_dark_pact_Description"	"After a short delay, Slark sacrifices some of his life blood, purging most negative debuffs and dealing damage to enemy units around him and to himself.  Slark only takes 20% of the damage and is not affected by spell amp against him. \n\n<span class=\"GameplayValues GameplayVariable\">Strong Dispel</span>"
+"DOTA_Tooltip_ability_mjz_slark_dark_pact_Description"	"After a short delay, Slark sacrifices some of his life blood, purging most negative debuffs and dealing damage to enemy units around him and to himself.  Slark only takes 5% of the damage and is not affected by spell amp against him. \n\n<span class=\"GameplayValues GameplayVariable\">Strong Dispel</span>"
 "DOTA_Tooltip_ability_mjz_slark_dark_pact_Lore"			"Slithereen are capable of quickly regrowing appendages, in case of critical injury, to save their own lives."
 "DOTA_Tooltip_ability_mjz_slark_dark_pact_delay"		"DELAY:"
 "DOTA_Tooltip_ability_mjz_slark_dark_pact_radius"		"RADIUS:"
@@ -4297,9 +4297,9 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 "DOTA_Tooltip_ability_mjz_slark_dark_pact_Note3"	"The pulses stop if Slark dies."
 "DOTA_Tooltip_ability_special_bonus_unique_mjz_slark_dark_pact_damage"	"+{s:value}% Dark Pact Hp Damage"	
 	"DOTA_Tooltip_ability_mjz_slark_essence_shift"					"Essence Shift"
-	"DOTA_Tooltip_ability_mjz_slark_essence_shift_Description"		"Every time an enemy unit dies near slark, he will receive additional attributes. Can be activated to do Multiple attacks at the same time. "
+	"DOTA_Tooltip_ability_mjz_slark_essence_shift_Description"		"Every time an enemy unit dies near slark, he will receive additional attributes. Can be activated to do Multiple attacks at the same time. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Now the stacks give Int stats too but only 20% of the normal value, and Enemy death radius is doubled. <br> You can now toggle autocast to gain an %ss_reduction%%% damage reduction during Shadow Dance Ultimate, but you cannot become invisible in that duration."
 	"DOTA_Tooltip_ability_mjz_slark_essence_shift_Lore"				"With each strike at his adversaries, Slark's knowledge of their weaknesses improves."
-	"DOTA_Tooltip_ability_mjz_slark_essence_shift_Note0"			""
+	"DOTA_Tooltip_ability_mjz_slark_essence_shift_Note0"			"Deep Shroud will give only the Damage protection SS effect part and not the reavealing part."
 	"DOTA_Tooltip_ability_mjz_slark_essence_shift_heap_range"		"Enemy Death Radius: "
 	"DOTA_Tooltip_ability_mjz_slark_essence_shift_heap_amount"		"Strenth and Agility Bonus per Death: "
 	"DOTA_Tooltip_ability_mjz_slark_essence_shift_bat"				"Base Attack Time :"

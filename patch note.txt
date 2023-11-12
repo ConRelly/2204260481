@@ -2906,6 +2906,14 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * Arcade servers seem to be much less available for all maps (some valve thing)
 
 
+* Reduced cast time for unrefined fireblast.
+
+
+
+* Fixed UI talents. For some heroes was showing in skill bar (some dota update gifted that). 
+* Added new Super Scepter effect for Slark.
+* Added Monkey King back in hero pool(might be temporary), his vanila ultimate still has bad visual interaction with edible aghanim over long play(creates some degree of lag). Modified his aghanim ultimate intervals for less fregvency to slow this down.(the same bug can be still found in normal dota too)
+* Arcade servers are still experiencing a shortage (Valve limited the number of them for all games, not sure if intentional) in most regions. Try to queue on a different region or Just Local if you can't find one at some hours for your region.
 
 
 

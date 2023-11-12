@@ -9,7 +9,13 @@ local modifier_stack_name = "modifier_mjz_slark_essence_shift_heap"
 function ability_class:GetIntrinsicModifierName()
 	return modifier_stack_name
 end
-
+function ability_class:GetBehavior()
+	local behavior = DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_IMMEDIATE + DOTA_ABILITY_BEHAVIOR_ATTACK
+	if self:GetCaster():HasModifier("modifier_super_scepter") then
+		behavior = DOTA_ABILITY_BEHAVIOR_NO_TARGET + DOTA_ABILITY_BEHAVIOR_IMMEDIATE + DOTA_ABILITY_BEHAVIOR_ATTACK + DOTA_ABILITY_BEHAVIOR_AUTOCAST
+	end	
+	return behavior
+end
 function ability_class:GetAOERadius()
 	return self:GetSpecialValueFor("heap_range")
 end
@@ -116,12 +122,33 @@ function modifier_class:OnRefresh(kv)
 	end
 end
 
+function modifier_class:GetPriority()
+    if self:GetParent():GetName() ~= "npc_dota_hero_slark" then return end
+    return MODIFIER_PRIORITY_SUPER_ULTRA + 10000 -- very high priority
+end
+
+function modifier_class:CheckState()
+    if IsServer() then
+        if not self:GetAbility() then self:Destroy() end
+        if self:GetParent():HasModifier("modifier_super_scepter") then
+            if self:GetAbility():GetAutoCastState() and self:GetParent():HasModifier("modifier_slark_shadow_dance") then
+                return {
+                [MODIFIER_STATE_INVISIBLE] = false,
+                [MODIFIER_STATE_TRUESIGHT_IMMUNE] = false 
+                }
+            end
+        end
+    end
+end 
+  
+
 function modifier_class:DeclareFunctions()
 	local funcs = {
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
-        --MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
-        MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT
+        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+        MODIFIER_PROPERTY_BASE_ATTACK_TIME_CONSTANT,
+        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE
 	}
 
 	return funcs
@@ -132,7 +159,7 @@ function modifier_class:GetModifierBonusStats_Strength()
     if ability then
         local heap_amount = ability:GetSpecialValueFor("heap_amount")	
         local heap_type = ability:GetSpecialValueFor( "heap_type" )
-        if heap_type == 2 then
+        if heap_type >= 1 then
             return self:GetStackCount() * heap_amount
         else
             return 0
@@ -144,26 +171,44 @@ function modifier_class:GetModifierBonusStats_Agility()
     if ability then
         local heap_amount = ability:GetSpecialValueFor("heap_amount")	
         local heap_type = ability:GetSpecialValueFor( "heap_type" )
-        if heap_type == 2 then
+        if heap_type >= 0 then
             return self:GetStackCount() * heap_amount
         else
             return 0
         end
     end
 end
---[[function modifier_class:GetModifierBonusStats_Intellect()
-    if self.heap_type == 3 then
-        return self:GetStackCount() * self.heap_amount
-    else
-        return 0
+function modifier_class:GetModifierBonusStats_Intellect()
+	local ability = self:GetAbility()  
+    if self:GetParent():HasModifier("modifier_super_scepter") then
+        if ability then
+            local heap_amount = ability:GetSpecialValueFor("heap_amount")	
+            local heap_type = ability:GetSpecialValueFor( "heap_type" )          
+            if heap_type >= 2 then
+                return (self:GetStackCount() * heap_amount) / 5
+            else
+                return 0
+            end
+        end
     end
-end]]
+end
 function modifier_class:GetModifierBaseAttackTimeConstant()
     local ability = self:GetAbility()
     if ability then
-	    return self:GetAbility():GetSpecialValueFor("bat")
+	    return ability:GetSpecialValueFor("bat")
     end   
 end	
+
+function modifier_class:GetModifierIncomingDamage_Percentage(keys)
+    if IsServer() and (not self:GetParent():PassivesDisabled()) then
+        local ability = self:GetAbility()
+        if ability then 
+            if ability:GetAutoCastState() and (self:GetParent():HasModifier("modifier_slark_shadow_dance") or self:GetParent():HasModifier("modifier_slark_depth_shroud")) then                   
+                return -ability:GetSpecialValueFor("ss_reduction")
+            end
+        end
+    end
+end
 
 --------------------------------------------------------------
 
@@ -190,7 +235,11 @@ end
 function modifier_class:GetAuraRadius()
     local ability = self:GetAbility()
     if ability then
-	    return self:GetAbility():GetSpecialValueFor( "heap_range" )
+        local range = self:GetAbility():GetSpecialValueFor( "heap_range" )
+        if self:GetParent():HasModifier("modifier_super_scepter") then
+            range = range * 2
+        end
+	    return range
     end
 end
 

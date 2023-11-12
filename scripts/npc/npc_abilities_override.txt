@@ -18260,37 +18260,91 @@
 		"AbilityCooldown"				"0.1"
 	}
 
+
+	//=================================================================================================================
+	// Monkey King: Wukong's Command
+	//=================================================================================================================
 	"monkey_king_wukongs_command"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_MonkeyKing.FurArmy"
+        "HasScepterUpgrade"			"1"
+
+		"AbilityDraftPreAbility"		"monkey_king_mischief"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastRange"				"0"
+		"AbilityCastAnimation"			"ACT_INVALID"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"0"
+
+		"AbilityDuration"				"13.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"			   "0"
-		"AbilitySpecial"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"04"
-			{
-				"var_type"							"FIELD_INTEGER"
+				"first_radius"						
+				{
+					"value"		"300"
+					"affected_by_aoe_increase"	"1"		
+				}
+				"second_radius"						
+				{
+					"value"		"750"
+					"affected_by_aoe_increase"	"1"		
+				}
+				"num_first_soldiers"				"5"
 				"num_second_soldiers"				"9"
-			}
-			"07"
-			{
-				"var_type"							"FIELD_FLOAT"
+				"move_speed"						"700"
+				"bonus_armor"						
+				{
+					"value"			"14 19 24"
+					"LinkedSpecialBonus"		"special_bonus_unique_monkey_king_4"
+				}
 				"attack_speed"						"0.25"
-			}
-			"14"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"scepter_spawn_interval"			"4"
-				"RequiresScepter"	"1"
-			}
-			"15"
-			{
-				"var_type"							"FIELD_FLOAT"
-				"scepter_spawn_duration"			"15"
-				"RequiresScepter"	"1"
-			}
+				"duration"							"13.0"
+				"leadership_radius_buffer"			"30"
+				"cast_range"						"550"
+				"cast_range_scepter"						
+				{
+					"value"			"1550"
+					"RequiresScepter"	"1"
+				}
+				"outer_attack_buffer"				"0"
+				"cooldown_scepter"				
+				{
+					"value"		"90 70 50"
+					"RequiresScepter"	"1"
+				}
+				"scepter_spawn_interval"
+				{
+					"value"			"12"
+					"RequiresScepter"	"1"
+				}
+				"scepter_spawn_duration"			
+				{
+					"value"		"45"
+					"RequiresScepter"	"1"
+				}
 		}
 	}
+
+
 	"special_bonus_unique_monkey_king"
 	{
 		"AbilitySpecial"
