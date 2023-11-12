@@ -26840,7 +26840,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"claw_chance"				"3"
+				"claw_chance"				"4"
 				//"LinkedSpecialBonus"	"special_bonus_unique_mjz_poison_sting_claw_chance"
 			}			
 		}
