@@ -1,4 +1,4 @@
-
+LinkLuaModifier("modifier_queenofpain_custom_shadow_strike_stacks", "abilities/heroes/queenofpain_custom_shadow_strike.lua", LUA_MODIFIER_MOTION_NONE)
 
 queenofpain_custom_shadow_strike = class({})
 
@@ -74,18 +74,37 @@ if IsServer() then
         local caster = self:GetCaster()
         local ability = self:GetAbility()
         local parent = self:GetParent()
-
-        SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_POISON_DAMAGE, parent, self.tick_damage, nil)
+        local stack = 1 + self:GetStackCount()
+        local dmg = self.tick_damage * stack
+        SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_POISON_DAMAGE, parent, dmg, nil)
 
         ApplyDamage({
             ability = ability,
             attacker = caster,
-            damage = self.tick_damage,
+            damage = dmg,
             damage_type = ability:GetAbilityDamageType(),
             victim = parent
         })
     end
 end
+function modifier_queenofpain_custom_shadow_strike:_OnScreamHit()
+    if IsServer() then
+        local caster = self:GetCaster()
+        if caster:HasModifier("modifier_super_scepter") then
+            self:IncrementStackCount()
+            if caster:HasModifier("modifier_queenofpain_custom_shadow_strike_stacks") then
+                local modif = caster:FindModifierByName("modifier_queenofpain_custom_shadow_strike_stacks")
+                local Mstacks = modif:GetStackCount()
+                local Stack = self:GetStackCount()
+                modif:SetStackCount(Mstacks + Stack)
+            else
+                caster:AddNewModifier(caster, self:GetAbility(), "modifier_queenofpain_custom_shadow_strike_stacks", {})    
+            end   
+        end
+    end    
+end
+
+
 
 
 function modifier_queenofpain_custom_shadow_strike:DeclareFunctions()
@@ -99,4 +118,32 @@ function modifier_queenofpain_custom_shadow_strike:GetModifierMoveSpeedBonus_Per
     if self:GetAbility() then
         return self:GetAbility():GetSpecialValueFor("movement_slow")
     end    
+end
+
+
+modifier_queenofpain_custom_shadow_strike_stacks = class({})
+function modifier_queenofpain_custom_shadow_strike_stacks:IsHidden() return false end
+function modifier_queenofpain_custom_shadow_strike_stacks:IsDebuff() return false end
+function modifier_queenofpain_custom_shadow_strike_stacks:IsPurgable() return false end
+function modifier_queenofpain_custom_shadow_strike_stacks:RemoveOnDeath() return false end
+function modifier_queenofpain_custom_shadow_strike_stacks:GetTexture()
+	return "queenofpain_shadow_strike"
+end
+function modifier_queenofpain_custom_shadow_strike_stacks:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK,
+		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+
+	}
+end
+function modifier_queenofpain_custom_shadow_strike_stacks:GetModifierTotal_ConstantBlock()
+    local finalBlock = self:GetStackCount() / 2
+	return finalBlock
+end
+function modifier_queenofpain_custom_shadow_strike_stacks:GetModifierBonusStats_Intellect()
+    if self:GetAbility() then
+        local bonus = self:GetAbility():GetSpecialValueFor("ss_int_bonus")
+        local fstacks = self:GetStackCount() * bonus
+	    return fstacks
+    end
 end

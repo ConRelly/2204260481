@@ -1836,7 +1836,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"2250"
+				"value"				"9250"
 				"ad_linked_abilities"			"abaddon_death_coil"
 			}
 		}
@@ -1900,31 +1900,73 @@
 		}
 	}
 
+
+	//=================================================================================================================
+	// Abaddon: Death Coil (mist coil)
+	//=================================================================================================================
 	"abaddon_death_coil"
 	{
-		"LevelsBetweenUpgrades"		"5"
-		"AbilitySpecial"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Abaddon.DeathCoil.Cast"
+		"LevelsBetweenUpgrades"			"5"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600 625 650 675"
+		"AbilityCastPoint"				"0.25"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"6.5 6.0 5.5 5.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
+			"self_damage"			
 			{
-				"var_type"				"FIELD_FLOAT"
-				"self_damage"			"135 150 190 1225"
-				"LinkedSpecialBonus"	"special_bonus_unique_abaddon_2"
+				"value"				"5"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_PURE"
 			}
-			"02"
+			"missile_speed"			"1300"
+			"target_damage"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"target_damage"			"480 1950 3615 9420"
-				"LinkedSpecialBonus"	"special_bonus_unique_abaddon_2"
+				"value"			"185 650 1900 4225"
+				"special_bonus_unique_abaddon_2"	"+9250"
 			}
-			"03"
+			"heal_amount"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"480 1950 3615 9420"
-				"LinkedSpecialBonus"	"special_bonus_unique_abaddon_2"
+				"value"			"185 650 1900 4225"
+				"special_bonus_unique_abaddon_2"	"+9250"
+			}			
+			
+			"effect_radius"
+			{
+				"value"				"0"
+				"special_bonus_unique_abaddon_4"	"+600"
+				"affected_by_aoe_increase"	"1"
 			}
+			"effect_duration"				"0"
+			"magic_resistance"				"20"
+			"armor_bonus"					"20"
+
+
+
 		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
+
 	"abaddon_borrowed_time"
 	{
 		// General
@@ -5301,14 +5343,14 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_health_regen"			"100 200 400 800 1600"
+				"bonus_health_regen"			"100 200 400 800 2400"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_armor"					"9 16 32 64 128"
+				"bonus_armor"					"9 16 32 64 228"
 				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
@@ -7994,8 +8036,8 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"MaxLevel"					  "4"
-		"AbilityCastRange"				"900"
-		"AbilityCastPoint"				"0.45 0.45 0.45 0.45"
+		"AbilityCastRange"				"9000"
+		"AbilityCastPoint"				"0.45 0.45 0.45 0.0"
 		"IsOnCastBar"				   "0"
 		
 		// Time		
@@ -8005,7 +8047,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"450 950 2450 7500"
+		"AbilityDamage"					"950 2450 7500 19500"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -8024,7 +8066,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"light_strike_array_delay_time"	"0.7"
+				"light_strike_array_delay_time"	"1.7"
 			}
 						
 			"03"
@@ -10169,7 +10211,18 @@
 				"value"				"350"
 			}
 		}
-	}			
+	}
+	"special_bonus_intelligence_75"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"750"
+			}
+		}
+	}				
 	"special_bonus_all_stats_5"
 	{
 		"AbilitySpecial"
@@ -20723,17 +20776,60 @@
 			}
 		}
 	}
+
+
+	//=================================================================================================================
+	// Queen of Pain: Blink
+	//=================================================================================================================
 	"queenofpain_blink"
 	{
-		"AbilitySpecial"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_OVERSHOOT"
+		"AbilitySound"					"Hero_QueenOfPain.Blink_in"
+
+        "HasShardUpgrade"               "1"
+        "LevelsBetweenUpgrades"         "7"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastRange"				"2400 3000 3600 4500"
+		"AbilityCastPoint"				"0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"12.0 10.0 8.0 6.0"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"65"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"										"FIELD_INTEGER"
-				"blink_range"									 "1300 1900 2400 4500"
-			}
+				"min_blink_range"				"200"
+				"shard_damage"			
+				{
+					"RequiresShard"				"1"
+					"value"						"500 2500 10000 25000"
+				}
+
+				"shard_duration"
+				{
+					"RequiresShard"				"1"
+					"value"						"1.0"
+				}	
+				"shard_aoe"
+				{
+					"RequiresShard"				"1"
+					"value"						"500"
+					"affected_by_aoe_increase"	"1"
+				}									
 		}
 	}
+	
+
 
 // Hoodwink: Scurry
 	"hoodwink_scurry"
@@ -21656,7 +21752,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"120"
+		"AbilityCooldown"				"110"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -21666,11 +21762,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"					"5 6 7 8 9"
-			"transform_duration"		"0.35"
+			"duration"					"7 8 9 10 11"
+			"transform_duration"		"0.10"
 			"base_damage_pct"			"50"
 			"modelscale"				"-50"
-			"bonus_damage"				"900 2750 4300 12500 25000"
+			"bonus_damage"				"1900 6750 14300 32500 85000"
 		}
 	}
 
@@ -26341,7 +26437,7 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"9500"
+		"ItemCost"						"500"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemStockInitial"				"3"

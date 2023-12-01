@@ -1,5 +1,7 @@
 "DOTAAbilities"
 {
+
+
   //=================================================================================================================
   // Ability: Sand King Sand Storm
   //=================================================================================================================
@@ -7,61 +9,69 @@
   {
     // General
     //-------------------------------------------------------------------------------------------------------------
-    "ID"                                                  "5103"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-    "AbilityUnitDamageType"                               "DAMAGE_TYPE_MAGICAL"
-    "SpellImmunityType"                                   "SPELL_IMMUNITY_ENEMIES_NO"
-    "SpellDispellableType"                                "SPELL_DISPELLABLE_NO"
-    "FightRecapLevel"                                     "1"
-
-    "MaxLevel"                                            "7"
-    "RequiredLevel"                                       "1"
-    "LevelsBetweenUpgrades"                               "5"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+    "AbilityUnitDamageType"     "DAMAGE_TYPE_MAGICAL" 
+    "SpellImmunityType"       "SPELL_IMMUNITY_ENEMIES_NO"
+    "SpellDispellableType"      "SPELL_DISPELLABLE_NO"
+    "FightRecapLevel"       "1"
+    "AbilitySound"          "Ability.SandKing_SandStorm.start"
+    "HasScepterUpgrade"       "1"
 
     // Casting
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastRange"                                    "0"
-    "AbilityDuration"                                     "10"
-
-    // Time
+    "AbilityCastRange"        "0"
+    "AbilityDuration"       "20 25 30 35 40"
+    "MaxLevel"                                            "7"
+    "RequiredLevel"                                       "1"
+    "LevelsBetweenUpgrades"                               "5"
+    // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"                                     "25 24 23 22 21 20 19" //OAA
-    "AbilityCastPoint"                                    "0.0"
+    "AbilityCooldown"       "40 34 28 22 19"
+    "AbilityCastPoint"        "0.0"
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"                                     "75"
-
+    "AbilityManaCost"       "85"
+    
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
+    "AbilityValues"
     {
-      "01"
+        "damage_tick_rate"  "0.2"
+      "sand_storm_radius"
       {
-        "var_type"                                        "FIELD_FLOAT"
-        "damage_tick_rate"                                "0.5"
+        "value"   "425 500 575 650 700 950 1000"
+        "affected_by_aoe_increase"  "1"
       }
-      "02"
+      "sand_storm_damage"
       {
-        "var_type"                                        "FIELD_INTEGER"
-        "sand_storm_radius"                               "425 500 575 650 700 950 1000"
+        "value"   "100 295 370 795 1900 2300"
+        "special_bonus_unique_sand_king_2"  "+2000"
       }
-      "03"
+      "fade_delay"      "0.7"
+      "scepter_explosion_radius_pct"
       {
-        "var_type"                                        "FIELD_FLOAT"
-        "AbilityDuration"                                 "7"
+        "value"         "0"
+        "special_bonus_scepter"   "+10"
       }
-      "04"
+      "scepter_explosion_min_dist"
       {
-        "var_type"                                        "FIELD_INTEGER"
-        "sand_storm_damage"                               "100 295 370 795 1900 2300"
-        "LinkedSpecialBonus"                              "special_bonus_unique_sand_king_2"
+        "value"         "0"
+        "special_bonus_scepter"   "+90"
       }
-      "05"
+      "scepter_explosions_per_pulse"
       {
-        "var_type"                                        "FIELD_FLOAT"
-        "fade_delay"                                      "1.0" // OAA
+        "value"         "0"
+        "special_bonus_scepter"   "+2"
+      } 
+      "sand_storm_move_speed"
+      {
+        "value"   "25 50 75 100 200"
+        "special_bonus_unique_sand_king_3"  "+150"
       }
+
     }
+    "AbilityCastAnimation"    "ACT_DOTA_CAST_ABILITY_2"
   }
+
 }

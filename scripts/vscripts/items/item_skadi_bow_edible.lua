@@ -69,7 +69,7 @@ function modifier_skadi_bow_slow_debuff_edible:OnCreated(keys)
 	
 end
 function modifier_skadi_bow_slow_debuff_edible:DeclareFunctions()
-	return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE}
+	return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_LIFESTEAL_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET}
 end
 function modifier_skadi_bow_slow_debuff_edible:GetModifierMoveSpeedBonus_Percentage()
 	return -45
@@ -80,3 +80,6 @@ end
 function modifier_skadi_bow_slow_debuff_edible:GetModifierHPRegenAmplify_Percentage()
 	return -50
 end
+function modifier_skadi_bow_slow_debuff_edible:GetModifierHealAmplify_PercentageTarget() return -50 end
+function modifier_skadi_bow_slow_debuff_edible:GetModifierLifestealRegenAmplify_Percentage() return -50 end
+function modifier_skadi_bow_slow_debuff_edible:GetModifierSpellLifestealRegenAmplify_Percentage() return -50 end

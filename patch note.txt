@@ -2918,6 +2918,16 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Abaddon's Mist Coil talent increased and self-damage % and its lvl 25 CDR talent increased from 15% to 25%.
+* Added new Super Scepter effect for Queen of Pain(Q). 
+* Buffed Muerta's Ultimate (Duration, CD, Bonus Dmg) and replaced 25% CDR talent with 30%.
+* Removed some of the random boss skills from the -extra mode list (may help reduce crashes in this mode). 
+* Slightly buffed Seer Stone
+* Slightly buffed the King's Bane item.
+* Buffed some of Maple's armor stats, the active now works on universal heroes too.
+* Fixed Skadi Bow (and Edible) to reduce all healing forms (Lifesteal, Heal) instead of just regeneration.
+* Crossbow now has a healing reduction (not all forms) on its crush armor effect and slightly more stats.
+* Phoenix Ash recipe cost reduced.
 
 
 

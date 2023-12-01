@@ -9,7 +9,7 @@ function item_maple_shield_lua:GetIntrinsicModifierName() return "modifier_maple
 function item_maple_shield_lua:OnSpellStart()
 	if IsServer() then
 		local caster = self:GetCaster()
-		if caster:GetPrimaryAttribute() ~= 0 or caster:HasModifier("modifier_maple_shield_lua_aura_limiter") or (caster:GetUnitName() == "npc_dota_hero_brewmaster") then
+		if (caster:GetPrimaryAttribute() == 1 or caster:GetPrimaryAttribute() == 2) or caster:HasModifier("modifier_maple_shield_lua_aura_limiter") or (caster:GetUnitName() == "npc_dota_hero_brewmaster") then
 			self:EndCooldown()
 			self:StartCooldown(5)
 			return nil

@@ -242,7 +242,7 @@ function modifier_skadi_bow_slow_debuff:OnCreated(keys)
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
 end
 function modifier_skadi_bow_slow_debuff:DeclareFunctions()
-	return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE}
+	return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_HP_REGEN_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_LIFESTEAL_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_SPELL_LIFESTEAL_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET}
 end
 function modifier_skadi_bow_slow_debuff:GetModifierMoveSpeedBonus_Percentage()
 	if self:GetAbility() then
@@ -265,4 +265,8 @@ end
 function modifier_skadi_bow_slow_debuff:GetModifierHPRegenAmplify_Percentage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp_regen_red") * (-1) end
 end
+
+function modifier_skadi_bow_slow_debuff:GetModifierHealAmplify_PercentageTarget() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp_regen_red") * (-1) end end
+function modifier_skadi_bow_slow_debuff:GetModifierLifestealRegenAmplify_Percentage() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp_regen_red") * (-1) end end
+function modifier_skadi_bow_slow_debuff:GetModifierSpellLifestealRegenAmplify_Percentage() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp_regen_red") * (-1) end end
 

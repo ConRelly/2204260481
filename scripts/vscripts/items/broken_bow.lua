@@ -131,7 +131,8 @@ function modifier_item_willbreaker_debuff:GetTexture() return "crossbow" end
 function modifier_item_willbreaker_debuff:DeclareFunctions()
 	return {
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
-		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS
+		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
+		MODIFIER_PROPERTY_HEAL_AMPLIFY_PERCENTAGE_TARGET
 	}
 end
 function modifier_item_willbreaker_debuff:GetModifierPhysicalArmorBonus()
@@ -140,7 +141,7 @@ end
 function modifier_item_willbreaker_debuff:GetModifierMagicalResistanceBonus()
 	return self:GetAbility():GetSpecialValueFor("magic_resist_redu")
 end
-
+function modifier_item_willbreaker_debuff:GetModifierHealAmplify_PercentageTarget() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("heal_redu") * (-1) end end
 -- Broken Bow Count --
 modifier_item_broken_bow_count = class({})
 function modifier_item_broken_bow_count:IsPurgable() return false end

@@ -1442,32 +1442,32 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_agility"					"460"
+			"bonus_agility"					"570"
 		}
 		"02"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_int"						"460"
+			"bonus_int"						"570"
 		}
 		"03"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_attack_speed"			"155"
+			"bonus_attack_speed"			"175"
 		}
 		"04"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"movement_speed_bonus"			"125"
+			"movement_speed_bonus"			"185"
 		}
 		"05"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"bonus_mana_regen"				"220.0"
+			"bonus_mana_regen"				"230.0"
 		}
 		"06"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"bonus_damage"					"12400"
+			"bonus_damage"					"13400"
 		}
 		"07"
 		{
@@ -1512,8 +1512,13 @@
 		"15"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"projectile_increase"			"60" 
+			"projectile_increase"			"65" 
 		}
+		"16"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"heal_redu"						"40" 
+		}		
 	}
 }
 "item_recipe_burning_radiance"
@@ -18824,11 +18829,11 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"AbilityValues"
 		{
-			"cast_range_bonus"		"1500"
-			"vision_bonus"			"2500"
-			"bonus_mana"			"8500"
-			"bonus_mana_regen"		"250"
-			"radius"				"1200"
+			"cast_range_bonus"		"1600"
+			"vision_bonus"			"2700"
+			"bonus_mana"			"9800"
+			"bonus_mana_regen"		"280"
+			"radius"				"1400"
 			"duration"				"15"
 		}
 	}
@@ -21394,7 +21399,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"hp_spell_multiplier"			"1000"
+			"hp_spell_multiplier"			"2000"
 		}
 		"02"
 		{
@@ -21404,18 +21409,18 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"status_resit"		"50"
+			"status_resit"		"60"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"block_chance"				"50"
+			"block_chance"				"60"
 			//"CalculateSpellDamageTooltip"	"0"
 		}			
 		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"magic_resit"				"45"
+			"magic_resit"				"55"
 		}
 		"06"
 		{
@@ -21435,17 +21440,17 @@
 		"09"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"xp_boost"					"20"
+			"xp_boost"					"25"
 		}
 		"11"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"spell_amp"					"100"
+			"spell_amp"					"150"
 		}
 		"12"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_str"					"1200"
+			"bonus_str"					"2400"
 		}
 		"13"
 		{
@@ -33505,27 +33510,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"str"					"450"
+				"str"					"720"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"6400"
+				"damage"				"12400"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"210"
+				"attack_speed"			"240"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"int"					"320"
+				"int"					"420"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_regen"			"125"
+				"mana_regen"			"155"
 			}
 			"06"
 			{
@@ -33540,7 +33545,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"reflect"				"80"
+				"reflect"				"120"
 			}
 			"09"
 			{
@@ -33560,7 +33565,7 @@
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName" 			"item_recipe"
-		"ItemCost"						"12000"	
+		"ItemCost"						"10000"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_kingsbane"

@@ -14051,8 +14051,8 @@
 	"SpellDispellableType"		  "SPELL_DISPELLABLE_NO"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"queenofpain_shadow_strike"
-	"AbilityCastRange"				"700 950 1200 1550"
-	"AbilityCastPoint"				"0.1"
+	"AbilityCastRange"				"600 650 700 750 900 1000 1400"
+	"AbilityCastPoint"				"0.0"
 	"MaxLevel"					  "7"
 	"LevelsBetweenUpgrades"		 "5"
 	"RequiredLevel"				 "1"
@@ -14075,7 +14075,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"movement_slow"			"-6 -8 -10 -12 -14 -16 -20"
+			"movement_slow"			"-10"
 		}
 		"04"
 		{
@@ -14093,6 +14093,11 @@
 			"tick_interval"			"1"
 			"LinkedSpecialBonus"	"special_bonus_qop_shadow_strike_tick_interval"
 		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"ss_int_bonus"				"0.07"
+		}		
 	}
 }
 	"special_bonus_qop_shadow_strike_tick_interval"

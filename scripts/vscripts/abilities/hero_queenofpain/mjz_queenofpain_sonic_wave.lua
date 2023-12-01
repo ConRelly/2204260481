@@ -90,9 +90,14 @@ if IsServer() then
             local kbDuration = self:GetSpecialValueFor("knockback_duration")
             
             ApplyKnockBack(target, caster:GetAbsOrigin(), kbDuration, kbDuration, kbDistance, 0, caster, ability, false)
+
+        -- Trigger the modifier_queenofpain_custom_shadow_strike:_OnScreamHit() function
+            local shadowStrikeModifiers = target:FindAllModifiersByName("modifier_queenofpain_custom_shadow_strike")
+            for _, modifier in pairs(shadowStrikeModifiers) do
+                modifier:_OnScreamHit()
+            end      
         end
     end
-
 
 end
 
