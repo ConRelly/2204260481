@@ -8121,45 +8121,24 @@
 	"AbilityCastPoint"				"0.3"
 	"AbilityCooldown"				"20"
 	"AbilityManaCost"				"0"
-	"AbilitySpecial"
-	{	
-		"01"
+	"AbilityValues"
+	{
+		"radius"			
 		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"900"		
+			"value"		"900"		
+			"affected_by_aoe_increase"	"1"
 		}
-		"02"
+		"duration"			"15.0"		
+		"strike_interval"		
 		{
-			"var_type"			"FIELD_INTEGER"
-			"passive_area_damage"		"1500"		
+			"value"		"0.5"	
+			"LinkedSpecialBonus"	"special_bonus_unique_razor_2"
 		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"passive_area_interval"	"3"		
-		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"25.0"		
-		}
-		"05"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"strike_interval"		"0.5"		
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"armor_reduction"		"1.5"		
-		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"700"		
-		}
+		"armor_reduction"	"2"		
+		"damage"			"800"		
 	}
 }
+
 "custom_global_silence_warning"
 {
 	"BaseClass"						"ability_lua"
@@ -8218,45 +8197,42 @@
 	"AbilityCastPoint"				"0"
 	"AbilityCooldown"				"15"
 	"AbilityManaCost"				"0"		
-	"AbilitySpecial"
+	"AbilityValues"
 	{
-		"01"
+		"damage_min"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"damage_min"				"600"
+			"value"				"600"
+			"special_bonus_unique_razor_4"	"+300"								
 		}
-		"02"
+		"damage_max"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"damage_max"				"1200"
+			"value"				"1200"
+			"special_bonus_unique_razor_4"	"+300"														
 		}
-		"03"
+		"radius"					
 		{
-			"var_type"					"FIELD_INTEGER"
-			"radius"					"1300"
+			"value"			"1300"
+			"affected_by_aoe_increase"	"1"
 		}
-		"04"
+		"total_ability_time"		"2.2"
+		"slow_min"				"5"
+		"slow_max"				"40"
+		"slow_duration"				"3.5"
+		"second_ring_delay"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"speed"						"636"
+			"value"						"0"
+			"special_bonus_unique_razor_plasmafield_second_ring"				"+0.8"
 		}
-		"05"
+		"second_ring_reduction"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"slow_min"				"5"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow_max"				"40"
-		}
-		"07"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"1.5"
+			"value"						"0"
+			"special_bonus_unique_razor_plasmafield_second_ring"				"+30"
 		}
 	}
 }
+
+
+
 "custom_static_wrapper"
 {
 	"BaseClass"					 "ability_datadriven"

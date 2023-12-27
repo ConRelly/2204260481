@@ -2931,6 +2931,14 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Added 2 commands for normal mode to combine all other comands for that mode "-alle" = second part normal, double , gon, single(if single). + extra if you add another "e"("-allee"). Add "2" at the end for the version with no -gon(single player thing) 
+* Fixed Boss Razor plastma field and leaving behind a visual bugg after death.
+
+
+
+
+
+
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).

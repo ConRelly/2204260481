@@ -47,6 +47,91 @@ function AOHGameMode:OnPlayerChat(keys)
 			Notifications:TopToAll({text="You Need to Play Normal Map to activate Hard Mode.", style={color="yellow"}, duration=15})
 		end	
 	end
+	if keys.text == "-alle" and (not self._endlessMode or not self._doubleMode) and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+		local player_count = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) 
+		local playerID = keys.playerid
+		local hero = PlayerResource:GetSelectedHeroEntity(playerID)		
+		self._endlessMode = true
+		self._doubleMode = true
+		_G._normal_mode = true		
+		Notifications:TopToAll({text="Part 2 normal, Double and Extra Enabled", style={color="red"}, duration=5})
+		self._flPrepTimeBetweenRounds = 12
+		self:_ReadGameConfiguration()
+		if player_count == 1 and not self._singleMode then
+			self._singleMode = true
+			mHackGameMode:GM_SinglePlayer()
+			_CreateFakeCourier2(hero)
+			Notifications:TopToAll({text="#game_mode_single_player", style={color="yellow"}, duration=5})
+		end	
+
+		if player_count == 1 and self.gon and not self.spawned_gon then
+			self.gon = false
+			hero:AddItemByName("item_philosophers_stone2")
+			Notifications:TopToAll({text="Helper Unit Disabled", style={color="yellow"}, duration=6})
+		end				
+	end	
+	if keys.text == "-allee" and (not self._endlessMode or not self._doubleMode) and not self._extra_mode and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+		local player_count = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) 
+		local playerID = keys.playerid
+		local hero = PlayerResource:GetSelectedHeroEntity(playerID)		
+		self._endlessMode = true
+		self._doubleMode = true
+		_G._normal_mode = true
+		self._extra_mode = true
+		_G._extra_mode = true		
+		Notifications:TopToAll({text="Part 2 normal, Double and Extra Enabled", style={color="red"}, duration=5})
+		self._flPrepTimeBetweenRounds = 12
+		self:_ReadGameConfiguration()
+		if player_count == 1 and not self._singleMode then
+			self._singleMode = true
+			mHackGameMode:GM_SinglePlayer()
+			_CreateFakeCourier2(hero)
+			Notifications:TopToAll({text="#game_mode_single_player", style={color="yellow"}, duration=5})
+		end	
+
+		if player_count == 1 and self.gon and not self.spawned_gon then
+			self.gon = false
+			hero:AddItemByName("item_philosophers_stone2")
+			Notifications:TopToAll({text="Helper Unit Disabled", style={color="yellow"}, duration=6})
+		end				
+	end	
+	if keys.text == "-allee2" and (not self._endlessMode or not self._doubleMode) and not self._extra_mode and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+		local player_count = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) 
+		local playerID = keys.playerid
+		local hero = PlayerResource:GetSelectedHeroEntity(playerID)		
+		self._endlessMode = true
+		self._doubleMode = true
+		_G._normal_mode = true
+		self._extra_mode = true
+		_G._extra_mode = true		
+		Notifications:TopToAll({text="Part 2 normal, Double and Extra Enabled", style={color="red"}, duration=5})
+		self._flPrepTimeBetweenRounds = 12
+		self:_ReadGameConfiguration()
+		if player_count == 1 and not self._singleMode then
+			self._singleMode = true
+			mHackGameMode:GM_SinglePlayer()
+			_CreateFakeCourier2(hero)
+			Notifications:TopToAll({text="#game_mode_single_player", style={color="yellow"}, duration=5})
+		end				
+	end	
+	if keys.text == "-alle2" and (not self._endlessMode or not self._doubleMode) and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+		local player_count = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) 
+		local playerID = keys.playerid
+		local hero = PlayerResource:GetSelectedHeroEntity(playerID)		
+		self._endlessMode = true
+		self._doubleMode = true
+		_G._normal_mode = true		
+		Notifications:TopToAll({text="Part 2 normal, Double and Extra Enabled", style={color="red"}, duration=5})
+		self._flPrepTimeBetweenRounds = 12
+		self:_ReadGameConfiguration()
+		if player_count == 1 and not self._singleMode then
+			self._singleMode = true
+			mHackGameMode:GM_SinglePlayer()
+			_CreateFakeCourier2(hero)
+			Notifications:TopToAll({text="#game_mode_single_player", style={color="yellow"}, duration=5})
+		end	
+			
+	end			
 	if keys.text == "-fullhard" and (not self._endlessMode or not self._hardMode) and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		if GetMapName() ~= "heroattack_on_easy" then
 			self._endlessMode = true

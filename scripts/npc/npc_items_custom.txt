@@ -5830,7 +5830,7 @@
 		"ItemAliases"					"staff;misery;sm"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
-		
+		"ItemPurchasable"               "0"
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
