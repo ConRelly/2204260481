@@ -45,8 +45,8 @@ function modifier_aghanim_game_handler:OnAttackStart(keys)
     if keys.attacker == self:GetParent() then
         EmitSoundOn("Hero_Invoker.PreAttack", self:GetParent())
 
-        local rate = 1 / self:GetParent():GetSecondsPerAttack()
-        --print(rate, self:GetParent():GetSecondsPerAttack())
+        local rate = 1 / self:GetParent():GetSecondsPerAttack(false)
+        --print(rate, self:GetParent():GetSecondsPerAttack(false))
         self:UpdateAnimation( ACT_DOTA_CAST_ABILITY_1, rate )
     end
 end
@@ -134,7 +134,7 @@ function modifier_aghanim_game_handler:UpdateAnimation( enum, rate )
         self:GetParent(), 
         nil, 
         "modifier_aghanim_game_handler_animation", 
-        { animation = enum, rate = rate, duration = self:GetParent():GetSecondsPerAttack() }
+        { animation = enum, rate = rate, duration = self:GetParent():GetSecondsPerAttack(false) }
     )
 end
 

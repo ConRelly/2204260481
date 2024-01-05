@@ -2931,9 +2931,16 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
-* Added 2 commands for normal mode to combine all other comands for that mode "-alle" = second part normal, double , gon, single(if single). + extra if you add another "e"("-allee"). Add "2" at the end for the version with no -gon(single player thing) 
-* Fixed Boss Razor plastma field and leaving behind a visual bugg after death.
 
+* Added 2 commands for normal mode to combine all other commands for this mode "-alle" = second part normal, double , gon, single(if single). + extra if you add another "e"("-allee"). Add "2" at the end for the version without -gon(single player thing) 
+* Fixed Boss Razor's plasma field leaving a visual bugg after death.
+* Fixed WindRanger Ultimate.
+* Fixed gods max dmg taken per instance not working (they should not take more than 7%).
+* Removed more random boss skills from -extra mode.
+* Removed Revenant's Brooch (no way to use old version)
+* Duel (random pool skill) now increases base attack instead of green.
+* Slightly buffed Warrior Seal and fixed its dmg block (was actually making you take more dmg since the 7.32 update)
+* Random Ability Shop starting stock from 1 to 6 (Temporary, it will be back to normal 1 after some time probably)
 
 
 

@@ -6716,7 +6716,7 @@ You can't target yourself."
 "DOTA_Tooltip_ability_legion_commander_custom_duel_scepter_description"					"Increases amount of attacks on cast."
 
 "DOTA_Tooltip_modifier_legion_commander_custom_duel_buff"				   "Duel Buff"
-"DOTA_Tooltip_modifier_legion_commander_custom_duel_buff_Description"	   "Increasing your damage by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%."
+"DOTA_Tooltip_modifier_legion_commander_custom_duel_buff_Description"	   "Increasing your base damage by %dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE%."
 
 "DOTA_Tooltip_ability_lich_custom_cold_soul"						"<font color='#f2da5b'>Cold Soul</font>"
 "DOTA_Tooltip_ability_lich_custom_cold_soul_Description"			"Passively increases your spell amp."
@@ -8587,7 +8587,7 @@ Required Level: %required_level%
 "DOTA_Tooltip_ability_item_mjz_preserved_skull_bonus_health"				"BONUS HEALTH:"
 "DOTA_Tooltip_ability_item_mjz_preserved_skull_cooldown_reduction_pct"		"%AURA COOLDOWN REDUCTION:"
 "DOTA_Tooltip_ability_item_mjz_preserved_skull_aura_mana_regen"				"AURA MANA REGEN:"
-"DOTA_Tooltip_ability_item_mjz_preserved_skull_Note0"					   "Aura does not work from courier"
+//"DOTA_Tooltip_ability_item_mjz_preserved_skull_Note0"					   "Aura does not work from courier"
 "DOTA_Tooltip_modifier_item_mjz_preserved_skull_buff"						"Conjuration Aura"
 "DOTA_Tooltip_modifier_item_mjz_preserved_skull_buff_Description"			"Gaining bonus mana regen and cooldown reduction."
 "DOTA_Tooltip_ability_item_recipe_mjz_preserved_skull"						"<font color='#4ae0bf'>Recipe: Preserved Skull</font>"

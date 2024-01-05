@@ -425,6 +425,7 @@ function AOHGameMode:OnDamageDealt(damageTable)
 							ParticleManager:ReleaseParticleIndex(iParticleID)													
 							SendOverheadEventMessage(nil, OVERHEAD_ALERT_BLOCKED, victim, 0, nil)
 							dmg_dealt = limit_hp
+							damageTable.damage = limit_hp	
 							--return false							
 						end	
 					end	

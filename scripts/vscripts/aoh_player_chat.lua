@@ -47,14 +47,30 @@ function AOHGameMode:OnPlayerChat(keys)
 			Notifications:TopToAll({text="You Need to Play Normal Map to activate Hard Mode.", style={color="yellow"}, duration=15})
 		end	
 	end
+	function _CreateFakeCourier2(hero)
+		local origin = Vector(-2958, 2031, -969) + RandomVector(100)
+		local courier_replacement = CreateUnitByName("npc_courier_replacement", origin, true, hero, hero:GetOwner(), hero:GetTeamNumber())
+		courier_replacement:SetControllableByPlayer(hero:GetPlayerID(), true)
+		courier_replacement:SetTeam(hero:GetTeamNumber())
+		courier_replacement:SetOwner(hero)
+		--self._nPlayerHelp = courier_replacement
+	
+		courier_replacement:AddNewModifier(courier_replacement, nil, "modifier_mjz_fake_courier", {})
+		local playerID = hero:GetPlayerID()
+		local player = hero:GetPlayerOwner()
+		-- local courier = PlayerResource:GetNthCourierForTeam(playerID, DOTA_TEAM_GOODGUYS) 
+	
+		
+	end
+
 	if keys.text == "-alle" and (not self._endlessMode or not self._doubleMode) and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		local player_count = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) 
 		local playerID = keys.playerid
 		local hero = PlayerResource:GetSelectedHeroEntity(playerID)		
 		self._endlessMode = true
 		self._doubleMode = true
-		_G._normal_mode = true		
-		Notifications:TopToAll({text="Part 2 normal, Double and Extra Enabled", style={color="red"}, duration=5})
+		_G._normal_mode = true	
+		Notifications:TopToAll({text="Part 2 normal, Double", style={color="red"}, duration=5})
 		self._flPrepTimeBetweenRounds = 12
 		self:_ReadGameConfiguration()
 		if player_count == 1 and not self._singleMode then
@@ -516,21 +532,7 @@ function AOHGameMode:OnPlayerChat(keys)
 
 
 
-	function _CreateFakeCourier2(hero)
-		local origin = Vector(-2958, 2031, -969) + RandomVector(100)
-		local courier_replacement = CreateUnitByName("npc_courier_replacement", origin, true, hero, hero:GetOwner(), hero:GetTeamNumber())
-		courier_replacement:SetControllableByPlayer(hero:GetPlayerID(), true)
-		courier_replacement:SetTeam(hero:GetTeamNumber())
-		courier_replacement:SetOwner(hero)
-		--self._nPlayerHelp = courier_replacement
-	
-		courier_replacement:AddNewModifier(courier_replacement, nil, "modifier_mjz_fake_courier", {})
-		local playerID = hero:GetPlayerID()
-		local player = hero:GetPlayerOwner()
-		-- local courier = PlayerResource:GetNthCourierForTeam(playerID, DOTA_TEAM_GOODGUYS) 
-	
-		
-	end
+
 
 
 	if keys.text == "-double" and not self._doubleMode and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then

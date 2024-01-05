@@ -16892,8 +16892,8 @@
 	"ItemDroppable" 				"1"
 	"ItemPurchasable" 				"1"
 	"ItemSellable"					"1"
-	"ItemStockInitial"				"1"
-	"ItemStockMax"					"10"
+	"ItemStockInitial"				"6"
+	"ItemStockMax"					"15"
 	"ItemStockTime"					"999999.0"
 	"IsTempestDoubleClonable"	   "0"
 	"ItemShareability"			  "ITEM_NOT_SHAREABLE"
@@ -17527,7 +17527,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage_reduction"			"4"
+			"damage_reduction"			"4 5"
 		}
 		"02"
 		{
@@ -17547,17 +17547,17 @@
 		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_health_regen"		"34 284"
+			"bonus_health_regen"		"124 584"
 		}
 		"06"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_health"				"400 4200"
+			"bonus_health"				"850 9200"
 		}
 		"07"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_damage_pct"			"10"
+			"bonus_damage_pct"			"10 25"
 		}
 	}
 }
@@ -17592,7 +17592,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage_reduction"			"4"
+			"damage_reduction"			"4 5"
 		}
 		"02"
 		{
@@ -17612,17 +17612,17 @@
 		"05"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_health_regen"		"34 284"
+			"bonus_health_regen"		"124 584"
 		}
 		"06"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_health"				"400 4200"
+			"bonus_health"				"850 9200"
 		}
 		"07"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_damage_pct"			"10"
+			"bonus_damage_pct"			"10 25"
 		}
 	}
 }	

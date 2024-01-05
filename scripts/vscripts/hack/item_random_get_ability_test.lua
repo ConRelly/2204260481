@@ -86,6 +86,7 @@ function GetRandomAbilityName( hero )
         "dzzl_good_juju",
         "spectre_custom_dispersion_boss",
         "lion_custom_finger_of_death",
+        "legion_commander_custom_duel",
         --"back_in_time",
         --"medusa_custom_stone_arrows",
         --"mjz_slark_essence_shift",

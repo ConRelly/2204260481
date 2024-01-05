@@ -115,7 +115,7 @@ if IsServer() then
 		parent:AddNewModifier(self:GetCaster(), self:GetAbility(), MODIFIER_BUFF_NAME, {})
 		parent:AddNewModifier(self:GetCaster(), self:GetAbility(), MODIFIER_DEBUFF_NAME, {})
 
-		self:StartIntervalThink(parent:GetSecondsPerAttack())
+		self:StartIntervalThink(parent:GetSecondsPerAttack(false)) -- false/true is for ignoring temporary attack speed buff. GetSecondsPerAttack(ignoreTempAttackSpeed: bool): float
 	end
 
 	function modifier_class:OnRefresh(table)
@@ -145,7 +145,7 @@ if IsServer() then
 
 		self:GetParent():PerformAttack(target, true, true, true, true, true, false, false)
 		
-		self:StartIntervalThink(self:GetParent():GetSecondsPerAttack() - 0.03)
+		self:StartIntervalThink(self:GetParent():GetSecondsPerAttack(false) - 0.03)
 	end
 	
 	function modifier_class:OnDestroy()

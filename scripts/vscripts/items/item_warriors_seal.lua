@@ -78,7 +78,7 @@ end
 
 function modifier_item_warriors_seal:DeclareFunctions()
 	return {
-		MODIFIER_EVENT_ON_ATTACKED,
+		MODIFIER_PROPERTY_AVOID_DAMAGE,
 	}
 end
 function modifier_item_warriors_seal:IsPurgable()
@@ -90,7 +90,7 @@ function modifier_item_warriors_seal:RemoveOnDeath()
 end
 
 if IsServer() then
-function modifier_item_warriors_seal:OnAttacked(keys)
+--[[ function modifier_item_warriors_seal:GetModifierAvoidDamage(keys)
 	local attacker = keys.attacker
 	local victim = keys.target
 	if attacker ~= self.parent and self.parent == victim then
@@ -111,7 +111,58 @@ function modifier_item_warriors_seal:OnAttacked(keys)
 			self:DecrementStackCount()
 		end
 	end
+end ]]
+
+function modifier_item_warriors_seal:GetModifierAvoidDamage(keys)
+    local attacker = keys.attacker
+    local victim = keys.target
+	if self:GetAbility() then
+		if attacker ~= self.parent and self.parent == victim and keys.inflictor ~= self:GetAbility() then
+			local stack = self:GetStackCount()
+			if stack < 1 then
+				return 0
+			end
+			local damage_type = keys.damage_type
+			local damage_flag = keys.damage_flags
+			if not damage_flag then
+				damage_flag = DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
+			else
+				damage_flag = damage_flag + DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION	
+			end
+			if not damage_type then
+				damage_type = DAMAGE_TYPE_PHYSICAL
+			end	
+			local damage_reduction = self:GetAbility():GetSpecialValueFor("damage_reduction")
+			local damageTaken = math.floor(keys.original_damage) -- Use keys.original_damage for damage before reductions
+			local damageReduction = damage_reduction * self:GetStackCount() * 0.01
+
+			if not self.parent:HasModifier("modifier_item_warriors_seal_buff") then
+				if self:IsNull() then return end
+				self:Destroy()
+				return 0
+			end
+
+			
+			ParticleManager:CreateParticle("particles/econ/items/medusa/medusa_daughters/medusa_daughters_mana_shield_shell_impact_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
+
+			local postReductionDamage = damageTaken * (1 - damageReduction)			
+			local damageTable = {
+				victim = self.parent,
+				attacker = attacker,
+				damage = postReductionDamage,
+				damage_type = damage_type,  -- Adjust the damage type as needed
+				damage_flags = damage_flag,
+				ability = self:GetAbility(),
+		
+			}
+
+			ApplyDamage(damageTable)
+			self:DecrementStackCount()
+			return 1
+		end
+	end
 end
+
 
 function modifier_item_warriors_seal:OnCreated()
 	local ability = self:GetAbility()
