@@ -294,9 +294,8 @@ function modifier_class:OnIntervalThink()
                                                               
                     return nil           
                 end
-                --local enemy_list = nil
-                --if IsServer() then
                 if caster == nil or caster == false or pos == nil or pos == false or target_ability == false or target_ability == nil then return nil end
+                
                 local enemy_list = FindUnitsInRadius(caster:GetTeamNumber(), pos, nil, radius_auto, 
                         DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, target_ability:GetAbilityTargetFlags(),
                         FIND_ANY_ORDER, false) 

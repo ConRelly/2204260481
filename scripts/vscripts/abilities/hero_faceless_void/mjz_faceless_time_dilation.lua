@@ -123,7 +123,7 @@ if IsServer() then
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
 		local slow = ability:GetSpecialValueFor('slow')
-		local attack_speed = parent:GetAttackSpeed() * (slow / 100.0)
+		local attack_speed = parent:GetAttackSpeed(false) * (slow / 100.0)
 		parent:SetStackCount(attack_speed)
 	end
 end

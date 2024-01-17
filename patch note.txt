@@ -2944,6 +2944,13 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
+* Fixed Juggernaut Zanto Gari and other 3 skills affected by same change in dota(void, omni).
+* Removed Blur from the "-extra" skill pool.
+
+
+
+
+
 
 
 ////////Self Note ////////////

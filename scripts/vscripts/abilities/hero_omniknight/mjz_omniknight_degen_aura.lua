@@ -70,7 +70,7 @@ end
 function modifier_class:OnIntervalThink()
 	if self:GetParent() and not self:GetParent():IsNull() then
 		local unit = self:GetParent()
-		self.attack_bonus_per = unit:GetAttackSpeed() * self.attack_bonus
+		self.attack_bonus_per = unit:GetAttackSpeed(false) * self.attack_bonus
 
 		--print(unit:GetAttackSpeed(), self.attack_bonus, self.attack_bonus_per)
 	end	

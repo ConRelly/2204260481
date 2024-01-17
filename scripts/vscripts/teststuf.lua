@@ -329,9 +329,9 @@ function GetRandomAbilityName( hero )
         --"skywrath_mage_mystic_flare",
         --"ogre_magi_ignite", 
         --"axe_berserkers_call", 
-        --"chen_penitence",    
-                                                       
-        "phantom_assassin_blur",
+        --"chen_penitence",                                                          
+       --"phantom_assassin_blur",
+       
         "custom_leap",       
         "ember_spirit_searing_chains",                   
         "beastmaster_inner_beast",     

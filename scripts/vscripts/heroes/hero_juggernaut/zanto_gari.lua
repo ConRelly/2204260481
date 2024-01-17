@@ -120,7 +120,7 @@ function zanto_gari:OnSpellStart(recastVector, warpVector, Interrupted)
 			if self:GetCaster():HasShard() then
 				attack_speed_multi = self:GetSpecialValueFor("attack_speed_multi") + (shard_as / 100)
 			end
-			local grace_time_as = (1 / caster:GetAttackSpeed()) / attack_speed_multi
+			local grace_time_as = (1 / caster:GetAttackSpeed(false)) / attack_speed_multi
 			local grace_time_duration = GameRules:GetGameModeEntity():GetMaximumAttackSpeed() / 10
 			local duration = self:GetSpecialValueFor("pop_damage_delay")
 			local shift_duration = duration * 1.5
