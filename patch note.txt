@@ -2948,6 +2948,12 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * Removed Blur from the "-extra" skill pool.
 
 
+* Added new Super Scepter effect for Necrophos
+* Fixed Mars Ultimate
+* Autocast now can use Death Pulse castrage instead of 500
+* Removed Shield hp bar above heroes (was lagging hard on numbers above 1 mil +)
+* Lowered void spirit resonant pulse shield gain(unitended mechanic to add more shield instead of refresh value made that to op)
+
 
 
 

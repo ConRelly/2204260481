@@ -1,7 +1,7 @@
 
 LinkLuaModifier("modifier_mjz_necrolyte_reapers_scythe","abilities/hero_necrolyte/mjz_necrolyte_reapers_scythe.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_necrolyte_reapers_scythe_stun","abilities/hero_necrolyte/mjz_necrolyte_reapers_scythe.lua", LUA_MODIFIER_MOTION_NONE)
-
+LinkLuaModifier("modifier_mjz_necrolyte_reapers_scythe_self","abilities/hero_necrolyte/mjz_necrolyte_reapers_scythe.lua", LUA_MODIFIER_MOTION_NONE)
 
 mjz_necrolyte_reapers_scythe = class({})
 local ability_class = mjz_necrolyte_reapers_scythe
@@ -13,6 +13,13 @@ end
 function ability_class:GetCastRange(vLocation, hTarget)
 	return self:GetSpecialValueFor('radius')
 end
+function ability_class:GetBehavior()
+	if self:GetCaster():HasModifier("modifier_super_scepter") then
+		return DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_AUTOCAST
+	else
+		return self.BaseClass.GetBehavior(self)
+	end
+end
 
 function ability_class:GetCooldown(iLevel)
 	if self:GetCaster():HasScepter() then
@@ -20,6 +27,50 @@ function ability_class:GetCooldown(iLevel)
 	end
 	return self:GetSpecialValueFor('cooldown')
 end
+--create an innate modifier for ability_class
+function ability_class:GetIntrinsicModifierName()
+	return "modifier_mjz_necrolyte_reapers_scythe_self"
+end
+modifier_mjz_necrolyte_reapers_scythe_self = class({})	
+function modifier_mjz_necrolyte_reapers_scythe_self:IsHidden() return true end
+function modifier_mjz_necrolyte_reapers_scythe_self:IsPurgable() return false end
+
+function modifier_mjz_necrolyte_reapers_scythe_self:OnCreated()
+	if IsServer() then
+		self:StartIntervalThink(6)  
+	end
+end
+
+
+function modifier_mjz_necrolyte_reapers_scythe_self:OnIntervalThink()
+	if IsServer() then
+		if self:GetAbility() == nil then return end
+		if not self:GetCaster():HasModifier("modifier_super_scepter") then return end
+		local ability = self:GetAbility()
+		local autocast = self:GetAbility():GetAutoCastState()
+		if autocast then
+			local caster = self:GetCaster()
+			if not caster:IsAlive() then return end
+			local enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, ability:GetSpecialValueFor('radius') + caster:GetCastRangeBonus(), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+			--add limit of max 3 enemies for autocast
+			local count = 0
+			for _, enemy in pairs(enemies) do
+				if not enemy:HasModifier('modifier_mjz_necrolyte_reapers_scythe') then
+					if count < 3 then	
+						ability:OnSpellStart_Super_Scepter(enemy)
+						count = count + 1
+					else
+						break
+					end
+				end
+			end
+			local timer = ability:GetSpecialValueFor('cooldown_Super_scepter') * self:GetCaster():GetCooldownReduction()
+			self:StartIntervalThink(timer) 
+		end	
+	end
+end
+
+
 
 if IsServer() then
 	function ability_class:OnSpellStart()
@@ -35,6 +86,19 @@ if IsServer() then
 		EmitSoundOn("Hero_Necrolyte.ReapersScythe.Target", target)
 
 	end
+	function ability_class:OnSpellStart_Super_Scepter(enemy)
+		local caster = self:GetCaster()
+		local ability = self
+		local target = enemy
+		local stun_duration = ability:GetSpecialValueFor("stun_duration") / 2
+
+		target:AddNewModifier(caster, ability, 'modifier_mjz_necrolyte_reapers_scythe', {})
+		target:AddNewModifier(caster, ability, 'modifier_mjz_necrolyte_reapers_scythe_stun', {duration = stun_duration})
+
+		EmitSoundOn("Hero_Necrolyte.ReapersScythe.Cast", caster)
+		EmitSoundOn("Hero_Necrolyte.ReapersScythe.Target", target)
+
+	end	
 end
 
 -----------------------------------------------------------------------------------------
@@ -49,7 +113,7 @@ function modifier_class:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 
 function modifier_class:GetEffectName()
 	-- return "particles/units/heroes/hero_necrolyte/necrolyte_scythe.vpcf"
-	return "particles/econ/items/necrolyte/necro_sullen_harvest/necro_ti7_immortal_scythe.vpcf"
+	return "particles/econ/items/necrolyte/necro_sullen_harvest/necro_ti7_immortal_scythe.vpcf"	
 end
 function modifier_class:GetEffectAttachType()
 	return PATTACH_ABSORIGIN_FOLLOW
@@ -72,10 +136,6 @@ if IsServer() then
 		self:_FireEffect_Start()
 		self:_FireEffect_Orig()
 
-		-- Timers:CreateTimer(stun_duration, function()
-		-- 	self:_ApplyDamage()
-		-- 	self:Destroy()
-		-- end)
 		self:StartIntervalThink(stun_duration)
 	end
 

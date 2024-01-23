@@ -11,26 +11,19 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"lua_abilities/mars_arena_of_blood_lua/mars_arena_of_blood_lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityTextureName"			"mars_arena_of_blood_lua"
 		"LevelsBetweenUpgrades"         "10"
 		"FightRecapLevel"				"2"
 		"MaxLevel"						"5"
-		"precache"
-		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_mars.vsndevts"
-			"particle"	"particles/units/heroes/hero_mars/mars_arena_of_blood.vpcf"
-			"particle"	"particles/units/heroes/hero_mars/mars_arena_of_blood_spear.vpcf"
-			"particle"	"particles/units/heroes/hero_mars/mars_arena_of_blood_impact.vpcf"
-		}
 		
 		// Ability General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
  		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		//"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
 		// Ability Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -41,7 +34,13 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"60"
 		"AbilityManaCost"				"200"
-
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_mars.vsndevts"
+			"particle"	"particles/units/heroes/hero_mars/mars_arena_of_blood.vpcf"
+			"particle"	"particles/units/heroes/hero_mars/mars_arena_of_blood_spear.vpcf"
+			"particle"	"particles/units/heroes/hero_mars/mars_arena_of_blood_impact.vpcf"
+		}
 		// Damage
 		//-------------------------------------------------------------------------------------------------------------
 

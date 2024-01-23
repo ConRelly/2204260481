@@ -3801,8 +3801,9 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_necrolyte_heartstopper_aura_intelligence"	"+{s:value} Heartstopper Aura Intelligence Damage"	
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe"					"Reaper's Scythe"
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_Description"		"Stun the enemy, and then based on the caster intelligence value multiples of damage.
-	<h1><font color='#E51604'>Death Proximity :</font></h1>Reaper's Scythe deals %health_divide_dmg_tooltip%%% bonus damage for every 1%% of Health the enemy is missing."
+	<h1><font color='#E51604'>Death Proximity :</font></h1>Reaper's Scythe deals %health_divide_dmg_tooltip%%% bonus damage for every 1%% of Health the enemy is missing. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Now can be toggled(auocast) to attack all enemies(max 3) in cast rage every %cooldown_Super_scepter% seconds(CDR-Yes)."
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_scepter_description"	  "Reduces cooldown."
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_Note"            "Stun from SS effect have half duration"
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_Lore"			"The amount of death and suffering in the air increases the power of the Necrophos's plague magic."
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_radius"					"Cast Range: "
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_base_damage"	   			"Base Damage: "
@@ -9981,6 +9982,7 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 		"DOTA_Tooltip_modifier_mars_arena_of_blood_lua_buff"				"Arena Of Blood"
 		"DOTA_Tooltip_modifier_mars_arena_of_blood_lua_buff_Description"	"+%dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% Health Regen"
 
+		"npc_dota_mars_arena_of_blood_lua_soldier"                          "Mars Arena Soldier"
 		"DOTA_Tooltip_ability_dark_willow_shadow_realm_lua"					"Shadow Realm"
 		"DOTA_Tooltip_ability_dark_willow_shadow_realm_lua_Description"		"Dark Willow recedes into the shadows, becoming untargetable.  Her next attack has increased attack range and deals bonus magic damage, and will end Shadow Realm. Damage scales based on how long she remains under the effects of Shadow Realm, the maximum being reached after %max_damage_duration% seconds.
 		<font color='#39CEFE'>Shadow Cleanse: Applies a strong dispel when you enter in shadow realm.</font>\n<h1><font color='#DE3163'>Super Scepter</font></h1>Shadow Realm has %ss_chance%%% chance to Crit(Base = %crit_power%%%) on every attack. Status Resistance will Increases your final crit by your Base crit power (Pres Alt for details)."

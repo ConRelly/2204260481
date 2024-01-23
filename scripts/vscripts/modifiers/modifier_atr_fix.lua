@@ -44,6 +44,7 @@ end
 
 local function settings()
 	SendToConsole("dota_hud_healthbars 1")-- too much health causes lags
+    SendToConsole("dota_health_bar_shields 0")-- too much health causes lags
 	SendToConsole("dota_hud_disable_damage_numbers true")-- isnt affected by damage filter, and thus useless
 end
 
