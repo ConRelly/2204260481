@@ -45,7 +45,6 @@ end
 function modifier_mjz_necrolyte_reapers_scythe_self:OnIntervalThink()
 	if IsServer() then
 		if self:GetAbility() == nil then return end
-		if not self:GetCaster():HasModifier("modifier_super_scepter") then return end
 		local ability = self:GetAbility()
 		local autocast = self:GetAbility():GetAutoCastState()
 		if autocast then
@@ -65,6 +64,7 @@ function modifier_mjz_necrolyte_reapers_scythe_self:OnIntervalThink()
 				end
 			end
 			local timer = ability:GetSpecialValueFor('cooldown_Super_scepter') * self:GetCaster():GetCooldownReduction()
+			if not caster:HasModifier("modifier_super_scepter") then timer = 12 end
 			self:StartIntervalThink(timer) 
 		end	
 	end

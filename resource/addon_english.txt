@@ -3803,7 +3803,7 @@
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_Description"		"Stun the enemy, and then based on the caster intelligence value multiples of damage.
 	<h1><font color='#E51604'>Death Proximity :</font></h1>Reaper's Scythe deals %health_divide_dmg_tooltip%%% bonus damage for every 1%% of Health the enemy is missing. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Now can be toggled(auocast) to attack all enemies(max 3) in cast rage every %cooldown_Super_scepter% seconds(CDR-Yes)."
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_scepter_description"	  "Reduces cooldown."
-	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_Note"            "Stun from SS effect have half duration"
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_Note0"            "Stun from SS effect have half duration, If you acquire a temporary Super Scepter (SS) buff, the SS effect will persist(autocast will remain on), but the cooldown will be set to a fixed 12 seconds(goes back to normal if gain SS)."
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_Lore"			"The amount of death and suffering in the air increases the power of the Necrophos's plague magic."
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_radius"					"Cast Range: "
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_base_damage"	   			"Base Damage: "
