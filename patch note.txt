@@ -2955,6 +2955,8 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * Lowered Void Spirit Resonant Pulse shield gain(unitended mechanic to add more shield instead of refresh value made that to op)
 
 
+* Fixed kingsBane echo not working.
+
 
 
 

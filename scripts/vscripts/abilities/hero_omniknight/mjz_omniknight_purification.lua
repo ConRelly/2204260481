@@ -82,6 +82,6 @@ function modifier_class:OnIntervalThink()
 	local unit = self:GetParent()
 	self.attack_bonus_per = unit:GetAttackSpeed(false) * self.attack_bonus
 
-	-- print(unit:GetAttackSpeed(), self.attack_bonus, self.attack_bonus_per)
+	-- print(unit:GetAttackSpeed(false), self.attack_bonus, self.attack_bonus_per)
 end
 

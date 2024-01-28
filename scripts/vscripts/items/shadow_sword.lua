@@ -339,7 +339,7 @@ function modifier_kingsbane_echo_haste:OnCreated()
 		self.duration = self:GetAbility():GetSpecialValueFor("duration")
 		local max_hits = 2
 		self:SetStackCount(max_hits)
-		self.attack_speed_buff = math.max(self:GetAbility():GetSpecialValueFor("attack_speed_buff"), self.parent:GetIncreasedAttackSpeed() * 3)
+		self.attack_speed_buff = math.max(self:GetAbility():GetSpecialValueFor("attack_speed_buff"), self.parent:GetIncreasedAttackSpeed(false) * 3)
 	end
 end
 function modifier_kingsbane_echo_haste:OnRefresh() self:OnCreated() end

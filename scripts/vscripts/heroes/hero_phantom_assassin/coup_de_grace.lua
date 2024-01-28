@@ -298,7 +298,7 @@ function modifier_triple_blow_haste:OnCreated()
 	local item = self:GetAbility()
 	self.parent = self:GetParent()
 	if item then
-		local current_speed = self.parent:GetIncreasedAttackSpeed()
+		local current_speed = self.parent:GetIncreasedAttackSpeed(false)
 		current_speed = current_speed * 2
 
 		local max_hits = item:GetSpecialValueFor("max_hits")

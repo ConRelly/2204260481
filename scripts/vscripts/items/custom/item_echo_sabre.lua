@@ -290,7 +290,7 @@ function modifier_imba_echo_rapier_haste:OnCreated()
 	self.parent = self:GetParent()
 	if item then
 		self.slow_duration = item:GetSpecialValueFor("slow_duration")
-		local current_speed = self.parent:GetIncreasedAttackSpeed()
+		local current_speed = self.parent:GetIncreasedAttackSpeed(false)
 		if item:GetName() == "item_imba_reverb_rapier" then
 			current_speed = current_speed * 3
 		else

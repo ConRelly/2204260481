@@ -4523,7 +4523,7 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 	
 	"DOTA_Tooltip_ability_tiny_tree_grab_bat_increase"						"BASE ATTACK TIME Reduction:"
 
-	"DOTA_Tooltip_ability_tiny_grow_attack_speed_reduction"					"%ATTACK SPEED LIMIT INCREASE:"
+	"DOTA_Tooltip_ability_tiny_grow_attack_speed_reduction"					"%ATTACK SPEED INCREASE:"
 
 	"DOTA_Tooltip_ability_mjz_treant_natures_guise"					"Nature's Guise"
 	"DOTA_Tooltip_ability_mjz_treant_natures_guise_Description"		"Blessed by nature, increases maximum health and health regen and movement speed. All ability stats are increased by %bonus_lvl_ptc%%% for each lvl you have."
