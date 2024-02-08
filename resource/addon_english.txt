@@ -4356,6 +4356,9 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 	"DOTA_Tooltip_ability_mjz_spectre_haunt_Description"		"Haunt illusions take less damage, They move at 650 absolute speed and ignore terrain. At any moment during the duration, Spectre can use Reality to exchange places of a given haunt"
 	"DOTA_Tooltip_ability_mjz_spectre_haunt_scepter_description"			"Grants new ability: Shadow Step. Allows you to perform a single target unit Haunt"
 	"DOTA_Tooltip_ability_mjz_spectre_haunt_Lore"				"At the height of combat, Mercurial's physical manifestation shatters, and the shadowy pieces haunt those who still cling to life"
+	
+	"DOTA_Tooltip_ability_special_bonus_unique_spectre_2_2"	"+{s:value} Desolate Damage"
+
 	//"DOTA_Tooltip_ability_mjz_spectre_haunt_Note0"				"Illusions are uncontrollable"
 	"DOTA_Tooltip_ability_mjz_spectre_haunt_illusion_duration"	"Illusion Duration: "
 	"DOTA_Tooltip_ability_mjz_spectre_haunt_illusion_count"		"Illusion Count: "
@@ -4363,6 +4366,8 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 	"DOTA_Tooltip_ability_mjz_spectre_haunt_tooltip_illusion_total_damage_incoming"		"%Illusion Damage Taken: "
 	//"DOTA_Tooltip_ability_mjz_spectre_haunt_illusion_heal_damage_per"		"%Illusion Heal Damage: "
 	//"DOTA_Tooltip_ability_mjz_spectre_haunt_hero_heal_damage_per"			"%Hero Heal Damage: "
+
+
 
 	"DOTA_Tooltip_ability_mjz_spectre_haunt_single"						 "Shadow Step"
 	"DOTA_Tooltip_ability_mjz_spectre_haunt_single_Description"			 "Allows you to perform a single target unit Haunt."
@@ -9909,7 +9914,8 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 
 		"DOTA_Tooltip_ability_draks_unholy_strength"									"GameTime Power"
 		"DOTA_Tooltip_ability_draks_unholy_strength_Description"						"Gains Regen, Total outgoing dmg, heal amp, min speed, cdr(with a limit) for every minute that this game runs (respects pauses), starts on hero picking stage.
-		Has no bonus until min 90(cdr starts from 100) of the game"	
+		Has no bonus until min 90 of the game(cdr starts from min 100 and has a cap of 90%)"	
+		//"DOTA_Tooltip_ability_draks_unholy_strength_Note0"                              "CDR bonus has an "
 
 		"DOTA_Tooltip_ability_aghanim_shard_attack"									 "Shard Attack"
 		"DOTA_Tooltip_ability_aghanim_shard_attack_Description"						 "When channeling spawns crystal shards that explode on impact with an enemy"
@@ -10291,7 +10297,7 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 		"npc_boss_randomstuff_aiolos_demo"									   "AIOLOS (GOD)Demo version"
 		"npc_boss_kobold_dragonspawn"											"Dragon Spawn (BOSS)"
 		"npc_boss_guesstuff_Moran"											   "Moran(GOD)"
-
+		"npc_boss_cosmos"                                                      "COSMOS(GOD)"
 		"DOTA_Tooltip_modifier_underdog"										 "Underdog Buff"
 		"DOTA_Tooltip_modifier_underdog_Description"							 "Acquired by the less popular heroes on their first death after lvl 35, increase the following stats by: <font color='#05DDEF'>%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Damage</font>, <font color='#10DE33'>%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% All Stats</font> and <font color='#DE9619'>%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% Attack Damage</font>"
 		"DOTA_Tooltip_modifier_phys"											 "Panoply"
@@ -10883,6 +10889,60 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 	"DOTA_Tooltip_modifier_armor_reduction_bash_stacks_Description"            "Gives %dMODIFIER_PROPERTY_TOOLTIP% to your hero Base damage(white) and Bash now deals %dMODIFIER_PROPERTY_TOOLTIP2% bonus Damage"
 
 
+//test
+		"DOTA_Tooltip_ability_cosmos_asteroid"										"Galactic Asteroids"
+		"DOTA_Tooltip_ability_cosmos_asteroid_Description"							"Cosmos summons a strike zone with a radius of %strike_zone_radius% units at his location, causing asteroids to rain down from the sky. Each asteroid deals damage and stuns enemies within a certain radius. If an enemy is affected by Cosmic Mist, the stun duration is doubled."
+		"DOTA_Tooltip_ability_cosmos_asteroid_impact_radius"						"RADIUS:"
+		"DOTA_Tooltip_ability_cosmos_asteroid_impact_damage"						"DAMAGE:"
+		"DOTA_Tooltip_ability_cosmos_asteroid_stun_duration"						"STUN DURATION:"
+		"DOTA_Tooltip_ability_cosmos_asteroid_Note0"                                "Damage increase by 2k for each 1mill missing hp"
+
+		"DOTA_Tooltip_ability_cosmos_galactic_stars"                               	"Galactic Stars"
+		"DOTA_Tooltip_ability_cosmos_galactic_stars_Description"					"<h1>Passive: Oldest One</h1> Cosmos is constantly orbited by %stars% Stars, each doing a full circumference in %time% seconds. Each Star deals damage to enemies that come into contact with them, some damage depends on the maximum mana of Cosmos.\n<h1> <h1>Active: The One</h1> Cosmos expands his Stars for %duration% seconds, rotating them at a high but decaying speed, and increasing their total damage by %damage_pct%%%. After the end of an active ability duration or recast, Cosmos commands the stars to retract, granting him %movespeed%%% bonus movement speed for %movespeed_duration% seconds."
+		"DOTA_Tooltip_ability_cosmos_galactic_stars_damage"							"STAR BASE DAMAGE:"
+		"DOTA_Tooltip_ability_cosmos_galactic_stars_mana_damage_pct"				"%STAR MANA DAMAGE:"
+		"DOTA_Tooltip_ability_cosmos_galactic_stars_radius"							"DISTANCE TO STARS:"
+		"DOTA_Tooltip_ability_cosmos_galactic_stars_outer_limit"					"ACTIVE DISTANCE TO STARS:"
+		"DOTA_Tooltip_ability_cosmos_galactic_stars_speed_multiplier"				"ACTIVE SPEED MULTIPLIER:"
+
+
+		"DOTA_Tooltip_ability_cosmos_space_mist"									"Space Mist"
+		"DOTA_Tooltip_ability_cosmos_space_mist_Description"						"Cosmos causes mist straight from the galaxy, being in it enemies have miss chance %miss_chance%%%, and also slows and their magic resistance decreases."	
+		"DOTA_Tooltip_ability_cosmos_space_mist_duration"							"DURATION:"						
+		"DOTA_Tooltip_ability_cosmos_space_mist_radius"								"RADIUS:"
+		"DOTA_Tooltip_ability_cosmos_space_mist_movespeed_slow_pct"					"%MOVESPEED SLOW:"
+		"DOTA_Tooltip_ability_cosmos_space_mist_magical_resistance_reduction"		"%MAGICAL RESISTANCE REDUCTION:"
+		
+		"DOTA_Tooltip_ability_cosmos_cosmic_strike"									"First Firmament Voice"
+		"DOTA_Tooltip_ability_cosmos_cosmic_strike_Description"						"Cosmos exhales a wave of cosmic energy in the target direction, dealing magic damage to enemies within its path, slowing them for %slow_duration% seconds and, if they are within the radius of stars, stunning and knocking them back."
+		"DOTA_Tooltip_ability_cosmos_cosmic_strike_damage"							"DAMAGE:"
+		"DOTA_Tooltip_ability_cosmos_cosmic_strike_slow"							"%SLOWING:"
+
+//t
+		"DOTA_Tooltip_ability_cosmos_space_warp"                                          "Space Warp"
+		"DOTA_Tooltip_ability_cosmos_space_warp_Description"                              "Swaps the coordinates of space in the entire universe, entangling the movements of enemy creatures."
+		"DOTA_Tooltip_ability_cosmos_space_warp_tooltip_duration"                         "DURATION:"
+		"DOTA_Tooltip_ability_cosmos_space_warp_bonus_damage_outgoing"                    "%DAMAGE REDUCTION:"
+
+		"DOTA_Tooltip_ability_cosmos_jumper"                                              "Cosmos Jumper"
+		"DOTA_Tooltip_ability_cosmos_jumper_Description"                                  "If a unit is selected, then after a short delay, it changes their places."
+		"DOTA_Tooltip_ability_cosmos_jumper_tooltip_delay"                                "DELAY:"
+
+		"DOTA_Tooltip_ability_cosmos_q_continuum"                                         "Dimensions of Continuum"
+		"DOTA_Tooltip_ability_cosmos_q_continuum_Description"                             "Creates a region of space with curved coordinates, slowing down enemies, entangling their movement and causing serious damage."
+		"DOTA_Tooltip_ability_cosmos_q_continuum_duration"                                "DURATION:"
+		"DOTA_Tooltip_ability_cosmos_q_continuum_radius"                                  "RADIUS:"
+		"DOTA_Tooltip_ability_cosmos_q_continuum_damage"                                  "DAMAGE:"
+
+		"DOTA_Tooltip_ability_cosmos_first_fundamental"                                   "Space Funnel"
+		"DOTA_Tooltip_ability_cosmos_first_fundamental_Description"                       "All enemies in a small radius from the hero will fall to him through the space funnel."
+		"DOTA_Tooltip_ability_cosmos_first_fundamental_stun_duration"                     "STUN DURATION:"
+		"DOTA_Tooltip_ability_cosmos_first_fundamental_radius"                            "RADIUS:"
+
+		"DOTA_Tooltip_ability_cosmos_cosmos_power"                                        "Cosmos Power"
+		"DOTA_Tooltip_ability_cosmos_cosmos_power_Description"                            "Each hit will deal a proportionate damage from maximum mana."
+		"DOTA_Tooltip_ability_cosmos_cosmos_power_mana_pool_damage_pct"                   "%MANA DAMAGE:"
+		"DOTA_Tooltip_ability_cosmos_cosmos_power_warp_duration"                          "SLOWING DURATION:"
 
 	}
 }

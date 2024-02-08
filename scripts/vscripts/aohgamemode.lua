@@ -69,7 +69,6 @@ require("lib/mys")
 require("lib/uless")
 
 
-
 _G.mHackGameMode = HackGameMode()
 
 local MONSTER_CONFIG_ORIGIN = "aoh2_config.txt"

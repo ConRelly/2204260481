@@ -16451,6 +16451,154 @@
 		}
 	}
 
+//test
+"npc_boss_cosmos"
+{
+	"Model"					 "models/heroes/hero_cosmos/cosmos.vmdl"  // Model.
+	"BaseClass"				 "npc_dota_creature"
+	"UnitLabel"				 "randomskill"
+	//"vscripts"				  "bosses/attack_move.lua"
+	"SoundSet"					"Hero_Oracle"
+	"IdleSoundLoop"				"Hero_Oracle.IdleLoop"
+	"DisableWearables"				  "1"
+	"Level"					 "99"
+	"ModelScale"				"2.9"
+	"CanBeDominated"			"0"
+	"ConsideredHero"			"1"
+	"HasInventory"			  "1"
+	"precache"
+	{
+		"particle_folder"		"particles/units/heroes/hero_oracle"		
+	}
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_oracle.vsndevts"	
+
+	"Ability1"				  "leesin_dragons_rage"		 // Ability 2
+	"Ability2"				  "cosmos_galactic_stars"
+	"Ability3"				  "zoom_charge_of_darkness"		   // Ability 3
+	//"Ability4"				  "darkrider_alter_reverse"
+	//"Ability5"				  "darkrider_heartbeat"
+	//"Ability6"				  "darkrider_time_aura"
+	"Ability7"				  "custom_vitality_rend_2"
+	"Ability8"				  "bloodseeker_thirst_2"
+	"Ability9"				  "flash_backtrack"
+	"Ability10"				 "jotaro_absolute_defense"
+	"Ability11"				 "ability_absolute_no_cc"
+	"Ability12"				 "siltbreaker_kraken_shell8"
+	"Ability13"				 "mjz_chaos_knight_chaos_strike_2"
+	//"Ability14"				 "aghanim_shard_attack"
+	//"Ability15"				 "aghanim_laser"
+	"Ability16"				 "draks_unholy_strength"
+	"Ability17"				 "custom_riki_blink_strike"
+	"Ability18"				 "creep_siege"	
+	"ArmorPhysical"			 "420"		 // Physical protection.
+	"MagicalResistance"		 "96"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"		   "34000"		// Damage range min.
+	"AttackDamageMax"		   "58000"	   // Damage range max.
+	"AttackRate"				"1.6"	   // Speed of attack.
+	"BaseAttackSpeed"		   "1300"
+	"AttackAnimationPoint"	  "0.2"	   // Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"9600"	  // Range within a target can be acquired.
+	"AttackRange"			   "350"	   // Range within a target can be attacked.
+	//"ProjectileModel"		   "particles/units/heroes/hero_clinkz/clinkz_searing_arrow.vpcf" // Particle system model for projectile.
+	//"ProjectileSpeed"		   "1100"	  // Speed of projectile.		  
+	"RingRadius"				"75"
+	"HealthBarOffset"		   "450"
+	"BountyXP"				  "0"	 // Experience earn.
+	"BountyGoldMin"			 "25"		// Gold earned min.
+	"BountyGoldMax"			 "30"		// Gold earned max.
+	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
+	"MovementSpeed"			 "600"	   // Speed.		   
+	"StatusHealth"			  "25500000"	  // Base health.
+	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
+	"StatusMana"				"90000"		   // Base mana.
+	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
+	"VisionDaytimeRange"		"9600"	  // Range of vision during day light.
+	"VisionNighttimeRange"	  "9600"	  // Range of vision at night time.
+	"TeamName"				  "DOTA_TEAM_BADGUYS"							// Team name.
+	"UnitRelationshipClass"	 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"Creature"
+	{
+		"DisableClumpingBehavior"   "1"
+		"DefaultState"				  "Invade"
+		"States"
+		{
+			"Invade"
+			{
+				"Name"						  "Invade"
+				"Aggression"					"100.0"
+				"Avoidance"					 "0.0"
+				"Support"					   "0.0"
+			}
+		}
+		"OffensiveAbilities"
+		{		   
+			"Ability1"
+			{
+			   "Name"			   "atomic_samurai_focused_atomic_slash"
+			   "AOE"				"6900"
+			   "Radius"			 "7000"
+			   "MinimumTargets"	 "0"			  
+			}
+			"Ability17"
+			{
+			   "Name"			   "custom_riki_blink_strike"
+			}								  
+			"Ability1"
+			{
+				"Name"			  "leesin_dragons_rage"
+			}
+		   
+			"Ability4"
+			{
+			   "Name"			   "darkrider_alter_reverse"
+			   "AOE"				"7200"
+			   "Radius"			 "7800"
+			   "MinimumTargets"	 "0"
+			}
+			//"Ability15"
+			//{
+			//   "Name"			   "aghanim_laser"
+			//   "AOE"				"1"
+			//   "Radius"			 "3000"
+			//   "MinimumTargets"	 "0"			  
+			//}			 
+			"Ability3"
+			{
+				"Name"			  "zoom_charge_of_darkness"
+			}			
+			"Ability14"
+			{
+			   "Name"			   "aghanim_shard_attack"
+			   "AOE"				"1"
+			   "Radius"			 "1200"
+			   "MinimumTargets"	 "0"
+			}
+			"Ability6"
+			{
+			   "Name"			   "darkrider_time_aura"
+			   "AOE"				"950"
+			   "Radius"			 "940"
+			   "MinimumTargets"	 "0"
+			}																	
+		}
+		"EquippedItems"
+		{
+			"Aghs"				  { "Item"		"item_mjz_assault_5" }
+			"Radiance"			  { "Item"		"item_mjz_butterfly_green_5" }
+			"Heart"				 { "Item"		"item_shivas_guard_2" }
+			"Unstoppable"		   { "Item"		"item_willbreaker" }
+			"Crit"				 { "Item"		"item_ultimate_crit" }
+			"Abystal Blade"		 { "Item"		"item_mjz_mjollnir_5" }
+			"Abystal Blade"		 { "Item"		"item_sphere_custom" }
+		}		
+
+	}
+}
+
+
+
 
 
 	"npc_dota_badguys_fillers_custom"

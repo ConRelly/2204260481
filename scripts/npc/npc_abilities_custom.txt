@@ -32089,7 +32089,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"40 160 420 890 1620 2450 3325"
-				"LinkedSpecialBonus"	"special_bonus_unique_spectre_2"
+				"LinkedSpecialBonus"	"special_bonus_unique_spectre_2_2"
 			}
 			"02"
 			{
@@ -32132,6 +32132,23 @@
 			}
 		}
 	}
+
+	"special_bonus_unique_spectre_2_2"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"1400"
+			}
+		}
+	}
+
+
 	"mjz_spectre_haunt"
 	{
 		"BaseClass"						"ability_lua"  //"ability_datadriven"
@@ -44163,5 +44180,242 @@
         "AbilityCooldown"           "0"
         "LevelsBetweenUpgrades"     "24"
     }
+
+//test
+	"cosmos_galactic_stars"
+	{
+		// Ability Technical Aspect
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/custom/cosmos_galactic_stars.lua"
+		"AbilityTextureName"			"custom/cosmos_galactic_stars"
+		"HasScepterUpgrade"				"1"
+		
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
+			"particle"	"particles/items2_fx/manta_phase.vpcf"
+		}
+		
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+		"MaxLevel"                      "1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"0"
+		"AbilityCastRange"				"9500"
+		
+		// Casting
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"25000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_damage_pct"		"50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"stars"					"3"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"time"					"20.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown"				"0.5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"525"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"creep_execute"			"25"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"outer_limit"			"1400"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"scepter_stars"			"1"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"			"10.0"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movespeed"			"120"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"movespeed_duration"			"7.0"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_pct"			"50"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"speed_multiplier"			"3.0"
+			}
+		}
+	}
+
+	"cosmos_space_mist"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/custom/cosmos_space_mist.lua"
+		"AbilityTextureName"			"custom/relative_strike"
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+ 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"9000"
+		"AbilityCastPoint"				"0.0"
+ 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"27 24 21 18"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200 250 265 280"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"6.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"300 325 350 375"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"miss_chance"		"20 30 40 50"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movespeed_slow_pct" "14 20 26 32"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"magical_resistance_reduction" "17 19 21 23"
+			}
+		}
+	}
+	"cosmos_asteroid"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/custom/cosmos_asteroid.lua"
+		"AbilityTextureName"            "custom/cosmos_asteroid"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		//"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		//"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"		
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"precache"
+		{
+			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
+			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
+			"particle"					"particles/stygian/cosmos_asteroid.vpcf"
+			"particle"					"particles/stygian/cosmos_asteroid_stomp_magical.vpcf"
+		}
+		"AbilityCastPoint"				"0.0"
+		"MaxLevel"                      "1"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"9000"
+		"AbilityCooldown"				"35"
+		"AbilityManaCost"				"100"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"land_time"				"0.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impact_radius"			"650"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"impact_damage"			"7000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"2"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_meteors"			"20"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strike_zone_radius"			"4500"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"missing_hp"			"0.2"
+			}									
+		}
+	}
+
+
 
 }
