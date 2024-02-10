@@ -15,16 +15,13 @@ function item_spellbook_destruction:GetAOERadius()
 	return self:GetSpecialValueFor("impact_radius") + (self:GetCaster():GetMaxMana()/30)
 end
 function item_spellbook_destruction:OnSpellStart()
-	self.ImpactRadius = self:GetSpecialValueFor("impact_radius") + (self:GetCaster():GetMaxMana()/30)
+	self.ImpactRadius = self:GetSpecialValueFor("impact_radius") + (self:GetCaster():GetMaxMana()*0.035)
 	-- Level 4 (and above?) pierces magic immunity
-	if self:GetLevel() >= 4 then
-		self.targetFlag = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
-	else
-		self.targetFlag = DOTA_UNIT_TARGET_FLAG_NONE
-	end
+	self.targetFlag = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
+
 	if not IsServer() then return end
 	self:GetCaster():EmitSound("DOTA_Item.MeteorHammer.Channel")
---	AddFOWViewer(self:GetCaster():GetTeam(), self:GetCursorPosition(), self.ImpactRadius, 3.8, false)
+	AddFOWViewer(self:GetCaster():GetTeam(), self:GetCursorPosition(), self.ImpactRadius, 3.8, false)
 
 	self.particle = ParticleManager:CreateParticleForTeam("particles/custom/items/spellbook/destruction/spellbook_destruction_cast_aoe.vpcf", PATTACH_WORLDORIGIN, self:GetCaster(), self:GetCaster():GetTeam())
 	ParticleManager:SetParticleControl(self.particle, 0, self:GetCursorPosition())
@@ -52,10 +49,10 @@ function item_spellbook_destruction:OnChannelFinish(bInterrupted)
 				self.particle3	= ParticleManager:CreateParticle("particles/custom/items/spellbook/destruction/spellbook_destruction_impact.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
 				ParticleManager:SetParticleControl(self.particle3, 0, self:GetCursorPosition() + Vector(0, 0, 0))
 				ParticleManager:SetParticleControl(self.particle3, 1, self:GetCursorPosition())
-				ParticleManager:SetParticleControl(self.particle3, 2, Vector(self.ImpactRadius, 1, 1))
+				ParticleManager:SetParticleControl(self.particle3, 2, Vector(self.ImpactRadius * 4, 1, 1))
 				ParticleManager:ReleaseParticleIndex(self.particle3)
 			
-				GridNav:DestroyTreesAroundPoint(self:GetCursorPosition(), self.ImpactRadius, true)
+				GridNav:DestroyTreesAroundPoint(self:GetCursorPosition(), self.ImpactRadius * 4, true)
 
 				EmitSoundOnLocationWithCaster(self:GetCursorPosition(), "DOTA_Item.MeteorHammer.Impact", self:GetCaster())
 
@@ -93,7 +90,7 @@ function modifier_spellbook_destruction_burn:IgnoreTenacity() return true end
 function modifier_spellbook_destruction_burn:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_spellbook_destruction_burn:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
-		self.burn_dps = self:GetAbility():GetSpecialValueFor("burn_dps")
+		self.burn_dps = (self:GetAbility():GetSpecialValueFor("burn_dps") / 100) * self:GetParent():GetMaxMana()
 		self.damageTable = {
 			victim = self:GetParent(),
 			damage = self.burn_dps,
@@ -113,9 +110,7 @@ end
 function modifier_spellbook_destruction_burn:CheckState()
 	local state = {}
 	-- Level 2 and above applies Break
-	if self ~= nil and self:GetAbility() ~= nil and not self:GetAbility():IsNull() and self:GetAbility():GetLevel() >= 2 then
-		state = {[MODIFIER_STATE_PASSIVES_DISABLED] = true}
-	end
+	state = {[MODIFIER_STATE_PASSIVES_DISABLED] = true}
 	return state
 end
 function modifier_spellbook_destruction_burn:DeclareFunctions()
@@ -123,10 +118,8 @@ function modifier_spellbook_destruction_burn:DeclareFunctions()
 end
 function modifier_spellbook_destruction_burn:GetModifierSpellAmplify_Percentage()
 	-- Level 3 and above reduces spell amp
-	if self ~= nil and self:GetAbility() ~= nil and not self:GetAbility():IsNull() and self:GetAbility():GetLevel() >= 3 then
-		return self:GetAbility():GetSpecialValueFor("spell_reduction_pct") * (-1)
-	end
-	return 0
+	
+	return self:GetAbility():GetSpecialValueFor("spell_reduction_pct") * (-1)
 end
 
 -------------------------------------
@@ -189,12 +182,13 @@ function modifier_spellbook_destruction_mana_drain:OnIntervalThink()
 		end
 		local mana_drain_per_interval = self.mana_drain_sec * self.mana_drain_interval
 		local mana_regen_red = self:GetCaster():GetManaRegen() * self.mana_drain_interval
-		self:GetCaster():Script_ReduceMana(mana_drain_per_interval + (mana_regen_red * 0.95), self:GetAbility())
+		self:GetCaster():Script_ReduceMana(mana_drain_per_interval + (mana_regen_red * 0.90), self:GetAbility())
 	end
 end
 function modifier_spellbook_destruction_mana_drain:DeclareFunctions()
 	return {MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE}
 end
+function modifier_spellbook_destruction_mana_drain:GetEffectName() return "particles/custom/items/pipe_of_dezun/pipe_of_dezun_magic_immune_avatar.vpcf" end
 function modifier_spellbook_destruction_mana_drain:GetModifierIncomingDamage_Percentage()
 	if self:GetAbility() then return self:GetParent():GetManaPercent() * (-1) end
 end

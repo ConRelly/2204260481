@@ -203,7 +203,7 @@ end
 function modifier_pipe_of_dezun:GetAttributes() return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE end
 function modifier_pipe_of_dezun:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD + DOTA_UNIT_TARGET_FLAG_INVULNERABLE end
 function modifier_pipe_of_dezun:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_FRIENDLY end
-function modifier_pipe_of_dezun:GetAuraDuration() return FrameTime() end
+function modifier_pipe_of_dezun:GetAuraDuration() return 0.5 end
 function modifier_pipe_of_dezun:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
 function modifier_pipe_of_dezun:GetModifierAura() return "modifier_pipe_of_dezun_aura" end
 
@@ -222,7 +222,7 @@ end
 function modifier_pipe_of_dezun_magic_immune_aura:GetAttributes() return MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE end
 function modifier_pipe_of_dezun_magic_immune_aura:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD + DOTA_UNIT_TARGET_FLAG_INVULNERABLE end
 function modifier_pipe_of_dezun_magic_immune_aura:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_FRIENDLY end
-function modifier_pipe_of_dezun_magic_immune_aura:GetAuraDuration() return FrameTime() end
+function modifier_pipe_of_dezun_magic_immune_aura:GetAuraDuration() return 0.5 end
 function modifier_pipe_of_dezun_magic_immune_aura:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
 function modifier_pipe_of_dezun_magic_immune_aura:GetModifierAura() return "modifier_pipe_of_dezun_magic_immune_buff" end
 function modifier_pipe_of_dezun_magic_immune_aura:GetAuraEntityReject(hEntity)

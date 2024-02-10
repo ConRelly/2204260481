@@ -316,10 +316,15 @@
 	"dota_tooltip_modifier_demonic_flaming_cape_up_radiance_flames_burn"		"SS: Demonic Power"	
 
 
-	"dota_tooltip_ability_item_spellbook_destruction"				"Spellbook: Destruction"
-	"dota_tooltip_ability_item_spellbook_destruction_description"	"<h1>Active: Destruction Mastery</h1>During the application, %mana_drain_pct_sec%%% of mana per second is burned and increases Damage Resistance in proportion to the percentage of available mana. Channaling: %abilitychanneltime% sec.<br>After successful use, it burns the remaining mana, converting it into additional magic damage.<br><br>Damage: х2 Max Mana<br>Additional magic damage per burned mana: 2<br><br>If the mana for a successful application is not enough, the owner falls asleep on %mana_drain_sleep% sec. An ally can wake it up by hitting the owner."
+	"Dota_Tooltip_ability_item_spellbook_destruction"				"Spellbook: Explosion"
+	//"Dota_Tooltip_ability_item_spellbook_destruction_description"	"<h1>Active: Destruction Mastery</h1>During the application, %mana_drain_pct_sec%%% of mana per second is burned and increases Damage Resistance in proportion to the percentage of available mana. Channaling: %abilitychanneltime% sec.<br>After successful use, it burns the remaining mana, converting it into additional magic damage.<br><br>Damage: х2 Max Mana<br>Additional magic damage per burned mana: 2<br><br>If the mana for a successful application is not enough, the owner falls asleep on %mana_drain_sleep% sec. An ally can wake it up by hitting the owner."
+	"Dota_Tooltip_ability_item_spellbook_destruction_description"	"<h1>Active: Explosion Mastery</h1>During the application, %mana_drain_pct_sec%%% of mana per second is burned and increases Damage Resistance in proportion to the percentage of available mana. Channaling: %abilitychanneltime% sec.<br>After successful use, it burns the remaining mana, converting it into additional magic damage.<br><br>Damage: 400 DPS<br>Burn Duration: 6 seconds<br>Stun Duration: 2 seconds<br>Burn brake: Yes<br>Impact Radius: %impact_radius% + 3.5% of your max mana <br>Burn reduce enemy Spell damage by: 50%<br>Sleep Duration on Insufficient Mana: 5 seconds<br><br>If the mana for a successful application is not enough, the owner falls asleep for %mana_drain_sleep% seconds. An ally can wake them up by hitting the owner."	
 	"DOTA_Tooltip_modifier_elder_titan_echo_stomp"					"Sleeping"
 	"DOTA_Tooltip_modifier_elder_titan_echo_stomp_Description"		""
+	"Dota_Tooltip_ability_item_spellbook_destruction_bonus_strength" 		"Bonus Str:"
+	"Dota_Tooltip_ability_item_spellbook_destruction_bonus_intellect"		"Bonus Int:"
+	"Dota_Tooltip_ability_item_spellbook_destruction_bonus_health_regen"	"Bonus HP Regen:"
+	"Dota_Tooltip_ability_item_spellbook_destruction_bonus_mana_regen"		"Bonus Mana Regen:"
 
 	"DOTA_Tooltip_ability_elder_titan_natural_order_magic_resistance_pct"	"%BASE RESIST REDUCTION(only on Spirit skill):"
 
@@ -10943,6 +10948,22 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 		"DOTA_Tooltip_ability_cosmos_cosmos_power_Description"                            "Each hit will deal a proportionate damage from maximum mana."
 		"DOTA_Tooltip_ability_cosmos_cosmos_power_mana_pool_damage_pct"                   "%MANA DAMAGE:"
 		"DOTA_Tooltip_ability_cosmos_cosmos_power_warp_duration"                          "SLOWING DURATION:"
+
+		"DOTA_Tooltip_ability_cosmos_world_devour"                                      "World Devour"
+		"DOTA_Tooltip_ability_cosmos_world_devour_Description"                          "<h1>Active: Devour</h1> This skill creates a gravitational force, pulling nearby enemies towards the center and causing significant damage. Additionally, it utilizes the maximum mana of enemies to restore health to Cosmos."
+		"DOTA_Tooltip_ability_cosmos_world_devour_radius"                               "RADIUS:"
+		"DOTA_Tooltip_ability_cosmos_world_devour_duration"                             "DURATION:"
+		"DOTA_Tooltip_ability_cosmos_world_devour_damage"  								"%DAMAGE BY MAX HEALTH:"
+		"DOTA_Tooltip_ability_cosmos_world_devour_Note0"                                "Damage increase by 1k for each 1mill missing hp"
+
+//blink strike
+		"DOTA_Tooltip_ability_katana_strike"                                                      "Shadow strike"
+		"DOTA_Tooltip_ability_katana_strike_Description"                                          "Teleports behind the target enemy unit, striking and knocking him in fast succession. After last strike is dealt makes the caster fade out of world for %duration% sec."      
+       	//"DOTA_Tooltip_ability_katana_strike_duration"                                             "BUFF DURATION:"
+		//"DOTA_Tooltip_ability_katana_strike_attack_speed_bonus"                                   "ATTACK SPEED BONUS:"
+		//"DOTA_Tooltip_ability_katana_strike_movespeed_bonus"                                      "%MOVESPEED BONUS"
+		"DOTA_Tooltip_ability_katana_strike_damage"                                               "Base Damage:"
+		"DOTA_Tooltip_ability_katana_strike_distance"                                   		  "Knockback Distance:"
 
 	}
 }

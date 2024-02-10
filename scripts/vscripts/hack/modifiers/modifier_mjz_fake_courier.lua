@@ -22,7 +22,7 @@ if IsServer() then
         if params.ability:GetName() == "item_tombstone" then
             -- Prevent the courier from continuing the channel
             if params.unit == self:GetParent() then
-                params.unit:Interrupt()
+                --params.unit:Interrupt()
             end
         end
     end

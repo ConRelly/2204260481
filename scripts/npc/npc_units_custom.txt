@@ -16381,7 +16381,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"damage_meter"
 		"Ability2"					"windrunner_windrun"
-		"Ability3"                  "ability_absolute_no_cc"
+		//"Ability3"                  "ability_absolute_no_cc"
 
 		// Armor
 		//----------------------------------------------------------------

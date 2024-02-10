@@ -20,6 +20,7 @@ function cosmos_galactic_stars:OnSpellStart()
 		caster:RemoveModifierByName("modifier_cosmos_galactic_stars_enhance")
 	else
 		caster:AddNewModifier(caster, self, "modifier_cosmos_galactic_stars_enhance", {duration = self:GetSpecialValueFor("duration")})
+		self:UseResources( false,false, false, true )
 		--self:EndCooldown()
 		--self:StartCooldown(6.0)
 		enchant_modif = 1		
@@ -149,7 +150,6 @@ function modifier_cosmos_galactic_stars_thinker:OnIntervalThink()
 	
 	if not caster:HasModifier("modifier_cosmos_galactic_stars_enhance") and enchant_modif == 1 then
 		caster:AddNewModifier(caster, ability, "modifier_cosmos_galactic_stars_enhance_speed", {duration = ability:GetSpecialValueFor("movespeed_duration")})
-		ability:UseResources( false,false, false, true )
 		enchant_modif = 0
 	end
 	

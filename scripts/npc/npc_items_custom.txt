@@ -4235,8 +4235,8 @@
 	}
 	"AbilityCastRange"				"100"
 	"AbilityCastPoint"				"0.0"
-	"AbilityChannelTime"			"6.0"
-	"ItemCost"						"99999"
+	"AbilityChannelTime"			"0.0"
+	"ItemCost"						"5000"
 	"ItemPurchasable"				"0"
 	"ItemShopTags"					"consumable"
 	"ItemQuality"					"consumable"
@@ -4247,6 +4247,9 @@
 	"ItemCastOnPickup"				"1"
 	"ItemKillable"					"0"
 }
+
+
+
 "item_tome_agi"
 {
 	"BaseClass"						"item_lua"
@@ -22509,27 +22512,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"12"
+				"bonus_strength"		"420"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"12"
+				"bonus_intellect"		"840"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_health_regen"	"5"
+				"bonus_health_regen"	"450"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"3"
+				"bonus_mana_regen"		"250"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"burn_dps"				"400"
+				"burn_dps"				"100"
 			}
 			"07"
 			{
@@ -22564,7 +22567,7 @@
 			"16"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_drain_interval"	"0.01"
+				"mana_drain_interval"	"0.03"
 			}
 			"17"
 			{
