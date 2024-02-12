@@ -92,7 +92,7 @@ end
 if IsServer() then
     function modifier_gyrocopter_custom_rocket_barrage:SetIntervalThink()
 		local baseInterval = (1 / self.ability:GetSpecialValueFor("attack_mult"))
-        self:StartIntervalThink(baseInterval / self.parent:GetAttacksPerSecond())
+        self:StartIntervalThink(baseInterval / self.parent:GetAttacksPerSecond(false))
     end
 
     function modifier_gyrocopter_custom_rocket_barrage:OnCreated()

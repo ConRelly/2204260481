@@ -25,7 +25,7 @@ if IsServer() then
         self.duration = self:GetSpecialValueFor("duration")
         self.dagger_speed = self:GetSpecialValueFor("dagger_speed")
         self.dagger_offset = self:GetSpecialValueFor("dagger_offset")
-		self.dagger_rate = self:GetSpecialValueFor("dagger_rate_base") * ((1/self.caster:GetAttacksPerSecond()) / self.caster:GetBaseAttackTime())
+		self.dagger_rate = self:GetSpecialValueFor("dagger_rate_base") * ((1/self.caster:GetAttacksPerSecond(false)) / self.caster:GetBaseAttackTime())
         self.dagger_range = self:GetSpecialValueFor("dagger_range") + self.caster:GetCastRangeBonus()
         self.target_location = self:GetCursorPosition()
         self.accumulated_time = 0.0

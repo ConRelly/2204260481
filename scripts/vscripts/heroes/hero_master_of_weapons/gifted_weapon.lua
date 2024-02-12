@@ -141,7 +141,7 @@ function modifier_gifted_weapon_slasher:OnCreated()
 			self:BounceAndSlaughter(true)
 			local AttacksNumber = 5
 			local BaseInterval = 0.3
-			local slash_rate = BaseInterval / AttacksNumber--self:GetCaster():GetSecondsPerAttack() / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
+			local slash_rate = BaseInterval / AttacksNumber--self:GetCaster():GetSecondsPerAttack(false) / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
 			self:StartIntervalThink(slash_rate)
 		end
 	end
@@ -219,7 +219,7 @@ function modifier_gifted_weapon_slasher:OnIntervalThink()
 	
 	local AttacksNumber = 5
 	local BaseInterval = 0.3
-	local slash_rate = BaseInterval / AttacksNumber--self:GetCaster():GetSecondsPerAttack() / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
+	local slash_rate = BaseInterval / AttacksNumber--self:GetCaster():GetSecondsPerAttack(false) / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
 
 	self:StartIntervalThink(slash_rate)
 end

@@ -2955,9 +2955,16 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * Lowered Void Spirit Resonant Pulse shield gain(unitended mechanic to add more shield instead of refresh value made that to op)
 
 
-* Fixed kingsBane echo not working.
-* Replaced a lvl 10 talent from spectre and buffed the desolate talent.
+
+
+* Fixed echosabre and kingsBane echo attackspeed not working.
+* Fixed gyro , witch doctor , PA:  certain attack speed relearned skills mechanics not working
+* Note there's some more fixes and changes but could not add them in this update(probably by next week)
+
+
+* Replaced a lvl 10 talent from spectre and buffed(and fixed) the desolate talent.
 * Increased Parasma Stats and changed recipe(witch blade up)
+* Added the normal Time walk for Faceless Void (Q)
 
 
 

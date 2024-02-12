@@ -809,7 +809,7 @@ function modifier_mows_slasher:OnCreated()
 			self:BounceAndSlaughter(true)
 			local AttacksNumber = 3
 			local BaseInterval = 0.4
-			local slash_rate = self:GetAbility():GetSpecialValueFor("slash_rate") --self:GetCaster():GetSecondsPerAttack() / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
+			local slash_rate = self:GetAbility():GetSpecialValueFor("slash_rate") --self:GetCaster():GetSecondsPerAttack(false) / (math.max(self:GetAbility():GetSpecialValueFor("attack_rate_multiplier"), 1))
 			self:StartIntervalThink(slash_rate)
 		end
 	end

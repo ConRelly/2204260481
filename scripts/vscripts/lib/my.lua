@@ -298,6 +298,7 @@ function create_ressurection_tombstone(unit)
 	tombstone:SetAngles(0, RandomFloat(0, 360), 0)
 
 	FindClearSpaceForUnit(tombstone, unit:GetAbsOrigin(), true)
+	--CreateModifierThinker(unit,self,"modifier_tombstone2",{},unit:GetOrigin(),unit:GetTeamNumber(),false)	
 end
 
 

@@ -24,7 +24,7 @@
 #base "abilities/heroes/elder_titan_echo_stomp_spirit.txt"
 #base "abilities/heroes/enchantress_natures_attendants.txt"
 //#base "abilities/heroes/enigma_black_hole.txt"
-#base "abilities/heroes/faceless_void_time_walk.txt"
+//#base "abilities/heroes/faceless_void_time_walk.txt"
 #base "abilities/heroes/mirana_leap.txt"
 #base "abilities/heroes/mirana_starfall.txt"
 #base "abilities/heroes/weaver_the_swarm.txt"
@@ -15627,17 +15627,66 @@
 		}
 	}
 
+	// Faceless Void: Time Walk
+	//=================================================================================================================
 	"faceless_void_time_walk"
 	{
-		"AbilitySpecial"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"AbilitySound"					"Hero_FacelessVoid.TimeWalk"
+		"HasScepterUpgrade"			"1"
+		"HasShardUpgrade"			"1"
+
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.1"
+		"LevelsBetweenUpgrades"         "7"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"40"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.25"	// mostly about the blink
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"04"
+			"speed"					"3000"
+			"range"					
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius_scepter"		"0"
-				"RequiresScepter"		"1"
+				"value"				"2000 3000 4500 5500"
+				"special_bonus_shard"		"+1500"
 			}
+			"AbilityCooldown"
+			{
+				"value"										"19 14 9 7"
+				"special_bonus_unique_faceless_void_5"		"-1"
+			}
+			"backtrack_duration"
+			{
+				"value"										"3.0"
+				"special_bonus_unique_faceless_void_7"		"+1.0"
+			}
+			"radius"
+			{
+				"value"								"0"
+				"special_bonus_scepter"				"+700"
+				"affected_by_aoe_increase"			"1"
+				"RequiresScepter"					"1"
+			}
+
 		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 	"faceless_void_time_lock"
 	{

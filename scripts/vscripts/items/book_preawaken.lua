@@ -24,6 +24,7 @@ function modifier_custom_spellbook_passive:DeclareFunctions()
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
         MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+        MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
         MODIFIER_EVENT_ON_ABILITY_EXECUTED,
     }
     return funcs
@@ -47,6 +48,10 @@ end
 function modifier_custom_spellbook_passive:GetModifierBonusStats_Strength()
     if self:GetAbility() == nil then return end
     return self:GetAbility():GetSpecialValueFor("bonus_strength")
+end
+function modifier_custom_spellbook_passive:GetModifierSpellAmplify_Percentage()
+    if self:GetAbility() == nil then return end
+    return self:GetAbility():GetSpecialValueFor("bonus_spell_amplify")
 end
 function modifier_custom_spellbook_passive:OnAbilityExecuted(keys)
     if not IsServer() then return end
@@ -87,7 +92,7 @@ function modifier_custom_spellbook_passive:OnAbilityExecuted(keys)
                 caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
                 -- Remove the old item and add the evolved item
                 caster:RemoveItem(ability)
-                caster:AddItemByName("item_spellbook_destruction")                                                      
+                caster:AddItemByName("item_spellbook_destruction"):SetCurrentCharges(1)                                                     
                 ability.evolve_check = true
             end  
         end                        

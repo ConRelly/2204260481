@@ -112,7 +112,7 @@ function modifier_rock_golem_animations:OnAttackStart(keys)
   if not IsServer() then return end
 
   if keys.attacker == self:GetParent() then
-    self:GetParent():StartGestureWithPlaybackRate(ACT_DOTA_CUSTOM_TOWER_ATTACK, self:GetParent():GetAttacksPerSecond())
+    self:GetParent():StartGestureWithPlaybackRate(ACT_DOTA_CUSTOM_TOWER_ATTACK, self:GetParent():GetAttacksPerSecond(false))
 
     -- If no track target, setup target and start tracking
     -- Do first update now, the rest on demand

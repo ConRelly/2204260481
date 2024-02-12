@@ -87,7 +87,7 @@ function modifier_jotaro_ora_ora_rush:OnCreated()
 	end	
 	-- Ability specials
 	self.radius = self.ability:GetSpecialValueFor("radius")
-	local attack_per_second = self.caster:GetAttacksPerSecond()
+	local attack_per_second = self.caster:GetAttacksPerSecond(false)
 	local aps_multiple = self.ability:GetSpecialValueFor("aps_multiple")
 	self.tick_interval = 1/attack_per_second / aps_multiple/mult
 	print(self.tick_interval)

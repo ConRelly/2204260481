@@ -7,12 +7,12 @@ function Desolate (keys)
 	local ability = keys.ability
 	local ability_level = ability:GetLevel() -1 
 	
-	local alone_enemy = ability:GetLevelSpecialValueFor("alone_enemy", ability_level)
-	local radius = ability:GetLevelSpecialValueFor("radius", ability_level)
-	local damage = ability:GetLevelSpecialValueFor("bonus_damage", ability_level)
+	--local alone_enemy = ability:GetLevelSpecialValueFor("alone_enemy", ability_level)
+	--local radius = ability:GetLevelSpecialValueFor("radius", ability_level)
+	local damage = ability:GetLevelSpecialValueFor("bonus_damage", ability_level) + talent_value(caster, "special_bonus_unique_spectre_2_2")
 	local damage_type = ability:GetAbilityDamageType()
 	
-	local target_is_alone = true
+--[[ 	local target_is_alone = true
 	if alone_enemy == 1 then	-- 只作用于落单的敌人
 		local units = FindUnitsInRadius(
 			caster:GetTeamNumber(),
@@ -32,8 +32,8 @@ function Desolate (keys)
 		end
 	end
 	
-	local work_condition = target_is_alone and target:IsAlive() -- and not target:IsMagicImmune()
-    if work_condition then
+	local work_condition = target_is_alone and target:IsAlive() -- and not target:IsMagicImmune() ]]
+    --if work_condition then
     	EmitSoundOn("Hero_Spectre.Desolate", caster)
 
     	local particle_name = "particles/units/heroes/hero_spectre/spectre_desolate.vpcf"
@@ -44,7 +44,7 @@ function Desolate (keys)
 
         ParticleManager:SetParticleControl(particle, 0, particle_point)
         ParticleManager:SetParticleControlForward(particle, 0, caster:GetForwardVector())
-
+		ParticleManager:ReleaseParticleIndex(particle)
 		local damageTable = {
 			victim = target,
 			attacker = caster,
@@ -55,6 +55,6 @@ function Desolate (keys)
 		 
 		ApplyDamage(damageTable)
  
-    end
+    --end
 
 end

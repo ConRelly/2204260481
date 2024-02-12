@@ -413,7 +413,7 @@ function AOHGameMode:OnDamageDealt(damageTable)
 							arcane_staff_calculate_crit(attacker, victim, damageTable)
 						end
 					end
-					local dmg_dealt = damageTable.damage -- arcane staff might update this value so i added after isArcane
+					local dmg_dealt = damageTable.damage -- arcane staff might update this value so i added after isArcane	
 					if victim:HasModifier("modifier_jotaro_absolute_defense") then
 						if victim:GetMaxHealth() * 0.07 <= dmg_dealt then
 							local limit_hp = victim:GetMaxHealth() * 0.035
@@ -429,7 +429,7 @@ function AOHGameMode:OnDamageDealt(damageTable)
 						end	
 					end	
 					if victim and victim:GetDayTimeVisionRange() ~= 1337 then --npc conduit(1337)
-						if attackerPlayerId and attackerPlayerId >= 0 and attacker:IsOpposingTeam(victim:GetTeam()) then
+						if attackerPlayerId and attackerPlayerId >= 0 and victim:IsAlive() and attacker:IsOpposingTeam(victim:GetTeam()) then
 							local victim_hp = victim:GetHealth() --get victim curent healt so we make sure we don't record overkill dps
 							if dmg_dealt > victim_hp and victim_name ~= "npc_dota_dummy_misha" then --exception
 								dmg_dealt = victim_hp
@@ -459,6 +459,35 @@ function AOHGameMode:OnDamageDealt(damageTable)
 	end
 	return true
 end
+
+function AOHGameMode:Explosion_book(attacker, target, ability, dmg_dealt)
+	if not IsServer() then return end
+	local attackerPlayerId = attacker:GetPlayerOwnerID()
+	local victim = target
+	local victim_name = victim:GetUnitName()
+	local damageTable = {
+		entindex_victim_const = victim:entindex(),
+		damage = dmg_dealt,
+		damagetype_const = DAMAGE_TYPE_PURE,
+		damage_flags = DOTA_DAMAGE_FLAG_NONE,
+		entindex_attacker_const = attacker:entindex(),
+		entindex_inflictor_const = ability:entindex()
+	}
+	if attackerPlayerId and victim and victim:IsAlive() and victim:GetDayTimeVisionRange() ~= 1337 and attackerPlayerId >= 0 and attacker:IsOpposingTeam(victim:GetTeam()) then
+		local victim_hp = victim:GetHealth() --get victim curent healt so we make sure we don't record overkill dps
+		if dmg_dealt > victim_hp and victim_name ~= "npc_dota_dummy_misha" then --exception
+			dmg_dealt = victim_hp
+			print("victimname:"..victim_name)
+		end	
+		print("victimname2:"..victim_name)
+		player_data_modify_value(attackerPlayerId, "bossDamage", dmg_dealt)
+		gHeroDamage:ModifyValue(attackerPlayerId, "bossDamage", dmg_dealt)
+		gHeroDamage:OnDamageDealt(attackerPlayerId, damageTable, dmg_dealt, attacker, victim )
+		local sethp_victim = math.ceil( victim:GetHealth() - dmg_dealt)
+		victim:ModifyHealth(sethp_victim, ability, false, DOTA_DAMAGE_FLAG_HPLOSS)
+	end
+end
+
 
 
 function AOHGameMode:OnItemPickedUp(keys)
@@ -1168,6 +1197,10 @@ function AOHGameMode:OnHeroLevelUp(event)
 	if hero:HasItemInInventory("item_demonic_flaming_cape") and not hero:IsIllusion() then
 		local flaming_cape = hero:FindItemInInventory("item_demonic_flaming_cape")
 		flaming_cape:SetCurrentCharges(flaming_cape:GetCurrentCharges() + 1)
+	end	
+	if hero:HasItemInInventory("item_spellbook_destruction") and not hero:IsIllusion() then
+		local Explosion_book = hero:FindItemInInventory("item_spellbook_destruction")
+		Explosion_book:SetCurrentCharges(Explosion_book:GetCurrentCharges() + 1)
 	end							
 end
 
@@ -1537,7 +1570,8 @@ function AOHGameMode:OnEntityKilled(event)
 	if killedUnit and killedUnit:IsRealHero()  then
 		-- create_ressurection_tombstone(killedUnit)
 		Timers:CreateTimer(1, function( )
-			create_ressurection_tombstone(killedUnit)
+			--create_ressurection_tombstone(killedUnit)
+			CreateModifierThinker(killedUnit,self,"modifier_tombstone2",{},killedUnit:GetOrigin(),killedUnit:GetTeamNumber(),false)
 		end)
 		if killedUnit:IsRealHero() and not killedUnit:IsTempestDouble() and not killedUnit:IsReincarnating() then
 			GameRules:GetGameModeEntity():SetCustomRadiantScore(GetTeamHeroKills(DOTA_TEAM_GOODGUYS))

@@ -14,7 +14,7 @@ if IsServer() then
 		self.interval = self:GetSpecialValueFor("interval")
 
 		if self.caster:HasScepter() then
-			local aps = 1 / self.caster:GetAttacksPerSecond()
+			local aps = 1 / self.caster:GetAttacksPerSecond(false)
 			self.interval = math.min(self.interval, aps)
 		end
 

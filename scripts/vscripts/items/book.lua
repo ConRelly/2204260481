@@ -4,6 +4,7 @@
 LinkLuaModifier("modifier_spellbook_destruction", "items/book.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_spellbook_destruction_burn", "items/book.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_spellbook_destruction_mana_drain", "items/book.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_spellbook_destruction_burn_stacks", "items/book.lua", LUA_MODIFIER_MOTION_NONE)
 
 item_spellbook_destruction = class({})
 modifier_spellbook_destruction = class({})
@@ -15,7 +16,7 @@ function item_spellbook_destruction:GetAOERadius()
 	return self:GetSpecialValueFor("impact_radius") + (self:GetCaster():GetMaxMana()/30)
 end
 function item_spellbook_destruction:OnSpellStart()
-	self.ImpactRadius = self:GetSpecialValueFor("impact_radius") + (self:GetCaster():GetMaxMana()*0.035)
+	self.ImpactRadius = self:GetSpecialValueFor("impact_radius") + (self:GetCaster():GetMaxMana()*0.03)
 	-- Level 4 (and above?) pierces magic immunity
 	self.targetFlag = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
 	self.cursor_position = self:GetCursorPosition()
@@ -53,7 +54,7 @@ function item_spellbook_destruction:OnChannelFinish(bInterrupted)
 				ParticleManager:ReleaseParticleIndex(self.particle3)
 			
 				GridNav:DestroyTreesAroundPoint(self.cursor_position, self.ImpactRadius * 4, true)
-				local amplitude = math.flor(self.ImpactRadius / 5)
+				local amplitude = math.floor(self.ImpactRadius / 5)
 				if amplitude < 100 then
 					amplitude = 100
 				elseif amplitude > 500 then
@@ -79,7 +80,16 @@ function item_spellbook_destruction:OnChannelFinish(bInterrupted)
 						attacker = self:GetCaster(),
 						ability = self
 					}
+					--reduce enemy current hp base on caster's spell amp (max 20%)
+					local amp = self:GetCaster():GetSpellAmplification(false) * 0.01 
+					if amp > 0.2 then
+						amp = 0.2
+					end
+					local hp_removal = math.ceil( enemy:GetHealth() * amp )
 					ApplyDamage(damageTable)
+					if enemy:IsAlive() then
+						AOHGameMode:Explosion_book(self:GetCaster(), enemy, self, hp_removal)
+					end
 				end
 			end
 --		end)
@@ -87,6 +97,25 @@ function item_spellbook_destruction:OnChannelFinish(bInterrupted)
 	end
 	ParticleManager:ReleaseParticleIndex(self.particle)
 	ParticleManager:ReleaseParticleIndex(self.particle2)
+end
+
+----------------------------------------
+-- Spellbook: Destruction Burn Stacks Modifier --
+
+modifier_spellbook_destruction_burn_stacks = class({})
+function modifier_spellbook_destruction_burn_stacks:IsHidden() return false end
+function modifier_spellbook_destruction_burn_stacks:IsPurgable() return false end
+function modifier_spellbook_destruction_burn_stacks:RemoveOnDeath() return false end
+function modifier_spellbook_destruction_burn_stacks:DeclareFunctions()
+	local funcs = {
+		MODIFIER_PROPERTY_TOOLTIP
+	}
+	return funcs
+end
+function modifier_spellbook_destruction_burn_stacks:OnTooltip()
+	if self:GetAbility() then
+		return self:GetStackCount() * self:GetAbility():GetCurrentCharges()
+	end
 end
 
 ------------------------------------------
@@ -97,22 +126,41 @@ function modifier_spellbook_destruction_burn:IgnoreTenacity() return true end
 function modifier_spellbook_destruction_burn:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_spellbook_destruction_burn:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
-		self.burn_dps = (self:GetAbility():GetSpecialValueFor("burn_dps") / 100) * self:GetParent():GetMaxMana()
+		local ability = self:GetAbility()
+		local caster = self:GetCaster()
+		if not caster:HasModifier("modifier_spellbook_destruction_burn_stacks") then
+			caster:AddNewModifier(caster, ability, "modifier_spellbook_destruction_burn_stacks", {})
+			local modif = caster:FindModifierByName("modifier_spellbook_destruction_burn_stacks")
+			if modif then
+				modif:SetStackCount(5)
+			end
+		end
+		self.burn_dps = ability:GetCurrentCharges() * caster:FindModifierByName("modifier_spellbook_destruction_burn_stacks"):GetStackCount() or 1	
 		self.damageTable = {
 			victim = self:GetParent(),
 			damage = self.burn_dps,
 			damage_type = DAMAGE_TYPE_PURE,
 			damage_flags = DOTA_DAMAGE_FLAG_NONE,
 			attacker = self:GetCaster(),
-			ability = self:GetAbility()
+			ability = ability
 			}
 		self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("burn_interval"))
 	end
 end
 function modifier_spellbook_destruction_burn:OnIntervalThink()
 	if not IsServer() then return end
+	local ability = self:GetAbility()
+	if not ability then self:Destroy() return end
+	local caster = self:GetCaster()
+	local modif = caster:FindModifierByName("modifier_spellbook_destruction_burn_stacks")
+	if not modif then return end
+	local sec_charges = modif:GetStackCount()
+	
+	self.burn_dps = ability:GetCurrentCharges() * sec_charges 
+	self.damageTable.damage = self.burn_dps
 	ApplyDamage(self.damageTable)
 	SendOverheadEventMessage(nil, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, self:GetParent(), self.burn_dps, nil)
+	modif:SetStackCount(sec_charges + 5)
 end
 function modifier_spellbook_destruction_burn:CheckState()
 	local state = {}
@@ -138,15 +186,10 @@ function modifier_spellbook_destruction:RemoveOnDeath() return false end
 function modifier_spellbook_destruction:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_spellbook_destruction:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
-		if self:GetAbility() == nil then return end
-		self.bonus_strength = self:GetAbility():GetSpecialValueFor("bonus_strength")
-		self.bonus_intellect = self:GetAbility():GetSpecialValueFor("bonus_intellect")
-		self.bonus_health_regen = self:GetAbility():GetSpecialValueFor("bonus_health_regen")
-		self.bonus_mana_regen = self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
 	end
 end
 function modifier_spellbook_destruction:DeclareFunctions()
-	return {MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_EVENT_ON_ATTACK}
+	return {MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE, MODIFIER_EVENT_ON_ATTACK}
 end
 --[[ function modifier_spellbook_destruction:OnAttack(keys)
 	if IsServer() then
@@ -163,11 +206,56 @@ function modifier_spellbook_destruction:CheckState()
 	end
 	return nil
 end ]]
-function modifier_spellbook_destruction:GetModifierBonusStats_Strength() return self.bonus_strength end
-function modifier_spellbook_destruction:GetModifierBonusStats_Intellect() return self.bonus_intellect end
-function modifier_spellbook_destruction:GetModifierConstantHealthRegen() return self.bonus_health_regen end
-function modifier_spellbook_destruction:GetModifierConstantManaRegen() return self.bonus_mana_regen end
-
+function modifier_spellbook_destruction:GetModifierBonusStats_Strength()
+	local ability = self:GetAbility()
+	if ability then
+		local stacks = ability:GetCurrentCharges()
+		if stacks > 0 then
+			return stacks * ability:GetSpecialValueFor("bonus_strength")
+		end
+	end
+	return 0
+end 
+function modifier_spellbook_destruction:GetModifierBonusStats_Intellect()
+	local ability = self:GetAbility()
+	if ability then
+		local stacks = ability:GetCurrentCharges()
+		if stacks > 0 then
+			return stacks * ability:GetSpecialValueFor("bonus_intellect")
+		end
+	end
+	return 0
+end
+function modifier_spellbook_destruction:GetModifierConstantHealthRegen()
+	local ability = self:GetAbility()
+	if ability then
+		local stacks = ability:GetCurrentCharges()
+		if stacks > 0 then
+			return stacks * ability:GetSpecialValueFor("bonus_health_regen")
+		end
+	end
+	return 0
+end
+function modifier_spellbook_destruction:GetModifierConstantManaRegen()
+	local ability = self:GetAbility()
+	if ability then
+		local stacks = ability:GetCurrentCharges()
+		if stacks > 0 then
+			return stacks * ability:GetSpecialValueFor("bonus_mana_regen")
+		end
+	end
+	return 0
+end
+function modifier_spellbook_destruction:GetModifierSpellAmplify_Percentage()
+	local ability = self:GetAbility()
+	if ability then
+		local stacks = ability:GetCurrentCharges()
+		if stacks > 0 then
+			return stacks * ability:GetSpecialValueFor("bonus_spell_amplify")
+		end
+	end
+	return 0
+end
 ------------------------------------------------
 -- Spellbook: Destruction Drain Caster's Mana --
 ------------------------------------------------

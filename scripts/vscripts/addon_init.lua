@@ -75,3 +75,6 @@ LinkLuaModifier("modifier_item_warriors_seal2", "abilities/custom/warriors_seal_
 LinkLuaModifier("modifier_flaming_cape_charges", "items/flaming_cape.lua", LUA_MODIFIER_MOTION_NONE)
 
 LinkLuaModifier("modifier_kill_unit", "modifiers/modifier_kill_unit.lua", LUA_MODIFIER_MOTION_NONE)
+
+--tomb
+LinkLuaModifier("modifier_tombstone2","modifiers/modifier_tombstone2", LUA_MODIFIER_MOTION_NONE)

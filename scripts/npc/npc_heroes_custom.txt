@@ -548,11 +548,11 @@
 		"override_hero"			"npc_dota_hero_faceless_void"
 		"UnitLabel"				"no_underdog"
 
-		"Ability1"				"frostivus2018_faceless_void_time_walk"
+		"Ability1"				"faceless_void_time_walk"
 		"Ability2"				"mjz_faceless_time_dilation"
 		"Ability3"				"void_custom_bash"
 		"Ability4"				"faceless_void_backtrack"
-		"Ability5"				"generic_hidden"
+		"Ability5"				"faceless_void_time_walk_reverse"
 		"Ability6"				"mjz_faceless_the_world"
 		"Ability10"				"special_bonus_spell_amplify_100"
 		"Ability11"				"special_bonus_cdr_25"
