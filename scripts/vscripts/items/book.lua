@@ -18,10 +18,10 @@ function item_spellbook_destruction:OnSpellStart()
 	self.ImpactRadius = self:GetSpecialValueFor("impact_radius") + (self:GetCaster():GetMaxMana()*0.035)
 	-- Level 4 (and above?) pierces magic immunity
 	self.targetFlag = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
-
+	self.cursor_position = self:GetCursorPosition()
 	if not IsServer() then return end
 	self:GetCaster():EmitSound("DOTA_Item.MeteorHammer.Channel")
-	AddFOWViewer(self:GetCaster():GetTeam(), self:GetCursorPosition(), self.ImpactRadius, 3.8, false)
+	AddFOWViewer(self:GetCaster():GetTeam(), self.cursor_position, self.ImpactRadius, 8.0, false)
 
 	self.particle = ParticleManager:CreateParticleForTeam("particles/custom/items/spellbook/destruction/spellbook_destruction_cast_aoe.vpcf", PATTACH_WORLDORIGIN, self:GetCaster(), self:GetCaster():GetTeam())
 	ParticleManager:SetParticleControl(self.particle, 0, self:GetCursorPosition())
@@ -52,10 +52,17 @@ function item_spellbook_destruction:OnChannelFinish(bInterrupted)
 				ParticleManager:SetParticleControl(self.particle3, 2, Vector(self.ImpactRadius * 4, 1, 1))
 				ParticleManager:ReleaseParticleIndex(self.particle3)
 			
-				GridNav:DestroyTreesAroundPoint(self:GetCursorPosition(), self.ImpactRadius * 4, true)
-
-				EmitSoundOnLocationWithCaster(self:GetCursorPosition(), "DOTA_Item.MeteorHammer.Impact", self:GetCaster())
-
+				GridNav:DestroyTreesAroundPoint(self.cursor_position, self.ImpactRadius * 4, true)
+				local amplitude = math.flor(self.ImpactRadius / 5)
+				if amplitude < 100 then
+					amplitude = 100
+				elseif amplitude > 500 then
+					amplitude = 500	
+				end
+				EmitSoundOnLocationWithCaster(self.cursor_position, "DOTA_Item.MeteorHammer.Impact", self:GetCaster())
+				EmitSoundOnLocationWithCaster(self.cursor_position, "PudgeWarsClassic.echo_slam", self:GetCaster())
+				EmitSoundOnLocationWithCaster(self.cursor_position, "PudgeWarsClassic.echo_slam", self:GetCaster())
+				ScreenShake( self.cursor_position, 600, amplitude, 2, 9999, 0, true)
 				local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCursorPosition(), nil, self.ImpactRadius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
 				for _, enemy in pairs(enemies) do
@@ -63,11 +70,11 @@ function item_spellbook_destruction:OnChannelFinish(bInterrupted)
 					enemy:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = self:GetSpecialValueFor("stun_duration") * (1 - enemy:GetStatusResistance())})
 					enemy:AddNewModifier(self:GetCaster(), self, "modifier_spellbook_destruction_burn", {duration = self:GetSpecialValueFor("burn_duration")})
 
-					local impactDamage = (self:GetCaster():GetMaxMana() * 2) + (mana_left * 2)
+					local impactDamage = (self:GetCaster():GetMaxMana() * 5) + (mana_left * 10)
 					local damageTable = {
 						victim = enemy,
 						damage = impactDamage,
-						damage_type = DAMAGE_TYPE_MAGICAL,
+						damage_type = DAMAGE_TYPE_PURE,
 						damage_flags = DOTA_DAMAGE_FLAG_NONE,
 						attacker = self:GetCaster(),
 						ability = self
@@ -94,7 +101,7 @@ function modifier_spellbook_destruction_burn:OnCreated()
 		self.damageTable = {
 			victim = self:GetParent(),
 			damage = self.burn_dps,
-			damage_type = DAMAGE_TYPE_MAGICAL,
+			damage_type = DAMAGE_TYPE_PURE,
 			damage_flags = DOTA_DAMAGE_FLAG_NONE,
 			attacker = self:GetCaster(),
 			ability = self:GetAbility()
@@ -141,7 +148,7 @@ end
 function modifier_spellbook_destruction:DeclareFunctions()
 	return {MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_EVENT_ON_ATTACK}
 end
-function modifier_spellbook_destruction:OnAttack(keys)
+--[[ function modifier_spellbook_destruction:OnAttack(keys)
 	if IsServer() then
 		local owner = self:GetCaster()
 		local target = keys.target
@@ -155,7 +162,7 @@ function modifier_spellbook_destruction:CheckState()
 		return {[MODIFIER_STATE_SPECIALLY_DENIABLE] = true}
 	end
 	return nil
-end
+end ]]
 function modifier_spellbook_destruction:GetModifierBonusStats_Strength() return self.bonus_strength end
 function modifier_spellbook_destruction:GetModifierBonusStats_Intellect() return self.bonus_intellect end
 function modifier_spellbook_destruction:GetModifierConstantHealthRegen() return self.bonus_health_regen end
@@ -164,7 +171,7 @@ function modifier_spellbook_destruction:GetModifierConstantManaRegen() return se
 ------------------------------------------------
 -- Spellbook: Destruction Drain Caster's Mana --
 ------------------------------------------------
-function modifier_spellbook_destruction_mana_drain:IsHidden() return true end
+function modifier_spellbook_destruction_mana_drain:IsHidden() return false end
 function modifier_spellbook_destruction_mana_drain:IsPurgable() return false end
 function modifier_spellbook_destruction_mana_drain:RemoveOnDeath() return false end
 function modifier_spellbook_destruction_mana_drain:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end

@@ -58,7 +58,6 @@
 		"item"      "item_cloak_of_flames"
 		"item"      "item_stormcrafter"
 		"item"		"item_devils_seal"
-		"item"		"item_dimensional_doorway"
 		"item"		"item_havoc_hammer"
 		"item"      "item_mirror_shield"
 		"item"      "item_witch_blade"
@@ -236,7 +235,7 @@
 
 	"secretshop"
 	{
-		"item"		"item_witless_shako"
+
 		"item"		"item_ninja_gear"
 		"item"		"item_illusionsts_cape"
 		"item"		"item_minotaur_horn"
@@ -276,6 +275,7 @@
 		"item"      "item_maple_shield_lua"
 		"item"      "item_god_slayer"
 		"item"      "item_light_crossbow"
+		"item"      "item_custom_spellbook"
 	}
 
 	"pregame"

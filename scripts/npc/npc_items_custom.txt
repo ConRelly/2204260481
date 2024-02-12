@@ -5749,45 +5749,85 @@
 		"ItemShopTags"					"damage;int;attack_speed;regen_mana"
 		"ItemQuality"					"common"
 		"ItemAliases"					"witch blade;wb"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"185"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"540"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"28"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int_damage_multiplier"	"25"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"slow"	"25"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"	"7"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"	"300"
-			}
+			"bonus_attack_speed"	"185"
+			"bonus_intellect"		"540"
+			"bonus_mana_regen"		"35"
+			"bonus_armor"			"28"
+			"int_damage_multiplier"	"25"
+			"slow"	"25"
+			"slow_duration"	"7"
+			"projectile_speed"	"300"
+		}		
+	}
+
+	//=================================================================================================================
+	// Recipe: Parasma
+	//=================================================================================================================
+	"item_recipe_devastator"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"11000"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_devastator"
+		"ItemRequirements"
+		{
+			"01"						"item_witch_blade;item_all_essence"
+			"02"						"item_witch_blade;item_weapon_fragment_complete"
 		}
 	}
+	
+	//=================================================================================================================
+	// Parasma
+	//=================================================================================================================
+	"item_devastator"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"2.5"
+
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"20575"
+		"ItemShopTags"					"int;hard_to_tag"
+		"ItemQuality"					"rare"
+		"ItemAliases"					"staff;misery;sm"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{				
+			"bonus_intellect"		"845"				
+			"bonus_attack_speed"	"240"	
+			"bonus_armor"			"82"
+			"bonus_mana_regen"		"95"
+			"projectile_speed"		"400"
+			"int_damage_multiplier"	"35"
+			"slow"	"30"
+			"slow_duration"	"12"
+			"active_mres_reduction"		"22"
+			"passive_cooldown"		"6"
+		}
+	}
+
 
 	"item_recipe_revenants_brooch"
 	{
@@ -22487,6 +22527,67 @@
 			"01"						"item_flaming_cape;item_demonic_sword;item_edible_fragment"
 		}
 	}
+// Spellbook: preaweken
+	"item_custom_spellbook"
+	{
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/book_preawaken.lua"
+		"AbilityTextureName"			"custom/spellbook_1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemPurchasable"				"1"
+		"ItemCost"						"15000"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"spellbook;destruction"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ShouldBeSuggested"				"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_strength"		"210"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_intellect"		"390"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_health_regen"	"450"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"120"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charge_awaken"				"250"
+			}
+		}
+	}
+// Recipe: spellbook awaken
+	"item_recipe_custom_spellbook"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"4500"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemStockInitial"				"2"
+		"ItemStockMax"					"2"
+		"ItemStockTime"					"999999.0"		
+		"ItemResult"					"item_custom_spellbook"
+		"ItemRequirements"
+		{
+			"01"						"item_mjz_kaya_5;item_all_essence"
+			"02"						"item_mjz_kaya_5;item_weapon_fragment_complete"
+		}
+	}
 
 // Spellbook: Destruction
 	"item_spellbook_destruction"
@@ -22495,12 +22596,12 @@
 		"ScriptFile"					"items/book.lua"
 		"AbilityTextureName"			"custom/spellbook_destruction"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"ItemPurchasable"				"0"
 		"AbilityChannelTime"			"5"
-		"AbilityCastRange"				"800"
-		"AbilityCooldown"				"28"
+		"AbilityCastRange"				"4000"
+		"AbilityCooldown"				"150"
 //		"AbilityManaCost"				"125"
 //		"ItemCost"						"2625"
 		"ItemQuality"					"epic"

@@ -316,15 +316,29 @@
 	"dota_tooltip_modifier_demonic_flaming_cape_up_radiance_flames_burn"		"SS: Demonic Power"	
 
 
-	"Dota_Tooltip_ability_item_spellbook_destruction"				"Spellbook: Explosion"
+	"Dota_Tooltip_ability_item_spellbook_destruction"				"<font color='#E20624'>Spellbook: Explosion</font>"
 	//"Dota_Tooltip_ability_item_spellbook_destruction_description"	"<h1>Active: Destruction Mastery</h1>During the application, %mana_drain_pct_sec%%% of mana per second is burned and increases Damage Resistance in proportion to the percentage of available mana. Channaling: %abilitychanneltime% sec.<br>After successful use, it burns the remaining mana, converting it into additional magic damage.<br><br>Damage: х2 Max Mana<br>Additional magic damage per burned mana: 2<br><br>If the mana for a successful application is not enough, the owner falls asleep on %mana_drain_sleep% sec. An ally can wake it up by hitting the owner."
-	"Dota_Tooltip_ability_item_spellbook_destruction_description"	"<h1>Active: Explosion Mastery</h1>During the application, %mana_drain_pct_sec%%% of mana per second is burned and increases Damage Resistance in proportion to the percentage of available mana. Channaling: %abilitychanneltime% sec.<br>After successful use, it burns the remaining mana, converting it into additional magic damage.<br><br>Damage: 400 DPS<br>Burn Duration: 6 seconds<br>Stun Duration: 2 seconds<br>Burn brake: Yes<br>Impact Radius: %impact_radius% + 3.5% of your max mana <br>Burn reduce enemy Spell damage by: 50%<br>Sleep Duration on Insufficient Mana: 5 seconds<br><br>If the mana for a successful application is not enough, the owner falls asleep for %mana_drain_sleep% seconds. An ally can wake them up by hitting the owner."	
+	"Dota_Tooltip_ability_item_spellbook_destruction_description"	"<h1>Active: Explosion Mastery</h1>During the application, %mana_drain_pct_sec%%% of mana per second is burned and increases Damage Resistance in proportion to the percentage of available mana. Channeling: %abilitychanneltime% sec.<br>After successful use, it burns the remaining mana, converting it into additional pure damage.<br><br>Damage: 400 DPS<br>Burn Duration: 6 seconds<br>Stun Duration: 2 seconds<br>Burn brake: Yes<br>Impact Radius: %impact_radius% + 3.5% of your max mana <br>Burn reduce enemy Spell damage by: 50%<br>Sleep Duration on Insufficient Mana: 5 seconds<br><br>If the mana for a successful application is not enough, the owner falls asleep for %mana_drain_sleep% seconds. An ally can wake them up by hitting the owner."	
 	"DOTA_Tooltip_modifier_elder_titan_echo_stomp"					"Sleeping"
 	"DOTA_Tooltip_modifier_elder_titan_echo_stomp_Description"		""
 	"Dota_Tooltip_ability_item_spellbook_destruction_bonus_strength" 		"Bonus Str:"
 	"Dota_Tooltip_ability_item_spellbook_destruction_bonus_intellect"		"Bonus Int:"
 	"Dota_Tooltip_ability_item_spellbook_destruction_bonus_health_regen"	"Bonus HP Regen:"
 	"Dota_Tooltip_ability_item_spellbook_destruction_bonus_mana_regen"		"Bonus Mana Regen:"
+//modif
+	"DOTA_Tooltip_modifier_spellbook_destruction_mana_drain"				"Casting Explosion"
+	"DOTA_Tooltip_modifier_spellbook_destruction_mana_drain_Description"    "Gaining Magic immunity effect(bkb), and %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% incoming damage reduction."           
+
+	"DOTA_Tooltip_modifier_spellbook_destruction_burn"				"Explosion Burn"
+	"DOTA_Tooltip_modifier_spellbook_destruction_burn_Description"  "Your passives are broken and spell damage reduced by %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% "
+
+	"Dota_Tooltip_ability_item_custom_spellbook"						"<font color='#E20624'>Empty Spellbook</font>"
+	"Dota_Tooltip_ability_item_custom_spellbook_Description"			"<h1><font color='#E20624'>Awaken</font></h1>Every time a spell is casted the book will gain charges base on how much cooldown that spell had.<br>Awaken at %charge_awaken% charges"
+	"Dota_Tooltip_ability_item_custom_spellbook_bonus_strength" 		"Bonus Str:"
+	"Dota_Tooltip_ability_item_custom_spellbook_bonus_intellect"		"Bonus Int:"
+	"Dota_Tooltip_ability_item_custom_spellbook_bonus_health_regen"		"Bonus HP Regen:"
+	"Dota_Tooltip_ability_item_custom_spellbook_bonus_mana_regen"		"Bonus Mana Regen:"	
+
 
 	"DOTA_Tooltip_ability_elder_titan_natural_order_magic_resistance_pct"	"%BASE RESIST REDUCTION(only on Spirit skill):"
 

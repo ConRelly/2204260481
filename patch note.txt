@@ -2957,6 +2957,9 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 * Fixed kingsBane echo not working.
 * Replaced a lvl 10 talent from spectre and buffed the desolate talent.
+* Increased Parasma Stats and changed recipe(witch blade up)
+
+
 
 
 
