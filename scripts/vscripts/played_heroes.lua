@@ -52,7 +52,7 @@ function GetLeastPlayedHeroes()
                 table.sort(hero_names, function(a, b) return hero_play_counts[a] < hero_play_counts[b] end)
                 for i, hero_name in ipairs(hero_names) do
                     if hero_play_count_ranks[hero_name] ~= nil then
-                        --print(i .. ": " .. hero_name .. " (" .. hero_play_counts[hero_name] .. " plays)" .. "Rank: " ..hero_play_count_ranks[hero_name])
+                        print(i .. ": " .. hero_name .. " (" .. hero_play_counts[hero_name] .. " plays)" .. "Rank: " ..hero_play_count_ranks[hero_name])
                         local rank = hero_play_count_ranks[hero_name]
                         if rank <= 50 then
                             if rank <= 10 then

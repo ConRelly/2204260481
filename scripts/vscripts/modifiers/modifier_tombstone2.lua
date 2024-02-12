@@ -23,6 +23,9 @@ function  modifier_tombstone2:OnIntervalThink()
     local parent = self:GetParent()
     local parent_location = parent:GetOrigin()
     local caster = self:GetCaster()
+    if parent:IsReincarnating() or parent:IsAlive() then -- or parent:HasModifier("modifier_arc_warden_tempest_double") then
+        self:GetParent():Destroy()
+    end
 	local units = FindUnitsInRadius(self:GetParent():GetTeamNumber(),parent_location,nil,300,DOTA_UNIT_TARGET_TEAM_FRIENDLY,1,DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS,FIND_CLOSEST,false)
 	if units[1] and units[1]:IsRealHero() and units[1]:IsAlive() and not units[1]:IsStunned() and not units[1]:IsOutOfGame() and not units[1]:IsSilenced() and not units[1]:IsInvulnerable() then
 		if not self.particle then

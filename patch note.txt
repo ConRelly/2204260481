@@ -2962,9 +2962,14 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * Note there's some more fixes and changes but could not add them in this update(probably by next week)
 
 
+
 * Replaced a lvl 10 talent from spectre and buffed(and fixed) the desolate talent.
 * Increased Parasma Stats and changed recipe(witch blade up)
 * Added the normal Time walk for Faceless Void (Q)
+* Fixed Arc warden ultimate.
+* Fixed Tombstone for heroes that already have reincarnation on going. 
+* And some other Fixes.
+
 
 
 
