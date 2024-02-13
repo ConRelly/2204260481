@@ -29,6 +29,9 @@ function modifier_flash_backtrack:GetModifierAvoidDamage(params)
 	if IsServer() then
         local parent = self:GetParent()
         if parent then
+            if parent:HasModifier("modifier_spellbook_destruction_pierce_evasion") then
+                return 0
+            end  
             if parent:PassivesDisabled() then
                 local randomSeed = math.random(1, 100)
                 if randomSeed <= 60 then

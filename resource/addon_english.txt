@@ -317,9 +317,11 @@
 
 
 	"Dota_Tooltip_ability_item_spellbook_destruction"				"<font color='#E20624'>Spellbook: Explosion</font>"
-	"Dota_Tooltip_ability_item_spellbook_destruction_description"	"<h1>Active: Explosion Mastery</h1>During channeling, %mana_drain_pct_sec%%% of mana per second is burned and increases Damage Resistance in proportion to the percentage of available mana and receive <font color='#EEDD10'>Magic Immune</font> effect. Channeling: %abilitychanneltime% sec.<br>After successful use, it burns the remaining mana, converting it into additional pure damage.<br><br>Damage:<font color='#FF7F07'> Max Mana x 10</font> + <font color='#FF7F07'>Remain Mana x 20</font><br>Burn Damage:<font color='#FF7F07'>Charges </font><font color='#86C91F'>x </font><font color='#FF7F07'>BurnStacks</font><br>Burn Duration: 6s<br>Stun Duration: 2s<br>Burn Brake: <font color='#5CD30E'>Yes</font><br>Impact Radius: %impact_radius% + <font color='#0EB2D3'>3% Max Mana</font> <br>Burn reduce enemy Spell dmg : <font color='#DD4214'>50%</font>\n<h1><font color='#39CEFE'>Passive:Explosion God Slayer</font></h1>On enemy affected by Explosion remove <font color='#FF7F07'>%hp_removal_per%%% x spellamp</font> (max 20%) of his Current HP(hp removal ignores defenses), Even if the enemy is Demigod or God.<br>Explosion pierces gods Damage doge \n<h1><font color='#EE8610'>Explosion Burn Mastery</font></h1> Gain %sec_charges% <font color='#E20624'>BurnStacks</font> every time an enemy is affected by Explosion Burn \n<h1><font color='#86C91F'>Level Mastery</font></h1>Gain an item charge for each level your hero gains with this item in inventory"	
+	"Dota_Tooltip_ability_item_spellbook_destruction_description"	"<h1><font color='#E20624'>Active: Explosion</font></h1>During channeling, %mana_drain_pct_sec%%% of mana per second is burned and increases Damage Resistance in proportion to the percentage of available mana and receive <font color='#EEDD10'>Magic Immune</font> effect. Channeling: %abilitychanneltime% sec.<br>After successful use, it burns the remaining mana, converting it into additional pure damage.<br><br>Damage:<font color='#FF7F07'> Max Mana x 10</font> + <font color='#FF7F07'>Remain Mana x 20</font><br>Burn Damage:<font color='#FF7F07'>Charges </font><font color='#86C91F'>x </font><font color='#FF7F07'>BurnStacks</font><br>Burn Duration: 6s<br>Stun Duration: 2s<br>Burn Brake: <font color='#5CD30E'>Yes</font><br>Impact Radius: %impact_radius% + <font color='#0EB2D3'>3% Max Mana</font> <br>Burn reduce enemy Spell dmg : <font color='#DD4214'>50%</font>\n<h1><font color='#39CEFE'>Passive:Explosion God Slayer</font></h1>On enemy affected by Explosion remove <font color='#FF7F07'>%hp_removal_per%%% x spellamp</font> (max 20%) of his Current HP(hp removal ignores defenses), Even if the enemy is Demigod or God.<br><font color='#E20624'>Explosion</font> pierces Gods Damage doge \n<h1><font color='#EE8610'>Explosion Burn Mastery</font></h1> Gain %sec_charges% <font color='#E20624'>BurnStacks</font> every time an enemy is affected by Explosion Burn \n<h1><font color='#86C91F'>Level Mastery</font></h1>Gain an item charge for each level your hero gains with this item in inventory"	
 	"DOTA_Tooltip_modifier_elder_titan_echo_stomp"					"Sleeping"
 	"DOTA_Tooltip_modifier_elder_titan_echo_stomp_Description"		""
+	"Dota_Tooltip_ability_item_spellbook_destruction_Lore"					"From void to flame, it harnesses all mana for ultimate explosion."
+	"Dota_Tooltip_ability_item_spellbook_destruction_Note0"                 "During channeling Arcane crit does not consume mana, your max mana still need to be more then arcane would have consumed"
 	"Dota_Tooltip_ability_item_spellbook_destruction_bonus_strength" 		"Str Per Charge:"
 	"Dota_Tooltip_ability_item_spellbook_destruction_bonus_intellect"		"Int Per Charge:"
 	"Dota_Tooltip_ability_item_spellbook_destruction_bonus_health_regen"	"HP Regen Per Charge:"
@@ -337,12 +339,13 @@
 
 
 	"Dota_Tooltip_ability_item_custom_spellbook"						"<font color='#E20624'>Empty Spellbook</font>"
-	"Dota_Tooltip_ability_item_custom_spellbook_Description"			"<h1><font color='#E20624'>Awaken</font></h1>Every time a spell is casted the book will gain charges base on how much cooldown that spell had.<br>Awaken at %charge_awaken% charges"
+	"Dota_Tooltip_ability_item_custom_spellbook_Description"			"<h1><font color='#E20624'>Awaken</font></h1>Every time a spell is casted the book will gain charges base on how much cooldown that spell had.<br>Awaken at %charge_awaken% charges\n<h1><font color='#DE3163'>Super Scepter</font></h1> When <font color='#E20624'>Awaken</font> start with 10 charges instead of 1"
 	"Dota_Tooltip_ability_item_custom_spellbook_bonus_strength" 		"Bonus Str:"
 	"Dota_Tooltip_ability_item_custom_spellbook_bonus_intellect"		"Bonus Int:"
 	"Dota_Tooltip_ability_item_custom_spellbook_bonus_health_regen"		"Bonus HP Regen:"
 	"Dota_Tooltip_ability_item_custom_spellbook_bonus_mana_regen"		"Bonus Mana Regen:"	
 	"Dota_Tooltip_ability_item_custom_spellbook_bonus_spell_amplify"	"Bonus SpellAmp:"
+	"Dota_Tooltip_ability_item_custom_spellbook_Lore"					"An unfilled spellbook, yearning for explosion's grandeur."
 
 	"DOTA_Tooltip_ability_elder_titan_natural_order_magic_resistance_pct"	"%BASE RESIST REDUCTION(only on Spirit skill):"
 
@@ -10844,7 +10847,7 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 	"DOTA_Tooltip_ability_marci_unleash_custom"						"Unleash"
 	"DOTA_Tooltip_ability_marci_unleash_custom_Description"			"Marci taps a hidden power, gaining Fury charges that allow her to deliver a rapid sequence of strikes. The last strike in every Fury combo creates a damaging pulse around the target that slows movement and attack speed for %pulse_debuff_duration%s. In between Fury combos, Marci is unable to attack for %time_between_flurries%s.\n\nMarci receives a basic dispel when Unleash is cast and gains %bonus_movespeed%%% movement speed.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Some Items and Abilites will get improved when ultimate is active.(press Alt)"
 	"DOTA_Tooltip_ability_marci_unleash_custom_scepter_Description"	"Reduces Unleash cooldown by %scepter_cooldown_reduction% seconds and causes Unleash to apply a basic dispel on Marci. While Unleash is Active, all of Marci's abilities unleash pulses when cast. All of Marci's unleash pulses will silence units for %pulse_silence_duration% seconds.<br><br>DISPEL TYPE: Basic Dispel"
-	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Super Scepter improve list: CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible and <font color='#E20624'>RED</font>), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger, Speedsters, Amalgamation,<font color='#E20624'>Evolving Light Crossbow(all)</font>, Aftershock."
+	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Super Scepter improve list: CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible and <font color='#E20624'>RED</font>), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger, Speedsters, Amalgamation,<font color='#E20624'>Evolving Light Crossbow(all)</font>, Aftershock, <font color='#E20624'>Empty Spellbook</font>."
 	"DOTA_Tooltip_ability_marci_unleash_custom_Lore"					"Though some have sought to understand its origins, Marci rebuffs all attempts to divine the source of her power."
 	"DOTA_Tooltip_ability_marci_unleash_custom_duration"				"DURATION:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_charges_per_flurry"		"STRIKES PER FURY:"
@@ -10886,7 +10889,7 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 	"DOTA_Tooltip_ability_special_bonus_void_custom_bash"				"+{s:value}% <font color='#9370DB'>Time Jab</font> Damage"
 
 	"DOTA_Tooltip_ability_void_custom_bash"								"<font color='#9370DB'>Time Jab</font>"
-	"DOTA_Tooltip_ability_void_custom_bash_Description"					"Adds a chance for an attack to strike through the folds of time, instantly attacking the target again for bonus pure damage."
+	"DOTA_Tooltip_ability_void_custom_bash_Description"					"Adds a chance for an attack to strike through the folds of time, instantly attacking the target again for bonus pure damage.\n<h1><font color='#0094FF'>Aghanim's Scepter + Shard</font></h1> After using Time Walk attack all enemies in the landing radius(700)."
 	"DOTA_Tooltip_ability_void_custom_bash_Lore"						"Void ruptures the timeline, landing an extra hit on his foe in the blink of an eye."
 	"DOTA_Tooltip_ability_void_custom_bash_Note0"                       "The extra hit is an another attack and can self proc."
 	"DOTA_Tooltip_ability_void_custom_bash_bash_chance"					"%PROC CHANCE:"
@@ -10914,7 +10917,7 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 
 //test
 		"DOTA_Tooltip_ability_cosmos_asteroid"										"Galactic Asteroids"
-		"DOTA_Tooltip_ability_cosmos_asteroid_Description"							"Cosmos summons a strike zone with a radius of %strike_zone_radius% units at his location, causing asteroids to rain down from the sky. Each asteroid deals damage and stuns enemies within a certain radius. If an enemy is affected by Cosmic Mist, the stun duration is doubled."
+		"DOTA_Tooltip_ability_cosmos_asteroid_Description"							"Cosmos summons a strike zone with a radius of %strike_zone_radius% units at his location, causing asteroids to rain down from the sky. Each asteroid divides the damage in 2 instances(<font color='#10A4EE'>Magic</font> and <font color='#E9BD0B'>Pure</font>) and stuns enemies within a certain radius. If an enemy is affected by Cosmic Mist, the stun duration is doubled."
 		"DOTA_Tooltip_ability_cosmos_asteroid_impact_radius"						"RADIUS:"
 		"DOTA_Tooltip_ability_cosmos_asteroid_impact_damage"						"DAMAGE:"
 		"DOTA_Tooltip_ability_cosmos_asteroid_stun_duration"						"STUN DURATION:"
@@ -10929,13 +10932,23 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 		"DOTA_Tooltip_ability_cosmos_galactic_stars_speed_multiplier"				"ACTIVE SPEED MULTIPLIER:"
 
 
-		"DOTA_Tooltip_ability_cosmos_space_mist"									"Space Mist"
-		"DOTA_Tooltip_ability_cosmos_space_mist_Description"						"Cosmos causes mist straight from the galaxy, being in it enemies have miss chance %miss_chance%%%, and also slows and their magic resistance decreases."	
+		"DOTA_Tooltip_ability_cosmos_book"                               			"Cosmos Explosion"
+		"DOTA_Tooltip_ability_cosmos_book_Destruction"								""
+
+		"DOTA_Tooltip_modifier_spellbook_destruction_burn_boss"							"Cosmos Explosion Burn"
+		"DOTA_Tooltip_modifier_spellbook_destruction_burn_boss_Description"  			"Your passives are broken and spell damage reduced by 500% "
+
+
+		"DOTA_Tooltip_ability_cosmos_space_mist"									"Cosmic Mist"
+		"DOTA_Tooltip_ability_cosmos_space_mist_Description"						"Cosmos causes mist straight from the galaxy, being in it enemies have miss chance %miss_chance%%%, slows them and reduce their magic resistance."	
 		"DOTA_Tooltip_ability_cosmos_space_mist_duration"							"DURATION:"						
 		"DOTA_Tooltip_ability_cosmos_space_mist_radius"								"RADIUS:"
 		"DOTA_Tooltip_ability_cosmos_space_mist_movespeed_slow_pct"					"%MOVESPEED SLOW:"
 		"DOTA_Tooltip_ability_cosmos_space_mist_magical_resistance_reduction"		"%MAGICAL RESISTANCE REDUCTION:"
 		
+		"DOTA_Tooltip_modifier_cosmos_space_mist_debuff"                           "Cosmos Mist"
+		"DOTA_Tooltip_modifier_cosmos_space_mist_debuff_Description"               "Although it offers resilience to Explosions and Explosion Burns, prepare for Asteroids to impose longer-lasting stun effects, accompanied by additional debilitations such as reduced accuracy and magic resistance."
+
 		"DOTA_Tooltip_ability_cosmos_cosmic_strike"									"First Firmament Voice"
 		"DOTA_Tooltip_ability_cosmos_cosmic_strike_Description"						"Cosmos exhales a wave of cosmic energy in the target direction, dealing magic damage to enemies within its path, slowing them for %slow_duration% seconds and, if they are within the radius of stars, stunning and knocking them back."
 		"DOTA_Tooltip_ability_cosmos_cosmic_strike_damage"							"DAMAGE:"

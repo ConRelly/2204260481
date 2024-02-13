@@ -1,81 +1,4 @@
---[[ cosmos_asteroid = class({})
 
-function cosmos_asteroid:GetAOERadius()
-    return self:GetSpecialValueFor("impact_radius")
-end
-
-function cosmos_asteroid:OnSpellStart()
-    if IsServer() then
-
-        local land_time	= self:GetSpecialValueFor("land_time")
-        local radius = self:GetSpecialValueFor("impact_radius")
-        local damage = self:GetSpecialValueFor("impact_damage")
-        local duration_dummy = 0
-        local stun_duration = self:GetSpecialValueFor("stun_duration")
-        local stun_duration_2 = stun_duration * 2
-        local location = self:GetCaster():GetCursorPosition()
-
-        local meteor_particle = ParticleManager:CreateParticle("particles/stygian/cosmos_asteroid.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
-        ParticleManager:SetParticleControl(meteor_particle, 0, location + Vector(radius, 0, 1000))
-        ParticleManager:SetParticleControl(meteor_particle, 1, location)
-        ParticleManager:SetParticleControl(meteor_particle, 2, Vector(land_time, 0, 0))
-        ParticleManager:ReleaseParticleIndex(meteor_particle)
-
-        Timers:CreateTimer(land_time, function()
-            if not self:IsNull() then
-                GridNav:DestroyTreesAroundPoint(self:GetCursorPosition(), radius, true)
-
-                local nFXIndex = ParticleManager:CreateParticle( "particles/stygian/cosmos_asteroid_stomp_magical.vpcf", PATTACH_WORLDORIGIN, self:GetCaster() )
-                ParticleManager:SetParticleControl(nFXIndex, 0, location)
-                ParticleManager:SetParticleControl(nFXIndex, 1, Vector(self:GetSpecialValueFor("impact_radius"), self:GetSpecialValueFor("impact_radius"), 0))
-
-                ParticleManager:ReleaseParticleIndex(nFXIndex)
-
-                EmitSoundOnLocationWithCaster(location, ("Hero_ElderTitan.EchoStomp"), self:GetCaster())
-                EmitSoundOnLocationWithCaster(location, ("Hero_ShadowDemon.ShadowPoison.Impact"), self:GetCaster())
-
-                local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(),
-                    location,
-                    nil,
-                    radius,
-                    DOTA_UNIT_TARGET_TEAM_ENEMY,
-                    DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-                    DOTA_UNIT_TARGET_FLAG_NONE,
-                    FIND_ANY_ORDER,
-                    false)
-
-                for _, enemy in pairs(enemies) do
-
-                    enemy:EmitSound("")
-
-                    local impactDamage = damage
-
-                    local damageTable = {
-                        victim 	= enemy,
-                        damage 	= impactDamage,
-                        damage_type	= DAMAGE_TYPE_PURE,
-                        damage_flags = DOTA_DAMAGE_FLAG_NONE,
-                        attacker = self:GetCaster(),
-                        ability = self
-                    }
-
-                    ApplyDamage(damageTable)
-
-                    if enemy:HasModifier("modifier_cosmos_space_mist_debuff") then
-                        duration_dummy = stun_duration_2
-                    else
-                        duration_dummy = stun_duration
-                    end
-
-                    enemy:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = duration_dummy } )
-                end
-            end
-        end)
-    end
-end ]]
-
-
-----new
 cosmos_asteroid = class({})
 
 function cosmos_asteroid:GetAOERadius()
@@ -137,7 +60,7 @@ function cosmos_asteroid:OnSpellStart()
 
                         local damageTable = {
                             victim = enemy,
-                            damage = impactDamage,
+                            damage = impactDamage/2,
                             damage_type = DAMAGE_TYPE_PURE,
                             damage_flags = DOTA_DAMAGE_FLAG_NONE,
                             attacker = caster,
@@ -146,6 +69,15 @@ function cosmos_asteroid:OnSpellStart()
 
                         ApplyDamage(damageTable)
 
+                        local damageTable = {
+                            victim = enemy,
+                            damage = impactDamage/2,
+                            damage_type = DAMAGE_TYPE_MAGICAL,
+                            damage_flags = DOTA_DAMAGE_FLAG_NONE,
+                            attacker = caster,
+                            ability = self
+                        }  
+                        ApplyDamage(damageTable)                      
                        -- local duration_dummy = enemy:HasModifier("modifier_cosmos_space_mist_debuff") and stun_duration_2 or stun_duration
                         local duration_dummy = 0
                         if enemy:HasModifier("modifier_cosmos_space_mist_debuff") then

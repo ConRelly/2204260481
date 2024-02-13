@@ -2965,9 +2965,13 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 * Replaced a lvl 10 talent from spectre and buffed(and fixed) the desolate talent.
 * Increased Parasma Stats and changed recipe(witch blade up)
-* Added the normal Time walk for Faceless Void (Q)
+* Added the normal Time walk for Faceless Void (Q) and to random pool(and removed the deletd frostivus one)
+* Added Aghanim + shard effect for Time Jab(works only with time walk)
+* Added new Super Scepter effect for Marci:
+-- Empty Spellbook: Charges gain are doubled and SS Awaken effect gives 20 charges instead of 10.
 * Fixed Arc warden ultimate.
-* Fixed Tombstone for heroes that already have reincarnation on going. 
+* Fixed Tombstone for heroes that already have reincarnation on going.
+* Fixed Dezun bkb effect not lasting on caster sometimes.
 * And some other Fixes.
 
 
@@ -3025,6 +3029,10 @@ Amalgamation : can have both Symbiosis effects at the same time
 Evolving Light CrossBow and all his forms : gains +2 charges instead of 1 per proc.
 
 Aftershock : Adds +4s in calculations for any ability over 1 sec cd.
+
+Empty Spellbook: Charges gain are doubled and SS Awaken effect gives 20 charges instead of 10.
+
+
 
 
 can youse this format for marci SS effect:

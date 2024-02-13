@@ -226,7 +226,7 @@ if IsServer() then
         "drow_ranger_frost_arrows_lua",
         "omniknight_repel_lua",
         "antimage_custom_mana_break",
-        "frostivus2018_faceless_void_time_walk",
+        "faceless_void_time_walk",
         "mjz_phoenix_icarus_dive",
         "mjz_zuus_thundergods_wrath",
         "mjz_queenofpain_sonic_wave",

@@ -189,12 +189,12 @@ function AOHGameMode:InitGameMode()
 	self._magdamage[2] = 1
 	self._magdamage[3] = 1
 	self._magdamage[4] = 1
-	self._puredamage = {}
-	self._puredamage[0] = 1
-	self._puredamage[1] = 1
-	self._puredamage[2] = 1
-	self._puredamage[3] = 1
-	self._puredamage[4] = 1
+	AOHGameMode._puredamage = {}
+	AOHGameMode._puredamage[0] = 1
+	AOHGameMode._puredamage[1] = 1
+	AOHGameMode._puredamage[2] = 1
+	AOHGameMode._puredamage[3] = 1
+	AOHGameMode._puredamage[4] = 1
 	self._dpstick = 0
 	self._playerNumber = 0
 	self._goldRatio = 1.2
@@ -278,8 +278,8 @@ function AOHGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP_REGEN,0.4)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_AGILITY_ARMOR, 0.01)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN,0.07)
-	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA, 2)
-	--GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MAGIC_RESIST, 0)  -- not implemented by dota yet
+	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA, 2.5)
+	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MAGIC_RESIST, 0)  -- not implemented by dota yet
 	GameRules:GetGameModeEntity():SetCameraDistanceOverride(1400)
 	GameRules:GetGameModeEntity():SetHUDVisible(26,false)
 	ListenToGameEvent("npc_spawned", Dynamic_Wrap(AOHGameMode, 'OnEntitySpawned'), self)
@@ -460,33 +460,6 @@ function AOHGameMode:OnDamageDealt(damageTable)
 	return true
 end
 
-function AOHGameMode:Explosion_book(attacker, target, ability, dmg_dealt)
-	if not IsServer() then return end
-	local attackerPlayerId = attacker:GetPlayerOwnerID()
-	local victim = target
-	local victim_name = victim:GetUnitName()
-	local damageTable = {
-		entindex_victim_const = victim:entindex(),
-		damage = dmg_dealt,
-		damagetype_const = DAMAGE_TYPE_PURE,
-		damage_flags = DOTA_DAMAGE_FLAG_NONE,
-		entindex_attacker_const = attacker:entindex(),
-		entindex_inflictor_const = ability:entindex()
-	}
-	if attackerPlayerId and victim and victim:IsAlive() and victim:GetDayTimeVisionRange() ~= 1337 and attackerPlayerId >= 0 and attacker:IsOpposingTeam(victim:GetTeam()) then
-		local victim_hp = victim:GetHealth() --get victim curent healt so we make sure we don't record overkill dps
-		if dmg_dealt > victim_hp and victim_name ~= "npc_dota_dummy_misha" then --exception
-			dmg_dealt = victim_hp
-			print("victimname:"..victim_name)
-		end	
-		print("victimname2:"..victim_name)
-		player_data_modify_value(attackerPlayerId, "bossDamage", dmg_dealt)
-		gHeroDamage:ModifyValue(attackerPlayerId, "bossDamage", dmg_dealt)
-		gHeroDamage:OnDamageDealt(attackerPlayerId, damageTable, dmg_dealt, attacker, victim )
-		local sethp_victim = math.ceil( victim:GetHealth() - dmg_dealt)
-		victim:ModifyHealth(sethp_victim, ability, false, DOTA_DAMAGE_FLAG_HPLOSS)
-	end
-end
 
 
 
@@ -734,6 +707,8 @@ function AOHGameMode:OnUpdateThink()
 			CustomGameEventManager:Send_ServerToAllClients("damage_type_update", {physical = self._physdamage[playerID],magical = self._magdamage[playerID],pure = self._puredamage[playerID], id = playerID, name = heroName})
 			CustomGameEventManager:Send_ServerToAllClients("damage_update", {damage = formated_number(bossDamage), id = playerID})
 			CustomGameEventManager:Send_ServerToAllClients("damage_taken_update", {damage = formated_number(damageTaken), id = playerID, name = heroName})
+			--add damage_taken_type_update
+			
 			self._damagecount[playerID][self._dpstick] = bossDamage
 		end
 	end

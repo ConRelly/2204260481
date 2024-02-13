@@ -57,6 +57,9 @@ function modifier_phantom_reflex:GetModifierAvoidDamage(params)
         local parent = self:GetParent()
 		local doge_chance = self.dodge_chance_pct
         if parent then
+            if parent:HasModifier("modifier_spellbook_destruction_pierce_evasion") then
+                return 0
+            end 			
             if parent:PassivesDisabled() then
                 local randomSeed = math.random(1, 100)
                 if randomSeed <= (doge_chance - 25) then

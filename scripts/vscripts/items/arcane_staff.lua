@@ -40,11 +40,16 @@ function modifier_item_arcane_staff:GetModifierBonusStats_Intellect() return 80 
 function arcane_staff_calculate_crit(attacker, victim, damageTable)
 	if attacker and attacker:IsHero() then
 		local mana = attacker:GetMana()
+		local max_mana = attacker:GetMaxMana()
 		local mana_req = 150
 		local damage_mult = 1.8
-
+		local pass = true
 		local mana_cost = damageTable.damage * (190 / (190 + attacker:GetIntellect()))	
 		--if attacker:HasModifier("modifier_broken_wings_divinity") then mana_cost = 0 mana_req = 0 end
+		if attacker:HasModifier("modifier_spellbook_destruction_mana_drain") then
+			mana = max_mana
+			pass = false
+		end
 		if mana >= mana_cost and mana >= mana_req then
 			if victim and victim ~= attacker and victim:GetTeamNumber() ~= attacker:GetTeamNumber() then
 				damageTable.damage = damageTable.damage * damage_mult
@@ -55,7 +60,9 @@ function arcane_staff_calculate_crit(attacker, victim, damageTable)
 					type = "crit",
 					pos = 4
 				})
-				attacker:SpendMana(mana_cost, nil)
+				if pass then
+					attacker:SpendMana(mana_cost, nil)
+				end
 			end
 		end
 	end

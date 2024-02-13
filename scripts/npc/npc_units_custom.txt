@@ -11988,7 +11988,7 @@
 	"MovementSpeed"						 "350"		   // Speed.					  
 
 	// Status
-	"StatusHealth"						  "560000"		   // Base health.
+	"StatusHealth"						  "2560000"		   // Base health.
 	"StatusHealthRegen"					 "1450"		   // Health regeneration rate.
 	"StatusMana"							"7000"					 // Base mana.
 	"StatusManaRegen"					   "450"		   // Mana regeneration rate.			   
@@ -14017,7 +14017,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"6750000"
+		"StatusHealth"				"8750000"
 		"StatusHealthRegen"			"25000"
 		"StatusMana"				"50000"
 		"StatusManaRegen"			"5500"
@@ -15171,7 +15171,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "100"	   // Speed.		   
-	"StatusHealth"			  "18500000"	  // Base health.
+	"StatusHealth"			  "19500000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
@@ -15328,7 +15328,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "100"	   // Speed.		   
-	"StatusHealth"			  "18500000"	  // Base health.
+	"StatusHealth"			  "19500000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
@@ -15487,7 +15487,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "700"	   // Speed.		   
-	"StatusHealth"			  "12000000"	  // Base health.
+	"StatusHealth"			  "14500000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
@@ -16382,7 +16382,7 @@
 		"Ability1"					"damage_meter"
 		"Ability2"					"windrunner_windrun"
 		//"Ability3"                  "ability_absolute_no_cc"
-
+		//"Ability4"                  "flash_backtrack"
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"0"
@@ -16478,7 +16478,7 @@
 	"Ability3"				  "zoom_charge_of_darkness"		   // Ability 3
 	//"Ability4"				  "darkrider_alter_reverse"
 	//"Ability5"				  "darkrider_heartbeat"
-	//"Ability6"				  "darkrider_time_aura"
+	"Ability6"				  "darkrider_time_aura"
 	"Ability7"				  "custom_vitality_rend_2"
 	"Ability8"				  "bloodseeker_thirst_2"
 	"Ability9"				  "flash_backtrack"
@@ -16510,7 +16510,7 @@
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
 	"MovementSpeed"			 "600"	   // Speed.		   
-	"StatusHealth"			  "25500000"	  // Base health.
+	"StatusHealth"			  "29500000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
 	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   

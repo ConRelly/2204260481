@@ -3,6 +3,9 @@ LinkLuaModifier( "modifier_cosmos_space_mist_debuff", "abilities/custom/cosmos_s
 
 cosmos_space_mist = class ( {})
 
+function cosmos_space_mist:GetAOERadius()
+	return self:GetSpecialValueFor("radius")
+end
 function cosmos_space_mist:OnSpellStart()
     if IsServer() then
         local caster = self:GetCaster()
@@ -65,7 +68,9 @@ modifier_cosmos_space_mist_debuff = class ( {})
 function modifier_cosmos_space_mist_debuff:IsDebuff()
     return true
 end
-
+function modifier_cosmos_space_mist_debuff:IsHidden()
+    return false
+end
 function modifier_cosmos_space_mist_debuff:OnCreated(event)
 
 end
@@ -86,14 +91,21 @@ function modifier_cosmos_space_mist_debuff:DeclareFunctions()
 end
 
 function modifier_cosmos_space_mist_debuff:GetModifierMoveSpeedBonus_Percentage()
-    return self:GetAbility():GetSpecialValueFor("movespeed_slow_pct") * (-1)
+    if self:GetAbility() then
+        return self:GetAbility():GetSpecialValueFor("movespeed_slow_pct") * (-1)
+    end    
 end
 
 function modifier_cosmos_space_mist_debuff:GetModifierMagicalResistanceBonus( params )
-    return self:GetAbility():GetSpecialValueFor( "magical_resistance_reduction" )* (-1)
+    if self:GetAbility() then
+        return self:GetAbility():GetSpecialValueFor("magical_resistance_reduction") * (-1)
+    end    
 end
 
 function modifier_cosmos_space_mist_debuff:GetModifierMiss_Percentage()
-    return self:GetAbility():GetSpecialValueFor("miss_chance")
+    if self:GetAbility() then
+        return self:GetAbility():GetSpecialValueFor("miss_chance") * (-1)
+    end    
 end
+
 

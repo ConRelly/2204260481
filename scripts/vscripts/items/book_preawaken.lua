@@ -68,13 +68,18 @@ function modifier_custom_spellbook_passive:OnAbilityExecuted(keys)
         local caster = self:GetCaster()
         local charges = ability:GetCurrentCharges()
         local has_ss = caster:HasModifier("modifier_super_scepter")
-        local marci_ult = caster:HasModifier("modifier_marci_unleash_flurry")  
+        local marci_ult = caster:HasModifier("modifier_marci_unleash_flurry")
+        local bonus_ch = 1  
         local limit = ability:GetSpecialValueFor("charge_awaken") 
         local evolve = (charges >= limit)
-        if has_ss and marci_ult then
-            cooldown = cooldown * 2								
+        if has_ss then
+            bonus_ch = 10
+            if marci_ult then
+                bonus_ch = bonus_ch * 2
+                cooldown = cooldown * 2	
+            end            							
         end	            
-        ability:SetCurrentCharges(charges + cooldown)               
+        ability:SetCurrentCharges(charges + cooldown)
         if evolve then
             if not ability.evolve_check then
                 local zeus_ultimate_particle = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf" 
@@ -92,7 +97,7 @@ function modifier_custom_spellbook_passive:OnAbilityExecuted(keys)
                 caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
                 -- Remove the old item and add the evolved item
                 caster:RemoveItem(ability)
-                caster:AddItemByName("item_spellbook_destruction"):SetCurrentCharges(1)                                                     
+                caster:AddItemByName("item_spellbook_destruction"):SetCurrentCharges(bonus_ch)                                                     
                 ability.evolve_check = true
             end  
         end                        

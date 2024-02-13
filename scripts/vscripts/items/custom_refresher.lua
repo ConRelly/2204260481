@@ -39,7 +39,8 @@ item_custom_refresher.nonrefresh_items = {
 	item_master_of_weapons_sword2 = true,
 	item_master_of_weapons_sword3 = true,
 	item_master_of_weapons_sword4 = true,
-	item_master_of_weapons_sword5 = true,	
+	item_master_of_weapons_sword5 = true,
+	item_spellbook_destruction = true,	
 }
 
 function item_custom_refresher:OnSpellStart()

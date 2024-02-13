@@ -29,6 +29,7 @@ function item_custom_ex_machina:OnSpellStart()
             item_master_of_weapons_sword3 = true,
             item_master_of_weapons_sword4 = true,
             item_master_of_weapons_sword5 = true,
+            item_spellbook_destruction = true,
         })
     end
 end

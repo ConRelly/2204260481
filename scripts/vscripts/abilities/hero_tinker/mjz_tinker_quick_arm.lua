@@ -102,10 +102,13 @@ function mjz_tinker_quick_arm:halve_ability_cooldown(ability, exclude_table)
     if ability then
         if not exclude_table[ability:GetAbilityName()] then
 			if ability:GetCooldownTimeRemaining() > 0 then
-				local flCooldown = ability:GetCooldownTimeRemaining() * self.cdr / 100
+				local cdr = self.cdr
+				if ability:GetAbilityName() == "item_spellbook_destruction" then
+					cdr = 90
+				end				
+				local flCooldown = ability:GetCooldownTimeRemaining() * cdr / 100
 				
 				ability:EndCooldown()
-				
 				if flCooldown > 1.0 then
 					ability:StartCooldown(flCooldown)
 				end

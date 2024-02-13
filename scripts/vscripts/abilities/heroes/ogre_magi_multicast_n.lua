@@ -343,6 +343,7 @@ function IsExcludeAbility(ability)
 		"mjz_windrunner_powershot",
 		"antimage_blink",
 		"frostivus2018_faceless_void_time_walk",
+		"faceless_void_time_walk",
 		"obsidian_destroyer_astral_imprisonment",
 		"obsidian_destroyer_arcane_orb",
 		"obs_replay",

@@ -200,7 +200,7 @@ function GetRandomAbilityName( hero )
 		"mjz_doom_bringer_doom",
 		"mjz_doom_bringer_doom",
 		"antimage_custom_mana_break",
-		"frostivus2018_faceless_void_time_walk",
+		"faceless_void_time_walk",
 		"dark_willow_shadow_realm_lua",
 		"dark_willow_shadow_realm_lua",
 		"dark_willow_shadow_realm_lua",

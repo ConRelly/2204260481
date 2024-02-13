@@ -6314,10 +6314,10 @@
 		"ItemIsNeutralDrop"				"0"
 		"ItemPurchasable"				"1"
 		"ItemInitialCharges"			"1"
-		"ItemStockMax"					"1"
+		"ItemStockMax"					"10"
 		"ItemStockInitial"				"0"
-		"ItemStockTime"					"300"
-		"ItemInitialStockTime"			"325"
+		"ItemStockTime"					"200"
+		"ItemInitialStockTime"			"100"
 		"ItemPermanent"					"0"
 		"IsTempestDoubleClonable"		"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -22536,6 +22536,9 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemPurchasable"				"1"
 		"ItemCost"						"15000"
+		"ItemSellable"					"0"
+		"ItemKillable"                  "0"
+		"ItemShareability"              "ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"spellbook;destruction"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -22565,12 +22568,12 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_spell_amplify"	"65"
+				"bonus_spell_amplify"	"75"
 			}			
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"charge_awaken"				"250"
+				"charge_awaken"				"5200"
 			}
 		}
 	}
@@ -22605,10 +22608,13 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"ItemPurchasable"				"0"
 		"AbilityChannelTime"			"5"
-		"AbilityCastRange"				"4000"
-		"AbilityCooldown"				"150"
+		"AbilityCastRange"				"5000"
+		"AbilityCooldown"				"200"
 //		"AbilityManaCost"				"125"
 //		"ItemCost"						"2625"
+		"ItemSellable"					"0"
+		"ItemKillable"                  "0"
+		"ItemShareability"              "ITEM_FULLY_SHAREABLE"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"spellbook;destruction"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -22618,12 +22624,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"		"10"
+				"bonus_strength"		"20"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"		"20"
+				"bonus_intellect"		"35"
 			}
 			"03"
 			{
@@ -22683,17 +22689,17 @@
 			"18"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_drain_sleep"		"5"
+				"mana_drain_sleep"		"4"
 			}
 			"19"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bonus_spell_amplify"	"3"
+				"bonus_spell_amplify"	"4"
 			}
 			"20"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"sec_charges"			"5"
+				"sec_charges"			"10"
 			}
 			"21"
 			{

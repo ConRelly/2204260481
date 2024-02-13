@@ -22,8 +22,9 @@ local exclude_items = {
 	item_master_of_weapons_sword5 = true,  
     muerta_pierce_the_veil = true,
     centaur_stampede = true,
+    item_spellbook_destruction = true,
+    
 }
-
 
 
 function on_ability_executed(keys)

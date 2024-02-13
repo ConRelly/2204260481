@@ -7,7 +7,7 @@ function katana_strike:OnSpellStart()
         self.original_target = self:GetCursorTarget()
         self.blink_distance = 100  -- Adjust as needed
         self.num_strikes = 10  -- Adjust as needed
-        self.strike_interval = 1.1  -- Adjust as needed
+        self.strike_interval = 1  -- Adjust as needed
         self.current_strikes = 0
         self:FindInitialTarget()
     end
