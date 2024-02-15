@@ -9,7 +9,7 @@ local HERO_PLAY_COUNTS_URL = "https://conrelly.com/played_heroes.txt"
 local hero_modifiers = {}
 
 -- Sends a request to the server to get the hero play counts.
-function GetLeastPlayedHeroes()
+--[[ function GetLeastPlayedHeroes()
     local retries = 4
     local delay = 50 / (retries + 1)
     local function sendRequest()
@@ -80,7 +80,99 @@ function GetLeastPlayedHeroes()
         end)
     end
     sendRequest()
+end ]]
+
+--new test
+-- Sends a request to the server to get the hero play counts.
+function GetLeastPlayedHeroes()
+    local retries = 4
+    local delay = 50 / (retries + 1)
+    local function sendRequest()
+        local request = CreateHTTPRequestScriptVM("GET", HERO_PLAY_COUNTS_URL)
+        request:SetHTTPRequestAbsoluteTimeoutMS(30000)
+        request:Send(function(response)
+            if response.StatusCode == 200 then
+                local hero_play_counts = {}
+                local hero_play_count_strs = string.gmatch(response.Body, "(.-):(%d+)\n?")
+                for hero_name, play_count in hero_play_count_strs do
+                    hero_play_counts[hero_name] = tonumber(play_count)
+                end
+                                      
+                -- Calculate the ranks of the hero play counts.
+                local hero_play_count_ranks = {}
+                local hero_plays = {}
+                for hero_name, play_count in pairs(hero_play_counts) do
+                    hero_plays[#hero_plays+1] = play_count
+                end
+                table.sort(hero_plays)
+                local rank = 1
+                local last_play_count = -1
+                for i, play_count in ipairs(hero_plays) do
+                    if play_count ~= last_play_count then
+                        rank = i
+                        last_play_count = play_count
+                    end
+                    for hero_name, count in pairs(hero_play_counts) do
+                        if count == play_count then
+                            hero_play_count_ranks[hero_name] = rank
+                        end
+                    end
+                end
+
+                -- Map hero names to modifier names based on their ranks.
+                -- We'll introduce counters for each tier to track the number of heroes assigned.
+                local counters = {top10 = 0, top20 = 0, top50 = 0}                
+                local hero_names = {}
+                for hero_name, play_count in pairs(hero_play_counts) do
+                    hero_names[#hero_names+1] = hero_name
+                end
+                table.sort(hero_names, function(a, b) return hero_play_counts[a] < hero_play_counts[b] end)                
+                for i, hero_name in ipairs(hero_names) do
+                    if hero_play_count_ranks[hero_name] ~= nil then
+                        --print(i .. ": " .. hero_name .. " (" .. hero_play_counts[hero_name] .. " plays)" .. "Rank: " .. hero_play_count_ranks[hero_name])
+                        local rank = hero_play_count_ranks[hero_name]
+                        local modifier = ""
+                        -- Check if the hero qualifies for top 50.
+                        if rank <= 50 and counters.top50 < 60 then
+                            -- Within top 10.
+                            if rank <= 10 and counters.top10 < 12 then
+                                hero_modifiers[hero_name] = "modifier_bottom_10"
+                                counters.top10 = counters.top10 + 1
+                                modifier = " (modifier_bottom_10)"
+                            -- If exceeds top 10 but within top 20.
+                            elseif rank <= 20 and counters.top20 < 25 then
+                                hero_modifiers[hero_name] = "modifier_bottom_20"
+                                counters.top20 = counters.top20 + 1
+                                modifier = " (modifier_bottom_20)"
+                            -- If exceeds top 20 but qualifies for top 50.
+                            elseif rank > 20 then
+                                hero_modifiers[hero_name] = "modifier_bottom_50"
+                                modifier = " (modifier_bottom_50)"
+                            end
+                            counters.top50 = counters.top50 + 1 -- Increment top 50 counter regardless of specific tier.
+                            print(i .. ": " .. hero_name .. " (" .. hero_play_counts[hero_name] .. " plays)" .. " Rank: " .. rank .. modifier)
+                        end
+                    end
+                end
+                print("Sucess to get hero play counts, Status: " .. response.StatusCode)
+            else
+                print("Failed to get hero play counts: " .. response.StatusCode)
+                retries = retries - 1
+                if retries > 0 then
+                    print("Retrying in " .. delay .. " seconds...")
+                    Timers:CreateTimer(delay, function()
+                        sendRequest()
+                    end)
+                end
+                delay = 80 / (retries + 1)
+            end
+        end)
+    end
+    sendRequest()
 end
+
+--
+
 
 
 -- Checks the hero's ranking and adds the appropriate modifier if necessary.

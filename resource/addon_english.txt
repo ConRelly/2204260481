@@ -10933,7 +10933,7 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 
 
 		"DOTA_Tooltip_ability_cosmos_book"                               			"Cosmos Explosion"
-		"DOTA_Tooltip_ability_cosmos_book_Destruction"								""
+		"DOTA_Tooltip_ability_cosmos_book_Description"								"Cosmos channels cosmic energy, culminating in a cataclysmic explosion that rips through the battlefield. This explosive release consumes mana, converting its essence into pure destructive force."
 
 		"DOTA_Tooltip_modifier_spellbook_destruction_burn_boss"							"Cosmos Explosion Burn"
 		"DOTA_Tooltip_modifier_spellbook_destruction_burn_boss_Description"  			"Your passives are broken and spell damage reduced by 500% "
@@ -10986,6 +10986,12 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 		"DOTA_Tooltip_ability_cosmos_world_devour_duration"                             "DURATION:"
 		"DOTA_Tooltip_ability_cosmos_world_devour_damage"  								"%DAMAGE BY MAX HEALTH:"
 		"DOTA_Tooltip_ability_cosmos_world_devour_Note0"                                "Damage increase by 1k for each 1mill missing hp"
+
+//modif
+
+		"DOTA_Tooltip_modifier_cosmos_resist_physical"                           		"Physical Immunity"
+		"DOTA_Tooltip_modifier_cosmos_resist_magical"                           		"Magical Immunity"
+		"DOTA_Tooltip_modifier_cosmos_resist_pure"                           			"Pure Immunity"
 
 //blink strike
 		"DOTA_Tooltip_ability_katana_strike"                                                      "Shadow strike"

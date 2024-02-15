@@ -1531,7 +1531,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"value"				"3.4"
+				"value"				"2.5"
 				"ad_linked_abilities"			"tinker_keen_teleport"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}

@@ -86,6 +86,9 @@ function cosmos_book:OnSpellStart()
 	if not IsServer() then return end
 	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_spellbook_destruction_mana_drain_boss", {duration = 7})
 	self:GetCaster():StartGesture(ACT_DOTA_GENERIC_CHANNEL_1)
+	if _G.cosmos_state and _G.cosmos_state == 1 then
+		self:OnChannelFinish(true)
+	end	
 end
 
 function cosmos_book:OnChannelFinish(bInterrupted)
@@ -101,18 +104,18 @@ function cosmos_book:OnChannelFinish(bInterrupted)
 	end
 
 	-- Random delay for the animation to start
-	local delay = RandomFloat(1, 5)
+	local delay = RandomFloat(2, 7)
 
 	-- Start a timer for the animation
 	Timers:CreateTimer(delay, function()
 		if self:IsNull() then return end
 		if not caster then return end
 		if not caster:IsAlive() then return end 
-		
+		self.cursor_position = caster:GetAbsOrigin()
 		caster:EmitSound("DOTA_Item.MeteorHammer.Channel")
 		AddFOWViewer(caster:GetTeam(), self.cursor_position, self.ImpactRadius, 12, false)
 
-		self.particle = ParticleManager:CreateParticleForTeam("particles/custom/items/spellbook/destruction/spellbook_destruction_cast_aoe.vpcf", PATTACH_WORLDORIGIN, caster, caster:GetTeam())
+		self.particle = ParticleManager:CreateParticle("particles/custom/items/spellbook/destruction/spellbook_destruction_cast_aoe.vpcf", PATTACH_WORLDORIGIN, caster)
 		ParticleManager:SetParticleControl(self.particle, 0, self.cursor_position)
 		ParticleManager:SetParticleControl(self.particle, 1, Vector(self.ImpactRadius, 1, 1))
 		self.particle2 = ParticleManager:CreateParticle("particles/custom/items/spellbook/destruction/spellbook_destruction_cast.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
@@ -142,7 +145,7 @@ function cosmos_book:OnChannelFinish(bInterrupted)
 			local mana_left = caster:GetMana()
 
 			if not self:IsNull() then
-				self.particle3	= ParticleManager:CreateParticle("particles/custom/items/spellbook/destruction/spellbook_destruction_impact.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
+				self.particle3	= ParticleManager:CreateParticle("particles/custom/items/spellbook/destruction/spellbook_destruction_impact.vpcf", PATTACH_WORLDORIGIN, caster)
 				ParticleManager:SetParticleControl(self.particle3, 0, self.cursor_position + Vector(0, 0, 0))
 				ParticleManager:SetParticleControl(self.particle3, 1, self.cursor_position)
 				ParticleManager:SetParticleControl(self.particle3, 2, Vector(self.ImpactRadius * 4, 1, 1))
@@ -162,12 +165,12 @@ function cosmos_book:OnChannelFinish(bInterrupted)
 				local enemies = FindUnitsInRadius(caster:GetTeamNumber(), self.cursor_position, nil, self.ImpactRadius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
 
 				for _, enemy in pairs(enemies) do
-					if enemy and enemy:IsAlive() and not enemy:HasModifier("modifier_cosmos_space_mist_debuff") then)
+					if enemy and enemy:IsAlive() and not enemy:HasModifier("modifier_cosmos_space_mist_debuff") then
 						enemy:EmitSound("DOTA_Item.MeteorHammer.Damage")
 						enemy:AddNewModifier(caster, self, "modifier_stunned", {duration = self:GetSpecialValueFor("stun_duration") * (1 - enemy:GetStatusResistance())})
 						enemy:AddNewModifier(caster, self, "modifier_spellbook_destruction_burn_boss", {duration = self:GetSpecialValueFor("burn_duration")})
 
-						local impactDamage = (caster:GetMaxMana() * 3) + (mana_left * 5) + (extra_dmg * 3)
+						local impactDamage = (caster:GetMaxMana() * 5) + (mana_left * 8) + (extra_dmg * 3)
 						local damageTable = {
 							victim = enemy,
 							damage = impactDamage,
@@ -206,8 +209,7 @@ function modifier_spellbook_destruction_burn_boss:OnCreated()
 		if parent and parent:IsAlive() and self:GetCaster() then
 			local caster = self:GetCaster()
 			local parent_missing_hp = caster:GetHealthDeficit()
-			local extra_dmg = math.ceil( self:GetSpecialValueFor("missing_hp") * parent_missing_hp * 0.01)
-			print("extra_dmg: " .. extra_dmg)  
+			local extra_dmg = math.ceil(self:GetSpecialValueFor("missing_hp") * parent_missing_hp * 0.0025)  
 			self.burn_dps = self:GetAbility():GetSpecialValueFor("burn_dps") + extra_dmg
 			self.damageTable = {
 				victim = parent,

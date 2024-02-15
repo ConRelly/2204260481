@@ -4,10 +4,10 @@ katana_strike = class({})
 
 function katana_strike:OnSpellStart()
     if IsServer() then
-        self.original_target = self:GetCursorTarget()
+        --self.original_target = self:GetCursorTarget()
         self.blink_distance = 100  -- Adjust as needed
         self.num_strikes = 10  -- Adjust as needed
-        self.strike_interval = 1  -- Adjust as needed
+        self.strike_interval = 0.6  -- Adjust as needed
         self.current_strikes = 0
         self:FindInitialTarget()
     end
@@ -16,11 +16,9 @@ end
 function katana_strike:FindInitialTarget()
     if IsServer() then
         local caster = self:GetCaster()
-        local initialTarget = self.original_target
-        
         -- Check if the initial target is valid
-        if initialTarget and initialTarget:IsAlive() then
-            self.target = initialTarget
+        if self.target and not self.target:IsNull() and IsValidEntity(self.target) and self.target:IsAlive() and RollPercentage(70) then
+            --self.target = initialTarget
         else
             -- If the initial target is not valid, find a new target
             local enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
@@ -33,7 +31,7 @@ function katana_strike:FindInitialTarget()
         end
         
         -- If a valid target is found, proceed with katana strike
-        if self.target then
+        if self.target and not self.target:IsNull() and IsValidEntity(self.target) and self.target:IsAlive() then
             self:PerformKatanaStrike()
         else
             -- If no valid target is found, end the ability
@@ -52,7 +50,8 @@ function katana_strike:PerformKatanaStrike()
             local extra_dmg = self:GetSpecialValueFor("missing_hp") * caster_missing_hp * 0.01	        
             local damage = self:GetSpecialValueFor("damage") + extra_dmg
             local caster_position = caster:GetAbsOrigin()
-            if target == nil or not target:IsAlive() then
+
+            if target == nil or not IsValidEntity(target) or not target:IsAlive() then 
                 self:FindInitialTarget()
                 return
             end
@@ -105,7 +104,8 @@ function katana_strike:PerformKatanaStrike()
                 knockback_height = 0,
                 should_stun = true,
             }
-            EmitSoundOn("Hero_Tusk.WalrusKick.Target", target)
+            --EmitSoundOn("Hero_Tusk.WalrusKick.Target", target)
+            EmitSoundOn( "Hero_MonkeyKing.TreeJump.Cast", target)
             target:AddNewModifier(caster, self, "modifier_knockback", knockbackProperties)
 
             -- Apply damage
@@ -126,7 +126,7 @@ function katana_strike:PerformKatanaStrike()
             end)
         elseif self:GetCaster() and self:GetCaster():IsAlive() then
             -- After all strikes, apply damage and add modifier if needed
-            if self.target == nil or not self.target:IsAlive() then
+            if self.target == nil or not IsValidEntity(self.target) or not self.target:IsAlive() then
                 self:FindInitialTarget()
                 return
             end
@@ -151,7 +151,25 @@ end
 
 modifier_katana_strike_bonus = class({})
 
-function modifier_katana_strike_bonus:IsHidden() return false end
+function modifier_katana_strike_bonus:IsHidden() return true end
+function modifier_katana_strike_bonus:IsPurgable() return false end
+function modifier_katana_strike_bonus:IsDebuff() return false end
+function modifier_katana_strike_bonus:IsPurgeException() return true end
+
+function modifier_katana_strike_bonus:OnCreated(params)
+    if IsServer() then
+        if self:GetCaster() then
+            self:GetCaster():AddNoDraw()
+        end
+    end
+end
+function modifier_katana_strike_bonus:OnDestroy()
+    if IsServer() then
+        if self:GetCaster() then
+            self:GetCaster():RemoveNoDraw()
+        end
+    end
+end
 
 function modifier_katana_strike_bonus:CheckState()
     return {

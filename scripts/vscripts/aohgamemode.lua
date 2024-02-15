@@ -56,6 +56,7 @@ LinkLuaModifier("modifier_double_trouble", "modifiers/modifier_double_trouble.lu
 LinkLuaModifier("modifier_infinite_health", "modifiers/modifier_infinite_health.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_boss_truesight_aura", "bosses/boss_true_sight.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_boss_truesight", "bosses/boss_true_sight.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_cosmos_3_lifes", "modifiers/modifier_cosmos_3_lifes", LUA_MODIFIER_MOTION_NONE)
 
 if AOHGameMode == nil then
 	_G.AOHGameMode = class({})
@@ -138,6 +139,7 @@ function AOHGameMode:InitGameMode()
 	_G._dev_enemy = false
 	_G._dev_enemy_ano = false
 	_G.auto_skipp = false
+	_G.cosmos_stage = 4
 	self._hardMode = false
 	self._endlessMode = false
 	self._endlessMode_started = false
@@ -1430,6 +1432,7 @@ function AOHGameMode:OnEntitySpawned(event)
 		["npc_boss_guesstuff_Moran"] = true,
 		["npc_boss_randomstuff_aiolos"] = true,
 		["npc_boss_juggernaut_4"] = true,
+		["npc_boss_cosmos"] = true,
 		--["npc_boss_skeletal_archer_new"] = true,
 
 	};	
@@ -1481,7 +1484,8 @@ function AOHGameMode:OnEntitySpawned(event)
 		end
 		if (unit:GetLevel() > 79) then
 			--if unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
-				--print("boss moster")
+				print("boss moster") 
+				unit:AddNewModifier(unit, nil, "modifier_cosmos_3_lifes", {})
 				unit:AddNewModifier(unit, nil, "modifier_phys", {})
 				unit:AddNewModifier(unit, nil, "modifier_boss_truesight_aura", {})
 			--end
@@ -1493,6 +1497,10 @@ function AOHGameMode:OnEntitySpawned(event)
 		end	
 		if unit:GetUnitName() == "npc_boss_guesstuff_Moran" or  unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
 			unit:AddNewModifier(unit, nil, "modifier_double_trouble", {})
+		end
+			
+		if unit:GetUnitName() == "npc_boss_cosmos" then
+			unit:AddNewModifier(unit, nil, "modifier_cosmos_3_lifes", {})
 		end			
 	end
 	if custom_hp_bar[unit:GetUnitName()] == true then

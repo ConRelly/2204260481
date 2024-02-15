@@ -9,13 +9,18 @@ end
 function cosmos_world_devour:GetCooldown( nLevel )
   return self.BaseClass.GetCooldown( self, nLevel )
 end
-
 function cosmos_world_devour:OnSpellStart()
+  if IsServer() then
+  end  
+end
+
+function cosmos_world_devour:OnChannelFinish( bInterrupted )
+  
   if IsServer() then
     self:CreateExplosion(self:GetCaster())
     local distance1 = self:GetSpecialValueFor( "knockback_distance" )
     local caster = self:GetCaster()
-    local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), self:GetCaster():GetOrigin(), self:GetCaster(), self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, 0, false )
+    local units = FindUnitsInRadius( self:GetCaster():GetTeamNumber(), caster:GetOrigin(), caster, self:GetSpecialValueFor("radius"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS, 0, false )
     if #units > 0 then
       for _,target in pairs(units) do
         target:AddNewModifier( self:GetCaster(), self, "modifier_stunned", { duration = self:GetSpecialValueFor("duration") } )
@@ -46,7 +51,7 @@ function cosmos_world_devour:OnSpellStart()
                duration = self:GetSpecialValueFor("knockback_duration"),
                knockback_duration = self:GetSpecialValueFor("knockback_duration"),
                knockback_distance = distance,
-               knockback_height = 150,
+               knockback_height = 650,
                should_stun = true,
            } 
            target:AddNewModifier(caster, self, "modifier_knockback", knockbackProperties)

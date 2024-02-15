@@ -44209,7 +44209,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"24"
+		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"0"
 		"AbilityCastRange"				"9500"
 		
@@ -44329,7 +44329,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"675"
+				"radius"			"575"
 			}
 			"03"
 			{
@@ -44372,7 +44372,7 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"9000"
-		"AbilityCooldown"				"35"
+		"AbilityCooldown"				"37"
 		"AbilityManaCost"				"100"
 		
 		// Special	
@@ -44487,7 +44487,7 @@
 		"BaseClass"								"ability_lua"
 		"ScriptFile"							"abilities/custom/cosmos_world_devour.lua"
 		//"AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitDamageType"					"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"						"2"
@@ -44498,11 +44498,11 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"						"38"
-
+		"AbilityCooldown"						"42"
+		"AbilityChannelTime"					"1.5"
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"							"3500"
+		"AbilityDamage"							"23500"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -44529,7 +44529,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"1600"
+				"radius"					"7500"
 			}
 			"02"
 			{
@@ -44576,14 +44576,14 @@
 		"AbilityCastPoint"				"0"		
 		"AbilityCooldown"				"42"
 		"AbilityManaCost"				"0"
-
+		"MaxLevel"                      "1"
 		"AbilitySpecial"
 		{
 
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"burn_dps"				"25000"
+				"burn_dps"				"19000"
 			}
 			"02"
 			{
@@ -44623,7 +44623,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_drain_pct_sec"	"12"
+				"mana_drain_pct_sec"	"10"
 			}
 			"10"
 			{
@@ -44667,7 +44667,7 @@
 		"MaxLevel"                      "1"
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"37"
+		"AbilityCooldown"				"32"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -44701,17 +44701,17 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"25000"
+				"damage"					"47000"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"knockback_duration"					"0.4"
+				"knockback_duration"					"0.3"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"distance"					"1300"
+				"distance"					"1200"
 			}
 			"07"
 			{

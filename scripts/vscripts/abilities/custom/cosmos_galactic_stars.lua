@@ -74,7 +74,7 @@ function modifier_cosmos_galactic_stars_thinker:OnCreated( kv )
 		local caster = self:GetCaster()
 		self.direction = (ability:GetCursorPosition() - caster:GetAbsOrigin()):Normalized()
 		self.radius = ability:GetSpecialValueFor("radius")
-		self.speed =  2
+		self.speed =  4
 		self.hitbox = 60
 		self.angle = kv.startangle
 		self.ID = kv.starID
@@ -97,7 +97,7 @@ function modifier_cosmos_galactic_stars_thinker:OnCreated( kv )
 			false -- bOverheadEffect
 		)
 		
-		self:StartIntervalThink(0.03)
+		self:StartIntervalThink(0.05)
 	end
 end
 function modifier_cosmos_galactic_stars_thinker:OnIntervalThink()
@@ -127,17 +127,17 @@ function modifier_cosmos_galactic_stars_thinker:OnIntervalThink()
 		self.hide = 0
 	end
 	
-	self.speed = 2.0
+	self.speed = 4.0
 	
 	if caster:HasModifier("modifier_cosmos_galactic_stars_enhance") then
 		total_damage = (damage + mana_damage) * (((damage_pct) / 100) + 1)
-		self.speed = (plusspeed * (modifier:GetRemainingTime() / buffduration) * 3 ) + 1
+		self.speed = (plusspeed * (modifier:GetRemainingTime() / buffduration) * 5 ) + 1
 		if self.radius < outer_limit then
 			self.radius = self.radius + 8
 		else
 			self.radius = outer_limit
 		end
-		self.hitbox = 180
+		self.hitbox = 200
 	else
 		total_damage = (damage + mana_damage)
 		if self.radius > minradius then
@@ -145,7 +145,7 @@ function modifier_cosmos_galactic_stars_thinker:OnIntervalThink()
 		else
 			self.radius = minradius
 		end
-		self.hitbox = 80
+		self.hitbox = 100
 	end
 	
 	if not caster:HasModifier("modifier_cosmos_galactic_stars_enhance") and enchant_modif == 1 then

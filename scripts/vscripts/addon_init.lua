@@ -13,7 +13,9 @@ LinkLuaModifier("modifier_double_trouble", "modifiers/modifier_double_trouble.lu
 LinkLuaModifier("modifier_infinite_health", "modifiers/modifier_infinite_health.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_boss_truesight_aura", "bosses/boss_true_sight.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_boss_truesight", "bosses/boss_true_sight.lua", LUA_MODIFIER_MOTION_NONE)
-
+--cosmos
+LinkLuaModifier("modifier_cosmos_3_lifes", "modifiers/modifier_cosmos_3_lifes", LUA_MODIFIER_MOTION_NONE)
+--
 LinkLuaModifier("modifier_generic_handler", "modifiers/modifier_generic_handler", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_charges", "modifiers/modifier_charges", LUA_MODIFIER_MOTION_NONE)
 
