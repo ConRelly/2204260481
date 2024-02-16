@@ -14,16 +14,30 @@ function cosmos_book:GetIntrinsicModifierName() return "modifier_spellbook_destr
 function cosmos_book:GetAOERadius()
 	return self:GetSpecialValueFor("impact_radius") + (self:GetCaster():GetMaxMana()/30)
 end
+function cosmos_book:GetCooldown(level)
+    local baseCooldown = self.BaseClass.GetCooldown(self, level)
+    local minCooldown = 20 
+	local adjustedCooldown = baseCooldown
+	if self:GetCaster() then
+		local lvl = self:GetCaster():GetLevel()
+		if lvl > 100 then
+			adjustedCooldown = minCooldown
+		end	
 
+		return adjustedCooldown 
+	end
+	return self.BaseClass.GetCooldown(self, level)
+end
 function cosmos_book:OnSpellStart()
 	local caster = self:GetCaster()
 	if caster then
 		self.ImpactRadius = self:GetSpecialValueFor("impact_radius") + (self:GetCaster():GetMaxMana()*0.05)
 		self.targetFlag = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
 		if not IsServer() then return end
-		caster:AddNewModifier(self:GetCaster(), self, "modifier_spellbook_destruction_mana_drain_boss", {duration = 8})
+		caster:AddNewModifier(caster, self, "modifier_spellbook_destruction_mana_drain_boss", {duration = 8})
 		caster:StartGesture(ACT_DOTA_GENERIC_CHANNEL_1)
-		if _G.cosmos_stage and _G.cosmos_stage == 1 then
+		local lvl = caster:GetLevel()
+		if lvl > 100 then
 			--stop chanelling
 			caster:Stop()
 			--caster:AddNewModifier(caster, self, "modifier_stunned", {duration = 0.1})
@@ -120,6 +134,11 @@ function cosmos_book:OnChannelFinish(bInterrupted)
 							ability = self
 						}
 						ApplyDamage(damageTable)
+						local lvl = caster:GetLevel()
+						if lvl > 100 then
+							--print("lvl > 100 "..lvl.. "forcekill: "..enemy:GetUnitName())
+							enemy:ForceKill(true)
+						end							
 					end
 				end
 			end

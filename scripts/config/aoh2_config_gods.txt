@@ -3443,7 +3443,7 @@
 				"SpawnInterval"			"1"
 			}
 		}
-		"38" // NEW KING				新骷髅王
+		"38" // NEW KING
 		{
 			"Title"						"Immortal King Second Part"
 			"MaxGold"					"4000"
@@ -3462,7 +3462,7 @@
 	}
 	"Rounds4"
 	{
-		"1" // Preparation			骷髅弓箭手
+		"1" // Preparation
 		{
 			"Title"						"You are entering Gods territory, Here's some free xp and gold to prepare for next round"
 			"MaxGold"					"8000"
@@ -3490,7 +3490,7 @@
 				"SpawnInterval"			"2"
 			}
 		}			
-		"2" // God			骷髅弓箭手
+		"2" // God
 		{
 			"Title"						"God Moran"
 			"MaxGold"					"10000"
@@ -3508,7 +3508,7 @@
 				"SpawnInterval"			"20"
 			}
 		}
-		"3" // Preparation			骷髅弓箭手
+		"3" // Preparation
 		{
 			"Title"						"Prepare For Next Fight , Here's some free xp and gold"
 			"MaxGold"					"8000"
@@ -3536,13 +3536,13 @@
 				"SpawnInterval"			"2"
 			}
 		}		
-		"4" // God			骷髅弓箭手
+		"4" // God
 		{
 			"Title"						"God Aiolos"
 			"MaxGold"					"25000"
 			"BagCount"					"1"
 			"BagVariance"				"50"
-			"FixedXP"					"200000"
+			"FixedXP"					"180000"
 
 			"a"
 			{
@@ -3561,7 +3561,7 @@
 			"MaxGold"					"25000"
 			"BagCount"					"1"
 			"BagVariance"				"50"
-			"FixedXP"					"200000"
+			"FixedXP"					"120000"
 
             "a" 
 			{
@@ -3587,6 +3587,50 @@
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"20"
 			}			
-		}				
+		}
+		"6" // Preparation
+		{
+			"Title"						"Prepare For Next Fight"
+			"MaxGold"					"8000"
+			"BagCount"					"2"
+			"BagVariance"				"50"
+			"FixedXP"					"40000"
+
+			"a"
+			{
+				"NPCName"				"npc_boss_kobold_foreman"
+				//"NPCName"               "npc_boss_skeletal_archer_new_zoom"
+				//"NPCName"               "npc_boss_skeleton_king_angry2"
+				//"NPCName"               "npc_dota_boss_aghanim"
+				"TotalUnitsToSpawn"		"6"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"2"
+			}
+
+            "b" 
+			{
+				"NPCName"				"npc_boss_kobold_foreman"
+				//"NPCName"               "npc_boss_deathprophet"
+				"TotalUnitsToSpawn"		"6"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"2"
+			}
+		}
+		"7" // God		
+		{
+			"Title"						"God Cosmos"
+			"MaxGold"					"25000"
+			"BagCount"					"1"
+			"BagVariance"				"50"
+			"FixedXP"					"5000"
+
+			"a"
+			{
+				"NPCName"               "npc_boss_cosmos"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"20"
+			}
+		}								
 	}	
 }

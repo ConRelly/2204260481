@@ -11,12 +11,17 @@ function cosmos_world_devour:GetCooldown( nLevel )
 end
 function cosmos_world_devour:OnSpellStart()
   if IsServer() then
+    if self:GetCaster() then
+      self:GetCaster():EmitSound("Hero_Oracle.FortunesEnd.Channel")
+    end  
   end  
 end
 
 function cosmos_world_devour:OnChannelFinish( bInterrupted )
   
   if IsServer() then
+    if not self:GetCaster() and not self:GetCaster():IsAlive() then return end
+    self:GetCaster():StopSound("Hero_Oracle.FortunesEnd.Channel")
     self:CreateExplosion(self:GetCaster())
     local distance1 = self:GetSpecialValueFor( "knockback_distance" )
     local caster = self:GetCaster()

@@ -316,11 +316,11 @@
 	"dota_tooltip_modifier_demonic_flaming_cape_up_radiance_flames_burn"		"SS: Demonic Power"	
 
 
-	"Dota_Tooltip_ability_item_spellbook_destruction"				"<font color='#E20624'>Spellbook: Explosion</font>"
+	"Dota_Tooltip_ability_item_spellbook_destruction"				"<font color='#E20624'>God Spellbook: Explosion</font>"
 	"Dota_Tooltip_ability_item_spellbook_destruction_description"	"<h1><font color='#E20624'>Active: Explosion</font></h1>During channeling, %mana_drain_pct_sec%%% of mana per second is burned and increases Damage Resistance in proportion to the percentage of available mana and receive <font color='#EEDD10'>Magic Immune</font> effect. Channeling: %abilitychanneltime% sec.<br>After successful use, it burns the remaining mana, converting it into additional pure damage.<br><br>Damage:<font color='#FF7F07'> Max Mana x 10</font> + <font color='#FF7F07'>Remain Mana x 20</font><br>Burn Damage:<font color='#FF7F07'>Charges </font><font color='#86C91F'>x </font><font color='#FF7F07'>BurnStacks</font><br>Burn Duration: 6s<br>Stun Duration: 2s<br>Burn Brake: <font color='#5CD30E'>Yes</font><br>Impact Radius: %impact_radius% + <font color='#0EB2D3'>3% Max Mana</font> <br>Burn reduce enemy Spell dmg : <font color='#DD4214'>50%</font>\n<h1><font color='#39CEFE'>Passive:Explosion God Slayer</font></h1>On enemy affected by Explosion remove <font color='#FF7F07'>%hp_removal_per%%% x spellamp</font> (max 17%) of his Current HP(hp removal ignores defenses), Even if the enemy is Demigod or God.<br><font color='#E20624'>Explosion</font> pierces Gods Damage doge \n<h1><font color='#EE8610'>Explosion Burn Mastery</font></h1> Gain %sec_charges% <font color='#E20624'>BurnStacks</font> every time an enemy is affected by Explosion Burn \n<h1><font color='#86C91F'>Level Mastery</font></h1>Gain an item charge for each level your hero gains with this item in inventory"	
 	"DOTA_Tooltip_modifier_elder_titan_echo_stomp"					"Sleeping"
 	"DOTA_Tooltip_modifier_elder_titan_echo_stomp_Description"		""
-	"Dota_Tooltip_ability_item_spellbook_destruction_Lore"					"From void to flame, it harnesses all mana for ultimate explosion."
+	"Dota_Tooltip_ability_item_spellbook_destruction_Lore"					"<font color='#00a7e4'>Main Idea by APpLePeN</font> , Give a try to his personal map: 'Heroes Not Found' "
 	"Dota_Tooltip_ability_item_spellbook_destruction_Note0"                 "During channeling Arcane crit does not consume mana, your max mana still need to be more then arcane would have consumed"
 	"Dota_Tooltip_ability_item_spellbook_destruction_bonus_strength" 		"Str Per Charge:"
 	"Dota_Tooltip_ability_item_spellbook_destruction_bonus_intellect"		"Int Per Charge:"
@@ -3025,7 +3025,7 @@
 	"DOTA_Tooltip_ability_centaur_stampede_damage_reduction"				"%DAMAGE REDUCTION:"
 
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt"						"Chaos Bolt"
-	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_Description"			"Throws a mysterious bolt of energy at the target unit. It stuns for a random duration and deals random damage.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Always has a maximum stun duration and damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Increases damage by х%str_multiplier_scepter% of the owner's strength."
+	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_Description"			"Throws a mysterious bolt of energy at the target unit. It stuns for a random duration and deals random damage.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Always has a maximum stun duration and damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Increases damage by (%str_multiplier_scepter% x your lvl) x strength."
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_Lore"					"Even Chaos Knight cannot predict this manifest of unholy energy."
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_cast_range"			"CAST RANGE:"
 	"DOTA_Tooltip_ability_mjz_chaos_knight_chaos_bolt_radius"				"RADIUS:"
@@ -9940,7 +9940,7 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 
 		"DOTA_Tooltip_ability_draks_unholy_strength"									"GameTime Power"
 		"DOTA_Tooltip_ability_draks_unholy_strength_Description"						"Gains Regen, Total outgoing dmg, heal amp, min speed, cdr(with a limit) for every minute that this game runs (respects pauses), starts on hero picking stage.
-		Has no bonus until min 90 of the game(cdr starts from min 100 and has a cap of 90%)"	
+		Has no bonus until min 100 of the game(cdr starts from min 110 and has a cap of 90%)"	
 		//"DOTA_Tooltip_ability_draks_unholy_strength_Note0"                              "CDR bonus has an "
 
 		"DOTA_Tooltip_ability_aghanim_shard_attack"									 "Shard Attack"
@@ -10924,7 +10924,7 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 		"DOTA_Tooltip_ability_cosmos_asteroid_Note0"                                "Damage increase by 2k for each 1mill missing hp"
 
 		"DOTA_Tooltip_ability_cosmos_galactic_stars"                               	"Galactic Stars"
-		"DOTA_Tooltip_ability_cosmos_galactic_stars_Description"					"<h1>Passive: Oldest One</h1> Cosmos is constantly orbited by %stars% Stars. Each Star deals damage to enemies that come into contact with them, some damage depends on the maximum mana of Cosmos.\n<h1> <h1>Active: The One</h1> Cosmos expands his Stars for %duration% seconds, rotating them at a high but decaying speed, and increasing their total damage by %damage_pct%%%. After the end of an active ability duration or recast, Cosmos commands the stars to retract, granting him %movespeed%%% bonus movement speed for %movespeed_duration% seconds."
+		"DOTA_Tooltip_ability_cosmos_galactic_stars_Description"					"<h1>Passive: Oldest One</h1> Cosmos is constantly orbited by %stars% Stars. Each Star deals damage to enemies that come into contact with them, some damage depends on the maximum mana of Cosmos.\n<h1> <h1>Active: The One</h1> Cosmos expands his Stars for %duration% seconds, rotating them at a high but decaying speed, and increasing their total damage by %damage_pct%%%. After the end of an active ability duration or recast, Cosmos commands the stars to retract, granting him %movespeed%%% bonus movement speed for %movespeed_duration% seconds and cannot be slowed."
 		"DOTA_Tooltip_ability_cosmos_galactic_stars_damage"							"STAR BASE DAMAGE:"
 		"DOTA_Tooltip_ability_cosmos_galactic_stars_mana_damage_pct"				"%STAR MANA DAMAGE:"
 		"DOTA_Tooltip_ability_cosmos_galactic_stars_radius"							"DISTANCE TO STARS:"
@@ -10932,8 +10932,8 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 		"DOTA_Tooltip_ability_cosmos_galactic_stars_speed_multiplier"				"ACTIVE SPEED MULTIPLIER:"
 
 
-		"DOTA_Tooltip_ability_cosmos_book"                               			"Cosmos Explosion"
-		"DOTA_Tooltip_ability_cosmos_book_Description"								"Cosmos channels cosmic energy, culminating in a cataclysmic explosion that rips through the battlefield. This explosive release consumes mana, converting its essence into pure destructive force."
+		"DOTA_Tooltip_ability_cosmos_book"                               			"<font color='#F52C08'>Cosmos Explosion</font>"
+		"DOTA_Tooltip_ability_cosmos_book_Description"								"Cosmos channels cosmic energy, culminating in a cataclysmic explosion that rips through the battlefield. This explosive release consumes mana, converting its essence into pure destructive force. \n<h1><font color='#39CEFE'>Passive: Last Stage Awaken</font></h1> Avoid at all cost, or <font color='#F52C08'>Death</font> awaits you!<br>Cosmos will no longer expend time channeling this spell and will have a lower base cooldown.<br>Awaken when is on Last Stage."
 
 		"DOTA_Tooltip_modifier_spellbook_destruction_burn_boss"							"Cosmos Explosion Burn"
 		"DOTA_Tooltip_modifier_spellbook_destruction_burn_boss_Description"  			"Your passives are broken and spell damage reduced by 500% "
@@ -10941,14 +10941,14 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 
 		"DOTA_Tooltip_ability_cosmos_space_mist"									"Cosmic Mist"
 		"DOTA_Tooltip_ability_cosmos_space_mist_Description"						"Cosmos causes mist straight from the galaxy, being in it enemies have miss chance %miss_chance%%%, slows them and reduce their magic resistance."	
-		"DOTA_Tooltip_ability_cosmos_space_mist_Note0"                              "You can hide inside to protect yourself against Cosmos Explosion"
+		"DOTA_Tooltip_ability_cosmos_space_mist_Note0"                              "You can hide inside to protect yourself against <font color='#F52C08'>Cosmos Explosion</font>"
 		"DOTA_Tooltip_ability_cosmos_space_mist_duration"							"DURATION:"						
 		"DOTA_Tooltip_ability_cosmos_space_mist_radius"								"RADIUS:"
 		"DOTA_Tooltip_ability_cosmos_space_mist_movespeed_slow_pct"					"%MOVESPEED SLOW:"
 		"DOTA_Tooltip_ability_cosmos_space_mist_magical_resistance_reduction"		"%MAGICAL RESISTANCE REDUCTION:"
 		
 		"DOTA_Tooltip_modifier_cosmos_space_mist_debuff"                           "Cosmos Mist"
-		"DOTA_Tooltip_modifier_cosmos_space_mist_debuff_Description"               "Although it offers resilience to Explosions and Explosion Burns, prepare for Asteroids to impose longer-lasting stun effects, accompanied by additional debilitations such as reduced accuracy and magic resistance."
+		"DOTA_Tooltip_modifier_cosmos_space_mist_debuff_Description"               "Although it offers resilience to Explosions, prepare for Asteroids to impose longer-lasting stun effects, accompanied by additional debilitations such as reduced accuracy and magic resistance."
 
 		"DOTA_Tooltip_ability_cosmos_cosmic_strike"									"First Firmament Voice"
 		"DOTA_Tooltip_ability_cosmos_cosmic_strike_Description"						"Cosmos exhales a wave of cosmic energy in the target direction, dealing magic damage to enemies within its path, slowing them for %slow_duration% seconds and, if they are within the radius of stars, stunning and knocking them back."

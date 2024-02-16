@@ -816,9 +816,62 @@ function AOHGameMode:OnPlayerChat(keys)
 		end	
 	end
 
+	----test skills ----
+	if string.find(keys.text, "-test_skill") and keys.playerid == 0 and Cheats:IsEnabled() then
+		print("pass")
+		local player = PlayerResource:GetPlayer(keys.playerid)
+		--get the hero entity
+		local hero = player:GetAssignedHero()
+		--get the skill name from the chat text
+		local skillName = string.custom_remove5(keys.text)
+		--call the add_skill_with_command function with the hero and skill name
+		add_skill_with_command(hero, skillName)
+	end
+
+
+
 end
 
-
+function add_skill_with_command(hero, skillName)
+    --check if the hero is valid
+    if hero and hero:IsRealHero() then
+        --check if the hero already has the skill
+        if not hero:HasAbility(skillName) then
+			if hero:IsRealHero() then
+				local GenericSlots = 0
+				for i = 0, DOTA_MAX_ABILITIES - 1 do
+					local abil = hero:GetAbilityByIndex(i)
+					if abil then
+						if abil:GetAbilityName() == "generic_hidden" then
+							GenericSlots = GenericSlots + 1
+						end
+					end
+				end
+				if GenericSlots > 0 then
+					for i = 0, DOTA_MAX_ABILITIES - 1 do
+						local abil = hero:GetAbilityByIndex(i)
+						if abil then
+							if abil:GetAbilityName() == "generic_hidden" then
+								hero:RemoveAbility("generic_hidden")
+							end
+						end
+					end
+					if GenericSlots > 1 then
+						for i = 1, GenericSlots - 1 do
+							hero:AddAbility("generic_hidden")
+						end
+					end
+				end
+			end
+            --add the skill to the hero
+            local newAbility = hero:AddAbility(skillName)
+            print("newAbility:" .. skillName)
+            --give the hero some ability points and gold
+            hero:SetAbilityPoints(hero:GetAbilityPoints() + 5)
+            return true
+        end
+    end
+end
 
 
 

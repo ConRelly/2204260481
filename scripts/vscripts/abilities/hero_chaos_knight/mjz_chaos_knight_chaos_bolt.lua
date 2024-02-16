@@ -60,7 +60,7 @@ if IsServer() then
 			damage = damage_max
 		end
 		if HasSuperScepter(caster) then
-			local str_multiplier = self:GetSpecialValueFor("str_multiplier_scepter")
+			local str_multiplier = self:GetSpecialValueFor("str_multiplier_scepter") * caster:GetLevel()
 			damage = damage + caster:GetStrength() * str_multiplier
 		end
 

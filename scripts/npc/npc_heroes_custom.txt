@@ -13,9 +13,8 @@
 }
 "npc_dota_hero_abaddon"
 {
-	"UnitLabel"					"no_underdog"
-	"Ability1"              "cosmos_book"
-	"Ability2"              "cosmos_space_mist"//"cosmos_asteroid"
+	"UnitLabel"				"no_underdog"
+	
 	"Ability3"				"mjz_pudge_rot"
 	"Ability5"				"custom_aphotic_shield"
 	"Ability10"				"special_bonus_unique_mjz_pudge_rot_health"

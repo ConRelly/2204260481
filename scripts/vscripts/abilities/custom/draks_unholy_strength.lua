@@ -16,10 +16,8 @@ function modifier_draks_unholy_strength:DeclareFunctions()
 end
 
 function modifier_draks_unholy_strength:GetModifierConstantHealthRegen()
-  local regen = -90000 --self:GetAbility():GetSpecialValueFor("bonus_health_regen")
-  --if self:GetCaster():HasScepter() then
-
-  regen = regen + (GameRules:GetGameTime() / 60) * self:GetAbility():GetSpecialValueFor("scepter_regen_per_minute")
+  local regen = -100000 
+  regen = regen + (GameRules:GetGameTime() / 60) * 1000 --self:GetAbility():GetSpecialValueFor("scepter_regen_per_minute")
   if GameRules:GetGameTime() > 0 then
   end
   if regen < 0 then 
@@ -30,7 +28,7 @@ function modifier_draks_unholy_strength:GetModifierConstantHealthRegen()
 end
 
 function modifier_draks_unholy_strength:GetModifierTotalDamageOutgoing_Percentage()
-  local bonus = -720
+  local bonus = -810
   bonus = bonus + (GameRules:GetGameTime() / 60) * 8
   if GameRules:GetGameTime() > 0 then
   end
@@ -41,7 +39,7 @@ function modifier_draks_unholy_strength:GetModifierTotalDamageOutgoing_Percentag
 end
 
 function modifier_draks_unholy_strength:GetModifierHPRegenAmplify_Percentage()
-  local bonus_reg = -90
+  local bonus_reg = -100
   bonus_reg = bonus_reg + (GameRules:GetGameTime() / 60) * 1
   if GameRules:GetGameTime() > 0 then
   end
@@ -52,7 +50,7 @@ function modifier_draks_unholy_strength:GetModifierHPRegenAmplify_Percentage()
 end
 
 function modifier_draks_unholy_strength:GetModifierHealAmplify_PercentageTarget()
-  local bonus_lifestel = -90
+  local bonus_lifestel = -100
   bonus_lifestel = bonus_lifestel + (GameRules:GetGameTime() / 60) * 1
   if GameRules:GetGameTime() > 0 then
   end
@@ -63,7 +61,7 @@ function modifier_draks_unholy_strength:GetModifierHealAmplify_PercentageTarget(
 end
 
 function modifier_draks_unholy_strength:GetModifierPercentageCooldown()
-  local cdr = -100
+  local cdr = -110
   cdr = cdr + (GameRules:GetGameTime() / 60) * 1
   if GameRules:GetGameTime() > 0 then
   end

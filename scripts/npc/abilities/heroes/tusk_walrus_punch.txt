@@ -1,5 +1,6 @@
 "DOTAAbilities"
 {
+
   //=================================================================================================================
   // Tusk: Walrus Punch
   //=================================================================================================================
@@ -7,67 +8,54 @@
   {
     // General
     //-------------------------------------------------------------------------------------------------------------
-    "ID"                                                  "5568"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-    "AbilityType"                                         "DOTA_ABILITY_TYPE_ULTIMATE"
-    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
-    "AbilityUnitTargetTeam"                               "DOTA_UNIT_TARGET_TEAM_ENEMY"
-    "AbilityUnitTargetType"                               "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-    "AbilityUnitTargetFlags"                              "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-    "SpellImmunityType"                                   "SPELL_IMMUNITY_ENEMIES_YES"
-    "SpellDispellableType"                                "SPELL_DISPELLABLE_YES"
-    "FightRecapLevel"                                     "1"
+    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags"    "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    "SpellImmunityType"         "SPELL_IMMUNITY_ENEMIES_NO"
+    "SpellDispellableType"      "SPELL_DISPELLABLE_YES"
+    "AbilityType"         "DOTA_ABILITY_TYPE_ULTIMATE"
+    "FightRecapLevel"       "1"
+    "AbilitySound"          "Hero_Tusk.WalrusPunch.Target"
 
+    "AbilityDraftUltScepterAbility"   "tusk_walrus_kick"
     "MaxLevel"                                            "7"
     "RequiredLevel"                                       "6"
     "LevelsBetweenUpgrades"                               "10"
-
-    "HasScepterUpgrade"                                   "1"
-
     // Casting
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCastPoint"                                    "0"
-    "AbilityCastRange"                                    "500"
+    "AbilityCastPoint"        "0"
+    "AbilityCastRange"        "550"
+    "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_4"
 
-    // Time
+    // Time   
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityCooldown"                                     "14 13 12 11 10 9 8"
+    "AbilityCooldown"           "14 13 12 11 10 9 8"
 
     // Cost
     //-------------------------------------------------------------------------------------------------------------
-    "AbilityManaCost"                                     "150"
+    "AbilityManaCost"       "75"
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
+    "AbilityValues"
     {
-      "01"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "crit_multiplier"                                 "450 950 1850 2900 3450 4550 7700"
-        "LinkedSpecialBonus"                              "special_bonus_unique_tusk"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "air_time"                                        "0.0"
-        "LinkedSpecialBonus"                              "special_bonus_unique_tusk_7"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "slow_duration"                                   "5.0"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "move_slow"                                       "40"
-      }
-      "05"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "push_length"                                     "1000"
-      }
+        "bonus_damage"      "50"
+        "crit_multiplier"     
+        {
+          "value"                 "450 950 1850 2900 3450 4550 7700"
+          "LinkedSpecialBonus"    "special_bonus_unique_tusk"
+        }
+        "air_time"          
+        {
+          "value"                 "0.0"
+          "LinkedSpecialBonus"    "special_bonus_unique_tusk_7"
+        }
+        "slow_duration"           "5.0"
+        "move_slow"               "40"
+        "push_length"             "1000"
     }
   }
+
 
 }

@@ -97,6 +97,16 @@ function string.custom_remove4(str)
         return 2  
     end    
 end
+
+--select skill name from text
+function string.custom_remove5(str)
+    if str == nil then
+        return nil, "the string parameter is nil"
+    end
+    str = string.gsub(str, " ", "")
+    str = string.gsub(str, "-test_skill", "")
+    return str
+end
 --[[将str的第一个字符转化为大写字符。成功返回转换后的字符串，失败返回nil和失败信息]]
 function string.capitalize(str)
     if str == nil then

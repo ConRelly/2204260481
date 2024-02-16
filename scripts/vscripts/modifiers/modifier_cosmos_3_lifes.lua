@@ -45,7 +45,27 @@ function modifier_cosmos_3_lifes:OnCreated()
             elseif self.current_damage_type == DAMAGE_TYPE_PURE then
                 damage_type = "Pure"
             end
-            Notifications:TopToAll({text="Stage-- "..self.stage.." Vulnerable to:  "..damage_type , style={color="red"}, duration=15})
+            Notifications:TopToAll({text="Stage-- "..self.stage.." Vulnerable to:  "..damage_type.. " ,check his shield buffs for confirmation" , style={color="red"}, duration=15})
+            if not Cheats:IsEnabled() then
+                if _G.cosmos_defeat_notification then
+                    _G.cosmos_defeat_notification = false
+                    Notifications:TopToAll({text="Qualified for Old(v3)Vitory role on Discord(Print this)" , style={color="green"}, duration=10})
+                    Timers:CreateTimer(10, function()
+                        Notifications:TopToAll({text="You Have 20 min to stop Cosmos from wining" , style={color="red"}, duration=10})
+                    end)
+                    --create a timer for 20 min 
+                    Timers:CreateTimer(1200, function()
+                        Notifications:TopToAll({text="20 min Have Passed, Cosmos is Destorying your game world" , style={color="red"}, duration=10})
+                        Timers:CreateTimer(6, function()
+                            _G.cosmos_defeat = false
+                        end)
+                    end)
+                    --create a 10 min timer to announce 10 mil left
+                    Timers:CreateTimer(600, function()
+                        Notifications:TopToAll({text="10 min left to defeat Cosmos" , style={color="red"}, duration=10})
+                    end)
+                end
+            end
             -- set the current life count to 1
             self.current_life = 1
         end

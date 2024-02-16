@@ -23259,7 +23259,7 @@
 			"11"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"str_multiplier_scepter"	"20"
+				"str_multiplier_scepter"	"2"
 			}
 		}
 
@@ -24962,7 +24962,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityUnitDamageType"		 "DAMAGE_TYPE_PURE"
+		"AbilityUnitDamageType"		 	"DAMAGE_TYPE_PURE"
 		"AbilityCastRange"				"275"
 		//"RequiredLevel"				 "1"
 		"AbilityCastPoint"				"0.1"
@@ -39932,7 +39932,7 @@
 		{
 			"grow_str"
 			{
-				"value"							"0.5 1.0 1.5 2.0 2.5 3.5"
+				"value"							"0.5 1.0 1.5 2.0 3.0 5.0"
 				"LinkedSpecialBonus"			"special_bonus_unique_ck_grow_strong"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
@@ -39943,9 +39943,9 @@
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
 			"grow_model"			"0.2"
-			"grow_interval"			"12 12 11 11 10 9"
+			"grow_interval"			"13 12 11 10 9 8"
 			"max_scale"				"100"
-			"crit_chance"			"5"
+			"crit_chance"			"8"
 			"crit_per_str"			"0.5"
 			"stun_duration"			"1"
 		}
@@ -40150,7 +40150,7 @@
 		"RequiredLevel"					"3"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"		  		"0.3"
+		"AbilityCastPoint"		  		"0.0"
 		"AbilityCastRange"		  		"GLOBAL"
 
 		// Time
@@ -40163,7 +40163,7 @@
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	".30" // applies multiple modifiers
+		"AbilityModifierSupportValue"	"0" // applies multiple modifiers
 
 		// Special
   		//-------------------------------------------------------------------------------------------------------------
@@ -40597,7 +40597,7 @@
 		"IsOnCastBar"				   "0"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0"
@@ -44107,6 +44107,7 @@
 		"BaseClass"					 	"riki_blink_strike"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -44190,7 +44191,6 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/custom/cosmos_galactic_stars.lua"
 		"AbilityTextureName"			"custom/cosmos_galactic_stars"
-		"HasScepterUpgrade"				"1"
 		
 		"precache"
 		{
@@ -44203,6 +44203,7 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"MaxLevel"                      "1"
@@ -44298,6 +44299,7 @@
 		"AbilityTextureName"			"custom/cosmos_space_mist"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
  		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -44356,10 +44358,11 @@
 		"ScriptFile"					"abilities/custom/cosmos_asteroid.lua"
 		"AbilityTextureName"            "custom/cosmos_asteroid"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		//"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		//"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"		
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"precache"
 		{
 			"soundfile" 				"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
@@ -44426,7 +44429,7 @@
 		"AbilityTextureName"			"custom/first_fundamental"
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -44488,6 +44491,7 @@
 		"ScriptFile"							"abilities/custom/cosmos_world_devour.lua"
 		//"AbilityType"							"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetFlags"				"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"					"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"						"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"						"2"
@@ -44567,6 +44571,7 @@
 		"ScriptFile"					"abilities/custom/cosmos_book.lua"
 		"AbilityTextureName"			"custom/cosmos_explosion"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -44593,7 +44598,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"2"
+				"stun_duration"			"5"
 			}
 			"04"
 			{
@@ -44655,8 +44660,9 @@
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 
 		"AbilitySound"					"Hero_PhantomAssassin.Strike.Start"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"

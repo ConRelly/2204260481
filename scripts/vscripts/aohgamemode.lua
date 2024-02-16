@@ -140,6 +140,8 @@ function AOHGameMode:InitGameMode()
 	_G._dev_enemy_ano = false
 	_G.auto_skipp = false
 	_G.cosmos_stage = 4
+	_G.cosmos_defeat = true
+	_G.cosmos_defeat_notification = true
 	self._hardMode = false
 	self._endlessMode = false
 	self._endlessMode_started = false
@@ -1194,7 +1196,7 @@ end
 
 function AOHGameMode:_CheckForDefeat()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		if self._entAncient and self._entAncient:IsAlive() then
+		if self._entAncient and self._entAncient:IsAlive() and _G.cosmos_defeat then
 			if are_all_heroes_dead() and not self._ischeckingdefeat then
 				GameRules:GetGameModeEntity():SetThink("CheckForDefeatDelay", self, 0.5)
 				self._ischeckingdefeat = true
@@ -1203,22 +1205,29 @@ function AOHGameMode:_CheckForDefeat()
 			print("end game post")
 			send_info_if_game_ends()
 			GameRules:SetSafeToLeave(true)
-			PauseGame(true)
+--[[ 			PauseGame(true)
 			Timers:CreateTimer({
 				useGameTime = false, 
 				endTime = 0.4, 
 				callback = function()
 					PauseGame(false)
 				end
-			})			
+			}) ]]	
+			self._entAncient:Kill(nil,nil)
+			Timers:CreateTimer({
+				endTime = 4,
+				callback = function()
+					self._entAncient:Kill(nil,nil)
+				end
+			})					
 			--end_screen_setup(self._entAncient and self._entAncient:IsAlive())			
-			GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)	
+			--GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)	
 		end
 	end
 end
 
 local one_time_reward = true
-
+local moran_annoncement_kill = true
 function AOHGameMode:CheckForDefeatDelay()
 	if self._defeatcounter > 0 then
 		Notifications:TopToAll({text=self._defeatcounter, duration=1})
@@ -1485,7 +1494,7 @@ function AOHGameMode:OnEntitySpawned(event)
 		if (unit:GetLevel() > 79) then
 			--if unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
 				print("boss moster") 
-				unit:AddNewModifier(unit, nil, "modifier_cosmos_3_lifes", {})
+				--unit:AddNewModifier(unit, nil, "modifier_cosmos_3_lifes", {})
 				unit:AddNewModifier(unit, nil, "modifier_phys", {})
 				unit:AddNewModifier(unit, nil, "modifier_boss_truesight_aura", {})
 			--end
@@ -1584,7 +1593,7 @@ function AOHGameMode:OnEntityKilled(event)
 			Sounds:RemoveSound(i, "bleach_fate")
 		end
 	end]]	
-	if killedUnit:GetUnitName() == "npc_boss_guesstuff_Moran" and not Cheats:IsEnabled() then
+	if killedUnit:GetUnitName() == "npc_boss_guesstuff_Moran" and not Cheats:IsEnabled() and moran_annoncement_kill then
 		if self._extra_mode then
 			if self._doubleMode then
 				Notifications:TopToAll({text="You Have Defeated One God MORAN(Higher Difficulty + Double)", style={color="red"}, duration=15})
@@ -1593,7 +1602,8 @@ function AOHGameMode:OnEntityKilled(event)
 			end	
 		else	
 			Notifications:TopToAll({text="You Have Defeated The God MORAN(Lower Dificulty)", style={color="red"}, duration=15})
-		end	
+		end
+		moran_annoncement_kill = false	
 	end		
 	mHackGameMode:OnEntityKilled(event)
 end

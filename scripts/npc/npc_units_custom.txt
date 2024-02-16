@@ -16381,8 +16381,8 @@
 		//----------------------------------------------------------------
 		"Ability1"					"damage_meter"
 		"Ability2"					"windrunner_windrun"
-		//"Ability3"                  "ability_absolute_no_cc"
-		//"Ability4"                  "flash_backtrack"
+		"Ability3"                  "ability_absolute_no_cc"
+		//"Ability4"                  "cosmos_asteroid"
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"0"
@@ -16457,7 +16457,7 @@
 	"Model"					 "models/heroes/hero_cosmos/cosmos.vmdl"  // Model.
 	"BaseClass"				 "npc_dota_creature"
 	"UnitLabel"				 "randomskill"
-	//"vscripts"				  "bosses/attack_move.lua"
+	"vscripts"				  "bosses/attack_move.lua"
 	"SoundSet"					"Hero_Oracle"
 	"IdleSoundLoop"				"Hero_Oracle.IdleLoop"
 	"DisableWearables"				  "1"
@@ -16475,9 +16475,9 @@
 
 	"Ability1"				  "leesin_dragons_rage"		 // Ability 2
 	"Ability2"				  "cosmos_galactic_stars"  //c1
-	"Ability3"				  "zoom_charge_of_darkness"		   // Ability 3
-	"Ability4"				  "cosmos_book" //c2
-	"Ability5"			      "katana_strike" //c3
+	"Ability3"				  "cosmos_world_devour"	//c2
+	"Ability4"				  "cosmos_book" //c3
+	"Ability5"			      "katana_strike" //c4
 	"Ability6"				  "darkrider_time_aura"
 	"Ability7"				  "custom_vitality_rend_2"
 	"Ability8"				  "bloodseeker_thirst_2"
@@ -16486,8 +16486,8 @@
 	"Ability11"				 "ability_absolute_no_cc"
 	"Ability12"				 "siltbreaker_kraken_shell8"
 	"Ability13"				 "mjz_chaos_knight_chaos_strike_2"
-	"Ability14"				 "cosmos_space_mist" // c4
-	"Ability15"				 "cosmos_world_devour" // c5
+	"Ability14"				 "cosmos_space_mist" // c5
+	"Ability15"				 "zoom_charge_of_darkness" 
 	"Ability16"				 "cosmos_asteroid" //c6
 	"Ability17"				 "draks_unholy_strength"
 	"Ability18"				 "creep_siege"
@@ -16495,10 +16495,10 @@
 	"ArmorPhysical"			 "420"		 // Physical protection.
 	"MagicalResistance"		 "98"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"		   "34000"		// Damage range min.
-	"AttackDamageMax"		   "58000"	   // Damage range max.
-	"AttackRate"				"1.6"	   // Speed of attack.
-	"BaseAttackSpeed"		   "1300"
+	"AttackDamageMin"		   "44000"		// Damage range min.
+	"AttackDamageMax"		   "78000"	   // Damage range max.
+	"AttackRate"				"1.3"	   // Speed of attack.
+	"BaseAttackSpeed"		   "1100"
 	"AttackAnimationPoint"	  "0.2"	   // Normalized time in animation cycle to attack.
 	"AttackAcquisitionRange"	"9600"	  // Range within a target can be acquired.
 	"AttackRange"			   "350"	   // Range within a target can be attacked.
@@ -16510,11 +16510,11 @@
 	"BountyGoldMin"			 "25"		// Gold earned min.
 	"BountyGoldMax"			 "30"		// Gold earned max.
 	"MovementCapabilities"	  "DOTA_UNIT_CAP_MOVE_FLY"
-	"MovementSpeed"			 "500"	   // Speed.		   
-	"StatusHealth"			  "2950000"	  // Base health.
+	"MovementSpeed"			 "400"	   // Speed.		   
+	"StatusHealth"			  "29500000"	  // Base health.
 	"StatusHealthRegen"		 "1"	 // Health regeneration rate.
 	"StatusMana"				"90000"		   // Base mana.
-	"StatusManaRegen"		   "7000"	 // Mana regeneration rate.	   
+	"StatusManaRegen"		   "10000"	 // Mana regeneration rate.	   
 	"VisionDaytimeRange"		"9600"	  // Range of vision during day light.
 	"VisionNighttimeRange"	  "9600"	  // Range of vision at night time.
 	"TeamName"				  "DOTA_TEAM_BADGUYS"							// Team name.
@@ -16539,7 +16539,7 @@
 			{
 			   "Name"			   "katana_strike"		  
 			}
-			"Ability15"
+			"Ability3"
 			{
 			   "Name"			   "cosmos_world_devour"
 			   "AOE"				"7200"
@@ -16551,7 +16551,7 @@
 				"Name"			  "leesin_dragons_rage"
 			}
 		   		 
-			"Ability3"
+			"Ability15"
 			{
 				"Name"			  "zoom_charge_of_darkness"
 			}			
@@ -16559,7 +16559,7 @@
 			{
 			   "Name"			   "cosmos_space_mist"
 			   "AOE"				"8000"
-			   "Radius"			 "600"
+			   "Radius"			 	"4000"
 			   "MinimumTargets"	 "0"
 			}
 			"Ability4"

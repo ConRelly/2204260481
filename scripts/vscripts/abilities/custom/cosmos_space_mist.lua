@@ -6,6 +6,17 @@ cosmos_space_mist = class ( {})
 function cosmos_space_mist:GetAOERadius()
 	return self:GetSpecialValueFor("radius")
 end
+function cosmos_space_mist:GetCooldown(level)
+    local baseCooldown = self.BaseClass.GetCooldown(self, level)
+    local caster = self:GetCaster()
+    local minCooldown = 10 -- The minimum cooldown you want to set
+	local adjustedCooldown = baseCooldown
+    local cdAfterReduction = baseCooldown * caster:GetCooldownReduction()
+    if cdAfterReduction < minCooldown then 
+        adjustedCooldown = minCooldown / caster:GetCooldownReduction() 
+    end
+    return adjustedCooldown 
+end
 function cosmos_space_mist:OnSpellStart()
     if IsServer() then
         local caster = self:GetCaster()

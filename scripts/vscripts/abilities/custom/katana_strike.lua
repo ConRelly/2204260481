@@ -6,7 +6,8 @@ function katana_strike:OnSpellStart()
     if IsServer() then
         --self.original_target = self:GetCursorTarget()
         self.blink_distance = 100  -- Adjust as needed
-        self.num_strikes = 14  -- Adjust as needed
+        
+        self.num_strikes = RandomInt(10, 20) --14  -- Adjust as needed
         self.strike_interval = 0.5  -- Adjust as needed
         self.current_strikes = 0
         self:FindInitialTarget()
@@ -21,7 +22,7 @@ function katana_strike:FindInitialTarget()
             --self.target = initialTarget
         else
             -- If the initial target is not valid, find a new target
-            local enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+            local enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
             for _, enemy in pairs(enemies) do
                 if enemy:IsAlive() then
                     self.target = enemy

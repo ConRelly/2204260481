@@ -2963,16 +2963,25 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 
 
 
-* Replaced a lvl 10 talent from spectre and buffed(and fixed) the desolate talent.
-* Increased Parasma Stats and changed recipe(witch blade up)
-* Added the normal Time walk for Faceless Void (Q) and to random pool(and removed the deletd frostivus one)
-* Added Aghanim + shard effect for Time Jab(works only with time walk)
+
+* NEW GOD Boss found in Part 3.
+* New god-tier item:  Empty Spellbook (evolves).
+* Replaced a level 10 talent from Spectre, buffed (and fixed) the Desolate talent.
+* Increased Parasama stats and changed recipe (Witch Blade Up).
+* Added the regular Time Walk for Faceless Void (Q) to the random pool (and removed the empty Frostivus one).
+* Added Aghanim + Shard effect for Time Jab (only works with Time Walk).
 * Added new Super Scepter effect for Marci:
--- Empty Spellbook: Charges gain are doubled and SS Awaken effect gives 20 charges instead of 10.
-* Fixed Arc warden ultimate.
-* Fixed Tombstone for heroes that already have reincarnation on going.
+--Empty Spellbook: Charges gain is doubled and SS Awaken effect gives 20 charges instead of 10.
+* Enigma Blackhole AOE increased, duration increased, CD reduced, now does not pierce stun immunity.
+* Slightly buffed Grow Strong.
+* Chaos Knight (Q) SS effect now scales with your lvl.
+* Gods GameTime Power moved from minute 90 and up to minute 100 (110 for CDR).
+* Fixed Arc Warden's ultimate.
+* Fixed Tombstone for heroes that already have reincarnation ongoing.
 * Fixed Dezun bkb effect not lasting on caster sometimes.
-* And some other Fixes.
+* Fixed the "no ending screen" sometimes, probably :).
+* Note: Barathrum bash does not interrupt gods anymore. Tusk ult still can and cannot be made to not (yet).
+* And some other changes and fixes.
 
 
 

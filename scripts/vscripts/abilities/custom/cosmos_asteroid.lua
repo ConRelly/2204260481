@@ -49,7 +49,7 @@ function cosmos_asteroid:OnSpellStart()
                         radius,
                         DOTA_UNIT_TARGET_TEAM_ENEMY,
                         DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-                        DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
+                        DOTA_UNIT_TARGET_FLAG_NONE,
                         FIND_ANY_ORDER,
                         false)
 
@@ -85,7 +85,8 @@ function cosmos_asteroid:OnSpellStart()
                             duration_dummy = stun_duration_2
                         else
                             duration_dummy = stun_duration
-                        end                        
+                        end  
+                                              
                         enemy:AddNewModifier(caster, self, "modifier_stunned", { duration = duration_dummy })
                     end
                 end)
