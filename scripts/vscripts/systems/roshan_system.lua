@@ -19,8 +19,8 @@ local ROSHAN_CLASS_NAME = "npc_dota_roshan_mega"    -- Roshan 类名
 local ROSHAN_SPAWNER = "roshan_spawner"             -- 出生定位点
 
 if IsInToolsMode() or GameRules:IsCheatMode() then
-    MIN_RESPAWN_TIME = 0.1
-    MAX_RESPAWN_TIME = 1
+    MIN_RESPAWN_TIME = 10.1
+    MAX_RESPAWN_TIME = 20
 end
 -- Indicates the time Respawn should be done
 CRoshanSystem._flRespawnTime = -1.0

@@ -8,7 +8,9 @@ function modifier_owner_buff:IsHidden() return false end
 function modifier_owner_buff:OnCreated()
 	if IsServer() then
 		Timers:CreateTimer(0.2, function()
-			local abillity = self:GetAbility()
+			if self == nil then return end
+			if not self:GetParent() then return end
+			if not self:GetParent():IsAlive() then return end
 			local parent = self:GetParent()
 			local owner = parent:GetOwner()
 			if parent:GetUnitLabel() == "spirit_bear" then

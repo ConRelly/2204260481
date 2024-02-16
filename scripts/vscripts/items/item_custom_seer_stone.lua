@@ -44,6 +44,7 @@ function modifier_item_custom_seer_stone:RemoveOnDeath() return false end
 function modifier_item_custom_seer_stone:OnCreated()
 	if not IsServer() then return end
 	self:GetParent():RemoveModifierByName("modifier_item_custom_seer_stone_buff")
+	if not self:GetAbility() then return end
 	self:GetParent():AddNewModifier(self:GetParent(), self:GetAbility(), "modifier_item_custom_seer_stone_buff", {})
 end
 function modifier_item_custom_seer_stone:OnDestroy()
@@ -67,18 +68,23 @@ function modifier_item_custom_seer_stone_buff:DeclareFunctions()
 	}
 end
 function modifier_item_custom_seer_stone_buff:GetModifierManaBonus()
+	if not self:GetAbility() then return end
 	return self:GetAbility():GetSpecialValueFor("bonus_mana")
 end
 function modifier_item_custom_seer_stone_buff:GetBonusDayVision()
+	if not self:GetAbility() then return end
 	return self:GetAbility():GetSpecialValueFor("vision_bonus")
 end
 function modifier_item_custom_seer_stone_buff:GetBonusNightVision()
+	if not self:GetAbility() then return end
 	return self:GetAbility():GetSpecialValueFor("vision_bonus")
 end
 function modifier_item_custom_seer_stone_buff:GetModifierConstantManaRegen()
+	if not self:GetAbility() then return end
 	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
 end
 function modifier_item_custom_seer_stone_buff:GetModifierCastRangeBonusStacking()
+	if not self:GetAbility() then return end
 	return self:GetAbility():GetSpecialValueFor("cast_range_bonus")
 end
 

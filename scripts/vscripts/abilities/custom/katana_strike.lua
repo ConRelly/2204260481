@@ -6,8 +6,8 @@ function katana_strike:OnSpellStart()
     if IsServer() then
         --self.original_target = self:GetCursorTarget()
         self.blink_distance = 100  -- Adjust as needed
-        self.num_strikes = 10  -- Adjust as needed
-        self.strike_interval = 0.6  -- Adjust as needed
+        self.num_strikes = 14  -- Adjust as needed
+        self.strike_interval = 0.5  -- Adjust as needed
         self.current_strikes = 0
         self:FindInitialTarget()
     end
@@ -17,11 +17,11 @@ function katana_strike:FindInitialTarget()
     if IsServer() then
         local caster = self:GetCaster()
         -- Check if the initial target is valid
-        if self.target and not self.target:IsNull() and IsValidEntity(self.target) and self.target:IsAlive() and RollPercentage(70) then
+        if self.target and not self.target:IsNull() and IsValidEntity(self.target) and self.target:IsAlive() and RollPercentage(30) then
             --self.target = initialTarget
         else
             -- If the initial target is not valid, find a new target
-            local enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
+            local enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, FIND_UNITS_EVERYWHERE, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
             for _, enemy in pairs(enemies) do
                 if enemy:IsAlive() then
                     self.target = enemy
@@ -101,7 +101,7 @@ function katana_strike:PerformKatanaStrike()
                 duration = self:GetSpecialValueFor("knockback_duration"),
                 knockback_duration = self:GetSpecialValueFor("knockback_duration"),
                 knockback_distance = distance,
-                knockback_height = 0,
+                knockback_height = 350,
                 should_stun = true,
             }
             --EmitSoundOn("Hero_Tusk.WalrusKick.Target", target)

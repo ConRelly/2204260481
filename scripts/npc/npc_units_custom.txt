@@ -16479,7 +16479,7 @@
 	"Ability4"				  "cosmos_book" //c2
 	"Ability5"			      "katana_strike" //c3
 	"Ability6"				  "darkrider_time_aura"
-	//"Ability7"				  "custom_vitality_rend_2"
+	"Ability7"				  "custom_vitality_rend_2"
 	"Ability8"				  "bloodseeker_thirst_2"
 	"Ability9"				  "flash_backtrack"
 	"Ability10"				 "jotaro_absolute_defense"
@@ -16488,9 +16488,10 @@
 	"Ability13"				 "mjz_chaos_knight_chaos_strike_2"
 	"Ability14"				 "cosmos_space_mist" // c4
 	"Ability15"				 "cosmos_world_devour" // c5
-	"Ability16"				 "draks_unholy_strength"
-	"Ability17"				 "cosmos_asteroid" //c6
-	"Ability18"				 "creep_siege"	
+	"Ability16"				 "cosmos_asteroid" //c6
+	"Ability17"				 "draks_unholy_strength"
+	"Ability18"				 "creep_siege"
+	"Ability19"              "custom_riki_blink_strike"	
 	"ArmorPhysical"			 "420"		 // Physical protection.
 	"MagicalResistance"		 "98"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -16557,8 +16558,8 @@
 			"Ability14"
 			{
 			   "Name"			   "cosmos_space_mist"
-			   "AOE"				"600"
-			   "Radius"			 "8000"
+			   "AOE"				"8000"
+			   "Radius"			 "600"
 			   "MinimumTargets"	 "0"
 			}
 			"Ability4"
@@ -16575,17 +16576,17 @@
 			   "Radius"			 "940"
 			   "MinimumTargets"	 "0"
 			}
-			"Ability17"
+			"Ability16"
 			{
-			   "Name"			   "cosmos_book"
+			   "Name"			   "cosmos_asteroid"
 			   "AOE"				"7200"
 			   "Radius"			 "7800"
 			   "MinimumTargets"	 "0"
 			}			
-			//"Ability18"
-			//{
-			//   "Name"			   "custom_riki_blink_strike"
-			//}																					
+			"Ability19"
+			{
+			   "Name"			   "custom_riki_blink_strike"
+			}																					
 		}
 		"EquippedItems"
 		{

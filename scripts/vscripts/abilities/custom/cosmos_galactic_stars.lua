@@ -15,16 +15,14 @@ end
 
 local enchant_modif = 0
 function cosmos_galactic_stars:OnSpellStart()
-	local caster = self:GetCaster()
+--[[ 	local caster = self:GetCaster()
 	if caster:HasModifier("modifier_cosmos_galactic_stars_enhance") then
 		caster:RemoveModifierByName("modifier_cosmos_galactic_stars_enhance")
 	else
 		caster:AddNewModifier(caster, self, "modifier_cosmos_galactic_stars_enhance", {duration = self:GetSpecialValueFor("duration")})
 		self:UseResources( false,false, false, true )
-		--self:EndCooldown()
-		--self:StartCooldown(6.0)
 		enchant_modif = 1		
-	end
+	end ]]
 end
 modifier_cosmos_galactic_stars_enhance_speed = class({})
 function modifier_cosmos_galactic_stars_enhance_speed:IsDebuff() return false end
@@ -97,12 +95,18 @@ function modifier_cosmos_galactic_stars_thinker:OnCreated( kv )
 			false -- bOverheadEffect
 		)
 		
-		self:StartIntervalThink(0.05)
+		self:StartIntervalThink(0.06)
 	end
 end
 function modifier_cosmos_galactic_stars_thinker:OnIntervalThink()
 	local thinker = self:GetParent()
 	local ability = self:GetAbility()
+	if not self:GetCaster():IsAlive() then
+		self:Destroy()
+		return
+	end	
+	if not ability then return end
+
 	--local ability2 = self:GetCaster():GetAbilityByIndex(1)
 	local ability2 = self:GetAbility()
 	local thinker_pos = thinker:GetAbsOrigin()
@@ -120,8 +124,8 @@ function modifier_cosmos_galactic_stars_thinker:OnIntervalThink()
 	local buffduration = ability2:GetSpecialValueFor("duration")
 	local total_damage = 0
 	local modifier = caster:FindModifierByName("modifier_cosmos_galactic_stars_enhance")
-	local hp_ptc = caster:GetHealth() / caster:GetMaxHealth()
-	if not caster:IsAlive() or caster:IsStunned() or (hp_ptc > 0.5 and self.ID >= self.maxstars - 1) then
+	local hp_ptc = caster:GetHealthPercent()
+	if not caster:IsAlive() or caster:IsStunned() or (hp_ptc > 50 and self.ID >= self.maxstars - 1) then
 		self.hide = -5000
 	else
 		self.hide = 0
@@ -131,7 +135,7 @@ function modifier_cosmos_galactic_stars_thinker:OnIntervalThink()
 	
 	if caster:HasModifier("modifier_cosmos_galactic_stars_enhance") then
 		total_damage = (damage + mana_damage) * (((damage_pct) / 100) + 1)
-		self.speed = (plusspeed * (modifier:GetRemainingTime() / buffduration) * 5 ) + 1
+		self.speed = (plusspeed * (modifier:GetRemainingTime() / buffduration) * 3 ) + 1
 		if self.radius < outer_limit then
 			self.radius = self.radius + 8
 		else
@@ -148,7 +152,7 @@ function modifier_cosmos_galactic_stars_thinker:OnIntervalThink()
 		self.hitbox = 100
 	end
 	
-	if not caster:HasModifier("modifier_cosmos_galactic_stars_enhance") and enchant_modif == 1 then
+	if not caster:HasModifier("modifier_cosmos_galactic_stars_enhance") and enchant_modif == 1 and caster:IsAlive() then
 		caster:AddNewModifier(caster, ability, "modifier_cosmos_galactic_stars_enhance_speed", {duration = ability:GetSpecialValueFor("movespeed_duration")})
 		enchant_modif = 0
 	end
@@ -168,16 +172,6 @@ function modifier_cosmos_galactic_stars_thinker:OnIntervalThink()
 					ability = ability, --Optional.
 				}
 				ApplyDamage( damageTable )
-				if enemy:IsCreep() and enemy:GetHealth() < ability:GetSpecialValueFor("creep_execute") then
-					local damageTable2 = {
-						victim = enemy,
-						attacker = caster,
-						damage = 25,
-						damage_type = DAMAGE_TYPE_PURE,
-						ability = ability, --Optional.
-					}
-					ApplyDamage( damageTable2 )
-				end
 				if caster:HasModifier("modifier_cosmos_galactic_stars_enhance") then
 					local big_particle = ParticleManager:CreateParticle( "particles/econ/items/wisp/wisp_guardian_explosion_ti7.vpcf", PATTACH_WORLDORIGIN, self:GetCaster() )
 					ParticleManager:SetParticleControl( big_particle, 0, enemy:GetOrigin() + Vector(0, 0, 100) )
@@ -196,15 +190,15 @@ function modifier_cosmos_galactic_stars_thinker:OnIntervalThink()
 		end
 	end
 	
-
-	local hp_ptc = caster:GetHealth() / caster:GetMaxHealth()
+	--get healt percent
+	local hp_ptc = caster:GetHealthPercent()
 		
-	if hp_ptc < 0.5 and self.sceptercheck == false then
+	if hp_ptc < 50 and self.sceptercheck == false then
 		self.sceptercheck = true
 		self.angle = self.angle - ((360/self.minstars) * (self.ID/self.maxstars))
 	end
 	
-	if hp_ptc > 0.5 and self.sceptercheck == true then
+	if hp_ptc > 50 and self.sceptercheck == true then
 		self.sceptercheck = false
 		self.angle = self.angle + ((360/self.minstars) * (self.ID/self.maxstars))
 	end
@@ -235,11 +229,25 @@ function modifier_cosmos_galactic_stars:OnCreated()
 	local scepterstars = ability:GetSpecialValueFor("scepter_stars")
 	
 	if IsServer() then
-		local starID = 0
-		for i = 1, stars + scepterstars, 1 do
-			angle = angle + (360 / stars)
-			CreateModifierThinker(caster, ability, "modifier_cosmos_galactic_stars_thinker", {startangle = angle, starID = starID}, caster:GetAbsOrigin(), caster:GetTeamNumber(), false)
-			starID = starID + 1
+		if ability and caster then
+			local starID = 0
+			for i = 1, stars + scepterstars, 1 do
+				angle = angle + (360 / stars)
+				CreateModifierThinker(caster, ability, "modifier_cosmos_galactic_stars_thinker", {startangle = angle, starID = starID}, caster:GetAbsOrigin(), caster:GetTeamNumber(), false)
+				starID = starID + 1
+			end
+			self:StartIntervalThink(30)
 		end
 	end
+end
+
+function modifier_cosmos_galactic_stars:OnIntervalThink()
+	if IsServer() then
+		local caster = self:GetCaster()
+		local ability = self:GetAbility()
+		if caster and ability then
+			caster:AddNewModifier(caster, ability, "modifier_cosmos_galactic_stars_enhance", {duration = ability:GetSpecialValueFor("duration")})
+			enchant_modif = 1
+		end
+	end	
 end

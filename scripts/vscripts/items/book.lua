@@ -13,6 +13,29 @@ modifier_spellbook_destruction_burn = class({})
 modifier_spellbook_destruction_mana_drain = class({})
 modifier_spellbook_destruction_pierce_evasion = class({})
 
+
+-- make so the cooldown does not go below 30 seconds
+function item_spellbook_destruction:GetCooldown(level)
+    local baseCooldown = self.BaseClass.GetCooldown(self, level)
+    local caster = self:GetCaster()
+    local minCooldown = 30 -- The minimum cooldown you want to set
+	local adjustedCooldown = baseCooldown
+    if caster and caster:HasModifier("modifier_dzzl_good_juju") then
+		--a separate cdr for items skill
+		local cdAfterReduction = (baseCooldown * caster:GetCooldownReduction()) * 0.58
+		if cdAfterReduction < minCooldown then 
+			adjustedCooldown = minCooldown / caster:GetCooldownReduction() / 0.58
+		end		
+		return adjustedCooldown  
+    end
+    local cdAfterReduction = baseCooldown * caster:GetCooldownReduction()
+    if cdAfterReduction < minCooldown then 
+        adjustedCooldown = minCooldown / caster:GetCooldownReduction() 
+    end
+    return adjustedCooldown 
+end
+
+
 function item_spellbook_destruction:GetIntrinsicModifierName() return "modifier_spellbook_destruction" end
 function modifier_spellbook_destruction:IsHidden() return true end
 function modifier_spellbook_destruction:IsPurgable() return false end
@@ -76,15 +99,19 @@ function item_spellbook_destruction:OnSpellStart()
 end
 function item_spellbook_destruction:OnChannelFinish(bInterrupted)
 	if not IsServer() then return end
-	self:GetCaster():RemoveGesture(ACT_DOTA_GENERIC_CHANNEL_1)
-	self:GetCaster():RemoveModifierByName("modifier_spellbook_destruction_mana_drain")
+	local caster = self:GetCaster()
+	local modif_mana_burn = caster:FindModifierByName("modifier_spellbook_destruction_mana_drain")
+	if modif_mana_burn then
+		modif_mana_burn:Destroy()
+	end
+	caster:RemoveGesture(ACT_DOTA_GENERIC_CHANNEL_1)
 
 	if bInterrupted then
-		self:GetCaster():StopSound("DOTA_Item.MeteorHammer.Channel")
+		caster:StopSound("DOTA_Item.MeteorHammer.Channel")
 		ParticleManager:DestroyParticle(self.particle, true)
 		ParticleManager:DestroyParticle(self.particle2, true)
 		self:EndCooldown()
-		self:StartCooldown(2)	
+		self:StartCooldown(5)	
 	else
 		self:GetCaster():EmitSound("DOTA_Item.MeteorHammer.Cast")
 
@@ -133,8 +160,8 @@ function item_spellbook_destruction:OnChannelFinish(bInterrupted)
 						}
 						
 						local amp = self:GetCaster():GetSpellAmplification(false) * 0.01 
-						if amp > 0.2 then
-							amp = 0.2
+						if amp > 0.17 then
+							amp = 0.17
 						end
 						local hp_removal = math.ceil( enemy:GetHealth() * amp )
 						--apply modif pierce evasion on enemy
@@ -255,9 +282,7 @@ function modifier_spellbook_destruction:GetModifierBonusStats_Strength()
 	local ability = self:GetAbility()
 	if ability then
 		local stacks = ability:GetCurrentCharges()
-		if stacks > 0 then
-			return stacks * ability:GetSpecialValueFor("bonus_strength")
-		end
+		return stacks * ability:GetSpecialValueFor("bonus_strength")
 	end
 	return 0
 end 
@@ -265,9 +290,7 @@ function modifier_spellbook_destruction:GetModifierBonusStats_Intellect()
 	local ability = self:GetAbility()
 	if ability then
 		local stacks = ability:GetCurrentCharges()
-		if stacks > 0 then
-			return stacks * ability:GetSpecialValueFor("bonus_intellect")
-		end
+		return stacks * ability:GetSpecialValueFor("bonus_intellect")
 	end
 	return 0
 end
@@ -275,9 +298,7 @@ function modifier_spellbook_destruction:GetModifierConstantHealthRegen()
 	local ability = self:GetAbility()
 	if ability then
 		local stacks = ability:GetCurrentCharges()
-		if stacks > 0 then
-			return stacks * ability:GetSpecialValueFor("bonus_health_regen")
-		end
+		return stacks * ability:GetSpecialValueFor("bonus_health_regen")
 	end
 	return 0
 end
@@ -285,9 +306,7 @@ function modifier_spellbook_destruction:GetModifierConstantManaRegen()
 	local ability = self:GetAbility()
 	if ability then
 		local stacks = ability:GetCurrentCharges()
-		if stacks > 0 then
-			return stacks * ability:GetSpecialValueFor("bonus_mana_regen")
-		end
+		return stacks * ability:GetSpecialValueFor("bonus_mana_regen")	
 	end
 	return 0
 end
@@ -295,9 +314,7 @@ function modifier_spellbook_destruction:GetModifierSpellAmplify_Percentage()
 	local ability = self:GetAbility()
 	if ability then
 		local stacks = ability:GetCurrentCharges()
-		if stacks > 0 then
-			return stacks * ability:GetSpecialValueFor("bonus_spell_amplify")
-		end
+		return stacks * ability:GetSpecialValueFor("bonus_spell_amplify")
 	end
 	return 0
 end
@@ -307,7 +324,7 @@ end
 function modifier_spellbook_destruction_mana_drain:IsHidden() return false end
 function modifier_spellbook_destruction_mana_drain:IsPurgable() return false end
 function modifier_spellbook_destruction_mana_drain:RemoveOnDeath() return false end
-function modifier_spellbook_destruction_mana_drain:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
+function modifier_spellbook_destruction_mana_drain:GetAttributes() return MODIFIER_ATTRIBUTE_NONE end
 function modifier_spellbook_destruction_mana_drain:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
 		self.mana_drain_interval = self:GetAbility():GetSpecialValueFor("mana_drain_interval")
@@ -318,12 +335,44 @@ end
 function modifier_spellbook_destruction_mana_drain:OnIntervalThink()
 	if IsServer() then
 		if self:GetCaster() and self:GetAbility() then
-			if self:GetCaster():GetManaPercent() == 0 then
-				self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_elder_titan_echo_stomp", {duration = self:GetAbility():GetSpecialValueFor("mana_drain_sleep")})
+			if self:GetCaster():GetManaPercent() < 1 then
+				if self.particle then
+					ParticleManager:DestroyParticle(self.particle,true)
+					ParticleManager:ReleaseParticleIndex(self.particle)
+					self.particle = nil				
+				end
+				self:SetStackCount(0)
+				self:GetCaster():Stop()
+				self:Destroy()
+				return
 			end
 			local mana_drain_per_interval = self.mana_drain_sec * self.mana_drain_interval
 			local mana_regen_red = self:GetCaster():GetManaRegen() * self.mana_drain_interval
 			self:GetCaster():Script_ReduceMana(mana_drain_per_interval + (mana_regen_red * 0.90), self:GetAbility())
+
+			-- Particle channeling
+			local interval = self.mana_drain_interval
+			local parent = self:GetParent()
+			local parent_location = parent:GetOrigin()
+
+			
+			if not self.particle then
+				self.particle = ParticleManager:CreateParticle("particles/econ/generic/generic_progress_meter/generic_progress_circle.vpcf",0,parent)
+				-- ParticleManager:SetParticleControl( self.particle,1,Vector(100,0,0) )
+				ParticleManager:SetParticleControl( self.particle,0,parent_location + Vector(0,0,450) )
+			end
+			self:IncrementStackCount()
+			--ParticleManager:SetParticleControl( self.particle,1, Vector(100,self:GetStackCount()/50,0 ) )
+			ParticleManager:SetParticleControl( self.particle,1, Vector(100,self:GetStackCount() * interval / 5,0 ) )
+			AddFOWViewer(DOTA_TEAM_GOODGUYS, parent_location, 600, 6.0, false)
+			if (self:GetStackCount() * interval)>= 5 then -- need to match stacks with 5 sec
+				if self.particle then
+					ParticleManager:DestroyParticle(self.particle,true)
+					ParticleManager:ReleaseParticleIndex(self.particle)
+					self.particle = nil
+					self:SetStackCount(0)
+				end
+			end
 		end
 	end
 end
@@ -337,3 +386,12 @@ end
 function modifier_spellbook_destruction_mana_drain:CheckState()
 	return {[MODIFIER_STATE_MAGIC_IMMUNE] = true}
 end
+function modifier_spellbook_destruction_mana_drain:OnDestroy()
+	if IsServer()then
+		if self.particle then
+			ParticleManager:DestroyParticle(self.particle,true)
+			ParticleManager:ReleaseParticleIndex(self.particle)
+			self.particle = nil
+		end
+	end
+end	

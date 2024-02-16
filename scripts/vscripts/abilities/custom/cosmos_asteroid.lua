@@ -54,6 +54,7 @@ function cosmos_asteroid:OnSpellStart()
                         false)
 
                     for _, enemy in pairs(enemies) do
+                        
                         enemy:EmitSound("")
 
                         local impactDamage = damage
