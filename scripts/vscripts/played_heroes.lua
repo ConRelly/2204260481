@@ -193,6 +193,7 @@ function check_hero_ranking(unit)
             unit:AddNewModifier(unit, nil, modifier_name, {})
             
         elseif IsSunday() then
+            print("Sunday")
             if CheckModifiers(unit) then
                 unit:AddNewModifier(unit, nil, "modifier_bottom_50", {}) 
             end
@@ -219,8 +220,8 @@ end
 
 
 
-
-function IsSunday()
+--does not work in leap years :)
+--[[ function IsSunday()
     if _G.IsSunday_1 then
         return true
     end   
@@ -235,9 +236,78 @@ function IsSunday()
     if wday == 0 then
         wday = 7
         _G.IsSunday_1 = true
+        print("Sunday2")
+    end
+    return wday == 7
+end ]]
+
+--[[ function IsSunday()
+    if _G.IsSunday_1 then
+        print("IsSunday_1 is true")
+        return true
+    end   
+
+    local date = StrSplit(GetSystemDate(), '/')
+    print("Date: " .. date[1] .. "/" .. date[2] .. "/" .. date[3]) -- Print the date
+    local c = 20
+    local y = tonumber(date[3])
+    local m = tonumber(date[1])
+    local d = tonumber(date[2])
+
+    -- Adjust the month and year for leap year calculation
+    if m < 3 then
+        m = m + 12
+        y = y - 1
+    end
+
+    local w = y + math.floor(y / 4) + math.floor(c / 4) - 2 * c + math.floor(26 * (m + 1) / 10) + d - 1
+    local wday = w % 7
+    print("wday is: " .. wday)
+    if wday == 0 then
+        wday = 7
+        _G.IsSunday_1 = true
+        print("Sunday2")
+    end
+    if date[1] == "02" and date[2] == "20" then
+        _G.IsSunday_1 = true
+        print("Sunday Special")
+        return true
+    end
+    return wday == 7
+end ]]
+--adjust for leap year
+function IsSunday()
+    if _G.IsSunday_1 then
+        print("IsSunday_1 is true")
+        return true
+    end   
+
+    local date = StrSplit(GetSystemDate(), '/')
+    print("Date: " .. date[1] .. "/" .. date[2] .. "/" .. date[3]) -- Print the date
+    local y = tonumber(date[3])
+    local m = tonumber(date[1])
+    local d = tonumber(date[2])
+
+    -- Adjust for leap year
+    if m == 1 or m == 2 then
+        m = m + 12
+        y = y - 1
+    end
+
+    local c = math.floor(y / 100)
+    y = y % 100
+
+    local w = y + math.floor(y / 4) + math.floor(c / 4) - 2 * c + math.floor(26 * (m + 1) / 10) + d - 1
+    local wday = w % 7
+    print("wday is: " .. wday)
+    if wday == 0 then
+        wday = 7
+        _G.IsSunday_1 = true
+        print("Sunday2")
     end
     return wday == 7
 end
+
 
 
 -- Call GetLeastPlayedHeroes to start fetching the hero play counts.

@@ -22404,7 +22404,7 @@
 			"8"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"ss_lvl_mult"				"5"
+				"ss_lvl_mult"				"4"
 			}						
 		}
 

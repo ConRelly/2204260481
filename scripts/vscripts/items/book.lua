@@ -80,6 +80,7 @@ end
 
 function item_spellbook_destruction:OnSpellStart()
 	self.ImpactRadius = self:GetSpecialValueFor("impact_radius") + (self:GetCaster():GetMaxMana()*0.03)
+	self.ImpactRadius_particle = (self.ImpactRadius / 20) + 300
 	if self:GetCaster():HasModifier("modifier_arc_warden_tempest_double") then return end
 	-- Level 4 (and above?) pierces magic immunity
 	self.targetFlag = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
@@ -90,7 +91,7 @@ function item_spellbook_destruction:OnSpellStart()
 
 	self.particle = ParticleManager:CreateParticleForTeam("particles/custom/items/spellbook/destruction/spellbook_destruction_cast_aoe.vpcf", PATTACH_WORLDORIGIN, self:GetCaster(), self:GetCaster():GetTeam())
 	ParticleManager:SetParticleControl(self.particle, 0, self:GetCursorPosition())
-	ParticleManager:SetParticleControl(self.particle, 1, Vector(self.ImpactRadius, 1, 1))
+	ParticleManager:SetParticleControl(self.particle, 1, Vector(self.ImpactRadius_particle, 1, 1))
 	self.particle2 = ParticleManager:CreateParticle("particles/custom/items/spellbook/destruction/spellbook_destruction_cast.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
 
 	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_spellbook_destruction_mana_drain", {})
@@ -121,10 +122,10 @@ function item_spellbook_destruction:OnChannelFinish(bInterrupted)
 				self.particle3	= ParticleManager:CreateParticle("particles/custom/items/spellbook/destruction/spellbook_destruction_impact.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
 				ParticleManager:SetParticleControl(self.particle3, 0, self:GetCursorPosition() + Vector(0, 0, 0))
 				ParticleManager:SetParticleControl(self.particle3, 1, self:GetCursorPosition())
-				ParticleManager:SetParticleControl(self.particle3, 2, Vector(self.ImpactRadius * 4, 1, 1))
+				ParticleManager:SetParticleControl(self.particle3, 2, Vector(self.ImpactRadius, 1, 1))
 				ParticleManager:ReleaseParticleIndex(self.particle3)
 			
-				GridNav:DestroyTreesAroundPoint(self.cursor_position, self.ImpactRadius * 4, true)
+				GridNav:DestroyTreesAroundPoint(self.cursor_position, self.ImpactRadius * 2, true)
 				local amplitude = math.floor(self.ImpactRadius / 5)
 				local fregventy = 1
 				if amplitude < 100 then
