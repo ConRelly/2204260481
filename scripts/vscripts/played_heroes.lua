@@ -150,7 +150,7 @@ function GetLeastPlayedHeroes()
                                 modifier = " (modifier_bottom_50)"
                             end
                             counters.top50 = counters.top50 + 1 -- Increment top 50 counter regardless of specific tier.
-                            print(i .. ": " .. hero_name .. " (" .. hero_play_counts[hero_name] .. " plays)" .. " Rank: " .. rank .. modifier)
+                            --print(i .. ": " .. hero_name .. " (" .. hero_play_counts[hero_name] .. " plays)" .. " Rank: " .. rank .. modifier)
                         end
                     end
                 end

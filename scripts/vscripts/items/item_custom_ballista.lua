@@ -9,13 +9,13 @@ function item_custom_ballista:Spawn()
 		if caster:HasModifier("modifier_super_scepter") then
 			self:SetPurchaseTime(0)
 			if RollPercentage(2) then
-				stacks = RandomInt(6, 20)
+				stacks = RandomInt(10, 35)
 			elseif RollPercentage(7) then
-				stacks = RandomInt(5, 13)
+				stacks = RandomInt(9, 25)
 			elseif RollPercentage(15) then
-				stacks = RandomInt(5, 10)
+				stacks = RandomInt(8, 18)
 			else
-				stacks = RandomInt(2, 7)
+				stacks = RandomInt(4, 12)
 			end	
 			self:SetCurrentCharges(stacks)
 		end	

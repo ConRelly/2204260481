@@ -23,6 +23,8 @@ function modifier_counter:OnCreated()
 end
 function modifier_counter:OnRefresh()
 	if not IsServer() then return end
+	if not self:GetAbility() then return end
+	if self:GetAbility():IsNull() then return end
 	local stack_duration = self:GetAbility():GetSpecialValueFor("regen_duration")
 	self:SetStackCount(self:GetStackCount() + 1)
 	self:SetDuration(stack_duration, true)
@@ -86,20 +88,30 @@ if IsServer() then
 	end
 
 	function modifier_effect:OnIntervalThink()
-		if not self:GetAbility() then return end
-		if self:GetAbility():IsNull() then return end
-		if self:GetCaster():PassivesDisabled() then return end
+		local ability = self:GetAbility()
+		if not ability then return end
+		if ability:IsNull() then return end
+		local caster = self:GetCaster()
+		if caster:PassivesDisabled() then return end
+		local parent = self:GetParent()
+		if not caster:IsAlive() or not parent:IsAlive() then return end
 
-		local base_damage = self:GetAbility():GetSpecialValueFor("base_damage") * (1 + self:GetCaster():GetSpellAmplification(false))
-		local intelligence_damage = GetTalentSpecialValueFor(self:GetAbility(), "intelligence_damage") * self:GetCaster():GetIntellect()
+		local base_damage = ability:GetSpecialValueFor("base_damage")
+		local modif = caster:FindModifierByName("modifier_mjz_necrolyte_reapers_scythe_ss_stacks")
+		if modif then
+			local ss_bonus_damage =  modif:GetStackCount() * modif:GetAbility():GetSpecialValueFor("ss_bonus_damage") * caster:GetLevel()
+			base_damage = base_damage + ss_bonus_damage
+			print(ss_bonus_damage .. " ss_bonus_damage")
+		end
+		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage") * caster:GetIntellect()
 
 		ApplyDamage({
-			attacker = self:GetCaster(),
-			victim = self:GetParent(),
-			ability = self:GetAbility(),
-			damage_type = self:GetAbility():GetAbilityDamageType(),
-			damage_flags = DOTA_DAMAGE_FLAG_HPLOSS + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION + DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL,
-			damage = (base_damage + intelligence_damage) * self:GetAbility():GetSpecialValueFor("interval")
+			attacker = caster,
+			victim = parent,
+			ability = ability,
+			damage_type = ability:GetAbilityDamageType(),
+			damage_flags = DOTA_DAMAGE_FLAG_NONE,
+			damage = (base_damage + intelligence_damage) * ability:GetSpecialValueFor("interval")
 		})
 	end
 end

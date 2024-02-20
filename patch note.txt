@@ -2984,6 +2984,20 @@ Posts your Highest Scores for Challenge DPS Boss on discord, might reward a new 
 * And some other changes and fixes.
 
 
+* Increased book BurnStacks to 10 per tick
+* Increased Enigma Malefice bounus dmg, and space time Gravity talent from 0.1 to 0.2
+* Necro Heartstopper Aura now is affected by amplification on all his dmg not only base dmg and has a better int mult.
+* Necro ultimate SS has extra effects, new shard and ss sound effect is reduced.
+* Increased int tome stock from 25 to 45 and cost by 2k.
+* Increased Base Damage Tome stock from 15 to 100, attackspeed reduction to -10, cost by 500 and reduced restock time by 7x.
+* Bloodseeker Thirst has new SS effects and can reach lvl 5.
+* Improved Ballista SS min stacks, increased overal higher stacks chance and increased max stacks from 20 to 35. Reduced bonus dmg to 10% from 15%.
+* Reduced wk skeletons spawn and duration, and increase their base dmg + talent. 
+* Fixed WK Aghanim's wraith duration being increased by extra 7 second(increased from 4 to 5s), buffed other stats from scepter.
+* Buffed Mortal strike dmg and increased talent cd reduction.
+
+
+
 
 
 

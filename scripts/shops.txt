@@ -94,6 +94,7 @@
 		"item"		"item_hyperstone"
 		"item"		"item_demon_edge"
 		"item"		"item_relic"
+		"item"      "item_witless_shako"
 	}
 	// Level 1 - Green Recipes
 	"basics"

@@ -2,6 +2,10 @@
 LinkLuaModifier("modifier_mjz_necrolyte_reapers_scythe","abilities/hero_necrolyte/mjz_necrolyte_reapers_scythe.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_necrolyte_reapers_scythe_stun","abilities/hero_necrolyte/mjz_necrolyte_reapers_scythe.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_necrolyte_reapers_scythe_self","abilities/hero_necrolyte/mjz_necrolyte_reapers_scythe.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_necrolyte_reapers_scythe_ss_stacks","abilities/hero_necrolyte/mjz_necrolyte_reapers_scythe.lua", LUA_MODIFIER_MOTION_NONE)
+--hr aura
+LinkLuaModifier("modifier_mjz_necrolyte_heartstopper_aura_counter","abilities/hero_necrolyte/mjz_necrolyte_heartstopper_aura.lua", LUA_MODIFIER_MOTION_NONE)
+
 
 mjz_necrolyte_reapers_scythe = class({})
 local ability_class = mjz_necrolyte_reapers_scythe
@@ -82,6 +86,20 @@ if IsServer() then
 		target:AddNewModifier(caster, ability, 'modifier_mjz_necrolyte_reapers_scythe', {})
 		target:AddNewModifier(caster, ability, 'modifier_mjz_necrolyte_reapers_scythe_stun', {duration = stun_duration})
 
+		local hr_stoper_aura = caster:HasAbility("mjz_necrolyte_heartstopper_aura")
+		local shard = caster:HasModifier("modifier_item_aghanims_shard")
+		if hr_stoper_aura and shard then
+			local hr_ability = caster:FindAbilityByName("mjz_necrolyte_heartstopper_aura")
+			caster:AddNewModifier(caster, hr_ability, "modifier_mjz_necrolyte_heartstopper_aura_counter", {})
+		end
+		local has_ss = caster:HasModifier("modifier_super_scepter")
+		if has_ss then
+			if caster:HasModifier("modifier_mjz_necrolyte_reapers_scythe_ss_stacks") then
+				caster:FindModifierByName("modifier_mjz_necrolyte_reapers_scythe_ss_stacks"):IncrementStackCount()
+			else
+				caster:AddNewModifier(caster, ability, "modifier_mjz_necrolyte_reapers_scythe_ss_stacks", {})
+			end
+		end			
 		EmitSoundOn("Hero_Necrolyte.ReapersScythe.Cast", caster)
 		EmitSoundOn("Hero_Necrolyte.ReapersScythe.Target", target)
 
@@ -94,15 +112,47 @@ if IsServer() then
 
 		target:AddNewModifier(caster, ability, 'modifier_mjz_necrolyte_reapers_scythe', {})
 		target:AddNewModifier(caster, ability, 'modifier_mjz_necrolyte_reapers_scythe_stun', {duration = stun_duration})
-
-		EmitSoundOn("Hero_Necrolyte.ReapersScythe.Cast", caster)
-		EmitSoundOn("Hero_Necrolyte.ReapersScythe.Target", target)
-
+		--if caster has ability mjz_necrolyte_heartstopper_aura 
+		local hr_stoper_aura = caster:HasAbility("mjz_necrolyte_heartstopper_aura")
+		local shard = caster:HasModifier("modifier_item_aghanims_shard")
+		if hr_stoper_aura and shard then
+			local hr_ability = caster:FindAbilityByName("mjz_necrolyte_heartstopper_aura")
+			caster:AddNewModifier(caster, hr_ability, "modifier_mjz_necrolyte_heartstopper_aura_counter", {})
+		end
+		caster:EmitSoundParams("Hero_Necrolyte.ReapersScythe.Cast", 0, 0.2, 0)
+		target:EmitSoundParams("Hero_Necrolyte.ReapersScythe.Target", 0, 0.2, 0)
+		local has_ss = caster:HasModifier("modifier_super_scepter")
+		--if has_ss then -- makes so that temp ss works even after expiring
+		if caster:HasModifier("modifier_mjz_necrolyte_reapers_scythe_ss_stacks") then
+			caster:FindModifierByName("modifier_mjz_necrolyte_reapers_scythe_ss_stacks"):IncrementStackCount()
+		else
+			caster:AddNewModifier(caster, ability, "modifier_mjz_necrolyte_reapers_scythe_ss_stacks", {})
+		end
+		--end	
 	end	
 end
 
 -----------------------------------------------------------------------------------------
+--stacks modifier
+modifier_mjz_necrolyte_reapers_scythe_ss_stacks = class({})
 
+
+function modifier_mjz_necrolyte_reapers_scythe_ss_stacks:IsHidden() return false end
+function modifier_mjz_necrolyte_reapers_scythe_ss_stacks:IsPurgable() return false end
+function modifier_mjz_necrolyte_reapers_scythe_ss_stacks:RemoveOnDeath() return false end
+function modifier_mjz_necrolyte_reapers_scythe_ss_stacks:DeclareFunctions()
+	return {MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT, MODIFIER_PROPERTY_TOOLTIP, MODIFIER_PROPERTY_TOOLTIP2}
+end
+function modifier_mjz_necrolyte_reapers_scythe_ss_stacks:GetModifierConstantHealthRegen()
+	if self:GetAbility() then return self:GetStackCount() * 10 end
+end
+function modifier_mjz_necrolyte_reapers_scythe_ss_stacks:OnTooltip()
+	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("ss_bonus_damage") * self:GetParent():GetLevel() end
+end
+function modifier_mjz_necrolyte_reapers_scythe_ss_stacks:OnTooltip2()
+	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("ss_bonus_damage_lvl_mult") * self:GetParent():GetLevel() end
+end		
+------------
 modifier_mjz_necrolyte_reapers_scythe = class({})
 local modifier_class = modifier_mjz_necrolyte_reapers_scythe
 
@@ -175,12 +225,21 @@ if IsServer() then
 		local extra_dmg = ((-1 * (target:GetHealthPercent() - 100)) / health_divide) + 1
 		--print(extra_dmg .. " dmg mult")
 		local base_damage = ability:GetSpecialValueFor("base_damage")
+		if caster:HasModifier("modifier_mjz_necrolyte_reapers_scythe_ss_stacks") then
+			local caster = parent:FindModifierByName("modifier_mjz_necrolyte_reapers_scythe_ss_stacks")
+			if modif then
+				local ss_bonus_damage =  modif:GetStackCount() * modif:GetAbility():GetSpecialValueFor("ss_bonus_damage_lvl_mult") * caster:GetLevel()
+				base_damage = base_damage + ss_bonus_damage
+				print(ss_bonus_damage .. " Reaper ss_bonus_damage")
+			end
+		end	
 		local int_damage_multiplier = ability:GetSpecialValueFor("int_damage_multiplier")
 		local damage = (base_damage + caster:GetIntellect() * int_damage_multiplier) * extra_dmg
 		local fdamage = damage / 2
 		Timers:CreateTimer({
 			endTime = 0.05, -- when this timer should first execute, you can omit this if you want it to run first on the next frame
 			callback = function()
+				if not target or target:IsNull() then return end
 				ApplyDamage({
 					attacker = caster,
 					victim = target,

@@ -2005,6 +2005,7 @@
 		"UnitLabel"				"no_underdog"
 
 		"Ability5"				"mjz_skeleton_king_ghost"
+		"Ability13"             "special_bonus_spell_block_18"
 		"Ability14"				"special_bonus_strength_260"
 		"Ability17"				"special_bonus_cleave_100"
 

@@ -4286,11 +4286,11 @@
 	"ScriptFile"					"items/tomes.lua"
 	"Model"							"models/gameplay/attrib_tome_int.vmdl"
 	"AbilityTextureName"			"tome_int"
-	"ItemCost"						"10000"
+	"ItemCost"						"12000"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"ItemAliases"					"intelligence tome;int"
-	"ItemStockInitial"				"25"
-	"ItemStockMax"					"30"
+	"ItemStockInitial"				"45"
+	"ItemStockMax"					"50"
 	"ItemStockTime"					"1500.0"
 	"ItemKillable"				  "0"   
 	"ItemShopTags"					"consumable"
@@ -4436,14 +4436,14 @@
 	"BaseClass"						"item_lua"
 	"ScriptFile"					"items/item_tome_bargain.lua"
 	"AbilityTextureName"			"tome_bargain"
-	"ItemCost"						"4000"
+	"ItemCost"						"3500"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 	"ItemAliases"					"agility tome;agi"
 	"ItemShopTags"					"consumable"
 	"ItemQuality"					"consumable"
-	"ItemStockInitial"				"15"
-	"ItemStockMax"					"20"
-	"ItemStockTime"					"1500.0"	
+	"ItemStockInitial"				"100"
+	"ItemStockMax"					"120"
+	"ItemStockTime"					"200.0"	
 	"ItemStackable"					"1"
 	"ItemPermanent"					"0"
 	"IsTempestDoubleClonable"	   "0"
@@ -4459,7 +4459,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_attackspeed"		 		"-100"
+			"bonus_attackspeed"		 		"-10"
 		}
 	}
 }
@@ -18707,7 +18707,7 @@
 		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"base_attack_damage"	"15"
+			"base_attack_damage"	"10"
 			"CalculateSpellDamageTooltip"  "0"
 		}
 		"08"
@@ -22700,7 +22700,7 @@
 			"20"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"sec_charges"			"7"
+				"sec_charges"			"10"
 			}
 			"21"
 			{

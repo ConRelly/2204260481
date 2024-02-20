@@ -10107,8 +10107,8 @@
 {
 	"Ability4"				  "bloodseeker_thirst"
 	"Ability3"				  "summon_defense"
-	"AttackDamageMin"			"795"			// Damage range min.
-	"AttackDamageMax"			"1490"			// Damage range max.
+	"AttackDamageMin"			"2800"			// Damage range min.
+	"AttackDamageMax"			"4600"			// Damage range max.
 	"AttackRate"				"0.8"
 	"StatusHealth"				"450"	
 	"StatusHealthRegen"			"5.0"

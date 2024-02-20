@@ -171,9 +171,10 @@ end
 function modifier_cosmos_3_lifes:GetModifierIncomingDamage_Percentage()
     local parent = self:GetParent()
     if parent then
-        --gain -5% if health is under 50%
-        if parent:GetHealthPercent() < 50 then
-            return -5
+        if parent:GetHealthPercent() < 25 then
+            return -8    
+        elseif parent:GetHealthPercent() < 50 then
+            return -5    
         end
     end    
 end

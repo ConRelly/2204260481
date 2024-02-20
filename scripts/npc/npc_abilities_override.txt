@@ -1295,7 +1295,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"470"
+				"value"				"1300"
 				"ad_linked_abilities"			"skeleton_king_vampiric_aura"
 			}
 		}
@@ -1307,7 +1307,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"				"0.5"
+				"value"				"0.7"
 				"ad_linked_abilities"			"skeleton_king_mortal_strike"
 			}
 		}
@@ -1721,7 +1721,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"4"
+				"value"				"2"
 				"ad_linked_abilities"			"skeleton_king_vampiric_aura"
 			}
 		}
@@ -6116,7 +6116,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Enigma.Midnight_Pulse"
-		"LevelsBetweenUpgrades"         "5"
+		"LevelsBetweenUpgrades"         "6"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_MIDNIGHT_PULSE"
@@ -6134,26 +6134,25 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"radius"					
 			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"650"
-				"LinkedSpecialBonus"	"special_bonus_unique_enigma_9"
+				"value"				"650"
+				"special_bonus_unique_enigma_9"	"+200"
+				"affected_by_aoe_increase"	"1"
 			}
-			"02"
+			"damage_percent"			"1 2 3 4"
+			"duration"					
 			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_percent"			"1.0 2.0 3.0 4.0"
+				"value"			"7 8 9 10"
+				"special_bonus_unique_enigma_8"	"+5"
 			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"7 8 9 10"
-				"LinkedSpecialBonus"	"special_bonus_unique_enigma_8"
-			}
-		}
+			"base_damage"				"450 2500 8500 24000"
+
+
+			"tick_rate"			"0.5"
+		}		
 	}
 
 	//=================================================================================================================
@@ -11834,8 +11833,8 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"5087"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 			
 		// Casting
@@ -11851,32 +11850,47 @@
 		{
 			"vampiric_aura"
 			{
-				"value"									"30 40 50 60"
-				"special_bonus_unique_wraith_king_2"	"+35"
+				"value"									"20 30 40 50"
+				"special_bonus_unique_wraith_king_2"	"+30"
 			}
+			"creep_lifesteal_reduction_pct"				"40"
 			"skeleton_duration"
 			{
-				"value"					"100"
+				"value"					"60"
 				"special_bonus_unique_wraith_king_vampiric_skeleton_duration"	"+25%"	
 			}
 			"AbilityCooldown"
 			{
-				"value"					"120"
+				"value"					"130"
 				"special_bonus_unique_wraith_king_vampiric_skeleton_duration"	"-25%"	
 			}
-			"max_skeleton_charges"			"1 2 3 4"
+			"max_skeleton_charges"			"0 0 1 2"
 			"min_skeleton_spawn"
 			{
-				"value"		"1"
-				"special_bonus_unique_wraith_king_5"	"+4"
+				"value"		"0"
+				"special_bonus_unique_wraith_king_5"	"+2"
 			}
 			"spawn_interval"			"0.25"
 			"reincarnate_time"			"3"
 			"gold_bounty"						"5"
 			"xp_bounty"						"5"
+			"skeleton_damage_tooltip"
+			{
+				"value"							"3700"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"talent_skeleton_damage"
+			{
+				"value"				"0"
+				"special_bonus_unique_wraith_king_6"			"+1300"
+			}
+			"skeleton_building_damage_reduction"			"10"
+			"skeleton_bonus_hero_damage"			"25"
+
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
+
 
 	//=================================================================================================================
 	// Ability: Skeleton King Mortal Strike
@@ -11903,61 +11917,88 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_mult"					"300 500 700 1300"
+				"crit_mult"					"300 600 1200 2400"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 
+	//=================================================================================================================
+	// Ability: Skeleton King Reincarnation
+	//=================================================================================================================
 	"skeleton_king_reincarnation"
 	{
-		"AbilityCooldown"				"130 120 110"
-		"AbilitySpecial"
+		// General
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.2"	// Slow isn't the main function of this ability.
+
+		"AbilityValues"
 		{
-			"01"
+			"reincarnate_time"		"3.0 3.0 3.0"
+			"slow_radius"			
 			{
-				"var_type"				"FIELD_FLOAT"
-				"reincarnate_time"		"3.0 3.0 3.0"
+				"value"		"900"
+				"affected_by_aoe_increase"	"1"
 			}
-			"02"
+			"movespeed"				"-75"
+			"attackslow"			"-75"
+			"slow_duration"			"5.0"
+			"scepter_duration"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"slow_radius"			"900"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"movespeed"				"-75"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attackslow"			"-975"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"slow_duration"			"5.0"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"scepter_duration"		"4"
+				"value"						"0"
+				"special_bonus_scepter"			"+5"
 				"RequiresScepter"			"1"
 			}
-			"08"
+			"scepter_aura_radius"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius"	"2300"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"aura_radius_tooltip_scepter"	"2300"
+				"value"						"0"
+				"special_bonus_scepter"			"+2300"
 				"RequiresScepter"			"1"
 			}
-		}		
+			"scepter_attack_speed"
+			{
+				"value"				"0"
+				"special_bonus_scepter"		"+375"
+				"RequiresScepter"			"1"
+			}
+			"scepter_move_speed_pct"
+			{
+				"value"							"0"
+				"special_bonus_scepter"			"+100"
+				"RequiresScepter"			"1"
+			}
+			"AbilityManaCost"
+			{
+				"value"					"180"
+				"special_bonus_shard"	"=0"
+			}
+			"shard_skeleton_count"		
+			{
+				"value"							"0"
+				"special_bonus_shard"			"+1"
+			}
+			"scepter_respawn_pct"
+			{
+				"value"							"0"
+				"special_bonus_scepter"			"10"
+				"RequiresScepter"				"1"
+			}
+			"AbilityCooldown"
+			{
+				"value"							"140 130 120"
+				"special_bonus_scepter"			"-15"
+			}
+		}
 	}
+
 	"skywrath_mage_arcane_bolt"
 	{
 		"AbilityCooldown"				"6.0 5.0 4.0 3.0"
@@ -26331,7 +26372,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_health"			"2900"
+				"max_health"			"3900"
 			}
 			"02"
 			{

@@ -34,7 +34,15 @@ function modifier_item_tome_bargain:OnCreated()
 	self.bonus_attack = self:GetAbility():GetSpecialValueFor("bonus_base_damage")
 	self.bonus_speed = self:GetAbility():GetSpecialValueFor("bonus_attackspeed")
 end
-function modifier_item_tome_bargain:GetModifierBaseAttack_BonusDamage() return self.bonus_attack * self:GetStackCount() end
-function modifier_item_tome_bargain:GetModifierAttackSpeedBonus_Constant() return self.bonus_speed * self:GetStackCount() end
-function modifier_item_tome_bargain:OnTooltip() return self.bonus_attack * self:GetStackCount() end
-function modifier_item_tome_bargain:OnTooltip2() return self.bonus_speed * self:GetStackCount() end
+function modifier_item_tome_bargain:GetModifierBaseAttack_BonusDamage()
+	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_base_damage") end
+end
+function modifier_item_tome_bargain:GetModifierAttackSpeedBonus_Constant()
+	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_attackspeed") end
+end
+function modifier_item_tome_bargain:OnTooltip()
+	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_base_damage") end
+end
+function modifier_item_tome_bargain:OnTooltip2()
+	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_attackspeed") end
+end

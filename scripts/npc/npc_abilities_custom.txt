@@ -22359,6 +22359,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"mjz_bloodseeker_thirst_immortal"
 		"LevelsBetweenUpgrades"         "15"
+		"MaxLevel"                      "5"
 		"HasScepterUpgrade"             "1"
 
 		"AbilitySpecial"
@@ -22371,13 +22372,13 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"10 15 20 40"
+				"bonus_movement_speed"		"10 15 20 30 40"
 				// "LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_4"
 			}			
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"45 50 55 60"
+				"bonus_attack_speed"		"20 30 40 50 70"
 			}
 			"04"
 			{
@@ -22395,6 +22396,16 @@
 				"var_type"					"FIELD_FLOAT"
 				"stack_chance"				"10"
 			}
+			"7"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"ss_bonus_stacks"				"3"
+			}
+			"8"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"ss_lvl_mult"				"5"
+			}						
 		}
 
 		"precache"
@@ -24989,7 +25000,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_per_level"			"200"
+				"damage_per_level"			"500"
 			}						
 			"07"
 			{
@@ -28329,15 +28340,16 @@
 			}
 			"intelligence_damage"
 			{
-				"value"					"0.3 0.6 0.9 1.3 1.7 2.1 2.5"
+				"value"					"3.8 4.1 4.4 4.8 5.2 5.6 6.0"
 				"LinkedSpecialBonus"	"special_bonus_unique_mjz_necrolyte_heartstopper_aura_intelligence"
-				"CalculateSpellDamageTooltip"	"0"
+				"CalculateSpellDamageTooltip"	"1"
 			}
-			"health_regen"			"9 14 22 28 34 40 100"
+			"health_regen"			"18 28 44 56 68 80 200"
 			"mana_regen"			"9 14 22 28 34 40 100"
 			"regen_duration"		"7"
 			"hero_multiplier" 		"6"
 			"interval"				"0.6"
+			"ss_bonus_damage"       "1"
 		}
 	}
 	"special_bonus_unique_mjz_necrolyte_heartstopper_aura_intelligence"
@@ -28351,7 +28363,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"1.5"
+				"value"						"3.0"
 			}
 		}
 	}
@@ -28375,7 +28387,7 @@
 		"AbilityTextureName"			"mjz_necrolyte_reapers_scythe"
 		"MaxLevel"					  "5"
 		"HasScepterUpgrade"				"1"
-
+		"HasShardUpgrade"				"1"
 
 		"AbilityCastRange"				"%radius"
 		"AbilityCastPoint"				"0.1"
@@ -28433,7 +28445,18 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"cooldown_Super_scepter"			"6"
-			}									
+			}
+			"12"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ss_bonus_damage"			"1"
+			}
+			"13"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ss_bonus_damage_lvl_mult"			"10"
+			}
+
 		}
 
 		"precache"
@@ -40317,7 +40340,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"				"0.10"
+				"value"				"0.2"
 			}
 		}
 	}	

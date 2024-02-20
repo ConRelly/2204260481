@@ -2841,7 +2841,7 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_bloodseeker_rupture_01"			"+{s:value}% Rupture Outgoing Damage"
 
 	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst"					"Thirst"
-	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_Description"		"Bloodseeker is invigorated by the wounds of his enemies. Gains bonus movement speed, attack speed and attack damage when using abilities.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Thirst stacks will be given when items are used by the owner.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Gains 1 Thirst stack when ally use ability or item."
+	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_Description"		"Bloodseeker is invigorated by the wounds of his enemies. Gains bonus movement speed, attack speed and attack damage when using abilities.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Thirst stacks will be given when items are used by the owner.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Gains 1 Thirst stack when ally use ability or item.<br> Increases max stacks by %ss_bonus_stacks% <br> Attack dmg per stack multiplayer is now %bonus_damage% x %ss_lvl_mult% x lvl."
 	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_Lore"				"Strygwyr becomes frenzied when blood is spilled."
 	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_bonus_damage"				"Attack Damage Bonus per Stack * Hero Level:"
 	"DOTA_Tooltip_ability_mjz_bloodseeker_thirst_bonus_attack_speed"		"Attack Speed Bonus per Stack:"
@@ -3321,7 +3321,7 @@
 	"DOTA_Tooltip_modifier_mjz_ember_spirit_sleight_of_fist_charge"				"Sleight of Fist Charges"	
 	"DOTA_Tooltip_ability_mjz_enigma_spacetime_gravity"					"SpaceTime Gravity"
 	"DOTA_Tooltip_ability_mjz_enigma_spacetime_gravity_Description"			"Creates a Black Hole that pulls your enemies and  grows stronger with Enigma.
-	<h1><font color='#08090A'>Gravity Mastery :</font></h1> During Channeling of this skill you emit an aura equal with his radius for you and your allies that does the following: reduce damage taken by 75% and can't be stunned(by normal stuns) or silenced"
+	\n<h1><font color='#08090A'>Gravity Mastery :</font></h1> During Channeling of this skill you emit an aura equal with his radius for you and your allies that does the following: reduce damage taken by 75% and can't be stunned(by normal stuns) or silenced"
 	"DOTA_Tooltip_ability_mjz_enigma_spacetime_gravity_Lore"				"No one can escape gravity."
 	"DOTA_Tooltip_ability_mjz_enigma_spacetime_gravity_Note0"			   "Pull speed is base on enemy armor and if the enemy has less then 50 armor it will count his armor as 50."
 	"DOTA_Tooltip_ability_mjz_enigma_spacetime_gravity_radius_per_level"	"RADIUS PER LEVEL:"
@@ -3826,9 +3826,9 @@
 	"DOTA_Tooltip_modifier_mjz_necrolyte_heartstopper_aura_effect_Description"		"Dealing damage per second"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_necrolyte_heartstopper_aura_intelligence"	"+{s:value} Heartstopper Aura Intelligence Damage"	
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe"					"Reaper's Scythe"
-	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_Description"		"Stun the enemy, and then based on the caster intelligence value multiples of damage.
-	<h1><font color='#E51604'>Death Proximity :</font></h1>Reaper's Scythe deals %health_divide_dmg_tooltip%%% bonus damage for every 1%% of Health the enemy is missing. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Now can be toggled(auocast) to attack all enemies(max 3) in cast rage every %cooldown_Super_scepter% seconds(CDR-Yes)."
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_Description"		"Stun the enemy, and then based on the caster intelligence value multiples of damage.\n<h1><font color='#E51604'>Death Proximity :</font></h1>Reaper's Scythe deals %health_divide_dmg_tooltip%%% bonus damage for every 1%% of Health the enemy is missing. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Now can be toggled(auocast) to attack all enemies(max 3) in cast rage every %cooldown_Super_scepter% seconds(CDR-Yes).<br> Every time Reaper's Scythe hits an enemy you gain an <font color='#00FF00'>Soul Harvest</font> stack that will make Reaper's Scythe deal bonus dmg (%ss_bonus_damage_lvl_mult% x lvl x stacks), and Heartstopper Aura deal bonus dmg too (lvl x %ss_bonus_damage% x stk)."
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_scepter_description"	  "Reduces cooldown."
+	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_shard_description"       "Every time an enemy is hit by Scythe you gain an Heartstopper Aura Regen stack"	
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_Note0"            "Stun from SS effect have half duration, If you acquire a temporary Super Scepter (SS) buff, the SS effect will persist(autocast will remain on), but the cooldown will be set to a fixed 12 seconds(goes back to normal if gain SS)."
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_Lore"			"The amount of death and suffering in the air increases the power of the Necrophos's plague magic."
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_radius"					"Cast Range: "
@@ -3837,9 +3837,14 @@
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_stun_duration"			"Stun Duration: "
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_cooldown"				"Cooldown: "
 	"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_cooldown_scepter"		"Scepter Upgrade Cooldown:"
+
+
 	//"DOTA_Tooltip_ability_mjz_necrolyte_reapers_scythe_health_divide_dmg_tooltip"  "%Bonus Damage for Every 1% Missing Health:"
 	"DOTA_Tooltip_modifier_mjz_necrolyte_reapers_scythe"				"Reaper's Scythe"
-	"DOTA_Tooltip_modifier_mjz_necrolyte_reapers_scythe_Description"	"Death is coming!"	
+	"DOTA_Tooltip_modifier_mjz_necrolyte_reapers_scythe_Description"	"Death is coming!"
+	"DOTA_Tooltip_modifier_mjz_necrolyte_reapers_scythe_ss_stacks"				"<font color='#00FF00'>Soul Harvest</font>"
+	"DOTA_Tooltip_modifier_mjz_necrolyte_reapers_scythe_ss_stacks_Description"	"Gain %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% health regeneration, %dMODIFIER_PROPERTY_TOOLTIP2% Bonus dmg for Reaper's Scythe(before <font color='#E51604'>Death Proximity</font>)  and  %dMODIFIER_PROPERTY_TOOLTIP% bonus dmg for Heartstopper Aura."
+
 	"DOTA_Tooltip_ability_mjz_night_stalker_crippling_fear"					"Crippling Fear"
 	"DOTA_Tooltip_ability_mjz_night_stalker_crippling_fear_Description"		"horrifies all nearby enemies."
 	"DOTA_Tooltip_ability_mjz_night_stalker_crippling_fear_Lore"				"A vision of the twisted maw of Balanar etches itself into the minds of the poor souls unlucky enough to cross his path."
@@ -8514,7 +8519,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 "DOTA_Tooltip_Ability_item_mjz_magi_demon_talon_bonus_regen"					"+$hp_regen"
 
 "DOTA_Tooltip_Ability_item_mjz_devils_veil"							"Devils Veil"
-"DOTA_Tooltip_Ability_item_mjz_devils_veil_description"				"<h1>Active: Devil's Bargain</h1>Increases Increases all Attack damage by %all_attack_bonus%%% and spell amp by %spell_amp%%% , but take At least %incoming_damage%%% bonus damage.<br><br>Duration: %duration% sec."
+"DOTA_Tooltip_Ability_item_mjz_devils_veil_description"				"<h1>Active: Devil's Bargain</h1>Increases all Attack damage by %all_attack_bonus%%% and spell amp by %spell_amp%%% , but take At least %incoming_damage%%% bonus damage.<br><br>Duration: %duration% sec."
 "DOTA_Tooltip_Ability_item_mjz_devils_veil_Lore"					"An Veil by the protected of the underworld."
 "DOTA_Tooltip_Ability_item_mjz_devils_veil_bonus_all_stats"			"+$all"
 "DOTA_Tooltip_modifier_item_mjz_devils_veil_buff"				   "Devil's Bargain"

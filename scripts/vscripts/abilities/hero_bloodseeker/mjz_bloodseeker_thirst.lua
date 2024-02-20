@@ -48,7 +48,12 @@ end
 function modifier_mjz_bloodseeker_thirst_buff:OnCreated() if not IsServer() then return end self.stack_table = {} self:StartIntervalThink(1) self:SetStackCount(1) end
 function modifier_mjz_bloodseeker_thirst_buff:OnStackCountChanged(prev_stacks)
 	if not IsServer() then return end
+	if not self:GetAbility() then self:Destroy() return end
+	local parent = self:GetParent()
 	local max_stacks = GetTalentSpecialValueFor(self:GetAbility(), "max_stacks")
+	local ss_bonus_stacks = self:GetAbility():GetSpecialValueFor("ss_bonus_stacks")
+	local has_ss = parent:HasModifier("modifier_super_scepter")
+	if has_ss then max_stacks = max_stacks + ss_bonus_stacks end
 	local stacks = self:GetStackCount()
 	if stacks > max_stacks then
 		table.remove(self.stack_table, 1)
@@ -83,6 +88,27 @@ function modifier_mjz_bloodseeker_thirst_buff:DeclareFunctions() return {MODIFIE
 function modifier_mjz_bloodseeker_thirst_buff:GetModifierMoveSpeedBonus_Percentage() return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_movement_speed") end
 function modifier_mjz_bloodseeker_thirst_buff:GetModifierAttackSpeedBonus_Constant() return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end
 function modifier_mjz_bloodseeker_thirst_buff:GetModifierPreAttack_BonusDamage() return self:GetStackCount() * (self:GetAbility():GetSpecialValueFor("bonus_damage") * self:GetParent():GetLevel()) end
+--
+function modifier_mjz_bloodseeker_thirst_buff:GetModifierMoveSpeedBonus_Percentage()
+    local ability = self:GetAbility()
+    return ability and self:GetStackCount() * ability:GetSpecialValueFor("bonus_movement_speed")
+end
+
+function modifier_mjz_bloodseeker_thirst_buff:GetModifierAttackSpeedBonus_Constant()
+    local ability = self:GetAbility()
+    return ability and self:GetStackCount() * ability:GetSpecialValueFor("bonus_attack_speed")
+end
+
+function modifier_mjz_bloodseeker_thirst_buff:GetModifierPreAttack_BonusDamage()
+    local ability = self:GetAbility()
+	local parent = self:GetParent()
+	local multipl = parent:GetLevel()
+	local has_ss = parent:HasModifier("modifier_super_scepter")
+	local ss_mult  = ability:GetSpecialValueFor("ss_lvl_mult")
+	if has_ss then multipl = multipl * ss_mult end
+    return ability and self:GetStackCount() * (ability:GetSpecialValueFor("bonus_damage") * multipl)
+end
+
 
 -----------------------------------------------------------------------------------------
 
