@@ -101,6 +101,8 @@ function AOHGameMode:InitGameMode()
 	if not self._entAncient then
 		print( "Ancient entity not found!" )
 	end
+	local seed = GetSystemTimeMS()           
+	math.randomseed(seed) 	
 	self._hasVoted = {}
 	AOHGameMode.numPhilo = {}
 	AOHGameMode.numPhilo[0] = 0
@@ -431,7 +433,7 @@ function AOHGameMode:OnDamageDealt(damageTable)
 							damageTable.damage = limit_hp	
 							--return false							
 						end	
-					end	
+					end				
 					if victim and victim:GetDayTimeVisionRange() ~= 1337 then --npc conduit(1337)
 						if attackerPlayerId and attackerPlayerId >= 0 and victim:IsAlive() and attacker:IsOpposingTeam(victim:GetTeam()) then
 							local victim_hp = victim:GetHealth() --get victim curent healt so we make sure we don't record overkill dps
@@ -1491,13 +1493,18 @@ function AOHGameMode:OnEntitySpawned(event)
 		if self._hardMode then
 			unit:AddNewModifier(unit, nil, "modifier_hard_mode_boss", {})
 		end
-		if (unit:GetLevel() > 79) then
-			--if unit:GetUnitName() == "npc_boss_randomstuff_aiolos" then
-				print("boss moster") 
-				--unit:AddNewModifier(unit, nil, "modifier_cosmos_3_lifes", {})
-				unit:AddNewModifier(unit, nil, "modifier_phys", {})
-				unit:AddNewModifier(unit, nil, "modifier_boss_truesight_aura", {})
-			--end
+		if (unit:GetLevel() > 89) then
+			
+			print("boss moster") 
+			--test unit
+--[[ 				unit:AddNewModifier(unit, nil, "modifier_power_boss", {})
+			unit:AddNewModifier(unit, nil, "modifier_hard_mode_boss", {})
+			unit:AddNewModifier(unit, nil, "modifier_cosmos_3_lifes", {})
+			if unit:HasModifier("modifier_boss") then unit:RemoveModifierByName("modifier_boss") end ]]
+			--
+			unit:AddNewModifier(unit, nil, "modifier_phys", {})
+			unit:AddNewModifier(unit, nil, "modifier_boss_truesight_aura", {})
+		
 		end			
 		if boss_challenger[unit:GetUnitName()] == true then
 			unit:AddNewModifier(unit, nil, "modifier_infinite_health", {duration = 420})

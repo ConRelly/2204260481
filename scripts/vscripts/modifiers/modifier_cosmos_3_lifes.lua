@@ -27,9 +27,13 @@ function modifier_cosmos_3_lifes:OnCreated()
         if parent then
             self.resist_modifiers = {}
             -- create a table to store the damage types
-            self.damage_types = {DAMAGE_TYPE_PHYSICAL, DAMAGE_TYPE_MAGICAL, DAMAGE_TYPE_PURE}
+            self.damage_types = {DAMAGE_TYPE_PHYSICAL, DAMAGE_TYPE_MAGICAL, DAMAGE_TYPE_PURE}        
             -- shuffle the damage types randomly
             self:ShuffleDamageTypes()
+            --print the damage type table
+            --print(self.damage_types[1])
+            --print(self.damage_types[2])
+            --print(self.damage_types[3])        
             -- add two resist modifiers to the parent based on the first two damage types
             self:AddResistModifier(self.damage_types[1])
             self:AddResistModifier(self.damage_types[2])
@@ -116,6 +120,39 @@ function modifier_cosmos_3_lifes:OnDeathPrevented(params)
     end
 end
 
+
+--
+--[[ function modifier_cosmos_3_lifes:OnCreated()
+    if IsServer() then
+        local parent = self:GetParent()
+        -- create a table to store the resist modifiers
+        if parent then
+            self.resist_modifiers = {}
+            -- create a table to store the damage types
+            self.damage_types = {DAMAGE_TYPE_PHYSICAL, DAMAGE_TYPE_MAGICAL, DAMAGE_TYPE_PURE}
+            -- shuffle the damage types randomly
+            self:ShuffleDamageTypes()
+            -- add two resist modifiers to the parent based on the first two damage types
+            self:AddResistModifier(self.damage_types[1])
+            self:AddResistModifier(self.damage_types[2])
+            -- set the current damage type to the third one
+            self.current_damage_type = self.damage_types[3]
+            --i need text for damage type
+            self.stage = 3
+            local damage_type = ""
+            if self.current_damage_type == DAMAGE_TYPE_PHYSICAL then
+                damage_type = "Physical"
+            elseif self.current_damage_type == DAMAGE_TYPE_MAGICAL then
+                damage_type = "Magical"
+            elseif self.current_damage_type == DAMAGE_TYPE_PURE then
+                damage_type = "Pure"
+            end
+            print("dmg_type: " .. damage_type)
+            -- set the current life count to 1
+            self.current_life = 1
+        end
+    end
+end ]]
 -- helper function to shuffle the damage types table
 function modifier_cosmos_3_lifes:ShuffleDamageTypes()
     local n = #self.damage_types
@@ -171,11 +208,17 @@ end
 function modifier_cosmos_3_lifes:GetModifierIncomingDamage_Percentage()
     local parent = self:GetParent()
     if parent then
-        if parent:GetHealthPercent() < 25 then
-            return -8    
-        elseif parent:GetHealthPercent() < 50 then
-            return -5    
+        local ptc_healt_left = parent:GetHealthPercent() / 100
+        if parent:GetLevel() > 100 then
+            local ptc_hp_reduction = (-10.0 + ptc_healt_left) + 0.002
+            return ptc_hp_reduction
         end
+        if ptc_healt_left < 0.25 then
+            return -9    
+        elseif ptc_healt_left < 0.50 then
+            return -7    
+        end
+        return -5
     end    
 end
 

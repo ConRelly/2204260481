@@ -37,6 +37,7 @@ function drow_ranger_multishot_lua:OnProjectileHit_ExtraData(target, location, d
         local slow = self:GetSpecialValueFor("arrow_slow_duration")
         local chance = self:GetSpecialValueFor("stacks_chance")
         local ss_bonusdmg = (self:GetSpecialValueFor("bonus_ss") + talent_value(caster, "special_multishot_ss_bonus_dmg_lua")) / 10000 -- 100 stacks
+        --print("ss_bonusdmg = "..ss_bonusdmg)
         local modif_multishot = "modifier_drow_ranger_multishot_lua_stacks"
     
         if caster:HasModifier("modifier_super_scepter") then
@@ -47,6 +48,7 @@ function drow_ranger_multishot_lua:OnProjectileHit_ExtraData(target, location, d
                     modifier:SetStackCount(stacks + 1)
                 end 
                 damage = math.floor( damage * (stacks * ss_bonusdmg  + 1))
+                --print("damage = "..damage)
             else
                 if caster and IsValidEntity(caster) and caster:IsAlive() then
                     if not caster:HasModifier(modif_multishot) then

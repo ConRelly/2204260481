@@ -226,7 +226,7 @@ function modifier_mjz_night_stalker_bonus:GetModifierTotalDamageOutgoing_Percent
     return 33
 end
 function modifier_mjz_night_stalker_bonus:GetModifierIncomingDamage_Percentage()
-    return 50
+    return -50
 end
 -------------------------------------------------
 -- 是否学习了指定天赋技能

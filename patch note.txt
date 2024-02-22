@@ -3005,6 +3005,11 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Fixed one of the Night Stalker bonuses (Kuma Stalker) making you take 50% more dmg instead of reduction.(randomly found).
+* Changed some of the random logic to not be predetermined and repeat every game.
+* Increased wk reincarnation CD.
+* Changed cosmos deff to be less static and more dynamic(especially last stage)
+
 
 
 
