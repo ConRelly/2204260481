@@ -44119,7 +44119,6 @@
 			}
 		}
 	}
-
 	//=================================================================================================================
 	// Boss: Blink Strike 
 	//=================================================================================================================
@@ -44206,7 +44205,25 @@
         "LevelsBetweenUpgrades"     "24"
     }
 
-//test
+//aegis cast
+"custom_aegis_cast"
+{
+	"BaseClass"			 			"ability_lua"
+	"ScriptFile"					"abilities/other/custom_aegis_cast.lua"	
+	"AbilityTextureName"			"item_aegis_cast"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+	"AbilityCastPoint"				"0"
+    "AbilityCastPoint"              "0.0"
+    "AbilityCooldown"               "5.0"
+    "AbilityManaCost"               "0"	
+    "MaxLevel"                      "1"
+    "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+}
+
+
+
+//GOD skills
 	"cosmos_galactic_stars"
 	{
 		// Ability Technical Aspect

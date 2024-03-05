@@ -144,6 +144,7 @@ function AOHGameMode:InitGameMode()
 	_G.cosmos_stage = 4
 	_G.cosmos_defeat = true
 	_G.cosmos_defeat_notification = true
+	_G.COURIERS = {}	
 	self._hardMode = false
 	self._endlessMode = false
 	self._endlessMode_started = false
@@ -433,7 +434,7 @@ function AOHGameMode:OnDamageDealt(damageTable)
 							damageTable.damage = limit_hp	
 							--return false							
 						end	
-					end				
+					end
 					if victim and victim:GetDayTimeVisionRange() ~= 1337 then --npc conduit(1337)
 						if attackerPlayerId and attackerPlayerId >= 0 and victim:IsAlive() and attacker:IsOpposingTeam(victim:GetTeam()) then
 							local victim_hp = victim:GetHealth() --get victim curent healt so we make sure we don't record overkill dps
@@ -1343,6 +1344,12 @@ local IllusionNotLearn = {
 LinkLuaModifier("modifier_generic_handler", "modifiers/modifier_generic_handler", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_charges", "modifiers/modifier_charges", LUA_MODIFIER_MOTION_NONE)
 local reminder = true
+function AddCouriersToList(playerID, courier)
+    if not _G.COURIERS[playerID] then
+        _G.COURIERS[playerID] = {}
+    end
+    table.insert(_G.COURIERS[playerID], courier)
+end
 function AOHGameMode:OnEntitySpawned(event)
 	if not IsServer() then return end
 	--mHackGameMode:OnNPCSpawned(event)
@@ -1371,6 +1378,13 @@ function AOHGameMode:OnEntitySpawned(event)
 			-- self:_OnHeroFirstSpawned(npc) 
 		elseif IsValidEntity(unit) and (not unit:IsHero() or unit:GetUnitLabel()== "spirit_bear") then
 			LearnAbilityOnSpawn(unit)
+		end
+		if IsValidEntity(unit) and unit:GetUnitName()== "npc_courier_replacement" then
+			local owner = unit:GetOwner()
+			if owner then
+				local playerID = owner:GetPlayerID()
+				AddCouriersToList(playerID, unit)
+			end
 		end
 	end		
 	if unit and not unit:IsNull() and unit:IsHero() then

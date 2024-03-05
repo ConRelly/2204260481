@@ -87,7 +87,7 @@ function modifier_item_red_divine_rapier:GetModifierTotalDamageOutgoing_Percenta
 	if ability then
 		if parent:IsHero() then
 			local damage = ability:GetSpecialValueFor("swrod_master_bonus_ptc")			
-			if target:GetUnitName() == "npc_boss_juggernaut_4" then
+			if target:GetUnitName() == "npc_boss_juggernaut_4" then --npc_dota_dummy_misha  --npc_boss_juggernaut_4
 				if not self.trigger then
 					self.trigger = 1	
 					self:OnRefresh()

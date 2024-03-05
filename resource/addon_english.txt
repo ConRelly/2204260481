@@ -9711,6 +9711,14 @@ Required Level: %required_level%
 "DOTA_Tooltip_modifier_aegis_buff"										  "Aegis Protection"
 "DOTA_Tooltip_modifier_aegis_buff_Description"							  "Reduce %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% incoming damage, and increase %dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% OUTGOING damage."  
 
+"DOTA_Tooltip_ability_item_aegis_cast"									  "Consume Aegis skill"
+"DOTA_Tooltip_ability_item_aegis_cast_Description"						  "Gives the Consume Aegis skill"
+
+"DOTA_Tooltip_ability_custom_aegis_cast"									  "Consume Aegis"
+"DOTA_Tooltip_ability_custom_aegis_cast_Description"						  "Searches in all your inventory(including stash and courier) for Consumabile aegis and uses one if it finds<br> Toggle Autocast to auto consume an aegis when you prevent death with Undying helm"
+
+
+
 "dota_tooltip_ability_pangolier_heartpiercer_oaa"											   "Heartpiercer"
 "dota_tooltip_ability_pangolier_heartpiercer_oaa_description"								   "Pangolier reads his enemies perfectly, deftly slipping his blade past defenses. Each attack has a chance to negate 60%% of enemy <font color='#FFA500'>base armor</font> and slow the target for a duration, activating after a short delay."
 "dota_tooltip_ability_pangolier_heartpiercer_oaa_lore"										  "These fools know nothing of real armor..."
@@ -10852,7 +10860,7 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 	"DOTA_Tooltip_ability_marci_unleash_custom"						"Unleash"
 	"DOTA_Tooltip_ability_marci_unleash_custom_Description"			"Marci taps a hidden power, gaining Fury charges that allow her to deliver a rapid sequence of strikes. The last strike in every Fury combo creates a damaging pulse around the target that slows movement and attack speed for %pulse_debuff_duration%s. In between Fury combos, Marci is unable to attack for %time_between_flurries%s.\n\nMarci receives a basic dispel when Unleash is cast and gains %bonus_movespeed%%% movement speed.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Some Items and Abilites will get improved when ultimate is active.(press Alt)"
 	"DOTA_Tooltip_ability_marci_unleash_custom_scepter_Description"	"Reduces Unleash cooldown by %scepter_cooldown_reduction% seconds and causes Unleash to apply a basic dispel on Marci. While Unleash is Active, all of Marci's abilities unleash pulses when cast. All of Marci's unleash pulses will silence units for %pulse_silence_duration% seconds.<br><br>DISPEL TYPE: Basic Dispel"
-	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Super Scepter improve list: CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible and <font color='#E20624'>RED</font>), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger, Speedsters, Amalgamation,<font color='#E20624'>Evolving Light Crossbow(all)</font>, Aftershock, <font color='#E20624'>Empty Spellbook</font>."
+	"DOTA_Tooltip_ability_marci_unleash_custom_Note0"					"Super Scepter improve list(full details Discord comand !marci): CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible and <font color='#E20624'>RED</font>), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger, Speedsters, Amalgamation,<font color='#E20624'>Evolving Light Crossbow(all)</font>, Aftershock, <font color='#E20624'>Empty Spellbook</font>."
 	"DOTA_Tooltip_ability_marci_unleash_custom_Lore"					"Though some have sought to understand its origins, Marci rebuffs all attempts to divine the source of her power."
 	"DOTA_Tooltip_ability_marci_unleash_custom_duration"				"DURATION:"
 	"DOTA_Tooltip_ability_marci_unleash_custom_charges_per_flurry"		"STRIKES PER FURY:"

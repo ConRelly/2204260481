@@ -81,7 +81,7 @@ function OnAttackLanded_NotUsed(keys)
 	end	            
 	ability:SetCurrentCharges(charges + bonus_charge)               
 	if evolve then
-		if not ability.evolve_check then
+		if not ability.evolve_check and ability then
 			local zeus_ultimate_particle = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf" 
 			local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
 			local zeus_ultimate_sound = "Hero_Zuus.GodsWrath"

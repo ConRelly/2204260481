@@ -199,11 +199,11 @@ if IsServer() then
 			local base_damage = ability:GetSpecialValueFor("base_damage")
 			local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
 			local damage = base_damage + caster:GetIntellect() * (intelligence_damage / 100.0)
-			print("normal dmg: "..damage)
+			--print("normal dmg: "..damage)
 			if _G._challenge_bosss > 0 then
 				for i = 1, _G._challenge_bosss do
 					damage = math.floor(damage * 1.3)
-					print("tier "..i.. " dmg: "..damage)
+					--print("tier "..i.. " dmg: "..damage)
 				end 
 			end
 

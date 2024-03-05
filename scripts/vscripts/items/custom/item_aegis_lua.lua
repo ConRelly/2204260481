@@ -54,6 +54,35 @@ function item_aegis_lua:OnSpellStart()
 		end
 	end
 end
+function item_aegis_lua:OnSpellStart_skill(caster)
+	if IsServer() then
+		local hCaster = caster
+		local hPlayer = hCaster:GetPlayerOwner()
+		if hCaster and hCaster:IsRealHero() and not hCaster:IsTempestDouble() and not hCaster:HasModifier("modifier_arc_warden_tempest_double_lua") then
+			--create an 1s internal cooldown
+			if not self.timer_limit then
+				self.timer_limit = GameRules:GetGameTime() + 1
+			elseif GameRules:GetGameTime() < self.timer_limit then
+				print("CD: "..self.timer_limit-GameRules:GetGameTime().."s")
+				return
+			end
+			if hCaster:HasModifier("modifier_aegis") then
+				local hModifierAegis = hCaster:FindModifierByName("modifier_aegis")
+				local nCurrentStack = hModifierAegis:GetStackCount()
+				hModifierAegis:SetStackCount(nCurrentStack+1)
+			else
+				local hModifierAegis = hCaster:AddNewModifier(hCaster, nil, "modifier_aegis", {})
+				hModifierAegis:SetStackCount(1)
+			end
+			self.timer_limit = GameRules:GetGameTime() + 1
+			self:SpendCharge()
+			EmitSoundOn("DOTA_Item.Refresher.Activate", hCaster)
+			local nParticle = ParticleManager:CreateParticle("particles/items_fx/aegis_respawn_timer.vpcf", PATTACH_ABSORIGIN_FOLLOW, hCaster)
+			ParticleManager:ReleaseParticleIndex(nParticle)
+		end
+	end
+end
+
 modifier_aegis = class({})
 function modifier_aegis:IsHidden() return (self:GetStackCount()<=0) end
 function modifier_aegis:GetTexture() return "item_aegis" end

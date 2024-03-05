@@ -14,6 +14,7 @@ local abilityList = {
     ["invoker_exort"] = true,
     ["invoker_invoke"] = true,
     ["true_master"] = true,
+    ["custom_aegis_cast"] = true,
 
   }
 

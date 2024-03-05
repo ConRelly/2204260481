@@ -3011,6 +3011,8 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Changed cosmos deff to be less static and more dynamic(especially last stage)
 
 
+* Added new item/skill that uses your consumabile Aegis from any slot(inventory or stash , courier-stash or inventory). even if you are stunned.
+* Added some preload effects for Evloving bow(in case some players had errors with that) 
 
 
 

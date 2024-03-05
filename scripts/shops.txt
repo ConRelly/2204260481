@@ -10,6 +10,7 @@
 		"item"		"item_tome_agi"
 		"item"		"item_tome_int"
 		"item"		"item_auto_cast"
+		"item"      "item_aegis_cast"
 		"item"		"item_mjz_ability_point"
 		"item"		"item_mjz_ability_point_2"
 		"item"		"item_custom_stat_change_str"
