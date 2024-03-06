@@ -19345,12 +19345,11 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"5189"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE | DOTA_UNIT_TARGET_FLAG_NO_INVIS" 
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -19373,7 +19372,7 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"225"
+		"AbilityManaCost"				"200"
 		
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -19385,14 +19384,20 @@
 		{
 			"health_drain"
 			{
-				"value"					"450 1650 4100 12250 23500 46400 91500 285000 675000"
+				"value"					"450 1650 4100 12250 23500 46400 91500 485000 975000"
 				"CalculateSpellDamageTooltip"	"1"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_MAGICAL"
 			}
-			"tick_rate"					"0.50"
-			"drain_buffer"				"800"
+			"ally_healing"
+			{
+				"value"					"450 1050 2100 4250 6500 9400 12500 16000 22000"
+			}
+			"health_to_mana_rate"	"50"
+			"tick_rate"					"0.5"
+			"drain_buffer"				"200"
 			"shard_damage_pct_from_ward"
 			{
-				"value"				"180"
+				"value"				"75"
 				"RequiresShard"		"1"
 			}
 			"bonus_heal_pct"
@@ -19403,22 +19408,22 @@
 			"spell_amp_drain_rate"
 			{
 				"value"						"0"
-				"special_bonus_scepter"		"+25"
+				"special_bonus_scepter"		"+8"
 			}
 			"spell_amp_drain_max"
 			{
 				"value"						"0"
-				"special_bonus_scepter"		"+175"
+				"special_bonus_scepter"		"+75"
 			}
 			"spell_amp_drain_rate_ward"
 			{
 				"value"						"0"
-				"special_bonus_scepter"		"+12"
+				"special_bonus_scepter"		"+4"
 			}
 			"spell_amp_drain_duration"
 			{
 				"value"						"0"
-				"special_bonus_scepter"		"+12"
+				"special_bonus_scepter"		"+8"
 			}			
 			"max_spell_amp_drain_pct"
 			{
@@ -19427,7 +19432,7 @@
 			}	
 			"AbilityCooldown"				
 			{
-				"value"						"11"		
+				"value"						"7"		
 				"special_bonus_scepter"		"-50%"
 			}
 		}
@@ -22507,7 +22512,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"maximum_distance"		"3575"
+				"maximum_distance"		"4575"
 			}
 			"03"
 			{
@@ -24766,11 +24771,11 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"bonus_movement_speed"	"280"
-			"maximum_distance"		"3800"
+			"bonus_movement_speed"	"580"
+			"maximum_distance"		"7800"
 			"vision_radius"			"200"
 			"tp_cooldown"			"30"
-			"tp_channel_time"		"0.0"
+			"tp_channel_time"		"0.01"
 		}
 	}
 

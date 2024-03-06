@@ -169,6 +169,19 @@ end
 function modifier_item_plain_ring_perma_invincibility:OnDestroy()
 	if IsServer() then
 		local parent = self:GetParent()
+		local cd_modif = parent:HasModifier("modifier_ring_invincibility_cd")
+		if cd_modif then
+			local cd_modif2 = parent:FindModifierByName("modifier_ring_invincibility_cd")
+			if cd_modif2:GetStackCount() == 0 then
+			
+				if parent:HasModifier("modifier_item_plain_ring_perma") then
+					local GoldRingMod = parent:FindModifierByName("modifier_item_plain_ring_perma")
+					if GoldRingMod then
+						GoldRingMod:SetStackCount(0)	
+					end
+				end	
+			end
+		end
 		ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
 		parent:Heal((parent:GetMaxHealth() * self.min_health * 0.01), parent)
 	end

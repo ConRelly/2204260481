@@ -427,7 +427,20 @@ function AOHGameMode:OnPlayerChat(keys)
 				Notifications:TopToAll({text="Removed multi autocast", style={color="yellow"}, duration=3})				 
 			end					   
 		end	
-	end										
+	end	
+	if keys.text == "-removeconsume" then
+		local playerID = keys.playerid
+		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+		if hero:HasAbility("custom_aegis_cast") then
+			local ability = hero:FindAbilityByName("custom_aegis_cast")
+			if not ability:GetAutoCastState() then
+				hero:RemoveAbility("custom_aegis_cast")
+				Notifications:TopToAll({text="Removed Consume Aegis", style={color="blue"}, duration=2})
+			else
+				Notifications:Top(playerID, {text= "Untoggle the autocast of skill", style={color="red"}, duration=5})			 
+			end					   
+		end	
+	end											
 	if keys.text == "-zeromana" then
 		local player_count = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS)
 		local playerID = keys.playerid

@@ -201,6 +201,7 @@ if IsServer() then
 		item_thunder_gods_might = true,
 		item_thunder_gods_might2 = true,
 		item_all_essence = true,
+		item_aegis_cast = true,
 		--mjz_doom_bringer_devour = true,
 		--mjz_clinkz_soul_pact = true,
 		frostivus2018_clinkz_burning_army = true,
@@ -298,6 +299,7 @@ if IsServer() then
 		pangolier_gyroshell = true,
 		true_master = true,
 		mjz_ursa_earthshock = true,
+		custom_aegis_cast = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

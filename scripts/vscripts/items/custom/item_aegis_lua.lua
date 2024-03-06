@@ -8,24 +8,7 @@ local ReincarnateTime = 7					-- Seconds
 local ReincarnateBuffTime = 14				-- Seconds
 local AegisBuffDMGIncoming = 85				-- % Incoming Damage
 local AegisBuffDMGOutgoing = 25				-- % Outgoing Damage
---[[
-function item_aegis_lua:GetIntrinsicModifierName() return "modifier_aegis_up" end
-modifier_aegis_up = class({})
-function modifier_aegis_up:IsHidden() return true end
-function modifier_aegis_up:IsPurgable() return false end
-function modifier_aegis_up:RemoveOnDeath() return false end
-function modifier_aegis_up:OnCreated()
-	if IsServer() then self:StartIntervalThink(FrameTime()) end
-end
-function modifier_aegis_up:OnIntervalThink()
-	if IsServer() then
-		if self:GetAbility():GetCurrentCharges() >= self:GetAbility():GetSpecialValueFor("aegis_up") then
-			self:GetCaster():RemoveItem(self:GetAbility())
-			self:GetCaster():AddItemByName("item_inf_aegis")
-		end
-	end
-end
-]]
+
 function item_aegis_lua:GetCooldown(level)
 	return self.BaseClass.GetCooldown(self, level) / self:GetCaster():GetCooldownReduction()
 end

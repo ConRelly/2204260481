@@ -3029,12 +3029,12 @@
 		"08"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"ms_dmg_pct"			"30"
+			"ms_dmg_pct"			"50"
 		}
 		"09"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"marciSS_ms_dmg_pct"			"90"
+			"marciSS_ms_dmg_pct"			"150"
 		}		
 	}
 }
@@ -21365,7 +21365,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"ShouldBeSuggested"				"1"
-		"AbilityCastRange"				"1900"
+		"AbilityCastRange"				"4500"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"100"
@@ -21406,22 +21406,22 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"target_crit_multiplier"	"130"
+				"target_crit_multiplier"	"450"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_mult_increase"		"4"
+				"crit_mult_increase"		"5"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_magic_resist"				"40"
+				"bonus_magic_resist"				"45"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"status_resistance"				"35"
+				"status_resistance"				"50"
 			}			
 		}
 	}

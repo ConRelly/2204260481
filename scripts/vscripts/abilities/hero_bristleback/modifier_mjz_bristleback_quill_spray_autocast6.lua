@@ -137,7 +137,7 @@ function modifier_class:OnIntervalThink()
                 end
 
             --local number = parent:GetAbilityCount()
-            if target_ability and IsValidEntity(target_ability) and not target_ability:IsAttributeBonus() and not target_ability:IsPassive() and not target_ability:IsHidden() and not target_ability:IsToggle() and target_ability:GetLevel() > 0 and target_ability:IsCooldownReady() and target_ability:IsFullyCastable() and not IsChanneling(parent) and not target_ability:IsInAbilityPhase() and not ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_CHANNELLED) then  -- Talent-- Dunno
+            if target_ability and IsValidEntity(target_ability) and not target_ability:IsAttributeBonus() and not target_ability:IsPassive() and not target_ability:IsHidden() and not target_ability:IsToggle() and target_ability:GetLevel() > 0 and target_ability:IsCooldownReady() and target_ability:IsFullyCastable() and not parent:IsChanneling() and not target_ability:IsInAbilityPhase() and not ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_CHANNELLED) then  -- Talent-- Dunno
                 --print(number .. " skills")
                 --if target_ability:IsInAbilityPhase() then return nil end
                 --if not target_ability:IsCooldownReady() then return nil end
@@ -147,7 +147,7 @@ function modifier_class:OnIntervalThink()
                 if target_ability == nil then return nil end
                 if parent:IsIllusion() then return nil end
                 --if not parent:IsRealHero() then return nil end
-                if IsChanneling(parent) then return nil end		
+                if parent:IsChanneling() then return nil end		
                 if parent:IsSilenced() then return nil end
                 if parent:IsStunned() then return nil end
                 if self:IsNull() then return end

@@ -4122,16 +4122,20 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 
 
 	"DOTA_Tooltip_ability_mjz_pugna_nether_ward"					"Nether Ward"
-	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_Description"		"Pugna places a Nether Ward at the target location. The ward every %interval% seconds, damages every enemy nearby. The damage is based on your intelligence.\n<h1><font color='#F70707'>Challenge Boss</font></h1>Increase Nether Ward final dmg by <font color='#5BE424'>30%</font> for every Reward Tier(max 371%)."
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_Description"		"Pugna places a Nether Ward at the target location. The ward every %interval% seconds, damages every enemy nearby. The damage is based on your intelligence.<br><font color='#1ABE55'>Can Be casted during channeling</font>\n<h1><font color='#F70707'>Challenge Boss</font></h1>Increase Nether Ward final dmg by <font color='#5BE424'>30%</font> for every Reward Tier(max 371%). \n<h1><font color='#DE3163'>Super Scepter</font></h1> You can toggle autocast to change the dmg type to Pure but deal only %ss_pure%%% damage.<br> if you are channeling an ability Nether Ward will deal %ss_channel%%% bonus damage."
 	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_Lore"				"While at the lamasery for the Arts of Oblivion, Pugna learned to dominate his classmates with a simple ward charged with Nether magic."
 	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_radius"		   		"WARD ATTACK RANGE:"
 	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_base_damage"	   			"Base Damage: "
 	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_intelligence_damage"		"%Intelligence as Damage: "
 	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_attacks_to_destroy"			"ATTACKS TO DESTROY:"
-	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_Note0"				"Nether Ward has 4 HP. Enemy attack it for 1 damage."
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_Note0"				"Nether Ward has 10 HP. Enemy attack it for 1 damage."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_pugna_nether_ward_intelligence"	"+{s:value}% Nether Ward Intelligence Damage"
 	"npc_dota_mjz_pugna_nether_ward"								"Nether Ward"
 	
+	"DOTA_Tooltip_modifier_mjz_pugna_nether_ward_channeling"		"Channeling"
+	"DOTA_Tooltip_modifier_mjz_pugna_nether_ward_channeling_description" "Nether ward damage is increased by 50%"
+
+
 	"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave"					"Sonic Wave"
 	"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_Description"		"Creates a gigantic wave of sound in front of Queen of Pain, dealing heavy damage to all enemy units in its wake and pushing them back.\nUpgradable by Aghanim's Scepter."
 	"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_Lore"				"Her most exquisite of all of torments, Akasha's Sonic Wave puts her poor foes out of their misery."
@@ -7134,7 +7138,7 @@ Does not affect Refresher Orb, Arcane Boots, Guardian Greaves, Charged Conduit, 
 "DOTA_Tooltip_ability_skywrath_mage_custom_concussive_shot_slow_duration"	"SLOW DURATION:"
 "DOTA_Tooltip_ability_skywrath_mage_custom_concussive_shot_movement_speed_pct"	"%SLOW:"
 "DOTA_Tooltip_ability_skywrath_mage_custom_ancient_seal"					"Ancient Seal"
-"DOTA_Tooltip_ability_skywrath_mage_custom_ancient_seal_Description"		"Skywrath Mage seals the targeted unit with an ancient rune, silencing it and causing it to take additional damage from spells."
+"DOTA_Tooltip_ability_skywrath_mage_custom_ancient_seal_Description"		"Seals the targeted unit with an ancient rune, silencing it and causing it to take additional damage from spells.<br><font color='#1ABE55'>Can Be casted during channeling</font>"
 "DOTA_Tooltip_ability_skywrath_mage_custom_ancient_seal_Lore"				"A holy incantation, whosoever finds themselves touched by Avilliva's sigil must suffer in penitent silence."
 "DOTA_Tooltip_ability_skywrath_mage_custom_ancient_seal_resist_debuff"		"%INCREASED MAGIC DAMAGE:"
 "DOTA_Tooltip_ability_skywrath_mage_custom_ancient_seal_seal_duration"		"DURATION:"
@@ -7149,10 +7153,14 @@ Does not affect Refresher Orb, Arcane Boots, Guardian Greaves, Charged Conduit, 
 "DOTA_Tooltip_modifier_skywrath_mage_custom_concussive_shot_slow"			"Concussive Shot"
 "DOTA_Tooltip_modifier_skywrath_mage_custom_concussive_shot_slow_Description"	 "Slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 "DOTA_Tooltip_modifier_skywrath_mage_custom_ancient_seal"						"Ancient Seal"
-"DOTA_Tooltip_modifier_skywrath_mage_custom_ancient_seal_Description"	 "Silenced and magic damage increased by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%."
+"DOTA_Tooltip_modifier_skywrath_mage_custom_ancient_seal_Description"	 "Magic damage increased by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%."
+"DOTA_Tooltip_ability_skywrath_mage_custom_ancient_seal_Note0"          "Spell is divided in 2 debuffs, Silence debuff last 5 times less and can be dispelled"
 "DOTA_Tooltip_Ability_slark_custom_essence_shift"						"<font color='#f2da5b'>Essence Shift</font>"
 "DOTA_Tooltip_Ability_slark_custom_essence_shift_Description"			"Slark steals agility with every hit."
 "DOTA_Tooltip_Ability_slark_custom_essence_shift_duration"				"DURATION:"
+
+"DOTA_Tooltip_modifier_skywrath_mage_custom_ancient_seal_silence"				"Ancient Seal Silence"
+"DOTA_Tooltip_modifier_skywrath_mage_custom_ancient_seal_silence_Description"	 "Silenced"
 
 
 "DOTA_Tooltip_modifier_slark_custom_essence_shift_hud"					"Essence Shift Bonus"
@@ -9715,8 +9723,8 @@ Required Level: %required_level%
 "DOTA_Tooltip_ability_item_aegis_cast_Description"						  "Gives the Consume Aegis skill"
 
 "DOTA_Tooltip_ability_custom_aegis_cast"									  "Consume Aegis"
-"DOTA_Tooltip_ability_custom_aegis_cast_Description"						  "Searches in all your inventory(including stash and courier) for Consumabile aegis and uses one if it finds<br> Toggle Autocast to auto consume an aegis when you prevent death with Undying helm"
-
+"DOTA_Tooltip_ability_custom_aegis_cast_Description"						  "Searches in all your inventory(including stash and courier) for Consumable aegis and uses one if it finds<br> Toggle Autocast to auto consume an aegis when you prevent death and gold ring is on cooldown(with more then 7s left) <br> <font color='#0CF2E8'>Works even if you are stunned</font>"
+"DOTA_Tooltip_ability_custom_aegis_cast_Note0"                                "Minim Iternal Cooldown: 1s, Type '-removeconsume' to remove the skill"
 
 
 "dota_tooltip_ability_pangolier_heartpiercer_oaa"											   "Heartpiercer"
@@ -10393,7 +10401,7 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 		"DOTA_Tooltip_modifier_item_imba_bloodthorn_debuff_disarm_Description"  "During the curse duration you are Disarmed"
 
 		"dota_tooltip_ability_item_edible_fragment"						   "Edible Fragment"
-		"dota_tooltip_ability_item_edible_fragment_description"			   "Part of and edible catalyst, used to make an item in a consumabile.Have a chance to get one every 20 lvls and can be shared
+		"dota_tooltip_ability_item_edible_fragment_description"			   "Part of and edible catalyst, used to make an item in a consumable.Have a chance to get one every 20 lvls and can be shared
 		Everyone gets one bonus if after minute 30 of the game someone guess the word/s(you can found the word/s from the title you get when a round starts, gets changed every 1-3 updates. More advanced Hints are given in Discord <font color='#F74705'>Patreon only section</font>), you have to type like a command (caps sensitive)."
 		"dota_tooltip_ability_item_edible_complete"						   "Edible Catalyst"
 		"dota_tooltip_ability_item_edible_complete_description"			   "Used to make an item in a Edible version"

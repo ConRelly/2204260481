@@ -3011,8 +3011,24 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Changed cosmos deff to be less static and more dynamic(especially last stage)
 
 
-* Added new item/skill that uses your consumabile Aegis from any slot(inventory or stash , courier-stash or inventory). even if you are stunned.
-* Added some preload effects for Evloving bow(in case some players had errors with that) 
+* Added new item/skill that uses your consumable Aegis from any slot (inventory or stash, courier stash or inventory). even if you are stunned.
+* Made sure the game preloads effects for Evloving Bow Forms (in case some players had errors with it). 
+* Pugna Nether Ward:
+-- Added new Super Scepter effect 
+-- Doubled the CD and doubled the Dmg (same dps and higher dps on certain builds like multicast, better fps).
+-- Increased cast rage from 200 to 1000 and can be cast while channeling.
+* Ancient Seal now cannot be dispelled, but the Silence part still can and lasts 5 times less, (rounding out the duration to 5s for the last lvl), increased casting rage and can be cast while channeling.
+* Increased teleport scroll (and boots) max distance
+* Increased some of the Cursed Gaze stats (mostly crit dmg and crit dmg bonus)
+* Fixed Lifeguard Hiding Gold Ring buff until it procs
+* and other stuff
+
+
+
+
+
+
+
 
 
 
@@ -3044,7 +3060,7 @@ Greater Blast Staff: MR reduction increased to -45 , int multiplayer +5(18) , de
 
 Apex: +7% more stats(42%)
 
-Cursed Gaze: +3% crit bonus on hit(8%).
+Cursed Gaze: +5% crit bonus on hit(10%).
 
 Slayer Rebound : aditional stacks + 2 instead of 1.
 
@@ -3060,7 +3076,7 @@ Antimage Q = Acts as antimage lvl 20 talent (ignores base armor)
 
 Insatiable Hunger = doubles the chance of the SS effect.
 
-Speedsters : from 30% ms as base attack dmg to 90%
+Speedsters : from 50% ms as base attack dmg to 150%
 
 Amalgamation : can have both Symbiosis effects at the same time
 

@@ -1,5 +1,6 @@
 LinkLuaModifier("modifier_mjz_pugna_nether_ward", "abilities/hero_pugna/mjz_pugna_nether_ward.lua", LUA_MODIFIER_MOTION_NONE)
-
+LinkLuaModifier("modifier_mjz_pugna_nether_ward_check", "abilities/hero_pugna/mjz_pugna_nether_ward.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mjz_pugna_nether_ward_channeling", "abilities/hero_pugna/mjz_pugna_nether_ward.lua", LUA_MODIFIER_MOTION_NONE)
 
 mjz_pugna_nether_ward = class({})
 local ability_class = mjz_pugna_nether_ward
@@ -10,6 +11,38 @@ end
 function ability_class:GetCastRange(vLocation, hTarget)
 	return self:GetSpecialValueFor('cast_range')
 end
+function ability_class:GetBehavior()
+	if self:GetCaster():HasModifier("modifier_super_scepter") then
+		return DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_AOE + DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL + DOTA_ABILITY_BEHAVIOR_AUTOCAST
+	end
+	return self.BaseClass.GetBehavior( self )
+end
+
+modifier_mjz_pugna_nether_ward_channeling = class({})
+function modifier_mjz_pugna_nether_ward_channeling:IsHidden() return false end
+function modifier_mjz_pugna_nether_ward_channeling:IsPurgable() return false end
+
+
+function ability_class:GetIntrinsicModifierName()
+	return "modifier_mjz_pugna_nether_ward_check"
+end
+modifier_mjz_pugna_nether_ward_check = class({})
+function modifier_mjz_pugna_nether_ward_check:IsHidden() return true end
+function modifier_mjz_pugna_nether_ward_check:IsPurgable() return false end
+function modifier_mjz_pugna_nether_ward_check:OnCreated()
+	if IsServer() then
+		self:StartIntervalThink(0.4)
+	end
+end
+function modifier_mjz_pugna_nether_ward_check:OnIntervalThink()
+	local caster = self:GetCaster()
+	local has_modifier_ss = caster:HasModifier("modifier_super_scepter")
+	if has_modifier_ss then
+		if caster:IsChanneling() and self:GetAbility() then
+			caster:AddNewModifier(caster, self:GetAbility(), "modifier_mjz_pugna_nether_ward_channeling", {duration = 0.5})
+		end
+	end
+end	
 
 if IsServer() then
 	function ability_class:OnSpellStart()
@@ -125,7 +158,7 @@ if IsServer() then
 		local parent = self:GetParent()
 		local caster = self:GetCaster()
 		local ability = self:GetAbility()
-		
+		if not ability then return end
 		local max_count = 8
 		local radius = ability:GetSpecialValueFor('radius')
 		local base_damage = ability:GetSpecialValueFor("base_damage")
@@ -195,10 +228,23 @@ if IsServer() then
 			local parent = self:GetParent()
 			local caster = self:GetCaster()
 			local ability = self:GetAbility()
-
+			if not ability then return end
+			local autocast_state = ability:GetAutoCastState()
 			local base_damage = ability:GetSpecialValueFor("base_damage")
 			local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
 			local damage = base_damage + caster:GetIntellect() * (intelligence_damage / 100.0)
+			local dmg_type = ability:GetAbilityDamageType()
+			local has_modifier_ss = caster:HasModifier("modifier_super_scepter")
+			local channel_modif = caster:HasModifier("modifier_mjz_pugna_nether_ward_channeling")
+			if has_modifier_ss then 
+				if autocast_state then
+					dmg_type = DAMAGE_TYPE_PURE
+					damage = math.floor(damage * 0.3)
+				end	
+			end	
+			if channel_modif then
+				damage = damage * 1.5
+			end	
 			--print("normal dmg: "..damage)
 			if _G._challenge_bosss > 0 then
 				for i = 1, _G._challenge_bosss do
@@ -211,7 +257,7 @@ if IsServer() then
 				attacker = caster,
 				victim = target,
 				ability = ability,
-				damage_type = ability:GetAbilityDamageType(),
+				damage_type = dmg_type,
 				damage = damage
 			})
 		end	

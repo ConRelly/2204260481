@@ -63,7 +63,7 @@ local NoAutocast = {
     ["mjz_kunkka_tidebringer"] = true,
     ["huskar_burning_spear"] = true,
     ["rubick_spell_steal"] = true,
-
+    ["custom_aegis_cast"] = true,
 };
 
 local TargetSpell = {
@@ -119,7 +119,7 @@ function modifier_class:OnIntervalThink()
                 if parent:IsIllusion() then return nil end
                 if not parent:IsRealHero() then return nil end
                 --print("ability name: ".. ability_name)
-                if IsChanneling(parent) and not ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
+                if parent:IsChanneling() and not ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
                     return nil
                 end
                 --print("pass 0.5")
@@ -227,7 +227,7 @@ function modifier_class:OnIntervalThink()
                         if not item:IsActivated() then return end
                         if parent:IsIllusion() then return nil end
                         if not parent:IsRealHero() then return nil end
-                        if IsChanneling(parent) and not ability_behavior_includes(item, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
+                        if parent:IsChanneling() and not ability_behavior_includes(item, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
                             return nil
                         end                    
                         if item:GetCooldown(item:GetLevel()) <= 0 then return end
@@ -250,7 +250,7 @@ function modifier_class:OnIntervalThink()
                     if not item:IsActivated() then return end
                     if parent:IsIllusion() then return nil end
                     if not parent:IsRealHero() then return nil end
-                    if IsChanneling(parent) and not ability_behavior_includes(item, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
+                    if parent:IsChanneling() and not ability_behavior_includes(item, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
                         return nil
                     end                    
                     if item:GetCooldown(item:GetLevel()) <= 0 then return end
@@ -274,7 +274,7 @@ function modifier_class:OnIntervalThink()
                         if not item:IsActivated() then return end
                         if parent:IsIllusion() then return nil end
                         if not parent:IsRealHero() then return nil end
-                        if IsChanneling(parent) and not ability_behavior_includes(item, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
+                        if parent:IsChanneling() and not ability_behavior_includes(item, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
                             return nil
                         end                    
                         if item:GetCooldown(item:GetLevel()) <= 0 then return end

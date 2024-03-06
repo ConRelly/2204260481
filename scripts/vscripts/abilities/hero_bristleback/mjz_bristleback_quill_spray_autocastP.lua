@@ -58,7 +58,7 @@ function modifier_class:OnIntervalThink()
         if parent == nil then return nil end
         if not IsValidEntity(parent) then return nil end
         --AutoAgro
-        if not IsChanneling(parent) then
+        if not parent:IsChanneling() then
             AttackNearestEnemy(parent)
         end   
         --Autocast for items
@@ -73,7 +73,7 @@ function modifier_class:OnIntervalThink()
                 if not IsValidEntity(parent) then return nil end
                -- if not item:IsCooldownReady() then return nil end
                 if parent:IsIllusion() then return nil end
-                if IsChanneling(parent) and not ability_behavior_includes(item, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
+                if parent:IsChanneling() and not ability_behavior_includes(item, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
                     return nil
                 end                   
                 if item:GetCooldown(item:GetLevel()) <= 0 then return end
@@ -92,7 +92,7 @@ function modifier_class:OnIntervalThink()
             if not IsValidEntity(parent) then return nil end
            --if not item:IsCooldownReady() then return nil end
             if parent:IsIllusion() then return nil end
-            if IsChanneling(parent) and not ability_behavior_includes(item, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
+            if parent:IsChanneling() and not ability_behavior_includes(item, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
                 return nil
             end                   
             if item:GetCooldown(item:GetLevel()) <= 0 then return end

@@ -159,7 +159,7 @@ function modifier_item_imba_bloodthorn_debuff:OnCreated()
 		local marci_bonus = 0
 		if caster:HasModifier("modifier_super_scepter") then
 			if caster:HasModifier("modifier_marci_unleash_flurry") then
-				marci_bonus = 3
+				marci_bonus = 5
 			end                                 
 		end 		
 		self.target_crit_multiplier = self:GetAbility():GetSpecialValueFor("target_crit_multiplier") + marci_bonus	

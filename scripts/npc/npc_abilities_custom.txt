@@ -14533,13 +14533,13 @@
 			"particle"	"particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_debuff.vpcf"
 		}
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+		"AbilityCastRange"				"1700"
+		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"22"
 		"AbilityManaCost"				"80 90 100 110"
 		"AbilitySpecial"
@@ -14553,7 +14553,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"seal_duration"			"3.0 3.5 4.0 4.5"
+				"seal_duration"			"3.0 3.5 4.0 5.0"
 			}
 			"03"
 			{
@@ -30423,7 +30423,7 @@
 	{
 		"BaseClass"						"ability_lua"	// "ability_datadriven"
 		"ScriptFile"					"abilities/hero_pugna/mjz_pugna_nether_ward.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
@@ -30434,10 +30434,10 @@
 		"LevelsBetweenUpgrades"		 "5"
 		"AbilitySound"					"Hero_Pugna.NetherWard"
 
-		"AbilityCastPoint"				"0.1"
+		"AbilityCastPoint"				"0"
 		"AbilityCastRange"				"%cast_range"
 
-		"AbilityCooldown"				"35.0"
+		"AbilityCooldown"				"70.0"
 		"AbilityManaCost"				"100"
 		"AbilityDuration"				"%duration"
 
@@ -30446,7 +30446,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"cast_range"					"200"	
+				"cast_range"					"1000"	
 			}
 			"02"
 			{
@@ -30456,12 +30456,12 @@
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"base_damage"					"90 290 630 940 1450 1950 3250" 
+				"base_damage"					"180 580 1260 1880 2900 3900 6500" 
 			} 	
 			"04"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"intelligence_damage"			"160 200 240 280 380 460 600" 
+				"intelligence_damage"			"320 400 480 560 760 920 1200" 
 				"LinkedSpecialBonus"			"special_bonus_unique_mjz_pugna_nether_ward_intelligence"
 			}
 			"05"
@@ -30470,16 +30470,26 @@
 				"attacks_to_destroy"			"10"
 				"LinkedSpecialBonus"			"special_bonus_unique_pugna_6"
 			}
-			"08"
+			"06"
 			{
 				"var_type"						"FIELD_FLOAT"
 				"duration"						"30" 
 			} 	
-			"10"
+			"07"
 			{
 				"var_type"			  		"FIELD_FLOAT"
 				"interval"			 			"0.8"
 			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"ss_channel"					"50" //tooltip
+			} 	
+			"09"
+			{
+				"var_type"			  		"FIELD_FLOAT"
+				"ss_pure"			 			"30" //tooltip
+			}			
 		}
 
 		"precache"
@@ -30508,7 +30518,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"						"400"
+				"value"						"800"
 			}
 		}
 	}
@@ -44217,8 +44227,6 @@
     "AbilityCooldown"               "5.0"
     "AbilityManaCost"               "0"	
     "MaxLevel"                      "1"
-    "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 }
 
 

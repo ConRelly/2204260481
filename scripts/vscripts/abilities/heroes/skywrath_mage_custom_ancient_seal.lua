@@ -33,6 +33,12 @@ function skywrath_mage_custom_ancient_seal:OnSpellStart()
 		"modifier_skywrath_mage_custom_ancient_seal", -- modifier name
 		{ duration = duration } -- kv
 	)
+	target:AddNewModifier(
+		caster, -- player source
+		self, -- ability source
+		"modifier_skywrath_mage_custom_ancient_seal_silence", -- modifier name
+		{ duration = duration/5 } -- kv
+	)
 
 	-- scepter effect
 	if caster:HasScepter() then
@@ -77,12 +83,19 @@ function skywrath_mage_custom_ancient_seal:OnSpellStart()
 				"modifier_skywrath_mage_custom_ancient_seal", -- modifier name
 				{ duration = duration } -- kv
 			)
+			target_2:AddNewModifier(
+				caster, -- player source
+				self, -- ability source
+				"modifier_skywrath_mage_custom_ancient_seal_silence", -- modifier name
+				{ duration = duration/5 } -- kv
+			)			
 		end
 	
 	end
 end
 
 LinkLuaModifier( "modifier_skywrath_mage_custom_ancient_seal", "abilities/heroes/skywrath_mage_custom_ancient_seal.lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_skywrath_mage_custom_ancient_seal_silence", "abilities/heroes/skywrath_mage_custom_ancient_seal.lua", LUA_MODIFIER_MOTION_NONE )
 modifier_skywrath_mage_custom_ancient_seal = class({})
 
 --------------------------------------------------------------------------------
@@ -100,53 +113,29 @@ function modifier_skywrath_mage_custom_ancient_seal:IsStunDebuff()
 end
 
 function modifier_skywrath_mage_custom_ancient_seal:IsPurgable()
+	return false
+end
+
+modifier_skywrath_mage_custom_ancient_seal_silence = class({})
+
+--------------------------------------------------------------------------------
+-- Classifications
+function modifier_skywrath_mage_custom_ancient_seal_silence:IsHidden()
+	return false
+end
+
+function modifier_skywrath_mage_custom_ancient_seal_silence:IsDebuff()
 	return true
 end
-if IsServer() then
---------------------------------------------------------------------------------
--- Initializations
-function modifier_skywrath_mage_custom_ancient_seal:OnCreated( kv )
-	-- references
-	
-	self.magic_resist = self:GetAbility():GetSpecialValueFor( "resist_debuff" ) + talent_value(self:GetCaster(), "special_bonus_unique_skywrath_3")
 
-	-- play effect
-	self:PlayEffects()
+function modifier_skywrath_mage_custom_ancient_seal_silence:IsStunDebuff()
+	return false
 end
 
-function modifier_skywrath_mage_custom_ancient_seal:OnRefresh( kv )
-	-- references
-	self.magic_resist = self:GetAbility():GetSpecialValueFor( "resist_debuff" ) + talent_value(self:GetCaster(), "special_bonus_unique_skywrath_3")
-
-
-	-- play effect
-	local sound_cast = "Hero_SkywrathMage.AncientSeal.Target"
-	EmitSoundOn( sound_cast, self:GetParent() )
+function modifier_skywrath_mage_custom_ancient_seal_silence:IsPurgable()
+	return true
 end
-
-function modifier_skywrath_mage_custom_ancient_seal:OnRemoved()
-end
-
-function modifier_skywrath_mage_custom_ancient_seal:OnDestroy()
-end
-
---------------------------------------------------------------------------------
--- Modifier Effects
-function modifier_skywrath_mage_custom_ancient_seal:DeclareFunctions()
-	local funcs = {
-		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
-	}
-
-	return funcs
-end
-
-function modifier_skywrath_mage_custom_ancient_seal:GetModifierMagicalResistanceBonus()
-	return self.magic_resist
-end
-end
---------------------------------------------------------------------------------
--- Status Effects
-function modifier_skywrath_mage_custom_ancient_seal:CheckState()
+function modifier_skywrath_mage_custom_ancient_seal_silence:CheckState()
 	if self:GetParent().bAbsoluteNoCC then return end
 	local state = {
 		[MODIFIER_STATE_SILENCED] = true,
@@ -154,10 +143,72 @@ function modifier_skywrath_mage_custom_ancient_seal:CheckState()
 
 	return state
 end
+function modifier_skywrath_mage_custom_ancient_seal_silence:OnCreated( kv )
 
+	-- play effect
+	self:PlayEffects()
+	
+end
+
+
+--if IsServer() then
+--------------------------------------------------------------------------------
+-- Initializations
+	function modifier_skywrath_mage_custom_ancient_seal:OnCreated( kv )
+		-- references
+		if self:GetAbility() then
+			self.magic_resist = self:GetAbility():GetSpecialValueFor( "resist_debuff" ) + talent_value(self:GetCaster(), "special_bonus_unique_skywrath_3")
+
+		end
+	end
+
+	function modifier_skywrath_mage_custom_ancient_seal:OnRefresh( kv )
+		-- references
+		if self:GetAbility() then
+			self.magic_resist = self:GetAbility():GetSpecialValueFor( "resist_debuff" ) + talent_value(self:GetCaster(), "special_bonus_unique_skywrath_3")
+
+			-- play effect
+			local sound_cast = "Hero_SkywrathMage.AncientSeal.Target"
+			EmitSoundOn( sound_cast, self:GetParent() )
+		end
+	end
+
+	function modifier_skywrath_mage_custom_ancient_seal:OnRemoved()
+	end
+
+	function modifier_skywrath_mage_custom_ancient_seal:OnDestroy()
+	end
+
+	--------------------------------------------------------------------------------
+	-- Modifier Effects
+	function modifier_skywrath_mage_custom_ancient_seal:DeclareFunctions()
+		local funcs = {
+			MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
+		}
+
+		return funcs
+	end
+
+	function modifier_skywrath_mage_custom_ancient_seal:GetModifierMagicalResistanceBonus()
+		if self:GetAbility() then
+			return self.magic_resist
+		end
+	end
+--end
+--------------------------------------------------------------------------------
+-- Status Effects
+--[[ function modifier_skywrath_mage_custom_ancient_seal:CheckState()
+	if self:GetParent().bAbsoluteNoCC then return end
+	local state = {
+		[MODIFIER_STATE_SILENCED] = true,
+	}
+
+	return state
+end
+ ]]
 --------------------------------------------------------------------------------
 -- Graphics & Animations
-function modifier_skywrath_mage_custom_ancient_seal:PlayEffects()
+function modifier_skywrath_mage_custom_ancient_seal_silence:PlayEffects()
 	-- Get Resources
 	local particle_cast = "particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_debuff.vpcf"
 	local sound_cast = "Hero_SkywrathMage.AncientSeal.Target"

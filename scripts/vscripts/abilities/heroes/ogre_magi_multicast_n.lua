@@ -322,7 +322,8 @@ function IsExcludeAbility(ability)
 		"item_thunder_gods_might",
 		"item_thunder_gods_might2",	
 		"item_pipe_of_dezun",
-		"item_all_essence",	
+		"item_all_essence",
+		"item_aegis_cast",
 -- Abilities
 		"phoenix_fire_spirits",
 		"mjz_phoenix_sun_ray",
@@ -371,6 +372,7 @@ function IsExcludeAbility(ability)
 		"enigma_black_hole",
 		"muerta_pierce_the_veil",
 		"true_master",
+		"custom_aegis_cast",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

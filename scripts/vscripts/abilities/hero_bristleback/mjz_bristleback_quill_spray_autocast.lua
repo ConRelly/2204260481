@@ -133,7 +133,7 @@ if IsServer() then
         if not target_ability:IsCooldownReady() then return nil end
         if parent:IsIllusion() then return nil end
         if not parent:IsRealHero() then return nil end
-        if IsChanneling(parent) then return nil end		-- 施法中
+        if parent:IsChanneling() then return nil end		-- 施法中
         if parent:IsSilenced() then return nil end		-- 沉默中
         
         return true
