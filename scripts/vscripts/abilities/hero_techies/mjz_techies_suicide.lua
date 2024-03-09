@@ -99,7 +99,7 @@ function SuicideSucceeded( keys)
 				damage = current_hp, damage_type = ability:GetAbilityDamageType() 
 			})			
 		end
-		caster:ModifyHealth(caster:GetHealth() - caster:GetMaxHealth() * (ability:GetSpecialValueFor("max_health_cost") / 100), ability, true, 0)
+		caster:ModifyHealth(caster:GetHealth() - caster:GetMaxHealth() * (ability:GetSpecialValueFor("max_health_cost") / 100), ability, true, DOTA_DAMAGE_FLAG_HPLOSS)
 	end
 end
 

@@ -4122,7 +4122,7 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 
 
 	"DOTA_Tooltip_ability_mjz_pugna_nether_ward"					"Nether Ward"
-	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_Description"		"Pugna places a Nether Ward at the target location. The ward every %interval% seconds, damages every enemy nearby. The damage is based on your intelligence.<br><font color='#1ABE55'>Can Be casted during channeling</font>\n<h1><font color='#F70707'>Challenge Boss</font></h1>Increase Nether Ward final dmg by <font color='#5BE424'>30%</font> for every Reward Tier(max 371%). \n<h1><font color='#DE3163'>Super Scepter</font></h1> You can toggle autocast to change the dmg type to Pure but deal only %ss_pure%%% damage.<br> if you are channeling an ability Nether Ward will deal %ss_channel%%% bonus damage."
+	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_Description"		"Pugna places a Nether Ward at the target location. The ward every %interval% seconds, damages every enemy nearby. The damage is based on your intelligence.<br><font color='#1ABE55'>Can Be casted during channeling</font>\n<h1><font color='#F70707'>Challenge Boss</font></h1>Increase Nether Ward final dmg by <font color='#5BE424'>30%</font> for every Reward Tier(max 371%). \n<h1><font color='#DE3163'>Super Scepter</font></h1> You can toggle autocast to change the dmg type to Pure but deal only %ss_pure%%% damage.<br> if you are channeling an ability Nether Ward will deal %ss_channel%%% bonus damage.<br> This bonus damage effect will persist for the duration accumulated during channeling, even after Pugna stops channeling"
 	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_Lore"				"While at the lamasery for the Arts of Oblivion, Pugna learned to dominate his classmates with a simple ward charged with Nether magic."
 	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_radius"		   		"WARD ATTACK RANGE:"
 	"DOTA_Tooltip_ability_mjz_pugna_nether_ward_base_damage"	   			"Base Damage: "
@@ -8187,7 +8187,7 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 "DOTA_Tooltip_Ability_item_tome_bargain_Lore"						"Strength is strength."
 
 "DOTA_Tooltip_modifier_item_tome_bargain"							"Damage Bonus"
-"DOTA_Tooltip_modifier_item_tome_bargain_Description"				"Base damage has been increased at the cost of attack speed."
+"DOTA_Tooltip_modifier_item_tome_bargain_Description"				"Base damage has been increased by %dMODIFIER_PROPERTY_TOOLTIP% at the cost of %dMODIFIER_PROPERTY_TOOLTIP2% attack speed."
 
 "DOTA_Tooltip_Ability_item_tome_int"							"Intelligence Tome"
 "DOTA_Tooltip_Ability_item_tome_int_Description"				"<h1>Use: Consume</h1> Permanently increases your intelligence by %bonus%."

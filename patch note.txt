@@ -3025,9 +3025,10 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
-
-
-
+* Increased God Slayer bonus pure dmg per mana precentage.
+* Pugna Nether ward: CD rescaled(increase with lvl) and ss bonus dmg for channeling now has extra effect(buff gets extended equal with the time you have channeled).
+* Removed pugna from underdog list
+* Fixed Base damage tome not giving bonuses if you consume all stacks.
 
 
 

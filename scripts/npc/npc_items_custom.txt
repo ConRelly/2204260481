@@ -4454,12 +4454,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_base_damage"		 		"250"
+			"bonus_base_damage"		 		"250" //tooltip
 		}
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_attackspeed"		 		"-10"
+			"bonus_attackspeed"		 		"-10" // tooltip
 		}
 	}
 }
@@ -21192,17 +21192,17 @@
 			"12"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_per_others"		"5"
+				"mana_per_others"		"10"
 			}
 			"13"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_per"				"15"
+				"mana_per"				"50"
 			}
 			"14"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"mana_per_underdog"		"25"
+				"mana_per_underdog"		"75"
 			}
 			"15"
 			{

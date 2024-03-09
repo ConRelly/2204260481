@@ -31,18 +31,33 @@ function modifier_mjz_pugna_nether_ward_check:IsHidden() return true end
 function modifier_mjz_pugna_nether_ward_check:IsPurgable() return false end
 function modifier_mjz_pugna_nether_ward_check:OnCreated()
 	if IsServer() then
+		self.time_buff = 0
 		self:StartIntervalThink(0.4)
 	end
 end
+
 function modifier_mjz_pugna_nether_ward_check:OnIntervalThink()
 	local caster = self:GetCaster()
 	local has_modifier_ss = caster:HasModifier("modifier_super_scepter")
-	if has_modifier_ss then
-		if caster:IsChanneling() and self:GetAbility() then
-			caster:AddNewModifier(caster, self:GetAbility(), "modifier_mjz_pugna_nether_ward_channeling", {duration = 0.5})
+	local ability = self:GetAbility()
+	
+	if has_modifier_ss and ability then
+		if caster:IsChanneling() then
+			-- Accumulate duration while channeling
+			self.time_buff = self.time_buff + 0.4
+			caster:AddNewModifier(caster, ability, "modifier_mjz_pugna_nether_ward_channeling", {duration = 0.5})
+		else
+			-- If not channeling and accumulated duration is greater than 0
+			if self.time_buff > 0 then
+				-- Add the buff with the accumulated duration
+				caster:AddNewModifier(caster, ability, "modifier_mjz_pugna_nether_ward_channeling", {duration = self.time_buff})
+				-- Reset the accumulated duration
+				self.time_buff = 0
+			end
 		end
 	end
-end	
+end
+
 
 if IsServer() then
 	function ability_class:OnSpellStart()
@@ -239,7 +254,7 @@ if IsServer() then
 			if has_modifier_ss then 
 				if autocast_state then
 					dmg_type = DAMAGE_TYPE_PURE
-					damage = math.floor(damage * 0.3)
+					damage = math.floor(damage * 0.25)
 				end	
 			end	
 			if channel_modif then

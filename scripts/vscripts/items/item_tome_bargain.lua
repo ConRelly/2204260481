@@ -31,18 +31,17 @@ function modifier_item_tome_bargain:IsPurgable() return false end
 function modifier_item_tome_bargain:RemoveOnDeath() return false end
 function modifier_item_tome_bargain:AllowIllusionDuplicate() return true end
 function modifier_item_tome_bargain:OnCreated()
-	self.bonus_attack = self:GetAbility():GetSpecialValueFor("bonus_base_damage")
-	self.bonus_speed = self:GetAbility():GetSpecialValueFor("bonus_attackspeed")
+
 end
 function modifier_item_tome_bargain:GetModifierBaseAttack_BonusDamage()
-	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_base_damage") end
+	return self:GetStackCount() * 250 
 end
 function modifier_item_tome_bargain:GetModifierAttackSpeedBonus_Constant()
-	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_attackspeed") end
+	return self:GetStackCount() * (-10) 
 end
 function modifier_item_tome_bargain:OnTooltip()
-	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_base_damage") end
+	return self:GetStackCount() * 250 
 end
 function modifier_item_tome_bargain:OnTooltip2()
-	if self:GetAbility() then return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_attackspeed") end
+	return self:GetStackCount() * (-10) 
 end

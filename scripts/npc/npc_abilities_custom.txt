@@ -30437,7 +30437,7 @@
 		"AbilityCastPoint"				"0"
 		"AbilityCastRange"				"%cast_range"
 
-		"AbilityCooldown"				"70.0"
+		"AbilityCooldown"				"45 50 55 60 65 70 70"
 		"AbilityManaCost"				"100"
 		"AbilityDuration"				"%duration"
 
@@ -30488,7 +30488,7 @@
 			"09"
 			{
 				"var_type"			  		"FIELD_FLOAT"
-				"ss_pure"			 			"30" //tooltip
+				"ss_pure"			 			"25" //tooltip
 			}			
 		}
 

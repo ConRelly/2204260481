@@ -138,14 +138,14 @@ function modifier_dragonborn:GetModifierHealthBonus()
 	local realhp = stacks * extra_hp
 	return realhp
 end
-function modifier_dragonborn:GetModifierTotalDamageOutgoing_Percentage(params)
+--[[ function modifier_dragonborn:GetModifierTotalDamageOutgoing_Percentage(params)
 	local caster = self:GetCaster()
 	local ability = self:GetAbility()
 	local target = params.target
 	if target == nil then target = params.unit end
 	if target == nil then return end
 	if params.attacker ~= caster then return end
-	if IsServer() then
+	if ability then
 		local damage = ability:GetSpecialValueFor("stuff")
 		local damage_underdog = ability:GetSpecialValueFor("stuff_underdog")
 		if caster:HasModifier("modifier_underdog") then
@@ -157,7 +157,26 @@ function modifier_dragonborn:GetModifierTotalDamageOutgoing_Percentage(params)
 			return 0
 		end
 	end
+end ]]
+function modifier_dragonborn:GetModifierTotalDamageOutgoing_Percentage(params)
+    local caster = self:GetCaster()
+    local ability = self:GetAbility()
+    local target = params.target or params.unit
+    
+    if not target or not ability then
+        return
+    end
+    
+    local damage = caster:HasModifier("modifier_underdog") and ability:GetSpecialValueFor("stuff_underdog") or ability:GetSpecialValueFor("stuff")
+    
+    if target:GetLevel() >= 89 then
+        return damage
+    end
+    
+    return 0 
 end
+
+
 
 LinkLuaModifier ("modifier_atomic_samurai_focused_atomic_slash_2", "items/custom/item_god_slayer", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier ("modifier_atomic_samurai_focused_atomic_slash_thinker_2", "items/custom/item_god_slayer", LUA_MODIFIER_MOTION_NONE)
@@ -189,7 +208,7 @@ function modifier_atomic_samurai_focused_atomic_slash_thinker_2:OnCreated(event)
 		local per_mana_underdog = self:GetAbility():GetSpecialValueFor("mana_per_underdog")
 		self.radius = self:GetAbility():GetSpecialValueFor("radius")
 		self.damage2 = mana * (per_mana / 100)
-		if self.caster:HasModifier("modifier_underdog") and (self.caster:GetUnitName() ~= "npc_dota_hero_dawnbreaker") then
+		if self.caster:HasModifier("modifier_underdog") then
 			self.damage2 = mana * (per_mana_underdog / 100)
 		end
 		self.damage = mana * (per_mana_others / 100)
@@ -222,6 +241,9 @@ function modifier_atomic_samurai_focused_atomic_slash_thinker_2:OnIntervalThink(
 		if not self.caster:HasModifier("modifier_atomic_samurai_focused_atomic_slash_2") then self:Destroy() return end
 		local target = self:Next()
 		if target == nil or target:IsNull() then self:Destroy() return end
+		local ability = self:GetAbility()
+		local dmg_type = ability:GetAbilityDamageType()
+		if not ability then return end
 		local pos = target:GetAbsOrigin()
 		local pos2 = self.caster:GetAbsOrigin()
 		if target:GetLevel() >= 89 then
@@ -240,9 +262,9 @@ function modifier_atomic_samurai_focused_atomic_slash_thinker_2:OnIntervalThink(
 		ApplyDamage({
 			victim = target,
 			attacker = self.caster,
-			ability = self:GetAbility(),
+			ability = ability,
 			damage = self.damage,
-			damage_type = self:GetAbility():GetAbilityDamageType()
+			damage_type = dmg_type
 		})
 		self.caster:PerformAttack(target, true, true, true, false, false, false, false)
 	end
