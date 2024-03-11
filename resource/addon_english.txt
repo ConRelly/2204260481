@@ -4133,7 +4133,7 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 	"npc_dota_mjz_pugna_nether_ward"								"Nether Ward"
 	
 	"DOTA_Tooltip_modifier_mjz_pugna_nether_ward_channeling"		"Channeling"
-	"DOTA_Tooltip_modifier_mjz_pugna_nether_ward_channeling_description" "Nether ward damage is increased by 50%"
+	"DOTA_Tooltip_modifier_mjz_pugna_nether_ward_channeling_description" "Nether ward damage is increased by 50%% "
 
 
 	"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave"					"Sonic Wave"
@@ -7720,7 +7720,7 @@ Nimbus is not recasted by Thundergod's Wrath."
 	"DOTA_Tooltip_ability_item_fire_rapier_Description"			"<h1><font color='#FF4500'>Active: Fire rage</font></h1>Gives the owner of the item the power of fire, giving great power, but reducing the defense to zero!!!
 	\n<h1><font color='#FF4500'>Passive: Melting strike</font></h1>%proc_chance%%% attack chance to burn the enemy's armor (the effect stacks).<br><br>Armor reduction per stack: %armor_penalty%<br>Debuff Duration: %debuff_duration% sec.
 	\n<h1><font color='#FF4500'>Passive: Power Boost </font></h1>Increase total damage by %bonus_d%%%."
-	"DOTA_Tooltip_ability_item_fire_rapier_rapier_dmg"					"+$damage"
+	"DOTA_Tooltip_ability_item_fire_rapier_rapier_dmg"					"+$base_damage"
 	"DOTA_Tooltip_ability_item_fire_rapier_rapier_str"					"+$str"
 	"DOTA_Tooltip_ability_item_fire_rapier_rapier_agi"					"+$agi"
 	"DOTA_Tooltip_ability_item_fire_rapier_rapier_int"					"+$int"
@@ -7752,7 +7752,7 @@ Nimbus is not recasted by Thundergod's Wrath."
 
 	"DOTA_Tooltip_Ability_item_earth_rapier"					"<font color=\"#8B4513\">EARTH RAPIER</font>"
 	"DOTA_Tooltip_ability_item_earth_rapier_Description"		"<h1><font color='#8B4513'>Active: Earth power</font></h1>Gives the owner of the item the strength of the earth, increasing the chance to throw a stone to 100%.<br><br>Buff Duration: %buff_duration% sec.\n<h1><font color='#8B4513'>Passive: Stone strike</font></h1>%rock_chance%%% attack chance to throw stones at all enemies within %effect_radius%, which stunning for %rock_stun% sec. and dealing %rock_dmg% Pure Damage."
-	"DOTA_Tooltip_ability_item_earth_rapier_rapier_dmg"					  "+$damage"
+	"DOTA_Tooltip_ability_item_earth_rapier_rapier_dmg"					  "+$base_damage"
 	"DOTA_Tooltip_ability_item_earth_rapier_rapier_str"					  "+$str"
 	"DOTA_Tooltip_ability_item_earth_rapier_rapier_agi"					  "+$agi"
 	"DOTA_Tooltip_ability_item_earth_rapier_rapier_int"					  "+$int"
@@ -10360,7 +10360,7 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 
 
 	"DOTA_Tooltip_ability_item_god_slayer"				"<font color='#FF0000'>God Slayer</font>"
-	"DOTA_Tooltip_ability_item_god_slayer_Description"	"<h1><font color='#39CEFE'>Active: God Slash</font></h1>Attacks everything in %radius% AOE for %duration% seconds.<br>Adds extra %mana_per%%% (%mana_per_underdog%%% for Underdog) of your Max mana as <font color='#d8ae53'>pure damage</font> to Gods.\n<h1><font color='#39CEFE'>Passive: God Slayer</font></h1> Increases all outgoing damage by %stuff%%% (%stuff_underdog%%% for Underdog) against full Gods.\n<h1><font color='#EC3F0D'>Passive: Souls Collector</font></h1> Permanently gains an additional soul Charge for item, and a soul stack buff (buff gets lost on Unequip) when your team or you kill : with a %stack_chance%%% (%stack_underdog_chance%%% for Underdog) chance for any unit.\n<h1><font color='#EC3F0D'>Passive: Souls Experience</font></h1> Every Soul Stack and Charge give: <font color='#2ECC71'>%stack_agi% Agility</font>, <font color='#A93226'>%stack_str% Strength</font>, <font color='#5499C7'>%stack_spellamp%%% Spell Damage</font>, <font color='#DC7633'>%stack_armor% Armor</font> and <font color='#078D29'>%stack_health% Bonus Health</font>."
+	"DOTA_Tooltip_ability_item_god_slayer_Description"	"<h1><font color='#39CEFE'>Active: God Slash</font></h1>Attacks everything in %radius% AOE for %duration% seconds.<br>Adds extra %mana_per%%% (%mana_per_underdog%%% for Underdog) of your Max mana as <font color='#d8ae53'>pure damage</font> to Gods.\n<h1><font color='#39CEFE'>Passive: God Slayer</font></h1> Increases all outgoing damage by %stuff%%% (%stuff_underdog%%% for Underdog) against full Gods.\n<h1><font color='#EC3F0D'>Passive: Souls Collector</font></h1> Permanently gains an additional soul Charge for item, and a soul stack buff (buff gets lost on Unequip) when your team or you kill : with a %stack_chance%%% (%stack_underdog_chance%%% for Underdog) chance for any unit.\n<h1><font color='#EC3F0D'>Passive: Souls Experience</font></h1> Every Soul Stack and Charge give:<br> <font color='#2ECC71'>%stack_agi% Agility</font><br><font color='#A93226'>%stack_str% Strength</font><br><font color='#5499C7'>%stack_spellamp%%% Spell Damage</font><br> <font color='#DC7633'>%stack_armor% Armor</font> <br> <font color='#078D29'>%stack_health% Bonus Health</font>."
 	"DOTA_Tooltip_ability_item_god_slayer_armor"			"+$armor"
 	"DOTA_Tooltip_ability_item_god_slayer_Note0"				"1) Attack inverval is %attack_interval% and can additionally add hits but with no bonus pure dmg if you have enough attack speed."
 	"DOTA_Tooltip_ability_item_god_slayer_Note1"				"2) Extra DMG of Max mana to non-Gods is only %mana_per_others%%%."
@@ -10878,7 +10878,7 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 	"DOTA_Tooltip_ability_marci_unleash_custom_pulse_attack_slow_pct"	"PULSE ATTACK SLOW:"
 //used
 	"DOTA_Tooltip_ability_marci_unleash_Description"			"Marci taps a hidden power, gaining Fury charges that allow her to deliver a rapid sequence of strikes. The last strike in every Fury combo creates a damaging pulse around the target that slows movement and attack speed for %pulse_debuff_duration%s. In between Fury combos, Marci is unable to attack for %time_between_flurries%s.\n\nMarci receives a basic dispel when Unleash is cast and gains %bonus_movespeed%%% movement speed.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Some Items and Abilites will get improved when ultimate is active.(press Alt)"
-	"DOTA_Tooltip_ability_marci_unleash_Note0"					"Super Scepter improve list: CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible and <font color='#E20624'>RED</font>), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger, Speedsters, Amalgamation,<font color='#E20624'>Evolving Light Crossbow(all)</font>, Aftershock."
+	"DOTA_Tooltip_ability_marci_unleash_Note0"					"Super Scepter improve list(full details Discord comand !marci): CM Frostbite, Ursa OverPower, <font color='#f2da5b'>Multicast(N)</font>, Devil's Daedalus(including edible), U Bloodstone, <font color='#18B426'>Greater Radiance Armor</font>(including edible and <font color='#E20624'>RED</font>), Greater Blast Staff, Apex, Cursed Gaze, Slayer Rebound, Endless Wisdom, Broken Wings, <font color='#010101'>Maple's Armor</font>, Lion's Dagon V2, <font color='#f2da5b'>Mana Break</font>, Insatiable Hunger, Speedsters, Amalgamation,<font color='#E20624'>Evolving Light Crossbow(all)</font>, Aftershock, <font color='#E20624'>Empty Spellbook</font>."
 
 
 	"DOTA_Tooltip_ability_marci_companion_run_custom"						"Rebound"

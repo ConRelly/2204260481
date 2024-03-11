@@ -54,8 +54,8 @@ if IsServer() then
 				if parent:HasModifier("modifier_marci_unleash_flurry") then
 					duration = duration + 1
 					debuff_bonus = -10
-					bonus_marci_int_mult = 5
-					chance = 25
+					bonus_marci_int_mult = 7
+					chance = 30
 				end 
 				if has_dagon(parent) then
 					if RollPercentage(chance) then

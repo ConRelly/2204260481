@@ -4,7 +4,7 @@
 #base "abilities/heroes/sandking_sand_storm.txt"
 #base "abilities/heroes/shadow_shaman_ether_shock.txt"
 #base "abilities/heroes/ember_spirit_sleight_of_fist.txt"
-#base "abilities/heroes/pugna_nether_blast.txt"
+//#base "abilities/heroes/pugna_nether_blast.txt"
 #base "abilities/heroes/bane_brain_sap.txt"
 //#base "abilities/heroes/bounty_hunter_wind_walk.txt"
 //#base "abilities/heroes/brewmaster_thunder_clap.txt"
@@ -19437,6 +19437,55 @@
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Pugna: Nether Blast
+	//=================================================================================================================
+	"pugna_nether_blast"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Pugna.NetherBlast"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0"
+		"MaxLevel"                      "6"
+		"LevelsBetweenUpgrades"         "3"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5"
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"structure_damage_mod"		"65"
+				"delay"						"0.8"
+				"radius"					
+				{
+					"value"			"600"
+					"affected_by_aoe_increase"	"1"
+				}
+				"blast_damage"
+				{
+					"value"	"150 475 850 1625 3725 9125"
+					"LinkedSpecialBonus"		"special_bonus_unique_pugna_2"
+				}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+
 
 
 // Shadow Shaman: Mass Serpent Ward

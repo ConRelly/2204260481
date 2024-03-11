@@ -30473,7 +30473,7 @@
 			"06"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"30" 
+				"duration"						"25" 
 			} 	
 			"07"
 			{
@@ -30488,7 +30488,7 @@
 			"09"
 			{
 				"var_type"			  		"FIELD_FLOAT"
-				"ss_pure"			 			"25" //tooltip
+				"ss_pure"			 			"23" //tooltip
 			}			
 		}
 

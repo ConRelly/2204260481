@@ -922,7 +922,7 @@
 			"04"
 			{	
 				"var_type"				"FIELD_FLOAT"
-				"int_multiplier"			"3.5 10 13"
+				"int_multiplier"			"3.5 10 17"
 			}
 			"05"
 			{	
@@ -19735,7 +19735,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"rapier_dmg"			"16825"
+				"rapier_dmg"			"18825"
 			}
 			"02"
 			{
@@ -19837,7 +19837,7 @@
 //				}
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%rapier_dmg"
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"				"%rapier_dmg"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"				"%rapier_str"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"					"%rapier_agi"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"				"%rapier_int"
@@ -20262,7 +20262,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rock_dmg"					"8265"
+				"rock_dmg"					"12650"
 			}
 			"07"
 			{
@@ -20272,7 +20272,7 @@
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rock_chance"				"8"
+				"rock_chance"				"10"
 			}
 			"09"
 			{
@@ -20356,7 +20356,7 @@
 				}
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%rapier_dmg"
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"				"%rapier_dmg"
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"				"%rapier_str"
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"					"%rapier_agi"
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"				"%rapier_int"
@@ -21162,17 +21162,17 @@
 			"6"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stack_str"				"30"
+				"stack_str"				"45"
 			}
 			"7"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stack_agi"				"40"
+				"stack_agi"				"60"
 			}
 			"8"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stack_spellamp"		"3"
+				"stack_spellamp"		"5"
 			}
 			"9"
 			{

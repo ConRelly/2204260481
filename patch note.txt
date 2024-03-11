@@ -3025,11 +3025,17 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
-* Increased God Slayer bonus pure dmg per mana precentage.
-* Pugna Nether ward: CD rescaled(increase with lvl) and ss bonus dmg for channeling now has extra effect(buff gets extended equal with the time you have channeled).
-* Removed pugna from underdog list
-* Fixed Base damage tome not giving bonuses if you consume all stacks.
 
+* Increased God Slayer bonus pure dmg per mana percentage and stat gain per stack.
+* Pugna Nether Station: CD rescaled (increased with lvl) and ss bonus dmg for channeling now has extra effect (buff is extended equal to time you channeled), ward has 25s duration.
+* Pugna Nether Blast will no longer interrupt channelling.
+* Removed Pugna from the underdog list.
+* Fixed base damage tome to no longer give bonuses when consuming all stacks.
+* Fire Rapier now gives base dmg instead of bonus(higher). Same for earth rapier and increased proc dmg and chance.
+* Greater Blast Staff int mult from 13 to 17 (Marci gives +7 instead of +5)
+
+
+* Fix Phantom Reflex intrerupting channeling with autocast.
 
 
 
@@ -3057,7 +3063,7 @@ Green Radiance: Ms multiplayer increased to 15x(edible 20x) and agi mult to 25x 
 
 Red Radiance : Str multiplayer increased to 20x (25x edible) and %hp dmg by 2x.
 
-Greater Blast Staff: MR reduction increased to -45 , int multiplayer +5(18) , debuff duration +1s. 
+Greater Blast Staff: MR reduction increased to -45 , int multiplayer +7(24) , debuff duration +1s. 
 
 Apex: +7% more stats(42%)
 
@@ -3071,7 +3077,7 @@ Broken Wings : from 160% to 220% , Max use stacks(base on dmg dealt) is 3 (norma
 
 Maple's Armor - Heavy armor buff from 50% dmg avoid chance to 85%
 
-LionDagonV2 - greater blast staff passive has 25% chance to trigger daggon instead of 17%
+LionDagonV2 - greater blast staff passive has 30% chance to trigger daggon instead of 17%
 
 Antimage Q = Acts as antimage lvl 20 talent (ignores base armor)
 

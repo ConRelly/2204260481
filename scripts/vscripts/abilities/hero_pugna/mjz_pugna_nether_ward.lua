@@ -254,7 +254,7 @@ if IsServer() then
 			if has_modifier_ss then 
 				if autocast_state then
 					dmg_type = DAMAGE_TYPE_PURE
-					damage = math.floor(damage * 0.25)
+					damage = math.floor(damage * 0.23)
 				end	
 			end	
 			if channel_modif then
