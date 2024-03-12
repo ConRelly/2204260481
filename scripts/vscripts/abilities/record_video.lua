@@ -27,7 +27,8 @@ function PlayVideoFile(keys)
 	ability:StartCooldown(50)
 	
 	if checkautocast(caster) then
-		caster:RemoveItem(ability)
+		caster:TakeItem(ability)
+		--caster:RemoveItem(ability)
 		bonuscd = false
 	end	
 	startcool(caster, bonuscd)

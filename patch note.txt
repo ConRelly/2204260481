@@ -3037,8 +3037,11 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 * Fix Phantom Reflex intrerupting channeling with autocast.
 
+* Fix Crash from new dota update(all remove items where crashing)
 
 
+caster:TakeItem(ability)
+hero:TakeItem(ability)
 
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.

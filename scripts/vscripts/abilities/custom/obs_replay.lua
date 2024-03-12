@@ -61,7 +61,7 @@ function modifier_obs_replay:PlayVideoFile(keys)
 
 	ability:StartCooldown(ability.recordTime * 2)
  
-	caster:RemoveItem(ability)
+	--caster:RemoveItem(ability)
 
 end
 ]] 

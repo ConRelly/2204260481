@@ -16,7 +16,8 @@ function item_mjz_ability_point:OnSpellStart()
         
         if caster and IsValidEntity(caster) then
             caster:SetAbilityPoints(caster:GetAbilityPoints() + 1)
-            caster:RemoveItem(self)
+            --caster:RemoveItem(self)
+            caster:TakeItem(self)
             caster:EmitSound("DOTA_Item.HotD.Activate")
         end
     end
@@ -30,7 +31,8 @@ function item_mjz_ability_point_2:OnSpellStart()
         
         if caster and IsValidEntity(caster) and caster:IsRealHero() then
             caster:SetAbilityPoints(caster:GetAbilityPoints() + 5)
-            caster:RemoveItem(self)
+            --caster:RemoveItem(self)
+            caster:TakeItem(self)
             caster:EmitSound("DOTA_Item.HotD.Activate")
         end
     end

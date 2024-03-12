@@ -7,7 +7,8 @@ function OnSpellStart(keys)
     GameRules:IncreaseItemStock(team, "item_air_essence", 2, -1)
 
     -- Remove the "item_all_essence" from the player's inventory
-    caster:RemoveItem(keys.ability)
+    --caster:RemoveItem(keys.ability)
+    caster:TakeItem(keys.ability)
 
     -- Play a sound effect and show a message to the player
     EmitSoundOn("General.Coins", caster)

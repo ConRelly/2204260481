@@ -14,7 +14,8 @@ function SwitchAura(keys)
 			caster:AddItem(CreateItem("item_dummy", caster, caster))
 		end
 	end
-	caster:RemoveItem(ability)
+	--caster:RemoveItem(ability)
+	caster:TakeItem(ability)
 	local Item = CreateItem(ItemName, caster, caster)
 	Item:SetPurchaseTime(0)
 	caster:AddItem(Item)
@@ -22,7 +23,8 @@ function SwitchAura(keys)
 		local current_item = caster:GetItemInSlot(i)
 		if current_item ~= nil then
 			if current_item:GetName() == "item_dummy" then
-				caster:RemoveItem(current_item)
+				--caster:RemoveItem(current_item)
+				caster:TakeItem(current_item)
 			end
 		end
 	end

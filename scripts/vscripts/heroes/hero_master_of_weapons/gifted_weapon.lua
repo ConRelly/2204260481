@@ -72,7 +72,8 @@ function modifier_gifted_weapon:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
 		Timers:CreateTimer(0.1, function()
 			if self:GetCaster():FindItemInInventory("item_master_of_weapons_sword") then
-				self:GetCaster():RemoveItem(self:GetCaster():FindItemInInventory("item_master_of_weapons_sword"))
+				--self:GetCaster():RemoveItem(self:GetCaster():FindItemInInventory("item_master_of_weapons_sword"))
+				self:GetCaster():TakeItem(self:GetCaster():FindItemInInventory("item_master_of_weapons_sword"))
 			end
 		end)
 	end

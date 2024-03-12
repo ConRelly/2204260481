@@ -13,7 +13,8 @@ function item_mjz_demon_talon:OnSpellStart()
 	if self:GetAbilityName() == "item_mjz_greater_demon_talon" then
 		local item = find_item(caster, "item_mjz_greater_demon_talon")
 		local purchase_time = item:GetPurchaseTime()
-		caster:RemoveItem(item)
+		--caster:RemoveItem(item)
+		caster:TakeItem(item)
 		local item2 = caster:AddItemByName("item_mjz_magi_demon_talon")
 		item2:SetPurchaseTime(purchase_time)
 	elseif self:GetAbilityName() == "item_mjz_magi_demon_talon" then
@@ -31,13 +32,15 @@ function item_mjz_demon_talon:OnUpgrade()
 	if self:GetAbilityName() == "item_mjz_greater_demon_talon" then
 		local item = find_item(caster, "item_mjz_greater_demon_talon")
 		local purchase_time = item:GetPurchaseTime()
-		caster:RemoveItem(item)
+		--caster:RemoveItem(item)
+		caster:TakeItem(item)
 		local item2 = caster:AddItemByName("item_mjz_magi_demon_talon")
 		item2:SetPurchaseTime(purchase_time)
 	elseif self:GetAbilityName() == "item_mjz_magi_demon_talon" then
 		local item = find_item(caster, "item_mjz_magi_demon_talon")
 		local purchase_time = item:GetPurchaseTime()
-		caster:RemoveItem(item)
+		--caster:RemoveItem(item)
+		caster:TakeItem(item)
 		local item2 = caster:AddItemByName("item_mjz_greater_demon_talon")
 		item2:SetPurchaseTime(purchase_time)
 	end

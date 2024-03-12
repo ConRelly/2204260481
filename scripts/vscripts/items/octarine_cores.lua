@@ -25,7 +25,8 @@ function item_custom_octarine_core2:OnSpellStart()
 		if caster:HasModifier(ocratine3_eated) then return nil end
 		caster:AddNewModifier(caster, nil, ocratine3_eated, {})
 		caster:EmitSound("Hero_Alchemist.Scepter.Cast")
-		caster:RemoveItem(self)
+		--caster:RemoveItem(self)
+		caster:TakeItem(self)
  	end
 end
 

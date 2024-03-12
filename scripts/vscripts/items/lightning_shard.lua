@@ -6,7 +6,8 @@ function LightningShardConsume(keys)
     local maxSpeed = GameRules:GetGameModeEntity():GetMaximumAttackSpeed()
     maxSpeed = maxSpeed * 105
     GameRules:GetGameModeEntity():SetMaximumAttackSpeed(maxSpeed + 50)
-	caster:RemoveItem(ability)
+	--caster:RemoveItem(ability)
+    caster:TakeItem(ability)
 end
 function AddStacks(ability, caster, unit, modifier, stack_amount, refresh)
     if unit:HasModifier(modifier) then

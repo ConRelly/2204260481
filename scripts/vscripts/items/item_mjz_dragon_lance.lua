@@ -35,7 +35,8 @@ function OnSpellStart(keys)
         caster:AddNewModifier(caster, ability, modifier_stats, {})
         caster:EmitSound(sound_cast)
         ability:SetCurrentCharges(ability:GetCurrentCharges() - 1)
-        caster:RemoveItem(ability)
+        --caster:RemoveItem(ability)
+        caster:TakeItem(ability)
         caster:RemoveModifierByName(modifier)
 
         -- Create a Item for one game frame to prevent regular dota interactions from going bad
@@ -44,7 +45,8 @@ function OnSpellStart(keys)
             caster:AddItem(item_dummy)
             Timers:CreateTimer(FrameTime(), function()
                 if caster then
-                    caster:RemoveItem(item_dummy)
+                    --caster:RemoveItem(item_dummy)
+                    caster:TakeItem(item_dummy)
                 end    
             end)   
         end

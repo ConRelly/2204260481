@@ -57,7 +57,8 @@ function OnSpellStart( keys )
                 newAbility:SetAbilityIndex(slotId)
             end
             hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
-            hero:RemoveItem(ability)
+            hero:TakeItem(ability)
+            --hero:RemoveItem(ability)
 
             return true
         end

@@ -249,7 +249,9 @@ function modifier_mjz_finger_of_death_locker:OnIntervalThink()
 			end
 			if self:GetParent():HasModifier("modifier_super_scepter") and self:GetParent():HasModifier("modifier_item_imba_ultimate_scepter_synth_stats") and self:GetParent():HasItemInInventory("item_lions_cursed_item_slot") then
 				if self:GetParent():FindModifierByName("modifier_item_imba_ultimate_scepter_synth_stats"):GetStackCount() >= 5 then
-					self:GetParent():RemoveItem(self:GetParent():FindItemInInventory("item_lions_cursed_item_slot"))
+					self:GetParent():TakeItem(self:GetParent():FindItemInInventory("item_lions_cursed_item_slot"))
+					--self:GetParent():RemoveItem(self:GetParent():FindItemInInventory("item_lions_cursed_item_slot"))
+					caster:TakeItem(ability)
 				end
 			end
 		end

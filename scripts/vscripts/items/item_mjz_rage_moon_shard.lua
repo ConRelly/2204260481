@@ -10,7 +10,8 @@ function item_mjz_rage_moon_shard:OnSpellStart()
 		if target:HasModifier("modifier_mjz_rage_moon_shard_stats") then return nil end
 		target:AddNewModifier(caster, self, "modifier_mjz_rage_moon_shard_stats", {})
 		target:EmitSound("Item.MoonShard.Consume")
-		caster:RemoveItem(self)
+		--caster:RemoveItem(self)
+		caster:TakeItem(self)
 	end
 end
 

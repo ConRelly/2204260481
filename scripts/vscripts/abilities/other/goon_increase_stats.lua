@@ -62,7 +62,8 @@ function on_created(keys)
 					end
 					if round > 15 and not has15 then
 						caster:SetHasInventory(true)
-						caster:RemoveItem(find_item(caster, "item_heart"))
+						--caster:RemoveItem(find_item(caster, "item_heart"))
+                        caster:TakeItem(find_item(caster, "item_heart"))
 						caster:AddItemByName("item_mjz_heart_4")
 						caster:SetHasInventory(false)
 						skill_lvl = 3
@@ -77,7 +78,8 @@ function on_created(keys)
 					if round > 25 and not has25 then
 						caster:SetHasInventory(true)
 						caster:AddNewModifier(caster, ability, "modifier_goon_increase_stats", {})
-						caster:RemoveItem(find_item(caster, "item_mjz_heart_5"))
+						--caster:RemoveItem(find_item(caster, "item_mjz_heart_5"))
+                        caster:TakeItem(find_item(caster, "item_mjz_heart_5"))
 						caster:AddItemByName("item_mjz_heart_5")
 						caster:AddItemByName("item_ultimate_scepter")
 						caster:SetHasInventory(false)
@@ -86,7 +88,8 @@ function on_created(keys)
 					end
 					if round > 30 and not has30 then
 						caster:SetHasInventory(true)
-						caster:RemoveItem(find_item(caster, "item_lesser_crit"))
+						--caster:RemoveItem(find_item(caster, "item_lesser_crit"))
+                        caster:TakeItem(find_item(caster, "item_lesser_crit"))
 						caster:AddItemByName("item_greater_crit")
 						caster:SetHasInventory(false)
 						skill_lvl = 6
@@ -94,7 +97,8 @@ function on_created(keys)
 					end
 					if round > 35 and not has35 then
 						caster:SetHasInventory(true)
-						caster:RemoveItem(find_item(caster, "item_greater_crit"))
+						--caster:RemoveItem(find_item(caster, "item_greater_crit"))
+                        caster:TakeItem(find_item(caster, "item_greater_crit"))
 						caster:AddItemByName("item_mjz_shivas_guard_5")
 						caster:SetHasInventory(false)
 						skill_lvl = 7

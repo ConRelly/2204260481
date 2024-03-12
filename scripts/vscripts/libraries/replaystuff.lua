@@ -216,12 +216,14 @@ function PlayVideo(keys)
 	for slot = 0, 9 do
 		local iItem = clone:GetItemInSlot(slot)
 		if iItem then
-			clone:RemoveItem(clone:GetItemInSlot(slot))
+			--clone:RemoveItem(clone:GetItemInSlot(slot))
+			clone:TakeItem(clone:GetItemInSlot(slot))
 		end
 	end
 	local neutralItem = clone:GetItemInSlot(DOTA_ITEM_NEUTRAL_SLOT)
 	if neutralItem then
-		clone:RemoveItem(clone:GetItemInSlot(DOTA_ITEM_NEUTRAL_SLOT))
+		--clone:RemoveItem(clone:GetItemInSlot(DOTA_ITEM_NEUTRAL_SLOT))
+		clone:TakeItem(clone:GetItemInSlot(DOTA_ITEM_NEUTRAL_SLOT))
 	end	
 	--Set items
 	

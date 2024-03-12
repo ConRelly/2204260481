@@ -13,7 +13,8 @@ function item_skadi_bow_edible:OnSpellStart()
 	if not caster:IsRealHero() or caster:HasModifier("modifier_arc_warden_tempest_double") or caster:HasModifier(edible_skadi) or caster:HasModifier(item_skadi) then return end
 	caster:AddNewModifier(caster, self, edible_skadi, {})
 	caster:EmitSound("Hero_Alchemist.Scepter.Cast")
-	caster:RemoveItem(self)
+	--caster:RemoveItem(self)
+	caster:TakeItem(self)
 end
 
 -- Skadi Bow Modifier

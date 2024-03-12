@@ -140,7 +140,8 @@ function DropItemOnDeath(keys)
                 if Item ~= nil and Item:GetName() == itemName then
                     local newItem = CreateItem(itemName, nil, nil)
                     CreateItemOnPositionSync(killedUnit:GetOrigin(), newItem)
-                    killedUnit:RemoveItem(Item)
+                    --killedUnit:RemoveItem(Item)
+                    killedUnit:TakeItem(Item)
                 end
             end
         end

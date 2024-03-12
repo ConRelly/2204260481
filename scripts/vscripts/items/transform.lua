@@ -117,7 +117,8 @@ function ChangeHeroPiety(keys)
 		--caster:SetOwner(caster)
 	end
 
-	caster:RemoveItem(ability)
+	--caster:RemoveItem(ability)
+	caster:TakeItem(ability)
 end
 
 
@@ -240,5 +241,6 @@ function ChangeHeroKardel(keys)
 		--caster:SetControllableByPlayer(caster:GetPlayerID(), true)
 		--caster:SetOwner(caster)
 	end
-	caster:RemoveItem(ability)
+	--caster:RemoveItem(ability)
+	caster:TakeItem(ability)
 end

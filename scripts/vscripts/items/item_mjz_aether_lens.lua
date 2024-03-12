@@ -29,7 +29,8 @@ function OnSpellStart(keys)
 	if caster:HasModifier(modifier_stats) then return end
 	caster:AddNewModifier(caster, ability, modifier_stats, {})
 	caster:EmitSound("Hero_Alchemist.Scepter.Cast")
-	caster:RemoveItem(ability)
+	caster:TakeItem(self)
+	--caster:RemoveItem(self)
 end
 
 

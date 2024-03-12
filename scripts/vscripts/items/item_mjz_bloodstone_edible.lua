@@ -24,7 +24,8 @@ function item_mjz_bloodstone_edible:OnSpellStart()
 	if not caster:IsRealHero() or caster:HasModifier("modifier_arc_warden_tempest_double") or caster:HasModifier(edible_bloodstone) or caster:HasModifier(item_bloodstone) then return end
 	caster:AddNewModifier(caster, self, edible_bloodstone, {})
 	caster:EmitSound("Hero_Alchemist.Scepter.Cast")
-	caster:RemoveItem(self)
+	--caster:RemoveItem(self)
+	caster:TakeItem(self)
 end
 
 

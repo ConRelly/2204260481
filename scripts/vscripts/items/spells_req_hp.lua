@@ -10,5 +10,6 @@ function item_spells_req_hp:OnSpellStart()
 		caster:AddNewModifier( self:GetCaster(), self, "immortal_spells_req_hp", kv )
 	end
 	self:SetCurrentCharges( self:GetCurrentCharges() - 1 )
-	caster:RemoveItem(self)
+	--caster:RemoveItem(self)
+	caster:TakeItem(self)
 end

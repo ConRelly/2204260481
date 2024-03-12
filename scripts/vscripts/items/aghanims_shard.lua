@@ -7,7 +7,8 @@ function autoapply( keys )
 		caster:AddNewModifier(caster, ability, "modifier_item_aghanims_shard", {})
 	end
 	ability:SetCurrentCharges( ability:GetCurrentCharges() - 1 )
-	caster:RemoveItem(ability)
+	--caster:RemoveItem(ability)
+	caster:TakeItem(ability)
 end
 function _IsUndyingHero(playerid)
 	local hero = PlayerResource:GetSelectedHeroEntity(playerid)
@@ -24,7 +25,8 @@ function OnSpellStart(keys)
 	if (caster:HasModifier("modifier_item_aghanims_shard") or _IsUndyingHero(playerid)) and (caster:HasModifier("modifier_item_ultimate_scepter_consumed") or caster:HasModifier("modifier_item_ultimate_scepter")) then
 		if ability:GetCurrentCharges() >= keys.Super_Scepter then
 			if (ability:GetCurrentCharges() - keys.Super_Scepter) == 0 then
-				caster:RemoveItem(ability)
+				--caster:RemoveItem(ability)
+				caster:TakeItem(ability)
 			else
 				ability:SetCurrentCharges(ability:GetCurrentCharges() - keys.Super_Scepter)
 			end
@@ -36,7 +38,8 @@ function OnSpellStart(keys)
 	elseif (caster:HasModifier("modifier_item_aghanims_shard") or _IsUndyingHero(playerid))  then
 		if ability:GetCurrentCharges() >= keys.Scepter then
 			if (ability:GetCurrentCharges() - keys.Scepter) == 0 then
-				caster:RemoveItem(ability)
+				--caster:RemoveItem(ability)
+				caster:TakeItem(ability)
 			else
 				ability:SetCurrentCharges(ability:GetCurrentCharges() - keys.Scepter)
 			end
@@ -48,7 +51,8 @@ function OnSpellStart(keys)
 	elseif not _IsUndyingHero(playerid) then
 		if ability:GetCurrentCharges() >= keys.Shard then
 			if (ability:GetCurrentCharges() - keys.Shard) == 0 then
-				caster:RemoveItem(ability)
+				--caster:RemoveItem(ability)
+				caster:TakeItem(ability)
 			else
 				ability:SetCurrentCharges(ability:GetCurrentCharges() - keys.Shard)
 			end

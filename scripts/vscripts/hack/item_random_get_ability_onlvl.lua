@@ -93,9 +93,11 @@ function OnSpellStart( keys )
 				end
 				local newAbility = hero:AddAbility(newAbilityName)
 --				print("newAbility:" .. newAbilityName)
+
 				hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
 				found_valid_ability = true
-				hero:RemoveItem(ability)
+				--hero:RemoveItem(ability)
+				hero:TakeItem(ability)
 				hero:ModifyGold(321, true, 0)
 				return true
 			end

@@ -96,7 +96,8 @@ function modifier_custom_spellbook_passive:OnAbilityExecuted(keys)
                 EmitSoundOn(zeus_ultimate_sound, caster)                    
                 caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
                 -- Remove the old item and add the evolved item
-                caster:RemoveItem(ability)
+                --caster:RemoveItem(ability)
+                caster:TakeItem(ability)
                 caster:AddItemByName("item_spellbook_destruction"):SetCurrentCharges(bonus_ch)                                                     
                 ability.evolve_check = true
             end  

@@ -96,7 +96,8 @@ function OnAttackLanded_NotUsed(keys)
 			EmitSoundOn(zeus_ultimate_sound, caster)                    
 			caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
 			-- Remove the old item and add the evolved item
-			caster:RemoveItem(ability)
+			--caster:RemoveItem(ability)
+			caster:TakeItem(ability)
 			caster:AddItemByName("item_light_crossbow_2")                                                      
 			ability.evolve_check = true
 		end  
@@ -197,7 +198,8 @@ function modifier_light_crossbow_1:GetModifierProcAttack_Feedback(keys)
 					EmitSoundOn(zeus_ultimate_sound, caster)                    
 					caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
 					-- Remove the old item and add the evolved item
-					caster:RemoveItem(ability)
+					--caster:RemoveItem(ability)
+					caster:TakeItem(ability)
 					caster:AddItemByName("item_light_crossbow_2")                                                      
 					self.evolve_check = true
 				end  
@@ -353,7 +355,8 @@ function modifier_light_crossbow_2:GetModifierProcAttack_Feedback(keys)
 					EmitSoundOn(zeus_ultimate_sound, caster)                    
                     caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
                     -- Remove the old item and add the evolved item
-                    caster:RemoveItem(ability)
+                    --caster:RemoveItem(ability)
+					caster:TakeItem(ability)
                     caster:AddItemByName("item_light_crossbow_3")                                                      
                     self.evolve_check = true
                 end  
@@ -503,7 +506,8 @@ function modifier_light_crossbow_3:GetModifierProcAttack_Feedback(keys)
 					EmitSoundOn(zeus_ultimate_sound, caster)                    
                     caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
                     -- Remove the old item and add the evolved item
-                    caster:RemoveItem(ability)
+                    --caster:RemoveItem(ability)
+					caster:TakeItem(ability)
                     caster:AddItemByName("item_thunder_hammer")                                                      
                     self.evolve_check = true
                 end  
@@ -658,7 +662,8 @@ function modifier_thunder_hammer:OnAttackLanded(keys)  --and not self:GetParent(
 				EmitSoundOn(zeus_ultimate_sound, caster)                    
 				caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
 				-- Remove the old item and add the evolved ite			
-				caster:RemoveItem(ability)
+				--caster:RemoveItem(ability)
+				caster:TakeItem(ability)
 				caster:AddItemByName("item_thunder_gods_might")								
 				self.evolve_check = true
 			end  
@@ -771,7 +776,8 @@ function modifier_thunder_hammer:GetModifierProcAttack_Feedback(keys)
 					EmitSoundOn(zeus_ultimate_sound, caster)                    
                     caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
                     -- Remove the old item and add the evolved item
-                    caster:RemoveItem(ability)
+                    --caster:RemoveItem(ability)
+					caster:TakeItem(ability)
                     caster:AddItemByName("item_thunder_gods_might")                                                      
                     self.evolve_check = true
                 end  

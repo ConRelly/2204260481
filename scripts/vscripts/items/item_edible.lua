@@ -43,7 +43,8 @@ function OnSpellStart( keys )
     caster:EmitSound(sound_cast)
 
     ability:SetCurrentCharges( ability:GetCurrentCharges() - 1 )
-    caster:RemoveItem(ability)
+    --caster:RemoveItem(ability)
+    caster:TakeItem(ability)
 
     
     -- Create a Item for one game frame to prevent regular dota interactions from going bad
@@ -51,7 +52,8 @@ function OnSpellStart( keys )
         local item_dummy = CreateItem(item_name, caster, caster)
         caster:AddItem(item_dummy)
         Timers:CreateTimer(0.01, function()
-            caster:RemoveItem(item_dummy)
+            --caster:RemoveItem(item_dummy)
+            caster:TakeItem(item_dummy)
         end)
     end
 

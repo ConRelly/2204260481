@@ -511,7 +511,8 @@ function AOHGameMode:OnPlayerChat(keys)
 			if Item ~= nil and IsValidEntity(Item) then
 				if Item:GetName() == "item_custom_ballista" then
 					local charges = Item:GetCurrentCharges() * 5
-					hero:RemoveItem(Item)
+					--hero:RemoveItem(Item) crash
+					hero:TakeItem(Item)
 					hero:ModifyAgility(charges)
 					hero:ModifyStrength(charges)
 					hero:ModifyIntellect(charges)
@@ -529,11 +530,13 @@ function AOHGameMode:OnPlayerChat(keys)
 				if Item:GetName() == "item_philosophers_stone" then
 					local gold = 0
 					if time < 4 then
-						hero:RemoveItem(Item)
+						--hero:RemoveItem(Item)
+						hero:TakeItem(Item)
 						hero:ModifyGold(10000, true, 0)
 						gold = 10000
 					else
-						hero:RemoveItem(Item)
+						--hero:RemoveItem(Item)
+						hero:TakeItem(Item)
 						hero:ModifyGold(5000, true, 0)	
 						gold = 5000
 					end	

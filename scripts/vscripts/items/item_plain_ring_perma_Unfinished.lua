@@ -48,7 +48,8 @@ function add_perma(keys)
 		if ability:GetCurrentCharges() > 1 then
 			ability:SpendCharge()
 		else
-			caster:RemoveItem(ability)
+			--caster:RemoveItem(ability)
+			caster:TakeItem(ability)
 		end
 	end
 end

@@ -57,7 +57,8 @@ function OnSpellStart( keys )
                 end
                 hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
                 found_valid_ability = true
-                hero:RemoveItem(ability)
+                --hero:RemoveItem(ability)
+                hero:TakeItem(ability)
 				if newAbility then
 					newAbility:SetLevel(1)
 				end

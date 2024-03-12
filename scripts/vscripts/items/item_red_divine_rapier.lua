@@ -37,7 +37,8 @@ function item_red_divine_rapier_lv5:OnSpellStart()
 
 		caster:EmitSound(sound_cast)
 		ability:SetCurrentCharges( ability:GetCurrentCharges() - 1 )
-		caster:RemoveItem(ability)
+		--caster:RemoveItem(ability)
+		caster:TakeItem(ability)
 	end
 end
 

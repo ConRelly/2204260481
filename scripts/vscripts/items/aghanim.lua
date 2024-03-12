@@ -10,5 +10,6 @@ function AghanimsSynthCast(keys)
 		ability:ApplyDataDrivenModifier(caster, caster, modifier_stats, {})
 	end
 	ability:SetCurrentCharges(ability:GetCurrentCharges() - 1)
-	caster:RemoveItem(ability)
+	--caster:RemoveItem(ability)
+	caster:TakeItem(ability)
 end

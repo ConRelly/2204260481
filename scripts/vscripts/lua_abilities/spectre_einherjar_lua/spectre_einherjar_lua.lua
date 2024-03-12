@@ -41,7 +41,7 @@ function spectre_einherjar_lua:OnSpellStart()
             -- remove anything in current slot
             local iItem = illusion:GetItemInSlot(slot)
             if iItem then
-                illusion:RemoveItem(illusion:GetItemInSlot(slot))
+                --illusion:RemoveItem(illusion:GetItemInSlot(slot))
             end
 
             -- add item to slot

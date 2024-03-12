@@ -50,7 +50,7 @@ function OnSpellStart( keys )
         local item_dummy = CreateItem(item_name, caster, caster)
         caster:AddItem(item_dummy)
         Timers:CreateTimer(0.01, function()
-            caster:RemoveItem(item_dummy)
+            --caster:RemoveItem(item_dummy)
         end)
     end ]]
 
@@ -64,7 +64,8 @@ function OnCreated_(keys)
     if caster and ability then
         local item = DropNeutralItemAtPositionForHero("item_radiance_armor_3_edible", caster:GetAbsOrigin(), caster, 5, false)
         if item then
-            caster:RemoveItem(ability) 
+            --caster:RemoveItem(ability)
+            caster:TakeItem(ability) 
         end
     end
 end

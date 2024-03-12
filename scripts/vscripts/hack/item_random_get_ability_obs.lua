@@ -77,7 +77,8 @@ function OnSpellStart( keys )
                 end
                 hero:SetAbilityPoints(hero:GetAbilityPoints() + 5)
                 found_valid_ability = true
-                hero:RemoveItem(ability)
+                --hero:RemoveItem(ability)
+                hero:TakeItem(ability)
                 hero:ModifyGold(19213, true, 0)
                 return true                                                   
             end

@@ -3,7 +3,8 @@ require("lib/my")
 function add_perma(keys)
 	if keys.caster:IsHero() and not keys.caster:HasModifier("modifier_arc_warden_tempest_double") then
 		keys.caster:AddNewModifier(keys.caster, keys.ability, "modifier_item_plain_ring_perma2", {duration = -1, invincibility_duration = keys.ability:GetSpecialValueFor("duration"), cooldown = keys.ability:GetSpecialValueFor("cooldown"), min_health = keys.ability:GetSpecialValueFor("min_health")})
-		keys.caster:RemoveItem(find_item(keys.caster, "item_plain_perma"))
+		--keys.caster:RemoveItem(find_item(keys.caster, "item_plain_perma"))
+		keys.caster:TakeItem(find_item(keys.caster, "item_plain_perma"))
 		keys.caster:AddNewModifier(keys.caster, keys.ability, "modifier_item_plain_ring_perma_armor", {})
 		
 	end
