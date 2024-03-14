@@ -1331,6 +1331,7 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_pugna"
+		"UnitLabel"				"no_underdog"
 		
 		"Ability2"				"skywrath_mage_custom_ancient_seal"
 		//"Ability3"				"pugna_custom_nether_ward"

@@ -3040,8 +3040,14 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Fix Crash from new dota update(all remove items where crashing)
 
 
-caster:TakeItem(ability)
-hero:TakeItem(ability)
+
+* Fixed Radiance Armor edible forms.
+* Fixed Aghanim's Blessing
+* Fixed Pugna still being an underdog.
+
+
+
+
 
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
