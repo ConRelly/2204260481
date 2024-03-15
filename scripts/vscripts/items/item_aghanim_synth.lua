@@ -51,7 +51,8 @@ function item_ultimate_scepter_synth:OnSpellStart()
 	if caster:HasModifier("modifier_aghanims_scepter_synth") then return end
 	caster:AddNewModifier(caster, self, "modifier_aghanims_scepter_synth", {})
 	caster:EmitSound("Hero_Alchemist.Scepter.Cast")
-	caster:RemoveItem(self)
+	--caster:RemoveItem(self)
+	self:SpendCharge()
 	--caster:TakeItem(self)
 end
 function item_ultimate_scepter_synth:GetIntrinsicModifierName() return "modifier_aghanims_blessing" end

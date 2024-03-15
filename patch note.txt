@@ -3046,6 +3046,9 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Fixed Pugna still being an underdog.
 
 
+* Changed Aghanim blessing logic (might not have ben fully stable, possible crash)
+
+
 
 
 
