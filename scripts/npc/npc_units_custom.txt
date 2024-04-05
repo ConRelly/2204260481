@@ -288,7 +288,7 @@
 	"UnitLabel"				 "randomskill"
 	"SoundSet"				  "n_creep_Melee"
 	"ModelScale"				"1.0"
-	"Level"					 "90"
+	"Level"					 "99"
 	"ConsideredHero"			"1"
     "HasInventory"            "1"
 	"Ability1"				  "draks_unholy_strength"

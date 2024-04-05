@@ -284,8 +284,8 @@ function AOHGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP,2.5)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP_REGEN,0.4)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_AGILITY_ARMOR, 0.01)
-	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN,0.07)
-	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA, 2.5)
+	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN,0.05)
+	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA, 1.5)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MAGIC_RESIST, 0)  -- not implemented by dota yet
 	GameRules:GetGameModeEntity():SetCameraDistanceOverride(1400)
 	GameRules:GetGameModeEntity():SetHUDVisible(26,false)
@@ -424,6 +424,9 @@ function AOHGameMode:OnDamageDealt(damageTable)
 					if victim:HasModifier("modifier_jotaro_absolute_defense") then
 						if victim:GetMaxHealth() * 0.07 <= dmg_dealt then
 							local limit_hp = victim:GetMaxHealth() * 0.035
+							if victim:GetLevel()> 100 then
+								limit_hp = limit_hp / 3
+							end	
 							local part = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", PATTACH_OVERHEAD_FOLLOW, victim)
 							ParticleManager:DestroyParticle(part, false)
 							ParticleManager:ReleaseParticleIndex(part)
@@ -435,6 +438,7 @@ function AOHGameMode:OnDamageDealt(damageTable)
 							--return false							
 						end	
 					end
+					--print("victim name: "..victim_name .. " attacker name: "..attacker:GetUnitName() .. " damage: "..dmg_dealt)
 					if victim and victim:GetDayTimeVisionRange() ~= 1337 then --npc conduit(1337)
 						if attackerPlayerId and attackerPlayerId >= 0 and victim:IsAlive() and attacker:IsOpposingTeam(victim:GetTeam()) then
 							local victim_hp = victim:GetHealth() --get victim curent healt so we make sure we don't record overkill dps
@@ -1511,7 +1515,7 @@ function AOHGameMode:OnEntitySpawned(event)
 			
 			print("boss moster") 
 			--test unit
---[[ 				unit:AddNewModifier(unit, nil, "modifier_power_boss", {})
+--[[ 			unit:AddNewModifier(unit, nil, "modifier_power_boss", {})
 			unit:AddNewModifier(unit, nil, "modifier_hard_mode_boss", {})
 			unit:AddNewModifier(unit, nil, "modifier_cosmos_3_lifes", {})
 			if unit:HasModifier("modifier_boss") then unit:RemoveModifierByName("modifier_boss") end ]]

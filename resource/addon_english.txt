@@ -4465,6 +4465,10 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 	"DOTA_Tooltip_ability_mjz_techies_land_mines_Note3"					"Mines are not triggered by spell-immune units."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_techies_land_mines_int_damage"	"+{s:value} Proximity Mines Int Damage"
 
+	"DOTA_Tooltip_modifier_techies_land_mine_burn_custom"				"Proximity Mine"
+	"DOTA_Tooltip_modifier_techies_land_mine_burn_custom_Description"		"Magic resistance reduced by %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%%."
+
+
 	"DOTA_Tooltip_ability_mjz_techies_suicide"							"Blast Off!"
 	"DOTA_Tooltip_ability_mjz_techies_suicide_Description"				"Techies hurtle themselves into the enemy's midst, detonating charges upon impact which deal massive area of effect damage and silence enemies. Upon landing, the assault deals Techies damage equal to %hp_cost%%% of techies max health + a part of enemy current Health."
 	"DOTA_Tooltip_ability_mjz_techies_suicide_Lore"				"Where we going?"

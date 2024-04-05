@@ -1685,7 +1685,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"value"				"1420"
+				"value"				"12500"
 				"ad_linked_abilities"			"ursa_fury_swipes"
 			}
 		}
@@ -13325,7 +13325,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"							 "7"
-		"LevelsBetweenUpgrades"				"5"		
+		"LevelsBetweenUpgrades"				"12"		
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 				
 		// Special
@@ -13340,7 +13340,7 @@
 				"bonus_reset_time_roshan"		"10"
 				"damage_per_stack"				
 				{
-					"value"					"55 95 160 250 430 950 1450"
+					"value"					"85 195 460 950 2430 4950 11500"
 					"LinkedSpecialBonus"			"special_bonus_unique_ursa"
 				}
 		}

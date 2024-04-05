@@ -143,12 +143,17 @@ function item_spellbook_destruction:OnChannelFinish(bInterrupted)
 				EmitSoundOnLocationWithCaster(self.cursor_position, "Hero_Phoenix.SuperNova.Explode", self:GetCaster())
 				ScreenShake( self.cursor_position, 600, amplitude, fregventy, 9999, 0, true)
 				local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(), self:GetCursorPosition(), nil, self.ImpactRadius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+				local burn_duration = self:GetSpecialValueFor("burn_duration")
+				local stun_duration = self:GetSpecialValueFor("stun_duration")
 
 				for _, enemy in pairs(enemies) do
 					if enemy and enemy:IsAlive() then
 						enemy:EmitSound("DOTA_Item.MeteorHammer.Damage")
-						enemy:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = self:GetSpecialValueFor("stun_duration") * (1 - enemy:GetStatusResistance())})
-						enemy:AddNewModifier(self:GetCaster(), self, "modifier_spellbook_destruction_burn", {duration = self:GetSpecialValueFor("burn_duration")})
+						enemy:AddNewModifier(self:GetCaster(), self, "modifier_stunned", {duration = stun_duration * (1 - enemy:GetStatusResistance())})
+						local lvl = enemy:GetLevel()
+						if lvl and lvl > 10 then
+							enemy:AddNewModifier(self:GetCaster(), self, "modifier_spellbook_destruction_burn", {duration = burn_duration})
+						end
 
 						local impactDamage = (self:GetCaster():GetMaxMana() * 5) + (mana_left * 10)
 						local damageTable = {

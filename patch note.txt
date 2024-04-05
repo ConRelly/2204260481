@@ -3050,6 +3050,17 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Ursa fury swipe dmg bonus increased by a lot(talent too)
+* Fixed Proximity mine Mr reduction stacking.
+* Reduced mana gain per int.
+* Added Brew Master Drunken brawler to non multicast list.
+* Book Explosion buring now wont affect under lvl 10 units.
+
+
+
+
+
+
 
 
 ////////Self Note ////////////

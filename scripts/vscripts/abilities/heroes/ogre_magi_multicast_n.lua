@@ -373,6 +373,7 @@ function IsExcludeAbility(ability)
 		"muerta_pierce_the_veil",
 		"true_master",
 		"custom_aegis_cast",
+		"brewmaster_drunken_brawler",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

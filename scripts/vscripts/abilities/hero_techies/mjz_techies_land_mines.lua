@@ -1,6 +1,6 @@
 LinkLuaModifier("modifier_mjz_techies_land_mine", "abilities/hero_techies/mjz_techies_land_mines.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_techies_land_mine_trigger", "abilities/hero_techies/mjz_techies_land_mines.lua", LUA_MODIFIER_MOTION_NONE)
-
+LinkLuaModifier("modifier_techies_land_mine_burn_custom", "abilities/hero_techies/mjz_techies_land_mines.lua", LUA_MODIFIER_MOTION_NONE)
 ---------------------------------------------------------------------------------
 
 mjz_techies_land_mines = mjz_techies_land_mines or class({})
@@ -89,6 +89,8 @@ function modifier_mjz_techies_land_mine_trigger:OnIntervalThink()
 			FIND_ANY_ORDER,
 			false
 		)
+		local burn_duration = self:GetAbility():GetSpecialValueFor("burn_duration")
+
 		if #enemies > 0 then
 			local true_damage = self:GetAbility():GetSpecialValueFor("base_damage") + self:GetCaster():GetIntellect() * (self:GetAbility():GetSpecialValueFor("int_damage") + talent_value(self:GetCaster(), "special_bonus_unique_mjz_techies_land_mines_int_damage"))
  			if RollPercentage(_G._effect_rate) then
@@ -100,7 +102,7 @@ function modifier_mjz_techies_land_mine_trigger:OnIntervalThink()
 					--ParticleManager:ReleaseParticleIndex(explosionParticle)
 			end		
 			for _, enemy in pairs(enemies) do
-				print(true_damage .. "bomb dmgg")
+				--print(true_damage .. "bomb dmgg")
 				ApplyDamage({
 					victim = enemy,
 					attacker = self:GetCaster(),
@@ -109,7 +111,7 @@ function modifier_mjz_techies_land_mine_trigger:OnIntervalThink()
 					damage_type = self:GetAbility():GetAbilityDamageType(),
 					damage_flags = DOTA_DAMAGE_FLAG_NONE,
 				})
-				enemy:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_techies_land_mine_burn", {duration = self:GetAbility():GetSpecialValueFor("burn_duration")})
+				enemy:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_techies_land_mine_burn_custom", {duration = burn_duration})
 			end
 			mine:EmitSoundParams( "Hero_Techies.RemoteMine.Detonate", 0, 0.7, 0)
 			--mine:EmitSound("Hero_Techies.LandMine.Detonate")
@@ -130,7 +132,29 @@ function modifier_mjz_techies_land_mine_trigger:CheckState()
 	}
 end
 
+---techi debuff
+modifier_techies_land_mine_burn_custom = class ( {})
 
+function modifier_techies_land_mine_burn_custom:IsDebuff()
+    return true
+end
+function modifier_techies_land_mine_burn_custom:IsPurgable()
+    return false
+end
+function modifier_techies_land_mine_burn_custom:IsHidden()
+    return false
+end
+
+
+function modifier_techies_land_mine_burn_custom:DeclareFunctions()
+    return { MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS}
+end
+
+function modifier_techies_land_mine_burn_custom:GetModifierMagicalResistanceBonus( params )
+    if self:GetAbility() then
+        return self:GetAbility():GetSpecialValueFor("mres_reduction") * (-1)
+    end    
+end
 
 -----------------------------------------------------------------------------------------
 
