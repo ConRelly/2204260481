@@ -66,8 +66,8 @@ if IsServer() then
 			local stats_parent = parent:GetIntellect()
 			if parent:HasModifier("modifier_item_giants_ring") then
 				stats_parent = parent:GetStrength()
-				if stats_parent > 30000 then
-					stats_parent = 27000 + (parent:GetStrength()/10)
+				if stats_parent > 50000 then
+					stats_parent = 45000 + (parent:GetStrength()/10)
 				end	
 			end	
 			local damage = (self:GetSpecialValueFor("int_multiplier") + bonus_marci_int_mult) * stats_parent
@@ -112,6 +112,7 @@ function modifier_item_blast_staff3:DeclareFunctions()
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
 		MODIFIER_PROPERTY_STATUS_RESISTANCE_STACKING,
+		MODIFIER_PROPERTY_MANA_BONUS
 	}
 end
 
@@ -130,7 +131,9 @@ end
 function modifier_item_blast_staff3:GetModifierStatusResistanceStacking()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("status_resist") end
 end	
-
+function modifier_item_blast_staff3:GetModifierManaBonus()
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_mana") end
+end	
 
 modifier_item_blast_staff_debuff = class({})
 function modifier_item_blast_staff_debuff:IsHidden() return false end

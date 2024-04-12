@@ -218,7 +218,7 @@ function modifier_true_master_dagger_bleed:OnIntervalThink()
 	local parent = self:GetParent()
 	local ability = self:GetAbility()
 	if caster and parent and parent:IsAlive() and stacks > 0 then
-		local bleed_damage = (caster:GetAttackDamage() * ability:GetSpecialValueFor("dagger_bleed_damage") / 100) * stacks
+		local bleed_damage = (caster:GetAverageTrueAttackDamage(caster) * ability:GetSpecialValueFor("dagger_bleed_damage") / 100) * stacks
 		bleed_damage = math.floor(bleed_damage + (parent:GetHealth() * 0.01))
 		if ability:GetAutoCastState() then
 			if not parent:HasModifier("modifier_true_master_dagger_bleed_buff_speed") then

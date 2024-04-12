@@ -78,8 +78,17 @@ end]]
 
 function modifier_atr_fix:GetModifierSpellAmplify_Percentage()
     if self.parent then
-        local parent_int = self.parent:GetIntellect()  
-        local amp = parent_int * 0.03
+        local parent_int = self.parent:GetIntellect()
+        local str_amp = 0
+        local parent_str = self.parent:GetStrength()
+        local diff = parent_str - parent_int
+        if diff > 0 then
+            str_amp = diff * 0.03
+            if str_amp > 1000 then
+                str_amp = 1000
+            end    
+        end    
+        local amp = (parent_int * 0.03) + str_amp  
         return amp
     end     
 end
@@ -111,9 +120,9 @@ end]]
 function modifier_atr_fix:GetModifierStatusResistanceStacking()
     if self.parent then
         local parent_str = self.parent:GetStrength()
-        local s_resit = parent_str * 0.0037
-        if s_resit > 40 then
-            s_resit = 30
+        local s_resit = parent_str * 0.002
+        if s_resit > 65 then
+            s_resit = 65
         end   
         return s_resit
     end    

@@ -3050,11 +3050,20 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
-* Ursa fury swipe dmg bonus increased by a lot(talent too)
-* Fixed Proximity mine Mr reduction stacking.
+* Ursa Fury Swipe Dmg bonus increased significantly (talent too)
 * Reduced mana gain per int.
-* Added Brew Master Drunken brawler to non multicast list.
-* Book Explosion buring now wont affect under lvl 10 units.
+* Now every Str above Intelligence increases your Sepll Amp by 0.03%(same as int) up to 1000%, int has no limit.
+* Reduced status resistance gained from str, but increased the limit cap by almost 2x.
+* The following items now give mana or have mana gain increased: Greater Blast Staff, Num, Earth Rapier, Maple's Armor, Bloodstone Ultimate(end edible), Seer Stone, Frostmourne.
+* God Slayer now has UP effect with Fire Rapier or Wind Rapier and gives more agi per stack and slightly more str.
+* Armor reduction increased on Desolation (1-3), Stygian Desolation, and Greater Orb of Destruction.
+* Increased some stats on Fire, Wind, Ice, and Earth Rapier.
+* Added Brewmaster Drunken Brawler to the non-multicast list.
+* Fixed Proximity Mine magic resist reduction stacking.
+* Book Exposion will no longer affect units below lvl 10.
+* Pango Bleed from Weapon Master's now deals all attack Dmg (20% per stack) instead of just base Dmg.
+* Sniper will now receive a personal notification that he can use the lvl 1 "-kardel" command to obtain the item that allows him to trasfrom in kardel form.
+* The "-single" (solo) command now also gives a resurrection pendant.
 
 
 

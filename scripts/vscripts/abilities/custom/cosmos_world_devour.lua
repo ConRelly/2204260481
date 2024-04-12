@@ -32,7 +32,7 @@ function cosmos_world_devour:OnChannelFinish( bInterrupted )
         local caster_missing_hp = caster:GetHealthDeficit()
         local extra_dmg = self:GetSpecialValueFor("missing_hp") * caster_missing_hp * 0.01       
         local dmg = self:GetAbilityDamage() + (target:GetMaxHealth() * (self:GetSpecialValueFor("damage") / 100)) + extra_dmg
-        local dmg2 = self:GetAbilityDamage() + (target:GetMaxMana() * 5) + (extra_dmg * 5)
+        local dmg2 = self:GetAbilityDamage() + (target:GetMaxMana() * 15) + (extra_dmg * 5)
        
         
 

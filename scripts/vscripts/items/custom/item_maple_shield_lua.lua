@@ -38,6 +38,7 @@ function modifier_maple_shield_lua:OnCreated(kv)
 	self.status = self:GetAbility():GetSpecialValueFor("status_resit")
 	self.magic_resit = self:GetAbility():GetSpecialValueFor("magic_resit")   
 	self.spell_amp = self:GetAbility():GetSpecialValueFor("spell_amp")
+	self.mana_bonus = self:GetAbility():GetSpecialValueFor("mana_bonus")
 	self.primary = false
 	if IsServer() then	
 		if caster:GetPrimaryAttribute() == 0 then
@@ -65,6 +66,7 @@ function modifier_maple_shield_lua:DeclareFunctions()
 		MODIFIER_PROPERTY_EXP_RATE_BOOST,
 		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
+		MODIFIER_PROPERTY_MANA_BONUS
 	}
 end
 function modifier_maple_shield_lua:GetModifierPhysicalArmorBonus()
@@ -78,6 +80,7 @@ function modifier_maple_shield_lua:GetModifierPercentageExpRateBoost() return se
 function modifier_maple_shield_lua:GetModifierMagicalResistanceBonus() return self.magic_resit end
 function modifier_maple_shield_lua:GetModifierBonusStats_Strength() return self.bonus_str end
 function modifier_maple_shield_lua:GetModifierSpellAmplify_Percentage() return self.spell_amp end
+function modifier_maple_shield_lua:GetModifierManaBonus() return self.mana_bonus end
 
 function modifier_maple_shield_lua:IsAura() return HasAuraActive(self:GetCaster()) end
 function modifier_maple_shield_lua:GetModifierAura() return "modifier_maple_shield_lua_aura" end

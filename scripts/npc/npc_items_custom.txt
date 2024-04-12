@@ -197,7 +197,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"99"
+				"armor_reduction"		"159"
 			}
 			"02"
 			{
@@ -948,7 +948,12 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"status_resist" 		"30"
-			}						
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mana_bonus" 			"6200"
+			}									
 		}
 	}
 
@@ -2041,12 +2046,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"50 490 930"
+				"bonus_damage"			"500 1490 9930"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-4 -9 -19"
+				"corruption_armor"		"-10 -29 -49"
 			}
 			"03"
 			{
@@ -2100,12 +2105,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"50 490 930"
+			"bonus_damage"			"500 1490 9930"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"corruption_armor"		"-4 -9 -19"
+			"corruption_armor"		"-10 -29 -49"
 		}
 		"03"
 		{
@@ -2144,12 +2149,12 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"50 490 930"
+			"bonus_damage"			"500 1490 9930"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"corruption_armor"		"-4 -9 -19"
+			"corruption_armor"		"-10 -29 -49"
 		}
 		"03"
 		{
@@ -8680,12 +8685,12 @@
 			"1"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health"			"2700"
+				"bonus_health"			"4700"
 			}
 			"2"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"2700"
+				"bonus_mana"			"4700"
 			}
 			"3"
 			{
@@ -12531,7 +12536,7 @@
 			"14"						//魔法值+120
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"7500"
+				"bonus_mana"			"9500"
 			}
 			"15"						//生命窃取
 			{
@@ -18908,7 +18913,7 @@
 		{
 			"cast_range_bonus"		"1600"
 			"vision_bonus"			"2700"
-			"bonus_mana"			"9800"
+			"bonus_mana"			"13800"
 			"bonus_mana_regen"		"280"
 			"radius"				"1400"
 			"duration"				"15"
@@ -19737,7 +19742,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"rapier_dmg"			"18825"
+				"rapier_dmg"			"23825"
 			}
 			"02"
 			{
@@ -19787,7 +19792,7 @@
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_d"				"35"
+				"bonus_d"				"45"
 			}
 			"13"
 			{
@@ -20143,12 +20148,12 @@
 			"21"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_int"					"1450"
+				"rapier_int"					"1650"
 			}
 			"22"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_bonus_int"					"20" //harcoded in the level up event
+				"rapier_bonus_int"					"23" //harcoded in the level up event
 			}
 			"23"
 			{
@@ -20239,12 +20244,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_dmg"				"7420"
+				"rapier_dmg"				"12420"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_str"				"3022"
+				"rapier_str"				"3922"
 			}
 			"03"
 			{
@@ -20264,7 +20269,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rock_dmg"					"12650"
+				"rock_dmg"					"13950"
 			}
 			"07"
 			{
@@ -20296,6 +20301,11 @@
 				"var_type"					"FIELD_INTEGER"
 				"rapier_mr"					"40"
 			}
+			"14"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana_bonus"					"11500"
+			}			
 		}
 		"OnUnequip"
 		{
@@ -20365,6 +20375,7 @@
 					"MODIFIER_PROPERTY_HEALTH_BONUS"						"%rapier_hp"
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"				"%rapier_armor"
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"			"%rapier_mr"
+					"MODIFIER_PROPERTY_MANA_BONUS"							"%mana_bonus"
 				}
 			}
 			"modifier_earth_rapier_passive"
@@ -20556,7 +20567,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_dmg"				"9650"
+				"rapier_dmg"				"29650"
 			}
 			"02"
 			{
@@ -20566,7 +20577,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"rapier_agi"				"1200"
+				"rapier_agi"				"2250"
 			}
 			"04"
 			{
@@ -21164,12 +21175,12 @@
 			"6"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stack_str"				"45"
+				"stack_str"				"60"
 			}
 			"7"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stack_agi"				"60"
+				"stack_agi"				"100"
 			}
 			"8"
 			{
@@ -21179,7 +21190,7 @@
 			"9"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stack_health"			"50"
+				"stack_health"			"100"
 			}
 			"10"
 			{
@@ -21534,7 +21545,12 @@
 			"var_type"					"FIELD_INTEGER"
 			"block_chance_marci"				"85"
 			//"CalculateSpellDamageTooltip"	"0"
-		}																	
+		}
+		"14"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"mana_bonus"					"9400"
+		}																			
 	}
 }
 
@@ -35637,14 +35653,15 @@
 			"bonus_spell_lifesteal_per_wave"	"2"
 			"extra_spell_damage_percent"		"-50"
 
-			"str"					"490"
+			"str"					"990"
 			"agi"					"325"
 			"int"					"950"
 			"armor"					"45"
-			"hp"					"5500"
+			"hp"					"7500"
 			"spell_amp"				"50"
 			"hp_regen_pct"			"7.5"
 			"hp_regen_amp"			"50"
+			"mana_bonus"            "5400"
 
 			"aura_radius"			"7200"
 			"hp_aura"				"4200"

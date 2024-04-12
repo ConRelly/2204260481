@@ -15,6 +15,9 @@ function modifier_generic_handler:OnCreated()
 			"luna_moon_glaive"
 		}
 		self:StartIntervalThink(0.5)
+		local parent = self:GetParent()
+		local plyID = parent:GetPlayerID()
+		
 		piety = true
 		if self:GetParent():GetUnitName() == "npc_dota_hero_lina" and not self:GetParent():HasModifier("modifier_sourcery") and self:GetParent():IsRealHero() and not self:GetParent():IsIllusion() and not piety then
 			self:GetParent():AddItemByName("item_to_piety")
@@ -22,7 +25,8 @@ function modifier_generic_handler:OnCreated()
 		end
 		kardel = false
 		if self:GetParent():GetUnitName() == "npc_dota_hero_sniper" and not self:GetParent():HasModifier("modifier_kardels_skills") and self:GetParent():IsRealHero() and not self:GetParent():IsIllusion() and not kardel then
-			self:GetParent():AddItemByName("item_to_kardel")
+			Notifications:Top(plyID, {text= "Sniper: You can type '-kardel' to get an item that allows you to change in kardel hero form.(for lvl 1 only)" , style={color="green"}, duration=15})
+			--self:GetParent():AddItemByName("item_to_kardel")
 			kardel = true
 		end
 	end

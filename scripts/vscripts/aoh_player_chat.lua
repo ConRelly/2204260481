@@ -5,6 +5,7 @@ LinkLuaModifier( "modifier_prevent_tombstone_channel_custom", "modifiers/modifie
 local count = 0
 local count2 = 0
 local count3 = 4
+local kardel_item = true
 function AOHGameMode:OnPlayerChat(keys)
 	local time = math.floor(GameRules:GetGameTime() / 60)
 	if keys.text == "-hard" and not self._hardMode and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
@@ -582,6 +583,7 @@ function AOHGameMode:OnPlayerChat(keys)
 			self._singleMode = true
 			mHackGameMode:GM_SinglePlayer()
 			_CreateFakeCourier2(hero)
+			hero:AddItemByName("item_resurection_pendant")
 			Notifications:TopToAll({text="#game_mode_single_player", style={color="yellow"}, duration=5})
 		end
 	end
@@ -807,6 +809,24 @@ function AOHGameMode:OnPlayerChat(keys)
 			end	
 		end	
 	end
+	if keys.text == "-kardel" then
+		if IsServer() then
+			local plyID = keys.playerid
+			local hero = PlayerResource:GetPlayer(plyID):GetAssignedHero()
+			local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero():GetUnitName()
+			local lvl = hero:GetLevel()
+			if plyhero and plyhero == "npc_dota_hero_sniper" then
+				if lvl == 1 and kardel_item then
+					hero:AddItemByName("item_to_kardel")
+					kardel_item = false
+					Notifications:Top(plyID, {text= "Use the item before you level up" , style={color="red"}, duration=6})
+				elseif kardel_item then
+					Notifications:Top(plyID, {text= "Level to High to use the item" , style={color="red"}, duration=5})
+				end
+			end	
+		end	
+	end
+
 
 	if keys.text == item_trick_1 then
 		local plyID = keys.playerid

@@ -26476,7 +26476,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-79"
+				"corruption_armor"		"-119"
 			}
 			"03"
 			{
@@ -27129,7 +27129,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"27"
+				"armor_reduction"		"37"
 			}
 			"02"
 			{

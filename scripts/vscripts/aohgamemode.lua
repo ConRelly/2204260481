@@ -1035,8 +1035,8 @@ function AOHGameMode:OnHeroLevelUp(event)
 	--hiddenCommand_(50)
 	if hero:HasModifier("modifier_item_imba_skadi_unique") then
 		if hero:IsRealHero() then
-			local bonus = 8 * _G._challenge_bosss
-			local base = 20 + bonus
+			local bonus = 9 * _G._challenge_bosss
+			local base = 23 + bonus
 			hero:ModifyIntellect(base)
 		end	
 	end

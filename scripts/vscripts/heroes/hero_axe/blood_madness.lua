@@ -64,21 +64,26 @@ function modifier_blood_madness_timer:DeclareFunctions()
 end
 function modifier_blood_madness_timer:IsHidden() return false end
 function modifier_blood_madness_timer:IsPurgable() return false end
+function modifier_blood_madness_timer:GetPriority()
+	return MODIFIER_PRIORITY_SUPER_ULTRA + 6000000
+end
 function modifier_blood_madness_timer:OnWaweChange(wawe) self:SetStackCount(wawe) end
 function modifier_blood_madness_timer:OnTakeDamage(params)
 	if IsServer() then
         if params.unit == self:GetParent() then
 			local damage = params.damage
-			if damage > self:GetParent():GetHealth() then
-				damage = self:GetParent():GetHealth()
+			local parent_hp = self:GetParent():GetHealth()
+			local caster  = self:GetCaster()
+			if damage > parent_hp then
+				damage = parent_hp
 			end
 			if damage > 200000 then
 				damage = 200000
 			end	
 
-            self:GetCaster():SetModifierStackCount("modifier_blood_madness",self:GetCaster(),self:GetCaster():GetModifierStackCount("modifier_blood_madness",self:GetCaster()) + damage)
+            caster:SetModifierStackCount("modifier_blood_madness",caster,caster:GetModifierStackCount("modifier_blood_madness",caster) + damage)
         end
 	end
 	return 0
 end
-function modifier_blood_madness_timer:GetMinHealth() if self:GetCaster():HasScepter() then return 5 end end
+function modifier_blood_madness_timer:GetMinHealth() if self:GetCaster():HasScepter() then return 100 end end
