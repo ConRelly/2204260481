@@ -3070,6 +3070,19 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Fixed crashes and bugs from the last Dota patch (probably more to be found, report on Discord)
+* Increased mana gain for Edible Bloodstone again.(7.5k -> 13.5k)
+* Buffed Arcane Orb dmg and talent, cd and increased level requirement.
+* Impetus buffed (also talent) and reduced max range it can gain bonus dmg. Deals 3x dmg vs. creeps from 1x.
+* Added Inate talent to Drow, removed self bonus (0).
+* Added Juggernaut Inate talent, buffed to 80%. Also buffed one of its faces.
+* Reduced the aoe bonus of the Lesh Inate per int.
+* Added and buffed Lion Inate.
+* Tinker Inate from 4 int per 1% to 200 (max 50%).
+* Reduced undying cd for his inate death return.
+* and some other fixes
+
+
 
 
 ////////Self Note ////////////

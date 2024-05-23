@@ -42,7 +42,7 @@ function modifier_owner_buff:OnCreated()
 				end
 				if parent:GetUnitName()== "npc_playerhelp" then
 					bonus_dmg = math.ceil(bonus_dmg / 3)
-				elseif parent:GetUnitName() == "npc_dota_clinkz_skeleton_archer_frostivus2018" or parent:GetUnitName() == "npc_dota_clinkz_skeleton_archer_frostivus20182" then
+				elseif parent:GetUnitName() == "npc_dota_clinkz_skeleton_archer_frostivus2018" or parent:GetUnitName() == "npc_dota_clinkz_skeleton_archer_frostivus20182" or parent:GetUnitName() == "npc_dota_clinkz_skeleton_archer" then
 					bonus_dmg = math.ceil(bonus_dmg / 5)
 				end
 				self.bonus = bonus_dmg

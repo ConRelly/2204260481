@@ -35,7 +35,7 @@ function abyssal_underlord_custom_dark_rift:OnSpellStart()
 	for _, hero in ipairs(heroes) do
 		if hero:IsRealHero() then
 			stats = stats + hero:GetStrength()
-			stats = stats + hero:GetIntellect()
+			stats = stats + hero:GetIntellect(false)
 			stats = stats + hero:GetAgility()
 		end
 	end

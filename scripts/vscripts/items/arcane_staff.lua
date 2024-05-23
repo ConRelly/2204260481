@@ -44,7 +44,7 @@ function arcane_staff_calculate_crit(attacker, victim, damageTable)
 		local mana_req = 150
 		local damage_mult = 1.8
 		local pass = true
-		local mana_cost = damageTable.damage * (190 / (190 + attacker:GetIntellect()))	
+		local mana_cost = damageTable.damage * (190 / (190 + attacker:GetIntellect(false)))	
 		--if attacker:HasModifier("modifier_broken_wings_divinity") then mana_cost = 0 mana_req = 0 end
 		if attacker:HasModifier("modifier_spellbook_destruction_mana_drain") then
 			mana = max_mana
@@ -61,7 +61,17 @@ function arcane_staff_calculate_crit(attacker, victim, damageTable)
 					pos = 4
 				})
 				if pass then
-					attacker:SpendMana(mana_cost, nil)
+					local firstAbility = attacker:GetAbilityByIndex(0)
+					-- Ensure the ability exists (it should for a hero)
+					if firstAbility then
+						-- Spend the specified amount of mana using the first ability
+						attacker:SpendMana(mana_cost, firstAbility)
+					else
+						-- Handle the case where the hero has no abilities (very unlikely)
+						print("Error: The hero has no abilities to reference for SpendMana.")
+					end					
+					--attacker:SpendMana(mana_cost, nil) --crashes game if ability is nil
+
 				end
 			end
 		end

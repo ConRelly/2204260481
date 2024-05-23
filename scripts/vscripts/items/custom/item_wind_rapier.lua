@@ -20,7 +20,7 @@ function CheckForStats (keys)
 	local stats_required = item:GetSpecialValueFor("stats_required")
 --	GameRules:SendCustomMessage("stats_required:"..stats_required,0,0)
 	local item_stats_sum = item:GetSpecialValueFor("rapier_str") + item:GetSpecialValueFor("rapier_agi") + item:GetSpecialValueFor("rapier_int")
-	local stats_sum = caster:GetStrength() + caster:GetAgility() + caster:GetIntellect()
+	local stats_sum = caster:GetStrength() + caster:GetAgility() + caster:GetIntellect(false)
 	local hero_stats_sum = stats_sum - item_stats_sum
 	
 --	GameRules:SendCustomMessage("stats_sum:"..stats_sum,0,0)

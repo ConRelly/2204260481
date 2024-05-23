@@ -31,7 +31,7 @@ if IsServer() then
 
 		local strCount = target:GetStrength() * (bonus_stats_pct / 100.0)
 		local agiCount = target:GetAgility() * (bonus_stats_pct / 100.0)
-		local intCount = target:GetIntellect() * (bonus_stats_pct / 300.0)
+		local intCount = target:GetIntellect(false) * (bonus_stats_pct / 300.0)
 
 	
 		self:_AddModifier(modifier_name, duration)
@@ -60,7 +60,7 @@ if IsServer() then
 		local modifier_intellect = caster:FindModifierByName(modifier_name_intellect)
 		if modifier_intellect then
 			modifier_intellect:SetStackCount(0)
-			iCount = target:GetIntellect() * (bonus_stats_pct / 100.0)
+			iCount = target:GetIntellect(false) * (bonus_stats_pct / 100.0)
 			modifier_intellect:SetStackCount(iCount)
 		end
 		]]

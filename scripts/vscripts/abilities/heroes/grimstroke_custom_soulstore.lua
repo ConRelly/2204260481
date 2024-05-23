@@ -42,7 +42,7 @@ function cast_grimstroke_custom_soulstore(keys)
 		local modifier = keys.modifier
 		local effect_modifier = keys.effect_modifier
 		if ability:GetCooldown(ability:GetLevel() - 1) > 0 and not ability:IsItem() and not ability:IsToggle() then
-			local stats = caster:GetIntellect() + caster:GetAgility() + caster:GetStrength()
+			local stats = caster:GetIntellect(false) + caster:GetAgility() + caster:GetStrength()
 			local stats_mult = stats * GetTalentSpecialValueFor(ability, "stats_mul")
 			local stack_count = get_stack_count(caster, modifier)
 

@@ -45,8 +45,8 @@ if IsServer() then
 
     function lion_custom_finger_of_death:OnSpellStart()
         local caster = self:GetCaster()
-        --local caster_int = caster:GetIntellect()
-        local stats = caster:GetIntellect() + caster:GetAgility() + caster:GetStrength()
+        --local caster_int = caster:GetIntellect(false)
+        local stats = caster:GetIntellect(false) + caster:GetAgility() + caster:GetStrength()
         self.base_damage = self:GetSpecialValueFor(SuperScepter(caster,"damage_super_scepter", "damage_scepter", "damage")) * stats
         self.damage_per_use = self:GetSpecialValueFor(SuperScepter(caster,"damage_per_use_ss", "damage_per_use_s", "damage_per_use"))
         self.damage_delay = self:GetSpecialValueFor("damage_delay")

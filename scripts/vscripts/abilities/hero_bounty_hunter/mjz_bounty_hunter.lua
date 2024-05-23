@@ -75,7 +75,7 @@ function shuriken_toss:OnProjectileHit_ExtraData(target, location, extradata)
 		if caster:HasScepter() then
 			if target:IsAlive() and caster:HasAbility("mjz_bounty_hunter_jinada") and caster:FindAbilityByName("mjz_bounty_hunter_jinada"):IsTrained() then
 				Jinada(caster, target, self, true)
-				local jinada_stats = caster:GetAgility() + caster:GetIntellect() + caster:GetStrength()
+				local jinada_stats = caster:GetAgility() + caster:GetIntellect(false) + caster:GetStrength()
 				local jinada_damage = caster:CustomValue("mjz_bounty_hunter_jinada", "bonus_damage") + (jinada_stats * caster:CustomValue("mjz_bounty_hunter_jinada", "stats_mult"))
 				ApplyDamage({
 					victim		= target,
@@ -208,7 +208,7 @@ function modifier_jinada_crit:OnIntervalThink()
 	if parent:IsIllusion() then return end
 	if IsServer() then
 		hp_mp = (parent:GetMaxHealth() + parent:GetMaxMana()) * ability:GetSpecialValueFor("hp_mp") / 100
-		stats = parent:GetAgility() + parent:GetIntellect() + parent:GetStrength()
+		stats = parent:GetAgility() + parent:GetIntellect(false) + parent:GetStrength()
 		if ability:IsCooldownReady() then
 			self:SetStackCount(ability:GetSpecialValueFor("bonus_damage") + (stats * ability:GetSpecialValueFor("stats_mult")))
 			if ability:GetLevel() > 5 then

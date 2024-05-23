@@ -8,7 +8,7 @@ function OnSpellStart(keys)
 		local splash_radius_scepter = ability:GetSpecialValueFor("splash_radius_scepter")
 		local damage_stats = 0
 		if caster:IsRealHero() then
-			damage_stats = caster:GetIntellect() * 10
+			damage_stats = caster:GetIntellect(false) * 10
 		end
 		local use_count = 0
 		if ability:IsItem() then

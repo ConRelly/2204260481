@@ -22,7 +22,7 @@ function ability_class:OnSpellStart()
 		local vision_radius = GetTalentSpecialValueFor(ability, "orb_vision")
 		local vision_duration = GetTalentSpecialValueFor(ability, "vision_duration")
 
-		local damage = base_damage + caster:GetIntellect() * int_damage / 100
+		local damage = base_damage + caster:GetIntellect(false) * int_damage / 100
 
 		local projectile_direction = point - caster:GetOrigin()
 		projectile_direction = Vector( projectile_direction.x, projectile_direction.y, 0 ):Normalized()

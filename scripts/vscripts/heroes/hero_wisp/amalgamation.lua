@@ -264,7 +264,7 @@ function amalgamation_modifier:OnSpentMana(kv)
 		local targetID = self.Host:GetPlayerOwnerID()
 		local mana = self.Host:GetMana()
 		if self.Host:GetMana() >= kv.cost then
-			self.Host:SpendMana(kv.cost, nil)
+			self.Host:SpendMana(kv.cost, ability)
 		else
 			local hpcost = kv.cost - mana
 			self.Host:SetMana(0)
@@ -443,7 +443,7 @@ function amalgamation_target:OnIntervalThink()
 			if not caster:HasModifier("modifier_symbiosis_ready") then return end
 			local caster_str = caster:GetStrength()
 			local caster_agi = caster:GetAgility()
-			local caster_int = caster:GetIntellect()
+			local caster_int = caster:GetIntellect(false)
 			local caster_spellamp = math.floor(caster:GetSpellAmplification(false) * ability:GetSpecialValueFor("venom_spellamp"))
 			local caster_base_ms = caster:GetMoveSpeedModifier(caster:GetBaseMoveSpeed(), false) * (ability:GetSpecialValueFor("carnage_base_ms") / 100)
 			local caster_basedmg = caster:GetAttackDamage()

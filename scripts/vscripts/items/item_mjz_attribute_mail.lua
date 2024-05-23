@@ -186,9 +186,9 @@ if IsServer() then
         elseif pa == AGILITY  then
             PrimaryStatValue = unit:GetAgility()
         elseif pa == INTELLIGENCE  then
-            PrimaryStatValue = unit:GetIntellect()
+            PrimaryStatValue = unit:GetIntellect(false)
         else
-            PrimaryStatValue = math.floor((unit:GetIntellect() + unit:GetAgility() + unit:GetStrength()) / 2)
+            PrimaryStatValue = math.floor((unit:GetIntellect(false) + unit:GetAgility() + unit:GetStrength()) / 2)
         end
         return PrimaryStatValue
     end

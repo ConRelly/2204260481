@@ -112,13 +112,22 @@ function modifier_item_durandal:OnTakeDamage(params)
 			local health = attacker:GetHealth()
 			local damageTable = incdamage * ((crit_damage_mult - 100) / 100)
 			local popup_dmg = damageTable + incdamage
-			local mana_cost = damageTable *  (mana_usege / 100) * (threshold / (threshold + attacker:GetIntellect()))
+			local mana_cost = damageTable *  (mana_usege / 100) * (threshold / (threshold + attacker:GetIntellect(false)))
 			if not attacker:HasModifier("immortal_spells_req_hp") then
 				if mana >= mana_cost and mana >= threshold then
 					if unit and unit ~= attacker and unit:GetTeamNumber() ~= attacker:GetTeamNumber() then
 						if params.damage_type ~= 1 then
 							SpellCrit(ability, unit, attacker, damageTable, params.damage_type, params.damage_flags, popup_dmg, Vector(100, 149, 237))
-							attacker:SpendMana(mana_cost, nil)
+							local firstAbility = attacker:GetAbilityByIndex(0)
+							-- Ensure the ability exists (it should for a hero)
+							if firstAbility then
+								-- Spend the specified amount of mana using the first ability
+								attacker:SpendMana(mana_cost, firstAbility)
+							else
+								-- Handle the case where the hero has no abilities (very unlikely)
+								print("Error: The hero has no abilities to reference for SpendMana.")
+							end	
+							--attacker:SpendMana(mana_cost, nil)
 						end
 					end
 				end

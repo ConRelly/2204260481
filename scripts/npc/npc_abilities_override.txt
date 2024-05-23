@@ -36,7 +36,7 @@
 #base "abilities/heroes/earth_spirit_stone_caller.txt"
 //#base "abilities/heroes/tusk_walrus_punch.txt"
 #base "abilities/heroes/pudge_meat_hook.txt"
-
+#base "inate_skills/inate_ab_skills.txt"
 
 
 
@@ -1867,7 +1867,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"5"
+				"value"				"15"
 				"ad_linked_abilities"			"obsidian_destroyer_arcane_orb"
 			}
 		}
@@ -4725,7 +4725,7 @@
 	}
 	"clinkz_burning_army"
 	{
-		"IsOnCastBar"		   "0"
+		"IsOnCastBar"		   "1"
 	}
 	"crystal_maiden_freezing_field"
 	{
@@ -8609,11 +8609,11 @@
 		"AbilitySound"					"Hero_ObsidianDestroyer.ArcaneOrb"
 		
 		"AbilityCastRange"				"450"
-
+		"LevelsBetweenUpgrades"         "15"
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"0"
-		"AbilityCooldown"				"4 3 2 0.1"
+		"AbilityCooldown"				"1 0.5 0.2 0.05"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -8621,10 +8621,10 @@
 		{
 			"mana_pool_damage_pct"	
 			{
-				"value"										"14 16 18 20"
-				"special_bonus_unique_outworld_devourer"	"+9"
+				"value"										"20 27 35 45"
+				"special_bonus_unique_outworld_devourer"	"+45"
 			}
-			"mana_cost_percentage"							"5"
+			"mana_cost_percentage"							"4"
 			"bounce_radius"
 			{
 				"value"										"0"			
@@ -11923,12 +11923,29 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 
+
+
+
 	//=================================================================================================================
 	// Ability: Skeleton King Reincarnation
 	//=================================================================================================================
 	"skeleton_king_reincarnation"
 	{
 		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CAN_SELF_CAST"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"2"
+
+		"HasShardUpgrade"				"1"
+		"HasScepterUpgrade"				"1"
+		"AbilitySound"					"Hero_SkeletonKing.Reincarnate"
+		
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -11945,52 +11962,30 @@
 			"reincarnate_time"		"3.0 3.0 3.0"
 			"slow_radius"			
 			{
-				"value"		"900"
+				"value"		"4900"
 				"affected_by_aoe_increase"	"1"
 			}
-			"movespeed"				"-75"
-			"attackslow"			"-75"
+			"movespeed"				"-175"
+			"attackslow"			"-175"
 			"slow_duration"			"5.0"
-			"scepter_duration"
-			{
-				"value"						"0"
-				"special_bonus_scepter"			"+5"
-				"RequiresScepter"			"1"
-			}
-			"scepter_aura_radius"
-			{
-				"value"						"0"
-				"special_bonus_scepter"			"+2300"
-				"RequiresScepter"			"1"
-			}
-			"scepter_attack_speed"
-			{
-				"value"				"0"
-				"special_bonus_scepter"		"+375"
-				"RequiresScepter"			"1"
-			}
-			"scepter_move_speed_pct"
-			{
-				"value"							"0"
-				"special_bonus_scepter"			"+100"
-				"RequiresScepter"			"1"
-			}
 			"AbilityManaCost"
 			{
 				"value"					"180"
 				"special_bonus_shard"	"=0"
 			}
+
+			"clear_curse"
+			{
+				"value"						"0"
+				"special_bonus_facet_skeleton_king_facet_cursed_blade"	"=1"
+			}
+
 			"shard_skeleton_count"		
 			{
-				"value"							"0"
-				"special_bonus_shard"			"+1"
+				"value"						"0"
+				"special_bonus_facet_skeleton_king_facet_bone_guard" "1"				
 			}
-			"scepter_respawn_pct"
-			{
-				"value"							"0"
-				"special_bonus_scepter"			"10"
-				"RequiresScepter"				"1"
-			}
+
 			"AbilityCooldown"
 			{
 				"value"							"200"
@@ -11998,6 +11993,8 @@
 			}
 		}
 	}
+
+
 
 	"skywrath_mage_arcane_bolt"
 	{
@@ -15677,25 +15674,6 @@
 	}
 	
 
-	"enchantress_impetus"
-	{
-		"AbilityManaCost"				"65 50 35 20"
-		"LevelsBetweenUpgrades"         "13"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"distance_damage_pct"	"45 95 150 185"
-				"LinkedSpecialBonus"	"special_bonus_unique_enchantress_4"			
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"distance_cap"			"5000"
-			}
-		}
-	}
 
 	//=================================================================================================================
 	// Enchantress: Impetus
@@ -15735,11 +15713,11 @@
 		{
 			"distance_damage_pct"	
 			{
-				"value"			"45 95 150 185"
-				"special_bonus_unique_enchantress_4"	"+85.0"	
+				"value"			"145 195 250 350"
+				"special_bonus_unique_enchantress_4"	"+350"	
 			}
-			"distance_cap"			"5750"
-			"creep_multiplier"		"1"
+			"distance_cap"			"3750"
+			"creep_multiplier"		"3"
 		}
 	}
 

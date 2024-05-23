@@ -27,7 +27,7 @@ if IsServer() then
 		local spark_damage = GetTalentSpecialValueFor(ability, "spark_damage")
 		if caster:IsRealHero() then
 			local multipl = GetTalentSpecialValueFor(ability, "spark_bonus")
-			local stats = caster:GetAgility() + caster:GetIntellect()
+			local stats = caster:GetAgility() + caster:GetIntellect(false)
 			local bonus_dmg = stats * multipl
 			spark_damage = spark_damage + bonus_dmg
 		end	

@@ -46,7 +46,7 @@ function ability_class:OnOrbImpact( params )
 	local caster = self:GetCaster()
 	local target = params.target
 
-	local int_caster = caster:GetIntellect()
+	local int_caster = caster:GetIntellect(false)
 	local int_damage_pct = GetTalentSpecialValueFor(ability, "intellect_damage_pct")
 
 	local damage = int_caster * (int_damage_pct / 100.0)

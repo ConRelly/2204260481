@@ -94,7 +94,7 @@ if IsServer() then
 		})
         self.tick_interval = self.ability:GetSpecialValueFor("interval")
 		self.int_mult = self.int_mult * self.tick_interval
-        self.damage = self.caster:GetIntellect() * self.int_mult
+        self.damage = self.caster:GetIntellect(false) * self.int_mult
         if self.parent then
             self:StartIntervalThink(self.tick_interval)
         end
@@ -102,7 +102,7 @@ if IsServer() then
 
 	
     function modifier_necrolyte_intelligence_supremacy_debuff:OnIntervalThink()
-		self.damage = self.caster:GetIntellect() * self.int_mult
+		self.damage = self.caster:GetIntellect(false) * self.int_mult
         ApplyDamage({
 			attacker = self.caster,
 			victim = self.parent,

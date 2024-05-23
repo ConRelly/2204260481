@@ -49,7 +49,7 @@ if IsServer() then
 			local parent = self:GetParent()
 			local particleIndex = ParticleManager:CreateParticle("particles/custom/items/blast_staff/blast_staff_explosion.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 			ParticleManager:SetParticleControl(particleIndex, 3, target:GetAbsOrigin())
-			local damage = self:GetSpecialValueFor("int_multiplier") * parent:GetIntellect()
+			local damage = self:GetSpecialValueFor("int_multiplier") * parent:GetIntellect(false)
 
 			ApplyDamage({
 				ability = self,

@@ -230,7 +230,7 @@ function spell_crit(attacker, victim, damageTable)
 		local mana = attacker:GetMana()
 		local health = attacker:GetHealth()
 		local damage_mult = 1.8
-		local mana_cost = damageTable.damage * 0.8 * (150 / (150 + attacker:GetIntellect()))
+		local mana_cost = damageTable.damage * 0.8 * (150 / (150 + attacker:GetIntellect(false)))
 		if not attacker:HasModifier("immortal_spells_req_hp") then
 			if mana >= mana_cost and mana >= 150 then
 				if victim and victim ~= attacker and victim:GetTeamNumber() ~= attacker:GetTeamNumber() then
@@ -242,7 +242,16 @@ function spell_crit(attacker, victim, damageTable)
 						type = "crit",
 						pos = 4
 					})
-					attacker:SpendMana(mana_cost, nil)
+					local firstAbility = attacker:GetAbilityByIndex(0)
+					-- Ensure the ability exists (it should for a hero)
+					if firstAbility then
+						-- Spend the specified amount of mana using the first ability
+						attacker:SpendMana(mana_cost, firstAbility)
+					else
+						-- Handle the case where the hero has no abilities (very unlikely)
+						print("Error: The hero has no abilities to reference for SpendMana.")
+					end						
+					--attacker:SpendMana(mana_cost, nil)
 				end
 			end
 		else

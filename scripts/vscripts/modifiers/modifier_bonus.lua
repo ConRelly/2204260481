@@ -61,11 +61,11 @@ if IsServer() then
 				self.str = 0
 				self.int = 0
 			elseif attribute == 2 then
-				self.int = (self.parent:GetIntellect() - self.int) * self:GetStackCount() * 0.01
+				self.int = (self.parent:GetIntellect(false) - self.int) * self:GetStackCount() * 0.01
 				self.agi = 0
 				self.str = 0
 			else
-				self.int = (self.parent:GetIntellect() - self.int) * self:GetStackCount() * 0.01
+				self.int = (self.parent:GetIntellect(false) - self.int) * self:GetStackCount() * 0.01
 				self.agi = (self.parent:GetAgility() - self.agi) * self:GetStackCount() * 0.01
 				self.str = (self.parent:GetStrength() - self.str) * self:GetStackCount() * 0.01				
 			end
@@ -272,7 +272,7 @@ if IsServer() then
 		if self:GetStackCount() <= 0 then
 			self:Destroy()
 		end
-		self.int = (self.parent:GetIntellect() - self.int) * self:GetStackCount() * 0.01
+		self.int = (self.parent:GetIntellect(false) - self.int) * self:GetStackCount() * 0.01
 	end
 end
 

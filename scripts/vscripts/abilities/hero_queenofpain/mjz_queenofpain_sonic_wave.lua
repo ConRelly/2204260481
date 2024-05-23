@@ -74,7 +74,7 @@ if IsServer() then
         local int_damage = self:GetSpecialValueFor("intelligence_damage")
 
         local screamDamage = value_if_scepter(caster, damage_scepter, base_damage)
-        screamDamage = screamDamage + caster:GetIntellect() * int_damage / 100
+        screamDamage = screamDamage + caster:GetIntellect(false) * int_damage / 100
 
         if target then
             local damageTable = {

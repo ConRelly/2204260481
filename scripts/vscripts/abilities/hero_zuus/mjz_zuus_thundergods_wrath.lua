@@ -98,7 +98,7 @@ if IsServer() then
 		local radius = ability:GetSpecialValueFor('radius')
 		local base_damage = ability:GetSpecialValueFor("base_damage")
 		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
-		local damage = base_damage + caster:GetIntellect() * (intelligence_damage / 100.0)
+		local damage = base_damage + caster:GetIntellect(false) * (intelligence_damage / 100.0)
 		local damage_ss = damage  -- avoid an multiplayer
 		local bonus_armor_dmg_mult = 1
 		local enemy_armor_mult_ptc = ability:GetSpecialValueFor('enemy_armor_mult_ptc') * 100 -- 1% per armor 
@@ -191,7 +191,7 @@ if IsServer() then
 
 		local base_damage = ability:GetSpecialValueFor("base_damage")
 		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
-		local damage = base_damage + caster:GetIntellect() * (intelligence_damage / 100.0)
+		local damage = base_damage + caster:GetIntellect(false) * (intelligence_damage / 100.0)
 		local super_scepter = false
 		local bonus_armor_dmg_mult = 1
 		local enemy_armor_mult_ptc = ability:GetSpecialValueFor('enemy_armor_mult_ptc') * 100 -- 1% per armor 

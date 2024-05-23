@@ -120,7 +120,7 @@ function ability_class:CalcDamage( )
 	local int_damage_pct = GetTalentSpecialValueFor(ability, "int_damage")
 	
 	if IsValidEntity(caster) and caster:IsRealHero() then
-		local int_damage = caster:GetIntellect() * (int_damage_pct / 100)
+		local int_damage = caster:GetIntellect(false) * (int_damage_pct / 100)
 		ability_damage = ability_damage + int_damage
 	end
 

@@ -1,0 +1,241 @@
+"DOTAAbilities"
+{
+	//=================================================================================================================
+	// Ability: Drow Ranger's Trueshot Aura
+	//=================================================================================================================
+	"drow_ranger_trueshot"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Innate"						"1"
+		"MaxLevel"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"trueshot_agi_bonus_self"	"0"
+				"trueshot_agi_bonus_allies"	"1"
+				"trueshot_aspd_bonus_creeps"	
+				{
+					"value"			"0"
+					"special_bonus_facet_1"	"+3"
+				}
+				"radius"						
+				{
+					"value"			"3200"
+					"affected_by_aoe_increase"	"1"
+				}
+
+		}
+	}
+
+	"drow_ranger_vantage_point"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"damage_bonus"		"35"
+			"bonus_miss_chance"		"0"
+		}
+	}
+
+	//=================================================================================================================
+	// Juggernaut: Innate Face to Face
+	//=================================================================================================================
+	"juggernaut_duelist"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"front_angle"				"55"
+			"front_damage_increase"		"80"
+		}
+	}
+
+	//=================================================================================================================
+	// Juggernaut: Exile Facet
+	//=================================================================================================================
+	"juggernaut_bladeform"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"max_stacks"				"100"
+			"stack_gain_time"			"1.0"
+			"agi_bonus_pct_per_stack"	"300"
+			"movement_speed_pct_per_stack"		"2"
+			"linger_duration"			"3"
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Leshrac Innate: AoE
+	//=================================================================================================================
+	"leshrac_defilement"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Innate"						"1"
+		"MaxLevel"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"aoe_per_int"				"0.15"
+		}
+	}
+
+
+	//=================================================================================================================
+	// Lion Innate To Hell and Back
+	//=================================================================================================================
+	"lion_to_hell_and_back"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"AbilityValues"
+		{
+			"duration"					"40"
+			"spell_amp"					"200"
+			"debuff_amp"				"40"
+		}
+	}
+
+	//=================================================================================================================
+	// OD: Innate Max Mana Per Int
+	//=================================================================================================================
+	"obsidian_destroyer_ominous_discernment"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"bonus_max_mana_per_int"			
+			{
+				"value"						"2"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Ability: Tinker Innate: Item CDR
+	//=================================================================================================================
+	"tinker_eureka"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"Innate"						"1"
+		"MaxLevel"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"int_per_one_cdr"				"200"
+			"one_percent_tooltip"			"1"
+			"max_cdr"						"50"
+		}
+	}
+
+	//=================================================================================================================
+	// Undying Relentless Return
+	//=================================================================================================================
+	"undying_ceaseless_dirge"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		"AbilityCooldown"				"280"
+
+		"AbilityValues"
+		{
+			"respawn_delay"				"2.0"
+		}
+	}
+
+	//=================================================================================================================
+	// Skeleton King: Innate Vampiric Spirit
+	//=================================================================================================================
+	"skeleton_king_vampiric_spirit"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"4"
+		"Innate"						"1"
+		"HasScepterUpgrade"				"1"
+		"DependentOnAbility"			"skeleton_king_reincarnation"
+		"AbilityValues"
+		{
+			"vampiric_aura"
+			{
+				"value"									"20 30 40 50"
+				"special_bonus_unique_wraith_king_2"	"+10"
+			}
+
+			"creep_lifesteal_reduction_pct"				"40"
+
+			"duration"
+			{
+				"value"							"4"
+				"special_bonus_scepter"			"+1"
+			}
+			"scepter_attack_speed"
+			{
+				"value"							"75"
+			}
+			"scepter_move_speed_pct"
+			{
+				"value"							"25"
+			}
+			"scepter_respawn_pct"
+			{
+				"value"							"0"
+				"special_bonus_scepter"			"10"
+				"RequiresScepter"				"1"
+			}
+			"scepter_aura_radius"
+			{
+				"value"							"0"
+				"special_bonus_scepter"			"+1400"
+				"affected_by_aoe_increase"	"1"
+				"RequiresScepter"				"1"
+			}
+		}
+	}
+
+
+
+
+}

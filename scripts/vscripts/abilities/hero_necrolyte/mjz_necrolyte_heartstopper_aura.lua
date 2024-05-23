@@ -103,7 +103,7 @@ if IsServer() then
 			base_damage = base_damage + ss_bonus_damage
 			print(ss_bonus_damage .. " ss_bonus_damage")
 		end
-		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage") * caster:GetIntellect()
+		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage") * caster:GetIntellect(false)
 
 		ApplyDamage({
 			attacker = caster,

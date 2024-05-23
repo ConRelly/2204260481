@@ -37,7 +37,7 @@ function item_ice_rapier:OnSpellStart()
 			if radius > 2000 then radius = 2000 end
 			duration = duration + caster:GetAgility() * self:GetSpecialValueFor("duration_per_agi")
 			if duration > 10 then duration = 10 end
-			damage = damage + caster:GetIntellect() * level
+			damage = damage + caster:GetIntellect(false) * level
 		end
 
 		-- Play sound

@@ -52,7 +52,7 @@ function modifier_item_mjz_bloodstone_edible:GetModifierHealthBonus()
 	return 9500
 end
 function modifier_item_mjz_bloodstone_edible:GetModifierManaBonus()
-	return 7500
+	return 13500
 end
 
 -------------------------------------------------------------------------------

@@ -137,7 +137,7 @@ function modifier_item_radiance_armor_aura_blue:OnIntervalThink()
 		if not caster:IsHero() then return end
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
-		local int = caster:GetIntellect()
+		local int = caster:GetIntellect(false)
 		local int_mult = self.int_damage
 		if int > self.int_threshold then 
 			int_mult = self.threshold_multi

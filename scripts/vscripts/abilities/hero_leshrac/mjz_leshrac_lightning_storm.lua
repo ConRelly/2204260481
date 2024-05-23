@@ -54,7 +54,7 @@ function ability_class:CalcDamage()
     local damage_intelligence_per = GetTalentSpecialValueFor(ability, "damage_intelligence_per")
     local damage = base_damage
     if caster:IsRealHero() then
-        damage = base_damage + caster:GetIntellect() * (damage_intelligence_per / 100)
+        damage = base_damage + caster:GetIntellect(false) * (damage_intelligence_per / 100)
     end
     return damage
 end
@@ -78,7 +78,7 @@ function ability_class:SpellRepeat( params )
     target:EmitSoundParams("Hero_Leshrac.Lightning_Storm", 0, 0.3, 0)
     local bonus_dmg = 0
     if target:HasModifier(m_slow) then
-        bonus_dmg = math.ceil((target:FindModifierByName(m_slow):GetStackCount() + 1) * (caster:GetIntellect() / 10))
+        bonus_dmg = math.ceil((target:FindModifierByName(m_slow):GetStackCount() + 1) * (caster:GetIntellect(false) / 10))
     end    
     local damageTable = {
         attacker = caster,

@@ -177,7 +177,7 @@ function mjz_lion_impale:CalcDamage( target )
     local int_damage = ability:GetTalentSpecialValueFor( "int_damage")
 	local damage = base_damage
 	if caster:IsHero() then
-		damage = base_damage + caster:GetIntellect() * (int_damage / 100)
+		damage = base_damage + caster:GetIntellect(false) * (int_damage / 100)
 	end
     return damage
 end

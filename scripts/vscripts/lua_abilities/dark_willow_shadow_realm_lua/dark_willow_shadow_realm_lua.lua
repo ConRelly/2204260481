@@ -38,7 +38,7 @@ function modifier_dark_willow_shadow_realm_lua:OnCreated()
 	if not IsServer() then return end
 
 	self.bonus_range = self:GetAbility():GetSpecialValueFor("attack_range_bonus")
-	self.bonus_damage = self:GetAbility():GetSpecialValueFor("damage") + (self:GetParent():GetIntellect() * self:GetAbility():GetTalentSpecialValueFor("int_multiplier"))
+	self.bonus_damage = self:GetAbility():GetSpecialValueFor("damage") + (self:GetParent():GetIntellect(false) * self:GetAbility():GetTalentSpecialValueFor("int_multiplier"))
 	self.bonus_max = self:GetAbility():GetSpecialValueFor("max_damage_duration")
 
 	self.scepter = self:GetParent():HasScepter()
@@ -56,7 +56,7 @@ function modifier_dark_willow_shadow_realm_lua:OnRefresh()
 	if not IsServer() then return end
 
 	self.bonus_range = self:GetAbility():GetSpecialValueFor("attack_range_bonus")
-	self.bonus_damage = self:GetAbility():GetSpecialValueFor("damage") + (self:GetParent():GetIntellect() * self:GetAbility():GetTalentSpecialValueFor("int_multiplier"))
+	self.bonus_damage = self:GetAbility():GetSpecialValueFor("damage") + (self:GetParent():GetIntellect(false) * self:GetAbility():GetTalentSpecialValueFor("int_multiplier"))
 	self.bonus_max = self:GetAbility():GetSpecialValueFor("max_damage_duration")
 end
 function modifier_dark_willow_shadow_realm_lua:OnDestroy()

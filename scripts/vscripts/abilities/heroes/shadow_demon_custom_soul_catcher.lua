@@ -45,7 +45,7 @@ if IsServer() then
     function modifier_shadow_demon_custom_soul_catcher_buff:OnCreated(table)
         local ability = self:GetAbility()
         local caster = self:GetCaster()
-        local stats = caster:GetIntellect() + caster:GetAgility() + caster:GetStrength()
+        local stats = caster:GetIntellect(false) + caster:GetAgility() + caster:GetStrength()
         local mult = math.ceil(ability:GetSpecialValueFor("damage_bonus") * stats)
         self.damage = ability:GetSpecialValueFor("damage") + mult
         self.interval = ability:GetSpecialValueFor("interval")

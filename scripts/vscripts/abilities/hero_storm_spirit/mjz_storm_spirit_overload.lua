@@ -149,7 +149,7 @@ function modifier_mjz_storm_spirit_overload_buff:OnAttacked(event)
 		local slow_duration = GetTalentSpecialValueFor(ability, 'slow_duration')
 		local base_damage = GetTalentSpecialValueFor(ability, 'overload_damage')
 		local intelligence_damage = GetTalentSpecialValueFor(ability, 'intelligence_damage')
-		local damage = base_damage + caster:GetIntellect() * intelligence_damage / 100
+		local damage = base_damage + caster:GetIntellect(false) * intelligence_damage / 100
 
 		local unit_list = FindUnitsInRadius(
 			caster:GetTeamNumber(), target:GetAbsOrigin(),

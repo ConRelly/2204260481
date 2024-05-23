@@ -92,7 +92,7 @@ function modifier_mjz_techies_land_mine_trigger:OnIntervalThink()
 		local burn_duration = self:GetAbility():GetSpecialValueFor("burn_duration")
 
 		if #enemies > 0 then
-			local true_damage = self:GetAbility():GetSpecialValueFor("base_damage") + self:GetCaster():GetIntellect() * (self:GetAbility():GetSpecialValueFor("int_damage") + talent_value(self:GetCaster(), "special_bonus_unique_mjz_techies_land_mines_int_damage"))
+			local true_damage = self:GetAbility():GetSpecialValueFor("base_damage") + self:GetCaster():GetIntellect(false) * (self:GetAbility():GetSpecialValueFor("int_damage") + talent_value(self:GetCaster(), "special_bonus_unique_mjz_techies_land_mines_int_damage"))
  			if RollPercentage(_G._effect_rate) then
 				local explosionParticle = ParticleManager:CreateParticle("particles/units/heroes/hero_techies/techies_land_mine_explode.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
 					ParticleManager:SetParticleControl(explosionParticle, 0, mine:GetAbsOrigin())

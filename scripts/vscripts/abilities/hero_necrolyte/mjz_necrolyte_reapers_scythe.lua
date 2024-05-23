@@ -234,7 +234,7 @@ if IsServer() then
 			end
 		end	
 		local int_damage_multiplier = ability:GetSpecialValueFor("int_damage_multiplier")
-		local damage = (base_damage + caster:GetIntellect() * int_damage_multiplier) * extra_dmg
+		local damage = (base_damage + caster:GetIntellect(false) * int_damage_multiplier) * extra_dmg
 		local fdamage = damage / 2
 		Timers:CreateTimer({
 			endTime = 0.05, -- when this timer should first execute, you can omit this if you want it to run first on the next frame

@@ -43,7 +43,7 @@ if IsServer() then
     function witch_doctor_custom_death_skull:OnProjectileHit(target, pos)
         if target ~= nil and not target:IsInvulnerable() then
 			
-			local damage = self.damage + (self.int_as_damage * self.caster:GetIntellect())
+			local damage = self.damage + (self.int_as_damage * self.caster:GetIntellect(false))
 
 			ApplyDamage({
 				ability = self,

@@ -57,7 +57,7 @@ function modifier_doom_devour_lua:OnDestroy()
 	if not IsServer() then return end
 	-- grant bonus gold if alive
 	if self:GetParent():IsAlive() then
-		local totalBonusGold = self.bonus_gold + self:GetParent():GetIntellect() * self.gold_int_multiplier
+		local totalBonusGold = self.bonus_gold + self:GetParent():GetIntellect(false) * self.gold_int_multiplier
 		PlayerResource:ModifyGold( self:GetParent():GetPlayerOwnerID(), totalBonusGold, false, DOTA_ModifyGold_Unspecified )
 	end
 end

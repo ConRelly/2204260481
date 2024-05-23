@@ -20,7 +20,7 @@ function tinker_laser_lua:OnSpellStart()
 
 	local damage = self:GetSpecialValueFor("laser_damage")
 	if caster:IsRealHero() then
-		damage = damage + (caster:GetIntellect() * int_multiplier)
+		damage = damage + (caster:GetIntellect(false) * int_multiplier)
 	end	
 	local silence_duration = talent_value(caster, "special_laser_silence_duration_lua")
 

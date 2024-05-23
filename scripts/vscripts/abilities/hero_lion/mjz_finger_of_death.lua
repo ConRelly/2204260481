@@ -80,7 +80,7 @@ function mjz_finger_of_death:OnSpellStart_dagon()
 	 
 		local base_damage = self:GetSpecialValueFor(value_if_scepter(caster, "damage_scepter", "damage"))
 		local damage_per_kill = self:GetSpecialValueFor("damage_per_kill")
-		local extra_int = GetTalentSpecialValueFor(self, "damage_per_int") * caster:GetIntellect() or 0
+		local extra_int = GetTalentSpecialValueFor(self, "damage_per_int") * caster:GetIntellect(false) or 0
 		local kill_count = caster:GetModifierStackCount("modifier_mjz_finger_of_death_bonus", nil)
 		local damage = math.ceil((base_damage + extra_int + damage_per_kill * kill_count) / damage_instances)
 
@@ -137,7 +137,7 @@ function mjz_finger_of_death:OnSpellStart()
 	 
 		local base_damage = self:GetSpecialValueFor(value_if_scepter(caster, "damage_scepter", "damage"))
 		local damage_per_kill = self:GetSpecialValueFor("damage_per_kill")
-		local extra_int = GetTalentSpecialValueFor(self, "damage_per_int") * caster:GetIntellect() or 0
+		local extra_int = GetTalentSpecialValueFor(self, "damage_per_int") * caster:GetIntellect(false) or 0
 		local kill_count = caster:GetModifierStackCount("modifier_mjz_finger_of_death_bonus", nil)
 		local damage = math.ceil((base_damage + extra_int + damage_per_kill * kill_count) / damage_instances)
 		if caster:HasModifier("modifier_super_scepter") then

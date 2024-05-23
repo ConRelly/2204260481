@@ -30,7 +30,7 @@ if IsServer() then
 
         local base_damage = self:GetSpecialValueFor("damage")
         local int_multiplier = self:GetSpecialValueFor("int_multiplier")
-        local int_damage = caster:GetIntellect() * int_multiplier
+        local int_damage = caster:GetIntellect(false) * int_multiplier
 
         ApplyDamage({
             ability = self,
