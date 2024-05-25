@@ -46,7 +46,7 @@ end
 function modifier_mana_amp_custom_active:OnCreated()
 	local parent = self:GetParent()
 	local ability = self:GetAbility()
-	self:SetStackCount(ability:GetSpecialValueFor("mana_amp") * parent:GetIntellect(false))
+	self:SetStackCount(ability:GetSpecialValueFor("mana_amp") * parent:GetIntellect(true))
 end
 
 LinkLuaModifier("modifier_mana_amp_custom", "abilities/heroes/obsidian_destroyer_custom_mana_amp.lua", LUA_MODIFIER_MOTION_NONE)

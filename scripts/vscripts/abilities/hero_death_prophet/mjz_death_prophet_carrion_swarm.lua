@@ -68,7 +68,7 @@ if IsServer() then
 			local base_damage = GetTalentSpecialValueFor(ability, "base_damage")
 			local int_damage_pct = GetTalentSpecialValueFor(ability, "int_damage_pct")
 
-			local damage = base_damage + caster:GetIntellect(false) * (int_damage_pct / 100.0)
+			local damage = base_damage + caster:GetIntellect(true) * (int_damage_pct / 100.0)
 			DealDamage(ability, caster, target, damage )
 
 			target:EmitSound("Hero_DeathProphet.CarrionSwarm.Damage")

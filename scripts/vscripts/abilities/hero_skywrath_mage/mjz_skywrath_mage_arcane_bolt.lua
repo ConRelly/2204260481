@@ -76,7 +76,7 @@ if IsServer() then
 
 		local intelligence = 0
 		if IsValidEntity(caster) and caster:IsHero() then
-			intelligence = caster:GetIntellect(false)
+			intelligence = caster:GetIntellect(true)
 			if caster:HasModifier("modifier_item_echo_wand") then
 				bolt_speed = bolt_speed * 4
 			end	

@@ -53,7 +53,7 @@ function modifier_drow_ranger_frost_arrows_lua:OnCreated(kv)
         end    
     end   
    --print(extra_dmg .. " dmg mult")
-    local damage = ((caster:GetAgility() + caster:GetIntellect(false)) * self.agi_multiplier) * extra_dmg
+    local damage = ((caster:GetAgility() + caster:GetIntellect(true)) * self.agi_multiplier) * extra_dmg
     --print(damage .. " damage")
     -- precache damage
     self.damageTable = {

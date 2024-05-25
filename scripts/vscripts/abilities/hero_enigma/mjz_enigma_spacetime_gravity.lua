@@ -94,7 +94,7 @@ if IsServer() then
 		local radius = self:GetAOERadius()
 		local base_damage = ability:GetSpecialValueFor("base_damage") * caster:GetLevel()
 		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
-		local damage = base_damage + caster:GetIntellect(false) * (intelligence_damage * caster:GetLevel())
+		local damage = base_damage + caster:GetIntellect(true) * (intelligence_damage * caster:GetLevel())
         --print(damage .. " damage")
 		local sound_name = "Hero_Zuus.GodsWrath.Target"
 		local units = FindUnitsInRadius(
@@ -142,7 +142,7 @@ if IsServer() then
 		if ability == nil then return end
 		local base_damage = ability:GetSpecialValueFor("damage_per_level") * caster:GetLevel()
 		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
-		self.damage = math.ceil((base_damage + caster:GetIntellect(false) * (intelligence_damage * caster:GetLevel())) * 0.35)
+		self.damage = math.ceil((base_damage + caster:GetIntellect(true) * (intelligence_damage * caster:GetLevel())) * 0.35)
 		self.radius = ability:GetSpecialValueFor("radius_per_level") * caster:GetLevel()
         --print(self.damage .. " created damage")
 		local visionRange = ability:GetAOERadius()

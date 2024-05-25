@@ -63,7 +63,7 @@ if IsServer() then
 					end	
 				end					                                
 			end
-			local stats_parent = parent:GetIntellect(false)
+			local stats_parent = parent:GetIntellect(true)
 			if parent:HasModifier("modifier_item_giants_ring") then
 				stats_parent = parent:GetStrength()
 				if stats_parent > 50000 then

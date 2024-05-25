@@ -131,7 +131,7 @@ function modifier_item:GetModifierProcAttack_Feedback(keys)
             local stats_mult = ability:GetSpecialValueFor("stats_mult_dmg")
             local attack_dmg_mult = ability:GetSpecialValueFor("chain_damage") / 100
             local ss_spell_amp = ability:GetSpecialValueFor("ss_spell_amp") / 100        
-            local all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect(false)) * stats_mult
+            local all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect(true)) * stats_mult
             local caster_attack = caster:GetAverageTrueAttackDamage(target) * attack_dmg_mult
             local damage = caster_attack + all_stats            
             local particleName = "particles/econ/events/ti8/maelstorm_ti8.vpcf" --"particles/items_fx/chain_lightning.vpcf"
@@ -280,7 +280,7 @@ function modifier_item2:GetModifierProcAttack_Feedback(keys)
             end              
             local stats_mult = ability:GetSpecialValueFor("stats_mult_dmg") * ( charges / 20)
             local attack_dmg_mult = (ability:GetSpecialValueFor("chain_damage") / 100) + (charges / 2000)      
-            local all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect(false)) * stats_mult
+            local all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect(true)) * stats_mult
             local caster_attack = keys.original_damage * attack_dmg_mult
             local damage = 0
             if all_stats > caster_attack then
@@ -393,7 +393,7 @@ if IsServer() then
         local caster_attack = caster:GetAverageTrueAttackDamage(caster) * attack_dmg_mult
         local damage = caster_attack
         if caster:IsHero() then
-            all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect(false)) * stats_mult
+            all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect(true)) * stats_mult
             damage = caster_attack + all_stats
         end   
         local damage_per_tick = damage 
@@ -472,7 +472,7 @@ if IsServer() then
         local caster_attack = caster:GetAverageTrueAttackDamage(caster) * attack_dmg_mult
         local damage = 0
         if caster:IsHero() then
-            all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect(false)) * stats_mult
+            all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect(true)) * stats_mult
         end        
         if all_stats > caster_attack then
             damage = all_stats

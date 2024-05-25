@@ -127,7 +127,7 @@ function modifier_item_radiance_armor_aura_blue_edible:OnIntervalThink()
 		if not caster:IsHero() then return end
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
-		local int = caster:GetIntellect(false)
+		local int = caster:GetIntellect(true)
 		local int_mult = 15
 		if int > 14000 then 
 			int_mult = 19.0

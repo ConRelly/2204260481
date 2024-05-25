@@ -114,7 +114,7 @@ if IsServer() then
             damage_amount = damage_scepter
         end
         
-        local damage_intelligence = caster:GetIntellect(false) * (damage_intelligence_per / 100)
+        local damage_intelligence = caster:GetIntellect(true) * (damage_intelligence_per / 100)
         damage_amount = damage_amount + damage_intelligence
     
         local dmg_table_target = {

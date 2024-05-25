@@ -36,7 +36,7 @@ function modifier_dark_willow_bedlam_lua_attack:OnCreated( kv )
 	if not IsServer() then return end
 	local ability = self:GetAbility()
 	local int_mult = GetTalentSpecialValueFor(ability, "int_multiplier")
-	local damage = self:GetAbility():GetSpecialValueFor( "attack_damage" ) + (self:GetCaster():GetIntellect(false) * int_mult)	
+	local damage = self:GetAbility():GetSpecialValueFor( "attack_damage" ) + (self:GetCaster():GetIntellect(true) * int_mult)	
 	self.interval = self:GetAbility():GetSpecialValueFor( "attack_interval" )
 	self.radius = self:GetAbility():GetSpecialValueFor( "attack_radius" )
 
@@ -73,7 +73,7 @@ function modifier_dark_willow_bedlam_lua_attack:OnRefresh( kv )
 	if not IsServer() then return end
 	local ability = self:GetAbility()
 	local int_mult = GetTalentSpecialValueFor(ability, "int_multiplier")
-	local damage = self:GetAbility():GetSpecialValueFor( "attack_damage" ) + (self:GetCaster():GetIntellect(false) * int_mult)
+	local damage = self:GetAbility():GetSpecialValueFor( "attack_damage" ) + (self:GetCaster():GetIntellect(true) * int_mult)
 	self.interval = self:GetAbility():GetSpecialValueFor( "attack_interval" )
 	self.radius = self:GetAbility():GetSpecialValueFor( "attack_radius" )
 

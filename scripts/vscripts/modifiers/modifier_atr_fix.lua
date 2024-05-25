@@ -63,7 +63,7 @@ function modifier_atr_fix:OnIntervalThink()
         if self.parent then
             -- Get the hero entity
             -- Calculate the base magical resistance value to counteract the int bonus
-            local int = self.parent:GetIntellect(false)
+            local int = self.parent:GetIntellect(true)
             local baseValue = (-0.1 * int) + 30
             -- Set the hero's base magical resistance value
             self.parent:SetBaseMagicalResistanceValue(baseValue)
@@ -71,14 +71,14 @@ function modifier_atr_fix:OnIntervalThink()
     end
 end    
 --[[function modifier_atr_fix:GetModifierConstantManaRegen()
-    local parent_int = self.parent:GetIntellect(false)
+    local parent_int = self.parent:GetIntellect(true)
     local m_regen = parent_int * 0.0375
     return m_regen
 end]]
 
 function modifier_atr_fix:GetModifierSpellAmplify_Percentage()
     if self.parent then
-        local parent_int = self.parent:GetIntellect(false)
+        local parent_int = self.parent:GetIntellect(true)
         local str_amp = 0
         local parent_str = self.parent:GetStrength()
         local diff = parent_str - parent_int
@@ -95,7 +95,7 @@ end
 
 function modifier_atr_fix:GetCustomStackingCDR()
     if self.parent then
-        local parent_int = self.parent:GetIntellect(false)
+        local parent_int = self.parent:GetIntellect(true)
         local cdr = parent_int * 0.0025
         if cdr > 50 then
             cdr = 50

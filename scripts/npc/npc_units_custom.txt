@@ -14506,7 +14506,7 @@
 		"Ability1"				  "custom_riki_blink_strike"
 		"Ability2"				  "boss_void_spirit_dissimilate"
 		"Ability3"				  "aghsfort_void_spirit_boss_resonant_pulse"
-		"Ability4"				  "aghanim_empty_spell1"
+		"Ability4"				  "generic_hidden"// "aghanim_empty_spell1"
 		"Ability5"				  "generic_hidden"
 		"Ability6"				  "aghsfort_void_spirit_boss_astral_step"
 		"Ability7"				  "jotaro_absolute_defense_2"
@@ -14518,7 +14518,7 @@
 		"Ability13"				 "special_bonus_unique_void_spirit_8" // astral step crit
 		"Ability14"				 "special_bonus_unique_void_spirit_3" // dissimilate stuns
 		"Ability15"				  "aghanim_spell_lock"
-		//"Ability16"				  "aghanim_empty_spell1"
+		"Ability16"				  "aghanim_empty_spell1"
 		"Ability17"				  "aghanim_empty_spell2"
 		"Ability18"				  "aghanim_empty_spell3"
 		"Ability19"				  "aghanim_empty_spell4"

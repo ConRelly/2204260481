@@ -26,7 +26,7 @@ function on_hit(keys)
 	local caster = keys.caster
 	local target = keys.target
     local ability = keys.ability
-    local stats = caster:GetIntellect(false) + caster:GetAgility() + caster:GetStrength()
+    local stats = caster:GetIntellect(true) + caster:GetAgility() + caster:GetStrength()
     local bonus = math.ceil(ability:GetSpecialValueFor("stats_bonus") * stats)
     target:EmitSound("Hero_Grimstroke.InkCreature.Attach")
 

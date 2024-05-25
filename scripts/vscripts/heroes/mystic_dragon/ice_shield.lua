@@ -29,7 +29,7 @@ function AphoticShield( event )
 --	target:Purge( RemovePositiveBuffs, RemoveDebuffs, BuffsCreatedThisFrameOnly, RemoveStuns, RemoveExceptions)
 
 	-- Reset the shield
-	target.AphoticShieldRemaining = max_damage_absorb + event.caster:GetIntellect(false)*damage_per_int
+	target.AphoticShieldRemaining = max_damage_absorb + event.caster:GetIntellect(true)*damage_per_int
 
 	--[[ Particle. Need to wait one frame for the older particle to be destroyed
 	Timers:CreateTimer(0.01, function() 

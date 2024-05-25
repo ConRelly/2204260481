@@ -41,7 +41,7 @@ function item_mjz_dagon_v2:OnSpellStart()
 
 	local damage_stats = 0
 	if caster:IsRealHero() then
-		damage_stats = caster:GetIntellect(false) * 10
+		damage_stats = caster:GetIntellect(true) * 10
 	end
 
 	local use_count = 0

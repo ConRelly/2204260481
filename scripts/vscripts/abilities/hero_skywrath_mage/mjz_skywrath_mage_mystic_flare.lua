@@ -108,7 +108,7 @@ function modifier_mjz_skywrath_mage_mystic_flare_thinker:OnCreated( kv )
 	local interval = ability:GetSpecialValueFor( "damage_interval" )
 	local base_damage = GetTalentSpecialValueFor(ability, "base_damage" )
 	local int_multiplier = GetTalentSpecialValueFor(ability, "int_multiplier" )
-	self.damage = base_damage + caster:GetIntellect(false) * int_multiplier
+	self.damage = base_damage + caster:GetIntellect(true) * int_multiplier
 	self.radius = ability:GetSpecialValueFor( "radius" )
 	self.damageTable = {
 		-- victim = target,

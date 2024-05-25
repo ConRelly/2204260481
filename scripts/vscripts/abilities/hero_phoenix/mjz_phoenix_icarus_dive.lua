@@ -118,7 +118,7 @@ if IsServer() then
         elseif pa == AGILITY  then
             PrimaryStatValue = unit:GetAgility()
         elseif pa == INTELLIGENCE  then
-            PrimaryStatValue = unit:GetIntellect(false)
+            PrimaryStatValue = unit:GetIntellect(true)
         end
         return PrimaryStatValue
     end	

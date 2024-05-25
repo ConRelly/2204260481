@@ -98,7 +98,7 @@ function modifier_class:_Init()
 		elseif pa == 2 then
 			self.int_bonus = bonus
 		else
-			local bonus1 = math.floor(unit:GetIntellect(false) * (self.primary_attribute_per / 100))
+			local bonus1 = math.floor(unit:GetIntellect(true) * (self.primary_attribute_per / 100))
 			local bonus2 = math.floor(unit:GetAgility() * (self.primary_attribute_per / 100))
 			local bonus3 = math.floor(unit:GetStrength() * (self.primary_attribute_per / 100))			
 			self.int_bonus = bonus1 
@@ -121,7 +121,7 @@ function modifier_class:_GetPrimaryStatValue()
 	elseif pa == 1 then
 		PrimaryStatValue = unit:GetAgility()
 	elseif pa == 2 then
-		PrimaryStatValue = unit:GetIntellect(false)
+		PrimaryStatValue = unit:GetIntellect(true)
 	else
 		PrimaryStatValue = unit:GetAgility()
 	end
