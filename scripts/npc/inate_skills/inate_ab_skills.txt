@@ -76,11 +76,12 @@
 		{
 			"max_stacks"				"100"
 			"stack_gain_time"			"1.0"
-			"agi_bonus_pct_per_stack"	"300"
+			"agi_bonus_pct_per_stack"	"2"
 			"movement_speed_pct_per_stack"		"2"
 			"linger_duration"			"3"
 		}
 	}
+
 
 	//=================================================================================================================
 	// Ability: Leshrac Innate: AoE
@@ -117,7 +118,7 @@
 		"AbilityValues"
 		{
 			"duration"					"40"
-			"spell_amp"					"200"
+			"spell_amp"					"350"
 			"debuff_amp"				"40"
 		}
 	}
@@ -235,7 +236,32 @@
 		}
 	}
 
-
+	//=================================================================================================================
+	// Ability: Bloodseeker's Thirst
+	//=================================================================================================================
+	"bloodseeker_sanguivore"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityCastPoint"				"0.3"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"base_heal"							"100"
+			"heal_hp_pct_per_level"				"40"
+			"creep_lifesteal_reduction_pct"		"40"
+			"half_bonus_aoe"		
+			{
+				"value"		"1400"
+				"affected_by_aoe_increase"	"1"
+			}
+		}
+	}
 
 
 }

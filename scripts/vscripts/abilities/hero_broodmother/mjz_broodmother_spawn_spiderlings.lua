@@ -84,7 +84,7 @@ function mjz_broodmother_spawn_spiderlings:SpawnSpiderlings(hTarget)
 
             spider:RemoveAbility("broodmother_poison_sting")
             spider:RemoveAbility("broodmother_spawn_spiderite")
-            --local ability_trist = "bloodseeker_thirst"
+            --local ability_trist = "custom_thrist_like"
             --local ability_trist = "luna_lunar_blessing"   --testing skills
             --local searing = spider:AddAbility(ability_trist)
             --searing:UpgradeAbility(true)

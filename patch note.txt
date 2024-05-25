@@ -3084,6 +3084,12 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* FIXED crash on units/bosses with thrist ability(replaced with an custom one for mobility).
+* Added new talent for Juggernaut(ultimate cast rage was deleted with new patch)
+
+
+
+
 
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.

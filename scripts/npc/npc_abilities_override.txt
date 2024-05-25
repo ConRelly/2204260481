@@ -17301,32 +17301,7 @@
 	  }
 	}
   }
-	"juggernaut_omni_slash"
-	{
-		"LevelsBetweenUpgrades"			 "12"
-		"AbilityCooldown"					"60.0 50.0 35.0"
-		"AbilityManaCost"					"150"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"attack_rate_multiplier"	"1.8 2.0 2.8"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"200 990 4900"
-				"CalculateSpellDamageTooltip"	"0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"4 4.5 6"
-				"LinkedSpecialBonus"		"special_bonus_unique_juggernaut_2"
-			}
-		}
-	}
+
 
 	//=================================================================================================================
 	// Ability: Juggernaut Omni Slash
@@ -17380,11 +17355,14 @@
 				"value"					"4 4.5 6"
 				"special_bonus_unique_juggernaut_omnislash_duration"			"+3"
 			}
-			"omni_slash_radius"			"425"
+			"omni_slash_radius"			
+			{
+				"affected_by_aoe_increase"	"1"
+				"value"		"425"
+			}
 			"AbilityCastRange"				
 			{
-				"value"					"350"
-				"special_bonus_unique_juggernaut_omnislash_cast_range"				"+2000"
+				"value"					"1000"
 			}
 			"dispel"
 			{
@@ -17392,6 +17370,9 @@
 			}
 		}
 	}
+
+
+
 
 	"sniper_headshot"
 	{

@@ -51,7 +51,7 @@ function HolyPersuasion(keys)
 	local kill_me_master = target:AddAbility("kill_me_master")
 	kill_me_master:SetLevel(1)
 
-	local searing = target:AddAbility("bloodseeker_thirst")
+	local searing = target:AddAbility("custom_thrist_like")
 
 	local newAbilityName = GetRandomAbilityName(hero)
 	local link_a = target:AddAbility(newAbilityName)

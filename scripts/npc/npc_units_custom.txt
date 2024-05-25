@@ -6773,7 +6773,7 @@
 		"Ability1"				  "elder_titan_echo_stomp_spirit"		 // Ability 1
 		"Ability2"				  "elder_titan_return_spirit"		 // Ability 2
 		"Ability3"				  "elder_titan_natural_order_spirit"		  // Ability 3
-		//"Ability4"				  "bloodseeker_thirst"
+		//"Ability4"				  "custom_thrist_like"
 
 		// Armor
 		//----------------------------------------------------------------
@@ -7140,7 +7140,7 @@
 }
 "npc_dota_creep_goodguys_melee"
 {
-	"Ability2"				  "bloodseeker_thirst"
+	"Ability2"				  "custom_thrist_like"
 	"Ability3"				  "summon_defense"
 	"IsSummoned"				"1"
 	"ModelScale" 					"0.93"
@@ -10105,7 +10105,7 @@
 }	
 "npc_dota_wraith_king_skeleton_warrior"
 {
-	"Ability4"				  "bloodseeker_thirst"
+	"Ability4"				  "custom_thrist_like"
 	"Ability3"				  "summon_defense"
 	"AttackDamageMin"			"2800"			// Damage range min.
 	"AttackDamageMax"			"4600"			// Damage range max.
@@ -10123,7 +10123,7 @@
 }
 "npc_dota_lone_druid_bear1"
 {
-	"Ability5"				  "bloodseeker_thirst"
+	"Ability5"				  "custom_thrist_like"
 	"Ability6"				  "lone_druid_spirit_bear_entangle2"
 	"ConsideredHero"			"1"
 	"AttackDamageMin"			"125"
@@ -10136,7 +10136,7 @@
 }
 "npc_dota_lone_druid_bear2"
 {
-	"Ability5"				  "bloodseeker_thirst"
+	"Ability5"				  "custom_thrist_like"
 	"Ability6"				  "lone_druid_spirit_bear_entangle2"
 	"ConsideredHero"			"1"
 	"AttackDamageMin"			"145"
@@ -10150,7 +10150,7 @@
 }
 "npc_dota_lone_druid_bear3"
 {
-	"Ability5"				  "bloodseeker_thirst"
+	"Ability5"				  "custom_thrist_like"
 	"Ability6"				  "lone_druid_spirit_bear_entangle2"
 	"ConsideredHero"			"1"
 	"AttackDamageMin"			"265"
@@ -10164,7 +10164,7 @@
 }
 "npc_dota_lone_druid_bear4"
 {
-	"Ability5"				  "bloodseeker_thirst"
+	"Ability5"				  "custom_thrist_like"
 	"Ability6"				  "lone_druid_spirit_bear_entangle2"
 	"Ability7"				  "owner_buff"
 	"Ability8"                "mjz_bristleback_quill_spray_autocastp"
@@ -10274,7 +10274,7 @@
 {
 
 	"Ability2"				  "summon_defense"
-	"Ability5"				  "bloodseeker_thirst"
+	"Ability5"				  "custom_thrist_like"
 	"ArmorPhysical"				"25"			// Physical protection.
 	"MagicalResistance"				"25"
 	"AttackRate"				"0.8"	   // Speed of attack.
@@ -10303,7 +10303,7 @@
 	"Ability3"				  ""		  // Ability 3.
 	"Ability4"				  ""		  // Ability 4.
 	"Ability5"				  ""		  // Ability 5.
-	//"Ability6"				  "bloodseeker_thirst"
+	//"Ability6"				  "custom_thrist_like"
 	"Ability7"				  "owner_buff" 
 	"Ability16"					"creep_siege"
 	// Armor
@@ -10386,7 +10386,7 @@
 	//"Ability5"				  "generic_hidden"
 	"Ability6"				  "brewmaster_primal_split_cancel"			// Ability 6	
 	"Ability7"				  "summon_defense"
-	"Ability8"				  "bloodseeker_thirst"
+	"Ability8"				  "custom_thrist_like"
 	"Ability16"					"creep_siege"
 
 	// Armor
@@ -10448,7 +10448,7 @@
 {
 	"Ability4"				  "mjz_brewmaster_drunken_brawler"
 	"Ability7"				  "summon_defense"
-	"Ability8"				  "bloodseeker_thirst" 
+	"Ability8"				  "custom_thrist_like" 
 	"ArmorPhysical"			 "125"
 	"MagicalResistance"		 "70"
 	"AttackDamageMin"		   "850"
@@ -10476,7 +10476,7 @@
 {
 	//"Ability4"				  "brewmaster_drunken_brawler_custom"
 	"Ability7"				  "summon_defense"  
-	"Ability8"				  "bloodseeker_thirst" 
+	"Ability8"				  "custom_thrist_like" 
 	"Ability16"					"creep_siege"	
 	"AttackRate"				"0.7"
 	"MagicalResistance"				"50"
@@ -10502,7 +10502,7 @@
 {
 	"Ability4"				  "mjz_brewmaster_drunken_brawler"
 	"Ability7"				  "summon_defense"
-	"Ability8"				  "bloodseeker_thirst" 										
+	"Ability8"				  "custom_thrist_like" 										
 	"AttackRate"				"0.9"
 	"AttackRange"			   "2550"	
 	"MagicalResistance"			 "15"
@@ -10564,7 +10564,7 @@
 "npc_dota_warlock_golem"
 {
 	"ConsideredHero"			"0"
-	"Ability1"                "bloodseeker_thirst"
+	"Ability1"                "custom_thrist_like"
 	"Ability2"                "generic_hidden"	
 	"Ability4"				  "summon_defense"
 	//"Ability8"				  ""
@@ -10596,7 +10596,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"warlock_imp_explode"			// Ability 1
-		"Ability2"                  "bloodseeker_thirst"
+		"Ability2"                  "custom_thrist_like"
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 
@@ -10669,7 +10669,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"warlock_imp_explode"			// Ability 1
-		"Ability2"                  "bloodseeker_thirst"
+		"Ability2"                  "custom_thrist_like"
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 
@@ -11764,7 +11764,7 @@
 	//"ProjectileModel"			"particles/units/heroes/hero_witchdoctor/witchdoctor_ward_attack.vpcf" // Particle system model for projectile.
 	"ProjectileSpeed"			"1000"		// Speed of projectile.
 	"Ability1"					"courier_invincibility"
-	"Ability2"				    "bloodseeker_thirst"
+	"Ability2"				    "custom_thrist_like"
 	"Ability3"				  	"mjz_bristleback_quill_spray_autocastp"
 	"ArmorPhysical"				"10"		// Physical protection.
 	"MagicalResistance"				"100"			// Magical protection.
@@ -13641,7 +13641,7 @@
 	"Ability5"				  "custom_omni_slash_jugg"
 	"Ability6"				  "huskar_berserkers_blood"
 	"Ability7"				  "phantom_assassin_blur"
-	"Ability8"				  "bloodseeker_thirst"
+	"Ability8"				  "custom_thrist_like"
 	//"Ability9"				  "siltbreaker_kraken_shell8"
 	"Ability10"				 "leesin_dragons_rage"
 
@@ -13769,7 +13769,7 @@
 	"Ability5"				  "custom_omni_slash_jugg"
 	"Ability6"				  "huskar_berserkers_blood"
 	"Ability7"				  "phantom_assassin_blur"
-	"Ability8"				  "bloodseeker_thirst"
+	"Ability8"				  "custom_thrist_like"
 	//"Ability9"				  "siltbreaker_kraken_shell8"
 	"Ability10"				 "leesin_dragons_rage"
 	"Ability11"				  "zoom_charge_of_darkness"
@@ -14057,7 +14057,7 @@
 		"Ability17"				 "aghanim_empty_spell2"
 		"Ability18"				 "aghanim_empty_spell3"
 		"Ability19"				 "aghanim_empty_spell4"
-		"Ability20"				 "bloodseeker_thirst_3"
+		"Ability20"				 "custom_thrist_like"
 		"Ability21"				 "draks_unholy_strength"
 		"Ability22"				 "special_bonus_spell_block_18"
 
@@ -14522,7 +14522,7 @@
 		"Ability17"				  "aghanim_empty_spell2"
 		"Ability18"				  "aghanim_empty_spell3"
 		"Ability19"				  "aghanim_empty_spell4"
-		"Ability20"				  "bloodseeker_thirst_3"
+		"Ability20"				  "custom_thrist_like" 
 		//"Ability21"				  "aghanim_empty_spell6"
 		"Ability21"				 "creep_siege"
 		// Armor
@@ -14735,7 +14735,7 @@
 		"Ability17"				  "aghanim_empty_spell2"
 		"Ability18"				  "aghanim_empty_spell3"
 		"Ability19"				  "aghanim_empty_spell4"
-		"Ability20"				  "bloodseeker_thirst_3"
+		"Ability20"				  "custom_thrist_like" //cr
 		//"Ability21"				  "legion_commander_moment_of_courage"
 		"Ability21"				 "creep_siege"
 		// Armor
@@ -15224,17 +15224,18 @@
 	"Ability5"				  "darkrider_heartbeat"
 	"Ability6"				  "darkrider_time_aura"
 	"Ability7"				  "custom_vitality_rend_2"
-	"Ability8"				  "bloodseeker_thirst_2"
+	//"Ability8"				     "bloodseeker_thirst_2" //-- new patch crash
+	"Ability8"                "custom_thrist_like"
 	"Ability9"				  "flash_backtrack"
-	"Ability10"				 "jotaro_absolute_defense"
-	"Ability11"				 "ability_absolute_no_cc"
-	"Ability12"				 "siltbreaker_kraken_shell8"
+	"Ability10"				     "jotaro_absolute_defense"
+	"Ability11"				     "ability_absolute_no_cc"
+	"Ability12"				     "siltbreaker_kraken_shell8"
 	"Ability13"				 "mjz_chaos_knight_chaos_strike_2"
 	"Ability14"				 "aghanim_shard_attack"
-	//"Ability15"				 "aghanim_laser"
-	"Ability16"				 "draks_unholy_strength"
-	"Ability17"				 "custom_riki_blink_strike"
-	"Ability18"				 "creep_siege"	
+	//"Ability15"				 "aghanim_laser" //--removed crash
+	"Ability16"				     "draks_unholy_strength"
+	"Ability17"				     "custom_riki_blink_strike"
+	"Ability18"				     "creep_siege"	
 	"ArmorPhysical"			 "420"		 // Physical protection.
 	"MagicalResistance"		 "96"
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -15382,7 +15383,7 @@
 	"Ability5"				  "darkrider_heartbeat"
 	"Ability6"				  "darkrider_time_aura"
 	"Ability7"				  "weaver_time_lapse_2"
-	"Ability8"				  "bloodseeker_thirst_2"
+	"Ability8"				  "custom_thrist_like" 
 	"Ability9"				  "flash_backtrack"
 	"Ability10"				 "jotaro_absolute_defense"
 	"Ability11"				 "ability_absolute_no_cc"
@@ -15540,7 +15541,7 @@
 	"Ability5"				  "reverse_polarity"
 	"Ability6"				  "darkrider_time_aura"
 	"Ability7"				  "custom_vitality_rend_2"
-	"Ability8"				  "bloodseeker_thirst_2"
+	"Ability8"				  "custom_thrist_like" //cr
 	"Ability9"				  "flash_backtrack"
 	"Ability10"				 "jotaro_absolute_defense"
 	"Ability11"				 "ability_absolute_no_cc"
@@ -16563,7 +16564,7 @@
 	"Ability5"			      "katana_strike" //c4
 	"Ability6"				  "darkrider_time_aura"
 	"Ability7"				  "custom_vitality_rend_2"
-	"Ability8"				  "bloodseeker_thirst_2"
+	"Ability8"				  "custom_thrist_like" //cr
 	"Ability9"				  "flash_backtrack"
 	"Ability10"				 "jotaro_absolute_defense"
 	"Ability11"				 "ability_absolute_no_cc"

@@ -10341,6 +10341,7 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 		"DOTA_Tooltip_modifier_cold_fall_burn"										"Cold Burn"
 		"dota_tooltip_ability_bloodseeker_thirst_2"								   "Heavy Thrist"
 		"dota_tooltip_ability_bloodseeker_thirst_3"								   "Thrist 2"
+		"dota_tooltip_ability_custom_thrist_like"								   "MS Limit Unlocked"
 		"DOTA_Tooltip_modifier_mjz_bristleback_quill_spray_autocast6"				 "Higher Difficulty"
 		"DOTA_Tooltip_modifier_mjz_bristleback_quill_spray_autocast6_Description"	 "Gets extra 2-6 skills(has a special Ai to cast those random skills)
 		units under lvl 50 they get the skills with random lvls between 1-6 and for units with lvl 50+ skills with random lvls between 4-7, and ~75% chance to get aghanim and aghanim shard buff"
