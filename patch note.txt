@@ -3088,6 +3088,11 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Added new talent for Juggernaut(ultimate cast rage was deleted with new patch)
 
 
+* Fixed marci extraordinary dmg boost, added an talent (was missing one) and fixed having 2 similar skills.
+* Gyro flak cannon now has again 0.15 attack rate.
+
+
+
 
 
 
