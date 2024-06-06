@@ -3094,6 +3094,23 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Added new talent for Nevermore (True Strike) and Feast of Souls skill.
+* Fixed Monkey Cloud not giving Shard effect (ms no limit).
+* Fixed BackTrack not on skill bar.
+* Fixed Sniper missing Sharpell talent and buffed from 3 to 5. Replaced 400 attack talent with 25% cdr.
+* Fixed missing Arc Warden talent (added an extra 100 As to this talent)
+* Fixed missing Hoodwink Sharpshooter recharge talent.
+* Added Burning Army for Clinkz (affected by Strafe).
+* Increased item own limit to 999 (Dota could override this number)
+* Undying Ultimate will no longer spawn zombies on attack (disabled facet)
+* Fixed game not saving data and missing end screen
+* Fixed Kardel(Sniper 2nd form) not getting bullet stacks until SS.
+* Autocast item will ignore Remove Skill item (in case you place it in the autocast slot by mistake).
+* Reduced challenge boss acquire target range from ~8k to ~5k
+
+
+
+
 
 
 ////////Self Note ////////////

@@ -469,7 +469,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"775"
+				"value"				"750"
 				"ad_linked_abilities"			"dragon_knight_elder_dragon_form"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
@@ -2299,7 +2299,7 @@
 
 	"alchemist_goblins_greed"
 	{
-		"LevelsBetweenUpgrades"        "5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
 			"01"
@@ -2725,7 +2725,7 @@
 			"attack_speed_bonus"		
 			{
 				"value" 				"100 120 140 160 180 200 220"
-				"special_bonus_unique_arc_warden_3" 		"+125"
+				"special_bonus_unique_arc_warden_3" 		"+225"
 			}
 			"evasion_chance"			"100"
 			"shard_magic_resist"
@@ -3595,11 +3595,15 @@
 			}
 		}
 	}
+
+
+	//=================================================================================================================
+	// Bounty Hunter: Shuriken Toss
+	//=================================================================================================================
 	"bounty_hunter_shuriken_toss"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"5285"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_BountyHunter.Shuriken"
@@ -3616,54 +3620,61 @@
 		"AbilityCastRange"				"1000"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"8"
-		"AbilityManaCost"				"120 125 130 135"
+		"AbilityManaCost"				"135"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityModifierSupportValue"	"0.1"	// just a mini stun
 
-		//"HasScepterUpgrade"				"1"
+		"HasScepterUpgrade"				"1"
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"bonus_damage"			
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"250 625 2200 4875"
-				"LinkedSpecialBonus"	"special_bonus_unique_bounty_hunter_2"
+				"value"					"250 625 2200 4875"
+				"special_bonus_unique_bounty_hunter_2"	"+24000"
 			}
-			"02"
+			"speed"					"1000 2000 2200 2500"
+			"bounce_aoe"			
 			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1000 2000 2200 2500"
+				"value"		"7200"
 			}
-			"03"
+			"slow_duration"			
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bounce_aoe"			"7200"
+				"value"				"0.35"
+				"special_bonus_unique_bounty_hunter_5"		"+0.65"
 			}
-			"04"
+			"scepter_cast_range"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"ministun"			"0.1"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"scepter_cast_range"			"6500"
+
+				"value"				"6700"
 				"RequiresScepter"	"1"
 			}
-			"06"
+			"scepter_cooldown"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"scepter_cooldown"			"6"
+				"value"				"6"
 				"RequiresScepter"	"1"
 			}
+
+			"passthrough_damage"
+			{				
+				"special_bonus_facet_bounty_hunter_shuriken" "1"
+			}
+			"passthrough_width"
+			{
+				"special_bonus_facet_bounty_hunter_shuriken" "375"
+				"affected_by_aoe_increase"	"1"
+			}
+			
+			"cast_range"			"1000"
+			"slow"					"100"		
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
+
 	"bounty_hunter_jinada"
 	{
 		// General
@@ -4647,9 +4658,18 @@
 			"wave_count"		"10 15 20 35"
 			"range"				"1250 1800 1950 2400"				
 			"damage_pct"		"100 180 250 320"
+			"projectile_width"		
+			{
+				"value"		"250"
+				"affected_by_aoe_increase"	"1"
+			}
+			"archers_use_barrage"		"0"			
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
+
+
+
 
 
 
@@ -4723,10 +4743,121 @@
 			
 		}
 	}
+
+	//=================================================================================================================
+	// Ability: Clinkz Burning Army
+	//=================================================================================================================
 	"clinkz_burning_army"
 	{
-		"IsOnCastBar"		   "1"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"MaxLevel"						"1"
+		"FightRecapLevel"				"1"
+		"IsGrantedByScepter"			"0"		
+		"AbilitySound"					"Hero_Clinkz.DeathPact"		
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2000"
+		"AbilityCastPoint"				"0"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"85"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"150"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"range"			"2000"
+			"count"			"5"
+			"spawn_interval"			"0.15"
+		}
+	}	
+
+
+	//=================================================================================================================
+	// Clinkz: Strafe
+	//=================================================================================================================
+	"clinkz_strafe"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_NONE"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Ability.Focusfire"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0"
+		"LevelsBetweenUpgrades"         "6"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+	
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60 70 80 90"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"attack_speed_bonus"			
+			{
+				"value"									"100 150 250 320"
+				"special_bonus_unique_clinkz_7"			"+100"
+			}
+	
+			"duration"						"12.0"
+			"attack_range_bonus"			
+			{
+				"value"												"400"
+				"special_bonus_facet_clinkz_suppressive_fire"			"+200"
+			}
+			"AbilityCooldown"				
+			{
+				"value"								"30"
+				"special_bonus_unique_clinkz_4"		"-8"
+
+			}
+			"strafe_skeleton_radius"					
+			{
+				"value"		"7200"
+				"affected_by_aoe_increase"	"1"
+			}
+			"archer_attack_speed_pct"					"60"
+			"debuff_duration"					
+			{
+				"value"							"0"
+				"special_bonus_facet_clinkz_suppressive_fire"			"=2.0"
+			}
+			"blind_pct"
+			{
+				"value"							"0"
+				"special_bonus_facet_clinkz_suppressive_fire"			"=10"
+			}
+
+			
+		}
 	}
+
+
 	"crystal_maiden_freezing_field"
 	{
 		"AbilitySpecial"
@@ -5377,6 +5508,8 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 
+
+
 	//=================================================================================================================
 	// Dragon Knight: Elder Dragon Form
 	//=================================================================================================================
@@ -5384,17 +5517,14 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"5229"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES_ENEMIES_NO"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"LevelsBetweenUpgrades"     	"15"
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_DragonKnight.ElderDragonForm"
         "HasScepterUpgrade"             "1"
-
+        "LevelsBetweenUpgrades"     	"15"
 		"AbilityDraftUltShardAbility"		"dragon_knight_fireball"
 
 		// Casting
@@ -5417,46 +5547,68 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"duration"					"60"
-			"bonus_movement_speed"		"65 95 195 520"
-			"bonus_attack_range"		
-			{
-				"value"			"750 750 750 950"
-				"LinkedSpecialBonus"		"special_bonus_unique_dragon_knight_7"
-			}
-			"bonus_attack_damage"		"0 12000 42000 147500"
-			"corrosive_breath_damage"	"1900 9900 49500 665000"
-			"corrosive_breath_duration"	"5.0"
-			"splash_radius"				
-			{
-				"value"			"550"
-				"affected_by_aoe_increase"	"1"
-			}
-			"splash_damage_percent"		
-			{
-				"value"			"75 100 125 225"
-				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight_6"
-			}
-			"frost_bonus_movement_speed"	
-			{
-				"value"		"-40 -40 -40 -60"
-				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight_5"
-			}
-			"frost_bonus_attack_speed"		
-			{
-				"value"				"-20 -20 -20 -110"
-				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight_5"
-			}
-			"frost_duration"				"3.0"
-			"frost_aoe"					
-			{
-				"value"		"550"
-				"affected_by_aoe_increase"	"1"
-			}
-			"magic_resistance"			"0 0 0 80"
-			"model_scale"				"0 0 0 30"		
+				"duration"
+				{
+					"value"						"60"
+				}
+				"bonus_movement_speed"		"65 95 195 520"
+				"bonus_attack_range"		
+				{
+					"value"			"750 750 750 950"
+					"special_bonus_unique_dragon_knight_7"		"+750"
+				}
+				"bonus_attack_damage"		"0 12000 42000 147500"
+				"magic_resistance"		
+				{
+					"value"					"0 0 0 80"
+				}
+				"model_scale"			
+				{
+					"value"					"10 15 20"
+					"special_bonus_scepter"		"+10"
+				}	
+				"is_green_dragon"
+				{
+					"value"							"0"
+					"special_bonus_facet_dragon_knight_corrosive_dragon"		"+1"
+				}
+				"is_red_dragon"
+				{
+					"value"							"0"
+					"special_bonus_facet_dragon_knight_fire_dragon"		"+1"
+				}
+				"is_blue_dragon"
+				{
+					"value"							"0"
+					"special_bonus_facet_dragon_knight_frost_dragon"		"+1"
+				}
+				"ranged_splash_radius"				
+				{
+					"value"							"550"
+					"affected_by_aoe_increase"		"1"
+				}
+				"frost_breath_effect_bonus"
+				{
+					"value"				"0 0 0 0"
+					"special_bonus_facet_dragon_knight_frost_dragon"			"=30 =40 =50 =120"
+					"RequiresFacet"			"dragon_knight_frost_dragon"
+				}
+				"corrosive_breath_effect_bonus"
+				{
+					"value"				"0 0 0 0"
+					"special_bonus_facet_dragon_knight_corrosive_dragon"			"=30 =40 =50 =120"
+					"RequiresFacet"			"dragon_knight_corrosive_dragon"
+				}
+				"fire_breath_effect_bonus"
+				{
+					"value"				"0 0 0 0"
+					"special_bonus_facet_dragon_knight_fire_dragon"			"=20 =30 =40 =120"
+					"RequiresFacet"			"dragon_knight_fire_dragon"
+				}				
+
 		}
 	}
+
 
 
 	"earthshaker_fissure"
@@ -6223,12 +6375,15 @@
 	}
 	"faceless_void_backtrack"
 	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"                      "4"
+		"LevelsBetweenUpgrades"         "5"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"dodge_chance_pct"		"20 35 40 50"
+				"dodge_chance_pct"		"20 30 40 50"
 			}
 		}
 	}
@@ -8540,6 +8695,100 @@
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Ability: Nevermore Necromastery
+	//=================================================================================================================
+	"nevermore_necromastery"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+        "HasScepterUpgrade"           "1"
+		"MaxLevel"					"4"
+		"DependentOnAbility"			"nevermore_requiem"
+		"Innate"					"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+				"necromastery_damage_per_soul"	
+				{
+					"value"					"4 6 8 10"
+					"CalculateSpellDamageTooltip"	"0"
+					"special_bonus_unique_nevermore_1"			"+20"
+				}
+				"necromastery_max_souls"		
+				{
+					"value"						"30"
+					"special_bonus_scepter"		"+20"
+				}
+				"souls_per_kill"				"2"
+				"necromastery_soul_release"		"0.9"
+				"attack_range_bonus" "0"
+				"shard_souls_per_kill" 
+				{
+					"value"				"6"
+					"RequiresShard"			"1"
+				}
+				"shard_crit_pct"		 
+				{
+					"value"				"9001"
+					"RequiresShard"			"1"
+				}	
+				"shard_fear_duration"		 
+				{
+					"value"				"0.0"
+					"RequiresShard"			"1"
+				}
+				"soul_release_tooltip"			"10.0"
+			
+		}
+	}
+
+
+	//=================================================================================================================
+	// Ability: Frenzy
+	//=================================================================================================================	
+	"nevermore_frenzy"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"FightRecapLevel"				"1"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60.0"
+		"AbilityManaCost"				"75"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_attack_speed"	
+			{
+				"value"			"100 150 200 250"
+				"special_bonus_unique_nevermore_4"	"+150"
+			}
+			"cast_speed_pct"		
+			{
+				"value"													"140"
+				"special_bonus_unique_nevermore_frenzy_castspeed"		"+40"
+			}
+			"cast_speed_pct_tooltip"
+			{
+				"value"													"0"
+				"special_bonus_unique_nevermore_frenzy_castspeed"		"=140"
+			}
+			"duration"				"25"
+			"soul_cost"				"1"
+		}
+	}
+
+
 
 // Nyx Assassin: Impale
 	"nyx_assassin_impale"
@@ -13206,7 +13455,7 @@
 		}
 	}
 
-
+	
 	//=================================================================================================================
 	// Undying: Flesh Golem
 	//=================================================================================================================
@@ -13214,7 +13463,6 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"5447"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -13223,11 +13471,6 @@
 		"FightRecapLevel"				"2"
 		"AbilitySound"					"Hero_Undying.FleshGolem"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-		"HasShardUpgrade"				"1"
-
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"80 70 60"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -13235,47 +13478,42 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"AbilityCooldown"				
 			{
-				"var_type"					"FIELD_INTEGER"
-				"slow"						"40 45 50"
+				"value"					"80 70 60"
 			}
-			"02"
+
+			"slow"						"40 45 50"
+			"damage_amp"				
 			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_amp"				"0"
+				"value"					"0"
 				"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
 			}
-			"03"
+			"slow_duration"					"3"
+			"str_percentage"			
 			{
-				"var_type"					"FIELD_FLOAT"
-				"slow_duration"					"6"
+				"value"					"80 100 150"
+				"special_bonus_unique_undying_4" "+60"
 			}
-			"04"
+			"duration"					"40"
+			"movement_bonus"			"30 40 50"
+			"spawn_zombie_on_attack"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"str_percentage"			"80 100 150"
+				"value"						"0"
+				"special_bonus_facet_undying_rotting_mitts"	"+0"
 			}
-			"05"
+			"zombie_duration"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"40"
-			}	
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"movement_bonus"			"30 40 50"
+				"value"						"0"
+				"special_bonus_facet_undying_rotting_mitts"	"+0"
 			}
-			"07"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"shard_cooldown_reduction"			"0.0"
-				"RequiresShard"				"1"
-			}
+			"zombie_spawn_padding"			"36"			
 		}
-	}	
+	}
+
+
 	"undying_soul_rip"
 	{
 		"LevelsBetweenUpgrades"			 "7"
@@ -21422,32 +21660,6 @@
 		}
 	}
 
-	//=================================================================================================================
-	// Talent: Hoodwink Sharpshooter Speed
-	//=================================================================================================================
-  	"special_bonus_unique_hoodwink_sharpshooter_speed"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"9506"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"value"							"-2.85"  // used for tooltip only
-				"ad_linked_abilities"			"hoodwink_sharpshooter"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"pct_change"							"95.0"
-			}
-		}
-	}
 
 	//=================================================================================================================
 	// Talent: Hoodwink Sharpshooter Pure Damage

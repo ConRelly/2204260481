@@ -10495,6 +10495,8 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 		"DOTA_Tooltip_ability_special_bonus_unique_sniper_headshot_lua_agi_multiplier"		"+{s:value} Headshot Agi Damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_sniper_6"		"+{s:value} Shrapnel Agi Damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_sniper_3"		"+{s:value} Shrapnel Duration"
+		"DOTA_Tooltip_ability_special_bonus_unique_sniper_6_custom"	 "+{s:value} Shrapnel Agi Damage"
+
 
 		"DOTA_Tooltip_ability_special_bonus_unique_sand_king_101"	"+{s:value} Sand Storm Str Damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_sand_king_102"	"+{s:value} BurrowStrike Str Damage"

@@ -37,7 +37,7 @@ end
 
 function modifier_class:CheckState()
 	local unslowable = nil
-	if self:GetParent():HasModifier("item_aghanims_shard") then
+	if self:GetParent():HasModifier("modifier_item_aghanims_shard") then
 		unslowable = true
 	end
 	return {
@@ -47,7 +47,7 @@ function modifier_class:CheckState()
 end
 
 function modifier_class:DeclareFunctions()
-	if self:GetParent():HasModifier("item_aghanims_shard") then
+	if self:GetParent():HasModifier("modifier_item_aghanims_shard") then
 		return {
 			MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS,
 			MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,

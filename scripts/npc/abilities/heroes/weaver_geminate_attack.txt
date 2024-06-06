@@ -15,25 +15,30 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
+    "AbilityValues"
     {
-      "01"
+      "delay"
       {
-        "var_type"                                        "FIELD_FLOAT"
-        "delay"                                           "0.00"
+        "value" "0.0"
       }
-      "02"
+      "extra_attack"
       {
-        "var_type"                                        "FIELD_INTEGER"
-        "tooltip_attack"                                  "1"
-        "LinkedSpecialBonus"                              "special_bonus_unique_weaver_5"
+        "value" "1"
+        "special_bonus_unique_weaver_5" "+1"
       }
-      "03"
+      "bonus_damage"
       {
-        "var_type"                                        "FIELD_INTEGER"
-        "bonus_damage"                                    "540 1780 4240 12420 29690 65200"
-        "LinkedSpecialBonus"                              "special_bonus_unique_weaver_2"
+        "value" "540 1780 4240 12420 29690 95200"
+        "special_bonus_unique_weaver_2" "+16500"
+      }
+      "shard_beetle_search_range"
+      {
+        "value" "4200"
+        "affected_by_aoe_increase"  "1"
+        "RequiresShard" "1"
       }
     }
   }
+
+
 }

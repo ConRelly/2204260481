@@ -97,7 +97,7 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"agi_multiplier"			"0.5 1.0 1.5 2.0 2.5 3.5 5.0"
-				"LinkedSpecialBonus"        "special_bonus_unique_sniper_6"
+				"LinkedSpecialBonus"        "special_bonus_unique_sniper_6_custom"
 			}
 		}
 	}

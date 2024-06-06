@@ -210,7 +210,7 @@ function AOHGameMode:InitGameMode()
 	self._defeatcounter = 10
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 5)
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 0)
-	Convars:SetInt("dota_max_physical_items_purchase_limit", 99)
+	Convars:SetInt("dota_max_physical_items_purchase_limit", 999)
 	Convars:SetInt("cl_init_scaleform", 1)		--Unfortunately, we have to keep doing this until Valve decides to implement Read/WriteKV in Panorama
     Convars:SetInt("dota_hud_healthbars", 1)
 

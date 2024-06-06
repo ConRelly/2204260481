@@ -32102,6 +32102,23 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+//shrapnel talent
+	"special_bonus_unique_sniper_6_custom"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"5"
+			}
+		}
+	}
+
+
 	"mjz_spectre_desolate"
 	{
 		"BaseClass"						"ability_datadriven"
@@ -42606,6 +42623,29 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityCastPoint"				"0.0"
  		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_7"
+	}
+
+
+// Sharpshooter tallent
+	"special_bonus_unique_hoodwink_sharpshooter_speed" 
+	{
+		"BaseClass"					"special_bonus_undefined"
+		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"value"							"-2.85"  // used for tooltip only
+				"ad_linked_abilities"			"hoodwink_sharpshooter"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"pct_change"							"95.0"
+			}
+		}
 	}
 
 // Sharpshooter tallent

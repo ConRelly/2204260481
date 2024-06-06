@@ -101,7 +101,7 @@ if IsServer() then
 		if modif then
 			local ss_bonus_damage =  modif:GetStackCount() * modif:GetAbility():GetSpecialValueFor("ss_bonus_damage") * caster:GetLevel()
 			base_damage = base_damage + ss_bonus_damage
-			print(ss_bonus_damage .. " ss_bonus_damage")
+			--print(ss_bonus_damage .. " ss_bonus_damage")
 		end
 		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage") * caster:GetIntellect(true)
 

@@ -189,16 +189,16 @@ function ChangeHeroKardel(keys)
 
 	-- 15 Level
 		--right
-		if caster:HasAbility("special_bonus_attack_damage_400") then
+		if caster:HasAbility("special_bonus_cdr_25") then
 			caster:AddAbility("special_bonus_kardel_reloading")
-			caster:SwapAbilities("special_bonus_attack_damage_400", "special_bonus_kardel_reloading", false, true)
-			caster:RemoveAbility("special_bonus_attack_damage_400")
+			caster:SwapAbilities("special_bonus_cdr_25", "special_bonus_kardel_reloading", false, true)
+			caster:RemoveAbility("special_bonus_cdr_25")
 		end
 		--left
-		if caster:HasAbility("special_bonus_unique_sniper_6") then
+		if caster:HasAbility("special_bonus_unique_sniper_6_custom") then
 			caster:AddAbility("special_bonus_pocket_portal_cooldown")
-			caster:SwapAbilities("special_bonus_unique_sniper_6", "special_bonus_pocket_portal_cooldown", false, true)
-			caster:RemoveAbility("special_bonus_unique_sniper_6")
+			caster:SwapAbilities("special_bonus_unique_sniper_6_custom", "special_bonus_pocket_portal_cooldown", false, true)
+			caster:RemoveAbility("special_bonus_unique_sniper_6_custom")
 		end
 
 	-- 20 Level
