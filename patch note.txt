@@ -3110,7 +3110,7 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
-
+* Fixed Slayer Dimenstional Crash
 
 
 ////////Self Note ////////////

@@ -4,7 +4,7 @@ LinkLuaModifier("modifier_aghanim_blink_slow", "aghanim/aghanim_blink", LUA_MODI
 LinkLuaModifier("modifier_aghanim_blink_debuff", "aghanim/aghanim_blink", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_aghanim_blink_talent", "aghanim/aghanim_blink", LUA_MODIFIER_MOTION_NONE)
 
-function aghanim_blink:Precache( context )
+--[[ function aghanim_blink:Precache( context )
 	PrecacheResource( "particle", "particles/creatures/aghanim/aghanim_preimage.vpcf", context )
 	PrecacheResource( "particle", "particles/creatures/aghanim/aghanim_self_dmg.vpcf", context )
 	PrecacheResource( "particle", "particles/creatures/aghanim/aghanim_pulse_nova.vpcf", context )
@@ -15,7 +15,7 @@ function aghanim_blink:Precache( context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts", context )
 end
-
+ ]]
 function aghanim_blink:GetCastRange(location, target)
 	return self:GetSpecialValueFor("blink_range") + self:GetCaster():GetCastRangeBonus()
 end

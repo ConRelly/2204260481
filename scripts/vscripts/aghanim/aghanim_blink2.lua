@@ -10,7 +10,7 @@ function aghanim_blink5:GetIntrinsicModifierName()
     return "modifier_aghanim_blink_slayer"
 end
 
-function aghanim_blink2:Precache( context )
+--[[ function aghanim_blink2:Precache( context )
 	PrecacheResource( "particle", "particles/creatures/aghanim/aghanim_preimage.vpcf", context )
 	PrecacheResource( "particle", "particles/creatures/aghanim/aghanim_self_dmg.vpcf", context )
 	PrecacheResource( "particle", "particles/creatures/aghanim/aghanim_pulse_nova.vpcf", context )
@@ -20,7 +20,7 @@ function aghanim_blink2:Precache( context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts", context )
 	PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts", context )
-end
+end ]]
 
 function aghanim_blink2:GetCastRange(location, target)
 	return self:GetSpecialValueFor("blink_range") + self:GetCaster():GetCastRangeBonus()
@@ -50,53 +50,60 @@ function aghanim_blink2:OnSpellStart()
 	local vPos =  self:GetCursorPosition()
 	local vDirection = vPos - self:GetCaster():GetOrigin()
 	local flDist = vDirection:Length2D()
+	local caster = self:GetCaster()
 	vDirection.z = 0.0
 	vDirection = vDirection:Normalized()
 
-	local max_range = self:GetSpecialValueFor("blink_range") + self:GetCaster():GetCastRangeBonus()
+	local max_range = self:GetSpecialValueFor("blink_range") + caster:GetCastRangeBonus()
 
-	local talent = self:GetCaster():FindAbilityByName("special_bonus_unique_aghanim_1")
+	local talent = caster:FindAbilityByName("special_bonus_unique_aghanim_1")
 	if talent and talent:GetLevel() > 0 then 
 		max_range = max_range + talent:GetSpecialValueFor("value")
 	end
 
 	if flDist > max_range then flDist = max_range end
 
-	self.vStartLocation = self:GetCaster():GetAbsOrigin()
+	self.vStartLocation = caster:GetAbsOrigin()
 
 	local info = {
 		Ability = self,
-		vSpawnOrigin = self:GetCaster():GetOrigin(), 
+		vSpawnOrigin = caster:GetOrigin(), 
 		fStartRadius = 0,
 		fEndRadius = 0,
 		vVelocity = vDirection * flDist * 5,
 		fDistance = flDist,
-		Source = self:GetCaster(),
+		Source = caster,
 	}
-
 	self.projectile = ProjectileManager:CreateLinearProjectile( info )
 end
 
 function aghanim_blink2:OnProjectileHit( hTarget, vLocation )
 	if IsServer() then
 		local vDirection = vLocation - self:GetCaster():GetAbsOrigin()
+		local caster = self:GetCaster()
 		vDirection.z = 0.0
 		vDirection = vDirection:Normalized()
 
-		EmitSoundOn( "Hero_FacelessVoid.TimeWalk", self:GetCaster() )
+		EmitSoundOn( "Hero_FacelessVoid.TimeWalk", caster )
 
-		self:GetCaster():Purge(false, true, false, false, false)
-		FindClearSpaceForUnit( self:GetCaster(), vLocation, true )
+		caster:Purge(false, true, false, false, false)
+		FindClearSpaceForUnit( caster, vLocation, true )
 
-		ProjectileManager:ProjectileDodge( self:GetCaster() )
+		ProjectileManager:ProjectileDodge( caster )
 
-		local nFXIndex = ParticleManager:CreateParticle( "particles/creatures/aghanim/aghanim_preimage.vpcf", PATTACH_CUSTOMORIGIN, nil )
-		ParticleManager:SetParticleControl( nFXIndex, 0, self.vStartLocation )
-		ParticleManager:SetParticleControl( nFXIndex, 1, self:GetCaster():GetAbsOrigin() )
-		ParticleManager:SetParticleControlEnt( nFXIndex, 2, self:GetCaster(), PATTACH_ABSORIGIN_FOLLOW, nil, self.vStartLocation, true )
-		ParticleManager:SetParticleFoWProperties( nFXIndex, 0, 2, 64.0 )
-		ParticleManager:ReleaseParticleIndex( nFXIndex )
+		-- Anti-Mage Blink effect
+		local nFXIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_blink_start.vpcf", PATTACH_CUSTOMORIGIN, nil)
+		ParticleManager:SetParticleControl(nFXIndex, 0, self.vStartLocation)
+		ParticleManager:SetParticleControl(nFXIndex, 1, self:GetCaster():GetAbsOrigin())
+		ParticleManager:ReleaseParticleIndex(nFXIndex)
 
+		-- Queen of Pain Blink effect (uncomment to use instead of Anti-Mage)
+		--[[ local nFXIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_queenofpain/queen_blink_start.vpcf", PATTACH_CUSTOMORIGIN, nil)
+		ParticleManager:SetParticleControl(nFXIndex, 0, self.vStartLocation)
+		ParticleManager:SetParticleControl(nFXIndex, 1, self:GetCaster():GetAbsOrigin())
+		ParticleManager:ReleaseParticleIndex(nFXIndex) ]]
+
+		
 		self:DebuffEnemies()
 	end
 
@@ -112,11 +119,6 @@ function aghanim_blink2:DebuffEnemies()
 	else
 		radius = self:GetSpecialValueFor("debuff_aoe")
 	end
-
-	local nFXIndex = ParticleManager:CreateParticle( "particles/creatures/aghanim/aghanim_self_dmg.vpcf", PATTACH_CUSTOMORIGIN, caster )
-	ParticleManager:SetParticleControlEnt( nFXIndex, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true )
-	ParticleManager:SetParticleControlEnt( nFXIndex, 1, caster, PATTACH_ABSORIGIN_FOLLOW, nil, caster:GetAbsOrigin(), true )
-	ParticleManager:SetParticleControl( nFXIndex, 2, Vector( radius, radius, radius ) )
 
 	EmitSoundOn( "Hero_Lich.IceAge.Tick", caster )
 
@@ -155,9 +157,9 @@ function aghanim_blink2:DebuffEnemies()
 			enemy:AddNewModifier(caster, self, "modifier_aghanim_blink_debuff", {duration = self:GetSpecialValueFor("debuff_duration")})
 			caster:AddNewModifier(caster, self, "modifier_aghanim_blink_invul", {duration = self:GetSpecialValueFor("invul_duration")})
 			
-			local nFXIndex2 = ParticleManager:CreateParticle( "particles/creatures/aghanim/aghanim_pulse_nova.vpcf", PATTACH_ABSORIGIN_FOLLOW, enemy )
+--[[ 			local nFXIndex2 = ParticleManager:CreateParticle( "particles/creatures/aghanim/aghanim_pulse_nova.vpcf", PATTACH_ABSORIGIN_FOLLOW, enemy )
 			ParticleManager:ReleaseParticleIndex( nFXIndex2 )
-
+ ]]
 			--[[if scepter == true then
 				if enemy:IsHero() then 
 					local spell_lock = caster:FindAbilityByName("aghanim_spell_lock")
