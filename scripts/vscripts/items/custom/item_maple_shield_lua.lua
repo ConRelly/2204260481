@@ -40,6 +40,7 @@ function modifier_maple_shield_lua:OnCreated(kv)
 	self.spell_amp = self:GetAbility():GetSpecialValueFor("spell_amp")
 	self.mana_bonus = self:GetAbility():GetSpecialValueFor("mana_bonus")
 	self.primary = false
+	self.armor_bonus = math.floor(self:GetParent():GetStrength() * self.armor_str_multiplier)
 	if IsServer() then	
 		if caster:GetPrimaryAttribute() == 0 then
 			self.primary = true
@@ -50,6 +51,11 @@ function modifier_maple_shield_lua:OnCreated(kv)
 		self.hp_spell_multiplier = self:GetAbility():GetSpecialValueFor("hp_spell_multiplier") * 2
 		self.bonus_str = self:GetAbility():GetSpecialValueFor("bonus_str") * 2
 	end
+	self:StartIntervalThink(10)
+end
+
+function modifier_maple_shield_lua:OnIntervalThink()
+	self:OnCreated()	
 end
 function modifier_maple_shield_lua:OnRefresh(kv)
 	-- references
@@ -70,8 +76,10 @@ function modifier_maple_shield_lua:DeclareFunctions()
 	}
 end
 function modifier_maple_shield_lua:GetModifierPhysicalArmorBonus()
-	return math.floor(self:GetParent():GetStrength() * self.armor_str_multiplier)
+	return self.armor_bonus
 end
+
+
 function modifier_maple_shield_lua:GetModifierHealthBonus()
 	return math.floor(self:GetParent():GetSpellAmplification(false) * self.hp_spell_multiplier)
 end

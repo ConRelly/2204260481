@@ -3113,6 +3113,14 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Fixed Slayer Dimenstional Crash
 
 
+* Fixed maple armor crash on Axe with One Man Army Facet when str and armor are high enough to trigger an infinite loop.
+* Increased Axe One Man Army Facet 
+* and some other fixes
+
+
+
+
+
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).
