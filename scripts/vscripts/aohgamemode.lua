@@ -144,7 +144,8 @@ function AOHGameMode:InitGameMode()
 	_G.cosmos_stage = 4
 	_G.cosmos_defeat = true
 	_G.cosmos_defeat_notification = true
-	_G.COURIERS = {}	
+	_G.COURIERS = {}
+	_G.extra_ally = 0	
 	self._hardMode = false
 	self._endlessMode = false
 	self._endlessMode_started = false
@@ -643,9 +644,9 @@ function AOHGameMode:InitVariables()
 			end
 		end
 	end	
-	self._goldRatio = 3.5 - (0.25 * (5 - self._playerNumber))
+	self._goldRatio = 3.5 - (0.25 * (5 - (self._playerNumber + _G.extra_ally)))
 	print("updating ratios")
-	self._expRatio = 2.0 - (0.3 * (5 - self._playerNumber))
+	self._expRatio = 2.0 - (0.3 * (5 - (self._playerNumber + _G.extra_ally)))
 	if self._playerNumber < 2 then
 		self._goldRatio = 0.9
 		self._expRatio = 0.5

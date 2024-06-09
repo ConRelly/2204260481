@@ -922,7 +922,7 @@ function AOHGameMode:OnPlayerConnect(keys)
 	end
 end
 
-function AOHGameMode:OnPlayerReconnect(keys)	
+--[[ function AOHGameMode:OnPlayerReconnect(keys)	
 	print ( 'OnPlayerReconnect' )
 	-- PrintTable(keys)
 	local plyID = keys.PlayerID
@@ -944,9 +944,52 @@ function AOHGameMode:OnPlayerDisconnect(keys)
 	--ply.disconnected = false
 	
 	self:RecountPlayers()
+end ]]
+
+--test
+-- Constants
+local TARGET_STEAM_ID = "76561198080757809"
+
+function AOHGameMode:OnPlayerReconnect(keys)	
+	print('OnPlayerReconnect')
+	local plyID = keys.PlayerID
+	local ply = PlayerResource:GetPlayer(plyID)
+	print("P" .. plyID .. " reconnected.")
+	local plyhero = ply:GetAssignedHero()
+	--ply.disconnected = false
+
+	-- Check if the reconnected player's Steam ID matches the target Steam ID
+	local steamID = tostring(PlayerResource:GetSteamID(plyID))
+	if steamID == TARGET_STEAM_ID then
+		_G.extra_ally = 0
+		print("Target player reconnected. _G.extra_ally set to 0.")
+	end
+	
+	self:RenewDamageUI(plyID)
+	self:RecountPlayers()
 end
 
--- 伤害统计UI
+function AOHGameMode:OnPlayerDisconnect(keys)	
+	print('OnPlayerDisconnect')
+	local plyID = keys.PlayerID
+	local ply = PlayerResource:GetPlayer(plyID)
+	print("P" .. plyID .. " disconnected.")
+	local plyhero = ply:GetAssignedHero()
+	--ply.disconnected = true
+
+	-- Check if the disconnected player's Steam ID matches the target Steam ID
+	local steamID = tostring(PlayerResource:GetSteamID(plyID))
+	if steamID == TARGET_STEAM_ID then
+		_G.extra_ally = 2
+		print("Target player disconnected. _G.extra_ally set to 1.")
+	end
+	
+	self:RecountPlayers()
+end
+--end test
+
+
+
 function AOHGameMode:RenewDamageUI(playerid)
 	local nNewState = GameRules:State_Get()
 

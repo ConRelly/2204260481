@@ -132,14 +132,16 @@ function on_created(keys)
             caster:RemoveAbility(hAbility2)					
             local newAbilityName = GetRandomAbilityName(hero)
             local link_a = caster:AddAbility(newAbilityName)
-            link_a:UpgradeAbility(true)
-            link_a:SetLevel(skill_lvl)
-            local newAbilityNameb = GetRandomAbilityName(hero)
-            local link_b = caster:AddAbility(newAbilityNameb)
-            link_b:UpgradeAbility(true)
-            link_b:SetLevel(skill_lvl)
-            if RollPercentage(75) or has35 then
-                caster:AddNewModifier(caster, self, aghbuf, {})
+            if link_a then
+                link_a:UpgradeAbility(true)
+                link_a:SetLevel(skill_lvl)
+                local newAbilityNameb = GetRandomAbilityName(hero)
+                local link_b = caster:AddAbility(newAbilityNameb)
+                link_b:UpgradeAbility(true)
+                link_b:SetLevel(skill_lvl)
+                if RollPercentage(75) or has35 then
+                    caster:AddNewModifier(caster, self, aghbuf, {})
+                end
             end
         end
     })    
