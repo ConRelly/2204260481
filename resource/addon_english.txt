@@ -3579,10 +3579,10 @@
 	"DOTA_Tooltip_modifier_mjz_lifestealer_poison_sting_buff_Description"  "Increase Strength by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% and Health by %dMODIFIER_PROPERTY_HEALTH_BONUS% "
 
 	"DOTA_Tooltip_ability_mjz_life_stealer_feast"				"Feast"
-	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Description"	"Lifestealer's attacks damage enemies and heal himself for a percentage of his max strength. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Lifestealer bonus damage now is increased further by 5% for each level he has."
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Description"	"Lifestealer's attacks damage enemies and heal himself for a percentage of his max strength. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Lifestealer bonus damage now is increased further by 5%(Multiplier with total) for each level he has."
 	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Lore"			"After escaping from his cell in Devarque, N'aix subsisted on flesh and bones of those unfortunate to cross his path."
 	"DOTA_Tooltip_ability_mjz_life_stealer_feast_str_damage_pct"	"%MAX STRENGTH:"
-	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Note0"	"Stacks additively with other sources of Lifesteal."
+	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Note0"	"SS effect example : lvl 20 would double the skill dmg"
 	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Note1"	"When the attack starts Lifestealer gets bonus green dmg base on his Str."
 	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Note2"	"The heal is independent of the damage."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_life_stealer_feast_strength"	"+{s:value}% Feast Damage/Lifesteal"	

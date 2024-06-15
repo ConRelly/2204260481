@@ -3326,11 +3326,14 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
+
+	//=================================================================================================================
+	// Beastmaster: Inner Beast
+	//=================================================================================================================
 	"beastmaster_inner_beast"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"5172"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
@@ -3338,16 +3341,59 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"Innate"						"1"
+		"RequiredLevel"					"-1"
+		"MaxLevel"						"5"
+		"LevelsBetweenUpgrades"         "5"
 
-		// Special
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"radius"				"7200"
+			"radius"				
+			{
+				"value"		"7200"
+				"affected_by_aoe_increase"	"1"
+			}
 			"bonus_attack_speed"
 			{
-				"value"									"50 75 125 230"
+				"value"									"50 75 125 230 310"
 				"special_bonus_unique_beastmaster_4"		"+100"
+			}
+			"attack_speed_per_unit"		
+			{
+				"value"									"0"
+				"special_bonus_facet_beastmaster_wild_hunt"		"10 20 30 40 50"				
+			}
+			"berserk_duration"						
+			{
+				"value"									"0"
+				"special_bonus_facet_beastmaster_beast_mode"		"+10"				
+			}
+			"berserk_bonus_attack_speed"
+			{
+				"value"								"0"
+				"special_bonus_facet_beastmaster_beast_mode"			"20 40 80 160 320"				
+			}
+			"AbilityCooldown"
+			{
+				"value"				"0"
+				"special_bonus_facet_beastmaster_beast_mode"		"=30"				
+			}
+			"AbilityManaCost"
+			{
+				"value"				"0"
+				"special_bonus_facet_beastmaster_beast_mode"		"=35"				
+			}
+			"magic_resist"
+			{
+				"special_bonus_unique_beastmaster_3"	"50"
+			}
+			"bonus_damage"
+			{
+				"special_bonus_unique_beastmaster_2"	"+5000"
 			}
 		}
 	}
@@ -8962,30 +9008,32 @@
 		}
 	}
 
+
+
+	//=================================================================================================================
+	// Ability: Omniknight: Hammer of Purity (Shard)
+	//=================================================================================================================
 	"omniknight_hammer_of_purity"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"656"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"MaxLevel"						"4"
-		"LevelsBetweenUpgrades"		 "10"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"AbilitySound"					"Hero_Omniknight.Repel"
-        
+        "LevelsBetweenUpgrades"		 "10"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"350"
-		"AbilityCastPoint"				"0.0"
+		"AbilityCastPoint"				"0"
+
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -8993,24 +9041,41 @@
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50 60 70 80"
+		"AbilityManaCost"				"30 40 50 60"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
+			"AbilityCooldown"				
+			{
+				"value"				"12"
+				"special_bonus_unique_omniknight_3"		"-5"
+				//note: AbilityChargeRestoreTime uses these values when it grants the charge
+			}
+
 			"base_damage"	
 			{
 				"value"		"100 150 200 250"
 				"special_bonus_unique_omniknight_4"	"+150"
 			}
 			"bonus_damage"	"250 950 3400 9825"
-			"duration"	"5"
-			"movement_slow"				"14 22 30 38"
+
+			"heal_pct"
+			{
+				"value"					"0"
+			}
+
+			"attack_cooldown"
+			{
+				"value"					"-1"
+			}
 			
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
+
+
 
 
 	"omniknight_repel"
@@ -18740,12 +18805,12 @@
 				}
 				"scepter_spawn_interval"
 				{
-					"value"			"12"
+					"value"			"22"
 					"RequiresScepter"	"1"
 				}
 				"scepter_spawn_duration"			
 				{
-					"value"		"45"
+					"value"		"85"
 					"RequiresScepter"	"1"
 				}
 		}
@@ -20191,6 +20256,8 @@
 			}
 		}
 	}			
+
+
 	//=================================================================================================================
 	// Spirit Breaker: Charge of Darkness
 	//=================================================================================================================
@@ -20198,30 +20265,28 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"5353"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_ALERT_TARGET | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
-
+		"MaxLevel"					"7"
+		"LevelsBetweenUpgrades"		"8"
 		"AbilitySound"					"Hero_Spirit_Breaker.ChargeOfDarkness"
-		"HasScepterUpgrade"			"1"
+		"HasShardUpgrade"			"1"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"0"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"MaxLevel"					"7"
-		"LevelsBetweenUpgrades"		"5"
-		"AbilityCastPoint"			"0.10"
-		"AbilityCooldown"			"17 16 15 14 13 12 11"
+
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120"
+		"AbilityManaCost"				"100"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -20229,55 +20294,57 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"movement_speed"		
 			{
-				"var_type"				"FIELD_INTEGER"
-				"movement_speed"		"200 350 550 800 1100 1500 2000"
-				"LinkedSpecialBonus"	"special_bonus_unique_spirit_breaker_4"
+				"value"			"500 1000 2000 3000 4000 5000 10000"
+				"special_bonus_shard" "+3000"
 			}
-			"02"
+			"stun_duration"			"2.0"
+			"bash_radius"			
 			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"1.2 1.6 2.0 2.4"
+				"value"			"300 350 400 450 500 550 600"
+				"affected_by_aoe_increase"	"1"
 			}
-			"03"
+			"vision_radius"			
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bash_radius"			"300 350 400 450 500 550 600"
+				"value"		"400"
+				"affected_by_aoe_increase"	"1"
 			}
-			"04"
+			"vision_duration"		"0.94"
+			"AbilityCooldown"				
 			{
-				"var_type"				"FIELD_INTEGER"
-				"vision_radius"			"400"
+				"value"			"17 16 15 14 13 12 11"
+				"special_bonus_unique_spirit_breaker_4"		"-4"
 			}
-			"05"
+
+			"out_of_world_time"		"0"
+			"guaranteed_bash_time"	"0"
+			"reveal_charge"			"0"
+
+			"windup_time"			"0"
+			"linger_time_min"		
 			{
-				"var_type"				"FIELD_FLOAT"
-				"vision_duration"		"0.94"
+				"value"				 "0"
+				"special_bonus_facet_spirit_breaker_bull_rush"	"3"				
 			}
-			"06"
+
+			"linger_time_max"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"scepter_cooldown"		"7"
-				"RequiresScepter"			"1"
+				"value"				"0"
+				"special_bonus_facet_spirit_breaker_bull_rush"	"5"				
 			}
-			"07"
+
+			"charge_for_max_linger"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"scepter_speed"		"1000"
-				"RequiresScepter"			"1"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"scepter_cast_point"		"0.1"
-				"RequiresScepter"			"1"
+				"value"				"0"
+				"special_bonus_facet_spirit_breaker_bull_rush"	"2"				
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
+
 
 	"spirit_breaker_greater_bash"
 	{
@@ -20311,7 +20378,7 @@
 	"spirit_breaker_nether_strike"
 	{
 		"MaxLevel"					  "6"
-		"AbilityCastRange"				"1700"
+		"AbilityCastRange"				"7700"
 		"AbilityManaCost"				"125"
 		"LevelsBetweenUpgrades"         "10"
 		"AbilityCooldown"				"25"
@@ -20329,46 +20396,46 @@
 			}			
 		}
 	}
+		
+	//=================================================================================================================
+	// Ability: Bulldoze
+	//=================================================================================================================
 	"spirit_breaker_bulldoze"
 	{
-		"LevelsBetweenUpgrades"		"10"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-	   
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Spirit_Breaker.EmpoweringHaste.Cast"
+		"LevelsBetweenUpgrades"		"10"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16"
+		"AbilityCooldown"				"30"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"60"
 
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"movement_speed"				"50 92 164 350"
+			"status_resistance"				"34 46 58 70"
+			"duration"						"10"
+			"damage_barrier"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"movement_speed"				"50 92 164 350"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"status_resistance"			"34 46 58 70"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"duration"	"8"
+				"value"						"0"
+				"special_bonus_unique_spirit_breaker_shield" "+50000"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastGestureSlot"		"DEFAULT"
-	}	
-		
+	}
+
 	"techies_land_mines"
 	{
 		"AbilityChargeRestoreTime"		"10"

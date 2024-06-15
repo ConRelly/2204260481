@@ -76,7 +76,7 @@
 }
 "npc_dota_hero_beastmaster"
 {
-	"Ability12"     "special_bonus_magic_resistance_25"
+	"Ability12"     "special_bonus_unique_beastmaster_2"
 	"Ability14"     "special_bonus_mp_400"
 	"Ability17"		"special_bonus_cdr_20"
 
@@ -344,7 +344,7 @@
 "npc_dota_hero_shadow_demon"
 {
 	"Ability2"		"shadow_demon_custom_soul_catcher"
-	"Ability5"		"mjz_bristleback_quill_spray_autocast5"
+	"Ability7"		"mjz_bristleback_quill_spray_autocast5"
 	"Ability6"		"shadow_demon_custom_hyperactivity"
 	"Ability10"		"special_bonus_spell_lifesteal_10"
 	"Ability11"		"special_bonus_strength_200"
@@ -2155,6 +2155,7 @@
 		"Ability3"				"wr_windrun"
 		"Ability4"				"windrunner_gale_force"
 		"Ability6"				"mjz_windrunner_focusfire"
+		"Ability7"              "spirit_breaker_herd_mentality"
 		"Ability10"				"special_bonus_cdr_15"
 		"Ability11"				"special_bonus_movement_speed_15"
 		"Ability12"				"special_bonus_unique_mjz_windrunner_powershot_damage"

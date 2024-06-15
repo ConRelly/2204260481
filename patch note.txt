@@ -3119,6 +3119,15 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Changed Spirit Breaker facet's minimum linger time to 3 seconds, buffed its Dmg Barrier talent and Charge of Darkness skill.
+* Replaced WindRanger's innate talent (had limited max speed to 600).
+* Fixed Kardel Change bullet type not working.
+* Rebalanced some innate talents
+* Beastmaster inner beast, facet, talent buffed and talent replaced.
+* Fixed Omniknight Hammer of Purity.
+* and some other stuff
+
+
 
 
 ////////Self Note ////////////
