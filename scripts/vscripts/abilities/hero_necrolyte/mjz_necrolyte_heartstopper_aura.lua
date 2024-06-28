@@ -30,7 +30,11 @@ function modifier_counter:OnRefresh()
 	self:SetDuration(stack_duration, true)
 	Timers:CreateTimer(stack_duration, function()
 		if self ~= nil and not self:IsNull() and not self:GetAbility():IsNull() and not self:GetParent():IsNull() and not self:GetCaster():IsNull() and self:GetStackCount() > 0 then
-			self:SetStackCount(self:GetStackCount() - 1)
+			if self:GetParent():IsAlive() then
+				self:SetStackCount(self:GetStackCount() - 1)
+			else
+				self:Destroy()
+			end	
 		end
 	end)
 end
@@ -48,12 +52,19 @@ end
 -----------------------------------------------------------------------------------------
 function modifier_counter:IsAura() return true end
 function modifier_counter:IsAuraActiveOnDeath() return false end
-function modifier_counter:GetAuraDuration() return self:GetAbility():GetSpecialValueFor("interval") - 0.1 end
+function modifier_counter:GetAuraDuration()
+	if self and self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("interval") - 0.1
+	elseif self then
+		self:Destroy()
+	end
+end
 function modifier_counter:GetModifierAura() return "modifier_mjz_necrolyte_heartstopper_aura_effect" end
 function modifier_counter:GetAuraSearchTeam() return DOTA_UNIT_TARGET_TEAM_ENEMY end
 function modifier_counter:GetAuraSearchType() return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC end
 function modifier_counter:GetAuraSearchFlags() return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES end
-function modifier_counter:GetAuraRadius() return self:GetAbility():GetAOERadius() end
+function modifier_counter:GetAuraRadius() if self:GetAbility() then return self:GetAbility():GetAOERadius() end end
+
 
 ------------------------------
 -- Heartstopper Aura Effect --

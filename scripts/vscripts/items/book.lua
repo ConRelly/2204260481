@@ -14,6 +14,7 @@ modifier_spellbook_destruction_mana_drain = class({})
 modifier_spellbook_destruction_pierce_evasion = class({})
 
 
+
 -- make so the cooldown does not go below 30 seconds
 function item_spellbook_destruction:GetCooldown(level)
     local baseCooldown = self.BaseClass.GetCooldown(self, level)

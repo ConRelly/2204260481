@@ -1025,7 +1025,7 @@
 		"UnitLabel"				"no_underdog"
 
 		"Ability4"				"mjz_riki_backstab"
-		"Ability10"				"special_bonus_lifesteal_30"
+		"Ability10"				"special_bonus_unique_riki_2"
 		"Ability11"				"special_bonus_cdr_15"
 		"Ability12"				"special_bonus_truestrike"
 		"Ability13"             "special_bonus_unique_riki_7"
@@ -1186,10 +1186,11 @@
 		"override_hero"			"npc_dota_hero_mirana"
 
 		"Ability2"				"mjz_mirana_arrow"
+		"Ability4"              "ursa_maul"
 		// "Ability12"			"special_bonus_unique_mirana_3"
 		"Ability10"				"special_bonus_mp_regen_200"
-		"Ability11"				"special_bonus_hp_1500"
-		"Ability12"				"special_bonus_unique_mjz_mirana_arrow_chance"
+		"Ability11"				"special_bonus_unique_mjz_mirana_arrow_chance"
+		"Ability12"				"special_bonus_unique_mirana_5"
 		"Ability14"				"special_bonus_spell_amplify_40"
 		"Ability15"             "special_bonus_attack_base_damage_4000"
 		"Ability16"				"special_bonus_attack_range_300"

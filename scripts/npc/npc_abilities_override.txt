@@ -8495,6 +8495,56 @@
 		}
 	}
 	
+	//=================================================================================================================
+	// Ability: Solar Blessings
+	//=================================================================================================================
+	"mirana_solar_flare"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Ability.MoonlightShadow"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCooldown"				
+			{
+				"value"			"60.0"
+				"special_bonus_unique_mirana_4"			"-20"				
+			}
+			"smoothness"						"0.015"
+			"increase_rate"						"20 40 80"
+			"day_vision_multiplier"				"3"
+			"ally_pct"							"80"
+			"duration"							"25"
+			"max_damage_time"					"10"
+			"evasion"		
+			{
+				"value"			"0"
+				"special_bonus_unique_mirana_5"		"+50"
+			}
+		}
+	}
+
+
 	"naga_siren_mirror_image"
 	{
 		"AbilitySpecial"
@@ -10240,11 +10290,15 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 
+
+
+	//=================================================================================================================
+	// Riki: Tricks of the Trade
+	//=================================================================================================================
 	"riki_tricks_of_the_trade"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"5145"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
@@ -10255,9 +10309,16 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"400"
 		"LevelsBetweenUpgrades"		 "10"
 		"AbilityCastPoint"				"0.0"
 		"AbilityChannelTime"			"3.0"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityChannelAnimation"		"ACT_DOTA_CHANNEL_ABILITY_4"
+
+		// Ability Data
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"45 55 65 75"
 
 
 		// Special
@@ -10268,15 +10329,19 @@
 			{
 				"value"		"18"
 				"special_bonus_unique_riki_6"		"-4"
-			}			
+			}
 			"radius"
 			{
 				"value"		"520"
-				"LinkedSpecialBonus"		"special_bonus_unique_riki_4"
+				"affected_by_aoe_increase"	"1"
 			}
 			"attack_count"	"9 10 11 12"
 			"damage_pct"	"75 85 100 200"
-			"agility_pct"	"55 65 75 85"
+			"agility_pct"
+			{
+				"value" 				"3000 6000 9000 18000"
+				"special_bonus_unique_riki_2" "+10000"
+			}
 			"scepter_duration"				
 			{
 				"value"			"3"
@@ -10297,8 +10362,14 @@
 				"value"				"0"
 				"special_bonus_unique_riki_5"	"+1"
 			}
+			"creep_agility_multiplier"
+			{
+				"value"			"1"
+				"special_bonus_facet_riki_exterminator"	"=4"
+			}
 		}
 	}
+
 
 	"riki_backstab"
 	{

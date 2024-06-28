@@ -20,7 +20,26 @@ local particles = {
     "particles/units/heroes/hero_drow/drow_aura_buff.vpcf",
     "particles/units/heroes/hero_abaddon/abaddon_frost_buff.vpcf",
     "particles/units/heroes/hero_omniknight/omniknight_degen_aura.vpcf",
-    "particles/econ/items/necrolyte/necro_sullen_harvest/necro_ti7_immortal_scythe_start.vpcf"
+    "particles/econ/items/necrolyte/necro_sullen_harvest/necro_ti7_immortal_scythe_start.vpcf",
+   
+    "particles/econ/events/spring_2021/maelstrom_spring_2021.vpcf",
+    "particles/econ/events/ti8/mjollnir_shield_ti8.vpcf",
+    "particles/econ/events/ti8/maelstorm_ti8.vpcf",
+    "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf",
+    "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf",
+    "particles/econ/events/ti9/maelstorm_ti9.vpcf",
+    "particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_maelstrom_v2_item.vpcf",
+    "particles/items2_fx/mjollnir_shield_unused.vpcf",
+    "particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_mjollnir_shield.vpcf",
+    "particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_mjollnir_shield_v2.vpcf",
+    "particles/econ/events/spring_2021/mjollnir_shield_spring_2021.vpcf",
+    "particles/econ/events/ti9/mjollnir_shield_ti9.vpcf",
+    "particles/econ/events/ti10/mjollnir_shield_ti10.vpcf",
+    "particles/custom/items/spellbook/destruction/spellbook_destruction_cast_aoe.vpcf",
+    "particles/custom/items/spellbook/destruction/spellbook_destruction_cast.vpcf",
+    "particles/custom/items/spellbook/destruction/spellbook_destruction_impact.vpcf",
+    "particles/custom/items/spellbook/destruction/spellbook_destruction_debuff.vpcf",
+    "particles/custom/items/pipe_of_dezun/pipe_of_dezun_magic_immune_avatar.vpcf",
 }
 
 local sounds = {

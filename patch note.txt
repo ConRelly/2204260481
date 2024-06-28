@@ -3129,6 +3129,15 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Fixed Necrophos Heartstopper Aura to stop working when the regen buff expires when the hero is dead.
+* Updated Riky Tricks of the Trade bonus agility value, replaced Lifesteal talent with Tricks of the Trade One.
+* Replaced Mirana Innate with Maul (buffed from 1.5% to 200%)
+* Mirana Solar Flare buffed and talent added.
+* Crossbow particle fixed
+* and a few other things.
+
+
+
 
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.

@@ -1435,13 +1435,17 @@
 	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityCooldown"			   "10.0"
-	"AbilitySharedCooldown"		 "item_willbreaker"	
+	"AbilitySharedCooldown"		   "item_willbreaker"	
 	"AbilityTextureName"			"crossbow"
 	"ItemShopTags"					"damage;attack speed"
 	"ItemQuality"					"common"
 	"ItemAliases"					"cross"
 	"ItemShareability"              "ITEM_FULLY_SHAREABLE"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+	"precache"
+	{
+		"particle"  "particles/econ/items/underlord/underlord_ti8_immortal_weapon/underlord_ti8_immortal_pitofmalice_burst_spark.vpcf"	
+	}
 	"AbilitySpecial"
 	{
 		"01"
@@ -22680,6 +22684,16 @@
 		"ItemAliases"					"spellbook;destruction"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"ShouldBeSuggested"				"1"
+		"precache"
+		{
+			"particle"  "particles/custom/items/spellbook/destruction/spellbook_destruction_cast_aoe.vpcf"
+			"particle"  "particles/custom/items/spellbook/destruction/spellbook_destruction_cast.vpcf"
+			"particle"  "particles/custom/items/spellbook/destruction/spellbook_destruction_impact.vpcf"
+			"particle"  "particles/custom/items/spellbook/destruction/spellbook_destruction_debuff.vpcf"
+			"particle"  "particles/econ/generic/generic_progress_meter/generic_progress_circle.vpcf"
+			"particle"  "particles/custom/items/pipe_of_dezun/pipe_of_dezun_magic_immune_avatar.vpcf"
+		}
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -34514,6 +34528,8 @@
 			"particle"					"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
 			"particle"					"particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf"
 			"particle"					"particles/econ/events/spring_2021/maelstrom_spring_2021.vpcf"
+			//"particle"					"particles/econ/events/ti8/maelstorm_ti8.vpcf"
+			//"particle"					"particles/econ/events/ti8/mjollnir_shield_ti8.vpcf"
 		}		
 		"AbilitySpecial"
 		{
@@ -34656,6 +34672,13 @@
 			"particle"					"particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
 			"particle"					"particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf"
 			"particle"					"particles/econ/events/ti8/maelstorm_ti8.vpcf"
+			//"particle"					"particles/econ/events/ti9/maelstorm_ti9.vpcf"
+			//"particle"					"particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_maelstrom_v2_item.vpcf"
+			//"particle"					"particles/items2_fx/mjollnir_shield_unused.vpcf"
+			//"particle"					"particles/econ/items/faceless_void/faceless_void_arcana/faceless_void_arcana_mjollnir_shield_v2.vpcf"
+			//"particle"					"particles/econ/events/spring_2021/mjollnir_shield_spring_2021.vpcf"
+			//"particle"						"particles/econ/events/ti9/mjollnir_shield_ti9.vpcf"
+			//"particle"						"particles/econ/events/ti10/mjollnir_shield_ti10.vpcf"
 		}		
 		"AbilitySpecial"
 		{

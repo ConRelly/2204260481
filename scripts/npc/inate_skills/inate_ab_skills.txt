@@ -338,6 +338,61 @@
 			"stack"			"0"
 			"duration"		"8"
 		}
-	}		
+	}
+
+	//=================================================================================================================
+	// Ability: Innate  building damage
+	//=================================================================================================================
+	"primal_beast_colossal"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"Innate"						"1"
+		"MaxLevel"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_building_damage"				"100"
+		}
+	}	
+
+	//=================================================================================================================
+	// Ability: Might of Ulfsaar (Innate)
+	//=================================================================================================================
+	"ursa_maul"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"health_as_damage_pct"	
+			{
+				"value"	"200"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+
+	"void_spirit_intrinsic_edge"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
+
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"secondary_stat_bonus_pct"	"100"
+		}
+	}
 
 }

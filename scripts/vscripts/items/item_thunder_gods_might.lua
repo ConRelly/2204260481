@@ -19,6 +19,7 @@ local item = item_thunder_gods_might
 item_thunder_gods_might2 = class(item_thunder_gods_might)
 local item2 = item_thunder_gods_might2
 
+
 function item:GetIntrinsicModifierName()
     return "modifier_thunder_gods_might"
 end

@@ -561,10 +561,15 @@ LinkLuaModifier("modifier_thunder_hammer_static", "items/light_crossbow.lua", LU
 LinkLuaModifier("modifier_thunder_hammer_chain_lightning", "items/light_crossbow.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_thunder_power", "items/light_crossbow.lua", LUA_MODIFIER_MOTION_NONE)
 if item_thunder_hammer == nil then item_thunder_hammer = class({}) end
+
+
+
+
 function item_thunder_hammer:GetIntrinsicModifierName() return "modifier_thunder_hammer" end
 function item_thunder_hammer:GetCastRange(location, target)
 	if IsClient() then return self.BaseClass.GetCastRange(self, location, target) end
 end
+
 function item_thunder_hammer:OnSpellStart()
 	local target = self:GetCursorTarget()
 	target:EmitSound("DOTA_Item.Mjollnir.Activate")
@@ -608,68 +613,7 @@ function modifier_thunder_hammer:OnAttack(keys) --and not self:GetParent():IsIll
 	self.true_hit = true
 	end
 end
-function modifier_thunder_hammer:OnAttackLanded(keys)  --and not self:GetParent():IsIllusion()
-	if keys.attacker == self:GetParent() and self:GetParent():IsAlive() and not self.bChainCooldown and self:GetParent():GetTeamNumber() ~= keys.target:GetTeamNumber() and RollPseudoRandom(self.chain_chance, self:GetAbility()) and self.true_hit then
-		self:GetParent():EmitSound("Item.Maelstrom.Chain_Lightning")
-		self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_thunder_hammer_chain_lightning", {starting_unit_entindex = keys.target:entindex()})
 
-		--UP: Lightning Shard
-		if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
-			local power_buff = self:GetAbility():GetSpecialValueFor("buff_dur")
-			self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_thunder_power", {duration = power_buff})
-		end
-		---------------------
-
-		self.bChainCooldown = true
-		self:StartIntervalThink(self.chain_cooldown)
-		self.true_hit = false
-		------gain stacks for Evolution---
-		local caster = self:GetCaster()
-		local ability = self:GetAbility()
-		local bonus_charge = 1
-		local has_ss = caster:HasModifier("modifier_super_scepter")
-		local marci_ult = caster:HasModifier("modifier_marci_unleash_flurry")
-		local charges = ability:GetCurrentCharges()
-		local limit = ability:GetSpecialValueFor("charge_awaken") 
-		local evolve = (charges >= limit)		
-		local underdog10 = caster:HasModifier("modifier_bottom_10")
-		local underdog20 = caster:HasModifier("modifier_bottom_20")
-		local underdog50 = caster:HasModifier("modifier_bottom_50")
-		if underdog10 then
-			bonus_charge = bonus_charge + 1
-		elseif underdog20 then
-			bonus_charge = bonus_charge + 1
-		elseif underdog50 then
-			bonus_charge = bonus_charge + 1
-		end	
-		if has_ss and marci_ult then
-			bonus_charge = bonus_charge + 1								
-		end	            
-		ability:SetCurrentCharges(charges + bonus_charge)
-		if evolve then
-			if not self.evolve_check then
-				local zeus_ultimate_particle = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf"
-				local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
-				local zeus_ultimate_sound = "Hero_Zuus.GodsWrath"				
-				--Renders the particle on the target
-				local particle_eff = ParticleManager:CreateParticle(particle, PATTACH_WORLDORIGIN, caster)
-				-- Raise 1000 value if you increase the camera height above 1000
-				ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-				ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
-				ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-				ParticleManager:DestroyParticle(particle_eff, false)
-				ParticleManager:ReleaseParticleIndex(particle_eff)
-				EmitSoundOn(zeus_ultimate_sound, caster)                    
-				caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
-				-- Remove the old item and add the evolved ite			
-				--caster:RemoveItem(ability)
-				caster:TakeItem(ability)
-				caster:AddItemByName("item_thunder_gods_might")								
-				self.evolve_check = true
-			end  
-		end 
-	end
-end
 ---new on attack feedback, on attack land is not used
 function modifier_thunder_hammer:GetModifierProcAttack_Feedback(keys)
 	if IsServer() then
