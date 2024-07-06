@@ -81,7 +81,7 @@ function modifier_custom_spellbook_passive:OnAbilityExecuted(keys)
         end	            
         ability:SetCurrentCharges(charges + cooldown)
         if evolve then
-            if not ability.evolve_check and ability then
+            if ability and not ability.evolve_check then
                 local zeus_ultimate_particle = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf" 
                 local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
                 local zeus_ultimate_sound = "Hero_Zuus.GodsWrath"
@@ -96,10 +96,11 @@ function modifier_custom_spellbook_passive:OnAbilityExecuted(keys)
                 EmitSoundOn(zeus_ultimate_sound, caster)                    
                 caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
                 -- Remove the old item and add the evolved item
+                ability.evolve_check = true
+
                 --caster:RemoveItem(ability)
                 caster:TakeItem(ability)
                 caster:AddItemByName("item_spellbook_destruction"):SetCurrentCharges(bonus_ch)                                                     
-                ability.evolve_check = true
             end  
         end                        
     end	

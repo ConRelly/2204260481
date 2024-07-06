@@ -59,6 +59,7 @@
 //////////////////// FIXED ABILITIES (CUSTOM) \\\\\\\\\\\\\\\\\\\\
 
 // Dawnbreaker: FIRE WREATH
+
 	"dawnbreaker_custom_fire_wreath"
 	{
 		"BaseClass"						"dawnbreaker_fire_wreath"
@@ -69,85 +70,62 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"MaxLevel"						"10"
 		"LevelsBetweenUpgrades"			"9"
+		"HasShardUpgrade"               "1"
 		//"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.05"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-		"AbilityCooldown"				"11"
 		"AbilityManaCost"				"80"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			
+			"AbilityCooldown"				
 			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"1.1"
+				"value"					"11"
+				"special_bonus_unique_dawnbreaker_fire_wreath_cooldown"			"-5"
 			}
-			"02"
+			"duration"					"1.1"
+			"swipe_radius"				
 			{
-				"var_type"					"FIELD_INTEGER"
-				"swipe_radius"				"750"					
+				"value"		"750"					
+				"affected_by_aoe_increase"	"1"	
 			}
-			"03"
+			"swipe_damage"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"swipe_damage"				"75 235 1250 3500 7800 27500 48500 64500 83800 125000"
+				"value"											"75 235 1250 3500 7800 27500 48500 64500 83800 125000"
+				"special_bonus_unique_dawnbreaker_fire_wreath_swipe"		"+40000"
+
 			}
-			"04"
+			"smash_radius"				
 			{
-				"var_type"					"FIELD_INTEGER"
-				"smash_radius"				"750"
-			}	
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"smash_damage"				"425 935 6450 19500 39800 52500 128500 285000 475800 974000"
+				"value"		"750"
+				"affected_by_aoe_increase"	"1"	
 			}
-			"07"
+			"smash_damage"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"movement_speed"				"450"
+				"value"				"425 935 6450 19500 39800 52500 128500 285000 475800 974000"
+				"special_bonus_unique_dawnbreaker_fire_wreath_swipe"			"+100000"
 			}
-			"08"
+			"movement_speed"				"600"
+			"total_attacks"				"10"
+			"smash_stun_duration"			"1.2"
+			"sweep_stun_duration"			"0.12"
+			"self_stun_duration"			"0.2"
+			"swipe_slow"			"-100"
+			"smash_distance_from_hero"				"350"
+			"animation_rate"				"0"
+			"turn_rate"					"90"
+			"shard_cast_point"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"total_attacks"				"10"
+				"value"			"0.1"
 			}
-			"09"
+			"shard_movement_penalty"
 			{
-				"var_type"					"FIELD_FLOAT"
-				"smash_stun_duration"			"1.4"
-			}
-			"10"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"sweep_stun_duration"			"0.12"
-			}
-			"11"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"self_stun_duration"			"0.2"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"swipe_slow"				"-100"
-			}
-			"13"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"smash_distance_from_hero"	"350"
-			}		
-			"14"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"animation_rate"			"0"
-			}	
-			"15"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"turn_rate"					"90"
-			}	
+				"value"							"0"
+				"special_bonus_shard"				"+25"
+			}						
 		}	
 	}
+
 
 // Dawnbreaker Celestial Blade
 	"db_celestial_hammer"
@@ -264,6 +242,8 @@
 	//=================================================================================================================
 	// Ability: Dawnbreaker Luminosity
 	//=================================================================================================================
+
+
 	"dawnbreaker_custom_luminosity"
 	{
 		"BaseClass"						"dawnbreaker_luminosity"
@@ -285,8 +265,8 @@
 			"attack_count"				
 			{
 				"value"		"6"
-				"LinkedSpecialBonus"			"special_bonus_unique_dawnbreaker_luminosity_attack_count"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_SUBTRACT"				  
+				"special_bonus_unique_dawnbreaker_luminosity_attack_count"		"-1"
+
 			}
 			"heal_radius"				
 			{
@@ -297,17 +277,32 @@
 			"heal_from_creeps"			"30"
 			"bonus_damage"				
 			{
-				"value"		"220 340 460 580 650 760 1150 1550 2040 2450"
-				"LinkedSpecialBonus"		"special_bonus_unique_dawnbreaker_luminosity_crit"
+				"value"		"220 340 460 580 650 760 1150 1550 2040 3850"
+				"special_bonus_unique_dawnbreaker_luminosity_crit"		"+1420"
 			}	
 			"proc_cooldown"				"0.00"
 			"allied_healing_pct"		"50"
-			"cooldown_reduction"		"2"
+			"cooldown_reduction"		
+			{
+				"value"									"0"
+				"special_bonus_facet_dawnbreaker_solar_charged"		"1"				
+			}
+			"attackspeed_bonus_max"
+			{
+				"value"					"0"
+				"special_bonus_facet_dawnbreaker_solar_battery"		"+500"					
+			}
+			"movespeed_bonus_max"
+			{
+				"value"					"0"
+				"special_bonus_facet_dawnbreaker_solar_battery"		"+200"					
+			}	
 		}
 	}
 
-
 // Dawnbreaker: Solar Guardian
+
+
 	"dawnbreaker_custom_solar_guardian"
 	{
 		"BaseClass"						"dawnbreaker_solar_guardian"
@@ -321,56 +316,64 @@
 		"LevelsBetweenUpgrades"			"9"
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0.05"
-		"AbilityChannelTime"			"0.1"
-		"AbilityCooldown"				"65"
+		"AbilityChannelTime"			"0.5"
 		"AbilityManaCost"				"250"
 		"AbilityModifierSupportValue"	"0.25"
-		"AbilitySpecial"
+		"LinkedAbility"					"dawnbreaker_land"
+		"HasScepterUpgrade"				"1"
+		"AbilityValues"
 		{
-			"01"
+			"AbilityCooldown"				
 			{
-				"var_type"				"FIELD_FLOAT"
-				"airtime_duration"		"2.0"
+				"value"				"65"
+				"special_bonus_unique_dawnbreaker_solar_guardian_cooldown"			"-20"
 			}
-			"02"
+
+			"airtime_duration"				"2.0"
+			"radius"				
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"1500"
+				"value"															"1500"
+				"special_bonus_unique_dawnbreaker_solar_guardian_radius"		"+1000"
+				"affected_by_aoe_increase"	"1"	
 			}
-			"03"
+			"base_damage"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"base_damage"			"625 1935 8450 24500 44800 92500 294500 425100 875000"
+				"value"			"625 1935 8450 24500 44800 92500 294500 425100 1875000"
+				"CalculateSpellDamageTooltip" "1"
 			}
-			"04"
+			"base_heal"				
 			{
-				"var_type"				"FIELD_INTEGER"
-				"base_heal"				"625 1935 8450 14500 24800 32500 49500 82510 100001" 
+				"value"				"10000"
+				"special_bonus_scepter"	"+50000"
 			}
-			"05"
+			"pulse_interval"				"0.5"
+			"land_damage"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"pulse_interval"		"0.5"
+				"value"			"925 3935 18450 44500 84800 192500 494500 756000 1540000"
+				"CalculateSpellDamageTooltip" "1"
 			}
-			"06"
+			"land_stun_duration"			"1.8"
+			"max_offset_distance"			"1150"
+			"scepter_channel_time"				
 			{
-				"var_type"				"FIELD_INTEGER"
-				"land_damage"			"925 3935 18450 44500 84800 192500 494500 756000 1540000"
+				"value"	"0.2"
+				"RequiresScepter"			"1"
 			}
-			"07"
+			"airtime_scepter_bonus"	
 			{
-				"var_type"				"FIELD_FLOAT"
-				"land_stun_duration"	"2.5"
+				"value"				"3.5"
+				"RequiresScepter"			"1"
 			}
-			"08"
+			"miss_rate"				
 			{
-				"var_type"				"FIELD_INTEGER"
-				"max_offset_distance"	"1150"
+				"value"			"99"
+				"RequiresScepter"			"1"
 			}
-			
+			"airtime_scepter_movement_speed"				"600"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 	}
+
 
 // Kunkka: Torrent
 	"kunkka_custom_torrent"
@@ -583,6 +586,8 @@
 	}
 
 // Grimstroke: Ink Swell
+
+
 	"grimstroke_custom_spirit_walk"
 	{
 		"BaseClass"						"grimstroke_spirit_walk"
@@ -594,79 +599,66 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySound"					"Hero_ObsidianDestroyer.AstralImprisonment"
 		"MaxLevel"						"7"
-		"LevelsBetweenUpgrades"			"7"
+		"LevelsBetweenUpgrades"			"10"
         "HasShardUpgrade"               "1"
 		"AbilityCooldown"				"17"
 		"AbilityCastRange"				"1150"
 		"AbilityCastPoint"				"0.05"
 		"AbilityManaCost"				"150"
 		"AbilityModifierSupportValue"	"0.75"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"buff_duration"			"4.0 5.0 6.0 7.0 8.0 9.0 10.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"movespeed_bonus_pct"	"15 20 25 30 35 40 45 50"
-				"LinkedSpecialBonus"	"special_bonus_unique_grimstroke_6"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"650"
-				"LinkedSpecialBonus"	"special_bonus_unique_grimstroke_1"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_damage"			"420"
-				"LinkedSpecialBonus"	"special_bonus_unique_grimstroke_5"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"max_stun"				"1.0 1.9 2.8 3.7"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_per_tick"		"200 1500 4000 9000 15000 45000 90000"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
+				"buff_duration"	
+				{
+					"value"						"4.0 5.0 6.0 7.0 8.0 9.0 10.0"
+					"special_bonus_facet_grimstroke_inkstigate"	"+3"
+				}
+				"movespeed_bonus_pct"	
+				{
+					"value"		"15 20 25 30 35 40 45 50"
+				"special_bonus_unique_grimstroke_6" "+60"
+				}
+				"radius"				
+				{
+					"value"		"650"
+					"affected_by_aoe_increase"	"1"		
+				"special_bonus_unique_grimstroke_1" "+200"
+				}
+				"max_damage"			
+				{
+					"value"		"42000"
+				}
+				"max_stun"				"1.3 1.8 2.3 2.8"
+				"damage_per_tick"		"400 3000 8000 18000 30000 90000 180000"
 				"tick_rate"				"0.5"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"tick_dps_tooltip"		"400 3000 8000 18000 30000 90000 180000"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"max_threshold_duration"	"2.5"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"shard_bonus_damage_pct"		"400"
-				"RequiresShard"					"1"
-			}	
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"shard_heal_pct"		"10"
-				"RequiresShard"					"1"
-			}			
+				"tick_dps_tooltip"		"800 6000 16000 36000 60000 180000 360000"
+				"max_threshold_duration"		"3.5"
+				"can_end_early"
+				{
+					"value"						"0"
+					"special_bonus_facet_grimstroke_inkstigate"	"+1"
+				}
+				"shard_bonus_damage_pct"		
+				{
+					"value"			"400"
+					"RequiresShard"					"1"
+				}	
+				"shard_heal_pct"		
+				{
+					"value"		"10"
+					"RequiresShard"					"1"
+				}
+				"shard_creep_penalty"
+				{
+					"value"		"0.2"
+					"RequiresShard"					"1"
+				}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastGestureSlot"		"DEFAULT"
 	}
+
+
 
 // Grimstroke: Stroke of Fate
 	"grimstroke_custom_dark_artistry"
@@ -24846,7 +24838,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"charge_count"				"0"
-				"LinkedSpecialBonus"		"special_bonus_unique_ember_spirit_4"
+				"LinkedSpecialBonus"		"special_bonus_unique_ember_spirit_4_custom"
 			}
 			"05"
 			{
@@ -24883,6 +24875,22 @@
 			"particle"			"particles/units/heroes/hero_ember_spirit/ember_spirit_sleight_of_fist_targetted_marker.vpcf"
 			"particle"			"particles/units/heroes/hero_ember_spirit/ember_spirit_sleightoffist_tgt.vpcf"
 			"particle"			"particles/units/heroes/hero_ember_spirit/ember_spirit_sleightoffist_trail.vpcf"
+		}
+	}
+
+// 2 charges talent
+	"special_bonus_unique_ember_spirit_4_custom"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"3"
+			}
 		}
 	}
 

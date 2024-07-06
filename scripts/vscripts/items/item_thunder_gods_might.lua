@@ -211,10 +211,10 @@ function modifier_item:GetModifierProcAttack_Feedback(keys)
                     EmitSoundOn(zeus_ultimate_sound, caster)                    
                     caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
                     -- Remove the old item and add the evolved item
+                    self.evolve_check = true
                     --caster:RemoveItem(ability)
                     caster:TakeItem(ability)
                     caster:AddItemByName("item_thunder_gods_might2")                                                      
-                    self.evolve_check = true
                 end  
             end        
         end   

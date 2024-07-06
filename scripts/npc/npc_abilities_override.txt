@@ -22119,7 +22119,98 @@
             "stun_duration"                  "0.45"
         }
     } 
+//down
+	//=================================================================================================================
+	// Dawnbreaker: Solar Guardian
+	//=================================================================================================================
+	"dawnbreaker_solar_guardian"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"1"
 
+		"LinkedAbility"					"dawnbreaker_land"
+		"HasScepterUpgrade"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"MaxLevel"						"9"	
+		"LevelsBetweenUpgrades"			"9"
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.05"
+		"AbilityChannelTime"			"0.5"
+		"AbilityManaCost"				"250"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.25"	// generally used for damage only
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"AbilityCooldown"				
+			{
+				"value"				"65"
+				"special_bonus_unique_dawnbreaker_solar_guardian_cooldown"			"-20"
+			}
+
+			"airtime_duration"				"2.0"
+			"radius"				
+			{
+				"value"															"1500"
+				"special_bonus_unique_dawnbreaker_solar_guardian_radius"		"+1000"
+				"affected_by_aoe_increase"	"1"	
+			}
+			"base_damage"
+			{
+				"value"			"625 1935 8450 24500 44800 92500 294500 425100 1875000"
+				"CalculateSpellDamageTooltip" "1"
+			}
+			"base_heal"				
+			{
+				"value"				"10000"
+				"special_bonus_scepter"	"+50000"
+			}
+			"pulse_interval"				"0.5"
+			"land_damage"
+			{
+				"value"			"925 3935 18450 44500 84800 192500 494500 756000 1540000"
+				"CalculateSpellDamageTooltip" "1"
+			}
+			"land_stun_duration"			"1.8"
+			"max_offset_distance"			"1150"
+			"scepter_channel_time"				
+			{
+				"value"	"0.2"
+				"RequiresScepter"			"1"
+			}
+			"airtime_scepter_bonus"	
+			{
+				"value"				"3.5"
+				"RequiresScepter"			"1"
+			}
+			"miss_rate"				
+			{
+				"value"			"99"
+				"RequiresScepter"			"1"
+			}
+			"airtime_scepter_movement_speed"				"1500"
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+	}
 // Muerta
 	//=================================================================================================================
 	// MUERTA: Dead Shot

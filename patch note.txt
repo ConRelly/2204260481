@@ -3137,6 +3137,13 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * and a few other things.
 
 
+* Changed some code logic for Evloving Light CrossBow (trying to fix the crash that someone ppl experience on evolution)
+* Added new talent for Grimstroke to fix the missing one, buffed Ink Swell and removed from multicast list. 
+* Fixed Dawnbreaker missing talent(added new one) and slightly buffed her ultimate. Added aghanim and shard effects description. Slightly buffed Luminosity and restored talent to old value.
+* Increased Ember Charges for Slight of Fist talent and fixed.
+
+
+
 
 
 ////////Self Note ////////////

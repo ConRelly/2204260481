@@ -374,6 +374,10 @@ function IsExcludeAbility(ability)
 		"true_master",
 		"custom_aegis_cast",
 		"brewmaster_drunken_brawler",
+		"grimstroke_custom_ink_creature",
+		"grimstroke_spirit_walk",
+		"grimstroke_custom_spirit_walk",
+		"dawnbreaker_solar_guardian"
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do
