@@ -77,7 +77,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"str_multiplier"		"16 19 22 25 35 45 55"
+				"str_multiplier"		"16 19 22 25 45 65 85"
 			}			
 		}
 	}

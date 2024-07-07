@@ -929,6 +929,7 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_razor"
+		"UnitLabel"				"no_underdog"
 
 		"Ability3"				"mjz_razor_unstable_current"
 		"Ability4"              "alchemist_goblins_greed"
@@ -1242,6 +1243,7 @@
 		"Ability13"		"special_bonus_cdr_25"
 		"Ability14"		"special_bonus_spell_amplify_75"
 		"Ability15"		"special_bonus_unique_ember_spirit_4_custom"	//"special_bonus_unique_ember_spirit_6"
+		"Ability16"     "special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_attack"
 		"Ability17"		"special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_damage"
 	}
 	

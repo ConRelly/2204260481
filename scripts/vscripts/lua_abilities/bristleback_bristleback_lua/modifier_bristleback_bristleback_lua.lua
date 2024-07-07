@@ -1,3 +1,5 @@
+
+
 modifier_bristleback_bristleback_lua = class({})
 
 --------------------------------------------------------------------------------
@@ -21,12 +23,13 @@ function modifier_bristleback_bristleback_lua:OnCreated(kv)
     -- references
     self.reduction_back = self:GetAbility():GetSpecialValueFor("back_damage_reduction")
     self.reduction_side = self:GetAbility():GetSpecialValueFor("side_damage_reduction")
-    --self.angle_back = self:GetAbility():GetSpecialValueFor("back_angle")
-    --self.angle_side = self:GetAbility():GetSpecialValueFor("side_angle")
     self.max_threshold = self:GetAbility():GetSpecialValueFor("quill_release_threshold")
     self.ability_proc = "bristleback_quill_spray_lua"
 
     self.threshold = 0
+
+    self:StartIntervalThink(3.0)
+      
 end
 
 function modifier_bristleback_bristleback_lua:OnRefresh(kv)
@@ -34,25 +37,35 @@ function modifier_bristleback_bristleback_lua:OnRefresh(kv)
     if not IsServer() then return end
     self.reduction_back = self:GetAbility():GetSpecialValueFor("back_damage_reduction")
     self.reduction_side = self:GetAbility():GetSpecialValueFor("side_damage_reduction")
-    --self.angle_back = self:GetAbility():GetSpecialValueFor("back_angle")
-    --self.angle_side = self:GetAbility():GetSpecialValueFor("side_angle")
     self.max_threshold = self:GetAbility():GetSpecialValueFor("quill_release_threshold")
 end
 
 function modifier_bristleback_bristleback_lua:OnDestroy(kv)
 
 end
-
+function modifier_bristleback_bristleback_lua:OnIntervalThink()
+    if IsServer() then
+        local current_challenge_boss = _G._challenge_bosss or 0
+        if current_challenge_boss > 0 then
+            self:SetStackCount(current_challenge_boss)
+            self:StartIntervalThink(-1) -- Stop the interval think
+        end
+    end
+end
 --------------------------------------------------------------------------------
 -- Modifier Effects
 function modifier_bristleback_bristleback_lua:DeclareFunctions()
     local funcs = {
         MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+        MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
     }
-
     return funcs
 end
 
+function modifier_bristleback_bristleback_lua:GetModifierPhysicalArmorBonus()
+    local hero_level = self:GetParent():GetLevel()
+    return 3 * self:GetStackCount() * hero_level
+end
 function modifier_bristleback_bristleback_lua:GetModifierIncomingDamage_Percentage(keys)
     if IsServer() and (not self:GetParent():PassivesDisabled()) then
         if bit.band(keys.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) == DOTA_DAMAGE_FLAG_REFLECTION then
@@ -106,8 +119,3 @@ function modifier_bristleback_bristleback_lua:PlayEffects()
     ParticleManager:ReleaseParticleIndex(effect_cast)
 end
 
---------------------------------------------------------------------------------
--- Interval Effects
---[[function modifier_bristleback_bristleback_lua:OnIntervalThink()
-    self.calculated_max_threshold = self.max_threshold + math.floor(self:GetParent():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier")) -- special value
-end]]

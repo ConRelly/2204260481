@@ -9,14 +9,19 @@ function bristleback_quill_spray_lua:OnSpellStart()
 
     -- load data
 	local radius = self:GetSpecialValueFor("radius")
-	local str_bonus = self:GetCaster():GetStrength() * self:GetSpecialValueFor("str_multiplier") / 1000
+	local str_bonus = caster:GetStrength() * self:GetSpecialValueFor("str_multiplier") / 1000
 	local stack_damage = self:GetSpecialValueFor("quill_stack_damage") + str_bonus
 	local base_damage = self:GetSpecialValueFor("quill_base_damage") + (str_bonus * 100)
 	local stack_duration = self:GetSpecialValueFor("quill_stack_duration")
+    local armor_bonus = caster:GetPhysicalArmorValue(false)
+    if HasSuperScepter(caster) then
+        stack_damage = stack_damage + armor_bonus
+        stack_duration = stack_duration + math.ceil(armor_bonus / 300)
+    end
 
     -- Find Units in Radius
     local enemies = FindUnitsInRadius(
-            self:GetCaster():GetTeamNumber(), -- int, your team number
+            caster:GetTeamNumber(), -- int, your team number
             caster:GetOrigin(), -- point, center point
             nil, -- handle, cacheUnit. (not known)
             radius, -- float, radius. or use FIND_UNITS_EVERYWHERE
@@ -40,7 +45,11 @@ function bristleback_quill_spray_lua:OnSpellStart()
         local modifier = enemy:FindModifierByName("modifier_bristleback_quill_spray_lua")
         if modifier ~= nil then
             stack = modifier:GetStackCount()
-            modifier:IncrementStackCount()
+            if HasSuperScepter(caster) then
+                modifier:SetStackCount(stack + 2)
+            else
+                modifier:IncrementStackCount()
+            end
             modifier:ForceRefresh()
         else
             -- Add modifier

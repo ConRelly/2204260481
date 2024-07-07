@@ -24796,6 +24796,21 @@
 			}
 		}
 	}
+	"special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_attack"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"40"
+			}
+		}
+	}	
 	//=================================================================================================================
 	// Ember Spirit: Sleight of Fist
 	//=================================================================================================================

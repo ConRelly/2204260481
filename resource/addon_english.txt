@@ -3307,6 +3307,7 @@
 	"DOTA_Tooltip_modifier_mjz_ember_spirit_flame_guard_Description"	"Absorbing damage, and dealing magic damage in an area of effect."
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_ember_spirit_flame_guard_damage_per"		"+{s:value} Flame Guard DPS"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_damage"	"+{s:value}% Flame Guard Attack Damage"	
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_attack"	"Increase Flame Guard DPS by {s:value}% of your total attack"	
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist"					"Sleight of Fist"
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Description"		"Ember Spirit Or sven dashes around with blazing speed, attacking all enemies in the targeted area of effect, then returning to his start location. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Increase Critical Damage by 45% for each hero lvl you have.<br> Now this skill Bonus Damage is multiplayed with your level."
 	"DOTA_Tooltip_ability_mjz_ember_spirit_sleight_of_fist_Lore"			"The studied warrior must whip and weave through its enemies, burning each without pause."
@@ -9680,6 +9681,9 @@ Required Level: %required_level%
 "DOTA_Tooltip_Ability_jotaro_absolute_defense3_Lore"							"Ups"
 "DOTA_Tooltip_Ability_jotaro_absolute_defense3_Note0"						   "Not affected by CDR"
 
+"dota_tooltip_modifier_jotaro_absolute_defense_absolute3_invincibility"    "<font color='#0CF2E8'>LifeGuard</font>"
+
+
 "DOTA_Tooltip_Ability_special_bonus_attributes"                                     "Bonus Attributes"
 "DOTA_Tooltip_Ability_special_bonus_attributes_all_attributes"                      "+$all"
 
@@ -10170,18 +10174,18 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 		"DOTA_Tooltip_ability_bristleback_viscous_nasal_goo_lua_radius_scepter"		"Scepter Radius:"
 		"DOTA_Tooltip_ability_bristleback_viscous_nasal_goo_lua_str_multiplier"		"Extra Armor Loss for every 1000 Str:"
 		"DOTA_Tooltip_ability_bristleback_quill_spray_lua"							"Quill Spray"
-		"DOTA_Tooltip_ability_bristleback_quill_spray_lua_Description"				"Sprays enemy units with quills dealing damage in an area of effect around Bristleback.  Deals bonus damage for every time a unit was hit by Quill Spray in the last %quill_stack_duration% seconds.
+		"DOTA_Tooltip_ability_bristleback_quill_spray_lua_Description"				"Sprays enemy units with quills dealing damage in an area of effect around Bristleback.  Deals bonus damage for every time a unit was hit by Quill Spray in the last %quill_stack_duration% seconds. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Increase your stack bonus dmg by your armor and now enemy gains 2 stacks instead of one. <br> Increase stack duration by 1 sec for every 300 armor(rounds up).
 		<font color='#10CF30'>Duration can't be reduced by status resistance</font> "
 		"DOTA_Tooltip_ability_bristleback_quill_spray_lua_Lore"						"An enforcer's honor can be a prickly thing.  So can his quills."
 		"DOTA_Tooltip_ability_bristleback_quill_spray_lua_Note0"					"Quill Spray damage is not reduced by damage block abilities. Every Stack refreshes the Duration for all Stacks."
 		"DOTA_Tooltip_ability_bristleback_quill_spray_lua_radius"					"Radius:"
 		"DOTA_Tooltip_ability_bristleback_quill_spray_lua_quill_base_damage"		"Quill Base Damage:"
 		"DOTA_Tooltip_ability_bristleback_quill_spray_lua_quill_stack_damage"		"Quill Stack Damage:"
-		"DOTA_Tooltip_ability_bristleback_quill_spray_lua_str_multiplier"			"Bonus Quill Damage For Every 1000 Str:"
+		"DOTA_Tooltip_ability_bristleback_quill_spray_lua_str_multiplier"			"Bonus Quill Stack Damage For Every 1000 Str:"
 		"DOTA_Tooltip_ability_bristleback_quill_spray_lua_quill_stack_duration"		"Stack Duration:"
 		"DOTA_Tooltip_ability_bristleback_quill_spray_lua_Note1"					"Bonus Quill damage counts for both stack and base dmg and has 100x effect on the base dmg one"
 		"DOTA_Tooltip_ability_bristleback_bristleback_lua"							"Bristleback"
-		"DOTA_Tooltip_ability_bristleback_bristleback_lua_Description"				"Bristleback takes less damage.  If Bristleback takes %quill_release_threshold% damage, he releases a Quill Spray of the current level."
+		"DOTA_Tooltip_ability_bristleback_bristleback_lua_Description"				"Bristleback takes less damage.  If Bristleback takes %quill_release_threshold% damage, he releases a Quill Spray of the current level.\n<h1><font color='#F70707'>Challenge Boss</font></h1> Bristleback now gains <font color='#5BE424'>3 armor</font> <font color='#E32948'>x</font> your lvl for every Reward Tier."
 		"DOTA_Tooltip_ability_bristleback_bristleback_lua_Lore"						"Turning his back to a fight might be just the thing."
 		//"DOTA_Tooltip_ability_bristleback_bristleback_lua_Note0"					"Bristleback's rear is considered to be within 70 degrees from the back."
 		//"DOTA_Tooltip_ability_bristleback_bristleback_lua_Note1"					"Bristleback's side is considered to be within 110 degrees from the back."

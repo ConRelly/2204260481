@@ -1,7 +1,7 @@
 LinkLuaModifier("modifier_jotaro_absolute_defense3", "abilities/custom/absolute_defense3", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_jotaro_absolute_defense_cooldown3", "abilities/custom/absolute_defense3", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_jotaro_absolute_defense_absolute3", "abilities/custom/absolute_defense3", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_item_plain_ring_perma_invincibility", "items/item_plain_ring_perma.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_jotaro_absolute_defense_absolute3_invincibility", "abilities/custom/absolute_defense3", LUA_MODIFIER_MOTION_NONE)
 if not jotaro_absolute_defense3 then
 	jotaro_absolute_defense3 = class({})
 end
@@ -39,7 +39,7 @@ if IsServer() then
 		return {MODIFIER_PROPERTY_AVOID_DAMAGE}
 	end
 	function modifier_jotaro_absolute_defense3:GetModifierAvoidDamage(t)
-		if self.ab:IsCooldownReady() and t.target == self.parent and self.parent:GetMaxHealth()*self.ab:GetSpecialValueFor("hp_pct")/50 <= t.damage and self.ab:GetLevel() >= 1 then
+		if self.ab and self.ab:IsCooldownReady() and t.target == self.parent and self.parent:GetMaxHealth()*self.ab:GetSpecialValueFor("hp_pct")/50 <= t.damage and self.ab:GetLevel() >= 1 then
 			if self.parent:HasModifier("modifier_item_helm_of_the_undying_active") then return 0 end
 			
 			--self.parent:SetHealth(t.damage + self.parent:GetHealth())
@@ -50,7 +50,7 @@ if IsServer() then
 			self.ab:StartCooldown(self.ab:GetSpecialValueFor("cooldown"))
 			local parent = self.parent
 			local ability = self.ab
-			self.parent:AddNewModifier(self.parent, ability, "modifier_item_plain_ring_perma_invincibility", {duration = 2, min_health = 0})
+			self.parent:AddNewModifier(self.parent, ability, "modifier_jotaro_absolute_defense_absolute3_invincibility", {duration = 2, min_health = 0})
 			--self.ab:UseResources(true, true, true)
 			return 1
 		end
@@ -104,5 +104,34 @@ if IsServer() then
 	end
 	function modifier_jotaro_absolute_defense_cooldown3:OnDestroy()
 		self.parent:AddNewModifier(self.parent, self.ab, "modifier_jotaro_absolute_defense3", {})
+	end
+end
+
+
+
+------------------------
+-- Invincibility Buff --
+------------------------
+modifier_jotaro_absolute_defense_absolute3_invincibility = class({})
+function modifier_jotaro_absolute_defense_absolute3_invincibility:IsPurgable() return false end
+function modifier_jotaro_absolute_defense_absolute3_invincibility:GetTexture() return "lifeguard" end
+function modifier_jotaro_absolute_defense_absolute3_invincibility:GetEffectName() return "particles/world_shrine/dire_shrine_regen.vpcf" end
+function modifier_jotaro_absolute_defense_absolute3_invincibility:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
+function modifier_jotaro_absolute_defense_absolute3_invincibility:DeclareFunctions()
+	return {MODIFIER_PROPERTY_MIN_HEALTH, MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK, MODIFIER_PROPERTY_STATUS_RESISTANCE, MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN}
+end
+function modifier_jotaro_absolute_defense_absolute3_invincibility:GetMinHealth() return 1 end
+function modifier_jotaro_absolute_defense_absolute3_invincibility:GetModifierIncomingDamage_Percentage() return -400 end
+function modifier_jotaro_absolute_defense_absolute3_invincibility:GetModifierTotal_ConstantBlock(params) return params.damage end
+function modifier_jotaro_absolute_defense_absolute3_invincibility:GetModifierStatusResistance() return 100 end
+function modifier_jotaro_absolute_defense_absolute3_invincibility:GetModifierMoveSpeed_AbsoluteMin() return 1200 end
+function modifier_jotaro_absolute_defense_absolute3_invincibility:OnCreated()
+
+end
+function modifier_jotaro_absolute_defense_absolute3_invincibility:OnDestroy()
+	if IsServer() then
+		local parent = self:GetParent()
+		ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+		parent:Heal((parent:GetMaxHealth() * 0.8), parent)
 	end
 end

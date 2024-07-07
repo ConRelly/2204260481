@@ -56,7 +56,12 @@ if IsServer() then
 		local radius = ability:GetSpecialValueFor("radius")
 		local tick_interval = ability:GetSpecialValueFor("tick_interval")
 		local damage_per_second = GetTalentSpecialValueFor(ability, "damage_per_second")
-
+		local bonus_dmg = talent_value(parent, "special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_attack") * 0.01
+		if bonus_dmg > 0 then
+			--bonus dmg get multiplayed with parent tottal attack dmg
+			bonus_dmg = bonus_dmg * parent:GetAverageTrueAttackDamage(parent)
+			damage_per_second = damage_per_second + bonus_dmg
+		end
 		local damage = damage_per_second * tick_interval
 
 		local enemy_list = FindUnitsInRadius(

@@ -3137,10 +3137,15 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * and a few other things.
 
 
-* Changed some code logic for Evloving Light CrossBow (trying to fix the crash that someone ppl experience on evolution)
-* Added new talent for Grimstroke to fix the missing one, buffed Ink Swell and removed from multicast list. 
-* Fixed Dawnbreaker missing talent(added new one) and slightly buffed her ultimate. Added aghanim and shard effects description. Slightly buffed Luminosity and restored talent to old value.
-* Increased Ember Charges for Slight of Fist talent and fixed.
+* Changed some code logic for Evloving Light CrossBow (trying to fix the crash that some ppl experience on evolution).
+* Added new talent for Grimstroke to fix missing one, buffed Ink Swell and removed it from multicast list. 
+* Fixed missing Dawnbreaker talent (added new one) and slightly buffed her ultimate. Added description to Aghanim and Shard effects. Slightly buffed Luminosity and restored talent to old value.
+* Buffed and fixed Ember charges for Slight of Fist talent.
+* Added new talent for Ember Spirit Flame Guard (gives bonus dps base on attack).
+* Changed some code for Lifeguard passive (may be the one causing the 1hp bug)
+* Added new Super Scepter effect for Bristleback Quill Spray.
+* Added new Boss Challenge tier reward effect for Bristleback passive.
+* Night Stalker Void is now instant cast.
 
 
 
