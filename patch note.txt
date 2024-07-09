@@ -3149,6 +3149,16 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Added innate skill to Marci (Maul)
+* Added new facet to Marci (Razor Dynamo) and comes with Bodyguard skill as bonus(buffed Bodyguard skill) and added a new talent for them.
+* Reduced Razor Facet to more normal values (1000 dmg for 1%)
+* Spirit Breaker Greater Bash dmg increased (talent too) and increased linger for facet and reduced time required for max duration.
+* Treant Primordial Power facet fixed (now gives 1000/lvl, displayed as 500)
+* Added an additional ability (Primordial Power 500) for Sven's second facet.
+* Increased dmg of Sven's innate ability.
+
+
+
 
 
 ////////Self Note ////////////

@@ -395,4 +395,80 @@
 		}
 	}
 
+	//=================================================================================================================
+	// Razor: Dynamo
+	//=================================================================================================================
+	"razor_dynamo"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"spell_amp_damage_divisor"	"1000"
+			"spell_amp_mult"			"1"
+		}
+	}
+
+	//=================================================================================================================
+	// Treant: Innate Attack Damage
+	//=================================================================================================================
+	"treant_innate_attack_damage"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
+
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"attack_damage_per_level"				
+			{ 
+				"value"						"500"
+				"special_bonus_facet_treant_primeval_power"	"+500"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Ability: Subjugator (bonus damage to stunned enemies)
+	//=================================================================================================================
+	"sven_vanquisher"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_damage_pct"				"80"
+		}
+	}
+	//=================================================================================================================
+	// Ability: Resolute variant
+	//=================================================================================================================
+	"sven_wrath_of_god"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"						"4"
+		"DependentOnAbility"			"sven_gods_strength"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_damage_per_str"				"0.5 0.6 0.7 1"
+			"base_damage_reduction"				"200"
+		}
+	}
+
+
+//end
 }

@@ -721,6 +721,10 @@
 	"DOTA_Tooltip_ability_treant_natures_form_unroot"				"Treant Form"
 	"DOTA_Tooltip_ability_treant_natures_form_unroot_description"	"Return to normal form"
 
+	"DOTA_Tooltip_ability_treant_innate_attack_damage"					"Primeval Power"
+	"DOTA_Tooltip_ability_treant_innate_attack_damage_Description"		"Gains +500 base attack damage per hero level."
+
+
 //Omniknight
 	"dota_tooltip_ability_purification"					"Purification"
 	"dota_tooltip_ability_purification_description"		"Instantly heals a friendly unit and damaging all nearby enemy units.\n<h1><font color='#FCEF8E'>Purify</font></h1>Blesses the target with a buff that amplifies all heals and health regeneration it receives by %buff_heal_amp_pct%%% for each stack of the buff. Whenever the target recovers %buff_stack_threshold% or more of its health from any source, it gains a stack.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Gain Spell Immunity for 1.75 seconds and +0,2 for each Purify stack.<br>Half Duration from Guardian Angel. Purification talent bonus dmg from Hp will count as 2x.\n<font color='#F17C26'>Uses only 25% of spell amp.</font>"

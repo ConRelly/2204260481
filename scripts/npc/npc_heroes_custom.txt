@@ -387,6 +387,7 @@
 "npc_dota_hero_sven"
 {
 	"Ability2"		"mjz_ember_spirit_sleight_of_fist"
+	//"Ability8"		"treant_innate_attack_damage"
 	"Ability9"		"custom_great_cleave"
 	"Ability10"		"special_bonus_attack_speed_100"
 	"Ability11"		"special_bonus_gold_income_300"
@@ -399,6 +400,28 @@
 	"ArmorPhysical"				"3"
 	"AttackRate"				"1.450000"
 	"AttributeStrengthGain"		"12.5"
+		"Facets"
+		{
+
+			"sven_strscaling"
+			{
+				"Icon"				"strength"
+				"Color"				"Red"
+				"GradientID"		"0"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"sven_wrath_of_god"
+					}
+					"Ability2"
+					{
+						"AbilityName"	"treant_innate_attack_damage"
+					}					
+				}
+			}
+		}	
 }
 "npc_dota_hero_tidehunter"
 {
@@ -929,7 +952,7 @@
 	//=================================================================================================================
 	{
 		"override_hero"			"npc_dota_hero_razor"
-		"UnitLabel"				"no_underdog"
+		//"UnitLabel"				"no_underdog"
 
 		"Ability3"				"mjz_razor_unstable_current"
 		"Ability4"              "alchemist_goblins_greed"
@@ -1562,8 +1585,8 @@
 		
 		"Ability4"				"treant_natures_form"
 		"Ability6"				"treant_custom_ultimate_sacrifice"
-		"Ability7"				"mjz_treant_natures_guise"
-		"Ability8"				"treant_natures_form_unroot"
+		"Ability8"				"mjz_treant_natures_guise"
+		"Ability9"				"treant_natures_form_unroot"
 		"Ability10"				"special_bonus_gold_income_420"
 		"Ability11"				"special_bonus_exp_boost_30"
 		"Ability12"				"special_bonus_reincarnation_90"
@@ -1866,13 +1889,13 @@
 		"Ability2"		"marci_companion_run_custom"
 		//"Ability3"		"marci_guardian"
 		"Ability4"		"bloodseeker_thirst"
-		"Ability5"		"generic_hidden"
+		"Ability5"      "ursa_maul"
 		"Ability6"		"marci_unleash"
 
 		"Ability10"		"special_bonus_magic_resistance_25"
 		"Ability11"		"special_bonus_exp_boost_30"
 		"Ability12"		"special_bonus_mp_regen_300"
-		"Ability13"		"special_bonus_hp_6000"
+		"Ability13"		"special_bonus_unique_marci_guardian_damage"
 		"Ability14"		"special_bonus_spell_block_18"
 		"Ability15"		"special_bonus_cdr_25"
 		"Ability16"		"special_bonus_spell_amplify_225"
@@ -1897,6 +1920,31 @@
 		"StatusManaRegen"			"0.5"
 		"MovementSpeed"				"390"
 		"MovementTurnRate"			"0.900000"
+		"Facets"
+		{
+
+
+			"razor_spellamp"
+			{
+				"Icon"				"nuke"
+				"Color"				"Blue"
+				"GradientID"		"0"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"razor_dynamo"
+					}
+					"Ability2"
+					{
+						"AbilityName"	"marci_bodyguard"
+						"AbilityIndex"	"2"
+						"AutoLevelAbility"	"false"
+					}					
+				}
+			}
+		}		
 	}
 
 
