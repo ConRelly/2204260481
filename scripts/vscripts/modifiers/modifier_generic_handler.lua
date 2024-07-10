@@ -86,8 +86,20 @@ function modifier_generic_handler:OnTakeDamage(keys)
 						keys.damage = keys.original_damage
 					end
 				end
-				
-				keys.attacker:HealWithParams(math.max(keys.damage, 0) * self:GetParent():GetSpellLifesteal() * 0.01, keys.inflictor, false, true, self:GetCaster(), true)
+				-- Define the maximum healing limit
+				local MAX_HEAL = 400000
+
+				-- Calculate the healing amount
+				local healAmount = math.max(keys.damage, 0) * self:GetParent():GetSpellLifesteal() * 0.01
+
+				-- Limit the healing to the maximum value
+				healAmount = math.min(healAmount, MAX_HEAL)
+
+				-- Apply the healing
+				keys.attacker:HealWithParams(healAmount, keys.inflictor, false, true, self:GetCaster(), true)				
+
+
+				--keys.attacker:HealWithParams(math.max(keys.damage, 0) * self:GetParent():GetSpellLifesteal() * 0.01, keys.inflictor, false, true, self:GetCaster(), true)
 --				keys.attacker:Heal(math.max(keys.damage, 0) * self:GetParent():GetSpellLifesteal() * 0.01, keys.attacker)
 			end	
 -- Pure spell lifesteal handler
@@ -100,8 +112,20 @@ function modifier_generic_handler:OnTakeDamage(keys)
 				self.lifesteal_pfx = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.attacker)
 				ParticleManager:SetParticleControl(self.lifesteal_pfx, 0, keys.attacker:GetAbsOrigin())
 				ParticleManager:ReleaseParticleIndex(self.lifesteal_pfx)
+				-- Define the maximum healing limit
+				local MAX_HEAL = 400000
+
+				-- Calculate the healing amount
+				local healAmount = math.max(keys.original_damage, 0) * self:GetParent():GetPureSpellLifesteal() * 0.01
+
+				-- Limit the healing to the maximum value
+				healAmount = math.min(healAmount, MAX_HEAL)
+
+				-- Apply the healing
+				keys.attacker:HealWithParams(healAmount, keys.inflictor, false, true, self:GetCaster(), true)
+								
 				
-				keys.attacker:HealWithParams(math.max(keys.original_damage, 0) * self:GetParent():GetPureSpellLifesteal() * 0.01, keys.inflictor, false, true, self:GetCaster(), true)
+				--keys.attacker:HealWithParams(math.max(keys.original_damage, 0) * self:GetParent():GetPureSpellLifesteal() * 0.01, keys.inflictor, false, true, self:GetCaster(), true)
 --				keys.attacker:Heal(math.max(keys.original_damage, 0) * self:GetParent():GetPureSpellLifesteal() * 0.01, keys.attacker)
 			end	
 
@@ -120,8 +144,19 @@ function modifier_generic_handler:OnTakeDamage(keys)
 				if keys.unit:IsIllusion() and keys.unit.GetPhysicalArmorValue and GetReductionFromArmor then
 					keys.damage = keys.original_damage * (1 - GetReductionFromArmor(keys.unit:GetPhysicalArmorValue(false)))
 				end
-				
-				keys.attacker:HealWithParams(keys.damage * self:GetParent():GetLifesteal() * 0.01, keys.inflictor, true, true, self:GetCaster(), false)
+				-- Define the maximum healing limit
+				local MAX_HEAL = 400000
+
+				-- Calculate the healing amount
+				local healAmount = math.max(keys.damage, 0) * self:GetParent():GetLifesteal() * 0.01
+
+				-- Limit the healing to the maximum value
+				healAmount = math.min(healAmount, MAX_HEAL)
+
+				-- Apply the healing
+				keys.attacker:HealWithParams(healAmount, keys.inflictor, false, true, self:GetCaster(), true)				
+
+				--keys.attacker:HealWithParams(keys.damage * self:GetParent():GetLifesteal() * 0.01, keys.inflictor, true, true, self:GetCaster(), false)
 --				keys.attacker:Heal(keys.damage * self:GetParent():GetLifesteal() * 0.01, keys.attacker)
 			end	
 -- Pure attack lifesteal handler
@@ -135,8 +170,19 @@ function modifier_generic_handler:OnTakeDamage(keys)
 				self.lifesteal_pfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, keys.attacker)
 				ParticleManager:SetParticleControl(self.lifesteal_pfx, 0, keys.attacker:GetAbsOrigin())
 				ParticleManager:ReleaseParticleIndex(self.lifesteal_pfx)
+				-- Define the maximum healing limit
+				local MAX_HEAL = 400000
 
-				keys.attacker:HealWithParams(keys.original_damage * self:GetParent():GetPureLifesteal() * 0.01, keys.inflictor, true, true, self:GetCaster(), false)
+				-- Calculate the healing amount
+				local healAmount = math.max(keys.original_damage, 0) * self:GetParent():GetPureLifesteal() * 0.01
+
+				-- Limit the healing to the maximum value
+				healAmount = math.min(healAmount, MAX_HEAL)
+
+				-- Apply the healing
+				keys.attacker:HealWithParams(healAmount, keys.inflictor, false, true, self:GetCaster(), true)	
+				
+				--keys.attacker:HealWithParams(keys.original_damage * self:GetParent():GetPureLifesteal() * 0.01, keys.inflictor, true, true, self:GetCaster(), false)
 --				keys.attacker:Heal(keys.original_damage * self:GetParent():GetPureLifesteal() * 0.01, keys.attacker)
 			end
 		end

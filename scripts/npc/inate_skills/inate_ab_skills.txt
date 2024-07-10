@@ -469,6 +469,27 @@
 		}
 	}
 
+	//=================================================================================================================
+	// Ability: Might and Magus (bonus attack damage from spell amp)
+	//=================================================================================================================
+	"rubick_might_and_magus"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"MaxLevel"						"1"
+		"Innate"						"1"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"bonus_damage_pct"				"100"
+			"bonus_damage_pct_tooltip"		"1"
+			"magic_resist_pct"				"10"
+			"magic_resist_pct_tooltip"		"0.1"
+		}
+	}
+
 
 //end
 }

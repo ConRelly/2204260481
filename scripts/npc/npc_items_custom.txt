@@ -36714,9 +36714,24 @@
 		}
 	}
 
+//t
 
-
-
+	"item_simple_max_hp_potion"
+	{
+	    "BaseClass"             "item_lua"
+	    "ScriptFile"            "items/item_simple_max_hp_potion"
+	    "AbilityBehavior"       "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	    "AbilityTextureName"    "greater_salve2"
+	    "ItemCost"              "10000"
+	    "ItemShopTags"          "max_hp"
+	    "ItemQuality"           "consumable"
+	    "ItemPurchasable"		"1"
+	    "ItemStackable"         "1"
+	    "ItemShareability"      "ITEM_FULLY_SHAREABLE"
+	    "ItemPermanent"         "0"
+	    "ItemInitialCharges"    "1"
+	    "ItemDisplayCharges"    "1"
+	}
 
 
 }

@@ -377,7 +377,8 @@ function IsExcludeAbility(ability)
 		"grimstroke_custom_ink_creature",
 		"grimstroke_spirit_walk",
 		"grimstroke_custom_spirit_walk",
-		"dawnbreaker_solar_guardian"
+		"dawnbreaker_solar_guardian",
+		"weaver_time_lapse",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

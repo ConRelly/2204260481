@@ -10649,7 +10649,7 @@
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityCastPoint"				"0.0"
 	"MaxLevel"					  "4"
-	"LevelsBetweenUpgrades"       "12"
+	"LevelsBetweenUpgrades"       "15"
 	"AbilityChannelTime"			"6"
 	"AbilityDuration"				"6.0"
 	"AbilityCooldown"				"60 50 40 30"
@@ -10665,7 +10665,7 @@
 		"2"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage"			"350 570 850 1800"
+			"damage"			"350 570 1150 2800"
 		}
 		"3"
 		{
@@ -10691,7 +10691,7 @@
 		"7"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"level_bonus_damage"			"25 35 50 100"
+			"level_bonus_damage"			"200 400 800 1600"
 		}		
 	}
 	"precache"

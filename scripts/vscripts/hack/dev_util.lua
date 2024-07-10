@@ -8,7 +8,7 @@ function print_all_hero_point( )
     end)
 end
 
-function print_hero_all_modifiers( )
+--[[ function print_hero_all_modifiers( )
     CallAllHeroFunc(function(hero)
         local p_id = hero:GetPlayerID()
         local ms = hero:FindAllModifiers()
@@ -21,7 +21,40 @@ function print_hero_all_modifiers( )
             print("    " .. s)
         end
     end)
+end ]]
+
+function print_hero_all_modifiers(player_id)
+  local player = PlayerResource:GetPlayer(player_id)
+  if not player then
+      print("Invalid player")
+      return
+  end
+
+  local hero = player:GetAssignedHero()
+  if not hero then
+      print("No hero assigned to player " .. player_id)
+      return
+  end
+
+  print("Executing print_hero_all_modifiers for player " .. player_id)
+  
+  local ms = hero:FindAllModifiers()
+  print("Player - " .. player_id)
+  if #ms == 0 then
+      print("    No modifiers found")
+  else
+      for _, modifier in pairs(ms) do
+          print("    " .. modifier:GetName())
+          local stack_count = modifier:GetStackCount()
+          local duration = modifier:GetDuration()
+          local s = string.format("Stack(%d) Duration(%.1f)", stack_count, duration)
+          print("    " .. s)
+      end
+  end
 end
+
+
+
 
 function print_hero_base_attack_time( )
   CallAllHeroFunc(function(hero)

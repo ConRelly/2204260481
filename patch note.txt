@@ -3159,6 +3159,16 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Replaced Huskar no mana innate with another innate
+* Buffed Huskar Lifebomb, Burning Spears (and talent)
+* Added new basic neutral item (Nemessis)
+* Added new consumable item (use to limit your HP gain from STR)
+* Reduced Veil bonus dmg to 1%.
+* Limited some lifesteal/spell lifesteal effects to have a cap of 400k hp heal (trying to fix the 1hp bug)
+* Maul now gives extra stacks for Evolving Crossbow (+20 first 3 forms and +2 4th form)
+
+
+
 
 
 ////////Self Note ////////////

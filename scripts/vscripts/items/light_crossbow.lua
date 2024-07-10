@@ -82,6 +82,10 @@ function modifier_light_crossbow_1:GetModifierProcAttack_Feedback(keys)
 			local underdog10 = caster:HasModifier("modifier_bottom_10")
 			local underdog20 = caster:HasModifier("modifier_bottom_20")
 			local underdog50 = caster:HasModifier("modifier_bottom_50")
+			local has_maul = caster:HasModifier("modifier_ursa_maul")
+			if has_maul then
+				bonus_charge = bonus_charge + 20
+			end
 			if underdog10 then
 				bonus_charge = bonus_charge + 1
 			elseif underdog20 then
@@ -91,7 +95,8 @@ function modifier_light_crossbow_1:GetModifierProcAttack_Feedback(keys)
 			end	
 			if has_ss and marci_ult then
 				bonus_charge = bonus_charge + 1								
-			end	            
+			end
+
 			ability:SetCurrentCharges(charges + bonus_charge)               
 			if evolve then
 				if not self.evolve_check then
@@ -238,6 +243,10 @@ function modifier_light_crossbow_2:GetModifierProcAttack_Feedback(keys)
 			local underdog10 = caster:HasModifier("modifier_bottom_10")
 			local underdog20 = caster:HasModifier("modifier_bottom_20")
 			local underdog50 = caster:HasModifier("modifier_bottom_50")
+			local has_maul = caster:HasModifier("modifier_ursa_maul")
+			if has_maul then
+				bonus_charge = bonus_charge + 20
+			end			
 			if underdog10 then
 				bonus_charge = bonus_charge + 1
 			elseif underdog20 then
@@ -389,6 +398,10 @@ function modifier_light_crossbow_3:GetModifierProcAttack_Feedback(keys)
 			local underdog10 = caster:HasModifier("modifier_bottom_10")
 			local underdog20 = caster:HasModifier("modifier_bottom_20")
 			local underdog50 = caster:HasModifier("modifier_bottom_50")
+			local has_maul = caster:HasModifier("modifier_ursa_maul")
+			if has_maul then
+				bonus_charge = bonus_charge + 20
+			end			
 			if underdog10 then
 				bonus_charge = bonus_charge + 1
 			elseif underdog20 then
@@ -604,6 +617,10 @@ function modifier_thunder_hammer:GetModifierProcAttack_Feedback(keys)
 			local underdog10 = caster:HasModifier("modifier_bottom_10")
 			local underdog20 = caster:HasModifier("modifier_bottom_20")
 			local underdog50 = caster:HasModifier("modifier_bottom_50")
+			local has_maul = caster:HasModifier("modifier_ursa_maul")
+			if has_maul then
+				bonus_charge = bonus_charge + 2
+			end				
 			if underdog10 then
 				bonus_charge = bonus_charge + 1
 			elseif underdog20 then

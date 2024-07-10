@@ -24,6 +24,7 @@
 		"item"		"item_random_get_ability"
 		"item"		"item_remove_ability"
 		"item"		"item_phoenix_ash"
+		"item"      "item_simple_max_hp_potion"
 		
 		
 	}
@@ -65,6 +66,7 @@
 		"item"      "item_giants_ring"
 		"item"      "item_overwhelming_blink"
 		"item"      "item_psychic_headband"
+		"item"      "item_nemesis_curse"
 		"item"		"item_chest_2"
 		"item"		"item_chest_3"
 		"item"		"item_chest_4"

@@ -295,7 +295,7 @@ function AOHGameMode:OnPlayerChat(keys)
 	end
 
 	if keys.text == "-dev_modifiers" and keys.playerid == 0 and Cheats:IsEnabled() then
-		print_hero_all_modifiers()
+		print_hero_all_modifiers(keys.playerid)
 	end
 
 

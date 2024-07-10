@@ -174,6 +174,8 @@
 }
 "npc_dota_hero_jakiro"
 {
+	"Ability5"		"generic_hidden"
+	"Ability7"		"jakiro_double_trouble"
 	"Ability11"		"special_bonus_spell_amplify_35"
 	"Ability13"		"special_bonus_hp_3250"
 	"Ability14"		"special_bonus_movement_speed_65"
@@ -766,8 +768,10 @@
 		//"Ability2"				"mjz_huskar_burning_spear_frostivus2018"
 		//"Ability6"				"frostivus2018_huskar_life_break"
 		"Ability3"				"mjz_huskar_berserkers_blood"
+		"Ability4"				"generic_hidden"
 		"Ability5"				"huskar_custom_life_break"
 		"Ability6"				"huskar_life_break"
+		"Ability7"              "bane_ichor_of_nyctasha"
 		"Ability10"				"special_bonus_hp_1750"
 		"Ability14"				"special_bonus_spell_amplify_100"
 		"Ability15"				"special_bonus_mp_400"

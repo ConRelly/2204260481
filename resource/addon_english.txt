@@ -109,6 +109,16 @@
 
 	"DOTA_Tooltip_modifier_naga_riptide_counter"				"Riptide Count"
 
+	"DOTA_Tooltip_modifier_force_max_hp"                        "Limiter"
+	"DOTA_Tooltip_modifier_force_max_hp_description"            "Reduce bonus hp from Str by 2 (resulting in only getting 0.5hp per point of str)"
+
+	"DOTA_Tooltip_ability_item_simple_max_hp_potion"               "Strength Limiter Potion"
+	"DOTA_Tooltip_ability_item_simple_max_hp_potion_Description"   "Reduces bonus HP from Strength by 2, resulting in only 0.5 HP per point of Strength. Consuming this item again will remove the effect."
+	"DOTA_Tooltip_ability_item_simple_max_hp_potion_Lore"          "A peculiar brew that constrains one's natural vitality."
+	"DOTA_Tooltip_ability_item_simple_max_hp_potion_Note0"         "Effect is permanent until consumed again."
+	"DOTA_Tooltip_ability_item_simple_max_hp_potion_Note1"         "Can be shared with allies."
+
+
 	"DOTA_Tooltip_Ability_item_cus_force_boots"					"Force Boots"
 	"DOTA_Tooltip_ability_item_cus_force_boots_Description"		"<h1>Active: Force</h1>Dispels the user and pushes them %push_length% units in the direction they are facing.\n<h1>Passive: Speed Unlock</h1> Completely removes the speed limit for the wearer \nMovement speed bonuses from multiple pairs of boots do not stack."
 	"DOTA_Tooltip_ability_item_cus_force_boots_Lore"		"Elusive marvels never successfully studied for proper classification in the archives."
@@ -2344,6 +2354,9 @@
 	"DOTA_Tooltip_Ability_item_light_crossbow_3_Note0"               "Top Underdgos get +1 more stack per proc"
 	"DOTA_Tooltip_modifier_light_crossbow_3_aura"				 	"Light Crossbow Aura (Level 3)"
 	"DOTA_Tooltip_modifier_light_crossbow_3_aura_Description"	 	"Increases Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Damage by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% and Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."
+
+	"DOTA_Tooltip_ability_ursa_maul"						"Maul"
+	"DOTA_Tooltip_ability_ursa_maul_Description"			"Gain bonus damage equal to a percentage of your Current HP.<br><font color='#E20624'>Evolving Light Crossbow</font> Gains +20 extra stacks per proc on first 3 evolutions and +2 on the 4nd one"
 
 //URN OF LIFE
 //1
