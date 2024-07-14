@@ -64,7 +64,31 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_undisarmed"	"Cannot be disarmed"
 	"DOTA_Tooltip_ability_special_bonus_unique_unsilenced"	"Cannot be silenced"
 	"DOTA_Tooltip_ability_special_bonus_unique_unmuted"		"Cannot be muted"
+//team totem
+	"npc_dota_totem_item_holder"            "Item Totem"
+	"DOTA_Tooltip_modifier_totem_upgrade_tracker"   "Totem Level"
+	"DOTA_Tooltip_modifier_totem_aura_effect" "Totem Aura"
+	"DOTA_Tooltip_modifier_totem_aura"   	"Totem"
+	"DOTA_Tooltip_modifier_totem_aura_effect_description" "Level %dMODIFIER_PROPERTY_TOOLTIP2% Aura stats :<br> %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% magic resit<br> %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% bonus armor<br> %dMODIFIER_PROPERTY_STATUS_RESISTANCE%%% Status resistance<br> %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Amp.<br>Gold Cost for Next UP: %dMODIFIER_PROPERTY_TOOLTIP% <br> 2x stats At lvl 50 "
 
+	"DOTA_Tooltip_ability_item_totem_upgrade"                   "Upgrade Totem"
+	"DOTA_Tooltip_ability_item_totem_upgrade_Description"       "<h1><font color='#07ECFF'>Upgrade</font></h1>Upgrade the team's totem, increasing its aura bonuses. Each upgrade increases the cost for subsequent upgrades.<br>On first Buy it will spawn an Totem item aura holder"
+	"DOTA_Tooltip_ability_item_totem_upgrade_Lore"              "Empower your team's ancient artifact to gain an edge in battle."
+	"DOTA_Tooltip_ability_item_totem_upgrade_Note0"             "Maximum upgrade level is 50."
+	"DOTA_Tooltip_ability_item_totem_upgrade_Note1"             "At maximum level, all bonuses are doubled."
+
+	"DOTA_Tooltip_ability_totem_aura"                      "Totem's Blessing"
+	"DOTA_Tooltip_ability_totem_aura_Description"          "Grants nearby allied heroes and units bonus magical resistance, armor, status resistance, and spell amplification. Bonuses increase with totem level."
+	"DOTA_Tooltip_ability_totem_aura_Lore"                 "An ancient power flows from the totem, strengthening all who stand near."
+	"DOTA_Tooltip_ability_totem_aura_Note0"                "Aura radius: 7200"
+	"DOTA_Tooltip_ability_totem_aura_Note1"                "At maximum level (50), all bonuses are doubled."
+
+	"DOTA_Tooltip_ability_totem_upgrade_tracker"           "Totem Power Level"
+	"DOTA_Tooltip_ability_totem_upgrade_tracker_Description" "Displays the current power level of the totem."
+	"DOTA_Tooltip_ability_totem_upgrade_tracker_Note0"     "Maximum level is 50."
+	"DOTA_Tooltip_ability_totem_upgrade_tracker_Note1"     "At maximum level, all bonuses are doubled."
+
+//end
 
 	"dota_ability_variable_hp_regen_pct"			"Max HP Health Regen"				// $hp_regen_pct
 	"dota_ability_variable_cast_time_pct"			"Cast Time"							// $cast_time_pct
@@ -2338,8 +2362,8 @@
 //LIGHT CROSSBOW
 //1
 	"DOTA_Tooltip_Ability_item_light_crossbow"					 "<font color='#E20624'>Evolving Light Crossbow</font>"
-	"DOTA_Tooltip_Ability_item_light_crossbow_Description"		 "<h1>Passive: Light Crossbow Aura</h1>+ %hp_aura% Health<br>+ %damage_aura%%% Damage<br>+ %ms_aura% Movement Speed<br><br>Radius: %aura_radius%.\n<h1><font color='#07ECFF'>Lightning Strike</font></h1>Each attack has a %static_chance%%% chance of creating a chain lightning bolt that can affect up to %static_strikes% enemies in a %static_radius% radius of the attacked enemy, dealing %chain_damage%%% of hero attack dmg as physical damage.\n<h1><font color='#F7B906'>Evolve</font></h1>Every time <font color='#07ECFF'>Lightning Strike</font> procs you gain a charge, Evolves at %charge_awaken% charges."
-	"DOTA_Tooltip_Ability_item_light_crossbow_Note0"                "Top Underdgos get +1 more stack per proc"
+	"DOTA_Tooltip_Ability_item_light_crossbow_Description"		 "<h1>Passive: Light Crossbow Aura</h1>+ %hp_aura% Health<br>+ %damage_aura%%% Damage<br>+ %ms_aura% Movement Speed<br><br>Radius: %aura_radius%.\n<h1><font color='#07ECFF'>Lightning Strike</font></h1>Each attack has a %static_chance%%% chance of creating a chain lightning bolt that can affect up to %static_strikes% enemies in a %static_radius% radius of the attacked enemy, dealing %chain_damage%%% of hero attack dmg as physical damage.\n<h1><font color='#F7B906'>Evolve</font></h1>Every time <font color='#07ECFF'>Lightning Strike</font> procs you gain a charge, Evolves at %charge_awaken% charges.<br> Alt for more info"
+	"DOTA_Tooltip_Ability_item_light_crossbow_Note0"                "Top Underdgos get +1 more stack per proc<br>Host can type in chat command '-evo2' if you experience crash when the item evolves for a similified/different in effects and code evolution"
 	"DOTA_Tooltip_modifier_light_crossbow_1_aura"				 	"Light Crossbow Aura (Level 1)"
 	"DOTA_Tooltip_modifier_light_crossbow_1_aura_Description"		"Increases Health by %dMODIFIER_PROPERTY_HEALTH_BONUS%, Damage by %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% and Movement Speed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT%."	
 //2

@@ -44816,7 +44816,30 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 
+//aura totem
 
 
+
+
+"totem_aura"
+{
+    "BaseClass"                 "ability_lua"
+    "ScriptFile"                "abilities/totem_upgrades.lua"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"        "custom_totem_aura"
+    "MaxLevel"                  "1"
+    "LearnOnSpawn"              "1"
+}
+
+"totem_upgrade_tracker"
+{
+    "BaseClass"                 "ability_lua"
+    "ScriptFile"                "abilities/totem_upgrades.lua"
+    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+    "AbilityTextureName"        "custom_totem_aura2"
+    "MaxLevel"                  "50"
+    "IsOnCastBar"              	"1"
+
+}
 
 }

@@ -146,6 +146,8 @@ function AOHGameMode:InitGameMode()
 	_G.cosmos_defeat_notification = true
 	_G.COURIERS = {}
 	_G.extra_ally = 0	
+	_G.totem_aura_check = true
+	_G.evolution_bow_first_option = true
 	self._hardMode = false
 	self._endlessMode = false
 	self._endlessMode_started = false
@@ -1378,7 +1380,7 @@ function AOHGameMode:OnEntitySpawned(event)
 	end	
 	if unit and unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS or unit:GetUnitName()== "npc_dota_badguys_fillers_custom" then
 		local not_illusion = not unit:HasModifier('modifier_illusion')
-		if IsValidEntity(unit) and (not unit:IsHero() or unit:GetUnitName()== "npc_courier_replacement") then 
+		if IsValidEntity(unit) and (not unit:IsHero() or unit:GetUnitName()== "npc_courier_replacement") or unit:GetUnitName()== "npc_dota_totem_item_holder" then 
 			LearnAbilityOnSpawn(unit)
 			-- self:_OnHeroFirstSpawned(npc) 
 		elseif IsValidEntity(unit) and (not unit:IsHero() or unit:GetUnitLabel()== "spirit_bear") then
@@ -1393,7 +1395,7 @@ function AOHGameMode:OnEntitySpawned(event)
 		end
 	end		
 	if unit and not unit:IsNull() and unit:IsHero() then
-		if unit:GetUnitName() ~= "npc_courier_replacement" then
+		if not unit:GetUnitName() == "npc_courier_replacement" or not unit:GetUnitName() == "npc_dota_totem_item_holder" then
 			if not unit:IsIllusion() then
 				fix_atr_for_hero2(unit)
 				check_hero_ranking(unit)

@@ -64,6 +64,8 @@ function AOHGameMode:OnPlayerChat(keys)
 		
 	end
 
+
+
 	if keys.text == "-alle" and (not self._endlessMode or not self._doubleMode) and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		local player_count = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) 
 		local playerID = keys.playerid
@@ -262,9 +264,19 @@ function AOHGameMode:OnPlayerChat(keys)
 			Notifications:TopToAll({text="Autoskip OFF", style={color="blue"}, duration=5})	
 		else
 			_G.auto_skipp = true
-			Notifications:TopToAll({text="Autoskip ON", style={color="blue"}, duration=5})	
+			Notifications:TopToAll({text="Autoskip ON", style={color="green"}, duration=5})	
 		end	
-	end			
+	end
+	if keys.text == "-evo2" and keys.playerid == 0 then
+		if _G.evolution_bow_first_option then
+			_G.evolution_bow_first_option = false
+			Notifications:TopToAll({text="Evolution bow effects second option", style={color="blue"}, duration=7})	
+		else
+			_G.evolution_bow_first_option = true
+			Notifications:TopToAll({text="Default Evolution bow effects", style={color="green"}, duration=7})	
+		end	
+	end		
+	
 	if keys.text == guessing_gmae_2 and not Cheats:IsEnabled() and time > 30 and not self._physdanage and not GameRules:IsGamePaused() then
 		Notifications:TopToAll({text="#dota_npc_does_bc", style={color="red"}, duration=5})
 		self._physdanage = true
@@ -593,6 +605,15 @@ function AOHGameMode:OnPlayerChat(keys)
         end_screen_setup(true)
 	end ]]
 	
+	if keys.text == "-dev_totem" and keys.playerid == 0 and Cheats:IsEnabled() then
+		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)	
+		local origin = Vector(-2958, 2031, -969) + RandomVector(100)
+		local totem = CreateUnitByName("npc_dota_totem_item_holder", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
+		totem:SetHasInventory(true)
+		totem:SetOwner(hero)
+		totem:SetControllableByPlayer(0, true)
+	end
+
 	if keys.text == "-refresh" then
 		self._physdamage[keys.playerid] = 1
 		self._magdamage[keys.playerid] = 1

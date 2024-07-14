@@ -67,6 +67,7 @@ local NoAutocast = {
     ["huskar_burning_spear"] = true,
     ["rubick_spell_steal"] = true,
     ["custom_aegis_cast"] = true,
+    ["brewmaster_drunken_brawler"] = true,
     
 };
 

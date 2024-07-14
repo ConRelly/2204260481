@@ -318,6 +318,7 @@ function IsExcludeAbility(ability)
 		"item_master_of_weapons_sword4",
 		"item_master_of_weapons_sword5",
 		"item_mjz_bloodstone_ultimate_edible",
+		"item_mjz_bloodstone_edible",
 		"item_thunder_hammer",
 		"item_thunder_gods_might",
 		"item_thunder_gods_might2",	

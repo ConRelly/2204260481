@@ -150,6 +150,7 @@ function modifier_resurrection_pendant:OnIntervalThink()
 			["npc_dummy_unit"] = true,
 			["npc_dota_hero_target_dummy"] = true,
 			["npc_courier_replacement"] = true,
+			["npc_dota_totem_item_holder"] = true,
 		}
 
 		local heroes = HeroList:GetAllHeroes()

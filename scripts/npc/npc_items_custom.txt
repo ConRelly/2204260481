@@ -36733,5 +36733,25 @@
 	    "ItemDisplayCharges"    "1"
 	}
 
+//totem up ability
+	"item_totem_upgrade"
+	{
+	    "BaseClass"                 "item_lua"
+	    "ScriptFile"                "abilities/totem_upgrades.lua"
+	    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	    "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	    "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO"
+	    "AbilityUnitTargetFlags"    "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+	    "AbilityTextureName"        "custom_totem_item"
+	    "ItemShareability"			"ITEM_FULLY_SHAREABLE_STACKING"
+	    "ItemCost"                  "5000"
+	    "AbilityCastRange"          "7200"
+	    "AbilityCastPoint"          "0.2"
+	    "AbilityCooldown"           "1.0"
+	    "AbilityManaCost"           "0"
+		"ItemSellable"				"1"
+		"ItemKillable"				"0"    
+	}
+
 
 }

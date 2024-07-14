@@ -490,6 +490,36 @@
 		}
 	}
 
+	//=================================================================================================================
+	// Tidehunter Whale Eater
+	//=================================================================================================================
+	"tidehunter_krill_eater"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"model_scale_base"				"-25"
+			"model_scale_per_level"			"1"
+			
+			"attack_range_base"				"-50"
+			"attack_range_per_level"		"10"
+
+			"anchor_smash_radius_base"		"-50"
+			"anchor_smash_radius_per_level"	"5"
+
+			"health_bar_offset_base"		"160"
+			"health_bar_offset_per_level"	"1.5"
+
+			"base_strength_tooltip"			"22"
+			"strength_gain_tooltip"			"50.0"
+		}
+	}
+
 
 //end
 }

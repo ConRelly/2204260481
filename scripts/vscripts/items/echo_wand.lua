@@ -198,6 +198,7 @@ if IsServer() then
 		item_master_of_weapons_sword4 = true,
 		item_master_of_weapons_sword5 = true,
 		item_mjz_bloodstone_ultimate_edible = true,
+		item_mjz_bloodstone_edible = true,
 		item_thunder_gods_might = true,
 		item_thunder_gods_might2 = true,
 		item_all_essence = true,

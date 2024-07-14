@@ -80,3 +80,7 @@ LinkLuaModifier("modifier_kill_unit", "modifiers/modifier_kill_unit.lua", LUA_MO
 
 --tomb
 LinkLuaModifier("modifier_tombstone2","modifiers/modifier_tombstone2", LUA_MODIFIER_MOTION_NONE)
+--totem
+LinkLuaModifier("modifier_totem_aura", "abilities/totem_upgrades.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_totem_aura_effect", "abilities/totem_upgrades.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_totem_upgrade_tracker", "abilities/totem_upgrades.lua", LUA_MODIFIER_MOTION_NONE)

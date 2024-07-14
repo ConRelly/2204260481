@@ -19,6 +19,7 @@ local NotRegister = {
     ["npc_dummy_unit"] = true,
     ["npc_dota_hero_target_dummy"] = true,
     ["npc_courier_replacement"] = true,
+	["npc_dota_totem_item_holder"] = true,
 }
 function GetAllRealHeroesCon()
 	local rheroes = {}
@@ -977,6 +978,7 @@ local NotRegister = {
     ["npc_dummy_unit"] = true,
     ["npc_dota_hero_target_dummy"] = true,
     ["npc_courier_replacement"] = true,
+	["npc_dota_totem_item_holder"] = true,
 }
 local max_item_count = 1
 local item_count = {

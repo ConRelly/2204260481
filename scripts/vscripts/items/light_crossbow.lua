@@ -100,23 +100,29 @@ function modifier_light_crossbow_1:GetModifierProcAttack_Feedback(keys)
 			ability:SetCurrentCharges(charges + bonus_charge)               
 			if evolve then
 				if not self.evolve_check then
-					local zeus_ultimate_particle = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf" 
-					local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
-					local zeus_ultimate_sound = "Hero_Zuus.GodsWrath"
-					--Renders the particle on the target
-					local particle_eff = ParticleManager:CreateParticle(particle, PATTACH_WORLDORIGIN, caster)
-					-- Raise 1000 value if you increase the camera height above 1000
-					ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-					ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
-					ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-					ParticleManager:ReleaseParticleIndex(particle_eff)
-					EmitSoundOn(zeus_ultimate_sound, caster)                    
-					caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
-					-- Remove the old item and add the evolved item
-					self.evolve_check = true
-					--caster:RemoveItem(ability)
-					caster:TakeItem(ability)
-					caster:AddItemByName("item_light_crossbow_2")                                                      
+					if _G.evolution_bow_first_option then
+						local zeus_ultimate_particle = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf" 
+						local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+						local zeus_ultimate_sound = "Hero_Zuus.GodsWrath"
+						--Renders the particle on the target
+						local particle_eff = ParticleManager:CreateParticle(particle, PATTACH_WORLDORIGIN, caster)
+						-- Raise 1000 value if you increase the camera height above 1000
+						ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+						ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
+						ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+						ParticleManager:ReleaseParticleIndex(particle_eff)
+						EmitSoundOn(zeus_ultimate_sound, caster)                    
+						caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
+						-- Remove the old item and add the evolved item
+						self.evolve_check = true
+						--caster:RemoveItem(ability)
+						caster:TakeItem(ability)
+						caster:AddItemByName("item_light_crossbow_2")  
+					else
+						self.evolve_check = true
+						caster:RemoveItem(ability)
+						caster:AddItemByName("item_light_crossbow_2")
+					end
 				end  
 			end  
 		end	      
@@ -260,24 +266,30 @@ function modifier_light_crossbow_2:GetModifierProcAttack_Feedback(keys)
 			ability:SetCurrentCharges(charges + bonus_charge)               
             if evolve then
                 if not self.evolve_check then
-					local zeus_ultimate_particle = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf" 
-					local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
-					local zeus_ultimate_sound = "Hero_Zuus.GodsWrath"
-                    --Renders the particle on the target
-                    local particle_eff = ParticleManager:CreateParticle(particle, PATTACH_WORLDORIGIN, caster)
-                    -- Raise 1000 value if you increase the camera height above 1000
-                    ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-                    ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
-                    ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-					ParticleManager:DestroyParticle(particle_eff, false)
-					ParticleManager:ReleaseParticleIndex(particle_eff)
-					EmitSoundOn(zeus_ultimate_sound, caster)                    
-                    caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
-                    -- Remove the old item and add the evolved item
-					self.evolve_check = true
-                    --caster:RemoveItem(ability)
-					caster:TakeItem(ability)
-                    caster:AddItemByName("item_light_crossbow_3")                                                      
+					if _G.evolution_bow_first_option then
+						local zeus_ultimate_particle = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf" 
+						local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+						local zeus_ultimate_sound = "Hero_Zuus.GodsWrath"
+						--Renders the particle on the target
+						local particle_eff = ParticleManager:CreateParticle(particle, PATTACH_WORLDORIGIN, caster)
+						-- Raise 1000 value if you increase the camera height above 1000
+						ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+						ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
+						ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+						ParticleManager:DestroyParticle(particle_eff, false)
+						ParticleManager:ReleaseParticleIndex(particle_eff)
+						EmitSoundOn(zeus_ultimate_sound, caster)                    
+						caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
+						-- Remove the old item and add the evolved item
+						self.evolve_check = true
+						--caster:RemoveItem(ability)
+						caster:TakeItem(ability)
+						caster:AddItemByName("item_light_crossbow_3")
+					else
+						self.evolve_check = true
+						caster:RemoveItem(ability)
+						caster:AddItemByName("item_light_crossbow_3")			
+					end	
                 end  
             end        
         end   
@@ -415,25 +427,31 @@ function modifier_light_crossbow_3:GetModifierProcAttack_Feedback(keys)
 			ability:SetCurrentCharges(charges + bonus_charge)               
             if evolve then
                 if not self.evolve_check then
-					local zeus_ultimate_particle = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf" 
-					local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
-					local zeus_ultimate_sound = "Hero_Zuus.GodsWrath"
-                    --Renders the particle on the target
-                    local particle_eff = ParticleManager:CreateParticle(particle, PATTACH_WORLDORIGIN, caster)
-                    -- Raise 1000 value if you increase the camera height above 1000
-                    ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-                    ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
-                    ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-					ParticleManager:DestroyParticle(particle_eff, false)
-					ParticleManager:ReleaseParticleIndex(particle_eff)
-					EmitSoundOn(zeus_ultimate_sound, caster)                    
-                    caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
-                    -- Remove the old item and add the evolved item
+					if _G.evolution_bow_first_option then
+						local zeus_ultimate_particle = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf" 
+						local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+						local zeus_ultimate_sound = "Hero_Zuus.GodsWrath"
+						--Renders the particle on the target
+						local particle_eff = ParticleManager:CreateParticle(particle, PATTACH_WORLDORIGIN, caster)
+						-- Raise 1000 value if you increase the camera height above 1000
+						ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+						ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
+						ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+						ParticleManager:DestroyParticle(particle_eff, false)
+						ParticleManager:ReleaseParticleIndex(particle_eff)
+						EmitSoundOn(zeus_ultimate_sound, caster)                    
+						caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
+						-- Remove the old item and add the evolved item
 
-					self.evolve_check = true
-					caster:TakeItem(ability)
-					--caster:RemoveItem(ability)
-                    caster:AddItemByName("item_thunder_hammer")                                                      
+						self.evolve_check = true
+						caster:TakeItem(ability)
+						--caster:RemoveItem(ability)
+						caster:AddItemByName("item_thunder_hammer")
+					else
+						self.evolve_check = true
+						caster:RemoveItem(ability)
+						caster:AddItemByName("item_thunder_hammer")
+					end					                                                   
                 end  
             end        
         end   
@@ -634,24 +652,30 @@ function modifier_thunder_hammer:GetModifierProcAttack_Feedback(keys)
 			ability:SetCurrentCharges(charges + bonus_charge)               
             if evolve then
                 if not self.evolve_check then
-                    local zeus_ultimate_particle = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf" 
-                    local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
-                    local zeus_ultimate_sound = "Hero_Zuus.GodsWrath"
-                    --Renders the particle on the target
-                    local particle_eff = ParticleManager:CreateParticle(particle, PATTACH_WORLDORIGIN, caster)
-                    -- Raise 1000 value if you increase the camera height above 1000
-                    ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-                    ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
-                    ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-					ParticleManager:DestroyParticle(particle_eff, false)
-					ParticleManager:ReleaseParticleIndex(particle_eff)                   
-					EmitSoundOn(zeus_ultimate_sound, caster)                    
-                    caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
-                    -- Remove the old item and add the evolved item
-					self.evolve_check = true
-                    --caster:RemoveItem(ability)
-					caster:TakeItem(ability)
-                    caster:AddItemByName("item_thunder_gods_might")                                                      
+					if _G.evolution_bow_first_option then
+						local zeus_ultimate_particle = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf" 
+						local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+						local zeus_ultimate_sound = "Hero_Zuus.GodsWrath"
+						--Renders the particle on the target
+						local particle_eff = ParticleManager:CreateParticle(particle, PATTACH_WORLDORIGIN, caster)
+						-- Raise 1000 value if you increase the camera height above 1000
+						ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+						ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
+						ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
+						ParticleManager:DestroyParticle(particle_eff, false)
+						ParticleManager:ReleaseParticleIndex(particle_eff)                   
+						EmitSoundOn(zeus_ultimate_sound, caster)                    
+						caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
+						-- Remove the old item and add the evolved item
+						self.evolve_check = true
+						--caster:RemoveItem(ability)
+						caster:TakeItem(ability)
+						caster:AddItemByName("item_thunder_gods_might")
+					else
+						self.evolve_check = true
+						caster:RemoveItem(ability)
+						caster:AddItemByName("item_thunder_gods_might")							
+					end	
                 end  
             end        
         end   

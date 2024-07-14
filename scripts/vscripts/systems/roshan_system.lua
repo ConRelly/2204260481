@@ -324,6 +324,7 @@ local NotRegister = {
     ["npc_dummy_unit"] = true,
     ["npc_dota_hero_target_dummy"] = true,
     ["npc_courier_replacement"] = true,
+    ["npc_dota_totem_item_holder"] = true,
 }
 
 -- Create a table to store the players who have received the item

@@ -11744,7 +11744,7 @@
 }
 "npc_courier_replacement"
 {
-	//"vscripts"					"ai/announcer_aghanim.lua"
+
 	"BaseClass"					"npc_dota_lone_druid_bear"
 	"Model"						"models/props_gameplay/donkey_wings.vmdl"	// Model.
 	"SoundSet"					""					// Name of sound set.
@@ -11791,6 +11791,49 @@
 	"IdleExpression"			"scenes/default_idle.vcd"
 	"WakesNeutrals"				"0"
 }
+
+//test Totem
+"npc_dota_totem_item_holder"
+{
+    "BaseClass"                 "npc_dota_lone_druid_bear"
+    "Model"                     "models/props_gameplay/wraith_pact.vmdl" 
+    "SoundSet"					"Pugna_NetherWard"
+    "ModelScale"                "2.5"
+    "Level"                     "1"
+    "UnitLabel"                 "totem"
+    "ConsideredHero"            "0"
+    
+    "AttackCapabilities"        "DOTA_UNIT_CAP_NO_ATTACK"
+    "AttackDamageMin"           "0"
+    "AttackDamageMax"           "0"
+    
+    "BoundsHullName"            "DOTA_HULL_SIZE_SMALL"
+    "MovementCapabilities"      "DOTA_UNIT_CAP_MOVE_NONE"
+    
+    "StatusHealth"              "1000"
+    "StatusHealthRegen"         "0"
+    "StatusMana"                "0"
+    "StatusManaRegen"           "0"
+    
+    "ArmorPhysical"             "0"
+    "MagicalResistance"         "0"
+    
+    "TeamName"                  "DOTA_TEAM_GOODGUYS"  
+    "UnitRelationshipClass"     "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_BUILDING"
+    
+    "VisionDaytimeRange"        "1000"
+    "VisionNighttimeRange"      "1000"
+    
+    "HasInventory"              "1"
+    
+    "Ability1"                  "totem_aura"  // The aura ability
+    "Ability2"                  "totem_upgrade_tracker"
+    
+
+    "DisableResistance"         "100"
+}
+
+
 	"npc_boss_crystal_queen"
 {
 	"Model"								 "models/heroes/crystal_maiden/crystal_maiden_arcana.vmdl"
