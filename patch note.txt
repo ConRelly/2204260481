@@ -3168,7 +3168,13 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Maul now gives extra stacks for Evolving Crossbow (+20 first 3 forms and +2 4th form)
 
 
-* Host can type "-evo2" for a different in code and no effects evolution for Evloving Light CrossBow (testing for ppl who experience crash on evolution)
+
+
+* Host can type "-evo2" for a different in code and no effects evolution for Evloving Light CrossBow (test for ppl who experience crash on evolution).
+* Fixed Death Profect Q skill bug and added back talent for Q CD.
+
+
+
 
 
 

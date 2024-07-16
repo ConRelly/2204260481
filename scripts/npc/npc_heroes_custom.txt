@@ -1634,7 +1634,7 @@
 
 		"Ability1"				"mjz_death_prophet_carrion_swarm"
 		"Ability2"				"death_prophet_custom_moving_life"
-		"Ability10"				"special_bonus_unique_death_prophet_3"
+		"Ability10"				"special_bonus_unique_dp_carrion_swarm_cooldown"
 		"Ability12"				"special_bonus_reincarnation_90"
 		"Ability13"             "special_bonus_spell_amplify_100"
 		"Ability14"				"special_bonus_unique_death_prophet_5"

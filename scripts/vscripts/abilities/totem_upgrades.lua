@@ -68,6 +68,7 @@ function modifier_totem_aura_effect:DeclareFunctions()
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
         MODIFIER_PROPERTY_STATUS_RESISTANCE,
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
+        MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
         MODIFIER_PROPERTY_TOOLTIP,
         MODIFIER_PROPERTY_TOOLTIP2,
     }
@@ -84,9 +85,9 @@ end
 
 function modifier_totem_aura_effect:GetModifierPhysicalArmorBonus()
     if self:GetStackCount() >= 50 then
-        return self:GetStackCount() * 10
+        return self:GetStackCount() * 6
     else
-        return self:GetStackCount() * 5
+        return self:GetStackCount() * 3
     end
 end
 
@@ -105,6 +106,16 @@ function modifier_totem_aura_effect:GetModifierSpellAmplify_Percentage()
         return self:GetStackCount() * 2
     end
 end
+
+function modifier_totem_aura_effect:GetModifierBaseDamageOutgoing_Percentage()
+    if self:GetStackCount() >= 50 then
+        return self:GetStackCount() * 2
+    else
+        return self:GetStackCount() * 1
+    end
+end
+
+
 --add calculate cost in tooltip base on stacks (1000 + (level * 200))
 function modifier_totem_aura_effect:OnTooltip()
     local stacks = self:GetStackCount()
@@ -155,7 +166,9 @@ function item_totem_upgrade:Spawn()
             local totem = CreateUnitByName("npc_dota_totem_item_holder", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
             totem:SetHasInventory(true)
             totem:SetOwner(hero)
-            totem:SetControllableByPlayer(0, true)            
+            totem:SetControllableByPlayer(0, true)
+            totem:AddNewModifier(totem, nil, "modifier_invulnerable", {})
+            
         end    
     end    
 end    

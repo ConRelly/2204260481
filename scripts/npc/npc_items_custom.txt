@@ -36749,7 +36749,8 @@
 	    "AbilityCastPoint"          "0.2"
 	    "AbilityCooldown"           "1.0"
 	    "AbilityManaCost"           "0"
-		"ItemSellable"				"1"
+	    "ItemPurchasable"           "0"
+		"ItemSellable"				"0"
 		"ItemKillable"				"0"    
 	}
 

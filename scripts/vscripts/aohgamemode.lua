@@ -1395,15 +1395,17 @@ function AOHGameMode:OnEntitySpawned(event)
 		end
 	end		
 	if unit and not unit:IsNull() and unit:IsHero() then
-		if not unit:GetUnitName() == "npc_courier_replacement" or not unit:GetUnitName() == "npc_dota_totem_item_holder" then
-			if not unit:IsIllusion() then
-				fix_atr_for_hero2(unit)
-				check_hero_ranking(unit)
+		if unit:GetUnitName() ~= "npc_courier_replacement" then
+			if  unit:GetUnitName() ~= "npc_dota_totem_item_holder" then
+				if not unit:IsIllusion() then
+					fix_atr_for_hero2(unit)
+					check_hero_ranking(unit)
+				end
+				fix_atr_for_hero(unit)
+				unit:AddNewModifier(unit, nil, "modifier_generic_handler", {})
+				unit:AddNewModifier(unit, nil, "modifier_aegis_buff", {duration = 7})
+				unit:AddNewModifier(unit, nil, "modifier_aegis_buff", {duration = 2})
 			end
-			fix_atr_for_hero(unit)
-			unit:AddNewModifier(unit, nil, "modifier_generic_handler", {})
-			unit:AddNewModifier(unit, nil, "modifier_aegis_buff", {duration = 7})
-			unit:AddNewModifier(unit, nil, "modifier_aegis_buff", {duration = 2})
 		end
 	end	
 	if unit and (unit:GetUnitName()== "npc_courier_replacement" or unit:GetUnitName()== "npc_dota_lone_druid_bear4") then

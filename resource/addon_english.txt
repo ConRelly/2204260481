@@ -67,17 +67,17 @@
 //team totem
 	"npc_dota_totem_item_holder"            "Item Totem"
 	"DOTA_Tooltip_modifier_totem_upgrade_tracker"   "Totem Level"
-	"DOTA_Tooltip_modifier_totem_aura_effect" "Totem Aura"
+	"DOTA_Tooltip_modifier_totem_aura_effect" "<font color='#FF7518'>Last Order</font>"
 	"DOTA_Tooltip_modifier_totem_aura"   	"Totem"
-	"DOTA_Tooltip_modifier_totem_aura_effect_description" "Level %dMODIFIER_PROPERTY_TOOLTIP2% Aura stats :<br> %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% magic resit<br> %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% bonus armor<br> %dMODIFIER_PROPERTY_STATUS_RESISTANCE%%% Status resistance<br> %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Amp.<br>Gold Cost for Next UP: %dMODIFIER_PROPERTY_TOOLTIP% <br> 2x stats At lvl 50 "
+	"DOTA_Tooltip_modifier_totem_aura_effect_description" "Level %dMODIFIER_PROPERTY_TOOLTIP2% Aura stats :<br> %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% magic resit<br> %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% bonus armor<br> %dMODIFIER_PROPERTY_STATUS_RESISTANCE%%% Status resistance<br> %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Amp<br> %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% Damage<br>Gold Cost for Next UP: %dMODIFIER_PROPERTY_TOOLTIP% <br> 2x stats At lvl 50 "
 
 	"DOTA_Tooltip_ability_item_totem_upgrade"                   "Upgrade Totem"
 	"DOTA_Tooltip_ability_item_totem_upgrade_Description"       "<h1><font color='#07ECFF'>Upgrade</font></h1>Upgrade the team's totem, increasing its aura bonuses. Each upgrade increases the cost for subsequent upgrades.<br>On first Buy it will spawn an Totem item aura holder"
-	"DOTA_Tooltip_ability_item_totem_upgrade_Lore"              "Empower your team's ancient artifact to gain an edge in battle."
+	"DOTA_Tooltip_ability_item_totem_upgrade_Lore"              "<font color='#c51b1b'>Idea by Kirk</font> and <font color='#c51b1b'>『Kumagawa Misogi』</font>"
 	"DOTA_Tooltip_ability_item_totem_upgrade_Note0"             "Maximum upgrade level is 50."
-	"DOTA_Tooltip_ability_item_totem_upgrade_Note1"             "At maximum level, all bonuses are doubled."
+	"DOTA_Tooltip_ability_item_totem_upgrade_Note1"             "At maximum level, all bonuses are doubled.<br>Host can move/pass items from his inventory<br> Because it can't drop items a unit/hero must get close and take the item."
 
-	"DOTA_Tooltip_ability_totem_aura"                      "Totem's Blessing"
+	"DOTA_Tooltip_ability_totem_aura"                      "<font color='#FF7518'>Last Order</font>"
 	"DOTA_Tooltip_ability_totem_aura_Description"          "Grants nearby allied heroes and units bonus magical resistance, armor, status resistance, and spell amplification. Bonuses increase with totem level."
 	"DOTA_Tooltip_ability_totem_aura_Lore"                 "An ancient power flows from the totem, strengthening all who stand near."
 	"DOTA_Tooltip_ability_totem_aura_Note0"                "Aura radius: 7200"

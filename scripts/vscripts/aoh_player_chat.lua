@@ -605,14 +605,7 @@ function AOHGameMode:OnPlayerChat(keys)
         end_screen_setup(true)
 	end ]]
 	
-	if keys.text == "-dev_totem" and keys.playerid == 0 and Cheats:IsEnabled() then
-		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)	
-		local origin = Vector(-2958, 2031, -969) + RandomVector(100)
-		local totem = CreateUnitByName("npc_dota_totem_item_holder", origin, true, nil, nil, DOTA_TEAM_GOODGUYS)
-		totem:SetHasInventory(true)
-		totem:SetOwner(hero)
-		totem:SetControllableByPlayer(0, true)
-	end
+
 
 	if keys.text == "-refresh" then
 		self._physdamage[keys.playerid] = 1

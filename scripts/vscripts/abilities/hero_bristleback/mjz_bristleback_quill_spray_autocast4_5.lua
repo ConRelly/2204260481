@@ -86,6 +86,7 @@ local NoAutocastItem = {
     
     ["item_echo_wand"] = true,
     ["item_remove_ability"] = true,
+    ["item_totem_upgrade"] = true,
 };
 
 

@@ -203,6 +203,7 @@ if IsServer() then
 		item_thunder_gods_might2 = true,
 		item_all_essence = true,
 		item_aegis_cast = true,
+		item_totem_upgrade = true,
 		--mjz_doom_bringer_devour = true,
 		--mjz_clinkz_soul_pact = true,
 		frostivus2018_clinkz_burning_army = true,
