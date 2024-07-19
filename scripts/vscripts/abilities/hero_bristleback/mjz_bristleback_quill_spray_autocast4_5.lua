@@ -74,7 +74,7 @@ local TargetSpell = {
     ["tinker_warp_grenade"] = true,
     ["hoodwink_hunters_boomerang"] = true,
     ["mjz_spectre_haunt_single"] = true,
-
+    ["razor_static_link"] = true,
 };
 local PointSpell = {
     

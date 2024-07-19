@@ -3191,6 +3191,19 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Added Abyssal Blade to the no-multicast list (seems to crash at higher multicast nr).
+* Reduced Hoodwink boomerang incoming dmg amp from 35% to 1%.
+* Removed Beastmaster
+* Updated razor steal dmg talent. Static Link now works on autocast even after Shard Up and has increased cast range and buffer for braking.
+* Arcanist armor is now fully shareable.
+* Removed Shiva Guard spell dmg boost, added to Great Shiva from 0% to 1%.
+
+
+
+
+
+
+
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).

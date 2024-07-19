@@ -2712,58 +2712,32 @@
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 	"MaxUpgradeLevel"			   "2"
 	"ItemBaseLevel"				 "2"
-	"AbilitySpecial"
+	"AbilityValues"
 	{
-		"01"
+		"bonus_intellect"		"30 145"
+		"bonus_strength"		"30 145"
+		"bonus_agility"			"30 145"
+		"bonus_hp_regen"		"40 100"
+		"bonus_armor"			"15 25"
+		"aura_radius"			
 		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_intellect"		"30 145"
+			"value"	"7200"
+			"affected_by_aoe_increase"	"1"
 		}
-		"02"
+		"aura_attack_speed"		"-30"
+		"blast_damage"			"1500 3000"
+		"blast_movement_speed"	"-40"
+		"blast_debuff_duration"	"4.0"
+		"blast_radius"			
 		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"15 25"
+			"value"		"1500"
+			"affected_by_aoe_increase"	"1"
 		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aura_radius"			"7200"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aura_attack_speed"		"-10 -55"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"blast_damage"			"400 1900"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"blast_movement_speed"	"-40"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"blast_debuff_duration"	"4.0"
-		}
-		"08"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"blast_radius"			"900"
-		}
-		"09"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"blast_speed"			"350"
-		}
-		"10"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"hp_regen_degen_aura"	"25"
-		}
+		"blast_speed"			"400"
+		"hp_regen_degen_aura"	"25"
+		"illusion_multiplier_pct"	"150"
+		"spell_amp"			"0 1"				
+		"resist_debuff_duration"	"16.0"
 	}
 }
 "item_recipe_health_bag"
@@ -32064,14 +32038,14 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"ItemPurchasable"				"0"
 		"ItemKillable"					"0"
-		"ItemSellable"					"0"
+		"ItemSellable"					"1"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"AbilityCooldown"				"27"
 		"AbilityManaCost"				"200"
 		"AbilityCastPoint"				"0"
 		"ItemShopTags"					"int;armor;hard_to_tag"
-		"AbilityCastRange"				"900"
+		"AbilityCastRange"				"1500"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"shivas shield"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -32084,27 +32058,27 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_int"				"30"
+				"bonus_int"				"400"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"15"
+				"bonus_armor"			"30"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_radius"			"900"
+				"aura_radius"			"7200"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mana_aura"				"400"
+				"mana_aura"				"3500"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor_aura"			"15"
+				"armor_aura"			"45"
 			}
 			"06"
 			{
@@ -32134,7 +32108,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_radius"			"900"
+				"blast_radius"			"1500"
 			}
 			"12"
 			{
@@ -32144,7 +32118,7 @@
 			"13"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"blast_damage"					"400"
+				"blast_damage"					"4000"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"14"
