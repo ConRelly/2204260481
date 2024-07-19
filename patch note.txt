@@ -3174,6 +3174,18 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Fixed Death Profect Q skill bug and added back talent for Q CD.
 
 
+* Request of Kirk and "Kumagawa Misogi" with quest points.
+	-New item: Upgrade Totem 
+* Endless Wisdom now gives 2 stacks for each minute of gameplay when acquired and gives more int per stack overall. Added gained int info on buff.
+* WD Death Skull now searches the nearest enemy in range for direction, has a higher base caster rage, and now uses bonus caster rage.
+* Added Challenge Boss effect for Death Skull, and may have something extra as well. 
+* Challenge Boss tier 5 rewards now require 120 more lvls, the rest 1-4 remain unchanged.
+* Void Spirit Resonant Pulse has a higher CD and can't be multicast or mimicked.
+* Marci Bodyguard and Sidekick can now autocast and find an ally.
+* Dawnbreaker Starbreaker(Q) can now be autocast.
+* Batrider Sticky Napalm is now instant cast and does not interrupt movement.
+* Downbreaker Ultimate can no longer be autocast (seems there's a bug where it could crash (not always) because of the land swap skill).
+* Spectre Shadow Step can now be autocast, Haunt can no longer be multicast.
 
 
 

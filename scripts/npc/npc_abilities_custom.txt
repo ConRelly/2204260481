@@ -63,7 +63,7 @@
 	"dawnbreaker_custom_fire_wreath"
 	{
 		"BaseClass"						"dawnbreaker_fire_wreath"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CAN_SELF_CAST | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
@@ -71,7 +71,7 @@
 		"MaxLevel"						"10"
 		"LevelsBetweenUpgrades"			"9"
 		"HasShardUpgrade"               "1"
-		//"AbilityCastRange"				"600"
+		"AbilityCastRange"				"750"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityManaCost"				"80"
@@ -836,7 +836,7 @@
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"7"
-		"AbilityCooldown"				"11"
+		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"50"
 		"AbilitySpecial"
 		{
@@ -15306,7 +15306,7 @@
 		"HasScepterUpgrade"				"1"
 		"Maxlevel"						"7"
 		"AbilityCastPoint"				"0.1"
-		"AbilityCastRange"				"1100"
+		"AbilityCastRange"				"1500"
 		"AbilityChannelTime"			"7.0"
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"150 225 300 400 500 600 1000"
@@ -32234,7 +32234,8 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilitySound"					"Hero_Spectre.Haunt"
-
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityCastPoint"				"0.1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 
@@ -32312,7 +32313,7 @@
 		"BaseClass"						"ability_lua"  //"ability_datadriven"
 		"ScriptFile"					"abilities/hero_spectre/mjz_spectre_haunt.lua"
 		"AbilityTextureName"			"mjz_spectre_haunt_single"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -32326,7 +32327,7 @@
 
 		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
-
+		"AbilityCastRange"              "7000"
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"50"
 
@@ -36864,18 +36865,18 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_damage"				"2020 250 300 3220"
+				"crit_damage"				"2020 250 300 4220"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_chance"				"2 2 2 4"
+				"crit_chance"				"2 2 2 5"
 				"LinkedSpecialBonus"		"special_bonus_unique_mjz_chaos_strike"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"armor_reduction"			"-720"
+				"armor_reduction"			"-1020"
 			}
 			"04"
 			{
@@ -36885,7 +36886,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"lifesteal"					"100 40 55 125"
+				"lifesteal"					"100 40 55 235"
 			}
 		}
 
@@ -38832,12 +38833,16 @@
 		"MaxLevel"						"5"
 		"LevelsBetweenUpgrades"			"12"
 		"RequiredLevel"					"1"
+		"precache"
+		{
+			"particle"				  "particles/custom/abilities/endless_wisdom/endless_wisdom_count.vpcf"
+		}		
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"grow_int"					"1.0 1.5 2.0 2.5 5.0"
+				"grow_int"					"1.0 2.0 3.0 4.5 7.0"
 			}
 			"02"
 			{
@@ -43243,7 +43248,7 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/hero_batrider/sticky_napalm"
 		"AbilityTextureName"			"batrider_sticky_napalm"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_Batrider.StickyNapalm.Impact"

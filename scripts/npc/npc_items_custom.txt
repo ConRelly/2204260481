@@ -36749,10 +36749,12 @@
 	    "AbilityCastPoint"          "0.2"
 	    "AbilityCooldown"           "1.0"
 	    "AbilityManaCost"           "0"
-	    "ItemPurchasable"           "0"
+	    "ItemPurchasable"           "1"
 		"ItemSellable"				"0"
-		"ItemKillable"				"0"    
+		"ItemKillable"				"0"
+		"ItemStackable"         	"1" 
+		"ItemInitialCharges"			"0"
+		"ItemDisplayCharges"			"1"		 
 	}
-
 
 }

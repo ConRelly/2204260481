@@ -52,7 +52,7 @@ function modifier_infinite_health:OnDestroy()
                     Drop_gold_bag(parent, 35000)
                     _G._challenge_bosss = 4
                 end 
-                if lvl > 190 then
+                if lvl > 310 then
                     create_item_drop("item_adamantium_ingot", vcenter + RandomVector(RandomFloat(50, 250)))
                     create_item_drop("item_edible_complete", vcenter + RandomVector(RandomFloat(50, 250)))
                     reward = "Tier V: 5 ingots, 5 gold bags, Edible fragment + Edible Complete"

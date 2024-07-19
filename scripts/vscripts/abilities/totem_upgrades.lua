@@ -3,6 +3,7 @@
 LinkLuaModifier("modifier_totem_aura", "abilities/totem_upgrades.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_totem_aura_effect", "abilities/totem_upgrades.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_totem_upgrade_tracker", "abilities/totem_upgrades.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_hero_totem_buff", "abilities/totem_upgrades.lua", LUA_MODIFIER_MOTION_NONE)
 
 -- Totem Aura ability
 totem_aura = class({})
@@ -28,9 +29,11 @@ function modifier_totem_aura:GetAuraSearchTeam()
 end
 
 function modifier_totem_aura:GetAuraSearchType()
-    return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
+    return DOTA_UNIT_TARGET_ALL
 end
-
+function modifier_totem_aura:GetAuraSearchFlags()
+    return DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD + DOTA_UNIT_TARGET_FLAG_INVULNERABLE
+end
 function modifier_totem_aura:GetModifierAura()
     return "modifier_totem_aura_effect"
 end
@@ -69,6 +72,7 @@ function modifier_totem_aura_effect:DeclareFunctions()
         MODIFIER_PROPERTY_STATUS_RESISTANCE,
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
         MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE,
+        MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN,
         MODIFIER_PROPERTY_TOOLTIP,
         MODIFIER_PROPERTY_TOOLTIP2,
     }
@@ -115,6 +119,13 @@ function modifier_totem_aura_effect:GetModifierBaseDamageOutgoing_Percentage()
     end
 end
 
+function modifier_totem_aura_effect:GetModifierMoveSpeed_AbsoluteMin()
+    local parent = self:GetParent()
+    if parent:HasModifier("modifier_hero_totem_buff") then
+        local stacks = parent:GetModifierStackCount("modifier_hero_totem_buff", parent)
+        return 600 + (20 * stacks)
+    end
+end    
 
 --add calculate cost in tooltip base on stacks (1000 + (level * 200))
 function modifier_totem_aura_effect:OnTooltip()
@@ -172,11 +183,14 @@ function item_totem_upgrade:Spawn()
         end    
     end    
 end    
+
+
+--new spellstart
 function item_totem_upgrade:OnSpellStart()
     local caster = self:GetCaster()
     local target = self:GetCursorTarget()
     local player = caster:GetPlayerOwnerID()
-    --if not caster:IsRealHero() or caster:GetUnitName()=="npc_courier_replacement" then return end
+    
     if not target or not target:HasAbility("totem_upgrade_tracker") then
         DisplayError(player, "Invalid upgrade target!")
         return
@@ -184,8 +198,34 @@ function item_totem_upgrade:OnSpellStart()
 
     local upgrade_ability = target:FindAbilityByName("totem_upgrade_tracker")
     local current_level = upgrade_ability:GetLevel()
+    
     if current_level >= 50 then
-        DisplayError(player, "Totem is already at maximum level!")
+        local charges = self:GetCurrentCharges()
+        if charges > 0 then
+            -- Consume the item and apply the buff to the hero
+            local hero = caster
+            if hero:IsRealHero() and hero:GetUnitName() ~= "npc_courier_replacement" then
+                if hero:HasModifier("modifier_hero_totem_buff") then
+                    local modifier = hero:FindModifierByName("modifier_hero_totem_buff")
+                    if modifier then
+                        charges = charges + modifier:GetStackCount()
+                        modifier:SetStackCount(charges)
+                    end                   
+                else
+                    hero:AddNewModifier(hero, self, "modifier_hero_totem_buff", {})
+                    local modifier = hero:FindModifierByName("modifier_hero_totem_buff")
+                    if modifier then
+                        modifier:SetStackCount(charges)
+                    end
+                end    
+                DisplaySuccess(player, "Totem buff applied to hero with " .. charges .. " stacks!")
+                hero:RemoveItem(self)
+            else
+                DisplayError(player, "Only real heroes can receive the totem buff!")
+            end
+        else
+            DisplayError(player, "Totem is at maximum level and item has no charges!")
+        end
         return
     end
 
@@ -194,20 +234,29 @@ function item_totem_upgrade:OnSpellStart()
         caster:SpendGold(gold_cost, DOTA_ModifyGold_PurchaseItem)
         upgrade_ability:SetLevel(current_level + 1)
         ApplyUpgradeEffects(target)
-        DisplaySuccess(player, "Totem upgraded to level " .. (current_level + 1))
-        --refresh the aura on all who has the modifier_totem_aura_effect
-        local units = FindUnitsInRadius(target:GetTeamNumber(), target:GetAbsOrigin(), nil, 7200, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+        self:SetCurrentCharges(self:GetCurrentCharges() + 1)
+        DisplaySuccess(player, "Totem upgraded to level " .. (current_level + 1) .. ". Item charges: " .. self:GetCurrentCharges())
+        
+        -- Refresh the aura on all who have the modifier_totem_aura_effect
+        local units = FindUnitsInRadius(target:GetTeamNumber(), target:GetAbsOrigin(), nil, 7200, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_INVULNERABLE + DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD, FIND_ANY_ORDER, false)
         for _, unit in ipairs(units) do
             if unit:HasModifier("modifier_totem_aura_effect") then
                 unit:RemoveModifierByName("modifier_totem_aura_effect")
             end
         end
     else
-        --add the cost in message
-
         DisplayError(player, "Not enough gold, need " .. gold_cost .. " to upgrade the totem!")
     end
 end
+
+-- New modifier for the hero buff
+modifier_hero_totem_buff = class({})
+
+function modifier_hero_totem_buff:IsHidden() return true end
+function modifier_hero_totem_buff:IsDebuff() return false end
+function modifier_hero_totem_buff:IsPurgable() return false end
+function modifier_hero_totem_buff:RemoveOnDeath() return false end
+
 
 function ApplyUpgradeEffects(target)
     local particle = ParticleManager:CreateParticle("particles/generic_hero_status/hero_levelup.vpcf", PATTACH_OVERHEAD_FOLLOW, target)
@@ -222,6 +271,6 @@ function DisplayError(player, message)
 end
 
 function DisplaySuccess(player, message)
-    Notifications:Bottom(player, {text=message, duration=5, style={color="green"}})
+    Notifications:Bottom(player, {text=message, duration=8, style={color="green"}})
 end
 

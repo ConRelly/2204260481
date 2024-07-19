@@ -44,7 +44,7 @@ end
 
 local NoAutocastItem = {
     
-    --["item_pipe_of_dezun"] = true,
+    ["item_totem_upgrade"] = true,
 
 };
 

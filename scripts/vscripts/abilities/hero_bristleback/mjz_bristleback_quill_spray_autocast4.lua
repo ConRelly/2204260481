@@ -68,14 +68,15 @@ local NoAutocast = {
     ["rubick_spell_steal"] = true,
     ["custom_aegis_cast"] = true,
     ["brewmaster_drunken_brawler"] = true,
-    
+    ["dawnbreaker_solar_guardian"] = true,
+    ["dawnbreaker_land"] = true,    
 };
 
 local TargetSpell = {
     
     ["tinker_warp_grenade"] = true,
     ["hoodwink_hunters_boomerang"] = true,
-
+    ["mjz_spectre_haunt_single"] = true,
 
 };
 

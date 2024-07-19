@@ -69,7 +69,7 @@
 	"DOTA_Tooltip_modifier_totem_upgrade_tracker"   "Totem Level"
 	"DOTA_Tooltip_modifier_totem_aura_effect" "<font color='#FF7518'>Last Order</font>"
 	"DOTA_Tooltip_modifier_totem_aura"   	"Totem"
-	"DOTA_Tooltip_modifier_totem_aura_effect_description" "Level %dMODIFIER_PROPERTY_TOOLTIP2% Aura stats :<br> %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% magic resit<br> %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% bonus armor<br> %dMODIFIER_PROPERTY_STATUS_RESISTANCE%%% Status resistance<br> %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Amp<br> %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% Damage<br>Gold Cost for Next UP: %dMODIFIER_PROPERTY_TOOLTIP% <br> 2x stats At lvl 50 "
+	"DOTA_Tooltip_modifier_totem_aura_effect_description" "Level %dMODIFIER_PROPERTY_TOOLTIP2% Aura stats :<br> %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% magic resit<br> %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% bonus armor<br> %dMODIFIER_PROPERTY_STATUS_RESISTANCE%%% Status resistance<br> %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Amp<br> %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% Damage<br>MinMS: %dMODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN% <br>Gold Cost for Next UP: %dMODIFIER_PROPERTY_TOOLTIP% <br> 2x stats At lvl 50 "
 
 	"DOTA_Tooltip_ability_item_totem_upgrade"                   "Upgrade Totem"
 	"DOTA_Tooltip_ability_item_totem_upgrade_Description"       "<h1><font color='#07ECFF'>Upgrade</font></h1>Upgrade the team's totem, increasing its aura bonuses. Each upgrade increases the cost for subsequent upgrades.<br>On first Buy it will spawn an Totem item aura holder"
@@ -7372,12 +7372,13 @@ This ability has a base cooldown of %base_cooldown% seconds, plus %extra_cooldow
 "DOTA_Tooltip_ability_mystic_dragon_endless_wisdom_Description"						"Link with a dragon mind and gain knowledge that grows with time."
 "DOTA_Tooltip_ability_mystic_dragon_endless_wisdom_grow_int"						"INT PER STACK"
 "DOTA_Tooltip_ability_mystic_dragon_endless_wisdom_stack_interval"					"STACK INTERVAL"
+"DOTA_Tooltip_ability_mystic_dragon_endless_wisdom_Note0"                   "You get 2 stacks for each min of game when you learn this skill for the first time"
 "DOTA_Tooltip_modifier_mystic_dragon_endless_wisdom_buff"					"Endless wisdom"
-"DOTA_Tooltip_modifier_mystic_dragon_endless_wisdom_buff_Description"		"Dragons knows more answers, than you have questions..."
+"DOTA_Tooltip_modifier_mystic_dragon_endless_wisdom_buff_Description"		"Dragons knows more answers, than you have questions..., Gain %dMODIFIER_PROPERTY_TOOLTIP% Bonus Int"
 
 
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull"							"<font color='#f2da5b'>Death Skull</font>"
-"DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_Description"				"Fires skulls in a direction, dealing damage to the first enemies that they find.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Death Skull shoots at your attack speed."
+"DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_Description"				"Fires skulls in a direction, dealing damage to the first enemies that they find.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Death Skull shoots at your attack speed.\n<h1><font color='#F70707'>Challenge Boss</font></h1>Increase <font color='#f2da5b'>Death Skull</font> final dmg by <font color='#5BE424'>10%</font> for every Reward Tier(max 61%)."
 "DOTA_Tooltip_Ability_witch_doctor_death_ward_Description"						"CANNELED-Summons a deadly ward to attack all enemies, last maximum %duration_tooltip% seconds."
 The ward will have increased dmg base on hero total dmg and after lvl 30 it will scale from other stats too(read the skill on the unit death ward for more info)"
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_duration"					"CHANNEL TIME:"
@@ -7385,6 +7386,7 @@ The ward will have increased dmg base on hero total dmg and after lvl 30 it will
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_int_as_damage"			"%INT AS BONUS DAMAGE:"
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_interval"					"SHOOT SPEED:"
 "DOTA_Tooltip_ability_witch_doctor_custom_death_skull_scepter_description"		"Death Skull shoots at your attack speed."
+"DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_Note0"                    "If certain codition is meet it has a fixed 15 sec CD and 10 sec duration no Channeling."
 "DOTA_Tooltip_Ability_zuus_custom_thundergods_wrath"					"<font color='#f2da5b'>Thundergod's Wrath</font>"
 "DOTA_Tooltip_Ability_zuus_custom_thundergods_wrath_Description"		"After cast, the next thunder spell used will be recasted %casts% times.
 Nimbus is not recasted by Thundergod's Wrath."

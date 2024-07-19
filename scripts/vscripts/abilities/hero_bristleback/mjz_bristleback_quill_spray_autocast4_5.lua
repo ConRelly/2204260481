@@ -65,14 +65,15 @@ local NoAutocast = {
     ["rubick_spell_steal"] = true,
     ["custom_aegis_cast"] = true,
     ["brewmaster_drunken_brawler"] = true,
-    
+    ["dawnbreaker_solar_guardian"] = true,
+    ["dawnbreaker_land"] = true,
 };
 
 local TargetSpell = {
     
     ["tinker_warp_grenade"] = true,
     ["hoodwink_hunters_boomerang"] = true,
-
+    ["mjz_spectre_haunt_single"] = true,
 
 };
 local PointSpell = {
@@ -89,6 +90,10 @@ local NoAutocastItem = {
     ["item_totem_upgrade"] = true,
 };
 
+local NoSelfTarget = {
+    ["marci_guardian"] = true,
+    ["marci_bodyguard"] = true,
+};
 
 function modifier_class:OnIntervalThink()
     if IsServer() then
@@ -192,12 +197,33 @@ function modifier_class:OnIntervalThink()
                         --print("cast3")
                         if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
                             parent:CastAbilityNoTarget(target_ability, parent:GetPlayerOwnerID()) 
-                        end    
-                    elseif ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_FRIENDLY then	
-                        --print("cast4")
-                        if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
-                            parent:CastAbilityOnTarget(parent, target_ability, parent:GetPlayerOwnerID())
-                        end    
+                        end  
+                    elseif ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_FRIENDLY then
+                        if NoSelfTarget[target_ability:GetAbilityName()] then
+                            local allied_heroes = FindUnitsInRadius(
+                                parent:GetTeamNumber(),
+                                parent:GetAbsOrigin(),
+                                nil,
+                                target_ability:GetCastRange(parent:GetAbsOrigin(), nil),
+                                DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+                                DOTA_UNIT_TARGET_HERO,
+                                DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS,
+                                FIND_CLOSEST,
+                                false
+                            )
+                            
+                            for _, hero in ipairs(allied_heroes) do
+                                if hero ~= parent and IsValidEntity(hero) and hero:IsAlive() then
+                                    parent:CastAbilityOnTarget(hero, target_ability, parent:GetPlayerOwnerID())
+                                    return
+                                end
+                            end
+                        else
+                            --print("cast4")
+                            if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
+                                parent:CastAbilityOnTarget(parent, target_ability, parent:GetPlayerOwnerID())
+                            end
+                        end                              
                     else
                         return nil    
                     end    

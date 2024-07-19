@@ -1,6 +1,5 @@
 
 LinkLuaModifier( "modifier_mjz_spectre_haunt_illusion_buff", "abilities/hero_spectre/mjz_spectre_haunt.lua", LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_mjz_spectre_haunt", "abilities/hero_spectre/mjz_spectre_haunt.lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------------
 

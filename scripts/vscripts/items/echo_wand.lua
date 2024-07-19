@@ -217,7 +217,6 @@ if IsServer() then
 		shadow_shaman_mass_serpent_ward = true,
 		skeleton_king_vampiric_aura = true,
 		mjz_spectre_reality = true,
-		mjz_spectre_haunt_single = true,
 		treant_custom_ultimate_sacrifice = true,
 		undying_custom_decay = true,
 		undying_tombstone = true,
@@ -302,6 +301,7 @@ if IsServer() then
 		true_master = true,
 		mjz_ursa_earthshock = true,
 		custom_aegis_cast = true,
+		void_spirit_custom_resonant_pulse = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,
