@@ -143,7 +143,7 @@ function modifier_wd_voodoo_restoration_heal:OnIntervalThink()
 		local int_to_heal = 0
 		local ss_penality = 1
 		if HasSuperScepter(self:GetCaster()) then
-			int_to_heal = caster:GetIntellect(true) * self.int_to_heal
+			int_to_heal = caster:GetIntellect(false) * self.int_to_heal
 			ss_penality = 40
 		end
 

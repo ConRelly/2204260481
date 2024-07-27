@@ -60,7 +60,7 @@ function ability_class:CalcDamage( caster, enemy)
     local base_damage = GetTalentSpecialValueFor(ability, "damage" )
     local str_int = GetTalentSpecialValueFor(ability, "str_int" )
     if IsValidEntity(caster) and caster:IsHero() then
-        return base_damage + (caster:GetIntellect(true) + caster:GetStrength()) * (str_int / 100)
+        return base_damage + (caster:GetIntellect(false) + caster:GetStrength()) * (str_int / 100)
     else
         return base_damage
     end

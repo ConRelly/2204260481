@@ -3200,6 +3200,9 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Fixed some Int gained from new mechanics (like darkseer Innate) not counting and bugging stuff.
+* Replaced Pudge innate with Mental Fortitude
+
 
 
 

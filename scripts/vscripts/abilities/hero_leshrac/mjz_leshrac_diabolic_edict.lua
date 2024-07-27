@@ -31,7 +31,7 @@ function ability_class:CalcDamage()
     local damage_stats = GetTalentSpecialValueFor(ability, "damage_stats")
     local damage = base_damage
     if caster:IsRealHero() then
-        damage = base_damage + ((caster:GetIntellect(true) + caster:GetStrength() + caster:GetAgility()) * (damage_stats / 100))
+        damage = base_damage + ((caster:GetIntellect(false) + caster:GetStrength() + caster:GetAgility()) * (damage_stats / 100))
     end
     return damage
 end

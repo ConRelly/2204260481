@@ -180,7 +180,7 @@ function modifier_infinite_health:OnIntervalThink()
                 if not parent:PassivesDisabled() then
                     parent:AddNewModifier(parent, nil, "modifier_invulnerable", {duration = 3})
                 end    
-                parent:AddNewModifier(parent, nil, "modifier_absolute_no_cc", {duration = 3})
+                parent:AddNewModifier(parent, nil, "modifier_absolute_no_cc", {duration = 5})
             end    
         end
     end 

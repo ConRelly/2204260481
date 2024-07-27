@@ -112,7 +112,7 @@ function modifier_item_durandal:OnTakeDamage(params)
 			local health = attacker:GetHealth()
 			local damageTable = incdamage * ((crit_damage_mult - 100) / 100)
 			local popup_dmg = damageTable + incdamage
-			local mana_cost = damageTable *  (mana_usege / 100) * (threshold / (threshold + attacker:GetIntellect(true)))
+			local mana_cost = damageTable *  (mana_usege / 100) * (threshold / (threshold + attacker:GetIntellect(false)))
 			if not attacker:HasModifier("immortal_spells_req_hp") then
 				if mana >= mana_cost and mana >= threshold then
 					if unit and unit ~= attacker and unit:GetTeamNumber() ~= attacker:GetTeamNumber() then

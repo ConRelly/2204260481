@@ -92,7 +92,7 @@ end
 function modifier_sticky_napalm:Recalculate(ability)
 	local caster = self:GetCaster()
 	if caster:IsNull() then return end
-	local caster_int = caster:GetIntellect(true)
+	local caster_int = caster:GetIntellect(false)
 	self.max_stacks = ability:GetSpecialValueFor("max_stacks")
 	self.ms_slow_pct = ability:GetSpecialValueFor("ms_slow_pct")
 	self.turn_rate_pct = ability:GetSpecialValueFor("turn_rate_pct")

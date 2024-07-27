@@ -76,7 +76,7 @@ function ability_class:_CalcDamage( hTarget)
 	local base_damage = ability:GetSpecialValueFor("base_damage")
 	local int_damage_multiplier = ability:GetSpecialValueFor("int_damage_multiplier")
 	if caster:IsHero() then
-		return base_damage + caster:GetIntellect(true) * int_damage_multiplier
+		return base_damage + caster:GetIntellect(false) * int_damage_multiplier
 	else
 		return base_damage 
 	end
@@ -165,7 +165,7 @@ if IsServer() then
 
 		local base_damage = ability:GetSpecialValueFor("base_damage")
 		local int_damage_multiplier = ability:GetSpecialValueFor("int_damage_multiplier")
-		local damage = base_damage + caster:GetIntellect(true) * int_damage_multiplier
+		local damage = base_damage + caster:GetIntellect(false) * int_damage_multiplier
 	
 		ApplyDamage({
 			attacker = caster,

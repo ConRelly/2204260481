@@ -52,7 +52,7 @@ if IsServer() then
 		local radius = ability:GetSpecialValueFor('radius')
 		local base_damage = ability:GetSpecialValueFor("base_damage")
 		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
-		local damage = base_damage + caster:GetIntellect(true) * (intelligence_damage / 100.0)
+		local damage = base_damage + caster:GetIntellect(false) * (intelligence_damage / 100.0)
 
 		local sound_name = "Hero_Zuus.StaticField"
 		local particle_name = "particles/units/heroes/hero_zuus/zuus_static_field.vpcf"

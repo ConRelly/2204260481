@@ -64,7 +64,7 @@ function end_screen_get_data(isWinner)
                     -- attack_bonus = hero:GetAverageTrueAttackDamage(hero) - hero:GetAttackDamage(),
                     str = hero:GetStrength(),
                     agi = hero:GetAgility(),
-                    int = hero:GetIntellect(true),
+                    int = hero:GetIntellect(false),
 
                     level = hero:GetLevel(),
                     items = {},

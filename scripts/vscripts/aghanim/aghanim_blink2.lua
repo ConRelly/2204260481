@@ -137,7 +137,7 @@ function aghanim_blink2:DebuffEnemies()
 	if #enemies < 1 then return end
 
 	--local amp = caster:GetSpellAmplification(false)
-	local caster_stats = caster:GetStrength() + caster:GetAgility() + caster:GetIntellect(true)
+	local caster_stats = caster:GetStrength() + caster:GetAgility() + caster:GetIntellect(false)
 	local damage = self:GetSpecialValueFor("debuff_damage") + caster_stats * self:GetSpecialValueFor("stats_mult") 
 
 	local damageInfo = {

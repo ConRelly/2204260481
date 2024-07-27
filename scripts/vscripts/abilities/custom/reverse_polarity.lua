@@ -40,7 +40,7 @@ function reverse_polarity:OnSpellStart()
         local hero_stun_duration = self:GetSpecialValueFor("hero_stun_duration")
         local creep_stun_duration = self:GetSpecialValueFor("creep_stun_duration")
         --if self:GetCaster():HasScepter() then
-        --    damage = self:GetSpecialValueFor("polarity_damage") + (self:GetCaster():GetIntellect(true)*self:GetSpecialValueFor("intellect_mult_scepter"))
+        --    damage = self:GetSpecialValueFor("polarity_damage") + (self:GetCaster():GetIntellect(false)*self:GetSpecialValueFor("intellect_mult_scepter"))
         --end
         Timers:CreateTimer({
             endTime = 0.45, -- when this timer should first execute, you can omit this if you want it to run first on the next frame

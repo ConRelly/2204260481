@@ -56,8 +56,8 @@ function mjz_lina_laguna_blade:OnSpellStart()
 		local cursor_target = self:GetCursorTarget()
 
 		local base_damage = self:GetSpecialValueFor(value_if_scepter(caster, "damage_scepter", "damage"))
-		local base_int_damage = caster:GetIntellect(true) * base_damage
-		local damage_per_kill = caster:GetIntellect(true) * self:GetSpecialValueFor("intmult_per_kill")
+		local base_int_damage = caster:GetIntellect(false) * base_damage
+		local damage_per_kill = caster:GetIntellect(false) * self:GetSpecialValueFor("intmult_per_kill")
 		local kill_count = caster:GetModifierStackCount("modifier_mjz_lina_laguna_blade_bonus", nil)
 		local damage = base_int_damage + damage_per_kill * kill_count
 

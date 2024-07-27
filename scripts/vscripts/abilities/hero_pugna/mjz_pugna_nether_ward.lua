@@ -178,7 +178,7 @@ if IsServer() then
 		local radius = ability:GetSpecialValueFor('radius')
 		local base_damage = ability:GetSpecialValueFor("base_damage")
 		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
-		local damage = base_damage + caster:GetIntellect(true) * (intelligence_damage / 100.0)
+		local damage = base_damage + caster:GetIntellect(false) * (intelligence_damage / 100.0)
 
 		local enemy_list = FindUnitsInRadius(
 			caster:GetTeamNumber(),
@@ -247,7 +247,7 @@ if IsServer() then
 			local autocast_state = ability:GetAutoCastState()
 			local base_damage = ability:GetSpecialValueFor("base_damage")
 			local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
-			local damage = base_damage + caster:GetIntellect(true) * (intelligence_damage / 100.0)
+			local damage = base_damage + caster:GetIntellect(false) * (intelligence_damage / 100.0)
 			local dmg_type = ability:GetAbilityDamageType()
 			local has_modifier_ss = caster:HasModifier("modifier_super_scepter")
 			local channel_modif = caster:HasModifier("modifier_mjz_pugna_nether_ward_channeling")

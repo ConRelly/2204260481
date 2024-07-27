@@ -127,7 +127,8 @@ function modifier_totem_aura_effect:GetModifierMoveSpeed_AbsoluteMin()
     end
 end    
 
---add calculate cost in tooltip base on stacks (1000 + (level * 200))
+
+--add calculate cost in tooltip base on stacks (1000 + (level * 250))
 function modifier_totem_aura_effect:OnTooltip()
     local stacks = self:GetStackCount()
     local cost = 1000 + (stacks * 250)

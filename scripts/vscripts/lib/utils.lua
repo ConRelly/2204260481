@@ -231,7 +231,7 @@ function spell_crit(attacker, victim, damageTable)
 		local mana = attacker:GetMana()
 		local health = attacker:GetHealth()
 		local damage_mult = 1.8
-		local mana_cost = damageTable.damage * 0.8 * (150 / (150 + attacker:GetIntellect(true)))
+		local mana_cost = damageTable.damage * 0.8 * (150 / (150 + attacker:GetIntellect(false)))
 		if not attacker:HasModifier("immortal_spells_req_hp") then
 			if mana >= mana_cost and mana >= 150 then
 				if victim and victim ~= attacker and victim:GetTeamNumber() ~= attacker:GetTeamNumber() then

@@ -8,7 +8,7 @@ if IsServer() then
         self.velocity = self:GetSpecialValueFor("velocity")
         self.offset = self:GetSpecialValueFor("offset")
         self.damage = self:GetSpecialValueFor("damage")
-        self.int_as_damage = (self:GetSpecialValueFor("int_as_damage") * 0.01) * self.caster:GetIntellect(true)
+        self.int_as_damage = (self:GetSpecialValueFor("int_as_damage") * 0.01) * self.caster:GetIntellect(false)
         self.interval = self:GetSpecialValueFor("interval")
 		self.mult_dmg = 1
 		if _G._challenge_bosss > 0 then

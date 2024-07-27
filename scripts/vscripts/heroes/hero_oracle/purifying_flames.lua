@@ -34,7 +34,7 @@ function purifying_flames:OnSpellStart()
 	
 	target:EmitSound("Hero_Oracle.PurifyingFlames.Damage")
 	target:EmitSound("Hero_Oracle.PurifyingFlames")
-	local int_dmg = caster:GetIntellect(true) * self:GetSpecialValueFor("int_dmg")
+	local int_dmg = caster:GetIntellect(false) * self:GetSpecialValueFor("int_dmg")
 	damage = damage + int_dmg
 	local pf = ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_purifyingflames_hit.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 	ParticleManager:SetParticleControlEnt(pf, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)

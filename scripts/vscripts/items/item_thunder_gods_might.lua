@@ -76,6 +76,22 @@ function item2:OnSpellStart()
     end  
 
 end
+
+-- New function for particle and sound effects
+local function PlayEvolutionEffects(caster)
+    local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
+    local zeus_ultimate_sound = "Hero_Zuus.GodsWrath"
+    
+    local particle_eff = ParticleManager:CreateParticle(particle, PATTACH_WORLDORIGIN, caster)
+    ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x, caster:GetAbsOrigin().y, caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z))
+    ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x, caster:GetAbsOrigin().y, 1000))
+    ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x, caster:GetAbsOrigin().y, caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z))
+    ParticleManager:ReleaseParticleIndex(particle_eff)
+    
+    EmitSoundOn(zeus_ultimate_sound, caster)
+    caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)
+end
+
 modifier_thunder_gods_might = modifier_thunder_gods_might or class({})
 local modifier_item = modifier_thunder_gods_might
 function modifier_item:IsHidden() return true end
@@ -104,6 +120,9 @@ end
 function modifier_item:GetModifierBonusStats_Intellect()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("all") end
 end
+
+
+
 function modifier_item:GetModifierProcAttack_Feedback(keys)
 	if IsServer() then
         local parent = self:GetParent()
@@ -132,7 +151,7 @@ function modifier_item:GetModifierProcAttack_Feedback(keys)
             local stats_mult = ability:GetSpecialValueFor("stats_mult_dmg")
             local attack_dmg_mult = ability:GetSpecialValueFor("chain_damage") / 100
             local ss_spell_amp = ability:GetSpecialValueFor("ss_spell_amp") / 100        
-            local all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect(true)) * stats_mult
+            local all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect(false)) * stats_mult
             local caster_attack = caster:GetAverageTrueAttackDamage(target) * attack_dmg_mult
             local damage = caster_attack + all_stats            
             local particleName = "particles/econ/events/ti8/maelstorm_ti8.vpcf" --"particles/items_fx/chain_lightning.vpcf"
@@ -197,30 +216,27 @@ function modifier_item:GetModifierProcAttack_Feedback(keys)
 			ability:SetCurrentCharges(charges + bonus_charge)               
             if evolve then
                 if not self.evolve_check then
-                    if _G.evolution_bow_first_option then
-                        local zeus_ultimate_particle = "particles/units/heroes/hero_zuus/zuus_thundergods_wrath.vpcf" 
-                        local particle = "particles/units/heroes/hero_zuus/zuus_lightning_bolt.vpcf"
-                        local zeus_ultimate_sound = "Hero_Zuus.GodsWrath"
-                        --Renders the particle on the target
-                        local particle_eff = ParticleManager:CreateParticle(particle, PATTACH_WORLDORIGIN, caster)
-                        -- Raise 1000 value if you increase the camera height above 1000
-                        ParticleManager:SetParticleControl(particle_eff, 0, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-                        ParticleManager:SetParticleControl(particle_eff, 1, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,1000 ))
-                        ParticleManager:SetParticleControl(particle_eff, 2, Vector(caster:GetAbsOrigin().x,caster:GetAbsOrigin().y,caster:GetAbsOrigin().z + caster:GetBoundingMaxs().z ))
-                        ParticleManager:DestroyParticle(particle_eff, false)
-                        ParticleManager:ReleaseParticleIndex(particle_eff)                    
-                        EmitSoundOn(zeus_ultimate_sound, caster)                    
-                        caster:EmitSoundParams(zeus_ultimate_sound, 1, 3.0, 0)   
-                        -- Remove the old item and add the evolved item
-                        self.evolve_check = true
-                        --caster:RemoveItem(ability)
-                        caster:TakeItem(ability)
-                        caster:AddItemByName("item_thunder_gods_might2")
-                    else
-                        self.evolve_check = true
-                        caster:RemoveItem(ability)
-                        caster:AddItemByName("item_thunder_gods_might2")                       
-                    end    
+                    --new
+					self.evolve_check = true
+        
+					-- Schedule the item replacement
+					Timers:CreateTimer(0.03, function()
+						if IsValidEntity(caster) and IsValidEntity(ability) then
+							local oldItemName = ability:GetName()
+							local newItemName = "item_thunder_gods_might2"
+			
+							-- Use the SwapToItem function
+							SwapToItem(caster, oldItemName, newItemName)
+			
+							-- Play evolution effects
+							if _G.evolution_bow_first_option then
+								PlayEvolutionEffects(caster)
+							end
+							print("succes")
+						else
+							print("Caster or ability is no longer valid")
+						end
+					end)                       
                 end  
             end        
         end   
@@ -287,7 +303,7 @@ function modifier_item2:GetModifierProcAttack_Feedback(keys)
             end              
             local stats_mult = ability:GetSpecialValueFor("stats_mult_dmg") * ( charges / 20)
             local attack_dmg_mult = (ability:GetSpecialValueFor("chain_damage") / 100) + (charges / 2000)      
-            local all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect(true)) * stats_mult
+            local all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect(false)) * stats_mult
             local caster_attack = keys.original_damage * attack_dmg_mult
             local damage = 0
             if all_stats > caster_attack then
@@ -400,7 +416,7 @@ if IsServer() then
         local caster_attack = caster:GetAverageTrueAttackDamage(caster) * attack_dmg_mult
         local damage = caster_attack
         if caster:IsHero() then
-            all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect(true)) * stats_mult
+            all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect(false)) * stats_mult
             damage = caster_attack + all_stats
         end   
         local damage_per_tick = damage 
@@ -479,7 +495,7 @@ if IsServer() then
         local caster_attack = caster:GetAverageTrueAttackDamage(caster) * attack_dmg_mult
         local damage = 0
         if caster:IsHero() then
-            all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect(true)) * stats_mult
+            all_stats = (caster:GetAgility() + caster:GetStrength() + caster:GetIntellect(false)) * stats_mult
         end        
         if all_stats > caster_attack then
             damage = all_stats

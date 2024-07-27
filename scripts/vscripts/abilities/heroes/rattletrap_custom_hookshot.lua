@@ -185,7 +185,7 @@ if IsServer() then
     function modifier_rattletrap_custom_hookshot_dash:OnHitTarget()
         local parent = self:GetParent()
         local ability = self:GetAbility()
-        local stats = parent:GetIntellect(true) + parent:GetAgility() + parent:GetStrength()
+        local stats = parent:GetIntellect(false) + parent:GetAgility() + parent:GetStrength()
         local damage = ability:GetSpecialValueFor("damage") + (stats * ability:GetSpecialValueFor("damage_stats") )
         parent:EmitSound("Hero_Rattletrap.Hookshot.Impact")
 

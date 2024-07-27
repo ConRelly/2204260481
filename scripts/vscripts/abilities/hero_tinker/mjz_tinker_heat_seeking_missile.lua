@@ -78,7 +78,7 @@ if IsServer() then
 		local ability = self
 		local base_damage = ability:GetTalentSpecialValueFor( "damage")
 		local int_damage = ability:GetTalentSpecialValueFor( "intelligence_damage")
-		local damage = base_damage + int_damage * caster:GetIntellect(true) / 100
+		local damage = base_damage + int_damage * caster:GetIntellect(false) / 100
 
 		if target then
 			

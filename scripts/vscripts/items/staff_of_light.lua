@@ -264,7 +264,7 @@ function item_staff_of_light_3:OnProjectileHit(target, location)
 	local ability = self
 	if ability and IsValidEntity(ability) and caster:IsRealHero() then
 		local int_to_dmg = ability:GetSpecialValueFor("int_bonus_damage")
-		int = caster:GetIntellect(true) * caster:GetLevel() * int_to_dmg / 100
+		int = caster:GetIntellect(false) * caster:GetLevel() * int_to_dmg / 100
 	end
 	local radius = 0
 	local damage = ((caster:GetBaseDamageMin() + caster:GetBaseDamageMax()) / 2) + int
@@ -478,7 +478,7 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 		end
 		if HasSuperScepter(parent) then
 			local int_to_dmg = self:GetSpecialValueFor("bonus_int_dmg")
-			bonus_int = math.floor(parent:GetIntellect(true) * lvl * int_to_dmg / 100)
+			bonus_int = math.floor(parent:GetIntellect(false) * lvl * int_to_dmg / 100)
 			local stacks_mult = math.floor(base_dmg / 100) / 200 + 1
 			if stacks_mult < 1 then
 				stacks_mult = 1

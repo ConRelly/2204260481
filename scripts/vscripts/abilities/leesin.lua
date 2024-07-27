@@ -31,10 +31,10 @@ function modifier_flurry:OnAbilityFullyCast( params )
 	end
 end
 function modifier_flurry:GetModifierManaBonus()
-	return self:GetCaster():GetIntellect(true) * (-1) * 12
+	return self:GetCaster():GetIntellect(false) * (-1) * 12
 end
 function modifier_flurry:GetModifierConstantManaRegen()
-	return self:GetCaster():GetIntellect(true) * (-1) * 0.05
+	return self:GetCaster():GetIntellect(false) * (-1) * 0.05
 end
 
 modifier_flurry_stacks = class({})

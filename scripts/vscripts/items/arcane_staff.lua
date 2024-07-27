@@ -44,7 +44,7 @@ function arcane_staff_calculate_crit(attacker, victim, damageTable)
 		local mana_req = 150
 		local damage_mult = 1.8
 		local pass = true
-		local mana_cost = damageTable.damage * (190 / (190 + attacker:GetIntellect(true)))	
+		local mana_cost = damageTable.damage * (190 / (190 + attacker:GetIntellect(false)))	
 		--if attacker:HasModifier("modifier_broken_wings_divinity") then mana_cost = 0 mana_req = 0 end
 		if attacker:HasModifier("modifier_spellbook_destruction_mana_drain") then
 			mana = max_mana

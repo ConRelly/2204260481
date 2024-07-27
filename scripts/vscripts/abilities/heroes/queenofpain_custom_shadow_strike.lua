@@ -64,7 +64,7 @@ function modifier_queenofpain_custom_shadow_strike:GetAttributes() return MODIFI
 if IsServer() then
 	function modifier_queenofpain_custom_shadow_strike:OnCreated(keys)
 		local interval = self:GetAbility():GetSpecialValueFor("tick_interval") + talent_value(self:GetCaster(), "special_bonus_qop_shadow_strike_tick_interval")
-		self.tick_damage = self:GetCaster():GetIntellect(true) * self:GetAbility():GetSpecialValueFor("int_pct_tick") * 0.01
+		self.tick_damage = self:GetCaster():GetIntellect(false) * self:GetAbility():GetSpecialValueFor("int_pct_tick") * 0.01
 
 		self:StartIntervalThink(interval)
 	end

@@ -18,7 +18,7 @@ function faerie_dream_coil:OnSpellStart()
 	local radius = self:GetSpecialValueFor("coil_radius")
 	local latch_duration = self:GetSpecialValueFor("coil_duration")
 	local latch_duration_scepter = self:GetSpecialValueFor("coil_duration_scepter")
-	local init_damage = self:GetSpecialValueFor("coil_initial_damage") * caster:GetIntellect(true)
+	local init_damage = self:GetSpecialValueFor("coil_initial_damage") * caster:GetIntellect(false)
 	local target_flag = DOTA_UNIT_TARGET_FLAG_NONE
 	
 	if caster:HasScepter() then
@@ -95,16 +95,16 @@ function faerie_dream_coil:_GetPrimaryStatValue()
 	elseif pa == 1  then
 		PrimaryStatValue = unit:GetAgility()
 	elseif pa == 2  then
-		PrimaryStatValue = unit:GetIntellect(true)
+		PrimaryStatValue = unit:GetIntellect(false)
 	else 
-		PrimaryStatValue = (unit:GetIntellect(true) + unit:GetAgility() + unit:GetStrength()) / 2
+		PrimaryStatValue = (unit:GetIntellect(false) + unit:GetAgility() + unit:GetStrength()) / 2
 	end
 	return PrimaryStatValue
 end
 
 function faerie_dream_coil:_CalcDamage()
 	if not IsServer() then return end
-	local stats = self:GetCaster():GetIntellect(true) + self:GetCaster():GetAgility() + self:GetCaster():GetStrength() + self:_GetPrimaryStatValue()
+	local stats = self:GetCaster():GetIntellect(false) + self:GetCaster():GetAgility() + self:GetCaster():GetStrength() + self:_GetPrimaryStatValue()
 	local bonus_dmg = stats * self:GetSpecialValueFor("ss_talent_stats_dmg")	
 	return math.floor(bonus_dmg)
 end
@@ -122,8 +122,8 @@ function modifier_faerie_dream_coil:OnCreated(params)
 		local caster = self:GetCaster()
 		self.coil_break_radius			= self:GetAbility():GetSpecialValueFor("coil_break_radius")
 		self.coil_stun_duration			= self:GetAbility():GetSpecialValueFor("coil_stun_duration")
-		self.coil_break_damage			= self:GetAbility():GetSpecialValueFor("coil_break_damage") * caster:GetIntellect(true)
-		self.coil_break_damage_scepter	= self:GetAbility():GetSpecialValueFor("coil_break_damage_scepter") * caster:GetIntellect(true)
+		self.coil_break_damage			= self:GetAbility():GetSpecialValueFor("coil_break_damage") * caster:GetIntellect(false)
+		self.coil_break_damage_scepter	= self:GetAbility():GetSpecialValueFor("coil_break_damage_scepter") * caster:GetIntellect(false)
 		self.coil_stun_duration_scepter	= self:GetAbility():GetSpecialValueFor("coil_stun_duration_scepter")
 		if caster and caster:HasModifier("modifier_super_scepter") then
 			self.coil_break_radius = self:GetAbility():GetSpecialValueFor("coil_break_radius") + self:GetAbility():GetSpecialValueFor("coil_break_radius_ss_bonus")
