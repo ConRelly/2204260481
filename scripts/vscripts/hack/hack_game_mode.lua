@@ -278,26 +278,28 @@ function HackGameMode:InitVariables()
 	for playerID = 0, 4 do
 		if PlayerResource:IsValidPlayerID(playerID) then
 			if PlayerResource:HasSelectedHero(playerID) then
-                local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-                
-                --LearnAbilityOnSpawn(hero)
-                self:_Bonus(hero)
-                self:DPS(hero)
-                self:ZeroManaMode(hero)
+                if PlayerResource:GetPlayer(playerID) then
+                    local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+                    
+                    --LearnAbilityOnSpawn(hero)
+                    self:_Bonus(hero)
+                    self:DPS(hero)
+                    self:ZeroManaMode(hero)
 
-                Timers:CreateTimer(1, function()
-                    self:_CreateFakeCourier(hero)
-				end)
+                    Timers:CreateTimer(playerID + 1, function()
+                        self:_CreateFakeCourier(hero)
+                    end)
 
-                if IsMakerHero(hero) then
-                    hasMaker = true
-                end
+                    if IsMakerHero(hero) then
+                        hasMaker = true
+                    end
 
-                self:Backlist(hero)
-                
-                if IsInToolsMode() then
-                    --  npc:SetGold(9999, false)	
-                    AddGoldAndExpToHero(hero, 0, 3322)
+                    self:Backlist(hero)
+                    
+                    if IsInToolsMode() then
+                        --  npc:SetGold(9999, false)	
+                        AddGoldAndExpToHero(hero, 0, 3322)
+                    end
                 end
 			end
 		end

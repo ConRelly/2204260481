@@ -3760,45 +3760,27 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityCastRange"				"2800 3400 4900"
 		"LevelsBetweenUpgrades"		 "12"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
+			"target_damage_amp"	"1"
+			"bonus_gold_radius"		
 			{
-				"var_type"					"FIELD_INTEGER"
-				"target_crit_multiplier"	"245 420 869"
+				"value"		"6000"
+				"affected_by_aoe_increase"	"1"
 			}
-			"02"
+			"bonus_gold_self"		
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_gold_radius"			"6000"
+				"value"		"150 200 250"
+				"special_bonus_unique_bounty_hunter_3"	"+45"
 			}
-			"03"
+			"bonus_gold"			
 			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_gold_self"			"150 200 250"
-				"LinkedSpecialBonus"		"special_bonus_unique_bounty_hunter_3"
+				"value"		"100 150 200"
+				"special_bonus_unique_bounty_hunter_3"	"+45"
 			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_gold"				"100 150 200"
-				"LinkedSpecialBonus"		"special_bonus_unique_bounty_hunter_3"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"35.0"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"gold_steal"				"0.0"
-			}			
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_move_speed_pct"		"26 38 50"
-			}
+			"duration"				"35"
+			"gold_steal"			"0"
+			"bonus_move_speed_pct"	"26 38 50"
 		}
 	}
 
@@ -21317,30 +21299,44 @@
 		}
 	}
 	
+	
+	//=================================================================================================================
+	// Legion Commander: Moment of Courage
+	//=================================================================================================================
 	"legion_commander_moment_of_courage"
 	{
-		"AbilityCooldown"									 "0.50 0.4 0.2 0.1"
-		"AbilitySpecial"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySound"					"Hero_LegionCommander.Courage"
+		"MaxLevel"						"5"
+		"Innate"						"1"
+		"RequiredLevel"					"-1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0.6 0.5 0.4 0.2 0.1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
 		{
-			"01"
+			"trigger_chance"			
 			{
-				"var_type"					"FIELD_INTEGER"
-				"trigger_chance"			"15"
-				"LinkedSpecialBonus"		"special_bonus_unique_legion_commander_3"																	
+				"value"				"25"
+				"special_bonus_unique_legion_commander_3" "+20"
 			}
-			"02"
+			"buff_duration"				"1.0"
+			"hp_leech_percent"			
 			{
-				"var_type"					"FIELD_FLOAT"
-				"buff_duration"				"1.0"
+				"value"		"20"
+				"special_bonus_unique_legion_commander_7" "+15"
 			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"hp_leech_percent"			"20"
-			}
+			
 		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
-	
+
 
 	//=================================================================================================================
 	// Gyrocopter: Flak Cannon

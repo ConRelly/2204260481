@@ -80,7 +80,7 @@ function shuriken_toss:OnProjectileHit_ExtraData(target, location, extradata)
 				ApplyDamage({
 					victim		= target,
 					damage		= jinada_damage,
-					damage_type = DAMAGE_TYPE_PHYSICAL,
+					damage_type = DAMAGE_TYPE_MAGICAL,
 					attacker	= caster,
 					ability		= self
 				})

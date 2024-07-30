@@ -3200,8 +3200,18 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
-* Fixed some Int gained from new mechanics (like darkseer Innate) not counting and bugging stuff.
-* Replaced Pudge innate with Mental Fortitude
+
+
+* Fixed some Int gained from new mechanics (like Darkseer innate) not counting and bugging stuff.
+* Replaced Pudge Innate with Mental Fortitude
+* Replaced some of the evolution bow evolve code(should be more stable, time will tell)
+* Added delay between courier creation when game starts(might help with some rare bug)
+* Fixed Bounty Hunter Track giving too much dmg amp to enemy
+* Fixed Bounty Hunter Shuriken not being magic damage (also made it instant cast)
+* Cosmos has 1% more dmg reduction in last stage.
+
+
+
 
 
 
