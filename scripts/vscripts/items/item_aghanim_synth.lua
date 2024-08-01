@@ -31,7 +31,7 @@ function AghanimsSynthCast(keys)
 		end
 	end
 	caster:EmitSound("Hero_Alchemist.Scepter.Cast")
-	ability:SpendCharge()
+	ability:SpendCharge(0.01)
 end
 
 
@@ -52,7 +52,7 @@ function item_ultimate_scepter_synth:OnSpellStart()
 	caster:AddNewModifier(caster, self, "modifier_aghanims_scepter_synth", {})
 	caster:EmitSound("Hero_Alchemist.Scepter.Cast")
 	--caster:RemoveItem(self)
-	self:SpendCharge()
+	self:SpendCharge(0.01)
 	--caster:TakeItem(self)
 end
 function item_ultimate_scepter_synth:GetIntrinsicModifierName() return "modifier_aghanims_blessing" end
@@ -167,7 +167,7 @@ function SuperScepterTome(keys)
 	if not keys.caster:HasModifier("modifier_super_scepter") then
 		keys.caster:AddNewModifier(keys.caster, keys.ability, "modifier_super_scepter", {duration = keys.duration})
 		keys.caster:AddNewModifier(keys.caster, keys.ability, "modifier_tome_of_super_scepter", {duration = keys.duration})
-		keys.ability:SpendCharge()
+		keys.ability:SpendCharge(0.01)
 	end
 end
 

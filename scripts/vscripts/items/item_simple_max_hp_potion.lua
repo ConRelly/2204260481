@@ -13,7 +13,7 @@ function item_simple_max_hp_potion:OnSpellStart()
     else
         caster:AddNewModifier(caster, self, modiff, {})
     end    
-    self:SpendCharge()
+    self:SpendCharge(0.01)
 end
 
 

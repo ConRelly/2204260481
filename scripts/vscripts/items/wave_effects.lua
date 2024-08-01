@@ -15,7 +15,7 @@ function Purge( keys )
             end    
         end
         _G.wave_effect_mods = {}
-        ability:SpendCharge()
+        ability:SpendCharge(0.01)
     end
 end
 
@@ -28,7 +28,7 @@ function Regen( keys )
     local charges = ability:GetCurrentCharges()
     if charges > 0 then
         table.insert(_G.wave_effect_mods, _G.gold_spirit:AddNewModifier(_G.gold_spirit, nil, "modifier_regen_wave_effect", {}))
-        ability:SpendCharge()
+        ability:SpendCharge(0.01)
     end
 end
 --Regen Wave Effect
@@ -60,7 +60,7 @@ function Speed( keys )
     local charges = ability:GetCurrentCharges()
     if charges > 0 then
         table.insert(_G.wave_effect_mods, _G.gold_spirit:AddNewModifier(_G.gold_spirit, nil, "modifier_speed_wave_effect", {}))
-        ability:SpendCharge()
+        ability:SpendCharge(0.01)
     end
 end
 --Movement Speed Wave Effect
@@ -93,7 +93,7 @@ function Armor( keys )
     local charges = ability:GetCurrentCharges()
     if charges > 0 then
         table.insert(_G.wave_effect_mods, _G.gold_spirit:AddNewModifier(_G.gold_spirit, nil, "modifier_armor_wave_effect", {}))
-        ability:SpendCharge()
+        ability:SpendCharge(0.01)
     end
 end
 --Armor Wave Effect

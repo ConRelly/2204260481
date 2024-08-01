@@ -31,7 +31,7 @@ function item_aegis_lua:OnSpellStart()
 				local hModifierAegis = hCaster:AddNewModifier(hCaster, nil, "modifier_aegis", {})
 				hModifierAegis:SetStackCount(1)
 			end
-			self:SpendCharge()
+			self:SpendCharge(0.01)
 			EmitSoundOn("DOTA_Item.Refresher.Activate", hCaster)
 			local nParticle = ParticleManager:CreateParticle("particles/items_fx/aegis_respawn_timer.vpcf", PATTACH_ABSORIGIN_FOLLOW, hCaster)
 			ParticleManager:ReleaseParticleIndex(nParticle)
@@ -59,7 +59,7 @@ function item_aegis_lua:OnSpellStart_skill(caster)
 				hModifierAegis:SetStackCount(1)
 			end
 			self.timer_limit = GameRules:GetGameTime() + 1
-			self:SpendCharge()
+			self:SpendCharge(0.01)
 			EmitSoundOn("DOTA_Item.Refresher.Activate", hCaster)
 			local nParticle = ParticleManager:CreateParticle("particles/items_fx/aegis_respawn_timer.vpcf", PATTACH_ABSORIGIN_FOLLOW, hCaster)
 			ParticleManager:ReleaseParticleIndex(nParticle)

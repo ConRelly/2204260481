@@ -11,7 +11,7 @@ end
 function item_health_potion:OnSpellStart()
 	if IsServer() then
 		if self:GetCaster() and self:GetCaster():GetUnitName() == "npc_dota_hero_rubick" then
-			self:SpendCharge()
+			self:SpendCharge(0.01)
 			return
 		end
 
@@ -25,7 +25,7 @@ function item_health_potion:OnSpellStart()
 		local nFXIndex = ParticleManager:CreateParticle( "particles/items3_fx/fish_bones_active.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
 		ParticleManager:ReleaseParticleIndex( nFXIndex )
 
-		self:SpendCharge()
+		self:SpendCharge(0.01)
 	end
 end
 

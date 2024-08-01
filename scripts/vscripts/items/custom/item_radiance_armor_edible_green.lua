@@ -63,7 +63,7 @@ function OnCreated_(keys)
     if caster and ability then
         local item = DropNeutralItemAtPositionForHero("item_radiance_armor_green_edible", caster:GetAbsOrigin(), caster, 5, false)
         if item then
-            ability:SpendCharge()
+            ability:SpendCharge(0.01)
             --caster:RemoveItem(ability) 
             --caster:TakeItem(ability)
         end

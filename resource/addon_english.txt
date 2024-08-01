@@ -6777,7 +6777,7 @@ You can't target yourself."
 
 "DOTA_Tooltip_ability_huskar_custom_life_break"										"<font color='#f2da5b'>Life Bomb</font>"
 "DOTA_Tooltip_ability_huskar_custom_life_break_Description"							"Huskar channels his vitality into a single massive explosion, increasing damage by %multiplier%%% every 0.2 seconds.Hits all enemies in vision.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Increase duration by 3 seconds. Bonus Damage from Level gets multiplied with the stacks of <font color='#DE3163'>Super Synth</font>"
-"DOTA_Tooltip_ability_huskar_custom_life_break_Note0"							   "Only Death or Huskar can stop the channeling. SS effect has a limit on how many stacks will get counted(is more then 9 and less then 20)"
+"DOTA_Tooltip_ability_huskar_custom_life_break_Note0"							   "Immune to Basic stuns and silences during channeling. SS effect has a limit on how many stacks will get counted(is more then 9 and less then 20)"
 "DOTA_Tooltip_ability_huskar_custom_life_break_Note1"                              "Damage is split in 4 instances"
 "DOTA_Tooltip_ability_huskar_custom_life_break_radius"										"RADIUS:"
 "DOTA_Tooltip_ability_huskar_custom_life_break_damage"										"DAMAGE:"

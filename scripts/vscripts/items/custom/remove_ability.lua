@@ -36,7 +36,7 @@ if IsServer() then
             if number < 6 and doomskill and doomskill:GetName() == "doom_bringer_empty2" then
                 Notifications:BottomToAll({text="Move your empty skill first in to a place higher then your last key bind(default is R)", style={color="yellow"}, duration=5})
                 ability:SetActivated(false)
-                ability:SpendCharge()
+                ability:SpendCharge(0.01)
                 return nil 
             end
         end         
@@ -107,7 +107,7 @@ if IsServer() then
                    -- print("newAbility")
                     newAbility:SetAbilityIndex(0)
                 end
-                ability:SpendCharge()
+                ability:SpendCharge(0.01)
                 local doomskill_not_removed = true
 				for i=1,hero:GetAbilityCount() do
 					if hero:GetAbilityCount() - i > 5 then

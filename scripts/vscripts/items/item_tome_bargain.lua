@@ -14,7 +14,7 @@ function item_tome_bargain:OnSpellStart()
 			local tome = caster:AddNewModifier(caster, self, "modifier_item_tome_bargain", {})
 			tome:SetStackCount(1)
 		end
-		self:SpendCharge()
+		self:SpendCharge(0.01)
 	end	
 end
 

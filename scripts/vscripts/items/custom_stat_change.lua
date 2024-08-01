@@ -24,7 +24,7 @@ function item_custom_stat_change:OnSpellStart()
 	modifier:SetStackCount(temp)
 	modifier:OnRefresh()
 	
-	self:SpendCharge()
+	self:SpendCharge(0.01)
 end
 
 item_custom_stat_change_str = class(item_custom_stat_change)

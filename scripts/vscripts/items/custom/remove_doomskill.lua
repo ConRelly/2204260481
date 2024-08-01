@@ -19,11 +19,11 @@ if IsServer() then
 			--print(number .. " index")
 			if number > 6 and doomskill and doomskill:GetName() == "temporary_slot_used" then
 				hero:RemoveAbility(abilityName)
-				ability:SpendCharge()
+				ability:SpendCharge(0.01)
 			elseif (number == 3 or number == 4) and doomskill and doomskill:GetName() == "temporary_slot_used" then
 				hero:RemoveAbility(abilityName)
 				hero:AddAbility("generic_hidden")
-				ability:SpendCharge()
+				ability:SpendCharge(0.01)
 			else
 				Notifications:Top(PlayerResource:GetPlayer(hero:GetPlayerID()), {text="Move your empty skill first into a place higher then your last keybind (default is R) or into 4/5 ability place (default is D/F)", duration=5, style={color="red"}})
 			end

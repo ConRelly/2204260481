@@ -3335,13 +3335,12 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
 		"Innate"						"1"
 		"RequiredLevel"					"-1"
-		"MaxLevel"						"5"
-		"LevelsBetweenUpgrades"         "5"
+		"MaxLevel"						"1"
 
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -3354,13 +3353,13 @@
 			}
 			"bonus_attack_speed"
 			{
-				"value"									"50 75 125 230 310"
+				"value"									"350"
 				"special_bonus_unique_beastmaster_4"		"+100"
 			}
 			"attack_speed_per_unit"		
 			{
 				"value"									"0"
-				"special_bonus_facet_beastmaster_wild_hunt"		"10 20 30 40 50"				
+				"special_bonus_facet_beastmaster_wild_hunt"		"50"				
 			}
 			"berserk_duration"						
 			{
@@ -3370,7 +3369,7 @@
 			"berserk_bonus_attack_speed"
 			{
 				"value"								"0"
-				"special_bonus_facet_beastmaster_beast_mode"			"20 40 80 160 320"				
+				"special_bonus_facet_beastmaster_beast_mode"			"320"				
 			}
 			"AbilityCooldown"
 			{
@@ -3388,7 +3387,7 @@
 			}
 			"bonus_damage"
 			{
-				"special_bonus_unique_beastmaster_2"	"+5000"
+				"special_bonus_unique_beastmaster_2"	"+50000"
 			}
 		}
 	}

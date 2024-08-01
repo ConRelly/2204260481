@@ -46,7 +46,7 @@ function add_perma(keys)
 			armor_modifier:SetStackCount(bonus_armor)
 		end
 		if ability:GetCurrentCharges() > 1 then
-			ability:SpendCharge()
+			ability:SpendCharge(0.01)
 		else
 			--caster:RemoveItem(ability)
 			caster:TakeItem(ability)

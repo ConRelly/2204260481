@@ -64,7 +64,7 @@ if IsServer() then
 				tower:SetOwner(caster)
 				tower:SetInvulnCount(0)
 				tower:AddNewModifier(caster, self, "modifier_rax_behavior", {name = unitName})
-				self:SpendCharge()
+				self:SpendCharge(0.01)
 			end
 		)
 							

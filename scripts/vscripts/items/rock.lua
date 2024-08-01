@@ -43,5 +43,5 @@ function on_rock_hit(keys)
 		victim = target
     })
     
-    ability:SpendCharge()
+    ability:SpendCharge(0.01)
 end
