@@ -47,30 +47,13 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-//				"duration"					"180.0 240.0 300.0"
-				"duration"					"20"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"projectile_speed"			"900"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range_scepter"			"1400"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"cooldown_scepter"			"2"
-			}
-		}
+		"AbilityValues"
+        {
+            "duration" "20"
+            "projectile_speed" "900"
+            "cast_range_scepter" "1400"
+            "cooldown_scepter" "2"
+        }
 	}
 	"rubick_spell_steal_lua_slot1"
 	{

@@ -5,153 +5,109 @@
 		"BaseClass"						"special_bonus_spell_amplify_5"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"30"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "30"
+        }
 	}
 	"special_bonus_spell_amplify_35"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"35"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "35"
+        }
 	}
 	"special_bonus_spell_amplify_40"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"40"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "40"
+        }
 	}
 	"special_bonus_spell_amplify_45"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"45"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "45"
+        }
 	}
 	"special_bonus_spell_amplify_65"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"65"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "65"
+        }
 	}
 	"special_bonus_spell_amplify_69"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"69"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "69"
+        }
 	}
 	"special_bonus_spell_amplify_70"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"70"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "70"
+        }
 	}
 	"special_bonus_spell_amplify_75"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"75"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "75"
+        }
 	}
 	"special_bonus_spell_amplify_90"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"90"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "90"
+        }
 	}
 	"special_bonus_spell_amplify_125"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"125"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "125"
+        }
 	}
 	"special_bonus_spell_amplify_225"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"225"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "225"
+        }
 	}	
 }

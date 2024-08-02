@@ -46,35 +46,17 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"echo_slam_damage_range"	"7200"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"echo_slam_echo_search_range" "7200"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"echo_slam_echo_range"		"7200"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"echo_slam_echo_damage"		"120 885 1800 3950 9400"
-				//"LinkedSpecialBonus"		"special_bonus_unique_earthshaker_2"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"str_multiplier"			"5.0 10.0 15.0 25.0 40.0"
-				"LinkedSpecialBonus"	    "special_bonus_unique_earthshaker_01"
-			}
-		}
+		"AbilityValues"
+        {
+            "echo_slam_damage_range" "7200"
+            "echo_slam_echo_search_range" "7200"
+            "echo_slam_echo_range" "7200"
+            "echo_slam_echo_damage" "120 885 1800 3950 9400"
+            "str_multiplier"
+            {
+                "value" "5.0 10.0 15.0 25.0 40.0"
+                "LinkedSpecialBonus" "special_bonus_unique_earthshaker_01"
+            }
+        }
 	}
 }

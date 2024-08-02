@@ -33,25 +33,19 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "resist_debuff"                                   "-10 -15 -20 -25 -30 -45" //OAA
-        "LinkedSpecialBonus"                              "special_bonus_unique_skywrath_3"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "seal_duration"                                   "3.0 3.5 4.0 4.5 5.0 6.0" //OAA
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "scepter_radius"                                  "700"
-        "RequiresScepter"                                 "1"
-      }
-    }
+    "AbilityValues"
+        {
+            "resist_debuff"
+            {
+                "value" "-10 -15 -20 -25 -30 -45"
+                "LinkedSpecialBonus" "special_bonus_unique_skywrath_3"
+            }
+            "seal_duration" "3.0 3.5 4.0 4.5 5.0 6.0"
+            "scepter_radius"
+            {
+                "value" "700"
+                "RequiresScepter" "1"
+            }
+        }
   }
 }

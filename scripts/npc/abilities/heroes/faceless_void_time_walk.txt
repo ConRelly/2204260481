@@ -33,30 +33,20 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "speed"                                           "3000"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "range"                                           "7675 7675 7675 7675 7775 7875"
-        "LinkedSpecialBonus"                              "special_bonus_unique_faceless_void"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "backtrack_duration"                              "5.0 5.0 4.0 5.0 6.5 7.0"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "radius_scepter"                                  "0" //OAA, we have different Aghs effect
-        "RequiresScepter"                                 "1"
-      }
-    }
+    "AbilityValues"
+        {
+            "speed" "3000"
+            "range"
+            {
+                "value" "7675 7675 7675 7675 7775 7875"
+                "LinkedSpecialBonus" "special_bonus_unique_faceless_void"
+            }
+            "backtrack_duration" "5.0 5.0 4.0 5.0 6.5 7.0"
+            "radius_scepter"
+            {
+                "value" "0"
+                "RequiresScepter" "1"
+            }
+        }
   }
 }

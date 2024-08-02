@@ -48,31 +48,21 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"sand_storm_radius"		"1000"
-				"LinkedSpecialBonus"	"special_bonus_unique_sand_storm_radius"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"sand_storm_damage"		"80 240 760 1680 4320 9130 18870"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str_multiplier"		"3.5 4.0 4.5 5.0 6.5 7.5 9.0"
-				"LinkedSpecialBonus"	"special_bonus_unique_sand_king_101"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"sand_storm_interval"	"0.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "sand_storm_radius"
+            {
+                "value" "1000"
+                "LinkedSpecialBonus" "special_bonus_unique_sand_storm_radius"
+            }
+            "sand_storm_damage" "80 240 760 1680 4320 9130 18870"
+            "str_multiplier"
+            {
+                "value" "3.5 4.0 4.5 5.0 6.5 7.5 9.0"
+                "LinkedSpecialBonus" "special_bonus_unique_sand_king_101"
+            }
+            "sand_storm_interval" "0.5"
+        }
 	}
 // Talent: +X Sand Storm Radius
 	"special_bonus_unique_sand_storm_radius"
@@ -80,13 +70,9 @@
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"		"FIELD_FLOAT"
-				"value"			"500"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "500"
+        }
 	}
 }

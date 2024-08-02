@@ -39,19 +39,14 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"crit_chance"				"10 15 20"
-				"LinkedSpecialBonus"		"special_agility_strike_chance_lua"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"agi_multiplier"				"1.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "crit_chance"
+            {
+                "value" "10 15 20"
+                "LinkedSpecialBonus" "special_agility_strike_chance_lua"
+            }
+            "agi_multiplier" "1.0"
+        }
 	}
 }

@@ -20,31 +20,21 @@
 		{
 			"particle"	"particles/units/heroes/hero_earthshaker/earthshaker_aftershock.vpcf"
 		}
-		"AbilitySpecial"
-		{
-			"1"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"aftershock_damage"			"75 325 725 1500 2450 4800 13650"
-			}
-			"2"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"all_multiplier"			"4 6 8 10 15 20 40"
-				"LinkedSpecialBonus"	    "special_bonus_unique_es_aftershock_str_multiplier"
-			}
-			"3"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"aftershock_range"			"1200"
-				"LinkedSpecialBonus"	    "special_bonus_unique_es_aftershock_range"
-			}
-			"4"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"0.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "aftershock_damage" "75 325 725 1500 2450 4800 13650"
+            "all_multiplier"
+            {
+                "value" "4 6 8 10 15 20 40"
+                "LinkedSpecialBonus" "special_bonus_unique_es_aftershock_str_multiplier"
+            }
+            "aftershock_range"
+            {
+                "value" "1200"
+                "LinkedSpecialBonus" "special_bonus_unique_es_aftershock_range"
+            }
+            "duration" "0.0"
+        }
 	}
 
 	"special_bonus_unique_es_aftershock_str_multiplier"
@@ -53,15 +43,14 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"40"
-				"ad_linked_abilities"			"earthshaker_aftershock_lua"
-			}
-		}
+		"AbilityValues"
+        {
+            "value"
+            {
+                "value" "40"
+                "ad_linked_abilities" "earthshaker_aftershock_lua"
+            }
+        }
 	}
 
 	"special_bonus_unique_es_aftershock_range"
@@ -70,14 +59,13 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"1000"
-				"ad_linked_abilities"			"earthshaker_aftershock_lua"
-			}
-		}
+		"AbilityValues"
+        {
+            "value"
+            {
+                "value" "1000"
+                "ad_linked_abilities" "earthshaker_aftershock_lua"
+            }
+        }
 	}
 }

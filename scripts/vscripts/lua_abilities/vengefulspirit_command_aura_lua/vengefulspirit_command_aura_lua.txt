@@ -30,28 +30,12 @@
 		
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_damage_pct"	"10 11 12 13 14 15 20"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"aura_radius"		"3200"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"agi_multiplier"	"1 2 3 4 5 6 7"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"agi_per_dmg"		"1000"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_damage_pct" "10 11 12 13 14 15 20"
+            "aura_radius" "3200"
+            "agi_multiplier" "1 2 3 4 5 6 7"
+            "agi_per_dmg" "1000"
+        }
 	}
 }

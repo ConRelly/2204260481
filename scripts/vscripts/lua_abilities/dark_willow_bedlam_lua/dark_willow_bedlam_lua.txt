@@ -46,54 +46,21 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_damage"			"120 670 1300 4750 12500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"attack_interval"		"0.25 0.24 0.23 0.22 0.2"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_radius"			"1200"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_targets"			"1"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"roaming_radius"			"525"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"roaming_seconds_per_rotation"				"1.8"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"roaming_duration"		"10.0"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"int_multiplier"		"10 15 25 30 45"
-				"LinkedSpecialBonus"	"special_bonus_dark_willow_bedlam_lua"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"multicast_delay"	"0.5"
-			}
-		}
+		"AbilityValues"
+        {
+            "attack_damage" "120 670 1300 4750 12500"
+            "attack_interval" "0.25 0.24 0.23 0.22 0.2"
+            "attack_radius" "1200"
+            "attack_targets" "1"
+            "roaming_radius" "525"
+            "roaming_seconds_per_rotation" "1.8"
+            "roaming_duration" "10.0"
+            "int_multiplier"
+            {
+                "value" "10 15 25 30 45"
+                "LinkedSpecialBonus" "special_bonus_dark_willow_bedlam_lua"
+            }
+            "multicast_delay" "0.5"
+        }
 	}
 }

@@ -46,40 +46,22 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.8"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"beam_damage"			"275 950 1425 1900 2560 5120 8969"
-				"LinkedSpecialBonus"    "special_bonus_unique_luna_102"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agi_multiplier"		"4.0 4.5 5.0 6.5 7.0 7.5 9.0"
-				"LinkedSpecialBonus"	"special_bonus_unique_luna_101"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"radius"				"350"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"new_moon_chance"		"35"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"SS_bonus"		"1.0"    // tooltip, hard coded
-			}			
-		}
+		"AbilityValues"
+        {
+            "stun_duration" "0.8"
+            "beam_damage"
+            {
+                "value" "275 950 1425 1900 2560 5120 8969"
+                "LinkedSpecialBonus" "special_bonus_unique_luna_102"
+            }
+            "agi_multiplier"
+            {
+                "value" "4.0 4.5 5.0 6.5 7.0 7.5 9.0"
+                "LinkedSpecialBonus" "special_bonus_unique_luna_101"
+            }
+            "radius" "350"
+            "new_moon_chance" "35"
+            "SS_bonus" "1.0"
+        }
 	}
 }

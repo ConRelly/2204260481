@@ -23,54 +23,37 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "chance"                                          "5 10 15 20 30"
-        "LinkedSpecialBonus"                              "special_bonus_unique_drow_ranger_3"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "bonus_damage"                                    "70 180 290 1120 2170"
-        "CalculateSpellDamageTooltip"                     "0"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "agility_multiplier"                              "5 10 15 20 35"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "agility_range"                                   "7500"
-      }
-      "05"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "split_count_scepter"                             "2"
-        "RequiresScepter"                                 "1"
-      }
-      "06"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "scepter_range"                                   "375"
-        "RequiresScepter"                                 "1"
-      }
-      "07"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "damage_reduction_scepter"                        "50"
-        "RequiresScepter"                                 "1"
-        "CalculateSpellDamageTooltip"                     "0"
-      }
-      "08"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "disable_range"                                   "400"
-      }
-    }
+    "AbilityValues"
+        {
+            "chance"
+            {
+                "value" "5 10 15 20 30"
+                "LinkedSpecialBonus" "special_bonus_unique_drow_ranger_3"
+            }
+            "bonus_damage"
+            {
+                "value" "70 180 290 1120 2170"
+                "CalculateSpellDamageTooltip" "0"
+            }
+            "agility_multiplier" "5 10 15 20 35"
+            "agility_range" "7500"
+            "split_count_scepter"
+            {
+                "value" "2"
+                "RequiresScepter" "1"
+            }
+            "scepter_range"
+            {
+                "value" "375"
+                "RequiresScepter" "1"
+            }
+            "damage_reduction_scepter"
+            {
+                "value" "50"
+                "RequiresScepter" "1"
+                "CalculateSpellDamageTooltip" "0"
+            }
+            "disable_range" "400"
+        }
   }
 }

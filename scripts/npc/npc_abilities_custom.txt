@@ -27321,7 +27321,6 @@
                 "RequiresScepter" "1"
             }
             "normal_cast_point" "0.1"
-            "DamageTypeTooltip" "DAMAGE_TYPE_MAGICAL"
             "invul_duration" "2.0"
             "health_increase" "20.0 30.0 40.0 50.0"
             "attack_range" "2000"

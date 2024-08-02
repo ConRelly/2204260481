@@ -35,61 +35,30 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "duration"                                        "45.0"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "replica_damage_outgoing"                         "-30 0 30 90 150" //OAA
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "tooltip_outgoing"                                "70 100 130 190 250" //OAA
-        "LinkedSpecialBonus"                              "special_bonus_unique_dark_seer_7"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "replica_damage_incoming"                         "100"
-      }
-      "05"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "tooltip_replica_total_damage_incoming"           "200"
-        "CalculateSpellDamageTooltip"                     "0"
-      }
-      "06"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "width"                                           "1300"
-      }
-      "07"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "replica_scale"                                   "0"
-      }
-      "08"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "movement_slow"                                   "50 60 70 80 90"
-      }
-      "09"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "slow_duration"                                   "1"
-      }
-      "10"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "scepter_length_multiplier"                       "2"
-        "RequiresScepter"                                 "1"
-      }
-    }
+    "AbilityValues"
+        {
+            "duration" "45.0"
+            "replica_damage_outgoing" "-30 0 30 90 150"
+            "tooltip_outgoing"
+            {
+                "value" "70 100 130 190 250"
+                "LinkedSpecialBonus" "special_bonus_unique_dark_seer_7"
+            }
+            "replica_damage_incoming" "100"
+            "tooltip_replica_total_damage_incoming"
+            {
+                "value" "200"
+                "CalculateSpellDamageTooltip" "0"
+            }
+            "width" "1300"
+            "replica_scale" "0"
+            "movement_slow" "50 60 70 80 90"
+            "slow_duration" "1"
+            "scepter_length_multiplier"
+            {
+                "value" "2"
+                "RequiresScepter" "1"
+            }
+        }
   }
 }

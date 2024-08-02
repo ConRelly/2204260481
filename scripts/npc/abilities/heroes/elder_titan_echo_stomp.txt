@@ -28,45 +28,23 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "cast_time"                                       "1.7"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "radius"                                          "750"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "sleep_duration"                                  "2.0 3.0 4.0 5.0 5.5 6.0"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "stomp_damage"                                    "170 400 930 1960 4420 12840"
-        "LinkedSpecialBonus"                              "special_bonus_unique_elder_titan_2"
-      }
-      "05"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "initial_stun_duration"                           "0.8"
-      }
-      "06"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "animation_rate"                                  "0.0"
-      }
-      "07"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "wake_damage_limit"                               "250 400 950 1800 9400 76000"
-        "LinkedSpecialBonus"                              "special_bonus_unique_elder_titan_4"
-      }
-    }
+    "AbilityValues"
+        {
+            "cast_time" "1.7"
+            "radius" "750"
+            "sleep_duration" "2.0 3.0 4.0 5.0 5.5 6.0"
+            "stomp_damage"
+            {
+                "value" "170 400 930 1960 4420 12840"
+                "LinkedSpecialBonus" "special_bonus_unique_elder_titan_2"
+            }
+            "initial_stun_duration" "0.8"
+            "animation_rate" "0.0"
+            "wake_damage_limit"
+            {
+                "value" "250 400 950 1800 9400 76000"
+                "LinkedSpecialBonus" "special_bonus_unique_elder_titan_4"
+            }
+        }
   }
 }

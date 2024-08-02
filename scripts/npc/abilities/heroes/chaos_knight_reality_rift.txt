@@ -34,28 +34,12 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "cast_range"                                      "550 700 850 1100 1550 2800"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "pull_distance"                                   "250 300 350 400 450 500"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "armor_reduction"                                 "3 7 10 15 19 27"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "duration"                                        "6"
-      }
-    }
+    "AbilityValues"
+        {
+            "cast_range" "550 700 850 1100 1550 2800"
+            "pull_distance" "250 300 350 400 450 500"
+            "armor_reduction" "3 7 10 15 19 27"
+            "duration" "6"
+        }
   }
 }

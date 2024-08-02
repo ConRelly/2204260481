@@ -34,19 +34,14 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "health_cost"                                     "2.0"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "burn_damage"                                     "25 45 80 160 290 670 1210"
-        "LinkedSpecialBonus"                              "special_bonus_unique_huskar_2"
-      }
-    }
+    "AbilityValues"
+        {
+            "health_cost" "2.0"
+            "burn_damage"
+            {
+                "value" "25 45 80 160 290 670 1210"
+                "LinkedSpecialBonus" "special_bonus_unique_huskar_2"
+            }
+        }
   }
 }

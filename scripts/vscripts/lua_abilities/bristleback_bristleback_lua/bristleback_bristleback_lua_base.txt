@@ -37,38 +37,14 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"side_damage_reduction"			"25 30 35 40"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"back_damage_reduction"			"15 20 25 45"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"side_angle"					"180"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"back_angle"					"180"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"quill_release_threshold"		"210 400 900 1500"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"str_multiplier"				"0.25 0.5 0.75 1.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "side_damage_reduction" "25 30 35 40"
+            "back_damage_reduction" "15 20 25 45"
+            "side_angle" "180"
+            "back_angle" "180"
+            "quill_release_threshold" "210 400 900 1500"
+            "str_multiplier" "0.25 0.5 0.75 1.0"
+        }
 	}
 }

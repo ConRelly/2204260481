@@ -36,29 +36,16 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "starfall_radius"                                 "1050"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "starfall_secondary_radius"                       "425"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "interval_scepter"                                "0.5" //OAA
-        "RequiresScepter"                                 "1"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "secondary_starfall_damage_percent"               "75"
-      }
-    }
+    "AbilityValues"
+        {
+            "starfall_radius" "1050"
+            "starfall_secondary_radius" "425"
+            "interval_scepter"
+            {
+                "value" "0.5"
+                "RequiresScepter" "1"
+            }
+            "secondary_starfall_damage_percent" "75"
+        }
   }
 }

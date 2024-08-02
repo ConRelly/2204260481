@@ -39,48 +39,16 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"armor_str_multiplier"		        "0.1 0.15 0.2"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"hp_str_multiplier"		        "50.0 100.0 150.0"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"speed_cap"		                "250 200 150"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"cooldown_increment"		    "50 100 150"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"aura_radius"		            "900"
-			}
-            "06"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"size"		                    "50 75 100"
-			}
-            "07"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"armor_str_multiplier_tooltip"	 "50 75 100"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"hp_str_multiplier_tooltip"		"50.0 100.0 150.0"
-			}						
-		}
+		"AbilityValues"
+        {
+            "armor_str_multiplier" "0.1 0.15 0.2"
+            "hp_str_multiplier" "50.0 100.0 150.0"
+            "speed_cap" "250 200 150"
+            "cooldown_increment" "50 100 150"
+            "aura_radius" "900"
+            "size" "50 75 100"
+            "armor_str_multiplier_tooltip" "50 75 100"
+            "hp_str_multiplier_tooltip" "50.0 100.0 150.0"
+        }
 	}
 }

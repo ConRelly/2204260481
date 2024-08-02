@@ -47,38 +47,14 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"1300"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"quill_base_damage"		"40 190 880 1640 4750 9890 14500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"quill_stack_damage"	"30 32 34 36 40 80 160"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"quill_stack_duration"	"9.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"2400"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str_multiplier"		"16 19 22 25 45 65 85"
-			}			
-		}
+		"AbilityValues"
+        {
+            "radius" "1300"
+            "quill_base_damage" "40 190 880 1640 4750 9890 14500"
+            "quill_stack_damage" "30 32 34 36 40 80 160"
+            "quill_stack_duration" "9.0"
+            "projectile_speed" "2400"
+            "str_multiplier" "16 19 22 25 45 65 85"
+        }
 	}
 }

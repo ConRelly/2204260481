@@ -37,29 +37,16 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "fissure_range"                                   "1400"
-        "LinkedSpecialBonus"                              "special_bonus_unique_earthshaker_3"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "fissure_duration"                                "1.5 1.5 1.5 1.5 5.5 2.5"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "fissure_radius"                                  "225"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "stun_duration"                                   "1.0 1.25 1.5 1.75 2.0 2.25"
-      }
-    }
+    "AbilityValues"
+        {
+            "fissure_range"
+            {
+                "value" "1400"
+                "LinkedSpecialBonus" "special_bonus_unique_earthshaker_3"
+            }
+            "fissure_duration" "1.5 1.5 1.5 1.5 5.5 2.5"
+            "fissure_radius" "225"
+            "stun_duration" "1.0 1.25 1.5 1.75 2.0 2.25"
+        }
   }
 }

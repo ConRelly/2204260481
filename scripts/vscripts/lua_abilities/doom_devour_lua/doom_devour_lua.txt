@@ -47,43 +47,15 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"20 30 40 50 65"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"devour_time"			"15"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"regen"					"5"
-			}
-            "04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"275"
-			}
-            "05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"regen_str_multiplier"	"10"
-			}
-            "06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"gold_int_multiplier"	"10 12 14 16 20"
-			}
-            "07"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"str_multiplier"		"3 4 5 6 7"
-			}
-		}
+		"AbilityValues"
+        {
+            "bonus_gold" "20 30 40 50 65"
+            "devour_time" "15"
+            "regen" "5"
+            "radius" "275"
+            "regen_str_multiplier" "10"
+            "gold_int_multiplier" "10 12 14 16 20"
+            "str_multiplier" "3 4 5 6 7"
+        }
 	}
 }

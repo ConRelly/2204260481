@@ -27,44 +27,19 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "attack_damage"                                   "290 995 3825 9100 29250 68250" //OAA
-        "LinkedSpecialBonus"                              "special_bonus_unique_dark_willow_4"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "attack_interval"                                 "0.20"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "attack_radius"                                   "800"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "attack_targets"                                  "1"
-      }
-      "05"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "roaming_radius"                                  "300"
-      }
-      "06"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "roaming_seconds_per_rotation"                    "1.8"
-      }
-      "07"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "roaming_duration"                                "15.0"
-      }
-    }
+    "AbilityValues"
+        {
+            "attack_damage"
+            {
+                "value" "290 995 3825 9100 29250 68250"
+                "LinkedSpecialBonus" "special_bonus_unique_dark_willow_4"
+            }
+            "attack_interval" "0.20"
+            "attack_radius" "800"
+            "attack_targets" "1"
+            "roaming_radius" "300"
+            "roaming_seconds_per_rotation" "1.8"
+            "roaming_duration" "15.0"
+        }
   }
 }

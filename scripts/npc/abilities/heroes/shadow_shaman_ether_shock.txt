@@ -34,34 +34,17 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "start_radius"                                    "200"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "end_radius"                                      "600"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "end_distance"                                    "600"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "targets"                                         "10" //OAA
-      }
-      "05"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "damage"                                          "140 200 360 920 1640 4280"
-        "LinkedSpecialBonus"                              "special_bonus_unique_shadow_shaman_3"
-      }
-    }
+    "AbilityValues"
+        {
+            "start_radius" "200"
+            "end_radius" "600"
+            "end_distance" "600"
+            "targets" "10"
+            "damage"
+            {
+                "value" "140 200 360 920 1640 4280"
+                "LinkedSpecialBonus" "special_bonus_unique_shadow_shaman_3"
+            }
+        }
   }
 }

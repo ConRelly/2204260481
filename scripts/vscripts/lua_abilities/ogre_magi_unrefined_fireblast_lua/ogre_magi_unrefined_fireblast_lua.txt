@@ -45,43 +45,15 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"0.8"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"multicast_delay"	"0.5"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"scepter_mana"		"0.10"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"fireblast_damage"		"4420"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"stats_multiplier"			"17.0"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"scepter_mana_tooltip"			"10"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"mana_bonus_dmg"		"15"
-			}						
-		}
+		"AbilityValues"
+        {
+            "stun_duration" "0.8"
+            "multicast_delay" "0.5"
+            "scepter_mana" "0.10"
+            "fireblast_damage" "4420"
+            "stats_multiplier" "17.0"
+            "scepter_mana_tooltip" "10"
+            "mana_bonus_dmg" "15"
+        }
 	}
 }

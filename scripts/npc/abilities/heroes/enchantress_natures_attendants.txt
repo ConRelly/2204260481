@@ -28,30 +28,20 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "heal_interval"                                   "0.5"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "heal"                                            "7 9 11 23 37 91"
-        "LinkedSpecialBonus"                              "special_bonus_unique_enchantress_5"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "radius"                                          "575"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "wisp_count"                                      "4 6 8 10 12 16"
-        "LinkedSpecialBonus"                              "special_bonus_unique_enchantress_2"
-      }
-    }
+    "AbilityValues"
+        {
+            "heal_interval" "0.5"
+            "heal"
+            {
+                "value" "7 9 11 23 37 91"
+                "LinkedSpecialBonus" "special_bonus_unique_enchantress_5"
+            }
+            "radius" "575"
+            "wisp_count"
+            {
+                "value" "4 6 8 10 12 16"
+                "LinkedSpecialBonus" "special_bonus_unique_enchantress_2"
+            }
+        }
   }
 }

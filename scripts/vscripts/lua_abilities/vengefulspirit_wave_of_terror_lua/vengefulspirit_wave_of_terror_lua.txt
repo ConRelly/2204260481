@@ -31,56 +31,26 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"wave_speed"		"2000"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"wave_width"		"300"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor_reduction"		"-3 -7 -9 -12 -15 -17 -20"
-				"LinkedSpecialBonus"	"special_bonus_unique_vengeful_spirit_4"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"armor_agi_multiplier"		"1"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"vision_aoe"		"500"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"wave_damage"		"90 150 270 490 1950 3800 9750"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_agi_multiplier"		"1.5 2.0 2.5 3.0 3.5 4.0 4.5"
-				"LinkedSpecialBonus"		"special_bonus_unique_wave_of_terror_dmg"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"10"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"vision_duration"	"10"
-			}
-		}
+		"AbilityValues"
+        {
+            "wave_speed" "2000"
+            "wave_width" "300"
+            "armor_reduction"
+            {
+                "value" "-3 -7 -9 -12 -15 -17 -20"
+                "LinkedSpecialBonus" "special_bonus_unique_vengeful_spirit_4"
+            }
+            "armor_agi_multiplier" "1"
+            "vision_aoe" "500"
+            "wave_damage" "90 150 270 490 1950 3800 9750"
+            "damage_agi_multiplier"
+            {
+                "value" "1.5 2.0 2.5 3.0 3.5 4.0 4.5"
+                "LinkedSpecialBonus" "special_bonus_unique_wave_of_terror_dmg"
+            }
+            "duration" "10"
+            "vision_duration" "10"
+        }
 	}
 // Wave of Terror: +{value} damage per agility
 	"special_bonus_unique_wave_of_terror_dmg"
@@ -88,13 +58,9 @@
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"						"9.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "9.0"
+        }
 	}
 }

@@ -24,29 +24,16 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_bonus"					"5 10 15"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"str_multiplier"				"0.015"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"str_multiplier_tooltip"		"15"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"stack_chance"					"6 8 10"
-				"LinkedSpecialBonus"			"special_bonus_unique_legion_commander_chance"
-			}						
-		}
+		"AbilityValues"
+        {
+            "damage_bonus" "5 10 15"
+            "str_multiplier" "0.015"
+            "str_multiplier_tooltip" "15"
+            "stack_chance"
+            {
+                "value" "6 8 10"
+                "LinkedSpecialBonus" "special_bonus_unique_legion_commander_chance"
+            }
+        }
 	}
 }

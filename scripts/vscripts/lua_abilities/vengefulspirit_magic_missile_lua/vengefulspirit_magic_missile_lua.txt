@@ -34,33 +34,13 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"magic_missile_speed"	"1750"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"magic_missile_stun"	"1.55"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"magic_missile_damage"		"200 975 2250 4250 9300 17500 23250"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"agi_multiplier"		"4.0 6.0 10.0 14.0 20 35 60"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"radius"	"375"
-			}
-		}
+		"AbilityValues"
+        {
+            "magic_missile_speed" "1750"
+            "magic_missile_stun" "1.55"
+            "magic_missile_damage" "200 975 2250 4250 9300 17500 23250"
+            "agi_multiplier" "4.0 6.0 10.0 14.0 20 35 60"
+            "radius" "375"
+        }
 	}
 }

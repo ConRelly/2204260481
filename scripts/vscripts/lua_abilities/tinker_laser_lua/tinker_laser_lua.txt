@@ -47,46 +47,27 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"miss_rate"				"30 50 70 90"
-				"LinkedSpecialBonus"    "special_laser_miss_rate_lua"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration_hero"			"3 3.5 4 4.5"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration_creep"		"6.0 6.0 6.0 6.0"
-			}	
-			"04"	
-			{
-				"var_type"				"FIELD_INTEGER"
-				"laser_damage"			"480 1960 5400 9420"
-			}	
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range_tooltip"	"1000"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"int_multiplier"		"4.0 5.4 6.6 8.5"
-				"LinkedSpecialBonus"    "special_laser_int_multiplier_lua"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"scepter_bounce_range"	"700"
-				"RequiresScepter"		"1"
-			}
-		}
+		"AbilityValues"
+        {
+            "miss_rate"
+            {
+                "value" "30 50 70 90"
+                "LinkedSpecialBonus" "special_laser_miss_rate_lua"
+            }
+            "duration_hero" "3 3.5 4 4.5"
+            "duration_creep" "6.0 6.0 6.0 6.0"
+            "laser_damage" "480 1960 5400 9420"
+            "cast_range_tooltip" "1000"
+            "int_multiplier"
+            {
+                "value" "4.0 5.4 6.6 8.5"
+                "LinkedSpecialBonus" "special_laser_int_multiplier_lua"
+            }
+            "scepter_bounce_range"
+            {
+                "value" "700"
+                "RequiresScepter" "1"
+            }
+        }
 	}
 }

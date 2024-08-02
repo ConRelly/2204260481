@@ -38,38 +38,14 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_per_stack"					"25 50 75"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"move_speed_per_stack"				"3 4 5"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"stack_duration"				"10.0"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"max_stacks"					"5 7 10"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"str_multiplier"				"0.1 0.15 0.20"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"spell_amp_per_stack"				"10 12 15"
-			}			
-		}
+		"AbilityValues"
+        {
+            "damage_per_stack" "25 50 75"
+            "move_speed_per_stack" "3 4 5"
+            "stack_duration" "10.0"
+            "max_stacks" "5 7 10"
+            "str_multiplier" "0.1 0.15 0.20"
+            "spell_amp_per_stack" "10 12 15"
+        }
 	}
 }

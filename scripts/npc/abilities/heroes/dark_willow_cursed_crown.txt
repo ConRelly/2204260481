@@ -31,24 +31,15 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "delay"                                           "4"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "stun_duration"                                   "1.75 2.25 2.75 3.25 3.75 4.25"
-        "LinkedSpecialBonus"                              "special_bonus_unique_dark_willow_6"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "stun_radius"                                     "360"
-      }
-    }
+    "AbilityValues"
+        {
+            "delay" "4"
+            "stun_duration"
+            {
+                "value" "1.75 2.25 2.75 3.25 3.75 4.25"
+                "LinkedSpecialBonus" "special_bonus_unique_dark_willow_6"
+            }
+            "stun_radius" "360"
+        }
   }
 }

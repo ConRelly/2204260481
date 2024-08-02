@@ -28,37 +28,26 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "radius"                                          "250 350 450 550 550 500"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "bonus_hero_damage"                               "40 80 120 160 320 4640"
-        "LinkedSpecialBonus"                              "special_bonus_unique_ember_spirit_6"
-        "CalculateSpellDamageTooltip"                     "0"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "attack_interval"                                 "3.0"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "creep_damage_penalty"                            "0" //OAA
-        "CalculateSpellDamageTooltip"                     "0"
-      }
-      "05"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "AbilityCharges"                                  ""
-        "LinkedSpecialBonus"                              "special_bonus_unique_ember_spirit_4"
-      }
-    }
+    "AbilityValues"
+        {
+            "radius" "250 350 450 550 550 500"
+            "bonus_hero_damage"
+            {
+                "value" "40 80 120 160 320 4640"
+                "LinkedSpecialBonus" "special_bonus_unique_ember_spirit_6"
+                "CalculateSpellDamageTooltip" "0"
+            }
+            "attack_interval" "3.0"
+            "creep_damage_penalty"
+            {
+                "value" "0"
+                "CalculateSpellDamageTooltip" "0"
+            }
+            "AbilityCharges"
+            {
+                "value" ""
+                "LinkedSpecialBonus" "special_bonus_unique_ember_spirit_4"
+            }
+        }
   }
 }

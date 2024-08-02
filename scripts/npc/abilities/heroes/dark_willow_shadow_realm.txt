@@ -29,36 +29,25 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "duration"                                        "5"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "damage"                                          "190 480 970 1760 2950 3620 7250"
-        "LinkedSpecialBonus"                              "special_bonus_unique_dark_willow_1"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "attack_range_bonus"                              "600"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "max_damage_duration"                             "3.5"
-        "CalculateSpellDamageTooltip"                     "0"
-      }
-      "05"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "scepter_radius"                                  "900"
-        "RequiresScepter"                                 "1"
-      }
-    }
+    "AbilityValues"
+        {
+            "duration" "5"
+            "damage"
+            {
+                "value" "190 480 970 1760 2950 3620 7250"
+                "LinkedSpecialBonus" "special_bonus_unique_dark_willow_1"
+            }
+            "attack_range_bonus" "600"
+            "max_damage_duration"
+            {
+                "value" "3.5"
+                "CalculateSpellDamageTooltip" "0"
+            }
+            "scepter_radius"
+            {
+                "value" "900"
+                "RequiresScepter" "1"
+            }
+        }
   }
 }

@@ -38,28 +38,12 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"7200"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"repel_chance"				"5 10 15 20 25"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"repel_cooldown"			"4.5"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"heal_str_multiplier"		"2.0 3.0 4.0 5.0 7.0"
-			}
-		}
+		"AbilityValues"
+        {
+            "radius" "7200"
+            "repel_chance" "5 10 15 20 25"
+            "repel_cooldown" "4.5"
+            "heal_str_multiplier" "2.0 3.0 4.0 5.0 7.0"
+        }
 	}
 }

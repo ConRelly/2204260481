@@ -35,35 +35,21 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "radius"                                          "1400 1750 1900 2550 8800 2950"
-        "LinkedSpecialBonus"                              "special_bonus_unique_dark_seer_2"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "duration"                                        "0.3 0.4 0.5 0.6 0.7 0.8"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "damage"                                          "200 450 1400 3950 0 15000"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "radius_tree"                                     "400 450 500 550 600 650" //OAA, same as radius
-      }
-      "05"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "scepter_cooldown"                                "12"
-        "RequiresScepter"                                 "1"
-      }
-    }
+    "AbilityValues"
+        {
+            "radius"
+            {
+                "value" "1400 1750 1900 2550 8800 2950"
+                "LinkedSpecialBonus" "special_bonus_unique_dark_seer_2"
+            }
+            "duration" "0.3 0.4 0.5 0.6 0.7 0.8"
+            "damage" "200 450 1400 3950 0 15000"
+            "radius_tree" "400 450 500 550 600 650"
+            "scepter_cooldown"
+            {
+                "value" "12"
+                "RequiresScepter" "1"
+            }
+        }
   }
 }

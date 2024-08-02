@@ -29,13 +29,9 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "aftershock_range"                                "600"
-      }
-    }
+    "AbilityValues"
+        {
+            "aftershock_range" "600"
+        }
   }
 }

@@ -38,55 +38,25 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "totem_damage_percentage"                         "200 300 400 500 600 800 1200"
-        "CalculateSpellDamageTooltip"                     "0"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "distance_scepter"                                "1900"
-        "RequiresScepter"                                 "1"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "aftershock_range"                                "700"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "scepter_height"                                  "950"
-      }
-      "05"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "scepter_height_arcbuffer"                        "100"
-      }
-      "06"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "scepter_acceleration_z"                          "4000"
-      }
-      "07"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "scepter_acceleration_horizontal"                 "3000"
-      }
-      "08"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "scepter_leap_duration"                           "0.4"
-      }
-      "09"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "bonus_attack_range"                              "450"
-      }
-    }
+    "AbilityValues"
+        {
+            "totem_damage_percentage"
+            {
+                "value" "200 300 400 500 600 800 1200"
+                "CalculateSpellDamageTooltip" "0"
+            }
+            "distance_scepter"
+            {
+                "value" "1900"
+                "RequiresScepter" "1"
+            }
+            "aftershock_range" "700"
+            "scepter_height" "950"
+            "scepter_height_arcbuffer" "100"
+            "scepter_acceleration_z" "4000"
+            "scepter_acceleration_horizontal" "3000"
+            "scepter_leap_duration" "0.4"
+            "bonus_attack_range" "450"
+        }
   }
 }

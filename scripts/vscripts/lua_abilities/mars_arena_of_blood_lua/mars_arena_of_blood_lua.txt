@@ -46,78 +46,22 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"8 9 10 11 15"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"3000"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"width"				"100"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"spear_damage"		"520 1750 2550 3200 4250"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"formation_time"	"0.5"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"spear_distance_from_wall"	"2600"
-			}
-			"07"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"spear_attack_interval"	"0.4"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"warrior_count"		"14"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"first_warrior_angle"	"0.0"
-			}
-			"10"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"warrior_fade_min_dist"	"350.0"
-			}
-			"11"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"warrior_fade_max_dist"	"450.0"
-			}
-			"12"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"str_multiplier"	"5.0 9.0 15.0 25.0 50.0"
-			}
-			"13"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"ss_spear_attack_interval"	"0.2"
-			}
-			"14"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"challenge_mult"	"50"
-			}						
-		}
+		"AbilityValues"
+        {
+            "duration" "8 9 10 11 15"
+            "radius" "3000"
+            "width" "100"
+            "spear_damage" "520 1750 2550 3200 4250"
+            "formation_time" "0.5"
+            "spear_distance_from_wall" "2600"
+            "spear_attack_interval" "0.4"
+            "warrior_count" "14"
+            "first_warrior_angle" "0.0"
+            "warrior_fade_min_dist" "350.0"
+            "warrior_fade_max_dist" "450.0"
+            "str_multiplier" "5.0 9.0 15.0 25.0 50.0"
+            "ss_spear_attack_interval" "0.2"
+            "challenge_mult" "50"
+        }
 	}
 }

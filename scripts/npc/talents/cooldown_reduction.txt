@@ -5,83 +5,59 @@
 		"BaseClass"				"special_bonus_undefined"
 		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"value"				"12"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "12"
+        }
 	}
 	"special_bonus_cdr_15"
 	{
 		"BaseClass"				"special_bonus_undefined"
 		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"value"				"15"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "15"
+        }
 	}
 	"special_bonus_cdr_20"
 	{
 		"BaseClass"				"special_bonus_undefined"
 		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"value"				"20"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "20"
+        }
 	}
 	"special_bonus_cdr_25"
 	{
 		"BaseClass"				"special_bonus_undefined"
 		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"value"				"25"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "25"
+        }
 	}
 	"special_bonus_cdr_30"
 	{
 		"BaseClass"				"special_bonus_undefined"
 		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"value"				"30"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "30"
+        }
 	}
 	"special_bonus_cdr_40"
 	{
 		"BaseClass"				"special_bonus_undefined"
 		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"value"				"40"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "40"
+        }
 	}
 }

@@ -5,195 +5,139 @@
 		"BaseClass"						"special_bonus_hp_150"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1500"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "1500"
+        }
 	}
 	"special_bonus_hp_1750"
 	{
 		"BaseClass"						"special_bonus_hp_150"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"1750"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "1750"
+        }
 	}
 	"special_bonus_hp_2000"
 	{
 		"BaseClass"						"special_bonus_hp_150"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"2000"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "2000"
+        }
 	}
 	"special_bonus_hp_2250"
 	{
 		"BaseClass"						"special_bonus_hp_150"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"2250"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "2250"
+        }
 	}
 	"special_bonus_hp_2500"
 	{
 		"BaseClass"						"special_bonus_hp_150"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"2500"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "2500"
+        }
 	}
 	"special_bonus_hp_2750"
 	{
 		"BaseClass"						"special_bonus_hp_150"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"2750"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "2750"
+        }
 	}
 	"special_bonus_hp_3000"
 	{
 		"BaseClass"						"special_bonus_hp_150"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"3000"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "3000"
+        }
 	}
 	"special_bonus_hp_3250"
 	{
 		"BaseClass"						"special_bonus_hp_150"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"3250"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "3250"
+        }
 	}
 	"special_bonus_hp_3500"
 	{
 		"BaseClass"						"special_bonus_hp_150"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"3500"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "3500"
+        }
 	}
 	"special_bonus_hp_4000"
 	{
 		"BaseClass"						"special_bonus_hp_150"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"4000"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "4000"
+        }
 	}
 	"special_bonus_hp_4500"
 	{
 		"BaseClass"						"special_bonus_hp_150"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"4500"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "4500"
+        }
 	}
 	"special_bonus_hp_5000"
 	{
 		"BaseClass"						"special_bonus_hp_150"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"5000"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "5000"
+        }
 	}
 	"special_bonus_hp_5500"
 	{
 		"BaseClass"						"special_bonus_hp_150"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"5500"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "5500"
+        }
 	}
 	"special_bonus_hp_6000"
 	{
 		"BaseClass"						"special_bonus_hp_150"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"6000"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "6000"
+        }
 	}
 }

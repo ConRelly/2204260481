@@ -24,39 +24,18 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "leap_distance"                                   "575"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "leap_speed"                                      "1300.0"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "leap_acceleration"                               "6000.0"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "leap_speedbonus"                                 "8 16 24 32 40 48"
-      }
-      "05"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "leap_speedbonus_as"                              "25 50 75 100 150 300"
-        "LinkedSpecialBonus"                              "special_bonus_unique_mirana_1"
-      }
-      "06"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "leap_bonus_duration"                             "3.5"
-      }
-    }
+    "AbilityValues"
+        {
+            "leap_distance" "575"
+            "leap_speed" "1300.0"
+            "leap_acceleration" "6000.0"
+            "leap_speedbonus" "8 16 24 32 40 48"
+            "leap_speedbonus_as"
+            {
+                "value" "25 50 75 100 150 300"
+                "LinkedSpecialBonus" "special_bonus_unique_mirana_1"
+            }
+            "leap_bonus_duration" "3.5"
+        }
   }
 }

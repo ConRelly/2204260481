@@ -16,34 +16,13 @@
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
 			"particle"	"particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf"
 		}
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"multicast_2_times"		"40 40 40 40 40"
-			}
-
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"multicast_3_times"		"0 10 15 20 25"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"multicast_4_times"		"0 0 5 10 15"
-			}
-            "04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"multicast_9_times"		"1 1 1 3 6"
-			}
-            "05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"interval"				"0.1"
-			}			
-		}
+		"AbilityValues"
+        {
+            "multicast_2_times" "40 40 40 40 40"
+            "multicast_3_times" "0 10 15 20 25"
+            "multicast_4_times" "0 0 5 10 15"
+            "multicast_9_times" "1 1 1 3 6"
+            "interval" "0.1"
+        }
 	}
 }

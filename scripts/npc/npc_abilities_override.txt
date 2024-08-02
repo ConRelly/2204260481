@@ -4448,9 +4448,10 @@
 		"AbilityValues"
         {
             "bounce_radius" "1475"
-            "DamageTypeTooltip"
+            "damage_radius"
             {
-                "value" "DAMAGE_TYPE_NONE"
+                "value" "420"
+                "DamageTypeTooltip" "DAMAGE_TYPE_NONE"
                 "CalculateSpellDamageTooltip" "0"
             }
             "max_targets" "3"
@@ -21980,12 +21981,15 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemPurchasable"				"0"
 		"ItemIsNeutralDrop"				"1"
+		"ItemRequiresCharges"			"0"
+		"ItemInitialCharges"			"90000"
 		"ItemCost"						"10000"
 		"ItemSellable"					"1"
 		"AbilityValues"
         {
             "bonus_gpm" "777"
             "bonus_mana" "2000"
+            "gold_on_expire" "5000"
             "bonus_damage" "-130"
         }
 	}

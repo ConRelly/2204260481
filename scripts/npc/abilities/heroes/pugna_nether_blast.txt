@@ -30,29 +30,16 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "structure_damage_mod"                            "0.5"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "delay"                                           "0.9"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "radius"                                          "600"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "blast_damage"                                    "100 275 350 725 1725 4125"
-        "LinkedSpecialBonus"                              "special_bonus_unique_pugna_2"
-      }
-    }
+    "AbilityValues"
+        {
+            "structure_damage_mod" "0.5"
+            "delay" "0.9"
+            "radius" "600"
+            "blast_damage"
+            {
+                "value" "100 275 350 725 1725 4125"
+                "LinkedSpecialBonus" "special_bonus_unique_pugna_2"
+            }
+        }
   }
 }

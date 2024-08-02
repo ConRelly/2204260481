@@ -12046,12 +12046,15 @@
 	"ItemShareability"				"ITEM_NOT_SHAREABLE"
 	"ItemIsNeutralDrop"				"0"
 	"ItemPurchasable"			   	"0"
+	"ItemRequiresCharges"			"0"
+	"ItemInitialCharges"			"90000"	
 	"ItemCost"					  	"2500"
 	"ItemSellable"					"1"
 	"AbilityValues"
         {
             "bonus_gpm" "999"
             "bonus_damage" "-2000"
+            "gold_on_expire" "50000"
         }
 }
 "item_recipe_philo_stone_temp"

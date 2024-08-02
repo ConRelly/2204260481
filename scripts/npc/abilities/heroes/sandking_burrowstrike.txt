@@ -39,40 +39,22 @@
 
     // Special
     //-------------------------------------------------------------------------------------------------------------
-    "AbilitySpecial"
-    {
-      "01"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "burrow_width"                                    "150"
-      }
-      "02"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "burrow_duration"                                 "1.6 1.8 2.0 2.2 2.3 2.4"
-      }
-      "03"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "burrow_speed"                                    "2000"
-      }
-      "04"
-      {
-        "var_type"                                        "FIELD_FLOAT"
-        "burrow_anim_time"                                "0.52"
-      }
-      "05"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "cast_range_scepter"                              "700 900 1100 1300 1400 1500" //OAA
-        "RequiresScepter"                                 "1"
-      }
-      "06"
-      {
-        "var_type"                                        "FIELD_INTEGER"
-        "burrow_speed_scepter"                            "3000"
-        "RequiresScepter"                                 "1"
-      }
-    }
+    "AbilityValues"
+        {
+            "burrow_width" "150"
+            "burrow_duration" "1.6 1.8 2.0 2.2 2.3 2.4"
+            "burrow_speed" "2000"
+            "burrow_anim_time" "0.52"
+            "cast_range_scepter"
+            {
+                "value" "700 900 1100 1300 1400 1500"
+                "RequiresScepter" "1"
+            }
+            "burrow_speed_scepter"
+            {
+                "value" "3000"
+                "RequiresScepter" "1"
+            }
+        }
   }
 }

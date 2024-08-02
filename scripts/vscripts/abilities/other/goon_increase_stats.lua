@@ -137,8 +137,10 @@ function on_created(keys)
                 link_a:SetLevel(skill_lvl)
                 local newAbilityNameb = GetRandomAbilityName(hero)
                 local link_b = caster:AddAbility(newAbilityNameb)
-                link_b:UpgradeAbility(true)
-                link_b:SetLevel(skill_lvl)
+                if link_b then
+                    link_b:UpgradeAbility(true)
+                    link_b:SetLevel(skill_lvl)
+                end
                 if RollPercentage(75) or has35 then
                     caster:AddNewModifier(caster, self, aghbuf, {})
                 end

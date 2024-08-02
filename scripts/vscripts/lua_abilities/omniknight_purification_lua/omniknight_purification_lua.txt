@@ -52,38 +52,14 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal"					"100 400 800 1300 2100 3200 5000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"475"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.5 4.0 4.5 5.0 5.5 6.0 7.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor_str_multiplier"			"0.02"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"heal_str_multiplier"		"1 1.5 2 2.5 3 3.5 5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"armor_str_multiplier_tooltip"			"2"
-			}			
-		}
+		"AbilityValues"
+        {
+            "heal" "100 400 800 1300 2100 3200 5000"
+            "radius" "475"
+            "duration" "3.5 4.0 4.5 5.0 5.5 6.0 7.0"
+            "armor_str_multiplier" "0.02"
+            "heal_str_multiplier" "1 1.5 2 2.5 3 3.5 5"
+            "armor_str_multiplier_tooltip" "2"
+        }
 	}
 }

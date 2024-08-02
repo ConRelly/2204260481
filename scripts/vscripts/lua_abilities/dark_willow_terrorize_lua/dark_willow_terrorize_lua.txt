@@ -49,33 +49,13 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"destination_travel_speed"	"2000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"destination_radius"		"450"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"destination_status_duration"	"3.2 3.4 3.6 3.8 4.0 4.5"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"return_travel_speed"	"500"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"starting_height"		"300"
-			}
-		}
+		"AbilityValues"
+        {
+            "destination_travel_speed" "2000"
+            "destination_radius" "450"
+            "destination_status_duration" "3.2 3.4 3.6 3.8 4.0 4.5"
+            "return_travel_speed" "500"
+            "starting_height" "300"
+        }
 	}
 }

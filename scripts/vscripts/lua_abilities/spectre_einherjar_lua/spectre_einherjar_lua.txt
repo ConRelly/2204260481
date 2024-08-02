@@ -43,54 +43,21 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
+		"AbilityValues"
+        {
+            "duration"
             {
-            	"var_type"					"FIELD_FLOAT"
-            	"duration"					"22.0"
-                "LinkedSpecialBonus"        "special_bonus_unique_morphling_8"
+                "value" "22.0"
+                "LinkedSpecialBonus" "special_bonus_unique_morphling_8"
             }
-            "02"
-            {
-            	"var_type"					"FIELD_INTEGER"
-            	"illusion_damage_outgoing"	"-30 -20 10 50 100"
-            }
-            "03"
-            {
-            	"var_type"					"FIELD_INTEGER"
-            	"tooltip_outgoing"	        "70 20 110 150 200"
-            }
-            "04"
-            {
-            	"var_type"					"FIELD_INTEGER"
-            	"illusion_damage_incoming"	"20"
-            }
-            "05"
-            {
-            	"var_type"					"FIELD_INTEGER"
-            	"tooltip_illusion_total_damage_incoming"	"120"
-            }
-            "06"
-            {
-            	"var_type"					"FIELD_INTEGER"
-            	"scepter_illusion_damage_incoming"	"-25"
-            }
-            "07"
-            {
-            	"var_type"					"FIELD_INTEGER"
-            	"tooltip_scepter_illusion_total_damage_incoming"	"25"
-            }
-            "08"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "agi_multiplier"			"3.0 5.0 6.0 7.0 10.0"
-            }
-            "09"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "radius"			        "1400"
-            }
-		}
+            "illusion_damage_outgoing" "-30 -20 10 50 100"
+            "tooltip_outgoing" "70 20 110 150 200"
+            "illusion_damage_incoming" "20"
+            "tooltip_illusion_total_damage_incoming" "120"
+            "scepter_illusion_damage_incoming" "-25"
+            "tooltip_scepter_illusion_total_damage_incoming" "25"
+            "agi_multiplier" "3.0 5.0 6.0 7.0 10.0"
+            "radius" "1400"
+        }
 	}
 }

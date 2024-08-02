@@ -6,14 +6,10 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"160"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "160"
+        }
 	}
 	"special_bonus_strength_180"
 	{
@@ -21,14 +17,10 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"180"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "180"
+        }
 	}
 	"special_bonus_strength_190"
 	{
@@ -36,14 +28,10 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"190"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "190"
+        }
 	}
 	"special_bonus_strength_200"
 	{
@@ -51,14 +39,10 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"200"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "200"
+        }
 	}
 	"special_bonus_strength_220"
 	{
@@ -66,14 +50,10 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"220"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "220"
+        }
 	}
 	"special_bonus_strength_230"
 	{
@@ -81,14 +61,10 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"230"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "230"
+        }
 	}
 	"special_bonus_strength_250"
 	{
@@ -96,14 +72,10 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"250"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "250"
+        }
 	}
 	"special_bonus_strength_260"
 	{
@@ -111,14 +83,10 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"260"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "260"
+        }
 	}
 	"special_bonus_strength_280"
 	{
@@ -126,14 +94,10 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"280"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "280"
+        }
 	}		
 	"special_bonus_strength_400"
 	{
@@ -141,14 +105,10 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"400"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "400"
+        }
 	}
 	"special_bonus_strength_450"
 	{
@@ -156,14 +116,10 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"450"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "450"
+        }
 	}
 	"special_bonus_strength_500"
 	{
@@ -171,14 +127,10 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"500"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "500"
+        }
 	}
 	"special_bonus_strength_820"
 	{
@@ -186,13 +138,9 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"value"					"820"
-			}
-		}
+		"AbilityValues"
+        {
+            "value" "820"
+        }
 	}
 }
