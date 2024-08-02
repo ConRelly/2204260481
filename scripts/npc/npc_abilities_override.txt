@@ -3813,34 +3813,32 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"duration"					"20.0 25.0 30.0 35.0"
-				"fade_time"					"1.0 0.75 0.5 0.25"
-				"stun_duration"				
-				{
-					"value"										"0"
-				}
-				"AbilityCooldown"				
-				{
-					"value"		"18 17 16 15"
-					"special_bonus_shard" "-5"
-				}
-				"AbilityChargeRestoreTime"		
-				{
-					"value"	"15 14 13 12"
-					"RequiresShard"		"1"
-				}
-				"ally_fade_time"
-				{
-					"value"			"1.0"
-					"RequiresShard"		"1"
-				}
-				"damage_reduction_pct"
-				{
-					"value"										"0"
-					"special_bonus_unique_bounty_hunter_9"		"+35"
-				}
-
-
+			"duration"					"20.0 25.0 30.0 35.0"
+			"fade_time"					"1.0 0.75 0.5 0.25"
+			"stun_duration"				
+			{
+				"value"										"0"
+			}
+			"AbilityCooldown"				
+			{
+				"value"		"18 17 16 15"
+				"special_bonus_shard" "-5"
+			}
+			"AbilityChargeRestoreTime"		
+			{
+				"value"	"15 14 13 12"
+				"RequiresShard"		"1"
+			}
+			"ally_fade_time"
+			{
+				"value"			"1.0"
+				"RequiresShard"		"1"
+			}
+			"damage_reduction_pct"
+			{
+				"value"										"0"
+				"special_bonus_unique_bounty_hunter_9"		"+35"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -4044,7 +4042,6 @@
 			"slow_duration"				"2"
 			"bonus_move_speed"		"15 37 75 115"
 			"bonus_status_resist"	"25"
-
 		}
 	}
 
@@ -4486,20 +4483,20 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"chance"				
-				{
-						"value"				"22.22"
-						"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_5"
-				}
-				"crit_min"				"220"
-				"crit_max"				"440 875 1210 2445"
-				"lifesteal"					
-				{
-					"value"					"10 15 20 25"
-					"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_6"
-				}
+			"chance"				
+			{
+				"value"				"22.22"
+				"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_5"
+			}
+			"crit_min"				"220"
+			"crit_max"				"440 875 1210 2445"
+			"lifesteal"					
+			{
+				"value"					"10 15 20 25"
+				"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_6"
+			}
 
-				"creep_multiplier"					"1.5"
+			"creep_multiplier"					"1.5"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
@@ -5161,43 +5158,43 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"radius"				"1600"
-				"spirits"				
-				{
-					"value"					"4 8 10 12 14 16 18"
-					"LinkedSpecialBonus"	"special_bonus_unique_death_prophet"
-				}
-				"spirit_speed"			"525"
-				"max_distance"			"2000"
-				"give_up_distance"		"1200"
-				"min_damage"			"1500 3500 7060 12500 19500 25600 41000"
-				"max_damage"			"1500 3500 7060 12500 19500 25600 41000"
-				"heal_percent"			"25"
-				"average_damage"		"1500 3500 7060 12500 19500 25600 41000"
-				"ghost_spawn_rate"	"0.35"
-				"scepter_movespeed_slow"
-				{
-					"value"				"70"
-					"RequiresScepter"			"1"
-				}
-				"scepter_movespeed_debuff_duration"	
-				{
-					"value"				"0.3"
-					"RequiresScepter"			"1"
-				}
-				"scepter_spirit_life_duration"	
-				{
-					"value"				"4"
-					"RequiresScepter"			"1"
-				}
-				"scepter_spirit_bonus_damage"	
-				{	
-					"value"					"500 750 1000 1250 1750 2500 3000"
-					"RequiresScepter"			"1"
-					"CalculateSpellDamageTooltip"	"0"
-				}	
-				"movement_base"					"20 25 30 35 40 45 50"
-				"movement_bonus"				"40 60 90 120 150 180 200"
+			"radius"				"1600"
+			"spirits"				
+			{
+				"value"					"4 8 10 12 14 16 18"
+				"LinkedSpecialBonus"	"special_bonus_unique_death_prophet"
+			}
+			"spirit_speed"			"525"
+			"max_distance"			"2000"
+			"give_up_distance"		"1200"
+			"min_damage"			"1500 3500 7060 12500 19500 25600 41000"
+			"max_damage"			"1500 3500 7060 12500 19500 25600 41000"
+			"heal_percent"			"25"
+			"average_damage"		"1500 3500 7060 12500 19500 25600 41000"
+			"ghost_spawn_rate"	"0.35"
+			"scepter_movespeed_slow"
+			{
+				"value"				"70"
+				"RequiresScepter"			"1"
+			}
+			"scepter_movespeed_debuff_duration"	
+			{
+				"value"				"0.3"
+				"RequiresScepter"			"1"
+			}
+			"scepter_spirit_life_duration"	
+			{
+				"value"				"4"
+				"RequiresScepter"			"1"
+			}
+			"scepter_spirit_bonus_damage"	
+			{	
+				"value"					"500 750 1000 1250 1750 2500 3000"
+				"RequiresScepter"			"1"
+				"CalculateSpellDamageTooltip"	"0"
+			}	
+			"movement_base"					"20 25 30 35 40 45 50"
+			"movement_bonus"				"40 60 90 120 150 180 200"
 		}
 	}
 

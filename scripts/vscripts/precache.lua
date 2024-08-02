@@ -40,6 +40,8 @@ local particles = {
     "particles/custom/items/spellbook/destruction/spellbook_destruction_impact.vpcf",
     "particles/custom/items/spellbook/destruction/spellbook_destruction_debuff.vpcf",
     "particles/custom/items/pipe_of_dezun/pipe_of_dezun_magic_immune_avatar.vpcf",
+
+      
 }
 
 local sounds = {

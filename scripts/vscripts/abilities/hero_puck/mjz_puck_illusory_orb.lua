@@ -25,7 +25,7 @@ function ability_class:OnSpellStart()
 		local damage = base_damage + caster:GetIntellect(false) * int_damage / 100
 
 		local projectile_direction = point - caster:GetOrigin()
-		projectile_direction = Vector( projectile_direction.x, projectile_direction.y, 0 ):Normalized()
+		projectile_direction = (projectile_direction * Vector(1, 1, 0)):Normalized()
 		local projectile_name = "particles/units/heroes/hero_puck/puck_illusory_orb.vpcf"
 
 		-- create projectile
@@ -190,7 +190,7 @@ function HasTalent(unit, talentName)
     return false
 end
 
-function GetTalentSpecialValueFor(ability, value)
+--[[ function GetTalentSpecialValueFor(ability, value)
     local base = ability:GetSpecialValueFor(value)
     local talentName
     local talentOperation
@@ -216,6 +216,47 @@ function GetTalentSpecialValueFor(ability, value)
             end
         end
     end
+    return base
+end ]]
+
+function GetTalentSpecialValueFor(ability, value)
+    local base = ability:GetSpecialValueFor(value)
+    local talentName
+    local bonusOperation
+    local kv = ability:GetAbilityKeyValues()
+    
+    if kv.AbilityValues then
+        local valueData = kv.AbilityValues[value]
+        if type(valueData) == "table" then
+            talentName = valueData.LinkedSpecialBonus
+            bonusOperation = valueData.LinkedSpecialBonusOperation
+        end
+    end
+    
+    if talentName then 
+        local talent = ability:GetCaster():FindAbilityByName(talentName)
+        if talent and talent:GetLevel() > 0 then
+            local talentValue = talent:GetSpecialValueFor("value")
+            
+            if bonusOperation then
+                if bonusOperation == "SPECIAL_BONUS_ADD" then
+                    base = base + talentValue
+                elseif bonusOperation == "SPECIAL_BONUS_SUBTRACT" then
+                    base = base - talentValue
+                elseif bonusOperation == "SPECIAL_BONUS_MULTIPLY" then
+                    base = base * talentValue
+                elseif bonusOperation == "SPECIAL_BONUS_PERCENTAGE_ADD" then
+                    base = base + base * talentValue * 0.01
+                elseif bonusOperation == "SPECIAL_BONUS_PERCENTAGE_SUBTRACT" then
+                    base = base - base * talentValue * 0.01
+                end
+            else
+                -- Default behavior if no operation is specified
+                base = base + talentValue
+            end
+        end
+    end
+    
     return base
 end
 

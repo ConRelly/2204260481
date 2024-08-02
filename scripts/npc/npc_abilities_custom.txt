@@ -608,51 +608,51 @@
 		"AbilityModifierSupportValue"	"0.75"
 		"AbilityValues"
 		{
-				"buff_duration"	
-				{
-					"value"						"4.0 5.0 6.0 7.0 8.0 9.0 10.0"
-					"special_bonus_facet_grimstroke_inkstigate"	"+3"
-				}
-				"movespeed_bonus_pct"	
-				{
-					"value"		"15 20 25 30 35 40 45 50"
-				"special_bonus_unique_grimstroke_6" "+60"
-				}
-				"radius"				
-				{
-					"value"		"650"
-					"affected_by_aoe_increase"	"1"		
-				"special_bonus_unique_grimstroke_1" "+200"
-				}
-				"max_damage"			
-				{
-					"value"		"42000"
-				}
-				"max_stun"				"1.3 1.8 2.3 2.8"
-				"damage_per_tick"		"400 3000 8000 18000 30000 90000 180000"
-				"tick_rate"				"0.5"
-				"tick_dps_tooltip"		"800 6000 16000 36000 60000 180000 360000"
-				"max_threshold_duration"		"3.5"
-				"can_end_early"
-				{
-					"value"						"0"
-					"special_bonus_facet_grimstroke_inkstigate"	"+1"
-				}
-				"shard_bonus_damage_pct"		
-				{
-					"value"			"400"
-					"RequiresShard"					"1"
-				}	
-				"shard_heal_pct"		
-				{
-					"value"		"10"
-					"RequiresShard"					"1"
-				}
-				"shard_creep_penalty"
-				{
-					"value"		"0.2"
-					"RequiresShard"					"1"
-				}
+			"buff_duration"	
+			{
+				"value"						"4.0 5.0 6.0 7.0 8.0 9.0 10.0"
+				"special_bonus_facet_grimstroke_inkstigate"	"+3"
+			}
+			"movespeed_bonus_pct"	
+			{
+				"value"		"15 20 25 30 35 40 45 50"
+			"special_bonus_unique_grimstroke_6" "+60"
+			}
+			"radius"				
+			{
+				"value"		"650"
+				"affected_by_aoe_increase"	"1"		
+			"special_bonus_unique_grimstroke_1" "+200"
+			}
+			"max_damage"			
+			{
+				"value"		"42000"
+			}
+			"max_stun"				"1.3 1.8 2.3 2.8"
+			"damage_per_tick"		"400 3000 8000 18000 30000 90000 180000"
+			"tick_rate"				"0.5"
+			"tick_dps_tooltip"		"800 6000 16000 36000 60000 180000 360000"
+			"max_threshold_duration"		"3.5"
+			"can_end_early"
+			{
+				"value"						"0"
+				"special_bonus_facet_grimstroke_inkstigate"	"+1"
+			}
+			"shard_bonus_damage_pct"		
+			{
+				"value"			"400"
+				"RequiresShard"					"1"
+			}	
+			"shard_heal_pct"		
+			{
+				"value"		"10"
+				"RequiresShard"					"1"
+			}
+			"shard_creep_penalty"
+			{
+				"value"		"0.2"
+				"RequiresShard"					"1"
+			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -918,38 +918,38 @@
 		"AbilityManaCost"				"200"
 		"AbilityValues"
 		{
-				"radius"				
-				{
-					"value"	"370"
-					"affected_by_aoe_increase"	"1"		
-				}
-				"AbilityChargeRestoreTime"	
-				{
-					"value"			"14 13 12 11 10 9 8"
-					"special_bonus_unique_void_spirit_1"	"-4"
-				}
-				"min_travel_distance"	"300"
-				"max_travel_distance"	"900 1400 1900 2300 2800 3500 7000"
-				"pop_damage_delay"		
-				{
-					"value"	"0"
-					"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
-				}
-				"pop_damage"			
-				{
-					"value"					"2750 8850 23950 67250 145000 325000 950000"
-					"CalculateSpellDamageTooltip"	"1"
-				}
-				"movement_slow_pct"		"50"
-				"ability_chance_pct"
-				{
-					"value"				"100"
+			"radius"				
+			{
+				"value"	"370"
+				"affected_by_aoe_increase"	"1"		
+			}
+			"AbilityChargeRestoreTime"	
+			{
+				"value"			"14 13 12 11 10 9 8"
+				"special_bonus_unique_void_spirit_1"	"-4"
+			}
+			"min_travel_distance"	"300"
+			"max_travel_distance"	"900 1400 1900 2300 2800 3500 7000"
+			"pop_damage_delay"		
+			{
+				"value"	"0"
+				"DamageTypeTooltip"		"DAMAGE_TYPE_NONE"
+			}
+			"pop_damage"			
+			{
+				"value"					"2750 8850 23950 67250 145000 325000 950000"
+				"CalculateSpellDamageTooltip"	"1"
+			}
+			"movement_slow_pct"		"50"
+			"ability_chance_pct"
+			{
+				"value"				"100"
 
-				}
-				"attack_chance_pct"
-				{
-					"value"				"100"
-				}
+			}
+			"attack_chance_pct"
+			{
+				"value"				"100"
+			}
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	}	
@@ -11239,28 +11239,12 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"omniknight_repel"
 	"MaxLevel"						"1"
-	"AbilitySpecial"
+	"AbilityValues"
 	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"health_base"			"250"			
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"health_per_round"		"2500"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"armor_base"			"0"			
-		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"armor_per_round"		"2.0"
-		}
+		"health_base" "250"
+		"health_per_round" "2500"
+		"armor_base" "0"
+		"armor_per_round" "2.0"
 	}
 }
 "tower_increase_stats"
@@ -11561,13 +11545,9 @@
 	"BaseClass"				"special_bonus_undefined"
 	"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
 	"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilitySpecial"
+	"AbilityValues"
 	{
-		"01"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"value"				"1"
-		}
+	    "value" "1"
 	}
 }
 
@@ -13301,49 +13281,20 @@
 		"particle"								"particles/units/heroes/hero_nevermore/nevermore_requiemofsouls_line.vpcf"
 		"particle"								"particles/units/heroes/hero_nevermore/nevermore_requiemofsouls.vpcf"
 	}
-	"AbilitySpecial"
+	"AbilityValues"
 	{
-		"01"
-		{
-			"var_type"							"FIELD_INTEGER"
-			"damage"							"220 435 1680 3750 7550"
-		}
-		"02"
-		{
-			"var_type"							"FIELD_INTEGER"
-			"damage_pct_scepter"				"90"
-		}
-		"03"
-		{
-			"var_type"							"FIELD_INTEGER"
-			"requiem_soul_conversion"			"12"
-		}
-		"04"
-		{
-			"var_type"							"FIELD_INTEGER"
-			"lines_travel_speed"				"700"
-		}
-		"05"
-		{
-			"var_type"							"FIELD_INTEGER"
-			"travel_distance"					"1700"
-		}
-		"06"
-		{
-			"var_type"							"FIELD_INTEGER"
-			"lines_starting_width"				"400"
-		}
-		"07"
-		{
-			"var_type"							"FIELD_INTEGER"
-			"lines_end_width"					"800"
-		}
-		"08"
-		{
-			"var_type"							"FIELD_FLOAT"
-			"agility_mult"						"4.5 8.5 12.5 17 24"
-			"LinkedSpecialBonus" 				"special_bonus_unique_mjz_nevermore_custom_requiem_agi"
-		}		
+	    "damage" "220 435 1680 3750 7550"
+	    "damage_pct_scepter" "90"
+	    "requiem_soul_conversion" "12"
+	    "lines_travel_speed" "700"
+	    "travel_distance" "1700"
+	    "lines_starting_width" "400"
+	    "lines_end_width" "800"
+	    "agility_mult"
+	    {
+	        "value" "4.5 8.5 12.5 17 24"
+	        "LinkedSpecialBonus" "special_bonus_unique_mjz_nevermore_custom_requiem_agi"
+	    }
 	}
 }
 
@@ -13353,13 +13304,9 @@
 	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	
-	"AbilitySpecial"
+	"AbilityValues"
 	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"value"						"12"
-		}
+	    "value" "12"
 	}
 }
 
@@ -21421,13 +21368,9 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"						"2"
-			}
+		    "value" "2"
 		}
 	}
 // Ion Shell (+X Damage)
@@ -21437,13 +21380,9 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"						"5500"
-			}
+		    "value" "5000"
 		}
 	}
 
@@ -22593,7 +22532,7 @@
 
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilitySound"					"Hero_Brewmaster.Brawler.Crit"
-		"AbilityTextureName"			"brewmaster_drunken_brawler"	//	"mjz_brewmaster_drunken_brawler"
+		"AbilityTextureName"			"brewmaster_drunken_brawler"
 		"LearnOnSpawn"                  "1"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -30007,54 +29946,26 @@
 		"AbilityCooldown"				"14 13 12 11 10 9 8"
 		"AbilityManaCost"				"80 100 120 140 200 300 800"
 
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{	
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"420"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"max_distance"				"1950"
-				"LinkedSpecialBonus"		"special_bonus_unique_puck_mjz_orb"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"orb_speed"					"800"
-				"LinkedSpecialBonus"		"special_bonus_unique_puck_mjz_orb"
-				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_PERCENTAGE_ADD"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"orb_vision"				"450"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"vision_duration"			"3.34 3.34 3.34 3.34"
-			}
-
-			"11"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"170 940 1910 2800 7200 14400 36500"
-			}
-			"12"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"intelligence_damage"		"280 400 620 940 1800 3450 5750"
-			}
-			// Extra variables
-			"21"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"num_extra_visions"			"4"
-			}
+		    "radius" "420"
+		    "max_distance"
+		    {
+		        "value" "1950"
+		        "LinkedSpecialBonus" "special_bonus_unique_puck_mjz_orb"
+		        "LinkedSpecialBonusOperation" "SPECIAL_BONUS_PERCENTAGE_ADD"
+		    }
+		    "orb_speed"
+		    {
+		        "value" "800"
+		        "LinkedSpecialBonus" "special_bonus_unique_puck_mjz_orb"
+		        "LinkedSpecialBonusOperation" "SPECIAL_BONUS_PERCENTAGE_ADD"
+		    }
+		    "orb_vision" "450"
+		    "vision_duration" "3.34 3.34 3.34 3.34"
+		    "damage" "170 940 1910 2800 7200 14400 36500"
+		    "intelligence_damage" "280 400 620 940 1800 3450 5750"
+		    "num_extra_visions" "4"
 		}
 
 		"precache"
@@ -30071,13 +29982,9 @@
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
+		"AbilityValues"
 		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"value"						"80"
-			}
+		    "value" "80"
 		}
 	}
 
@@ -41232,58 +41139,18 @@
 	"ScriptFile"						"abilities/custom/warriors_seal_3.lua"
 	"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"				"warriors_seal"
-	"AbilitySpecial"
+	"AbilityValues"
 	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage_reduction"				"1"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"interval"					"5.0"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"max_stacks"			"13"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"magic_resist"			"25 50"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"bonus_health_regen"				 "34 184"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"bonus_health"					"400 3200"
-		}
-		"07"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"bonus_damage_pct"					"10"
-		}
-		"08"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"min_health"				"99"
-		}
-		"09"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"3"
-		}
-		"10"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"cooldown"					"25"
-		}		
+		"damage_reduction" "1"
+		"interval" "5.0"
+		"max_stacks" "13"
+		"magic_resist" "25 50"
+		"bonus_health_regen" "34 184"
+		"bonus_health" "400 3200"
+		"bonus_damage_pct" "10"
+		"min_health" "99"
+		"duration" "3"
+		"cooldown" "25"
 	}
 }	
 	"bristleback_bristleback_2"

@@ -6909,11 +6909,11 @@
 	"Level"								 "40"
 	"HasInventory"						  "1"
 	"AbilityLayout"						 "5"
-	"Ability1"					"ancient_increase_stats"
+	"Ability1"				  "ancient_increase_stats"
 	"Ability2"				  "custom_abaddon_borrowed_time"
 	"Ability3"				  "warriors_seal_3"
 	//"Ability4"				  "custom_abaddon_borrowed_time_2"
-	"UnitLabel" "ancient"
+	"UnitLabel" 			 "ancient"
 	"ArmorPhysical"				"1"
 	"MagicalResistance"			"70"
 
