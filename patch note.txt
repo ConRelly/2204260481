@@ -3218,8 +3218,8 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Fixed Anciend being dead and alive at the same time (0 HP)
 
 
-
-
+* Courier now can use items from backpack and place normal items in neutral slot (except neutral items)
+* Totem can use normal items in neutral slot 
 
 
 

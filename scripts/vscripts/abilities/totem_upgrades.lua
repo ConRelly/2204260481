@@ -180,6 +180,7 @@ function item_totem_upgrade:Spawn()
             totem:SetOwner(hero)
             totem:SetControllableByPlayer(0, true)
             totem:AddNewModifier(totem, nil, "modifier_invulnerable", {})
+            totem:AddNewModifier(totem, nil, "modifier_meepo_pack_rat", {})
             
         end    
     end    

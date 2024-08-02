@@ -132,24 +132,26 @@ function modifier_item_radiance_armor_aura:OnIntervalThink()
 		if not caster:IsHero() then return end
 		local parent = self:GetParent()
 		local ability = self:GetAbility()
-		local aura_dmg = self.base_damage
-		local aura_dmg_pct = ability:GetSpecialValueFor("aura_dmg_pct")/100
-		local damage = math.ceil(aura_dmg + aura_dmg_pct*caster:GetMaxHealth())
-		--print(damage)
-		if not caster:IsRealHero() then
-			damage = damage * 2
-		end
-		if caster:IsRealHero() then
-			if _G._challenge_bosss > 0 then
-				local heal_mult = _G._challenge_bosss / 50
-				local heal_amount = damage * heal_mult
-				caster:Heal(heal_amount, caster)
-				local particle = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-				ParticleManager:DestroyParticle(particle, false)
-				ParticleManager:ReleaseParticleIndex( particle )
+		if ability then
+			local aura_dmg = self.base_damage
+			local aura_dmg_pct = ability:GetSpecialValueFor("aura_dmg_pct")/100
+			local damage = math.ceil(aura_dmg + aura_dmg_pct*caster:GetMaxHealth())
+			--print(damage)
+			if not caster:IsRealHero() then
+				damage = damage * 2
 			end
-		end	
-		ApplyDamage({victim = parent, attacker = caster, ability = ability, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
+			if caster:IsRealHero() then
+				if _G._challenge_bosss > 0 then
+					local heal_mult = _G._challenge_bosss / 50
+					local heal_amount = damage * heal_mult
+					caster:Heal(heal_amount, caster)
+					local particle = ParticleManager:CreateParticle("particles/items3_fx/octarine_core_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+					ParticleManager:DestroyParticle(particle, false)
+					ParticleManager:ReleaseParticleIndex( particle )
+				end
+			end	
+			ApplyDamage({victim = parent, attacker = caster, ability = ability, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL})
+		end
 	end
 end
 

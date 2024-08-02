@@ -3000,7 +3000,7 @@
 
 
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp"					"Item AutoCast"
-	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_Description"		"Autocast Inventory slots 1-4 + Neutral and searches all map for enemies to attack (even if the courier is invisible aka shadow blade)"
+	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_Description"		"Autocast Inventory slots 1-4, 7 + Neutral and searches all map for enemies to attack (even if the courier is invisible aka shadow blade)"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_tick_interval"	  "Interval Check:"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_Note0"			  "Some items might not work"
 	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocastp_Lore"              "Are you pressing any buttons ? or even paying attention to your courier"

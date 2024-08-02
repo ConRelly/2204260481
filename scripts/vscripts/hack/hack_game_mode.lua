@@ -413,8 +413,10 @@ function HackGameMode:_CreateFakeCourier(hero)
 	self._nPlayerHelp = courier_replacement
 
     courier_replacement:AddNewModifier(courier_replacement, nil, "modifier_mjz_fake_courier", {})
-
-
+    courier_replacement:AddNewModifier(courier_replacement, nil, "modifier_meepo_pack_rat", {})
+    courier_replacement:AddNewModifier(courier_replacement, nil, "modifier_techies_spoons_stash", {})
+    
+    
 	local playerID = hero:GetPlayerID()
 	local player = hero:GetPlayerOwner()
 	-- local courier = PlayerResource:GetNthCourierForTeam(playerID, DOTA_TEAM_GOODGUYS) 

@@ -57,6 +57,8 @@ function AOHGameMode:OnPlayerChat(keys)
 		--self._nPlayerHelp = courier_replacement
 	
 		courier_replacement:AddNewModifier(courier_replacement, nil, "modifier_mjz_fake_courier", {})
+		courier_replacement:AddNewModifier(courier_replacement, nil, "modifier_meepo_pack_rat", {})
+		courier_replacement:AddNewModifier(courier_replacement, nil, "modifier_techies_spoons_stash", {})		
 		local playerID = hero:GetPlayerID()
 		local player = hero:GetPlayerOwner()
 		-- local courier = PlayerResource:GetNthCourierForTeam(playerID, DOTA_TEAM_GOODGUYS) 
@@ -307,7 +309,9 @@ function AOHGameMode:OnPlayerChat(keys)
 	end
 
 	if keys.text == "-dev_modifiers" and keys.playerid == 0 and Cheats:IsEnabled() then
-		print_hero_all_modifiers(keys.playerid)
+		for i = 0, 4 do
+			print_hero_all_modifiers(i)
+		end
 	end
 
 

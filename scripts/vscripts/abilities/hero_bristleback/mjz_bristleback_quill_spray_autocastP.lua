@@ -99,7 +99,25 @@ function modifier_class:OnIntervalThink()
             if parent:IsInvisible() then return end
             self.pirate_cast = false
             self:use_ability(item, caster, parent)
-        end                 
+        end 
+        local item = parent:GetItemInSlot(6)
+        if item and IsValidEntity(item) and item:IsFullyCastable() and item:IsActivated() and item:IsCooldownReady() then
+            -- more checks 
+            local ability = item:GetAbilityName()
+            if ability == nil then return end
+            if ability == "" then return end
+            if NoAutocastItem[ability] == true then return end                
+            if not IsValidEntity(parent) then return nil end
+           --if not item:IsCooldownReady() then return nil end
+            if parent:IsIllusion() then return nil end
+            if parent:IsChanneling() and not ability_behavior_includes(item, DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL) then
+                return nil
+            end                   
+            if item:GetCooldown(item:GetLevel()) <= 0 then return end
+            if parent:IsInvisible() then return end
+            self.pirate_cast = false
+            self:use_ability(item, caster, parent)
+        end                        
     end          
 end
 
