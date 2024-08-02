@@ -8453,6 +8453,25 @@
 
 		"AbilityValues"
         {
+            "bonus_damage" "16650"
+            "bonus_attack_speed" "220"
+            "debuff_move_speed_pct" "-30"
+            "debuff_attack_speed" "-150"
+            "debuff_duration" "7"
+            "health_damage_pct" "0.07"
+            "bonus_agility" "885"
+            "bonus_intellect" "585"
+            "bonus_strength" "825"
+            "bonus_health" "9750"
+            "bonus_mana" "9500"
+            "attack_lifesteal" "4"
+            "frostbite_duration_hero" "3"
+            "frostbite_duration_creep" "4"
+            "frostbite_damage_per_second" "15000.0"
+            "frostbite_fixed_distance" "1500"
+            "frostbite_move_speed" "1200"
+            "frostbite_radius" "300"
+            "frostbite_vision_radius" "800"
             "bonus_base_agi" "1"
             "speed_mult_dmg" "20"
             "healt_reg_mult_dmg" "35"
@@ -12051,11 +12070,11 @@
 	"ItemCost"					  	"2500"
 	"ItemSellable"					"1"
 	"AbilityValues"
-        {
-            "bonus_gpm" "999"
-            "bonus_damage" "-2000"
-            "gold_on_expire" "50000"
-        }
+    {
+        "bonus_gpm" "999"
+        "bonus_damage" "-2000"
+        "gold_on_expire" "50000"
+    }
 }
 "item_recipe_philo_stone_temp"
 {

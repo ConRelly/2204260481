@@ -18890,6 +18890,11 @@
                 "value" "120 630 1470 2100 3250 5400 8560"
                 "LinkedSpecialBonus" "special_bonus_unique_leshrac_6"
             }
+            "damage_intelligence_per"
+            {
+                "value" "300 350 400 450 600 750 900"
+                "LinkedSpecialBonus" "special_bonus_unique_mjz_leshrac_lightning_storm_int_damage"
+            }
             "jump_count" "10"
             "radius" "675"
             "jump_delay" "0.25"
@@ -19008,6 +19013,11 @@
                 "value" "620 1475 4900 9200 19550"
                 "LinkedSpecialBonus" "special_bonus_unique_leshrac_3"
                 "RequiresScepter" "1"
+            }
+            "damage_intelligence_per"
+            {
+                "value" "300 385 580 680 750"
+                "LinkedSpecialBonus" "special_bonus_unique_leshrac_3"
             }
             "nova_tick" "0.5"
         }
@@ -22175,6 +22185,7 @@
                 "value" "2"
                 "LinkedSpecialBonus" "special_bonus_unique_silencer_2"
             }
+            "heap_type" "3"
             "crit_multiplier_super_scepter" "500"
             "second_stack" "90"
         }
@@ -22953,6 +22964,7 @@
             "radius" "500"
             "blind_pct" "10 15 20 25 30 35 40"
             "blind_duration" "5.0"
+            "alone_enemy" "0"
         }
 
 		"Modifiers"
@@ -27321,6 +27333,11 @@
                 "RequiresScepter" "1"
             }
             "normal_cast_point" "0.1"
+            "stats_mult"
+            {
+                "value" "15 24 32 47"
+                "DamageTypeTooltip" "DAMAGE_TYPE_MAGICAL"
+            }
             "invul_duration" "2.0"
             "health_increase" "20.0 30.0 40.0 50.0"
             "attack_range" "2000"

@@ -4451,8 +4451,8 @@
             "damage_radius"
             {
                 "value" "420"
-                "DamageTypeTooltip" "DAMAGE_TYPE_NONE"
                 "CalculateSpellDamageTooltip" "0"
+                "DamageTypeTooltip" "DAMAGE_TYPE_NONE"
             }
             "max_targets" "3"
             "tooltip_max_targets_inc_dazzle" "4"
@@ -9558,6 +9558,12 @@
             }
             "radius" "420"
             "speed" "1000 1200 1300 1400"
+            "hit_damage"
+            {
+                "value" "126 740 3442 14540"
+                "LinkedSpecialBonus" "special_bonus_unique_shadow_demon_4"
+                "LinkedSpecialBonusOperation" "SPECIAL_BONUS_PERCENTAGE_ADD"
+            }
         }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
