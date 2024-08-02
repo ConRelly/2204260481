@@ -3212,6 +3212,12 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Fixed over 2000 skills and items to the new Dota format (all should be fine, but if you find anything missing numbers report on Discord)
+* Philosopher's Stone now has many more charges and gives more gold when it expires.
+* Fixed custom items with charges not working
+* Fixed Anciend being dead and alive at the same time (0 HP)
+
+
 
 
 

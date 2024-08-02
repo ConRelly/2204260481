@@ -166,6 +166,45 @@ function CDOTABaseAbility:GetTalentSpecialValueFor(value)
 	return base
 end
 
+function CDOTABaseAbility:GetTalentSpecialValueFor(value)
+    local base = self:GetSpecialValueFor(value)
+    local talentName
+    local bonusOperation
+    local kv = self:GetAbilityKeyValues()
+    
+    if kv.AbilityValues then
+        local valueData = kv.AbilityValues[value]
+        if type(valueData) == "table" then
+            talentName = valueData.LinkedSpecialBonus
+            bonusOperation = valueData.LinkedSpecialBonusOperation
+        end
+    end
+    
+    if talentName then 
+        local talent = self:GetCaster():FindAbilityByName(talentName)
+        if talent and talent:GetLevel() > 0 then
+            local bonusValue = talent:GetSpecialValueFor("value")
+            
+            if bonusOperation then
+                if bonusOperation == "SPECIAL_BONUS_ADD" or bonusOperation == "SPECIAL_BONUS_SUBTRACT" then
+                    base = base + bonusValue -- For subtraction, bonusValue should already be negative
+                elseif bonusOperation == "SPECIAL_BONUS_MULTIPLY" then
+                    base = base * bonusValue
+                elseif bonusOperation == "SPECIAL_BONUS_PERCENTAGE_ADD" then
+                    base = base * (1 + bonusValue / 100)
+                elseif bonusOperation == "SPECIAL_BONUS_PERCENTAGE_SUBTRACT" then
+                    base = base * (1 - bonusValue / 100)
+                end
+            else
+                -- Default behavior if no operation is specified
+                base = base + bonusValue
+            end
+        end
+    end
+    
+    return base
+end
+
 function FindWearables(unit, wearable_model_name)
 	local model = unit:FirstMoveChild()
 	while model ~= nil do

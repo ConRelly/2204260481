@@ -190,34 +190,6 @@ function HasTalent(unit, talentName)
     return false
 end
 
---[[ function GetTalentSpecialValueFor(ability, value)
-    local base = ability:GetSpecialValueFor(value)
-    local talentName
-    local talentOperation
-    local kv = ability:GetAbilityKeyValues()
-    for k,v in pairs(kv) do -- trawl through keyvalues
-        if k == "AbilitySpecial" then
-            for l,m in pairs(v) do
-                if m[value] then
-                    talentName = m["LinkedSpecialBonus"]
-                    talentOperation = m["LinkedSpecialBonusOperation"]
-                end
-            end
-        end
-    end
-    if talentName then 
-        local talent = ability:GetCaster():FindAbilityByName(talentName)
-        if talent and talent:GetLevel() > 0 then 
-            local talentValue = talent:GetSpecialValueFor("value")
-            if talentOperation == "SPECIAL_BONUS_PERCENTAGE_ADD" then
-                base = base + base * talentValue * 0.01
-            else
-                base = base + talentValue
-            end
-        end
-    end
-    return base
-end ]]
 
 function GetTalentSpecialValueFor(ability, value)
     local base = ability:GetSpecialValueFor(value)

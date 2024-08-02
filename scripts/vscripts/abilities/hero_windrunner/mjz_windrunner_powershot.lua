@@ -312,19 +312,38 @@ end
 function GetTalentSpecialValueFor(ability, value)
     local base = ability:GetSpecialValueFor(value)
     local talentName
+    local bonusOperation
     local kv = ability:GetAbilityKeyValues()
-    for k,v in pairs(kv) do -- trawl through keyvalues
-        if k == "AbilitySpecial" then
-            for l,m in pairs(v) do
-                if m[value] then
-                    talentName = m["LinkedSpecialBonus"]
+    
+    if kv.AbilityValues then
+        local valueData = kv.AbilityValues[value]
+        if type(valueData) == "table" then
+            talentName = valueData.LinkedSpecialBonus
+            bonusOperation = valueData.LinkedSpecialBonusOperation
+        end
+    end
+    
+    if talentName then 
+        local talent = ability:GetCaster():FindAbilityByName(talentName)
+        if talent and talent:GetLevel() > 0 then
+            local bonusValue = talent:GetSpecialValueFor("value")
+            
+            if bonusOperation then
+                if bonusOperation == "SPECIAL_BONUS_ADD" or bonusOperation == "SPECIAL_BONUS_SUBTRACT" then
+                    base = base + bonusValue -- For subtraction, bonusValue should already be negative
+                elseif bonusOperation == "SPECIAL_BONUS_MULTIPLY" then
+                    base = base * bonusValue
+                elseif bonusOperation == "SPECIAL_BONUS_PERCENTAGE_ADD" then
+                    base = base * (1 + bonusValue / 100)
+                elseif bonusOperation == "SPECIAL_BONUS_PERCENTAGE_SUBTRACT" then
+                    base = base * (1 - bonusValue / 100)
                 end
+            else
+                -- Default behavior if no operation is specified
+                base = base + bonusValue
             end
         end
     end
-    if talentName then 
-        local talent = ability:GetCaster():FindAbilityByName(talentName)
-        if talent and talent:GetLevel() > 0 then base = base + talent:GetSpecialValueFor("value") end
-    end
+    
     return base
 end

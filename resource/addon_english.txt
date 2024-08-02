@@ -4955,7 +4955,7 @@ DISPEL TYPE: Strong Dispel\n<h1><font color='#DE3163'>Super Scepter</font></h1>Y
 "DOTA_Tooltip_ability_item_pocket_tower_tower_attack_time"		"TOWER ATTACK SPEED:"
 "DOTA_Tooltip_ability_item_pocket_tower_tower_health"		"TOWER HEALTH:"
 "DOTA_Tooltip_ability_item_pocket_tower_tower_range"		"TOWER RANGE:"
-"DOTA_Tooltip_ability_item_philosophers_stone_Description"			"Increases gold income and mana, while reducing outgoing attack damage.<font color='#e03e2e'>Can be used on courier</font>\n Using command <font color='#e03e2e'>'-sellstone'</font> Can be sold at full price (10k) before game reaches ~3 min or at half price anytime after. Needs to be in your neutral slot for sell to work. "	
+"DOTA_Tooltip_ability_item_philosophers_stone_Description"			"Increases gold income and mana, while reducing outgoing attack damage.<font color='#e03e2e'>Can be used on courier</font>\n Using command <font color='#e03e2e'>'-sellstone'</font> Can be sold at full price (10k) before game reaches ~3 min or at half price anytime after.<br>When all charges are depleted, the item is destroyed, and the owner receives %gold_on_expire% gold.<br> Needs to be in your neutral slot for sell to work. "	
 
 
 //Level 4 Chest
@@ -10525,7 +10525,7 @@ Contains all random skills<br> if your primary attribute is Int or Universal the
 
 		"DOTA_Tooltip_Ability_item_philosophers_stone2"	"Bonus Philosopher's Stone"
 		"DOTA_Tooltip_ability_item_philosophers_stone2_Lore"	   "A weightless charm created by an enchanter with a powerful scorn for brute force."	
-		"DOTA_Tooltip_ability_item_philosophers_stone2_Description"	   "Increases gold income and mana, while reducing outgoing attack damage. Stacks with the other stone"	
+		"DOTA_Tooltip_ability_item_philosophers_stone2_Description"	   "Increases gold income and mana, while reducing outgoing attack damage. Stacks with the other stone.<br>When all charges are depleted, the item is destroyed, and the owner receives %gold_on_expire% gold."	
 		"DOTA_Tooltip_ability_item_philosophers_stone2_bonus_gpm"				"+GPM BONUS"
 		"DOTA_Tooltip_ability_item_philosophers_stone2_bonus_mana"	   "+$mana"	 
 		"DOTA_Tooltip_ability_item_philosophers_stone2_bonus_damage"	   "-<font color='#e03e2e'>Attack Damage</font>"
