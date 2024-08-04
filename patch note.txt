@@ -3224,6 +3224,8 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 * Reduced ursa enrage Facet for ultimate to 1% from 5% and fixed fury swipe talent to reflect the real value.
 
+* Fix void Atlass no CD or charges
+
 
 
 

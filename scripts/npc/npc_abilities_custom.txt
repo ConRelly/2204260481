@@ -24297,12 +24297,12 @@
             "radius" "370"
             "AbilityCharges"
             {
-                "value" ""
+                "value" "3 5 7 9 12 15 20"
                 "LinkedSpecialBonus" "special_bonus_unique_void_spirit_9"
             }
             "AbilityChargeRestoreTime"
             {
-                "value" ""
+                "value" "19 17 15 12 10 9 8"
                 "LinkedSpecialBonus" "special_bonus_unique_void_spirit_1"
             }
             "min_travel_distance" "200"
@@ -28048,12 +28048,12 @@
             "radius" "200 210 220 230 390"
             "AbilityCharges"
             {
-                "value" ""
+                "value" "2"
                 "LinkedSpecialBonus" "special_bonus_unique_void_spirit_9"
             }
             "AbilityChargeRestoreTime"
             {
-                "value" ""
+                "value" "16 15 14 13 6"
                 "LinkedSpecialBonus" "special_bonus_unique_void_spirit_1"
             }
             "min_travel_distance" "200"
