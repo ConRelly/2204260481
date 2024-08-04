@@ -219,6 +219,9 @@ function AOHGameMode:InitGameMode()
 
 	Convars:SetInt("dota_pause_force_unpause_time ", 9999)
 	Convars:SetInt("dota_pause_same_team_resume_time_disconnected", 9999)
+
+	--Convars:SetInt("dota_ability_draft_force_gamemode_flag", 1)	--spawns heroes with no skills and swaps their talent for gold
+
 	MonsterStyle:InitGameMode()
 	self:_ReadGameConfiguration()
 
