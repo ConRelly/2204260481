@@ -756,6 +756,7 @@
 
 		"AttributeStrengthGain"			"14.9"
 		"AttributeIntelligenceGain"		"7.4"
+		//"Facets"		""
 	}
 
 	//=================================================================================================================
@@ -870,6 +871,7 @@
 
 		// "Ability1"				"mjz_medusa_split_shot"
 		"Ability2"				"mjz_medusa_mana_snake"
+		"Ability3"              "medusa_mana_shield"
 		"Ability5"				"medusa_custom_stone_arrows"
 		"Ability10"		        "special_bonus_unique_medusa_6"
 		"Ability13"				"special_bonus_lifesteal_30"

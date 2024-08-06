@@ -17,7 +17,7 @@ function HackGameMode:OnPlayerChat(keys)
 		local plyhero = PlayerResource:GetPlayer(plyID):GetAssignedHero()
 		local skip = 0.2
 		local number_unit = 1
-		local unit = "npc_boss_randomstuff_aiolos"		
+		local unit = "npc_boss_skeleton_king_angry_new"		
 		for n = 1, number_unit do	
             Timers:CreateTimer({
 				endTime = skip, 

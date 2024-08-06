@@ -3227,6 +3227,12 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Fix void Atlass no CD or charges
 
 
+* Added back mana shield to Medusa.
+* Fixed Void Spirit gaining too much magic rezist from his innate. He now starts with 20% more base mr and increased the innate bonus to 200%.
+* Reduced Rubick's innate, he can still reach 100%+ mr but harder.
+* Fixed Earthshaker's facet to prevent reincarnation/spawn of units that skip the entire round (round 44).
+
+
 
 
 ////////Self Note ////////////

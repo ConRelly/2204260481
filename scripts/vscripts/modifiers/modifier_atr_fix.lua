@@ -65,6 +65,9 @@ function modifier_atr_fix:OnIntervalThink()
             -- Calculate the base magical resistance value to counteract the int bonus
             local int = self.parent:GetIntellect(false)
             local baseValue = (-0.1 * int) + 30
+            if self.parent:GetUnitName() == "npc_dota_hero_void_spirit" then
+                baseValue = (-0.3 * int) + 50
+            end    
             -- Set the hero's base magical resistance value
             self.parent:SetBaseMagicalResistanceValue(baseValue)
         end

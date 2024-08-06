@@ -5059,51 +5059,99 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"totem_damage_percentage"	
-			{
-				"value"		"200 300 400 500 600 800 1200"
-				"CalculateSpellDamageTooltip"	"0"
-				"special_bonus_unique_earthshaker_totem_damage"	"+500"
-			}
-			"distance_scepter"			
-			{
-				"value"		"1950"
-				"RequiresScepter"		"1"
-			}
-			"aftershock_range"			
-			{
-				"value"		"700"
-				"LinkedSpecialBonus"		"special_bonus_unique_earthshaker_5"
-			}
-			"scepter_height"			"950"
-			"scepter_height_arcbuffer"	"100"
-			"scepter_acceleration_z"	"4000"
-			"scepter_acceleration_horizontal"	"3000"
-			"scepter_leap_duration"		"0.4"
-			"scepter_cleave_pct"
-			{
-				"value"					"150"
-				"RequiresScepter"		"1"
-			}
-			"scepter_cleave_starting_width"
-			{
-				"value"					"250"
-				"RequiresScepter"		"1"
-			}
-			"scepter_cleave_ending_width"
-			{
-				"value"					"460"
-				"RequiresScepter"		"1"
-			}
-			"scepter_cleave_distance"
-			{
-				"value"					"850"
-				"RequiresScepter"		"1"
-			}
-			"bonus_attack_range"		"275"
-		}
+        "AbilityValues"
+        {
+            "totem_damage_percentage"   
+            {
+                "value"     "200 300 400 500 600 800 1200"
+                "CalculateSpellDamageTooltip"   "0"
+                "special_bonus_unique_earthshaker_totem_damage" "+500"
+            }
+            "distance_scepter"          
+            {
+                "value"     "1950"
+                "RequiresScepter"       "1"
+            }
+            "AbilityCooldown"
+            {
+                "value"         "5.0"
+                "special_bonus_unique_earthshaker"          "-1.5"
+
+            }
+            "scepter_height"            "950"
+            "scepter_height_arcbuffer"  "100"
+            "scepter_acceleration_z"    "4000"
+            "scepter_acceleration_horizontal"   "3000"
+            "scepter_leap_duration"     "0.4"
+            "scepter_cleave_pct"
+            {
+                "value"                 "150"
+                "RequiresScepter"       "1"
+            }
+            "scepter_cleave_starting_width"
+            {
+                "value"                 "250"
+                "RequiresScepter"       "1"
+                "affected_by_aoe_increase"  "1"
+            }
+            "scepter_cleave_ending_width"
+            {
+                "value"                 "460"
+                "RequiresScepter"       "1"
+                "affected_by_aoe_increase"  "1"
+            }
+            "scepter_cleave_distance"
+            {
+                "value"                 "850"
+                "RequiresScepter"       "1"
+                "affected_by_aoe_increase"  "1"
+            }
+            "bonus_attack_range"        "270"
+            
+            "projectile_body_on_kill"
+            {
+                "special_bonus_facet_earthshaker_slugger"       "=0"
+            }
+            "projectile_body_initial_impact_radius"
+            {
+                "special_bonus_facet_earthshaker_slugger"       "=225"
+            }
+            "projectile_body_speed"
+            {
+                "special_bonus_facet_earthshaker_slugger"       "=1600"
+            }
+            "projectile_body_distance"
+            {
+                "special_bonus_facet_earthshaker_slugger"       "=1200"
+            }
+            "projectile_body_width_creep"
+            {
+                "special_bonus_facet_earthshaker_slugger"       "=175"
+                "affected_by_aoe_increase"  "1"
+            }
+            "projectile_body_width_hero"
+            {
+                "special_bonus_facet_earthshaker_slugger"       "=175"
+                "affected_by_aoe_increase"  "1"
+            }
+            "projectile_body_vision"
+            {
+                "special_bonus_facet_earthshaker_slugger"       "=175"
+                "affected_by_aoe_increase"  "1"
+            }
+            "projectile_body_damage_creep"
+            {
+                "special_bonus_facet_earthshaker_slugger"       "=50 =80 =110 =140"
+            }
+            "projectile_body_damage_hero"
+            {
+                "special_bonus_facet_earthshaker_slugger"       "=150 =250 =350 =450"
+            }
+            "projectile_body_damage_additional_percent_health"
+            {
+                "special_bonus_facet_earthshaker_slugger"       "=0"
+            }
+        }        
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 
@@ -7107,16 +7155,15 @@
 		{
 			"damage_per_mana"		
 			{
-				"value"								"20 25 30 40 60"
+				"value"								"20 25 30 40 50"
 				"special_bonus_unique_medusa_6"		"+40"
 			}
+            "damage_per_mana_per_level"             "0.5"
 			"absorption_pct"						"40 45 50 55 60"
 			"bonus_mana"							"520 1800 2400 5000 7500"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
-
-
 
 
 
