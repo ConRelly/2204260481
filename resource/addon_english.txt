@@ -81,7 +81,7 @@
 	"DOTA_Tooltip_ability_totem_aura_Description"          "Grants nearby allied heroes and units bonus magical resistance, armor, status resistance, and spell amplification. Bonuses increase with totem level."
 	"DOTA_Tooltip_ability_totem_aura_Lore"                 "An ancient power flows from the totem, strengthening all who stand near."
 	"DOTA_Tooltip_ability_totem_aura_Note0"                "Aura radius: 7200"
-	"DOTA_Tooltip_ability_totem_aura_Note1"                "At maximum level (50), all bonuses are doubled."
+	"DOTA_Tooltip_ability_totem_aura_Note1"                "At maximum level (50), all bonuses are doubled.<br>Damage reffers to bonus attack dmg from base"
 
 	"DOTA_Tooltip_ability_totem_upgrade_tracker"           "Totem Power Level"
 	"DOTA_Tooltip_ability_totem_upgrade_tracker_Description" "Displays the current power level of the totem."

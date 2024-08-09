@@ -3233,6 +3233,9 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Fixed Earthshaker's facet to prevent reincarnation/spawn of units that skip the entire round (round 44).
 
 
+* Changed some code for Upgrade Totem to fix(or try) a rare situation where it would casuse a crash at max lvl.
+
+
 
 
 ////////Self Note ////////////
