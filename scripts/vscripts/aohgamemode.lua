@@ -1766,7 +1766,7 @@ end
 ---------------------------
 -- InvulnerabilityButton --
 ---------------------------
-LinkLuaModifier("lm_take_no_damage", LUA_MODIFIER_MOTION_NONE)
+
 function AOHGameMode:OnInvulnerabilityButtonPressed(eventSourceIndex, data)
 	local PlayerHero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
 	local AllPlayerUnits = {}

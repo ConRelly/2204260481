@@ -56,16 +56,18 @@ function modifier_atr_fix:OnCreated()
 		    settings()
         end    
 	end  
-    self:StartIntervalThink(0.5) 
+    self:StartIntervalThink(0.3)
 end
 function modifier_atr_fix:OnIntervalThink()
     if IsServer() then
         if self.parent then
             -- Get the hero entity
             -- Calculate the base magical resistance value to counteract the int bonus
+            local hero_name = self.parent:GetUnitName()
+
             local int = self.parent:GetIntellect(false)
             local baseValue = (-0.1 * int) + 30
-            if self.parent:GetUnitName() == "npc_dota_hero_void_spirit" then
+            if hero_name == "npc_dota_hero_void_spirit" then
                 baseValue = (-0.3 * int) + 50
             end    
             -- Set the hero's base magical resistance value

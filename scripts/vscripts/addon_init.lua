@@ -19,7 +19,7 @@ LinkLuaModifier("modifier_cosmos_3_lifes", "modifiers/modifier_cosmos_3_lifes", 
 LinkLuaModifier("modifier_generic_handler", "modifiers/modifier_generic_handler", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_charges", "modifiers/modifier_charges", LUA_MODIFIER_MOTION_NONE)
 
-LinkLuaModifier("lm_take_no_damage", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("lm_take_no_damage", "lm_take_no_damage.lua", LUA_MODIFIER_MOTION_NONE)
 --
 
 --aoh_player_chat
