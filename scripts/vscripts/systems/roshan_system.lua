@@ -234,7 +234,7 @@ function CRoshanSystem:CreateRoshan()
     hRoshan:SetAngles(self._SpawnAngles.x, self._SpawnAngles.y, self._SpawnAngles.z)
     -- Items
     if ( self._iNum >= 0 ) then
-        if ( self._iNum <= 13 ) then 
+        if ( self._iNum <= 4 ) then 
             hRoshan:AddItemByName('item_chest_2') 
         end       
     end   

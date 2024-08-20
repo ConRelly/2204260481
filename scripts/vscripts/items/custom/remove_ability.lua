@@ -86,7 +86,12 @@ if IsServer() then
                     if hero:HasModifier("modifier_naga_riptide_counter") then
                         hero:RemoveModifierByName("modifier_naga_riptide_counter")
                     end                                       
-                end                
+                end 
+                if abilityName == "grimstroke_custom_soulstore" then
+                    if hero:HasModifier("modifier_grimstroke_custom_soulstore") then
+                        hero:RemoveModifierByName("modifier_grimstroke_custom_soulstore")
+                    end
+                end                               
                 if hero:HasAbility("temporary_slot_used") then
                     hero:RemoveAbility("temporary_slot_used")
                 end

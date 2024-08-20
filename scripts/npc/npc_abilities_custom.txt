@@ -8370,7 +8370,7 @@
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	"MaxLevel"					  "5"
 	"AbilityCastRange"			  "2000"
-	"AbilityCooldown"				"10"
+	"AbilityCooldown"				"30"
 	"AbilityManaCost"				"100 150 200 300 500"
 	"precache"
 	{
@@ -8385,7 +8385,7 @@
             "interval" "0.3"
             "stats_mul"
             {
-                "value" "2.0 2.2 2.4 2.6 3.0"
+                "value" "2.0 2.2 2.4 2.6 4.0"
                 "LinkedSpecialBonus" "special_bonus_unique_grimstroke_custom_soulstore"
                 "CalculateSpellDamageTooltip" "1"
             }

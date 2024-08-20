@@ -97,7 +97,9 @@ function item_master_of_weapons_sword:OnSpellStart()
 			neutral_item_created:SetCurrentCharges(neutral_item:GetCurrentCharges())
 		end
 	end
-	local ignore_modifiers = {
+
+	-- Copy Modifiers
+	local ignored_modifiers = {
 		["modifier_wind_rapier_agility_buff"] = true,
 		["modifier_item_pharaoh_crown"] = true,
 		["modifier_item_pharaoh_crown_initiate"] = true,
@@ -108,22 +110,22 @@ function item_master_of_weapons_sword:OnSpellStart()
 		["modifier_thunder_gods_might2"] = true,
 		["modifier_thunder_hammer"] = true,
 		["modifier_item_thunder_god_might_aura"] = true,
-		["modifier_item_thunder_god_might_aura2"] = true,
+		["modifier_item_thunder_god_might_aura2"] = true,		
+		["modifier_totem_aura_effect"] = true,
+		["modifier_totem_aura"] = true,
+		["modifier_custom_no_heal_effect"] = true,
+		["modifier_grimstroke_custom_soulstore"] = true,
 	}
-
-	-- Copy Modifiers
+	
 	local caster_modifiers = self:GetCaster():FindAllModifiers()
-	for _,modifier in pairs(caster_modifiers) do
-		if modifier and not ignore_modifiers[modifier:GetName()] then
---			local ModifierDuration = modifier:GetDuration()
---			if ModifierDuration > 0 then
-				local added_modifier = image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetDuration()})
-				if modifier:GetStackCount() > 0 then
-					if added_modifier then
-						added_modifier:SetStackCount(modifier:GetStackCount())
-					end	
+	for _, modifier in pairs(caster_modifiers) do
+		if modifier and not ignored_modifiers[modifier:GetName()] then
+			local added_modifier = image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetDuration()})
+			if modifier:GetStackCount() > 0 then
+				if added_modifier then
+					added_modifier:SetStackCount(modifier:GetStackCount())
 				end
---			end
+			end
 		end
 	end
 
@@ -204,6 +206,10 @@ function item_master_of_weapons_sword2:OnSpellStart()
 		["item_smoke_of_deceit"] = true,
 		["item_ward_observer"] = true,
 		["item_ward_sentry"] = true,
+		["item_all_essence"] = true,
+		["item_thunder_hammer"] = true,
+		["item_thunder_gods_might"] = true,
+		["item_thunder_gods_might2"] = true,
 	}
 
 	-- Copy Abilities
@@ -243,18 +249,33 @@ function item_master_of_weapons_sword2:OnSpellStart()
 	end
 
 	-- Copy Modifiers
+	local ignored_modifiers = {
+		["modifier_wind_rapier_agility_buff"] = true,
+		["modifier_item_pharaoh_crown"] = true,
+		["modifier_item_pharaoh_crown_initiate"] = true,
+		["modifier_custom_no_heal_effect"] = true,
+		["modifier_item_aghanims_shard"] = true,
+		["modifier_mows_remove_as_limit"] = true,
+		["modifier_thunder_gods_might"] = true,
+		["modifier_thunder_gods_might2"] = true,
+		["modifier_thunder_hammer"] = true,
+		["modifier_item_thunder_god_might_aura"] = true,
+		["modifier_item_thunder_god_might_aura2"] = true,		
+		["modifier_totem_aura_effect"] = true,
+		["modifier_totem_aura"] = true,
+		["modifier_custom_no_heal_effect"] = true,
+		["modifier_grimstroke_custom_soulstore"] = true,
+	}
+	
 	local caster_modifiers = self:GetCaster():FindAllModifiers()
-	for _,modifier in pairs(caster_modifiers) do
-		if modifier then
---			local ModifierDuration = modifier:GetDuration()
---			if ModifierDuration > 0 then
-				local added_modifier = image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetDuration()})
-				if modifier:GetStackCount() > 0 then
-					if added_modifier then
-						added_modifier:SetStackCount(modifier:GetStackCount())
-					end	
+	for _, modifier in pairs(caster_modifiers) do
+		if modifier and not ignored_modifiers[modifier:GetName()] then
+			local added_modifier = image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetDuration()})
+			if modifier:GetStackCount() > 0 then
+				if added_modifier then
+					added_modifier:SetStackCount(modifier:GetStackCount())
 				end
---			end
+			end
 		end
 	end
 
@@ -335,6 +356,10 @@ function item_master_of_weapons_sword3:OnSpellStart()
 		["item_smoke_of_deceit"] = true,
 		["item_ward_observer"] = true,
 		["item_ward_sentry"] = true,
+		["item_all_essence"] = true,
+		["item_thunder_hammer"] = true,
+		["item_thunder_gods_might"] = true,
+		["item_thunder_gods_might2"] = true,
 	}
 
 	-- Copy Abilities
@@ -373,18 +398,33 @@ function item_master_of_weapons_sword3:OnSpellStart()
 	end
 
 	-- Copy Modifiers
+	local ignored_modifiers = {
+		["modifier_wind_rapier_agility_buff"] = true,
+		["modifier_item_pharaoh_crown"] = true,
+		["modifier_item_pharaoh_crown_initiate"] = true,
+		["modifier_custom_no_heal_effect"] = true,
+		["modifier_item_aghanims_shard"] = true,
+		["modifier_mows_remove_as_limit"] = true,
+		["modifier_thunder_gods_might"] = true,
+		["modifier_thunder_gods_might2"] = true,
+		["modifier_thunder_hammer"] = true,
+		["modifier_item_thunder_god_might_aura"] = true,
+		["modifier_item_thunder_god_might_aura2"] = true,		
+		["modifier_totem_aura_effect"] = true,
+		["modifier_totem_aura"] = true,
+		["modifier_custom_no_heal_effect"] = true,
+		["modifier_grimstroke_custom_soulstore"] = true,
+	}
+	
 	local caster_modifiers = self:GetCaster():FindAllModifiers()
-	for _,modifier in pairs(caster_modifiers) do
-		if modifier then
---			local ModifierDuration = modifier:GetDuration()
---			if ModifierDuration > 0 then
-				local added_modifier = image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetDuration()})
-				if modifier:GetStackCount() > 0 then
-					if added_modifier then
-						added_modifier:SetStackCount(modifier:GetStackCount())
-					end	
+	for _, modifier in pairs(caster_modifiers) do
+		if modifier and not ignored_modifiers[modifier:GetName()] then
+			local added_modifier = image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetDuration()})
+			if modifier:GetStackCount() > 0 then
+				if added_modifier then
+					added_modifier:SetStackCount(modifier:GetStackCount())
 				end
---			end
+			end
 		end
 	end
 
@@ -465,6 +505,10 @@ function item_master_of_weapons_sword4:OnSpellStart()
 		["item_smoke_of_deceit"] = true,
 		["item_ward_observer"] = true,
 		["item_ward_sentry"] = true,
+		["item_all_essence"] = true,
+		["item_thunder_hammer"] = true,
+		["item_thunder_gods_might"] = true,
+		["item_thunder_gods_might2"] = true,
 	}
 
 	-- Copy Abilities
@@ -504,18 +548,33 @@ function item_master_of_weapons_sword4:OnSpellStart()
 	end
 
 	-- Copy Modifiers
+	local ignored_modifiers = {
+		["modifier_wind_rapier_agility_buff"] = true,
+		["modifier_item_pharaoh_crown"] = true,
+		["modifier_item_pharaoh_crown_initiate"] = true,
+		["modifier_custom_no_heal_effect"] = true,
+		["modifier_item_aghanims_shard"] = true,
+		["modifier_mows_remove_as_limit"] = true,
+		["modifier_thunder_gods_might"] = true,
+		["modifier_thunder_gods_might2"] = true,
+		["modifier_thunder_hammer"] = true,
+		["modifier_item_thunder_god_might_aura"] = true,
+		["modifier_item_thunder_god_might_aura2"] = true,		
+		["modifier_totem_aura_effect"] = true,
+		["modifier_totem_aura"] = true,
+		["modifier_custom_no_heal_effect"] = true,
+		["modifier_grimstroke_custom_soulstore"] = true,
+	}
+	
 	local caster_modifiers = self:GetCaster():FindAllModifiers()
-	for _,modifier in pairs(caster_modifiers) do
-		if modifier then
---			local ModifierDuration = modifier:GetDuration()
---			if ModifierDuration > 0 then
-				local added_modifier = image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetDuration()})
-				if modifier:GetStackCount() > 0 then
-					if added_modifier then
-						added_modifier:SetStackCount(modifier:GetStackCount())
-					end	
+	for _, modifier in pairs(caster_modifiers) do
+		if modifier and not ignored_modifiers[modifier:GetName()] then
+			local added_modifier = image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetDuration()})
+			if modifier:GetStackCount() > 0 then
+				if added_modifier then
+					added_modifier:SetStackCount(modifier:GetStackCount())
 				end
---			end
+			end
 		end
 	end
 
@@ -596,6 +655,10 @@ function item_master_of_weapons_sword5:OnSpellStart()
 		["item_smoke_of_deceit"] = true,
 		["item_ward_observer"] = true,
 		["item_ward_sentry"] = true,
+		["item_all_essence"] = true,
+		["item_thunder_hammer"] = true,
+		["item_thunder_gods_might"] = true,
+		["item_thunder_gods_might2"] = true,
 	}
 
 	-- Copy Abilities
@@ -635,20 +698,36 @@ function item_master_of_weapons_sword5:OnSpellStart()
 	end
 
 	-- Copy Modifiers
+	local ignored_modifiers = {
+		["modifier_wind_rapier_agility_buff"] = true,
+		["modifier_item_pharaoh_crown"] = true,
+		["modifier_item_pharaoh_crown_initiate"] = true,
+		["modifier_custom_no_heal_effect"] = true,
+		["modifier_item_aghanims_shard"] = true,
+		["modifier_mows_remove_as_limit"] = true,
+		["modifier_thunder_gods_might"] = true,
+		["modifier_thunder_gods_might2"] = true,
+		["modifier_thunder_hammer"] = true,
+		["modifier_item_thunder_god_might_aura"] = true,
+		["modifier_item_thunder_god_might_aura2"] = true,		
+		["modifier_totem_aura_effect"] = true,
+		["modifier_totem_aura"] = true,
+		["modifier_custom_no_heal_effect"] = true,
+		["modifier_grimstroke_custom_soulstore"] = true,
+	}
+	
 	local caster_modifiers = self:GetCaster():FindAllModifiers()
-	for _,modifier in pairs(caster_modifiers) do
-		if modifier then
---			local ModifierDuration = modifier:GetDuration()
---			if ModifierDuration > 0 then
-				local added_modifier = image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetDuration()})
-				if modifier:GetStackCount() > 0 then
-					if added_modifier then
-						added_modifier:SetStackCount(modifier:GetStackCount())
-					end	
+	for _, modifier in pairs(caster_modifiers) do
+		if modifier and not ignored_modifiers[modifier:GetName()] then
+			local added_modifier = image:AddNewModifier(modifier:GetCaster(), modifier:GetAbility(), modifier:GetName(), {duration = modifier:GetDuration()})
+			if modifier:GetStackCount() > 0 then
+				if added_modifier then
+					added_modifier:SetStackCount(modifier:GetStackCount())
 				end
---			end
+			end
 		end
 	end
+
 
 	image:SetAbilityPoints(0)
 
@@ -829,13 +908,13 @@ function modifier_mows_slasher:OnDestroy()
 			local damage = caster:GetAverageTrueAttackDamage(caster) * ability:GetSpecialValueFor("attack_asdmg_multiplier")
 			local radius = ability:GetSpecialValueFor("radius_expl")
 			local repeat_times = 1 + (2 * math.floor(self:GetParent():GetLevel() / 20))
-			if self:GetParent():GetPrimaryAttribute() == 0 then
-				if self:GetParent():GetStrength() >= 7500 then
-					DMGflags = DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
-				else
-					DMGflags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
-				end
+			--if self:GetParent():GetPrimaryAttribute() == 0 then
+			if self:GetParent():GetStrength() >= 10000 then
+				DMGflags = DOTA_DAMAGE_FLAG_IGNORES_PHYSICAL_ARMOR + DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
+			else
+				DMGflags = DOTA_DAMAGE_FLAG_NO_SPELL_AMPLIFICATION
 			end
+			--end
 			
 			local expl_bonus_dmg = 0
 			
@@ -985,13 +1064,13 @@ end
 function modifier_mows_slasher:DeclareFunctions()
 	if not IsServer() then return end
 	if self:GetParent():GetUnitName() == "npc_dota_hero_juggernaut" then
-		return {MODIFIER_PROPERTY_OVERRIDE_ANIMATION, MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE}
+		return {MODIFIER_PROPERTY_OVERRIDE_ANIMATION, MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE}
 	end
-	return {MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE}
+	return {MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE}
 end
 
 function modifier_mows_slasher:GetOverrideAnimation() return ACT_DOTA_OVERRIDE_ABILITY_4 end
-function modifier_mows_slasher:GetModifierPreAttack_BonusDamage() return self.MaxHealth end
+function modifier_mows_slasher:GetModifierBaseAttack_BonusDamage() return self.MaxHealth end
 
 function modifier_mows_slasher:CheckState()
 	return {

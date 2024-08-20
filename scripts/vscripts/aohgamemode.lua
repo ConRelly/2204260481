@@ -148,6 +148,7 @@ function AOHGameMode:InitGameMode()
 	_G.extra_ally = 0	
 	_G.totem_aura_check = true
 	_G.evolution_bow_first_option = true
+	_G._second_random_op = true
 	self._hardMode = false
 	self._endlessMode = false
 	self._endlessMode_started = false

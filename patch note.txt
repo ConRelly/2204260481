@@ -3235,6 +3235,9 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 * Changed some code for Upgrade Totem to fix(or try) a rare situation where it would casuse a crash at max lvl.
 * Buffs icons displayed max rows/lines from 2 to 3. Changed some other UI code (might(can't test) help with reduction of crash on loading that some ppl experience)  
+* Random Ability now has an alternative randomization method as Default, Host can type anytime "-alt_random" for the vanila method or again to return back to default(on/off).
+* Increase Master of Weapons bonus dmg per lvl from stacks for Tier 2 and up, bonus atributes, dmg dealt from explosions. changed some hidden element too.
+
 
 
 

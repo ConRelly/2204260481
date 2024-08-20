@@ -590,7 +590,16 @@ function AOHGameMode:OnPlayerChat(keys)
 			Notifications:TopToAll({text="Weapon Fragments reverted to normal drop", style={color="yellow"}, duration=7})			
 		end	
 	end
-	
+	if keys.text == "-alt_random" and keys.playerid == 0 then
+		if not _G._second_random_op then
+			_G._second_random_op = true
+			Notifications:TopToAll({text="Alternative Random for Learning random skills(Default)", style={color="green"}, duration=7})
+		else
+			_G._second_random_op = false
+			Notifications:TopToAll({text="Vanila Random for Learning random skills(old version)", style={color="yellow"}, duration=7})			
+		end	
+	end	
+
 	if keys.text == "-single" and not self._singleMode and keys.playerid == 0 then
 		local player_count = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS) 
 		local playerID = keys.playerid

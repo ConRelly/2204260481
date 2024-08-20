@@ -265,6 +265,32 @@ function GetRandomAbilityName( hero )
 		"purifying_flames",
 		"purifying_flames",
 	}
-	local randomIndex = RandomInt(1, #abilityList)
-	return abilityList[randomIndex]
+    local randomIndex
+    if _G._second_random_op then
+        -- Use the custom random function
+        randomIndex = CustomRandomInt(1, #abilityList)
+    else
+        -- Use the default RandomInt function
+        randomIndex = RandomInt(1, #abilityList)
+    end
+
+    return abilityList[randomIndex]
+end
+
+-- Custom RandomInt function using a different algorithm
+function CustomRandomInt(min, max)
+    -- Get the system time in milliseconds as a seed
+    local seed = math.ceil(Plat_FloatTime() % 100000) 
+	seed = seed * RandomInt(1, 300) -- Combine with a random integer
+    -- Parameters for a simple linear congruential generator (LCG)
+    local a = 1664525
+    local c = 1013904223
+    local m = 2^32
+    
+    -- Generate the pseudo-random number
+    seed = (a * seed + c) % m
+    
+    -- Map the result to the desired range
+	local random_result = min + (seed % (max - min + 1))
+    return random_result
 end
