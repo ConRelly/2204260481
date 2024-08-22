@@ -1532,6 +1532,7 @@
 		
 		"Ability17"					"special_bonus_unique_invoker_additional_chaos_meteors"
 		"Ability18"					"special_bonus_spell_amplify_75"
+		"Ability19"                 "special_bonus_cdr_25"
 		"Ability20"                 "special_bonus_unique_invoker_11"
 		"Ability21"					"special_bonus_spell_amplify_125"
 		"Ability22"					"special_bonus_unique_invoker_2"

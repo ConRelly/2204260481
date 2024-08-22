@@ -3249,6 +3249,8 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Slightly increased dodge chance for gods.
 
 
+* Fixed Invoker Amp affecting dmg reduction of enemys. added another talent for him and buffed a bit more some of his skills.
+* Fixed Shadow Demon Cleanse(shard skill) not working with multiautocast.
 
 
 

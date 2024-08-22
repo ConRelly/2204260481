@@ -14284,13 +14284,13 @@
             "end_vision_duration"       "3.0"
             "main_damage"
             {
-                "value"                 "1800 4950 8200 25450 99700 267950 577000 2742450"
+                "value"                 "4950 8200 25450 99700 267950 577000 2742450 8600000"
                 "levelkey"              "exortlevel"
             }
             "burn_duration"             "3.0"
             "burn_dps"
             {
-                "value"                 "1250 3420 7850 18290 44320 129360 389400 1205000"
+                "value"                 "1250 3420 7850 18290 44320 129360 389400 5205000"
                 "levelkey"              "exortlevel"
                 "CalculateSpellDamageTooltip"   "1"
                 "DamageTypeTooltip"     "DAMAGE_TYPE_MAGICAL"
@@ -14362,7 +14362,7 @@
             }
             "freeze_damage"
             {
-                "value" "460 920 2880 4940 12960 34920 84800 185400"
+                "value" "460 920 2880 4940 12960 34920 84800 285400"
                 "levelkey" "quaslevel"
             }
         }
@@ -14375,7 +14375,7 @@
         {
             "damage"
             {
-                "value" "1240 5960 14920 34800 95700 245000 958000 1820000"
+                "value" "5960 14920 34800 95700 245000 958000 1820000 4500000"
                 "levelkey" "exortlevel"
             }
             "disarm_duration"
@@ -14402,7 +14402,7 @@
                 "value" "50 150 525 1200 4500 12500 35400 65000"
                 "levelkey" "wexlevel"
             }
-            "damage_per_mana_pct" "3500"
+            "damage_per_mana_pct" "35000"
         }
     }
     "invoker_exort"
@@ -14413,32 +14413,32 @@
             "bonus_damage_per_instance"
             {
                 "value"                 "2500 4250 9950 16540 32630 97500 186800"
-                "special_bonus_unique_invoker_13"   "x20"
+                "special_bonus_unique_invoker_13"   "x40"
             }
             "magic_amp"
             {
                 "value"                             "0"
-                "special_bonus_facet_invoker_elitist"           "10 12 15 18 21 24 30"
-                "special_bonus_unique_invoker_13"   "x20"                
+                "special_bonus_facet_invoker_elitist"           "0"
+                "special_bonus_unique_invoker_13"   "x1"                
                 "RequiresFacet"                 "invoker_elitist"
             }
             "resist_debuff_duration"
             {
                 "value"                                         "0"
-                "special_bonus_facet_invoker_elitist"   "4"             
+                "special_bonus_facet_invoker_elitist"   "0"             
             }
             "intrinsic_attack_damage"
             {
                 "value"                             "0"
                 "special_bonus_unique_invoker_13"   "x20"
-                "special_bonus_facet_invoker_agnostic" "300 600 900 1200 2400 3800 16500"
+                "special_bonus_facet_invoker_agnostic" "600 900 1200 2400 3800 16500 25000"
                 "RequiresFacet"                 "invoker_agnostic"
                 "CalculateSpellDamageTooltip"       "0"
                 "DamageTypeTooltip"                 "DAMAGE_TYPE_PHYSICAL"
             }
             "intelligence_bonus"
             {
-                "value"                     "350"
+                "value"                     "450"
             }            
         }
     }
@@ -14452,7 +14452,7 @@
         {
             "spirit_damage"
             {
-                "value" "150 396 670 968 1479 2890 3601 6920"
+                "value" "150 396 670 968 1479 2890 3601 9920"
                 "levelkey" "exortlevel"
             }
         }
@@ -14470,7 +14470,7 @@
         {
             "damage_per_second"
             {
-                "value" "485 980 2436 8942 28800 88560 278000 868000"
+                "value" "485 980 2436 8942 28800 88560 278000 1868000"
                 "levelkey" "exortlevel"
             }
         }
@@ -14519,7 +14519,7 @@
             "area_of_effect" "240"
             "damage"
             {
-                "value" "450 1310 4900 9780 29600 54740 146000 347000"
+                "value" "650 2310 7900 19780 49600 94740 246000 647000"
                 "levelkey" "exortlevel"
             }
         }
@@ -14543,7 +14543,7 @@
             }
             "wex_damage"
             {
-                "value" "480 1830 4580 13930 39480 89530 458000 1654000"
+                "value" "1480 4580 13930 39480 89530 458000 1654000 3500000"
                 "levelkey" "wexlevel"
             }
         }
@@ -14570,7 +14570,7 @@
             }
             "agility_bonus"
             {
-                "value"                     "250"
+                "value"                     "300"
             }        
         }              
     }
@@ -14598,7 +14598,7 @@
         }
         "bonus_damage"
         {
-            "value" "2450 6600 18750 39900 95500 190000 276000 345000"
+            "value" "2450 6600 18750 39900 95500 190000 276000 445000"
             "levelkey" "exortlevel"
             "special_bonus_unique_invoker_5"    "+100000"
             "CalculateSpellDamageTooltip"   "0"
