@@ -3233,11 +3233,20 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Fixed Earthshaker's facet to prevent reincarnation/spawn of units that skip the entire round (round 44).
 
 
-* Changed some code for Upgrade Totem to fix(or try) a rare situation where it would casuse a crash at max lvl.
-* Buffs icons displayed max rows/lines from 2 to 3. Changed some other UI code (might(can't test) help with reduction of crash on loading that some ppl experience)  
-* Random Ability now has an alternative randomization method as Default, Host can type anytime "-alt_random" for the vanila method or again to return back to default(on/off).
-* Increase Master of Weapons bonus dmg per lvl from stacks for Tier 2 and up, bonus atributes, dmg dealt from explosions. changed some hidden element too.
 
+
+* Added 10 innate abilities to the random ability pool available in all random ability items.
+* Changed some code for Upgrade Totem to fix a rare situation where it would crash at max lvl.
+* Buff icons changed max lines/rows displayed from 2 to 3. Changed some other UI code (might(can't test) help with reducing the crash on loading that some ppl experience).  
+* Random Ability(all) now has an alternate randomization method as default, host can always type "-alt_random" for the vanila method or again to revert to default(on/off).
+* Increased Master of Weapons bonus dmg per lvl from stacks for tier 2 and up, bonus attributes and dmg dealt from explosions. changed some hidden items as well.
+* Invoker replaced his deleted talent, adjusted some spells and talent numbers (buffs), added new innate (rubic one).
+* Fixed Demigods and Gods not dispelling debuffs after taking a certain amount of dmg (KrakenShell lost this ability). Increased total dmg accumulated for trigger dispell for gods from 1mill to 2mill (nerf)
+* Added Vanila Ultimate to Shadow Demon and fixed its crash when it buys a shard.
+* Added back the talent for Antimage mr and fixed/buffed some skills.
+* The break duration of SilverEdge has been increased from 4 seconds to 5 seconds.
+* Tier 1 chest will no longer drop after 5th Roshan (down from 13, might fix a certain infinite chest bug).
+* Slightly increased dodge chance for gods.
 
 
 

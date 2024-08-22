@@ -112,6 +112,8 @@ function GetRandomAbilityName( hero )
 		"skeleton_king_mortal_strike",
 		"spirit_breaker_greater_bash",
 		--"drow_ranger_marksmanship",
+		"juggernaut_duelist", --innate1
+		"leshrac_defilement", --innate2		
 		"sven_great_cleave",
 		"mjz_kunkka_tidebringer",
 		"mjz_pudge_flesh_heap",
@@ -144,6 +146,8 @@ function GetRandomAbilityName( hero )
 		"ursa_fury_swipes",
 		"lich_custom_cold_soul",
 		"mjz_invoker_magic_master",
+		"lion_to_hell_and_back", --innate3
+		"obsidian_destroyer_ominous_discernment", --innate4		
 		--"medusa_split_shot",
 		"medusa_mana_shield",
 		"mjz_broodmother_insatiable_hunger",
@@ -174,6 +178,8 @@ function GetRandomAbilityName( hero )
 		"dark_seer_custom_ion_shell",
 		"mjz_centaur_return",
 		"huskar_berserkers_blood",
+		"tinker_eureka", --innate5
+		"rattletrap_armor_power", --innate6		
 		--"antimage_spell_shield",	 
 		"faceless_void_backtrack",
 		--"bane_enfeeble",
@@ -206,6 +212,8 @@ function GetRandomAbilityName( hero )
 		"faceless_void_time_walk",
 		"dark_willow_shadow_realm_lua",
 		"mjz_leshrac_pulse_nova",
+		"ursa_maul", --innate7
+		"razor_dynamo", --innate8		
 		"witch_doctor_custom_death_skull",
 		"mjz_phoenix_icarus_dive",
 		"mjz_zuus_thundergods_wrath",
@@ -249,6 +257,9 @@ function GetRandomAbilityName( hero )
 		"vengefulspirit_wave_of_terror_lua",
 		--"viper_poison_attack", --bugged if the hero is not created with it
 		"purifying_flames",
+		"treant_innate_attack_damage", --innate9
+		"rubick_might_and_magus", --innate10
+
 	}
     local randomIndex
     if _G._second_random_op then
@@ -276,6 +287,8 @@ function GetRandomAbilityName_int( hero )
 		--"shredder_reactive_armor",
 		"mjz_night_stalker_hunter_in_the_night",
 		"phantom_assassin_blur",
+		"juggernaut_duelist", --innate1
+		"leshrac_defilement", --innate2		
 		"tidehunter_anchor_smash",
 		"mjz_tiny_craggy_exterior",
 		"mjz_omniknight_degen_aura",
@@ -308,6 +321,8 @@ function GetRandomAbilityName_int( hero )
 		"meepo_ransack",
 		"bloodseeker_thirst",
 		"void_custom_bash",
+		"lion_to_hell_and_back", --innate3
+		"obsidian_destroyer_ominous_discernment", --innate4		
 		"mjz_lina_laguna_blade",
 		--"luna_lunar_blessing",
 		"elder_titan_natural_order",
@@ -331,6 +346,8 @@ function GetRandomAbilityName_int( hero )
 		"enchantress_impetus",
 		"dark_seer_custom_ion_shell",
 		"mjz_centaur_return",
+		"tinker_eureka", --innate5
+		"rattletrap_armor_power", --innate6		
 		"huskar_berserkers_blood",
 		--"antimage_spell_shield",	 
 		"faceless_void_backtrack",
@@ -354,6 +371,8 @@ function GetRandomAbilityName_int( hero )
 		"drow_ranger_frost_arrows_lua",
 		"drow_ranger_multishot_lua",
 		"aghanim_blink2",
+		"ursa_maul", --innate7
+		"razor_dynamo", --innate8		
 		--"mjz_templar_assassin_proficiency",
 		"mjz_chaos_knight_chaos_strike",
 		"mjz_treant_natures_guise",
@@ -406,6 +425,8 @@ function GetRandomAbilityName_int( hero )
 		"medusa_custom_stone_arrows",
 		"brewmaster_drunken_brawler",
 		"tiny_grow",
+		"treant_innate_attack_damage", --innate9
+		"rubick_might_and_magus", --innate10		
 		"naga_siren_rip_tide",
 		"vengefulspirit_wave_of_terror_lua",
 		--"viper_poison_attack", --bugged if the hero is not created with it

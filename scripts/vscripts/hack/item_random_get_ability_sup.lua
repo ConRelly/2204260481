@@ -127,6 +127,8 @@ function GetRandomAbilityName( hero )
 		--"juggernaut_healing_ward",
 		"mjz_juggernaut_blade_fury",
 		--"templar_assassin_psi_blades",
+		"juggernaut_duelist", --innate1
+		"leshrac_defilement", --innate2			
 		"mjz_vengefulspirit_vengeance",
 		"monkey_king_custom_jingu_mastery",
 		"alchemist_goblins_greed",
@@ -162,6 +164,8 @@ function GetRandomAbilityName( hero )
 		"obsidian_destroyer_arcane_orb",
 		"mjz_crystal_maiden_brilliance_aura",
 		"mystic_dragon_endless_wisdom",
+		"lion_to_hell_and_back", --innate3
+		"obsidian_destroyer_ominous_discernment", --innate4			
 		"imba_phantom_assassin_coup_de_grace",
 		"dzzl_good_juju",
 		"ancient_apparition_chilling_touch",
@@ -186,6 +190,8 @@ function GetRandomAbilityName( hero )
 		-- "roshan_bash",
 		"mjz_general_megamorph",
 		"ogre_magi_multicast_lua",
+		"tinker_eureka", --innate5
+		"rattletrap_armor_power", --innate6			
 		"juggernaut_omni_slash",
 		"viper_corrosive_skin",
 		"drow_ranger_frost_arrows_lua",
@@ -201,6 +207,8 @@ function GetRandomAbilityName( hero )
 		"lycan_shapeshift",
 		"chen_custom_avatar",
 		"mjz_doom_bringer_doom",
+		"ursa_maul", --innate7
+		"razor_dynamo", --innate8			
 		"antimage_custom_mana_break",
 		"faceless_void_time_walk",
 		"dark_willow_shadow_realm_lua",
@@ -233,6 +241,8 @@ function GetRandomAbilityName( hero )
 		"bristleback_warpath_lua",
 		--"obs_replay",
 		"jotaro_absolute_defense3",
+		"treant_innate_attack_damage", --innate9
+		"rubick_might_and_magus", --innate10		
 		"zanto_gari",
 		"blood_madness",
 		"clinkz_infernal_breath",

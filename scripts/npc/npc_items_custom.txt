@@ -4059,7 +4059,7 @@
 		"ItemStockTime"					"1"			  
 		"ItemStockInitial"				"0"
 		"ItemStockMax"					"1"
-		//"InvalidHeroes"					"npc_dota_hero_undying"
+		//"InvalidHeroes"					"npc_dota_hero_shadow_demon"
 		"ItemInitialStockTime"			"120.0"
 	}
 
@@ -14204,7 +14204,7 @@
             "panic_damage_reduction" "-50"
             "panic_turnrate_slow" "-80"
             "panic_duration" "2.0"
-            "main_debuff_duration" "4.0"
+            "main_debuff_duration" "5.0"
             "heal_reduction" "50"
             "movement_slow" "30"
             "attack_speed_slow" "50"

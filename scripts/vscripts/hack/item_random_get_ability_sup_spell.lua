@@ -95,6 +95,8 @@ function GetRandomAbilityName( hero )
 		"tidehunter_anchor_smash",
 		"mjz_tiny_craggy_exterior",
 		"mjz_omniknight_degen_aura",
+		"juggernaut_duelist", --innate1
+		"leshrac_defilement", --innate2			
 		--"mjz_vengefulspirit_vengeance",
 		"mjz_troll_warlord_fervor",
 		--"chaos_knight_chaos_strike",
@@ -122,6 +124,8 @@ function GetRandomAbilityName( hero )
 		"mjz_invoker_magic_master",
 		"mjz_invoker_magic_master",
 		"mjz_invoker_magic_master",
+		"lion_to_hell_and_back", --innate3
+		"obsidian_destroyer_ominous_discernment", --innate4		
 		--"medusa_split_shot",
 		"medusa_mana_shield",
 		"mjz_broodmother_insatiable_hunger",
@@ -145,6 +149,8 @@ function GetRandomAbilityName( hero )
 		"alchemist_power_of_gold2",
 		"alchemist_power_of_gold2",
 		"alchemist_power_of_gold",
+		"tinker_eureka", --innate5
+		"rattletrap_armor_power", --innate6			
 		"rubick_arcane_supremacy",
 		"rubick_arcane_supremacy",
 		"rubick_arcane_supremacy",
@@ -170,6 +176,8 @@ function GetRandomAbilityName( hero )
 		--"mjz_centaur_return",
 		--"huskar_berserkers_blood",
 		--"pangolier_heartpiercer_oaa",
+		--"ursa_maul", --innate7
+		"razor_dynamo", --innate8			
 		"faceless_void_backtrack",
 		--"phantom_lancer_phantom_edge",
 		"ryze_arcane_mastery",
@@ -239,6 +247,8 @@ function GetRandomAbilityName( hero )
 		"dark_willow_bedlam_lua",
 		"grimstroke_custom_soulstore",
 		"grimstroke_custom_soulstore",
+		"treant_innate_attack_damage", --innate9
+		"rubick_might_and_magus", --innate10		
 		"custom_mana_regen",
 		"custom_mana_regen2",
 		"custom_mana_regen",

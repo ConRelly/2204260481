@@ -93,6 +93,7 @@ local NoAutocastItem = {
 local NoSelfTarget = {
     ["marci_guardian"] = true,
     ["marci_bodyguard"] = true,
+    ["antimage_counterspell_ally"] = true,
 };
 
 function modifier_class:OnIntervalThink()
@@ -198,7 +199,8 @@ function modifier_class:OnIntervalThink()
                         if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
                             parent:CastAbilityNoTarget(target_ability, parent:GetPlayerOwnerID()) 
                         end  
-                    elseif ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_FRIENDLY then
+                    elseif (ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_FRIENDLY) or target_ability:GetAbilityName() == "antimage_counterspell_ally" then
+                        --print("cast4")
                         if NoSelfTarget[target_ability:GetAbilityName()] then
                             local allied_heroes = FindUnitsInRadius(
                                 parent:GetTeamNumber(),
@@ -219,7 +221,7 @@ function modifier_class:OnIntervalThink()
                                 end
                             end
                         else
-                            --print("cast4")
+                            --print("cast5")
                             if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
                                 parent:CastAbilityOnTarget(parent, target_ability, parent:GetPlayerOwnerID())
                             end

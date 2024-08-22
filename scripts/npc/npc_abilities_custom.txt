@@ -15512,7 +15512,7 @@
         {
             "mana_void_damage_per_mana"
             {
-                "value" "2.9 3.6 4.1"
+                "value" "10 20 30"
                 "LinkedSpecialBonus" "special_bonus_unique_mjz_antimage_mana_void_damage"
             }
             "mana_void_ministun" "0.3"
@@ -15534,7 +15534,7 @@
 		
 		"AbilityValues"
         {
-            "value" "2.9"
+            "value" "20"
         }
 	}
 	"mjz_arc_warden_spark_wraith"
@@ -25251,13 +25251,13 @@
 	// Siltbreaker: Kraken Shell
 	"siltbreaker_kraken_shell"
 	{
-		"BaseClass"					 "tidehunter_kraken_shell"
+		"BaseClass"					 "tidehunter_blubber"
 		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySound"				  "Hero_Tidehunter.KrakenShell"
 
 		"AbilityValues"
         {
-            "damage_reduction" "0"
+            
             "damage_cleanse" "600"
             "damage_reset_interval" "6.0"
         }
@@ -25265,13 +25265,13 @@
 
 "siltbreaker_kraken_shell1"
 	{
-		"BaseClass"					 "tidehunter_kraken_shell"
+		"BaseClass"					 "tidehunter_blubber"
 		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySound"				  "Hero_Tidehunter.KrakenShell"
 		"IsOnCastBar"				   "0"
 		"AbilityValues"
         {
-            "damage_reduction" "0"
+            
             "damage_cleanse" "10000"
             "damage_reset_interval" "6.0"
         }
@@ -25279,52 +25279,52 @@
 
 	"siltbreaker_kraken_shell2"
 	{
-		"BaseClass"					 "tidehunter_kraken_shell"
+		"BaseClass"					 "tidehunter_blubber"
 		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySound"				  "Hero_Tidehunter.KrakenShell"
 		"IsOnCastBar"				   "0"
 		"AbilityValues"
         {
-            "damage_reduction" "0"
+            
             "damage_cleanse" "20000"
             "damage_reset_interval" "6.0"
         }
 	}
 	"siltbreaker_kraken_shell3"
 	{
-		"BaseClass"					 "tidehunter_kraken_shell"
+		"BaseClass"					 "tidehunter_blubber"
 		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySound"				  "Hero_Tidehunter.KrakenShell"
 		"IsOnCastBar"				   "0"
 		"AbilityValues"
         {
-            "damage_reduction" "0"
+            
             "damage_cleanse" "30000"
             "damage_reset_interval" "6.0"
         }
 	}
 	"siltbreaker_kraken_shell4"
 	{
-		"BaseClass"					 "tidehunter_kraken_shell"
+		"BaseClass"					 "tidehunter_blubber"
 		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySound"				  "Hero_Tidehunter.KrakenShell"
 		"IsOnCastBar"				   "0"
 		"AbilityValues"
         {
-            "damage_reduction" "0"
+            
             "damage_cleanse" "40000"
             "damage_reset_interval" "6.0"
         }
 	}
 	"siltbreaker_kraken_shell5"
 	{
-		"BaseClass"					 "tidehunter_kraken_shell"
+		"BaseClass"					 "tidehunter_blubber"
 		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySound"				  "Hero_Tidehunter.KrakenShell"
 		"IsOnCastBar"				   "0"
 		"AbilityValues"
         {
-            "damage_reduction" "0"
+            
             "damage_cleanse" "50000"
             "damage_reset_interval" "6.0"
         }
@@ -25332,40 +25332,40 @@
 
 "siltbreaker_kraken_shell6"
 	{
-		"BaseClass"					 "tidehunter_kraken_shell"
+		"BaseClass"					 "tidehunter_blubber"
 		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySound"				  "Hero_Tidehunter.KrakenShell"
 		"IsOnCastBar"				   "0"
 		"AbilityValues"
         {
-            "damage_reduction" "0"
+            
             "damage_cleanse" "100000"
             "damage_reset_interval" "6.0"
         }
 	}
 	"siltbreaker_kraken_shell7"
 	{
-		"BaseClass"					 "tidehunter_kraken_shell"
+		"BaseClass"					 "tidehunter_blubber"
 		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySound"				  "Hero_Tidehunter.KrakenShell"
 		"IsOnCastBar"				   "0"
 		"AbilityValues"
         {
-            "damage_reduction" "0"
+            
             "damage_cleanse" "500000"
             "damage_reset_interval" "6.0"
         }
 	}
 "siltbreaker_kraken_shell8"
 	{
-		"BaseClass"					 "tidehunter_kraken_shell"
+		"BaseClass"					 "tidehunter_blubber"
 		"AbilityBehavior"			   "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySound"				  "Hero_Tidehunter.KrakenShell"
 		"IsOnCastBar"				   "0"
 		"AbilityValues"
         {
-            "damage_reduction" "0"
-            "damage_cleanse" "1000000"
+           
+            "damage_cleanse" "2000000"
             "damage_reset_interval" "3.0"
         }
 	}

@@ -302,6 +302,7 @@ if IsServer() then
 		mjz_ursa_earthshock = true,
 		custom_aegis_cast = true,
 		void_spirit_custom_resonant_pulse = true,
+		shadow_demon_demonic_purge = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

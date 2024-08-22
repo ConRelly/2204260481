@@ -118,8 +118,8 @@
 		"AbilityValues"
 		{
 			"duration"					"40"
-			"spell_amp"					"350"
-			"debuff_amp"				"40"
+			"spell_amp"					"400"
+			"debuff_amp"				"50"
 		}
 	}
 
@@ -158,7 +158,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"int_per_one_cdr"				"200"
+			"int_per_one_cdr"				"500"
 			"one_percent_tooltip"			"1"
 			"max_cdr"						"50"
 		}

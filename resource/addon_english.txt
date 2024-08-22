@@ -560,7 +560,7 @@
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_description"		"<h1>Active: Image Of Benedict</h1> Creating a copy of yourself, dashing to enemy target quickly, slashing at a rate of %slash_rate% s, dealing x %attack_asdmg_multiplier% total ATK as Dmg & exploding the enemy in a %radius_expl% radius repeating an extra time for every 20 levels you have, gaining an Explosive stack for each repetition, can ignore armor in certain codition. <br> Duration Of Slash = %duration% + (1s every 1500 Attack Speed) \n<h1><font color='#FF4500'>UP: Fire Rapier</font></h1> Each slash has %fire_rapier_chance%%% chance to proc Fire Rapier \n<h1><font color='#BE03FF'>UP: Edible Devil's Daedalus</font></h1>All Slashes have 100% Crit chance \n<h1><font color='#FC6BF1'>UP: Good Juju</font></h1> Reduces cooldown to %good_juju_cd% sec"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_lore"	"Gifted Sword, From Who Mastered All Weapons..."
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_note0"	"Unaffected by Cooldown Reduction"
-	"DOTA_Tooltip_ability_item_master_of_weapons_sword_note1"   "A certain type of primary and a certain amount can unlock the ignore armor for explosions"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword_note1"   "A certain amount can unlock the ignore armor for explosions"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_note2"   "A certain type of primary will make Image Hit harder base on your max hp"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_damage"			"+$damage"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_ms"				"+$move_speed"
@@ -578,7 +578,7 @@
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_description"		"<h1>Active: Image Of Benedict</h1> Creating a copy of yourself, dashing to enemy target quickly, slashing at a rate of %slash_rate% s, dealing x %attack_asdmg_multiplier% total ATK as Dmg & exploding the enemy in a %radius_expl% radius repeating an extra time for every 20 levels you have, gaining an Explosive stack for each repetition, can ignore armor in certain codition. <br> Duration Of Slash = %duration% + (1s every 1500 Attack Speed) \n<h1><font color='#FF4500'>UP: Fire Rapier</font></h1> Each slash has %fire_rapier_chance%%% chance to proc Fire Rapier \n<h1><font color='#BE03FF'>UP: Edible Devil's Daedalus</font></h1>All Slashes have 100% Crit chance \n<h1><font color='#FC6BF1'>UP: Good Juju</font></h1> Reduces cooldown to %good_juju_cd% sec"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_lore"	"Gifted Sword, From Who Mastered All Weapons..."
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_note0"	"Unaffected by Cooldown Reduction"
-	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_note1"   "A certain type and a certain amount can unlock the ignore armor for explosions"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_note1"   "A certain amount can unlock the ignore armor for explosions"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_note2"   "A certain type of primary will make Image Hit harder base on your max hp"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_bonus_damage"			"+$damage"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_bonus_ms"				"+$move_speed"
@@ -593,7 +593,7 @@
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_description"		"<h1>Active: Image Of Benedict</h1> Creating a copy of yourself, dashing to enemy target quickly, slashing at a rate of %slash_rate% s, dealing x %attack_asdmg_multiplier% total ATK as Dmg & exploding the enemy in a %radius_expl% radius repeating an extra time for every 20 levels you have, gaining an Explosive stack for each repetition, can ignore armor in certain codition. <br> Duration Of Slash = %duration% + (1s every 1500 Attack Speed) \n<h1><font color='#FF4500'>UP: Fire Rapier</font></h1> Each slash has %fire_rapier_chance%%% chance to proc Fire Rapier \n<h1><font color='#BE03FF'>UP: Edible Devil's Daedalus</font></h1>All Slashes have 100% Crit chance \n<h1><font color='#FC6BF1'>UP: Good Juju</font></h1> Reduces cooldown to %good_juju_cd% sec"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_lore"	"Gifted Sword, From Who Mastered All Weapons..."
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_note0"	"Unaffected by Cooldown Reduction"
-	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_note1"   "A certain type and a certain amount can unlock the ignore armor for explosions"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_note1"   "A certain amount can unlock the ignore armor for explosions"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_note2"   "A certain type of primary will make Image Hit harder base on your max hp"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_bonus_damage"			"+$damage"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_bonus_ms"				"+$move_speed"
@@ -609,7 +609,7 @@
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_description"		"<h1>Active: Image Of Benedict</h1> Creating a copy of yourself, dashing to enemy target quickly, slashing at a rate of %slash_rate% s, dealing x %attack_asdmg_multiplier% total ATK as Dmg & exploding the enemy in a %radius_expl% radius repeating an extra time for every 20 levels you have, gaining an Explosive stack for each repetition, can ignore armor in certain codition. <br> Duration Of Slash = %duration% + (1s every 1500 Attack Speed) \n<h1><font color='#FF4500'>UP: Fire Rapier</font></h1> Each slash has %fire_rapier_chance%%% chance to proc Fire Rapier \n<h1><font color='#BE03FF'>UP: Edible Devil's Daedalus</font></h1>All Slashes have 100% Crit chance \n<h1><font color='#FC6BF1'>UP: Good Juju</font></h1> Reduces cooldown to %good_juju_cd% sec"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_lore"	"Gifted Sword, From Who Mastered All Weapons..."
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_note0"	"Unaffected by Cooldown Reduction"
-	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_note1"   "A certain type and a certain amount can unlock the ignore armor for explosions"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_note1"   "A certain amount can unlock the ignore armor for explosions"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_note2"   "A certain type of primary will make Image Hit harder base on your max hp"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_bonus_damage"			"+$damage"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_bonus_ms"				"+$move_speed"
@@ -624,7 +624,7 @@
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_description"		"<h1>Active: Image Of Benedict</h1> Creating a copy of yourself, dashing to enemy target quickly, slashing at a rate of %slash_rate% s, dealing x %attack_asdmg_multiplier% total ATK as Dmg & exploding the enemy in a %radius_expl% radius repeating an extra time for every 20 levels you have, gaining an Explosive stack for each repetition, can ignore armor in certain codition. <br> Duration Of Slash = %duration% + (1s every 1500 Attack Speed) \n<h1><font color='#FF4500'>UP: Fire Rapier</font></h1> Each slash has %fire_rapier_chance%%% chance to proc Fire Rapier \n<h1><font color='#BE03FF'>UP: Edible Devil's Daedalus</font></h1>All Slashes have 100% Crit chance \n<h1><font color='#FC6BF1'>UP: Good Juju</font></h1> Reduces cooldown to %good_juju_cd% sec"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_lore"	"Gifted Sword, From Who Mastered All Weapons..."
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_note0"	"Unaffected by Cooldown Reduction"
-	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_note1"   "A certain type and a certain amount can unlock the ignore armor for explosions"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_note1"   "A certain amount can unlock the ignore armor for explosions"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_note2"   "A certain type of primary will make Image Hit harder base on your max hp"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_bonus_damage"			"+$damage"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_bonus_ms"				"+$move_speed"
@@ -9806,18 +9806,18 @@ Required Level: %required_level%
 
 "DOTA_Tooltip_ability_item_random_get_ability_onlvl"		 "Random Ability (Uncommon)"
 "DOTA_Tooltip_ability_item_random_get_ability_onlvl_Description"	"Get a Random skill that you don't have
-Contains all random skills<br> if your primary attribute is Int or Universal there's a 3x higher chance to gain multicast skill."
+Contains all random skills(including Innates)<br> if your primary attribute is Int or Universal there's a 3x higher chance to gain multicast skill.<br> <font color='#f2da5b'>Innate abilities can only be seen in Open Config Menu</font>"
 
 "DOTA_Tooltip_modifier_tusk_snowball_meteor_burn"          "Tusk Meteor Burn"
 
 
 "DOTA_Tooltip_ability_item_random_get_ability"		 "Random Ability (Rare)"
-"DOTA_Tooltip_ability_item_random_get_ability_Description"	"Get a Random skill that you don't have.\nSlightly better skill pool then Uncommon.\n<font color='#04DB2B'>Use to get a new skill or you can use this to buy a Random Ability (RareM) (buy recipe)</font>"
+"DOTA_Tooltip_ability_item_random_get_ability_Description"	"Get a Random skill that you don't have.\nSlightly better skill pool then Uncommon.\n<font color='#04DB2B'>Use to get a new skill or you can use this to buy a Random Ability (RareM) (buy recipe)</font><br> <font color='#f2da5b'>Innate abilities can only be seen in Open Config Menu</font>"
 "DOTA_Tooltip_ability_item_random_get_ability3"		 "Craftable Random Ability (Rare)"
-"DOTA_Tooltip_ability_item_random_get_ability3_Description"	"Get a Random skill that you don't have.\nSlightly better skill pool then Uncommon.\n<font color='#04DB2B'>Use to get a new skill or you can use this to buy a Mage skill book (buy recipe)</font>"
+"DOTA_Tooltip_ability_item_random_get_ability3_Description"	"Get a Random skill that you don't have.\nSlightly better skill pool then Uncommon.\n<font color='#04DB2B'>Use to get a new skill or you can use this to buy a Mage skill book (buy recipe)</font><br> <font color='#f2da5b'>Innate abilities can only be seen in Open Config Menu</font>"
 
 "DOTA_Tooltip_ability_item_random_get_ability_spell"		 "Random Ability (RareM)"
-"DOTA_Tooltip_ability_item_random_get_ability_spell_Description"	"Get a Random skill.\nSpell amp, cdr and some spell dmg skills have higher chance"
+"DOTA_Tooltip_ability_item_random_get_ability_spell_Description"	"Get a Random skill.\nSpell amp, cdr and some spell dmg skills have higher chance<br> <font color='#f2da5b'>Innate abilities can only be seen in Open Config Menu</font>"
 
 "DOTA_Tooltip_ability_item_resurection_pendant"							"<font color='#f2da5b'>Resurrection Pendant</font>"
 "DOTA_Tooltip_ability_item_resurection_pendant_Description"				"<h1>Active: Resurrect</h1>After a delay of %channel% sec  it resurrects all the allies. \nThis ability has a base cooldown of %base_cooldown% seconds, plus %extra_cooldown% seconds for every ally that was resurrected.\n<font color='#F2A93E'>Resurrection Pendant is not affected by cooldown reduction.</font>\n<font color='#F2A93E'>Works From Courier Inventory.</font>\n<font color='#F2A93E'>Only in Slot 1 resurrects diconnected players.</font>\n<h1><font color='#0094FF'>UP: Aghanim's Scepter</font></h1>Automatically activated when all the heroes are dead. Fontain invulnerability does not count as alive.\n<h1><font color='#DE3163'>UP: Super Scepter</font></h1>Reduces activation time by x2 and the extra cooldown for every ally is reduced to %extra_cooldown_ss% seconds."
