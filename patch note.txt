@@ -3249,10 +3249,10 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Slightly increased dodge chance for gods.
 
 
-* Fixed Invoker Amp affecting dmg reduction of enemys. added another talent for him and buffed a bit more some of his skills.
+* Fixed Invoker facet Amp affecting dmg reduction of enemys. added another talent for him and buffed a bit more some of his skills.
 * Fixed Shadow Demon Cleanse(shard skill) not working with multiautocast.
 
-
+* Fixed new Dota update breaking descriptions and UIs. (other problems from dota update might still be lurking like end game screen)
 
 
 ////////Self Note ////////////

@@ -14577,21 +14577,21 @@
 	"ItemAliases"					"shield;armor;maple"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 	"AbilityValues"
-        {
-            "hp_spell_multiplier" "2000"
-            "armor_str_multiplier" "0.025"
-            "status_resit" "60"
-            "block_chance" "60"
-            "magic_resit" "55"
-            "duration" "12"
-            "aura_radius" "3000"
-            "armor_str_multiplier_tooltip" "25"
-            "xp_boost" "25"
-            "spell_amp" "150"
-            "bonus_str" "2400"
-            "block_chance_marci" "85"
-            "mana_bonus" "9400"
-        }
+    {
+        "hp_spell_multiplier" "2000"
+        "armor_str_multiplier" "0.025"
+        "status_resit" "60"
+        "block_chance" "60"
+        "magic_resit" "55"
+        "duration" "12"
+        "aura_radius" "3000"
+        "armor_str_multiplier_tooltip" "25"
+        "xp_boost" "25"
+        "spell_amp" "150"
+        "bonus_str" "2400"
+        "block_chance_marci" "85"
+        "mana_bonus" "9400"
+    }
 }
 
 "item_edible_fragment"
