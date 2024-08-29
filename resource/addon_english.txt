@@ -3405,18 +3405,18 @@
 	"DOTA_Tooltip_ability_mjz_faceless_void_backtrack_dodge_chance_pct"		"%Proc Chance: "
 		
 	"DOTA_Tooltip_ability_mjz_finger_of_death"						"Finger of Death"
-	"DOTA_Tooltip_ability_mjz_finger_of_death_Description"			"Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each life it consumes. \n<h1><font color='#DE3163'>UP: Super Scepter</font></h1> Each use gives 1 charge of Lion's Dagon and increases the damage for each Dagon charge multiplied by the base damage of this skill. \n<h1><font color='#6E32A5'>Lion's</font> <font color='#FFA32B'>Exclusive:</font> Lion's Dagon</h1> After Lion's Dagon use, it applies the Finger of Death ability to the same target. <br><br> Increases Lion's Dagon radius from <font color='#0094FF'>Aghanim's Scepter</font> equal to the radius of Finger of Death, but blocks the neutral slot. <br> With 5+ <font color='#DE3163'>Super Synth</font> effects removes this limitation."
+	"DOTA_Tooltip_ability_mjz_finger_of_death_Description"			"Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each life it consumes. \n<h1><font color='#DE3163'>UP: Super Scepter</font></h1> Each use gives 2 charges of Lion's Dagon and increases the damage for each Dagon charge multiplied by the base damage of this skill<br>Increases bonus damage per kill by 0.5% per level, capping at 50% at level 100. After level 100, the increase is 5% per level. \n<h1><font color='#6E32A5'>Lion's</font> <font color='#FFA32B'>Exclusive:</font> Lion's Dagon</h1> After Lion's Dagon use, it applies the Finger of Death ability to the same target. <br><br> Increases Lion's Dagon radius from <font color='#0094FF'>Aghanim's Scepter</font> equal to the radius of Finger of Death, but blocks the neutral slot. <br> With 5+ <font color='#DE3163'>Super Synth</font> effects removes this limitation."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_scepter_description"	"Increases damage, reduces cooldown and cancels mana cost. Finger of Death hits all units in a small area."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_Lore"					"Lion's disfigured hand is also the source of his greatest power, capable of flooding victims with malefic force."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_Note0"                "Can get multiple stacks from the same unit"
 	"DOTA_Tooltip_ability_mjz_finger_of_death_cast_range"				"Cast Range:"
 	"DOTA_Tooltip_ability_mjz_finger_of_death_damage"					"Damage:"
-	"DOTA_Tooltip_ability_mjz_finger_of_death_damage_per_int"	   "Intelligence As Bonus Damage:"
-	"DOTA_Tooltip_ability_mjz_finger_of_death_damage_per_kill"		"Damage Bonus per Kill:"
+	"DOTA_Tooltip_ability_mjz_finger_of_death_damage_per_int"	   		"Intelligence As Bonus Damage:"
+	"DOTA_Tooltip_ability_mjz_finger_of_death_damage_per_kill"			"Damage Bonus per Kill:"
 	"DOTA_Tooltip_ability_mjz_finger_of_death_cast_range_scepter"		"Scepter Cast Range:"
 	"DOTA_Tooltip_ability_mjz_finger_of_death_damage_scepter"			"Scepter Damage:"
 	"DOTA_Tooltip_ability_mjz_finger_of_death_mana_cost_scepter"		"Scepter Mana Cost:"
-	"DOTA_Tooltip_ability_mjz_finger_of_death_cooldown_scepter"		"Scepter Cooldown:"
+	"DOTA_Tooltip_ability_mjz_finger_of_death_cooldown_scepter"			"Scepter Cooldown:"
 	"DOTA_Tooltip_ability_mjz_finger_of_death_splash_radius_scepter"	"Scepter Splash Radius:"
 	"DOTA_Tooltip_modifier_mjz_finger_of_death_bonus"					"Finger of Death"
 	"DOTA_Tooltip_modifier_mjz_finger_of_death_bonus_Description"		"Finger of Death gaining +%dMODIFIER_PROPERTY_TOOLTIP% damage."
@@ -10555,6 +10555,7 @@ Contains all random skills(including Innates)<br> if your primary attribute is I
 		"DOTA_Tooltip_ability_special_bonus_unique_luna_103"	"+{s:value} Eclipse Extra Beams"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_lion_8"	  "+{s:value} Finger of Death Int As Damage"
+		"DOTA_Tooltip_ability_special_bonus_unique_lion_8_Note0" "SuperScepter: +15 Int As Damage per SS stack"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_mjz_templar_assassin_armor_reduction_percent"	"+{s:value}% Extra Proficiency Reduction"
 

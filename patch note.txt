@@ -3255,6 +3255,11 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Fixed new Dota update breaking descriptions and UIs. (other problems from dota update might still be lurking like end game screen)
 
 
+* Lion To hell and back has a new extra effect , Lion int bonus dmg for finger of changed to 50 from 65 but now gets extra 15 per SS stack.
+* Lion Finger of death SS now has an extra effect.
+
+
+
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).

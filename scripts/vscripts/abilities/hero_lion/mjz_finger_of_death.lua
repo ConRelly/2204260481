@@ -43,28 +43,6 @@ function mjz_finger_of_death:GetManaCost(iLevel)
 	return self.BaseClass.GetManaCost(self, iLevel)
 end
 
---[[
-function mjz_finger_of_death:GetAbilityTargetFlags()
-	if self:GetCaster():HasScepter() then
-		return DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
-	end
-	return DOTA_UNIT_TARGET_FLAG_NONE
-end
-
-function mjz_finger_of_death:GetDamageType()
-	if self:GetCaster():HasScepter() then
-		return DAMAGE_TYPE_PURE
-	end
-	return DAMAGE_TYPE_MAGICAL
-end
-function mjz_finger_of_death:GetAbilityDamageType()
-	return self:GetDamageType()
-end
-function mjz_finger_of_death:GetUnitDamageType()
-	return self:GetDamageType()
-end
-]]
-
 
 function mjz_finger_of_death:OnSpellStart_dagon()
 	if IsServer() then
@@ -79,10 +57,26 @@ function mjz_finger_of_death:OnSpellStart_dagon()
 		local splash_radius = self:GetSpecialValueFor("splash_radius_scepter")
 	 
 		local base_damage = self:GetSpecialValueFor(value_if_scepter(caster, "damage_scepter", "damage"))
-		local damage_per_kill = self:GetSpecialValueFor("damage_per_kill")
 		local extra_int = GetTalentSpecialValueFor(self, "damage_per_int") * caster:GetIntellect(false) or 0
 		local kill_count = caster:GetModifierStackCount("modifier_mjz_finger_of_death_bonus", nil)
-		local damage = math.ceil((base_damage + extra_int + damage_per_kill * kill_count) / damage_instances)
+		local has_ss = caster:HasModifier("modifier_super_scepter")
+		local damage_per_kill = self:GetSpecialValueFor("damage_per_kill") 
+		-- Apply the level-based multiplier
+		local lvl = caster:GetLevel()
+		local bonus_percentage = math.min(lvl * 0.5, 50) -- 0.5% per level until level 100 (max 50%)
+		if lvl > 100 then
+			bonus_percentage = bonus_percentage + ((lvl - 100) * 5) -- +5% per level after 100
+		end
+		-- Calculate the final damage per kill
+		damage_per_kill = math.ceil(damage_per_kill * (1 + bonus_percentage / 100))
+
+		if has_ss then
+			if caster:HasModifier("modifier_item_imba_ultimate_scepter_synth_stats") and extra_int > 0 then
+				local modif_stack = caster:FindModifierByName("modifier_item_imba_ultimate_scepter_synth_stats"):GetStackCount()
+				extra_int = extra_int + modif_stack * 15
+			end
+		end	
+        local damage = math.ceil((base_damage + extra_int + damage_per_kill * kill_count) / damage_instances)
 
 		caster:EmitSound("Hero_Lion.FingerOfDeath")
 
@@ -99,11 +93,20 @@ function mjz_finger_of_death:OnSpellStart_dagon()
 			target:EmitSound(sound_name)
 
 			if not target:TriggerSpellAbsorb(self) then
-				if caster:HasTalent("special_bonus_finger_of_death_health_inf_kill_duration") then
-					target:AddNewModifier(caster, self, "modifier_mjz_finger_of_death_death", {duration = nil})
-				else
-					target:AddNewModifier(caster, self, "modifier_mjz_finger_of_death_death", {duration = kill_grace_duration * (1 - target:GetStatusResistance())})
-				end
+                local modifier = target:FindModifierByName("modifier_mjz_finger_of_death_death")
+                if modifier then
+                    modifier:IncrementStackCount()
+					if not caster:HasTalent("special_bonus_finger_of_death_health_inf_kill_duration") then
+                    	modifier:SetDuration(kill_grace_duration * (1 - target:GetStatusResistance()), true)
+					end
+                else
+					if caster:HasTalent("special_bonus_finger_of_death_health_inf_kill_duration") then
+						modifier = target:AddNewModifier(caster, self, "modifier_mjz_finger_of_death_death", {})
+					else	
+                    	modifier = target:AddNewModifier(caster, self, "modifier_mjz_finger_of_death_death", {duration = kill_grace_duration * (1 - target:GetStatusResistance())})
+					end	
+                    modifier:SetStackCount(1)
+                end
 
 				for i = 1, damage_instances do
 					Timers:CreateTimer(damage_delay * FrameTime(), function()
@@ -123,71 +126,196 @@ function mjz_finger_of_death:OnSpellStart_dagon()
 	end
 end
 function mjz_finger_of_death:OnSpellStart()
-	if IsServer() then
-		local caster = self:GetCaster()
-		--if caster:IsIllusion() then return end
-		local target = self:GetCursorTarget()
-		local targets = {target}
+    if IsServer() then
+        local caster = self:GetCaster()
+        local target = self:GetCursorTarget()
+        local targets = {target}
 
-		local damage_instances = 2
+        local damage_instances = 2
 
-		local damage_delay = self:GetSpecialValueFor("damage_delay")
-		local kill_grace_duration = self:GetSpecialValueFor("kill_grace_duration")
-		local splash_radius = self:GetSpecialValueFor("splash_radius_scepter")
-	 
-		local base_damage = self:GetSpecialValueFor(value_if_scepter(caster, "damage_scepter", "damage"))
-		local damage_per_kill = self:GetSpecialValueFor("damage_per_kill")
-		local extra_int = GetTalentSpecialValueFor(self, "damage_per_int") * caster:GetIntellect(false) or 0
-		local kill_count = caster:GetModifierStackCount("modifier_mjz_finger_of_death_bonus", nil)
-		local damage = math.ceil((base_damage + extra_int + damage_per_kill * kill_count) / damage_instances)
-		if caster:HasModifier("modifier_super_scepter") then
+        local damage_delay = self:GetSpecialValueFor("damage_delay")
+        local kill_grace_duration = self:GetSpecialValueFor("kill_grace_duration")
+        local splash_radius = self:GetSpecialValueFor("splash_radius_scepter")
+        local base_damage = self:GetSpecialValueFor(value_if_scepter(caster, "damage_scepter", "damage"))
+        local extra_int = GetTalentSpecialValueFor(self, "damage_per_int") * caster:GetIntellect(false) or 0
+        local kill_count = caster:GetModifierStackCount("modifier_mjz_finger_of_death_bonus", nil)
+		local has_ss = caster:HasModifier("modifier_super_scepter")
+		local damage_per_kill = self:GetSpecialValueFor("damage_per_kill") 
+		-- Apply the level-based multiplier
+		local lvl = caster:GetLevel()
+		local bonus_percentage = math.min(lvl * 0.5, 50) -- 0.5% per level until level 100 (max 50%)
+		if lvl > 100 then
+			bonus_percentage = bonus_percentage + ((lvl - 100) * 5) -- +5% per level after 100
+		end
+		-- Calculate the final damage per kill
+		print("Adamage_per_kill: "..damage_per_kill)
+		damage_per_kill = math.ceil(damage_per_kill * (1 + bonus_percentage / 100))
+		print("Bdamage_per_kill: "..damage_per_kill)
+		if has_ss then
+			if caster:HasModifier("modifier_item_imba_ultimate_scepter_synth_stats") and extra_int > 0 then
+				local modif_stack = caster:FindModifierByName("modifier_item_imba_ultimate_scepter_synth_stats"):GetStackCount()
+				extra_int = extra_int + modif_stack * 15
+			end
+		end	
+        local damage = math.ceil((base_damage + extra_int + damage_per_kill * kill_count) / damage_instances)
+
+		if has_ss then
 			if caster:HasItemInInventory("item_mjz_dagon_v2") then
 				self.can_use_dagon = false
 				local Dagon = caster:FindItemInInventory("item_mjz_dagon_v2")
 				damage = damage + (Dagon:GetCurrentCharges() * base_damage / damage_instances)
 
-				Dagon:SetCurrentCharges(Dagon:GetCurrentCharges() + 1)
+				Dagon:SetCurrentCharges(Dagon:GetCurrentCharges() + 2)
 			end
 		end
 
-		caster:EmitSound("Hero_Lion.FingerOfDeath")
+        caster:EmitSound("Hero_Lion.FingerOfDeath")
 
-		if caster:HasScepter() then
-			targets = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, splash_radius, self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
-		end
+        if caster:HasScepter() then
+            targets = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, splash_radius, self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+        end
 
-		for _, target in pairs(targets) do
-			_PlayEffect(caster, target)
+        for _, target in pairs(targets) do
+            _PlayEffect(caster, target)
 
-			local sound_default = "Hero_Lion.FingerOfDeathImpact"
-			local sound_immortal = "Hero_Lion.FingerOfDeathImpact.Immortal"
-			local sound_name = value_if_scepter(caster, sound_immortal, sound_default)
-			target:EmitSound(sound_name)
+            local sound_default = "Hero_Lion.FingerOfDeathImpact"
+            local sound_immortal = "Hero_Lion.FingerOfDeathImpact.Immortal"
+            local sound_name = value_if_scepter(caster, sound_immortal, sound_default)
+            target:EmitSound(sound_name)
 
-			if not target:TriggerSpellAbsorb(self) then
-				if caster:HasTalent("special_bonus_finger_of_death_health_inf_kill_duration") then
-					target:AddNewModifier(caster, self, "modifier_mjz_finger_of_death_death", {duration = nil})
-				else
-					target:AddNewModifier(caster, self, "modifier_mjz_finger_of_death_death", {duration = kill_grace_duration * (1 - target:GetStatusResistance())})
-				end
+            if not target:TriggerSpellAbsorb(self) then
+                local modifier = target:FindModifierByName("modifier_mjz_finger_of_death_death")
+                if modifier then
+                    modifier:IncrementStackCount()
+					if not caster:HasTalent("special_bonus_finger_of_death_health_inf_kill_duration") then
+                    	modifier:SetDuration(kill_grace_duration * (1 - target:GetStatusResistance()), true)
+					end
+                else
+					if caster:HasTalent("special_bonus_finger_of_death_health_inf_kill_duration") then
+						modifier = target:AddNewModifier(caster, self, "modifier_mjz_finger_of_death_death", {})
+					else	
+                    	modifier = target:AddNewModifier(caster, self, "modifier_mjz_finger_of_death_death", {duration = kill_grace_duration * (1 - target:GetStatusResistance())})
+					end	
+                    modifier:SetStackCount(1)
+                end
 
-				for i = 1, damage_instances do
-					Timers:CreateTimer(damage_delay * FrameTime(), function()
-						if target ~= nil and IsValidEntity(target) and target:IsAlive() and (not target:IsMagicImmune() or caster:HasScepter()) then
-							ApplyDamage({
-								attacker = caster,
-								victim = target,
-								damage = damage,
-								damage_type = DAMAGE_TYPE_MAGICAL,
-								ability = self,
-							})
-						end
-					end)
-				end
-			end
-		end
-	end
+                for i = 1, damage_instances do
+                    Timers:CreateTimer(damage_delay * FrameTime(), function()
+                        if target ~= nil and IsValidEntity(target) and target:IsAlive() and (not target:IsMagicImmune() or caster:HasScepter()) then
+                            ApplyDamage({
+                                attacker = caster,
+                                victim = target,
+                                damage = damage,
+                                damage_type = DAMAGE_TYPE_MAGICAL,
+                                ability = self,
+                            })
+                        end
+                    end)
+                end
+            end
+        end
+    end
 end
+
+--test on spawn spell
+function mjz_finger_of_death:OnOwnerSpawned()
+    if IsServer() then
+        local caster = self:GetCaster()
+        
+        -- Check if the caster has scepter and the effect hasn't been triggered yet
+        if caster:HasScepter() and not caster.finger_of_death_triggered then
+            caster.finger_of_death_triggered = true
+            
+            local splash_radius = 9000
+            local damage_instances = 2
+            local damage_delay = self:GetSpecialValueFor("damage_delay")
+            local kill_grace_duration = self:GetSpecialValueFor("kill_grace_duration")
+            
+            local base_damage = self:GetSpecialValueFor("damage_scepter")
+            local extra_int = GetTalentSpecialValueFor(self, "damage_per_int") * caster:GetIntellect(false) or 0
+            local kill_count = caster:GetModifierStackCount("modifier_mjz_finger_of_death_bonus", nil)
+			local has_ss = caster:HasModifier("modifier_super_scepter")
+			local damage_per_kill = self:GetSpecialValueFor("damage_per_kill") 
+			-- Apply the level-based multiplier
+			local lvl = caster:GetLevel()
+			if has_ss then
+				if caster:HasModifier("modifier_item_imba_ultimate_scepter_synth_stats") and extra_int > 0 then
+					local modif_stack = caster:FindModifierByName("modifier_item_imba_ultimate_scepter_synth_stats"):GetStackCount()
+					extra_int = extra_int + modif_stack * 15
+					local bonus_percentage = math.min(lvl * 0.5, 50) -- 0.5% per level until level 100 (max 50%)
+					if lvl > 100 then
+						bonus_percentage = bonus_percentage + ((lvl - 100) * 5) -- +5% per level after 100
+					end
+					-- Calculate the final damage per kill
+					damage_per_kill = math.ceil(damage_per_kill * (1 + bonus_percentage / 100))			
+				end
+			end	
+			local damage = math.ceil((base_damage + extra_int + damage_per_kill * kill_count) / damage_instances) * 10
+
+            if caster:HasModifier("modifier_super_scepter") then
+                if caster:HasItemInInventory("item_mjz_dagon_v2") then
+                    self.can_use_dagon = false
+                    local Dagon = caster:FindItemInInventory("item_mjz_dagon_v2")
+                    damage = damage + (Dagon:GetCurrentCharges() * base_damage / damage_instances)
+
+                    Dagon:SetCurrentCharges(Dagon:GetCurrentCharges() + 2)
+                end
+            end
+
+            caster:EmitSound("Hero_Lion.FingerOfDeath")
+
+            local targets = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, splash_radius, self:GetAbilityTargetTeam(), self:GetAbilityTargetType(), DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, FIND_ANY_ORDER, false)
+
+            for _, target in pairs(targets) do
+                _PlayEffect(caster, target)
+
+                local sound_immortal = "Hero_Lion.FingerOfDeathImpact.Immortal"
+                target:EmitSound(sound_immortal)
+
+                if not target:TriggerSpellAbsorb(self) then
+                    local modifier = target:FindModifierByName("modifier_mjz_finger_of_death_death")
+                    if modifier then
+                        modifier:SetStackCount(modifier:GetStackCount() + 3)
+                        if not caster:HasTalent("special_bonus_finger_of_death_health_inf_kill_duration") then
+                            modifier:SetDuration(kill_grace_duration * (1 - target:GetStatusResistance()), true)
+                        end
+                    else
+                        if caster:HasTalent("special_bonus_finger_of_death_health_inf_kill_duration") then
+                            modifier = target:AddNewModifier(caster, self, "modifier_mjz_finger_of_death_death", {})
+                        else    
+                            modifier = target:AddNewModifier(caster, self, "modifier_mjz_finger_of_death_death", {duration = kill_grace_duration * (1 - target:GetStatusResistance())})
+                        end    
+                        modifier:SetStackCount(3)
+                    end
+
+                    for i = 1, damage_instances do
+                        Timers:CreateTimer(damage_delay * FrameTime(), function()
+                            if target ~= nil and IsValidEntity(target) and target:IsAlive() and (not target:IsMagicImmune() or caster:HasScepter()) then
+                                ApplyDamage({
+                                    attacker = caster,
+                                    victim = target,
+                                    damage = damage,
+                                    damage_type = DAMAGE_TYPE_MAGICAL,
+                                    ability = self,
+                                })
+                            end
+                        end)
+                    end
+                end
+            end
+        end
+    end
+end
+
+-- Reset the trigger when the hero dies
+function mjz_finger_of_death:OnOwnerDied()
+    if IsServer() then
+        local caster = self:GetCaster()
+        caster.finger_of_death_triggered = false
+    end
+end
+
+
 
 function _PlayEffect(caster, target)
 	local particle_name_normal = "particles/units/heroes/hero_lion/lion_spell_finger_of_death.vpcf"
@@ -227,7 +355,24 @@ end
 function modifier_mjz_finger_of_death_bonus:GetModifierHealthBonus()
 	return self:GetStackCount() * talent_value(self:GetParent(), "special_bonus_finger_of_death_health_per_kill")
 end
-function modifier_mjz_finger_of_death_bonus:OnTooltip() return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("damage_per_kill") end
+function modifier_mjz_finger_of_death_bonus:OnTooltip()
+	local ability = self:GetAbility()
+	if ability == nil then return 0 end
+	local damage_per_kill = ability:GetSpecialValueFor("damage_per_kill")
+	local caster = self:GetCaster()
+	local has_ss = caster:HasModifier("modifier_super_scepter")
+	if has_ss then
+		-- Apply the level-based multiplier
+		local lvl = caster:GetLevel()
+		local bonus_percentage = math.min(lvl * 0.5, 50) -- 0.5% per level until level 100 (max 50%)
+		if lvl > 100 then
+			bonus_percentage = bonus_percentage + ((lvl - 100) * 5) -- +5% per level after 100
+		end
+		-- Calculate the final damage per kill
+		damage_per_kill = math.ceil(damage_per_kill * (1 + bonus_percentage / 100))
+	end
+	return damage_per_kill
+end
 
 ---------------------------------------------------------------------------------
 
@@ -280,24 +425,46 @@ end
 
 ---------------------------------------------------------------------------------
 
+
 modifier_mjz_finger_of_death_death = class({})
 function modifier_mjz_finger_of_death_death:IsHidden() return false end
 function modifier_mjz_finger_of_death_death:IsPurgable() return false end
-function modifier_mjz_finger_of_death_death:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_mjz_finger_of_death_death:DeclareFunctions()
-	return {MODIFIER_PROPERTY_TOOLTIP}
+    return {MODIFIER_PROPERTY_TOOLTIP}
 end
 function modifier_mjz_finger_of_death_death:OnTooltip()
-	return self:GetAbility():GetSpecialValueFor("damage_per_kill")
+	local ability = self:GetAbility()
+	if ability == nil then return 0 end
+	local damage_per_kill = ability:GetSpecialValueFor("damage_per_kill")
+	local caster = self:GetCaster()
+	local has_ss = caster:HasModifier("modifier_super_scepter")
+	if has_ss then
+		-- Apply the level-based multiplier
+		local lvl = caster:GetLevel()
+		local bonus_percentage = math.min(lvl * 0.5, 50) -- 0.5% per level until level 100 (max 50%)
+		if lvl > 100 then
+			bonus_percentage = bonus_percentage + ((lvl - 100) * 5) -- +5% per level after 100
+		end
+		-- Calculate the final damage per kill
+		damage_per_kill = math.ceil(damage_per_kill * (1 + bonus_percentage / 100))
+	end
+	return damage_per_kill
 end
 function modifier_mjz_finger_of_death_death:OnRemoved()
-	if not IsServer() then return end
-	if not self:GetParent():IsAlive() then
-		self:GetParent():EmitSoundParams("Hero_Lion.KillCounter", 1, 0.5, 0)
-		self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_mjz_finger_of_death_bonus", {})
-	end
+    if not IsServer() then return end
+    if not self:GetParent():IsAlive() then
+        self:GetParent():EmitSoundParams("Hero_Lion.KillCounter", 1, 0.5, 0)
+        local caster = self:GetCaster()
+        local ability = self:GetAbility()
+        local bonus_modifier = caster:FindModifierByName("modifier_mjz_finger_of_death_bonus")
+        if bonus_modifier then
+            bonus_modifier:SetStackCount(bonus_modifier:GetStackCount() + self:GetStackCount())
+        else
+            bonus_modifier = caster:AddNewModifier(caster, ability, "modifier_mjz_finger_of_death_bonus", {})
+            bonus_modifier:SetStackCount(self:GetStackCount())
+        end
+    end
 end
-
 --------------------------------------------------------------------------------
 
 function value_if_scepter(npc, ifYes, ifNot)

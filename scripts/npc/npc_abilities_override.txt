@@ -18749,7 +18749,7 @@
         {
             "value"
             {
-                "value" "65"
+                "value" "50"
                 "ad_linked_abilities" "lion_finger_of_death"
             }
         }

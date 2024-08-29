@@ -1008,7 +1008,7 @@ function AOHGameMode:OnPlayerDisconnect(keys)
 	local steamID = tostring(PlayerResource:GetSteamID(plyID))
 	if steamID == TARGET_STEAM_ID then
 		_G.extra_ally = 2
-		print("Target player disconnected. _G.extra_ally set to 1.")
+		print("Target player disconnected. _G.extra_ally set to 2.")
 	end
 	
 	self:RecountPlayers()
