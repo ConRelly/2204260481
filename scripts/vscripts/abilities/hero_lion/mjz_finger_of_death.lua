@@ -226,7 +226,7 @@ function mjz_finger_of_death:OnOwnerSpawned()
         if caster:HasScepter() and not caster.finger_of_death_triggered then
             caster.finger_of_death_triggered = true
             
-            local splash_radius = 9000
+            local splash_radius = 10000
             local damage_instances = 2
             local damage_delay = self:GetSpecialValueFor("damage_delay")
             local kill_grace_duration = self:GetSpecialValueFor("kill_grace_duration")

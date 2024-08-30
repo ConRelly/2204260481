@@ -3256,7 +3256,8 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 * Lion To hell and back has a new extra effect , Lion int bonus dmg for finger of changed to 50 from 65 but now gets extra 15 per SS stack.
-* Lion Finger of death SS now has an extra effect.
+* Lion Finger of death SS now has an extra effect 
+* Finger of Death kill debuff will now increase in stacks instead getting multiple of itself avoiding lag on tugh enemyes.
 
 
 

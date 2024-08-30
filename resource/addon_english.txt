@@ -3424,7 +3424,12 @@
 	"DOTA_Tooltip_modifier_mjz_finger_of_death_death_Description"		"Finger of Death gaining +%dMODIFIER_PROPERTY_TOOLTIP% damage per unit kill."
 	"DOTA_Tooltip_ability_special_bonus_finger_of_death_health_per_kill"				"+{s:value} Max Health Per Finger of Death Kill"
 	"DOTA_Tooltip_ability_special_bonus_finger_of_death_health_inf_kill_duration"		"Infinite Duration of Finger of Death Effect"
-		
+	
+	"DOTA_Tooltip_ability_lion_to_hell_and_back"							"To Hell and Back"
+	"DOTA_Tooltip_ability_lion_to_hell_and_back_Description"				"Lion gains %debuff_amp%%% debuff duration and %spell_amp%%% spell amplification for %duration%s after respawning.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>On Respawan if the hero has Lion Finger of Death it will fire the skill on all enemies in 9000 aoe with 10x more final dmg and 3 stacks of death instead of one"
+
+
+
 	"DOTA_Tooltip_ability_mjz_furion_power_of_nature"					"Power of Nature"
 	"DOTA_Tooltip_ability_mjz_furion_power_of_nature_Description"			"Slow a target for %duration% seconds. At the end of the slow, an additional %damage_pct%%% of all damage taken(after reduction) during the slow will be dealt to the target as magical damage."
 	"DOTA_Tooltip_ability_mjz_furion_power_of_nature_Lore"					"On the morning of the vernal equinox, before the rest of the forest had begun to wake, that last seed ripened and burst in an instant."
@@ -10555,7 +10560,7 @@ Contains all random skills(including Innates)<br> if your primary attribute is I
 		"DOTA_Tooltip_ability_special_bonus_unique_luna_103"	"+{s:value} Eclipse Extra Beams"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_lion_8"	  "+{s:value} Finger of Death Int As Damage"
-		"DOTA_Tooltip_ability_special_bonus_unique_lion_8_Note0" "SuperScepter: +15 Int As Damage per SS stack"
+		"DOTA_Tooltip_ability_special_bonus_unique_lion_8_description" "Super Scepter: +15 Int As Damage per SS stack"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_mjz_templar_assassin_armor_reduction_percent"	"+{s:value}% Extra Proficiency Reduction"
 
