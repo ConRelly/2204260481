@@ -137,11 +137,26 @@ function modifier_rolling_stone_buff:OnIntervalThink()
 		local speed_dmg = caster:GetIdealSpeed() * self:GetAbility():GetSpecialValueFor("speed_dmg") / 100
 		local radius = self:GetAbility():GetSpecialValueFor("radius")
 		local stun_duration = self:GetAbility():GetSpecialValueFor("stun_duration") + talent_value(caster, "special_earth_spirit_rolling_stone_stun_duration")
-		if caster:HasModifier("modifier_super_scepter") then 
+		if caster:HasModifier("modifier_super_scepter") then
 			str_damage = str_damage + speed_dmg
 		end
-
+		
 		local unit_list = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+		if caster:HasModifier("modifier_obsidian_rapier") then
+			local obsidianRapier = caster:FindAbilityByName("obsidian_rapier")
+			if obsidianRapier then
+				local chance = obsidianRapier:GetSpecialValueFor("up_rolling_stone_chance")
+				local spheres = obsidianRapier:GetSpecialValueFor("up_rolling_stone_spheres")
+				local count = 0
+				for i = 1, #unit_list do
+					if RollPseudoRandomPercentage(math.min(chance, 100), self:GetAbility():entindex(), caster) then
+						obsidianRapier:ThrowObsidianSphere(unit_list[i])
+						count = count + 1
+						if count >= spheres then break end
+					end
+				end
+			end
+		end
 		for _, unit in pairs(unit_list) do
 			if unit then
 				ApplyDamage({
@@ -158,7 +173,7 @@ function modifier_rolling_stone_buff:OnIntervalThink()
 		end
 		local randomSeed = math.random(1, 100)
 		if randomSeed <= _G._effect_rate then
-			local effect_cast = ParticleManager:CreateParticle("particles/custom/abilities/heroes/earth_spirit_rolling_stone/rolling_stone_aoe.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
+			local effect_cast = ParticleManager:CreateParticle("particles/custom/abilities/heroes/earth_spirit_rolling_stone/rolling_stone_aoe.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 			ParticleManager:SetParticleControl(effect_cast, 1, Vector(radius, radius, radius))
 			ParticleManager:ReleaseParticleIndex(effect_cast)
 		end	

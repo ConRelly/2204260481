@@ -1,5 +1,5 @@
 LinkLuaModifier("modifier_grow_strong", "heroes/hero_chaos_knight/grow_strong.lua", LUA_MODIFIER_MOTION_NONE)
-
+LinkLuaModifier("modifier_grow_strong_bonus_str", "heroes/hero_chaos_knight/grow_strong.lua", LUA_MODIFIER_MOTION_NONE)
 
 grow_strong = class({})
 function grow_strong:Spawn()
@@ -36,11 +36,20 @@ function modifier_grow_strong:OnRefresh()
 end
 function modifier_grow_strong:OnIntervalThink()
 	if not IsServer() then return end
+	local caster = self:GetCaster()
 	if self:GetAbility() and self:GetAbility():IsTrained() then
 		self:SetStackCount(self:GetStackCount() + 1)
 		if self:GetAbility() and not self:GetAbility():IsNull() and self:GetCaster() then
 			if self:GetCaster():HasTalent("special_bonus_unique_ck_grow_strong") then
-				self:GetCaster():ModifyStrength(self:GetAbility():GetSpecialValueFor("grow_str") * talent_value(self:GetCaster(), "special_bonus_unique_ck_grow_strong") * 0.5)
+				local modifynr = self:GetAbility():GetSpecialValueFor("grow_str") * talent_value(self:GetCaster(), "special_bonus_unique_ck_grow_strong") * 0.5
+				self:GetCaster():ModifyStrength(modifynr)
+                if caster:HasModifier("modifier_grow_strong_bonus_str") then
+                    local modifier = caster:FindModifierByName("modifier_grow_strong_bonus_str")
+                    modifier:SetStackCount(modifier:GetStackCount() + modifynr)
+                else
+                    caster:AddNewModifier(caster, ability, "modifier_grow_strong_bonus_str", {})
+                    caster:FindModifierByName("modifier_grow_strong_bonus_str"):SetStackCount(modifynr)
+                end	
 			end
 			self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("grow_interval"))
 		end
@@ -76,4 +85,19 @@ function modifier_grow_strong:GetModifierPreAttack_CriticalStrike(keys)
 			end
 		end
 	end
+end
+
+
+--base stats traker
+if modifier_grow_strong_bonus_str == nil then modifier_grow_strong_bonus_str = class({}) end
+
+function modifier_grow_strong_bonus_str:IsHidden() return true end
+function modifier_grow_strong_bonus_str:IsPurgable() return false end
+function modifier_grow_strong_bonus_str:IsDebuff() return false end
+function modifier_grow_strong_bonus_str:RemoveOnDeath() return false end
+function modifier_grow_strong_bonus_str:DeclareFunctions()
+	return {MODIFIER_PROPERTY_TOOLTIP}
+end
+function modifier_grow_strong_bonus_str:OnTooltip()
+	return self:GetStackCount()
 end

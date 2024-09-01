@@ -13,6 +13,8 @@ end
 
 
 LinkLuaModifier("modifier_monkey_king_custom_jingu_mastery_thinker", "abilities/heroes/monkey_king_custom_jingu_mastery.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_monkey_king_custom_jingu_mastery_bonus_str_agi", "abilities/heroes/monkey_king_custom_jingu_mastery.lua", LUA_MODIFIER_MOTION_NONE)
+
 
 modifier_monkey_king_custom_jingu_mastery_thinker = class({})
 
@@ -49,6 +51,13 @@ function modifier_monkey_king_custom_jingu_mastery_thinker:OnIntervalThink()
     if parent:IsAlive() and parent:IsRealHero() and parent:HasScepter() then
         parent:ModifyAgility(bonuns_stats)
         parent:ModifyStrength(bonuns_stats)
+        if parent:HasModifier("modifier_monkey_king_custom_jingu_mastery_bonus_str_agi") then
+            local modifier = parent:FindModifierByName("modifier_monkey_king_custom_jingu_mastery_bonus_str_agi")
+            modifier:SetStackCount(modifier:GetStackCount() + bonuns_stats)
+        else
+            parent:AddNewModifier(parent, ability, "modifier_monkey_king_custom_jingu_mastery_bonus_str_agi", {})
+            parent:FindModifierByName("modifier_monkey_king_custom_jingu_mastery_bonus_str_agi"):SetStackCount(bonuns_stats)
+        end
         if parent:GetPrimaryAttribute() == 2 then
             self.spell_amp = base_spell_amp
         end    
@@ -67,65 +76,19 @@ function modifier_monkey_king_custom_jingu_mastery_thinker:OnIntervalThink()
     end           
 end 
 
---[[if IsServer() then
-    function modifier_monkey_king_custom_jingu_mastery_thinker:DeclareFunctions()
-        return {
-            MODIFIER_EVENT_ON_ATTACK_LANDED,
-        }
-    end  
-    function modifier_monkey_king_custom_jingu_mastery_thinker:OnAttackLanded(keys)
-        local attacker = keys.attacker
-        if attacker == self:GetParent() then
-            local ability = self:GetAbility()
+if modifier_monkey_king_custom_jingu_mastery_bonus_str_agi == nil then modifier_monkey_king_custom_jingu_mastery_bonus_str_agi = class({}) end
+local modifier_monkey_stats = modifier_monkey_king_custom_jingu_mastery_bonus_str_agi
 
-            if not attacker:HasModifier(hud_modifier) then
-                attacker:AddNewModifier(attacker, ability, hud_modifier, {})
-            end
-
-            local modifier_handler = attacker:FindModifierByName(hud_modifier)
-            modifier_handler:IncrementStackCount()
-
-            if modifier_handler:GetStackCount() == ability:GetSpecialValueFor("attack_count") - 1 then
-                attacker:AddNewModifier(attacker, ability, "modifier_monkey_king_custom_jingu_mastery_buff", {})
-            end
-			if modifier_handler:GetStackCount() == ability:GetSpecialValueFor("attack_count") then
-                modifier_handler:Destroy()	
-			end
-        end
-    end
-end]]
-
-
-
---[[LinkLuaModifier("modifier_monkey_king_custom_jingu_mastery_hit", "abilities/heroes/monkey_king_custom_jingu_mastery.lua", LUA_MODIFIER_MOTION_NONE)
-
-modifier_monkey_king_custom_jingu_mastery_hit = class({})
-
-
-function modifier_monkey_king_custom_jingu_mastery_hit:IsBuff()
-    return true
+function modifier_monkey_stats:IsHidden() return true end
+function modifier_monkey_stats:IsPurgable() return false end
+function modifier_monkey_stats:IsDebuff() return false end
+function modifier_monkey_stats:RemoveOnDeath() return false end
+function modifier_monkey_stats:DeclareFunctions()
+	return {MODIFIER_PROPERTY_TOOLTIP}
 end
-
-
-if IsServer() then
-    function modifier_monkey_king_custom_jingu_mastery_hit:OnStackCountChanged(count)
-        ParticleManager:SetParticleControl(self.effect, 1, Vector(1, count + 1, 1))
-    end
-
-
-    function modifier_monkey_king_custom_jingu_mastery_hit:OnCreated(keys)
-        local parent = self:GetParent()
-        self.effect = ParticleManager:CreateParticle("particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_stack.vpcf", PATTACH_OVERHEAD_FOLLOW, parent)
-        ParticleManager:SetParticleControl(self.effect, 0, parent:GetAbsOrigin())
-    end
-
-
-    function modifier_monkey_king_custom_jingu_mastery_hit:OnDestroy()
-        ParticleManager:DestroyParticle(self.effect, false)
-        ParticleManager:ReleaseParticleIndex(self.effect)
-    end
-end]]
-
+function modifier_monkey_stats:OnTooltip()
+	return self:GetStackCount()
+end
 
 
 LinkLuaModifier("modifier_monkey_king_custom_jingu_mastery_buff", "abilities/heroes/monkey_king_custom_jingu_mastery.lua", LUA_MODIFIER_MOTION_NONE)

@@ -21558,7 +21558,7 @@
             "dismember_damage" "160 1890 4920"
             "strength_damage"
             {
-                "value" "4.0 8.5 22.0"
+                "value" "30.0 60.0 120.0"
                 "LinkedSpecialBonus" "special_bonus_unique_mjz_pudge_dismember_strength_damage"
             }
             "ticks" "6"
@@ -21594,7 +21594,7 @@
 		
 		"AbilityValues"
         {
-            "value" "23.0"
+            "value" "90.0"
         }
 	}
 	"special_bonus_unique_mjz_pudge_dismember_duration"
@@ -21666,6 +21666,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		// "AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityCastPoint"				"0"
+		"LevelsBetweenUpgrades"        "5"
 		"AbilityCooldown"				"5.5"
 		
 		"AbilityValues"
@@ -21713,7 +21714,7 @@
 		
 		"AbilityValues"
         {
-            "value" "55"
+            "value" "160"
         }
 	}
 
@@ -32263,15 +32264,15 @@
 		"ScriptFile"					"items/obsidian_rapier"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"AbilityTextureName"			"obsidian_rapier"
+		"AbilityTextureName"			"obsidian_rapier_ab"
 		"MaxLevel"						"1"
 		"AbilityValues"			// copy all this to item_obsidian_rapier item values
 		{
 			"bonus_strength"			"7350"
 			"bonus_status_resist"		"40"
 			"bonus_mana"				"-9000"
-			"bonus_spell_amp"			"200"
-			"bonus_phys_dmg"			"20"
+			"bonus_spell_amp"			"250"
+			"bonus_phys_dmg"			"30"
 			
 			"active_duration"			"12"
 			"active_bonus_chance"		"70"
@@ -32304,19 +32305,21 @@
 			"obsidian_shard_armor"		"25"
 			"obsidian_shard_duration"	"3"
 			
-			"obsidian_stun_chance"		"20"
-			"obsidian_stun_duration"	"2.7"
+			"obsidian_stun_chance"		"15"
+			"obsidian_stun_duration"	"2.5"
 			"obsidian_stun_dmg_amp"		"125"
 			
-			"obsidian_chance_threshold"	"2"
+			"obsidian_chance_threshold"	"1"
 			"obsidian_max_threshold"	"23"
-			"obsidian_dmg_threshold"	"1000"
+			"obsidian_dmg_threshold"	"20"
 			
 			"up_rolling_stone_chance"	"50"
 			"up_rolling_stone_spheres"	"2"
 			"up_rolling_stone_divine"	"100"
-			"up_aftershock_triggers"	"3"
+			"up_aftershock_triggers"	"2"
 			"up_aftershock_shards"		"2"
+			"up_giants_interval"        "1"
+			"up_giants_aoe"             "1000"			
 		}
 	}
 

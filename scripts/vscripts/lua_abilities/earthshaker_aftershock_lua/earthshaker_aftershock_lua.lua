@@ -47,8 +47,25 @@ function modifier_earthshaker_aftershock_lua:OnAbilityFullyCast(params)
 			if realCooldown > 1 then
 				damage 	= damage * (realCooldown + bonus_marci)
 			end			
-		end		
-
+		end
+		if caster:HasModifier("modifier_obsidian_rapier") then
+			local obsidianRapier = caster:FindAbilityByName("obsidian_rapier")
+			if obsidianRapier then
+				local triggers = obsidianRapier:GetSpecialValueFor("up_aftershock_triggers")
+				local shards = obsidianRapier:GetSpecialValueFor("up_aftershock_shards")
+				local count = 0
+				self:IncrementStackCount()
+				if self:GetStackCount() >= triggers then
+					self:SetStackCount(0)
+					for i = 1, #enemies do
+						obsidianRapier:ThrowObsidianShard(enemies[i])
+						count = count + 1
+						if count >= shards then break end
+					end
+				end
+			end
+		end
+		
 		for _, enemy in pairs(enemies) do
 			--enemy:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned", {duration = duration}) --removed the stun effect
 

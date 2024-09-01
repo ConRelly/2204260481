@@ -2,7 +2,7 @@ LinkLuaModifier("modifier_mjz_bounty_hunter_jinada", "abilities/hero_bounty_hunt
 LinkLuaModifier("modifier_jinada_crit", "abilities/hero_bounty_hunter/mjz_bounty_hunter.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_jinada_gold_tracker", "abilities/hero_bounty_hunter/mjz_bounty_hunter.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_jinada_gold_tracker_hide", "abilities/hero_bounty_hunter/mjz_bounty_hunter.lua", LUA_MODIFIER_MOTION_NONE)
-
+LinkLuaModifier("modifier_shuriken_toss_bonus_str_agi", "abilities/hero_bounty_hunter/mjz_bounty_hunter.lua", LUA_MODIFIER_MOTION_NONE)
 
 -------------------
 -- Shuriken Toss --
@@ -91,6 +91,13 @@ function shuriken_toss:OnProjectileHit_ExtraData(target, location, extradata)
 			if caster:IsRealHero() then
 				caster:ModifyAgility(bonus)
 				caster:ModifyStrength(bonus)
+                if caster:HasModifier("modifier_shuriken_toss_bonus_str_agi") then
+                    local modifier = caster:FindModifierByName("modifier_shuriken_toss_bonus_str_agi")
+                    modifier:SetStackCount(modifier:GetStackCount() + bonus)
+                else
+                    caster:AddNewModifier(caster, ability, "modifier_shuriken_toss_bonus_str_agi", {})
+                    caster:FindModifierByName("modifier_shuriken_toss_bonus_str_agi"):SetStackCount(bonus)
+                end				
 			end	
 		end
 		if target:HasModifier("modifier_bounty_hunter_track") then
@@ -141,6 +148,21 @@ function shuriken_toss:OnProjectileHit_ExtraData(target, location, extradata)
 			end
 		end
 	end
+end
+
+--base str and agi modif counter
+if modifier_shuriken_toss_bonus_str_agi == nil then modifier_shuriken_toss_bonus_str_agi = class({}) end
+local modifier_shuriken_toss_stats = modifier_shuriken_toss_bonus_str_agi
+
+function modifier_shuriken_toss_stats:IsHidden() return true end
+function modifier_shuriken_toss_stats:IsPurgable() return false end
+function modifier_shuriken_toss_stats:IsDebuff() return false end
+function modifier_shuriken_toss_stats:RemoveOnDeath() return false end
+function modifier_shuriken_toss_stats:DeclareFunctions()
+	return {MODIFIER_PROPERTY_TOOLTIP}
+end
+function modifier_shuriken_toss_stats:OnTooltip()
+	return self:GetStackCount()
 end
 
 

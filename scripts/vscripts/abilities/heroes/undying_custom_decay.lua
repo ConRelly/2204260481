@@ -28,9 +28,7 @@ function undying_custom_decay:OnSpellStart()
 
         local duration = self:GetSpecialValueFor("duration")
 
-        caster:AddNewModifier(caster, self, "modifier_undying_custom_decay_buff", {
-            duration = duration
-        })
+        caster:AddNewModifier(caster, self, "modifier_undying_custom_decay_buff", { duration = duration})
         
         caster:EmitSound("Hero_Undying.Decay.Cast")
 

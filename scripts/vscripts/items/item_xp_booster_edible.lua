@@ -43,7 +43,9 @@ end
 -- Passive modifier (XP boost)
 
 modifier_xp_booster_passive = class({})
-
+function modifier_xp_booster_passive:IsHidden()
+    return true
+end
 function modifier_xp_booster_passive:DeclareFunctions()
     return {MODIFIER_PROPERTY_EXP_RATE_BOOST}
 end
@@ -65,6 +67,10 @@ end
 function modifier_xp_booster_consumed:RemoveOnDeath()
     return false
 end
+function modifier_xp_booster_consumed:GetTexture()
+    return "xp_booster_edible"
+end
+
 
 function modifier_xp_booster_consumed:OnCreated()
     if IsServer() then
@@ -89,8 +95,8 @@ end
 
 function modifier_xp_booster_consumed:DeclareFunctions()
     return {
-        MODIFIER_PROPERTY_TOOLTIP
-        MODIFIER_PROPERTY_TOOLTIP2
+        MODIFIER_PROPERTY_TOOLTIP,
+        MODIFIER_PROPERTY_TOOLTIP2,
     }
 end
 
@@ -113,6 +119,9 @@ function modifier_xp_booster_cdr:IsPurgable()
 end
 function modifier_xp_booster_cdr:RemoveOnDeath()
     return false
+end
+function modifier_xp_booster_cdr:GetTexture()
+    return "xp_booster_edible"
 end
 
 function modifier_xp_booster_cdr:DeclareFunctions()

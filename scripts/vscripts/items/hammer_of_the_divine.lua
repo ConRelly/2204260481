@@ -15,23 +15,19 @@ item_hammer_of_the_divine = item_hammer_of_the_divine or class({})
 function item_hammer_of_the_divine:GetIntrinsicModifierName() return "modifier_hammer_of_the_divine" end
 function item_hammer_of_the_divine:GetAbilityTextureName()
 	if IsClient() then
-		if self:GetCaster():HasModifier("modifier_hotd_pure_divinity") then
-			return "custom/hammer_of_the_divine_active"
-		else
-			return "custom/hammer_of_the_divine"
-		end
+		return "custom/hammer_of_the_divine"
 	end
 end
 function item_hammer_of_the_divine:OnSpellStart()
 	if IsServer() then
-		if not self:GetCaster():HasModifier("modifier_hotd_pure_divinity") then
+		--if not self:GetCaster():HasModifier("modifier_hotd_pure_divinity") then
 			EmitSoundOn("DOTA_Item.Satanic.Activate", self:GetCaster())
 			self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_hotd_pure_divinity", {duration = self:GetSpecialValueFor("active_duration")})
-			self:EndCooldown()
-			self:StartCooldown(2)
-		else
-			self:GetCaster():RemoveModifierByName("modifier_hotd_pure_divinity")
-		end
+			--self:EndCooldown()
+			--self:StartCooldown(2)
+		--else
+		--	self:GetCaster():RemoveModifierByName("modifier_hotd_pure_divinity")
+		--end
 	end
 end
 
@@ -312,20 +308,44 @@ function modifier_hotd_base_str:OnCreated()
 	if IsServer() then
 		self.old_level = self:GetParent():GetLevel()
 		local GetBaseStrength = self:GetParent():GetBaseStrength()
-		if self:GetParent():HasModifier("item_tome_str") then
-			GetBaseStrength = GetBaseStrength + self:GetParent():FindModifierByName("item_tome_str"):GetStackCount()
-		end
+--[[ 		if self:GetParent():HasModifier("modifier_tome_str_bonus") then
+			GetBaseStrength = GetBaseStrength + self:GetParent():FindModifierByName("modifier_tome_str_bonus"):GetStackCount()
+		end ]]
 		self.stacks = GetBaseStrength
+		self.bonus_stats = 0
 		self:SetStackCount(self.stacks)
-		self:StartIntervalThink(0.5)
+		self:StartIntervalThink(1)
 	end
 end
 function modifier_hotd_base_str:OnIntervalThink()
+	local parent = self:GetParent()
 	local new_level = self:GetParent():GetLevel()
 	if new_level > self.old_level then
 		self.stacks = self.stacks + (self:GetParent():GetStrengthGain() * (new_level - self.old_level))
+		self.bonus_stats = 0
+		if parent:HasModifier("modifier_xp_booster_consumed") then
+			self.bonus_stats =  parent:FindModifierByName("modifier_xp_booster_consumed"):GetStackCount() * 2 
+		end
+		if parent:HasModifier("modifier_mjz_crystal_maiden_frostbite_bonus_int") then
+			self.bonus_stats = self.bonus_stats + parent:FindModifierByName("modifier_mjz_crystal_maiden_frostbite_bonus_int"):GetStackCount()
+		end	
+		if parent:HasModifier("modifier_mjz_ursa_overpower_bonus_str_agi") then
+			self.bonus_stats = self.bonus_stats + parent:FindModifierByName("modifier_mjz_ursa_overpower_bonus_str_agi"):GetStackCount()
+		end
+		--modifier_shuriken_toss_bonus_str_agi
+		if parent:HasModifier("modifier_shuriken_toss_bonus_str_agi") then
+			self.bonus_stats = self.bonus_stats + parent:FindModifierByName("modifier_shuriken_toss_bonus_str_agi"):GetStackCount()
+		end	
+		--modifier_grow_strong_bonus_str
+		if parent:HasModifier("modifier_grow_strong_bonus_str") then
+			self.bonus_stats = self.bonus_stats + parent:FindModifierByName("modifier_grow_strong_bonus_str"):GetStackCount()
+		end	
+		--amalgamation_bonus
+		if parent:HasModifier("amalgamation_bonus") then
+			self.bonus_stats = self.bonus_stats + parent:FindModifierByName("amalgamation_bonus"):GetStackCount()
+		end			
 		self.old_level = new_level
-		self:SetStackCount(self.stacks)
+		self:SetStackCount(self.stacks + self.bonus_stats)
 	end
 end
 function modifier_hotd_base_str:DeclareFunctions()

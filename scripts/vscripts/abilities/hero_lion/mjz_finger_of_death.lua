@@ -221,9 +221,9 @@ end
 function mjz_finger_of_death:OnOwnerSpawned()
     if IsServer() then
         local caster = self:GetCaster()
-        
+        local modif_tohel = caster:HasModifier("modifier_lion_to_hell_and_back")
         -- Check if the caster has scepter and the effect hasn't been triggered yet
-        if caster:HasScepter() and not caster.finger_of_death_triggered then
+        if caster:HasScepter() and not caster.finger_of_death_triggered and modif_tohel then
             caster.finger_of_death_triggered = true
             
             local splash_radius = 10000
@@ -358,7 +358,7 @@ end
 function modifier_mjz_finger_of_death_bonus:OnTooltip()
 	local ability = self:GetAbility()
 	if ability == nil then return 0 end
-	local damage_per_kill = ability:GetSpecialValueFor("damage_per_kill")
+	local damage_per_kill = ability:GetSpecialValueFor("damage_per_kill") * self:GetStackCount()
 	local caster = self:GetCaster()
 	local has_ss = caster:HasModifier("modifier_super_scepter")
 	if has_ss then
@@ -435,7 +435,7 @@ end
 function modifier_mjz_finger_of_death_death:OnTooltip()
 	local ability = self:GetAbility()
 	if ability == nil then return 0 end
-	local damage_per_kill = ability:GetSpecialValueFor("damage_per_kill")
+	local damage_per_kill = ability:GetSpecialValueFor("damage_per_kill") * self:GetStackCount()
 	local caster = self:GetCaster()
 	local has_ss = caster:HasModifier("modifier_super_scepter")
 	if has_ss then

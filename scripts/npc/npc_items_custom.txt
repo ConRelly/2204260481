@@ -24469,7 +24469,7 @@
 		"ItemKillable"					"0"
 		"ItemSellable"					"0"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
-		"AbilityCooldown"				"60"
+		"AbilityCooldown"				"100"
 		"AbilityValues"
         {
             "bonus_base_damage" "35000"
@@ -25071,7 +25071,7 @@
 	    "BaseClass"                     "item_lua"
 	    "ScriptFile"                    "items/item_xp_booster_edible.lua"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	    "AbilityTextureName"            "item_xp_booster_edible" 
+	    "AbilityTextureName"            "xp_booster_edible" 
 	    "ItemCost"                      "10000"  
 	    "ItemShopTags"                  "xp;stats"
 	    "ItemQuality"                   "epic"
@@ -25112,7 +25112,7 @@
 		"AllowedInBackpack"						"0"
 		"IsTempestDoubleClonable"				"0"
 		"AbilityCastPoint"						"0"
-		"AbilityCooldown"						"75"
+		"AbilityCooldown"						"110"
 		"AbilityManaCost"						"0"
 		"ItemShopTags"							"stats;health;mana;speed;hard_to_tag"
 		"ItemQuality"							"artifact"
@@ -25122,8 +25122,8 @@
 			"bonus_strength"			"7350"
 			"bonus_status_resist"		"40"
 			"bonus_mana"				"-9000"
-			"bonus_spell_amp"			"200"
-			"bonus_phys_dmg"			"20"
+			"bonus_spell_amp"			"250"
+			"bonus_phys_dmg"			"30"
 			
 			"active_duration"			"12"
 			"active_bonus_chance"		"70"
@@ -25137,13 +25137,13 @@
 			}
 			"obsidian_base_str_damage"
 			{
-				"value"							"4444"
+				"value"							"7755"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"obsidian_total_str_damage"
 			{
-				"value"							"1117"
+				"value"							"1700"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
 				"CalculateSpellDamageTooltip"	"0"
 			}
@@ -25156,19 +25156,21 @@
 			"obsidian_shard_armor"		"25"
 			"obsidian_shard_duration"	"3"
 			
-			"obsidian_stun_chance"		"20"
-			"obsidian_stun_duration"	"2.7"
+			"obsidian_stun_chance"		"15"
+			"obsidian_stun_duration"	"2.5"
 			"obsidian_stun_dmg_amp"		"125"
 			
-			"obsidian_chance_threshold"	"2"
+			"obsidian_chance_threshold"	"1"
 			"obsidian_max_threshold"	"23"
-			"obsidian_dmg_threshold"	"1000"
+			"obsidian_dmg_threshold"	"20"
 			
 			"up_rolling_stone_chance"	"50"
 			"up_rolling_stone_spheres"	"2"
 			"up_rolling_stone_divine"	"100"
-			"up_aftershock_triggers"	"3"
+			"up_aftershock_triggers"	"2"
 			"up_aftershock_shards"		"2"
+			"up_giants_interval"        "1"
+			"up_giants_aoe"             "1000"
 		}
 	}
 

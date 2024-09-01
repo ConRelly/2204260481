@@ -48,7 +48,12 @@ function modifier_force_max_hp:DeclareFunctions()
 end
 
 function modifier_force_max_hp:GetModifierHealthBonus()
-    return 2 * self:GetParent():GetStrength() * (-1)
+    local parent = self:GetParent()
+    
+    if parent:GetUnitName() == "npc_dota_hero_pudge" then
+        return 2 * parent:GetStrength()  
+    end
+    return 2 * parent:GetStrength() * (-1)
 end
 
 

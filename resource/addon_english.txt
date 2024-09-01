@@ -137,7 +137,7 @@
 	"DOTA_Tooltip_modifier_force_max_hp_description"            "Reduce bonus hp from Str by 2 (resulting in only getting 0.5hp per point of str)"
 
 	"DOTA_Tooltip_ability_item_simple_max_hp_potion"               "Strength Limiter Potion"
-	"DOTA_Tooltip_ability_item_simple_max_hp_potion_Description"   "Reduces bonus HP from Strength by 2, resulting in only 0.5 HP per point of Strength. Consuming this item again will remove the effect."
+	"DOTA_Tooltip_ability_item_simple_max_hp_potion_Description"   "Reduces bonus HP from Strength by 2, resulting in only 0.5 HP per point of Strength. Consuming this item again will remove the effect.<br>Pudge has an reverse effect on this item(he gains 2 more hp per str)"
 	"DOTA_Tooltip_ability_item_simple_max_hp_potion_Lore"          "A peculiar brew that constrains one's natural vitality."
 	"DOTA_Tooltip_ability_item_simple_max_hp_potion_Note0"         "Effect is permanent until consumed again."
 	"DOTA_Tooltip_ability_item_simple_max_hp_potion_Note1"         "Can be shared with allies."
@@ -3421,7 +3421,7 @@
 	"DOTA_Tooltip_modifier_mjz_finger_of_death_bonus"					"Finger of Death"
 	"DOTA_Tooltip_modifier_mjz_finger_of_death_bonus_Description"		"Finger of Death gaining +%dMODIFIER_PROPERTY_TOOLTIP% damage."
 	"DOTA_Tooltip_modifier_mjz_finger_of_death_death"					"Finger of Death"
-	"DOTA_Tooltip_modifier_mjz_finger_of_death_death_Description"		"Finger of Death gaining +%dMODIFIER_PROPERTY_TOOLTIP% damage per unit kill."
+	"DOTA_Tooltip_modifier_mjz_finger_of_death_death_Description"		"Finger of Death gaining +%dMODIFIER_PROPERTY_TOOLTIP% damage if this unit Dies."
 	"DOTA_Tooltip_ability_special_bonus_finger_of_death_health_per_kill"				"+{s:value} Max Health Per Finger of Death Kill"
 	"DOTA_Tooltip_ability_special_bonus_finger_of_death_health_inf_kill_duration"		"Infinite Duration of Finger of Death Effect"
 	
@@ -9652,18 +9652,25 @@ Required Level: %required_level%
 		"DOTA_Tooltip_modifier_item_red_divine_rapier_deff_bonus_description"       "Blocks a part of the Dmg received from Sword Master"
 
 		//item xp boost
-		"DOTA_Tooltip_ability_item_xp_booster_edible"                  "XP Booster Edible"
-		"DOTA_Tooltip_ability_item_xp_booster_edible_Description"      "Grants %bonus_xp_percent%%% bonus XP when equipped. Can be consumed to gain stats over time \n\nPassive: Bonus XP\nActive: Consume to gain stats"
+		"DOTA_Tooltip_ability_item_xp_booster_edible"                  "Essence of Growth"
+		"DOTA_Tooltip_ability_item_xp_booster_edible_Description"      "<br>Grants %bonus_xp_percent%%% bonus XP when equipped. Can be consumed to instead gain stats over time \n\nPassive: Bonus XP\nActive: Consume to gain stats every 3 sec(ALT)"
 		"DOTA_Tooltip_ability_item_xp_booster_edible_Lore"             "A mysterious concoction that enhances one's ability to learn and grow stronger."
-		"DOTA_Tooltip_ability_item_xp_booster_edible_bonus_xp_percent" "+$%bonus_xp_percent%%% XP Gain"
+		//"DOTA_Tooltip_ability_item_xp_booster_edible_bonus_xp_percent" "+$%bonus_xp_percent%%% XP Gain"
 		"DOTA_Tooltip_ability_item_xp_booster_edible_Note0"            "When consumed, grants %int_gain% Intelligence and %agi_str_gain% Agility & Strength every %stat_gain_interval% seconds."
 		//"DOTA_Tooltip_ability_item_xp_booster_edible_Note1"            "If consumed after %cdr_time_threshold% game time minutes , also grants your level divided by 10 cooldown reduction."
 		"DOTA_Tooltip_ability_item_xp_booster_edible_Note1"            "It might give something else if certain condition is meet (you will know from buffs)"
 
+
+		"DOTA_Tooltip_modifier_xp_booster_consumed"                    "Essence of Growth Consumed"
+		"DOTA_Tooltip_modifier_xp_booster_consumed_Description"        "You have Gain the following base stats : %dMODIFIER_PROPERTY_TOOLTIP% Intelligence and %dMODIFIER_PROPERTY_TOOLTIP2% Agility & Strength"
+
+		"DOTA_Tooltip_modifier_xp_booster_cdr"                         "Essence of Growth CDR"
+		"DOTA_Tooltip_modifier_xp_booster_cdr_Description"             "Cooldowns reduced by %dMODIFIER_PROPERTY_COOLDOWN_PERCENTAGE%%%. (your level divided by 10 at the consumtion time)"		
+
 //Obsidian rapier
-		"DOTA_Tooltip_ability_item_obsidian_rapier"					"Obsidian Rapier"
-		"DOTA_Tooltip_ability_item_obsidian_rapier_Description"		"<h1>Active: Earth's True Power</h1> Increases the chance of throwing obsidian stone by %active_bonus_chance%%%. <br><br>Duration: %active_duration%s <br>Cannot be refreshed. \n<h1><font color='red'>Obsidian Curse</font></h1> Reserves an ability slot for this item. \n<h1>UP Aftershock</h1> Every %up_aftershock_triggers% procs will throw %up_aftershock_shards% obsidian shard. \n<h1>UP Rollin' Stone</h1> Divine Growth increased by %up_rolling_stone_divine%%% & %up_rolling_stone_chance%%% chance to throw %up_rolling_stone_spheres% spheres when dealing DMG with Rollin' Stone."
-		"DOTA_Tooltip_ability_item_obsidian_rapier_lore"			"Shattered, corrupted... even better, became divine"
+		"DOTA_Tooltip_ability_item_obsidian_rapier"					"<font color='#2d353a'>Obsidian Rapier</font>"
+		"DOTA_Tooltip_ability_item_obsidian_rapier_Description"		"<h1>Active: Earth's True Power</h1> Increases the chance of throwing obsidian stone by %active_bonus_chance%%%. <br><br>Duration: %active_duration%s <br>Cannot be refreshed. \n<h1><font color='red'>Obsidian Curse</font></h1> Reserves an ability slot for this item. \n<h1>UP Aftershock</h1> Every %up_aftershock_triggers% procs will throw %up_aftershock_shards% obsidian shard. \n<h1>UP Rollin' Stone</h1> Divine Growth increased by %up_rolling_stone_divine%%% & %up_rolling_stone_chance%%% chance to throw %up_rolling_stone_spheres% spheres when dealing DMG with Rollin' Stone.\n<h1>UP Giant's Ring</h1> Every %up_giants_interval% sec will throw obsidian stone to all enemies in %up_giants_aoe% ."
+		"DOTA_Tooltip_ability_item_obsidian_rapier_lore"			"Shattered, corrupted... even better, became divine<br><font color='#c51b1b'>Idea by ☆ Abuleil ☆</font>"
 		"DOTA_Tooltip_ability_item_obsidian_rapier_note0"			"Obisidans benefit's only %obsidian_spell_amp_dmg%%% from spell AMP."
 		"DOTA_Tooltip_ability_item_obsidian_rapier_bonus_strength"			"+$str"
 		"DOTA_Tooltip_ability_item_obsidian_rapier_bonus_status_resist"		"%+$status_resist"
@@ -9671,16 +9678,15 @@ Required Level: %required_level%
 		"DOTA_Tooltip_ability_item_obsidian_rapier_bonus_spell_amp"			"%+$spell_amp"
 		"DOTA_Tooltip_ability_item_obsidian_rapier_bonus_phys_dmg"			"%+Physical Damage"
 		"DOTA_Tooltip_ability_obsidian_rapier"					"Obsidian Curse"
-		"DOTA_Tooltip_ability_obsidian_rapier_Description"		"<h1>Passive: Obsidian Strike</h1> Orders the Earth to help the wielder, with a %obsidian_base_chance%%% chance to throw obsidian stone on attacked enemy dealing %obsidian_base_damage% physical damage. \n<h1>Passive: Divine Growth</h1> Obsidians now gains DMG based on %obsidian_base_str_damage%%% base STR & %obsidian_total_str_damage%%% total STR. \n<h1>Passive: Divine Shard</h1> Obsidians have %obsidian_stun_chance%%% chance to pure stun enemy for %obsidian_stun_duration% seconds. \n<h1>Passive: Earth's Core</h1> Additionally gaining chance to throw <b>Spheres & Shards</b> during the active of Hammer, and Rapier: <br> 1- %obsidian_sphere_chance%%% If stone hits to throw obsidian sphere dealing %obsidian_sphere_dmg%%% of obsidian DMG <b>again</b> as physical ignoring base armor <br>2- %obsidian_shard_chance%%% If stone hits to throw obsidian shard dealing %obsidian_shard_dmg%%% of obsidian DMG <b>again</b> as physical reducing %obsidian_shard_armor%%% Total armor. \n<h1>Passive: Bloodred</h1> Gains a %obsidian_chance_threshold%%% higher chance to passively proc obsidians each time item deals %obsidian_dmg_threshold%k DMG up to %obsidian_max_threshold%%% total bonus chance."
+		"DOTA_Tooltip_ability_obsidian_rapier_Description"		"<h1>Passive: Obsidian Strike</h1> Orders the Earth to help the wielder, with a %obsidian_base_chance%%% chance to throw obsidian stone on attacked enemy dealing %obsidian_base_damage% physical damage. \n<h1>Passive: Divine Growth</h1> Obsidians now gains DMG based on %obsidian_base_str_damage%%% base STR & %obsidian_total_str_damage%%% total STR. \n<h1>Passive: Divine Shard</h1> Obsidians have %obsidian_stun_chance%%% chance to pure stun enemy for %obsidian_stun_duration% seconds. \n<h1>Passive: Earth's Core</h1> Additionally gaining chance to throw <b>Spheres & Shards</b> during the active of Hammer of the divine or obsidian Rapier: <br> 1- %obsidian_sphere_chance%%% If stone hits to throw obsidian sphere dealing %obsidian_sphere_dmg%%% of obsidian DMG <b>again</b> as physical ignoring base armor <br>2- %obsidian_shard_chance%%% If stone hits to throw obsidian shard dealing %obsidian_shard_dmg%%% of obsidian DMG <b>again</b> as physical reducing %obsidian_shard_armor%%% Total armor. \n<h1>Passive: Bloodred</h1> Gains a %obsidian_chance_threshold%%% higher chance for Obsidian Strike to proc each time item accumulates %obsidian_dmg_threshold%Mil DMG up to %obsidian_max_threshold%%% total bonus chance."
+		"DOTA_Tooltip_modifier_obsidian_rapier_active"          "Earth's True Power"
+		"DOTA_Tooltip_modifier_obsidian_rapier_active_Description" "Increase"
 
+		"DOTA_Tooltip_modifier_obsidian_rapier_shard_debuff"    "Armor Sharding"
+		"DOTA_Tooltip_modifier_obsidian_rapier_shard_debuff_Description" "Reducing 25 percent of armor (%dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS%)"
 
-
-		"DOTA_Tooltip_modifier_xp_booster_consumed"                    "XP Booster Consumed"
-		"DOTA_Tooltip_modifier_xp_booster_consumed_Description"        "You have Gain the following base stats : %dMODIFIER_PROPERTY_TOOLTIP% Intelligence and %dMODIFIER_PROPERTY_TOOLTIP2% Agility & Strength"
-
-		"DOTA_Tooltip_modifier_xp_booster_cdr"                         "XP Booster CDR"
-		"DOTA_Tooltip_modifier_xp_booster_cdr_Description"             "Cooldowns reduced by %dMODIFIER_PROPERTY_COOLDOWN_PERCENTAGE%%%. (your level divided by 10 at the consumtion time)"		
-
+		"DOTA_Tooltip_modifier_obsidian_rapier_stun"             "Obsidian Stun"
+		"DOTA_Tooltip_modifier_obsidian_rapier_stun_Description" "Increase Physical dmg taken by 125% from Obsidian Rapier"
 		//<<<<
 "npc_dota_campfire" "Campfire"
 "npc_dota_creature_siltbreaker"										"Siltbreaker"
