@@ -90,6 +90,7 @@ local NoAutocastItem = {
     ["item_echo_wand"] = true,
     ["item_remove_ability"] = true,
     ["item_totem_upgrade"] = true,
+    ["item_xp_booster_edible"] = true,
 };
 
 local NoSelfTarget = {

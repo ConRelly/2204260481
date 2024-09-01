@@ -204,6 +204,7 @@ if IsServer() then
 		item_all_essence = true,
 		item_aegis_cast = true,
 		item_totem_upgrade = true,
+		item_xp_booster_edible = true,
 		--mjz_doom_bringer_devour = true,
 		--mjz_clinkz_soul_pact = true,
 		frostivus2018_clinkz_burning_army = true,

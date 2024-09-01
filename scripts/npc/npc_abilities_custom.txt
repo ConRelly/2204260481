@@ -32236,25 +32236,88 @@
 
 
 
-"totem_aura"
-{
-    "BaseClass"                 "ability_lua"
-    "ScriptFile"                "abilities/totem_upgrades.lua"
-    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "AbilityTextureName"        "custom_totem_aura"
-    "MaxLevel"                  "1"
-    "LearnOnSpawn"              "1"
-}
+	"totem_aura"
+	{
+	    "BaseClass"                 "ability_lua"
+	    "ScriptFile"                "abilities/totem_upgrades.lua"
+	    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityTextureName"        "custom_totem_aura"
+	    "MaxLevel"                  "1"
+	    "LearnOnSpawn"              "1"
+	}
 
-"totem_upgrade_tracker"
-{
-    "BaseClass"                 "ability_lua"
-    "ScriptFile"                "abilities/totem_upgrades.lua"
-    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-    "AbilityTextureName"        "custom_totem_aura2"
-    "MaxLevel"                  "50"
-    "IsOnCastBar"              	"1"
+	"totem_upgrade_tracker"
+	{
+	    "BaseClass"                 "ability_lua"
+	    "ScriptFile"                "abilities/totem_upgrades.lua"
+	    "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+	    "AbilityTextureName"        "custom_totem_aura2"
+	    "MaxLevel"                  "50"
+	    "IsOnCastBar"              	"1"
 
-}
+	}
+// Obsidian Rapier
+	"obsidian_rapier"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"items/obsidian_rapier"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"obsidian_rapier"
+		"MaxLevel"						"1"
+		"AbilityValues"			// copy all this to item_obsidian_rapier item values
+		{
+			"bonus_strength"			"7350"
+			"bonus_status_resist"		"40"
+			"bonus_mana"				"-9000"
+			"bonus_spell_amp"			"200"
+			"bonus_phys_dmg"			"20"
+			
+			"active_duration"			"12"
+			"active_bonus_chance"		"70"
+			
+			"obsidian_base_chance"		"7"
+			"obsidian_base_damage"
+			{
+				"value"							"50000"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"obsidian_base_str_damage"
+			{
+				"value"							"4444"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"obsidian_total_str_damage"
+			{
+				"value"							"1117"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"obsidian_spell_amp_dmg"	"17"
+			"obsidian_sphere_chance"	"12"
+			"obsidian_sphere_dmg"		"40"
+			"obsidian_shard_chance"		"17"
+			"obsidian_shard_dmg"		"75"
+			
+			"obsidian_shard_armor"		"25"
+			"obsidian_shard_duration"	"3"
+			
+			"obsidian_stun_chance"		"20"
+			"obsidian_stun_duration"	"2.7"
+			"obsidian_stun_dmg_amp"		"125"
+			
+			"obsidian_chance_threshold"	"2"
+			"obsidian_max_threshold"	"23"
+			"obsidian_dmg_threshold"	"1000"
+			
+			"up_rolling_stone_chance"	"50"
+			"up_rolling_stone_spheres"	"2"
+			"up_rolling_stone_divine"	"100"
+			"up_aftershock_triggers"	"3"
+			"up_aftershock_shards"		"2"
+		}
+	}
 
 }

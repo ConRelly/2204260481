@@ -327,6 +327,7 @@ function IsExcludeAbility(ability)
 		"item_aegis_cast",
 		"item_totem_upgrade",
 		"item_abyssal_water_blade",
+		"item_xp_booster_edible",
 -- Abilities
 		"phoenix_fire_spirits",
 		"mjz_phoenix_sun_ray",

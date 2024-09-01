@@ -25048,4 +25048,129 @@
 		"ItemDisplayCharges"			"1"		 
 	}
 
+
+//new xp item
+
+	"item_recipe_xp_booster_edible"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"10000"	
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_xp_booster_edible"
+		"ItemRequirements"
+		{
+			"01"						"item_enchanter"
+		}
+	}
+
+	"item_xp_booster_edible"
+	{
+	    "BaseClass"                     "item_lua"
+	    "ScriptFile"                    "items/item_xp_booster_edible.lua"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	    "AbilityTextureName"            "item_xp_booster_edible" 
+	    "ItemCost"                      "10000"  
+	    "ItemShopTags"                  "xp;stats"
+	    "ItemQuality"                   "epic"
+	    "ItemAliases"                   "xp booster;edible booster"
+	    "ItemPurchasable"				"1"
+	    "ItemStackable"                 "0"
+	    "ItemPermanent"                 "0"
+	    "ItemInitialCharges"            "1"
+	    "ItemDisplayCharges"            "1"
+	    "ItemRequiresCharges"           "1"
+	    "AbilityCooldown"               "5.0"
+	    "AbilityCastPoint"         		"5.0"
+	    "AbilityManaCost"               "0"
+	    
+		"AbilityValues"
+		{
+		    "bonus_xp_percent" "25"   
+		    "stat_gain_interval" "3.0"
+		    "int_gain" "1"
+		    "agi_str_gain" "2"                
+		    "cdr_time_threshold" "100"
+		}
+	}	
+
+// Obsidian Rapier
+	"item_obsidian_rapier"
+	{
+		"BaseClass"								"item_lua"
+		"ScriptFile"							"items/obsidian_rapier"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"					"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"					"obsidian_rapier"
+		"ItemPurchasable"						"0"
+		"ItemSellable"							"0"
+		"ItemKillable"							"0"
+		"ItemDroppable"							"0"
+		"ItemContributesToNetWorthWhenDropped"	"0"
+		"AllowedInBackpack"						"0"
+		"IsTempestDoubleClonable"				"0"
+		"AbilityCastPoint"						"0"
+		"AbilityCooldown"						"75"
+		"AbilityManaCost"						"0"
+		"ItemShopTags"							"stats;health;mana;speed;hard_to_tag"
+		"ItemQuality"							"artifact"
+		"ItemDeclarations"						"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"AbilityValues"			// copy all this to obsidian_rapier ability values
+		{
+			"bonus_strength"			"7350"
+			"bonus_status_resist"		"40"
+			"bonus_mana"				"-9000"
+			"bonus_spell_amp"			"200"
+			"bonus_phys_dmg"			"20"
+			
+			"active_duration"			"12"
+			"active_bonus_chance"		"70"
+			
+			"obsidian_base_chance"		"7"
+			"obsidian_base_damage"
+			{
+				"value"							"50000"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"obsidian_base_str_damage"
+			{
+				"value"							"4444"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"obsidian_total_str_damage"
+			{
+				"value"							"1117"
+				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
+				"CalculateSpellDamageTooltip"	"0"
+			}
+			"obsidian_spell_amp_dmg"	"17"
+			"obsidian_sphere_chance"	"12"
+			"obsidian_sphere_dmg"		"40"
+			"obsidian_shard_chance"		"17"
+			"obsidian_shard_dmg"		"75"
+			
+			"obsidian_shard_armor"		"25"
+			"obsidian_shard_duration"	"3"
+			
+			"obsidian_stun_chance"		"20"
+			"obsidian_stun_duration"	"2.7"
+			"obsidian_stun_dmg_amp"		"125"
+			
+			"obsidian_chance_threshold"	"2"
+			"obsidian_max_threshold"	"23"
+			"obsidian_dmg_threshold"	"1000"
+			
+			"up_rolling_stone_chance"	"50"
+			"up_rolling_stone_spheres"	"2"
+			"up_rolling_stone_divine"	"100"
+			"up_aftershock_triggers"	"3"
+			"up_aftershock_shards"		"2"
+		}
+	}
+
+
 }
