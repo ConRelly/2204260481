@@ -37,6 +37,7 @@ function CheckForStats (keys)
 		
 		if 	caster:HasModifier("modifier_fire_rapier_passive_bonus") or
 			caster:HasModifier("modifier_earth_rapier_passive_bonus") or
+			caster:HasModifier("modifier_item_obsidian_rapier") or
 			caster:HasModifier("modifier_item_imba_skadi") then
 
 			GameRules:SendCustomMessage("#Game_notification_wind_rapier_request_message1",0,0)

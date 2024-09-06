@@ -133,6 +133,7 @@ function modifier_item_imba_skadi:OnIntervalThink()
 	if not caster:HasModifier("modifier_arc_warden_tempest_double")and caster:IsRealHero() then	
 		if 	caster:HasModifier("modifier_fire_rapier_passive_bonus") or
 			caster:HasModifier("modifier_wind_rapier_passive_bonus") or
+			caster:HasModifier("modifier_item_obsidian_rapier") or
 			caster:HasModifier("modifier_earth_rapier_passive_bonus") then
 
 			GameRules:SendCustomMessage("#Game_notification_ice_rapier_request_message1",0,0)			

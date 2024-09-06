@@ -32286,13 +32286,13 @@
 			}
 			"obsidian_base_str_damage"
 			{
-				"value"							"4444"
+				"value"							"80"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"obsidian_total_str_damage"
 			{
-				"value"							"1117"
+				"value"							"20"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
 				"CalculateSpellDamageTooltip"	"0"
 			}
@@ -32305,13 +32305,13 @@
 			"obsidian_shard_armor"		"25"
 			"obsidian_shard_duration"	"3"
 			
-			"obsidian_stun_chance"		"15"
+			"obsidian_stun_chance"		"10"
 			"obsidian_stun_duration"	"2.5"
 			"obsidian_stun_dmg_amp"		"125"
 			
 			"obsidian_chance_threshold"	"1"
 			"obsidian_max_threshold"	"23"
-			"obsidian_dmg_threshold"	"20"
+			"obsidian_dmg_threshold"	"30"
 			
 			"up_rolling_stone_chance"	"50"
 			"up_rolling_stone_spheres"	"2"
@@ -32319,7 +32319,11 @@
 			"up_aftershock_triggers"	"2"
 			"up_aftershock_shards"		"2"
 			"up_giants_interval"        "1"
-			"up_giants_aoe"             "1000"			
+			"up_giants_aoe"
+			{
+				"value"              "1000"
+				"affected_by_aoe_increase"	"1"
+			}		
 		}
 	}
 

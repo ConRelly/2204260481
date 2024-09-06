@@ -13357,7 +13357,7 @@
 				"Target"			"CASTER"
 				"ModifierName"		"modifier_fire_rapier_fire_power_buff"
 			}
-		}
+		}		
 		"Modifiers"
 		{
 			"modifier_fire_rapier_passive_bonus"
@@ -13369,15 +13369,15 @@
 //				"Attributes"	 "MODIFIER_ATTRIBUTE_MULTIPLE"
 //				"EffectName" 		"particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
 //				"EffectAttachType" 	"follow_origin"
-//				"ThinkInterval"		"0.5"
-//				"OnIntervalThink"
-//				{
-//					"RunScript"
-//					{
-//						"ScriptFile"		"items/custom/item_fire_rapier.lua"
-//						"Function"			"CheckForStats"
-//					}
-//				}
+				"ThinkInterval"		"0.5"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"items/custom/item_fire_rapier.lua"
+						"Function"			"CheckForStats"
+					}
+				}
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"				"%rapier_dmg"
@@ -14591,6 +14591,7 @@
         "bonus_str" "2400"
         "block_chance_marci" "85"
         "mana_bonus" "9400"
+        "block"      "9001"
     }
 }
 
@@ -25103,7 +25104,7 @@
 		"ScriptFile"							"items/obsidian_rapier"
 		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"					"DAMAGE_TYPE_PHYSICAL"
-		"AbilityTextureName"					"obsidian_rapier"
+		"AbilityTextureName"					"obsidian_rapier_it"
 		"ItemPurchasable"						"0"
 		"ItemSellable"							"0"
 		"ItemKillable"							"0"
@@ -25137,13 +25138,13 @@
 			}
 			"obsidian_base_str_damage"
 			{
-				"value"							"7755"
+				"value"							"80"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"obsidian_total_str_damage"
 			{
-				"value"							"1700"
+				"value"							"20"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
 				"CalculateSpellDamageTooltip"	"0"
 			}
@@ -25156,13 +25157,13 @@
 			"obsidian_shard_armor"		"25"
 			"obsidian_shard_duration"	"3"
 			
-			"obsidian_stun_chance"		"15"
+			"obsidian_stun_chance"		"10"
 			"obsidian_stun_duration"	"2.5"
 			"obsidian_stun_dmg_amp"		"125"
 			
 			"obsidian_chance_threshold"	"1"
 			"obsidian_max_threshold"	"23"
-			"obsidian_dmg_threshold"	"20"
+			"obsidian_dmg_threshold"	"30"
 			
 			"up_rolling_stone_chance"	"50"
 			"up_rolling_stone_spheres"	"2"
@@ -25170,7 +25171,12 @@
 			"up_aftershock_triggers"	"2"
 			"up_aftershock_shards"		"2"
 			"up_giants_interval"        "1"
-			"up_giants_aoe"             "1000"
+			"up_giants_aoe"
+			{
+				"value"              "1000"
+				"affected_by_aoe_increase"	"1"
+			}
+
 		}
 	}
 

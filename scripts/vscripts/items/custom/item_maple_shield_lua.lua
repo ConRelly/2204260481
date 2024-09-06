@@ -72,7 +72,8 @@ function modifier_maple_shield_lua:DeclareFunctions()
 		MODIFIER_PROPERTY_EXP_RATE_BOOST,
 		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
-		MODIFIER_PROPERTY_MANA_BONUS
+		MODIFIER_PROPERTY_MANA_BONUS,
+		MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK
 	}
 end
 function modifier_maple_shield_lua:GetModifierPhysicalArmorBonus()
@@ -89,6 +90,21 @@ function modifier_maple_shield_lua:GetModifierMagicalResistanceBonus() return se
 function modifier_maple_shield_lua:GetModifierBonusStats_Strength() return self.bonus_str end
 function modifier_maple_shield_lua:GetModifierSpellAmplify_Percentage() return self.spell_amp end
 function modifier_maple_shield_lua:GetModifierManaBonus() return self.mana_bonus end
+
+function modifier_maple_shield_lua:GetModifierTotal_ConstantBlock()
+	if not IsServer() then return end
+	if self:GetAbility() then
+		local parent = self:GetParent()
+		if parent:HasModifier("modifier_obsidian_rapier") then
+			local block = self:GetAbility():GetSpecialValueFor("block")
+			if parent:HasModifier("modifier_maple_shield_lua_aura_triger") then
+				local bStr  = parent:GetBaseStrength() * 2
+				block = block + bStr
+			end
+			return block
+		end
+	end
+end
 
 function modifier_maple_shield_lua:IsAura() return HasAuraActive(self:GetCaster()) end
 function modifier_maple_shield_lua:GetModifierAura() return "modifier_maple_shield_lua_aura" end

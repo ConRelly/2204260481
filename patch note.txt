@@ -3256,14 +3256,17 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
-* Added new item in the Attributes shop section (Essence of Growth)
+* New item added to the Attributes Shop section (Essence of Growth)
+* New Request Item : Obsidian Rapier .  Created by @APpLePeN Requested by ☆ Abuleil ☆ (Earth Rapier alternative)
+* Maple's Armor has a new up effect.
+* Strength gain per level increased by at least 30 for Strength Heroes and 20 for Universal Heroes.
+* Divine Hammer's active no longer has a "turn off/toogle", cd increased to 100 sec to result in the same downtime. His Unyielding passive now keeps track of other modifying base Str bonuses (like Grow Strong, Crystal W, Ursa, etc.) and takes them into account for the 20% bonus.
+* Several skills on Pudge have been buffed.
+* Strength Limiter Potion now has a reverse effect on Pudge.
+* Lion To Hell and Back has a new bonus effect, Lion int bonus dmg for Finger of changed from 65 to 50, but now gets an extra 15 per SS stack.
+* Lion Finger of Death SS now has an extra effect. 
+* Finger of Death kill debuff will now increase in stacks instead of getting multiples of itself to avoid lag on tough enemies.
 
-* Hammer of the Divine active does not have an "turn off/toogle" anymore, cd increased to 100sec to result in same downtime. Its passive Unyielding now keeps track of other modify base str bonues (like grow strong, cristal w, ursa etc) and takes them in to account for the 20% bonus.
-* Buffed some skills on pudge
-* Strength Limiter Potion now has an reverse effect on pudge
-* Lion To hell and back has a new extra effect , Lion int bonus dmg for finger of changed to 50 from 65 but now gets extra 15 per SS stack.
-* Lion Finger of death SS now has an extra effect 
-* Finger of Death kill debuff will now increase in stacks instead getting multiple of itself avoiding lag on tugh enemyes.
 
 
 

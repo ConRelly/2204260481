@@ -20,6 +20,7 @@ function item_hammer_of_the_divine:GetAbilityTextureName()
 end
 function item_hammer_of_the_divine:OnSpellStart()
 	if IsServer() then
+		local caster = self:GetCaster()
 		--if not self:GetCaster():HasModifier("modifier_hotd_pure_divinity") then
 			EmitSoundOn("DOTA_Item.Satanic.Activate", self:GetCaster())
 			self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_hotd_pure_divinity", {duration = self:GetSpecialValueFor("active_duration")})
@@ -28,9 +29,79 @@ function item_hammer_of_the_divine:OnSpellStart()
 		--else
 		--	self:GetCaster():RemoveModifierByName("modifier_hotd_pure_divinity")
 		--end
+		if caster:HasModifier("modifier_earth_rapier_passive") then
+			CorruptEarthRapier(caster)
+		end
+
 	end
 end
+--coruption
+-- Table to track corruption progress for each caster
+if not RAPIER_CORRUPTION then
+    RAPIER_CORRUPTION = {}
+end
+function DisplaySuccess(player, message)
+    Notifications:Bottom(player, {text=message, duration=8, style={color="green"}})
+end
+-- Main function to handle corruption process
+function CorruptEarthRapier(caster)
+    local playerID = caster:GetPlayerID()
+    local player = PlayerResource:GetPlayer(playerID)
 
+    -- Check if the caster already has corruption progress
+    if not RAPIER_CORRUPTION[playerID] then
+        RAPIER_CORRUPTION[playerID] = 0  -- initialize progress
+    end
+
+    local currentProgress = RAPIER_CORRUPTION[playerID]
+    local goldCostPerStep = 5000
+    local totalCost = goldCostPerStep * 5
+
+    -- Check if the caster has the "item_earth_rapier" in the last slot (index 5)
+    local lastSlotItem = caster:GetItemInSlot(5)
+
+    if lastSlotItem and lastSlotItem:GetName() == "item_earth_rapier" then
+        -- Check if caster has enough gold for the next corruption step
+        if caster:GetGold() >= goldCostPerStep then
+            -- Spend the gold
+            caster:SpendGold(goldCostPerStep, DOTA_ModifyGold_PurchaseItem)
+
+            -- Increase corruption progress
+            RAPIER_CORRUPTION[playerID] = RAPIER_CORRUPTION[playerID] + 1
+            currentProgress = RAPIER_CORRUPTION[playerID]
+
+            -- Notify the player of their progress
+            local corruptionPercent = currentProgress * 20
+            local message = corruptionPercent .. "% of Earth Rapier is corrupted!"
+            DisplaySuccess(player, message)
+
+            -- If corruption reaches 100%, replace the item with "item_obsidian_rapier"
+            if currentProgress >= 5 then
+                -- Remove "item_earth_rapier"
+                caster:TakeItem(lastSlotItem)
+
+                -- Create the new item "item_obsidian_rapier"
+                local newItem = CreateItem("item_obsidian_rapier", caster, caster)
+                newItem:SetPurchaseTime(0)
+                newItem:SetOwner(caster)
+
+                -- Add the new item to the caster's inventory
+                caster:AddItem(newItem)
+
+                -- Reset corruption progress for this caster
+                RAPIER_CORRUPTION[playerID] = 0
+                DisplaySuccess(player, "Earth Rapier has been fully corrupted into Obsidian Rapier!")
+            end
+        else
+            -- Notify player they don't have enough gold
+            DisplaySuccess(player, "Not enough gold to corrupt Earth Rapier!")
+        end
+    else
+        -- Notify player the item is not in the last slot
+        --DisplaySuccess(player, "Earth Rapier is not in the last inventory slot!")
+    end
+end
+---
 -----------------------------------
 -- Hammer Of The Divine Modifier --
 -----------------------------------

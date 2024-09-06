@@ -171,6 +171,8 @@ function modifier_dragonborn:GetModifierTotalDamageOutgoing_Percentage(params)
     --if has certain modifier(fire or wind rapier) increase damage by 30
 	if caster:HasModifier("modifier_fire_rapier_passive_bonus") or caster:HasModifier("modifier_wind_rapier_passive_bonus") then
 		damage = damage + 30
+	elseif caster:HasModifier("modifier_item_obsidian_rapier") then
+		damage = damage +30	
 	end
 	
     if target:GetLevel() >= 89 then

@@ -20,13 +20,13 @@ function CheckForStats (keys)
 	local item = keys.ability
 	local caster = keys.caster
 	local vLocation = caster:GetAbsOrigin()
-	
-	local stats_required = item:GetSpecialValueFor("stats_required")
+	print("checkforsts")
+--[[ 	local stats_required = item:GetSpecialValueFor("stats_required")
 --	GameRules:SendCustomMessage("stats_required:"..stats_required,0,0)
 	local item_stats_sum = item:GetSpecialValueFor("rapier_str") + item:GetSpecialValueFor("rapier_agi") + item:GetSpecialValueFor("rapier_int")
 	local stats_sum = caster:GetStrength() + caster:GetAgility() + caster:GetIntellect(false)
 	local hero_stats_sum = stats_sum - item_stats_sum
-	
+	 ]]
 --	GameRules:SendCustomMessage("stats_sum:"..stats_sum,0,0)
 --	GameRules:SendCustomMessage("item_stats_sum:"..item_stats_sum,0,0)
 --	GameRules:SendCustomMessage("hero_stats_sum:"..hero_stats_sum,0,0)
@@ -34,16 +34,17 @@ function CheckForStats (keys)
 		if 	--caster:HasModifier("modifier_fire_rapier_passive_bonus") or
 			caster:HasModifier("modifier_wind_rapier_passive_bonus") or
 			caster:HasModifier("modifier_earth_rapier_passive_bonus") or
+			caster:HasModifier("modifier_item_obsidian_rapier") or
 			caster:HasModifier("modifier_item_imba_skadi") then
 
 			GameRules:SendCustomMessage("#Game_notification_fire_rapier_request_message1",0,0)
 			Timers:CreateTimer(0.001, function() caster:DropItemAtPositionImmediate(item, vLocation) end)
 		end
-		if stats_required > hero_stats_sum then
+--[[ 		if stats_required > hero_stats_sum then
 			Timers:CreateTimer(0.001, function() caster:DropItemAtPositionImmediate(item, vLocation) end)
 			GameRules:SendCustomMessage("#Game_notification_fire_rapier_request_message",0,0)
 			GameRules:SendCustomMessage("<font color='#FFD700'>NOT ENOUGH </font><font color='#FF4500'>".. stats_required-hero_stats_sum .."</font>",0,0)
-		end
+		end ]]
 	end
 end
 

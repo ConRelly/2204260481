@@ -83,13 +83,25 @@ function obsidian_rapier:OnProjectileHit_ExtraData(target, loc, ExtraData)
 		local chance_threshold = self:GetSpecialValueFor("obsidian_chance_threshold")
 		local max_threshold = self:GetSpecialValueFor("obsidian_max_threshold")
 		local dmg_threshold = self:GetSpecialValueFor("obsidian_dmg_threshold") * 1000000
-		caster.obsidianDamageStacks = caster.obsidianDamageStacks + dmgDealt
-		--print("total obsidian dmg dealt: "..caster.obsidianDamageStacks)
-		if caster.obsidianDamageStacks >= dmg_threshold then
-			caster.obsidianDamageStacks = caster.obsidianDamageStacks - dmg_threshold
-			caster.obsidianStacks = math.min(caster.obsidianStacks + chance_threshold, max_threshold)
-			caster:SetModifierStackCount(self:GetIntrinsicModifierName(), caster, caster.obsidianStacks)
-			--print("obs stacks chance: ".. caster.obsidianStacks)
+		if caster.obsidianDamageStacks then
+			if not caster.limit_reach then
+				caster.obsidianDamageStacks = caster.obsidianDamageStacks + dmgDealt
+				--print("total obsidian dmg dealt: "..caster.obsidianDamageStacks)
+				if caster.obsidianDamageStacks >= dmg_threshold then
+					caster.obsidianDamageStacks = caster.obsidianDamageStacks - dmg_threshold
+					caster.obsidianStacks = math.min(caster.obsidianStacks + chance_threshold, max_threshold)
+					caster:SetModifierStackCount(self:GetIntrinsicModifierName(), caster, caster.obsidianStacks)
+					print("obs stacks chance: ".. caster.obsidianStacks)
+					-- Increase item charges to symbolize the extra chance (caster.obsidianStacks)
+					local item = caster:FindItemInInventory("item_obsidian_rapier")
+					if item then
+						item:SetCurrentCharges(caster.obsidianStacks)
+					end	
+					if caster.obsidianStacks > 22 then
+						caster.limit_reach = true
+					end
+				end
+			end
 		end
 		if target:IsAlive() and ExtraData.stone == 1 then
 			local modif_rapier = caster:HasModifier("modifier_obsidian_rapier_active")
@@ -124,10 +136,10 @@ function obsidian_rapier:ThrowObsidianStone(target, data)
 	
 	local damage = base_damage
 	if caster.GetBaseStrength and caster:GetBaseStrength() then
-		damage = damage + (caster:GetBaseStrength() * (base_str_damage / 100))
+		damage = damage + (caster:GetBaseStrength() * base_str_damage )
 	end
 	if caster.GetStrength and caster:GetStrength() then
-		damage = damage + (caster:GetStrength() * (total_str_damage / 100))
+		damage = damage + (caster:GetStrength() * total_str_damage )
 	end
 	if caster.GetSpellAmplification and caster:GetSpellAmplification(false) then
 		damage = damage + (caster:GetSpellAmplification(false) * (spell_amp_dmg / 100))
@@ -176,10 +188,10 @@ function obsidian_rapier:ThrowObsidianSphere(target, data)
 	
 	local damage = base_damage
 	if caster.GetBaseStrength and caster:GetBaseStrength() then
-		damage = damage + (caster:GetBaseStrength() * (base_str_damage / 100))
+		damage = damage + (caster:GetBaseStrength() * base_str_damage )
 	end
 	if caster.GetStrength and caster:GetStrength() then
-		damage = damage + (caster:GetStrength() * (total_str_damage / 100))
+		damage = damage + (caster:GetStrength() * total_str_damage )
 	end
 	if caster.GetSpellAmplification and caster:GetSpellAmplification(false) then
 		damage = damage + (caster:GetSpellAmplification(false) * (spell_amp_dmg / 100))
@@ -228,10 +240,10 @@ function obsidian_rapier:ThrowObsidianShard(target, data)
 	
 	local damage = base_damage
 	if caster.GetBaseStrength and caster:GetBaseStrength() then
-		damage = damage + (caster:GetBaseStrength() * (base_str_damage / 100))
+		damage = damage + (caster:GetBaseStrength() * base_str_damage )
 	end
 	if caster.GetStrength and caster:GetStrength() then
-		damage = damage + (caster:GetStrength() * (total_str_damage / 100))
+		damage = damage + (caster:GetStrength() * total_str_damage )
 	end
 	if caster.GetSpellAmplification and caster:GetSpellAmplification(false) then
 		damage = damage + (caster:GetSpellAmplification(false) * (spell_amp_dmg / 100))
@@ -273,6 +285,7 @@ function modifier_obsidian_rapier:OnCreated()
 	local caster = self:GetCaster()
 	caster.obsidianDamageStacks = caster.obsidianDamageStacks or 0
 	caster.obsidianStacks = caster.obsidianStacks or 0
+	caster.limit_reach = caster.limit_reach or false
 	if self:GetAbility() then
 		local interval = self:GetAbility():GetSpecialValueFor("up_giants_interval")
 		self:StartIntervalThink(interval)

@@ -26,7 +26,7 @@
 	"Ability16"				"special_bonus_cdr_25"
 	"Ability17"				"special_bonus_spell_lifesteal_70"
 
-	"AttributeStrengthGain"			"19.4"
+	"AttributeStrengthGain"			"49.4"
 	"AttributeIntelligenceGain"		"7.1"
 } 
 
@@ -42,7 +42,7 @@
 	"Ability15"     "special_bonus_mp_400"
 	"Ability17"     "special_bonus_cdr_25"
 
-	"AttributeStrengthGain"			"9.2"
+	"AttributeStrengthGain"			"39.2"
 	"AttributeIntelligenceGain"		"15.7"
 }
 "npc_dota_hero_rubick"
@@ -80,7 +80,7 @@
 	"Ability14"     "special_bonus_mp_400"
 	"Ability17"		"special_bonus_cdr_20"
 
-	"AttributeStrengthGain"			"6.2"
+	"AttributeStrengthGain"			"36.2"
 	"AttributeAgilityGain"			"5.3"
 }
 "npc_dota_hero_chen"
@@ -115,8 +115,8 @@
 	"Ability16"		"special_bonus_dark_clone_duration"
 	"Ability17"		"dark_seer_custom_bonus_unique_2"
 
-	"AttributeIntelligenceGain"		"8.8"
-	"AttributeStrengthGain"			"12.1"
+	"AttributeIntelligenceGain"		"18.8"
+	"AttributeStrengthGain"			"38.1"
 }
 "npc_dota_hero_dark_willow"
 {
@@ -132,8 +132,9 @@
 	"Ability17"		"special_bonus_spell_amplify_125"
 
 	"AttackRate"					"1.4"
-	"AttributeAgilityGain"			"5.1"
+	"AttributeAgilityGain"			"15.1"
 	"AttributeIntelligenceGain"		"17.1"
+	"AttributeStrengthGain"			"35.1"
 }
 "npc_dota_hero_disruptor"
 {
@@ -195,6 +196,7 @@
 "npc_dota_hero_snapfire"
 {
 	"Ability10"					"special_bonus_cdr_25"
+	"AttributeStrengthGain"			"23.2"
 }
 "npc_dota_hero_hoodwink"
 {
@@ -238,6 +240,7 @@
 	"Ability13"     "special_bonus_unique_lone_druid_5"
 	"Ability14"		"special_bonus_unique_lone_druid_2"
 	"Ability15"		"special_bonus_attack_base_damage_3000"
+	"AttributeStrengthGain"			"22.2"
 }
 "npc_dota_hero_nevermore"
 {
@@ -274,7 +277,7 @@
 
 	"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
 	"AttackRate"					"1.5"
-	"AttributeStrengthGain"			"9.6"
+	"AttributeStrengthGain"			"39.6"
 	"AttributeIntelligenceGain"		"6.9"
 }
 "npc_dota_hero_oracle"
@@ -306,6 +309,7 @@
 	"Ability17"					"special_bonus_cdr_25"
 	"ModelScale"				"0.8"
 	"AttributeAgilityGain"			"17.8"
+	"AttributeStrengthGain"			"32.1"
 }
 "npc_dota_hero_phantom_lancer"
 {
@@ -382,7 +386,7 @@
 	"AttackRate"					"1.500000"
 	"AttackDamageMin"				"36"
 	"AttackDamageMax"				"46"
-	"AttributeStrengthGain"			"12.500000"
+	"AttributeStrengthGain"			"52.500000"
 	"AttributeBaseAgility"			"20"
 	"AttributeAgilityGain"			"5.100000"
 	"AttributeIntelligenceGain"		"7.1"
@@ -402,7 +406,7 @@
 
 	"ArmorPhysical"				"3"
 	"AttackRate"				"1.450000"
-	"AttributeStrengthGain"		"12.5"
+	"AttributeStrengthGain"		"72.5"
 		"Facets"
 		{
 
@@ -436,7 +440,7 @@
 	"Ability17"			  "special_bonus_unique_tidehunter_8"
 
 	"AttackRate"					"1.5"
-	"AttributeStrengthGain"			"7"
+	"AttributeStrengthGain"			"37"
 	"AttributeAgilityGain"			"7"
 	"AttributeIntelligenceGain"		"7"
 }
@@ -451,7 +455,7 @@
 	"AttackDamageMin"			"31"
 	"AttackDamageMax"			"35"
 	"AttributeBaseStrength"		"47"
-	"AttributeStrengthGain"		"7.9"
+	"AttributeStrengthGain"		"37.9"
 	"AttributeAgilityGain"		"4.2"
 }
 "npc_dota_vengefulspirit_new"
@@ -478,7 +482,7 @@
 	"Ability16"		"special_bonus_unique_venomancer_5"	
 	
 
-	"AttributeStrengthGain"			"7.7"
+	"AttributeStrengthGain"			"27.7"
 	"AttributeIntelligenceGain"		"6.4"
 }
 "npc_dota_hero_visage"
@@ -491,7 +495,7 @@
 	"Ability17"			"special_bonus_unique_visage_7"
 
 	"AttributeIntelligenceGain"		"7.4"
-	"AttributeStrengthGain"			"6.7"
+	"AttributeStrengthGain"			"26.7"
 	"AttributeAgilityGain"			"6.5"
 }
 "npc_dota_hero_warlock"
@@ -571,7 +575,7 @@
 		"AttackRate"				"1.400000"
 		"ArmorPhysical"				"10"
 		"AttributeAgilityGain"		"7.2"
-		"AttributeStrengthGain"		"22.4"
+		"AttributeStrengthGain"		"52.4"
 	}	
 	"npc_dota_hero_faceless_void_mjz"			// 虚空假面
 	{
@@ -594,7 +598,7 @@
 		"Ability17"				"special_bonus_unique_mjz_faceless_the_world_radius"
 
 		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeStrengthGain"			"4.900000"
+		"AttributeStrengthGain"			"44.900000"
 		"AttributeAgilityGain"			"9.700000"
 		"AttributeIntelligenceGain"		"5.300000"
 		"AttackRate"					"1.300000"
@@ -618,7 +622,7 @@
 		"Ability16"			"special_bonus_unique_mjz_life_stealer_feast_strength"
 		"Ability17"         "special_bonus_unique_lifestealer_rage"
 
-		"AttributeStrengthGain"		"11"
+		"AttributeStrengthGain"		"51"
 		"AttributeAgilityGain"		"5.5"
 		"AttackAnimationPoint"		"0.200000"
 		"AttackRate"				"1.4"
@@ -690,7 +694,7 @@
 		"Ability17"				"special_bonus_attack_speed_200"
 
 		"AttackRate"				"1.4"
-		"AttributeStrengthGain"		"17.5"
+		"AttributeStrengthGain"		"57.5"
 	}
 
 	//=================================================================================================================
@@ -756,7 +760,7 @@
 		"Ability14"		"special_bonus_unique_es_aftershock_str_multiplier"
 		"Ability16"		"special_bonus_unique_es_aftershock_range"
 
-		"AttributeStrengthGain"			"14.9"
+		"AttributeStrengthGain"			"54.9"
 		"AttributeIntelligenceGain"		"7.4"
 		//"Facets"		""
 	}
@@ -780,7 +784,7 @@
 		"Ability15"				"special_bonus_mp_400"
 		"Ability16"             "special_bonus_cdr_25"
 
-		"AttributeStrengthGain"			"13.2"
+		"AttributeStrengthGain"			"73.2"
 		"AttributeAgilityGain"			"5.4"
 		"AttributeIntelligenceGain"		"6.8"
 		"AttackRate"					"1.2"
@@ -806,7 +810,7 @@
 		"Ability17"				"special_bonus_cdr_30"
 		//"Ability17"				"special_bonus_all_stats_20"
 
-		"AttributeStrengthGain"		"7.4000000"
+		"AttributeStrengthGain"		"87.4000000"
 		"AttributeAgilityGain"		"4.00000"
 		"MovementSpeed"				"340"
 	}
@@ -818,6 +822,7 @@
 		"override_hero"			"npc_dota_hero_lycan"
 
 		"Ability5"				"mjz_lycan_shapeshift_relieve"
+		"AttributeStrengthGain"			"42.1"
 	}
 
 	//=================================================================================================================
@@ -835,7 +840,7 @@
 		"Ability16"				"special_bonus_reincarnation_90"
 		"Ability17"				"special_bonus_cdr_25"
 
-		"AttributeStrengthGain"		"7.800000"
+		"AttributeStrengthGain"		"37.800000"
 
 	}
 
@@ -862,7 +867,7 @@
 		"AttackRate"				"1.4"
 		"ArmorPhysical"				"15"
 		"AttackAnimationPoint"		"0.200000"
-		"AttributeStrengthGain"		"11.900000"
+		"AttributeStrengthGain"		"71.900000"
 	}
 
 	//=================================================================================================================
@@ -928,7 +933,7 @@
 		"Ability16"				"special_bonus_unique_brewmaster_6"
 		
 		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeStrengthGain"			"9.8"
+		"AttributeStrengthGain"			"39.8"
 		"AttributeIntelligenceGain"		"5.5"
 	}
 
@@ -1017,7 +1022,7 @@
 		"Ability17"				"special_bonus_truestrike"
 
 		"AttributeAgilityGain"		"4.800000"
-		"AttributeStrengthGain"		"9.4"
+		"AttributeStrengthGain"		"49.4"
 		"AttackRate"				"1.5"
 	}
 
@@ -1085,7 +1090,7 @@
 		"Ability17"				"special_bonus_spell_lifesteal_70"
 
 		"AttackRate"					"1.5"
-		"AttributeStrengthGain"			"9.6"
+		"AttributeStrengthGain"			"29.6"
 		"AttributeAgilityGain"			"9.2"
 		"AttributeIntelligenceGain"		"9.4"
 	}
@@ -1103,9 +1108,9 @@
 		"Ability21"				"special_bonus_8_crit_2750"
 		"Ability22"             "special_bonus_mp_regen_500"
 
-		"AttributeIntelligenceGain"		"25.000000"
-		"AttributeStrengthGain"			"25.000000"
-		"AttributeAgilityGain"			"25.000000"
+		"AttributeIntelligenceGain"		"50.000000"
+		"AttributeStrengthGain"			"50.000000"
+		"AttributeAgilityGain"			"50.000000"
 		"AttackRange"					"800"
 		"AttackRate"					"1.3"
 	}
@@ -1132,6 +1137,7 @@
 		"AttackDamageMin"		"40"
 		"AttackDamageMax"		"56"
 		"AttackRate"			"1.5"
+		"AttributeStrengthGain"			"31.1"
 	}
 
 	
@@ -1210,7 +1216,7 @@
 		"AttackRate"					"1.4"
 		"AttributeAgilityGain"			"6.2"
 		"AttributeIntelligenceGain"		"7.4"
-		"AttributeStrengthGain"			"15.6"
+		"AttributeStrengthGain"			"45.6"
 	}
 	
 	//=================================================================================================================
@@ -1230,8 +1236,9 @@
 		"Ability16"				"special_bonus_attack_range_300"
 		"Ability17"				"special_bonus_unique_mirana_2"
 
-		"AttributeAgilityGain"			"12.7"
-		"AttributeIntelligenceGain"		"5.8"
+		"AttributeAgilityGain"			"32.7"
+		"AttributeIntelligenceGain"		"25.8"
+		"AttributeStrengthGain"			"42.1"
 	}
 	//=================================================================================================================
 	"npc_dota_hero_drow_ranger"
@@ -1299,7 +1306,7 @@
 		"Ability17"		"rattletrap_custom_bonus_unique_1"
 
 		"AttributeAgilityGain"		"4.3"
-		"AttributeStrengthGain"		"17.6"
+		"AttributeStrengthGain"		"47.6"
 	}
 	
 	//=================================================================================================================
@@ -1362,7 +1369,7 @@
 
 		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeAgilityGain"		"6.7"
-		"AttributeStrengthGain"		"12.9"
+		"AttributeStrengthGain"		"62.9"
 		"AttackRate"				"1.5"
 	}
 	
@@ -1450,7 +1457,7 @@
 		"Ability17"				"special_bonus_magic_resistance_40"
 
 		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeStrengthGain"		"9.2"
+		"AttributeStrengthGain"		"39.2"
 		"AttributeAgilityGain"		"7.1"
 		"AttackRate"				"1.5"
 	}
@@ -1472,7 +1479,7 @@
 		"Ability16"				"special_bonus_unique_mjz_legion_commander_duel_damage"
 		"Ability17"				"special_bonus_4_crit_5420"
 
-		"AttributeStrengthGain"		"9.5"
+		"AttributeStrengthGain"		"49.5"
 		"AttributeAgilityGain"		"6.1"
 		"AttackRate"				"1.5"
 		"AttackAnimationPoint"		"0.23"
@@ -1500,6 +1507,7 @@
 		"Ability17"				"special_bonus_cdr_40"
 
 		"AttackRate"			"1.5"
+		"AttributeStrengthGain"	"47.0"
 	}
 
 	//=================================================================================================================
@@ -1520,7 +1528,7 @@
 		"Ability15"             "special_bonus_unique_slardar_corrosive_haze"
 		"Ability16"				"special_bonus_unique_mjz_slardar_slithereen_crush_strength"
 
-		"AttributeStrengthGain"		"18.6"
+		"AttributeStrengthGain"		"48.6"
 		"AttributeAgilityGain"		"5.5"
 		"AttackRate"				"1.5"
 	}
@@ -1542,7 +1550,8 @@
 		"Ability26"					"mjz_invoker_cataclysm"
 		"Ability27"                 "rubick_might_and_magus"
 
-		"AttributeIntelligenceGain"		"19.500000"
+		"AttributeIntelligenceGain"		"49.500000"
+		"AttributeStrengthGain"			"32.2"
 	}
 	
 	//=================================================================================================================
@@ -1563,7 +1572,7 @@
 		"Ability16"				"special_bonus_unique_mjz_sandking_epicenter_pulses"
 		"Ability17"				"special_bonus_unique_sand_king_101"
 
-		"AttributeStrengthGain"			"11.6"
+		"AttributeStrengthGain"			"61.6"
 		"AttributeAgilityGain"			"4.2"
 		"AttributeIntelligenceGain"		"7.1"
 	}
@@ -1585,7 +1594,7 @@
 		"Ability16"				"special_bonus_unique_mjz_shredder_whirling_death_strength"
 		"Ability17"				"special_bonus_cdr_40"
 
-		"AttributeStrengthGain"			"16.900000"
+		"AttributeStrengthGain"			"66.900000"
 		"AttributeIntelligenceGain"		"6.300000"
 	}
 	
@@ -1606,7 +1615,7 @@
 		"Ability16"				"special_bonus_spell_amplify_100"
 
 		"AttackRate"                    "1.4"
-		"AttributeStrengthGain"			"7.7"
+		"AttributeStrengthGain"			"77.7"
 		"AttributeAgilityGain"			"7.7"
 		"AttributeIntelligenceGain"		"7.7"
 	}
@@ -1629,9 +1638,9 @@
 		"Ability16"             "special_bonus_magic_resistance_40"
 		"Ability17"				"special_bonus_cdr_25"
 
-		"AttributeAgilityGain"			"6.2"
-		"AttributeIntelligenceGain"		"7.4"
-		"AttributeStrengthGain"			"5.6"
+		"AttributeAgilityGain"			"36.2"
+		"AttributeIntelligenceGain"		"27.4"
+		"AttributeStrengthGain"			"35.6"
 	}
 	
 	//=================================================================================================================
@@ -1650,7 +1659,7 @@
 		"Ability16"				"special_bonus_attack_speed_200"
 
 		"AttributeStrengthGain"			"6.6"
-		"AttributeIntelligenceGain"		"13.1"
+		"AttributeIntelligenceGain"		"33.1"
 	}
 	
 	//=================================================================================================================
@@ -1666,7 +1675,7 @@
 		"Ability13"				"special_bonus_mp_800"
 		"Ability16"				"special_bonus_unique_mjz_elder_titan_earth_splitter_strength"
 
-		"AttributeStrengthGain"		"12.3"
+		"AttributeStrengthGain"		"42.3"
 		"AttributeAgilityGain"		"6.1"
 	}
 	
@@ -1684,7 +1693,7 @@
 		"Ability15"				"special_bonus_attack_damage_100"
 		"Ability16"				"special_bonus_cdr_25"
 
-		"AttributeIntelligenceGain"		"9.5"
+		"AttributeIntelligenceGain"		"19.5"
 	}
 	//=================================================================================================================
 	"npc_dota_hero_crystal_maiden_mjz"			// 水晶室女  冰女
@@ -1703,8 +1712,8 @@
 		"Ability17"				"special_bonus_spell_amplify_125"
 
 		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeIntelligenceGain"		"8.8"
-		"AttributeStrengthGain"			"11.1"
+		"AttributeIntelligenceGain"		"18.8"
+		"AttributeStrengthGain"			"41.1"
 	}
 	
 	//=================================================================================================================
@@ -1728,7 +1737,7 @@
 		"Ability16"         "special_bonus_unique_wisp_9"
 		"Ability17"			"special_bonus_attack_damage_120"
 
-		"AttributeStrengthGain"  "9"
+		"AttributeStrengthGain"  "39"
 	}
 	
 	//=================================================================================================================
@@ -1745,7 +1754,7 @@
 		"Ability15"				"special_bonus_unique_magnus"
 		"Ability17"				"special_bonus_spell_amplify_100"
 
-		"AttributeStrengthGain"		"39.6"
+		"AttributeStrengthGain"		"89.6"
 		"AttributeAgilityGain"		"4.9"
 		"AttackRate"                "1.4"
 	}
@@ -1766,7 +1775,7 @@
 		"Ability15"             "special_bonus_truestrike"
 		"Ability16"				"special_bonus_spell_amplify_100"
 
-		"AttributeStrengthGain"			"5.900000"
+		"AttributeStrengthGain"			"45.900000"
 		"AttributeAgilityGain"			"4.700000"
 		"AttributeIntelligenceGain"		"3.300000"
 	}
@@ -1788,9 +1797,10 @@
 		"Ability16"				"special_bonus_unique_mjz_broodmother_insatiable_hunger"
 		"Ability17"				"special_bonus_spell_amplify_100"
 
-		"AttributeAgilityGain"		"8.3"
+		"AttributeAgilityGain"		"38.3"
 		"MagicalResistance"			"50"
 		"AttackRate"				"1.5"
+		"AttributeStrengthGain"			"36.1"
 	}
 	
 	"npc_dota_hero_centaur_mjz"			// 半人马
@@ -1807,7 +1817,7 @@
 		"Ability16"				"special_bonus_unique_mjz_centaur_return_aura"
 		"Ability17"				"special_bonus_unique_mjz_centaur_double_edge_strength"
 
-		"AttributeStrengthGain"		"14.5"
+		"AttributeStrengthGain"		"94.5"
 	}
 
 	"npc_dota_hero_clinkz_mjz"
@@ -1847,8 +1857,9 @@
 		"Ability16"             "special_bonus_spell_amplify_125"
 		"Ability17"				"special_bonus_unique_enigma_100"
 
-		"AttributeIntelligenceGain"		"7.7"
+		"AttributeIntelligenceGain"		"14.7"
 		"MagicalResistance"				"45"
+		"AttributeStrengthGain"			"28.1"
 	}
 	
 	"npc_dota_hero_leshrac_mjz"			// 拉席克
@@ -1869,8 +1880,8 @@
 		"Ability16"			"special_bonus_unique_mjz_leshrac_lightning_storm_aghanim"
 		"Ability17"			"special_bonus_unique_mjz_leshrac_lightning_storm_int_damage"
 
-		"AttributeStrengthGain"			"6.2"
-		"AttributeIntelligenceGain"		"9.7"
+		"AttributeStrengthGain"			"8.2"
+		"AttributeIntelligenceGain"		"18.7"
 		"MagicalResistance"				"45"
 	}
 	
@@ -1887,7 +1898,7 @@
 		"Ability15"             "special_bonus_unique_mars_rebuke_cooldown"
 		"Ability17"				"special_bonus_magic_resistance_40"
 
-		"AttributeStrengthGain"			"11.1"
+		"AttributeStrengthGain"			"41.1"
 		"AttributeIntelligenceGain"		"6.2"
 	}
 
@@ -1924,11 +1935,11 @@
 		"ProjectileSpeed"			"0"
 		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength"		"43"
-		"AttributeStrengthGain"		"17.300000"
+		"AttributeStrengthGain"		"87.300000"
 		"AttributeBaseIntelligence"	"19"
-		"AttributeIntelligenceGain"	"9.900000"
+		"AttributeIntelligenceGain"	"29.900000"
 		"AttributeBaseAgility"		"20"
-		"AttributeAgilityGain"		"12.40000"
+		"AttributeAgilityGain"		"42.40000"
 		"StatusManaRegen"			"0.5"
 		"MovementSpeed"				"390"
 		"MovementTurnRate"			"0.900000"
@@ -1992,7 +2003,7 @@
 		"Ability17"				"special_bonus_unique_mjz_night_stalker_darkness_damage"
 		
 		"AttackRate"				"1.450000"
-		"AttributeStrengthGain"		"18.700000"
+		"AttributeStrengthGain"		"48.700000"
 		"AttributeAgilityGain"		"4.30000"
 	}
 	"npc_dota_hero_phantom_assassin_mjz"
@@ -2018,7 +2029,7 @@
 		"AttackDamageMax"				"39"
 		"AttributeIntelligenceGain"		"7.200000"
 		"AttackRate"					"1.3"
-		"AttributeAgilityGain"			"9.4"
+		"AttributeAgilityGain"			"29.4"
 		"MovementTurnRate"				"0.900000"
 		"StatusHealthRegen"				"1.25"
 		"MovementSpeed"					"325"
@@ -2042,7 +2053,7 @@
 		"Ability15"			"special_bonus_magic_resistance_40"
 
 		"AttributeIntelligenceGain"		"8.7"
-		"AttributeStrengthGain"			"7.4"
+		"AttributeStrengthGain"			"27.4"
 	}
 	
 	//=================================================================================================================
@@ -2066,7 +2077,7 @@
 		"Ability16"				"special_bonus_unique_mjz_pudge_dismember_strength_damage"
 		"Ability17"				"special_bonus_unique_mjz_pudge_0302"
 
-		"AttributeStrengthGain"		"22.500000"
+		"AttributeStrengthGain"		"82.500000"
 		"StatusHealthRegen"			"1.25"
 		"ArmorPhysical"				"-1"
 		"MagicalResistance"			"30"
@@ -2081,7 +2092,7 @@
 		"Ability14"				"special_bonus_strength_260"
 		"Ability17"				"special_bonus_cleave_100"
 
-		"AttributeStrengthGain"		"12.900000"
+		"AttributeStrengthGain"		"62.900000"
 		"AttributeAgilityGain"		"5.700000"
 	}
 
@@ -2168,7 +2179,7 @@
 		"Ability14"				"special_bonus_hp_4000"
 
 		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeStrengthGain"			"9.900000"
+		"AttributeStrengthGain"			"79.900000"
 		"AttributeAgilityGain"			"5.700000"
 		"AttributeIntelligenceGain"		"3.300000"
 		"AttackRate"                    "1.4"
@@ -2210,7 +2221,7 @@
 		"Ability15"				"special_bonus_hp_6000"
 		"Ability16"				"special_bonus_truestrike"
 
-		"AttributeAgilityGain"		"8.8"
+		"AttributeAgilityGain"		"120.8"
 	}
 	
 	"npc_dota_hero_windrunner"
@@ -2229,6 +2240,7 @@
 		"Ability15"				"special_bonus_truestrike"
 		"Ability16"				"special_bonus_attack_base_damage_200"
 		"Ability17"				"special_bonus_9_crit_2150"
+		"AttributeStrengthGain"			"33.5"
 	}
 
 	"npc_dota_hero_zuus_mjz"			// 宙斯
@@ -2250,7 +2262,7 @@
 		"Ability15"				"special_bonus_mp_1000"
 		"Ability16"				"special_bonus_spell_amplify_100"
 		"Ability17"   			"special_bonus_unique_zeus_2"         
-		"AttributeIntelligenceGain"		"8.5"
+		"AttributeIntelligenceGain"		"28.5"
 	}
 	
 	"npc_dota_hero_omniknight_mjz"
@@ -2273,7 +2285,7 @@
 		"Ability16"			"special_bonus_omniknight_purifiception_heal"
 		"Ability13"			"special_bonus_omniknight_ga_cd"
 
-		"AttributeStrengthGain"		"8.1"
+		"AttributeStrengthGain"		"58.1"
 	}
 	"npc_dota_hero_puck_mjz"
 	{
@@ -2308,7 +2320,7 @@
 		"Ability16"             "special_bonus_spell_amplify_100"
 		"Ability17"				"special_bonus_spell_block_18"
 
-		"AttributeIntelligenceGain"		"9.600000"
+		"AttributeIntelligenceGain"		"19.600000"
 	}
 	"npc_dota_hero_techies"
 	{
@@ -2326,6 +2338,7 @@
 		"Ability17"		"special_bonus_gold_income_300"
 
 		"AttributeIntelligenceGain"		"28.3"
+		"AttributeStrengthGain"			"33.1"
 	}
 	"npc_dota_hero_tinker_mjz"
 	{
@@ -2359,7 +2372,8 @@
 		"Ability13"			"special_bonus_unique_void_spirit_3"
 		"Ability16"			"special_bonus_spell_amplify_100"
 		"Ability17"			"special_bonus_unique_void_spirit_4"
-		"AttributeIntelligenceGain"			"24.7"
+		"AttributeIntelligenceGain"			"44.7"
+		"AttributeStrengthGain"			"42.1"
 	}
 	"npc_dota_hero_winter_wyvern_mjz"
 	{
@@ -2374,8 +2388,9 @@
 		"Ability16"			"special_bonus_unique_winter_wyvern_endless_01"
 		"Ability17"			"special_bonus_attack_speed_250"
 
-		"AttributeIntelligenceGain"		"9.1"
-		"AttributeAgilityGain"			"4.7"
+		"AttributeIntelligenceGain"		"19.1"
+		"AttributeStrengthGain"			"32.1"
+		"AttributeAgilityGain"			"24.7"
 		"AttackRate"                    "1.4"
 		"AttackRange"                   "725"
 	}
@@ -2438,11 +2453,11 @@
 		}
 		"AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength"		"46"
-		"AttributeStrengthGain"		"11.80000"
+		"AttributeStrengthGain"		"51.80000"
 		"AttributeBaseAgility"		"20"
-		"AttributeAgilityGain"		"6.400000"
+		"AttributeAgilityGain"		"16.400000"
 		"AttributeBaseIntelligence"		"20"
-		"AttributeIntelligenceGain"		"8.200000"
+		"AttributeIntelligenceGain"		"14.200000"
 		"HasAggressiveStance"		"1"
 		"MovementSpeed"		"345"
 		"MovementTurnRate"		"0.600000"
@@ -2492,11 +2507,11 @@
 		"ProjectileSpeed"				"1200"
 		"AttributePrimary"				"DOTA_ATTRIBUTE_INTELLECT"
 		"AttributeBaseStrength"			"18"
-		"AttributeStrengthGain"			"4.50000"
+		"AttributeStrengthGain"			"34.50000"
 		"AttributeBaseIntelligence"		"25"
-		"AttributeIntelligenceGain"		"8.700000"
+		"AttributeIntelligenceGain"		"13.700000"
 		"AttributeBaseAgility"			"21"
-		"AttributeAgilityGain"			"3.700000"
+		"AttributeAgilityGain"			"13.700000"
 		"MovementSpeed"					"325"
 		"MovementTurnRate"				"0.700000"
 		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
@@ -2599,7 +2614,7 @@
 		"AttackRange"					"250"
 		"AttributePrimary"				"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength"			"32"
-		"AttributeStrengthGain"			"29.400000"
+		"AttributeStrengthGain"			"59.400000"
 		"AttributeBaseAgility"			"17"
 		"AttributeAgilityGain"			"5.400000"
 		"AttributeBaseIntelligence"		"20"
@@ -2708,7 +2723,7 @@
 		}
 		"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
 		"AttributeBaseStrength"		"26"
-		"AttributeStrengthGain"		"34.300000"
+		"AttributeStrengthGain"		"94.300000"
 		"AttributeBaseIntelligence"	"16"
 		"AttributeIntelligenceGain"	"9.400000"
 		"AttributeBaseAgility"		"15"
@@ -2762,9 +2777,9 @@
 		"AttributeBaseStrength"		"19"
 		"AttributeStrengthGain"		"7.000000"
 		"AttributeBaseIntelligence"		"24"
-		"AttributeIntelligenceGain"		"14.300000"
+		"AttributeIntelligenceGain"		"34.300000"
 		"AttributeBaseAgility"		"22"
-		"AttributeAgilityGain"		"9.000000"
+		"AttributeAgilityGain"		"29.000000"
 		"MovementSpeed"		"365"
 		"MovementTurnRate"		"0.700000"
 
