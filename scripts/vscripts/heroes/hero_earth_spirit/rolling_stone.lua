@@ -110,7 +110,7 @@ function modifier_rolling_stone_buff:OnCreated()
 		local caster = self:GetCaster()
 		local tick_rate = 1
 --		EmitSoundOn("Hero_EarthSpirit.RollingBoulder.Loop", caster)
-		caster:EmitSoundParams("Hero_EarthSpirit.RollingBoulder.Loop", 1, 0.5, 0)
+		--caster:EmitSoundParams("Hero_EarthSpirit.RollingBoulder.Loop", 1, 0.5, 0)
 
 		self.particle = ParticleManager:CreateParticle("particles/units/heroes/hero_earth_spirit/espirit_rollingboulder.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 		ParticleManager:SetParticleControlEnt(self.particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
@@ -122,8 +122,8 @@ function modifier_rolling_stone_buff:OnCreated()
 end
 
 function modifier_rolling_stone_buff:OnDestroy()
-	StopSoundOn("Hero_EarthSpirit.RollingBoulder.Loop", self:GetCaster())
-	StopSoundEvent("Hero_EarthSpirit.RollingBoulder.Loop", self:GetCaster())
+	--StopSoundOn("Hero_EarthSpirit.RollingBoulder.Loop", self:GetCaster())
+	--StopSoundEvent("Hero_EarthSpirit.RollingBoulder.Loop", self:GetCaster())
 	if self.particle then
 		ParticleManager:DestroyParticle(self.particle, true)
 		ParticleManager:ReleaseParticleIndex(self.particle)

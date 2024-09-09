@@ -124,9 +124,10 @@ function obsidian_rapier:ThrowObsidianStone(target, data)
 	if not IsServer() then return end
 	local caster = self:GetCaster()
 	local data = data or {}
-	local base_damage = data.base_damage or self:GetSpecialValueFor("obsidian_base_damage")
+	local lvl = caster:GetLevel()
+	local base_damage = data.base_damage or self:GetSpecialValueFor("obsidian_base_damage") * lvl
 -- Divine Growth
-	local base_str_damage = data.base_str_damage or self:GetSpecialValueFor("obsidian_base_str_damage")
+	local base_str_damage = data.base_str_damage or self:GetSpecialValueFor("obsidian_base_str_damage") * lvl 
 	local total_str_damage = data.total_str_damage or self:GetSpecialValueFor("obsidian_total_str_damage")
 	if caster:HasModifier("modifier_rolling_stone_buff") then
 		base_str_damage = base_str_damage * (1 + (self:GetSpecialValueFor("up_rolling_stone_divine") / 100))
@@ -143,9 +144,11 @@ function obsidian_rapier:ThrowObsidianStone(target, data)
 	end
 	if caster.GetSpellAmplification and caster:GetSpellAmplification(false) then
 		damage = damage + (caster:GetSpellAmplification(false) * (spell_amp_dmg / 100))
-	end
+	end	
 	damage = damage * (data.total_damage or 1)
-	
+
+    -- Apply the giants_ring_multiplier if it exists
+
 	local stun_chance = data.stun_chance or self:GetSpecialValueFor("obsidian_stun_chance")
 	local stun_duration = data.stun_duration or self:GetSpecialValueFor("obsidian_stun_duration")
 	local stun_dmg_amp = data.stun_dmg_amp or self:GetSpecialValueFor("obsidian_stun_dmg_amp")
@@ -174,9 +177,10 @@ function obsidian_rapier:ThrowObsidianSphere(target, data)
 	if not IsServer() then return end
 	local caster = self:GetCaster()
 	local data = data or {}
-	local base_damage = data.base_damage or self:GetSpecialValueFor("obsidian_base_damage")
+	local lvl = caster:GetLevel()
+	local base_damage = data.base_damage or self:GetSpecialValueFor("obsidian_base_damage") * lvl
 -- Divine Growth
-	local base_str_damage = data.base_str_damage or self:GetSpecialValueFor("obsidian_base_str_damage")
+	local base_str_damage = data.base_str_damage or self:GetSpecialValueFor("obsidian_base_str_damage") * lvl 
 	local total_str_damage = data.total_str_damage or self:GetSpecialValueFor("obsidian_total_str_damage")
 	local spell_amp_dmg = data.spell_amp_dmg or self:GetSpecialValueFor("obsidian_spell_amp_dmg")
 	if caster:HasModifier("modifier_rolling_stone_buff") then
@@ -226,9 +230,10 @@ function obsidian_rapier:ThrowObsidianShard(target, data)
 	if not IsServer() then return end
 	local caster = self:GetCaster()
 	local data = data or {}
-	local base_damage = data.base_damage or self:GetSpecialValueFor("obsidian_base_damage")
+	local lvl = caster:GetLevel()
+	local base_damage = data.base_damage or self:GetSpecialValueFor("obsidian_base_damage") * lvl
 -- Divine Growth
-	local base_str_damage = data.base_str_damage or self:GetSpecialValueFor("obsidian_base_str_damage")
+	local base_str_damage = data.base_str_damage or self:GetSpecialValueFor("obsidian_base_str_damage") * lvl 
 	local total_str_damage = data.total_str_damage or self:GetSpecialValueFor("obsidian_total_str_damage")
 	local spell_amp_dmg = data.spell_amp_dmg or self:GetSpecialValueFor("obsidian_spell_amp_dmg")
 	if caster:HasModifier("modifier_rolling_stone_buff") then
@@ -249,7 +254,7 @@ function obsidian_rapier:ThrowObsidianShard(target, data)
 		damage = damage + (caster:GetSpellAmplification(false) * (spell_amp_dmg / 100))
 	end
 	damage = damage * (data.total_damage or 1) * (shard_dmg / 100)
-	
+
 	local stun_chance = data.stun_chance or self:GetSpecialValueFor("obsidian_stun_chance")
 	local stun_duration = data.stun_duration or self:GetSpecialValueFor("obsidian_stun_duration")
 	local stun_dmg_amp = data.stun_dmg_amp or self:GetSpecialValueFor("obsidian_stun_dmg_amp")
@@ -347,7 +352,9 @@ function modifier_obsidian_rapier:OnIntervalThink()
 	if self:GetAbility() then
 		-- Check if the caster has the "modifier_item_giants_ring" modifier
 		if caster:HasModifier("modifier_item_giants_ring") then
-			local ring_aoe = self:GetAbility():GetSpecialValueFor("up_giants_aoe")
+			local ability = self:GetAbility()
+			local ring_aoe = ability:GetSpecialValueFor("up_giants_aoe")
+			local mult = ability:GetSpecialValueFor("up_giants_mult")
 			-- Find all enemy units within a 1000 range
 			local enemies = FindUnitsInRadius(
 				caster:GetTeamNumber(),
@@ -363,7 +370,7 @@ function modifier_obsidian_rapier:OnIntervalThink()
 
 			-- Throw obsidian at each enemy
 			for i = 1, #enemies do
-				self:GetAbility():ThrowObsidianStone(enemies[i])
+				ability:ThrowObsidianStone(enemies[i],{total_damage = mult})
 			end
 		end
 	end

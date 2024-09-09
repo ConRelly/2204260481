@@ -16509,6 +16509,7 @@
 		"AbilityValues"
         {
             "return_damage" "35 168 380 540 920 1650 3380"
+            "return_damage_hp" "1 1 1 1 1 1 2"
             "strength_pct"
             {
                 "value" "90 170 255 380 740 950 1550"
@@ -30128,7 +30129,7 @@
 		"LevelsBetweenUpgrades"			"8"
 		"AbilityUpgradeGoldCost"		"0 0 0 0 0 0 25000"
 		"AbilityCharges"				"2 2 2 2 2 3 5"
-		"AbilityChargeRestoreTime"		"17 16 15 14 12 10 8"
+		"AbilityChargeRestoreTime"		"17 16 15 14 12 10 6"
 		"HasScepterUpgrade"				"1"
 		"HasShardUpgrade"				"1"
 		"AbilitySound"					"Hero_VoidSpirit.AstralStep.Start"
@@ -30149,16 +30150,16 @@
 			"pop_damage_delay"		"0.3"
 			"pop_damage"
 			{
-				"value"				"1500 3500 7000 15000 35000 95000 175000"
+				"value"				"3500 7000 15000 35000 95000 175000 860000"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"attack_speed_multi"	"1"
 			"movement_slow_pct"		"10 20 30 40 50 60 70"
 			"cost_upgrade"			"25000"
 			"hidden_ones_duration"	"0.5"
-			"pt_base_attack"		"120"
+			"pt_base_attack"		"250"
 			"shard_as"				"25"
-			"mana_cost_scepter"		"10"
+			"mana_cost_scepter"		"7"
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -32280,19 +32281,19 @@
 			"obsidian_base_chance"		"7"
 			"obsidian_base_damage"
 			{
-				"value"							"50000"
+				"value"							"5000"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"obsidian_base_str_damage"
 			{
-				"value"							"80"
+				"value"							"3"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"obsidian_total_str_damage"
 			{
-				"value"							"20"
+				"value"							"40"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
 				"CalculateSpellDamageTooltip"	"0"
 			}
@@ -32318,10 +32319,12 @@
 			"up_rolling_stone_divine"	"100"
 			"up_aftershock_triggers"	"2"
 			"up_aftershock_shards"		"2"
+			"up_aftershock_mult"        "10"
 			"up_giants_interval"        "1"
+			"up_giants_mult"            "5"
 			"up_giants_aoe"
 			{
-				"value"              "1000"
+				"value"              "1200"
 				"affected_by_aoe_increase"	"1"
 			}		
 		}

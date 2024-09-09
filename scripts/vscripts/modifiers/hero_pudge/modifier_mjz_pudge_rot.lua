@@ -94,7 +94,7 @@ if IsServer() then
 		local health_damage_pct = GetTalentSpecialValueFor(ability, "health_damage_pct" )
 		local rot_damage = base_damage + caster:GetMaxHealth() * (health_damage_pct / 100.0)
 
-		local flDamagePerTick = math.ceil((self.rot_tick * rot_damage) / 20)
+		local flDamagePerTick = math.ceil((self.rot_tick * rot_damage) / 60)
 
 		if caster:IsAlive() then
 			local damage = {

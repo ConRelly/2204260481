@@ -218,12 +218,14 @@ function GetRandomAbilityName( hero )
 		"mjz_zuus_thundergods_wrath",
 		"mjz_queenofpain_sonic_wave",
 		"earthshaker_aftershock_lua",
+		"spirit_breaker_herd_mentality", --innate12
 		"earthshaker_echo_slam_lua",
 		"phantom_reflex",
 		--"mjz_slark_dark_pact",
 		"mjz_slark_essence_shift",
 		"nevermore_custom_necromastery",
 		"mjz_arc_warden_spark_wraith",
+		"venomancer_sepsis", --innate13
 		"custom_aphotic_shield",
 		--"phantom_assassin_fan_of_knives",
 		"mjz_necrolyte_heartstopper_aura",
@@ -248,6 +250,7 @@ function GetRandomAbilityName( hero )
 		"clinkz_infernal_breath",
 		"mjz_bloodseeker_thirst",
 		"custom_side_gunner",
+		"centaur_rawhide", --innate11
 		"mjz_magnataur_reverse_polarity",
 		"medusa_custom_stone_arrows",
 		"brewmaster_drunken_brawler",

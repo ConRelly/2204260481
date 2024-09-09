@@ -11490,8 +11490,8 @@
 			"impact_damage"				"1200 3240 6750"
 			"health_damage"
 			{
-				"value"							"1.0"
-				"special_bonus_unique_venomancer_4" "1.0"
+				"value"							"2.0"
+				"special_bonus_unique_venomancer_4" "2.0"
 			}
 			"debuff_radius"				"1000"
 			"movement_slow_max"			"30"
@@ -16935,8 +16935,8 @@
 			}
 			"damage"				
 			{
-				"value"	"200 300 400 700"
-				"special_bonus_unique_spirit_breaker_3" "+500"
+				"value"	"200 300 400 800"
+				"special_bonus_unique_spirit_breaker_3" "+600"
 			}
 			"duration"				"0"
 			"knockback_duration"	"0"

@@ -158,8 +158,15 @@ if IsServer() then
 		local caster_str = caster:GetStrength()
 		local str_return = GetTalentSpecialValueFor(ability, "strength_pct")
 		local damage = ability:GetSpecialValueFor("return_damage")
-	
-		local return_damage = damage + caster_str * (str_return / 100.0)
+		local hp_dmg = 0
+		if caster:HasModifier("modifier_super_scepter") then		
+			hp_dmg = ability:GetSpecialValueFor("return_damage_hp") * caster:GetMaxHealth()
+			print("str_returnA: "..str_return)
+			str_return = str_return + (talent_value(caster, "special_bonus_unique_mjz_centaur_double_edge_strength") * 2)
+			print("str_returnB: "..str_return)
+		end
+		local return_damage = damage + caster_str * (str_return / 100.0) + hp_dmg
+
 		ApplyDamage({ 
 			victim = attacker, attacker = caster, ability = ability, 
 			damage = return_damage, damage_type = ability:GetAbilityDamageType(),

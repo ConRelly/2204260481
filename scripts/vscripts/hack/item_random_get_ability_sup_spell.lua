@@ -268,6 +268,7 @@ function GetRandomAbilityName( hero )
 		"medusa_custom_stone_arrows",
 		"brewmaster_drunken_brawler",
 		"tiny_grow",
+		"centaur_rawhide", --innate11
 		"naga_siren_rip_tide",
 		"vengefulspirit_wave_of_terror_lua",
 		"vengefulspirit_wave_of_terror_lua",

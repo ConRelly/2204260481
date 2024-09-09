@@ -3269,6 +3269,18 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Replaced Pudge innate with Herd Mentality
+* Added 3 new innates to random skill pool
+* Obsidian Rapier dmg scales better with lvl and its UP's have a better multiplayer
+* Phantom Lancer and Centaur now have their innate.(pl seems to be fake basedmg)
+* Centaur Return now has a Super Scepter effect.
+* Venomancer Ult dmg and innate increased.
+* Fixed Totem using Removeitem(less stable) instead of Takeitem when finishing lvl 50 up.
+
+
+
+
+
 
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.

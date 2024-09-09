@@ -249,7 +249,7 @@ function item_totem_upgrade:HandleMaxLevelUpgrade(caster, player)
 
     self:ApplyTotemBuff(hero, charges)
     DisplaySuccess(player, "Totem buff applied to hero with " .. charges .. " stacks!")
-    hero:RemoveItem(self)
+    hero:TakeItem(self)
 end
 
 function item_totem_upgrade:ApplyTotemBuff(hero, charges)

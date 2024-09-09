@@ -220,9 +220,11 @@ function GetRandomAbilityName( hero )
 		"mjz_queenofpain_sonic_wave",
 		"earthshaker_aftershock_lua",
 		"earthshaker_echo_slam_lua",
+		"spirit_breaker_herd_mentality", --innate12
 		"mjz_slark_dark_pact",
 		"mjz_slark_essence_shift",
 		"nevermore_custom_necromastery",
+		"venomancer_sepsis", --innate13
 		"mjz_arc_warden_spark_wraith", 
 		--"phantom_assassin_fan_of_knives",
 		"back_in_time",
@@ -249,6 +251,7 @@ function GetRandomAbilityName( hero )
 		"mjz_bloodseeker_thirst",
 		"mjz_clinkz_death_pact",
 		"custom_side_gunner",
+		"centaur_rawhide", --innate11
 		"mjz_magnataur_reverse_polarity",
 		"medusa_custom_stone_arrows",
 		"brewmaster_drunken_brawler",
@@ -408,6 +411,7 @@ function GetRandomAbilityName_int( hero )
 		"custom_mana_regen",
 		"custom_mana_regen2",
 		"mjz_crystal_maiden_frostbite",
+		"spirit_breaker_herd_mentality", --innate12
 		"enchantress_untouchable",
 		"nevermore_dark_lord",
 		"bristleback_warpath_lua",
@@ -415,6 +419,7 @@ function GetRandomAbilityName_int( hero )
 		"ogre_magi_multicast_n",
 		"ogre_magi_multicast_lua",		
 		"jotaro_absolute_defense3",
+		"venomancer_sepsis", --innate13
 		"zanto_gari",
 		"blood_madness",
 		"clinkz_infernal_breath",
@@ -431,6 +436,7 @@ function GetRandomAbilityName_int( hero )
 		"vengefulspirit_wave_of_terror_lua",
 		--"viper_poison_attack", --bugged if the hero is not created with it
 		"purifying_flames",
+		"centaur_rawhide", --innate11
 	}
     local randomIndex
     if _G._second_random_op then

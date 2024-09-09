@@ -53,12 +53,13 @@ function modifier_earthshaker_aftershock_lua:OnAbilityFullyCast(params)
 			if obsidianRapier then
 				local triggers = obsidianRapier:GetSpecialValueFor("up_aftershock_triggers")
 				local shards = obsidianRapier:GetSpecialValueFor("up_aftershock_shards")
+				local mult = obsidianRapier:GetSpecialValueFor("up_aftershock_mult")
 				local count = 0
 				self:IncrementStackCount()
 				if self:GetStackCount() >= triggers then
 					self:SetStackCount(0)
 					for i = 1, #enemies do
-						obsidianRapier:ThrowObsidianShard(enemies[i])
+						obsidianRapier:ThrowObsidianShard(enemies[i],{total_damage = mult})
 						count = count + 1
 						if count >= shards then break end
 					end

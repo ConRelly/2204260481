@@ -25089,7 +25089,7 @@
 	    
 		"AbilityValues"
 		{
-		    "bonus_xp_percent" "25"   
+		    "bonus_xp_percent" "30"   
 		    "stat_gain_interval" "3.0"
 		    "int_gain" "1"
 		    "agi_str_gain" "2"                
@@ -25132,19 +25132,19 @@
 			"obsidian_base_chance"		"7"
 			"obsidian_base_damage"
 			{
-				"value"							"50000"
+				"value"							"5000"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"obsidian_base_str_damage"
 			{
-				"value"							"80"
+				"value"							"3"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"obsidian_total_str_damage"
 			{
-				"value"							"20"
+				"value"							"40"
 				"DamageTypeTooltip"				"DAMAGE_TYPE_PHYSICAL"
 				"CalculateSpellDamageTooltip"	"0"
 			}
@@ -25167,13 +25167,15 @@
 			
 			"up_rolling_stone_chance"	"50"
 			"up_rolling_stone_spheres"	"2"
-			"up_rolling_stone_divine"	"100"
+			"up_rolling_stone_divine"	"400"
 			"up_aftershock_triggers"	"2"
 			"up_aftershock_shards"		"2"
+			"up_aftershock_mult"        "10"
 			"up_giants_interval"        "1"
+			"up_giants_mult"            "5"
 			"up_giants_aoe"
 			{
-				"value"              "1000"
+				"value"              "1200"
 				"affected_by_aoe_increase"	"1"
 			}
 
