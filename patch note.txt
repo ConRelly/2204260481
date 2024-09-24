@@ -3279,6 +3279,12 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Void vanila Crono Stun Gods fixed (can't even remove the skill is hard coded, but found a way to not pierce)
+* Courier can no longer use Master of Weapon's Sword (some clone bug)
+* Reduced scaling of innate from clock.
+* Night Stalker ult now gives base attack instead of bonus (including SS, but now 50%), and its more.
+
+
 
 
 

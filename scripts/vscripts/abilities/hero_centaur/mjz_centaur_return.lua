@@ -161,9 +161,9 @@ if IsServer() then
 		local hp_dmg = 0
 		if caster:HasModifier("modifier_super_scepter") then		
 			hp_dmg = ability:GetSpecialValueFor("return_damage_hp") * caster:GetMaxHealth()
-			print("str_returnA: "..str_return)
+			--print("str_returnA: "..str_return)
 			str_return = str_return + (talent_value(caster, "special_bonus_unique_mjz_centaur_double_edge_strength") * 2)
-			print("str_returnB: "..str_return)
+			--print("str_returnB: "..str_return)
 		end
 		local return_damage = damage + caster_str * (str_return / 100.0) + hp_dmg
 

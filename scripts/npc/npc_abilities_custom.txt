@@ -20359,14 +20359,14 @@
             "cooldown" "70"
             "bonus_damage"
             {
-                "value" "250 850 2250 4350 12300"
+                "value" "850 2250 6350 18300 45000"
                 "LinkedSpecialBonus" "special_bonus_unique_mjz_night_stalker_darkness_damage"
             }
             "lifesteal_pct" "5 6 8 9 10"
             "evasion_chance" "30 40 50 60 70"
             "bonus_vision_pct" "500"
             "model_scale" "20"
-            "ms_bonus_attack" "100 150 180 250 350"
+            "ms_bonus_attack" "50"
         }
 
 		"precache"
@@ -20384,7 +20384,7 @@
 		
 		"AbilityValues"
         {
-            "value" "4950"
+            "value" "17000"
         }
 	}
 

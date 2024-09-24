@@ -150,10 +150,10 @@ function modifier_damage:GetActivityTranslationModifiers() return "hunter_night"
 
 function modifier_damage:DeclareFunctions()
     return {
-        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+        MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
     }
 end
-function modifier_damage:GetModifierPreAttack_BonusDamage()
+function modifier_damage:GetModifierBaseAttack_BonusDamage()
     if IsServer() then
         if self:GetAbility() then
             local parent = self:GetParent()

@@ -603,6 +603,32 @@
 		"AttributeAgilityGain"			"9.700000"
 		"AttributeIntelligenceGain"		"5.300000"
 		"AttackRate"					"1.300000"
+		"Facets"
+		{
+			"faceless_void_temporal_impunity"
+			{
+				"Icon"				"armor"
+				"Color"				"Green"
+				"GradientID"		"0"
+				"Deprecated"		"true"
+			}
+			"faceless_void_chronosphere"
+			{
+				"Icon"				"area_of_effect"
+				"Color"				"Green"
+				"GradientID"		"0"
+
+				"Abilities"
+				{
+					"Ability1"
+					{
+						"AbilityName"	"lycan_feral_impulse"
+						"AbilityIndex"	"5"
+						"AutoLevelAbility"	"false"
+					}
+				}
+			}
+		}		
 	}
 	"npc_dota_hero_life_stealer_mjz"
 	{
