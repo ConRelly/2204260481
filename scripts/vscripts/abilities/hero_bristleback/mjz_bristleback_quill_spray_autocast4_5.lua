@@ -85,6 +85,11 @@ local PointSpell = {
 
 
 };
+local PointSpell_self_target = {
+    
+    ["earthshaker_enchant_totem"] = true,
+
+};
 local NoAutocastItem = {
     
     ["item_echo_wand"] = true,
@@ -191,7 +196,12 @@ function modifier_class:OnIntervalThink()
                         --print("cast1")
                         if target_ability and IsValidEntity(target_ability) and IsValidEntity(first_enemy) and IsValidEntity(parent) and parent:IsAlive() and first_enemy:IsAlive() then
                             parent:CastAbilityOnTarget(first_enemy, target_ability, parent:GetPlayerOwnerID())   
-                        end   
+                        end
+                    elseif (ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_POINT) and PointSpell_self_target[target_ability:GetAbilityName()]) then
+                        --print("point self cast")
+                        if target_ability and IsValidEntity(target_ability) and IsValidEntity(first_enemy) and IsValidEntity(parent) and parent:IsAlive() and first_enemy:IsAlive() then
+                            parent:CastAbilityOnTarget(parent, target_ability, parent:GetPlayerOwnerID())
+                        end                           
                     elseif (ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_POINT) or PointSpell[target_ability:GetAbilityName()]) then
                         --print("cast2")
                         if target_ability and IsValidEntity(target_ability) and IsValidEntity(first_enemy) and IsValidEntity(parent) and parent:IsAlive() and first_enemy:IsAlive() then

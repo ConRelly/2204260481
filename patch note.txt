@@ -3287,6 +3287,15 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Ursa Q(earthshock) has an option to disable the jump movement.
+* MultiAutocast now self target Enchant Totem when it has aghanim so it acts the same as without aghanim.
+
+
+
+
+
+
+
 
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.

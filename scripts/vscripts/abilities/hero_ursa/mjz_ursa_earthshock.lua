@@ -20,19 +20,29 @@ function ability_class:GetCastRange(vLocation, hTarget)
 end
 function ability_class:OnSpellStart()
 	if not IsServer() then return end
-	if not self:GetCaster():HasModifier("modifier_mjz_ursa_earthshock_movement") then
-		self:GetCaster():StartGesture(ACT_DOTA_CAST_ABILITY_1)
-		
-		local direction_vector = self:GetCaster():GetForwardVector() * self:GetSpecialValueFor("hop_distance")
 
-		self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_mjz_ursa_earthshock_movement", {
-			duration		= self:GetSpecialValueFor("hop_duration"),
-			distance		= self:GetSpecialValueFor("hop_distance"),
-			direction_x		= direction_vector.x,
-			direction_y 	= direction_vector.y,
-			diretion_z 		= direction_vector.z,
-			height			= self:GetSpecialValueFor("hop_height")
-		})
+	-- Check if the ability is auto-cast
+	local isAutoCast = self:GetAutoCastState()
+
+	if isAutoCast then
+		-- If auto-cast, directly apply Earth Shock without jumping
+		self:ApplyEarthShock()
+	else
+		-- If not auto-cast, proceed with the jump logic
+		if not self:GetCaster():HasModifier("modifier_mjz_ursa_earthshock_movement") then
+			self:GetCaster():StartGesture(ACT_DOTA_CAST_ABILITY_1)
+			
+			local direction_vector = self:GetCaster():GetForwardVector() * self:GetSpecialValueFor("hop_distance")
+
+			self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_mjz_ursa_earthshock_movement", {
+				duration		= self:GetSpecialValueFor("hop_duration"),
+				distance		= self:GetSpecialValueFor("hop_distance"),
+				direction_x		= direction_vector.x,
+				direction_y 	= direction_vector.y,
+				diretion_z 		= direction_vector.z,
+				height			= self:GetSpecialValueFor("hop_height")
+			})
+		end
 	end
 end
 

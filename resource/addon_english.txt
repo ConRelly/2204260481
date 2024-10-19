@@ -4665,7 +4665,7 @@
 		
 
 	"DOTA_Tooltip_ability_mjz_ursa_earthshock"					"Earthshock"
-	"DOTA_Tooltip_ability_mjz_ursa_earthshock_Description"		"Ursa leaps forward %hop_distance% units and slams the earth, causing a powerful shock to damage and slow all enemy units in a nearby area for %abilityduration% seconds.\n<h1><font color='#DE3163'>Super Scepter</font></h1> Shard earthshock gets hero lvl as extra fury swipes stacks.<br>Earthshock base dmg is increased by %ss_bonus_tooltip%%% for every 10 fury stacks the enemy target has."
+	"DOTA_Tooltip_ability_mjz_ursa_earthshock_Description"		"Ursa leaps forward %hop_distance% units and slams the earth, causing a powerful shock to damage and slow all enemy units in a nearby area for %abilityduration% seconds.\n<h1><font color='#DE3163'>Super Scepter</font></h1> Shard earthshock gets hero lvl as extra fury swipes stacks.<br>Earthshock base dmg is increased by %ss_bonus_tooltip%%% for every 10 fury stacks the enemy target has.<br><br><font color='#CCCC00'>Note: Toggling auto-cast will disable the leap, causing Earthshock to be cast in place.</font>"
 	"DOTA_Tooltip_ability_mjz_ursa_earthshock_Note0"            "Shard bonus dmg is the extra dmg that fury swipes gives as bonus attack, SS effect makes so that stacks get an aditional stacks * 250 more dmg"
 	"DOTA_Tooltip_ability_mjz_ursa_earthshock_Lore"				"The very steps of a male ursine shake the ground as well as the resolve of opposing warriors."
 	"DOTA_Tooltip_ability_mjz_ursa_earthshock_shard_Description"		"Applies 5 Fury Swipes stacks to all enemies within radius and deals bonus magical damage (half value of fury swipes stack dmg) as a new dmg instance."
