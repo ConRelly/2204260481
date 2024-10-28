@@ -953,20 +953,20 @@
 	}
 	"AbilityValues"
         {
-            "bonus_agility" "570"
-            "bonus_int" "570"
+            "lvlbonus_agi" "85"
+            "lvlbonus_int" "17"
             "bonus_attack_speed" "175"
             "movement_speed_bonus" "185"
             "bonus_mana_regen" "230.0"
-            "bonus_damage" "13400"
+            "bonus_damage" "18400"
             "attacks_needed" "3"
             "bonus_range" "340"
             "chance_hit" "35"
-            "target_hp" "14"
-            "target_hp_tooltip" "7"
+            "target_hp" "10"
+            "target_hp_tooltip" "10"
             "armor_reduc" "75"
             "duration" "2.0"
-            "magic_resist_redu" "-25"
+            "magic_resist_redu" "-30"
             "projectile_increase" "65"
             "heal_redu" "40"
         }
@@ -13551,7 +13551,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"Model"							"models/props_gameplay/divine_rapier.vmdl"
 //		"Effect" 		"particles\econ\courier\courier_roshan_frost\courier_roshan_frost_ambient.vpcf"
-		"AbilityCooldown"				"59"
+		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"250"
 		"ItemShopTags"					"agi;str;int;hard_to_tag;unique"
 		"ItemQuality"					"artifact"
@@ -13588,11 +13588,11 @@
             "base_duration" "0.5"
             "base_damage"
             {
-                "value" "2000"
+                "value" "2"
                 "CalculateSpellDamageTooltip" "0"
             }
             "radius_per_str" "1.5"
-            "duration_per_agi" "0.002"
+            "duration_per_agi" "0.0001"
             "damage_per_int"
             {
                 "value" "45"
@@ -13600,7 +13600,7 @@
             }
             "vision_extra_duration" "1.0"
             "radius_tooltip" "150"
-            "duration_tooltip" "0.2"
+            "duration_tooltip" "0.01"
             "damage_tooltip"
             {
                 "value" "4500"
@@ -24597,7 +24597,7 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 		"AbilityValues"
 		{
-			"bonus_int"						"1000"
+			"lvlbonus_int"					"25"
 			"bonus_evasion"					"30"
 
 			"active_chill"					"150"
@@ -24607,9 +24607,9 @@
 			"chill_duration"				"6"
 			"chill_thaw_pct"				"5"
 			"freeze_duration"				"2"
-			"freeze_shatter_hp_damage"		"3"
+			"freeze_shatter_hp_damage"		"9"
 			"freeze_shatter_radius"			"900"
-			"level_mult"                    "3"
+			"level_mult"                    "7"
 			"armor_mult"                    "1"
 			"spell_amp_mult_ptc"            "25"
 			"freeze_ss_chance"              "30"

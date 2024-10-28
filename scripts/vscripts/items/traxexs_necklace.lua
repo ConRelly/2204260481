@@ -38,7 +38,11 @@ function modifier_traxexs_necklace:RemoveOnDeath() return false end
 function modifier_traxexs_necklace:DeclareFunctions()
 	return {MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_EVASION_CONSTANT, MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_PURE}
 end
-function modifier_traxexs_necklace:GetModifierBonusStats_Intellect() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_int") end end
+function modifier_traxexs_necklace:GetModifierBonusStats_Intellect()
+	if self:GetAbility() then
+		local lvl = self:GetParent():GetLevel()
+		return self:GetAbility():GetSpecialValueFor("lvlbonus_int") * lvl end
+	end
 function modifier_traxexs_necklace:GetModifierEvasion_Constant() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_evasion") end end
 function modifier_traxexs_necklace:GetModifierProcAttack_BonusDamage_Pure(keys)
 	if not IsServer() then return end
@@ -166,7 +170,7 @@ function modifier_traxexs_necklace_frozen:OnCreated()
 	if self:GetParent():IsMagicImmune() then self:Destroy() return end
 	if IsServer() then
 --		self:SetDuration(self:GetAbility():GetSpecialValueFor("freeze_duration"))
-		self:StartIntervalThink(FrameTime())
+		self:StartIntervalThink(0.1)
 	end
 end
 function modifier_traxexs_necklace_frozen:OnIntervalThink()

@@ -30,14 +30,15 @@ function item_ice_rapier:OnSpellStart()
 		local damage = self:GetSpecialValueFor("base_damage")
 		local hp_damage = self:GetSpecialValueFor("hp_damage") / 100
 		local level = caster:GetLevel()
-
+		local charges = self:GetCurrentCharges() + 1 or 1
 		-- Calculate cast parameters
 		if caster:IsHero() then
 			radius = radius + caster:GetStrength() * self:GetSpecialValueFor("radius_per_str")
 			if radius > 2000 then radius = 2000 end
 			duration = duration + caster:GetAgility() * self:GetSpecialValueFor("duration_per_agi")
-			if duration > 10 then duration = 10 end
-			damage = damage + caster:GetIntellect(false) * level
+			if duration > 5 then duration = 5 end
+			local cast_int = caster:GetIntellect(false)
+			damage = (damage * cast_int * charges) + (cast_int * level)
 		end
 
 		-- Play sound

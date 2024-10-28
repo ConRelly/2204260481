@@ -5681,7 +5681,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-				"damage"			"500 1350 4900 8800 27850"
+				"damage"			"500 1350 4900 8800 28850"
 				"radius"			"1000"
 				"pull_speed"			"30"
 				"tick_rate"				"0.1"
@@ -5689,7 +5689,7 @@
 				"vision_radius"			"800"
 				"pull_rotate_speed"		"1.0"
 				"animation_rate"		"0.2"
-				"scepter_pct_damage"	"1.0"
+				"scepter_pct_damage"	"2.0"
 				"scepter_radius"	"2500"
 				"scepter_drag_speed"	"275"
 				"scepter_pull_rotate_speed"	"0.1"

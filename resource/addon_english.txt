@@ -104,7 +104,10 @@
 	"dota_ability_variable_projectile_speed_pct"	"Attack Projectile Speed"			// $projectile_speed_pct
 	"dota_ability_variable_attack_range_all"		"Attack Range"						// $attack_range_all
 	"dota_ability_variable_bonus_damage_lvl"	    "Bonus Damage per lvl"              // $bonus_damage_lvl
-	"dota_ability_variable_bonus_armor_ptc"	    	"Armor, from Base"              	    		// $bonus_armor_ptc
+	"dota_ability_variable_bonus_armor_ptc"	    	"Armor, from Base"              	// $bonus_armor_ptc
+	"dota_ability_variable_lvlbonus_int"            "Intelligence X Level"            	// $lvlbonus_int
+	"dota_ability_variable_lvlbonus_agi"            "Agility X Level"                   // $lvlbonus_agi
+	"dota_ability_variable_lvlbonus_str"            "Strength X Level"                  // $lvlbonus_str
 
 //############################################################################################################################
 
@@ -537,7 +540,7 @@
 	"DOTA_Tooltip_ability_item_recipe_traxexs_necklace"				"Traxex's Necklace Recipe"
 	"DOTA_Tooltip_ability_item_traxexs_necklace"					"Traxex's Necklace"
 	"DOTA_Tooltip_ability_item_traxexs_necklace_description"		"<h1>Active: Icy Chill</h1> Freezes an area and enemies within a radius of %active_radius%, increasing current Chill stacks by %active_chill_bonus%%% and adding %active_chill% to the Chill stacks. \n<h1>Passive: <font color='#12B5ED'>Chill</font></h1> Every 10 stacks slows enemy by 1%% of movement speed. <br> Every second the effect of the cold intensifies , which increase stacks by %chill_thaw_pct%%%. <br> When 1000 Chill is reached, the enemy freezes. \n<h1>Passive: <font color='#12EDE0'>Pure Speed</font></h1>On attack Deal bonus Pure damage for: How many times you are faster then your target(speed diff) x %level_mult% times your level<br><font color='#B9DC14'>WindRanger</font><font color='#ED6212'> Gets 5x the speed diference and 2x the level mult.</font>\n<h1><font color='#DE3163'>Super Scepter</font></h1><font color='#12EDE0'>Pure Speed</font> damage increases by: %armor_mult%%% for every point of Phy armor that you have, %spell_amp_mult_ptc%%% of your spell amp, your Status resist.(all are multiplayers)<br>Every time the target gains or loses Chill stacks there's %freeze_ss_chance%%% chance to trigger <font color='#126FED'>Deep Freeze</font>.  \n<h1>Passive: <font color='#126FED'>Deep Freeze</font></h1> When the freeze ends, all enemies within a radius of %freeze_shatter_radius% are dealt %freeze_shatter_hp_damage%%% Physical Damage(ignores base armor) from the Max Health of the frozen 3 times."
-	"DOTA_Tooltip_ability_item_traxexs_necklace_bonus_int"			"+$int"
+	"DOTA_Tooltip_ability_item_traxexs_necklace_lvlbonus_int"		"+$lvlbonus_int"
 	"DOTA_Tooltip_ability_item_traxexs_necklace_bonus_evasion"		"%+$evasion"
 	"DOTA_Tooltip_ability_item_traxexs_necklace_Note0"              "<font color='#12EDE0'>Pure Speed</font> damage no spell amp, does not trigger damage mult effects, the dmg will be added to the normal physical attack in the DPS tool."
 	"DOTA_Tooltip_ability_item_traxexs_necklace_Note1"              "Limits: armor mult 30x , speed diference 45x(same limit for windrunner) "
@@ -6276,7 +6279,7 @@ The extra targets will not receive other attack effects (such as critical strike
 "DOTA_Tooltip_ability_custom_black_hole_wisp_duration"					"DURATION:"
 
 "DOTA_Tooltip_ability_enigma_black_hole_duration"								"DURATION:"
-"DOTA_Tooltip_ability_enigma_black_hole_scepter_description"					"Black Hole deals additional damage equivalent to 1.0% of the unit's Max Health per second."
+//"DOTA_Tooltip_ability_enigma_black_hole_scepter_description"					"Black Hole deals additional damage equivalent to 1.0% of the unit's Max Health per second."
 "DOTA_Tooltip_ability_wisp_ice_shards"							"Ice Shards"
 "DOTA_Tooltip_ability_wisp_ice_shards_Description"				"Wisp compresses shards of ice into a ball of frozen energy that damages all enemies it comes in contact with. When the ball reaches its target destination the shards are released, creating a barrier that lasts for %shard_duration% seconds."
 "DOTA_Tooltip_ability_wisp_ice_shards_shard_width"				"RADIUS:"
@@ -7561,8 +7564,8 @@ The ward will have increased dmg base on hero total dmg and after lvl 30 it will
 "DOTA_Tooltip_Ability_item_broken_bow_Description"					"<h1><font color='#ED1F06'>Passive: Crush Armor</font></h1><font color='#25970C'>Works Only on Range heroes</font><br>When cooldown is rdy your attack will reduce enemy base armor by %armor_reduc%%% , Magic resistance by %magic_resist_redu%%% and reduce Healing by %heal_redu%%% for %duration% Seconds <font color='#10D387'>(Duration gets Increased by your Status resistance)</font> \n<h1><font color='#ED1F06'>Passive: Pierce Attack</font></h1><font color='#25970C'>Works Only on Range heroes</font><br>Every attack has %chance_hit%%% chance to increase the counter, on the 3nd counter Launches an additional attack with all the effects, and deal %target_hp_tooltip%%% of target current Hp as bonus magic damage."
 "DOTA_Tooltip_Ability_item_broken_bow_Lore"							"A derelict crossbow that whispers in the wind."
 "DOTA_Tooltip_Ability_item_broken_bow_Note0"						"Crush Armor shares cooldown with Willbreaker.<br> Reduce only the healing and not other regen or lifesteal effects."
-"DOTA_Tooltip_Ability_item_broken_bow_bonus_agility"				"+$agi"
-"DOTA_Tooltip_Ability_item_broken_bow_bonus_int"					"+$int"
+"DOTA_Tooltip_Ability_item_broken_bow_lvlbonus_agi"					"+$lvlbonus_agi"
+"DOTA_Tooltip_Ability_item_broken_bow_lvlbonus_int"					"+$lvlbonus_int"
 "DOTA_Tooltip_Ability_item_broken_bow_bonus_attack_speed"			"+$attack"
 "DOTA_Tooltip_Ability_item_broken_bow_movement_speed_bonus"			"+$move_speed"
 "DOTA_Tooltip_ability_item_broken_bow_bonus_damage"					"+$base_damage"
@@ -7834,12 +7837,11 @@ The ward will have increased dmg base on hero total dmg and after lvl 30 it will
 	"DOTA_Tooltip_ability_item_cursed_rapier_hp_reg"					  	"%HEALTH LOSS PER SEC:"
 
 	"DOTA_Tooltip_Ability_item_ice_rapier"						"<font color=\"#00FFFF\">ICE RAPIER</font>"
-	"DOTA_Tooltip_ability_item_ice_rapier_Description"			"<h1><font color='#00FFFF'>Active: Dead Winter Reigns</font></h1> Creates a zone of utter cold around you, damaging, ministunning, and rooting nearby enemies.<br>Effect radius, damage and root duration are based on your attributes:<br><br>Base radius: %base_radius%<br>Every 100 <font color='#FF0000'>strength</font> adds %radius_tooltip% range.<br><br>Base duration: %base_duration% sec.<br>Every 100 <font color='#00FF00'>agility</font> adds %duration_tooltip% seconds duration.<br><br>Base damage: %base_damage% + %hp_damage%%% of enemy current hp<Br>Deals Level x Your <font color='#4060FF'>intelligence</font> as bonus dmg.\n<h1><font color='#00FFFF'>Passive: Cold Wisdom</font></h1> Gains %rapier_bonus_int% base Intelligence every time you level up.\n<h1><font color='#F70707'>Challenge Boss</font></h1>Increase <font color=\"#00FFFF\">Ice Rapier</font> basic stats by <font color='#E32948'>20%(additive)</font>  for every Reward Tier(max 100%).(double effect on <font color='#00FFFF'>Cold Wisdom</font>)"
-	"DOTA_Tooltip_ability_item_ice_rapier_Lore"								 "Noldor, blood is on your hands...\nTears unnumbered, you will shet and dwell in pain...\nDead winter reigns!"
-	"DOTA_Tooltip_ability_item_ice_rapier_Note0"								"Slow lasts at most 5, at least 1 second.Max 1 rapier of any element"
-	"DOTA_Tooltip_ability_item_ice_rapier_Note1"								"Minimum slow duration happens beyond 1000 range."
-	"DOTA_Tooltip_ability_item_ice_rapier_Note2"								"Activation grants flying vision in the same radius as the effect."
-	"DOTA_Tooltip_ability_item_ice_rapier_Note3"                                "Current health damage is dealt as an separate damage instance"
+	"DOTA_Tooltip_ability_item_ice_rapier_Description"			"<h1><font color='#00FFFF'>Active: Dead Winter Reigns</font></h1> Creates a zone of utter cold around you, damaging, ministunning, and rooting nearby enemies.<br>Effect radius, damage and root duration are based on your attributes:<br><br>Base radius: %base_radius%<br>Every 100 <font color='#FF0000'>strength</font> adds %radius_tooltip% range.<br><br>Base duration: %base_duration% sec.<br>Every 100 <font color='#00FF00'>agility</font> adds %duration_tooltip% seconds duration.<br><br>Base damage: %base_damage% x charges x <font color='#4060FF'>Int</font> + %hp_damage%%% of enemy current hp<Br>Deals Level x Your <font color='#4060FF'>intelligence</font> as bonus dmg.\n<h1><font color='#00FFFF'>Passive: Cold Wisdom</font></h1> Gains %rapier_bonus_int% base Intelligence every time you level up.\n<h1><font color='#F70707'>Challenge Boss</font></h1>Increase <font color=\"#00FFFF\">Ice Rapier</font> basic stats by <font color='#E32948'>20%(additive)</font>  for every Reward Tier(max 100%).(double effect on <font color='#00FFFF'>Cold Wisdom</font>)<br> Gain bonus Charges equal with the Reward Tier."
+	"DOTA_Tooltip_ability_item_ice_rapier_Lore"								 "Tears unnumbered, you will shet and dwell in pain...\nDead winter reigns!"
+	"DOTA_Tooltip_ability_item_ice_rapier_Note0"								"Root lasts at most 5s .Max 1 rapier of any element"
+	"DOTA_Tooltip_ability_item_ice_rapier_Note1"								"Charges are gain when you level up with the item in inventory"
+	"DOTA_Tooltip_ability_item_ice_rapier_Note2"                                "Current health damage is dealt as an separate damage instance"
 	//"DOTA_Tooltip_ability_item_ice_rapier_slow_ms"							  "%MOVEMENT SLOW:"
 	//"DOTA_Tooltip_ability_item_ice_rapier_slow_as"							  "ATTACK SLOW:"
 	"DOTA_Tooltip_ability_item_ice_rapier_magic_amp"					"%+$spell_amp"

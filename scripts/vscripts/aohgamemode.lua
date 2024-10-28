@@ -1045,6 +1045,15 @@ function AOHGameMode:OnHeroLevelUp(event)
 			local bonus = 9 * _G._challenge_bosss
 			local base = 23 + bonus
 			hero:ModifyIntellect(base)
+			
+			-- Find the item "item_ice_rapier" in the hero's inventory
+			local ice_rapier = hero:FindItemInInventory("item_ice_rapier")
+			
+			-- If the item is found, increase its charges
+			if ice_rapier then
+				local currentCharges = ice_rapier:GetCurrentCharges() or 0
+				ice_rapier:SetCurrentCharges(currentCharges + 1 + _G._challenge_bosss)
+			end
 		end	
 	end
 

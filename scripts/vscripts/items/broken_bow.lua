@@ -39,34 +39,52 @@ function modifier_item_broken_bow:DeclareFunctions()
 	}
 end
 function modifier_item_broken_bow:GetModifierBonusStats_Agility()
-	return self:GetAbility():GetSpecialValueFor("bonus_agility")
+	if self:GetAbility() then
+		local lvl = self:GetParent():GetLevel()
+		return self:GetAbility():GetSpecialValueFor("lvlbonus_agi") * lvl
+ 	end
 end
 function modifier_item_broken_bow:GetModifierBonusStats_Intellect()
-	return self:GetAbility():GetSpecialValueFor("bonus_int")
+	if self:GetAbility() then
+		local lvl = self:GetParent():GetLevel()
+		return self:GetAbility():GetSpecialValueFor("lvlbonus_int") * lvl
+	end
 end
 function modifier_item_broken_bow:GetModifierAttackSpeedBonus_Constant()
-	return self:GetAbility():GetSpecialValueFor("bonus_attack_speed")
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("bonus_attack_speed")
+	end
 end
 function modifier_item_broken_bow:GetModifierMoveSpeedBonus_Constant()
-	return self:GetAbility():GetSpecialValueFor("movement_speed_bonus")
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("movement_speed_bonus")
+	end
 end
 function modifier_item_broken_bow:GetModifierConstantManaRegen()
-	return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("bonus_mana_regen")
+	end
 end
 function modifier_item_broken_bow:GetModifierBaseAttack_BonusDamage()
-	return self:GetAbility():GetSpecialValueFor("bonus_damage")
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor("bonus_damage")
+	end
 end
 function modifier_item_broken_bow:GetModifierAttackRangeBonus()
-	if self:GetParent():IsRangedAttacker() then
-		return self:GetAbility():GetSpecialValueFor("bonus_range")
+	if self:GetAbility() then
+		if self:GetParent():IsRangedAttacker() then
+			return self:GetAbility():GetSpecialValueFor("bonus_range")
+		end
+		return 0
 	end
-	return 0
 end
 function modifier_item_broken_bow:GetModifierProjectileSpeedBonus()
-	if self:GetParent():IsRangedAttacker() then
-		return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("projectile_increase") / 100
+	if self:GetAbility() then
+		if self:GetParent():IsRangedAttacker() then
+			return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("projectile_increase") / 100
+		end
+		return 0
 	end
-	return 0
 end
 function modifier_item_broken_bow:OnAttackLanded(keys)
 	if IsServer() then
