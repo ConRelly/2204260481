@@ -3287,13 +3287,19 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
-* Ursa Q(earthshock) has an option to disable the jump movement.
-* MultiAutocast now self target Enchant Totem when it has aghanim so it acts the same as without aghanim.
-* Enigma Ultimate Aghanim bonus dmg now deals 2x more (from 1 to 2% max hp)
-* Increased some stats for Traxex's Necklace (changed to int x lvl , max hp% dmg to 9% , lvl mult from 3 to 7)
-* Incresed some stats for CrossBow (agi , int (changed to x lvl) , % proc dmg)
-* Ice Rapier base dmg has a scallying element now and CD reduced by more then 50%(root max duration reduced).
-
+* Ursa Q(Earthshock) has an option to disable jump movement.
+* MultiAutocast now uses self-target Enchant Totem when it has Aghanim, so it works the same as without Aghanim.
+* Enigma Ultimate Aghanim bonus dmg now deals 2x more (from 1 to 2% max hp).
+* Increased some stats on Traxex's necklace (changed to int x lvl, max hp% dmg to 9%, lvl mult from 3 to 7)
+* Increased some stats on CrossBow (agi , int (changed to x lvl) , % proc dmg)
+* Ice Rapier base dmg has new scaling element for its dmg(stacks) and CD reduced by more then 50%(root max duration reduced).
+* Essence of Growth XP bonus increased from 30% to 40%.
+* Beastmaster re-enabled:
+  --Replaced his Q(Wild Axes) with a custom one.
+  --Super Scepter effect added to his Q.
+  --Scepter and Shard effect added.
+  --Replaced 3 of his talents (one is a new custom one for his Q)
+* Fixed Tide Hunter facet to not reduce his Str growth to 4.1 instead of increasing it to 50.
 
 
 

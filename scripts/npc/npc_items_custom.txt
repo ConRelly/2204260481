@@ -25089,7 +25089,7 @@
 	    
 		"AbilityValues"
 		{
-		    "bonus_xp_percent" "30"   
+		    "bonus_xp_percent" "40"
 		    "stat_gain_interval" "3.0"
 		    "int_gain" "1"
 		    "agi_str_gain" "2"                

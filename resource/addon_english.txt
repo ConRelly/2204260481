@@ -6204,6 +6204,27 @@ The extra targets will not receive other attack effects (such as critical strike
 "DOTA_Tooltip_ability_custom_primal_roar_slow_movement_speed_pct"			"%MOVEMENT SLOW:"
 "DOTA_Tooltip_ability_custom_primal_roar_slow_attack_speed_pct"				"ATTACK SLOW:"
 
+
+"DOTA_Tooltip_ability_modified_wild_axes"                          "Custom Wild Axes"
+"DOTA_Tooltip_ability_modified_wild_axes_Description"              "Toggle to start spining an axe around the hero at an distance of %axe_distance% units. \nEach axe deals %base_damage% + %attack_dmg_perlvl%%% of your attack damage per hero level and applies a debuff that amplifies next Wild Axes damage by %damage_amp_pct%%% for %amp_duration% seconds. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Adds a third axe, increases spin rate by 50%, and allows unlimited stacking of amplification but using %ss_damage_amp_pct%%% amp per stack."
+"DOTA_Tooltip_ability_modified_wild_axes_Lore"                     "The Beastmaster's axes dance around him in a deadly spin."
+"DOTA_Tooltip_ability_modified_wild_axes_base_damage"            "BASE DAMAGE per Hero LVL:"
+"DOTA_Tooltip_ability_modified_wild_axes_damage_amp_pct"         "%DAMAGE AMPLIFICATION:"
+"DOTA_Tooltip_ability_modified_wild_axes_amp_duration"           "AMPLIFICATION DURATION:"
+"DOTA_Tooltip_ability_modified_wild_axes_axe_width"              "AXE WIDTH:"
+"DOTA_Tooltip_ability_modified_wild_axes_axe_speed"              "BASE SPEED:"
+"DOTA_Tooltip_ability_modified_wild_axes_note0"                  "Axes complete a full rotation every ~4.3 seconds(~3.6 with talent, 6° per 0.06s) regardless of distance."
+"DOTA_Tooltip_ability_modified_wild_axes_note1"                  "Vanila Facet for Wild axes does not affect this skill"
+"DOTA_Tooltip_ability_modified_wild_axes_note2"                  "Bonus dmg from skills like sniper headshot(if has chace then by chance) does add to your attack dmg"
+
+"DOTA_Tooltip_ability_modified_wild_axes_scepter_description"     "Adds Another axe, Axes are now inteligent and ajust their range between min 500 and max 100 + your attack range, base on the closest enemy to you in range"
+"DOTA_Tooltip_ability_modified_wild_axes_shard_description"       "You can now enable autocast state(any time) to change dmg type to Magic but will only use 0.5% of your attack per lvl."
+"DOTA_Tooltip_modifier_modified_wild_axes_amp"                    "Wild Axes Vulnerability"
+"DOTA_Tooltip_modifier_modified_wild_axes_amp_Description"        "Taking %dMODIFIER_PROPERTY_TOOLTIP%%% increased damage from Wild Axes."
+
+"DOTA_Tooltip_ability_special_bonus_modified_wild_axes_speed"     "Increases Wild Axes base speed by {s:value}"
+
+
 //primal beast base skills
 
 "DOTA_Tooltip_ability_primal_beast_uproar_custom"								"Uproar"

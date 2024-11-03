@@ -32330,4 +32330,57 @@
 		}
 	}
 
+//Wild axes
+    "modified_wild_axes"
+    {
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "abilities/hero_beastmaster/modified_wild_axes.lua"
+        "AbilityTextureName"            "beastmaster_wild_axes"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_TOGGLE"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+        "AbilitySound"                  "Hero_Beastmaster.Wild_Axes"
+        "LevelsBetweenUpgrades"         "15"
+        "AbilityCastRange"              "600"
+        "AbilityCastPoint"              "0.3"
+        "AbilityCooldown"               "12.0"
+        "AbilityManaCost"               "85"
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_beastmaster/beastmaster_wildaxe.vpcf"
+		}        
+        "HasScepterUpgrade"             "1"
+        "HasShardUpgrade"           	"1"
+        
+        "AbilityValues"
+        {
+            "axe_speed"
+            {
+            	"value" "5"
+            	"LinkedSpecialBonus" "special_bonus_modified_wild_axes_speed"
+            }
+            "axe_width"         "240"
+            "axe_distance"      "600"
+            "base_damage"       "250 500 750 1500"
+            "damage_amp_pct"    "15 20 25 30"
+            "amp_duration"      "8.0"
+            "attack_dmg_perlvl"   "2"
+            "ss_damage_amp_pct" "3 4 5 6" //tooltip only
+        }
+    }
+
+// modified wild axes talent
+	"special_bonus_modified_wild_axes_speed"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilityValues"
+		{
+		    "value" "1"
+		}
+	}
+
+//end
 }
