@@ -3304,6 +3304,13 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Silencer Glaives talent now is +2 (affects SS extra too), glaives ss crit now give +10% crit dmg per lvl after lvl 50
+* Clinkz Burning army now receives 100% of clinkz attack dmg and removed owenr passive from them (his innate talent was overiding that with no way to stop that, innate is tied to skill), and lower their attack rate to 1.2 from 1.6 
+* Earth and Fire rapier now can apply the active buff during invul state like god slash
+
+
+
+
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).

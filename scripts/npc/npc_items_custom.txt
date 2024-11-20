@@ -13352,11 +13352,13 @@
 				"EffectAttachType"	"follow_origin"
 				"Target"		"CASTER"
 			}
-			"ApplyModifier"
-			{
-				"Target"			"CASTER"
-				"ModifierName"		"modifier_fire_rapier_fire_power_buff"
-			}
+		    "RunScript"
+		    {
+		        "ScriptFile" "items/custom/item_fire_rapier.lua"
+		        "Function" "ApplyFireRapierBuff"
+		        "Target" "CASTER"
+		    }			
+
 		}		
 		"Modifiers"
 		{
@@ -13718,11 +13720,13 @@
 		}
 		"OnSpellStart"
 		{
-			"ApplyModifier"
-				{
-					"Target"			"CASTER"
-					"ModifierName"		"modifier_earth_rapier_buff"
-				}
+
+			"RunScript"
+			{
+				"ScriptFile" "items/custom/item_earth_rapier.lua"
+				"Function" "ApplyEarthRapierBuff"
+				"Target" "CASTER"
+			}				
 		}
 		"OnProjectileHitUnit"
 		{

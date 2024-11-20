@@ -19067,7 +19067,7 @@
 		"BaseClass"				"ability_lua"
 		"ScriptFile"			"abilities/hero_lifestealer/mjz_lifestealer_poison_sting.lua"
 	
-		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 		"AbilityUnitTargetType"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
 		"SpellImmunityType"		"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_PURE"
@@ -19092,8 +19092,8 @@
             }
             "move_slow_pct" "-20"
             "chance" "14 15 17 20"
-            "hp_stack" "7"
-            "str_stack" "3"
+            "hp_stack" "10"
+            "str_stack" "7"
             "claw_chance" "4"
         }
 
@@ -22189,6 +22189,7 @@
             }
             "heap_type" "3"
             "crit_multiplier_super_scepter" "500"
+            "crit_multiplier_super_scepter_per_lvl" "10"
             "second_stack" "90"
         }
 
@@ -22215,7 +22216,7 @@
 		
 		"AbilityValues"
         {
-            "value" "1"
+            "value" "2"
         }
 	}
 
@@ -29539,6 +29540,7 @@
             "owner_armor" "100"
             "owner_hp_mp_tooltip" "50"
             "owner_hp_mp" "2"
+            "owner_mp_tooltip" "200"
         }
 }
 

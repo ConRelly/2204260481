@@ -30,10 +30,10 @@ function modifier_owner_buff:OnCreated()
 			if not IsValidEntity(owner) then print("no Owner") return end 
 			--print(owner)
 			if owner and owner ~= nil then
-				local owner_attack = owner:GetAverageTrueAttackDamage(parent) * 1.5
+				local owner_attack = owner:GetAverageTrueAttackDamage(parent) * 2.0
 				local owner_spell = owner:GetSpellAmplification(false) * 5000
-				local owner_armor = owner:GetPhysicalArmorValue(false) * 100
-				local owner_hp_mp = (owner:GetMaxMana() + owner:GetMaxHealth()) / 2
+				local owner_armor = owner:GetPhysicalArmorValue(false) * 500
+				local owner_hp_mp = (owner:GetMaxMana() * 2 ) + (owner:GetMaxHealth() / 2)
 				local bonus_dmg = owner_attack
 				local lvl = owner:GetLevel()
 				--parent:SetHealth(owner:GetMaxHealth())
@@ -41,9 +41,9 @@ function modifier_owner_buff:OnCreated()
 					bonus_dmg = math.ceil(bonus_dmg + owner_spell + owner_armor + owner_hp_mp)
 				end
 				if parent:GetUnitName()== "npc_playerhelp" then
-					bonus_dmg = math.ceil(bonus_dmg / 3)
+					bonus_dmg = math.ceil(bonus_dmg / 2)
 				elseif parent:GetUnitName() == "npc_dota_clinkz_skeleton_archer_frostivus2018" or parent:GetUnitName() == "npc_dota_clinkz_skeleton_archer_frostivus20182" or parent:GetUnitName() == "npc_dota_clinkz_skeleton_archer" then
-					bonus_dmg = math.ceil(bonus_dmg / 5)
+					bonus_dmg = math.ceil(bonus_dmg / 3)
 				end
 				self.bonus = bonus_dmg
 			end
@@ -56,9 +56,14 @@ function modifier_owner_buff:OnIntervalThink()
 		self:OnCreated()
 	end
 end	
+
+
 function modifier_owner_buff:DeclareFunctions()
 	return {MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE}
 end
+
 function modifier_owner_buff:GetModifierBaseAttack_BonusDamage()
 	return self.bonus or 20
 end
+
+

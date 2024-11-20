@@ -25,3 +25,14 @@ function CheckForStats(keys)
 		end
 	end
 end
+
+-- apply_modifier.lua
+function ApplyEarthRapierBuff(event)
+    local caster = event.caster
+    local ability = event.ability
+    local duration = ability:GetSpecialValueFor("buff_duration") 
+
+    if caster and ability then
+        ability:ApplyDataDrivenModifier(caster, caster, "modifier_earth_rapier_buff", { duration = duration })
+    end
+end

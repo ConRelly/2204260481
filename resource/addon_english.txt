@@ -3619,7 +3619,9 @@
 	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_Description"		"N'aix attacks have a %claw_chance%%% chance to hit an vital spot, adding a poison-based damage and slowing movement speed.
 	\n<h1><font color='#87A80B'>Passive: Vitality Steal</font></h1>Every Poison claw tick have %chance%%% chance to increase your vitality stacks.
 	\n<h1><font color='#87A80B'>Passive: Poison Claw Mastery</font></h1> An enemy can have multiple instances of Poison Claw, and is affected only by the hero status resistance(increase in duration base on how much you have)
-	\n<h1><font color='#DE3163'>Super Scepter:</font></h1>Have %chance%%% chance to gain an aditional vitality stack every time <font color='#E5F212'>Poison Claw</font> ticks."
+	\n<h1><font color='#DE3163'>Super Scepter:</font></h1>Have %chance%%% chance to gain an aditional vitality stack every time <font color='#E5F212'>Poison Claw</font> ticks.\n<h1><font color='#F70707'>Challenge Boss</font></h1> Reduce the dmg tick rate (1s) by 0.1s for each Tier reward \n Toggle Autocast On to passively gain Vitality stacks at best rate per min you record with Autocast OFF"
+	
+	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_note0"           "Min gain rate per min is 10. <br>The stacks indicating your gain per min decays over time but your best record remains saved and resets back to it when an enemy takes dmg from this skill"
 	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_duration"		"Duration: "
 	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_damage"			"Damage dealt per Stack: "
 	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_str_stack"			 "Str per Stack:"
@@ -3630,6 +3632,10 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_poison_sting_duration"   		"+{s:value}s Poison Claw Duration"
 	"DOTA_Tooltip_modifier_mjz_lifestealer_poison_sting_buff"			  "Vitality Stolen"
 	"DOTA_Tooltip_modifier_mjz_lifestealer_poison_sting_buff_Description"  "Increase Strength by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% and Health by %dMODIFIER_PROPERTY_HEALTH_BONUS% "
+	
+	"DOTA_Tooltip_modifier_mjz_lifestealer_poison_sting_gain_rate"        "Gain Rate Per Minute"
+	"DOTA_Tooltip_modifier_mjz_lifestealer_poison_sting_gain_rate_Description" "Vitality Gain Rate Per Minute(GRPM) if the passive Autocast is On, It uses your best GRPM recoreded only during Autocast OFF<br> if no enemy is affected by posion decays 0.5% per sec overtime(best GRPM record remains unafected) "
+
 
 	"DOTA_Tooltip_ability_mjz_life_stealer_feast"				"Feast"
 	"DOTA_Tooltip_ability_mjz_life_stealer_feast_Description"	"Lifestealer's attacks damage enemies and heal himself for a percentage of his max strength. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Lifestealer bonus damage now is increased further by 5%(Multiplier with total) for each level he has."
@@ -4279,10 +4285,11 @@
 	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_heap_range"			"Enemy Death Radius: "
 	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_heap_amount"			"Intelligence Bonus per Death: "
 	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_heap_amount_hero"		"Intelligence Bonus per Death (Hero): "
-	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_note0"                 "Talent Affects Super Scepter effect too (+1)"
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_note0"                 "Talent Affects Super Scepter effect too (+2)<br>Until lvl 50 SS crit dmg is %crit_multiplier_super_scepter%%% after lvl 50 it will be replaced with %crit_multiplier_super_scepter_per_lvl%%% per lvl."
 	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_crit_chance_scepter"			"%Scepter Critical Chance: "
 	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_crit_multiplier_scepter"		"%Scepter Critical Damage:"
-	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_crit_multiplier_super_scepter" "%<font color='#DE3163'>Super Scepter Critical Damage:</font>"
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_crit_multiplier_super_scepter" "%<font color='#DE3163'>Super Scepter Minim Critical Damage:</font>"
+	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_crit_multiplier_super_scepter_per_lvl" "%<font color='#DE3163'>SS Critical Damage Per LvL:</font>"
 	"DOTA_Tooltip_ability_mjz_silencer_glaives_of_wisdom_second_stack" "%<font color='#DE3163'>SS Chance for an Extra Stack per Death:</font>"
 	"DOTA_Tooltip_modifier_mjz_silencer_glaives_of_wisdom_heap"				"Heap Intelligence"
 	"DOTA_Tooltip_modifier_mjz_silencer_glaives_of_wisdom_heap_Description"	"Silencer will gaining Intelligence from any enemy he kills, and any enemy that dies within 4225 range."	
@@ -10212,9 +10219,10 @@ Contains all random skills(including Innates)<br> if your primary attribute is I
 		"DOTA_Tooltip_ability_owner_buff_owner_attack"				"%Owner Total Attack Damage as Base Damage:"
 		"DOTA_Tooltip_ability_owner_buff_owner_amp"				   "Base Damage for every point of Owner Spell Amp:"
 		"DOTA_Tooltip_ability_owner_buff_owner_armor"				 "Base Damage from Owner Armor:"
-		"DOTA_Tooltip_ability_owner_buff_owner_hp_mp_tooltip"		  "%Base Damage from Owner Max Mp and Hp:"
-		"DOTA_Tooltip_ability_owner_buff_Note0"					   "Has: 33%% effect on Hired Gon(Dragon Knight unit), 20%% effect on clinkz skeletons."
-		"DOTA_Tooltip_ability_owner_buff_description"				 "Increase base attack dmg by:<font color='#EB1D05'>owner 150%% total attack dmg</font> and after owner lvl 30 <font color='#05EB2B'>other owner stats will be added too as extra base dmg</font> like:<font color='#08E3DC'>50x spell amplification</font>,<font color='#EB8605'>100x armor</font> and <font color='#EB8605'>50%% max mana and hp</font>."
+		"DOTA_Tooltip_ability_owner_buff_owner_hp_mp_tooltip"		  "%Base Damage from Owner Max Hp:"
+		"DOTA_Tooltip_ability_owner_buff_owner_mp_tooltip"		  	  "%Base Damage from Owner Max Mp:"
+		"DOTA_Tooltip_ability_owner_buff_Note0"					   "Has: 50%% effect on Hired Gon(Dragon Knight unit), 33%% effect on clinkz skeletons."
+		"DOTA_Tooltip_ability_owner_buff_description"				 "Increase base attack dmg by:<font color='#EB1D05'>owner 150%% total attack dmg</font> and after owner lvl 30 <font color='#05EB2B'>other owner stats will be added too as extra base dmg</font> like:<font color='#08E3DC'>50x spell amplification</font>,<font color='#EB8605'>500x armor</font> , <font color='#EB8605'>50%% max hp</font> and <font color='#EB8605'>200%% max mana</font>."
 		"dota_tooltip_modifier_owner_buff"							"Owner Buff"
 		"dota_tooltip_modifier_owner_buff_description"				"Increase base attack dmg base on owner following stats: total attack dmg , spell amp , armor , max hp and max mp"
 

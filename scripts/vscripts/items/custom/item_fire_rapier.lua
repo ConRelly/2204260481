@@ -20,7 +20,6 @@ function CheckForStats (keys)
 	local item = keys.ability
 	local caster = keys.caster
 	local vLocation = caster:GetAbsOrigin()
-	print("checkforsts")
 --[[ 	local stats_required = item:GetSpecialValueFor("stats_required")
 --	GameRules:SendCustomMessage("stats_required:"..stats_required,0,0)
 	local item_stats_sum = item:GetSpecialValueFor("rapier_str") + item:GetSpecialValueFor("rapier_agi") + item:GetSpecialValueFor("rapier_int")
@@ -46,6 +45,16 @@ function CheckForStats (keys)
 			GameRules:SendCustomMessage("<font color='#FFD700'>NOT ENOUGH </font><font color='#FF4500'>".. stats_required-hero_stats_sum .."</font>",0,0)
 		end ]]
 	end
+end
+
+function ApplyFireRapierBuff(event)
+    local caster = event.caster
+    local ability = event.ability
+    local duration = ability:GetSpecialValueFor("buff_duration") 
+
+    if caster and ability then
+        ability:ApplyDataDrivenModifier(caster, caster, "modifier_fire_rapier_fire_power_buff", { duration = duration })
+    end
 end
 
 function OnSpellStart(keys)

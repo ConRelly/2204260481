@@ -1,7 +1,6 @@
 LinkLuaModifier("modifier_mjz_lifestealer_poison_sting", "abilities/hero_lifestealer/mjz_lifestealer_poison_sting.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_lifestealer_poison_sting_slow", "abilities/hero_lifestealer/mjz_lifestealer_poison_sting.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_lifestealer_poison_sting_buff", "abilities/hero_lifestealer/mjz_lifestealer_poison_sting.lua", LUA_MODIFIER_MOTION_NONE)
-LinkLuaModifier("modifier_mjz_lifestealer_poison_sting_gain_rate", "abilities/hero_lifestealer/mjz_lifestealer_poison_sting.lua", LUA_MODIFIER_MOTION_NONE)
 
 mjz_lifestealer_poison_sting = class({})
 local ability_class = mjz_lifestealer_poison_sting
@@ -9,9 +8,7 @@ local ability_class = mjz_lifestealer_poison_sting
 function ability_class:GetIntrinsicModifierName()
     return "modifier_mjz_lifestealer_poison_sting"
 end
-
----------------------------------------------------------------------------------------
--- Modifier: Main Ability Modifier
+modifier_mjz_lifestealer_poison_sting_buff = class({})
 ---------------------------------------------------------------------------------------
 
 modifier_mjz_lifestealer_poison_sting = class({})
@@ -22,39 +19,22 @@ function modifier_class:IsHidden() return true end
 function modifier_class:IsPurgable() return false end
 function modifier_class:RemoveOnDeath() return false end
 
-
 function modifier_class:OnCreated()
     if IsServer() then
         local parent = self:GetParent()
         local ability = self:GetAbility()
-        -- Initialize instance variables
-        self.stacks_gained = 0
-        self.last_stack_time = 0
-        self.peak_stack_gain_rate = 10
-        self.decay_time = 0
-        self.first_stack_time = 0
-        self.first_stack_out_of_x = 0
-        
-        self:InitializeModifiers(parent, ability)
+        local time = GameRules:GetGameTime() / 60
+        local modif_buf = "modifier_mjz_lifestealer_poison_sting_buff"
+        if not parent:HasModifier(modif_buf) then
+            parent:AddNewModifier(parent, ability, modif_buf, {})
+            local modifer = parent:FindModifierByName(modif_buf) 
+            local get_stacks = time * 4
+            modifer:SetStackCount(get_stacks)
+        end 
     end       
 end    
-
 function modifier_class:OnDestroy()
-end
 
-function modifier_class:InitializeModifiers(parent, ability)
-    local time = GameRules:GetGameTime() / 60
-    local modif_buf = "modifier_mjz_lifestealer_poison_sting_buff"
-
-        
-    if not parent:HasModifier(modif_buf) then
-        local buff_modifier = parent:AddNewModifier(parent, ability, modif_buf, {})
-        buff_modifier:SetStackCount(time * 10)
-    end 
-    local modif_gain_rate = "modifier_mjz_lifestealer_poison_sting_gain_rate"  -- New modifier
-    if not parent:HasModifier(modif_gain_rate) then
-        parent:AddNewModifier(parent, ability, modif_gain_rate, {})
-    end        
 end
 
 if IsServer() then
@@ -75,15 +55,12 @@ if IsServer() then
         local iDuration = GetTalentSpecialValueFor(ability, "duration") * (1 + attacker:GetStatusResistance())
         local claw_chance = GetTalentSpecialValueFor(ability, "claw_chance")
         local modifier_slow_name = "modifier_mjz_lifestealer_poison_sting_slow"
-        
         if RollPercentage(claw_chance) then
             target:AddNewModifier(attacker, ability, modifier_slow_name, {Duration = iDuration})
         end    
     end
 end
 
----------------------------------------------------------------------------------------
--- Modifier: Slow and Damage Modifier (Poison Sting)
 ---------------------------------------------------------------------------------------
 
 modifier_mjz_lifestealer_poison_sting_slow = class({})
@@ -107,61 +84,32 @@ if IsServer() then
         self:OnIntervalThink()
         local interval = 1.0
         if _G._challenge_bosss and _G._challenge_bosss > 0 then
+            --info: max is 5 so 1 -0.5 = 0.5 is the max interval
             interval = 1 - (_G._challenge_bosss /10)
         end    
         print("claw interval: "..interval)
-        self:StartIntervalThink(interval)      
+        self:StartIntervalThink(interval)
     end
-    
     function modifier_class_slow:OnIntervalThink()
-        if not IsServer() then return end
         local caster = self:GetCaster()
-        local ability = self:GetAbility()
-        local parent = self:GetParent()
-        local gain_stack = 1
-        if ability:GetAutoCastState() then
-            gain_stack = 0
-            self:ApplyPoisonDamage(caster, ability, parent, gain_stack)
-        else  -- RNG-based gain
-            self:ApplyPoisonDamage(caster, ability, parent, gain_stack) 
-        end
-    end
-  
-
-
-    
-    function modifier_class_slow:ApplyPoisonDamage(caster, hAbility, hParent, gain_stack)
-        if not IsServer() then return end
+        local hAbility = self:GetAbility()
+        local hParent = self:GetParent()
         local fDamage = GetTalentSpecialValueFor(hAbility, "damage")
         local modif_buf = "modifier_mjz_lifestealer_poison_sting_buff"
         local chance = hAbility:GetSpecialValueFor("chance")
-        local gain_rate_modifier = caster:FindModifierByName("modifier_mjz_lifestealer_poison_sting_gain_rate")
-        local main_modifier = caster:FindModifierByName("modifier_mjz_lifestealer_poison_sting")
-        -- Reset decay time
-        if main_modifier then
-            main_modifier.decay_time = GameRules:GetGameTime()
-        end        
         if not caster:HasModifier(modif_buf) then
-            caster:AddNewModifier(caster, hAbility, modif_buf, {})
+            caster:AddNewModifier(caster, ability, modif_buf, {})
         end
         local modifer = caster:FindModifierByName(modif_buf)   
-        if gain_stack and gain_stack > 0 then
+
+        if RollPercentage(chance) then
+            modifer:SetStackCount(modifer:GetStackCount()+1)
+        end    
+        if HasSuperScepter(caster) then
             if RollPercentage(chance) then
-                print("Toggle : "..gain_stack)
                 modifer:SetStackCount(modifer:GetStackCount()+1)
-                if gain_rate_modifier then
-                    gain_rate_modifier:CalculateAndRecordStackGainRate()
-                end
-            end    
-            if HasSuperScepter(caster) then
-                if RollPercentage(chance) then
-                    modifer:SetStackCount(modifer:GetStackCount()+1)
-                    if gain_rate_modifier then
-                        gain_rate_modifier:CalculateAndRecordStackGainRate()
-                    end
-                end
-            end 
-        end
+            end
+        end 
         local stacks = modifer:GetStackCount() + 1
         local tdamage = fDamage * stacks  
         local iParticle = ParticleManager:CreateParticle("particles/msg_fx/msg_spell.vpcf", PATTACH_OVERHEAD_FOLLOW, hParent)
@@ -181,10 +129,7 @@ if IsServer() then
 end
 
 ---------------------------------------------------------------------------------------
--- Modifier: Buff (Stacks and Stats)
----------------------------------------------------------------------------------------
 
-modifier_mjz_lifestealer_poison_sting_buff = class({})
 local modifier_class_bluff = modifier_mjz_lifestealer_poison_sting_buff
 function modifier_class_bluff:IsHidden() return self:GetAbility() == nil end
 function modifier_class_bluff:IsPurgable() return false end
@@ -228,90 +173,8 @@ function modifier_class_bluff:GetModifierHealthBonus()
 end
 
 
----------------------------------------------------------------------------------------
--- Modifier: Stack Gain Rate Display
----------------------------------------------------------------------------------------
-modifier_mjz_lifestealer_poison_sting_gain_rate = class({})
-local gain_rate_modifier_class = modifier_mjz_lifestealer_poison_sting_gain_rate
-
-function gain_rate_modifier_class:IsHidden() return false end
-function gain_rate_modifier_class:IsPurgable() return false end
-function gain_rate_modifier_class:RemoveOnDeath() return false end
-
-function gain_rate_modifier_class:OnCreated(kv)
-    if IsServer() then
-        self:StartIntervalThink(2)
-    end
-end
 
 
-function gain_rate_modifier_class:CalculateAndRecordStackGainRate()
-    if not IsServer() then return end
-    local main_modifier = self:GetParent():FindModifierByName("modifier_mjz_lifestealer_poison_sting")
-    if not main_modifier then return end
-
-    -- Update last stack time and increment stacks gained
-    main_modifier.last_stack_time = GameRules:GetGameTime()
-    main_modifier.stacks_gained = main_modifier.stacks_gained + 1
-
-    -- If this is the first stack out of 10, record the start time
-    if main_modifier.stacks_gained == 1 then
-        main_modifier.first_stack_out_of_x = GameRules:GetGameTime()
-    end
-
-    -- Calculate rate after 30 stacks
-    if main_modifier.stacks_gained >= 30 then
-        local time_elapsed = main_modifier.last_stack_time - main_modifier.first_stack_out_of_x
-        if time_elapsed > 0 then
-            -- Calculate stacks per minute
-            local current_rate = math.ceil((30 * 60) / time_elapsed)
-            print("current_rate: "..current_rate .." , time_elapsed: "..time_elapsed)
-            -- Update peak rate if current rate is higher
-            if current_rate > main_modifier.peak_stack_gain_rate then
-                main_modifier.peak_stack_gain_rate = current_rate
-                -- Update modifier stacks to show new peak rate
-                print("peak_rate: "..main_modifier.peak_stack_gain_rate)
-                self:SetStackCount(current_rate)
-            end
-        end
-
-        -- Reset counter for next calculation
-        main_modifier.stacks_gained = 0
-        main_modifier.first_stack_out_of_x = 0
-    end
-
-    -- Reset decay timer
-    main_modifier.decay_time = GameRules:GetGameTime()
-end
-
-function gain_rate_modifier_class:OnIntervalThink()
-    local parent = self:GetParent()
-    local main_modifier = parent:FindModifierByName("modifier_mjz_lifestealer_poison_sting")
-    if not main_modifier then return end
-
-    local current_time = GameRules:GetGameTime()
-    local time_since_last_stack = current_time - main_modifier.decay_time
-
-    -- Calculate decay (0.5% per second since last stack)
-    if time_since_last_stack > 0 then
-        local decay_factor = math.max(0, 1 - (time_since_last_stack * 0.005))
-        local decayed_rate = main_modifier.peak_stack_gain_rate * decay_factor
-        print("decay_rate: "..decayed_rate.." , decay_factor: "..decay_factor)
-        -- Update the displayed stacks
-        if decayed_rate < 10 then
-            decayed_rate = 10
-        end
-        self:SetStackCount(math.ceil(decayed_rate)) 
-    end
-    local buff_modifier = parent:FindModifierByName("modifier_mjz_lifestealer_poison_sting_buff")
-    if buff_modifier and self:GetAbility():GetAutoCastState() then
-        local gained = math.ceil(buff_modifier:GetStackCount() + (self:GetStackCount()/30))
-        print("gained: "..gained)
-        buff_modifier:SetStackCount(gained)
-    end
-end
-
----talents
 function HasTalent(unit, talentName)
     if unit:HasAbility(talentName) then
         if unit:FindAbilityByName(talentName):GetLevel() > 0 then return true end

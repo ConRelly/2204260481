@@ -12193,7 +12193,7 @@
 	"ModelScale"				"0.7"
 	"wearable"					"669"
 
-	"Ability1"					"owner_buff"
+	"Ability1"					"" //"owner_buff"
 
 	"ArmorPhysical"				"0"
 	"MagicalResistance"			"0"
@@ -12307,7 +12307,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"				  	"owner_buff"			// Ability 1.
+		"Ability1"				  	"" //"owner_buff"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.

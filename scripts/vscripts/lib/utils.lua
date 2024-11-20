@@ -48,7 +48,7 @@ function RefreshPlayers()
 		end
 		heroes[i]:SetHealth(heroes[i]:GetMaxHealth())
 		heroes[i]:SetMana(heroes[i]:GetMaxMana())
-        local heal = ParticleManager:CreateParticle("particles/custom/abilities/refresh_players/heal.vpcf", PATTACH_ABSORIGIN_FOLLOW, heroes[i])
+        local heal = ParticleManager:CreateParticle("particles/items_fx/bloodstone_heal.vpcf", PATTACH_ABSORIGIN_FOLLOW, heroes[i])
         ParticleManager:ReleaseParticleIndex(heal)
 	end
 	RefillBottle()

@@ -21,7 +21,7 @@ function modifier_titan_relic:OnIntervalThink()
 		if self:GetAbility():IsFullyCastable() then
 			self:GetCaster():Purge(false,true,false,false,false)
 			self:GetAbility():UseResources(true, false, false, true)
-			local purge = ParticleManager:CreateParticle("particles/custom/abilities/refresh_players/heal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
+			local purge = ParticleManager:CreateParticle("particles/items_fx/bloodstone_heal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster())
 			ParticleManager:ReleaseParticleIndex(purge)
 			local stacks = self:GetStackCount() + 1
 			self:SetStackCount(stacks)

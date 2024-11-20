@@ -53,13 +53,17 @@ function ability_class:OnOrbImpact( params )
 	
 	if caster:HasScepter() then
 		local crit_chance = ability:GetSpecialValueFor('crit_chance_scepter')
-		local crit_multiplier = ability:GetSpecialValueFor('crit_multiplier_scepter')
+		local crit_multiplier = ability:GetSpecialValueFor('crit_multiplier_scepter') / 100
 		
 		if RollPercentage(crit_chance) then
 			if HasSuperScepter(caster) then
-				crit_multiplier = ability:GetSpecialValueFor('crit_multiplier_super_scepter')
+				local lvl = caster:GetLevel()
+				crit_multiplier = lvl * (ability:GetSpecialValueFor('crit_multiplier_super_scepter_per_lvl') /100)
+				if crit_multiplier < 5 then 
+					crit_multiplier = ability:GetSpecialValueFor('crit_multiplier_super_scepter') /100
+				end
 			end
-			damage = damage * (crit_multiplier / 100.0)
+			damage = damage * crit_multiplier 
 
 			create_popup({
 				target = target,
