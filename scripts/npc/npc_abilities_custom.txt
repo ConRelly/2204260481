@@ -19092,8 +19092,8 @@
             }
             "move_slow_pct" "-20"
             "chance" "14 15 17 20"
-            "hp_stack" "10"
-            "str_stack" "7"
+            "hp_stack" "7"
+            "str_stack" "3"
             "claw_chance" "4"
         }
 

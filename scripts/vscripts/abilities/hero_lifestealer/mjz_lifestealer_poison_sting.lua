@@ -65,6 +65,7 @@ if IsServer() then
     end
     
     function modifier_class:OnAttackLanded(keys)
+        if not IsServer() then return end
         local parent = self:GetParent()
         local ability = self:GetAbility()
         local attacker = keys.attacker
@@ -107,9 +108,8 @@ if IsServer() then
         self:OnIntervalThink()
         local interval = 1.0
         if _G._challenge_bosss and _G._challenge_bosss > 0 then
-            interval = 1 - (_G._challenge_bosss /10)
+            interval = 1 - (_G._challenge_bosss /20)
         end    
-        print("claw interval: "..interval)
         self:StartIntervalThink(interval)      
     end
     
@@ -147,7 +147,6 @@ if IsServer() then
         local modifer = caster:FindModifierByName(modif_buf)   
         if gain_stack and gain_stack > 0 then
             if RollPercentage(chance) then
-                print("Toggle : "..gain_stack)
                 modifer:SetStackCount(modifer:GetStackCount()+1)
                 if gain_rate_modifier then
                     gain_rate_modifier:CalculateAndRecordStackGainRate()
@@ -240,7 +239,7 @@ function gain_rate_modifier_class:RemoveOnDeath() return false end
 
 function gain_rate_modifier_class:OnCreated(kv)
     if IsServer() then
-        self:StartIntervalThink(2)
+        self:StartIntervalThink(6)
     end
 end
 
@@ -264,13 +263,11 @@ function gain_rate_modifier_class:CalculateAndRecordStackGainRate()
         local time_elapsed = main_modifier.last_stack_time - main_modifier.first_stack_out_of_x
         if time_elapsed > 0 then
             -- Calculate stacks per minute
-            local current_rate = math.ceil((30 * 60) / time_elapsed)
-            print("current_rate: "..current_rate .." , time_elapsed: "..time_elapsed)
+            local current_rate = math.ceil((30 * 30) / time_elapsed)
             -- Update peak rate if current rate is higher
             if current_rate > main_modifier.peak_stack_gain_rate then
                 main_modifier.peak_stack_gain_rate = current_rate
                 -- Update modifier stacks to show new peak rate
-                print("peak_rate: "..main_modifier.peak_stack_gain_rate)
                 self:SetStackCount(current_rate)
             end
         end
@@ -296,7 +293,6 @@ function gain_rate_modifier_class:OnIntervalThink()
     if time_since_last_stack > 0 then
         local decay_factor = math.max(0, 1 - (time_since_last_stack * 0.005))
         local decayed_rate = main_modifier.peak_stack_gain_rate * decay_factor
-        print("decay_rate: "..decayed_rate.." , decay_factor: "..decay_factor)
         -- Update the displayed stacks
         if decayed_rate < 10 then
             decayed_rate = 10
@@ -305,8 +301,7 @@ function gain_rate_modifier_class:OnIntervalThink()
     end
     local buff_modifier = parent:FindModifierByName("modifier_mjz_lifestealer_poison_sting_buff")
     if buff_modifier and self:GetAbility():GetAutoCastState() then
-        local gained = math.ceil(buff_modifier:GetStackCount() + (self:GetStackCount()/30))
-        print("gained: "..gained)
+        local gained = math.ceil(buff_modifier:GetStackCount() + (self:GetStackCount()/10))
         buff_modifier:SetStackCount(gained)
     end
 end

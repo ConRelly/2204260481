@@ -3619,9 +3619,9 @@
 	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_Description"		"N'aix attacks have a %claw_chance%%% chance to hit an vital spot, adding a poison-based damage and slowing movement speed.
 	\n<h1><font color='#87A80B'>Passive: Vitality Steal</font></h1>Every Poison claw tick have %chance%%% chance to increase your vitality stacks.
 	\n<h1><font color='#87A80B'>Passive: Poison Claw Mastery</font></h1> An enemy can have multiple instances of Poison Claw, and is affected only by the hero status resistance(increase in duration base on how much you have)
-	\n<h1><font color='#DE3163'>Super Scepter:</font></h1>Have %chance%%% chance to gain an aditional vitality stack every time <font color='#E5F212'>Poison Claw</font> ticks.\n<h1><font color='#F70707'>Challenge Boss</font></h1> Reduce the dmg tick rate (1s) by 0.1s for each Tier reward \n Toggle Autocast On to passively gain Vitality stacks at best rate per min you record with Autocast OFF"
+	\n<h1><font color='#DE3163'>Super Scepter:</font></h1>Have %chance%%% chance to gain an aditional vitality stack every time <font color='#E5F212'>Poison Claw</font> ticks.\n<h1><font color='#F70707'>Challenge Boss</font></h1> Reduce the dmg tick rate (1s) by 0.05s for each Tier reward \n Toggle Autocast On to passively gain Vitality stacks at 50% of the best stack gain rate per min you record  with Autocast OFF"
 	
-	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_note0"           "Min gain rate per min is 10. <br>The stacks indicating your gain per min decays over time but your best record remains saved and resets back to it when an enemy takes dmg from this skill"
+	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_note0"           "Minum gain rate per min is 10. <br>The stacks indicating your gain per min decays over time but your best record remains saved and resets back to it when an enemy takes dmg from this skill"
 	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_duration"		"Duration: "
 	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_damage"			"Damage dealt per Stack: "
 	"DOTA_Tooltip_ability_mjz_lifestealer_poison_sting_str_stack"			 "Str per Stack:"

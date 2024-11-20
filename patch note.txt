@@ -3303,11 +3303,11 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
-
-* Silencer Glaives talent now is +2 (affects SS extra too), glaives ss crit now give +10% crit dmg per lvl after lvl 50
-* Clinkz Burning army now receives 100% of clinkz attack dmg and removed owenr passive from them (his innate talent was overiding that with no way to stop that, innate is tied to skill), and lower their attack rate to 1.2 from 1.6 
-* Earth and Fire rapier now can apply the active buff during invul state like god slash
-
+* Fixed the New Dota update that made the game unplayable
+* Lifestealer Poison Claw has a challenge boss bonus and an additional new mechanic to gain stacks (toggle autocast on to switch between them). 
+* Silencer Glaive talent is now +2 (affects SS extra too), Glaive ss crit now gives +10% crit dmg per lvl after lvl 50
+* Clinkz Burning Army now receives 100% of Clinkz attack dmg and removed the passive from them (his innate talent was overriding that with no way to stop it, innate is tied to skill) and lowered their attack rate to 1.2 from 1.6. 
+* Earth and Fire Rapier can now apply the active buff while in invulnerable state like God Slash.
 
 
 

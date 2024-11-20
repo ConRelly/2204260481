@@ -22676,29 +22676,6 @@
         }
 	}
 
-// Recipe: Ironwood Tree
-	"item_recipe_ironwood_tree"
-	{
-		"ItemCost"						"100"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemPurchasable"				"1"
-		"ItemRequirements"
-		{
-			"01"						"item_chest_1"
-
-		}
-	}
-// Recipe: Ironwood Tree
-	"item_ironwood_tree"
-	{
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
-		"ItemSellable"					"1"
-		"ItemGloballyCombinable"		"1"
-		"ItemPurchasable"				"1"
-		"AbilityCastRange"				"1600"
-	}
 
 // Recipe: Keen Optic
 	"item_recipe_keen_optic"

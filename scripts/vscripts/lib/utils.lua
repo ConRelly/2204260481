@@ -48,8 +48,8 @@ function RefreshPlayers()
 		end
 		heroes[i]:SetHealth(heroes[i]:GetMaxHealth())
 		heroes[i]:SetMana(heroes[i]:GetMaxMana())
-        local heal = ParticleManager:CreateParticle("particles/items_fx/bloodstone_heal.vpcf", PATTACH_ABSORIGIN_FOLLOW, heroes[i])
-        ParticleManager:ReleaseParticleIndex(heal)
+        --local heal = ParticleManager:CreateParticle("particles/items_fx/bloodstone_heal.vpcf", PATTACH_ABSORIGIN_FOLLOW, heroes[i])  --paricle not clearing
+        --ParticleManager:ReleaseParticleIndex(heal)
 	end
 	RefillBottle()
 end
