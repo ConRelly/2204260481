@@ -191,7 +191,8 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 	local target = keys.unit
 	local attacker = keys.attacker
 	local DamageType = keys.damage_type
-	if not self:GetAbility() then return end
+	local ability = self:GetAbility()
+	if not ability then return end
 	if not caster:IsRealHero() then return end
 	if attacker ~= caster then return end
 	if target == attacker then return end
@@ -200,7 +201,7 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 		if DamageType == DAMAGE_TYPE_MAGICAL or DamageType == DAMAGE_TYPE_PURE then
 			if keys.original_damage < 2 then return end -- avoid negative being transformed in possitive and 2 instead of 1 for possible futture compatibility
 			self.hit = false
-			local feather_add_dmg = self:GetAbility():GetSpecialValueFor("feather_add_dmg")
+			local feather_add_dmg = ability:GetSpecialValueFor("feather_add_dmg")
 			local max_used_stacks = 49
 			local orig_dmg = keys.original_damage
 			local lvl = caster:GetLevel() * 40
@@ -239,7 +240,7 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 			end
 			if caster:HasModifier("modifier_super_scepter") then
 				if caster:HasModifier("modifier_marci_unleash_flurry") then
-					feather_add_dmg = self:GetAbility():GetSpecialValueFor("feather_add_dmg_marci")
+					feather_add_dmg = ability:GetSpecialValueFor("feather_add_dmg_marci")
 					if used_stacks > 3 then
 						used_stacks = 3
 					end
@@ -255,7 +256,7 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 				damage = damage,
 				damage_type = DamageType,
 				damage_flags = DOTA_DAMAGE_FLAG_NONE,
-				ability = self:GetAbility(),
+				ability = ability,
 			})
 			create_popup({
 				target = target,
@@ -266,7 +267,7 @@ function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
 			})
 
 			if divinity then self.hit = true return end
-			local cd = self:GetAbility():GetSpecialValueFor("feather_cd") * self:GetCaster():GetCooldownReduction()
+			local cd = ability:GetSpecialValueFor("feather_cd") * self:GetCaster():GetCooldownReduction()
 			Timers:CreateTimer(cd, function() self.hit = true end)
 			self:SetStackCount(self:GetStackCount() - used_stacks)
 		end

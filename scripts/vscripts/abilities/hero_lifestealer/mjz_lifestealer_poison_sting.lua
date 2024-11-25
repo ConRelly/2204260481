@@ -277,8 +277,6 @@ function gain_rate_modifier_class:CalculateAndRecordStackGainRate()
         main_modifier.first_stack_out_of_x = 0
     end
 
-    -- Reset decay timer
-    main_modifier.decay_time = GameRules:GetGameTime()
 end
 
 function gain_rate_modifier_class:OnIntervalThink()
