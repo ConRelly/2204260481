@@ -137,9 +137,8 @@ function modifier_item_imba_silver_edge_invis:OnAttackLanded(keys)
 		if attacker == self:GetParent() then
 
 			local ability 			=	self:GetAbility()
-			local break_damage		 	= ability:GetSpecialValueFor("shadow_rip_damage")
+			local break_damage		 	= ability:GetSpecialValueFor("shadow_rip_damage") * self:GetParent():GetLevel()
 			local break_duration		= ability:GetSpecialValueFor("main_debuff_duration")
-
 			-- Teleport ranged attackers to make the affect go from the target's vector
 			--[[if self:GetParent():IsRangedAttacker() then
 
@@ -292,7 +291,7 @@ end
 
 function modifier_item_imba_silver_edge_passive:GetModifierPreAttack_BonusDamage()
 	if self:GetAbility() then
-		return self:GetAbility():GetSpecialValueFor("bonus_damage")
+		return self:GetAbility():GetSpecialValueFor("bonus_damage") * self:GetParent():GetLevel()
 	end
 end
 
@@ -304,19 +303,19 @@ end
 
 function modifier_item_imba_silver_edge_passive:GetModifierBonusStats_Strength()
 	if self:GetAbility() then
-		return self:GetAbility():GetSpecialValueFor("bonus_all_stats")
+		return self:GetAbility():GetSpecialValueFor("bonus_all_stats") * self:GetParent():GetLevel()
 	end
 end
 
 function modifier_item_imba_silver_edge_passive:GetModifierBonusStats_Agility()
 	if self:GetAbility() then
-		return self:GetAbility():GetSpecialValueFor("bonus_all_stats")
+		return self:GetAbility():GetSpecialValueFor("bonus_all_stats") * self:GetParent():GetLevel()
 	end
 end
 
 function modifier_item_imba_silver_edge_passive:GetModifierBonusStats_Intellect()
 	if self:GetAbility() then
-		return self:GetAbility():GetSpecialValueFor("bonus_all_stats")
+		return self:GetAbility():GetSpecialValueFor("bonus_all_stats") * self:GetParent():GetLevel()
 	end
 end
 
@@ -341,8 +340,7 @@ function modifier_item_imba_silver_edge_passive:OnAttack(keys)
 	local attacker = keys.attacker
 	local echo_c = self:GetAbility():GetSpecialValueFor("echo_cd")
 
-	if keys.attacker == parent and item and not parent:IsIllusion() and not parent:IsRangedAttacker() and self.echo_ready == true then
-		print("echo hit")
+	if keys.attacker == parent and item and not parent:IsIllusion() and (not parent:IsRangedAttacker() or parent:HasModifier("modifier_vengefulspirit_soul_strike")) and self.echo_ready == true then
 		self.echo_ready = false
 		self:StartIntervalThink(echo_c * parent:GetCooldownReduction())
 		attacker:PerformAttack(keys.target, true, true, true, true, false, false, true) 

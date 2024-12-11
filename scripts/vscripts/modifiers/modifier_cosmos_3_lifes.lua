@@ -164,30 +164,12 @@ end
 function modifier_cosmos_3_lifes:DeclareFunctions()
 	return {
     MODIFIER_PROPERTY_MIN_HEALTH,
-    MODIFIER_EVENT_ON_DEATH_PREVENTED, 
-    MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,        
+    MODIFIER_EVENT_ON_DEATH_PREVENTED,       
  
 	}
 end
 function modifier_cosmos_3_lifes:GetMinHealth()
 	return 1
-end
-
-function modifier_cosmos_3_lifes:GetModifierIncomingDamage_Percentage()
-    local parent = self:GetParent()
-    if parent then
-        local ptc_healt_left = parent:GetHealthPercent() / 100
-        if parent:GetLevel() > 100 then
-            local ptc_hp_reduction = (-11.0 + ptc_healt_left) + 0.001
-            return ptc_hp_reduction
-        end
-        if ptc_healt_left < 0.25 then
-            return -9.5  
-        elseif ptc_healt_left < 0.50 then
-            return -7    
-        end
-        return -6
-    end    
 end
 
 

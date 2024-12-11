@@ -144,6 +144,7 @@
 		"item"		"item_health_bag"
 		"item"		"item_maiar_pendant"
 		"item"		"item_mjz_guardian_greaves_holy_light"
+		"item"      "item_nemesis_curse"
 	}
 
 	"magics"

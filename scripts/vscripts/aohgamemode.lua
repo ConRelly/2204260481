@@ -422,20 +422,15 @@ function AOHGameMode:OnDamageDealt(damageTable)
 				local attackerPlayerId = attacker:GetPlayerOwnerID()
 				local victim_name = victim:GetUnitName()
 				if damageTable.damage > 1 then -- pointless to update tables and lag for 0 or 1
-					if damageTable.damagetype_const ~= 1 then
-						if AOHGameMode.isArcane[attackerPlayerId] then
-							arcane_staff_calculate_crit(attacker, victim, damageTable)
-						end
-					end
-					local dmg_dealt = damageTable.damage -- arcane staff might update this value so i added after isArcane	
+					local dmg_dealt = damageTable.damage 
 					if victim:HasModifier("modifier_jotaro_absolute_defense") then
 						-- Level-based damage reduction
 						local level_reduction = 0
 						local victim_level = victim:GetLevel()
-						if victim_level >= 100 then
-							level_reduction = 0.97
+						if victim_level >= 101 then
+							level_reduction = 0.98
 						elseif victim_level >= 98 then
-							level_reduction = 0.92							
+							level_reduction = 0.95							
 						elseif victim_level >= 95 then
 							level_reduction = 0.90
 						elseif victim_level >= 89 then
@@ -448,7 +443,14 @@ function AOHGameMode:OnDamageDealt(damageTable)
 						local hp_reduction = math.max(0.10, victim:GetHealthPercent() / 100)
 						
 						-- Apply both reductions
-						dmg_dealt = dmg_dealt * (1 - level_reduction) * hp_reduction						
+						dmg_dealt = dmg_dealt * (1 - level_reduction) * hp_reduction
+						damageTable.damage = dmg_dealt	
+						if damageTable.damagetype_const ~= 1 then
+							if AOHGameMode.isArcane[attackerPlayerId] then
+								arcane_staff_calculate_crit(attacker, victim, damageTable)
+								dmg_dealt = damageTable.damage  -- arcane staff might update this value	
+							end
+						end										
 						if victim:GetMaxHealth() * 0.07 <= dmg_dealt then
 							local limit_hp = victim:GetMaxHealth() * 0.035
 							if victim:GetLevel()> 100 then
@@ -463,6 +465,13 @@ function AOHGameMode:OnDamageDealt(damageTable)
 							dmg_dealt = limit_hp
 							damageTable.damage = limit_hp	
 							--return false							
+						end	
+					else
+						if damageTable.damagetype_const ~= 1 then
+							if AOHGameMode.isArcane[attackerPlayerId] then
+								arcane_staff_calculate_crit(attacker, victim, damageTable)
+								dmg_dealt = damageTable.damage  -- arcane staff might update this value	
+							end
 						end	
 					end
 					--print("victim name: "..victim_name .. " attacker name: "..attacker:GetUnitName() .. " damage: "..dmg_dealt)

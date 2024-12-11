@@ -812,13 +812,13 @@ function modifier_mows:GetModifierAttackSpeedBonus_Constant()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_as") end
 end
 function modifier_mows:GetModifierBonusStats_Strength()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") * self:GetParent():GetLevel() end
 end
 function modifier_mows:GetModifierBonusStats_Agility()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") * self:GetParent():GetLevel() end
 end
 function modifier_mows:GetModifierBonusStats_Intellect()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
+	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_all_stats") * self:GetParent():GetLevel() end
 end
 function modifier_mows:OnTooltip()
 	if self:GetAbility() then return self:GetStackCount() * (self:GetParent():GetLevel() * self:GetAbility():GetSpecialValueFor("bonus_attack_lvl") ) end

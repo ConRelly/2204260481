@@ -3311,11 +3311,18 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
-
-* Added a separate dmg reduction system for demigods and gods, they have a higher dmg reduction base on their lvl and an aditional reduction base on their currect health (100% hp takes 100% of the dmg , 10% hp or below takes 10% of dmg), it will be adjusted/changed base on feedback
-* Reduced dmg Evasion for gods and demigods significally (including in passive brake state)
-* Increased Dmg amp from 1% to 10% for veil , from 1% to 20% for bounty track and from 0 to 15% for undying unlt.
-
+* Until January 2nd, all days will be considered Sunday for the Top 50 Underdog bonus. 
+* Added a separate dmg reduction system for demigods and gods, they have a higher dmg reduction based on their lvl and an additional reduction based on their current health (100% hp takes 100% of the dmg, 10% hp or less takes 10% of the dmg), it will be adjusted/changed based on feedback.
+* Dmg Evasion significantly reduced for gods and demigods (even when in passive braking state).
+* Nemesis Curse now has a 9% dmg amp, up from 1%, but requires a greater elemental to build.
+* Dmg amp increased from 1% to 10% for Veil, from 1% to 20% for Bounty Track, and from 0 to 15% for Undying Ult.
+* Silver Edge pure dmg, all stats and bonus dmg now scale with lvl.
+* Moon Glaives added back to Luna
+* Venge Soul Strike facet now compatible with Silver Edge Echo Strike for Melee.
+* Impetus has no cd at max lvl and from 350% to 450% dmg.
+* Master of Weapons Sword: Bonus to all stats now scales with hero level and is greater.
+* Brewmaster has an exclusive effect for Pharaoh's Crown, Druken Brawler crit is now higher and its innate from 20% to 50% (is all dmg bonus).
+* Added old Beastmaster Wild Axes to the random skill pool (they have lower cd at max lvl and stacking dmg amp per hit 1%).
 
 
 

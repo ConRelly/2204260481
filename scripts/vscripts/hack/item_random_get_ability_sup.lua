@@ -242,6 +242,7 @@ function GetRandomAbilityName( hero )
 		"nevermore_dark_lord", 
 		"bristleback_warpath_lua",
 		--"obs_replay",
+		"beastmaster_wild_axes",
 		"jotaro_absolute_defense3",
 		"treant_innate_attack_damage", --innate9
 		"rubick_might_and_magus", --innate10		

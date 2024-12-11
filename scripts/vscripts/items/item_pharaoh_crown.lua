@@ -64,7 +64,12 @@ function modifier_pharaoh_crown_buff:OnCreated()
 	self.health = self.ability:GetSpecialValueFor("aura_health_mult")
 	self.armor = self.ability:GetSpecialValueFor("aura_armor") * 0.01
 	self.damage = self.ability:GetSpecialValueFor("aura_damage_mult")
-	if self.caster:HasModifier("modifier_super_scepter") then
+	if self.caster:GetUnitName()== "npc_dota_hero_brewmaster" then
+		self.damage = self.ability:GetSpecialValueFor("aura_damage_mult") / 2	--smaller = more dmg bonus for summons
+		if self.caster:HasModifier("modifier_super_scepter") then
+			self.damage = self.ability:GetSpecialValueFor("aura_damage_mult") / 4
+		end
+	elseif self.caster:HasModifier("modifier_super_scepter") then
 		self.damage = self.ability:GetSpecialValueFor("aura_damage_mult") / 2	--smaller = more dmg bonus for summons
 	end	
 	self.interval = self.ability:GetSpecialValueFor("interval")
@@ -98,7 +103,7 @@ function modifier_pharaoh_crown_buff:OnCreated()
 	--self.regenmodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_pharaoh_crown_regen", {})
 	--self.regenmodifier:SetStackCount(self.parent_regen * (self.caster:GetMaxHealth() / self.health))
 	self.magicarmormodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_pharaoh_crown_magic_armor", {})
-	self.parent:AddNewModifier(self.caster, self.ability, "modifier_pharaoh_crown_super_armor", {duration = 3.0})
+	self.parent:AddNewModifier(self.caster, self.ability, "modifier_pharaoh_crown_super_armor", {duration = 4.0})
 	self:StartIntervalThink(self.interval)
 end
 function modifier_pharaoh_crown_buff:OnIntervalThink()

@@ -261,6 +261,8 @@ function GetRandomAbilityName( hero )
 		"jotaro_absolute_defense3",
 		"zanto_gari",
 		"blood_madness",
+		"beastmaster_wild_axes",
+		"beastmaster_wild_axes",
 		"clinkz_infernal_breath",
 		"mjz_bloodseeker_thirst",
 		"mjz_magnataur_reverse_polarity",

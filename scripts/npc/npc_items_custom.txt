@@ -3887,7 +3887,7 @@
 			"slow"	"30"
 			"slow_duration"	"12"
 			"active_mres_reduction"		"22"
-			"passive_cooldown"		"6"
+			"passive_cooldown"		"2"
 		}
 	}
 
@@ -14188,17 +14188,17 @@
         {
             "bonus_damage"
             {
-                "value" "3650"
+                "value" "550"
                 "CalculateSpellDamageTooltip" "0"
             }
             "bonus_attack_speed" "150"
-            "bonus_all_stats" "350"
+            "bonus_all_stats" "8"
             "invis_duration" "16"
             "invis_ms_pct" "20"
             "invis_fade_time" "0.0"
             "shadow_rip_damage"
             {
-                "value" "35000"
+                "value" "6500"
                 "CalculateSpellDamageTooltip" "1"
             }
             "invis_flying_damage_disable_duration" "1.0"
@@ -24714,7 +24714,7 @@
 			"bonus_ms"						"275"
 			"bonus_attack_range"			"200"
 			"bonus_as"						"180"
-			"bonus_all_stats"				"650"
+			"bonus_all_stats"				"15"
 			"fire_rapier_chance"            "15"
 			"duration"						"3.0"
 			"bounce_range"					"600"
@@ -24784,7 +24784,7 @@
 			"bonus_ms"						"305"
 			"bonus_attack_range"			"230"
 			"bonus_as"						"200"
-			"bonus_all_stats"				"1000"
+			"bonus_all_stats"				"20"
 			"fire_rapier_chance"            "16"
 			"duration"						"2.2"
 			"bounce_range"					"700"
@@ -24853,7 +24853,7 @@
 			"bonus_ms"						"355"
 			"bonus_attack_range"			"280"
 			"bonus_as"						"240"
-			"bonus_all_stats"				"1500"
+			"bonus_all_stats"				"30"
 			"fire_rapier_chance"            "17"
 			"duration"						"2.3"
 			"bounce_range"					"800"
@@ -24922,7 +24922,7 @@
 			"bonus_ms"						"400"
 			"bonus_attack_range"			"330"
 			"bonus_as"						"300"
-			"bonus_all_stats"				"3000"
+			"bonus_all_stats"				"60"
 			"fire_rapier_chance"            "18"
 			"duration"						"2.5"
 			"bounce_range"					"900"
@@ -24991,7 +24991,7 @@
 			"bonus_ms"						"525"
 			"bonus_attack_range"			"400"
 			"bonus_as"						"550"
-			"bonus_all_stats"				"5200"
+			"bonus_all_stats"				"120"
 			"fire_rapier_chance"            "20"
 			"duration"						"3.0"
 			"bounce_range"					"1500"

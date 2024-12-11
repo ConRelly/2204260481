@@ -2944,7 +2944,7 @@
 		"LevelsBetweenUpgrades"			"12"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1500"
+		"AbilityCastRange"				"2000"
 		"AbilityCastPoint"				"0.0"
 
 		// Time		
@@ -2960,10 +2960,10 @@
 		{
 			"radius"					"275"
 			"spread"					"450"
-			"range"						"1500"
+			"range"						"2000"
 			"axe_damage"
 			{
-				"value"					"300 1870 4900 19730 45960 149890 322450"
+				"value"					"300 1870 4900 19730 45960 149890 822450"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"duration"						"12"
@@ -2974,8 +2974,8 @@
 			}
 			"AbilityCooldown"				
 			{
-				"value"			"8"
-				"special_bonus_unique_beastmaster_wild_axe_cooldown"						"-5"
+				"value"			"9 8 7 6 5 4 3"
+				"special_bonus_unique_beastmaster_wild_axe_cooldown"						"-4"
 			}			
 			"min_throw_duration"						"0.7 0.7 0.6 0.6 0.5 0.4 0.3"
 			"max_throw_duration"						"0.9 0.9 0.8 0.8 0.7 0.7 0.6"
@@ -3708,13 +3708,13 @@
 		"AbilityValues"
 		{
 			"dodge_chance"		"15 20 25 32"
-			"crit_chance"				"10"
+			"crit_chance"				"12"
 			"active_multiplier"			
 			{
 				"value"						"3"
 				"special_bonus_unique_brewmaster_8"		"+1"
 			}
-			"crit_multiplier"			"380 620 960 2150"
+			"crit_multiplier"			"480 920 1460 3250"
 			"magic_resist"	"10 15 20 25"
 			"armor"		"7 34 68 125"
 			"movespeed"				"-25"
@@ -13204,7 +13204,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"2 1 0.4 0.1"
+		"AbilityCooldown"				"2 1 0.4 0.0"
 		"AbilityDuration"				"1.5 1.5 1.5"
 
 		// Cost
@@ -13217,8 +13217,8 @@
 		{
 			"distance_damage_pct"	
 			{
-				"value"			"145 195 250 350"
-				"special_bonus_unique_enchantress_4"	"+350"	
+				"value"			"145 195 250 450"
+				"special_bonus_unique_enchantress_4"	"+450"	
 			}
 			"distance_cap"			"3750"
 			"creep_multiplier"		"3"
@@ -20780,7 +20780,7 @@
 		"ItemResult"					"item_nemesis_curse"
 		"ItemRequirements"
 		{
-			"01"						"item_chest_5"
+			"01"						"item_chest_5;item_greater_elemental"
 		}
 	}
 
@@ -20805,7 +20805,7 @@
 		"AbilityValues"
 		{
 			"debuff_self"	"8"
-			"debuff_enemy"	"1"
+			"debuff_enemy"	"9"
 			"debuff_enemy_duration"	"5"
 			"bonus_damage"			"35000"
 		}

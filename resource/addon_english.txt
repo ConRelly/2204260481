@@ -108,7 +108,7 @@
 	"dota_ability_variable_lvlbonus_int"            "Intelligence X Level"            	// $lvlbonus_int
 	"dota_ability_variable_lvlbonus_agi"            "Agility X Level"                   // $lvlbonus_agi
 	"dota_ability_variable_lvlbonus_str"            "Strength X Level"                  // $lvlbonus_str
-
+	"dota_ability_variable_lvlbonus_all"            "All Stats X Level"                  // $lvlbonus_all
 //############################################################################################################################
 
 	"npc_dota_custom_creep_22_1"	"Demon Marauder"
@@ -569,7 +569,7 @@
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_ms"				"+$move_speed"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_attack_range"		"+$attack_range_all"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_as"				"+$attack"
-	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_all_stats"			"+$all"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_all_stats"			"+$lvlbonus_all"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword_bonus_attack_lvl"        "Explosive Stacks Bonus dmg Per lvl:"
 
 
@@ -587,7 +587,7 @@
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_bonus_ms"				"+$move_speed"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_bonus_attack_range"		"+$attack_range_all"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_bonus_as"				"+$attack"
-	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_bonus_all_stats"		"+$all"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_bonus_all_stats"		"+$lvlbonus_all"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword2_bonus_attack_lvl"        "Explosive Stacks Bonus dmg Per lvl:"
 
 // weapon lvl 3
@@ -602,7 +602,7 @@
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_bonus_ms"				"+$move_speed"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_bonus_attack_range"		"+$attack_range_all"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_bonus_as"				"+$attack"
-	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_bonus_all_stats"		"+$all"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_bonus_all_stats"		"+$lvlbonus_all"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword3_bonus_attack_lvl"        "Explosive Stacks Bonus dmg Per lvl:"
 
 
@@ -618,7 +618,7 @@
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_bonus_ms"				"+$move_speed"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_bonus_attack_range"		"+$attack_range_all"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_bonus_as"				"+$attack"
-	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_bonus_all_stats"		"+$all"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_bonus_all_stats"		"+$lvlbonus_all"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword4_bonus_attack_lvl"        "Explosive Stacks Bonus dmg Per lvl:"
 
 // weapon lvl 5
@@ -633,7 +633,7 @@
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_bonus_ms"				"+$move_speed"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_bonus_attack_range"		"+$attack_range_all"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_bonus_as"				"+$attack"
-	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_bonus_all_stats"		"+$all"
+	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_bonus_all_stats"		"+$lvlbonus_all"
 	"DOTA_Tooltip_ability_item_master_of_weapons_sword5_bonus_attack_lvl"       "Explosive Stacks Bonus dmg Per lvl:"
 
 
@@ -8145,7 +8145,7 @@ The ward will have increased dmg base on hero total dmg and after lvl 30 it will
 "DOTA_Tooltip_modifier_item_plain_ring_perma2_invincibility_Description"		"Temporarily protected from death."
 
 "DOTA_Tooltip_Ability_item_pharaoh_crown"							 "Pharaoh Crown"
-"DOTA_Tooltip_Ability_item_pharaoh_crown_Description"					"<h1>Passive: Will To Power</h1> Summoned unit health, and damage are multiplied by a division of your stats. Additionally grants armor and magic resistance. <br><br>Affected units regenerate %regen_percent%%% percent of their health per second.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Doubles the damage given to your summon units by this item."
+"DOTA_Tooltip_Ability_item_pharaoh_crown_Description"					"<h1>Passive: Will To Power</h1> Summoned unit health, and damage are multiplied by a division of your stats. Additionally grants armor and magic resistance. <br><br>Affected units regenerate %regen_percent%%% percent of their health per second.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Doubles the damage given to your summon units by this item.\n<h1><font color='#8B0101'>Brewmaster</font> <font color='#FFA32B'>Exclusive:</font></h1>Units gain 2x more dmg"
 "DOTA_Tooltip_Ability_item_pharaoh_crown_Note0"						"Multiple instances of Will To Power do not stack."
 "DOTA_Tooltip_Ability_item_pharaoh_crown_Note1"						"Bonus damage is only 40% effective in calculation."
 "DOTA_Tooltip_Ability_item_pharaoh_crown_Note2"						"Does not work on illusions."
@@ -10537,10 +10537,10 @@ Contains all random skills(including Innates)<br> if your primary attribute is I
 		"dota_tooltip_ability_item_keen_optic_copy_Description"			   "?"
 	   
 		"dota_tooltip_ability_item_imba_silver_edge"					"Silver Edge"
-		"dota_tooltip_ability_item_imba_silver_edge_description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %invis_duration% seconds, or until you attack or cast a spell. While Shadow Walk is active, you move %invis_ms_pct%%% faster and can move through units <font color='#FF7800'>and terrain</font>.<br><br>Attacking to end the invisibility will deal %shadow_rip_damage% <font color='#FF7800'>pure</font> damage to the target, and for %main_debuff_duration% seconds, disable their passive abilities, reduce heal and regeneration by %heal_reduction%%%, <font color='#FF7800'>and reduce their outgoing damage by %panic_damage_reduction%%%</font>. \n<h1><font color='#19BED8'>Passive: True Echo Strike</font></h1>Every %echo_cd%s Causes MELEE attacks to deliver an extra <font color='#FF7800'>true strike </font>attack independent of your attackspeed. \n<h1><font color='#A705B2'>Reverse Status</font></h1> Break duration will be affected only by your status resit and in a positive way(50% status = 50% more break duration)."
-		"dota_tooltip_ability_item_imba_silver_edge_bonus_all_stats"		"+$all"
+		"dota_tooltip_ability_item_imba_silver_edge_description"		"<h1>Active: Shadow Walk</h1>Makes you invisible for %invis_duration% seconds, or until you attack or cast a spell. While Shadow Walk is active, you move %invis_ms_pct%%% faster and can move through units <font color='#FF7800'>and terrain</font>.<br><br>Attacking to end the invisibility will deal %shadow_rip_damage% x your lvl <font color='#FF7800'>pure</font> damage to the target, and for %main_debuff_duration% seconds, disable their passive abilities, reduce heal and regeneration by %heal_reduction%%%, <font color='#FF7800'>and reduce their outgoing damage by %panic_damage_reduction%%%</font>. \n<h1><font color='#19BED8'>Passive: True Echo Strike</font></h1>Every %echo_cd%s Causes MELEE attacks to deliver an extra <font color='#FF7800'>true strike </font>attack independent of your attackspeed. \n<h1><font color='#A705B2'>Reverse Status</font></h1> Break duration will be affected only by your status resit and in a positive way(50% status = 50% more break duration)."
+		"dota_tooltip_ability_item_imba_silver_edge_bonus_all_stats"		"+$lvlbonus_all"
 		"dota_tooltip_ability_item_imba_silver_edge_bonus_attack_speed"		"+$attack"
-		"dota_tooltip_ability_item_imba_silver_edge_bonus_damage"			"+$damage"
+		"dota_tooltip_ability_item_imba_silver_edge_bonus_damage"			"+$bonus_damage_lvl"
 		"dota_tooltip_ability_item_imba_silver_edge_lore"	"The blade of a fallen king, it allows you to move unseen and strike from the shadows."
 		"dota_tooltip_ability_item_imba_silver_edge_note0"	"Has a %invis_fade_time% second fade time."
 		"dota_tooltip_ability_item_imba_silver_edge_note1"	"Normal echo Sabre effect just adds an Attackspeed buff until your next attack so with max As has no effect, True Echo its an extra attack that will always have same effect no matter of AS."

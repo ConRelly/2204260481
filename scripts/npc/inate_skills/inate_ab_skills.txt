@@ -649,6 +649,25 @@
 		}
 	}
 
+	//=================================================================================================================
+	// Brewmaster: Ultimate Hangover
+	//=================================================================================================================
+	"brewmaster_belligerent"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_INNATE_UI"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_NONE"	
+		"MaxLevel"						"1"
+		"Innate"						"1"
+
+		"AbilityValues"
+		{
+			"damage_pct"			"50"
+			"damage_duration_split"		"17"
+			"damage_duration_respawn"	"20"
+			
+		}		
+	}
+
 
 //end
 }

@@ -262,6 +262,7 @@ function GetRandomAbilityName( hero )
 		"purifying_flames",
 		"treant_innate_attack_damage", --innate9
 		"rubick_might_and_magus", --innate10
+		"beastmaster_wild_axes",
 
 	}
     local randomIndex
@@ -416,6 +417,8 @@ function GetRandomAbilityName_int( hero )
 		"nevermore_dark_lord",
 		"bristleback_warpath_lua",
 		--"obs_replay",
+		"beastmaster_wild_axes",
+		"beastmaster_wild_axes",
 		"ogre_magi_multicast_n",
 		"ogre_magi_multicast_lua",		
 		"jotaro_absolute_defense3",
