@@ -3312,6 +3312,10 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Added a separate dmg reduction system for demigods and gods, they have a higher dmg reduction base on their lvl and an aditional reduction base on their currect health (100% hp takes 100% of the dmg , 10% hp or below takes 10% of dmg), it will be adjusted/changed base on feedback
+* Reduced dmg Evasion for gods and demigods significally (including in passive brake state)
+* Increased Dmg amp from 1% to 10% for veil , from 1% to 20% for bounty track and from 0 to 15% for undying unlt.
+
 
 
 

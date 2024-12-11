@@ -2963,13 +2963,13 @@
 			"range"						"1500"
 			"axe_damage"
 			{
-				"value"					"90 870 1900 2730 5960 9890 22450"
+				"value"					"300 1870 4900 19730 45960 149890 322450"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"duration"						"12"
 			"damage_amp"
 			{
-				"value"				"1 2 3 4 5 7 10"
+				"value"				"1"
 				"special_bonus_unique_beastmaster_9"		"+2.5"
 			}
 			"AbilityCooldown"				
@@ -3470,7 +3470,7 @@
 		"LevelsBetweenUpgrades"		 "12"
 		"AbilityValues"
 		{
-			"target_damage_amp"	"1"
+			"target_damage_amp"	"20"
 			"bonus_gold_radius"		
 			{
 				"value"		"6000"
@@ -11259,7 +11259,7 @@
 			"slow"						"40 45 50"
 			"damage_amp"				
 			{
-				"value"					"0"
+				"value"					"15"
 				"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
 			}
 			"slow_duration"					"3"
@@ -20761,7 +20761,7 @@
 			"bonus_all_stats"		"150"
 			"aura_mana_regen"		"25"
 			"aura_radius"			"7200"
-			"spell_amp"				"1"
+			"spell_amp"				"10"
 			"debuff_radius"			"1600"
 			"resist_debuff_duration"	"30.0"
 		}

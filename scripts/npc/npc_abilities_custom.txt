@@ -26670,7 +26670,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
         {
-            "damage" "2200 2640 3080 3520 3960 25400"
+            "damage" "2200 2640 3080 3520 3960 55400"
             "spear_speed" "1000 1100 1200 1300 1400 1100"
             "spear_width" "130"
             "spear_vision" "300"
@@ -26679,7 +26679,7 @@
             "stun_duration" "1.25 1.5 1.75 2.0 2.25 5.5"
             "knockback_duration" "0.25"
             "knockback_distance" "75"
-            "bonus_dmg_from_hp" "25"
+            "bonus_dmg_from_hp" "35"
         }
 		"AbilityCastAnimation"	  "ACT_DOTA_CAST_ABILITY_5"
 		"AbilityCastGestureSlot"		"DEFAULT"
@@ -26724,14 +26724,14 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
         {
-            "attack_time" "1.7 1.65 1.6 1.55 1.5 1.45"
+            "attack_time" "1.7 1.65 1.6 1.55 1.5 1.25"
             "explosion_radius" "550"
-            "attack_damage" "1800 2100 2400 2700 3000 39000"
+            "attack_damage" "1800 2100 2400 2700 3000 89000"
             "knockback_duration" "0.5 0.55 0.6 0.65 0.7 0.75"
             "knockback_distance" "80 90 100 110 120 130"
             "knockback_height" "80 90 100 110 120 130"
             "heal_suppression_pct" "50 55 60 65 70 95"
-            "debuff_duration" "12.0"
+            "debuff_duration" "32.0"
             "armor_reduction_pct" "18 26 34 42 50 78"
             "pulse_radius" "550"
             "pulse_damage" "0"
@@ -26786,7 +26786,7 @@
             "linger_time" "5.0 6.0 7.0 8.0 9.0 7.0"
             "linger_create_interval" "0.5"
             "damage_interval" "0.1"
-            "beam_dps_pct" "30 33 36 39 42 110"
+            "beam_dps_pct" "30 33 36 39 42 1000"
         }
 	}
 
@@ -26837,10 +26837,10 @@
             "portal_time" "2.0 1.8 1.6 1.4 1.2"
             "total_portal_depth" "20 24 28 32 36"
             "staff_crush_radius" "400"
-            "staff_crush_damage" "3400 4250 5100 5950 6800 29650"
+            "staff_crush_damage" "3400 4250 5100 5950 6800 59650"
             "staff_crush_stun_duration" "2.0 3.0 4.0 5.0 6.0 6.0"
             "staff_crush_delay" "0.30"
-            "staff_crush_max_hp" "25"
+            "staff_crush_max_hp" "35"
         }
 	}
 
@@ -26957,7 +26957,7 @@
 		// Time	 
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"			   "33.0"
-		"AbilityChannelTime"			"8.0"
+		"AbilityChannelTime"			"6.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -26970,7 +26970,7 @@
             "spiral_projectiles" "12 12 13 14 15 16"
             "spiral_projectile_waves" "6"
             "spiral_projectile_width" "50"
-            "spiral_projectile_damage" "2250 2250 2500 2750 3000 13500"
+            "spiral_projectile_damage" "2250 2250 2500 2750 3000 33500"
             "spiral_projectile_speed" "625 625 675 725 735 750"
             "spiral_projectile_rotation_speed" "1.2"
             "spiral_projectile_speed_change_interval" "0.75"
@@ -28850,7 +28850,7 @@
   		"AbilityValues"
         {
             "movement_speed" "4500 5000 5500 6000"
-            "damage" "4 8 12 360"
+            "damage" "4 8 12 460"
         }
 	}
 	"special_bonus_unique_sand_king_101"
@@ -29107,7 +29107,7 @@
             "distance_ptc" "1.0"
             "stun_duration" "0.5"
             "radius" "7200"
-            "missing_hp" "2"
+            "missing_hp" "4"
         }
 
 		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_3"
@@ -29143,7 +29143,7 @@
             "aura_radius" "2500"
             "aura_damage"
             {
-                "value" "100.0 15.0 20.0 5000.0"
+                "value" "100.0 15.0 20.0 12000.0"
                 "CalculateSpellDamageTooltip" "0"
             }
             "health_regen" "1.0 1.35 1.65 5.0"
@@ -29304,7 +29304,7 @@
 
 		"AbilityValues"
         {
-            "dodge_chance_pct" "55 55 55 80"
+            "dodge_chance_pct" "55 55 55 60" //hardcoded
             "double_attack_chance" "50 15 20 65"
         }
 	}
@@ -29351,7 +29351,7 @@
 
 		"AbilityValues"
         {
-            "dodge_chance_pct" "70"
+            "dodge_chance_pct" "65"
             "double_attack_chance" "35"
         }
 		"precache"
@@ -29402,7 +29402,7 @@
             "bonus_hero_damage" "1000 70 2000"
             "attack_interval" "0.1"
             "duration" "3 3.25 6.5"
-            "missing_hp" "1"
+            "missing_hp" "3"
         }
 		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -29731,7 +29731,7 @@
             "radius_scepter" "9000"
             "cooldown_scepter" "15"
             "chance_scepter" "0"
-            "missing_hp" "0.5"
+            "missing_hp" "2.5"
         }
 	}
 	"reverse_polarity"
@@ -29770,7 +29770,7 @@
             "hero_stun_duration" "2.5 3.0 7.5"
             "creep_stun_duration" "7.0"
             "cooldown_scepter" "42"
-            "missing_hp" "2.5"
+            "missing_hp" "6.5"
         }
 	}
 
@@ -29814,7 +29814,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
         {
-            "damage" "70 115 9000"
+            "damage" "70 115 15000"
             "radius" "8000 550 7000"
             "vision_radius" "3800"
             "hp_loss" "65 20 65"
@@ -29838,14 +29838,14 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"IsOnCastBar"				   "0"
-		"AbilityChannelTime"			"5"
+		"AbilityChannelTime"			"4"
 		"RequiredLevel"				 "1"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_6"
 
-		"AbilityCooldown"				"50"
+		"AbilityCooldown"				"45"
 		"AbilityCastRange"				"3500"
 		"AbilityCastPoint"				"0.1"
 		"AbilityManaCost"				"0"
@@ -29918,7 +29918,7 @@
             "main_damage" "25000 110 25000"
             "burn_duration" "4.0"
             "burn_dps" "5000 22 5000"
-            "missing_hp" "1.3"
+            "missing_hp" "2.9"
             "burn_distance" "3500"
         }
 	}

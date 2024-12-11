@@ -429,6 +429,26 @@ function AOHGameMode:OnDamageDealt(damageTable)
 					end
 					local dmg_dealt = damageTable.damage -- arcane staff might update this value so i added after isArcane	
 					if victim:HasModifier("modifier_jotaro_absolute_defense") then
+						-- Level-based damage reduction
+						local level_reduction = 0
+						local victim_level = victim:GetLevel()
+						if victim_level >= 100 then
+							level_reduction = 0.97
+						elseif victim_level >= 98 then
+							level_reduction = 0.92							
+						elseif victim_level >= 95 then
+							level_reduction = 0.90
+						elseif victim_level >= 89 then
+							level_reduction = 0.80
+						elseif victim_level >= 84 then
+							level_reduction = 0.60
+						end
+						
+						-- HP-based damage reduction (100% at full HP, 10% at 10% HP or below)
+						local hp_reduction = math.max(0.10, victim:GetHealthPercent() / 100)
+						
+						-- Apply both reductions
+						dmg_dealt = dmg_dealt * (1 - level_reduction) * hp_reduction						
 						if victim:GetMaxHealth() * 0.07 <= dmg_dealt then
 							local limit_hp = victim:GetMaxHealth() * 0.035
 							if victim:GetLevel()> 100 then

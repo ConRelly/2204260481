@@ -342,7 +342,7 @@ function modifier_item_imba_silver_edge_passive:OnAttack(keys)
 	local echo_c = self:GetAbility():GetSpecialValueFor("echo_cd")
 
 	if keys.attacker == parent and item and not parent:IsIllusion() and not parent:IsRangedAttacker() and self.echo_ready == true then
-
+		print("echo hit")
 		self.echo_ready = false
 		self:StartIntervalThink(echo_c * parent:GetCooldownReduction())
 		attacker:PerformAttack(keys.target, true, true, true, true, false, false, true) 

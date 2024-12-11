@@ -959,8 +959,8 @@
 		"UnitLabel"				"no_underdog"
 		
 		"Ability1"			"luna_lucent_beam_lua"
-		"Ability3"			"mjz_luna_lunar_blessing"
-		"Ability4"			"mjz_luna_under_the_moonlight"
+		"Ability4"			"mjz_luna_lunar_blessing"
+		"Ability5"			"mjz_luna_under_the_moonlight"
 		"Ability6"			"luna_eclipse_lua"
 		"Ability11"         "special_bonus_cdr_15"
 		"Ability12"			"special_bonus_unique_luna_102"

@@ -32,16 +32,9 @@ function modifier_flash_backtrack:GetModifierAvoidDamage(params)
             if parent:HasModifier("modifier_spellbook_destruction_pierce_evasion") then
                 return 0
             end
-            local lvl = parent:GetLevel()  
             if parent:PassivesDisabled() then
                 local randomSeed = math.random(1, 100)
-                local chance = 70
-                if lvl > 99 then
-                    chance = 75
-                    if lvl > 100 then
-                        chance = 80
-                    end 
-                end
+                local chance = 35
                 if randomSeed <= chance then
                     --local iParticleID = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
                     --ParticleManager:ReleaseParticleIndex(iParticleID)
@@ -49,13 +42,7 @@ function modifier_flash_backtrack:GetModifierAvoidDamage(params)
                 end  
             else
                 local randomSeed = math.random(1, 100)
-                local chance = 85
-                if lvl > 99 then
-                    chance = 87
-                    if lvl > 100 then
-                        chance = 90
-                    end 
-                end
+                local chance = 65
                 if randomSeed <= chance then
                     --local iParticleID = ParticleManager:CreateParticle("particles/units/heroes/hero_faceless_void/faceless_void_backtrack.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
                     --ParticleManager:ReleaseParticleIndex(iParticleID)
