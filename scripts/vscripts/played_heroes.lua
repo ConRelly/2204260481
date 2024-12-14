@@ -267,7 +267,7 @@ function IsSunday()
     -- Check if the date is between December 10 and January 2
     if (m == 12 and d >= 10) or (m == 1 and d <= 2) then
         print("Holiday bonus active: Treating as Sunday")
-        Notifications:TopToAll({text= "Holiday bonus active: Treating as Sunday(all heroes get top 50 bonus)",style={color="green"}, duration=8})
+        Notifications:TopToAll({text= "Holiday bonus active: Treating as Sunday(all heroes get top 50 bonus and 1 enchanter)",style={color="green"}, duration=8})
         _G.IsSunday_1 = true
         return true
     end

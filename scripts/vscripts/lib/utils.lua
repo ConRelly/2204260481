@@ -1110,3 +1110,39 @@ function DropLootOrInventory(playerID, itemName)
 	end	
 end
 
+
+---sunday check including holliday
+function IsSunday()
+    if _G.IsSunday_1 then
+        return true
+    end   
+
+    local date = StrSplit(GetSystemDate(), '/')
+    local y = tonumber(date[3])
+    local m = tonumber(date[1])
+    local d = tonumber(date[2])
+
+    -- Check if the date is between December 10 and January 2
+    if (m == 12 and d >= 10) or (m == 1 and d <= 2) then
+
+        _G.IsSunday_1 = true
+        return true
+    end
+
+    -- Adjust for leap year
+    if m == 1 or m == 2 then
+        m = m + 12
+        y = y - 1
+    end
+
+    local c = math.floor(y / 100)
+    y = y % 100
+
+    local w = y + math.floor(y / 4) + math.floor(c / 4) - 2 * c + math.floor(26 * (m + 1) / 10) + d - 1
+    local wday = w % 7
+    if wday == 0 then
+        wday = 7
+        _G.IsSunday_1 = true
+    end
+    return wday == 7
+end

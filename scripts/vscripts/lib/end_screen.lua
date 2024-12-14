@@ -68,7 +68,6 @@ function end_screen_get_data(isWinner)
 
                     level = hero:GetLevel(),
                     items = {},
-                    stacksr = {}
                 }
 
                 for item_slot = DOTA_ITEM_SLOT_1, DOTA_STASH_SLOT_6 do
@@ -78,18 +77,13 @@ function end_screen_get_data(isWinner)
                     end
                 end
 
-                -- 15, 16 分别为TP槽位和自然物品槽位
+                -- 15, 16 
                 for item_slot = 16, 16 do
                     local item = hero:GetItemInSlot(item_slot)
                     if item then
                         playerInfo.items[item_slot] = item:GetAbilityName()
                     end
                 end
---[[                 if hero:HasModifier("modifier_antimage_custom_mana_break_buff") then
-                    local stacks = hero:FindModifierByName("modifier_antimage_custom_mana_break_buff")
-                    local nr_stacks = stacks:GetStackCount()
-                    playerInfo.stacksr["mana_break_Stacks"] = nr_stacks
-                end ]]
                 data.players[playerID] = playerInfo
             end
         end

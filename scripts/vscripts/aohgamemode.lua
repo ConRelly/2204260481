@@ -436,11 +436,11 @@ function AOHGameMode:OnDamageDealt(damageTable)
 						elseif victim_level >= 89 then
 							level_reduction = 0.80
 						elseif victim_level >= 84 then
-							level_reduction = 0.60
+							level_reduction = 0.50
 						end
 						
 						-- HP-based damage reduction (100% at full HP, 10% at 10% HP or below)
-						local hp_reduction = math.max(0.10, victim:GetHealthPercent() / 100)
+						local hp_reduction = math.max(0.13, victim:GetHealthPercent() / 100)
 						
 						-- Apply both reductions
 						dmg_dealt = dmg_dealt * (1 - level_reduction) * hp_reduction
@@ -647,6 +647,9 @@ function AOHGameMode:InitVariables()
 					if Cheats:IsEnabled() then
 						--DropItemOrInventory(playerID, "item_obs_studio")
 						hero:AddItemByName("item_obs_studio")
+					end	
+					if IsSunday() then
+						hero:AddItemByName("item_enchanter")
 					end	
 					--hero:AddItemByName("item_ward_sentry")
 					CustomGameEventManager:Send_ServerToAllClients("game_begin", {name = PlayerResource:GetSelectedHeroName(playerID), id = playerID})

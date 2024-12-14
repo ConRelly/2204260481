@@ -692,6 +692,7 @@
 				
 				//"EffectAttachType"			"follow_origin"
 				// "Attributes"				"MODIFIER_ATTRIBUTE_MULTIPLE"
+				"Attributes"                 "MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE | MODIFIER_ATTRIBUTE_PERMANENT"
 				"TextureName"				"force_blade"
 
 				"Properties"
@@ -1732,7 +1733,7 @@
 		"blast_speed"			"400"
 		"hp_regen_degen_aura"	"25"
 		"illusion_multiplier_pct"	"150"
-		"spell_amp"			"0 1"				
+		"spell_amp"			"0 7"				
 		"resist_debuff_duration"	"16.0"
 	}
 }
@@ -10720,6 +10721,7 @@
             "blast_radius" "900 1000 1100 1200 1300"
             "blast_speed" "350"
             "hp_regen_degen_aura" "25 25 30 30 50"
+            "spell_amp"			"4 5 6 7 12"
         }
 	}
 	//=================================================================================================================
@@ -10770,6 +10772,7 @@
             "blast_radius" "900 1000 1100 1200 1300"
             "blast_speed" "350"
             "hp_regen_degen_aura" "25 25 30 30 50"
+            "spell_amp"			"4 5 6 7 12"
         }
 	}
 	//=================================================================================================================
@@ -10818,6 +10821,7 @@
             "blast_radius" "900 1000 1100 1200 1300"
             "blast_speed" "350"
             "hp_regen_degen_aura" "25 25 30 30 50"
+            "spell_amp"			"4 5 6 7 12"
         }
 	}
 	//=================================================================================================================
@@ -10863,13 +10867,15 @@
             "bonus_armor" "15 20 30 40 50"
             "aura_radius" "1200 1300 1400 1500 7600"
             "aura_attack_speed" "-10 -20 -30 -40 -80"
-            "blast_damage" "400 600 1000 9000 21000"
+            "blast_damage" "400 600 1000 9000 51000"
             "blast_movement_speed" "-40"
             "blast_debuff_duration" "4.0"
             "blast_radius" "900 1000 1100 1200 1300"
             "blast_speed" "350"
             "hp_regen_degen_aura" "25 25 30 30 50"
-        }
+            "spell_amp"			"4 5 6 7 12"
+
+        }      
 	}
 
 	//=================================================================================================================

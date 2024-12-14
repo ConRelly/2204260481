@@ -13195,17 +13195,17 @@
 		"LevelsBetweenUpgrades"         "15"
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_Enchantress.Impetus"
-		
+		"MaxLevel"                      "4"
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"575"
-		"AbilityCastPoint"				"0.0 0.0 0.0"
+		"AbilityCastPoint"				"0.0"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"2 1 0.4 0.0"
-		"AbilityDuration"				"1.5 1.5 1.5"
+		"AbilityDuration"				"1.5"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -13217,10 +13217,10 @@
 		{
 			"distance_damage_pct"	
 			{
-				"value"			"145 195 250 450"
-				"special_bonus_unique_enchantress_4"	"+450"	
+				"value"			"245 695 950 1850"
+				"special_bonus_unique_enchantress_4"	"+1850"	
 			}
-			"distance_cap"			"3750"
+			"distance_cap"			"1000"
 			"creep_multiplier"		"3"
 		}
 	}
@@ -18042,7 +18042,7 @@
 				"damage"				"9500"
 				"mark_duration"			"25.0"
 				"slow_pct"				"20"
-				"spell_amp"				"1"
+				"spell_amp"				"17"
 				"status_resistance"		"25"
 				"spread"				
 				{
@@ -20542,7 +20542,7 @@
 			"blast_speed"			"400"
 			"hp_regen_degen_aura"	"25"
 			"illusion_multiplier_pct"	"150"
-			"spell_amp"			"1"				
+			"spell_amp"			"4"				
 			"resist_debuff_duration"	"16.0"
 		}
 	}

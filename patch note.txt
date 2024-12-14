@@ -3328,6 +3328,23 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+
+* Sunday bonus now gives everyone 1 Enchanter at startup (all days are considered Sunday until Jan 2nd).
+* Demigods have less inate dmg reduction (new thing) from 60% to 50%.
+* Gods and Demigods extra dynamic reduction based on HP left from max 90% at 10% HP left or less to max 87% (they take 30% more dmg at low HP).
+* Spell Blade now stays active after death in the extra slot trick.
+* Impetus max range for dmg bonus based on distance changed from ~3700 to 1000, but the dmg has more than tripled.
+* Dmg amp increased for next items and skills: Shiva Guard (1-5), Hoodwink Bomerang,
+* Picaso Physical Dmg Amp (orange paint) now from 6% to 30% on gods, was and is full effect (60%) on demigods.
+
+
+
+
+
+
+
+
+
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).
