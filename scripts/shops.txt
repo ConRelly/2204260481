@@ -68,6 +68,7 @@
 		"item"      "item_overwhelming_blink"
 		"item"      "item_psychic_headband"
 		"item"      "item_nemesis_curse"
+		"item"      "item_red_divine_rapier_lv1"
 		"item"		"item_chest_2"
 		"item"		"item_chest_3"
 		"item"		"item_chest_4"
@@ -168,6 +169,7 @@
 		"item"		"item_arcane_staff"
 		"item"		"item_blast_staff_1"
 		"item"      "item_heavy_blade"
+		"item"      "item_red_divine_rapier_lv1"
 	}
 
 	// Level 3 - Purple Recipes

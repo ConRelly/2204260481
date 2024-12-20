@@ -297,9 +297,16 @@ function CRoshanSystem:CreateRoshan()
             if essence_drop > 0  then
                 hRoshan:AddItemByName('item_all_essence')
                 essence_drop = essence_drop -1
+            elseif RollPercentage(17) then
+                hRoshan:AddItemByName('item_all_essence')
+            end 
+        else
+            if essence_drop > 0  then
+                hRoshan:AddItemByName('item_all_essence')
+                essence_drop = essence_drop -2
             elseif RollPercentage(10) then
                 hRoshan:AddItemByName('item_all_essence')
-            end    
+            end                   
         end    
         --hRoshan:AddNewModifier(hRoshan, nil, 'modifier_roshan_bonus', nil)
     end

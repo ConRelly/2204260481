@@ -94,6 +94,8 @@ function modifier_item_red_divine_rapier:GetModifierTotalDamageOutgoing_Percenta
 					self:OnRefresh()
 				end	
 				return damage
+			elseif target:GetUnitName() == "npc_dota_boss_aghanim" then
+				return damage / 2	
 			else
 				return 0
 			end

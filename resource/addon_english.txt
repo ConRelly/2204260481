@@ -9645,31 +9645,31 @@ Required Level: %required_level%
 
 		//>>>> 	Red Divine Rapier
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv1"							"Red Divine Rapier LVL 1"
-		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv1_Description"				"Increases your damage.\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>, And blocks %reduction_shield%%% of damage taken from him. \n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv1_Description"				"Increases your damage.\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font><br> Blocks %reduction_shield%%% of damage taken from him.<br>Bonus dmg Output works agains <font color='#f2da5b'>Boss Aghanim</font> but only half of that \n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv1_Lore"						"So powerful."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv1_bonus_damage"			  "+$damage"
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv1_bonus_spell_amp"         "%+$spell_amp"
 		
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv2"							"Red Divine Rapier LVL 2"
-		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv2_Description"				"Increases your damage.\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>, And blocks %reduction_shield%%% of damage taken from him. \n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv2_Description"				"Increases your damage.\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font><br> Blocks %reduction_shield%%% of damage taken from him.<br>Bonus dmg Output works agains <font color='#f2da5b'>Boss Aghanim</font> but only half of that \n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv2_Lore"						"So powerful."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv2_bonus_damage"			  "+$damage"
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv2_bonus_spell_amp"         "%+$spell_amp"
 		
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv3"							"Red Divine Rapier LVL 3"
-		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv3_Description"			   	"Increases your damage.\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>, And blocks %reduction_shield%%% of damage taken from him. \n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv3_Description"			   	"Increases your damage.\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font><br> Blocks %reduction_shield%%% of damage taken from him.<br>Bonus dmg Output works agains <font color='#f2da5b'>Boss Aghanim</font> but only half of that \n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv3_Lore"						"So powerful."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv3_bonus_damage"			  "+$damage"
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv3_bonus_spell_amp"         "%+$spell_amp"
 
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv4"							"Red Divine Rapier LVL 4"
-		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv4_Description"				"Increases your damage.\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>, And blocks %reduction_shield%%% of damage taken from him. \n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv4_Description"				"Increases your damage.\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>, And blocks %reduction_shield%%% of damage taken from him.<br>Bonus dmg Output works agains <font color='#f2da5b'>Boss Aghanim</font> but only half of that \n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv4_Lore"						"So powerful."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv4_bonus_damage"			  "+$damage"
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv4_bonus_spell_amp"         "%+$spell_amp"
 
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5"							"Red Divine Rapier LVL 5"
-		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_Description"				"<h1>Active:Consume</h1> Get all the stats and effects of this item(stats slightly improved).\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>, And blocks %reduction_shield%%% of damage taken from him. \n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
+		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_Description"				"<h1>Active:Consume</h1> Get all the stats and effects of this item(stats slightly improved).\n<h1><font color='#E5033D'>Passive: Sword Master Counter</font></h1> Increase your Damage Output by %swrod_master_bonus_ptc%%% agasint challenge boss<font color='#0825F5'> Sword Master </font>, And blocks %reduction_shield%%% of damage taken from him.<br>Bonus dmg Output works agains <font color='#f2da5b'>Boss Aghanim</font> but only half of that \n<h1><font color='#0032f7'>Svens's</font> <font color='#FFA32B'>Exclusive:</font>BaseDamage</h1>Transforms this weapon bonus dmg in Base Damage."
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_Lore"						"So powerful and tasty"
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_bonus_damage"			  "+$damage"
 		"DOTA_Tooltip_Ability_item_red_divine_rapier_lv5_bonus_spell_amp"         "%+$spell_amp"
@@ -10486,7 +10486,7 @@ Contains all random skills(including Innates)<br> if your primary attribute is I
 
 
 	"DOTA_Tooltip_ability_item_god_slayer"				"<font color='#FF0000'>God Slayer</font>"
-	"DOTA_Tooltip_ability_item_god_slayer_Description"	"<h1><font color='#39CEFE'>Active: God Slash</font></h1>Attacks everything in %radius% AOE for %duration% seconds.<br>Adds extra %mana_per%%% (%mana_per_underdog%%% for Underdog) of your Max mana as <font color='#d8ae53'>pure damage</font> to Gods.\n<h1><font color='#39CEFE'>Passive: God Slayer</font></h1> Increases all outgoing damage by %stuff%%% (%stuff_underdog%%% for Underdog) against full Gods.\n<h1><font color='#EC3F0D'>Passive: Souls Collector</font></h1> Permanently gains an additional soul Charge for item, and a soul stack buff (buff gets lost on Unequip) when your team or you kill : with a %stack_chance%%% (%stack_underdog_chance%%% for Underdog) chance for any unit.\n<h1><font color='#EC3F0D'>Passive: Souls Experience</font></h1> Every Soul Stack and Charge give:<br> <font color='#2ECC71'>%stack_agi% Agility</font><br><font color='#A93226'>%stack_str% Strength</font><br><font color='#5499C7'>%stack_spellamp%%% Spell Damage</font><br> <font color='#DC7633'>%stack_armor% Armor</font> <br> <font color='#078D29'>%stack_health% Bonus Health</font>."
+	"DOTA_Tooltip_ability_item_god_slayer_Description"	"<h1><font color='#39CEFE'>Active: God Slash</font></h1>Attacks everything in %radius% AOE for %duration% seconds.<br>Adds extra %mana_per%%% (%mana_per_underdog%%% for Underdog) of your Max mana as <font color='#d8ae53'>pure damage</font> to Gods.\n<h1><font color='#39CEFE'>Passive: God Slayer</font></h1> Increases all outgoing damage by %stuff%%% (%stuff_underdog%%% for Underdog) against full Gods(half effect agasint DemiGods).\n<h1><font color='#EC3F0D'>Passive: Souls Collector</font></h1> Permanently gains an additional soul Charge for item, and a soul stack buff (buff gets lost on Unequip) when your team or you kill : with a %stack_chance%%% (%stack_underdog_chance%%% for Underdog) chance for any unit.\n<h1><font color='#EC3F0D'>Passive: Souls Experience</font></h1> Every Soul Stack and Charge give:<br> <font color='#2ECC71'>%stack_agi% Agility</font><br><font color='#A93226'>%stack_str% Strength</font><br><font color='#5499C7'>%stack_spellamp%%% Spell Damage</font><br> <font color='#DC7633'>%stack_armor% Armor</font> <br> <font color='#078D29'>%stack_health% Bonus Health</font>."
 	"DOTA_Tooltip_ability_item_god_slayer_armor"			"+$armor"
 	"DOTA_Tooltip_ability_item_god_slayer_Note0"				"1) Attack inverval is %attack_interval% and can additionally add hits but with no bonus pure dmg if you have enough attack speed."
 	"DOTA_Tooltip_ability_item_god_slayer_Note1"				"2) Extra DMG of Max mana to non-Gods is only %mana_per_others%%%."
@@ -11049,6 +11049,9 @@ Contains all random skills(including Innates)<br> if your primary attribute is I
 //Muerta
 	"DOTA_Tooltip_Ability_muerta_pierce_the_veil_Description"				"Muerta transforms, becoming immune to physical damage. All of her attack damage is dealt as magical damage. Muerta gains bonus attack damage and phased movement.<br><br>Muerta can attack ethereal units, but deals no damage to Magic Immune targets.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Gain <font color='#0DE4EB'>True Strike</font> and 1.1 base attack time <br><br>DISPEL TYPE: Basic Dispel"
 
+
+//kai
+"DOTA_Tooltip_ability_kez_falcon_rush_echo_damage"			"%Echo Damage:"
 
 //void
 

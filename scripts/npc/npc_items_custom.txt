@@ -14383,7 +14383,7 @@
             "stack_health" "100"
             "stack_regen" "6"
             "stack_armor" "1"
-            "mana_per_others" "10"
+            "mana_per_others" "25"
             "mana_per" "50"
             "mana_per_underdog" "75"
             "stack_chance" "3"

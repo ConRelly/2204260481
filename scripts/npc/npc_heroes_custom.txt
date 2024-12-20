@@ -2842,5 +2842,61 @@
 	}
 
 
+	"npc_dota_hero_kez"
+	{
+
+		"Ability1"					"kez_echo_slash"
+		"Ability2"					"kez_grappling_claw"
+		"Ability3"					"kez_kazurai_katana"
+		"Ability4"					"kez_switch_weapons"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"kez_raptor_dance"
+		"Ability7"					"kez_falcon_rush"
+		"Ability8"					"kez_talon_toss"
+		"Ability9"					"kez_shodo_sai"
+		"Ability10"					"kez_ravens_veil"
+		"Ability11"					"kez_shodo_sai_parry_cancel"
+		"Ability12"					"special_bonus_cdr_25"
+		"Ability13"					"special_bonus_unique_kez_ultimate_cooldown"
+		"Ability14"					"special_bonus_unique_kez_falcon_rush_duration"
+		"Ability15"					"special_bonus_unique_kez_ravens_veil_mark_parry_bonus"
+		"Ability16"					"special_bonus_unique_kez_kazura_katana_bleed_damage"
+		"Ability17"					"special_bonus_unique_kez_falcon_rush_evasion"
+		"Ability18"					"special_bonus_unique_kez_mark_damage"
+		"Ability19"					"special_bonus_unique_kez_echo_slash_strike_count"
+		"AbilityTalentStart"		"12"
+
+
+
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"23"
+		"AttackDamageMax"		"29"
+		"AttackRate"		"2.0"
+		"AttackAnimationPoint"		"0.35"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"225"
+		"AttributePrimary"		"DOTA_ATTRIBUTE_AGILITY"
+		"AttributeBaseStrength"		"19"
+		"AttributeStrengthGain"		"12.6"
+		"AttributeBaseAgility"		"56"
+		"AttributeAgilityGain"		"23.5"
+		"AttributeBaseIntelligence"		"18"
+		"AttributeIntelligenceGain"		"9.7"
+		"StatusHealthRegen"				"10.0"
+		"MovementSpeed"		"360"
+		"AttackSpeedActivityModifiers"
+		{
+			"fast"		"150"
+			"faster"	"200"
+		}
+		"MovementTurnRate"		"1.0"
+		"HasAggressiveStance"		"1"
+
+		
+	}
+
+
+
 }
  

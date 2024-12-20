@@ -1112,8 +1112,8 @@ end
 
 
 ---sunday check including holliday
-function IsSunday()
-    if _G.IsSunday_1 then
+function IsSunday_2()
+    if _G.IsSunday_1 and _G.IsSunday_1_messagge then
         return true
     end   
 

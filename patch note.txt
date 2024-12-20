@@ -3341,7 +3341,14 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Red Divine Rapier now gives bonus dmg output vs. Aghanim, but only half of what it gives vs. Sword Master.
+* 5th and up Roshan can now drop Elemental when less than 3 players (before only dropped for 3+) but it has less chance (it only has 1 guaranteed drop, parties of 3 have 2 guaranteed drops).
+* God Slayer: Extra dmg base on max mana vs other units then gods from 10% to 25%, dmg output bonus now gives half effect bonus vs demigods.
 
+
+
+* Added Kez (Sunraku) hero to the game, buffed most of his skills and added the ones that didn't work with multicast to the ignore list.
+* Aghanim has less innate dmg reduction (he mostly have left the lower hp one).
 
 
 

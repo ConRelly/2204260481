@@ -220,40 +220,9 @@ end
 
 
 --adjust for leap year
---[[ function IsSunday()
-    if _G.IsSunday_1 then
-        print("IsSunday_1 is true")
-        return true
-    end   
-
-    local date = StrSplit(GetSystemDate(), '/')
-    print("Date: " .. date[1] .. "/" .. date[2] .. "/" .. date[3]) -- Print the date
-    local y = tonumber(date[3])
-    local m = tonumber(date[1])
-    local d = tonumber(date[2])
-
-    -- Adjust for leap year
-    if m == 1 or m == 2 then
-        m = m + 12
-        y = y - 1
-    end
-
-    local c = math.floor(y / 100)
-    y = y % 100
-
-    local w = y + math.floor(y / 4) + math.floor(c / 4) - 2 * c + math.floor(26 * (m + 1) / 10) + d - 1
-    local wday = w % 7
-    print("wday is: " .. wday)
-    if wday == 0 then
-        wday = 7
-        _G.IsSunday_1 = true
-        print("Sunday2")
-    end
-    return wday == 7
-end ]]
 --holiday included
 function IsSunday()
-    if _G.IsSunday_1 then
+    if _G.IsSunday_1 and _G.IsSunday_1_messagge then
         print("IsSunday_1 is true")
         return true
     end   
@@ -269,6 +238,7 @@ function IsSunday()
         print("Holiday bonus active: Treating as Sunday")
         Notifications:TopToAll({text= "Holiday bonus active: Treating as Sunday(all heroes get top 50 bonus and 1 enchanter)",style={color="green"}, duration=8})
         _G.IsSunday_1 = true
+        _G.IsSunday_1_messagge = true
         return true
     end
 

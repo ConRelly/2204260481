@@ -387,6 +387,10 @@ function IsExcludeAbility(ability)
 		"void_spirit_custom_resonant_pulse",
 		"mjz_spectre_haunt_single",
 		"mjz_spectre_haunt",
+		"kez_switch_weapons",
+		"kez_shodo_sai",
+		"kez_shodo_sai_parry_cancel",
+		"kez_grappling_claw",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do
