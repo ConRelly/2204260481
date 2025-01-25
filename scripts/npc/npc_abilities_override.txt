@@ -724,7 +724,7 @@
         {
             "value"
             {
-                "value" "380"
+                "value" "900"
                 "ad_linked_abilities" "leshrac_pulse_nova"
             }
         }
@@ -6017,21 +6017,46 @@
 	}
 
 
-	"huskar_berserkers_blood"
-	{
 
-		"AbilityValues"
+    //=================================================================================================================
+    // Huskar: Berserker's Blood
+    //=================================================================================================================
+    "huskar_berserkers_blood"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "MaxLevel"                      "4"
+
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO"
+        "AbilityCastPoint"              "0.3"
+        "AbilityCastRange"              "550"
+        "IsBreakable"                   "1"
+                
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
         {
-            "maximum_attack_speed" "230 290 350 520"
+            "maximum_attack_speed"          "230 290 350 520"
             "maximum_health_regen"
             {
-                "value" "30 40 50 70"
-                "LinkedSpecialBonus" "special_bonus_unique_huskar_6"
+                "value"                     "25 40 55 70"
+                "special_bonus_unique_huskar_6"         "+30"
             }
-            "hp_threshold_max" "70"
+            "aura_radius"
+            {
+                "value"                                             "0"
+            }
+            "aura_effectiveness"
+            {
+                "value"                                             "0"
+            }
+            "maximum_magic_resist"          "20 25 30 40"
+            "hp_threshold_max"              "70"
         }
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
-	}	
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
+    }
 
 
 	//=================================================================================================================
@@ -6111,27 +6136,70 @@
 	}
 
 
-	"jakiro_liquid_fire"
-	{
-		"LevelsBetweenUpgrades"			"8"
-		"MaxLevel"						"10"
-		"AbilityDuration"				"10.0"
-		"AbilityCooldown"				"17 16 15 11 8 6 5 4 3 2"
-		"AbilityCastPoint"				"0.0"
-		"AbilityValues"
+
+    //=================================================================================================================
+    // Ability: Jakiro's Liquid Fire
+    //=================================================================================================================
+    "jakiro_liquid_fire"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_DEAD"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
+        "AbilitySound"                  "Hero_Jakiro.LiquidFire"
+        "HasShardUpgrade"               "1"
+        "LevelsBetweenUpgrades"         "8"
+        "MaxLevel"                      "10"
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "17 16 15 11 8 6 5 4 3 2"
+        "AbilityDuration"               "5.0"
+        "AbilityCastRange"              "600"
+        "AbilityCastPoint"              "0.0 0.0 0.0 0.0"
+        
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityModifierSupportBonus"       "35"
+            
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
         {
             "slow_attack_speed_pct"
             {
-                "value" "-15 -20 -35 -55 -75 -95 -115 -125 -135 -150"
-                "LinkedSpecialBonus" "special_bonus_unique_jakiro_4"
+                "value"         "-15 -20 -35 -55 -75 -95 -115 -125 -135 -150"
+                "special_bonus_unique_jakiro_4" "-50"
+            }
+            "radius"                
+            {
+                "value"     "300"
+                "affected_by_aoe_increase"  "1"
             }
             "damage"
             {
-                "value" "150 1880 3920 6800 9450 19370 29800 57850 117800 380500"
-                "LinkedSpecialBonus" "special_bonus_unique_jakiro_8"
+                "value"             "150 1880 3920 6800 9450 19370 29800 57850 117800 380500"
             }
-        }
-	}
+            "pct_health_damage"         
+            {
+                "value"                     "0"
+                "special_bonus_shard"       "+2.5"
+            }
+            "tick_rate"             "0.5"
+            "building_dmg_pct"      "75"
+            "double_head"
+            {
+                "special_bonus_unique_jakiro_3" "+1"
+            }
+        }       
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_3"
+    }
+
+
 
 	"special_bonus_unique_jakiro_8"
 	{
@@ -6153,47 +6221,74 @@
         }
 	}
 
-	"jakiro_liquid_ice"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"553"											// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_ATTACK "
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_DEAD"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"AbilitySound"					"Hero_Jakiro.LiquidFire"
-		"MaxLevel"						"5"
-		"LevelsBetweenUpgrades"		 "7"
-		"FightRecapLevel"				"1"
-		"IsGrantedByShard"				"1"
-		"HasShardUpgrade"				"1"
 
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"3"
-		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.0"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportBonus"		"35"
-			
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
+
+    //=================================================================================================================
+    // Ability: Jakiro's Liquid Ice
+    //=================================================================================================================
+    "jakiro_liquid_ice"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_DONT_PROC_OTHER_ABILITIES"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_DEAD"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
+        "AbilitySound"                  "Hero_Jakiro.LiquidFire"
+        "FightRecapLevel"               "1"
+        "HasShardUpgrade"               "1"
+        "MaxLevel"                      "5"
+        "LevelsBetweenUpgrades"         "7"
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "3"
+        "AbilityCastRange"              "700"
+        "AbilityCastPoint"              "0.0"
+        
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityModifierSupportBonus"       "35"
+            
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
         {
-            "movement_slow" "30"
-            "base_damage" "1200 2400 4500 7400 13500"
-            "pct_health_damage" "2.0"
-            "duration" "6.0"
-            "radius" "300"
-        }		
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
-	}	
+            "movement_slow"         
+            {
+                "value"     "30"
+            }
+            "damage"
+            {
+                "value"             "1200 2400 4500 7400 13500"
+            }
+            "bonus_instance_damage_from_other_abilities"    
+            {
+                "value"     "2400 4500 7400 13500 60000"
+                "special_bonus_unique_jakiro_4" "+40000"           
+            }
+            "pct_health_damage"         
+            {
+                "value"                     "0"
+                "special_bonus_shard"       "+2.5"
+            }       
+            "duration"              "4.0"
+            "radius"                
+            {
+                "value"     "0"
+                "affected_by_aoe_increase"  "1"
+            }
+            "tick_rate"             "0.5"
+            "double_head"
+            {
+                "special_bonus_unique_jakiro_3" "+1"
+            }
+        }       
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_3"
+    }
+
 
 	//=================================================================================================================
 	// Ability: Jakiro's Macropyre
@@ -7009,7 +7104,7 @@
 				"value"			"15"
 				"special_bonus_unique_lycan_5"	"+30"
 			}
-			"crit_multiplier"		"650 1175 1850"
+			"crit_multiplier"		"1175 2850 4600"
 			"health_bonus"		"2500 6000 10500"
 		}
 	}
@@ -7276,7 +7371,7 @@
 				"special_bonus_unique_medusa_6"		"+40"
 			}
             "damage_per_mana_per_level"             "0.5"
-			"absorption_pct"						"40 45 50 55 60"
+			"absorption_pct"						"55 60 65 70 75"
 			"bonus_mana"							"520 1800 2400 5000 7500"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -7345,7 +7440,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"LevelsBetweenUpgrades"  		"12"
+		"LevelsBetweenUpgrades"  		"15"
 		"AbilitySound"					"Hero_Meepo.Geostrike"
 
 		// Special
@@ -7354,13 +7449,13 @@
 		{		
 				"health_steal_heroes"	
 				{
-					"value"						"235 969 2320 5523"
+					"value"						"969 2320 5523 9001"
 					"LinkedSpecialBonus"		"special_bonus_unique_meepo_6"
 					"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
 				}
 				"health_steal_creeps"	
 				{
-					"value"						"235 969 2320 5523"
+					"value"						"969 2320 5523 9001"
 					"LinkedSpecialBonus"		"special_bonus_unique_meepo_6"
 					"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
 				}			
@@ -13732,7 +13827,7 @@
 					"LinkedSpecialBonus"		"special_bonus_unique_phantom_lancer"
 				}
 				"bonus_speed"		"3500"
-				"bonus_agility"		"188 260 385 510 777 999 1777"
+				"bonus_agility"		"260 385 510 777 999 1777 3999"
 				"agility_duration"		
 				{
 					"value"			"15.0"
@@ -13795,7 +13890,7 @@
 	   "LevelsBetweenUpgrades"			"7"
 	   "AbilityValues"
         {
-            "attack_damage" "345 1290 4350 14800"
+            "attack_damage" "1290 4350 14800 56000"
             "damage_reduction"
             {
                 "value" "-10 -15 -25 -45"
@@ -21219,7 +21314,7 @@
             "katana_echo_damage"                
             {
                 "DamageTypeTooltip"                                     "DAMAGE_TYPE_PHYSICAL"
-                "value"                                                 "200 400 800 1600"
+                "value"                                                 "400 800 1600 3200"
             }
             "echo_hero_damage"              
             {
@@ -21335,9 +21430,9 @@
             "katana_bleed_duration"                         "5.0 6.0 7.0 8.0"
             "katana_bleed_attack_damage_pct"                        
             {
-                "value"                                                         "5 6 7 10"   
+                "value"                                                         "10 12 14 18"   
                 "DamageTypeTooltip"                                             "DAMAGE_TYPE_PHYSICAL"  
-                "special_bonus_unique_kez_kazura_katana_bleed_damage"           "+10.0"
+                "special_bonus_unique_kez_kazura_katana_bleed_damage"           "+15.0"
             }   
             "heal_reduction_pct"                                                "20 25 30 40"
     
@@ -21408,7 +21503,7 @@
                 "special_bonus_unique_kez_ultimate_cooldown"        "-10"
             }
             
-            "strike_interval"                                       "0.25"
+            "strike_interval"                                       "0.20"
             "strikes"                                               "4 6 10"
             "radius"                        
             {
@@ -21418,12 +21513,12 @@
             }   
             "base_damage"               
             {
-                "value"                 "1750 3750 27500"
+                "value"                 "3750 27500 58000"
                 "DamageTypeTooltip"     "DAMAGE_TYPE_PURE"
             }
             "max_health_damage_pct"     
             {
-                "value"                 "1.0"
+                "value"                 "1.5"
                 "DamageTypeTooltip"     "DAMAGE_TYPE_PURE"
             }
             "lifesteal_pct"     "100"
@@ -21493,7 +21588,7 @@
             }
             "echo_damage"               
             {
-                "value"                 "140 160 180 200"
+                "value"                 "240 260 280 300"
                 "DamageTypeTooltip"     "DAMAGE_TYPE_PHYSICAL"
             }
         }
@@ -21539,7 +21634,7 @@
             }
             "damage"                    
             {
-                "value"                 "1750 12500 185000 6250000"
+                "value"                 "1750 12500 185000 7250000"
                 "DamageTypeTooltip"     "DAMAGE_TYPE_MAGICAL"
             }
             "speed"                     "2000"
@@ -21586,7 +21681,7 @@
             "base_crit_pct"                                     
             {
                 "value"                                             "940 1560 2700 5200"
-                "special_bonus_unique_kez_mark_damage"              "+2750"
+                "special_bonus_unique_kez_mark_damage"              "+3750"
             }
             "stun_duration"                                         "0.2"
             "shard_base_movement_speed"
@@ -21606,7 +21701,7 @@
             "forward_angle"                                         "180"               
             "speed_penalty"                                         "25"
             "parry_duration"                                        "2.0"
-            "parry_bonus_crit"                                      "1525 4500 9001 18000"
+            "parry_bonus_crit"                                      "9001 18000 36000 72000"
             "parry_stun_duration"                                   "0.5"
         }
     }

@@ -69,7 +69,7 @@
 	"DOTA_Tooltip_modifier_totem_upgrade_tracker"   "Totem Level"
 	"DOTA_Tooltip_modifier_totem_aura_effect" "<font color='#FF7518'>Last Order</font>"
 	"DOTA_Tooltip_modifier_totem_aura"   	"Totem"
-	"DOTA_Tooltip_modifier_totem_aura_effect_description" "Level %dMODIFIER_PROPERTY_TOOLTIP2% Aura stats :<br> %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% magic resit<br> %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% bonus armor<br> %dMODIFIER_PROPERTY_STATUS_RESISTANCE%%% Status resistance<br> %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Amp<br> %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% Damage<br>MinMS: %dMODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN% <br>Gold Cost for Next UP: %dMODIFIER_PROPERTY_TOOLTIP% <br> 2x stats At lvl 50 "
+	"DOTA_Tooltip_modifier_totem_aura_effect_description" "Level %dMODIFIER_PROPERTY_TOOLTIP2% Aura stats :<br> %dMODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS%%% magic resit<br> %dMODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS% bonus armor<br> %dMODIFIER_PROPERTY_STATUS_RESISTANCE%%% Status resistance<br> %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Amp<br> %dMODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE%%% Attack Damage<br>MinMS: %dMODIFIER_PROPERTY_MOVESPEED_ABSOLUTE_MIN% <br>Gold Cost for Next UP: %dMODIFIER_PROPERTY_TOOLTIP% <br> 2x stats At lvl 50 "
 
 	"DOTA_Tooltip_ability_item_totem_upgrade"                   "Upgrade Totem"
 	"DOTA_Tooltip_ability_item_totem_upgrade_Description"       "<h1><font color='#07ECFF'>Upgrade</font></h1>Upgrade the team's totem, increasing its aura bonuses. Each upgrade increases the cost for subsequent upgrades.<br>On first Buy it will spawn an Totem item aura holder"
@@ -3381,15 +3381,15 @@
 	"DOTA_Tooltip_modifier_mjz_enigma_spacetime_gravity_buff"	   			"SpaceTime Gravity"
 	"DOTA_Tooltip_modifier_mjz_enigma_spacetime_gravity_buff_Description"		"The power returns to its origin."
 	"DOTA_Tooltip_ability_mjz_faceless_the_world"						"THE WORLD"
-	"DOTA_Tooltip_ability_mjz_faceless_the_world_Description"			"Creates a blister in spacetime, trapping all units caught in its sphere of influence and causes you to move very quickly inside it and increases for you and your ally the Outgoing damage by %bonus_stuf%%% . Only Faceless Void and any units he controls are unaffected. Unaffected units cannot be Stunned (or other cc) inside. Invisible enemies in the sphere will be revealed. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Increases duration by %duration_super_scepter% sec. and radius by %radius_super_scepter%"
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_Description"			"Creates a blister in spacetime, trapping all units caught in its sphere of influence and causes you to move very quickly inside it and increases for you and your ally the Outgoing damage by %bonus_stuf_ally%%% . Only Faceless Void and any units he controls are unaffected. Unaffected units cannot be Stunned (or other cc) inside. Invisible enemies in the sphere will be revealed. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Increases duration by %duration_super_scepter% sec. and radius by %radius_super_scepter%"
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_Lore"					"When a rift opens to Claszureme, all poor souls caught within will likely never return."
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_radius"				"RADIUS:"
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_duration"				"DURATION:"
-	//"DOTA_Tooltip_ability_mjz_faceless_the_world_bonus_stuf"			"%Increased enemy Incomming Damage:"
+	"DOTA_Tooltip_ability_mjz_faceless_the_world_bonus_stuf"			"%Increased enemy Incomming Damage:"
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_duration_scepter"				"SCEPTER DURATION:"
 	"DOTA_Tooltip_ability_mjz_faceless_the_world_scepter_description"			"Increases duration and allows allies to move inside sphere."
 	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_enemy"				"THE WORLD"
-	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_enemy_Description"	"Trapped in spacetime. Unable to move or act."
+	"DOTA_Tooltip_modifier_mjz_faceless_the_world_aura_effect_enemy_Description"	"Trapped in spacetime. Unable to move or act. Receive %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% bonus incoming dmg"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_faceless_the_world_radius"		"+{s:value} THE WORLD AoE"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_faceless_the_world_attack_speed" "+{s:value} THE WORLD Attack Speed per second"
 	"DOTA_Tooltip_ability_mjz_faceless_time_dilation"				"Time Dilation"
@@ -3597,14 +3597,15 @@
 
 
 	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova"					"Pulse Nova"
-	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_Description"		"Creates waves of damaging energy around Leshrac, one per second, to damage nearby enemy units."
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_Description"		"Creates waves of damaging energy around Leshrac, to damage nearby enemy units."
 	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_scepter_description"				"Increased ability damage."
 	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_Lore"				"If necessary, the Tormented Soul can manipulate space time itself, ravaging lesser beings."
-	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_Note0"				"Deals damage in 1 second intervals, starting immediately upon toggling the spell on."
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_Note0"				"Deals damage in %nova_tick% second intervals, Is Affected by range/aoe increase."
 	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_radius"					"Damage Radius: "
 	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_mana_cost_per_second"		"Mana Cost per Second: "
 	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_damage"					"Damage per Second: "
 	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_damage_scepter"			"Damage per Second (Aghanim's Scepter): "
+	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_damage_scepter_intelligence_per" "%Int As Damage (Aghanim's Scepter): "
 	"DOTA_Tooltip_ability_mjz_leshrac_pulse_nova_damage_intelligence_per"	"%Intelligence as Damage: "
 	"DOTA_Tooltip_modifier_mjz_leshrac_pulse_nova" "Pulse Nova"
 	"DOTA_Tooltip_modifier_mjz_leshrac_pulse_nova_Description" "Inflicting Damage to nearby enemy units"
@@ -3931,14 +3932,18 @@
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_night_stalker_darkness_damage"		"+{s:value} Dark Ascension Bonus Damage"
 	
 	"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night"					"Hunter in the Night"
-	"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night_Description"		"Attack Speed and Movement Speed are increased, and multiply with the arrival of night."
+	"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night_Description"		"Attack Speed, Movement Speed, Spell amp and Total Attack are increased, and multiply with the arrival of night."
 	"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night_Lore"				"The hunting prowess of Balanar improves as the night beckons."
 	"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night_bonus_movement_speed_pct"	"%Move Speed Bonus:"
 	"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night_bonus_attack_speed"			"Attack Speed Bonus:"
+	"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night_bonus_damage_pct"			"%Total Attack Bonus:"
+	"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night_bonus_spell_amp"			"%Spell Amp Bonus:"
 	"DOTA_Tooltip_ability_mjz_night_stalker_hunter_in_the_night_bonus_in_night"				"Night Multiplier:"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_night_stalker_hunter_in_the_night_mspeed"		"+{s:value}% Hunter In The Night Movement Speed"
 	"DOTA_Tooltip_ability_special_bonus_unique_mjz_night_stalker_hunter_in_the_night_aspeed"		"+{s:value} Hunter In The Night Attack Speed"
 	"DOTA_Tooltip_modifier_mjz_night_stalker_hunter_in_the_night_aspeed"             "Hunter Bonus"
+
+	"DOTA_Tooltip_ability_special_bonus_unique_mjz_night_stalker_hunter_in_the_night_dmgptc"        "+{s:value}% Hunter In The Night Total Attack"
 
 	"DOTA_Tooltip_modifier_mjz_night_stalker_bonus"	                                "Kuma Stalker"
 	"DOTA_Tooltip_modifier_mjz_night_stalker_bonus_Description"                     "Bonus xp and gold %dMODIFIER_PROPERTY_EXP_RATE_BOOST%%% , 10%% crit chance(33%% x lvl), Ignore ms limit. %dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% Outgoing dmg bonus, %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% incoming dmg reduction, has 60%% chance to block pure dmg, have <font color='#109CE7'> True Strike </font>."
@@ -4701,10 +4706,10 @@
 
 
 	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance"					"Vengeance"
-	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_Description"		"Increase your attack damage, attack speed, attack distance."
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_Description"		"Increase your Base attack damage, attack speed, attack distance."
 	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_Lore"				"She may spend eternity flightless, but she will have her revenge."
 	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_Note0"			"1) Attack Range Bonus for melee heroes has been reduced by 2 times."
-	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_bonus_damage"		"Attack Damage Bonus: "
+	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_bonus_damage"		"Base Attack Damage Bonus: "
 	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_bonus_attack_speed"	"Attack Speed Bonus: "
 	"DOTA_Tooltip_ability_mjz_vengefulspirit_vengeance_bonus_attack_range"	"Attack Range Bonus: "
 		
@@ -4754,7 +4759,7 @@
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot_Note0"								"Powershot will destroy trees in its area of effect."
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot_arrow_range"							"RANGE:"
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot_attack_damage"						"%ATTACK DAMAGE:"
-	//"DOTA_Tooltip_ability_mjz_windrunner_powershot_debuff_incoming_damage"				"%INCREASED ENEMY INCOMING DAMAGE:"
+	"DOTA_Tooltip_ability_mjz_windrunner_powershot_debuff_incoming_damage"				"%INCREASED ENEMY INCOMING DAMAGE:"
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot_debuff_inco_duration"				"DEBUFF DURATION:"
 	"DOTA_Tooltip_ability_mjz_windrunner_powershot_shot_chance"							"%STRAIGHT SHOOTER CHANCE:"
 	"DOTA_Tooltip_modifier_mjz_windrunner_powershot_debuff"								"You be shot by an arrow"
@@ -9682,12 +9687,12 @@ Required Level: %required_level%
 
 		//item xp boost
 		"DOTA_Tooltip_ability_item_xp_booster_edible"                  "Essence of Growth"
-		"DOTA_Tooltip_ability_item_xp_booster_edible_Description"      "<br>Grants %bonus_xp_percent%%% bonus XP when equipped. Can be consumed to instead gain Base stats over time \n\nPassive: Bonus XP\nActive: Consume to gain Base stats every 3 sec(ALT)"
+		"DOTA_Tooltip_ability_item_xp_booster_edible_Description"      "<br>Grants %bonus_xp_percent%%% bonus XP when equipped. Can be consumed to instead gain Base stats over time \n\nPassive: Bonus XP\nActive: Consume to gain Base stats every 3 sec(ALT)\n<h1><font color='#86C91F'>Item Totem</font></h1>If placed on Totem unit it will give %base_aura_xp%%% + %charge_xp%%% per charge XP as an separate Aura to all players.<br> Item stacks with himself if placed on Totem"
 		"DOTA_Tooltip_ability_item_xp_booster_edible_Lore"             "A mysterious concoction that enhances one's ability to learn and grow stronger."
 		//"DOTA_Tooltip_ability_item_xp_booster_edible_bonus_xp_percent" "+$%bonus_xp_percent%%% XP Gain"
 		"DOTA_Tooltip_ability_item_xp_booster_edible_Note0"            "When consumed, grants %int_gain% Intelligence and %agi_str_gain% Agility & Strength every %stat_gain_interval% seconds."
 		//"DOTA_Tooltip_ability_item_xp_booster_edible_Note1"            "If consumed after %cdr_time_threshold% game time minutes , also grants your level divided by 10 cooldown reduction."
-		"DOTA_Tooltip_ability_item_xp_booster_edible_Note1"            "It might give something else if certain condition is meet (you will know from buffs)"
+		"DOTA_Tooltip_ability_item_xp_booster_edible_Note1"            "It can give CDR bonus (10% of your level) if certain condition is meet (you will know from buffs if consumed and condition is meet)"
 
 
 		"DOTA_Tooltip_modifier_xp_booster_consumed"                    "Essence of Growth Consumed"
@@ -9695,6 +9700,9 @@ Required Level: %required_level%
 
 		"DOTA_Tooltip_modifier_xp_booster_cdr"                         "Essence of Growth CDR"
 		"DOTA_Tooltip_modifier_xp_booster_cdr_Description"             "Cooldowns reduced by %dMODIFIER_PROPERTY_COOLDOWN_PERCENTAGE%%%. (your level divided by 10 at the consumtion time)"		
+
+		"DOTA_Tooltip_modifier_xp_booster_aura_effect"                 "Totem Essence of Growth"
+		"DOTA_Tooltip_modifier_xp_booster_aura_effect_Description"     "Gain %dMODIFIER_PROPERTY_EXP_RATE_BOOST%%% bonus xp"
 
 //Obsidian rapier
 		"DOTA_Tooltip_ability_item_obsidian_rapier"					"<font color='#2d353a'>Obsidian Rapier</font>"
@@ -10165,7 +10173,7 @@ Contains all random skills(including Innates)<br> if your primary attribute is I
 		<font color='#39CEFE'>Shadow Cleanse: Applies a strong dispel when you enter in shadow realm.</font>\n<h1><font color='#DE3163'>Super Scepter</font></h1>Shadow Realm has %ss_chance%%% chance to Crit(Base = %crit_power%%%) on every attack. Status Resistance will Increases your final crit by your Base crit power (Pres Alt for details)."
 		"DOTA_Tooltip_ability_dark_willow_shadow_realm_lua_Lore"				"What you can't see will most definitely hurt you."
 		"DOTA_Tooltip_ability_dark_willow_shadow_realm_lua_scepter_description" "Attacking no longer takes you out of Shadow Realm. Each attack still has bonus damage based on the duration of the buff."
-		"DOTA_Tooltip_ability_dark_willow_shadow_realm_lua_Note0"				"Status resistance crit increase(base = 400%): an 50% status will add 200% more resulting in 600% new crit power)"
+		"DOTA_Tooltip_ability_dark_willow_shadow_realm_lua_Note0"				"Status resistance crit increase(base = 500%): an 50% status will add 250% more resulting in 750% new crit power)"
 		"DOTA_Tooltip_ability_dark_willow_shadow_realm_lua_Note1"				"Grants phased movement. Damage is Affected by SpellAmp. Not affected by Arcane Scepter or broken wings"
 		"DOTA_Tooltip_ability_dark_willow_shadow_realm_lua_Note2"				"Disjoints projectiles upon cast."
 		"DOTA_Tooltip_ability_dark_willow_shadow_realm_lua_duration"						"Duration:"

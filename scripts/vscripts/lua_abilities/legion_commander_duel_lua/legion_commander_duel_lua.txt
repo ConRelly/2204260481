@@ -26,12 +26,12 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
         {
-            "damage_bonus" "5 10 15"
+            "damage_bonus" "15 20 25"
             "str_multiplier" "0.015"
             "str_multiplier_tooltip" "15"
             "stack_chance"
             {
-                "value" "6 8 10"
+                "value" "8 10 12"
                 "LinkedSpecialBonus" "special_bonus_unique_legion_commander_chance"
             }
         }

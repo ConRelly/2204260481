@@ -151,9 +151,9 @@ function mjz_windrunner_powershot:OnProjectileHit_ExtraData(target, loc, ExtraDa
 		if caster:HasModifier("modifier_item_aghanims_shard") then
 			target:AddNewModifier(caster, self, "modifier_powershot_shard", {duration = self:GetSpecialValueFor("debuff_duration")})
 		end
---[[ 		if not target:HasModifier("modifier_mjz_faceless_the_world_aura_effect_enemy") then
-			target:AddNewModifier(caster, self, "modifier_mjz_windrunner_powershot_debuff", {duration = self:GetSpecialValueFor("debuff_inco_duration")})
-		end ]]
+		
+		target:AddNewModifier(caster, self, "modifier_mjz_windrunner_powershot_debuff", {duration = self:GetSpecialValueFor("debuff_inco_duration")})
+		
 
 		local damage = (ExtraData.damage or self.damage) + hits * self:GetSpecialValueFor("damage_increase") / 100
 		ApplyDamage({victim = target, attacker = caster, ability = self, damage_type = self:GetAbilityDamageType(), damage = damage, damage_flags = DOTA_DAMAGE_FLAG_NONE})
@@ -176,7 +176,7 @@ end
 
 -------------removed , incoming dmg amp brackes last wave balance and future implementations--------------------------
 
---[[ modifier_mjz_windrunner_powershot_debuff = class({})
+modifier_mjz_windrunner_powershot_debuff = class({})
 function modifier_mjz_windrunner_powershot_debuff:IsHidden() return false end
 function modifier_mjz_windrunner_powershot_debuff:IsPurgable() return false end
 function modifier_mjz_windrunner_powershot_debuff:DeclareFunctions() 
@@ -185,7 +185,7 @@ end
 function modifier_mjz_windrunner_powershot_debuff:GetModifierIncomingDamage_Percentage()
 	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("debuff_incoming_damage") end
 end
- ]]
+
 ---------------------------------------------------------------------------------------
 
 modifier_powershot_shard = class({})

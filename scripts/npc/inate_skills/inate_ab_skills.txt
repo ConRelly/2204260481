@@ -117,8 +117,8 @@
 		"Innate"						"1"
 		"AbilityValues"
 		{
-			"duration"					"40"
-			"spell_amp"					"400"
+			"duration"					"50"
+			"spell_amp"					"500"
 			"debuff_amp"				"50"
 		}
 	}

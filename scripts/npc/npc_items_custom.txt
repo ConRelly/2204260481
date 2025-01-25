@@ -2074,7 +2074,7 @@
 	"ScriptFile"						"items/item_plain_ring.lua"
 	"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"				"plain_ring"
-	"AbilityCooldown"					"360.0"
+	"AbilityCooldown"					"1500.0"
 	"ItemShopTags"						"regen_health;regen_mana;mana_pool;health_pool"
 	"ItemQuality"						"epic"
 	"ItemAliases"						"gr;gold ring"
@@ -4253,7 +4253,7 @@
 		}
 		"AbilityValues"
         {
-            "bonus_all_stats" "50"
+            "bonus_all_stats" "200"
             "bonus_health" "1000"
             "bonus_mana" "800"
         }
@@ -4284,6 +4284,7 @@
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
 					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%bonus_health"
 					"MODIFIER_PROPERTY_MANA_BONUS" 				"%bonus_mana"
+					
 				}
 			}
 
@@ -4305,6 +4306,7 @@
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%bonus_all_stats"
 					"MODIFIER_PROPERTY_HEALTH_BONUS" 			"%bonus_health"
 					"MODIFIER_PROPERTY_MANA_BONUS" 				"%bonus_mana"
+
 				}
 			}
 		}
@@ -25087,6 +25089,7 @@
 	    "ItemShopTags"                  "xp;stats"
 	    "ItemQuality"                   "epic"
 	    "ItemAliases"                   "xp booster;edible booster"
+	    "ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 	    "ItemPurchasable"				"1"
 	    "ItemStackable"                 "0"
 	    "ItemPermanent"                 "0"
@@ -25104,6 +25107,8 @@
 		    "int_gain" "1"
 		    "agi_str_gain" "2"                
 		    "cdr_time_threshold" "100"
+		    "base_aura_xp" "15"
+		    "charge_xp" "5"
 		}
 	}	
 

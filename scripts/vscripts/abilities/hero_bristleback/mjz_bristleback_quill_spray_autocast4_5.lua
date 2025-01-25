@@ -67,6 +67,8 @@ local NoAutocast = {
     ["brewmaster_drunken_brawler"] = true,
     ["dawnbreaker_solar_guardian"] = true,
     ["dawnbreaker_land"] = true,
+    ["faceless_void_time_walk_reverse"] = true,
+    
 };
 
 local TargetSpell = {

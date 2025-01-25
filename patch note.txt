@@ -3351,10 +3351,64 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Aghanim has less innate dmg reduction (he mostly have left the lower hp one).
 
 
+* Increase cooldown of Gold ring for bosses by 140s 
+
+
+* Increase cooldown of bosses gold ring by 1000s(1500)
+* buffed some Kez skills
+* Reduced some of the new custom defense for gods.
+
+
+
+
+
+
+* Added back debuff incoming dmg amp with some buff for Windranger Powershot (15%) and Void The World Crono (15%).
+* Reduced the maximum bonus dmg reduction of Demi and Gods from 87% to 85% based on health left (they take more dmg than before at lower hp).
+* Essence of Growth item has a new passive (place on item totem to use the new passive), added more info for the hidden bonus.
+* The following Random Pool skills have been buffed:
+  -Tidebringer(higher bonus dmg and 2x more str bonus dmg at max lvl)
+  -Essence Aura (x2 more mana)
+  -Hunter in the Night (added total attack bonus and spell amp) 
+  -Vegeance (now gives base attack instead of bonus and more)
+  -Fervor (more ag per stack at max lvl (600 from 240) and hp)
+  -Duel(+10 more base dmg at max lvl)
+  -Jingu Mastery( A lot more bonus dmg per lvl and 30% more spell amp)
+  -Cold Soul (200% spell amp at max)
+  -Master of Magic(150% Amp from 70%)
+  -Mana Shield(from 60% reduction at max to 75%)
+  -Insatiable Hunger (double base Dmg at max and 15% spell amp per stack instead of 7%)
+  -Ransack (over 9000 at max from ~5k, harder to lvl)
+  -Laguna Blade (from 0.2 to 0.3 int mult per stack)
+  -Vendeta (from 200% to 400% crit per stack and from 6 to 30 max stacks, +50% spell amp)
+  -Power of Gold (from 6 to 10% attack bonus)
+  -Ion Shell(2x more int mult at max)
+  -Berserker's Blood(+10% mr)
+  -Shapeshift (~3x more crit dmg)
+  -Shadow Realm (+3 int mult and +100% crit dmg)
+  -Pulse Nova(now affected by AoE buff, Aghanim gives int % bonus)
+  -Icarus Dive(Dmg greatly increased)
+  -Sonic Wave(mana cost reduced from 60% to 20%, Aghanim bonus dmg increased and int% dmg increased by ~+500%)
+  -Slayer Rebound(most of its bonuses/DMG increased by nearly 50% or more)
+  -Grim Reaper(from 15 to 25 dmg per stack and chance from 10 to 12%)
+  -Frostbite(from ~6 to 10 mana regen dmg mult)
+  -And a few more but very lightly buffed(will change more in future patches)
+
+* Increased Diabolic Edict bonus dmg from all stats (including talent).
+
+
+
+
+
+
+
+
 
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).
+
+
 
 
 

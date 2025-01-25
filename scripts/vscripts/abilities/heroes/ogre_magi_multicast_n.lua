@@ -477,6 +477,7 @@ function IsExcludeAbility9(ability)
 		"dazzle_shadow_wave",
 		"pocket_portal",
 		"reload_bullet",
+		"faceless_void_time_walk_reverse",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

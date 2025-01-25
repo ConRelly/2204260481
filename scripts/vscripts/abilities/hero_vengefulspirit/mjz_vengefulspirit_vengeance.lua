@@ -18,13 +18,13 @@ function modifier_class:IsPurgable() return false end
 
 function modifier_class:DeclareFunctions()
 	return {
-		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+		MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
 		MODIFIER_PROPERTY_ATTACK_RANGE_BONUS,
 	}
 end
 
-function modifier_class:GetModifierPreAttack_BonusDamage()
+function modifier_class:GetModifierBaseAttack_BonusDamage()
 	return self:GetAbility():GetSpecialValueFor('bonus_damage')
 end
 

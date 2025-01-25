@@ -428,19 +428,17 @@ function AOHGameMode:OnDamageDealt(damageTable)
 						local level_reduction = 0
 						local victim_level = victim:GetLevel()
 						if victim_level >= 101 then
-							level_reduction = 0.98
+							level_reduction = 0.97
 						elseif victim_level >= 98 then
-							level_reduction = 0.95							
+							level_reduction = 0.92							
 						elseif victim_level >= 95 then
-							level_reduction = 0.90
+							level_reduction = 0.82
 						elseif victim_level >= 89 then
-							level_reduction = 0.80
-						elseif victim_level >= 84 then
-							level_reduction = 0.10
+							level_reduction = 0.75
 						end
 						
 						-- HP-based damage reduction (100% at full HP, 13% at 13% HP or below)
-						local hp_reduction = math.max(0.13, victim:GetHealthPercent() / 100)
+						local hp_reduction = math.max(0.15, victim:GetHealthPercent() / 100)
 						
 						-- Apply both reductions
 						dmg_dealt = dmg_dealt * (1 - level_reduction) * hp_reduction

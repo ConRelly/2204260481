@@ -5732,7 +5732,7 @@
 	"AbilityCastGestureSlot"		"ABSOLUTE"
 	"RequiredLevel"							 "1"
 	"LevelsBetweenUpgrades"					 "7"
-	"AbilityCastRange"				"1200"
+	"AbilityCastRange"				"1600"
 	"Maxlevel"								  "5"
 	"AbilityCooldown"				"13"
 	"AbilityManaCost"				"0"
@@ -5745,10 +5745,10 @@
 	"AbilityValues"
         {
             "duration" "5"
-            "radius" "1200"
+            "radius" "1600"
             "percentage"
             {
-                "value" "50 100 200 300 500"
+                "value" "150 250 350 500 650"
                 "CalculateSpellDamageTooltip" "1"
             }
             "instances_count" "4"
@@ -8497,7 +8497,7 @@
 	}
 	"AbilityValues"
         {
-            "damage" "10 15 20 25 40"
+            "damage" "10 15 20 25 50"
             "attack_count" "4 6 8 10 12"
             "attack_count_scepter" "6 8 12 14 16"
             "radius" "1250"
@@ -8553,7 +8553,7 @@
 	"AbilityTextureName"			"lich_sinister_gaze"
 	"AbilityValues"
         {
-            "spell_amp" "60 100 140"
+            "spell_amp" "100 140 200"
         }
 }
 "lich_custom_cold_soul2"
@@ -8674,7 +8674,7 @@
             }
             "damage_scepter"
             {
-                "value" "15 20 25 30 35"
+                "value" "20 30 55 90 125"
                 "CalculateSpellDamageTooltip" "1"
             }
             "damage_per_use"
@@ -8896,10 +8896,10 @@
 	"AbilityValues"
         {
             "buf_duration" "4 5 6 7"
-            "bonus_damage" "120 160 200 240"
+            "bonus_damage" "260 600 1200"
             "bonus_stats" "1 1 1 2"
             "interval" "15"
-            "spell_amp" "110"
+            "spell_amp" "140"
         }
 }
 "naga_siren_custom_aquatica_grace"
@@ -9340,11 +9340,11 @@
 	"AbilityManaCost"					"100 150 200"
 	"AbilityValues"
         {
-            "crit_increase" "200"
+            "crit_increase" "400"
             "interval" "0.7 0.5 0.2"
-            "max_crit_stacks" "6"
+            "max_crit_stacks" "30"
             "movement_speed" "60 70 80"
-            "spell_amp" "80 160 300"
+            "spell_amp" "80 160 350"
             "duration" "20.0"
         }
 }
@@ -15215,12 +15215,12 @@
 			}
 			"damage_per_second"
 			{
-				"value"							"60 290 950 1555 2200 6800 27800"
+				"value"							"60 290 950 1555 2200 6800 47800"
 				"LinkedSpecialBonus"			"special_bonus_ds_ion_shell_damage"
 			}
 			"duration"					"60"
 			"think_interval"			"1"
-			"int_mult"					"5 6.5 8 12 14.5 25 30"
+			"int_mult"					"6.5 8 12 14.5 25 30 60"
 		}
 		"precache"
 		{
@@ -15562,7 +15562,7 @@
             "spark_damage" "500 1970 8940 17700 21200 44000 72500"
             "spark_bonus"
             {
-                "value" "15 16 17 18 21 24 32"
+                "value" "16 17 18 21 24 32 46"
                 "LinkedSpecialBonus" "special_bonus_unique_arc_warden"
             }
         }
@@ -16304,7 +16304,7 @@
         {
             "bonus_damage"
             {
-                "value" "90 220 580 950 1500 2000 4000"
+                "value" "220 580 950 1500 2000 4000 8000"
                 "LinkedSpecialBonus" "special_bonus_unique_mjz_broodmother_insatiable_hunger"
             }
             "lifesteal_pct" "2 4 6 8 10 12 14"
@@ -16313,7 +16313,7 @@
             "duration" "12 14 16 18 20 22 25"
             "bonus_atack" "1500"
             "chance" "10"
-            "bonus_amp" "7"
+            "bonus_amp" "15"
         }
 		
 		"precache"
@@ -16956,7 +16956,7 @@
             "damage_interval" "0.5"
             "mana_reg_dmg"
             {
-                "value" "5.0 5.1 5.2 5.3 5.4 5.5 6.6"
+                "value" "5.0 5.5 6.0 6.5 7.0 7.5 10.0"
                 "LinkedSpecialBonus" "special_bonus_unique_mjz_crystal_maiden_forstbite"
             }
             "bonus" "2"
@@ -16977,7 +16977,7 @@
 		
 		"AbilityValues"
         {
-            "value" "5.4"
+            "value" "10.0"
         }
 	}
 
@@ -17835,7 +17835,8 @@
             "radius_super_scepter" "550"
             "cooldown_scepter" "80"
             "speed" "1200"
-            "bonus_stuf" "50"
+            "bonus_stuf" "15"
+            "bonus_stuf_ally" "50"
         }
 
 		"precache"
@@ -18127,10 +18128,10 @@
 		
 		"AbilityValues"
         {
-            "bonus_damage" "650 3950 11500"
+            "bonus_damage" "950 4950 13500"
             "attack_range" "200 300 400"
             "cast_range" "250 450 650"
-            "model_scale" "30"
+            "model_scale" "5 10 20"
         }
 	}
 	
@@ -18352,7 +18353,7 @@
 		"AbilityValues"
         {
             "bonus_cooldown_scepter" "20"
-            "spell_amp_scepter" "70"
+            "spell_amp_scepter" "150"
             "manacost_reduction_scepter" "40"
         }
 	}
@@ -18693,7 +18694,7 @@
             "cleave_distance" "1900"
             "damage_bonus"
             {
-                "value" "275 550 850 1800 3450 7500 19500"
+                "value" "550 1850 3800 7450 37500 195000"
                 "CalculateSpellDamageTooltip" "0"
             }
             "cleave_damage"
@@ -18703,7 +18704,7 @@
             }
             "strength_damage_pct"
             {
-                "value" "375 650 900 1200 1500 1800 2500"
+                "value" "650 900 1200 1500 1800 2500 5000"
                 "CalculateSpellDamageTooltip" "0"
             }
             "cooldown"
@@ -18838,7 +18839,7 @@
             "explosion_delay" "0.25"
             "damage_stats"
             {
-                "value" "140 150 160 170 190 200 220"
+                "value" "150 180 210 240 300 450"
                 "LinkedSpecialBonus" "special_bonus_unique_mjz_leshrac_diabolic_edict_1"
             }
         }
@@ -18851,7 +18852,7 @@
 		
 		"AbilityValues"
         {
-            "value" "80"
+            "value" "150"
         }
 	}	
 
@@ -18990,7 +18991,6 @@
 		"AbilityCastPoint"				"0"
 		"AbilityCooldown"				"7.0"
 		"AbilityManaCost"				"70 90 110 170 350"
-		"AOERadius"						"450 550 650 750 1050"
 		"HasScepterUpgrade"				"1"
 			
 		"precache"
@@ -19003,7 +19003,11 @@
 		"AbilityValues"
         {
             "mana_cost_per_second" "20 40 90 170 420"
-            "radius" "450 550 650 750 1050"
+            "radius"
+            {
+	            "value" "450 550 650 750 1050"
+	            "affected_by_aoe_increase"	"1"	
+            }
             "damage"
             {
                 "value" "300 975 2600 4900 13500"
@@ -19011,13 +19015,19 @@
             }
             "damage_scepter"
             {
-                "value" "620 1475 4900 9200 19550"
+                "value" "1475 4900 9200 19550 45000"
                 "LinkedSpecialBonus" "special_bonus_unique_leshrac_3"
                 "RequiresScepter" "1"
             }
+            "damage_scepter_intelligence_per"
+            {
+                "value" "680 980 1600 2400"
+                "LinkedSpecialBonus" "special_bonus_unique_leshrac_3"
+                "RequiresScepter" "1"
+            }            
             "damage_intelligence_per"
             {
-                "value" "300 385 580 680 750"
+                "value" "385 580 680 750 1250"
                 "LinkedSpecialBonus" "special_bonus_unique_leshrac_3"
             }
             "nova_tick" "0.5"
@@ -19307,7 +19317,7 @@
                 "value" "20 30 45"
                 "RequiresScepter" "1"
             }
-            "intmult_per_kill" "0.2"
+            "intmult_per_kill" "0.3"
             "kill_grace_duration" "35"
             "splash_radius_scepter"
             {
@@ -20399,7 +20409,7 @@
         {
             "bonus_movement_speed_pct"
             {
-                "value" "22 36 40 64"
+                "value" "36 40 64 92"
                 "LinkedSpecialBonus" "special_bonus_unique_mjz_night_stalker_hunter_in_the_night_mspeed"
             }
             "bonus_attack_speed"
@@ -20407,9 +20417,16 @@
                 "value" "80 100 220 320"
                 "LinkedSpecialBonus" "special_bonus_unique_mjz_night_stalker_hunter_in_the_night_aspeed"
             }
+            "bonus_damage_pct"
+            {
+            	"value" "15"
+            	"LinkedSpecialBonus" "special_bonus_unique_mjz_night_stalker_hunter_in_the_night_dmgptc"
+            }
+            "bonus_spell_amp" "40 60 80 100"
             "bonus_in_night" "2"
         }
 	}
+
 	"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_mspeed"
 	{
 		"BaseClass"						"special_bonus_undefined"
@@ -20433,6 +20450,17 @@
         }
 	}
 
+	"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_dmgptc"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilityValues"
+        {
+            "value" "10"
+        }
+	}
 	//=================================================================================================================
 	// Nyx Assassin: Mana Burn
 	//=================================================================================================================
@@ -20531,7 +20559,7 @@
 		"AbilityValues"
         {
             "radius" "2200"
-            "bonus_mana" "250 450 950 1950 2700 5400 9350"
+            "bonus_mana" "450 950 1950 2700 5400 9350 18000"
             "restore_amount" "25"
             "restore_chance" "40"
         }
@@ -20558,7 +20586,7 @@
 		"AbilityValues"
         {
             "speed_bonus" "-10 -18 -26 -66"
-            "attack_bonus" "-10 -18 -26 -66"
+            "attack_bonus" "-18 -26 -66 -88"
             "radius" "600"
             "think_interval" "1.4"
         }
@@ -21181,10 +21209,10 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"LevelsBetweenUpgrades"		 "5"
+		"LevelsBetweenUpgrades"		 	"10"
 		"AbilitySound"					"Hero_Phoenix.SunRay.Cast"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-		"AbilityCastRange"				"1575"
+		"AbilityCastRange"				"1700"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"36 34 32 30"
 		"AbilityManaCost"				"90 100 110 120"
@@ -21200,7 +21228,7 @@
                 "value" "1575"
                 "LinkedSpecialBonus" "special_bonus_unique_phoenix_4"
             }
-            "attr_damage" "7 12 18 25"
+            "attr_damage" "24 48 96 192"
         }
 
 		"precache"
@@ -21825,13 +21853,13 @@
             "damage" "540 730 1120 1700 2500 5130 9345"
             "damage_scepter"
             {
-                "value" "640 930 1520 2400 3200 6530 12345"
+                "value" "930 1520 2400 3200 6530 12345 35000"
                 "RequiresScepter" "1"
             }
-            "intelligence_damage" "400 600 800 1200 1400 1777 2333"
+            "intelligence_damage" "400 600 800 1200 1400 1777 2777"
             "knockback_distance" "0"
             "knockback_duration" "0.8"
-            "mana_cost_pct" "60"
+            "mana_cost_pct" "20"
         }
 
 		"precache"
@@ -23883,7 +23911,7 @@
 			}
 			"armor_multiplier"
 			{
-				"value"								"10 20 30 40"
+				"value"								"10 20 30 50"
 				"CalculateSpellDamageTooltip"		"1"
 				"DamageTypeTooltip"					"DAMAGE_TYPE_PHYSICAL"
 			}
@@ -23955,7 +23983,7 @@
             }
             "health_regen" "8 14 50 132 360 650 1500"
             "movement_speed" "14 18 24 28 34 40 50"
-            "bonus_lvl_ptc" "3"
+            "bonus_lvl_ptc" "4"
         }
 	}
 	"special_bonus_unique_mjz_treant_natures_guise_health"
@@ -24030,15 +24058,15 @@
 		"AbilityTextureName"			"mjz_troll_warlord_fervor"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "6"
+		"LevelsBetweenUpgrades"		 "7"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
  		"AbilityCastAnimation"			"ACT_INVALID"
 		
 		"AbilityValues"
         {
-            "bonus_agi" "20 45 65 80 105 120 150"
+            "bonus_agi" "65 80 105 120 150 300 600"
             "stack_chance" "25"
-            "bonus_hp" "40 65 85 105 120 155 210"
+            "bonus_hp" "85 105 120 155 210 260 420"
             "bonus_mana" "10 25 35 50 65 80 150"
             "bonus_range" "10 11 12 13 14 15 17"
             "max_stacks"
@@ -24189,7 +24217,7 @@
 		
 		"AbilityValues"
         {
-            "bonus_damage" "160 900 2440 4820 12000"
+            "bonus_damage" "900 2440 4820 9200 18000"
             "bonus_attack_speed" "40 80 140 200 250"
             "bonus_attack_range" "100 150 200 250 350"
         }
@@ -24441,7 +24469,7 @@
 			"channel_time"					"3"
 			"debuff_incoming_damage"
 			{
-				"value"						"0"
+				"value"						"15"
 				"DamageTypeTooltip"			"DAMAGE_TYPE_NONE"
 			}
 			"debuff_duration"				"9"
@@ -27345,8 +27373,8 @@
             "health_increase" "20.0 30.0 40.0 50.0"
             "attack_range" "2000"
             "magic_resist" "25 30 35 50"
-            "armor_bonus" "30 50 70 90"
-            "health_bonus" "1000 2000 3000 5000"
+            "armor_bonus" "80 95 115 150"
+            "health_bonus" "1000 2000 4000 10000"
         }
 		//"precache"
 		//{
@@ -27803,7 +27831,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
         {
-            "gold_percent" "2.0 6.0"
+            "gold_percent" "3.0 10.0"
         }
 	}
 
@@ -28663,9 +28691,9 @@
 				"LinkedSpecialBonus"			"special_bonus_unique_ck_grow_strong"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
-			"grow_model"			"0.2"
+			"grow_model"			"0.1"
 			"grow_interval"			"13 12 11 10 9 8"
-			"max_scale"				"100"
+			"max_scale"				"50"
 			"crit_chance"			"8"
 			"crit_per_str"			"0.5"
 			"stun_duration"			"1"
@@ -29033,7 +29061,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
         {
-            "value" "8.5"
+            "value" "10"
         }
 	}
 	"special_bonus_dark_willow_bedlam_lua"
@@ -29940,11 +29968,11 @@
 	"AbilityCooldown"				"60"
 	"AbilityValues"
         {
-            "str_stack" "10"
-            "agi_stack" "20"
-            "hp_stack" "30"
-            "crit_stack" "60"
-            "crit_chance" "8"
+            "str_stack" "20"
+            "agi_stack" "35"
+            "hp_stack" "60"
+            "crit_stack" "80"
+            "crit_chance" "10"
             "stack_increase" "1"
             "stack_chance"
             {
@@ -29954,8 +29982,8 @@
             "evasion_stack" "0.5"
             "ms_stack" "50"
             "interval" "1.0"
-            "base_damage" "20"
-            "aoe" "1500"
+            "base_damage" "40"
+            "aoe" "1900"
         }
 }
 "special_bonus_unique_weaver_back_in_time"

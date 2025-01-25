@@ -180,10 +180,11 @@
 {
 	"Ability5"		"generic_hidden"
 	"Ability7"		"jakiro_double_trouble"
-	"Ability11"		"special_bonus_spell_amplify_35"
+	"Ability11"		"special_bonus_cdr_15"
+	"Ability12"		"special_bonus_spell_amplify_125"
 	"Ability13"		"special_bonus_hp_3250"
 	"Ability14"		"special_bonus_movement_speed_65"
-	"Ability17"		"special_bonus_spell_amplify_125"
+	"Ability17"		"special_bonus_unique_jakiro_4"
 
 	"AttributeIntelligenceGain"	"8.3"
 }
@@ -2055,7 +2056,7 @@
 		"Ability13"				"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_mspeed"
 		"Ability14"             "special_bonus_hp_6000"
 		"Ability15"				"special_bonus_unique_night_stalker_4"
-		"Ability16"				"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_aspeed"
+		"Ability16"				"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_dmgptc"
 		"Ability17"				"special_bonus_unique_mjz_night_stalker_darkness_damage"
 		
 		"AttackRate"				"1.450000"

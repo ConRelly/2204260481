@@ -108,7 +108,7 @@ if IsServer() then
         local damage_normal = GetTalentSpecialValueFor(ability, "damage")
         local damage_scepter = GetTalentSpecialValueFor(ability, "damage_scepter")
         local damage_intelligence_per = GetTalentSpecialValueFor(ability, "damage_intelligence_per")
-    
+        local damage_intelligence_per = GetTalentSpecialValueFor(ability, "damage_scepter_intelligence_per")
         local damage_amount = damage_normal
         if caster:HasScepter() then
             damage_amount = damage_scepter

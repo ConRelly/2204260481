@@ -69,7 +69,8 @@ local NoAutocast = {
     ["custom_aegis_cast"] = true,
     ["brewmaster_drunken_brawler"] = true,
     ["dawnbreaker_solar_guardian"] = true,
-    ["dawnbreaker_land"] = true,    
+    ["dawnbreaker_land"] = true,  
+    ["faceless_void_time_walk_reverse"] = true,  
 };
 
 local TargetSpell = {
