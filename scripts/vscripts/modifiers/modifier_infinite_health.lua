@@ -33,26 +33,26 @@ function modifier_infinite_health:OnDestroy()
             local reward = "Tier I: 1 ingot, 1 gold bag, Dropped in center of the map"
             _G._challenge_bosss = 1
             if _G._endlessMode_started then
-                if lvl > 40 then
+                if lvl > 50 then
                     create_item_drop("item_adamantium_ingot", vcenter + RandomVector(RandomFloat(50, 250)))
-                    reward = "Tier II: 2 ingots, 2 gold bags, Dropped in center of the map"
+                    reward = "Tier II: 2 ingots, 2 gold bags, Dropped in center of the map(100 was next tier)"
                     Drop_gold_bag(parent, 35000)
                     _G._challenge_bosss = 2
                 end 
-                if lvl > 90 then
+                if lvl > 100 then
                     create_item_drop("item_adamantium_ingot", vcenter + RandomVector(RandomFloat(50, 250)))
-                    reward = "Tier III: 3 ingots, 3 gold bags, Dropped in center of the map"
+                    reward = "Tier III: 3 ingots, 3 gold bags, Dropped in center of the map(200 was next tier)"
                     Drop_gold_bag(parent, 35000)
                     _G._challenge_bosss = 3
                 end
-                if lvl > 140 then
+                if lvl > 200 then
                     create_item_drop("item_adamantium_ingot", vcenter + RandomVector(RandomFloat(50, 250)))
                     create_item_drop("item_edible_fragment", vcenter + RandomVector(RandomFloat(50, 250)))
-                    reward = "Tier IV: 4 ingots, 4 gold bags, Edible Fragment, Dropped in center of the map"
+                    reward = "Tier IV: 4 ingots, 4 gold bags, Edible Fragment, Dropped in center of the map(400 was next tier)"
                     Drop_gold_bag(parent, 35000)
                     _G._challenge_bosss = 4
                 end 
-                if lvl > 310 then
+                if lvl > 400 then
                     create_item_drop("item_adamantium_ingot", vcenter + RandomVector(RandomFloat(50, 250)))
                     create_item_drop("item_edible_complete", vcenter + RandomVector(RandomFloat(50, 250)))
                     reward = "Tier V: 5 ingots, 5 gold bags, Edible fragment + Edible Complete"

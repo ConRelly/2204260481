@@ -45,6 +45,8 @@ end
 local NoAutocastItem = {
     
     ["item_totem_upgrade"] = true,
+    ["item_aegis_lua"] = true,
+    ["item_aghanims_fragment"] = true,
 
 };
 

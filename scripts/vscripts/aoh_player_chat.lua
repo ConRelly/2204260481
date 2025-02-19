@@ -733,7 +733,7 @@ function AOHGameMode:OnPlayerChat(keys)
 		else
 
 			CreateUnitByName(unit, plyhero:GetAbsOrigin() + RandomVector(RandomFloat(200, 1000)) , true, nil, nil, DOTA_TEAM_BADGUYS)
-			Notifications:TopToAll({text="Challenge " .. name.." reach lvl 190(or 150 for part 1) for max reward ", style={color="blue"}, duration=10})
+			Notifications:TopToAll({text="Challenge " .. name.." reach lvl 400(or 150 for part 1) for max(tier 5) reward ", style={color="blue"}, duration=10})
 			self.challenge = true
 		end	
 	end

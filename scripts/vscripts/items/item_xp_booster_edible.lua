@@ -111,8 +111,6 @@ function modifier_xp_booster_aura_effect:GetModifierPercentageExpRateBoost()
     return 15 + 5 * self:GetAuraOwner():GetModifierStackCount("modifier_xp_booster_aura", nil)
 end
 
----not new--
-
 
 -- Passive modifier (XP boost)
 
