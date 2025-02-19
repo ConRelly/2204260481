@@ -1060,8 +1060,8 @@ function AOHGameMode:OnHeroLevelUp(event)
 	local heroLevel = hero:GetLevel()
 	local nPlayerID = hero:GetPlayerID()
 	if not PlayerResource:IsValidPlayer(nPlayerID) then return end
-	local dice_1 = RandomInt(1, 70)
-	local dice_2 = RandomInt(1, 70)
+	local dice_1 = RandomInt(1, 30) --old 70
+	local dice_2 = RandomInt(1, 30) --old 70
 	local abilityPointsToGive = 1
 	local apEveryXLevel = 7
 	local fragmentEveryXLevel = 7

@@ -41,7 +41,6 @@
 			"item_vampire_fangs_copy"			"1"
 			"item_pupils_gift"					"1"
 			"item_imp_claw"						"1"
-			//"item_philo_stone_temp"				"0"
 			"item_dragon_scale"					"1"
 		}
 	}

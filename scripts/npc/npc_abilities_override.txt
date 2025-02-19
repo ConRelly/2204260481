@@ -19311,7 +19311,7 @@
 		"ItemContributesToNetWorthWhenDropped"	"0"
 		"AllowedInBackpack"				"0"
 		"ItemStackable"				 "0"
-		//"ItemIsNeutralDrop"			 "1"
+		//"ItemIsNeutralActiveDrop"			 "1"
 		"IsTempestDoubleClonable"		"0"
 		"ItemShareability"			  "ITEM_FULLY_SHAREABLE"
 		"AbilityValues"
@@ -19333,7 +19333,7 @@
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
 	"ItemCost"						"0"
-	"ItemIsNeutralDrop"				"0"
+	"ItemIsNeutralActiveDrop"				"0"
 	"ItemPurchasable"				"0"
 	"ItemPurchasable"               "0"
 	"AbilityCooldown"				"27"
@@ -20889,7 +20889,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 
@@ -21817,7 +21817,7 @@
 		"ID"							"379"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemCost"						"100"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemPurchasable"				"0"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"AbilityValues"
@@ -21866,7 +21866,7 @@
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemPurchasable"				"1"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemRequirements"
 		{
 			"01"		"item_kaya;item_sange;item_yasha;item_chest_5;"
@@ -21881,7 +21881,7 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"IsObsolete"					"0"
 		"AbilityValues"
@@ -21918,7 +21918,7 @@
 	"item_titan_sliver"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"0"
 		"ItemPurchasable"				"1"
@@ -21953,7 +21953,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemSellable"					"1"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemPurchasable"				"1"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"AbilityValues"
@@ -21984,7 +21984,7 @@
 		"ID"							"301"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemPurchasable"				"1"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -22015,7 +22015,7 @@
 	"item_minotaur_horn"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"
@@ -22046,7 +22046,7 @@
 // Witless Shako
 	"item_witless_shako"
 	{
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"0"
 		"ItemPurchasable"				"1"
@@ -22106,7 +22106,7 @@
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_demonicon"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemRequirements"
 		{
 			"01"						"item_chest_5;item_necronomicon_3"
@@ -22116,7 +22116,7 @@
 	"item_demonicon"
 	{
 		"AbilityCooldown"				"80.0"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemGloballyCombinable"		"0"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemPurchasable"				"1"
@@ -22136,7 +22136,7 @@
 		"ItemRecipe"					"1"
 		"ItemPurchasable"				"1"
 		"IsObsolete"					"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemRequirements"
 		{
 			"01"						"item_blink;item_meteor_hammer;item_chest_5"
@@ -22147,7 +22147,7 @@
 	{
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"AbilityValues"
         {
@@ -22183,7 +22183,7 @@
 	{
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"AbilityValues"
         {
@@ -22219,7 +22219,7 @@
 		"ItemPurchasable"				"1"
 		"ItemInitialCharges"			"5"
 		"AbilityCooldown"				"25"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"0"
 		"AbilityValues"
         {
@@ -22248,7 +22248,7 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemCost"						"2000"
 		"ItemGloballyCombinable"		"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemSellable"					"1"
 		"ItemPurchasable"				"1"
 		"AbilityCooldown"				"35"
@@ -22302,7 +22302,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemPurchasable"				"1"
 		"InvalidHeroes"					"npc_dota_hero_monkey_king"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -22338,7 +22338,7 @@
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemGloballyCombinable"		"0"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemPurchasable"				"1"
 		"AbilityCooldown"				"35.0"
@@ -22370,7 +22370,7 @@
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemGloballyCombinable"		"0"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemPurchasable"				"1"
 		"AbilityCooldown"				"60.0"
@@ -22406,7 +22406,7 @@
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemGloballyCombinable"		"0"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemPurchasable"				"1"
 		"AbilityValues"
@@ -22437,7 +22437,7 @@
 	{
 		"ID"							"676"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
@@ -22470,7 +22470,7 @@
 	"item_spy_gadget"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"0"
 		"ItemPurchasable"				"1"
@@ -22503,7 +22503,7 @@
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemGloballyCombinable"		"1"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemSellable"					"1"
 		"ItemPurchasable"				"1"
 		"AbilityValues"
@@ -22534,7 +22534,7 @@
 	"item_orb_of_destruction"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"0"
 		"ItemPurchasable"				"1"
@@ -22566,7 +22566,7 @@
 	"item_helm_of_the_undying"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"0"
 		"ItemPurchasable"				"1"
@@ -22597,7 +22597,7 @@
 	"item_greater_faerie_fire"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemPurchasable"				"1"
 		"ItemPermanent"					"1"
@@ -22632,7 +22632,7 @@
 	"item_enchanted_quiver"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"0"
 		"ItemPurchasable"				"1"
@@ -22665,7 +22665,7 @@
 	"item_dimensional_doorway"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemPurchasable"				"0"
 		"ItemPermanent"					"0"
@@ -22697,7 +22697,7 @@
 	"item_craggy_coat"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"0"
 		"ItemPurchasable"				"1"
@@ -22727,7 +22727,7 @@
 	"item_stormcrafter"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"AbilityCooldown"				"25.0"
@@ -22764,7 +22764,7 @@
 	"item_cloak_of_flames"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -22797,7 +22797,7 @@
 	"item_vampire_fangs"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"0"
 		"ItemPurchasable"				"1"
@@ -22828,7 +22828,7 @@
 	"item_vambrace"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"0"
 		"ItemPurchasable"				"1"
@@ -22861,7 +22861,7 @@
 	"item_pupils_gift"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"
@@ -22890,7 +22890,7 @@
 	"item_nether_shawl"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"
@@ -22907,7 +22907,7 @@
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemPurchasable"				"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemRequiresCharges"			"0"
 		"ItemInitialCharges"			"90000"
 		"ItemCost"						"10000"
@@ -22926,7 +22926,7 @@
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemCost"						"7100"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -22960,7 +22960,7 @@
 	"item_imp_claw"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"
@@ -22991,7 +22991,7 @@
 	"item_grove_bow"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"
@@ -23023,7 +23023,7 @@
 	"item_essence_ring"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"AbilityCooldown"				"45.0"
 		"ItemGloballyCombinable"		"0"
@@ -23056,7 +23056,7 @@
 	"item_dragon_scale"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"
@@ -23088,7 +23088,7 @@
 	"item_spider_legs"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"
@@ -23116,7 +23116,7 @@
 	"item_trusty_shovel"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"
@@ -23142,7 +23142,7 @@
 	"item_royal_jelly"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"0"
@@ -23173,7 +23173,7 @@
 	"item_repair_kit"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"0"
 		"ItemPurchasable"				"1"
@@ -23205,7 +23205,7 @@
 	"item_ocean_heart"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"
@@ -23227,7 +23227,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"0"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemPurchasable"				"0"
 
 		// Stats
@@ -23265,7 +23265,7 @@
 	"item_mango_tree"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"0"
 		"ItemGloballyCombinable"		"0"
 		"ItemPurchasable"				"1"
@@ -23277,7 +23277,7 @@
 		"ID"							"571"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"ItemCost"						"5400"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemPurchasable"				"1"
 		"ItemSellable"					"1"
 		"AbilityCooldown"				"25.0"
@@ -23310,7 +23310,7 @@
 	"item_keen_optic"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"0"
 		"ItemPurchasable"				"1"
@@ -23340,7 +23340,7 @@
 	"item_flicker"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"0"
 		"ItemPurchasable"				"1"
@@ -23371,7 +23371,7 @@
 	"item_faded_broach"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"0"
 		"ItemGloballyCombinable"		"0"
 		"ItemPurchasable"				"1"
@@ -23396,7 +23396,7 @@
 	"item_elixer"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"0"
 		"ItemGloballyCombinable"		"0"
 		"ItemPurchasable"				"1"
@@ -23427,7 +23427,7 @@
 	"item_broom_handle"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"
@@ -23445,7 +23445,7 @@
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemCost"						"6500"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemPurchasable"				"1"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"AbilityValues"
@@ -23476,7 +23476,7 @@
 		"AbilityCastPoint"				"0"
 		"AbilityManaCost"				"150"
 		"ItemCost"						"9500"
-		"ItemIsNeutralDrop"				"0"
+		"ItemIsNeutralActiveDrop"				"0"
 		"ItemPurchasable"				"1"
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -23504,7 +23504,7 @@
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemCost"						"11500"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemPurchasable"				"1"
 		"AbilityCooldown"				"30.0"
 		"AbilityManaCost"				"0"
@@ -23540,7 +23540,7 @@
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"ItemCost"						"20000"
-		"ItemIsNeutralDrop"				"1"
+		"ItemIsNeutralActiveDrop"				"1"
 		"ItemPurchasable"				"1"
 		"Model"							"models/props_gameplay/neutral_box.vmdl"
 		"AbilityCooldown"				"65"
