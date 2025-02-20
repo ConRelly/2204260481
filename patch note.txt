@@ -3408,6 +3408,16 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 
 
 
+* Added back Roshan and Neutrals (found a fix for crash)
+* Roshan spawn time from (between 1-14min) to 1-13min
+* Doubled the cumulative bonus xp per Roshan killed given to all, from 1k xp per Roshan to 2k.
+* Restored Enchanter drop chance to normal (slightly better than before).
+* Added back info on the stats some neutrals give (like dragon scale).
+* The rest of february all days will count as sunday bonus.
+* Fixed Goon helper unit model error
+
+
+
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).

@@ -1124,7 +1124,10 @@ function IsSunday_2()
 
     -- Check if the date is between December 10 and January 2
     if (m == 12 and d >= 10) or (m == 1 and d <= 2) then
-
+        _G.IsSunday_1 = true
+        return true
+    end
+    if (m == 2 and d >= 14) then
         _G.IsSunday_1 = true
         return true
     end

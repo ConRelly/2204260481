@@ -49,7 +49,7 @@ function SetupPlayerClone(caster, ability)
 		end
 	end
 
-	local neutralItem = caster:GetItemInSlot(DOTA_ITEM_NEUTRAL_SLOT)
+	local neutralItem = caster:GetItemInSlot(DOTA_ITEM_NEUTRAL_ACTIVE_SLOT)
 	if neutralItem then 
 		local cloneItemData = {name = neutralItem:GetAbilityName(), level = neutralItem:GetLevel(), charges = neutralItem:GetCurrentCharges()}
 		table.insert(cloneData.items, cloneItemData)
@@ -220,10 +220,10 @@ function PlayVideo(keys)
 			clone:TakeItem(clone:GetItemInSlot(slot))
 		end
 	end
-	local neutralItem = clone:GetItemInSlot(DOTA_ITEM_NEUTRAL_SLOT)
+	local neutralItem = clone:GetItemInSlot(DOTA_ITEM_NEUTRAL_ACTIVE_SLOT)
 	if neutralItem then
 		--clone:RemoveItem(clone:GetItemInSlot(DOTA_ITEM_NEUTRAL_SLOT))
-		clone:TakeItem(clone:GetItemInSlot(DOTA_ITEM_NEUTRAL_SLOT))
+		clone:TakeItem(clone:GetItemInSlot(DOTA_ITEM_NEUTRAL_ACTIVE_SLOT))
 	end	
 	--Set items
 	

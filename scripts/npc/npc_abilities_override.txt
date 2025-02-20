@@ -23030,7 +23030,7 @@
 		"ItemPurchasable"				"1"
 		"AbilityValues"
         {
-            "bonus_int" "45"
+            "bonus_int" "95"
             "mp_regen" "45.5"
             "health_gain" "2575"
             "health_gain_duration" "45"

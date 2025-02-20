@@ -17,9 +17,14 @@ function Precache(context)
 	}
 
 	local models = {
-
+		"models/heroes/dragon_knight_persona/dk_persona_base.vmdl",
+		"models/heroes/dragon_knight_persona/dk_persona_weapon.vmdl",
+		"models/heroes/dragon_knight_persona/dk_persona_shoulder_cape.vmdl",
+		"models/heroes/dragon_knight_persona/dk_persona_head.vmdl",
+		"models/heroes/dragon_knight_persona/dk_persona_head_hair.vmdl",
+		"models/heroes/dragon_knight_persona/dk_persona_shoulder_pauldrons.vmdl",
+		"models/heroes/dragon_knight_persona/dk_persona_weapon_alt.vmdl"
 	}
-
 	local particles = {
 		"particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf",
 		"particles/generic_gameplay/generic_break.vpcf",
@@ -60,6 +65,7 @@ function Precache(context)
 		"npc_dota_brewmaster_earth_3",
 		"npc_dota_brewmaster_storm_3",
 		"npc_dota_brewmaster_fire_3",
+		"npc_dota_hero_dragon_knight",
 	}
 
 

@@ -1627,6 +1627,15 @@
 	"DOTA_Tooltip_ability_item_desolator_2_note1"				"<br>Is part of <font color='#7E09E6'>Hammer Of The Divine</font>"
 	"DOTA_Tooltip_ability_item_desolator_2_bonus_damage"        "+$damage"
 
+	"DOTA_Tooltip_Ability_item_dragon_scale_bonus_armor"        "+$armor"
+	"DOTA_Tooltip_Ability_item_dragon_scale_bonus_hp_regen"		"+$hp_regen"
+
+	"DOTA_Tooltip_Ability_item_essence_ring_bonus_int"          "+$int"
+	"DOTA_Tooltip_Ability_item_essence_ring_mp_regen"           "+$mana_regen"
+
+	"DOTA_Tooltip_ability_item_grove_bow_attack_range_bonus"   	"+$attack_range"
+	"DOTA_Tooltip_ability_item_grove_bow_attack_speed_bonus"    "+$attack"
+
 	"DOTA_Tooltip_ability_item_broken_wings"					"Broken Wings"
 	"DOTA_Tooltip_ability_item_broken_wings_Description"		"<h1>Passive: Restoration of Feathers</h1> Gives a Feather Stick when landing an attack. <br><br> Cooldown: %attack_cd%s <br> Max stacks: %feather_max_stacks% \n<h1>Passive: Scree'auk’s Power</h1> Dealing Magic or Pure Damage expends one Feather Stack charge to deal %feather_add_dmg%%% damage ((2)Alt for details). <br><br>Cooldown: %feather_cd%s (CDR-Yes) \n<h1>Passive: Divinity</h1> When receiving the maximum number of effects, Feather Stacks - enters Divinity. During Divinity, cooldown and Feather Stack сonsumption from Scree'auk's Power are removed. Additionally, normal mana costs are removed for the duration. After Divinity ends you lose all of your Feather Stacks. <br><br> Duration: %divinity_duration%s \n<h1><font color='#00FF00'>UP: Wind Rapier</font></h1> When receiving a Feather Stack, there is a %wind_rapier_chance%%% chance of also getting a Wind Stack (allows to exceed the limit) \n<h1><font color='#00FF00'>UP: Mimic Mace</font></h1> Sets attack rate to %mimic_mace_attack_rate% \n<h1><font color='#7D9C00'>UP: Ultimate Ethereal Blade</font></h1> Reduces Restoration of Feathers Cooldown by x3"
 	"DOTA_Tooltip_ability_item_broken_wings_Lore"					"The wings have a mind of their own, they wish to be whole again. Ideea By:<font color='#2471A3'>Siliatra</font>"
@@ -7845,7 +7854,7 @@ The ward will have increased dmg base on hero total dmg and after lvl 30 it will
 	
 
 	"DOTA_Tooltip_Ability_item_earth_rapier"					"<font color=\"#8B4513\">EARTH RAPIER</font>"
-	"DOTA_Tooltip_ability_item_earth_rapier_Description"		"<h1><font color='#8B4513'>Active: Earth power</font></h1>Gives the owner of the item the strength of the earth, increasing the chance to throw a stone to 100%.<br><br>Buff Duration: %buff_duration% sec.\n<h1><font color='#8B4513'>Passive: Stone strike</font></h1>%rock_chance%%% attack chance to throw stones at all enemies within %effect_radius%, which stunning for %rock_stun% sec. and dealing %rock_dmg% Pure Damage.\n<h1><font color='#7E09E6'>UP:Hammer Of The Divine</font></h1> Each time you use the active ability <b>Hammer of the Divine</b> while Earth Rapier is in the last slot of your inventory, it begins corrupting into <font color='#2d353a'>Obsidian Rapier</font>.<br>The process requires 5000 gold for each of the 5 steps."
+	"DOTA_Tooltip_ability_item_earth_rapier_Description"		"<h1><font color='#8B4513'>Active: Earth power</font></h1>Gives the owner of the item the strength of the earth, increasing the chance to throw a stone to 100%.<br><br>Buff Duration: %buff_duration% sec.\n<h1><font color='#8B4513'>Passive: Stone strike</font></h1>%rock_chance%%% attack chance to throw stones at all enemies within %effect_radius%, which stunning for %rock_stun% sec. and dealing %rock_dmg% Pure Damage.\n<h1><font color='#7E09E6'>UP:Hammer Of The Divine</font></h1> Each time you use the active ability <b>Hammer of the Divine</b> while Earth Rapier is in the last slot of your inventory, it begins corrupting into <font color='#FF0000'>Obsidian Rapier</font>.<br>The process requires 5000 gold for each of the 5 steps."
 	"DOTA_Tooltip_ability_item_earth_rapier_rapier_dmg"					  "+$base_damage"
 	"DOTA_Tooltip_ability_item_earth_rapier_rapier_str"					  "+$str"
 	"DOTA_Tooltip_ability_item_earth_rapier_rapier_agi"					  "+$agi"

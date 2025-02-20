@@ -1,50 +1,30 @@
---[[
-    源文件：https://github.com/balancedenergy/game/scripts/vscripts/systems/roshan_system.lua
-]]
-
 LinkLuaModifier('modifier_roshan_bonus', 'modifiers/modifier_roshan_bonus', LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier('modifier_roshan_bonus_burn', 'modifiers/modifier_roshan_bonus_burn', LUA_MODIFIER_MOTION_NONE)
---require("lib/utils")
--- Manage Game Mode Roshan
+
 if CRoshanSystem == nil then
-	CRoshanSystem = class({})
+    CRoshanSystem = class({})
 end
 
 -- Configuration
-local MAX_PRISION_RANGE = 1000                      -- 可以被攻击的范围
+local MAX_PRISION_RANGE = 1000
 local BONUS_DURATION = 120
-local MIN_RESPAWN_TIME = 1                        -- 最短刷新时间
-local MAX_RESPAWN_TIME = 14                        -- 最长刷新时间
-local ROSHAN_CLASS_NAME = "npc_dota_roshan_mega"    -- Roshan 类名
-local ROSHAN_SPAWNER = "roshan_spawner"             -- 出生定位点
+local MIN_RESPAWN_TIME = 1
+local MAX_RESPAWN_TIME = 13 
+local ROSHAN_CLASS_NAME = "npc_dota_roshan_mega"
 
 if IsInToolsMode() or GameRules:IsCheatMode() then
-    MIN_RESPAWN_TIME = 10.1
-    MAX_RESPAWN_TIME = 20
+    MIN_RESPAWN_TIME = 1
+    MAX_RESPAWN_TIME = 2
 end
--- Indicates the time Respawn should be done
+
 CRoshanSystem._flRespawnTime = -1.0
-
--- Indicates that Roshan is currently
 CRoshanSystem._iNum = 1
-
--- Indicates that Roshan is currently
 CRoshanSystem._RoshanXP = 700
 CRoshanSystem._RoshanXP_killer = 100
-
--- Indicates the position where Spawn will be made
-CRoshanSystem._SpawnPosition = Vector(-2464.244629, 1900.373291, 159.998383)
-
--- Indicates which direction Roshan should look at
-CRoshanSystem._SpawnAngles = Vector(0, 305.999969, 0)
-
-CRoshanSystem._SpawnAngles = Vector(0, 180, 0)      -- 面向西面
-
--- Indicate if Roshan has rotated                   -- 是否旋转面向角度
+CRoshanSystem._SpawnPosition = Vector(3330.994141, 2800.383301, 192.000000)  -- Adjust if needed
+CRoshanSystem._SpawnAngles = Vector(0, 180, 0)                                 -- Adjust if needed
 CRoshanSystem._bRotated = true
 
--- Initilization
--- Saves necessary information and removes the roshan spawner
 function CRoshanSystem:Init()
     if self._inited then
         return false
@@ -60,39 +40,16 @@ function CRoshanSystem:Init()
                 if PlayerResource:GetPlayer(playerID) then
                     local hero = PlayerResource:GetSelectedHeroEntity(playerID)
                     self._playernr = self._playernr + 1
-                    --Sounds:CreateSound(playerID, "goh.teme")
                 end
             end
         end 
     end       
-    local hSpawner = Entities:FindByName(nil, ROSHAN_SPAWNER)
-    local hRoshan = Entities:FindByClassname(nil, "npc_dota_roshan")
-
-    if (not hSpawner) then
-        print("RoshanSystem: cannot find hSpawner")
-        return
-    end
-
-    -- We need to know where you will be
-    -- self._SpawnPosition = hRoshan:GetAbsOrigin()
-    -- self._SpawnAngles = hSpawner:GetAnglesAsVector()
-    -- 获得定位点的位置，作为 Roshan 的出生点
-    self._SpawnPosition = hSpawner:GetAbsOrigin()  
-    print("Spawn position: " .. tostring(self._SpawnPosition))
-    -- self._SpawnPosition = hRoshan:GetAbsOrigin()
-
-
-    -- Bye!
-    if hSpawner then UTIL_Remove(hSpawner) end
-    if hRoshan then UTIL_Remove(hRoshan) end
-    -- We create our own Roshan
     self:CreateRoshan()
     print("Nr of Players is "..self._playernr)
 end
 
 -- Returns Roshan
 function CRoshanSystem:GetRoshan()
-    -- return Entities:FindByClassname(nil, ROSHAN_CLASS_NAME)
     if self._roshan_instance and not self._roshan_instance:IsNull() then
         return self._roshan_instance
     else
@@ -132,7 +89,7 @@ function CRoshanSystem:OnEntityKilled(tData)
 		if (self._iNum % 2 == 0) then
 			self._RoshanXP_killer = self._RoshanXP_killer + 50
 		end
-		self._RoshanXP = self._RoshanXP + 1000
+		self._RoshanXP = self._RoshanXP + 2000
 	end
 	if killedUnit:GetUnitName() == "npc_dota_roshan_mega" then
 		if not killedUnit:IsIllusion() then
@@ -181,7 +138,6 @@ end
 
 -- Keeps Roshan inside his prison
 function CRoshanSystem:RoshanThink(hRoshan)
-    -- local flDistance = CalcDistance(hRoshan:GetAbsOrigin(), self._SpawnPosition)
     local flDistance = (hRoshan:GetAbsOrigin() - self._SpawnPosition):Length2D()
 
     if ( flDistance > MAX_PRISION_RANGE or flDistance >= 100.0 and not hRoshan:GetAggroTarget() ) then
@@ -281,15 +237,10 @@ function CRoshanSystem:CreateRoshan()
         if random_nr < chance then
             print(random_nr .. " luky nr")
             _ss_rosh_drop = true
-            print("SS drop true")
-            --hRoshan:AddItemByName('item_imba_ultimate_scepter_synth2')       
+            print("SS drop true")      
         end    
     end
  
-
-    --if ( self._iNum >= 4 ) then
-    --    hRoshan:AddItemByName('item_ultimate_scepter_2')        -- 神杖
-    --end
  
     if ( self._iNum >= 5 ) then
         hRoshan:AddItemByName('item_moon_shard')       -- 银月
@@ -308,7 +259,6 @@ function CRoshanSystem:CreateRoshan()
                 hRoshan:AddItemByName('item_all_essence')
             end                   
         end    
-        --hRoshan:AddNewModifier(hRoshan, nil, 'modifier_roshan_bonus', nil)
     end
 
     if ( self._iNum >= 10 ) then      
@@ -324,7 +274,7 @@ function CRoshanSystem:CreateRoshan()
     -- Ready! 
     return hRoshan
 end
-
+--c until here
 local NotRegister = {
     ["npc_playerhelp"] = true,
     ["npc_dota_target_dummy"] = true,
@@ -339,12 +289,10 @@ local received_item = {}
 
 
 
---local dropped_items = {}
---local collected_items = {} 
+
 function OnRoshDeath(unit)
     -- Check if the chance to give an item proc
    
-
     if _ss_rosh_drop then
       -- Get a list of all players in the game
       local players = {}
@@ -378,16 +326,14 @@ function OnRoshDeath(unit)
       players = shuffle(players)
       -- Give the item to the first player in the list who hasn't received it
       for _, playerID in pairs(players) do
-            --if PlayerResource:GetPlayer(playerID) then
-                if not received_item[playerID] then
-                    -- Give the item to the player
-                    DropItemOrInventory(playerID, "item_imba_ultimate_scepter_synth2")
-                    local steam_name = PlayerResource:GetPlayerName(playerID)
-                    Notifications:TopToAll({text="Player "..steam_name.. ", was his turn for rosh SS(can be shared)", style={color="green"}, duration=5})              
-                    received_item[playerID] = true 
-                    break
-                end
-            --end   
+            if not received_item[playerID] then
+                -- Give the item to the player
+                DropItemOrInventory(playerID, "item_imba_ultimate_scepter_synth2")
+                local steam_name = PlayerResource:GetPlayerName(playerID)
+                Notifications:TopToAll({text="Player "..steam_name.. ", was his turn for rosh SS(can be shared)", style={color="green"}, duration=5})              
+                received_item[playerID] = true 
+                break
+            end  
         end
     end
 end
@@ -402,25 +348,3 @@ function shuffle(t)
     return t
 end
 
-
---[[ function CRoshanSystem:OnItemPickedUp(event)
-	if not IsServer() then return end
-    CollectStoredItem(event.PlayerID)
-end
-
-
-function CollectStoredItem(playerID)
-    if dropped_items[playerID] then
-        local player = PlayerResource:GetPlayer(playerID)
-        local hero = player:GetAssignedHero()
-        local success = hero:AddItem(dropped_items[playerID])
-        if success then
-            Notifications:Top(playerID,{text="You have collected your stored item", style={color="green"}, duration=5})
-            collected_items[playerID] = true
-            dropped_items[playerID] = nil
-        else
-            Notifications:Top(playerID,{text="Your inventory is full, please clear some space", style={color="red"}, duration=5})
-        end
-    end
-end
- ]]

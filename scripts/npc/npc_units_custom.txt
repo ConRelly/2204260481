@@ -9858,12 +9858,12 @@
 "npc_playerhelp"
 {
 	// General
-	"Model"						"models/heroes/dragon_knight/dragon_knight.vmdl"	// Model.
+	"Model"						"models/heroes/dragon_knight_persona/dk_persona_base.vmdl"	// Model.
 	"BaseClass"					"npc_dota_creature"
 	"SoundSet"					"Hero_DragonKnight"
 	"Level"						"3"
 	"ConsideredHero"			"1"
-	"ModelScale" 				"1.0"
+	"ModelScale" 				"0.7"
 	"HasInventory"				"1"
 	// Abilities
 	//"Ability1"		""
@@ -9934,12 +9934,12 @@
 		
 		"AttachWearables"
 		{
-			"Wearable1" { "ItemDef" "7416" }
-			"Wearable2" { "ItemDef" "7417" }
-			"Wearable3" { "ItemDef" "7418" }
-			"Wearable4" { "ItemDef" "7419" }
-			"Wearable5" { "ItemDef" "7420" }
-			"Wearable6" { "ItemDef" "7421" }
+			"1" { "ItemDef" "19011" }
+			//"2" { "ItemDef" "762" }
+			"3" { "ItemDef" "763" }
+			//"4" { "ItemDef" "7419" }
+			//"5" { "ItemDef" "7420" }
+			//"6" { "ItemDef" "7421" }
 		}
 	}
 }
