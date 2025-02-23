@@ -1777,7 +1777,7 @@ function AOHGameMode:OnMaxLevelButtonPressed(eventSourceIndex, data)
 	SendToServerConsole("dota_dev hero_level 971")
 
 	local Abilities = hPlayerHero:GetAbilityCount()
-	for i = 0, Abilities do
+	for i = 0, Abilities - 1 do
 		local Ability = hPlayerHero:GetAbilityByIndex(i)
 		if Ability and Ability:CanAbilityBeUpgraded() == ABILITY_CAN_BE_UPGRADED and not Ability:IsHidden() then
 			while Ability:GetLevel() < Ability:GetMaxLevel() do

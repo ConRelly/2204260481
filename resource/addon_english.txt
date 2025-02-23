@@ -7819,6 +7819,11 @@ The ward will have increased dmg base on hero total dmg and after lvl 30 it will
 "DOTA_Tooltip_Ability_item_custom_rapier_bonus_damage"						"+$damage"
 
 
+"DOTA_Tooltip_ability_item_pirate_hat_custom"             "Pirate Hat"
+"DOTA_Tooltip_ability_item_pirate_hat_custom_Description" "\nActive: Dig for Bounty \n Courier can equip this on Neutral slot"
+"DOTA_Tooltip_ability_item_pirate_hat_custom_attack_speed_bonus"  "+$attack"
+
+
 	"DOTA_Tooltip_Ability_item_fire_rapier"						"<font color=\"#FF4500\">FIRE RAPIER</font>"
 	"DOTA_Tooltip_ability_item_fire_rapier_Description"			"<h1><font color='#FF4500'>Active: Fire rage</font></h1>Gives the owner of the item the power of fire, giving great power, but reducing the defense to zero!!!
 	\n<h1><font color='#FF4500'>Passive: Melting strike</font></h1>%proc_chance%%% attack chance to burn the enemy's armor (the effect stacks).<br><br>Armor reduction per stack: %armor_penalty%<br>Debuff Duration: %debuff_duration% sec.
@@ -10451,6 +10456,8 @@ Contains all random skills(including Innates)<br> if your primary attribute is I
 		"Dota_tooltip_ability_item_radiance_armor_green_edible_n"							  "Edible Greater Radiance Armor Green"
 		"DOTA_Tooltip_ability_item_radiance_armor_green_edible_n_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Green.\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
 		"DOTA_Tooltip_ability_item_radiance_armor_green_edible_n_Note0"							"After you consume don't buy/equip again Radiance armor no matter the type or you will lose the consume effect"
+
+
 
 
 

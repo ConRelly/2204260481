@@ -21837,7 +21837,7 @@
 		"ItemCost"						"100"
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
-		"ItemResult"					"item_pirate_hat"
+		"ItemResult"					"item_pirate_hat_custom"
 		"ItemRequirements"
 		{
 			"01"						"item_chest_5;item_quicksilver_amulet"
@@ -21852,7 +21852,7 @@
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"AbilityCastRange"				"250"
-		"ItemPurchasable"				"1"
+		"ItemPurchasable"				"0"
 		"AbilityValues"
         {
             "bonus_attack_speed" "650"
@@ -22909,7 +22909,7 @@
 		"ItemPurchasable"				"0"
 		"ItemIsNeutralActiveDrop"				"1"
 		"ItemRequiresCharges"			"0"
-		"ItemInitialCharges"			"90000"
+		"ItemInitialCharges"			"1"
 		"ItemCost"						"10000"
 		"ItemSellable"					"1"
 		"AbilityValues"

@@ -12,7 +12,7 @@ function OnSpellStart( keys )
     if hero:IsRealHero() then
 
 		local GenericSlots = 0
-		for i = 0, DOTA_MAX_ABILITIES - 1 do
+		for i = 0, caster:GetAbilityCount() - 1 do
 			local abil = caster:GetAbilityByIndex(i)
 			if abil then
 				if abil:GetAbilityName() == "generic_hidden" then
@@ -21,7 +21,7 @@ function OnSpellStart( keys )
 			end
 		end
 		if GenericSlots > 0 then
-			for i = 0, DOTA_MAX_ABILITIES - 1 do
+			for i = 0, caster:GetAbilityCount() - 1 do
 				local abil = caster:GetAbilityByIndex(i)
 				if abil then
 					if abil:GetAbilityName() == "generic_hidden" then

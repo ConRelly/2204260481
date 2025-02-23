@@ -196,7 +196,7 @@ function modifier_class:use_ability(ability, caster, parent )
     local pirate_loc1 = Vector(-980.678894, -1213.073242, 320.000000)-- +  RandomVector(40)
     local pirate_loc2 = Vector(964.100281, -1222.740845, 320.000000)-- + RandomVector(40)
     local radius_auto = ability:GetCastRange(parent:GetAbsOrigin(), parent) + caster:GetCastRangeBonus() - 50
-    if ability:GetAbilityName() == "item_pirate_hat" then
+    if ability:GetAbilityName() == "item_pirate_hat_custom" then
         self.pirate_cast = true
         radius_auto = 7200
     end

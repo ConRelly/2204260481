@@ -300,7 +300,7 @@ end
 --  出生时学习技能
 function LearnAbilityOnSpawn( npc)
   if IsValidEntity(npc) then
-    for i=0,30 do
+    for i=0,npc:GetAbilityCount() - 1 do
       local ability = npc:GetAbilityByIndex(i)
       if ability then
         local kv = ability:GetAbilityKeyValues()

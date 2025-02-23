@@ -115,6 +115,7 @@
 			"item_radiance_armor_3_edible"      "1"
 			"item_radiance_armor_blue_edible"   "1"
 			"item_radiance_armor_green_edible"  "1"
+			
 
 		}
 	}

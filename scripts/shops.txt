@@ -254,7 +254,7 @@
 		"item"		"item_custom_ballista"
 		"item"		"item_trident"
 		"item"		"item_fallen_sky"
-		"item"		"item_pirate_hat"
+		"item"		"item_pirate_hat_custom"
 		"item"		"item_custom_ex_machina"
 		"item"		"item_desolator_2"
 		"item"		"item_mjz_devils_veil"

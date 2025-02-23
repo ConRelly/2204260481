@@ -17,14 +17,9 @@
 			
 			"items"
 			{
-				"item_trusty_shovel"			  	"1"
-				"item_occult_bracelet"				"1"
-				"item_unstable_wand"				"1"
-				"item_mana_draught"					"1"
-				"item_polliwog_charm"			  	"1"
-				"item_spark_of_courage"				"1"
-				"item_rippers_lash"					"1"
-				"item_orb_of_destruction"			"1"
+				"item_keen_optic_copy"				"1"
+				"item_broom_handle_copy"			"1"
+				"item_spider_legs"					"1"
 			}
 
 			"enhancements"
@@ -46,12 +41,11 @@
 
 			"items"
 			{
-				"item_essence_ring"					"1"
-				"item_iron_talon"					"1"
-				"item_gossamer_cape"				"1"
-				"item_searing_signet"				"1"
-				"item_misericorde"					"1"
-				"item_pogo_stick"					"1"
+				"item_grove_bow"					"1"
+				"item_vampire_fangs_copy"			"1"
+				"item_pupils_gift"					"1"
+				"item_imp_claw"						"1"
+				"item_dragon_scale"					"1"
 			}
 
 			"enhancements"
@@ -78,12 +72,10 @@
 
 			"items"
 			{
-				"item_serrated_shiv"				"1"
-				"item_nemesis_curse"				"1"
-				"item_gale_guard"					"1"
-				"item_gunpowder_gauntlets"			"1"
-				"item_whisper_of_the_dread"			"1"
-				"item_ninja_gear"					"1"
+				"item_grove_bow_copy"				"1"
+				"item_helm_of_the_undying"			"1"
+				"item_paladin_sword"				"1"
+				"item_ascetic_cap"					"1"
 			}
 
 			"enhancements"
@@ -110,12 +102,9 @@
 
 			"items"
 			{
-				"item_ogre_seal_totem"				"1"
-				"item_crippling_crossbow"			"1"
-				"item_magnifying_monocle"			"1"
-				"item_ceremonial_robe"				"1"
-				"item_mind_breaker"					"1"
-				"item_pyrrhic_cloak"				"1"
+				"item_panic_button"					"1"
+				"item_minotaur_horn"				"1"
+				"item_misericorde"					"1"
 			}
 
 			"enhancements"
@@ -145,13 +134,17 @@
 			"items"
 			{
 				"item_desolator_2"					"1"
-				"item_fallen_sky"					"1"
-				"item_demonicon"					"1"
-				"item_minotaur_horn"				"1"
-				"item_spider_legs"					"1"
-				"item_panic_button"					"1"
-				"item_unrelenting_eye"				"1"
+				"item_custom_apex"					"1"
+				"item_custom_ballista"				"1"
+				"item_mirror_shield"				"1"
+				"item_trident"						"1"
 				"item_pirate_hat"					"1"
+				"item_custom_ex_machina"			"1"
+				"item_maple_shield_lua"				"1"
+				"item_titan_relic"					"1"
+				"item_radiance_armor_3_edible"      "1"
+				"item_radiance_armor_blue_edible"   "1"
+				"item_radiance_armor_green_edible"  "1"
 			}
 
 			"enhancements"

@@ -401,7 +401,7 @@ function AOHGameMode:SetCorrectAbilityPointsCount( nPlayerID )
 
 		local nSpentPoints = 0
 
-		for i = 0, DOTA_MAX_ABILITIES - 1 do
+		for i = 0, hPlayerHero:GetAbilityCount() - 1 do
 			local hAbility = hPlayerHero:GetAbilityByIndex( i )
 			if hAbility and not hAbility:IsHidden() and hAbility:CanAbilityBeUpgraded() ~= ABILITY_NOT_LEARNABLE and self:IsValidAbility( hAbility ) then
 				--print( string.format( "%s - increasing nSpentPoints by %d points", hAbility:GetAbilityName(), hAbility:GetLevel() ) )
@@ -416,7 +416,7 @@ function AOHGameMode:SetCorrectAbilityPointsCount( nPlayerID )
 			return
 		elseif nPointsDelta < 0 then
 			--print( "  we have too many points, reset all abilities to level 0 and re-award points" )
-			for i = 0, DOTA_MAX_ABILITIES - 1 do
+			for i = 0, hPlayerHero:GetAbilityCount() - 1 do
 				local hAbility = hPlayerHero:GetAbilityByIndex( i )
 				if hAbility and hAbility:CanAbilityBeUpgraded() ~= ABILITY_NOT_LEARNABLE and self:IsValidAbility( hAbility ) then
 					hAbility:SetLevel( 0 )

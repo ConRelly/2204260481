@@ -14841,7 +14841,7 @@
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	//"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemResult"					"item_radiance_armor_3_edible_n"
+	"ItemResult"					"item_radiance_armor_3_edible"
 	"ItemRequirements"
 	{
 		"01"						"item_radiance_armor_3;item_edible_complete"
@@ -14866,7 +14866,7 @@
 	"ItemInitialCharges"			"1"
 	"ItemPurchasable"				"0"
 	"ItemRequiresCharges" 			"1"
-	"ItemIsNeutralActiveDrop"				"1"
+	"ItemIsNeutralActiveDrop"		"0"
 	//"TokenTier"						"5"
 	"ItemPermanent"               	"0"
 	"ItemShopTags"					"consumable"
@@ -14909,7 +14909,7 @@
 	"ItemInitialCharges"			"1"
 	"ItemPurchasable"				"1"
 	"ItemRequiresCharges" 			"1"
-	"ItemIsNeutralActiveDrop"				"1"
+	"ItemIsNeutralActiveDrop"		"0"
 	//"TokenTier"						"5"
 	"ItemPermanent"               	"1"
 	"ItemDisassembleRule"		   	"DOTA_ITEM_DISASSEMBLE_NEVER" 	
@@ -14941,7 +14941,7 @@
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	//"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemResult"					"item_radiance_armor_blue_edible_n"
+	"ItemResult"					"item_radiance_armor_blue_edible"
 	"ItemRequirements"
 	{
 		//"02"						"item_chest_1"
@@ -14966,7 +14966,7 @@
 	"ItemInitialCharges"			"1"
 	"ItemPurchasable"				"0"
 	"ItemRequiresCharges" 			"1"
-	"ItemIsNeutralActiveDrop"				"1"
+	"ItemIsNeutralActiveDrop"				"0"
 	//"TokenTier"						"1"
 	"ItemPermanent"               	"0"
 	"ItemShopTags"					"consumable"
@@ -15010,7 +15010,7 @@
 	"ItemInitialCharges"			"1"
 	"ItemPurchasable"				"1"
 	"ItemRequiresCharges" 			"1"
-	"ItemIsNeutralActiveDrop"				"1"
+	"ItemIsNeutralActiveDrop"				"0"
 	//"TokenTier"						"1"
 	"ItemPermanent"               	"1"
 	"ItemDisassembleRule"		   	"DOTA_ITEM_DISASSEMBLE_NEVER" 
@@ -15043,7 +15043,7 @@
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	//"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"ItemResult"					"item_radiance_armor_green_edible_n"
+	"ItemResult"					"item_radiance_armor_green_edible"
 	"ItemRequirements"
 	{
 		//"01"						"item_chest_1"
@@ -15069,7 +15069,7 @@
 	"ItemInitialCharges"			"1"
 	"ItemPurchasable"				"1"
 	"ItemRequiresCharges" 			"1"
-	"ItemIsNeutralActiveDrop"				"1"
+	"ItemIsNeutralActiveDrop"				"0"
 	//"TokenTier"						"5"
 	"ItemDisassembleRule"		   	"DOTA_ITEM_DISASSEMBLE_NEVER"	
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE" 
@@ -15112,7 +15112,7 @@
 	"ItemInitialCharges"			"1"
 	"ItemPurchasable"				"0"
 	"ItemRequiresCharges" 			"1"
-	"ItemIsNeutralActiveDrop"				"1"
+	"ItemIsNeutralActiveDrop"				"0"
 	//"TokenTier"						"5"
 	"ItemPermanent"               	"1"
 	"ItemDisassembleRule"		   	"DOTA_ITEM_DISASSEMBLE_NEVER"	
@@ -25196,6 +25196,53 @@
 
 		}
 	}
+//recipe
+	"item_recipe_pirate_hat_custom"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		"ItemCost"						"100"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_pirate_hat_custom"
+		"ItemRequirements"
+		{
+			"01"						"item_chest_5;item_quicksilver_amulet"
+		}
+	}
+//pirate hat custom
+"item_pirate_hat_custom"
+{
+    "BaseClass"                     "item_lua"
+    "ScriptFile"                    "items/item_pirate_hat_custom.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    "AbilityTextureName"            "pirate_hat"
+    "AbilityCastRange"              "300"
+    "AbilityChannelTime"            "1"
+    "AbilityCooldown"               "60.0"
+    "AbilityManaCost"               "0"
+    "ItemCost"                      "12000"
+    "ItemDroppable"                 "1"
+    "ItemSellable"                  "0"
+    "ItemPurchasable"               "1"
+    "ItemPermanent"                 "1"
+    "ItemStackable"                 "0"
+    "ItemShareability"              "ITEM_FULLY_SHAREABLE"
+    "ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+    "ItemQuality"                   "epic"
+    "AbilityValues"
+    {
+           
+    	"attack_speed_bonus"    "650"
+       
+    }
+    "precache"
+    {
+        "particle"  "particles/econ/events/ti9/shovel_dig.vpcf"
+        "particle"  "particles/econ/events/ti9/shovel_revealed_generic.vpcf"
+    }
+}
 
 
 }

@@ -3417,6 +3417,14 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Fixed Goon helper unit model error
 
 
+* Edible Radiances (all forms) now can be used from normal inventory
+* Fixed edible radiance multiplying bug
+* Fixed some other bugs from new patch
+
+
+* Fixed/Replaced Pirate Hat with a custom one
+
+
 
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
