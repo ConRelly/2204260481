@@ -104,8 +104,8 @@
 		"items"
 		{
 			"item_desolator_2"					"1"
-			"item_custom_apex"					"1"
-			"item_custom_ballista"				"1"
+			"item_custom_apex_2"				"1"
+			"item_custom_ballista_2"			"1"
 			"item_mirror_shield"				"1"
 			"item_trident"						"1"
 			"item_pirate_hat"					"1"

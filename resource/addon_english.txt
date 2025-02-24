@@ -5029,6 +5029,28 @@
 "DOTA_Tooltip_ability_item_recipe_custom_ballista"	"Recipe: Ballista"
 "DOTA_Tooltip_Ability_item_custom_apex"					"Apex"
 "DOTA_Tooltip_Ability_item_custom_apex_Description"		"Increases your primary attribute by %primary_stat_percent%%% Or for universal heroes all Stats."
+
+
+"DOTA_Tooltip_Ability_item_trident_2"		"Trident Neutral"
+
+"DOTA_Tooltip_Ability_item_trident_2_Description"					"Combines Sange, Yasha and Kaya together."
+"DOTA_Tooltip_Ability_item_trident_2_bonus_intellect"					"+$int"
+"DOTA_Tooltip_Ability_item_trident_2_bonus_strength"				"+$str"
+"DOTA_Tooltip_Ability_item_trident_2_bonus_agility"				"+$agi"
+"DOTA_Tooltip_Ability_item_trident_2_spell_amp"					"%+Spell Amplification"
+"DOTA_Tooltip_Ability_item_trident_2_mana_regen_multiplier"				"%+Mana Regen Amplification"
+"DOTA_Tooltip_Ability_item_trident_2_bonus_attack_speed"			"+$attack"
+"DOTA_Tooltip_Ability_item_trident_2_movement_speed_percent_bonus"	"%+$move_speed"		
+"DOTA_Tooltip_Ability_item_trident_2_status_resistance"					"%+Status Resistance"
+"DOTA_Tooltip_Ability_item_trident_2_hp_regen_amp"							"%+Health Regen and Lifesteal Amp"
+"DOTA_Tooltip_Ability_item_trident_2_magic_damage_attack"				"+Magic Damage Attack"
+"DOTA_Tooltip_Ability_item_trident_2_spell_lifesteal_amp"				"%+Spell Lifesteal Amplification"
+
+
+
+"DOTA_Tooltip_Ability_item_custom_apex_2"					"Apex Neutral"
+"DOTA_Tooltip_Ability_item_custom_apex_2_Description"		"Increases your primary attribute by %primary_stat_percent%%% Or for universal heroes all Stats."
+
 "DOTA_Tooltip_Ability_item_custom_ballista"						"Ballista"
 "DOTA_Tooltip_Ability_item_custom_ballista_Description"			"<h1>Passive: Precision</h1>Every %chance% hits will to deal %bonus_damage% pure damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Get a random number of Charges on Creation. All item stats and effects except Attack Range gets multiplied by charges, regardless if you have SS buff."
 "DOTA_Tooltip_Ability_item_custom_ballista_Lore"			"It actually does work on melee."
@@ -5039,6 +5061,20 @@
 "DOTA_Tooltip_Ability_item_custom_ballista_bonus_health_regen"		"+$hp_regen"
 "DOTA_Tooltip_Ability_item_custom_ballista_attack_range_bonus"		"+$attack_range"
 "DOTA_Tooltip_Ability_item_custom_ballista_base_attack_damage"  "%+$damage"
+
+
+"DOTA_Tooltip_Ability_item_custom_ballista_2"						"Ballista Neutral"
+"DOTA_Tooltip_Ability_item_custom_ballista_2_Description"			"<h1>Passive: Precision</h1>Every %chance% hits will to deal %bonus_damage% pure damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Get a random number of Charges on Creation. All item stats and effects except Attack Range gets multiplied by charges, regardless if you have SS buff."
+"DOTA_Tooltip_Ability_item_custom_ballista_2_Lore"			"It actually does work on melee."
+"DOTA_Tooltip_Ability_item_custom_ballista_2_Note0"           "Type '-ballista' to Delete the item from neutral slot and gain 5 base All stats x item charges"
+"DOTA_Tooltip_Ability_item_custom_ballista_2_bonus_strength"		"+$str"
+"DOTA_Tooltip_Ability_item_custom_ballista_2_bonus_agility"		"+$agi"
+"DOTA_Tooltip_Ability_item_custom_ballista_2_bonus_intellect"		"+$int"
+"DOTA_Tooltip_Ability_item_custom_ballista_2_bonus_health_regen"		"+$hp_regen"
+"DOTA_Tooltip_Ability_item_custom_ballista_2_attack_range_bonus"		"+$attack_range"
+"DOTA_Tooltip_Ability_item_custom_ballista_2_base_attack_damage"  "%+$damage"
+
+
 "DOTA_Tooltip_ability_item_recipe_demonicon"	"Recipe: Demonicon"
 "DOTA_Tooltip_ability_item_recipe_desolator_2"	"Recipe: Stygian Desolator"
 "DOTA_Tooltip_ability_item_recipe_ex_machina"	"Recipe: Ex Machina"

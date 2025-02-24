@@ -12598,6 +12598,59 @@
 		"ItemCost"						"5000"
 	}
 
+//trident
+
+	"item_recipe_trident_2"
+	{
+		"BaseClass"						"item_datadriven"
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"ItemCost"						"1000"
+		"ItemShopTags"					""
+		"ItemRecipe"					"1"
+		"ItemPurchasable"				"1"
+		"ItemIsNeutralActiveDrop"				"0"
+		"ItemResult"					"item_trident_2"
+		"ItemRequirements"
+		{
+			"01"		"item_trident"
+
+		}
+	}
+
+	"item_trident_2"
+	{
+		// General
+		"BaseClass"						"item_trident"
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"6301"
+
+		"Model"							"models/props_gameplay/neutral_box.vmdl"
+
+		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
+		"ItemGloballyCombinable"		"1"
+		"ItemPurchasable"				"1"
+		"ItemIsNeutralActiveDrop"		"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"IsObsolete"					"0"
+		"AbilityValues"
+        {
+            "bonus_strength" "333"
+            "bonus_agility" "333"
+            "bonus_intellect" "333"
+            "status_resistance" "66"
+            "bonus_attack_speed" "333"
+            "movement_speed_percent_bonus" "166"
+            "hp_regen_amp" "33"
+            "mana_regen_multiplier" "999"
+            "spell_amp" "266"
+            "magic_damage_attack" "0"
+        }
+	}
+
 "item_recipe_custom_apex"
 {
 	"BaseClass"						"item_datadriven"
@@ -12622,7 +12675,41 @@
 	"AbilityTextureName"			"item_apex"
 	"ItemGloballyCombinable"		"0"
 	"ItemPurchasable"				"1"
-	"ItemIsNeutralActiveDrop"				"1"
+	//"ItemIsNeutralActiveDrop"		"1"
+	"ItemSellable"					"0"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+	"AbilityValues"
+        {
+            "primary_stat_percent" "35"
+        }
+}
+//neutral version
+"item_recipe_custom_apex_2"
+{
+	"BaseClass"						"item_datadriven"
+	"Model"							"models/props_gameplay/recipe.vmdl"
+	"AbilityTextureName"			"item_recipe"
+	"ItemCost"						"1000"	
+	"ItemShopTags"					""
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_custom_apex_2"
+	"ItemRequirements"
+	{
+		"01"						"item_custom_apex"					 	
+	}
+}
+
+"item_custom_apex_2"
+{
+	"BaseClass"						"item_lua"
+	"ScriptFile"					"items/item_custom_apex.lua"
+	"ItemCost"						"0"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"item_apex"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"ItemIsNeutralActiveDrop"		"1"
 	"ItemSellable"					"0"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"Model"							"models/props_gameplay/neutral_box.vmdl"
@@ -12659,7 +12746,64 @@
 	"AbilityTextureName"			"item_ballista"
 	"ItemGloballyCombinable"		"0"
 	"ItemPurchasable"				"1"
-	"ItemIsNeutralActiveDrop"				"1"
+	"ItemIsNeutralActiveDrop"				"0"
+	//"TokenTier"						"1"
+	"ItemSellable"					"0"
+	"ItemStackable"					"0"  //this needs to be 0 all time or can be easy abused to have 50+ stacks
+	"ItemRequiresCharges"			"0"
+	"ItemKillable"	                "1"
+	//"ItemPermanent"               	"1"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"  // seems becasue its neutral it reamains sharable.
+	"ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER"
+	"Model"							"models/props_gameplay/neutral_box.vmdl"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AbilityValues"
+        {
+            "attack_range_bonus" "600"
+            "bonus_strength" "180"
+            "bonus_agility" "420"
+            "bonus_intellect" "180"
+            "bonus_health_regen" "200.0"
+            "bonus_damage" "7500"
+            "base_attack_damage"
+            {
+                "value" "10"
+                "CalculateSpellDamageTooltip" "0"
+            }
+            "chance" "10"
+        }
+}
+
+//neutral balista
+"item_recipe_custom_ballista_2"
+{
+	"BaseClass"						"item_datadriven"
+	"Model"							"models/props_gameplay/recipe.vmdl"
+	"AbilityTextureName"			"item_recipe"
+	"ItemCost"						"7000"	
+	"ItemShopTags"					""
+	"ItemStockInitial"				"24"
+	"ItemStockMax"					"25"
+	"ItemStockTime"					"9000.0"	
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_custom_ballista_2"
+	"ItemRequirements"
+	{
+		"01"						"item_custom_ballista" 
+		
+	}
+}
+
+"item_custom_ballista_2"				//弩炮
+{
+	"BaseClass"						"item_lua"
+	"ScriptFile"					"items/item_custom_ballista.lua"
+	"ItemCost"						"0"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"item_ballista"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"ItemIsNeutralActiveDrop"		"1"
 	//"TokenTier"						"1"
 	"ItemSellable"					"0"
 	"ItemStackable"					"0"  //this needs to be 0 all time or can be easy abused to have 50+ stacks
@@ -25219,7 +25363,7 @@
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
     "AbilityTextureName"            "pirate_hat"
     "AbilityCastRange"              "300"
-    "AbilityChannelTime"            "1"
+    "AbilityChannelTime"            "0.7"
     "AbilityCooldown"               "60.0"
     "AbilityManaCost"               "0"
     "ItemCost"                      "12000"

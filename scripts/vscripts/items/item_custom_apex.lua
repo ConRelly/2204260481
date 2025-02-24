@@ -2,7 +2,7 @@ LinkLuaModifier("modifier_bonus_primary_controller", "modifiers/modifier_bonus.l
 LinkLuaModifier("modifier_bonus_primary_token", "modifiers/modifier_bonus.lua", LUA_MODIFIER_MOTION_NONE)
 
 item_custom_apex = class({})
-
+item_custom_apex_2 = item_custom_apex
 function item_custom_apex:GetIntrinsicModifierName()
     return "modifier_item_custom_apex"
 end

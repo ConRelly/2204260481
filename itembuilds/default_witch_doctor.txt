@@ -19,7 +19,7 @@
 			"item"		"item_titan_sliver"
 			"item"		"item_bigan_octarine_core"
 			"item"		"item_helm_of_the_undying"
-			"item"		"item_pirate_hat"			
+			"item"		"item_pirate_hat_custom"			
 			"item"		"item_enchanter"
 			"item"		"item_all_essence"
 			"item"		"item_weapon_fragment"			

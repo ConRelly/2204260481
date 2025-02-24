@@ -9,10 +9,10 @@
 	{
 		"1"
 		{
-			"start_time"			"5:00"
+			"start_time"			"2:00"
 			"trinket_options"		"4"
 			"enhancement_options"	"4"
-			"craft_cost"			"5"
+			"craft_cost"			"1"
 			"xp_bonus"				"0"
 			
 			"items"
@@ -24,6 +24,7 @@
 
 			"enhancements"
 			{
+				"item_broom_handle"                 "1"
 				"item_enhancement_mystical"			"1"
 				"item_enhancement_brawny"			"1"
 				"item_enhancement_alert"			"1"
@@ -134,8 +135,8 @@
 			"items"
 			{
 				"item_desolator_2"					"1"
-				"item_custom_apex"					"1"
-				"item_custom_ballista"				"1"
+				"item_custom_apex_2"				"1"
+				"item_custom_ballista_2"			"1"
 				"item_mirror_shield"				"1"
 				"item_trident"						"1"
 				"item_pirate_hat"					"1"

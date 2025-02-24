@@ -21881,7 +21881,7 @@
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"
-		"ItemIsNeutralActiveDrop"				"1"
+		"ItemIsNeutralActiveDrop"		"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		"IsObsolete"					"0"
 		"AbilityValues"
@@ -23427,7 +23427,7 @@
 	"item_broom_handle"
 	{
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		"ItemIsNeutralActiveDrop"				"0"
+		"ItemIsNeutralActiveDrop"		"0"
 		"ItemSellable"					"1"
 		"ItemGloballyCombinable"		"1"
 		"ItemPurchasable"				"1"

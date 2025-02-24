@@ -1,5 +1,6 @@
 require("lib/popup")
 item_custom_ballista = class({})
+item_custom_ballista_2 = item_custom_ballista
 function item_custom_ballista:GetIntrinsicModifierName() return "modifier_item_custom_ballista" end
 function item_custom_ballista:Spawn()
 	if IsServer() then
