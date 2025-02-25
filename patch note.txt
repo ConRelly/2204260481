@@ -3425,7 +3425,7 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Fixed/Replaced Pirate Hat with a custom one
 * Apex , Trident and Balista now can be used in normal inventory and have an upgrade to be used in neutral slot (neutrals can't be used in 7th slot)
 Note: With the new dota update neutrals now are harder to move slots, if you want to move one to stash you will need to replace with other neutral/item from stash (drag and drop other items to swap places)
-
+Main tester!!
 
 
 
