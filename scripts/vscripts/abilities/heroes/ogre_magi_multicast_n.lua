@@ -328,6 +328,8 @@ function IsExcludeAbility(ability)
 		"item_totem_upgrade",
 		"item_abyssal_water_blade",
 		"item_xp_booster_edible",
+		"item_pirate_hat",
+		"item_pirate_hat_custom",
 -- Abilities
 		"phoenix_fire_spirits",
 		"mjz_phoenix_sun_ray",

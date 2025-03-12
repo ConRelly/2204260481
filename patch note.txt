@@ -3425,10 +3425,15 @@ Note : With the new God Boss 2 new roles(mythical) on Discord have been added.
 * Fixed/Replaced Pirate Hat with a custom one
 * Apex , Trident and Balista now can be used in normal inventory and have an upgrade to be used in neutral slot (neutrals can't be used in 7th slot)
 Note: With the new dota update neutrals now are harder to move slots, if you want to move one to stash you will need to replace with other neutral/item from stash (drag and drop other items to swap places)
-Main tester!!
 
 
 
+
+* Fixed the Abuse with MimicMace and Get random ability rare making so you can have all skills.
+* Magnus facet now gives one extra lvl to its Q from 7 to 8 (added lvl 8 stats) and does not block anymore the skill to lvl 4.
+
+
+* Fixed pirate hat triggering multicast and leaving an infinite digging animation behind.
 
 
 

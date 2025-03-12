@@ -181,6 +181,7 @@ if IsServer() then
 		item_random_get_ability = true,
 		item_random_get_ability_onlvl = true,
 		item_random_get_ability_spell = true,
+		item_random_get_ability3 = true,
 		item_resurection_pendant = true,
 		item_formidable_chest = true,
 		item_mjz_attribute_mail = true,

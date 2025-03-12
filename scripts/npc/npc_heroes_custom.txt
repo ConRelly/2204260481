@@ -2037,6 +2037,7 @@
 		"Ability6"				"mjz_necrolyte_reapers_scythe"
 		"Ability10"				"special_bonus_spell_lifesteal_15"
 		"Ability11"				"special_bonus_cdr_25"
+		"Ability13"             "special_bonus_magic_resistance_12"
 		"Ability15"				"special_bonus_intelligence_35"
 		"Ability16"				"special_bonus_unique_mjz_necrolyte_heartstopper_aura_intelligence"
 		"Ability17"				"special_bonus_reincarnation_90"

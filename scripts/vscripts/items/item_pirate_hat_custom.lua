@@ -15,6 +15,7 @@ end
 
 
 function item_pirate_hat_custom:OnChannelFinish(bInterrupted)
+    print("item_pirate_hat_custom:OnChannelFinish called, bInterrupted:", bInterrupted)
     if not bInterrupted then
         
         local pfx2 = ParticleManager:CreateParticle("particles/econ/events/ti9/shovel_revealed_generic.vpcf", PATTACH_WORLDORIGIN, self:GetCaster())
@@ -22,11 +23,13 @@ function item_pirate_hat_custom:OnChannelFinish(bInterrupted)
         ParticleManager:ReleaseParticleIndex(pfx2)
 
         CreateRune(self:GetCursorPosition(), DOTA_RUNE_BOUNTY)
+        print("Creating rune at", self:GetCursorPosition())
     end
 
     if self.pfx then
         ParticleManager:DestroyParticle(self.pfx, false)
         ParticleManager:ReleaseParticleIndex(self.pfx)
+        print("Destroing digging particle, pfx")
         self.pfx = nil
     end
 end

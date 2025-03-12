@@ -17,6 +17,7 @@ dzzl_good_juju.nonrefresh_items = {
 	item_resurection_pendant = true,
 	item_random_get_ability_spell = true,
 	item_random_get_ability = true,
+	item_random_get_ability3 = true,
 	item_inf_aegis = true,
 	item_video_file = true,
 	item_master_of_weapons_sword = true,

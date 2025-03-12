@@ -7235,68 +7235,97 @@
 	}	
 
 
-	//=================================================================================================================
-	// Magnataur: Shockwave
-	//=================================================================================================================
-	"magnataur_shockwave"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"5518"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
-		"MaxLevel"					  	"7"
-		"LevelsBetweenUpgrades"		 	"12"
-        "HasScepterUpgrade"             "1"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"2000"
-		"AbilityCastPoint"				"0.0"
+    //=================================================================================================================
+    // Magnataur: Shockwave
+    //=================================================================================================================
+    "magnataur_shockwave"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "FightRecapLevel"               "1"
+        "LevelsBetweenUpgrades"         "12"
 
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10"
-		"AbilityDuration"				"0.6875 0.6875 0.6875 0.6875 0.6875 0.6875 0.6875"
+        "HasShardUpgrade"             "0"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"              "0.0"
+
+        // Time     
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "10"
+        "AbilityDuration"               "0.6875"
 
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110"
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"               "85 90 95 100"
 
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"shock_speed"				"900"
-			"shock_width"				"200"
-			"shock_damage"				
-			{
-				"value"			"375 4750 17250 49500 142500 477500 3850000"				
-				"special_bonus_unique_magnus"	"+12500"
-			}
-			"pull_duration"				"0.2"
-			"movement_slow"				"75"
-			"slow_duration"				"2"
-			"pull_distance"				"1"
-			"basic_slow_duration"		
-			{
-				"values"				"0.9"
-				"LinkedSpecialBonus"	"special_bonus_unique_magnus_6"
-			}
-			"scepter_width"		"250"
-			"scepter_range"		"1400"
-			"scepter_duration"	"5"
-			"scepter_erupt_time"		"0.5"
-			"scepter_slow_pct"		"50"
-			"scepter_armor_pct"		"20"
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
-	}
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "shock_speed"               
+            {
+                "value"                 "1200"
+
+            }
+            "shock_width"               
+            {
+                "value" "200"
+                "affected_by_aoe_increase"  "1"
+            }
+            "shock_damage"              
+            {
+                "value"         "375 4750 17250 49500 142500 477500 3250000 5400000"                
+                "special_bonus_unique_magnus"   "+12500"
+            }
+            "movement_slow"             "75"
+            "slow_duration"             "2"
+            "pull_duration"             "0.2"
+            "pull_distance"     "150"
+            "max_level"
+            {
+                "value"                                             "7"
+                "special_bonus_facet_magnataur_diminishing_return" "+1"
+            }
+            "max_level_tooltip"
+            {
+                "special_bonus_facet_magnataur_diminishing_return" "=5"
+            }
+            "basic_slow_duration"       
+            {
+                "value"                 "0.7"
+
+            }
+            "return_damage_pct"         
+            {
+                "value"         "0"
+                "special_bonus_facet_magnataur_diminishing_return"      "=0 =0 =0 =0 =0 =0 =0 =50"
+            }
+            "return_damage_pct_tooltip"
+            {
+                "value"         "0"
+                "special_bonus_facet_magnataur_diminishing_return"      "=50"
+            }
+            "AbilityCastRange"
+            {
+                "value"                 "1800"
+            }
+            "return_shockwave_bonus_distance"
+            {
+                "special_bonus_facet_magnataur_diminishing_return"      "+600"
+            }
+        }
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_1"
+    }
+
 
 
 	"magnataur_reverse_polarity"
