@@ -393,6 +393,8 @@ function IsExcludeAbility(ability)
 		"kez_shodo_sai",
 		"kez_shodo_sai_parry_cancel",
 		"kez_grappling_claw",
+		"faceless_void_time_zone",
+		"mjz_faceless_the_world",
 	}
 	local abilityName = ability:GetAbilityName()
 	for _,name in pairs(list) do

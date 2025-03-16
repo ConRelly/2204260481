@@ -3433,7 +3433,8 @@ Note: With the new dota update neutrals now are harder to move slots, if you wan
 * Magnus facet now gives one extra lvl to its Q from 7 to 8 (added lvl 8 stats) and does not block anymore the skill to lvl 4.
 
 
-* Fixed pirate hat triggering multicast and leaving an infinite digging animation behind.
+* Fixed pirate hat triggering multicast and leaving an infinite duration digging animation.
+* Void Time Zone cooldown lowered (from 120 to 100), duration increased to 5s, AOE increased to 1000 from 700, some bonuses increased (as, ms), cooldown acceleration nerfed from 400% to 200% and the skill is no longer mimicable.
 
 
 

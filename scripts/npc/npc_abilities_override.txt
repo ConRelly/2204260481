@@ -13452,6 +13452,89 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 
+
+    //=================================================================================================================
+    // Faceless Void: Time Zone
+    //=================================================================================================================
+    "faceless_void_time_zone"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_NO"
+        "FightRecapLevel"               "2"
+        "AbilitySound"                  "Hero_FacelessVoid.Chronosphere"
+        
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "700"
+        "AbilityCastPoint"              "0.35 0.35 0.35"
+        "AbilityCastAnimation"      "ACT_DOTA_CAST_ABILITY_4"
+
+        // Time     
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "120 110 100"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"               "125 200 275"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityModifierSupportBonus"       "50"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "radius"                
+            {
+                "value"     "1000"
+                "affected_by_aoe_increase"  "1"
+                "special_bonus_unique_faceless_void_2" "+200"
+            }
+            "duration"              
+            {
+                "value"         "3.75 4.25 5.0"
+            }
+            "vision_radius"         
+            {
+                "value" "675"               
+                "affected_by_aoe_increase"  "1"
+            }
+            "bonus_attack_speed"
+            {                   
+                "value"                                 "0"             
+                "special_bonus_unique_faceless_void"    "+200"
+            }
+            "bonus_move_speed"
+            {                   
+                "value" "80"                
+            }
+            "bonus_cast_speed"
+            {                   
+                "value" "80"
+            }
+            "bonus_turn_speed"
+            {                   
+                "value" "80"
+            }
+            "bonus_projectile_speed"
+            {                   
+                "value" "80"
+            }
+            "yaw"               "45"
+            "cooldown_acceleration"                     // base is 100% = 1x = normal cooldown progression. 400 = 4x = +300% cooldown acceleration
+            {
+                "value"             "200"               // values <= 100 will do nothing currently and progress cooldowns normally
+            }
+        }
+    }
+
+
+
 "special_bonus_unique_faceless_void_3"
 {
 	"AbilityValues"
