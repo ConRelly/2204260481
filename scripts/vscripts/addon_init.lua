@@ -32,6 +32,9 @@ LinkLuaModifier("modifier_bottom_50", "modifiers/modifier_bottom_50.lua", LUA_MO
 LinkLuaModifier("modifier_bottom_20", "modifiers/modifier_bottom_20.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_bottom_10", "modifiers/modifier_bottom_10.lua", LUA_MODIFIER_MOTION_NONE)
 --
+--underdog
+LinkLuaModifier("modifier_underdog", "modifiers/modifier_underdog.lua", LUA_MODIFIER_MOTION_NONE)
+--
 
 --teststuf
 LinkLuaModifier("modifier_mjz_bristleback_quill_spray_autocast6", "abilities/hero_bristleback/modifier_mjz_bristleback_quill_spray_autocast6.lua", LUA_MODIFIER_MOTION_NONE)
@@ -84,3 +87,5 @@ LinkLuaModifier("modifier_tombstone2","modifiers/modifier_tombstone2", LUA_MODIF
 LinkLuaModifier("modifier_totem_aura", "abilities/totem_upgrades.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_totem_aura_effect", "abilities/totem_upgrades.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_totem_upgrade_tracker", "abilities/totem_upgrades.lua", LUA_MODIFIER_MOTION_NONE)
+
+

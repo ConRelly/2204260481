@@ -1,5 +1,5 @@
 require("lib/my")
-
+LinkLuaModifier("modifier_underdog", "modifiers/modifier_underdog.lua", LUA_MODIFIER_MOTION_NONE)
 
 modifier_underdog = class({})
 

@@ -22915,7 +22915,8 @@
 		"ItemPurchasable"				"1"
 		"AbilityValues"
         {
-            "spell_lifesteal" "30"
+            "attack_lifesteal"    "10"
+            "spell_lifesteal" "10"
         }
 	}
 

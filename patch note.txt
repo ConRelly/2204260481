@@ -3439,6 +3439,12 @@ Note: With the new dota update neutrals now are harder to move slots, if you wan
 
 
 
+* Reduced most of vanila life steall soruces to 6-10% (to avoid some Overheal(over 2b) dota bug that keeps the hero to 1hp)
+* Replaced ursa lifesteal talent with a CDR one
+* Fixed Underdog buff sometimes not apearing/working
+
+
+
 
 
 ////////Self Note ////////////

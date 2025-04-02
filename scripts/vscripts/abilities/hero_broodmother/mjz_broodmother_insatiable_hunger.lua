@@ -81,6 +81,7 @@ if IsServer() then
                 ParticleManager:ReleaseParticleIndex(lifesteal)
                     
                 local flHeal = damageDealt * lifesteal_pct / 100
+                if flHeal > 300000 then flHeal = 200000 end
                 parent:HealEventOnly( flHeal, parent, parent )
             end
             if self:GetParent():HasModifier("modifier_super_scepter") then  

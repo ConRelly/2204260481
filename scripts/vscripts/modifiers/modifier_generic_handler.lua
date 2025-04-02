@@ -120,10 +120,31 @@ function modifier_generic_handler:OnTakeDamage(keys)
 
 				-- Limit the healing to the maximum value
 				healAmount = math.min(healAmount, MAX_HEAL)
+				-- == DEBUG PRINTS START ==
+
+				local attacker_name = keys.attacker:GetUnitName()
+				local current_hp = keys.attacker:GetHealth()
+				local max_hp = keys.attacker:GetMaxHealth()
+				local damage_val = math.max(keys.original_damage, 0) -- Use keys.original_damage for pure spell lifesteal
+				local ls_percent = self:GetParent():GetPureSpellLifesteal() -- Or the relevant Get function for the block
+				local calculated_heal_raw = damage_val * ls_percent * 0.01
+				local capped_heal = math.min(calculated_heal_raw, MAX_HEAL) -- Assuming MAX_HEAL is defined above
+
+				print("-------------------- LIFESTEAL DEBUG --------------------")
+				print("Attacker: " .. tostring(attacker_name))
+				print("Attacker HP Before Heal: " .. string.format("%.2f", current_hp) .. " / " .. string.format("%.2f", max_hp))
+				print("Source Damage (Original): " .. string.format("%.2f", damage_val))
+				print("Lifesteal Percent (Pure Spell): " .. string.format("%.2f", ls_percent))
+				print("Calculated Raw Heal Amount: " .. string.format("%.2f", calculated_heal_raw))
+				print("Capped Heal Amount to Apply: " .. string.format("%.2f", capped_heal))
+				print("Is Attacker currently at 1 HP? " .. tostring(current_hp == 1))
+				print("---------------------------------------------------------")
+
+				-- == DEBUG PRINTS END ==
 
 				-- Apply the healing
 				keys.attacker:HealWithParams(healAmount, keys.inflictor, false, true, self:GetCaster(), true)
-								
+			
 				
 				--keys.attacker:HealWithParams(math.max(keys.original_damage, 0) * self:GetParent():GetPureSpellLifesteal() * 0.01, keys.inflictor, false, true, self:GetCaster(), true)
 --				keys.attacker:Heal(math.max(keys.original_damage, 0) * self:GetParent():GetPureSpellLifesteal() * 0.01, keys.attacker)
