@@ -136,6 +136,8 @@ function AOHGameMode:InitGameMode()
 	_G._no_gold_bags = true
 	_G._itemauto1 = {}
 	_G._itemauto2 = {}
+	_G._itemauto3 = {}
+	_G._itemauto4 = {}
 	_G._playerNumber = 0
 	_G._sell_slayer_fragmets = true
 	_G._dev_enemy = false

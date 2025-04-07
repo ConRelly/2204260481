@@ -1,4 +1,3 @@
-
 LinkLuaModifier("modifier_boss_truesight_aura", "bosses/boss_true_sight.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_boss_truesight", "bosses/boss_true_sight.lua", LUA_MODIFIER_MOTION_NONE)
 
@@ -37,11 +36,18 @@ function modifier_boss_truesight:IsDebuff() return true end
 function modifier_boss_truesight:GetTexture() return "eye_true" end
 
 function modifier_boss_truesight:CheckState()
+  if IsServer() then
+    local parent = self:GetParent()
+    if parent:HasModifier("modifier_phantom_assassin_blur_active") then
+      parent:RemoveModifierByName("modifier_phantom_assassin_blur_active")
+    end
+  end
+
   return {
     [MODIFIER_STATE_INVISIBLE] = false,
-    [MODIFIER_STATE_TRUESIGHT_IMMUNE] = false 
-    }
-end 
+    [MODIFIER_STATE_TRUESIGHT_IMMUNE] = false,
+  }
+end
 
 function modifier_boss_truesight:GetPriority()
   return MODIFIER_PRIORITY_SUPER_ULTRA + 10000 -- very high priority

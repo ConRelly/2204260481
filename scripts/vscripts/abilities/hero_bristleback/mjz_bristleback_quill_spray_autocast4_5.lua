@@ -47,10 +47,12 @@ function modifier_class:IsPurgable() return false end
 function modifier_class:OnCreated(table)
     if IsServer() then
         local ability = self:GetAbility()
-        local tick_interval = ability:GetSpecialValueFor('tick_interval')  
-        self:StartIntervalThink(tick_interval) 
-        
-    end         
+        local tick_interval = ability:GetSpecialValueFor('tick_interval')
+        self.cached_item_slots = {} -- Initialize cache
+        self.needs_slot_update = true -- Initial build needed
+        self:StartIntervalThink(tick_interval)
+
+    end
 end
 
 local NoAutocast = {
@@ -278,14 +280,27 @@ function modifier_class:OnIntervalThink()
         --Autocast for items
         local playerID = parent:GetPlayerOwnerID()
         if PlayerResource:GetPlayer(playerID) then
-            local item_auto_slots = {}
-            if _G._itemauto1[playerID] ~= nil then
-                table.insert(item_auto_slots, _G._itemauto1[playerID])
+            -- Check if update is needed
+            if self.needs_slot_update then
+                self.cached_item_slots = {} -- Clear cache
+                if _G._itemauto1[playerID] ~= nil then
+                    table.insert(self.cached_item_slots, _G._itemauto1[playerID])
+                end
+                if _G._itemauto2[playerID] ~= nil then
+                    table.insert(self.cached_item_slots, _G._itemauto2[playerID])
+                end
+                if _G._itemauto3[playerID] ~= nil then
+                    table.insert(self.cached_item_slots, _G._itemauto3[playerID])
+                end
+                if _G._itemauto4[playerID] ~= nil then
+                    table.insert(self.cached_item_slots, _G._itemauto4[playerID])
+                end
+                self.needs_slot_update = false -- Reset flag
             end
-            if _G._itemauto2[playerID] ~= nil then
-                table.insert(item_auto_slots, _G._itemauto2[playerID])
-            end
+
             if parent:HasModifier("modifier_arc_warden_tempest_double") then
+                -- Tempest Double logic remains unchanged for now, still checks slots 0-4 + 16 directly
+                -- If Tempest Double should also respect itemauto commands, this needs adjustment
                 for slot=0 ,4 do
                     local item = parent:GetItemInSlot(slot)
                     if item and IsValidEntity(item) and item:IsFullyCastable() then
@@ -331,9 +346,10 @@ function modifier_class:OnIntervalThink()
                         AttackNearestEnemy(parent)
                     end
                     use_ability(item, caster, parent)
-                end                     
+                end
             else
-                for _, slot in ipairs(item_auto_slots) do
+                -- Use the cached table
+                for _, slot in ipairs(self.cached_item_slots) do
                     local item = parent:GetItemInSlot(slot)
                     if item and IsValidEntity(item) and item:IsFullyCastable() then
                         -- more checks 
@@ -481,4 +497,4 @@ function use_ability(ability, caster, parent )
         end    
         return nil
     end
-end   
+end

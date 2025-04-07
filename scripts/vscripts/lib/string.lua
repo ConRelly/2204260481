@@ -63,12 +63,15 @@ function string.custom_remove3(str)
     str = string.gsub(str, "-itemauto1", "")
     str = tonumber(str)
     if checknumber(str) then
+        if str == 0 then -- Allow 0 to pass through
+            return 0
+        end
         if str > 6 then
             str = 1
         end
-        if str < 1 then
+        if str < 0 then -- Only default if less than 0 (negative)
             str = 1
-        end    
+        end
         return str
     else
         return 1   
@@ -83,23 +86,78 @@ function string.custom_remove4(str)
     str = string.gsub(str, "-itemauto2", "")
     str = tonumber(str)
     if checknumber(str) then
+        if str == 0 then -- Allow 0 to pass through
+            return 0
+        end
         if str == 81 then
             return 17
-        end    
+        end
         if str > 6 then
             str = 2
         end
-        if str < 1 then
+        if str < 0 then -- Only default if less than 0 (negative)
             str = 2
-        end    
+        end
         return str
     else
         return 2  
     end    
 end
+--autocast select item3 slot
+function string.custom_remove5(str)
+    if str == nil then
+        return nil, "the string parameter is nil"
+    end
+    str = string.gsub(str, " ", "")
+    str = string.gsub(str, "-itemauto3", "")
+    str = tonumber(str)
+    if checknumber(str) then
+        if str == 0 then -- Allow 0 to pass through
+            return 0
+        end
+        if str == 81 then
+            return 17
+        end
+        if str > 6 then
+            str = 3
+        end
+        if str < 0 then -- Only default if less than 0 (negative)
+            str = 3
+        end
+        return str
+    else
+        return 3  
+    end    
+end
+--autocast select item4 slot
+function string.custom_remove6(str)
+    if str == nil then
+        return nil, "the string parameter is nil"
+    end
+    str = string.gsub(str, " ", "")
+    str = string.gsub(str, "-itemauto4", "")
+    str = tonumber(str)
+    if checknumber(str) then
+        if str == 0 then -- Allow 0 to pass through
+            return 0
+        end
+        if str == 81 then
+            return 17
+        end
+        if str > 6 then
+            str = 4
+        end
+        if str < 0 then -- Only default if less than 0 (negative)
+            str = 4
+        end
+        return str
+    else
+        return 4  
+    end    
+end
 
 --select skill name from text
-function string.custom_remove5(str)
+function string.custom_remove7(str)
     if str == nil then
         return nil, "the string parameter is nil"
     end

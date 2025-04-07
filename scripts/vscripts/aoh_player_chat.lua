@@ -752,9 +752,22 @@ function AOHGameMode:OnPlayerChat(keys)
 		local plyID = keys.playerid	
 		local slot_nr = string.custom_remove3(keys.text)
 		if slot_nr then
-			print(slot_nr)			 
-			_G._itemauto1[keys.playerid] = slot_nr - 1
-			Notifications:Top(plyID, {text= "You have set itemAutocast 1 on slot: "..slot_nr  , style={color="red"}, duration=6})
+			print(slot_nr)
+			if slot_nr == 0 then
+				_G._itemauto1[keys.playerid] = nil
+				Notifications:Top(plyID, {text= "Item Autocast 1 turned OFF", style={color="yellow"}, duration=6})
+			else
+				_G._itemauto1[keys.playerid] = slot_nr - 1
+				Notifications:Top(plyID, {text= "You have set itemAutocast 1 on slot: "..slot_nr, style={color="red"}, duration=6})
+			end
+			-- Trigger cache update for the autocast modifier
+			local hero = PlayerResource:GetSelectedHeroEntity(plyID)
+			if hero and hero:HasModifier("modifier_mjz_bristleback_quill_spray_autocast4_5") then
+				local modifier = hero:FindModifierByName("modifier_mjz_bristleback_quill_spray_autocast4_5")
+				if modifier then
+					modifier.needs_slot_update = true
+				end
+			end
 		end		
 	end
 	if string.find(keys.text, "-itemauto2") then
@@ -762,12 +775,72 @@ function AOHGameMode:OnPlayerChat(keys)
 		local plyID = keys.playerid	
 		local slot_nr = string.custom_remove4(keys.text)
 		if slot_nr then
-			print(slot_nr)			 
-			_G._itemauto2[keys.playerid] = slot_nr - 1
-			Notifications:Top(plyID, {text= "You have set itemAutocast 2 on slot: "..slot_nr  , style={color="red"}, duration=6})
+			print(slot_nr)
+			if slot_nr == 0 then
+				_G._itemauto2[keys.playerid] = nil
+				Notifications:Top(plyID, {text= "Item Autocast 2 turned OFF", style={color="yellow"}, duration=6})
+			else
+				_G._itemauto2[keys.playerid] = slot_nr - 1
+				Notifications:Top(plyID, {text= "You have set itemAutocast 2 on slot: "..slot_nr, style={color="red"}, duration=6})
+			end
+			-- Trigger cache update for the autocast modifier
+			local hero = PlayerResource:GetSelectedHeroEntity(plyID)
+			if hero and hero:HasModifier("modifier_mjz_bristleback_quill_spray_autocast4_5") then
+				local modifier = hero:FindModifierByName("modifier_mjz_bristleback_quill_spray_autocast4_5")
+				if modifier then
+					modifier.needs_slot_update = true
+				end
+			end
 		end
 	end
-
+--itemauto3
+	if string.find(keys.text, "-itemauto3") then
+		print("pass")
+		local plyID = keys.playerid	
+		local slot_nr = string.custom_remove5(keys.text)
+		if slot_nr then
+			print(slot_nr)
+			if slot_nr == 0 then
+				_G._itemauto3[keys.playerid] = nil
+				Notifications:Top(plyID, {text= "Item Autocast 3 turned OFF", style={color="yellow"}, duration=6})
+			else
+				_G._itemauto3[keys.playerid] = slot_nr - 1
+				Notifications:Top(plyID, {text= "You have set itemAutocast 3 on slot: "..slot_nr, style={color="red"}, duration=6})
+			end
+			-- Trigger cache update for the autocast modifier
+			local hero = PlayerResource:GetSelectedHeroEntity(plyID)
+			if hero and hero:HasModifier("modifier_mjz_bristleback_quill_spray_autocast4_5") then
+				local modifier = hero:FindModifierByName("modifier_mjz_bristleback_quill_spray_autocast4_5")
+				if modifier then
+					modifier.needs_slot_update = true
+				end
+			end
+		end
+	end
+--itemauto4
+	if string.find(keys.text, "-itemauto4") then
+		print("pass")
+		local plyID = keys.playerid	
+		local slot_nr = string.custom_remove6(keys.text)
+		if slot_nr then
+			print(slot_nr)
+			if slot_nr == 0 then
+				_G._itemauto4[keys.playerid] = nil
+				Notifications:Top(plyID, {text= "Item Autocast 4 turned OFF", style={color="yellow"}, duration=6})
+			else
+				_G._itemauto4[keys.playerid] = slot_nr - 1
+				Notifications:Top(plyID, {text= "You have set itemAutocast 4 on slot: "..slot_nr, style={color="red"}, duration=6})
+			end
+			-- Trigger cache update for the autocast modifier
+			local hero = PlayerResource:GetSelectedHeroEntity(plyID)
+			if hero and hero:HasModifier("modifier_mjz_bristleback_quill_spray_autocast4_5") then
+				local modifier = hero:FindModifierByName("modifier_mjz_bristleback_quill_spray_autocast4_5")
+				if modifier then
+					modifier.needs_slot_update = true
+				end
+			end
+		end
+	end
 	if keys.text == "-dev_challenge" and keys.playerid == 0 and Cheats:IsEnabled() then
 		_G._challenge_bosss = 5
 	end
@@ -890,7 +963,7 @@ function AOHGameMode:OnPlayerChat(keys)
 		--get the hero entity
 		local hero = player:GetAssignedHero()
 		--get the skill name from the chat text
-		local skillName = string.custom_remove5(keys.text)
+		local skillName = string.custom_remove7(keys.text)
 		--call the add_skill_with_command function with the hero and skill name
 		add_skill_with_command(hero, skillName)
 	end
@@ -1129,4 +1202,3 @@ function AOHGameMode:Suicider(playerID)
 		end
 	end
 end
-
