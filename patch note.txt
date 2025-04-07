@@ -3444,8 +3444,8 @@ Note: With the new dota update neutrals now are harder to move slots, if you wan
 * Fixed Underdog buff sometimes not apearing/working
 * All seeing eye temp debuff from gods now properly counters PA Blur.
 * Multiautocast items slots now from 2 to 4 and now there's an option to dezactivate slots by using '0' for slot (ex: -itemauto20) more info on multiautocast skill.
-
-
+* Lifeguard now uses dmg value after reductions again (valve had broken the function that did that but they added a new one). now from 75% max hp dmg to trigger to 50%(making a better and smarter defensive passive).
+* Zanto Gari now has an extra optional SS Effect, rewirten general description to make space ,added dmg scallying base on lvl for lvl 7 and now works with Autocast ability. Note :Stun immunity helps a lot if you spam this ability(Alt on skill for more info)
 
 
 

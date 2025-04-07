@@ -244,8 +244,8 @@ function GetRandomAbilityName( hero )
 		"nevermore_dark_lord",
 		"bristleback_warpath_lua",
 		--"obs_replay",
-		"jotaro_absolute_defense3",
-		"zanto_gari",
+		"jotaro_absolute_defense3", 
+		"zanto_gari", --
 		"blood_madness",
 		"clinkz_infernal_breath",
 		"mjz_bloodseeker_thirst",

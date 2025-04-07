@@ -36,12 +36,13 @@ if IsServer() then
 
 	end
 	function modifier_jotaro_absolute_defense3:DeclareFunctions()
-		return {MODIFIER_PROPERTY_AVOID_DAMAGE}
+		return {MODIFIER_PROPERTY_AVOID_DAMAGE_AFTER_REDUCTIONS}
 	end
-	function modifier_jotaro_absolute_defense3:GetModifierAvoidDamage(t)
-		if self.ab and self.ab:IsCooldownReady() and t.target == self.parent and self.parent:GetMaxHealth()*self.ab:GetSpecialValueFor("hp_pct")/50 <= t.damage and self.ab:GetLevel() >= 1 then
+	function modifier_jotaro_absolute_defense3:GetModifierAvoidDamageAfterReductions(t)
+		if self.ab and self.ab:IsCooldownReady() and t.target == self.parent 
+		   and self.parent:GetMaxHealth() * self.ab:GetSpecialValueFor("hp_pct") / 100 <= t.damage 
+		   and self.ab:GetLevel() >= 1 then
 			if self.parent:HasModifier("modifier_item_helm_of_the_undying_active") then return 0 end
-			
 			--self.parent:SetHealth(t.damage + self.parent:GetHealth())
 			local part = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", PATTACH_CENTER_FOLLOW, self.parent)
 			ParticleManager:DestroyParticle(part, false)

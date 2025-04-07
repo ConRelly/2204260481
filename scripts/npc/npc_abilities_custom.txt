@@ -28662,7 +28662,7 @@
 
 	"AbilityValues"
         {
-            "hp_pct" "75.0"
+            "hp_pct" "50.0"
             "cooldown" "25.0"
         }
 }	
@@ -30150,7 +30150,7 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/hero_juggernaut/zanto_gari.lua"
 		"AbilityTextureName"			"custom/abilities/zanto_gari"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -30165,17 +30165,26 @@
 		"AbilitySound"					"Hero_VoidSpirit.AstralStep.Start"
 		"AnimationPlaybackRate"			"1.5" // 1.0 corresponds to cast point of 0.3
 		"AbilityCastPoint"				"0.1"
-		//"AbilityCooldown"				"32 30 28 26 24 22 20"
+		"AbilityCooldown"				"1.0"
 		"AbilityManaCost"				"250"
 		"precache"
 		{
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_void_spirit.vsndevts"
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_jugger_abilities.vsndevts"
+			"particle"		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari_vibr.vpcf"
+			"particle"		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari_slash_start.vpcf"
+			"particle"		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari_slash_tgt.vpcf"
+			"particle"		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari_impact.vpcf"
+			"particle"		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari_impact_kill.vpcf"
+			"particle"		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari_slash_prepare.vpcf"
+			"particle"		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari_slash.vpcf"
+			"particle"		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari.vpcf"
+			"particle"		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari_around.vpcf"			
 		}
 		"AbilityValues"
 		{
 			"radius"				"270"
-			"min_travel_distance"	"10"
+			"min_travel_distance"	"300"
 			"max_travel_distance"	"1000 1250 1500 1750 2000 2250 3500"
 			"pop_damage_delay"		"0.3"
 			"pop_damage"
@@ -30184,7 +30193,7 @@
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"attack_speed_multi"	"1"
-			"movement_slow_pct"		"10 20 30 40 50 60 70"
+			"movement_slow_pct"		"50"
 			"cost_upgrade"			"25000"
 			"hidden_ones_duration"	"0.5"
 			"pt_base_attack"		"250"

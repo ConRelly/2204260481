@@ -28,7 +28,15 @@ function Precache(context)
 	local particles = {
 		"particles/units/heroes/hero_ogre_magi/ogre_magi_multicast.vpcf",
 		"particles/generic_gameplay/generic_break.vpcf",
-
+--[[ 		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari_vibr.vpcf",
+		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari_slash_start.vpcf",
+		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari_slash_tgt.vpcf",
+		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari_impact.vpcf",
+		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari_impact_kill.vpcf",
+		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari_slash_prepare.vpcf",
+		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari_slash.vpcf",
+		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari.vpcf",
+		"particles/custom/abilities/heroes/juggernaut_zanto_gari/zanto_gari_around.vpcf", ]]
 	}
 
 	local soundevents = {

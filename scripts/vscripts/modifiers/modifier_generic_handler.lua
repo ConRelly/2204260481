@@ -130,7 +130,7 @@ function modifier_generic_handler:OnTakeDamage(keys)
 				local calculated_heal_raw = damage_val * ls_percent * 0.01
 				local capped_heal = math.min(calculated_heal_raw, MAX_HEAL) -- Assuming MAX_HEAL is defined above
 
-				print("-------------------- LIFESTEAL DEBUG --------------------")
+--[[ 				print("-------------------- LIFESTEAL DEBUG --------------------")
 				print("Attacker: " .. tostring(attacker_name))
 				print("Attacker HP Before Heal: " .. string.format("%.2f", current_hp) .. " / " .. string.format("%.2f", max_hp))
 				print("Source Damage (Original): " .. string.format("%.2f", damage_val))
@@ -138,7 +138,7 @@ function modifier_generic_handler:OnTakeDamage(keys)
 				print("Calculated Raw Heal Amount: " .. string.format("%.2f", calculated_heal_raw))
 				print("Capped Heal Amount to Apply: " .. string.format("%.2f", capped_heal))
 				print("Is Attacker currently at 1 HP? " .. tostring(current_hp == 1))
-				print("---------------------------------------------------------")
+				print("---------------------------------------------------------") ]]
 
 				-- == DEBUG PRINTS END ==
 

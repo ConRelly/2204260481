@@ -125,9 +125,23 @@ function modifier_class:OnIntervalThink()
         for i=starting_skill,parent:GetAbilityCount() -1 do
 
             if parent == nil then return nil end
-            local target_ability = parent:GetAbilityByIndex( i )       
-            if target_ability and IsValidEntity(target_ability) and not target_ability:IsAttributeBonus() and not target_ability:IsHidden() and not target_ability:IsToggle() and target_ability:IsActivated() and target_ability:GetLevel() > 0 and target_ability:IsCooldownReady() and not target_ability:IsPassive() and not ( NoAutocast[target_ability:GetAbilityName()] == true) and not (target_ability:GetCooldown(target_ability:GetLevel()) <= 0) then  -- Talent-- Dunno
+            local target_ability = parent:GetAbilityByIndex( i )   
+            if target_ability == nil then return nil end  
+            --let print some debug info (basically the pass checks for the ability , atrribute bonus , hidden , toggle , activated , level , cooldown , passive)
+--[[             print("ability name: ".. target_ability:GetAbilityName())
+            print("ability level: ".. target_ability:GetLevel())
+            print("ability cooldown: ".. target_ability:GetCooldown(target_ability:GetLevel()))
+            --bolean value must be check acordly (to avoid error "attempt to concatenate a boolean value")
+            print("ability is cooldown ready: ".. tostring(target_ability:IsCooldownReady()))
+            print("ability is passive: ".. tostring(target_ability:IsPassive()))
+            print("ability is hidden: ".. tostring(target_ability:IsHidden()))
+            print("ability is toggle: ".. tostring(target_ability:IsToggle()))
+            print("ability is activated: ".. tostring(target_ability:IsActivated())) ]]
+            if target_ability and IsValidEntity(target_ability) and not target_ability:IsAttributeBonus() and not target_ability:IsHidden() and not target_ability:IsToggle() and target_ability:IsActivated() and target_ability:GetLevel() > 0 and target_ability:IsCooldownReady() and not target_ability:IsPassive() and not ( NoAutocast[target_ability:GetAbilityName()] == true) and not (target_ability:GetCooldown(target_ability:GetLevel()) <= 0) then  
                 --print("initial pass")
+                --print("cooldown: " .. target_ability:GetCooldown(target_ability:GetLevel()))
+                --if (target_ability:GetCooldown(target_ability:GetLevel()) <= 0) then return end
+                --print("pass 0")
                 if target_ability:IsInAbilityPhase() then return nil end
                 --if not ability:GetToggleState() then return nil end
                 local ability_name = target_ability:GetAbilityName()
@@ -148,18 +162,30 @@ function modifier_class:OnIntervalThink()
                 if parent:HasModifier("modifier_brewmaster_primal_split") and not target_ability:GetAbilityName() ~= "brewmaster_primal_split" then return nil end
 				--if target_ability:GetCooldown(target_ability:GetLevel()) <= 0 then return end
                 --print("pass 1")
-                local radius_auto = target_ability:GetCastRange(parent:GetAbsOrigin(), parent) + caster:GetCastRangeBonus() - 50
+                local cast_range = target_ability:GetCastRange(parent:GetAbsOrigin(), parent)
+                local range_bonus = caster:GetCastRangeBonus()
+                local radius_auto = 500 -- Default value
+
+                if cast_range and range_bonus then
+                    radius_auto = cast_range + range_bonus - 50
+                    if radius_auto < 100 then
+                        radius_auto = 500
+                    end
+                end
+                --print("radius_auto = " .. radius_auto)
+                --print("pass 1.5")
                 if radius_auto then
                     if radius_auto < 100 then
                         radius_auto = 500
                     end
                 else
                     radius_auto = 500
+                    --print("radius_auto(fix) = 500")
                 end   
                 local pos = parent:GetAbsOrigin()
                 --print("pass 2")
                 if ability_behavior_includes(target_ability, DOTA_ABILITY_BEHAVIOR_NO_TARGET) and not (target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or target_ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH)  then
-                   --print("A no target : name: " .. ability_name)
+                    --print("A no target : name: " .. ability_name)
                     if target_ability and IsValidEntity(target_ability) and IsValidEntity(parent) and parent:IsAlive() then
                         parent:CastAbilityNoTarget(target_ability, parent:GetPlayerOwnerID())
                     end 

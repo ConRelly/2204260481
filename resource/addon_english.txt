@@ -794,11 +794,15 @@
 	"dota_tooltip_ability_special_bonus_omniknight_ga_cd"		"{s:value}s Guardian Angel Cooldown"
 
 
-	"dota_tooltip_ability_zanto_gari"					"Zanto Gari"
-	"dota_tooltip_ability_zanto_gari_description"		"Yurnero makes a lunge, making a hit, and after %pop_damage_delay% sec. makes another series of slashes. Slowing the target's movement speed by %movement_slow_pc%%% during slashes.<br>First slash in a series of slashes deals an additional %pop_damage% <font color=\"#5B93D1\">magic</font> damage.<br>Slashes has True Strike.<br><br>Series of slashes duration: Max Attack Speed / 1000<br><br>Upgrade ability to level 7 is cost <font color='#FFCC34'>%cost_upgrade% gold</font>.\n<h1><font color='#0094FF'>Aghanim's Scepter</font> + <font color='#0094FF'>Aghanim's Shard</font></h1>When killing with a first slash of series, 1 charge is restored for each kill.<br><br>When the ability is learned for all 7 levels, the damage of the first slash in a series changes to <font color=\"#D8AE53\">pure</font> and passes through spell immunity.\n<h1><font color='#DE3163'>Super Scepter: </font><font color='#05E3CC'>Vibrating</font></h1>After hit from a lunge will make the hero vibrate that allows pass through objects, gives invulnerability and gives bonus %pt_base_attack%%% damage (from base attack damage) for the same duration as the Series of Slahses."
+	//"dota_tooltip_ability_zanto_gari"					"Zanto Gari"
+	//"dota_tooltip_ability_zanto_gari_description"		"Yurnero lunges forward to strike, then after %pop_damage_delay% sec unleashes a series of slashes, slowing the target's movement by %movement_slow_pct%%% during slashes. The first slash deals an additional %pop_damage% <font color=\"#5B93D1\">magic</font> damage and all slashes have True Strike.<br><br>Series duration: Max Attack Speed / 1000<br><br>Upgrade ability to level 7 is cost <font color='#FFCC34'>%cost_upgrade% gold</font>.\n<h1><font color='#0094FF'>Aghanim's Scepter</font> + <font color='#0094FF'>Aghanim's Shard</font></h1>When killing with a first slash of series, 1 charge is restored for each kill.<br><br>When the ability is learned for all 7 levels, the damage of the first slash in a series changes to <font color=\"#D8AE53\">pure</font> and passes through spell immunity.\n<h1><font color='#DE3163'>Super Scepter: </font><font color='#05E3CC'>Vibrating</font></h1>After hit from a lunge will make the hero vibrate that allows pass through objects, gives invulnerability and gives bonus %pt_base_attack%%% damage (from base attack damage) for the same duration as the Series of Slahses."
+	"dota_tooltip_ability_zanto_gari" "Zanto Gari"
+	"dota_tooltip_ability_zanto_gari_description" "Yurnero lunges forward to strike, then after %pop_damage_delay% sec unleashes a series of slashes, slowing the target's movement by %movement_slow_pct%%% during slashes. All slashes have True Strike.<br> The first slash deals an additional %pop_damage% <font color='#5B93D1'>magic</font> damage.<br> Or uses <font color='#D8AE53'>HeroLevel × 10000</font> if higher at level 7 as dmg, converting it to <font color='#D8AE53'>pure</font> damage that pierces spell immunity.<br> Series duration: Max Attack Speed / 1000.<br> Upgrade to level 7 for <font color='#FFCC34'>%cost_upgrade% gold</font>\n<h1><font color='#DE3163'>Super Scepter: </font><font color='#05E3CC'>Vibrating</font></h1>After the lunge hit, become invulnerable, able to pass through objects, and gain +%pt_base_attack%%% base damage for the Series duration.<br><font color='#05E3CC'>AutocastON</font>: No invulnerability bonus but grants each first‑slash pop damage a chance to trigger an additional slash (more info on the buff Zanto Echoes).<br><br><h1><font color='#0094FF'>Has Aghanim's Scepter and Shard UP</font></h1>"
+	
 	"dota_tooltip_ability_zanto_gari_scepter_description"	"When applied to itself, it makes a hit within a radius of 1/2 of lunge range, subsequently making a series of slashes.<br>Allows you to dodge projectiles.<br>Increases Mana Cost to %mana_cost_scepter%%% of mana pool"
 	"dota_tooltip_ability_zanto_gari_note0"					"Attack modifiers only work on a lunge hit."
 	"dota_tooltip_ability_zanto_gari_Note1"					"Super Scepter effect will not work if you have Mimic Mace"
+	"dota_tooltip_ability_zanto_gari_Note2"                 "Hero is Stuned and freezed during 85%% of animation time.Stun immunity like Slayer Dimensional can remove that."
 	"dota_tooltip_ability_zanto_gari_shard_description"		"Increases slashes rate in a series of slashes by %shard_as%%%."
 	"dota_tooltip_ability_zanto_gari_max_travel_distance"		"LUNGE RANGE:"
 	"dota_tooltip_ability_zanto_gari_radius"					"LUNGE RADIUS:"
@@ -808,6 +812,10 @@
 	"dota_tooltip_ability_special_bonus_zanto_gari_dmg"			"First slash in Zento Gari's series deals additional damage"
 	"dota_tooltip_ability_special_bonus_zanto_gari_dmg_description"		"Additional damage is equal to {s:value}% of base attack damage"
 	"dota_tooltip_ability_special_bonus_zanto_gari_cooldown"	"-10 seconds cooldown Zanto Gari"
+
+	"DOTA_Tooltip_modifier_zanto_gari_ss_echo_stacks"			"Zanto Echoes"
+	"DOTA_Tooltip_modifier_zanto_gari_ss_echo_stacks_description"	"Each Zanto Gari pop damage instance has 1%% chance to add a <font color='#00FF00'>Zanto Echo</font> stack.<br>More <font color='#00FF00'>stacks</font> boost the chance for the Super Scepter to trigger an extra slash when Autocast is on.<br>Hero lvl /2(max 60) + stacks = <br><font color='#F17C26'>Current Echo Slash Chance: %fMODIFIER_PROPERTY_TOOLTIP%%% </font>"
+
 
 // Rubick
 	"DOTA_Tooltip_ability_arcane_supremacy"							"Arcane Supremacy"
@@ -2660,7 +2668,7 @@
 		"DOTA_Tooltip_ability_aghanim_blink2"					"Slayer Dimensional Shift"
 		"DOTA_Tooltip_ability_aghanim_blink2_Description"		"Learned from Void Spirit and Improved, Slayer shifts his position in space, damaging and slowing enemies near his new position, as well as applying a Basic Dispell to himself.<br>Enemies are slowed by %slow_amount%%% for %slow_duration% seconds and have Healing reduced by %heal_reduction%%% for %debuff_duration% seconds upon arrival.
 		<font color='#509C25'>Hitting an enemy will give a temporary buff for %invul_duration% seconds that increase your max health by %health_increase%%%, attack range by %attack_range% and become invulnerabile</font>.
-		<h1><font color='#1DC9EB'>Passive: Slayer Resilience</font> </h1> Increase your Defense stats, Have True Strike and you are not affected by normal stuns.</font>"
+		\n<h1><font color='#1DC9EB'>Passive: Slayer Resilience</font> </h1> Increase your Defense stats, Have True Strike and you are not affected by normal stuns.</font>\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Increases AOE and improves cast point"
 		"DOTA_Tooltip_ability_aghanim_blink2_Note0"				"Can be cast outside of cast range, and will blink to max range.<br>AOE: %debuff_aoe%"
 		"DOTA_Tooltip_ability_aghanim_blink2_Lore"				"Shazam!"
 		"DOTA_Tooltip_ability_aghanim_blink2_blink_range"		"Blink Range: "
@@ -2669,6 +2677,7 @@
 		"DOTA_Tooltip_ability_aghanim_blink2_magic_resist"	  "%+$spell_resist"
 		"DOTA_Tooltip_ability_aghanim_blink2_armor_bonus"	   "+$armor"
 		"DOTA_Tooltip_ability_aghanim_blink2_health_bonus"	  "+$health"
+		"DOTA_Tooltip_ability_aghanim_blink2_scepter_description" "Increases AOE, and improves cast point"
 		"DOTA_Tooltip_ability_aghanim_blink_heal_reduction"		"%healing Reduction: "
 		"DOTA_Tooltip_ability_aghanim_blink_debuff_duration"	"Debuff Duration: "
 	 
