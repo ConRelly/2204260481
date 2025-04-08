@@ -387,14 +387,14 @@
 	"DOTA_Tooltip_ability_elder_titan_natural_order_magic_resistance_pct"	"%BASE RESIST REDUCTION(only on Spirit skill):"
 
 	"dota_tooltip_ability_item_lunar_shield"				"Lunar Shield"
-	"dota_tooltip_ability_item_lunar_shield_description"	"<h1>Active: Reserve Reserve Battery</h1><font color='#0094FF'>UP: Aghanim's Scepter</font><br>Fully restores shields regardless of Shield Reboot and Shield Recovery.
-	\n<h1>Passive: Energy Shield</h1>Creates a shield that blocks any damage. If the shield is destroyed, it will need time to repair.<br><br>Shield Durability: %shield_durability%%% Max Health<br>Shield Reboot: %shield_cd% сек.
+	"dota_tooltip_ability_item_lunar_shield_description"	"<h1>Active: Reserve Battery</h1><font color='#0094FF'>UP: Aghanim's Scepter</font><br>Fully restores shields regardless of Shield Reboot and Shield Recovery.
+	\n<h1>Passive: Energy Shield</h1>Creates a shield that blocks any damage. If the shield is destroyed, it will need time to repair.<br><br>Shield Durability: %shield_durability%%% Max Health<br>Shield Reboot: %shield_cd% sec.
 	\n<h1>Passive: Shield Recovery</h1>If the shield does not take damage for %shield_recovery% seconds, it will be fully restored.
 	\n<h1><font color='#D8E4FF'>Lunar Effect</font></h1>Reduces Max Health by %hp_red_pct%%%, but in return, it improves Shield Reboot and Shield Recovery.<br><font color='#FF5B4C'>If the shield is broken, the owner will receive %inc_dmg%%% more damage.</font>
-	\n<h1>UP: <font color='#0094FF'>Aghanim's Scepter</font> + <font color='#1F7C2C'>Tranquil Boots</font></h1>When health drops below %threshold%%%, the Reserve Battery ability is automatically used, if available.
-	\n<h1><font color='#930000'>UP: Lier Scarlet</font></h1>Effect of reducing Max Health from <font color='#D8E4FF'>Lunar Effect</font> reduced by half."
-	"dota_tooltip_ability_item_lunar_shield_note0"			"You won't be able to get rid of Lunar Shield."
-	"dota_tooltip_ability_item_lunar_shield_all_stats"	"+$all"
+	\n<h1>UP: <font color='#0094FF'>Aghanim's Scepter</font> + <font color='#1F7C2C'>Life Greaves</font></h1>When health drops below %threshold%%%, the Reserve Battery ability is automatically used, if available.
+	\n<h1><font color='#DE3163'>Super Scepter</font></h1>When shield is active now it regenerates 15%% per sec even during combat and Passive:Shield recovery(out of combat) now needs half time to trigger<br>Shield damage taken is reduced by %tooltip_reduction%%%"
+	"dota_tooltip_ability_item_lunar_shield_note0"			"HP reduction is half with Lier scarlet item equiped.<br>vanila Shields are not affected by the clasic incoming dmg reduction"
+	"dota_tooltip_ability_item_lunar_shield_all_stats_lvl"	"+$lvlbonus_all"
 	"dota_tooltip_ability_item_lunar_shield_Lore"		"To use the Lunar artifacts, you need a huge fee, in exchange for a huge power."
 	"DOTA_Tooltip_modifier_lunar_shield_absorb"		"Lunar Shield"
 	"DOTA_Tooltip_modifier_lunar_shield_cd"			"Shield Reboot"
@@ -794,10 +794,8 @@
 	"dota_tooltip_ability_special_bonus_omniknight_ga_cd"		"{s:value}s Guardian Angel Cooldown"
 
 
-	//"dota_tooltip_ability_zanto_gari"					"Zanto Gari"
-	//"dota_tooltip_ability_zanto_gari_description"		"Yurnero lunges forward to strike, then after %pop_damage_delay% sec unleashes a series of slashes, slowing the target's movement by %movement_slow_pct%%% during slashes. The first slash deals an additional %pop_damage% <font color=\"#5B93D1\">magic</font> damage and all slashes have True Strike.<br><br>Series duration: Max Attack Speed / 1000<br><br>Upgrade ability to level 7 is cost <font color='#FFCC34'>%cost_upgrade% gold</font>.\n<h1><font color='#0094FF'>Aghanim's Scepter</font> + <font color='#0094FF'>Aghanim's Shard</font></h1>When killing with a first slash of series, 1 charge is restored for each kill.<br><br>When the ability is learned for all 7 levels, the damage of the first slash in a series changes to <font color=\"#D8AE53\">pure</font> and passes through spell immunity.\n<h1><font color='#DE3163'>Super Scepter: </font><font color='#05E3CC'>Vibrating</font></h1>After hit from a lunge will make the hero vibrate that allows pass through objects, gives invulnerability and gives bonus %pt_base_attack%%% damage (from base attack damage) for the same duration as the Series of Slahses."
 	"dota_tooltip_ability_zanto_gari" "Zanto Gari"
-	"dota_tooltip_ability_zanto_gari_description" "Yurnero lunges forward to strike, then after %pop_damage_delay% sec unleashes a series of slashes, slowing the target's movement by %movement_slow_pct%%% during slashes. All slashes have True Strike.<br> The first slash deals an additional %pop_damage% <font color='#5B93D1'>magic</font> damage.<br> Or uses <font color='#D8AE53'>HeroLevel × 10000</font> if higher at level 7 as dmg, converting it to <font color='#D8AE53'>pure</font> damage that pierces spell immunity.<br> Series duration: Max Attack Speed / 1000.<br> Upgrade to level 7 for <font color='#FFCC34'>%cost_upgrade% gold</font>\n<h1><font color='#DE3163'>Super Scepter: </font><font color='#05E3CC'>Vibrating</font></h1>After the lunge hit, become invulnerable, able to pass through objects, and gain +%pt_base_attack%%% base damage for the Series duration.<br><font color='#05E3CC'>AutocastON</font>: No invulnerability bonus but grants each first‑slash pop damage a chance to trigger an additional slash (more info on the buff Zanto Echoes).<br><br><h1><font color='#0094FF'>Has Aghanim's Scepter and Shard UP</font></h1>"
+	"dota_tooltip_ability_zanto_gari_description" "Yurnero lunges forward to strike, then after %pop_damage_delay% sec unleashes a series of slashes, slowing the target's movement by %movement_slow_pct%%% during slashes. All slashes have True Strike.<br> The first slash deals an additional %pop_damage% <font color='#5B93D1'>magic</font> damage.<br> Or uses <font color='#D8AE53'>HeroLevel × %pop_damage_per_level%</font> if higher at level 7 as dmg, converting it to <font color='#D8AE53'>pure</font> damage that pierces spell immunity.<br> Series duration: Max Attack Speed / 1000.<br> Upgrade to level 7 for <font color='#FFCC34'>%cost_upgrade% gold</font>\n<h1><font color='#DE3163'>Super Scepter: </font><font color='#05E3CC'>Vibrating</font></h1>After the lunge hit, become invulnerable, able to pass through objects, and gain +%pt_base_attack%%% base damage for the Series duration.<br><font color='#05E3CC'>AutocastON</font>: No invulnerability bonus but grants each first‑slash pop damage a chance to trigger an additional slash (more info on the buff Zanto Echoes).<br><br><h1><font color='#0094FF'>Has Aghanim's Scepter and Shard UP</font></h1>"
 	
 	"dota_tooltip_ability_zanto_gari_scepter_description"	"When applied to itself, it makes a hit within a radius of 1/2 of lunge range, subsequently making a series of slashes.<br>Allows you to dodge projectiles.<br>Increases Mana Cost to %mana_cost_scepter%%% of mana pool"
 	"dota_tooltip_ability_zanto_gari_note0"					"Attack modifiers only work on a lunge hit."
@@ -1081,7 +1079,7 @@
 
 // Oracle
 	"DOTA_Tooltip_ability_purifying_flames"					"Purifying Flames"
-	"DOTA_Tooltip_ability_purifying_flames_Description"		"Burns away impurities, dealing heavy magic damage to the target. Application to allies gradually regenerate health over time. The amount of health regenerated over its duration exceeds the amount of initial damage by %heal_pct%%%. <br> <font color='#ED7E0F'>Rightclick to enable Autocast</font>"
+	"DOTA_Tooltip_ability_purifying_flames_Description"		"Burns away impurities, dealing heavy magic damage to the target. Application to allies gradually regenerate health over time. The amount of health regenerated over its duration exceeds the amount of initial damage by %heal_pct%%%. <br> <font color='#ED7E0F'>Rightclick to enable Autocast</font>\n<h1><font color='#DE3163'>Super Scepter</font></h1>Adds %base_dmg%%% of your base attack to the damage."
 	"DOTA_Tooltip_ability_purifying_flames_Lore"		"Like a hall of mirrors might amplify the light of a single candle, the shattered walls of the universe can transform the light of prophecy into a burning torch."
 	"DOTA_Tooltip_ability_purifying_flames_Note0"		"1) The healing from Purifying Flames can be stacked with itself. Bonus int dmg will not count for healing."
 	"DOTA_Tooltip_ability_purifying_flames_Note1"		"2) Automatic application applies the ability to enemies."
@@ -3426,7 +3424,7 @@
 	"DOTA_Tooltip_ability_mjz_faceless_void_backtrack_dodge_chance_pct"		"%Proc Chance: "
 		
 	"DOTA_Tooltip_ability_mjz_finger_of_death"						"Finger of Death"
-	"DOTA_Tooltip_ability_mjz_finger_of_death_Description"			"Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each life it consumes. \n<h1><font color='#DE3163'>UP: Super Scepter</font></h1> Each use gives 2 charges of Lion's Dagon and increases the damage for each Dagon charge multiplied by the base damage of this skill.<br>Increases bonus damage per kill by 0.5% per level, capping at 50% at level 100. After level 100, the increase is 5% per level. \n<h1><font color='#6E32A5'>Lion's</font> <font color='#FFA32B'>Exclusive:</font> Lion's Dagon</h1> After Lion's Dagon use, it applies the Finger of Death ability to the same target. <br><br> Increases Lion's Dagon radius from <font color='#0094FF'>Aghanim's Scepter</font> equal to the radius of Finger of Death, but blocks the neutral slot. <br> With 5+ <font color='#DE3163'>Super Synth</font> effects removes this limitation."
+	"DOTA_Tooltip_ability_mjz_finger_of_death_Description"			"Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each life it consumes. \n<h1><font color='#DE3163'>UP: Super Scepter</font></h1> Each use gives 2 charges of Lion's Dagon and increases the damage for each Dagon charge multiplied by the base damage of this skill.<br>Increases bonus damage per kill by 0.5% per level, capping at 50% at level 100. After level 100, the increase is 5% per level. \n<h1><font color='#6E32A5'>Lion's</font> <font color='#FFA32B'>Exclusive:</font> Lion's Dagon</h1> After Lion's Dagon use, it applies the Finger of Death ability to the same target. <br><br> Increases Lion's Dagon radius from <font color='#0094FF'>Aghanim's Scepter</font> equal to the radius of Finger of Death."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_scepter_description"	"Increases damage, reduces cooldown and cancels mana cost. Finger of Death hits all units in a small area."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_Lore"					"Lion's disfigured hand is also the source of his greatest power, capable of flooding victims with malefic force."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_Note0"                "Can get multiple stacks from the same unit"
@@ -6985,7 +6983,7 @@ You can't target yourself."
 "DOTA_Tooltip_Ability_medusa_custom_stone_arrows_Description"			"Medusa improves her arrows, increasing her base damage but losing attack speed and move speed. \n<h1><font color='#DE3163'>Super Scepter</font></h1> Increases Stone Duration from Aghanim's Scepter by %stone_gaze_duration% sec. \n<h1><font color='#18718E'>UP: Skadi Bow</font></h1> Reduces Attack and Movement Speed reduction by 10%%"
 "DOTA_Tooltip_ability_medusa_custom_stone_arrows_scepter_Description"	"When attack landed, there is a chance of petrifying the target, depending on the level of Stone Gaze"
 "DOTA_Tooltip_Ability_medusa_custom_stone_arrows_Lore"					"The beauty of Medusa is legendary."
-"DOTA_Tooltip_Ability_medusa_custom_stone_arrows_extra_damage"			"BONUS DAMAGE:"
+"DOTA_Tooltip_Ability_medusa_custom_stone_arrows_extra_damage"			"BONUS BASE DAMAGE:"
 "DOTA_Tooltip_Ability_medusa_custom_stone_arrows_attack_speed_loss"		"%ATTACK SPEED LOSS:"
 "DOTA_Tooltip_Ability_medusa_custom_stone_arrows_move_speed_loss"		"%MOVE SPEED LOSS:"
 "DOTA_Tooltip_ability_medusa_custom_stone_arrows_stone_gaze_chance"		"%STONE CHANCE:"

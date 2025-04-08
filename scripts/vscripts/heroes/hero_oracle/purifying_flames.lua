@@ -26,16 +26,24 @@ function purifying_flames:GetCooldown(lvl)
 end
 
 function purifying_flames:OnSpellStart()
+	if not IsServer() then return end
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 	local damage_flag = DOTA_DAMAGE_FLAG_NONE
 	local damage = self:GetSpecialValueFor("damage")
+	local caster_base_dmg = caster:GetAttackDamage() * self:GetSpecialValueFor("base_dmg") /100
+	--cecks if the target is a valid target
+	if not target or target:IsNull() then return end
 	if target:TriggerSpellAbsorb(self) then return end
 	
 	target:EmitSound("Hero_Oracle.PurifyingFlames.Damage")
 	target:EmitSound("Hero_Oracle.PurifyingFlames")
 	local int_dmg = caster:GetIntellect(false) * self:GetSpecialValueFor("int_dmg")
 	damage = damage + int_dmg
+	--if it has modifier modifier_super_scepter then add base dmg to the damage
+	if caster:HasModifier("modifier_super_scepter") then
+		damage = damage + caster_base_dmg
+	end
 	local pf = ParticleManager:CreateParticle("particles/units/heroes/hero_oracle/oracle_purifyingflames_hit.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 	ParticleManager:SetParticleControlEnt(pf, 1, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 	ParticleManager:ReleaseParticleIndex(pf)

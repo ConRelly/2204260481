@@ -180,7 +180,7 @@ function modifier_lier_scarlet_3_pieces:IsPurgable() return false end
 function modifier_lier_scarlet_3_pieces:RemoveOnDeath() return false end
 function modifier_lier_scarlet_3_pieces:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end
-		self:StartIntervalThink(FrameTime())
+		self:StartIntervalThink(0.2)
 	end
 end
 function modifier_lier_scarlet_3_pieces:DeclareFunctions()

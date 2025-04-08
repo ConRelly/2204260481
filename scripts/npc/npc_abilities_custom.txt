@@ -30199,6 +30199,7 @@
 			"pt_base_attack"		"250"
 			"shard_as"				"25"
 			"mana_cost_scepter"		"7"
+			"pop_damage_per_level"  "12000"
 		}
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	}
@@ -30316,7 +30317,7 @@
 		"AbilityTextureName"			"clinkz_death_pact"
 		"AbilityValues"
         {
-            "base_damage" "250 750 1500 2500 4000 6000 9000"
+            "base_damage" "750 1500 2500 4000 6000 9000 18000"
             "health" "1000 2000 3000 4000 5000 6000 7000"
             "scepter_mag_damage"
             {
@@ -31181,6 +31182,7 @@
 			"heal_pct"				"33"
 			"tick_rate"				"0.5"
 			"duration"				"6"
+			"base_dmg"              "150"
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}

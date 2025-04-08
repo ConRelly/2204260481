@@ -242,7 +242,7 @@ function modifier_zanto_gari_debuff:OnDestroy()
 		--will make damage be the speciall value or caster lvl * 10000 (witch one is higher) if ability is lvl 7 or higher
 		local damage = ability:GetSpecialValueFor("pop_damage")
 		if ability:GetLevel() >= 7 then
-			damage = math.max(ability:GetSpecialValueFor("pop_damage"), caster:GetLevel() * 10000)
+			damage = math.max(ability:GetSpecialValueFor("pop_damage"), caster:GetLevel() * ability:GetSpecialValueFor("pop_damage_per_level"))
 		end
 		if caster:HasTalent("special_bonus_zanto_gari_dmg") then
 			damage = damage + (caster:GetAttackDamage() * caster:FindTalentValue("special_bonus_zanto_gari_dmg") / 100)

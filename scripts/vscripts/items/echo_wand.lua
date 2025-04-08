@@ -206,6 +206,8 @@ if IsServer() then
 		item_aegis_cast = true,
 		item_totem_upgrade = true,
 		item_xp_booster_edible = true,
+		item_lunar_shield = true,
+		---skills--
 		faceless_void_time_zone = true,
 		faceless_void_chronosphere = true,
 		--mjz_doom_bringer_devour = true,

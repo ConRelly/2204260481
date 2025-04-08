@@ -315,48 +315,94 @@ function modifier_life_greaves_bubble:IsHidden() return true end
 function modifier_life_greaves_bubble:IsDebuff() return false end
 function modifier_life_greaves_bubble:IsPurgable() return true end
 
-function modifier_life_greaves_bubble:DeclareFunctions()
-	return {MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK}
-end
-
 function modifier_life_greaves_bubble:OnCreated(kv)
 	if not IsServer() then return end
 
-	local caster = self:GetCaster()
-	local target = self:GetParent()
+	self.parent = self:GetParent()
+	self.ability = self:GetAbility() -- Assuming the ability context is needed, might need adjustment if called differently
+
+	local target = self.parent
 	local shield_size = target:GetModelRadius()
 	local target_origin = target:GetAbsOrigin()
 
-	self.shield_remaining = kv.maxhealthshield * target:GetMaxHealth() / 100
+	-- Initialize shield values
+	self.max_shield = kv.maxhealthshield * target:GetMaxHealth() / 100
+	self.current_shield = self.max_shield
 
+	-- Setup transmitter for client sync
+	self:SetHasCustomTransmitterData(true)
+	self:SendBuffRefreshToClients() -- Send initial data
+
+	-- Particle effect
 	local particle = ParticleManager:CreateParticle("particles/custom/items/life_greaves/life_greaves_bubble.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 	local common_vector = Vector(shield_size, 0, shield_size)
 	ParticleManager:SetParticleControl(particle, 1, common_vector)
 	ParticleManager:SetParticleControl(particle, 2, common_vector)
 	ParticleManager:SetParticleControl(particle, 4, common_vector)
 	ParticleManager:SetParticleControl(particle, 5, Vector(shield_size, 0, 0))
-
 	ParticleManager:SetParticleControlEnt(particle, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target_origin, true)
 	self:AddParticle(particle, false, false, -1, false, false)
-	self:SetStackCount(self.shield_remaining)
 end
-function modifier_life_greaves_bubble:GetModifierTotal_ConstantBlock(kv)
-	if not IsServer() then return end
 
-	local target = self:GetParent()
-	local original_shield_amount = self.shield_remaining
+function modifier_life_greaves_bubble:OnDestroy()
+    if IsServer() then
+        -- Stop particle effect if needed (assuming self.particle was stored in OnCreated if AddParticle doesn't handle cleanup)
+        -- Example: if self.particle then ParticleManager:DestroyParticle(self.particle, false); ParticleManager:ReleaseParticleIndex(self.particle) end
+    end
+end
 
-	if kv.original_damage > 0 and bit.band(kv.damage_flags, DOTA_DAMAGE_FLAG_HPLOSS) ~= DOTA_DAMAGE_FLAG_HPLOSS then
-		self.shield_remaining = self.shield_remaining - kv.damage
-		self:SetStackCount(self.shield_remaining)
+-- Transmitter data for client sync
+function modifier_life_greaves_bubble:AddCustomTransmitterData()
+	return {
+		current_shield = self.current_shield,
+		max_shield = self.max_shield,
+	}
+end
 
-		if kv.damage < original_shield_amount then
-			SendOverheadEventMessage(nil, OVERHEAD_ALERT_BLOCK, target, kv.damage, nil)
-			return kv.damage
+function modifier_life_greaves_bubble:HandleCustomTransmitterData(data)
+	self.current_shield = data.current_shield
+	self.max_shield = data.max_shield
+	-- Update stack count on client for UI display (optional, depends on how UI reads it)
+	self:SetStackCount(math.floor(self.current_shield))
+end
+
+-- Modifier Effects
+function modifier_life_greaves_bubble:DeclareFunctions()
+	return { MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT }
+end
+
+function modifier_life_greaves_bubble:GetModifierIncomingDamageConstant(params)
+	-- Client-side reporting for UI
+	if not IsServer() then
+		if params.report_max then
+			return self.max_shield or 0
 		else
-			SendOverheadEventMessage(nil, OVERHEAD_ALERT_BLOCK, target, original_shield_amount, nil)
-			self:Destroy()
-			return original_shield_amount
+			return self.current_shield or 0
 		end
 	end
+
+	-- Server-side damage blocking
+	-- Ignore HP loss damage type
+	if bit.band(params.damage_flags, DOTA_DAMAGE_FLAG_HPLOSS) == DOTA_DAMAGE_FLAG_HPLOSS then
+		return 0
+	end
+
+	if self.current_shield <= 0 then return 0 end -- Shield already broken
+
+	local blocked_damage = math.min(params.damage, self.current_shield)
+	self.current_shield = self.current_shield - blocked_damage
+
+	-- Send overhead message for blocked damage
+	SendOverheadEventMessage(nil, OVERHEAD_ALERT_BLOCK, self.parent, blocked_damage, nil)
+
+	-- Refresh client data
+	self:SendBuffRefreshToClients()
+
+	-- Check if shield broke
+	if self.current_shield <= 0 then
+		self:Destroy()
+	end
+
+	-- Return negative blocked damage
+	return -blocked_damage
 end

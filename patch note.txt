@@ -3439,13 +3439,21 @@ Note: With the new dota update neutrals now are harder to move slots, if you wan
 
 
 
-* Reduced most of vanila life steall soruces to 6-10% (to avoid some Overheal(over 2b) dota bug that keeps the hero to 1hp)
-* Replaced ursa lifesteal talent with a CDR one
+* NEW item Lunar Shield (can be found in Secret Shop section)
+* Reduced most Vanila lifesteal soruces to 6-10% (to avoid some overheal(over 2b) dota bug that keeps the hero at 1hp) 
+* Replaced Ursa lifesteal talent with a CDR one 
 * Fixed Underdog buff sometimes not apearing/working
-* All seeing eye temp debuff from gods now properly counters PA Blur.
-* Multiautocast items slots now from 2 to 4 and now there's an option to dezactivate slots by using '0' for slot (ex: -itemauto20) more info on multiautocast skill.
-* Lifeguard now uses dmg value after reductions again (valve had broken the function that did that but they added a new one). now from 75% max hp dmg to trigger to 50%(making a better and smarter defensive passive).
-* Zanto Gari now has an extra optional SS Effect, rewirten general description to make space ,added dmg scallying base on lvl for lvl 7 and now works with Autocast ability. Note :Stun immunity helps a lot if you spam this ability(Alt on skill for more info)
+* Gods Eye Temp debuff now properly counter PA Blur.
+* Multi-autocast item slots now increase from 2 to 4 (and are more CPU efficient) and there is now an option to disable slots by using '0' for slot (ex: -itemauto20) more info on multi-autocast skill.
+* Lifeguard now uses the dmg value after reductions again (Valve had broken the function that did this, but they added a new one). now from 75% max hp dmg to trigger to 50% (making a better and smarter defensive passive).
+* Zanto Gari now has an extra optional SS effect, rewrote general description to make room, added dmg scaling base on lvl for lvl 7 and now works with autocast ability. Note :Stun immunity helps a lot when spamming this ability(Alt on skill for more info) 
+* Lion Exclusive Finger of Death + Lion Dagon now no longer block the neutral slot until 5+ss 
+* Clinkz Infernal Breath bonus base dmg is 2x at max lvl 
+* Increase most stats for Drunken Brawler (some almost 2x more some less) 
+* Naga Rip Tide slightly buffed.
+* Purifying Flames now has a Super Scepter effect.
+* Life Greaves shield bonus from UP effect now uses the new Dota Mechanic (UI shields). slightly improved stats 
+* Solar Crest stats increased.
 
 
 

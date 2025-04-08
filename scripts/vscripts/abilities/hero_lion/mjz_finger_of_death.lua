@@ -380,9 +380,9 @@ modifier_mjz_finger_of_death_locker = class({})
 function modifier_mjz_finger_of_death_locker:IsHidden() return true end
 function modifier_mjz_finger_of_death_locker:OnCreated()
 	if not IsServer() then return end
-	self:StartIntervalThink(FrameTime())
+	--self:StartIntervalThink(FrameTime())
 end
-function modifier_mjz_finger_of_death_locker:OnIntervalThink()
+--[[ function modifier_mjz_finger_of_death_locker:OnIntervalThink()
 	if not IsServer() then return end
 	if self:GetParent():GetUnitName() == "npc_dota_hero_lion" then
 		if self:GetParent():HasItemInInventory("item_mjz_dagon_v2") then
@@ -401,7 +401,7 @@ function modifier_mjz_finger_of_death_locker:OnIntervalThink()
 			end
 		end
 	end
-end
+end ]]
 function modifier_mjz_finger_of_death_locker:DeclareFunctions()
 	return {MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL, MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE}
 end

@@ -3707,20 +3707,21 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
 		{
-			"dodge_chance"		"15 20 25 32"
+			"dodge_chance"		"20 25 30 40"
 			"crit_chance"				"12"
 			"active_multiplier"			
 			{
 				"value"						"3"
 				"special_bonus_unique_brewmaster_8"		"+1"
 			}
-			"crit_multiplier"			"480 920 1460 3250"
-			"magic_resist"	"10 15 20 25"
-			"armor"		"7 34 68 125"
+			"crit_multiplier"			"680 1220 2460 4250"
+            "attack_speed"  "50 100 150 200"
+			"magic_resist"	"15 25 35 45"
+			"armor"		"34 68 125 325"
 			"movespeed"				"-25"
 			"slow_duration"				"2"
-			"bonus_move_speed"		"15 37 75 115"
-			"bonus_status_resist"	"25"
+			"bonus_move_speed"		"37 75 115 220"
+			"bonus_status_resist"	"30"
 		}
 	}
 
@@ -7634,12 +7635,12 @@
 			}
 			"armor_reduction"			
 			{	
-				"value"						"-4 -8 -16 -26 -32 -42 -55 -85"
+				"value"						"-4 -8 -16 -26 -32 -42 -55 -90"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_3"
 			}
 			"damage"	
 			{
-				"value"				"620 2845 7765 16880 35940 84770 181500 421500"
+				"value"				"2845 7765 16880 35940 84770 181500 290000 621500"
 				"LinkedSpecialBonus"		"special_bonus_unique_naga_siren_2"
 			}
 			"radius"					"701"
@@ -7663,7 +7664,7 @@
         {
             "value"
             {
-                "value" "45240"
+                "value" "145240"
                 "ad_linked_abilities" "naga_siren_rip_tide"
             }
         }
@@ -20786,22 +20787,97 @@
         }
 	}
 
+    //=================================================================================================================
+    // Wind Lace
+    //=================================================================================================================
+    "item_wind_lace"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE" 
+        //"AbilityBehavior"             "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET" 
+        
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1000"
+        "ItemShopTags"                  "armor"
+        "ItemQuality"                   "component"
+        "ItemAliases"                   "wind lace"
+        "ItemPermanent"                 "1"
+        //"ItemInitialCharges"          "3"
+        //"ItemRequiresCharges"         "1"
+        "SuggestPregame"                "1"
+
+        
+        // Sounden
+        //-------------------------------------------------------------------------------------------------------------         
+        "UIPickupSound"                 "Item.PickUpRingShop"
+        "UIDropSound"                   "Item.DropRingShop"
+        "WorldDropSound"                "Item.DropRingWorld"
+
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+                "movement_speed"            "100"
+        }
+    }
+
+
+    //=================================================================================================================
+    // Crown
+    //=================================================================================================================
+    "item_crown"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "3000"
+        "ItemShopTags"                  "agi;int;str"
+        "ItemQuality"                   "component"
+        "ItemAliases"                   "crown"
+        "SuggestEarlygame"              "1"
+        //"SideShop"                        "1"
+
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+                "bonus_all_stats"       "200"
+        }
+    }
+
+
 // Recipe: Solar Crest
 	"item_recipe_solar_crest"
 	{
-		"ItemCost"						"700"
+		"ItemCost"						"3000"
+        "ItemRequirements"
+        {
+            "01"                        "item_crown;item_wind_lace"
+        }        
 	}
 // Solar Crest
 	"item_solar_crest"
 	{
-		"AbilityCooldown"				"14.0"
-		"AbilityValues"
+		"AbilityCooldown"				"16.0"
+        "AbilityCastRange"              "2000"
+        "AbilityValues"
         {
-            "bonus_armor" "22"
-            "bonus_all_stats" "90"
-            "bonus_mana_regen_pct" "2.5"
-            "target_attack_speed" "80"
-            "duration" "14"
+            "bonus_armor"           "40"
+            "bonus_all_stats"       "270"
+            "self_movement_speed"   "100"
+            "bonus_mana"            "2000"
+            "bonus_health"          "6750"
+            "target_movement_speed" "70"
+            "target_attack_speed"   "160"
+            "target_armor"          "70"
+            "duration"              "10"
+            "absorb_amount"         "3500"
         }
 	}
 
