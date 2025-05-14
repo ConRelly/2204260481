@@ -1,5 +1,6 @@
 require("lib/string")
 require("played_heroes")
+require("items/lier_scarlet")
 LinkLuaModifier("modifier_reload_bullet_channel_command", "heroes/hero_kardel/abilities", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier( "modifier_prevent_tombstone_channel_custom", "modifiers/modifier_prevent_tombstone_channel.lua", LUA_MODIFIER_MOTION_NONE )
 local count = 0
@@ -849,6 +850,20 @@ function AOHGameMode:OnPlayerChat(keys)
 	end
 	if keys.text == "-dev_test_list" and keys.playerid == 0 and Cheats:IsEnabled() then
 		GetLeastPlayedHeroes()
+	end
+	--scarlet test
+	-- context -- Combination Function
+	-- function LierScarlet_CombineAscendant(keys)
+	--     local caster = keys.caster
+	--     local forced_benefit_id = tonumber(keys.forced_benefit_id) -- 1:Str, 2:Agi, 3:Int, 4:SpellAmp, 5:BaseAtk
+
+	if keys.text == "-dev_scarlet" and keys.playerid == 0 and Cheats:IsEnabled() then
+		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
+		local keys_table = {
+			caster = hero,
+			forced_benefit_id = 1
+		}
+		LierScarlet_CombineAscendant(keys_table)
 	end
 
 	if keys.text == "-commands" and keys.playerid == 0 then

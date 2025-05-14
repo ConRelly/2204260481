@@ -430,6 +430,35 @@
 	"dota_tooltip_modifier_lier_scarlet_3_pieces_buff_cd_description"	"Re-trigger of Sword Soul is not yet available."
 
 
+// Lier Scarlet Ascendant
+	"DOTA_Tooltip_ability_item_lier_scarlet_ascendant"				"Lier Scarlet Ascendant"
+	"DOTA_Tooltip_ability_item_lier_scarlet_ascendant_Description"	"The culmination of Lier Scarlet's fragments, embodying all their powers and augmenting them further. Its power is unique to its wielder, with new core stats dynamically scaling based on rolled tiers and hero level, in addition to retaining all effects of its components.\n\n<font color='#FFD700'>Retained Effects:</font>\n<font color='#FF8C00'>Lier Scarlet (T):</font> Reduces Max HP by %max_hp_pct_t%%%, increases all outgoing Damage by %total_dmg_t%%%.\n<font color='#FF8C00'>Lier Scarlet (M):</font> Reduces Max HP by %max_hp_pct_m%%%. Nearby enemies in %aoe_radius_m% radius take %aoe_dmg_m%%% Physical Damage every second. Heals owner for %heal_pct_m%%% of Max HP every %aoe_interval_m% seconds.\n<font color='#FF8C00'>Lier Scarlet (B):</font> Reduces Max HP by %max_hp_pct_b%%%, increases Movement Speed by %bonus_ms_pct_b%%% and Attack Speed by %bonus_as_pct_b%%%.\n\n<font color='#00BFFF'>Shortened Reach (2-Piece Effect):</font> Reduces Physical Damage received by %phys_dmg_reduction_2p%%% and increases Status Resistance by %bonus_status_resist_2p%%%.\n<font color='#00FF00'>Sword Soul (3-Piece Effect):</font> When Max HP is %health_threshold_3p%%% or less, gain +%bonus_crit_3p%%% Crit Chance, +%bonus_crit_dmg_3p%%% Crit Dmg (multiplied by hero level), +%spell_amp_3p_buff%%% Spell Amp, and death immunity for %buff_duration_3p% seconds. Cooldown: %cooldown_3p% seconds."
+	"DOTA_Tooltip_ability_item_lier_scarlet_ascendant_Lore"			"The combined will of the Scarlet fragments, resonating with the hero's potential, now fully awakened."
+
+	"DOTA_Tooltip_modifier_lier_scarlet_ascendant"					"Lier Scarlet Ascendant"
+	"DOTA_Tooltip_modifier_lier_scarlet_ascendant_Description"		"<font color='#DAA520'>Dynamic Ascendant Stats (Hero Level Scaled):</font><br>Strength: +%dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%<br>Agility: +%dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%<br>Intelligence: +%dMODIFIER_PROPERTY_STATS_INTELLECT_BONUS%<br>Spell Amplification: +%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% (Base Dynamic)<br>Base Attack Damage: +%dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%<br><br><font color='#FFD700'>Combined Passive Effects:</font><br>Total Max HP Reduction: %dMODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE%%%<br>Total Outgoing Damage Increase: +%dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%%<br>Movement Speed Bonus: +%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%<br>Attack Speed Bonus: +%dMODIFIER_PROPERTY_ATTACKSPEED_PERCENTAGE%%%<br>Physical Damage Reduction: %dMODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE%%%<br>Status Resistance: +%dMODIFIER_PROPERTY_STATUS_RESISTANCE%%%<br><br><font color='#FF8C00'>Lier Scarlet (M) Aura:</font> Deals area damage and heals periodically.<br><font color='#00FF00'>Sword Soul Ready:</font> (Triggers buff when conditions met)"
+
+// Ascendant 3-Piece Buff and CD Modifiers
+	"DOTA_Tooltip_modifier_lier_scarlet_ascendant_3_piece_buff"				"Sword Soul Ascendant - Immune"
+	"DOTA_Tooltip_modifier_lier_scarlet_ascendant_3_piece_buff_Description"	"Empowered by Sword Soul! Gain +%dMODIFIER_PROPERTY_TOOLTIP%%% Crit Chance, increased Crit Damage (hero level scaled), +%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% Spell Amp, Magic Immunity, and Death Immunity."
+	"DOTA_Tooltip_modifier_lier_scarlet_ascendant_3_piece_buff_cd"			"Sword Soul Ascendant - Cooldown"
+	"DOTA_Tooltip_modifier_lier_scarlet_ascendant_3_piece_buff_cd_Description"	"Sword Soul Ascendant is on cooldown."
+
+// Hidden Player Stat Modifiers for Lier Scarlet Ascendant (Mainly for Debugging)
+	"DOTA_Tooltip_modifier_player_lier_scarlet_ascendant_strength_tier"				"Player Stat Tier: Strength (LSA)"
+	"DOTA_Tooltip_modifier_player_lier_scarlet_ascendant_strength_tier_Description"	"Stores the rolled Strength stacks for Lier Scarlet Ascendant. Stacks: %MODIFIER_PROPERTY_STACK_COUNT%"
+	"DOTA_Tooltip_modifier_player_lier_scarlet_ascendant_agility_tier"				"Player Stat Tier: Agility (LSA)"
+	"DOTA_Tooltip_modifier_player_lier_scarlet_ascendant_agility_tier_Description"	"Stores the rolled Agility stacks for Lier Scarlet Ascendant. Stacks: %MODIFIER_PROPERTY_STACK_COUNT%"
+	"DOTA_Tooltip_modifier_player_lier_scarlet_ascendant_intelligence_tier"			"Player Stat Tier: Intelligence (LSA)"
+	"DOTA_Tooltip_modifier_player_lier_scarlet_ascendant_intelligence_tier_Description" "Stores the rolled Intelligence stacks for Lier Scarlet Ascendant. Stacks: %MODIFIER_PROPERTY_STACK_COUNT%"
+	"DOTA_Tooltip_modifier_player_lier_scarlet_ascendant_spell_amp_tier"				"Player Stat Tier: Spell Amp (LSA)"
+	"DOTA_Tooltip_modifier_player_lier_scarlet_ascendant_spell_amp_tier_Description"	"Stores the rolled Spell Amp stacks for Lier Scarlet Ascendant. Stacks: %MODIFIER_PROPERTY_STACK_COUNT%"
+	"DOTA_Tooltip_modifier_player_lier_scarlet_ascendant_base_atk_tier"				"Player Stat Tier: Base Attack (LSA)"
+	"DOTA_Tooltip_modifier_player_lier_scarlet_ascendant_base_atk_tier_Description"	"Stores the rolled Base Attack stacks for Lier Scarlet Ascendant. Stacks: %MODIFIER_PROPERTY_STACK_COUNT%"
+	
+
+
+
 //Picasso T
 	"dota_tooltip_ability_item_picasso_t"				"Picasso (T)"
 	"dota_tooltip_ability_item_picasso_t_description"	"<h1><font color='#C84A4B'>Red Paint</font></h1>Each attack gives 1 charge (cooldown %hit_cd% sec.). Upon gaining 4 charges, enter Zeal Mode to deal more Physical DMG.\n<h1>Dye Impact (2 Pieces)</h1>Allows you to paint the enemy in the color of the available paint. Paints switch every %switch_interval% sec. Two different paints can be blended to form a Mixed Color to trigger special effects.<br>Mixed Color Duration: %mix_duration% sec. (at this time, the enemy can not be painted)<br>Paint Duration: %blob_duration% sec.<br><br><font color='#C84A4B'>Red</font> + <font color='#EBDB5F'>Yellow</font> = <font color='#EA8425'>Orange</font>: target takes %orange_mix%%% more Physical DMG.<br><font color='#EBDB5F'>Yellow</font> + <font color='#6083FF'>Blue</font> = <font color='#A239D3'>Purple</font>: deals %purple_dmg%%% ATK of AOE Physical DMG.<br><font color='#6083FF'>Blue</font> + <font color='#C84A4B'>Red</font> = <font color='#27BC40'>Green</font>: Instantly heal the owner for %green_heal%%% HP.\n<h1>Paint Jar (3 Pieces)</h1>Increases the paint duration to %blob_duration_3% sec. Reduces cooldown for paint charges by %hit_cd_3% sec."

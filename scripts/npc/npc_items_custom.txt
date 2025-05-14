@@ -16668,7 +16668,7 @@
 	}
 
 ////////////////////////////////////////////////// STIGMATA \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-// Lier Scarlet T
+// Lier Scarlet T  -item item_lier_scarlet_t
 	"item_lier_scarlet_t"
 	{
 		"BaseClass"						"item_lua"
@@ -16812,6 +16812,60 @@
 			"01"						"item_air_gem;item_light_gem;item_shadow_gem"
 		}
 	}
+
+// Lier Scarlet Ascendant (Combined Item)
+	"item_lier_scarlet_ascendant"
+	{
+		"BaseClass"				"item_lua" 
+		"ScriptFile"				"items/lier_scarlet.lua"
+		"AbilityTextureName"		"custom/lier_scarlet_ascendant"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE" // Standard for intrinsic modifiers
+		"ItemCost"					"1000"
+		"ItemDroppable"				"1"
+		"ItemPurchasable"			"1"
+		"ItemSellable"				"0"
+		"ItemShareability"			"ITEM_FULLY_SHAREABLE"
+		"ItemQuality"				"artifact"
+		"ItemDisassembleRule"		"DOTA_ITEM_DISASSEMBLE_NEVER"
+		"ItemAliases"				"lier scarlet ascendant; ascendant"
+		"ItemDeclarations"			"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		// AbilitySpecial can be used for static description parts or constants visible to Lua's GetSpecialValueFor
+		"AbilityValues"
+		{
+
+			// Values from item_lier_scarlet_t
+			"max_hp_pct_t" "20"
+			"total_dmg_t" "40" // Assuming flat value as per original item_t
+
+			// Values from item_lier_scarlet_m
+			"max_hp_pct_m" "10"
+			"heal_pct_m" "10"
+			"aoe_dmg_m" "350"
+			"aoe_radius_m" "1500"
+			"aoe_interval_m" "3"
+
+			// Values from item_lier_scarlet_b
+			"max_hp_pct_b" "20"
+			"bonus_ms_pct_b" "100"
+			"bonus_as_pct_b" "35"
+
+			// Values from 2-Piece Set Bonus (shared by all original items, pick one set)
+			"phys_dmg_reduction_2p" "35"
+			"bonus_status_resist_2p" "50"
+
+			// Values from 3-Piece Set Bonus (shared by all original items, pick one set)
+			"health_threshold_3p" "60"
+			"buff_duration_3p" "12"  // Duration of the immunity buff
+			"cooldown_3p" "90"       // Cooldown of the 3-piece buff
+			"bonus_crit_3p" "50"     // Crit chance during buff
+			"bonus_crit_dmg_3p" "100" // Crit damage multiplier (per hero level) during buff
+			"spell_amp_3p_buff" "500" // Spell amp during buff
+		}
+	}
+
+
+
 
 // Picasso T
 	"item_picasso_t"

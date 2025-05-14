@@ -280,3 +280,538 @@ function modifier_lier_scarlet_3_pieces_buff_cd:OnIntervalThink()
 --		self:SetStackCount(duration)
 	end
 end
+
+----------------------------------------
+-- Lier Scarlet Ascendant - Combined  --
+----------------------------------------
+
+-- LinkLuaModifier calls for new modifiers
+LinkLuaModifier("modifier_lier_scarlet_ascendant", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_player_lier_scarlet_ascendant_strength_tier", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_player_lier_scarlet_ascendant_agility_tier", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_player_lier_scarlet_ascendant_intelligence_tier", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_player_lier_scarlet_ascendant_spell_amp_tier", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_player_lier_scarlet_ascendant_base_atk_tier", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_lier_scarlet_ascendant_3_piece_buff", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_lier_scarlet_ascendant_3_piece_buff_cd", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
+
+-- Item Definition
+if item_lier_scarlet_ascendant == nil then item_lier_scarlet_ascendant = class({}) end
+function item_lier_scarlet_ascendant:GetIntrinsicModifierName()
+    return "modifier_lier_scarlet_ascendant"
+end
+
+-- Hidden Player Stat Modifiers
+-- Strength Tier
+if modifier_player_lier_scarlet_ascendant_strength_tier == nil then modifier_player_lier_scarlet_ascendant_strength_tier = class({}) end
+function modifier_player_lier_scarlet_ascendant_strength_tier:IsHidden() return false end
+function modifier_player_lier_scarlet_ascendant_strength_tier:IsPurgable() return false end
+function modifier_player_lier_scarlet_ascendant_strength_tier:RemoveOnDeath() return false end
+function modifier_player_lier_scarlet_ascendant_strength_tier:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT + MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE end
+
+-- Agility Tier
+if modifier_player_lier_scarlet_ascendant_agility_tier == nil then modifier_player_lier_scarlet_ascendant_agility_tier = class({}) end
+function modifier_player_lier_scarlet_ascendant_agility_tier:IsHidden() return false end
+function modifier_player_lier_scarlet_ascendant_agility_tier:IsPurgable() return false end
+function modifier_player_lier_scarlet_ascendant_agility_tier:RemoveOnDeath() return false end
+function modifier_player_lier_scarlet_ascendant_agility_tier:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT + MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE end
+
+-- Intelligence Tier
+if modifier_player_lier_scarlet_ascendant_intelligence_tier == nil then modifier_player_lier_scarlet_ascendant_intelligence_tier = class({}) end
+function modifier_player_lier_scarlet_ascendant_intelligence_tier:IsHidden() return false end
+function modifier_player_lier_scarlet_ascendant_intelligence_tier:IsPurgable() return false end
+function modifier_player_lier_scarlet_ascendant_intelligence_tier:RemoveOnDeath() return false end
+function modifier_player_lier_scarlet_ascendant_intelligence_tier:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT + MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE end
+
+-- Spell Amp Tier
+if modifier_player_lier_scarlet_ascendant_spell_amp_tier == nil then modifier_player_lier_scarlet_ascendant_spell_amp_tier = class({}) end
+function modifier_player_lier_scarlet_ascendant_spell_amp_tier:IsHidden() return false end
+function modifier_player_lier_scarlet_ascendant_spell_amp_tier:IsPurgable() return false end
+function modifier_player_lier_scarlet_ascendant_spell_amp_tier:RemoveOnDeath() return false end
+function modifier_player_lier_scarlet_ascendant_spell_amp_tier:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT + MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE end
+
+-- Base Attack Tier
+if modifier_player_lier_scarlet_ascendant_base_atk_tier == nil then modifier_player_lier_scarlet_ascendant_base_atk_tier = class({}) end
+function modifier_player_lier_scarlet_ascendant_base_atk_tier:IsHidden() return false end
+function modifier_player_lier_scarlet_ascendant_base_atk_tier:IsPurgable() return false end
+function modifier_player_lier_scarlet_ascendant_base_atk_tier:RemoveOnDeath() return false end
+function modifier_player_lier_scarlet_ascendant_base_atk_tier:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT + MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE end
+
+-- Main Combined Item Modifier
+if modifier_lier_scarlet_ascendant == nil then modifier_lier_scarlet_ascendant = class({}) end
+function modifier_lier_scarlet_ascendant:IsHidden() return false end
+function modifier_lier_scarlet_ascendant:IsPurgable() return false end
+function modifier_lier_scarlet_ascendant:RemoveOnDeath() return true end -- Removed with item
+function modifier_lier_scarlet_ascendant:GetTexture() return "custom/lier_scarlet_ascendant" end -- Placeholder icon
+
+function modifier_lier_scarlet_ascendant:OnCreated()
+    if IsServer() then
+        if not self:GetAbility() then self:Destroy(); return end
+        if self:GetParent():IsIllusion() then self:Destroy(); return end
+
+        -- Initialize values from AbilitySpecial for precursor item effects
+        -- Item T
+        self.total_dmg_pct = self:GetAbility():GetSpecialValueFor("total_dmg_t")
+        -- Item M
+        self.heal_pct_m = self:GetAbility():GetSpecialValueFor("heal_pct_m")
+        self.aoe_dmg_m = self:GetAbility():GetSpecialValueFor("aoe_dmg_m")
+        self.aoe_radius_m = self:GetAbility():GetSpecialValueFor("aoe_radius_m")
+        local aoe_interval_m = self:GetAbility():GetSpecialValueFor("aoe_interval_m")
+        if aoe_interval_m > 0 then
+            self:StartIntervalThink(aoe_interval_m) -- For Item M's AOE
+        end
+        -- Item B
+        self.bonus_ms_pct_b = self:GetAbility():GetSpecialValueFor("bonus_ms_pct_b")
+        self.bonus_as_pct_b = self:GetAbility():GetSpecialValueFor("bonus_as_pct_b")
+        -- 2-Piece Set
+        self.phys_dmg_reduction_2p = self:GetAbility():GetSpecialValueFor("phys_dmg_reduction_2p")
+        self.bonus_status_resist_2p = self:GetAbility():GetSpecialValueFor("bonus_status_resist_2p")
+        -- 3-Piece Set (for triggering its buff)
+        self.health_threshold_3p = self:GetAbility():GetSpecialValueFor("health_threshold_3p")
+        self.buff_duration_3p = self:GetAbility():GetSpecialValueFor("buff_duration_3p")
+        self:StartIntervalThink(0.25) -- For 3-piece health check, can be combined if intervals are same
+    end
+end
+
+function modifier_lier_scarlet_ascendant:OnIntervalThink()
+    if IsServer() then
+        if not self:GetAbility() or not self:GetParent() or self:GetParent():IsNull() then self:Destroy(); return end
+        if self:GetParent():IsIllusion() then return end
+
+        local caster = self:GetCaster()
+        local ability = self:GetAbility()
+
+        -- Item M's AOE Damage and Heal
+        if self.aoe_radius_m > 0 and self.aoe_dmg_m > 0 then
+            local dmg_m = caster:GetAverageTrueAttackDamage(caster) * self.aoe_dmg_m / 100 * 3 -- Consolidated damage
+            local heal_m = (caster:GetMaxHealth() * self.heal_pct_m / 100)
+            local enemies_m = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetOrigin(), nil, self.aoe_radius_m, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+            for _,enemy_m in pairs(enemies_m) do
+                if enemy_m ~= caster then
+                    local damageTable_m = {victim = enemy_m, attacker = caster, damage = dmg_m, damage_type = DAMAGE_TYPE_PHYSICAL, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL, ability = ability}
+                    ApplyDamage(damageTable_m)
+                    -- Removed triple hit timers as damage is now consolidated
+                end
+            end
+            -- Heal only every 4th call (every 1s)
+            self._lier_scarlet_asc_heal_counter = (self._lier_scarlet_asc_heal_counter or 0) + 1
+            if self._lier_scarlet_asc_heal_counter >= 4 then
+                if heal_m > 0 then caster:Heal(heal_m, caster) end
+                self._lier_scarlet_asc_heal_counter = 0
+            end
+        end
+
+        -- 3-Piece Set Bonus Logic (triggering the buff)
+        if not caster:HasModifier("modifier_lier_scarlet_ascendant_3_piece_buff_cd") and not caster:HasModifier("modifier_lier_scarlet_ascendant_3_piece_buff") then
+            local max_health = caster:GetMaxHealth()
+            local trigger_health = max_health * (self.health_threshold_3p / 100)
+            if caster:GetHealth() < trigger_health then
+                caster:AddNewModifier(caster, ability, "modifier_lier_scarlet_ascendant_3_piece_buff", {duration = self.buff_duration_3p})
+            end
+        end
+    end
+end
+
+function modifier_lier_scarlet_ascendant:DeclareFunctions()
+    return {
+        -- Dynamic Stats
+        MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+        MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+        MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+        MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE, -- Base Spell Amp from dynamic stats
+        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+        MODIFIER_PROPERTY_TOOLTIP,
+
+        -- Item T effects
+        MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE, -- Will sum T, M, B HP reductions
+        MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE, -- From T
+
+        -- Item B effects
+        MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE, -- From B
+        MODIFIER_PROPERTY_ATTACKSPEED_PERCENTAGE, -- From B
+
+        -- 2-Piece Set effects
+        MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE, -- From 2P
+        MODIFIER_PROPERTY_STATUS_RESISTANCE, -- From 2P
+
+        -- 3-Piece Set effects (when buff is not active, for min health)
+        MODIFIER_PROPERTY_MIN_HEALTH, -- From 3P base (before buff)
+        
+        -- Note: 3-piece buff (magic immunity, crit, spell amp buff, etc.) are handled by modifier_lier_scarlet_ascendant_3_piece_buff
+        -- We might need to declare properties here if the buff modifier itself doesn't have GetAbility() context or for direct reflection.
+        -- For now, assuming the sub-modifier handles its own properties.
+        -- If GetModifierCritDMG is needed directly on this modifier (e.g. if buff is internal state), add MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE
+    }
+end
+
+function modifier_lier_scarlet_ascendant:GetModifierExtraHealthPercentage()
+    if not self:GetAbility() then return 0 end
+    local hp_reduction_t = self:GetAbility():GetSpecialValueFor("max_hp_pct_t")
+    local hp_reduction_m = self:GetAbility():GetSpecialValueFor("max_hp_pct_m")
+    local hp_reduction_b = self:GetAbility():GetSpecialValueFor("max_hp_pct_b")
+    return (hp_reduction_t + hp_reduction_m + hp_reduction_b) * (-1)
+end
+
+function modifier_lier_scarlet_ascendant:GetModifierTotalDamageOutgoing_Percentage()
+    if not self:GetAbility() then return 0 end
+    return self:GetAbility():GetSpecialValueFor("total_dmg_t")
+end
+
+function modifier_lier_scarlet_ascendant:GetModifierMoveSpeedBonus_Percentage()
+    if not self:GetAbility() then return 0 end
+    return self:GetAbility():GetSpecialValueFor("bonus_ms_pct_b")
+end
+
+function modifier_lier_scarlet_ascendant:GetModifierAttackSpeedPercentage()
+    if not self:GetAbility() then return 0 end
+    return self:GetAbility():GetSpecialValueFor("bonus_as_pct_b")
+end
+
+function modifier_lier_scarlet_ascendant:GetModifierIncomingPhysicalDamage_Percentage()
+    if not self:GetAbility() then return 0 end
+    return self:GetAbility():GetSpecialValueFor("phys_dmg_reduction_2p") * (-1)
+end
+
+function modifier_lier_scarlet_ascendant:GetModifierStatusResistance()
+    if not self:GetAbility() then return 0 end
+    return self:GetAbility():GetSpecialValueFor("bonus_status_resist_2p")
+end
+
+function modifier_lier_scarlet_ascendant:GetMinHealth()
+    if not self:GetAbility() then return 0 end
+    -- This provides the "don't die" aspect when the 3-piece buff is NOT active but CD is also not active
+    if self:GetCaster() and not self:GetCaster():HasModifier("modifier_lier_scarlet_ascendant_3_piece_buff") and not self:GetCaster():HasModifier("modifier_lier_scarlet_ascendant_3_piece_buff_cd") then
+        return 1
+    end
+    return 0 -- Or -1 if that's the convention for no effect
+end
+
+
+function modifier_lier_scarlet_ascendant:GetModifierBonusStats_Strength()
+    if not IsServer() then return 0 end
+    local hero = self:GetParent()
+    if not hero or not hero.FindModifierByName then return 0 end -- Ensure hero object and method exist
+    local stat_tier_modifier = hero:FindModifierByName("modifier_player_lier_scarlet_ascendant_strength_tier")
+    if stat_tier_modifier then
+        local rolled_stacks = stat_tier_modifier:GetStackCount()
+        -- Base T1=14, Base T5=70. Value_Per_Stack_Unit = (70-14)/40 = 1.4
+        local final_base_strength = 14 + (rolled_stacks - 10) * 1.4
+        return final_base_strength * hero:GetLevel()
+    end
+    return 0
+end
+
+function modifier_lier_scarlet_ascendant:GetModifierBonusStats_Agility()
+    if not IsServer() then return 0 end
+    local hero = self:GetParent()
+    if not hero or not hero.FindModifierByName then return 0 end
+    local stat_tier_modifier = hero:FindModifierByName("modifier_player_lier_scarlet_ascendant_agility_tier")
+    if stat_tier_modifier then
+        local rolled_stacks = stat_tier_modifier:GetStackCount()
+        -- Base T1=14, Base T5=70. Value_Per_Stack_Unit = 1.4
+        local final_base_agility = 14 + (rolled_stacks - 10) * 1.4
+        return final_base_agility * hero:GetLevel()
+    end
+    return 0
+end
+
+function modifier_lier_scarlet_ascendant:GetModifierBonusStats_Intellect()
+    if not IsServer() then return 0 end
+    local hero = self:GetParent()
+    if not hero or not hero.FindModifierByName then return 0 end
+    local stat_tier_modifier = hero:FindModifierByName("modifier_player_lier_scarlet_ascendant_intelligence_tier")
+    if stat_tier_modifier then
+        local rolled_stacks = stat_tier_modifier:GetStackCount()
+        -- Base T1=7, Base T5=35. Value_Per_Stack_Unit = (35-7)/40 = 0.7
+        local final_base_intelligence = 7 + (rolled_stacks - 10) * 0.7
+        return final_base_intelligence * hero:GetLevel()
+    end
+    return 0
+end
+
+function modifier_lier_scarlet_ascendant:GetModifierSpellAmplify_Percentage()
+    if not IsServer() then return 0 end
+    local hero = self:GetParent()
+    local ability = self:GetAbility()
+    if not hero or not hero.FindModifierByName or not ability then return 0 end
+
+    local dynamic_spell_amp = 0
+    local stat_tier_modifier = hero:FindModifierByName("modifier_player_lier_scarlet_ascendant_spell_amp_tier")
+    if stat_tier_modifier then
+        local rolled_stacks = stat_tier_modifier:GetStackCount()
+        local final_base_spell_amp_percent = 1 + (rolled_stacks - 10) * 0.1
+        dynamic_spell_amp = final_base_spell_amp_percent * hero:GetLevel()
+    end
+    
+    -- Spell amp from 3-piece buff is handled by the buff modifier itself.
+    -- If it needed to be summed here, we'd check for the buff modifier and add its value.
+    -- For now, assuming the buff applies its own spell amp independently or this is the "base" before buff.
+    -- The prompt "All benefits are multiplied by hero level" for dynamic stats was applied.
+    -- The original 3-piece buff spell_amp was not hero level scaled.
+    return dynamic_spell_amp
+end
+
+function modifier_lier_scarlet_ascendant:GetModifierPreAttack_BonusDamage()
+    if not IsServer() then return 0 end
+    local hero = self:GetParent()
+    if not hero or not hero.FindModifierByName then return 0 end
+    local stat_tier_modifier = hero:FindModifierByName("modifier_player_lier_scarlet_ascendant_base_atk_tier")
+    if stat_tier_modifier then
+        local rolled_stacks = stat_tier_modifier:GetStackCount()
+        -- Base T1=100, Base T5=500. Value_Per_Stack_Unit = (500-100)/40 = 10
+        local final_base_attack_damage = 100 + (rolled_stacks - 10) * 10
+        return final_base_attack_damage * hero:GetLevel()
+    end
+    return 0
+end
+
+function modifier_lier_scarlet_ascendant:OnTooltip()
+    return 0 -- Tooltip display is handled by addon_english.txt using %dMODIFIER_PROPERTY%
+end
+
+-- Combination Function
+function LierScarlet_CombineAscendant(keys)
+    local caster = keys.caster
+    local forced_benefit_id = tonumber(keys.forced_benefit_id) -- 1:Str, 2:Agi, 3:Int, 4:SpellAmp, 5:BaseAtk
+
+    if not caster or not caster.IsRealHero or not caster:IsRealHero() then
+        if caster and caster.GetName then
+            print("[Lier Scarlet Ascendant] Error: Caster (" .. caster:GetName() .. ") is not a real hero or invalid.")
+        else
+            print("[Lier Scarlet Ascendant] Error: Caster not found or invalid.")
+        end
+        return
+    end
+
+    -- Validate precursor items and count their charges
+    local item_t_name = "item_lier_scarlet_t"
+    local item_m_name = "item_lier_scarlet_m"
+    local item_b_name = "item_lier_scarlet_b"
+
+    local item_t_instance, item_m_instance, item_b_instance
+    local t_charges, m_charges, b_charges = 0, 0, 0
+
+    for i=0, 8 do
+        local item = caster:GetItemInSlot(i)
+        if item then
+            local item_name = item:GetAbilityName()
+            if item_name == item_t_name then
+                item_t_instance = item
+                t_charges = item:GetCurrentCharges() or 0
+            end
+            if item_name == item_m_name then
+                item_m_instance = item
+                m_charges = item:GetCurrentCharges() or 0
+            end
+            if item_name == item_b_name then
+                item_b_instance = item
+                b_charges = item:GetCurrentCharges() or 0
+            end
+        end
+    end
+
+    if not (item_t_instance and item_m_instance and item_b_instance) then
+        if caster.PlayerLastSaid then 
+            if GameRules:GetGameTime() - caster.PlayerLastSaid < 2.0 then return end
+        end
+        caster.PlayerLastSaid = GameRules:GetGameTime()
+        SendOverheadEventMessage(nil, OVERHEAD_ALERT_GOLD, caster, 0, nil)
+        return
+    end
+
+    -- Calculate minimum conceptual tier budget based on precursor item charges
+    local min_budget = math.max(t_charges, 0) + math.max(m_charges, 0) + math.max(b_charges, 0)
+    -- If all are 0, min_budget is 0, so allow random as before
+    local conceptual_tier_budget
+    if min_budget > 0 then
+        conceptual_tier_budget = RandomInt(min_budget, 25)
+    else
+        conceptual_tier_budget = RandomInt(1, 25)
+    end
+
+    -- Remove precursor items
+    if item_t_instance then caster:TakeItem(item_t_instance); item_t_instance = nil; end
+    if item_m_instance then caster:TakeItem(item_m_instance); item_m_instance = nil; end
+    if item_b_instance then caster:TakeItem(item_b_instance); item_b_instance = nil; end
+
+    -- Grant new item and set its charges to conceptual_tier_budget
+    local new_item = caster:AddItemByName("item_lier_scarlet_ascendant")
+    if not new_item then
+        print("[Lier Scarlet Ascendant] Error: Failed to create new item 'item_lier_scarlet_ascendant'.")
+        return
+    end
+    if new_item.SetCurrentCharges then
+        new_item:SetCurrentCharges(conceptual_tier_budget)
+    end
+
+    -- Allocate Conceptual Tiers
+    local stat_keys = {"strength", "agility", "intelligence", "spell_amp", "base_atk"}
+    local assigned_conceptual_tiers = {}
+    for _, key in ipairs(stat_keys) do
+        assigned_conceptual_tiers[key] = 1
+    end
+
+    local points_to_allocate = conceptual_tier_budget
+    local forced_stat_key = nil
+    if forced_benefit_id and forced_benefit_id >= 1 and forced_benefit_id <= #stat_keys then
+        forced_stat_key = stat_keys[forced_benefit_id]
+    end
+
+    -- Forced Benefit Allocation
+    if forced_stat_key then
+        local current_tier_for_forced = assigned_conceptual_tiers[forced_stat_key]
+        local desired_forced_conceptual_tier = RandomInt(3, 5)
+        local cost_for_forced = desired_forced_conceptual_tier - current_tier_for_forced
+        cost_for_forced = math.max(0, cost_for_forced)
+        if points_to_allocate >= cost_for_forced then
+            assigned_conceptual_tiers[forced_stat_key] = desired_forced_conceptual_tier
+            points_to_allocate = points_to_allocate - cost_for_forced
+        else 
+            assigned_conceptual_tiers[forced_stat_key] = current_tier_for_forced + points_to_allocate
+            points_to_allocate = 0
+        end
+        assigned_conceptual_tiers[forced_stat_key] = math.min(5, assigned_conceptual_tiers[forced_stat_key])
+    end
+
+    -- Remaining Stats Allocation
+    local remaining_stat_keys_for_random_alloc = {}
+    for _, key in ipairs(stat_keys) do
+        if key ~= forced_stat_key then
+            table.insert(remaining_stat_keys_for_random_alloc, key)
+        end
+    end
+    for i = #remaining_stat_keys_for_random_alloc, 2, -1 do
+        local j = RandomInt(1, i)
+        remaining_stat_keys_for_random_alloc[i], remaining_stat_keys_for_random_alloc[j] = remaining_stat_keys_for_random_alloc[j], remaining_stat_keys_for_random_alloc[i]
+    end
+    for _, stat_key in ipairs(remaining_stat_keys_for_random_alloc) do
+        if points_to_allocate <= 0 then break end
+        local current_tier_for_stat = assigned_conceptual_tiers[stat_key]
+        if current_tier_for_stat < 5 then 
+            local max_additional_points_for_this_stat = 5 - current_tier_for_stat
+            local points_can_add = math.min(max_additional_points_for_this_stat, points_to_allocate)
+            if points_can_add > 0 then
+                local actual_points_added = RandomInt(0, points_can_add)
+                assigned_conceptual_tiers[stat_key] = current_tier_for_stat + actual_points_added
+                points_to_allocate = points_to_allocate - actual_points_added
+            end
+        end
+    end
+
+    -- Roll Actual Stacks for Each Stat and Apply Modifiers
+    for _, stat_key in ipairs(stat_keys) do
+        local conceptual_tier = assigned_conceptual_tiers[stat_key]
+        conceptual_tier = math.max(1, math.min(5, conceptual_tier))
+        local rolled_stacks = 0
+        if conceptual_tier == 1 then rolled_stacks = RandomInt(10, 19)
+        elseif conceptual_tier == 2 then rolled_stacks = RandomInt(20, 29)
+        elseif conceptual_tier == 3 then rolled_stacks = RandomInt(30, 39)
+        elseif conceptual_tier == 4 then rolled_stacks = RandomInt(40, 49)
+        elseif conceptual_tier == 5 then rolled_stacks = 50 
+        end
+        local hidden_mod_name = "modifier_player_lier_scarlet_ascendant_" .. stat_key .. "_tier"
+        local existing_player_mod = caster:FindModifierByName(hidden_mod_name)
+        if existing_player_mod then
+            caster:RemoveModifierByName(hidden_mod_name)
+        end
+        local player_stat_mod = caster:AddNewModifier(caster, new_item, hidden_mod_name, {})
+        if player_stat_mod then
+            player_stat_mod:SetStackCount(rolled_stacks)
+        else
+            print("[Lier Scarlet Ascendant] Error: Failed to apply hidden modifier: " .. hidden_mod_name .. " for caster " .. caster:GetName())
+        end
+    end
+
+    if caster.PlayerLastSaid then 
+        if GameRules:GetGameTime() - caster.PlayerLastSaid < 2.0 then return end
+    end
+    caster.PlayerLastSaid = GameRules:GetGameTime()
+    print("[Lier Scarlet Ascendant] Combined for " .. caster:GetName() .. ". Budget: " .. conceptual_tier_budget .. ". Forced ID: " .. (forced_benefit_id or "None"))
+    for k,v in pairs(assigned_conceptual_tiers) do
+        print("  Stat " .. k .. ": Conceptual Tier " .. v .. ", Stacks: " .. (caster:FindModifierByName("modifier_player_lier_scarlet_ascendant_"..k.."_tier") and caster:FindModifierByName("modifier_player_lier_scarlet_ascendant_"..k.."_tier"):GetStackCount() or "N/A"))
+    end
+end
+
+---------------------------------------------------------
+-- Lier Scarlet Ascendant - 3 Piece Buff & CD Sub-Modifiers --
+---------------------------------------------------------
+
+-- Ascendant 3 Piece Buff (similar to original modifier_lier_scarlet_3_pieces_buff)
+if modifier_lier_scarlet_ascendant_3_piece_buff == nil then modifier_lier_scarlet_ascendant_3_piece_buff = class({}) end
+function modifier_lier_scarlet_ascendant_3_piece_buff:IsHidden() return false end
+function modifier_lier_scarlet_ascendant_3_piece_buff:GetTexture() return "custom/lier_scarlet_3_piece_immune" end -- Use same texture or new one
+function modifier_lier_scarlet_ascendant_3_piece_buff:GetEffectName() return "particles/custom/items/lier_scarlet/lier_scarlet_immune.vpcf" end
+function modifier_lier_scarlet_ascendant_3_piece_buff:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
+function modifier_lier_scarlet_ascendant_3_piece_buff:IsPurgable() return false end
+function modifier_lier_scarlet_ascendant_3_piece_buff:RemoveOnDeath() return false end -- Buff persists through death if duration allows
+
+function modifier_lier_scarlet_ascendant_3_piece_buff:OnCreated(params)
+    if IsServer() then
+        if not self:GetAbility() then self:Destroy(); return end
+        self.bonus_crit_3p = self:GetAbility():GetSpecialValueFor("bonus_crit_3p")
+        self.bonus_crit_dmg_3p = self:GetAbility():GetSpecialValueFor("bonus_crit_dmg_3p")
+        self.spell_amp_3p_buff = self:GetAbility():GetSpecialValueFor("spell_amp_3p_buff")
+    end
+end
+
+function modifier_lier_scarlet_ascendant_3_piece_buff:OnDestroy()
+    if IsServer() then
+        if not self:GetAbility() or not self:GetCaster() or self:GetCaster():IsNull() then return end
+        local cd_duration = self:GetAbility():GetSpecialValueFor("cooldown_3p")
+        self:GetCaster():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_lier_scarlet_ascendant_3_piece_buff_cd", {duration = cd_duration})
+    end
+end
+
+function modifier_lier_scarlet_ascendant_3_piece_buff:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE, -- For crit damage
+        MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+        MODIFIER_PROPERTY_MIN_HEALTH,
+        MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE, -- For the buff's own spell amp
+        MODIFIER_PROPERTY_TOOLTIP -- For crit chance display
+    }
+end
+
+function modifier_lier_scarlet_ascendant_3_piece_buff:GetModifierPreAttack_CriticalStrike(params)
+    if IsServer() then
+        if not self:GetAbility() then return 0 end
+        local lvl = self:GetParent():GetLevel()
+        -- Roll for crit chance, then return damage if crit
+        if RollPseudoRandom(self.bonus_crit_3p, self:GetAbility()) then
+            return self.bonus_crit_dmg_3p * lvl -- Crit damage is hero level scaled
+        end
+    end
+    return 0
+end
+
+function modifier_lier_scarlet_ascendant_3_piece_buff:OnTooltip()
+    if self:GetAbility() then return self.bonus_crit_3p end -- Show crit chance
+    return 0
+end
+
+function modifier_lier_scarlet_ascendant_3_piece_buff:GetModifierIncomingDamage_Percentage()
+    if self:GetAbility() then return -100 end -- Damage immunity
+    return 0
+end
+
+function modifier_lier_scarlet_ascendant_3_piece_buff:GetMinHealth()
+    if self:GetAbility() then return 1 end -- Death immunity
+    return 0
+end
+
+function modifier_lier_scarlet_ascendant_3_piece_buff:CheckState()
+    return {[MODIFIER_STATE_MAGIC_IMMUNE] = true}
+end
+
+function modifier_lier_scarlet_ascendant_3_piece_buff:GetModifierSpellAmplify_Percentage()
+    if self:GetAbility() then return self.spell_amp_3p_buff end -- This is flat, not hero level scaled by default from original item
+    return 0
+end
+
+-- Ascendant 3 Piece Buff CD (similar to original modifier_lier_scarlet_3_pieces_buff_cd)
+if modifier_lier_scarlet_ascendant_3_piece_buff_cd == nil then modifier_lier_scarlet_ascendant_3_piece_buff_cd = class({}) end
+function modifier_lier_scarlet_ascendant_3_piece_buff_cd:IsHidden() return false end
+function modifier_lier_scarlet_ascendant_3_piece_buff_cd:GetTexture() return "custom/lier_scarlet_3_piece_immune" end -- Use same texture or new one, maybe with CD overlay
+function modifier_lier_scarlet_ascendant_3_piece_buff_cd:IsDebuff() return true end
+function modifier_lier_scarlet_ascendant_3_piece_buff_cd:IsPurgable() return false end
+function modifier_lier_scarlet_ascendant_3_piece_buff_cd:RemoveOnDeath() return false end -- CD persists through death
