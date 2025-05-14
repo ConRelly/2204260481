@@ -6,7 +6,7 @@ LinkLuaModifier("modifier_lunar_shield_absorb", "items/lunar_shield.lua", LUA_MO
 LinkLuaModifier("modifier_lunar_shield_cd", "items/lunar_shield.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_lunar_recovery", "items/lunar_shield.lua", LUA_MODIFIER_MOTION_NONE)
 -- Removed LinkLuaModifier for modifier_lunar_shield_check
-if item_lunar_shield == nil then item_lunar_shield = class({}) end
+item_lunar_shield = item_lunar_shield or class({})
 function item_lunar_shield:GetIntrinsicModifierName() return "modifier_lunar_shield" end
 function item_lunar_shield:GetBehavior()
 	if self:GetCaster():HasScepter() then
@@ -95,12 +95,23 @@ function modifier_lunar_shield:GetModifierIncomingDamage_Percentage()
 	return 0
 end
 function modifier_lunar_shield:GetModifierExtraHealthPercentage()
-	if self:GetAbility() then
-		if self:GetCaster():HasModifier("modifier_lier_scarlet_t") or self:GetCaster():HasModifier("modifier_lier_scarlet_m") or self:GetCaster():HasModifier("modifier_lier_scarlet_b") then
-			return (self:GetAbility():GetSpecialValueFor("hp_red_pct") / 2) * (-1)
+	if not self:GetAbility() then return end
+
+	local caster = self:GetCaster()
+	local scarlet_modifiers = {
+		"modifier_lier_scarlet_t",
+		"modifier_lier_scarlet_m",
+		"modifier_lier_scarlet_b",
+		"modifier_lier_scarlet_ascendant"
+	}
+
+	for _, mod in ipairs(scarlet_modifiers) do
+		if caster:HasModifier(mod) then
+			return (self:GetAbility():GetSpecialValueFor("hp_red_pct") / 3) * (-1)
 		end
-		return self:GetAbility():GetSpecialValueFor("hp_red_pct") * (-1)
 	end
+
+	return self:GetAbility():GetSpecialValueFor("hp_red_pct") * (-1)
 end
 -----------------------
 --LUNAR SHIELD ABSORB-- 

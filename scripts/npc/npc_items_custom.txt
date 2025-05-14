@@ -16840,11 +16840,11 @@
 
 			// Values from item_lier_scarlet_m
 			"max_hp_pct_m" "10"
-			"heal_pct_m" "10"
-			"aoe_dmg_m" "350"
+			"heal_pct_m" "15"
+			"aoe_dmg_m" "10"
 			"aoe_radius_m" "1500"
-			"aoe_interval_m" "3"
-
+			"aoe_interval_m" "1"
+			"aoe_dmg_interval_m" "0.25"
 			// Values from item_lier_scarlet_b
 			"max_hp_pct_b" "20"
 			"bonus_ms_pct_b" "100"

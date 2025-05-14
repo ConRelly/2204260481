@@ -294,6 +294,7 @@ LinkLuaModifier("modifier_player_lier_scarlet_ascendant_spell_amp_tier", "items/
 LinkLuaModifier("modifier_player_lier_scarlet_ascendant_base_atk_tier", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_lier_scarlet_ascendant_3_piece_buff", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_lier_scarlet_ascendant_3_piece_buff_cd", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_lier_scarlet_ascendant_lunar_buff", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
 
 -- Item Definition
 if item_lier_scarlet_ascendant == nil then item_lier_scarlet_ascendant = class({}) end
@@ -354,12 +355,9 @@ function modifier_lier_scarlet_ascendant:OnCreated()
         self.total_dmg_pct = self:GetAbility():GetSpecialValueFor("total_dmg_t")
         -- Item M
         self.heal_pct_m = self:GetAbility():GetSpecialValueFor("heal_pct_m")
-        self.aoe_dmg_m = self:GetAbility():GetSpecialValueFor("aoe_dmg_m")
+        self.aoe_dmg_m = self:GetAbility():GetSpecialValueFor("aoe_dmg_m") / 100
         self.aoe_radius_m = self:GetAbility():GetSpecialValueFor("aoe_radius_m")
-        local aoe_interval_m = self:GetAbility():GetSpecialValueFor("aoe_interval_m")
-        if aoe_interval_m > 0 then
-            self:StartIntervalThink(aoe_interval_m) -- For Item M's AOE
-        end
+        self.aoe_dmg_interval_m = self:GetAbility():GetSpecialValueFor("aoe_dmg_interval_m")
         -- Item B
         self.bonus_ms_pct_b = self:GetAbility():GetSpecialValueFor("bonus_ms_pct_b")
         self.bonus_as_pct_b = self:GetAbility():GetSpecialValueFor("bonus_as_pct_b")
@@ -369,7 +367,8 @@ function modifier_lier_scarlet_ascendant:OnCreated()
         -- 3-Piece Set (for triggering its buff)
         self.health_threshold_3p = self:GetAbility():GetSpecialValueFor("health_threshold_3p")
         self.buff_duration_3p = self:GetAbility():GetSpecialValueFor("buff_duration_3p")
-        self:StartIntervalThink(0.25) -- For 3-piece health check, can be combined if intervals are same
+        
+        self:StartIntervalThink(self.aoe_dmg_interval_m) --0.25
     end
 end
 
@@ -380,22 +379,23 @@ function modifier_lier_scarlet_ascendant:OnIntervalThink()
 
         local caster = self:GetCaster()
         local ability = self:GetAbility()
+        local caster_lvl = caster:GetLevel()
 
         -- Item M's AOE Damage and Heal
         if self.aoe_radius_m > 0 and self.aoe_dmg_m > 0 then
-            local dmg_m = caster:GetAverageTrueAttackDamage(caster) * self.aoe_dmg_m / 100 * 3 -- Consolidated damage
-            local heal_m = (caster:GetMaxHealth() * self.heal_pct_m / 100)
+            local aoe_dmgmult_lvl = self.aoe_dmg_m * caster_lvl
+            local dmg_m = caster:GetAverageTrueAttackDamage(caster) * aoe_dmgmult_lvl
             local enemies_m = FindUnitsInRadius(caster:GetTeamNumber(), caster:GetOrigin(), nil, self.aoe_radius_m, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
             for _,enemy_m in pairs(enemies_m) do
                 if enemy_m ~= caster then
                     local damageTable_m = {victim = enemy_m, attacker = caster, damage = dmg_m, damage_type = DAMAGE_TYPE_PHYSICAL, damage_flags = DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL, ability = ability}
                     ApplyDamage(damageTable_m)
-                    -- Removed triple hit timers as damage is now consolidated
                 end
             end
             -- Heal only every 4th call (every 1s)
             self._lier_scarlet_asc_heal_counter = (self._lier_scarlet_asc_heal_counter or 0) + 1
             if self._lier_scarlet_asc_heal_counter >= 4 then
+                local heal_m = (caster:GetMaxHealth() * self.heal_pct_m / 100)
                 if heal_m > 0 then caster:Heal(heal_m, caster) end
                 self._lier_scarlet_asc_heal_counter = 0
             end
@@ -407,6 +407,25 @@ function modifier_lier_scarlet_ascendant:OnIntervalThink()
             local trigger_health = max_health * (self.health_threshold_3p / 100)
             if caster:GetHealth() < trigger_health then
                 caster:AddNewModifier(caster, ability, "modifier_lier_scarlet_ascendant_3_piece_buff", {duration = self.buff_duration_3p})
+                -- Remove lunar buff if present when 3-piece buff triggers
+                if caster:HasModifier("modifier_lier_scarlet_ascendant_lunar_buff") then
+                    caster:RemoveModifierByName("modifier_lier_scarlet_ascendant_lunar_buff")
+                end
+            end
+        end
+
+        -- Lunar Shield Ascendant Buff Logic (independent of 3-piece buff CD, but still health threshold based)
+        if caster:HasItemInInventory("item_lunar_shield") and caster:HasModifier("modifier_super_scepter") then
+            if not caster:HasModifier("modifier_lier_scarlet_ascendant_3_piece_buff") and not caster:HasModifier("modifier_lier_scarlet_ascendant_lunar_buff") then
+                local max_health = caster:GetMaxHealth()
+                local trigger_health = max_health * (self.health_threshold_3p / 100)
+                if caster:GetHealth() < trigger_health then
+                    caster:AddNewModifier(caster, ability, "modifier_lier_scarlet_ascendant_lunar_buff", {duration = self.buff_duration_3p})
+                end
+            end
+        else
+            if caster:HasModifier("modifier_lier_scarlet_ascendant_lunar_buff") then
+                caster:RemoveModifierByName("modifier_lier_scarlet_ascendant_lunar_buff")
             end
         end
     end
@@ -488,13 +507,11 @@ end
 
 
 function modifier_lier_scarlet_ascendant:GetModifierBonusStats_Strength()
-    if not IsServer() then return 0 end
     local hero = self:GetParent()
-    if not hero or not hero.FindModifierByName then return 0 end -- Ensure hero object and method exist
-    local stat_tier_modifier = hero:FindModifierByName("modifier_player_lier_scarlet_ascendant_strength_tier")
-    if stat_tier_modifier then
-        local rolled_stacks = stat_tier_modifier:GetStackCount()
-        -- Base T1=14, Base T5=70. Value_Per_Stack_Unit = (70-14)/40 = 1.4
+    if not hero then return 0 end
+    local rolled_stacks = hero:GetModifierStackCount("modifier_player_lier_scarlet_ascendant_strength_tier", hero) or 0
+    if rolled_stacks > 0 then
+        -- Base T1=14, Base T5=70. Value_Per_Stack_Unit = 1.4
         local final_base_strength = 14 + (rolled_stacks - 10) * 1.4
         return final_base_strength * hero:GetLevel()
     end
@@ -502,12 +519,10 @@ function modifier_lier_scarlet_ascendant:GetModifierBonusStats_Strength()
 end
 
 function modifier_lier_scarlet_ascendant:GetModifierBonusStats_Agility()
-    if not IsServer() then return 0 end
     local hero = self:GetParent()
-    if not hero or not hero.FindModifierByName then return 0 end
-    local stat_tier_modifier = hero:FindModifierByName("modifier_player_lier_scarlet_ascendant_agility_tier")
-    if stat_tier_modifier then
-        local rolled_stacks = stat_tier_modifier:GetStackCount()
+    if not hero then return 0 end
+    local rolled_stacks = hero:GetModifierStackCount("modifier_player_lier_scarlet_ascendant_agility_tier", hero) or 0
+    if rolled_stacks > 0 then
         -- Base T1=14, Base T5=70. Value_Per_Stack_Unit = 1.4
         local final_base_agility = 14 + (rolled_stacks - 10) * 1.4
         return final_base_agility * hero:GetLevel()
@@ -516,13 +531,11 @@ function modifier_lier_scarlet_ascendant:GetModifierBonusStats_Agility()
 end
 
 function modifier_lier_scarlet_ascendant:GetModifierBonusStats_Intellect()
-    if not IsServer() then return 0 end
     local hero = self:GetParent()
-    if not hero or not hero.FindModifierByName then return 0 end
-    local stat_tier_modifier = hero:FindModifierByName("modifier_player_lier_scarlet_ascendant_intelligence_tier")
-    if stat_tier_modifier then
-        local rolled_stacks = stat_tier_modifier:GetStackCount()
-        -- Base T1=7, Base T5=35. Value_Per_Stack_Unit = (35-7)/40 = 0.7
+    if not hero then return 0 end
+    local rolled_stacks = hero:GetModifierStackCount("modifier_player_lier_scarlet_ascendant_intelligence_tier", hero) or 0
+    if rolled_stacks > 0 then
+        -- Base T1=7, Base T5=35. Value_Per_Stack_Unit = 0.7
         local final_base_intelligence = 7 + (rolled_stacks - 10) * 0.7
         return final_base_intelligence * hero:GetLevel()
     end
@@ -530,35 +543,24 @@ function modifier_lier_scarlet_ascendant:GetModifierBonusStats_Intellect()
 end
 
 function modifier_lier_scarlet_ascendant:GetModifierSpellAmplify_Percentage()
-    if not IsServer() then return 0 end
     local hero = self:GetParent()
     local ability = self:GetAbility()
-    if not hero or not hero.FindModifierByName or not ability then return 0 end
+    if not hero or not ability then return 0 end
 
-    local dynamic_spell_amp = 0
-    local stat_tier_modifier = hero:FindModifierByName("modifier_player_lier_scarlet_ascendant_spell_amp_tier")
-    if stat_tier_modifier then
-        local rolled_stacks = stat_tier_modifier:GetStackCount()
+    local rolled_stacks = hero:GetModifierStackCount("modifier_player_lier_scarlet_ascendant_spell_amp_tier", hero) or 0
+    if rolled_stacks > 0 then
         local final_base_spell_amp_percent = 1 + (rolled_stacks - 10) * 0.1
-        dynamic_spell_amp = final_base_spell_amp_percent * hero:GetLevel()
+        return final_base_spell_amp_percent * hero:GetLevel()
     end
-    
-    -- Spell amp from 3-piece buff is handled by the buff modifier itself.
-    -- If it needed to be summed here, we'd check for the buff modifier and add its value.
-    -- For now, assuming the buff applies its own spell amp independently or this is the "base" before buff.
-    -- The prompt "All benefits are multiplied by hero level" for dynamic stats was applied.
-    -- The original 3-piece buff spell_amp was not hero level scaled.
-    return dynamic_spell_amp
+    return 0
 end
 
 function modifier_lier_scarlet_ascendant:GetModifierPreAttack_BonusDamage()
-    if not IsServer() then return 0 end
     local hero = self:GetParent()
-    if not hero or not hero.FindModifierByName then return 0 end
-    local stat_tier_modifier = hero:FindModifierByName("modifier_player_lier_scarlet_ascendant_base_atk_tier")
-    if stat_tier_modifier then
-        local rolled_stacks = stat_tier_modifier:GetStackCount()
-        -- Base T1=100, Base T5=500. Value_Per_Stack_Unit = (500-100)/40 = 10
+    if not hero then return 0 end
+    local rolled_stacks = hero:GetModifierStackCount("modifier_player_lier_scarlet_ascendant_base_atk_tier", hero) or 0
+    if rolled_stacks > 0 then
+        -- Base T1=100, Base T5=500. Value_Per_Stack_Unit = 10
         local final_base_attack_damage = 100 + (rolled_stacks - 10) * 10
         return final_base_attack_damage * hero:GetLevel()
     end
@@ -566,7 +568,7 @@ function modifier_lier_scarlet_ascendant:GetModifierPreAttack_BonusDamage()
 end
 
 function modifier_lier_scarlet_ascendant:OnTooltip()
-    return 0 -- Tooltip display is handled by addon_english.txt using %dMODIFIER_PROPERTY%
+    return 0 -- Tooltip display
 end
 
 -- Combination Function
@@ -707,7 +709,7 @@ function LierScarlet_CombineAscendant(keys)
         elseif conceptual_tier == 2 then rolled_stacks = RandomInt(20, 29)
         elseif conceptual_tier == 3 then rolled_stacks = RandomInt(30, 39)
         elseif conceptual_tier == 4 then rolled_stacks = RandomInt(40, 49)
-        elseif conceptual_tier == 5 then rolled_stacks = 50 
+        elseif conceptual_tier == 5 then rolled_stacks = RandomInt(50, 60)
         end
         local hidden_mod_name = "modifier_player_lier_scarlet_ascendant_" .. stat_key .. "_tier"
         local existing_player_mod = caster:FindModifierByName(hidden_mod_name)
@@ -746,12 +748,12 @@ function modifier_lier_scarlet_ascendant_3_piece_buff:IsPurgable() return false 
 function modifier_lier_scarlet_ascendant_3_piece_buff:RemoveOnDeath() return false end -- Buff persists through death if duration allows
 
 function modifier_lier_scarlet_ascendant_3_piece_buff:OnCreated(params)
-    if IsServer() then
+    --if IsServer() then
         if not self:GetAbility() then self:Destroy(); return end
         self.bonus_crit_3p = self:GetAbility():GetSpecialValueFor("bonus_crit_3p")
         self.bonus_crit_dmg_3p = self:GetAbility():GetSpecialValueFor("bonus_crit_dmg_3p")
         self.spell_amp_3p_buff = self:GetAbility():GetSpecialValueFor("spell_amp_3p_buff")
-    end
+    --end
 end
 
 function modifier_lier_scarlet_ascendant_3_piece_buff:OnDestroy()
@@ -768,7 +770,8 @@ function modifier_lier_scarlet_ascendant_3_piece_buff:DeclareFunctions()
         MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
         MODIFIER_PROPERTY_MIN_HEALTH,
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE, -- For the buff's own spell amp
-        MODIFIER_PROPERTY_TOOLTIP -- For crit chance display
+        MODIFIER_PROPERTY_TOOLTIP, -- For crit chance display
+        MODIFIER_PROPERTY_TOOLTIP2 --for crit damage display
     }
 end
 
@@ -777,7 +780,7 @@ function modifier_lier_scarlet_ascendant_3_piece_buff:GetModifierPreAttack_Criti
         if not self:GetAbility() then return 0 end
         local lvl = self:GetParent():GetLevel()
         -- Roll for crit chance, then return damage if crit
-        if RollPseudoRandom(self.bonus_crit_3p, self:GetAbility()) then
+        if RollPercentage(self.bonus_crit_3p) then
             return self.bonus_crit_dmg_3p * lvl -- Crit damage is hero level scaled
         end
     end
@@ -786,6 +789,11 @@ end
 
 function modifier_lier_scarlet_ascendant_3_piece_buff:OnTooltip()
     if self:GetAbility() then return self.bonus_crit_3p end -- Show crit chance
+    return 0
+end
+-- crit * parent lvl
+function modifier_lier_scarlet_ascendant_3_piece_buff:OnTooltip2()
+    if self:GetAbility() then return self.bonus_crit_dmg_3p * self:GetParent():GetLevel() end -- Show crit damage
     return 0
 end
 
@@ -815,3 +823,55 @@ function modifier_lier_scarlet_ascendant_3_piece_buff_cd:GetTexture() return "cu
 function modifier_lier_scarlet_ascendant_3_piece_buff_cd:IsDebuff() return true end
 function modifier_lier_scarlet_ascendant_3_piece_buff_cd:IsPurgable() return false end
 function modifier_lier_scarlet_ascendant_3_piece_buff_cd:RemoveOnDeath() return false end -- CD persists through death
+
+-- Lunar Shield Ascendant Buff (like 3-piece buff, but no death/damage immunity, has magic immune state, and only triggers on health threshold, not affected by 3-piece buff CD)
+if modifier_lier_scarlet_ascendant_lunar_buff == nil then modifier_lier_scarlet_ascendant_lunar_buff = class({}) end
+function modifier_lier_scarlet_ascendant_lunar_buff:IsHidden() return false end
+function modifier_lier_scarlet_ascendant_lunar_buff:GetTexture() return "custom/lier_scarlet_3_piece" end
+function modifier_lier_scarlet_ascendant_lunar_buff:GetEffectName() return "particles/items_fx/black_king_bar_avatar.vpcf" end
+function modifier_lier_scarlet_ascendant_lunar_buff:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
+function modifier_lier_scarlet_ascendant_lunar_buff:IsPurgable() return false end
+function modifier_lier_scarlet_ascendant_lunar_buff:RemoveOnDeath() return false end
+
+function modifier_lier_scarlet_ascendant_lunar_buff:OnCreated(params)
+    if not self:GetAbility() then self:Destroy(); return end
+    self.bonus_crit_3p = self:GetAbility():GetSpecialValueFor("bonus_crit_3p")
+    self.bonus_crit_dmg_3p = self:GetAbility():GetSpecialValueFor("bonus_crit_dmg_3p")
+    self.spell_amp_3p_buff = self:GetAbility():GetSpecialValueFor("spell_amp_3p_buff")
+end
+
+function modifier_lier_scarlet_ascendant_lunar_buff:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE,
+        MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
+        MODIFIER_PROPERTY_TOOLTIP,
+        MODIFIER_PROPERTY_TOOLTIP2
+    }
+end
+
+function modifier_lier_scarlet_ascendant_lunar_buff:GetModifierPreAttack_CriticalStrike(params)
+    if IsServer() then
+        if not self:GetAbility() then return 0 end
+        local lvl = self:GetParent():GetLevel()
+        if RollPercentage(self.bonus_crit_3p) then
+            return self.bonus_crit_dmg_3p * lvl
+        end
+    end
+    return 0
+end
+
+function modifier_lier_scarlet_ascendant_lunar_buff:OnTooltip()
+    if self:GetAbility() then return self.bonus_crit_3p end
+    return 0
+end
+function modifier_lier_scarlet_ascendant_lunar_buff:OnTooltip2()
+    if self:GetAbility() then return self.bonus_crit_dmg_3p * self:GetParent():GetLevel() end
+    return 0
+end
+function modifier_lier_scarlet_ascendant_lunar_buff:GetModifierSpellAmplify_Percentage()
+    if self:GetAbility() then return self.spell_amp_3p_buff end
+    return 0
+end
+function modifier_lier_scarlet_ascendant_lunar_buff:CheckState()
+    return {[MODIFIER_STATE_MAGIC_IMMUNE] = true}
+end
