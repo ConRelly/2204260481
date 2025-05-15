@@ -524,16 +524,29 @@ function AOHGameMode:OnPlayerChat(keys)
 	
 	if keys.text == "-ballista" then
 		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
-		local Item = hero:GetItemInSlot(16)
 		if hero:IsAlive() and IsValidEntity(hero) then
-			if Item ~= nil and IsValidEntity(Item) then
-				if Item:GetName() == "item_custom_ballista" then
-					local charges = Item:GetCurrentCharges() * 5
-					--hero:RemoveItem(Item) crash
-					hero:TakeItem(Item)
-					hero:ModifyAgility(charges)
-					hero:ModifyStrength(charges)
-					hero:ModifyIntellect(charges)
+			-- Check for item_custom_ballista_2 only in neutral slot (16)
+			local item = hero:GetItemInSlot(16)
+			if item and item:GetName() == "item_custom_ballista_2" then
+				local charges = item:GetCurrentCharges() * 7
+				hero:TakeItem(item)
+				hero:ModifyAgility(charges)
+				hero:ModifyStrength(charges)
+				hero:ModifyIntellect(charges)
+				Notifications:Top(keys.playerid, {text="Gained +"..charges.." to all stats from Ballista Neutral!", style={color="yellow"}, duration=6})
+			else
+				-- Check for item_custom_ballista only in main inventory slots (0-5)
+				for i = 0, 5 do
+					local inv_item = hero:GetItemInSlot(i)
+					if inv_item and inv_item:GetName() == "item_custom_ballista" then
+						local charges = inv_item:GetCurrentCharges() * 5
+						hero:TakeItem(inv_item)
+						hero:ModifyAgility(charges)
+						hero:ModifyStrength(charges)
+						hero:ModifyIntellect(charges)
+						Notifications:Top(keys.playerid, {text="Gained +"..charges.." to all stats from Ballista!", style={color="yellow"}, duration=6})
+						break
+					end
 				end
 			end
 		end				
@@ -851,11 +864,6 @@ function AOHGameMode:OnPlayerChat(keys)
 	if keys.text == "-dev_test_list" and keys.playerid == 0 and Cheats:IsEnabled() then
 		GetLeastPlayedHeroes()
 	end
-	--scarlet test
-	-- context -- Combination Function
-	-- function LierScarlet_CombineAscendant(keys)
-	--     local caster = keys.caster
-	--     local forced_benefit_id = tonumber(keys.forced_benefit_id) -- 1:Str, 2:Agi, 3:Int, 4:SpellAmp, 5:BaseAtk
 
 	if keys.text == "-dev_scarlet" and keys.playerid == 0 and Cheats:IsEnabled() then
 		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
@@ -865,6 +873,73 @@ function AOHGameMode:OnPlayerChat(keys)
 		}
 		LierScarlet_CombineAscendant(keys_table)
 	end
+
+	-- scarlet N command with gold cost and item check
+	if string.match(keys.text, "^%-scarlet%d*$") or string.match(keys.text, "^%-scarlet%s*%d*$") then
+		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
+		local plyID = keys.playerid
+		-- Match both "-scarletN" and "-scarlet N"
+		local n = string.match(keys.text, "^%-scarlet%s*(%d*)$")
+					or string.match(keys.text, "^%-scarlet(%d*)$")
+		local benefit_id = tonumber(n)
+		local cost = 30000
+
+		if benefit_id and benefit_id >= 1 and benefit_id <= 5 then
+			cost = 60000
+		else
+			benefit_id = 0
+		end
+
+		local item_t_name = "item_lier_scarlet_t"
+		local item_m_name = "item_lier_scarlet_m"
+		local item_b_name = "item_lier_scarlet_b"
+
+		-- Check if player already has the Scarlet Ascendant modifiers
+		if hero:HasModifier("modifier_player_lier_scarlet_ascendant_strength_tier") then
+			Notifications:Top(plyID, {text="You already have Scarlet Ascendant! Cannot combine again.", style={color="red"}, duration=7})
+			return
+		end
+
+		if not (hero:HasItemInInventory(item_t_name) and hero:HasItemInInventory(item_m_name) and hero:HasItemInInventory(item_b_name)) then
+			Notifications:Top(plyID, {text="You need all 3 Scarlet items (T, M, B) in inventory!", style={color="red"}, duration=5})
+			return
+		end
+
+		if hero:GetGold() < cost then
+			Notifications:Top(plyID, {text="Not enough gold for Scarlet Ascendant! Need "..cost.." gold.", style={color="red"}, duration=5})
+			return
+		end
+
+		hero:SpendGold(cost, DOTA_ModifyGold_Unspecified)
+		local keys_table = {
+			caster = hero,
+			forced_benefit_id = benefit_id,
+			cost = cost
+		}
+		LierScarlet_CombineAscendant(keys_table)
+		local stat_name = ""
+		if benefit_id == 1 then
+			stat_name = "Strength"
+		elseif benefit_id == 2 then
+			stat_name = "Agility"
+		elseif benefit_id == 3 then
+			stat_name = "Intellect"
+		elseif benefit_id == 4 then
+			stat_name = "Spell Amplification"
+		elseif benefit_id == 5 then
+			stat_name = "Base Attack"
+		else
+			stat_name = nil
+		end
+		if stat_name then
+			Notifications:Top(plyID, {text="Scarlet Ascendant used! ("..cost.." gold) "..stat_name.." gets minimum tier 3 roll.", style={color="yellow"}, duration=10})
+		else
+			Notifications:Top(plyID, {text="Scarlet Ascendant used! ("..cost.." gold)", style={color="yellow"}, duration=5})
+		end
+	end
+
+
+
 
 	if keys.text == "-commands" and keys.playerid == 0 then
 		local commands = "commands before game starts(0:00): <font color='green'>-full</font>(second part enabled), <font color='green'>-normal</font> (has extra bosses and items), <font color='green'>-fullgame</font> (hard and second part)<font color='green'>-hard</font> (has extra bosses and items)<font color='green'>-extra</font> (bosses above lvl 14 will have extra random skills)<font color='green'>-double</font>(2x enemys) <font color='green'>-all</font> (fullgame hard double) , During game: <font color='green'>-goldbags</font>(enable/disable), <font color='green'>-kill</font> (in case you get bugged) <font color='green'>-hide</font> (hide all your passive skills that are max lvl and not on a key bind slot) <font color='green'>-unhide</font>, Host only : <font color='red'>-challenge</font> = sumons a Challenge Boss that you will have to DPS race him for 420 sec. <font color='green'>-effect_rate</font><font color='blue'>number</font>,  number = 1 to 20 , reduce the animation effects rate for some skills. SinglePlayer: <font color='green'>-single</font> = adds an extra courier and gives ancient more regen and armor. <font color='green'>-gon</font> = you will receive a second philosophers stone instead of helper unit" 

@@ -4,6 +4,18 @@
 LinkLuaModifier("modifier_lier_scarlet_t", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
 if item_lier_scarlet_t == nil then item_lier_scarlet_t = class({}) end
 function item_lier_scarlet_t:GetIntrinsicModifierName() return "modifier_lier_scarlet_t" end
+function item_lier_scarlet_t:Spawn()
+    if IsServer() then
+        local parent = self:GetParent()
+        if self.SetCurrentCharges and self:GetCurrentCharges() == 0 then
+            local min, max = 1, 6
+            if parent and parent:HasModifier("modifier_super_scepter") then
+                min = 3
+            end
+            self:SetCurrentCharges(RandomInt(min, max))
+        end
+    end
+end
 
 if modifier_lier_scarlet_t == nil then modifier_lier_scarlet_t = class({}) end
 function modifier_lier_scarlet_t:IsHidden() return true end
@@ -30,6 +42,18 @@ end
 LinkLuaModifier("modifier_lier_scarlet_m", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
 if item_lier_scarlet_m == nil then item_lier_scarlet_m = class({}) end
 function item_lier_scarlet_m:GetIntrinsicModifierName() return "modifier_lier_scarlet_m" end
+function item_lier_scarlet_m:Spawn()
+    if IsServer() then
+        local parent = self:GetParent()
+        if self.SetCurrentCharges and self:GetCurrentCharges() == 0 then
+            local min, max = 1, 6
+            if parent and parent:HasModifier("modifier_super_scepter") then
+                min = 3
+            end
+            self:SetCurrentCharges(RandomInt(min, max))
+        end
+    end
+end
 
 if modifier_lier_scarlet_m == nil then modifier_lier_scarlet_m = class({}) end
 function modifier_lier_scarlet_m:IsHidden() return true end
@@ -76,6 +100,18 @@ end
 LinkLuaModifier("modifier_lier_scarlet_b", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
 if item_lier_scarlet_b == nil then item_lier_scarlet_b = class({}) end
 function item_lier_scarlet_b:GetIntrinsicModifierName() return "modifier_lier_scarlet_b" end
+function item_lier_scarlet_b:Spawn()
+    if IsServer() then
+        local parent = self:GetParent()
+        if self.SetCurrentCharges and self:GetCurrentCharges() == 0 then
+            local min, max = 1, 6
+            if parent and parent:HasModifier("modifier_super_scepter") then
+                min = 3
+            end
+            self:SetCurrentCharges(RandomInt(min, max))
+        end
+    end
+end
 
 if modifier_lier_scarlet_b == nil then modifier_lier_scarlet_b = class({}) end
 function modifier_lier_scarlet_b:IsHidden() return true end
@@ -305,35 +341,35 @@ end
 -- Hidden Player Stat Modifiers
 -- Strength Tier
 if modifier_player_lier_scarlet_ascendant_strength_tier == nil then modifier_player_lier_scarlet_ascendant_strength_tier = class({}) end
-function modifier_player_lier_scarlet_ascendant_strength_tier:IsHidden() return false end
+function modifier_player_lier_scarlet_ascendant_strength_tier:IsHidden() return true end
 function modifier_player_lier_scarlet_ascendant_strength_tier:IsPurgable() return false end
 function modifier_player_lier_scarlet_ascendant_strength_tier:RemoveOnDeath() return false end
 function modifier_player_lier_scarlet_ascendant_strength_tier:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT + MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE end
 
 -- Agility Tier
 if modifier_player_lier_scarlet_ascendant_agility_tier == nil then modifier_player_lier_scarlet_ascendant_agility_tier = class({}) end
-function modifier_player_lier_scarlet_ascendant_agility_tier:IsHidden() return false end
+function modifier_player_lier_scarlet_ascendant_agility_tier:IsHidden() return true end
 function modifier_player_lier_scarlet_ascendant_agility_tier:IsPurgable() return false end
 function modifier_player_lier_scarlet_ascendant_agility_tier:RemoveOnDeath() return false end
 function modifier_player_lier_scarlet_ascendant_agility_tier:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT + MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE end
 
 -- Intelligence Tier
 if modifier_player_lier_scarlet_ascendant_intelligence_tier == nil then modifier_player_lier_scarlet_ascendant_intelligence_tier = class({}) end
-function modifier_player_lier_scarlet_ascendant_intelligence_tier:IsHidden() return false end
+function modifier_player_lier_scarlet_ascendant_intelligence_tier:IsHidden() return true end
 function modifier_player_lier_scarlet_ascendant_intelligence_tier:IsPurgable() return false end
 function modifier_player_lier_scarlet_ascendant_intelligence_tier:RemoveOnDeath() return false end
 function modifier_player_lier_scarlet_ascendant_intelligence_tier:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT + MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE end
 
 -- Spell Amp Tier
 if modifier_player_lier_scarlet_ascendant_spell_amp_tier == nil then modifier_player_lier_scarlet_ascendant_spell_amp_tier = class({}) end
-function modifier_player_lier_scarlet_ascendant_spell_amp_tier:IsHidden() return false end
+function modifier_player_lier_scarlet_ascendant_spell_amp_tier:IsHidden() return true end
 function modifier_player_lier_scarlet_ascendant_spell_amp_tier:IsPurgable() return false end
 function modifier_player_lier_scarlet_ascendant_spell_amp_tier:RemoveOnDeath() return false end
 function modifier_player_lier_scarlet_ascendant_spell_amp_tier:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT + MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE end
 
 -- Base Attack Tier
 if modifier_player_lier_scarlet_ascendant_base_atk_tier == nil then modifier_player_lier_scarlet_ascendant_base_atk_tier = class({}) end
-function modifier_player_lier_scarlet_ascendant_base_atk_tier:IsHidden() return false end
+function modifier_player_lier_scarlet_ascendant_base_atk_tier:IsHidden() return true end
 function modifier_player_lier_scarlet_ascendant_base_atk_tier:IsPurgable() return false end
 function modifier_player_lier_scarlet_ascendant_base_atk_tier:RemoveOnDeath() return false end
 function modifier_player_lier_scarlet_ascendant_base_atk_tier:GetAttributes() return MODIFIER_ATTRIBUTE_PERMANENT + MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE end
@@ -438,8 +474,7 @@ function modifier_lier_scarlet_ascendant:DeclareFunctions()
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE, -- Base Spell Amp from dynamic stats
-        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
-        MODIFIER_PROPERTY_TOOLTIP,
+        MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
 
         -- Item T effects
         MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE, -- Will sum T, M, B HP reductions
@@ -456,10 +491,6 @@ function modifier_lier_scarlet_ascendant:DeclareFunctions()
         -- 3-Piece Set effects (when buff is not active, for min health)
         MODIFIER_PROPERTY_MIN_HEALTH, -- From 3P base (before buff)
         
-        -- Note: 3-piece buff (magic immunity, crit, spell amp buff, etc.) are handled by modifier_lier_scarlet_ascendant_3_piece_buff
-        -- We might need to declare properties here if the buff modifier itself doesn't have GetAbility() context or for direct reflection.
-        -- For now, assuming the sub-modifier handles its own properties.
-        -- If GetModifierCritDMG is needed directly on this modifier (e.g. if buff is internal state), add MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE
     }
 end
 
@@ -555,7 +586,7 @@ function modifier_lier_scarlet_ascendant:GetModifierSpellAmplify_Percentage()
     return 0
 end
 
-function modifier_lier_scarlet_ascendant:GetModifierPreAttack_BonusDamage()
+function modifier_lier_scarlet_ascendant:GetModifierBaseAttack_BonusDamage()
     local hero = self:GetParent()
     if not hero then return 0 end
     local rolled_stacks = hero:GetModifierStackCount("modifier_player_lier_scarlet_ascendant_base_atk_tier", hero) or 0
@@ -567,9 +598,6 @@ function modifier_lier_scarlet_ascendant:GetModifierPreAttack_BonusDamage()
     return 0
 end
 
-function modifier_lier_scarlet_ascendant:OnTooltip()
-    return 0 -- Tooltip display
-end
 
 -- Combination Function
 function LierScarlet_CombineAscendant(keys)
@@ -659,20 +687,24 @@ function LierScarlet_CombineAscendant(keys)
         forced_stat_key = stat_keys[forced_benefit_id]
     end
 
-    -- Forced Benefit Allocation
+    -- Only force a stat to min tier 3 if forced_benefit_id is valid and not 0
     if forced_stat_key then
         local current_tier_for_forced = assigned_conceptual_tiers[forced_stat_key]
-        local desired_forced_conceptual_tier = RandomInt(3, 5)
-        local cost_for_forced = desired_forced_conceptual_tier - current_tier_for_forced
-        cost_for_forced = math.max(0, cost_for_forced)
-        if points_to_allocate >= cost_for_forced then
+        local min_forced_tier = 3
+        local desired_forced_conceptual_tier = RandomInt(min_forced_tier, 5)
+        local cost_to_min3 = min_forced_tier - current_tier_for_forced
+        if points_to_allocate < cost_to_min3 then
+            -- Not enough budget, forcibly set to tier 3, budget goes to 0
+            assigned_conceptual_tiers[forced_stat_key] = min_forced_tier
+            points_to_allocate = 0
+        else
+            -- Enough budget for tier 3, maybe higher
+            local max_possible_tier = math.min(5, current_tier_for_forced + points_to_allocate)
+            desired_forced_conceptual_tier = math.min(desired_forced_conceptual_tier, max_possible_tier)
+            local cost_for_forced = desired_forced_conceptual_tier - current_tier_for_forced
             assigned_conceptual_tiers[forced_stat_key] = desired_forced_conceptual_tier
             points_to_allocate = points_to_allocate - cost_for_forced
-        else 
-            assigned_conceptual_tiers[forced_stat_key] = current_tier_for_forced + points_to_allocate
-            points_to_allocate = 0
         end
-        assigned_conceptual_tiers[forced_stat_key] = math.min(5, assigned_conceptual_tiers[forced_stat_key])
     end
 
     -- Remaining Stats Allocation
@@ -690,10 +722,9 @@ function LierScarlet_CombineAscendant(keys)
         if points_to_allocate <= 0 then break end
         local current_tier_for_stat = assigned_conceptual_tiers[stat_key]
         if current_tier_for_stat < 5 then 
-            local max_additional_points_for_this_stat = 5 - current_tier_for_stat
-            local points_can_add = math.min(max_additional_points_for_this_stat, points_to_allocate)
-            if points_can_add > 0 then
-                local actual_points_added = RandomInt(0, points_can_add)
+            local max_additional_points_for_this_stat = math.min(5 - current_tier_for_stat, points_to_allocate)
+            if max_additional_points_for_this_stat > 0 then
+                local actual_points_added = RandomInt(0, max_additional_points_for_this_stat)
                 assigned_conceptual_tiers[stat_key] = current_tier_for_stat + actual_points_added
                 points_to_allocate = points_to_allocate - actual_points_added
             end
@@ -709,7 +740,7 @@ function LierScarlet_CombineAscendant(keys)
         elseif conceptual_tier == 2 then rolled_stacks = RandomInt(20, 29)
         elseif conceptual_tier == 3 then rolled_stacks = RandomInt(30, 39)
         elseif conceptual_tier == 4 then rolled_stacks = RandomInt(40, 49)
-        elseif conceptual_tier == 5 then rolled_stacks = RandomInt(50, 60)
+        elseif conceptual_tier == 5 then rolled_stacks = RandomInt(50, 59)
         end
         local hidden_mod_name = "modifier_player_lier_scarlet_ascendant_" .. stat_key .. "_tier"
         local existing_player_mod = caster:FindModifierByName(hidden_mod_name)
@@ -722,6 +753,21 @@ function LierScarlet_CombineAscendant(keys)
         else
             print("[Lier Scarlet Ascendant] Error: Failed to apply hidden modifier: " .. hidden_mod_name .. " for caster " .. caster:GetName())
         end
+    end
+
+    -- Notify player of rolled stats (short summary)
+    local stat_short = {strength = "STR", agility = "AGI", intelligence = "INT", spell_amp = "AMP", base_atk = "ATK"}
+    local msg_parts = {}
+    for _, stat_key in ipairs(stat_keys) do
+        local tier = assigned_conceptual_tiers[stat_key]
+        local mod_name = "modifier_player_lier_scarlet_ascendant_" .. stat_key .. "_tier"
+        local stacks = caster:FindModifierByName(mod_name) and caster:FindModifierByName(mod_name):GetStackCount() or 0
+        table.insert(msg_parts, string.format("%s T%d: %d", stat_short[stat_key], tier, stacks))
+    end
+    local msg = table.concat(msg_parts, " | ") .. " (Roll Min-max is: 10-59)"
+    local plyID = caster.GetPlayerOwnerID and caster:GetPlayerOwnerID() or nil
+    if plyID and Notifications and Notifications.Top then
+        Notifications:Top(plyID, {text=msg, duration=18.0, style={color="red"}})
     end
 
     if caster.PlayerLastSaid then 

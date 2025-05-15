@@ -39,6 +39,9 @@
 		"item"		"item_mjz_aether_lens"
 		"item"		"item_ocean_heart"
 		"item"		"item_broom_handle"
+		"item"		"item_illusionsts_cape"
+		"item"		"item_minotaur_horn"
+		"item"		"item_dark_bloodstone"		
 		"item"		"item_quicksilver_amulet"
 		"item"		"item_flicker"
 		"item"		"item_grove_bow"
@@ -245,9 +248,9 @@
 	"secretshop"
 	{
 
-		"item"		"item_illusionsts_cape"
-		"item"		"item_minotaur_horn"
-		"item"		"item_dark_bloodstone"
+		"item"      "item_lier_scarlet_t"
+		"item"      "item_lier_scarlet_b"
+		"item"      "item_lier_scarlet_m"
 		"item"		"item_custom_seer_stone"
 		"item"		"item_custom_fusion_rune"
 		"item"		"item_custom_apex"

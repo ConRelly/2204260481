@@ -16676,7 +16676,7 @@
 		"AbilityTextureName"			"custom/lier_scarlet_t"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemQuality"					"rare"
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
 		"ItemSellable"					"0"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
@@ -16707,13 +16707,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"	
+		"ItemCost"						"10000"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_lier_scarlet_t"
 		"ItemRequirements"
 		{
-			"01"						"item_void_gem;item_light_gem;item_shadow_gem"
+			"01"						"item_weapon_fragment"
 		}
 	}
 // Lier Scarlet M
@@ -16724,7 +16724,7 @@
 		"AbilityTextureName"			"custom/lier_scarlet_m"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemQuality"					"rare"
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
 		"ItemSellable"					"0"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
@@ -16758,13 +16758,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"	
+		"ItemCost"						"10000"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_lier_scarlet_m"
 		"ItemRequirements"
 		{
-			"01"						"item_energy_gem;item_void_gem;item_shadow_gem"
+			"01"						"item_weapon_fragment"
 		}
 	}
 // Lier Scarlet B
@@ -16775,7 +16775,7 @@
 		"AbilityTextureName"			"custom/lier_scarlet_b"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemQuality"					"rare"
-		"ItemPurchasable"				"0"
+		"ItemPurchasable"				"1"
 		"ItemKillable"					"0"
 		"ItemSellable"					"0"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
@@ -16803,13 +16803,13 @@
 		"BaseClass"						"item_datadriven"
 		"Model"							"models/props_gameplay/recipe.vmdl"
 		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"0"	
+		"ItemCost"						"10000"	
 		"ItemShopTags"					""
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_lier_scarlet_b"
 		"ItemRequirements"
 		{
-			"01"						"item_air_gem;item_light_gem;item_shadow_gem"
+			"01"						"item_weapon_fragment"
 		}
 	}
 
@@ -16822,7 +16822,7 @@
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE" // Standard for intrinsic modifiers
 		"ItemCost"					"1000"
 		"ItemDroppable"				"1"
-		"ItemPurchasable"			"1"
+		"ItemPurchasable"			"0"
 		"ItemSellable"				"0"
 		"ItemShareability"			"ITEM_FULLY_SHAREABLE"
 		"ItemQuality"				"artifact"
