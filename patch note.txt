@@ -3464,8 +3464,12 @@ Build it from all three Lier Scarlet items with the command "-scarlet <number>" 
 * Fixed the Ballista command to take/delete the item and give base stats in return. Now, the Neutral Ballista gives 7 stats per charge, and the Normal Ballista gives 5. Added a notification for players to know how many stats they gained when using the command ("-ballista") to delete the item.
 
 
-*#check lonedruid
 
+
+* Fixed an issue where Scarlet Ascendant would deal damage when the hero was dead.
+* Fixed a bug with Scarlet Ascendant where the hero is dead but has 1 HP (especially when using the command -kill).
+* Replaced three talents for Lone Druid (and fixed the missing talent).
+* Invoker can now have 10 levels in Quas, Wex, Exort, and all its linked skills (with Aghanim and Facet). Fixed Exort to use 40x bonus instead of 20x. With level 10, it now gains 15 million green damage. Fixed Quas and Wex not scaling well.
 
 
 

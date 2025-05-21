@@ -3556,6 +3556,9 @@
 	"DOTA_Tooltip_ability_mjz_invoker_magic_master_manacost_reduction_scepter"		"%Scepter Manacost and Manaloss Reduction:"
 	"DOTA_Tooltip_ability_mjz_invoker_magic_master_scepter_description"	   	"Become a real master of magic."
 
+	"DOTA_Tooltip_ability_special_bonus_unique_invoker_5"	"+100k/100 Alacrity Damage/Speed"
+
+
 
 	"DOTA_Tooltip_ability_mjz_io_overcharge"				"Overcharge"
 	"DOTA_Tooltip_ability_mjz_io_overcharge_Description"	"Io gains bonus attack speed,<font color='#0DE4EB'>No Speed Limit</font>, <font color='#0DE4EB'>True Strike</font>, <font color='#0DE4EB'>Stun and Disarm Immunity</font> at the cost of draining a percentage of its current health. If Io is tethered to an ally, that unit also gains some bonuses.\n<font color='#FF5733'>Health Drain can Kill thru gold ring</font>"

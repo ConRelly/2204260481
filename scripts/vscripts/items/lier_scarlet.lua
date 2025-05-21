@@ -331,11 +331,31 @@ LinkLuaModifier("modifier_player_lier_scarlet_ascendant_base_atk_tier", "items/l
 LinkLuaModifier("modifier_lier_scarlet_ascendant_3_piece_buff", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_lier_scarlet_ascendant_3_piece_buff_cd", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_lier_scarlet_ascendant_lunar_buff", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_lier_scarlet_ascendant_min_health", "items/lier_scarlet.lua", LUA_MODIFIER_MOTION_NONE)
 
 -- Item Definition
 if item_lier_scarlet_ascendant == nil then item_lier_scarlet_ascendant = class({}) end
 function item_lier_scarlet_ascendant:GetIntrinsicModifierName()
     return "modifier_lier_scarlet_ascendant"
+end
+
+-- New Modifier for Min Health
+if modifier_lier_scarlet_ascendant_min_health == nil then modifier_lier_scarlet_ascendant_min_health = class({}) end
+function modifier_lier_scarlet_ascendant_min_health:IsHidden() return true end
+function modifier_lier_scarlet_ascendant_min_health:IsPurgable() return false end
+function modifier_lier_scarlet_ascendant_min_health:RemoveOnDeath() return true end
+function modifier_lier_scarlet_ascendant_min_health:DeclareFunctions()
+    return {
+        MODIFIER_PROPERTY_MIN_HEALTH,
+    }
+end
+function modifier_lier_scarlet_ascendant_min_health:GetMinHealth()
+    if not self:GetAbility() then return 0 end
+    -- This provides the "don't die" aspect when the 3-piece buff is NOT active but CD is also not active
+    if self:GetCaster() and self:GetCaster():HasModifier("modifier_lier_scarlet_ascendant") and not self:GetCaster():HasModifier("modifier_lier_scarlet_ascendant_3_piece_buff") and not self:GetCaster():HasModifier("modifier_lier_scarlet_ascendant_3_piece_buff_cd") then
+        return 1
+    end
+    return -1
 end
 
 -- Hidden Player Stat Modifiers
@@ -419,6 +439,11 @@ function modifier_lier_scarlet_ascendant:OnIntervalThink()
         local ability = self:GetAbility()
         local caster_lvl = caster:GetLevel()
 
+        -- Ensure the min_health modifier is present
+        if not caster:HasModifier("modifier_lier_scarlet_ascendant_min_health") then
+            caster:AddNewModifier(caster, ability, "modifier_lier_scarlet_ascendant_min_health", {})
+        end
+
         -- Item M's AOE Damage and Heal
         if self.aoe_radius_m > 0 and self.aoe_dmg_m > 0 then
             local aoe_dmgmult_lvl = self.aoe_dmg_m * caster_lvl
@@ -434,7 +459,7 @@ function modifier_lier_scarlet_ascendant:OnIntervalThink()
             self._lier_scarlet_asc_heal_counter = (self._lier_scarlet_asc_heal_counter or 0) + 1
             if self._lier_scarlet_asc_heal_counter >= 4 then
                 local heal_m = (caster:GetMaxHealth() * self.heal_pct_m / 100)
-                --if heal_m > 0 then caster:Heal(heal_m, caster) end
+                if heal_m > 0 then caster:Heal(heal_m, caster) end
                 self._lier_scarlet_asc_heal_counter = 0
             end
         end
@@ -490,8 +515,6 @@ function modifier_lier_scarlet_ascendant:DeclareFunctions()
         MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE, -- From 2P
         MODIFIER_PROPERTY_STATUS_RESISTANCE, -- From 2P
 
-        -- 3-Piece Set effects (when buff is not active, for min health)
-        MODIFIER_PROPERTY_MIN_HEALTH, -- From 3P base (before buff)
         
     }
 end
@@ -527,15 +550,6 @@ end
 function modifier_lier_scarlet_ascendant:GetModifierStatusResistance()
     if not self:GetAbility() then return 0 end
     return self:GetAbility():GetSpecialValueFor("bonus_status_resist_2p")
-end
-
-function modifier_lier_scarlet_ascendant:GetMinHealth()
-    if not self:GetAbility() then return 0 end
-    -- This provides the "don't die" aspect when the 3-piece buff is NOT active but CD is also not active
-    if self:GetCaster() and not self:GetCaster():HasModifier("modifier_lier_scarlet_ascendant_3_piece_buff") and not self:GetCaster():HasModifier("modifier_lier_scarlet_ascendant_3_piece_buff_cd") then
-        return 1
-    end
-    return -1
 end
 
 

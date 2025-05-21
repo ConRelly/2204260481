@@ -159,13 +159,13 @@ function item_life_greaves:OnSpellStart()
 				end
 			end
 		end
-		if caster:HasModifier("modifier_lier_scarlet_t") or caster:HasModifier("modifier_lier_scarlet_m") or caster:HasModifier("modifier_lier_scarlet_b") then
-			if unit:HasModifier("modifier_lier_scarlet_t") or unit:HasModifier("modifier_lier_scarlet_m") or unit:HasModifier("modifier_lier_scarlet_b") then
+		if caster:HasModifier("modifier_lier_scarlet_t") or caster:HasModifier("modifier_lier_scarlet_m") or caster:HasModifier("modifier_lier_scarlet_b") or caster:HasModifier("modifier_lier_scarlet_ascendant") then
+			if unit:HasModifier("modifier_lier_scarlet_t") or unit:HasModifier("modifier_lier_scarlet_m") or unit:HasModifier("modifier_lier_scarlet_b") or unit::HasModifier("modifier_lier_scarlet_ascendant") then
 				local MaxHealth_Shield = 25
 				if unit:HasModifier("modifier_lier_scarlet_2_pieces") then
 					MaxHealth_Shield = 75
 				end
-				if unit:HasModifier("modifier_lier_scarlet_3_pieces") then
+				if unit:HasModifier("modifier_lier_scarlet_3_pieces") or unit:HasModifier("modifier_lier_scarlet_ascendant") then
 					MaxHealth_Shield = 150
 				end
 				if unit:HasModifier("modifier_life_greaves_bubble") then
