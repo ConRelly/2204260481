@@ -8,6 +8,6 @@ function modifier_custom_special_bonus_attributes:IsHidden() return true end
 function modifier_custom_special_bonus_attributes:DeclareFunctions()
 	return {MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_STRENGTH_BONUS}
 end
-function modifier_custom_special_bonus_attributes:GetModifierBonusStats_Intellect() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("all_attributes") end end
-function modifier_custom_special_bonus_attributes:GetModifierBonusStats_Agility() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("all_attributes") end end
-function modifier_custom_special_bonus_attributes:GetModifierBonusStats_Strength() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("all_attributes") end end
+function modifier_custom_special_bonus_attributes:GetModifierBonusStats_Intellect() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("value") end end
+function modifier_custom_special_bonus_attributes:GetModifierBonusStats_Agility() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("value") end end
+function modifier_custom_special_bonus_attributes:GetModifierBonusStats_Strength() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("value") end end

@@ -412,6 +412,8 @@ function modifier_lier_scarlet_ascendant:OnIntervalThink()
     if IsServer() then
         if not self:GetAbility() or not self:GetParent() or self:GetParent():IsNull() then self:Destroy(); return end
         if self:GetParent():IsIllusion() then return end
+        if not self:GetParent():IsRealHero() then return end
+        if not self:GetParent():IsAlive() then return end
 
         local caster = self:GetCaster()
         local ability = self:GetAbility()
@@ -432,7 +434,7 @@ function modifier_lier_scarlet_ascendant:OnIntervalThink()
             self._lier_scarlet_asc_heal_counter = (self._lier_scarlet_asc_heal_counter or 0) + 1
             if self._lier_scarlet_asc_heal_counter >= 4 then
                 local heal_m = (caster:GetMaxHealth() * self.heal_pct_m / 100)
-                if heal_m > 0 then caster:Heal(heal_m, caster) end
+                --if heal_m > 0 then caster:Heal(heal_m, caster) end
                 self._lier_scarlet_asc_heal_counter = 0
             end
         end
@@ -533,7 +535,7 @@ function modifier_lier_scarlet_ascendant:GetMinHealth()
     if self:GetCaster() and not self:GetCaster():HasModifier("modifier_lier_scarlet_ascendant_3_piece_buff") and not self:GetCaster():HasModifier("modifier_lier_scarlet_ascendant_3_piece_buff_cd") then
         return 1
     end
-    return 0 -- Or -1 if that's the convention for no effect
+    return -1
 end
 
 
@@ -877,7 +879,7 @@ function modifier_lier_scarlet_ascendant_lunar_buff:GetTexture() return "custom/
 function modifier_lier_scarlet_ascendant_lunar_buff:GetEffectName() return "particles/items_fx/black_king_bar_avatar.vpcf" end
 function modifier_lier_scarlet_ascendant_lunar_buff:GetEffectAttachType() return PATTACH_ABSORIGIN_FOLLOW end
 function modifier_lier_scarlet_ascendant_lunar_buff:IsPurgable() return false end
-function modifier_lier_scarlet_ascendant_lunar_buff:RemoveOnDeath() return false end
+function modifier_lier_scarlet_ascendant_lunar_buff:RemoveOnDeath() return true end
 
 function modifier_lier_scarlet_ascendant_lunar_buff:OnCreated(params)
     if not self:GetAbility() then self:Destroy(); return end

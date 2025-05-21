@@ -1232,15 +1232,22 @@ function AOHGameMode:CC_Kill( playerID )
 		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 		local isAlive = hero:IsAlive()
 
-		if not IsInToolsMode() then
+		if not IsInToolsMode()then
+
 			local now = GameRules:GetGameTime()
-			local interval = 250 * 1
+			local interval = 250
+			if Cheats:IsEnabled() then
+				interval = 1
+				print("CC_Kill cheats: " .. playerID)
+			end			
 			hero._command_kill = hero._command_kill or 0
 			if (now - hero._command_kill) < interval then
 				return false
 			else
 				hero._command_kill = now
 			end
+		else
+			print("CC_Kill toolsmode: " .. playerID)	
 		end	
 
 		-- if isAlive then
