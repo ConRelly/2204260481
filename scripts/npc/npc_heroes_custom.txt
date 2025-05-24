@@ -28,6 +28,7 @@
 
 	"AttributeStrengthGain"			"49.4"
 	"AttributeIntelligenceGain"		"7.1"
+
 } 
 
 

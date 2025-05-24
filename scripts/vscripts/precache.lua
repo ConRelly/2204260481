@@ -95,23 +95,30 @@ end
 
 
 return function(context)
-
+    print("[PRECACHE] Starting resource precaching...")
+    
     PrecacheEverythingFromKV(context)
-
+    
+    
     -- 预载入提前选好的32名英雄
     if not IsInToolsMode() then
+       print("[PRECACHE] Precaching selected heroes...")
        for _,sHeroName in ipairs(GameRules.heroesPoolList) do
-           --print("Precaching Hero: "..sHeroName)
+           print("[PRECACHE] Precaching Hero: " .. sHeroName)
            PrecacheUnitByNameSync(sHeroName, context, -1)
        end
     end
 
+    print("[PRECACHE] Precaching particles...")
     for _, p in pairs(particles) do
         PrecacheResource("particle", p, context)
     end
+    
+    print("[PRECACHE] Precaching sounds...")
     for _, p in pairs(sounds) do
         PrecacheResource("soundfile", p, context)
     end
-
+    
+    print("[PRECACHE] Resource precaching completed!")
 end
 

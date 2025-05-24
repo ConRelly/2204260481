@@ -1,15 +1,14 @@
-
-
-
 function Precache_Resource( context )
+    print("!!! BEGIN PRECACHE RESOURCE")
     PrecacheItemByNameSync("item_tombstone", context)
-	PrecacheItemByNameSync("item_bag_of_gold", context)
+    PrecacheItemByNameSync("item_bag_of_gold", context)
 
     PrecacheEveryThingFromKV(context)
 
-    -- Precache_Unit_Resource(context)
-    -- Precach_Item_Resource(context)
-
+    -- Enable unit resource precaching
+    Precache_Unit_Resource(context)
+    Precach_Item_Resource(context)
+    print("!!! FINISH PRECACHE RESOURCE")
 end
 
 --自动预载入
@@ -60,6 +59,8 @@ function PrecacheEverythingFromTable(context,kvtable)
 end
 
 function Precache_Unit_Resource( context )
+    print("!!! BEGIN PRECACHE UNIT RESOURCE")
+    
     
     -- npc_mjz_sheer_heart_attack_tank
     PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts", context)

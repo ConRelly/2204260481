@@ -3469,8 +3469,10 @@ Build it from all three Lier Scarlet items with the command "-scarlet <number>" 
 * Fixed an issue where Scarlet Ascendant would deal damage when the hero was dead.
 * Fixed a bug with Scarlet Ascendant where the hero is dead but has 1 HP (especially when using the command -kill).
 * Replaced three talents for Lone Druid (and fixed the missing talent).
-* Invoker can now have 10 levels in Quas, Wex, Exort, and all its linked skills (with Aghanim and Facet). Fixed Exort to use 40x bonus instead of 20x. With level 10, it now gains 15 million green damage. Fixed Quas and Wex not scaling well.
+* Invoker can now have 10 levels in Quas, Wex, Exort, and all its linked skills (with Aghanim and Facet). Fixed Exort was using 40x bonus instead of 20x. With level 10, it now gains 15 million green damage. Fixed Quas and Wex not scaling well.
 
+
+* Fix the current Dota patch crash (there might be other problems, which remains to be seen).
 
 
 

@@ -11739,8 +11739,8 @@
 	
 "npc_dota_courier"
 {	
-	"Level"						"30"
-	"Ability2"					"courier_invisibility"
+	//"Level"						"30"
+	"Ability18"					"courier_invisibility"
 }
 "npc_courier_replacement"
 {
