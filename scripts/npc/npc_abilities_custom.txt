@@ -49,10 +49,10 @@
 		"ScriptFile"					"abilities/custom_special_bonus_attributes"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
 		"AbilityTextureName"			"attribute_bonus"
-		"MaxLevel"						"14"
+		"MaxLevel"						"7"
 		"AbilityValues"
 		{
-			"value"		"30 60 90 120 150 180 210 240 270 300 330 360 390 420"
+			"value"		"60 120 180 240 300 360 420"
 		}
 	}
 
@@ -652,7 +652,7 @@
             "damage"
             {
                 "value" "270 920 1470 2200 2900 3800 9500"
-                "LinkedSpecialBonus" "special_bonus_unique_void_spirit_4"
+                "special_bonus_unique_void_spirit_4"	"+63750"
             }
             "buff_duration" "10.0"
             "base_absorb_amount" "2900 9800 15120 29160 44000 81500 147960"

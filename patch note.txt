@@ -3475,6 +3475,11 @@ Build it from all three Lier Scarlet items with the command "-scarlet <number>" 
 * Fix the current Dota patch crash (there might be other problems, which remains to be seen).
 
 
+* Blur is no longer innate. It levels up with the special talent +2(30) stats thing. I might change the level thing later with a better solution.
+* Fixed the Void Spirit Facet so that it changes in all damage type barriers. Fixed the level 25 talent so that it displays the correct numbers visually.
+
+* Fix void resonant pulse not using Aghanim CD
+
 
 
 

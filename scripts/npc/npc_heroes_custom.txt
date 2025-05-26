@@ -2424,10 +2424,10 @@
 	{
 		"override_hero"		"npc_dota_hero_void_spirit"
 
-		"Ability1"			"void_spirit_custom_aether_remnant"
-		"Ability3"			"void_spirit_custom_resonant_pulse"
+		"Ability1"			"void_spirit_aether_remnant"
+		"Ability3"			"void_spirit_resonant_pulse"
 		"Ability5"			"mjz_void_spirit_astral_atlas"
-		"Ability6"			"void_spirit_custom_astral_step"
+		"Ability6"			"void_spirit_astral_step"
 		"Ability10"			"special_bonus_unique_void_spirit_8"
 		"Ability11"         "special_bonus_mp_100"
 		"Ability12"			"special_bonus_magic_resistance_25"

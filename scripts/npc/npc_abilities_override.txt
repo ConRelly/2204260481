@@ -47,6 +47,25 @@
 
 	//Unconventional xx1 mana cost = no demon talon processing
 
+    //=================================================================================================================
+    // Ability: Attribute Bonus
+    //=================================================================================================================
+    "special_bonus_attributes"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "MaxLevel"                      "7"
+        "RequiredLevel"                 "2"
+        
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "value"     "60 120 180 240 300 360 420"
+        }
+    }
+
 	"special_bonus_unique_alchemist_4"
 	{
 		"AbilityValues"
@@ -8306,7 +8325,9 @@
 	}	
 	"phantom_assassin_blur"
 	{
-		"AbilityCooldown"				"27 24 21 18"
+        //"LevelsBetweenUpgrades"         "10"
+        "Innate"                        "0"  
+        "DependentOnAbility"            "special_bonus_attributes"    
 		"AbilityValues"
         {
             "bonus_evasion"
@@ -8314,13 +8335,14 @@
                 "value" "20 30 40 50"
                 "LinkedSpecialBonus" "special_bonus_unique_phantom_assassin_3"
             }
-            "duration" "6"
+            "duration" "8"
             "fade_duration" "0.45"
-            "scepter_cooldown"
+            "active_movespeed_bonus"  "30 60 90 120"
+            "AbilityCooldown"               
             {
-                "value" "12"
-                "RequiresScepter" "1"
-            }
+                "value"                 "60 55 50 45"
+                "special_bonus_shard"       "-20"
+            }            
         }
 	}
 	"phantom_assassin_coup_de_grace"
@@ -12001,6 +12023,142 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
+
+
+// Void Spirit: Pulse
+    "void_spirit_resonant_pulse"
+    {
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
+        "AbilitySound"                  "Hero_VoidSpirit.Pulse.Cast"
+        "HasScepterUpgrade"             "1"
+        "AbilityCastRange"              "5000"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
+        "AbilityCastGestureSlot"        "DEFAULT"
+        "MaxLevel"                      "7"
+        "LevelsBetweenUpgrades"         "7"
+        "AbilityCooldown"               "25"
+        "AbilityManaCost"               "50"
+        "AbilityValues"
+        {
+            "radius" "850"
+            "speed" "900"
+            "damage"
+            {
+                "value" "270 920 1470 2200 2900 3800 9500"
+                "special_bonus_unique_void_spirit_4"    "+63750"
+            }
+            "buff_duration" "10.0"
+            "base_absorb_amount" "2900 9800 15120 29160 44000 81500 147960"
+            "absorb_per_hero_hit" "900 1800 3120 9160 14000 21500 50000"
+            "return_projectile_speed" "900"
+            "max_charges"
+            {
+                "value" "3"
+                "RequiresScepter" "1"
+            }
+            "charge_restore_time"
+            {
+                "special_bonus_scepter" "10"
+            }
+            "silence_duration_scepter" "2.0"
+        }
+    }
+
+
+// Void Spirit: Astral Step
+    "void_spirit_astral_step"
+    {
+
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+        "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilitySound"                  "Hero_VoidSpirit.AstralStep.Start"
+        "MaxLevel"                      "7"
+        "RequiredLevel"                 "6"
+        "LevelsBetweenUpgrades"         "8"
+        "AnimationPlaybackRate"         "1.5"
+        "AbilityCastPoint"              "0"
+        "AbilityCooldown"               "0.1"
+        "AbilityCharges"                "5 7 9 15 30 35 40"
+        "AbilityChargeRestoreTime"      "14 13 12 11 10 9 8"
+        "AbilityManaCost"               "200"
+        "AbilityValues"
+        {
+            "radius"                
+            {
+                "value" "370"
+                "affected_by_aoe_increase"  "1"     
+            }
+            "AbilityChargeRestoreTime"  
+            {
+                "value"         "14 13 12 11 10 9 8"
+                "special_bonus_unique_void_spirit_1"    "-4"
+            }
+            "min_travel_distance"   "300"
+            "max_travel_distance"   "900 1400 1900 2300 2800 3500 7000"
+            "pop_damage_delay"      
+            {
+                "value" "0"
+                "DamageTypeTooltip"     "DAMAGE_TYPE_NONE"
+            }
+            "pop_damage"            
+            {
+                "value"                 "2750 8850 23950 67250 145000 325000 950000"
+                "CalculateSpellDamageTooltip"   "1"
+            }
+            "movement_slow_pct"     "50"
+            "ability_chance_pct"
+            {
+                "value"             "100"
+
+            }
+            "attack_chance_pct"
+            {
+                "value"             "100"
+            }
+        }
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
+    }
+
+// Void Spirit: Aether Remnant
+    "void_spirit_aether_remnant"
+    {
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_VECTOR_TARGETING"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"   
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"          "SPELL_DISPELLABLE_YES"
+        "AbilitySound"                  "Hero_VoidSpirit.AetherRemnant.Cast"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCastRange"              "850"
+        "AbilityCooldown"               "7"
+        "AbilityManaCost"               "85 90 95 100"
+        "AbilityValues"
+        {
+            "start_radius" "90"
+            "end_radius" "90"
+            "radius" "300"
+            "projectile_speed" "900"
+            "remnant_watch_distance" "550"
+            "remnant_watch_radius" "130"
+            "watch_path_vision_radius" "200"
+            "activation_delay" "0.4"
+            "impact_damage" "300 750 1900 5750"
+            "pull_duration" "1.2 1.4 1.6 1.8"
+            "pull_destination" "44 50 56 62"
+            "duration" "60"
+            "think_interval" "0.1"
+        }
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+        "AbilityCastGestureSlot"        "DEFAULT"
+    }
 
 	//=================================================================================================================
 	// Ability: Warlock's Fatal Bonds
