@@ -4630,10 +4630,19 @@
 
 	"dazzle_shallow_grave"
 	{
-		"AbilityCooldown"				"120"
-		"AbilityValues"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "120"
+
+        "AbilityValues"
         {
-            "duration" "3.0 3.3 3.6 4.0"
+            "duration"
+            {
+                "value" "3.0 3.3 3.6 4.0"
+            }
+            "AbilityCooldown"           
+            {
+                "value"             "120"
+            }        
         }			
 	}
 	"death_prophet_carrion_swarm"

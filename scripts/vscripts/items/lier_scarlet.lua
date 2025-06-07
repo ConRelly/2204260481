@@ -226,8 +226,6 @@ function modifier_lier_scarlet_3_pieces:GetMinHealth()
 	if self:GetAbility() then
 		if not self:GetCaster():HasModifier("modifier_lier_scarlet_3_pieces_buff_cd") then
 			return 1
-		else
-			return -1
 		end
 	end
 end
@@ -355,7 +353,6 @@ function modifier_lier_scarlet_ascendant_min_health:GetMinHealth()
     if self:GetCaster() and self:GetCaster():HasModifier("modifier_lier_scarlet_ascendant") and not self:GetCaster():HasModifier("modifier_lier_scarlet_ascendant_3_piece_buff") and not self:GetCaster():HasModifier("modifier_lier_scarlet_ascendant_3_piece_buff_cd") then
         return 1
     end
-    return -1
 end
 
 -- Hidden Player Stat Modifiers

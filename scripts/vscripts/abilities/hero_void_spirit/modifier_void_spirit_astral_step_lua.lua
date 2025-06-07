@@ -36,12 +36,13 @@ end
 --------------------------------------------------------------------------------
 -- Initializations
 function modifier_void_spirit_astral_step_lua:OnCreated( kv )
-	local caster = self:GetCaster()
-	local mana_mult = self:GetAbility():GetSpecialValueFor( "mana_mult" )
-	local manareg = caster:GetManaRegen() * mana_mult
-	
-	self.damage = self:GetAbility():GetSpecialValueFor( "pop_damage" ) + manareg
 	self.slow = -self:GetAbility():GetSpecialValueFor( "movement_slow_pct" )
+	if not IsServer() then return end
+	local caster = self:GetCaster()
+	local mana_mult = self:GetAbility():GetSpecialValueFor( "mana_mult" )	
+	local caster_manreg = caster:GetManaRegen()
+	local manareg = caster_manreg * mana_mult
+	self.damage = self:GetAbility():GetSpecialValueFor( "pop_damage" ) + manareg	
 end
 
 function modifier_void_spirit_astral_step_lua:OnRefresh( kv )
@@ -53,7 +54,6 @@ end
 
 function modifier_void_spirit_astral_step_lua:OnDestroy()
 	if not IsServer() then return end
-
 	-- Apply damage
 	local damageTable = {
 		victim = self:GetParent(),

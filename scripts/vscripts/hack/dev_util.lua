@@ -262,7 +262,7 @@ function IsStalkerList(hero)
         "76561197990627480", --nepot
         "76561197998245437", --nepot  
         "76561198202813685", --nepot
-        
+        "76561198391757453", --tyb
       }    
       for k, v in pairs(list) do
         if tostring(v) == steamID then

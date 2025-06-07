@@ -3481,6 +3481,10 @@ Build it from all three Lier Scarlet items with the command "-scarlet <number>" 
 * Fix void resonant pulse not using Aghanim CD
 
 
+* Fixed Scarlet from preventing Dazle Grave, Undying Helm, and possibly other vanilla death prevention from working while on cooldown.
+* Fixed Dazzle Grave's cooldown (back to 120s) and replaced the non-functioning Healing Grave talent.
+
+
 
 
 ////////Self Note ////////////
