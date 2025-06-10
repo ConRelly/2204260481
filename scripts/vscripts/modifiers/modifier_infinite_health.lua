@@ -16,6 +16,7 @@ function modifier_infinite_health:OnCreated()
     self.teleport_chance = 100
     local parentt = self:GetParent()
     parentt.mjz_retain = true
+    self.last_announced_tier = 0 -- Initialize the last announced tier
     
     self:StartIntervalThink(1)
 end
@@ -58,6 +59,24 @@ function modifier_infinite_health:OnDestroy()
                     reward = "Tier V: 5 ingots, 5 gold bags, Edible fragment + Edible Complete"
                     Drop_gold_bag(parent, 35000)
                     _G._challenge_bosss = 5
+
+                    -- New logic for levels > 400
+                    local bonus_lvl = lvl - 400
+                    local guaranteed_drops = math.floor(bonus_lvl / 100)
+                    local extra_chance = bonus_lvl % 100
+
+                    -- Drop guaranteed items
+                    for i = 1, guaranteed_drops do
+                        create_item_drop("item_random_get_ability", vcenter + RandomVector(RandomFloat(50, 250)))
+                    end
+
+                    -- Roll for extra item
+                    if RollPercentage(extra_chance) then
+                        create_item_drop("item_random_get_ability", vcenter + RandomVector(RandomFloat(50, 250)))
+                    end
+
+                    -- Update reward string
+                    reward = reward .. ", Extra: " .. bonus_lvl .. "% chance for item Random Ability (Rare)"
                 end
             else
                 if lvl > 150 then
@@ -65,6 +84,24 @@ function modifier_infinite_health:OnDestroy()
                     reward = "Tier II: 2 ingots, 2 gold bags, Dropped in center of the map"
                     Drop_gold_bag(parent, 45000)
                     _G._challenge_bosss = 2
+
+                    -- Extra reward logic for else branch (max 3 guaranteed drops)
+                    local bonus_lvl = lvl - 150
+                    local guaranteed_drops = math.min(3, math.floor(bonus_lvl / 100))
+                    local extra_chance = bonus_lvl % 100
+
+                    -- Drop guaranteed items (max 3)
+                    for i = 1, guaranteed_drops do
+                        create_item_drop("item_random_get_ability", vcenter + RandomVector(RandomFloat(50, 250)))
+                    end
+
+                    -- Roll for extra item
+                    if guaranteed_drops < 3 and RollPercentage(extra_chance) then
+                        create_item_drop("item_random_get_ability", vcenter + RandomVector(RandomFloat(50, 250)))
+                    end
+
+                    -- Update reward string
+                    reward = reward .. ", Extra: " .. bonus_lvl .. "% chance for item Random Ability (Rare, max 3)"
                 end                      
             end 
             if _G._endlessMode_started then               
@@ -146,8 +183,51 @@ function modifier_infinite_health:OnDeathPrevented(params)
 		if parent == params.unit and parent:IsAlive() then
             parent:CreatureLevelUp(1)
             parent:SetHealth(parent:GetMaxHealth())
-		end
-	end
+
+            local lvl = parent:GetLevel()
+            local current_tier = 0
+            local reward = ""
+
+            if _G._endlessMode_started then
+                if lvl > 400 then
+                    current_tier = 5
+                    reward = "Tier V: 5 ingots, 5 gold bags, Edible fragment + Edible Complete"
+                    reward = reward .. ", Extra: Chance for item Random Ability (Rare) based on bonus level."
+                elseif lvl > 200 then
+                    current_tier = 4
+                    reward = "Tier IV: 4 ingots, 4 gold bags, Edible Fragment, Dropped in center of the map(400 was next tier)"
+                elseif lvl > 100 then
+                    current_tier = 3
+                    reward = "Tier III: 3 ingots, 3 gold bags, Dropped in center of the map(200 was next tier)"
+                elseif lvl > 50 then
+                    current_tier = 2
+                    reward = "Tier II: 2 ingots, 2 gold bags, Dropped in center of the map(100 was next tier)"
+                else
+                    current_tier = 1
+                    reward = "Tier I: 1 ingot, 1 gold bag, Dropped in center of the map"
+                end
+            else
+                if lvl > 150 then
+                    current_tier = 2
+                    reward = "Tier II: 2 ingots, 2 gold bags, Dropped in center of the map"
+                    reward = reward .. ", Extra: Chance for item Random Ability (Rare, max 3) based on bonus level."
+                else
+                    current_tier = 1
+                    reward = "Tier I: 1 ingot, 1 gold bag, Dropped in center of the map"
+                end
+            end
+
+            if current_tier > self.last_announced_tier then
+                local mode_text = "Normal Mode First Part"
+                if _G._endlessMode_started then mode_text = "Second Part" end
+                if _G._hardMode then mode_text = mode_text .. " Hard Mode" end
+                if _G._extra_mode then mode_text = mode_text .. " + Extra" end
+
+                Notifications:TopToAll({text=mode_text..": You Have Reached Level "..lvl..", Reward "..reward , style={color="red"}, duration=10})
+                self.last_announced_tier = current_tier
+            end
+        end
+    end
 end
 function modifier_infinite_health:GetMinHealth()
 	return 1

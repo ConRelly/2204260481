@@ -376,8 +376,10 @@ function modifier_aghanim_spell_lock:DisableSpell()
 			kardels_skills = true,
 
 		}      
-
-		for i=0,DOTA_MAX_ABILITIES-1 do
+		--set max abilities by checking :GetAbilityCount()
+		if not self:GetParent() or not self:GetParent():IsAlive() then self:Destroy() return end
+		local max_abilities = self:GetParent():GetAbilityCount()
+		for i=0,max_abilities-1 do
 			local hAbility = self:GetParent():GetAbilityByIndex( i )
 
             

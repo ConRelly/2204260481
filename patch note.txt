@@ -3487,6 +3487,12 @@ Build it from all three Lier Scarlet items with the command "-scarlet <number>" 
 
 
 
+* Invoker when is using master of weapons sword now it receives back its Exort spheres after illusion use them (they can only exist on one hero), the quas and wex are not copied/taken by sword hero/illusion anymore.
+* Challenge boss now after you reach max tier reward then each extra lvl will count towards a chance to receive Ability random item (1lvl = 1%) , it can go above 100% (so 230 extra lvls = 2 guarantee + 30% chance for another one)
+* Fixed Shadow Fiend missing icon for necronmastery (resuling in inability to swap the skill)
+
+
+
 ////////Self Note ////////////
 **Update Notes spellings will get corrected before the live update.
 **If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).

@@ -9129,7 +9129,7 @@
 	{
 		"BaseClass"							"ability_lua"
 		"ScriptFile"						"abilities/heroes/nevermore_custom_necromastery.lua"
-		"AbilityTextureName"				"nevermore_necromastery"
+		"AbilityTextureName"				"nevermore_necromastery_demon"
 		"AbilityBehavior"					"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityCastAnimation"				"ACT_DOTA_CAST_ABILITY_4"
 		"MaxLevel"							"7"

@@ -65,7 +65,8 @@ function item_master_of_weapons_sword:OnSpellStart()
 	}
 
 	-- Copy Abilities
-	for ability_id = 0, DOTA_MAX_ABILITIES - 1 do
+	local ability_count = self:GetCaster():GetAbilityCount()
+	for ability_id = 0, ability_count - 1 do
 		local ability = image:GetAbilityByIndex(ability_id)
 		if ability then
 			if not non_transfer[ability:GetAbilityName()] then
@@ -118,6 +119,9 @@ function item_master_of_weapons_sword:OnSpellStart()
 		["modifier_totem_aura"] = true,
 		["modifier_custom_no_heal_effect"] = true,
 		["modifier_grimstroke_custom_soulstore"] = true,
+		["modifier_invoker_quas_instance"] = true,
+		["modifier_invoker_wex_instance"] = true,
+
 	}
 	
 	local caster_modifiers = self:GetCaster():FindAllModifiers()
@@ -217,8 +221,9 @@ function item_master_of_weapons_sword2:OnSpellStart()
 		["item_thunder_gods_might2"] = true,
 	}
 
-	-- Copy Abilities
-	for ability_id = 0, DOTA_MAX_ABILITIES - 1 do
+	-- Copy Abilities , use caster:GetAbilityCount() - 1
+	local ability_count = self:GetCaster():GetAbilityCount()
+	for ability_id = 0, ability_count - 1 do
 		local ability = image:GetAbilityByIndex(ability_id)
 		if ability then
 			if not non_transfer[ability:GetAbilityName()] then
@@ -270,8 +275,10 @@ function item_master_of_weapons_sword2:OnSpellStart()
 		["modifier_totem_aura"] = true,
 		["modifier_custom_no_heal_effect"] = true,
 		["modifier_grimstroke_custom_soulstore"] = true,
+		["modifier_invoker_quas_instance"] = true,
+		["modifier_invoker_wex_instance"] = true,
 	}
-	
+
 	local caster_modifiers = self:GetCaster():FindAllModifiers()
 	for _, modifier in pairs(caster_modifiers) do
 		if modifier and not ignored_modifiers[modifier:GetName()] then
@@ -370,7 +377,8 @@ function item_master_of_weapons_sword3:OnSpellStart()
 	}
 
 	-- Copy Abilities
-	for ability_id = 0, DOTA_MAX_ABILITIES - 1 do
+	local ability_count = self:GetCaster():GetAbilityCount()
+	for ability_id = 0, ability_count - 1 do
 		local ability = image:GetAbilityByIndex(ability_id)
 		if ability then
 			if not non_transfer[ability:GetAbilityName()] then
@@ -421,8 +429,10 @@ function item_master_of_weapons_sword3:OnSpellStart()
 		["modifier_totem_aura"] = true,
 		["modifier_custom_no_heal_effect"] = true,
 		["modifier_grimstroke_custom_soulstore"] = true,
+		["modifier_invoker_quas_instance"] = true,
+		["modifier_invoker_wex_instance"] = true,
 	}
-	
+
 	local caster_modifiers = self:GetCaster():FindAllModifiers()
 	for _, modifier in pairs(caster_modifiers) do
 		if modifier and not ignored_modifiers[modifier:GetName()] then
@@ -521,7 +531,8 @@ function item_master_of_weapons_sword4:OnSpellStart()
 	}
 
 	-- Copy Abilities
-	for ability_id = 0, DOTA_MAX_ABILITIES - 1 do
+	local ability_count = self:GetCaster():GetAbilityCount()
+	for ability_id = 0, ability_count - 1 do
 		local ability = image:GetAbilityByIndex(ability_id)
 		if ability then
 			if not non_transfer[ability:GetAbilityName()] then
@@ -573,8 +584,10 @@ function item_master_of_weapons_sword4:OnSpellStart()
 		["modifier_totem_aura"] = true,
 		["modifier_custom_no_heal_effect"] = true,
 		["modifier_grimstroke_custom_soulstore"] = true,
+		["modifier_invoker_quas_instance"] = true,
+		["modifier_invoker_wex_instance"] = true,
 	}
-	
+
 	local caster_modifiers = self:GetCaster():FindAllModifiers()
 	for _, modifier in pairs(caster_modifiers) do
 		if modifier and not ignored_modifiers[modifier:GetName()] then
@@ -673,7 +686,8 @@ function item_master_of_weapons_sword5:OnSpellStart()
 	}
 
 	-- Copy Abilities
-	for ability_id = 0, DOTA_MAX_ABILITIES - 1 do
+	local ability_count = self:GetCaster():GetAbilityCount()
+	for ability_id = 0, ability_count - 1 do
 		local ability = image:GetAbilityByIndex(ability_id)
 		if ability then
 			if not non_transfer[ability:GetAbilityName()] then
@@ -725,8 +739,10 @@ function item_master_of_weapons_sword5:OnSpellStart()
 		["modifier_totem_aura"] = true,
 		["modifier_custom_no_heal_effect"] = true,
 		["modifier_grimstroke_custom_soulstore"] = true,
+		["modifier_invoker_quas_instance"] = true,
+		["modifier_invoker_wex_instance"] = true,
 	}
-	
+
 	local caster_modifiers = self:GetCaster():FindAllModifiers()
 	for _, modifier in pairs(caster_modifiers) do
 		if modifier and not ignored_modifiers[modifier:GetName()] then
@@ -987,6 +1003,30 @@ function modifier_mows_slasher:OnDestroy()
 			end
 
 			if (not self:GetParent():IsNull()) then
+				-- Workaround for Invoker losing buffs by simulating ability use based on instances
+				if self:GetCaster() and self:GetCaster():GetUnitName() == "npc_dota_hero_invoker" then
+					local caster = self:GetCaster()
+					local quas_count = 0
+					local wex_count = 0
+
+					-- Count Quas and Wex instances on the caster BEFORE removing the illusion and its modifiers
+					local caster_modifiers = caster:FindAllModifiers()
+					for _, modifier in pairs(caster_modifiers) do
+						if modifier and modifier:GetName() == "modifier_invoker_quas_instance" then
+							quas_count = quas_count + 1
+						elseif modifier and modifier:GetName() == "modifier_invoker_wex_instance" then
+							wex_count = wex_count + 1
+						end
+					end
+
+					local exort_ability = caster:FindAbilityByName("invoker_exort")
+					if exort_ability then
+						local exort_to_add = 3 - (quas_count + wex_count)
+						for i = 1, exort_to_add do
+							caster:CastAbilityImmediately(exort_ability, caster:GetPlayerID())
+						end
+					end
+				end
 				UTIL_Remove(self:GetParent())
 			end
 		end

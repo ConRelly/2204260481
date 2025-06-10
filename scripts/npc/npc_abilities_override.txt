@@ -8345,7 +8345,7 @@
                 "LinkedSpecialBonus" "special_bonus_unique_phantom_assassin_3"
             }
             "duration" "8"
-            "fade_duration" "0.45"
+            "fade_duration" "0.2"
             "active_movespeed_bonus"  "30 60 90 120"
             "AbilityCooldown"               
             {
@@ -19681,6 +19681,36 @@
             "aura_negative_armor" "-5 -8 -11 -17 -30"
         }
 	}
+
+
+    //=================================================================================================================
+    // Chainmail
+    //=================================================================================================================
+    "item_chainmail"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_OUT_OF_WORLD"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1000"
+        "ItemShopTags"                  "armor"
+        "ItemStockMax"                  "100"
+        "ItemQuality"                   "component"
+        //"SideShop"                        "1"
+
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityValues"
+        {
+            "bonus_armor"           "5"
+        }
+    }
+
 
 // Arcane Boots
 	"item_arcane_boots"
