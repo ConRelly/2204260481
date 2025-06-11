@@ -12082,20 +12082,20 @@
     "void_spirit_astral_step"
     {
 
-        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
         "AbilityType"                   "DOTA_ABILITY_TYPE_ULTIMATE"
         "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
         "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
         "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
         "AbilitySound"                  "Hero_VoidSpirit.AstralStep.Start"
-        "MaxLevel"                      "7"
+        "MaxLevel"                      "8"
         "RequiredLevel"                 "6"
-        "LevelsBetweenUpgrades"         "8"
+        "LevelsBetweenUpgrades"         "10"
         "AnimationPlaybackRate"         "1.5"
         "AbilityCastPoint"              "0"
         "AbilityCooldown"               "0.1"
-        "AbilityCharges"                "5 7 9 15 30 35 40"
-        "AbilityChargeRestoreTime"      "14 13 12 11 10 9 8"
+        "AbilityCharges"                "5 7 9 15 20 30 35 40"
+        "AbilityChargeRestoreTime"      "15 14 13 12 11 10 9 8"
         "AbilityManaCost"               "200"
         "AbilityValues"
         {
@@ -12106,11 +12106,11 @@
             }
             "AbilityChargeRestoreTime"  
             {
-                "value"         "14 13 12 11 10 9 8"
+                "value"         "15 14 13 12 11 10 9 8"
                 "special_bonus_unique_void_spirit_1"    "-4"
             }
             "min_travel_distance"   "300"
-            "max_travel_distance"   "900 1400 1900 2300 2800 3500 7000"
+            "max_travel_distance"   "900 1400 1900 2300 2800 3500 5000 7000"
             "pop_damage_delay"      
             {
                 "value" "0"
@@ -12118,7 +12118,7 @@
             }
             "pop_damage"            
             {
-                "value"                 "2750 8850 23950 67250 145000 325000 950000"
+                "value"                 "2750 8850 23950 67250 145000 325000 950000 1800000"
                 "CalculateSpellDamageTooltip"   "1"
             }
             "movement_slow_pct"     "50"

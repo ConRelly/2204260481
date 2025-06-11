@@ -42,7 +42,9 @@ function modifier_void_spirit_astral_step_lua:OnCreated( kv )
 	local mana_mult = self:GetAbility():GetSpecialValueFor( "mana_mult" )	
 	local caster_manreg = caster:GetManaRegen()
 	local manareg = caster_manreg * mana_mult
-	self.damage = self:GetAbility():GetSpecialValueFor( "pop_damage" ) + manareg	
+	local caster_lvl_mult = caster:GetLevel() * self:GetAbility():GetSpecialValueFor( "pop_damage" )
+
+	self.damage = caster_lvl_mult + manareg	
 end
 
 function modifier_void_spirit_astral_step_lua:OnRefresh( kv )
@@ -55,11 +57,19 @@ end
 function modifier_void_spirit_astral_step_lua:OnDestroy()
 	if not IsServer() then return end
 	-- Apply damage
+	local damage_to_apply = self.damage
+	local damage_type_to_apply = DAMAGE_TYPE_MAGICAL
+
+	if self:GetAbility():GetAutoCastState() then
+		damage_to_apply = self.damage / 10
+		damage_type_to_apply = DAMAGE_TYPE_PURE
+	end
+
 	local damageTable = {
 		victim = self:GetParent(),
 		attacker = self:GetCaster(),
-		damage = self.damage,
-		damage_type = DAMAGE_TYPE_MAGICAL,
+		damage = damage_to_apply,
+		damage_type = damage_type_to_apply,
 		ability = self:GetAbility(), --Optional.
 	}
 	ApplyDamage(damageTable)

@@ -70,7 +70,21 @@ if IsServer() then
 					stats_parent = 45000 + (parent:GetStrength()/10)
 				end	
 			end	
-			local damage = (self:GetSpecialValueFor("int_multiplier") + bonus_marci_int_mult) * stats_parent
+			local base_damage = (self:GetSpecialValueFor("int_multiplier") + bonus_marci_int_mult) * stats_parent
+
+			-- Level scaling
+			local lvl = parent:GetLevel()
+			local upto_100 = self:GetSpecialValueFor("upto_100") / 100 -- 1% per level up to 100
+			local after_100 = self:GetSpecialValueFor("after_100") / 100 -- 10% per level above 100
+			local level_mult = 1
+			if lvl <= 100 then
+				level_mult = 1 + (lvl * upto_100)
+			else
+				level_mult = 1 + (100 * upto_100) + ((lvl - 100) * after_100)
+			end
+			print("Level Multiplier: " .. level_mult)
+			local damage = base_damage * level_mult
+
 			if not target:HasModifier("modifier_item_blast_staff_debuff") and parent:HasScepter() then				
 				target:AddNewModifier(parent, self, "modifier_item_blast_staff_debuff", {duration = duration})
 			end
@@ -174,7 +188,8 @@ if IsServer() then
 	function modifier_item_blast_staff3_proc:OnAbilityFullyCast(keys)
 		local used_ability = keys.ability
 		local unit = keys.unit
-		if used_ability:GetCooldownTime() <= 0 then return end
+		if not self.parent or not self.ability or not used_ability or not unit then return end
+		if used_ability:GetEffectiveCooldown(used_ability:GetLevel()) <= 0 then return end
 		if not used_ability:IsItem() and not used_ability:IsToggle() and unit == self.parent and used_ability ~= self:GetAbility() then
 			local target = used_ability:GetCursorPosition()
 			local direction = (target - self.parent:GetAbsOrigin()):Normalized()
@@ -203,6 +218,10 @@ if IsServer() then
 			local projID = ProjectileManager:CreateLinearProjectile(projTable)
 			local ability_cd = math.ceil(used_ability:GetCooldown(used_ability:GetLevel()))
 			--print(ability_cd .. " cd")
+			--if ability is "void_spirit_astral_step" then we set 15 sec cd
+			if used_ability:GetName() == "void_spirit_astral_step" then
+				ability_cd = 15
+			end
 			if ability_cd > 3 then
 				local extra_hits = math.ceil(ability_cd / 5)
 				--print(extra_hits .. " extra hits")

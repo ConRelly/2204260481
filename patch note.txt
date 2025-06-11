@@ -3486,10 +3486,16 @@ Build it from all three Lier Scarlet items with the command "-scarlet <number>" 
 
 
 
-
+* Added new Super Scepter effect for Void Spirit Astral Atlas(it has aditional affect on Astral Step)
+* Void spirit Astral Step has an aditional lvl (with ~2x dmg on last lvl), but levels this harder, Astral Atlas base dmg now scales with hero lvl and has more dmg from mana regen.
+* Greater Blast Staff has an extra passive that scales with level
 * Invoker when is using master of weapons sword now it receives back its Exort spheres after illusion use them (they can only exist on one hero), the quas and wex are not copied/taken by sword hero/illusion anymore.
 * Challenge boss now after you reach max tier reward then each extra lvl will count towards a chance to receive Ability random item (1lvl = 1%) , it can go above 100% (so 230 extra lvls = 2 guarantee + 30% chance for another one)
 * Fixed Shadow Fiend missing icon for necronmastery (resuling in inability to swap the skill)
+
+
+
+
 
 
 

@@ -484,10 +484,10 @@
 		"AbilityManaCost"				"200 250 1000"
 		"AbilityValues"
         {
-            "bonus_intellect" "80 350 500"
-            "bonus_strength" "80 350 500"
+            "bonus_intellect" "80 350 700"
+            "bonus_strength" "80 350 700"
             "bonus_agility" "18 65 100"
-            "int_multiplier" "3.5 10 13"
+            "int_multiplier" "3.5 10 19"
             "strikes" "4 5 9"
             "spell_amp" "25 50 100"
         }
@@ -530,10 +530,10 @@
 		"AbilityManaCost"				"200 250 1000"
 		"AbilityValues"
         {
-            "bonus_intellect" "80 350 500"
-            "bonus_strength" "80 350 500"
+            "bonus_intellect" "80 350 700"
+            "bonus_strength" "80 350 700"
             "bonus_agility" "18 65 100"
-            "int_multiplier" "3.5 10 13"
+            "int_multiplier" "3.5 10 19"
             "strikes" "4 5 9"
             "spell_amp" "25 50 100"
         }
@@ -579,16 +579,18 @@
 		"AbilityManaCost"				"200 250 1000"
 		"AbilityValues"
         {
-            "bonus_intellect" "80 350 500"
-            "bonus_strength" "80 350 500"
+            "bonus_intellect" "80 350 700"
+            "bonus_strength" "80 350 700"
             "bonus_agility" "18 65 100"
-            "int_multiplier" "3.5 10 17"
+            "int_multiplier" "3.5 10 19"
             "strikes" "4 5 9"
             "spell_amp" "25 50 100"
             "resist_reduc" "-35"
             "debuff_duration" "1.5"
             "status_resist" "30"
             "mana_bonus" "6200"
+            "upto_100"   "1"
+            "after_100"  "10"
         }
 	}
 

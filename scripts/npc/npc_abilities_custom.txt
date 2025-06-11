@@ -24311,9 +24311,10 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilitySound"					"Hero_VoidSpirit.AstralStep.Start"
+		"HasShardUpgrade"               "1"
 		"AnimationPlaybackRate"			"1.5" // 1.0 corresponds to cast point of 0.3
 		"RequiredLevel"				 "6"
-		"LevelsBetweenUpgrades"		 "9"
+		"LevelsBetweenUpgrades"		 "10"
 		"AbilityCastPoint"				"0.0"
 
 		"AbilityCooldown"				"0.1"
@@ -24339,9 +24340,10 @@
             "min_travel_distance" "200"
             "max_travel_distance" "1100"
             "pop_damage_delay" "0.05"
-            "pop_damage" "1250 2850 4120 6500 11200 21000 42500"
+            "pop_damage" "40 80 160 320 640 1280 2560"
             "movement_slow_pct" "60"
-            "mana_mult" "4 6 8 12 18 26 52"
+            "mana_mult" "6 8 12 18 26 52 73"
+            "ss_aura_range" "3000"
         }
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 

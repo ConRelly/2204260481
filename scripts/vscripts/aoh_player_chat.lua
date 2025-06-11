@@ -738,8 +738,8 @@ function AOHGameMode:OnPlayerChat(keys)
 			end
 			return
 		end	
-		if time > 120 then
-			Notifications:TopToAll({text= time .." min Have passed you can't Challenge " .. name.." if More then 120 min have passed", style={color="red"}, duration=15})
+		if time > 140 then
+			Notifications:TopToAll({text= time .." min Have passed you can't Challenge " .. name.." if More then 140 min have passed", style={color="red"}, duration=15})
 			count = count + 1
 			if count > 8 then
 				self.challenge = true	
