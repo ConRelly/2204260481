@@ -3486,14 +3486,18 @@ Build it from all three Lier Scarlet items with the command "-scarlet <number>" 
 
 
 
-* Added new Super Scepter effect for Void Spirit Astral Atlas(it has aditional affect on Astral Step)
-* Void spirit Astral Step has an aditional lvl (with ~2x dmg on last lvl), but levels this harder, Astral Atlas base dmg now scales with hero lvl and has more dmg from mana regen.
-* Greater Blast Staff has an extra passive that scales with level
-* Invoker when is using master of weapons sword now it receives back its Exort spheres after illusion use them (they can only exist on one hero), the quas and wex are not copied/taken by sword hero/illusion anymore.
-* Challenge boss now after you reach max tier reward then each extra lvl will count towards a chance to receive Ability random item (1lvl = 1%) , it can go above 100% (so 230 extra lvls = 2 guarantee + 30% chance for another one)
-* Fixed Shadow Fiend missing icon for necronmastery (resuling in inability to swap the skill)
 
 
+
+* A new Super Scepter effect has been added for the Void Spirit, Astral Atlas (it has an additional effect on Astral Step).
+* Void Spirit Astral Step now has an additional level (with ~2x damage on the last level), but it is harder to level up. Astral Atlas's base damage now scales with hero level and deals more damage from mana regeneration, but it needs more levels to max out.
+* Greater Blast Staff has an additional passive that scales with level.
+* Invoker now receives back its Exort spheres after an illusion uses them when using master of weapons sword (they can only exist on one hero). The Quas and Wex are not copied or taken by the Sword Hero/Illusion anymore.
+* Challenge bosses now award Ability random item for each extra level after reaching the maximum tier reward. The chance to receive an item increases by 1% for each level, and it can exceed 100% (e.g., 230 extra levels = 2 guaranteed items + a 30% chance for a third item).
+* Ballista now has a new command to save charges ("-saveballista"). The next Ballista upgrade or the next non-neutral Ballista will inherit the saved charges. Be careful when buying a neutral Ballista from 0.
+* Fixed the Shadow Fiend's missing icon for Necronmastery, which resulted in an inability to swap the skill.
+* Neutral Ballista and Neutral Apex now auto unequip and equip on the first buy to apply the bonuses (before, you had to do that manually; it is a Dota "bug" because they are upgrades of the same equipped item).
+* Some items were moved from the shop to better fit the "secret shop" section.
 
 
 

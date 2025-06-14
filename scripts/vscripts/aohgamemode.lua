@@ -151,6 +151,9 @@ function AOHGameMode:InitGameMode()
 	_G.totem_aura_check = true
 	_G.evolution_bow_first_option = true
 	_G._second_random_op = true
+	_G.saved_ballista_stacks = _G.saved_ballista_stacks or {}
+	_G.saved_ballista_items = {}
+	_G._saved_ballista_Load_items = {}
 	self._hardMode = false
 	self._endlessMode = false
 	self._endlessMode_started = false

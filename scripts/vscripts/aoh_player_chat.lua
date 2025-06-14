@@ -7,6 +7,7 @@ local count = 0
 local count2 = 0
 local count3 = 4
 local kardel_item = true
+
 function AOHGameMode:OnPlayerChat(keys)
 	local time = math.floor(GameRules:GetGameTime() / 60)
 	if keys.text == "-hard" and not self._hardMode and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
@@ -522,29 +523,118 @@ function AOHGameMode:OnPlayerChat(keys)
 		end
 	end
 	
+
+	if keys.text == "-saveballista" then
+		local playerID = keys.playerid
+		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+
+		if hero and IsValidEntity(hero) then
+			local best_item = nil
+			local max_stacks = -1
+			local best_slot = -1
+
+			-- Check normal inventory slots (0-8)
+			for i = 0, 8 do
+				local item = hero:GetItemInSlot(i)
+				if item and (item:GetName() == "item_custom_ballista" or item:GetName() == "item_custom_ballista_2") then
+					-- Only allow if the item's owner is the hero
+					if item:GetOwner() == hero then
+						local current_stacks = item:GetCurrentCharges()
+						if current_stacks > max_stacks then
+							max_stacks = current_stacks
+							best_item = item
+							best_slot = i
+						end
+					end
+				end
+			end
+
+			-- Check neutral slot (16)
+			local neutral_item = hero:GetItemInSlot(16)
+			if neutral_item and (neutral_item:GetName() == "item_custom_ballista" or neutral_item:GetName() == "item_custom_ballista_2") then
+				if neutral_item:GetOwner() == hero then
+					local current_stacks = neutral_item:GetCurrentCharges()
+					-- Prioritize neutral slot if stacks are equal or higher than current best in normal slots
+					if current_stacks >= max_stacks then
+						max_stacks = current_stacks
+						best_item = neutral_item
+						best_slot = 16
+					end
+				end
+			end
+
+			if best_item then
+				_G.saved_ballista_stacks[playerID] = {
+					item_name = "ballista_saved_stacks",
+					stacks = max_stacks
+				}
+				-- Mark the item as saved by storing a reference
+				best_item:SetShareability(ITEM_NOT_SHAREABLE)
+				_G.saved_ballista_items = _G.saved_ballista_items or {}
+				_G.saved_ballista_items[playerID] = best_item
+				-- Mark the item as "saved" (custom property for later check)
+				best_item._is_saved_ballista = true
+
+				Notifications:Top(playerID, {text="Saved Ballista charges: "..max_stacks.." from slot "..best_slot+1 ..". Item is now non-sharable. Your next upgrade will inherit the charges(only next one)", style={color="green"}, duration=12})
+			else
+				Notifications:Top(playerID, {text="No Ballista found in inventory to save charges from (must be owned by you).", style={color="red"}, duration=7})
+			end
+		else
+			Notifications:Top(playerID, {text="Could not find your hero.", style={color="red"}, duration=5})
+		end
+	end
+
+	-- Modify -ballista command to check for saved ballista and cap reward if needed
 	if keys.text == "-ballista" then
 		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
 		if hero:IsAlive() and IsValidEntity(hero) then
 			-- Check for item_custom_ballista_2 only in neutral slot (16)
 			local item = hero:GetItemInSlot(16)
+			local is_saved = false
 			if item and item:GetName() == "item_custom_ballista_2" then
-				local charges = item:GetCurrentCharges() * 7
+				-- Check if this item is the saved one (by reference) or marked as saved
+				if (item._is_saved_ballista == true) or (_G.saved_ballista_items and _G.saved_ballista_items[keys.playerid] == item) then
+					is_saved = true
+				end
+				local charges = item:GetCurrentCharges()
+				if is_saved then
+					charges = math.min(charges, 9)
+				end
+				local stat_gain = charges * 7
 				hero:TakeItem(item)
-				hero:ModifyAgility(charges)
-				hero:ModifyStrength(charges)
-				hero:ModifyIntellect(charges)
-				Notifications:Top(keys.playerid, {text="Gained +"..charges.." to all stats from Ballista Neutral!", style={color="yellow"}, duration=6})
+				hero:ModifyAgility(stat_gain)
+				hero:ModifyStrength(stat_gain)
+				hero:ModifyIntellect(stat_gain)
+				if is_saved then
+					Notifications:Top(keys.playerid, {text="Gained +"..stat_gain.." to all stats from Saved Ballista Neutral! (max 8 charges from Saved Ballista)", style={color="yellow"}, duration=6})
+					
+				else
+					Notifications:Top(keys.playerid, {text="Gained +"..stat_gain.." to all stats from Ballista Neutral!", style={color="yellow"}, duration=6})
+				end
 			else
 				-- Check for item_custom_ballista only in main inventory slots (0-5)
 				for i = 0, 5 do
 					local inv_item = hero:GetItemInSlot(i)
 					if inv_item and inv_item:GetName() == "item_custom_ballista" then
-						local charges = inv_item:GetCurrentCharges() * 5
+						local is_saved = false
+						if (inv_item._is_saved_ballista == true) or (_G.saved_ballista_items and _G.saved_ballista_items[keys.playerid] == inv_item) then
+							is_saved = true
+						end
+						local charges = inv_item:GetCurrentCharges()
+						if is_saved then
+							charges = math.min(charges, 8)
+						end
+						local stat_gain = charges * 5
 						hero:TakeItem(inv_item)
-						hero:ModifyAgility(charges)
-						hero:ModifyStrength(charges)
-						hero:ModifyIntellect(charges)
-						Notifications:Top(keys.playerid, {text="Gained +"..charges.." to all stats from Ballista!", style={color="yellow"}, duration=6})
+						hero:ModifyAgility(stat_gain)
+						hero:ModifyStrength(stat_gain)
+						hero:ModifyIntellect(stat_gain)
+						if is_saved then
+							Notifications:Top(keys.playerid, {text="Gained +"..stat_gain.." to all stats from Saved Ballista! (max 9 charges)", style={color="yellow"}, duration=6})
+							
+						else
+							Notifications:Top(keys.playerid, {text="Gained +"..stat_gain.." to all stats from Ballista!", style={color="yellow"}, duration=6})
+						end
 						break
 					end
 				end

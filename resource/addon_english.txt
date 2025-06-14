@@ -5106,9 +5106,9 @@
 "DOTA_Tooltip_Ability_item_custom_apex_2_Description"		"Increases your primary attribute by %primary_stat_percent%%% Or for universal heroes all Stats."
 
 "DOTA_Tooltip_Ability_item_custom_ballista"						"Ballista"
-"DOTA_Tooltip_Ability_item_custom_ballista_Description"			"<h1>Passive: Precision</h1>Every %chance% hits will to deal %bonus_damage% pure damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Get a random number of Charges on Creation. All item stats and effects except Attack Range gets multiplied by charges, regardless if you have SS buff."
+"DOTA_Tooltip_Ability_item_custom_ballista_Description"			"<h1>Passive: Precision</h1>Every %chance% hits will to deal %bonus_damage% pure damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Get a random number of Charges on Creation. All item stats and effects except Attack Range gets multiplied by charges, regardless if you have SS buff.\n You can save the charges value (<font color='#F38F07'>-saveballista</font>) and it will be applied to your neutral upgrade or next non neutral balista created"
 "DOTA_Tooltip_Ability_item_custom_ballista_Lore"			"It actually does work on melee."
-"DOTA_Tooltip_Ability_item_custom_ballista_Note0"           "Type '-ballista' to Delete the item from normal inventory slot and gain 5 base All stats x item charges(7 for neutral one), command seachers for neutral slot first to delete"
+"DOTA_Tooltip_Ability_item_custom_ballista_Note0"           "Type '-ballista' to Delete the item from normal inventory slot and gain 5 base All stats x item charges(7 for neutral one), command seachers for neutral slot first to delete<br>A saved or a loaded balista gives a limited stats reward on delete(like having 8 charges)"
 "DOTA_Tooltip_Ability_item_custom_ballista_bonus_strength"		"+$str"
 "DOTA_Tooltip_Ability_item_custom_ballista_bonus_agility"		"+$agi"
 "DOTA_Tooltip_Ability_item_custom_ballista_bonus_intellect"		"+$int"
@@ -5118,9 +5118,9 @@
 
 
 "DOTA_Tooltip_Ability_item_custom_ballista_2"						"Ballista Neutral"
-"DOTA_Tooltip_Ability_item_custom_ballista_2_Description"			"<h1>Passive: Precision</h1>Every %chance% hits will to deal %bonus_damage% pure damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Get a random number of Charges on Creation. All item stats and effects except Attack Range gets multiplied by charges, regardless if you have SS buff."
+"DOTA_Tooltip_Ability_item_custom_ballista_2_Description"			"<h1>Passive: Precision</h1>Every %chance% hits will to deal %bonus_damage% pure damage.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Get a random number of Charges on Creation. All item stats and effects except Attack Range gets multiplied by charges, regardless if you have SS buff.\n You can save the charges value (<font color='#F38F07'>-saveballista</font>) and it will be applied to your neutral upgrade or next non neutral balista created"
 "DOTA_Tooltip_Ability_item_custom_ballista_2_Lore"			"It actually does work on melee."
-"DOTA_Tooltip_Ability_item_custom_ballista_2_Note0"           "Type '-ballista' to Delete the item from neutral slot and gain 7 base All stats x item charges"
+"DOTA_Tooltip_Ability_item_custom_ballista_2_Note0"           "Type '-ballista' to Delete the item from neutral slot and gain 7 base All stats x item chargesa <br> A saved or a loaded balista gives a limited stats reward on delete(like having 9 charges) and can't be shared to other players anymore"
 "DOTA_Tooltip_Ability_item_custom_ballista_2_bonus_strength"		"+$str"
 "DOTA_Tooltip_Ability_item_custom_ballista_2_bonus_agility"		"+$agi"
 "DOTA_Tooltip_Ability_item_custom_ballista_2_bonus_intellect"		"+$int"

@@ -5,21 +5,58 @@ function item_custom_ballista:GetIntrinsicModifierName() return "modifier_item_c
 function item_custom_ballista:Spawn()
 	if IsServer() then
 		local caster = self:GetParent()
+		local playerID = caster:GetPlayerID()
+		local saved_data = _G.saved_ballista_stacks[playerID]
 		local stacks = 1
+
 		self:SetCurrentCharges(1)
-		if caster:HasModifier("modifier_super_scepter") then
-			self:SetPurchaseTime(0)
-			if RollPercentage(2) then
-				stacks = RandomInt(10, 35)
-			elseif RollPercentage(7) then
-				stacks = RandomInt(9, 25)
-			elseif RollPercentage(15) then
-				stacks = RandomInt(8, 18)
-			else
-				stacks = RandomInt(4, 12)
-			end	
-			self:SetCurrentCharges(stacks)
-		end	
+
+		-- Check for saved ballista stacks using the generic identifier
+		if saved_data and saved_data.item_name == "ballista_saved_stacks" then
+			stacks = saved_data.stacks
+			_G.saved_ballista_stacks[playerID] = nil -- Clear saved stacks after use
+			Notifications:Top(playerID, {text="Applied saved Ballista stacks: "..stacks, style={color="green"}, duration=7})
+
+			-- Mark this item as having loaded saved stacks
+			self._is_saved_ballista = true
+			_G.saved_ballista_items = _G.saved_ballista_items or {}
+			_G.saved_ballista_items[playerID] = self
+
+			-- Make the item non-sharable after applying saved stacks
+			self:SetShareability(ITEM_NOT_SHAREABLE)
+		else
+			-- Existing logic for rolling random stacks
+			if caster:HasModifier("modifier_super_scepter") then
+				self:SetPurchaseTime(0)
+				if RollPercentage(1) then
+					stacks = RandomInt(15, 40)
+				elseif RollPercentage(2) then
+					stacks = RandomInt(10, 30)
+				elseif RollPercentage(7) then
+					stacks = RandomInt(9, 25)
+				elseif RollPercentage(15) then
+					stacks = RandomInt(8, 18)
+				else
+					stacks = RandomInt(4, 12)
+				end
+			end
+		end
+
+		self:SetCurrentCharges(stacks)
+		-- trigger drop and pickup of the item with delay to apply the modifier if it is item_custom_ballista_2
+		if self:GetName() == "item_custom_ballista_2" then
+			Timers:CreateTimer(0.1, function()
+				if IsValidEntity(caster) and caster:IsAlive() and IsValidEntity(self) then
+					caster:DropItemAtPositionImmediate(self, caster:GetAbsOrigin())
+					Timers:CreateTimer(0.1, function()
+						if IsValidEntity(self) and IsValidEntity(caster) and caster:IsAlive() then
+							caster:PickupDroppedItem(self:GetContainer())
+						end
+					end)
+				end
+			end)
+		end
+	
 	end
 end
 
