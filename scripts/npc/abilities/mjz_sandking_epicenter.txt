@@ -6,7 +6,7 @@
 	{
 		"BaseClass"						"ability_lua"	// "ability_datadriven"
 		"ScriptFile"					"abilities/hero_sand_king/mjz_sandking_epicenter.lua"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -100,7 +100,7 @@
 	"special_bonus_unique_mjz_sandking_epicenter_pulses"
 	{
 		"BaseClass"						"special_bonus_undefined"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		"AbilitySpecial"
@@ -115,7 +115,7 @@
 	"special_bonus_unique_mjz_sandking_epicenter_strength"
 	{
 		"BaseClass"						"special_bonus_undefined"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		"AbilitySpecial"

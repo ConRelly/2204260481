@@ -3500,6 +3500,9 @@ Build it from all three Lier Scarlet items with the command "-scarlet <number>" 
 * Some items were moved from the shop to better fit the "secret shop" section.
 
 
+* Added vanila Dazzle innate back to the hero and sligly buffed its talent and normal values. 
+
+
 
 
 

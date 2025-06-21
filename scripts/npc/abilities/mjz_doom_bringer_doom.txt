@@ -6,7 +6,7 @@
 	{
 		"BaseClass"						"ability_lua"	// "ability_datadriven"
 		"ScriptFile"					"abilities/hero_doom_bringer/mjz_doom_bringer_doom.lua"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -91,7 +91,7 @@
 	"special_bonus_unique_mjz_doom_bringer_doom_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		"AbilitySpecial"

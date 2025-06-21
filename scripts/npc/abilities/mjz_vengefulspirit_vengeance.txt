@@ -7,7 +7,7 @@
 		"BaseClass"						"ability_lua"	// "ability_datadriven"
 		"ScriptFile"					"abilities/hero_vengefulspirit/mjz_vengefulspirit_vengeance.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityTextureName"			"mjz_vengefulspirit_vengeance"
 		

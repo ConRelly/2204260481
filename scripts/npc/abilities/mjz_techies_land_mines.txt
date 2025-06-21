@@ -76,7 +76,7 @@
     "special_bonus_unique_mjz_techies_land_mines_int_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{

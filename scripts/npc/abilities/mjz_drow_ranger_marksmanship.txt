@@ -6,7 +6,7 @@
 	{
 		"BaseClass"						"ability_lua"	// "ability_datadriven"
 		"ScriptFile"					"abilities/hero_drow_ranger/mjz_drow_ranger_marksmanship.lua"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"

@@ -7,7 +7,7 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"lua_abilities/ogre_magi_multicast_lua/ogre_magi_multicast_lua"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"ogre_magi_multicast_lua"
 		"MaxLevel"						"5"

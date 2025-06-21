@@ -7,7 +7,7 @@
 		"BaseClass"						"ability_lua"	// "ability_datadriven"
 		"ScriptFile"					"abilities/hero_naga_siren/mjz_naga_siren_song_of_the_siren.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityTextureName"			"mjz_naga_siren_song_of_the_siren"
@@ -69,7 +69,7 @@
 		"BaseClass"						"ability_lua"	// "ability_datadriven"
 		"ScriptFile"					"abilities/hero_naga_siren/mjz_naga_siren_song_of_the_siren_cancel.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilityTextureName"			"mjz_naga_siren_song_of_the_siren_cancel"
 		"MaxLevel"						"1"
 		

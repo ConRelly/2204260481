@@ -43,7 +43,7 @@
     "special_bonus_unique_mjz_shredder_reactive_armor_limit"
 	{
 		"BaseClass"						"special_bonus_undefined"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		
 		"AbilitySpecial"

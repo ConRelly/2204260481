@@ -3,7 +3,7 @@
 	"special_bonus_hp_1500"
 	{
 		"BaseClass"						"special_bonus_hp_150"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -13,7 +13,7 @@
 	"special_bonus_hp_1750"
 	{
 		"BaseClass"						"special_bonus_hp_150"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -23,7 +23,7 @@
 	"special_bonus_hp_2000"
 	{
 		"BaseClass"						"special_bonus_hp_150"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -33,7 +33,7 @@
 	"special_bonus_hp_2250"
 	{
 		"BaseClass"						"special_bonus_hp_150"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -43,7 +43,7 @@
 	"special_bonus_hp_2500"
 	{
 		"BaseClass"						"special_bonus_hp_150"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -53,7 +53,7 @@
 	"special_bonus_hp_2750"
 	{
 		"BaseClass"						"special_bonus_hp_150"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -63,7 +63,7 @@
 	"special_bonus_hp_3000"
 	{
 		"BaseClass"						"special_bonus_hp_150"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -73,7 +73,7 @@
 	"special_bonus_hp_3250"
 	{
 		"BaseClass"						"special_bonus_hp_150"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -83,7 +83,7 @@
 	"special_bonus_hp_3500"
 	{
 		"BaseClass"						"special_bonus_hp_150"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -93,7 +93,7 @@
 	"special_bonus_hp_4000"
 	{
 		"BaseClass"						"special_bonus_hp_150"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -103,7 +103,7 @@
 	"special_bonus_hp_4500"
 	{
 		"BaseClass"						"special_bonus_hp_150"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -113,7 +113,7 @@
 	"special_bonus_hp_5000"
 	{
 		"BaseClass"						"special_bonus_hp_150"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -123,7 +123,7 @@
 	"special_bonus_hp_5500"
 	{
 		"BaseClass"						"special_bonus_hp_150"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -133,7 +133,7 @@
 	"special_bonus_hp_6000"
 	{
 		"BaseClass"						"special_bonus_hp_150"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {

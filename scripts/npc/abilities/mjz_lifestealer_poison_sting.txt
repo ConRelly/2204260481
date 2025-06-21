@@ -44,7 +44,7 @@
 	{
 		"BaseClass"				"special_bonus_undefined"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"			"ABILITY_TYPE_ATTRIBUTES"
 		"AbilitySpecial"
 		{
 			"01"

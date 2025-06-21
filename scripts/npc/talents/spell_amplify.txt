@@ -3,7 +3,7 @@
 	"special_bonus_spell_amplify_30"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -13,7 +13,7 @@
 	"special_bonus_spell_amplify_35"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -23,7 +23,7 @@
 	"special_bonus_spell_amplify_40"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -33,7 +33,7 @@
 	"special_bonus_spell_amplify_45"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -43,7 +43,7 @@
 	"special_bonus_spell_amplify_65"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -53,7 +53,7 @@
 	"special_bonus_spell_amplify_69"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -63,7 +63,7 @@
 	"special_bonus_spell_amplify_70"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -73,7 +73,7 @@
 	"special_bonus_spell_amplify_75"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -83,7 +83,7 @@
 	"special_bonus_spell_amplify_90"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -93,7 +93,7 @@
 	"special_bonus_spell_amplify_125"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -103,7 +103,7 @@
 	"special_bonus_spell_amplify_225"
 	{
 		"BaseClass"						"special_bonus_spell_amplify_5"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {

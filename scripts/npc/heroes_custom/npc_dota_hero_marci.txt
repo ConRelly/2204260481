@@ -70,7 +70,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"2"
@@ -294,7 +294,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
@@ -315,7 +315,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
@@ -336,7 +336,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"					"special_bonus_base"
 	}
@@ -348,7 +348,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
@@ -369,7 +369,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
@@ -390,7 +390,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
@@ -411,7 +411,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
@@ -432,7 +432,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
@@ -453,7 +453,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 
 		"AbilitySpecial"
@@ -471,7 +471,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"special_bonus_base"
 
@@ -482,7 +482,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"special_bonus_base"
 
@@ -493,7 +493,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"special_bonus_base"
 
@@ -504,7 +504,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"special_bonus_base"
 	}
@@ -512,7 +512,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"special_bonus_base"
 
@@ -522,7 +522,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"							"special_bonus_base"
 

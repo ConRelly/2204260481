@@ -5,7 +5,7 @@
 		"ScriptFile"					"abilities/hero_tinker/mjz_tinker_quick_arm.lua"
 		"AbilityTextureName"			"mjz_tinker_quick_arm"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilitySound"					"Hero_Tinker.Rearm"
 
 		"AbilityCastPoint"				"0.53 0.53 0.53 0.53"

@@ -44,7 +44,7 @@
 	"special_bonus_sniper_shoot_bullet_dmg"
 	{
 		"BaseClass"					"special_bonus_undefined"
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -79,7 +79,7 @@
 	"special_bonus_kardel_reloading"
 	{
 		"BaseClass"					"special_bonus_undefined"
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -135,7 +135,7 @@
 	"special_bonus_pocket_portal_evasion"
 	{
 		"BaseClass"					"special_bonus_undefined"
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -146,7 +146,7 @@
 	"special_bonus_pocket_portal_cooldown"
 	{
 		"BaseClass"					"special_bonus_undefined"
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -176,7 +176,7 @@
 	"special_bonus_kardels_skills_dmg"
 	{
 		"BaseClass"					"special_bonus_undefined"
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -186,7 +186,7 @@
 	"special_bonus_kardels_skills_atr_gain"
 	{
 		"BaseClass"					"special_bonus_undefined"
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
@@ -202,7 +202,7 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/hero_kardel/abilities"
 		"AbilityTextureName"			"custom/abilities/hunting_mark"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -227,7 +227,7 @@
 	"special_bonus_hunting_mark_direct_shot_bonus"
 	{
 		"BaseClass"					"special_bonus_undefined"
-		"AbilityType"				"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {

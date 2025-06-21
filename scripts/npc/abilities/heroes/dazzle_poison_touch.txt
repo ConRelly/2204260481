@@ -50,8 +50,8 @@
       "targets"         "0"
       "damage"
       { 
-        "value"     "120 860 1880 3960 9320 14200"
-        "special_bonus_unique_dazzle_3" "+16200"
+        "value"     "860 1880 3960 9320 14200 52000"
+        "special_bonus_unique_dazzle_3" "+22500"
       }
       "slow"
       { 
@@ -61,7 +61,7 @@
       "projectile_speed"  "1300"
       "duration"    "4 5 6 7 8 9 15"
       "bonus_damage"      "0"
-      "bonus_slow"      "-2 -2.5 -3 -3.5"
+      "bonus_slow"      "0"
       "hex_duration"
       { 
         "value"           "0"

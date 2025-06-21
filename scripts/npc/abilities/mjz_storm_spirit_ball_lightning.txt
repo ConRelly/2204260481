@@ -4,7 +4,7 @@
 		"BaseClass"						"ability_lua"	//"ability_datadriven"
 		"ScriptFile"					"abilities/hero_storm_spirit/mjz_storm_spirit_ball_lightning.lua"
 		"AbilityTextureName"			"mjz_storm_spirit_ball_lightning"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
@@ -112,7 +112,7 @@
 	"special_bonus_unique_mjz_storm_spirit_ball_lightning_01"
 	{
 		"BaseClass"						"special_bonus_undefined"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{

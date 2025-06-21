@@ -4,7 +4,7 @@
     "BaseClass"                     "ability_datadriven"
     "AbilityTextureName"            "sniper_assassinate"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-    "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+    "AbilityType"					"ABILITY_TYPE_ULTIMATE"
     "AbilityCooldown"               "0.0"
     "AbilityDamage"                 "0"
     "AbilityManaCost"               "0"
@@ -84,7 +84,7 @@
 "special_custom_bonus_unique_sniper_1"
 {
     "BaseClass"				"special_bonus_undefined"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilitySpecial"
 	{

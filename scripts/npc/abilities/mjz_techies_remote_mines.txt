@@ -4,7 +4,7 @@
 		"BaseClass"		            "ability_lua"
 		"ScriptFile"		        "abilities/hero_techies/mjz_techies_remote_mines.lua"
 		"AbilityTextureName"		"techies_remote_mines"
-        "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+        "AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"		    "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
@@ -104,7 +104,7 @@
     "special_bonus_unique_mjz_techies_remote_mines_int_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{

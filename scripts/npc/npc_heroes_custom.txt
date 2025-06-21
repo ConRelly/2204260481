@@ -1810,10 +1810,11 @@
 
 		"Ability3"              "big_thunder_lizard_wardrums_aura"
 		"Ability6"				"mjz_magnataur_reverse_polarity"
+		"Ability10"             "special_bonus_cdr_15"
 		"Ability12"				"special_bonus_strength_220"
-		"Ability14"				"special_bonus_hp_3500"
 		"Ability13"             "special_bonus_mp_400"
-		"Ability15"				"special_bonus_unique_magnus"
+		"Ability14"				"special_bonus_unique_magnus"
+		"Ability15"				"special_bonus_hp_3500"
 		"Ability17"				"special_bonus_spell_amplify_100"
 
 		"AttributeStrengthGain"		"89.6"
@@ -2549,6 +2550,7 @@
 		//"Ability5"		"dazzle_good_juju"
 		//"Ability5"		"generic_hidden"
 		//"Ability6"		"dazzle_bad_juju_custom"
+		"Ability8"		"dazzle_innate_weave"
 		"Ability10"		"special_bonus_gold_income_420"
 		"Ability11"		"special_bonus_hp_2000"
 		"Ability12"		"special_bonus_magic_resistance_25"

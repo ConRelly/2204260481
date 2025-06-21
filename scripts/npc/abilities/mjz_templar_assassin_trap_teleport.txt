@@ -4,7 +4,7 @@
 		"BaseClass"						"ability_lua"	// "ability_datadriven"
 		"ScriptFile"					"abilities/hero_templar_assassin/mjz_templar_assassin_trap_teleport.lua"
 		"AbilityTextureName"			"mjz_templar_assassin_trap_teleport"
-        "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+        "AbilityType"					"ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"

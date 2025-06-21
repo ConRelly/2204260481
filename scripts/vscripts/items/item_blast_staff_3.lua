@@ -82,7 +82,6 @@ if IsServer() then
 			else
 				level_mult = 1 + (100 * upto_100) + ((lvl - 100) * after_100)
 			end
-			print("Level Multiplier: " .. level_mult)
 			local damage = base_damage * level_mult
 
 			if not target:HasModifier("modifier_item_blast_staff_debuff") and parent:HasScepter() then				

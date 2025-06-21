@@ -3,7 +3,7 @@
 	"special_bonus_strength_160"
 	{
 		"BaseClass"						"special_bonus_base"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
 		"AbilityValues"
@@ -14,7 +14,7 @@
 	"special_bonus_strength_180"
 	{
 		"BaseClass"						"special_bonus_base"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
 		"AbilityValues"
@@ -25,7 +25,7 @@
 	"special_bonus_strength_190"
 	{
 		"BaseClass"						"special_bonus_base"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
 		"AbilityValues"
@@ -36,7 +36,7 @@
 	"special_bonus_strength_200"
 	{
 		"BaseClass"						"special_bonus_base"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
 		"AbilityValues"
@@ -47,7 +47,7 @@
 	"special_bonus_strength_220"
 	{
 		"BaseClass"						"special_bonus_base"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
 		"AbilityValues"
@@ -58,7 +58,7 @@
 	"special_bonus_strength_230"
 	{
 		"BaseClass"						"special_bonus_base"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
 		"AbilityValues"
@@ -69,7 +69,7 @@
 	"special_bonus_strength_250"
 	{
 		"BaseClass"						"special_bonus_base"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
 		"AbilityValues"
@@ -80,7 +80,7 @@
 	"special_bonus_strength_260"
 	{
 		"BaseClass"						"special_bonus_base"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
 		"AbilityValues"
@@ -91,7 +91,7 @@
 	"special_bonus_strength_280"
 	{
 		"BaseClass"						"special_bonus_base"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
 		"AbilityValues"
@@ -102,7 +102,7 @@
 	"special_bonus_strength_400"
 	{
 		"BaseClass"						"special_bonus_base"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
 		"AbilityValues"
@@ -113,7 +113,7 @@
 	"special_bonus_strength_450"
 	{
 		"BaseClass"						"special_bonus_base"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
 		"AbilityValues"
@@ -124,7 +124,7 @@
 	"special_bonus_strength_500"
 	{
 		"BaseClass"						"special_bonus_base"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
 		"AbilityValues"
@@ -135,7 +135,7 @@
 	"special_bonus_strength_820"
 	{
 		"BaseClass"						"special_bonus_base"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpecialBonusIntrinsicModifier" "modifier_special_bonus_strength"
 		"AbilityValues"

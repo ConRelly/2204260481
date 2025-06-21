@@ -210,7 +210,7 @@
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityType"						"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityType"						"ABILITY_TYPE_ULTIMATE"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
