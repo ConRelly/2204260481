@@ -3505,6 +3505,9 @@ Build it from all three Lier Scarlet items with the command "-scarlet <number>" 
 * Added vanila Dazzle innate back to the hero and sligly buffed its talent and normal values. 
 
 
+* Fixed void spirit crit talent from 140%(default)  back to 9550% (report on discord if you find heroes with talents reverted to default numbers)
+* Ballista max charges from 35 to 40 (implemented in previus update)
+
 
 
 
