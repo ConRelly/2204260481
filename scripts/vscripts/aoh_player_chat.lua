@@ -836,7 +836,9 @@ function AOHGameMode:OnPlayerChat(keys)
 			end	
 		else
 
-			CreateUnitByName(unit, plyhero:GetAbsOrigin() + RandomVector(RandomFloat(200, 1000)) , true, nil, nil, DOTA_TEAM_BADGUYS)
+			CreateUnitByNameAsync(unit, plyhero:GetAbsOrigin() + RandomVector(RandomFloat(200, 1000)), true, nil, nil, DOTA_TEAM_BADGUYS, function(createdUnit)
+				-- You can add any callback logic here if needed
+			end)
 			Notifications:TopToAll({text="Challenge " .. name.." reach lvl 400(or 150 for part 1) for max(tier 5) reward , then you get a Chance for item Random Ability based on bonus level.", style={color="blue"}, duration=10})
 			self.challenge = true
 		end	

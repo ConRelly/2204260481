@@ -18,7 +18,12 @@ function Wearables:Precache_Resource( context )
     PrecacheResource("particle_folder", "particles/units/heroes/hero_phantom_assassin", context)
     PrecacheResource("particle_folder", "particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith", context)
     PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts", context)
-
+    --huskar new
+    PrecacheResource("model", "models/items/huskar/ti9_cache_huskar_baptism_of_melting_fire_arms/ti9_cache_huskar_baptism_of_melting_fire_arms.vmdl", context)
+    PrecacheResource("model", "models/items/huskar/searing_dominator/searing_dominator.vmdl", context)
+    PrecacheResource("model", "models/items/huskar/huskar_ti8_immortal_shoulders/huskar_ti8_immortal_shoulders.vmdl", context)
+    PrecacheResource("model", "models/items/huskar/ti9_cache_huskar_baptism_of_melting_fire_weapon/ti9_cache_huskar_baptism_of_melting_fire_weapon.vmdl", context)
+    PrecacheResource("model", "models/items/huskar/ti9_cache_huskar_baptism_of_melting_fire_off_hand/ti9_cache_huskar_baptism_of_melting_fire_off_hand.vmdl", context)
 end
 
 function Wearables:PA( npc )

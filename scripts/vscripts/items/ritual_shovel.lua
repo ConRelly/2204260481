@@ -29,6 +29,21 @@ end
 function item_ritual_shovel:OnChannelThink(fInterval) if not IsServer() then return end end
 function item_ritual_shovel:OnChannelFinish(bInterrupted)
 	if not IsServer() then return end
+	--[[
+	How to convert CreateUnitByName to CreateUnitByNameAsync:
+
+	- Synchronous version:
+	local unit = CreateUnitByName(unitName, position, findClearSpace, npcOwner, entityOwner, team)
+	-- code that uses 'unit'
+
+	- Asynchronous version:
+	CreateUnitByNameAsync(unitName, position, findClearSpace, npcOwner, entityOwner, team, function(unit)
+		-- code that uses 'unit'
+	end)
+
+	If no code uses the created unit, the callback can be nil:
+	CreateUnitByNameAsync(unitName, position, findClearSpace, npcOwner, entityOwner, team, nil)
+	]]
 	local hp_loss = self:GetSpecialValueFor("hp_loss")
 	local hp_per_stack = self:GetSpecialValueFor("hp_per_stack")
 	hp_loss = (hp_loss + (hp_per_stack * self:GetCaster():FindModifierByName("modifier_shovel_curse"):GetStackCount()))-- * (1 + self:GetCaster():GetSpellAmplification(false))
@@ -130,28 +145,38 @@ function item_ritual_shovel:OnChannelFinish(bInterrupted)
 		elseif random_int > self.book_of_stats and random_int <= self.kobold then
 			if chen_first_spawn and self:GetCaster():GetName() == "npc_dota_hero_chen" then
 				chen_first_spawn = false
-				local huskar = CreateUnitByName("npc_dota_custom_creep_28_3", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_BADGUYS)
-				local lvl = self:GetCaster():GetLevel()
-				huskar:SetBaseDamageMax(lvl * 500)
-				if lvl > 65 then
-					lvl = lvl * 10
-				end
-				huskar:SetBaseMaxHealth(lvl * 1000)
+				local pos = self:GetCursorPosition()
+				local caster = self:GetCaster()
+				CreateUnitByNameAsync("npc_dota_custom_creep_28_3", pos, true, nil, nil, DOTA_TEAM_BADGUYS, function(huskar)
+					if huskar and not huskar:IsNull() and caster and not caster:IsNull() and caster:IsHero() and caster:IsAlive() then
+						local lvl = caster:GetLevel()
+						huskar:SetBaseDamageMax(lvl * 500)
+						if lvl > 65 then
+							lvl = lvl * 10
+						end
+						huskar:SetBaseMaxHealth(lvl * 1000)
+					end
+				end)
 				
 			elseif RollPseudoRandom(80, self) then
-				CreateUnitByName("npc_dota_neutral_kobold", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_BADGUYS)
+				CreateUnitByNameAsync("npc_dota_neutral_kobold", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_BADGUYS, nil)
 			else
 				local random_ultracreep = RandomInt(1, 2)
 				if random_ultracreep <= 1 then
-					local huskar = CreateUnitByName("npc_dota_custom_creep_28_3", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_BADGUYS)
-					local lvl = self:GetCaster():GetLevel()
-					huskar:SetBaseDamageMax(lvl * 500)
-					if lvl > 65 then
-						lvl = lvl * 10
-					end
-					huskar:SetBaseMaxHealth(lvl * 1000)
+					local pos = self:GetCursorPosition()
+					local caster = self:GetCaster()
+					CreateUnitByNameAsync("npc_dota_custom_creep_28_3", pos, true, nil, nil, DOTA_TEAM_BADGUYS, function(huskar)
+						if huskar and not huskar:IsNull() and caster and not caster:IsNull() and caster:IsHero() and caster:IsAlive() then
+							local lvl = caster:GetLevel()
+							huskar:SetBaseDamageMax(lvl * 500)
+							if lvl > 65 then
+								lvl = lvl * 10
+							end
+							huskar:SetBaseMaxHealth(lvl * 1000)
+						end
+					end)
 				elseif random_ultracreep == 2 then
-					CreateUnitByName("npc_dota_inv_warrior", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_BADGUYS)
+					CreateUnitByNameAsync("npc_dota_inv_warrior", self:GetCursorPosition(), true, nil, nil, DOTA_TEAM_BADGUYS, nil)
 				end
 			end
 		end

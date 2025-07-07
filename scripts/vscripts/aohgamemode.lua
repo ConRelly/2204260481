@@ -1856,10 +1856,13 @@ end
 function AOHGameMode:OnSpawnEnemyButtonPressed(eventSourceIndex, data)
 	local PlayerHero = PlayerResource:GetSelectedHeroEntity(data.PlayerID)
 
-	self._Misha = CreateUnitByName("npc_dota_dummy_misha", PlayerHero:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS)
-	self._Misha:SetControllableByPlayer(PlayerHero:GetPlayerID(), true)
-
-	table.insert(self.m_tEnemiesList,self._Misha)
+	CreateUnitByNameAsync("npc_dota_dummy_misha", PlayerHero:GetAbsOrigin(), true, nil, nil, DOTA_TEAM_BADGUYS, function(unit)
+		if unit then
+			unit:SetControllableByPlayer(PlayerHero:GetPlayerID(), true)
+			self._Misha = unit
+			table.insert(self.m_tEnemiesList, unit)
+		end
+	end)
 end
 
 ------------------------------
