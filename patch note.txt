@@ -3509,7 +3509,7 @@ Build it from all three Lier Scarlet items with the command "-scarlet <number>" 
 * Ballista max charges from 35 to 40 (implemented in previus update)
 
 
-* Fixed model error for : challenge boss , demo Misha, cursed shovel units (huskar etc)
+* Fixed model error for : demo Misha, cursed shovel units (huskar etc)
 
 
 

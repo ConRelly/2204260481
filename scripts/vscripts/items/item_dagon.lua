@@ -39,18 +39,14 @@ function item_mjz_dagon_v2:OnSpellStart()
 	local damage_per_use = self:GetSpecialValueFor("damage_per_use")
 	local splash_radius_scepter = self:GetSpecialValueFor("splash_radius_scepter")
 
-	local damage_stats = 0
-	if caster:IsRealHero() then
-		damage_stats = caster:GetIntellect(false) * 10
-	end
-
 	local use_count = 0
 	if self:IsItem() then
 		use_count = self:GetCurrentCharges()
 	end
 
 	local damage = base_damage + damage_per_use * use_count
-	if caster:HasModifier("modifier_super_scepter") then
+	if caster:HasModifier("modifier_super_scepter") and caster:IsRealHero() then
+		local damage_stats = use_count * 0.1 * caster:GetIntellect(false)
 		damage = damage + damage_stats
 	end
 
@@ -78,17 +74,26 @@ function item_mjz_dagon_v2:OnSpellStart()
 
 		if not unit:IsMagicImmune() and not unit:TriggerSpellAbsorb(self) then
 			if unit:IsAlive() then
-				for i = 1, damage_instances_count do
-					Timers:CreateTimer(damage_delay * damage_instances_count, function()
-						ApplyDamage({
-							attacker = caster,
-							victim = unit,
-							ability = self,
-							damage = damage / damage_instances_count,
-							damage_type = DAMAGE_TYPE_MAGICAL,
-						})
-					end)
-				end
+				-- First instance: magic, half damage
+				Timers:CreateTimer(damage_delay, function()
+					ApplyDamage({
+						attacker = caster,
+						victim = unit,
+						ability = self,
+						damage = damage / 2,
+						damage_type = DAMAGE_TYPE_MAGICAL,
+					})
+				end)
+				-- Second instance: pure, 10% of half magic damage
+				Timers:CreateTimer(damage_delay * 2, function()
+					ApplyDamage({
+						attacker = caster,
+						victim = unit,
+						ability = self,
+						damage = damage * 0.05,
+						damage_type = DAMAGE_TYPE_PURE,
+					})
+				end)
 			end
 		end
 	end
