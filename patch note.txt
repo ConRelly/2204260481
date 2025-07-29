@@ -3509,7 +3509,15 @@ Build it from all three Lier Scarlet items with the command "-scarlet <number>" 
 * Ballista max charges from 35 to 40 (implemented in previus update)
 
 
+* Lion's Dagon: 
+-now bonus stats scales with lvl
+-SS effect changed from 10 x int bonus dmg to 10%(0.1) int x charges bonus dmg
+-now has Dual type dmg , its dmg is split in 2 : 50% magic and 5% pure (pure is only 10% of the dmg value)
+* Lion Finger of death (the one hero spawns with it) SS effect part that is affected by dagon now changed to make the skill have 2 dmg types like the dagon 
+* Replaced PA coup talent with a custom one (now gives 5%). Seems now custom talents don't update the value on the skill , but they work so just visual(could not find a solution or someone who found a fix).
 * Fixed model error for : demo Misha, cursed shovel units (huskar etc)
+
+
 
 
 

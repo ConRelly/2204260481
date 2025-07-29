@@ -10,7 +10,7 @@
 		"AbilityTextureName"			"earthshaker_aftershock_lua"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"         "7"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityType"					"ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"

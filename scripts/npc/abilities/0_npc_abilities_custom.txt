@@ -111,7 +111,7 @@
 {
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-	"AbilityType"	 				"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityType"	 				"ABILITY_TYPE_BASIC"
 	"OnCreated"
 	{
 		"RunScript"
@@ -144,7 +144,7 @@
 {
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityType"					"ABILITY_TYPE_BASIC"
 	"OnCreated"
 	{
 		"RunScript"
@@ -169,7 +169,7 @@
 {
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityType"					"ABILITY_TYPE_BASIC"
 	"MaxLevel"						"1"
 	"AbilityCastPoint"				"1337"
 
@@ -1047,7 +1047,7 @@
 "custom_crystal_nova"
 {
     "ID"					        "70010"
-    "AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+    "AbilityType"					"ABILITY_TYPE_BASIC"
     "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
     "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
     "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -1326,7 +1326,7 @@
 }
 "custom_frostbite"
 {
-    "AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+    "AbilityType"					"ABILITY_TYPE_BASIC"
     "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
     "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
     "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -1369,7 +1369,7 @@
     "BaseClass"                     "ability_lua"
     "ScriptFile"                    "abilities/bosses/custom_blizzard_orb.lua"
     "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-    "AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+    "AbilityType"					"ABILITY_TYPE_BASIC"
     "AbilityTextureName"		    "crystal_maiden_freezing_field"
     "AbilityCastPoint"				"0.5"
     "AbilityCooldown"				"20.0"
@@ -4860,7 +4860,7 @@
 "custom_global_silence"
 {
 	"BaseClass"                     "silencer_global_silence"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityType"					"ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
@@ -6750,7 +6750,7 @@
 "clinkz_custom_ward_buff"
 {
 	"BaseClass"				"ability_datadriven"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityType"					"ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"MaxLevel"						"1"
     "Modifiers"
@@ -7710,7 +7710,7 @@
     "AbilityCooldown"				"1"
     "AbilityManaCost"				"0"
     "AbilityTextureName"		    "waypoint"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityType"					"ABILITY_TYPE_BASIC"
     "AbilitySpecial"
     {
 		"01"
@@ -7822,7 +7822,7 @@
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
 			"particle"	"particles/units/heroes/hero_axe/axe_counterhelix.vpcf"
 		}
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityType"					"ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
@@ -8856,7 +8856,7 @@
 		"particle"	"particles/units/heroes/hero_mars/mars_spear_impact.vpcf"
 		"particle"	"particles/units/heroes/hero_mars/mars_spear_impact_debuff.vpcf"
 	}
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityType"					"ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -8981,7 +8981,7 @@
 "meepo_custom_clone_buff"
 {
 	"BaseClass"				"ability_datadriven"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityType"					"ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"MaxLevel"						"1"
     "Modifiers"
@@ -9535,7 +9535,7 @@
 {
     "BaseClass"						"ability_lua"
     "ScriptFile"		            "abilities/heroes/obsidian_destroyer_custom_mana_amp.lua"
-    "AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+    "AbilityType"					"ABILITY_TYPE_BASIC"
     "AbilityTextureName" 			"obsidian_destroyer_essence_aura"
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
     "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_4"
@@ -9650,7 +9650,7 @@
 	"BaseClass"						"skeleton_king_reincarnation"
 	"AbilityTextureName"		    "pudge_flesh_heap"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityType"					"ABILITY_TYPE_BASIC"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -10444,7 +10444,7 @@
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
 			"particle"	"particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_debuff.vpcf"
 		}
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityType"					"ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -10489,7 +10489,7 @@
 		"particle"	"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_faiure.vpcf"
 		"particle"	"particles/units/heroes/hero_skywrath_mage/skywrath_mage_concussive_shot_slow_debuff.vpcf"
 	}
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityType"					"ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
@@ -16283,7 +16283,7 @@
 {
 	"BaseClass"		"nyx_assassin_vendetta"	
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityType"					"ABILITY_TYPE_BASIC"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 	"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
@@ -16550,7 +16550,7 @@
 	"BaseClass"						"black_dragon_fireball"
 	"AbilityTextureName"		    "black_dragon_fireball"
 	"MaxLevel"						"1"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityType"					"ABILITY_TYPE_BASIC"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
@@ -16600,7 +16600,7 @@
 {
 	"BaseClass"						"snapfire_mortimer_kisses"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityType"					"ABILITY_TYPE_BASIC"
 	"MaxLevel"						"1"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"

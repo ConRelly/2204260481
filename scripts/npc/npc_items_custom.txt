@@ -6781,8 +6781,8 @@
 		}
 		"AbilityValues"
         {
-            "bonus_intellect" "270"
-            "bonus_all_stats" "100"
+            "bonus_intellect" "20"
+            "bonus_all_stats" "10"
             "damage" "1800"
             "damage_delay" "0.05"
             "damage_per_use" "400"

@@ -2088,7 +2088,7 @@
 		"Ability14"			"special_bonus_lifesteal_8"
 		"Ability15"			"special_bonus_pa_stifling_dagger_buff_duration"
 		"Ability16"			"special_bonus_pa_stifling_dagger_attack_speed"
-		"Ability17"			"special_bonus_unique_phantom_assassin_2"
+		"Ability17"			"special_bonus_custom_pa_coup_de_grace_crit_chance"
 
 		"AttackDamageMin"				"37"
 		"AttackDamageMax"				"39"

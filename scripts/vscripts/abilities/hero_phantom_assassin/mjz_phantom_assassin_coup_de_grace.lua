@@ -21,7 +21,8 @@ if IsServer() then
 		local ability = self:GetAbility()
 		local extra_crit_bonus = 0
 		if self:GetCaster():HasScepter() then
-			extra_crit_bonus = (GameRules:GetGameTime() / 60) * self:GetAbility():GetSpecialValueFor("scepter_crit_bonus_per_minute")
+			local hero_level = self:GetCaster():GetLevel()
+			extra_crit_bonus = hero_level -- use hero level directly as bonus
 		end
 		if ability.crit then
 			local crit_bonus = GetTalentSpecialValueFor(ability, "crit_bonus") + extra_crit_bonus

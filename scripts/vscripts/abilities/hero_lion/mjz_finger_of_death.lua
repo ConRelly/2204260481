@@ -180,7 +180,7 @@ function mjz_finger_of_death:OnSpellStart()
 				local dagon_damage_per_use = Dagon:GetSpecialValueFor("damage_per_use")
 				local dagon_use_count = Dagon:GetCurrentCharges()
 				dagon_bonus = dagon_base_damage + dagon_damage_per_use * dagon_use_count
-				if caster:HasModifier("modifier_super_scepter") and caster:IsRealHero() then
+				if caster:IsRealHero() then
 					dagon_bonus = dagon_bonus + dagon_use_count * 0.1 * caster:GetIntellect(false)
 				end
 				Dagon:SetCurrentCharges(Dagon:GetCurrentCharges() + 2)

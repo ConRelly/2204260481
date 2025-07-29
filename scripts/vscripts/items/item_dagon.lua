@@ -134,15 +134,25 @@ function modifier_lions_dagon_passive:DeclareFunctions()
 end
 
 function modifier_lions_dagon_passive:GetModifierBonusStats_Strength()
-	return self:GetAbility():GetSpecialValueFor("bonus_all_stats")
+	if not self:GetAbility() then return 0 end
+	local lvl = self:GetParent():GetLevel()
+	local base = self:GetAbility():GetSpecialValueFor("bonus_all_stats")
+	return base * lvl
 end
 
 function modifier_lions_dagon_passive:GetModifierBonusStats_Agility()
-	return self:GetAbility():GetSpecialValueFor("bonus_all_stats")
+	if not self:GetAbility() then return 0 end
+	local lvl = self:GetParent():GetLevel()
+	local base = self:GetAbility():GetSpecialValueFor("bonus_all_stats")
+	return base * lvl
 end
 
 function modifier_lions_dagon_passive:GetModifierBonusStats_Intellect()
-	return self:GetAbility():GetSpecialValueFor("bonus_all_stats") + self:GetAbility():GetSpecialValueFor("bonus_intellect")
+	if not self:GetAbility() then return 0 end
+	local lvl = self:GetParent():GetLevel()
+	local base = self:GetAbility():GetSpecialValueFor("bonus_all_stats")
+	local int = self:GetAbility():GetSpecialValueFor("bonus_intellect")
+	return (base * lvl) + (int * lvl)
 end
 
 

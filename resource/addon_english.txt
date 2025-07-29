@@ -108,7 +108,7 @@
 	"dota_ability_variable_lvlbonus_int"            "Intelligence X Level"            	// $lvlbonus_int
 	"dota_ability_variable_lvlbonus_agi"            "Agility X Level"                   // $lvlbonus_agi
 	"dota_ability_variable_lvlbonus_str"            "Strength X Level"                  // $lvlbonus_str
-	"dota_ability_variable_lvlbonus_all"            "All Stats X Level"                  // $lvlbonus_all
+	"dota_ability_variable_lvlbonus_all"            "All Stats X Level"                 // $lvlbonus_all
 //############################################################################################################################
 
 	"npc_dota_custom_creep_22_1"	"Demon Marauder"
@@ -3465,10 +3465,10 @@
 	"DOTA_Tooltip_ability_mjz_faceless_void_backtrack_dodge_chance_pct"		"%Proc Chance: "
 		
 	"DOTA_Tooltip_ability_mjz_finger_of_death"						"Finger of Death"
-	"DOTA_Tooltip_ability_mjz_finger_of_death_Description"			"Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each life it consumes. \n<h1><font color='#DE3163'>UP: Super Scepter</font></h1> Each use gives 2 charges of Lion's Dagon and increases the damage for each Dagon charge multiplied by the base damage of this skill.<br>Increases bonus damage per kill by 0.5% per level, capping at 50% at level 100. After level 100, the increase is 5% per level. \n<h1><font color='#6E32A5'>Lion's</font> <font color='#FFA32B'>Exclusive:</font> Lion's Dagon</h1> After Lion's Dagon use, it applies the Finger of Death ability to the same target. <br><br> Increases Lion's Dagon radius from <font color='#0094FF'>Aghanim's Scepter</font> equal to the radius of Finger of Death."
+	"DOTA_Tooltip_ability_mjz_finger_of_death_Description"			"Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each life it consumes. \n<h1><font color='#DE3163'>UP: Super Scepter</font></h1> Each use gives 2 charges of Lion's Dagon and Splits this skill dmg between Magic and Pure(uses only 10%% of value).<br>Increases bonus damage per kill by 0.5% per level, capping at 50% at level 100. After level 100, the increase is 5% per level. \n<h1><font color='#6E32A5'>Lion's</font> <font color='#FFA32B'>Exclusive:</font> Lion's Dagon</h1> After Lion's Dagon use, it applies the Finger of Death ability to the same target. <br><br> Increases Lion's Dagon radius from <font color='#0094FF'>Aghanim's Scepter</font> equal to the radius of Finger of Death."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_scepter_description"	"Increases damage, reduces cooldown and cancels mana cost. Finger of Death hits all units in a small area."
 	"DOTA_Tooltip_ability_mjz_finger_of_death_Lore"					"Lion's disfigured hand is also the source of his greatest power, capable of flooding victims with malefic force."
-	"DOTA_Tooltip_ability_mjz_finger_of_death_Note0"                "Can get multiple stacks from the same unit"
+	"DOTA_Tooltip_ability_mjz_finger_of_death_Note0"                "Can get multiple stacks from the same unit<br> First part of SS effect require an dagon in inventory(including backpack)"
 	"DOTA_Tooltip_ability_mjz_finger_of_death_cast_range"				"Cast Range:"
 	"DOTA_Tooltip_ability_mjz_finger_of_death_damage"					"Damage:"
 	"DOTA_Tooltip_ability_mjz_finger_of_death_damage_per_int"	   		"Intelligence As Bonus Damage:"
@@ -4056,14 +4056,14 @@
 	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_crit_chance"		"%Proc Chance: "
 	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_crit_bonus"		"%Critical Damage: "
 	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_cleave_damage"		"%CLEAVE DAMAGE:"
-	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_Note0"			 "Extra crit: It will not matter when you buy the aghanim or when you max the skill it will always give the bonus base on current game time."
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_Note0"			 "Extra crit: It will not matter when you buy the aghanim or when you max the skill it will always give the bonus base on current game time and your current level."
 	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_bonus_attack"		"%Bonus Total Attack:"
 	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_bonus_duration"		"BONUS TOTAL ATTACK DURATION:"
-	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_scepter_description"			"Deals bonus magic damage and gains extra critical power for every minute this game has passed."
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_scepter_description"			"Deals bonus magic damage and gains extra critical power base on your lvl for every minute this game has passed(Your Level x Minute) ."
 	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_magical_damage_scepter"		"%SCEPTER Bonus Magical Damage:"
-	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_scepter_crit_bonus_per_minute"	 "%SCEPTER Extra Crit Damage Per Minute:"
+	//"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_scepter_crit_bonus_per_minute"	 "%SCEPTER Extra Crit Damage Per Minute:"
 
-	"DOTA_Tooltip_ability_special_bonus_unique_phantom_assassin_2"	"+{s:value}% Coup de Grace chance"
+	"DOTA_Tooltip_ability_special_bonus_custom_pa_coup_de_grace_crit_chance"	"+{s:value}% Coup de Grace chance"
 
 	"DOTA_Tooltip_modifier_mjz_phantom_assassin_coup_de_grace_bonus"				"Coup de Grace"
 	"DOTA_Tooltip_modifier_mjz_phantom_assassin_coup_de_grace_bonus_Description"	"Total Attack increased"
@@ -8693,11 +8693,11 @@ Attack speed increased by %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT%."
 
 		//>>>>	Lion's Dagon
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2"										"Lion's Dagon"
-		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Description"							"<h1>Active: Finger of Death</h1>Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each use it.<br><br>Cast Range: %abilitycastrange%\n<h1><font color='#0094FF'>UP: Aghanim's Scepter</font></h1>Hits all enemies in a %splash_radius_scepter% radius. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Deals 10 x Your Int As bonus Damage. When Greater Blast Staff passive hits an target has 17%% chance to trigger this item on same target/s. Unlocks an hidden utility of this item."
+		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Description"							"<h1>Active: Finger of Death</h1>Rips at an enemy unit, trying to turn it inside-out. Deals massive damage and grows stronger with each use it.<br><br>Cast Range: %abilitycastrange%\n<h1><font color='#F54927'>Dual Type</font></h1> Damage is split/divided in 2 instances , One Magic and one Pure(pure will use only 10%% of dmg value)  \n<h1><font color='#0094FF'>UP: Aghanim's Scepter</font></h1>Hits all enemies in a %splash_radius_scepter% radius. \n<h1><font color='#DE3163'>Super Scepter</font></h1>Deals 10%% of Your Int per charge As bonus Damage. When Greater Blast Staff passive hits an target has 17%% chance to trigger this item on same target/s. Unlocks an hidden utility of this item."
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Lore"									"Lion's Dagon is also the source of his greatest power, capable of flooding victims with malefic force."
-		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_bonus_intellect"						"+$int"
-		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_bonus_all_stats"						"+$all"
-		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Note0"                                  "splits the damage in 2 instances for a better effect vs gods."
+		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_bonus_intellect"						"+$lvlbonus_int"
+		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_bonus_all_stats"						"+$lvlbonus_all"
+		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_Note0"                                  "splits the damage in 2 instances for a better effect vs gods.<br> item gives 30 int per lvl in total (20+10)"
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_damage"									"Base Damage:"
 		"DOTA_Tooltip_Ability_item_mjz_dagon_v2_damage_per_use"							"Damage Bonus Per Use:"
 

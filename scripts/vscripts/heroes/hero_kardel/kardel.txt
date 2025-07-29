@@ -118,7 +118,7 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"heroes/hero_kardel/abilities"
 		"AbilityTextureName"			"custom/abilities/pocket_portal"
-//		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+//		"AbilityType"					"ABILITY_TYPE_BASIC"
 //		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"MaxLevel"						"8"
 		"RequiredLevel"					"0"
