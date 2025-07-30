@@ -67,7 +67,7 @@ end
 
 function pa_stifling_dagger:LaunchDagger(enemy, super_scepter, blink)
 	if enemy == nil then return end
-	local dagger_speed = self:GetSpecialValueFor("dagger_speed") + talent_value(self:GetCaster(), "special_bonus_pa_stifling_dagger_speed")
+	local dagger_speed = self:GetSpecialValueFor("dagger_speed")-- no need anymore now "GetSpecialValueFor" takes talent value if is written in new format and name starts with "special_bonus_unique" //  + talent_value(self:GetCaster(), "special_bonus_pa_stifling_dagger_speed")
 
 	if super_scepter then
 		Effect_Name = "particles/econ/items/phantom_assassin/pa_ti8_immortal_head/pa_ti8_immortal_stifling_dagger.vpcf"

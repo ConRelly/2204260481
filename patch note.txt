@@ -3509,13 +3509,20 @@ Build it from all three Lier Scarlet items with the command "-scarlet <number>" 
 * Ballista max charges from 35 to 40 (implemented in previus update)
 
 
-* Lion's Dagon: 
--now bonus stats scales with lvl
--SS effect changed from 10 x int bonus dmg to 10%(0.1) int x charges bonus dmg
--now has Dual type dmg , its dmg is split in 2 : 50% magic and 5% pure (pure is only 10% of the dmg value)
-* Lion Finger of death (the one hero spawns with it) SS effect part that is affected by dagon now changed to make the skill have 2 dmg types like the dagon 
-* Replaced PA coup talent with a custom one (now gives 5%). Seems now custom talents don't update the value on the skill , but they work so just visual(could not find a solution or someone who found a fix).
-* Fixed model error for : demo Misha, cursed shovel units (huskar etc)
+* Lion's Dagon:
+- Now, bonus stats scale with level.
+- SS effect changed from 10x INT bonus damage to 10% (0.1) INT x charges bonus damage.
+- Now has dual-type damage; its damage is split in two: 50% magic and 5% pure (pure is only 10% of the damage value).
+* Lion's Finger of Death (the hero that spawns with it): The SS effect that is affected by Dagon has been changed to make the skill have two damage types, like Dagon.
+* Replaced PA coup talent with a custom one that now gives 5%.
+Silencer:
+- Glaives of Wisdom Aghanim crit chance from 20% to 25%.
+- Heap Int per Death Talent increased from 2 to 3.
+- Replaced HP talent with +30% Glaives damage.
+* Shadow Realm: Int damage increased by 5, and talent increased by 5. Now has a new passive effect for SS: increase base crit power per level, with a higher bonus after level 100.
+* Slark Essence Shift talent increased from +3 to +5, and the maximum bonus per stack increased from 2.5 to 3.
+* Fixed over 100 custom skills that were missing a visual tooltip update for talents. The talent bonuses were not reflected in the skills tooltip, but it worked. It was just a visual bug. There are still some more to fix.
+* Fixed model error for demo, Misha, and cursed shovel units (Huskar, etc.).
 
 
 

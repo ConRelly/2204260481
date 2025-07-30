@@ -58,10 +58,10 @@
             "max_damage_duration" "2"
             "int_multiplier"
             {
-                "value" "3.0 3.5 5.0 6.5 8.0 10.0 15.0"
-                "LinkedSpecialBonus" "special_bonus_dark_willow_shadow_realm_lua"
+                "value" "3.0 3.5 5.0 6.5 8.0 10.0 20.0"
+                "special_bonus_unique_dark_willow_shadow_realm_lua" "15"
             }
-            "ss_chance" "20"
+            "ss_chance" "25"
             "crit_power" "500"
         }
 	}

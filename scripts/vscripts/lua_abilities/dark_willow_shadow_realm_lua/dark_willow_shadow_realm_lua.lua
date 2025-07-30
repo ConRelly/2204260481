@@ -146,12 +146,21 @@ function modifier_dark_willow_shadow_realm_lua_buff:GetModifierProcAttack_BonusD
 	local damage = self.damage * self.time * (1 + parent:GetSpellAmplification(false))
 	local ability = self:GetAbility()
 	local chance = ability:GetSpecialValueFor("ss_chance")
-	local crit_power = ability:GetSpecialValueFor("crit_power") * 0.01
-	local crit_status = parent:GetStatusResistance() * crit_power -- status can go negative but is fine 
-	if parent:HasModifier("modifier_super_scepter") and RollPercentage(chance) then    --is not affected by arcane or wings and arcane has a x 1.8 for every hit (that's 4x with 20%)
-		--here other crit sources can be added , like (crit_power + crit_status + crit_etc )
-		local dmg = damage * (crit_power + crit_status )
+	
+	-- Calculate crit_power scaling with level
+	local level = parent:GetLevel()
+	local base_crit_power = ability:GetSpecialValueFor("crit_power")
+	local crit_power
+	if level <= 100 then
+		crit_power = base_crit_power + (level - 1) -- grows by 1 per level up to 100
+	else
+		crit_power = base_crit_power + 99 + (level - 100) * 20 -- after 100, grows by 20 per level
+	end
+	crit_power = crit_power * 0.01
 
+	local crit_status = parent:GetStatusResistance() * crit_power -- status can go negative but is fine 
+	if parent:HasModifier("modifier_super_scepter") and RollPercentage(chance) then
+		local dmg = damage * (crit_power + crit_status)
 		damage = dmg
 		create_popup({
 			target = params.target,
@@ -163,8 +172,6 @@ function modifier_dark_willow_shadow_realm_lua_buff:GetModifierProcAttack_BonusD
 	else	
 		SendOverheadEventMessage(nil,OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, params.target, damage, parent:GetPlayerOwner())
 	end	
-
---	EmitSoundOn("Hero_DarkWillow.Shadow_Realm.Damage", self:GetParent())
 
 	return damage
 end

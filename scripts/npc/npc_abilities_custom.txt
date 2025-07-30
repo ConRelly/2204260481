@@ -160,7 +160,7 @@
             "range"
             {
                 "value" "2000"
-                "LinkedSpecialBonus" "special_bonus_unique_dawnbreaker_celestial_hammer_cast_range"
+                "LinkedSpecialBonus" "special_bonus_unique_dawnbreaker_celestial_hammer_cast_range" //missing1
             }
         }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -347,7 +347,7 @@
             "radius"
             {
                 "value" "325"
-                "LinkedSpecialBonus" "special_bonus_unique_kunkka"
+                "LinkedSpecialBonus" "special_bonus_unique_kunkka" //missing2
             }
             "movespeed_bonus" "-35"
             "slow_duration" "3"
@@ -356,7 +356,7 @@
             "torrent_damage"
             {
                 "value" "275 850 1925 4700 8450 19420 27500 42560 65500 85400"
-                "LinkedSpecialBonus" "special_bonus_unique_kunkka_2"
+                "LinkedSpecialBonus" "special_bonus_unique_kunkka_2" //missing3
             }
         }		
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -572,13 +572,13 @@
             "damage"
             {
                 "value" "420 980 2400 7300 15600 32500 52580"
-                "LinkedSpecialBonus" "special_bonus_unique_grimstroke_2"
+                "LinkedSpecialBonus" "special_bonus_unique_grimstroke_2" //missing4
                 "LinkedSpecialBonusOperation" "SPECIAL_BONUS_PERCENTAGE_ADD"
             }
             "bonus_damage_per_target"
             {
                 "value" "120 340 1032 4000 9500 14000 25000"
-                "LinkedSpecialBonus" "special_bonus_unique_grimstroke_2"
+                "LinkedSpecialBonus" "special_bonus_unique_grimstroke_2" //missing5
                 "LinkedSpecialBonusOperation" "SPECIAL_BONUS_PERCENTAGE_ADD"
             }
             "movement_slow_pct" "50"
@@ -587,7 +587,7 @@
             "abilitycastrange"
             {
                 "value" ""
-                "LinkedSpecialBonus" "special_bonus_unique_grimstroke_3"
+                "LinkedSpecialBonus" "special_bonus_unique_grimstroke_3" //missing6
             }
         }
 	}
@@ -750,7 +750,7 @@
             "armor_reduction"
             {
                 "value" "0.3 0.4 0.5 0.6 0.7"
-                "LinkedSpecialBonus" "special_bonus_unique_dazzle_4"
+                "LinkedSpecialBonus" "special_bonus_unique_dazzle_4" //missing7
             }
             "duration" "10.0"
             "radius" "1700"
@@ -783,7 +783,7 @@
             "magic_resistance"
             {
                 "value" "15 25 35 45"
-                "LinkedSpecialBonus" "special_bonus_unique_antimage_4"
+                "LinkedSpecialBonus" "special_bonus_unique_antimage_4" //missing8
             }
             "duration" "3.8"
         }
@@ -837,7 +837,7 @@
             "stun_duration"
             {
                 "value" "1.0 1.2 1.4 1.6 1.8 2.0 2.2"
-                "LinkedSpecialBonus" "special_bonus_unique_marci_grapple_stun_duration"
+                "LinkedSpecialBonus" "special_bonus_unique_marci_grapple_stun_duration" //missing9
             }
             "impact_damage" "270 1430 8190 14250 29540 54800 94500"
         }
@@ -958,13 +958,13 @@
             "max_jump_distance"
             {
                 "value" "800 1000 1200 1400 1600 1800 2200"
-                "LinkedSpecialBonus" "special_bonus_unique_marci_lunge_range"
+                "LinkedSpecialBonus" "special_bonus_unique_marci_lunge_range" //missing10
             }
             "landing_radius" "325"
             "impact_damage"
             {
                 "value" "390 1600 8430 17400 48500 82500 178500"
-                "LinkedSpecialBonus" "special_bonus_unique_marci_lunge_damage"
+                "LinkedSpecialBonus" "special_bonus_unique_marci_lunge_damage" //missing11
             }
             "movement_slow_pct" "50"
             "debuff_duration" "3.0"
@@ -1021,7 +1021,7 @@
             "lifesteal_pct"
             {
                 "value" "35"
-                "LinkedSpecialBonus" "special_bonus_unique_marci_guardian_lifesteal"
+                "LinkedSpecialBonus" "special_bonus_unique_marci_guardian_lifesteal" //missing12
             }
             "bonus_damage" "200 535 1650 4650 8850 19540 25600"
             "bonus_attack_range" "250"
@@ -1073,7 +1073,7 @@
             "disarm_duration"
             {
                 "value" "1.75 2.5 3.25 4"
-                "LinkedSpecialBonus" "special_bonus_unique_huskar_3"
+                "LinkedSpecialBonus" "special_bonus_unique_huskar_3" //missing13
             }
             "knockback_distance" "400"
             "knockback_duration" "1"
@@ -1108,7 +1108,7 @@
             "shock_radius"
             {
                 "value" "600"
-                "LinkedSpecialBonus" "special_bonus_unique_ursa_5"
+                "LinkedSpecialBonus" "special_bonus_unique_ursa_5" //missing14
             }
             "movement_slow" "-30"
             "hop_distance" "250"
@@ -1140,7 +1140,7 @@
             "duration"
             {
                 "value" "4 4.5 6"
-                "LinkedSpecialBonus" "special_bonus_unique_ursa_3"
+                "LinkedSpecialBonus" "special_bonus_unique_ursa_3" //missing15
             }
             "cooldown_scepter"
             {
@@ -1237,7 +1237,7 @@
             "damage_per_second"
             {
                 "value" "780"
-                "LinkedSpecialBonus" "special_bonus_unique_treant_9"
+                "LinkedSpecialBonus" "special_bonus_unique_treant_9" //missing16
             }
             "movement_slow" "40"
         }
@@ -1285,7 +1285,7 @@
             "leap_speedbonus_as"
             {
                 "value" "25 50 75 200"
-                "LinkedSpecialBonus" "special_bonus_unique_mirana_1"
+                "LinkedSpecialBonus" "special_bonus_unique_mirana_1" //missing17
             }
             "leap_bonus_duration" "2.5"
         }
@@ -1310,7 +1310,7 @@
             "damage_per_second"
             {
                 "value" "750"
-                "LinkedSpecialBonus" "special_bonus_unique_treant_9"
+                "LinkedSpecialBonus" "special_bonus_unique_treant_9" //missing18
             }
             "movement_slow" "40"
             "vines_duration" "17"
@@ -1340,7 +1340,7 @@
             "stun_duration"
             {
                 "value" "1.2"
-                "LinkedSpecialBonus" "special_bonus_unique_centaur_2"
+                "LinkedSpecialBonus" "special_bonus_unique_centaur_2" //missing19
             }
             "stomp_damage" "3970"
         }
@@ -1373,17 +1373,17 @@
             "duration_hero"
             {
                 "value" "3 3.5 4 4.5"
-                "LinkedSpecialBonus" "special_bonus_unique_tinker_4"
+                "LinkedSpecialBonus" "special_bonus_unique_tinker_4" //missing20
             }
             "duration_creep"
             {
                 "value" "6.0 6.0 6.0 6.0"
-                "LinkedSpecialBonus" "special_bonus_unique_tinker_4"
+                "LinkedSpecialBonus" "special_bonus_unique_tinker_4" //missing21
             }
             "laser_damage"
             {
                 "value" "5120"
-                "LinkedSpecialBonus" "special_bonus_unique_tinker"
+                "LinkedSpecialBonus" "special_bonus_unique_tinker" //missing22
             }
             "scepter_bounce_range"
             {
@@ -1418,7 +1418,7 @@
             "disruption_duration"
             {
                 "value" "2.75"
-                "LinkedSpecialBonus" "special_bonus_unique_shadow_demon_5"
+                "LinkedSpecialBonus" "special_bonus_unique_shadow_demon_5" //missing23
             }
             "illusion_duration" "8 10 12 14"
             "illusion_outgoing_damage" "-70.0 -55.0 -40.0 -25.0"
@@ -1483,7 +1483,7 @@
             "purge_damage"
             {
                 "value" "2900"
-                "LinkedSpecialBonus" "special_bonus_unique_shadow_demon_1"
+                "LinkedSpecialBonus" "special_bonus_unique_shadow_demon_1" //missing24
             }
             "max_charges"
             {
@@ -1723,7 +1723,7 @@
             "tooltip_outgoing"
             {
                 "value" "1"
-                "LinkedSpecialBonus" "special_bonus_unique_spectre_4"
+                "LinkedSpecialBonus" "special_bonus_unique_spectre_4" //missing25
             }
             "illusion_damage_incoming" "900"
             "tooltip_illusion_total_damage_incoming" "1000"
@@ -1755,7 +1755,7 @@
             "damage_reflect_pct"
             {
                 "value" "350"
-                "LinkedSpecialBonus" "special_bonus_unique_nyx"
+                "LinkedSpecialBonus" "special_bonus_unique_nyx" //missing26
             }
         }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -1777,7 +1777,7 @@
             "knockback_distance"
             {
                 "value" "25"
-                "LinkedSpecialBonus" "special_bonus_unique_sniper_3"
+                "LinkedSpecialBonus" "special_bonus_unique_sniper_3" //missing27
             }
             "slow" "-100"
         }
@@ -1902,17 +1902,17 @@
             "stun_duration"
             {
                 "value" "3.0"
-                "LinkedSpecialBonus" "special_bonus_unique_phoenix_2"
+                "LinkedSpecialBonus" "special_bonus_unique_phoenix_2" //missing28
             }
             "max_hero_attacks"
             {
                 "value" "32"
-                "LinkedSpecialBonus" "special_bonus_unique_phoenix_1"
+                "LinkedSpecialBonus" "special_bonus_unique_phoenix_1" //missing29
             }
             "max_hero_attacks_scepter"
             {
                 "value" "37"
-                "LinkedSpecialBonus" "special_bonus_unique_phoenix_1"
+                "LinkedSpecialBonus" "special_bonus_unique_phoenix_1" //missing30
                 "RequiresScepter" "1"
             }
             "cast_range_tooltip_scepter"
@@ -1950,7 +1950,7 @@
             "radius"
             {
                 "value" "250"
-                "LinkedSpecialBonus" "special_bonus_unique_leshrac_5"
+                "LinkedSpecialBonus" "special_bonus_unique_leshrac_5" //missing31
             }
             "duration" "2"
         }
@@ -1977,12 +1977,12 @@
             "interval"
             {
                 "value" "0.1 0.1 0.1 0.1"
-                "LinkedSpecialBonus" "special_bonus_unique_clockwerk"
+                "LinkedSpecialBonus" "special_bonus_unique_clockwerk" //missing32
             }
             "damage"
             {
                 "value" "430"
-                "LinkedSpecialBonus" "special_bonus_unique_clockwerk_3"
+                "LinkedSpecialBonus" "special_bonus_unique_clockwerk_3" //missing33
             }
         }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -2009,7 +2009,7 @@
             "stat_loss_pct"
             {
                 "value" "70"
-                "LinkedSpecialBonus" "special_bonus_unique_timbersaw"
+                "LinkedSpecialBonus" "special_bonus_unique_timbersaw" //missing34
             }
             "duration" "10.0"
         }
@@ -2610,7 +2610,7 @@
             "blink_range"
             {
                 "value" "2550"
-                "LinkedSpecialBonus" "special_bonus_unique_antimage_3"
+                "LinkedSpecialBonus" "special_bonus_unique_antimage_3" //missing35
             }
             "min_blink_range" "750"
         }
@@ -2663,7 +2663,7 @@
             "spirits"
             {
                 "value" "25"
-                "LinkedSpecialBonus" "special_bonus_unique_death_prophet"
+                "LinkedSpecialBonus" "special_bonus_unique_death_prophet" //missing36
             }
             "spirit_speed" "500"
             "max_distance" "2000"
@@ -2855,7 +2855,7 @@
             "bonus_damage"
             {
                 "value" "40"
-                "LinkedSpecialBonus" "special_bonus_unique_faceless_void_3"
+                "LinkedSpecialBonus" "special_bonus_unique_faceless_void_3" //missing37
             }
         }
 	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
@@ -3308,7 +3308,7 @@
             "damage_pct"
             {
                 "value" "5.5"
-                "LinkedSpecialBonus" "special_bonus_unique_death_prophet_3"
+                "LinkedSpecialBonus" "special_bonus_unique_death_prophet_3" //missing38
             }
             "haunt_duration" "6"
             "movement_steal" "10"
@@ -3341,7 +3341,7 @@
             "burn_damage_pct"
             {
                 "value" "8.5"
-                "LinkedSpecialBonus" "special_bonus_unique_doom_1"
+                "LinkedSpecialBonus" "special_bonus_unique_doom_1" //missing39
             }
             "burn_duration" "5.0"
             "ministun_duration" "1.0"
@@ -3402,7 +3402,7 @@
             "duration"
             {
                 "value" "15"
-                "LinkedSpecialBonus" "special_bonus_unique_disruptor_5"
+                "LinkedSpecialBonus" "special_bonus_unique_disruptor_5" //missing40
             }
         }
 }	
@@ -4567,7 +4567,7 @@
             "move_slow"
             {
                 "value" "30"
-                "LinkedSpecialBonus" "special_bonus_unique_winter_wyvern_1"
+                "LinkedSpecialBonus" "special_bonus_unique_winter_wyvern_1" //missing41
             }
             "night_vision_bonus" "400"
             "projectile_speed_bonus" "500"
@@ -5016,7 +5016,7 @@
             "damage_reduction_percent"
             {
                 "value" "0"
-                "LinkedSpecialBonus" "special_bonus_unique_luna_7"
+                "LinkedSpecialBonus" "special_bonus_unique_luna_7" //missing42
                 "LinkedSpecialBonusOperation" "SPECIAL_BONUS_SUBTRACT"
             }
         }
@@ -5113,7 +5113,7 @@
             "arrow_count"
             {
                 "value" "10"
-                "LinkedSpecialBonus" "special_bonus_unique_medusa_2"
+                "LinkedSpecialBonus" "special_bonus_unique_medusa_2" //missing43
             }
         }
 }
@@ -5455,7 +5455,7 @@
 		"strike_interval"		
 		{
 			"value"		"0.5"	
-			"LinkedSpecialBonus"	"special_bonus_unique_razor_2"
+			"LinkedSpecialBonus"	"special_bonus_unique_razor_2" //missing44
 		}
 		"armor_reduction"	"2"		
 		"damage"			"800"		
@@ -5882,7 +5882,7 @@
             "damage_reflection_pct"
             {
                 "value" "5"
-                "LinkedSpecialBonus" "special_bonus_unique_spectre_5"
+                "LinkedSpecialBonus" "special_bonus_unique_spectre_5" //missing45
             }
             "min_radius" "200"
             "max_radius" "1000"
@@ -5944,12 +5944,12 @@
             "damage"
             {
                 "value" "16000"
-                "LinkedSpecialBonus" "special_bonus_unique_spectre_6"
+                "LinkedSpecialBonus" "special_bonus_unique_spectre_6" //missing46
             }
             "bonus_movespeed"
             {
                 "value" "250"
-                "LinkedSpecialBonus" "special_bonus_unique_spectre_3"
+                "LinkedSpecialBonus" "special_bonus_unique_spectre_3" //missing47
             }
             "dagger_path_duration" "3.0"
             "hero_path_duration" "1.0"
@@ -6172,7 +6172,7 @@
             "bonus_attack_speed"
             {
                 "value" "140"
-                "LinkedSpecialBonus" "special_bonus_unique_beastmaster_4"
+                "LinkedSpecialBonus" "special_bonus_unique_beastmaster_4" //missing48
             }
         }
 }
@@ -6223,13 +6223,13 @@
             "absorb_amount"
             {
                 "value" "3200"
-                "LinkedSpecialBonus" "special_bonus_unique_ember_spirit_1"
+                "LinkedSpecialBonus" "special_bonus_unique_ember_spirit_1" //missing49
             }
             "tick_interval" "0.2"
             "damage_per_second"
             {
                 "value" "510"
-                "LinkedSpecialBonus" "special_bonus_unique_ember_spirit_3"
+                "LinkedSpecialBonus" "special_bonus_unique_ember_spirit_3" //missing50
             }
             "blind_pct" "20"
         }
@@ -6251,7 +6251,7 @@
             "dash_length"
             {
                 "value" "1100"
-                "LinkedSpecialBonus" "special_bonus_unique_phoenix_4"
+                "LinkedSpecialBonus" "special_bonus_unique_phoenix_4" //missing51
             }
             "dash_width" "500"
             "hit_radius" "200"
@@ -6431,7 +6431,7 @@
             "damage_per_stack"
             {
                 "value" "15"
-                "LinkedSpecialBonus" "special_bonus_unique_ursa"
+                "LinkedSpecialBonus" "special_bonus_unique_ursa" //missing52
             }
         }
 }
@@ -6771,7 +6771,7 @@
             "damage_bonus"
             {
                 "value" "50 150 270 490"
-                "LinkedSpecialBonus" "special_bonus_unique_clinkz_1"
+                "LinkedSpecialBonus" "special_bonus_unique_clinkz_1" //missing53
             }
             "attack_spill_width" "300"
             "attack_spill_range" "300"
@@ -6794,7 +6794,7 @@
             "duration"
             {
                 "value" "6.0"
-                "LinkedSpecialBonus" "special_bonus_unique_clinkz_2"
+                "LinkedSpecialBonus" "special_bonus_unique_clinkz_2" //missing54
             }
             "attack_speed_bonus_pct" "110 160 210 260"
         }
@@ -7022,7 +7022,7 @@
             "max_units"
             {
                 "value" "1 2 2 3 3 3 4"
-                "LinkedSpecialBonus" "special_bonus_unique_chen_custom_2"
+                "special_bonus_unique_unique_chen_custom_2" "1"
             }
             "base_ms" "800"
             "base_attack_time" "0.9"
@@ -7233,7 +7233,7 @@
             "value" "2"
         }
 }
-"special_bonus_unique_chen_custom_2"
+"special_bonus_unique_unique_chen_custom_2"
 {
 	"BaseClass"				"special_bonus_undefined"
 	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -7270,7 +7270,7 @@
             "duration"
             {
                 "value" "6"
-                "LinkedSpecialBonus" "special_bonus_unique_huskar"
+                "LinkedSpecialBonus" "special_bonus_unique_huskar" //missing55
             }
             "level_bonus_damage" "200 400 800 1600"
         }
@@ -7302,7 +7302,7 @@
             "reflect_damage"
             {
                 "value" "1.0 2.0 3.0 4.0"
-                "LinkedSpecialBonus" "special_bonus_unique_nyx"
+                "LinkedSpecialBonus" "special_bonus_unique_nyx" //missing56
             }
         }
 	// Data driven
@@ -8344,7 +8344,7 @@
 		}
 	}
 }
-"special_bonus_unique_grimstroke_custom_soulstore"
+"special_bonus_unique_unique_grimstroke_custom_soulstore"
 {
 	"BaseClass"						"special_bonus_undefined"
 	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -8386,7 +8386,7 @@
             "stats_mul"
             {
                 "value" "2.0 2.2 2.4 2.6 4.0"
-                "LinkedSpecialBonus" "special_bonus_unique_grimstroke_custom_soulstore"
+                "special_bonus_unique_unique_grimstroke_custom_soulstore" "4.5"
                 "CalculateSpellDamageTooltip" "1"
             }
         }
@@ -8473,7 +8473,7 @@
             "max_stacks"
             {
                 "value" "10"
-                "LinkedSpecialBonus" "special_bonus_unique_invoker_11"
+                "LinkedSpecialBonus" "special_bonus_unique_invoker_11" //missing57
             }
         }
 }
@@ -8758,7 +8758,7 @@
             "damage"
             {
                 "value" "150 675 1250 2250 3950 5250 8650"
-                "LinkedSpecialBonus" "special_bonus_unique_mars_spear_bonus_damage"
+                "LinkedSpecialBonus" "special_bonus_unique_mars_spear_bonus_damage" //missing58
             }
             "spear_speed" "1100"
             "spear_width" "300"
@@ -8768,7 +8768,7 @@
             "stun_duration"
             {
                 "value" "1.2 1.35 1.5 1.65"
-                "LinkedSpecialBonus" "special_bonus_unique_mars_spear_stun_duration"
+                "LinkedSpecialBonus" "special_bonus_unique_mars_spear_stun_duration" //missing59
             }
             "knockback_duration" "1.25"
             "knockback_distance" "75"
@@ -8980,7 +8980,7 @@
             "int_multiplier"
             {
                 "value" "0.6 0.7 0.8 0.9"
-                "LinkedSpecialBonus" "special_bonus_unique_necrophos_2"
+                "LinkedSpecialBonus" "special_bonus_unique_necrophos_2" //missing60
             }
             "interval" "0.66"
             "radius" "700"
@@ -9147,7 +9147,7 @@
             "necromastery_damage_per_soul"
             {
                 "value" "4 8 12 16 25 35 50"
-                "LinkedSpecialBonus" "special_bonus_unique_nevermore_1"
+                "LinkedSpecialBonus" "special_bonus_unique_nevermore_1" //missing61
             }
             "necromastery_max_souls" "60 70 90 100 120 140 190"
             "necromastery_max_souls_scepter" "160 170 190 200 220 240 290"
@@ -9194,12 +9194,12 @@
 	    "agility_mult"
 	    {
 	        "value" "4.5 8.5 12.5 17 24"
-	        "LinkedSpecialBonus" "special_bonus_unique_mjz_nevermore_custom_requiem_agi"
+	        "special_bonus_unique_unique_mjz_nevermore_custom_requiem_agi" "12"
 	    }
 	}
 }
 
-"special_bonus_unique_mjz_nevermore_custom_requiem_agi"
+"special_bonus_unique_unique_mjz_nevermore_custom_requiem_agi"
 {
 	"BaseClass"						"special_bonus_undefined"
 	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -9718,7 +9718,7 @@
             "int_pct_tick"
             {
                 "value" "90 245 460 675 825 1020 1940"
-                "LinkedSpecialBonus" "special_bonus_qop_shadow_strike_damage"
+                "special_bonus_unique_qop_shadow_strike_damage" "14500"
             }
             "movement_slow" "-10"
             "cast_range_tooltip" "600 650 700 750 900 1000 1400"
@@ -9726,12 +9726,12 @@
             "tick_interval"
             {
                 "value" "1"
-                "LinkedSpecialBonus" "special_bonus_qop_shadow_strike_tick_interval"
+                "special_bonus_unique_qop_shadow_strike_tick_interval" "-0.6"
             }
             "ss_int_bonus" "0.07"
         }
 }
-	"special_bonus_qop_shadow_strike_tick_interval"
+	"special_bonus_unique_qop_shadow_strike_tick_interval"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -9741,7 +9741,7 @@
             "value" "-0.6"
         }
 	}
-	"special_bonus_qop_shadow_strike_damage"
+	"special_bonus_unique_qop_shadow_strike_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -10073,7 +10073,7 @@
             "resist_debuff"
             {
                 "value" "-20 -25 -30 -55"
-                "LinkedSpecialBonus" "special_bonus_unique_skywrath_3"
+                "LinkedSpecialBonus" "special_bonus_unique_skywrath_3" //missing62
             }
             "seal_duration" "3.0 3.5 4.0 5.0"
             "scepter_radius" "700"
@@ -10144,7 +10144,7 @@
             "damage"
             {
                 "value" "800 1250 1700"
-                "LinkedSpecialBonus" "special_bonus_unique_skywrath_5"
+                "LinkedSpecialBonus" "special_bonus_unique_skywrath_5" //missing63
             }
             "damage_interval" "0.1"
             "scepter_radius" "700"
@@ -10180,13 +10180,13 @@
             "damage_reflection_pct"
             {
                 "value" "7 12 21 35"
-                "LinkedSpecialBonus" "special_bonus_unique_spectre_5"
+                "LinkedSpecialBonus" "special_bonus_unique_spectre_5" //missing64
                 "CalculateSpellDamageTooltip" "0"
             }
             "damage_reflection_pct_ss"
             {
                 "value" "14 24 42 62"
-                "LinkedSpecialBonus" "special_bonus_unique_spectre_5"
+                "LinkedSpecialBonus" "special_bonus_unique_spectre_5" //missing65
                 "CalculateSpellDamageTooltip" "0"
             }
             "ss_reflection_mult" "3"
@@ -10650,7 +10650,7 @@
             "radius"
             {
                 "value" "800"
-                "LinkedSpecialBonus" "special_bonus_wd_voodoo_restoration_radius"
+                "special_bonus_unique_wd_voodoo_restoration_radius" "2"
                 "LinkedSpecialBonusOperation" "SPECIAL_BONUS_MULTIPLY"
             }
             "heal" "150 950 1800 3640"
@@ -10672,7 +10672,7 @@
         }
 	}
 // Talent: Witch Doctor: Voodoo Restoration: x{vaule} Radius
-	"special_bonus_wd_voodoo_restoration_radius"
+	"special_bonus_unique_wd_voodoo_restoration_radius"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -14199,7 +14199,7 @@
             "blast_dot_damage"
             {
                 "value" "50"
-                "LinkedSpecialBonus" "special_bonus_unique_wraith_king_3"
+                "LinkedSpecialBonus" "special_bonus_unique_wraith_king_3" //missing66
             }
         }
 	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -14612,7 +14612,7 @@
             "impale_damage"
             {
                 "value" "2950"
-                "LinkedSpecialBonus" "special_bonus_unique_nyx_2"
+                "LinkedSpecialBonus" "special_bonus_unique_nyx_2" //missing67
             }
         }
 	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -14638,13 +14638,13 @@
             "armor_reduction"
             {
                 "value" "1"
-                "LinkedSpecialBonus" "special_bonus_unique_weaver_3"
+                "LinkedSpecialBonus" "special_bonus_unique_weaver_3" //missing68
             }
             "duration" "16"
             "destroy_attacks"
             {
                 "value" "24"
-                "LinkedSpecialBonus" "special_bonus_unique_weaver_4"
+                "LinkedSpecialBonus" "special_bonus_unique_weaver_4" //missing69
             }
             "radius" "100"
             "speed" "700"
@@ -14795,7 +14795,7 @@
             "damage"
             {
                 "value" "4600"
-                "LinkedSpecialBonus" "special_bonus_unique_techies"
+                "LinkedSpecialBonus" "special_bonus_unique_techies" //missing70
             }
             "silence_duration" "4"
             "hp_cost" "50"
@@ -14875,7 +14875,7 @@
             "projectile_count"
             {
                 "value" "1"
-                "LinkedSpecialBonus" "special_bonus_unique_snapfire_1"
+                "LinkedSpecialBonus" "special_bonus_unique_snapfire_1" //missing71
             }
             "projectile_speed" "1300"
             "projectile_width" "195"
@@ -14889,7 +14889,7 @@
             "move_slow_pct"
             {
                 "value" "35"
-                "LinkedSpecialBonus" "special_bonus_unique_snapfire_4"
+                "LinkedSpecialBonus" "special_bonus_unique_snapfire_4" //missing72
             }
             "burn_ground_duration" "12.0"
             "dist_change_speed" "75"
@@ -15151,13 +15151,13 @@
             "duration"
             {
                 "value" "12 15 20"
-                "LinkedSpecialBonus" "special_bonus_dark_clone_duration"
+                "special_bonus_unique_dark_clone_duration" "8"
             }
         }
 	}
 
 // Dark Seer: Dark Clone: +X sec duration
-	"special_bonus_dark_clone_duration"
+	"special_bonus_unique_dark_clone_duration"
 	{
 		"BaseClass"					"special_bonus_undefined"
 		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
@@ -15210,13 +15210,13 @@
 			"radius"
 			{
 				"value"							"750"
-				"LinkedSpecialBonus"			"special_bonus_ds_ion_shell_radius"
+				"special_bonus_unique_ds_ion_shell_radius" "2"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
 			"damage_per_second"
 			{
 				"value"							"60 290 950 1555 2200 6800 47800"
-				"LinkedSpecialBonus"			"special_bonus_ds_ion_shell_damage"
+				"special_bonus_unique_ds_ion_shell_damage" "5000"
 			}
 			"duration"					"60"
 			"think_interval"			"1"
@@ -15230,7 +15230,7 @@
 		}
 	}
 // Ion Shell (xX Radius)
-	"special_bonus_ds_ion_shell_radius"
+	"special_bonus_unique_ds_ion_shell_radius"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -15242,7 +15242,7 @@
 		}
 	}
 // Ion Shell (+X Damage)
-	"special_bonus_ds_ion_shell_damage"
+	"special_bonus_unique_ds_ion_shell_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -15277,7 +15277,7 @@
             "range"
             {
                 "value" "7225"
-                "LinkedSpecialBonus" "special_bonus_unique_faceless_void"
+                "LinkedSpecialBonus" "special_bonus_unique_faceless_void" //missing73
             }
             "backtrack_duration" "3.0"
             "radius" "500"
@@ -15308,7 +15308,7 @@
             "bonus_damage"
             {
                 "value" "900 4800 12200 24180 42320 88400 244500 748500"
-                "LinkedSpecialBonus" "special_bonus_unique_faceless_void_3"
+                "LinkedSpecialBonus" "special_bonus_unique_faceless_void_3" //missing74
             }
             "radius" "375"
         }
@@ -15470,7 +15470,7 @@
             "magic_resistance"
             {
                 "value" "25 30 35 45"
-                "LinkedSpecialBonus" "special_bonus_unique_antimage_4"
+                "LinkedSpecialBonus" "special_bonus_unique_antimage_4" //missing75
             }
             "duration" "3"
             "cooldown" "12 7 6 5"
@@ -15513,7 +15513,7 @@
             "mana_void_damage_per_mana"
             {
                 "value" "10 20 30"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_antimage_mana_void_damage"
+                "special_bonus_unique_unique_mjz_antimage_mana_void_damage" "20"
             }
             "mana_void_ministun" "0.3"
             "mana_void_aoe_radius" "700"
@@ -15526,7 +15526,7 @@
 			"particle"		"particles/units/heroes/hero_antimage/antimage_manavoid.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_antimage_mana_void_damage"
+	"special_bonus_unique_unique_mjz_antimage_mana_void_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -15556,14 +15556,14 @@
             "proc_chance"
             {
                 "value" "15"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_arc_warden_0302"
+                "special_bonus_unique_unique_mjz_arc_warden_0302" "18"
             }
             "wraith_speed" "900"
             "spark_damage" "500 1970 8940 17700 21200 44000 72500"
             "spark_bonus"
             {
                 "value" "16 17 18 21 24 32 46"
-                "LinkedSpecialBonus" "special_bonus_unique_arc_warden"
+                "LinkedSpecialBonus" "special_bonus_unique_arc_warden" //missing76
             }
         }
 
@@ -15574,7 +15574,7 @@
 			"particle"		"particles/units/heroes/hero_arc_warden/arc_warden_wraith_prj.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_arc_warden_0302"
+	"special_bonus_unique_unique_mjz_arc_warden_0302"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -15610,7 +15610,7 @@
             "radius"
             {
                 "value" "1500"
-                "LinkedSpecialBonus" "special_bonus_unique_axe_2"
+                "LinkedSpecialBonus" "special_bonus_unique_axe_2" //missing77
             }
             "bonus_armor" "10 20 30 40"
             "bonus_armor_per" "25 50 75 100"
@@ -15905,11 +15905,11 @@
             "damage_increase_outgoing_pct"
             {
                 "value" "15 30 45"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_bloodseeker_rupture_01"
+                "special_bonus_unique_unique_mjz_bloodseeker_rupture_01" "15"
             }
         }
 	}
-	"special_bonus_unique_mjz_bloodseeker_rupture_01"
+	"special_bonus_unique_unique_mjz_bloodseeker_rupture_01"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -15941,7 +15941,7 @@
             "max_stacks"
             {
                 "value" "7"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_bloodseeker_thirst_stacks"
+                "special_bonus_unique_unique_mjz_bloodseeker_thirst_stacks" "6"
             }
             "duration" "15"
             "stack_chance" "10"
@@ -15958,7 +15958,7 @@
 			"particle"		"particles/econ/items/bloodseeker/bloodseeker_ti7/bloodseeker_ti7_vision.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_bloodseeker_thirst_stacks"
+	"special_bonus_unique_unique_mjz_bloodseeker_thirst_stacks"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -15989,7 +15989,7 @@
             "gold_steal"
             {
                 "value" "30"
-                "LinkedSpecialBonus" "special_bonus_unique_bounty_hunter_custom_gold"
+                "special_bonus_unique_unique_bounty_hunter_custom_gold" "50"
             }
             "stats_mult" "3.7 4.0 4.3 4.6 7.9 10.0 20.0"
             "hp_mp" "200"
@@ -16003,7 +16003,7 @@
 		}
 	}
 
-	"special_bonus_unique_bounty_hunter_custom_gold"
+	"special_bonus_unique_unique_bounty_hunter_custom_gold"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -16044,24 +16044,24 @@
             "bonus_damage"
             {
                 "value" "250 500 1000 2000 4000 8000 16000"
-                "LinkedSpecialBonus" "special_bonus_unique_bounty_hunter_2"
+                "LinkedSpecialBonus" "special_bonus_unique_bounty_hunter_2" //missing78
             }
             "bounce_aoe" "7200"
             "ministun" "0.1"
             "speed"
             {
                 "value" "1000"
-                "LinkedSpecialBonus" "special_bonus_bh_shuriken_toss_1"
+                "special_bonus_unique_bh_shuriken_toss_1" "1000"
             }
             "cast_range"
             {
                 "value" "750"
-                "LinkedSpecialBonus" "special_bonus_bh_shuriken_toss_1"
+                "special_bonus_unique_bh_shuriken_toss_1" "1000"
             }
             "scepter_cast_range"
             {
                 "value" "1500"
-                "LinkedSpecialBonus" "special_bonus_bh_shuriken_toss_1"
+                "special_bonus_unique_bh_shuriken_toss_1" "1000"
                 "RequiresScepter" "1"
             }
             "scepter_cooldown"
@@ -16073,7 +16073,7 @@
             "str_agi_damage" "2 4 6 8 10 15 20"
         }
 	}
-	"special_bonus_bh_shuriken_toss_1"
+	"special_bonus_unique_bh_shuriken_toss_1"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -16112,7 +16112,7 @@
             "crit_multiplier_active"
             {
                 "value" "1440"
-                "LinkedSpecialBonus" "special_bonus_unique_brewmaster_4"
+                "LinkedSpecialBonus" "special_bonus_unique_brewmaster_4" //missing79
             }
             "duration" "10"
         }
@@ -16305,7 +16305,7 @@
             "bonus_damage"
             {
                 "value" "220 580 950 1500 2000 4000 8000"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_broodmother_insatiable_hunger"
+                "special_bonus_unique_unique_mjz_broodmother_insatiable_hunger" "16500"
             }
             "lifesteal_pct" "2 4 6 8 10 12 14"
             "bonus_attack_speed" "100 150 200 250 300 350 400"
@@ -16323,7 +16323,7 @@
 			"particle"  		"particles/units/heroes/hero_broodmother/broodmother_hunger_hero_effect.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_broodmother_insatiable_hunger"
+	"special_bonus_unique_unique_mjz_broodmother_insatiable_hunger"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -16359,13 +16359,13 @@
             "extra_damage"
             {
                 "value" "0"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_broodmother_spawn_spiderlings_damage"
+                "special_bonus_unique_unique_mjz_broodmother_spawn_spiderlings_damage" "7500"
             }
             "spiderling_duration" "60 70 80 90 110 130 150"
             "count"
             {
                 "value" "1 2 2 3 3 4 5"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_broodmother_spawn_spiderlings_count"
+                "special_bonus_unique_unique_mjz_broodmother_spawn_spiderlings_count" "1"
             }
             "projectile_speed" "1200"
             "true_strike_chance" "50 55 60 65 70 90 100"
@@ -16381,7 +16381,7 @@
 			
 		}
 	}
-	"special_bonus_unique_mjz_broodmother_spawn_spiderlings_count"
+	"special_bonus_unique_unique_mjz_broodmother_spawn_spiderlings_count"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -16392,7 +16392,7 @@
             "value" "1"
         }
 	}
-	"special_bonus_unique_mjz_broodmother_spawn_spiderlings_damage"
+	"special_bonus_unique_unique_mjz_broodmother_spawn_spiderlings_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -16451,17 +16451,17 @@
             "strength_damage"
             {
                 "value" "220 340 460 580 690 850 1180"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_centaur_double_edge_strength"
+                "special_bonus_unique_unique_mjz_centaur_double_edge_strength" "520"
             }
             "self_strength_damage" "100"
             "radius"
             {
                 "value" "500"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_centaur_double_edge_radius"
+                "special_bonus_unique_unique_mjz_centaur_double_edge_radius" "360"
             }
         }
 	}
-	"special_bonus_unique_mjz_centaur_double_edge_strength"
+	"special_bonus_unique_unique_mjz_centaur_double_edge_strength"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -16472,7 +16472,7 @@
             "value" "520"
         }
 	}
-	"special_bonus_unique_mjz_centaur_double_edge_radius"
+	"special_bonus_unique_unique_mjz_centaur_double_edge_radius"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -16513,17 +16513,17 @@
             "strength_pct"
             {
                 "value" "90 170 255 380 740 950 1550"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_centaur_return_strength"
+                "special_bonus_unique_unique_mjz_centaur_return_strength" "200"
             }
             "aura_radius" "900"
             "aura_enabled"
             {
                 "value" "0"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_centaur_return_aura"
+                "special_bonus_unique_unique_mjz_centaur_return_aura" "1"
             }
         }
 	}
-	"special_bonus_unique_mjz_centaur_return_strength"
+	"special_bonus_unique_unique_mjz_centaur_return_strength"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -16534,7 +16534,7 @@
             "value" "200"
         }
 	}
-	"special_bonus_unique_mjz_centaur_return_aura"
+	"special_bonus_unique_unique_mjz_centaur_return_aura"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -16574,7 +16574,7 @@
             "targets"
             {
                 "value" "3"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_chaos_knight_chaos_bolt_target"
+                "special_bonus_unique_unique_mjz_chaos_knight_chaos_bolt_target" "9"
             }
             "damage_min" "60 130 220 350 700 1500 2250"
             "damage_max" "350 920 2460 4900 9500 16000 45000"
@@ -16591,7 +16591,7 @@
 			"particle"		"particles/units/heroes/hero_chaos_knight/chaos_knight_bolt_msg.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_chaos_knight_chaos_bolt_target"
+	"special_bonus_unique_unique_mjz_chaos_knight_chaos_bolt_target"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -16622,7 +16622,7 @@
             "crit_chance"
             {
                 "value" "16 18 20 22 24 26 30"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_chaos_strike"
+                "special_bonus_unique_unique_mjz_chaos_strike" "20"
             }
             "armor_reduction" "-5 -10 -15 -25 -35 -45 -55"
             "armor_reduction_duration" "4"
@@ -16630,7 +16630,7 @@
             "shard_cdr" "0.25"
         }
 	}
-	"special_bonus_unique_mjz_chaos_strike"
+	"special_bonus_unique_unique_mjz_chaos_strike"
 	{
 		// "BaseClass"						"special_bonus_datadriven"
 		"BaseClass"						"special_bonus_undefined"
@@ -16707,14 +16707,14 @@
             "bonus_health"
             {
                 "value" "400 900 1800 2800 3500 4800 6500"
-                "LinkedSpecialBonus" "special_bonus_unique_clinkz_6"
+                "LinkedSpecialBonus" "special_bonus_unique_clinkz_6" //missing80
             }
             "bonus_damage_pct" "10 20 30 40 50 60 70"
             "self_armor" "-6 -9 -12 -18 -21 -24 -30"
             "permanent_bonus"
             {
                 "value" "50 73 99 122 185 228 385"
-                "LinkedSpecialBonus" "special_bonus_unique_clinkz_101"
+                "special_bonus_unique_unique_clinkz_101" "235"
             }
             "debuff_duration" "5"
             "armor_reduction" "9 12 15 18 23 27 35"
@@ -16724,12 +16724,12 @@
             "attack_speed_bonus"
             {
                 "value" "100 150 200 250 300 350 400"
-                "LinkedSpecialBonus" "special_bonus_clinkz_soul_pact_strafe_attack_speed"
+                "special_bonus_unique_clinkz_soul_pact_strafe_attack_speed" "150"
             }
             "attack_speed_duration"
             {
                 "value" "2 2.5 3 3.5 4 4.5 5"
-                "LinkedSpecialBonus" "special_bonus_clinkz_soul_pact_strafe_duration"
+                "special_bonus_unique_clinkz_soul_pact_strafe_duration" "3"
             }
         }
 
@@ -16740,7 +16740,7 @@
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
 		}
 	}
-	"special_bonus_clinkz_soul_pact_strafe_attack_speed"
+	"special_bonus_unique_clinkz_soul_pact_strafe_attack_speed"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -16750,7 +16750,7 @@
             "value" "150"
         }
 	}
-	"special_bonus_clinkz_soul_pact_strafe_duration"
+	"special_bonus_unique_clinkz_soul_pact_strafe_duration"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -16785,12 +16785,12 @@
             "attack_speed_bonus"
             {
                 "value" "110 140 220 390"
-                "LinkedSpecialBonus" "special_bonus_unique_clinkz_7"
+                "LinkedSpecialBonus" "special_bonus_unique_clinkz_7" //missing81
             }
             "attack_speed_duration"
             {
                 "value" "3 4 5 6"
-                "LinkedSpecialBonus" "special_bonus_unique_clinkz_2"
+                "LinkedSpecialBonus" "special_bonus_unique_clinkz_2" //missing82
             }
             "scepter_skeleton_count"
             {
@@ -16834,11 +16834,11 @@
             "manacost_reduction"
             {
                 "value" "0"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_crystal_maiden_brilliance_aura_mana"
+                "special_bonus_unique_unique_mjz_crystal_maiden_brilliance_aura_mana" "14"
             }
         }
 	}
-	"special_bonus_unique_mjz_crystal_maiden_brilliance_aura_mana"
+	"special_bonus_unique_unique_mjz_crystal_maiden_brilliance_aura_mana"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -16891,7 +16891,7 @@
             "damage"
             {
                 "value" "455 970 1450 2650 4750"
-                "LinkedSpecialBonus" "special_bonus_unique_crystal_maiden_3"
+                "LinkedSpecialBonus" "special_bonus_unique_crystal_maiden_3" //missing83
             }
             "str_int" "470 520 610 820 1240"
             "damage_interval" "0.30"
@@ -16945,19 +16945,19 @@
             "duration"
             {
                 "value" "2.5"
-                "LinkedSpecialBonus" "special_bonus_unique_crystal_maiden_1"
+                "LinkedSpecialBonus" "special_bonus_unique_crystal_maiden_1" //missing84
             }
             "creep_duration"
             {
                 "value" "2.5"
-                "LinkedSpecialBonus" "special_bonus_unique_crystal_maiden_1"
+                "LinkedSpecialBonus" "special_bonus_unique_crystal_maiden_1" //missing85
             }
             "stun_duration" "0.1"
             "damage_interval" "0.5"
             "mana_reg_dmg"
             {
                 "value" "5.0 5.5 6.0 6.5 7.0 7.5 10.0"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_crystal_maiden_forstbite"
+                "special_bonus_unique_unique_mjz_crystal_maiden_forstbite" "10.0"
             }
             "bonus" "2"
         }
@@ -16969,7 +16969,7 @@
 			"particle"				"particles/units/heroes/hero_crystalmaiden/maiden_frostbite.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_crystal_maiden_forstbite"
+	"special_bonus_unique_unique_mjz_crystal_maiden_forstbite"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -17014,7 +17014,7 @@
             "int_damage_pct"
             {
                 "value" "369 550 730 900 1550 2080 2420"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_death_prophet_carrion_swarm_int"
+                "special_bonus_unique_unique_mjz_death_prophet_carrion_swarm_int" "1680"
             }
         }
 
@@ -17026,7 +17026,7 @@
 		}
 	}
 // Talent: +X Crypt Swarm Intelligence Damage
-	"special_bonus_unique_mjz_death_prophet_carrion_swarm_int"
+	"special_bonus_unique_unique_mjz_death_prophet_carrion_swarm_int"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -17089,7 +17089,7 @@
 			"spirits"				
 			{
 				"value"					"4 8 20"
-				"LinkedSpecialBonus"	"special_bonus_unique_death_prophet"
+				"LinkedSpecialBonus"	"special_bonus_unique_death_prophet" //missing86
 			}
 			"spirit_speed"			"525"
 			"max_distance"			"2000 2000 2000"
@@ -17153,7 +17153,7 @@
             "bonus_strength"
             {
                 "value" "7"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_doom_bringer_devour_strength"
+                "special_bonus_unique_unique_mjz_doom_bringer_devour_strength" "13"
             }
             "regen" "3 8 13 18"
             "devour_time" "80"
@@ -17165,7 +17165,7 @@
 			"particle"			"particles/units/heroes/hero_doom_bringer/doom_bringer_devour.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_doom_bringer_devour_strength"
+	"special_bonus_unique_unique_mjz_doom_bringer_devour_strength"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -17208,7 +17208,7 @@
             "damage"
             {
                 "value" "425 1990 4925"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_doom_bringer_doom_damage"
+                "special_bonus_unique_unique_mjz_doom_bringer_doom_damage" "22666"
             }
             "debuff_magical_resistance" "-10 -20 -30"
             "debuff_attack_speed" "-20 -40 -80"
@@ -17231,7 +17231,7 @@
 			"particle"			"particles/status_fx/status_effect_doom.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_doom_bringer_doom_damage"
+	"special_bonus_unique_unique_mjz_doom_bringer_doom_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -17272,7 +17272,7 @@
             "burn_strength_damage_pct"
             {
                 "value" "120 260 420 650 860 1180 1666"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_doom_bringer_infernal_blade_strength"
+                "special_bonus_unique_unique_mjz_doom_bringer_infernal_blade_strength" "666"
             }
             "stun_duration" "0.3"
             "cast_range" "175"
@@ -17287,7 +17287,7 @@
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
 		}
 	}
-	"special_bonus_unique_mjz_doom_bringer_infernal_blade_strength"
+	"special_bonus_unique_unique_mjz_doom_bringer_infernal_blade_strength"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -17327,7 +17327,7 @@
             "strength_damage"
             {
                 "value" "300 350 400 450 600 800 1000"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_dragon_knight_0106"
+                "special_bonus_unique_unique_mjz_dragon_knight_0106" "900"
             }
             "reduction" "40"
             "spell_dmg_reduction" "25"
@@ -17340,7 +17340,7 @@
 			"particle"		"particles/units/heroes/hero_dragon_knight/dragon_knight_breathe_fire.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_dragon_knight_0106"
+	"special_bonus_unique_unique_mjz_dragon_knight_0106"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -17367,26 +17367,26 @@
             "bonus_health_regen"
             {
                 "value" "39 94 197 492 931 1937 3826"
-                "LinkedSpecialBonus" "special_bonus_unique_dragon_knight"
+                "special_bonus_unique_unique_dragon_knight" "5"
                 "LinkedSpecialBonusOperation" "SPECIAL_BONUS_MULTIPLY"
             }
             "bonus_armor"
             {
                 "value" "9 15 29 36 42 64 92"
-                "LinkedSpecialBonus" "special_bonus_unique_dragon_knight"
+                "special_bonus_unique_unique_dragon_knight" "5"
                 "LinkedSpecialBonusOperation" "SPECIAL_BONUS_MULTIPLY"
             }
             "bonus_all_attack"
             {
                 "value" "9 15 20 25 30 40 50"
-                "LinkedSpecialBonus" "special_bonus_unique_dragon_knight"
+                "special_bonus_unique_unique_dragon_knight" "5"
                 "LinkedSpecialBonusOperation" "SPECIAL_BONUS_MULTIPLY"
             }
             "hp_regen_amp" "55"
         }
 	}
 // Dragon's Blood (xX HP Regen/Armor)
-	"special_bonus_unique_dragon_knight"
+	"special_bonus_unique_unique_dragon_knight"
 	{
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -17448,17 +17448,17 @@
             "chance_1x"
             {
                 "value" "4 5 7"
-                "LinkedSpecialBonus" "special_bonus_unique_drow_ranger_33"
+                "special_bonus_unique_unique_drow_ranger_33" "2"
             }
             "chance_2x"
             {
                 "value" "0 2 3"
-                "LinkedSpecialBonus" "special_bonus_unique_drow_ranger_33"
+                "special_bonus_unique_unique_drow_ranger_33" "2"
             }
             "chance_3x"
             {
                 "value" "0 0 1"
-                "LinkedSpecialBonus" "special_bonus_unique_drow_ranger_33"
+                "special_bonus_unique_unique_drow_ranger_33" "2"
             }
             "split_count_scepter" "2"
             "split_range_scepter" "675"
@@ -17476,7 +17476,7 @@
 		}
 	}
 
-	"special_bonus_unique_drow_ranger_33"
+	"special_bonus_unique_unique_drow_ranger_33"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -17530,7 +17530,7 @@
             "str_damage_multiplier"
             {
                 "value" "20 40 60 80 100"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_elder_titan_earth_splitter_strength"
+                "special_bonus_unique_unique_mjz_elder_titan_earth_splitter_strength" "60"
             }
             "vision_width" "500"
             "vision_interval" "0.22"
@@ -17547,7 +17547,7 @@
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
 		}
 	}
-	"special_bonus_unique_mjz_elder_titan_earth_splitter_strength"
+	"special_bonus_unique_unique_mjz_elder_titan_earth_splitter_strength"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -17588,12 +17588,12 @@
             "damage_per_second"
             {
                 "value" "80 290 1890 2760 9600 18100 47200"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_ember_spirit_flame_guard_damage_per"
+                "special_bonus_unique_unique_mjz_ember_spirit_flame_guard_damage_per" "8700"
             }
             "bonus_damage_pct"
             {
                 "value" "10 20 30 40 60 80 130"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_damage"
+                "special_bonus_unique_unique_mjz_ember_spirit_flame_guard_bonus_damage" "50"
             }
             "damage_reduction_pct" "-15 -20 -25 -30 -35 -40 -45"
             "duration" "10 12 14 16 18 20 22"
@@ -17606,7 +17606,7 @@
 			"particle"							"particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_ember_spirit_flame_guard_damage_per"
+	"special_bonus_unique_unique_mjz_ember_spirit_flame_guard_damage_per"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -17617,7 +17617,7 @@
             "value" "8700"
         }
 	}
-	"special_bonus_unique_mjz_ember_spirit_flame_guard_bonus_damage"
+	"special_bonus_unique_unique_mjz_ember_spirit_flame_guard_bonus_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -17672,7 +17672,7 @@
             "charge_count"
             {
                 "value" "0"
-                "LinkedSpecialBonus" "special_bonus_unique_ember_spirit_4_custom"
+                "special_bonus_unique_unique_ember_spirit_4_custom" "3"
             }
             "charge_restore_time" "17 15 13 12 10 8 5"
             "crit_chance" "12"
@@ -17693,7 +17693,7 @@
 	}
 
 // 2 charges talent
-	"special_bonus_unique_ember_spirit_4_custom"
+	"special_bonus_unique_unique_ember_spirit_4_custom"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -17734,7 +17734,7 @@
             "charge_count"
             {
                 "value" "0"
-                "LinkedSpecialBonus" "special_bonus_unique_ember_spirit_4"
+                "LinkedSpecialBonus" "special_bonus_unique_ember_spirit_4" //missing87
             }
             "charge_restore_time" "30 26 22 14 10 6 4"
             "crit_chance" "100 20 22 24 26 28 30"
@@ -17781,7 +17781,7 @@
             "intelligence_damage"
             {
                 "value" "0.2"
-                "LinkedSpecialBonus" "special_bonus_unique_enigma_100"
+                "special_bonus_unique_unique_enigma_100" "0.2"
             }
             "damage_per_level" "500"
             "duration" "4.0"
@@ -17823,7 +17823,7 @@
             "radius"
             {
                 "value" "800 1050 1200"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_faceless_the_world_radius"
+                "special_bonus_unique_unique_mjz_faceless_the_world_radius" "650"
             }
             "duration" "4 5 6"
             "duration_scepter"
@@ -17847,7 +17847,7 @@
 			"particle"			"particles/econ/items/faceless_void/faceless_void_mace_of_aeons/fv_chronosphere_aeons.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_faceless_the_world_radius"
+	"special_bonus_unique_unique_mjz_faceless_the_world_radius"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -18007,12 +18007,12 @@
             "damage"
             {
                 "value" "800 1000 1200 1400 1600"
-                "LinkedSpecialBonus" "special_bonus_unique_lion_3"
+                "LinkedSpecialBonus" "special_bonus_unique_lion_3" //missing88
             }
             "damage_scepter"
             {
                 "value" "1000 1250 1500 1800 2200"
-                "LinkedSpecialBonus" "special_bonus_unique_lion_3"
+                "LinkedSpecialBonus" "special_bonus_unique_lion_3" //missing89
                 "RequiresScepter" "1"
             }
             "damage_per_kill" "450"
@@ -18036,7 +18036,7 @@
             "damage_per_int"
             {
                 "value" "0"
-                "LinkedSpecialBonus" "special_bonus_unique_lion_8"
+                "LinkedSpecialBonus" "special_bonus_unique_lion_8" //missing90
             }
         }
 
@@ -18153,12 +18153,12 @@
             "outgoing_damage"
             {
                 "value" "-10"
-                "LinkedSpecialBonus" "special_bonus_unique_naga_siren_4"
+                "LinkedSpecialBonus" "special_bonus_unique_naga_siren_4" //missing91
             }
             "outgoing_damage_tooltip"
             {
                 "value" "90"
-                "LinkedSpecialBonus" "special_bonus_unique_naga_siren_4"
+                "LinkedSpecialBonus" "special_bonus_unique_naga_siren_4" //missing92
             }
             "incoming_damage" "100"
             "tooltip_incoming_damage_total_pct" "200"
@@ -18219,7 +18219,7 @@
             "rocket_damage"
             {
                 "value" "120 320 1870 3420 9860 18240 36500"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_gyrocopter_rocket_barrage_damage"
+                "special_bonus_unique_unique_mjz_gyrocopter_rocket_barrage_damage" "4350"
             }
             "agi_damage_pct" "260 460 780 1050 1250 1650"
             "interval" "0.5"
@@ -18233,7 +18233,7 @@
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
 		}
 	}
-	"special_bonus_unique_mjz_gyrocopter_rocket_barrage_damage"
+	"special_bonus_unique_unique_mjz_gyrocopter_rocket_barrage_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -18313,7 +18313,7 @@
             "burn_damage"
             {
                 "value" "10 15 20 45"
-                "LinkedSpecialBonus" "special_bonus_unique_huskar_2"
+                "LinkedSpecialBonus" "special_bonus_unique_huskar_2" //missing93
             }
             "spear_aoe" "220 240 260 380"
             "tick_rate" "1.5"
@@ -18700,7 +18700,7 @@
             "cleave_damage"
             {
                 "value" "165"
-                "LinkedSpecialBonus" "special_bonus_unique_kunkka_4"
+                "LinkedSpecialBonus" "special_bonus_unique_kunkka_4" //missing94
             }
             "strength_damage_pct"
             {
@@ -18710,14 +18710,14 @@
             "cooldown"
             {
                 "value" "2.0 1.8 1.6 1.4 1.2 1.0 0.4"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_kunkka_tidebringer"
+                "special_bonus_unique_unique_mjz_kunkka_tidebringer" "-0.2"
             }
             "ss_bonus" "25"
         }
 	}
 
 
-	"special_bonus_unique_mjz_kunkka_tidebringer"
+	"special_bonus_unique_unique_mjz_kunkka_tidebringer"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -18762,7 +18762,7 @@
             "bonus_damage_pct"
             {
                 "value" "80 140 250"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_legion_commander_duel_damage"
+                "special_bonus_unique_unique_mjz_legion_commander_duel_damage" "150"
             }
             "bonus_attack_speed" "100 150 200"
             "bonus_armor" "12 22 38"
@@ -18787,7 +18787,7 @@
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
 		}
 	}
-	"special_bonus_unique_mjz_legion_commander_duel_damage"
+	"special_bonus_unique_unique_mjz_legion_commander_duel_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -18830,7 +18830,7 @@
             "num_explosions"
             {
                 "value" "50"
-                "LinkedSpecialBonus" "special_bonus_unique_leshrac_1"
+                "LinkedSpecialBonus" "special_bonus_unique_leshrac_1" //missing95
             }
             "damage" "85 190 320 640 950 1800 4500"
             "duration" "12"
@@ -18840,11 +18840,11 @@
             "damage_stats"
             {
                 "value" "150 180 210 240 300 450"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_leshrac_diabolic_edict_1"
+                "special_bonus_unique_unique_mjz_leshrac_diabolic_edict_1" "150"
             }
         }
 	}
-	"special_bonus_unique_mjz_leshrac_diabolic_edict_1"
+	"special_bonus_unique_unique_mjz_leshrac_diabolic_edict_1"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -18890,12 +18890,12 @@
             "damage"
             {
                 "value" "120 630 1470 2100 3250 5400 8560"
-                "LinkedSpecialBonus" "special_bonus_unique_leshrac_6"
+                "LinkedSpecialBonus" "special_bonus_unique_leshrac_6" //missing96
             }
             "damage_intelligence_per"
             {
                 "value" "300 350 400 450 600 750 900"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_leshrac_lightning_storm_int_damage"
+                "special_bonus_unique_unique_mjz_leshrac_lightning_storm_int_damage" "500"
             }
             "jump_count" "10"
             "radius" "675"
@@ -18904,7 +18904,7 @@
             "slow_duration"
             {
                 "value" "7.0"
-                "LinkedSpecialBonus" "special_bonus_unique_leshrac_lightning_storm_duration"
+                "special_bonus_unique_unique_leshrac_lightning_storm_duration" "5"
             }
             "interval_scepter"
             {
@@ -18914,7 +18914,7 @@
             "count_scepter"
             {
                 "value" "1"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_leshrac_lightning_storm_aghanim"
+                "special_bonus_unique_unique_mjz_leshrac_lightning_storm_aghanim" "1.0"
                 "RequiresScepter" "1"
             }
             "radius_scepter"
@@ -18926,7 +18926,7 @@
             "ss_chance" "15"
         }
 	}
-	"special_bonus_unique_mjz_leshrac_lightning_storm_int_damage"
+	"special_bonus_unique_unique_mjz_leshrac_lightning_storm_int_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -18938,7 +18938,7 @@
         }
 	}
 
-	"special_bonus_unique_leshrac_lightning_storm_duration"
+	"special_bonus_unique_unique_leshrac_lightning_storm_duration"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -18951,7 +18951,7 @@
 	}
 
 
-	"special_bonus_unique_mjz_leshrac_lightning_storm_aghanim"
+	"special_bonus_unique_unique_mjz_leshrac_lightning_storm_aghanim"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -19011,24 +19011,24 @@
             "damage"
             {
                 "value" "300 975 2600 4900 13500"
-                "LinkedSpecialBonus" "special_bonus_unique_leshrac_3"
+                "LinkedSpecialBonus" "special_bonus_unique_leshrac_3" //missing97
             }
             "damage_scepter"
             {
                 "value" "1475 4900 9200 19550 45000"
-                "LinkedSpecialBonus" "special_bonus_unique_leshrac_3"
+                "LinkedSpecialBonus" "special_bonus_unique_leshrac_3" //missing98
                 "RequiresScepter" "1"
             }
             "damage_scepter_intelligence_per"
             {
                 "value" "680 980 1600 2400"
-                "LinkedSpecialBonus" "special_bonus_unique_leshrac_3"
+                "LinkedSpecialBonus" "special_bonus_unique_leshrac_3" //missing99
                 "RequiresScepter" "1"
             }            
             "damage_intelligence_per"
             {
                 "value" "385 580 680 750 1250"
-                "LinkedSpecialBonus" "special_bonus_unique_leshrac_3"
+                "LinkedSpecialBonus" "special_bonus_unique_leshrac_3" //missing100
             }
             "nova_tick" "0.5"
         }
@@ -19047,12 +19047,12 @@
             "bonus_move_speed_pct"
             {
                 "value" "22"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_anabolic_frenzy_move"
+                "special_bonus_unique_unique_mjz_anabolic_frenzy_move" "80"
             }
             "bonus_attack_speed" "120"
         }
 	}
-	"special_bonus_unique_mjz_anabolic_frenzy_move"
+	"special_bonus_unique_unique_mjz_anabolic_frenzy_move"
 	{
 		"BaseClass"				"special_bonus_undefined"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -19093,12 +19093,12 @@
             "duration"
             {
                 "value" "2.0 2.2 2.5 3.0"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_poison_sting_duration"
+                "special_bonus_unique_unique_mjz_poison_sting_duration" "2"
             }
             "damage"
             {
                 "value" "10 12 15 17"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_poison_sting_claw_damage"
+                "special_bonus_unique_unique_mjz_poison_sting_claw_damage" "10"
             }
             "move_slow_pct" "-20"
             "chance" "14 15 17 20"
@@ -19114,7 +19114,7 @@
 			"particle"	"particles/msg_fx/msg_spell.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_poison_sting_duration"
+	"special_bonus_unique_unique_mjz_poison_sting_duration"
 	{
 		"BaseClass"				"special_bonus_undefined"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -19124,7 +19124,7 @@
             "value" "2"
         }
 	}
-	"special_bonus_unique_mjz_poison_sting_claw_damage"
+	"special_bonus_unique_unique_mjz_poison_sting_claw_damage"
 	{
 		"BaseClass"				"special_bonus_undefined"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -19150,7 +19150,7 @@
             "str_damage_pct"
             {
                 "value" "100 150 200 350 500 750 1000"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_life_stealer_feast_strength"
+                "special_bonus_unique_unique_mjz_life_stealer_feast_strength" "1000"
             }
         }
 
@@ -19160,7 +19160,7 @@
 			"particle"		  "particles/units/heroes/hero_life_stealer/life_stealer_feast.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_life_stealer_feast_strength"
+	"special_bonus_unique_unique_mjz_life_stealer_feast_strength"
 	{
 		"BaseClass"				"special_bonus_undefined"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -19194,7 +19194,7 @@
             "duration"
             {
                 "value" "3.0 4.0 5.0 6.0"
-                "LinkedSpecialBonus" "special_bonus_unique_lifestealer_rage"
+                "special_bonus_unique_unique_lifestealer_rage" "1.5"
             }
         }
 
@@ -19217,7 +19217,7 @@
         }
 	}
 
-	"special_bonus_unique_lifestealer_rage"
+	"special_bonus_unique_unique_lifestealer_rage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -19246,25 +19246,25 @@
             "attack_speed_bonus"
             {
                 "value" "40 55 70 85"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_lina_fiery_soul"
+                "special_bonus_unique_unique_mjz_lina_fiery_soul" "60"
             }
             "move_speed_bonus"
             {
                 "value" "5 6 7 8"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_lina_fiery_soul"
+                "special_bonus_unique_unique_mjz_lina_fiery_soul" "60"
                 "LinkedSpecialBonusField" "value2"
             }
             "spell_amp_bonus"
             {
                 "value" "15 25 35 50"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_lina_fiery_soul"
+                "special_bonus_unique_unique_mjz_lina_fiery_soul" "60"
                 "LinkedSpecialBonusField" "value3"
             }
             "max_stacks" "3"
             "stack_duration" "10"
         }
 	}
-	"special_bonus_unique_mjz_lina_fiery_soul"
+	"special_bonus_unique_unique_mjz_lina_fiery_soul"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -19590,12 +19590,12 @@
             "damage"
             {
                 "value" "175 675 1260 4325 8650 19850 37850"
-                "LinkedSpecialBonus" "special_bonus_unique_mars_spear_bonus_damage"
+                "LinkedSpecialBonus" "special_bonus_unique_mars_spear_bonus_damage" //missing101
             }
             "strength_damage"
             {
                 "value" "600 750 800 950 1200 1400 1800"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_mars_spear_str_damage"
+                "special_bonus_unique_unique_mjz_mars_spear_str_damage" "1200"
             }
             "spear_speed" "1100"
             "spear_width" "100"
@@ -19605,14 +19605,14 @@
             "stun_duration"
             {
                 "value" "1.6"
-                "LinkedSpecialBonus" "special_bonus_unique_mars_spear_stun_duration"
+                "LinkedSpecialBonus" "special_bonus_unique_mars_spear_stun_duration" //missing102
             }
             "knockback_duration" "1.25"
             "knockback_distance" "75"
         }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
 	}
-	"special_bonus_unique_mjz_mars_spear_str_damage"
+	"special_bonus_unique_unique_mjz_mars_spear_str_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -19678,7 +19678,7 @@
             "arrow_count"
             {
                 "value" "1 2 3 4"
-                "LinkedSpecialBonus" "special_bonus_unique_medusa_2"
+                "LinkedSpecialBonus" "special_bonus_unique_medusa_2" //missing103
             }
             "total_arrow_count" "2 3 4 5"
             "range" "700"
@@ -19686,7 +19686,7 @@
             "UseCastAttackOrb"
             {
                 "value" "0"
-                "LinkedSpecialBonus" "special_bonus_unique_medusa_4"
+                "LinkedSpecialBonus" "special_bonus_unique_medusa_4" //missing104
             }
         }
 
@@ -19898,14 +19898,14 @@
             "arrow_count"
             {
                 "value" "1"
-                "LinkedSpecialBonus" "special_bonus_unique_mirana_2"
+                "LinkedSpecialBonus" "special_bonus_unique_mirana_2" //missing105
             }
             "arrow_vision" "500"
             "damage_pct" "280 360 420 580 670 790 900"
             "proc_chance"
             {
                 "value" "15"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_mirana_arrow_chance"
+                "special_bonus_unique_unique_mjz_mirana_arrow_chance" "5"
             }
         }
 
@@ -19916,7 +19916,7 @@
 			"particle"		"particles/econ/items/mirana/mirana_crescent_arrow/mirana_spell_crescent_arrow.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_mirana_arrow_chance"
+	"special_bonus_unique_unique_mjz_mirana_arrow_chance"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -19982,7 +19982,7 @@
             "bonus_damage"
             {
                 "value" "120 420 990 1850 3200 4400 7350"
-                "LinkedSpecialBonus" "special_bonus_unique_monkey_king_2"
+                "LinkedSpecialBonus" "special_bonus_unique_monkey_king_2" //missing106
             }
             "lifesteal" "15 20 25 30 35 40 50"
             "max_duration" "10"
@@ -20075,12 +20075,12 @@
             "duration"
             {
                 "value" "14"
-                "LinkedSpecialBonus" "special_bonus_unique_morphling_8"
+                "LinkedSpecialBonus" "special_bonus_unique_morphling_8" //missing107
             }
             "bonus_stats_pct"
             {
                 "value" "200 210 220 230 240 250 300"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_morphling_replicate_stats"
+                "special_bonus_unique_unique_mjz_morphling_replicate_stats" "100"
             }
             "bonus_attack_range" "100 200 300 310 320 350 400"
             "model_scale" "10 15 20 20 20 20 -50"
@@ -20091,7 +20091,7 @@
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_morphling.vsndevts"
 		}
 	}
-	"special_bonus_unique_mjz_morphling_replicate_stats"
+	"special_bonus_unique_unique_mjz_morphling_replicate_stats"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -20187,7 +20187,7 @@
             "base_heal"
             {
                 "value" "90 380 600 900 1400 2100 3550"
-                "LinkedSpecialBonus" "special_bonus_unique_necrophos_4"
+                "LinkedSpecialBonus" "special_bonus_unique_necrophos_4" //missing108
             }
             "max_health_heal" "4 6 8 10 12 14 20"
             "max_count" "16"
@@ -20225,7 +20225,7 @@
 			"intelligence_damage"
 			{
 				"value"					"3.8 4.1 4.4 4.8 5.2 5.6 6.0"
-				"LinkedSpecialBonus"	"special_bonus_unique_mjz_necrolyte_heartstopper_aura_intelligence"
+				"special_bonus_unique_unique_mjz_necrolyte_heartstopper_aura_intelligence" "3.0"
 				"CalculateSpellDamageTooltip"	"1"
 			}
 			"health_regen"			"18 28 44 56 68 80 200"
@@ -20236,7 +20236,7 @@
 			"ss_bonus_damage"       "1"
 		}
 	}
-	"special_bonus_unique_mjz_necrolyte_heartstopper_aura_intelligence"
+	"special_bonus_unique_unique_mjz_necrolyte_heartstopper_aura_intelligence"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -20370,7 +20370,7 @@
             "bonus_damage"
             {
                 "value" "850 2250 6350 18300 45000"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_night_stalker_darkness_damage"
+                "special_bonus_unique_unique_mjz_night_stalker_darkness_damage" "17000"
             }
             "lifesteal_pct" "5 6 8 9 10"
             "evasion_chance" "30 40 50 60 70"
@@ -20386,7 +20386,7 @@
 			"particles"		"particles/units/heroes/hero_night_stalker/nightstalker_ulti.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_night_stalker_darkness_damage"
+	"special_bonus_unique_unique_mjz_night_stalker_darkness_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -20410,24 +20410,24 @@
             "bonus_movement_speed_pct"
             {
                 "value" "36 40 64 92"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_night_stalker_hunter_in_the_night_mspeed"
+                "special_bonus_unique_unique_mjz_night_stalker_hunter_in_the_night_mspeed" "36"
             }
             "bonus_attack_speed"
             {
                 "value" "80 100 220 320"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_night_stalker_hunter_in_the_night_aspeed"
+                "special_bonus_unique_unique_mjz_night_stalker_hunter_in_the_night_aspeed" "120"
             }
             "bonus_damage_pct"
             {
             	"value" "15"
-            	"LinkedSpecialBonus" "special_bonus_unique_mjz_night_stalker_hunter_in_the_night_dmgptc"
+            	"special_bonus_unique_unique_mjz_night_stalker_hunter_in_the_night_dmgptc" "10"
             }
             "bonus_spell_amp" "40 60 80 100"
             "bonus_in_night" "2"
         }
 	}
 
-	"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_mspeed"
+	"special_bonus_unique_unique_mjz_night_stalker_hunter_in_the_night_mspeed"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -20438,7 +20438,7 @@
             "value" "36"
         }
 	}
-	"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_aspeed"
+	"special_bonus_unique_unique_mjz_night_stalker_hunter_in_the_night_aspeed"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -20450,7 +20450,7 @@
         }
 	}
 
-	"special_bonus_unique_mjz_night_stalker_hunter_in_the_night_dmgptc"
+	"special_bonus_unique_unique_mjz_night_stalker_hunter_in_the_night_dmgptc"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -20529,7 +20529,7 @@
             "damage_reflect_pct"
             {
                 "value" "120 210 320 410 550 650 780"
-                "LinkedSpecialBonus" "special_bonus_unique_nyx"
+                "LinkedSpecialBonus" "special_bonus_unique_nyx" //missing109
             }
         }
 
@@ -20838,78 +20838,78 @@
 		}
 	}
 
-	
-	"mjz_phantom_assassin_coup_de_grace"
-	{
-		"BaseClass"						"ability_lua"	//"ability_datadriven"
-		"ScriptFile"					"abilities/hero_phantom_assassin/mjz_phantom_assassin_coup_de_grace.lua"
-		"AbilityType"					"ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityTextureName"			"phantom_assassin_coup_de_grace"	// "mjz_phantom_assassin_coup_de_grace"
-		"AbilitySound"					"Hero_PhantomAssassin.CoupDeGrace"
-		"LevelsBetweenUpgrades"			"15"
-		"HasScepterUpgrade"				"1"
-		"MaxLevel"						"5"
+    "mjz_phantom_assassin_coup_de_grace"
+    {
+        "BaseClass"                     "ability_lua"   //"ability_datadriven"
+        "ScriptFile"                    "abilities/hero_phantom_assassin/mjz_phantom_assassin_coup_de_grace.lua"
+        "AbilityType"                   "ABILITY_TYPE_ULTIMATE"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+        "SpellImmunityType"             "SPELL_IMMUNITY_ENEMIES_YES"
+        "AbilityTextureName"            "phantom_assassin_coup_de_grace"    // "mjz_phantom_assassin_coup_de_grace"
+        "AbilitySound"                  "Hero_PhantomAssassin.CoupDeGrace"
+        "LevelsBetweenUpgrades"         "15"
+        "HasScepterUpgrade"             "1"
+        "MaxLevel"                      "5"
 
-		"AbilityValues"
-		{
-			"crit_chance"
-			{
-				"value" "2 2 3 4 5"
-				"LinkedSpecialBonus" "special_bonus_custom_pa_coup_de_grace_crit_chance"
-			}
-			"crit_bonus" "1200 1800 2400 3200 5400"
-			"magical_damage_scepter"
-			{
-				"value" "5 7 10 15 20"
-				"RequiresScepter" "1"
-			}
-			"cleave_damage" "100"
-			"cleave_starting_width" "400"
-			"cleave_ending_width" "750"
-			"cleave_distance" "1450"
-			"bonus_attack" "25 35 45 55 75"
-			"bonus_duration" "5"
-			"scepter_crit_bonus_per_minute"
-			{
-				"value" "10 20 30 40 75"
-				"RequiresScepter" "1"
-			}
-		}
+        "AbilityValues"
+        {
+            "crit_chance"
+            {
+                "value" "2 2 3 4 5"
+                "special_bonus_unique_pa_coup_de_grace_crit_chance" "5"
+            }
+            "crit_bonus" "1200 1800 2400 3200 5400"
+            "magical_damage_scepter"
+            {
+                "value" "5 7 10 15 20"
+                "RequiresScepter" "1"
+            }
+            "cleave_damage" "100"
+            "cleave_starting_width" "400"
+            "cleave_ending_width" "750"
+            "cleave_distance" "1450"
+            "bonus_attack" "25 35 45 55 75"
+            "bonus_duration" "5"
+            "scepter_crit_bonus_per_minute"
+            {
+                "value" "10 20 30 40 75"
+                "RequiresScepter" "1"
+            }
+        }
 
-		"precache"
-		{
-			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
-			"particle"		"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
-			"particle" 		"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact_dagger.vpcf"
-			"particle" 		"particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact_dagger_mechanical.vpcf"
+        "precache"
+        {
+            "soundfile"     "soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+            "particle"      "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+            "particle"      "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact_dagger.vpcf"
+            "particle"      "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact_dagger_mechanical.vpcf"
 
-			"particle" 		"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/phantom_assassin_crit_impact_dagger_mechanical_arcana.vpcf"
-			"particle" 		"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/phantom_assassin_crit_impact_dagger_arcana.vpcf"
+            "particle"      "particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/phantom_assassin_crit_impact_dagger_mechanical_arcana.vpcf"
+            "particle"      "particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/phantom_assassin_crit_impact_dagger_arcana.vpcf"
 
-			"particle"		"particles/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
-			"particle"		"particles/hero_phantom_assassin/phantom_assassin_crit_impact_dagger.vpcf"			
-			"particle"		"particles/hero_phantom_assassin/phantom_assassin_crit_impact_dagger_arcana.vpcf"
+            "particle"      "particles/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf"
+            "particle"      "particles/hero_phantom_assassin/phantom_assassin_crit_impact_dagger.vpcf"          
+            "particle"      "particles/hero_phantom_assassin/phantom_assassin_crit_impact_dagger_arcana.vpcf"
 
-			"particle"		"particles/econ/items/sven/sven_ti7_sword/sven_ti7_sword_spell_great_cleave_gods_strength_crit.vpcf"
-		}
-	}
+            "particle"      "particles/econ/items/sven/sven_ti7_sword/sven_ti7_sword_spell_great_cleave_gods_strength_crit.vpcf"
+        }
+    }
 
-	"special_bonus_custom_pa_coup_de_grace_crit_chance"
-	{
-		"BaseClass"						"special_bonus_undefined"
-		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityValues"
-		{
-			"value" "5"
-		}
-	}
+    "special_bonus_unique_pa_coup_de_grace_crit_chance"
+    {
+        "BaseClass"                     "special_bonus_undefined"
+        "AbilityType"                   "ABILITY_TYPE_ATTRIBUTES"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityValues"
+        {
+            "value" "5"
+        }
+    }	
+
 	"imba_phantom_assassin_coup_de_grace"
 	{
 		// General
@@ -20967,7 +20967,7 @@
             "crit_chance"
             {
                 "value" "50 1 1"
-                "LinkedSpecialBonus" "special_bonus_unique_phantom_assassin_2"
+                "LinkedSpecialBonus" "special_bonus_unique_phantom_assassin_2" //missing110
             }
             "crit_bonus" "2600 2650 2700"
             "magical_damage_scepter" "18 19 20"
@@ -21061,7 +21061,7 @@
             "target_count"
             {
                 "value" "5"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_stifling_dagger"
+                "special_bonus_unique_mjz_stifling_dagger" "5"
             }
             "base_damage" "65"
             "attack_factor" "30 50 120 190"
@@ -21126,26 +21126,26 @@
 			"bonus_as"
 			{
 				"value"					"50 75 100 130 160 190 230 270 300 350"
-				"LinkedSpecialBonus"	"special_bonus_pa_stifling_dagger_attack_speed"
+				"special_bonus_unique_pa_stifling_dagger_attack_speed" "250"
 			}
 			"bonus_as_duration"
 			{
 				"value"					"2"
-				"LinkedSpecialBonus"	"special_bonus_pa_stifling_dagger_buff_duration"
+				"special_bonus_unique_pa_stifling_dagger_buff_duration" "2"
 			}
 			"move_slow"					"50"
 			"slow_duration"				"1.3 1.6 1.9 2.2 2.5 2.8 3.1 3.4 3.7 4"
 			"dagger_speed"
 			{
 				"value"					"1200 1300 1400 1500 1600 1700 1800 1900 2000 2100"
-				"LinkedSpecialBonus"	"special_bonus_pa_stifling_dagger_speed"
+				"special_bonus_unique_pa_stifling_dagger_speed" "1000"
 			}
 			"search_radius"				"400"
 			"cast_range"				"900 1050 1200 1350 1500 1650 1800 1950 2100 2250"
 		}
 	}
 // Talent: +X Stifling Dagger Attack Speed Bonus
-	"special_bonus_pa_stifling_dagger_attack_speed"
+	"special_bonus_unique_pa_stifling_dagger_attack_speed"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -21157,7 +21157,7 @@
         }
 	}
 // Talent: +X Stifling Dagger Attack Speed Duration
-	"special_bonus_pa_stifling_dagger_buff_duration"
+	"special_bonus_unique_pa_stifling_dagger_buff_duration"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -21169,7 +21169,7 @@
         }
 	}
 // Talent: +X Stifling Dagger Projectile Speed
-	"special_bonus_pa_stifling_dagger_speed"
+	"special_bonus_unique_pa_stifling_dagger_speed"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -21237,7 +21237,7 @@
             "dragon_slave_distance"
             {
                 "value" "1575"
-                "LinkedSpecialBonus" "special_bonus_unique_phoenix_4"
+                "LinkedSpecialBonus" "special_bonus_unique_phoenix_4" //missing111
             }
             "attr_damage" "24 48 96 192"
         }
@@ -21291,7 +21291,7 @@
             "hp_perc_dmg"
             {
                 "value" "20.0 40.0 60.0 90.0 150.0 200.0 350.0"
-                "LinkedSpecialBonus" "special_bonus_unique_phoenix_5"
+                "LinkedSpecialBonus" "special_bonus_unique_phoenix_5" //missing112
             }
             "radius" "390"
             "tick_interval" "0.5"
@@ -21373,17 +21373,17 @@
             "stun_duration"
             {
                 "value" "1.5 2.0 2.5 3.0 3.5 4.0 4.5"
-                "LinkedSpecialBonus" "special_bonus_unique_phoenix_2"
+                "LinkedSpecialBonus" "special_bonus_unique_phoenix_2" //missing113
             }
             "max_attacks"
             {
                 "value" "4 5 6 7 8 9 10"
-                "LinkedSpecialBonus" "special_bonus_unique_phoenix_1"
+                "LinkedSpecialBonus" "special_bonus_unique_phoenix_1" //missing114
             }
             "max_attacks_scepter"
             {
                 "value" "6 8 10 12 14 16 18"
-                "LinkedSpecialBonus" "special_bonus_unique_phoenix_1"
+                "LinkedSpecialBonus" "special_bonus_unique_phoenix_1" //missing115
                 "RequiresScepter" "1"
             }
             "aoe_scepter"
@@ -21438,13 +21438,13 @@
 		    "max_distance"
 		    {
 		        "value" "1950"
-		        "LinkedSpecialBonus" "special_bonus_unique_puck_mjz_orb"
+		        "special_bonus_unique_unique_puck_mjz_orb" "80"
 		        "LinkedSpecialBonusOperation" "SPECIAL_BONUS_PERCENTAGE_ADD"
 		    }
 		    "orb_speed"
 		    {
 		        "value" "800"
-		        "LinkedSpecialBonus" "special_bonus_unique_puck_mjz_orb"
+		        "special_bonus_unique_unique_puck_mjz_orb" "80"
 		        "LinkedSpecialBonusOperation" "SPECIAL_BONUS_PERCENTAGE_ADD"
 		    }
 		    "orb_vision" "450"
@@ -21463,7 +21463,7 @@
 	}
 
 // Talent: orb Distance and speed
-	"special_bonus_unique_puck_mjz_orb"
+	"special_bonus_unique_unique_puck_mjz_orb"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -21599,7 +21599,7 @@
             "strength_damage"
             {
                 "value" "30.0 60.0 120.0"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_pudge_dismember_strength_damage"
+                "special_bonus_unique_unique_mjz_pudge_dismember_strength_damage" "90.0"
             }
             "ticks" "6"
             "cooldown" "35 30 25"
@@ -21607,7 +21607,7 @@
             "duration"
             {
                 "value" "3.5"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_pudge_dismember_duration"
+                "special_bonus_unique_unique_mjz_pudge_dismember_duration" "2.5"
             }
             "scepter_aoe"
             {
@@ -21626,7 +21626,7 @@
 			"particle"			"particles/units/heroes/hero_pudge/pudge_dismember.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_pudge_dismember_strength_damage"
+	"special_bonus_unique_unique_mjz_pudge_dismember_strength_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -21637,7 +21637,7 @@
             "value" "90.0"
         }
 	}
-	"special_bonus_unique_mjz_pudge_dismember_duration"
+	"special_bonus_unique_unique_mjz_pudge_dismember_duration"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -21661,16 +21661,16 @@
             "magic_damage_reduction_pct"
             {
                 "value" "15 20 25 30"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_pudge_0301"
+                "special_bonus_unique_unique_mjz_pudge_0301" "35"
             }
             "primary_attribute_per"
             {
                 "value" "50 70 90 120"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_pudge_0302"
+                "special_bonus_unique_unique_mjz_pudge_0302" "210"
             }
         }
 	}
-	"special_bonus_unique_mjz_pudge_0301"
+	"special_bonus_unique_unique_mjz_pudge_0301"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -21681,7 +21681,7 @@
             "value" "35"
         }
 	}
-	"special_bonus_unique_mjz_pudge_0302"
+	"special_bonus_unique_unique_mjz_pudge_0302"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -21717,12 +21717,12 @@
             "base_damage"
             {
                 "value" "99 160 490 1200"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_pudge_rot_damage"
+                "special_bonus_unique_unique_mjz_pudge_rot_damage" "6001"
             }
             "health_damage_pct"
             {
                 "value" "42 65 89 140"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_pudge_rot_health"
+                "special_bonus_unique_unique_mjz_pudge_rot_health" "160"
             }
             "dmg_reduction" "35 40 45 50"
         }
@@ -21734,7 +21734,7 @@
 		}
 	}
 // Talent: +X Rot Base Damage
-	"special_bonus_unique_mjz_pudge_rot_damage"
+	"special_bonus_unique_unique_mjz_pudge_rot_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -21746,7 +21746,7 @@
         }
 	}
 // Talent: +X% Rot Current Health as Damage
-	"special_bonus_unique_mjz_pudge_rot_health"
+	"special_bonus_unique_unique_mjz_pudge_rot_health"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -21792,12 +21792,12 @@
             "intelligence_damage"
             {
                 "value" "320 400 480 560 760 920 1200"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_pugna_nether_ward_intelligence"
+                "special_bonus_unique_unique_mjz_pugna_nether_ward_intelligence" "800"
             }
             "attacks_to_destroy"
             {
                 "value" "10"
-                "LinkedSpecialBonus" "special_bonus_unique_pugna_6"
+                "LinkedSpecialBonus" "special_bonus_unique_pugna_6" //missing116
             }
             "duration" "25"
             "interval" "0.8"
@@ -21820,7 +21820,7 @@
 			"model"		"models/items/pugna/ward/nether_heart/nether_heart.vmdl"
 		}
 	}
-	"special_bonus_unique_mjz_pugna_nether_ward_intelligence"
+	"special_bonus_unique_unique_mjz_pugna_nether_ward_intelligence"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -21911,13 +21911,13 @@
             "damage"
             {
                 "value" "180 320 460 800"
-                "LinkedSpecialBonus" "special_bonus_unique_clockwerk_2"
+                "LinkedSpecialBonus" "special_bonus_unique_clockwerk_2" //missing117
             }
             "cast_range" "1000"
             "true_sight"
             {
                 "value" "0"
-                "LinkedSpecialBonus" "special_bonus_unique_clockwerk_4"
+                "LinkedSpecialBonus" "special_bonus_unique_clockwerk_4" //missing118
             }
             "radius_auto" "1000"
         }
@@ -21961,12 +21961,12 @@
 			"movement_speed_pct"
 			{
 				"value"						"4 8 12 16 20 25 30"
-				"LinkedSpecialBonus"		"special_bonus_unique_razor_3"
+				"LinkedSpecialBonus"		"special_bonus_unique_razor_3" //missing119
 			}
 			"passive_area_damage"
 			{
 				"value"						"90 340 900 1900 8400 15100 36000"
-				"LinkedSpecialBonus"		"special_bonus_unique_razor_4"
+				"LinkedSpecialBonus"		"special_bonus_unique_razor_4" //missing120
 			}
 			"attack_damage_pct"				"40 85 160 235 460 620 830"
 			"passive_area_interval"			"3"
@@ -22045,13 +22045,13 @@
 			"epicenter_pulses"
 			{
 				"value"						"6 8 15"
-				"LinkedSpecialBonus"		"special_bonus_unique_mjz_sandking_epicenter_pulses"
+				"special_bonus_unique_unique_mjz_sandking_epicenter_pulses" "35"
 			}
 			"epicenter_damage"				"810 1900 4540"
 			"str_multiplier"
 			{
 				"value"						"7 12 20"
-				"LinkedSpecialBonus"		"special_bonus_unique_mjz_sandking_epicenter_strength"
+				"special_bonus_unique_unique_mjz_sandking_epicenter_strength" "10"
 			}
 			"epicenter_slow"				"-30"
 			"epicenter_slow_as"				"-60"
@@ -22074,7 +22074,7 @@
 			"particle"			"particles/units/heroes/hero_sandking/sandking_epicenter_tell.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_sandking_epicenter_pulses"
+	"special_bonus_unique_unique_mjz_sandking_epicenter_pulses"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -22085,7 +22085,7 @@
             "value" "35"
         }
 	}
-	"special_bonus_unique_mjz_sandking_epicenter_strength"
+	"special_bonus_unique_unique_mjz_sandking_epicenter_strength"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -22116,12 +22116,12 @@
             "stack_limit"
             {
                 "value" "5 7 9 12"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_shredder_reactive_armor_limit"
+                "special_bonus_unique_unique_mjz_shredder_reactive_armor_limit" "8"
             }
             "stack_duration" "15 20 25 30"
         }
 	}
-	"special_bonus_unique_mjz_shredder_reactive_armor_limit"
+	"special_bonus_unique_unique_mjz_shredder_reactive_armor_limit"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -22162,7 +22162,7 @@
             "str_damage_pct"
             {
                 "value" "90 150 190 280 400 650"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_shredder_whirling_death_strength"
+                "special_bonus_unique_unique_mjz_shredder_whirling_death_strength" "350"
             }
         }
 
@@ -22172,7 +22172,7 @@
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_shredder.vsndevts"
 		}
 	}
-	"special_bonus_unique_mjz_shredder_whirling_death_strength"
+	"special_bonus_unique_unique_mjz_shredder_whirling_death_strength"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -22210,21 +22210,21 @@
             "intellect_damage_pct"
             {
                 "value" "20 30 40 60"
-                "LinkedSpecialBonus" "special_bonus_unique_silencer_3"
+                "special_bonus_unique_unique_silencer_3_custom" "30"
             }
             "steal_range" "4225"
-            "crit_chance_scepter" "20"
+            "crit_chance_scepter" "25"
             "crit_multiplier_scepter" "200"
             "heap_range" "4225"
             "heap_amount"
             {
                 "value" "1"
-                "LinkedSpecialBonus" "special_bonus_unique_silencer_2_custom"
+                "special_bonus_unique_unique_silencer_2_custom" "3"
             }
             "heap_amount_hero"
             {
                 "value" "2"
-                "LinkedSpecialBonus" "special_bonus_unique_silencer_2"
+                "LinkedSpecialBonus" "special_bonus_unique_silencer_2" //missing121
             }
             "heap_type" "3"
             "crit_multiplier_super_scepter" "500"
@@ -22247,7 +22247,7 @@
 	}
 
 //silencer glaives talet
-	"special_bonus_unique_silencer_2_custom"
+	"special_bonus_unique_unique_silencer_2_custom"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -22255,7 +22255,19 @@
 		
 		"AbilityValues"
         {
-            "value" "2"
+            "value" "3"
+        }
+	}
+
+	"special_bonus_unique_unique_silencer_3_custom"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		"AbilityValues"
+        {
+            "value" "30"
         }
 	}
 
@@ -22287,7 +22299,7 @@
             "duration"
             {
                 "value" "4.5 5.25 6.0"
-                "LinkedSpecialBonus" "special_bonus_unique_silencer_4"
+                "LinkedSpecialBonus" "special_bonus_unique_silencer_4" //missing122
             }
             "radius" "9000"
             "slow_attack_speed" "-80 -100 -200"
@@ -22384,12 +22396,12 @@
             "target_count"
             {
                 "value" "3"
-                "LinkedSpecialBonus" "special_bonus_unique_skywrath_2"
+                "LinkedSpecialBonus" "special_bonus_unique_skywrath_2" //missing123
             }
             "target_count_scepter"
             {
                 "value" "5"
-                "LinkedSpecialBonus" "special_bonus_unique_skywrath_2"
+                "LinkedSpecialBonus" "special_bonus_unique_skywrath_2" //missing124
             }
             "cast_range" "1700"
         }
@@ -22428,7 +22440,7 @@
             "base_damage"
             {
                 "value" "1800 2600 6000 11000 19000"
-                "LinkedSpecialBonus" "special_bonus_unique_skywrath_5"
+                "LinkedSpecialBonus" "special_bonus_unique_skywrath_5" //missing125
             }
             "int_multiplier"
             {
@@ -22482,17 +22494,17 @@
             "str_damage_pct"
             {
                 "value" "360 580 880 1240"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_slardar_slithereen_crush_strength"
+                "special_bonus_unique_unique_mjz_slardar_slithereen_crush_strength" "3960"
             }
             "move_speed_slow"
             {
                 "value" "-20 -25 -30 -35"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_slardar_slithereen_crush_slow"
+                "special_bonus_unique_unique_mjz_slardar_slithereen_crush_slow" "-10"
             }
             "attack_speed_slow"
             {
                 "value" "-20 -25 -30 -35"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_slardar_slithereen_crush_slow"
+                "special_bonus_unique_unique_mjz_slardar_slithereen_crush_slow" "-10"
             }
             "stun_duration" "1"
             "slow_duration" "3 4 5 6"
@@ -22531,7 +22543,7 @@
 			"particle"		"particles/units/heroes/hero_slardar/slardar_water_puddle.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_slardar_slithereen_crush_strength"
+	"special_bonus_unique_unique_mjz_slardar_slithereen_crush_strength"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -22543,7 +22555,7 @@
         }
 	}
 // Talent: +X% Slithereen Crush Slow
-	"special_bonus_unique_mjz_slardar_slithereen_crush_slow"
+	"special_bonus_unique_unique_mjz_slardar_slithereen_crush_slow"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -22583,14 +22595,14 @@
             "armor_reduction"
             {
                 "value" "-9 -15 -28 -44 -99"
-                "LinkedSpecialBonus" "special_bonus_unique_slardar_corrosive_haze"
+                "special_bonus_unique_unique_slardar_corrosive_haze" "-35"
             }
             "duration" "18"
         }
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 	}
 
-	"special_bonus_unique_slardar_corrosive_haze"
+	"special_bonus_unique_unique_slardar_corrosive_haze"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -22626,7 +22638,7 @@
             "health_cost_per_second"
             {
                 "value" "50 120 200 350"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_slardar_sprint_hp_cost"
+                "special_bonus_unique_unique_mjz_slardar_sprint_hp_cost" "50"
                 "LinkedSpecialBonusOperation" "SPECIAL_BONUS_PERCENTAGE_SUBTRACT"
             }
             "tick_interval" "0.25"
@@ -22638,7 +22650,7 @@
 			"particle"		"particles/units/heroes/hero_slardar/slardar_sprint.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_slardar_sprint_hp_cost"
+	"special_bonus_unique_unique_mjz_slardar_sprint_hp_cost"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -22683,7 +22695,7 @@
             "health_damage_pct"
             {
                 "value" "35 65 95 165"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_slark_dark_pact_damage"
+                "special_bonus_unique_unique_mjz_slark_dark_pact_damage" "155"
             }
         }
 		"precache"
@@ -22693,7 +22705,7 @@
 			"particle"			"particles/units/heroes/hero_slark/slark_dark_pact_pulses.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_slark_dark_pact_damage"
+	"special_bonus_unique_unique_mjz_slark_dark_pact_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -22734,10 +22746,10 @@
             "duration"
             {
                 "value" "15 30 60 120"
-                "LinkedSpecialBonus" "special_bonus_unique_slark_4"
+                "LinkedSpecialBonus" "special_bonus_unique_slark_4" //missing126
             }
             "heap_range" "4100"
-            "heap_amount" "1 1 1 1 2 2 2.5"
+            "heap_amount" "1 1 1 1 2 2 3"
             "heap_type" "2"
             "attack_count" "5"
             "bat" "1.2 1.2 1.2 1.2 1.1 1.1 1.0"
@@ -22751,7 +22763,7 @@
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
-            "value" "3"
+            "value" "5"
         }
 	}
 
@@ -22781,7 +22793,7 @@
             "leash_duration"
             {
                 "value" "2.5 2.75 3 3.25"
-                "LinkedSpecialBonus" "special_bonus_unique_slark"
+                "LinkedSpecialBonus" "special_bonus_unique_slark" //missing127
             }
             "leash_radius" "400"
             "max_charges"
@@ -22846,7 +22858,7 @@
             "bonus_damage_pct"
             {
                 "value" "0"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_sniper_assassinate_damage"
+                "special_bonus_unique_unique_mjz_sniper_assassinate_damage" "450"
             }
         }
 
@@ -22857,7 +22869,7 @@
 			"particle"		"particles/units/heroes/hero_sniper/sniper_crosshair.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_sniper_assassinate_damage"
+	"special_bonus_unique_unique_mjz_sniper_assassinate_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -22959,7 +22971,7 @@
             "bonus_attack_range"
             {
                 "value" "250 450 700 1000"
-                "LinkedSpecialBonus" "special_bonus_unique_sniper_6"
+                "LinkedSpecialBonus" "special_bonus_unique_sniper_6" //missing128
             }
             "active_attack_range_multiplier" "2"
             "move_slow_pct" "-70"
@@ -23001,7 +23013,7 @@
             "bonus_damage"
             {
                 "value" "40 160 420 890 1620 2450 3325"
-                "LinkedSpecialBonus" "special_bonus_unique_spectre_2_2"
+                "special_bonus_unique_unique_spectre_2_2" "1400"
             }
             "radius" "500"
             "blind_pct" "10 15 20 25 30 35 40"
@@ -23029,7 +23041,7 @@
 		}
 	}
 
-	"special_bonus_unique_spectre_2_2"
+	"special_bonus_unique_unique_spectre_2_2"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -23073,12 +23085,12 @@
             "illusion_damage_outgoing"
             {
                 "value" "40 80 165"
-                "LinkedSpecialBonus" "special_bonus_unique_spectre_4"
+                "LinkedSpecialBonus" "special_bonus_unique_spectre_4" //missing129
             }
             "tooltip_outgoing"
             {
                 "value" "140 180 265"
-                "LinkedSpecialBonus" "special_bonus_unique_spectre_4"
+                "LinkedSpecialBonus" "special_bonus_unique_spectre_4" //missing130
             }
             "illusion_damage_incoming" "-50 -70 -85"
             "tooltip_illusion_total_damage_incoming" "50 30 15"
@@ -23178,19 +23190,19 @@
             "mana_percentage"
             {
                 "value" "1 2 3 4 5 6 7 8 9 10"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_storm_spirit_ball_lightning_02"
+                "special_bonus_unique_unique_mjz_storm_spirit_ball_lightning_02" "5"
                 "LinkedSpecialBonusOperation" "SPECIAL_BONUS_SUBTRACT"
             }
             "damage"
             {
                 "value" "150 300 600 1200 2400 4800 9200 18400 36800 73600"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_storm_spirit_ball_lightning_01"
+                "special_bonus_unique_unique_mjz_storm_spirit_ball_lightning_01" "16400"
             }
             "radius" "560"
             "dmg_reduction" "0 5 10 15 20 25 30 35 40 45"
         }
 	}
-	"special_bonus_unique_mjz_storm_spirit_ball_lightning_01"
+	"special_bonus_unique_unique_mjz_storm_spirit_ball_lightning_01"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -23200,7 +23212,7 @@
             "value" "16400"
         }
 	}
-	"special_bonus_unique_mjz_storm_spirit_ball_lightning_02"
+	"special_bonus_unique_unique_mjz_storm_spirit_ball_lightning_02"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -23244,12 +23256,12 @@
             "overload_damage"
             {
                 "value" "80 200 520 990 1750 3240 6150"
-                "LinkedSpecialBonus" "special_bonus_unique_storm_spirit_6"
+                "LinkedSpecialBonus" "special_bonus_unique_storm_spirit_6" //missing131
             }
             "intelligence_damage"
             {
                 "value" "180 240 300 380 460 540 950"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_storm_spirit_overload_01"
+                "special_bonus_unique_unique_mjz_storm_spirit_overload_01" "650"
             }
             "slow_duration" "0.6"
             "shard_radius" "750"
@@ -23258,7 +23270,7 @@
             "shard_bonus_as" "150"
         }
 	}
-	"special_bonus_unique_mjz_storm_spirit_overload_01"
+	"special_bonus_unique_unique_mjz_storm_spirit_overload_01"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -23308,7 +23320,7 @@
 			"int_damage"
 			{
 				"value"					"4 12 36"
-				"LinkedSpecialBonus"	"special_bonus_unique_mjz_techies_land_mines_int_damage"
+				"special_bonus_unique_unique_mjz_techies_land_mines_int_damage" "14"
 			}
 			"radius"					"600"
 			"activation_delay"			"1.75"
@@ -23316,7 +23328,7 @@
 			"burn_duration"				"5"
 		}
 	}
-	"special_bonus_unique_mjz_techies_land_mines_int_damage"
+	"special_bonus_unique_unique_mjz_techies_land_mines_int_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -23429,12 +23441,12 @@
             "damage"
             {
                 "value" "900 2000 8300 12000"
-                "LinkedSpecialBonus" "special_bonus_unique_techies"
+                "LinkedSpecialBonus" "special_bonus_unique_techies" //missing132
             }
             "hp_cost"
             {
                 "value" "100 140 180 220"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_techies_suicide_02"
+                "special_bonus_unique_unique_mjz_techies_suicide_02" "200"
             }
             "current_hp"
             {
@@ -23468,7 +23480,7 @@
 			}
 		}
 	}
-	"special_bonus_unique_mjz_techies_suicide_02"
+	"special_bonus_unique_unique_mjz_techies_suicide_02"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -23505,7 +23517,7 @@
 			"cooldown_reduction"		
 			{
 				"value"         		"0"
-				"LinkedSpecialBonus"		"special_bonus_unique_dazzle_custom_juju"
+				"special_bonus_unique_unique_dazzle_custom_juju" "1.3"
 
 			}
 			"item_cooldown_reduction"
@@ -23519,7 +23531,7 @@
 	}
 
 // good juju talent
-	"special_bonus_unique_dazzle_custom_juju"
+	"special_bonus_unique_unique_dazzle_custom_juju"
 	{
 
 		"BaseClass"						"special_bonus_undefined"
@@ -23612,12 +23624,12 @@
             "instances"
             {
                 "value" "3 4 5 6"
-                "LinkedSpecialBonus" "special_bonus_unique_templar_assassin"
+                "LinkedSpecialBonus" "special_bonus_unique_templar_assassin" //missing133
             }
             "bonus_damage"
             {
                 "value" "250 650 1950 2950 4500 8200 29000"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_templar_assassin_refraction_damage"
+                "special_bonus_unique_unique_mjz_templar_assassin_refraction_damage" "23200"
             }
             "damage_threshold" "5"
             "duration" "8.0"
@@ -23630,7 +23642,7 @@
 			"soundfile"		"sounds/weapons/hero/templar_assassin/refraction_absorb.vsnd"
 		}
 	}
-	"special_bonus_unique_mjz_templar_assassin_refraction_damage"
+	"special_bonus_unique_unique_mjz_templar_assassin_refraction_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -23666,7 +23678,7 @@
             "max_traps"
             {
                 "value" "5 8 11"
-                "LinkedSpecialBonus" "special_bonus_unique_templar_assassin_6"
+                "LinkedSpecialBonus" "special_bonus_unique_templar_assassin_6" //missing134
             }
             "trap_fade_time" "2.0 2.0 2.0"
             "movement_speed" "-30"
@@ -23674,7 +23686,7 @@
             "trap_bonus_damage"
             {
                 "value" "250 600 1950"
-                "LinkedSpecialBonus" "special_bonus_unique_templar_assassin_3"
+                "LinkedSpecialBonus" "special_bonus_unique_templar_assassin_3" //missing135
             }
             "trap_max_charge_duration" "4"
             "trap_radius" "400"
@@ -23807,7 +23819,7 @@
             "intelligence_damage"
             {
                 "value" "150 200 250 350 500 900 1200"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_tinker_0203"
+                "special_bonus_unique_unique_mjz_tinker_0203" "600"
             }
             "targets" "1 2 3 4 5 6 7"
             "targets_scepter"
@@ -23826,7 +23838,7 @@
 			"particle"				"particles/units/heroes/hero_tinker/tinker_missile_dud.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_tinker_0203"
+	"special_bonus_unique_unique_mjz_tinker_0203"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -23859,13 +23871,13 @@
             "channel_time"
             {
                 "value" "1.8 1.3 0.75"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_tinker_quick_arm_channel_time"
+                "special_bonus_unique_unique_mjz_tinker_quick_arm_channel_time" "0.25"
                 "LinkedSpecialBonusOperation" "SPECIAL_BONUS_SUBTRACT"
             }
             "cooldown_reduction"
             {
                 "value" "50"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_tinker_quick_arm_cdr"
+                "special_bonus_unique_unique_mjz_tinker_quick_arm_cdr" "15"
             }
         }
 
@@ -23875,7 +23887,7 @@
 			"particle"				"particles/units/heroes/hero_tinker/tinker_rearm.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_tinker_quick_arm_channel_time"
+	"special_bonus_unique_unique_mjz_tinker_quick_arm_channel_time"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -23886,7 +23898,7 @@
             "value" "0.25"
         }
 	}
-	"special_bonus_unique_mjz_tinker_quick_arm_cdr"
+	"special_bonus_unique_unique_mjz_tinker_quick_arm_cdr"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -23990,14 +24002,14 @@
             "health"
             {
                 "value" "400 800 1200 2400 3800 4900 6700"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_treant_natures_guise_health"
+                "special_bonus_unique_unique_mjz_treant_natures_guise_health" "3300"
             }
             "health_regen" "8 14 50 132 360 650 1500"
             "movement_speed" "14 18 24 28 34 40 50"
             "bonus_lvl_ptc" "4"
         }
 	}
-	"special_bonus_unique_mjz_treant_natures_guise_health"
+	"special_bonus_unique_unique_mjz_treant_natures_guise_health"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -24083,11 +24095,11 @@
             "max_stacks"
             {
                 "value" "13"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_troll_warlord_fervor_stacks"
+                "special_bonus_unique_unique_mjz_troll_warlord_fervor_stacks" "15"
             }
         }
 	}
-	"special_bonus_unique_mjz_troll_warlord_fervor_stacks"
+	"special_bonus_unique_unique_mjz_troll_warlord_fervor_stacks"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -24264,7 +24276,7 @@
             "magic_resistance"
             {
                 "value" "-5 -10 -15 -20 -25 -30 -35"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_viper_nethertoxin_magic_resistance"
+                "special_bonus_unique_unique_mjz_viper_nethertoxin_magic_resistance" "-25"
             }
             "duration" "8"
             "projectile_speed" "2000"
@@ -24282,7 +24294,7 @@
 			"particle"		"particles/units/heroes/hero_viper/viper_nethertoxin_proj_endcap.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_viper_nethertoxin_magic_resistance"
+	"special_bonus_unique_unique_mjz_viper_nethertoxin_magic_resistance"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -24341,12 +24353,12 @@
             "AbilityCharges"
             {
                 "value" "3 5 7 9 12 15 20"
-                "LinkedSpecialBonus" "special_bonus_unique_void_spirit_9"
+                "LinkedSpecialBonus" "special_bonus_unique_void_spirit_9" //missing136
             }
             "AbilityChargeRestoreTime"
             {
                 "value" "19 17 15 12 10 9 8"
-                "LinkedSpecialBonus" "special_bonus_unique_void_spirit_1"
+                "LinkedSpecialBonus" "special_bonus_unique_void_spirit_1" //missing137
             }
             "min_travel_distance" "200"
             "max_travel_distance" "1100"
@@ -24466,7 +24478,7 @@
 			"attack_damage"
 			{
 				"value"						"750 1250 1750 2250"
-				"LinkedSpecialBonus"		"special_bonus_unique_mjz_windrunner_powershot_damage"
+				"special_bonus_unique_unique_mjz_windrunner_powershot_damage" "850"
 			}
 			"damage_increase"
 			{
@@ -24497,7 +24509,7 @@
 			"particle"		"particles/units/heroes/hero_windrunner/windrunner_spell_powershot.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_windrunner_powershot_damage"
+	"special_bonus_unique_unique_mjz_windrunner_powershot_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -24538,12 +24550,12 @@
             "radius"
             {
                 "value" "1000"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_winter_wyvern_0601"
+                "special_bonus_unique_unique_mjz_winter_wyvern_0601" "200"
             }
             "duration"
             {
                 "value" "5.0 6.0 7.0"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_winter_wyvern_0602"
+                "special_bonus_unique_unique_mjz_winter_wyvern_0602" "1.0"
             }
             "damage" "20 40 60"
             "percent_damage" "2 3 4"
@@ -24563,7 +24575,7 @@
 			"particle"		"particles/units/heroes/hero_winter_wyvern/wyvern_winters_curse_start.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_winter_wyvern_0601"
+	"special_bonus_unique_unique_mjz_winter_wyvern_0601"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -24574,7 +24586,7 @@
             "value" "200"
         }
 	}
-	"special_bonus_unique_mjz_winter_wyvern_0602"
+	"special_bonus_unique_unique_mjz_winter_wyvern_0602"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -24647,7 +24659,7 @@
             "stun_time"
             {
                 "value" "0.1"
-                "LinkedSpecialBonus" "special_bonus_unique_zeus_3"
+                "LinkedSpecialBonus" "special_bonus_unique_zeus_3" //missing138
             }
             "charges" "3 5 7 9 12 15 20"
             "charge_restore_time" "3.0"
@@ -24686,7 +24698,7 @@
             "intelligence_damage"
             {
                 "value" "150 230 350 470 600 900 1300"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_zuus_static_field_intelligence"
+                "special_bonus_unique_unique_mjz_zuus_static_field_intelligence" "450"
             }
         }
 		"precache"
@@ -24695,7 +24707,7 @@
 			"soundfile"		"sounds/weapons/hero/zuus/static_field.vsnd"
 		}
 	}
-	"special_bonus_unique_mjz_zuus_static_field_intelligence"
+	"special_bonus_unique_unique_mjz_zuus_static_field_intelligence"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -26517,7 +26529,7 @@
             "crit_chance"
             {
                 "value" "2 2 2 5"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_chaos_strike"
+                "special_bonus_unique_unique_mjz_chaos_strike" "20"
             }
             "armor_reduction" "-1020"
             "armor_reduction_duration" "5"
@@ -26550,7 +26562,7 @@
 						"Function"		"OnAttackStart"
 						"modifier_crit"			"modifier_mjz_chaos_knight_chaos_strike_crit"
 						"modifier_lifesteal"	"modifier_mjz_chaos_knight_chaos_strike_lifesteal"
-						"special_bonus"			"special_bonus_unique_mjz_chaos_strike"
+						"special_bonus"			"special_bonus_unique_unique_mjz_chaos_strike"
 					}
 
 					// "Random"
@@ -27176,13 +27188,13 @@
             "armor_reduction"
             {
                 "value" "1"
-                "LinkedSpecialBonus" "special_bonus_unique_weaver_3"
+                "LinkedSpecialBonus" "special_bonus_unique_weaver_3" //missing139
             }
             "duration" "16"
             "destroy_attacks"
             {
                 "value" "10"
-                "LinkedSpecialBonus" "special_bonus_unique_weaver_4"
+                "LinkedSpecialBonus" "special_bonus_unique_weaver_4" //missing140
             }
             "radius" "100"
             "speed" "600"
@@ -27421,13 +27433,13 @@
             "num_crystal_hits"
             {
                 "value" "72"
-                "LinkedSpecialBonus" "special_bonus_unique_aghanim_3"
+                "special_bonus_unique_unique_aghanim_3" "3"
             }
             "crystal_duration" "36"
             "move_speed_slow_perc"
             {
                 "value" "25"
-                "LinkedSpecialBonus" "special_bonus_unique_aghanim_7"
+                "special_bonus_unique_unique_aghanim_7" "20"
             }
             "bonus_damage" "2000"
             "max_distance" "2500"
@@ -27519,7 +27531,7 @@
             "pulses"
             {
                 "value" "3 4 5"
-                "LinkedSpecialBonus" "special_bonus_unique_aghanim_6"
+                "LinkedSpecialBonus" "special_bonus_unique_aghanim_6" //missing141
                 "LinkedSpecialBonusField" "bonus_pulses"
             }
             "min_width" "120"
@@ -27527,7 +27539,7 @@
             "travel_time"
             {
                 "value" "1.5 1.3 1.1"
-                "LinkedSpecialBonus" "special_bonus_unique_aghanim_6"
+                "LinkedSpecialBonus" "special_bonus_unique_aghanim_6" //missing142
                 "LinkedSpecialBonusField" "timer_reduction"
                 "LinkedSpecialBonusOperation" "SPECIAL_BONUS_MULTIPLY"
             }
@@ -27538,7 +27550,7 @@
             "phase_delay"
             {
                 "value" "0.9 0.8 0.7"
-                "LinkedSpecialBonus" "special_bonus_unique_aghanim_6"
+                "LinkedSpecialBonus" "special_bonus_unique_aghanim_6" //missing143
                 "LinkedSpecialBonusField" "timer_reduction"
                 "LinkedSpecialBonusOperation" "SPECIAL_BONUS_MULTIPLY"
             }
@@ -27551,7 +27563,7 @@
             "shard_count"
             {
                 "value" "3"
-                "LinkedSpecialBonus" "special_bonus_unique_aghanim_5"
+                "special_bonus_unique_unique_aghanim_5" "2"
             }
             "movespeed" "20 30 40"
         }
@@ -27571,7 +27583,7 @@
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
 
-	"special_bonus_unique_aghanim_3" // +3 spell lock crystal health
+	"special_bonus_unique_unique_aghanim_3" // +3 spell lock crystal health
 	{
 		"BaseClass"			 "special_bonus_undefined"							
 		"AbilityType"			"ABILITY_TYPE_ATTRIBUTES"
@@ -27590,7 +27602,7 @@
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
 
-	"special_bonus_unique_aghanim_5" // +2 ult shards
+	"special_bonus_unique_unique_aghanim_5" // +2 ult shards
 	{
 		"BaseClass"			 "special_bonus_undefined"							
 		"AbilityType"			"ABILITY_TYPE_ATTRIBUTES"
@@ -27615,7 +27627,7 @@
         }
 	}
 
-	"special_bonus_unique_aghanim_7" // increased spell steal slow
+	"special_bonus_unique_unique_aghanim_7" // increased spell steal slow
 	{
 		"BaseClass"			 "special_bonus_undefined"							
 		"AbilityType"			"ABILITY_TYPE_ATTRIBUTES"
@@ -27659,12 +27671,12 @@
             "base_damage"
             {
                 "value" "80 240 400 960"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_lion_impale_base_damage"
+                "special_bonus_unique_unique_mjz_lion_impale_base_damage" "3050"
             }
             "int_damage"
             {
                 "value" "950"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_lion_impale_base_damage"
+                "special_bonus_unique_unique_mjz_lion_impale_base_damage" "3050"
             }
             "width" "225 225 225 225"
             "duration" "1.0 1.25 1.5 1.75"
@@ -27679,7 +27691,7 @@
 			"particle"  		"particles/units/heroes/hero_lion/lion_spell_impale_staff.vpcf"
 		}
 	}
-	"special_bonus_unique_mjz_lion_impale_base_damage"
+	"special_bonus_unique_unique_mjz_lion_impale_base_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -27719,7 +27731,7 @@
             "reduce_magical_resistance"
             {
                 "value" "0"
-                "LinkedSpecialBonus" "special_bonus_unique_mjz_lion_voodoo_magical_resistance"
+                "special_bonus_unique_unique_mjz_lion_voodoo_magical_resistance" "30"
             }
         }
 		"precache"
@@ -27730,7 +27742,7 @@
 			"model"				"models/items/hex/fish_hex/fish_hex.vmdl"
 		}
 	}
-	"special_bonus_unique_mjz_lion_voodoo_magical_resistance"
+	"special_bonus_unique_unique_mjz_lion_voodoo_magical_resistance"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -27891,7 +27903,7 @@
             "bonus_mana"
             {
                 "value" "0"
-                "LinkedSpecialBonus" "special_bonus_unique_winter_wyvern_endless_01"
+                "special_bonus_unique_unique_winter_wyvern_endless_01" "50"
             }
         }
 		"Modifiers"
@@ -27915,7 +27927,7 @@
 	}
 
 // endless talent
-	"special_bonus_unique_winter_wyvern_endless_01"
+	"special_bonus_unique_unique_winter_wyvern_endless_01"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -28093,12 +28105,12 @@
             "AbilityCharges"
             {
                 "value" "2"
-                "LinkedSpecialBonus" "special_bonus_unique_void_spirit_9"
+                "LinkedSpecialBonus" "special_bonus_unique_void_spirit_9" //missing144
             }
             "AbilityChargeRestoreTime"
             {
                 "value" "16 15 14 13 6"
-                "LinkedSpecialBonus" "special_bonus_unique_void_spirit_1"
+                "LinkedSpecialBonus" "special_bonus_unique_void_spirit_1" //missing145
             }
             "min_travel_distance" "200"
             "max_travel_distance" "1500 1600 1700 1800 5900"
@@ -28152,7 +28164,7 @@
             "damage"
             {
                 "value" "700 840 980 1120 6260"
-                "LinkedSpecialBonus" "special_bonus_unique_void_spirit_4"
+                "LinkedSpecialBonus" "special_bonus_unique_void_spirit_4" //missing146
             }
             "buff_duration" "10.0"
             "base_absorb_amount" "200 250 300 350 40000"
@@ -28316,24 +28328,24 @@
             "distance"
             {
                 "value" "1500.0"
-                "LinkedSpecialBonus" "special_bonus_unique_earth_spirit_4"
+                "LinkedSpecialBonus" "special_bonus_unique_earth_spirit_4" //missing147
             }
             "rock_distance"
             {
                 "value" "3000.0"
-                "LinkedSpecialBonus" "special_bonus_unique_earth_spirit_4"
+                "LinkedSpecialBonus" "special_bonus_unique_earth_spirit_4" //missing148
                 "LinkedSpecialBonusField" "value2"
             }
             "delay" "0.6"
             "damage"
             {
                 "value" "700"
-                "LinkedSpecialBonus" "special_bonus_unique_earth_spirit"
+                "LinkedSpecialBonus" "special_bonus_unique_earth_spirit" //missing149
             }
             "stun_duration"
             {
                 "value" "1.0"
-                "LinkedSpecialBonus" "special_bonus_unique_earth_spirit_3"
+                "LinkedSpecialBonus" "special_bonus_unique_earth_spirit_3" //missing150
             }
             "rock_bonus_duration" "1.0"
         }
@@ -28383,7 +28395,7 @@
             "duration"
             {
                 "value" "3"
-                "LinkedSpecialBonus" "special_bonus_unique_earth_spirit_5"
+                "LinkedSpecialBonus" "special_bonus_unique_earth_spirit_5" //missing151
             }
             "pull_units_per_second_heroes" "600"
             "pull_units_per_second" "1000"
@@ -28695,13 +28707,13 @@
 			"grow_str"
 			{
 				"value"							"0.5 1.0 1.5 2.0 3.0 5.0"
-				"LinkedSpecialBonus"			"special_bonus_unique_ck_grow_strong"
+				"special_bonus_unique_unique_ck_grow_strong" "2"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
 			"grow_armor"
 			{
 				"value"							"0.03 0.06 0.09 0.12 0.15 0.18"
-				"LinkedSpecialBonus"			"special_bonus_unique_ck_grow_strong"
+				"special_bonus_unique_unique_ck_grow_strong" "2"
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
 			"grow_model"			"0.1"
@@ -28719,7 +28731,7 @@
 		}
 	}
 // Talent: xX Grow Strong Bonuses
-	"special_bonus_unique_ck_grow_strong"
+	"special_bonus_unique_unique_ck_grow_strong"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -28798,12 +28810,12 @@
             "crit_multiplier"
             {
                 "value" "450 550 750 900 1250 1900 1000"
-                "LinkedSpecialBonus" "special_bonus_unique_tusk"
+                "LinkedSpecialBonus" "special_bonus_unique_tusk" //missing152
             }
             "air_time"
             {
                 "value" "1.8"
-                "LinkedSpecialBonus" "special_bonus_unique_tusk_7"
+                "LinkedSpecialBonus" "special_bonus_unique_tusk_7" //missing153
             }
             "slow_duration" "2.0 3.0 4.0 5.0 6.0"
             "move_slow" "40"
@@ -28920,7 +28932,7 @@
             "value" "17"
         }
 	}
-	"special_bonus_unique_clinkz_101"
+	"special_bonus_unique_unique_clinkz_101"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -28972,7 +28984,7 @@
             "value" "25"
         }
 	}
-	"special_bonus_unique_enigma_100"
+	"special_bonus_unique_unique_enigma_100"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -29074,7 +29086,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
         {
-            "value" "10"
+            "value" "15"
         }
 	}
 	"special_bonus_dark_willow_bedlam_lua"
@@ -29227,7 +29239,7 @@
             "duration"
             {
                 "value" "4.5 5.5 9.5"
-                "LinkedSpecialBonus" "special_bonus_unique_darkrider_3"
+                "LinkedSpecialBonus" "special_bonus_unique_darkrider_3" //missing154
             }
             "radius" "1150"
         }
@@ -29696,7 +29708,7 @@
             "damage_bonus"
             {
                 "value" "60 80 100 150"
-                "LinkedSpecialBonus" "special_bonus_unique_clinkz_1"
+                "LinkedSpecialBonus" "special_bonus_unique_clinkz_1" //missing155
             }
         }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
@@ -29990,7 +30002,7 @@
             "stack_chance"
             {
                 "value" "55"
-                "LinkedSpecialBonus" "special_bonus_unique_weaver_back_in_time"
+                "special_bonus_unique_unique_weaver_back_in_time" "35"
             }
             "evasion_stack" "0.5"
             "ms_stack" "50"
@@ -29999,7 +30011,7 @@
             "aoe" "1900"
         }
 }
-"special_bonus_unique_weaver_back_in_time"
+"special_bonus_unique_unique_weaver_back_in_time"
 {
 	"BaseClass"						"special_bonus_undefined"
 	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -30340,12 +30352,12 @@
             "scepter_chance"
             {
                 "value" "10"
-                "LinkedSpecialBonus" "special_bonus_clinkz_infernal_breath"
+                "special_bonus_unique_clinkz_infernal_breath" "5"
             }
         }
 	}
 
-	"special_bonus_clinkz_infernal_breath" 
+	"special_bonus_unique_clinkz_infernal_breath" 
 	{
 		"BaseClass"						"special_bonus_undefined"														
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -30387,7 +30399,7 @@
             "radius"
             {
                 "value" "400"
-                "LinkedSpecialBonus" "special_bonus_omniknight_purifiception_radius"
+                "special_bonus_unique_omniknight_purifiception_radius" "250"
             }
             "purifiception_duration" "10"
             "buff_stack_threshold" "5000"
@@ -30409,7 +30421,7 @@
             "value" "75"
         }
 	}
-	"special_bonus_omniknight_purifiception_radius" // Purification radius
+	"special_bonus_unique_omniknight_purifiception_radius" // Purification radius
 	{
 		"BaseClass"					"special_bonus_undefined"
 		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
@@ -30481,11 +30493,11 @@
             "cooldown"
             {
                 "value" "100 95 90 85 80 75 70"
-                "LinkedSpecialBonus" "special_bonus_omniknight_ga_cd"
+                "special_bonus_unique_omniknight_ga_cd" "-40"
             }
         }
 	}
-	"special_bonus_omniknight_ga_cd" // Guardian Angel cooldown decrease
+	"special_bonus_unique_omniknight_ga_cd" // Guardian Angel cooldown decrease
 	{
 		"BaseClass"					"special_bonus_undefined"
 		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
@@ -30561,7 +30573,7 @@
             "max_charge_time"
             {
                 "value" "3.0"
-                "LinkedSpecialBonus" "special_bonus_unique_hoodwink_sharpshooter_speed"
+                "special_bonus_unique_unique_hoodwink_sharpshooter_speed" "-2.85"
             }
             "max_damage" "4100 17500 24400 36500 45068 56500 69420 81000"
             "recoil_distance" "250"
@@ -30593,7 +30605,7 @@
 
 
 // Sharpshooter tallent
-	"special_bonus_unique_hoodwink_sharpshooter_speed" 
+	"special_bonus_unique_unique_hoodwink_sharpshooter_speed" 
 	{
 		"BaseClass"					"special_bonus_undefined"
 		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
@@ -30645,7 +30657,7 @@
 			"arrow_damage_pct"
 			{
 				"value"						"85 110 135 160"
-				"LinkedSpecialBonus"		"special_bonus_unique_drow_ranger_1"
+				"LinkedSpecialBonus"		"special_bonus_unique_drow_ranger_1" //missing156
 			}
 			"arrow_slow_duration"		"1.25 2.25 3.25 4.25"
 			"arrow_width"				"90"
@@ -31044,13 +31056,13 @@
 			"damage"
 			{
 				"value"				"0.3" // Int * stack as dmg
-				"LinkedSpecialBonus"				"special_bonus_unique_sticky_napalm_damage"
+				"special_bonus_unique_unique_sticky_napalm_damage" "0.2"
 				"CalculateSpellDamageTooltip"		"1"
 			}
 			"radius"
 			{
 				"value"				"275 300 325 350 375 400 450"
-				"LinkedSpecialBonus"		"special_bonus_unique_sticky_napalm_radius"
+				"special_bonus_unique_unique_sticky_napalm_radius" "275"
 			}
 			"duration"				"10"
 			"ms_slow_pct"			"5"
@@ -31061,7 +31073,7 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
 // Talent: +X Sticky Napalm Damage
-	"special_bonus_unique_sticky_napalm_damage"
+	"special_bonus_unique_unique_sticky_napalm_damage"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -31072,7 +31084,7 @@
         }
 	}
 // Talent: +X Sticky Napalm Radius
-	"special_bonus_unique_sticky_napalm_radius"
+	"special_bonus_unique_unique_sticky_napalm_radius"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -31141,7 +31153,7 @@
 			"radius"
 			{
 				"value"					"500"
-				"LinkedSpecialBonus"	"special_bonus_wr_windrun_radius"
+				"special_bonus_unique_wr_windrun_radius" "500"
 			}
 			"duration"					"3 4 5 6"
 			"scepter_movespeed_bonus_pct"
@@ -31158,7 +31170,7 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 // Talent: +X Windrun Radius
-	"special_bonus_wr_windrun_radius"
+	"special_bonus_unique_wr_windrun_radius"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -31846,13 +31858,13 @@
 			"bash_damage_ptc"		
 			{
 				"value"								"40"
-				"LinkedSpecialBonus" 				"special_bonus_void_custom_bash"
+				"special_bonus_unique_void_custom_bash" "40"
 			}			
 			"bash_chance"							"15"
 		}	
 	}
 
-	"special_bonus_void_custom_bash" 
+	"special_bonus_unique_void_custom_bash" 
 	{
 		"BaseClass"						"special_bonus_undefined"														
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -32411,7 +32423,7 @@
             "axe_speed"
             {
             	"value" "5"
-            	"LinkedSpecialBonus" "special_bonus_modified_wild_axes_speed"
+            	"special_bonus_unique_modified_wild_axes_speed" "1"
             }
             "axe_width"         "240"
             "axe_distance"      "600"
@@ -32424,7 +32436,7 @@
     }
 
 // modified wild axes talent
-	"special_bonus_modified_wild_axes_speed"
+	"special_bonus_unique_modified_wild_axes_speed"
 	{
 		"BaseClass"						"special_bonus_undefined"
 		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
