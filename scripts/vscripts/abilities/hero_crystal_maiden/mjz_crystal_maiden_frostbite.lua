@@ -148,7 +148,7 @@ if IsServer() then
         local parent = self:GetParent()
         local ability = self:GetAbility()
         local bonus = ability:GetSpecialValueFor("bonus")
-        if caster:HasScepter() and parent:IsAlive() and caster:IsAlive() then
+        if caster and caster:HasScepter() and parent:IsAlive() and caster:IsAlive() then
             caster:PerformAttack(parent, true, true, true, true, true, false, true)
             if HasSuperScepter(caster) then
                 caster:ModifyIntellect(bonus)
@@ -159,10 +159,35 @@ if IsServer() then
                 else
                     caster:AddNewModifier(caster, ability, "modifier_mjz_crystal_maiden_frostbite_bonus_int", {})
                     caster:FindModifierByName("modifier_mjz_crystal_maiden_frostbite_bonus_int"):SetStackCount(bonus)
+                    self:ApplyRetroactiveBonus(caster)
                 end
             end
         end
     end
+
+    -- Retroactive bonus stacks logic for extra skill
+    function modifier_frostbite:ApplyRetroactiveBonus(caster)
+        local ability = self
+        local bonus = ability:GetSpecialValueFor("bonus")
+        local modifier_name = "modifier_mjz_crystal_maiden_frostbite_bonus_int"
+        local time = GameRules:GetGameTime()
+        local cd_reduction = caster:GetCooldownReduction()
+        local interval = 20 * cd_reduction
+        print("Retroactive bonus applied at time: " .. time .. ", interval: " .. interval)
+        local stack = math.floor(time / interval) * bonus
+        if stack > 0 then
+            local modifier = caster:FindModifierByName(modifier_name)
+            if modifier then
+                modifier:SetStackCount(modifier:GetStackCount() + stack)
+            else
+                caster:AddNewModifier(caster, ability, modifier_name, {})
+                caster:FindModifierByName(modifier_name):SetStackCount(stack)
+            end
+            caster:ModifyIntellect(stack)
+            caster:ModifyStrength(stack)
+            print("Retroactive bonus applied: " .. stack .. " stacks to " .. caster:GetUnitName())
+        end
+    end    
 end
 
 if modifier_mjz_crystal_maiden_frostbite_bonus_int == nil then modifier_mjz_crystal_maiden_frostbite_bonus_int = class({}) end

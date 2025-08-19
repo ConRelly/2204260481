@@ -3527,6 +3527,10 @@ Silencer:
 
 
 
+* Crystal Maiden Frostbite SS effect now gives bonus stats (stacks) on the first use base on game time and CDR. Crystal nova Shield facet now scales with the skill and fixed the talent for crystal nova.
+* Cider Brew stats fixed and updated and one talent that was bugged for that. bonus dmg for ignite talent from 30% to 1000% , duration only +100% (and reduced base duration to 3s), Primal split talent from +10 to +1000 dmg.
+* Ursa Overpower SS effect now gives bonus stats on first use base on game time and CDR, SS effect now has an extra effect
+
 
 
 ////////Self Note ////////////

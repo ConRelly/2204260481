@@ -215,17 +215,17 @@
 //        }
 //	}
 
-	"special_bonus_unique_crystal_maiden_2"
-	{
-		"AbilityValues"
-        {
-            "bonus_nova_damage"
-            {
-                "value" "86200"
-                "ad_linked_abilities" "crystal_maiden_crystal_nova"
-            }
-        }
-	}	
+	//"special_bonus_unique_crystal_maiden_2"
+	//{
+	//	"AbilityValues"
+    //    {
+    //        "bonus_nova_damage"
+    //        {
+   //             "value" "86200"
+    //            "ad_linked_abilities" "crystal_maiden_crystal_nova"
+    //        }
+    //    }
+	//}	
 	"special_bonus_unique_dark_seer_3"
 	{
 		"AbilityValues"
@@ -3512,26 +3512,69 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
+        "AbilityValues"
         {
-            "duration"
+            "duration"                  
             {
-                "value" "5"
-                "special_bonus_unique_brewmaster_5" "600"
-                "LinkedSpecialBonusOperation" "SPECIAL_BONUS_MULTIPLY"
+                "value"     "3"
+                "special_bonus_unique_brewmaster_5"     "+100%"
             }
-            "total_damage"
+            "total_ignite_damage"               
             {
-                "value" "960 4920 13500 23860 43200 64580 83400"
-                "special_bonus_unique_brewmaster_5" "600"
-                "LinkedSpecialBonusOperation" "SPECIAL_BONUS_MULTIPLY"
+                "value"         "960 4920 13500 23860 43200 84580 183400"
+                "special_bonus_unique_brewmaster_5"     "+1000%"
             }
-            "movement_slow" "36"
-            "radius" "400"
-            "extra_duration" "3"
+            "movement_slow"             "36"
+            "radius"                    
+            {   "value"         "400"
+                "affected_by_aoe_increase"  "1"
+            }
+            "extra_duration"                    "3"
+            "projectile_speed"
+            {
+                "value"                         "1600"
+                "special_bonus_facet_brewmaster_roll_out_the_barrel"            "=950"
+            }
+            "projectile_width"
+            {
+                "value"                         "350"   
+                "special_bonus_facet_brewmaster_roll_out_the_barrel"            "+250"
+                "affected_by_aoe_increase"  "1"
+            }
+            "barrel_width"
+            {
+                "special_bonus_facet_brewmaster_roll_out_the_barrel"            "=350"
+                "affected_by_aoe_increase"  "1"
+            }
+            "barrel_impact_damage"
+            {
+                "special_bonus_facet_brewmaster_roll_out_the_barrel"            "2920 13000 22800 40000 85000 180000 452000"
+                "DamageTypeTooltip"                 "DAMAGE_TYPE_PHYSICAL"
+
+            }
+            "AbilityCastRange"              
+            {
+                "value"                                                         "1200"
+                "special_bonus_facet_brewmaster_roll_out_the_barrel"            "=1950"
+            }
+            "min_movement"              
+            {
+                "special_bonus_facet_brewmaster_drunken_master"             "-15"
+            }
+            "max_movement"              
+            {
+                "special_bonus_facet_brewmaster_drunken_master"             "50"
+            }
+            "fear_duration"
+            {
+                "special_bonus_unique_brewmaster_4"                         "1.0"
+            }
         }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
+
+
+
 
 	//=================================================================================================================
 	// Brewmaster: Thunder Clap
@@ -3657,13 +3700,7 @@
 
 
 
-	"special_bonus_unique_brewmaster_4"
-	{
-		"AbilityValues"
-        {
-            "value" "450"
-        }
-	}
+
 	"brewmaster_earth_hurl_boulder"
 	{
 		"AbilityValues"
@@ -3705,6 +3742,11 @@
                 "value" "4"
                 "RequiresScepter" "1"
             }
+            "bonus_damage"
+            {
+                "value"                                 "0"
+                "special_bonus_unique_brewmaster_2"     "+1000"
+            }            
         }		
 	}
 	
@@ -4372,33 +4414,51 @@
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityValues"
-		{
-			"AbilityCastRange"				"700"
-			"AbilityCastPoint"				"0.0"
-			"AbilityCooldown"
-			{
-				"value"										"8"
-				"special_bonus_unique_crystal_maiden_5"		"-3"
-			}
-			"AbilityManaCost"				"155"
-			"radius"
-			{
-				"value"										"325"
-				"special_bonus_unique_crystal_maiden_6"		"+275"
-			}
-			"movespeed_slow"				"-45"
-			"attackspeed_slow"				"-20 -30 -40 -50 -60 -70 -90"
-			"duration"						"5"
-			"vision_duration"				"6.0"
-			"nova_damage"
-			{
-				"value"										"430 1970 4250 18260 38500 74800 78500 147000"
-				"special_bonus_unique_crystal_maiden_2"		"+86200"
-			}
-		}
+        "AbilityValues"
+        {
+            "AbilityCastRange"              "700"
+            "AbilityCastPoint"              "0.0"
+            "AbilityCooldown"
+            {
+                "value"                                     "8"
+                "special_bonus_unique_crystal_maiden_5"     "-3"
+            }
+            "AbilityManaCost"               "155"
+            "radius"
+            {
+                "value"                                         "325"
+                "special_bonus_facet_crystal_maiden_glacial_guard"  "+275"
+                "affected_by_aoe_increase"  "1"
+            }
+            "movespeed_slow"                "-45"
+            "attackspeed_slow"              "-20 -30 -40 -50 -60 -70 -90"
+            "duration"                      "5"
+            "vision_duration"               "6.0"
+            "nova_damage"
+            {
+                "value"                                     "1970 4250 18260 38500 74800 148500 357000"
+                "special_bonus_unique_crystal_maiden_2"     "+86200"
+            }
+
+            "physical_barrier_amount"
+            {
+                "value"                                         "0"
+                "special_bonus_facet_crystal_maiden_glacial_guard"  "400 700 1400 3500 7500 13000 27000"
+            }
+            "physical_barrier_self_amount"
+            {
+                "value"                                         "0"
+                "special_bonus_facet_crystal_maiden_glacial_guard"  "800 1400 2800 7500 14000 26000 54000"
+            }
+            "physical_barrier_duration"
+            {
+                "value"                                         "0"
+                "special_bonus_facet_crystal_maiden_glacial_guard"  "+4.0"
+            }
+        }
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}	
+
 
 
 	"dark_willow_bramble_maze"

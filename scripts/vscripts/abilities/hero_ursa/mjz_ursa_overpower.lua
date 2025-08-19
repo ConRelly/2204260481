@@ -5,7 +5,7 @@ local ability_class = mjz_ursa_overpower
 
 
 if IsServer() then
-	function ability_class:OnSpellStart( )
+	function ability_class:OnSpellStart()
 		local ability = self
 		local caster = self:GetCaster()
 		local duration = ability:GetSpecialValueFor('duration')
@@ -36,12 +36,40 @@ if IsServer() then
 					else
 						caster:AddNewModifier(caster, ability, "modifier_mjz_ursa_overpower_bonus_str_agi", {})
 						caster:FindModifierByName("modifier_mjz_ursa_overpower_bonus_str_agi"):SetStackCount(bonus)
+						self:ApplyRetroactiveBonus(caster)
 					end										
 				end	
 			end				
 		end	
 		EmitSoundOn("Hero_Ursa.Overpower", caster)
 	end
+
+	function ability_class:ApplyRetroactiveBonus(caster)
+		local ability = self
+		local bonus = ability:GetSpecialValueFor("bonus")
+		local modifier_name = "modifier_mjz_ursa_overpower_bonus_str_agi"
+		local time = GameRules:GetGameTime()
+		local cd_reduction = caster:GetCooldownReduction()
+		local interval = 30 * cd_reduction
+		print("Retroactive bonus applied at time: " .. time .. ", interval: " .. interval)
+		local stack = math.floor(time / interval) * bonus
+		if caster:GetUnitName() == "npc_dota_hero_ursa" then
+			stack = math.floor(time / interval) * (bonus * 3)
+		end
+		if stack > 0 then
+			local modifier = caster:FindModifierByName(modifier_name)
+			if modifier then
+				modifier:SetStackCount(modifier:GetStackCount() + stack)
+			else
+				caster:AddNewModifier(caster, ability, modifier_name, {})
+				caster:FindModifierByName(modifier_name):SetStackCount(stack)
+			end
+			caster:ModifyAgility(stack)
+			caster:ModifyStrength(stack)
+			print("Retroactive bonus applied: " .. stack .. " stacks to " .. caster:GetUnitName())
+		end
+	end
+
 end
 
 
@@ -84,13 +112,31 @@ function modifier_class:DeclareFunctions()
 	return funcs
 end
 
-function modifier_class:GetModifierAttackSpeedBonus_Constant( )
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor('bonus_attack_speed') end
+function modifier_class:GetModifierAttackSpeedBonus_Constant()
+	if self:GetAbility() then
+		return self:GetAbility():GetSpecialValueFor('bonus_attack_speed')
+	end
 end
 
 function modifier_class:GetModifierSpellAmplify_Percentage()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor('bonus_spell_amp') end
+	local ability = self:GetAbility()
+	local parent = self:GetParent()
+	local amp = 0
+	if ability then
+		amp = ability:GetSpecialValueFor('bonus_spell_amp')
+	end
+	if parent and parent:HasModifier("modifier_super_scepter") then
+		local lvl = parent:GetLevel()
+		if lvl > 0 then
+			amp = amp + lvl * 1
+			if lvl > 100 then
+				amp = amp + (lvl - 100) * 9 
+			end
+		end
+	end
+	return amp
 end
+
 
 if IsServer() then
 	function modifier_class:OnCreated(table)
