@@ -100,7 +100,7 @@
 	"Ability14"		"special_bonus_magic_resistance_40"
 	"Ability15"		"special_bonus_hp_6000"
 	"Ability16"		"special_bonus_unique_chen_custom_1"
-	"Ability17"		"special_bonus_unique_unique_chen_custom_2"
+	"Ability17"		"special_bonus_unique_chen_custom_2"
 
 	"AttributeIntelligenceGain"		"9.2"
 }
@@ -210,7 +210,7 @@
 	"Ability6"					"hw_sharpshooter"
 	"Ability7"					"hw_sharpshooter_release"
 	"Ability10"					"special_bonus_hp_2000"
-	"Ability11"					"special_bonus_unique_unique_hoodwink_sharpshooter_speed"
+	"Ability11"					"special_bonus_unique_hoodwink_sharpshooter_speed"
 	"Ability12"                 "special_bonus_unique_hoodwink_acorn_shot_bounces"
 	"Ability13"                 "special_bonus_hw_sharpshooter_agi"
 	"Ability14"                 "special_bonus_unique_hoodwink_bushwhack_cooldown"
@@ -260,7 +260,7 @@
 	"Ability13"		"special_bonus_unique_mjz_nevermore_shadowraze_agi_bonus"
 	"Ability14"		"special_bonus_truestrike"
 	"Ability15"     "special_bonus_cdr_40"
-	"Ability16"		"special_bonus_unique_unique_mjz_nevermore_custom_requiem_agi"
+	"Ability16"		"special_bonus_unique_mjz_nevermore_custom_requiem_agi"
 	"Ability17"     "special_bonus_unique_nevermore_raze_procsattacks"
 
 	"AttributeAgilityGain"			"7.9"
@@ -2344,10 +2344,10 @@
 //		"Ability12"			"special_bonus_strength_820"
 		"Ability12"			"special_bonus_unique_omniknight_purifiception_radius"
 //		"Ability14"			"special_bonus_spell_amplify_125"
-		"Ability14"			"special_bonus_omniknight_purifiception_double"
+		"Ability14"			"special_bonus_unique_omniknight_purifiception_double"
 		"Ability11"			"special_bonus_exp_boost_30"
 //		"Ability16"			"special_bonus_cdr_25"
-		"Ability16"			"special_bonus_omniknight_purifiception_heal"
+		"Ability16"			"special_bonus_unique_omniknight_purifiception_heal"
 		"Ability13"			"special_bonus_unique_omniknight_ga_cd"
 
 		"AttributeStrengthGain"		"58.1"

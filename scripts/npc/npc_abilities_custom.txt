@@ -7022,7 +7022,7 @@
             "max_units"
             {
                 "value" "1 2 2 3 3 3 4"
-                "special_bonus_unique_unique_chen_custom_2" "1"
+                "special_bonus_unique_chen_custom_2" "1"
             }
             "base_ms" "800"
             "base_attack_time" "0.9"
@@ -9194,12 +9194,12 @@
 	    "agility_mult"
 	    {
 	        "value" "4.5 8.5 12.5 17 24"
-	        "special_bonus_unique_unique_mjz_nevermore_custom_requiem_agi" "12"
+	        "special_bonus_unique_mjz_nevermore_custom_requiem_agi" "12"
 	    }
 	}
 }
 
-"special_bonus_unique_unique_mjz_nevermore_custom_requiem_agi"
+"special_bonus_unique_mjz_nevermore_custom_requiem_agi"
 {
 	"BaseClass"						"special_bonus_undefined"
 	"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
@@ -30383,7 +30383,7 @@
 		"LevelsBetweenUpgrades"         "10"
 		"AbilityCastRange"				"575"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"14 13 12 11 10 9 8"
+		//"AbilityCooldown"				"14 13 12 11 10 9 8"
 		"AbilityManaCost"				"75 85 95 105 115 125 135"
 		"precache"
 		{
@@ -30405,17 +30405,18 @@
             "buff_stack_threshold" "5000"
             "buff_heal_amp_pct" "1 1 1 2 2 2 3"
             "buff_max_stacks" "1 2 3 4 5 6 7"
+            "AbilityCooldown"
+			{
+				"value"					"14 13 12 11 10 9 8"
+				"special_bonus_unique_omniknight_6"	"-3"
+			}
         }
 	}
-	"special_bonus_omniknight_purifiception_heal" // Purification heal/damage
+	"special_bonus_unique_omniknight_purifiception_heal" // Purification heal/damage
 	{
 		"BaseClass"					"special_bonus_undefined"
 		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"LinkedAbility"
-		{
-			"01" 	"purification"
-		}
 		"AbilityValues"
         {
             "value" "75"
@@ -30426,24 +30427,16 @@
 		"BaseClass"					"special_bonus_undefined"
 		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"LinkedAbility"
-		{
-			"01" 	"purification"
-		}
 		"AbilityValues"
         {
             "value" "250"
         }
 	}
-	"special_bonus_omniknight_purifiception_double" // Purification Double Cast
+	"special_bonus_unique_omniknight_purifiception_double" // Purification Double Cast
 	{
 		"BaseClass"					"special_bonus_undefined"
 		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"LinkedAbility"
-		{
-			"01" 	"purification"
-		}
 		"AbilityValues"
         {
             "value" "20"
@@ -30502,10 +30495,6 @@
 		"BaseClass"					"special_bonus_undefined"
 		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"
 		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"LinkedAbility"
-		{
-			"01" 	"guardian_angel"
-		}
 		"AbilityValues"
         {
             "value" "-40"
@@ -30573,7 +30562,7 @@
             "max_charge_time"
             {
                 "value" "3.0"
-                "special_bonus_unique_unique_hoodwink_sharpshooter_speed" "-2.85"
+                "special_bonus_unique_hoodwink_sharpshooter_speed" "-2.85"
             }
             "max_damage" "4100 17500 24400 36500 45068 56500 69420 81000"
             "recoil_distance" "250"
@@ -30605,7 +30594,7 @@
 
 
 // Sharpshooter tallent
-	"special_bonus_unique_unique_hoodwink_sharpshooter_speed" 
+	"special_bonus_unique_hoodwink_sharpshooter_speed" 
 	{
 		"BaseClass"					"special_bonus_undefined"
 		"AbilityType"				"ABILITY_TYPE_ATTRIBUTES"

@@ -8,10 +8,6 @@ function purification:IsHiddenWhenStolen() return false end
 function purification:GetAOERadius()
 	if not IsServer() then return end
 	local radius = self:GetSpecialValueFor("radius")
-	if self:GetCaster():HasTalent("special_bonus_omniknight_purifiception_radius") then
-		radius = radius + self:GetCaster():FindTalentValue("special_bonus_omniknight_purifiception_radius")
-		return radius
-	end
 	return radius
 end
 
@@ -47,7 +43,7 @@ function purification:OnSpellStart()
 	end ]]
 	Purification(caster, self, target, bkb_duration)
 
-	if caster:HasTalent("special_bonus_omniknight_purifiception_double") then
+	if caster:HasTalent("special_bonus_unique_omniknight_purifiception_double") then
 		local allies = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, 20000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 		for _,ally in pairs(allies) do
 			if RollPercentage(20) then
@@ -70,9 +66,9 @@ function Purification(caster, ability, target, bkb_duration)
 	local purifiception_duration = ability:GetSpecialValueFor("purifiception_duration")
 	EmitSoundOn("Hero_Omniknight.Purification", caster)
 
-	heal_amount = heal_amount + (caster:FindTalentValue("special_bonus_omniknight_purifiception_heal") * target:GetMaxHealth() / 100)
+	heal_amount = heal_amount + (caster:FindTalentValue("special_bonus_unique_omniknight_purifiception_heal") * target:GetMaxHealth() / 100)
 	local damage = heal_amount
-	radius = radius + (caster:FindTalentValue("special_bonus_omniknight_purifiception_radius"))
+	radius = radius
 	if IsServer() then
 		if HasSuperScepter(caster) then
 			if bkb_duration and bkb_duration > 0 then
@@ -94,7 +90,7 @@ function Purification(caster, ability, target, bkb_duration)
 				local duration = super_scepter_duration + (stacks * 0.1)
 				target:AddNewModifier(caster, self, "modifier_black_king_bar_immune", {duration = duration})				
 			end	
-			damage = heal_amount + (caster:FindTalentValue("special_bonus_omniknight_purifiception_heal") * target:GetMaxHealth() / 100)
+			damage = heal_amount + (caster:FindTalentValue("special_bonus_unique_omniknight_purifiception_heal") * target:GetMaxHealth() / 100)
 		end
 	end
 
@@ -202,14 +198,14 @@ function modifier_special_bonus_omniknight_purifiception_double:IsHidden()			ret
 function modifier_special_bonus_omniknight_purifiception_double:IsPurgable() 		return false end
 function modifier_special_bonus_omniknight_purifiception_double:RemoveOnDeath() 	return false end
 function purification:OnOwnerSpawned()
-	if self:GetCaster():HasTalent("special_bonus_omniknight_purifiception_radius") and not self:GetCaster():HasModifier("modifier_special_bonus_omniknight_purifiception_radius") then
-		self:GetCaster():AddNewModifier(self:GetCaster(), self:FindAbilityByName("special_bonus_omniknight_purifiception_radius"), "modifier_special_bonus_omniknight_purifiception_radius", {})
+	if self:GetCaster():HasTalent("special_bonus_unique_omniknight_purifiception_radius") and not self:GetCaster():HasModifier("modifier_special_bonus_omniknight_purifiception_radius") then
+		self:GetCaster():AddNewModifier(self:GetCaster(), self:FindAbilityByName("special_bonus_unique_omniknight_purifiception_radius"), "modifier_special_bonus_omniknight_purifiception_radius", {})
 	end
-	if self:GetCaster():HasTalent("special_bonus_omniknight_purifiception_heal") and not self:GetCaster():HasModifier("modifier_special_bonus_omniknight_purifiception_heal") then
-		self:GetCaster():AddNewModifier(self:GetCaster(), self:FindAbilityByName("special_bonus_omniknight_purifiception_heal"), "modifier_special_bonus_omniknight_purifiception_heal", {})
+	if self:GetCaster():HasTalent("special_bonus_unique_omniknight_purifiception_heal") and not self:GetCaster():HasModifier("modifier_special_bonus_omniknight_purifiception_heal") then
+		self:GetCaster():AddNewModifier(self:GetCaster(), self:FindAbilityByName("special_bonus_unique_omniknight_purifiception_heal"), "modifier_special_bonus_omniknight_purifiception_heal", {})
 	end
-	if self:GetCaster():HasTalent("special_bonus_omniknight_purifiception_double") and not self:GetCaster():HasModifier("modifier_special_bonus_omniknight_purifiception_double") then
-		self:GetCaster():AddNewModifier(self:GetCaster(), self:FindAbilityByName("special_bonus_omniknight_purifiception_double"), "modifier_special_bonus_omniknight_purifiception_double", {})
+	if self:GetCaster():HasTalent("special_bonus_unique_omniknight_purifiception_double") and not self:GetCaster():HasModifier("modifier_special_bonus_omniknight_purifiception_double") then
+		self:GetCaster():AddNewModifier(self:GetCaster(), self:FindAbilityByName("special_bonus_unique_omniknight_purifiception_double"), "modifier_special_bonus_omniknight_purifiception_double", {})
 	end
 end
 
@@ -227,10 +223,6 @@ function guardian_angel:IsHiddenWhenStolen() return false end
 function guardian_angel:GetCooldown(level)
 	if not IsServer() then return end
 	local cooldown = self.BaseClass.GetCooldown(self, level)
-	if self:GetCaster():HasTalent("special_bonus_omniknight_ga_cd") then
-		scepter_cooldown = cooldown + self:GetCaster():FindTalentValue("special_bonus_omniknight_ga_cd")
-		return scepter_cooldown
-	end
 	return cooldown
 end
 function guardian_angel:GetCastAnimation() return ACT_DOTA_CAST_ABILITY_4 end
@@ -245,7 +237,6 @@ function guardian_angel:OnSpellStart()
 	local scepter_duration = ability:GetSpecialValueFor("scepter_duration")
 	local radius = ability:GetSpecialValueFor("radius")
 	local cooldown = ability:GetSpecialValueFor("cooldown")
-	cooldown = cooldown + self:GetCaster():FindTalentValue("special_bonus_omniknight_ga_cd")
 
 	self:StartCooldown(cooldown)
 	EmitSoundOn(cast_response[math.random(1, #cast_response)], caster)

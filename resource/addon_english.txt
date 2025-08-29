@@ -756,7 +756,7 @@
 	"DOTA_Tooltip_Ability_clinkz_infernal_breath_scepter_chance"		"%Scepter Chance:"
 	"DOTA_Tooltip_Ability_clinkz_infernal_breath_scepter_description"	"Using his infernal power, deals %scepter_mag_damage%%% magic damage depending on the damage."
 
-	"DOTA_Tooltip_Ability_special_bonus_clinkz_infernal_breath"		"+{s:value}% Infernal Breath chance"
+	"DOTA_Tooltip_Ability_special_bonus_unique_clinkz_infernal_breath"		"+{s:value}% Infernal Breath chance"
 
 	"DOTA_Tooltip_ability_blood_madness"				"Blood Madness"
 	"DOTA_Tooltip_ability_blood_madness_Description"	"Calculates damage taken for %timer% seconds and increase Axe strength and armor, depending on the damage dealt to him.\n<h1><font color='#0094FF'>Aghanim's Scepter</font></h1>Increases damage calculation time by 1 second and does not let you die during calculation time."
@@ -828,11 +828,11 @@
 	"DOTA_Tooltip_modifier_ga"						"Guardian Angel"
 	"DOTA_Tooltip_modifier_ga_Description"			"Immune to physical damage."
 
-	"dota_tooltip_ability_special_bonus_omniknight_purifiception_heal"			"+{s:value}% of target's max health to Purification Heal/Damage"
-	"dota_tooltip_ability_special_bonus_omniknight_purifiception_radius"		"+{s:value} Purification Radius"
-	"dota_tooltip_ability_special_bonus_omniknight_purifiception_double"				"Double Purification"
-	"dota_tooltip_ability_special_bonus_omniknight_purifiception_double_description"	"{s:value}% chance of applying a second Purification to an ally"
-	"dota_tooltip_ability_special_bonus_omniknight_ga_cd"		"{s:value}s Guardian Angel Cooldown"
+	"dota_tooltip_ability_special_bonus_unique_omniknight_purifiception_heal"			"+{s:value}% of target's max health to Purification Heal/Damage"
+	"dota_tooltip_ability_special_bonus_unique_omniknight_purifiception_radius"		"+{s:value} Purification Radius"
+	"dota_tooltip_ability_special_bonus_unique_omniknight_purifiception_double"				"Double Purification"
+	"dota_tooltip_ability_special_bonus_unique_omniknight_purifiception_double_description"	"{s:value}% chance of applying a second Purification to an ally"
+	"dota_tooltip_ability_special_bonus_unique_omniknight_ga_cd"		"{s:value}s Guardian Angel Cooldown"
 
 
 	"dota_tooltip_ability_zanto_gari" "Zanto Gari"

@@ -215,17 +215,17 @@
 //        }
 //	}
 
-	//"special_bonus_unique_crystal_maiden_2"
-	//{
-	//	"AbilityValues"
-    //    {
-    //        "bonus_nova_damage"
-    //        {
-   //             "value" "86200"
-    //            "ad_linked_abilities" "crystal_maiden_crystal_nova"
-    //        }
-    //    }
-	//}	
+//  "special_bonus_unique_crystal_maiden_2"
+//  {
+//	     "AbilityValues"
+//      {
+//           "bonus_nova_damage"
+//            {
+//               "value" "86200"
+//               "ad_linked_abilities" "crystal_maiden_crystal_nova"
+//            }
+//      }
+//  }	
 	"special_bonus_unique_dark_seer_3"
 	{
 		"AbilityValues"
