@@ -8006,8 +8006,8 @@ The ward will have increased dmg base on hero total dmg and after lvl 30 it will
 //"DOTA_Tooltip_ability_item_dark_bloodstone_mana_regen_multiplier"	"%+$mp_regen_amp"
 //"DOTA_Tooltip_ability_item_dark_bloodstone_spell_amp"				"%+$spell_amp"
 //"DOTA_Tooltip_ability_item_dark_bloodstone_spell_lifesteal_amp"		"%+$spell_lifesteal_amp"
-"DOTA_Tooltip_ability_item_dark_bloodstone_hero_lifesteal"			"%+$spell_lifesteal_hero"
-"DOTA_Tooltip_ability_item_dark_bloodstone_creep_lifesteal"			"%+$spell_lifesteal_creep"
+//"DOTA_Tooltip_ability_item_dark_bloodstone_hero_lifesteal"			"%+$spell_lifesteal_hero"
+"DOTA_Tooltip_ability_item_dark_bloodstone_creep_lifesteal"			"%+$spell_lifesteal"
 
 "DOTA_Tooltip_modifier_item_bloodstone_active"						"Bloodpact"
 "DOTA_Tooltip_modifier_item_bloodstone_active_Description"			"This unit is regenerating %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% health per second."

@@ -25395,8 +25395,11 @@
 				"value"              "1200"
 				"affected_by_aoe_increase"	"1"
 			}
-
 		}
+	    "precache"
+	    {
+	        "particle"   "particles/custom/items/obsidian_rapier/obsidian_boulder.vpcf"
+	    }		
 	}
 //recipe
 	"item_recipe_pirate_hat_custom"
