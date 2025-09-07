@@ -24,48 +24,43 @@ function PrecacheEveryThingFromKV( context )
     for _, kv in pairs(kv_files) do
         local kvs = LoadKeyValues(kv)
         if kvs then
-                print("!!! BEGIN TO PRECACHE RESOURCE FROM:", kv, "with", tostring(tablelength(kvs)), "resources")
-                PrecacheEverythingFromTable(context, kvs, 0)
+                print("!!! BEGIN TO PRECACHE RESOURCE FROM: ", kv)
+                PrecacheEverythingFromTable( context, kvs)
         end
     end
 end
-local MAX_RECURSION_DEPTH = 20
-
-function PrecacheEverythingFromTable(context, kvtable, depth)
-    depth = depth or 0
-    if depth > MAX_RECURSION_DEPTH then
-        print("!!! WARNING: Max recursion depth reached in PrecacheEverythingFromTable")
-        return
+function PrecacheEverythingFromTable(context,kvtable)
+    for key,value in pairs(kvtable) do
+            if type(value) == "table" then
+                    PrecacheEverythingFromTable(context,value)
+            else
+                if string.find(value,"vpcf") then
+                        PrecacheResource("particle",value,context)
+                        -- print("!!! PRECACHE PARTICLE RESOURCE",value)
+                end
+                if string.find(value,"vmdl") then
+                        PrecacheResource("model",value,context)
+                        -- print("!!! PRECACHE MODEL RESOURCE",value)
+                end
+                if string.find(value,"vsndevts") then
+                        PrecacheResource("soundfile",value,context)
+                        -- print("!!! PRECACHE SOUND RESOURCE",value)
+                end
+				if string.find(value, ".vsnd") then
+                    PrecacheResource("soundfile",value,context)
+                    -- print("!!! PRECACHE SOUND RESOURCE",value)
+				end
+				if string.find(key,"particle_folder") then
+						PrecacheResource("particle_folder",value,context)
+						-- print("!!! PRECACHE PARTICLE FOLDER RESOURCE",value)
+				end
+            end
     end
-    for key, value in pairs(kvtable) do
-        if type(value) == "table" then
-            PrecacheEverythingFromTable(context, value, depth + 1)
-        else
-            -- Most resource checks are performed on the value, except "particle_folder" which is checked on the key.
-            if string.find(value, "vpcf") then
-                PrecacheResource("particle", value, context)
-                -- print("!!! PRECACHE PARTICLE RESOURCE", value)
-            end
-            if string.find(value, "vmdl") then
-                PrecacheResource("model", value, context)
-                -- print("!!! PRECACHE MODEL RESOURCE", value)
-            end
-            if string.find(value, "vsndevts") then
-                PrecacheResource("soundfile", value, context)
-                -- print("!!! PRECACHE SOUND RESOURCE", value)
-            end
-            if string.find(value, ".vsnd") then
-                PrecacheResource("soundfile", value, context)
-                -- print("!!! PRECACHE SOUND RESOURCE", value)
-            end
-            -- "particle_folder" is checked on the key, not the value.
-            if string.find(key, "particle_folder") then
-                PrecacheResource("particle_folder", value, context)
-                -- print("!!! PRECACHE PARTICLE FOLDER RESOURCE", value)
-            end
-        end
-    end
+end
 
+function Precache_Unit_Resource( context )
+    print("!!! BEGIN PRECACHE UNIT RESOURCE")
+    
     
     -- npc_mjz_sheer_heart_attack_tank
     PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_techies.vsndevts", context)
@@ -113,10 +108,4 @@ function Precach_Item_Resource( context)
     PrecacheResource("soundfile","sounds/weapons/hero/lion/lion_voodoo.vsnd", context)
     PrecacheResource("particle", "particles/units/heroes/hero_lion/lion_spell_voodoo.vpcf", context)
 
-    PrecacheResource("particle", "particles/custom/items/spellbook/destruction/spellbook_destruction_cast_aoe.vpcf", context)
-    PrecacheResource("particle", "particles/custom/items/spellbook/destruction/spellbook_destruction_cast.vpcf", context)
-    PrecacheResource("particle", "particles/custom/items/spellbook/destruction/spellbook_destruction_impact.vpcf", context)
-    PrecacheResource("particle", "particles/custom/items/spellbook/destruction/spellbook_destruction_debuff.vpcf", context)
-    PrecacheResource("particle", "particles/econ/generic/generic_progress_meter/generic_progress_circle.vpcf", context)
-    PrecacheResource("particle", "particles/custom/items/pipe_of_dezun/pipe_of_dezun_magic_immune_avatar.vpcf", context)
 end
