@@ -714,6 +714,22 @@
 		}		
 	}
 
+	"queenofpain_masochist"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"MaxLevel"						"1"
+		"AbilityValues"
+		{
+			"spell_amplification"			"100"
+			"spell_amplification_per_level"	"5.0"
+			"damage_reflected_to_self"		"1.0"
+		}
+	}
+
+
 
 //end
 }

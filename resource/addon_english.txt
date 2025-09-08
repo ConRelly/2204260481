@@ -4263,7 +4263,7 @@
 
 
 	"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave"					"Sonic Wave"
-	"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_Description"		"Creates a gigantic wave of sound in front of Queen of Pain, dealing heavy damage to all enemy units in its wake and pushing them back.\nUpgradable by Aghanim's Scepter."
+	"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_Description"		"Creates a gigantic wave of sound in front of Queen of Pain, dealing heavy damage to all enemy units in its wake and pushing them back.\nUpgradable by Aghanim's Scepter. "
 	"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_Lore"				"Her most exquisite of all of torments, Akasha's Sonic Wave puts her poor foes out of their misery."
 	"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_final_aoe"			"WAVE MAX RADIUS:"
 	"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_damage"			"BASE DAMAGE:"
@@ -4272,6 +4272,10 @@
 	"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_mana_cost_pct"			"%MANA COST:"
 	"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_scepter_description"	"Increases damage."
 	"DOTA_Tooltip_ability_mjz_queenofpain_sonic_wave_Note0"					"Sonic Wave can hit units up to 1150 units away."
+
+	"DOTA_Tooltip_ability_queenofpain_masochist_Description"					"Queen of Pain has bonus Spell Amplification and bonus Spell amp per level but a percentage of her spell damage is reflected back to her."
+	"DOTA_Tooltip_ability_queenofpain_masochist_spell_amplification_per_level"			"%SPELL AMPLIFICATION PER LEVEL:"
+
 
 	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare"				"Rocket Flare"
 	"DOTA_Tooltip_ability_mjz_rattletrap_rocket_flare_Description"	"Fires a flare that explodes over a given area, damaging enemies and providing vision for 10 seconds."
@@ -7235,9 +7239,10 @@ You can't target yourself."
 "DOTA_Tooltip_Ability_pugna_custom_nether_ward_lore"						"While at the lamasery for the Arts of Oblivion, Pugna learned to dominate Nether magic."
 
 "DOTA_Tooltip_ability_queenofpain_custom_shadow_strike"								"<font color='#f2da5b'>Shadow Strike</font>"
-"DOTA_Tooltip_ability_queenofpain_custom_shadow_strike_Description"					"Hurls a poisoned dagger which deals large initial damage, and then deals damage over time. The poisoned unit has its movement speed slowed for %duration% seconds. Stacks with itself.\n<h1><font color='#DE3163'>Super Scepter</font></h1> Each time an enemy is hit by Sonic Wave while afflicted by Shadow Strike, a stack is added to the poison.<br> The damage from Shadow Strike is now multiplied by the total number of stacks it holds(+1),(pres Alt for more details).<br> As the individual stack count of Shadow Strike poison rises, you acquire that specific number as a permanent <font color='#6A0DAD'>PainForge</font> Stack."
+"DOTA_Tooltip_ability_queenofpain_custom_shadow_strike_Description"					"Hurls a poisoned dagger which deals large initial damage, and then deals damage over time. The poisoned unit has its movement speed slowed for %duration% seconds. Stacks with itself.\n<h1><font color='#DE3163'>Super Scepter</font></h1> Each time an enemy is hit by Sonic Wave while afflicted by Shadow Strike, a stack is added to the poison.<br> The damage from Shadow Strike is now multiplied by the total number of stacks it holds(+1),(pres Alt for more details).<br> As the individual stack count of Shadow Strike poison rises, you acquire that specific number as a permanent <font color='#6A0DAD'>PainForge</font> Stack. \n<font color='#F17C26'>If Autocast is toggle on Sonic wave will cast this skill on first enemies in the direction of the skill(if the CD is rdy), + 1 extra enemy target for each 2000 int(max 5).</font>"
 "DOTA_Tooltip_ability_queenofpain_custom_shadow_strike_Lore"						"Akasha's envenomed dagger allows her to delight in the drawn out suffering of her victims."
 "DOTA_Tooltip_ability_queenofpain_custom_shadow_strike_Note0"                       "SS effect: In multiplication + 1 will be added for the number of stacks to avoid * 0 or 1 mult. <font color='#6A0DAD'>PainForge</font> stack is gained only when an individual Shadow strike gains an stack and you will gain for each individual shadow strike that affects the enemy"
+"DOTA_Tooltip_ability_queenofpain_custom_shadow_strike_Note1"                       "Has 0 dmg on impact on some lvl's intentional"
 "DOTA_Tooltip_ability_queenofpain_custom_shadow_strike_movement_slow"				"%MOVEMENT SLOW:"
 "DOTA_Tooltip_ability_queenofpain_custom_shadow_strike_strike_damage"				"INITIAL DAMAGE:"
 "DOTA_Tooltip_ability_queenofpain_custom_shadow_strike_int_pct_tick"				"%INT AS DAMAGE PER TICK:"

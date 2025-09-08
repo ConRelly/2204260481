@@ -155,7 +155,7 @@ function AOHGameMode:OnPlayerChat(keys)
 		end	
 			
 	end			
-	if keys.text == "-fullhard" and (not self._endlessMode or not self._hardMode) and not Cheats:IsEnabled() and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+	if keys.text == "-fullhard" and (not self._endlessMode or not self._hardMode) and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		if GetMapName() ~= "heroattack_on_easy" then
 			self._endlessMode = true
 			self._hardMode = true
@@ -168,7 +168,7 @@ function AOHGameMode:OnPlayerChat(keys)
 			Notifications:TopToAll({text="You Need to Play Normal Map to activate Hard Mode.", style={color="yellow"}, duration=15})
 		end	
 	end
-	if keys.text == "-fullgame" and (not self._endlessMode or not self._hardMode) and not Cheats:IsEnabled() and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
+	if keys.text == "-fullgame" and (not self._endlessMode or not self._hardMode) and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		local steam_name = PlayerResource:GetPlayerName(0)
 		if keys.playerid == 0 then
 			if GetMapName() ~= "heroattack_on_easy" then

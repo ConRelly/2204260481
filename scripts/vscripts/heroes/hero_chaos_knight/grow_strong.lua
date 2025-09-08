@@ -22,39 +22,78 @@ function modifier_grow_strong:GetEffectAttachType()
 	return PATTACH_POINT_FOLLOW
 end
 
+-- helper to apply retro stacks once (no instant talent strength)
+function modifier_grow_strong:TryApplyRetro()
+	if self.retro_done then return end
+	if not IsServer() then return end
+	local ability = self:GetAbility()
+	if not ability or ability:IsNull() then return end
+	if not ability:IsTrained() then return end
+
+	local caster = self:GetCaster()
+	local retro_interval = 15
+	local game_time = math.floor(GameRules:GetGameTime())
+	local retro_stacks = math.floor(game_time / retro_interval)
+
+	if retro_stacks > 0 then
+		-- add the retro stacks to the modifier stack count only (no immediate talent strength)
+		self:SetStackCount(self:GetStackCount() + retro_stacks)
+	end
+
+	-- mark retro as applied so it never runs again
+	self.retro_done = true
+
+	-- start regular interval thinking (continue normal growth)
+	if ability and not ability:IsNull() then
+		self:StartIntervalThink(ability:GetSpecialValueFor("grow_interval"))
+	end
+end
+
 function modifier_grow_strong:OnCreated()
 	if not IsServer() then return end
-	if self:GetAbility() and self:GetAbility():IsTrained() then
-		self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("grow_interval"))
-	end	
+	-- try to apply retro stacks if ability is already trained; otherwise OnRefresh will handle it
+	self:TryApplyRetro()
 end
+
 function modifier_grow_strong:OnRefresh()
 	if not IsServer() then return end
-	if self:GetAbility() and self:GetAbility():IsTrained() then
-		self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("grow_interval"))
-	end	
+	-- if ability was trained after modifier existed, TryApplyRetro will apply retro stacks once
+	self:TryApplyRetro()
 end
+
 function modifier_grow_strong:OnIntervalThink()
 	if not IsServer() then return end
 	local caster = self:GetCaster()
-	if self:GetAbility() and self:GetAbility():IsTrained() then
+	local ability = self:GetAbility()
+	if ability and not ability:IsNull() and ability:IsTrained() then
+		-- normal per-interval stack gain
 		self:SetStackCount(self:GetStackCount() + 1)
-		if self:GetAbility() and not self:GetAbility():IsNull() and self:GetCaster() then
-			if self:GetCaster():HasTalent("special_bonus_unique_ck_grow_strong") then
-				local modifynr = self:GetAbility():GetSpecialValueFor("grow_str") * talent_value(self:GetCaster(), "special_bonus_unique_ck_grow_strong") * 0.5
-				self:GetCaster():ModifyStrength(modifynr)
-                if caster:HasModifier("modifier_grow_strong_bonus_str") then
-                    local modifier = caster:FindModifierByName("modifier_grow_strong_bonus_str")
-                    modifier:SetStackCount(modifier:GetStackCount() + modifynr)
-                else
-                    caster:AddNewModifier(caster, ability, "modifier_grow_strong_bonus_str", {})
-                    caster:FindModifierByName("modifier_grow_strong_bonus_str"):SetStackCount(modifynr)
-                end	
+
+		-- if the caster has the talent, apply the per-interval strength increment (same logic you had)
+		if caster:HasTalent("special_bonus_unique_ck_grow_strong") then
+			local modifynr = ability:GetSpecialValueFor("grow_str") * talent_value(caster, "special_bonus_unique_ck_grow_strong") * 0.5
+			caster:ModifyStrength(modifynr)
+
+			-- keep or create the bonus-strength modifier and increment its stack count
+			if caster:HasModifier("modifier_grow_strong_bonus_str") then
+				local modifier = caster:FindModifierByName("modifier_grow_strong_bonus_str")
+				if modifier and not modifier:IsNull() then
+					modifier:SetStackCount(modifier:GetStackCount() + modifynr)
+				end
+			else
+				caster:AddNewModifier(caster, ability, "modifier_grow_strong_bonus_str", {})
+				local modifier = caster:FindModifierByName("modifier_grow_strong_bonus_str")
+				if modifier and not modifier:IsNull() then
+					modifier:SetStackCount(modifynr)
+				end
 			end
-			self:StartIntervalThink(self:GetAbility():GetSpecialValueFor("grow_interval"))
 		end
-	end	
+
+		-- continue normal interval thinking
+		self:StartIntervalThink(ability:GetSpecialValueFor("grow_interval"))
+	end
 end
+
 function modifier_grow_strong:DeclareFunctions()
 	return {MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS, MODIFIER_PROPERTY_MODEL_SCALE, MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE}
 end
@@ -64,6 +103,7 @@ end
 function modifier_grow_strong:GetModifierPhysicalArmorBonus()
 	if self:GetAbility() then return self:GetStackCount() * (self:GetAbility():GetSpecialValueFor("grow_armor") + self:GetAbility():GetSpecialValueFor("grow_armor") * talent_value(self:GetCaster(), "special_bonus_unique_ck_grow_strong")) end	
 end
+
 function modifier_grow_strong:GetModifierModelScale()
 	if self:GetAbility() then
 		local scale = self:GetStackCount() * self:GetAbility():GetSpecialValueFor("grow_model")

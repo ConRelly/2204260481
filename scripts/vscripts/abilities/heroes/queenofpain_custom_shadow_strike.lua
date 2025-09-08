@@ -10,7 +10,7 @@ if IsServer() then
 
         caster:EmitSound("Hero_QueenOfPain.ShadowStrike")
 
-        local projectile_speed = 900
+        local projectile_speed = 1800
 
         local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_queenofpain/queen_shadow_strike_body.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
         ParticleManager:SetParticleControl(particle, 0, caster:GetAbsOrigin())
@@ -47,9 +47,12 @@ if IsServer() then
             victim = target
         })
 
-        target:AddNewModifier(caster, self, "modifier_queenofpain_custom_shadow_strike", {
+        local mod = target:AddNewModifier(caster, self, "modifier_queenofpain_custom_shadow_strike", {
             duration = self:GetSpecialValueFor("duration")
         })
+        if mod then
+            mod:SetStackCount(1)
+        end
     end
 end
 

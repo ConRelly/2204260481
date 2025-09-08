@@ -18,7 +18,7 @@ function modifier_mystic_dragon_endless_wisdom_buff:OnCreated()
 		local time = GameRules:GetGameTime() / 60
 		if time > 1 and not self.one_time_only then
 			local mbuff = self
-			local stack = math.floor(time * 2)
+			local stack = math.floor(time * 3)
 			mbuff:SetStackCount(stack)
 			self:IncrementStackCount()
 			self.one_time_only = true

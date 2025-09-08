@@ -9697,14 +9697,14 @@
 {
 	"BaseClass"						"ability_lua"
 	"ScriptFile"					"abilities/heroes/queenofpain_custom_shadow_strike.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"SpellDispellableType"		  "SPELL_DISPELLABLE_NO"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"queenofpain_shadow_strike"
-	"AbilityCastRange"				"600 650 700 750 900 1000 1400"
+	"AbilityCastRange"				"2500"
 	"AbilityCastPoint"				"0.0"
 	"MaxLevel"					  "7"
 	"LevelsBetweenUpgrades"		 "5"
@@ -9714,14 +9714,14 @@
 	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 	"AbilityValues"
         {
-            "strike_damage" "130 450 820 1350 2100 4800 9250"
+            "strike_damage" "130 450 820 1350 0 9500 0"
             "int_pct_tick"
             {
                 "value" "90 245 460 675 825 1020 1940"
                 "special_bonus_unique_qop_shadow_strike_damage" "14500"
             }
             "movement_slow" "-10"
-            "cast_range_tooltip" "600 650 700 750 900 1000 1400"
+            "cast_range_tooltip" "2500"
             "duration" "12"
             "tick_interval"
             {
@@ -28717,7 +28717,7 @@
 				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 			}
 			"grow_model"			"0.1"
-			"grow_interval"			"13 12 11 10 9 8"
+			"grow_interval"			"13 12 11 10 9 7"
 			"max_scale"				"50"
 			"crit_chance"			"8"
 			"crit_per_str"			"0.5"
