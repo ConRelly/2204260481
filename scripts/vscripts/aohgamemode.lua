@@ -138,6 +138,7 @@ function AOHGameMode:InitGameMode()
 	_G._itemauto2 = {}
 	_G._itemauto3 = {}
 	_G._itemauto4 = {}
+	_G._stalker_skill = { [0]=false, [1]=false, [2]=false, [3]=false, [4]=false }
 	_G._playerNumber = 0
 	_G._sell_slayer_fragmets = true
 	_G._dev_enemy = false
@@ -324,7 +325,8 @@ function AOHGameMode:InitGameMode()
 	-- Init card points system
 	holdout_card_points:Init()
 
-
+	--new test
+	--
 
 
 
@@ -663,6 +665,17 @@ function AOHGameMode:InitVariables()
 					self._playerNumber = self._playerNumber + 1
 					PlayerResource:SetCustomBuybackCooldown(playerID, 180)
 					--Sounds:CreateSound(playerID, "goh.teme")
+					local eventData = { player_id = playerID }
+					if holdout_card_points and type(holdout_card_points._SpellsMenuUpdateStalkerEligibility) == "function" then
+						local ok, err = xpcall(function()
+							holdout_card_points:_SpellsMenuUpdateStalkerEligibility(nil, eventData)
+						end, debug.traceback)
+						if not ok then
+							print("[ERROR] holdout_card_points:_SpellsMenuUpdateStalkerEligibility failed: " .. tostring(err))
+						end
+					else
+						print("[WARN] holdout_card_points._SpellsMenuUpdateStalkerEligibility not available")
+					end
 				end
 			end
 		end
@@ -1686,7 +1699,46 @@ function AOHGameMode:OnEntityKilled(event)
 			Notifications:TopToAll({text="You Have Defeated The God MORAN(Lower Dificulty)", style={color="red"}, duration=15})
 		end
 		moran_annoncement_kill = false	
-	end		
+	end	
+	-- One-time reward from killing npc_boss_kobold_foreman2.
+	-- this list is added at the top to load before anything else
+	-- _G._stalker_skill = { [0]=false, [1]=false, [2]=false, [3]=false, [4]=false }
+	-- This ensures a known default state for all 5 player slots.
+
+	-- npc_boss_kobold_foreman2: per-player repeated chance to gain the "choose skill" flag.
+	if killedUnit:GetUnitName() == "npc_dota_boss_aghanim" then  --npc_dota_boss_aghanim
+		_G._stalker_skill = _G._stalker_skill or {}
+		local CHANCE = 25
+
+		for playerID = 0, 4 do
+			if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:HasSelectedHero(playerID) then
+				_G._stalker_skill[playerID] = _G._stalker_skill[playerID] or false
+				if not _G._stalker_skill[playerID] then
+					if RollPercentage(CHANCE) then
+						_G._stalker_skill[playerID] = true
+						Notifications:Top(playerID, {text="You have gained ability to choose a skill from killing Aghanim. Open Spell menu and check.(Patreon gains this at the start of game)", style={color="yellow"}, duration=10})
+
+						-- Call the function directly in the required module instead of sending a custom event.
+						local eventData = { player_id = playerID }
+						if holdout_card_points and type(holdout_card_points._SpellsMenuUpdateStalkerEligibility) == "function" then
+							local ok, err = xpcall(function()
+								holdout_card_points:_SpellsMenuUpdateStalkerEligibility(nil, eventData)
+							end, debug.traceback)
+							if not ok then
+								print("[ERROR] holdout_card_points:_SpellsMenuUpdateStalkerEligibility failed: " .. tostring(err))
+							end
+						else
+							print("[WARN] holdout_card_points._SpellsMenuUpdateStalkerEligibility not available")
+						end
+					else
+						Notifications:Top(playerID, {text="You have failed the 25% chance to get 1 Time Choose Ability on Aghanim kill", style={color="red"}, duration=8})
+					end
+				end
+			end
+		end
+	end
+
+
 	mHackGameMode:OnEntityKilled(event)
 end
 

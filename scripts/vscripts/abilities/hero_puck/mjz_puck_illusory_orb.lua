@@ -15,24 +15,28 @@ function ability_class:OnSpellStart()
 		local ability = self
 		local point = self:GetCursorPosition()
 		local base_damage = GetTalentSpecialValueFor(ability, "damage")
-		local int_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
+		local caster_lvl = caster:GetLevel()
+		local int_damage = (GetTalentSpecialValueFor(ability, "intelligence_damage") /100) * caster_lvl
 		local projectile_radius = GetTalentSpecialValueFor(ability, "radius")
 		local projectile_distance = GetTalentSpecialValueFor(ability, "max_distance")
 		local projectile_speed = GetTalentSpecialValueFor(ability, "orb_speed")
 		local vision_radius = GetTalentSpecialValueFor(ability, "orb_vision")
 		local vision_duration = GetTalentSpecialValueFor(ability, "vision_duration")
+		local damage = base_damage + caster:GetIntellect(false) * int_damage
 
-		local damage = base_damage + caster:GetIntellect(false) * int_damage / 100
-
-		local projectile_direction = point - caster:GetOrigin()
-		projectile_direction = (projectile_direction * Vector(1, 1, 0)):Normalized()
-		local projectile_name = "particles/units/heroes/hero_puck/puck_illusory_orb.vpcf"
+		local projectile_direction = (point - caster:GetOrigin())
+		projectile_direction.z = 0
+		if projectile_direction:Length2D() == 0 then
+			projectile_direction = caster:GetForwardVector()
+		end
+		projectile_direction = projectile_direction:Normalized()
+		local projectile_name = "particles/econ/items/mirana/mirana_crescent_arrow/mirana_spell_crescent_arrow.vpcf" --"particles/units/heroes/hero_puck/puck_illusory_orb.vpcf"
 
 		-- create projectile
 		local info = {
 			Source = caster,
 			Ability = ability,
-			vSpawnOrigin = caster:GetOrigin(),
+			vSpawnOrigin = caster:GetAbsOrigin(),
 			
 			bDeleteOnHit = false,
 			
@@ -74,8 +78,10 @@ function ability_class:OnSpellStart()
 		extraData.modifier = modifier
 		self.projectiles[projectile] = extraData
 
-		-- activate sub
-		self.jaunt:SetActivated( true )
+		-- activate sub (only if jaunt ability exists)
+		if self.jaunt then
+			self.jaunt:SetActivated( true )
+		end
 	end
 end
 

@@ -52,6 +52,20 @@ function ability_class:FastAttack(target)
 	ability:SetActivated(true)
 end
 
+function ability_class:EnsureRetroactiveKills()
+    if self.nKills ~= nil then return end
+    local minutes = math.max(0, GameRules:GetGameTime()) / 60
+    -- Extrapolation: ~2000 deaths in an ~80 min game => 25 deaths/minut
+    local base_deaths = 2000
+    if RandomInt(1, 100) <= 25 then
+        base_deaths = base_deaths * 2
+    end
+    local full_minutes = 80
+    local rate = base_deaths / full_minutes -- 25
+    self.nKills = math.floor(minutes * rate)
+end
+
+
 function ability_class:OnEnemyDiedNearby( hVictim, hKiller, kv )
 	if hVictim == nil or hKiller == nil or hVictim:IsIllusion()  then
 		return
@@ -66,7 +80,7 @@ function ability_class:OnEnemyDiedNearby( hVictim, hKiller, kv )
         local extra_stack = "special_bonus_unique_mjz_slark_essence_shift_attack_count"
 		if hKiller == caster or heap_range >= flDistance then
 			if self.nKills == nil then
-				self.nKills = 0
+				self:EnsureRetroactiveKills()
 			end
 
 			self.nKills = self.nKills + 1
@@ -91,7 +105,7 @@ end
 
 function ability_class:GetHeapKills()
 	if self.nKills == nil then
-		self.nKills = 0
+		self:EnsureRetroactiveKills()
 	end
 	return self.nKills
 end

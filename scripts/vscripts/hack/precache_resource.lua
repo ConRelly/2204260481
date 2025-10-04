@@ -107,5 +107,7 @@ function Precach_Item_Resource( context)
     PrecacheResource("soundfile","soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts", context)
     PrecacheResource("soundfile","sounds/weapons/hero/lion/lion_voodoo.vsnd", context)
     PrecacheResource("particle", "particles/units/heroes/hero_lion/lion_spell_voodoo.vpcf", context)
+    PrecacheResource("particle", "particles/units/heroes/hero_puck/puck_illusory_orb.vpcf", context)
+
 
 end

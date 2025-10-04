@@ -447,25 +447,37 @@ item_wraith_rapier = item_wraith_rapier or class({})
 function item_wraith_rapier:GetIntrinsicModifierName() return "modifier_wraith_rapier" end
 function item_wraith_rapier:OnOwnerSpawned()
 	if craft and craft1 then
-		local Parent = self:GetParent()
-		local Location = GetGroundPosition(Parent:GetAbsOrigin(), Parent)
-		local item1 = Parent:FindItemInInventory("item_resurection_pendant")
-		local item2 = Parent:FindItemInInventory("item_desolator_2")
-		local item3 = Parent:FindItemInInventory("item_witless_shako")
-		if item1 and item2 and item3 then
-			--Parent:RemoveItem(item1)
-			Parent:TakeItem(item1)
-			--Parent:RemoveItem(item2)
-			Parent:TakeItem(item2)
-			--Parent:RemoveItem(item3)
-			Parent:TakeItem(item3)
-			--Parent:RemoveItem(self)
-			Parent:TakeItem(self)
-			Parent:EmitSound("Hero_PhantomAssassin.Arcana_Layer")
-			Parent:AddItemByName("item_hammer_of_the_divine")
-			craft1 = false
-		end	
+		local parent = self:GetParent()
+		-- delegate to the shared function so it can be called from other files/commands too
+		AttemptCraftWraithRapier(parent)
 	end
+end
+
+-- Pass the hero/unit (e.g. hPlayerHero) as the single argument.
+function AttemptCraftWraithRapier(parent)
+	if not IsServer() then return false end
+	if not parent then return false end
+	if not parent:IsAlive() then return false end
+	if not craft or not craft1 then return false end
+	-- Ensure the unit actually has a wraith rapier item instance in its inventory
+	local rapier_item = parent:FindItemInInventory("item_wraith_rapier")
+	if not rapier_item then return false end
+	local item1 = parent:FindItemInInventory("item_resurection_pendant")
+	local item2 = parent:FindItemInInventory("item_desolator_2")
+	local item3 = parent:FindItemInInventory("item_witless_shako")
+
+	if item1 and item2 and item3 then
+		parent:TakeItem(item1)
+		parent:TakeItem(item2)
+		parent:TakeItem(item3)
+		parent:TakeItem(rapier_item)
+		parent:EmitSound("Hero_PhantomAssassin.Arcana_Layer")
+		parent:AddItemByName("item_hammer_of_the_divine")
+		craft1 = false
+		return true
+	end
+
+	return false
 end
 function item_wraith_rapier:OnOwnerDied(params)
 	if not craft then

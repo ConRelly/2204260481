@@ -34,6 +34,18 @@ function holdout_card_points:Init()
         return self:_SpellsMenuGetHiddenSpells(...)
     end)
 
+    CustomGameEventManager:RegisterListener("spells_menu_get_stalker_abilities", function(...)
+        return self:_SpellsMenuGetStalkerAbilities(...)
+    end)
+
+    CustomGameEventManager:RegisterListener("spells_menu_buy_stalker_spell", function(...)
+        return self:_SpellsMenuBuyStalkerSpell(...)
+    end)
+
+    CustomGameEventManager:RegisterListener("spells_menu_update_stalker_eligibility", function(...)
+        return self:_SpellsMenuUpdateStalkerEligibility(...)
+    end)
+
 end
 
 function holdout_card_points:_RetrieveCardPoints(nPlayerID)
@@ -111,7 +123,7 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
             -- Refund the card points
             local newCardPoints = cardPoints + abilityCost
             self:_SetCardPoints(nPlayerID, newCardPoints)
-            Notifications:Top(nPlayerID, { text = "#DOTA_HUD_Spells_Menu_Successful_Refund", duration = 4, style = { color = "green" } })
+            Notifications:Top(nPlayerID, { text = "Ability successfully refunded!", duration = 4, style = { color = "green" } })
             CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_buy_spell_feedback", { new_card_points = newCardPoints }) -- Close the menu
         else
             -- Trying to buy
@@ -141,10 +153,10 @@ function holdout_card_points:_SpellsMenuBuySpell(eventSourceIndex, event_data)
                 -- Deduct card points
                 local newCardPoints = cardPoints - abilityCost
                 self:_SetCardPoints(nPlayerID, newCardPoints)
-                Notifications:Top(nPlayerID, { text = "#DOTA_HUD_Spells_Menu_Successful_Purchase", duration = 4, style = { color = "green" } })
+                Notifications:Top(nPlayerID, { text = "Ability successfully purchased!", duration = 4, style = { color = "green" } })
                 CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_buy_spell_feedback", { new_card_points = newCardPoints }) -- Close the menu
             else
-                Notifications:Top(nPlayerID, { text = "#DOTA_HUD_Spells_Menu_Insufficient_CP", duration = 4, style = { color = "red" } })
+                Notifications:Top(nPlayerID, { text = "Insufficient Card Points!", duration = 4, style = { color = "red" } })
             end
         end
 
@@ -308,7 +320,7 @@ function holdout_card_points:_SwapAbilitiesPosition(nPlayerID, firstAbilityName,
     local firstAbility = playerHero:FindAbilityByName(firstAbilityName)
     local secondAbility = playerHero:FindAbilityByName(secondAbilityName)
     --local firstAbilityName = firstAbility:GetAbilityName()
-    --local secondAbilityName = secondAbility:GetAbilityName()  
+    --local secondAbilityName = secondAbility:GetAbilityName()
    -- local slot_id = playerHero:GetAbilityByIndex(3):GetAbilityName()
     --local slot_id_name = slot_id:GetAbilityName()
     --if not firstAbilityName == slot_id and not secondAbilityName == slot_id then
@@ -316,5 +328,159 @@ function holdout_card_points:_SwapAbilitiesPosition(nPlayerID, firstAbilityName,
         playerHero:SwapAbilities(firstAbilityName, secondAbilityName, not firstAbility:IsHidden(), not secondAbility:IsHidden())
 
         CustomGameEventManager:Send_ServerToPlayer(player, "dota_ability_changed", { entityIndex = playerHero })
-    end  
+    end
+end
+
+function holdout_card_points:_SpellsMenuGetStalkerAbilities(eventSourceIndex, event_data)
+    local nPlayerID = event_data.player_id
+    local player = PlayerResource:GetPlayer(nPlayerID)
+
+    if player and PlayerResource:HasSelectedHero(nPlayerID) then
+        local playerHero = player:GetAssignedHero()
+
+        -- Check if player is in stalker list and hasn't used their choice yet
+        if IsStalkerList(playerHero) or (_G._stalker_skill and _G._stalker_skill[nPlayerID] == true) then
+            -- Check if player has already used their stalker ability choice this game
+            if not self:_HasUsedStalkerChoice(nPlayerID) then
+                -- Get the stalker ability list and send to client
+                local eventData = {
+                    can_use = true
+                }
+                CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_get_stalker_abilities_feedback", eventData)
+            else
+                -- Player has already used their choice
+                CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_get_stalker_abilities_feedback", {
+                    stalker_abilities = {},
+                    can_use = false,
+                    message = "You have already used your 1 time ability choice this game."
+                })
+            end
+        else
+            -- Player is not in stalker list
+            CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_get_stalker_abilities_feedback", {
+                stalker_abilities = {},
+                can_use = false,
+                message = "You are not eligible for 1 time ability choice. Kill Aghanim, the Apex Mage foar a 20% chance"
+            })
+        end
+    else
+        -- Player or hero not found
+    end
+end
+
+function holdout_card_points:_SpellsMenuBuyStalkerSpell(eventSourceIndex, event_data)
+    local nPlayerID = event_data.player_id
+    local abilityName = event_data.spell_id
+    local player = PlayerResource:GetPlayer(nPlayerID)
+
+    if player and PlayerResource:HasSelectedHero(nPlayerID) then
+        local playerHero = player:GetAssignedHero()
+
+        -- Check if player is in stalker list
+        if IsStalkerList(playerHero) or (_G._stalker_skill and _G._stalker_skill[nPlayerID] == true) then
+            -- Check if player has already used their stalker ability choice this game
+            if not self:_HasUsedStalkerChoice(nPlayerID) then
+                -- Check if player already has this ability
+                if not playerHero:HasAbility(abilityName) then
+                    -- Add the ability
+                    local newAbility = playerHero:AddAbility(abilityName)
+                    if newAbility then
+                        -- Set appropriate level based on ability type
+                        if bit.band(newAbility:GetBehaviorInt(), DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE) ~= 0 then
+                            newAbility:SetLevel(1)
+                        else
+                            newAbility:SetLevel(0)
+                        end
+                        newAbility:MarkAbilityButtonDirty()
+
+                        -- Mark that this player has used their stalker choice
+                        self:_MarkStalkerChoiceUsed(nPlayerID)
+
+                        -- Send success feedback
+                        Notifications:Top(nPlayerID, {
+                            text = "1 Time Choice ability successfully chosen!",
+                            duration = 7,
+                            style = { color = "green" }
+                        })
+                        CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_buy_spell_feedback", {
+                            new_card_points = self:_RetrieveCardPoints(nPlayerID)
+                        })
+
+                        -- Close the menu
+                        CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_buy_stalker_spell_feedback", {})
+                    end
+                else
+                    Notifications:Top(nPlayerID, {
+                        text = "You already have this ability!",
+                        duration = 8,
+                        style = { color = "red" }
+                    })
+                end
+            else
+                Notifications:Top(nPlayerID, {
+                    text = "You have already used your 1 Time Choice ability choice!",
+                    duration = 9,
+                    style = { color = "red" }
+                })
+            end
+        else
+            Notifications:Top(nPlayerID, {
+                text = "You are not eligible for 1 time Choice ability choice! Kill Aghanim, the Apex Mage foar a 25% chance",
+                duration = 9,
+                style = { color = "red" }
+            })
+        end
+
+        playerHero:CalculateStatBonus(false)
+        CustomGameEventManager:Send_ServerToPlayer(player, "dota_ability_changed", { entityIndex = playerHero })
+    end
+end
+
+
+function holdout_card_points:_HasUsedStalkerChoice(nPlayerID)
+    -- Check if player has used their stalker choice this game
+    -- We'll use PlayerTables to track this persistently across the game
+    local stalkerUsedTableName = "stalker_ability_used"
+
+    if not PlayerTables:TableExists(stalkerUsedTableName) then
+        PlayerTables:CreateTable(stalkerUsedTableName, {}, {nPlayerID})
+        return false
+    end
+
+    local usedStatus = PlayerTables:GetTableValue(stalkerUsedTableName, nPlayerID)
+    return usedStatus == true
+end
+
+function holdout_card_points:_MarkStalkerChoiceUsed(nPlayerID)
+    -- Mark that this player has used their stalker choice
+    local stalkerUsedTableName = "stalker_ability_used"
+
+    if PlayerTables:TableExists(stalkerUsedTableName) then
+        PlayerTables:SetTableValue(stalkerUsedTableName, nPlayerID, true)
+    else
+        PlayerTables:CreateTable(stalkerUsedTableName, {[nPlayerID] = true}, {nPlayerID})
+    end
+end
+
+function holdout_card_points:_SpellsMenuUpdateStalkerEligibility(eventSourceIndex, event_data)
+    local nPlayerID = event_data.player_id
+    local player = PlayerResource:GetPlayer(nPlayerID)
+
+    if player and PlayerResource:HasSelectedHero(nPlayerID) then
+        local playerHero = player:GetAssignedHero()
+
+        -- Check if player is in stalker list OR has gained eligibility from NPC kill
+        local isEligible = IsStalkerList(playerHero) or (_G._stalker_skill and _G._stalker_skill[nPlayerID] == true)
+        local canUse = isEligible and not self:_HasUsedStalkerChoice(nPlayerID)
+        --update table for _G._stalker_skill[nPlayerID] to true if the player is true for IsStalkerList(playerHero)
+        if isEligible and _G._stalker_skill and _G._stalker_skill[nPlayerID] ~= true then
+            _G._stalker_skill[nPlayerID] = true
+        end
+        -- Send current eligibility status to client
+        local eventData = {
+            can_use = canUse,
+            is_eligible = isEligible
+        }
+        CustomGameEventManager:Send_ServerToPlayer(player, "spells_menu_update_stalker_eligibility_feedback", eventData)
+    end
 end

@@ -740,10 +740,24 @@ function AOHGameMode:OnPlayerChat(keys)
 		self:RenewDamageUI(keys.playerid)
 	end
 
+
+	
 	if keys.text == "-kill" then
 		local playerID = keys.playerid
 		self:CC_Kill(playerID)
 	end
+
+	if keys.text == "-hammer" then
+		local playerID = keys.playerid
+		local player = PlayerResource:GetSelectedHeroEntity(playerID)
+		local rapier = player:FindItemInInventory("item_wraith_rapier")
+		if rapier then
+			rapier:OnOwnerSpawned()	
+		else
+			Notifications:Top(playerID, {text="Failed to craft Wraith Rapier. Ensure you have the required items and a Wraith Rapier in your inventory.", style={color="red"}, duration=5})
+		end
+	end
+
 
 	local playerID = keys.playerid
 	local player = PlayerResource:GetSelectedHeroEntity(playerID)

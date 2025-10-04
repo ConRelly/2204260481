@@ -21438,19 +21438,17 @@
 		    "max_distance"
 		    {
 		        "value" "1950"
-		        "special_bonus_unique_unique_puck_mjz_orb" "80"
-		        "LinkedSpecialBonusOperation" "SPECIAL_BONUS_PERCENTAGE_ADD"
+		        "special_bonus_unique_unique_puck_mjz_orb" "x1.8"
 		    }
 		    "orb_speed"
 		    {
 		        "value" "800"
-		        "special_bonus_unique_unique_puck_mjz_orb" "80"
-		        "LinkedSpecialBonusOperation" "SPECIAL_BONUS_PERCENTAGE_ADD"
+		        "special_bonus_unique_unique_puck_mjz_orb" "x1.8"
 		    }
 		    "orb_vision" "450"
 		    "vision_duration" "3.34 3.34 3.34 3.34"
 		    "damage" "170 940 1910 2800 7200 14400 36500"
-		    "intelligence_damage" "280 400 620 940 1800 3450 5750"
+		    "intelligence_damage" "28 40 62 94 120 170 250"
 		    "num_extra_visions" "4"
 		}
 
@@ -21459,6 +21457,7 @@
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_puck.vsndevts"
 			"particle"					"particles/units/heroes/hero_puck/puck_illusory_orb.vpcf"
 			"particle"					"particles/units/heroes/hero_puck/puck_illusory_orb_blink_out.vpcf"
+			"particle"                  "particles/econ/items/mirana/mirana_crescent_arrow/mirana_spell_crescent_arrow.vpcf"
 		}
 	}
 
