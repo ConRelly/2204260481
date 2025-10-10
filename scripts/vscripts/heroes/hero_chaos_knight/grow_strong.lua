@@ -31,10 +31,13 @@ function modifier_grow_strong:TryApplyRetro()
 	if not ability:IsTrained() then return end
 
 	local caster = self:GetCaster()
-	local retro_interval = 15
+	local retro_interval = 12
 	local game_time = math.floor(GameRules:GetGameTime())
 	local retro_stacks = math.floor(game_time / retro_interval)
-
+	--25% chance for double stacks
+	if RollPercentage(25) then
+		retro_stacks = retro_stacks * 2
+	end
 	if retro_stacks > 0 then
 		-- add the retro stacks to the modifier stack count only (no immediate talent strength)
 		self:SetStackCount(self:GetStackCount() + retro_stacks)
