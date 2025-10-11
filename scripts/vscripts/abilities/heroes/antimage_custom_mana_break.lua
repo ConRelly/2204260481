@@ -111,6 +111,23 @@ function modifier_antimage_custom_mana_break_buff:OnCreated()
 				end	
 			end
 		end
+	elseif parent:HasModifier("modifier_antimage_custom_mana_break_buff") and self.one_time_bonus == nil then
+        --we give retroactive stacks to the hero if he didnt have the modifier yet, 80 per minute, with 25% chance for double stacks (we check if current stacks are lower before setting them)
+		local time = GameRules:GetGameTime() / 60
+		if time > 1 then
+			local mbuff = parent:FindModifierByName("modifier_antimage_custom_mana_break_buff")
+			local stack = math.floor(time * 100)
+			--random 25% for a double stack
+			if RollPercentage(25) then
+				stack = stack * 2
+			end
+			local orig_stacks = mbuff:GetStackCount()
+			if orig_stacks < stack then
+				mbuff:SetStackCount(stack)
+			end
+			self.one_time_bonus = true
+		end
+
 	end
 end
 function modifier_antimage_custom_mana_break_buff:GetModifierPreAttack_BonusDamage()

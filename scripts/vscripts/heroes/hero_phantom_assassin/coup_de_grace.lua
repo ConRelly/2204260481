@@ -60,7 +60,23 @@ function modifier_imba_coup_de_grace:OnCreated()
 						end	
 						--print("illusion nevermore2")
 					end    
-				end    
+				end
+			elseif parent:HasModifier("modifier_imba_coup_de_grace") and self.one_time_bonus == nil then
+				--we give retroactive stacks to the hero if he didnt have the modifier yet,30 per minute, with 25% chance for double stacks (we check if current stacks are lower before setting them)
+				local time = GameRules:GetGameTime() / 60
+				if time > 1 then
+					local mbuff = parent:FindModifierByName("modifier_imba_coup_de_grace")
+					local stack = math.floor(time * 25)
+					--random 25% for a double stack
+					if RollPercentage(25) then
+						stack = stack * 2
+					end
+					local orig_stacks = mbuff:GetStackCount()
+					if orig_stacks < stack then
+						mbuff:SetStackCount(stack)
+					end
+					self.one_time_bonus = true
+				end	    
 			end
 		end
 	end		
@@ -182,7 +198,7 @@ function modifier_imba_coup_de_grace_crit:OnCreated(params)
         self.stacks_table = {}        
 
         -- Start thinking
-        self:StartIntervalThink(0.1)
+        --self:StartIntervalThink(0.1)
     end
 end
 

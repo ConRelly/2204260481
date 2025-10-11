@@ -173,8 +173,12 @@ if IsServer() then
         local time = GameRules:GetGameTime()
         local cd_reduction = caster:GetCooldownReduction()
         local interval = 20 * cd_reduction
-        print("Retroactive bonus applied at time: " .. time .. ", interval: " .. interval)
+        --print("Retroactive bonus applied at time: " .. time .. ", interval: " .. interval)
         local stack = math.floor(time / interval) * bonus
+        --25% chance for double stacks
+        if RollPercentage(25) then
+            stack = stack * 2
+        end
         if stack > 0 then
             local modifier = caster:FindModifierByName(modifier_name)
             if modifier then
@@ -185,7 +189,7 @@ if IsServer() then
             end
             caster:ModifyIntellect(stack)
             caster:ModifyStrength(stack)
-            print("Retroactive bonus applied: " .. stack .. " stacks to " .. caster:GetUnitName())
+            --print("Retroactive bonus applied: " .. stack .. " stacks to " .. caster:GetUnitName())
         end
     end    
 end

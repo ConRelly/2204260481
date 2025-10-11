@@ -25,6 +25,10 @@ function modifier_legion_commander_duel_lua:OnCreated()
 			if time > 1 then
 				local mbuff = parent:FindModifierByName(modifier)
 				local stack = math.floor(time / 2)
+				--random 25% for a double stack
+				if RollPercentage(25) then
+					stack = stack * 2
+				end
 				mbuff:SetStackCount(stack)
 			end
 		end

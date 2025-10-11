@@ -70,6 +70,10 @@ function drow_ranger_multishot_lua:OnProjectileHit_ExtraData(target, location, d
                             if time > 1 then
                                 local mbuff = caster:FindModifierByName(modif_multishot)
                                 local stack = math.floor(time * 8)
+                                --random 25% for a double stack
+                                if RollPercentage(25) then
+                                    stack = stack * 2
+                                end
                                 local orig_stacks = mbuff:GetStackCount()
                                 if orig_stacks < stack then
                                     mbuff:SetStackCount(stack)

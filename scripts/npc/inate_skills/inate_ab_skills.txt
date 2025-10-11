@@ -725,7 +725,7 @@
 		{
 			"spell_amplification"			"100"
 			"spell_amplification_per_level"	"5.0"
-			"damage_reflected_to_self"		"1.0"
+			"damage_reflected_to_self"		"0.01"
 		}
 	}
 

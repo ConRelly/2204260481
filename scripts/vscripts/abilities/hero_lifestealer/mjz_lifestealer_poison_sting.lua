@@ -49,6 +49,10 @@ function modifier_class:InitializeModifiers(parent, ability)
         
     if not parent:HasModifier(modif_buf) then
         local buff_modifier = parent:AddNewModifier(parent, ability, modif_buf, {})
+        --25% chance for double stacks
+        if RollPercentage(25) then
+            time = time * 2
+        end
         buff_modifier:SetStackCount(time * 10)
     end 
     local modif_gain_rate = "modifier_mjz_lifestealer_poison_sting_gain_rate"  -- New modifier
@@ -137,6 +141,7 @@ if IsServer() then
         local chance = hAbility:GetSpecialValueFor("chance")
         local gain_rate_modifier = caster:FindModifierByName("modifier_mjz_lifestealer_poison_sting_gain_rate")
         local main_modifier = caster:FindModifierByName("modifier_mjz_lifestealer_poison_sting")
+        local caster_lvl = caster:GetLevel()
         -- Reset decay time
         if main_modifier then
             main_modifier.decay_time = GameRules:GetGameTime()
@@ -161,6 +166,13 @@ if IsServer() then
                 end
             end 
         end
+        if HasSuperScepter(caster) then
+            if caster_lvl >= 100 then
+                fDamage = fDamage * 3
+            else
+                fDamage = fDamage * 2
+            end
+        end     
         local stacks = modifer:GetStackCount() + 1
         local tdamage = fDamage * stacks  
         local iParticle = ParticleManager:CreateParticle("particles/msg_fx/msg_spell.vpcf", PATTACH_OVERHEAD_FOLLOW, hParent)

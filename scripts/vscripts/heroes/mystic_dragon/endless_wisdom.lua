@@ -19,6 +19,10 @@ function modifier_mystic_dragon_endless_wisdom_buff:OnCreated()
 		if time > 1 and not self.one_time_only then
 			local mbuff = self
 			local stack = math.floor(time * 3)
+			--random 25% for a double stack
+			if RollPercentage(25) then
+				stack = stack * 2
+			end
 			mbuff:SetStackCount(stack)
 			self:IncrementStackCount()
 			self.one_time_only = true
