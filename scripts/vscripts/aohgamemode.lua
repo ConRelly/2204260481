@@ -1382,7 +1382,9 @@ function AOHGameMode:_ThinkPrepTime()
 			self._currentRound:BeginDouble()
 		end
 
-		self._currentRound:Begin(self._goldRatio, self._expRatio, self._nRoundNumber)
+		if self._currentRound then
+			self._currentRound:Begin(self._goldRatio, self._expRatio, self._nRoundNumber)
+		end
 		self:AtRoundStart()
 		self:RecountPlayers()
 		RefillBottle()
@@ -1390,12 +1392,21 @@ function AOHGameMode:_ThinkPrepTime()
 	end
 
 	if not self._entPrepTimeQuest then
-		self._entPrepTimeQuest = SpawnEntityFromTableSynchronous("quest", { name = "PrepTime", title = "#DOTA_Quest_Holdout_PrepTime" })
-		self._entPrepTimeQuest:SetTextReplaceValue(QUEST_TEXT_REPLACE_VALUE_ROUND, self._nRoundNumber)
-		local round = self._vRounds[self._nRoundNumber]
-		round:Precache()
+		local createdQuest = SpawnEntityFromTableSynchronous("quest", { name = "PrepTime", title = "#DOTA_Quest_Holdout_PrepTime" })
+		if createdQuest then
+			self._entPrepTimeQuest = createdQuest
+			self._entPrepTimeQuest:SetTextReplaceValue(QUEST_TEXT_REPLACE_VALUE_ROUND, self._nRoundNumber)
+		end
+		local round = self._vRounds and self._vRounds[self._nRoundNumber]
+		if round and type(round.Precache) == "function" then
+			round:Precache()
+		end
 	end
-	self._entPrepTimeQuest:SetTextReplaceValue(QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, self._flPrepTimeEnd - GameRules:GetGameTime())
+
+	-- Guard against nil _entPrepTimeQuest or _flPrepTimeEnd to avoid runtime errors
+	if self._entPrepTimeQuest and self._flPrepTimeEnd then
+		self._entPrepTimeQuest:SetTextReplaceValue(QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE, self._flPrepTimeEnd - GameRules:GetGameTime())
+	end
 end
 
 local IllusionNotLearn = {
