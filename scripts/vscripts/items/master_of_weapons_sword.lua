@@ -924,8 +924,6 @@ end
 function modifier_mows_slasher:OnDestroy()
 	if IsServer() then
 		self:GetParent():FadeGesture(ACT_DOTA_OVERRIDE_ABILITY_4)
-		
-		self:GetParent():MoveToPositionAggressive(self:GetParent():GetAbsOrigin())
 
 		if self:GetParent():HasModifier("modifier_mows_image") and self:GetCaster() then
 			local caster = self:GetCaster()

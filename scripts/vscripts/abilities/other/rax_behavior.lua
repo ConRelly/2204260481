@@ -46,19 +46,13 @@ if IsServer() then
 		
 	end
 	function modifier_rax_behavior:OnIntervalThink()
-		local unit = CreateUnitByName(self.unitName, self.parent:GetAbsOrigin() + Vector(100, 0, 0), true, self.parent, self.owner, self.team)
+		local unit = CreateUnitByName(self.unitName, self.target, true, self.parent, self.owner, self.team)
 		unit:SetControllableByPlayer(self.owner:GetPlayerID(), true)
 		unit:SetTeam(self.team)
 		unit:SetOwner(self.owner)
 		unit:AddNewModifier(self.parent, self.ability, "modifier_generic_summon_timer", {
 			duration = self.duration})
-		FindClearSpaceForUnit(unit, self.parent:GetAbsOrigin()+ Vector(100, 0, 0), false)
-		Timers:CreateTimer(
-			0.25, 
-			function()
-				unit:MoveToPositionAggressive(self.target)
-			end
-		)
+		FindClearSpaceForUnit(unit, self.target, false)
 	end
 end
 

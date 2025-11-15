@@ -152,7 +152,7 @@ function modifier_gifted_weapon_slasher:OnDestroy()
 	if IsServer() then
 		self:GetParent():FadeGesture(ACT_DOTA_OVERRIDE_ABILITY_4)
 		
-		self:GetParent():MoveToPositionAggressive(self:GetParent():GetAbsOrigin())
+		--self:GetParent():MoveToPositionAggressive(self:GetParent():GetAbsOrigin())
 
 		local caster = self:GetCaster()
 		local ability = self:GetAbility()
