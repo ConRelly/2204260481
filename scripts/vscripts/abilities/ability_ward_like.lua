@@ -46,19 +46,20 @@ end
 
 
 function modifier_ward_like:OnAttacked(kv)
-	if IsServer() then
-		if kv.target ~= self:GetParent() then
-			return
-		end
-        local attacker = kv.attacker
-        local damage = 20
-        if kv.attacker:GetUnitName() == "npc_courier_replacement" or not kv.attacker:IsRealHero() then damage = 1 end
-		local parent = self:GetParent()
-        parent:ModifyHealth( parent:GetHealth() - damage, nil, true, 0 )
+    if not IsServer() then return end
+    if kv.target ~= self:GetParent() then return end
 
-        EmitSoundOn( "Hero_Wisp.Spirits.Target", self:GetParent() )
+    local attacker = kv.attacker
+    local damage = 20
+    if attacker:GetUnitName() == "npc_courier_replacement" or not attacker:IsRealHero() then
+        damage = 1
+    end
 
-	end
+    local parent = self:GetParent()
+    local newHealth = math.max(parent:GetHealth() - damage, 0)
+    parent:ModifyHealth(newHealth, nil, true, 0)
+
+    EmitSoundOn("Hero_Wisp.Spirits.Target", parent)
 end
 
 function modifier_ward_like:GetAbsoluteNoDamagePhysical()

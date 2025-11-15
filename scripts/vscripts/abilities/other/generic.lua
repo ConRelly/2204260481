@@ -36,24 +36,26 @@ local spells_target = {[0] = "custom_static_link",
 function generate_warning_aoe(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	local point = keys.target_points[1]
-	local delay = keys.delay
+	local point = keys.target_points and keys.target_points[1] or Vector(0,0,0)
+	local delay = keys.delay or 1
+	local radius = keys.radius or 100
+	local line_length = keys.line_length or 500
 	local spell = caster:FindAbilityByName(spells_aoe[keys.ability_index])
 	if keys.is_line and keys.is_line == 1 then
 		local norm = (point - caster:GetAbsOrigin()):Normalized()
-		point = caster:GetAbsOrigin() + norm * keys.line_length
+		point = caster:GetAbsOrigin() + norm * line_length
 		local fx = ParticleManager:CreateParticle("particles/custom/line_aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
 		ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
 		ParticleManager:SetParticleControl(fx, 1, caster:GetAbsOrigin())
 		ParticleManager:SetParticleControl(fx, 2, point)
-		ParticleManager:SetParticleControl(fx, 3, Vector(keys.radius, keys.radius, 1))
-		ParticleManager:SetParticleControl(fx, 4, Vector(keys.delay, 1, 1))
+		ParticleManager:SetParticleControl(fx, 3, Vector(radius, radius, 1))
+		ParticleManager:SetParticleControl(fx, 4, Vector(delay, 1, 1))
 		ParticleManager:ReleaseParticleIndex(fx)
-	else 
+	else
 		local fx = ParticleManager:CreateParticle("particles/custom/aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
 		ParticleManager:SetParticleControl(fx, 0, point)
-		ParticleManager:SetParticleControl(fx, 1, Vector(keys.radius, 1, 1))
-		ParticleManager:SetParticleControl(fx, 2, Vector(keys.delay, 1, 1))
+		ParticleManager:SetParticleControl(fx, 1, Vector(radius, 1, 1))
+		ParticleManager:SetParticleControl(fx, 2, Vector(delay, 1, 1))
 		ParticleManager:SetParticleControl(fx, 3, Vector(200, 10, 10))
 		ParticleManager:ReleaseParticleIndex(fx)
 	end
@@ -64,24 +66,26 @@ end
 function generic_aoe_noanim(keys)
 	local caster = keys.caster
 	local ability = keys.ability
-	local point = keys.target_points[1]
-	local delay = keys.delay
+	local point = keys.target_points and keys.target_points[1] or Vector(0,0,0)
+	local delay = keys.delay or 1
+	local radius = keys.radius or 100
+	local line_length = keys.line_length or 500
 	local spell = caster:FindAbilityByName(spells_aoe[keys.ability_index])
 	if keys.is_line and keys.is_line == 1 then
 		local norm = (point - caster:GetAbsOrigin()):Normalized()
-		norm = caster:GetAbsOrigin() + norm * keys.line_length
+		norm = caster:GetAbsOrigin() + norm * line_length
 		local fx = ParticleManager:CreateParticle("particles/custom/line_aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
 		ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
 		ParticleManager:SetParticleControl(fx, 1, caster:GetAbsOrigin())
 		ParticleManager:SetParticleControl(fx, 2, norm)
-		ParticleManager:SetParticleControl(fx, 3, Vector(keys.radius, keys.radius, 1))
-		ParticleManager:SetParticleControl(fx, 4, Vector(keys.delay, 1, 1))
+		ParticleManager:SetParticleControl(fx, 3, Vector(radius, radius, 1))
+		ParticleManager:SetParticleControl(fx, 4, Vector(delay, 1, 1))
 		ParticleManager:ReleaseParticleIndex(fx)
-	else 
+	else
 		local fx = ParticleManager:CreateParticle("particles/custom/aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
 		ParticleManager:SetParticleControl(fx, 0, point)
-		ParticleManager:SetParticleControl(fx, 1, Vector(keys.radius, 1, 1))
-		ParticleManager:SetParticleControl(fx, 2, Vector(keys.delay, 1, 1))
+		ParticleManager:SetParticleControl(fx, 1, Vector(radius, 1, 1))
+		ParticleManager:SetParticleControl(fx, 2, Vector(delay, 1, 1))
 		ParticleManager:SetParticleControl(fx, 3, Vector(200, 10, 10))
 		ParticleManager:ReleaseParticleIndex(fx)
 	end
@@ -112,19 +116,19 @@ function generic_aoe(keys)
 			end
 			if keys.is_line and keys.is_line == 1 then
 				local norm = (point - caster:GetAbsOrigin()):Normalized()
-				norm = caster:GetAbsOrigin() + norm * keys.line_length
+				norm = caster:GetAbsOrigin() + norm * line_length
 				local fx = ParticleManager:CreateParticle("particles/custom/line_aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
 				ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
 				ParticleManager:SetParticleControl(fx, 1, caster:GetAbsOrigin())
 				ParticleManager:SetParticleControl(fx, 2, norm)
-				ParticleManager:SetParticleControl(fx, 3, Vector(keys.radius, keys.radius, 1))
-				ParticleManager:SetParticleControl(fx, 4, Vector(keys.delay, 1, 1))
+				ParticleManager:SetParticleControl(fx, 3, Vector(radius, radius, 1))
+				ParticleManager:SetParticleControl(fx, 4, Vector(delay, 1, 1))
 				ParticleManager:ReleaseParticleIndex(fx)
-			else 
+			else
 				local fx = ParticleManager:CreateParticle("particles/custom/aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
 				ParticleManager:SetParticleControl(fx, 0, point)
-				ParticleManager:SetParticleControl(fx, 1, Vector(keys.radius, 1, 1))
-				ParticleManager:SetParticleControl(fx, 2, Vector(keys.delay, 1, 1))
+				ParticleManager:SetParticleControl(fx, 1, Vector(radius, 1, 1))
+				ParticleManager:SetParticleControl(fx, 2, Vector(delay, 1, 1))
 				ParticleManager:SetParticleControl(fx, 3, Vector(200, 10, 10))
 				ParticleManager:ReleaseParticleIndex(fx)
 			end
@@ -191,18 +195,24 @@ function generic_aoe_farpoint(keys)
 	local point = keys.target_points[1]
 	local delay = keys.delay
 	local spell = caster:FindAbilityByName(spells_aoe[keys.ability_index])
+	-- capture initial origin and point to mitigate engine timing bug where GetAbsOrigin can return nil inside timers
+	local initial_origin = caster:GetAbsOrigin()
+	local initial_point = point or ability:GetCursorPosition() or Vector(0,0,0)
 	Timers:CreateTimer(
 		0, 
 		function()
+			if not IsValidEntity(caster) then return end
 			if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil or caster:IsCommandRestricted() then
 				return 0.5
 			end
 			if keys.is_line and keys.is_line == 1 then
-				local norm = (point - caster:GetAbsOrigin()):Normalized()
-				point = caster:GetAbsOrigin() + norm * keys.line_length
+				local caster_origin = caster:GetAbsOrigin() or initial_origin or Vector(0,0,0)
+				local current_point = point or initial_point or ability:GetCursorPosition() or Vector(0,0,0)
+				local norm = (current_point - caster_origin):Normalized()
+				point = caster_origin + norm * keys.line_length
 				local fx = ParticleManager:CreateParticle("particles/custom/line_aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
-				ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
-				ParticleManager:SetParticleControl(fx, 1, caster:GetAbsOrigin())
+				ParticleManager:SetParticleControl(fx, 0, caster_origin)
+				ParticleManager:SetParticleControl(fx, 1, caster_origin)
 				ParticleManager:SetParticleControl(fx, 2, point)
 				ParticleManager:SetParticleControl(fx, 3, Vector(keys.radius, keys.radius, 1))
 				ParticleManager:SetParticleControl(fx, 4, Vector(keys.delay, 1, 1))
@@ -225,6 +235,7 @@ function generic_aoe_farpoint(keys)
 			Timers:CreateTimer(
 				delay - spell:GetCastPoint(), 
 				function()
+					if not IsValidEntity(caster) then return end
 					if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil then
 						return 0.5
 					end
