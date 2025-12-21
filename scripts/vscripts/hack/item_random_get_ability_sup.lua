@@ -88,6 +88,9 @@ function OnSpellStart( keys )
 				end
 				local newAbility = hero:AddAbility(newAbilityName)
 --				print("newAbility:" .. newAbilityName)
+				if newAbilityName == "phantom_assassin_blur" then
+					newAbility:SetLevel(4)
+				end
 				hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
 				found_valid_ability = true
 				--hero:RemoveItem(ability)

@@ -586,9 +586,8 @@
 		"Ability12"             "special_bonus_hp_4000"
 		"Ability14"				"special_bonus_unique_unique_mjz_bloodseeker_rupture_01"
 		"Ability13"             "special_bonus_spell_amplify_45"
-		"Ability15"				"special_bonus_lifesteal_8"
+		"Ability15"				"special_bonus_5_crit_3250"
 		"Ability16"				"special_bonus_cdr_40"
-		//"Ability16"				"special_bonus_unique_unique_mjz_bloodseeker_rupture_01"
 		"Ability17"				"special_bonus_unique_unique_mjz_bloodseeker_thirst_stacks"
 		//"Ability17"				"special_bonus_attack_speed_100"
 	}

@@ -129,12 +129,14 @@ function AOHGameRound:End(roundNum)
 				callback = function()
 					if unit and not unit:IsNull() and IsValidEntity(unit) then
 						--print("focekill unit: "..name .." or remove if Dead")
-						if unit:IsAlive() then
+						local current_name = unit:GetUnitName()
+            			-- skip the specific juggernaut boss
+            			if unit:IsAlive() and current_name and current_name ~= "npc_boss_juggernaut_4" then
 							unit:Kill(nil,nil)
 							if unit:IsAlive() then
 								unit:ForceKill(false)
 							end
-						elseif not unit:IsNull() and IsValidEntity(unit) then
+						elseif not unit:IsNull() and IsValidEntity(unit) and current_name and current_name ~= "npc_boss_juggernaut_4" then
 							--print("remove unit: "..name )
 							UTIL_Remove(unit)
 						end	

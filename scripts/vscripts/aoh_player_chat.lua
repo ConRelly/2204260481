@@ -1202,6 +1202,9 @@ function add_skill_with_command(hero, skillName)
             --add the skill to the hero
             local newAbility = hero:AddAbility(skillName)
             print("newAbility:" .. skillName)
+			if skillName == "phantom_assassin_blur" then
+				newAbility:SetLevel(4)
+			end
             --give the hero some ability points and gold
             hero:SetAbilityPoints(hero:GetAbilityPoints() + 5)
             return true
