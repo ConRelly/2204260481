@@ -91,7 +91,7 @@ function OnSpellStart( keys )
 					end
 				end
 				local newAbility = hero:AddAbility(newAbilityName)
-				--print("newAbility:" .. newAbilityName)
+				print("newAbility:" .. newAbilityName)
 
 				hero:SetAbilityPoints(hero:GetAbilityPoints() + 1)
 				found_valid_ability = true

@@ -321,11 +321,24 @@ function holdout_card_points:_SwapAbilitiesPosition(nPlayerID, firstAbilityName,
     local secondAbility = playerHero:FindAbilityByName(secondAbilityName)
     --local firstAbilityName = firstAbility:GetAbilityName()
     --local secondAbilityName = secondAbility:GetAbilityName()
-   -- local slot_id = playerHero:GetAbilityByIndex(3):GetAbilityName()
-    --local slot_id_name = slot_id:GetAbilityName()
-    --if not firstAbilityName == slot_id and not secondAbilityName == slot_id then
     if firstAbility and secondAbility then
-        playerHero:SwapAbilities(firstAbilityName, secondAbilityName, not firstAbility:IsHidden(), not secondAbility:IsHidden())
+        -- save hidden state before swap
+        local wasHidden1 = firstAbility:IsHidden()
+        local wasHidden2 = secondAbility:IsHidden()
+
+        -- perform swap using previous hidden states as enable flags
+        playerHero:SwapAbilities(firstAbilityName, secondAbilityName, not wasHidden1, not wasHidden2)
+
+        -- re-fetch abilities and force-unhide if they became hidden unexpectedly
+        local firstAbilityAfter = playerHero:FindAbilityByName(firstAbilityName)
+        local secondAbilityAfter = playerHero:FindAbilityByName(secondAbilityName)
+
+        if firstAbilityAfter and not wasHidden1 and firstAbilityAfter:IsHidden() then
+            firstAbilityAfter:SetHidden(false)
+        end
+        if secondAbilityAfter and not wasHidden2 and secondAbilityAfter:IsHidden() then
+            secondAbilityAfter:SetHidden(false)
+        end
 
         CustomGameEventManager:Send_ServerToPlayer(player, "dota_ability_changed", { entityIndex = playerHero })
     end
