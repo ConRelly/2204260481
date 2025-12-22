@@ -834,7 +834,7 @@ function AOHGameMode:OnPlayerChat(keys)
 		if 	unit == "npc_boss_juggernaut_4" then
 			name = "Juggernaut Sword Master"
 		end
-		if time < 30 then
+		if time < 1 then
 			Notifications:TopToAll({text= time .." min, unless at least 30 min have passed you can't Challenge " .. name, style={color="red"}, duration=15})
 			count = count + 1
 			if count > 8 then
@@ -858,6 +858,25 @@ function AOHGameMode:OnPlayerChat(keys)
 		end	
 	end
 
+	-- Debug version of challenge command. Spawns the same boss but only when cheats are enabled
+	-- and can be used multiple times for testing (no time/host/once checks).
+	if keys.text == "-challenge_debug" and Cheats:IsEnabled() then
+		local plyID = keys.playerid
+		if not PlayerResource:IsValidPlayerID(plyID) then return end
+		local plyhero = PlayerResource:GetPlayer(plyID) and PlayerResource:GetPlayer(plyID):GetAssignedHero() or PlayerResource:GetSelectedHeroEntity(plyID)
+		if not plyhero then return end
+		local unit = "npc_boss_juggernaut_4"
+		local name = "Juggernaut Sword Master"
+		CreateUnitByNameAsync(unit, plyhero:GetAbsOrigin() + RandomVector(RandomFloat(200, 1000)), true, nil, nil, DOTA_TEAM_BADGUYS, function(createdUnit)
+			-- debug spawn callback (empty)
+		end)
+		Notifications:TopToAll({text="Debug Challenge spawned: " .. name, style={color="blue"}, duration=8})
+	end
+
+
+
+
+	
 	if string.find(keys.text, "-effect_rate") and keys.playerid == 0 then
 		print("reduce effect rate")		
 		local rate_nr = string.custom_remove2(keys.text)

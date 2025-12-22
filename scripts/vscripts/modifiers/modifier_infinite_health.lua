@@ -181,8 +181,9 @@ function modifier_infinite_health:OnDeathPrevented(params)
 	if IsServer() then
 		local parent = self:GetParent()
 		if parent == params.unit and parent:IsAlive() then
-            parent:CreatureLevelUp(1)
             parent:SetHealth(parent:GetMaxHealth())
+            parent:CreatureLevelUp(1)
+            
 
             local lvl = parent:GetLevel()
             local current_tier = 0
@@ -230,7 +231,7 @@ function modifier_infinite_health:OnDeathPrevented(params)
     end
 end
 function modifier_infinite_health:GetMinHealth()
-	return 1
+	return 1000
 end
 
 
