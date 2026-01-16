@@ -31,7 +31,9 @@ function modifier_bottom_10:DeclareFunctions()
         MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
         MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
         MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
-        MODIFIER_PROPERTY_EXP_RATE_BOOST
+        MODIFIER_PROPERTY_EXP_RATE_BOOST,
+        MODIFIER_PROPERTY_AVOID_DAMAGE_AFTER_REDUCTIONS,
+        MODIFIER_PROPERTY_TOOLTIP,
     }
 
     return funcs
@@ -78,4 +80,25 @@ function modifier_bottom_10:GetModifierMagicalResistanceBonus()
 end
 function modifier_bottom_10:GetModifierPercentageExpRateBoost()
     return 40
+end
+
+function modifier_bottom_10:GetModifierAvoidDamageAfterReductions(params)
+    if not IsServer() then return 0 end
+
+    local parent = self:GetParent()
+    if params.damage >= parent:GetHealth() then
+        local chance = math.min(40, parent:GetLevel() * 0.30)
+        if RollPercentage(chance) then
+            local part = ParticleManager:CreateParticle("particles/units/heroes/hero_antimage/antimage_spellshield.vpcf", PATTACH_CENTER_FOLLOW, parent)
+            ParticleManager:DestroyParticle(part, false)
+            ParticleManager:ReleaseParticleIndex(part)
+            return 1
+        end
+    end
+
+    return 0
+end
+
+function modifier_bottom_10:OnTooltip()
+    return math.min(40, self:GetParent():GetLevel() * 0.30)
 end
