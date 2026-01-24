@@ -3851,7 +3851,7 @@
 	"DOTA_Tooltip_modifier_mjz_meepo_puff_buff_Description"         "Increased Str by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS% and makes Poof deal extra damage by Your level times this stack count."
 
 	"DOTA_Tooltip_ability_mjz_mirana_arrow"					"Sacred Arrow"
-	"DOTA_Tooltip_ability_mjz_mirana_arrow_Description"		"Fires a long-range arrow with deadly precision, which damages the first enemy unit it strikes.\n<h1><font color='#F70707'>Challenge Boss</font></h1>Ads 3% of boss current hp per tier reward as extra instance bonus dmg."
+	"DOTA_Tooltip_ability_mjz_mirana_arrow_Description"		"Fires a long-range arrow with deadly precision, which damages the first enemy unit it strikes.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Anyone affected by Moonlight Shadow will fire an arrow every second towards closest enemy (requires ally/currier to have SS)<br>Other effects are on Facet and Leap \n<h1><font color='#F70707'>Challenge Boss</font></h1>Ads 3% of boss current hp per tier reward as extra instance bonus dmg."
 	"DOTA_Tooltip_ability_mjz_mirana_arrow_Lore"			"Lunar energies make the Princess of the Moon's arrows more deadly than most."
 	"DOTA_Tooltip_ability_mjz_mirana_arrow_Note0"			"The extra arrows are launched with a 30 degree angle to the left and right of the centered arrow."
 	"DOTA_Tooltip_ability_mjz_mirana_arrow_arrow_range"		"Max Travel Distance: "
@@ -3859,6 +3859,12 @@
 	"DOTA_Tooltip_ability_mjz_mirana_arrow_damage_pct"		"%Attack as Damage: "
 	"DOTA_Tooltip_ability_mjz_mirana_arrow_proc_chance"		"%Chance: "
 	"DOTA_Tooltip_ability_special_bonus_unique_unique_mjz_mirana_arrow_chance"		"+{s:value}% Sacred Arrow Chance"	
+	"DOTA_Tooltip_ability_mjz_mirana_arrow_scepter_description"  "You can now Toggle On the ability and change its dmg type to Pure, but the ability will deal 8 times less dmg."
+	//SS facet and leap
+	"DOTA_Tooltip_ability_mirana_starfall_Facet_mirana_starstruck"					"Starstorm's second meteor deals more damage and blinds the target.\n<h1><font color='#DE3163'>Super Scepter</font></h1> Starstruck targets will be hit by Mirrana Arrow every 0.4s"
+	"DOTA_Tooltip_ability_mirana_leap_Facet_mirana_leaps_and_bounds"				"Upon landing, Leap roots targets in a %root_radius% radius for %root_duration%s.\n<h1><font color='#DE3163'>Super Scepter</font></h1> Leap root targets will be hit by mirrana arrow every 0.4s"
+	"DOTA_Tooltip_ability_mirana_leap_Description"									"Mirana leaps forward into battle, empowering herself with a ferocious roar that grants bonus attack and movement speed. Speed bonus lasts %leap_bonus_duration% seconds.\n<h1><font color='#DE3163'>Super Scepter</font></h1> During Leap speed bonus Mirrana Arrow will have 25% chance to deal critical dmg (5% crit dmg per hero lvl until lvl 100 and 25% for each lvl after 100)"
+
 	"DOTA_Tooltip_ability_mjz_monkey_king_cloud"					"CLOUD"
 	"DOTA_Tooltip_ability_mjz_monkey_king_cloud_Description"		"The cloud that Monkey King rides when flying, one somersault can travel a distance of tens of thousands of miles."
 	"DOTA_Tooltip_ability_mjz_monkey_king_cloud_shard_Description"		"Removes the speed limit and gives slow immunity."

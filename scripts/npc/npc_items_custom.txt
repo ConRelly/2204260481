@@ -1257,15 +1257,15 @@
             "bonus_cast_range" "500"
             "attack_cd" "0.6"
             "feather_max_stacks" "50"
-            "feather_spell_amp" "3"
-            "feather_agi" "25"
+            "feather_spell_amp" "10"
+            "feather_agi" "250"
             "feather_dmg_red" "2"
-            "feather_add_dmg" "160"
+            "feather_add_dmg" "250"
             "feather_cd" "1.5"
             "divinity_duration" "5"
             "wind_rapier_chance" "15"
             "mimic_mace_attack_rate" "0.2"
-            "feather_add_dmg_marci" "220"
+            "feather_add_dmg_marci" "350"
         }
 	}
 // Broken Wings Recipe

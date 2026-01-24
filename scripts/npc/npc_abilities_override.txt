@@ -25,8 +25,8 @@
 #base "abilities/heroes/enchantress_natures_attendants.txt"
 //#base "abilities/heroes/enigma_black_hole.txt"
 //#base "abilities/heroes/faceless_void_time_walk.txt"
-#base "abilities/heroes/mirana_leap.txt"
-#base "abilities/heroes/mirana_starfall.txt"
+//#base "abilities/heroes/mirana_leap.txt"
+//#base "abilities/heroes/mirana_starfall.txt"
 #base "abilities/heroes/weaver_the_swarm.txt"
 #base "abilities/heroes/weaver_geminate_attack.txt"
 #base "abilities/heroes/templar_assassin_meld.txt"
@@ -7453,14 +7453,14 @@
 		{		
 				"health_steal_heroes"	
 				{
-					"value"						"969 2320 5523 9001"
-					"special_bonus_unique_meepo_6" "5900"
+					"value"						"969 2320 8523 14001"
+					"special_bonus_unique_meepo_6" "9900"
 					"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
 				}
 				"health_steal_creeps"	
 				{
-					"value"						"969 2320 5523 9001"
-					"special_bonus_unique_meepo_6" "5900"
+					"value"						"969 2320 8523 14001"
+					"special_bonus_unique_meepo_6" "9900"
 					"DamageTypeTooltip"			"DAMAGE_TYPE_PURE"
 				}			
 		}
@@ -7489,16 +7489,78 @@
             "bonus_movement_speed" "20 30 40"
         }
 	}
+	// Ability: Mirana Starfall
+	//=================================================================================================================
 	"mirana_starfall"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Ability.Starfall"
+		"LevelsBetweenUpgrades"         "7"
+		"HasScepterUpgrade"			"0"
+		"MaxLevel"                      "5"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityDuration"				"10.0"
+
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"110"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
-        {
-            "interval_scepter"
-            {
-                "value" "0.5"
-                "RequiresScepter" "1"
-            }
-        }
+		{
+			"AbilityCooldown"
+			{
+				"value"										"12.0"
+				"special_bonus_unique_mirana_3"				"-2"
+			}
+			"damage"	 
+			{
+				"value"			"575 4250 15000 32000 95000"
+				"special_bonus_unique_mirana_7"	"+55000"						
+			}
+			"secondary_starfall_damage_percent"
+			{
+				"value"									"200"
+				"CalculateSpellDamageTooltip"			"0"
+				"special_bonus_facet_mirana_starstruck"	"=200 =400 =600 =800 =1500"
+			}
+			"starfall_radius"	
+			{
+				"value"			"1500"		
+				"affected_by_aoe_increase"	"1"
+			}
+			"starfall_secondary_radius"
+			{
+				"value"			"1500"
+				"affected_by_aoe_increase"	"1"
+			}
+			"starstruck_blind_pct"
+			{
+				"value"									"0"
+				"special_bonus_facet_mirana_starstruck"	"+60.0"
+			}
+			"starstruck_duration"
+			{
+				"value"									"0"
+				"special_bonus_facet_mirana_starstruck"	"=3.0"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastGestureSlot"		"DEFAULT"
 	}
 	
 	//=================================================================================================================
@@ -7549,6 +7611,72 @@
 			}
 		}
 	}
+
+
+// Ability: Mirana Leap
+	//=================================================================================================================
+	"mirana_leap"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Ability.Leap"
+		"LevelsBetweenUpgrades"         "5"
+		"HasShardUpgrade"               "1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+		"AbilityCharges"				"2"
+		"AbilityChargeRestoreTime"		"45 40 35 30"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"50"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"leap_distance"			
+			{
+				"value"							"650"
+				"special_bonus_unique_mirana_6"	"+150"
+			}
+			"leap_speed"			"2500.0"
+			"leap_acceleration"		"6000.0"
+			"leap_speedbonus"		"6 12 18 24"
+			"leap_speedbonus_as"	
+			{
+				"value"				"25 50 75 100"
+				"special_bonus_unique_mirana_1"	"+200"
+			}
+			"leap_bonus_duration"	"7"
+			"additional_charges"
+			{
+				"value"					"0"
+				"special_bonus_shard"	"+1"
+			}
+			"crit_damage_pct"
+			{
+				"value"					"0"
+				"special_bonus_shard"	"+2000"
+			}
+			"root_radius"
+			{
+				"value"											"0"
+				"special_bonus_facet_mirana_leaps_and_bounds"	"+650"
+			}
+			"root_duration"
+			{
+				"value"											"0"
+				"special_bonus_facet_mirana_leaps_and_bounds"	"=1.5 =1.75 =2.0 =2.50"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
 
 
 	"naga_siren_mirror_image"

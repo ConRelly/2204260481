@@ -108,6 +108,6 @@ function Precach_Item_Resource( context)
     PrecacheResource("soundfile","sounds/weapons/hero/lion/lion_voodoo.vsnd", context)
     PrecacheResource("particle", "particles/units/heroes/hero_lion/lion_spell_voodoo.vpcf", context)
     PrecacheResource("particle", "particles/units/heroes/hero_puck/puck_illusory_orb.vpcf", context)
-
+    PrecacheResource("particle", "particles/custom/items/broken_wings/broken_wings_feather.vpcf", context)
 
 end

@@ -95,35 +95,7 @@ function modifier_broken_wings:OnAttackLanded(keys)
 			AttackCD = AttackCD / 3
 		end
 		self:SetDuration(AttackCD, false)
-		target:EmitSound("Item_Desolator.Target")
---[[
-		if not owner:HasModifier("modifier_broken_wings_feather_stacks") then
-			feather_stacks = owner:AddNewModifier(owner, self:GetAbility(), "modifier_broken_wings_feather_stacks", {})
-			feather_stacks:SetStackCount(1)
-		else
-			feather_stacks:SetStackCount(feather_stacks:GetStackCount() + 1)
-			if feather_stacks:GetStackCount() >= max_stacks then
-				feather_stacks:SetStackCount(max_stacks)
-				local DivinityDuration = self:GetAbility():GetSpecialValueFor("divinity_duration")
-				owner:AddNewModifier(owner, self:GetAbility(), "modifier_broken_wings_divinity", {duration = DivinityDuration})
-			end
-		end
-		if owner:HasItemInInventory("item_wind_rapier") then
-			local WindChance = self:GetAbility():GetSpecialValueFor("wind_rapier_chance")
-			if RollPercentage(WindChance) then
-				local WindRapier = self:GetParent():FindItemInInventory("item_wind_rapier")
-				if self:GetParent():HasModifier("modifier_wind_rapier_agility_buff") then
-					local WindRapierStack = self:GetParent():FindModifierByName("modifier_wind_rapier_agility_buff")
-					WindRapierStack:SetStackCount(WindRapierStack:GetStackCount() + 1)
-				else
-					local duration = WindRapier:GetSpecialValueFor("stack_duration")
-					local agility_gain = WindRapier:GetSpecialValueFor("proc_bonus") * 0.01 * self:GetParent():GetAgility()
-					RapierStacks = self:GetParent():AddNewModifier(self:GetParent(), WindRapier, "modifier_wind_rapier_agility_buff", {agility_gain = agility_gain, duration = duration})
-					RapierStacks:SetStackCount(1)
-				end
-			end
-		end
-]]
+		--target:EmitSound("Item_Desolator.Target")
 		ProjectileManager:CreateTrackingProjectile({
 			Target = owner,
 			Source = target,
