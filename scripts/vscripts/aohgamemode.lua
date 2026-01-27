@@ -57,6 +57,7 @@ LinkLuaModifier("modifier_infinite_health", "modifiers/modifier_infinite_health.
 LinkLuaModifier("modifier_boss_truesight_aura", "bosses/boss_true_sight.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_boss_truesight", "bosses/boss_true_sight.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_cosmos_3_lifes", "modifiers/modifier_cosmos_3_lifes", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_custom_ancient_invul", "modifiers/custom_ancient_invul.lua", LUA_MODIFIER_MOTION_NONE)
 
 if AOHGameMode == nil then
 	_G.AOHGameMode = class({})
@@ -1305,6 +1306,10 @@ local one_time_reward = true
 local moran_annoncement_kill = true
 function AOHGameMode:CheckForDefeatDelay()
 	if self._defeatcounter > 0 then
+		if self._defeatcounter == 10 and self._entAncient and self._entAncient:IsAlive() then
+			self._entAncient:AddNewModifier(self._entAncient, nil, "modifier_custom_ancient_invul", {duration = 5})
+			Notifications:TopToAll({text="Ancient Base is invulnerable for 5 seconds", style={color="green"}, duration=5})
+		end
 		Notifications:TopToAll({text=self._defeatcounter, duration=1})
 		self._defeatcounter = self._defeatcounter - 1
 		return 1

@@ -88,4 +88,5 @@ LinkLuaModifier("modifier_totem_aura", "abilities/totem_upgrades.lua", LUA_MODIF
 LinkLuaModifier("modifier_totem_aura_effect", "abilities/totem_upgrades.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_totem_upgrade_tracker", "abilities/totem_upgrades.lua", LUA_MODIFIER_MOTION_NONE)
 
-
+--ancient invul
+LinkLuaModifier("modifier_custom_ancient_invul", "modifiers/custom_ancient_invul.lua", LUA_MODIFIER_MOTION_NONE)

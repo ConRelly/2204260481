@@ -13829,7 +13829,7 @@
 	"AttackRate"				"0.4"
 	"AttackAnimationPoint"	  "0.39"
 	"BaseAttackSpeed"		   "100"
-	"AttackAcquisitionRange"	"5600"
+	"AttackAcquisitionRange"	"3600"
 	"AttackRange"			   "440"
 	"ProjectileModel"		   ""
 	"ProjectileSpeed"		   ""

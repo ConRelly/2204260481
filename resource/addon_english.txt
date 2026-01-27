@@ -145,6 +145,8 @@
 	"DOTA_Tooltip_ability_item_simple_max_hp_potion_Note0"         "Effect is permanent until consumed again."
 	"DOTA_Tooltip_ability_item_simple_max_hp_potion_Note1"         "Can be shared with allies."
 
+	"DOTA_Tooltip_modifier_custom_ancient_invul"                   "Ancient Invulnerability"
+
 
 	"DOTA_Tooltip_Ability_item_cus_force_boots"					"Force Boots"
 	"DOTA_Tooltip_ability_item_cus_force_boots_Description"		"<h1>Active: Force</h1>Dispels the user and pushes them %push_length% units in the direction they are facing.\n<h1>Passive: Speed Unlock</h1> Completely removes the speed limit for the wearer \nMovement speed bonuses from multiple pairs of boots do not stack."
