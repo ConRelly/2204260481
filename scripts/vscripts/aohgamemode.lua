@@ -1348,7 +1348,9 @@ function AOHGameMode:CheckForDefeatDelay()
 					Timers:CreateTimer({
 						endTime = 4,
 						callback = function()
-							self._entAncient:Kill(nil,nil)
+							if self._entAncient and self._entAncient:IsAlive() then
+								self._entAncient:Kill(nil,nil)
+							end
 						end
 					})
 				end		
