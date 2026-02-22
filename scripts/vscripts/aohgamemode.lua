@@ -219,6 +219,7 @@ function AOHGameMode:InitGameMode()
 	self._expRatio = 1.0
 	self._ischeckingdefeat = false
 	self._defeatcounter = 10
+	self.starting_intems = false
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 5)
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 0)
 	Convars:SetInt("dota_max_physical_items_purchase_limit", 999)
@@ -668,25 +669,13 @@ function AOHGameMode:InitVariables()
 					--Sounds:CreateSound(playerID, "goh.teme")
 					local eventData = { player_id = playerID }
 					if holdout_card_points and type(holdout_card_points._SpellsMenuUpdateStalkerEligibility) == "function" then
-						local ok, err = xpcall(function()
-							holdout_card_points:_SpellsMenuUpdateStalkerEligibility(nil, eventData)
-						end, debug.traceback)
-						if not ok then
-							print("[ERROR] holdout_card_points:_SpellsMenuUpdateStalkerEligibility failed: " .. tostring(err))
-						end
+						holdout_card_points:_SpellsMenuUpdateStalkerEligibility(nil, eventData)
 					else
 						print("[WARN] holdout_card_points._SpellsMenuUpdateStalkerEligibility not available")
 					end
 				end
 			end
 		end
-		Timers:CreateTimer({
-			endTime = 0.1,
-			callback = function()
-				self.starting_intems = true
-				print(self._playerNumber .. " starting players")
-			end
-		})
 		Timers:CreateTimer({
 			endTime = 25,
 			callback = function()
@@ -727,6 +716,7 @@ function AOHGameMode:InitVariables()
 	if self._doubleMode then
 		self._expRatio = self._expRatio / 1.35
 	end
+	self.starting_intems = true
 	--GameRules.GLOBAL_player_number = self._playerNumber	
 	CustomGameEventManager:Send_ServerToAllClients("frostivus_begins", {})
 end
