@@ -1729,12 +1729,7 @@ function AOHGameMode:OnEntityKilled(event)
 						-- Call the function directly in the required module instead of sending a custom event.
 						local eventData = { player_id = playerID }
 						if holdout_card_points and type(holdout_card_points._SpellsMenuUpdateStalkerEligibility) == "function" then
-							local ok, err = xpcall(function()
-								holdout_card_points:_SpellsMenuUpdateStalkerEligibility(nil, eventData)
-							end, debug.traceback)
-							if not ok then
-								print("[ERROR] holdout_card_points:_SpellsMenuUpdateStalkerEligibility failed: " .. tostring(err))
-							end
+							holdout_card_points:_SpellsMenuUpdateStalkerEligibility(nil, eventData)
 						else
 							print("[WARN] holdout_card_points._SpellsMenuUpdateStalkerEligibility not available")
 						end
