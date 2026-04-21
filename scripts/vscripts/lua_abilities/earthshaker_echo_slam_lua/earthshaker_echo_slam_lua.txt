@@ -13,7 +13,6 @@
 		"ScriptFile"					"lua_abilities/earthshaker_echo_slam_lua/earthshaker_echo_slam_lua"
 		"AbilityTextureName"			"earthshaker_echo_slam_lua"
 		"FightRecapLevel"				"2"
-		"MaxLevel"						"3"
 		"precache"
 		{
 			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts"
@@ -55,7 +54,6 @@
             "str_multiplier"
             {
                 "value" "5.0 10.0 15.0 25.0 40.0"
-                "LinkedSpecialBonus" "special_bonus_unique_earthshaker_01"
             }
         }
 	}

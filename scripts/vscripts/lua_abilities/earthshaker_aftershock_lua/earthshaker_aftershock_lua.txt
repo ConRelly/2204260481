@@ -26,12 +26,12 @@
             "all_multiplier"
             {
                 "value" "4 6 8 10 15 20 40"
-                "LinkedSpecialBonus" "special_bonus_unique_es_aftershock_str_multiplier"
+                "special_bonus_unique_es_aftershock_str_multiplier" "75"
             }
             "aftershock_range"
             {
                 "value" "1200"
-                "LinkedSpecialBonus" "special_bonus_unique_es_aftershock_range"
+                "special_bonus_unique_es_aftershock_range" "1000"
             }
             "duration" "0.0"
         }
@@ -47,7 +47,7 @@
         {
             "value"
             {
-                "value" "40"
+                "value" "75"
                 "ad_linked_abilities" "earthshaker_aftershock_lua"
             }
         }

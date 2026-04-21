@@ -24027,9 +24027,19 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityValues"
         {
-            "value" "20"
+            "value" "1"
         }
-	}	
+	}
+	"special_bonus_unique_earthshaker_3_custom"
+	{
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityValues"
+        {
+            "value" "75"
+        }
+	}		
 	"mjz_troll_warlord_battle_trance"
 	{
 		"BaseClass"						"ability_lua"	// "ability_datadriven"

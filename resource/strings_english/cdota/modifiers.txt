@@ -1,3 +1,0 @@
-
-"DOTA_Tooltip_modifier_mjz_g_frozen"					"Freeze"
-"DOTA_Tooltip_modifier_mjz_g_frozen_Description"		"You are frozen."

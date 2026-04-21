@@ -10737,8 +10737,9 @@ Contains all random skills(including Innates)<br> if your primary attribute is I
 
 		"DOTA_Tooltip_ability_special_bonus_unique_es_aftershock_str_multiplier"	"+{s:value} Aftershock All Stats Damage"
 		"DOTA_Tooltip_ability_special_bonus_unique_es_aftershock_range"				"+{s:value} Aftershock Radius"
-		"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_3"	"+{s:value} Fissure Str Damage"
-		"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_01"	"+{s:value} Echo Str Damage"
+		"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_3_custom"	"+{s:value} Fissure Str Damage"
+		"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_01"	"Echo Slam damage scales with Hero Lvl"
+		"DOTA_Tooltip_ability_special_bonus_unique_earthshaker_01_Description"	"Adds Bonus Str damage to Echo Slam based on Hero Level. After Lvl 100, each level counts as 10."
 		"DOTA_Tooltip_ability_special_bonus_unique_morphling_8"	  "+{s:value}s Ultimate Duration"
 
 		"DOTA_Tooltip_ability_special_bonus_unique_sniper_headshot_lua_agi_multiplier"		"+{s:value} Headshot Agi Damage"

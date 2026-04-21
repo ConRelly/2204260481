@@ -7,8 +7,18 @@ function earthshaker_echo_slam_lua:OnSpellStart()
 	local caster = self:GetCaster()
 
 	-- load data
-	-- initial damage that was deprecated
-	local damage = self:GetAbilityDamage() + (self:GetCaster():GetStrength() * self:GetSpecialValueFor("str_multiplier"))
+	local bonus_str_multiplier = 0
+	local talent = caster:FindAbilityByName("special_bonus_unique_earthshaker_01")
+	if talent and talent:GetLevel() > 0 then
+		local hLevel = caster:GetLevel()
+		if hLevel <= 100 then
+			bonus_str_multiplier = hLevel
+		else
+			bonus_str_multiplier = 100 + (hLevel - 100) * 10
+		end
+	end
+
+	local damage = self:GetAbilityDamage() + (caster:GetStrength() * (self:GetSpecialValueFor("str_multiplier") + bonus_str_multiplier))
 	local damage_range = self:GetSpecialValueFor("echo_slam_damage_range")
 
 	local init_range = self:GetSpecialValueFor("echo_slam_echo_search_range")
@@ -103,7 +113,18 @@ end
 --------------------------------------------------------------------------------
 -- Projectile
 function earthshaker_echo_slam_lua:OnProjectileHit( target, location )
-	local damage = self:GetSpecialValueFor("echo_slam_echo_damage") + (self:GetCaster():GetStrength() * self:GetTalentSpecialValueFor("str_multiplier"))
+	local bonus_str_multiplier = 0
+	local talent = self:GetCaster():FindAbilityByName("special_bonus_unique_earthshaker_01")
+	if talent and talent:GetLevel() > 0 then
+		local hLevel = self:GetCaster():GetLevel()
+		if hLevel <= 100 then
+			bonus_str_multiplier = hLevel
+		else
+			bonus_str_multiplier = 100 + (hLevel - 100) * 10
+		end
+	end
+
+	local damage = self:GetSpecialValueFor("echo_slam_echo_damage") + (self:GetCaster():GetStrength() * (self:GetSpecialValueFor("str_multiplier") + bonus_str_multiplier))
 	local damageTable = {
 		victim = target,
 		attacker = self:GetCaster(),

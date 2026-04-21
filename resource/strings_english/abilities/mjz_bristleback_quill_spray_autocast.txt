@@ -1,4 +1,0 @@
-    
-	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast"				    "AutoCast - Quill Spray"
-	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast_Description"	    ""
-	"DOTA_Tooltip_ability_mjz_bristleback_quill_spray_autocast_Lore"	    	""

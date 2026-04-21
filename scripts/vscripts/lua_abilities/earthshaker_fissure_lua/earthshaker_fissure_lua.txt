@@ -56,8 +56,8 @@
             "stun_duration" "1.0 1.2 1.4 1.6 1.8 2.0 2.5"
             "str_multiplier"
             {
-                "value" "5 7 9 12 15 20 30"
-                "LinkedSpecialBonus" "special_bonus_unique_earthshaker_3"
+                "value" "5 10 15 25 35 50 75"
+                "special_bonus_unique_earthshaker_3_custom" "75"
             }
         }
 	}

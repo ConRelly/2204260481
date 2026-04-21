@@ -3533,82 +3533,81 @@ Silencer:
 * Fixed for the rest of heroes that had talents with code tooltip instead of english , most were visual but fixed some bugged talents too like omniknight -3s cd that was not working (probaly some are still left but hard to find). 
 
 
+* Added a new option to choose one ability from the entire random pool. It gets activated with a 25% chance on Aghanim's death (works for both parts and doubles). Patreons get that option from the start of the game.
+* Slark's Essence Shift now has a retroactive bonus when learned for the first time (it scales based on time and an estimation of kills, with a 25% chance of doubling that amount).
+* Slark's innate Barakuda has been updated to provide better stats and effects. 
+* Fixed the Puck Q speed and range talent not working.
+* Puck Q's name was changed, and the damage was changed from 5x int at max level to 2.5x int per hero level at max level.
+* Hammer of the Divine recipe now has "-hammer" as an alternative command for combination instead of on hero respawn.
+
+
+* Added a 25% chance of 2x retroactive stacks for Grow Strong and increased the ratio to give more retroactive stacks in general.
+* Antimage Manabreak is now retroactive based on the time bonus.
+* Battle Experience Crit is now retroactive based on time bonus.
+* The 25% chance for 2x retroactive stacks has been added to: Drow Multishot, Slayer Rebound, Grim Reaper, Endless Wisdom, CM Frostbite, Mana Break, Battle Experience, Ursa Overpower, and Poison Claw.
+* The Queen of Pain's Masochist facet self-dmg has been reduced from 1% to 0.01%.
+* Lifestealer's Poison Claw now has an additional SS effect.
+
+
+* Fixed Rounds not Starting
 
 
 
-
-////////Self Note ////////////
-**Update Notes spellings will get corrected before the live update.
-**If update note is to long i will try to reduce unnecesarry info(arcade has a limit of how many caracters you can post in one single update(on steam will apear fully)).
+* Fixed the Round Statue sometimes not despawning if attacked by a non-hero and a hero at the same time.
+* Fixed some position/vector bugs caused by the new Dota patch. There are probably more bugs from this patch. Report them on Discord.
 
 
 
+* Fixed the Master of Weapons sword item from creating a permanent unit.
+* Fixed Pocket Barracks error; units now spawn directly at the chosen location instead of being forced to attack-move there.
+
+
+* Fixed ability swap not working after dota update
+* Adjusted shop to not have items out of UI bounds.
+* Some other minor fixes, will check for more.
 
 
 
-Marci ult SS Effects : (you can add more if you want, mostly for versatility)
+* Trying a blind fix for the "-challenge" boss dying before the seven-minute timer. Report if it works; I can't replicate the problem locally.
+* Replaced the Bloodseeker's lifesteal talent with a new one.
+* Updated Axe's Battle Hunger to the new (pure) version, which has more levels now.
+* PA Blur, when learned from the random pool, now comes at max level.
 
-Cm Frostbite : 3x dmg
 
-Ursa OverPower : 2x stats gain
-
-Orange Multicast: + 2 extra multicasts
-
-Devil's Daedalus(including edible) : 1.5x critical increase
-
-Ultimate Bloodstone : gain an extra stack on every succesful proc.
-
-Green Radiance: Ms multiplayer increased to 15x(edible 20x) and agi mult to 25x (27x edible)
-
-Red Radiance : Str multiplayer increased to 20x (25x edible) and %hp dmg by 2x.
-
-Greater Blast Staff: MR reduction increased to -45 , int multiplayer +7(24) , debuff duration +1s. 
-
-Apex: +7% more stats(42%)
-
-Cursed Gaze: +5% crit bonus on hit(10%).
-
-Slayer Rebound : aditional stacks + 2 instead of 1.
-
-Endless wisdom : gain an extra stack.
-
-Broken Wings : from 160% to 220% , Max use stacks(base on dmg dealt) is 3 (normal max is 50)
-
-Maple's Armor - Heavy armor buff from 50% dmg avoid chance to 85%
-
-LionDagonV2 - greater blast staff passive has 30% chance to trigger daggon instead of 17%
-
-Antimage Q = Acts as antimage lvl 20 talent (ignores base armor)
-
-Insatiable Hunger = doubles the chance of the SS effect.
-
-Speedsters : from 50% ms as base attack dmg to 150%
-
-Amalgamation : can have both Symbiosis effects at the same time
-
-Evolving Light CrossBow and all his forms : gains +2 charges instead of 1 per proc.
-
-Aftershock : Adds +4s in calculations for any ability over 1 sec cd.
-
-Empty Spellbook: Charges gain are doubled and SS Awaken effect gives 20 charges instead of 10.
+* Fixed Challenge boss dying before timer runs out (it was a multiple conditon bug that involved %current hp dmg(as part of multi instace dmg) and him having over certain hp, and some dota update)
 
 
 
-
-can youse this format for marci SS effect:
-if caster:HasModifier("modifier_super_scepter") then
-    if caster:HasModifier("modifier_marci_unleash_flurry") then
-        special_effect_here = special_effect_here
-    end                                 
-end
-or this one :
-local has_ss = caster:HasModifier("modifier_super_scepter")
-local marci_ult = caster:HasModifier("modifier_marci_unleash_flurry")
-if has_ss and marci_ult then
-    bonus_charge = 2
-end
-
-* The "Exclusive" tag will now be written on the ability (Example: *hero_name*'s Exclusive: *item_name*)
+* The top 50, 20, and 10 underdogs now have a chance to prevent lethal damage (it will show as an Antimagic Barrier when activated, if the damage instance after reductions is greater than the current HP). The chance is 0.2%, 0.25%, and 0.30% per level, and they all have different hard caps, with the highest being 40%.
+* The list for one-time skill choice has been updated (beneficiaries at the start of the game).
 
 
+* A new super scepter effect has been added to Mirana.
+ Each facet has its own similar SS effect.
+ - Leap buff now gives a critical chance for Mirana's arrow, and its critical damage scales with the hero's level.
+ - The Moonlight Shadow buff triggers an arrow every second and affects allies and couriers too, but they need SS.
+* Added an Aghanim toggle effect for Mirana's arrow to change its damage type. The shard now provides better critical damage and other buffs/changes.
+* Meepo's passive deals 50% more damage at max level.
+* Fixed Broken Wings crashing on local.
+* Buffed Broken Wings:
+ - Feather stacks give ~3x more spell amp and 10x more agi.
+ - Spell crit damage bonus increased from 160% to 250% (350% for Marci).  
 
+
+* Challenge boss agro range reduced from 5600 to 3600
+* Ancient base now gains invulnerability in the first 5 seconds of lose countdown.
+
+* The list for one-time skill choice has been updated (beneficiaries at the start of the game).
+
+
+* Fixed error on neutral GPM stone , starting items and some other problems (report if you find new problems)
+
+
+* The 25% chance of getting extra skill choice when Aghanims dies is fixed.  "-extra" mode seems to not be affected (similar debug code) try that for some extra challenge(if is stable).
+---
+* Fixed crash erros(on local at least) on game start from imcomplete recipes of not used vanila items.
+* Earthshaker's Fissure: Buffed strength multiplier damage scaling.
+* Earthshaker's Enchant Totem: Fixed a bug where it wouldn't use max level stats, and increased its max level damage from 1200% to 1400%.
+* Earthshaker's Echo Slam: Retooled the scaling talent. It now adds bonus strength damage based on Hero Level, where every level past 100 acts as 10 levels.
+* Earthshaker's Aftershock: Buffed the strength bonus damage from 40 to 75 and fixed an issue where the talent's effect was being doubled incorrectly.
+Note: Might buff other heroes in the comming days, write on discord if you know any hero that is "fun" but is missing some power compared with others

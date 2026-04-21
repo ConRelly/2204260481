@@ -10,7 +10,7 @@ function earthshaker_fissure_lua:OnSpellStart()
 	local point = self:GetCursorPosition()
 
 	-- load data
-	local damage = self:GetAbilityDamage() + caster:GetStrength() * self:GetTalentSpecialValueFor( "str_multiplier" )
+	local damage = self:GetAbilityDamage() + caster:GetStrength() * self:GetSpecialValueFor("str_multiplier")
 	local distance = self:GetCastRange( point, caster )
 	local duration = self:GetSpecialValueFor("fissure_duration")
 	local radius = self:GetSpecialValueFor("fissure_radius")
