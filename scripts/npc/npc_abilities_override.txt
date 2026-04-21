@@ -19637,11 +19637,9 @@
 // Recipe: Aeon Disk
 	"item_recipe_aeon_disk"
 	{
-		"ItemResult"					"item_aeon_disk"
-		"ItemRequirements"
-		{
-			"01"						"item_chest_1"
-		}
+		"ItemResult"                    "item_aeon_disk"
+		"ItemPurchasable"               "0"
+		"ItemCost"                      "9999999"
 	}
 // Aeon Disk
 	"item_aeon_disk"
@@ -20139,11 +20137,9 @@
 // Recipe: Hand of Midas
 	"item_recipe_hand_of_midas"
 	{
-		"ItemResult"					"item_hand_of_midas"
-		"ItemRequirements"
-		{
-			"01"						"item_chest_1"
-		}
+		"ItemResult"                    "item_hand_of_midas"
+		"ItemPurchasable"               "0"
+		"ItemCost"                      "9999999"
 	}
 // Hand of Midas
 	"item_hand_of_midas"
@@ -20471,7 +20467,7 @@
 		"ItemCost"						"1250"	
 		"ItemShopTags"					""
 		"ShouldBeSuggested"				"0"
-		"ItemPurchasable"				"1"
+		"ItemPurchasable"				"0"
 		"IsObsolete"					"1"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_necronomicon"
@@ -20487,8 +20483,8 @@
 		"ItemShopTags"					""
 		"ItemBaseLevel"					"2"
 		"ShouldBeSuggested"				"0"
-		"ItemPurchasable"				"1"
-		"IsObsolete"					"1"
+		"ItemPurchasable"				"0"
+		//"IsObsolete"					"1"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_necronomicon_2"
 		"ItemRequirements"
@@ -20503,8 +20499,8 @@
 		"ItemShopTags"					""
 		"ItemBaseLevel"					"3"
 		"ShouldBeSuggested"				"0"
-		"ItemPurchasable"				"1"
-		"IsObsolete"					"1"
+		"ItemPurchasable"				"0"
+		"IsObsolete"					"0"
 		"ItemRecipe"					"1"
 		"ItemResult"					"item_necronomicon_3"
 		"ItemRequirements"
@@ -20515,7 +20511,7 @@
 // Necronomicon
 	"item_necronomicon"
 	{
-		"ItemPurchasable"				"1"
+		"ItemPurchasable"				"0"
 		"AbilityCooldown"				"35.0"
 		"AbilityValues"
         {
@@ -20528,7 +20524,7 @@
 // Necronomicon 2
 	"item_necronomicon_2"
 	{
-		"ItemPurchasable"				"1"
+		"ItemPurchasable"				"0"
 		"AbilityCooldown"				"35.0"
 		"AbilityValues"
         {
@@ -20542,7 +20538,7 @@
 // Necronomicon 3
 	"item_necronomicon_3"
 	{
-		"ItemPurchasable"				"1"
+		"ItemPurchasable"				"0"
 		"AbilityCooldown"				"35.0"
 		"AbilityValues"
         {
@@ -20726,10 +20722,8 @@
 	"item_recipe_rapier"
 	{
 		"ItemResult"					"item_rapier"
-		"ItemRequirements"
-		{
-			"01"						"item_claymore"
-		}
+		"ItemPurchasable"				"0"
+		"ItemCost"						"9999999"
 	}
 // Divine Rapier
 	"item_rapier"
@@ -20742,10 +20736,8 @@
 	"item_recipe_refresher"
 	{
 		"ItemResult"					"item_refresher"
-		"ItemRequirements"
-		{
-			"01"						"item_claymore"
-		}
+		"ItemPurchasable"				"0"
+		"ItemCost"						"9999999"
 	}
 // Refresher
 	"item_refresher"
@@ -22158,7 +22150,7 @@
 	"item_octarine_core"
 	{
 		"ItemPurchasable"				"0"
-		"IsObsolete"					"1"
+		//"IsObsolete"					"1"
 	}
 
 // Cheese

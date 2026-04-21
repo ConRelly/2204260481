@@ -3611,3 +3611,5 @@ Silencer:
 * Earthshaker's Echo Slam: Retooled the scaling talent. It now adds bonus strength damage based on Hero Level, where every level past 100 acts as 10 levels.
 * Earthshaker's Aftershock: Buffed the strength bonus damage from 40 to 75 and fixed an issue where the talent's effect was being doubled incorrectly.
 Note: Might buff other heroes in the comming days, write on discord if you know any hero that is "fun" but is missing some power compared with others
+---
+* Fixed disabled vanila item recipes forming from common items (like normal divine rapier) 
