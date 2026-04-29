@@ -50,7 +50,7 @@ function modifier_mjz_bloodseeker_thirst_buff:OnStackCountChanged(prev_stacks)
 	if not IsServer() then return end
 	if not self:GetAbility() then self:Destroy() return end
 	local parent = self:GetParent()
-	local max_stacks = GetTalentSpecialValueFor(self:GetAbility(), "max_stacks")
+	local max_stacks = self:GetAbility():GetSpecialValueFor("max_stacks")
 	local ss_bonus_stacks = self:GetAbility():GetSpecialValueFor("ss_bonus_stacks")
 	local has_ss = parent:HasModifier("modifier_super_scepter")
 	if has_ss then max_stacks = max_stacks + ss_bonus_stacks end
@@ -85,9 +85,6 @@ function modifier_mjz_bloodseeker_thirst_buff:OnIntervalThink()
 end
 function modifier_mjz_bloodseeker_thirst_buff:OnRefresh() if not IsServer() then return end self:IncrementStackCount() end
 function modifier_mjz_bloodseeker_thirst_buff:DeclareFunctions() return {MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE} end
-function modifier_mjz_bloodseeker_thirst_buff:GetModifierMoveSpeedBonus_Percentage() return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_movement_speed") end
-function modifier_mjz_bloodseeker_thirst_buff:GetModifierAttackSpeedBonus_Constant() return self:GetStackCount() * self:GetAbility():GetSpecialValueFor("bonus_attack_speed") end
-function modifier_mjz_bloodseeker_thirst_buff:GetModifierPreAttack_BonusDamage() return self:GetStackCount() * (self:GetAbility():GetSpecialValueFor("bonus_damage") * self:GetParent():GetLevel()) end
 --
 function modifier_mjz_bloodseeker_thirst_buff:GetModifierMoveSpeedBonus_Percentage()
     local ability = self:GetAbility()
@@ -103,6 +100,11 @@ function modifier_mjz_bloodseeker_thirst_buff:GetModifierPreAttack_BonusDamage()
     local ability = self:GetAbility()
 	local parent = self:GetParent()
 	local multipl = parent:GetLevel()
+	
+	if multipl > 100 then
+		multipl = 100 + (multipl - 100) * 10
+	end
+	
 	local has_ss = parent:HasModifier("modifier_super_scepter")
 	local ss_mult  = ability:GetSpecialValueFor("ss_lvl_mult")
 	if has_ss then multipl = multipl * ss_mult end

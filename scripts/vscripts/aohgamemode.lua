@@ -1624,16 +1624,6 @@ function AOHGameMode:OnEntitySpawned(event)
 			Sounds:CreateSound(i, "goh.teme")
 		end
 	end
---[[ 	if unit:GetUnitName() == "npc_dota_boss_void_spirit" then
-		for i=0,9 do
-			Sounds:CreateSound(i, "bleach_fate")
-		end
-	end	 ]]	
-	--for playerID = 0, 4 do
-	--	if unit:GetUnitName() == "npc_boss_skeletal_archer_new" then
-	--		Sounds:CreateSound(playerID, "bleach_fate")
-	--	end 
-	--end
 	if unit:GetUnitName() == "npc_boss_guesstuff_Moran" and Cheats:IsEnabled() then		
 		GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
 	end
