@@ -42,7 +42,13 @@ function modifier_void_spirit_astral_step_lua:OnCreated( kv )
 	local mana_mult = self:GetAbility():GetSpecialValueFor( "mana_mult" )	
 	local caster_manreg = caster:GetManaRegen()
 	local manareg = caster_manreg * mana_mult
-	local caster_lvl_mult = caster:GetLevel() * self:GetAbility():GetSpecialValueFor( "pop_damage" )
+	
+	local level = caster:GetLevel()
+	if level > 100 then
+		level = 100 + (level - 100) * 10
+	end
+	
+	local caster_lvl_mult = level * self:GetAbility():GetSpecialValueFor( "pop_damage" )
 
 	self.damage = caster_lvl_mult + manareg	
 end

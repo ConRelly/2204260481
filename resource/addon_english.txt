@@ -4806,7 +4806,7 @@
 	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link_bonus_health_pct"	"%Health Bonus: "
 	"DOTA_Tooltip_ability_mjz_visage_familiar_soul_link_attack_range_pct"	"%Attack Range: "	
 	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas"						"Astral Atlas"
-	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas_Description"			"Astral Atlas\n<h1><font color='#DE3163'>Super Scepter</font></h1> You can now toggle autocast to change damage type to <font color='#EAA30C'>Pure</font>, but dmg value is 10x lower. Part 2 of effect is on Astral Step"
+	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas_Description"			"Astral Atlas. Void Mark damage multiplier scales at 10x per level after level 100.\n<h1><font color='#DE3163'>Super Scepter</font></h1> You can now toggle autocast to change damage type to <font color='#EAA30C'>Pure</font>, but dmg value is 10x lower. Part 2 of effect is on Astral Step"
 	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas_max_travel_distance"	"RANGE:"
 	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas_pop_damage"			"Void Mark Dmg per hero LvL:"
 	"DOTA_Tooltip_ability_mjz_void_spirit_astral_atlas_mana_mult"		   "Mana Regen As Bonus Damage:"

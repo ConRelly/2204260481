@@ -67,9 +67,9 @@ function modifier_atr_fix:OnIntervalThink()
 
             local int = self.parent:GetIntellect(false)
             local baseValue = (-0.1 * int) + 30
-            if hero_name == "npc_dota_hero_void_spirit" then
+--[[             if hero_name == "npc_dota_hero_void_spirit" then
                 baseValue = (-0.3 * int) + 50
-            end    
+            end   ]]  
             -- Set the hero's base magical resistance value
             self.parent:SetBaseMagicalResistanceValue(baseValue)
         end

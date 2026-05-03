@@ -3617,3 +3617,9 @@ Note: Might buff other heroes in the comming days, write on discord if you know 
 * Bloodseeker's Thirst: Max level increased from 5 to 7, with significantly higher damage, movement speed, and attack speed scaling at max levels. Level multiplier now scales at 10x per level after level 100, and its SS mult from 4 to 10.
 * Bloodseeker's Thirst: Talent bonus stacks increased from 6 to 8. Super Scepter bonus stacks increased from 3 to 4, and its level multiplier increased from 4 to 10.
 * Updated the loading screens and the Arcade cover artwork.
+---
+* Void Spirit's Astral Atlas: Void Mark damage multiplier now scales at 10x per level after level 100.
+* Void Spirit's innate attack dmg bonus from stats from 15% to 250%.
+* Fixed a bug where Void Spirit would lose magic resistance from intelligence stats.
+---
+

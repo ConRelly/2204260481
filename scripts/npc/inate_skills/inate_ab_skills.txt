@@ -427,6 +427,7 @@
 	}
 
 
+
 	"void_spirit_intrinsic_edge"
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES | DOTA_ABILITY_BEHAVIOR_SKIP_FOR_KEYBINDS"
@@ -438,9 +439,33 @@
 		"AbilityValues"
 		{
 			"secondary_stat_bonus_pct"	"200"
+			"damage_stat_bonus_pct"		"250"
+			"attack_damage"
+			{
+				"dynamic_value"			"true"
+			}
+			"hp_regen"
+			{
+				"dynamic_value"			"true"
+			}
+			"armor"
+			{
+				"dynamic_value"			"true"
+			}
+			"mp_regen"
+			{
+				"dynamic_value"			"true"
+			}
+			"magic_resist"
+			{
+				"dynamic_value"			"true"
+			}
+			"attackspeed"
+			{
+				"dynamic_value"			"true"
+			}
 		}
 	}
-
 	//=================================================================================================================
 	// Razor: Dynamo
 	//=================================================================================================================
