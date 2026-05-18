@@ -20875,11 +20875,6 @@
             "cleave_distance" "1450"
             "bonus_attack" "25 35 45 55 75"
             "bonus_duration" "5"
-            "scepter_crit_bonus_per_minute"
-            {
-                "value" "10 20 30 40 75"
-                "RequiresScepter" "1"
-            }
         }
 
         "precache"
@@ -21109,7 +21104,7 @@
 		"HasShardUpgrade"				"1"
 		"MaxLevel"						"10"
 		"RequiredLevel"					"0"
-		"LevelsBetweenUpgrades"			"5"
+		"LevelsBetweenUpgrades"			"10"
 		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"6"
 		"AbilityManaCost"				"30 70 120 180 250 430 520 620 730 850"
@@ -21123,7 +21118,7 @@
 		"AbilityValues"
 		{
 			"base_damage"				"75"
-			"attack_factor"				"30 50 70 90 110 130 150 190 210 230"
+			"attack_factor"				"100 200 300 400 500 600 700 800 900 1000"
 			"bonus_as"
 			{
 				"value"					"50 75 100 130 160 190 230 270 300 350"

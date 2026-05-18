@@ -5,6 +5,19 @@ LinkLuaModifier("modifier_mjz_phantom_assassin_coup_de_grace_bonus", "abilities/
 mjz_phantom_assassin_coup_de_grace = class({})
 function mjz_phantom_assassin_coup_de_grace:GetIntrinsicModifierName() return "modifier_mjz_phantom_assassin_coup_de_grace" end
 
+local function GetScaledHeroLevel(caster)
+	local hero_level = caster:GetLevel()
+	if hero_level > 100 then
+		hero_level = 100 + (hero_level - 100) * 10
+	end
+	return hero_level
+end
+
+local function GetScepterCritBonus(caster)
+	if not caster:HasScepter() then return 0 end
+	return (GameRules:GetGameTime() / 60) * GetScaledHeroLevel(caster)
+end
+
 --------------------------------------------------------------------------------------
 modifier_mjz_phantom_assassin_coup_de_grace = class({})
 function modifier_mjz_phantom_assassin_coup_de_grace:IsPassive() return true end
@@ -19,13 +32,8 @@ if IsServer() then
 		local target = event.target 
 		local attacker = event.attacker
 		local ability = self:GetAbility()
-		local extra_crit_bonus = 0
-		if self:GetCaster():HasScepter() then
-			local hero_level = self:GetCaster():GetLevel()
-			extra_crit_bonus = hero_level -- use hero level directly as bonus
-		end
 		if ability.crit then
-			local crit_bonus = GetTalentSpecialValueFor(ability, "crit_bonus") + extra_crit_bonus
+			local crit_bonus = ability:GetSpecialValueFor("crit_bonus") + GetScepterCritBonus(self:GetCaster())
 			return crit_bonus
 		end
 	end
@@ -36,10 +44,6 @@ if IsServer() then
 		local attacker = event.attacker
 		local caster = self:GetCaster()
 		local ability = self:GetAbility()
-		local extra_crit_bonus = 0
-		if self:GetCaster():HasScepter() then
-			extra_crit_bonus = (GameRules:GetGameTime() / 60) * self:GetAbility():GetSpecialValueFor("scepter_crit_bonus_per_minute")
-		end
 		if ability.crit then
 			ability.crit = false
 
@@ -57,8 +61,7 @@ if IsServer() then
 
 		local can = self:_CheckAttack(attacker, target, ability)
 		if can then
-			local crit_chance = GetTalentSpecialValueFor(ability, "crit_chance")
-			local crit_bonus = GetTalentSpecialValueFor(ability, "crit_bonus") + extra_crit_bonus
+			local crit_chance = ability:GetSpecialValueFor("crit_chance")
 			if RollPercentage(crit_chance) then
 				ability.crit = true
 			end
@@ -102,10 +105,10 @@ if IsServer() then
 				local flDistance = vToCaster:Length2D()
 				local attack_range = attacker:GetBaseAttackRange() + 50
 				if flDistance <= attack_range then
-					local cleave_percent = GetTalentSpecialValueFor(ability, "cleave_damage")
-					local cleave_start_radius = GetTalentSpecialValueFor(ability, "cleave_starting_width")
-					local cleave_end_radius = GetTalentSpecialValueFor(ability, "cleave_ending_width")
-					local cleave_distance = GetTalentSpecialValueFor(ability, "cleave_distance")
+					local cleave_percent = ability:GetSpecialValueFor("cleave_damage")
+					local cleave_start_radius = ability:GetSpecialValueFor("cleave_starting_width")
+					local cleave_end_radius = ability:GetSpecialValueFor("cleave_ending_width")
+					local cleave_distance = ability:GetSpecialValueFor("cleave_distance")
 
 					local cleaveDamage = attack_damage * (cleave_percent / 100)
 
@@ -191,6 +194,7 @@ end
 
 
 --------------------------------------------------------------------------------------
+--legacy function left here if needed, but not used in coup de grace , new dota 2 kv format does not require this function anymore to include talent value and we can simplu use GetSpecialValueFor instead
 function GetTalentSpecialValueFor(ability, value)
     local base = ability:GetSpecialValueFor(value)
     local talentName

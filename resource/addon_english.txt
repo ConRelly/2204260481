@@ -4067,9 +4067,8 @@
 	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_Note0"			 "Extra crit: It will not matter when you buy the aghanim or when you max the skill it will always give the bonus base on current game time and your current level."
 	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_bonus_attack"		"%Bonus Total Attack:"
 	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_bonus_duration"		"BONUS TOTAL ATTACK DURATION:"
-	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_scepter_description"			"Deals bonus magic damage and gains extra critical power base on your lvl for every minute this game has passed(Your Level x Minute) ."
+	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_scepter_description"			"Deals bonus magic damage and gains extra critical power based on your current level for every minute this game has passed. Levels above 100 count as 10 levels each."
 	"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_magical_damage_scepter"		"%SCEPTER Bonus Magical Damage:"
-	//"DOTA_Tooltip_ability_mjz_phantom_assassin_coup_de_grace_scepter_crit_bonus_per_minute"	 "%SCEPTER Extra Crit Damage Per Minute:"
 
 	"DOTA_Tooltip_ability_special_bonus_unique_pa_coup_de_grace_crit_chance"	"+{s:value}% Coup de Grace chance"
 
@@ -11180,7 +11179,7 @@ Contains all random skills(including Innates)<br> if your primary attribute is I
 
 
 //Muerta
-	"DOTA_Tooltip_Ability_muerta_pierce_the_veil_Description"				"Muerta transforms, becoming immune to physical damage. All of her attack damage is dealt as magical damage. Muerta gains bonus attack damage and phased movement.<br><br>Muerta can attack ethereal units, but deals no damage to Magic Immune targets.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Gain <font color='#0DE4EB'>True Strike</font> and 1.1 base attack time <br><br>DISPEL TYPE: Basic Dispel"
+	"DOTA_Tooltip_Ability_muerta_pierce_the_veil_Description"				"Muerta transforms, becoming ethereal, gaining bonus base damage and phased movement.<br><br>Passively allows Muerta to always attack ethereal targets and attack when she is ethereal. When either she or her target is ethereal, all of her attack damage is dealt as magical damage and her physical lifesteal is treated as spell lifesteal.\n<h1><font color='#DE3163'>Super Scepter</font></h1>Gain <font color='#0DE4EB'>True Strike</font> and 1.1 base attack time <br><br>DISPEL TYPE: Basic Dispel"
 
 
 //kai

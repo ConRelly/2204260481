@@ -3622,4 +3622,10 @@ Note: Might buff other heroes in the comming days, write on discord if you know 
 * Void Spirit's innate attack dmg bonus from stats from 15% to 250%.
 * Fixed a bug where Void Spirit would lose magic resistance from intelligence stats.
 ---
-
+* Phantom Assassin's Coup de Grace: Fixed Aghanim's extra crit damage to actually scale with current Hero Level for every minute passed, as the tooltip already said. Buffed the scaling so every level past 100 counts as 10 levels.
+* Phantom Assassin's Stifling Dagger: Max level attack damage increased from 200% to 1000%.
+* Muerta added back to the underdog list.
+* Muerta's Pierce the Veil: Replaced a talent with an ultimate duration extension talent. Duration was readjusted and can now reach up to 13s with the talent, from 11s before.
+* Muerta's Pierce the Veil: Max level base attack damage bonus increased from 100% to 200%.
+* Muerta's Dead Shot and The Calling: Buffed damage.
+---
