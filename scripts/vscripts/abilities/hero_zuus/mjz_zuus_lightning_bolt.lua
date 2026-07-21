@@ -113,17 +113,35 @@ function ability_class:CalcDamage( )
 	local ability = self
 	local pszScriptName = "modifier_mjz_zuus_lightning_bolt_charges"
 	local ability_damage = ability:GetAbilityDamage()
-	local int_damage_pct = GetTalentSpecialValueFor(ability, "int_damage")
+	local stat_damage_per_lvl = GetTalentSpecialValueFor(ability, "int_damage")
+
+	local hero_level = caster:GetLevel()
+	if hero_level > 100 then
+		hero_level = 100 + (hero_level - 100) * 10
+	end
 	
 	if IsValidEntity(caster) and caster:IsRealHero() then
-		local int_damage = caster:GetIntellect(false) * (int_damage_pct / 100)
-		ability_damage = ability_damage + int_damage
+		local all_stats = caster:GetStrength() + caster:GetAgility() + caster:GetIntellect(false)
+		local stat_damage_pct = stat_damage_per_lvl * hero_level
+		local stat_damage = all_stats * (stat_damage_pct / 100.0)
+		ability_damage = ability_damage + stat_damage
 	end
 
 	local m_charges = caster:FindModifierByName(pszScriptName)
 	if m_charges then
-		local damage = ability_damage * m_charges:GetStackCount()
+		local consumed_stacks = m_charges:GetStackCount()
 		m_charges:SetStackCount(0)
+
+		if consumed_stacks > 0 and caster:HasModifier("modifier_super_scepter") then
+			local sf_mod = caster:FindModifierByName("modifier_mjz_zuus_static_field")
+			if sf_mod then
+				for i = 1, consumed_stacks do
+					sf_mod:_ApplyDamage(true)
+				end
+			end
+		end
+
+		local damage = ability_damage * consumed_stacks
 		return damage
 	end
 	return 0

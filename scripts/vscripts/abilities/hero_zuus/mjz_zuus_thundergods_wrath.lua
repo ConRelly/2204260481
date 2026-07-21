@@ -97,8 +97,15 @@ if IsServer() then
 
 		local radius = ability:GetSpecialValueFor('radius')
 		local base_damage = ability:GetSpecialValueFor("base_damage")
-		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
-		local damage = base_damage + caster:GetIntellect(false) * (intelligence_damage / 100.0)
+		local intelligence_damage_per_lvl = GetTalentSpecialValueFor(ability, "intelligence_damage")
+
+		local hero_level = caster:GetLevel()
+		if hero_level > 100 then
+			hero_level = 100 + (hero_level - 100) * 10
+		end
+
+		local int_pct = intelligence_damage_per_lvl * hero_level
+		local damage = base_damage + caster:GetIntellect(false) * (int_pct / 100.0)
 		local damage_ss = damage  -- avoid an multiplayer
 		local bonus_armor_dmg_mult = 1
 		local enemy_armor_mult_ptc = ability:GetSpecialValueFor('enemy_armor_mult_ptc') * 100 -- 1% per armor 
@@ -190,8 +197,15 @@ if IsServer() then
 		end
 
 		local base_damage = ability:GetSpecialValueFor("base_damage")
-		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
-		local damage = base_damage + caster:GetIntellect(false) * (intelligence_damage / 100.0)
+		local intelligence_damage_per_lvl = GetTalentSpecialValueFor(ability, "intelligence_damage")
+
+		local hero_level = caster:GetLevel()
+		if hero_level > 100 then
+			hero_level = 100 + (hero_level - 100) * 10
+		end
+
+		local int_pct = intelligence_damage_per_lvl * hero_level
+		local damage = base_damage + caster:GetIntellect(false) * (int_pct / 100.0)
 		local super_scepter = false
 		local bonus_armor_dmg_mult = 1
 		local enemy_armor_mult_ptc = ability:GetSpecialValueFor('enemy_armor_mult_ptc') * 100 -- 1% per armor 

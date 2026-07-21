@@ -74,8 +74,8 @@ if IsServer() then
 
 			-- Level scaling
 			local lvl = parent:GetLevel()
-			local upto_100 = self:GetSpecialValueFor("upto_100") / 100 -- 1% per level up to 100
-			local after_100 = self:GetSpecialValueFor("after_100") / 100 -- 10% per level above 100
+			local upto_100 = self:GetSpecialValueFor("upto_100") / 100 -- 2% per level up to 100
+			local after_100 = self:GetSpecialValueFor("after_100") / 100 -- 20% per level above 100
 			local level_mult = 1
 			if lvl <= 100 then
 				level_mult = 1 + (lvl * upto_100)

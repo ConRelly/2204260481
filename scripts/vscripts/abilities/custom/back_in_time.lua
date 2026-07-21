@@ -14,6 +14,18 @@ function back_in_time:OnHeroCalculateStatBonus(params)
 	end
 end
 
+local function GetBackInTimeCritBonus(ability, stack_count)
+	return 100 + stack_count * ability:GetSpecialValueFor("crit_stack")
+end
+
+local function GetBackInTimeScaledLevel(caster)
+	local lvl = caster:GetLevel()
+	if lvl > 100 then
+		lvl = 100 + (lvl - 100) * 10
+	end
+	return lvl
+end
+
 modifier_back_in_time = class({})
 function modifier_back_in_time:IsHidden() return true end
 function modifier_back_in_time:IsPurgable() return false end
@@ -163,9 +175,8 @@ end
 function modifier_back_in_time_buff:GetModifierPreAttack_CriticalStrike()
 	if not IsServer() then return nil end
 	local crit_chance = self:GetAbility():GetSpecialValueFor("crit_chance")
-	local crit_bonus = 100 + self:GetStackCount() * self:GetAbility():GetSpecialValueFor("crit_stack")
 	if RollPercentage(crit_chance) then
-		return crit_bonus
+		return GetBackInTimeCritBonus(self:GetAbility(), self:GetStackCount())
 	end
 end
 function modifier_back_in_time_buff:GetModifierBonusStats_Strength()
@@ -244,19 +255,24 @@ function modifier_effect2:OnIntervalThink()
 		local caster = self:GetCaster()
 		local ability = self:GetAbility()
 		local target = self:GetParent()
-		local lvl = caster:GetLevel()
+		local lvl = GetBackInTimeScaledLevel(caster)
 		if ability and IsValidEntity(ability) then
 			local interval = ability:GetSpecialValueFor("interval")
 			local base_damage = ability:GetSpecialValueFor("base_damage") * lvl
-			if lvl < 29 then
+			if caster:GetLevel() < 29 then
 				base_damage = base_damage / 4
 			end	
 			local modif_buff = "modifier_back_in_time_buff"
 			local mbuff = caster:FindModifierByName(modif_buff)	
-			local nr_stacks = mbuff:GetStackCount() * 5
+			if not mbuff then return nil end
+			local stack_count = mbuff:GetStackCount()
+			local nr_stacks = stack_count * 5
 			local damage = base_damage * nr_stacks
 			if damage == 0 then return nil end
 			damage = damage * interval
+			if RollPercentage(ability:GetSpecialValueFor("crit_chance")) then
+				damage = damage * (GetBackInTimeCritBonus(ability, stack_count) / 100)
+			end
 
 			ApplyDamage({
 				attacker = caster,

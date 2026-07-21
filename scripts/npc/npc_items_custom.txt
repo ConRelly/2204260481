@@ -484,12 +484,12 @@
 		"AbilityManaCost"				"200 250 1000"
 		"AbilityValues"
         {
-            "bonus_intellect" "80 350 700"
-            "bonus_strength" "80 350 700"
+            "bonus_intellect" "180 550 900"
+            "bonus_strength" "180 550 900"
             "bonus_agility" "18 65 100"
-            "int_multiplier" "3.5 10 19"
-            "strikes" "4 5 9"
-            "spell_amp" "25 50 100"
+            "int_multiplier" "5.5 15 29"
+            "strikes" "20 25 35"
+            "spell_amp" "50 100 200"
         }
 	}
 	"item_recipe_blast_staff_2"
@@ -530,12 +530,12 @@
 		"AbilityManaCost"				"200 250 1000"
 		"AbilityValues"
         {
-            "bonus_intellect" "80 350 700"
-            "bonus_strength" "80 350 700"
+            "bonus_intellect" "180 550 900"
+            "bonus_strength" "180 550 900"
             "bonus_agility" "18 65 100"
-            "int_multiplier" "3.5 10 19"
-            "strikes" "4 5 9"
-            "spell_amp" "25 50 100"
+            "int_multiplier" "5.5 15 29"
+            "strikes" "20 25 35"
+            "spell_amp" "50 100 200"
         }
 	}
 	"item_recipe_blast_staff_3"
@@ -579,18 +579,18 @@
 		"AbilityManaCost"				"200 250 1000"
 		"AbilityValues"
         {
-            "bonus_intellect" "80 350 700"
-            "bonus_strength" "80 350 700"
+            "bonus_intellect" "180 550 900"
+            "bonus_strength" "180 550 900"
             "bonus_agility" "18 65 100"
-            "int_multiplier" "3.5 10 19"
+            "int_multiplier" "5.5 15 29"
             "strikes" "4 5 9"
-            "spell_amp" "25 50 100"
+            "spell_amp" "50 100 200"
             "resist_reduc" "-35"
             "debuff_duration" "1.5"
             "status_resist" "30"
             "mana_bonus" "6200"
-            "upto_100"   "1"
-            "after_100"  "10"
+            "upto_100"   "2"
+            "after_100"  "20"
         }
 	}
 
@@ -15808,7 +15808,7 @@
 		"AbilityValues"
         {
             "reincarnate_delay" "5"
-            "proc_stats" "30"
+            "proc_stats" "120"
             "cooldown" "60"
         }
 	}

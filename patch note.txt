@@ -3629,3 +3629,14 @@ Note: Might buff other heroes in the comming days, write on discord if you know 
 * Muerta's Pierce the Veil: Max level base attack damage bonus increased from 100% to 200%.
 * Muerta's Dead Shot and The Calling: Buffed damage.
 ---
+* Fixed Vanila Wild Axes (from random pool) applying on auto attack
+* Aegis of infinity stats grow from 30 to 120 (collect 15+ Aegis and click on it to create that)
+* Slayer Rebound: Strength, Agility and Crit damage per stack tripled.
+* Slayer Rebound's Unbearable Presence: Aura damage per level reduced from 40 to 30, level scaling now counts every level past 100 as 10 levels, and Overwhelming Strike can now make the aura deal critical damage.
+---
+* Blast staff buffed, stats and some effects ~50% , Level Mastery passive 2x.
+* Zeus's Static Field: Intelligence damage now scales per Hero Level (up to 35%/lvl). Talent updated to +15%/lvl. Super Scepter allows toggling autocast for Pure damage (10x lower dmg), and makes Lightning Bolt trigger Static Field per charge consumed (using All Stats).
+* Zeus's Lightning Bolt: Damage now scales with All Stats per Hero Level (up to 45%/lvl).
+* Zeus's Thundergod's Wrath: Intelligence damage now scales per Hero Level (up to 75%/lvl).
+* Replaced an lvl 25 talent on Zeus that was not useful with 40% Mr.
+---

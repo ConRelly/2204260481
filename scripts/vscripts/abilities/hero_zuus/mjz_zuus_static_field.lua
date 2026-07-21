@@ -11,6 +11,13 @@ function ability_class:GetAOERadius()
 	return self:GetSpecialValueFor('radius') + self:GetCaster():GetCastRangeBonus()
 end
 
+function ability_class:GetBehavior()
+	if self:GetCaster() and self:GetCaster():HasModifier("modifier_super_scepter") then
+		return DOTA_ABILITY_BEHAVIOR_PASSIVE + DOTA_ABILITY_BEHAVIOR_AUTOCAST
+	end
+	return DOTA_ABILITY_BEHAVIOR_PASSIVE
+end
+
 -----------------------------------------------------------------------------------------
 
 modifier_mjz_zuus_static_field = class({})
@@ -37,13 +44,16 @@ if IsServer() then
 			local hUnit = params.unit
 			local hAbility = params.ability 
 			if IsAbiltiy(hUnit, hAbility) then
-				self:_ApplyDamage()
+				if hAbility:GetName() == "mjz_zuus_lightning_bolt" and hUnit:HasModifier("modifier_super_scepter") then
+					return 0
+				end
+				self:_ApplyDamage(false)
 			end
 		end
 		return 0
 	end
 
-	function modifier_class:_ApplyDamage()
+	function modifier_class:_ApplyDamage(use_all_stats)
 		local caster = self:GetParent()
 		local ability = self:GetAbility()
 
@@ -51,8 +61,28 @@ if IsServer() then
 
 		local radius = ability:GetSpecialValueFor('radius')
 		local base_damage = ability:GetSpecialValueFor("base_damage")
-		local intelligence_damage = GetTalentSpecialValueFor(ability, "intelligence_damage")
-		local damage = base_damage + caster:GetIntellect(false) * (intelligence_damage / 100.0)
+		local intelligence_damage_per_lvl = GetTalentSpecialValueFor(ability, "intelligence_damage")
+
+		local hero_level = caster:GetLevel()
+		if hero_level > 100 then
+			hero_level = 100 + (hero_level - 100) * 10
+		end
+
+		local int_pct = intelligence_damage_per_lvl * hero_level
+
+		local stat_val = caster:GetIntellect(false)
+		if use_all_stats then
+			stat_val = caster:GetStrength() + caster:GetAgility() + caster:GetIntellect(false)
+		end
+
+		local damage = base_damage + stat_val * (int_pct / 100.0)
+
+		local damage_type = ability:GetAbilityDamageType()
+		local has_ss = caster:HasModifier("modifier_super_scepter")
+		if has_ss and ability:GetAutoCastState() then
+			damage_type = DAMAGE_TYPE_PURE
+			damage = damage / 10.0
+		end
 
 		local sound_name = "Hero_Zuus.StaticField"
 		local particle_name = "particles/units/heroes/hero_zuus/zuus_static_field.vpcf"
@@ -67,13 +97,11 @@ if IsServer() then
 			ParticleManager:DestroyParticle(particle, false)
 			ParticleManager:ReleaseParticleIndex(particle)
 
-			
-
 			ApplyDamage({
 				attacker = caster,
 				victim = unit,
 				ability = ability,
-				damage_type = ability:GetAbilityDamageType(),
+				damage_type = damage_type,
 				damage = damage
 			})	
 		end

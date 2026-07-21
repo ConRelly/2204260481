@@ -10,5 +10,7 @@ Keep this file compact and self-improving. When a task reveals a durable project
 - Super Scepter is custom. Lua usually checks it with `local has_ss = caster:HasModifier("modifier_super_scepter")`; patch notes may call it `Super Scepter` or `SS` if that matches nearby style.
 - The underdog list is controlled by `UnitLabel` in `scripts/npc/npc_heroes_custom.txt`. Add/remove heroes by uncommenting/commenting `"UnitLabel" "no_underdog"`; `fix_atr_for_hero2` in main(aohgamemode.lua) filters this and gives the permanent post-level-34 buff modifier.
 - Tooltip custom section colors: `#DE3163` Super Scepter, `#0094FF` Aghanim's Scepter, `#F70707` Challenge Boss, `#2AD563` UP item sections, `#86C91F` Extra Passive, `#F17C26` Info, `#FFA32B` Exclusive label. Keep existing hero/exclusive colors when editing nearby tooltip text.
+- For multi-line Super Scepter or ability descriptions, use `<br>` between numbered items (e.g. `1. ...<br>2. ...`) without extra blank lines or `\n` paragraph breaks to avoid excessive vertical spacing in the UI.
 - Some heavy visual effects respect `_G._effect_rate`; common pattern is `local randomSeed = math.random(1, 100)` then only play the effect when `randomSeed <= _G._effect_rate`. Tooltip info often tells host to use `-effect_rate 1-20`.
 - Be careful with unrelated context in the big files. Keep edits scoped to the exact ability, tooltip, or talent being worked on.
+

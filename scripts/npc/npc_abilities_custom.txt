@@ -24649,8 +24649,6 @@
 		"AbilityCastPoint"				"0.0"
 		"AbilityDamage"					"125 400 675 1350 2450 4200 8535"
 		"AbilityCooldown"				"6.0"
-		//"AbilityCharges"				"3 10 22 99"
-		//"AbilityChargeRestoreTime"		"6.0"
 		"AbilityManaCost"				"135"
 		"AbilityModifierSupportValue"	"0.1"	// just a ministun
 
@@ -24668,7 +24666,7 @@
             }
             "charges" "3 5 7 9 12 15 20"
             "charge_restore_time" "3.0"
-            "int_damage" "150 200 250 300 450 700 1400"
+            "int_damage" "5 10 15 20 25 35 45"
         }
 		"precache"
 		{
@@ -24702,8 +24700,8 @@
             "base_damage" "20 80 230 650 1500 3200 6500"
             "intelligence_damage"
             {
-                "value" "150 230 350 470 600 900 1300"
-                "special_bonus_unique_unique_mjz_zuus_static_field_intelligence" "450"
+                "value" "5 10 15 20 25 30 35"
+                "special_bonus_unique_unique_mjz_zuus_static_field_intelligence" "15"
             }
         }
 		"precache"
@@ -24720,7 +24718,7 @@
 		
 		"AbilityValues"
         {
-            "value" "450"
+            "value" "15"
         }
 	}
 	"mjz_zuus_thundergods_wrath"
@@ -24747,7 +24745,7 @@
         {
             "radius" "1500"
             "base_damage" "90 440 2650 6250 12580 25500 45100"
-            "intelligence_damage" "200 400 800 1000 1200 1500 2200"
+            "intelligence_damage" "10 18 28 40 50 62 75"
             "count" "6 8 10 14 18 22 24"
             "interval" "0.25"
             "sight_radius" "1500"
@@ -29998,10 +29996,10 @@
 	"AbilityCooldown"				"60"
 	"AbilityValues"
         {
-            "str_stack" "20"
-            "agi_stack" "35"
+            "str_stack" "60"
+            "agi_stack" "100"
             "hp_stack" "60"
-            "crit_stack" "80"
+            "crit_stack" "240"
             "crit_chance" "10"
             "stack_increase" "1"
             "stack_chance"
@@ -30012,7 +30010,7 @@
             "evasion_stack" "0.5"
             "ms_stack" "50"
             "interval" "1.0"
-            "base_damage" "40"
+            "base_damage" "30"
             "aoe" "1900"
         }
 }
