@@ -3640,3 +3640,5 @@ Note: Might buff other heroes in the comming days, write on discord if you know 
 * Zeus's Thundergod's Wrath: Intelligence damage now scales per Hero Level (up to 75%/lvl).
 * Replaced an lvl 25 talent on Zeus that was not useful with 40% Mr.
 ---
+* Fixed Spirit Guardian attacks not dealing damage or proccing Super Scepter effects.
+* Fixed Multicast (blue) incorrectly removing multiple skills when using Skill Remover.

@@ -109,5 +109,6 @@ function Precach_Item_Resource( context)
     PrecacheResource("particle", "particles/units/heroes/hero_lion/lion_spell_voodoo.vpcf", context)
     PrecacheResource("particle", "particles/units/heroes/hero_puck/puck_illusory_orb.vpcf", context)
     PrecacheResource("particle", "particles/custom/items/broken_wings/broken_wings_feather.vpcf", context)
-
+    PrecacheResource("particle", "particles/custom/items/staff_of_light/staff_of_light_wisp_attack.vpcf", context)
+    PrecacheResource("particle", "particles/custom/items/staff_of_light/staff_of_light_wisp_preattack.vpcf", context)
 end

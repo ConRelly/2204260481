@@ -22769,6 +22769,7 @@
 		"ItemQuality"					"epic"
 		"ItemAliases"					"dragon staff"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+
 		"AbilityValues"
         {
             "hp" "6300"

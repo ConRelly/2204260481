@@ -297,8 +297,9 @@ LinkLuaModifier("modifier_spirit_guardian_heal_cd", "items/staff_of_light.lua", 
 LinkLuaModifier("modifier_spirit_guardian_bonus_dmg", "items/staff_of_light.lua", LUA_MODIFIER_MOTION_NONE)
 function item_spirit_guardian:GetIntrinsicModifierName() return "modifier_spirit_guardian" end
 function item_spirit_guardian:OnSpellStart()
-	if self:GetParent() ~= nil and not self:GetParent():HasModifier("modifier_spirit_guardian_heal_cd") then
-		self:GetParent():AddNewModifier(self:GetParent(), self, "modifier_spirit_guardian_heal", {duration = self:GetSpecialValueFor("guardian_heal_duration")})
+	local caster = self:GetCaster() or self:GetParent()
+	if caster ~= nil and not caster:HasModifier("modifier_spirit_guardian_heal_cd") then
+		caster:AddNewModifier(caster, self, "modifier_spirit_guardian_heal", {duration = self:GetSpecialValueFor("guardian_heal_duration")})
 	end
 end
 -- Spirit Guardian Modifier
@@ -429,8 +430,9 @@ function modifier_spirit_guardian:OnIntervalThink()
 end
 function item_spirit_guardian:OnProjectileHit(target, location)
 	if not target then return end
-	if not self:GetParent() then return end
-	local parent = self:GetParent()
+	local parent = self:GetCaster() or self:GetParent()
+	if not parent then return end
+	print("[Spirit Guardian] OnProjectileHit hit target:", target:GetUnitName(), "Caster:", parent:GetUnitName())
 	local bonus_int = 0
 	local bonus_dmg = 0
 	local stacks = 0
@@ -493,22 +495,30 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 	end
 	local radius = 0
 	local damage = base_dmg + bonus_int + bonus_dmg
-	--local creep_mult = 100--self:GetSpecialValueFor("creep_damage_pct")
-	local enemies = FindUnitsInRadius(self:GetParent():GetTeamNumber(), target:GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_DAMAGE_FLAG_NONE, FIND_ANY_ORDER	, false)
-	for _,enemy in pairs(enemies) do
-		--if enemy:IsCreep() then
-		--	damageTable.damage = damage * (creep_mult/100)
-		--end
-		ApplyDamage({
-			victim = enemy,
-			attacker = self:GetParent(),
-			damage = damage,
-			damage_type = DAMAGE_TYPE_MAGICAL,
-			ability = self,
-		})
-		if IsServer() then
-			if HasSuperScepter(self:GetParent()) then
-				self:GetParent():PerformAttack(enemy, true, true, true, false, true, false, true)
+	print("[Spirit Guardian] Calculated Damage:", damage, "base_dmg:", base_dmg, "bonus_int:", bonus_int, "bonus_dmg:", bonus_dmg, "stacks:", stacks)
+
+	local enemies = {}
+	if radius > 0 then
+		enemies = FindUnitsInRadius(parent:GetTeamNumber(), target:GetOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_DAMAGE_FLAG_NONE, FIND_ANY_ORDER, false)
+	else
+		enemies = { target }
+	end
+
+	for _, enemy in pairs(enemies) do
+		if enemy and IsValidEntity(enemy) and enemy:IsAlive() then
+			ApplyDamage({
+				victim = enemy,
+				attacker = parent,
+				damage = damage,
+				damage_type = DAMAGE_TYPE_MAGICAL,
+				ability = self,
+			})
+			print("[Spirit Guardian] Applied", damage, "magical damage to:", enemy:GetUnitName())
+			if IsServer() then
+				if HasSuperScepter(parent) then
+					print("[Spirit Guardian] Performing Super Scepter attack on:", enemy:GetUnitName())
+					parent:PerformAttack(enemy, true, true, true, false, true, false, true)
+				end
 			end
 		end
 	end

@@ -1,0 +1,16 @@
+"AddonInfo"
+{
+	"maps" 						"bsa ability_mode"
+	"IsPlayable" 				"1"
+	"PenaltiesEnabled"			"0"
+	"EnablePickRules"			"0"
+	
+	"bsa"
+ 	{
+ 		"MaxPlayers" "5"
+ 	}
+	"ability_mode"
+ 	{
+ 		"MaxPlayers" "5"
+ 	}
+}

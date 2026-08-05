@@ -799,6 +799,46 @@
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
 	}
 
+	//=================================================================================================================
+	// Beastmaster: Inner Beast
+	//=================================================================================================================
+	"beastmaster_inner_beast"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"IsBreakable"					"1"
+		"Innate"						"1"
+		"RequiredLevel"					"-1"
+		"MaxLevel"						"1"
+
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"radius"				
+			{
+				"value"		"7200"
+				"affected_by_aoe_increase"	"1"
+			}
+			"bonus_attack_speed"
+			{
+				"value"									"250"
+				"hero_levelup"							"+4"
+				"special_bonus_unique_beastmaster_4"		"+100"
+			}
+			"bonus_damage"
+			{
+				"special_bonus_unique_beastmaster_2"	"+50000"
+			}
+			"magic_resist"
+			{
+				"special_bonus_unique_beastmaster_3"	"50"
+			}
+		}
+	}
 
 //end
-}
+}
