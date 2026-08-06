@@ -18,6 +18,12 @@ Keep this file compact and self-improving. When a task reveals a durable project
 - Vanilla lifesteal lacks overflow guards: single heal instances over 2.14 billion (32-bit int limit) trigger the 1 HP bug. Avoid excessive % lifesteal on non-custom items/talents/skills or use custom guarded lifesteal instead.
 - Modified innate abilities live in `scripts/npc/inate_skills/inate_ab_skills.txt` (included via `npc_abilities_override.txt`). If a Dota update breaks an innate override, compare against vanilla files referenced via `NPC vanilla\scripts\npc\heroes`.
 - Heroes reach levels ~100-120 in late game (70+ min rounds), so per-level scaling values (e.g. per-level attack speed or damage additions) must be kept modest to prevent extreme numbers.
+- Only override the specific abilities or values being modified in `npc_abilities_override.txt` (or `inate_ab_skills.txt` for innates). Avoid duplicating entire hero or ability blocks to prevent falling behind vanilla Dota updates.
+- Panorama source files (`.xml`, `.js`, `.css`) are edited in `D:\SteamLibrary\steamapps\common\dota 2 beta\content\dota_addons\heroattackon_tools\panorama\`. Workshop Tools compiles them into `dota 2 beta\game\dota_addons\heroattackon_tools` (as `.vxml_c` / `.vjs_c`). Note: the content folder has some extra/legacy files, so use it for active source edits rather than a 100% full replacement reference.
+- Game update workflow: Updates are pushed by copying files to the production folder `hero_attack_on_gods` along with updated `patch note.txt` entries (which are also posted to the map's Discord channel).
+
+
+
 
 
 

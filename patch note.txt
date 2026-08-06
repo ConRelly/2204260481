@@ -3641,4 +3641,11 @@ Note: Might buff other heroes in the comming days, write on discord if you know 
 * Replaced an lvl 25 talent on Zeus that was not useful with 40% Mr.
 ---
 * Fixed Spirit Guardian attacks not dealing damage or proccing Super Scepter effects.
-* Fixed Multicast (blue) incorrectly removing multiple skills when using Skill Remover.
+* Fixed Multicast (blue) incorrectly removing multiple skills when using Skill Remover.
+* Beastmaster's Inner Beast: Fixed innate ability giving no benefit when acquired by heroes, and rebalanced per-level attack speed scaling.
+* Beastmaster's Summon Razorback: Updated Boar summon skill to work with modern Dota 2 ability names and restored custom values.
+* Phantom Assassin's Blur: Fixed an issue where the skill could not be leveled up if acquired post-level 25 or without unspent talent points.
+* Fixed HUD shop issue where custom item icons were blank/missing after recent Dota updates.
+---
+
+

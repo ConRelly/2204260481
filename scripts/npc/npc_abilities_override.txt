@@ -2916,8 +2916,56 @@
 
 
 	//=================================================================================================================
-	// Beastmaster: Call of the Wild Boar
+	// Beastmaster: Summon Razorback (Call of the Wild Boar)
 	//=================================================================================================================
+	"beastmaster_summon_razorback"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilitySound"					"Hero_Beastmaster.Call.Boar"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.1"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityValues"
+		{
+			"duration"							"75"
+			"boar_base_max_health"				"300 450 600 750"
+			"boar_base_damage"					"150 300 400 1400"
+			"boar_total_damage_tooltip"
+			{
+				"value"										"150 300 400 1400"
+				"special_bonus_unique_beastmaster_2"		"+50000"
+				"CalculateSpellDamageTooltip"				"0"
+			}
+			"boar_bonus_damage"
+			{
+				"value"										"0"
+				"special_bonus_unique_beastmaster_2"		"+50000"
+			}
+			"boar_base_xp_bounty"				"60 70 80 90"
+			"boar_base_movespeed"				"320 430 540 750"
+			"boar_moveslow_tooltip"				"10 18 26 34"
+			"boar_poison_duration_tooltip"		"3.0"
+
+			"AbilityCooldown"
+			{
+				"value"									"30"
+				"special_bonus_unique_beastmaster_3"	"-5"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
 	"beastmaster_call_of_the_wild_boar"
 	{
 		// General
@@ -2949,7 +2997,7 @@
 			"boar_bonus_damage"
 			{
 				"value"										"0"
-				"special_bonus_unique_beastmaster_2"		"+3500"
+				"special_bonus_unique_beastmaster_2"		"+50000"
 			}
 			"boar_base_xp_bounty"				"60 70 80 90"
 			"boar_base_movespeed"				"320 430 540 750"
@@ -2958,6 +3006,7 @@
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
+
 
 	"beastmaster_call_of_the_wild_hawk"
 	{
