@@ -1,5 +1,13 @@
+local precached_paths = {}
+local unique_count = 0
+local duplicate_count = 0
+
 function Precache_Resource( context )
     print("!!! BEGIN PRECACHE RESOURCE")
+    precached_paths = {}
+    unique_count = 0
+    duplicate_count = 0
+
     PrecacheItemByNameSync("item_tombstone", context)
     PrecacheItemByNameSync("item_bag_of_gold", context)
 
@@ -8,7 +16,7 @@ function Precache_Resource( context )
     -- Enable unit resource precaching
     Precache_Unit_Resource(context)
     Precach_Item_Resource(context)
-    print("!!! FINISH PRECACHE RESOURCE")
+    print("!!! FINISH PRECACHE RESOURCE. Unique resources precached: " .. unique_count .. " (Skipped " .. duplicate_count .. " duplicates)")
 end
 
 --自动预载入
@@ -29,34 +37,34 @@ function PrecacheEveryThingFromKV( context )
         end
     end
 end
-function PrecacheEverythingFromTable(context,kvtable)
-    for key,value in pairs(kvtable) do
-            if type(value) == "table" then
-                    PrecacheEverythingFromTable(context,value)
+function PrecacheEverythingFromTable(context, kvtable)
+    for key, value in pairs(kvtable) do
+        if type(value) == "table" then
+            PrecacheEverythingFromTable(context, value)
+        elseif type(value) == "string" then
+            if not precached_paths[value] then
+                precached_paths[value] = true
+                unique_count = unique_count + 1
+
+                if string.find(value, "vpcf") then
+                    PrecacheResource("particle", value, context)
+                elseif string.find(value, "vmdl") then
+                    PrecacheResource("model", value, context)
+                elseif string.find(value, "vsndevts") or string.find(value, "%.vsnd") then
+                    PrecacheResource("soundfile", value, context)
+                end
             else
-                if string.find(value,"vpcf") then
-                        PrecacheResource("particle",value,context)
-                        -- print("!!! PRECACHE PARTICLE RESOURCE",value)
-                end
-                if string.find(value,"vmdl") then
-                        PrecacheResource("model",value,context)
-                        -- print("!!! PRECACHE MODEL RESOURCE",value)
-                end
-                if string.find(value,"vsndevts") then
-                        PrecacheResource("soundfile",value,context)
-                        -- print("!!! PRECACHE SOUND RESOURCE",value)
-                end
-				if string.find(value, ".vsnd") then
-                    PrecacheResource("soundfile",value,context)
-                    -- print("!!! PRECACHE SOUND RESOURCE",value)
-				end
-				if string.find(key,"particle_folder") then
-						PrecacheResource("particle_folder",value,context)
-						-- print("!!! PRECACHE PARTICLE FOLDER RESOURCE",value)
-				end
+                duplicate_count = duplicate_count + 1
             end
+
+            if string.find(key, "particle_folder") and not precached_paths["folder:" .. value] then
+                precached_paths["folder:" .. value] = true
+                PrecacheResource("particle_folder", value, context)
+            end
+        end
     end
 end
+
 
 function Precache_Unit_Resource( context )
     print("!!! BEGIN PRECACHE UNIT RESOURCE")

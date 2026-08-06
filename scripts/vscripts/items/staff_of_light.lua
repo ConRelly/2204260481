@@ -432,7 +432,6 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 	if not target then return end
 	local parent = self:GetCaster() or self:GetParent()
 	if not parent then return end
-	print("[Spirit Guardian] OnProjectileHit hit target:", target:GetUnitName(), "Caster:", parent:GetUnitName())
 	local bonus_int = 0
 	local bonus_dmg = 0
 	local stacks = 0
@@ -495,7 +494,6 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 	end
 	local radius = 0
 	local damage = base_dmg + bonus_int + bonus_dmg
-	print("[Spirit Guardian] Calculated Damage:", damage, "base_dmg:", base_dmg, "bonus_int:", bonus_int, "bonus_dmg:", bonus_dmg, "stacks:", stacks)
 
 	local enemies = {}
 	if radius > 0 then
@@ -513,10 +511,8 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 				damage_type = DAMAGE_TYPE_MAGICAL,
 				ability = self,
 			})
-			print("[Spirit Guardian] Applied", damage, "magical damage to:", enemy:GetUnitName())
 			if IsServer() then
 				if HasSuperScepter(parent) then
-					print("[Spirit Guardian] Performing Super Scepter attack on:", enemy:GetUnitName())
 					parent:PerformAttack(enemy, true, true, true, false, true, false, true)
 				end
 			end
