@@ -435,7 +435,7 @@ function IsExcludeAbility9(ability)
 		"item_thunder_gods_might",
 		"item_thunder_gods_might2",	
 		"item_pipe_of_dezun",
-		"item_remove_ability"
+		"item_remove_ability",
 -- Abilities
 		"mjz_tinker_quick_arm",
 		"naga_siren_song_of_the_siren",
