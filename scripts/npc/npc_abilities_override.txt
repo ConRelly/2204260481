@@ -8341,27 +8341,29 @@
 	}	
 	"phantom_assassin_blur"
 	{
-        //"LevelsBetweenUpgrades"         "10"
-        "Innate"                        "0"  
-        "DependentOnAbility"            ""  
-        "AbilityCastPoint"				"0.0"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"4"
+		"Innate"						"0"
+		"DependentOnAbility"			""
+		"AbilityCastPoint"				"0.0"
 		"AbilityValues"
-        {
-            "bonus_evasion"
-            {
-                "value" "20 30 40 50"
-                "LinkedSpecialBonus" "special_bonus_unique_phantom_assassin_3"
-            }
-            "duration" "8"
-            "fade_duration" "0.2"
-            "active_movespeed_bonus"  "30 60 90 120"
-            "AbilityCooldown"               
-            {
-                "value"                 "60 55 50 45"
-                "special_bonus_shard"       "-20"
-            }            
-        }
+		{
+			"bonus_evasion"
+			{
+				"value" "20 30 40 50"
+				"LinkedSpecialBonus" "special_bonus_unique_phantom_assassin_3"
+			}
+			"duration" "8"
+			"fade_duration" "0.2"
+			"active_movespeed_bonus"  "30 60 90 120"
+			"AbilityCooldown"               
+			{
+				"value"                 "60 55 50 45"
+				"special_bonus_shard"       "-20"
+			}            
+		}
 	}
+
 	"phantom_assassin_coup_de_grace"
 	{
 		"AbilityValues"

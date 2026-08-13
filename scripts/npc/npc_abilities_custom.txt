@@ -1429,33 +1429,31 @@
 	}
 	"boss_shadow_demon_soul_catcher"
 	{
-		"BaseClass"						"shadow_demon_soul_catcher"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"BaseClass"						"shadow_demon_disseminate"
+		"AbilityTextureName"			"shadow_demon_disseminate"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
 		"AbilitySound"					"Hero_ShadowDemon.Soul_Catcher"
 
 		"AbilityCooldown"				"10"
 		"AbilityCastRange"				"700"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.0"
+		"AbilityCastPoint"				"0.3"
 		"AbilityManaCost"				"0"
 
 		"AbilityValues"
-        {
-            "health_lost" "45"
-            "radius" "250"
-            "duration" "10"
-            "illusion_outgoing_damage" "-70 -55 -40 -25"
-            "illusion_outgoing_damage_tooltip" "30 45 60 75"
-            "illusion_incoming_damage" "100"
-            "illusion_incoming_damage_tooltip" "200"
-        }
+		{
+			"duration" "10"
+			"health_lost" "45"
+			"damage_reflection_pct" "40"
+			"radius" "1675"
+		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
+
 	"boss_shadow_demon_demonic_purge"
 	{
 		"BaseClass"						"shadow_demon_demonic_purge"
@@ -10005,7 +10003,7 @@
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"SpellDispellableType"		  "SPELL_DISPELLABLE_NO"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AbilityTextureName"			"shadow_demon_soul_catcher"
+	"AbilityTextureName"			"shadow_demon_disseminate"
 	"AbilityCastRange"			  "1400"
 	"AbilityCastPoint"				"0.1"
 	"MaxLevel"					  "7"

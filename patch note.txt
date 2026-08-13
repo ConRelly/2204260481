@@ -3650,3 +3650,9 @@ Note: Might buff other heroes in the comming days, write on discord if you know 
 * Fixed a posibile game loading crash (32767 engine handle limit) caused by redundant precaching of duplicate particles, models, and sounds.
 ---
 * Fixed Multicast(both) , fixed ogre missing talent and replaced a lvl 10 one that was used.
+---
+* Phantom Assassin's Blur: Fixed an issue where the skill could not be leveled up normally with ability points.
+* Skill Remover: Fixed a bug where using the item could remove an additional skill due to an unintended internal ability swap.
+* Shadow Demon (Boss): Fixed missing ability icon(for hero too) and updated skill to Disseminate.
+---
+

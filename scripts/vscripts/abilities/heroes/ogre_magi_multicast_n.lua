@@ -409,6 +409,7 @@ function IsExcludeAbilityN(ability)
 -- Items
 		"item_custom_ex_machina",
 		"item_spellbook_destruction",
+		"item_remove_ability",
 -- Abilities
 		"shadow_shaman_shackles",
 		"obsidian_destroyer_arcane_orb",
@@ -421,6 +422,7 @@ function IsExcludeAbilityN(ability)
 	end
 	return false
 end
+
 
 function IsExcludeAbility9(ability)
 	local list = {
