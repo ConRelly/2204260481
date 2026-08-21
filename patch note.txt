@@ -3655,4 +3655,7 @@ Note: Might buff other heroes in the comming days, write on discord if you know 
 * Skill Remover: Fixed a bug where using the item could remove an additional skill due to an unintended internal ability swap.
 * Shadow Demon (Boss): Fixed missing ability icon(for hero too) and updated skill to Disseminate.
 ---
+* Hoodwink's Sharpshooter: Fixed a bug where the ability would disappear after autocasting (especially when using Super Scepter autocast or when moved outside keybinds).
+* Hoodwink: Replaced an unused level 25 talent with 25% Cooldown Reduction, and added a +125% Spell Amplification talent.
+---
 

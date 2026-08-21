@@ -71,6 +71,7 @@ local NoAutocast = {
     ["dawnbreaker_solar_guardian"] = true,
     ["dawnbreaker_land"] = true,  
     ["faceless_void_time_walk_reverse"] = true,  
+    ["hw_sharpshooter_release"] = true,
 };
 
 local TargetSpell = {

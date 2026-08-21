@@ -21,6 +21,7 @@ Keep this file compact and self-improving. When a task reveals a durable project
 - Only override the specific abilities or values being modified in `npc_abilities_override.txt` (or `inate_ab_skills.txt` for innates). Avoid duplicating entire hero or ability blocks to prevent falling behind vanilla Dota updates.
 - Panorama source files (`.xml`, `.js`, `.css`) are edited in `D:\SteamLibrary\steamapps\common\dota 2 beta\content\dota_addons\heroattackon_tools\panorama\`. Workshop Tools compiles them into `dota 2 beta\game\dota_addons\heroattackon_tools` (as `.vxml_c` / `.vjs_c`). Note: the content folder has some extra/legacy files, so use it for active source edits rather than a 100% full replacement reference.
 - Game update workflow: Updates are pushed by copying files to the production folder `hero_attack_on_gods` along with updated `patch note.txt` entries (which are also posted to the map's Discord channel).
+- Autocast & Multi-Autocast (`mjz_bristleback_quill_spray_autocast*.lua`): Secondary sub-abilities, release/stop triggers, and channeled toggles (e.g. `hw_sharpshooter_release`, `dawnbreaker_land`, `faceless_void_time_walk_reverse`) must be in the `NoAutocast` ignore list to avoid premature cancellation or slot desyncs. The user has deep domain insight into autocast ignore lists and mechanics.
 
 
 
