@@ -49,16 +49,12 @@ end
 function hw_sharpshooter:OnUpgrade()
 	if not IsServer() then return end
 	local caster = self:GetCaster()
-	if not caster:HasAbility("hw_sharpshooter_release") then
-		local release_ability = caster:AddAbility("hw_sharpshooter_release")
-		if release_ability then
-			release_ability:SetLevel(self:GetLevel())
-		end
-	else
-		local release_ability = caster:FindAbilityByName("hw_sharpshooter_release")
-		if release_ability then
-			release_ability:SetLevel(self:GetLevel())
-		end
+	local release_ability = caster:FindAbilityByName("hw_sharpshooter_release")
+	if not release_ability then
+		release_ability = caster:AddAbility("hw_sharpshooter_release")
+	end
+	if release_ability then
+		release_ability:SetLevel(self:GetLevel())
 	end
 end
 function hw_sharpshooter:GetCastRange(location, target)
@@ -244,19 +240,11 @@ function modifier_hw_sharpshooter:OnCreated(kv)
 		iVisionTeamNumber = self.caster:GetTeamNumber()
 	}
 
-	self.swapped = false
-	local is_fast_ss_autocast = self:GetAbility() and self:GetAbility():GetAutoCastState() and self.caster:HasModifier("modifier_super_scepter")
-	if not is_fast_ss_autocast then
-		if not self.caster:HasAbility("hw_sharpshooter_release") then
-			local release_ability = self.caster:AddAbility("hw_sharpshooter_release")
-			if release_ability and self:GetAbility() then
-				release_ability:SetLevel(self:GetAbility():GetLevel())
-			end
-		end
-		if self.caster:HasAbility("hw_sharpshooter_release") then
-			self.caster:SwapAbilities("hw_sharpshooter", "hw_sharpshooter_release", false, true)
-			self.swapped = true
-		end
+	self.caster:SwapAbilities("hw_sharpshooter", "hw_sharpshooter_release", false, true)
+	local release_ability = self.caster:FindAbilityByName("hw_sharpshooter_release")
+	if release_ability and not release_ability:IsNull() then
+		release_ability:SetHidden(false)
+		release_ability:SetActivated(true)
 	end
 
 	self:PlayEffects1()
@@ -285,12 +273,9 @@ function modifier_hw_sharpshooter:OnDestroy()
 	end	
 	
 
-	if self.swapped and self.caster:HasAbility("hw_sharpshooter_release") then
-		self.caster:SwapAbilities("hw_sharpshooter", "hw_sharpshooter_release", true, false)
-	end
+	self.caster:SwapAbilities("hw_sharpshooter", "hw_sharpshooter_release", true, false)
 
-	-- Safety guarantee: ensure hw_sharpshooter is never left hidden or disabled
-	local main_ability = self:GetAbility()
+	local main_ability = self.caster:FindAbilityByName("hw_sharpshooter")
 	if main_ability and not main_ability:IsNull() then
 		main_ability:SetHidden(false)
 		main_ability:SetActivated(true)
@@ -298,7 +283,6 @@ function modifier_hw_sharpshooter:OnDestroy()
 	local release_ability = self.caster:FindAbilityByName("hw_sharpshooter_release")
 	if release_ability and not release_ability:IsNull() then
 		release_ability:SetHidden(true)
-		release_ability:SetActivated(false)
 	end
 
 	self:GetParent():FadeGesture(ACT_DOTA_CHANNEL_ABILITY_6)

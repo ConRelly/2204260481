@@ -3658,4 +3658,6 @@ Note: Might buff other heroes in the comming days, write on discord if you know 
 * Hoodwink's Sharpshooter: Fixed a bug where the ability would disappear after autocasting (especially when using Super Scepter autocast or when moved outside keybinds).
 * Hoodwink: Replaced an unused level 25 talent with 25% Cooldown Reduction, and added a +125% Spell Amplification talent.
 ---
+* Hoodwink's Sharpshooter: Fixed manual early release not activating during windup, and resolved ability disappearing during autocast.
+---
 
