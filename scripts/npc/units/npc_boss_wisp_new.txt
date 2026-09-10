@@ -14,7 +14,7 @@
 	"AbilityLayout"							"7"
 	"precache"
 	{
-		"particle_folder"					"particles/units/heroes/hero_wisp"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_wisp"
 	}
 
 	// Abilities

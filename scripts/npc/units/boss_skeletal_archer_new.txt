@@ -11,7 +11,7 @@
 	"ConsideredHero"			"1"
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_clinkz"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_clinkz"
 	}
 	"Ability1"					""			// Ability 1
 	"Ability2"					"clinkz_searing_arrows"			// Ability 2

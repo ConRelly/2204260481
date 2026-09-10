@@ -87,8 +87,8 @@ if Cheats:IsEnabled() then
 	MONSTER_CONFIG = "aoh2_config_siltbreaker_200809.txt" --"test_short_rounds.txt" --  
 	print("CHeat mode")
 end	
-
-Precache = require "Precache"
+-- Precache is handled centrally in addon_game_mode.lua and hack/precache_resource.lua
+-- Precache = require "Precache"
 
 
 

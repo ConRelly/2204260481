@@ -1,3 +1,5 @@
+-- NOTE: Resource precaching is now managed centrally via addon_game_mode.lua and hack/precache_resource.lua.
+-- The curated particle and sound lists from this file have been incorporated into Precache_Extra_Game_Resources().
 local particles = {
     "particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_necro_souls_hero.vpcf",    
     "particles/units/heroes/hero_ogre_magi/ogre_magi_bloodlust_buff.vpcf",

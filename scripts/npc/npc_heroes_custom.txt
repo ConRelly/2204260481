@@ -2645,7 +2645,7 @@
 		"MovementTurnRate"				"0.5"
 		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
 		"VoiceFile"						"soundevents/voscripts/game_sounds_vo_lina.vsndevts"
-		"particle_folder"				"particles/units/heroes/hero_lina"
+		// [CLoadingResource fix] "particle_folder"				"particles/units/heroes/hero_lina"
 		"GameSoundsFile"				"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
 	}
 
@@ -2670,8 +2670,8 @@
 		"Ability12"		"special_earth_spirit_rolling_stone_dmg_reduction"
 		"Ability13"		"special_bonus_reincarnation_90"
 		"Ability14"		"special_bonus_hp_5000"
-		"Ability15"		"special_bonus_unique_earth_spirit_5"
-		"Ability16"		"special_bonus_unique_earth_spirit_2"
+		"Ability15"		"special_bonus_magic_resistance_25"
+		"Ability16"		"special_bonus_cdr_30"
 		"Ability17"		"special_bonus_spell_amplify_125"
 
 		"ArmorPhysical"					"6"

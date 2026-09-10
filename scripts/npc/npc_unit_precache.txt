@@ -1,8 +1,15 @@
+// DEPRECATED: This file defined dummy creep units containing particle_folder for ~120 heroes.
+// In Source 2 Dota 2, calling PrecacheResource("particle_folder", ...) scans the filesystem
+// and queues every .vpcf file in that folder into CLoadingResource (over 21,300 particles).
+// This causes the fatal engine crash:
+// "GrowCount: unable to grow count by 1 (currently 32767)"
+// Precaching is now handled cleanly and individually via hack/precache_resource.lua.
 
 "DOTAUnits"
 {
 	"Version"	"1"
 
+/*
 	"npc_precache_npc_dota_hero_antimage"{
 	"BaseClass""npc_dota_creep""IsSummoned""1""precache"{"particle_folder" "particles/units/heroes/hero_antimage""soundfile" "soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"}}"npc_precache_npc_dota_hero_axe"{
 	"BaseClass""npc_dota_creep""IsSummoned""1""precache"{
@@ -237,4 +244,5 @@
 	"npc_precache_npc_dota_hero_dawnbreaker"{
 	"BaseClass""npc_dota_creep""IsSummoned""1""precache"{
 	"particle_folder" "particles/units/heroes/hero_dawnbreaker/""soundfile" "soundevents/game_sounds_heroes/game_sounds_dawnbreaker.vsndevts"}}	
+*/
 }

@@ -2699,7 +2699,7 @@
 	"PingOverrideText"				"DOTA_Chat_Tombstone_Pinged"
 	"precache"
 	{
-		"particle_folder" "particles/units/heroes/hero_morphling"
+		// [CLoadingResource fix] "particle_folder" "particles/units/heroes/hero_morphling"
 	}
 	"AbilityCastRange"				"100"
 	"AbilityCastPoint"				"0.0"

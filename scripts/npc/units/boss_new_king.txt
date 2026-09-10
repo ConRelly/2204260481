@@ -17,7 +17,7 @@
 	
     "precache"
     {
-        "particle_folder"		"particles/units/heroes/hero_skeletonking"
+        // [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_skeletonking"
     }
 
     "ArmorPhysical"				"50"

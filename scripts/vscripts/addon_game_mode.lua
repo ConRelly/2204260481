@@ -61,7 +61,6 @@ function Precache(context)
 		"soundevents/game_sounds_heroes/game_sounds_spirit_breaker.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_riki.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts",
-		"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_troll_warlord.vsndevts",

@@ -4628,7 +4628,7 @@
 	"precache"
 	{
 		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
-		"particle_folder"			"particles/units/heroes/hero_phoenix"
+		// [CLoadingResource fix] "particle_folder"			"particles/units/heroes/hero_phoenix"
 	}
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
@@ -14112,7 +14112,7 @@
 	"AbilityTextureName"			"skeleton_king_reincarnation"
 	"Precache"
 	{
-		"particle_folder"			"particles/units/heroes/hero_skeletonking"
+		// [CLoadingResource fix] "particle_folder"			"particles/units/heroes/hero_skeletonking"
 	}
 	"OnOwnerDied"
 	{

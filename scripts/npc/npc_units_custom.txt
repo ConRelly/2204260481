@@ -1,4 +1,4 @@
-#base npc_unit_precache.txt
+//#base npc_unit_precache.txt // Disabled: prevents loading 116 dummy hero folders into CLoadingResource (32767 limit)
 
 "DOTAUnits"
 {
@@ -78,7 +78,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_death_prophet"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_death_prophet"
 		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts"
 	}
 
@@ -580,7 +580,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_juggernaut"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_juggernaut"
 		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
 	}
 
@@ -722,7 +722,7 @@
 	"HasInventory"							"1"
 	"precache"
 	{
-		"particle_folder"					"particles/units/heroes/hero_undying"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_undying"
 	}
 
 	"Ability1"								"custom_incapacitating_bite"
@@ -786,7 +786,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_chaos_knight"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_chaos_knight"
 	}
 
 	"Ability1"					"custom_chaos_bolt"
@@ -863,8 +863,8 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_chaos_knight"
-		"particle_folder"		"particles/units/heroes/hero_faceless_void"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_chaos_knight"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_faceless_void"
 	}
 
 	"Ability1"					"custom_reality_rift"
@@ -1344,7 +1344,7 @@
 	"precache"
 	{
 		"model"								"models/heroes/witchdoctor/witchdoctor_ward.vmdl"
-		"particle_folder"					"particles/units/heroes/hero_witchdoctor"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_witchdoctor"
 	}
 
 	"Ability1"								"custom_paralyzing_cask"
@@ -1441,7 +1441,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_grimstroke"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_grimstroke"
 	}
 
 	"Ability1"					"custom_dark_artistry"
@@ -1733,7 +1733,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_bristleback"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_bristleback"
 	}
 
 	"Ability1"					"custom_quill_spray"
@@ -1818,7 +1818,7 @@
 
 	"precache"
 	{
-		"particle_folder"	   "particles/units/heroes/hero_bristleback"
+		// [CLoadingResource fix] "particle_folder"	   "particles/units/heroes/hero_bristleback"
 	}
 
 	"Ability1"				  "custom_quill_spray"
@@ -2032,7 +2032,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_luna"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_luna"
 	}
 
 	"Ability1"					"custom_moon_glaive"
@@ -2132,7 +2132,7 @@
 
 	"precache"
 	{
-		"particle_folder"	   "particles/units/heroes/hero_luna"
+		// [CLoadingResource fix] "particle_folder"	   "particles/units/heroes/hero_luna"
 	}
 
 	"Ability1"				  "custom_moon_glaive"
@@ -2598,7 +2598,7 @@
 	"AbilityLayout"				"5"
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_nyx_assassin"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_nyx_assassin"
 		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_nyx_assassin.vsndevts"
 	}
 	
@@ -2965,7 +2965,7 @@
 	"AbilityLayout"				"4"
 	"precache"
 	{
-		"particle_folder"			"particles/units/heroes/hero_brewmaster"
+		// [CLoadingResource fix] "particle_folder"			"particles/units/heroes/hero_brewmaster"
 	}
 	
 	// Abilities
@@ -3106,7 +3106,7 @@
 	"AbilityLayout"				"4"
 	"precache"
 	{
-		"particle_folder"			"particles/units/heroes/hero_winter_wyvern"
+		// [CLoadingResource fix] "particle_folder"			"particles/units/heroes/hero_winter_wyvern"
 	}
 	
 	// Abilities
@@ -3249,8 +3249,8 @@
 	"AbilityLayout"							"5"
 	"precache"
 	{
-		"particle_folder"					"particles/units/heroes/hero_enigma"
-		"particle_folder"					"particles/units/heroes/hero_arc_warden"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_enigma"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_arc_warden"
 		"soundfile"							"soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
 	}
 
@@ -3498,7 +3498,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_zuus"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_zuus"
 	}
 
 	"Ability1"					"custom_arc_lightning"
@@ -3605,8 +3605,8 @@
 	{
 		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_lycan.vsndevts"
 		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
-		"particle_folder"		"particles/units/heroes/hero_lycan"
-		"particle_folder"		"particles/units/heroes/hero_sven"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_lycan"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_sven"
 		"model"					"models/heroes/lycan/summon_wolves.vmdl"
 	}
 
@@ -3736,7 +3736,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_earthshaker"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_earthshaker"
 	}
 	"Ability1"					"custom_infernal_blade"
 	"Ability2"					"custom_fissure"
@@ -3869,7 +3869,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_kunkka"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_kunkka"
 		"particle"			  "particles/units/heroes/hero_kunkka/kunkka_ghost_ship.vpcf"
 		"particle"			  "particles/units/heroes/hero_kunkka/kunkka_ghost_ship_model.vpcf"
 		"model"				 "models/heroes/kunkka/ghostship.vmdl"
@@ -3991,7 +3991,7 @@
 
 	"precache"
 	{
-		"particle_folder"	   "particles/units/heroes/hero_kunkka"
+		// [CLoadingResource fix] "particle_folder"	   "particles/units/heroes/hero_kunkka"
 		"particle"			  "particles/units/heroes/hero_kunkka/kunkka_ghost_ship.vpcf"
 		"particle"			  "particles/units/heroes/hero_kunkka/kunkka_ghost_ship_model.vpcf"
 		"model"				 "models/heroes/kunkka/ghostship.vmdl"
@@ -4121,7 +4121,7 @@
 	"HasInventory"							"1"
 	"precache"
 	{
-		"particle_folder"					"particles/units/heroes/hero_techies"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_techies"
 	}
 	"Ability1"							  "custom_land_mines"
 	"Ability2"							  "custom_suicide"
@@ -4214,7 +4214,7 @@
 	"HasInventory"							"1"
 	"precache"
 	{
-		"particle_folder"					"particles/units/heroes/hero_techies"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_techies"
 	}
 	"Ability1"							  "custom_land_mines"
 	"Ability2"							  "custom_techies_behavior"
@@ -4318,7 +4318,7 @@
 	"HasInventory"				"1"
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_rattletrap"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_rattletrap"
 	}
 	
 	"Ability1"					"boss_rattletrap_battery_assault"
@@ -4406,7 +4406,7 @@
 	"HasInventory"			  "1"
 	"precache"
 	{
-		"particle_folder"	   "particles/units/heroes/hero_rattletrap"
+		// [CLoadingResource fix] "particle_folder"	   "particles/units/heroes/hero_rattletrap"
 	}
 	
 	"Ability1"				  "boss_rattletrap_battery_assault"
@@ -4491,7 +4491,7 @@
 
 	"precache"
 	{
-		"particle_folder"					"particles/units/heroes/hero_crystalmaiden"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_crystalmaiden"
 	}
 
 	"Ability1"								"custom_crystal_nova"
@@ -4942,7 +4942,7 @@
 
 	"precache"
 	{
-		"particle_folder"					"particles/units/heroes/hero_medusa"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_medusa"
 	}
 
 	"Ability1"							  "custom_wave_of_silence"
@@ -5054,7 +5054,7 @@
 
 	"precache"
 	{
-		"particle_folder"					"particles/units/heroes/hero_tinker"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_tinker"
 	}
 
 	"Ability1"							  "custom_heat_seeking_missile"
@@ -5150,7 +5150,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_rattletrap"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_rattletrap"
 	}
 
 	"Ability1"					"custom_march_of_the_machines"
@@ -5227,7 +5227,7 @@
 
 	"precache"
 	{
-		"particle_folder"					"particles/units/heroes/hero_sniper"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_sniper"
 	}
 
 	"Ability1"							  "troll_warlord_fervor"
@@ -5300,7 +5300,7 @@
 	"AbilityLayout"							"4"
 	"precache"
 	{
-		"particle_folder"					"particles/units/heroes/hero_nevermore"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_nevermore"
 	}
 
 	// Abilities
@@ -5431,7 +5431,7 @@
 	"AbilityLayout"							"5"
 	"precache"
 	{
-		"particle_folder"				"particles/units/heroes/hero_shadow_demon"
+		// [CLoadingResource fix] "particle_folder"				"particles/units/heroes/hero_shadow_demon"
 	}
 
 	// Abilities
@@ -5631,7 +5631,7 @@
 	"HasInventory"				"1"
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_ember_spirit"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_ember_spirit"
 	}
 	
 	// Abilities
@@ -5878,7 +5878,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_phantom_lancer"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_phantom_lancer"
 	}
 
 	"Ability1"					"custom_spirit_lance"
@@ -6007,7 +6007,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_phantom_lancer"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_phantom_lancer"
 	}
 
 	"Creature"
@@ -6051,7 +6051,7 @@
 	"AbilityLayout"				"5"
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_spectre"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_spectre"
 	}
 	"Ability1"					"custom_spectral_dagger"
 	"Ability2"				  "spectre_custom_dispersion_boss"
@@ -6159,7 +6159,7 @@
 	"AbilityLayout"				"5"
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_spectre"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_spectre"
 	}
 	"Ability1"					"custom_spectral_dagger"
 	"Ability2"				  "spectre_custom_dispersion_boss"
@@ -6272,7 +6272,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_antimage"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_antimage"
 	}
 
 	"Ability1"					"custom_aura_mana_drain"
@@ -6376,7 +6376,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_antimage"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_antimage"
 	}
 
 	"Ability1"					"custom_aura_mana_drain"
@@ -6485,7 +6485,7 @@
 	"AbilityLayout"				"5"
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_elder_titan"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_elder_titan"
 		//"soundfile"				"soundevents/game_sounds_heroes/hero_earthshaker.vsndevts"
 		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts"
 	}
@@ -6643,7 +6643,7 @@
 	"AbilityLayout"							"5"
 	"precache"
 	{
-		"particle_folder"					"particles/units/heroes/hero_lich"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_lich"
 	}
 
 	// Abilities
@@ -7237,7 +7237,7 @@
 	"vscripts"					"bosses/attack_move.lua"
 	"precache"
 	{
-		"particle_folder"			"particles/units/heroes/hero_spirit_breaker"
+		// [CLoadingResource fix] "particle_folder"			"particles/units/heroes/hero_spirit_breaker"
 	}
 	
 	// Abilities
@@ -7418,7 +7418,7 @@
 
 	"precache"
 	{
-		"particle_folder"					"particles/units/heroes/hero_mirana"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_mirana"
 	}
 
 	"Ability1"								"custom_sacred_arrow"
@@ -7512,7 +7512,7 @@
 
 	"precache"
 	{
-		"particle_folder"				   "particles/units/heroes/hero_mirana"
+		// [CLoadingResource fix] "particle_folder"				   "particles/units/heroes/hero_mirana"
 	}
 
 	"Ability1"							  "custom_sacred_arrow"
@@ -7604,7 +7604,7 @@
 	"HasInventory"				"1"
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_ember_spirit"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_ember_spirit"
 	}
 	
 	// Abilities
@@ -7826,7 +7826,7 @@
 
 	"precache"
 	{
-		"particle_folder"					"particles/units/heroes/hero_rubick"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_rubick"
 		"soundfile"							"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
 	}
 
@@ -7957,7 +7957,7 @@
 
 	"precache"
 	{
-		"particle_folder"					"particles/units/heroes/hero_rubick"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_rubick"
 		"soundfile"							"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
 	}
 
@@ -8452,7 +8452,7 @@
 		"AbilityLayout"							"5"
 		"precache"
 		{
-			"particle_folder"				"particles/units/heroes/hero_shadow_demon"
+			// [CLoadingResource fix] "particle_folder"				"particles/units/heroes/hero_shadow_demon"
 		}
 
 		// Abilities
@@ -8530,7 +8530,7 @@
 		"AbilityLayout"							"5"
 		"precache"
 		{
-			"particle_folder"				"particles/units/heroes/hero_shadow_demon"
+			// [CLoadingResource fix] "particle_folder"				"particles/units/heroes/hero_shadow_demon"
 		}
 
 		// Abilities
@@ -8704,7 +8704,7 @@
 		"AbilityLayout"				"6"
 		"precache"
 		{
-			"particle_folder"		"particles/units/heroes/hero_terrorblade"
+			// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_terrorblade"
 		}
 		
 		// Abilities
@@ -8853,7 +8853,7 @@
 		"AbilityLayout"				"6"
 		"precache"
 		{
-			"particle_folder"		"particles/units/heroes/hero_terrorblade"
+			// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_terrorblade"
 		}
 		
 		// Abilities
@@ -9004,7 +9004,7 @@
 		"UnitLabel" "temp_unit"
 		"precache"
 		{
-			"particle_folder"		"particles/units/heroes/hero_spectre"
+			// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_spectre"
 		}
 		
 		// Armor
@@ -9143,7 +9143,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_skeletonking"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_skeletonking"
 	}
 
 
@@ -9273,7 +9273,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_skeletonking"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_skeletonking"
 	}
 
 
@@ -9417,7 +9417,7 @@
 
 	"precache"
 	{
-		"particle_folder"	   "particles/units/heroes/hero_skeletonking"
+		// [CLoadingResource fix] "particle_folder"	   "particles/units/heroes/hero_skeletonking"
 	}
 
 
@@ -9556,7 +9556,7 @@
 	"AbilityLayout"							"7"
 	"precache"
 	{
-		"particle_folder"					"particles/units/heroes/hero_wisp"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_wisp"
 	}
 
 	// Abilities
@@ -9731,7 +9731,7 @@
 	"ModelScale" 				"1.1"
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_clinkz"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_clinkz"
 	}
 	"Ability1"					""			// Ability 1
 	"Ability2"					""			// Ability 2
@@ -11090,7 +11090,7 @@
 	
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_skeletonking"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_skeletonking"
 	}
 
 	"ArmorPhysical"				"68"
@@ -11216,7 +11216,7 @@
 	//"IsBossMonster"			 "1"
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_clinkz"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_clinkz"
 	}
 	//"Ability1"					"aghanim_blink3"			// Ability 1
 	"Ability2"					"clinkz_searing_arrows_boss"			// Ability 2
@@ -11843,7 +11843,7 @@
 	"GameSoundsFile"						"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
 	"SoundSet"								"hero_Crystal"
 	"VoiceFile"								"soundevents/voscripts/game_sounds_vo_crystalmaiden.vsndevts"
-	"particle_folder"						"particles/units/heroes/hero_crystalmaiden"
+	// [CLoadingResource fix] "particle_folder"						"particles/units/heroes/hero_crystalmaiden"
 	"Level"								 "25"
 	"ModelScale"							"2.0"
 	"ConsideredHero"						"1"
@@ -11853,7 +11853,7 @@
 
 	"precache"
 	{
-		"particle_folder"					"particles/units/heroes/hero_crystalmaiden"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_crystalmaiden"
 		"soundfile" 						"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
 		"particle" 	"particles/units/heroes/hero_crystalmaiden/maiden_loadout.vpcf"
 		"particle" 	"particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_base_attack.vpcf"
@@ -11987,7 +11987,7 @@
 	"AbilityLayout"							"7"
 	"precache"
 	{
-		"particle_folder"					"particles/units/heroes/hero_wisp"
+		// [CLoadingResource fix] "particle_folder"					"particles/units/heroes/hero_wisp"
 	}
 
 	// Abilities
@@ -13068,7 +13068,7 @@
 	"ConsideredHero"			"1"
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_clinkz"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_clinkz"
 	}
 	"Ability2"					"clinkz_searing_arrows"			// Ability 2
 	//"Ability3"					"clinkz_burning_army"			// Ability 3
@@ -13153,7 +13153,7 @@
 		"ConsideredHero"			"1"
 		"precache"
 		{
-			"particle_folder"		"particles/units/heroes/hero_elder_titan"
+			// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_elder_titan"
 			"soundfile"				"soundevents/game_sounds_heroes/hero_earthshaker.vsndevts"
 		}
 
@@ -13307,7 +13307,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_skeletonking"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_skeletonking"
 	}
 
 
@@ -13551,7 +13551,7 @@
 
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_juggernaut"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_juggernaut"
 		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
 	}
 
@@ -13673,7 +13673,7 @@
 
 	"precache"
 	{
-		"particle_folder"	   "particles/units/heroes/hero_juggernaut"
+		// [CLoadingResource fix] "particle_folder"	   "particles/units/heroes/hero_juggernaut"
 		"soundfile"			 "soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
 	}
 
@@ -13801,7 +13801,7 @@
 
 	"precache"
 	{
-		"particle_folder"	   "particles/units/heroes/hero_juggernaut"
+		// [CLoadingResource fix] "particle_folder"	   "particles/units/heroes/hero_juggernaut"
 		"soundfile"			 "soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
 	}
 
@@ -14960,7 +14960,7 @@
 		"SoundSet"				  "Hero_EarthSpirit"
 		//"IdleSoundLoop"			   "Hero_EarthSpirit.IdleLoop"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
-		"particle_folder"		   "particles/units/heroes/hero_earth_spirit"
+		// [CLoadingResource fix] "particle_folder"		   "particles/units/heroes/hero_earth_spirit"
 		"VoiceFile"				 "soundevents/voscripts/game_sounds_vo_earth_spirit.vsndevts"
 		"ParticleFile"			  "particles/units/heroes/hero_earth_spirit.pcf"
 		"Level"					 "3"
@@ -15254,7 +15254,7 @@
 	"HasInventory"			  "1"
 	"precache"
 	{
-		"particle_folder"	   "particles/units/heroes/hero_night_stalker"
+		// [CLoadingResource fix] "particle_folder"	   "particles/units/heroes/hero_night_stalker"
 		"model"   "models/items/antimage/acolyte_vengeance_hooded_mask/acolyte_vengeance_hooded_mask.vmdl"
 		"model"   "models/items/antimage/mage_eraser_armor/mage_eraser_armor.vmdl"
 		"model"   "models/items/antimage/antimage_slasher_bracer.vmdl"
@@ -15413,7 +15413,7 @@
 	"HasInventory"			  "1"
 	"precache"
 	{
-		"particle_folder"	   "particles/units/heroes/hero_night_stalker"
+		// [CLoadingResource fix] "particle_folder"	   "particles/units/heroes/hero_night_stalker"
 		"model"   "models/items/antimage/acolyte_vengeance_hooded_mask/acolyte_vengeance_hooded_mask.vmdl"
 		"model"   "models/items/antimage/mage_eraser_armor/mage_eraser_armor.vmdl"
 		"model"   "models/items/antimage/antimage_slasher_bracer.vmdl"
@@ -15786,7 +15786,7 @@
 	"ConsideredHero"			"1"
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_clinkz"
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_clinkz"
 	}
 	"Ability2"					"clinkz_searing_arrows"			// Ability 2
 	"Ability3"					"faceless_void_time_walk"			// Ability 3
@@ -16595,7 +16595,7 @@
 	"HasInventory"			  "1"
 	"precache"
 	{
-		"particle_folder"		"particles/units/heroes/hero_oracle"		
+		// [CLoadingResource fix] "particle_folder"		"particles/units/heroes/hero_oracle"
 	}
 	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
 	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_oracle.vsndevts"	

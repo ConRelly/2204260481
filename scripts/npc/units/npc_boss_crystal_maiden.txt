@@ -8,7 +8,7 @@
     "GameSoundsFile"                        "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
 	"SoundSet"								"hero_Crystal"
 	"VoiceFile"								"soundevents/voscripts/game_sounds_vo_crystalmaiden.vsndevts"
-	"particle_folder"						"particles/units/heroes/hero_crystalmaiden"
+	// [CLoadingResource fix] "particle_folder"						"particles/units/heroes/hero_crystalmaiden"
     "Level"                                 "25"
     "ModelScale"                            "2.0"
     "ConsideredHero"						"1"
@@ -18,7 +18,7 @@
 
     "precache"
     {
-        "particle_folder"				    "particles/units/heroes/hero_crystalmaiden"
+        // [CLoadingResource fix] "particle_folder"				    "particles/units/heroes/hero_crystalmaiden"
 		"soundfile" 						"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
 		"particle" 	"particles/units/heroes/hero_crystalmaiden/maiden_loadout.vpcf"
 		"particle" 	"particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_base_attack.vpcf"
