@@ -3663,4 +3663,4 @@ Note: Might buff other heroes in the comming days, write on discord if you know 
 * Fixed Source 2 engine crash during map loading and precache (GrowCount 32767 limit). Greatly removed a lot of unecessary precache , post on discord if the problem still persist or if majority of effects now don't show (error signs etc)
 * Replaced 2 talents for Earth Spirit.
 ---
-
+* Fixed the new dota 2 update breaking the map.

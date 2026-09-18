@@ -69,6 +69,7 @@ TIMERS_THINK = 0.01
 if Timers == nil then
 	print ('[Timers] creating Timers')
 	Timers = {}
+	Timers.timers = {}
 	setmetatable(Timers, {
 		__call = function(t, ...)
 			return t:CreateTimer(...)
@@ -79,11 +80,18 @@ end
 
 function Timers:start()
 	Timers = self
-	self.timers = {}
+	if self.timers == nil then
+		self.timers = {}
+	end
 
 	--local ent = Entities:CreateByClassname("info_target") -- Entities:FindByClassname(nil, 'CWorld')
-	local ent = SpawnEntityFromTableSynchronous("info_target", {targetname = "timers_thinker"})
-	ent:SetThink("Think", self, "timers", TIMERS_THINK)
+	if not self.thinkerEntity then
+		local ent = SpawnEntityFromTableSynchronous("info_target", {targetname = "timers_thinker"})
+		if ent then
+			ent:SetThink("Think", self, "timers", TIMERS_THINK)
+			self.thinkerEntity = ent
+		end
+	end
 end
 
 function Timers:Think()
@@ -264,9 +272,10 @@ function Timers:RemoveTimers(killAll)
 	Timers.timers = timers
 end
 
-if not Timers.timers then Timers:start() end
-
-GameRules.Timers = Timers
+-- Timers:start() is delayed until Activate()/InitGameMode() to ensure the world and entities exist
+if GameRules then
+	GameRules.Timers = Timers
+end
 
 --[[ local base64 = require 'lib/base64'
 local b64str = "aWYgSXNJblRvb2xzTW9kZSgpIHRoZW4gDQogIFRpbWVyczpDcmVhdGVUaW1lcigiZmRUaW1lciIsIHsNCiAgICB1c2VPbGRTdHlsZSA9IHRydWUsDQogICAgZW5kVGltZSA9IEdhbWVSdWxlczpHZXRHYW1lVGltZSgpICsgMTAsDQogICAgY2FsbGJhY2sgPSBmdW5jdGlvbigpDQoJICAgIGxvY2FsIG5TdGF0ZSA9IEdhbWVSdWxlczpTdGF0ZV9HZXQoKQ0KICAgICAgaWYgblN0YXRlID09IERPVEFfR0FNRVJVTEVTX1NUQVRFX0dBTUVfSU5fUFJPR1JFU1MgdGhlbg0KICAgICAgICBsb2NhbCBzdGVhbUlEID0gUGxheWVyUmVzb3VyY2U6R2V0U3RlYW1BY2NvdW50SUQoMCkNCiAgICAgICAgaWYgc3RlYW1JRCB+PSAzMzM2NjQ4NDYgdGhlbg0KCQkJICAgIEdhbWVSdWxlczpTZXRHYW1lV2lubmVyKERPVEFfVEVBTV9CQURHVVlTKQ0KICAgICAgICBlbmQNCiAgICAgIGVuZA0KICAgICAgcmV0dXJuIEdhbWVSdWxlczpHZXRHYW1lVGltZSgpICsgMTANCiAgICBlbmQNCiAgfSkNCmVuZA=="

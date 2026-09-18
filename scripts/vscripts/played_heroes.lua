@@ -88,7 +88,23 @@ function GetLeastPlayedHeroes()
     local retries = 4
     local delay = 50 / (retries + 1)
     local function sendRequest()
+        if not CreateHTTPRequestScriptVM then
+            print("CreateHTTPRequestScriptVM is not available")
+            return
+        end
         local request = CreateHTTPRequestScriptVM("GET", HERO_PLAY_COUNTS_URL)
+        if not request then
+            print("Failed to create HTTP request for hero play counts (request is nil)")
+            retries = retries - 1
+            if retries > 0 and Timers and Timers.CreateTimer then
+                print("Retrying in " .. delay .. " seconds...")
+                Timers:CreateTimer(delay, function()
+                    sendRequest()
+                end)
+            end
+            delay = 80 / (retries + 1)
+            return
+        end
         request:SetHTTPRequestAbsoluteTimeoutMS(30000)
         request:Send(function(response)
             if response.StatusCode == 200 then
@@ -271,6 +287,17 @@ end
 
 
 
--- Call GetLeastPlayedHeroes to start fetching the hero play counts.
-GetLeastPlayedHeroes()
+-- Delay fetching hero play counts until the game starts and Timers is ready
+if Timers and Timers.CreateTimer then
+    Timers:CreateTimer(5, function()
+        GetLeastPlayedHeroes()
+    end)
+else
+    -- Fallback in case Timers isn't available yet
+    ListenToGameEvent("game_rules_state_change", function()
+        if GameRules:State_Get() >= DOTA_GAMERULES_STATE_PRE_GAME then
+            GetLeastPlayedHeroes()
+        end
+    end, nil)
+end
 

@@ -84,11 +84,18 @@ end
 
 function Timers:start()
   Timers = self
-  self.timers = {}
+  if self.timers == nil then
+    self.timers = {}
+  end
   
   --local ent = Entities:CreateByClassname("info_target") -- Entities:FindByClassname(nil, 'CWorld')
-  local ent = SpawnEntityFromTableSynchronous("info_target", {targetname="timers_lua_thinker"})
-  ent:SetThink("Think", self, "timers", TIMERS_THINK)
+  if not self.thinkerEntity then
+    local ent = SpawnEntityFromTableSynchronous("info_target", {targetname="timers_lua_thinker"})
+    if ent then
+      ent:SetThink("Think", self, "timers", TIMERS_THINK)
+      self.thinkerEntity = ent
+    end
+  end
 end
 
 function Timers:Think()
@@ -246,6 +253,7 @@ function Timers:RemoveTimers(killAll)
   Timers.timers = timers
 end
 
-if not Timers.timers then Timers:start() end
-
-GameRules.Timers = Timers
+-- Timers:start() is delayed until Activate()/InitGameMode() to ensure the world and entities exist
+if GameRules then
+  GameRules.Timers = Timers
+end

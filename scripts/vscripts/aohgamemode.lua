@@ -93,6 +93,9 @@ end
 
 
 function AOHGameMode:InitGameMode()
+	if Timers and Timers.start then
+		Timers:start()
+	end
 	self._nRoundNumber = 1
 	if 	_G.RoundNumber == nil then
 		_G.RoundNumber = 1

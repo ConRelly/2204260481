@@ -1,4 +1,11 @@
-require("AOHGameMode")
+local _status, _err = pcall(function()
+	require("AOHGameMode")
+end)
+if not _status then
+	print("==================================================")
+	print(">>> [CRITICAL ERROR LOADING AOHGameMode]: " .. tostring(_err))
+	print("==================================================")
+end
 require("lib/animations")
 require("lib/utils")
 --require("hack/precache_resource")
@@ -114,6 +121,12 @@ end
 
 
 function Activate()
+	if Timers and Timers.start then
+		Timers:start()
+	end
+	if GameRules and Timers then
+		GameRules.Timers = Timers
+	end
 	GameRules.GameMode = AOHGameMode()
 	GameRules.GameMode:InitGameMode()
 end
