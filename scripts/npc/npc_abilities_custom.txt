@@ -25159,113 +25159,42 @@
 	}
 	
 	"custom_new_king_reincarnation"
-{
-	"BaseClass" 					"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"elder_titan_ancestral_spirit"
-	"AbilityValues"
-        {
-            "bonus_damage" "20"
-        }
-	"OnOwnerDied"
 	{
-		"FireEffect"
+		"BaseClass" 					"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"elder_titan_ancestral_spirit"
+		"AbilityValues"
 		{
-			"Target"
-			{
-				"Center" 	"CASTER"
-				"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
-			}			
-			"EffectName"			"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
-			"EffectAttachType"		"follow_origin"
+			"bonus_damage" "20"
 		}
-		"FireSound"
+		"OnOwnerDied"
 		{
-			"EffectName"			"skeleton_king_wraith_spawn_02"
-			"Target"
+			"FireEffect"
 			{
-				"Center"	"CASTER"
-				"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
-			}
-		}
-		"SpawnUnit"
-		{
-			"UnitName"				"npc_boss_doom"		// 末日
-			"UnitCount"				"1"
-			"SpawnRadius"			"800"
-			"Target"
-			{
-				"Center" 	"CASTER"
-				"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
-			}			
-			"GrantsGold"			"1"
-			"GrantsXP"				"1"
-			"OnSpawn"
-			{
-				"ApplyModifier"
+				"Target"
 				{
-					"ModifierName"	"modifier_newking_buff"
-					"Target"	"TARGET"
+					"Center" 	"CASTER"
+					"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+				}			
+				"EffectName"			"particles/units/heroes/hero_skeletonking/wraith_king_reincarnate.vpcf"
+				"EffectAttachType"		"follow_origin"
+			}
+			"FireSound"
+			{
+				"EffectName"			"skeleton_king_wraith_spawn_02"
+				"Target"
+				{
+					"Center"	"CASTER"
+					"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
 				}
 			}
-		}
-		"SpawnUnit"
-		{
-			"UnitName"				"npc_dota_creature_snowball_tuskar_2"		// 冰女
-			"UnitCount"				"2"
-			"SpawnRadius"			"800"
-			"Target"
+			"RunScript"
 			{
-				"Center" 	"CASTER"
-				"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
-			}			
-			"GrantsGold"			"1"
-			"GrantsXP"				"1"
-			"OnSpawn"
-			{
-				"ApplyModifier"
-				{
-					"ModifierName"	"modifier_newking_buff"
-					"Target"	"TARGET"
-				}
-			}
-		}
-		"SpawnUnit"
-		{
-			"UnitName"				"npc_boss_skeleton_king_angry"	// 冰女
-			"UnitCount"				"1"
-			"SpawnRadius"			"800"
-			"Target"
-			{
-				"Center" 	"CASTER"
-				"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
-			}			
-			"GrantsGold"			"1"
-			"GrantsXP"				"1"
-			"OnSpawn"
-			{
-				"ApplyModifier"
-				{
-					"ModifierName"	"modifier_newking_buff"
-					"Target"	"TARGET"
-				}
-			}
-		}		
-	}
-	"Modifiers"
-	{
-		"modifier_newking_buff"
-		{
-			"IsDebuff"			"0"
-			"IsPurgable"		"0"
-			"IsHidden"			"1"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"			"%bonus_damage"
+				"ScriptFile"			"abilities/bosses/custom_new_king_reincarnation.lua"
+				"Function"				"OnDeathSpawn"
 			}
 		}
 	}
-}
 
 
 	
@@ -26063,9 +25992,9 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"elder_titan_ancestral_spirit"
 	"AbilityValues"
-        {
-            "bonus_damage" "50"
-        }
+	{
+		"bonus_damage" "50"
+	}
 	"OnOwnerDied"
 	{
 		"FireEffect"
@@ -26087,60 +26016,10 @@
 				"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
 			}
 		}
-		"SpawnUnit"
+		"RunScript"
 		{
-			"UnitName"				"npc_boss_tidehunter_2"		// 大牛
-			"UnitCount"				"1"
-			"SpawnRadius"			"800"
-			"Target"
-			{
-				"Center" 	"CASTER"
-				"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
-			}			
-			"GrantsGold"			"1"
-			"GrantsXP"				"1"
-			"OnSpawn"
-			{
-				"ApplyModifier"
-				{
-					"ModifierName"	"modifier_newking_buff"
-					"Target"	"TARGET"
-				}
-			}
-		}
-		"SpawnUnit"
-		{
-			"UnitName"				"npc_boss_skeleton_king_ultimate"	// 冰女
-			"UnitCount"				"1"
-			"SpawnRadius"			"800"
-			"Target"
-			{
-				"Center" 	"CASTER"
-				"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
-			}			
-			"GrantsGold"			"1"
-			"GrantsXP"				"1"
-			"OnSpawn"
-			{
-				"ApplyModifier"
-				{
-					"ModifierName"	"modifier_newking_buff"
-					"Target"	"TARGET"
-				}
-			}
-		}				
-	}
-	"Modifiers"
-	{
-		"modifier_newking_buff"
-		{
-			"IsDebuff"			"0"
-			"IsPurgable"		"0"
-			"IsHidden"			"1"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"			"%bonus_damage"
-			}
+			"ScriptFile"			"abilities/bosses/custom_new_king_reincarnation.lua"
+			"Function"				"OnDeathSpawn"
 		}
 	}
 }
@@ -26151,9 +26030,9 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"elder_titan_ancestral_spirit"
 	"AbilityValues"
-        {
-            "bonus_damage" "50"
-        }
+	{
+		"bonus_damage" "50"
+	}
 	"OnOwnerDied"
 	{
 		"FireEffect"
@@ -26175,60 +26054,10 @@
 				"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
 			}
 		}
-		"SpawnUnit"
+		"RunScript"
 		{
-			"UnitName"				"npc_boss_wisp_new"		// 谜团
-			"UnitCount"				"1"
-			"SpawnRadius"			"800"
-			"Target"
-			{
-				"Center" 	"CASTER"
-				"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
-			}			
-			"GrantsGold"			"1"
-			"GrantsXP"				"1"
-			"OnSpawn"
-			{
-				"ApplyModifier"
-				{
-					"ModifierName"	"modifier_newking_buff"
-					"Target"	"TARGET"
-				}
-			}
-		}
-		"SpawnUnit"
-		{
-			"UnitName"				"npc_boss_juggernaut_2"		// 冰女
-			"UnitCount"				"1"
-			"SpawnRadius"			"800"
-			"Target"
-			{
-				"Center" 	"CASTER"
-				"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
-			}			
-			"GrantsGold"			"1"
-			"GrantsXP"				"1"
-			"OnSpawn"
-			{
-				"ApplyModifier"
-				{
-					"ModifierName"	"modifier_newking_buff"
-					"Target"	"TARGET"
-				}
-			}
-		}	
-	}   
-	"Modifiers"
-	{
-		"modifier_newking_buff"
-		{
-			"IsDebuff"			"0"
-			"IsPurgable"		"0"
-			"IsHidden"			"1"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"			"%bonus_damage"
-			}
+			"ScriptFile"			"abilities/bosses/custom_new_king_reincarnation.lua"
+			"Function"				"OnDeathSpawn"
 		}
 	}
 }
@@ -26239,9 +26068,9 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"elder_titan_ancestral_spirit"
 	"AbilityValues"
-        {
-            "bonus_damage" "50"
-        }
+	{
+		"bonus_damage" "50"
+	}
 	"OnOwnerDied"
 	{
 		"FireEffect"
@@ -26263,60 +26092,10 @@
 				"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
 			}
 		}
-		"SpawnUnit"
+		"RunScript"
 		{
-			"UnitName"				"npc_dota_creature_siltbreaker_2"		// 冰女
-			"UnitCount"				"1"
-			"SpawnRadius"			"800"
-			"Target"
-			{
-				"Center" 	"CASTER"
-				"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
-			}			
-			"GrantsGold"			"1"
-			"GrantsXP"				"1"
-			"OnSpawn"
-			{
-				"ApplyModifier"
-				{
-					"ModifierName"	"modifier_newking_buff"
-					"Target"	"TARGET"
-				}
-			}
-		}
-		"SpawnUnit"
-		{
-			"UnitName"				"npc_boss_storegga"		// 末日
-			"UnitCount"				"1"
-			"SpawnRadius"			"800"
-			"Target"
-			{
-				"Center" 	"CASTER"
-				"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
-			}			
-			"GrantsGold"			"1"
-			"GrantsXP"				"1"
-			"OnSpawn"
-			{
-				"ApplyModifier"
-				{
-					"ModifierName"	"modifier_newking_buff"
-					"Target"	"TARGET"
-				}
-			}
-		}		
-	}   
-	"Modifiers"
-	{
-		"modifier_newking_buff"
-		{
-			"IsDebuff"			"0"
-			"IsPurgable"		"0"
-			"IsHidden"			"1"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"			"%bonus_damage"
-			}
+			"ScriptFile"			"abilities/bosses/custom_new_king_reincarnation.lua"
+			"Function"				"OnDeathSpawn"
 		}
 	}
 }
@@ -26327,9 +26106,9 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"elder_titan_ancestral_spirit"
 	"AbilityValues"
-        {
-            "bonus_damage" "70"
-        }
+	{
+		"bonus_damage" "70"
+	}
 	"OnOwnerDied"
 	{
 		"FireEffect"
@@ -26351,44 +26130,15 @@
 				"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
 			}
 		}
-		"SpawnUnit"
+		"RunScript"
 		{
-			"UnitName"				"npc_dota_boss_aghanim"		// 冰女
-			"UnitCount"				"1"
-			"SpawnRadius"			"800"
-			"Target"
-			{
-				"Center" 	"CASTER"
-				"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
-			}			
-			"GrantsGold"			"1"
-			"GrantsXP"				"1"
-			"OnSpawn"
-			{
-				"ApplyModifier"
-				{
-					"ModifierName"	"modifier_newking_buff"
-					"Target"	"TARGET"
-				}
-			}
-		}
-	}   
-	"Modifiers"
-	{
-		"modifier_newking_buff"
-		{
-			"IsDebuff"			"0"
-			"IsPurgable"		"0"
-			"IsHidden"			"1"
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"			"%bonus_damage"
-			}
+			"ScriptFile"			"abilities/bosses/custom_new_king_reincarnation.lua"
+			"Function"				"OnDeathSpawn"
 		}
 	}
 }
 
-"custom_new_king_reincarnation_7"
+"custom_new_king_reincarnation_7" //not used
 {
 	"BaseClass" 					"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"

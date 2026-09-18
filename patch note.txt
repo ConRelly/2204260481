@@ -3664,3 +3664,8 @@ Note: Might buff other heroes in the comming days, write on discord if you know 
 * Replaced 2 talents for Earth Spirit.
 ---
 * Fixed the new dota 2 update breaking the map.
+---
+* Fixed some missing particles (red "X" error signs) on local host mode by comprehensively precaching all valid custom and hero particles used in Lua scripts (some still need more pruning and adding)
+* Undead Lord(WK) : Fixed reincarnation death spawn chain where duplicate spawn triggers caused each phase to spawn multiple copies of only the last unit (resulting in swarms of Storegga/Tiny) while skipping Doom, Tuskar, and Siltbreaker. Reincarnation now properly spawns all corresponding bosses and add-units up to Aghanim.
+---
+

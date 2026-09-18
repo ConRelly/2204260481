@@ -182,4 +182,24 @@ function Precache_Extra_Game_Resources( context )
     for _, s in ipairs(extra_sounds) do
         PrecacheSafeResource("soundfile", s, context)
     end
+
+    -- Precache valid particles, models, and sounds referenced in Lua scripts to prevent local red "X" errors
+    local has_lua_res, lua_res = pcall(require, "hack/precache_lua_res")
+    if has_lua_res and type(lua_res) == "table" then
+        if lua_res.particles then
+            for _, p in ipairs(lua_res.particles) do
+                PrecacheSafeResource("particle", p, context)
+            end
+        end
+        if lua_res.models then
+            for _, m in ipairs(lua_res.models) do
+                PrecacheSafeResource("model", m, context)
+            end
+        end
+        if lua_res.sounds then
+            for _, s in ipairs(lua_res.sounds) do
+                PrecacheSafeResource("soundfile", s, context)
+            end
+        end
+    end
 end
