@@ -42,6 +42,18 @@ if IsServer() then
 		-- local sub_ability_name = 'mjz_naga_siren_song_of_the_siren_cancel'
 
 		caster:SwapAbilities( main_ability_name, sub_ability_name, true, false )
+
+		-- Safety: engine SwapAbilities doesn't always clear IsHidden on the main ability.
+		-- Explicitly force-unhide the main and re-hide the cancel to prevent disappearance.
+		local main_ability = caster:FindAbilityByName(main_ability_name)
+		if main_ability and not main_ability:IsNull() then
+			main_ability:SetHidden(false)
+			main_ability:SetActivated(true)
+		end
+		local cancel_ability = caster:FindAbilityByName(sub_ability_name)
+		if cancel_ability and not cancel_ability:IsNull() then
+			cancel_ability:SetHidden(true)
+		end
 	end
 
 	function modifier_class:_EndSinging()

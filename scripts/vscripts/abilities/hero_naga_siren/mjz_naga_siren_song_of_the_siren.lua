@@ -26,11 +26,20 @@ if IsServer() then
 		local main_ability_name = ability:GetAbilityName()
 		caster:SwapAbilities( main_ability_name, sub_ability_name, false, true )
 
+		-- Safety: engine SwapAbilities doesn't always properly unhide the cancel ability.
+		local cancel_ability = caster:FindAbilityByName( sub_ability_name )
+		if cancel_ability and not cancel_ability:IsNull() then
+			cancel_ability:SetHidden(false)
+			cancel_ability:SetActivated(true)
+		end
+
 		-- Make cooldown
-		sub_ability = caster:FindAbilityByName( sub_ability_name )
-		local cooldown = sub_ability:GetCooldownTimeRemaining()
-		sub_ability:EndCooldown()
-		sub_ability:StartCooldown( cooldown )
+		cancel_ability = cancel_ability or caster:FindAbilityByName( sub_ability_name )
+		if cancel_ability then
+			local cooldown = cancel_ability:GetCooldownTimeRemaining()
+			cancel_ability:EndCooldown()
+			cancel_ability:StartCooldown( cooldown )
+		end
 
 
 		self:_AddNewModifier(modifier_caster_name, duration)

@@ -71,8 +71,10 @@ local NoAutocast = {
     ["dawnbreaker_land"] = true,
     ["faceless_void_time_walk_reverse"] = true,
     ["hw_sharpshooter_release"] = true,
-    
-};
+    ["naga_siren_song_of_the_siren_cancel"] = true,
+    ["mjz_naga_siren_song_of_the_siren_cancel"] = true,
+};  
+
 
 local TargetSpell = {
     

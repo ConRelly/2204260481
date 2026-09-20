@@ -3668,4 +3668,7 @@ Note: Might buff other heroes in the comming days, write on discord if you know 
 * Fixed some missing particles (red "X" error signs) on local host mode by comprehensively precaching all valid custom and hero particles used in Lua scripts (some still need more pruning and adding)
 * Undead Lord(WK) : Fixed reincarnation death spawn chain where duplicate spawn triggers caused each phase to spawn multiple copies of only the last unit (resulting in swarms of Storegga/Tiny) while skipping Doom, Tuskar, and Siltbreaker. Reincarnation now properly spawns all corresponding bosses and add-units up to Aghanim.
 ---
-
+* Most played heroes(top Underdog) now has a backup list saved in code to fal back(they seem to not allow conections from outside so i can't update the list live), in case they revert the online list has priority.
+* Fixed naga ultimate being lost if you use-it with AutoCast. increase naga ilusion duration.
+* Added back Tusk talent for warlus puch and an CDR one.
+Note: because of the Arcade changes to not allow most maps dedicated servers, sometimes you can be playing on a old version (make sure u update to last version , try reinstal if it does not work)

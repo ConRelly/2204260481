@@ -7615,32 +7615,65 @@
 
 
 
+
+	//=================================================================================================================
+	// Naga Siren: Mirror Image
+	//=================================================================================================================
 	"naga_siren_mirror_image"
 	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilitySound"					"Hero_NagaSiren.MirrorImage"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75 90 105 120"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilityValues"
-        {
-            "illusion_duration" "20"
-            "outgoing_damage"
-            {
-                "value" "-65 -60 -55 -50"
-                "special_bonus_unique_naga_siren_4" "45"
-            }
-            "outgoing_damage_tooltip"
-            {
-                "value" "35 40 45 50"
-                "special_bonus_unique_naga_siren_4" "45"
-            }
-            "incoming_damage" "150 100 50 0"
-            "tooltip_incoming_damage_total_pct" "250 200 150 100"
-            "images_count"
-            {
-                "value" "3 3 3 3"
-                "LinkedSpecialBonus" "special_bonus_unique_naga_siren"
-            }
-        }
+		{
+				"illusion_duration"			"120"
+				"outgoing_damage"
+				{
+					"value"					"-65 -60 -55 -50"
+				"special_bonus_unique_naga_siren_4" "+45"
+				}
+				"outgoing_damage_tooltip"	
+				{
+					"value"					"35 40 45 50"
+				"special_bonus_unique_naga_siren_4" "+45"
+				}
+				"incoming_damage"			
+				{
+					"value"				"150 100 50 0"
+					"special_bonus_unique_naga_siren_3"	"-75"
+				}
+				"tooltip_incoming_damage_total_pct"			
+				{
+					"value"					"250 200 150 100"
+					"special_bonus_unique_naga_siren_3"	"-75"
+				}
+				"images_count"				
+				{
+					"value"					"3"
+				"special_bonus_unique_naga_siren" "+1"
+				}
+				"invuln_duration"			"0.5"
+
+				"AbilityCooldown"
+				{
+					"value"								"40 35 30 25"
+					"special_bonus_unique_naga_siren_6"	"-10"
+				}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
 	}
-
-
 
 	//=================================================================================================================
 	// Naga Siren: Rip Tide
@@ -7678,7 +7711,7 @@
 			}
 			"damage"	
 			{
-				"value"				"2845 7765 16880 35940 84770 181500 290000 621500"
+				"value"				"2845 7765 16880 35940 84770 181500 290000 821500"
 				"special_bonus_unique_naga_siren_2" "145240"
 			}
 			"radius"					"701"
