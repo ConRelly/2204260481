@@ -38,10 +38,11 @@ function modifier_ward_like:DeclareFunctions()
 	return funcs
 end
 
-function modifier_ward_like:CheckState() 
+function modifier_ward_like:CheckState()
     return {
-		[MODIFIER_STATE_LOW_ATTACK_PRIORITY]  	= true,	
-    } 
+        [MODIFIER_STATE_LOW_ATTACK_PRIORITY] = true,
+        [MODIFIER_STATE_SPECIALLY_DENIABLE] = true,
+    }
 end
 
 

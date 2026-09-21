@@ -271,6 +271,15 @@ function AOHGameMode:OnPlayerChat(keys)
 			Notifications:TopToAll({text="Autoskip ON", style={color="green"}, duration=5})	
 		end	
 	end
+	if keys.text == "-friendlystatue" and keys.playerid == 0 then
+		if _G.friendly_statue then
+			_G.friendly_statue = false
+			Notifications:TopToAll({text="Friendly statue OFF", style={color="blue"}, duration=5})
+		else
+			_G.friendly_statue = true
+			Notifications:TopToAll({text="Friendly statue ON", style={color="green"}, duration=5})
+		end
+	end
 	if keys.text == "-evo2" and keys.playerid == 0 then
 		if _G.evolution_bow_first_option then
 			_G.evolution_bow_first_option = false

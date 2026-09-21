@@ -35,7 +35,7 @@ if IsServer() then
 		if self:GetAbility() then
 			self.bonus_attack_speed = self:GetAbility():GetSpecialValueFor("bonus_attack_speed")
 			self.bonus_move_speed = self:GetAbility():GetSpecialValueFor("bonus_move_speed")
-			self.health_cost_per_second = self:GetAbility():GetSpecialValueFor("health_cost_per_second") * (1 - talent_value(self:GetCaster(), "special_bonus_unique_mjz_slardar_sprint_hp_cost") / 100)
+			self.health_cost_per_second = self:GetAbility():GetSpecialValueFor("health_cost_per_second")
 			self.tick_interval = self:GetAbility():GetSpecialValueFor("tick_interval")
 		end
 		self:StartIntervalThink(self.tick_interval)

@@ -342,7 +342,8 @@ function AOHGameRound:OnEntityKilled(event)
 			if GameRules.GLOBAL_currentRound:IsFinished() then
 				if killedUnit:GetTeamNumber() == DOTA_TEAM_BADGUYS and killedUnit:GetLevel() > 4 then
 					local vLocation = Vector(-19.779533, -1422.612671, 320.000000)
-					local skip_unit = CreateUnitByName("npc_dota_badguys_fillers_custom",vLocation, true, nil, nil, DOTA_TEAM_BADGUYS)
+					local statue_team = _G.friendly_statue and DOTA_TEAM_GOODGUYS or DOTA_TEAM_BADGUYS
+					local skip_unit = CreateUnitByName("npc_dota_badguys_fillers_custom",vLocation, true, nil, nil, statue_team)
 					skip_unit:SetAbsOrigin(vLocation)
 					FindClearSpaceForUnit( skip_unit, vLocation, true )
 					AddFOWViewer(DOTA_TEAM_GOODGUYS, skip_unit:GetAbsOrigin(), 1200, 120, false)

@@ -26,11 +26,4 @@ Keep this file compact and self-improving. When a task reveals a durable project
 - File-scope initialization: Never make HTTP calls (`CreateHTTPRequestScriptVM`) or spawn thinker entities during root script evaluation (`require` time / `ss_waitingforgamesessionmanifest`). Subsystems return `nil` or crash before the map/entities are active; delay them to `Activate()` / `InitGameMode()` or via a timer. If Dota throws `Script Runtime Error: error in error handling`, wrap the root require in `pcall` to expose the true hidden stack trace.
 - Datadriven `SpawnUnit` duplicate key bug: In `ability_datadriven`, defining multiple `"SpawnUnit"` actions in the same event block causes the engine to evaluate all of them using the parameters of the last entry. Spawning multiple distinct units must be handled via a Lua script (`RunScript` or Lua ability).
 - Dynamic unit spawning (`CreateUnitByNameAsync`): Always prefer `CreateUnitByNameAsync` over synchronous `CreateUnitByName` when dynamically spawning units. Synchronous creation fails to stream assets in time—breaking not just wearables (`AttachWearables`) and hero base models (e.g. Juggernaut appearing naked or with red ERROR feet), but also skill particle effects, ambient effects, and attachment points.
-
-
-
-
-
-
-
-
+- Round-pass statue `npc_dota_badguys_fillers_custom` is added to `_vEnemiesRemaining` by unit name in `aohgameround.lua`, so it does not need to spawn on `DOTA_TEAM_BADGUYS` to hold round progression.

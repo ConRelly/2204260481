@@ -10594,7 +10594,7 @@ Contains all random skills(including Innates)<br> if your primary attribute is I
 		units under lvl 50 they get the skills with random lvls between 1-6 and for units with lvl 50+ skills with random lvls between 4-7, and ~75% chance to get aghanim and aghanim shard buff"
 
 		"dota_tooltip_ability_ability_ward_like"                               "AutoSkipNote"
-		"dota_tooltip_ability_ability_ward_like_Description"                   "Host can Type: <font color='#EDD50F'>-autoskip</font> to turn On or Off<br>If is On this unit will die automatically On Spawn"
+		"dota_tooltip_ability_ability_ward_like_Description"                   "Host can Type: <font color='#EDD50F'>-autoskip</font> to turn On or Off<br>If is On this unit will die automatically On Spawn<br>Host can Type: <font color='#EDD50F'>-friendlystatue</font> to turn On or Off<br>If is On this unit will spawn as an ally, so units will not auto aggro it. Use forced attack to pass the round"
 
 		"npc_boss_randomstuff_aiolos"											"AIOLOS (GOD)"
 		"npc_boss_randomstuff_aiolos_demo"									   "AIOLOS (GOD)Demo version"

@@ -22631,8 +22631,7 @@
             "health_cost_per_second"
             {
                 "value" "50 120 200 350"
-                "special_bonus_unique_unique_mjz_slardar_sprint_hp_cost" "50"
-                "LinkedSpecialBonusOperation" "SPECIAL_BONUS_PERCENTAGE_SUBTRACT"
+                "special_bonus_unique_unique_mjz_slardar_sprint_hp_cost" "-50%"
             }
             "tick_interval" "0.25"
         }

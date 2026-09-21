@@ -148,6 +148,7 @@ function AOHGameMode:InitGameMode()
 	_G._dev_enemy = false
 	_G._dev_enemy_ano = false
 	_G.auto_skipp = false
+	_G.friendly_statue = false
 	_G.cosmos_stage = 4
 	_G.cosmos_defeat = true
 	_G.cosmos_defeat_notification = true

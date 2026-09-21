@@ -3672,3 +3672,7 @@ Note: Might buff other heroes in the comming days, write on discord if you know 
 * Fixed naga ultimate being lost if you use-it with AutoCast. increase naga ilusion duration.
 * Added back Tusk talent for warlus puch and an CDR one.
 Note: because of the Arcade changes to not allow most maps dedicated servers, sometimes you can be playing on a old version (make sure u update to last version , try reinstal if it does not work)
+---
+* Fixed sladar lvl 10 talent to work and display properly its effect on sprint
+* Added a new command for round statue (found on its skill), "-friendlystatue" (ON /Off to toggle) , statue still needs to be attacked, but spawns as ally so units do not auto-aggro it.
+---
