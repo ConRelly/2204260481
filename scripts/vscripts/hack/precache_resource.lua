@@ -10,6 +10,10 @@ local function NormalizePath(path)
 end
 
 function PrecacheSafeResource(res_type, path, context)
+    if res_type == "particle_folder" then
+        print("!!! Skipping unsafe particle_folder precache: " .. tostring(path))
+        return
+    end
     local key, clean_path = NormalizePath(path)
     if not key or key == "" then return end
 
@@ -183,7 +187,7 @@ function Precache_Extra_Game_Resources( context )
         PrecacheSafeResource("soundfile", s, context)
     end
 
-    -- Precache valid particles, models, and sounds referenced in Lua scripts to prevent local red "X" errors
+    -- Explicit Lua/KV paths also preserve repeated KV precache keys lost by LoadKeyValues.
     local has_lua_res, lua_res = pcall(require, "hack/precache_lua_res")
     if has_lua_res and type(lua_res) == "table" then
         if lua_res.particles then
@@ -201,5 +205,7 @@ function Precache_Extra_Game_Resources( context )
                 PrecacheSafeResource("soundfile", s, context)
             end
         end
+    else
+        print("!!! ERROR: Could not load hack/precache_lua_res: " .. tostring(lua_res))
     end
 end

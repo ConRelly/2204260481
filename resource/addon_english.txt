@@ -394,7 +394,7 @@
 	\n<h1>Passive: Shield Recovery</h1>If the shield does not take damage for %shield_recovery% seconds, it will be fully restored.
 	\n<h1><font color='#D8E4FF'>Lunar Effect</font></h1>Reduces Max Health by %hp_red_pct%%%, but in return, it improves Shield Reboot and Shield Recovery.<br><font color='#FF5B4C'>If the shield is broken, the owner will receive %inc_dmg%%% more damage.</font>
 	\n<h1>UP: <font color='#0094FF'>Aghanim's Scepter</font> + <font color='#1F7C2C'>Life Greaves</font></h1>When health drops below %threshold%%%, the Reserve Battery ability is automatically used, if available.
-	\n<h1><font color='#DE3163'>Super Scepter</font></h1>When shield is active now it regenerates 15%% per sec even during combat and Passive:Shield recovery(out of combat) now needs half time to trigger<br>Shield damage taken is reduced by %tooltip_reduction%%%"
+	\n<h1><font color='#DE3163'>Super Scepter</font></h1>When shield is active now it regenerates 15%% per sec even during combat and Passive:Shield recovery(out of combat) now needs half time to trigger<br>Shield damage taken is reduced by %tooltip_reduction%%%<br>While shield durability is above %ss_damage_threshold%%%, increases all outgoing damage (attacks, skills and items) by %ss_damage_bonus%%%."
 	"dota_tooltip_ability_item_lunar_shield_note0"			"HP reduction is a third with Lier scarlet item equiped.<br>vanila Shields are not affected by the clasic incoming dmg reduction"
 	"dota_tooltip_ability_item_lunar_shield_all_stats_lvl"	"+$lvlbonus_all"
 	"dota_tooltip_ability_item_lunar_shield_Lore"		"To use the Lunar artifacts, you need a huge fee, in exchange for a huge power."
@@ -8319,6 +8319,12 @@ Rock is consumed after use."
 "DOTA_Tooltip_modifier_soul_ring_3_buff"				"Sacrifice"
 "DOTA_Tooltip_modifier_soul_ring_3_buff_Description"	"Mana increased at the cost of health. Extra mana will be lost at the end of Sacrifice's duration."
 
+
+"DOTA_Tooltip_Ability_item_eye_gem"                         "Eye of Visibility"
+"DOTA_Tooltip_Ability_item_eye_gem_Description"             "<h1>Use: Stay Visible</h1>Consume to prevent yourself from becoming invisible without dispelling your ability buffs. Consume another Eye of Visibility to remove the effect."
+"DOTA_Tooltip_Ability_item_eye_gem_Note0"                   "The effect cannot be dispelled and persists through death."
+"DOTA_Tooltip_modifier_item_eye_gem"                       "Eye of Visibility"
+"DOTA_Tooltip_modifier_item_eye_gem_Description"           "Cannot become invisible. Cannot be dispelled and persists through death. Consume another Eye of Visibility to remove this effect."
 
 "DOTA_Tooltip_Ability_item_speed_orb"							"Speed Orb"
 "DOTA_Tooltip_Ability_item_speed_orb_Description"				"<h1>Use: Consume</h1> Permanently increases your move speed by %bonus%."

@@ -29192,7 +29192,7 @@
 
 		"precache"
 		{
-			"soundfile"		 		"soundevents/game_sounds_ember_spirit.vsndevts"
+			"soundfile"		 		"soundevents/game_sounds_heroes/game_sounds_ember_spirit.vsndevts"
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_juggernaut.vsndevts"
 
 			"particle"					"particles/econ/items/monkey_king/arcana/fire/mk_arcana_fire_spring_cast_ringouterpnts.vpcf"
@@ -29609,7 +29609,6 @@
 		"AbilityManaCost"				"0"
 		"precache"
 		{
-			"model"	 "models/rat_skin/mouse.vmdl"
 			"particle"  "particles/hero_jaina/jaina_overvoid_effect.vpcf"
 			"particle"  "particles/hero_jaina/jaina_overvoid_aoe_ring.vpcf"
 		}
@@ -31927,8 +31926,7 @@
 			"particle"							"particles/units/heroes/hero_earthshaker/earthshaker_echoslam.vpcf"
 			"particle"						    "particles/units/heroes/hero_earthshaker/earthshaker_echoslam_start.vpcf"
 			"soundfile"							"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts"
-			"soundfile"							"game_sounds_obsidian_destroyer.vsndevts"
-			"particle"  							"particles/effects/echo_slam.vpcf"
+			"soundfile"							"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
 			"particle"							"particles/galactus/galactus_seed_of_ambition_eternal_item.vpcf"
 			"model"								"models/items/doom/pyre/pyre.vmdl"
 			"model"								"models/items/doom/herald_khorne_weapon_alt/herald_khorne_weapon_alt.vmdl"

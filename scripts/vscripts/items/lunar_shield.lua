@@ -129,6 +129,8 @@ function modifier_lunar_shield_absorb:OnCreated(params)
 
 	self.shield_regen_pct = 0.15 -- 15% max shield per second for Super Scepter
 	self.interval = 0.15 -- Interval for regeneration check
+	self.ss_damage_threshold = self.ability:GetSpecialValueFor("ss_damage_threshold") / 100
+	self.ss_damage_bonus = self.ability:GetSpecialValueFor("ss_damage_bonus")
 
 	-- Initialize shield values to 0 temporarily
 	self.max_shield = 0
@@ -293,7 +295,17 @@ end
 
 -- Modifier Effects
 function modifier_lunar_shield_absorb:DeclareFunctions()
-	return { MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT }
+	return { MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT, MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE }
+end
+
+function modifier_lunar_shield_absorb:GetModifierTotalDamageOutgoing_Percentage()
+	if not self.ability or self.ability:IsNull() then return 0 end
+	if not self.max_shield or self.max_shield <= 0 or not self.current_shield then return 0 end
+	if not self.parent:HasModifier("modifier_super_scepter") then return 0 end
+	if self.current_shield > self.max_shield * self.ss_damage_threshold then
+		return self.ss_damage_bonus
+	end
+	return 0
 end
 
 function modifier_lunar_shield_absorb:GetModifierIncomingDamageConstant(params)

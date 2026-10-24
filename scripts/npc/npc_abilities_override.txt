@@ -7423,6 +7423,7 @@
         {
             "duration" "18.0 20.0 22.0"
             "bonus_movement_speed" "20 30 40"
+            "bonus_outgoing_damage_pct"		"10.0 15.0 20.0"
         }
 	}
 	// Ability: Mirana Starfall

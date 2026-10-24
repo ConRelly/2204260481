@@ -16509,7 +16509,8 @@
 		"Ability1"					"damage_meter"
 		"Ability2"					"windrunner_windrun"
 		"Ability3"                  "ability_absolute_no_cc"
-		//"Ability4"                  "cosmos_asteroid"
+		//"Ability4"                  "leesin_dragons_rage"
+		//"Ability5"                  "cosmos_space_mist"
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"0"

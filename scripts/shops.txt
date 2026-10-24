@@ -25,6 +25,7 @@
 		"item"		"item_remove_ability"
 		"item"		"item_phoenix_ash"
 		"item"      "item_simple_max_hp_potion"
+		"item"      "item_eye_gem"
 		"item"      "item_totem_upgrade"
 		"item"      "item_xp_booster_edible"
 		

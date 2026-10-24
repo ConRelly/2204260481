@@ -3676,3 +3676,7 @@ Note: because of the Arcade changes to not allow most maps dedicated servers, so
 * Fixed sladar lvl 10 talent to work and display properly its effect on sprint
 * Added a new command for round statue (found on its skill), "-friendlystatue" (ON /Off to toggle) , statue still needs to be attacked, but spawns as ally so units do not auto-aggro it.
 ---
+* Added Eye of Visibility to the attributes shop for 1000 gold, with no purchase limit. Consume it to block your invisibility without removing ability buffs, and consume another to remove the effect. Cannot be dispelled and stays after death.
+* Lunar Shield: Super Scepter now also increases all outgoing damage by 35% while shield durability is above 50%.
+* Expanded local effect precaching, including Master Of Weapons Sword's slash trail/hit effects and the skills used by Gods Aiolos, Moran, Cosmos and Aghanim.
+---

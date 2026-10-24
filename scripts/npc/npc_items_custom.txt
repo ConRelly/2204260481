@@ -2481,6 +2481,32 @@
         }
 	}
 
+// Eye of Visibility
+	"item_eye_gem"
+	{
+		"BaseClass"                 "item_lua"
+		"ScriptFile"                "items/item_eye_gem.lua"
+		"AbilityTextureName"        "item_eye_gem"
+		"Model"                     "models/props_gameplay/recipe.vmdl"
+		"AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityCastPoint"          "0"
+		"AbilityCooldown"           "0"
+		"AbilityManaCost"           "0"
+		"ItemCost"                  "1000"
+		"ItemPurchasable"           "1"
+		"ItemShopTags"              "consumable"
+		"ItemQuality"               "consumable"
+		"ItemAliases"               "eye;visibility;invisibility"
+		"ItemShareability"          "ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemStackable"             "1"
+		"ItemPermanent"             "0"
+		"ItemInitialCharges"        "1"
+		"ItemDisplayCharges"        "1"
+		"ItemRequiresCharges"       "1"
+		"ItemKillable"              "0"
+		"IsTempestDoubleClonable"   "0"
+	}
+
 // Speed Orb
 	"item_speed_orb"
 	{
@@ -22491,6 +22517,8 @@
             "shield_recovery" "6"
             "threshold"       "70"
             "tooltip_reduction" "75"
+            "ss_damage_threshold" "50"
+            "ss_damage_bonus" "35"
         }
 	}
 // Lunar Shield Recipe
