@@ -8,7 +8,8 @@ Existing explicit entries are retained for resources constructed dynamically.
 import argparse
 from pathlib import Path
 import re
-import struct
+
+from vpk import vpk_paths
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,45 +41,6 @@ def resource_paths(text, lua=False):
         path = re.sub(r"/+", "/", value.replace("\\", "/").strip()).lower()
         if RESOURCE.fullmatch(path):
             yield path
-
-
-def vpk_paths(filename):
-    """Read the directory tree only; never extract/scan whole particle folders."""
-    with filename.open("rb") as handle:
-        header = handle.read(12)
-        signature, version, tree_size = struct.unpack("<III", header)
-        if signature != 0x55AA1234 or version not in (1, 2):
-            raise ValueError(f"Unsupported VPK: {filename}")
-        if version == 2:
-            handle.read(16)
-        tree = handle.read(tree_size)
-    at = 0
-
-    def string():
-        nonlocal at
-        end = tree.index(0, at)
-        result = tree[at:end].decode("utf-8")
-        at = end + 1
-        return result
-
-    while True:
-        extension = string()
-        if not extension:
-            return
-        while True:
-            directory = string()
-            if not directory:
-                break
-            while True:
-                name = string()
-                if not name:
-                    break
-                _, preload, _, _, _, terminator = struct.unpack_from("<IHHIIH", tree, at)
-                if terminator != 0xFFFF:
-                    raise ValueError(f"Invalid VPK directory entry: {filename}")
-                at += 18 + preload
-                prefix = "" if directory == " " else directory + "/"
-                yield (prefix + name + "." + extension).lower()
 
 
 def kv_sources():

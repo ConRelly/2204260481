@@ -159,11 +159,11 @@
 
 	"DOTA_Tooltip_ability_item_inf_aegis"				"Aegis of Infinity"
 	"DOTA_Tooltip_ability_item_inf_aegis_Lore"			"The Immortal was said to own a shield that protected him from death itself."
-	"DOTA_Tooltip_ability_item_inf_aegis_Description"	"<h1>Passive: Reincarnation</h1>Brings you to life with full health and mana %reincarnate_delay% seconds after you die, at the location where you died.<br><br>Cooldown: %cooldown% sec.\n<h1>Suicide</h1>Every inf aegis respwan proc gives owner +%proc_stats% All Attributes (allows you to use the command '-killmepls' for proc).\n<h1><font color='#0055FF'>UP: Aghanim's Scepter + Shard</font></h1>Gives 1 effect for any source of reincarnation.\nNot spent after death."
+	"DOTA_Tooltip_ability_item_inf_aegis_Description"	"<h1>Passive: Reincarnation</h1>Revives you where you died after %reincarnate_delay%s with full health and mana. Cooldown %cooldown%s. The Aegis remains after use.\n<h1><font color='#86C91F'>Stacks of Immortality</font></h1>Starts with +%starting_stats% to all attributes. Each Aegis revive adds <font color='#86C91F'>%proc_stats% + your effective level</font> to all attributes. Each level past 100 counts as 10.<br>Use '-killmepls' to trigger the revive when ready.\n<h1><font color='#0094FF'>UP: Aghanim's Scepter + Shard</font></h1>Any source of reincarnation grants a stack."
 	"DOTA_Tooltip_ability_item_inf_aegis_note0"			"Does not affect cooldown reduction."
 	"DOTA_Tooltip_ability_item_inf_aegis_note1"			"You can't reset the cooldown."
 	"DOTA_Tooltip_modifier_inf_aegis_stats"				"Stacks of Immortality"
-	"DOTA_Tooltip_modifier_inf_aegis_stats_Description"	"+%dMODIFIER_PROPERTY_TOOLTIP% All Attributes"
+	"DOTA_Tooltip_modifier_inf_aegis_stats_Description"	"Total bonus from Stacks of Immortality<br>+%dMODIFIER_PROPERTY_TOOLTIP% to all attributes"
 
 	"DOTA_Tooltip_ability_item_titan_chunk"						"Titan Chunk"
 	"DOTA_Tooltip_ability_item_titan_chunk_magic_resistance"	"%+$spell_resist"
@@ -1676,7 +1676,10 @@
 
 	"DOTA_Tooltip_ability_item_witless_shako_note0"				"Is part of <font color='#7E09E6'>Hammer Of The Divine</font>"
 	"DOTA_Tooltip_ability_item_resurection_pendant_note1"		"<br>Is part of <font color='#7E09E6'>Hammer Of The Divine</font>"
-	"DOTA_Tooltip_ability_item_desolator_2_note1"				"<br>Is part of <font color='#7E09E6'>Hammer Of The Divine</font>"
+	"DOTA_Tooltip_ability_item_desolator_2"					"Stygian Desolator"
+	"DOTA_Tooltip_ability_item_desolator_2_Description"		"<h1>Passive: Greater Corruption</h1>Your attacks reduce the target's armor by %corruption_armor% for %corruption_duration% seconds."
+	"DOTA_Tooltip_ability_item_desolator_2_note0"				"Armor reduction works on buildings."
+	"DOTA_Tooltip_ability_item_desolator_2_note1"				"Component of Fire Rapier and <font color='#7E09E6'>Hammer Of The Divine</font>."
 	"DOTA_Tooltip_ability_item_desolator_2_bonus_damage"        "+$damage"
 
 	"DOTA_Tooltip_Ability_item_dragon_scale_bonus_armor"        "+$armor"

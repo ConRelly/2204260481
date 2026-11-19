@@ -22469,36 +22469,6 @@
 		"ItemPurchasable"				"0"
 	}
 
-// Recipe: Stygian Desolator
-	"item_recipe_desolator_2"
-	{
-		"BaseClass"						"item_datadriven"
-		"Model"							"models/props_gameplay/recipe.vmdl"
-		"AbilityTextureName"			"item_recipe"
-		"ItemCost"						"10000"
-		"ItemShopTags"					""
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_desolator_2"
-		"ItemRequirements"
-		{
-			"01"						"item_chest_5;item_desolator_3_custom"
-		}
-	}
-// Stygian Desolator
-	"item_desolator_2"
-	{
-		"ItemCost"						"0"
-		"ItemGloballyCombinable"		"0"
-		"ItemShareability"				"ITEM_FULLY_SHAREABLE"		
-		"ItemPurchasable"				"1"
-		"AbilityValues"
-        {
-            "bonus_damage" "11200"
-            "corruption_armor" "-119"
-            "corruption_duration" "10"
-        }
-	}
-
 // Recipe: Demonicon
 	"item_recipe_demonicon"
 	{

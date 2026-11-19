@@ -1393,6 +1393,7 @@ function AOHGameMode:CC_Kill( playerID )
 			Timers:CreateTimer({
 				endTime = 0.15, 
 				callback = function()
+					hero.spawnRecoveryBypassAt = GameRules:GetGameTime()
 					hero:ForceKill(false)
 				end
 			})
@@ -1404,6 +1405,7 @@ function AOHGameMode:CC_Kill( playerID )
 			Timers:CreateTimer({
 				endTime = 7, 
 				callback = function()
+					hero.spawnRecoveryBypassAt = GameRules:GetGameTime()
 					hero:ForceKill(false)
 				end
 			})

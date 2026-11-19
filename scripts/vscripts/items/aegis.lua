@@ -71,7 +71,7 @@ function modifier_inf_aegis:OnDeath(keys)
 	local aegis = hero:FindModifierByName("modifier_aegis")
 	if aegis and aegis.fromInfinity and aegis.reincarnationAt == GameRules:GetGameTime() then return end
 	local stats = hero:FindModifierByName("modifier_inf_aegis_stats")
-	if stats then stats:IncrementStackCount() end
+	if stats then stats:AddResurrectionStack() end
 end
 
 -----------------------
@@ -86,8 +86,35 @@ function modifier_inf_aegis_stats:IsPurgeException() return false end
 function modifier_inf_aegis_stats:IsDebuff() return false end
 function modifier_inf_aegis_stats:RemoveOnDeath() return false end
 function modifier_inf_aegis_stats:OnCreated()
+	if not IsServer() then return end
+	local item = self:GetAbility()
+	self.totalStats = item:GetSpecialValueFor("starting_stats")
+	self.resurrectionBaseStats = item:GetSpecialValueFor("proc_stats")
+	self:SetHasCustomTransmitterData(true)
 	self:SetStackCount(1)
-	self.proc_stats = self:GetAbility():GetSpecialValueFor("proc_stats")
+end
+
+function modifier_inf_aegis_stats:GetTotalStats()
+	-- Existing modifiers from before a script reload used a flat bonus per stack.
+	return self.totalStats or self:GetStackCount() * (self.proc_stats or 0)
+end
+
+function modifier_inf_aegis_stats:AddResurrectionStack()
+	local level = self:GetParent():GetLevel()
+	if level > 100 then level = 100 + (level - 100) * 10 end
+	local needsTransmitter = self.totalStats == nil
+	self.totalStats = self:GetTotalStats() + (self.resurrectionBaseStats or 100) + level
+	if needsTransmitter then self:SetHasCustomTransmitterData(true) end
+	self:IncrementStackCount()
+	self:SendBuffRefreshToClients()
+end
+
+function modifier_inf_aegis_stats:AddCustomTransmitterData()
+	return {totalStats = self:GetTotalStats()}
+end
+
+function modifier_inf_aegis_stats:HandleCustomTransmitterData(data)
+	self.totalStats = data.totalStats
 end
 function modifier_inf_aegis_stats:DeclareFunctions()
 	return {
@@ -97,7 +124,7 @@ function modifier_inf_aegis_stats:DeclareFunctions()
 		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 	}
 end
-function modifier_inf_aegis_stats:OnTooltip() return self:GetStackCount() * self.proc_stats end
-function modifier_inf_aegis_stats:GetModifierBonusStats_Strength() return self:GetStackCount() * self.proc_stats end
-function modifier_inf_aegis_stats:GetModifierBonusStats_Agility() return self:GetStackCount() * self.proc_stats end
-function modifier_inf_aegis_stats:GetModifierBonusStats_Intellect() return self:GetStackCount() * self.proc_stats end
+function modifier_inf_aegis_stats:OnTooltip() return self:GetTotalStats() end
+function modifier_inf_aegis_stats:GetModifierBonusStats_Strength() return self:GetTotalStats() end
+function modifier_inf_aegis_stats:GetModifierBonusStats_Agility() return self:GetTotalStats() end
+function modifier_inf_aegis_stats:GetModifierBonusStats_Intellect() return self:GetTotalStats() end

@@ -65,7 +65,7 @@
             "arrow_angle" "50"
             "stacks_chance" "25"
             "bonus_mana" "15"
-            "bonus_agi" "2"
+            "bonus_agi" "12"
             "bonus_ss"
             {
                 "value" "50"

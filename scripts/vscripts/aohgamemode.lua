@@ -75,6 +75,7 @@ require("lib/uless")
 
 _G.mHackGameMode = HackGameMode()
 
+local HERO_SPAWN_PROTECTION_DURATION = 1
 local MONSTER_CONFIG_ORIGIN = "aoh2_config.txt"
 local MONSTER_CONFIG_NEW_KING = "aoh2_config_siltbreaker_200809_hard.txt"
 local MONSTER_CONFIG_SILTBREAKER = "aoh2_config_siltbreaker_200809.txt"
@@ -310,8 +311,12 @@ function AOHGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MAGIC_RESIST, 0)  -- not implemented by dota yet
 	GameRules:GetGameModeEntity():SetCameraDistanceOverride(1400)
 	GameRules:GetGameModeEntity():SetHUDVisible(26,false)
-	ListenToGameEvent("npc_spawned", Dynamic_Wrap(AOHGameMode, 'OnEntitySpawned'), self)
-	ListenToGameEvent("entity_killed", Dynamic_Wrap(AOHGameMode, 'OnEntityKilled'), self)
+	local function listenForSpawnEvent(eventName, method)
+		ListenToGameEvent(eventName, function(event) self:RunSpawnCallback(method, event) end, nil)
+	end
+	listenForSpawnEvent("npc_spawned", "OnEntitySpawned")
+	listenForSpawnEvent("entity_killed", "OnEntityKilled")
+	listenForSpawnEvent("dota_buyback", "OnHeroBuyback")
 	ListenToGameEvent("player_chat", Dynamic_Wrap(AOHGameMode, "OnPlayerDeasth"), self)
 	ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(AOHGameMode, "OnGameRulesStateChange"), self)
 	ListenToGameEvent("dota_item_picked_up", Dynamic_Wrap(AOHGameMode, 'OnItemPickedUp'), self)
@@ -430,10 +435,19 @@ end
 function AOHGameMode:OnDamageDealt(damageTable)
 	local attacker_index = damageTable.entindex_attacker_const
 	local victim_index = damageTable.entindex_victim_const
-	if attacker_index and victim_index then
+	local victim = victim_index and EntIndexToHScript(victim_index)
+	local spawn = victim and victim.aohSpawnProtection
+	if spawn and spawn.expiresAt then
+		local now = GameRules:GetGameTime()
+		if now >= spawn.expiresAt then
+			spawn.expiresAt = nil
+		elseif victim.cosmosExecutionAt ~= now then
+			return false
+		end
+	end
+	if attacker_index and victim then
 		local attacker = EntIndexToHScript(attacker_index)
-		local victim = EntIndexToHScript(victim_index)
-		if attacker and victim then
+		if attacker then
 			if attacker.GetPlayerOwnerID then
 				local attackerPlayerId = attacker:GetPlayerOwnerID()
 				local victim_name = victim:GetUnitName()
@@ -1312,6 +1326,8 @@ function AOHGameMode:CheckForDefeatDelay()
 			local time = math.floor(GameRules:GetGameTime() / 60)
 			local bonus_gold = (5 + time) * 500
 			if are_all_heroes_dead() then
+				-- Give a queued spawn recovery time to finish before declaring defeat.
+				if (self._pendingSpawnRecoveries or 0) > 0 then return 0.03 end
 				if _G._defeat_extra_lives > 0 and not _G._hardMode then
 					if one_time_reward then
 						refresh_players_bonus()
@@ -1426,6 +1442,7 @@ local IllusionNotLearn = {
 	};
 
 LinkLuaModifier("modifier_generic_handler", "modifiers/modifier_generic_handler", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_aoh_spawn_recovery", "modifiers/modifier_aoh_spawn_recovery", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_charges", "modifiers/modifier_charges", LUA_MODIFIER_MOTION_NONE)
 local reminder = true
 function AddCouriersToList(playerID, courier)
@@ -1434,12 +1451,75 @@ function AddCouriersToList(playerID, courier)
     end
     table.insert(_G.COURIERS[playerID], courier)
 end
+
+local function IsSpawnProtectedHero(unit)
+	if not unit.IsRealHero or not unit:IsRealHero() or unit:IsIllusion()
+		or unit:GetTeamNumber() ~= DOTA_TEAM_GOODGUYS then return false end
+	local playerID = unit:GetPlayerOwnerID()
+	return PlayerResource:IsValidPlayerID(playerID) and PlayerResource:GetSelectedHeroEntity(playerID) == unit
+end
+
+function AOHGameMode:RunSpawnCallback(method, ...)
+	local ok, result = pcall(self[method], self, ...)
+	if ok then return result end
+	local message = FormatScriptError(result)
+	self._spawnCallbackErrors = self._spawnCallbackErrors or {}
+	if self._spawnCallbackErrors[method] == message then return end
+	self._spawnCallbackErrors[method] = message
+	print("[Spawn Protection] " .. method .. ": " .. message)
+end
+
+local function ApplyHeroSpawnBuffs(hero)
+	hero:AddNewModifier(hero, nil, "modifier_aegis_buff", {duration = 7})
+	hero:AddNewModifier(hero, nil, "modifier_aegis_buff", {duration = 2})
+end
+
+function AOHGameMode:ArmSpawnProtection(hero, fromRespawn)
+	if not IsSpawnProtectedHero(hero) or not hero:IsAlive() then return end
+	local now = GameRules:GetGameTime()
+	local previous = hero.aohSpawnProtection
+	local newSpawn = not previous or previous.died
+		or (fromRespawn and now >= previous.startedAt + HERO_SPAWN_PROTECTION_DURATION)
+	if newSpawn then
+		hero.aohSpawnProtection = {
+			startedAt = now,
+			expiresAt = now + HERO_SPAWN_PROTECTION_DURATION,
+			recovered = previous and (previous.recovering or (not previous.died and previous.recovered)),
+		}
+	end
+	if not hero:HasModifier("modifier_aoh_spawn_recovery") then
+		hero:AddNewModifier(hero, nil, "modifier_aoh_spawn_recovery", {})
+	end
+	if newSpawn then ApplyHeroSpawnBuffs(hero) end
+	return true
+end
+
+function AOHGameMode:OnHeroBuyback(event)
+	if not IsServer() then return end
+	local hero = event.entindex and EntIndexToHScript(event.entindex)
+	if not hero or hero:IsNull() or not IsSpawnProtectedHero(hero) then
+		local playerID = event.player_id
+		if playerID == nil or not PlayerResource:IsValidPlayerID(playerID) then return end
+		hero = PlayerResource:GetSelectedHeroEntity(playerID)
+		if not hero or hero:IsNull() or not IsSpawnProtectedHero(hero) then return end
+	end
+	if hero:IsAlive() then
+		self:ArmSpawnProtection(hero, true)
+	else
+		-- The buyback event can arrive before the hero is back in the world.
+		Timers:CreateTimer(0, function()
+			if not hero:IsNull() then self:ArmSpawnProtection(hero, true) end
+		end)
+	end
+end
+
 function AOHGameMode:OnEntitySpawned(event)
 	if not IsServer() then return end
 	--mHackGameMode:OnNPCSpawned(event)
 	-- Fix for str magic res and more.
 	local unit = EntIndexToHScript(event.entindex)
-	if unit:IsNull() then return end
+	if not unit or unit:IsNull() then return end
+	local spawnBuffsHandled = self:RunSpawnCallback("ArmSpawnProtection", unit)
 	if (unit:GetPlayerOwnerID() == 0 and unit:IsRealHero() and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME) and reminder then
 		local steam_name = PlayerResource:GetPlayerName(0)
 		if GetMapName() == "heroattack_on_easy" then
@@ -1480,8 +1560,7 @@ function AOHGameMode:OnEntitySpawned(event)
 				end
 				fix_atr_for_hero(unit)
 				unit:AddNewModifier(unit, nil, "modifier_generic_handler", {})
-				unit:AddNewModifier(unit, nil, "modifier_aegis_buff", {duration = 7})
-				unit:AddNewModifier(unit, nil, "modifier_aegis_buff", {duration = 2})
+				if not spawnBuffsHandled then ApplyHeroSpawnBuffs(unit) end
 			end
 		end
 	end	
@@ -1640,10 +1719,42 @@ end
 
 
 
+function AOHGameMode:TrySpawnRecovery(hero, reincarnating)
+	local spawn = hero.aohSpawnProtection
+	if not spawn or spawn.died then return end
+	spawn.died = true
+	local expiresAt = spawn.expiresAt
+	if not expiresAt then return end
+	spawn.expiresAt = nil
+	local now = GameRules:GetGameTime()
+	if now >= expiresAt or spawn.recovered or not IsSpawnProtectedHero(hero)
+		or reincarnating or hero:IsReincarnating() or hero.cosmosExecutionAt == now
+		or hero.infinityAegisSuicideAt == now or hero.spawnRecoveryBypassAt == now then return end
+
+	local position = hero:GetAbsOrigin()
+	self._pendingSpawnRecoveries = (self._pendingSpawnRecoveries or 0) + 1
+	-- Let the engine finish processing death before calling RespawnHero.
+	Timers:CreateTimer(0, function()
+		self._pendingSpawnRecoveries = self._pendingSpawnRecoveries - 1
+		if GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME or hero:IsNull()
+			or hero.aohSpawnProtection ~= spawn or hero:IsAlive()
+			or hero:IsReincarnating() or not IsSpawnProtectedHero(hero) then return end
+		spawn.recovering = true
+		hero:RespawnHero(false, false, false)
+		if hero:IsAlive() then
+			FindClearSpaceForUnit(hero, position, true)
+		else
+			spawn.recovering = nil
+		end
+	end)
+end
+
 function AOHGameMode:OnEntityKilled(event)
 	if not IsServer() then return end
 	local killedUnit = EntIndexToHScript(event.entindex_killed)
-	if killedUnit:IsNull() then return end
+	if not killedUnit or killedUnit:IsNull() then return end
+	local spawn = killedUnit.aohSpawnProtection
+	self:RunSpawnCallback("TrySpawnRecovery", killedUnit)
 	if killedUnit:IsFort() then
 		GameRules:SetSafeToLeave(true)
 		end_screen_setup(self._entAncient and self._entAncient:IsAlive())			
@@ -1659,7 +1770,8 @@ function AOHGameMode:OnEntityKilled(event)
 	if killedUnit and killedUnit:IsRealHero()  then
 		-- create_ressurection_tombstone(killedUnit)
 		Timers:CreateTimer(1, function( )
-			--create_ressurection_tombstone(killedUnit)
+			if killedUnit:IsNull() or killedUnit:IsAlive() or killedUnit:IsReincarnating()
+				or killedUnit.aohSpawnProtection ~= spawn then return end
 			CreateModifierThinker(killedUnit,self,"modifier_tombstone2",{},killedUnit:GetOrigin(),killedUnit:GetTeamNumber(),false)
 		end)
 		if killedUnit:IsRealHero() and not killedUnit:IsTempestDouble() and not killedUnit:IsReincarnating() then

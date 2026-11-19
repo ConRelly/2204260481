@@ -120,7 +120,7 @@ function SetArrowAttackProjectile(caster, frost_attack, marksmanship_attack)
 	-- modifiers
 	local skadi_modifier = "modifier_item_skadi"
 	local deso_modifier = "modifier_item_desolator"
-	local deso_2_modifier = "modifier_item_desolator_2"
+	local deso_2_modifier = "modifier_item_stygian_desolator"
 	local morbid_modifier = "modifier_morbid_mask"
 	local mom_modifier = "modifier_mask_of_madness"
 	local satanic_modifier = "modifier_satanic"

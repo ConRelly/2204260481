@@ -134,7 +134,7 @@ function modifier_aegis:OnRespawn(keys)
 	self.fromInfinity = nil
 	if fromInfinity then
 		local stats = hero:FindModifierByName("modifier_inf_aegis_stats")
-		if stats then stats:IncrementStackCount() end
+		if stats then stats:AddResurrectionStack() end
 	end
 	hero:AddNewModifier(hero, nil, "modifier_aegis_buff", {duration = ReincarnateBuffTime})
 end
@@ -158,24 +158,27 @@ function modifier_aegis_buff:IsDebuff() return false end
 function modifier_aegis_buff:GetTexture() return "omniknight_repel" end
 function modifier_aegis_buff:IsPurgable() return false end
 function modifier_aegis_buff:IsHidden() return false end
-function modifier_aegis_buff:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
-function modifier_aegis_buff:OnCreated(table)
-	if not IsServer() then return nil end
-	local parent = self:GetParent()
-	--Timers:CreateTimer(0.01, function()
-		if parent ~= nil and not parent:IsNull() and not parent:IsIllusion() and not parent:IsNull() then
-			if self:GetParent():IsNull() then return end
-			local nWingsParticleIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_guardian_angel_omni.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
-			ParticleManager:SetParticleControl(nWingsParticleIndex, 0, self:GetParent():GetAbsOrigin())
-			ParticleManager:SetParticleControlEnt(nWingsParticleIndex, 5, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
-			self:AddParticle(nWingsParticleIndex, false, false, -1, false, false)
-			-- Halo particle
-			local nHaloParticleIndex = ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_guardian_angel_halo_buff.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetParent())
-			--ParticleS(parent)
-			ParticleManager:SetParticleControlEnt(nHaloParticleIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
-			self:AddParticle(nHaloParticleIndex, false, false, -1, false, false)
-		end
-	--end)
+function modifier_aegis_buff:GetAttributes()
+	return MODIFIER_ATTRIBUTE_MULTIPLE + MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE
+end
+local function AddAegisProtectionEffects(modifier, hero)
+	local position = hero:GetAbsOrigin()
+	local wings = ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_guardian_angel_omni.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+	modifier:AddParticle(wings, false, false, -1, false, false)
+	ParticleManager:SetParticleControl(wings, 0, position)
+	ParticleManager:SetParticleControlEnt(wings, 5, hero, PATTACH_POINT_FOLLOW, "attach_hitloc", position, true)
+	local halo = ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_guardian_angel_halo_buff.vpcf", PATTACH_OVERHEAD_FOLLOW, hero)
+	modifier:AddParticle(halo, false, false, -1, false, false)
+	ParticleManager:SetParticleControl(halo, 0, position)
+	ParticleManager:SetParticleControlEnt(halo, 5, hero, PATTACH_POINT_FOLLOW, "attach_hitloc", position, true)
+end
+
+function modifier_aegis_buff:OnCreated()
+	if not IsServer() then return end
+	local hero = self:GetParent()
+	if not hero or hero:IsNull() or hero:IsIllusion() then return end
+	local ok, err = pcall(AddAegisProtectionEffects, self, hero)
+	if not ok then print("[Aegis Protection] Effects failed: " .. FormatScriptError(err)) end
 end
 function modifier_aegis_buff:DeclareFunctions()
  return {MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE, MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE}

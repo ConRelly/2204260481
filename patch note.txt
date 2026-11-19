@@ -3694,3 +3694,8 @@ Note: because of the Arcade changes to not allow most maps dedicated servers, so
 -Divinity duration from 5s to 8s.
 -Minumum feather consumption from 4 to 1.
 ---
+* Buyback now applies the usual Aegis Protection buff. If spawn protection still fails and a main hero dies within 1 second of spawning, they respawn once near where they fell(-kill command excluded).
+* Drow Ranger's Multishot Experience now gives 12 Agility per stack, up from 2.
+* Aegis of Infinity: Each resurrection stack now gives 100 + your level to all attributes. Each level past 100 counts as 10, so a level 103 revive adds 230 to each attribute.
+* Restored Stygian Desolator in the shop and fixed the recipes for Fire Rapier and Hammer of the Divine.
+---
