@@ -3699,3 +3699,4 @@ Note: because of the Arcade changes to not allow most maps dedicated servers, so
 * Aegis of Infinity: Each resurrection stack now gives 100 + your level to all attributes. Each level past 100 counts as 10, so a level 103 revive adds 230 to each attribute.
 * Restored Stygian Desolator in the shop and fixed the recipes for Fire Rapier and Hammer of the Divine.
 ---
+999 071
