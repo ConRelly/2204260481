@@ -17,6 +17,7 @@ require("lib/atr_fix")
 require("lib/underdog")
 require("lib/my")
 require("lib/timers")
+local FormatScriptError = require("lib/script_error")
 require("lib/ai")
 require("lib/chat_handler")
 require("items/arcane_staff")
@@ -25,6 +26,7 @@ require("lib/parsers")
 require("lib/end_screen")
 require("lib/data")
 require("lib/notifications")
+local HealingGuard = require("lib/healing_guard")
 require("lib/hero_damage")
 require("teststuf")
 --require('statcollection/init')
@@ -324,6 +326,7 @@ function AOHGameMode:InitGameMode()
 	ListenToGameEvent("player_disconnected", Dynamic_Wrap(AOHGameMode, 'OnPlayerDisconnect'), self)
 	GameRules:GetGameModeEntity():SetThink("OnThink", self, 1.0)
 	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(AOHGameMode, 'OnDamageDealt'), self)
+	HealingGuard:Init()
 	gHeroDamage:InitGameMode()
 
 	self:InitCommand()
@@ -706,14 +709,11 @@ function AOHGameMode:InitVariables()
 	if self._playerNumber < 2 and not self.starting_intems then
 		self._goldRatio = 0.9
 		self._expRatio = 0.5
-		local playerHero = PlayerResource:GetPlayer(0):GetAssignedHero()
+		local playerHero = PlayerResource:GetSelectedHeroEntity(0)
 
 		Notifications:TopToAll({text="#game_begin_benediction", duration=5})
-		if self.gon and not self.spawned_gon then
-			self._nPlayerHelp = CreateUnitByName("npc_playerhelp", playerHero:GetAbsOrigin(), true, playerHero, playerHero:GetOwner(), playerHero:GetTeamNumber())
-			self._nPlayerHelp:SetControllableByPlayer(playerHero:GetPlayerID(), true)
-			self._nPlayerHelp:SetTeam(playerHero:GetTeamNumber())
-			self._nPlayerHelp:SetOwner(playerHero)
+		if self.gon and not self.spawned_gon and playerHero and not playerHero:IsNull() then
+			self:SpawnPlayerHelp(playerHero)
 			self.spawned_gon = true		
 		end
 	end
@@ -1570,7 +1570,7 @@ function AOHGameMode:OnEntitySpawned(event)
                                   return getrandomskill(unit)
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -1582,7 +1582,7 @@ function AOHGameMode:OnEntitySpawned(event)
                                   return getrandomskill(unit)
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -1669,8 +1669,10 @@ function AOHGameMode:OnEntityKilled(event)
 	end
 	if killedUnit:GetUnitName() == "npc_playerhelp" then
 		if not killedUnit:IsIllusion() and killedUnit:IsControllableByAnyPlayer() then
-			local playerHero = PlayerResource:GetPlayer(0):GetAssignedHero()
-			playerHero:AddNewModifier(playerHero, nil, "modifier_playerhelp_revive", {duration = 15})
+			local playerHero = PlayerResource:GetSelectedHeroEntity(0)
+			if playerHero and not playerHero:IsNull() then
+				playerHero:AddNewModifier(playerHero, nil, "modifier_playerhelp_revive", {duration = 15})
+			end
 			GameRules:GetGameModeEntity():SetThink("RevivePlayerHelp", self, 15)
 		end
 	end
@@ -1739,13 +1741,20 @@ function AOHGameMode:OnEntityKilled(event)
 	mHackGameMode:OnEntityKilled(event)
 end
 
+function AOHGameMode:SpawnPlayerHelp(hero)
+	-- Assign ownership after the engine finishes spawning the Goon.
+	CreateUnitByNameAsync("npc_playerhelp", hero:GetAbsOrigin(), true, nil, nil, hero:GetTeamNumber(), function(goon)
+		if not goon or goon:IsNull() or hero:IsNull() then return end
+		goon:SetOwner(hero)
+		goon:SetControllableByPlayer(hero:GetPlayerID(), true)
+		self._nPlayerHelp = goon
+	end)
+end
+
 -- Revives player help in single player mode
 function AOHGameMode:RevivePlayerHelp()
-	local playerHero = PlayerResource:GetPlayer(0):GetAssignedHero()
-	self._nPlayerHelp = CreateUnitByName("npc_playerhelp", playerHero:GetAbsOrigin(), true, playerHero, playerHero:GetOwner(), playerHero:GetTeamNumber())
-	self._nPlayerHelp:SetControllableByPlayer(playerHero:GetPlayerID(), true)
-	self._nPlayerHelp:SetTeam(playerHero:GetTeamNumber())
-	self._nPlayerHelp:SetOwner(playerHero)
+	local hero = PlayerResource:GetSelectedHeroEntity(0)
+	if hero and not hero:IsNull() then self:SpawnPlayerHelp(hero) end
 end
 
 function AOHGameMode:CheckForLootItemDrop(killedUnit)

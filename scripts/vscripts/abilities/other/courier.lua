@@ -1,4 +1,9 @@
 require("lib/timers")
+local PendantDelay = require("abilities/other/courier_resurrection_delay")
+
+function courier_cycle_pendant_delay(keys)
+	PendantDelay:Cycle(keys.caster, keys.ability)
+end
 
 function courier_spell(keys)
 	local caster = keys.caster

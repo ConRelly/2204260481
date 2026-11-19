@@ -348,7 +348,7 @@ function modifier_spirit_guardian:OnRefresh()
 	end	
 end
 function modifier_spirit_guardian:DeclareFunctions()
-	return {MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_FIXED_ATTACK_RATE}
+	return {MODIFIER_PROPERTY_STATS_STRENGTH_BONUS, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_STATS_INTELLECT_BONUS, MODIFIER_PROPERTY_MANA_REGEN_CONSTANT, MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_FIXED_ATTACK_RATE, MODIFIER_PROPERTY_EXP_RATE_BOOST}
 end
 function modifier_spirit_guardian:GetModifierBonusStats_Strength()
 	if self:GetAbility() then if (self:GetParent():GetPrimaryAttribute() == 0 or self:GetParent():GetPrimaryAttribute() == 3) then
@@ -366,6 +366,7 @@ function modifier_spirit_guardian:GetModifierConstantManaRegen() if self:GetAbil
 function modifier_spirit_guardian:GetModifierHealthBonus() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("hp") end end
 function modifier_spirit_guardian:GetModifierAttackRangeBonus() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_attack_range") end end
 function modifier_spirit_guardian:GetModifierFixedAttackRate() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("fixed_attack_rate") end end
+function modifier_spirit_guardian:GetModifierPercentageExpRateBoost() if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("xp_boost") end end
 
 function modifier_spirit_guardian:OnIntervalThink()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
@@ -437,6 +438,9 @@ function item_spirit_guardian:OnProjectileHit(target, location)
 	local stacks = 0
 	local lvl = parent:GetLevel()
 	local chance = math.floor(lvl / 2)
+	if lvl > 100 then
+		lvl = 100 + (lvl - 100) * 10
+	end
 	local base_dmg = ((parent:GetBaseDamageMin() + parent:GetBaseDamageMax()) / 2)
 	if IsServer() then
 		if parent:HasModifier("modifier_spirit_guardian_bonus_dmg") then

@@ -3680,3 +3680,17 @@ Note: because of the Arcade changes to not allow most maps dedicated servers, so
 * Lunar Shield: Super Scepter now also increases all outgoing damage by 35% while shield durability is above 50%.
 * Expanded local effect precaching, including Master Of Weapons Sword's slash trail/hit effects and the skills used by Gods Aiolos, Moran, Cosmos and Aghanim.
 ---
+* Added a general healing overflow guard for engine healing events to prevent the 1 hp Bug.
+* Spirit Guardian: Super Scepter Intelligence damage increased from 50% to 90%. Snowball and Super Scepter damage now count each hero level past 100 as 10 levels (lvl 102 = 120x). Now grants 20% bonus XP.
+---
+* Resurrection Pendant: Couriers now have a Pendant Delay button for manual casts and Aghanim's autocast. Cycle from the minimum (5s, or 2.5s with Super Scepter) up to 9s. The courier buff shows the current delay.
+* Aegis of Infinity: Now uses the same reincarnation as Consumable Aegis to fix cooldowns starting without a revive.
+* Hired Goon: Restored starting gear and fixed item upgrades. Owner Buff scales correctly after respawn and shows its current damage bonus.
+* Top Underdog rankings now use the bundled hero list allways.
+* Broken Wings:
+-Quadrupled the magic and pure damage limits. Each level past 100 counts as 10 levels and Divinity triples the limits.(limits affect an inventory trigger slot, how many feathers it consumes and the ceeling of how much dmg you deal in Divinity) 
+-10% of feathers are Divinity Feathers. Both types count toward Divinity, and Divinity Feathers are only spent when Divinity ends.
+-featheers now give 500 agi per stack instead of 250.
+-Divinity duration from 5s to 8s.
+-Minumum feather consumption from 4 to 1.
+---

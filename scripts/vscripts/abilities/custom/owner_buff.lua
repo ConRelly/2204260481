@@ -1,62 +1,78 @@
 LinkLuaModifier("modifier_owner_buff", "abilities/custom/owner_buff", LUA_MODIFIER_MOTION_NONE)
-if not owner_buff then owner_buff = class({}) end
+
+owner_buff = owner_buff or class({})
 function owner_buff:GetIntrinsicModifierName() return "modifier_owner_buff" end
 
-
-if not modifier_owner_buff then modifier_owner_buff = class({}) end
-function modifier_owner_buff:IsHidden() return false end
-function modifier_owner_buff:OnCreated()
-	if IsServer() then
-		Timers:CreateTimer(0.2, function()
-			if self == nil then return end
-			if not self:GetParent() then return end
-			if not self:GetParent():IsAlive() then return end
-			local parent = self:GetParent()
-			local owner = parent:GetOwner()
-			if parent:GetUnitLabel() == "spirit_bear" then
-				for playerID = 0, 4 do
-					if PlayerResource:IsValidPlayerID(playerID) then
-						if PlayerResource:HasSelectedHero(playerID) then
-							if PlayerResource:GetPlayer(playerID) then
-								local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-								if hero:GetUnitName()== "npc_dota_hero_lone_druid" then
-									owner = hero
-								end	
-							end	
-						end
-					end
-				end				
-			end	
-			if not IsValidEntity(owner) then print("no Owner") return end 
-			--print(owner)
-			if owner and owner ~= nil then
-				local owner_attack = owner:GetAverageTrueAttackDamage(parent) * 2.0
-				local owner_spell = owner:GetSpellAmplification(false) * 5000
-				local owner_armor = owner:GetPhysicalArmorValue(false) * 500
-				local owner_hp_mp = (owner:GetMaxMana() * 2 ) + (owner:GetMaxHealth() / 2)
-				local bonus_dmg = owner_attack
-				local lvl = owner:GetLevel()
-				--parent:SetHealth(owner:GetMaxHealth())
-				if lvl > 30 then
-					bonus_dmg = math.ceil(bonus_dmg + owner_spell + owner_armor + owner_hp_mp)
-				end
-				if parent:GetUnitName()== "npc_playerhelp" then
-					bonus_dmg = math.ceil(bonus_dmg / 2)
-				elseif parent:GetUnitName() == "npc_dota_clinkz_skeleton_archer_frostivus2018" or parent:GetUnitName() == "npc_dota_clinkz_skeleton_archer_frostivus20182" or parent:GetUnitName() == "npc_dota_clinkz_skeleton_archer" then
-					bonus_dmg = math.ceil(bonus_dmg / 3)
-				end
-				self.bonus = bonus_dmg
-			end
-		end)
-		self:StartIntervalThink(20)
+local function GetOwnerUnit(summon)
+	local owner = summon:GetOwner()
+	if owner and not owner:IsNull() and owner ~= summon then
+		if owner.GetAverageTrueAttackDamage and summon:GetUnitLabel() ~= "spirit_bear" then return owner end
+		if owner.IsRealHero and owner:IsRealHero() then return owner end
+		if owner.GetAssignedHero then return owner:GetAssignedHero() end
+	end
+	local playerID = summon:GetPlayerOwnerID()
+	if PlayerResource:IsValidPlayerID(playerID) then
+		return PlayerResource:GetSelectedHeroEntity(playerID)
 	end
 end
-function modifier_owner_buff:OnIntervalThink()
-	if IsServer() then
-		self:OnCreated()
-	end
-end	
 
+modifier_owner_buff = modifier_owner_buff or class({})
+function modifier_owner_buff:IsHidden() return false end
+
+function modifier_owner_buff:OnCreated()
+	if not IsServer() then return end
+	self:SetHasCustomTransmitterData(true)
+	-- Ownership may be assigned in the spawn callback after the intrinsic is created.
+	self:StartIntervalThink(0.2)
+end
+
+function modifier_owner_buff:OnIntervalThink()
+	local parent = self:GetParent()
+	local ability = self:GetAbility()
+	if not parent or parent:IsNull() or not ability or ability:IsNull() then
+		self:StartIntervalThink(-1)
+		return
+	end
+	if not parent:IsAlive() then return end
+
+	local owner = GetOwnerUnit(parent)
+	if not owner or owner:IsNull() or owner == parent then
+		self:StartIntervalThink(1)
+		return
+	end
+
+	local bonus = owner:GetAverageTrueAttackDamage(owner) * ability:GetSpecialValueFor("owner_attack") / 100
+	if owner:GetLevel() > 30 then
+		bonus = math.ceil(bonus
+			+ owner:GetSpellAmplification(false) * ability:GetSpecialValueFor("owner_amp") * 100
+			+ owner:GetPhysicalArmorValue(false) * ability:GetSpecialValueFor("owner_armor")
+			+ owner:GetMaxHealth() * ability:GetSpecialValueFor("owner_hp_mp_tooltip") / 100
+			+ owner:GetMaxMana() * ability:GetSpecialValueFor("owner_mp_tooltip") / 100)
+	end
+
+	local unitName = parent:GetUnitName()
+	if unitName == "npc_playerhelp" then
+		bonus = math.ceil(bonus / 2)
+	elseif unitName == "npc_dota_clinkz_skeleton_archer_frostivus2018"
+		or unitName == "npc_dota_clinkz_skeleton_archer_frostivus20182"
+		or unitName == "npc_dota_clinkz_skeleton_archer" then
+		bonus = math.ceil(bonus / 3)
+	end
+
+	if self.bonus ~= bonus then
+		self.bonus = bonus
+		self:SendBuffRefreshToClients()
+	end
+	self:StartIntervalThink(20)
+end
+
+function modifier_owner_buff:AddCustomTransmitterData()
+	return {bonus = self.bonus or 20}
+end
+
+function modifier_owner_buff:HandleCustomTransmitterData(data)
+	self.bonus = data.bonus
+end
 
 function modifier_owner_buff:DeclareFunctions()
 	return {MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE}
@@ -65,5 +81,3 @@ end
 function modifier_owner_buff:GetModifierBaseAttack_BonusDamage()
 	return self.bonus or 20
 end
-
-

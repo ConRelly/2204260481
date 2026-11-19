@@ -2388,6 +2388,25 @@
 		}	
 	}
 }
+"courier_resurrection_delay"
+{
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+	"AbilityTextureName"			"custom/resurection_pendant_modifier"
+	"AbilityCastPoint"				"0"
+	"AbilityManaCost"				"0"
+	"AbilityCooldown"				"0"
+	"LearnOnSpawn"					"1"
+	"MaxLevel"						"1"
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"abilities/other/courier.lua"
+			"Function"				"courier_cycle_pendant_delay"
+		}
+	}
+}
 "courier_invincibility"
 {
 	"BaseClass"				"ability_datadriven"
@@ -8217,6 +8236,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"dragon_knight_dragon_tail"
 	"MaxLevel"						"1"
+	"LearnOnSpawn"					"1"
 	"AbilityValues"
         {
             "health_per_round" "1250"
@@ -8228,7 +8248,7 @@
         }
 	"Modifiers"
 	{
-		"modifier_ancient_increase_stats"
+		"modifier_goon_guard_setup"
 		{
 			"IsHidden"		  "1"
 			"Passive"		   "1"
@@ -8243,7 +8263,7 @@
 				"RunScript"
 				{
 					"ScriptFile"		"abilities/other/goon_increase_stats.lua"
-					"Function"			"on_created"
+					"Function"			"goon_guard_on_created"
 				} 
 			}
 		}
@@ -29338,9 +29358,9 @@
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityValues"
         {
-            "owner_attack" "150"
+            "owner_attack" "200"
             "owner_amp" "50"
-            "owner_armor" "100"
+            "owner_armor" "500"
             "owner_hp_mp_tooltip" "50"
             "owner_hp_mp" "2"
             "owner_mp_tooltip" "200"

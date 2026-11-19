@@ -1,6 +1,7 @@
 require("lib/string")
 require("played_heroes")
 require("items/lier_scarlet")
+local HealingGuard = require("lib/healing_guard")
 LinkLuaModifier("modifier_reload_bullet_channel_command", "heroes/hero_kardel/abilities", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier( "modifier_prevent_tombstone_channel_custom", "modifiers/modifier_prevent_tombstone_channel.lua", LUA_MODIFIER_MOTION_NONE )
 local count = 0
@@ -9,6 +10,7 @@ local count3 = 4
 local kardel_item = true
 
 function AOHGameMode:OnPlayerChat(keys)
+	if HealingGuard:HandleChatCommand(keys) then return end
 	local time = math.floor(GameRules:GetGameTime() / 60)
 	if keys.text == "-hard" and not self._hardMode and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		if GetMapName() ~= "heroattack_on_easy" then
@@ -995,10 +997,6 @@ function AOHGameMode:OnPlayerChat(keys)
 	if keys.text == "-dev_challenge0" and keys.playerid == 0 and Cheats:IsEnabled() then
 		_G._challenge_bosss = 0
 	end
-	if keys.text == "-dev_test_list" and keys.playerid == 0 and Cheats:IsEnabled() then
-		GetLeastPlayedHeroes()
-	end
-
 	if keys.text == "-dev_scarlet" and keys.playerid == 0 and Cheats:IsEnabled() then
 		local hero = PlayerResource:GetSelectedHeroEntity(keys.playerid)
 		local keys_table = {
@@ -1425,14 +1423,9 @@ end
 function AOHGameMode:Suicider(playerID)
 	if PlayerResource:IsValidPlayerID(playerID) and PlayerResource:HasSelectedHero(playerID) then
 		local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-		local isAlive = hero:IsAlive()
-		local rezPosition = hero:GetAbsOrigin()
-		if isAlive then
-			local ring_cd = hero:FindModifierByName("modifier_ring_perma_invincibility_cd")
-			if ring_cd and ring_cd:GetStackCount() < 1 then
-				ring_cd:SetStackCount(1)
-			end
-			Timers:CreateTimer(FrameTime(), function() hero:ForceKill(false) end)
+		if hero and hero:IsAlive() then
+			hero.infinityAegisSuicideAt = GameRules:GetGameTime()
+			hero:ForceKill(true)
 		end
 	end
 end

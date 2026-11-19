@@ -94,6 +94,8 @@ function Timers:start()
 	end
 end
 
+local TraceCallbackError = require("lib/script_error")
+
 function Timers:Think()
 	--if GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		--return
@@ -132,13 +134,9 @@ function Timers:Think()
 			-- Run the callback
 			local status, nextCall
 			if v.context then
-				status, nextCall = xpcall(function() return v.callback(v.context, v) end, function (msg)
-					return msg..'\n'..debug.traceback()..'\n'
-				end)
+				status, nextCall = xpcall(function() return v.callback(v.context, v) end, TraceCallbackError)
 			else
-				status, nextCall = xpcall(function() return v.callback(v) end, function (msg)
-					return msg..'\n'..debug.traceback()..'\n'
-				end)
+				status, nextCall = xpcall(function() return v.callback(v) end, TraceCallbackError)
 			end
 
 			Timers.runningTimer = nil

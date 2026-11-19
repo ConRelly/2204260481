@@ -1,4 +1,5 @@
 require("lib/timers")
+local FormatScriptError = require("lib/script_error")
 LinkLuaModifier("modifier_mjz_bristleback_quill_spray_autocast6", "abilities/hero_bristleback/modifier_mjz_bristleback_quill_spray_autocast6.lua", LUA_MODIFIER_MOTION_NONE)
 function getrandomskill(npc)
     if IsServer() then 
@@ -64,7 +65,7 @@ function getrandomskill(npc)
                                   return npc:AddAbility(newAbilityName)
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -92,7 +93,7 @@ function getrandomskill(npc)
                                   return npc:AddAbility(newAbilityNameb)
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -121,7 +122,7 @@ function getrandomskill(npc)
                                   return npc:AddAbility(newAbilityNamec)
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -145,7 +146,7 @@ function getrandomskill(npc)
                   return npc:AddNewModifier( npc, nil, M_NAME, {})
                 end,
                 function(msg)
-                  print(debug.traceback(msg, 3))
+                  print(FormatScriptError(msg))
                   return false
                 end
             )

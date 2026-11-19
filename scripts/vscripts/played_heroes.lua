@@ -2,85 +2,7 @@ LinkLuaModifier("modifier_bottom_50", "modifiers/modifier_bottom_50.lua", LUA_MO
 LinkLuaModifier("modifier_bottom_20", "modifiers/modifier_bottom_20.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_bottom_10", "modifiers/modifier_bottom_10.lua", LUA_MODIFIER_MOTION_NONE)
 
--- The URL of the server that provides the hero play counts.
-local HERO_PLAY_COUNTS_URL = "https://conrelly.com/played_heroes.txt"
-
--- A table that maps hero names to modifier names based on their play counts.
 local hero_modifiers = {}
-
--- Sends a request to the server to get the hero play counts.
---[[ function GetLeastPlayedHeroes()
-    local retries = 4
-    local delay = 50 / (retries + 1)
-    local function sendRequest()
-        local request = CreateHTTPRequestScriptVM("GET", HERO_PLAY_COUNTS_URL)
-        request:SetHTTPRequestAbsoluteTimeoutMS(30000)
-        request:Send(function(response)
-            if response.StatusCode == 200 then
-                local hero_play_counts = {}
-                local hero_play_count_strs = string.gmatch(response.Body, "(.-):(%d+)\n?")
-                for hero_name, play_count in hero_play_count_strs do
-                    hero_play_counts[hero_name] = tonumber(play_count)
-                end
-                                      
-                -- Calculate the ranks of the hero play counts.
-                local hero_play_count_ranks = {}
-                local hero_plays = {}
-                for hero_name, play_count in pairs(hero_play_counts) do
-                    hero_plays[#hero_plays+1] = play_count
-                end
-                table.sort(hero_plays)
-                local rank = 1
-                local last_play_count = -1
-                for i, play_count in ipairs(hero_plays) do
-                    if play_count ~= last_play_count then
-                        rank = i
-                        last_play_count = play_count
-                    end
-                    for hero_name, count in pairs(hero_play_counts) do
-                        if count == play_count then
-                            hero_play_count_ranks[hero_name] = rank
-                        end
-                    end
-                end
-
-                -- Map hero names to modifier names based on their ranks.
-                local hero_names = {}
-                for hero_name, play_count in pairs(hero_play_counts) do
-                    hero_names[#hero_names+1] = hero_name
-                end
-                table.sort(hero_names, function(a, b) return hero_play_counts[a] < hero_play_counts[b] end)
-                for i, hero_name in ipairs(hero_names) do
-                    if hero_play_count_ranks[hero_name] ~= nil then
-                        print(i .. ": " .. hero_name .. " (" .. hero_play_counts[hero_name] .. " plays)" .. "Rank: " ..hero_play_count_ranks[hero_name])
-                        local rank = hero_play_count_ranks[hero_name]
-                        if rank <= 50 then
-                            if rank <= 10 then
-                                hero_modifiers[hero_name] = "modifier_bottom_10"
-                            elseif rank <= 20 then
-                                hero_modifiers[hero_name] = "modifier_bottom_20"
-                            else
-                                hero_modifiers[hero_name] = "modifier_bottom_50"
-                            end
-                        end
-                    end
-                end
-                print("Sucess to get hero play counts, Status: " .. response.StatusCode)
-            else
-                print("Failed to get hero play counts: " .. response.StatusCode)
-                retries = retries - 1
-                if retries > 0 then
-                    print("Retrying in " .. delay .. " seconds...")
-                    Timers:CreateTimer(delay, function()
-                        sendRequest()
-                    end)
-                end
-                delay = 80 / (retries + 1)
-            end
-        end)
-    end
-    sendRequest()
-end ]]
 
 local FALLBACK_HERO_PLAY_COUNTS = [[
 npc_dota_hero_dawnbreaker:36
@@ -210,7 +132,7 @@ npc_dota_hero_monkey_king:65
 npc_dota_hero_kez:127
 ]]
 
-function ParseAndApplyHeroPlayCounts(raw_body)
+local function ParseAndApplyHeroPlayCounts(raw_body)
     if not raw_body or type(raw_body) ~= "string" then return false end
     local hero_play_counts = {}
     local hero_play_count_strs = string.gmatch(raw_body, "(.-):(%d+)\n?")
@@ -264,159 +186,16 @@ function ParseAndApplyHeroPlayCounts(raw_body)
     return true
 end
 
--- Immediately populate rankings with the fallback list so heroes always have bonuses
 ParseAndApplyHeroPlayCounts(FALLBACK_HERO_PLAY_COUNTS)
 
-local function RunSingleHttpTest(testName, url, headers)
-    print("==================================================")
-    print("[HTTP TEST] Starting: " .. testName)
-    print("[HTTP TEST] URL: " .. url)
-    
-    if not CreateHTTPRequestScriptVM then
-        print("[HTTP TEST] FAILED: CreateHTTPRequestScriptVM does not exist in _G!")
-        print("==================================================")
-        return
-    end
-
-    local request = CreateHTTPRequestScriptVM("GET", url)
-    if not request then
-        print("[HTTP TEST] FAILED: CreateHTTPRequestScriptVM returned nil for URL: " .. url)
-        print("==================================================")
-        return
-    end
-
-    if headers then
-        for k, v in pairs(headers) do
-            local ok, err = pcall(function()
-                request:SetHTTPRequestHeaderValue(k, v)
-            end)
-            if not ok then
-                print("[HTTP TEST] Warning: SetHTTPRequestHeaderValue(" .. k .. ") failed: " .. tostring(err))
-            end
-        end
-    end
-
-    request:SetHTTPRequestAbsoluteTimeoutMS(15000)
-
-    local sendOk, sendErr = pcall(function()
-        request:Send(function(response)
-            print("--------------------------------------------------")
-            print("[HTTP TEST RESULT] " .. testName)
-            if not response then
-                print("[HTTP TEST RESULT] Callback fired, but 'response' is nil!")
-            else
-                local status = response.StatusCode
-                local body = response.Body
-                local bodyLen = body and string.len(body) or 0
-                print("[HTTP TEST RESULT] StatusCode: " .. tostring(status))
-                print("[HTTP TEST RESULT] Body length: " .. tostring(bodyLen) .. " bytes")
-                
-                if status == 200 and bodyLen > 0 then
-                    print("[HTTP TEST RESULT] >>> SUCCESS! Connected and received data! <<<")
-                    if string.find(url, "played_heroes") then
-                        ParseAndApplyHeroPlayCounts(body)
-                        print("[HTTP TEST RESULT] Successfully applied live played_heroes data!")
-                    else
-                        local preview = string.sub(body, 1, 80)
-                        print("[HTTP TEST RESULT] Response preview: " .. preview)
-                    end
-                else
-                    print("[HTTP TEST RESULT] >>> FAILED (Status: " .. tostring(status) .. ") <<<")
-                    if body and string.len(body) > 0 then
-                        local preview = string.sub(body, 1, 150)
-                        print("[HTTP TEST RESULT] Response snippet: " .. preview)
-                    end
-                end
-            end
-            print("--------------------------------------------------")
-        end)
-    end)
-
-    if not sendOk then
-        print("[HTTP TEST] FAILED during request:Send(): " .. tostring(sendErr))
-    else
-        print("[HTTP TEST] Request sent, waiting for response callback...")
-    end
-    print("==================================================")
-end
-
-function RunAllHttpTests()
-    print("==================================================")
-    print("[HTTP DIAGNOSTICS] Checking HTTP API availability in Dota engine:")
-    print("[HTTP DIAGNOSTICS] CreateHTTPRequestScriptVM exists: " .. tostring(CreateHTTPRequestScriptVM ~= nil))
-    print("[HTTP DIAGNOSTICS] CreateHTTPRequest exists: " .. tostring(_G.CreateHTTPRequest ~= nil))
-    print("==================================================")
-
-    -- Test 1: Standard HTTPS with User-Agent and Accept headers
-    Timers:CreateTimer(1.0, function()
-        RunSingleHttpTest("Test 1 (HTTPS + Browser Headers)", HERO_PLAY_COUNTS_URL, {
-            ["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-            ["Accept"] = "text/plain, */*"
-        })
-    end)
-
-    -- Test 2: Raw HTTPS without any custom headers
-    Timers:CreateTimer(4.0, function()
-        RunSingleHttpTest("Test 2 (HTTPS Raw / Default Headers)", HERO_PLAY_COUNTS_URL, nil)
-    end)
-
-    -- Test 3: Plain HTTP (No SSL/TLS) with User-Agent
-    Timers:CreateTimer(7.0, function()
-        RunSingleHttpTest("Test 3 (Plain HTTP / No SSL)", "http://conrelly.com/played_heroes.txt", {
-            ["User-Agent"] = "Mozilla/5.0"
-        })
-    end)
-
-    -- Test 4: HTTPS with Cache-Buster query param
-    Timers:CreateTimer(10.0, function()
-        local bustUrl = HERO_PLAY_COUNTS_URL .. "?nocache=" .. tostring(RandomInt(10000, 99999))
-        RunSingleHttpTest("Test 4 (HTTPS Cache-Buster)", bustUrl, {
-            ["User-Agent"] = "Mozilla/5.0"
-        })
-    end)
-
-    -- Test 5: Neutral external API (GitHub Zen API) to test if ANY outbound HTTP works
-    Timers:CreateTimer(13.0, function()
-        RunSingleHttpTest("Test 5 (Neutral Public API - GitHub Zen)", "https://api.github.com/zen", {
-            ["User-Agent"] = "Mozilla/5.0"
-        })
-    end)
-end
-
-function GetLeastPlayedHeroes()
-    RunAllHttpTests()
-end
-
---
-
-
-
--- Checks the hero's ranking and adds the appropriate modifier if necessary.
-local delays = 0
 function check_hero_ranking(unit)
-    local hero_name = unit:GetUnitName()
-    if next(hero_modifiers) == nil then
-        -- If the hero_modifiers table is empty, try fetching the hero play counts again.
-        Timers:CreateTimer(delays, function()
-            if next(hero_modifiers) == nil then
-                GetLeastPlayedHeroes()
-            end 
-        end)
-        delays = delays + 2
-    else
-        local modifier_name = hero_modifiers[hero_name]
-        if modifier_name and not unit:HasModifier(modifier_name) then
-            unit:AddNewModifier(unit, nil, modifier_name, {})
-            
-        elseif IsSunday() then
-            print("Sunday")
-            if CheckModifiers(unit) then
-                unit:AddNewModifier(unit, nil, "modifier_bottom_50", {}) 
-            end
-        end
+    local modifier_name = hero_modifiers[unit:GetUnitName()]
+    if modifier_name and not unit:HasModifier(modifier_name) then
+        unit:AddNewModifier(unit, nil, modifier_name, {})
+    elseif IsSunday() and CheckModifiers(unit) then
+        unit:AddNewModifier(unit, nil, "modifier_bottom_50", {})
     end
 end
-
 
 local modifiers = {
     "modifier_bottom_10",
@@ -484,20 +263,3 @@ function IsSunday()
     end
     return wday == 7
 end
-
-
-
--- Delay fetching hero play counts until the game starts and Timers is ready
-if Timers and Timers.CreateTimer then
-    Timers:CreateTimer(5, function()
-        GetLeastPlayedHeroes()
-    end)
-else
-    -- Fallback in case Timers isn't available yet
-    ListenToGameEvent("game_rules_state_change", function()
-        if GameRules:State_Get() >= DOTA_GAMERULES_STATE_PRE_GAME then
-            GetLeastPlayedHeroes()
-        end
-    end, nil)
-end
-

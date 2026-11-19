@@ -1,156 +1,146 @@
 require("lib/my")
-require("AOHGameMode")
+local FormatScriptError = require("lib/script_error")
 
+LinkLuaModifier("modifier_goon_guard", "abilities/other/goon_increase_stats.lua", LUA_MODIFIER_MOTION_NONE)
 
+local GetGoonAbilityName
+local roundUpgrades = {
+	{round = 5, item = "item_lesser_crit", skillLevel = 2},
+	{round = 10, item = "item_plain_ring"},
+	{round = 15, item = "item_mjz_heart_4", replaces = "item_heart", skillLevel = 3},
+	{round = 20, skillLevel = 4},
+	{round = 25, item = "item_mjz_heart_5", replaces = "item_mjz_heart_4", skillLevel = 5},
+	{round = 30, item = "item_greater_crit", replaces = "item_lesser_crit", skillLevel = 6},
+	{round = 35, item = "item_mjz_shivas_guard_5", replaces = "item_greater_crit", skillLevel = 7},
+}
 
-
-
-function on_created(keys)
-	local caster = keys.caster
-	local ability = keys.ability
-
-	local round = 0
-	local armor_base = caster:GetPhysicalArmorBaseValue()
-	local magical_armor_base = caster:Script_GetMagicalArmorValue(false, caster)
-	local armor_per_round = ability:GetSpecialValueFor("armor_per_round")
-	local previous_round = 1
-	local aghbuf = "modifier_item_ultimate_scepter_consumed"
-	local chace_srike = 75
-	local icon_strike = "true_strike"	
-    local skill_lvl = 1
-	caster:AddItemByName("item_force_blade")
-	caster:AddItemByName("item_heart")
-	caster:AddItemByName("item_boss_resistance_25")
-	caster:SetHasInventory(false)
-	caster:SetCanSellItems(false)
-
-    --print("gon stats stuff 26")
-	local has5 = false
-	local has10 = false
-	local has15 = false
-	local has20 = false
-	local has25 = false
-	local has30 = false
-	local has35 = false
-	Timers:CreateTimer(
-		function()
-			round = GameRules.GLOBAL_roundNumber
-            local part_2 = GameRules.GLOBAL_endlessMode_started     
-            local part_3 = GameRules.GLOBAL_endlessHard_started
-            if part_3 then
-                round = 38 + round + 44
-            elseif part_2 then
-                round = 44 + round
-            end             
-			if round ~= previous_round and round then
-				if caster and not caster:IsNull() and caster:IsAlive() and caster:FindAbilityByName("goon_increase_stats") then
-					local level = caster:GetLevel()
-					caster:CreatureLevelUp(round - level)
-
-					if round > 5 and not has5 then
-						caster:SetHasInventory(true)
-						caster:AddItemByName("item_lesser_crit")
-						caster:SetHasInventory(false)
-						skill_lvl = 2
-						has5 = true
-					end
-					if round > 10 and not has10 then
-						caster:SetHasInventory(true)
-						caster:AddItemByName("item_plain_ring")
-						caster:SetHasInventory(false)
-						has10 = true
-					end
-					if round > 15 and not has15 then
-						caster:SetHasInventory(true)
-						--caster:RemoveItem(find_item(caster, "item_heart"))
-                        caster:TakeItem(find_item(caster, "item_heart"))
-						caster:AddItemByName("item_mjz_heart_4")
-						caster:SetHasInventory(false)
-						skill_lvl = 3
-						has15 = true
-					end
-					if round > 20 and not has20 then
-						caster:SetHasInventory(true)
-						caster:SetHasInventory(false)
-						skill_lvl = 4
-						has20 = true
-					end
-					if round > 25 and not has25 then
-						caster:SetHasInventory(true)
-						caster:AddNewModifier(caster, ability, "modifier_goon_increase_stats", {})
-						--caster:RemoveItem(find_item(caster, "item_mjz_heart_5"))
-                        caster:TakeItem(find_item(caster, "item_mjz_heart_5"))
-						caster:AddItemByName("item_mjz_heart_5")
-						caster:AddItemByName("item_ultimate_scepter")
-						caster:SetHasInventory(false)
-						skill_lvl = 5
-						has25 = true
-					end
-					if round > 30 and not has30 then
-						caster:SetHasInventory(true)
-						--caster:RemoveItem(find_item(caster, "item_lesser_crit"))
-                        caster:TakeItem(find_item(caster, "item_lesser_crit"))
-						caster:AddItemByName("item_greater_crit")
-						caster:SetHasInventory(false)
-						skill_lvl = 6
-						has30 = true
-					end
-					if round > 35 and not has35 then
-						caster:SetHasInventory(true)
-						--caster:RemoveItem(find_item(caster, "item_greater_crit"))
-                        caster:TakeItem(find_item(caster, "item_greater_crit"))
-						caster:AddItemByName("item_mjz_shivas_guard_5")
-						caster:SetHasInventory(false)
-						skill_lvl = 7
-						has35 = true
-					end
-					
-					previous_round = round
-					
-				end
-			end
-		return 2.0
+local function GiveItem(unit, name, replaces)
+	if find_item(unit, name) then return end
+	if replaces then
+		local previousItem = find_item(unit, replaces)
+		if previousItem then unit:TakeItem(previousItem) end
 	end
-	)
-    Timers:CreateTimer({
-        endTime = 0.1, 
-        callback = function()
-            if RandomInt( 0,100 ) < chace_srike then
-                local strike_tru = "special_bonus_truestrike"
-                if not caster:HasAbility(strike_tru) then
-                    local strik = caster:AddAbility(strike_tru)
-                    strik:UpgradeAbility(true)
-                    strik:SetLevel(1)
-                    local ad_icon = caster:AddAbility(icon_strike)
-                    ad_icon:UpgradeAbility(true)
-                    ad_icon:SetLevel(1)
-                end    
-            end
-            local hAbility = caster:GetAbilityByIndex(0):GetAbilityName()
-            local hAbility2 = caster:GetAbilityByIndex(1):GetAbilityName()
-            caster:RemoveAbility(hAbility)
-            caster:RemoveAbility(hAbility2)					
-            local newAbilityName = GetRandomAbilityName(hero)
-            local link_a = caster:AddAbility(newAbilityName)
-            if link_a then
-                link_a:UpgradeAbility(true)
-                link_a:SetLevel(skill_lvl)
-                local newAbilityNameb = GetRandomAbilityName(hero)
-                local link_b = caster:AddAbility(newAbilityNameb)
-                if link_b then
-                    link_b:UpgradeAbility(true)
-                    link_b:SetLevel(skill_lvl)
-                end
-                if RollPercentage(75) or has35 then
-                    caster:AddNewModifier(caster, self, aghbuf, {})
-                end
-            end
-        end
-    })    
-	
-end	
+	if not unit:AddItemByName(name) then
+		error("Could not equip " .. name)
+	end
+end
 
-function GetRandomAbilityName(hero)
+local function UpdateRound(guard, unit, ability)
+	local round = GameRules.GLOBAL_roundNumber
+	if not round then return end
+	if GameRules.GLOBAL_endlessHard_started then
+		round = round + 82
+	elseif GameRules.GLOBAL_endlessMode_started then
+		round = round + 44
+	end
+	if round == guard.previousRound then return end
+	local levels = round - unit:GetLevel()
+	if levels > 0 then unit:CreatureLevelUp(levels) end
+
+	while roundUpgrades[guard.nextUpgrade] and round > roundUpgrades[guard.nextUpgrade].round do
+		local upgrade = roundUpgrades[guard.nextUpgrade]
+		if upgrade.item then
+			unit:SetHasInventory(true)
+			GiveItem(unit, upgrade.item, upgrade.replaces)
+			if upgrade.round == 25 then GiveItem(unit, "item_ultimate_scepter") end
+			unit:SetHasInventory(false)
+		end
+		if upgrade.round == 25 and not unit:HasModifier("modifier_goon_increase_stats") then
+			unit:AddNewModifier(unit, ability, "modifier_goon_increase_stats", {})
+		end
+		guard.skillLevel = upgrade.skillLevel or guard.skillLevel
+		guard.nextUpgrade = guard.nextUpgrade + 1
+	end
+	guard.previousRound = round
+end
+
+local function LearnSkill(unit, name, level)
+	if unit:HasAbility(name) then return false end
+	local ability = unit:AddAbility(name)
+	if not ability or ability:IsNull() then return false end
+	ability:SetLevel(level)
+	return true
+end
+
+local function SetStartingAbilities(unit, skillLevel)
+	if RandomInt(0, 100) < 75 and not unit:HasAbility("special_bonus_truestrike") then
+		LearnSkill(unit, "special_bonus_truestrike", 1)
+		LearnSkill(unit, "true_strike", 1)
+	end
+	for _, placeholder in ipairs({"goon_placeholder1", "goon_placeholder2"}) do
+		if unit:HasAbility(placeholder) then unit:RemoveAbility(placeholder) end
+	end
+	if LearnSkill(unit, GetGoonAbilityName(), skillLevel) then
+		LearnSkill(unit, GetGoonAbilityName(), skillLevel)
+		if RollPercentage(75) or skillLevel == 7 then
+			unit:AddNewModifier(unit, nil, "modifier_item_ultimate_scepter_consumed", {})
+		end
+	end
+end
+
+function goon_guard_on_created(keys)
+	local unit = keys.caster
+	if unit and not unit:IsNull() and not unit:HasModifier("modifier_goon_guard") then
+		unit:AddNewModifier(unit, keys.ability, "modifier_goon_guard", {})
+	end
+end
+
+modifier_goon_guard = class({})
+function modifier_goon_guard:IsHidden() return true end
+function modifier_goon_guard:IsPurgable() return false end
+
+function modifier_goon_guard:OnCreated()
+	if not IsServer() then return end
+	self.previousRound = 1
+	self.nextUpgrade = 1
+	self.skillLevel = 1
+	self:StartIntervalThink(0.1)
+end
+
+function modifier_goon_guard:OnIntervalThink()
+	local unit = self:GetParent()
+	local ability = self:GetAbility()
+	if not unit or unit:IsNull() or not unit:IsAlive() or not ability or ability:IsNull() then
+		self:StartIntervalThink(-1)
+		return
+	end
+	-- Guard's datadriven modifier can be created before the spawn callback assigns ownership.
+	local owner = unit:GetOwner()
+	if not owner or owner:IsNull() then return end
+
+	if not self.equipped then
+		unit:SetHasInventory(true)
+		local ok, err = pcall(function()
+			GiveItem(unit, "item_force_blade")
+			GiveItem(unit, "item_heart")
+			GiveItem(unit, "item_boss_resistance_25")
+		end)
+		unit:SetHasInventory(false)
+		unit:SetCanSellItems(false)
+		if not ok then
+			print("[Hired Goon] Starting equipment failed: " .. FormatScriptError(err))
+			self:StartIntervalThink(2)
+			return
+		end
+		self.equipped = true
+	end
+
+	local ok, err = pcall(UpdateRound, self, unit, ability)
+	if not ok then
+		unit:SetHasInventory(false)
+		print("[Hired Goon] Round upgrade failed: " .. FormatScriptError(err))
+		self:StartIntervalThink(2)
+		return
+	end
+	if not self.skillsAssigned then
+		self.skillsAssigned = true
+		ok, err = pcall(SetStartingAbilities, unit, self.skillLevel)
+		if not ok then print("[Hired Goon] Starting abilities failed: " .. FormatScriptError(err)) end
+	end
+	self:StartIntervalThink(2)
+end
+
+GetGoonAbilityName = function()
     local abilityList = {
         --"vengefulspirit_command_aura", -- crashes when the summon unit dies(aghanim effect) (if is not hero)
         "beastmaster_inner_beast",

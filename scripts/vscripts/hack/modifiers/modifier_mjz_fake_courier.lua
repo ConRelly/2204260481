@@ -1,5 +1,6 @@
 
 
+local PendantDelay = require("abilities/other/courier_resurrection_delay")
 modifier_mjz_fake_courier = class({})
 local modifier = modifier_mjz_fake_courier
 
@@ -30,6 +31,11 @@ if IsServer() then
 
 
     function modifier:OnCreated(table)
+        local courier = self:GetParent()
+        local delayAbility = courier:FindAbilityByName("courier_resurrection_delay")
+        if delayAbility then
+            PendantDelay:Initialize(courier, delayAbility)
+        end
         self:OnIntervalThink()
         self:StartIntervalThink(60 * 5)
     end

@@ -1257,12 +1257,17 @@
             "bonus_cast_range" "500"
             "attack_cd" "0.6"
             "feather_max_stacks" "50"
+            "permanent_feather_chance" "10"
             "feather_spell_amp" "10"
-            "feather_agi" "250"
+            "feather_agi" "500"
             "feather_dmg_red" "2"
             "feather_add_dmg" "250"
             "feather_cd" "1.5"
-            "divinity_duration" "5"
+            "damage_limit_multiplier" "160"
+            "damage_limit_magic" "15000"
+            "damage_limit_pure" "1000"
+            "divinity_duration" "8"
+            "divinity_limit_multiplier" "3"
             "wind_rapier_chance" "15"
             "mimic_mace_attack_rate" "0.2"
             "feather_add_dmg_marci" "350"
@@ -14440,7 +14445,6 @@
             "base_cooldown" "120"
             "extra_cooldown" "50"
             "extra_cooldown_ss" "35"
-            "channel" "5"
         }
 }
 	"item_shivas_guard_2"
@@ -22814,8 +22818,9 @@
             "avoid_chance" "65"
             "fixed_attack_rate" "0.35"
             "internal_cd" "15"
-            "bonus_int_dmg" "50"
+            "bonus_int_dmg" "90"
             "interval_attack" "2"
+            "xp_boost" "20"
         }
 	}
 // Spirit Guardian Recipe

@@ -98,6 +98,7 @@
 	"dota_ability_variable_spell_lifesteal_amp"		"Spell Lifesteal Amplification"		// $spell_lifesteal_amp
 	"dota_ability_variable_hp_regen_amp"			"HP Regen Amplification"			// $hp_regen_amp
 	"dota_ability_variable_primary_attribute"		"Primary Attribute"					// $primary_attribute
+	"dota_ability_variable_xp_boost"			"Bonus XP"
 	"dota_ability_variable_secondary_stats"			"Other Attributes"					// $secondary_stats
 	"dota_ability_variable_base_damage"				"Base Damage"						// $base_damage
 	"dota_ability_variable_buff_amp"				"Buff Duration"						// $buff_amp
@@ -1384,6 +1385,8 @@
 	"DOTA_Tooltip_ability_item_spirit_guardian_Description"	"<h1>Active: Defense Mode</h1>Spirit stops attacking, but heals the owner. If the owner has a full health, then heals an ally in the attack radius + %range_buffer% with the lowest health percentage.<br>Spirit Healing is equal to the owner's base damage + Snowball stacks.<br>Healing duration: %guardian_heal_duration% seconds.\n<h1><font color='#0DAFEC'>Passive: Instincts (Int)</font></h1>Have a chance to Avoid %avoid_chance%%% of all dmg taken during Defense Mode, only if your primary attribute is Int or Universal.</font>\n<h1><font color='#17CCEC'>Passive: Snowball</font></h1>Every Hit landed by Spirit will increase your <font color='#17CCEC'>Snowball</font> stack by one and have a chance(half your lvl) for an extra stack.\n<h1><font color='#C47D0F'>Passive: Spirit Guardian</font></h1>Spirit attacks the closest enemy within the attack radius + %range_buffer% every %interval_attack% sec(CDR-Yes).<br>Spirit Damage is equal to the owner's base damage plus <font color='#17CCEC'>Snowball</font> stacks X Your Level.<br>Damage Type: <font color=\"#0D7DEC\">Magical</font><br><font color='#DD9510'>Limits Your attack speed to fixed rate of %fixed_attack_rate% attacks/s.\n<h1><font color='#DE3163'>Super Scepter</font></h1>For every Guardian Attack triggers an normal attack from your hero with all the proc effects. Adds %bonus_int_dmg%%% <font color=\"#17BFEC\">Int</font> X Level to guadian damage. During 'Defemse Mode min Cooldown' debuff, guardian attack rate is 150% faster.For every 200 Base attack your <font color='#17CCEC'>Snowball</font> stack count will be considered 1% higher in the Final calculations."
 	"DOTA_Tooltip_ability_item_spirit_guardian_note0"			"Healing interval and attack interval witch is %interval_attack% sec is affected by CDR"
 	"DOTA_Tooltip_ability_item_spirit_guardian_note1"			"Additional attack from Super Scepter has a True Strike."
+	"DOTA_Tooltip_ability_item_spirit_guardian_note2"			"For Snowball damage and Super Scepter Intelligence damage, every hero level past 100 counts as 10 levels. Level 102 uses a 120x level multiplier."
+	"DOTA_Tooltip_ability_item_spirit_guardian_xp_boost"			"%+$xp_boost"
 	"DOTA_Tooltip_Ability_item_spirit_guardian_hp"					"+$health"
 	"DOTA_Tooltip_Ability_item_spirit_guardian_agi"					"+$agi"
 	"DOTA_Tooltip_Ability_item_spirit_guardian_str"					"+$str"
@@ -1686,15 +1689,18 @@
 	"DOTA_Tooltip_ability_item_grove_bow_attack_speed_bonus"    "+$attack"
 
 	"DOTA_Tooltip_ability_item_broken_wings"					"Broken Wings"
-	"DOTA_Tooltip_ability_item_broken_wings_Description"		"<h1>Passive: Restoration of Feathers</h1> Gives a Feather Stick when landing an attack. <br><br> Cooldown: %attack_cd%s <br> Max stacks: %feather_max_stacks% \n<h1>Passive: Scree'auk’s Power</h1> Dealing Magic or Pure Damage expends one Feather Stack charge to deal %feather_add_dmg%%% damage ((2)Alt for details). <br><br>Cooldown: %feather_cd%s (CDR-Yes) \n<h1>Passive: Divinity</h1> When receiving the maximum number of effects, Feather Stacks - enters Divinity. During Divinity, cooldown and Feather Stack сonsumption from Scree'auk's Power are removed. Additionally, normal mana costs are removed for the duration. After Divinity ends you lose all of your Feather Stacks. <br><br> Duration: %divinity_duration%s \n<h1><font color='#00FF00'>UP: Wind Rapier</font></h1> When receiving a Feather Stack, there is a %wind_rapier_chance%%% chance of also getting a Wind Stack (allows to exceed the limit) \n<h1><font color='#00FF00'>UP: Mimic Mace</font></h1> Sets attack rate to %mimic_mace_attack_rate% \n<h1><font color='#7D9C00'>UP: Ultimate Ethereal Blade</font></h1> Reduces Restoration of Feathers Cooldown by x3"
+	"DOTA_Tooltip_ability_item_broken_wings_Description"		"<h1><font color='#86C91F'>Restoration of Feathers</font></h1>Landed attacks send a feather every %attack_cd%s. <font color='#FFA32B'>%permanent_feather_chance%%% are Divinity Feathers</font>, spent only when Divinity ends.<br>Each gives +%feather_spell_amp%%% spell amp, +%feather_agi% agility and -%feather_dmg_red%%% attack damage (max %feather_max_stacks% feathers).\n<h1><font color='#79C9EC'>Scree'auk's Power</font></h1>Magic and pure hits can deal %feather_add_dmg%%% damage by spending regular feathers. Cooldown %feather_cd%s (affected by CDR). Hold Alt for slot rules.\n<h1><font color='#FFA32B'>Divinity</font></h1>A new feather at %feather_max_stacks%+ total triggers %divinity_duration%s of Divinity. <font color='#FFA32B'>×%divinity_limit_multiplier% damage limits.</font> No normal mana or feather costs. Power starts no cooldown. All feathers reset afterward.\n<h1><font color='#2AD563'>Item Upgrades</font></h1><font color='#2AD563'>Wind Rapier</font> %wind_rapier_chance%%% chance per feather for a Wind Stack, even above cap.<br><font color='#2AD563'>Mimic Mace</font> sets its attack rate to %mimic_mace_attack_rate%.<br><font color='#2AD563'>Ultimate Ethereal Blade</font> triples feather generation speed."
 	"DOTA_Tooltip_ability_item_broken_wings_Lore"					"The wings have a mind of their own, they wish to be whole again. Ideea By:<font color='#2471A3'>Siliatra</font>"
-	"DOTA_Tooltip_ability_item_broken_wings_Note0"					"1) Can consume more stacks if dmg is above a certain dinamic value." // limited text space on item
-	"DOTA_Tooltip_ability_item_broken_wings_Note1"                  "2) Scree'auk’s Power will trigger only if Divinity OR the Dmg soruce is more then: Limit(lvl * 40 * 15k / spellamp) divided by the item inventory (slot-1).(slot 1 disable this feature) pure is 1k instead of 15k"
+	"DOTA_Tooltip_ability_item_broken_wings_Note0"					"Damage limit = effective level × 160 × (15,000 magic or 1,000 pure) ÷ spell amp as a decimal. Each level above 100 counts as 10. Divinity triples the limit."
+	"DOTA_Tooltip_ability_item_broken_wings_Note1"                  "Slot 1 skips the minimum hit size and costs at least one regular feather. Slots 2–6 require a hit of at least limit ÷ (slot − 1) and are free up to the limit. Larger hits spend more feathers. Divinity skips the minimum and the cost."
 	"DOTA_Tooltip_ability_item_broken_wings_bonus_cast_range"		"+$cast_range"
 	"DOTA_Tooltip_ability_item_broken_wings_bonus_attack_range"		"+$attack_range"
-	"DOTA_Tooltip_modifier_broken_wings_feather_stacks"					"Feather Stacks"
-	"DOTA_Tooltip_modifier_broken_wings_feather_stacks_Description"		"Spell Amplification increased by %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% <br> Agility increased by %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS% <br> Total Attack Damage reduced by %dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%%"
+	"DOTA_Tooltip_modifier_broken_wings_feather_stacks"					"Regular Feathers"
+	"DOTA_Tooltip_modifier_broken_wings_feather_stacks_Description"		"Total from both feather types<br>+%dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% spell amp<br>+%dMODIFIER_PROPERTY_STATS_AGILITY_BONUS% agility<br>%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% attack damage"
+	"DOTA_Tooltip_modifier_broken_wings_permanent_feathers"			"Divinity Feathers"
+	"DOTA_Tooltip_modifier_broken_wings_permanent_feathers_Description"	"Survive death and are spent when Divinity ends. While Broken Wings is equipped, they grant feather bonuses and count toward Divinity."
 	"DOTA_Tooltip_modifier_broken_wings_divinity"				"Divinity"
+	"DOTA_Tooltip_modifier_broken_wings_divinity_Description"			"Triples the magic and pure damage limits. Removes normal mana costs. Scree'auk's Power spends no feathers and starts no cooldown. All feathers reset when Divinity ends."
 
 //###########################################################################################################################
 	
@@ -10020,8 +10026,13 @@ Contains all random skills(including Innates)<br> if your primary attribute is I
 "DOTA_Tooltip_ability_item_random_get_ability_spell"		 "Random Ability (RareM)"
 "DOTA_Tooltip_ability_item_random_get_ability_spell_Description"	"Get a Random skill.\nSpell amp, cdr and some spell dmg skills have higher chance<br> <font color='#f2da5b'>Innate abilities can only be seen in Open Config Menu</font>"
 
+"DOTA_Tooltip_ability_courier_resurrection_delay"			"Pendant Delay"
+"DOTA_Tooltip_ability_courier_resurrection_delay_Description"	"Click to cycle this courier's Resurrection Pendant delay. The minimum is 5s (2.5s with Super Scepter). Each click moves to the next whole second, and clicking at 9s returns to the minimum.<br>Applies to manual casts and Aghanim's autocast. Hover the Pendant Delay buff to see the current setting."
+"DOTA_Tooltip_modifier_resurrection_pendant_courier_delay"	"Pendant Delay"
+"DOTA_Tooltip_modifier_resurrection_pendant_courier_delay_Description"	"Current Resurrection Pendant delay is %fMODIFIER_PROPERTY_TOOLTIP% seconds."
+
 "DOTA_Tooltip_ability_item_resurection_pendant"							"<font color='#f2da5b'>Resurrection Pendant</font>"
-"DOTA_Tooltip_ability_item_resurection_pendant_Description"				"<h1>Active: Resurrect</h1>After a delay of %channel% sec  it resurrects all the allies. \nThis ability has a base cooldown of %base_cooldown% seconds, plus %extra_cooldown% seconds for every ally that was resurrected.\n<font color='#F2A93E'>Resurrection Pendant is not affected by cooldown reduction.</font>\n<font color='#F2A93E'>Works From Courier Inventory.</font>\n<font color='#F2A93E'>Only in Slot 1 resurrects diconnected players.</font>\n<h1><font color='#0094FF'>UP: Aghanim's Scepter</font></h1>Automatically activated when all the heroes are dead. Fontain invulnerability does not count as alive.\n<h1><font color='#DE3163'>UP: Super Scepter</font></h1>Reduces activation time by x2 and the extra cooldown for every ally is reduced to %extra_cooldown_ss% seconds."
+"DOTA_Tooltip_ability_item_resurection_pendant_Description"				"<h1>Active: Resurrect</h1>Resurrects all allies after a base delay of 5 seconds.\nThis ability has a base cooldown of %base_cooldown% seconds, plus %extra_cooldown% seconds for every ally that was resurrected.\n<font color='#F2A93E'>Resurrection Pendant is not affected by cooldown reduction.</font>\n<font color='#F2A93E'>Only in Slot 1 resurrects disconnected players.</font>\n<h1><font color='#F17C26'>Courier Delay</font></h1>Use the courier's Pendant Delay ability to adjust the delay for manual casts and Aghanim's autocast.\n<h1><font color='#0094FF'>UP: Aghanim's Scepter</font></h1>Automatically activates when all heroes are dead. Heroes with fountain invulnerability are ignored.\n<h1><font color='#DE3163'>UP: Super Scepter</font></h1>Halves the minimum delay and reduces the extra cooldown per ally to %extra_cooldown_ss% seconds."
 "DOTA_Tooltip_ability_item_resurection_pendant_Lore"					"Rooftrellen calls the ancestral spirit of nature, releasing its power through all of his kin."
 "DOTA_Tooltip_ability_item_resurection_pendant_note0"					"Shop sells max 1 pendant."
 "DOTA_Tooltip_ability_item_dragon_head_2"						   "Greater Dragon Head"
@@ -10349,15 +10360,10 @@ Contains all random skills(including Innates)<br> if your primary attribute is I
 		"dota_tooltip_modifier_sumon_bonus_Description"				"%dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% Damage reduction"
 
 		"DOTA_Tooltip_ability_owner_buff"							 "Owner Buff"
-		"DOTA_Tooltip_ability_owner_buff_owner_attack"				"%Owner Total Attack Damage as Base Damage:"
-		"DOTA_Tooltip_ability_owner_buff_owner_amp"				   "Base Damage for every point of Owner Spell Amp:"
-		"DOTA_Tooltip_ability_owner_buff_owner_armor"				 "Base Damage from Owner Armor:"
-		"DOTA_Tooltip_ability_owner_buff_owner_hp_mp_tooltip"		  "%Base Damage from Owner Max Hp:"
-		"DOTA_Tooltip_ability_owner_buff_owner_mp_tooltip"		  	  "%Base Damage from Owner Max Mp:"
-		"DOTA_Tooltip_ability_owner_buff_Note0"					   "Has: 50%% effect on Hired Gon(Dragon Knight unit), 33%% effect on clinkz skeletons."
-		"DOTA_Tooltip_ability_owner_buff_description"				 "Increase base attack dmg by:<font color='#EB1D05'>owner 150%% total attack dmg</font> and after owner lvl 30 <font color='#05EB2B'>other owner stats will be added too as extra base dmg</font> like:<font color='#08E3DC'>50x spell amplification</font>,<font color='#EB8605'>500x armor</font> , <font color='#EB8605'>50%% max hp</font> and <font color='#EB8605'>200%% max mana</font>."
+		"DOTA_Tooltip_ability_owner_buff_Note0"					   "Hired Goon gets 50%% of the bonus. Clinkz skeletons get one third."
+		"DOTA_Tooltip_ability_owner_buff_description"				 "Gain <font color='#EB1D05'>%owner_attack%%% of the owner's attack damage</font> as base damage.<br><font color='#05EB2B'>Above owner level 30</font><br><font color='#08E3DC'>%owner_amp% per spell amp point</font>, <font color='#EB8605'>%owner_armor% per armor</font><br><font color='#EB8605'>%owner_hp_mp_tooltip%%% max HP, %owner_mp_tooltip%%% max mana</font>"
 		"dota_tooltip_modifier_owner_buff"							"Owner Buff"
-		"dota_tooltip_modifier_owner_buff_description"				"Increase base attack dmg base on owner following stats: total attack dmg , spell amp , armor , max hp and max mp"
+		"dota_tooltip_modifier_owner_buff_description"				"<font color='#EB1D05'>%dMODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE%</font> base attack damage from the owner's stats."
 
 		"DOTA_Tooltip_ability_bristleback_bristleback_2"				"BristleBack"
 

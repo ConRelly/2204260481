@@ -1,3 +1,4 @@
+local FormatScriptError = require("lib/script_error")
 item_aegis_lua = class({})
 LinkLuaModifier("modifier_aegis", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_aegis_up", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
@@ -73,51 +74,69 @@ function modifier_aegis:GetTexture() return "item_aegis" end
 function modifier_aegis:IsPermanent() return true end
 function modifier_aegis:IsPurgable() return false end
 function modifier_aegis:DeclareFunctions()
-	return {MODIFIER_PROPERTY_REINCARNATION}
+	return {MODIFIER_PROPERTY_REINCARNATION, MODIFIER_EVENT_ON_RESPAWN}
 end
-function modifier_aegis:OnCreated()
-	if IsServer() then
-		self.caster = self:GetCaster()
-		self.ability = self:GetAbility()
-	end
+
+local function PlayAegisReincarnation(hero, delay)
+	local position = hero:GetAbsOrigin()
+	local deathFX = ParticleManager:CreateParticle("particles/items_fx/aegis_respawn_timer.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+	ParticleManager:SetParticleAlwaysSimulate(deathFX)
+	ParticleManager:SetParticleControl(deathFX, 0, position)
+	ParticleManager:SetParticleControl(deathFX, 1, Vector(delay, 0, 0))
+	ParticleManager:SetParticleControl(deathFX, 11, Vector(200, 0, 0))
+	ParticleManager:ReleaseParticleIndex(deathFX)
+	local timerFX = ParticleManager:CreateParticle("particles/items_fx/aegis_timer.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero)
+	ParticleManager:SetParticleControl(timerFX, 1, Vector(0, 0, 0))
+	ParticleManager:SetParticleControl(timerFX, 3, position)
+	ParticleManager:ReleaseParticleIndex(timerFX)
+	local vision = GameRules:IsDaytime() and hero:GetDayTimeVisionRange() or hero:GetNightTimeVisionRange()
+	AddFOWViewer(hero:GetTeamNumber(), position, vision, delay, true)
+	hero:EmitSound("Aegis.Timer")
 end
+
 function modifier_aegis:ReincarnateTime()
-	if IsServer() then
-		if self.caster:IsRealHero() and not self.caster:IsReincarnating() then
-			if self.caster:GetHealth() < 1 then
-				if self:GetStackCount() >= 1 then
-					if _G._playerNumber and _G._playerNumber < 2 then
-						ReincarnateTime = 5
-					end	
-					particle_death_fx = ParticleManager:CreateParticle("particles/items_fx/aegis_respawn_timer.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.caster)
-					ParticleManager:SetParticleAlwaysSimulate(particle_death_fx)
-					ParticleManager:SetParticleControl(particle_death_fx, 0, self.caster:GetAbsOrigin())
-					ParticleManager:SetParticleControl(particle_death_fx, 1, Vector(ReincarnateTime, 0, 0))
-					ParticleManager:SetParticleControl(particle_death_fx, 11, Vector(200, 0, 0))
-					ParticleManager:ReleaseParticleIndex(particle_death_fx)
-					particle_aegis_timer = ParticleManager:CreateParticle("particles/items_fx/aegis_timer.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.caster)
-					ParticleManager:SetParticleControl(particle_aegis_timer, 1, Vector(0, 0, 0))
-					ParticleManager:SetParticleControl(particle_aegis_timer, 3, self.caster:GetAbsOrigin())
-					ParticleManager:ReleaseParticleIndex(particle_aegis_timer)
-					if GameRules:IsDaytime() then
-						AddFOWViewer(self.caster:GetTeamNumber(), self.caster:GetAbsOrigin(), self.caster:GetDayTimeVisionRange(), ReincarnateTime, true)
-					else
-						AddFOWViewer(self.caster:GetTeamNumber(), self.caster:GetAbsOrigin(), self.caster:GetNightTimeVisionRange(), ReincarnateTime, true)
-					end
-					self.caster:EmitSound("Aegis.Timer")
-					Timers:CreateTimer(ReincarnateTime + 0.08, function()
-						if self.caster and not self.caster:IsNull() then
-							self.caster:AddNewModifier(self.caster, nil, "modifier_aegis_buff", {duration = ReincarnateBuffTime})
-							--self.caster:AddNewModifier(self.caster, nil, "modifier_aegis_buff", {duration = 3})
-						end	
-					end)
-					self:SetStackCount(self:GetStackCount() - 1)
-					return ReincarnateTime
-				end
-			end
-		end
-		return nil
+	if not IsServer() then return end
+	local hero = self:GetParent()
+	if not hero:IsRealHero() or hero:IsReincarnating() or hero:GetHealth() >= 1 then return end
+	local now = GameRules:GetGameTime()
+	if self.reincarnationAt == now then return self.reincarnationDelay end
+
+	local delay
+	local fromInfinity = false
+	if self:GetStackCount() > 0 then
+		delay = _G._playerNumber and _G._playerNumber < 2 and 5 or ReincarnateTime
+		self:DecrementStackCount()
+	else
+		local infinity = hero:FindModifierByName("modifier_inf_aegis")
+		if not infinity then return end
+		delay = infinity:TryReincarnate()
+		if not delay then return end
+		fromInfinity = true
 	end
+	self.fromInfinity = fromInfinity
+	self.reincarnationAt = now
+	self.reincarnationDelay = delay
+
+	-- Cosmetic errors must not prevent the engine from receiving the delay.
+	local ok, err = pcall(PlayAegisReincarnation, hero, delay)
+	if not ok then
+		print("[Aegis] Reincarnation effects failed: " .. FormatScriptError(err))
+	end
+	return delay
+end
+
+function modifier_aegis:OnRespawn(keys)
+	if not IsServer() or keys.unit ~= self:GetParent() or not self.reincarnationDelay then return end
+	local hero = keys.unit
+	local fromInfinity = self.fromInfinity
+	self.reincarnationAt = nil
+	self.reincarnationDelay = nil
+	self.fromInfinity = nil
+	if fromInfinity then
+		local stats = hero:FindModifierByName("modifier_inf_aegis_stats")
+		if stats then stats:IncrementStackCount() end
+	end
+	hero:AddNewModifier(hero, nil, "modifier_aegis_buff", {duration = ReincarnateBuffTime})
 end
 function modifier_aegis:GetModifierIncomingDamage_Percentage(params)
 	local nPlayerID

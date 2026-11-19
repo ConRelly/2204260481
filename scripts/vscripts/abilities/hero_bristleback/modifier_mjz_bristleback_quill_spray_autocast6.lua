@@ -1,5 +1,6 @@
 require("lib/my")
 require("lib/timers")
+local FormatScriptError = require("lib/script_error")
 --local TARGET_ABILITY_NAME = 'bristleback_quill_spray'
 --local TARGET_ABILITY_NAME_2 = "zuus_arc_lightning"
 --[[local MODIFIER_NAME = 'modifier_mjz_bristleback_quill_spray_autocast6'
@@ -45,7 +46,7 @@ function modifier_class:OnCreated(table)
                                   return self:GetParent()
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -68,7 +69,7 @@ function modifier_class:OnIntervalThink()
                           return self:GetParent()
                         end,
                         function(msg)
-                          print(debug.traceback(msg, 3))
+                          print(FormatScriptError(msg))
                           return false
                         end
                     )
@@ -77,7 +78,7 @@ function modifier_class:OnIntervalThink()
                           return self:GetParent()
                         end,
                         function(msg)
-                          print(debug.traceback(msg, 3))
+                          print(FormatScriptError(msg))
                           return false
                         end
                     )        local status, parent = xpcall(
@@ -85,7 +86,7 @@ function modifier_class:OnIntervalThink()
                           return self:GetParent()
                         end,
                         function(msg)
-                          print(debug.traceback(msg, 3))
+                          print(FormatScriptError(msg))
                           return false
                         end
                     )
@@ -128,7 +129,7 @@ function modifier_class:OnIntervalThink()
                                   return parent:GetAbilityByIndex(i)
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -158,7 +159,7 @@ function modifier_class:OnIntervalThink()
                                   return target_ability:GetCastRange(parent:GetAbsOrigin(), parent)
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -168,7 +169,7 @@ function modifier_class:OnIntervalThink()
                                   return caster:GetCastRangeBonus()
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -189,7 +190,7 @@ function modifier_class:OnIntervalThink()
                                   return target_ability:GetCurrentAbilityCharges()
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                  return 0
                                 end
                             )
@@ -206,7 +207,7 @@ function modifier_class:OnIntervalThink()
                                   return parent:SetCursorTargetingNothing(true)
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -221,7 +222,7 @@ function modifier_class:OnIntervalThink()
                                   return target_ability:OnSpellStart()
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -234,7 +235,7 @@ function modifier_class:OnIntervalThink()
                                   return target_ability:UseResources(true, true, false, true)
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )                     
@@ -256,7 +257,7 @@ function modifier_class:OnIntervalThink()
                                   return parent:SetCursorCastTarget(parent)
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -270,7 +271,7 @@ function modifier_class:OnIntervalThink()
                                   return target_ability:OnSpellStart()
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -283,7 +284,7 @@ function modifier_class:OnIntervalThink()
                                   return target_ability:UseResources(true, true, false, true)  
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )                   
@@ -323,7 +324,7 @@ function modifier_class:OnIntervalThink()
                                   return parent:SetCursorCastTarget(first_enemy)
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -345,7 +346,7 @@ function modifier_class:OnIntervalThink()
                                   return parent:SetCursorPosition(first_enemy:GetAbsOrigin())
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -369,7 +370,7 @@ function modifier_class:OnIntervalThink()
                                   return parent:SetCursorTargetingNothing(true)
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -395,7 +396,7 @@ function modifier_class:OnIntervalThink()
                                   return parent:SetCursorCastTarget(first_enemy)
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -412,7 +413,7 @@ function modifier_class:OnIntervalThink()
                                   return target_ability:OnSpellStart()
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )
@@ -425,7 +426,7 @@ function modifier_class:OnIntervalThink()
                                   return target_ability:UseResources(true, true, false, true) 
                                 end,
                                 function(msg)
-                                  print(debug.traceback(msg, 3))
+                                  print(FormatScriptError(msg))
                                   return false
                                 end
                             )              

@@ -1,5 +1,5 @@
-require("lib/timers")
 require("lib/data")
+local PendantDelay = require("abilities/other/courier_resurrection_delay")
 LinkLuaModifier("modifier_aegis_buff", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_resurrection_pendant", "items/custom/item_resurection_pendant", LUA_MODIFIER_MOTION_NONE)
 
@@ -7,11 +7,7 @@ item_resurection_pendant = class({})
 function item_resurection_pendant:GetIntrinsicModifierName() return "modifier_resurrection_pendant" end
 function item_resurection_pendant:IsStealable() return false end
 function item_resurection_pendant:GetChannelTime()
-	if self:GetCaster():HasModifier("modifier_super_scepter") then
-		return self:GetSpecialValueFor("channel") / 2
-	else
-		return self:GetSpecialValueFor("channel")
-	end
+	return PendantDelay:GetChannelTime(self:GetCaster())
 end
 function item_resurection_pendant:GetAbilityTextureName()
 	if self:GetCaster() then
@@ -29,22 +25,15 @@ end
 
 if IsServer() then
     function item_resurection_pendant:OnChannelFinish(interrupted)
-		if not self then return end
-		local plyid = self:GetCaster():GetPlayerID()
-		if PlayerResource:IsValidPlayerID(plyid) then
-			self:GetCaster():RemoveGesture(ACT_DOTA_GENERIC_CHANNEL_1)
-			if not interrupted and not self:GetParent():HasModifier("modifier_arc_warden_tempest_double") then
-				local base_cooldown = self:GetSpecialValueFor("base_cooldown")
-				local extra_cooldown = self:GetSpecialValueFor("extra_cooldown")
-				if self:GetCaster():HasModifier("modifier_super_scepter") then
-					extra_cooldown = self:GetSpecialValueFor("extra_cooldown_ss")
-				end	
-				self:Used(self:GetCaster(), self, base_cooldown, extra_cooldown)
-			end
+		local caster = self:GetCaster()
+		if not caster or not PlayerResource:IsValidPlayerID(caster:GetPlayerID()) then return end
+		caster:RemoveGesture(ACT_DOTA_GENERIC_CHANNEL_1)
+		if not interrupted and not caster:HasModifier("modifier_arc_warden_tempest_double") then
+			self:Used(caster)
 		end	
     end
 
-    function item_resurection_pendant:Used(caster, ability, base_cooldown, extra_cooldown)
+    function item_resurection_pendant:Used(caster)
 		local ressurected = item_resurection_pendant:RessurectAll(caster)
 		if ressurected > 0 then
 			player_data_modify_value(caster:GetPlayerID(), "saves", ressurected)
@@ -53,12 +42,15 @@ if IsServer() then
 
 			item_resurection_pendant:DestroyTrees()
 
-			ability:StartCooldown(base_cooldown + extra_cooldown * ressurected)
+			local base_cooldown = self:GetSpecialValueFor("base_cooldown")
+			local extra_cooldown = self:GetSpecialValueFor(caster:HasModifier("modifier_super_scepter")
+				and "extra_cooldown_ss" or "extra_cooldown")
+			self:StartCooldown(base_cooldown + extra_cooldown * ressurected)
 		else
 			caster:Interrupt()
 			caster:InterruptChannel()
-			ability:RefundManaCost()
-			ability:EndCooldown()
+			self:RefundManaCost()
+			self:EndCooldown()
 		end
     end
 
@@ -138,65 +130,49 @@ function modifier_resurrection_pendant:GetTexture()
 	return "custom/resurection_pendant_modifier"
 end
 function modifier_resurrection_pendant:OnCreated()
-	if IsServer() then if not self:GetAbility() then self:Destroy() end self:StartIntervalThink(0) end
+	if IsServer() then
+		if not self:GetAbility() then
+			self:Destroy()
+			return
+		end
+		self:StartIntervalThink(0)
+	end
 end
+
+local ignoredHeroes = {
+	["npc_playerhelp"] = true,
+	["npc_dota_target_dummy"] = true,
+	["npc_dummy_unit"] = true,
+	["npc_dota_hero_target_dummy"] = true,
+	["npc_courier_replacement"] = true,
+	["npc_dota_totem_item_holder"] = true,
+}
+
 function modifier_resurrection_pendant:OnIntervalThink()
-	if self:GetParent():HasScepter() then
-		local plyid = self:GetParent():GetPlayerID()
-		if not PlayerResource:IsValidPlayerID(plyid) then return end	--disconected ppl
-		local NotRegister = {
-			["npc_playerhelp"] = true,
-			["npc_dota_target_dummy"] = true,
-			["npc_dummy_unit"] = true,
-			["npc_dota_hero_target_dummy"] = true,
-			["npc_courier_replacement"] = true,
-			["npc_dota_totem_item_holder"] = true,
-		}
+	local caster = self:GetParent()
+	local ability = self:GetAbility()
+	if not caster:HasScepter() or not ability or ability:IsNull() or ability:GetCaster() ~= caster
+		or not ability:IsCooldownReady() or not PlayerResource:IsValidPlayerID(caster:GetPlayerID()) then
+		self.autoReviveAt = nil
+		return
+	end
 
-		local heroes = HeroList:GetAllHeroes()
-		local PlayersID = self:GetParent():GetPlayerID()
-		local channel = self:GetAbility():GetChannelTime()
-		local base_cooldown = self:GetAbility():GetSpecialValueFor("base_cooldown")
-		local extra_cooldown = self:GetAbility():GetSpecialValueFor("extra_cooldown")
-		if self:GetParent():HasModifier("modifier_super_scepter") then
-			extra_cooldown = self:GetAbility():GetSpecialValueFor("extra_cooldown_ss")
-		end
-
-		local LivingHeroes = 0
-		
-		for i = 1, #heroes do
-			local inf_aegis_ready = false
-			for itemSlot = 0, 5 do
-				local item = heroes[i]:GetItemInSlot(itemSlot)
-				if item and item:GetName() == "item_inf_aegis" then
-					if item:IsCooldownReady() or item:GetCooldownTimeRemaining() > item:GetSpecialValueFor("cooldown") - channel then
-						inf_aegis_ready = true
-					end
-				end
-			end
-			if heroes[i]:IsRealHero() and (heroes[i]:IsAlive() or heroes[i]:IsReincarnating() or inf_aegis_ready) and not NotRegister[heroes[i]:GetUnitName()] then
-				if not heroes[i]:HasModifier("modifier_fountain_invulnerability") then
-					LivingHeroes = i
-				end	
+	for _, hero in ipairs(HeroList:GetAllHeroes()) do
+		if hero:IsRealHero() and not ignoredHeroes[hero:GetUnitName()] and not hero:HasModifier("modifier_fountain_invulnerability") then
+			if hero:IsAlive() or hero:IsReincarnating() then
+				self.autoReviveAt = nil
+				return
 			end
 		end
+	end
 
---		self:SetStackCount(LivingHeroes)
-
-		if LivingHeroes == 0 and self:GetAbility():IsCooldownReady() then
-			Timers:CreateTimer(channel + (FrameTime() * (PlayersID + 1)), function()
-				local LivingHeroes = 0
-				for i = 1, #heroes do
-					if heroes[i]:IsRealHero() and (heroes[i]:IsAlive() or heroes[i]:IsReincarnating()) and not NotRegister[heroes[i]:GetUnitName()] then
-						if not heroes[i]:HasModifier("modifier_fountain_invulnerability") then
-							LivingHeroes = i
-						end	
-					end
-				end
-				if LivingHeroes == 0 and self:GetAbility():IsCooldownReady() then
-					item_resurection_pendant:Used(self:GetParent(), self:GetAbility(), base_cooldown, extra_cooldown)							
-				end
-			end)
-		end
+	local now = GameRules:GetGameTime()
+	if not self.autoReviveAt then
+		-- Start one countdown per wipe and snapshot the delay for this activation.
+		self.autoReviveAt = now + ability:GetChannelTime()
+	elseif now >= self.autoReviveAt then
+		self.autoReviveAt = nil
+		if ability:IsChanneling() then caster:InterruptChannel() end
+		ability:Used(caster)
 	end
 end

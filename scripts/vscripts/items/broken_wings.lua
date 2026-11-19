@@ -1,6 +1,15 @@
 LinkLuaModifier("modifier_broken_wings", "items/broken_wings", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_broken_wings_feather_stacks", "items/broken_wings", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_broken_wings_permanent_feathers", "items/broken_wings", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_broken_wings_divinity", "items/broken_wings", LUA_MODIFIER_MOTION_NONE)
+
+local featherModifier = "modifier_broken_wings_feather_stacks"
+-- Keep the modifier ID so existing feather stacks survive a script reload.
+local divinityFeatherModifier = "modifier_broken_wings_permanent_feathers"
+
+local function GetFeatherStacks(hero, item)
+	return hero:FindModifierByName(featherModifier) or hero:AddNewModifier(hero, item, featherModifier, {})
+end
 
 ------------------
 -- Broken Wings --
@@ -9,28 +18,29 @@ item_broken_wings = class({})
 function item_broken_wings:GetIntrinsicModifierName() return "modifier_broken_wings" end
 
 function item_broken_wings:OnProjectileHit(target, location)
-	if not self:GetCaster():HasItemInInventory("item_broken_wings") then return end
-	if not self:GetCaster():HasModifier("modifier_broken_wings") then return end
-	local caster = self:GetCaster()
-	if caster:IsIllusion() then return end
-	local max_stacks = self:GetSpecialValueFor("feather_max_stacks")
 	if not target then return false end
+	local caster = self:GetCaster()
+	if not caster or not caster:IsRealHero() or caster:IsIllusion() then return end
+	if not caster:HasItemInInventory("item_broken_wings") or not caster:HasModifier("modifier_broken_wings") then return end
 	if caster:HasModifier("modifier_broken_wings_divinity") then return end
 	if not self.windbuff then
 		self.windbuff = true
 		self.hadwindbuff = false 
 	end	
-	if not caster:HasModifier("modifier_broken_wings_feather_stacks") then
-		local feather_stacks = caster:AddNewModifier(caster, self, "modifier_broken_wings_feather_stacks", {})
-		feather_stacks:SetStackCount(1)
+	local featherStacks = GetFeatherStacks(caster, self)
+	if not featherStacks then return end
+	local maxStacks = self:GetSpecialValueFor("feather_max_stacks")
+	if RollPercentage(self:GetSpecialValueFor("permanent_feather_chance")) then
+		local divinityStacks = caster:FindModifierByName(divinityFeatherModifier)
+			or caster:AddNewModifier(caster, nil, divinityFeatherModifier, {})
+		if not divinityStacks then return end
+		divinityStacks:IncrementStackCount()
+		featherStacks:ForceRefresh()
 	else
-		local feather_stacks = caster:FindModifierByName("modifier_broken_wings_feather_stacks")
-		feather_stacks:SetStackCount(feather_stacks:GetStackCount() + 1)
-		if feather_stacks:GetStackCount() >= max_stacks then
-			feather_stacks:SetStackCount(max_stacks)
-			local DivinityDuration = self:GetSpecialValueFor("divinity_duration")
-			caster:AddNewModifier(caster, self, "modifier_broken_wings_divinity", {duration = DivinityDuration})
-		end
+		featherStacks:SetStackCount(math.min(maxStacks, featherStacks:GetStackCount() + 1))
+	end
+	if featherStacks:GetTotalFeathers() >= maxStacks then
+		caster:AddNewModifier(caster, self, "modifier_broken_wings_divinity", {duration = self:GetSpecialValueFor("divinity_duration")})
 	end
 	if caster:HasItemInInventory("item_wind_rapier") then
 		local WindChance = self:GetSpecialValueFor("wind_rapier_chance")
@@ -62,7 +72,20 @@ function modifier_broken_wings:IsPurgable() return false end
 --function modifier_broken_wings:GetAttributes() return MODIFIER_ATTRIBUTE_MULTIPLE end
 function modifier_broken_wings:DestroyOnExpire() return false end
 function modifier_broken_wings:OnCreated()
-	if IsServer() then if not self:GetAbility() then self:Destroy() end end
+	if not IsServer() then return end
+	if not self:GetAbility() then
+		self:Destroy()
+		return
+	end
+	self:RestoreDivinityFeatherBonuses()
+end
+function modifier_broken_wings:RestoreDivinityFeatherBonuses()
+	local hero = self:GetParent()
+	local item = self:GetAbility()
+	if item and hero:HasModifier(divinityFeatherModifier) then GetFeatherStacks(hero, item) end
+end
+function modifier_broken_wings:OnRespawn(keys)
+	if IsServer() and keys.unit == self:GetParent() then self:RestoreDivinityFeatherBonuses() end
 end
 function modifier_broken_wings:OnDestroy()
 	if not IsServer() then return end
@@ -71,7 +94,7 @@ function modifier_broken_wings:OnDestroy()
 	end
 end
 function modifier_broken_wings:DeclareFunctions()
-	return {MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING, MODIFIER_EVENT_ON_ATTACK_LANDED}
+	return {MODIFIER_PROPERTY_ATTACK_RANGE_BONUS, MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING, MODIFIER_EVENT_ON_ATTACK_LANDED, MODIFIER_EVENT_ON_RESPAWN}
 end
 function modifier_broken_wings:GetModifierAttackRangeBonus()
 	if self:GetParent():IsRangedAttacker() then if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("bonus_attack_range") end end
@@ -121,129 +144,121 @@ function modifier_broken_wings_feather_stacks:IsPurgable() return false end
 function modifier_broken_wings_feather_stacks:DestroyOnExpire() return false end
 function modifier_broken_wings_feather_stacks:OnCreated()
 	if IsServer() then if not self:GetAbility() then self:Destroy() end end
-	self.hit = true
 end
 function modifier_broken_wings_feather_stacks:DeclareFunctions()
 	return {MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE, MODIFIER_PROPERTY_STATS_AGILITY_BONUS, MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE, MODIFIER_EVENT_ON_TAKEDAMAGE}
 end
 function modifier_broken_wings_feather_stacks:GetModifierSpellAmplify_Percentage()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("feather_spell_amp") * self:GetStackCount() end
+	return self:GetFeatherBonus("feather_spell_amp")
 end
 function modifier_broken_wings_feather_stacks:GetModifierBonusStats_Agility()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("feather_agi") * self:GetStackCount() end
+	return self:GetFeatherBonus("feather_agi")
 end
 function modifier_broken_wings_feather_stacks:GetModifierDamageOutgoing_Percentage()
-	if self:GetAbility() then return self:GetAbility():GetSpecialValueFor("feather_dmg_red") * self:GetStackCount() * (-1) end
+	return -self:GetFeatherBonus("feather_dmg_red")
+end
+function modifier_broken_wings_feather_stacks:GetTotalFeathers()
+	local hero = self:GetParent()
+	return self:GetStackCount() + hero:GetModifierStackCount(divinityFeatherModifier, hero)
+end
+function modifier_broken_wings_feather_stacks:GetFeatherBonus(name)
+	local item = self:GetAbility()
+	if not item then return 0 end
+	local count = math.min(self:GetTotalFeathers(), item:GetSpecialValueFor("feather_max_stacks"))
+	return item:GetSpecialValueFor(name) * count
 end
 
+modifier_broken_wings_permanent_feathers = class({})
+function modifier_broken_wings_permanent_feathers:IsHidden() return false end
+function modifier_broken_wings_permanent_feathers:IsPurgable() return false end
+function modifier_broken_wings_permanent_feathers:RemoveOnDeath() return false end
+function modifier_broken_wings_permanent_feathers:GetTexture() return "custom/broken_wings" end
 
 
-local function get_inv_slotnr(unit)
-	if IsServer() then
-		for i = 0, 5 do
-			local found_item = false
-			local Item = unit:GetItemInSlot(i)
-			if Item ~= nil and IsValidEntity(Item) then
-				if Item:GetName() == "item_broken_wings" then
-					found_item = true
-				end
-				if found_item then 
-					return i
-				end	
-			end
-		end	
-		return 0
-	end			
+local function GetInventorySlot(hero)
+	for slot = 0, 5 do
+		local item = hero:GetItemInSlot(slot)
+		if item and not item:IsNull() and item:GetName() == "item_broken_wings" then return slot end
+	end
+	return 0
 end
 
+local function GetDamageLimit(hero, item, damageType, divinity)
+	local spellAmp = hero:GetSpellAmplification(false)
+	if spellAmp <= 0 then return math.huge end
+	local level = hero:GetLevel()
+	if level > 100 then level = 100 + (level - 100) * 10 end
+	local coefficient = item:GetSpecialValueFor(damageType == DAMAGE_TYPE_MAGICAL and "damage_limit_magic" or "damage_limit_pure")
+	local limit = level * item:GetSpecialValueFor("damage_limit_multiplier") * coefficient / spellAmp
+	if divinity then limit = limit * item:GetSpecialValueFor("divinity_limit_multiplier") end
+	return math.max(1, math.floor(limit))
+end
 
 function modifier_broken_wings_feather_stacks:OnTakeDamage(keys)
-	if not IsServer() then return end
+	if not IsServer() or self.applyingFeatherDamage then return end
 	local caster = self:GetParent()
-	local target = keys.unit
-	local attacker = keys.attacker
-	local DamageType = keys.damage_type
-	local ability = self:GetAbility()
-	if not ability then return end
-	if not caster:IsRealHero() then return end
-	if attacker ~= caster then return end
-	if target == attacker then return end
-	if self:GetStackCount() < 1 then return end
-	if self.hit == true then
-		if DamageType == DAMAGE_TYPE_MAGICAL or DamageType == DAMAGE_TYPE_PURE then
-			if keys.original_damage < 2 then return end -- avoid negative being transformed in possitive and 2 instead of 1 for possible futture compatibility
-			self.hit = false
-			local feather_add_dmg = ability:GetSpecialValueFor("feather_add_dmg")
-			local max_used_stacks = 49
-			local orig_dmg = keys.original_damage
-			local lvl = caster:GetLevel() * 40
-			local spell_amp = caster:GetSpellAmplification(false)
-			local limit_magic = math.floor(lvl * 15000 / spell_amp)
-			local limit_pure = math.floor(lvl * 1000 / spell_amp)
-			local limit = 0
-			local used_stacks = 1
-			local divinity = caster:HasModifier("modifier_broken_wings_divinity")
-			local inventorySlot = get_inv_slotnr(caster) or 0
-			if DamageType == DAMAGE_TYPE_MAGICAL then
-				limit = limit_magic
-			elseif DamageType == DAMAGE_TYPE_PURE then
-				limit = limit_pure
-			end
-			if inventorySlot > 0 then
-				if not divinity and orig_dmg < (limit / inventorySlot) then self.hit = true return end
-				used_stacks = 0
-			end	
-			if orig_dmg > limit then
-				if divinity then
-					if orig_dmg > (limit * 4) then
-						orig_dmg = limit / 6					
-					elseif orig_dmg > (limit * 3) then
-						orig_dmg = limit / 4	
-					elseif orig_dmg > (limit * 2) then
-						orig_dmg = limit / 3	
-					else
-						orig_dmg = limit / 2
-					end											
-				end
-				used_stacks = math.ceil(orig_dmg / limit + 1) + 2
-				if used_stacks > 49 then
-					used_stacks = max_used_stacks
-				end
-			end
-			if caster:HasModifier("modifier_super_scepter") then
-				if caster:HasModifier("modifier_marci_unleash_flurry") then
-					feather_add_dmg = ability:GetSpecialValueFor("feather_add_dmg_marci")
-					if used_stacks > 3 then
-						used_stacks = 3
-					end
-				end
-			end
-			if used_stacks > self:GetStackCount() then self.hit = true return end
+	local damageType = keys.damage_type
+	local originalDamage = keys.original_damage
+	if keys.attacker ~= caster or keys.unit == caster or not caster:IsRealHero()
+		or (damageType ~= DAMAGE_TYPE_MAGICAL and damageType ~= DAMAGE_TYPE_PURE)
+		or not originalDamage or originalDamage < 2 then return end
+	local item = self:GetAbility()
+	if not item or self:GetTotalFeathers() < 1 then return end
 
-			local damage = math.floor(orig_dmg * ((feather_add_dmg - 100) / 100))
-			local damage_popup = math.floor(orig_dmg * (feather_add_dmg / 100))
-			ApplyDamage({
-				victim = target,
-				attacker = caster,
-				damage = damage,
-				damage_type = DamageType,
-				damage_flags = DOTA_DAMAGE_FLAG_NONE,
-				ability = ability,
-			})
-			create_popup({
-				target = target,
-				value = damage_popup,
-				color = Vector(160, 202, 224),
-				type = "null_ultimate",
-				pos = 9
-			})
+	local divinity = caster:HasModifier("modifier_broken_wings_divinity")
+	local now = GameRules:GetGameTime()
+	if now < (self.nextFeatherProc or 0) then return end
+	local slot = GetInventorySlot(caster)
+	local limit = GetDamageLimit(caster, item, damageType, divinity)
+	if not divinity and slot > 0 and originalDamage < limit / slot then return end
 
-			if divinity then self.hit = true return end
-			local cd = ability:GetSpecialValueFor("feather_cd") * self:GetCaster():GetCooldownReduction()
-			Timers:CreateTimer(cd, function() self.hit = true end)
-			self:SetStackCount(self:GetStackCount() - used_stacks)
+	local usedStacks = slot == 0 and 1 or 0
+	if originalDamage > limit then
+		if divinity then
+			if originalDamage > limit * 4 then
+				originalDamage = limit / 6
+			elseif originalDamage > limit * 3 then
+				originalDamage = limit / 4
+			elseif originalDamage > limit * 2 then
+				originalDamage = limit / 3
+			else
+				originalDamage = limit / 2
+			end
+		else
+			usedStacks = math.min(49, math.max(1, math.ceil(originalDamage / (limit + 1))))
 		end
 	end
+
+	local damageMultiplier = item:GetSpecialValueFor("feather_add_dmg")
+	if caster:HasModifier("modifier_super_scepter") and caster:HasModifier("modifier_marci_unleash_flurry") then
+		damageMultiplier = item:GetSpecialValueFor("feather_add_dmg_marci")
+		usedStacks = math.min(usedStacks, 3)
+	end
+	if not divinity then
+		if usedStacks > self:GetStackCount() then return end
+		self.nextFeatherProc = now + item:GetSpecialValueFor("feather_cd") * caster:GetCooldownReduction()
+	end
+
+	self.applyingFeatherDamage = true
+	ApplyDamage({
+		victim = keys.unit,
+		attacker = caster,
+		damage = math.floor(originalDamage * (damageMultiplier - 100) / 100),
+		damage_type = damageType,
+		damage_flags = DOTA_DAMAGE_FLAG_NONE,
+		ability = item,
+	})
+	self.applyingFeatherDamage = false
+	if not divinity and usedStacks > 0 and not self:IsNull() then
+		self:SetStackCount(math.max(0, self:GetStackCount() - usedStacks))
+	end
+	create_popup({
+		target = keys.unit,
+		value = math.floor(originalDamage * damageMultiplier / 100),
+		color = Vector(160, 202, 224),
+		type = "null_ultimate",
+		pos = 9,
+	})
 end
 
 --------------
@@ -260,20 +275,26 @@ function modifier_broken_wings_divinity:GetEffectAttachType()
 	return PATTACH_ABSORIGIN_FOLLOW
 end
 function modifier_broken_wings_divinity:OnCreated()
-	if IsServer() then
-		if PlayerResource:GetPlayer(self:GetParent():GetPlayerID()) then
-			local player = PlayerResource:GetPlayer(self:GetParent():GetPlayerID())
-			screen_pfx = ParticleManager:CreateParticleForPlayer("particles/custom/items/broken_wings/broken_wings_divinity_screen.vpcf", PATTACH_ABSORIGIN, self:GetParent(), player)
-			ParticleManager:SetParticleControl(screen_pfx, 1, Vector(1, 0, 0))
-		end	
-	end
+	if not IsServer() then return end
+	local player = PlayerResource:GetPlayer(self:GetParent():GetPlayerID())
+	if not player then return end
+	self.screenParticle = ParticleManager:CreateParticleForPlayer("particles/custom/items/broken_wings/broken_wings_divinity_screen.vpcf", PATTACH_ABSORIGIN, self:GetParent(), player)
+	ParticleManager:SetParticleControl(self.screenParticle, 1, Vector(1, 0, 0))
 end
 function modifier_broken_wings_divinity:OnDestroy()
 	if not IsServer() then return end
-	self:GetParent():FindModifierByName("modifier_broken_wings_feather_stacks"):SetStackCount(0)
-	if screen_pfx then
-		ParticleManager:DestroyParticle(screen_pfx, false)
-		ParticleManager:ReleaseParticleIndex(screen_pfx)
+	local hero = self:GetParent()
+	if hero and not hero:IsNull() then
+		hero:RemoveModifierByName(divinityFeatherModifier)
+		local featherStacks = hero:FindModifierByName(featherModifier)
+		if featherStacks then
+			featherStacks:SetStackCount(0)
+			featherStacks:ForceRefresh()
+		end
+	end
+	if self.screenParticle then
+		ParticleManager:DestroyParticle(self.screenParticle, false)
+		ParticleManager:ReleaseParticleIndex(self.screenParticle)
 	end
 end
 function modifier_broken_wings_divinity:DeclareFunctions()

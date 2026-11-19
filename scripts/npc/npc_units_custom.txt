@@ -11766,6 +11766,7 @@
 	"Ability1"					"courier_invincibility"
 	"Ability2"				    "custom_thrist_like"
 	"Ability3"				  	"mjz_bristleback_quill_spray_autocastp"
+	"Ability4"					"courier_resurrection_delay"
 	"ArmorPhysical"				"10"		// Physical protection.
 	"MagicalResistance"				"100"			// Magical protection.
 

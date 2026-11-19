@@ -133,8 +133,9 @@ function cosmos_book:OnChannelFinish(bInterrupted)
 							attacker = caster,
 							ability = self
 						}
-						ApplyDamage(damageTable)
 						local lvl = caster:GetLevel()
+						if lvl > 100 then enemy.cosmosExecutionAt = GameRules:GetGameTime() end
+						ApplyDamage(damageTable)
 						if lvl > 100 then
 							--print("lvl > 100 "..lvl.. "forcekill: "..enemy:GetUnitName())
 							enemy:ForceKill(true)
