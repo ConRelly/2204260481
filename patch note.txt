@@ -3708,7 +3708,7 @@ Note: because of the Arcade changes to not allow most maps dedicated servers, so
 * Spear of Mars talent now doubles spear damage. With Aghanim's Shard, each spear travels 20% of its range, then curves toward the nearest visible enemy. After hitting its target, it can turn toward another enemy within its remaining range. Shard removes skewer and pin.
 * Arena of Blood Super Scepter: Toggle autocast to switch its spear spell damage from Magical to Pure at 10% damage.
 ---
-* The team-wipe countdown is disabled during the Juggernaut Sword Master challenge.
+* The team-wipe countdown is disabled during the Juggernaut Sword Master challenge, and did some protection improvement on the first 2s of respawn.
 * Fixed missing Omnislash, Ransack, Kraken Shell purge, Blur and The Swarm effects in local lobbies.
 * Updated the Intelligence magic resistance correction for 7.42 so heroes have 30% base magic resistance before other bonuses.
 * Large numbers in the hero portrait and stats tooltip use K/M/B/T with up to two decimal places. The portrait gives all three attributes room to stay visible.
