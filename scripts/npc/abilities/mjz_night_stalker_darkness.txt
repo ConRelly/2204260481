@@ -60,8 +60,8 @@
 		"precache"
 		{
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
-			"particles"		"particles/units/heroes/hero_night_stalker/nightstalker_darkness_hero_effect.vpcf"
-			"particles"		"particles/units/heroes/hero_night_stalker/nightstalker_ulti.vpcf"
+			"particle"		"particles/units/heroes/hero_night_stalker/nightstalker_darkness_hero_effect.vpcf"
+			"particle"		"particles/units/heroes/hero_night_stalker/nightstalker_ulti.vpcf"
 		}
 	}
 	"special_bonus_unique_mjz_night_stalker_darkness_damage"

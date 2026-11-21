@@ -1,3 +1,5 @@
+local GetRadianceLevelMultiplier = require("items/custom/radiance_armor_damage")
+
 LinkLuaModifier("modifier_item_radiance_armor", "items/custom/item_radiance_armor", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_radiance_armor_aura", "items/custom/item_radiance_armor", LUA_MODIFIER_MOTION_NONE)
 
@@ -136,6 +138,9 @@ function modifier_item_radiance_armor_aura:OnIntervalThink()
 			local aura_dmg = self.base_damage
 			local aura_dmg_pct = ability:GetSpecialValueFor("aura_dmg_pct")/100
 			local damage = math.ceil(aura_dmg + aura_dmg_pct*caster:GetMaxHealth())
+			if ability:GetAbilityName() == "item_radiance_armor_2" then
+				damage = damage * GetRadianceLevelMultiplier(caster)
+			end
 			--print(damage)
 			if not caster:IsRealHero() then
 				damage = damage * 2

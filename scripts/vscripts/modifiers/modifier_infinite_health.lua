@@ -245,7 +245,12 @@ function modifier_infinite_health:OnIntervalThink()
                         local original_loc = player:GetAbsOrigin()
                         FindClearRandomPositionAroundUnit(player, parent, math.random(1900))  
                         local nFXIndex = ParticleManager:CreateParticle ("particles/custom/deadpool_multislash_tgt.vpcf", PATTACH_ABSORIGIN_FOLLOW, player);
-                        ParticleManager:SetParticleControlEnt (nFXIndex, 0, player, PATTACH_POINT_FOLLOW, "attach_hitloc", player:GetOrigin () + Vector (0, 0, 96), true);
+                        local impactPosition = player:GetAbsOrigin() + Vector(0, 0, 96)
+                        if player:ScriptLookupAttachment("attach_hitloc") > 0 then
+                            ParticleManager:SetParticleControlEnt(nFXIndex, 0, player, PATTACH_POINT_FOLLOW, "attach_hitloc", impactPosition, true)
+                        else
+                            ParticleManager:SetParticleControl(nFXIndex, 0, impactPosition)
+                        end
                         ParticleManager:SetParticleControl (nFXIndex, 2, Vector (0, 0, 0));
                         ParticleManager:SetParticleControl (nFXIndex, 3, Vector (0, 0, 0));
                         ParticleManager:ReleaseParticleIndex (nFXIndex);

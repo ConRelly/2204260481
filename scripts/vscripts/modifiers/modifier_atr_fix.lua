@@ -3,6 +3,9 @@ require("lib/my")
 
 modifier_atr_fix = class({})
 
+local HERO_BASE_MAGIC_RESISTANCE = 30
+local MAGIC_RESISTANCE_PER_INTELLIGENCE = 0.125 -- Dota 7.42, in percentage points.
+
 
 function modifier_atr_fix:IsHidden()
     return true
@@ -59,22 +62,11 @@ function modifier_atr_fix:OnCreated()
     self:StartIntervalThink(0.3)
 end
 function modifier_atr_fix:OnIntervalThink()
-    if IsServer() then
-        if self.parent then
-            -- Get the hero entity
-            -- Calculate the base magical resistance value to counteract the int bonus
-            local hero_name = self.parent:GetUnitName()
-
-            local int = self.parent:GetIntellect(false)
-            local baseValue = (-0.1 * int) + 30
---[[             if hero_name == "npc_dota_hero_void_spirit" then
-                baseValue = (-0.3 * int) + 50
-            end   ]]  
-            -- Set the hero's base magical resistance value
-            self.parent:SetBaseMagicalResistanceValue(baseValue)
-        end
-    end
-end    
+    if not IsServer() or not self.parent then return end
+    local intellect = self.parent:GetIntellect(false)
+    local baseResistance = HERO_BASE_MAGIC_RESISTANCE - intellect * MAGIC_RESISTANCE_PER_INTELLIGENCE
+    self.parent:SetBaseMagicalResistanceValue(baseResistance)
+end
 --[[function modifier_atr_fix:GetModifierConstantManaRegen()
     local parent_int = self.parent:GetIntellect(false)
     local m_regen = parent_int * 0.0375

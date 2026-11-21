@@ -59,8 +59,9 @@
             "first_warrior_angle" "0.0"
             "warrior_fade_min_dist" "350.0"
             "warrior_fade_max_dist" "450.0"
-            "str_multiplier" "5.0 9.0 15.0 25.0 50.0"
+            "effective_level_str_pct" "100 125 150 175 200"
             "ss_spear_attack_interval" "0.2"
+            "ss_pure_damage_pct" "10"
             "challenge_mult" "50"
         }
 	}

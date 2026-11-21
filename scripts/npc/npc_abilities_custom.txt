@@ -18567,7 +18567,7 @@
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
 			"particle"  "particles/units/heroes/hero_huskar/huskar_life_break.vpcf"
 			"particle"  "particles/units/heroes/hero_huskar/huskar_life_break_cast.vpcf"
-			"particles" "particles/status_fx/status_effect_huskar_lifebreak.vpcf"
+			"particle" "particles/status_fx/status_effect_huskar_lifebreak.vpcf"
 			"particle"	"particles/units/heroes/hero_earthshaker/earthshaker_totem_leap_impact_dust.vpcf"
 			"soundfile"	"soundevents/voscripts/game_sounds_vo_juggernaut.vsndevts"
 		}
@@ -19587,12 +19587,13 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"MaxLevel"					  "7"
 		"LevelsBetweenUpgrades"		 "5"
-		"AbilityCastRange"				"3800"
+		"AbilityCastRange"				"%spear_range"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"14.0"
 		"AbilityManaCost"				"100"
 
 		"HasScepterUpgrade"			"1"
+		"HasShardUpgrade"				"1"
 
 		"precache"
 		{
@@ -19610,13 +19611,13 @@
                 "value" "175 675 1260 4325 8650 19850 37850"
                 "LinkedSpecialBonus" "special_bonus_unique_mars_spear_bonus_damage" //missing101
             }
-            "strength_damage"
-            {
-                "value" "600 750 800 950 1200 1400 1800"
-                "special_bonus_unique_unique_mjz_mars_spear_str_damage" "1200"
-            }
+            "effective_level_str_pct" "120 150 180 210 240 270 300"
             "spear_speed" "1100"
-            "spear_width" "100"
+            "spear_width"
+            {
+                "value" "100"
+                "affected_by_aoe_increase" "1"
+            }
             "spear_vision" "500"
             "spear_range" "3800"
             "activity_duration" "1.7"
@@ -19638,7 +19639,7 @@
 		
 		"AbilityValues"
         {
-            "value" "1200"
+            "value" "2"
         }
 	}
 	"mjz_medusa_mana_snake"
@@ -20401,8 +20402,8 @@
 		"precache"
 		{
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_nightstalker.vsndevts"
-			"particles"		"particles/units/heroes/hero_night_stalker/nightstalker_darkness_hero_effect.vpcf"
-			"particles"		"particles/units/heroes/hero_night_stalker/nightstalker_ulti.vpcf"
+			"particle"		"particles/units/heroes/hero_night_stalker/nightstalker_darkness_hero_effect.vpcf"
+			"particle"		"particles/units/heroes/hero_night_stalker/nightstalker_ulti.vpcf"
 		}
 	}
 	"special_bonus_unique_unique_mjz_night_stalker_darkness_damage"

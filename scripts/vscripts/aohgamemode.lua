@@ -51,6 +51,8 @@ LinkLuaModifier("modifier_boss", "modifiers/modifier_boss.lua", LUA_MODIFIER_MOT
 LinkLuaModifier("modifier_hard_mode_boss", "modifiers/modifier_hard_mode_boss.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_power_boss", "hack/modifiers/modifier_power_boss.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_aegis_buff", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_aegis_spawn_buff", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mars_gods_rebuke_aim", "modifiers/hero_mars/modifier_mars_gods_rebuke_aim", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_phys", "modifiers/modifier_phys.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_bristleback_quill_spray_autocast6", "abilities/hero_bristleback/modifier_mjz_bristleback_quill_spray_autocast6.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_boss_hpbar2", "abilities/boss_hpbar2.lua", LUA_MODIFIER_MOTION_NONE)
@@ -75,7 +77,7 @@ require("lib/uless")
 
 _G.mHackGameMode = HackGameMode()
 
-local HERO_SPAWN_PROTECTION_DURATION = 1
+local HERO_SPAWN_RECOVERY_WINDOW = 1
 local MONSTER_CONFIG_ORIGIN = "aoh2_config.txt"
 local MONSTER_CONFIG_NEW_KING = "aoh2_config_siltbreaker_200809_hard.txt"
 local MONSTER_CONFIG_SILTBREAKER = "aoh2_config_siltbreaker_200809.txt"
@@ -308,7 +310,8 @@ function AOHGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_AGILITY_ARMOR, 0.01)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN,0.05)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA, 1.5)
-	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MAGIC_RESIST, 0)  -- not implemented by dota yet
+	-- modifier_atr_fix offsets native Intelligence magic resistance.
+	-- GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MAGIC_RESIST, 0)
 	GameRules:GetGameModeEntity():SetCameraDistanceOverride(1400)
 	GameRules:GetGameModeEntity():SetHUDVisible(26,false)
 	local function listenForSpawnEvent(eventName, method)
@@ -331,6 +334,7 @@ function AOHGameMode:InitGameMode()
 	ListenToGameEvent("player_disconnected", Dynamic_Wrap(AOHGameMode, 'OnPlayerDisconnect'), self)
 	GameRules:GetGameModeEntity():SetThink("OnThink", self, 1.0)
 	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(AOHGameMode, 'OnDamageDealt'), self)
+	GameRules:GetGameModeEntity():SetExecuteOrderFilter(Dynamic_Wrap(AOHGameMode, 'OnExecuteOrder'), self)
 	HealingGuard:Init()
 	gHeroDamage:InitGameMode()
 
@@ -431,18 +435,53 @@ function AOHGameMode.IncrementPhilo(PlayerID)
 	AOHGameMode.numPhilo[PlayerID] = AOHGameMode.numPhilo[PlayerID] + 1
 end
 
---GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(AOHGameMode, 'OnDamageDealt'), self)
+function AOHGameMode:OnExecuteOrder(order)
+	if order.order_type ~= DOTA_UNIT_ORDER_CAST_NO_TARGET then return true end
+	local abilityIndex = order.entindex_ability
+	if not abilityIndex or abilityIndex <= 0 then return true end
+
+	local ability = EntIndexToHScript(abilityIndex)
+	if not ability or ability:IsNull() or ability:GetAbilityName() ~= "mars_gods_rebuke" then return true end
+	local caster = ability:GetCaster()
+	if not caster or caster:IsNull() then return true end
+
+	local modifier = caster:FindModifierByName("modifier_mars_gods_rebuke_aim")
+	if modifier and modifier:GetAbility() == ability then return true end
+	if modifier then modifier:Destroy() end
+	caster:AddNewModifier(caster, ability, "modifier_mars_gods_rebuke_aim", {})
+	return true
+end
+
+function AOHGameMode:BypassesSpawnProtection(hero, now)
+	now = now or GameRules:GetGameTime()
+	return hero.cosmosExecutionAt == now or hero.spawnRecoveryBypassAt == now
+		or hero.infinityAegisSuicideAt == now
+end
+
+function AOHGameMode:IsSpawnDamageProtected(hero, now)
+	local spawn = hero.aohSpawnProtection
+	if not spawn or not (spawn.expiresAt or spawn.reincarnating) then return false end
+	now = now or GameRules:GetGameTime()
+	if self:BypassesSpawnProtection(hero, now) then return false end
+	return (spawn.expiresAt and now < spawn.expiresAt)
+		or (spawn.reincarnating and hero:IsAlive() and hero:GetHealth() > 0)
+end
+
 function AOHGameMode:OnDamageDealt(damageTable)
 	local attacker_index = damageTable.entindex_attacker_const
 	local victim_index = damageTable.entindex_victim_const
 	local victim = victim_index and EntIndexToHScript(victim_index)
 	local spawn = victim and victim.aohSpawnProtection
-	if spawn and spawn.expiresAt then
+	if spawn and (spawn.expiresAt or spawn.reincarnating) then
 		local now = GameRules:GetGameTime()
-		if now >= spawn.expiresAt then
-			spawn.expiresAt = nil
-		elseif victim.cosmosExecutionAt ~= now then
+		if self:IsSpawnDamageProtected(victim, now) then
+			if spawn.reincarnating then
+				self:RunSpawnCallback("ArmSpawnProtection", victim, true)
+			end
 			return false
+		end
+		if spawn.expiresAt and now >= spawn.expiresAt then
+			spawn.expiresAt = nil
 		end
 	end
 	if attacker_index and victim then
@@ -1278,10 +1317,22 @@ function AOHGameMode:OnTreeCut(keys)
 end
 
 
+function AOHGameMode:IsChallengeActive()
+	local bosses = self._activeChallengeBosses
+	if not bosses then return false end
+	for boss in pairs(bosses) do
+		if not boss:IsNull() and boss:IsAlive() and boss:HasModifier("modifier_infinite_health") then
+			return true
+		end
+		bosses[boss] = nil
+	end
+	return false
+end
+
 function AOHGameMode:_CheckForDefeat()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		if self._entAncient and self._entAncient:IsAlive() and _G.cosmos_defeat then
-			if are_all_heroes_dead() and not self._ischeckingdefeat then
+			if not self._ischeckingdefeat and are_all_heroes_dead() and not self:IsChallengeActive() then
 				GameRules:GetGameModeEntity():SetThink("CheckForDefeatDelay", self, 0.5)
 				self._ischeckingdefeat = true
 			end
@@ -1313,6 +1364,11 @@ end
 local one_time_reward = true
 local moran_annoncement_kill = true
 function AOHGameMode:CheckForDefeatDelay()
+	if self:IsChallengeActive() then
+		self._defeatcounter = 10
+		self._ischeckingdefeat = false
+		return
+	end
 	if self._defeatcounter > 0 then
 		if self._defeatcounter == 10 and self._entAncient and self._entAncient:IsAlive() then
 			self._entAncient:AddNewModifier(self._entAncient, nil, "modifier_custom_ancient_invul", {duration = 5})
@@ -1471,26 +1527,30 @@ end
 
 local function ApplyHeroSpawnBuffs(hero)
 	hero:AddNewModifier(hero, nil, "modifier_aegis_buff", {duration = 7})
-	hero:AddNewModifier(hero, nil, "modifier_aegis_buff", {duration = 2})
+	hero:AddNewModifier(hero, nil, "modifier_aegis_spawn_buff", {duration = 2})
 end
 
 function AOHGameMode:ArmSpawnProtection(hero, fromRespawn)
-	if not IsSpawnProtectedHero(hero) or not hero:IsAlive() then return end
+	if not IsSpawnProtectedHero(hero) or not hero:IsAlive() or hero:GetHealth() < 1 then return end
 	local now = GameRules:GetGameTime()
 	local previous = hero.aohSpawnProtection
 	local newSpawn = not previous or previous.died
-		or (fromRespawn and now >= previous.startedAt + HERO_SPAWN_PROTECTION_DURATION)
+		or (fromRespawn and now >= previous.startedAt + HERO_SPAWN_RECOVERY_WINDOW)
 	if newSpawn then
 		hero.aohSpawnProtection = {
 			startedAt = now,
-			expiresAt = now + HERO_SPAWN_PROTECTION_DURATION,
+			expiresAt = now + HERO_SPAWN_RECOVERY_WINDOW,
 			recovered = previous and (previous.recovering or (not previous.died and previous.recovered)),
 		}
 	end
 	if not hero:HasModifier("modifier_aoh_spawn_recovery") then
 		hero:AddNewModifier(hero, nil, "modifier_aoh_spawn_recovery", {})
 	end
-	if newSpawn then ApplyHeroSpawnBuffs(hero) end
+	if newSpawn then
+		ApplyHeroSpawnBuffs(hero)
+		local aegis = hero:FindModifierByName("modifier_aegis")
+		if aegis then aegis:FinishReincarnation() end
+	end
 	return true
 end
 
@@ -1507,7 +1567,7 @@ function AOHGameMode:OnHeroBuyback(event)
 		self:ArmSpawnProtection(hero, true)
 	else
 		-- The buyback event can arrive before the hero is back in the world.
-		Timers:CreateTimer(0, function()
+		Timers:CreateTimer(FrameTime(), function()
 			if not hero:IsNull() then self:ArmSpawnProtection(hero, true) end
 		end)
 	end
@@ -1687,6 +1747,8 @@ function AOHGameMode:OnEntitySpawned(event)
 		end			
 		if boss_challenger[unit:GetUnitName()] == true then
 			unit:AddNewModifier(unit, nil, "modifier_infinite_health", {duration = 420})
+			self._activeChallengeBosses = self._activeChallengeBosses or {}
+			self._activeChallengeBosses[unit] = true
 			unit:AddNewModifier(unit, nil, "modifier_phys", {})
 			--unit:AddNewModifier(unit, nil, "modifier_kill", {duration = 421}) -- forcekill bugs rounds
 		end	
@@ -1719,32 +1781,67 @@ end
 
 
 
+local function IsDeathReincarnating(hero, spawn)
+	if spawn.aegisReincarnation then return true end
+	if spawn.deathReincarnates ~= nil then return spawn.deathReincarnates end
+	return hero:IsReincarnating()
+end
+
+function AOHGameMode:WatchReincarnation(hero, spawn)
+	if spawn.reincarnating then return end
+	spawn.reincarnating = true
+	Timers:CreateTimer(FrameTime(), function()
+		if hero:IsNull() or hero.aohSpawnProtection ~= spawn or not spawn.reincarnating
+			or GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then return end
+		if not hero:IsAlive() or hero:GetHealth() < 1 then return 0.1 end
+		self:RunSpawnCallback("ArmSpawnProtection", hero, true)
+	end)
+end
+
 function AOHGameMode:TrySpawnRecovery(hero, reincarnating)
 	local spawn = hero.aohSpawnProtection
-	if not spawn or spawn.died then return end
-	spawn.died = true
+	if not spawn or not IsSpawnProtectedHero(hero) then return end
 	local expiresAt = spawn.expiresAt
-	if not expiresAt then return end
+	spawn.died = true
 	spawn.expiresAt = nil
 	local now = GameRules:GetGameTime()
-	if now >= expiresAt or spawn.recovered or not IsSpawnProtectedHero(hero)
-		or reincarnating or hero:IsReincarnating() or hero.cosmosExecutionAt == now
-		or hero.infinityAegisSuicideAt == now or hero.spawnRecoveryBypassAt == now then return end
+	if hero.cosmosExecutionAt == now then return end
+
+	if reincarnating ~= nil then spawn.deathReincarnates = reincarnating end
+	local aegis = hero:FindModifierByName("modifier_aegis")
+	if aegis and aegis.reincarnationAt == now then spawn.aegisReincarnation = true end
+	if IsDeathReincarnating(hero, spawn) then
+		self:WatchReincarnation(hero, spawn)
+	else
+		spawn.reincarnating = nil
+	end
+	if not expiresAt or now >= expiresAt or spawn.recovered or self:BypassesSpawnProtection(hero, now)
+		or spawn.aegisReincarnation or spawn.deathReincarnates == true then return end
 
 	local position = hero:GetAbsOrigin()
 	self._pendingSpawnRecoveries = (self._pendingSpawnRecoveries or 0) + 1
 	-- Let the engine finish processing death before calling RespawnHero.
-	Timers:CreateTimer(0, function()
+	Timers:CreateTimer(FrameTime(), function()
 		self._pendingSpawnRecoveries = self._pendingSpawnRecoveries - 1
 		if GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME or hero:IsNull()
-			or hero.aohSpawnProtection ~= spawn or hero:IsAlive()
-			or hero:IsReincarnating() or not IsSpawnProtectedHero(hero) then return end
+			or hero.aohSpawnProtection ~= spawn or hero:IsAlive() or not IsSpawnProtectedHero(hero) then return end
+		-- Use the death event or Aegis proc when available. The engine flag can still reflect the previous life.
+		if IsDeathReincarnating(hero, spawn) then
+			self:WatchReincarnation(hero, spawn)
+			return
+		end
+		spawn.reincarnating = nil
 		spawn.recovering = true
-		hero:RespawnHero(false, false, false)
-		if hero:IsAlive() then
+		local ok, err = pcall(hero.RespawnHero, hero, false, false)
+		local revived = ok and hero:IsAlive()
+		if revived then
+			self:RunSpawnCallback("ArmSpawnProtection", hero, true)
+		end
+		spawn.recovering = nil
+		if revived then
 			FindClearSpaceForUnit(hero, position, true)
-		else
-			spawn.recovering = nil
+		elseif not ok then
+			print("[Spawn Protection] RespawnHero failed: " .. FormatScriptError(err))
 		end
 	end)
 end

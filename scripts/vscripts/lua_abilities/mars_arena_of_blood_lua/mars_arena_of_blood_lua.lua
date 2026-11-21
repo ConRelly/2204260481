@@ -33,6 +33,15 @@ function mars_arena_of_blood_lua:GetAOERadius()
 	return self:GetSpecialValueFor( "radius" )
 end
 
+function mars_arena_of_blood_lua:GetBehavior()
+	local behavior = DOTA_ABILITY_BEHAVIOR_POINT + DOTA_ABILITY_BEHAVIOR_AOE
+	local caster = self:GetCaster()
+	if caster and caster:HasModifier("modifier_super_scepter") then
+		behavior = behavior + DOTA_ABILITY_BEHAVIOR_AUTOCAST
+	end
+	return behavior
+end
+
 --------------------------------------------------------------------------------
 -- Ability Start
 function mars_arena_of_blood_lua:OnSpellStart()

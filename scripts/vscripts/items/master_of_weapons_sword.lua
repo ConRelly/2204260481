@@ -883,6 +883,7 @@ function modifier_mows_image:OnCreated()
 	if self:GetParent():HasModifier("modifier_aegis_buff") then
 		self:GetParent():RemoveModifierByName("modifier_aegis_buff")
 	end
+	self:GetParent():RemoveModifierByName("modifier_aegis_spawn_buff")
 	self:StartIntervalThink(0.5)
 end
 

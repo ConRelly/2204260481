@@ -3814,18 +3814,19 @@
 	//"DOTA_Tooltip_ability_mjz_magnataur_reverse_polarity_Note0"                 "On lvl 4 has 0 damage in case you want to gather all neutrals in one place without killing them."
 
 	"DOTA_Tooltip_ability_mjz_mars_spear"								"Spear of Mars"
-	"DOTA_Tooltip_ability_mjz_mars_spear_Description"					"Mars throws his legendary Spear with deadly precision, damaging each enemy unit it strikes. The first enemy hero it hits is skewered on the spear, pushing it back. If a skewered hero hits a tree, building, or cliff, they will be impaled to it and stunned."
-	"DOTA_Tooltip_ability_mjz_mars_spear_scepter_description"					"Spear count +2."
+	"DOTA_Tooltip_ability_mjz_mars_spear_Description"					"Throws a spear that damages enemies in its path and pushes the first enemy hero hit. The hero is stunned if pinned to a tree, building, or cliff.<br><br><font color='#F17C26'>Bonus damage:</font> %effective_level_str_pct%%% of effective level x Strength. Each level past 100 counts as 10."
+	"DOTA_Tooltip_ability_mjz_mars_spear_scepter_description"					"Throws 2 extra spears in a spread."
+	"DOTA_Tooltip_ability_mjz_mars_spear_shard_description"					"After traveling <font color='#F17C26'>20%%</font> of its range, each spear curves toward the nearest visible enemy it hasn't hit.<br>On hitting its target, it searches again within its remaining range.<br>Removes skewer and pin."
 	"DOTA_Tooltip_ability_mjz_mars_spear_Lore"							"The legendary Spear of Mars still glows with the heat of the forge god's fires."
 	"DOTA_Tooltip_ability_mjz_mars_spear_Note0"							"Spear of Mars can hit invisible units and reveals them if they are stunned."
 	"DOTA_Tooltip_ability_mjz_mars_spear_Note1"							"Spear of Mars will only pin a units to cliffs onto elevated areas, otherwise it will push them off onto lower ground."
 	"DOTA_Tooltip_ability_mjz_mars_spear_spear_range"					"CAST RANGE:"
+	"DOTA_Tooltip_ability_mjz_mars_spear_spear_width"					"HIT WIDTH:"
 	"DOTA_Tooltip_ability_mjz_mars_spear_stun_duration"					"STUN DURATION:"
 	"DOTA_Tooltip_ability_mjz_mars_spear_damage"						"BASE DAMAGE:"
-	"DOTA_Tooltip_ability_mjz_mars_spear_strength_damage"					"%STRENGTH DAMAGE:"
 	"DOTA_Tooltip_modifier_mjz_mars_spear_debuff"							"Spear of Mars"
 	"DOTA_Tooltip_modifier_mjz_mars_spear_debuff_Description"				"Stunned for %fMODIFIER_PROPERTY_TOOLTIP% seconds."		
-	"DOTA_Tooltip_ability_special_bonus_unique_unique_mjz_mars_spear_str_damage"		"Spear Of Mars +{s:value}% Strength Damage"	
+	"DOTA_Tooltip_ability_special_bonus_unique_unique_mjz_mars_spear_str_damage"		"Spear of Mars deals {s:value}x damage"
 	"DOTA_Tooltip_ability_mjz_medusa_mana_snake"					"Mana Snake"
 	"DOTA_Tooltip_ability_mjz_medusa_mana_snake_Description"		"Regenerates Medusa  mana equivalent to 14% of attack damage dealt."
 	"DOTA_Tooltip_ability_mjz_medusa_mana_snake_Lore"				"The snake will absorb the enemy mana."
@@ -7748,7 +7749,7 @@ The ward will have increased dmg base on hero total dmg and after lvl 30 it will
 "DOTA_Tooltip_ability_item_radiance_armor_1_aura_dmg_pct"				"%AURA SELF MAX HEALTH DAMAGE:"
 
 "DOTA_Tooltip_ability_item_radiance_armor_2"							"Greater Radiance Armor"
-"DOTA_Tooltip_ability_item_radiance_armor_2_Description"				"The light from this artifact is so strong that it burns all enemies(except neutrals)!\n<h1><font color='#F70707'>Challenge Boss</font></h1>On radiance tick (<font color='#E32948'>2%</font> x reward Tier) of this item damage will heal you.(damage amplifications will not count)"
+"DOTA_Tooltip_ability_item_radiance_armor_2_Description"				"The light from this artifact is so strong that it burns all enemies(except neutrals)!<br><font color='#F17C26'>Burn damage gains 2% per hero level. Each level past 100 counts as 10.</font>\n<h1><font color='#F70707'>Challenge Boss</font></h1>On radiance tick (<font color='#E32948'>2%</font> x reward Tier) of this item damage will heal you.(damage amplifications will not count)"
 "DOTA_Tooltip_ability_item_radiance_armor_2_bonus_stats"				"+$all"
 "DOTA_Tooltip_ability_item_radiance_armor_2_bonus_armor"				"+$armor"
 "DOTA_Tooltip_ability_item_radiance_armor_2_bonus_health"				"+$health"
@@ -7763,7 +7764,7 @@ The ward will have increased dmg base on hero total dmg and after lvl 30 it will
 
 
 "DOTA_Tooltip_ability_item_radiance_armor_3"							"<font color='#E83114'>Greater Radiance Armor</font>"
-"DOTA_Tooltip_ability_item_radiance_armor_3_Description"				"The light from this artifact is so strong that it burns all enemies(except neutrals)!\nIf you have over %str_threshold% Str the str multiplayer will increase to %threshold_multi%\n<font color='#E83114'>Power Unlock: If you meet some Unknown conditions all Damage from this item will be multiplied by 4</font>, find a Medium Hint on discord <font color='#F74705'>Patreon only section</font>\n<h1><font color='#F70707'>Challenge Boss</font></h1>On radiance tick (<font color='#E32948'>2%</font> x reward Tier) of this item damage will heal you.(damage amplifications will not count)"
+"DOTA_Tooltip_ability_item_radiance_armor_3_Description"				"The light from this artifact is so strong that it burns all enemies(except neutrals)!<br><font color='#F17C26'>Burn damage gains 2% per hero level. Each level past 100 counts as 10.</font>\nIf you have over %str_threshold% Str the str multiplayer will increase to %threshold_multi%\n<font color='#E83114'>Power Unlock: If you meet some Unknown conditions all Damage from this item will be multiplied by 4</font>, find a Medium Hint on discord <font color='#F74705'>Patreon only section</font>\n<h1><font color='#F70707'>Challenge Boss</font></h1>On radiance tick (<font color='#E32948'>2%</font> x reward Tier) of this item damage will heal you.(damage amplifications will not count)"
 "DOTA_Tooltip_ability_item_radiance_armor_3_bonus_stats"				"+$all"
 "DOTA_Tooltip_ability_item_radiance_armor_3_bonus_armor"				"+$armor"
 "DOTA_Tooltip_ability_item_radiance_armor_3_bonus_health"				"+$health"
@@ -7779,7 +7780,7 @@ The ward will have increased dmg base on hero total dmg and after lvl 30 it will
 "DOTA_Tooltip_modifier_radiance_armor_red_unlocked"                     "Red Radiance Power Unlocked"
 
 "DOTA_Tooltip_ability_item_radiance_armor_blue"							"<font color='#0D81EE'>Greater Radiance Armor</font>"
-"DOTA_Tooltip_ability_item_radiance_armor_blue_Description"				"The light from this artifact is so strong that it burns all enemies(except neutrals)!\nIf you have over %int_threshold% Int the int multiplayer will increase to %threshold_multi%\n<font color='#0B78C8'>Power Unlock: If you meet some Unknown conditions all Damage from this item will be multiplied by 4</font>, find a Medium Hint on discord <font color='#F74705'>Patreon only section</font>\n<h1><font color='#F70707'>Challenge Boss</font></h1>On radiance tick (<font color='#E32948'>2%</font> x reward Tier) of this item damage will heal you.(damage amplifications will not count)"
+"DOTA_Tooltip_ability_item_radiance_armor_blue_Description"				"The light from this artifact is so strong that it burns all enemies(except neutrals)!<br><font color='#F17C26'>Burn damage gains 2% per hero level. Each level past 100 counts as 10.</font>\nIf you have over %int_threshold% Int the int multiplayer will increase to %threshold_multi%\n<font color='#0B78C8'>Power Unlock: If you meet some Unknown conditions all Damage from this item will be multiplied by 4</font>, find a Medium Hint on discord <font color='#F74705'>Patreon only section</font>\n<h1><font color='#F70707'>Challenge Boss</font></h1>On radiance tick (<font color='#E32948'>2%</font> x reward Tier) of this item damage will heal you.(damage amplifications will not count)"
 "DOTA_Tooltip_ability_item_radiance_armor_blue_bonus_stats"				"+$all"
 "DOTA_Tooltip_ability_item_radiance_armor_blue_bonus_armor"				"+$armor"
 "DOTA_Tooltip_ability_item_radiance_armor_blue_bonus_health"			"+$health"
@@ -7795,7 +7796,7 @@ The ward will have increased dmg base on hero total dmg and after lvl 30 it will
 "DOTA_Tooltip_modifier_radiance_armor_blue_unlocked"                     "Blue Radiance Power Unlocked"
 
 "DOTA_Tooltip_ability_item_radiance_armor_green"							"<font color='#18B426'>Greater Radiance Armor</font>"
-"DOTA_Tooltip_ability_item_radiance_armor_green_Description"				"The light from this artifact is so strong that it burns all enemies(except neutrals)!\nIf you have over %agi_threshold% Agi the agi multiplayer will increase to %agi_threshold_multi%\nIf you have over %ms_threshold% Ms the ms multiplayer will increase to %ms_threshold_multi%\n<font color='#15C700'>Power Unlock: If you meet some Unknown conditions all Damage from this item will be multiplied by 4</font>, find a Medium Hint on discord <font color='#F74705'>Patreon only section</font>\n<h1><font color='#F70707'>Challenge Boss</font></h1>On radiance tick (<font color='#E32948'>2%</font> x reward Tier) of this item damage will heal you.(damage amplifications will not count)"
+"DOTA_Tooltip_ability_item_radiance_armor_green_Description"				"The light from this artifact is so strong that it burns all enemies(except neutrals)!<br><font color='#F17C26'>Burn damage gains 2% per hero level. Each level past 100 counts as 10.</font>\nIf you have over %agi_threshold% Agi the agi multiplayer will increase to %agi_threshold_multi%\nIf you have over %ms_threshold% Ms the ms multiplayer will increase to %ms_threshold_multi%\n<font color='#15C700'>Power Unlock: If you meet some Unknown conditions all Damage from this item will be multiplied by 4</font>, find a Medium Hint on discord <font color='#F74705'>Patreon only section</font>\n<h1><font color='#F70707'>Challenge Boss</font></h1>On radiance tick (<font color='#E32948'>2%</font> x reward Tier) of this item damage will heal you.(damage amplifications will not count)"
 "DOTA_Tooltip_ability_item_radiance_armor_green_bonus_stats"				"+$all"
 "DOTA_Tooltip_ability_item_radiance_armor_green_bonus_armor"				"+$armor"
 "DOTA_Tooltip_ability_item_radiance_armor_green_bonus_health"				"+$health"
@@ -9987,6 +9988,9 @@ Required Level: %required_level%
 "DOTA_Tooltip_modifier_aegis_buff"										  "Aegis Protection"
 "DOTA_Tooltip_modifier_aegis_buff_Description"							  "Reduce %dMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% incoming damage, and increase %dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% OUTGOING damage."  
 
+"DOTA_Tooltip_modifier_aegis_spawn_buff"	"Aegis Spawn Protection"
+"DOTA_Tooltip_modifier_aegis_spawn_buff_Description"	"Blocks damage and keeps health at 1 HP or higher. Increases outgoing damage by %dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%%."
+
 "DOTA_Tooltip_ability_item_aegis_cast"									  "Consume Aegis skill"
 "DOTA_Tooltip_ability_item_aegis_cast_Description"						  "Gives the Consume Aegis skill"
 
@@ -10293,13 +10297,12 @@ Contains all random skills(including Innates)<br> if your primary attribute is I
 		"DOTA_Tooltip_modifier_luna_eclipse_lua_Description"								"Striking nearby targets with Lucent Beam."
 		
 		"DOTA_Tooltip_ability_mars_arena_of_blood_lua"						"Arena Of Blood"
-		"DOTA_Tooltip_ability_mars_arena_of_blood_lua_Description"			"After a short formation time, Mars summons an arena lined with the undead warriors of the Ash Legion, who block enemy attacks and movement. Enemy heroes near the inside edge of the arena will be attacked by spears, dealing damage and knocking them back(knockback has 4s CD).\n<h1><font color='#DE3163'>Super Scepter</font></h1> Apply your hero attack(true strike) with orb effects for each spear hit. <br> Reduce knockback cd by half(2s) <br> Reduce Spear attack interval to %ss_spear_attack_interval% \n<h1><font color='#F70707'>Challenge Boss</font></h1>Increase Solider spear final dmg by <font color='#5BE424'>%challenge_mult%%%</font> for every Reward Tier(max 250%)." 
+		"DOTA_Tooltip_ability_mars_arena_of_blood_lua_Description"			"Blocks enemy attacks and movement. Soldiers spear and knock back enemies at the inner edge (4s knockback cooldown).<br><font color='#F17C26'>Bonus damage per spear</font> is %effective_level_str_pct%%% of effective level × Strength. Levels past 100 count as 10 each.\n<h1><font color='#DE3163'>Super Scepter</font></h1>1. <font color='#EAA30C'>Autocast ON switches spear spell damage to Pure</font> at %ss_pure_damage_pct%%% of normal Magical damage.<br>2. Spears strike every %ss_spear_attack_interval%s.<br>3. Spears trigger True Strike attacks with attack effects.<br>4. Knockback cooldown drops to 2s.\n<h1><font color='#F70707'>Challenge Boss</font></h1><font color='#5BE424'>+%challenge_mult%%% spear damage</font> per Reward Tier (max +250%%)."
 		"DOTA_Tooltip_ability_mars_arena_of_blood_lua_Lore"					"The long-dead members of the Ash Legion, assembled from the finest warriors to ever test the might of Mars, still revel in the thrill of combat, gladly beholden to the hand that fell them for as long as he so commands."
 		"DOTA_Tooltip_ability_mars_arena_of_blood_lua_duration"				"Duration:"
 		"DOTA_Tooltip_ability_mars_arena_of_blood_lua_radius"				"Radius:"
 		"DOTA_Tooltip_ability_mars_arena_of_blood_lua_spear_damage"			"Spear Damage:"
 		"DOTA_Tooltip_ability_mars_arena_of_blood_lua_formation_time"		"Formation Time:"
-		"DOTA_Tooltip_ability_mars_arena_of_blood_lua_str_multiplier"		"Strength As Bonus Damage:"
 		"DOTA_Tooltip_ability_mars_arena_of_blood_lua_spear_attack_interval"		"Spear Attack Interval:"
 
 		"DOTA_Tooltip_modifier_mars_arena_of_blood_lua"						"Arena Of Blood"
@@ -10534,11 +10537,11 @@ Contains all random skills(including Innates)<br> if your primary attribute is I
 		"DOTA_Tooltip_ability_item_custom_octarine_core2_Note0"						"After you consume don't buy again Octarine Core or you will lose your cdr and spell lifesteal consume effect"
 		
 		"DOTA_Tooltip_ability_item_radiance_armor_3_edible"							  "Edible Greater Radiance Armor Red"
-		"DOTA_Tooltip_ability_item_radiance_armor_3_edible_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Red.\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
+		"DOTA_Tooltip_ability_item_radiance_armor_3_edible_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Red.<br><font color='#F17C26'>Burn damage gains 2% per hero level. Each level past 100 counts as 10.</font>\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
 		"DOTA_Tooltip_ability_item_radiance_armor_3_edible_Note0"						"After you consume don't buy/equip again Radiance armor no matter the type or you will lose the consume effect. 10%% chance for lifesteal" 
 
 		"DOTA_Tooltip_ability_item_radiance_armor_3_edible_n"							  "Edible Greater Radiance Armor Red"
-		"DOTA_Tooltip_ability_item_radiance_armor_3_edible_n_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Red.\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
+		"DOTA_Tooltip_ability_item_radiance_armor_3_edible_n_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Red.<br><font color='#F17C26'>Burn damage gains 2% per hero level. Each level past 100 counts as 10.</font>\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
 		"DOTA_Tooltip_ability_item_radiance_armor_3_edible_n_Note0"						"After you consume don't buy/equip again Radiance armor no matter the type or you will lose the consume effect. 10%% chance for lifesteal" 
 
 
@@ -10561,20 +10564,20 @@ Contains all random skills(including Innates)<br> if your primary attribute is I
 
  
 		"Dota_tooltip_ability_item_radiance_armor_blue_edible"							  "Edible Greater Radiance Armor Blue"
-		"DOTA_Tooltip_ability_item_radiance_armor_blue_edible_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Blue.\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
+		"DOTA_Tooltip_ability_item_radiance_armor_blue_edible_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Blue.<br><font color='#F17C26'>Burn damage gains 2% per hero level. Each level past 100 counts as 10.</font>\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
 		"DOTA_Tooltip_ability_item_radiance_armor_blue_edible_Note0"						"After you consume don't buy/equip again Radiance armor no matter the type or you will lose the consume effect" 
 
 		"Dota_tooltip_ability_item_radiance_armor_blue_edible_n"							  "Edible Greater Radiance Armor Blue"
-		"DOTA_Tooltip_ability_item_radiance_armor_blue_edible_n_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Blue.\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
+		"DOTA_Tooltip_ability_item_radiance_armor_blue_edible_n_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Blue.<br><font color='#F17C26'>Burn damage gains 2% per hero level. Each level past 100 counts as 10.</font>\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
 		"DOTA_Tooltip_ability_item_radiance_armor_blue_edible_n_Note0"						"After you consume don't buy/equip again Radiance armor no matter the type or you will lose the consume effect" 
 
 
 		"Dota_tooltip_ability_item_radiance_armor_green_edible"							  "Edible Greater Radiance Armor Green"
-		"DOTA_Tooltip_ability_item_radiance_armor_green_edible_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Green.\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
+		"DOTA_Tooltip_ability_item_radiance_armor_green_edible_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Green.<br><font color='#F17C26'>Burn damage gains 2% per hero level. Each level past 100 counts as 10.</font>\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
 		"DOTA_Tooltip_ability_item_radiance_armor_green_edible_Note0"						"After you consume don't buy/equip again Radiance armor no matter the type or you will lose the consume effect"
 
 		"Dota_tooltip_ability_item_radiance_armor_green_edible_n"							  "Edible Greater Radiance Armor Green"
-		"DOTA_Tooltip_ability_item_radiance_armor_green_edible_n_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Green.\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
+		"DOTA_Tooltip_ability_item_radiance_armor_green_edible_n_Description"				  "<h1>Active:Consume</h1> Get all the stats(slightly improved) and effects of the Greater Radiance Armor Green.<br><font color='#F17C26'>Burn damage gains 2% per hero level. Each level past 100 counts as 10.</font>\n<font color='#86C91F'>Place in neutral slot to use the item. It can be Teleported in Neutral Stash after</font>"
 		"DOTA_Tooltip_ability_item_radiance_armor_green_edible_n_Note0"							"After you consume don't buy/equip again Radiance armor no matter the type or you will lose the consume effect"
 
 

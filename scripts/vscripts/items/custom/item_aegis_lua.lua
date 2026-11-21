@@ -3,6 +3,7 @@ item_aegis_lua = class({})
 LinkLuaModifier("modifier_aegis", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_aegis_up", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_aegis_buff", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_aegis_spawn_buff", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
 -- Link a lua-defined modifier with the associated class (className, fileName, LuaModifierType).
 
 local ReincarnateTime = 7					-- Seconds
@@ -72,6 +73,7 @@ modifier_aegis = class({})
 function modifier_aegis:IsHidden() return (self:GetStackCount()<=0) end
 function modifier_aegis:GetTexture() return "item_aegis" end
 function modifier_aegis:IsPermanent() return true end
+function modifier_aegis:RemoveOnDeath() return false end
 function modifier_aegis:IsPurgable() return false end
 function modifier_aegis:DeclareFunctions()
 	return {MODIFIER_PROPERTY_REINCARNATION, MODIFIER_EVENT_ON_RESPAWN}
@@ -99,6 +101,7 @@ function modifier_aegis:ReincarnateTime()
 	local hero = self:GetParent()
 	if not hero:IsRealHero() or hero:IsReincarnating() or hero:GetHealth() >= 1 then return end
 	local now = GameRules:GetGameTime()
+	if hero.cosmosExecutionAt == now then return end
 	if self.reincarnationAt == now then return self.reincarnationDelay end
 
 	local delay
@@ -128,15 +131,23 @@ end
 function modifier_aegis:OnRespawn(keys)
 	if not IsServer() or keys.unit ~= self:GetParent() or not self.reincarnationDelay then return end
 	local hero = keys.unit
+	if not hero:IsAlive() or hero:GetHealth() < 1 then return end
+	GameRules.GameMode:RunSpawnCallback("ArmSpawnProtection", hero, true)
+	self:FinishReincarnation()
+end
+
+function modifier_aegis:FinishReincarnation()
+	if not self.reincarnationDelay then return end
+	local hero = self:GetParent()
 	local fromInfinity = self.fromInfinity
 	self.reincarnationAt = nil
 	self.reincarnationDelay = nil
 	self.fromInfinity = nil
+	hero:AddNewModifier(hero, nil, "modifier_aegis_buff", {duration = ReincarnateBuffTime})
 	if fromInfinity then
 		local stats = hero:FindModifierByName("modifier_inf_aegis_stats")
 		if stats then stats:AddResurrectionStack() end
 	end
-	hero:AddNewModifier(hero, nil, "modifier_aegis_buff", {duration = ReincarnateBuffTime})
 end
 function modifier_aegis:GetModifierIncomingDamage_Percentage(params)
 	local nPlayerID
@@ -185,3 +196,28 @@ function modifier_aegis_buff:DeclareFunctions()
 end
 function modifier_aegis_buff:GetModifierIncomingDamage_Percentage() return AegisBuffDMGIncoming * (-1) end
 function modifier_aegis_buff:GetModifierTotalDamageOutgoing_Percentage() return AegisBuffDMGOutgoing end
+
+modifier_aegis_spawn_buff = class(modifier_aegis_buff)
+
+function modifier_aegis_spawn_buff:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE,
+		MODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE,
+		MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL,
+		MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL,
+		MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE,
+		MODIFIER_PROPERTY_MIN_HEALTH,
+	}
+end
+
+local function SpawnGuardianProtectionValue(self)
+	if not IsServer() then return 0 end
+	local gameMode = GameRules.GameMode
+	if gameMode and gameMode:BypassesSpawnProtection(self:GetParent()) then return 0 end
+	return 1
+end
+
+modifier_aegis_spawn_buff.GetAbsoluteNoDamagePhysical = SpawnGuardianProtectionValue
+modifier_aegis_spawn_buff.GetAbsoluteNoDamageMagical = SpawnGuardianProtectionValue
+modifier_aegis_spawn_buff.GetAbsoluteNoDamagePure = SpawnGuardianProtectionValue
+modifier_aegis_spawn_buff.GetMinHealth = SpawnGuardianProtectionValue

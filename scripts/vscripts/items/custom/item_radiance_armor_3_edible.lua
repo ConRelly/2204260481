@@ -1,4 +1,5 @@
 require("lib/mys")
+local GetRadianceLevelMultiplier = require("items/custom/radiance_armor_damage")
 
 LinkLuaModifier("modifier_item_radiance_armor_3_edible", "items/custom/item_radiance_armor_3_edible", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_radiance_armor_aura_3_edible", "items/custom/item_radiance_armor_3_edible", LUA_MODIFIER_MOTION_NONE)
@@ -142,6 +143,7 @@ function modifier_item_radiance_armor_aura_3_edible:OnIntervalThink()
 		local bonus_str_dmg = math.ceil(str * str_mult)
 		local aura_dmg = 15000
 		local damage = math.ceil(aura_dmg + aura_dmg_pct*caster:GetMaxHealth() + armor_bonus_dmg + bonus_str_dmg )
+		damage = damage * GetRadianceLevelMultiplier(caster)
 		--print(damage .. " radi dmg")
 		if caster:IsRealHero() then
 			local unlocked = caster:HasModifier("modifier_radiance_armor_red_unlocked")

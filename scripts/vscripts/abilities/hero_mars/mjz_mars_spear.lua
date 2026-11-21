@@ -10,6 +10,14 @@ Ability checklist (erase if done/checked):
 ]]
 --------------------------------------------------------------------------------
 local THIS_LUA = "abilities/hero_mars/mjz_mars_spear.lua"
+local GetScaledStrengthDamage = require("abilities/hero_mars/mars_strength_damage")
+local DAMAGE_TALENT = "special_bonus_unique_unique_mjz_mars_spear_str_damage"
+local HOMING_START_FRACTION = 0.2
+local SHARD_SPEAR_EFFECTS = {
+	"particles/units/heroes/hero_mars/mars_spear_outline.vpcf",
+	"particles/units/heroes/hero_rattletrap/rattletrap_rocket_flare_smoke.vpcf",
+}
+local SHARD_SPEAR_EFFECT_ANCHOR = 3
 LinkLuaModifier( "modifier_mjz_mars_spear", THIS_LUA, LUA_MODIFIER_MOTION_HORIZONTAL )
 LinkLuaModifier( "modifier_mjz_mars_spear_checker", THIS_LUA, LUA_MODIFIER_MOTION_HORIZONTAL )
 LinkLuaModifier( "modifier_mjz_mars_spear_debuff", THIS_LUA, LUA_MODIFIER_MOTION_NONE )
@@ -17,41 +25,43 @@ LinkLuaModifier( "modifier_mjz_mars_spear_debuff", THIS_LUA, LUA_MODIFIER_MOTION
 mjz_mars_spear = mjz_mars_spear or class({})
 local ability_class = mjz_mars_spear
 
+local function MoveShardSpearEffects(data, caster, location)
+	local position = GetGroundPosition(location, caster) + Vector(0, 0, 100) - data.direction * 50
+	for _, effect in ipairs(data.shardEffects) do
+		ParticleManager:SetParticleControl(effect, 0, position)
+		ParticleManager:SetParticleControlTransform(effect, SHARD_SPEAR_EFFECT_ANCHOR, position, data.angles)
+	end
+end
+
 --------------------------------------------------------------------------------
 function ability_class:OnSpellStart()
-    if not IsServer() then return end
+	if not IsServer() then return end
 
 	local caster = self:GetCaster()
-	local ability = self
-    local point = self:GetCursorPosition()
-    
-    self:SpellPoint(caster, point)
+	local origin = caster:GetOrigin()
+	local direction = self:GetCursorPosition() - origin
+	direction.z = 0
+	if direction:Length2D() == 0 then
+		direction = caster:GetForwardVector()
+		direction.z = 0
+	end
+	direction = direction:Normalized()
 
-    if caster:HasScepter() then
-        local p = caster:GetAbsOrigin()
-        local fv = caster:GetForwardVector()
+	local talent = caster:FindAbilityByName(DAMAGE_TALENT)
+	local cast = {
+		homing = caster:HasShard(),
+		range = self:GetSpecialValueFor("spear_range") + caster:GetCastRangeBonus(),
+		damageMultiplier = talent and talent:GetLevel() > 0 and talent:GetSpecialValueFor("value") or 1,
+	}
+	self:LaunchSpear(caster, origin, direction, cast)
 
-        local mode = {}
+	if caster:HasScepter() then
+		local spread = math.rad(15)
+		self:LaunchSpear(caster, origin, self:RotateVector2D(direction, -spread), cast)
+		self:LaunchSpear(caster, origin, self:RotateVector2D(direction, spread), cast)
+	end
 
-        -- 模式1: 左右90度
-        mode[1] = {}
-        mode[1].p3 = p + 150 * self:RotateVector2D(fv, math.rad(90))
-        mode[1].p2 = p - 150 * self:RotateVector2D(fv, math.rad(90))
-
-        -- 模式2: 向前15度
-        mode[2] = {}
-        mode[2].p3 = p + 150 * self:RotateVector2D(fv, math.rad(15))
-        mode[2].p2 = p - 150 * self:RotateVector2D(fv, math.rad(180 - 15))
-
-
-        local p3 = mode[2].p3
-        local p2 = mode[2].p2
-
-        self:SpellPoint(caster, p2)
-        self:SpellPoint(caster, p3)
-    end
-
-    self:PlaySound(caster)  
+	self:PlaySound(caster)
 end
 
 function ability_class:PlaySound( source )
@@ -61,33 +71,22 @@ function ability_class:PlaySound( source )
     EmitSoundOn( sound_cast, source )
 end
 
-function ability_class:SpellPoint( source, point )
-    local caster = self:GetCaster()
-    local ability = self
-    
-    local projectile_name = "particles/units/heroes/hero_mars/mars_spear.vpcf"
-	local projectile_distance = self:GetSpecialValueFor("spear_range") + caster:GetCastRangeBonus()
+function ability_class:LaunchSpear(caster, origin, direction, cast)
+	local projectile_distance = cast.range
 	local projectile_speed = self:GetSpecialValueFor("spear_speed")
 	local projectile_radius = self:GetSpecialValueFor("spear_width")
 	local projectile_vision = self:GetSpecialValueFor("spear_vision")
 
-    local origin = source:GetOrigin()
-    	-- calculate direction
-	local direction = point - origin
-	direction.z = 0
-	direction = direction:Normalized()
-
 	local info = {
 		Source = caster,    --source
-		Ability = ability,
+		Ability = self,
 		vSpawnOrigin = origin,
 		
 	    bDeleteOnHit = false,
 	    
-	    iUnitTargetTeam = ability:GetAbilityTargetTeam(),
-	    iUnitTargetType = ability:GetAbilityTargetType(),
+	    iUnitTargetTeam = self:GetAbilityTargetTeam(),
+	    iUnitTargetType = self:GetAbilityTargetType(),
 	    
-	    EffectName = projectile_name,
 	    fDistance = projectile_distance,
 	    fStartRadius = projectile_radius,
 	    fEndRadius =projectile_radius,
@@ -102,19 +101,40 @@ function ability_class:SpellPoint( source, point )
 		fVisionDuration = 10,
 		iVisionTeamNumber = caster:GetTeamNumber()
 	}
-	ProjectileManager:CreateLinearProjectile(info)
-
-
+	if cast.homing then
+		info.fExpireTime = GameRules:GetGameTime() + projectile_distance / projectile_speed
+	else
+		info.EffectName = "particles/units/heroes/hero_mars/mars_spear.vpcf"
+	end
+	local projectile = ProjectileManager:CreateLinearProjectile(info)
+	if not projectile or projectile < 0 then return end
+	local data = {
+		damageMultiplier = cast.damageMultiplier,
+		location = origin,
+		init_pos = origin,
+		direction = direction,
+	}
+	if cast.homing then
+		data.homing = true
+		data.homingSearchRange = projectile_distance
+		data.hitUnits = {}
+		data.speed = projectile_speed
+		data.remainingDistance = projectile_distance
+		data.turnRadius = projectile_radius * 1.6
+		data.angles = QAngle(0, VectorToAngles(direction).y, 0)
+		-- The stock launch particle keeps its initial velocity. Drive the glow and smoke from the real projectile.
+		data.shardEffects = {}
+		for _, name in ipairs(SHARD_SPEAR_EFFECTS) do
+			table.insert(data.shardEffects, ParticleManager:CreateParticle(name, PATTACH_CUSTOMORIGIN, nil))
+		end
+		MoveShardSpearEffects(data, caster, origin)
+	end
+	self.projectiles[projectile] = data
 end
 
-function ability_class:CalcDamage( target )
-    local caster = self:GetCaster()
-    local ability = self
-    
-    local base_damage = GetTalentSpecialValueFor(ability, "damage")
-    local strength_damage = GetTalentSpecialValueFor(ability, "strength_damage")
-    local damage = base_damage + caster:GetStrength() * (strength_damage / 100)
-    return damage
+function ability_class:CalcDamage(multiplier)
+    local damage = GetTalentSpecialValueFor(self, "damage") + GetScaledStrengthDamage(self)
+    return damage * (multiplier or 1)
 end
 
 
@@ -152,16 +172,19 @@ function mars_projectiles:Init( projectileID )
 end
 
 function mars_projectiles:Destroy( projectileID )
+	local data = self[projectileID]
+	if data and data.shardEffects then
+		for _, effect in ipairs(data.shardEffects) do
+			ParticleManager:DestroyParticle(effect, false)
+			ParticleManager:ReleaseParticleIndex(effect)
+		end
+	end
 	self[projectileID] = nil
 end
 ability_class.projectiles = mars_projectiles
 
 -- projectile hit
 function ability_class:OnProjectileHitHandle( target, location, iProjectileHandle )
-	-- init in case it isn't initialized from below (if projectile launched very close to target)
-	if not self.projectiles[iProjectileHandle] then
-		self.projectiles:Init( iProjectileHandle )
-	end
 	if not target then
 		-- add viewer
 		local projectile_vision = self:GetSpecialValueFor("spear_vision")
@@ -172,26 +195,34 @@ function ability_class:OnProjectileHitHandle( target, location, iProjectileHandl
 		return
 	end
 
-    -- get stun and damage
-    local ability = self
-	local stun = GetTalentSpecialValueFor(ability, "stun_duration")
-	self.damage = self:GetSpecialValueFor("damage")
-	local talent = self:GetCaster():FindAbilityByName("special_bonus_unique_mars_spear_bonus_damage")
-
-    if talent and talent:GetLevel() > 0 then
-        self.damage = self.damage + talent:GetSpecialValueFor("value")
-    end
+	-- The hit callback can run before the first think callback.
+	if not self.projectiles[iProjectileHandle] then
+		self.projectiles:Init(iProjectileHandle)
+	end
+	local data = self.projectiles[iProjectileHandle]
+	if data.homing then
+		if data.hitUnits[target] then return end
+		data.hitUnits[target] = true
+	end
 
 	-- apply damage
 	local damageTable = {
 		victim = target,
 		attacker = self:GetCaster(),
-		damage = self:CalcDamage(target),
+		damage = self:CalcDamage(data.damageMultiplier),
 		damage_type = self:GetAbilityDamageType(),
 		ability = self, --Optional.
 		damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
 	}
 	ApplyDamage(damageTable)
+	if data.homing then
+		if target == data.homingTarget then
+			local hitPosition = location or data.location
+			local remainingDistance = data.remainingDistance - (hitPosition - data.location):Length2D()
+			data.homingTarget = self:FindHomingTarget(data, hitPosition, remainingDistance)
+		end
+		return
+	end
 
 	-- check if it has skewered a unit, or target is not a hero
 
@@ -223,6 +254,58 @@ function ability_class:OnProjectileHitHandle( target, location, iProjectileHandl
 	EmitSoundOn( sound_cast, target )
 end
 
+function ability_class:FindHomingTarget(data, location, range)
+	if range <= 0 then return end
+
+	local caster = self:GetCaster()
+	local enemies = FindUnitsInRadius(
+		caster:GetTeamNumber(), location, nil, range,
+		self:GetAbilityTargetTeam(), self:GetAbilityTargetType(),
+		DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS, FIND_CLOSEST, false
+	)
+	for _, enemy in ipairs(enemies) do
+		if not data.hitUnits[enemy] and enemy:IsAlive() then return enemy end
+	end
+end
+
+function ability_class:UpdateHomingProjectile(projectile, data, location)
+	local traveled = (location - data.location):Length2D()
+	data.remainingDistance = data.remainingDistance - traveled
+	data.location = location
+	if data.remainingDistance <= 0 then
+		ProjectileManager:DestroyLinearProjectile(projectile)
+		self:OnProjectileHitHandle(nil, location, projectile)
+		return
+	end
+
+	local range = data.homingSearchRange
+	if range then
+		if (location - data.init_pos):Length2D() < range * HOMING_START_FRACTION then return end
+		data.homingSearchRange = nil
+		data.homingTarget = self:FindHomingTarget(data, location, range)
+	elseif data.homingTarget and (data.homingTarget:IsNull() or not data.homingTarget:IsAlive()) then
+		data.homingTarget = self:FindHomingTarget(data, location, data.remainingDistance)
+	end
+
+	local target = data.homingTarget
+	if not target then return end
+	local offset = target:GetAbsOrigin() - location
+	offset.z = 0
+	local distance = offset:Length2D()
+	if distance == 0 then return end
+
+	-- Tighten the curve near the target so the spear can enter its hit radius.
+	local radius = math.min(data.turnRadius, math.max(data.turnRadius / 2, distance / 2))
+	local maxTurn = math.deg(traveled / radius)
+	local turn = AngleDiff(VectorToAngles(offset).y, data.angles.y)
+	turn = math.max(-maxTurn, math.min(maxTurn, turn))
+	if math.abs(turn) < 0.01 then return end
+
+	data.direction = self:RotateVector2D(data.direction, math.rad(turn))
+	data.angles = QAngle(0, data.angles.y + turn, 0)
+	ProjectileManager:UpdateLinearProjectileDirection(projectile, data.direction * data.speed, data.remainingDistance)
+end
+
 -- projectile think
 function ability_class:OnProjectileThinkHandle( iProjectileHandle )
 	-- init for the first time
@@ -231,6 +314,14 @@ function ability_class:OnProjectileThinkHandle( iProjectileHandle )
 	end
 
 	local data = self.projectiles[iProjectileHandle]
+	local location = ProjectileManager:GetLinearProjectileLocation(iProjectileHandle)
+	if data.homing then
+		self:UpdateHomingProjectile(iProjectileHandle, data, location)
+		if self.projectiles[iProjectileHandle] then
+			MoveShardSpearEffects(data, self:GetCaster(), location)
+		end
+		return
+	end
 
 	-- init data
 	local tree_radius = 120
@@ -239,7 +330,6 @@ function ability_class:OnProjectileThinkHandle( iProjectileHandle )
 	local blocker_radius = 70
 
 	-- save location
-	local location = ProjectileManager:GetLinearProjectileLocation( iProjectileHandle )
 	data.location = location
 
 	-- check skewered unit, and dragged (caught unit not necessarily dragged)
@@ -280,7 +370,7 @@ function ability_class:OnProjectileThinkHandle( iProjectileHandle )
 		ApplyDamage({
 			victim = data.unit,
 			attacker = self:GetCaster(),
-			damage = self:CalcDamage(data.unit),           -- self.damage,
+			damage = self:CalcDamage(data.damageMultiplier),
 			damage_type = self:GetAbilityDamageType(),
 			ability = self, --Optional.
 			damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.

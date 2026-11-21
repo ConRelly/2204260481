@@ -3699,4 +3699,17 @@ Note: because of the Arcade changes to not allow most maps dedicated servers, so
 * Aegis of Infinity: Each resurrection stack now gives 100 + your level to all attributes. Each level past 100 counts as 10, so a level 103 revive adds 230 to each attribute.
 * Restored Stygian Desolator in the shop and fixed the recipes for Fire Rapier and Hammer of the Divine.
 ---
-999 071
+* Greater Radiance Armor (all forms, including edible): Burn damage gains 2% per hero level. Each level past 100 counts as 10, and the bonus also applies with Power Unlock.
+* Resurrection Pendant and Aegis reincarnation now rearm spawn protection as soon as the hero returns. The 2s spawn buff now gives absolute damage protection and a 1 HP floor.
+* Mars' God's Rebuke is a one-press cast in the direction you're facing. Upgrades are 7 hero levels apart. Max-rank crit is 9500% and the talent adds 4500%.
+* Removed the outdated Aghanim's Scepter upgrade from Bulwark's tooltip.
+* Spear of Mars and Arena of Blood now scale their Strength damage with hero level. Each level past 100 counts as 10. At max rank, Spear uses 300% of that level and Arena uses 200% per spear.
+* Spear of Mars hit width now scales with AoE bonuses.
+* Spear of Mars talent now doubles spear damage. With Aghanim's Shard, each spear travels 20% of its range, then curves toward the nearest visible enemy. After hitting its target, it can turn toward another enemy within its remaining range. Shard removes skewer and pin.
+* Arena of Blood Super Scepter: Toggle autocast to switch its spear spell damage from Magical to Pure at 10% damage.
+---
+* The team-wipe countdown is disabled during the Juggernaut Sword Master challenge.
+* Fixed missing Omnislash, Ransack, Kraken Shell purge, Blur and The Swarm effects in local lobbies.
+* Updated the Intelligence magic resistance correction for 7.42 so heroes have 30% base magic resistance before other bonuses.
+* Large numbers in the hero portrait and stats tooltip use K/M/B/T with up to two decimal places. The portrait gives all three attributes room to stay visible.
+---

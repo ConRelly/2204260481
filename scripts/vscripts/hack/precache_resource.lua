@@ -127,6 +127,13 @@ end
 
 function Precache_Extra_Game_Resources( context )
     local extra_particles = {
+        -- Native effects used by the challenge boss and extra abilities on other heroes.
+        "particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_tgt_overhead.vpcf",
+        "particles/units/heroes/hero_juggernaut/juggernaut_omni_slash_trail_special.vpcf",
+        "particles/units/heroes/hero_meepo/meepo_ransack.vpcf",
+        "particles/units/heroes/hero_phantom_assassin/phantom_assassin_active_start.vpcf",
+        "particles/units/heroes/hero_tidehunter/tidehunter_krakenshell_purge.vpcf",
+        "particles/units/heroes/hero_weaver/weaver_swarm_debuff.vpcf",
         "particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_necro_souls_hero.vpcf",    
         "particles/units/heroes/hero_ogre_magi/ogre_magi_bloodlust_buff.vpcf",
         "particles/items_fx/blink_dagger_start.vpcf",

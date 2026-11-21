@@ -15671,7 +15671,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"						"6582"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
-        "HasScepterUpgrade"			"1"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -15694,8 +15693,6 @@
             {
                 "value" "20"
             }
-            "soldier_count" "5"
-            "soldier_offset" "200"
         }
 	}
 
@@ -15704,7 +15701,7 @@
 	{
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "5"
+		"LevelsBetweenUpgrades"		 "7"
 		"AbilityCastRange"				"1100"
 		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"50"
@@ -15712,8 +15709,8 @@
         {
             "crit_mult"
             {
-                "value" "300 460 620 980 1360 1960 2750"
-                "special_bonus_unique_mars_gods_rebuke_extra_crit" "2450"
+                "value" "300 600 1200 2200 3800 6200 9500"
+                "special_bonus_unique_mars_gods_rebuke_extra_crit" "+4500"
             }
             "radius" "1100"
             "knockback_duration" "0.1"
@@ -15746,7 +15743,7 @@
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCastPoint"				"0.1"
 		"MaxLevel"					  "7"
-		"LevelsBetweenUpgrades"		 "5"
+		"LevelsBetweenUpgrades"		 "7"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -15758,8 +15755,8 @@
 		{
 			"crit_mult"
 			{
-				"value"								"300 460 620 980 1360 1960 2750"
-				"special_bonus_unique_mars_gods_rebuke_extra_crit"		"+2450"
+				"value"								"300 600 1200 2200 3800 6200 9500"
+				"special_bonus_unique_mars_gods_rebuke_extra_crit"		"+4500"
 				"DamageTypeTooltip"			"DAMAGE_TYPE_PHYSICAL"
 			}
 			"angle"						"140"

@@ -6,6 +6,7 @@ LinkLuaModifier("modifier_boss", "modifiers/modifier_boss.lua", LUA_MODIFIER_MOT
 LinkLuaModifier("modifier_hard_mode_boss", "modifiers/modifier_hard_mode_boss.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_power_boss", "hack/modifiers/modifier_power_boss.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_aegis_buff", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_aegis_spawn_buff", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_phys", "modifiers/modifier_phys.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_mjz_bristleback_quill_spray_autocast6", "abilities/hero_bristleback/modifier_mjz_bristleback_quill_spray_autocast6.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_boss_hpbar2", "abilities/boss_hpbar2.lua", LUA_MODIFIER_MOTION_NONE)
@@ -17,6 +18,8 @@ LinkLuaModifier("modifier_boss_truesight", "bosses/boss_true_sight.lua", LUA_MOD
 LinkLuaModifier("modifier_cosmos_3_lifes", "modifiers/modifier_cosmos_3_lifes", LUA_MODIFIER_MOTION_NONE)
 --
 LinkLuaModifier("modifier_generic_handler", "modifiers/modifier_generic_handler", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_aoh_spawn_recovery", "modifiers/modifier_aoh_spawn_recovery", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_mars_gods_rebuke_aim", "modifiers/hero_mars/modifier_mars_gods_rebuke_aim", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_charges", "modifiers/modifier_charges", LUA_MODIFIER_MOTION_NONE)
 
 LinkLuaModifier("lm_take_no_damage", "lm_take_no_damage.lua", LUA_MODIFIER_MOTION_NONE)

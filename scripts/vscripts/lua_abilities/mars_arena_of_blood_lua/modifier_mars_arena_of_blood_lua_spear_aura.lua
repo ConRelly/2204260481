@@ -9,6 +9,7 @@ Ability checklist (erase if done/checked):
 - Stolen behavior
 ]]
 LinkLuaModifier( "modifier_mars_arena_of_blood_lua_knockback_cd", "lua_abilities/mars_arena_of_blood_lua/modifier_mars_arena_of_blood_lua_spear_aura", LUA_MODIFIER_MOTION_NONE )
+local GetScaledStrengthDamage = require("abilities/hero_mars/mars_strength_damage")
 --------------------------------------------------------------------------------
 modifier_mars_arena_of_blood_lua_spear_aura = class({})
 
@@ -47,27 +48,21 @@ end
 -- Initializations
 function modifier_mars_arena_of_blood_lua_spear_aura:OnCreated( kv )
 	-- references
-	if self:GetAbility() == nil then return end
+	local ability = self:GetAbility()
+	if ability == nil then return end
 	local caster = self:GetCaster()
 	if caster == nil then return end
-	self.radius = self:GetAbility():GetSpecialValueFor( "radius" )
-	self.width = self:GetAbility():GetSpecialValueFor( "spear_distance_from_wall" )
-	self.damage = self:GetAbility():GetSpecialValueFor( "spear_damage" ) + (self:GetCaster():GetStrength() * self:GetAbility():GetSpecialValueFor("str_multiplier"))
-	self.challenge_mult = self:GetAbility():GetSpecialValueFor( "challenge_mult" ) / 100
+	self.radius = ability:GetSpecialValueFor( "radius" )
+	self.width = ability:GetSpecialValueFor( "spear_distance_from_wall" )
 	self.knockback_duration = 0.1
 	self.parent = self:GetParent()
 	self.spear_radius = self.radius-self.width
 	local has_ss = caster:HasModifier("modifier_super_scepter")
 	if has_ss then
-		self.duration = self:GetAbility():GetSpecialValueFor( "ss_spear_attack_interval" )
+		self.duration = ability:GetSpecialValueFor( "ss_spear_attack_interval" )
 	else
-		self.duration = self:GetAbility():GetSpecialValueFor( "spear_attack_interval" )
+		self.duration = ability:GetSpecialValueFor( "spear_attack_interval" )
 	end	
-	if _G._challenge_bosss and _G._challenge_bosss > 0 then
-		self.damage = self.damage * (1 + _G._challenge_bosss * self.challenge_mult)
-		print("challenge boss tier: " .._G._challenge_bosss)
-	end	
-	print("mars dmg: ".. self.damage)
 	if not IsServer() then return end
 	self.owner = kv.isProvidedByAura~=1
 	self.aura_origin = self:GetParent():GetOrigin()
@@ -77,13 +72,22 @@ function modifier_mars_arena_of_blood_lua_spear_aura:OnCreated( kv )
 		local direction = self.aura_origin-self:GetParent():GetOrigin()
 		direction.z = 0
 		
-		-- damage
+		local damage = ability:GetSpecialValueFor("spear_damage") + GetScaledStrengthDamage(ability)
+		local challengeTier = _G._challenge_bosss or 0
+		if challengeTier > 0 then
+			damage = damage * (1 + challengeTier * ability:GetSpecialValueFor("challenge_mult") / 100)
+		end
+		local damageType = ability:GetAbilityDamageType()
+		if has_ss and ability:GetAutoCastState() then
+			damage = damage * ability:GetSpecialValueFor("ss_pure_damage_pct") / 100
+			damageType = DAMAGE_TYPE_PURE
+		end
 		local damageTable = {
-			victim = self:GetParent(),
-			attacker = self:GetCaster(),
-			damage = self.damage,
-			damage_type = self:GetAbility():GetAbilityDamageType(),
-			ability = self:GetAbility(), --Optional.
+			victim = self.parent,
+			attacker = caster,
+			damage = damage,
+			damage_type = damageType,
+			ability = ability,
 		}
 		ApplyDamage(damageTable)
 		local back_duration = 4

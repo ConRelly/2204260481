@@ -1,5 +1,6 @@
 require("lib/data")
 local PendantDelay = require("abilities/other/courier_resurrection_delay")
+local FormatScriptError = require("lib/script_error")
 LinkLuaModifier("modifier_aegis_buff", "items/custom/item_aegis_lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_resurrection_pendant", "items/custom/item_resurection_pendant", LUA_MODIFIER_MOTION_NONE)
 
@@ -34,7 +35,7 @@ if IsServer() then
     end
 
     function item_resurection_pendant:Used(caster)
-		local ressurected = item_resurection_pendant:RessurectAll(caster)
+		local ressurected = self:RessurectAll(caster)
 		if ressurected > 0 then
 			player_data_modify_value(caster:GetPlayerID(), "saves", ressurected)
 
@@ -54,44 +55,28 @@ if IsServer() then
 		end
     end
 
-    function item_resurection_pendant:RessurectAll(caster)
-        local ressurected = 0
-		if not inventory_slot1(caster) then -- don't resurrect disconnected ppl
-			for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-				if PlayerResource:HasSelectedHero(playerID) and PlayerResource:IsValidPlayerID(playerID) then
-					local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-					if not hero:IsAlive() then
-						if not hero:IsReincarnating() then
-							local rezPosition = hero:GetAbsOrigin()
-							hero:RespawnHero(false, false)
-							hero:SetAbsOrigin(rezPosition)
-							item_resurection_pendant:RessurectEffect(hero)
-							hero:AddNewModifier(hCaster, hAbility, "modifier_aegis_buff", {duration = 10})
-							ressurected = ressurected + 1
-						end
+	function item_resurection_pendant:RessurectAll(caster)
+		local ressurected = 0
+		local resurrectAll = inventory_slot1(caster)
+		for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
+			if PlayerResource:HasSelectedHero(playerID) and (resurrectAll or PlayerResource:IsValidPlayerID(playerID)) then
+				local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+				if hero and not hero:IsNull() and not hero:IsAlive() and not hero:IsReincarnating() then
+					local rezPosition = hero:GetAbsOrigin()
+					hero:RespawnHero(false, false)
+					if hero:IsAlive() then
+						GameRules.GameMode:RunSpawnCallback("ArmSpawnProtection", hero, true)
+						hero:SetAbsOrigin(rezPosition)
+						hero:AddNewModifier(caster, self, "modifier_aegis_buff", {duration = 10})
+						ressurected = ressurected + 1
+						local ok, err = pcall(self.RessurectEffect, self, hero)
+						if not ok then print("[Resurrection Pendant] Effects failed: " .. FormatScriptError(err)) end
 					end
 				end
 			end
-		else	-- resurrect all
-			for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
-				if PlayerResource:HasSelectedHero(playerID) then
-					local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-					if not hero:IsAlive() then
-						if not hero:IsReincarnating() then
-							local rezPosition = hero:GetAbsOrigin()
-							hero:RespawnHero(false, false)
-							hero:SetAbsOrigin(rezPosition)
-							item_resurection_pendant:RessurectEffect(hero)
-							hero:AddNewModifier(hCaster, hAbility, "modifier_aegis_buff", {duration = 10})
-							ressurected = ressurected + 1
-						end
-					end
-				end
-			end
-		end	
-
-        return ressurected
-    end
+		end
+		return ressurected
+	end
 
     function item_resurection_pendant:RessurectEffect(target)
         local effect = ParticleManager:CreateParticle("particles/units/heroes/hero_chen/chen_holy_persuasion.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)

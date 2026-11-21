@@ -1,4 +1,5 @@
 require("lib/mys")
+local GetRadianceLevelMultiplier = require("items/custom/radiance_armor_damage")
 LinkLuaModifier("modifier_item_radiance_armor_green", "items/custom/item_radiance_armor_green", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_item_radiance_armor_aura_green", "items/custom/item_radiance_armor_green", LUA_MODIFIER_MOTION_NONE)
 require("lib/notifications")
@@ -166,6 +167,7 @@ function modifier_item_radiance_armor_aura_green:OnIntervalThink()
 		local aura_dmg = self.base_damage
 		local aura_dmg_pct = ability:GetSpecialValueFor("aura_dmg_pct")/100
 		local damage = math.ceil(aura_dmg + aura_dmg_pct*caster:GetMaxHealth() + ms_bonus_dmg + bonus_agi_dmg )
+		damage = damage * GetRadianceLevelMultiplier(caster)
 		--print(damage .. " radi dmg")
 		if caster:IsRealHero() then	
 			if HasSpeedsters(caster) and HasSwiftBlink(caster) and not GameRules:IsCheatMode() then
